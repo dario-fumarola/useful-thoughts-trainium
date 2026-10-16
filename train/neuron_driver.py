@@ -38,7 +38,7 @@ def validate_fixed_recipe(proposal, seed):
         group_std_normalization=False, negative_advantage_scaling=1.,
         best_of_selection_for_training=False, reader_gradient=False,
         ntp_auxiliary_weight=0., reference_kl_weight=0.)
-    expected_opt = dict(parameter_dtype='fp32', learning_rate=1e-6,
+    expected_opt = dict(parameter_dtype='fp32', compute_dtype='fp32', learning_rate=1e-6,
         schedule='constant', betas=[.9,.95], weight_decay=.1,
         gradient_clip=1., micro_prefixes_per_rank=1)
     for actual, expected, label in [(thought,expected_thought,'thought_arm'),
@@ -181,7 +181,7 @@ def parse_args():
     p.add_argument('--max-steps', type=int, default=1)
     p.add_argument('--global-prefixes', type=int, default=128)
     p.add_argument('--diagnostic-cap', type=int, default=1024)
-    p.add_argument('--precision', choices=['fp32','bf16'], default='bf16')
+    p.add_argument('--precision', choices=['fp32','bf16'], default='fp32')
     p.add_argument('--processes', type=int, default=1)
     a = p.parse_args()
     if a.qualify:
@@ -243,7 +243,8 @@ def worker(_index, a):
         steps = frozen['terminal_steps']
         batch = frozen['proposal']['optimization']['global_unique_prefixes_per_update']
         cap = frozen['proposal']['thought_arm']['max_thought_tokens']
-        if world != frozen['site']['world_size_per_arm'] or a.precision != 'bf16':
+        if (world != frozen['site']['world_size_per_arm'] or
+                a.precision != frozen['proposal']['optimization']['compute_dtype']):
             raise ValueError('Production topology/precision differs from frozen plan')
         spec = frozen
         deadline = datetime.fromisoformat(frozen['deadline_utc'])
@@ -317,6 +318,7 @@ def worker(_index, a):
             print(f'{utc_now()} rank0 {a.arm} update {step+1}/{steps}', flush=True)
         optimizer.zero_grad(set_to_none=True)
         before = parameter_sample()
+        replay_error = 0.0
         local = dict(loss=0., clean=0., thought=0., gain=0., actions=0., capped=0.,
                      abs_advantage=0., mean_signed_length=0., padded_decode_slots=0.)
         for micro, index in enumerate(distributed_batch_indices(step, rank, world, accumulation)):
@@ -341,6 +343,17 @@ def worker(_index, a):
                 torch_xla.sync(wait=True)
                 if not bool(torch.isfinite(thought).all().cpu()) or not bool(torch.isfinite(clean).all().cpu()):
                     raise RuntimeError('Nonfinite reward before policy replay')
+                if micro == 0 and (a.qualify or step % 64 == 0):
+                    # Recheck after real updates on rank-distinct real data.
+                    # The qualification timing includes this extra audit work.
+                    with torch.no_grad():
+                        replay_lp = backend.replay(prefix, rollout, fmt=fmt, temperature=.7)
+                        error = torch.where(rollout.action_mask,
+                            (replay_lp-rollout.behavior_logps).abs(), 0.).max()
+                        replay_error = float(error.cpu())
+                    tolerance = .001 if a.precision == 'fp32' else .2
+                    if not np.isfinite(replay_error) or replay_error > tolerance:
+                        raise RuntimeError(f'Post-update cache/replay mismatch: {replay_error}')
                 for g in range(4):
                     loss = backend.replay_one_loss(prefix, rollout.actions[:,g],
                         rollout.action_mask[:,g], advantage[0,g], fmt=fmt,
@@ -401,6 +414,8 @@ def worker(_index, a):
         keys = sorted(local)
         totals = xm.all_reduce(xm.REDUCE_SUM, torch.tensor([local[k] for k in keys], device=device))
         values = dict(zip(keys, totals.cpu().tolist()))
+        max_replay_error = float(xm.all_reduce(xm.REDUCE_MAX,
+            torch.tensor(replay_error, device=device)).cpu())
         counts = values.copy()
         values['loss'] /= world
         for key in ('clean','thought','gain','capped','abs_advantage','mean_signed_length'):
@@ -410,7 +425,8 @@ def worker(_index, a):
         counters['sampled_actions'] += int(counts['actions'])
         elapsed = time.monotonic()-started
         log = dict(step=step+1, arm=a.arm, elapsed_seconds=elapsed, gradient_norm=norm,
-                   metrics=values, sampled_parameter_update=sampled_update,
+                   metrics=values, max_replay_logp_error=max_replay_error,
+                   sampled_parameter_update=sampled_update,
                    counters=counters.copy(), time_utc=utc_now(),
                    status='qualification' if a.qualify else 'science')
         if rank == 0:

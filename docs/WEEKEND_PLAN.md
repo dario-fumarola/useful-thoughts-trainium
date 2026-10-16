@@ -53,7 +53,7 @@ These are explicit starting choices, not guaranteed effective hyperparameters:
 | Learning rate | Constant 1e-6 in primary R and C |
 | AdamW | beta=(0.9,0.95), weight decay=0.1; record epsilon/version |
 | Gradient clipping | Global norm 1 after the single intended reduction |
-| Precision | FP32 parameters/master accumulation; qualified BF16 compute |
+| Precision | FP32 parameters, accumulation and compute (BF16 failed long-trace replay qualification; see DECISIONS.md) |
 | Sharding | Verified ZeRO-1 for 1.7B; do not assume full Adam fits each core |
 | Extra losses in R | None: no next-token, reader, gate or teacher-hint auxiliary |
 | Primary checkpoint | Fixed terminal step, not whichever test score is highest |

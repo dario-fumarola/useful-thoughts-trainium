@@ -2,6 +2,12 @@
 
 ## State at delivery
 
+Instance update, October 16: full FP32 compute is now the production candidate.
+Long-trace BF16 and BF16-trunk/FP32-head replay exceeded the fixed numerical
+criterion; full FP32 passes the exact failed trajectory at the tighter criterion.
+See `DECISIONS.md` and `IMPLEMENTATION_REVIEW.md`. The implementation below remains
+subject to full-model distributed, resume and complete-step qualification.
+
 The production accelerator driver has **not** been implemented or executed in
 this container. The active reference runs on tiny CPU models. The bundled legacy
 source supplies concrete runtime/cache/loss/checkpoint examples, but its whole

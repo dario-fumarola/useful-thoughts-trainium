@@ -1,5 +1,5 @@
 {
-  "spec_version": "weekend-2026-10-16-v1",
+  "spec_version": "mature-reference-2026-10-16-v2-fp32",
   "status": "PROPOSED_NOT_HARDWARE_QUALIFIED",
   "purpose": "Establish a mature-model reference condition; separately measure training and inference benefits.",
   "model": {
@@ -68,7 +68,7 @@
   },
   "optimization": {
     "parameter_dtype": "fp32",
-    "compute_dtype": "bf16_autocast_when_qualified",
+    "compute_dtype": "fp32",
     "optimizer": "AdamW_with_verified_Zero1_for_1.7B",
     "learning_rate": 1e-06,
     "schedule": "constant",

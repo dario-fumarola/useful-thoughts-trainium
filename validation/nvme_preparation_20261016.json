@@ -1,0 +1,29 @@
+{
+  "device": "/dev/nvme0n1",
+  "model": "Amazon EC2 NVMe Instance Storage",
+  "bytes": 1900000000000,
+  "initial_kernel_stats": [
+    411,
+    0,
+    18004,
+    34,
+    0,
+    0,
+    0,
+    0,
+    0,
+    27,
+    34,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "preparation_started_utc": "2026-10-16T20:27:39Z",
+  "authorization": "Owner explicitly authorizes autonomous use of existing hardware; zero current-instance writes and no filesystem/partition/mount verified",
+  "inference": "Unused instance-local scratch, not an external durable backup",
+  "mounted_at": "/home/ubuntu/dario/local/nvme",
+  "preparation_completed_utc": "2026-10-16T20:27:50Z"
+}
