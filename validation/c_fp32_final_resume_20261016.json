@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-16T22:58:31.906731+00:00",
+  "scope": "Real full-model FP32 C optimizer, checkpoint and fresh-process recovery qualification; separate CPU fidelity and stochastic R gates remain",
+  "source": {
+    "commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+    "active_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7"
+  },
+  "model": "Released Qwen3-1.7B-Base; actual embedding/head tie; FP32 parameters, computation, masters and moments",
+  "topology": {
+    "world_size": 32,
+    "logical_cores": "32\u201363",
+    "global_batch": 128,
+    "accumulation": 4,
+    "seed": 1234
+  },
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": null,
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "baseline": {
+    "completed_updates": 12,
+    "steady_steps": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "steady_seconds": [
+      10.02408354200088,
+      10.086837259001186,
+      10.004871967998042,
+      10.033848504001071,
+      10.059422711998195,
+      9.987066513996979,
+      9.965446620000876,
+      9.978217563999351,
+      9.929640496997308,
+      10.000659072000417
+    ],
+    "steady_mean_seconds": 10.007009425199431,
+    "steady_median_seconds": 10.00276551999923,
+    "checkpoint_steps": [
+      3,
+      6,
+      12
+    ],
+    "checkpoint_postmetric_seconds": {
+      "3": 39.0,
+      "6": 38.0,
+      "12": 41.0
+    },
+    "checkpoint_payload_bytes": {
+      "3": 27542552879,
+      "6": 27542553007,
+      "12": 27542552943
+    },
+    "all_workers_exited": true
+  },
+  "actual_restored_readback": {
+    "status": "PASS",
+    "checkpoint_step": 3,
+    "full_model_raw_bytes_exact": true,
+    "all32_FP32_master_and_Adam_state_shards_raw_bytes_exact": true,
+    "all_optimizer_and_shard_metadata_raw_bytes_exact": true,
+    "CPU_and_device_RNG_exact": true,
+    "counters_and_Adam_steps_exact": true,
+    "original_input_aliases_rejected": true,
+    "signed_zero_distinctions_checked": true
+  },
+  "continued_resume": {
+    "status": "PASS",
+    "start_step": 3,
+    "terminal_step": 12,
+    "atol": 1e-07,
+    "rtol": 1e-06,
+    "all32_CPU_and_device_RNG_exact": true,
+    "counters_Adam_steps_and_metadata_exact": true,
+    "model_max_abs": 2.384185791015625e-07,
+    "model_max_tolerance_fraction": 0.10715468166197856,
+    "model_relative_l2_error": 8.884951176151791e-10,
+    "master_max_abs": 2.384185791015625e-07,
+    "moment_max_abs": 3.725290298461914e-08,
+    "moment_max_tolerance_fraction": 0.32677117586731536,
+    "bitwise_model": false,
+    "bitwise_optimizer": false,
+    "fresh_process_cache_loading_step4_seconds": 272.9070300099993,
+    "fresh_process_cache_loading_step5_seconds": 103.08238949000224,
+    "warm_steps6_through12_mean_seconds": 10.218209806570874,
+    "all_workers_exited": true
+  },
+  "sampled_memory": {
+    "baseline": {
+      "target_workers": 32,
+      "observed_workers": 32,
+      "samples": 122,
+      "max_worker_sampled_device_gib": 19.327967160381377,
+      "min_worker_sampled_peak_gib": 18.407436312176287,
+      "error_counter_maxima": {
+        "numerical": 0,
+        "transient": 0,
+        "model": 0,
+        "runtime": 0,
+        "hardware": 0
+      }
+    },
+    "resume": {
+      "target_workers": 32,
+      "observed_workers": 32,
+      "samples": 144,
+      "max_worker_sampled_device_gib": 19.66901069600135,
+      "min_worker_sampled_peak_gib": 18.41535580623895,
+      "error_counter_maxima": {
+        "numerical": 0,
+        "transient": 0,
+        "model": 0,
+        "runtime": 0,
+        "hardware": 0
+      }
+    }
+  },
+  "memory_limit": "Five-second worker samples can miss shorter peaks; only the exact C worker PIDs are included.",
+  "EBS_backups": {
+    "status": "PASS",
+    "supervisor_exit_code": 0,
+    "distinct_filesystems": true,
+    "fully_copied_and_verified_steps": [
+      3,
+      6,
+      12
+    ],
+    "retained_steps_after_verified_retention": [
+      6,
+      12
+    ],
+    "source_checkpoints_preserved": true,
+    "terminal_backup_complete": true,
+    "external_upload": false
+  },
+  "separate_open_gates": {
+    "original_and_corrected_native_CPU3_pointwise_comparison": "FAIL: unchanged 754 violations; source bridge reproduces the same result.",
+    "higher_precision_gradient_analysis": "Diagnostic evidence published separately; no acceptance bounds changed.",
+    "stochastic_R_recovery": "Separate actual R qualification required."
+  },
+  "communication_isolation": {
+    "concurrent_job_requirement": "Distinct MASTER_PORT as well as distinct NEURON_RT_ROOT_COMM_ID and disjoint visible cores.",
+    "observed_failed_R_bootstrap": "A separate R job connected 31 workers to C's TCPStore on port 12355; its master bind failed with EADDRINUSE. C remained healthy.",
+    "repair": "A fresh R job used MASTER_PORT=64231 while C retained port 12355 and initialized successfully. Numerical source and the Neuron endpoint stayed fixed."
+  },
+  "artifact_sha256": {
+    "readback": "3b3f737d30d241652f5681b7b84578d567f5e3948d46452d14fc51cd76c06cbc",
+    "terminal": "82bdacd1f3ccf2e2fd4c0cec913f10af297e8007312e2b841915aa14d1c8b28e",
+    "criteria": "615a3ef3a2d5b9f7a6cb21795a72aaebac636497e32b55e4b19118bef84bd40b",
+    "comparator": "98d075f24701809e1316e93c3a3ed2ef5bd5567e0c9b23ec442b23ff3fc4357f",
+    "cpu_comparison": "9d393ba51b0b352183e743e24e4b58fdf46565d3e88f18b31db0f1f1b5a4b868",
+    "backup_events": "6f7f69be3025416aa46a3320859658ab45d7f5dffd09e8848e8e9e44a59138f3"
+  }
+}
