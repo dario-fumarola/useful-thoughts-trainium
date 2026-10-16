@@ -18,6 +18,8 @@ from typing import Callable
 import torch
 
 from train.neuron_backend import CausalCache, causal_mask
+from train.evaluation_integrity import (evaluation_dependencies, require_final_model,
+                                        validate_loaded_checkpoint)
 from weekend_thinking.artifacts import atomic_json, canonical_hash, sha256_file, utc_now
 from weekend_thinking.core import Format, policy_log_probs
 from weekend_thinking.evaluation import numeric_answer
@@ -279,11 +281,13 @@ def asset_provenance(directory: Path) -> dict:
     return result
 
 
-def load_own_checkpoint(model, path: Path) -> dict:
+def load_own_checkpoint(model, path: Path, *, final_identity: dict | None = None) -> dict:
     """Only the documented full-model dictionary, never partial or guessed keys."""
     saved = torch.load(path, map_location="cpu", weights_only=True)
     if not isinstance(saved, dict) or not isinstance(saved.get("model"), dict):
         raise ValueError("Expected a trusted own checkpoint dictionary with full 'model' state")
+    if final_identity is not None:
+        validate_loaded_checkpoint(saved, final_identity)
     weights = saved["model"]
     if model.config.tie_word_embeddings:
         left, right = weights.get("model.embed_tokens.weight"), weights.get("lm_head.weight")
@@ -308,6 +312,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument("--arm", choices=("B0", "vanilla", "thought"), default="B0")
+    parser.add_argument("--seed", type=int)
     parser.add_argument("--task-file", type=Path, required=True)
     parser.add_argument("--task-revision", required=True)
     parser.add_argument("--prompt-spec", type=Path, required=True)
@@ -354,11 +360,15 @@ def main() -> None:
         answer_stop_ids=list(dict.fromkeys((fmt.pad_id, *fmt.additional_stop_ids))),
         tokenizer_and_config_sha256=canonical_hash(tokenizer_files),
         support="tokenizer_defined_ids_only", compute=args.compute, head_precision=args.head_precision,
+        dependencies=evaluation_dependencies(),
         evaluator_sha256=sha256_file(Path(__file__)), backend_sha256=sha256_file(Path(__file__).with_name("neuron_backend.py")))
     # JSON-normalize tuples so a written/read receipt compares identically.
     protocol = json.loads(json.dumps(protocol))
+    final_identity = None
     if not args.qualification:
         require_frozen_protocol(args.frozen_protocol, protocol)
+        final_identity = require_final_model(args.frozen_protocol, args.checkpoint, assets,
+                                             arm=args.arm, seed=args.seed)
     args.output.mkdir(parents=True, exist_ok=False)
     report = dict(run_id=args.output.name, status="running", started_utc=utc_now(), qualification=args.qualification,
                   protocol=protocol, protocol_sha256=canonical_hash(protocol), expected_items=len(local_questions),
@@ -366,12 +376,12 @@ def main() -> None:
                   shard=dict(index=args.shard_index, count=args.num_shards,
                              expected_items=len(local_questions),
                              item_ids_sha256=canonical_hash([q["item_id"] for q in local_questions])),
-                  model=assets, parser="strict_final_hash4_number_v1",
+                  model=assets, model_identity=final_identity, parser="strict_final_hash4_number_v1",
                   note="Question-only generation. No gold scoring or answer-based selection in this process.")
     atomic_json(args.output / "run.json", report)
     try:
         model, tokenizer = load_base(args.model_dir)
-        report["checkpoint"] = load_own_checkpoint(model, args.checkpoint) if args.checkpoint else None
+        report["checkpoint"] = load_own_checkpoint(model, args.checkpoint, final_identity=final_identity) if args.checkpoint else None
         cpu_signature = sampled_fingerprint(model)
         if tokenizer.eos_token_id is None or fmt.pad_id != tokenizer.eos_token_id:
             raise ValueError("Resolved format pad must be the qualified tokenizer EOS")
@@ -428,6 +438,7 @@ def main() -> None:
                     mode=args.mode, max_answer_tokens=args.max_answer_tokens, thought_cap=args.thought_cap,
                     question_prefill_width=question_width, answer_prefill_width=answer_width)
                 row.update(run_id=report["run_id"], protocol_sha256=report["protocol_sha256"],
+                           model_identity_sha256=canonical_hash(final_identity) if final_identity else None,
                            model_sha256=report["model"]["sha256"],
                            checkpoint_sha256=(report["checkpoint"] or {}).get("sha256"))
                 stream.write(json.dumps(row, ensure_ascii=False) + "\n")

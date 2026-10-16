@@ -24,6 +24,7 @@ import torch
 from train.evaluate import (GenerationFailure, GreedyDecoder, asset_provenance,
                             load_own_checkpoint, require_frozen_protocol, shard_questions)
 from train.neuron_backend import NeuronCausalBackend
+from train.evaluation_integrity import evaluation_dependencies, require_final_model
 from weekend_thinking.artifacts import atomic_json, canonical_hash, sha256_file, utc_now
 from weekend_thinking.core import Format
 from weekend_thinking.pretrained import load_base, sampled_fingerprint
@@ -293,6 +294,8 @@ def main():
     run.add_argument("--task-revision", required=True)
     run.add_argument("--model-dir", type=Path, required=True)
     run.add_argument("--checkpoint", type=Path)
+    run.add_argument("--arm", choices=("B0", "vanilla", "thought"), default="B0")
+    run.add_argument("--seed", type=int)
     run.add_argument("--format", type=Path, required=True)
     run.add_argument("--mode", choices=("direct", "one_thought"), default="direct")
     run.add_argument("--max-context-tokens", type=int, default=768)
@@ -332,23 +335,26 @@ def main():
         model_id=assets.get("model_id"), model_revision=assets.get("revision"),
         tokenizer_and_config_sha256=canonical_hash({name: value for name, value in assets["files"].items()
             if not name.endswith((".safetensors", ".bin"))}),
-        evaluator_sha256=sha256_file(Path(__file__)),
+        dependencies=evaluation_dependencies(), evaluator_sha256=sha256_file(Path(__file__)),
         backend_sha256=sha256_file(Path(__file__).with_name("neuron_backend.py")))
     protocol = json.loads(json.dumps(protocol))
+    final_identity = None
     if not args.qualification:
         require_frozen_protocol(args.frozen_protocol, protocol)
+        final_identity = require_final_model(args.frozen_protocol, args.checkpoint, assets,
+                                             arm=args.arm, seed=args.seed)
     # Gold is parsed only after the official-test freeze gate, and never passed
     # into the writer. Hashing the file above does not inspect its answers.
     gold = read_gold(args.gold_file, items, task=args.task)
     args.output.mkdir(parents=True, exist_ok=False)
     report = dict(status="running", started_utc=utc_now(), qualification=args.qualification,
-        protocol=protocol, protocol_sha256=canonical_hash(protocol), model=assets,
+        protocol=protocol, protocol_sha256=canonical_hash(protocol), model=assets, model_identity=final_identity,
         expected_items=len(local), global_expected_items=len(items),
         shard=dict(index=args.shard_index, count=args.num_shards), device=args.device)
     atomic_json(args.output/"run.json", report)
     try:
         model, tokenizer = load_base(args.model_dir)
-        report["checkpoint"] = load_own_checkpoint(model, args.checkpoint) if args.checkpoint else None
+        report["checkpoint"] = load_own_checkpoint(model, args.checkpoint, final_identity=final_identity) if args.checkpoint else None
         signature = sampled_fingerprint(model)
         sync = lambda: None
         if args.device == "xla":
