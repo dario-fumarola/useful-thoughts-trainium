@@ -1,30 +1,22 @@
-# Current handoff state
+# Current state — 2026-10-16
 
-**Stage:** CPU-validated starter repo; production Neuron integration not yet done.
-**No training is running from this delivered repo.** No cloud resource was changed.
+Stage: initial familiarization complete; production Neuron implementation pending.
+Workspace: `/home/ubuntu/dario`; private remote: https://github.com/dario-fumarola/dario . Original source repositories unchanged.
 
-## Done
-- Bundled relevant original training/evaluation source and historical evidence.
-- Preserved the weekend recipe and long-term proof ladder.
-- Added deterministic record ordering, local checkpoint verification/resumption,
-  strict answer scoring, asset helpers, and fixed-spec/evidence checks.
-- Executed local tests; see `validation/VALIDATION.md` for the exact boundary.
+Verified: packaged 184-file integrity check; 82 CPU tests passed in 5.02 s; toy smoke completed. Evidence: `local/checks/bootstrap.4NOPif/`. Host inventory reports trn2.48xlarge, 16 devices, LNC2, 64 logical cores. Accelerator stack metadata and initial ideas are in `docs/INITIAL_ASSESSMENT.md`.
 
-## Not yet done
-Actual instance inventory, pinned asset downloads/loading, production cached
-Neuron sampler, multi-rank training/resume, complete-step timing, final task
-inference, and approved durable backup. The presence of old paths is not evidence
-that old checkpoints or corpus files survive.
+No active job/PID; no scientific checkpoint; no accelerator execution this session. Existing smoke assets are not qualified experiment assets. No background agent is running.
 
-## Next action
-From the qualified instance environment: `bash scripts/start_here.sh`, then
-`bash scripts/start_codex.sh`. Codex should begin item P0 in `NEXT_STEPS.md`.
+Remaining P0: resolve actual cutoff and approved backup destination; obtain/pin model and audited data. P1–P4 are unqualified. User limited this session to familiarization and ideas.
 
-## Session continuation fields
-- Active job / PID / output directory: none.
-- Latest verified scientific checkpoint: none in this delivery.
-- Current blocker: production backend has not been implemented/qualified here.
-- Exact next command after the bootstrap: inspect the new read-only host report
-  and resolve `configs/site.local.json`; then implement P1, not a new research plan.
+Exact next command:
+```bash
+cd /home/ubuntu/dario
+sed -n '1,220p' weekend_thinking/pretrained.py
+```
+Then inspect installed Qwen3/cache/ZeRO APIs and implement the bounded P1 qualification path using the existing environment. Do not launch `start_codex.sh` from inside this session.
 
-Replace this section with current facts as work proceeds; keep it under one page.
+Repeat CPU checks with:
+```bash
+PATH=/home/ubuntu/ema-trainium/.venv/bin:$PATH PYTHONPATH=/home/ubuntu/dario/local/test-deps PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 bash scripts/run_checks.sh
+```
