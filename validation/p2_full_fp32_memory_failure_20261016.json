@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-10-16T21:14:45+00:00",
+  "scope": "failed_single_core_P2_full_FP32_backward_not_scientific_training",
+  "passed": false,
+  "failed_utc": "2026-10-16T21:09:44Z",
+  "precision": "fp32",
+  "prefix_tokens": 512,
+  "cap": 1024,
+  "group_size": 4,
+  "status": "failed",
+  "error": "RuntimeError: AllocBuffer: error condition NRT_RESOURCE == rt_status: Not enough Neuron memory on core 0 for size=16777216",
+  "backward_gradient_norm_obtained": false,
+  "prior_three_full_trace_max_replay_logp_error": [
+    1.239776611328125e-05,
+    2.2172927856445312e-05,
+    2.8371810913085938e-05
+  ],
+  "R_launched": false,
+  "gate_status": "P2_FAILED_NO_R_LAUNCH",
+  "original_P2_pid": 374089,
+  "original_P2_process_exited": true,
+  "runtime_memory_as_printed": {
+    "device": 0,
+    "hbm_bank": 3,
+    "total": "23.968GB",
+    "model_code": "2.004GB",
+    "model_constants": "11.535MB",
+    "tensors": "10.957GB",
+    "shared_scratchpad": "5.688GB",
+    "DMA_spill": "5.295GB",
+    "loaded_NEFF_count": 10,
+    "NEFF1007_DMA_spill_physical_NC6": "2.407GB",
+    "NEFF1007_DMA_spill_physical_NC7": "2.399GB",
+    "backward_NEFF1010_scratchpad": "5.675GB"
+  },
+  "observed_files": {
+    "local/qualification/p2-full-fp32-001/neuron_mem_table_device_0_nc_6.log": {
+      "bytes": 5591,
+      "sha256": "601da7f05dec8962d58d2b5b59e4cf442617f6de58d34a7ab4e38ebf6aac9ac8"
+    },
+    "local/qualification/p2-full-fp32-001/nrt_mem_log_device_0_6ad29298.csv": {
+      "bytes": 11672154,
+      "sha256": "26bc05c91803bf6d7726220c8e815e709e1ead35a8d9c5ae9cef4b39553b989f"
+    },
+    "local/qualification/p2-full-fp32-001/neuron_mem_log_device_0_hbm_3_6ad29298.csv": {
+      "bytes": 97907,
+      "sha256": "2c8f5de791bf6afdd18c91286ab416f6647a8e3d6fd768b040cac41a860d5649"
+    },
+    "local/qualification/p2-full-fp32-001/backend.json": {
+      "bytes": 53145,
+      "sha256": "af6673df021d9ea4b3bfb8bb8fe9699ee6bef60bc44d54e4ca436a2af497124f"
+    },
+    "local/p2-full-fp32-001.log": {
+      "bytes": 14065,
+      "sha256": "010a8ba9c5d1d1d295ca8aef72f55e8dc64759556f8e52584bc37100d8e5bd3c"
+    },
+    "local/qualification/qwen-r-fp32-001.gate-watcher.json": {
+      "bytes": 237,
+      "sha256": "24c97b8250895f1d6921e5704ea1deb3151af7efbcdce1359a1cb86344acafa1"
+    }
+  },
+  "inference": "Retained loaded graph code/spill is a significant measured contributor; this does not yet prove any eviction setting repairs full R training.",
+  "next_probe": "Documented NEURON_NUM_RECENT_MODELS_TO_KEEP=2, fresh process, unchanged immutable source/cap/precision/tolerance, warm compiler cache; no automatic R launch.",
+  "sources": [
+    "https://awsdocs-neuron.readthedocs-hosted.com/en/v2.28.1/about-neuron/arch/neuron-features/logical-neuroncore-config.html",
+    "https://awsdocs-neuron.readthedocs-hosted.com/en/v2.29.1/frameworks/torch/torch-neuronx/api-reference-guide/training/torch-neuron-envvars.html"
+  ]
+}
