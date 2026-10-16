@@ -125,3 +125,28 @@ Routine formatting changes do not need a decision entry.
   the corrected order reproduces both subsequent random draws and optimizer
   state exactly. Require the integrated helper and then full C/R resume evidence
   before scientific launch; the small probe alone is not full-model qualification.
+
+## 2026-10-16 — separate held-seed numerical accuracy qualification
+
+- Keep the original CPU FP32 three-update per-weight comparison as **v1 FAIL**.
+  It is not a reliable ordering of numerical accuracy: the independent FP64
+  diagnostic finds smaller full-gradient error on device and resolves most of
+  its 754 flagged coordinates in the device's favor. Isolated near-zero gradients
+  can change sign, and Adam's first update magnifies that difference. This does
+  not establish CPU trajectory identity or excuse arbitrary errors.
+- Design a distinct **v2** after that diagnosis and validate it on fixed held
+  seed5678. Bind its first128 TRAIN IDs, overlap with seed1234, batch projection,
+  source and criteria before computing new outcomes. Use fresh released B0 and
+  one ordinary C32 update; scientific data/order and optimization are unchanged.
+- Compare the complete first derivative against FP64 differentiable arithmetic
+  with frozen native-CPU FP32 RoPE constants. Require absolute loss error≤1e-4;
+  norm error≤1e-5+5e-4×reference norm; full-gradient relative L2≤.001 and cosine
+  ≥.9999; and relative L2≤.01 for every unique parameter tensor. Compute vector
+  reductions in FP64; exactly zero reference tensors require exactly zero device
+  gradients, without a denominator floor. Require complete names/shapes/tie,
+  finiteness, exact batch/scaling and first Adam step. Publish all tensor metrics.
+- This qualifies first-derivative accuracy, not coordinatewise CPU three-step
+  identity. Device derivatives recovered from first moments include FP32 clipping
+  and moment rounding; frozen CPU RoPE constants are not a unique device truth.
+  Same-hardware recovery and identical-gradient optimizer checks remain separate.
+  Do not tune criteria after held-seed outcomes; preserve any v2 failure.
