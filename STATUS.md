@@ -1,28 +1,72 @@
-# Current state — 2026-10-16 20:20 UTC
+# Current state — 2026-10-16 20:46 UTC
 
-Stage: real-asset Neuron qualification; scientific C/R pair not launched.
-Owner now authorizes sustained autonomous work, scientific judgment and review agents; weeks are available. No actual instance cutoff has been specified. A finite job planning horizon will be declared before a scientific launch.
+Stage: real-asset Neuron qualification. No scientific C/R pair has launched.
+The owner authorizes sustained autonomous work, review agents, and public GitHub
+publication. Weeks are available; no actual instance cutoff is specified. Declare
+a finite planning horizon before the scientific launch.
 
-Workspace/private remote: `/home/ubuntu/dario`, https://github.com/dario-fumarola/dario . Original repos unchanged. Released Qwen3-1.7B-Base pinned to `ea980cb0a6c2ae4b936e82123acc929f1cec04c1` in `local/assets/qwen3-1.7b-base`.
+Workspace: `/home/ubuntu/dario`. Public repository:
+https://github.com/dario-fumarola/useful-thoughts-trainium . Original repos remain
+unchanged. Released Qwen3-1.7B-Base revision:
+`ea980cb0a6c2ae4b936e82123acc929f1cec04c1`.
 
-Verified real data: 329,535 train / 18,360 dev / 18,239 test; `local/data/finemath/production-500000.audit-v2.records.jsonl`; receipt `validation/data_production_v2_20261016.json`. URL-identity bug corrected before freeze; original audit retained. Latest full CPU checks: 137 tests + toy smoke passed in `local/checks/tests.9X6EoI`.
+Verified data: **329,535 train / 18,360 dev / 18,239 test** records in
+`local/data/finemath/production-500000.audit-v2.records.jsonl`.
+Receipt: `validation/data_production_v2_20261016.json`. A URL identity bug was
+corrected before freeze; the original audit is retained. Latest CPU checks:
+145 tests and toy smoke passed in `local/checks/tests.vNYBQ7`.
 
-Hardware evidence so far:
-- P1-005 passed with released tie/fingerprint preserved: FP32 CPU/device selected-logp error 2.57e-5; BF16 error .14507 under predeclared .15 bound. Original XLA transfer tie break fixed; one proven orphan cache lock preserved/renamed after owner death.
-- Short BF16 traces passed, but full1024action BF16 failed fixed .2 bound (max .21841). FP32-head-only repair also failed (.22614), including exact failing action replay. No BF16 long-run qualification. Full-FP32 random and old-action probes now running with unchanged tighter .001 bound; all failures retained.
-- Tiny FP32 distributed update/resume passes numerically, not bitwise (`distributed-005`). Full Qwen C first4rank update and complete checkpoint passed:1.50265loss,6.26648preclipnorm,~99%sampledFP32valueschanged; all310Adamstates initialized/mastershards FP32. Checkpoint1~25.64GiB; fullQwen resume still pending. Peak~22.42GiB/core atworld4; R needs more sharding.
-- GSM8K TRAIN-only direct and initial thought evaluator paths run; structural reader defect found and repaired before final freeze. No official-test outcomes inspected.
+## Actual evidence
 
-Active work/jobs (bounded diagnostic runs):
-- Core0 free (P1-005 completed).
-- Core1 fullFP32 512prefix/1024action cache/replay/backward: PID374089, `local/p2-full-fp32-001.log`; timeout3h. BF16 attempts failed before backward.
-- Core2 fullFP32 exact-old-action numeric probe: PID389250, `local/qualification/p2-fixed-trace-fullfp32-001`. Five TRAIN evaluator items finished; conventional4shot protocol staged, awaiting precision qualification. No final test accessed.
-- Cores4–7 Qwen C2step qualification: parent350424, workers350441/350444/350445/350446; `local/qualification/qwen-c-001*` immutable source snapshot. Checkpoint1 COMPLETE; update2 compiling new backward variant. Resume next. Do not overlap.
+- Released weights, ties, and fingerprints pass forward qualification. FP32
+  CPU/device selected-logp error is 2.57e-5.
+- Full-cap BF16 cache/replay failed the fixed .2 bound (max .21841). FP32 head
+  alone also failed. Full FP32 passes the exact old failing trajectory with max
+  2.84e-5 under the original tighter .001 bound. Three fresh full-cap FP32 traces
+  also pass; the single-thought backward is still compiling.
+- Tiny distributed FP32 updates and numerical resumption pass. Full Qwen C on
+  four ranks completed one real update and a complete checkpoint, but update two
+  exceeded memory. No full-model resume pass yet. Qualification moved to 32 ranks
+  before any scientific training.
+- Five held-out GSM8K TRAIN items ran on the accelerator with fixed four-shot
+  prompts in direct, thought, and empty-format modes. Outputs and failures are
+  retained; these are interface checks, not benchmark estimates. No official test
+  outcomes have been inspected. Secondary likelihood evaluation has CPU evidence
+  only (`validation/secondary_likelihood_cpu_20261016.json`).
 
-Next exact command:
+## Active bounded jobs
+
+- **Core 1:** full-FP32 prefix512/cap1024 cache/replay/backward, PID374089,
+  `local/p2-full-fp32-001.log`, hard limit three hours from about 20:05 UTC.
+  Fresh trace numerical checks passed; backward is pending.
+- **Cores 32–63:** FP32 Qwen C, 32 ranks, global batch128, 12 updates,
+  launcher403728, tmux `dario-qwen-c-fp32-001`. Immutable source `fe667bf`.
+  State/log: `local/qualification/qwen-c-fp32-001.state.json` and adjacent `.log`.
+  Output: `local/nvme/qualification/qwen-c-fp32-001`. First graphs compiling.
+- **Cores 0–31 reserved:** R32 launcher prepared by data agent, not running.
+  It requires the full-cap FP32 backward to pass and its process to exit first.
+  Same immutable source and pilot records as C32; 14 updates, eight-hour bound.
+- Independent CPU FP32 first-three-update C reference is running at low priority
+  while accelerator graphs compile. Reviewer is auditing scientific/evaluation
+  gaps. Core2 is free; do not overlap reserved accelerator layouts.
+
+## Next actions and recovery
+
 ```bash
 tail -20 local/p2-full-fp32-001.log
+cat local/qualification/qwen-c-fp32-001.state.json
 ```
-Continue P1–P4 qualification and measure ≥10 complete target-shape optimizer steps before freezing terminal exposure. Main production driver exists but is not qualified. Latest complete checkpoint is qualification-only `local/qualification/qwen-c-001/step-0000001`; no scientific checkpoint yet. Checkpoint backups remain local; no external destination approved. Four unused NVMe devices inspected read-only (7.6TB total, no signatures), not modified.
 
-CPU checks: `source scripts/env.sh && bash scripts/run_checks.sh` (script forces CPU-only Transformers discovery).
+Require real C/R updates, numerical full-model resume, and at least ten complete
+steady updates per arm before selecting terminal exposure and freezing the first
+pair. Latest complete checkpoint is qualification-only:
+`local/qualification/qwen-c-001/step-0000001` (~25.64 GiB). It does not establish
+that the failed four-rank layout can resume.
+
+One verified unused instance SSD is mounted at `local/nvme` (1.7 TiB free at
+preparation); the other three were untouched. Provenance and preparation receipts
+are in `validation/`. Store large intermediates there; copy scientific terminal
+and daily latest-complete checkpoints to EBS. Both are local to this instance;
+no external backup destination has been approved.
+
+CPU checks: `source scripts/env.sh && bash scripts/run_checks.sh`.

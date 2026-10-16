@@ -41,9 +41,12 @@ archived launcher. Preserve evidence; do not rewrite old results to fit the plan
 ## Engineering and permissions
 Work only in this repo and authorized local asset/output directories. Existing-node
 training within the resolved budget is the intended task after qualification.
-Do not create/terminate instances, buy capacity, change IAM/networking, publish
-repositories, use Bedrock, call paid teacher services, or upload to an unapproved
-bucket. Never copy secrets into code, logs, Git, or manifests. Do not reinstall
+The owner explicitly authorized maintaining this GitHub repository and making it
+public as `dario-fumarola/useful-thoughts-trainium` on 2026-10-16. Commit and push
+reviewed source, documentation, and small reports; keep local assets out of Git.
+Do not create/terminate instances, buy capacity, change IAM/networking, use
+Bedrock, call paid teacher services, or upload to an unapproved bucket.
+Never copy secrets into code, logs, Git, or manifests. Do not reinstall
 or upgrade the working accelerator stack as a convenience fix. Resolve exact
 installed APIs; public inference support does not qualify this training path.
 
@@ -69,4 +72,4 @@ calibration ledgers. No infinite automatic relaunch loop.
 Before compaction/session exit, update `STATUS.md` with exact next command,
 active PID/job/output/checkpoint, what was actually tested, and remaining risk.
 Record material decisions in `DECISIONS.md`; keep both concise. Make small local
-Git commits. Never push without the owner's explicit instruction.
+Git commits and keep the owner-authorized remote updated.
