@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 21:17 UTC
+# Current state — 2026-10-16 21:37 UTC
 
 Stage: real-asset Neuron qualification. No scientific C/R pair has launched.
 The owner authorizes sustained autonomous work, review agents, and public GitHub
@@ -15,7 +15,7 @@ Verified data: **329,535 train / 18,360 dev / 18,239 test** records in
 `local/data/finemath/production-500000.audit-v2.records.jsonl`.
 Receipt: `validation/data_production_v2_20261016.json`. A URL identity bug was
 corrected before freeze; the original audit is retained. Latest CPU checks:
-184 tests and toy smoke passed in `local/checks/tests.QJY1yz`.
+189 tests and toy smoke passed in `local/checks/tests.ZRihpt`.
 
 ## Actual evidence
 
@@ -39,8 +39,9 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
 - CPU partial-product diagnostics show semantic reader sensitivity on 16/16 fixed
   cases but a substantial insertion cost versus raw silence. K=1 is whitespace on
   this synthetic grid; full-target sensitivity is not K=1 sensitivity. Receipt:
-  `validation/reader_interface_cpu_20261016.json`. New local-content/crossed-reader
-  code has CPU tests; released-model CPU plumbing is running on two DEV records.
+  `validation/reader_interface_cpu_20261016.json`. Local-content/crossed-reader
+  code also completed released-model CPU plumbing on two DEV records (all36
+  score rows, no errors). This does not qualify accelerator execution.
 - Final evaluation now binds terminal model identities, transitive code hashes,
   canonical gold projection, and scored condition provenance. No final experiment
   or evaluation receipt has been frozen yet.
@@ -50,32 +51,50 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
 - **Core 1:** unchanged-source warm-cache memory diagnostic, PID448724,
   tmux `dario-p2-full-fp32-n2-001`, `local/p2-full-fp32-n2-001.log`.
   Same three full-cap traces/backward and fixed precision/tolerance; only
-  `NEURON_NUM_RECENT_MODELS_TO_KEEP=2` is set. Thirty-minute bound from21:14 UTC.
-  Initial observations show more than two resident programs, so efficacy is not
-  assumed. Next candidate is the installed XLA compilation-cache LRU setting,
-  followed by a mathematically equivalent staged backward only if needed.
+  `NEURON_NUM_RECENT_MODELS_TO_KEEP=2` is set. This legacy setting does not bound
+  residency in the installed stack (nine programs observed). All three traces
+  pass, backward is cold-compiling. Independent watchdog503227 safely paused
+  only the old GNUtimeout448721, with a finite replacement deadline22:44 UTC;
+  worker/compiler continue. Receipt: adjacent `.supervision-active.json`.
+- **Core 2:** same-source full-cap diagnostic, PID494794,
+  tmux `dario-p2-full-fp32-lru2-001`, `local/p2-full-fp32-lru2-001.log`.
+  `XLA_COMPILATION_CACHE_SIZE=2` actually bounds steady residency to two programs;
+  it still retains substantial scoring-program DMA storage. All three traces
+  are bitwise-identical to the other diagnostic and pass replay. Backward waits
+  on the live core1 compiler cache lock; do not remove it. Ninety-minute bound
+  from21:25 UTC. A third transient load before eviction remains a memory risk.
 - **Cores 32–63:** FP32 Qwen C, 32 ranks, global batch128, 12 updates,
   launcher403728, tmux `dario-qwen-c-fp32-001`. Immutable source `fe667bf`.
   State/log: `local/qualification/qwen-c-fp32-001.state.json` and adjacent `.log`.
   Output: `local/nvme/qualification/qwen-c-fp32-001`. Full-FP32 forward compiled
   at20:57:58 UTC; first/later-accumulation backward and finite-gradient graphs
-  passed. First optimizer graphs are compiling on all32 ranks. Independent CPU first-update
-  reference is CE1.34796970 / preclip norm1.62742829; device comparison is pending.
+  passed. First update completed21:20:40, CE1.34797621 versus CPU1.34796970.
+  All rank samples agree bitwise and99.09% of sampled values changed. Device
+  preclip norm1.62842071 initially failed against ordinary CPU FP32 vector_norm;
+  an independent sum of ALL gradient squares in Float64 gives1.62834683 and
+  passes the unchanged bound. Both outcomes are preserved in
+  `validation/c_fp32_gradient_norm_reference_20261016.json`. Step2's initialized
+  optimizer graphs are compiling; that memory path is not yet qualified.
 - **Cores 0–31 reserved:** R32 launcher prepared by data agent, not running.
   It requires the full-cap FP32 backward to pass and a qualified memory policy.
   Same immutable source and pilot records as C32; 14 updates, eight-hour bound.
   Original watcher exited `P2_FAILED_NO_R_LAUNCH`; it is not armed. State:
   `local/qualification/qwen-r-fp32-001.gate-watcher.json`. No retry loop.
 - Independent CPU FP32 first-three-update C reference has finished; full weights
-  and Adam states are hashed and preserved. Reviewer prepared full-cap
+  and Adam states are hashed and preserved. A separate corrected-norm/clip
+  three-update lineage began21:31:49; original results remain intact. A native
+  CPU full1024-action PG backward also finished: full Float64-reduced norm
+  .1056467963; hardware comparison is still pending. Receipt:
+  `validation/p2_full_gradient_cpu_reference_20261016.json`. Reviewer prepared full-cap
   local/secondary accelerator suites and
-  waits for cores62–63 after C32 and resume exit. Core2 is free; do not overlap
+  waits for cores62–63 after C32 and resume exit. Do not overlap
   reserved accelerator layouts.
 
 ## Next actions and recovery
 
 ```bash
 tail -20 local/p2-full-fp32-n2-001.log
+tail -20 local/p2-full-fp32-lru2-001.log
 cat local/qualification/qwen-c-fp32-001.state.json
 ```
 
@@ -95,5 +114,12 @@ agent will copy C32 checkpoint3 to `local/backups/` once COMPLETE exists. Before
 multi-day science, arrange at least daily complete saves and verified EBS copies.
 Current C qualification reward-related metric zeros are unmeasured placeholders,
 not actual clean/thought likelihoods.
+Main commit `8749d87` now binds runtime cache settings to frozen per-arm policies
+and resumes, emits null for unmeasured C rewards and unaudited replay errors, and
+saves complete checkpoints at most12h plus one complete update apart. Independent
+review and189 CPU tests/toy smoke pass. Running immutable qualifications are
+unaffected. New-source C32 warm qualification/resume will follow the existing
+FE baseline/resume; R32 must use the reviewed source and actual qualified cache
+policy. New-source device execution remains pending.
 
 CPU checks: `source scripts/env.sh && bash scripts/run_checks.sh`.
