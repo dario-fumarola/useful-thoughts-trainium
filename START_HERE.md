@@ -1,23 +1,23 @@
 # Start here
 
-## 1. Put this one folder on the instance
+## 1. Open the isolated repository
 
 ```bash
-unzip trainium_thinking_repo.zip
-cd trainium_thinking_repo
-# Activate the already working Neuron Python environment here.
-bash scripts/start_here.sh
+git clone https://github.com/dario-fumarola/useful-thoughts-trainium.git
+cd useful-thoughts-trainium
+# Activate a compatible Python environment, then run the CPU checks.
+bash scripts/run_checks.sh
 ```
 
-The script is intentionally non-destructive. It verifies the delivered files,
-checks dependencies, runs CPU tests, and records a read-only host report under
-`local/checks/`. It does not replace Torch, XLA, Transformers, or Neuron packages.
-If a helper dependency is absent, it reports that fact rather than installing a
-new accelerator stack. CPU checks are not accelerator qualification.
+The existing instance workspace is `/home/ubuntu/dario`; use that checkout when
+continuing its work. Read `STATUS.md` before touching running jobs. CPU checks
+require PyTorch, NumPy, pytest and Transformers, and record results under
+`local/checks/`. They do not qualify accelerator execution or install packages.
 
-After intentional source edits, a delivery checksum mismatch is expected. Use
-`git diff` to inspect changes and `bash scripts/run_checks.sh` to rerun tests;
-do not regenerate the original delivery manifest to conceal changes.
+The original delivery manifest and `scripts/start_here.sh` are retained for
+provenance. Their original checksums differ after intentional development. Use
+Git to inspect current changes; do not regenerate that manifest to conceal them.
+Do not replace the working Torch/XLA/Neuron stack to run these checks.
 
 ## 2. Start Codex from the repo root
 
@@ -54,8 +54,8 @@ changes the science. Do not ask you to choose every runtime knob.
 
 `NEXT_STEPS.md` gives the next concrete deliverable at each stage.
 `docs/NEURON_IMPLEMENTATION.md` names the code to reuse and what must be new.
-The six-hour qualification allowance is a planning cap, not permission to waive
-a failed check or a prediction that all integration will finish in that period.
+The owner has extended the work to weeks. Current finite job bounds and the
+prospective science schedule are recorded in `STATUS.md` and `DECISIONS.md`.
 
 No long job before a real `local/qualification.json` exists for the actual code
 and fixed assets. The template contains only pending values. It is a compact

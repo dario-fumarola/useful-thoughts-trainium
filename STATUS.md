@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 22:27 UTC
+# Current state — 2026-10-16 22:31 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 The owner authorizes sustained autonomous work, review agents, and this public
@@ -18,15 +18,17 @@ an instance shutdown deadline (see DECISIONS.md).
   exact trajectory that failed BF16. No official benchmark test outcomes read.
 - C32 completed 12 real updates; ten steady updates averaged **10.17 seconds**.
   Sampled replicas agree bitwise, actual weights change, initialized optimizer
-  fits (sampled peak 19.315 GiB). Checkpoints 3/6/12 are COMPLETE. Step 3 has a
+  fits (sampled peak 19.327 GiB). Checkpoints 3/6/12 are COMPLETE. Step 3 has a
   verified full EBS copy at `local/backups/qwen-c-fp32-001/step-0000003`.
 - Accurate CPU Float64 gradient-norm reduction passes the original device norm
   bound. However, the strict three-step CPU per-value model comparison still
   **fails on 754 / 1,720,574,976 coordinates**, including after correcting CPU
   clipping. Aggregate cosine and relative-L2 criteria pass but do not override
   that failure. A tiny identical-gradient hardware AdamW test passes. Next:
-  recover the actual first-step reduced/clipped gradient from ordinary C32
-  checkpoint moments, without adding training hooks.
+  Ordinary C32 checkpoint1 now locates the discrepancy before Adam: 689 of
+  those selected coordinates have opposite first-gradient signs (controls: 0).
+  A full-gradient FP32 comparison and independent FP64 reference are next; neither
+  changes the original failed criterion.
 - C32 fresh-process resume finished: full model, all 32 master/moment shards,
   counters and metadata pass the unchanged numerical bounds. **Exact device
   RNG fails on every rank**, each by exactly one XLA MarkStep seed transition.
@@ -60,9 +62,19 @@ an instance shutdown deadline (see DECISIONS.md).
    **229 CPU tests plus toy smoke** pass (`local/checks/tests.pYJ2nn`). A rerun
    using the integrated helper precedes new C/R qualification. No per-record
    reseeding or relaxed RNG criterion.
-4. **No other accelerator training job is active.** Cores 32–63 are free after
-   the old C baseline/resume and bounded tiny diagnostics. Prepared older-source
-   C/R launchers remain held; refresh them to the reviewed common source first.
+4. **Cores 32–63:** C32 checkpoint1 diagnostic completed and exited 0. The
+   common-source C12 baseline/fresh-resume qualification is authorized next,
+   output `local/nvme/qualification/qwen-c-fp32-final-003`, launch script
+   `local/qualification/qwen-c-fp32-final-003.launch.sh` (six-hour bound).
+   Distributed agent owns its actual PID/state receipts and comparisons.
+5. **Cores 0/1:** bounded full-cap local/secondary evaluator checks, workers
+   681582/681595 at launch, common source `3aaaf8a`, latest deadline
+   **22:58:41 UTC**. Reviewer owns them; R launch waits for all descendants to
+   release these cores. No official benchmark test outcomes are accessed.
+6. Independent CPU reader comparison to all twelve existing full-cap device
+   development notes passes, including five natural stops: max absolute logp
+   error **8.49e-5** at the unchanged .001 bound. Receipt:
+   `validation/p2_full_reader_reference_20261016.json`.
 
 ## Immediate recovery and next action
 

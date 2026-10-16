@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-16T22:25:49.949713+00:00",
+  "scope": "Independent native CPU comparison to saved actual full-cap FP32 device reader outputs; development passage only",
+  "status": "PASS",
+  "model": "Qwen/Qwen3-1.7B-Base",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "precision": "fp32",
+  "reward_horizon": 1,
+  "target_id": 576,
+  "sample_count": 12,
+  "method": "Python compact content at first actual stop; native full causal Qwen; unmasked full-vocabulary likelihood at temperature1",
+  "absolute_logp_bound": 0.001,
+  "max_absolute_logp_error": 8.487701416015625e-05,
+  "max_clean_absolute_error": 1.621246337890625e-05,
+  "content_lengths": [
+    22,
+    1,
+    1024,
+    71,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    787,
+    97,
+    1024
+  ],
+  "stopped_examples": 5,
+  "elapsed_cpu_seconds": 44.59726230399974,
+  "evidence": {
+    "criteria_sha256": "9cba47a4ddf4e145fa518627e3404ee602aec594949c1ae68a8d000f68405012",
+    "result_sha256": "17bdc9c66f6340b3e1b1e091d13aac858c751a83a9e78fa538a47c1c535a2c43",
+    "source_sha256": "03ddb9d6761ffac0ec7d706e58c7834a4f34137dd007aa67db35c0b90e1c4202",
+    "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "prefix_report_sha256": "af6673df021d9ea4b3bfb8bb8fe9699ee6bef60bc44d54e4ca436a2af497124f",
+    "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+    "trace_sha256": {
+      "0": "3e63f65e0a15da20165c24c5ce9d575f8fb75a47d773a02ab3f1c895cecad81b",
+      "1": "4616e1d3df4b7014bb061569d079d45e7d17aa86d90a43c6227142da525d3ccf",
+      "2": "e97fc191359db59e54b479b0b387acc37fe6a84e75ad53560cb99e45e8f96553"
+    }
+  },
+  "limitations": [
+    "Existing saved non-evaluation development notes, not fresh samples or actual FineMath data.",
+    "No full-model distributed update or stochastic resume evidence.",
+    "Existing accelerator reader implementation is unchanged by the subsequent normalization and RNG-order repairs. No fresh accelerator reader was executed in this CPU diagnostic."
+  ]
+}
