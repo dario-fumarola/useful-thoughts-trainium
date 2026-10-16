@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 23:28 UTC
+# Current state — 2026-10-16 23:38 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -83,10 +83,22 @@ pass from the single-backward probe. Separate sysfs memory sampling is read-only
 
 Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
 Receipts/logs: `local/qualification/qwen-r-fp32-final-003*`.
+Root owns the active EBS backup supervisor: launcher 849074, timeout/PGID 849075,
+Python 849077, tmux `dario-r-final003-backup`, same 06:51:17 UTC deadline.
+It awaits the first COMPLETE checkpoint and retains two verified EBS copies in
+`local/backups/qwen-r-fp32-final-003`; source NVMe checkpoints remain untouched.
+State: `local/qualification/qwen-r-fp32-final-003.backup-supervisor.state.json`.
+Stop this waiting supervisor if the original driver fails or stops early.
 After checkpoint 3 exists, prepare a fresh process with STOP precreated: export
 actual restored state before sampling, run exactly update 4, compare all 32×4
 stochastic tapes and full post-update checkpoint. The prepared resume is not
 launched. Require ten complete steady updates before exposure selection.
+The upper one-update R overlap smoke is prepared/reviewed, not launched:
+`local/qualification/qwen-r-fp32-upper-overlap-001/prepared.json`, SHA
+`dee151f1af85b76f86eb64ebb49c293d796463466e0c801a94e682a8db1d18f4`.
+It binds actual lower fork/checkpoint 3/STOP readiness, source/settings and fresh
+root release; separate host/Neuron ports 64251/64252, upper cores 32–63.
+Data owns lower recovery; distributed prepared upper; root coordinates overlap.
 
 **Held-seed jobs complete:** C32 update/COMPLETE and FP64 full derivative both
 exited 0; comparator exited 0/PASS. All upper-core workers and supervisors are
