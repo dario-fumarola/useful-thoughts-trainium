@@ -10,8 +10,9 @@ Mark complete only from actual artifacts. Active jobs and commands are in STATUS
 3. Resume R checkpoint3 in a fresh process for exactly update4. Require raw-byte
    exact actual restored state/RNG, exact first resumed stochastic tapes and
    original tight full-state post-update tolerances. C32 recovery already passes.
-4. Consider sequential full-node64 qualification to use the available hardware
-   better; preserve global128/objective and measure its own updates/resume/costs.
+4. Overlap the lower R resume with one bounded upper R update to qualify
+   two-R coexistence. Prefer concurrent 32-core chains C1→R1 and C2→R2;
+   each R starts from fresh B0. Avoid world64 work without a measured benefit.
 5. Freeze two-seed terminal exposure from complete-step timing, fresh-data supply
    and the prospective 14-day schedule. Start C/R from identical released weights;
    supervise finite runs and verified EBS checkpoint copies.

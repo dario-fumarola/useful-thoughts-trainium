@@ -150,3 +150,20 @@ Routine formatting changes do not need a decision entry.
   and moment rounding; frozen CPU RoPE constants are not a unique device truth.
   Same-hardware recovery and identical-gradient optimizer checks remain separate.
   Do not tune criteria after held-seed outcomes; preserve any v2 failure.
+
+## 2026-10-16 — schedule both seeds across existing partitions
+
+- Correct an earlier throughput estimate: R1 and R2 can overlap. With S updates,
+  C step cost c and R cost r, running C1→C2 beside R1 then starting R2 takes
+  about S(r+2c). Sequential full-node64 with ideal half-time steps takes S(r+c),
+  saving only Sc rather than halving the study.
+- Two independent 32-core chains, C1→R1 and C2→R2, already take about S(c+r)
+  with both chains concurrent. Each R starts from fresh released B0, never from
+  its C checkpoint. Prefer this schedule if concurrent-R isolation qualifies;
+  preserve global128/accum4, existing sampling streams and qualified topology.
+  Do not add world64 qualification solely on the faulty speedup assumption.
+- Overlap one bounded upper-partition R update with the already-required lower
+  fresh-process resume. Retain exact lower stochastic tapes/RNG and full-state
+  checks, real upper update/replica/counters, separate endpoints, and memory/cost
+  observations. Use measured coexistence costs and the existing reserve in the
+  exposure calculation. No scientific result selects this operational schedule.

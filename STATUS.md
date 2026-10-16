@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 23:09 UTC
+# Current state — 2026-10-16 23:18 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -82,10 +82,12 @@ actual restored state before sampling, run exactly update4, compare all32×4
 stochastic tapes and full post-update checkpoint. The prepared resume is not
 launched. Require ten complete steady updates before exposure selection.
 
-**Distributed agent: active held-seed validation**, upper cores32–63. C parent
-819512, timeout/PGID819509, launcher819498, tmux `dario-c-heldseed-001`.
+**Distributed agent: held-seed validation.** C32 completed its sole requested
+update, saved COMPLETE and exited0; all upper-core workers/monitor are gone.
+Checkpoint: `local/nvme/qualification/qwen-c-fp32-heldseed-001/step-0000001`.
+Peak sampled process device allocation18.455GiB, sampled errors zero.
 CPU FP64 worker819513, timeout/PGID819510, launcher819503, tmux
-`dario-f64-heldseed-001`. Both hard-deadline **2026-10-17 01:07:45 UTC** plus30s
+`dario-f64-heldseed-001`. FP64 hard-deadline **2026-10-17 01:07:45 UTC** plus30s
 grace. Exact preparation SHA `26a6081f…2313d4b6`; state/receipts/launchers under
 `local/qualification/qwen-c-heldseed-001/`. No automatic retry. Comparator will
 receive a separate bounded release after both jobs complete.
@@ -103,8 +105,10 @@ cat local/qualification/qwen-c-heldseed-001/fp64.progress.json
 ```
 
 Complete the held-seed C numerical check and distributed R update/resume/timing.
-Then consider sequential full-node64 qualification for better use of hardware,
-keeping global128 and the objective fixed. Freeze terminal exposure from measured
+Overlap the required lower R resume with one bounded upper R update to qualify
+two-R coexistence. Prefer parallel seed chains C1→R1 and C2→R2 on the existing
+32-core partitions; ideal world64 saves no study time against that schedule.
+Freeze terminal exposure from measured
 complete-step costs and fresh-data supply before any final test access. Save
 all failures, examples and outputs; no outcome-based terminal selection.
 
