@@ -1,0 +1,48 @@
+{
+  "active_compiler_pids_examined": [
+    354652,
+    354660,
+    354715,
+    355230,
+    357721,
+    357729,
+    357737,
+    357822
+  ],
+  "active_compiler_references_to_target": [],
+  "authorization": "Root explicitly requested exact orphan-lock rename after evidence review; no other cache mutation.",
+  "cache_source_sha256": "4ce263f6e2ee9655c64d21a2faf370db8276551d745569ce18b194198b864d1e",
+  "created_utc": "2026-10-16T19:36:33+00:00",
+  "followup": {
+    "compiler_parent_pid": 342172,
+    "new_compile_workdir": "/tmp/ubuntu/neuroncc_compile_workdir/7fdd09e8-41cb-4b4e-b8ce-6b5586b09b34",
+    "new_compiler_pid": 357874,
+    "new_lock_inode": 6035777,
+    "new_lock_mtime_ns": 1792179396513200682,
+    "new_lock_mtime_utc": "2026-10-16T19:36:36.513201+00:00",
+    "observed_utc": "2026-10-16T19:41:55+00:00",
+    "qualification_pass_claimed": false,
+    "status": "p1_005_reacquired_and_started_fresh_compiler_within_next_5_second_poll"
+  },
+  "lock_before": {
+    "device": 66305,
+    "inode": 6035726,
+    "mtime_ns": 1792177782605092095,
+    "mtime_utc": "2026-10-16T19:09:42.605092+00:00",
+    "path": "/home/ubuntu/dario/local/neuron_cache/neuronxcc-2.27.5334.0+f702b353/MODULE_13175424912861124051+c4b1d492/model.hlo_module.pb.lock",
+    "size_bytes": 0
+  },
+  "locking_semantics": "Exclusive-create empty file; no PID/TTL; waiter polls every 5 seconds; normal release unlinks.",
+  "missing_outputs": [
+    "model.neff",
+    "model.done"
+  ],
+  "module": "MODULE_13175424912861124051+c4b1d492",
+  "old_compile_workdir": "/tmp/ubuntu/neuroncc_compile_workdir/36865943-c420-475a-a199-f4dd628c831d",
+  "old_owner_pid": 303994,
+  "old_owner_present": false,
+  "operation": "rename_one_proven_orphan_localcache_lock",
+  "preserved_lock_inode": 6035726,
+  "preserved_lock_path": "/home/ubuntu/dario/local/neuron_cache/neuronxcc-2.27.5334.0+f702b353/MODULE_13175424912861124051+c4b1d492/model.hlo_module.pb.lock.stale-p1-004-20261016T193633Z",
+  "status": "renamed"
+}

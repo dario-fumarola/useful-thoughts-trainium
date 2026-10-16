@@ -5,37 +5,48 @@ bindings, source exposure, reward, normalization, and diagnostic accounting.
 This is source review plus the separately recorded CPU/data checks, not evidence
 that the released-model production step ran on Neuron. Checkpoint implementation
 and distributed numerical qualification are reviewed by the distributed agent.
-The implementation is being edited concurrently; resolve the findings below
-against the current file before treating this review as closed.
+The implementation was edited concurrently. The findings below are now resolved
+in the source, with the explicitly CPU-only control-flow checks described here;
+released-model accelerator qualification remains separate.
 
-## Findings requiring resolution
+## Findings resolved in source and CPU control-flow checks
 
-1. **C branch references undefined reward variables.** In `worker`, immediately
-   after the vanilla backward synchronization, the finite-reward check accesses
-   `thought` and `clean`. Neither is defined in the vanilla branch. This raises
-   `UnboundLocalError` on the first C micro-step. Move the reward check into the
-   thought branch after materializing `thought`/`clean`, before replay. Reported
-   directly to the driver owner; not edited by this reviewer.
+1. **Undefined C-branch reward variables — fixed.** The finite-reward check now
+   lives inside the thought branch after `thought`/`clean` materialization and
+   before replay. The vanilla branch only checks its own loss. The actual
+   `worker()` function completes a one-step CPU control-flow fixture without
+   calling a thought sampler/reader or accessing thought-only variables.
 
-2. **The frozen recipe is only partially enforced.** Production reads batch, cap,
+2. **Partial frozen-recipe enforcement — fixed for the supported plan.**
+   Production reads batch, cap,
    topology, paths, and terminal steps from the frozen spec. The implementation
    fixes G=4, temperature=.7, K=1, sequence normalization, LR=1e-6, betas=(.9,.95),
    weight decay=.1, clipping=1, no reader/NTP/KL auxiliary, one micro-prefix per
-   rank, and one fresh update. Those values match the current proposal. A changed
-   proposal can nevertheless hash/qualify successfully while the driver silently
-   uses these constants; arbitrary CLI seeds are also accepted. Before a scientific
-   launch, validate the supported fixed recipe and allowed seeds explicitly, or
-   read every supported setting from the frozen proposal. Reject unsupported
-   settings rather than broadening the experiment.
+   rank, and one fresh update. `validate_fixed_recipe` now rejects unsupported
+   values and undeclared seeds before the production qualification barrier.
+   Regression tests use the actual proposal and both predeclared seeds, then
+   change the algorithm, NTP auxiliary objective, temperature, loss normalization,
+   learning rate, and seed. The algorithm mutation initially exposed an omitted
+   check; the owner added it and the rejection test now passes.
 
-3. **Nonfinite gradients are detected after the optimizer has stepped.**
-   `found_inf` is initialized to zero and never updated. Finite scalar loss does
-   not prove finite backward gradients. A nonfinite backward can therefore mutate
-   parameters before the global-norm check raises. No subsequent checkpoint is
-   written, so earlier complete checkpoints remain usable. Prefer a rank-agreed
-   finite-gradient guard before the update, while retaining one reduction/clipping
-   owner. A rank-local exception before other ranks enter a collective also needs
-   a bounded failure/termination path rather than leaving peers indefinitely hung.
+3. **Pre-update finite-gradient check — added.** The driver now checks every
+   present local gradient, reduces a scalar bad-gradient flag with MAX, and raises
+   before `optimizer.step` when any rank reports a failure. This scalar flag does
+   not reduce gradients or add a second clipping owner. CPU fixtures demonstrate
+   a finite forward loss with an injected infinite backward gradient leaves
+   parameters unchanged and never calls the optimizer. An injected remote-rank
+   failure also blocks an otherwise finite local update. Separate fixtures show
+   nonfinite C loss stops before backward and nonfinite reader reward stops before
+   policy replay. These are actual driver-control-flow tests using CPU runtime
+   boundaries; they do not verify Neuron collectives or numerical behavior.
+
+All 12 tests in `tests/test_driver_recipe.py` passed in 1.58 seconds; output is in
+`local/driver_recipe_tests.fixed.log`. No driver source was edited by this
+reviewer. The subsequent full CPU suite passed 135 tests in 11.56 seconds and the
+toy smoke check; logs are in `local/checks/tests.KSKVkU/`. A rank-local failure
+partway through a micro-step still depends on the
+worker manager's bounded peer cleanup; that operational path is not exercised by
+the CPU fixtures.
 
 ## Semantics that agree with the stated experiment
 
@@ -52,9 +63,10 @@ against the current file before treating this review as closed.
 - Reader content is compacted before the close delimiter, with contiguous real
   positions. The sampled first terminator enters policy loss and is removed from
   reader content; capped samples have no invented stop.
-- The owner's concurrent changes use the existing frozen `spec_hash` directly
-  and convert loss/reward/cap diagnostics to appropriate global means. Earlier
-  snapshots of those two issues are superseded by the current implementation.
+- The existing frozen `spec_hash` is used directly. Metrics divide accumulated
+  loss by world size and per-prefix reward/cap/advantage sums by global prefix
+  batch, while actual action counts remain sums. These are source observations,
+  not claims of measured distributed production behavior.
 
 ## Diagnostic improvements
 
@@ -64,8 +76,9 @@ padded action tensor. Retain raw IDs/masks and log which terminator occurred.
 
 `source_records` and `source_tokens = records*513` correctly describe fresh
 source exposure. They are not total compute tokens: R repeats prefixes and runs
-fixed padded decode/replay work. Keep semantic sampled actions distinct from
-executed decode slots. Per-step timing covers the update; separately record
+fixed padded decode/replay work. The source now records executed padded decode
+slots separately from semantic sampled actions. Per-step timing covers the
+update; separately record
 startup/compilation, checkpoint/evaluation, and final job wall time for resource
 comparisons. Include an explicit terminal-versus-budget-stopped run status.
 
