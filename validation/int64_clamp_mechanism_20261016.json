@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-16T22:35:08.888537+00:00",
+  "scope": "Actual installed-device integer clamp conversion controls; no model/optimizer execution",
+  "status": "MECHANISM_SUPPORTED_BY_CONTROLLED_FLAG_AND_BOUND_VARIANTS",
+  "logical_core": 3,
+  "inputs": [
+    0,
+    1,
+    8,
+    1024
+  ],
+  "observations": {
+    "default_compiler": {
+      "minimum_only": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "raw": [
+        0,
+        1,
+        8,
+        1024
+      ],
+      "upper_1024": [
+        1,
+        1,
+        8,
+        1024
+      ],
+      "upper_i32max": [
+        1,
+        1,
+        8,
+        1024
+      ],
+      "upper_i32max_plus1": [
+        -2147483648,
+        -2147483648,
+        -2147483648,
+        -2147483648
+      ],
+      "upper_i64max": [
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "native_int64_enabled": {
+      "minimum_only": [
+        1,
+        1,
+        8,
+        1024
+      ],
+      "raw": [
+        0,
+        1,
+        8,
+        1024
+      ],
+      "upper_1024": [
+        1,
+        1,
+        8,
+        1024
+      ],
+      "upper_i32max": [
+        1,
+        1,
+        8,
+        1024
+      ],
+      "upper_i32max_plus1": [
+        1,
+        1,
+        8,
+        1024
+      ],
+      "upper_i64max": [
+        1,
+        1,
+        8,
+        1024
+      ]
+    },
+    "native_all_equal_cpu": true
+  },
+  "explanation": "The default integer conversion narrows the clamp upper bound: INT64_MAX becomes -1, while2^31 becomes -2^31. Explicit upper bounds within int32 and opt-in native int64 both restore expected values. This explains the observed min-only integer normalization defect.",
+  "production_repair": "Retain exactly representable float32 mask counting through1024; no production compiler flag or scientific objective change.",
+  "compiler_version": "2.27.5334.0+f702b353",
+  "flags": {
+    "default": "--model-type=transformer --cache_dir=/home/ubuntu/dario/local/neuron_cache",
+    "diagnostic_native": "--model-type=transformer --cache_dir=/home/ubuntu/dario/local/neuron_cache --native-int64=enabled"
+  },
+  "evidence": {
+    "preparation_sha256": "4d19129e048d7d16f661c6f926eb4a22ca171a5bcfc8c8b40b5abe4003d9b05e",
+    "probe_sha256": "ba226f5aec2e57ab1dca7a00688f2cbac5c97e1a2977682ea31ac7157079f0ff",
+    "default_result_sha256": "32adcb8ee0f9a99f0ce8d12ee01eeecf1b772f642b059b333ba06e89ce797a2e",
+    "native_result_sha256": "9be8f6a1c0e15294ea3d06ad588ffb28c8c022fd2dae570371984e131db6e5b9",
+    "installed_compiler_frontend_sha256": "8a32d3be2146d8913f7ae45672c82e6035964413efb165dd1936174b8e5a09fe"
+  },
+  "primary_reference": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-features/data-types.html",
+  "source_note": "Official documentation describes native int64 opt-in on Trn2. Installed compiler help independently states the default is int32 downcast; the actual variants above establish behavior on this node.",
+  "limitations": [
+    "Small integer-value diagnostic, not a full-model gradient pass.",
+    "The separate production repaired full-model backward is still running.",
+    "No installed file was modified and native-int64 was enabled only in the isolated diagnostic process."
+  ]
+}

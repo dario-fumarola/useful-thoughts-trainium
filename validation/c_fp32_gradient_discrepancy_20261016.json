@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-16T22:33:13.878805+00:00",
+  "scope": "Common-initial-state first-gradient diagnosis; existing CPU parity failure remains open; no new acceptance bound",
+  "source": {
+    "commit": "e135e8cbdac73df431f645775786d0695658e3a5",
+    "active_sha256": "ac5e7d3eb198b66513592b0b468b86f11f5bfc1473db48f7af3a2e904a34b097"
+  },
+  "recipe": {
+    "model": "Released Qwen3-1.7B-Base with actual embedding/head tie",
+    "precision": "FP32",
+    "global_batch": 128,
+    "world_size": 32,
+    "accumulation": 4,
+    "seed": 1234,
+    "ordered_train_record_positions": "0:128",
+    "order_sha256": "997307b43cb509f386ebd14d0428a675891afe41e1bdbd5514c3a7beb5765e5b",
+    "target": "Raw prefix512 shifted left plus exactly one true future token",
+    "gradient_reduction": "Mean owned only by installed ZeRO optimizer; clip norm1"
+  },
+  "device_first_step": {
+    "loss": 1.3479762077331543,
+    "gradient_norm": 1.6284207105636597,
+    "seconds_including_fresh_process_warm_executable_loads": 242.2619316670025,
+    "loss_and_norm_equal_to_prior_FE_first_step": true,
+    "full_checkpoint_complete": true,
+    "driver_exit_code": 0
+  },
+  "derivation": {
+    "clipped_gradient": "Stored first Adam exp_avg divided by0.1",
+    "raw_gradient_proxy": "FP32 stored first exp_avg / (0.1 * FP32 actual clip coefficient), evaluated in float64",
+    "device_clip_coefficient_fp32": 0.6140915751457214,
+    "limitation": "Moment inversion and clip unscaling include FP32 rounding; this is an aggregate-gradient proxy from the actual ordinary update path."
+  },
+  "full_unique_gradient_vector": {
+    "values": 1720574976,
+    "cpu_norm": 1.6283468318635732,
+    "device_estimated_norm": 1.6284218223559943,
+    "cpu_gradient_rms": 3.9256367658152036e-05,
+    "device_estimated_gradient_rms": 3.925817553733585e-05,
+    "error_rms": 1.0625380126953923e-08,
+    "absolute_error_norm": 0.0004407387921811118,
+    "relative_l2_error": 0.0002706664105930707,
+    "cosine": 0.999999964431931,
+    "max_abs_error": 9.41205706850301e-05,
+    "opposite_nonzero_gradient_signs": 28668
+  },
+  "selected_coordinate_results": {
+    "selection": "754 prior CPU3 pointwise failures plus754 deterministic same-parameter initial-weight-matched controls, fixed before this first-step diagnostic",
+    "summary": {
+      "failed_coordinate": {
+        "count": 754,
+        "opposite_gradient_signs": 689,
+        "clipped_gradient_absolute_error": {
+          "0.0": 4.999250596826599e-09,
+          "0.5": 1.7855243995140713e-08,
+          "0.9": 6.967795449508431e-08,
+          "0.99": 3.411277000076049e-07,
+          "1.0": 1.327844735499184e-06
+        },
+        "clipped_gradient_normalized_error": {
+          "0.0": 0.6661695748011015,
+          "0.5": 1.3173278928355887,
+          "0.9": 1.7907384625265395,
+          "0.99": 1.9692500749664659,
+          "1.0": 1.9966746402292634
+        },
+        "first_step_model_error": {
+          "0.0": 6.332993507385254e-08,
+          "0.5": 7.972121238708496e-07,
+          "0.9": 1.4094635844230653e-06,
+          "0.99": 1.8047587946057322e-06,
+          "1.0": 1.9706785678863525e-06
+        },
+        "first_step_existing_pointwise_violations": 744
+      },
+      "matched_nonfailed_control": {
+        "count": 754,
+        "opposite_gradient_signs": 0,
+        "clipped_gradient_absolute_error": {
+          "0.0": 0.0,
+          "0.5": 1.4197665265669457e-10,
+          "0.9": 1.2346504263405227e-09,
+          "0.99": 7.802919981259073e-09,
+          "1.0": 3.4529512049630284e-07
+        },
+        "clipped_gradient_normalized_error": {
+          "0.0": 0.0,
+          "0.5": 5.76126233603475e-05,
+          "0.9": 0.0005968483472382931,
+          "0.99": 0.006438578656932623,
+          "1.0": 0.10374271887712949
+        },
+        "first_step_model_error": {
+          "0.0": 0.0,
+          "0.5": 0.0,
+          "0.9": 0.0,
+          "0.99": 5.611218512058449e-10,
+          "1.0": 2.7474015951156616e-08
+        },
+        "first_step_existing_pointwise_violations": 0
+      }
+    },
+    "error_to_parameter_cpu_gradient_rms": {
+      "failed_coordinate": {
+        "count": 754,
+        "error_to_parameter_gradient_rms_quantiles": {
+          "0.0": 3.473207222788281e-05,
+          "0.5": 0.0015315577502131544,
+          "0.9": 0.005817632106040394,
+          "0.99": 0.025406734120361537,
+          "1.0": 0.15911349921159362
+        }
+      },
+      "matched_nonfailed_control": {
+        "count": 754,
+        "error_to_parameter_gradient_rms_quantiles": {
+          "0.0": 9.233287304931436e-13,
+          "0.5": 1.3045547497328013e-05,
+          "0.9": 0.00011280578760680988,
+          "0.99": 0.0005904342192089101,
+          "1.0": 0.024321068683154874
+        }
+      }
+    },
+    "selection_limit": "These are selected coordinates, not an unbiased estimate of global sign-error prevalence; controls match initial parameter magnitude, not gradient magnitude."
+  },
+  "worst_prior_parameter_failure": {
+    "parameter": "model.layers.27.mlp.up_proj.weight",
+    "flat_index": 1155497,
+    "initial_weight": 0.01336669921875,
+    "cpu_raw_gradient": -1.5007535694167018e-06,
+    "device_raw_gradient_proxy": 6.615374951298413e-07,
+    "cpu_clipped_gradient": -9.216001330969448e-07,
+    "device_clipped_gradient_proxy": 4.0624460240223925e-07,
+    "cpu_clipped_magnitude_to_Adam_epsilon": 92.16001330969448,
+    "first_step_weight_abs_error": 1.9650906324386597e-06
+  },
+  "interpretation": {
+    "established": [
+      "The actual aggregate gradient discrepancy is present before the Adam transformation.",
+      "Identical-gradient tiny Adam arithmetic passed its separately declared strict bound.",
+      "Global gradient vectors agree closely, while selected coordinates can differ in sign and reach15.9% of their parameter gradient RMS.",
+      "The worst prior parameter error is not explained by saying all affected gradients are smaller than Adam epsilon."
+    ],
+    "unresolved_hypotheses": [
+      "Local FP32 kernel, nonlinear-function or normalization differences.",
+      "Different accumulation and distributed reduction order.",
+      "Cancellation in individual gradient coordinates can amplify small numerical differences."
+    ],
+    "higher_precision_audit": "A separately bound CPU diagnostic is being prepared; no outcome asserted here.",
+    "existing_CPU3_pointwise_status": "FAIL:754 of1720574976 unique parameter entries violate unchanged5e-7 absolute+2e-6 relative bound.",
+    "qualification_scope": "Common-source full-model C resume is being checked independently. Neither this diagnosis nor aggregate agreement supplies an overall CPU parity pass."
+  },
+  "artifact_sha256": {
+    "selected_step1": "927446c5e0b36da73eb5b9f9815829613e2f7d9b4434294827a927b0c4e9effb",
+    "full_gradient_vector": "0b986f7928864ccfde870c84232ba8316ed235321c33cf0b19423553b5e875a0",
+    "selected_worker": "e47f383c69685e0652059964cc1ec63a5f175d9cd1ef22374e3f4e3cc5e8770f",
+    "full_vector_worker": "f06c209feacd72d560d902fa29c4bd006db628b2eea0b64f2b5d9059252fb9b2"
+  }
+}

@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 22:31 UTC
+# Current state — 2026-10-16 22:36 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 The owner authorizes sustained autonomous work, review agents, and this public
@@ -27,8 +27,9 @@ an instance shutdown deadline (see DECISIONS.md).
   that failure. A tiny identical-gradient hardware AdamW test passes. Next:
   Ordinary C32 checkpoint1 now locates the discrepancy before Adam: 689 of
   those selected coordinates have opposite first-gradient signs (controls: 0).
-  A full-gradient FP32 comparison and independent FP64 reference are next; neither
-  changes the original failed criterion.
+  The full first-gradient vectors have cosine .9999999644 and relative L2
+  error .0002707; selected errors remain unresolved. An independent FP64
+  arithmetic reference is being prepared. No failed criterion has been changed.
 - C32 fresh-process resume finished: full model, all 32 master/moment shards,
   counters and metadata pass the unchanged numerical bounds. **Exact device
   RNG fails on every rank**, each by exactly one XLA MarkStep seed transition.
@@ -53,20 +54,27 @@ an instance shutdown deadline (see DECISIONS.md).
    The repaired loss matches CPU within **4.66e-10**; backward is cold-compiling.
    Hard deadline **23:44:04 UTC**, plus 30-second termination grace. Data agent
    monitors this job. R32 remains off until the actual gradient comparison passes.
+   A separate scalar control now confirms the integer upper-bound conversion:
+   INT64_MAX narrows to -1 by default; bounded int32 maxima and isolated native
+   int64 execution give correct values. See
+   `validation/int64_clamp_mechanism_20261016.json`. Diagnostic core 3 is released;
+   production compiler flags are unchanged.
 3. **Checkpoint RNG:** installed Neuron rendezvous/export does not advance the
    measured seed; an explicit sync does. The old resume restores RNG before
    that sync, causing the observed extra transition. A bounded hardware tiny
    test reproduces old-order failure and fixed-order exact next-two-draw,
    CPU/device RNG, model and optimizer equality. Root has integrated restoration
-   after the load sync and a checkpoint observation fence. Source review and
-   **229 CPU tests plus toy smoke** pass (`local/checks/tests.pYJ2nn`). A rerun
-   using the integrated helper precedes new C/R qualification. No per-record
-   reseeding or relaxed RNG criterion.
+   after the load sync and a checkpoint observation fence. The integrated helper
+   passes the actual tiny hardware test, including both next random tensors and
+   optimizer state bitwise. Source review and **233 CPU tests plus toy smoke**
+   pass (`local/checks/tests.Yr1uiR`). No per-record reseeding or relaxed criterion.
 4. **Cores 32–63:** C32 checkpoint1 diagnostic completed and exited 0. The
-   common-source C12 baseline/fresh-resume qualification is authorized next,
-   output `local/nvme/qualification/qwen-c-fp32-final-003`, launch script
+   common-source C12 baseline is active: driver **685474**, launcher 685469,
+   tmux `dario-qwen-c-fp32-final-003`. Source `3aaaf8a`, active-code hash
+   `244e2f13…31287ff7`; exact PIDs in the adjacent `.state.json`. Output:
+   `local/nvme/qualification/qwen-c-fp32-final-003`, launch script
    `local/qualification/qwen-c-fp32-final-003.launch.sh` (six-hour bound).
-   Distributed agent owns its actual PID/state receipts and comparisons.
+   Distributed agent owns baseline and the subsequent fresh-resume comparison.
 5. **Cores 0/1:** bounded full-cap local/secondary evaluator checks, workers
    681582/681595 at launch, common source `3aaaf8a`, latest deadline
    **22:58:41 UTC**. Reviewer owns them; R launch waits for all descendants to
