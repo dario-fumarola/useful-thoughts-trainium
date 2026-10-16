@@ -24,6 +24,7 @@ def main():
     p.add_argument('--precision', choices=['fp32', 'bf16'], default='bf16')
     p.add_argument('--repeat', type=int, default=2)
     p.add_argument('--backward', action='store_true')
+    p.add_argument('--fp32-head', action='store_true')
     a = p.parse_args()
     if not 1 <= a.cap <= 1024 or not 1 <= a.repeat <= 10:
         p.error('Bounded cap 1..1024 and repeat 1..10 required')
@@ -62,7 +63,9 @@ def main():
         amp = (nullcontext if a.precision == 'fp32'
                else lambda: torch_xla.amp.autocast(device, dtype=torch.bfloat16))
         backend = NeuronCausalBackend(model, amp=amp, sync=lambda: torch_xla.sync(),
-                                     banned_ids=banned)
+                                     banned_ids=banned,
+                                     head_amp=nullcontext if a.fp32_head else None)
+        report['fp32_head'] = a.fp32_head
         prefix, future = prefix.to(device), future.to(device)
         torch_xla.sync(wait=True)
         runs = []
@@ -89,6 +92,7 @@ def main():
                             'replay_logps': replay.cpu(), 'thought_log_evidence': thought,
                             'clean_log_evidence': clean}, a.out/f'trace-{run}.pt')
             row = dict(run=run, sample_seconds=sampled_seconds,
+                       padded_decode_iterations=rollout.decode_iterations,
                        complete_trace_seconds=time.monotonic()-started,
                        max_replay_logp_error=maximum, sampled_actions=mask.sum(-1).tolist(),
                        thought_log_evidence=thought.tolist(), clean_log_evidence=clean.tolist(),

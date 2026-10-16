@@ -88,3 +88,23 @@ def test_integer_fingerprint_large_embedding_bounds():
     assert indices[-1] == n-1 and all(0 <= i < n for i in indices)
     m = model()
     assert sampled_fingerprint(m) == sampled_fingerprint(m)
+
+
+def test_stopping_early_preserves_fixed_padded_shape_and_first_stop():
+    m = model()
+    prefix = torch.tensor([[10,11,12]])
+    with torch.no_grad():
+        first = int(m(torch.tensor([[10,11,12,2]])).logits[0,-1].argmax())
+    fmt = Format((2,), (3,), first, 0)
+    calls = []
+    handle = m.model.register_forward_hook(lambda *args: calls.append(1))
+    backend = NeuronCausalBackend(m, stop_check_interval=1)
+    rollout = backend.sample(prefix, fmt=fmt, group_size=4, max_actions=17,
+                             temperature=.7, policy_version=0, greedy=True)
+    handle.remove()
+    assert rollout.decode_iterations == 1 and len(calls) == 1
+    assert rollout.actions.shape == (1,4,17)
+    assert rollout.actions[0,:,0].eq(first).all()
+    assert rollout.actions[0,:,1:].eq(0).all()
+    assert rollout.action_mask.sum() == 4
+    assert rollout.behavior_logps[0,:,1:].eq(0).all()

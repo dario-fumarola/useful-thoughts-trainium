@@ -112,13 +112,18 @@ def pack_reader(prefix_ids, actions, fmt: Format, future_ids):
 class NeuronCausalBackend:
     def __init__(self, model, *, amp: Callable = nullcontext,
                  sync: Callable = lambda: None, head_chunk: int = 32,
-                 checkpoint_trunk: bool = True, banned_ids: tuple[int, ...] = ()):
+                 checkpoint_trunk: bool = True, banned_ids: tuple[int, ...] = (),
+                 stop_check_interval: int = 32, head_amp: Callable | None = None):
         self.model = model
         self.amp = amp
+        self.head_amp = amp if head_amp is None else head_amp
         self.sync = sync
         self.head_chunk = head_chunk
         self.checkpoint_trunk = checkpoint_trunk
         self.banned_ids = banned_ids
+        if stop_check_interval < 1:
+            raise ValueError('Positive stop-check interval required')
+        self.stop_check_interval = stop_check_interval
         if model.config.model_type != 'qwen3' or any(t != 'full_attention' for t in model.config.layer_types):
             raise ValueError('This adapter supports ordinary causal Qwen3 only')
         self.model.eval()  # Deterministic dropout, without disabling gradients.
@@ -164,6 +169,7 @@ class NeuronCausalBackend:
             h = self.model.model(input_ids=tokens, position_ids=positions[None],
                 attention_mask={'full_attention': causal_mask(positions, cache.holder['width'])},
                 past_key_values=cache, use_cache=True).last_hidden_state
+        with self.head_amp():
             return self.model.lm_head(h[:, -1]).float()
 
     @torch.no_grad()
@@ -178,8 +184,11 @@ class NeuronCausalBackend:
         logits = self._next(prompt, torch.arange(p, device=self.device), cache)
         alive = torch.ones(b * group_size, dtype=torch.bool, device=self.device)
         pos = torch.tensor([p], device=self.device, dtype=torch.long)
-        # Store tiny outputs only. All 150k-vocabulary operations stay on device.
-        tokens, logps = [], []
+        # Static output buffers avoid variable assembly graphs when all samples
+        # stop before the cap. Only an alive scalar crosses to host per chunk.
+        actions = torch.full((b * group_size, max_actions), fmt.pad_id,
+                             device=self.device, dtype=torch.long)
+        behavior = torch.zeros((b * group_size, max_actions), device=self.device)
         for i in range(max_actions):
             if greedy:
                 lp = policy_log_probs(logits, temperature, self.banned_ids)
@@ -189,18 +198,21 @@ class NeuronCausalBackend:
                 token, selected = sample_actions(logits, temperature, self.banned_ids)
             token = torch.where(alive, token, fmt.pad_id)
             selected = torch.where(alive, selected, 0.0)
-            tokens.append(token)
-            logps.append(selected)
+            slot = pos - p
+            actions.index_copy_(1, slot, token[:, None])
+            behavior.index_copy_(1, slot, selected[:, None])
             for stop in (fmt.stop_id, *fmt.additional_stop_ids):
                 alive = alive & token.ne(stop)
             self.sync()
+            if (i + 1) % self.stop_check_interval == 0 and not bool(alive.any().cpu()):
+                break
             if i + 1 < max_actions:
                 logits = self._next(token[:, None], pos, cache)
                 pos = pos + 1
-        actions = torch.stack(tokens, -1).reshape(b, group_size, max_actions)
-        behavior = torch.stack(logps, -1).reshape_as(actions)
+        actions = actions.reshape(b, group_size, max_actions)
+        behavior = behavior.reshape_as(actions)
         return Rollouts(actions, action_mask(actions, fmt.stop_id, fmt.additional_stop_ids),
-                        behavior, policy_version)
+                        behavior, policy_version, i + 1)
 
     @torch.no_grad()
     def score(self, prefix_ids, future_ids, rollout, *, fmt: Format, horizon: int):
@@ -210,7 +222,7 @@ class NeuronCausalBackend:
                                       fmt, future_ids[:, :horizon].to(self.device))
         hidden = self.hidden(x)
         h = hidden.gather(1, positions[:, :, None].expand(-1, -1, hidden.shape[-1]))
-        with self.amp():
+        with self.head_amp():
             logits = self.model.lm_head(h).float()
         targets = future_ids[:, :horizon].to(self.device).repeat_interleave(rollout.actions.shape[1], 0)
         ll = logits.log_softmax(-1).gather(-1, targets[:, :, None])[:, :, 0].sum(-1)
@@ -220,7 +232,7 @@ class NeuronCausalBackend:
     def clean_score(self, prefix_ids, future_ids, horizon=1):
         seq = torch.cat((prefix_ids.to(self.device), future_ids[:, :horizon].to(self.device)), -1)
         h = self.hidden(seq)[:, prefix_ids.shape[-1] - 1:-1]
-        with self.amp():
+        with self.head_amp():
             logits = self.model.lm_head(h).float()
         return logits.log_softmax(-1).gather(-1, future_ids[:, :horizon, None].to(self.device))[:, :, 0].sum(-1)
 
@@ -233,7 +245,7 @@ class NeuronCausalBackend:
         # Use replay_one_loss for bounded-memory backward. This method is for
         # short trace qualification where all differentiable action logps help.
         for start in range(0, cap, self.head_chunk):
-            with self.amp():
+            with self.head_amp():
                 logits = self.model.lm_head(hidden[:, start:start+self.head_chunk])
             lp = policy_log_probs(logits, temperature, self.banned_ids)
             actions = rollout.actions.reshape(b*g, cap)[:, start:start+self.head_chunk]
@@ -248,7 +260,7 @@ class NeuronCausalBackend:
         x = torch.cat((prompt, actions[:, :-1]), -1)
         hidden = self.hidden(x)[:, prompt.shape[-1] - 1:]
         def part(h, y, m):
-            with self.amp():
+            with self.head_amp():
                 logits = self.model.lm_head(h)
             lp = policy_log_probs(logits, temperature, self.banned_ids)
             return (lp.gather(-1, y[:, :, None])[:, :, 0] * m).sum()
@@ -266,7 +278,7 @@ class NeuronCausalBackend:
         hidden = self.hidden(x[:, :-1])
         labels = x[:, 1:]
         def part(h, y):
-            with self.amp():
+            with self.head_amp():
                 logits = self.model.lm_head(h).float()
             return torch.nn.functional.cross_entropy(logits.reshape(-1, logits.shape[-1]),
                                                       y.reshape(-1), reduction='sum')

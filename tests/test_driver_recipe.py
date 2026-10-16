@@ -144,6 +144,7 @@ def cpu_worker_fixture(tmp_path, monkeypatch, *, condition="finite", arm="vanill
         return value
 
     xm.all_reduce = reduce
+    xm.all_gather = lambda value: value
     runtime = module("torch_xla.runtime")
     runtime.global_ordinal, runtime.world_size = lambda: 0, lambda: 1
     module("torch_xla.distributed")

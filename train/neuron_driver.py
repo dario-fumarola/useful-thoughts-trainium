@@ -32,7 +32,8 @@ from train.neuron_backend import NeuronCausalBackend
 def validate_fixed_recipe(proposal, seed):
     """Fail rather than silently ignore a changed experiment's settings."""
     thought, opt = proposal['thought_arm'], proposal['optimization']
-    expected_thought = dict(group_size=4, max_thought_tokens=1024,
+    expected_thought = dict(algorithm='one_fresh_signed_group_relative_policy_update',
+        group_size=4, max_thought_tokens=1024,
         reward_horizon=1, temperature=.7, normalization='sequence',
         group_std_normalization=False, negative_advantage_scaling=1.,
         best_of_selection_for_training=False, reader_gradient=False,
@@ -317,7 +318,7 @@ def worker(_index, a):
         optimizer.zero_grad(set_to_none=True)
         before = parameter_sample()
         local = dict(loss=0., clean=0., thought=0., gain=0., actions=0., capped=0.,
-                     abs_advantage=0., mean_signed_length=0.)
+                     abs_advantage=0., mean_signed_length=0., padded_decode_slots=0.)
         for micro, index in enumerate(distributed_batch_indices(step, rank, world, accumulation)):
             record = records[order[index]]
             prefix = torch.tensor([record.prefix], device=device)
@@ -350,6 +351,7 @@ def worker(_index, a):
                     torch_xla.sync(wait=True)
                     local['loss'] += float(loss.detach().cpu())
                 lengths = rollout.action_mask.sum(-1)
+                local['padded_decode_slots'] += 4 * rollout.decode_iterations
                 stops = rollout.actions.eq(fmt.stop_id)
                 for stop in fmt.additional_stop_ids:
                     stops = stops | rollout.actions.eq(stop)
@@ -360,14 +362,19 @@ def worker(_index, a):
                     ('mean_signed_length',(advantage*lengths).mean())]:
                     local[key] += float(value.cpu())
                 if rank == 0 and micro == 0:
-                    sample = dict(step=step+1, record_id=record.id,
+                    host_actions = rollout.actions.cpu()
+                    host_mask = rollout.action_mask.cpu()
+                    sample = dict(step=step+1, record_id=record.id, split=record.split,
+                        stream='training_diagnostic', ordered_record_index=index,
+                        policy_version=step, temperature=.7,
+                        decode_iterations=rollout.decode_iterations,
                         prefix=tok.decode(record.prefix), future=tok.decode(record.future[:1]),
-                        actions=rollout.actions.cpu().tolist(),
-                        action_mask=rollout.action_mask.cpu().tolist(),
-                        text=[tok.decode(row.tolist(), skip_special_tokens=False) for row in rollout.actions[0].cpu()],
+                        actions=host_actions.tolist(), action_mask=host_mask.tolist(),
+                        text=[tok.decode(host_actions[0,g][host_mask[0,g]].tolist(),
+                                         skip_special_tokens=False) for g in range(4)],
                         clean=clean.cpu().tolist(), thought=thought.cpu().tolist(),
                         advantages=advantage.cpu().tolist())
-                    atomic_json(a.output/f'dev-trace-{step+1:07d}.json',sample)
+                    atomic_json(a.output/f'train-trace-{step+1:07d}.json',sample)
         # This is the single reduction AND global clipping owner.
         finite = torch.stack([torch.isfinite(p.grad).all() for p in model.parameters()
                               if p.grad is not None]).all()
@@ -380,10 +387,14 @@ def worker(_index, a):
         if not np.isfinite(norm):
             raise RuntimeError('Nonfinite reduced gradient; no scientific continuation')
         after = parameter_sample()
+        replicas = xm.all_gather(after.to(device)).reshape(world, -1).cpu()
+        if not torch.equal(replicas, replicas[0:1].expand_as(replicas)):
+            raise RuntimeError('Rank replicas disagree on fixed parameter sample')
         delta = after-before
         sampled_update = dict(sampled_elements=delta.numel(),
             sampled_update_l2=float(delta.norm()),
-            sampled_changed_fraction=float(delta.ne(0).float().mean()))
+            sampled_changed_fraction=float(delta.ne(0).float().mean()),
+            sampled_replicas_bitwise_equal=True)
         if not bool(torch.isfinite(after).all()) or not bool(delta.ne(0).any()):
             raise RuntimeError('FP32 parameters nonfinite or no sampled values changed')
         # Metrics only: this does not touch gradients or double-reduce them.

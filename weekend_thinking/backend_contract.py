@@ -12,6 +12,7 @@ class Rollouts:
     action_mask: torch.Tensor      # bool [B,G,L], no post-stop padding
     behavior_logps: torch.Tensor   # [B,G,L], transformed sampling distribution
     policy_version: int            # optimizer step before sampling
+    decode_iterations: int | None = None  # Actual padded decode work, not semantic tokens
 
 
 class CausalBackend(Protocol):
