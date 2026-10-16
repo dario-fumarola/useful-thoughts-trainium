@@ -1,0 +1,95 @@
+{
+  "assessment": "Strong evidence these were unused disposable instance-store scratch devices before root preparation; entropy alone did not establish recognizable user data.",
+  "cloud_init": {
+    "current_log_storage_operations": "root_EBS_resize_only_no_instance_store_format_or_RAID",
+    "disk_setup": "explicitly_skipped_no_applicable_config",
+    "ephemeral0": "no_default_named_mount",
+    "fstab_modified": false,
+    "mounts_configuration": [],
+    "per_boot_scripts": 0,
+    "per_instance_scripts": 0,
+    "user_data_bytes": 0
+  },
+  "current_boot_started_utc": "2026-10-16T15:41:47Z",
+  "device_writes_performed_by_this_agent": false,
+  "instance_identity": {
+    "imageId": "ami-0222021b369f03219",
+    "instanceType": "trn2.48xlarge",
+    "pendingTime": "2026-10-16T15:39:03Z"
+  },
+  "later_root_action": {
+    "completed_utc": "2026-10-16T20:27:50Z",
+    "device": "/dev/nvme0n1",
+    "note": "Root separately prepared this one device after receiving the pre-format evidence. This read-only agent did not format or mount any device.",
+    "receipt_sha256": "003d9c584125e386e477180a1fa89ddb5dc9f6ea148bf53ec77492d02bb5c5bb",
+    "started_utc": "2026-10-16T20:27:39Z"
+  },
+  "limits": [
+    "AWS source inspected does not promise zero bytes from every unallocated NVMe read.",
+    "Current-kernel zero writes supports first-boot nonuse; it is not an exhaustive forensic proof of every historical physical block.",
+    "No raw blocks were read or printed in this followup; entropy observations were supplied by root."
+  ],
+  "observation_time_precision": "Exact counter-read timestamp was not captured; all four zero-write observations were reported to root before its20:27:39Z preparation began.",
+  "observed_before_utc": "2026-10-16T20:27:39Z",
+  "older_journal_boots_utc": [
+    "2026-08-17",
+    "2026-08-18"
+  ],
+  "other_pre_format_checks": {
+    "fstab": "root_and_boot_EBS_only",
+    "partition_filesystem_mounts": "none_on_all_four_instance_store_devices",
+    "proc_mdstat": "no_arrays",
+    "shell_history_storage_commands": 0
+  },
+  "post_format_counters_not_used": true,
+  "pre_format_kernel_counters": {
+    "nvme0n1": {
+      "discard_ios": 0,
+      "discard_zeroes_data": "0",
+      "model": "Amazon EC2 NVMe Instance Storage",
+      "sectors_discarded": 0,
+      "sectors_written": 0,
+      "write_ios": 0
+    },
+    "nvme2n1": {
+      "discard_ios": 0,
+      "discard_zeroes_data": "0",
+      "model": "Amazon EC2 NVMe Instance Storage",
+      "sectors_discarded": 0,
+      "sectors_written": 0,
+      "write_ios": 0
+    },
+    "nvme3n1": {
+      "discard_ios": 0,
+      "discard_zeroes_data": "0",
+      "model": "Amazon EC2 NVMe Instance Storage",
+      "sectors_discarded": 0,
+      "sectors_written": 0,
+      "write_ios": 0
+    },
+    "nvme4n1": {
+      "discard_ios": 0,
+      "discard_zeroes_data": "0",
+      "model": "Amazon EC2 NVMe Instance Storage",
+      "sectors_discarded": 0,
+      "sectors_written": 0,
+      "write_ios": 0
+    }
+  },
+  "primary_sources": [
+    {
+      "supports": "Trn2 has four1900GB NVMe instance-store drives with TRIM support.",
+      "url": "https://docs.aws.amazon.com/ec2/latest/instancetypes/ac.html"
+    },
+    {
+      "supports": "TRIM-supported instance-store volumes are trimmed before allocation and initially unformatted; NVMe encryption uses unique hardware-generated keys.",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html"
+    },
+    {
+      "supports": "NVMe instance-store uses XTS-AES-256 hardware encryption with lifecycle key destruction. A separate EBS statement about pseudorandom empty blocks is not an NVMe zero-read guarantee.",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-protection.html"
+    }
+  ],
+  "receipt_written_utc": "2026-10-16T20:29:32+00:00",
+  "scope": "read_only_instance_store_provenance_collected_before_format"
+}
