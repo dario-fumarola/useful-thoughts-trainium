@@ -1,0 +1,203 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-16T22:22:14.096685+00:00",
+  "scope": "Hardware and CPU qualification only; no scientific result or overall production qualification",
+  "source": {
+    "commit": "fe667bfced1562023c361706aba98feba26d86af",
+    "sha256": "88305fa181ef22bf21e9eb698e269fd299353ce67702fadd8d46369da48427a4"
+  },
+  "model": "Released Qwen3-1.7B-Base weights; embedding/head tied; FP32 throughout.",
+  "topology": {
+    "world_size": 32,
+    "logical_cores": "32-63",
+    "global_batch": 128,
+    "accumulation": 4,
+    "seed": 1234
+  },
+  "baseline": {
+    "completed_updates": 12,
+    "steady_steps": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "steady_seconds": [
+      10.36514771200018,
+      10.257267567998497,
+      10.103609929999948,
+      10.177970692999224,
+      10.137753777999023,
+      10.102894846997515,
+      10.121113010001864,
+      10.174647837997327,
+      10.127633198000694,
+      10.160038910998992
+    ],
+    "steady_mean_seconds": 10.172807748499327,
+    "completed_checkpoint_steps": [
+      3,
+      6,
+      12
+    ],
+    "checkpoint_payload_gib": 25.65099,
+    "checkpoint_postmetric_seconds": {
+      "12": 40.0,
+      "3": 95.0,
+      "6": 40.0
+    },
+    "step3_distinct_filesystem_backup_verified": true
+  },
+  "memory": {
+    "baseline": {
+      "target_worker_count": 32,
+      "observed_workers": 32,
+      "samples": 816,
+      "max_worker_sampled_device_bytes": 20752157953,
+      "max_worker_sampled_device_gib": 19.32695317361504,
+      "min_worker_sampled_peak_gib": 18.407734581269324,
+      "error_counter_maxima": {
+        "numerical": 0,
+        "transient": 0,
+        "model": 0,
+        "runtime": 0,
+        "hardware": 0
+      },
+      "malformed_records": 0
+    },
+    "resume": {
+      "target_worker_count": 32,
+      "observed_workers": 32,
+      "samples": 323,
+      "max_worker_sampled_device_bytes": 21118350661,
+      "max_worker_sampled_device_gib": 19.667996709235013,
+      "min_worker_sampled_peak_gib": 18.414188456721604,
+      "error_counter_maxima": {
+        "numerical": 0,
+        "transient": 0,
+        "model": 0,
+        "runtime": 0,
+        "hardware": 0
+      },
+      "malformed_records": 0
+    }
+  },
+  "memory_limit": "Five-second per-worker observations can miss shorter peaks.",
+  "cpu_comparison": {
+    "overall_status": "FAIL",
+    "losses_and_corrected_float64_gradient_norms_pass": true,
+    "pointwise_violations": 754,
+    "unique_parameter_values": 1720574976,
+    "max_abs_parameter_error": 2.0014122128486633e-06,
+    "pointwise_bound": {
+      "atol": 5e-07,
+      "rtol": 2e-06
+    },
+    "aggregate_update_vector_pass": true,
+    "update_cosine": 0.9999997689480513,
+    "relative_update_l2_error": 0.0006797829017,
+    "original_fp32_vector_norm_reference_failure_preserved": true,
+    "corrected_cpu_three_step_comparison_sha256": "9a132e175fd75425d906b241e90228d3dd90dd162c801adf9ba5cd2fad524668",
+    "note": "The overall criterion remains a conjunction; aggregate agreement does not erase the754 pointwise violations."
+  },
+  "fresh_process_resume": {
+    "overall_status": "FAIL",
+    "start_step": 3,
+    "terminal_step": 12,
+    "criteria": {
+      "float_atol": 1e-07,
+      "float_rtol": 1e-06,
+      "RNG_counters_Adam_steps": "exact"
+    },
+    "model": {
+      "numeric_pass": true,
+      "bitwise_equal": false,
+      "max_abs": 2.384185791015625e-07,
+      "max_tolerance_fraction": 0.10715468166197856,
+      "numeric_violations": 0,
+      "relative_l2_error": 8.884951176151791e-10
+    },
+    "all32_master_and_moment_shards_numeric_pass": true,
+    "max_master_abs": 2.384185791015625e-07,
+    "max_moment_abs": 3.725290298461914e-08,
+    "max_moment_tolerance_fraction": 0.32677117586731536,
+    "cpu_rng_counters_Adam_steps_and_metadata_exact": true,
+    "device_rng_exact_failures": 32,
+    "all32_device_seed_offsets": {
+      "exact_affine_advances": 1,
+      "formula": "actual=(1012031+7012063*expected) mod2^64"
+    },
+    "rank0_seed": {
+      "expected": 10220601738208571245,
+      "actual": 2545226808598964018
+    },
+    "bitwise_model": false,
+    "bitwise_optimizer": false,
+    "comparison_sha256": "d7795f419b76dde40c4b5eea2c3798864a63c55bb43db1f73ebdec1a56834856"
+  },
+  "tiny_rng_ordering_prototype": {
+    "source_commit": "8b44cc1ccccdd52c87180fb3fbc346053b7879a3",
+    "criteria_sha256": "1feb66b1d43966f81175ce232685816278afb9738628422b78de68c0bfeb2192",
+    "highbit_seed": 10220601738208571245,
+    "observed_operations": {
+      "getter": {
+        "before": 10220601738208571245,
+        "after": 10220601738208571245
+      },
+      "sync": {
+        "before": 10220601738208571245,
+        "after": 2545226808598964018
+      },
+      "cpu_export": {
+        "before": 10220601738208571245,
+        "after": 10220601738208571245
+      },
+      "rendezvous": {
+        "before": 10220601738208571245,
+        "after": 10220601738208571245
+      }
+    },
+    "installed_rendezvous": "Neuron override: wait_device_ops plus NeuronBarrier; the no-payload path does not call MarkStep.",
+    "old_ordering_negative_control": {
+      "random_tensors_bitwise_equal": false,
+      "terminal_rng_exact": false
+    },
+    "fixed_prototype": {
+      "actual_restored_checkpoint_readback_included": true,
+      "random_tensors_bitwise_equal": true,
+      "terminal_rng_exact": true,
+      "model_max_abs": 0.0,
+      "optimizer_max_abs": 0.0
+    },
+    "limitation": "Prototype used an external observer fence and corrected restore ordering. The committed integrated helper is tested separately; new full-model recovery and stochastic R qualification remain required."
+  },
+  "remaining_required": [
+    "Diagnose the existing CPU pointwise failure without silently changing bounds.",
+    "Verify full-model common-source fresh-process resume after the integrated RNG repair.",
+    "Separately verify actual R all-rank stochastic continuation."
+  ],
+  "integrated_tiny_rng_ordering": {
+    "highbit_seed": 10220601738208571245,
+    "installed_rendezvous": "Neuron override: wait_device_ops plus NeuronBarrier; the no-payload path does not call MarkStep.",
+    "source_commit": "e135e8cbdac73df431f645775786d0695658e3a5",
+    "criteria_sha256": "f83a8a7ea88b15a9c12da2f824cedf131b6ab640b51ee21ec836bb60d5965c58",
+    "result_sha256": "693e1255481a89a565a244c40f8ba03b81cacdc08b408be671b0562274d59d5a",
+    "status": "PASS",
+    "actual_integrated_save_and_restore_helpers": true,
+    "no_external_manual_fence": true,
+    "actual_restored_checkpoint_readback_included": true,
+    "random_tensors_bitwise_equal": true,
+    "terminal_rng_exact": true,
+    "model_max_abs": 0.0,
+    "optimizer_max_abs": 0.0,
+    "original_order_negative_control_random_equal": false,
+    "original_order_negative_control_rng_exact": false,
+    "limitation": "Tiny-model arithmetic and RNG ordering evidence; full-model C and stochastic R recovery remain required."
+  }
+}
