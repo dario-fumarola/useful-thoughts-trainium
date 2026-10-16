@@ -1,0 +1,75 @@
+{
+  "schema": "c-fp32-gradient-norm-reference-v1",
+  "as_of_utc": "2026-10-16T21:35:00+00:00",
+  "scope": "Engineering qualification of Qwen3-1.7B-Base on this instance; no scientific training result",
+  "source_commit": "fe667bfced1562023c361706aba98feba26d86af",
+  "source_sha256": "88305fa181ef22bf21e9eb698e269fd299353ce67702fadd8d46369da48427a4",
+  "precision": "fp32",
+  "world_size": 32,
+  "global_prefixes": 128,
+  "first_device_update": {
+    "completed_utc": "2026-10-16T21:20:40+00:00",
+    "loss": 1.3479762077331543,
+    "preclip_gradient_norm": 1.6284207105636597,
+    "sampled_parameter_elements": 9920,
+    "sampled_changed_fraction": 0.9909273982048035,
+    "sampled_replicas_bitwise_equal": true,
+    "full_parameter_update_comparison_complete": false
+  },
+  "independent_cpu_reference": {
+    "implementation": "Native Hugging Face eager full-logit forward, microbatch8 with16 accumulations; production backend is never called",
+    "seed": 1234,
+    "records_sha256": "84eb6dcfe29528dd5de57c43904ba50cfd16da34c65d3068540808ae1bfeb8c1",
+    "order_sha256": "997307b43cb509f386ebd14d0428a675891afe41e1bdbd5514c3a7beb5765e5b",
+    "loss": 1.3479696996510029,
+    "loss_absolute_error": 0.000006508082151412964,
+    "loss_atol": 0.0001,
+    "loss_pass": true
+  },
+  "original_norm_comparison": {
+    "reference_method": "PyTorch CPU FP32 vector_norm used by clip_grad_norm_",
+    "cpu_norm": 1.6274282932281494,
+    "absolute_error": 0.000992417335510254,
+    "atol": 0.00001,
+    "rtol": 0.0005,
+    "tolerance": 0.0008237141466140747,
+    "pass": false,
+    "failure_preserved": true,
+    "original_three_update_weights_and_optimizer_unchanged": true
+  },
+  "corrected_norm_comparison": {
+    "reference_method": "Fresh first-batch CPU gradient, chunked Float64 dot(g,g) over all elements, math.fsum then square root; no optimizer update",
+    "gradient_values": 1720574976,
+    "criterion_declared_utc": "2026-10-16T21:24:17.095034+00:00",
+    "result_utc": "2026-10-16T21:31:08.422102+00:00",
+    "cpu_norm_fp64": 1.6283468318635734,
+    "cpu_squared_sum_norm_fp32": 1.6283466815948486,
+    "absolute_error": 0.00007387870008623842,
+    "relative_error": 0.00004537037112768378,
+    "atol": 0.00001,
+    "rtol": 0.0005,
+    "tolerance": 0.0008241734159317867,
+    "tolerance_fraction": 0.08963975136557067,
+    "pass": true,
+    "full_cpu_gradient_file_sha256": "b9e7e39021bea97109199a90335972f010c3b2a70dc8895a2b1f279cf04ff54a",
+    "embedding_norm_fp32_vector_norm": 0.5129546523094177,
+    "embedding_norm_fp64": 0.5146771472189144,
+    "interpretation": "The original CPU vector-norm reduction underestimates large gradient norms. A fresh full-gradient Float64 measurement passes the unchanged prospectively declared tolerance; it does not erase the original failure."
+  },
+  "pending_at_receipt_time": {
+    "device_initialized_adam_second_update": "32 rank-specific graphs compiling; execution not yet qualified",
+    "corrected_three_update_cpu_lineage": "Running separately; no completed corrected update or full-state comparison yet",
+    "original_three_update_full_model_comparison": "CPU artifacts complete; awaiting device checkpoint3",
+    "full_qwen_fresh_process_resume": "Not yet executed",
+    "ten_steady_update_timings": "Not yet measured",
+    "thought_arm_update_and_stochastic_resume": "Not qualified by this receipt"
+  },
+  "local_evidence": [
+    "local/qualification/qwen-c-fp32-001.first_update_comparison.json",
+    "local/qualification/qwen-c-fp32-001.cpu_norm_corrected.criteria.json",
+    "local/qualification/qwen-c-fp32-001.cpu_norm_diagnostic.json",
+    "local/qualification/qwen-c-fp32-001.cpu_norm_corrected.result.json",
+    "local/qualification/qwen-c-fp32-001.cpu_reference.integrity.json",
+    "local/qualification/qwen-c-fp32-001.cpu_compare_corrected.criteria.json"
+  ]
+}
