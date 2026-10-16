@@ -1,7 +1,10 @@
 """Small real-file backup/retention faults; no accelerator claims."""
 import importlib.util
 import json
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+import sys
+from types import SimpleNamespace
 
 import pytest
 
@@ -121,3 +124,71 @@ def test_corrupt_survivor_preserves_good_redundant_backup(tmp_path):
         module.cycle(source, target, verified_this_process=verified, **arguments)
     assert (target / 'step-0000001' / 'model.pt').stat().st_size == 1024
     assert (target / 'step-0000003' / 'COMPLETE.json').exists()
+
+
+@pytest.mark.parametrize('removed', ['directory', 'marker'])
+def test_missing_cached_copy_or_marker_is_recovered_before_next_publication(tmp_path, removed):
+    source, target, arguments = fixture(tmp_path)
+    verified = set()
+    for step in (1, 2):
+        checkpoint(source, step)
+        module.cycle(source, target, verified_this_process=verified, **arguments)
+    missing = target/'step-0000002'
+    if removed == 'directory':
+        module.shutil.rmtree(missing)
+    else:
+        (missing/'RETENTION_OWNER.json').unlink()
+    assert not module.cycle(source, target, verified_this_process=verified, **arguments)
+    for step in (1, 2):
+        copy = target/f'step-{step:07d}'
+        assert (copy/'RETENTION_OWNER.json').is_file()
+        assert (copy/'model.pt').read_bytes() == bytes([step])*1024
+        assert (copy/'rank-00000.pt').read_bytes() == bytes([step])*1024
+    assert len(list(source.glob('step-*'))) == 2
+
+
+def test_expired_deadline_requests_stop_before_copy_or_terminal_success(tmp_path, monkeypatch):
+    source, target, arguments = fixture(tmp_path)
+    stop = tmp_path/'run.stop'
+    monkeypatch.setattr(sys, 'argv', ['watch_checkpoint_backups',
+        '--source', str(source), '--destination', str(target),
+        '--spec-hash', arguments['spec_hash'], '--terminal-step', '4',
+        '--deadline', '2000-01-01T00:00:00Z', '--stop-file', str(stop),
+        '--log', str(arguments['log'])])
+
+    def forbidden_cycle(*args, **kwargs):
+        pytest.fail('Expired supervisor started a copy cycle')
+
+    monkeypatch.setattr(module, 'cycle', forbidden_cycle)
+    monkeypatch.setattr(module.signal, 'signal', lambda *args: None)
+    with pytest.raises(TimeoutError, match='deadline'):
+        module.main()
+    assert stop.is_file()
+    events = [json.loads(line) for line in arguments['log'].read_text().splitlines()]
+    assert [event['event'] for event in events] == ['backup_supervisor_failed_training_stop_requested']
+
+
+def test_copy_finishing_after_deadline_requests_stop_instead_of_terminal_success(tmp_path, monkeypatch):
+    source, target, arguments = fixture(tmp_path)
+    stop = tmp_path/'run.stop'
+    deadline = datetime(2026, 10, 16, tzinfo=timezone.utc)
+    clock = [deadline-timedelta(seconds=1)]
+    monkeypatch.setattr(module, 'datetime', SimpleNamespace(
+        fromisoformat=datetime.fromisoformat, now=lambda timezone: clock[0]))
+    monkeypatch.setattr(sys, 'argv', ['watch_checkpoint_backups',
+        '--source', str(source), '--destination', str(target),
+        '--spec-hash', arguments['spec_hash'], '--terminal-step', '4',
+        '--deadline', deadline.isoformat(), '--stop-file', str(stop),
+        '--log', str(arguments['log'])])
+
+    def finish_copy(*args, **kwargs):
+        clock[0] = deadline+timedelta(seconds=1)
+        return True
+
+    monkeypatch.setattr(module, 'cycle', finish_copy)
+    monkeypatch.setattr(module.signal, 'signal', lambda *args: None)
+    with pytest.raises(TimeoutError, match='deadline'):
+        module.main()
+    assert stop.is_file()
+    events = [json.loads(line) for line in arguments['log'].read_text().splitlines()]
+    assert [event['event'] for event in events] == ['backup_supervisor_failed_training_stop_requested']
