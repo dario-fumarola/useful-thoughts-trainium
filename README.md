@@ -52,6 +52,8 @@ current accelerator evidence.
 | [train/neuron_driver.py](train/neuron_driver.py) | Bounded qualification and guarded C/R driver |
 | [train/neuron_backend.py](train/neuron_backend.py) | Causal cache, generation, scoring, and policy replay |
 | [train/evaluate.py](train/evaluate.py) | Question-only, sharded math evaluation |
+| [train/evaluate_likelihood.py](train/evaluate_likelihood.py) | ARC and full-target LAMBADA likelihood |
+| [train/evaluate_local.py](train/evaluate_local.py) | Saved prefix-only notes, content controls, and crossed readers |
 | [weekend_thinking/](weekend_thinking/) | Objective, data, checkpoint, and analysis primitives |
 | [tests/](tests/) | CPU correctness checks; these do not certify hardware |
 | [context/](context/) | Research context and evidence limits |
@@ -76,6 +78,8 @@ separate requirements. Read [START_HERE.md](START_HERE.md) and
 Host configuration, credentials, downloaded datasets, weights, compiler caches,
 raw traces, and checkpoints remain outside Git under ignored local paths.
 Small validation reports describe their provenance and limits.
+Verified local checkpoint copies are described in
+[CHECKPOINT_BACKUP.md](docs/CHECKPOINT_BACKUP.md).
 
 Original authorship and third-party notices are preserved; see
 [NOTICE.md](NOTICE.md). Public availability does not assign a new license to

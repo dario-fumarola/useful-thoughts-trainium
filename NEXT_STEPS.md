@@ -6,18 +6,18 @@ to idle: data preparation and evaluator work can proceed while compilation runs.
 
 | Stage | Deliverable | Completion condition |
 |---|---|---|
-| P0 | Instance/assets inventory and explicit deadline | Existing environment identified; local paths resolved; model/data/checkpoint availability not guessed |
-| P1 | Ordinary-causal model load and one-step forward | Exact released weights, tokenizer/ties, targets, and CPU/device evidence agree within declared tolerances |
-| P2 | Cached generation + scoring + policy replay | Prefix-only generation; fixed shapes; correct stopping; sampled/replayed logps agree; no full-vocabulary host loop |
-| P3 | C/R micro-step and distributed update | Reference parity; one reducer; correct accumulation; rank-distinct examples/RNG; finite master-weight updates |
-| P4 | Resume + complete timing + evaluator | Same continuation within declared tolerance; ≥10 complete timing steps; a real downstream item runs on accelerator |
+| P0 | Assets resolved | Inventory/model/data complete; choose a finite planning horizon before freeze, using the owner's weeks-long allowance |
+| P1 | Released forward complete | Correct weights/ties/fingerprints and CPU/device forward pass |
+| P2 | Full-cap FP32 backward pending | Long cache/replay passes, including the exact old BF16 failure; require finite positive backward |
+| P3 | 32-rank C/R qualification active | Tiny mean/update/resume passes; C32 compiling, R32 gated on P2; require real full-model master updates |
+| P4 | Resume and timing pending | Full-model resume and ≥10 steady updates per arm; primary accelerator TRAIN inference complete, secondary/local execution still required |
 | P5 | Frozen first C/R pair | Model/data/format/source hashes; enough records; fixed terminal steps; fresh initial weights; actual deadline respected |
 | P6 | Confirmation and complete evaluation | Unchanged second seed if feasible; C/R direct and thought results; local controls; actual resource accounting |
 | P7 | Recoverable handoff | Verified checkpoints and destination; short result table; uncertainty; next experiment dictated by evidence |
 
-Primary module to implement: `train/neuron_driver.py`.
-Reusable semantics: `weekend_thinking/core.py` and `reference.py`.
-Runtime/cache examples: named original source in `docs/NEURON_IMPLEMENTATION.md`.
+Active driver: `train/neuron_driver.py`; use immutable source snapshots for running
+jobs. CPU semantics remain in `weekend_thinking/core.py` and `reference.py`.
+The immediate dependency is P2 backward, then full C/R updates, resume, and timing.
 
 If P1–P4 do not qualify within the initial engineering allowance, report the exact
 failure and do only verified baseline/evaluation or short diagnostic work. A long

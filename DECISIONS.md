@@ -47,3 +47,21 @@ Routine formatting changes do not need a decision entry.
 ## 2026-10-16 — owner-authorized public repository
 - Owner explicitly requests public visibility and a clearer name. Rename remote to `dario-fumarola/useful-thoughts-trainium`; publish after tracked-history credential scan and applicable third-party notice/source repair. No weights, corpus, credentials, checkpoints or raw local outputs enterGit.
 - Preserve original research history and attribution. Public release is not a new scientific result or blanket relicensing of supplied historical material.
+
+## 2026-10-16 — prospective execution budget with weeks available
+
+- The owner replaced the original weekend constraint with weeks of available
+  time. Adopt a 14-day local planning horizon from the first scientific launch;
+  this is an autonomous job limit, not a claim about instance shutdown.
+- Allow up to 240 hours for the two-seed training schedule, including the
+  existing 15% reserve. Keep the remaining horizon for evaluation, verification,
+  and recovery. Choose the largest predeclared step count in 256/512/1024/2048
+  that fits actual complete-step timing and fresh data. Use timing only; neither
+  qualification utility nor final outcomes select exposure.
+- After C/R isolation and full-model resume qualify, C1/C2 can run consecutively
+  on one partition while R1 runs on the other; then R2 uses the freed partition.
+  Check this complete schedule against measured C and R times. If concurrency
+  does not qualify, budget the sequential schedule explicitly.
+- Before multi-day runs, arrange complete checkpoints at least daily, with
+  verified EBS copies of the latest complete state and each terminal result.
+  Current immutable qualification jobs keep their original checkpoint schedule.

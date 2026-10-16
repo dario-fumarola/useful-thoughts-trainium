@@ -1,10 +1,17 @@
-# Active production implementation goes here
+# Active Neuron implementation
 
-Implement `neuron_driver.py` as specified in `../docs/NEURON_IMPLEMENTATION.md`.
-There is deliberately no fake executable launcher or unverified trainer in this
-folder. `../weekend_thinking/backend_contract.py` defines the input boundary;
-`reference.py` defines CPU semantics; `legacy/` supplies runtime examples.
+`neuron_driver.py` implements the C/R path, with a bounded `--qualify` mode and a
+separate frozen-specification requirement for scientific runs. `neuron_backend.py`
+owns causal generation, reader scoring, and gradient replay. The production
+candidate uses FP32 after long-trace BF16 replay failed numerical qualification.
 
-The next agent's job is to fill this specific gap, qualify it on the existing
-instance, then execute the fixed comparison. CPU toy sessions are already runnable
-through `../scripts/reference_session.py`, but are not Neuron training.
+The `qualify_*.py` entrypoints check released weights, replay, real collectives,
+and reader behavior. A CPU run is labeled as such. Development accelerator
+inference has run through `evaluate.py`; likelihood and local-content evaluators
+have their own qualification requirements.
+
+See [STATUS.md](../STATUS.md) for actual jobs and remaining checks. No scientific
+C/R pair has launched yet. Full-model numerical resumption and complete-step
+timing remain prerequisites. The specification is in
+[NEURON_IMPLEMENTATION.md](../docs/NEURON_IMPLEMENTATION.md); historical code stays
+under `legacy/` and is not an active launcher.

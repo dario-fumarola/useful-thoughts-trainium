@@ -8,10 +8,11 @@ answer extraction, decoding policy, maximum tokens, stop rules, and terminal
 checkpoint rule. Calibrate formatting only on designated development/training
 examples; do not use test answers to choose prompts or checkpoints.
 
-The repo implements strict answer scoring, not a completed accelerator benchmark
-runner. Integrating that runner is P4 and must happen before the long training
-pair. Reuse legacy item handling where appropriate; do not assume its old CPU
-loader supports the mature model or long thoughts.
+`train/evaluate.py` has run fixed TRAIN-only direct/thought/empty-format inference
+on the real accelerator. Final checkpoint, task, parser, and dependency bindings
+are described in [EVALUATION_INTEGRITY.md](EVALUATION_INTEGRITY.md). Secondary and
+local evaluators need their own execution evidence; this is not a completed final
+benchmark suite.
 
 ## Comparisons
 

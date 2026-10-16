@@ -8,14 +8,14 @@ criterion; full FP32 passes the exact failed trajectory at the tighter criterion
 See `DECISIONS.md` and `IMPLEMENTATION_REVIEW.md`. The implementation below remains
 subject to full-model distributed, resume and complete-step qualification.
 
-The production accelerator driver has **not** been implemented or executed in
-this container. The active reference runs on tiny CPU models. The bundled legacy
-source supplies concrete runtime/cache/loss/checkpoint examples, but its whole
-recipe must not be copied as the new experiment.
+`train/neuron_driver.py` and the cached backend now exist and are undergoing
+real-asset qualification. A real four-rank update/checkpoint completed, but its
+next optimizer graph exceeded memory; 32-rank FP32 qualification is running.
+Long FP32 cache/replay checks pass, while the full-cap backward and distributed
+resume/timing evidence remain pending. See `STATUS.md` for live state.
 
-Create `train/neuron_driver.py`. Do not disguise the eager CPU loop as a performant
-Neuron backend. The first useful outcome is parity for a short sequence, then a
-cached path at the actual cap, not a fabricated turnkey command.
+The remainder specifies the required behavior. CPU reference tests and bundled
+legacy examples do not certify the current accelerator path.
 
 ## Reuse map
 
@@ -35,7 +35,7 @@ All historical paths below are under `legacy/ema-trainium-pre-thinking/`.
 Search just the relevant function. The old runbook and journal are evidence, not
 startup instructions. The target patch is narrow; it does not certify old training.
 
-## Driver interface to implement
+## Driver interface
 
 ```text
 python train/neuron_driver.py \
@@ -46,8 +46,8 @@ python train/neuron_driver.py \
   [--resume <complete-checkpoint>] [--stop-file local/STOP]
 ```
 
-This is the required future interface, **not a working launch command today**.
-A short `--qualify` path may run before the final evidence receipt exists. It must
+This interface exists, but a scientific launch still requires the actual frozen
+assets and qualification receipt. A short `--qualify` path may run first. It must
 have a hard step limit and identify its artifacts as qualification, not science.
 Long training must verify the frozen assets and actual hardware receipt, actual
 deadline, and output directory before reserving resources. Reuse of an output

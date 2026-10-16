@@ -1,9 +1,10 @@
-# Current state — 2026-10-16 20:46 UTC
+# Current state — 2026-10-16 21:02 UTC
 
 Stage: real-asset Neuron qualification. No scientific C/R pair has launched.
 The owner authorizes sustained autonomous work, review agents, and public GitHub
 publication. Weeks are available; no actual instance cutoff is specified. Declare
-a finite planning horizon before the scientific launch.
+a finite planning horizon before the scientific launch. Prospective policy now
+allows a 14-day horizon and a timing-selected two-seed schedule; see DECISIONS.md.
 
 Workspace: `/home/ubuntu/dario`. Public repository:
 https://github.com/dario-fumarola/useful-thoughts-trainium . Original repos remain
@@ -14,7 +15,7 @@ Verified data: **329,535 train / 18,360 dev / 18,239 test** records in
 `local/data/finemath/production-500000.audit-v2.records.jsonl`.
 Receipt: `validation/data_production_v2_20261016.json`. A URL identity bug was
 corrected before freeze; the original audit is retained. Latest CPU checks:
-145 tests and toy smoke passed in `local/checks/tests.vNYBQ7`.
+184 tests and toy smoke passed in `local/checks/tests.QJY1yz`.
 
 ## Actual evidence
 
@@ -33,6 +34,14 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
   retained; these are interface checks, not benchmark estimates. No official test
   outcomes have been inspected. Secondary likelihood evaluation has CPU evidence
   only (`validation/secondary_likelihood_cpu_20261016.json`).
+- CPU partial-product diagnostics show semantic reader sensitivity on 16/16 fixed
+  cases but a substantial insertion cost versus raw silence. K=1 is whitespace on
+  this synthetic grid; full-target sensitivity is not K=1 sensitivity. Receipt:
+  `validation/reader_interface_cpu_20261016.json`. New local-content/crossed-reader
+  code has CPU tests; released-model CPU plumbing is running on two DEV records.
+- Final evaluation now binds terminal model identities, transitive code hashes,
+  canonical gold projection, and scored condition provenance. No final experiment
+  or evaluation receipt has been frozen yet.
 
 ## Active bounded jobs
 
@@ -42,13 +51,17 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
 - **Cores 32–63:** FP32 Qwen C, 32 ranks, global batch128, 12 updates,
   launcher403728, tmux `dario-qwen-c-fp32-001`. Immutable source `fe667bf`.
   State/log: `local/qualification/qwen-c-fp32-001.state.json` and adjacent `.log`.
-  Output: `local/nvme/qualification/qwen-c-fp32-001`. First graphs compiling.
+  Output: `local/nvme/qualification/qwen-c-fp32-001`. Full-FP32 forward compiled
+  at20:57:58 UTC; first backward is compiling. The independent CPU first-update
+  reference is CE1.34796970 / preclip norm1.62742829; device comparison is pending.
 - **Cores 0–31 reserved:** R32 launcher prepared by data agent, not running.
   It requires the full-cap FP32 backward to pass and its process to exit first.
   Same immutable source and pilot records as C32; 14 updates, eight-hour bound.
+  One-shot watcher PID437606/tmux `dario-r-launch-gate` is armed until23:20 UTC;
+  state `local/qualification/qwen-r-fp32-001.gate-watcher.json`. No retry loop.
 - Independent CPU FP32 first-three-update C reference is running at low priority
-  while accelerator graphs compile. Reviewer is auditing scientific/evaluation
-  gaps. Core2 is free; do not overlap reserved accelerator layouts.
+  while accelerator graphs compile. Reviewer is finishing local CPU qualification.
+  Core2 is free; do not overlap reserved accelerator layouts.
 
 ## Next actions and recovery
 
@@ -68,5 +81,10 @@ preparation); the other three were untouched. Provenance and preparation receipt
 are in `validation/`. Store large intermediates there; copy scientific terminal
 and daily latest-complete checkpoints to EBS. Both are local to this instance;
 no external backup destination has been approved.
+The verified-copy utility is `scripts/backup_checkpoint.py`; the distributed
+agent will copy C32 checkpoint3 to `local/backups/` once COMPLETE exists. Before
+multi-day science, arrange at least daily complete saves and verified EBS copies.
+Current C qualification reward-related metric zeros are unmeasured placeholders,
+not actual clean/thought likelihoods.
 
 CPU checks: `source scripts/env.sh && bash scripts/run_checks.sh`.
