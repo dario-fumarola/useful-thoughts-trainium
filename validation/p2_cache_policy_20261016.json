@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-10-16T22:04:30.352618+00:00",
+  "scope": "Released Qwen3-1.7B-Base fullcap FP32 runtime-cache diagnostic; qualification only",
+  "source_commit": "fe667bfced1562023c361706aba98feba26d86af",
+  "fixed_recipe": {
+    "prefix_tokens": 512,
+    "group_size": 4,
+    "cap": 1024,
+    "temperature": 0.7,
+    "repeat": 3,
+    "precision": "fp32",
+    "backward_group": 0,
+    "backward_advantage": 0.25,
+    "backward_divisor": 4
+  },
+  "legacy_neuron_cache_probe": {
+    "environment": {
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": "2",
+      "XLA_COMPILATION_CACHE_SIZE": null
+    },
+    "status": "failed_memory",
+    "resident_programs_before_backward": 9,
+    "resident_programs_at_failure": 10,
+    "error": "NRT_RESOURCE: 16777216-byte allocation failed",
+    "actual_worker_exit": 1,
+    "original_timeout_wrapper_exit": 124,
+    "wrapper_exit_caveat": "Old SIGALRM pending while original timeout alone was paused; independent watchdog recorded actual worker zombie exit1 before resuming original timer",
+    "main_bank_failure_gb_displayed": 23.968,
+    "code_gb_displayed": 2.004,
+    "tensor_gb_displayed": 10.957,
+    "shared_scratch_gb_displayed": 5.688,
+    "dma_spill_gb_displayed": 5.295,
+    "no_retries": true
+  },
+  "xla_lru_probe": {
+    "environment": {
+      "XLA_COMPILATION_CACHE_SIZE": "2",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null
+    },
+    "status": "memory_and_backward_execution_completed",
+    "worker_exit": 0,
+    "steady_resident_programs": 2,
+    "three_trace_outputs_bitwise_equal_to_legacy_probe": true,
+    "replay_maxima": [
+      1.239776611328125e-05,
+      2.2172927856445312e-05,
+      2.8371810913085938e-05
+    ],
+    "replay_bound": 0.001,
+    "sampled_main_bank_peak_bytes": 20999864320,
+    "sampled_peak_caveat": "15-second sample lower bound on transient peak; independent category maxima are not necessarily simultaneous"
+  },
+  "gradient_parity": {
+    "CPU_criteria_sha256": "365d119602d4de3489f153a1802a43ccacfc4cc21314fab186a12d5a0fd6d9a3",
+    "CPU_gradient_norm_float64": 0.10564679629247145,
+    "CPU_reference_sha256": "5cef820d601a6bb3f535aa54395b6e040248b3d87006a4253a255f6764bc430e",
+    "absolute_error": 108.07531481259424,
+    "active_actions": 1024,
+    "advantage": 0.25,
+    "all_three_reported_actions_and_evidence_equal": true,
+    "atol": 1e-05,
+    "created_utc": "2026-10-16T22:03:39+00:00",
+    "criterion": "abs(device_norm - CPU_float64_reduction_norm) <= atol + rtol * CPU_norm",
+    "device_gradient_norm": 108.18096160888672,
+    "device_report": "/home/ubuntu/dario/local/qualification/p2-full-fp32-lru2-001/backend.json",
+    "device_report_sha256": "2d32cf46cb93e801f67884ef0976d9deb76371794b028334377d933c7bd6c50f",
+    "divisor": 4,
+    "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+    "group": 0,
+    "limitations": [
+      "An aggregate norm comparison does not compare every gradient coordinate.",
+      "No optimizer update, distributed synchronization, or stochastic checkpoint resume is qualified by this receipt."
+    ],
+    "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "original_trace_report_sha256": "af6673df021d9ea4b3bfb8bb8fe9699ee6bef60bc44d54e4ca436a2af497124f",
+    "passed": false,
+    "prospective_tolerance_limit": 6.282339814623573e-05,
+    "rtol": 0.0005,
+    "scientific_outcome": false,
+    "scope": "one_real_released_model_fullcap_policy_gradient_norm_CPU_device_comparison",
+    "temperature": 0.7,
+    "trace_sha256": "e97fc191359db59e54b479b0b387acc37fe6a84e75ad53560cb99e45e8f96553",
+    "unique_parameters": 1720574976
+  },
+  "conclusion": "XLA LRU policy repairs observed residency/memory, but gradient parity FAILS. Do not launch R training until the normalization discrepancy is resolved and actual updates/resumption qualify.",
+  "hypothesis_not_result": "Device norm divided by active length1024 nearly matches CPU norm; examine sequence-normalization/upstream-gradient materialization and the actual driver finite-loss materialization path without changing tolerances or objective.",
+  "no_scientific_training_or_final_test_launched": true,
+  "artifacts_sha256": {
+    "local/qualification/p2-full-fp32-n2-001/backend.json": "5992b119e33fcd35774484548f98e80b166455bb7cc8a9ac4ac420da32b8989e",
+    "local/qualification/p2-full-fp32-n2-001.supervision.json": "bd562694e5627909447d07662a1c72cf8a679ded54497786c390816c655e59ee",
+    "local/qualification/p2-full-fp32-n2-001/memory-failure-preservation.json": "511d516f640ce57f47e6b85be72c748dea9dcc6706f7b5f59bbdaa766f5c9710",
+    "local/qualification/p2-full-fp32-lru2-001.execution_receipt.json": "9a1d352dcefd7d557e48bf88d9c165543498af19cd56afbb22c322ce64d366d8",
+    "local/qualification/p2-full-fp32-lru2-001/backend.json": "2d32cf46cb93e801f67884ef0976d9deb76371794b028334377d933c7bd6c50f",
+    "local/qualification/p2-full-gradient-device-lru2-001.json": "0fe2f781c4df92f04d0378630aac969dca9b9f04c49d784ee900fa8f7014f197",
+    "local/qualification/p2-full-gradient-cpu-001/reference.json": "5cef820d601a6bb3f535aa54395b6e040248b3d87006a4253a255f6764bc430e",
+    "local/qualification/p2-full-gradient-cpu-001/criteria.json": "365d119602d4de3489f153a1802a43ccacfc4cc21314fab186a12d5a0fd6d9a3"
+  },
+  "limitations": [
+    "No optimizer/distributed-update or fresh-process stochastic resume is qualified.",
+    "Norm parity is an aggregate comparison; parameter-gradient coordinates remain untested."
+  ]
+}
