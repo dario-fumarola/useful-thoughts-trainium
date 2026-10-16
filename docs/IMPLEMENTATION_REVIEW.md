@@ -188,11 +188,27 @@ Its downloaded source/hash and matches are saved in
 the first four and explicit `####` final lines preserves our strict parser. This
 is a Qwen-family adaptation, not byte-identical reproduction of Qwen3's evaluation.
 
-The next prompt artifact is `local/evaluation/dev-inputs-4shot-v1/`, using those
+The qualified prompt artifact is `local/evaluation/dev-inputs-4shot-v1/`, using those
 first four fixed TRAIN demonstrations and the same five held development items.
-Its execution awaits numerical qualification. Evaluator item sharding validates
+Its full-FP32 accelerator execution is summarized below. Evaluator item sharding validates
 the full task/protocol first, then takes `questions[index::num_shards]`; all shards
 use global padding widths. Their outputs must be merged before whole-task scoring.
+
+| Fixed five-item TRAIN diagnostic | Correct | Format errors | Truncations |
+|---|---:|---:|---:|
+| Direct | 3/5 | 0 | 0 |
+| One thought | 3/5 | 1 | 1 |
+| Empty format | 5/5 | 0 | 0 |
+
+All three runs use identical evaluator/backend/tokenizer source hashes. They
+preserve every item, including the thought reader's `624addGap` failure and a
+code/zero repetition that reached the answer cap. The empty control shows that
+the base can handle these questions without note content, making that control
+useful in the final C/R comparison. Five development items provide interface
+evidence only. No official test item has been evaluated. Full outputs, source
+hashes, token counts and separate gold scoring are indexed by
+`local/evaluation/dev-4shot-fp32-summary.json`. After the first item's cold graphs,
+subsequent varying-length items reused executables without new compilation.
 
 ## Fixed-action numerical diagnosis
 
