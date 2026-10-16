@@ -1,0 +1,83 @@
+{
+  "created_utc": "2026-10-16T19:11:52+00:00",
+  "devices": [
+    {
+      "blkid": {
+        "returncode": 2,
+        "stderr": "",
+        "stdout": ""
+      },
+      "device": "/dev/nvme0n1",
+      "operations": "read_only_signature_probes_no_mount_or_partition_changes",
+      "size_bytes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "1900000000000"
+      },
+      "wipefs": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n   \"signatures\": [\n\n   ]\n}"
+      }
+    },
+    {
+      "blkid": {
+        "returncode": 2,
+        "stderr": "",
+        "stdout": ""
+      },
+      "device": "/dev/nvme2n1",
+      "operations": "read_only_signature_probes_no_mount_or_partition_changes",
+      "size_bytes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "1900000000000"
+      },
+      "wipefs": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n   \"signatures\": [\n\n   ]\n}"
+      }
+    },
+    {
+      "blkid": {
+        "returncode": 2,
+        "stderr": "",
+        "stdout": ""
+      },
+      "device": "/dev/nvme3n1",
+      "operations": "read_only_signature_probes_no_mount_or_partition_changes",
+      "size_bytes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "1900000000000"
+      },
+      "wipefs": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n   \"signatures\": [\n\n   ]\n}"
+      }
+    },
+    {
+      "blkid": {
+        "returncode": 2,
+        "stderr": "",
+        "stdout": ""
+      },
+      "device": "/dev/nvme4n1",
+      "operations": "read_only_signature_probes_no_mount_or_partition_changes",
+      "size_bytes": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "1900000000000"
+      },
+      "wipefs": {
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n   \"signatures\": [\n\n   ]\n}"
+      }
+    }
+  ],
+  "modified": false,
+  "scope": "read_only_inventory"
+}

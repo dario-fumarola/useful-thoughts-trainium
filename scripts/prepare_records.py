@@ -13,9 +13,9 @@ import hashlib
 import json
 from pathlib import Path
 import sys
-from urllib.parse import urlsplit
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from weekend_thinking.data import digest,make_record,write_records,file_sha256
+from weekend_thinking.corpus_audit import page_identity
 
 
 def main():
@@ -39,11 +39,9 @@ def main():
             if 'text' in row:
                 if tok is None:raise SystemExit('Raw text requires --tokenizer-dir')
                 fingerprint=digest(row['text'])
-                u=urlsplit(row.get('url',''))
-                # Keep versions of the same page in one split; ignore query strings
-                # conservatively. Exact duplicate content across URLs is removed.
-                group=(u.netloc.lower()+u.path.rstrip('/')) if u.netloc else fingerprint
-                document_id=hashlib.sha256(group.encode()).hexdigest()
+                # Content-bearing query fields distinguish forum threads and
+                # wiki pages. Only named tracking parameters are discarded.
+                document_id=page_identity(row.get('url',''),fingerprint)
                 tokens=tok.encode(row['text'],add_special_tokens=False)
             else:
                 tokens=row['tokens'];document_id=str(row['document_id'])

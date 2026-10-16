@@ -37,7 +37,8 @@ def main():
             for row in stream:
                 text=row.get('text')
                 if not isinstance(text,str) or not text.strip():continue
-                obj={'text':text,'url':row.get('url') or '', 'domain':'mathematics'}
+                obj={'text':text,'url':row.get('url') or '', 'domain':'mathematics',
+                     'source_metadata':{k:v for k,v in row.items() if k not in {'text','url'}}}
                 f.write(json.dumps(obj,ensure_ascii=False)+'\n');count+=1
                 if count>=a.max_documents:break
             f.flush();os.fsync(f.fileno())
@@ -48,6 +49,8 @@ def main():
         'resolved_revision':commit,'created_utc':utc_now(),'documents':count,
         'requested_max_documents':a.max_documents,'seed':a.seed,'shuffle_buffer':a.shuffle_buffer,
         'sha256':sha256_file(a.out),'data_audit_passed':False,
+        'license':'ODC-By-1.0; Common Crawl Terms of Use also apply',
+        'source_card':f'https://huggingface.co/datasets/{repo}/blob/{commit}/README.md',
         'limitations':['Buffered-shuffle stream slice, not an exact uniform sample.',
                        'No benchmark-overlap or near-duplicate filter performed here.',
                        'Too-short documents will reduce usable training examples after tokenization.']})
