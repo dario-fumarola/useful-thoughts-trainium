@@ -1,0 +1,31 @@
+B758 COLLAPSE CHECK: order-statistic N=6, all 1536, equal-weighted = +16.690+-0.882 nats/seq   vs artefact oracle-bestG +16.690+-0.882   diff -0.0003
+       (N=1 same estimator = +10.035+-0.642; artefact's oracle-1 uses sample 0 ONLY, +9.928+-0.722 -- same estimand, different variance, so this is a consistency read not an identity)
+
+  N   4x corpus-wtd   deployed corpus-wtd  4x: x short  dep: x short
+  1        +0.00860              +0.00225         4.8x         18.3x
+  2        +0.01080              +0.00284         3.8x         14.5x
+  3        +0.01207              +0.00318         3.4x         12.9x
+  4        +0.01297              +0.00342         3.2x         12.0x
+  5        +0.01366              +0.00359         3.0x         11.4x
+  6        +0.01425              +0.00374         2.9x         11.0x
+
+B759 SHAPE -- increments per doubling of N (4x volume, corpus-weighted):
+   N 1 -> 2: +0.00220
+   N 2 -> 4: +0.00216
+   N 3 -> 6: +0.00218
+   non-increasing? NO
+
+B760 N=3 -> N=6 (4x, corpus-weighted): +0.00218 nats/real token  [band +0.0010..+0.0035]
+B761 best-of-6 / best-of-1 (4x, corpus-weighted): 1.657  [band 1.4..2.2]
+
+B762 log-linear fit  ceiling(N) = +0.00861 +0.00315*ln N   (max |resid| 0.00001)
+     N needed for the 4x corpus-weighted ceiling to reach the damage +0.0411: N* = 30,551
+     (OPTIMISTIC by construction: the max of a light-tailed sample grows SLOWER than log N eventually, so the true N is larger.)  [band: N* >= 100]
+
+B763 HARD BOUND (next 16 tokens made FREE by the thought; no writer can beat this):
+     deployed, corpus-weighted +0.39737 nats/real token = 9.7x the damage  [band >= 10x]
+     4x volume,corpus-weighted +1.61074 = 39.2x the damage
+     best-of-6 reaches 0.9% of the hard bound at 4x volume.
+
+B764 CONCENTRATION (4x volume, pooled, best-of-6): top 10% of anchors (154/1536) carry 46.6% of the benefit  [band >= 50%]
+     anchors with a positive best-of-6: 52.1%   median gain +0.063 nats

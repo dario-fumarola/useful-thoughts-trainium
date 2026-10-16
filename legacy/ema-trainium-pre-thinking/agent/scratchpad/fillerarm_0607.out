@@ -1,0 +1,27 @@
+runs/probes/hintceiling/fillerarm_r98_5320.jsonl
+1522 records, 48 sequences
+deployment trigger tau>4.0, top-8/seq: 384 anchors over 48 sequences
+thought length written: mean 6.11 tokens (filler is matched anchor by anchor)
+
+            OWN vs silence        FILLER vs silence       OWN minus FILLER        own<filler
+   k=1    -0.2213 +-0.0566    -0.2263 +-0.0506    +0.0050 +-0.0166   48%
+   k=2    -0.2866 +-0.0707    -0.2967 +-0.0649    +0.0101 +-0.0235   52%
+   k=4    -0.3696 +-0.0746    -0.3724 +-0.0689    +0.0029 +-0.0307   47%
+   k=8    -0.4814 +-0.0844    -0.4721 +-0.0846    -0.0093 +-0.0340   52%
+   k=16   -0.6300 +-0.1106    -0.5593 +-0.0990    -0.0707 +-0.0353   55%
+
+================================================================================================
+B713  REGISTER CHECK FIRST. own arm at k=1 = -0.2213 +-0.0566; the 04:07 reading on step 4,750
+      was -0.1781 +-0.0283. Band: inside [-0.33,-0.03] -> HIT
+B710  own-filler k=1 = +0.0050 +-0.0166; band NEGATIVE and inside [-1.00,-0.02] -> MISS HIGH; point -0.18
+B711  own-filler k=8 = -0.0093 +-0.0340; band NEGATIVE -> HIT; point -0.60
+B712  FILLER absolute level k=1 = -0.2263 +-0.0506; band inside [-0.60,+0.10] -> HIT; point -0.02
+B714  own BELOW filler at every k in {1,2,4,8,16}: k=1:+0.005  k=2:+0.010  k=4:+0.003  k=8:-0.009  k=16:-0.071  -> MISS (CATEGORICAL) -- A POSITIVE SIGN CORRECTS THE PAPER
+================================================================================================
+
+k=1: own-filler is 0.3 se from zero; own beats filler at 52% of anchors
+k=8: own-filler is 0.3 se from zero
+
+for the paper's scale: run 34 @800 own-filler was -0.81 +-0.08 on 465 windows (N2's widest gap);
+this is the FIRST filler reading on any run after 82, on 384 anchors / 48 sequences.
+  length-6 subset (n=361): own -0.2143  filler -0.2197  diff +0.0054

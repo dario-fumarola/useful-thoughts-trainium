@@ -1,0 +1,21 @@
+{
+  "records": 60,
+  "counts": {
+    "input_documents": 60,
+    "train": 54,
+    "test": 3,
+    "dev": 3
+  },
+  "tokenizer_identity": "toy-v1",
+  "source_revision": "toy-v1",
+  "salt": "weekend-2026-10-16-v1",
+  "prefix_length": 8,
+  "future_length": 4,
+  "input_sha256": "2ad29ce1bb1014e619c1d5acf753eb18cc411cbb33497029b83a468f1d1f2841",
+  "output_sha256": "ea960b0724217726ec60cb6c3d9d7b0385cad6e52209f94c14a7ef91bd7c78d6",
+  "limitations": [
+    "No near-duplicate or benchmark-overlap filter in this script.",
+    "Use an independently audited decontaminated corpus and run an overlap audit before scientific training.",
+    "No claim about contamination in the released starting checkpoint."
+  ]
+}

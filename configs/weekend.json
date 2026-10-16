@@ -1,0 +1,160 @@
+{
+  "spec_version": "weekend-2026-10-16-v1",
+  "status": "PROPOSED_NOT_HARDWARE_QUALIFIED",
+  "purpose": "Establish a mature-model reference condition; separately measure training and inference benefits.",
+  "model": {
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "revision": null,
+    "local_snapshot": null,
+    "fallback_id": "Qwen/Qwen3-0.6B-Base",
+    "initialization": "actual_pretrained_weights_not_from_config",
+    "allow_remote_code": false,
+    "preserve_pretrained_embedding_tie": true
+  },
+  "hardware": {
+    "expected_instance": "trn2.48xlarge",
+    "expected_chips": 16,
+    "expected_lnc": 2,
+    "expected_logical_cores": 64,
+    "proposed_cores_per_arm": 32,
+    "partition_ranges": null,
+    "must_measure": [
+      "device_layout",
+      "gradient_sync",
+      "optimizer_state_sharding",
+      "full_step_seconds",
+      "peak_hbm",
+      "cache_replay_agreement",
+      "checkpoint_resume"
+    ]
+  },
+  "data": {
+    "preferred": "audited surviving mathematical raw-text corpus with document boundaries",
+    "fallback": "HuggingFaceTB/finemath:finemath-4plus",
+    "source_revision": null,
+    "tokenizer_revision": null,
+    "records_sha256": null,
+    "prefix_tokens": 512,
+    "stored_future_tokens": 16,
+    "one_hash_selected_anchor_per_document": true,
+    "entropy_selection": false,
+    "must_audit": [
+      "exact_duplicates",
+      "near_duplicates",
+      "benchmark_overlap",
+      "split_document_identity",
+      "special_tokens",
+      "source_license"
+    ],
+    "seed_order": "fixed_seed_specific_permutation_shared_within_each_C_R_pair"
+  },
+  "thought_arm": {
+    "algorithm": "one_fresh_signed_group_relative_policy_update",
+    "group_size": 4,
+    "max_thought_tokens": 1024,
+    "reward_horizon": 1,
+    "temperature": 0.7,
+    "normalization": "sequence",
+    "group_std_normalization": false,
+    "negative_advantage_scaling": 1.0,
+    "best_of_selection_for_training": false,
+    "reader_gradient": false,
+    "ntp_auxiliary_weight": 0.0,
+    "reference_kl_weight": 0.0,
+    "ema_baseline": "omitted_from_update_because_common_context_baseline_cancels_exactly_in_LOO; same-model raw clean evidence still logged",
+    "format_json": null,
+    "rollout_budget_ablation": "2048 tokens is a later declared condition, not a silent extension"
+  },
+  "optimization": {
+    "parameter_dtype": "fp32",
+    "compute_dtype": "bf16_autocast_when_qualified",
+    "optimizer": "AdamW_with_verified_Zero1_for_1.7B",
+    "learning_rate": 1e-06,
+    "schedule": "constant",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "global_unique_prefixes_per_update": 128,
+    "micro_prefixes_per_rank": 1,
+    "gradient_accumulation_at_32_ranks": 4,
+    "micro_thoughts_per_backward": 1,
+    "step_budget_candidates": [
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "locked_steps_after_timing": null,
+    "seeds": [
+      1234,
+      5678
+    ],
+    "one_gradient_reducer_owner": "ZeroRedundancyOptimizer",
+    "no_double_reduce": true
+  },
+  "vanilla_arm": {
+    "same_base_same_records_same_order": true,
+    "same_learning_rate_primary_control": true,
+    "supervision": "all_next_tokens_of_prefix_plus_reward_horizon_only",
+    "save_data_matched_checkpoint": true,
+    "resource_matched_continuation": "secondary_if_data_and_time_allow; log repeats and resource use; not asserted FLOP matching",
+    "optional_stronger_control": "predeclared higher-LR CPT sanity run if resource budget allows; do not claim optimal CPT otherwise"
+  },
+  "evaluation": {
+    "primary_downstream": "GSM8K official test exact-match single-path generation; prompt/parser locked using development examples",
+    "secondary_downstream": [
+      "ARC-Challenge official test candidate likelihood",
+      "LAMBADA regression sentinel"
+    ],
+    "primary_checkpoint_rule": "terminal checkpoint at locked step count",
+    "dev_documents": 512,
+    "final_local_documents": 2048,
+    "local_horizons": [
+      1,
+      4,
+      16
+    ],
+    "local_primary": "mean independent single-sample utility at K=1, with all absolute arms reported",
+    "modes": [
+      "direct",
+      "one_greedy_thought",
+      "filler",
+      "other_note",
+      "shuffled_note",
+      "empty_format"
+    ],
+    "oracle_best_of": "diagnostic_only_not_deployment",
+    "always_evaluate_downstream_even_if_ntp_declines": true,
+    "confidence": "paired item/document bootstrap conditional on checkpoint; seeds reported separately",
+    "final_test_access": "after_config_and_checkpoint_rule_are_frozen",
+    "primary_contrast": "R.one_greedy_thought minus C.one_greedy_thought at data-matched terminal checkpoints",
+    "required_secondary_contrasts": [
+      "R.direct minus C.direct",
+      "R.one_greedy_thought minus R.direct"
+    ]
+  },
+  "operations": {
+    "bedrock": false,
+    "new_serving_stack_migration": false,
+    "new_moe_model_port": false,
+    "automatic_hardware_launch": false,
+    "checkpoint_backup_destination": null,
+    "stop_conditions": [
+      "nonfinite_gradients",
+      "wrong_targets",
+      "leakage",
+      "missing_gradient_sync",
+      "unbounded_recompile",
+      "corrupt_checkpoint",
+      "operator_deadline"
+    ],
+    "not_stop_conditions": [
+      "small_ntp_regression_alone",
+      "negative_initial_mean_gain_alone",
+      "unattractive_first_traces_alone"
+    ]
+  }
+}

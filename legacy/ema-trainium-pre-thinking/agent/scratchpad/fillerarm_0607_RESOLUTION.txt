@@ -1,0 +1,59 @@
+B710-B717 RESOLVED 2026-10-09 06:3x (06:07 tick).  Bands registered in BANDS_0607.txt before either
+probe ran.  Artefacts: runs/probes/hintceiling/fillerarm_r98_5320.jsonl (+.log),
+fillerarm_init22800.jsonl (+.log); script agent/scratchpad/probe_filler_0607.py; analysis
+agent/scratchpad/fillerarm_0607.py with outputs fillerarm_0607.out (run 98) and
+fillerarm_init_0607.out (init).
+384 anchors / 48 sequences each, deployment trigger tau>4.0 top-8/seq, error unit the sequence,
+cluster bootstrap 2,000 resamples.  BOTH ABSOLUTE ARMS throughout (G202).
+
+                              OWN vs silence      FILLER vs silence     OWN minus FILLER
+  untrained init  k=1        -2.7566 +-0.1454    -2.1866 +-0.1387    -0.5700 +-0.1389  (4.1 se)
+  (step 22,800)   k=8        -6.9840 +-0.3501    -4.3522 +-0.2169    -2.6317 +-0.3013  (8.7 se)
+  run 98 @5,320   k=1        -0.2213 +-0.0566    -0.2263 +-0.0506    +0.0050 +-0.0166  (0.3 se)
+  (final ckpt)    k=8        -0.4814 +-0.0844    -0.4721 +-0.0846    -0.0093 +-0.0340  (0.3 se)
+  run 98 k=16                -0.6300 +-0.1106    -0.5593 +-0.0990    -0.0707 +-0.0353  (2.0 se)
+
+  B713  HIT        REGISTER CHECK. run 98 own at k=1 -0.2213 +-0.0566 against the 04:07 reading
+                   of -0.1781 +-0.0283 at step 4,750; band [-0.33,-0.03].  The anchor set and the
+                   geometry are the ones the programme deployed, so the rest is readable.
+  B710  MISS HIGH  run 98 own-filler k=1 = +0.0050 +-0.0166, band NEGATIVE inside [-1.00,-0.02].
+  B711  HIT        run 98 own-filler k=8 = -0.0093 +-0.0340, NEGATIVE -- but 0.3 se from zero, so
+                   this HIT is a coin-flip sign and I do not read a direction from it (G193).
+  B712  HIT        run 98 filler level k=1 = -0.2263 +-0.0506, band [-0.60,+0.10].
+  B714  MISS       CATEGORICAL, AND IT IS THE RESULT.  own is NOT below filler at every horizon:
+        (categ.)   k=1 +0.005, k=2 +0.010, k=4 +0.003, k=8 -0.009, k=16 -0.071.  Own beats filler
+                   at 52% of anchors at k=1 -- a coin flip.  THE HONEST STATEMENT IS
+                   INDISTINGUISHABLE, NOT "OWN WINS": every one of these is inside 0.3 se of zero
+                   except k=16 (2.0 se).  I registered this band expecting N2's ordering to hold
+                   and it does not hold on the final design.
+  B715  HIT        init own-filler k=1 = -0.5700 +-0.1389, NEGATIVE (point -0.80).  N2's ordering
+                   is intact at the initialisation every one of these runs starts from.
+  B716  HIT        |own-filler| larger at the init (0.570) than at run 98 (0.005).  Training
+                   closed the gap.
+  B717  MISS HIGH  AND THIS MISS CARRIES THE INTERPRETATION.  I predicted the FILLER floor would
+                   move by less than 0.30 nats, i.e. that the closing gap would be the own arm
+                   rising to a fixed floor.  The floor moved 1.96 nats (-2.1866 -> -0.2263); the
+                   own arm moved 2.54 (-2.7566 -> -0.2213).  Most of what the hint mixture bought
+                   at these anchors is that an insertion of ANY KIND is tolerated, not that the
+                   content got better.
+
+WHAT I WILL AND WILL NOT CLAIM.
+  CLEAN (length-matched by construction, within one set of weights): at run 98's final checkpoint,
+  at its own deployment anchors, the model's own thought and content-free filler of the SAME
+  per-anchor length are indistinguishable (+0.005 +-0.017 at k=1), and BOTH cost about 0.22 nats
+  against silence.  At the untrained init the own thought is 0.57 +-0.14 BELOW matched filler.
+  CONFOUNDED, AND I SAY SO: the ~2-nat rise in both levels between the two checkpoints is NOT
+  cleanly attributable to training, because the init writes 8.00 tokens at these anchors and run 98
+  writes 6.11 (it trained with --L-own 6), and this project's own draft-length probe shows every
+  extra written token subtracts.  The within-checkpoint contrasts are unaffected by that; the
+  cross-checkpoint LEVEL shift is not, and I do not decompose it.
+  NOT CLAIMED: that the thought "helps", that the content channel pays, or that N2 is wrong.  A
+  thought still costs 0.22 nats against saying nothing.  What changed is WHERE the cost sits: at
+  the final design it is the slot, and the content contributes nothing in either direction.
+
+LEDGER: B710-B717 = 5 HIT, 2 MISS HIGH, 1 MISS (categorical).
+  168 -> 176 bands: 128->133 HIT, 23->25 MISS HIGH, 13 MISS LOW, 4->5 MISS (categorical).
+
+NOTE ON THE ANALYSIS OUTPUT: agent/scratchpad/fillerarm_0607.py hardcodes the B710-B714 band text,
+so fillerarm_init_0607.out prints those run-98 verdicts against INIT data.  Ignore the band lines in
+that file -- the init resolves B715-B717 only.  The TABLE in it is correct.

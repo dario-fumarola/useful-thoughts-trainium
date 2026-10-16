@@ -1,0 +1,16 @@
+{
+  "difference_b_minus_a": 0.19999999999999998,
+  "ci95": [
+    0.19999999999999998,
+    0.19999999999999998
+  ],
+  "items": 12,
+  "documents": 6,
+  "bootstrap_draws": 1000,
+  "bootstrap_seed": 17,
+  "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+  "comparison_files": {
+    "a": "examples/toy_eval_a.jsonl",
+    "b": "examples/toy_eval_b.jsonl"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "tokenizer": "Qwen/Qwen3-0.6B",
+  "dtype": "uint32",
+  "eod_token": 151643,
+  "seq_note": "documents separated by <|endoftext|>",
+  "domains": {
+    "fineweb-edu": {
+      "weight": 0.7368421052631579,
+      "repo": "HuggingFaceFW/fineweb-edu",
+      "prefix": "sample/10BT/",
+      "train_tokens": 2210526315,
+      "val_tokens": 10000000,
+      "train_shards": [
+        "fineweb-edu_train_000.bin",
+        "fineweb-edu_train_001.bin",
+        "fineweb-edu_train_002.bin",
+        "fineweb-edu_train_003.bin",
+        "fineweb-edu_train_004.bin",
+        "fineweb-edu_train_005.bin",
+        "fineweb-edu_train_006.bin",
+        "fineweb-edu_train_007.bin",
+        "fineweb-edu_train_008.bin"
+      ],
+      "val_shards": [
+        "fineweb-edu_val_000.bin"
+      ]
+    },
+    "finemath": {
+      "weight": 0.15789473684210525,
+      "repo": "HuggingFaceTB/finemath",
+      "prefix": "finemath-4plus/",
+      "train_tokens": 473684210,
+      "val_tokens": 10000000,
+      "train_shards": [
+        "finemath_train_000.bin",
+        "finemath_train_001.bin"
+      ],
+      "val_shards": [
+        "finemath_val_000.bin"
+      ]
+    },
+    "dclm": {
+      "weight": 0.10526315789473684,
+      "repo": "mlfoundations/dclm-baseline-1.0",
+      "prefix": "global-shard_01_of_10/local-shard_0_of_10/",
+      "train_tokens": 315789473,
+      "val_tokens": 10000000,
+      "train_shards": [
+        "dclm_train_000.bin",
+        "dclm_train_001.bin"
+      ],
+      "val_shards": [
+        "dclm_val_000.bin"
+      ]
+    }
+  }
+}

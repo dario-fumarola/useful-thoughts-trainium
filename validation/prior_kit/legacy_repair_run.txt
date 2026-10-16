@@ -1,0 +1,17 @@
+{
+  "source_sha256": {
+    "pre-training/train/think_oracle.py": "a89862d506634e8f5fa21dbd7c2389e6e4cf4a27be61d3abb88e88f05d14308d",
+    "pre-training/train/think_bestof.py": "b3638aaf35d93d1fcc7481b29e3021d4d60f6581cbbbe1c5841bd9d41d9d3148",
+    "pre-training/train/think_hintmix.py": "f5caa17bb709aca4d7572a889239b81435bd2f663ee927744c148d69c3474239"
+  },
+  "patched_sha256": {
+    "pre-training/train/think_oracle.py": "cae05a9baecf4254e4b98b34a4cfbbd507ca8862b860c7c22bcb4493787c4f73",
+    "pre-training/train/think_bestof.py": "19025e1b5ed21a5b3e2816a5e04950567b5793cca4a46624ea20a9688646abcc",
+    "pre-training/train/think_hintmix.py": "8baa301efee8379d1176cd0c581aba95282a5131f0ecb9cca5e282fa1bb6e726"
+  },
+  "verification": {
+    "passed_cases": 12,
+    "change": "Only the final clean-token target changes; buffer, attention, branch labels and thought masks are unchanged."
+  },
+  "limitation": "Training callers outside these three files are not updated; read-only probes that omit next_targets retain the legacy last label. Do not assign NTP weight to that label."
+}

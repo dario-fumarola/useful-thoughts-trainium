@@ -1,0 +1,14 @@
+{
+  "model_dir": null,
+  "records_file": null,
+  "format_file": null,
+  "output_root": "local/runs",
+  "world_size_per_arm": 32,
+  "gradient_accumulation": 4,
+  "execution_mode": "parallel_only_after_isolation_check_else_sequential",
+  "thought_visible_cores": null,
+  "vanilla_visible_cores": null,
+  "deadline_utc": null,
+  "backup_destination": null,
+  "notes": "Verify actual instance, LNC, paths, cutoff and backup. No credential values in this file."
+}

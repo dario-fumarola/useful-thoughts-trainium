@@ -1,0 +1,175 @@
+BANDS REGISTERED 2026-10-10 06:4x (06:07 tick) -- BEFORE ANY NUMBER BELOW WAS COMPUTED.
+================================================================================
+WHY THERE ARE BANDS AT ALL THIS TICK. The ledger has carried "4 unscored" for many ticks.
+Three of them are B613/B614/B616, blocked since 2026-10-06 because the 22:07 tick of that day
+wrote that `runs/think95_bestof/ceiling/ceil_0000190.analysis` "never appears". THE FILE EXISTS
+AND ALWAYS DID, under the name `ceil_190.analysis` (mtime Oct 6 23:13) -- the blocked tick looked
+for a zero-padded step name the ceiling script does not use. This is pre-registered ledger work,
+not a new question and not manufactured work.
+
+THE THREE BAND TEXTS, verbatim from agent/predictions/pred_20261006_1840.md:73-74:
+  B613  ours_mix(190): [2.770, 2.782]
+  B614  D5 gap vs vanilla@22990 (2.7736): [-0.004, +0.008] and not >= +0.03
+  B616  oracle-best6 (k=1) at rung 1: [+1.80, +3.20] (init +2.30, i.e. ceiling unchanged)
+
+POPULATION, FIXED BEFORE SCORING (G217(g), G210(4)). B616's reference "+2.30" is the owner's
+16:35 init row of 2026-10-06 (JOURNAL.md:20306): untrained 9B, plain inserted geometry, 48
+held-out sequences, 8 anchors/seq, G 6, K 16, **L8**. The matching section of a rung analysis is
+therefore "deployment trigger tau>4.0, top-8/seq: 384 anchors over 48 sequences (8.0/seq)",
+which matches on sequence count AND anchors/seq exactly. B616 is scored there and nowhere else.
+
+WHAT I HAVE ALREADY READ (stated so the bands below are honest):
+  - ceil_190.analysis, top-8/seq, k=1: deploy-1 -15.129+-0.944, oracle-1 +1.380+-0.209,
+    oracle-bestG +5.702+-0.385, share helps 0.20, bestG helps 0.62. So B616's own number is
+    ALREADY KNOWN TO ME and is NOT banded below -- it is outside [+1.80,+3.20] and B616 is a
+    MISS HIGH on its face. The bands below are about WHOSE FAULT that miss is.
+  - runs/think95_bestof/heldout.tsv in full: step 0 mix 2.7749, 190 2.7780, 380 2.7771,
+    570 2.7778, 760 2.7777, 950 2.7778, 1140 2.7774. B613/B614's numbers are therefore also
+    already known to me and are NOT banded below.
+  - the init L32 row: oracle-best6 +2.61 (k=1) at 8 anchors/seq, and the owner's note that
+    "L32 > L8 by ~10%" and that "the ceiling scales with positions, not with tau" (top-16 on
+    the init at L32 reads best6 +5.8/seq).
+  - run 95's rung ceiling job was launched as `ceiling_rungs.sh think95_bestof 6`, i.e. **L6**,
+    against an init reference measured at **L8**. L6 < L8 should LOWER the ceiling, not raise it,
+    so L does not explain a 2.5x rise in the observed direction.
+  - which files exist: ceil_{190,380,570,760,950,1140}.analysis and a _nt6 variant of each, plus
+    runs/probes/ceiling/ceil_init_L{4,8,16}_nt6.analysis. I have read NONE of the five later
+    rungs, NONE of the _nt6 files and NONE of the init_*_nt6 files.
+
+THE BANDS. The question is whether +5.702 at rung 1 is a TRAINING effect (190 steps raised the
+best-of-6 ceiling 2.5x) or a LEVEL of this probe/analysis path that the owner's +2.30 was never
+commensurable with. G196's resume/training-control family is exactly this trap, and G193 forbids
+a direction-of-travel claim from fewer than three checkpoints -- I have six.
+
+B797  THE SERIES IS A LEVEL, NOT A TREND. oracle-bestG at k=1, top-8/seq, at ALL FIVE later rungs
+      (380, 570, 760, 950, 1140) lands inside [+4.00, +7.50] nats/seq.        PREDICT HIT.
+B798  NO DIRECTION OF TRAVEL. The rung-1140 value minus the rung-190 value (+5.702) is within
+      +-1.50 nats/seq of zero.                                                PREDICT HIT.
+B799  THE DECISIVE CONTROL, AND IT IS THE ONE THAT ASSIGNS BLAME. The UNTRAINED init, read on
+      this same analysis path -- runs/probes/ceiling/ceil_init_L8_nt6.analysis, top-8/seq, k=1,
+      oracle-bestG -- is **>= +4.00**, i.e. the init itself reads far above the owner's quoted
+      +2.30 on the path B616 is scored on. If so, B616's miss is MY BAND'S FAULT: it compared a
+      number from one analysis path against a reference from another.
+      PREDICT HIT (directional, >= +4.00).
+B800  nt6 IS NOT THE EXPLANATION. ceil_190_nt6.analysis, top-8/seq, k=1, oracle-bestG is within
+      +-0.60 of the non-nt6 +5.702.                                           PREDICT HIT.
+
+IF B799 HITS, the honest reading is that B616 is unscorable-as-written against the init and is
+recorded MISS HIGH anyway, scored against me and not re-read favourably (the G217(g) precedent
+from B789/B790 two ticks ago, where I scored my own badly-built bands as misses).
+
+================================================================================
+SECOND BATCH, REGISTERED 2026-10-10 06:5x, BEFORE THE NUMBERS IN IT WERE COMPUTED.
+DISCLOSURE OF BATCH 1 IN FULL (what I now know that I did not when batch 1 was written):
+  - B797 HIT: bestG k=1, top-8/seq, at the five later rungs = +5.709, +5.145, +6.029, +5.845,
+    +5.988 -- all five inside [+4.00, +7.50]. With rung 190's +5.702 the series is FLAT.
+  - B798 HIT: 1140 minus 190 = +0.286, inside +-1.50. No direction of travel.
+  - B799 and B800 are **VOID, AND BY THE SAME MISTAKE OF MINE**: both named a "top-8/seq"
+    section of an `_nt6` file, and NO `_nt6` FILE HAS ONE. `_nt6` means **n-think 6**, the run's
+    own deployment density, so every `_nt6` analysis carries **top-6/seq (288 anchors over 48
+    sequences)** instead. I banded a population that does not exist in the artefact I named --
+    the G217(g) error again, one tick after I filed it.
+  - the matched-path numbers I read instead, all at top-6/seq, k=1, oracle-bestG:
+      untrained init L4 +1.315+-0.207 | L8 **+1.516+-0.240** | L16 +1.671+-0.254
+      run 95 rung 190 **+4.339+-0.363** (bestG helps 0.61) | rung 1140 +4.296+-0.361
+    So on ONE analysis path and ONE population the trained checkpoint reads ~2.9x the untrained
+    init (diff +2.823, s.e. ~0.435, t ~6.5), and L explains at most +0.36 across L4..L16.
+    B799 PREDICTED THE INIT WOULD READ >= +4.00 ON THIS PATH. IT READS +1.516. MY PREDICTION
+    WAS WRONG IN SUBSTANCE AS WELL AS VOID IN FORM: the +5.702 is NOT an analysis artefact.
+  - run 95's rungs are flat from 190 to 1140 on BOTH paths, so RUN 95's OWN TRAINING moved this
+    ceiling by nothing. The gap is therefore an event at or before its step 190 -- and run 95
+    RESUMED FROM THE VANILLA LADDER (`checkpoints/vanilla12b_fresh_ladder/step_0022800.pt`),
+    while "init" is the UNTRAINED 9B. So the gap conflates (a) 22,800 steps of ORDINARY
+    PRE-TRAINING with (b) 190 steps of run 95's RL. This is G196's resume/training control
+    exactly, and it is UNRESOLVED by anything above.
+
+B801  THE ATTRIBUTION CONTROL. `runs/probes/ceiling/ceil_init_step_0022800_L32_K16_G6.jsonl` is
+      the vanilla ladder checkpoint run 95 resumed from, with ZERO RL, and
+      `ceil_init_L32_K16_G6.jsonl` is the untrained 9B at the SAME L32. Analysed by
+      `agent/ceiling_analysis.py` at the SAME population (tau>4.0, top-8/seq, 48 sequences,
+      k=1, oracle-bestG), the LADDER-22800 value minus the UNTRAINED-INIT value is
+      **>= +1.50 nats/seq**, i.e. ordinary pre-training ALONE accounts for most of the rise
+      that B616 mistook for "ceiling unchanged".                        PREDICT HIT.
+B802  AND IT ACCOUNTS FOR ESSENTIALLY ALL OF IT. The ladder-22800 k=1 oracle-bestG at top-8/seq
+      is **>= +4.00**, i.e. within reach of run 95's +5.702 with no RL at all.
+      PREDICT HIT (directional).
+B803  THE DEPLOYED ARM STAYS NEGATIVE ANYWAY. deploy-1 at k=1 on the ladder-22800, top-8/seq,
+      is **negative** (< 0), as it has been at every checkpoint of every design.   PREDICT HIT.
+
+================================================================================
+THIRD BATCH, REGISTERED 2026-10-10 06:5x, BEFORE THE NUMBERS IN IT WERE COMPUTED.
+DISCLOSURE OF BATCHES 1-2 IN FULL, PLUS WHAT I LEARNED SINCE BATCH 2:
+  - **B801/B802/B803 ARE VOID, AND NOT BY MY BAND'S WORDING THIS TIME: THE ARTEFACT IS EMPTY.**
+    `runs/probes/ceiling/ceil_init_step_0022800_L32_K16_G6.jsonl` is **0 bytes** with an **empty
+    log** (both Oct 6 14:42), and so is `ceil_r94_step_0003230_L32_K16_G6.jsonl`. TWO attribution
+    probes this programme believed it had on disk never wrote a single record. Same class of
+    error as the one that blocked B613/B616 for four days: a tick assumed an artefact existed.
+  - COLLAPSE CHECK PASSED on the analysis path I am about to use: re-analysing
+    `ceil_init_L32_K16_G6.jsonl` at --tau 4.0 --nthink 8 reproduces the owner's 16:35 row
+    EXACTLY -- deploy-1 **-23.459** vs his -23.5, oracle-1 **+1.081** vs +1.08, oracle-bestG
+    **+2.611** vs +2.61, any-of-6 helps **0.25** vs 25%. The loader and the population are right.
+  - **THE L CONFOUND IS NOW CLOSED BY INTERPOLATION, NOT BY ASSUMPTION.** `ceiling_rungs.sh`
+    passes `probe_ceiling.py ... 12 6 32 $L 16 2.0` and run 95 was launched with `$L=6`, so its
+    rung probes are **L=6, G=6, K=16, 48 seqs, N=32**. The untrained init at 6 anchors/seq reads
+    L4 +1.315, L8 +1.516, L16 +1.671 -- so an L=6 untrained init must sit near **+1.4**, and NO
+    value of L from 4 to 32 puts the untrained init within +2.5 nats of run 95's rung-190
+    **+4.339**. L cannot explain the gap in any direction.
+  - WHAT THEREFORE STANDS WITHOUT ANY NEW MEASUREMENT: run 95's rung-1 best-of-6 ceiling is
+    ~2.9x any untrained-init ceiling at any L on the matched population and path, AND it is FLAT
+    across run 95's own 950 further steps (+5.702 -> +5.988 at 8/seq; +4.339 -> +4.296 at 6/seq).
+    So the rise is an event at or before step 190. The ONLY residue is whether it belongs to the
+    22,800 steps of ORDINARY PRE-TRAINING in the ladder checkpoint run 95 resumed from, or to
+    run 95's first 190 RL steps. Run 95's INIT is pinned: config.sh:73 =
+    `checkpoints/vanilla12b_fresh_ladder/step_0022800.pt`.
+  - `probe_ceiling.py` runs with `USE_TORCH_XLA=0` and `PROBE_THREADS=40`: it is a **CPU** job.
+    Probing the ladder checkpoint touches NO NeuronCore and is not a run. Precedent: the
+    2026-10-06 tick's note that probing the init "is a cheap, non-competing read -- it is a CPU
+    probe, not a run". The device stays idle, per the owner's 14:59 line.
+
+THE PROBE I AM LAUNCHING (CPU only): `probe_ceiling.py
+checkpoints/vanilla12b_fresh_ladder/step_0022800.pt ... 12 6 32 6 16 2.0` -- byte-identical
+arguments to run 95's own rung probes, so the ONLY difference from `ceil_190` is 190 RL steps.
+
+B804  THE ATTRIBUTION, AND IT IS THE WHOLE POINT. Ladder-22800 at L6, matched geometry, top-8/seq,
+      k=1 oracle-bestG is **>= +4.00** nats/seq -- i.e. ORDINARY PRE-TRAINING ALONE, with ZERO RL,
+      already reaches run 95's level and B616's "+2.30, ceiling unchanged" reference was never a
+      reference for a ladder-resumed run at all.                          PREDICT HIT.
+B805  QUANTIFIED. (ladder-22800 L6, top-8/seq, k=1 bestG) minus (untrained init at the SAME
+      population, L4..L8 bracket, which I will compute in this tick at --nthink 8) is
+      **>= +1.50** nats/seq.                                              PREDICT HIT.
+B806  AND RUN 95's RL ADDED ESSENTIALLY NOTHING ON TOP. |ceil_190's +5.702 minus the ladder's
+      value| is **<= 1.80** nats/seq.                                     PREDICT HIT.
+B807  THE DEPLOYED ARM IS STILL NEGATIVE ON THE LADDER. deploy-1 at k=1, top-8/seq, is < 0.
+      PREDICT HIT.
+B808  THE SHARE MOVES WITH IT. The ladder's "bestG helps" share at k=1 is **>= 0.45** (run 95
+      rung 190 reads 0.62; the untrained L32 init reads 0.25).            PREDICT HIT.
+B809  BRACKET, COMPUTED THIS TICK FROM FILES ON DISK: the untrained init at top-8/seq, k=1 bestG,
+      is **monotone non-decreasing in L** across L4, L8, L16, L32 (L32 is +2.611).  PREDICT HIT.
+
+================================================================================
+FOURTH BATCH, REGISTERED 2026-10-10 06:5x, BEFORE THE NUMBERS IN IT WERE COMPUTED.
+DISCLOSURE OF BATCHES 1-3 IN FULL: B797 HIT, B798 HIT, B799-B803 VOID, B809 HIT, and the
+attribution probe landed at 06:42 giving ladder-22800 bestG(k=1) **+2.457+-0.302**, deploy-1
+**-21.088+-1.110**, helps **0.27** -- so B804 MISS LOW, B805 MISS LOW, B806 MISS HIGH, B807 HIT,
+B808 MISS LOW, and run 95's first 190 RL steps own the whole +3.245 (t +6.63) while 22,800 steps
+of pre-training own +0.303. I ALSO ALREADY KNOW run 95 rung 190 reads bestG +5.702+-0.385,
+deploy-1 -15.129+-0.944, helps 0.62 on its own top-8/seq selection.
+
+WHY THIS BATCH EXISTS: caveat (ii) on that result is that the top-8/seq population is selected by
+**each checkpoint's own entropy**, so +5.702 and +2.457 are not scored on identical anchors. This
+is answerable with NO new forward pass -- both jsonl files are on disk and every record carries
+the anchor key (set, seq, n). I intersect on that key and re-score BOTH checkpoints on ONE common
+anchor set (the LADDER's own top-8/seq, i.e. chosen by the checkpoint that scores LOWER, so the
+selection cannot be accused of favouring run 95). Script: agent/scratchpad/fixedanchor_0607.py.
+
+B810  THE ANCHOR SETS GENUINELY DIFFER. The overlap between run 95 rung 190's top-8/seq anchor
+      set and the ladder's top-8/seq anchor set is **< 85%** of 384.          PREDICT HIT.
+B811  **THE EFFECT SURVIVES THE FIX.** On the LADDER's own top-8/seq anchors, scored for both
+      checkpoints, (run 95 rung 190 bestG) minus (ladder bestG) is **>= +2.00** nats/seq, i.e.
+      at least 62% of the +3.245 survives fixing the anchors.               PREDICT HIT.
+B812  AND IT STAYS SIGNIFICANT. That paired difference, clustered by sequence over the 48
+      sequences, has **|t| >= 3.0**.                                          PREDICT HIT.
+B813  THE DEPLOYED ARM STAYS NEGATIVE FOR BOTH ON THE COMMON SET. deploy-1 at k=1 is < 0 for
+      run 95 rung 190 AND for the ladder.                                     PREDICT HIT.
+B814  THE HELPS SHARE GAP SURVIVES TOO. On the common anchor set, (run 95 helps share) minus
+      (ladder helps share) is **>= +0.20**.                                   PREDICT HIT.

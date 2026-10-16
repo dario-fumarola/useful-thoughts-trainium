@@ -1,0 +1,13 @@
+#!/bin/bash
+# 20:07 tick, 2026-10-06: completes the horizon sweep the OWNER asked for (L = 4/8/16/32 at the untrained init).
+# L8 and L32 are done (runs/probes/ceiling/ceil_init_L{8,32}_K16_G6.jsonl); this adds L4 and L16.
+# CPU-only, ZERO updates, reads one checkpoint, writes only into runs/probes/ceiling/. 192 cores, load was 67 at
+# launch and ~125 were idle, so 2 x 20 threads at nice 10 cannot slow run 95's smoke/first steps.
+R=/home/ubuntu/ema-trainium; CK=$R/checkpoints/vanilla12b_fresh_ladder/step_0022800.pt; O=$R/runs/probes/ceiling
+for L in 4 16; do
+  f=$O/ceil_init_L${L}_K16_G6.jsonl
+  USE_TORCH_XLA=0 HF_HUB_OFFLINE=1 PROBE_THREADS=20 nice -n 10 $R/.venv/bin/python $R/pre-training/train/probe_ceiling.py \
+    $CK $f 12 6 32 $L 16 2.0 > ${f%.jsonl}.log 2>&1 &
+done
+wait
+echo "$(date '+%F %T') init ceiling L4+L16 done" >> $O/init_sweep.log

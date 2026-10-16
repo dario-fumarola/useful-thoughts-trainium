@@ -1,0 +1,30 @@
+# Host-specific data, credentials, outputs, and compiler caches
+local/
+configs/site.local.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+*secret*
+.aws/
+.codex/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.npy
+*.npz
+.cache/
+neuron_compile_cache/
+.DS_Store
+# Generated raw-corpus/large job output must stay under local/

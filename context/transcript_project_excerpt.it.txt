@@ -1,0 +1,1055 @@
+PROJECT EXCERPT — original Italian, physical source line numbers
+Unrelated interview/personal discussion omitted. Historical statements are not independently verified facts.
+
+0171 |  parlando del progetto
+0172 |  allora mi sono fatto un mega backup
+0173 |  perché non c'erano più istanze
+0174 |  quindi mi sono
+0175 |  per quel fatto
+0176 |  poi non mi ricordo se l'avevo più fatto
+0177 |  volevo mettere i checkpoints
+0178 |  su S3
+0179 |  Così magari quando ci servivano
+0180 |  Li prendevamo da lì
+0181 |  Non ricordo se l'avevo più fatto
+0182 |  Poi vabbè, poi controllo se li avevo salvati o no
+0183 |  Però hai detto che un po' li hai fatto il backup, no?
+0184 |  Io avevo fatto un backup
+0185 |  Che ci permette di almeno
+0186 |  Sì, mi sono accorto
+0187 |  Quattro ore prima che scadesse
+0188 |  Quindi non potevo scaricarmi
+0189 |  Proprio con la linea che avevo non era possibile
+0190 |  Spostarmi tutta quella roba
+0191 |  E quindi mi sono scaricato quello che sono riuscito
+0192 |  A scaricarmi
+0193 |  Però sai cosa, la peggio ricomincia
+0194 |  C'abbiamo
+0195 |  Spero che tu non abbia letto il documento
+0196 |  Nel senso che sono 90 pagine
+0197 |  Di negative results
+0198 |  Secondo me va proprio cambiato
+0199 |  Dobbiamo inventarci qualcosa
+0200 |  E vabbè, l'avevo dato a Claudio
+0201 |  Il documento per ricordarmi
+0202 |  Che stava succedendo
+0203 |  Sì, cioè tipo
+0204 |  Ho scritto qualcosa
+0205 |  Mi sono fatto qualche nota
+0206 |  Per capire
+0207 |  E sì, un po' mi è tornato in mente
+0208 |  Cos'era l'idea
+0209 |  E poi c'era un botto di cose
+0210 |  Che stavamo provando a fare allo stesso tempo
+0211 |  Secondo me qual era il problema
+0212 |  Abbiamo un botto di constraints
+0213 |  Tutti allo stesso tempo
+0214 |  Però nel documento
+0215 |  Erano un botto di pagine
+0216 |  C'era qualcosa di positivo
+0217 |  Erano tutte
+0218 |  Le ultime
+0219 |  interazioni che erano a quel punto lì
+0220 |  mi sono, allora non mi
+0221 |  se ti ricordi all'inizio noi
+0222 |  l'idea era
+0223 |  trainiamo sto modello fino a 6-9
+0224 |  billion, veramente 9
+0225 |  da 9 fino a 13 abbiamo 3 billion
+0226 |  che non ha mai visto
+0227 |  che sono un misto di matematica
+0228 |  e un pezzo del dataset rimanente
+0229 |  che è quello che hai aggiunto te, perché mi pare che io avessi caricato
+0230 |  tipo avessi un corpus fino a 6
+0231 |  forse 7-8
+0232 |  è giunto quegli altri billion
+0233 |  e all'inizio facevamo
+0234 |  next token prediction sul prossimo
+0235 |  e RL su quelli che
+0236 |  venivano ancora più avanti
+0237 |  quindi facevamo look ahead
+0238 |  non funzionava
+0239 |  allora ci siamo spostati su
+0240 |  nelle ultime fasi ho provato
+0241 |  a fare persino con il teacher
+0242 |  non funzionava nemmeno se gli davi una versione
+0243 |  compressa proprio della look ahead
+0244 |  ci siamo spostati a
+0245 |  full next token prediction
+0246 |  quindi star
+0247 |  star o quiet star
+0248 |  con un pezzo di
+0249 |  sostanzialmente tu
+0250 |  quello che fa mi so letto bene bene
+0251 |  star e quiet star
+0252 |  e quello che loro fanno nel limite
+0253 |  è ad ogni token emetto una thinking
+0254 |  e
+0255 |  predico
+0256 |  quindi quella lì viene
+0257 |  riguardata con RL
+0258 |  se non sbaglio
+0259 |  poi viene una volta che hai fatto la predizione
+0260 |  butti via il thinking
+0261 |  passi al prossimo token
+0262 |  thinking
+0263 |  più next token
+0264 |  e poi di nuovo butto via il thinking
+0265 |  next token prediction, RL
+0266 |  e vado avanti così
+0267 |  ho fatto esattamente la stessa cosa solo intervallato
+0268 |  ogni tipo 8-16 tokens
+0269 |  si
+0270 |  nel senso che da una minima mano
+0271 |  tu vedi effettivamente
+0272 |  se misuri poi la loss
+0273 |  vedi che c'è una specie di gain ma è molto
+0274 |  molto basso il gain
+0275 |  ma
+0276 |  continuo
+0277 |  ora quello che hanno fatto loro
+0278 |  loro hanno fatto mid to post training
+0279 |  quindi hanno preso un modello già pretrainato
+0280 |  non piccolo
+0281 |  noi abbiamo un modello piccolo pretrainato da zero
+0282 |  quindi può essere che il loro modello
+0283 |  tipo il loro QN
+0284 |  se noi prendiamo il QN base
+0285 |  il nostro QN ha visto 9 billion
+0286 |  il QN di Alibaba
+0287 |  ne ha visti 4 trillion
+0288 |  quindi ovviamente una differenza c'è
+0289 |  non saprei
+0290 |  cioè se vediamo che questa roba qua è un buco nero
+0291 |  è proprio un buco nero
+0292 |  nel senso che ci stiamo spendendo
+0293 |  io mi ricordo che il progetto
+0294 |  era Safe Social
+0295 |  quindi potremmo
+0296 |  spostarci su
+0297 |  Safe Social pre-training
+0298 |  potremmo provare a spostare
+0299 |  un pochino l'attenzione, non lo so
+0300 |  dovrebbe finire a marzo
+0301 |  quindi abbiamo ottobre, novembre, c'è virgine
+0302 |  a febbraio, un marzo, sei mesi almeno
+0303 |  cinque mesi pieni
+0304 |  anche se poi glielo diciamo
+0305 |  diciamo ah guardi stiamo facendo questo
+0306 |  dacci un altro paio di mesi
+0307 |  anche perché i crediti
+0308 |  ho usato 30.000
+0309 |  30.000 su mezzo milione
+0310 |  quindi a un certo punto possiamo proprio spingere
+0311 |  anche se stiamo arrivando alla fine
+0312 |  a un certo punto lanciamo
+0313 |  come si chiama? Open Router
+0314 |  Quindi a un certo punto almeno ci intaschiamo i soldi
+0315 |  Quindi questo, questo è un po' il punto a cui siamo
+0316 |  Quello che non capisco, cioè quello che un po' ci ho pensato è il fatto della NTP
+0317 |  Secondo me
+0318 |  L'idea di
+0319 |  Cioè è ok se perdiamo un po' di
+0320 |  NTP
+0321 |  Magari NTP non stiamo guadagnando niente
+0322 |  Però magari stiamo guadagnando qualcosa
+0323 |  Downstream
+0324 |  Qualche task downstream
+0325 |  In termini di reasoning
+0326 |  Magari tipo
+0327 |  Ho provato
+0328 |  Ho visto che l'avevi provato
+0329 |  C'è uno dove c'è tipo questo
+0330 |  Lambada
+0331 |  La Bada, se non mi ricordo come si chiama
+0332 |  Che è uno degli otto benchmark
+0333 |  Che avevo fatto
+0334 |  In cui perdiamo il 7%
+0335 |  E gli altri abbiamo dei guadagni
+0336 |  Tipo più 1, più 0,5
+0337 |  Quindi il meno 7
+0338 |  Non giustifica
+0339 |  Quindi la prima cosa che avevo scritto è
+0340 |  Possiamo vedere se la maturità
+0341 |  Del modello
+0342 |  Quindi magari come stiamo dicendo
+0343 |  Il nostro modello l'abbiamo visti
+0344 |  10 miliardi
+0345 |  Quello di base ne avessi 30
+0346 |  Trigliardi o quello che era
+0347 |  Quindi quella è la prima cosa
+0348 |  Che posso controllare
+0349 |  Al massimo
+0350 |  E vedere se prendiamo magari
+0351 |  Un quenar già addestrato
+0352 |  Quella opzione è 1
+0353 |  L'altra idea è che avevo visto
+0354 |  Che facevamo
+0355 |  Facevamo 6 token
+0356 |  Di TOT
+0357 |  e avevo visto che
+0358 |  QuietStar
+0359 |  Fast QuietStar
+0360 |  fa tipo un curriculum training
+0361 |  tipo ne usa un botto e poi di meno
+0362 |  poi di meno
+0363 |  quindi magari
+0364 |  ricorda avevamo provato anche con altre lunghezze
+0365 |  oltre ai 6 token
+0366 |  però magari all'inizio lasciamo generarli
+0367 |  quante ne vuole e poi iniziamo
+0368 |  ma mi sa avevamo anche provato questa idea
+0369 |  Sì, e bisogna stare attenti
+0370 |  Perché dipende
+0371 |  Dipende poi
+0372 |  Dalle REL che utilizziamo
+0373 |  Dall'algoritmo DRL
+0374 |  Perché se usiamo Reinforce
+0375 |  Penso che Reinforce sia
+0376 |  Tipo se usiamo GRPO dobbiamo stare attenti
+0377 |  Perché rischiamo di farci fregare
+0378 |  Perché tipo GRPO tende
+0379 |  Classico, GRPO classico tende a favorire
+0380 |  Sequenze lunghe
+0381 |  Ti tende comunque a dare reward più alto per sequenze lunghe
+0382 |  Quindi rischiamo di vedere
+0383 |  Oh mica sta migliorando
+0384 |  Perché all'inizio gli diamo un botto di Thodes
+0385 |  Poi piano piano che lo diminuiamo
+0386 |  Perdiamo il game ma in realtà non l'abbiamo mai guadagnato
+0387 |  Era solo il bias di GRPO
+0388 |  Sulle sequenze lunghe
+0389 |  C'è un po' da brainstormare qua
+0390 |  Se tu hai due idee che dici voglio provarle
+0391 |  Carichiamo un'istanza e da zero
+0392 |  Possiamo anche partire da un pre-trend
+0393 |  Ad esempio un 7 billion a questo punto
+0394 |  Esatto, quindi ci sono le due idee
+0395 |  Cioè sia l'idea della motorità del modello che anche le capacità con 7 billion o di più
+0396 |  Avevamo detto che avevamo provato l'idea dell'oracle, del teacher
+0397 |  E poi l'altra idea che c'aveva è magari usiamo qualche warm up con un teacher
+0398 |  e poi treniamo il writer
+0399 |  per generare i pensieri come il teacher
+0400 |  e poi vediamo se quando togli il teacher
+0401 |  continua a migliorare dopo
+0402 |  se per teacher intendi
+0403 |  un altro modello
+0404 |  no
+0405 |  se per teacher intendi
+0406 |  una parte dei Toads è data
+0407 |  ed è supervised, sì
+0408 |  cioè noi
+0409 |  tipo una sequenza su 4 o su 8
+0410 |  gli davamo esattamente il target
+0411 |  quello che lui doveva predire
+0412 |  Quindi ovviamente l'e-reward era massimo, in sostanza.
+0413 |  Mi fa strano che queste cose non funzionano, perché alcune di queste sono paper che esistono già, tipo Bolt, QuietStar.
+0414 |  Quindi non so se è qualcosa che stiamo facendo male.
+0415 |  Magari QuietStar alla fine...
+0416 |  No, vabbè, sono biased perché mi stanno sul caso quelli di Humans.
+0417 |  Non saprei.
+0418 |  Non saprei.
+0419 |  Stiamo ovviamente stiamo facendo una roba che è un po' fuori dall'ambito accademico, nel senso che pre-training è una roba, la gente si equipa, nelle companies si equipa di centinaia di migliaia, i top lab hanno centinaia di migliaia di GPU, quindi noi non possiamo competere da quel punto di vista.
+0420 |  quindi non so quante ne avevano per QuietStar
+0421 |  però appunto hanno fatto post-training in QuietStar
+0422 |  l'altro fatto era, vabbè, gli ho detto che il benchmark che hai fatto era
+0423 |  quel test, non mi ricordo il nome
+0424 |  però stavo pensando anche che magari ci sta aiutando per task
+0425 |  dove l'entropia è più alta e magari il reasoning aiuta in quel
+0426 |  il fatto è che quando dicevamo
+0427 |  safe and social
+0428 |  pre-training, quel titolo originale
+0429 |  mi ricordo che l'idea era di fare
+0430 |  questo prima e poi questa era la base
+0431 |  eh sì
+0432 |  non so se saltare al prossimo
+0433 |  ci saltiamo
+0434 |  non è una cattiva
+0435 |  allora
+0436 |  il prossimo era letteralmente
+0437 |  social
+0438 |  cioè
+0439 |  Non voglio più estrarre thoughts
+0440 |  Voglio estrarre thoughts
+0441 |  Che ti dicono belief, desire, intentions
+0442 |  Di potenziali altri agenti
+0443 |  Anche se questi agenti non esistono
+0444 |  Tipo
+0445 |  Quando tu hai una sentence
+0446 |  Ad esempio una sentence che ha
+0447 |  Del contenuto multiagente
+0448 |  Implicito ovviamente c'è qualcuno che ti sta narrando
+0449 |  Paolo mi ha chiesto
+0450 |  Di andare a prendere i biscotti
+0451 |  Tu a quel punto lì
+0452 |  Non vuoi più pensare
+0453 |  Devo estrarre roba che è sociale.
+0454 |  Cioè, chi è Paolo? Qual è il mio ruolo con Paolo?
+0455 |  Ma questa cosa qui, tu pensi che ci aiuta nel training o al momento dell'inferenza?
+0456 |  A questo ci aiuta.
+0457 |  Ma sai che non è una cattiva idea questa?
+0458 |  Cioè, nel senso che noi ci schippiamo tutto e facciamo post-training sociale.
+0459 |  Cioè, lo chiamiamo meet training.
+0460 |  Facciamo quiet star sociale.
+0461 |  Potrebbe essere un punto di partenza.
+0462 |  A quel punto possiamo copiargli la ricetta
+0463 |  Quello che cambia è la target
+0464 |  Non è più pensieri per fare next talk
+0465 |  Né pensieri per approssimare la BDI
+0466 |  Il believe that are intention
+0467 |  Implicito nella sentence
+0468 |  E magari secondo te possiamo andare
+0469 |  Possiamo fare questo prima
+0470 |  E poi se funziona in post training
+0471 |  Magari poi riusciamo a rivertirlo in pre training
+0472 |  Potrebbe essere un'idea
+0473 |  Sai che non mi dispiace
+0474 |  Sai che non mi dispiace questa idea
+0475 |  Questa non mi dispiace
+0476 |  Quindi tu dici copiamo
+0477 |  Quel punto lì effettivamente tu sai cosa fai
+0478 |  Dai Claude
+0479 |  Quiet Star o Star
+0480 |  Che probabilmente è più Star perché c'è
+0481 |  Quello che io capisco della differenza
+0482 |  È che Star è
+0483 |  I thoughts sono super vari
+0484 |  Sono estratti prima
+0485 |  Quiet Star invece
+0486 |  Insegna a se stesso
+0487 |  Per questo è Quiet
+0488 |  non c'è
+0489 |  non c'è una supervisione attiva
+0490 |  con un punto di vista
+0491 |  il paper a cloud code
+0492 |  di quiet style
+0493 |  dici guarda cambia la funzione
+0494 |  non vogliamo più imparare i toes
+0495 |  vogliamo imparare i toes sociali
+0496 |  quella potrebbe essere una chip
+0497 |  objective
+0498 |  provare a vedere se funziona
+0499 |  è questo quello che intendi
+0500 |  o suonando un po' fuori
+0501 |  vabbè non sapevo cosa intendevo
+0502 |  però sì questa è una versione meglio di quello che intendevo
+0503 |  Potrebbe essere un'idea, sì
+0504 |  Praticamente quiet star sociale
+0505 |  Quiet star sociale
+0506 |  Quello che avevo notato è che
+0507 |  cercavamo
+0508 |  avevamo questo
+0509 |  tot likelihood probe
+0510 |  e aspettavamo che questo migliorava
+0511 |  prima di controllare
+0512 |  qualsiasi cosa downstream
+0513 |  e queste erano le run più dopo
+0514 |  le ultime run
+0515 |  però questa cosa a me
+0516 |  non è completamente chiara
+0517 |  cioè questo è un po'
+0518 |  un assumption che stiamo facendo
+0519 |  perché
+0520 |  è sempre questa idea che secondo me
+0521 |  Può essere il caso che la NTP non stia migliorando, però stiamo diventando meglio a...
+0522 |  Vabbè, a questo punto è anche l'idea della...
+0523 |  E come l'hai chiamata? H... cos'è?
+0524 |  Di Believe?
+0525 |  Quell'acronimo che avevi detto prima, H... cos'è?
+0526 |  Ah, la BDI è un termine di multi-agent classica, Beliefs, Desires and Intentions, che è molto multi-agent perché tu vuoi che il tuo agente sappia quali sono i belief, i desire e le intention degli altri agenti, per modellare le sue azioni.
+0527 |  E come lo misuri?
+0528 |  Abbraccio!
+0529 |  come lo misuri
+0530 |  qua servirebbe un contesto multiagente
+0531 |  ma in realtà
+0532 |  eh si servirebbe un contesto
+0533 |  io stavo addirittura pensando di
+0534 |  fare una roba tipo
+0535 |  proprio
+0536 |  ignorantissima RSI
+0537 |  Recursive Self Improvement
+0538 |  che dico a Claude
+0539 |  Claude carissimo
+0540 |  questo è il paper
+0541 |  noi vogliamo che il modello impari a pensare
+0542 |  vai
+0543 |  questo è Quiet Star
+0544 |  questo è Star
+0545 |  questo è l'altro paper vai
+0546 |  la farò come se fosse il tuo figlio
+0547 |  fallo imparare
+0548 |  e vedere se Claude fa la magia
+0549 |  sì esatto
+0550 |  avevi chiesto
+0551 |  non serve neanche chiedere
+0552 |  però se mettiamo su
+0553 |  un'istanza ci mettiamo a Claude, ci lo puntiamo a Bedrock, gli diciamo vai, per quanto vuoi
+0554 |  continuare ad andare, secondo me magari qualche idea ce la tira fuori, e sì, magari quindi
+0555 |  mettiamo lì l'idea di quiet star, mettiamo l'idea di questi altri paper, gli diamo la
+0556 |  possibilità anche di accedere all'internet se vuole trovare qualcosa di relativo, e sì,
+0557 |  Sì, secondo me se li lasciai un paio di giorni, un paio di settimane, magari qualcosa ce lo trova fuori.
+0558 |  Però non sai se possiamo usare Bedrock, no?
+0559 |  No, non possiamo. Armin mi ha detto no. No, Bedrock no.
+0560 |  Proprio no.
+0561 |  Io ho un paio di Cloud. Io ho due Cloud Pro.
+0562 |  Ho Max. Ne ho due, sì.
+0563 |  Sì, io ho uno Max e poi c'ho quello che ci danno ad Amazon.
+0564 |  Vabbè, c'è un po' il throttling, però vabbè, più o meno è Max.
+0565 |  Sì, vabbè, non è un problema trovare il cloud, penso
+0566 |  Possiamo... non saprei
+0567 |  Vuoi che tiro su un'istanza?
+0568 |  E tra l'altro ho dovuto spegnere tutto perché non c'erano più istanze
+0569 |  Adesso è pieno, posso avere un'istanza anche per un mese
+0570 |  Ovviamente costa tipo 3k un'istanza per un mese
+0571 |  Sì, ora c'è tempo
+0572 |  Ora che questo fatto di OpenAI è finito
+0573 |  C'è più tempo
+0574 |  Sì, in istanza la possiamo usare
+0575 |  Anche, cosa dici secondo te?
+0576 |  Una grande
+0577 |  E qualcuna piccola
+0578 |  Solo una grande
+0579 |  Tanto una grande quante sono? 48 chips?
+0580 |  Sì, sono le 40 qualcosa
+0581 |  Sì, sono qua
+0582 |  Vabbè, magari una grande la dividiamo
+0583 |  che se no
+0584 |  si
+0585 |  allora ce l'ho qua davanti
+0586 |  48, la 3 in un 2 sono
+0587 |  48
+0588 |  ed è la più grande che c'è
+0589 |  io ho visto di quelle a cui ho accesso
+0590 |  si si no
+0591 |  in questo mese c'ho tempo
+0592 |  perché ci sono i B200
+0593 |  vabbè
+0594 |  io ho accesso
+0595 |  anche a un nodo di B200
+0596 |  Ah, cioè su AWS?
+0597 |  Sì, faccio Capacity Block, seleziono P6, V200
+0598 |  Aspetta, ma V200 sono le V200?
+0599 |  Quanto costa una V200?
+0600 |  P6 cosa? P6 quanti XL?
+0601 |  È una P6 V248XLarge
+0602 |  Queste sono stracere, non si trovano facilmente
+0603 |  Vediamo se... no ma infatti non c'è... eh non ho sì, non ho... non posso, non posso metterlo...
+0604 |  però c'ho questa sì... c'è anche la Trenium 1... quanto costa una Trenium 1 per una settimana?
+0605 |  Ah non c'è, non c'è neanche la Trenium 1
+0606 |  Invece la Trenium 2 ci sono, costano 6.000 settimana
+0607 |  Sono sei da settimana
+0608 |  Posso tirarne su una
+0609 |  Conviene fare piazza pulita?
+0610 |  Forse sì
+0611 |  Tanto i negative results ce li abbiamo
+0612 |  Sì, abbiamo abbastanza di quelli
+0613 |  Qualsiasi cosa per dire che ci abbiamo lavorato
+0614 |  Abbiamo tutti questi negative results
+0615 |  Non saprei
+0616 |  Proviamo con
+0617 |  o prima di ci pensiamo
+0618 |  io posso dire se tu vuoi fare qualche esperimento
+0619 |  la tiro su ora
+0620 |  la trainium
+0621 |  io vorrei pensarci un po'
+0622 |  perché non so
+0623 |  non saprei bene cosa far fare a Claudia
+0624 |  quindi sarebbe una cosa un po' a caso
+0625 |  se hai qualcosa la posso provare
+0626 |  sta settimana
+0627 |  nel frattempo tu
+0628 |  la tiro su?
+0629 |  si si
+0630 |  una settimana faccio due
+0631 |  Facciamo due
+0632 |  Ma si facciano due
+0633 |  Quanto costa?
+0634 |  12.000
+0635 |  Cos'uoi che sia
+0636 |  Cos'uoi che sia
+0637 |  Quali sono i soldi del Monopoly questi?
+0638 |  Sì, è più vero
+0639 |  Alla fine sono belli
+0640 |  Alla fine sono crazy
+0641 |  Create
+0642 |  Inizia
+0643 |  Il 16 però
+0644 |  Inizia il 16
+0645 |  Quindi fra tre giorni
+0646 |  Confirm
+0647 |  La tiriamo su
+0648 |  Sì, sì, sì
+0649 |  A posto, adesso aspettiamo che
+0650 |  Ok
+0651 |  Ho tirato su, poi
+0652 |  Cosa ti devo dare per accedere?
+0653 |  Tu puoi accedere già così o devo darti tipo
+0654 |  Non mi ricordo, io ti avevo dato
+0655 |  La
+0656 |  Key di SSH da aggiungere
+0657 |  Non so se quelle nuove
+0658 |  Ora non mi ricordo se
+0659 |  No, mi sa dove aggiungere nella istanza
+0660 |  La
+0661 |  La mia email di SSH
+0662 |  Ah dici
+0663 |  Però forse posso farlo
+0664 |  Posso farlo già adesso
+0665 |  Che non è su
+0666 |  Mi sa di sì
+0667 |  Vabbè se no lo puoi aggiungere una volta che è su
+0668 |  Quando è tra tre giorni
+0669 |  Cos'è venerdì?
+0670 |  Sì
+0671 |  Devo andare su
+0672 |  Cosa faccio? Edit?
+0673 |  No, non è su Edit
+0674 |  È su Capacity Manager credo
+0675 |  Sì quando la high tech c'è tipo un post
+0676 |  dove aggiungere la
+0677 |  la key
+0678 |  è che adesso mi sa che non me la fa vedere
+0679 |  perché non è su
+0680 |  actions
+0681 |  posso fare edit
+0682 |  e basta
+0683 |  posso solo fare edit
+0684 |  ma se faccio edit non ho
+0685 |  non ho opzioni
+0686 |  sì non so se la puoi
+0687 |  editare una volta che l'hai già
+0688 |  che sta per essere lanciata
+0689 |  vabbè
+0690 |  quando quando è su possiamo aggiungere venerdì 6 dice che ora alle 14 29 utc più 1 io mi confondo
+0691 |  sempre cos'è la UTC più 1
+0692 |  mi sa è UK
+0693 |  si è UK
+0694 |  quindi 15
+0695 |  mi dice che è
+0696 |  1429 UK
+0697 |  quindi adesso
+0698 |  letteralmente adesso
+0699 |  si no che pensavo ci lascia qualcosa
+0700 |  correre per il weekend
+0701 |  e poi il lunedì posso vedere
+0702 |  cosa è successo
+0703 |  io magari penso
+0704 |  provo a vedere se mi viene in mente qualcosa
+0705 |  qualche idea
+0706 |  Vedere se mi viene qualche idea
+0707 |  Qualche idea ignorantissima
+0708 |  Quindi il piano potrebbe essere
+0709 |  Spostarci sulla parte del social multi-agent
+0710 |  Quindi schippiamo l'idea iniziale del reasoning pre-training
+0711 |  Però il reasoning pre-training mi piaceva questa idea
+0712 |  È figo, è figo
+0713 |  Sai cosa Dario?
+0714 |  Se ci spostassimo su safety
+0715 |  e togliessimo il pre
+0716 |  da pre training
+0717 |  io avrei una quantità di roba da fare
+0718 |  solo che poi
+0719 |  mi sa che rompono il cazzo
+0720 |  non so se rompono secondo me
+0721 |  no però
+0722 |  se cambiamo
+0723 |  dicono qualcosa
+0724 |  io di roba ne ho in post training
+0725 |  di safety
+0726 |  ne abbiamo fatta di roba
+0727 |  soprattutto adesso
+0728 |  perché questo Neurips che abbiamo
+0729 |  è su safety
+0730 |  E su safety e post training
+0731 |  Quindi c'è tutta una linea di lavoro
+0732 |  Che avrei da fare
+0733 |  In cui mi serve compute
+0734 |  Anche se in realtà
+0735 |  Sì, anche se in realtà sono un po' bloccato dai modelli
+0736 |  Perché Trainium
+0737 |  Per esempio non puoi metterci un QAN 3.6
+0738 |  Perché non hanno
+0739 |  Supportano fino a un certo
+0740 |  Tipo i mixture of experts
+0741 |  Non li supportano
+0742 |  Ah sì, avevo letto questo fatto
+0743 |  Tipo la NKI
+0744 |  L'equivalente di CUDA
+0745 |  Sì mi sa alcuni non sono ancora supportati
+0746 |  Però è open source
+0747 |  Alla fine mi sa se ti scrivi
+0748 |  Il codice per farli run
+0749 |  Per farli girare
+0750 |  Poi lo puoi mergere
+0751 |  Però secondo me anche lì
+0752 |  Perché VLLM non funziona
+0753 |  O funziona? Mi sa di no
+0754 |  VLLM non funziona
+0755 |  Se funzionasse VLLM
+0756 |  Uno avrebbe
+0757 |  Cioè post training lo fai a manetta
+0758 |  Proprio a cannone
+0759 |  E che non funziona via LEM quindi è lento
+0760 |  Persino post training è lento
+0761 |  Sono pensate per appunto training
+0762 |  C'è qualche risultato in pre training
+0763 |  Che ti aiuterebbe per queste idee di post training?
+0764 |  Cioè secondo te ti unblocca qualcosa?
+0765 |  Allora, io parlavo con questo professore di UCL
+0766 |  che lui ha questa idea che non è social, è solo safe
+0767 |  lui vorrebbe fare pre-training di LLMs che sono safe from first principles
+0768 |  quindi persino in fase di pre-training ci sono delle cose
+0769 |  gli training per essere safe fin dall'inizio
+0770 |  come? Secondo me lui non ha idea
+0771 |  non saprei
+0772 |  bisognerebbe definire qual è la specifica di safety
+0773 |  Già in post training è difficile
+0774 |  Definire una specifica di training
+0775 |  Tant'è che poi tu inventi tutte quelle cose lì
+0776 |  No harmful, no toxic
+0777 |  No
+0778 |  Però tipo in pre training come la definisci
+0779 |  Quella roba
+0780 |  Tu non hai
+0781 |  Tu stai cercando di imparare una distribuzione
+0782 |  Cosa fai?
+0783 |  Se diventa tossica non la impari
+0784 |  Se stai vedendo dati tossici non li impari
+0785 |  Fai prima togliere allora
+0786 |  Non fai training su quella roba lì
+0787 |  Pensavo che alcuni di questi modelli la safety è già nei weights, cioè tipo non è il post-training che li stoppa nel generare harmful content o quello che è, però già i weights...
+0788 |  Ah, dici?
+0789 |  Boh, non so di questo ne so poco, però sì, questo l'avevo letto una volta che...
+0790 |  Allora, sicuramente se tu pulisci il dataset e togli tipo quello che fa Meta, che ha fatto Meta a un certo punto, delle pipeline infiniti, ma immagino che abbiano fatto anche ADWS, insomma, tipo per Nova, l'abbiamo fatto anche per Nova, sono sicuro, prendi i dati, le cose tossiche le togli, le cose offensive le togli.
+0791 |  Però è più una cosa che tu fai prima, non è che stai discendo al modello tra queste due risposte, preferisci quella non tossica, oppure se ti chiedo come si fa una bomba, automaticamente il modello non post-trainato mi direbbe come farla, a questo punto voglio che il as an AI I cannot passi sopra.
+0792 |  Per questo pensavo magari il reasoning nel pre-training ti aiuta nel fare questo, nel modo che se stai facendo il reasoning per il next token prediction, magari nel reasoning ti accorgi che il reasoning che ha fatto dice ah questa è un'idea che mi sta chiedendo di come fare una bomba, magari inizia più tardi nel pre-training, come tutte le cose che abbiamo visto comunque, e ti accorgi ah il token che sto per predire sta andando in una direzione tossica.
+0793 |  Tu dici in qualche modo
+0794 |  noi facilitiamo poi il post training
+0795 |  safe
+0796 |  come?
+0797 |  Questa è una bella domanda
+0798 |  però questo effettivamente
+0799 |  quindi tu dici
+0800 |  tu immagina che sei
+0801 |  hai il tuo quen
+0802 |  c'è questa sentence che potenzialmente è tossica
+0803 |  cioè incita alla violenza o qualcosa del genere
+0804 |  e è scappata dal filtro, cioè è rimasta lì
+0805 |  come fai a capire che è tossica?
+0806 |  o come fai a informare il modello che quella roba lì è tossica?
+0807 |  eh, ti serve un altro modello
+0808 |  non può essere tipo un self-supervised
+0809 |  Cioè, il punto del reasoning qui sarebbe non nel migliorare la risposta, ma il punto del reasoning nel pre-training è per pensare se la risposta è nociva o no.
+0810 |  Ora ti dici, vabbè, una di queste può essere scappata e vabbè, l'abbiamo preditta comunque.
+0811 |  Cioè, l'idea del reasoning, del self-talk che generiamo nella mia testa, questo self-talk è per dirci, ah, questo è nocivo o no.
+0812 |  Sì.
+0813 |  E questo è il filtro che ci preventi, che non fa entrare le cose nel training oppure le fa entrare.
+0814 |  Non so se questo ne ha senso, però...
+0815 |  Però tu immaginati, ok, immaginati che questo thought funziona, no?
+0816 |  Questo thinking funziona in pre-training e il tuo modello capisce che quello che sta arrivando è tossico.
+0817 |  Lui cosa fa a quel punto lì? Non continua più con la next token prediction?
+0818 |  quindi paga una tassa che è SNAI, sovrascrive, paga una tassa, paga una tassa per la safety,
+0819 |  e quindi quando tu gli dai la prossima parola che è ad esempio bomb, lui sa che deve predire bomb,
+0820 |  e se non lo fa si becca la penalty sul next token, ma lui dice ok io preferisco pagarmi la penalty perché sto infrangendo...
+0821 |  Sì, sì, esattamente, secondo me questo probabilmente ti danneggia in qualche metrico come NTP e tutto il resto, probabilmente ti danneggia anche in alcune task, però guadagni qualche punto in safety, cioè magari stai predicendo un testo di storia e sarà peggiore a produrre la parola bomb, però magari in tutte le task di safety, visto che ha pagato la tassa, non so.
+0822 |  questo sai che si potrebbe provare
+0823 |  tipo in mid training
+0824 |  nel senso che
+0825 |  prendiamo un modello
+0826 |  che è già stato trainato
+0827 |  un bel po'
+0828 |  a quel punto
+0829 |  gli fai un bel post training
+0830 |  pre training
+0831 |  gli fai sempre un po' di pre training
+0832 |  nel quale
+0833 |  lui pensa
+0834 |  e
+0835 |  magari può anche fare
+0836 |  il look ahead
+0837 |  non lo so
+0838 |  può anche fare il look ahead
+0839 |  nel senso che
+0840 |  guarda in avanti
+0841 |  e
+0842 |  ad esempio
+0843 |  nel Toad
+0844 |  nel Toad
+0845 |  tu gli metti
+0846 |  i prossimi
+0847 |  50
+0848 |  per i prossimi 30 token
+0849 |  e poi
+0850 |  due punti e poi da lì tu dici
+0851 |  safe o no
+0852 |  se è safe
+0853 |  continui, se non è safe
+0854 |  a quel punto lì lui paga la tassa
+0855 |  e da quel momento in poi lui inizia a predirti
+0856 |  as an AI, questa potrebbe essere
+0857 |  anche un'idea effettivamente, questo è safe
+0858 |  social, bellissimo
+0859 |  questo è safe social
+0860 |  però comunque questa è un'idea
+0861 |  quasi come quello che stiamo facendo adesso
+0862 |  Però il punto del reasoning che stiamo facendo adesso
+0863 |  È per migliorare il reasoning
+0864 |  Il thought che generiamo
+0865 |  È per fare meglio magari connessioni
+0866 |  Di relazioni nel testo
+0867 |  Quello che è
+0868 |  Però invece il goal del reasoning in questo caso
+0869 |  Sarebbe
+0870 |  Skippare le non safe
+0871 |  Quello che è
+0872 |  Però come hai detto
+0873 |  Il modello è quasi già
+0874 |  È mid training
+0875 |  Perché deve riconoscere che qualcosa è safe
+0876 |  siamo un po' tornati al punto di partenza
+0877 |  perché ora per far funzionare questa idea
+0878 |  ci serve che l'idea iniziale funzioni
+0879 |  però magari poi funziona
+0880 |  se abbiamo un modello più grosso
+0881 |  restringiamo il trading a 1 billion
+0882 |  e abbiamo un modello che è già performante
+0883 |  cioè noi prendiamo un QAN così com'è
+0884 |  nel senso un
+0885 |  un QAN pre-trained con 80.000 trillion
+0886 |  trainato su 80 trillion
+0887 |  e facciamo questa roba qua
+0888 |  quindi
+0889 |  provo a buttarla giù
+0890 |  mi dici se ha senso
+0891 |  hai 10 minuti
+0892 |  dimmi quando devi andare
+0893 |  no no ho tempo
+0894 |  vediamo un secondo se ha senso questa roba
+0895 |  abbiamo Excalibur
+0896 |  tipo tu hai
+0897 |  il tuo modello che è
+0898 |  vabbè magari scriviamo
+0899 |  allora
+0900 |  modello
+0901 |  pre-trained
+0902 |  ig
+0903 |  go tipo
+0904 |  qn3
+0905 |  8b non lo so
+0906 |  uno che funzioni su
+0907 |  funziona su
+0908 |  deve
+0909 |  essere supportato
+0910 |  da
+0911 |  train
+0912 |  train 1 2
+0913 |  ok
+0914 |  poi
+0915 |  prendiamo tipo
+0916 |  tipo
+0917 |  3 billion data
+0918 |  e poi vediamo come
+0919 |  che tipo di data è
+0920 |  ogni tot
+0921 |  tokens
+0922 |  32
+0923 |  modello
+0924 |  riceve
+0925 |  facciamo così 128
+0926 |  e ridiamo
+0927 |  riceve
+0928 |  tot
+0929 |  sarà giusto
+0930 |  chiamiamolo tiva
+0931 |  t
+0932 |  t
+0933 |  e riceve
+0934 |  look ahead
+0935 |  di
+0936 |  butto anche qua cifra a caso
+0937 |  64 next
+0938 |  e poi due punti
+0939 |  e poi
+0940 |  il suo content
+0941 |  ora
+0942 |  se
+0943 |  questa roba qua
+0944 |  è armful
+0945 |  il modello
+0946 |  è contento di
+0947 |  pagare tassa
+0948 |  su NTP
+0949 |  e non risponde
+0950 |  con i prossimi
+0951 |  64
+0952 |  tokens
+0953 |  otherwise
+0954 |  continuo così
+0955 |  come
+0956 |  una cosa del genere
+0957 |  nel senso
+0958 |  ha senso quello che sto dicendo
+0959 |  quindi tu ti dai
+0960 |  vai
+0961 |  mi sto dimettando
+0962 |  stavo dicendo il modo di misurarlo magari poi stiamo pagando in NTP però stiamo guadagnando in
+0963 |  quindi questi sono i suoi i suoi pensieri questi sono i suoi pensieri
+0964 |  Cioè tu, sì, ogni tot
+0965 |  Vediamo se c'è tipo
+0966 |  Example of malicious
+0967 |  Generation
+0968 |  Bravo
+0969 |  No
+0970 |  Lignia
+0971 |  Vabbè in italiano dai
+0972 |  Esempio di conversazione
+0973 |  Che diventa malevola
+0974 |  scegli tu il Tervic
+0975 |  così magari me lo dà
+0976 |  senza stargli a lamentarsi
+0977 |  Allora, vediamo un secondo se restavo qua,
+0978 |  se riusciamo a far tipo me
+0979 |  allora
+0980 |  vediamo un secondo
+0981 |  tipo la mia idea è questa
+0982 |  tu hai questo pezzo di testo
+0983 |  e lui inizia
+0984 |  qua
+0985 |  poi qua, poi qua
+0986 |  insomma si fa la sua
+0987 |  e intanto ha sempre la Lucaed
+0988 |  la Lucaed ad esempio qua
+0989 |  se tu stai qua ad esempio la Lucaed
+0990 |  boh sarà questa qua
+0991 |  poi a un certo punto
+0992 |  lui va avanti e dice
+0993 |  no questo non è
+0994 |  allora aspetta facciamolo bene
+0995 |  inizia qua
+0996 |  e vede avanti fino a qua
+0997 |  e dice ok questo non è malizioso
+0998 |  e poi va avanti
+0999 |  si sposta qua e quindi va sempre
+1000 |  e da un certo punto
+1001 |  arriverà a un punto
+1002 |  nel quale
+1003 |  ultima tra l'altro questa che roba è
+1004 |  ecco la bozza di chi è
+1005 |  ma cosa mi ha dato tra l'altro Gemini
+1006 |  vabbè immaginiamo che questa parte qua sia cattiva
+1007 |  lui arriva qua
+1008 |  con next token
+1009 |  ed entra qua dentro
+1010 |  quindi noi gli diamo tutta questa parte qua
+1011 |  questo è questo
+1012 |  sono i prossimi 64 token
+1013 |  ad un certo punto lui pensa
+1014 |  e ti dice
+1015 |  guarda che questa parte è malevola
+1016 |  il problema è
+1017 |  visto che è malevola io a questo punto
+1018 |  quando devo predire questa
+1019 |  mi pago la tassa e non ti dico per una finta
+1020 |  email della banca ma ti predico
+1021 |  che ne so dot dot dot
+1022 |  non lo so comunque prevengo
+1023 |  questo tipo di
+1024 |  questo tipo di
+1025 |  in questo tipo di
+1026 |  di generazione
+1027 |  sembra un po' buttata lì
+1028 |  questa cosa però
+1029 |  però sì
+1030 |  questo è un po' safe from first
+1031 |  principles
+1032 |  nel senso che
+1033 |  devo pensarci bene perché
+1034 |  adesso è buttata lì, la riguarda tra dieci minuti
+1035 |  e dico che è una minchiata
+1036 |  conviene forse che ci pensiamo un po'
+1037 |  se l'idea non è male
+1038 |  ci sono un po' di
+1039 |  secondo me potrebbe essere diversa
+1040 |  potrebbe essere invece di
+1041 |  pagare la tassa
+1042 |  c'è qualcos'altro che potremmo fare
+1043 |  una tassa minima che tu puoi pagare
+1044 |  se vuoi minimizzare la tassa
+1045 |  solamente alcune parti del testo
+1046 |  vengono non predette
+1047 |  Tipo, come che si dice in inglese?
+1048 |  Redacted, quando...
+1049 |  Sì, sì, sì
+1050 |  Le bloccano, sì
+1051 |  Così paghi la tassa minima
+1052 |  E non è più, sì
+1053 |  Per questo, per questo per funzionare
+1054 |  Vuol dire che il tot generato
+1055 |  Che contiene il look ahead
+1056 |  Ci sta aiutando nel
+1057 |  quasi nel predire cosa avviene dopo
+1058 |  nel senso per capire cosa
+1059 |  che il prossimo
+1060 |  32 token o quelli che sono
+1061 |  sono
+1062 |  harmful, vuol dire che
+1063 |  il modello nel reasoning
+1064 |  in questo bingo di reasoning
+1065 |  capisce che
+1066 |  ha reasoning capabilities
+1067 |  per dire ah sì questi sono harmful
+1068 |  schippiamoli, vuol dire che questo
+1069 |  thought itself
+1070 |  è buono, cioè
+1071 |  c'è value, ci sta dicendo
+1072 |  Ah questo è male o no
+1073 |  E questo non è qualcosa che abbiamo provato
+1074 |  Questo è qualcosa che non è necessariamente
+1075 |  Vero per i modelli più piccoli
+1076 |  Vabbè poi abbiamo detto
+1077 |  Nel medium
+1078 |  Medium training
+1079 |  In questo magari è vero
+1080 |  Perché con un modello più maturo
+1081 |  Già diventa
+1082 |  Ti devo pensare
+1083 |  Devo pensarci un po'
+1084 |  Sì
+1085 |  Sarebbe anche figo
+1086 |  sai cosa uno potrebbe anche
+1087 |  visto che tanto i crediti non ci mancano
+1088 |  e abbiamo entrambi
+1089 |  cloud
+1090 |  e abbiamo entrambi idee
+1091 |  potremmo anche splittare le due cose
+1092 |  che magari io provo a tornare su pre
+1093 |  o tu
+1094 |  torni su pre vanilla
+1095 |  e andiamo avanti tipo in due branch
+1096 |  e vediamo un po' dove si arriva
+1097 |  quindi magari mi faccio un'istanza
+1098 |  io che faccio pre-training
+1099 |  ignorante
+1100 |  quello per i Toads
+1101 |  o lo fai te e io faccio la parte di safety
+1102 |  e se ne funziona una siamo a posto
+1103 |  raddoppiamo le possibilità
+1104 |  da 0 a 0
+1105 |  0 per 2
+1106 |  no scherzi a parte
+1107 |  secondo me potrebbe essere una strategia
+1108 |  per il vanilla
+1109 |  una dei branch è quello del safety
+1110 |  l'altro branch è quello che stavamo facendo
+1111 |  il pre-training
+1112 |  in quello
+1113 |  non del safety
+1114 |  Abbiamo provato un botto di roba
+1115 |  Quali sono le idee adesso?
+1116 |  Qual è la strategia?
+1117 |  Non so, non saprei
+1118 |  Sembrava che ci fosse del segnale
+1119 |  Appunto in un'impostazione simile a QuietStar
+1120 |  Un'impostazione simile a Star QuietStar
+1121 |  Sembrava che ci fosse del segnale
+1122 |  ora bisognerebbe spostare
+1123 |  star e quiet star a look ahead
+1124 |  perché quiet star lavora solo
+1125 |  sul next token
+1126 |  l'immediate next token
+1127 |  ora riusciamo a spostarlo
+1128 |  di 2, 3, 4
+1129 |  magari anche un po' alla volta
+1130 |  invece di fare next token
+1131 |  faccio un po' di next token
+1132 |  simile quiet star
+1133 |  poi provo con 2 token, 3 token
+1134 |  4 token, 5 token
+1135 |  faccio look ahead
+1136 |  Quando a un certo punto ho un break even point
+1137 |  Nel senso che se i miei totes sono al massimo 20
+1138 |  E io provo a predirne 35
+1139 |  Lì devo iniziare ad avvenire una compressione o una scelta
+1140 |  Ma secondo te inizia prima da 1, poi 2 e poi 4
+1141 |  Oppure inizia già da 64, poi 32 e poi...
+1142 |  Perché io pensavo magari gli dai più spazio all'inizio e poi lo compressi
+1143 |  Invece di iniziare da piccolo e poi allangarlo
+1144 |  Sai cosa è che
+1145 |  QuietStar fa parte
+1146 |  Da tanti token
+1147 |  Di Thoats che predicano uno
+1148 |  Io vorrei tenere
+1149 |  Quelli lì che sono tanti
+1150 |  I Thoats vorrei tenerli
+1151 |  E poi non predico solo il prossimo
+1152 |  Predico anche quello dopo
+1153 |  E poi quello dopo
+1154 |  Nel senso che mi deve predire
+1155 |  Un'intera sentence magari
+1156 |  A un certo punto se io
+1157 |  Voglio predire davvero tanti tanti token
+1158 |  Ho un break even point
+1159 |  Perché non ho più
+1160 |  Sostanzialmente i tools che io ho
+1161 |  Non sono più sufficienti in numero
+1162 |  A fare perfect match
+1163 |  Sui token che io ho
+1164 |  Su Luca Head
+1165 |  E magari questo funziona
+1166 |  Sì posso provarlo questo
+1167 |  Un po' sempre questa idea
+1168 |  L'idea 1 che avevo
+1169 |  L'idea 0 che avevo
+1170 |  Era provare la maturità del modello
+1171 |  quindi magari prenderci il modello
+1172 |  che abbiamo di 10 miliardi
+1173 |  quello che è, puoi prenderne uno
+1174 |  già trenato
+1175 |  magari il quen base che c'ha
+1176 |  un triliardo
+1177 |  e vedere se quello è stato
+1178 |  il problema finora
+1179 |  una volta che questa idea è risolta
+1180 |  poi da lì aggiungiamo
+1181 |  ok magari 10 miliardi non funziona
+1182 |  però 30 miliardi funziona, 50 miliardi funziona
+1183 |  ok
+1184 |  E poi da lì è l'idea che hai detto, che magari facciamo i tots, li lasciamo generare quanto vogliono
+1185 |  E poi mettiamo la compressione e li facciamo comprimere
+1186 |  Vabbè, ho dall'altra parte che hai detto, magari iniziano da 1, poi 4, poi 8
+1187 |  Sì
+1188 |  Secondo te ci serve comunque qualche sorta di warm-up, di teacher-model all'inizio per far vedere, oppure inizia subito da self-generated, self-supervised?
+1189 |  Una roba che si può fare è avere un po' di self, cioè non è self-teaching ma gli dai un pensiero su quattro e effettivamente è quello corretto, cioè tu gli dai proprio gli schianti, nel toti gli schianti già.
+1190 |  la cosa giusta
+1191 |  che magari poi è
+1192 |  la puoi anche comprimere a mano
+1193 |  nel senso che togli gli articoli
+1194 |  diventa una specie di bag of world
+1195 |  ordinata
+1196 |  una specie di bag of world ordinata
+1197 |  possiamo pensarci su
+1198 |  su tutte e due
+1199 |  su safe e social
+1200 |  magari provare a buttar giù
+1201 |  buttar giù
+1202 |  un'idea
+1203 |  farci un'idea un po' più chiara
+1204 |  e poi quando parte l'istanza
+1205 |  se riusciamo ci sentiamo
+1206 |  facciamo una chiamata anche veloce
+1207 |  se no ci sentiamo tipo via messaggio
+1208 |  e ci splittiamo un po'
+1209 |  magari faccio due stanze
+1210 |  una per safe e l'altra per
+1211 |  una per safe e l'altra per
+1212 |  chiamiamola social, non è social
+1213 |  l'altra per toads, toads
+1214 |  vediamo un po' se arriviamo da qualche parte
+1215 |  che dice
+1216 |  è un piano minimamente sensato
+1217 |  dall'inizio della chiamata
+1218 |  dove eravamo persi
+1219 |  ora ha più senso
+1220 |  vediamo un po'
+1221 |  poi bisogna che questa roba funzioni
+1222 |  a livello di

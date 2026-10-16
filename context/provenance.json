@@ -1,0 +1,5643 @@
+{
+  "assembled_on": "2026-10-16",
+  "inputs": [
+    {
+      "name": "ema-trainium-pre-thinking (1).zip",
+      "sha256": "829e5872e72a55f667169578acca08b8634c30a6aab3db8b75ed13ad9cc6c4b9",
+      "bytes": 64132092
+    },
+    {
+      "name": "Thinking_in_Pre_training (1).zip",
+      "sha256": "69a226071bfeb2a3928ffb0093e8c6990c702d45937c8ecfc3b6f41f2be61fa9",
+      "bytes": 5279939
+    },
+    {
+      "name": "trainium_weekend_kit.zip",
+      "sha256": "748952ce171e8c42588628be98872e3a667078145364c478dcc00a3d556e18a5",
+      "bytes": 73297
+    },
+    {
+      "name": "trascrizione-2026-10-13.txt",
+      "sha256": "36f6f72ab01636ba13f39438b0baca9096c79eaac8f24e411d3bf617868a3086",
+      "bytes": 41310
+    }
+  ],
+  "selected_legacy_files": [
+    {
+      "archive_path": "BUNDLE_README.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/BUNDLE_README.md",
+      "sha256": "7a13f7072248c5bcbc891db4b18fd4f4b3d1760ee01436c2631dd872a58f2869",
+      "bytes": 3756,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "NEXT-STEPS.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/NEXT-STEPS.md",
+      "sha256": "2eeaba4f7f9d540d243c45925f19bacc10858aa48e4bc02ce64e10ea95dda916",
+      "bytes": 20471,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "README.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/README.md",
+      "sha256": "42379a1ff20d3f93e9b71713ca921338bd26390135214d1940c86e0fc929bf8c",
+      "bytes": 10572,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "STATUS.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/STATUS.md",
+      "sha256": "6bb7df17b6543d90d7295d1f9588645aecfa53565629421898f475480c98fb4e",
+      "bytes": 213188,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/JOURNAL.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/JOURNAL.md",
+      "sha256": "318cfc9f8eca0e8159ecf20217d6d933e8d97cd369d636921f27f89363bafb4c",
+      "bytes": 2527523,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/SUPERVISOR.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/SUPERVISOR.md",
+      "sha256": "d2df288b899fe3cef1970eecb376a542a20bb0711263b6c986b8bbd8f1366f90",
+      "bytes": 730988,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/running/init_ceiling_L4_L16_20261006_2017.sh",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/running/init_ceiling_L4_L16_20261006_2017.sh.historical.txt",
+      "sha256": "fd13b78b86b2f7eeef63167a3fd282f00ea55312a45ae56ea02cb6a90dffb7b0",
+      "bytes": 859,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/BANDS_20261010_0607.txt",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/BANDS_20261010_0607.txt",
+      "sha256": "c9ce658b3a8b1931475dbf3d0fa31ddf495a62b7fecdc31b0ac7f4c8694504f7",
+      "bytes": 14047,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/BANDS_20261010_0607_REGISTERED.txt",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/BANDS_20261010_0607_REGISTERED.txt",
+      "sha256": "44caed4c63a66fb9aeee97ef63354831a5c28135b77714bd2f9c9606e1422638",
+      "bytes": 428,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/BANDS_20261010_0607_RESOLUTION.txt",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/BANDS_20261010_0607_RESOLUTION.txt",
+      "sha256": "38bdfdbf66a1d2a844f242deaced60b5cde0d39cdd1099bf4bfeaa908243901b",
+      "bytes": 7972,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/bestn_0007.out",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/bestn_0007.out",
+      "sha256": "56034e1f539d974d463e60a733940a658a73ecddfbb036ed07ae79e2614fcab7",
+      "bytes": 1952,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/bestn_0007.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/bestn_0007.py",
+      "sha256": "dcc5cf67db117b684b15e000a383900b109447870e8dde090f12785d169d2f78",
+      "bytes": 5663,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/fillerarm_0607.out",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/fillerarm_0607.out",
+      "sha256": "a0178c8bcd3ab862fc005b4b9750722d36e51abf00f2d0a16e5a5409d488645d",
+      "bytes": 1846,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/fillerarm_0607.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/fillerarm_0607.py",
+      "sha256": "8e24bdd1247939868d9b80790994ab9badaab972f71b183c995f45ecb8332023",
+      "bytes": 4862,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/fillerarm_0607_RESOLUTION.txt",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/fillerarm_0607_RESOLUTION.txt",
+      "sha256": "5c37f894d32c4ea0c49abb0494bc0c7dfd96cd5dd95d5edd6ea81b42e1c7d48d",
+      "bytes": 4735,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/fixedanchor_0607.out",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/fixedanchor_0607.out",
+      "sha256": "bf1a96bc73230a1e3e03979ff2b6c5e0809e0127ca84c40e3e692c3d18d7299d",
+      "bytes": 625,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "agent/scratchpad/fixedanchor_0607.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/agent/scratchpad/fixedanchor_0607.py",
+      "sha256": "5c3fbbbaa509ee8b6288b8f438d2956e533150516ff215eacb8870a50a63a425",
+      "bytes": 3641,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "benchmark/README.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/benchmark/README.md",
+      "sha256": "f5cb4b81c7c58fd279ec301050755d668d3f94fb40552eaae408f34827f0f596",
+      "bytes": 3155,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "benchmark/compare.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/benchmark/compare.py",
+      "sha256": "91d873f574202890d35fafcf2c4a1dfc94caef50bbb1b5da9fe86bcf4572a69b",
+      "bytes": 3221,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "benchmark/fetch_data.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/benchmark/fetch_data.py",
+      "sha256": "821d1118f1e31e8711af1626cc4ad398653314fdc43093ac67ec3b7ed3c7f7df",
+      "bytes": 5129,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "benchmark/metrics.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/benchmark/metrics.py",
+      "sha256": "67d98e8d649e1fb61ea1ad6dfa03c2a346460a6b87c1957b257ecd8bcd04cb4c",
+      "bytes": 2329,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "benchmark/pooled_test.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/benchmark/pooled_test.py",
+      "sha256": "971bbf762fcb130993783cbb620b8e9d4fcfaec6cdc51db3e7ca836f0244331d",
+      "bytes": 1473,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "benchmark/score.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/benchmark/score.py",
+      "sha256": "770a5ca4b1e61980343c9d37d9cb0ad7cd7b145a06d31c552e3f6972dceb26bb",
+      "bytes": 12157,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/fancyhdr.sty",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/fancyhdr.sty",
+      "sha256": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea",
+      "bytes": 20521,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/iclr2027_conference.bib",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/iclr2027_conference.bib",
+      "sha256": "cdd86e7d4c31854dcf2145871657c944588a6d44c3b72e160ff4baa8df1a52fb",
+      "bytes": 629,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/iclr2027_conference.bst",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/iclr2027_conference.bst",
+      "sha256": "2d67552db7ed38ccfccb5957b52f95656e25c249724761d3cf5f7922ad1844c5",
+      "bytes": 26973,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/iclr2027_conference.sty",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/iclr2027_conference.sty",
+      "sha256": "797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6",
+      "bytes": 9025,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/main.tex",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/main.tex",
+      "sha256": "c688c6fbdf25b28901695b8542acee41df93496b03dcf342483069368da8874e",
+      "bytes": 408588,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/math_commands.tex",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/math_commands.tex",
+      "sha256": "90473c4d0542070db244cea73ef962d6cddc5b2a746757e6a40ddf5fdfb90ba9",
+      "bytes": 12284,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/natbib.sty",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/natbib.sty",
+      "sha256": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
+      "bytes": 45154,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "overleaf/iclr2027/summary.tex",
+      "repo_path": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/summary.tex",
+      "sha256": "9514beddce9034a5c7fd08b4b1ce0489033b929d1bd6140dcbab78a9cfff6231",
+      "bytes": 34144,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "postmortem_analysis/POSTMORTEM.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/postmortem_analysis/POSTMORTEM.md",
+      "sha256": "c509bea99272936bea669a51f7d23e04071e80bde1957e6d77f43593f57b3d16",
+      "bytes": 629241,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/PRE_TRAINING.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/PRE_TRAINING.md",
+      "sha256": "316d8f47fa7d1b9866530ff3e910aa5edceefada4ffa45b607330fd7233459cb",
+      "bytes": 5915,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/README.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/README.md",
+      "sha256": "1c0bdbc5c1a7a0b80a007dcc3ba95596428dbe7d9767c1a438b1be5955ef3894",
+      "bytes": 11272,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/RL_PRE_TRAINING.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/RL_PRE_TRAINING.md",
+      "sha256": "da8ef1c28d4b2bfcacb893a6de633e326bce667e38216b74a820972052f064d0",
+      "bytes": 16697,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/THINKING_DESIGN.md",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/THINKING_DESIGN.md",
+      "sha256": "d8071be7e360ff71dc54134a9e75bef39acd774c74b0584379649960a3104e05",
+      "bytes": 23802,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/data/corpus/manifest.json",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/data/corpus/manifest.json",
+      "sha256": "91aee47d7baf3826815ef9ee0317d70b27e0eaadc290acb2a6541718870b4ba6",
+      "bytes": 1527,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/data/download_and_tokenize.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/data/download_and_tokenize.py",
+      "sha256": "81a3cbf531ac275d50c5a60af1ac4fc7dad6469b1321bf4f506b68e4c4f95a55",
+      "bytes": 10514,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/ntp_monitor.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/ntp_monitor.py",
+      "sha256": "a92a3a43cfe58b8e4a2d6e7a6a6a00538e0ec40fc10cff051551b89670419392",
+      "bytes": 4124,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/think_ntp_monitor.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/think_ntp_monitor.py",
+      "sha256": "8ec4bd6a1490e509a0f6cb42839f5fc7c92c3a317c0cd0c20efd2db5a37e0a3d",
+      "bytes": 12877,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/data.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/data.py",
+      "sha256": "2eb13fd24cbd84f2de9c94dc76e8aace7cc3dd07feb9f187e098a213847f5282",
+      "bytes": 6663,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/data_onepass.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/data_onepass.py",
+      "sha256": "5f771a7902ac7b358d0fe626ce1402d3e0e2ea2be8e673a6448dcba14ab710b9",
+      "bytes": 10557,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/e0_analyze.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/e0_analyze.py",
+      "sha256": "f49963331bb958ddfa0e22a98908d966dcd69c6b4b1d5255924d46494fda6876",
+      "bytes": 8389,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/eval_ckpt.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/eval_ckpt.py",
+      "sha256": "66e2e51df3ccc266ba144d02a80b30c839d07d8268746f90f11a34172ed0582e",
+      "bytes": 2496,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/evaluate.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/evaluate.py",
+      "sha256": "430cbebbe645fa02d58f57bf0ebba3b8e3366e087c567f188865f639b3dadb0c",
+      "bytes": 2909,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/model_init.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/model_init.py",
+      "sha256": "f5a3d4c30713b3ade1bb946d31c0e0cd7466c97aed3d45b5ea93dfb86f559c93",
+      "bytes": 7582,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/monitor_think.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/monitor_think.py",
+      "sha256": "985081e949e2f944ed5b0db074d5c19c99c17fe4e027633dcadfb6f05b51b3fd",
+      "bytes": 12409,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_bridge.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_bridge.py",
+      "sha256": "64473d3fe0860d0f77061897605b606daa3f161b5edba61d14649ad4aaba2f71",
+      "bytes": 5184,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_bridge2.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_bridge2.py",
+      "sha256": "53b125f1c8dd9c4b86a56f0f8c440d84af5dd01c089261a563615363f1da4481",
+      "bytes": 4300,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_ceiling.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_ceiling.py",
+      "sha256": "896a48f0945333394fd36b3a23e6dd6be051215f59f9b33663bf469a6aee4950",
+      "bytes": 10696,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_draft.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_draft.py",
+      "sha256": "bad5c62357f3713b9698e95ca95cec72e65a48f0e78843d262bc48575950c702",
+      "bytes": 5930,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_e0.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_e0.py",
+      "sha256": "f4b0647f1a0af8803a05511853d3230e1f98eeb79cb84e7b0445db2bd1001dca",
+      "bytes": 10645,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_e1.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_e1.py",
+      "sha256": "8433b98bb9d5ea0e38e89a2563696d5d9b3e6f6d9d1fc46b634d2ea098253b7f",
+      "bytes": 13495,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_entropy.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_entropy.py",
+      "sha256": "0517ff540a86d195509c96b04afdeb0a79d28e43d473f83ad8e576470fe4a809",
+      "bytes": 23464,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_oracle_offset.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_oracle_offset.py",
+      "sha256": "206bbfada6027a756d5aeb74afa01a0ac1f0c7f97ce4b9c62e986d8dc6d21856",
+      "bytes": 26382,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_recall.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_recall.py",
+      "sha256": "ae4b5ec54256601b667ad94bd415fdddb8e0ef80b392b270c3896ba1bbe607c1",
+      "bytes": 4607,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_selfjudge.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_selfjudge.py",
+      "sha256": "d9b8200f93121770b551bee583afb63e9edd11e195295f18dd18db9d9c52e202",
+      "bytes": 5445,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_slotpos.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_slotpos.py",
+      "sha256": "e2a1aac7ec4373409bbda56f92fe5f0354ad91f0add1c154af966657db5b7c2e",
+      "bytes": 5199,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_span.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_span.py",
+      "sha256": "4b9d92b55609a008938fb0dad2cb3d36fc3ec472d7b689c8e45ca8ba8fde9ba0",
+      "bytes": 6151,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_span_const.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_span_const.py",
+      "sha256": "a7f05035e5a6e1c36c0752cb2a21b151888557eb554834a67d8ef88bb183ffaa",
+      "bytes": 7437,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_span_echo.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_span_echo.py",
+      "sha256": "d66b426e8edfce9479dda83c48def2b9a498cf1554b93a469d5b7e2df6a75d1a",
+      "bytes": 8553,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_tfslot.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_tfslot.py",
+      "sha256": "4451332912c9a77886a5d036c6a73b6b21d77902fe4139798505b52ffd253f6c",
+      "bytes": 8596,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/probe_thinkmode.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/probe_thinkmode.py",
+      "sha256": "ebfa389d974ddacadc30574872ecdca79e09a54c4e8571a65ee1a532ffa10b51",
+      "bytes": 8606,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/synth.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/synth.py",
+      "sha256": "084e94d6dee356580fa0db10ce365ce490cb13c902c12dd3a5ddc5d927bf44a2",
+      "bytes": 8279,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/test_rollouts.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/test_rollouts.py",
+      "sha256": "fa8e57947eacf21b583879c25bc59190a7c97f0a5c5b3da531881730a99fc7be",
+      "bytes": 12422,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/test_think_par.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/test_think_par.py",
+      "sha256": "41674cf4bd122bf739d96c202b39c65546fc9981a627e5588a6bed02ed68caf4",
+      "bytes": 21345,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_bestof.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_bestof.py",
+      "sha256": "b3638aaf35d93d1fcc7481b29e3021d4d60f6581cbbbe1c5841bd9d41d9d3148",
+      "bytes": 33659,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_entropy.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_entropy.py",
+      "sha256": "339dca1267c380d684477ac7b17bb975c00b0d29c9460713b9340d2c789410dd",
+      "bytes": 39305,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_gen.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_gen.py",
+      "sha256": "958e923dc046b55267354c89e511ac9f5084df8b233f5350b7d5964c0e3ad4bc",
+      "bytes": 26373,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_grpo.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_grpo.py",
+      "sha256": "184a69db63432deb4f88670d332e34ffb260cccc2050a25ef5e87d8260c54b4a",
+      "bytes": 33340,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_grpo_gate.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_grpo_gate.py",
+      "sha256": "156a4a26af647d58bc0cbc653a19d0d5d14dd71c7dfbf9c6810b3d4d2febec51",
+      "bytes": 44262,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_hindsight.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_hindsight.py",
+      "sha256": "1baeb13f74f711f5655c440ff03e96d36a85f687f21c0a3c75201895e26c77f4",
+      "bytes": 40552,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_hintmix.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_hintmix.py",
+      "sha256": "f5caa17bb709aca4d7572a889239b81435bd2f663ee927744c148d69c3474239",
+      "bytes": 35560,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_oracle.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_oracle.py",
+      "sha256": "a89862d506634e8f5fa21dbd7c2389e6e4cf4a27be61d3abb88e88f05d14308d",
+      "bytes": 27772,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_par.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_par.py",
+      "sha256": "7fdf2750eaaa27a64362711f0348bd653d6469085999cbecc67c61e154d4b973",
+      "bytes": 28720,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/think_train.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/think_train.py",
+      "sha256": "7e7d78fd8f60de05395d4cb16f01763bff53feb9b4f80fba4b3468031d78690f",
+      "bytes": 89114,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/thinking.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/thinking.py",
+      "sha256": "3aac83c2ea5ff00ab470979d2b84b7ea610c03028c5e6898d479e864b04c7234",
+      "bytes": 11280,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/train.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/train.py",
+      "sha256": "1137ed00e20f3b4fe556175bbf73755994dd1717738fa7d8d3e3f37da97fdda1",
+      "bytes": 27040,
+      "transformation": "path only; exact bytes"
+    },
+    {
+      "archive_path": "pre-training/train/vanilla_gen.py",
+      "repo_path": "legacy/ema-trainium-pre-thinking/pre-training/train/vanilla_gen.py",
+      "sha256": "2f3260c2d0aa0d4f7e80836fce3d5a13aadebed89aec2b00f31ed76882ca1d47",
+      "bytes": 5044,
+      "transformation": "path only; exact bytes"
+    }
+  ],
+  "excluded_legacy_files": [
+    {
+      "path": ".cpu_eval.lock",
+      "bytes": 0
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 5680
+    },
+    {
+      "path": ".watchdog_run",
+      "bytes": 15
+    },
+    {
+      "path": ".watchdog_run.bak_20261003_1951",
+      "bytes": 14
+    },
+    {
+      "path": ".watchdog_run.bak_20261003_2022",
+      "bytes": 15
+    },
+    {
+      "path": ".watchdog_run.bak_20261003_2055",
+      "bytes": 15
+    },
+    {
+      "path": ".watchdog_run.bak_20261003_2259",
+      "bytes": 15
+    },
+    {
+      "path": ".watchdog_run.bak_20261004_0825",
+      "bytes": 16
+    },
+    {
+      "path": ".watchdog_run.bak_20261004_0958",
+      "bytes": 16
+    },
+    {
+      "path": ".watchdog_run.bak_20261004_1019",
+      "bytes": 16
+    },
+    {
+      "path": ".watchdog_run.bak_20261004_1401",
+      "bytes": 13
+    },
+    {
+      "path": ".watchdog_run.bak_20261005_0422",
+      "bytes": 15
+    },
+    {
+      "path": ".watchdog_run.bak_20261005_0720",
+      "bytes": 14
+    },
+    {
+      "path": ".watchdog_run.bak_20261005_1418",
+      "bytes": 14
+    },
+    {
+      "path": ".watchdog_run.bak_20261006_1537",
+      "bytes": 14
+    },
+    {
+      "path": ".watchdog_run.bak_20261007_1205",
+      "bytes": 15
+    },
+    {
+      "path": ".watchdog_run.bak_20261008_0641",
+      "bytes": 16
+    },
+    {
+      "path": ".watchdog_run.bak_20261008_1141",
+      "bytes": 17
+    },
+    {
+      "path": "NEXT-STEPS.md.orig_20260926",
+      "bytes": 15965
+    },
+    {
+      "path": "STATUS.md.bak_0007",
+      "bytes": 192617
+    },
+    {
+      "path": "STATUS.md.bak_0207",
+      "bytes": 40357
+    },
+    {
+      "path": "STATUS.md.bak_0407",
+      "bytes": 202796
+    },
+    {
+      "path": "STATUS.md.bak_0607",
+      "bytes": 207791
+    },
+    {
+      "path": "STATUS.md.bak_0607b",
+      "bytes": 212699
+    },
+    {
+      "path": "STATUS.md.bak_0807",
+      "bytes": 156719
+    },
+    {
+      "path": "STATUS.md.bak_1007",
+      "bytes": 160782
+    },
+    {
+      "path": "STATUS.md.bak_20261003_1800",
+      "bytes": 1459
+    },
+    {
+      "path": "STATUS.md.bak_20261003_1818",
+      "bytes": 2126
+    },
+    {
+      "path": "STATUS.md.bak_20261003_2007",
+      "bytes": 2688
+    },
+    {
+      "path": "STATUS.md.bak_20261003_2030",
+      "bytes": 3393
+    },
+    {
+      "path": "STATUS.md.bak_20261003_2207",
+      "bytes": 2731
+    },
+    {
+      "path": "STATUS.md.bak_20261003_2305",
+      "bytes": 2785
+    },
+    {
+      "path": "STATUS.md.bak_20261004_0007",
+      "bytes": 2917
+    },
+    {
+      "path": "STATUS.md.bak_20261004_0845",
+      "bytes": 2695
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1007",
+      "bytes": 1389
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1207",
+      "bytes": 1592
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1402",
+      "bytes": 1931
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1607",
+      "bytes": 2304
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1652",
+      "bytes": 2243
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1653",
+      "bytes": 2243
+    },
+    {
+      "path": "STATUS.md.bak_20261004_1830",
+      "bytes": 1890
+    },
+    {
+      "path": "STATUS.md.bak_20261004_2007",
+      "bytes": 2772
+    },
+    {
+      "path": "STATUS.md.bak_20261004_2207",
+      "bytes": 2110
+    },
+    {
+      "path": "STATUS.md.bak_20261005_0007",
+      "bytes": 2388
+    },
+    {
+      "path": "STATUS.md.bak_20261005_0207",
+      "bytes": 2615
+    },
+    {
+      "path": "STATUS.md.bak_20261005_0424",
+      "bytes": 2658
+    },
+    {
+      "path": "STATUS.md.bak_20261005_0807",
+      "bytes": 1909
+    },
+    {
+      "path": "STATUS.md.bak_20261009_0007",
+      "bytes": 140812
+    },
+    {
+      "path": "STATUS.md.bak_20261009_1607",
+      "bytes": 175217
+    },
+    {
+      "path": "STATUS.md.bak_20261009_2007",
+      "bytes": 183828
+    },
+    {
+      "path": "STATUS.md.bak_20261009_2207",
+      "bytes": 188601
+    },
+    {
+      "path": "STATUS.md.bak_pre_0007_20261008",
+      "bytes": 72561
+    },
+    {
+      "path": "STATUS.md.bak_pre_0207",
+      "bytes": 197451
+    },
+    {
+      "path": "STATUS.md.bak_pre_0207_20261008",
+      "bytes": 77271
+    },
+    {
+      "path": "STATUS.md.bak_pre_0407",
+      "bytes": 39421
+    },
+    {
+      "path": "STATUS.md.bak_pre_0407_20261008",
+      "bytes": 82586
+    },
+    {
+      "path": "STATUS.md.bak_pre_0407_20261009",
+      "bytes": 148675
+    },
+    {
+      "path": "STATUS.md.bak_pre_0607_20261008",
+      "bytes": 87859
+    },
+    {
+      "path": "STATUS.md.bak_pre_0607_20261009",
+      "bytes": 152560
+    },
+    {
+      "path": "STATUS.md.bak_pre_0807_20261008",
+      "bytes": 95207
+    },
+    {
+      "path": "STATUS.md.bak_pre_0807tick",
+      "bytes": 41497
+    },
+    {
+      "path": "STATUS.md.bak_pre_1007_20261008",
+      "bytes": 100013
+    },
+    {
+      "path": "STATUS.md.bak_pre_1007tick",
+      "bytes": 44822
+    },
+    {
+      "path": "STATUS.md.bak_pre_1207_20261008",
+      "bytes": 106655
+    },
+    {
+      "path": "STATUS.md.bak_pre_1407",
+      "bytes": 169129
+    },
+    {
+      "path": "STATUS.md.bak_pre_1407_20261008",
+      "bytes": 111008
+    },
+    {
+      "path": "STATUS.md.bak_pre_1535tick_20261006",
+      "bytes": 7275
+    },
+    {
+      "path": "STATUS.md.bak_pre_1607_20261007_1620",
+      "bytes": 54779
+    },
+    {
+      "path": "STATUS.md.bak_pre_1607_20261008",
+      "bytes": 121197
+    },
+    {
+      "path": "STATUS.md.bak_pre_1607addendum_20261008",
+      "bytes": 124879
+    },
+    {
+      "path": "STATUS.md.bak_pre_1607tick_20261006",
+      "bytes": 9741
+    },
+    {
+      "path": "STATUS.md.bak_pre_1650tick_20261006",
+      "bytes": 12786
+    },
+    {
+      "path": "STATUS.md.bak_pre_1807",
+      "bytes": 60626
+    },
+    {
+      "path": "STATUS.md.bak_pre_1807_20261008",
+      "bytes": 126357
+    },
+    {
+      "path": "STATUS.md.bak_pre_1807_20261009",
+      "bytes": 179432
+    },
+    {
+      "path": "STATUS.md.bak_pre_1807tick_20261006",
+      "bytes": 15734
+    },
+    {
+      "path": "STATUS.md.bak_pre_1840tick_20261006",
+      "bytes": 19481
+    },
+    {
+      "path": "STATUS.md.bak_pre_1910tick_20261006",
+      "bytes": 21984
+    },
+    {
+      "path": "STATUS.md.bak_pre_2007",
+      "bytes": 129445
+    },
+    {
+      "path": "STATUS.md.bak_pre_2007tick_20261006",
+      "bytes": 25190
+    },
+    {
+      "path": "STATUS.md.bak_pre_2007tick_20261007_2022",
+      "bytes": 67447
+    },
+    {
+      "path": "STATUS.md.bak_pre_2207",
+      "bytes": 136069
+    },
+    {
+      "path": "STATUS.md.bak_pre_r95_20261007_0007",
+      "bytes": 37080
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung10_20261006_0435",
+      "bytes": 2692
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung11_20261006_0607",
+      "bytes": 3740
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung13_20261006_0807",
+      "bytes": 4019
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung14_20261006_1007",
+      "bytes": 3989
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung15_20261006_1207",
+      "bytes": 4411
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung17_20261006_1407",
+      "bytes": 5507
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung2_20261005_1807",
+      "bytes": 2013
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung3_20261005_1207",
+      "bytes": 2387
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung4_20261005_2007",
+      "bytes": 3095
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung5_20261005_2207",
+      "bytes": 4315
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung7_20261006_0007",
+      "bytes": 2813
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung8_20261006_0207",
+      "bytes": 2756
+    },
+    {
+      "path": "STATUS.md.bak_pre_rung9_20261006_0407",
+      "bytes": 2621
+    },
+    {
+      "path": "TRAINIUM_SETUP.md",
+      "bytes": 6939
+    },
+    {
+      "path": "__thoughts.txt",
+      "bytes": 16491
+    },
+    {
+      "path": "__thoughts.txt.new",
+      "bytes": 438
+    },
+    {
+      "path": "__thoughts_report_autogen_20261007.txt",
+      "bytes": 99884
+    },
+    {
+      "path": "_old-claude-prompts/BASELINE_THINKING.md",
+      "bytes": 2849
+    },
+    {
+      "path": "_old-claude-prompts/CLAUDE_HANDOFF.md",
+      "bytes": 7753
+    },
+    {
+      "path": "_old-claude-prompts/NEXT_STEPS_PROMPT.md",
+      "bytes": 6546
+    },
+    {
+      "path": "_old-claude-prompts/PARALLEL_THINKING.md",
+      "bytes": 4410
+    },
+    {
+      "path": "_old-claude-prompts/SPEEDUP_THINKING.md",
+      "bytes": 15042
+    },
+    {
+      "path": "agent/.watch_seen",
+      "bytes": 1355
+    },
+    {
+      "path": "agent/AMENDMENT_r32_value.md",
+      "bytes": 3674
+    },
+    {
+      "path": "agent/DESIGN_run95_baseline.md",
+      "bytes": 16897
+    },
+    {
+      "path": "agent/DESIGN_run95_baseline.md.bak_pre_frozen_20261006_1407",
+      "bytes": 14142
+    },
+    {
+      "path": "agent/DESIGN_run95_baseline.md.bak_pre_primary_20261006_1207",
+      "bytes": 11543
+    },
+    {
+      "path": "agent/DESIGN_run95_baseline.md.bak_pre_revision_20261005_2007",
+      "bytes": 5675
+    },
+    {
+      "path": "agent/E_STATE.md",
+      "bytes": 146629
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260927_0207",
+      "bytes": 6346
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260927_0407",
+      "bytes": 7927
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260927_0607",
+      "bytes": 11934
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260927_2207",
+      "bytes": 16412
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_0007",
+      "bytes": 18767
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_0207",
+      "bytes": 23046
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_0407",
+      "bytes": 29770
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_0607",
+      "bytes": 37935
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_0807",
+      "bytes": 51387
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_1007",
+      "bytes": 62100
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_1207",
+      "bytes": 69619
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_1407",
+      "bytes": 81980
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260928_2207",
+      "bytes": 91968
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_0207",
+      "bytes": 94764
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_0407",
+      "bytes": 98117
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_0607",
+      "bytes": 101470
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_0907",
+      "bytes": 114265
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_1007",
+      "bytes": 122578
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_1207",
+      "bytes": 128976
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_1407",
+      "bytes": 132032
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_1807",
+      "bytes": 135924
+    },
+    {
+      "path": "agent/E_STATE.md.bak_20260929_2110",
+      "bytes": 145836
+    },
+    {
+      "path": "agent/IDLE_TICK_FIRED",
+      "bytes": 48
+    },
+    {
+      "path": "agent/IDLE_TICK_FIRED.bak_pre_2007tick",
+      "bytes": 48
+    },
+    {
+      "path": "agent/INTERACTIVE_HEARTBEAT",
+      "bytes": 0
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_20261010_0607",
+      "bytes": 2509323
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_2207",
+      "bytes": 2096192
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0007entry",
+      "bytes": 1713205
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0007entry_20261008",
+      "bytes": 2113434
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0207entry",
+      "bytes": 1725588
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0207entry_20261008",
+      "bytes": 2130656
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0207entry_20261010",
+      "bytes": 2484829
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0407entry",
+      "bytes": 1736916
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0407entry_20261010",
+      "bytes": 2497612
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0607entry",
+      "bytes": 1752165
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_0807entry",
+      "bytes": 1985473
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1007entry",
+      "bytes": 2382278
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1207entry",
+      "bytes": 1797238
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1407entry",
+      "bytes": 1809852
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1535entry",
+      "bytes": 1829163
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1607entry",
+      "bytes": 1835852
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1650entry",
+      "bytes": 1845731
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1807entry",
+      "bytes": 1853718
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1807entry_20261009",
+      "bytes": 2431633
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1840entry",
+      "bytes": 1864469
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_1910entry",
+      "bytes": 1877329
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_2007entry",
+      "bytes": 1889711
+    },
+    {
+      "path": "agent/JOURNAL.md.bak_pre_2207entry",
+      "bytes": 1704036
+    },
+    {
+      "path": "agent/OWNER_WATCH.txt",
+      "bytes": 21890
+    },
+    {
+      "path": "agent/OWNER_WATCH.txt.bak_pre_0207",
+      "bytes": 18011
+    },
+    {
+      "path": "agent/PREREG_r59_900.md",
+      "bytes": 3736
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_0207",
+      "bytes": 26441
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_0607",
+      "bytes": 27279
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_0807",
+      "bytes": 30469
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_1007",
+      "bytes": 36029
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_1207",
+      "bytes": 39008
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_1407",
+      "bytes": 42476
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_1607",
+      "bytes": 46904
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_1807",
+      "bytes": 53148
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_2007",
+      "bytes": 57433
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260919_2207",
+      "bytes": 58532
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_0007",
+      "bytes": 60652
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_0407",
+      "bytes": 67154
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_0607",
+      "bytes": 70776
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_0807",
+      "bytes": 75223
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_1007",
+      "bytes": 77123
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_1207",
+      "bytes": 79891
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_1407",
+      "bytes": 81448
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_1607",
+      "bytes": 82628
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_1807",
+      "bytes": 84270
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_2007",
+      "bytes": 85809
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260920_2207",
+      "bytes": 87441
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260922_1807",
+      "bytes": 89561
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260922_2007",
+      "bytes": 90605
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260922_2207",
+      "bytes": 91855
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260923_0007",
+      "bytes": 92467
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260923_0207",
+      "bytes": 93363
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260923_0407",
+      "bytes": 94814
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260926_pre_nextsteps",
+      "bytes": 98718
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260928_0007",
+      "bytes": 99927
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260929_autonomy",
+      "bytes": 103889
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260929_discuss",
+      "bytes": 100626
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20260929_run61",
+      "bytes": 105735
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20261001_trust",
+      "bytes": 204896
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_20261007_2018",
+      "bytes": 506541
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_00e_20261004_1830",
+      "bytes": 360067
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_00e_20261004_2010",
+      "bytes": 365908
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_0207",
+      "bytes": 487881
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_0207amend_20261008",
+      "bytes": 506774
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_1407",
+      "bytes": 496590
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_dir_20261005_1423",
+      "bytes": 426074
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g100_20260930_2207",
+      "bytes": 143863
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g101_20261001_0007",
+      "bytes": 150808
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g102_20261001_0207",
+      "bytes": 155393
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g103_20261001_0407",
+      "bytes": 162207
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g104_20261001_0607",
+      "bytes": 166487
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g105_20261001_0807",
+      "bytes": 169889
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g106_20261001_1007",
+      "bytes": 180650
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g107_20261001_1207",
+      "bytes": 189892
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g108_20261001_1407",
+      "bytes": 200156
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g109_20261001_1607",
+      "bytes": 205610
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g110_20261001_1807",
+      "bytes": 210890
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g111_20261001_2007",
+      "bytes": 214749
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g112_20261001_2207",
+      "bytes": 220814
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g113_20261002_0007",
+      "bytes": 223557
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g114_20261002_0207",
+      "bytes": 228703
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g115_20261002_0407",
+      "bytes": 234411
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g116_20261002_0607",
+      "bytes": 239898
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g117_20261002_0807",
+      "bytes": 244617
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g118_20261002_1007",
+      "bytes": 253442
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g119_20261002_1207",
+      "bytes": 263898
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g120_20261002_1407",
+      "bytes": 271489
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g121_20261002_1607",
+      "bytes": 278357
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g122_20261002_1807",
+      "bytes": 287197
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g123_20261002_2007",
+      "bytes": 291445
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g124_20261002_2207",
+      "bytes": 296718
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g125_20261003_0007",
+      "bytes": 302998
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g126_20261003_0207",
+      "bytes": 305554
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g127_20261003_2215",
+      "bytes": 318021
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g128_20261004_0825",
+      "bytes": 324159
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g129_20261004_1007",
+      "bytes": 328176
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g130_20261004_1207",
+      "bytes": 335037
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g132_20261004_1407",
+      "bytes": 341162
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g133_20261004_1607",
+      "bytes": 347789
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g134_20261004_1807",
+      "bytes": 353640
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g135_20261004_2007",
+      "bytes": 361313
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g136_20261004_2207",
+      "bytes": 366370
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g137_20261005_0007",
+      "bytes": 374729
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g138_20261005_0207",
+      "bytes": 382112
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g139_20261005_0407",
+      "bytes": 393087
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g140_20261005_0607",
+      "bytes": 402473
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g141_20261005_0807",
+      "bytes": 412207
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g142_20261005_1407",
+      "bytes": 418755
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g143_20261005_1607",
+      "bytes": 427044
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g144_20261005_2007",
+      "bytes": 431811
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g145_20261005_2207",
+      "bytes": 437110
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g146_20261006_0007",
+      "bytes": 442253
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g147_20261006_0207",
+      "bytes": 446608
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g148_20261006_0407",
+      "bytes": 449183
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g149_20261006_0607",
+      "bytes": 453584
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g150_20261006_0807",
+      "bytes": 459233
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g151_20261006_1007",
+      "bytes": 464889
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g152_20261006_1207",
+      "bytes": 469682
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g153_20261006_1407",
+      "bytes": 474418
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g155_20261007_0007",
+      "bytes": 483041
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g81_20260929_1207",
+      "bytes": 101189
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g84_20260929_1807",
+      "bytes": 101824
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g88_20260930_0407",
+      "bytes": 107642
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g91_20260930_0607",
+      "bytes": 108456
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g92_20260930_0807",
+      "bytes": 110226
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g93_20260930_1007",
+      "bytes": 112755
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g94_20260930_1207",
+      "bytes": 119686
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g96_20260930_1407",
+      "bytes": 129431
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g98_20260930_1807",
+      "bytes": 137219
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_g99_20260930_2007",
+      "bytes": 139170
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_h1preview_20260930_1607",
+      "bytes": 132573
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_hold_20261005_1703",
+      "bytes": 431020
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_idle_20261007_0613",
+      "bytes": 495408
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_r90_20261004_1351",
+      "bytes": 340158
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_r91_20261004_1801",
+      "bytes": 352688
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_r95_20261006_1538",
+      "bytes": 481654
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_r96_20261007_1206",
+      "bytes": 495697
+    },
+    {
+      "path": "agent/SUPERVISOR.md.bak_pre_r97_20261008_0642",
+      "bytes": 522853
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_0207",
+      "bytes": 506774
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_0407",
+      "bytes": 512443
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_0607",
+      "bytes": 516320
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_0807",
+      "bytes": 523564
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_1207",
+      "bytes": 528584
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_1407",
+      "bytes": 536280
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_1607",
+      "bytes": 548627
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_1655",
+      "bytes": 554202
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_1807",
+      "bytes": 556451
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_2007",
+      "bytes": 560191
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261008_2207",
+      "bytes": 580824
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_0007",
+      "bytes": 594378
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_0207",
+      "bytes": 600779
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_0407",
+      "bytes": 604812
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_0607",
+      "bytes": 612300
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_0807",
+      "bytes": 617603
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_1007",
+      "bytes": 626597
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_1207",
+      "bytes": 633203
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_1407",
+      "bytes": 645202
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_1607",
+      "bytes": 650132
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_1807",
+      "bytes": 656461
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_2007",
+      "bytes": 668747
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261009_2207",
+      "bytes": 678908
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261010_0007",
+      "bytes": 688925
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261010_0207",
+      "bytes": 700433
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261010_0407",
+      "bytes": 709195
+    },
+    {
+      "path": "agent/SUPERVISOR.md.snap_20261010_0607",
+      "bytes": 720176
+    },
+    {
+      "path": "agent/abstain_feas.py",
+      "bytes": 7223
+    },
+    {
+      "path": "agent/archive_r64.sh",
+      "bytes": 810
+    },
+    {
+      "path": "agent/archive_r65.sh",
+      "bytes": 909
+    },
+    {
+      "path": "agent/archive_r66.sh",
+      "bytes": 1000
+    },
+    {
+      "path": "agent/archive_r67.sh",
+      "bytes": 1038
+    },
+    {
+      "path": "agent/archive_r68.sh",
+      "bytes": 1003
+    },
+    {
+      "path": "agent/archive_r69.sh",
+      "bytes": 1009
+    },
+    {
+      "path": "agent/armed_probe_r64_g2.sh",
+      "bytes": 574
+    },
+    {
+      "path": "agent/armed_probes_abstain.sh",
+      "bytes": 9851
+    },
+    {
+      "path": "agent/armed_probes_frozen.sh",
+      "bytes": 6503
+    },
+    {
+      "path": "agent/armed_probes_frozen.sh.bak_pre_scopedkill_20261002_0007",
+      "bytes": 4817
+    },
+    {
+      "path": "agent/armed_probes_frozen.sh.bak_pre_snapshotlaunch_20261002_0207",
+      "bytes": 5758
+    },
+    {
+      "path": "agent/armed_probes_frozen_g115c.sh",
+      "bytes": 7168
+    },
+    {
+      "path": "agent/armed_probes_hc.sh",
+      "bytes": 11650
+    },
+    {
+      "path": "agent/armed_probes_hold.sh",
+      "bytes": 4730
+    },
+    {
+      "path": "agent/armed_probes_hs.sh",
+      "bytes": 10773
+    },
+    {
+      "path": "agent/armed_probes_hs.sh.bak_pre_memclause_20261003_0407",
+      "bytes": 7269
+    },
+    {
+      "path": "agent/armed_probes_hs.sh.bak_pre_scopedkill_20261003_0207",
+      "bytes": 6161
+    },
+    {
+      "path": "agent/armed_probes_r65.sh",
+      "bytes": 1016
+    },
+    {
+      "path": "agent/armed_probes_r66.sh",
+      "bytes": 3894
+    },
+    {
+      "path": "agent/armed_probes_r66.sh.bak_pre_dedup_20260930_1407",
+      "bytes": 2549
+    },
+    {
+      "path": "agent/armed_probes_r67.sh",
+      "bytes": 6755
+    },
+    {
+      "path": "agent/armed_probes_r68.sh",
+      "bytes": 9243
+    },
+    {
+      "path": "agent/armed_probes_r69.sh",
+      "bytes": 14066
+    },
+    {
+      "path": "agent/armed_probes_r79.sh",
+      "bytes": 6887
+    },
+    {
+      "path": "agent/armed_probes_r80.sh",
+      "bytes": 9942
+    },
+    {
+      "path": "agent/armed_probes_report.sh",
+      "bytes": 2252
+    },
+    {
+      "path": "agent/armed_probes_trend.sh",
+      "bytes": 6454
+    },
+    {
+      "path": "agent/armed_successor.sh",
+      "bytes": 4150
+    },
+    {
+      "path": "agent/armed_traj_r65.sh",
+      "bytes": 1532
+    },
+    {
+      "path": "agent/band66_pairs.py",
+      "bytes": 4282
+    },
+    {
+      "path": "agent/band66_pairs.py.bak_pre_sourcedflags_20261002_2207",
+      "bytes": 3315
+    },
+    {
+      "path": "agent/bands8788.sh",
+      "bytes": 5946
+    },
+    {
+      "path": "agent/bands98_negoffset.sh",
+      "bytes": 6334
+    },
+    {
+      "path": "agent/bench_r31_800.sh",
+      "bytes": 2612
+    },
+    {
+      "path": "agent/bench_r34_800.sh",
+      "bytes": 2407
+    },
+    {
+      "path": "agent/capture.py",
+      "bytes": 3139
+    },
+    {
+      "path": "agent/capture.py.bak_pre_fixed_20261005_1207",
+      "bytes": 1721
+    },
+    {
+      "path": "agent/ceil_matched.sh",
+      "bytes": 1393
+    },
+    {
+      "path": "agent/ceiling_analysis.py",
+      "bytes": 7482
+    },
+    {
+      "path": "agent/ceiling_rungs.sh",
+      "bytes": 1801
+    },
+    {
+      "path": "agent/ceiling_rungs.sh.bak_pre_g164_20261008_0007",
+      "bytes": 1512
+    },
+    {
+      "path": "agent/ckpt_checksum.py",
+      "bytes": 909
+    },
+    {
+      "path": "agent/ckpt_same.py",
+      "bytes": 633
+    },
+    {
+      "path": "agent/clustered_se.py",
+      "bytes": 6387
+    },
+    {
+      "path": "agent/clustered_se.py.bak_pre_curve_20261002_1428",
+      "bytes": 4160
+    },
+    {
+      "path": "agent/collapse_check.py",
+      "bytes": 5001
+    },
+    {
+      "path": "agent/collapse_sentinel.sh",
+      "bytes": 4608
+    },
+    {
+      "path": "agent/content_len.py",
+      "bytes": 2752
+    },
+    {
+      "path": "agent/copy_rate.py",
+      "bytes": 7000
+    },
+    {
+      "path": "agent/copy_rate.py.bak_pre_pathargs_20261002_1207",
+      "bytes": 6648
+    },
+    {
+      "path": "agent/copy_rate.py.bak_pre_selrate_20261002_1207",
+      "bytes": 4233
+    },
+    {
+      "path": "agent/decision_signal.py",
+      "bytes": 8988
+    },
+    {
+      "path": "agent/decision_signal.py.bak_pre_impossible_20261007_0807",
+      "bytes": 7210
+    },
+    {
+      "path": "agent/decision_signal.sh",
+      "bytes": 1060
+    },
+    {
+      "path": "agent/draft_r31_800.sh",
+      "bytes": 1714
+    },
+    {
+      "path": "agent/draft_r32_1000.sh",
+      "bytes": 2500
+    },
+    {
+      "path": "agent/draft_r32_600.sh",
+      "bytes": 3591
+    },
+    {
+      "path": "agent/e1_autoprobe.sh",
+      "bytes": 1289
+    },
+    {
+      "path": "agent/e1_autoprobe_run.sh",
+      "bytes": 1333
+    },
+    {
+      "path": "agent/e1_autoprobe_run2.sh",
+      "bytes": 2129
+    },
+    {
+      "path": "agent/e1_deep.py",
+      "bytes": 3984
+    },
+    {
+      "path": "agent/e1_gate_r46_1000.sh",
+      "bytes": 1556
+    },
+    {
+      "path": "agent/e1_gate_r46_2000.sh",
+      "bytes": 1538
+    },
+    {
+      "path": "agent/e1_vanilla_layout46.sh",
+      "bytes": 2398
+    },
+    {
+      "path": "agent/echo_curve.sh",
+      "bytes": 4263
+    },
+    {
+      "path": "agent/etrig_monitor.sh",
+      "bytes": 23298
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_chainbudget_20261003_2007",
+      "bytes": 10667
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_d2b",
+      "bytes": 10231
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_d4contrast_20261003_2207",
+      "bytes": 11999
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_d6abst_20261005_0407",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_evallock_20261007_1807",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_ga",
+      "bytes": 14337
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_grpo_rep_20261004_1030",
+      "bytes": 14722
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_lockguard_20261003_1813",
+      "bytes": 8242
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_readerall_20261004_0820",
+      "bytes": 13142
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_sample0_20261009_1207",
+      "bytes": 18105
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_selfmatch_20261009_1607",
+      "bytes": 19854
+    },
+    {
+      "path": "agent/etrig_monitor.sh.bak_pre_statusprose_20261009_1807",
+      "bytes": 22055
+    },
+    {
+      "path": "agent/etrig_opencheck.py",
+      "bytes": 3119
+    },
+    {
+      "path": "agent/etrig_successor.py",
+      "bytes": 1816
+    },
+    {
+      "path": "agent/fallback_r76_to_r75.sh",
+      "bytes": 3588
+    },
+    {
+      "path": "agent/final_r34_800.sh",
+      "bytes": 2730
+    },
+    {
+      "path": "agent/g3_r34_1200.sh",
+      "bytes": 2778
+    },
+    {
+      "path": "agent/gate_read.py",
+      "bytes": 4656
+    },
+    {
+      "path": "agent/good_thoughts.py",
+      "bytes": 17647
+    },
+    {
+      "path": "agent/handover_r73_to_r75.sh",
+      "bytes": 3839
+    },
+    {
+      "path": "agent/hint_eval.py",
+      "bytes": 10754
+    },
+    {
+      "path": "agent/hint_eval.py.bak_pre_gain8_20261008_1421",
+      "bytes": 9887
+    },
+    {
+      "path": "agent/hint_gen.py",
+      "bytes": 6581
+    },
+    {
+      "path": "agent/host_ram_sentinel.sh",
+      "bytes": 11519
+    },
+    {
+      "path": "agent/host_ram_sentinel.sh.bak_pre_compilersplit_20261003_0243",
+      "bytes": 6041
+    },
+    {
+      "path": "agent/host_ram_sentinel.sh.bak_pre_idleguard_20261003_0207",
+      "bytes": 4377
+    },
+    {
+      "path": "agent/host_ram_sentinel.sh.bak_pre_modalppid_20261003_0230",
+      "bytes": 5283
+    },
+    {
+      "path": "agent/host_ram_sentinel.sh.bak_pre_rankid_20261003_0007",
+      "bytes": 3548
+    },
+    {
+      "path": "agent/host_ram_sentinel.sh.bak_pre_rankmember_20261009_1807",
+      "bytes": 7242
+    },
+    {
+      "path": "agent/init_gate_probe.sh",
+      "bytes": 1351
+    },
+    {
+      "path": "agent/init_refs.sh",
+      "bytes": 903
+    },
+    {
+      "path": "agent/init_refs2.sh",
+      "bytes": 1314
+    },
+    {
+      "path": "agent/interactive_watch.sh",
+      "bytes": 3513
+    },
+    {
+      "path": "agent/interactive_watch.sh.bak_20260927",
+      "bytes": 1739
+    },
+    {
+      "path": "agent/interactive_watch.sh.bak_pre_elemcount_20261009_2007",
+      "bytes": 1927
+    },
+    {
+      "path": "agent/k3_draft_r29_600.sh",
+      "bytes": 1131
+    },
+    {
+      "path": "agent/ladder_r26_1500.sh",
+      "bytes": 4169
+    },
+    {
+      "path": "agent/launch_r70_after_r69.sh",
+      "bytes": 1299
+    },
+    {
+      "path": "agent/launch_r76r.sh",
+      "bytes": 2921
+    },
+    {
+      "path": "agent/launch_r79.sh",
+      "bytes": 4216
+    },
+    {
+      "path": "agent/launch_r80.sh",
+      "bytes": 4216
+    },
+    {
+      "path": "agent/launch_r80_after_r82.sh",
+      "bytes": 3382
+    },
+    {
+      "path": "agent/launch_r94.sh",
+      "bytes": 7775
+    },
+    {
+      "path": "agent/launch_r94.sh.bak_pre_rung4_20261005_1407",
+      "bytes": 7023
+    },
+    {
+      "path": "agent/link_r28_600.sh",
+      "bytes": 869
+    },
+    {
+      "path": "agent/link_r29_ckpts.sh",
+      "bytes": 1004
+    },
+    {
+      "path": "agent/link_r30_ckpts.sh",
+      "bytes": 1184
+    },
+    {
+      "path": "agent/link_r31_ckpts.sh",
+      "bytes": 1184
+    },
+    {
+      "path": "agent/link_r32_ckpts.sh",
+      "bytes": 1209
+    },
+    {
+      "path": "agent/link_r33_ckpts.sh",
+      "bytes": 1096
+    },
+    {
+      "path": "agent/link_r34_ckpts.sh",
+      "bytes": 955
+    },
+    {
+      "path": "agent/link_r95_rungs.sh",
+      "bytes": 3853
+    },
+    {
+      "path": "agent/link_r96_rungs.sh",
+      "bytes": 3897
+    },
+    {
+      "path": "agent/logs/arms96_2007.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/ceiling_rungs_think95_L6_20261006_2043.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/collapse_sentinel_20261006_2033.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/collapse_sentinel_20261006_2036.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/draft_r32_600.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/init_ceiling_L4_L16_20261006_2017.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/para97_g8_2007.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/tfslot_r31_800_init.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/tick_20261004_0807.log.retry",
+      "bytes": 3054
+    },
+    {
+      "path": "agent/logs/verbatim_fill_2007.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/logs/verbatim_r97_2007.out",
+      "bytes": 0
+    },
+    {
+      "path": "agent/m1_r33_400.sh",
+      "bytes": 1878
+    },
+    {
+      "path": "agent/m2p1_r33_800.sh",
+      "bytes": 2885
+    },
+    {
+      "path": "agent/main.tex.last_audited_20260921_1007",
+      "bytes": 301199
+    },
+    {
+      "path": "agent/main.tex.last_audited_20260923_0407",
+      "bytes": 320310
+    },
+    {
+      "path": "agent/n1_r34_300.sh",
+      "bytes": 2089
+    },
+    {
+      "path": "agent/n2_r34_600.sh",
+      "bytes": 3290
+    },
+    {
+      "path": "agent/nar_probe.sh",
+      "bytes": 1658
+    },
+    {
+      "path": "agent/note_dump.py",
+      "bytes": 4820
+    },
+    {
+      "path": "agent/note_value.py",
+      "bytes": 13163
+    },
+    {
+      "path": "agent/note_value.py.bak_pre_records_20261002_1431",
+      "bytes": 10508
+    },
+    {
+      "path": "agent/own_r32_1000.sh",
+      "bytes": 1941
+    },
+    {
+      "path": "agent/own_r33_400.sh",
+      "bytes": 2576
+    },
+    {
+      "path": "agent/paired_delta.py",
+      "bytes": 4131
+    },
+    {
+      "path": "agent/pairing_sweep.py",
+      "bytes": 3292
+    },
+    {
+      "path": "agent/pausecost_r26_1500.sh",
+      "bytes": 2955
+    },
+    {
+      "path": "agent/pausecost_r32_1000.sh",
+      "bytes": 3622
+    },
+    {
+      "path": "agent/pmixconf_r31_800.sh",
+      "bytes": 2767
+    },
+    {
+      "path": "agent/pmixfreq_r31_800.sh",
+      "bytes": 2114
+    },
+    {
+      "path": "agent/predictions/pred_20261002_0407.md",
+      "bytes": 5291
+    },
+    {
+      "path": "agent/predictions/pred_20261002_0607.md",
+      "bytes": 2387
+    },
+    {
+      "path": "agent/predictions/pred_20261002_0807.md",
+      "bytes": 5534
+    },
+    {
+      "path": "agent/predictions/pred_20261002_1007.md",
+      "bytes": 7788
+    },
+    {
+      "path": "agent/predictions/pred_20261002_1207.md",
+      "bytes": 18770
+    },
+    {
+      "path": "agent/predictions/pred_20261002_1607.md",
+      "bytes": 6257
+    },
+    {
+      "path": "agent/predictions/pred_20261002_1807.md",
+      "bytes": 5616
+    },
+    {
+      "path": "agent/predictions/pred_20261002_2007.md",
+      "bytes": 6111
+    },
+    {
+      "path": "agent/predictions/pred_20261002_2207.md",
+      "bytes": 8296
+    },
+    {
+      "path": "agent/predictions/pred_20261003_0007.md",
+      "bytes": 9952
+    },
+    {
+      "path": "agent/predictions/pred_20261003_0207.md",
+      "bytes": 8665
+    },
+    {
+      "path": "agent/predictions/pred_20261003_0407.md",
+      "bytes": 6019
+    },
+    {
+      "path": "agent/predictions/pred_20261003_0607.md",
+      "bytes": 18741
+    },
+    {
+      "path": "agent/predictions/pred_20261003_1007.md",
+      "bytes": 6661
+    },
+    {
+      "path": "agent/predictions/pred_20261003_1207.md",
+      "bytes": 11727
+    },
+    {
+      "path": "agent/predictions/pred_20261003_1607.md",
+      "bytes": 4896
+    },
+    {
+      "path": "agent/predictions/pred_20261003_1820.md",
+      "bytes": 3047
+    },
+    {
+      "path": "agent/predictions/pred_20261003_2007.md",
+      "bytes": 4102
+    },
+    {
+      "path": "agent/predictions/pred_20261003_2207.md",
+      "bytes": 10348
+    },
+    {
+      "path": "agent/predictions/pred_20261004_0007.md",
+      "bytes": 10050
+    },
+    {
+      "path": "agent/predictions/pred_20261004_0807.md",
+      "bytes": 8495
+    },
+    {
+      "path": "agent/predictions/pred_20261004_1007.md",
+      "bytes": 9952
+    },
+    {
+      "path": "agent/predictions/pred_20261004_1207.md",
+      "bytes": 6362
+    },
+    {
+      "path": "agent/predictions/pred_20261004_1407.md",
+      "bytes": 6554
+    },
+    {
+      "path": "agent/predictions/pred_20261004_1607.md",
+      "bytes": 5758
+    },
+    {
+      "path": "agent/predictions/pred_20261004_1807.md",
+      "bytes": 8519
+    },
+    {
+      "path": "agent/predictions/pred_20261004_2007.md",
+      "bytes": 6014
+    },
+    {
+      "path": "agent/predictions/pred_20261004_2207.md",
+      "bytes": 5034
+    },
+    {
+      "path": "agent/predictions/pred_20261005_0007.md",
+      "bytes": 5448
+    },
+    {
+      "path": "agent/predictions/pred_20261005_0207.md",
+      "bytes": 6149
+    },
+    {
+      "path": "agent/predictions/pred_20261005_0407.md",
+      "bytes": 6265
+    },
+    {
+      "path": "agent/predictions/pred_20261005_0607.md",
+      "bytes": 10308
+    },
+    {
+      "path": "agent/predictions/pred_20261005_0807.md",
+      "bytes": 18168
+    },
+    {
+      "path": "agent/predictions/pred_20261005_1007.md",
+      "bytes": 15236
+    },
+    {
+      "path": "agent/predictions/pred_20261005_1207.md",
+      "bytes": 16860
+    },
+    {
+      "path": "agent/predictions/pred_20261005_1407.md",
+      "bytes": 6301
+    },
+    {
+      "path": "agent/predictions/pred_20261005_1607.md",
+      "bytes": 6633
+    },
+    {
+      "path": "agent/predictions/pred_20261005_1807.md",
+      "bytes": 4180
+    },
+    {
+      "path": "agent/predictions/pred_20261005_2007.md",
+      "bytes": 8405
+    },
+    {
+      "path": "agent/predictions/pred_20261005_2207.md",
+      "bytes": 5657
+    },
+    {
+      "path": "agent/predictions/pred_20261006_0007.md",
+      "bytes": 6400
+    },
+    {
+      "path": "agent/predictions/pred_20261006_0207.md",
+      "bytes": 8513
+    },
+    {
+      "path": "agent/predictions/pred_20261006_0407.md",
+      "bytes": 14351
+    },
+    {
+      "path": "agent/predictions/pred_20261006_0607.md",
+      "bytes": 8448
+    },
+    {
+      "path": "agent/predictions/pred_20261006_0807.md",
+      "bytes": 9101
+    },
+    {
+      "path": "agent/predictions/pred_20261006_1007.md",
+      "bytes": 11029
+    },
+    {
+      "path": "agent/predictions/pred_20261006_1207.md",
+      "bytes": 9582
+    },
+    {
+      "path": "agent/predictions/pred_20261006_1407.md",
+      "bytes": 12149
+    },
+    {
+      "path": "agent/predictions/pred_20261006_1807.md",
+      "bytes": 7262
+    },
+    {
+      "path": "agent/predictions/pred_20261006_1840.md",
+      "bytes": 6920
+    },
+    {
+      "path": "agent/predictions/pred_20261006_1910.md",
+      "bytes": 7878
+    },
+    {
+      "path": "agent/predictions/pred_20261006_2007.md",
+      "bytes": 12677
+    },
+    {
+      "path": "agent/predictions/pred_20261008_2007.md",
+      "bytes": 11842
+    },
+    {
+      "path": "agent/pvls_live.py",
+      "bytes": 3821
+    },
+    {
+      "path": "agent/rank0_ratchet_probe.sh",
+      "bytes": 2078
+    },
+    {
+      "path": "agent/rank0_ratchet_probe2.sh",
+      "bytes": 2140
+    },
+    {
+      "path": "agent/resume_oom_guard.sh",
+      "bytes": 8093
+    },
+    {
+      "path": "agent/resume_oom_guard.sh.bak_pre_doneanchor_20261009_2007",
+      "bytes": 7242
+    },
+    {
+      "path": "agent/resume_oom_guard.sh.bak_pre_flagsgrep_20261002_1414",
+      "bytes": 6344
+    },
+    {
+      "path": "agent/rung10_r94_n48.sh",
+      "bytes": 2314
+    },
+    {
+      "path": "agent/rung10_r94_n48_rescue.sh",
+      "bytes": 1228
+    },
+    {
+      "path": "agent/rung11_r94_n48.sh",
+      "bytes": 3476
+    },
+    {
+      "path": "agent/rung12_r94_n48.sh",
+      "bytes": 3477
+    },
+    {
+      "path": "agent/rung13_r94_n48.sh",
+      "bytes": 3476
+    },
+    {
+      "path": "agent/rung14_r94_n48.sh",
+      "bytes": 3476
+    },
+    {
+      "path": "agent/rung15_r94_n48.sh",
+      "bytes": 4169
+    },
+    {
+      "path": "agent/rung16_r94_n48.sh",
+      "bytes": 4170
+    },
+    {
+      "path": "agent/rung17_r94_n48.sh",
+      "bytes": 4235
+    },
+    {
+      "path": "agent/rung18_r94_n48.sh",
+      "bytes": 4236
+    },
+    {
+      "path": "agent/rung19_r94_n48.sh",
+      "bytes": 4356
+    },
+    {
+      "path": "agent/rung1_r93_n48.sh",
+      "bytes": 1970
+    },
+    {
+      "path": "agent/rung1_r94_n48.sh",
+      "bytes": 1779
+    },
+    {
+      "path": "agent/rung20_r94_n48.sh",
+      "bytes": 4362
+    },
+    {
+      "path": "agent/rung21_r94_n48.sh",
+      "bytes": 4370
+    },
+    {
+      "path": "agent/rung22_r94_n48.sh",
+      "bytes": 4370
+    },
+    {
+      "path": "agent/rung2_r93_n48.sh",
+      "bytes": 2386
+    },
+    {
+      "path": "agent/rung2_r94_n48.sh",
+      "bytes": 2047
+    },
+    {
+      "path": "agent/rung3_r93_n48.sh",
+      "bytes": 2386
+    },
+    {
+      "path": "agent/rung3_r94_n48.sh",
+      "bytes": 1997
+    },
+    {
+      "path": "agent/rung4_r93_n48.sh",
+      "bytes": 2417
+    },
+    {
+      "path": "agent/rung4_r94_n48.sh",
+      "bytes": 2051
+    },
+    {
+      "path": "agent/rung5_r93control_n48.sh",
+      "bytes": 1013
+    },
+    {
+      "path": "agent/rung5_r94_n48.sh",
+      "bytes": 1945
+    },
+    {
+      "path": "agent/rung6_r94_n48.sh",
+      "bytes": 2290
+    },
+    {
+      "path": "agent/rung7_r94_n48.sh",
+      "bytes": 2307
+    },
+    {
+      "path": "agent/rung8_r94_n48.sh",
+      "bytes": 2310
+    },
+    {
+      "path": "agent/rung9_r94_n48.sh",
+      "bytes": 2310
+    },
+    {
+      "path": "agent/rung_plot_r94.py",
+      "bytes": 2235
+    },
+    {
+      "path": "agent/rung_trend.py",
+      "bytes": 5374
+    },
+    {
+      "path": "agent/rung_trend.py.bak_pre_binw_20261002_1650",
+      "bytes": 4972
+    },
+    {
+      "path": "agent/running/armed_probes_frozen_g115c_think71_frozen_imit_20261002_061121.sh",
+      "bytes": 7168
+    },
+    {
+      "path": "agent/running/armed_probes_frozen_think70_20261002_0207.sh",
+      "bytes": 5758
+    },
+    {
+      "path": "agent/running/armed_probes_hc_think81_20261003_123143.sh",
+      "bytes": 11650
+    },
+    {
+      "path": "agent/running/armed_probes_hc_think82_20261003_152755.sh",
+      "bytes": 11650
+    },
+    {
+      "path": "agent/running/armed_probes_hold_think73_hold_20261002_133813.sh",
+      "bytes": 4730
+    },
+    {
+      "path": "agent/running/armed_probes_hold_think73_hold_20261002_1457_rearm.sh",
+      "bytes": 4730
+    },
+    {
+      "path": "agent/running/armed_probes_hs_20261003_041123.sh",
+      "bytes": 10773
+    },
+    {
+      "path": "agent/running/armed_probes_hs_think76_hindsight_20261002_173455.sh",
+      "bytes": 5895
+    },
+    {
+      "path": "agent/running/armed_probes_hs_think76_hindsight_20261002_175710.sh",
+      "bytes": 6161
+    },
+    {
+      "path": "agent/running/armed_probes_hs_think76_hindsight_20261002_183218.sh",
+      "bytes": 6161
+    },
+    {
+      "path": "agent/running/armed_probes_hs_think76r_hindsight32_20261003_082232.sh",
+      "bytes": 10773
+    },
+    {
+      "path": "agent/running/armed_probes_hs_think77_noprice_20261002_175556.sh",
+      "bytes": 5895
+    },
+    {
+      "path": "agent/running/armed_probes_r79_think79_forecast_long_20261002_203432.sh",
+      "bytes": 6887
+    },
+    {
+      "path": "agent/running/armed_probes_r80_20261003_122619.sh",
+      "bytes": 9942
+    },
+    {
+      "path": "agent/running/armed_probes_report_think75_sync_20261002_172139.sh",
+      "bytes": 2252
+    },
+    {
+      "path": "agent/running/armed_successor_think72_frozen_resume_20261002_0425.sh",
+      "bytes": 3409
+    },
+    {
+      "path": "agent/running/armed_successor_think72_frozen_resume_20261002_042557.sh",
+      "bytes": 4150
+    },
+    {
+      "path": "agent/running/armed_successor_think72_frozen_resume_20261002_133813.sh",
+      "bytes": 4150
+    },
+    {
+      "path": "agent/running/bands8788_20261003_041636.sh",
+      "bytes": 5946
+    },
+    {
+      "path": "agent/running/bands98_negoffset_20261003_061453.sh",
+      "bytes": 6328
+    },
+    {
+      "path": "agent/running/echo_curve_think71_frozen_imit_20261002_101500.sh",
+      "bytes": 4263
+    },
+    {
+      "path": "agent/running/etrig_monitor_think83_etrig_20261003_175901.sh",
+      "bytes": 8242
+    },
+    {
+      "path": "agent/running/etrig_monitor_think83_etrig_20261003_181730.sh",
+      "bytes": 10231
+    },
+    {
+      "path": "agent/running/etrig_monitor_think84_etrigD_20261003_195202.sh",
+      "bytes": 10667
+    },
+    {
+      "path": "agent/running/etrig_monitor_think84_etrigD_20261003_201203.sh",
+      "bytes": 11842
+    },
+    {
+      "path": "agent/running/etrig_monitor_think85_etrigC_20261003_202233.sh",
+      "bytes": 11842
+    },
+    {
+      "path": "agent/running/etrig_monitor_think86_etrigI_20261003_205547.sh",
+      "bytes": 11842
+    },
+    {
+      "path": "agent/running/etrig_monitor_think86_etrigI_20261003_213118.sh",
+      "bytes": 11999
+    },
+    {
+      "path": "agent/running/etrig_monitor_think86_etrigI_20261003_221031.sh",
+      "bytes": 13142
+    },
+    {
+      "path": "agent/running/etrig_monitor_think87_etrigI0_20261003_230010.sh",
+      "bytes": 13142
+    },
+    {
+      "path": "agent/running/etrig_monitor_think88_control_20261004_095911.sh",
+      "bytes": 14337
+    },
+    {
+      "path": "agent/running/etrig_monitor_think88_etrigRA_20261004_081545.sh",
+      "bytes": 14337
+    },
+    {
+      "path": "agent/running/etrig_monitor_think89_grpo_20261004_101938.sh",
+      "bytes": 14722
+    },
+    {
+      "path": "agent/running/etrig_monitor_think89_grpo_20261004_102707.sh",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/running/etrig_monitor_think89_grpo_20261004_104117.sh",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/running/etrig_monitor_think89_grpo_20261004_111655.sh",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/running/etrig_monitor_think90_grpoF_20261004_140147.sh",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/running/etrig_monitor_think91_grpoF1_20261004_182715.sh",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/running/etrig_monitor_think91_grpoF1_20261004_221648.sh",
+      "bytes": 15617
+    },
+    {
+      "path": "agent/running/etrig_monitor_think92_grpoA_20261005_042301.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/etrig_monitor_think93_grpoB_20261005_070846.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/etrig_monitor_think94_grpoC_20261005_141843.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/etrig_monitor_think95_bestof_20261006_153757.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/fallback_r76_to_r75_20261002_181036.sh",
+      "bytes": 3588
+    },
+    {
+      "path": "agent/running/handover_r73_to_r75_20261002_164335.sh",
+      "bytes": 3839
+    },
+    {
+      "path": "agent/running/handover_r73_to_r75_20261002_170854.sh",
+      "bytes": 3839
+    },
+    {
+      "path": "agent/running/host_ram_sentinel_20261002_223435.sh",
+      "bytes": 3548
+    },
+    {
+      "path": "agent/running/host_ram_sentinel_20261003_001413.sh",
+      "bytes": 4377
+    },
+    {
+      "path": "agent/running/host_ram_sentinel_20261003_024438.sh",
+      "bytes": 6962
+    },
+    {
+      "path": "agent/running/host_ram_sentinel_20261003_024531.sh",
+      "bytes": 7242
+    },
+    {
+      "path": "agent/running/host_ram_sentinel_20261009_181427.sh",
+      "bytes": 11519
+    },
+    {
+      "path": "agent/running/launch_r80_after_r82_20261003_161123.sh",
+      "bytes": 3382
+    },
+    {
+      "path": "agent/running/mon95_20261006_153948.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_155846.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_163716.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_165138.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_171947.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_184019.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_191043.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_194532.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon95_20261006_195313.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon96_20261007_120503.sh",
+      "bytes": 16980
+    },
+    {
+      "path": "agent/running/mon97_20261008_064135.sh",
+      "bytes": 18130
+    },
+    {
+      "path": "agent/running/mon98_20261008_114214.sh",
+      "bytes": 18131
+    },
+    {
+      "path": "agent/running/probe_span_echo_20261002_0830.py",
+      "bytes": 8553
+    },
+    {
+      "path": "agent/running/rank0_ratchet_probe2_20261003_001729.sh",
+      "bytes": 2140
+    },
+    {
+      "path": "agent/running/rank0_ratchet_probe_20261003_001259.sh",
+      "bytes": 2078
+    },
+    {
+      "path": "agent/running/resume_oom_guard_think73_hold_20261002_101808.sh",
+      "bytes": 6344
+    },
+    {
+      "path": "agent/running/smoke_triage_r76r_20261003_030419.sh",
+      "bytes": 3310
+    },
+    {
+      "path": "agent/running/successor_r71_to_r73_20261002_091906.sh",
+      "bytes": 3434
+    },
+    {
+      "path": "agent/running/successor_r73_to_r74_20261002_162420.sh",
+      "bytes": 4985
+    },
+    {
+      "path": "agent/running/successor_r79_to_r76r_20261002_205035.sh",
+      "bytes": 3199
+    },
+    {
+      "path": "agent/running/switch_r75_to_r76_20261002_171134.sh",
+      "bytes": 1996
+    },
+    {
+      "path": "agent/running/switch_r75_to_r76_20261002_172315.sh",
+      "bytes": 2357
+    },
+    {
+      "path": "agent/running/transfer_curve_gap_think71_frozen_imit_20261002_081402.sh",
+      "bytes": 3839
+    },
+    {
+      "path": "agent/running/transfer_curve_think71_frozen_imit_20261002_0419.sh",
+      "bytes": 3132
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0007.txt",
+      "bytes": 4863
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0007_RESOLUTION.txt",
+      "bytes": 3060
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0207.txt",
+      "bytes": 7483
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0207_RESOLUTION.txt",
+      "bytes": 4625
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0407.txt",
+      "bytes": 9271
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0407_REGISTERED.txt",
+      "bytes": 379
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0407_RESOLUTION.txt",
+      "bytes": 4770
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0607.txt",
+      "bytes": 4736
+    },
+    {
+      "path": "agent/scratchpad/BANDS_0807.txt",
+      "bytes": 3350
+    },
+    {
+      "path": "agent/scratchpad/BANDS_1007.txt",
+      "bytes": 3407
+    },
+    {
+      "path": "agent/scratchpad/BANDS_1007_RESOLUTION.txt",
+      "bytes": 2046
+    },
+    {
+      "path": "agent/scratchpad/BANDS_1207.txt",
+      "bytes": 3337
+    },
+    {
+      "path": "agent/scratchpad/BANDS_1207_RESOLUTION.txt",
+      "bytes": 6856
+    },
+    {
+      "path": "agent/scratchpad/BANDS_1807.txt",
+      "bytes": 1946
+    },
+    {
+      "path": "agent/scratchpad/BANDS_1807_RESOLUTION.txt",
+      "bytes": 4042
+    },
+    {
+      "path": "agent/scratchpad/BANDS_2207.txt",
+      "bytes": 2497
+    },
+    {
+      "path": "agent/scratchpad/BANDS_2207_RESOLUTION.txt",
+      "bytes": 3562
+    },
+    {
+      "path": "agent/scratchpad/ablate_1008_0407.out",
+      "bytes": 2940
+    },
+    {
+      "path": "agent/scratchpad/ablate_1008_0407.py",
+      "bytes": 5319
+    },
+    {
+      "path": "agent/scratchpad/allanch0207.out",
+      "bytes": 4084
+    },
+    {
+      "path": "agent/scratchpad/allanch0207.py",
+      "bytes": 7352
+    },
+    {
+      "path": "agent/scratchpad/anchorpair_1008_1007.out",
+      "bytes": 943
+    },
+    {
+      "path": "agent/scratchpad/anchorpair_1008_1007.py",
+      "bytes": 4338
+    },
+    {
+      "path": "agent/scratchpad/arms96_2007.sh",
+      "bytes": 1616
+    },
+    {
+      "path": "agent/scratchpad/arms_abs_2207.out",
+      "bytes": 1441
+    },
+    {
+      "path": "agent/scratchpad/arms_abs_2207.py",
+      "bytes": 2748
+    },
+    {
+      "path": "agent/scratchpad/asym_vs_L_0207.out",
+      "bytes": 825
+    },
+    {
+      "path": "agent/scratchpad/asym_vs_L_0207.py",
+      "bytes": 2869
+    },
+    {
+      "path": "agent/scratchpad/attrib13_2007.out",
+      "bytes": 4079
+    },
+    {
+      "path": "agent/scratchpad/attrib13_2007.py",
+      "bytes": 4554
+    },
+    {
+      "path": "agent/scratchpad/attrib_1607.out",
+      "bytes": 3356
+    },
+    {
+      "path": "agent/scratchpad/attrib_1607.py",
+      "bytes": 9626
+    },
+    {
+      "path": "agent/scratchpad/attrib_1607.py.bak_pre_1807",
+      "bytes": 7164
+    },
+    {
+      "path": "agent/scratchpad/attrib_1807.out",
+      "bytes": 4449
+    },
+    {
+      "path": "agent/scratchpad/attrib_2007.out",
+      "bytes": 2440
+    },
+    {
+      "path": "agent/scratchpad/attrib_2007.py",
+      "bytes": 5980
+    },
+    {
+      "path": "agent/scratchpad/auc_bar_0407.py",
+      "bytes": 2521
+    },
+    {
+      "path": "agent/scratchpad/aucbar_0607.out",
+      "bytes": 2207
+    },
+    {
+      "path": "agent/scratchpad/aucbar_0607.py",
+      "bytes": 3946
+    },
+    {
+      "path": "agent/scratchpad/b124_1008_1407.out",
+      "bytes": 684
+    },
+    {
+      "path": "agent/scratchpad/b124_1008_1407.py",
+      "bytes": 2234
+    },
+    {
+      "path": "agent/scratchpad/bands95_read.py",
+      "bytes": 2629
+    },
+    {
+      "path": "agent/scratchpad/bands_1008_0407.out",
+      "bytes": 2627
+    },
+    {
+      "path": "agent/scratchpad/bands_1008_0407.py",
+      "bytes": 6954
+    },
+    {
+      "path": "agent/scratchpad/beats_1007.out",
+      "bytes": 802
+    },
+    {
+      "path": "agent/scratchpad/beats_1007.py",
+      "bytes": 2265
+    },
+    {
+      "path": "agent/scratchpad/bestn_rob_0007.out",
+      "bytes": 1055
+    },
+    {
+      "path": "agent/scratchpad/bestn_rob_0007.py",
+      "bytes": 3407
+    },
+    {
+      "path": "agent/scratchpad/binormal_check_0407.py",
+      "bytes": 1657
+    },
+    {
+      "path": "agent/scratchpad/blocks_0007.py",
+      "bytes": 908
+    },
+    {
+      "path": "agent/scratchpad/blocks_0207.py",
+      "bytes": 909
+    },
+    {
+      "path": "agent/scratchpad/blocks_0407.py",
+      "bytes": 909
+    },
+    {
+      "path": "agent/scratchpad/blocks_0607.py",
+      "bytes": 909
+    },
+    {
+      "path": "agent/scratchpad/breakeven96_1407.py",
+      "bytes": 2391
+    },
+    {
+      "path": "agent/scratchpad/breakeven_0207.out",
+      "bytes": 1974
+    },
+    {
+      "path": "agent/scratchpad/breakeven_0207.py",
+      "bytes": 2493
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/ceil_190_nt6.txt",
+      "bytes": 7064
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/ceil_190_nt8.txt",
+      "bytes": 7076
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/ceil_init_L4_K16_G6_nt6.txt",
+      "bytes": 5734
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/ceil_init_L4_K16_G6_nt8.txt",
+      "bytes": 5734
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/ceil_init_L8_K16_G6_nt6.txt",
+      "bytes": 5735
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/ceil_init_L8_K16_G6_nt8.txt",
+      "bytes": 5735
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/init_L16_nt8.txt",
+      "bytes": 5739
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/init_L32_nt8.txt",
+      "bytes": 5746
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/init_L4_nt8.txt",
+      "bytes": 5734
+    },
+    {
+      "path": "agent/scratchpad/ceil0007/init_L8_nt8.txt",
+      "bytes": 5735
+    },
+    {
+      "path": "agent/scratchpad/chan_1008_1407.out",
+      "bytes": 798
+    },
+    {
+      "path": "agent/scratchpad/chan_1008_1407.py",
+      "bytes": 2469
+    },
+    {
+      "path": "agent/scratchpad/coldefs_1007.out",
+      "bytes": 1470
+    },
+    {
+      "path": "agent/scratchpad/coldefs_1007.py",
+      "bytes": 2122
+    },
+    {
+      "path": "agent/scratchpad/coldefs_1207.out",
+      "bytes": 2395
+    },
+    {
+      "path": "agent/scratchpad/coldefs_1207.py",
+      "bytes": 4063
+    },
+    {
+      "path": "agent/scratchpad/collapse_watch.py",
+      "bytes": 5059
+    },
+    {
+      "path": "agent/scratchpad/collapse_watch.py.bak_pre_rstd_20261006_2014",
+      "bytes": 2738
+    },
+    {
+      "path": "agent/scratchpad/compose_1008_0607.out",
+      "bytes": 2405
+    },
+    {
+      "path": "agent/scratchpad/compose_1008_0607.py",
+      "bytes": 4836
+    },
+    {
+      "path": "agent/scratchpad/d5_1807.py",
+      "bytes": 1106
+    },
+    {
+      "path": "agent/scratchpad/d5gap_1407.out",
+      "bytes": 1444
+    },
+    {
+      "path": "agent/scratchpad/d5gap_1407.py",
+      "bytes": 1539
+    },
+    {
+      "path": "agent/scratchpad/decision_signal_0207.out",
+      "bytes": 4602
+    },
+    {
+      "path": "agent/scratchpad/decision_signal_0207.py",
+      "bytes": 7190
+    },
+    {
+      "path": "agent/scratchpad/deploy97_1008_0807.out",
+      "bytes": 649
+    },
+    {
+      "path": "agent/scratchpad/deploy97_1008_0807.py",
+      "bytes": 4917
+    },
+    {
+      "path": "agent/scratchpad/deploy97_1008_1207.out",
+      "bytes": 2918
+    },
+    {
+      "path": "agent/scratchpad/deploy97_1008_1207.py",
+      "bytes": 4568
+    },
+    {
+      "path": "agent/scratchpad/deploy98_1008_1407.out",
+      "bytes": 1162
+    },
+    {
+      "path": "agent/scratchpad/deploy98_1008_1407.py",
+      "bytes": 3390
+    },
+    {
+      "path": "agent/scratchpad/deploy_1008_0807.out",
+      "bytes": 2526
+    },
+    {
+      "path": "agent/scratchpad/deploy_1008_0807.py",
+      "bytes": 5017
+    },
+    {
+      "path": "agent/scratchpad/dom4xchk_2207.out",
+      "bytes": 219
+    },
+    {
+      "path": "agent/scratchpad/dom4xchk_2207.py",
+      "bytes": 1003
+    },
+    {
+      "path": "agent/scratchpad/domfinal_2207.out",
+      "bytes": 1558
+    },
+    {
+      "path": "agent/scratchpad/domfinal_2207.out.WRONG_double4x",
+      "bytes": 1562
+    },
+    {
+      "path": "agent/scratchpad/domfinal_2207.py",
+      "bytes": 4115
+    },
+    {
+      "path": "agent/scratchpad/domprice4x_2207.out",
+      "bytes": 896
+    },
+    {
+      "path": "agent/scratchpad/domprice4x_2207.py",
+      "bytes": 2878
+    },
+    {
+      "path": "agent/scratchpad/domprice_2207.out",
+      "bytes": 1937
+    },
+    {
+      "path": "agent/scratchpad/domprice_2207.py",
+      "bytes": 5215
+    },
+    {
+      "path": "agent/scratchpad/domweight_2207.out",
+      "bytes": 880
+    },
+    {
+      "path": "agent/scratchpad/domweight_2207.py",
+      "bytes": 3283
+    },
+    {
+      "path": "agent/scratchpad/fillerarm_init_0607.out",
+      "bytes": 1816
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs10_0407.py",
+      "bytes": 2849
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs11_0607.py",
+      "bytes": 2854
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs12_0807.py",
+      "bytes": 3729
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs13_0807.py",
+      "bytes": 3725
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs14_1007.py",
+      "bytes": 3730
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs15_1207.py",
+      "bytes": 3768
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs17_1407.out",
+      "bytes": 3708
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs17_1407.py",
+      "bytes": 3780
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs7_0007.py",
+      "bytes": 2137
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs8_0207.py",
+      "bytes": 2063
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs9_0407.py",
+      "bytes": 2834
+    },
+    {
+      "path": "agent/scratchpad/fit_rungs_0007.py",
+      "bytes": 2792
+    },
+    {
+      "path": "agent/scratchpad/fix2007/done_grep_fixture.sh",
+      "bytes": 1469
+    },
+    {
+      "path": "agent/scratchpad/fix2007/iw_count_fixture.sh",
+      "bytes": 1810
+    },
+    {
+      "path": "agent/scratchpad/fix2007/smoke_grep_fixture.sh",
+      "bytes": 1912
+    },
+    {
+      "path": "agent/scratchpad/floor_1207.out",
+      "bytes": 2660
+    },
+    {
+      "path": "agent/scratchpad/floor_1207.py",
+      "bytes": 1730
+    },
+    {
+      "path": "agent/scratchpad/forecast_0007.txt",
+      "bytes": 4322
+    },
+    {
+      "path": "agent/scratchpad/forecast_0207.txt",
+      "bytes": 12434
+    },
+    {
+      "path": "agent/scratchpad/forecast_0207.txt.bak_pre_tsfix",
+      "bytes": 11615
+    },
+    {
+      "path": "agent/scratchpad/forecast_1008_0407.txt",
+      "bytes": 12845
+    },
+    {
+      "path": "agent/scratchpad/g148_block.md",
+      "bytes": 4400
+    },
+    {
+      "path": "agent/scratchpad/g149_block.md",
+      "bytes": 4032
+    },
+    {
+      "path": "agent/scratchpad/g149_item4.md",
+      "bytes": 1617
+    },
+    {
+      "path": "agent/scratchpad/g150_block.md",
+      "bytes": 3851
+    },
+    {
+      "path": "agent/scratchpad/g150_item4.md",
+      "bytes": 1804
+    },
+    {
+      "path": "agent/scratchpad/g151_block.md",
+      "bytes": 4792
+    },
+    {
+      "path": "agent/scratchpad/g152_block.md",
+      "bytes": 4735
+    },
+    {
+      "path": "agent/scratchpad/g183ext_1008_1207.out",
+      "bytes": 1924
+    },
+    {
+      "path": "agent/scratchpad/g183ext_1008_1207.py",
+      "bytes": 5227
+    },
+    {
+      "path": "agent/scratchpad/gatecheck0007.out",
+      "bytes": 1996
+    },
+    {
+      "path": "agent/scratchpad/gatecheck0007.py",
+      "bytes": 5493
+    },
+    {
+      "path": "agent/scratchpad/gatefloor_0207.out",
+      "bytes": 1762
+    },
+    {
+      "path": "agent/scratchpad/gatefloor_0207.py",
+      "bytes": 3149
+    },
+    {
+      "path": "agent/scratchpad/gatefloor_1807.py",
+      "bytes": 2438
+    },
+    {
+      "path": "agent/scratchpad/gatetable_0807.out",
+      "bytes": 1802
+    },
+    {
+      "path": "agent/scratchpad/greedy_1407.out",
+      "bytes": 1034
+    },
+    {
+      "path": "agent/scratchpad/greedy_1407.py",
+      "bytes": 3794
+    },
+    {
+      "path": "agent/scratchpad/greedy_r98_0007.out",
+      "bytes": 1842
+    },
+    {
+      "path": "agent/scratchpad/greedy_r98_0007.py",
+      "bytes": 4828
+    },
+    {
+      "path": "agent/scratchpad/hint_1807.py",
+      "bytes": 1577
+    },
+    {
+      "path": "agent/scratchpad/hintmix_reweight_0007.out",
+      "bytes": 2904
+    },
+    {
+      "path": "agent/scratchpad/hintmix_reweight_0007.py",
+      "bytes": 3904
+    },
+    {
+      "path": "agent/scratchpad/hintmix_reweight_1807.py",
+      "bytes": 2651
+    },
+    {
+      "path": "agent/scratchpad/hintmix_reweight_2007.py",
+      "bytes": 2669
+    },
+    {
+      "path": "agent/scratchpad/hintmix_reweight_2207.py",
+      "bytes": 2792
+    },
+    {
+      "path": "agent/scratchpad/inert96_1407.py",
+      "bytes": 2880
+    },
+    {
+      "path": "agent/scratchpad/klr_level_decomp_0007.py",
+      "bytes": 1935
+    },
+    {
+      "path": "agent/scratchpad/l1_flat_2007.py",
+      "bytes": 1272
+    },
+    {
+      "path": "agent/scratchpad/l1_precursor_2007.py",
+      "bytes": 1361
+    },
+    {
+      "path": "agent/scratchpad/l1replay_100/metrics.jsonl",
+      "bytes": 96809
+    },
+    {
+      "path": "agent/scratchpad/l1replay_90/metrics.jsonl",
+      "bytes": 87287
+    },
+    {
+      "path": "agent/scratchpad/l1replay_95/metrics.jsonl",
+      "bytes": 92084
+    },
+    {
+      "path": "agent/scratchpad/l1replay_96/metrics.jsonl",
+      "bytes": 93060
+    },
+    {
+      "path": "agent/scratchpad/l1replay_97/metrics.jsonl",
+      "bytes": 94027
+    },
+    {
+      "path": "agent/scratchpad/ladderctl_2207.out",
+      "bytes": 1290
+    },
+    {
+      "path": "agent/scratchpad/ladderctl_2207.py",
+      "bytes": 3338
+    },
+    {
+      "path": "agent/scratchpad/ladderctl_2207.sh",
+      "bytes": 1951
+    },
+    {
+      "path": "agent/scratchpad/learnpos_0407.out",
+      "bytes": 1813
+    },
+    {
+      "path": "agent/scratchpad/learnpos_0407.py",
+      "bytes": 4588
+    },
+    {
+      "path": "agent/scratchpad/matched_abst_1207.py",
+      "bytes": 4721
+    },
+    {
+      "path": "agent/scratchpad/matched_abst_1407.out",
+      "bytes": 3579
+    },
+    {
+      "path": "agent/scratchpad/matched_abst_1407.py",
+      "bytes": 4974
+    },
+    {
+      "path": "agent/scratchpad/matched_abst_frozen_1407.out",
+      "bytes": 2441
+    },
+    {
+      "path": "agent/scratchpad/matched_abst_frozen_1407.py",
+      "bytes": 4107
+    },
+    {
+      "path": "agent/scratchpad/mech0207.out",
+      "bytes": 1049
+    },
+    {
+      "path": "agent/scratchpad/mech0207.py",
+      "bytes": 3733
+    },
+    {
+      "path": "agent/scratchpad/mk_verbatim_hints_1407.py",
+      "bytes": 4023
+    },
+    {
+      "path": "agent/scratchpad/narrow0207.out",
+      "bytes": 2458
+    },
+    {
+      "path": "agent/scratchpad/narrow0207.py",
+      "bytes": 5549
+    },
+    {
+      "path": "agent/scratchpad/nats0007.out",
+      "bytes": 3793
+    },
+    {
+      "path": "agent/scratchpad/nats0007.py",
+      "bytes": 4401
+    },
+    {
+      "path": "agent/scratchpad/nohint_2207.out",
+      "bytes": 1517
+    },
+    {
+      "path": "agent/scratchpad/nohint_2207.py",
+      "bytes": 3918
+    },
+    {
+      "path": "agent/scratchpad/nohint_2207.sh",
+      "bytes": 1474
+    },
+    {
+      "path": "agent/scratchpad/nullmap_1008_0607.out",
+      "bytes": 744
+    },
+    {
+      "path": "agent/scratchpad/nullmap_1008_0607.py",
+      "bytes": 3322
+    },
+    {
+      "path": "agent/scratchpad/nullprec96_1607.py",
+      "bytes": 4571
+    },
+    {
+      "path": "agent/scratchpad/opcurve0207.out",
+      "bytes": 5349
+    },
+    {
+      "path": "agent/scratchpad/opcurve0207.py",
+      "bytes": 8263
+    },
+    {
+      "path": "agent/scratchpad/oracleart_1008_0607.out",
+      "bytes": 4362
+    },
+    {
+      "path": "agent/scratchpad/oracleart_1008_0607.py",
+      "bytes": 7561
+    },
+    {
+      "path": "agent/scratchpad/pa_fixture_1407/probe_entropy.py",
+      "bytes": 294
+    },
+    {
+      "path": "agent/scratchpad/paired_1008_1007.out",
+      "bytes": 1676
+    },
+    {
+      "path": "agent/scratchpad/paired_1008_1007.py",
+      "bytes": 5577
+    },
+    {
+      "path": "agent/scratchpad/paired_deploy.py",
+      "bytes": 1335
+    },
+    {
+      "path": "agent/scratchpad/para97_gain8_2007.sh",
+      "bytes": 1712
+    },
+    {
+      "path": "agent/scratchpad/partial_1008_0607.out",
+      "bytes": 3639
+    },
+    {
+      "path": "agent/scratchpad/partial_1008_0607.py",
+      "bytes": 8839
+    },
+    {
+      "path": "agent/scratchpad/patch_filler_arm.py",
+      "bytes": 4542
+    },
+    {
+      "path": "agent/scratchpad/perseq0007.out",
+      "bytes": 518
+    },
+    {
+      "path": "agent/scratchpad/perseq0007.py",
+      "bytes": 1855
+    },
+    {
+      "path": "agent/scratchpad/picker98_0407.err",
+      "bytes": 1176
+    },
+    {
+      "path": "agent/scratchpad/picker98_0407.out",
+      "bytes": 3339
+    },
+    {
+      "path": "agent/scratchpad/picker98_0407.py",
+      "bytes": 8193
+    },
+    {
+      "path": "agent/scratchpad/picker_1008_0407.out",
+      "bytes": 2423
+    },
+    {
+      "path": "agent/scratchpad/picker_1008_0407.py",
+      "bytes": 6676
+    },
+    {
+      "path": "agent/scratchpad/pooled0007.out",
+      "bytes": 1774
+    },
+    {
+      "path": "agent/scratchpad/pooled0007.py",
+      "bytes": 5244
+    },
+    {
+      "path": "agent/scratchpad/posprofile2_0207.out",
+      "bytes": 535
+    },
+    {
+      "path": "agent/scratchpad/posprofile2_0207.py",
+      "bytes": 2589
+    },
+    {
+      "path": "agent/scratchpad/posprofile3_0207.out",
+      "bytes": 848
+    },
+    {
+      "path": "agent/scratchpad/posprofile3_0207.py",
+      "bytes": 1924
+    },
+    {
+      "path": "agent/scratchpad/posprofile_0207.out",
+      "bytes": 2696
+    },
+    {
+      "path": "agent/scratchpad/posprofile_0207.py",
+      "bytes": 6050
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_0407.py",
+      "bytes": 1928
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_0607.py",
+      "bytes": 1918
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_0807.py",
+      "bytes": 1918
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_1007.py",
+      "bytes": 2039
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_1207.py",
+      "bytes": 2917
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_1407.out",
+      "bytes": 2897
+    },
+    {
+      "path": "agent/scratchpad/ppol_check_1407.py",
+      "bytes": 3002
+    },
+    {
+      "path": "agent/scratchpad/price0807.out",
+      "bytes": 3746
+    },
+    {
+      "path": "agent/scratchpad/price0807.py",
+      "bytes": 5117
+    },
+    {
+      "path": "agent/scratchpad/price0807_RESOLUTION.txt",
+      "bytes": 4454
+    },
+    {
+      "path": "agent/scratchpad/price_run95_baseline.py",
+      "bytes": 8239
+    },
+    {
+      "path": "agent/scratchpad/probe_alive_test_1407.out",
+      "bytes": 627
+    },
+    {
+      "path": "agent/scratchpad/probe_alive_test_1407.sh",
+      "bytes": 2700
+    },
+    {
+      "path": "agent/scratchpad/probe_filler_0607.py",
+      "bytes": 11638
+    },
+    {
+      "path": "agent/scratchpad/probe_greedy_1407.py",
+      "bytes": 11019
+    },
+    {
+      "path": "agent/scratchpad/psscan_2007.py",
+      "bytes": 1270
+    },
+    {
+      "path": "agent/scratchpad/rankers0007.out",
+      "bytes": 2398
+    },
+    {
+      "path": "agent/scratchpad/rankers0007.py",
+      "bytes": 4593
+    },
+    {
+      "path": "agent/scratchpad/rankers95_0007.out",
+      "bytes": 2019
+    },
+    {
+      "path": "agent/scratchpad/rankers95_0007.py",
+      "bytes": 4711
+    },
+    {
+      "path": "agent/scratchpad/rep95_0207.out",
+      "bytes": 2436
+    },
+    {
+      "path": "agent/scratchpad/rep95_0207.py",
+      "bytes": 5366
+    },
+    {
+      "path": "agent/scratchpad/rung1_90.sh",
+      "bytes": 3736
+    },
+    {
+      "path": "agent/scratchpad/runs82to98_factsheet.txt",
+      "bytes": 8879
+    },
+    {
+      "path": "agent/scratchpad/score16_1407.out",
+      "bytes": 2416
+    },
+    {
+      "path": "agent/scratchpad/score16_1407.py",
+      "bytes": 3057
+    },
+    {
+      "path": "agent/scratchpad/sens96_split_2207.out",
+      "bytes": 1526
+    },
+    {
+      "path": "agent/scratchpad/sens96_split_2207.py",
+      "bytes": 3383
+    },
+    {
+      "path": "agent/scratchpad/sens97_split_2007.out",
+      "bytes": 1088
+    },
+    {
+      "path": "agent/scratchpad/sens97_split_2007.py",
+      "bytes": 2552
+    },
+    {
+      "path": "agent/scratchpad/sens_all18_2207.out",
+      "bytes": 2526
+    },
+    {
+      "path": "agent/scratchpad/sens_all18_2207.py",
+      "bytes": 3911
+    },
+    {
+      "path": "agent/scratchpad/sens_split_2007.out",
+      "bytes": 1551
+    },
+    {
+      "path": "agent/scratchpad/sens_split_2007.py",
+      "bytes": 3452
+    },
+    {
+      "path": "agent/scratchpad/shape0007.out",
+      "bytes": 1826
+    },
+    {
+      "path": "agent/scratchpad/shape0007.py",
+      "bytes": 4350
+    },
+    {
+      "path": "agent/scratchpad/spread96_1407.py",
+      "bytes": 4322
+    },
+    {
+      "path": "agent/scratchpad/spread96_rungs_1607.py",
+      "bytes": 4322
+    },
+    {
+      "path": "agent/scratchpad/suppress_1207.out",
+      "bytes": 719
+    },
+    {
+      "path": "agent/scratchpad/suppress_1207.py",
+      "bytes": 1756
+    },
+    {
+      "path": "agent/scratchpad/switch90to91.sh",
+      "bytes": 5542
+    },
+    {
+      "path": "agent/scratchpad/test_grpo_gate.py",
+      "bytes": 7105
+    },
+    {
+      "path": "agent/scratchpad/test_klr_gate_row.py",
+      "bytes": 5994
+    },
+    {
+      "path": "agent/scratchpad/test_klr_skip_gate.py",
+      "bytes": 5670
+    },
+    {
+      "path": "agent/scratchpad/test_random_gate.py",
+      "bytes": 2352
+    },
+    {
+      "path": "agent/scratchpad/thresh14_0807.py",
+      "bytes": 3691
+    },
+    {
+      "path": "agent/scratchpad/thresh15_1007.py",
+      "bytes": 3603
+    },
+    {
+      "path": "agent/scratchpad/thresh16_1207.out",
+      "bytes": 2599
+    },
+    {
+      "path": "agent/scratchpad/thresh16_1207.py",
+      "bytes": 3612
+    },
+    {
+      "path": "agent/scratchpad/thresh18_1407.out",
+      "bytes": 2599
+    },
+    {
+      "path": "agent/scratchpad/thresh18_1407.py",
+      "bytes": 3622
+    },
+    {
+      "path": "agent/scratchpad/thresh_0407.py",
+      "bytes": 1993
+    },
+    {
+      "path": "agent/scratchpad/thresh_0807.py",
+      "bytes": 3686
+    },
+    {
+      "path": "agent/scratchpad/tick0007_analysis.py",
+      "bytes": 5392
+    },
+    {
+      "path": "agent/scratchpad/tick0207_analysis.out",
+      "bytes": 6995
+    },
+    {
+      "path": "agent/scratchpad/tick0207_analysis.py",
+      "bytes": 4695
+    },
+    {
+      "path": "agent/scratchpad/tick0407_analysis.py",
+      "bytes": 5508
+    },
+    {
+      "path": "agent/scratchpad/tick0607_analysis.out",
+      "bytes": 7523
+    },
+    {
+      "path": "agent/scratchpad/tick0607_analysis.py",
+      "bytes": 5532
+    },
+    {
+      "path": "agent/scratchpad/tick2207_analysis.py",
+      "bytes": 5452
+    },
+    {
+      "path": "agent/scratchpad/verbatim_fill_2007.sh",
+      "bytes": 1328
+    },
+    {
+      "path": "agent/scratchpad/verbatim_r97_2007.sh",
+      "bytes": 1599
+    },
+    {
+      "path": "agent/scratchpad/veto98_0407.err",
+      "bytes": 1176
+    },
+    {
+      "path": "agent/scratchpad/veto98_0407.out",
+      "bytes": 4982
+    },
+    {
+      "path": "agent/scratchpad/veto98_0407.py",
+      "bytes": 3676
+    },
+    {
+      "path": "agent/scratchpad/worker_count.py",
+      "bytes": 2351
+    },
+    {
+      "path": "agent/scratchpad/worker_count.py.bak_pre_owntree_20261009_1807",
+      "bytes": 915
+    },
+    {
+      "path": "agent/selfanti_r31_800.sh",
+      "bytes": 2590
+    },
+    {
+      "path": "agent/session_watch.sh",
+      "bytes": 2221
+    },
+    {
+      "path": "agent/smoke_triage_r76r.sh",
+      "bytes": 3310
+    },
+    {
+      "path": "agent/status.py",
+      "bytes": 15195
+    },
+    {
+      "path": "agent/status.py.bak_pre_authflag_20261004_0835",
+      "bytes": 5797
+    },
+    {
+      "path": "agent/status.py.bak_pre_colpct_20261003_0207",
+      "bytes": 4489
+    },
+    {
+      "path": "agent/status.py.bak_pre_gbest_20261007_1007",
+      "bytes": 7766
+    },
+    {
+      "path": "agent/status.py.bak_pre_hintmix_20261007_1207",
+      "bytes": 7918
+    },
+    {
+      "path": "agent/status.py.bak_pre_probeself_20261009_1407",
+      "bytes": 12189
+    },
+    {
+      "path": "agent/status.py.bak_pre_sample0_20261009_1207",
+      "bytes": 10723
+    },
+    {
+      "path": "agent/status.py.bak_pre_schema_20261007_0807",
+      "bytes": 6373
+    },
+    {
+      "path": "agent/status.py.bak_pre_workerself_20261009_1607",
+      "bytes": 12947
+    },
+    {
+      "path": "agent/successor_r71_to_r73.sh",
+      "bytes": 3434
+    },
+    {
+      "path": "agent/successor_r73_to_r74.sh",
+      "bytes": 4985
+    },
+    {
+      "path": "agent/successor_r79_to_r76r.sh",
+      "bytes": 3199
+    },
+    {
+      "path": "agent/switch_46_to_47.sh",
+      "bytes": 1942
+    },
+    {
+      "path": "agent/switch_49_to_50.sh",
+      "bytes": 2561
+    },
+    {
+      "path": "agent/switch_55_to_56.sh",
+      "bytes": 2288
+    },
+    {
+      "path": "agent/switch_r75_to_r76.sh",
+      "bytes": 2357
+    },
+    {
+      "path": "agent/test_padklr.py",
+      "bytes": 1892
+    },
+    {
+      "path": "agent/test_readerall_inert.py",
+      "bytes": 3383
+    },
+    {
+      "path": "agent/tfslot_r29_300.sh",
+      "bytes": 1004
+    },
+    {
+      "path": "agent/tfslot_r29_600.sh",
+      "bytes": 1108
+    },
+    {
+      "path": "agent/tfslot_r30.sh",
+      "bytes": 2327
+    },
+    {
+      "path": "agent/tfslot_r30.sh.bak_built_20260918",
+      "bytes": 1562
+    },
+    {
+      "path": "agent/tfslot_r31.sh",
+      "bytes": 1722
+    },
+    {
+      "path": "agent/tfslot_r31_300_n616.sh",
+      "bytes": 1414
+    },
+    {
+      "path": "agent/tfslot_r31_800_init.sh",
+      "bytes": 1779
+    },
+    {
+      "path": "agent/tfslot_r31_n16.sh",
+      "bytes": 2516
+    },
+    {
+      "path": "agent/tfslot_r32.sh",
+      "bytes": 2968
+    },
+    {
+      "path": "agent/thinkmode_r30_600.sh",
+      "bytes": 1074
+    },
+    {
+      "path": "agent/thinkmode_r59_1100.sh",
+      "bytes": 1251
+    },
+    {
+      "path": "agent/thinkmode_r59_1100_pause16.sh",
+      "bytes": 1483
+    },
+    {
+      "path": "agent/thought_report.py",
+      "bytes": 10793
+    },
+    {
+      "path": "agent/thoughts_refresh.sh",
+      "bytes": 1571
+    },
+    {
+      "path": "agent/tick.lock",
+      "bytes": 0
+    },
+    {
+      "path": "agent/tick.sh",
+      "bytes": 4895
+    },
+    {
+      "path": "agent/tick.sh.bak_pre_authretry_20261004_0830",
+      "bytes": 1418
+    },
+    {
+      "path": "agent/tick.sh.bak_pre_selfref_20261004_0825",
+      "bytes": 3420
+    },
+    {
+      "path": "agent/transfer_curve.sh",
+      "bytes": 3132
+    },
+    {
+      "path": "agent/transfer_curve_gap.sh",
+      "bytes": 3839
+    },
+    {
+      "path": "agent/watch_r67.sh",
+      "bytes": 3650
+    },
+    {
+      "path": "archive_ckpts.sh",
+      "bytes": 787
+    },
+    {
+      "path": "archive_ckpts.sh.bak_pre_precedence_20260930_1007",
+      "bytes": 770
+    },
+    {
+      "path": "benchmark/bench_final_r21.sh",
+      "bytes": 1643
+    },
+    {
+      "path": "benchmark/bench_r21.sh",
+      "bytes": 1302
+    },
+    {
+      "path": "benchmark/data/arc_challenge.jsonl",
+      "bytes": 175682
+    },
+    {
+      "path": "benchmark/data/arc_easy.jsonl",
+      "bytes": 152124
+    },
+    {
+      "path": "benchmark/data/boolq.jsonl",
+      "bytes": 361603
+    },
+    {
+      "path": "benchmark/data/hellaswag.jsonl",
+      "bytes": 433156
+    },
+    {
+      "path": "benchmark/data/lambada.jsonl",
+      "bytes": 193894
+    },
+    {
+      "path": "benchmark/data/openbookqa.jsonl",
+      "bytes": 102043
+    },
+    {
+      "path": "benchmark/data/sciq.jsonl",
+      "bytes": 319417
+    },
+    {
+      "path": "benchmark/data/winogrande.jsonl",
+      "bytes": 104065
+    },
+    {
+      "path": "benchmark/results/METRICS.md",
+      "bytes": 1617
+    },
+    {
+      "path": "benchmark/results/_torn/r21_7700_clean.jsonl",
+      "bytes": 492724
+    },
+    {
+      "path": "benchmark/results/_torn/r21_7700_think.jsonl",
+      "bytes": 405182
+    },
+    {
+      "path": "benchmark/results/_torn/vanilla23180_clean.jsonl",
+      "bytes": 288365
+    },
+    {
+      "path": "benchmark/results/r19_500_clean.jsonl",
+      "bytes": 974622
+    },
+    {
+      "path": "benchmark/results/r19_500_think.jsonl",
+      "bytes": 1716406
+    },
+    {
+      "path": "benchmark/results/r21_4200_clean.jsonl",
+      "bytes": 974611
+    },
+    {
+      "path": "benchmark/results/r21_4200_think.jsonl",
+      "bytes": 1207879
+    },
+    {
+      "path": "benchmark/results/r21_7700_clean.jsonl",
+      "bytes": 974711
+    },
+    {
+      "path": "benchmark/results/r21_7700_think.jsonl",
+      "bytes": 1190670
+    },
+    {
+      "path": "benchmark/results/r31_800_clean.jsonl",
+      "bytes": 974347
+    },
+    {
+      "path": "benchmark/results/r34_800_clean.jsonl",
+      "bytes": 974343
+    },
+    {
+      "path": "benchmark/results/r34_800_think.jsonl",
+      "bytes": 1379697
+    },
+    {
+      "path": "benchmark/results/report_r19_500.txt",
+      "bytes": 813
+    },
+    {
+      "path": "benchmark/results/report_r21_4200.txt",
+      "bytes": 3927
+    },
+    {
+      "path": "benchmark/results/report_r21_7700.txt",
+      "bytes": 77
+    },
+    {
+      "path": "benchmark/results/report_r21_7700_prereg.txt",
+      "bytes": 1088
+    },
+    {
+      "path": "benchmark/results/report_r31_800.txt",
+      "bytes": 2565
+    },
+    {
+      "path": "benchmark/results/report_r34_800.txt",
+      "bytes": 3328
+    },
+    {
+      "path": "benchmark/results/vanilla21280_clean.jsonl",
+      "bytes": 974593
+    },
+    {
+      "path": "benchmark/results/vanilla22990_clean.jsonl",
+      "bytes": 974701
+    },
+    {
+      "path": "benchmark/results/vanilla26600_clean.jsonl",
+      "bytes": 974619
+    },
+    {
+      "path": "benchmark/results/vanilla27550_clean.jsonl",
+      "bytes": 974690
+    },
+    {
+      "path": "benchmark/results/vanilla_clean.jsonl",
+      "bytes": 974644
+    },
+    {
+      "path": "benchmark/run_all.sh",
+      "bytes": 1679
+    },
+    {
+      "path": "benchmark/score.py.bak_pre_slotpos_20260920_0807",
+      "bytes": 10563
+    },
+    {
+      "path": "heldout_probe.sh",
+      "bytes": 8236
+    },
+    {
+      "path": "heldout_probe.sh.bak_pre_dedupe_20261007_1807",
+      "bytes": 2663
+    },
+    {
+      "path": "heldout_probe.sh.bak_pre_inloopguard_20261007_2008",
+      "bytes": 5269
+    },
+    {
+      "path": "heldout_probe.sh.bak_pre_loudfail_20261007_0007",
+      "bytes": 2071
+    },
+    {
+      "path": "heldout_probe.sh.bak_pre_selfmatch_20261009_1807",
+      "bytes": 6748
+    },
+    {
+      "path": "keepalive_think.sh",
+      "bytes": 7366
+    },
+    {
+      "path": "keepalive_think.sh.bak_pre_g136_20261004_2207",
+      "bytes": 3598
+    },
+    {
+      "path": "keepalive_think.sh.bak_pre_reap_20260930_0807",
+      "bytes": 3044
+    },
+    {
+      "path": "keepalive_think.sh.bak_pre_selfmatch_20261009_1607",
+      "bytes": 4427
+    },
+    {
+      "path": "keepalive_think.sh.bak_pre_subshellnote_20261009_1807",
+      "bytes": 6088
+    },
+    {
+      "path": "overleaf/iclr2027/figs/fig_below_filler.png",
+      "bytes": 125781
+    },
+    {
+      "path": "overleaf/iclr2027/figs/fig_freerunning.png",
+      "bytes": 103321
+    },
+    {
+      "path": "overleaf/iclr2027/figs/fig_hint_value.png",
+      "bytes": 94802
+    },
+    {
+      "path": "overleaf/iclr2027/figs/fig_ledger.png",
+      "bytes": 104547
+    },
+    {
+      "path": "overleaf/iclr2027/figs/think10a_loop.png",
+      "bytes": 219560
+    },
+    {
+      "path": "overleaf/iclr2027/figs/think13_collapse.png",
+      "bytes": 276165
+    },
+    {
+      "path": "overleaf/iclr2027/figs/think13_warmup.png",
+      "bytes": 192933
+    },
+    {
+      "path": "overleaf/iclr2027/figs/vanilla_ntp.png",
+      "bytes": 132591
+    },
+    {
+      "path": "overleaf/iclr2027/main.pdf.bak_pre_runs70to81_20261003",
+      "bytes": 1643312
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_190rule_20261009_0007",
+      "bytes": 373770
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_abstract98_20261009_0210",
+      "bytes": 375751
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_appendixedit_20260920_1407",
+      "bytes": 296265
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_b134_20261009_0007",
+      "bytes": 374668
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_beatsunit_20261009_1007",
+      "bytes": 394186
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_bench34_20260920_1007",
+      "bytes": 286776
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_bestn_20261010_0007",
+      "bytes": 403481
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_cost_20260919_1607",
+      "bytes": 255185
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_d1_20260919_1007",
+      "bytes": 244161
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_domweight_20261009_2207",
+      "bytes": 401498
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_edit_20260920_1207",
+      "bytes": 293563
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_figcaptions_20260921_1007",
+      "bytes": 301035
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_g1_20260919_1207",
+      "bytes": 246940
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_horizon_20261009_1607",
+      "bytes": 401278
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_instr_estab_20261009_0212",
+      "bytes": 377227
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_m1_20260919_2207",
+      "bytes": 268427
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_mistakes_20261009_0007",
+      "bytes": 372276
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_modalshare_20261009_1207",
+      "bytes": 394605
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_n2filler_20261009_0607",
+      "bytes": 384339
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_n2verdict_20260920_0607",
+      "bytes": 280130
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_n6writer_20261009_0007",
+      "bytes": 367409
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_n7_20261009_0407",
+      "bytes": 379385
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_nar_20260919_0207",
+      "bytes": 228832
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_nquote_20260920_2007",
+      "bytes": 296971
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_oraclegate_20261009_0807",
+      "bytes": 387367
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_p1base_20260919_2007",
+      "bytes": 266721
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_paired_20260920_2207",
+      "bytes": 296971
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_posprofile_20261010_0207",
+      "bytes": 404937
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r30_20260919",
+      "bytes": 220622
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r31_20260919_0607",
+      "bytes": 231964
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r31draft_20260919_0807",
+      "bytes": 240568
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r32stop_20260919_1407",
+      "bytes": 250476
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r33_20260919_1807",
+      "bytes": 260542
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r33stop_20260920_0007",
+      "bytes": 270481
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r34final_20260920_0807",
+      "bytes": 284846
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r35to39_20260923_0407",
+      "bytes": 301199
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_r96fix_20261008_2250",
+      "bytes": 366979
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_referents_20260920_1607",
+      "bytes": 296557
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_related_20261009_1407",
+      "bytes": 397177
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_runs40to69_20261002_0007",
+      "bytes": 320310
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_runs70to81_20261003",
+      "bytes": 329844
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_runs82to85_20261008_1810",
+      "bytes": 349077
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_runs86to89_20261008_2025",
+      "bytes": 352406
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_runs90to93_20261008_2030",
+      "bytes": 356586
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_runs94to98_20261008_2215",
+      "bytes": 361052
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_selector_20261010_0407",
+      "bytes": 406577
+    },
+    {
+      "path": "overleaf/iclr2027/main.tex.bak_pre_units_20260920_1807",
+      "bytes": 296923
+    },
+    {
+      "path": "overleaf/iclr2027/summary.pdf",
+      "bytes": 239143
+    },
+    {
+      "path": "overleaf/progress/progress.pdf",
+      "bytes": 286199
+    },
+    {
+      "path": "overleaf/progress/progress.pdf.bak_20260929_0907",
+      "bytes": 268303
+    },
+    {
+      "path": "overleaf/progress/progress.pdf.bak_20260929_1807",
+      "bytes": 275134
+    },
+    {
+      "path": "overleaf/progress/progress.pdf.bak_20260930_0407",
+      "bytes": 279200
+    },
+    {
+      "path": "overleaf/progress/progress.tex",
+      "bytes": 58536
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260927_2207",
+      "bytes": 12763
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260928_0207",
+      "bytes": 15799
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260928_0807",
+      "bytes": 20225
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260928_1007",
+      "bytes": 24956
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260928_1207",
+      "bytes": 26131
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260928_1407",
+      "bytes": 27362
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260928_2207",
+      "bytes": 27601
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260929_0207",
+      "bytes": 32150
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260929_0607",
+      "bytes": 35542
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260929_0907",
+      "bytes": 41735
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260929_1007",
+      "bytes": 44948
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260929_1407",
+      "bytes": 47988
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_20260929_1807",
+      "bytes": 48764
+    },
+    {
+      "path": "overleaf/progress/progress.tex.bak_pre_slide_20260930_0407",
+      "bytes": 52779
+    },
+    {
+      "path": "paperfigs/make_figs.py",
+      "bytes": 8118
+    },
+    {
+      "path": "paperfigs/validate_palette.py",
+      "bytes": 2510
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_2207",
+      "bytes": 68397
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_appendixedit_20260920_1407",
+      "bytes": 148405
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_bench34_20260920_1007",
+      "bytes": 139726
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_cost_20260919_1607",
+      "bytes": 106174
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_d1_20260919_1007",
+      "bytes": 95716
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_edit_20260920_1207",
+      "bytes": 143439
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_figcaptions_20260921_1007",
+      "bytes": 166536
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g100_20260930_2207",
+      "bytes": 355148
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g101_20261001_0007",
+      "bytes": 364617
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g102_20261001_0207",
+      "bytes": 369599
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g103_20261001_0407",
+      "bytes": 377136
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g104_20261001_0607",
+      "bytes": 383776
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g105_20261001_0807",
+      "bytes": 390963
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g106_20261001_1007",
+      "bytes": 402202
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g107_20261001_1207",
+      "bytes": 414710
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g108_20261001_1407",
+      "bytes": 429739
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g109_20261001_1607",
+      "bytes": 437351
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g110_20261001_1807",
+      "bytes": 445681
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g111_20261001_2007",
+      "bytes": 453438
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g112_20261001_2207",
+      "bytes": 465791
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g113_20261002_0007",
+      "bytes": 479479
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g114_20261002_0207",
+      "bytes": 491111
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g115_20261002_0407",
+      "bytes": 503318
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g116_20261002_0607",
+      "bytes": 513046
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g117_20261002_0807",
+      "bytes": 520819
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g118_20261002_1007",
+      "bytes": 534881
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g119_20261002_1207",
+      "bytes": 549557
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g120_20261002_1407",
+      "bytes": 563851
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g121_20261002_1607",
+      "bytes": 584362
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g122_20261002_1807",
+      "bytes": 594355
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g123_20261002_2007",
+      "bytes": 599840
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g124_20261002_2207",
+      "bytes": 605586
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g124f_20261002_2250",
+      "bytes": 612846
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g125_20261003_0007",
+      "bytes": 614681
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g126_20261003_0207",
+      "bytes": 621137
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g1_20260919_1207",
+      "bytes": 99367
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g31_20260919_0407",
+      "bytes": 83038
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g33_20260919_0807",
+      "bytes": 91880
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g50_20260922_0007",
+      "bytes": 173214
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g51_20260922_0807",
+      "bytes": 175662
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g52_20260922_1807",
+      "bytes": 177372
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g55_20260922_2207",
+      "bytes": 184453
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g59_20260926_1207",
+      "bytes": 205214
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g60_20260926_1407",
+      "bytes": 208766
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g62_20260927_0607",
+      "bytes": 217667
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g63_20260927_2207",
+      "bytes": 223171
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g64_20260928_0007",
+      "bytes": 228109
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g65_20260928_0207",
+      "bytes": 231537
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g66_20260928_0407",
+      "bytes": 237089
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g67_20260928_0607",
+      "bytes": 241418
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g68_20260928_0807",
+      "bytes": 245132
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g69_20260928_1007",
+      "bytes": 247698
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g70_20260928_1207",
+      "bytes": 250179
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g71_20260928_1407",
+      "bytes": 254312
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g72_20260928_2207",
+      "bytes": 257145
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g74_20260929_0207",
+      "bytes": 260332
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g76_20260929_0407",
+      "bytes": 266246
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g77_20260929_0607",
+      "bytes": 268852
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g78_20260929_0907",
+      "bytes": 271898
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g79_20260929_1007",
+      "bytes": 276433
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g81_20260929_1207",
+      "bytes": 285629
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g82_20260929_1407",
+      "bytes": 289631
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g83_20260929_1807",
+      "bytes": 295934
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g87_20260930_0407",
+      "bytes": 313650
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g91_20260930_0607",
+      "bytes": 317306
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g92_20260930_0807",
+      "bytes": 319853
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g93_20260930_1007",
+      "bytes": 323409
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g94_20260930_1207",
+      "bytes": 329049
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g96_20260930_1407",
+      "bytes": 334282
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g97_20260930_1607",
+      "bytes": 341843
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g98_20260930_1807",
+      "bytes": 344690
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_g99_20260930_2007",
+      "bytes": 350187
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_m1_20260919_2207",
+      "bytes": 119810
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_n2verdict_20260920_0607",
+      "bytes": 130552
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_nquote_20260920_2007",
+      "bytes": 157484
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_p1base_20260919_2007",
+      "bytes": 117819
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_paired_20260920_2207",
+      "bytes": 160799
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r31verdict_20260919_0607",
+      "bytes": 84695
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r32stop_20260919_1407",
+      "bytes": 102833
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r33_20260919_1807",
+      "bytes": 113477
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r33stop_20260920_0007",
+      "bytes": 123379
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r34final_20260920_0807",
+      "bytes": 136722
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r35verdict_20260922_2007",
+      "bytes": 179529
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r37verdict_20260923_0007",
+      "bytes": 187293
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r38verdict_20260923_0207",
+      "bytes": 192296
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r39verdict_20260923_0407",
+      "bytes": 197696
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_r45verdict_20260927_0407",
+      "bytes": 212989
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_referents_20260920_1607",
+      "bytes": 150916
+    },
+    {
+      "path": "postmortem_analysis/POSTMORTEM.md.bak_pre_units_20260920_1807",
+      "bytes": 154017
+    },
+    {
+      "path": "pre-training/data/corpus/allow_top8192.npy",
+      "bytes": 65664
+    },
+    {
+      "path": "pre-training/think_ntp_monitor.py.bak_20261006_0946",
+      "bytes": 10097
+    },
+    {
+      "path": "pre-training/think_ntp_monitor.py.bak_pre_gbest_20261007_1007",
+      "bytes": 12024
+    },
+    {
+      "path": "pre-training/think_ntp_monitor.py.bak_pre_schema_20261007_0807",
+      "bytes": 10282
+    },
+    {
+      "path": "pre-training/train/data.py.bak_pre_slide_20260929",
+      "bytes": 6233
+    },
+    {
+      "path": "pre-training/train/monitor_think.py.bak_pre_aliasfix_20261009_1007",
+      "bytes": 9578
+    },
+    {
+      "path": "pre-training/train/monitor_think.py.bak_pre_gbest_20261007_1007",
+      "bytes": 9444
+    },
+    {
+      "path": "pre-training/train/monitor_think.py.bak_pre_sample0_20261009_1207",
+      "bytes": 10338
+    },
+    {
+      "path": "pre-training/train/monitor_think.py.bak_pre_schema_20261007_0807",
+      "bytes": 4851
+    },
+    {
+      "path": "pre-training/train/probe_ceiling.py.bak_pre_ent_20261008_0407",
+      "bytes": 10414
+    },
+    {
+      "path": "pre-training/train/probe_draft.py.bak_pre_peranchor_20260919_0607",
+      "bytes": 5348
+    },
+    {
+      "path": "pre-training/train/probe_draft.py.bak_pre_slotpos2_20260918",
+      "bytes": 4509
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_chase_20260926",
+      "bytes": 9008
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_curric_20260928",
+      "bytes": 12661
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_discover_20260927",
+      "bytes": 11431
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_firstanchor_20260927",
+      "bytes": 11185
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_hops_20260927",
+      "bytes": 9120
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_sampler_20260928",
+      "bytes": 11824
+    },
+    {
+      "path": "pre-training/train/probe_e1.py.bak_pre_width_20260926",
+      "bytes": 8514
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_contrast",
+      "bytes": 11395
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_ctrlsym_20261003_2213",
+      "bytes": 11812
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_entpolicy",
+      "bytes": 8900
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_fillerarm_20261005_0633",
+      "bytes": 18009
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_gatearm_20261005_0607",
+      "bytes": 14619
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_noneguard_20261004_1007",
+      "bytes": 13013
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_randomgate_20261005_0807",
+      "bytes": 20834
+    },
+    {
+      "path": "pre-training/train/probe_entropy.py.bak_pre_scoreckpt_20261004_1407",
+      "bytes": 13373
+    },
+    {
+      "path": "pre-training/train/probe_oracle_offset.py.bak_pre_pmixconf_20260919_1407",
+      "bytes": 19206
+    },
+    {
+      "path": "pre-training/train/probe_oracle_offset.py.bak_pre_pmixfreq_20260919_0807",
+      "bytes": 14233
+    },
+    {
+      "path": "pre-training/train/probe_span.py.bak_pre_clean",
+      "bytes": 5001
+    },
+    {
+      "path": "pre-training/train/probe_span.py.bak_pre_frozen_20261001",
+      "bytes": 5569
+    },
+    {
+      "path": "pre-training/train/probe_tfslot.py.bak_pre_nar_20260919",
+      "bytes": 6349
+    },
+    {
+      "path": "pre-training/train/probe_tfslot.py.bak_pre_slotpos2_20260918",
+      "bytes": 6211
+    },
+    {
+      "path": "pre-training/train/probe_tfslot.py.bak_pre_slotpos_20260918",
+      "bytes": 5432
+    },
+    {
+      "path": "pre-training/train/probe_tfslot.py.bak_pre_spacerate_20260919_0607",
+      "bytes": 7745
+    },
+    {
+      "path": "pre-training/train/probe_thinkmode.py.bak_pre_bridgefix_20260929_1007",
+      "bytes": 7927
+    },
+    {
+      "path": "pre-training/train/probe_thinkmode.py.bak_pre_slotpos2_20260918",
+      "bytes": 6152
+    },
+    {
+      "path": "pre-training/train/stop_tokens_top300.npy",
+      "bytes": 2528
+    },
+    {
+      "path": "pre-training/train/synth.py.bak_pre_chase_20260926",
+      "bytes": 5132
+    },
+    {
+      "path": "pre-training/train/synth.py.bak_pre_hops_20260927",
+      "bytes": 7854
+    },
+    {
+      "path": "pre-training/train/synth.py.bak_pre_width_20260926",
+      "bytes": 4616
+    },
+    {
+      "path": "pre-training/train/think_bestof.py.bak_pre_counts_20261007_1007",
+      "bytes": 32974
+    },
+    {
+      "path": "pre-training/train/think_bestof.py.bak_pre_flatgen_20261006_1650",
+      "bytes": 28016
+    },
+    {
+      "path": "pre-training/train/think_bestof.py.bak_pre_rlobj_20261007_0607",
+      "bytes": 30315
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_contrastkeep",
+      "bytes": 34313
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_counts_20261007_1007",
+      "bytes": 39066
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_digitshare",
+      "bytes": 33875
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_nothink",
+      "bytes": 37061
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_rcefix_20261004_1007",
+      "bytes": 38267
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_readerall_20261004_0815",
+      "bytes": 36210
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_stoptok_20261003",
+      "bytes": 31782
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.bak_pre_thoughtnorm_20261003",
+      "bytes": 30983
+    },
+    {
+      "path": "pre-training/train/think_entropy.py.stage_readerall_20261004_0025",
+      "bytes": 37035
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_counts_20261007_1007",
+      "bytes": 32745
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_fixedtr_20261004_1649",
+      "bytes": 32304
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_g135_20261004_2007",
+      "bytes": 32304
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_padklr_20261004_1607",
+      "bytes": 31183
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_r90_20261004_1347",
+      "bytes": 27964
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_rcefix_20261004_1030",
+      "bytes": 26511
+    },
+    {
+      "path": "pre-training/train/think_grpo.py.bak_pre_scoregroup",
+      "bytes": 27410
+    },
+    {
+      "path": "pre-training/train/think_grpo_gate.py.bak_pre_abstainfree_20261005_0700",
+      "bytes": 38960
+    },
+    {
+      "path": "pre-training/train/think_grpo_gate.py.bak_pre_counts_20261007_1007",
+      "bytes": 43667
+    },
+    {
+      "path": "pre-training/train/think_grpo_gate.py.bak_pre_klrskipgate_20261005_1207",
+      "bytes": 41534
+    },
+    {
+      "path": "pre-training/train/think_hindsight.py.bak_pre_contrast_20261003",
+      "bytes": 37235
+    },
+    {
+      "path": "pre-training/train/think_hindsight.py.bak_pre_gumbel_20261003",
+      "bytes": 34837
+    },
+    {
+      "path": "pre-training/train/think_hindsight.py.bak_pre_imitrule_20261003",
+      "bytes": 39484
+    },
+    {
+      "path": "pre-training/train/think_hintmix.py.bak_pre_aliasnote_20261009_1007",
+      "bytes": 32427
+    },
+    {
+      "path": "pre-training/train/think_hintmix.py.bak_pre_hintrl_20261008_0711",
+      "bytes": 28665
+    },
+    {
+      "path": "pre-training/train/think_hintmix.py.bak_pre_sample0_20261009_1207",
+      "bytes": 33554
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_bucketsync_20261002",
+      "bytes": 27610
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_codeclose_20260922_2014",
+      "bytes": 24101
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_curric_20260928",
+      "bytes": 25119
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_e1_20260926",
+      "bytes": 24843
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_slide_20260929",
+      "bytes": 26012
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_span_20260929",
+      "bytes": 27044
+    },
+    {
+      "path": "pre-training/train/think_par.py.bak_pre_stopexp_20260928",
+      "bytes": 25465
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_abstain_20260919_0607",
+      "bytes": 46320
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_abstainfill_20261002_1607",
+      "bytes": 80375
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_abstlossw_20260920_0007",
+      "bytes": 50955
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_chase_20260926",
+      "bytes": 64312
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_curric_20260928",
+      "bytes": 69254
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_daglog_20260918",
+      "bytes": 45562
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_discover_20260927",
+      "bytes": 65536
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_e1_20260926",
+      "bytes": 57877
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_frozen_20261001",
+      "bytes": 78413
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_gbest_20261007_1007",
+      "bytes": 88518
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_grpo2_20261005_0407",
+      "bytes": 87587
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_hold_20261002",
+      "bytes": 79478
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_hops_20260927",
+      "bytes": 64839
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_oracle_20261006_1456",
+      "bytes": 88113
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_pastteacher_20260923_0207",
+      "bytes": 56884
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_pausefrac_20260919_1807",
+      "bytes": 48390
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_readeronssl2_20260928_0807",
+      "bytes": 68277
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_seednostop_20260927",
+      "bytes": 67747
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_sigfloor_20260930_1407",
+      "bytes": 74087
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_silbase_20261002",
+      "bytes": 79919
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_slide_20260929",
+      "bytes": 70486
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_span_20260929",
+      "bytes": 72174
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_ss_20260918",
+      "bytes": 40417
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_stopexp_20260928",
+      "bytes": 70246
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_syncgrads_20261002",
+      "bytes": 85618
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_webnone_20260926",
+      "bytes": 63590
+    },
+    {
+      "path": "pre-training/train/think_train.py.bak_pre_xanchor_20260930_2207",
+      "bytes": 75770
+    },
+    {
+      "path": "pre-training/train/train.py.bak_pre_g136_20261004_2207",
+      "bytes": 25618
+    },
+    {
+      "path": "requirements_freeze.txt",
+      "bytes": 1922
+    },
+    {
+      "path": "run_think.sh",
+      "bytes": 5829
+    },
+    {
+      "path": "run_vanilla3.sh",
+      "bytes": 5009
+    },
+    {
+      "path": "runs/RESULTS_CONSOLIDATED_10c.md",
+      "bytes": 4482
+    },
+    {
+      "path": "runs/digest.py",
+      "bytes": 11309
+    },
+    {
+      "path": "runs/eval_ckpt_cpu.py",
+      "bytes": 1937
+    },
+    {
+      "path": "runs/plot_gain.py",
+      "bytes": 5521
+    },
+    {
+      "path": "watchdog.sh",
+      "bytes": 10199
+    },
+    {
+      "path": "watchdog.sh.bak_pre_g136_20261004_2207",
+      "bytes": 4932
+    },
+    {
+      "path": "watchdog.sh.bak_pre_idlemsg_20260929_1807",
+      "bytes": 4243
+    },
+    {
+      "path": "watchdog.sh.bak_pre_locksafe_20260922_2207",
+      "bytes": 3711
+    },
+    {
+      "path": "watchdog.sh.bak_pre_selfmatch_20261009_1607",
+      "bytes": 7164
+    },
+    {
+      "path": "watchdog.sh.bak_pre_smokeanchor_20261009_2007",
+      "bytes": 8929
+    }
+  ],
+  "transcript_excerpt": {
+    "physical_source_start": 171,
+    "physical_source_end": 1222,
+    "reason": "Relevant project discussion only; private unrelated conversation excluded."
+  }
+}

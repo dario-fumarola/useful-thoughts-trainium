@@ -1,0 +1,44 @@
+{
+  "generated_utc": "2026-10-16T18:07:31Z",
+  "python": "3.13.5",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "cpu_count": 5,
+  "versions": {
+    "torch": "2.10.0+cpu",
+    "torch-xla": null,
+    "torch-neuronx": null,
+    "transformers": null,
+    "neuronx-cc": null,
+    "neuronx-distributed": null,
+    "numpy": "2.3.5",
+    "safetensors": "0.7.0",
+    "datasets": null
+  },
+  "environment_allowlist": {
+    "NEURON_LOGICAL_NC_CONFIG": null,
+    "NEURON_RT_VISIBLE_CORES": null,
+    "NEURON_RT_NUM_CORES": null,
+    "PJRT_DEVICE": null,
+    "WORLD_SIZE": null,
+    "XLA_USE_BF16": null,
+    "XLA_DOWNCAST_BF16": null
+  },
+  "memory": "MemTotal:        6090704 kB\nMemFree:         4760500 kB\nMemAvailable:    4713080 kB\nBuffers:            8504 kB\nCached:           135980 kB\nSwapCached:            0 kB\nActive:            31076 kB\nInactive:         625756 kB\nActive(anon):        136 kB\nInactive(anon):   542092 kB\nActive(file):      30940 kB\nInactive(file):    83664 kB\nUnevictable:       29920 kB\nMlocked:               0 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:              1352 kB\nWriteback:             0 kB\nAnonPages:        542396 kB\nMapped:            87336 kB\nShmem:                12 kB\nKReclaimable:      47172 kB\nSlab:              89964 kB\nSReclaimable:      47172 kB\nSUnreclaim:        42792 kB\nKernelStack:        2864 kB\nPageTables:         3732 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     3045352 kB\nCommitted_AS:     900324 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:        5176 kB\nVmallocChunk:          0 kB\nPercpu:             1224 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:      4096 kB\nFilePmdMapped:         0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       18432 kB\nDirectMap2M:     3702784 kB\nDirectMap1G:    31457280 kB\n",
+  "disk_free_bytes": 31943737344,
+  "neuron_ls": {
+    "available": false,
+    "command": [
+      "neuron-ls",
+      "--json-output"
+    ]
+  },
+  "neuron_topology": {
+    "available": false,
+    "command": [
+      "neuron-ls",
+      "--topology"
+    ]
+  },
+  "interpretation": "Verify instance type in the EC2 console. trn2.48xlarge is 16 chips, not 48. At default LNC2 it exposes 64 logical NeuronCores, ordinarily 24 GB per logical core, not 1.5 TB per process. Do not infer device layout from the name alone.",
+  "production_qualified": false
+}

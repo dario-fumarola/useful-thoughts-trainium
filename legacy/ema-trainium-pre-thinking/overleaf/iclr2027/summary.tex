@@ -1,0 +1,299 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+
+\newcommand{\tstart}{\texttt{<T>}}
+\newcommand{\tend}{\texttt{</T>}}
+\newcommand{\why}{\emph{Intuition.}\ }
+\newcommand{\fail}{\emph{What went wrong.}\ }
+
+\title{Thinking in Pretraining\\[4pt]
+\large A short account of what we tried and why it did not work}
+\author{}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We tried to teach a language model, during pretraining and with no supervision of content, to write a short \emph{thought} that makes the text it is about to predict more likely. Over 38 runs and about $5$B thinking-mode tokens on a $0.6$B model trained from scratch, no configuration produced a thought worth more than leaving the same slot blank. The reason is now measured rather than guessed. The reading side works: a true $12$-token hint about the next few dozen tokens is worth $+4$ to $+11$ nats. The writing side does not: free-running, the model's thought matches the true continuation on $2$--$7\%$ of tokens, against about $35\%$ when its prefix is teacher-forced. And a plausible wrong token costs the reader more than a right one pays. Every apparent win along the way was an exploit, extra compute that content-free filler buys equally well, or a recalibration of the reader. This note gives the math of the pretraining objective and, for each technique, the intuition behind it and what went wrong. Everything else is in the full report.
+\end{abstract}
+
+%======================================================================
+\section{The idea}
+
+Standard pretraining gives the model one forward pass per token. The idea is to let it write a few ordinary vocabulary tokens first, a thought, and then predict the real text with that thought in context. Nothing says what the thought should contain. It is credited only by its effect: how much more likely the true continuation becomes with the thought than without it. The counterfactual costs nothing extra, because the prediction without a thought is ordinary next-token prediction (NTP), which is computed anyway.
+
+\textbf{Why it could work.} The model is asked to commit to where the text is going before it sees it, which NTP never asks. The hope was that representations shaped by that question would also improve plain prediction, and that at inference the thought would be serial compute a vanilla model cannot spend.
+
+\textbf{The catch.} We did not appreciate it early enough. A thought is a function of the context, so it cannot add information the context lacks. It can pay in only two ways: (a)~as an explicit \emph{forecast} the reader can exploit, which requires the forecast to be right often enough; or (b)~as extra \emph{serial computation}, which content-free filler (``pause tokens'') buys just as well. Most of this project is the measurement of how both channels fail at this scale.
+
+%======================================================================
+\section{The pretraining math}
+
+\subsection{Writer and reader}
+Let $t_{1:T}$ be a training sequence ($T=1024$). \emph{Anchors} sit every $k$ tokens ($k=64$, so $N=14$ per sequence). At anchor $n$ write $c=t_{1:n}$ for the context and $W=t_{n+1:n+k}$ for the next $k$ true tokens, the \emph{reward window}. The model writes a thought $z=(z_1,\dots,z_L)$ of $L\le 16$ ordinary tokens between \tstart{} and \tend. One set of parameters $\theta$ plays two roles:
+\begin{align}
+\text{writer:}\quad & \pi_\theta(z\mid c)=\prod_{i=1}^{L}\pi_\theta(z_i\mid c,z_{<i}),\\
+\text{reader:}\quad & p_\theta(W\mid c,z)=\prod_{j=1}^{k}p_\theta(t_{n+j}\mid c,z,t_{n+1:n+j-1}).
+\end{align}
+All thoughts are spliced into one buffer. An attention mask lets only the window rows of anchor $n$ see thought $n$: no other real token and no other thought can see it. So a thought is ephemeral, and each window is an independent counterfactual. Real tokens keep positions $1,\dots,T$. Thought token $i$ gets the integer position $n+i$, overlapping the positions of the upcoming real tokens, which is harmless under masks and rotary embeddings. Thinking therefore leaves the main sequence's geometry untouched. Generation is free-form (full vocabulary, top-$512$, temperature $1$), and \tend{} is an ordinary action.
+
+\subsection{Objective and counterfactual gain}
+What we want is the marginal likelihood of the true window, which we lower-bound by sampling thoughts from the writer:
+\begin{equation}
+\log p_\theta(W\mid c)=\log\sum_z \pi_\theta(z\mid c)\,p_\theta(W\mid c,z)\;\ge\;\mathbb{E}_{z\sim\pi_\theta}\big[\log p_\theta(W\mid c,z)\big]=:\mathcal{J}(\theta).
+\end{equation}
+The gap equals $\mathrm{KL}\big(\pi_\theta(\cdot\mid c)\,\|\,p_\theta(\cdot\mid c,W)\big)$: the distance between the thought written from the past and the thought one would write knowing the future. Useful thinking means closing that gap from the past alone.
+
+The scalar that drives learning is the \emph{discounted counterfactual gain}:
+\begin{equation}
+G(z)=\sum_{j=1}^{k}\gamma^{\,j-1}\Big[\log p_\theta(t_{n+j}\mid c,z,t_{n+1:n+j-1})-\log p_\theta(t_{n+j}\mid c,t_{n+1:n+j-1})\Big],
+\label{eq:gain}
+\end{equation}
+with $k=64$ and $\gamma=0.97$, which gives an effective horizon $(1-\gamma^k)/(1-\gamma)\approx 28.6$ tokens. The second term is the NTP pass itself. It removes the intrinsic difficulty of the position, and it does not depend on $z$, so it is a valid baseline.
+
+\textbf{The horizon must exceed the thought.} With $k\le L$ and $\gamma=1$, the verbatim copy $z=W$ maximises $G$ whenever the reader can transcribe, so the optimum of a short-window objective is \emph{copying}, not thinking. With $k=64\gg L=16$ a copy cannot cover the window. Besides, the writer does not know $W$: a copy-like thought can only transcribe its own best guess.
+
+Differentiating $\mathcal{J}$ gives two terms:
+\begin{equation}
+\nabla_\theta\mathcal{J}=\underbrace{\mathbb{E}_z\big[\nabla_\theta\log p_\theta(W\mid c,z)\big]}_{\text{reader: use what is in the slot}}+\underbrace{\mathbb{E}_z\big[f(z)\,\nabla_\theta\log\pi_\theta(z\mid c)\big]}_{\text{writer: REINFORCE}},\qquad f(z)=\log p_\theta(W\mid c,z).
+\end{equation}
+In practice $f$ is replaced by the gain~\eqref{eq:gain} minus a baseline.
+
+\subsection{The training loss}
+In the design used from run 18 onward, each anchor is \emph{supervised} with probability $\rho$ ($\tfrac14$, later $\tfrac1{10}$). The other anchors are \emph{reinforcement} anchors, where thinking is compulsory: at least $L_{\min}=8$ tokens. Everything is computed in one forward--backward pass over the spliced buffer:
+\begin{equation}
+\mathcal{L}=\mathcal{L}_{\mathrm{NTP}}+0.3\,\mathcal{L}_{\mathrm{read}}+1.0\,\mathcal{L}_{\mathrm{imit}}+w_{\mathrm{RL}}\,\mathcal{L}_{\mathrm{RL}},
+\end{equation}
+\begin{align*}
+\mathcal{L}_{\mathrm{NTP}}&=-\textstyle\sum_j\log p_\theta(t_j\mid t_{<j}),\\
+\mathcal{L}_{\mathrm{read}}&=-\textstyle\sum_n\sum_{j=1}^{k}\gamma^{j-1}\log p_\theta(t_{n+j}\mid c_n,z_n,t_{n+1:n+j-1}),\\
+\mathcal{L}_{\mathrm{imit}}&=-\textstyle\sum_{n\in\mathcal{S}}\log\pi_\theta(z^\star_n\mid c_n),\\
+\mathcal{L}_{\mathrm{RL}}&=-\textstyle\sum_{n\in\mathcal{R}}\sum_{i=1}^{R}\mathrm{sg}\big(\hat A_{n,i}\big)\log\pi_\theta(z_{n,i}\mid c_n).
+\end{align*}
+$\mathcal{L}_{\mathrm{NTP}}$ is the vanilla objective on real tokens, with thoughts masked out, and $\mathcal{L}_{\mathrm{read}}$ scores the window rows given the thought. $\mathcal{L}_{\mathrm{imit}}$ imitates a span of true text $z^\star_n$ at the supervised anchors $\mathcal{S}$; which span to use turned out to be the most consequential choice of all (\S3). $\mathcal{L}_{\mathrm{RL}}$ is REINFORCE over $R=8$ rollouts at the reinforcement anchors $\mathcal{R}$, where $\mathrm{sg}$ is a stop-gradient. For rollout $i$, let $r_i=G(z_i)-\lambda|z_i|$ be the gain net of a per-token price. The \emph{paired (leave-one-out) baseline} is
+\begin{equation}
+A_i=r_i-\frac{1}{R-1}\sum_{j\ne i}r_j ,
+\end{equation}
+which is unbiased, costs no extra pass, and removes the anchor's difficulty. $\hat A$ is $A$ standardised over the batch, clipped, with negative values damped by a factor of $4$. $w_{\mathrm{RL}}=0.15$, ramped in (raised to $0.5$ from run 25).
+
+\subsection{What we measure}
+None of the failures below was visible in the training loss. Each was caught by one of these measurements, all taken on held-out text:
+\begin{itemize}\setlength{\itemsep}{1pt}
+\item \textbf{Unselected gain} $g_{r0}$ (one sampled rollout) and the greedy gain. These are what a user gets. The best-of-$R$ winner is inflated by selection alone: for $R$ i.i.d.\ $\mathcal{N}(0,\sigma^2)$ scores, $\mathbb{E}[\max_i]=0.56\sigma$ at $R=2$ and $1.42\sigma$ at $R=8$.
+\item \textbf{Order-borne value} $\mathrm{ob}(z)=G(z)-G(\mathrm{shuf}(z))$. Topic priming (a bag of words) survives a shuffle; anticipation does not.
+\item \textbf{The filler floor} $\Delta(z)=G(z)-G(\varnothing_{|z|})$, where $\varnothing_m$ is $m$ content-free tokens in the same slot, on the same weights. It splits the gain into
+\begin{equation}
+G(z)=\underbrace{G(\varnothing_{|z|})}_{\text{price of the slot}}+\underbrace{\Delta(z)}_{\text{value of what it says}}.
+\end{equation}
+From run 26 onward the success bar was $\Delta>0$. No checkpoint ever cleared it.
+\item \textbf{Oracle-offset probe}: splice a perfect $12$-token hint taken $o$ tokens ahead and measure $G$. It shows where the value of information lives.
+\item \textbf{Agreement}: the fraction of thought tokens that equal the true continuation at the same position, measured free-running and with the true prefix teacher-forced into the slot.
+\end{itemize}
+
+\subsection{Setup}
+The model uses the Qwen3-0.6B architecture (28 layers, width 1024, vocabulary 152k) and is trained from scratch on a 74/16/10 mixture of FineWeb-Edu, FineMath and DCLM. A vanilla ``ladder'' saves a rung every ${\sim}50$M tokens up to $12$B tokens; the rungs serve as token-matched and compute-matched controls. Runs 1--14 ran on a 4-core trn2 node from $0.37$--$2.07$B-token bases. Runs 15 onward ran on a trn2.48xlarge (64 NeuronCores, $131$k tokens per step) from the $8$--$9$B-token rungs. A thinking step costs about $4\times$ a vanilla step per token, dominated by the sequential decode of the thought.
+
+%======================================================================
+\section{What we tried, and what went wrong}
+
+\subsection*{Stage 1 --- let selection discover useful thoughts (runs 1--12)}
+
+\paragraph{Fractional positions (runs 1--6).}
+\why Give thought token $i$ the position $n+i\varepsilon$, with $\varepsilon=1/(L+2)$, so the thought sits strictly between $n$ and $n+1$ and never shifts a real token.
+\fail A model trained on integer rotary positions cannot read content at sub-integer offsets. Placing the \emph{true} window in the slot was worth $-1.3$ nats at fractional positions and $+8.2$ at integer positions. That meant six runs of flat reward. \emph{Lesson:} measure the ceiling (the oracle in the slot) before training toward it.
+
+\paragraph{Short reward window, $k=8$ (run 7).}
+\why A dense, cheap reward.
+\fail The myopic optimum is copying (\S2.2). The high-reward samples were the beginnings of verbatim copies of the future.
+
+\paragraph{Best-of-$m$ self-distillation, STaR-style (run 8).}
+\why Sample $m$ thoughts and imitate the best one.
+\fail A ratchet: a mildly good thought becomes more likely, wins again, and within ${\sim}100$ steps the model emits one universal thought at every anchor. The shuffled windows used as negatives were also exploited as a bag of words ($+8$ to $+15$ nats). The fixes: imitate only thoughts the policy does not already produce ($-\log\pi>F$), and use random-token negatives.
+
+\paragraph{A relative gate: ``beat your own greedy guess'' (run 10a).}
+\why A thought is only interesting if it beats what the model would say anyway.
+\fail Early on, every thought hurts, but a fluent wrong thought misleads the reader while word salad is simply ignored. ``Less damaging than your own guess'' is therefore won by \emph{weirdness}. The policy decohered to noise in 200 steps (gains $-14\to-35$) while the relative margin widened and NTP stayed flat. \emph{Fix:} also require $G>0$, a floor as well as a rival.
+
+\paragraph{Absolute bar, resumed from a contaminated checkpoint (run 10b$'$).}
+\fail The reader trains on every sampled thought, so it co-adapts to the writer's habits. It learned to extract real, positive value from a capital-letter \emph{register}: a content-free private protocol. No threshold on $G$ can exclude it, because the value is real; it is just not about anything.
+
+\paragraph{The shuffle self-control (run 10c).}
+\why The winner must beat a token-shuffled copy of itself, so the value must be carried by order.
+\fail This is where it first half-worked: 39 content-verified thoughts out of ${\sim}43$k candidates, each with an order swing of about $+18$ nats. But the pass rate \emph{fell}: the writer received 39 imitation gradients in the whole run, while the reader improved the silence baseline at every step. Held-out loss beat the token-matched vanilla twin by $0.013$ nats, but that is confounded with extra gradient on hard tokens, a pause-token effect. Tested later on another lineage (run 26), that confound went against content.
+
+\paragraph{Wider search, a register floor, a more mature base (runs 11--12).}
+\fail With $m=4$ rollouts the pass rate rose, but the passes were the register exploit again (their shuffled copies scored positive). With an absolute register floor (the shuffled copy must score below $+0.5$) and the $2.07$B base, the pass rate was $0.177\%$, exactly the calibrated false-positive rate. This is a closed loop: no pass, so no writer gradient, so the writer stays at the base model's tail, so no pass. \emph{Lesson:} gates select; they do not teach.
+
+\subsection*{Stage 2 --- supervise the writer, then hand over to RL (runs 13--17)}
+
+\paragraph{Dense parallel thoughts, oracle imitation, a learned gate (run 13).}
+\why Give the writer a dense signal from the start: imitate real text from \emph{beyond} the scored window (leak-free), let the reader learn to use it, then hand over to RL. \emph{When} to think is also learned: the logit of \tstart{} is the gate, trained by REINFORCE on $G-0.15\,\mathrm{len}-0.5-0.25\cdot\mathrm{crowding}$. Length is chosen through \tend{} at a per-token price.
+\fail The supervised half worked (imitation CE $5.9\to3.7$; the reader's gain from a real hint $-3.4\to+1.5$). At the handover, RL on raw gain produced register inflation within 60 steps: shuffled copies gained as much as the real thoughts. NTP drifted $+0.49$ nats as negative-advantage gradients leaked into the shared trunk. (Separately, a Neuron-compiler top-$k$ bug corrupted the sampled thoughts for 310 steps; it was caught only by replaying a step on CPU.)
+
+\paragraph{RL on the shuffle-corrected gain $G-G_{\mathrm{shuf}}$ (run 13$'$).}
+\why Pay only for what token order buys.
+\fail The order-borne value of the policy's samples was zero, so the honest reward was zero minus prices, and its optimum is silence. $p(\tstart)$ fell by twenty orders of magnitude, lengths dropped to the 2-token floor, the greedy mode collapsed to the single thought ``\texttt{1)}'', and the trunk still eroded ($+0.4$ nats). This was lawful convergence to not thinking.
+
+\paragraph{The anchored design (runs 14--15).}
+\why Never hand over. Keep the imitation anchor forever, keep a small RL term always on, and make the gate recoverable.
+\fail It was stable (nothing collapsed), and it moved the programme to the $9$B base. There, $\mathrm{ob}=-0.067\pm0.004$: eighteen standard errors \emph{below} zero, with $0.7\%$ of thoughts passing the audit. The passes were real (about $+1.7$ nats each) but far too rare. The reader's gain from a real hint crossed zero while $\mathrm{ob}$ did not move: a reader that can pay finds nothing to buy.
+
+\paragraph{Longer horizon, wider search, a horizon curriculum (runs 16--17).}
+\why Abstraction only pays over long horizons, and more rollouts should find the rare good thought: $k=8\to64$, $R=1\to8$, a soft gate, and $\gamma$ annealed from $0.85$ to $0.97$.
+\fail $\mathrm{ob}$ stayed at the same constant ($-0.070\pm0.008$ in run 17 against $-0.067$ in run 15) across an $8\times$ change in horizon and an $8\times$ change in search width. $G$ and $G_{\mathrm{shuf}}$ rose \emph{together}: the model learned to make its thoughts harmless, not useful. No reward that compares a thought only against silence can tell those apart.
+
+\subsection*{Stage 3 --- compulsory thinking at scale (runs 18--23)}
+
+\paragraph{Mixed anchors, no gate, raw-gain reward, shuffle as an instrument only (runs 18--19).}
+\why Every earlier design let the model decline, and declining was always cheapest. So remove the gate and force a thought at every RL anchor, which means an inert thought still pays its price. Put supervised and self-written thoughts in the same sequence, reward the raw gain, and keep the shuffle out of the loss.
+\fail The model now acts on its thoughts: the fraction that beat silence rose from $1\%$ to $45\%$. But the winners are topical, fluent and wrong in the particulars. Their margin over their own shuffle shrank ($+3.5\to+0.8$) as the reader learned to tolerate disorder. Imitation CE plateaued at $3.8$ in \emph{every} run regardless of how far ahead the target was: a specific span beyond the window is mostly unknowable, so the teacher can only convey topic and register.
+
+\paragraph{bf16 parameters, then an untested learning rate (runs 15--21).}
+\fail Plain AdamW on bf16 parameters, with no fp32 master copy. bf16 keeps 8 significant bits, so for $|w|\in[2^e,2^{e+1})$ the spacing is $2^{e-7}$, and round-to-nearest discards any update below $2^{e-8}$. With Adam's step $\approx\mathrm{lr}=5\times10^{-5}$,
+\[
+2^{e-8}>\mathrm{lr}\iff e\ge-6\iff |w|\ge 2^{-6}\approx0.016 ,
+\]
+so every such weight never moved: $52\%$ of the query projections, $64\%$ of the output head, and every normalisation gain. Runs 15--18 trained only the small half of each matrix. With fp32 parameters (run 20) the same learning rate destroyed the base (held-out CE $+0.56$ nats in $2.3$k steps) while every thinking curve looked healthy. At $10^{-5}$ (run 21) the tax was $+0.155$ nats, and the thinking metrics were unchanged.
+
+\paragraph{Removing supervision (runs 22--23).}
+\why Once the writer is on the manifold of real text, let RL take over ($\rho=0$).
+\fail Within $1{,}400$ steps, context-free register phrases (``\texttt{0 at least one of the}\ldots'', ``\texttt{in this}'') were winning $20\%$ of anchors and the rollouts had converged. At $\rho=\tfrac1{10}$ the run was stable and static: nothing moved for $1{,}000$ steps.
+
+\paragraph{Benchmarks at this point.}
+In clean mode, a five-task multiple-choice pool rose $+1.4$ points, but the pre-registered replication gave $+0.96$ ($p=0.11$), and by the end of the lineage it was $+0.12$ ($p=0.91$). LAMBADA lost 7 points, a calibration loss that stayed. Against the \emph{compute}-matched vanilla rung (1.6B more plain tokens), thinking was behind ($-1.4$ macro, $p=0.002$). Thinking at inference was neutral to negative.
+
+\subsection*{Stage 4 --- diagnose and fix the writer (runs 24--34)}
+
+\paragraph{The oracle-offset probe: we had supervised the wrong target.}
+The reader after run 23 values a perfect $12$-token hint as follows:
+\begin{center}\small
+\begin{tabular}{lrrrrrr}
+\toprule
+hint taken from $o$ tokens ahead & $0$ & $16$ & $32$ & $48$ & $64$ & shuffled $o{=}0$\\
+\midrule
+gain over no thought (nats) & $+8.85$ & $+6.29$ & $+4.00$ & $+1.46$ & $\mathbf{-1.64}$ & $-0.14$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The supervised target in runs 13--23 was the span \emph{beyond} the window, $o=64$: worth less than nothing, and unlearnable besides (imitation CE $3.8$). We spent 3B tokens teaching the writer the wrong thing.
+
+\paragraph{The sketch target: a span inside the window (run 24).}
+\why Supervise a $16$-token span at offset $8$--$48$, excluding $0$--$8$ as a ``trivial copy''.
+\fail The reader responded (gain from a real hint $\to+7.4$), but the writer did not: its own sampled thought stayed at $-2.2$ nats. At this scale those tokens are almost unforecastable.
+
+\paragraph{Calibrate the reader to inference (run 25).}
+\why The reader had been trained on a mixture it never meets at inference: a quarter true futures, the rest best-of-8 winners. So it learned to \emph{trust} hints, and the writer, graded by a trusting reader, was never told that confident wrong content hurts. The fix: train the reader only on one random, unselected thought of the model's own.
+\fail This produced the largest held-out move of the project: the cost of thinking fell from $-2.45$ to $-1.17$ nats in 900 steps, then stayed flat. But $\mathrm{ob}_0=-0.15$ and was never positive. What run 25 bought was calibration, not content.
+
+\paragraph{The pause-token control (run 26).}
+\why Fill the same slots with ten space tokens: no writer at all. This measures what the extra positions alone are worth.
+\fail For us, not for the control. After training, filler costs $-0.08$ nats; the written thoughts cost $-1.2$ to $-1.5$. On the \emph{same weights} (run 25), the model's own thought is $0.43\pm0.13$ nats \emph{below} filler. Run 25's gain was compute plus recalibration. We then adopted the within-weights filler floor, $\Delta>0$, as the bar.
+
+\paragraph{Greedy baseline (run 27).}
+\why Reinforce a sample only when it beats the thought the model would actually emit.
+\fail The run was stopped by its futility rule: $80\%$ of the rise in $g_{r0}$ was shared with the thought's own shuffle.
+
+\paragraph{Precision probes: what a thought must get right.}
+We replaced $12-K$ tokens of a true hint with tokens from the context (right register, wrong content). Break-even against filler is about $4$ correct tokens out of $12$, or $2$ of $12$ if the rest is pause. The model's teacher-forced self-forecast gets $5.3$ of $12$ right and still scores $-1.35$, which is $0.6$ \emph{below} filler. Its errors are confident, frequent, plausible tokens that the reader believes, whereas context noise is visibly noise and gets discounted. The free-running thought agreed with the truth on only $4\%$ of tokens.
+
+\paragraph{Aim at the immediate continuation (runs 28--29).}
+\why The only content the model can actually produce is the next few tokens, and run 24 had excluded exactly those.
+\fail Run 28 (offset $0$--$4$) raised agreement from $4\%$ to $11\%$, and the harm \emph{grew} at every length ($\Delta$ at 12 tokens: $-0.32\to-0.79$). Partly right is the worst place to be. The target also had an arithmetic bug: the offset $o\sim\mathcal{U}\{0,\dots,4\}$ was drawn per anchor, invisible to the writer, while the reward scores from offset $0$. That caps agreement at $0.44\times\tfrac15=0.088$ by construction (imitation CE sat $0.70$ nats above NTP from step 100). Run 29 fixed the offset at $0$ and gave the best free-running writer of the project, still at half of break-even: about $1$ correct token in $12$ against the $2$ required.
+
+\paragraph{Exposure bias.}
+On run 25, in one slot, next-token agreement is $0.43$ on clean text, $0.35$ with the true prefix teacher-forced inside the slot, and $0.02$ free-running ($0.07$ on run 29, the best free-running writer). The writer \emph{can} forecast, but not from its own prefix. Every run trained the regime that works (teacher forcing) and sampled in the one that does not.
+
+\paragraph{Scheduled sampling / DAgger (runs 30--31).}
+\why This is the standard fix: feed the model its own prefix and keep the true target.
+\fail Run 30 finished \emph{below} its matched control ($0.069$ against $0.075$), and its teacher-forced ceiling collapsed ($0.385\to0.274$). Given a wrong prefix, the true next token is often not a function of the input, so the loss is irreducible noise, and it lands on weights shared with the pathway that works. This is the same failure as the offset lottery. \emph{Rule:} before building a target, ask whether a perfect model could achieve low loss on it. A non-autoregressive slot (no prefix at all) was worse still ($0.02$). Training longer (run 31) was flat ($0.0716\to0.0722$ over 300 steps).
+
+\paragraph{Thoughts one position out of register.}
+\fail Thought token $i$ sat at $n+2+i$, one step further out than the real token it stands for. Moving it to $n+1+i$ raised the reader's gain from identical content by $0.85$ nats ($+2.30\to+3.15$). Every run before run 30 paid this.
+
+\paragraph{Accuracy versus harm (run 31).}
+The more accurate the free-running writer, the \emph{more} harmful it is. Across checkpoints, 2-token agreement went $0.04\to0.12\to0.26$ while $\Delta$ went $-0.05\to-0.11\to-0.33$. A better writer is confidently wrong in more believable ways.
+
+\paragraph{Abstention (run 32).}
+\why If wrong tokens are the poison and blanks are free, let the writer say nothing where it cannot forecast. It was supervised to keep the true token only where that token is one of the 300 most frequent unigrams, with filler elsewhere.
+\fail The writer went silent: it emitted filler at $88\%$ of positions. ``Stopped harming'' ($\Delta=-0.11$) really meant ``stopped speaking''; it was still below the floor. Frequency selection also keeps exactly the tokens the reader could already predict: $-0.63$ nats against a random selection of the same size. Selecting by the model's confidence has the same flaw ($-0.61$). The value sits at the \emph{least}-confident positions (true tokens there are worth $+2.0$ over a blank), where the writer is right only $21\%$ of the time. Committing there scores $-1.79$ against a floor of $-1.28$.
+
+\paragraph{Make the slot cheap (run 33).}
+\why Most of the deficit is the price of the slot, not its content (for example $-0.77$ against $-0.13$ nats). And a filler-trained reader pays only $-0.08$ for the slot while valuing a real hint at $+12.6$, so cheapness and sensitivity are not the same parameter. So put filler at half the anchors.
+\fail The block price improved and then \emph{reversed} ($+0.38$ at step 400, $+0.26$ at step 800). The writer lost its stop action (greedy length $10.5\to13.9$), and whitespace cost grows superlinearly with length. The instrument also broke: on this lineage the greedy thought was literally spaces, so ``own minus filler'' compared two fillers of different lengths.
+
+\paragraph{Make the writer speak (run 34).}
+\why Same format, but blanks get no weight in the loss, so silence stops being a supervised action.
+\fail The writer spoke at $96\%$ of positions, and $\Delta=-0.52$ at 4 tokens and $-0.89$ at 8: worse than the mute run 32 and worse than its own initialisation. Across runs 32, 34 and 31, $\Delta$ tracks the \emph{speaking rate} ($0.12,0.96,0.98\mapsto-0.11,-0.52,-0.49$), not precision. On the headline instrument the result is $-0.81\pm0.08$. At this scale, a token the model chooses to write is worth less to it than a blank. On benchmarks, a thought at inference costs $1.4$ macro points against the same weights ($p=4\times10^{-4}$, $4{,}000$ paired examples). Across those $4{,}000$ examples the thought was one of only $258$ distinct strings, and one of them (``\texttt{The first step in the process is to determine the type of}'') appeared $1{,}083$ times. The writer had learned a register.
+
+\subsection*{Stage 5 --- change the task or the medium (runs 35--39)}
+
+\paragraph{The bridge: carry instead of forecast (run 35).}
+\why Forecasting is the hard part, so make the job \emph{carrying}. We hid the last 32 context tokens from the window rows while keeping them visible to the thought. The writer can carry: teacher-forced, it reproduces the span at $0.30$--$0.41$ per token.
+\fail Hiding the span costs the reader about $8$ nats. Handed the \emph{exact missing text} in the slot, it recovers $-0.27\pm0.18$, i.e.\ nothing. The true \emph{future} tokens under the same mask are worth $+9.85$. The slot's only currency at this scale is text shaped like the continuation, not information as such. (Also: a block left without its closing \tend{} costs $19$ nats.)
+
+\paragraph{A private code (runs 37--39).}
+\why Natural-language tokens carry commitments that the reader enforces. So give the writer 64 fresh ids with no prior meaning, initialised to a neutral token's embedding so that a block starts out nearly free.
+\fail All three runs failed on symmetry:
+\begin{itemize}\setlength{\itemsep}{1pt}
+\item \emph{Pure RL (run 37).} Identical embeddings give identical rewards, hence a paired advantage of zero, hence no gradient that can separate the symbols. The pairwise embedding distance stayed at $0.015$, against $1.0$ for ordinary tokens. It is a fixed point.
+\item \emph{A supervised hash of the upcoming window (run 38).} The cross-entropy gradient on output row $j$ is $(p_j-\mathbf{1}[j=y])h$, but $y$ is independent of the context, so the Bayes-optimal output is the marginal, which is nearly uniform: the same symmetric point. Imitation CE converged to $\tfrac23\ln64$, the uniform value.
+\item \emph{A hash of a token already in context (run 39)}, trivially computable. The run learned $0.141$ of the $0.148$ nats per symbol available from the marginal and none of the $4.01$ available from the context.
+\end{itemize}
+The route was closed anyway: after run 35, a code is not forecast-shaped text, so even a perfect code would be paid the filler floor.
+
+%======================================================================
+\section{The picture}
+
+\textbf{Everything on one scale} (run 25 at step 900, ${\sim}460$ held-out anchors, nats over no thought, one $64$-token window):
+\begin{center}\small
+\begin{tabular}{lr}
+\toprule
+slot content & gain\\
+\midrule
+perfect hint: the next $12$ true tokens & $+10.72$\\
+perfect hint taken $32$ tokens ahead & $+5.99$\\
+perfect hint of the next $12$ tokens, shuffled & $+0.25$\\
+perfect hint from beyond the window (our target for 3B tokens) & $-0.90$\\
+content-free filler, $10$ tokens & $-0.74$\\
+the model's own greedy thought & $-1.17$\\
+the model's teacher-forced self-forecast ($5.3/12$ tokens correct) & $-1.35$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{enumerate}\setlength{\itemsep}{2pt}
+\item \textbf{The reader is not the bottleneck.} It turns true, ordered text about the next ${\sim}32$ tokens into $+4$ to $+11$ nats, and a shuffle destroys almost all of that.
+\item \textbf{Everything the model can produce at inference is worse than an empty slot.} This held on seven checkpoints, under four reward shapes and at every length from $2$ to $12$ tokens, by $0.1$ to $0.9$ nats.
+\item \textbf{The writer can forecast only teacher-forced} ($0.30$--$0.35$ agreement, against $0.02$--$0.07$ free-running). Scheduled sampling, a non-autoregressive slot and longer training all left the free-running writer where it was.
+\item \textbf{Wrong plausible tokens cost more than right ones pay}, so partial accuracy is worse than babble, and value tracks how much is said rather than how well.
+\item \textbf{The slot pays for forecast-shaped text, not for information}, which closes the ``easier target'' and ``private code'' escapes.
+\item \textbf{Reader miscalibration was real and fixable} (it halved the cost of thinking) \textbf{but not sufficient}. Every apparent gain was reader recalibration or compute that filler buys too.
+\end{enumerate}
+
+\textbf{The pattern.} Every failure was a shortcut the optimiser found because it was cheaper than thinking: copy the future; repeat one safe thought; read the leaked unigrams; be too weird to mislead; teach the judge your handwriting (a register); stop thinking; make thoughts harmless; fall silent; emit one stock phrase. A shortcut-free objective does not create a capability. It only shows whether one is there, and at this scale the writer's samples hold nothing the reward can pay for.
+
+%======================================================================
+\section{Our own mistakes}
+Each of these produced healthy-looking curves, and each cost days:
+\begin{itemize}\setlength{\itemsep}{1pt}
+\item bf16 parameters without an fp32 master copy froze half the network. Fixing that exposed an untested learning rate that destroyed the base, which only the held-out ruler showed.
+\item For 3B tokens the writer was supervised on a target the reader values below silence, and later on an offset lottery that capped agreement at $0.088$.
+\item Thought positions were one step out of register, which cost $0.85$ nats.
+\item The reader was trained on a diet it never gets at inference, and the writer only ever trained teacher-forced.
+\item Reporting errors: best-of-$R$ winners were compared with the winner's shuffle. Gates on $g_{r0}$ alone pass dead runs, because $g_{r0}$ is slot price plus content and only the price moves. One gate was quoted at one anchor count and measured at another. On the silent lineage, ``own versus filler'' compared filler with filler.
+\end{itemize}
+
+%======================================================================
+\section{What would have to be true}
+\begin{itemize}\setlength{\itemsep}{1pt}
+\item \textbf{Free-running precision above break-even}: about $2$ correct tokens in $12$ with blanks elsewhere, or $4$ in $12$ with noise. The best writer we trained delivers about $1$. We know no mechanism that moves it.
+\item \textbf{Or thoughts short enough to be right.} Damage grows with length: $\Delta$ is $-0.11$ at 2 tokens and $-0.70$ at 12, while a \emph{correct} 2-token thought is worth about $+1$ nat.
+\item \textbf{Or a reader trained to pay for something other than forecast-shaped text.} The bridge shows that the current reader will not pay for missing information.
+\item \textbf{Or scale.} Writer accuracy is exactly what grows with parameters. To check a larger model, measure free-running agreement at the first thought token, $\Delta$ at 2 tokens, and the held-out think-mode probe against filler.
+\end{itemize}
+The success criterion that should survive all of this: \emph{the model's own unselected thought must beat content-free filler of the same length, on the same weights, on held-out text.} Nothing in this project has cleared it.
+
+\end{document}

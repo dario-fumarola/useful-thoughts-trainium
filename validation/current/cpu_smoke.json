@@ -1,0 +1,168 @@
+{
+  "test": "CPU execution and numerical integrity only",
+  "not_tested": [
+    "Qwen weights",
+    "Trainium",
+    "Neuron compilation",
+    "research efficacy"
+  ],
+  "parameter_l1_change": 12.066069796681404,
+  "history": [
+    {
+      "step": 0,
+      "ids": [
+        "0",
+        "1"
+      ],
+      "thought": {
+        "loss": -0.0019174963235855103,
+        "gradient_norm_before_clip": 0.05793038010597229,
+        "mean_local_gain_nats": -0.21910974383354187,
+        "mean_clean_log_evidence": -3.2822494506835938,
+        "mean_thought_log_evidence": -3.501359224319458,
+        "mean_sampled_actions": 7.125,
+        "fraction_length_capped": 0.875,
+        "max_behavior_replay_error": 0.0,
+        "prefixes": 2,
+        "rollouts": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      },
+      "vanilla": {
+        "ntp_loss": 3.41542387008667,
+        "gradient_norm_before_clip": 0.9172182083129883,
+        "supervised_real_tokens": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      }
+    },
+    {
+      "step": 1,
+      "ids": [
+        "2",
+        "3"
+      ],
+      "thought": {
+        "loss": -0.0021937284618616104,
+        "gradient_norm_before_clip": 0.04446983337402344,
+        "mean_local_gain_nats": 0.18715810775756836,
+        "mean_clean_log_evidence": -3.47519588470459,
+        "mean_thought_log_evidence": -3.2880380153656006,
+        "mean_sampled_actions": 6.5,
+        "fraction_length_capped": 0.625,
+        "max_behavior_replay_error": 0.0,
+        "prefixes": 2,
+        "rollouts": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      },
+      "vanilla": {
+        "ntp_loss": 3.4093804359436035,
+        "gradient_norm_before_clip": 0.9446369409561157,
+        "supervised_real_tokens": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      }
+    },
+    {
+      "step": 2,
+      "ids": [
+        "4",
+        "5"
+      ],
+      "thought": {
+        "loss": 0.0001747608184814453,
+        "gradient_norm_before_clip": 0.02514338307082653,
+        "mean_local_gain_nats": -0.042240142822265625,
+        "mean_clean_log_evidence": -3.446457862854004,
+        "mean_thought_log_evidence": -3.4886977672576904,
+        "mean_sampled_actions": 6.625,
+        "fraction_length_capped": 0.5,
+        "max_behavior_replay_error": 0.0,
+        "prefixes": 2,
+        "rollouts": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      },
+      "vanilla": {
+        "ntp_loss": 3.4381155967712402,
+        "gradient_norm_before_clip": 0.9364973902702332,
+        "supervised_real_tokens": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      }
+    },
+    {
+      "step": 3,
+      "ids": [
+        "6",
+        "7"
+      ],
+      "thought": {
+        "loss": -0.0023649409413337708,
+        "gradient_norm_before_clip": 0.03307683765888214,
+        "mean_local_gain_nats": 0.025152921676635742,
+        "mean_clean_log_evidence": -3.588198661804199,
+        "mean_thought_log_evidence": -3.5630457401275635,
+        "mean_sampled_actions": 7.25,
+        "fraction_length_capped": 0.75,
+        "max_behavior_replay_error": 0.0,
+        "prefixes": 2,
+        "rollouts": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      },
+      "vanilla": {
+        "ntp_loss": 3.385288715362549,
+        "gradient_norm_before_clip": 0.9556865096092224,
+        "supervised_real_tokens": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      }
+    },
+    {
+      "step": 4,
+      "ids": [
+        "0",
+        "1"
+      ],
+      "thought": {
+        "loss": -0.01575269177556038,
+        "gradient_norm_before_clip": 0.10835961252450943,
+        "mean_local_gain_nats": -0.21783649921417236,
+        "mean_clean_log_evidence": -3.2947604656219482,
+        "mean_thought_log_evidence": -3.51259708404541,
+        "mean_sampled_actions": 4.25,
+        "fraction_length_capped": 0.25,
+        "max_behavior_replay_error": 0.0,
+        "prefixes": 2,
+        "rollouts": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      },
+      "vanilla": {
+        "ntp_loss": 3.337505340576172,
+        "gradient_norm_before_clip": 0.9055106043815613,
+        "supervised_real_tokens": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      }
+    },
+    {
+      "step": 5,
+      "ids": [
+        "2",
+        "3"
+      ],
+      "thought": {
+        "loss": 0.0011347271502017975,
+        "gradient_norm_before_clip": 0.02471093460917473,
+        "mean_local_gain_nats": 0.17869406938552856,
+        "mean_clean_log_evidence": -3.4736366271972656,
+        "mean_thought_log_evidence": -3.2949423789978027,
+        "mean_sampled_actions": 6.5,
+        "fraction_length_capped": 0.75,
+        "max_behavior_replay_error": 0.0,
+        "prefixes": 2,
+        "rollouts": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      },
+      "vanilla": {
+        "ntp_loss": 3.353456497192383,
+        "gradient_norm_before_clip": 0.9382152557373047,
+        "supervised_real_tokens": 8,
+        "status": "CPU toy/reference measurement, not a Qwen or Trainium result"
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+--- a/pre-training/train/think_oracle.py
++++ b/pre-training/train/think_oracle.py
+@@ -120,13 +120,20 @@
+         self.BR = self.RC[:, :, None] + 1 + np.arange(K)[None, None, :]      # [N, G, K] branch rows
+         self.TH = self.B[:, :, None] + np.arange(L + 1)[None, None, :]       # [N, G, L+1] <T> + L slots
+ 
+-    def buffer(self, x, anchors, Z, lens):
++    def buffer(self, x, anchors, Z, lens, *, next_targets=None):
+         """x [T], anchors [N], Z [G, N, L], lens [G, N] -> buf, pos, mask, tgt, thought-row mask [N, G, L+1]"""
+         T, N, G, L, K, S = self.T, self.N, self.G, self.L, self.K, self.S
+         buf = np.full(S, T_CLOSE, dtype=np.int64); pos = np.zeros(S, dtype=np.float32)
+         m = np.full((S, S), NEG, dtype=np.float32); tgt = np.zeros(S, dtype=np.int64)
+         buf[:T] = x; pos[:T] = np.arange(T); m[:T, :T] = np.triu(np.full((T, T), NEG, dtype=np.float32), k=1)
+         tgt[:T - 1] = x[1:]
++        # next_targets is the complete shifted T-token vector from row[1:T+1].
++        # Legacy read-only probes can omit it; all three training callers pass it.
++        if next_targets is not None:
++            next_targets = np.asarray(next_targets)
++            if next_targets.shape != (T,) or not np.array_equal(next_targets[:-1], x[1:]):
++                raise ValueError("next_targets must be the complete, aligned next-token vector")
++            tgt[:T] = next_targets
+         thm = np.zeros((N, G, L + 1), dtype=np.float32)
+         tri = np.triu(np.full((L + 1, L + 1), NEG, dtype=np.float32), k=1)
+         slot = np.arange(L + 1, dtype=np.float32)                       # <T> at n+1, Z[j] at n+2+j (plain inserted text)
+@@ -280,7 +287,7 @@
+             gen.set_anchors(anchors)
+             Z, lens = gen.decode_group(args, G)                               # [G, N, L], [G, N]
+ 
+-            buf, pos, m, tgt, thm = geo.buffer(x, anchors, Z, lens)
++            buf, pos, m, tgt, thm = geo.buffer(x, anchors, Z, lens, next_targets=y)
+             bt = torch.from_numpy(buf[None]).to(device); pt = torch.from_numpy(pos[None]).to(device)
+             mt = torch.from_numpy(m[None, None]).to(torch.bfloat16).to(device); tt = torch.from_numpy(tgt[None]).to(device)
+             with autocast_ctx():
+--- a/pre-training/train/think_bestof.py
++++ b/pre-training/train/think_bestof.py
+@@ -315,7 +315,7 @@
+             an = anchors[:, None] + np.arange(K)[None, :]                        # [N, K]
+             for g0 in range(0, G, SG):
+                 sl = slice(g0, g0 + SG)
+-                buf, pos, m, tgt, _ = sgeo.buffer(x, anchors, Z[sl], lens[sl])
++                buf, pos, m, tgt, _ = sgeo.buffer(x, anchors, Z[sl], lens[sl], next_targets=y)
+                 ce = score_forward(buf, pos, m, tgt)
+                 if ce_clean is None:
+                     ce_clean = ce[an]                                            # [N, K]
+@@ -343,7 +343,7 @@
+                 Zsel = np.stack([Z[0], Z[1]]); lsel = np.stack([lens[0], lens[1]])
+ 
+             # ---- grad buffer: best + other per spot
+-            buf, pos, m, tgt, thm = ggeo.buffer(x, anchors, Zsel, lsel)
++            buf, pos, m, tgt, thm = ggeo.buffer(x, anchors, Zsel, lsel, next_targets=y)
+             bt = torch.from_numpy(buf[None]).to(device); pt = torch.from_numpy(pos[None]).to(device)
+             mt = torch.from_numpy(m[None, None]).to(torch.bfloat16).to(device); tt = torch.from_numpy(tgt[None]).to(device)
+             with autocast_ctx():
+--- a/pre-training/train/think_hintmix.py
++++ b/pre-training/train/think_hintmix.py
+@@ -275,7 +275,7 @@
+                 gen.set_anchors(np.repeat(anchors, G))
+                 Zo, lens = gen.decode_group(args, N, G)                       # [G, N, Lo], [G, N]
+                 Z = np.full((G, N, L), T_CLOSE, dtype=np.int64); Z[:, :, :Lo] = Zo
+-                buf, pos, m, tgt, thm = geo.buffer(x, anchors, Z, lens)
++                buf, pos, m, tgt, thm = geo.buffer(x, anchors, Z, lens, next_targets=y)
+                 bt = torch.from_numpy(buf[None]).to(device); pt = torch.from_numpy(pos[None]).to(device)
+                 mt = torch.from_numpy(m[None, None]).to(torch.bfloat16).to(device); tt = torch.from_numpy(tgt[None]).to(device)
+                 with autocast_ctx():
+@@ -369,7 +369,7 @@
+                     gen.set_anchors(np.repeat(anchors, G))
+                     Zo_h, lens_o = gen.decode_group(args, N, G)                    # [G, N, Lo], [G, N]
+                     Zh[1:, :, :Lo] = Zo_h; lens_h[1:] = lens_o
+-                buf, pos, m, tgt, thm = hgeo.buffer(x, anchors, Zh, lens_h)
++                buf, pos, m, tgt, thm = hgeo.buffer(x, anchors, Zh, lens_h, next_targets=y)
+                 bt = torch.from_numpy(buf[None]).to(device); pt = torch.from_numpy(pos[None]).to(device)
+                 mt = torch.from_numpy(m[None, None]).to(torch.bfloat16).to(device); tt = torch.from_numpy(tgt[None]).to(device)
+                 with autocast_ctx():

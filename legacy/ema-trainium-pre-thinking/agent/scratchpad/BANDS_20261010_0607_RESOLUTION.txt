@@ -1,0 +1,115 @@
+RESOLUTION 2026-10-10 06:07 tick. Bands registered in BANDS_20261010_0607.txt (three batches,
+sha256 of each registration recorded in BANDS_20261010_0607_REGISTERED.txt at 06:11:45, 06:13:33,
+06:15:45).
+
+=== THE THREE BANDS THAT HAD BEEN BLOCKED SINCE 2026-10-06 (3 of the ledger's "4 unscored") ===
+WHY THEY WERE BLOCKED: the 2026-10-06 22:07 tick wrote that
+`runs/think95_bestof/ceiling/ceil_0000190.analysis` "never appears". The file has existed since
+Oct 6 23:13 as **`ceil_190.analysis`** -- `ceiling_rungs.sh` strips the zero padding
+(`sed 's/step_0*//'`). Nothing was ever missing. Four days of "unscorable" was a filename.
+
+B613  ours_mix(190) in [2.770, 2.782].  ACTUAL 2.7780 (heldout.tsv, run 95, step 190).   HIT
+B614  D5 gap vs vanilla@22990 (2.7736) in [-0.004, +0.008] AND not >= +0.03.
+      ACTUAL 2.7780 - 2.7736 = +0.0044. In band, and far under the +0.03 bar.  HIT (both clauses)
+B616  oracle-best6 (k=1) at rung 1 in [+1.80, +3.20] ("init +2.30, i.e. ceiling unchanged").
+      ACTUAL +5.702 +- 0.385, on the band's own fixed population (tau>4.0, top-8/seq, 384
+      anchors over 48 sequences -- the population the init reference was taken over).
+      **MISS HIGH**, by 2.5 band-widths. Scored against me. The premise, not the arithmetic,
+      is what failed: see G218.
+
+=== THE NEW BANDS ===
+B797  five later rungs' bestG(k=1), top-8/seq, all inside [+4.00, +7.50]:
+      +5.709, +5.145, +6.029, +5.845, +5.988.                                             HIT
+B798  rung1140 - rung190 within +-1.50: +5.988 - +5.702 = **+0.286**.                     HIT
+B799  VOID -- MY ERROR. Named "top-8/seq" in an `_nt6` file; `_nt6` = n-think 6 and every such
+      file carries **top-6/seq** only. The population I banded does not exist in the artefact I
+      named. (Its substance was ALSO wrong: it predicted the init would read >= +4.00 on that
+      path; the init L8 reads **+1.516** there.)
+B800  VOID -- same error, same reason.
+B801  VOID -- NOT a wording error: `ceil_init_step_0022800_L32_K16_G6.jsonl` is **0 bytes** with
+      an empty log (Oct 6 14:42). The probe never wrote a record.
+B802  VOID -- same empty artefact.
+B803  VOID -- same empty artefact.
+      (`ceil_r94_step_0003230_L32_K16_G6.jsonl` is 0 bytes too. TWO attribution probes this
+      programme believed it had are empty.)
+B809  init bestG(k=1) at top-8/seq monotone non-decreasing in L:
+      L4 **+2.006**, L8 **+2.302**, L16 **+2.423**, L32 **+2.611**.                       HIT
+
+TWO COLLAPSE CHECKS BEFORE ANY VERDICT, both against the owner's 16:35 row of 2026-10-06:
+  L32: deploy-1 **-23.459** vs his -23.5 | oracle-1 **+1.081** vs +1.08 | bestG **+2.611** vs
+       +2.61 | any-of-6 **0.25** vs 25%.
+  L8 : deploy-1 **-21.946** vs his -21.9 | oracle-1 **+0.993** vs +0.99 | bestG **+2.302** vs
+       +2.30.
+  Exact on all seven numbers. The loader, the population and the analysis path are the owner's.
+
+B804-B808 PENDING the CPU probe launched at 06:16 (see the third batch and the journal entry).
+
+LEDGER, summed in the same command that printed it (G215(4)):
+  registered 268 | scored 257 = 192 HIT + 30 MISS HIGH + 23 MISS LOW + 12 MISS (= 257, asserted)
+  unresolved 11 = 5 void (B799-B803) + 5 pending (B804-B808) + 1 legacy band still unidentified
+  (= 11, asserted). The legacy one is the 4th of the old "4 unscored"; I identified three of the
+  four this tick and have NOT identified the fourth.
+
+=== B804-B808: THE ATTRIBUTION PROBE LANDED AT 06:42 AND REFUTED ME ON FOUR OF FIVE BANDS ===
+Probe completed clean: **1536 anchor records in 1558s**, "done:" line present, 48 sequences,
+G=6, K=16, L=6, tau 2.0 -- byte-identical arguments to run 95's own rungs.
+LADDER-22800 (22,800 steps of ordinary pre-training, ZERO RL), top-8/seq, k=1:
+  deploy-1 **-21.088+-1.110** | oracle-1 +1.151+-0.200 | **oracle-bestG +2.457+-0.302** | helps **0.27**
+
+B804  ladder bestG >= +4.00 ?            **+2.457**            **MISS LOW**
+B805  ladder - init(L4..L8) >= +1.50 ?   **+0.155 .. +0.451**  **MISS LOW**
+B806  |r95@190 - ladder| <= 1.80 ?       **3.245**             **MISS HIGH**
+B807  ladder deploy-1 < 0 ?              -21.088               **HIT**
+B808  ladder bestG-helps >= 0.45 ?       **0.27**              **MISS LOW**
+
+THE ATTRIBUTION IS THE OPPOSITE OF WHAT I PREDICTED AND OF WHAT I HAD ALREADY WRITTEN INTO THE
+RUNBOOK 25 MINUTES EARLIER:
+  pre-training's WHOLE contribution to the ceiling: untrained ~+2.15 (L6 interp) -> ladder
+    **+2.457**, i.e. **+0.303**. 22,800 steps of ordinary pre-training moved this ceiling by
+    NOTHING, and the helps share not at all (0.26 -> 0.27).
+  run 95's FIRST 190 RL STEPS: bestG **+3.245 +- 0.489 (t +6.63)**, deploy-1 **+5.959 +- 1.457
+    (t +4.09)**, helps share **0.27 -> 0.62**.
+So the 2.6x ceiling rise belongs to RUN 95's RL, not to the ladder.
+
+THE CAVEAT THAT HAS TO TRAVEL WITH IT, STATED BEFORE ANYONE QUOTES THE NUMBER:
+ (i) **run 95's objective WAS best-of-6** (`think95_bestof`, positive-only best-of-N REINFORCE).
+     The metric that moved is the metric it was trained on. That is the objective working, not an
+     unexpected capability.
+ (ii) the anchor population is **entropy-selected per checkpoint** (top-8/seq by H), so the two
+     checkpoints are not scored on identical anchors. Every rung comparison in this programme
+     carries this, but at a 3.2-nat effect it is the first thing a successor must control.
+ (iii) **the deployed arm is still -15.129 at rung 190.** The ceiling moved; nothing deployable did.
+ (iv) G217 already showed the model's own selector is a **veto at chance on picking the best draft**.
+     So run 95 learned to make at least one of six drafts good at 62% of anchors and CANNOT TELL
+     WHICH ONE. The +5.702 is real and unreachable.
+ (v) it stopped: flat from rung 190 to 1140 (+5.702 -> +5.988) over 950 further steps.
+ (vi) it cost almost nothing in base: run 95's held-out mix moved +0.0031 at step 190 (B613/B614).
+
+LEDGER (asserted in Python in the same command that printed it, G215(4)):
+  registered 268 | scored 262 = 193 HIT + 31 MISS HIGH + 26 MISS LOW + 12 MISS (= 262)
+  unresolved 6 = 5 void (B799-B803) + 1 permanently unidentifiable (= 6)
+
+=== B810-B814: THE ANCHOR-SELECTION CONFOUND IS CLOSED, AND THE EFFECT GETS SLIGHTLY BIGGER ===
+No new forward pass: both jsonl files intersected on the anchor key (set, seq, n).
+`agent/scratchpad/fixedanchor_0607.{py,out}`. The common set is the **LADDER's own top-8/seq**,
+i.e. chosen by the checkpoint that scores LOWER, so the selection cannot favour run 95.
+
+B810  own-selection overlap 313 of 384 = **81.5%** (< 85%)                          **HIT**
+      -- so the anchor sets really did differ, and the caveat was worth testing.
+B811  paired bestG diff on the FIXED anchor set (382 anchors, 48 sequences):
+      **+3.408 +- 0.552**, vs >= +2.00 banded                                       **HIT**
+      run95@190 **+5.857+-0.429** | ladder **+2.449+-0.302**
+      **105% of the unfixed +3.245 SURVIVES** -- the entropy-selection confound was not
+      inflating the effect, it was very slightly MASKING it.
+B812  |t| = **6.17** (>= 3.0), clustered by sequence over 48 sequences                **HIT**
+B813  deploy-1 negative for both: r95 **-14.531**, ladder **-20.883**                 **HIT**
+B814  helps-share gap **0.60 - 0.27 = +0.34** (>= +0.20)                              **HIT**
+
+**CAVEAT (ii) OF THE 06:42 RESULT IS THEREFORE CLOSED.** What remains, and is NOT closable by
+re-analysis: (i) run 95's objective WAS best-of-6, so the metric that moved is the metric it
+trained on; (iii) the deployed arm is still **-14.5** on the fixed set; (iv) G217's selector is a
+veto at chance on picking the best draft; (v) the gain stopped after 190 steps.
+
+LEDGER (asserted in Python in the same command that printed it, G215(4)):
+  registered 273 | scored 267 = 198 HIT + 31 MISS HIGH + 26 MISS LOW + 12 MISS (= 267)
+  unresolved 6 = 5 void (B799-B803) + 1 permanently unidentifiable (= 6)

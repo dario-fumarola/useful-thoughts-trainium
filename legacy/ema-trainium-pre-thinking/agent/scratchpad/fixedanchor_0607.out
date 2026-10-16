@@ -1,0 +1,13 @@
+records: r95 1536, ladder 1536
+recorded-anchor overlap: 1377 of 1536 (89.6%)
+
+B810 own-selection overlap: 313 of 384 (81.5%) -> HIT
+common fixed anchor set (ladder's top-8/seq, also recorded by r95): 382
+  run95@190  bestG +5.857+-0.429 | deploy-1 -14.531+-0.865 | helps 0.60
+  ladder     bestG +2.449+-0.302 | deploy-1 -20.883+-1.108 | helps 0.27
+
+B811 paired bestG diff on FIXED anchors: +3.408 +- 0.552 over 48 sequences -> HIT
+B812 |t| = 6.17 -> HIT
+     (unfixed-anchor difference was +3.245; 105% survives)
+B813 deploy-1 both negative? r95 -14.531, ladder -20.883 -> HIT
+B814 helps-share gap 0.60 - 0.27 = +0.34 -> HIT
