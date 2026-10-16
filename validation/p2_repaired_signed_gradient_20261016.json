@@ -1,0 +1,74 @@
+{
+  "CPU_gradient_norm": 0.10564679629247145,
+  "CPU_loss": 0.005393173545598984,
+  "actual_device_denominator": 1024.0,
+  "advantage": 0.25,
+  "all_owned_processes_exited": true,
+  "artifacts_sha256": {
+    "local/qualification/compare_p2_signed_gradient_reference.py": "57ada98a82dcd3dba79581531ff38be7735c22f1e558dbd03ae318aa08b982db",
+    "local/qualification/p2-full-fp32-countfix-signed-001.comparison.json": "9ad14fad89c72be2a2ca86f3f13008d8d89637216c1e542ac3865b7cdeb7801d",
+    "local/qualification/p2-full-fp32-countfix-signed-001.execution_receipt.json": "3aa19ac9c36ec623126c3e0213264088980c5649dcc68fb527750dbe0bb7c5ab",
+    "local/qualification/p2-full-fp32-countfix-signed-001.launch.sh": "58921ad8e26566c77a2d22ef329a7afde43e33afae31a089e6db1b28d0279a08",
+    "local/qualification/p2-full-fp32-countfix-signed-001.prepared.json": "3200665f5d174ed5101b30996c7a8cf3c2574598218b86fb6aac5adbe32973bb",
+    "local/qualification/p2-full-fp32-countfix-signed-001.py": "8f84c91e914af858a58854de972c5398aa275fb9005edb78f8febf70b926de92",
+    "local/qualification/p2-full-fp32-countfix-signed-001/backend.json": "a3b2f8c6925ff94df220d4445f13a519eb74ee9b019e63ae940001877573db33",
+    "local/qualification/p2-full-gradient-cpu-signed-001/criteria.json": "f523a4eefb4afeeb7b1033f3f490fa2e4d315033736e58c57c18a5221e247df9",
+    "local/qualification/p2-full-gradient-cpu-signed-001/reference.json": "6d6858fcf1db401f4f4342aa65eae7378d16c04f487a614073966d355af86bd6",
+    "local/qualification/p2-full-gradient-signed-comparison-001.criteria.json": "bf05316875f90aeee41d27ebb6b6ee90639e4eac984d2cf391f74a42ba8f15d9"
+  },
+  "cap": 1024,
+  "checks": {
+    "global_norm": true,
+    "signed_loss": true,
+    "signed_sample_cosine": true,
+    "signed_sample_relative_l2": true
+  },
+  "created_utc": "2026-10-16T22:43:21.485282+00:00",
+  "device_gradient_norm": 0.10564547032117844,
+  "device_loss": 0.005393174011260271,
+  "divisor": 4,
+  "driver_loss_materialized_before_backward": true,
+  "exit_code": 0,
+  "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+  "limitations": [
+    "One saved full-cap trajectory backward; no fresh sampling or optimizer update was executed in this diagnostic.",
+    "Fixed signed samples and per-parameter norms do not compare every gradient coordinate.",
+    "Accumulated-gradient memory, distributed synchronization, stochastic checkpoint resume, and scientific efficacy remain unqualified."
+  ],
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "norm_absolute_error": 1.325971293014705e-06,
+  "norm_allowed": 6.282339814623573e-05,
+  "normalization": "mask.float().sum().clamp_min(1.0)",
+  "preserved_failure_reports": [
+    "validation/p2_cache_policy_20261016.json",
+    "validation/p2_driver_signed_loss_failure_20261016.json"
+  ],
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer --cache_dir=/home/ubuntu/dario/local/neuron_cache",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": "2",
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "saved_trace": "original P2 trace 2, group 0",
+  "schema": 1,
+  "scope": "Actual released Qwen3-1.7B-Base fixed-trace FP32 policy-gradient execution and independent native CPU comparison; engineering qualification only",
+  "signed_samples": {
+    "cosine": 0.9999999940465462,
+    "max_absolute_error": 2.6216639525955543e-08,
+    "parameters": 310,
+    "relative_l2": 0.000109229605936618,
+    "values": 9920
+  },
+  "source_commit": "8b44cc1ccccdd52c87180fb3fbc346053b7879a3",
+  "source_sha256": "224d7853960c8a705299ef1fb15c0fbb13afebaccc018629ed1615009a93eb57",
+  "status": "PASS",
+  "temperature": 0.7
+}
