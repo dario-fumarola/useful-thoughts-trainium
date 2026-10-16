@@ -63,7 +63,8 @@
     "reference_kl_weight": 0.0,
     "ema_baseline": "omitted_from_update_because_common_context_baseline_cancels_exactly_in_LOO; same-model raw clean evidence still logged",
     "format_json": null,
-    "rollout_budget_ablation": "2048 tokens is a later declared condition, not a silent extension"
+    "rollout_budget_ablation": "2048 tokens is a later declared condition, not a silent extension",
+    "sampling_support": "tokenizer-supported IDs only; model-only output rows masked identically in rollout and replay; raw reader/C likelihood unchanged"
   },
   "optimization": {
     "parameter_dtype": "fp32",

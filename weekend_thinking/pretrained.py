@@ -34,7 +34,11 @@ def sampled_fingerprint(model) -> dict:
     h=hashlib.sha256();count=0
     for name,tensor in model.named_parameters():
         flat=tensor.detach().reshape(-1)
-        idx=torch.linspace(0,max(0,flat.numel()-1),min(32,flat.numel()),device=flat.device).long()
+        # Floating linspace rounds the final index up for 300M-element
+        # embeddings. Compute evenly spaced integer indices exactly on host.
+        n=flat.numel(); k=min(32,n)
+        idx=torch.tensor([i*(n-1)//max(1,k-1) for i in range(k)],
+                         device=flat.device,dtype=torch.long)
         h.update(name.encode());h.update(flat[idx].float().cpu().numpy().tobytes());count+=tensor.numel()
     return {'sampled_parameter_sha256':h.hexdigest(),'parameters':count,
             'qualification':'Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.'}

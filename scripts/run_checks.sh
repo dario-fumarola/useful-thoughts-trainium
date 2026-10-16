@@ -2,6 +2,9 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+# Transformers/Accelerate otherwise imports XLA and patches nn.GRU globally.
+# These checks are deliberately CPU-only even while real device jobs run.
+export USE_TORCH_XLA=0
 mkdir -p local/checks
 OUT="$(mktemp -d local/checks/tests.XXXXXX)"
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python -m pytest -q 2>&1 | tee "$OUT/tests.txt"

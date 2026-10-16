@@ -2,6 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
+export USE_TORCH_XLA=0
 python scripts/verify_package.py
 mkdir -p local/checks
 OUT="$(mktemp -d local/checks/bootstrap.XXXXXX)"
