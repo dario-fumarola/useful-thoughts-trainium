@@ -1,0 +1,39 @@
+{
+  "C_job_untouched": true,
+  "R_workers_connected_to_C_store": 31,
+  "all_32_R_runtime_workers_present": true,
+  "all_owned_processes_exited": true,
+  "artifacts_sha256": {
+    "local/qualification/qwen-r-fp32-final-002.bootstrap-first-warning.json": "6902cef401517bb51c6ba96582a90e9999034b56bb6e94cd9fe03322014aa5cb",
+    "local/qualification/qwen-r-fp32-final-002.bootstrap-participants.json": "0b8cfa86049b77ac9faf99de4be8dfcfc08fb10f77f3cea2f3a2e42789d6bfa8",
+    "local/qualification/qwen-r-fp32-final-002.bootstrap-sockets.json": "e9373c0c1f53e1080589c1395eeb4e8957af6e1a7f8472d42c1049da78ed201e",
+    "local/qualification/qwen-r-fp32-final-002.bootstrap-wchan.json": "ce73da0604dabcc50d865fe11feb1ef9323521dad421a512a90c730c0ff9e3c0",
+    "local/qualification/qwen-r-fp32-final-002.bounded-stop.json": "b924d90c1dd315c24ec560e06936c82fd26fa8b5acb7a68a5630a62c0b23af3b",
+    "local/qualification/qwen-r-fp32-final-002.execution_receipt.json": "ffeaccdf7e2645d34db6a6f87b7362deefbb5c17ef758a29fafffae2f998bec7",
+    "local/qualification/qwen-r-fp32-final-002.exit.json": "c45e0c64973196543bbca4be099f03cea957ff4b5f5600cb53a8c31af17ccb2d",
+    "local/qualification/qwen-r-fp32-final-002.log": "63b1ce12e385a1ecaaa8577d4c45576c593a2af195095a68138a86aa77aa5379"
+  },
+  "authorized_single_relaunch_repair": {
+    "MASTER_ADDR": "127.0.0.1",
+    "MASTER_PORT": "64231",
+    "unchanged": "source, data, numerical settings, precision, topology, Neuron endpoint64194"
+  },
+  "bounded_stop": "TERM one verified blocked R child; executor cleanup reaped every R worker and surfaced the original exception within3seconds",
+  "created_utc": "2026-10-16T22:51:26.406611+00:00",
+  "distinct_Neuron_endpoints": {
+    "C": "127.0.0.1:64216",
+    "R": "127.0.0.1:64194"
+  },
+  "driver_exit_code": 1,
+  "exception": "torch.distributed.DistNetworkError: EADDRINUSE on TCPStore port12355",
+  "first_CCOM_timeout_seconds": 120,
+  "no_model_loaded_or_updates_executed": true,
+  "root_cause": "Both concurrent C32 and R32 inherited the default MASTER_PORT12355; R rank0 could not bind, while31 R peers connected to the active C store and blocked at their collective barrier.",
+  "schema": 1,
+  "scientific_outcome": false,
+  "scope": "Concurrent R32 qualification infrastructure failure before model load or update",
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "status": "FAILED_INITIALIZATION_CONFIRMED",
+  "unwarned_R_worker_wait_channel": "anon_pipe_read"
+}
