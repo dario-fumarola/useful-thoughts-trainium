@@ -21,7 +21,7 @@ a real rendezvous. The uninterrupted process completes step 4 and exits; a new
 process pair loads the checkpoint and repeats steps 3–4.
 
 The fresh `distributed-005` run declares numeric resume tolerance **1e-7 absolute
-+ 1e-6 relative** before execution. It passes that criterion. Bitwise model and
+plus 1e-6 relative** before execution. It passes that criterion. Bitwise model and
 optimizer resume **fails** and is recorded as `resume_bitwise=false`; the earlier
 strict failure remains in `distributed-004.resume.fixed.log`.
 
@@ -97,3 +97,32 @@ concatenated-gradient oracle, and the compiler compatibility behavior.
 Production still needs its own actual Qwen C/R update, full checkpoint
 save/restore and stochastic continuation tests. This result must not be used as
 their replacement.
+
+## First full Qwen attempt: one valid update, then memory failure
+
+`local/qualification/qwen-c-001` tested actual Qwen3-1.7B on four ranks, BF16
+compute, FP32 parameters/master state, four unique prefixes per update. Its
+immutable executable snapshot is `qwen-c-001-source` (source hash
+`699ac67bc4e5f7126fd227d1fb73b53ea0250c8561225426d07aa5a888146d75`).
+
+The first real update completed: CE 1.5026466, pre-clipping global gradient norm
+6.2664828, and 99.012% of the driver's 9,920 sampled FP32 values changed. Its
+complete checkpoint passed hash verification. All 310 parameters have initialized
+Adam state on every rank; each shard contains 430,143,744 FP32 master elements.
+The saved model has 1,720,574,976 unique FP32 parameters and retains the embedding
+tie. Independent spread sampling against released safetensors found 99.022% of
+19,840 values changed. Evidence: `qwen-c-001/step1.integrity.json`.
+
+The second optimizer graph **failed** compiler memory qualification: reported
+peak **26.84 GB exceeds the 24.00 GB limit** (`NCC_EOOM002`). First-step success
+does not establish steady-state memory safety: initialized moment inputs make
+the later optimizer graph larger. The runtime monitor observed up to
+24,315,122,964 allocated bytes before this compile-time failure. No second update
+or full-model resume pass exists, and the identical failing continuation was not
+relaunched. The surviving first-step checkpoint, hardlinked resume preparation,
+651 monitor samples, compiler errors and source snapshot remain intact.
+
+This BF16 run is infrastructure evidence only. Separate replay qualification
+rejected BF16 and selected full FP32 for the scientific experiment. The planned
+repair is a new, fully FP32, 32-rank qualification with smaller optimizer shards,
+followed by actual checkpoint continuation and ten complete steady-state steps.
