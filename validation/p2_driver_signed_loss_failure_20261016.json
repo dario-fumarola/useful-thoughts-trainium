@@ -1,0 +1,41 @@
+{
+  "CPU_loss": 0.005393173545598984,
+  "actual_full_device_denominator_not_measured": true,
+  "artifacts_sha256": {
+    "local/qualification/p2-full-fp32-driverpath-001.bounded-stop.json": "198e8b05b02da27de222f9fe45fbfaacf162224c3dece4f04ca23f3e8ee8508f",
+    "local/qualification/p2-full-fp32-driverpath-001.launch.sh": "5dec6fa8d318c8027b32d541c8f24f6ff80b65d1532e1ae07c52d2a799b34cb0",
+    "local/qualification/p2-full-fp32-driverpath-001.prepared.json": "0d28a56794fc1b43c3bff809dfdcb1e249817be0f4d8cbabb45afc49c30193a1",
+    "local/qualification/p2-full-fp32-driverpath-001.py": "3a81497078ac35f2dbfd25bc21a4cb615b44133f9b0972392723d7c00dab0c0f",
+    "local/qualification/p2-full-fp32-driverpath-001/backend.json": "792ca66bec7a02e846f39237ce3ef31c78634887400bf0b74cde864b60299689"
+  },
+  "backward_norm_not_completed": true,
+  "cache_files_modified": false,
+  "cap": 1024,
+  "created_utc": "2026-10-16T22:17:19+00:00",
+  "device_loss": -5.522610187530518,
+  "device_to_CPU_signed_loss_ratio": -1024.0000884149479,
+  "group_empty_after_stop": true,
+  "host_mask_denominator": 1024,
+  "interpretation": "Materializing loss before backward does not repair the old backend: the full-model signed scalar loss has reversed sign and1024 times magnitude. Independent tiny hardware evidence isolates S64 clamp_min as faulty; the full fixed-trace repaired source remains separately gated.",
+  "loss_absolute_error": 5.528003361076117,
+  "loss_passed": false,
+  "no_R_or_scientific_training_launched": true,
+  "owned_process_group": 608197,
+  "precision": "fp32",
+  "prospective_loss_allowed": 1.2696586772799493e-05,
+  "retained_wrong_backward_lock": [
+    {
+      "bytes": 0,
+      "inode": 7087186,
+      "mtime_ns": 1792188713377441580,
+      "path": "/home/ubuntu/dario/local/neuron_cache/neuronxcc-2.27.5334.0+f702b353/MODULE_2417735372014519975+c4b1d492/model.hlo_module.pb.lock"
+    }
+  ],
+  "root_authorized_early_stop_after_invalid_loss": true,
+  "saved_original_trace": "trace2/group0",
+  "scope": "Old immutable FE full-model actual-driver scalar-loss diagnostic; engineering failure evidence",
+  "source_commit": "fe667bfced1562023c361706aba98feba26d86af",
+  "source_sha256": "88305fa181ef22bf21e9eb698e269fd299353ce67702fadd8d46369da48427a4",
+  "stop_utc": "2026-10-16T22:12:25.309142+00:00",
+  "wrapper_sha256": "3a81497078ac35f2dbfd25bc21a4cb615b44133f9b0972392723d7c00dab0c0f"
+}
