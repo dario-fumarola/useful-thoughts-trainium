@@ -135,6 +135,9 @@ def synthetic_frozen(tmp_path):
               'thought_arm':{'reward_horizon':1}}
     site={'model_dir':str(model),'records_file':str(records),'format_file':str(fmt),
           'world_size_per_arm':1,'gradient_accumulation':2,'deadline_utc':'2099-01-01T00:00:00Z'}
+    from weekend_thinking.runtime_policy import runtime_policy
+    site.update(runtime_policy_by_arm={arm:runtime_policy({}) for arm in ('vanilla','thought')},
+                checkpoint_interval_seconds=43200)
     frozen=freeze(tmp_path,proposal,site,experiment_id='unit-test-only',steps=2)
     return tmp_path,proposal,site,frozen
 

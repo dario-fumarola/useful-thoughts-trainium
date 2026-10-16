@@ -174,7 +174,8 @@ def cpu_worker_fixture(tmp_path, monkeypatch, *, condition="finite", arm="vanill
                                                   stop_id=fmt.stop_id, pad_id=fmt.pad_id)}))
     args = SimpleNamespace(qualify=True, model_dir=model_dir, records=records, format=formatted,
         max_steps=1, global_prefixes=1, diagnostic_cap=2, precision="fp32", arm=arm,
-        seed=1234, processes=1, resume=None, output=tmp_path / "run", stop_file=None)
+        seed=1234, processes=1, resume=None, output=tmp_path / "run", stop_file=None,
+        checkpoint_interval_seconds=43200)
     return args, model, events
 
 
@@ -186,6 +187,10 @@ def test_vanilla_step_does_not_access_thought_only_variables(tmp_path, monkeypat
     log = json.loads((args.output / "metrics.jsonl").read_text())
     assert log["counters"] == {"source_records": 1, "source_tokens": 3, "sampled_actions": 0}
     assert log["metrics"]["loss"] == 1.0
+    for key in ('clean', 'thought', 'gain', 'capped', 'abs_advantage', 'mean_signed_length'):
+        assert log['metrics'][key] is None
+    assert log['max_replay_logp_error'] is None
+    assert log['replay_audit_performed'] is False
 
 
 @pytest.mark.parametrize("condition,error", [

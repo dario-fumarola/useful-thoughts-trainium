@@ -27,6 +27,8 @@ from weekend_thinking.experiment import validate_qualification
 from weekend_thinking.order import seed_order, distributed_batch_indices
 from weekend_thinking.pretrained import load_base
 from train.neuron_backend import NeuronCausalBackend
+from weekend_thinking.runtime_policy import (MAX_CHECKPOINT_INTERVAL_SECONDS, checkpoint_due,
+                                             require_runtime_policy, runtime_policy)
 
 
 def validate_fixed_recipe(proposal, seed):
@@ -128,7 +130,7 @@ def verify_checkpoint(directory, expected_hash, world):
 
 def validate_resume_state(manifest, weights, saved, *, run_id, spec_hash, world,
                           rank, order_hash, arm, seed, batch, accumulation,
-                          precision):
+                          precision, execution_policy=None):
     """Reject mixed steps, ranks and C/R lineages before mutating a model.
 
     The frozen experiment and record order are intentionally shared by paired
@@ -147,6 +149,8 @@ def validate_resume_state(manifest, weights, saved, *, run_id, spec_hash, world,
     for key, expected in expected_shard.items():
         if saved.get(key) != expected:
             raise ValueError(f'Resume shard identity mismatch: {key}')
+    if execution_policy is not None:
+        require_runtime_policy(saved.get('runtime_policy'), execution_policy)
     optimizer = saved.get('optimizer', {})
     if not optimizer.get('sharded_master_weights') or not optimizer.get('base_state'):
         raise ValueError('Resume lacks FP32 masters or initialized optimizer moments')
@@ -157,12 +161,14 @@ def validate_resume_state(manifest, weights, saved, *, run_id, spec_hash, world,
         raise ValueError('Resume counters do not match the completed step')
 
 
-def validate_resume_run(output, *, arm, seed, spec_hash):
+def validate_resume_run(output, *, arm, seed, spec_hash, execution_policy=None):
     run = json.loads((output/'run.json').read_text())
     for key, expected in dict(run_id=output.name, arm=arm, seed=seed,
                               spec_hash=spec_hash).items():
         if run.get(key) != expected:
             raise ValueError(f'Resume output identity mismatch: {key}')
+    if execution_policy is not None:
+        require_runtime_policy(run.get('runtime_policy'), execution_policy)
 
 
 def parse_args():
@@ -183,7 +189,11 @@ def parse_args():
     p.add_argument('--diagnostic-cap', type=int, default=1024)
     p.add_argument('--precision', choices=['fp32','bf16'], default='fp32')
     p.add_argument('--processes', type=int, default=1)
+    p.add_argument('--checkpoint-interval-seconds', type=int,
+                   default=MAX_CHECKPOINT_INTERVAL_SECONDS)
     a = p.parse_args()
+    if not 1 <= a.checkpoint_interval_seconds <= MAX_CHECKPOINT_INTERVAL_SECONDS:
+        p.error('Checkpoint interval must be 1..43200 seconds')
     if a.qualify:
         if not 1 <= a.max_steps <= 32 or not 1 <= a.global_prefixes <= 128:
             p.error('Qualification bounded to 32 updates and 128 prefixes/update')
@@ -212,6 +222,7 @@ def worker(_index, a):
     from train.runtime_compat import configure_runtime, restore_syncfree_device_state
     from torch_xla.debug import metrics
     compat = configure_runtime()
+    execution_policy = runtime_policy()
     if not hasattr(torch, 'xla'):
         torch._register_device_module('xla', torch_xla)
     device = torch_xla.device()
@@ -228,12 +239,18 @@ def worker(_index, a):
             model_manifest_sha256=sha256_file(model_dir/'ASSET_MANIFEST.json'),
             records_sha256=sha256_file(records_path), format_sha256=sha256_file(fmt_path),
             source=source_fingerprint(Path.cwd()), learning_rate=1e-6,
-            betas=[.9,.95], eps=1e-8, weight_decay=.1)
+            betas=[.9,.95], eps=1e-8, weight_decay=.1,
+            runtime_policy=execution_policy,
+            checkpoint_interval_seconds=a.checkpoint_interval_seconds)
         deadline = None
     else:
         frozen = json.loads(a.frozen.read_text())
         receipt = json.loads(a.qualification.read_text())
         validate_fixed_recipe(frozen['proposal'], a.seed)
+        require_runtime_policy(frozen['site'].get('runtime_policy_by_arm', {}).get(a.arm),
+                               execution_policy)
+        if frozen['site'].get('checkpoint_interval_seconds') != a.checkpoint_interval_seconds:
+            raise ValueError('Checkpoint interval differs from frozen plan')
         if rank == 0:
             validate_qualification(Path.cwd(), frozen, receipt)
         xm.rendezvous('qualified')
@@ -257,11 +274,13 @@ def worker(_index, a):
             a.output.mkdir(parents=True, exist_ok=False)
             atomic_json(a.output/'run.json', dict(spec=spec, spec_hash=spec_hash,
                 run_id=a.output.name, arm=a.arm, seed=a.seed,
-                started_utc=utc_now(), compatibility=compat))
+                started_utc=utc_now(), compatibility=compat,
+                runtime_policy=execution_policy))
         elif not a.output.exists():
             raise ValueError('Resume requires the original run output')
         else:
-            validate_resume_run(a.output, arm=a.arm, seed=a.seed, spec_hash=spec_hash)
+            validate_resume_run(a.output, arm=a.arm, seed=a.seed, spec_hash=spec_hash,
+                                execution_policy=execution_policy)
     xm.rendezvous('output-ready')
     records = load_records(records_path, split='train')
     order = seed_order(records, a.seed)
@@ -302,7 +321,7 @@ def worker(_index, a):
         validate_resume_state(manifest, weights, saved, run_id=a.output.name,
             spec_hash=spec_hash, world=world, rank=rank, order_hash=order_hash,
             arm=a.arm, seed=a.seed, batch=batch, accumulation=accumulation,
-            precision=a.precision)
+            precision=a.precision, execution_policy=execution_policy)
         model.load_state_dict(weights['model'], strict=True)
         optimizer.load_state_dict(saved['optimizer'])
         restore_syncfree_device_state(optimizer)
@@ -312,6 +331,7 @@ def worker(_index, a):
     torch_xla.sync(wait=True)
     def parameter_sample():
         return torch.cat([p.detach().reshape(-1)[:32] for p in model.parameters()]).cpu()
+    last_checkpoint_time = time.monotonic()
     for step in range(start_step, steps):
         started = time.monotonic()
         if rank == 0:
@@ -319,6 +339,7 @@ def worker(_index, a):
         optimizer.zero_grad(set_to_none=True)
         before = parameter_sample()
         replay_error = 0.0
+        replay_audit_performed = False
         local = dict(loss=0., clean=0., thought=0., gain=0., actions=0., capped=0.,
                      abs_advantage=0., mean_signed_length=0., padded_decode_slots=0.)
         for micro, index in enumerate(distributed_batch_indices(step, rank, world, accumulation)):
@@ -344,6 +365,7 @@ def worker(_index, a):
                 if not bool(torch.isfinite(thought).all().cpu()) or not bool(torch.isfinite(clean).all().cpu()):
                     raise RuntimeError('Nonfinite reward before policy replay')
                 if micro == 0 and (a.qualify or step % 64 == 0):
+                    replay_audit_performed = True
                     # Recheck after real updates on rank-distinct real data.
                     # The qualification timing includes this extra audit work.
                     with torch.no_grad():
@@ -420,12 +442,19 @@ def worker(_index, a):
         values['loss'] /= world
         for key in ('clean','thought','gain','capped','abs_advantage','mean_signed_length'):
             values[key] /= batch
+        if a.arm == 'vanilla':
+            # No thought reader or reward was evaluated for C. Zero would
+            # falsely represent a measured likelihood or utility.
+            for key in ('clean','thought','gain','capped','abs_advantage','mean_signed_length'):
+                values[key] = None
         counters['source_records'] += batch
         counters['source_tokens'] += batch * (len(record.prefix)+1)
         counters['sampled_actions'] += int(counts['actions'])
         elapsed = time.monotonic()-started
         log = dict(step=step+1, arm=a.arm, elapsed_seconds=elapsed, gradient_norm=norm,
-                   metrics=values, max_replay_logp_error=max_replay_error,
+                   metrics=values,
+                   max_replay_logp_error=max_replay_error if replay_audit_performed else None,
+                   replay_audit_performed=replay_audit_performed,
                    sampled_parameter_update=sampled_update,
                    counters=counters.copy(), time_utc=utc_now(),
                    status='qualification' if a.qualify else 'science')
@@ -438,15 +467,20 @@ def worker(_index, a):
                        (deadline is not None and datetime.now(timezone.utc) >= deadline))
         decision = torch.tensor(int(should_stop), device=device)
         should_stop = bool(xm.all_reduce(xm.REDUCE_MAX, decision).cpu())
-        milestone = step+1 in {max(1,steps//4), max(1,steps//2),steps}
-        if milestone or should_stop:
+        save_due = checkpoint_due(step=step+1, total_steps=steps,
+            elapsed_seconds=time.monotonic()-last_checkpoint_time,
+            interval_seconds=a.checkpoint_interval_seconds)
+        save_due = bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(int(save_due), device=device)).cpu())
+        if save_due or should_stop:
             if shutil.disk_usage(a.output).free < 35*1024**3:
                 raise RuntimeError('Less than 35 GiB free before checkpoint; preserve previous checkpoint')
             save_checkpoint(a.output, model, optimizer, step+1,
                 dict(spec_hash=spec_hash, order_hash=order_hash, counters=counters,
                      arm=a.arm, seed=a.seed, global_batch=batch, accumulation=accumulation,
-                     banned_ids=list(banned), parameter_dtype='fp32', compute_dtype=a.precision),
+                     banned_ids=list(banned), parameter_dtype='fp32', compute_dtype=a.precision,
+                     runtime_policy=execution_policy),
                 rank, world, xm, device)
+            last_checkpoint_time = time.monotonic()
             if rank == 0:
                 (a.output/f'xla-metrics-{step+1:07d}.txt').write_text(metrics.metrics_report())
         if should_stop:

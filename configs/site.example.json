@@ -5,6 +5,11 @@
   "output_root": "local/runs",
   "world_size_per_arm": 32,
   "gradient_accumulation": 4,
+  "checkpoint_interval_seconds": 43200,
+  "runtime_policy_by_arm": {
+    "vanilla": null,
+    "thought": null
+  },
   "execution_mode": "parallel_only_after_isolation_check_else_sequential",
   "thought_visible_cores": null,
   "vanilla_visible_cores": null,

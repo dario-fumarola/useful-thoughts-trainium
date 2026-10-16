@@ -167,6 +167,23 @@ evaluation throughput. Include generation, scoring, replay, collectives, optimiz
 and device synchronization. No estimated times from FLOPs or only backward speed.
 Verify the compiler cache is reusable and no continuous shape churn remains.
 
+Record `weekend_thinking.runtime_policy.runtime_policy()` in each arm's resolved
+site configuration as `runtime_policy_by_arm.vanilla` and `.thought`. This captures
+the actual allowlisted environment, including unset values; it does not assume
+that a documented legacy cache variable works in this installed runtime. The
+driver binds the policy into qualification specs, run records and every saved
+optimizer shard, and rejects changes on resume. If the arms use different cache
+policies, measure both policies' complete-step costs; do not reuse timings from
+an unmeasured policy.
+
+Set `checkpoint_interval_seconds` in the site file and the matching driver flag
+(default43200). All ranks synchronize the save decision. Besides the existing
+quarter/half/terminal saves, a complete save occurs after12hours at the next
+update boundary; a slow single update can extend that interval. Copy the latest
+complete state to EBS with verified readback. Existing immutable qualification
+jobs retain their original schedule. Unmeasured C reward metrics and unaudited
+cache/replay errors are null, rather than apparent numerical measurements.
+
 Before the long pair, execute one genuine task inference item through each
 planned mode on the accelerator. Otherwise Sunday may arrive with training
 checkpoints but no evaluator. Do not postpone all evaluator integration until then.

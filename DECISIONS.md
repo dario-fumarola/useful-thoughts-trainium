@@ -65,3 +65,22 @@ Routine formatting changes do not need a decision entry.
 - Before multi-day runs, arrange complete checkpoints at least daily, with
   verified EBS copies of the latest complete state and each terminal result.
   Current immutable qualification jobs keep their original checkpoint schedule.
+
+## 2026-10-16 — runtime identity and checkpoint cadence before science
+
+- Device-memory diagnostics show that the documented legacy Neuron cache limit
+  does not control residency in this stack. The installed XLA LRU setting does;
+  its full-backward adequacy is still pending. Bind the actual allowlisted cache,
+  compiler and CPU-thread environment to each arm's qualification/specification,
+  run and resume state. Permit separately declared arm policies only with their
+  own measured costs. This changes operations, not the scientific objective.
+- Before multi-day science, add synchronized time-triggered complete saves every
+  12hours at update boundaries, in addition to the original milestones. Record
+  unmeasured C reward fields and unaudited replay errors as null. Qualify the new
+  source's actual warm updates and resume before freezing; CPU tests alone do not
+  establish that the added save-decision collective works on the accelerator.
+- Preserve the original failed CPU-vector-norm comparison. A full-gradient
+  Float64 reduction exposed a biased FP32 reference reduction and passed the
+  original tolerance against device update1. Recompute the three-update CPU
+  reference with accurate clipping as a separately identified lineage; do not
+  change the declared bound or overwrite the original result.

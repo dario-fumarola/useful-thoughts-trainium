@@ -93,6 +93,18 @@ def test_resume_accepts_matching_full_identity(resume_parts):
     validate_resume_state(manifest, weights, shard, **expected)
 
 
+def test_resume_rejects_missing_or_changed_runtime_policy(resume_parts):
+    from weekend_thinking.runtime_policy import runtime_policy
+    manifest, weights, shard, expected = resume_parts
+    policy = runtime_policy({'XLA_COMPILATION_CACHE_SIZE': '2'})
+    shard['runtime_policy'] = policy
+    validate_resume_state(manifest, weights, shard, execution_policy=policy, **expected)
+    for changed in (None, runtime_policy({'XLA_COMPILATION_CACHE_SIZE': '1'}), runtime_policy({})):
+        shard['runtime_policy'] = changed
+        with pytest.raises(ValueError, match='Runtime policy'):
+            validate_resume_state(manifest, weights, shard, execution_policy=policy, **expected)
+
+
 @pytest.mark.parametrize('field,value', [('arm', 'vanilla'), ('seed', 8),
     ('rank', 1), ('step', 2), ('world_size', 4), ('global_batch', 16),
     ('accumulation', 8), ('order_hash', 'other'), ('compute_dtype', 'fp32')])

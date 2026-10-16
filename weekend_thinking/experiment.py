@@ -8,6 +8,7 @@ from pathlib import Path
 from .artifacts import atomic_json, canonical_hash, sha256_file, source_fingerprint, utc_now, require_utc_deadline
 from .core import Format
 from .data import load_records
+from .runtime_policy import validate_site_runtime
 
 
 def _local(root: Path, value, label: str) -> Path:
@@ -22,6 +23,7 @@ def _local(root: Path, value, label: str) -> Path:
 
 def freeze(root: str | Path, proposal: dict, site: dict, *, experiment_id: str, steps: int) -> dict:
     root = Path(root).resolve()
+    validate_site_runtime(site)
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{2,80}", experiment_id):
         raise ValueError("Use a simple unique experiment ID, not a path.")
     if steps not in proposal['optimization']['step_budget_candidates']:
