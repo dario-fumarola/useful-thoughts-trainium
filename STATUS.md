@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 23:01 UTC
+# Current state — 2026-10-16 23:09 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -53,11 +53,12 @@ numerical diagnosis, not a retroactive v1 pass or a scientific result. Receipts:
 `validation/c_firstbatch_fp64_derivative_20261016.json` and
 `validation/c_fp32_gradient_discrepancy_20261016.json`.
 
-A distinct prospective **v2** is being prepared on held seed5678, with exact
-first128 training IDs fixed before outcomes. It compares a fresh ordinary C32
-first update against the full FP64 derivative. Preserve v1 FAIL. Freeze the
-loss/norm and global/per-parameter gradient criteria before launching. Seed5678
-is a new order, not necessarily disjoint data; report overlap explicitly.
+A distinct prospective **v2** is frozen and running on held seed5678. Exact
+first128 TRAIN IDs and all criteria were committed/pushed before outcomes;
+6/128 records overlap the old batch. It compares a fresh ordinary C32 first
+update against the full FP64 derivative. Preserve v1 FAIL. See
+`validation/c_fp32_accuracy_v2_20261016.json` and DECISIONS.md. All 11 targeted
+local formula/metric fixtures and independent source review pass.
 
 ## Active work and process ownership
 
@@ -81,18 +82,24 @@ actual restored state before sampling, run exactly update4, compare all32×4
 stochastic tapes and full post-update checkpoint. The prepared resume is not
 launched. Require ten complete steady updates before exposure selection.
 
-**Distributed agent:** prepare held-seed C32/FP64 validation, upper cores32–63;
-no seed5678 outcomes authorized until prospective criteria and IDs are committed.
-**Review agent:** independently freeze/review v2 criteria and exact batch.
+**Distributed agent: active held-seed validation**, upper cores32–63. C parent
+819512, timeout/PGID819509, launcher819498, tmux `dario-c-heldseed-001`.
+CPU FP64 worker819513, timeout/PGID819510, launcher819503, tmux
+`dario-f64-heldseed-001`. Both hard-deadline **2026-10-17 01:07:45 UTC** plus30s
+grace. Exact preparation SHA `26a6081f…2313d4b6`; state/receipts/launchers under
+`local/qualification/qwen-c-heldseed-001/`. No automatic retry. Comparator will
+receive a separate bounded release after both jobs complete.
+**Review agent:** completed independent v2 review; read-only review of possible
+lazy audit graph retention in R. No code edits or interruption while it compiles.
 Root owns integration, decisions and public pushes. Do not edit common active
 code during these jobs; later documentation commits do not alter its fingerprint.
 
 ## Immediate commands and remaining work
 
 ```bash
-tail -20 local/qualification/qwen-r-fp32-final-003.log
-cat local/qualification/qwen-r-fp32-final-003.state.json
-cat validation/c_fp32_final_resume_20261016.json
+python3 local/qualification/qwen-r-fp32-final-003.status.py
+cat local/qualification/qwen-c-heldseed-001/state.json
+cat local/qualification/qwen-c-heldseed-001/fp64.progress.json
 ```
 
 Complete the held-seed C numerical check and distributed R update/resume/timing.
