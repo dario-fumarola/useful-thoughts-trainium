@@ -207,6 +207,19 @@ the cached and full-sequence paths, preserving the old first-stop mask. A BF16
 trunk with FP32 head still fails at the same action, with error 0.226143. Thus a
 new rollout cannot hide the outlier, and head rounding is not a sufficient repair.
 Every token, metrics and provenance are saved in
-`local/qualification/p2-fixed-trace-fp32head-001/`. Full FP32 is being tested with
-the unchanged tighter 0.001 FP32 bound; no training update or tolerance relaxation
-was authorized by these failed checks.
+`local/qualification/p2-fixed-trace-fp32head-001/`.
+
+Full FP32 passed on the identical old actions with maximum error `2.8371811e-5`
+under the unchanged tighter `0.001` FP32 bound. At the original outlier itself,
+error fell to `-3.5762787e-6`; mean absolute error across all 2,934 active actions
+was `2.2654851e-7`. The complete 440.9-second cold probe and every-token tensors
+are preserved in `local/qualification/p2-fixed-trace-fullfp32-001/`.
+
+This controlled comparison supports using full FP32 computation for both arms
+before inspecting scientific training outcomes. The BF16 failures remain intact
+at the paths above. No bound was relaxed, and no random action change can explain
+the repair. The scientific objective remains untested. Observed steady forced
+decode was roughly twice as slow in FP32; these diagnostic loops exclude full
+training, and a production budget must still use complete optimizer timings.
+Current four-shot development evaluation uses full FP32 and keeps its interface
+changes explicitly separate from the training reader format.
