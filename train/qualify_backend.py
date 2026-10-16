@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from contextlib import nullcontext
 import json
+import math
 from pathlib import Path
 import time
 import torch
@@ -110,11 +111,32 @@ def main():
             loss = backend.replay_one_loss(prefix, rollout.actions[:,0],
                 rollout.action_mask[:,0], torch.tensor(.25, device=device),
                 fmt=fmt, temperature=.7, divisor=4)
+            # Match the real driver's materialization boundary, and retain the
+            # signed scalar: a positive gradient norm cannot detect sign errors.
+            report['backward_loss'] = float(loss.detach().cpu())
+            save()
+            if not math.isfinite(report['backward_loss']):
+                raise RuntimeError('Nonfinite policy loss before backward')
             loss.backward()
             torch_xla.sync(wait=True)
-            norm = torch.stack([p.grad.float().square().sum() for p in model.parameters()
-                                if p.grad is not None]).sum().sqrt().cpu().item()
+            gradients = list(model.named_parameters())
+            if any(p.grad is None for _,p in gradients):
+                raise RuntimeError('Missing full-model policy gradient')
+            squared = torch.stack([p.grad.float().square().sum() for _,p in gradients])
+            norm = float(squared.sum().sqrt().cpu())  # Preserve the original device norm definition.
+            host_squared = squared.cpu().double()
+            norms = host_squared.sqrt()
+            samples = torch.cat([p.grad.reshape(-1)[:32] for _,p in gradients]).cpu()
+            offset, signed = 0, {}
+            for name,p in gradients:
+                width = min(32,p.numel())
+                signed[name] = samples[offset:offset+width].tolist()
+                offset += width
+            report['parameter_gradient_norms'] = dict(zip((name for name,_ in gradients), norms.tolist()))
+            report['parameter_gradient_samples'] = signed
+            report['gradient_sample_width'] = 32
             report['backward_gradient_norm'] = norm
+            report['gradient_norm_host64_aggregate'] = float(host_squared.sum().sqrt())
             if not 0 < norm < 1e8:
                 raise RuntimeError('Backward gradient is zero or nonfinite')
         report['status'] = 'passed_trace'

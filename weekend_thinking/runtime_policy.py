@@ -47,8 +47,14 @@ def validate_site_runtime(site):
                    interval_seconds=site.get('checkpoint_interval_seconds'))
 
 
-def checkpoint_due(*, step, total_steps, elapsed_seconds, interval_seconds):
+def checkpoint_due(*, step, total_steps, elapsed_seconds, interval_seconds,
+                   resume_probe=False):
     if type(interval_seconds) is not int or not 1 <= interval_seconds <= MAX_CHECKPOINT_INTERVAL_SECONDS:
         raise ValueError('Checkpoint interval must be 1..43200 seconds')
-    return (step in {max(1, total_steps // 4), max(1, total_steps // 2), total_steps}
+    milestones = {max(1, total_steps // 4), max(1, total_steps // 2), total_steps}
+    if resume_probe:
+        # A bounded stochastic qualification needs an uninterrupted full-state
+        # counterpart immediately after its early checkpoint, not just tapes.
+        milestones.add(min(total_steps, max(1, total_steps // 4) + 1))
+    return (step in milestones
             or elapsed_seconds >= interval_seconds)

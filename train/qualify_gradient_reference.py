@@ -37,6 +37,8 @@ def main():
     criteria = dict(scope='one_saved_long_trajectory_gradient_reference',
         created_utc=utc_now(), accelerator_execution=False,
         compare_norm_atol=1e-5, compare_norm_rtol=5e-4,
+        gradient_sample_width=32, compare_sample_cosine_min=.9999,
+        compare_sample_relative_l2_max=.001,
         criterion='abs(device_norm - CPU_float64_reduction_norm) <= atol + rtol * CPU_norm',
         qualification='Reference and criterion only; hardware result must be compared separately.')
     atomic_json(args.out / 'criteria.json', criteria)
@@ -75,12 +77,13 @@ def main():
     if not bool(torch.isfinite(loss)):
         raise ValueError('Nonfinite reference loss.')
     loss.backward()
-    norms, squared_total = {}, 0.0
+    norms, samples, squared_total = {}, {}, 0.0
     for name, parameter in model.named_parameters():
         gradient = parameter.grad
         if gradient is None or not bool(torch.isfinite(gradient).all()):
             raise ValueError(f'Missing/nonfinite reference gradient: {name}')
         flat = gradient.detach().reshape(-1)
+        samples[name] = flat[:criteria['gradient_sample_width']].tolist()
         squared = 0.0
         for start in range(0, flat.numel(), 8*1024*1024):
             squared += float(flat[start:start+8*1024*1024].double().square().sum())
@@ -88,12 +91,14 @@ def main():
         squared_total += squared
     report.update(status='completed', loss=float(loss.detach()),
         full_gradient_norm_float64=math.sqrt(squared_total), parameter_gradient_norms_float64=norms,
+        parameter_gradient_samples=samples,
         unique_parameters=sum(p.numel() for p in model.parameters()),
         active_actions=int(mask.sum()), input_tokens=x.shape[1],
         elapsed_seconds=time.monotonic()-started, finished_utc=utc_now())
     atomic_json(args.out / 'reference.json', report, overwrite=True)
     print(json.dumps({key: value for key, value in report.items()
-                      if key != 'parameter_gradient_norms_float64'}, indent=2), flush=True)
+                      if key not in {'parameter_gradient_norms_float64',
+                                     'parameter_gradient_samples'}}, indent=2), flush=True)
 
 
 if __name__ == '__main__':

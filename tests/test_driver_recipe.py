@@ -87,7 +87,10 @@ def cpu_worker_fixture(tmp_path, monkeypatch, *, condition="finite", arm="vanill
             assert arm == "thought", "Vanilla branch called the thought sampler"
             actions = torch.tensor([[[7, 5]] * 4])
             return Rollouts(actions, torch.ones_like(actions, dtype=torch.bool),
-                            torch.zeros_like(actions, dtype=torch.float32), 0)
+                            torch.zeros_like(actions, dtype=torch.float32), 0, 2)
+
+        def replay(self, prefix, rollout, **kwargs):
+            return rollout.behavior_logps.clone()
 
         def score(self, prefix, future, rollout, **kwargs):
             assert arm == "thought", "Vanilla branch called the reward reader"
@@ -160,7 +163,7 @@ def cpu_worker_fixture(tmp_path, monkeypatch, *, condition="finite", arm="vanill
     monkeypatch.setattr(compatibility, "configure_runtime", lambda: {"cpu_fixture": True})
     monkeypatch.setattr(driver, "NeuronCausalBackend", Backend)
     tokenizer = SimpleNamespace(get_vocab=lambda: {str(i): i for i in range(13)},
-                                decode=lambda values: " ".join(map(str, values)))
+                                decode=lambda values, **kwargs: " ".join(map(str, values)))
     monkeypatch.setattr(driver, "load_base", lambda path: (model, tokenizer))
     monkeypatch.setattr(driver, "source_fingerprint", lambda path: {"cpu_fixture": True})
     monkeypatch.setattr(driver, "save_checkpoint", lambda *args, **kwargs: events.checkpoints.append(args[3]))
@@ -191,6 +194,25 @@ def test_vanilla_step_does_not_access_thought_only_variables(tmp_path, monkeypat
         assert log['metrics'][key] is None
     assert log['max_replay_logp_error'] is None
     assert log['replay_audit_performed'] is False
+
+
+def test_thought_qualification_saves_exact_behavior_tape_after_backward(tmp_path, monkeypatch):
+    args, model, events = cpu_worker_fixture(tmp_path, monkeypatch, arm='thought')
+    original = driver.stream_save
+    def save_after_backward(path, value):
+        assert events.replay_calls == 4
+        original(path, value)
+    monkeypatch.setattr(driver, 'stream_save', save_after_backward)
+    driver.worker(0, args)
+    tape = torch.load(args.output/'qualification-tapes'/'step-0000001'/
+                      'rank-00000-micro-000.pt', weights_only=True)
+    assert tape['schema'] == 'qualification-rollout-v1'
+    assert (tape['rank'], tape['micro'], tape['step'], tape['record_id']) == (0, 0, 1, 'r')
+    assert tape['behavior_logps'].shape == tape['actions'].shape == (1, 4, 2)
+    assert torch.equal(tape['actions'], torch.tensor([[[7, 5]] * 4]))
+    assert torch.equal(tape['lengths'], torch.tensor([[2, 2, 2, 2]]))
+    assert not tape['behavior_logps'].requires_grad
+    assert tape['behavior_logps'].device.type == 'cpu'
 
 
 @pytest.mark.parametrize("condition,error", [

@@ -85,9 +85,10 @@ def stream_save(path, value):
     os.replace(temp, path)
 
 
-def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, device):
-    directory = output/f'step-{step:07d}'
-    directory.mkdir(exist_ok=True)
+def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, device,
+                    *, checkpoint_root=None):
+    directory = (output if checkpoint_root is None else checkpoint_root)/f'step-{step:07d}'
+    directory.mkdir(parents=True, exist_ok=True)
     xm.rendezvous(f'checkpoint-{step}-start')
     if rank == 0:
         # Tied weights use a single CPU tensor storage in the saved dictionary.
@@ -329,6 +330,17 @@ def worker(_index, a):
         xm.set_rng_state(saved['rng']['device'], device)
         start_step, counters = saved['step'], saved['counters']
     torch_xla.sync(wait=True)
+    def checkpoint_state():
+        return dict(spec_hash=spec_hash, order_hash=order_hash, counters=counters.copy(),
+                    arm=a.arm, seed=a.seed, global_batch=batch, accumulation=accumulation,
+                    banned_ids=list(banned), parameter_dtype='fp32', compute_dtype=a.precision,
+                    runtime_policy=execution_policy)
+    if a.qualify and a.resume is not None:
+        # Read back ACTUAL restored device state before the next sampling call.
+        # Merely comparing cloned input files would not verify the restore.
+        save_checkpoint(a.output, model, optimizer, start_step, checkpoint_state(),
+                        rank, world, xm, device,
+                        checkpoint_root=a.output/'resume-restored')
     def parameter_sample():
         return torch.cat([p.detach().reshape(-1)[:32] for p in model.parameters()]).cpu()
     last_checkpoint_time = time.monotonic()
@@ -396,6 +408,24 @@ def worker(_index, a):
                     ('abs_advantage',advantage.abs().mean()),
                     ('mean_signed_length',(advantage*lengths).mean())]:
                     local[key] += float(value.cpu())
+                if a.qualify:
+                    # Persist AFTER this micro's backwards and synchronization.
+                    # Diagnostic transfers must not change program residency
+                    # before the memory-sensitive backward being qualified.
+                    tape_dir = a.output/'qualification-tapes'/f'step-{step+1:07d}'
+                    tape_dir.mkdir(parents=True, exist_ok=True)
+                    stream_save(tape_dir/f'rank-{rank:05d}-micro-{micro:03d}.pt',
+                        dict(schema='qualification-rollout-v1', run_id=a.output.name,
+                             spec_hash=spec_hash, order_hash=order_hash, arm=a.arm,
+                             seed=a.seed, step=step+1, rank=rank, world_size=world,
+                             micro=micro, global_batch=batch, accumulation=accumulation,
+                             record_id=record.id, ordered_record_index=index,
+                             policy_version=rollout.policy_version, temperature=.7,
+                             decode_iterations=rollout.decode_iterations,
+                             actions=rollout.actions, action_mask=rollout.action_mask,
+                             behavior_logps=rollout.behavior_logps,
+                             clean=clean, thought=thought, advantages=advantage,
+                             lengths=lengths))
                 if rank == 0 and micro == 0:
                     host_actions = rollout.actions.cpu()
                     host_mask = rollout.action_mask.cpu()
@@ -469,17 +499,14 @@ def worker(_index, a):
         should_stop = bool(xm.all_reduce(xm.REDUCE_MAX, decision).cpu())
         save_due = checkpoint_due(step=step+1, total_steps=steps,
             elapsed_seconds=time.monotonic()-last_checkpoint_time,
-            interval_seconds=a.checkpoint_interval_seconds)
+            interval_seconds=a.checkpoint_interval_seconds,
+            resume_probe=a.qualify and a.arm == 'thought')
         save_due = bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(int(save_due), device=device)).cpu())
         if save_due or should_stop:
             if shutil.disk_usage(a.output).free < 35*1024**3:
                 raise RuntimeError('Less than 35 GiB free before checkpoint; preserve previous checkpoint')
             save_checkpoint(a.output, model, optimizer, step+1,
-                dict(spec_hash=spec_hash, order_hash=order_hash, counters=counters,
-                     arm=a.arm, seed=a.seed, global_batch=batch, accumulation=accumulation,
-                     banned_ids=list(banned), parameter_dtype='fp32', compute_dtype=a.precision,
-                     runtime_policy=execution_policy),
-                rank, world, xm, device)
+                            checkpoint_state(), rank, world, xm, device)
             last_checkpoint_time = time.monotonic()
             if rank == 0:
                 (a.output/f'xla-metrics-{step+1:07d}.txt').write_text(metrics.metrics_report())

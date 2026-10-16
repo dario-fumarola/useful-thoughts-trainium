@@ -269,7 +269,11 @@ class NeuronCausalBackend:
             sl = slice(start, start + self.head_chunk)
             total = total + checkpoint(part, hidden[:, sl], actions[:, sl], mask[:, sl],
                                        use_reentrant=True, preserve_rng_state=False)
-        return -advantage.detach() * total / mask.sum().clamp_min(1) / divisor
+        # This installed Neuron stack returns -1 from S64 clamp_min(1).
+        # FP32 represents every possible action count (<=1024) exactly and
+        # preserves signed sequence normalization without that integer clamp.
+        length = mask.float().sum().clamp_min(1.0)
+        return -advantage.detach() * total / length / divisor
 
     def vanilla_loss(self, prefix_ids, future_ids):
         """Train the raw prefix and exactly one real future token."""

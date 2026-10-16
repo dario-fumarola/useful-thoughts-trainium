@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-10-16T22:12:35+00:00",
+  "defect": {
+    "expected_counts": [
+      1,
+      8,
+      1024
+    ],
+    "expression": "bool_mask.sum().clamp_min(1)",
+    "logical_dtype": "int64",
+    "loss_materialization_repairs_defect": false,
+    "observed_denominator": -1,
+    "signed_1024_example": {
+      "cpu_loss": -0.1705465018749237,
+      "device_loss": 174.6398162841797,
+      "selected_gradients": {
+        "hidden_gradient": {
+          "cpu": [
+            4.34290268458426e-06,
+            6.600527740374673e-06
+          ],
+          "device": [
+            -0.004447131417691708,
+            -0.006758892443031073
+          ]
+        },
+        "weight_gradient": {
+          "cpu": [
+            -0.0004348097136244178,
+            0.0
+          ],
+          "device": [
+            0.44524455070495605,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "evidence": {
+    "checkpoint-upstream-002": {
+      "criteria_sha256": "0bd8bc225fdc995da42908beff3e04e556a5321dda4ebe897a56d1ac39babc53",
+      "report_sha256": "66722c62e7bff1c0fe49d081c6a521341f9abae0fa191eb27df56927d964398c",
+      "status": "FAIL",
+      "worker_sha256": "2ac368179d9952b172f79358aec156551f168ae7d93cc843301008c2b116e132"
+    },
+    "checkpoint-upstream-float-001": {
+      "criteria_sha256": "9bfee05c905c3711e1c00570e74eb7faec9b5b4df4560e8c691a095d9f0c562b",
+      "report_sha256": "d4266eec890105e5efa5215f3eb2d500875621391dcd86c2464c00bef83285e5",
+      "status": "FAIL",
+      "worker_sha256": "2bd5a2ad7b97e7ef9e348f84628a5f316a30c6ab1e00cf18d98e35916bc6d7d4"
+    },
+    "checkpoint-upstream-float-fixed-001": {
+      "criteria_sha256": "132a0bdbbf9242986ff33e524137dbe2d8e0a93eb6103c6b22d9d0bdaf3de36d",
+      "report_sha256": "b6bb5b2b47a7f6bf4250dc7ddf906c746b00e91e55043b3d97ccdd3d562c0640",
+      "status": "PASS",
+      "worker_sha256": "47e9746cf39754bfd69866b9e78f8b6db3ad2d4444211a30c1b5392b4f993edf"
+    }
+  },
+  "local_summary": {
+    "path": "local/qualification/checkpoint-upstream-summary-001.json",
+    "sha256": "e877f47c2f6f2761cb3c9770541407fa931741675098eff9a1ea81cd7b9b8a9b"
+  },
+  "preserved_limitations": [
+    "This fixture has vocabulary17 and hidden width8 rather than actual released Qwen weights.",
+    "Full-model repaired-path gradient/loss parity and distributed update/resume gates remain necessary.",
+    "No scientific train/dev/test outcome was inspected by these numeric tests.",
+    "The separate physical-length1/8 tiny head fixtures still fail their weight-gradient check after the count repair; their failures are preserved.",
+    "The repaired released-Qwen full gradient, real distributed R updates and stochastic resume are still pending."
+  ],
+  "repair": {
+    "active_counts": [
+      1,
+      8,
+      1024
+    ],
+    "exact_representable_counts": "All integer action counts through the cap1024 are exact in FP32.",
+    "expression": "bool_mask.float().sum().clamp_min(1.0)",
+    "head_chunk": 32,
+    "mathematical_objective_changed": false,
+    "max_errors": {
+      "hidden_gradient": 2.0489096641540527e-08,
+      "loss": 1.9371509552001953e-07,
+      "weight_gradient": 1.3504177331924438e-08
+    },
+    "passed_cases": 6,
+    "paths": [
+      "untouched_lazy_loss",
+      "loss_materialized_before_backward"
+    ],
+    "physical_cap": 1024,
+    "rtol": 1e-05,
+    "scalar_and_all_gradient_coordinate_atol": 1e-06
+  },
+  "scientific_R_launched": false,
+  "scope": "Installed-device sequence-normalization defect and fixed-shape repair; not full-model qualification"
+}

@@ -47,3 +47,12 @@ def test_freeze_requires_complete_per_arm_runtime_and_finite_checkpoint_interval
                     dict(site, runtime_policy_by_arm={'thought': policy})):
         with pytest.raises(ValueError):
             validate_site_runtime(invalid)
+
+
+def test_stochastic_qualification_saves_first_postresume_state():
+    arguments = dict(total_steps=14, elapsed_seconds=1, interval_seconds=43200)
+    ordinary = [step for step in range(1, 15) if checkpoint_due(step=step, **arguments)]
+    probe = [step for step in range(1, 15)
+             if checkpoint_due(step=step, resume_probe=True, **arguments)]
+    assert ordinary == [3, 7, 14]
+    assert probe == [3, 4, 7, 14]

@@ -72,6 +72,23 @@ def test_stream_save_cannot_overwrite_checkpoint(tmp_path):
     assert torch.load(path, weights_only=True)['value'].item() == 1.0
 
 
+def test_readback_location_preserves_original_run_identity(tmp_path):
+    model = torch.nn.Linear(3, 2)
+    model.config = SimpleNamespace(tie_word_embeddings=False)
+    optimizer = torch.optim.AdamW(model.parameters())
+    output = tmp_path/'original-run'
+    restored = output/'resume-restored'
+    xm = FakeXM(restored/'step-0000003')
+    directory = save_checkpoint(output, model, optimizer, 3,
+                                dict(spec_hash='spec'), 0, 1, xm, 'cpu',
+                                checkpoint_root=restored)
+    manifest = verify_checkpoint(directory, 'spec', 1)
+    weights = torch.load(directory/'model.pt', weights_only=True)
+    assert manifest['run_id'] == weights['run_id'] == 'original-run'
+    assert manifest['step'] == weights['step'] == 3
+    assert not (output/'step-0000003').exists()
+
+
 @pytest.fixture
 def resume_parts():
     expected = dict(run_id='run', spec_hash='spec', world=2, rank=0,

@@ -1,5 +1,6 @@
 """CPU parity with tiny Qwen architecture; never presented as device evidence."""
 import torch
+import pytest
 from transformers import Qwen3Config, Qwen3ForCausalLM
 
 from train.neuron_backend import NeuronCausalBackend, pack_reader
@@ -57,14 +58,16 @@ def test_cached_actions_replay_and_score():
     assert torch.allclose(actual[0], ref, atol=1e-5)
 
 
-def test_checkpointed_trunk_and_head_gradients_match_full_logits():
+@pytest.mark.parametrize('advantage', [-.4, .25])
+@pytest.mark.parametrize('tokens', [[5, 0, 0, 0], [7, 8, 5, 0], [7, 8, 9, 10]])
+def test_checkpointed_trunk_and_head_gradients_match_full_logits(advantage, tokens):
     m = model()
     fmt = Format((2,), (3,), 5, 0)
     backend = NeuronCausalBackend(m, head_chunk=2, checkpoint_trunk=True)
     prefix = torch.tensor([[10, 11, 12]])
-    actions = torch.tensor([[7, 8, 5, 0]])
-    mask = action_mask(actions, 5).float()
-    loss = backend.replay_one_loss(prefix, actions, mask, torch.tensor(-0.4),
+    actions = torch.tensor([tokens])
+    mask = action_mask(actions, 5)
+    loss = backend.replay_one_loss(prefix, actions, mask, torch.tensor(advantage),
                                   fmt=fmt, temperature=0.7, divisor=4)
     loss.backward()
     grads = {k:p.grad.clone() for k,p in m.named_parameters()}
@@ -72,7 +75,7 @@ def test_checkpointed_trunk_and_head_gradients_match_full_logits():
     x = torch.cat((prefix, torch.tensor([[2]]), actions[:,:-1]), -1)
     logits = m(x).logits[:, 3:]
     lp = policy_log_probs(logits, .7).gather(-1, actions[:,:,None])[:,:,0]
-    ref = -torch.tensor(-.4) * (lp * mask).sum() / mask.sum() / 4
+    ref = -torch.tensor(advantage) * (lp * mask).sum() / int(mask.sum()) / 4
     ref.backward()
     assert torch.allclose(loss, ref, atol=1e-6)
     for k,p in m.named_parameters():

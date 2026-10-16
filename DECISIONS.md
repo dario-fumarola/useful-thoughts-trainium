@@ -84,3 +84,26 @@ Routine formatting changes do not need a decision entry.
   original tolerance against device update1. Recompute the three-update CPU
   reference with accurate clipping as a separately identified lineage; do not
   change the declared bound or overwrite the original result.
+
+## 2026-10-16 — repair observed device sequence normalization before R
+
+- The installed XLA LRU limit allows the original full-cap backward to fit in
+  memory. Its norm nevertheless differs from the independent CPU reference by
+  roughly1024 times. Preserve that failed numerical result; R remains gated.
+- A reduced device test establishes that the raw int64 mask count is correct,
+  but its `clamp_min(1)` returns -1. Both signed losses and gradients reverse
+  direction and lose the length normalization. Materializing loss first does
+  not repair this defect. Use `mask.float().sum().clamp_min(1.0)` instead: counts
+  through1024 are exactly representable. All six fixed-cap1024/head-chunk32
+  cases (active lengths1/8/1024, both materialization paths) pass the original
+  scalar/full-input/full-head gradient bounds. Separate short-shape failures
+  remain retained. Receipt: `validation/p2_integer_length_clamp_20261016.json`.
+- This is an implementation correction to the existing signed normalized
+  objective, before any scientific R run. Require actual repaired full-Qwen
+  loss/norm and signed-gradient sample agreement before launching R qualification.
+  Keep the original norm bound; add prospectively declared sample cosine/L2
+  checks because a norm cannot detect a sign reversal.
+- Qualification R saves every rank/micro's rollout/reward tape after backward,
+  and saves the first post-resume baseline checkpoint (R14:3/4/7/14). A resume
+  also exports actual restored state before sampling, then verifies the first
+  resumed actions and full post-update state under the original tight bounds.
