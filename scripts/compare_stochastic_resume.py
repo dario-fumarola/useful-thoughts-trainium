@@ -60,7 +60,7 @@ def compare_tapes(actual, expected):
                  actual_shape=list(a.shape), expected_dtype=str(e.dtype), actual_dtype=str(a.dtype))
             continue
         different = a.ne(e)
-        if bool(different.any()):
+        if not torch.equal(a.contiguous().view(torch.uint8), e.contiguous().view(torch.uint8)):
             result['exact'] = False
         if field not in FLOAT_FIELDS:
             if bool(different.any()):
@@ -141,8 +141,11 @@ def compare_runs(baseline, resumed, *, resume_step, criteria_path):
             or baseline.name != resumed.name or baseline.name != run.get('run_id')):
         raise ValueError('Require the same immutable FP32 thought qualification run')
     world, batch = spec['world_size'], spec['global_prefixes']
-    if (type(world) is not int or type(batch) is not int or world < 1 or batch % world
-            or type(resume_step) is not int or not 1 <= resume_step < spec['steps']):
+    cap, steps = spec.get('cap'), spec.get('steps')
+    if (type(world) is not int or type(batch) is not int or world < 1 or batch < world
+            or batch % world or type(cap) is not int or not 1 <= cap <= 1024
+            or type(steps) is not int or steps < 1
+            or type(resume_step) is not int or not 1 <= resume_step < steps):
         raise ValueError('Invalid resume step/topology')
     checkpoint = f'step-{resume_step:07d}/COMPLETE.json'
     manifest = read_json(baseline/checkpoint)
@@ -180,15 +183,18 @@ def compare_runs(baseline, resumed, *, resume_step, criteria_path):
             out.update(status='FAIL', **{'pass':False}, first_divergence=dict(
                 kind='coverage', side=side, missing=sorted(names-actual), unexpected=sorted(actual-names)))
             return out
-    for rank in range(world):
-        for micro in range(accumulation):
+    # This is the global record order: all ranks of micro0 precede micro1.
+    for micro in range(accumulation):
+        for rank in range(world):
             name = f'rank-{rank:05d}-micro-{micro:03d}.pt'
             paths = [root/relative/name for root in (baseline,resumed)]
-            row = dict(rank=rank, micro=micro, baseline_sha256=sha256_file(paths[0]),
-                       resumed_sha256=sha256_file(paths[1]))
+            row = dict(rank=rank, micro=micro)
             try:
-                if any(p.is_symlink() for p in paths) or paths[0].samefile(paths[1]):
+                if any(p.is_symlink() or not p.is_file() for p in paths):
+                    raise ValueError('Tape must be an ordinary file, without symlinks')
+                if paths[0].samefile(paths[1]):
                     raise ValueError('Resume tape aliases baseline evidence')
+                row.update(baseline_sha256=sha256_file(paths[0]), resumed_sha256=sha256_file(paths[1]))
                 tapes = [torch.load(p, map_location='cpu', weights_only=True) for p in paths]
                 for tape in tapes:
                     validate_tape(tape, run=run, order_hash=order_hash, step=step, rank=rank, micro=micro)

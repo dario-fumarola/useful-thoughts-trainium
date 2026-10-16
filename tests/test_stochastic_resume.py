@@ -100,6 +100,24 @@ def test_numeric_within_predeclared_bound_passes_but_is_not_exact(outputs):
     assert result['pass'] and not result['all_tapes_bitwise_equal']
 
 
+def test_signed_zero_is_numerically_equal_but_not_bitwise(outputs):
+    for root in outputs[0]:
+        path = root/'qualification-tapes/step-0000004/rank-00000-micro-000.pt'
+        tape = torch.load(path,weights_only=True)
+        tape['behavior_logps'].zero_()
+        torch.save(tape,path)
+    mutate(outputs,'behavior_logps',lambda x:-x,rank=0,micro=0)
+    result = compare(outputs)
+    assert result['pass'] and not result['all_tapes_bitwise_equal']
+
+
+def test_first_divergence_follows_micro_then_rank_global_order(outputs):
+    mutate(outputs,'actions',lambda x:x+1,rank=0,micro=1)
+    mutate(outputs,'actions',lambda x:x+1,rank=1,micro=0)
+    result = compare(outputs)
+    assert (result['first_divergence']['micro'],result['first_divergence']['rank']) == (0,1)
+
+
 @pytest.mark.parametrize('field,change',[
     ('policy_version',lambda x:x+1),('ordered_record_index',lambda x:x+1),
     ('order_hash',lambda x:'b'*64),('decode_iterations',lambda x:x-1),
@@ -126,6 +144,31 @@ def test_baseline_tape_hardlink_is_not_fresh_process_evidence(outputs):
     (roots[1]/relative).hardlink_to(roots[0]/relative)
     result = compare(outputs)
     assert not result['pass'] and 'aliases' in result['first_divergence']['error']
+
+
+@pytest.mark.parametrize('kind',['directory','broken_symlink'])
+def test_nonfile_tape_retains_invalid_input_failure(outputs,kind):
+    path = outputs[0][1]/'qualification-tapes/step-0000004/rank-00001-micro-001.pt'
+    path.unlink()
+    if kind == 'directory':
+        path.mkdir()
+    else:
+        path.symlink_to('missing-tape.pt')
+    result = compare(outputs)
+    assert not result['pass']
+    assert result['first_divergence']['kind'] == 'invalid_tape'
+
+
+@pytest.mark.parametrize('field,value',[('global_prefixes',0),('cap',0),('steps',0)])
+def test_coherently_hashed_empty_or_invalid_topology_cannot_pass(outputs,field,value):
+    for root in outputs[0]:
+        path = root/'run.json'
+        run = json.loads(path.read_text())
+        run['spec'][field] = value
+        run['spec_hash'] = canonical_hash(run['spec'])
+        path.write_text(json.dumps(run))
+    with pytest.raises(ValueError,match='Invalid resume step/topology'):
+        compare(outputs)
 
 
 def test_relaxed_criteria_and_changed_resume_manifest_rejected(outputs):
