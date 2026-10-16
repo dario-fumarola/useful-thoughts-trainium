@@ -157,3 +157,33 @@ than a reproduction of all published settings.
 4. Measure ten complete target-shape updates and run one genuine downstream
    inference item before committing a long exposure. Revisit engineering choices
    using evidence, while keeping scientific recipe changes explicitly identified.
+
+## Downstream evaluator and prompt qualification
+
+`train/evaluate.py` now generates question-only GSM8K predictions on the real
+accelerator, with direct, one-greedy-thought and empty-format modes. It records
+actual model/tokenizer/checkpoint hashes, exact prompt/action IDs, decoded text,
+stop reasons and per-item timing. Errors and truncations remain explicit rows;
+gold scoring runs separately. Official test generation requires an exact frozen
+protocol receipt. Static CPU-built prefill padding avoids variable-length device
+slice graphs; cached decode overwrites padding at the true continuation position.
+
+Development artifacts are under `local/evaluation/`. Initial two-shot checks used
+TRAIN demonstrations 00000/00001 and predetermined held TRAIN items 00002–00006.
+The first thought reader continued into an unrelated question after a completed
+thought answer. Its failure is preserved in `dev-thought-001`. The repaired reader
+repeats the current question after thought close using a fixed instruction.
+`dev-thought-002` preserves all five results, including two format errors and
+copies of demonstration answers. These diagnose the base-model task interface;
+they are not scientific benchmark results. No final test items were evaluated.
+
+Primary-source prompt review changes the next proposed protocol: the
+[Qwen3 report §3.3](https://arxiv.org/html/2505.09388v1#S3.SS3) uses four-shot CoT
+for GSM8K, while its public evaluation directory does not supply that prompt.
+The [older official Qwen base prompt](https://github.com/QwenLM/Qwen/blob/ba2d85a13b28ed1ee0dde2d6c3e4d5a55dc5964c/eval/gsm8k_prompt.txt)
+supplies eight worked examples. Their questions exactly match pinned TRAIN rows
+4997, 4280, 3996, 1344, 6011, 328, 3809 and 2053, disjoint from held development.
+Its downloaded source/hash and matches are saved in
+`local/research/qwen-evaluation-20261016/`. A declared four-shot adaptation using
+the first four and explicit `####` final lines preserves our strict parser. This
+is a Qwen-family adaptation, not byte-identical reproduction of Qwen3's evaluation.
