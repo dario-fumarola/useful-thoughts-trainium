@@ -1,0 +1,95 @@
+{
+  "accelerator_execution": false,
+  "cpu_suite": {
+    "directory": "local/checks/tests.fWiehI",
+    "test_log_sha256": "3a9651b82dc63234e31cc9c7057344799bca1d3e7a9a2c40c7cab328f4c105cb",
+    "tests": 184,
+    "toy_smoke_sha256": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3"
+  },
+  "created_utc": "2026-10-16T21:01:19+00:00",
+  "generation": {
+    "directory": "local/qualification/local-audit-cpu-notes-001",
+    "notes_sha256": "9c62aecd66989bb5b57b9c14c0330c367451593d2917baf7a18d459729cc2472",
+    "report_sha256": "87b1da1b4123d1e8bd687e8e12506c9f34ac4ce54efe15a39f06afabe6e0f38e",
+    "summary": {
+      "items": 2,
+      "sampled_actions": 16,
+      "statuses": {
+        "ok": 2
+      }
+    },
+    "wall_seconds": 9.900004794999404
+  },
+  "horizons": [
+    1,
+    4,
+    16
+  ],
+  "limitations": [
+    "CPU plumbing only; no accelerator or 1024-action local-evaluation qualification.",
+    "Two already-fixed DEV documents and an eight-action cap are not a thought-utility estimate.",
+    "Actual distinct reader checkpoint crossing is established by tiny CPU CLI tests, not a trained scientific checkpoint.",
+    "Subsequent host-read/provenance hardening preserves numerical scoring; focused tests verify undecodable futures are untouched by generation and mixed writer/reader tags are rejected."
+  ],
+  "model_assets_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+  "model_id": "Qwen/Qwen3-1.7B-Base",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "modes": [
+    "raw",
+    "empty",
+    "own",
+    "filler",
+    "shuffled",
+    "other"
+  ],
+  "official_test_items_scored": 0,
+  "policy": "one_independent_sample_per_document_temperature_0.7",
+  "post_hardening_cpu_suite": {
+    "directory": "local/checks/tests.8RR4WP",
+    "test_log_sha256": "2f338cc4aabbbb1ed563a5c298a192f8a4480331ef29be042179dee698d8b743",
+    "tests": 184,
+    "toy_smoke_sha256": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3"
+  },
+  "post_hardening_real_header_check": {
+    "all_control_lengths_match": true,
+    "no_future_ids_decoded": true,
+    "prefix_hashes_match_original_notes": true,
+    "selected_prefixes": 2
+  },
+  "schema": "local-evaluation-cpu-v1",
+  "scope": "released_weight_FP32_CPU_local_audit_plumbing_only",
+  "scoring": {
+    "controls_sha256": "12ceebafa20a71e7cbb824073020d413132ca0965cbf87a11c902334d822e423",
+    "directory": "local/qualification/local-audit-cpu-scores-001",
+    "report_sha256": "c0229df670f683b9953cbbf625208c6fcd291eed042a345522ad4bbfa38dd38e",
+    "rows": 36,
+    "scores_sha256": "24523334de693deaef66fb67b388f105bcd3e478cee766e8443998ad8ddc5f2e",
+    "statuses": {
+      "ok": 36
+    },
+    "wall_seconds": 46.13933783500033
+  },
+  "selected_items": 2,
+  "selected_split": "dev",
+  "selection_sha256": "7f1b39e23d7f149dbaa030b32127235822647bc285e3d5e4ed2a1cc22667893c",
+  "source_commit": "29a20a0",
+  "source_hashes": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "e7e4f51d8cb1a333598d56d458549a487aaf35e819371c6f1d05292de34dd449",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "2439e87787687e669fcc52a7624e7fd36c5375eba8a66fa206fbd192e2fa8a0d",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "thought_cap": 8
+}

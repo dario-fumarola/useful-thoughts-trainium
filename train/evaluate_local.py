@@ -14,6 +14,7 @@ import json
 import math
 import os
 from pathlib import Path
+import re
 import time
 
 import torch
@@ -31,6 +32,7 @@ from weekend_thinking.stats import paired_cluster_bootstrap
 SCHEMA = "local_content_audit_v1"
 MODES = ("raw", "empty", "own", "filler", "shuffled", "other")
 HORIZONS = (1, 4, 16)
+RECORD_HEADER = re.compile(r'^\{\s*"id"\s*:\s*"([^"\\]+)"\s*,\s*"document_id"\s*:\s*"([^"\\]+)"\s*,\s*"split"\s*:\s*"(train|dev|test)"\s*,\s*"prefix"\s*:\s*')
 
 
 def read_jsonl(path: Path) -> list[dict]:
@@ -74,21 +76,27 @@ def load_selected(path: Path, selection: dict, *, include_future: bool) -> list[
         raise ValueError("Records differ from the frozen selection asset")
     expected = dict(zip(selection["item_ids"], selection["document_ids"]))
     rows = {}
+    decoder = json.JSONDecoder()
     with path.open() as stream:
         for line in stream:
             if not line.strip():
                 continue
-            obj = json.loads(line)
-            identifier = obj.get("id")
+            header = RECORD_HEADER.match(line)
+            if header is None:
+                raise ValueError("Expected canonical id/document_id/split/prefix record headers")
+            identifier, document_id, split = header.group(1, 2, 3)
             if identifier not in expected:
                 continue
-            if identifier in rows or obj.get("document_id") != expected[identifier] or obj.get("split") != selection["split"]:
+            if identifier in rows or document_id != expected[identifier] or split != selection["split"]:
                 raise ValueError("Selected record duplicate/document/split mismatch")
-            prefix = obj.get("prefix")
+            # Decode exactly one array; no selected or unselected future is
+            # parsed by the writer. Canonical write_records puts prefix first.
+            prefix, _ = decoder.raw_decode(line, header.end())
             if not isinstance(prefix, list) or not prefix or any(type(t) is not int or t < 0 for t in prefix):
                 raise ValueError("Invalid selected prefix")
-            row = dict(item_id=identifier, document_id=obj["document_id"], split=obj["split"], prefix=prefix)
+            row = dict(item_id=identifier, document_id=document_id, split=split, prefix=prefix)
             if include_future:
+                obj = json.loads(line)
                 future = obj.get("future")
                 if not isinstance(future, list) or len(future) < max(HORIZONS) or any(type(t) is not int or t < 0 for t in future):
                     raise ValueError("Every local record needs the complete 16-token future")
@@ -201,6 +209,12 @@ def construct_controls(selection: dict, notes: dict[str, dict], *, filler_ids: l
     return controls
 
 
+def model_binding(assets: dict, checkpoint: dict | None, final_identity: dict | None) -> dict:
+    """Stable identities without output paths, shared by all inference shards."""
+    return final_identity if final_identity is not None else dict(
+        base_assets_sha256=assets["sha256"], checkpoint_sha256=(checkpoint or {}).get("sha256"))
+
+
 def score_record(record: dict, controls: dict, note: dict, *, backend, fmt: Format,
                  total_width: int, first_target_text: str | None = None) -> list[dict]:
     """Every requested condition/horizon gets a row, including execution failures."""
@@ -241,11 +255,15 @@ def score_record(record: dict, controls: dict, note: dict, *, backend, fmt: Form
     return rows
 
 
-def summarize(rows: list[dict], expected_items: list[str], *, policy: str = "sample") -> dict:
+def summarize(rows: list[dict], expected_items: list[str], *, policy: str = "sample", crossed: bool = False) -> dict:
     expected = {(key, mode, horizon) for key in expected_items for mode in MODES for horizon in HORIZONS}
     keys = [(row["item_id"], row["mode"], row["horizon"]) for row in rows]
     if len(keys) != len(set(keys)) or set(keys) != expected:
         raise ValueError("Every selected item/condition/horizon must be present exactly once")
+    for field in ("protocol_sha256", "checkpoint_sha256", "model_identity_sha256", "writer_model_identity_sha256"):
+        present = [field in row for row in rows]
+        if (any(present) and not all(present)) or (all(present) and len({canonical_hash(row[field]) for row in rows}) != 1):
+            raise ValueError(f"Cannot combine mixed or partially tagged local conditions: {field}")
     groups = defaultdict(list)
     def valid(row):
         value = row.get("log_likelihood")
@@ -255,7 +273,7 @@ def summarize(rows: list[dict], expected_items: list[str], *, policy: str = "sam
     output = {}
     for (mode, horizon), values in groups.items():
         successful = [r["log_likelihood"] for r in values if valid(r)]
-        gains = [r["gain_over_raw_nats"] for r in values if isinstance(r.get("gain_over_raw_nats"), (int, float))
+        gains = [r["gain_over_raw_nats"] for r in values if valid(r) and isinstance(r.get("gain_over_raw_nats"), (int, float))
                  and math.isfinite(r["gain_over_raw_nats"])]
         output[f"{mode}_K{horizon}"] = dict(items=len(values), statuses=dict(Counter(r["status"] for r in values)),
             invalid_numeric_outcomes=sum(r["status"] == "ok" and not valid(r) for r in values),
@@ -280,7 +298,8 @@ def summarize(rows: list[dict], expected_items: list[str], *, policy: str = "sam
     return dict(items=len(expected_items), conditions=output,
         paired_document_contrasts=contrasts,
         primary=("own K=1: independent one-sample mean utility, not an oracle best-of statistic"
-                 if policy == "sample" else None),
+                 if policy == "sample" and not crossed else None),
+        crossed_writer_reader=crossed,
         writer_policy=policy, greedy_note="Greedy is a separate diagnostic, never the stochastic primary" if policy == "greedy" else None,
         failure_free=all(valid(row) for row in rows),
         failure_note="No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.")
@@ -371,6 +390,7 @@ def main():
         notes, writer = load_note_bundles(args.notes, selection, fmt)
         protocol.update(modes=list(MODES), horizons=list(HORIZONS), filler_text=args.filler_text,
             control_seed=args.control_seed, writer_protocol=writer["protocol"],
+            writer_model_identity=model_binding(writer["model"], writer["checkpoint"], writer["final_model_identity"]),
             other_note="next global selected item, cyclic repeat/trim to recipient content length; empty donor uses filler")
     protocol = json.loads(json.dumps(protocol))
     final_identity = None
@@ -402,6 +422,10 @@ def main():
         backend, tokenizer, checkpoint, signature, set_seed = setup_model(args, final_identity)
         report.update(checkpoint=checkpoint, model_fingerprint=signature,
                       visible_cores=os.environ.get("NEURON_RT_VISIBLE_CORES"))
+        reader_identity = model_binding(assets, checkpoint, final_identity)
+        writer_identity = protocol.get("writer_model_identity")
+        crossed = writer_identity is not None and writer_identity != reader_identity
+        report["crossed_writer_reader"] = crossed
         defined = set(tokenizer.get_vocab().values())
         format_ids = (*fmt.header_ids, *fmt.open_ids, *fmt.close_ids, fmt.stop_id, fmt.pad_id, *fmt.additional_stop_ids)
         if not set(format_ids) <= defined:
@@ -449,14 +473,17 @@ def main():
                                                           clean_up_tokenization_spaces=False))
                 for row in current:
                     row.update(protocol_sha256=report["protocol_sha256"],
-                        checkpoint_sha256=(checkpoint or {}).get("sha256"))
+                        checkpoint_sha256=(checkpoint or {}).get("sha256"),
+                        model_identity_sha256=canonical_hash(reader_identity))
+                    if args.command == "score":
+                        row["writer_model_identity_sha256"] = canonical_hash(writer_identity)
                     stream.write(json.dumps(row, allow_nan=False)+"\n")
                 stream.flush()
                 os.fsync(stream.fileno())
                 rows.extend(current)
                 print(json.dumps(dict(item_id=key, statuses=dict(Counter(r["status"] for r in current)))), flush=True)
         if args.command == "score":
-            report["summary"] = summarize(rows, local_ids, policy=writer["protocol"]["selection_policy"])
+            report["summary"] = summarize(rows, local_ids, policy=writer["protocol"]["selection_policy"], crossed=crossed)
             with (args.output/"controls.jsonl").open("x") as stream:
                 for key in local_ids:
                     stream.write(json.dumps(dict(item_id=key, **controls[key]))+"\n")

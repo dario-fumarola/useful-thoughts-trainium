@@ -45,6 +45,9 @@ is the note RNG seed; `--model-seed` is the trained checkpoint's seed. They have
 different meanings. A crossed reader only changes the reader checkpoint/identity
 and output path. All writer shard bundles must cover the global selection once,
 with identical generation protocols and checkpoint identities.
+The writer identity is explicit in the reader protocol and every score row;
+global summaries reject mixed writer/reader/protocol tags. Crossed readers are
+flagged as diagnostics and do not populate the same-model primary field.
 
 Before scientific scoring, the exact protocol and both writer/reader identities
 must pass the shared final-evaluation gates. Every target ID is restricted to the
@@ -86,6 +89,14 @@ generation, bundle integrity, the final gate before record loading, and an actua
 save/load/generate/score CLI round trip with a different reader checkpoint.
 This is implementation evidence; released-model accelerator execution and final
 test results remain separate requirements.
+
+Released Qwen3-1.7B-Base FP32 CPU execution also completed two already-fixed DEV
+items with one sampled eight-action note each, followed by all six reader
+conditions at K=1/4/16: 36 successful scores, zero errors. This is a short-cap
+plumbing qualification, not the 1,024-action scientific condition or an estimate
+of thought usefulness. Raw notes/scores and their report hashes are retained in
+`local/qualification/local-audit-cpu-{notes,scores}-001/`; the source revision for
+this execution is `29a20a0`, before the subsequent host-read/provenance hardening.
 
 Before the first scientific pair, the remaining substantive items are the actual
 global experiment/evaluation freeze, immutable-source qualification bridge,

@@ -77,6 +77,11 @@ def test_generation_loading_never_accesses_future_ids_and_checks_exact_global_co
     assert all("future" not in row for row in actual)
     with pytest.raises(ValueError, match="16-token future"):
         load_selected(path, selected, include_future=True)
+    # Even syntactically broken future fields are never decoded for generation.
+    broken = path.read_text().replace('"future": "deliberately invalid: generation must not read this"', '"future": UNDECODABLE')
+    path.write_text(broken)
+    assert len(load_selected(path, dict(selected, records_sha256=sha256_file(path)), include_future=False)) == 3
+    path.write_text("".join(json.dumps(row)+"\n" for row in rows))
     with pytest.raises(ValueError, match="incomplete"):
         load_selected(path, selection(("a", "missing"), records_sha256=sha256_file(path)), include_future=False)
     path.write_text(path.read_text()+json.dumps(rows[0])+"\n")
@@ -263,6 +268,7 @@ def test_real_tiny_asset_cli_saves_notes_and_crosses_to_a_different_reader_witho
     report = json.loads((output_scores/"run.json").read_text())
     assert report["status"] == "complete" and report["summary"]["failure_free"]
     assert report["summary"]["items"] == 2 and report["checkpoint"]["run_id"] == "fixture-reader"
+    assert report["crossed_writer_reader"] and report["summary"]["primary"] is None
     contrast = report["summary"]["paired_document_contrasts"]["own_minus_raw_K1"]
     assert contrast["items"] == contrast["documents"] == 2 and len(contrast["ci95"]) == 2
     assert report["writer"]["checkpoint"] is None
@@ -270,6 +276,10 @@ def test_real_tiny_asset_cli_saves_notes_and_crosses_to_a_different_reader_witho
     scored = [json.loads(line) for line in (output_scores/"scores.jsonl").read_text().splitlines()]
     assert all(row["first_target_token_id"] == 13 and row["first_target_token_text"] == "tok13" for row in scored)
     assert sha256_file(output_notes/"notes.jsonl") == notes_hash
+    mixed = [dict(row) for row in scored]
+    mixed[0]["writer_model_identity_sha256"] = "another-writer"
+    with pytest.raises(ValueError, match="mixed or partially tagged"):
+        summarize(mixed, ["a", "b"])
     next(row for row in scored if row["mode"] == "own" and row["horizon"] == 1)["log_likelihood"] = float("nan")
     invalid = summarize(scored, ["a", "b"])
     assert not invalid["failure_free"] and invalid["conditions"]["own_K1"]["invalid_numeric_outcomes"] == 1
