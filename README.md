@@ -38,9 +38,11 @@ in evaluation denominators, and report training and inference costs.
   correcting an integer upper-bound conversion in sequence normalization.
   The original failures and unchanged tolerances are preserved.
 - The 32-core continuation run completed 12 updates, including ten steady steps
-  averaging about 10 seconds. Checkpoint backup is verified. A restore-order RNG
-  repair passes its hardware test; full-model recovery is being checked. A strict
-  CPU per-value discrepancy is being investigated with a higher-precision reference.
+  averaging about 10 seconds. Full-model checkpoint
+  recovery now passes, including exact restored state and all 32 RNG states. The
+  original CPU per-weight comparison remains failed; an independent FP64 audit
+  motivates a separate validation on a new held seed. Distributed R updates and
+  stochastic recovery remain in progress.
 - Development-only math inference runs, including failed outputs, are retained.
 
 See [STATUS.md](STATUS.md) for active work and [DECISIONS.md](DECISIONS.md) for

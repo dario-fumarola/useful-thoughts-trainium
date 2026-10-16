@@ -1,129 +1,108 @@
-# Current state — 2026-10-16 22:51 UTC
+# Current state — 2026-10-16 23:01 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
-The owner authorizes sustained autonomous work, review agents, and this public
-repository: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
-isolated in `/home/ubuntu/dario`; original repositories remain unchanged. Weeks
-are available. The prospective 14-day science schedule is a planning limit, not
-an instance shutdown deadline (see DECISIONS.md).
+Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
+isolated in `/home/ubuntu/dario`; original repositories remain unchanged. The
+owner authorizes sustained autonomous work and review agents, with weeks available.
+The prospective 14-day science schedule is a planning limit, not a shutdown date.
 
-## Assets and completed checks
+## Completed evidence
 
-- Released Qwen3-1.7B-Base revision
-  `ea980cb0a6c2ae4b936e82123acc929f1cec04c1`, loaded from actual weights with
-  the original embedding tie. Both proposed arms use FP32.
-- Audited FineMath: **329,535 train / 18,360 dev / 18,239 test** records in
-  `local/data/finemath/production-500000.audit-v2.records.jsonl`.
-- Full-cap FP32 sampling/replay passes the unchanged .001 bound, including the
-  exact trajectory that failed BF16. No official benchmark test outcomes read.
-- C32 completed 12 real updates; ten steady updates averaged **10.17 seconds**.
-  Sampled replicas agree bitwise, actual weights change, initialized optimizer
-  fits (sampled peak 19.327 GiB). Checkpoints 3/6/12 are COMPLETE. Step 3 has a
-  verified full EBS copy at `local/backups/qwen-c-fp32-001/step-0000003`.
-- Accurate CPU Float64 gradient-norm reduction passes the original device norm
-  bound. However, the strict three-step CPU per-value model comparison still
-  **fails on 754 / 1,720,574,976 coordinates**, including after correcting CPU
-  clipping. Aggregate cosine and relative-L2 criteria pass but do not override
-  that failure. A tiny identical-gradient hardware AdamW test passes. Next:
-  Ordinary C32 checkpoint1 now locates the discrepancy before Adam: 689 of
-  those selected coordinates have opposite first-gradient signs (controls: 0).
-  The full first-gradient vectors have cosine .9999999644 and relative L2
-  error .0002707; selected errors remain unresolved. An independent FP64
-  arithmetic reference is being prepared. No failed criterion has been changed.
-- C32 fresh-process resume finished: full model, all 32 master/moment shards,
-  counters and metadata pass the unchanged numerical bounds. **Exact device
-  RNG fails on every rank**, each by exactly one XLA MarkStep seed transition.
-  Overall resume is therefore not qualified yet.
-- Development-only math inference is retained, including failures. CPU local
-  controls/crossed readers and secondary likelihood paths pass their plumbing
-  checks; their full-cap accelerator execution remains pending.
+- Released Qwen3-1.7B-Base revision `ea980cb0a6c2ae4b936e82123acc929f1cec04c1`,
+  actual weights and original embedding tie; FP32 in both proposed arms.
+- Audited FineMath production slice: **329,535 train / 18,360 dev / 18,239 test**.
+  Benchmark overlap exclusions and fixed evaluation IDs are saved. No official
+  final benchmark outcomes have been read.
+- Full-cap cached FP32 generation/replay passes the original .001 bound on the
+  exact trajectory that failed BF16. The precision change preceded science.
+- Full-cap signed full-model backward passes CPU loss/norm and prospectively
+  declared signed-gradient cosine/L2 bounds. The original integer normalization
+  returned -1 on device; float counting repairs it without changing the objective.
+  See `validation/p2_repaired_signed_gradient_20261016.json` and
+  `validation/int64_clamp_mechanism_20261016.json`.
+- **C32 recovery PASS, common source `3aaaf8a`:** 12 updates; ten steady steps
+  average **10.007 seconds**. Fresh-process actual restored state is raw-byte
+  exact across model, all 32 optimizer shards, metadata, counters and CPU/device
+  RNG. Continued updates through step12 meet the original numerical tolerance;
+  all RNG states and Adam steps remain exact. Continued weights are not bitwise
+  identical. Verified EBS backups retain steps6/12. All C workers and supervisor
+  exited. See `validation/c_fp32_final_resume_20261016.json`.
+- Both full-cap FP32 evaluator suites pass .001 CPU parity: local controls and
+  crossed readers, 192 token comparisons, max error .00023079; secondary paths,
+  90 token comparisons, max error .000070572, no ranking/token mismatches.
+  All workers exited; only development/interface items used. See
+  `validation/evaluator_fp32_fullcap_20261016.json`.
+- Latest required source checks: **233 CPU tests plus toy smoke PASS**,
+  `local/checks/tests.Yr1uiR`. Later commits change documentation/receipts only.
 
-## Repairs and current jobs
+## C numerical diagnosis and next validation
 
-1. **R normalization:** the original backward first exhausted memory. Actual
-   `XLA_COMPILATION_CACHE_SIZE=2` repairs residency; the legacy Neuron limit
-   does not. The completed backward then exposed a numerical defect: device
-   int64 `mask.sum().clamp_min(1)` returns -1, reversing and scaling gradients.
-   Float32 counting preserves the intended objective and passes six reduced
-   production-shape cases. No scientific R update used the faulty expression.
-2. **Repaired full-model backward PASS:** completed at 22:37 UTC, source
-   `8b44cc1`, fixed original 1,024-action trace. Actual driver loss materialization
-   and backward agree with the independent CPU reference under unchanged bounds:
-   loss error 4.66e-10, norm error 1.33e-6 (allowed 6.28e-5), signed 9,920-value
-   sample cosine .9999999940 and relative L2 error .00010923. All 310 parameter
-   gradients are present. Worker 636493 and its supervisors exited 0; core 2 is
-   released. Receipts: `local/qualification/p2-full-fp32-countfix-signed-001`
-   and adjacent `.comparison.json` / `.execution_receipt.json`. This qualifies
-   a fixed-trajectory backward, not a distributed R update or resume.
-   Scalar controls also confirm integer upper-bound narrowing; see
-   `validation/int64_clamp_mechanism_20261016.json`. Diagnostic core 3 is released;
-   production compiler flags are unchanged.
-3. **Checkpoint RNG:** installed Neuron rendezvous/export does not advance the
-   measured seed; an explicit sync does. The old resume restores RNG before
-   that sync, causing the observed extra transition. A bounded hardware tiny
-   test reproduces old-order failure and fixed-order exact next-two-draw,
-   CPU/device RNG, model and optimizer equality. Root has integrated restoration
-   after the load sync and a checkpoint observation fence. The integrated helper
-   passes the actual tiny hardware test, including both next random tensors and
-   optimizer state bitwise. Source review and **233 CPU tests plus toy smoke**
-   pass (`local/checks/tests.Yr1uiR`). No per-record reseeding or relaxed criterion.
-4. **Cores 32–63:** common-source C12 baseline completed and all workers exited
-   0. Ten steady updates averaged **10.007 seconds**. Checkpoints 3/6/12 are
-   COMPLETE; verified EBS copying/retention is supervised. Fresh-process resume
-   is active (driver **731270**); actual restored model, all 32 optimizer shards,
-   metadata, counters and CPU/device RNG pass raw-byte exact comparison.
-   Continued-update comparison is pending. Distributed agent owns exact PIDs and
-   receipts under `local/qualification/qwen-c-fp32-final-003*` (six-hour bound).
-   Output: `local/nvme/qualification/qwen-c-fp32-final-003`. Source `3aaaf8a`,
-   active-code hash `244e2f13…31287ff7`. The new CPU3 comparison has exactly the
-   same 754 failures; it has not been reclassified as a pass.
-5. **Both full-cap evaluator suites PASS and cores 0/1 released.** Local:
-   36 device/36 CPU rows, all 192 token comparisons, max error .00023079.
-   Secondary: 8 rows, 90 token comparisons, max error .000070572, zero greedy
-   token/ranking mismatches. Both meet the unchanged .001 bound. Receipt:
-   `validation/evaluator_fp32_fullcap_20261016.json`. No official test outcomes
-   were accessed.
-6. **R32 attempt 002 stopped before model loading.** Its 31 peers joined C's
-   default TCPStore port 12355 while R rank 0 failed to bind it. Stopping one
-   blocked child exposed the original EADDRINUSE exception and reaped every R
-   process (exit 1, no output/model/update). Preserve the adjacent bootstrap and
-   stop receipts; do not reuse this attempt's name. One new bounded attempt 003
-   is authorized with the same source/settings and Neuron endpoint 64194, plus
-   explicit `MASTER_ADDR=127.0.0.1`, dedicated `MASTER_PORT=64231`. No other
-   change or automatic retry. Data agent owns its launch/preflight receipts.
-7. Independent CPU reader comparison to all twelve existing full-cap device
-   development notes passes, including five natural stops: max absolute logp
-   error **8.49e-5** at the unchanged .001 bound. Receipt:
-   `validation/p2_full_reader_reference_20261016.json`.
+The original three-step CPU FP32 per-weight comparison remains **FAIL**:
+754 of 1,720,574,976 coordinates exceed its fixed bound. Correcting the CPU norm
+reduction does not remove this failure. A separate identical-gradient hardware
+AdamW test passes; first-step checkpoint moments locate the discrepancy before
+Adam, where tiny cancelled gradients can differ in sign.
 
-## Independent CPU diagnostic
+An independent FP64 differentiable-arithmetic diagnostic is complete (all jobs
+exited). It uses exact released FP32 weights cast to double, promoted RMSNorm and
+softmax, and frozen native-CPU FP32 RoPE constants. All 310 full derivatives are
+saved. Against it, device relative gradient L2 error is **.0001083**, versus
+**.0003425** for the original CPU FP32 reference. Device is closer on 672 of the
+754 flagged coordinates, but 90 selected sign disagreements remain. This is
+numerical diagnosis, not a retroactive v1 pass or a scientific result. Receipts:
+`validation/c_firstbatch_fp64_derivative_20261016.json` and
+`validation/c_fp32_gradient_discrepancy_20261016.json`.
 
-`local/qualification/qwen-c-fp64-firstbatch-001` is running (32 threads, hard
-2-hour bound). It promotes differentiable RMSNorm/attention/loss arithmetic to
-FP64 with exact released FP32 weights and frozen native-CPU FP32 RoPE constants;
-plain `model.double()` would silently retain FP32 operations. Same first 128
-ordered TRAIN records, no optimizer. Four tiny formula/dtype fixtures and
-independent source review pass. This is a derivative diagnostic, not a new gate.
+A distinct prospective **v2** is being prepared on held seed5678, with exact
+first128 training IDs fixed before outcomes. It compares a fresh ordinary C32
+first update against the full FP64 derivative. Preserve v1 FAIL. Freeze the
+loss/norm and global/per-parameter gradient criteria before launching. Seed5678
+is a new order, not necessarily disjoint data; report overlap explicitly.
 
-## Immediate recovery and next action
+## Active work and process ownership
+
+**Data agent: R32 qualification attempt003**, lower logical cores0–31.
+Launcher779314, timeout/PGID779372, driver779374, 32 workers779498–779532.
+Started22:51:17 UTC; hard deadline **2026-10-17 06:51:17 UTC** plus30s grace.
+Source `3aaaf8a18baeccb8d1a543d348a53f6863599114`, active code hash
+`244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7`.
+World32/global128/accum4, G4, cap1024, FP32, seed1234, XLA executable LRU2.
+Host store127.0.0.1:64231; Neuron root127.0.0.1:64194. Prior attempt002 failed
+before loading because the default host-store port collided with C; its failure
+and bounded cleanup are preserved. Attempt003 has loaded actual weights and
+started update1, with cold sampling compilation in progress. **No complete R
+update yet.** Watch first versus accumulated backward memory; do not infer a
+pass from the single-backward probe. Separate sysfs memory sampling is read-only.
+
+Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
+Receipts/logs: `local/qualification/qwen-r-fp32-final-003*`.
+After checkpoint3 exists, prepare a fresh process with STOP precreated: export
+actual restored state before sampling, run exactly update4, compare all32×4
+stochastic tapes and full post-update checkpoint. The prepared resume is not
+launched. Require ten complete steady updates before exposure selection.
+
+**Distributed agent:** prepare held-seed C32/FP64 validation, upper cores32–63;
+no seed5678 outcomes authorized until prospective criteria and IDs are committed.
+**Review agent:** independently freeze/review v2 criteria and exact batch.
+Root owns integration, decisions and public pushes. Do not edit common active
+code during these jobs; later documentation commits do not alter its fingerprint.
+
+## Immediate commands and remaining work
 
 ```bash
-tail -20 local/qualification/qwen-c-fp32-final-003.resume.log
-cat local/qualification/p2-full-fp32-countfix-signed-001.comparison.json
-cat local/qualification/qwen-c-fp64-firstbatch-001.progress.json
-source scripts/env.sh
-bash scripts/run_checks.sh
+tail -20 local/qualification/qwen-r-fp32-final-003.log
+cat local/qualification/qwen-r-fp32-final-003.state.json
+cat validation/c_fp32_final_resume_20261016.json
 ```
 
-Complete the full-model RNG repair check, diagnose the C pointwise failure,
-then run distributed R updates, actual restored-state readback, first resumed
-stochastic tapes and complete checkpoint comparisons. Require ten complete
-steady updates per arm before timing-selecting terminal exposure and freezing.
-The science recipe and final outcomes have not been selected using these probes.
+Complete the held-seed C numerical check and distributed R update/resume/timing.
+Then consider sequential full-node64 qualification for better use of hardware,
+keeping global128 and the objective fixed. Freeze terminal exposure from measured
+complete-step costs and fresh-data supply before any final test access. Save
+all failures, examples and outputs; no outcome-based terminal selection.
 
-Large artifacts remain ignored under `local/`; scratch is the one verified unused
-NVMe mounted at `local/nvme`. The other three SSDs are untouched. Both scratch
-and EBS backups are on this instance; no external backup location is approved.
-Reviewed `scripts/watch_checkpoint_backups.py` supervises verified EBS copies
-and retains two recoverable saves for multi-day science. See
-`docs/CHECKPOINT_BACKUP.md`.
+Large artifacts remain ignored under `local/`. One verified unused NVMe is
+mounted at `local/nvme`; the other three SSDs are untouched. Latest space:
+EBS303GiB free, NVMe1.4TiB free. EBS backups and scratch share this instance;
+no external backup location is approved. The reviewed backup supervisor retains
+two verified complete states per run; see `docs/CHECKPOINT_BACKUP.md`.
