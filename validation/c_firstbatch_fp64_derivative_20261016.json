@@ -1,0 +1,117 @@
+{
+  "acceptance_bounds_changed": false,
+  "all310_parameter_gradients_FP64_and_finite": true,
+  "all_observed_dtypes_FP64": true,
+  "all_owned_processes_exited": true,
+  "artifacts_sha256": {
+    "local/nvme/qualification/qwen-c-fp64-firstbatch-001/lineage.json": "008d3b7116e6719e59233afd9f8d145fd85381835de18fef52df060fbbff740d",
+    "local/qualification/f64_reference_ops.py": "9159354fc598a1adc7135fd67da1a5d7ac8b70468368192d6faeaf8f50a4088a",
+    "local/qualification/f64_reference_ops_tests-002.log": "29d5f001aad8140574443506f96dc283b28de12c643ec5fcb3e2f222070576c4",
+    "local/qualification/f64_reference_ops_tests.py": "5059f3b8deb33b0da6c41a04fe3b4b68fe4dfa0bc0560cba2d2eff59b89b5e4e",
+    "local/qualification/qwen-c-fp64-firstbatch-001.exit.json": "10fbc8fbf77e1c336a5bf806b642abe03c3f8ceaf25f3e70380611903a5e4b97",
+    "local/qualification/qwen-c-fp64-firstbatch-001.launch.sh": "feeb199cbc1e5e7c46e692b3fa6578f2f0f1d50bded580750fd8a6fe45615922",
+    "local/qualification/qwen-c-fp64-firstbatch-001.prepared.json": "78254aaf766139f727bfde95d2d4da7f48d087373dc76682ad4991ef3a4e622a",
+    "local/qualification/qwen-c-fp64-firstbatch-001.py": "148afc3d44fb554c140e99dd51efeb7e3e278875e7db69d5c20c3d79e3d51b4d",
+    "local/qualification/qwen-c-fp64-firstbatch-001.result.json": "a3da5660e2afa1a72fbf40cb7ff2bf45b427d75b11211b6f7bc21a2611cca100"
+  },
+  "cancellation_descriptive": {
+    "failed_coordinate": {
+      "between_micro_cancellation_ratio_quantiles": {
+        "0.5": 6168.393303095258,
+        "0.9": 37413.07164124918,
+        "0.99": 803013.9487065704,
+        "1.0": 112867585.32908246
+      },
+      "coordinates": 754,
+      "device_sign_disagreements": 90,
+      "largest_abs_reference_with_device_sign_disagreement": 1.550145992514895e-07,
+      "largest_reference_to_parameter_RMS_ratio_with_device_sign_disagreement": 0.01702994453756611
+    },
+    "matched_nonfailed_control": {
+      "between_micro_cancellation_ratio_quantiles": {
+        "0.5": 3.953202049451737,
+        "0.9": 21.560998502193,
+        "0.99": 236.30704821711464,
+        "1.0": 5573.850902415509
+      },
+      "coordinates": 754,
+      "device_sign_disagreements": 0,
+      "largest_abs_reference_with_device_sign_disagreement": 0.0,
+      "largest_reference_to_parameter_RMS_ratio_with_device_sign_disagreement": 0.0
+    }
+  },
+  "coordinate_summary": {
+    "failed_coordinate": {
+      "CPU_closer": 82,
+      "CPU_sign_matches": 113,
+      "coordinates": 754,
+      "device_closer": 672,
+      "device_sign_matches": 664,
+      "median_CPU_absolute_error": 3.2339618569988827e-08,
+      "median_device_absolute_error": 7.97147564392489e-09
+    },
+    "matched_nonfailed_control": {
+      "CPU_closer": 246,
+      "CPU_sign_matches": 754,
+      "coordinates": 754,
+      "device_closer": 508,
+      "device_sign_matches": 754,
+      "median_CPU_absolute_error": 2.357320604205908e-10,
+      "median_device_absolute_error": 1.3000342676685616e-10
+    }
+  },
+  "created_utc": "2026-10-16T22:55:13.283162+00:00",
+  "dtype_paths_observed": 27,
+  "exit_code": 0,
+  "first_batch_loss": 1.3479776672794699,
+  "full_FP64_gradient_norm": 1.6284198330359045,
+  "global_batch": 128,
+  "large_local_artifacts": {
+    "gradients.pt": {
+      "bytes": 13764701003,
+      "sha256": "37f5ff6a11c86bc6337b77f7d940f206d49e2ff2137bce459535489f0a3034bb"
+    },
+    "rope_constants.pt": {
+      "bytes": 526561,
+      "sha256": "a6f8ae1fea189541418ff3aafa6111f7f1ac04d4237b4b4ce495de5283f82e04"
+    },
+    "selected-cumulative-gradients.pt": {
+      "bytes": 280681,
+      "sha256": "0fcb2ac6bc9f877237420ae379155a8faa890c6437e2658162f73bf1bf9eabe9"
+    }
+  },
+  "limitations": [
+    "This locally overrides native RMSNorm and eager-softmax precision; it is not an unmodified native model.double() run.",
+    "Native-CPU FP32 RoPE constants are frozen and cast exactly double; device RoPE may approximate cos/sin differently, so these constants are not a unique true physical reference.",
+    "Between-micro cancellation ratios do not rule out cancellation within any micro, token or matrix multiplication.",
+    "Device raw gradients are estimated from first Adam moments and include FP32 clipping/moment-rounding effects.",
+    "No optimizer update, qualification acceptance bound change, accelerator execution or scientific outcome is produced."
+  ],
+  "method": "FP64 differentiable arithmetic with frozen native-CPU FP32 RoPE constants",
+  "micro_batch": 8,
+  "micro_batches": 16,
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "order_hash": "997307b43cb509f386ebd14d0428a675891afe41e1bdbd5514c3a7beb5765e5b",
+  "previous_pointwise_failures_waived": false,
+  "previous_worst_coordinate": {
+    "CPU_FP32_gradient": -1.5007535694167018e-06,
+    "CPU_absolute_error": 2.4875429563662874e-06,
+    "CPU_sign_agrees": false,
+    "FP64_gradient": 9.867893869495856e-07,
+    "batch_cancellation_ratio": 1600.4113529376318,
+    "device_FP32_estimated_raw_gradient": 6.615374951298413e-07,
+    "device_absolute_error": 3.2525189181974436e-07,
+    "device_sign_agrees": true,
+    "flat_index": 1155497,
+    "kind": "failed_coordinate",
+    "parameter": "model.layers.27.mlp.up_proj.weight",
+    "parameter_gradient_RMS": 5.426449818338728e-05,
+    "sum_absolute_micro_contributions": 0.0015792689378324827
+  },
+  "released_weights_roundtrip_exact": true,
+  "schema": 1,
+  "scope": "Independent CPU higher-precision derivative diagnostic for released B0 and the same first128 TRAIN records; no optimizer or scientific outcome",
+  "status": "COMPLETED_DIAGNOSTIC_REFERENCE",
+  "tied_embedding_head_identity_preserved": true,
+  "wall_seconds": 881.0114466480009
+}
