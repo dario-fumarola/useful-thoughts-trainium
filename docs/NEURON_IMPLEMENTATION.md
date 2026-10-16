@@ -10,9 +10,10 @@ subject to full-model distributed, resume and complete-step qualification.
 
 `train/neuron_driver.py` and the cached backend now exist and are undergoing
 real-asset qualification. A real four-rank update/checkpoint completed, but its
-next optimizer graph exceeded memory; 32-rank FP32 qualification is running.
-Long FP32 cache/replay checks pass, while the full-cap backward and distributed
-resume/timing evidence remain pending. See `STATUS.md` for live state.
+next optimizer graph exceeded memory. The 32-rank continuation layout completes
+12 updates, and repaired full-cap FP32 backward passes its signed CPU reference.
+Distributed thought updates, full stochastic recovery and thought-step timing
+remain required. See `STATUS.md` for live state and preserved failures.
 
 The remainder specifies the required behavior. CPU reference tests and bundled
 legacy examples do not certify the current accelerator path.
@@ -52,6 +53,13 @@ have a hard step limit and identify its artifacts as qualification, not science.
 Long training must verify the frozen assets and actual hardware receipt, actual
 deadline, and output directory before reserving resources. Reuse of an output
 without an explicit compatible resume is an error.
+
+Each simultaneous distributed job needs two distinct coordination endpoints:
+its own `NEURON_RT_ROOT_COMM_ID` and its own `MASTER_ADDR`/`MASTER_PORT` for the
+PyTorch TCPStore. Disjoint accelerator cores alone do not isolate that store.
+The installed XLA default port is 12355; a reproduced collision stopped R before
+model loading. Launch preflight must verify dedicated unused ports and record
+them with the visible-core allocation. Do not change a running job's environment.
 
 ## Three operations and their boundaries
 

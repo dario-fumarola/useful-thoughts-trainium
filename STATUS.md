@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 22:36 UTC
+# Current state — 2026-10-16 22:51 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 The owner authorizes sustained autonomous work, review agents, and this public
@@ -46,17 +46,16 @@ an instance shutdown deadline (see DECISIONS.md).
    int64 `mask.sum().clamp_min(1)` returns -1, reversing and scaling gradients.
    Float32 counting preserves the intended objective and passes six reduced
    production-shape cases. No scientific R update used the faulty expression.
-2. **Core 2, active full-model repaired check:** worker **636493**, PGID 636491,
-   tmux `dario-p2-full-fp32-countfix-signed-001`, log
-   `local/p2-full-fp32-countfix-signed-001.log`. Immutable source `8b44cc1`.
-   Original saved 1,024-action trajectory, actual driver loss materialization,
-   original CPU norm bound plus prospectively fixed signed-gradient checks.
-   The repaired loss matches CPU within **4.66e-10**; backward is cold-compiling.
-   Hard deadline **23:44:04 UTC**, plus 30-second termination grace. Data agent
-   monitors this job. R32 remains off until the actual gradient comparison passes.
-   A separate scalar control now confirms the integer upper-bound conversion:
-   INT64_MAX narrows to -1 by default; bounded int32 maxima and isolated native
-   int64 execution give correct values. See
+2. **Repaired full-model backward PASS:** completed at 22:37 UTC, source
+   `8b44cc1`, fixed original 1,024-action trace. Actual driver loss materialization
+   and backward agree with the independent CPU reference under unchanged bounds:
+   loss error 4.66e-10, norm error 1.33e-6 (allowed 6.28e-5), signed 9,920-value
+   sample cosine .9999999940 and relative L2 error .00010923. All 310 parameter
+   gradients are present. Worker 636493 and its supervisors exited 0; core 2 is
+   released. Receipts: `local/qualification/p2-full-fp32-countfix-signed-001`
+   and adjacent `.comparison.json` / `.execution_receipt.json`. This qualifies
+   a fixed-trajectory backward, not a distributed R update or resume.
+   Scalar controls also confirm integer upper-bound narrowing; see
    `validation/int64_clamp_mechanism_20261016.json`. Diagnostic core 3 is released;
    production compiler flags are unchanged.
 3. **Checkpoint RNG:** installed Neuron rendezvous/export does not advance the
@@ -68,33 +67,56 @@ an instance shutdown deadline (see DECISIONS.md).
    passes the actual tiny hardware test, including both next random tensors and
    optimizer state bitwise. Source review and **233 CPU tests plus toy smoke**
    pass (`local/checks/tests.Yr1uiR`). No per-record reseeding or relaxed criterion.
-4. **Cores 32–63:** C32 checkpoint1 diagnostic completed and exited 0. The
-   common-source C12 baseline is active: driver **685474**, launcher 685469,
-   tmux `dario-qwen-c-fp32-final-003`. Source `3aaaf8a`, active-code hash
-   `244e2f13…31287ff7`; exact PIDs in the adjacent `.state.json`. Output:
-   `local/nvme/qualification/qwen-c-fp32-final-003`, launch script
-   `local/qualification/qwen-c-fp32-final-003.launch.sh` (six-hour bound).
-   Distributed agent owns baseline and the subsequent fresh-resume comparison.
-5. **Cores 0/1:** bounded full-cap local/secondary evaluator checks, workers
-   681582/681595 at launch, common source `3aaaf8a`, latest deadline
-   **22:58:41 UTC**. Reviewer owns them; R launch waits for all descendants to
-   release these cores. No official benchmark test outcomes are accessed.
-6. Independent CPU reader comparison to all twelve existing full-cap device
+4. **Cores 32–63:** common-source C12 baseline completed and all workers exited
+   0. Ten steady updates averaged **10.007 seconds**. Checkpoints 3/6/12 are
+   COMPLETE; verified EBS copying/retention is supervised. Fresh-process resume
+   is active (driver **731270**); actual restored model, all 32 optimizer shards,
+   metadata, counters and CPU/device RNG pass raw-byte exact comparison.
+   Continued-update comparison is pending. Distributed agent owns exact PIDs and
+   receipts under `local/qualification/qwen-c-fp32-final-003*` (six-hour bound).
+   Output: `local/nvme/qualification/qwen-c-fp32-final-003`. Source `3aaaf8a`,
+   active-code hash `244e2f13…31287ff7`. The new CPU3 comparison has exactly the
+   same 754 failures; it has not been reclassified as a pass.
+5. **Both full-cap evaluator suites PASS and cores 0/1 released.** Local:
+   36 device/36 CPU rows, all 192 token comparisons, max error .00023079.
+   Secondary: 8 rows, 90 token comparisons, max error .000070572, zero greedy
+   token/ranking mismatches. Both meet the unchanged .001 bound. Receipt:
+   `validation/evaluator_fp32_fullcap_20261016.json`. No official test outcomes
+   were accessed.
+6. **R32 attempt 002 stopped before model loading.** Its 31 peers joined C's
+   default TCPStore port 12355 while R rank 0 failed to bind it. Stopping one
+   blocked child exposed the original EADDRINUSE exception and reaped every R
+   process (exit 1, no output/model/update). Preserve the adjacent bootstrap and
+   stop receipts; do not reuse this attempt's name. One new bounded attempt 003
+   is authorized with the same source/settings and Neuron endpoint 64194, plus
+   explicit `MASTER_ADDR=127.0.0.1`, dedicated `MASTER_PORT=64231`. No other
+   change or automatic retry. Data agent owns its launch/preflight receipts.
+7. Independent CPU reader comparison to all twelve existing full-cap device
    development notes passes, including five natural stops: max absolute logp
    error **8.49e-5** at the unchanged .001 bound. Receipt:
    `validation/p2_full_reader_reference_20261016.json`.
 
+## Independent CPU diagnostic
+
+`local/qualification/qwen-c-fp64-firstbatch-001` is running (32 threads, hard
+2-hour bound). It promotes differentiable RMSNorm/attention/loss arithmetic to
+FP64 with exact released FP32 weights and frozen native-CPU FP32 RoPE constants;
+plain `model.double()` would silently retain FP32 operations. Same first 128
+ordered TRAIN records, no optimizer. Four tiny formula/dtype fixtures and
+independent source review pass. This is a derivative diagnostic, not a new gate.
+
 ## Immediate recovery and next action
 
 ```bash
-tail -20 local/p2-full-fp32-countfix-signed-001.log
-cat local/qualification/qwen-c-fp32-001.resume_compare.result.json
+tail -20 local/qualification/qwen-c-fp32-final-003.resume.log
+cat local/qualification/p2-full-fp32-countfix-signed-001.comparison.json
+cat local/qualification/qwen-c-fp64-firstbatch-001.progress.json
 source scripts/env.sh
 bash scripts/run_checks.sh
 ```
 
-Qualify the integrated RNG repair, diagnose the remaining C pointwise failure,
-then run common-source C/R updates, actual restored-state readback, first resumed
+Complete the full-model RNG repair check, diagnose the C pointwise failure,
+then run distributed R updates, actual restored-state readback, first resumed
 stochastic tapes and complete checkpoint comparisons. Require ten complete
 steady updates per arm before timing-selecting terminal exposure and freezing.
 The science recipe and final outcomes have not been selected using these probes.

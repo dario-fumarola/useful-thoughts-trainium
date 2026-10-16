@@ -34,13 +34,13 @@ in evaluation denominators, and report training and inference costs.
   **18,239 test** document-level records.
 - Full FP32 cached generation agrees with replay on the exact long trajectory
   that failed BF16 qualification; the fixed tolerance was not relaxed.
-- The installed XLA cache limit repairs full-cap backward memory use. That
-  exposed a device integer-clamp defect in sequence normalization; a corrected
-  float32 count passes reduced hardware checks and is being checked at full size.
+- Full-cap FP32 backward now fits and passes signed CPU reference checks after
+  correcting an integer upper-bound conversion in sequence normalization.
+  The original failures and unchanged tolerances are preserved.
 - The 32-core continuation run completed 12 updates, including ten steady steps
-  averaging 10.17 seconds. Checkpoint backup is verified. Full-model and optimizer
-  resume agree numerically; an exact RNG mismatch exposed a restore-order defect.
-  Its repair and a separate strict CPU per-value discrepancy remain under review.
+  averaging about 10 seconds. Checkpoint backup is verified. A restore-order RNG
+  repair passes its hardware test; full-model recovery is being checked. A strict
+  CPU per-value discrepancy is being investigated with a higher-precision reference.
 - Development-only math inference runs, including failed outputs, are retained.
 
 See [STATUS.md](STATUS.md) for active work and [DECISIONS.md](DECISIONS.md) for
