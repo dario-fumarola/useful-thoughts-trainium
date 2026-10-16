@@ -239,3 +239,20 @@ decode was roughly twice as slow in FP32; these diagnostic loops exclude full
 training, and a production budget must still use complete optimizer timings.
 Current four-shot development evaluation uses full FP32 and keeps its interface
 changes explicitly separate from the training reader format.
+
+## Prefix-derived arithmetic reader diagnostic
+
+The released FP32 model scored all 16 fixed cases from `make_reader_checks.py` on
+CPU through the current backend. Correct notes give two partial products without
+the target sum; incorrect notes change one partial product. Every correct/wrong
+pair has equal token length. The correct note assigns greater full-target evidence
+in 16/16 cases, with a mean paired difference of 4.574 nats, but remains 6.476 nats
+below raw silence. Thus the interface has semantic sensitivity and a substantial
+insertion cost on this grid. This is no claim about generated thoughts or training.
+
+Every first target in this particular diagnostic is a space. K=1 therefore shows
+only +0.00678 nats for correct versus incorrect notes. Do not present full-answer
+sensitivity as K=1 reward sensitivity. The fixed grid is not a random benchmark
+sample. All inputs, note IDs and absolute arms remain in
+`local/qualification/reader-interface-fp32-001/`; the reproducible command and
+source hashes are in `validation/reader_interface_cpu_20261016.json`.

@@ -1,0 +1,49 @@
+{
+  "accelerator_execution": false,
+  "command": "USE_TORCH_XLA=0 OMP_NUM_THREADS=8 MKL_NUM_THREADS=8 python -m train.qualify_reader --model-dir local/assets/qwen3-1.7b-base --format local/resolved_format.json --items local/qualification/reader-interface-items.jsonl --out local/qualification/reader-interface-fp32-001",
+  "compute": "fp32",
+  "diagnostic_generation": "python scripts/make_reader_checks.py --out local/qualification/reader-interface-items.jsonl",
+  "errors": 0,
+  "finished_utc": "2026-10-16T20:52:35+00:00",
+  "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+  "helpful_beats_incorrect_full_target_items": 16,
+  "helpful_incorrect_equal_token_length_items": 16,
+  "interpretation": "The released reader is sensitive to correct partial computations under this format, but insertion remains worse than raw silence. This is not generated-thought or training benefit evidence. K1 on this fixed diagnostic grid rewards a whitespace token; full-target sensitivity must not be presented as K1 sensitivity.",
+  "item_outputs": "local/qualification/reader-interface-fp32-001/scores.jsonl",
+  "items": 16,
+  "items_sha256": "6b4f4ed1e06527a4eb7169c51d0e63e220511cb13fec965b449e49d650d386fd",
+  "limitations": [
+    "Manually constructed prefix-derived notes, not learned/generated thoughts.",
+    "No downstream generalization or training benefit is established.",
+    "Full-target and K=1 are distinct diagnostics; the first token can be whitespace."
+  ],
+  "mean_paired_logp_differences": {
+    "K1": {
+      "helpful_partial_products_minus_incorrect_partial_products": 0.006775945425033569,
+      "helpful_partial_products_minus_length_matched_filler": 1.0376863181591034,
+      "helpful_partial_products_minus_raw": -4.571190640330315
+    },
+    "full_target": {
+      "helpful_partial_products_minus_incorrect_partial_products": 4.573939025402069,
+      "helpful_partial_products_minus_length_matched_filler": 4.729547321796417,
+      "helpful_partial_products_minus_raw": -6.475659504532814
+    }
+  },
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "official_test_items_scored": 0,
+  "scope": "CPU_released_weight_reader_interface_only",
+  "scores_sha256": "c08fe82acb778e644365eea77a049edac62dc293362cbf2bde0122e28f1eaf3e",
+  "scoring_seconds": 44.42520428200078,
+  "source_hashes": {
+    "train/neuron_backend.py": "2439e87787687e669fcc52a7624e7fd36c5375eba8a66fa206fbd192e2fa8a0d",
+    "train/qualify_reader.py": "ec82f8145b2f98e3bf2e8484b550f4afa4227fd0dfee67f61a9a4270d1bd8fef",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+  },
+  "started_utc": "2026-10-16T20:51:48+00:00",
+  "status": "completed",
+  "successful_items": 16,
+  "whitespace_first_target_items": 16
+}
