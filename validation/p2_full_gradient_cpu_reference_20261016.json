@@ -1,0 +1,49 @@
+{
+  "accelerator_execution": false,
+  "active_actions": 1024,
+  "additional_observed_dependency_hashes": {
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+  },
+  "advantage": 0.25,
+  "artifacts": {
+    "local/qualification/p2-full-gradient-cpu-001/criteria.json": {
+      "bytes": 390,
+      "sha256": "365d119602d4de3489f153a1802a43ccacfc4cc21314fab186a12d5a0fd6d9a3"
+    },
+    "local/qualification/p2-full-gradient-cpu-001/reference.json": {
+      "bytes": 22753,
+      "sha256": "5cef820d601a6bb3f535aa54395b6e040248b3d87006a4253a255f6764bc430e"
+    },
+    "train/qualify_gradient_reference.py": {
+      "bytes": 5373,
+      "sha256": "301f2e17d353423a5fa18674e872bc229586e60547047dff67cb5bce7650fdf5"
+    }
+  },
+  "bound_original_inputs": {
+    "core_sha256": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+    "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "prefix_report_sha256": "af6673df021d9ea4b3bfb8bb8fe9699ee6bef60bc44d54e4ca436a2af497124f",
+    "trace_sha256": "e97fc191359db59e54b479b0b387acc37fe6a84e75ad53560cb99e45e8f96553"
+  },
+  "comparison_criteria": {
+    "created_utc": "2026-10-16T21:31:25+00:00",
+    "declared_before_device_result": true,
+    "norm_absolute_tolerance": 1e-05,
+    "norm_relative_tolerance": 0.0005
+  },
+  "created_utc": "2026-10-16T21:36:43+00:00",
+  "divisor": 4,
+  "full_gradient_norm_float64": 0.10564679629247145,
+  "hardware_comparison": "PENDING",
+  "input_tokens": 1578,
+  "loss": 0.005393173545598984,
+  "method": "Native HF trunk and single full-vocabulary projection; no production cache, layer checkpoint wrapper or chunked head backward; Float64 chunked sum of all parameter-gradient squares.",
+  "model": "released_Qwen3-1.7B-Base_FP32_tied_embeddings",
+  "qualification": "A CPU diagnostic is not a device gradient or training/resume pass. Preserve original failed memory result; compare hardware norm separately under the unchanged declared bound.",
+  "scope": "independent_CPU_full_native_Qwen_gradient_reference_only",
+  "temperature": 0.7,
+  "trajectory": "original_fullcap_P2_third_saved_rollout_group0",
+  "unique_parameters": 1720574976
+}
