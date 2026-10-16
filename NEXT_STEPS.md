@@ -1,24 +1,26 @@
 # Short execution queue
 
-Mark an item done only with an actual artifact/result. This is the active queue;
-historical journal instructions are not. Stages are dependencies, not a reason
-to idle: data preparation and evaluator work can proceed while compilation runs.
+Mark complete only from an actual artifact. Current commands/jobs are in STATUS.md.
 
-| Stage | Deliverable | Completion condition |
-|---|---|---|
-| P0 | Assets resolved | Inventory/model/data complete; choose a finite planning horizon before freeze, using the owner's weeks-long allowance |
-| P1 | Released forward complete | Correct weights/ties/fingerprints and CPU/device forward pass |
-| P2 | Full-cap FP32 memory repair | Long cache/replay passes; backward exhausted memory with retained program spill; test bounded cache residency before changing computation |
-| P3 | 32-rank C/R qualification active | Tiny mean/update/resume passes; C32 compiling, R32 gated on P2; require real full-model master updates |
-| P4 | Resume and timing pending | Full-model resume and ≥10 steady updates per arm; primary accelerator TRAIN inference complete, secondary/local execution still required |
-| P5 | Frozen first C/R pair | Model/data/format/source hashes; enough records; fixed terminal steps; fresh initial weights; actual deadline respected |
-| P6 | Confirmation and complete evaluation | Unchanged second seed if feasible; C/R direct and thought results; local controls; actual resource accounting |
-| P7 | Recoverable handoff | Verified checkpoints and destination; short result table; uncertainty; next experiment dictated by evidence |
+1. Hardware-check the integrated checkpoint RNG ordering repair. Preserve the
+   old all-rank RNG failure; require exact next stochastic draws.
+2. Complete the repaired full-Qwen signed-gradient comparison on core 2.
+   Loss now agrees; backward is compiling. Keep R32 off until it passes.
+3. Use one ordinary C32 first-step checkpoint to diagnose the remaining strict
+   CPU per-value comparison failure. Tiny identical-gradient AdamW already passes;
+   do not hide the 754 failed coordinates behind passing aggregate metrics.
+4. Refresh both qualification arms to one reviewed source. Require full model,
+   masters, moments, counters, exact RNG and first resumed R actions/rewards at
+   tight original tolerances, plus ten complete steady steps per arm.
+5. Run full-cap local/secondary accelerator evaluation checks on freed upper
+   cores. Preserve failures and keep official final test outcomes unread.
+6. Freeze two-seed exposure from actual complete-step timing, fresh-data supply
+   and the prospective 14-day schedule. Start identical released weights for C/R;
+   supervise finite jobs and verified EBS checkpoint copies.
+7. Evaluate terminal direct/thought policies, base reference, local controls and
+   crossed readers. Save costs, failures, examples and uncertainty; choose the
+   next experiment from the resulting evidence.
 
-Active driver: `train/neuron_driver.py`; use immutable source snapshots for running
-jobs. CPU semantics remain in `weekend_thinking/core.py` and `reference.py`.
-The immediate dependency is P2 backward, then full C/R updates, resume, and timing.
-
-If P1–P4 do not qualify within the initial engineering allowance, report the exact
-failure and do only verified baseline/evaluation or short diagnostic work. A long
-unverified run is not a substitute for completing the missing implementation.
+Active driver: `train/neuron_driver.py`. CPU semantics: `weekend_thinking/core.py`
+and `reference.py`. Never execute archived launchers or use a long run as a
+substitute for an unqualified gradient/update/resume path.

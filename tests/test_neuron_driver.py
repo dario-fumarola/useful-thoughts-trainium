@@ -2,19 +2,23 @@
 
 import copy
 import json
+import random
 from types import SimpleNamespace
 
+import numpy as np
 import pytest
 import torch
 
-from train.neuron_driver import (save_checkpoint, stream_save, validate_resume_run,
+from train.neuron_driver import (restore_rng_after_sync, save_checkpoint, stream_save, validate_resume_run,
                                  validate_resume_state, verify_checkpoint)
+from weekend_thinking.checkpoints import capture_cpu_rng, restore_cpu_rng
 
 
 class FakeXM:
     def __init__(self, checkpoint):
         self.checkpoint = checkpoint
         self.barriers = []
+        self.seed = 123
 
     def rendezvous(self, tag):
         self.barriers.append(tag)
@@ -23,7 +27,72 @@ class FakeXM:
             assert not (self.checkpoint / 'COMPLETE.json').exists()
 
     def get_rng_state(self, device):
-        return 123
+        return self.seed
+
+    def set_rng_state(self, seed, device):
+        self.seed = seed
+
+
+def cpu_draws():
+    return random.random(), float(np.random.random()), torch.rand(5)
+
+
+def assert_same_draws(actual, expected):
+    assert actual[:2] == expected[:2]
+    assert torch.equal(actual[2], expected[2])
+
+
+def test_checkpoint_observation_preserves_incoming_rng_after_all_barriers(tmp_path):
+    model = torch.nn.Linear(3, 2)
+    model.config = SimpleNamespace(tie_word_embeddings=False)
+    optimizer = torch.optim.AdamW(model.parameters())
+    checkpoint = tmp_path/'step-0000001'
+    incoming = capture_cpu_rng()
+    expected_draws = cpu_draws()
+    restore_cpu_rng(incoming)
+
+    class AdvancingXM(FakeXM):
+        def rendezvous(self, tag):
+            super().rendezvous(tag)
+            self.seed = (1012031 + self.seed * 7012063) % 2**64
+            cpu_draws()
+
+    xm = AdvancingXM(checkpoint)
+    xm.seed = 10220601738208571245  # Preserve the complete unsigned device seed.
+    save_checkpoint(tmp_path, model, optimizer, 1, dict(spec_hash='spec'),
+                    0, 1, xm, 'cpu')
+    saved = torch.load(checkpoint/'rank-00000.pt', weights_only=True)
+    assert xm.seed == saved['rng']['device'] == 10220601738208571245
+    assert_same_draws(cpu_draws(), expected_draws)
+    restore_cpu_rng(saved['rng']['cpu'])
+    assert_same_draws(cpu_draws(), expected_draws)
+
+
+def test_resume_restores_rng_after_load_sync(tmp_path):
+    xm = FakeXM(tmp_path)
+    incoming = capture_cpu_rng()
+    expected_draws = cpu_draws()
+    restore_cpu_rng(incoming)
+    events = []
+
+    def load_sync(*, wait):
+        assert wait
+        events.append('load-sync')
+        xm.seed = (1012031 + xm.seed * 7012063) % 2**64
+        cpu_draws()
+
+    original_set = xm.set_rng_state
+
+    def record_set(seed, device):
+        events.append('restore')
+        original_set(seed, device)
+
+    xm.set_rng_state = record_set
+    restore_rng_after_sync(dict(cpu=incoming, device=10220601738208571245),
+                           xm, 'cpu', load_sync)
+    assert events == ['load-sync', 'restore']
+    assert xm.seed == 10220601738208571245
+    assert_same_draws(cpu_draws(), expected_draws)
 
 
 def checkpoint_fixture(tmp_path, world=1):

@@ -107,3 +107,21 @@ Routine formatting changes do not need a decision entry.
   and saves the first post-resume baseline checkpoint (R14:3/4/7/14). A resume
   also exports actual restored state before sampling, then verifies the first
   resumed actions and full post-update state under the original tight bounds.
+
+## 2026-10-16 — preserve stochastic continuation across checkpoint observation
+
+- The completed C32 fresh-process comparison passes full model/master/moment
+  numerical bounds but fails exact device RNG on all 32 ranks. Each mismatch is
+  exactly one installed XLA MarkStep transition. The old path resets the saved
+  seed before its final load sync; that sync advances even a deterministic graph.
+- Move CPU/device RNG restoration after all device loading and its final sync.
+  Checkpoint publication/readback captures the incoming RNG at a settled boundary
+  and restores it after all exports and barriers. Preserve unsigned 64-bit seeds;
+  add no sync after resetting. Do not substitute per-record reseeding or weaken
+  exact stochastic-resume criteria.
+- Actual installed Neuron barriers differ from generic upstream XLA rendezvous:
+  the measured no-payload barrier and checkpoint exports do not advance RNG.
+  A bounded hardware negative control reproduces the old seed/next-draw failure;
+  the corrected order reproduces both subsequent random draws and optimizer
+  state exactly. Require the integrated helper and then full C/R resume evidence
+  before scientific launch; the small probe alone is not full-model qualification.

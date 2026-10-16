@@ -87,6 +87,10 @@ def stream_save(path, value):
 
 def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, device,
                     *, checkpoint_root=None):
+    # Call only at a settled update/load boundary, with no pending random IR.
+    # Checkpoint observation (including the qualification readback) must not
+    # change the next draw, even if an export or runtime barrier advances RNG.
+    rng = dict(cpu=capture_cpu_rng(), device=int(xm.get_rng_state(device)))
     directory = (output if checkpoint_root is None else checkpoint_root)/f'step-{step:07d}'
     directory.mkdir(parents=True, exist_ok=True)
     xm.rendezvous(f'checkpoint-{step}-start')
@@ -98,7 +102,6 @@ def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, devi
         stream_save(directory/'model.pt', {'model': weights, 'step': step,
                                          'run_id': output.name, 'spec_hash': state['spec_hash']})
         del weights
-    rng = dict(cpu=capture_cpu_rng(), device=int(xm.get_rng_state(device)))
     stream_save(directory/f'rank-{rank:05d}.pt',
                 dict(optimizer=optimizer.state_dict(), rng=rng, step=step,
                      rank=rank, world_size=world, **state))
@@ -110,7 +113,20 @@ def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, devi
             run_id=output.name, world_size=world, spec_hash=state['spec_hash'],
             files=files, created_utc=utc_now(), metadata=state))
     xm.rendezvous(f'checkpoint-{step}-complete')
+    restore_cpu_rng(rng['cpu'])
+    xm.set_rng_state(rng['device'], device)
     return directory
+
+
+def restore_rng_after_sync(rng, xm, device, sync):
+    """Finish device loads before resetting the continuation's exact RNG state.
+
+    XLA MarkStep advances the seed even without a random operation. No sync may
+    follow this reset before the resumed program's ordinary continuation.
+    """
+    sync(wait=True)
+    restore_cpu_rng(rng['cpu'])
+    xm.set_rng_state(int(rng['device']), device)
 
 
 def verify_checkpoint(directory, expected_hash, world):
@@ -326,10 +342,10 @@ def worker(_index, a):
         model.load_state_dict(weights['model'], strict=True)
         optimizer.load_state_dict(saved['optimizer'])
         restore_syncfree_device_state(optimizer)
-        restore_cpu_rng(saved['rng']['cpu'])
-        xm.set_rng_state(saved['rng']['device'], device)
         start_step, counters = saved['step'], saved['counters']
-    torch_xla.sync(wait=True)
+        restore_rng_after_sync(saved['rng'], xm, device, torch_xla.sync)
+    else:
+        torch_xla.sync(wait=True)
     def checkpoint_state():
         return dict(spec_hash=spec_hash, order_hash=order_hash, counters=counters.copy(),
                     arm=a.arm, seed=a.seed, global_batch=batch, accumulation=accumulation,
