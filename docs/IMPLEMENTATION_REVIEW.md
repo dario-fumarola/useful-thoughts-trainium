@@ -187,3 +187,26 @@ Its downloaded source/hash and matches are saved in
 `local/research/qwen-evaluation-20261016/`. A declared four-shot adaptation using
 the first four and explicit `####` final lines preserves our strict parser. This
 is a Qwen-family adaptation, not byte-identical reproduction of Qwen3's evaluation.
+
+The next prompt artifact is `local/evaluation/dev-inputs-4shot-v1/`, using those
+first four fixed TRAIN demonstrations and the same five held development items.
+Its execution awaits numerical qualification. Evaluator item sharding validates
+the full task/protocol first, then takes `questions[index::num_shards]`; all shards
+use global padding widths. Their outputs must be merged before whole-task scoring.
+
+## Fixed-action numerical diagnosis
+
+The third full-cap BF16 trace failed its predeclared 0.2 maximum active-action
+log-probability bound: 0.218410 at group 3, action 544, token 624 (`.\n`). Only one
+of 2,934 active actions exceeded 0.2; near-zero medians reflect repetitive,
+near-deterministic continuations and do not excuse the failure. Per-token analysis
+is saved beside the source trace in `local/qualification/p2-full-001/`.
+
+`train/qualify_replay_probe.py` teacher-forces exactly those saved actions through
+the cached and full-sequence paths, preserving the old first-stop mask. A BF16
+trunk with FP32 head still fails at the same action, with error 0.226143. Thus a
+new rollout cannot hide the outlier, and head rounding is not a sufficient repair.
+Every token, metrics and provenance are saved in
+`local/qualification/p2-fixed-trace-fp32head-001/`. Full FP32 is being tested with
+the unchanged tighter 0.001 FP32 bound; no training update or tolerance relaxation
+was authorized by these failed checks.

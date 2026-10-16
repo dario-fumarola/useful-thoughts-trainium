@@ -61,6 +61,13 @@ def read_questions(path: Path, *, qualification: bool) -> list[dict]:
     return rows
 
 
+def shard_questions(questions: list[dict], shard_index: int, num_shards: int) -> list[dict]:
+    """Disjoint deterministic slices; validate the whole task before calling."""
+    if num_shards < 1 or not 0 <= shard_index < num_shards:
+        raise ValueError("Require 0 <= shard index < positive number of shards")
+    return questions[shard_index::num_shards]
+
+
 def validate_prompt_spec(spec: dict, question_ids: set[str]) -> None:
     if not isinstance(spec.get("instruction"), str) or not spec["instruction"].strip():
         raise ValueError("Prompt spec needs an explicit instruction")
@@ -124,10 +131,12 @@ class GreedyDecoder:
     transfers permit prompt/format-only early stopping and are included in time.
     """
     def __init__(self, model, tokenizer, *, amp: Callable = nullcontext,
-                 sync: Callable = lambda: None, banned_ids: tuple[int, ...] = ()):
+                 sync: Callable = lambda: None, banned_ids: tuple[int, ...] = (),
+                 head_amp: Callable | None = None):
         if model.config.model_type != "qwen3" or any(t != "full_attention" for t in model.config.layer_types):
             raise ValueError("Evaluator requires ordinary causal Qwen3")
         self.model, self.tokenizer, self.amp, self.sync = model.eval(), tokenizer, amp, sync
+        self.head_amp = amp if head_amp is None else head_amp
         self.banned_ids = banned_ids
 
     @property
@@ -145,6 +154,7 @@ class GreedyDecoder:
             else:
                 index = selected_position.reshape(1, 1, 1).expand(1, 1, hidden.shape[-1])
                 hidden = hidden.gather(1, index)[:, 0]
+        with self.head_amp():
             return self.model.lm_head(hidden).float()
 
     @torch.no_grad()
@@ -310,14 +320,23 @@ def main() -> None:
     parser.add_argument("--frozen-protocol", type=Path)
     parser.add_argument("--device", choices=("xla", "cpu"), default="xla")
     parser.add_argument("--compute", choices=("fp32", "bf16"), default="bf16")
+    parser.add_argument("--head-precision", choices=("fp32", "bf16"))
+    parser.add_argument("--shard-index", type=int, default=0)
+    parser.add_argument("--num-shards", type=int, default=1)
     args = parser.parse_args()
+    args.head_precision = args.head_precision or args.compute
     if min(args.max_answer_tokens, args.thought_cap) < 1:
         parser.error("Token budgets must be positive")
     if args.device == "cpu" and not args.qualification:
         parser.error("CPU mode is for qualification only")
+    if args.compute == "fp32" and args.head_precision == "bf16":
+        parser.error("A BF16 head requires BF16 compute context")
     if len(args.task_revision) != 40 or any(c not in "0123456789abcdef" for c in args.task_revision):
         parser.error("Task revision must be an explicit 40-character pinned commit")
     questions = read_questions(args.task_file, qualification=args.qualification)
+    local_questions = shard_questions(questions, args.shard_index, args.num_shards)
+    if not local_questions:
+        parser.error("Requested shard contains no task items")
     spec = json.loads(args.prompt_spec.read_text())
     validate_prompt_spec(spec, {q["item_id"] for q in questions})
     fmt = Format.from_dict(json.loads(args.format.read_text())["format"])
@@ -334,7 +353,7 @@ def main() -> None:
         max_answer_tokens=args.max_answer_tokens, answer_stop=ANSWER_STOP,
         answer_stop_ids=list(dict.fromkeys((fmt.pad_id, *fmt.additional_stop_ids))),
         tokenizer_and_config_sha256=canonical_hash(tokenizer_files),
-        support="tokenizer_defined_ids_only", compute=args.compute,
+        support="tokenizer_defined_ids_only", compute=args.compute, head_precision=args.head_precision,
         evaluator_sha256=sha256_file(Path(__file__)), backend_sha256=sha256_file(Path(__file__).with_name("neuron_backend.py")))
     # JSON-normalize tuples so a written/read receipt compares identically.
     protocol = json.loads(json.dumps(protocol))
@@ -342,7 +361,11 @@ def main() -> None:
         require_frozen_protocol(args.frozen_protocol, protocol)
     args.output.mkdir(parents=True, exist_ok=False)
     report = dict(run_id=args.output.name, status="running", started_utc=utc_now(), qualification=args.qualification,
-                  protocol=protocol, protocol_sha256=canonical_hash(protocol), expected_items=len(questions),
+                  protocol=protocol, protocol_sha256=canonical_hash(protocol), expected_items=len(local_questions),
+                  global_expected_items=len(questions),
+                  shard=dict(index=args.shard_index, count=args.num_shards,
+                             expected_items=len(local_questions),
+                             item_ids_sha256=canonical_hash([q["item_id"] for q in local_questions])),
                   model=assets, parser="strict_final_hash4_number_v1",
                   note="Question-only generation. No gold scoring or answer-based selection in this process.")
     atomic_json(args.output / "run.json", report)
@@ -383,7 +406,8 @@ def main() -> None:
             report["device"] = "cpu"
             if args.compute == "bf16":
                 amp = lambda: torch.autocast("cpu", dtype=torch.bfloat16)
-        decoder = GreedyDecoder(model, tokenizer, amp=amp, sync=sync, banned_ids=banned)
+        decoder = GreedyDecoder(model, tokenizer, amp=amp, sync=sync, banned_ids=banned,
+                                head_amp=nullcontext if args.head_precision == "fp32" else amp)
         widths = [len(tokenizer.encode(question_prompt(q["question"], spec), add_special_tokens=False)) for q in questions]
         question_width = max(widths)
         answer_width = question_width
@@ -399,7 +423,7 @@ def main() -> None:
         counts = {key: 0 for key in ("ok", "format_error", "truncated", "error")}
         started = time.monotonic()
         with (args.output / "predictions.jsonl").open("x") as stream:
-            for question in questions:
+            for question in local_questions:
                 row = generate_item(question, decoder=decoder, prompt_spec=spec, fmt=fmt,
                     mode=args.mode, max_answer_tokens=args.max_answer_tokens, thought_cap=args.thought_cap,
                     question_prefill_width=question_width, answer_prefill_width=answer_width)

@@ -6,8 +6,11 @@ from transformers import Qwen3Config, Qwen3ForCausalLM
 
 from train.evaluate import (Decoded, GenerationFailure, GreedyDecoder, first_answer_line_end,
                             generate_item, load_own_checkpoint, question_prompt, read_questions,
-                            require_frozen_protocol, validate_prompt_spec)
-from weekend_thinking.core import Format, policy_log_probs
+                            require_frozen_protocol, shard_questions, validate_prompt_spec)
+from train.neuron_backend import NeuronCausalBackend
+from train.qualify_replay_probe import cached_forced_logps, error_summary
+from weekend_thinking.backend_contract import Rollouts
+from weekend_thinking.core import Format, action_mask, policy_log_probs
 from weekend_thinking.evaluation import score_predictions
 
 
@@ -181,3 +184,32 @@ def test_final_protocol_receipt_must_match_exact_configuration(tmp_path):
     require_frozen_protocol(path, protocol)
     with pytest.raises(ValueError, match="does not match"):
         require_frozen_protocol(path, dict(protocol, thought_cap=2048))
+
+
+def test_question_shards_cover_every_item_once_and_preserve_global_order():
+    questions = [dict(item_id=str(i)) for i in range(11)]
+    partitions = [shard_questions(questions, rank, 4) for rank in range(4)]
+    ids = [q["item_id"] for partition in partitions for q in partition]
+    assert len(ids) == len(set(ids)) == len(questions)
+    assert set(ids) == {q["item_id"] for q in questions}
+    assert [[q["item_id"] for q in part] for part in partitions] == [
+        ["0", "4", "8"], ["1", "5", "9"], ["2", "6", "10"], ["3", "7"]]
+    for rank, count in [(-1, 4), (4, 4), (0, 0)]:
+        with pytest.raises(ValueError, match="shard"):
+            shard_questions(questions, rank, count)
+
+
+def test_fixed_actions_probe_matches_full_replay_with_stopped_and_capped_paths():
+    model = tiny_model()
+    backend = NeuronCausalBackend(model, checkpoint_trunk=False, banned_ids=(29, 30), head_chunk=2)
+    fmt = Format((2,), (3,), 5, 0, additional_stop_ids=(6,))
+    actions = torch.tensor([[[7, 8, 5, 0], [6, 0, 0, 0], [9, 10, 11, 12], [1, 5, 0, 0]]])
+    mask = action_mask(actions, 5, (6,))
+    rollout = Rollouts(actions, mask, torch.zeros_like(actions, dtype=torch.float32), 0)
+    prefix = torch.tensor([[10, 11, 12]])
+    forced = cached_forced_logps(backend, prefix, rollout, fmt=fmt)
+    with torch.no_grad():
+        replay = backend.replay(prefix, rollout, fmt=fmt, temperature=.7)
+    summary = error_summary(forced, replay, mask, actions)
+    assert summary["active_actions"] == 10 and summary["max_abs"] < 1e-5
+    assert torch.allclose(forced[mask], replay[mask], atol=1e-5)
