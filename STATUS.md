@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 21:37 UTC
+# Current state — 2026-10-16 21:45 UTC
 
 Stage: real-asset Neuron qualification. No scientific C/R pair has launched.
 The owner authorizes sustained autonomous work, review agents, and public GitHub
@@ -68,13 +68,22 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
   State/log: `local/qualification/qwen-c-fp32-001.state.json` and adjacent `.log`.
   Output: `local/nvme/qualification/qwen-c-fp32-001`. Full-FP32 forward compiled
   at20:57:58 UTC; first/later-accumulation backward and finite-gradient graphs
-  passed. First update completed21:20:40, CE1.34797621 versus CPU1.34796970.
+  passed. Baseline finished12/12updates and exited0. Ten steady steps3–12 average
+  10.1728seconds (range10.1029–10.3651). First update completed21:20:40,
+  CE1.34797621 versus CPU1.34796970.
   All rank samples agree bitwise and99.09% of sampled values changed. Device
   preclip norm1.62842071 initially failed against ordinary CPU FP32 vector_norm;
   an independent sum of ALL gradient squares in Float64 gives1.62834683 and
   passes the unchanged bound. Both outcomes are preserved in
-  `validation/c_fp32_gradient_norm_reference_20261016.json`. Step2's initialized
-  optimizer graphs are compiling; that memory path is not yet qualified.
+  `validation/c_fp32_gradient_norm_reference_20261016.json`. Initialized optimizer
+  memory passed; sampled peak19.315GiB, no sampled runtime errors. The original
+  three-update CPU comparison still FAILS its mandatory pointwise rule on754 of
+  1,720,574,976 entries (max2.0014e-6). Aggregate update cosine.999999758 and
+  relative L2error.00069529 pass their separately predeclared bounds; they do not
+  override the pointwise failure. Corrected-clipping comparison remains pending.
+  All three checkpoints3/6/12 are COMPLETE. Step3 EBS copy/readback/hash PASS
+  finished21:43:38. Fresh-process FE resume fromstep3 began21:43:57,
+  tmux `dario-qwen-c-fp32-resume-001`, same world32 and unchanged strict criteria.
 - **Cores 0–31 reserved:** R32 launcher prepared by data agent, not running.
   It requires the full-cap FP32 backward to pass and a qualified memory policy.
   Same immutable source and pilot records as C32; 14 updates, eight-hour bound.
@@ -82,7 +91,9 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
   `local/qualification/qwen-r-fp32-001.gate-watcher.json`. No retry loop.
 - Independent CPU FP32 first-three-update C reference has finished; full weights
   and Adam states are hashed and preserved. A separate corrected-norm/clip
-  three-update lineage began21:31:49; original results remain intact. A native
+  three-update lineage began21:31:49 and is on update2; original results remain
+  intact. Diagnose any remaining pointwise errors before numerical qualification.
+  A native
   CPU full1024-action PG backward also finished: full Float64-reduced norm
   .1056467963; hardware comparison is still pending. Receipt:
   `validation/p2_full_gradient_cpu_reference_20261016.json`. Reviewer prepared full-cap
@@ -109,8 +120,8 @@ preparation); the other three were untouched. Provenance and preparation receipt
 are in `validation/`. Store large intermediates there; copy scientific terminal
 and daily latest-complete checkpoints to EBS. Both are local to this instance;
 no external backup destination has been approved.
-The verified-copy utility is `scripts/backup_checkpoint.py`; the distributed
-agent will copy C32 checkpoint3 to `local/backups/` once COMPLETE exists. Before
+The verified-copy utility is `scripts/backup_checkpoint.py`; C32 checkpoint3 is
+verified at `local/backups/qwen-c-fp32-001/step-0000003`. Before
 multi-day science, arrange at least daily complete saves and verified EBS copies.
 Current C qualification reward-related metric zeros are unmeasured placeholders,
 not actual clean/thought likelihoods.
