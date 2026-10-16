@@ -75,7 +75,7 @@ Routine formatting changes do not need a decision entry.
   run and resume state. Permit separately declared arm policies only with their
   own measured costs. This changes operations, not the scientific objective.
 - Before multi-day science, add synchronized time-triggered complete saves every
-  12hours at update boundaries, in addition to the original milestones. Record
+  12 hours at update boundaries, in addition to the original milestones. Record
   unmeasured C reward fields and unaudited replay errors as null. Qualify the new
   source's actual warm updates and resume before freezing; CPU tests alone do not
   establish that the added save-decision collective works on the accelerator.

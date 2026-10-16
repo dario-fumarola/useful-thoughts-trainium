@@ -177,8 +177,8 @@ policies, measure both policies' complete-step costs; do not reuse timings from
 an unmeasured policy.
 
 Set `checkpoint_interval_seconds` in the site file and the matching driver flag
-(default43200). All ranks synchronize the save decision. Besides the existing
-quarter/half/terminal saves, a complete save occurs after12hours at the next
+(default 43200). All ranks synchronize the save decision. Besides the existing
+quarter/half/terminal saves, a complete save occurs after 12 hours at the next
 update boundary; a slow single update can extend that interval. Copy the latest
 complete state to EBS with verified readback. Existing immutable qualification
 jobs retain their original schedule. Unmeasured C reward metrics and unaudited

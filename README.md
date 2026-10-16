@@ -39,8 +39,8 @@ in evaluation denominators, and report training and inference costs.
 - A real four-core continuation update and checkpoint completed. A subsequent
   optimizer graph exceeded that layout's memory, so qualification moved to
   32 cores before scientific training.
-- The 32-core continuation run completed12updates, including ten steady steps
-  averaging10.17seconds. Checkpoint backup is verified; full-model resume and
+- The 32-core continuation run completed 12 updates, including ten steady steps
+  averaging 10.17 seconds. Checkpoint backup is verified; full-model resume and
   numerical qualification remain in progress. A strict CPU per-value comparison
   failed despite close aggregate agreement, and is being investigated.
 - Development-only math inference runs, including failed outputs, are retained.
