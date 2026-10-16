@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 23:38 UTC
+# Current state — 2026-10-16 23:53 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -77,9 +77,12 @@ World 32 / global batch 128 / accumulation 4, G4, cap 1024, FP32, seed 1234, XLA
 Host store 127.0.0.1:64231; Neuron root 127.0.0.1:64194. Prior attempt 002 failed
 before loading because the default host-store port collided with C; its failure
 and bounded cleanup are preserved. Attempt 003 has loaded actual weights and
-started update 1, with first-backward compilation in progress. **No complete R
-update yet.** Watch first versus accumulated backward memory; do not infer a
-pass from the single-backward probe. Separate sysfs memory sampling is read-only.
+started update 1. Its first backward graph compiled at 23:48:39 UTC after
+43 minutes; one rank has completed the backward with zero execution errors,
+while other ranks are still loading. Observed current bank allocation reaches
+19.78 GiB. The next trajectory scalar loss is now cold-compiling
+(`MODULE_9300468192447712346`); accumulation backward has not yet qualified.
+**No complete R update yet.** Separate sysfs memory sampling is read-only.
 
 Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
 Receipts/logs: `local/qualification/qwen-r-fp32-final-003*`.
