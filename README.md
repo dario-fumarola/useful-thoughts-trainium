@@ -34,6 +34,8 @@ in evaluation denominators, and report training and inference costs.
   **18,239 test** document-level records.
 - Full FP32 cached generation agrees with replay on the exact long trajectory
   that failed BF16 qualification; the fixed tolerance was not relaxed.
+- Full-cap FP32 backward hit a runtime memory limit. Program-cache residency is
+  under investigation; thought-training launch remains gated.
 - A real four-core continuation update and checkpoint completed. A subsequent
   optimizer graph exceeded that layout's memory, so qualification moved to
   32 cores before scientific training.

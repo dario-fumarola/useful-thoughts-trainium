@@ -8,7 +8,7 @@ to idle: data preparation and evaluator work can proceed while compilation runs.
 |---|---|---|
 | P0 | Assets resolved | Inventory/model/data complete; choose a finite planning horizon before freeze, using the owner's weeks-long allowance |
 | P1 | Released forward complete | Correct weights/ties/fingerprints and CPU/device forward pass |
-| P2 | Full-cap FP32 backward pending | Long cache/replay passes, including the exact old BF16 failure; require finite positive backward |
+| P2 | Full-cap FP32 memory repair | Long cache/replay passes; backward exhausted memory with retained program spill; test bounded cache residency before changing computation |
 | P3 | 32-rank C/R qualification active | Tiny mean/update/resume passes; C32 compiling, R32 gated on P2; require real full-model master updates |
 | P4 | Resume and timing pending | Full-model resume and ≥10 steady updates per arm; primary accelerator TRAIN inference complete, secondary/local execution still required |
 | P5 | Frozen first C/R pair | Model/data/format/source hashes; enough records; fixed terminal steps; fresh initial weights; actual deadline respected |

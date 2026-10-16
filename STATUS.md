@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 21:02 UTC
+# Current state — 2026-10-16 21:17 UTC
 
 Stage: real-asset Neuron qualification. No scientific C/R pair has launched.
 The owner authorizes sustained autonomous work, review agents, and public GitHub
@@ -24,7 +24,9 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
 - Full-cap BF16 cache/replay failed the fixed .2 bound (max .21841). FP32 head
   alone also failed. Full FP32 passes the exact old failing trajectory with max
   2.84e-5 under the original tighter .001 bound. Three fresh full-cap FP32 traces
-  also pass; the single-thought backward is still compiling.
+  also pass. The original full-cap single-thought backward failed runtime memory
+  allocation at21:09:44 UTC, before a gradient norm was obtained. R did not launch.
+  The bank was full with23.968GB, including5.295GB retained program spill storage.
 - Tiny distributed FP32 updates and numerical resumption pass. Full Qwen C on
   four ranks completed one real update and a complete checkpoint, but update two
   exceeded memory. No full-model resume pass yet. Qualification moved to 32 ranks
@@ -45,28 +47,35 @@ corrected before freeze; the original audit is retained. Latest CPU checks:
 
 ## Active bounded jobs
 
-- **Core 1:** full-FP32 prefix512/cap1024 cache/replay/backward, PID374089,
-  `local/p2-full-fp32-001.log`, hard limit three hours from about 20:05 UTC.
-  Fresh trace numerical checks passed; backward is pending.
+- **Core 1:** unchanged-source warm-cache memory diagnostic, PID448724,
+  tmux `dario-p2-full-fp32-n2-001`, `local/p2-full-fp32-n2-001.log`.
+  Same three full-cap traces/backward and fixed precision/tolerance; only
+  `NEURON_NUM_RECENT_MODELS_TO_KEEP=2` is set. Thirty-minute bound from21:14 UTC.
+  Initial observations show more than two resident programs, so efficacy is not
+  assumed. Next candidate is the installed XLA compilation-cache LRU setting,
+  followed by a mathematically equivalent staged backward only if needed.
 - **Cores 32–63:** FP32 Qwen C, 32 ranks, global batch128, 12 updates,
   launcher403728, tmux `dario-qwen-c-fp32-001`. Immutable source `fe667bf`.
   State/log: `local/qualification/qwen-c-fp32-001.state.json` and adjacent `.log`.
   Output: `local/nvme/qualification/qwen-c-fp32-001`. Full-FP32 forward compiled
-  at20:57:58 UTC; first backward is compiling. The independent CPU first-update
+  at20:57:58 UTC; first/later-accumulation backward and finite-gradient graphs
+  passed. First optimizer graphs are compiling on all32 ranks. Independent CPU first-update
   reference is CE1.34796970 / preclip norm1.62742829; device comparison is pending.
 - **Cores 0–31 reserved:** R32 launcher prepared by data agent, not running.
-  It requires the full-cap FP32 backward to pass and its process to exit first.
+  It requires the full-cap FP32 backward to pass and a qualified memory policy.
   Same immutable source and pilot records as C32; 14 updates, eight-hour bound.
-  One-shot watcher PID437606/tmux `dario-r-launch-gate` is armed until23:20 UTC;
-  state `local/qualification/qwen-r-fp32-001.gate-watcher.json`. No retry loop.
-- Independent CPU FP32 first-three-update C reference is running at low priority
-  while accelerator graphs compile. Reviewer is finishing local CPU qualification.
-  Core2 is free; do not overlap reserved accelerator layouts.
+  Original watcher exited `P2_FAILED_NO_R_LAUNCH`; it is not armed. State:
+  `local/qualification/qwen-r-fp32-001.gate-watcher.json`. No retry loop.
+- Independent CPU FP32 first-three-update C reference has finished; full weights
+  and Adam states are hashed and preserved. Reviewer prepared full-cap
+  local/secondary accelerator suites and
+  waits for cores62–63 after C32 and resume exit. Core2 is free; do not overlap
+  reserved accelerator layouts.
 
 ## Next actions and recovery
 
 ```bash
-tail -20 local/p2-full-fp32-001.log
+tail -20 local/p2-full-fp32-n2-001.log
 cat local/qualification/qwen-c-fp32-001.state.json
 ```
 
