@@ -1,0 +1,167 @@
+{
+  "retrieved_utc": "2026-10-16",
+  "archive_url": "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2009/texlive-20091107-texmf.tar.xz",
+  "archive_sha256_url": "https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2009/texlive-20091107-texmf.tar.xz.sha256",
+  "archive_sha256": "63e38a218c04e28081e12b4f48969a7e25cf5f81a8c4807aae815a49b575ae5d",
+  "archive_checksum_verified": true,
+  "license": {
+    "file": "LPPL-1.0.txt",
+    "url": "https://www.latex-project.org/lppl/lppl-1-0.txt",
+    "bytes": 9081,
+    "sha256": "89358c7072db622ba6d8ac9b4a322984853dd6d870f93c39efdb3f6a22719cd2"
+  },
+  "original_snapshot_comparisons": [
+    {
+      "snapshot_file": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/natbib.sty",
+      "upstream_file": "natbib-8.31/natbib.sty",
+      "byte_identical": true,
+      "sha256": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d"
+    },
+    {
+      "snapshot_file": "legacy/ema-trainium-pre-thinking/overleaf/iclr2027/fancyhdr.sty",
+      "upstream_file": "fancyhdr-3.2/fancyhdr.sty",
+      "byte_identical": true,
+      "sha256": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea"
+    }
+  ],
+  "files": [
+    {
+      "file": "natbib-8.31/abbrvnat.bst",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/bibtex/bst/natbib/abbrvnat.bst",
+      "bytes": 26532,
+      "sha256": "9ab1f8c5dfdb7e247e96ec877ed1ee3abea2a40feecec649eb8214aefa869dc3"
+    },
+    {
+      "file": "natbib-8.31/plainnat.bst",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/bibtex/bst/natbib/plainnat.bst",
+      "bytes": 26816,
+      "sha256": "21eefa76f1c967f5074776fcef096c0f8f2b9e42347e84b62e1dbb121dcae486"
+    },
+    {
+      "file": "natbib-8.31/unsrtnat.bst",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/bibtex/bst/natbib/unsrtnat.bst",
+      "bytes": 24550,
+      "sha256": "2b257bc5d35c5716691f67615b3b29cc718d05b6b998f87473c924dec0a652e9"
+    },
+    {
+      "file": "fancyhdr-3.2/README",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/fancyhdr/README",
+      "bytes": 1695,
+      "sha256": "e0867fd2a46503f46bd60dac0c33e1e8608db6b6d560b73a785da85038dfa984"
+    },
+    {
+      "file": "fancyhdr-3.2/fancyhdr.pdf",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/fancyhdr/fancyhdr.pdf",
+      "bytes": 312991,
+      "sha256": "23505a57a6a93ae8a72921f5f5317322c45204f7f785bc66a8a61df006359b93"
+    },
+    {
+      "file": "fancyhdr-3.2/fancyhdr.tex",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/fancyhdr/fancyhdr.tex",
+      "bytes": 66433,
+      "sha256": "1dc13789078934cfb4a857abecda6cb817b586f9e12624cec54ec6983891dc21"
+    },
+    {
+      "file": "natbib-8.31/README.1st",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/README.1st",
+      "bytes": 1586,
+      "sha256": "9306ace24312d008cab47593ca3ac0e63e1e4095fe801f916f6b01f9ea76a204"
+    },
+    {
+      "file": "natbib-8.31/README.v831",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/README.v831",
+      "bytes": 23480,
+      "sha256": "1f6ca5ccc685cf623bfa0617bc4bf493a8ffcbaaf27df013c16127222e4d6bfa"
+    },
+    {
+      "file": "natbib-8.31/natbib.ltx",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/natbib.ltx",
+      "bytes": 1598,
+      "sha256": "9ee8947cf0ef130801173ccbb53dc66669d8cfd2d195419f323f9f3a4cd9b8f0"
+    },
+    {
+      "file": "natbib-8.31/natbib.pdf",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/natbib.pdf",
+      "bytes": 187454,
+      "sha256": "276db2fa2e4b586b782fde6fbef374c2f662cf10899ccfb85932b8a2a20f1eaf"
+    },
+    {
+      "file": "natbib-8.31/natnotes.pdf",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/natnotes.pdf",
+      "bytes": 88668,
+      "sha256": "5108178bc72abb0b69614b4f566054daea7576a4ce442ec4ae5934e9cb331cd5"
+    },
+    {
+      "file": "natbib-8.31/natnotes.tex",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/natnotes.tex",
+      "bytes": 15407,
+      "sha256": "06bec18deec2391bcda7568efd2d546f9b546506394cac5271a5b2eb3d18106a"
+    },
+    {
+      "file": "natbib-8.31/readme.nat",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/doc/latex/natbib/readme.nat",
+      "bytes": 23480,
+      "sha256": "1f6ca5ccc685cf623bfa0617bc4bf493a8ffcbaaf27df013c16127222e4d6bfa"
+    },
+    {
+      "file": "natbib-8.31/bibentry.drv",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/source/latex/natbib/bibentry.drv",
+      "bytes": 1614,
+      "sha256": "44a715d86a75c5ebbaee5f50a9fa6683432c9a0ebbe14b44550393b1433915b5"
+    },
+    {
+      "file": "natbib-8.31/bibentry.dtx",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/source/latex/natbib/bibentry.dtx",
+      "bytes": 22307,
+      "sha256": "e908c2ee0486c79342ca722d534735655341e7d2dd7efbd30490a60df324f39c"
+    },
+    {
+      "file": "natbib-8.31/bibentry.ins",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/source/latex/natbib/bibentry.ins",
+      "bytes": 2740,
+      "sha256": "b8b842da82bfd8900cc198ac3e8dc39a421fc0f48f670fb6cbf0275391243b25"
+    },
+    {
+      "file": "natbib-8.31/natbib.dtx",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/source/latex/natbib/natbib.dtx",
+      "bytes": 248383,
+      "sha256": "d7e80d7d4fd0899383dde263703a3fa12563c74d18e53ea63b5761fb08be57ae"
+    },
+    {
+      "file": "natbib-8.31/natbib.ins",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/source/latex/natbib/natbib.ins",
+      "bytes": 2673,
+      "sha256": "4118fc89ba413ab24efe6d58db5883526ee01707e10aefde8b07f362a74c5cbb"
+    },
+    {
+      "file": "fancyhdr-3.2/extramarks.sty",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/tex/latex/fancyhdr/extramarks.sty",
+      "bytes": 5568,
+      "sha256": "c6e43de14ed0b1af11741620bc7d283e614344b707bae746f84d9e3f44345ec8"
+    },
+    {
+      "file": "fancyhdr-3.2/fancyhdr.sty",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty",
+      "bytes": 20521,
+      "sha256": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea"
+    },
+    {
+      "file": "fancyhdr-3.2/fancyheadings.sty",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/tex/latex/fancyhdr/fancyheadings.sty",
+      "bytes": 822,
+      "sha256": "922723f4681c469166b311fbd05da77d798c816ae07b9caf17b6a6ac977300c5"
+    },
+    {
+      "file": "natbib-8.31/bibentry.sty",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/tex/latex/natbib/bibentry.sty",
+      "bytes": 3400,
+      "sha256": "dd166f38f3952d9fb413cd96535e991765bdc1ebb41f0df8a645dd013d048c2c"
+    },
+    {
+      "file": "natbib-8.31/natbib.sty",
+      "archive_member": "texlive-20091107-texmf/texmf-dist/tex/latex/natbib/natbib.sty",
+      "bytes": 45154,
+      "sha256": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d"
+    }
+  ]
+}
