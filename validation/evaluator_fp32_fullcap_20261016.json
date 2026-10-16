@@ -1,0 +1,471 @@
+{
+  "created_utc": "2026-10-16T22:47:18+00:00",
+  "evidence": [
+    {
+      "bytes": 41370,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/preparation.json",
+      "sha256": "d187e5ecaae500b4de4ff3162cf371263433690fcffeca9d4eeca119f537e0e8"
+    },
+    {
+      "bytes": 245,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/preparation_checks.json",
+      "sha256": "4cdff477f889768ccfad8378bd9225315c418a065d1018733b69cb28105caebe"
+    },
+    {
+      "bytes": 11869,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/actual_launch.json",
+      "sha256": "08a3eb4c8284979b069d9863440d450b917804207af32c71d7d484b8e410589f"
+    },
+    {
+      "bytes": 426,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/handoff.json",
+      "sha256": "eebb187c0a3df429ec3a4279ff440eece5e4f123788d6d506f6b0a5b17d826ec"
+    },
+    {
+      "bytes": 8294400,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/source.tar",
+      "sha256": "9f78761d89c9f02ee22fef3257e07b14b0a57d58d5ced238a982a7b6f090187e"
+    },
+    {
+      "bytes": 8136,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/run_suite.py",
+      "sha256": "ed445d090c1111d8283c55af55429fd6b1f0a3bba3debc3a6c08dd8354362ee1"
+    },
+    {
+      "bytes": 6616,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/parity.py",
+      "sha256": "cc0e7de1ea118e3eabade129dd8bb1499684cf566d1b00d2af7b90f2be4d232e"
+    },
+    {
+      "bytes": 614,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/execute.sh",
+      "sha256": "89889cbeb8440a151f449a48fd26228fe543f34f29061f80b7dabcc8bab72148"
+    },
+    {
+      "bytes": 4878,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local.state.json",
+      "sha256": "c02a6172cd431cfd9aba04317dfb3c38b9dfe26ac716a8ee113ff84f827597f2"
+    },
+    {
+      "bytes": 6496,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/secondary.state.json",
+      "sha256": "d3f1bc55f0110f4619d4bd3dcc84ef6612bb61506f0242e5d00fb354d3982590"
+    },
+    {
+      "bytes": 16,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local.exit.json",
+      "sha256": "d24219f6de94b955cf36d25bd2aca88e2d35eef45b9317b7083f55ec8fe9653c"
+    },
+    {
+      "bytes": 16,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/secondary.exit.json",
+      "sha256": "d24219f6de94b955cf36d25bd2aca88e2d35eef45b9317b7083f55ec8fe9653c"
+    },
+    {
+      "bytes": 61889,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-parity.json",
+      "sha256": "d6e661a9f472ce4e1867c2561020de96b97c3e29976957787cc2f1eebaf022f1"
+    },
+    {
+      "bytes": 31446,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/secondary-parity.json",
+      "sha256": "f44c7bdde5f915d8341e3217f15dc73bae161d5f8fe423bb857ba19cbf4758e2"
+    },
+    {
+      "bytes": 5816,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-notes/run.json",
+      "sha256": "349bc375c5096863b08600b4cefd71501dbd8e1cffa9469c87bc73fe3503a271"
+    },
+    {
+      "bytes": 75883,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-notes/notes.jsonl",
+      "sha256": "e3f2898c8e37a6e057b6611e039d1061c34e562f6c7542b920ae9f8ce7b80f45"
+    },
+    {
+      "bytes": 27975,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-device/run.json",
+      "sha256": "336fcb0d33fe16587d803c19ae1b22ad5f4a6d3362f9010715e23de5408bb75d"
+    },
+    {
+      "bytes": 38117,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-device/scores.jsonl",
+      "sha256": "13e4ebd8f50f9d0b4eba4f3f71f178df03646f3e68935bc376d037086ea40f3c"
+    },
+    {
+      "bytes": 27975,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-cpu-fixed-notes/run.json",
+      "sha256": "a1564c4fde2da30c2be2511525ed6caf8818b8d152d1d958008147becda6d499"
+    },
+    {
+      "bytes": 38034,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/local-cpu-fixed-notes/scores.jsonl",
+      "sha256": "c4d3466a4b0c12c1fe390fbd04c19f7f54b85cb089493874111ca7aa3cecdf5e"
+    },
+    {
+      "bytes": 6618,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/arc_challenge-direct/run.json",
+      "sha256": "641cadff92ae2c657016008acb581e5e8750da6e2d184fceea1315f311d8cf4f"
+    },
+    {
+      "bytes": 4551,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/arc_challenge-direct/scores.jsonl",
+      "sha256": "7b6a94561660751257e46cf74a1975443fb1c300dcfed63ef82755022fa4bd88"
+    },
+    {
+      "bytes": 7450,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/arc_challenge-one_thought/run.json",
+      "sha256": "bc872e3f02f656c07d7dc65dbe7b5f980444499b8e72323c2319fd0b9e235b42"
+    },
+    {
+      "bytes": 32173,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/arc_challenge-one_thought/scores.jsonl",
+      "sha256": "6ebcef2d44763cfeee60587357158a9229a8b81d7601b9ce1dd93877794c530a"
+    },
+    {
+      "bytes": 6590,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/lambada-direct/run.json",
+      "sha256": "e06fcfdded81a284ab844adcf0b8750fae300d7c05b3406974f9c24b012aee83"
+    },
+    {
+      "bytes": 2069,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/lambada-direct/scores.jsonl",
+      "sha256": "44788a7aa884c847b35333f16e57c08f23109b78355f7e5216460e1a58c4b45f"
+    },
+    {
+      "bytes": 7423,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/lambada-one_thought/run.json",
+      "sha256": "536b81b0340055401422a61f1f90612d06b6328dd9215c79c0fd30f2725a921f"
+    },
+    {
+      "bytes": 24480,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/lambada-one_thought/scores.jsonl",
+      "sha256": "fd947b727f6dff68be1bb6948fa140d295d81b38ee86fdf1aeedbafaa696ec52"
+    },
+    {
+      "bytes": 1615,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/arc_challenge-direct-fixed-reader-cpu.jsonl",
+      "sha256": "288ac723db08a2fc4848a8d056404c884e63c61b95fe05b7879f6e476900db21"
+    },
+    {
+      "bytes": 8719,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/arc_challenge-one_thought-fixed-reader-cpu.jsonl",
+      "sha256": "c2e141e24bbea4914feb5b33e65c8814e80c020ccb088d79cb3f168f56647cb8"
+    },
+    {
+      "bytes": 421,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/lambada-direct-fixed-reader-cpu.jsonl",
+      "sha256": "7020d05aec264f48585bb8a14daffe10b4f9ab8dadd97799b7987813968f7e7e"
+    },
+    {
+      "bytes": 6899,
+      "path": "local/qualification/evaluator-fp32-fullcap-003/lambada-one_thought-fixed-reader-cpu.jsonl",
+      "sha256": "e1fbd786eed080d2c4c9c4981f1f9800c42f22fa760c35ad719b305fecfaf336"
+    }
+  ],
+  "limitations": [
+    "This verifies evaluator execution and saved-context numerical agreement; it is not evidence that thoughts help.",
+    "CPU comparisons reuse exact device-generated actions and contexts; they do not independently compare stochastic samplers.",
+    "ARC uses two fixed training items; LAMBADA uses two synthetic items including a three-subtoken target. No benchmark score is estimated.",
+    "All expected rows and token comparisons are required; no failed outcomes were intersected away or retried.",
+    "Raw outputs, fixed controls, notes, token IDs, first-target token metadata, logs and source archives remain under local/qualification."
+  ],
+  "local": {
+    "conditions": [
+      "empty",
+      "filler",
+      "other",
+      "own",
+      "raw",
+      "shuffled"
+    ],
+    "coverage": {
+      "local-cpu-fixed-notes": {
+        "failures": 0,
+        "rows": 36
+      },
+      "local-device": {
+        "failures": 0,
+        "rows": 36
+      }
+    },
+    "horizons": [
+      1,
+      4,
+      16
+    ],
+    "items": 2,
+    "max_absolute_error_by_condition": {
+      "empty": 8.308887481689453e-05,
+      "filler": 0.000148773193359375,
+      "other": 9.1552734375e-05,
+      "own": 0.0002307891845703125,
+      "raw": 3.24249267578125e-05,
+      "shuffled": 0.00010776519775390625
+    },
+    "nested_horizon_rows_verified_exact_prefixes": true,
+    "notes": [
+      {
+        "actions": 1024,
+        "content_tokens": 1024,
+        "decode_iterations": 1024,
+        "item_id": "59036ac4d17fe64bfaa40d3daa7e53a060288dda8c066910994f12f72bbf6049:3618",
+        "stop_type": "length_cap"
+      },
+      {
+        "actions": 1006,
+        "content_tokens": 1005,
+        "decode_iterations": 1024,
+        "item_id": "fcc967ebb16721bca567c6a6c3eb4092a69b6d245839a92d3e9a870821d5777b:6740",
+        "stop_type": "token:151643"
+      }
+    ],
+    "parity": {
+      "abs_error_quantiles": {
+        "0.5": 9.655952453613281e-06,
+        "0.9": 5.075931549072266e-05,
+        "0.95": 7.452964782714836e-05,
+        "0.99": 0.00011145591735839858,
+        "1.0": 0.0002307891845703125
+      },
+      "actual_token_comparisons": 192,
+      "arc_ranking_mismatches": 0,
+      "bound": 0.001,
+      "expected_token_comparisons": 192,
+      "greedy_token_mismatches": 0,
+      "incomplete": [],
+      "interpretation": "Fixed device actions/content; CPU reader only. No resampling or outcome-based note selection.",
+      "max_abs_error": 0.0002307891845703125,
+      "passed": true
+    },
+    "policy": "single independent sample",
+    "seed": 1729,
+    "selection_sha256": "572e85131e809a776be9a571978d13780a170200713eed5577c975419886572b",
+    "split": "dev",
+    "temperature": 0.7,
+    "thought_cap": 1024
+  },
+  "model": {
+    "asset_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "compute_precision": "FP32",
+    "files_identity_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "unique_parameters": 1720574976,
+    "weights_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+  },
+  "official_test_items_scored": 0,
+  "runtime": {
+    "cache_policy": {
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "XLA_COMPILATION_CACHE_SIZE": null,
+      "meaning": "Explicitly absent, same intended installed default as first unlaunched preparation; not inherited from training probes."
+    },
+    "finished_utc": {
+      "local": "2026-10-16T22:38:46+00:00",
+      "secondary": "2026-10-16T22:46:29+00:00"
+    },
+    "logical_cores": [
+      0,
+      1
+    ],
+    "separate_process_communicators": [
+      64220,
+      64221
+    ],
+    "started_utc": {
+      "local": "2026-10-16T22:28:41+00:00",
+      "secondary": "2026-10-16T22:28:41+00:00"
+    },
+    "whole_suite_hard_bound_seconds": 1800
+  },
+  "schema": "evaluator-fp32-fullcap-v1",
+  "scientific_training_outcomes": false,
+  "scope": "Qualification plumbing and numerical agreement on released weights; TRAIN, fixed DEV, and synthetic records only",
+  "secondary": {
+    "arc_split": "train",
+    "future_width": 128,
+    "lambada_split": "synthetic",
+    "max_context_tokens": 768,
+    "parity": {
+      "abs_error_quantiles": {
+        "0.5": 1.4185905456542969e-05,
+        "0.9": 3.1590461730957045e-05,
+        "0.95": 3.6764144897460935e-05,
+        "0.99": 5.996227264404296e-05,
+        "1.0": 7.05718994140625e-05
+      },
+      "actual_token_comparisons": 90,
+      "arc_ranking_mismatches": 0,
+      "bound": 0.001,
+      "expected_token_comparisons": 90,
+      "greedy_token_mismatches": 0,
+      "incomplete": [],
+      "interpretation": "Fixed device actions/content; CPU reader only. No resampling or outcome-based note selection.",
+      "max_abs_error": 7.05718994140625e-05,
+      "passed": true
+    },
+    "runs": [
+      {
+        "failures": 0,
+        "item_ids": [
+          "arc_challenge:train:Mercury_SC_415702",
+          "arc_challenge:train:MCAS_2009_5_6516"
+        ],
+        "items": 2,
+        "mode": "direct",
+        "note_actions": [
+          0,
+          0
+        ],
+        "note_content_tokens": [
+          0,
+          0
+        ],
+        "protocol_sha256": "bcc5e6529ad84a2ab720ec531b02c7b8838ccc0514fbe8cd09db60e67e6ae3ab",
+        "static_scoring_width": 896,
+        "stop_types": [
+          "not_requested",
+          "not_requested"
+        ],
+        "target_lengths": [
+          [
+            2,
+            2,
+            4,
+            4
+          ],
+          [
+            6,
+            6,
+            8,
+            9
+          ]
+        ],
+        "task": "arc_challenge"
+      },
+      {
+        "failures": 0,
+        "item_ids": [
+          "arc_challenge:train:Mercury_SC_415702",
+          "arc_challenge:train:MCAS_2009_5_6516"
+        ],
+        "items": 2,
+        "mode": "one_thought",
+        "note_actions": [
+          1024,
+          76
+        ],
+        "note_content_tokens": [
+          1024,
+          75
+        ],
+        "protocol_sha256": "4d97e0900a37056dd4e226fb249bea86cb37be6cdc5ec75aac33a340abcfe0cd",
+        "static_scoring_width": 1965,
+        "stop_types": [
+          "length_cap",
+          "token:151643"
+        ],
+        "target_lengths": [
+          [
+            2,
+            2,
+            4,
+            4
+          ],
+          [
+            6,
+            6,
+            8,
+            9
+          ]
+        ],
+        "task": "arc_challenge"
+      },
+      {
+        "failures": 0,
+        "item_ids": [
+          "synthetic:lambada:000",
+          "synthetic:lambada:001"
+        ],
+        "items": 2,
+        "mode": "direct",
+        "note_actions": [
+          0,
+          0
+        ],
+        "note_content_tokens": [
+          0,
+          0
+        ],
+        "protocol_sha256": "d5dd01723cac1584ccd5c969b8df9d86c6e205abe4cef60fd9602f367e94b6ed",
+        "static_scoring_width": 896,
+        "stop_types": [
+          "not_requested",
+          "not_requested"
+        ],
+        "target_lengths": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "task": "lambada"
+      },
+      {
+        "failures": 0,
+        "item_ids": [
+          "synthetic:lambada:000",
+          "synthetic:lambada:001"
+        ],
+        "items": 2,
+        "mode": "one_thought",
+        "note_actions": [
+          27,
+          1024
+        ],
+        "note_content_tokens": [
+          26,
+          1024
+        ],
+        "protocol_sha256": "3842093ca15bd6dbc55f8825cce8b28333f786bc702adfb661d77685f1e34366",
+        "static_scoring_width": 1965,
+        "stop_types": [
+          "token:151643",
+          "length_cap"
+        ],
+        "target_lengths": [
+          [
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "task": "lambada"
+      }
+    ],
+    "thought_cap": 1024
+  },
+  "source": {
+    "archive_sha256": "9f78761d89c9f02ee22fef3257e07b14b0a57d58d5ced238a982a7b6f090187e",
+    "bridge_from_previous_preparation": {
+      "train/neuron_backend.py": {
+        "new": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "old": "2439e87787687e669fcc52a7624e7fd36c5375eba8a66fa206fbd192e2fa8a0d"
+      }
+    },
+    "commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+    "files_sha256": {
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7"
+    },
+    "fingerprint_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7"
+  },
+  "status": "PASS"
+}
