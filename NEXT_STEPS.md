@@ -2,12 +2,12 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active C5678 (upper32 workers), actual mapping/first update and
-   checkpoints64/128/256. C1234 completed256/exit0/cleanup and verified latest-two
-   EBS128/256; all NVMe originals remain. Both shared supervisors are RUNNING.
-   Local checkpoint64 review ZIP has been shared with the owner. Preserve logs.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step26 at
+   15:37:06UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+   Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
+   all NVMe originals remain. Both shared supervisors are RUNNING.
 
-2. After C5678 terminal/exit/backup/cleanup, release freshB0 R1234, then R5678. Use
+2. After R1234 terminal/exit/backup/cleanup, release independently freshB0 R5678. Use
    immutable source-256-001, archive cwd/PYTHONPATH and absolute evidence/control
    paths, exact frozen deadline2026-10-31T08:27:49UTC and reviewed launchers.
    Each arm starts independently from B0 with exact within-seed order/exposure.
@@ -18,8 +18,10 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
    tempfile probe must remove its empty outer directory before launcher mkdir.
    No new numerical gates.
 
-3. Once R1234 is underway and actual memory allows, release staged DEV512 B0
-   and fixed held128 C suites on separate idle devices. Packs/roles are in STATUS.
+3. Supervise root-released B0 local DEV512 on idle core32 (started15:37:49UTC)
+   and held128 C1234@64 on separate core36 (started15:38:07UTC). Root owns their
+   actual allocation/headroom and health. No completed trained evaluation exists
+   yet. Packs/roles are in STATUS; all other development slots remain unreleased.
    Train through fixed256; save/evaluate fixed64 development without checkpoint
    selection. Complete fixed held-development B0/C/R × direct/empty_format/
    one_thought and local random DEV512 controls/strata. B0 held128 is113/107/63.

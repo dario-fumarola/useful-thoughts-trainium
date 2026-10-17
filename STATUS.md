@@ -1,6 +1,7 @@
-# Current state — 2026-10-17 09:37 UTC
+# Current state — 2026-10-17 15:38 UTC
 
-**Scientific C1234 completed 256 updates; C5678 is running. No trained C/R comparison is available.**
+**Both scientific C runs completed 256 updates and verified terminal backups.
+R1234 completed step26/256; two fixed development jobs are running. No trained C/R comparison is available.**
 The first study remains **256 terminal updates**, with fixed step64 development.
 Public repository: https://github.com/dario-fumarola/useful-thoughts-trainium .
 Work is isolated in `/home/ubuntu/dario`; original repositories are unchanged.
@@ -25,30 +26,57 @@ exact source/copy manifests, receipts and all33 payload sizes; the pinned helper
 performed full payload hashing. `validation/science_C_seed1234_backup_20261017.json`,
 SHA45847387…7df9d. No model-quality claim follows from execution.
 
-**C5678 is active**, independently fresh released B0, sealed source-256-001,
-same spec/FP32/world32/global128/accum4/default C cache/EBS temp. Upper logical
-32–63; ports64411/64412. Actual32 workers occupy devices8–15, four/device;
-lower0–7 are free. Launcher1638841, timeout/PGID1638853, actual driver1638854.
-Root release09:35:59.192303UTC SHA5907f8da…264ae, hostc9f3b74b…e3442a.
-All previous terminal/exit/backup/cleanup, live shared leader, source, host memory,
-storage and port checks passed. Run started09:36:37; no update was complete at
-first capture. Distributed owns read-only startup/mapping/health. Receipt
-`validation/science_C_seed5678_start_20261017.json`, SHAf1996cd0…8c3bf; full
-process/start/ancestry/env bindings are in control/processes.json, SHA4da9630b…20ce9.
-Control `local/science/control/qwen-c-seed5678-science-256-001`;
-output `local/nvme/runs/qwen-c-seed5678-science-256-001`; rawlog
-`local/nvme/science/launch-logs/qwen-c-seed5678-science-256-001.log`;
-tmux `dario-science-C5678-256`. Let healthy startup and all256 updates finish.
-Runtime topology uses `neuron-ls --json-output`; `--show-all-procs` also lists
-monitor/query processes. Earlier unsuccessful preflight views are preserved locally;
-no training attempt or guard/source change preceded the successful release.
+**C5678 also completed all256 updates**, independently fresh released B0 with
+the same spec/precision/recipe. Terminal COMPLETE published10:27:17; exit0 at
+10:27:32; all35 original identities and owned process groups are gone. Its exact
+planned order consumed32,768 records /16,809,984 source tokens. All254 steps3–256
+retained: mean10.0298s, median10.0311s, P90 10.0674s; three save-publication walls
+total110.654s, separate from step elapsed. Release-to-exit3093.213s.
+`validation/science_C_seed5678_execution_20261017.json`, SHAef59f04e…1680b6.
+The shared helper verified terminal EBS256 at10:31:44 and finished retention at
+10:32:24: latest two128/256; all original NVMe64/128/256 remain. Exact source/copy
+COMPLETE bytes, receipt/retention ownership and all33 payload sizes were checked
+without repeating the helper's full payload hashing.
+`validation/science_C_seed5678_backup_20261017.json`, SHA5efd47fd…193a4d.
+These execution and recovery observations do not establish capability.
+
+**R1234 is active**, independently fresh released B0, sealed source-256-001,
+FP32/world32/global128/accum4/G4/cap1024/K1/T.7, LRU2/private RAM temp. Root
+release10:32:53.082689UTC SHA0a74325f…828543; run started10:33:30. Released lower
+logical0–31; ports64421/64422. Launcher1668169, timeout/PGID1668180, driver1668181.
+Latest complete metric is **26/256 at15:37:06**,631.225s; cumulative3,328 source
+records /1,707,264 source tokens /1,351,556 sampled actions. No R checkpoint has
+published yet; fixed development64 and the12-hour save cadence remain unchanged.
+Control `local/science/control/qwen-r-seed1234-science-256-001`;
+output `local/nvme/runs/qwen-r-seed1234-science-256-001`; rawlog
+`local/nvme/science/launch-logs/qwen-r-seed1234-science-256-001.log`;
+tmux `dario-science-R1234-256`. Continue through fixed256; R5678 remains unreleased.
+
+Root released **B0 local DEV512** at15:37:45 and launched it at15:37:49 on idle
+core32/device8, ports64441/64442; tmux `dario-dev-local-B0-512`. Launcher1857552,
+timeout1857562, actual worker1857563; no completed evaluation result yet.
+Control `local/evaluation/local-dev512-v1/b0-plan-v1`; output
+`local/nvme/evaluation/local-dev512-v1-B0-001`; release SHA521643aa…51c214.
+Root also launched **held C1234@64** at15:38:07 on separate core36/device9;
+release SHAd0d27836…8c6724. Launcher1858559, timeout1858570, actual worker1858571.
+Root checked both actual device allocations, process ancestry, archive cwd,
+runtime environment and private0700 RAM temp; receipts are in each control's
+`processes.first-live.json`. Public start evidence:
+`validation/science_development_start_20261017.json`, SHAd6c4cc4a…284534. Both jobs
+are nonfinal held development; root owns their health, allocation and scheduling.
+R1234's exact public live receipt is `validation/science_R_seed1234_progress_20261017.json`,
+SHA6c5c95a5…b4a0912, observed15:37:51 at step26; all26 recorded updates are finite
+with sampled replicas equal. It records the historical first loop at10:34:10 and
+first metric at10:49:58. All24 steps3–26: median594.303s, linearP90802.193s;
+the sampled action workload shrinks substantially. This is execution evidence;
+negative raw gains and early stopping are TRAIN diagnostics, not a capability result.
 
 Root owns both matching shared supervisors: backup1606740; node helper1606741,
 producer1606742, gzip1606743, timeout/PGID1606734. Roster/config
 `local/science/{backups.roster,monitor.config}.json`; states
 `local/science/shared-backups.state.json` and
-`local/nvme/science/shared-node-monitor/state.json`. Both RUNNING. Only C1234 is
-terminal-verified. No R science or evaluation is released. Qualification jobs,
+`local/nvme/science/shared-node-monitor/state.json`. Both RUNNING. Both C runs are
+terminal-verified; R1234 and both development jobs have separate releases. Qualification jobs,
 watchers and original v1 coordinators are inactive. Unique upper qualification
 continued4 has a verified EBS copy at
 `local/backups/qwen-r-fp32-ram-resume-004/step-0000004`.
@@ -98,16 +126,16 @@ All1,792 RAM005 tapes and14 rank0 example traces remain local. The prospective
 
 ## Production plan and next actions
 
-1. Observe active C5678 through real updates, checkpoint64/128/256 and verified
-   EBS copies. C1234 is terminal and backed up. Require actual terminal256/exit/
-   backup/cleanup before independently fresh-B0 R1234, then R5678.
+1. Observe active R1234 through fixed256, checkpoint64/128/256 and verified EBS
+   copies. Both C runs are terminal, exited and backed up. Require R1234's actual
+   terminal256/exit/backup/cleanup before independently fresh-B0 R5678.
 2. Launch **one32-core training group at a time: C1234, C5678, R1234, R5678**.
    Every arm independently starts from released B0, never C/qualification weights.
    Seed1234 uses lower0–31, seed5678 upper32–63; C/R share each seed's exact order
    and32,768 fresh TRAIN records. Cross-seed overlap3,182 is disclosed.
    Serial fallback was selected before science from full-pool memory uncertainty.
    Use one reviewed shared EBS queue and one compressed node monitor; bind their
-   live matching identities before each finite root release. C1234 and C5678 have separate actual releases;
+   live matching identities before each finite root release. Both C runs and R1234 have separate actual releases;
    matching shared supervisors are active. Idle cores may serve genuine development work
    subject to actual host headroom.
 3. Complete fixed held-development C/R64/256 in direct/empty_format/one_thought,
@@ -116,7 +144,7 @@ All1,792 RAM005 tapes and14 rank0 example traces remain local. The prospective
 
 Immutable `local/science/source-256-001` matches all61 qualified active files,
 archived from commit85c64a9. Its manifest SHA8a0641c6…77faa4 binds the tar and
-qualified source. Four finite launchers passed independent review; C1234/C5678 are released, R arms are not. Use archive cwd/PYTHONPATH and absolute evidence/control paths;
+qualified source. Four finite launchers passed independent review; both C runs and R1234 are released, R5678 is not. Use archive cwd/PYTHONPATH and absolute evidence/control paths;
 current root docs govern operations. Frozen training spec and actual qualification
 receipt now pass original readiness. The normalized production format changes
 only tokenizer_dir to the same absolute B0 path; original format remains intact.
@@ -140,10 +168,12 @@ Local K1 primary/K4,16 secondary; retain absolute clean/empty/own/filler plus
 content controls and fixed random token-class/surprisal strata. No official final
 outcomes read; earlier exclusion preparation used question-only benchmark data.
 
-Prepared/reviewed finite development packs, none released: held128 C suites in
+Prepared/reviewed finite development packs: held128 C suites in
 `local/evaluation/held-dev128-v1/c-plans-v1` (manifest8506c2d7…), local DEV512 B0
 `local/evaluation/local-dev512-v1/b0-plan-v1` (prepared0b54fd2d…), and eight trained
 local slots `local/evaluation/local-dev512-v1/trained-plans-v1` (manifest7cbdbc51…).
+B0 local and held C1234@64 are now released/running; the remaining C suites and
+trained local slots await root release.
 Use full global512 note bundles before controls; preserve writer bundles for later
 terminal reader crosses. Planned idle cores32/36 during lower R1234,0/4 during
 upper R5678 or honest post-training phase; one local job and one held suite at

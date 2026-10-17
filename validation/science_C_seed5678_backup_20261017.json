@@ -1,0 +1,75 @@
+{
+  "schema": "science-terminal-backup-observation-v1",
+  "status": "TERMINAL_AND_LATEST_TWO_EBS_VERIFIED",
+  "observed_utc": "2026-10-17T15:37:33.239632+00:00",
+  "run_id": "qwen-c-seed5678-science-256-001",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "retained": [
+    {
+      "step": 128,
+      "COMPLETE_sha256": "b3c1ad65d966e13ea842fba0fe8362985e46b42458960846ed33e4ca85ae8e3a",
+      "backup": {
+        "bytes": 27542552815,
+        "copied_utc": "2026-10-17T10:09:22+00:00",
+        "destination": "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000128",
+        "destination_device": 66305,
+        "distinct_filesystems": true,
+        "external_backup": false,
+        "manifest_sha256": "b3c1ad65d966e13ea842fba0fe8362985e46b42458960846ed33e4ca85ae8e3a",
+        "schema": 1,
+        "source": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000128",
+        "source_device": 66310
+      },
+      "backup_receipt_sha256": "62c1e6e6e4b61058757570b74d0ebbfc47234b76d33c025761861f48381289db",
+      "payload_file_count": 33,
+      "retention_owner": {
+        "manifest_sha256": "b3c1ad65d966e13ea842fba0fe8362985e46b42458960846ed33e4ca85ae8e3a",
+        "owner": "b552474e0506639f20d3d9f7c3aa2b704b03d05bd46b13832505d95a87488128"
+      },
+      "retention_owner_sha256": "ab8ed2728fd8bbc217f5d7c19d2e5a235a75e7f18d1745a9060923da046bd6ba"
+    },
+    {
+      "step": 256,
+      "COMPLETE_sha256": "16f22b7cf1b1a53e632b131dc23e02fc56fd8b7f16c41fc55f1c9e3492d097bb",
+      "backup": {
+        "bytes": 27542552815,
+        "copied_utc": "2026-10-17T10:31:44+00:00",
+        "destination": "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256",
+        "destination_device": 66305,
+        "distinct_filesystems": true,
+        "external_backup": false,
+        "manifest_sha256": "16f22b7cf1b1a53e632b131dc23e02fc56fd8b7f16c41fc55f1c9e3492d097bb",
+        "schema": 1,
+        "source": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000256",
+        "source_device": 66310
+      },
+      "backup_receipt_sha256": "b0fe8301d2a255059ebe5667e1990a6f9f8336d81af3222c8c85e4d2f6dc99c4",
+      "payload_file_count": 33,
+      "retention_owner": {
+        "manifest_sha256": "16f22b7cf1b1a53e632b131dc23e02fc56fd8b7f16c41fc55f1c9e3492d097bb",
+        "owner": "b552474e0506639f20d3d9f7c3aa2b704b03d05bd46b13832505d95a87488128"
+      },
+      "retention_owner_sha256": "fbddbad2b80f8d43a5dfd50bdcc5170b74555bbd565713590b8c8f7a35000426"
+    }
+  ],
+  "shared_backup_pid": 1606740,
+  "shared_state_snapshot": {
+    "pid": 1606740,
+    "roster_sha256": "48fb9dcb4a610a383f1785e844ce96319814091e51fc7040b186127a9154d5bf",
+    "status": "RUNNING",
+    "terminal_step": 256,
+    "terminal_verified_runs": [
+      "qwen-c-seed1234-science-256-001",
+      "qwen-c-seed5678-science-256-001"
+    ],
+    "utc": "2026-10-17T15:37:07.526119+00:00"
+  },
+  "shared_roster_sha256": "48fb9dcb4a610a383f1785e844ce96319814091e51fc7040b186127a9154d5bf",
+  "payload_verification_owner": "Pinned live shared helper verifies complete payload hashes; data agent independently checked exact source/copy manifests, receipt and retention-owner identities, and all payload sizes",
+  "root_duplicate_full_payload_rehash": false,
+  "all_NVMe_originals_preserved": true,
+  "step64_NVMe_preserved": true,
+  "step64_EBS_retired_after_verified_128_and_256": true,
+  "external_backup": false,
+  "off_instance_backup": "UNRESOLVED"
+}

@@ -1,0 +1,50 @@
+{
+  "active_training_process_receipt_sha256": "03756ddf9b12a1049f326e213f2aea279ee83c26b2db3e9ac667a69b77b416a7",
+  "active_training_run": "qwen-r-seed1234-science-256-001",
+  "captured_utc": "2026-10-17T15:39:06.782868+00:00",
+  "development_jobs": [
+    {
+      "checkpoint": null,
+      "host_allocation_sha256": "60ed5d2e8ae2b13dcc99b2a82fd8206e5cba1eae674f31149b54542aab00b7ba",
+      "physical_device": 8,
+      "process_receipt": {
+        "path": "/home/ubuntu/dario/local/evaluation/local-dev512-v1/b0-plan-v1/processes.first-live.json",
+        "sha256": "58ca8db0f428d4d34c2f2397de80e1096bd5aa9a1f222733ca400669ebc7106a"
+      },
+      "purpose": "held_development",
+      "release_sha256": "521643aa0f7814c6097f1e07e7ae94c12cf5f62eea78f3df6648f1eccf51c214",
+      "run_id": "local-dev512-v1-B0-001",
+      "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+      "started_utc": "2026-10-17T15:37:49.518362+00:00",
+      "status": "running",
+      "visible_core": 32
+    },
+    {
+      "checkpoint": {
+        "COMPLETE_sha256": "cd06a3a842ee656eeefde5d974eb0cbf4eff9dfc4e32fc735ba7d6e8fb17fa63",
+        "model_sha256": "e6edb6b438dfd1be81e53b48ea369d12724c29df33bf163cdf905f7139eb98d0",
+        "run_id": "qwen-c-seed1234-science-256-001",
+        "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+        "step": 64
+      },
+      "host_allocation_sha256": "3774b1e41121d5f9769d77bfab0b72e5c40c199cd237791bb103b8c07ec848a4",
+      "physical_device": 9,
+      "process_receipt": {
+        "path": "/home/ubuntu/dario/local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0064/processes.first-live.json",
+        "sha256": "5fd3cfc7798ab12d041970bd8c72f5e64e1c45f1d26a515c0a5774d16c871ae8"
+      },
+      "purpose": "held_development",
+      "release_sha256": "d0d27836c448a10ee80eac26a1a800b8a3385ad97d817f7d5ed336e3f68c6724",
+      "run_id": "held-dev128-v1-C1234-step0064-001",
+      "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+      "started_utc": "2026-10-17T15:38:08.024453+00:00",
+      "status": "running",
+      "visible_core": 36
+    }
+  ],
+  "frozen_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "policy": "One local DEV512 job and one GSM8K TRAIN128 suite on separate upper devices while R1234 trains on lower32. Same frozen source/protocols; finite global deadline, all failures retained, no automatic retries or official final test access.",
+  "result_status": "No complete trained development comparison yet",
+  "root_release_helper_sha256": "18824b67fa128d2638625622b49376e75b764543e72c52e2efb7da0113a4bed3",
+  "schema": "scientific-fixed-development-start-v1"
+}

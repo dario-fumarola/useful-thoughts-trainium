@@ -29,15 +29,23 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**Scientific C1234 completed 256 updates; C5678 is running. FP32 qualification
+**Both scientific C runs completed 256 updates; R1234 is running. FP32 qualification
 and the fixed specification are complete; no trained C/R comparison is available.**
 
 - Released model weights and tokenizer are pinned and loaded.
-- The first scientific C run consumed 32,768 unique TRAIN records and 16.81M
-  source tokens. All 256 updates completed; full-step mean after two startup steps
-  was 10.056s. Terminal 256 and preceding 128 have verified EBS copies. See
-  [execution](validation/science_C_seed1234_execution_20261017.json) and
-  [backup](validation/science_C_seed1234_backup_20261017.json) evidence.
+- Each scientific C run consumed 32,768 unique TRAIN records and 16.81M source
+  tokens, completed all 256 updates and exited normally. Full-step means after
+  two startup steps were 10.056s (seed1234) and 10.030s (seed5678). Both retain
+  verified EBS copies of terminal256 and preceding128, plus all NVMe originals.
+  See [C1234 execution](validation/science_C_seed1234_execution_20261017.json),
+  [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
+  [C5678 execution](validation/science_C_seed5678_execution_20261017.json) and
+  [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
+- R1234 independently started from released B0 and reached step26/256 at
+  15:37UTC. The B0 local DEV512 audit and fixed held128 C1234@64 suite have
+  started on separate idle devices; no trained evaluation result is complete.
+  See [R progress](validation/science_R_seed1234_progress_20261017.json) and
+  [development starts](validation/science_development_start_20261017.json).
 - The audited FineMath slice contains **329,535 train**, **18,360 dev**, and
   **18,239 test** document-level records.
 - Full FP32 cached generation agrees with replay on the exact long trajectory

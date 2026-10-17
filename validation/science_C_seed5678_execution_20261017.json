@@ -1,0 +1,654 @@
+{
+  "schema": "science-C5678-terminal-execution-v1",
+  "captured_utc": "2026-10-17T10:28:46.427239+00:00",
+  "status": "TERMINAL_256_EXECUTION_COMPLETE",
+  "scope": "Observed execution, checkpoint publication, metadata identity and process cleanup only; no model-quality or downstream-efficacy claim.",
+  "run_id": "qwen-c-seed5678-science-256-001",
+  "arm": "vanilla",
+  "seed": 5678,
+  "precision": "fp32",
+  "initialization": "Fresh immutable released B0; no resume or C/qualification weights.",
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "planned_terminal_step": 256,
+  "actual_terminal_step": 256,
+  "world_size": 32,
+  "global_prefixes": 128,
+  "accumulation": 4,
+  "actual_terminal_order_hash": "ee771ea3b3c2db692a05ecbdebca24ffefda9eb02cac244c184880c43ab2071d",
+  "planned_order_sha256": "ee771ea3b3c2db692a05ecbdebca24ffefda9eb02cac244c184880c43ab2071d",
+  "actual_order_matches_prospective_order": true,
+  "actual_terminal_counters": {
+    "sampled_actions": 0,
+    "source_records": 32768,
+    "source_tokens": 16809984
+  },
+  "actual_terminal_manifest": {
+    "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000256/COMPLETE.json",
+    "sha256": "16f22b7cf1b1a53e632b131dc23e02fc56fd8b7f16c41fc55f1c9e3492d097bb",
+    "bytes": 9449
+  },
+  "terminal_model_sha256_recorded_by_driver_manifest": "740b4023d046c3a1ef6c1cefa49efc09bce798f281c75f427716ab5b1cedc4cc",
+  "terminal_model_payload_bytes_recorded_by_driver_manifest": 6882399951,
+  "terminal_model_payload_rehashed_by_this_observer": false,
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": null,
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "artifacts": {
+    "release": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/release.json",
+      "sha256": "5907f8da9b636a0d4eaf7e4165ddb3dfed41177b57a8491d22f6c5a767f264ae",
+      "bytes": 1600
+    },
+    "launch": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/launch.sh",
+      "sha256": "1e760e158c9d3047a98d5b35166851b690493abd50694dddc8fb99d24a9ae191",
+      "bytes": 4151
+    },
+    "run": {
+      "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/run.json",
+      "sha256": "053511dad1c42abebf4f6bd56dc0b579ce5c6480cd96cff93a9006316d7210c0",
+      "bytes": 22845
+    },
+    "frozen_experiment": {
+      "path": "/home/ubuntu/dario/local/science/experiment-256.json",
+      "sha256": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+      "bytes": 21176
+    },
+    "qualification": {
+      "path": "/home/ubuntu/dario/local/science/qualification-256.json",
+      "sha256": "3785fed6e2fe5722aacb9bf29acce38eb778da211b08bb3b9c9592148c745fd9",
+      "bytes": 34776
+    },
+    "original_processes": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/processes.json",
+      "sha256": "4da9630b215e73f4b1f9aa32a94abe37da06487f96d12ab94395609dcb620ce9",
+      "bytes": 46973
+    },
+    "first_live": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/execution.first-live.json",
+      "sha256": "f1996cd09f0c2af79926e898d4750ba917a09eaed7ae3ce963aa3e161428c3bf",
+      "bytes": 4299
+    },
+    "first_update": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/execution.first-update.json",
+      "sha256": "5777aca58eef2acaf12f38409891fd4b5861003eb3c4c37bfd4efafe3ad88dcd",
+      "bytes": 3057
+    },
+    "metrics": {
+      "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/metrics.jsonl",
+      "sha256": "afa8e6a51cf2e88703e37f5b206841fd556251648f86b4eecad3ff3714d63426",
+      "bytes": 180673
+    },
+    "training_log": {
+      "path": "/home/ubuntu/dario/local/nvme/science/launch-logs/qwen-c-seed5678-science-256-001.log",
+      "sha256": "da8837e748b4a402f004f972baa277ca4e667af599c1a088f65b1b6dd6da3d73",
+      "bytes": 371033
+    },
+    "exit": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/exit.json",
+      "sha256": "bc0c73151afc1e01928078fb5cb97495fbb05a0a59772aa8e4abfa404be3970b",
+      "bytes": 94
+    },
+    "startup_topology": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/running.topology.json",
+      "sha256": "44478f632e035611e63610c01bf68a519466d961c871d79009478bbd6fe2b738",
+      "bytes": 18534
+    }
+  },
+  "metric_coverage": {
+    "count": 256,
+    "first_step": 1,
+    "last_step": 256,
+    "exact_contiguous_1_through_256": true,
+    "all_recorded_numeric_values_finite": true,
+    "all_gradient_norms_finite": true,
+    "all_sampled_replica_checks_bitwise_equal": true,
+    "sampled_elements_per_update": [
+      9920
+    ],
+    "sampled_update_l2_min": 4.048752089147456e-05,
+    "sampled_update_l2_max": 0.00010366035712650046,
+    "sampled_changed_fraction_min": 0.9493951797485352,
+    "sampled_changed_fraction_max": 0.9896169304847717,
+    "counters_match_every_step": true,
+    "replay_not_measured_in_C": true,
+    "unmeasured_reward_fields_remain_null": true,
+    "sampled_replica_scope": "9,920 sampled values per update, not a full-model replica comparison."
+  },
+  "timing": {
+    "issued_utc": "2026-10-17T09:35:59.192303+00:00",
+    "run_started_utc": "2026-10-17T09:36:37+00:00",
+    "first_loop_log_line": "2026-10-17T09:37:20+00:00 rank0 vanilla update 1/256",
+    "exit_json_publication_utc": "2026-10-17T10:27:32.404969+00:00",
+    "issued_to_exit_json_publication_seconds": 3093.212666,
+    "run_started_to_exit_json_publication_seconds": 3055.404969,
+    "issued_to_run_started_seconds": 37.807697,
+    "run_started_to_first_loop_seconds": 43.0,
+    "steps_1_and_2_separate": [
+      {
+        "step": 1,
+        "elapsed_seconds": 241.4940940969973,
+        "time_utc": "2026-10-17T09:41:21+00:00",
+        "gradient_norm": 1.6569627523422241,
+        "metric_line_sha256": "dd2cc88ec79d84a1a03266ac60182046dcfad4b013861702f032108e8a76f83b"
+      },
+      {
+        "step": 2,
+        "elapsed_seconds": 95.08199435999995,
+        "time_utc": "2026-10-17T09:42:56+00:00",
+        "gradient_norm": 1.599826455116272,
+        "metric_line_sha256": "fd63a384e2d35f5497f48fa4b92eb03a079e18a456fa62e88dda208858b6b776"
+      }
+    ],
+    "all_steps_3_through_256": {
+      "count": 254,
+      "step_range_inclusive": [
+        3,
+        256
+      ],
+      "filtered_or_dropped_steps": [],
+      "mean_seconds": 10.029831015161552,
+      "median_seconds": 10.031149642003584,
+      "p90_linear_seconds": 10.067442603799282,
+      "p90_definition": "Linear interpolation at (n-1)*0.9 in the sorted observations.",
+      "min_seconds": 9.929746876005083,
+      "max_seconds": 10.126220687991008,
+      "sum_seconds": 2547.577077851034
+    },
+    "all_256_step_elapsed_sum_seconds": 2884.1531663080314,
+    "checkpoint_publication_wall_sum_seconds": 110.654478,
+    "terminal_metric_to_exit_json_publication_seconds": 52.404969,
+    "notes": [
+      "Full-step elapsed values exclude checkpoint saves. All steps 3\u2013256 are retained without subtracting shared monitor or EBS backup work.",
+      "Checkpoint wall is directory birth to COMPLETE publication, including exports/writes/driver hashes; it excludes the final observer fence. Metric-to-next-update log spans that fence at one-second log resolution.",
+      "Exit time is the launcher exit.json publication after wait returned; actual kernel process exit timestamps were not instrumented. Run/log/metric UTC strings have one-second resolution."
+    ]
+  },
+  "checkpoints": [
+    {
+      "step": 64,
+      "complete_manifest": {
+        "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000064/COMPLETE.json",
+        "sha256": "b34ad4758aae32c7e1a9d05e6e3ca246bd4dc918f48e05454907282a4e6cef41",
+        "bytes": 9446
+      },
+      "manifest_created_utc": "2026-10-17T09:53:56+00:00",
+      "directory_birth_utc": "2026-10-17T09:53:19.417259+00:00",
+      "complete_mtime_utc": "2026-10-17T09:53:56.606138+00:00",
+      "directory_birth_to_COMPLETE_publication_seconds": 37.188879,
+      "metric_utc": "2026-10-17T09:53:19+00:00",
+      "metric_to_COMPLETE_publication_seconds": 37.606138,
+      "next_update_log_line": "2026-10-17T09:53:56+00:00 rank0 vanilla update 65/256",
+      "metric_to_next_update_log_seconds": 37.0,
+      "payload_file_count": 33,
+      "manifest_recorded_payload_bytes": 27542552815,
+      "manifest_recorded_model": {
+        "bytes": 6882399951,
+        "sha256": "4b110c8605a8efe19d8bf7e5b78b3e2868bfbeaf06b11a6253b985ea70ea268e"
+      },
+      "actual_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "actual_order_hash": "ee771ea3b3c2db692a05ecbdebca24ffefda9eb02cac244c184880c43ab2071d",
+      "actual_counters": {
+        "sampled_actions": 0,
+        "source_records": 8192,
+        "source_tokens": 4202496
+      },
+      "actual_runtime_policy_matches_run": true
+    },
+    {
+      "step": 128,
+      "complete_manifest": {
+        "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000128/COMPLETE.json",
+        "sha256": "b3c1ad65d966e13ea842fba0fe8362985e46b42458960846ed33e4ca85ae8e3a",
+        "bytes": 9448
+      },
+      "manifest_created_utc": "2026-10-17T10:05:15+00:00",
+      "directory_birth_utc": "2026-10-17T10:04:39.047828+00:00",
+      "complete_mtime_utc": "2026-10-17T10:05:15.638027+00:00",
+      "directory_birth_to_COMPLETE_publication_seconds": 36.590199,
+      "metric_utc": "2026-10-17T10:04:39+00:00",
+      "metric_to_COMPLETE_publication_seconds": 36.638027,
+      "next_update_log_line": "2026-10-17T10:05:15+00:00 rank0 vanilla update 129/256",
+      "metric_to_next_update_log_seconds": 36.0,
+      "payload_file_count": 33,
+      "manifest_recorded_payload_bytes": 27542552815,
+      "manifest_recorded_model": {
+        "bytes": 6882399951,
+        "sha256": "b8ec871f12b87da5acdecf944284e39e180bcfa3b1ddb75b166e463c90adca77"
+      },
+      "actual_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "actual_order_hash": "ee771ea3b3c2db692a05ecbdebca24ffefda9eb02cac244c184880c43ab2071d",
+      "actual_counters": {
+        "sampled_actions": 0,
+        "source_records": 16384,
+        "source_tokens": 8404992
+      },
+      "actual_runtime_policy_matches_run": true
+    },
+    {
+      "step": 256,
+      "complete_manifest": {
+        "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000256/COMPLETE.json",
+        "sha256": "16f22b7cf1b1a53e632b131dc23e02fc56fd8b7f16c41fc55f1c9e3492d097bb",
+        "bytes": 9449
+      },
+      "manifest_created_utc": "2026-10-17T10:27:17+00:00",
+      "directory_birth_utc": "2026-10-17T10:26:40.968077+00:00",
+      "complete_mtime_utc": "2026-10-17T10:27:17.843477+00:00",
+      "directory_birth_to_COMPLETE_publication_seconds": 36.8754,
+      "metric_utc": "2026-10-17T10:26:40+00:00",
+      "metric_to_COMPLETE_publication_seconds": 37.843477,
+      "next_update_log_line": null,
+      "metric_to_next_update_log_seconds": null,
+      "payload_file_count": 33,
+      "manifest_recorded_payload_bytes": 27542552815,
+      "manifest_recorded_model": {
+        "bytes": 6882399951,
+        "sha256": "740b4023d046c3a1ef6c1cefa49efc09bce798f281c75f427716ab5b1cedc4cc"
+      },
+      "actual_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "actual_order_hash": "ee771ea3b3c2db692a05ecbdebca24ffefda9eb02cac244c184880c43ab2071d",
+      "actual_counters": {
+        "sampled_actions": 0,
+        "source_records": 32768,
+        "source_tokens": 16809984
+      },
+      "actual_runtime_policy_matches_run": true
+    }
+  ],
+  "terminal_metric": {
+    "step": 256,
+    "arm": "vanilla",
+    "elapsed_seconds": 10.023839339002734,
+    "gradient_norm": 1.207298994064331,
+    "metrics": {
+      "abs_advantage": null,
+      "actions": 0.0,
+      "capped": null,
+      "clean": null,
+      "gain": null,
+      "loss": 1.3329041004180908,
+      "mean_signed_length": null,
+      "padded_decode_slots": 0.0,
+      "thought": null
+    },
+    "max_replay_logp_error": null,
+    "replay_audit_performed": false,
+    "sampled_parameter_update": {
+      "sampled_elements": 9920,
+      "sampled_update_l2": 4.087165871169418e-05,
+      "sampled_changed_fraction": 0.9520161151885986,
+      "sampled_replicas_bitwise_equal": true
+    },
+    "counters": {
+      "source_records": 32768,
+      "source_tokens": 16809984,
+      "sampled_actions": 0
+    },
+    "time_utc": "2026-10-17T10:26:40+00:00",
+    "status": "science"
+  },
+  "cleanup": {
+    "observed_utc": "2026-10-17T10:28:46.427239+00:00",
+    "original_worker_count": 32,
+    "original_identity_rows": [
+      {
+        "role": "launcher",
+        "pid": 1638841,
+        "expected_starttime_ticks": 6445135,
+        "expected_parent_pid": 1606727,
+        "expected_pgid": 1638841,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "timeout",
+        "pid": 1638853,
+        "expected_starttime_ticks": 6445598,
+        "expected_parent_pid": 1638841,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "driver",
+        "pid": 1638854,
+        "expected_starttime_ticks": 6445598,
+        "expected_parent_pid": 1638853,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638859,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638862,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638863,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638864,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638865,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638866,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638867,
+        "expected_starttime_ticks": 6446019,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638868,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638869,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638870,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638871,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638872,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638873,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638874,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638875,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638876,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638877,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638878,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638879,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638880,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638881,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638882,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638883,
+        "expected_starttime_ticks": 6446020,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638884,
+        "expected_starttime_ticks": 6446021,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638885,
+        "expected_starttime_ticks": 6446021,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638886,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638887,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638888,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638889,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638892,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638893,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1638895,
+        "expected_starttime_ticks": 6446023,
+        "expected_parent_pid": 1638854,
+        "expected_pgid": 1638853,
+        "pid_present": false,
+        "original_identity_present": false
+      }
+    ],
+    "all_original_identities_absent": true,
+    "owned_process_groups": [
+      1638841,
+      1638853
+    ],
+    "remaining_owned_group_members": [],
+    "no_signals_sent_by_observer": true,
+    "root_owned_global_monitor_and_backup_groups_excluded": [
+      1606734,
+      1606728
+    ],
+    "no_individual_rank_or_within_device_core_inferred_from_pid_order": true
+  },
+  "preserved_observer_phase_correction": {
+    "earlier_bounded_log_tail_observation": "A missing marker in the bounded tail did not establish that the first loop had not begun.",
+    "actual_full_log_first_loop_marker": "2026-10-17T09:37:20+00:00 rank0 vanilla update 1/256",
+    "cached_executable_messages_at_0940": "They occurred inside cold update 1, not before the first loop. Earlier raw observations are retained."
+  },
+  "storage_scope": {
+    "all_NVMe_source_checkpoints_preserved": true,
+    "payload_hashes_here_are_driver_manifest_records": true,
+    "observer_payload_reads_or_rehashes_performed": false,
+    "EBS_backup_owner": "/root",
+    "terminal_EBS_backup_verification": "Separate root-owned supervisor and verification evidence; not asserted by this execution receipt."
+  },
+  "scientific_limitations": [
+    "Training loss, finite updates and data exposure do not establish thought usefulness or downstream accuracy.",
+    "C uses the ordinary causal objective; thought/reward/replay fields are unmeasured null placeholders.",
+    "Fixed development checkpoint64 remains separate from the prospectively selected terminal256 primary.",
+    "No final-test content or gold was accessed by this observer."
+  ]
+}
