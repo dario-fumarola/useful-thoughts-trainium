@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 05:54 UTC
+# Current state — 2026-10-17 06:21 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -15,9 +15,9 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 **Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
 world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped; **update3 completed at05:51:28**,869.016s, finite norm73.19961,
-sampled replicas equal and replay error.00003791. Update4 is running. Full-step
-times1–3 are939.926/867.743/869.016s; no isolated host-policy speedup claim. The prospective
+are mapped; **update4 completed at06:08:09**,953.322s, finite norm82.73212,
+sampled replicas equal and replay error.00004745. Update5 is running. Full-step
+times1–4 are939.926/867.743/869.016/953.322s; no isolated host-policy speedup claim. The prospective
 steady timing window is updates5–14. No scientific arm launched.
 
 - Control `local/qualification/ram-sequence-v2/lower`; output
@@ -43,8 +43,9 @@ steady timing window is updates5–14. No scientific arm launched.
   Python1272287, startticks4830210/211/212. Same deadline; state/control in v2
   lower, raw events/logs in NVMe observation. Destination
   `local/backups/qwen-r-fp32-ram-tmp-005`, retain2/all NVMe originals preserved.
-  COMPLETE3ed24af26…7f1336 published05:52:15.789; first EBS copy/verification is
-  active. Stop this watcher if the driver fails/stops early.
+  EBS3/4 copied/verified05:56:28/06:14:47. COMPLETE4dfb48b6f…645349e,
+  save wall45.990s. State records actual verified events; all owned identities match.
+  Stop this watcher if the driver fails/stops early.
 - Distributed reuses the existing read-only host observer in tmux
   `dario-ram005-observe` for actual overlap/HBM evidence. No extra device job.
 
@@ -80,6 +81,16 @@ Receipt `upper/review.processes.json`, SHA90af9654…1c64d. Review owns STOP sup
 comparators; distributed owns actual simultaneous execution evidence. Output
 `local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004`.
 Strict restored3→one update4/save/exit is required; same deadline13:05:19 UTC.
+Actual restored3 export is complete; update4 began05:56:32. Two raw approximately5s
+monitor windows record nonzero execution on both actual partitions, the latter
+after upper's first completed gradient tape. Root independently verified the
+first raw byte segment and all64 PID/count bindings (444 lower/4 upper; errors0),
+`-observation/root-overlap-review.json`. This is sampled coexecution, not recovery
+correctness or a simultaneous-throughput multiplier. Review comparisons pending.
+All128 upper gradient tapes are saved. The first restored optimizer path is
+performing32 rank-specific cold compilations, with no update4 metric/checkpoint
+yet. Preserve this cold recovery cost; don't call it steady work or drop any
+overlapping lower timing from the fixed5–14 set.
 
 **B0 held-development suite complete, exit0**, all128 fixed GSM8K TRAIN items in
 three modes: **direct113/128 (88.28125%)**, **empty107/128 (83.59375%)**,
@@ -193,6 +204,12 @@ absolute clean/empty/own/filler and fixed random dev token-class/surprisal strat
 ## Storage and operational limits
 
 At05:09 EBS free **269.8GiB**, mounted NVMe **1.15TiB**, tmpfs about1,000GiB.
+During actual two-R update loops, ordinary host-memory reads at05:59:10 and
+06:00:49 gave MemAvailable **285.93/614.27GiB**. The first is the lowest observed
+point, not a time-series minimum; tmpfs retained only about.078GiB at that point.
+Pilot success does not establish production-loader headroom. Necessary timed
+freeze will supply its peak RSS for a conservative rank-copy projection; use
+the declared serial fallback if concurrent production cannot retain headroom.
 Only one NVMe is formatted; other3 SSDs remain untouched. Science uses one reviewed
 serialized backup queue and one compressed shared node monitor. Backup helper at
 `validation/orchestration` passes its6 host fixtures/TERM review, unlaunched.
