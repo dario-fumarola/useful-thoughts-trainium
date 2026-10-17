@@ -5,7 +5,7 @@ language-model capability. This repository contains the experiment specification
 implementation, checks, and research context for a pretrained-model comparison
 on AWS Trainium.
 
-## The experiment
+## Initial experiment (stopped on 2026-10-17)
 
 Start two copies of released **Qwen3-1.7B-Base** from identical weights and give
 them the same ordered mathematical documents:
@@ -23,14 +23,50 @@ Evaluate both trained models with direct, empty-format and thought-enabled
 inference. The primary comparison is **R-thought minus C-thought**; also report
 **R-direct minus C-direct**, **R-thought minus R-empty**, and each trained arm
 against unchanged base weights. Direct inference permits ordinary calculations.
-The first study targets 256 terminal updates in each arm for two matched seeds,
+The first study targeted 256 terminal updates in each arm for two matched seeds,
 with a fixed step64 development milestone. Retain failures in evaluation
 denominators and report training and inference costs.
 
 ## Current status
 
-**The first terminal-C development result is complete. Both C seeds finished256
-updates; R1234 is running. The primary R/C comparison remains pending.**
+**The initial R study has been stopped. We are investigating the thought
+interface and candidate signal before another training run.** Both C seeds
+finished256 updates. R1234 stopped cleanly after update63 and saved its state;
+R5678 was not launched. The original primary R/C comparison is incomplete.
+
+The key baseline finding is a large **interface penalty**: on fixed DEV512,
+raw K1 log likelihood averages−1.118 nats, empty thought format−7.361, and an
+own sampled thought−11.203. Own versus unrelated thought is−.284 nats with a
+95% conditional interval spanning zero. This motivates testing the interface
+before spending more training compute. The [full B0 audit](validation/local_dev_B0_20261017.json)
+includes all controls, horizons and strata. It has **one candidate per item**;
+K16 means16 future tokens, not a best-of16 thought oracle.
+
+Current small DEV-only work compares header removal and prefix re-anchoring,
+then measures a genuine candidate oracle and actual pipeline stage costs.
+Oracle gains will be reported separately from ordinary one-sample utility.
+Official final tests remain on hold. See [current queue](NEXT_STEPS.md).
+
+The first **DEV32 reader pilot** is complete (eight fixed documents per B0
+surprisal quartile, original one-sample notes, FP32; no training):
+
+| Reader interface | Empty−raw, nats | Own−empty, nats | Own−other, nats |
+|---|---:|---:|---:|
+| Original |−6.425 |−3.469 |−0.043 |
+| No header |−6.652 |−3.765 |−0.382 |
+| Repeat last32 prefix tokens after close |−1.080 |−1.906 |−0.432 |
+| Repeat last64 |−1.412 |−2.271 |−0.624 |
+| No header + repeat64 |−1.331 |−2.264 |−0.609 |
+
+Re-anchoring reduces the interface penalty, but own thoughts still hurt on
+average. With repeat32, own−empty has a95% paired document interval
+[−2.679,−1.193]; own−other spans zero. Own also trails raw repeated-prefix
+control by1.627 nats. These are exploratory reader interventions, not useful
+thoughts or a deployed-policy improvement. The [complete pilot report](validation/interface_tax_dev32_20261017.json)
+includes K16, all matched controls and quartiles. [Plot](validation/figures/interface_tax_dev32_20261017.svg).
+All896 scores succeeded; original-format token likelihoods reproduce B0 to
+0.0000382 nats. Original outputs, selected inputs and fixed first4 examples
+are saved in a verified2MB EBS archive. Fresh G16 candidate search comes next.
 
 Fixed128-question GSM8K **TRAIN development** results:
 
@@ -53,8 +89,8 @@ costs. Intervals use5000 paired document draws, conditional on the checkpoints;
 they are not training-seed uncertainty. Both64 and256 were fixed prospectively;
 terminal256 remains primary. The [C64 report](validation/held_dev_C_seed1234_step64_20261017.json)
 and every original output remain. [Verified backup and next release](validation/held_dev_C_seed1234_step256_backup_20261017.json)
-records the54-file EBS archive and the now-running C5678@64 held evaluation.
-Local C1234@64 is also running on a separate idle device.
+records the54-file EBS archive. The later C5678@64 held evaluation and local
+C1234@64 evaluation were interrupted on owner stop; their partial outputs remain.
 
 The unchanged B0 **local DEV512** audit is complete: all512 sampled notes and
 9216 likelihood rows, no execution failures. Mean K1 log likelihood was−1.118
@@ -74,7 +110,9 @@ trained R results and official test outcomes remain pending.
   [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
   [C5678](validation/science_C_seed5678_execution_20261017.json),
   [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from B0 and reached59/256 at21:41UTC. The
+- R1234 independently started from B0 and stopped after63 updates. Its
+  [stop/execution record](validation/science_R_seed1234_stopped_20261017.json)
+  retains all63 metrics and the verified recoverable step63 checkpoint. The
   [first32-update record](validation/science_R_seed1234_first32_20261017.json) and
   [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg)
   retain every elapsed observation and changing generation workload. TRAIN

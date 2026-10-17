@@ -381,3 +381,22 @@ released. Start matching shared backup/node leaders, bind fresh actual
 topology/ports/temp/memory/storage and then issue the first finite root release.
 Public frozen spec, actual evidence receipt, resource projection and format
 bridge are in validation/science_256_* and validation/format_path_bridge_*.
+
+### 2026-10-17 22:27 UTC — owner stops original study; investigate reward interface
+
+Owner explicitly superseded the 256-update R plan. Wrote cooperative R1234 STOP
+to save the current complete-update boundary; terminated the two active DEV
+evaluations (exit143, partial outputs retained). R5678 and the old final matrix
+are cancelled/on hold. Preserve original results and identities. Next: small
+DEV-only interface-tax probe, genuine candidate oracle, and measured stage
+profiling before further training. G1 B0 notes are not a best-of16 bundle; K16
+is the future horizon. Finite oracle failure would not prove impossibility.
+
+First repair probe completed22:34UTC: DEV32, five reader interfaces, original G1
+notes and global controls,896scores/no failures. Reanchor32 empty−raw−1.080
+versus original−6.425 nats; own−empty still−1.906, own−raw-repeat−1.627. No
+content-utility claim. Next exploratory candidate search chooses original and
+reanchor32 readers using this pilot; genuine16 draws atcap256, no new writer
+interface yet. Original paritymax3.815e-5 nats; all400 report contrasts/intervals
+independently checked. R stopped at63/exit0/verified27.54GB checkpoint backup;
+old shared services retired after backup, with honest interrupted node capture.

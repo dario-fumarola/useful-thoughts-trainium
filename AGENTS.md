@@ -4,7 +4,10 @@
 Establish a controlled mature-model reference for useful self-generated thought.
 Then locate its mechanism and earlier onset; study guidance/compression next;
 social and safety applications come later. Follow the user's current scope.
-This weekend is one C/R comparison, not a sweep of unrelated ideas.
+On 2026-10-17 the owner stopped the initial C/R study and redirected work to
+the initialization interface, candidate oracle, and iteration speed. The old
+256-update run order and CODEX_NEXT_DAY.md launch instructions are superseded.
+Do not resume old training/evaluation launchers. Read NEXT_STEPS.md first.
 
 ## Read first, in this order
 1. `STATUS.md` and `NEXT_STEPS.md`.
@@ -23,12 +26,15 @@ archived launcher. Preserve evidence; do not rewrite old results to fit the plan
 ## Scientific invariants
 - Actual released Qwen3-1.7B-Base weights; `from_config` is NOT weight loading.
 - B0 unchanged; C and R start identically and share seed-specific ordered data.
-- Four prefix-only samples, max 1,024 actions, K=1 reward, signed LOO update;
-  no best-of-only training, reader/NTP auxiliary, or answer-aware deployment.
+- The original study used four prefix-only samples, max 1,024 actions, K=1
+  reward and signed LOO updates. Preserve that study's identity and results.
+  New diagnostic/objective/interface experiments need explicit new identities;
+  the owner authorizes adapting the research direction.
 - Temperature/masks/stopping must match rollout and replay. No true future in
   writer inputs; stop gradients through reward. One fresh update per group.
-- Report direct and thought-enabled inference for C and R. Primary:
-  R-thought minus C-thought. Terminal checkpoint, fixed before final testing.
+- Report raw, empty-format and content controls before claiming useful thought.
+  Improvements over a degraded comparison alone do not establish capability.
+  Keep official final outcomes out of interface development.
 - Small generic CE regressions are costs, not automatic scientific kill gates.
   Oracle gains and nice examples are not deployed-policy evidence.
 - Keep both absolute likelihood arms. Retain failures in evaluation denominators.
@@ -63,8 +69,9 @@ Run `bash scripts/run_checks.sh` after relevant code changes. Do not edit tests
 to hide a failing invariant. Hardware checks require hardware evidence; never
 mark synthetic fixtures or old packaged outputs as a pass on this instance.
 
-Timebox initial integration. Stop long-launch plans for numerical/layout/data
-failures or the actual deadline, not because early thoughts look unattractive.
+Use small measured experiments to repair the initial reward landscape before
+another long training run. Profile actual stage costs. A zero mixer weight gives
+zero interface tax but does not establish content utility or a writer gradient.
 If blocked, identify the smallest repair, continue independent safe work, and
 report the blocker. Do not spend idle time rewriting papers or inventing more
 calibration ledgers. No infinite automatic relaunch loop.
