@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 02:33 UTC
+# Current state — 2026-10-17 02:39 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -92,11 +92,13 @@ actual preflight passed 01:38:30. Output:
 cache stays EBS device66305. Separately bound host I/O policy SHA
 `9d2e1f20f3f38cb30ce41a80f4c3b453f44c4471aed15b382a84a2d8dd8cfb21`.
 
-**R004 latest complete update2 at 02:22:38 UTC**, 1,501.217 seconds including
-the stateful optimizer cold compilation. Norm72.66261, sampled FP32 changed
-fraction .984375, sampled replicas bitwise equal; replay error .00004059.
-Update3 is running; next ordinary checkpoint3. Median/P90 steady timings remain
-pending. Update1 passed at01:57:33 in1,093.263s, including shared cold work: its
+**R004 latest complete update3 at 02:37:36 UTC**, 897.506 seconds.
+Norm47.89022, sampled FP32 changed fraction .98256046, sampled replicas bitwise
+equal; replay error .00004542. COMPLETE checkpoint3 is published; its bounded
+CPU state inspection and verified EBS copy are pending. Next ordinary checkpoint4.
+Median/P90 of ten steady updates remain pending. Update2 took1,501.217 seconds
+including stateful optimizer cold compilation. Update1 passed at01:57:33 in1,093.263s,
+including shared cold work: its
 32 optimizer cache hits match actual R003 compilations. Neither is a warm sample.
 Distributed prepared the reviewed CPU state inspection for checkpoint3 and will
 measure checkpoint time separately from per-step elapsed.

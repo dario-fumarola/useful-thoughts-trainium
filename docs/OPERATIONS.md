@@ -3,7 +3,8 @@
 ## Scope and environment
 
 Use the existing authorized instance. Do not create/terminate capacity, change
-IAM/networking, publish a remote repo, or use Bedrock. Keep the known-good Neuron
+IAM/networking, or use Bedrock. The owner authorizes maintaining the public
+`dario-fumarola/useful-thoughts-trainium` repository. Keep the known-good Neuron
 Python environment. Public documentation may describe a different release; inspect
 installed versions and source before adapting an API. Current XLA documentation
 also notes a future support transition; that is not a reason to migrate a working
@@ -58,13 +59,16 @@ shared by C and R. Record filtering and truncation are part of the experiment.
 
 ## Resolve, qualify, freeze
 
-Set paths and the actual timezone-aware cutoff in `configs/site.local.json`.
-Do not guess the expiry from an old call or use an unbounded “weekend” timer.
+Set paths and a finite timezone-aware planning deadline in `configs/site.local.json`.
+The owner states weeks are available; the 14-day study schedule is not an instance
+expiry. Do not infer an actual shutdown date from the planning deadline.
 Resolve an approved backup destination early. Local disk is not durable if the
 instance/storage disappears.
 
-Measure complete steps using the implemented driver. Choose the largest
-predeclared budget that fits the allocated training time and evaluation reserve.
+Measure complete steps using the implemented driver. The owner's next-day
+guidance prospectively targets the first comparison at **256 updates**, with
+step64 a fixed development milestone. Check measured timing, fresh records and
+backup space before freezing; choose an explicit alternative only if needed.
 The supplied budget utility estimates capacity but does not predict convergence.
 Then freeze real assets and source, using the actual chosen step count:
 
@@ -73,7 +77,7 @@ python scripts/freeze_experiment.py --experiment-id mature-rlp-pair-001 \
   --steps 256 --out local/experiment.json
 ```
 
-Here 256 is an example candidate, NOT an instruction to ignore measured timing.
+The 256 target is prospective and still requires measured qualification.
 The freezer rejects wrong tokenizer IDs, insufficient fresh records, unresolved
 assets, inconsistent global batches, and changed checksums. It hashes model files
 once per freeze; budget that I/O rather than repeatedly hashing during each step.
@@ -105,6 +109,13 @@ owned processes and the instance's actual device report. Never use broad `pkill`
 
 No command here claims that this chat session continues working in the background.
 The actual instance job and Codex session are processes you start and supervise.
+
+For multi-day science, use one node-wide monitor shared by both chains and
+stream its output through gzip onto NVMe. Existing qualification monitors are
+left intact. Their uncompressed node-wide output grows about 0.6 GiB/hour per
+monitor, so duplicating it per science arm needlessly consumes scratch space.
+Record the monitor/compressor PIDs, exit status and finite deadline with the
+science launch, and preserve the separate raw driver logs.
 
 ## Checkpoints
 

@@ -134,8 +134,19 @@
     "primary_contrast": "R.one_greedy_thought minus C.one_greedy_thought at data-matched terminal checkpoints",
     "required_secondary_contrasts": [
       "R.direct minus C.direct",
-      "R.one_greedy_thought minus R.direct"
-    ]
+      "R.one_greedy_thought minus R.direct",
+      "R.one_greedy_thought minus R.empty_format"
+    ],
+    "starting_reference": "B0 in each inference mode; report each trained arm minus B0 in the same mode",
+    "held_development": {
+      "protocol_manifest": "validation/held_dev_protocol_20261017.json",
+      "protocol_sha256": "9bc3d2e5c8d2e659ede1dd9c007dd45b63f43e493ebc3203657d15c92081e6e7",
+      "dataset": "GSM8K main TRAIN; fixed128, disjoint from demonstrations and previous interface checks",
+      "checkpoint_inventory": "B0 once; C/R for both seeds at fixed64 and terminal256",
+      "modes": ["direct", "empty_format", "one_thought"],
+      "direct_interpretation": "ordinary decoding with calculations allowed and no extra thought block",
+      "checkpoint_selection": "terminal256 is primary; development64 does not select a checkpoint"
+    }
   },
   "operations": {
     "bedrock": false,

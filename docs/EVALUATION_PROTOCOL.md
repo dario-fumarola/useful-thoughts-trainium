@@ -21,12 +21,15 @@ Lock these flags in the exact protocol. Local and secondary evaluators use FP32.
 ## Comparisons
 
 Primary: R-thought minus C-thought, same inference policy and cap.
-Required secondary: R-direct minus C-direct; R-thought minus R-direct.
-Include B0 as the unchanged starting reference and C-thought minus C-direct as
-context. Test seeds separately before any clearly labeled aggregate summary.
+Required secondary: R-direct minus C-direct; R-thought minus R-direct;
+R-thought minus R-empty-format. Include B0 in all three modes and each trained
+arm minus B0 under the same policy, plus C-thought minus C-direct as context.
+A same-policy gain caused only by C degradation is not an improvement above B0.
+Report seeds separately before any clearly labeled aggregate summary.
 
-Direct inference has no inserted thought phase. Thought inference generates one
-thought then the answer, with no selection based on the gold answer. Mode-specific
+Direct inference permits ordinary calculations and has no inserted thought phase.
+Thought inference generates one thought then the answer, with no selection based
+on the gold answer. Mode-specific
 formatting is itself an intervention; matched empty-format/content controls help
 separate that cost from thought utility. Use the same prompt for C/R within a mode.
 Do not hardcode an answer-dependent continuation into the prompt.
@@ -36,6 +39,18 @@ few-shot examples must come from the allowed development/training split and thei
 IDs must be recorded. No answer-format success is guaranteed for a base model.
 Freeze the final choice before testing rather than switching parsers when a
 result disappoints. Report format errors and truncation frequency separately.
+
+The first-study held-development protocol is frozen in
+[`validation/held_dev_protocol_20261017.json`](../validation/held_dev_protocol_20261017.json):
+128 deterministic GSM8K TRAIN questions excluding all previous demonstrations
+and interface items. Question membership was fixed before reading its TRAIN gold
+column or scoring models. Use B0 once and both seeds' C/R checkpoints at fixed 64
+and prospective terminal 256, each in direct, empty_format and one_thought mode.
+The unchanged four-shot prompt, strict parser, greedy policy, FP32 compute/head,
+1024 thought cap and 256 answer cap are bound there. Retain tokens, latency,
+errors and truncations. The existing CLI needs `--qualification` to accept these
+TRAIN IDs; this flag does not turn development scores into hardware qualification
+or final-test evidence. Step64 never selects the primary checkpoint.
 
 ## File contract
 
