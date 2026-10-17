@@ -29,10 +29,15 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**The first scientific continuation run is active. FP32 qualification and the
-256-update specification are complete; no trained C/R comparison is available.**
+**Scientific C1234 completed 256 updates; C5678 is running. FP32 qualification
+and the fixed specification are complete; no trained C/R comparison is available.**
 
 - Released model weights and tokenizer are pinned and loaded.
+- The first scientific C run consumed 32,768 unique TRAIN records and 16.81M
+  source tokens. All 256 updates completed; full-step mean after two startup steps
+  was 10.056s. Terminal 256 and preceding 128 have verified EBS copies. See
+  [execution](validation/science_C_seed1234_execution_20261017.json) and
+  [backup](validation/science_C_seed1234_backup_20261017.json) evidence.
 - The audited FineMath slice contains **329,535 train**, **18,360 dev**, and
   **18,239 test** document-level records.
 - Full FP32 cached generation agrees with replay on the exact long trajectory

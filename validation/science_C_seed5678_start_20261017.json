@@ -1,0 +1,106 @@
+{
+  "schema": "science-C5678-first-live-execution-v1",
+  "captured_utc": "2026-10-17T09:37:12.361610+00:00",
+  "status": "RUNNING_SCIENCE",
+  "run_id": "qwen-c-seed5678-science-256-001",
+  "arm": "vanilla",
+  "seed": 5678,
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "initialization": "Fresh immutable released B0; no resume or C/qualification weights.",
+  "precision": "fp32",
+  "world_size": 32,
+  "global_prefixes": 128,
+  "accumulation": 4,
+  "selected_logical_cores": "32-63",
+  "observed_physical_devices": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "observed_workers_per_physical_device": 4,
+  "exact_unique_worker_count": 32,
+  "first_completed_update": "PENDING at this capture",
+  "run_started_utc": "2026-10-17T09:36:37+00:00",
+  "first_loop_log_marker": null,
+  "prospective_terminal_step": 256,
+  "fixed_development_step": 64,
+  "planned_order_sha256": "ee771ea3b3c2db692a05ecbdebca24ffefda9eb02cac244c184880c43ab2071d",
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": null,
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "host_io_policy": {
+    "TMPDIR": null,
+    "TMP": null,
+    "TEMP": null,
+    "fresh_process_tempfile": "Prelaunch host receipt verifies /tmp on EBS; no replacement temp policy."
+  },
+  "artifacts": {
+    "release": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/release.json",
+      "sha256": "5907f8da9b636a0d4eaf7e4165ddb3dfed41177b57a8491d22f6c5a767f264ae",
+      "bytes": 1600
+    },
+    "launch": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/launch.sh",
+      "sha256": "1e760e158c9d3047a98d5b35166851b690493abd50694dddc8fb99d24a9ae191",
+      "bytes": 4151
+    },
+    "prelaunch_host": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/prelaunch.host.json",
+      "sha256": "c9f3b74bc248647e1349c0ff05a5f8bb930c0e348148ec7ee25ce79a91e3442a",
+      "bytes": 8666
+    },
+    "processes": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/processes.json",
+      "sha256": "4da9630b215e73f4b1f9aa32a94abe37da06487f96d12ab94395609dcb620ce9",
+      "bytes": 46973
+    },
+    "topology": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed5678-science-256-001/running.topology.json",
+      "sha256": "44478f632e035611e63610c01bf68a519466d961c871d79009478bbd6fe2b738",
+      "bytes": 18534
+    },
+    "run": {
+      "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/run.json",
+      "sha256": "053511dad1c42abebf4f6bd56dc0b579ce5c6480cd96cff93a9006316d7210c0",
+      "bytes": 22845
+    },
+    "frozen": {
+      "path": "/home/ubuntu/dario/local/science/experiment-256.json",
+      "sha256": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+      "bytes": 21176
+    },
+    "qualification": {
+      "path": "/home/ubuntu/dario/local/science/qualification-256.json",
+      "sha256": "3785fed6e2fe5722aacb9bf29acce38eb778da211b08bb3b9c9592148c745fd9",
+      "bytes": 34776
+    }
+  },
+  "ordinary_MemAvailable_point_bytes": 1746838192128,
+  "shared_services": {
+    "node_monitor_owner": "/root",
+    "backup_owner": "/root",
+    "new_per_arm_monitor_started": false,
+    "node_monitor_config_sha256": "5649e68512a98bb5df89dd7c9268dcbe2af73e7e95f947bca4e43fdf465fc6bf",
+    "backup_roster_sha256": "48fb9dcb4a610a383f1785e844ce96319814091e51fc7040b186127a9154d5bf"
+  },
+  "scope": "Read-only actual launch/process/physical-device/environment/run identity observation. No completed-update, evaluation or new acceptance-oracle claim. Individual rank/core is not inferred from PID order.",
+  "prelaunch_cli_failures": "Root preserved two CLI/view preflight failures; they are not training attempts. This receipt binds the successful actual release only."
+}

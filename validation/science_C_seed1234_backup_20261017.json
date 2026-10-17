@@ -1,0 +1,64 @@
+{
+  "schema": "science-terminal-backup-observation-v1",
+  "status": "TERMINAL_AND_LATEST_TWO_EBS_VERIFIED",
+  "observed_utc": "2026-10-17T09:36:37.320920+00:00",
+  "run_id": "qwen-c-seed1234-science-256-001",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "retained": [
+    {
+      "step": 128,
+      "COMPLETE_sha256": "9d162712d1bf4682663b3c631dbf708077612b46e3794f5780a95d99147ecc81",
+      "backup": {
+        "bytes": 27542552879,
+        "copied_utc": "2026-10-17T09:11:26+00:00",
+        "destination": "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000128",
+        "destination_device": 66305,
+        "distinct_filesystems": true,
+        "external_backup": false,
+        "manifest_sha256": "9d162712d1bf4682663b3c631dbf708077612b46e3794f5780a95d99147ecc81",
+        "schema": 1,
+        "source": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000128",
+        "source_device": 66310
+      },
+      "backup_receipt_sha256": "f29d3f2ea89a976ce79a776250a8e25d23e99937326c080d365d0484468ff128",
+      "payload_file_count": 33
+    },
+    {
+      "step": 256,
+      "COMPLETE_sha256": "8c20a705bb251af3c0b916ec41a21a47558f009647df15a9a695b71032fc6706",
+      "backup": {
+        "bytes": 27542553007,
+        "copied_utc": "2026-10-17T09:33:48+00:00",
+        "destination": "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256",
+        "destination_device": 66305,
+        "distinct_filesystems": true,
+        "external_backup": false,
+        "manifest_sha256": "8c20a705bb251af3c0b916ec41a21a47558f009647df15a9a695b71032fc6706",
+        "schema": 1,
+        "source": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000256",
+        "source_device": 66310
+      },
+      "backup_receipt_sha256": "e9f348c9c9ee6c4bd96af3a183ce8e9ff16f6c5a40c7e01e4f7b3f8ebd6480d5",
+      "payload_file_count": 33
+    }
+  ],
+  "shared_backup_pid": 1606740,
+  "shared_state_snapshot": {
+    "pid": 1606740,
+    "roster_sha256": "48fb9dcb4a610a383f1785e844ce96319814091e51fc7040b186127a9154d5bf",
+    "status": "RUNNING",
+    "terminal_step": 256,
+    "terminal_verified_runs": [
+      "qwen-c-seed1234-science-256-001"
+    ],
+    "utc": "2026-10-17T09:36:28.658851+00:00"
+  },
+  "shared_roster_sha256": "48fb9dcb4a610a383f1785e844ce96319814091e51fc7040b186127a9154d5bf",
+  "payload_verification_owner": "Pinned live shared helper verifies complete payload hashes; root independently checked exact source/copy manifests, receipt identities and all payload sizes",
+  "root_duplicate_full_payload_rehash": false,
+  "all_NVMe_originals_preserved": true,
+  "step64_NVMe_preserved": true,
+  "step64_EBS_retired_after_verified_128_and_256": true,
+  "external_backup": false,
+  "off_instance_backup": "UNRESOLVED"
+}

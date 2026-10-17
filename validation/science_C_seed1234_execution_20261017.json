@@ -1,0 +1,649 @@
+{
+  "schema": "science-C1234-terminal-execution-v1",
+  "captured_utc": "2026-10-17T09:30:49.562336+00:00",
+  "status": "TERMINAL_256_EXECUTION_COMPLETE",
+  "scope": "Observed execution, checkpoint publication, metadata identity and process cleanup only; no model-quality or downstream-efficacy claim.",
+  "run_id": "qwen-c-seed1234-science-256-001",
+  "arm": "vanilla",
+  "seed": 1234,
+  "precision": "fp32",
+  "initialization": "Fresh immutable released B0; no resume or qualification/C weights.",
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "planned_terminal_step": 256,
+  "actual_terminal_step": 256,
+  "world_size": 32,
+  "global_prefixes": 128,
+  "accumulation": 4,
+  "actual_terminal_order_hash": "dcc8c626d29130f2b32e74b75980cb860933a7650fc4fe7deac40accb1470b42",
+  "planned_order_sha256": "dcc8c626d29130f2b32e74b75980cb860933a7650fc4fe7deac40accb1470b42",
+  "actual_order_matches_prospective_order": true,
+  "actual_terminal_counters": {
+    "sampled_actions": 0,
+    "source_records": 32768,
+    "source_tokens": 16809984
+  },
+  "actual_terminal_manifest": {
+    "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000256/COMPLETE.json",
+    "sha256": "8c20a705bb251af3c0b916ec41a21a47558f009647df15a9a695b71032fc6706",
+    "bytes": 9449
+  },
+  "terminal_model_sha256_recorded_by_driver_manifest": "b2b8e2ebf3dd39f53103a20040d3d9e0cc1d7f40387ca7266dac4069f31fc6a1",
+  "terminal_model_payload_bytes_recorded_by_driver_manifest": 6882399951,
+  "terminal_model_payload_rehashed_by_this_observer": false,
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": null,
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "artifacts": {
+    "release": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/release.json",
+      "sha256": "6647f1ec9f6b774db52a54f61603ffe79d79357dd6d9b9af8e4f24a850d7154e",
+      "bytes": 1617
+    },
+    "launch": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/launch.sh",
+      "sha256": "741622a94580756a6dbee31c86edd41572b087f7a003fe85aa9f4e43cd191a72",
+      "bytes": 4150
+    },
+    "run": {
+      "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/run.json",
+      "sha256": "383afc7f6983ac2661c0f57ff3fbeb5aca4a68da534200bf6e18105e0e89ebdc",
+      "bytes": 22845
+    },
+    "frozen_experiment": {
+      "path": "/home/ubuntu/dario/local/science/experiment-256.json",
+      "sha256": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+      "bytes": 21176
+    },
+    "qualification": {
+      "path": "/home/ubuntu/dario/local/science/qualification-256.json",
+      "sha256": "3785fed6e2fe5722aacb9bf29acce38eb778da211b08bb3b9c9592148c745fd9",
+      "bytes": 34776
+    },
+    "original_processes": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/processes.json",
+      "sha256": "4ab7f6a4a0fb05da3b4bced0c39a3a1d8daf8d8c80211fad86c436131a97fbbe",
+      "bytes": 49944
+    },
+    "first_live": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/execution.first-live.json",
+      "sha256": "677056355c043eff3ab923e30d6f52170c1018ba7dcb8e13ce4abb2a8cd86fb0",
+      "bytes": 3801
+    },
+    "first_update": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/execution.first-update.json",
+      "sha256": "705dd2e16173861bd8d15cb246a358b7367d8ca9caa7258be2e64e292a8caaa7",
+      "bytes": 5066
+    },
+    "metrics": {
+      "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/metrics.jsonl",
+      "sha256": "7cfe400472c1e03cdcd1e8ea3a38d8d70f7fe64a9b39064a43cf127a1339cefd",
+      "bytes": 180704
+    },
+    "training_log": {
+      "path": "/home/ubuntu/dario/local/nvme/science/launch-logs/qwen-c-seed1234-science-256-001.log",
+      "sha256": "e8dac319f156cc630cde5070ab88e241e6de39bdcb319fe702df7e77ba3b8708",
+      "bytes": 371692
+    },
+    "exit": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/exit.json",
+      "sha256": "54a96bc3b3074276ab3d84ff41164952ad558c318b1a2aa0dcdf62d6345d7ac5",
+      "bytes": 94
+    },
+    "startup_topology": {
+      "path": "/home/ubuntu/dario/local/science/control/qwen-c-seed1234-science-256-001/running.topology.json",
+      "sha256": "55c52a4521065b087d4325b31dd730dcd7285e1af1d7ba478141366dc490e0d2",
+      "bytes": 18534
+    }
+  },
+  "metric_coverage": {
+    "count": 256,
+    "first_step": 1,
+    "last_step": 256,
+    "exact_contiguous_1_through_256": true,
+    "all_recorded_numeric_values_finite": true,
+    "all_gradient_norms_finite": true,
+    "all_sampled_replica_checks_bitwise_equal": true,
+    "sampled_elements_per_update": [
+      9920
+    ],
+    "sampled_update_l2_min": 4.089694266440347e-05,
+    "sampled_update_l2_max": 0.00010429777466924861,
+    "sampled_changed_fraction_min": 0.9494959712028503,
+    "sampled_changed_fraction_max": 0.9896169304847717,
+    "counters_match_every_step": true,
+    "replay_not_measured_in_C": true,
+    "unmeasured_reward_fields_remain_null": true,
+    "sampled_replica_scope": "9,920 sampled values per update, not a full-model replica comparison."
+  },
+  "timing": {
+    "issued_utc": "2026-10-17T08:37:57.545140+00:00",
+    "run_started_utc": "2026-10-17T08:38:35+00:00",
+    "first_loop_log_line": "2026-10-17T08:39:19+00:00 rank0 vanilla update 1/256",
+    "exit_json_publication_utc": "2026-10-17T09:29:37.616372+00:00",
+    "issued_to_exit_json_publication_seconds": 3100.071232,
+    "run_started_to_exit_json_publication_seconds": 3062.616372,
+    "issued_to_run_started_seconds": 37.45486,
+    "run_started_to_first_loop_seconds": 44.0,
+    "steps_1_and_2_separate": [
+      {
+        "step": 1,
+        "elapsed_seconds": 237.86599817900424,
+        "time_utc": "2026-10-17T08:43:17+00:00",
+        "gradient_norm": 1.6774256229400635,
+        "metric_line_sha256": "fa85136792d5f770d695ea1b3fed34003a4cd98aa76e486adf95ba6d675a61c4"
+      },
+      {
+        "step": 2,
+        "elapsed_seconds": 94.14052061399707,
+        "time_utc": "2026-10-17T08:44:51+00:00",
+        "gradient_norm": 1.4601109027862549,
+        "metric_line_sha256": "0dac9fe739a04f04ab321c2bb31f9a1fbac304ee4729f8c989b2fad654bf442e"
+      }
+    ],
+    "all_steps_3_through_256": {
+      "count": 254,
+      "step_range_inclusive": [
+        3,
+        256
+      ],
+      "filtered_or_dropped_steps": [],
+      "mean_seconds": 10.0563933692441,
+      "median_seconds": 10.05659782300063,
+      "p90_linear_seconds": 10.096296528200037,
+      "p90_definition": "Linear interpolation at (n-1)*0.9 in the sorted observations.",
+      "min_seconds": 9.961725017004937,
+      "max_seconds": 10.148691239999607,
+      "sum_seconds": 2554.3239157880016
+    },
+    "all_256_step_elapsed_sum_seconds": 2886.330434581003,
+    "checkpoint_publication_wall_sum_seconds": 113.91990100000001,
+    "terminal_metric_to_exit_json_publication_seconds": 52.616372,
+    "notes": [
+      "Full-step elapsed values exclude checkpoint saves. All steps 3\u2013256 are retained without subtracting shared monitor or EBS backup work.",
+      "Checkpoint wall is directory birth to COMPLETE publication, including exports/writes/driver hashes; it excludes the final observer fence. Metric-to-next-update log spans that fence at one-second log resolution.",
+      "Exit time is the launcher exit.json publication after wait returned; actual kernel process exit timestamps were not instrumented. Run/log/metric UTC strings have one-second resolution."
+    ]
+  },
+  "checkpoints": [
+    {
+      "step": 64,
+      "complete_manifest": {
+        "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000064/COMPLETE.json",
+        "sha256": "cd06a3a842ee656eeefde5d974eb0cbf4eff9dfc4e32fc735ba7d6e8fb17fa63",
+        "bytes": 9446
+      },
+      "manifest_created_utc": "2026-10-17T08:55:55+00:00",
+      "directory_birth_utc": "2026-10-17T08:55:16.895791+00:00",
+      "complete_mtime_utc": "2026-10-17T08:55:55.787137+00:00",
+      "directory_birth_to_COMPLETE_publication_seconds": 38.891346,
+      "metric_utc": "2026-10-17T08:55:16+00:00",
+      "metric_to_COMPLETE_publication_seconds": 39.787137,
+      "next_update_log_line": "2026-10-17T08:55:55+00:00 rank0 vanilla update 65/256",
+      "metric_to_next_update_log_seconds": 39.0,
+      "payload_file_count": 33,
+      "manifest_recorded_payload_bytes": 27542552943,
+      "manifest_recorded_model": {
+        "bytes": 6882399951,
+        "sha256": "e6edb6b438dfd1be81e53b48ea369d12724c29df33bf163cdf905f7139eb98d0"
+      },
+      "actual_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "actual_order_hash": "dcc8c626d29130f2b32e74b75980cb860933a7650fc4fe7deac40accb1470b42",
+      "actual_counters": {
+        "sampled_actions": 0,
+        "source_records": 8192,
+        "source_tokens": 4202496
+      },
+      "actual_runtime_policy_matches_run": true
+    },
+    {
+      "step": 128,
+      "complete_manifest": {
+        "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000128/COMPLETE.json",
+        "sha256": "9d162712d1bf4682663b3c631dbf708077612b46e3794f5780a95d99147ecc81",
+        "bytes": 9448
+      },
+      "manifest_created_utc": "2026-10-17T09:07:17+00:00",
+      "directory_birth_utc": "2026-10-17T09:06:39.097337+00:00",
+      "complete_mtime_utc": "2026-10-17T09:07:17.013003+00:00",
+      "directory_birth_to_COMPLETE_publication_seconds": 37.915666,
+      "metric_utc": "2026-10-17T09:06:39+00:00",
+      "metric_to_COMPLETE_publication_seconds": 38.013003,
+      "next_update_log_line": "2026-10-17T09:07:17+00:00 rank0 vanilla update 129/256",
+      "metric_to_next_update_log_seconds": 38.0,
+      "payload_file_count": 33,
+      "manifest_recorded_payload_bytes": 27542552879,
+      "manifest_recorded_model": {
+        "bytes": 6882399951,
+        "sha256": "e5162411f8866233ed1f8295d0462b61dad8ab8a1fffc51fb7f64df3a82ddabc"
+      },
+      "actual_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "actual_order_hash": "dcc8c626d29130f2b32e74b75980cb860933a7650fc4fe7deac40accb1470b42",
+      "actual_counters": {
+        "sampled_actions": 0,
+        "source_records": 16384,
+        "source_tokens": 8404992
+      },
+      "actual_runtime_policy_matches_run": true
+    },
+    {
+      "step": 256,
+      "complete_manifest": {
+        "path": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000256/COMPLETE.json",
+        "sha256": "8c20a705bb251af3c0b916ec41a21a47558f009647df15a9a695b71032fc6706",
+        "bytes": 9449
+      },
+      "manifest_created_utc": "2026-10-17T09:29:22+00:00",
+      "directory_birth_utc": "2026-10-17T09:28:45.189486+00:00",
+      "complete_mtime_utc": "2026-10-17T09:29:22.302375+00:00",
+      "directory_birth_to_COMPLETE_publication_seconds": 37.112889,
+      "metric_utc": "2026-10-17T09:28:45+00:00",
+      "metric_to_COMPLETE_publication_seconds": 37.302375,
+      "next_update_log_line": null,
+      "metric_to_next_update_log_seconds": null,
+      "payload_file_count": 33,
+      "manifest_recorded_payload_bytes": 27542553007,
+      "manifest_recorded_model": {
+        "bytes": 6882399951,
+        "sha256": "b2b8e2ebf3dd39f53103a20040d3d9e0cc1d7f40387ca7266dac4069f31fc6a1"
+      },
+      "actual_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "actual_order_hash": "dcc8c626d29130f2b32e74b75980cb860933a7650fc4fe7deac40accb1470b42",
+      "actual_counters": {
+        "sampled_actions": 0,
+        "source_records": 32768,
+        "source_tokens": 16809984
+      },
+      "actual_runtime_policy_matches_run": true
+    }
+  ],
+  "terminal_metric": {
+    "step": 256,
+    "arm": "vanilla",
+    "elapsed_seconds": 10.055935361000593,
+    "gradient_norm": 1.261040210723877,
+    "metrics": {
+      "abs_advantage": null,
+      "actions": 0.0,
+      "capped": null,
+      "clean": null,
+      "gain": null,
+      "loss": 1.2567590475082397,
+      "mean_signed_length": null,
+      "padded_decode_slots": 0.0,
+      "thought": null
+    },
+    "max_replay_logp_error": null,
+    "replay_audit_performed": false,
+    "sampled_parameter_update": {
+      "sampled_elements": 9920,
+      "sampled_update_l2": 4.137635914958082e-05,
+      "sampled_changed_fraction": 0.9566532373428345,
+      "sampled_replicas_bitwise_equal": true
+    },
+    "counters": {
+      "source_records": 32768,
+      "source_tokens": 16809984,
+      "sampled_actions": 0
+    },
+    "time_utc": "2026-10-17T09:28:45+00:00",
+    "status": "science"
+  },
+  "cleanup": {
+    "observed_utc": "2026-10-17T09:30:49.562336+00:00",
+    "original_worker_count": 32,
+    "original_identity_rows": [
+      {
+        "role": "launcher",
+        "pid": 1607173,
+        "expected_starttime_ticks": 6096971,
+        "expected_parent_pid": 1606727,
+        "expected_pgid": 1607173,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "timeout",
+        "pid": 1607186,
+        "expected_starttime_ticks": 6097438,
+        "expected_parent_pid": 1607173,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "driver",
+        "pid": 1607187,
+        "expected_starttime_ticks": 6097438,
+        "expected_parent_pid": 1607186,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607192,
+        "expected_starttime_ticks": 6098002,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607195,
+        "expected_starttime_ticks": 6098002,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607196,
+        "expected_starttime_ticks": 6098002,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607197,
+        "expected_starttime_ticks": 6098002,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607198,
+        "expected_starttime_ticks": 6098002,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607199,
+        "expected_starttime_ticks": 6098002,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607200,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607201,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607202,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607203,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607204,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607205,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607206,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607207,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607208,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607209,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607210,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607211,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607212,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607213,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607214,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607215,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607216,
+        "expected_starttime_ticks": 6098003,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607217,
+        "expected_starttime_ticks": 6098004,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607218,
+        "expected_starttime_ticks": 6098004,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607219,
+        "expected_starttime_ticks": 6098005,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607220,
+        "expected_starttime_ticks": 6098005,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607221,
+        "expected_starttime_ticks": 6098005,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607222,
+        "expected_starttime_ticks": 6098006,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607223,
+        "expected_starttime_ticks": 6098006,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607224,
+        "expected_starttime_ticks": 6098006,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      },
+      {
+        "role": "worker",
+        "pid": 1607225,
+        "expected_starttime_ticks": 6098006,
+        "expected_parent_pid": 1607187,
+        "expected_pgid": 1607186,
+        "pid_present": false,
+        "original_identity_present": false
+      }
+    ],
+    "all_original_identities_absent": true,
+    "owned_process_groups": [
+      1607173,
+      1607186
+    ],
+    "remaining_owned_group_members": [],
+    "no_signals_sent_by_observer": true,
+    "root_owned_global_monitor_and_backup_groups_excluded": [
+      1606734,
+      1606728
+    ],
+    "no_individual_rank_or_within_device_core_inferred_from_pid_order": true
+  },
+  "storage_scope": {
+    "all_NVMe_source_checkpoints_preserved": true,
+    "payload_hashes_here_are_driver_manifest_records": true,
+    "observer_payload_reads_or_rehashes_performed": false,
+    "EBS_backup_owner": "/root",
+    "terminal_EBS_backup_verification": "Separate root-owned supervisor and verification evidence; not asserted by this execution receipt."
+  },
+  "scientific_limitations": [
+    "Training loss, finite updates and data exposure do not establish thought usefulness or downstream accuracy.",
+    "C uses the ordinary causal objective; thought/reward/replay fields are unmeasured null placeholders.",
+    "Fixed development checkpoint64 remains separate from the prospectively selected terminal256 primary.",
+    "No final-test content or gold was accessed by this observer."
+  ]
+}
