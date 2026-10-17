@@ -1,0 +1,63 @@
+{
+  "active_numerical_source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "active_numerical_source_unchanged": true,
+  "actual_evaluation_freeze_created": false,
+  "actual_final_projection_created": false,
+  "actual_plan_created": false,
+  "actual_pre_gold_lock_created": false,
+  "canonical_final_arrays_read": false,
+  "captured_utc": "2026-10-17T16:31:55.989372+00:00",
+  "frozen_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "hardware_jobs_added": false,
+  "model_inventory": "B0, C1234@256, C5678@256, R1234@256, R5678@256; no checkpoint selection",
+  "pending": "B0 local DEV512 scoring is not complete and neither R terminal checkpoint exists. Declaration waits for complete baseline templates; model locking/projection/final evaluation wait for all four actual terminal runs.",
+  "protocol_count": 13,
+  "public_scripts": {
+    "validation/orchestration/final_protocol/postlock_project.py": "cd829a2c27f95faeaf4325c708c1bcaa57626904c106b6bdcf98fb56b40f7dbc",
+    "validation/orchestration/final_protocol/prepare_final.py": "7dc9b6c8a6dd70f93081d427ce7289f4f0ad20397a20b9be11c5035ac9f94f33",
+    "validation/orchestration/final_protocol/test_postlock_project.py": "c87d4a91bb56f955afc5615cab728c66f1137f4f0288b5177fb918367e175721",
+    "validation/orchestration/final_protocol/test_prepare_final.py": "473da3cc09225bfb646b5a542b50acc5c28d24842730d9cac356dc308e2fd5e1"
+  },
+  "review": {
+    "planner_findings_closed": [
+      "Enumerate active source closure, including added files",
+      "Bind verified returned model run_id to exact expected run",
+      "Bind numeric scoring manifest to post-lock projection receipt"
+    ],
+    "planner_reviewer": "/root/review",
+    "projector_reviewer": "/root",
+    "projector_root_receipt_sha256": "95771557e34803a7901bc5fe1747fa4c4d649c8a2aae9a01e2c883866b260515"
+  },
+  "schema": "final-evaluation-controller-preparation-v1",
+  "status": "REVIEWED_AND_TESTED_NOT_EXECUTED_ON_FINAL_DATA",
+  "tests": {
+    "initial_CPU_check_setup_attempt": {
+      "directory": "/home/ubuntu/dario/local/checks/tests.bgrNdA",
+      "result": "pytest unavailable on initial PATH-only invocation; tests did not execute. Corrected PYTHONPATH to existing local/test-deps; stack unchanged."
+    },
+    "planner_synthetic_fixtures": {
+      "log": "/home/ubuntu/dario/local/evaluation/final-protocol-v1/planner-unit-tests-final.log",
+      "passed": 5,
+      "sha256": "5810ce88e272ed9fdcc74be8449fc935af0388108377290d593455d5f969327b"
+    },
+    "projector_synthetic_fixtures": {
+      "log": "/home/ubuntu/dario/local/evaluation/final-protocol-v1/unit-tests.log",
+      "note": "Behavior reviewed; subsequent projector edit clarified the docstring only.",
+      "passed": 10,
+      "sha256": "7597a6a279b51e584e34a35488158da0cc9806a6140661ee3dcc1a92fdf106bc"
+    },
+    "required_CPU_checks": {
+      "directory": "/home/ubuntu/dario/local/checks/tests.XAA5WQ",
+      "passed": 233,
+      "tests_sha256": "fff7157ed9f56e97323db887551b513fb2ea9d73ecf809b590b17289d7aa6f2b",
+      "toy_smoke": "PASS",
+      "toy_smoke_sha256": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3"
+    }
+  },
+  "workflow": [
+    "Complete B0 DEV protocol templates, metadata declaration only",
+    "Actual five-model inventory and four terminal256 exit/cleanup/verified backups, full existing identity checks, immutable pre-gold lock",
+    "Deterministic canonical projections after lock",
+    "Separately timed evaluation-freeze-v2 assembly before final inference/scoring"
+  ]
+}

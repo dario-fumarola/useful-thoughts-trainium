@@ -1,7 +1,7 @@
-# Current state — 2026-10-17 15:38 UTC
+# Current state — 2026-10-17 16:32 UTC
 
 **Both scientific C runs completed 256 updates and verified terminal backups.
-R1234 completed step26/256; two fixed development jobs are running. No trained C/R comparison is available.**
+R1234 completed step30/256; two fixed development jobs are running. No trained C/R comparison is available.**
 The first study remains **256 terminal updates**, with fixed step64 development.
 Public repository: https://github.com/dario-fumarola/useful-thoughts-trainium .
 Work is isolated in `/home/ubuntu/dario`; original repositories are unchanged.
@@ -44,8 +44,10 @@ These execution and recovery observations do not establish capability.
 FP32/world32/global128/accum4/G4/cap1024/K1/T.7, LRU2/private RAM temp. Root
 release10:32:53.082689UTC SHA0a74325f…828543; run started10:33:30. Released lower
 logical0–31; ports64421/64422. Launcher1668169, timeout/PGID1668180, driver1668181.
-Latest complete metric is **26/256 at15:37:06**,631.225s; cumulative3,328 source
-records /1,707,264 source tokens /1,351,556 sampled actions. No R checkpoint has
+Latest complete metric is **30/256 at16:25:55**,822.504s; cumulative3,840 source
+records /1,969,920 source tokens /1,538,314 sampled actions. Generated workload has
+risen again after the early short-note updates; no permanent stopping pattern
+or downstream result is inferred. No R checkpoint has
 published yet; fixed development64 and the12-hour save cadence remain unchanged.
 Control `local/science/control/qwen-r-seed1234-science-256-001`;
 output `local/nvme/runs/qwen-r-seed1234-science-256-001`; rawlog
@@ -64,12 +66,21 @@ runtime environment and private0700 RAM temp; receipts are in each control's
 `processes.first-live.json`. Public start evidence:
 `validation/science_development_start_20261017.json`, SHAd6c4cc4a…284534. Both jobs
 are nonfinal held development; root owns their health, allocation and scheduling.
+At16:32 B0 has104/512 original notes. Held C1234@64 has complete/scored128 direct
+and128 empty_format items, with23/128 one_thought items saved. Its complete
+three-mode accuracy comparison remains pending. Data supervises this suite;
+distributed supervises R through64 and its first verified EBS copy.
 R1234's exact public live receipt is `validation/science_R_seed1234_progress_20261017.json`,
 SHA6c5c95a5…b4a0912, observed15:37:51 at step26; all26 recorded updates are finite
 with sampled replicas equal. It records the historical first loop at10:34:10 and
 first metric at10:49:58. All24 steps3–26: median594.303s, linearP90802.193s;
 the sampled action workload shrinks substantially. This is execution evidence;
 negative raw gains and early stopping are TRAIN diagnostics, not a capability result.
+
+Both completed C runs' raw metrics, run metadata, all three checkpoint manifests
+and launch logs also have verified EBS copies in `local/backups/run-artifacts`:
+C1234 receipt SHA19a469d2…53afa, C5678 SHA107eb8b7…fc5df, six files each/about0.6MB.
+These small archives are separate from the latest-two model/optimizer queue.
 
 Root owns both matching shared supervisors: backup1606740; node helper1606741,
 producer1606742, gzip1606743, timeout/PGID1606734. Roster/config
@@ -190,6 +201,34 @@ terminal reader crosses. Planned idle cores32/36 during lower R1234,0/4 during
 upper R5678 or honest post-training phase; one local job and one held suite at
 a time, only with actual host headroom. All children use the same frozen deadline.
 Source, sampling, prompts, controls and B0 pack are unchanged; no new numerical gate.
+
+## Final evaluation preparation
+
+Reviewed controllers and15 synthetic provenance/projection tests are published in
+`validation/orchestration/final_protocol`; exact copies are staged in
+`local/evaluation/final-protocol-v1`. Required233 CPU checks and toy smoke pass
+in `local/checks/tests.XAA5WQ`; the first invocation lacked existing local test
+dependencies, then succeeded with `local/test-deps` on PYTHONPATH. No stack change.
+All61 active numerical files remain exact244e2f13…. Small report:
+`validation/final_evaluation_preparation_20261017.json`, SHAf06dea41…b3b5ca.
+
+No actual final plan/lock/projection/freeze exists. Metadata declaration first
+waits for complete B0 local scoring so it can reuse the exact development protocol
+dictionaries. After all four actual terminal256/exit/cleanup/verified backups,
+the controller calls existing full-payload final-model verification and writes an
+immutable pre-gold recipe/model lock. Only then project canonical official data;
+assemble evaluation-freeze-v2 afterward with its actual later timestamp. This
+resolves the projected-gold-hash dependency without changing numerical evaluators
+or pretending a complete manifest preceded projection. New TEST2048 bundles and
+real final-gated inference remain required; DEV bundles cannot be relabeled.
+
+After the current held suite completes/cleans up and root backs up its outputs,
+the next explicit release is `python3 local/evaluation/release_idle_development.py held-C C1234-step0256`, followed by that slot's reviewed `launch.sh` in a fresh
+tmux session. After B0 local completion/cleanup/backup, the same helper accepts
+`local-trained C1234-step0064`, then use trained-plans-v1/launch.sh with that slot.
+Helper SHA **bf5460b4…8b213**, reviewed/AST-checked, finite host probes30/15s,
+pending-release reservations and actual dynamic EBS retention accounting. Each
+call only releases one job; it never launches/retries. Continue all healthy jobs.
 
 ## Review snapshot
 

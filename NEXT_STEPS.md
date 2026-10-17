@@ -2,8 +2,8 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active R1234 on lower0–31 through fixed256; latest complete step26 at
-   15:37:06UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step30 at
+   16:25:55UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
    Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
    all NVMe originals remain. Both shared supervisors are RUNNING.
 
@@ -20,7 +20,8 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
 3. Supervise root-released B0 local DEV512 on idle core32 (started15:37:49UTC)
    and held128 C1234@64 on separate core36 (started15:38:07UTC). Root owns their
-   actual allocation/headroom and health. No completed trained evaluation exists
+   actual allocation/headroom and health. C64 direct/empty are complete; its
+   one_thought mode is running. No completed three-mode trained comparison exists
    yet. Packs/roles are in STATUS; all other development slots remain unreleased.
    Train through fixed256; save/evaluate fixed64 development without checkpoint
    selection. Complete fixed held-development B0/C/R × direct/empty_format/
@@ -30,3 +31,10 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
    Empty-note/format recovery or C degradation alone is not capability aboveB0.
    Local K1 primary,K4/16 secondary. Final outcomes stay sealed until protocol and
    actual terminal model inventory are frozen. Do not rush healthy runs.
+
+4. Final preparation controllers are reviewed/tested in
+   validation/orchestration/final_protocol. After complete B0 local scores, declare
+   metadata using the unchanged development templates. Actual final model lock
+   waits for all four real terminal256/exit/cleanup/verified backups; only then
+   project canonical official gold and assemble the separately timed v2 freeze.
+   No actual final plan/lock/projection/freeze has been created. Source remains244.
