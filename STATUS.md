@@ -131,7 +131,7 @@ SHA `26a6081f…2313d4b6`; state/receipts under
 remain.
 Root owns integration, decisions and public pushes. Do not edit common active
 code during these jobs; later documentation commits do not alter its fingerprint.
-The ignored local site draft now binds exact measured per-arm runtime policies,
+The ignored local site draft now binds recorded per-arm runtime policies,
 12-hour checkpoint interval, per-seed partitions, NVMe outputs and EBS backups.
 Terminal exposure and finite launch deadline remain unset until R qualification.
 
@@ -151,6 +151,10 @@ all failures, examples and outputs; no outcome-based terminal selection.
 
 Large artifacts remain ignored under `local/`. One verified unused NVMe is
 mounted at `local/nvme`; the other three SSDs are untouched. Latest space:
-EBS 300 GiB free, NVMe 1.4 TiB free. EBS backups and scratch share this instance;
+EBS 324.5 GiB free, NVMe 1.4 TiB free. An obsolete EBS C duplicate was retired
+after full verification of its preserved NVMe original; receipt:
+`local/qualification/ebs-retirement-c-fe-20261017.json`. The science backup queue
+will serialize copies across runs to preserve rollover space; preparation/review
+is pending. EBS backups and scratch share this instance;
 no external backup location is approved. The reviewed backup supervisor retains
 two verified complete states per run; see `docs/CHECKPOINT_BACKUP.md`.

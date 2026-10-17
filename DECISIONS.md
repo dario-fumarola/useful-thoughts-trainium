@@ -169,3 +169,18 @@ Routine formatting changes do not need a decision entry.
   checks, real upper update/replica/counters, separate endpoints, and memory/cost
   observations. Use measured coexistence costs and the existing reserve in the
   exposure calculation. No scientific result selects this operational schedule.
+
+## 2026-10-17 — reserve space for serialized science backups
+
+- Retire only the obsolete EBS `qwen-c-fp32-001/step-0000003` duplicate after
+  verifying all 33 original NVMe files against its unchanged COMPLETE manifest
+  and backup lineage. Preserve the original, retirement receipt and both current
+  C backups. This frees 25.65 GiB; EBS now has about 324.5 GiB free.
+- The proposed four-run retention plus R qualification leaves about 68 GiB.
+  One checkpoint rollover fits its 25.65 GiB payload and 20 GiB reserve;
+  simultaneous copies can exceed that allowance. Use one sequential host backup
+  queue across the science roster, preserving two verified copies per run and
+  all NVMe originals. Bind and review that helper separately before launch.
+- Put science monitoring logs on NVMe and include checkpoint storage/rollover
+  space in the final exposure plan. The active qualification driver, runtime,
+  mathematical recipe and existing R backup supervisor are unchanged.
