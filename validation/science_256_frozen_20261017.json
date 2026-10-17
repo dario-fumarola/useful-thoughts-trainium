@@ -1,0 +1,399 @@
+{
+  "assets": {
+    "format_file": "/home/ubuntu/dario/local/science/resolved_format.absolute.json",
+    "format_sha256": "dbb5ad67ab9af52ff1d231980b85fa643add2d26fc9328d539ff8aff4e8b9346",
+    "model_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "record_counts": {
+      "dev": 18360,
+      "test": 18239,
+      "train": 329535
+    },
+    "record_manifest_sha256": "289c5d3001bcc9b9c3e17bee08d66eae950934c6ebb495e738ca6e52323ecad3",
+    "records_file": "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.jsonl",
+    "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff"
+  },
+  "created_utc": "2026-10-17T08:29:43+00:00",
+  "deadline_utc": "2026-10-31T08:27:49+00:00",
+  "experiment_id": "qwen-cr-256-001",
+  "proposal": {
+    "data": {
+      "entropy_selection": false,
+      "fallback": "HuggingFaceTB/finemath:finemath-4plus",
+      "must_audit": [
+        "exact_duplicates",
+        "near_duplicates",
+        "benchmark_overlap",
+        "split_document_identity",
+        "special_tokens",
+        "source_license"
+      ],
+      "one_hash_selected_anchor_per_document": true,
+      "preferred": "audited surviving mathematical raw-text corpus with document boundaries",
+      "prefix_tokens": 512,
+      "records_sha256": null,
+      "seed_order": "fixed_seed_specific_permutation_shared_within_each_C_R_pair",
+      "source_revision": null,
+      "stored_future_tokens": 16,
+      "tokenizer_revision": null
+    },
+    "evaluation": {
+      "always_evaluate_downstream_even_if_ntp_declines": true,
+      "confidence": "paired item/document bootstrap conditional on checkpoint; seeds reported separately",
+      "dev_documents": 512,
+      "final_local_documents": 2048,
+      "final_test_access": "after_config_and_checkpoint_rule_are_frozen",
+      "held_development": {
+        "checkpoint_inventory": "B0 once; C/R for both seeds at fixed64 and terminal256",
+        "checkpoint_selection": "terminal256 is primary; development64 does not select a checkpoint",
+        "dataset": "GSM8K main TRAIN; fixed128, disjoint from demonstrations and previous interface checks",
+        "direct_interpretation": "ordinary decoding with calculations allowed and no extra thought block",
+        "modes": [
+          "direct",
+          "empty_format",
+          "one_thought"
+        ],
+        "protocol_manifest": "validation/held_dev_protocol_20261017.json",
+        "protocol_sha256": "9bc3d2e5c8d2e659ede1dd9c007dd45b63f43e493ebc3203657d15c92081e6e7"
+      },
+      "local_horizons": [
+        1,
+        4,
+        16
+      ],
+      "local_primary": "mean independent single-sample utility at K=1, with all absolute arms reported",
+      "modes": [
+        "direct",
+        "one_greedy_thought",
+        "filler",
+        "other_note",
+        "shuffled_note",
+        "empty_format"
+      ],
+      "oracle_best_of": "diagnostic_only_not_deployment",
+      "primary_checkpoint_rule": "terminal checkpoint at locked step count",
+      "primary_contrast": "R.one_greedy_thought minus C.one_greedy_thought at data-matched terminal checkpoints",
+      "primary_downstream": "GSM8K official test exact-match single-path generation; prompt/parser locked using development examples",
+      "required_secondary_contrasts": [
+        "R.direct minus C.direct",
+        "R.one_greedy_thought minus R.direct",
+        "R.one_greedy_thought minus R.empty_format"
+      ],
+      "secondary_downstream": [
+        "ARC-Challenge official test candidate likelihood",
+        "LAMBADA regression sentinel"
+      ],
+      "starting_reference": "B0 in each inference mode; report each trained arm minus B0 in the same mode"
+    },
+    "hardware": {
+      "expected_chips": 16,
+      "expected_instance": "trn2.48xlarge",
+      "expected_lnc": 2,
+      "expected_logical_cores": 64,
+      "must_measure": [
+        "device_layout",
+        "gradient_sync",
+        "optimizer_state_sharding",
+        "full_step_seconds",
+        "peak_hbm",
+        "cache_replay_agreement",
+        "checkpoint_resume"
+      ],
+      "partition_ranges": null,
+      "proposed_cores_per_arm": 32
+    },
+    "model": {
+      "allow_remote_code": false,
+      "fallback_id": "Qwen/Qwen3-0.6B-Base",
+      "id": "Qwen/Qwen3-1.7B-Base",
+      "initialization": "actual_pretrained_weights_not_from_config",
+      "local_snapshot": null,
+      "preserve_pretrained_embedding_tie": true,
+      "revision": null
+    },
+    "operations": {
+      "automatic_hardware_launch": false,
+      "bedrock": false,
+      "checkpoint_backup_destination": null,
+      "new_moe_model_port": false,
+      "new_serving_stack_migration": false,
+      "not_stop_conditions": [
+        "small_ntp_regression_alone",
+        "negative_initial_mean_gain_alone",
+        "unattractive_first_traces_alone"
+      ],
+      "stop_conditions": [
+        "nonfinite_gradients",
+        "wrong_targets",
+        "leakage",
+        "missing_gradient_sync",
+        "unbounded_recompile",
+        "corrupt_checkpoint",
+        "operator_deadline"
+      ]
+    },
+    "optimization": {
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "compute_dtype": "fp32",
+      "global_unique_prefixes_per_update": 128,
+      "gradient_accumulation_at_32_ranks": 4,
+      "gradient_clip": 1.0,
+      "learning_rate": 1e-06,
+      "locked_steps_after_timing": null,
+      "micro_prefixes_per_rank": 1,
+      "micro_thoughts_per_backward": 1,
+      "no_double_reduce": true,
+      "one_gradient_reducer_owner": "ZeroRedundancyOptimizer",
+      "optimizer": "AdamW_with_verified_Zero1_for_1.7B",
+      "parameter_dtype": "fp32",
+      "schedule": "constant",
+      "seeds": [
+        1234,
+        5678
+      ],
+      "step_budget_candidates": [
+        256,
+        512,
+        1024,
+        2048
+      ],
+      "weight_decay": 0.1
+    },
+    "purpose": "Establish a mature-model reference condition; separately measure training and inference benefits.",
+    "spec_version": "mature-reference-2026-10-16-v2-fp32",
+    "status": "PROPOSED_NOT_HARDWARE_QUALIFIED",
+    "thought_arm": {
+      "algorithm": "one_fresh_signed_group_relative_policy_update",
+      "best_of_selection_for_training": false,
+      "ema_baseline": "omitted_from_update_because_common_context_baseline_cancels_exactly_in_LOO; same-model raw clean evidence still logged",
+      "format_json": null,
+      "group_size": 4,
+      "group_std_normalization": false,
+      "max_thought_tokens": 1024,
+      "negative_advantage_scaling": 1.0,
+      "normalization": "sequence",
+      "ntp_auxiliary_weight": 0.0,
+      "reader_gradient": false,
+      "reference_kl_weight": 0.0,
+      "reward_horizon": 1,
+      "rollout_budget_ablation": "2048 tokens is a later declared condition, not a silent extension",
+      "sampling_support": "tokenizer-supported IDs only; model-only output rows masked identically in rollout and replay; raw reader/C likelihood unchanged",
+      "temperature": 0.7
+    },
+    "vanilla_arm": {
+      "optional_stronger_control": "predeclared higher-LR CPT sanity run if resource budget allows; do not claim optimal CPT otherwise",
+      "resource_matched_continuation": "secondary_if_data_and_time_allow; log repeats and resource use; not asserted FLOP matching",
+      "same_base_same_records_same_order": true,
+      "same_learning_rate_primary_control": true,
+      "save_data_matched_checkpoint": true,
+      "supervision": "all_next_tokens_of_prefix_plus_reward_horizon_only"
+    }
+  },
+  "qualification": "A frozen specification is not evidence of device correctness. Check the real qualification receipt.",
+  "schema": 1,
+  "site": {
+    "backup_destination": "/home/ubuntu/dario/local/backups/science",
+    "checkpoint_interval_seconds": 43200,
+    "deadline_utc": "2026-10-31T08:27:49+00:00",
+    "execution_mode": "serial_C1234_C5678_R1234_R5678",
+    "format_file": "/home/ubuntu/dario/local/science/resolved_format.absolute.json",
+    "format_metadata_bridge": {
+      "file": "/home/ubuntu/dario/local/science/preparation-256/format-absolute-path-bridge.json",
+      "sha256": "2f2f2f4ca8a7232c1570c8468fca13873b55d3f44cad7616f67f7727eab9bb84"
+    },
+    "gradient_accumulation": 4,
+    "host_backup_supervisor": {
+      "launch_shared_checkpoint_backups.sh": {
+        "path": "/home/ubuntu/dario/validation/orchestration/launch_shared_checkpoint_backups.sh",
+        "sha256": "f38461bf48a4fbe1984d10b257f76ac261a3195f627cb5aa3f277effef4cab0b"
+      },
+      "shared_checkpoint_backups.py": {
+        "path": "/home/ubuntu/dario/validation/orchestration/shared_checkpoint_backups.py",
+        "sha256": "e8894c4b0456f2b1cb99cd28d386e8110c892b1a457060e276404312028c14e4"
+      }
+    },
+    "host_io_policy_by_arm": {
+      "thought": {
+        "TEMP": null,
+        "TMP": null,
+        "TMPDIR_template": "/dev/shm/dario/{run_id}",
+        "compiler_cache_st_dev": 66305,
+        "compiler_cache_url": "/home/ubuntu/dario/local/neuron-cache-driver",
+        "fresh_process_tempfile_probe": "Root checks effective tempfile path, device, owner and mode before each release; removes the empty R probe directory so the reviewed launcher can freshly mkdir it.",
+        "output_st_dev": 66310,
+        "qualified_policy": "RAM005 complete timings and upper strict restored3/continued4 recovery; active source244 unchanged",
+        "temp_mode_octal": "0700",
+        "temp_st_dev": 26,
+        "temp_uid": 1000
+      },
+      "vanilla": {
+        "TEMP": null,
+        "TMP": null,
+        "TMPDIR": null,
+        "compiler_cache_st_dev": 66305,
+        "compiler_cache_url": "/home/ubuntu/dario/local/neuron-cache-driver",
+        "effective_temp_directory": "/tmp",
+        "output_st_dev": 66310,
+        "qualified_policy": "C full32 execution and recovery with default EBS temp and cache setting unset",
+        "temp_st_dev": 66305
+      }
+    },
+    "host_node_monitor": {
+      "launch_shared_node_monitor.sh": {
+        "path": "/home/ubuntu/dario/validation/orchestration/launch_shared_node_monitor.sh",
+        "sha256": "a6ecd86ff474e71b7a8d764d7debffe26473c70dec978f21b392a623e893cf38"
+      },
+      "shared_node_monitor.py": {
+        "path": "/home/ubuntu/dario/validation/orchestration/shared_node_monitor.py",
+        "sha256": "08615f3e0e4681c29ffd8b0e96cc25bbdc95a43feb6bcd1a79a4277b917f5d3c"
+      }
+    },
+    "initial_research_terminal_steps": 256,
+    "model_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "notes": "Prospective256 first study, fixed64 development. One32-core training group at a time, C1234 then C5678 then independent fresh-B0 R1234 then fresh-B0 R5678. Within each seed C/R use identical ordered raw records; no C or qualification state initializes R. Serial fallback selected before science from observed pilot memory plus the larger per-rank corpus loader. Necessary timed freeze peak RSS is checked before launch; no parallel training throughput credit. Genuine development evaluation may use idle cores subject to actual host headroom. Owner provides weeks; the finite14-day planning window is not instance expiry. EBS backups remain on this instance; off-instance destination unresolved. Finite14-day planning deadline is fixed at the sole asset freeze; necessary full-loader RSS and final resource proof precede release.",
+    "output_root": "/home/ubuntu/dario/local/nvme/runs",
+    "planning_budget": {
+      "evaluation_recovery_hours": 96,
+      "no_parallel_throughput_credit": true,
+      "not_instance_expiry": true,
+      "reference_terminal_steps": 256,
+      "serial_training_groups": 4,
+      "training_hours_including_15pct_engineering_reserve": 240,
+      "usable_training_hours": 204,
+      "window_hours": 336
+    },
+    "production_memory_policy": {
+      "interpretation": "Lowest ordinary observed point, not a continuous minimum. Two pilot R jobs do not establish full-pool concurrent feasibility. Do not credit unmeasured restoration-memory release.",
+      "minimum_observed_pilot_MemAvailable_bytes": 307013062656,
+      "necessary_freeze_peak_RSS": "Capture /usr/bin/time -v at the sole necessary full-asset freeze and project32 full TRAIN loaders conservatively; preserve a separate launch resource receipt.",
+      "per_rank_loader": "train/neuron_driver.py independently retains all329535 TRAIN records rather than3180 pilot records",
+      "point_utc": "2026-10-17T05:59:10+00:00",
+      "selection": "serial_fallback_before_scientific_outcomes"
+    },
+    "production_source_archive": {
+      "active_source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+      "manifest": "/home/ubuntu/dario/local/science/source-256-001.manifest.json",
+      "manifest_sha256": "8a0641c679b0e1bf61ed984d74a14a0385e19976470d1ab96acbe7a75b77faa4",
+      "source_root": "/home/ubuntu/dario/local/science/source-256-001"
+    },
+    "records_file": "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.jsonl",
+    "runtime_policy_by_arm": {
+      "thought": {
+        "environment": {
+          "MKL_NUM_THREADS": "2",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "schema": 1
+      },
+      "vanilla": {
+        "environment": {
+          "MKL_NUM_THREADS": "2",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "XLA_COMPILATION_CACHE_SIZE": null,
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "schema": 1
+      }
+    },
+    "training_max_concurrent_groups": 1,
+    "training_run_order": [
+      "qwen-c-seed1234-science-256-001",
+      "qwen-c-seed5678-science-256-001",
+      "qwen-r-seed1234-science-256-001",
+      "qwen-r-seed5678-science-256-001"
+    ],
+    "visible_cores_by_seed": {
+      "1234": "0-31",
+      "5678": "32-63"
+    },
+    "world_size_per_arm": 32
+  },
+  "source": {
+    "files": {
+      "scripts/analyze_pair.py": "bcfbfbc5c46a9eedd97fd3638a1b8ef707573531b150c3fda9d9b6317e2aea3f",
+      "scripts/audit_benchmark_overlap.py": "001a6ad354488a4a2badfe88ff4daf5aff79eea4cb03e144cd79f9d2a7f7dc54",
+      "scripts/backup_checkpoint.py": "ab67373bd98644d9de5a2595c1dd2117900ea41efd1d087b18d930b6ddabdf74",
+      "scripts/check_pretrained.py": "adf993a57ea04d1466a90e6322f35a0689a1fc7babdfaa1b6b5e8bbce3c4ed2d",
+      "scripts/check_ready.py": "ac7fbe4be1c0d9064ddad40c9b5ceb4556ab4c5e5be31442589fd2dcbf4f1957",
+      "scripts/compare_stochastic_resume.py": "affeb60457b5e1d691dd492e411a10e3ee25af2b74fed8d0fa0030ef500caa9c",
+      "scripts/cpu_smoke.py": "02bfc5b110c1ef487b1cec7fdb5320e2f7905948e954bc43385d89306a8cf17f",
+      "scripts/env.sh": "f6001cb697236113e772e2277fc5465390b6129975d6f79e8cb5f0bf44ba0596",
+      "scripts/fetch_corpus.py": "1bee85d5a1ad33103a37c4da0c07e67e683df0dca83e4a55b4d7b4013295af70",
+      "scripts/fetch_exclusion_questions.py": "14878432859e8fc1fefc66df595f8e12259c789950d438282aae5ed4c16bec0a",
+      "scripts/fetch_model.py": "8913de2470b977115519163e931b3f01f8ff8700087db8696cadbca6c98a6c31",
+      "scripts/freeze_experiment.py": "dd26ea89a37ead22fc03b4a537cdcf236eafd23632c59ea78eeccb0f0321c07a",
+      "scripts/make_format.py": "0ac9d554ea7586159119cfb1f82ea35786faed9713aa1b691a632451f1493686",
+      "scripts/make_reader_checks.py": "a2608af358f5f14b57453687238386bc82de3ed6d4f97eb798abc9ce3123aab4",
+      "scripts/prepare_audited_corpus.py": "16f1eb1526519e645cedf2bbaf151cdc114e331a9d8b1df63ea6b2d3e43c4be3",
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/prepare_records.py": "39f345b5af5f50d882d8eabf19e09946b53380851e7093999ce53ddf0d580259",
+      "scripts/project_budget.py": "43e6d3f567ec09216e9bdbe354dbd02ae955b649e03a18db9a5a890527eae7f9",
+      "scripts/reference_session.py": "ae37dc498b6d53f0e0fd74096be6eba6ce843a62b43e158dd3b4ff52373c3def",
+      "scripts/run_checks.sh": "13cb6765bef4d96076f33e63da3dedd9125fb3871a070d2939da68a4ef90eeef",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "scripts/start_codex.sh": "cb34c9054e6fd819819055240cab6430472a4a5a26b6db76061017c992711006",
+      "scripts/start_here.sh": "71f6717896981e940e2f533d7f755f5c63abb2be783eafd5ecfec636780b8895",
+      "scripts/summarize_downstream.py": "9383a1459c57631597d7253e6687df9fcad916852e8de96fffcdc12a7462d5f9",
+      "scripts/verify_checkpoint.py": "ea086ad513e2d6edd4711ce3e554b97ef59345a6f9b496e40a82df830fab1f36",
+      "scripts/verify_corpus_assets.py": "d9c939d5a89cb01e56888ec369a53ffd3d1da25a8980d6920f5126f8d3938646",
+      "scripts/verify_package.py": "7358eb9f41bfd2853d406ea7f5aecb97cc6f8c9c56cb5e6d33ef134f2d1c9bcb",
+      "scripts/watch_checkpoint_backups.py": "866505016b03642fcb1d94765747609967b44c79f2245b7adc9e3f00467662a5",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+      "train/qualify_backend.py": "f46c4306fa43b1e8ab9ce495bf47e146dff506545e272b4b0d7d720e3cd9ae4c",
+      "train/qualify_distributed.py": "61099c3d083b505049ed9e8cb2a05add652966ac3869550773c349d45454f57c",
+      "train/qualify_forward.py": "b562e0523fae17a4394990aa696819654765f5a23b386c8ebbdcea643f2f04f3",
+      "train/qualify_gradient_reference.py": "1131b8a5aa898b30c6adb1668011354e0042457d441e9ec11d66081998b2ec7a",
+      "train/qualify_reader.py": "ec82f8145b2f98e3bf2e8484b550f4afa4227fd0dfee67f61a9a4270d1bd8fef",
+      "train/qualify_replay_probe.py": "b541318a02e6d263b709217bd0d7580f46d6f0350549f8669bfc45f8649d31c4",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "weekend_thinking/__init__.py": "88b894a221d961e3789a6102fe5ffd5b4b90484a12aaf37583eb7274188ca8d8",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/checkpoint_backup.py": "acdd9852e826abc7e70e27f19ed1c5e9707be56ae8b8f29a288e09402d5a2484",
+      "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/corpus_audit.py": "cdad66c2683b9dbb592d037cd3c4a9a32fad3632d14d4ee7d83027e929255f4a",
+      "weekend_thinking/data.py": "2b058d35ff9e2c380f483f4e186e7514e6d813063ea9ef6e3ede27b94019df17",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/experiment.py": "568ac6b9d038c3eb9e8d4f76e08a64bc8a2d545bce1c0d291a478085f6fe04fd",
+      "weekend_thinking/hardware.py": "5ec398807fb6a4b92a8b9ba859816d0910879a63b195a6c9f335e7424778afd3",
+      "weekend_thinking/legacy_repair.py": "c9eecdc392576308ab34c37e7cc4b7979bf5dc74de78cd63dbe96e40798776f9",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/qualification.py": "47424e9a3ebd2b538ab01899febbc19eb7eb623d728e3c1ec98aefab44142844",
+      "weekend_thinking/reference.py": "64bc24ad6a1f262e3a81cc38fe7b4d3616d3540a4ee65f301692a5ffcc6eab73",
+      "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+      "weekend_thinking/session.py": "0761b3746a91defc305b28c02d2c1bb1d6ee3d91e8cbff509f912aa2db145303",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7"
+  },
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "status": "FROZEN_ASSETS_NOT_HARDWARE_QUALIFIED",
+  "terminal_steps": 256,
+  "training_exposure_per_arm": {
+    "prefix_visits": 32768,
+    "source_token_visits": 16809984
+  }
+}

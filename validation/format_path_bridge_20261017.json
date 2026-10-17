@@ -1,0 +1,22 @@
+{
+  "schema": "format-tokenizer-path-only-normalization-v1",
+  "utc": "2026-10-17T08:29:10.150815+00:00",
+  "original_file": "/home/ubuntu/dario/local/resolved_format.json",
+  "original_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+  "normalized_file": "/home/ubuntu/dario/local/science/resolved_format.absolute.json",
+  "normalized_sha256": "dbb5ad67ab9af52ff1d231980b85fa643add2d26fc9328d539ff8aff4e8b9346",
+  "old_tokenizer_dir": "local/assets/qwen3-1.7b-base",
+  "new_tokenizer_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+  "resolved_same_actual_tokenizer": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+  "all_other_JSON_fields_exact": true,
+  "format_dictionary_exact": true,
+  "reason": "Archive-relative freeze must resolve the tokenizer path to the same original immutable released B0 assets. No format token, stop, mask, sampler or model setting changes. Original artifact remains untouched.",
+  "failed_freeze": {
+    "time_file": "/home/ubuntu/dario/local/science/preparation-256/freeze.time.txt",
+    "time_sha256": "ed1ac0e39177f68dcec433f04e0988a1ed1278c9d748c4e20fb328901f79f09c",
+    "stderr_file": "/home/ubuntu/dario/local/science/preparation-256/freeze.stderr.log",
+    "stderr_sha256": "ea90f55a87d34a660f4642ce77976e8debda02a145fd8261a92d0328ad61fa5d",
+    "exit_code": 1,
+    "frozen_file_created": false
+  }
+}

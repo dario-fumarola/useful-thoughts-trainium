@@ -1,0 +1,66 @@
+{
+  "close_text": "</think>\n",
+  "extra_stop_policy": "Both the explicit thought-end token and the base EOS terminate generation. The actually sampled first terminator is included in the policy loss, stripped from note content, and rendered with the reader close delimiter. Log which terminator occurred.",
+  "format": {
+    "additional_stop_ids": [
+      151643
+    ],
+    "close_ids": [
+      151668,
+      198
+    ],
+    "header_ids": [
+      37175,
+      1128,
+      73045,
+      11017,
+      504,
+      279,
+      17221,
+      21085,
+      13,
+      10224,
+      697,
+      18778,
+      975,
+      4766,
+      279,
+      12864,
+      3772,
+      11,
+      1221,
+      15688,
+      279,
+      21085,
+      448,
+      12579,
+      44197,
+      323,
+      16232,
+      13,
+      3155,
+      537,
+      8290,
+      279,
+      41171,
+      448,
+      264,
+      4586,
+      16148,
+      382,
+      12187,
+      424,
+      510
+    ],
+    "open_ids": [
+      198,
+      151667
+    ],
+    "pad_id": 151643,
+    "stop_id": 151668
+  },
+  "header_text": "Consider what logically follows from the supplied passage. Put your scratch work inside the marked section, then resume the passage with matching notation and tone. Do not replace the continuation with a general explanation.\n\nPassage:\n",
+  "open_text": "\n<think>",
+  "source": "Paraphrase informed by RLP v2 PDF page 21, not exact paper serialization.",
+  "tokenizer_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base"
+}

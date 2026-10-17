@@ -29,7 +29,8 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**Hardware qualification is in progress; no primary scientific result is claimed.**
+**Finite FP32 accelerator qualification is complete. The first study is frozen;
+no scientific training arm or primary result is claimed yet.**
 
 - Released model weights and tokenizer are pinned and loaded.
 - The audited FineMath slice contains **329,535 train**, **18,360 dev**, and
@@ -43,8 +44,20 @@ denominators and report training and inference costs.
   averaging about 10 seconds. Full-model checkpoint recovery now passes, including exact restored state and all 32 RNG states. The
   original CPU per-weight comparison remains failed. A separate, prospectively
   fixed full-gradient comparison against FP64 passes on a new held seed.
-  R completed 14 real optimizer updates and verified terminal backups. Its strict
-  stochastic recovery and RAM coexistence qualification remain in progress.
+- R completed14 updates, all ten fixed timings5–14, and strict restored-state/
+  stochastic-tape/full-update recovery. Median full-step time is11.75min, P90
+  14.49min; shared-host overlaps remain included. Sampled two-R execution was
+  observed; steady simultaneous throughput was not measured. See the
+  [execution](validation/r_fp32_ram_execution_20261017.json) and
+  [recovery](validation/r_fp32_ram_resume_20261017.json) reports.
+- Qualification ended with511/512 empty notes and negative raw utility. Passing
+  numerical checks does not establish useful thoughts.
+- The [first256-update specification](validation/science_256_frozen_20261017.json)
+  fixes two matched seeds with independently fresh-B0 C/R arms. Training will be
+  serial from production memory headroom; idle cores may serve development.
+  [Recorded qualification](validation/science_256_qualification_20261017.json) and
+  [resource projection](validation/science_256_resources_20261017.json) are separate
+  from actual per-arm launch releases.
 - The fixed128-item TRAIN development baseline scores113/128 direct,107/128
   empty-format and63/128 with a thought. Failures stay counted; this is not a
   training effect or official-test result. See

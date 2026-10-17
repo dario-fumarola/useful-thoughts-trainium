@@ -1,0 +1,115 @@
+{
+  "evidence": [
+    {
+      "file": "/home/ubuntu/dario/local/science/preparation-256/freeze-002.time.txt",
+      "sha256": "a1e480d1ce566280adbff239ff5dfdef3ee336cdc12befde933f1c0e2b945484"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-tmp-005-observation/worker-host-memory-point-0746.json",
+      "sha256": "cbce7151d96f808b5eb799ccc65469881c6abc4ea935bcee466d543af1fda632"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/lower/terminal-backup-verification.json",
+      "sha256": "d92787e4c1ea4a4c93524980aabe0092e33bcdbaa5f99d1139e89d6aa8d084b7"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/qualification/ebs-retirement-before-science-20261017.json",
+      "sha256": "011afcd5365ff865247ba416043f89fde899aa100041c57f0caf08680636636b"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/upper/backup.receipt.json",
+      "sha256": "26002495f1877be06381d8fb2788f6ae77392660634f5d514b37a088e21da2a6"
+    },
+    {
+      "file": "/home/ubuntu/dario/validation/r_fp32_ram_execution_20261017.json",
+      "sha256": "5711690870482ff644b400237baa09eaca991703f0a5821d4caca51625a3aa4e"
+    }
+  ],
+  "frozen_file": "/home/ubuntu/dario/local/science/experiment-256.json",
+  "frozen_sha256": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+  "memory": {
+    "existing32worker_cumulative_VmHWM_sum_bytes": 1237113118720,
+    "existing_driver_and_launcher_VmHWM_bytes": 1012436992,
+    "extra_RAM_temporary_program_allowance_bytes": 68719476736,
+    "full_loader_budget_bytes": 281914572800,
+    "full_loader_copies": 32,
+    "host_health_point_bytes": {
+      "Cached": 526123864064,
+      "MemAvailable": 2126436208640,
+      "MemFree": 1600956854272,
+      "MemTotal": 2147422527488,
+      "Shmem": 4841472
+    },
+    "idle_host_consumed_estimate_bytes": 20986318848,
+    "loader_margin_multiplier": 1.25,
+    "remaining_beyond_all_components_bytes": 400237649920,
+    "semantics": "Sum of per-process peaks combines non-simultaneous peaks and overcounts shared pages. Adding full all-split freeze RSS per rank overcounts pilot loader memory and TRAIN-only retained records; it is intentionally conservative. Observed components plus margins are a planning estimate, not a mathematical peak guarantee. Tmpfs uses physical host RAM. Normal Linux health checks continue; no parallel-training credit.",
+    "successful_full_asset_freeze_peak_RSS_bytes": 7047864320,
+    "total_projected_requirement_including_reserve_bytes": 1747184877568,
+    "uncommitted_host_reserve_bytes": 137438953472
+  },
+  "schedule": [
+    "qwen-c-seed1234-science-256-001",
+    "qwen-c-seed5678-science-256-001",
+    "qwen-r-seed1234-science-256-001",
+    "qwen-r-seed5678-science-256-001"
+  ],
+  "schema": "first-study256-production-resource-accounting-v1",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "status": "FEASIBLE_SERIAL_PLANNING_PROJECTION",
+  "storage": {
+    "EBS_margin_beyond_all_components_bytes": 13297187882,
+    "NVMe_log_allowance_bytes": 34359738368,
+    "NVMe_margin_beyond_all_components_bytes": 168048794144,
+    "additional_EBS_reserve_bytes": 21474836480,
+    "additional_EBS_rollover_payloads": 2,
+    "additional_NVMe_contingency_payloads": 4,
+    "all_original_NVMe_checkpoints_preserved": true,
+    "external_backup": false,
+    "free_EBS_bytes": 315566272512,
+    "free_NVMe_bytes": 1100950126592,
+    "future_space_contingency": "If cache/log growth needs room, retire further obsolete qualification EBS duplicates only after verifying their preserved originals; keep science latest-two pairs and rollover reserve.",
+    "largest_qualified_payload_bytes": 27542553903,
+    "payload_budget_bytes": 28079424815,
+    "per_payload_extra_allowance_bytes": 536870912,
+    "planned_NVMe_checkpoint_count_bound": 28,
+    "projected_EBS_requirement_bytes": 302269084630,
+    "projected_NVMe_requirement_bytes": 932901332448,
+    "science_retained_EBS_payloads": 8
+  },
+  "timing": {
+    "C512_step_hours": 1.4232191182505858,
+    "R512_step_hours_by_scenario": {
+      "max_in_fixed_window": 128.31214549432923,
+      "mean": 104.6723473258808,
+      "median": 100.23667550826704,
+      "p90_linear": 123.63142625272874,
+      "planning_stress_1200s": 170.66666666666666
+    },
+    "R_fixed_complete_step_seconds": [
+      902.1947730070024,
+      865.6266539319986,
+      757.6684524459997,
+      765.2243972989963,
+      697.2548697219972,
+      700.9477984370023,
+      689.4439158280002,
+      708.6304508980029,
+      636.7289728420001,
+      636.0541369399944
+    ],
+    "deadline_utc": "2026-10-31T08:27:49+00:00",
+    "evaluation_recovery_hours": 96,
+    "planning_additional_hours": {
+      "checkpoint": 2,
+      "cold_start_four_runs": 6,
+      "serialized_backup": 2
+    },
+    "planning_stress_total_hours": 182.08988578491724,
+    "semantics": "Scenarios, not confidence bounds or completion guarantees. No replay/tape overhead is subtracted. The1200s stress case is a declared planning allowance, not a measurement. Terminal256 remains fixed rather than maximizing steps.",
+    "training_window_hours_including_15pct_reserve": 240,
+    "usable_training_hours": 204
+  },
+  "training_max_concurrent_groups": 1,
+  "utc": "2026-10-17T08:31:49.939373+00:00"
+}

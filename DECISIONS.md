@@ -340,3 +340,44 @@ active files (SHA244e2f13…287ff7), archived from public commit85c64a9. Its fou
 finite per-arm launchers passed independent review but have no releases. Freeze,
 readiness and drivers must use that archive and absolute evidence/control paths;
 root operational docs remain current. Science is not frozen or launched.
+
+
+## 2026-10-17 08:32 UTC — close qualification and freeze the first study
+
+RAM005 completes14/exit0/cleanup and all ten fixed timings5–14: median704.789s,
+P90869.283s, mean735.977s, retaining every shared-host interval. Strict R restore,
+tapes/RNG and full continued update pass the unchanged original criteria; actual
+sampled two-R execution remains distinct from ten simultaneous warm timings.
+Terminal qualification notes are511/512 empty with negative absolute utility.
+Preserve this evidence and do not change the prospective256/64 protocol.
+
+Root independently verifies132 source/EBS payload reads for lower7/14. After its
+watcher exits, verify all33 NVMe files for each obsolete EBS duplicate and retire
+C6/R0031/R0047/RAM0057. All original NVMe states and latest qualification copies
+remain; unique upper continued4 now has a verified distinct-filesystem EBS copy.
+Off-instance protection remains unresolved.
+
+The first archive freeze fails a host-path check: the unchanged resolved format
+has a tokenizer path relative to the live repo. Preserve that failure/log/time.
+Create a separate format copy changing only tokenizer_dir to the same absolute
+B0 directory. Every other JSON field and format token/text/stop/pad setting is
+identical; original e02d296b…61c50 stays intact. The new production hash
+dbb5ad67…b9346 and independently reviewed path-only bridge2f2f2f4c…9bb84 are
+explicit in the receipt. No numerical source/model/data or format policy changes.
+
+Freeze retry succeeds once, spec **653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7**,
+finite deadline2026-10-31T08:27:49UTC, terminal256. The original deadline is not
+widened by the metadata repair. All nine actual checks and all ten timings bind
+the exact immutable source/spec/assets; original check_ready passes. The full
+loader peaks at6882680KiB. Conservative32-copy memory projection, observed worker
+peaks, RAM temp and128GiB reserve leave372.75GiB extra. Eight retained science EBS
+payloads plus two rollover copies, per-payload allowance and20GiB reserve fit;
+all-original NVMe saves/logs also fit. A1200s/R-step planning stress scenario plus
+C/start/save/backup totals182.09h versus204 usable training hours; this is not a
+throughput guarantee or a reason to maximize steps.
+
+Keep serial C1234,C5678,fresh-B0 R1234,fresh-B0 R5678. No scientific arm is yet
+released. Start matching shared backup/node leaders, bind fresh actual
+topology/ports/temp/memory/storage and then issue the first finite root release.
+Public frozen spec, actual evidence receipt, resource projection and format
+bridge are in validation/science_256_* and validation/format_path_bridge_*.

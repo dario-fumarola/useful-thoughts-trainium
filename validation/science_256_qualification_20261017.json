@@ -1,0 +1,486 @@
+{
+  "C_full_step_seconds": [
+    10.02408354200088,
+    10.086837259001186,
+    10.004871967998042,
+    10.033848504001071,
+    10.059422711998195,
+    9.987066513996979,
+    9.965446620000876,
+    9.978217563999351,
+    9.929640496997308,
+    10.000659072000417
+  ],
+  "archive_git_commit": "85c64a9aa5fcb9927790592d60d7c2a8c4563f36",
+  "assembly_context": {
+    "evidence_file": "/home/ubuntu/dario/local/qualification/science-evidence-map.json",
+    "evidence_sha256": "edba705f9502e56a67f19584351227a8d8343a63e19007a1c24ba02849d8baca",
+    "note": "Index only. Its stale R-pending sections are explicitly superseded here by actual strict RAM099634 evidence. It is not used as any primary check artifact.",
+    "throughput_completed_report": {
+      "file": "/home/ubuntu/dario/validation/r_fp32_ram_execution_20261017.json",
+      "sha256": "5711690870482ff644b400237baa09eaca991703f0a5821d4caca51625a3aa4e"
+    }
+  },
+  "assets": {
+    "format_file": "/home/ubuntu/dario/local/science/resolved_format.absolute.json",
+    "format_sha256": "dbb5ad67ab9af52ff1d231980b85fa643add2d26fc9328d539ff8aff4e8b9346",
+    "model_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "record_counts": {
+      "dev": 18360,
+      "test": 18239,
+      "train": 329535
+    },
+    "record_manifest_sha256": "289c5d3001bcc9b9c3e17bee08d66eae950934c6ebb495e738ca6e52323ecad3",
+    "records_file": "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.jsonl",
+    "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff"
+  },
+  "checks": {
+    "cache_replay_parity": {
+      "command": "bash /home/ubuntu/dario/local/qualification/ram-sequence-v2/upper.launch.sh",
+      "evidence_file": "/home/ubuntu/dario/validation/r_fp32_ram_resume_20261017.json",
+      "evidence_sha256": "099634ce6ff399693a8994d1ff95ca64ac2ffe8beaa2f9b11f9b7aae03f0f321",
+      "observations": [
+        "Actual common3aa full-model R32/global128/accum4/G4/T.7/cap1024/K1 resumed update4 performs cached-behavior versus replay audit: global max absolute logP error3.3974647521972656e-5 < original.001; actual loss/norm and all128 tapes match uninterrupted update4.",
+        "Repaired P2 fixed full-cap trajectory uses device FP32 valid-action count1024, actual driver pre-backward scalar materialization, signed loss0.005393174011260271 and norm0.10564547032117844 versus native CPU0.005393173545598984/0.10564679629247145. Original norm and signed-sample criteria pass (cosine.9999999940, relativeL2.0001092296).",
+        "P2 ran on8b44; six relevant backend/diagnostic/loader/core/runtime files are byte-identical to production common3aa. Its --cache_dir flag was operational cache placement. P2 alone does not prove sampling/optimizer/resume; actual R supplies those. Old integer-clamp backward failures remain invalid and preserved."
+      ],
+      "passed": true,
+      "source_bridge": "P2_signed below; no old whole-repo source outcome relabeled",
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/p2_repaired_signed_gradient_20261016.json",
+          "evidence_sha256": "2d68c6a5b2db58fb63bfa305fc480e332e0571bf651bb04f9c4c49bf18d2f092",
+          "purpose": "Required actual signed-gradient evidence, older-component bridge only"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/p2-full-fp32-countfix-signed-001.prepared.json",
+          "evidence_sha256": "3200665f5d174ed5101b30996c7a8cf3c2574598218b86fb6aac5adbe32973bb",
+          "purpose": "Contemporaneous source/input/runtime/criteria binding"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/p2-full-fp32-countfix-signed-001.launch.sh",
+          "evidence_sha256": "58921ad8e26566c77a2d22ef329a7afde43e33afae31a089e6db1b28d0279a08",
+          "purpose": "Exact historical signed-gradient launcher"
+        }
+      ]
+    },
+    "checkpoint_resume": {
+      "command": "bash /home/ubuntu/dario/local/qualification/ram-sequence-v2/upper.launch.sh\ntimeout --signal=TERM --kill-after=30s 1800s /home/ubuntu/ema-trainium/.venv/bin/python /home/ubuntu/dario/local/qualification/qwen-r-fp32-nvme-tmp-004-source/scripts/compare_stochastic_resume.py --baseline /home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004 --resumed /home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004 --resume-step 3 --criteria /home/ubuntu/dario/local/qualification/qwen-r-fp32-lru2-002.resume.criteria.json --out /home/ubuntu/dario/local/qualification/ram-sequence-v2/upper/tapes.result.json\ntimeout --signal=TERM --kill-after=30s 1800s /home/ubuntu/ema-trainium/.venv/bin/python /home/ubuntu/dario/local/qualification/qwen-r-fp32-lru2-002.resume_state_compare.py --baseline /home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004 --resumed /home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004 --criteria /home/ubuntu/dario/local/qualification/qwen-r-fp32-lru2-002.resume.criteria.json --tapes /home/ubuntu/dario/local/qualification/ram-sequence-v2/upper/tapes.result.json --out /home/ubuntu/dario/local/qualification/ram-sequence-v2/upper/state.result.json",
+      "evidence_file": "/home/ubuntu/dario/validation/r_fp32_ram_resume_20261017.json",
+      "evidence_sha256": "099634ce6ff399693a8994d1ff95ca64ac2ffe8beaa2f9b11f9b7aae03f0f321",
+      "observations": [
+        "Actual common3aa fresh-process R restored3 model/all32 FP32 masters/moments/metadata/CPU+device RNG/order/counters/Adam steps are raw-byte exact before continuation. The cp3-only fork and original precreated STOP remain intact.",
+        "First resumed4: all128 rank/micro tapes, actions/masks/lengths/decode metadata and FP32 logPs/rewards/advantages are byte-identical. Complete post-update4 model/optimizer satisfy original1e-7abs+1e-6rel; model maxabs9.094947017729282e-13, optimizer maxabs2.9103830456733704e-11. Continued model/optimizer are not bitwise equal; loss/norm/RNG/counters/steps remain exact.",
+        "Only update4 ran, saved and exited0; all owned upper processes gone. Strict criteria5558cf95 unchanged; no RNG forcing or tolerance relaxation. Host TMPDIR moved from baseline NVMe to separately bound private RAM, source/objective/runtime unchanged.",
+        "Common C actual restored3 full state/RNG is raw-byte exact; continuation through12 passes1e-7+1e-6 with exact counters/RNG/steps and non-bitwise model/optimizer differences retained."
+      ],
+      "passed": true,
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-lru2-002.resume.criteria.json",
+          "evidence_sha256": "5558cf957f3f1a904a73f63a665e760bf4be93f44a09698853f37f23c78a00a4",
+          "purpose": "Original prospective strict R criteria"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/upper/state.result.json",
+          "evidence_sha256": "5e945efd8a8a4cd7e676b4831e625f8fb7c63825772ce878b492a744b3aadbc4",
+          "purpose": "All33 files actual restore+first-update state comparison"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/upper/tapes.result.json",
+          "evidence_sha256": "113a49f2c2d86bb30076202d7039da110f90f01cb3ea48e78209cdb121b1fcd6",
+          "purpose": "Exact128 tape coverage/comparison"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/c_fp32_final_resume_20261016.json",
+          "evidence_sha256": "d493b374b56a879174ba254bf54638a2ea97cc035e8e960ec0a22aba13ba6365",
+          "purpose": "Independent common-source C recovery/ten timings"
+        }
+      ]
+    },
+    "data_audit": {
+      "command": "Historical /home/ubuntu/dario/scripts/prepare_audited_corpus.py production v2 preparation and /home/ubuntu/dario/scripts/verify_corpus_assets.py integrity verification; exact original shell argv/worker count was not retained.",
+      "command_provenance": "Historical entrypoints and manifest inputs known; exact original argv not invented and no audit rerun requested",
+      "evidence_file": "/home/ubuntu/dario/validation/data_production_v2_20261016.json",
+      "evidence_sha256": "1145861f2c4e09a227e1157920706884434b15fe4f7f17d2abbcfec198e1f498",
+      "observations": [
+        "Pinned FineMath e92b25a616738fe95dc186b64dfb19f9c8525594, ODC-By-1.0/Common Crawl terms, exact B0 tokenizer; corrected v2 URL identity, one deterministic anchor/document, prefix512/future16. Train329535/dev18360/test18239; no cycling. Prospective256x128 uses32768 fresh records per arm/seed.",
+        "Output/raw/membership/tokenizer/question-only overlap inputs are hash-bound. Near-dedup components and any benchmark-overlapping component are excluded before split; no answer/outcome columns used. Fixed DEV512/TEST2048 ID order and both production TRAIN order hashes are pinned.",
+        "Preparation lacks a contemporaneous whole-source fingerprint/full argv; current relevant v2 component hashes are recorded below, not a claimed new common3aa data audit. Original v1 URL-identity failure and assets remain unchanged. MinHash discovery is probabilistic, overlap lexical, and no pretrained-contamination guarantee is made."
+      ],
+      "passed": true,
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.manifest.json",
+          "evidence_sha256": "289c5d3001bcc9b9c3e17bee08d66eae950934c6ebb495e738ca6e52323ecad3",
+          "purpose": "Pinned source/output/dedup/component/anchor/tokenizer metadata"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/data/benchmark_exclusion/questions.manifest.json",
+          "evidence_sha256": "89aef24c41ffc23ffa277959ab7c563a4bdc141f6c74eb1ab391cebc98cd63c8",
+          "purpose": "Question-only source revisions, no answer-column access"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/data/finemath/fixed-local-evaluation-v1.ids.json",
+          "evidence_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+          "purpose": "Original DEV/TEST IDs-only global selections"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/science/preparation-256/manifest.json",
+          "evidence_sha256": "ef205d2c549a767f22575afc7091457135ba49aefdf328da1e6ba4e09d37cea1",
+          "purpose": "Existing production256 header-only fresh-order exposure preparation"
+        }
+      ]
+    },
+    "distributed_update": {
+      "command": "bash /home/ubuntu/dario/local/qualification/qwen-c-heldseed-001/launch_c32.sh\nbash /home/ubuntu/dario/local/qualification/qwen-c-heldseed-001/launch_fp64.sh\nbash /home/ubuntu/dario/local/qualification/qwen-c-heldseed-001/launch_compare.sh",
+      "evidence_file": "/home/ubuntu/dario/validation/c_fp32_accuracy_v2_result_20261016.json",
+      "evidence_sha256": "7e6c81ed00ff65307d9f13aa95b6728b2d302aed7732ddae2bb4e7532bc8a967",
+      "observations": [
+        "Actual common3aa held-seed world32/G128/accum4 first derivative covers all1,720,574,976 valid coordinates exactly once. Independent global-mean reference agrees: full relativeL2.00010316312569539604, cosine.9999999947046522; all prospectively fixed v2 gates pass.",
+        "Logged preclip norm1.7613645792007446 and actual FP32 clip coefficient.567741334438324 reconstruct first moments; ZeRO.step is the sole gradient reduction/clip owner. All32 shards/9,920 Adam step counters and parameter mapping verified; tied parameter counted once.",
+        "Common R32 update4 has finite positive norm86.91526794433594, nonzero FP32 changed fraction.9803427457809448 and sampled replicas bitwise equal. P2 signed policy-gradient evidence is separately bound; mean/clip evidence does not depend on historical tiny-MLP provenance."
+      ],
+      "passed": true,
+      "preserved_v1_status": "FAIL; see preserved_v1, never converted to PASS",
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/r_fp32_ram_resume_20261017.json",
+          "evidence_sha256": "099634ce6ff399693a8994d1ff95ca64ac2ffe8beaa2f9b11f9b7aae03f0f321",
+          "purpose": "Actual full R update/replicas/counters under chosen runtime"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/p2_repaired_signed_gradient_20261016.json",
+          "evidence_sha256": "2d68c6a5b2db58fb63bfa305fc480e332e0571bf651bb04f9c4c49bf18d2f092",
+          "purpose": "Signed R gradient path; explicit unchanged-component bridge"
+        }
+      ]
+    },
+    "downstream_eval_path": {
+      "command": "bash /home/ubuntu/dario/local/qualification/evaluator-fp32-fullcap-003/execute.sh local\nbash /home/ubuntu/dario/local/qualification/evaluator-fp32-fullcap-003/execute.sh secondary",
+      "evidence_file": "/home/ubuntu/dario/validation/evaluator_fp32_fullcap_20261016.json",
+      "evidence_sha256": "26c930f60c4a75083ee3801d7437645d42dca618e9cd74d2d18e5366108d8ac1",
+      "observations": [
+        "Actual released-model common3aa FP32 full-cap local controls at K1/4/16:192 token comparisons maxabs.000230789; ARC TRAIN and synthetic LAMBADA90 comparisons maxabs.000070572, zero ranking/token mismatches. All expected outcomes/failures retained. CPU readers reuse saved device actions/contexts, not independent samplers.",
+        "Common-source B0 held-development execution completes all128 fixed GSM8K TRAIN items in direct/empty_format/one_thought with original cap1024 and preserved errors/truncations/token/latency rows. It is held development, not hardware acceptance or a trained C/R/final-test result; its actual entrypoint execution supports primary path coverage.",
+        "Final-model/protocol/source/gold gates are CPU-tested guards, not hardware final-test outcomes. No official final test was accessed; no new DEV512 run is a qualification requirement."
+      ],
+      "passed": true,
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/held_dev_B0_20261017.json",
+          "evidence_sha256": "4a6b7d71e57a320d4eb6fe20f88fc47f1718f7a609b92b5ff4fbc7b63154a389",
+          "purpose": "Actual common-source primary inference path; explicitly nonfinal development"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/evaluator-fp32-fullcap-003/local-notes/run.json",
+          "evidence_sha256": "349bc375c5096863b08600b4cefd71501dbd8e1cffa9469c87bc73fe3503a271",
+          "purpose": "Saved prefix-only full-cap actual notes"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/evaluator-fp32-fullcap-003/local-device/run.json",
+          "evidence_sha256": "336fcb0d33fe16587d803c19ae1b22ad5f4a6d3362f9010715e23de5408bb75d",
+          "purpose": "Actual complete six-control reader path"
+        }
+      ]
+    },
+    "full_step_throughput": {
+      "command": "bash /home/ubuntu/dario/local/qualification/qwen-c-fp32-final-003.launch.sh\nbash /home/ubuntu/dario/local/qualification/ram-sequence-v2/lower.launch.sh",
+      "evidence_file": "/home/ubuntu/dario/validation/r_fp32_ram_execution_20261017.json",
+      "evidence_sha256": "5711690870482ff644b400237baa09eaca991703f0a5821d4caca51625a3aa4e",
+      "observations": [
+        "Common-source C ten complete steady updates3-12 mean10.007009425199431s, separate38-41s checkpoint costs, default EBS temp/cache setting unset; original C evidence remains linked.",
+        "Chosen FP32/LRU2/private-RAM R005 completed14 updates/exit0/all owned workers, monitor and observer gone. ALL ten prospective updates5-14 remain: mean735.9774421350994s, median704.7891246675026s, linear P90 869.283465839499s. Actual shared-host recovery/cold compile/CPU comparison/backup intervals are retained without subtraction. Checkpoint saves43.617-46.908s and startup/wall are separately bound in the execution report.",
+        "Two original mapped32-worker partitions completed nonzero execution in each of two same raw~5s windows, one after upper gradient work. This is actual sampled coexistence, not ten simultaneous steady updates or a concurrency multiplier. Production selected serial training before outcomes from the full-loader memory concern; no extra upper profiling job.",
+        "Qualification performs more replay/tape instrumentation than science; no unmeasured cost is subtracted for the budget. Actions/padded decode slots and terminal511/512 empty notes are reported as TRAIN diagnostics, not capability evidence."
+      ],
+      "passed": true,
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/qwen-c-fp32-final-003.baseline.result.json",
+          "evidence_sha256": "acf38e80f3aabae836f3e0bea540a5c9931e8ed4432565a0dad034bc1b2bfd87",
+          "purpose": "Exact immutable ten complete C timings and checkpoint cost"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-tmp-005-observation/root-overlap-review.json",
+          "evidence_sha256": "06c63852b51721320b6dc420a54df3474c0d091e11b823f0538dd2b075c700c7",
+          "purpose": "Existing root-reviewed actual two-R window"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-tmp-005-observation/overlap-after-upper-gradient.json",
+          "evidence_sha256": "b7c5a4dac03e934da21cbd85e1c1da53c78a68c87920eb7eba12ea9652cff4a2",
+          "purpose": "Existing second raw-backed window after gradient work"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-tmp-005-observation/upper-episode-bounds.json",
+          "evidence_sha256": "b0785e9376aadbafd1b6c67dcf43a263768b94b5bf0d55c8a75c757dea955c56",
+          "purpose": "Exact recovery/update/export overlap boundaries"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/c_fp32_final_resume_20261016.json",
+          "evidence_sha256": "d493b374b56a879174ba254bf54638a2ea97cc035e8e960ec0a22aba13ba6365",
+          "purpose": "Common C ten steady full updates and strict recovery"
+        }
+      ]
+    },
+    "prefix_only_generation": {
+      "command": "bash /home/ubuntu/dario/local/qualification/qwen-prefix-only-fp32-001/launch.sh",
+      "evidence_file": "/home/ubuntu/dario/validation/prefix_only_fp32_20261017.json",
+      "evidence_sha256": "0e19b6e427398c1c5850ad1c92fe7348d907a9e96b3e5ace906b2ce017410a4e",
+      "observations": [
+        "Actual common3aa B0 FP32 accelerator check: one fixed TRAIN prefix, two futures differing at K1 token10 versus220; identical settled device seed1234; G4/T.7/cap1024. Actual future readbacks retained, future enters reader only.",
+        "Actions/masks/lengths/decode metadata exact; behavior logP max difference0 under predeclared1e-7abs+1e-6rel. Raw-byte equality is separately observed, not a stricter float gate. Lengths1024/160/147/1024 in both cases; exit0/all owned processes gone. Reader score changes are diagnostic only."
+      ],
+      "passed": true,
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/local/nvme/qualification/qwen-prefix-only-fp32-001/result.json",
+          "evidence_sha256": "46df770b0b79621ed5d2cb9b7d3f4b3f38d047e2d6aa436ef976f0c72f1ce27a",
+          "purpose": "Actual discrete/FP32 comparison and saved tape hashes"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/qwen-prefix-only-fp32-001/execution.json",
+          "evidence_sha256": "6dbab3d96882171b22b1f413b5f79d6d3a62b9e01e4c20346519f4a8368817ab",
+          "purpose": "Owned execution/cleanup/source/input identities"
+        }
+      ]
+    },
+    "pretrained_loading": {
+      "command": "bash /home/ubuntu/dario/local/qualification/evaluator-fp32-fullcap-003/execute.sh local",
+      "evidence_file": "/home/ubuntu/dario/validation/evaluator_fp32_fullcap_20261016.json",
+      "evidence_sha256": "26c930f60c4a75083ee3801d7437645d42dca618e9cd74d2d18e5366108d8ac1",
+      "observations": [
+        "Actual released Qwen3-1.7B-Base revision ea980cb0a6c2ae4b936e82123acc929f1cec04c1, 1,720,574,976 unique FP32 values; tied embedding/head and sampled fingerprint survive transfer. Common3aa evaluator execution binds pinned assets and source244.",
+        "Historical P1 CPU/device tie/fingerprint and FP32 selected-logp max error2.5749e-5 support loading, but P1 lacks a contemporaneous source hash and is not represented as a common3aa run."
+      ],
+      "passed": true,
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base/ASSET_MANIFEST.json",
+          "evidence_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+          "purpose": "Pinned released-byte inventory"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/evaluator-fp32-fullcap-003/local-notes/run.json",
+          "evidence_sha256": "349bc375c5096863b08600b4cefd71501dbd8e1cffa9469c87bc73fe3503a271",
+          "purpose": "Actual common-source loaded model/fingerprint"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/local/qualification/p1-005/forward.json",
+          "evidence_sha256": "2ef99b558a46dd9e5e94aeb91e15a2c2fb2811cec043177ac409ce48da450404",
+          "purpose": "Historical P1 only; source provenance limit retained"
+        }
+      ]
+    },
+    "target_alignment": {
+      "command": "bash /home/ubuntu/dario/local/qualification/qwen-c-heldseed-001/launch_c32.sh\nbash /home/ubuntu/dario/local/qualification/qwen-c-heldseed-001/launch_fp64.sh\nbash /home/ubuntu/dario/local/qualification/qwen-c-heldseed-001/launch_compare.sh",
+      "evidence_file": "/home/ubuntu/dario/validation/c_fp32_accuracy_v2_result_20261016.json",
+      "evidence_sha256": "7e6c81ed00ff65307d9f13aa95b6728b2d302aed7732ddae2bb4e7532bc8a967",
+      "observations": [
+        "Prospectively fixed held-seed5678 TRAIN first128 records: ordinary world32/global128/accum4 C labels are shifted prefix plus first future; independent native causal reference verifies the full global-mean derivative and absolute loss. All original eight v2 checks pass; loss absolute error1.4917842470207887e-6.",
+        "Independent Python stop compaction/native full-causal reader checks target576 on12 stopped/capped saved notes, max thought/clean logP errors8.487701416015625e-5/1.621246337890625e-5 under original.001. Those older forward reader functions match the explicit FE AST bridge; this is not a repaired-backward pass.",
+        "Original C CPU-coordinate v1 FAIL remains unchanged. New prospective v2 uses a separately frozen seed/batch/derivative criterion, not a retroactive v1 waiver; FP64 arithmetic retained frozen native-CPU FP32 RoPE constants."
+      ],
+      "passed": true,
+      "source_bridge": "FE_forward and preserved_v1 below; v2 directly uses common3aa",
+      "supporting_evidence": [
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/c_fp32_accuracy_v2_20261016.json",
+          "evidence_sha256": "f66650c0c5bc0d176fc6ff2925f071974f619bc0f11c7d04500ceff0077539ac",
+          "purpose": "Prospective v2 batch/criteria freeze"
+        },
+        {
+          "evidence_file": "/home/ubuntu/dario/validation/p2_full_reader_reference_20261016.json",
+          "evidence_sha256": "873ea7d4c9ca65bebb7f19c9dd6eed88c98e01c3d73302d9a7e01864705ea035",
+          "purpose": "Independent actual reader target/packing reference"
+        }
+      ]
+    }
+  },
+  "created_utc": "2026-10-17T08:31:49.945268+00:00",
+  "draft_created_utc": "2026-10-17T07:43:32.137513+00:00",
+  "frozen_experiment_file": "/home/ubuntu/dario/local/science/experiment-256.json",
+  "frozen_experiment_file_sha256": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+  "full_step_seconds": [
+    902.1947730070024,
+    865.6266539319986,
+    757.6684524459997,
+    765.2243972989963,
+    697.2548697219972,
+    700.9477984370023,
+    689.4439158280002,
+    708.6304508980029,
+    636.7289728420001,
+    636.0541369399944
+  ],
+  "full_step_seconds_expected_steps": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "full_step_seconds_status": "ALL_FIXED_RAM005_UPDATES_5_THROUGH_14_UNADJUSTED",
+  "launch_authorized": false,
+  "launch_rule": "A passing evidence receipt does not launch anything. Each actual root release binds live matching shared supervisors, fresh output, topology, host/temp/ports, deadline, script and this exact frozen/receipt file.",
+  "platform": "neuron",
+  "preserved_v1_and_failed_attempts": [
+    {
+      "evidence_file": "/home/ubuntu/dario/local/qualification/qwen-c-fp32-001.cpu_compare.result.json",
+      "evidence_sha256": "5bfdb463d4a233867cb2bfb04b9fcb05b0bc81bae425b57f39e7a3ea7f25aa0b",
+      "permanent_status": "FAIL",
+      "purpose": "Permanent C CPU-coordinate v1 failure, not superseded by v2"
+    },
+    {
+      "evidence_file": "/home/ubuntu/dario/local/qualification/qwen-c-fp32-001.cpu_compare_corrected.result.json",
+      "evidence_sha256": "9a132e175fd75425d906b241e90228d3dd90dd162c801adf9ba5cd2fad524668",
+      "permanent_status": "FAIL",
+      "purpose": "Permanent C CPU-coordinate v1 failure, not superseded by v2"
+    },
+    {
+      "evidence_file": "/home/ubuntu/dario/local/qualification/qwen-c-fp32-final-003.cpu_compare.result.json",
+      "evidence_sha256": "9d393ba51b0b352183e743e24e4b58fdf46565d3e88f18b31db0f1f1b5a4b868",
+      "permanent_status": "FAIL",
+      "purpose": "Permanent C CPU-coordinate v1 failure, not superseded by v2"
+    },
+    {
+      "evidence_file": "/home/ubuntu/dario/validation/p2_cache_policy_20261016.json",
+      "evidence_sha256": "abf33a8955a5c80ea5e6458bfeeb3532605d7733b6e384faadb2bbfc49a0394a",
+      "permanent_status": "PRESERVED_ORIGINAL_FAILURE",
+      "purpose": "Failed integer-count/sign or memory-policy evidence; never reused as a backward pass"
+    },
+    {
+      "evidence_file": "/home/ubuntu/dario/validation/p2_driver_signed_loss_failure_20261016.json",
+      "evidence_sha256": "21883c75da0b85b2b4b7d18b68790b878dfc556c5a61d768c4245898c4c6be77",
+      "permanent_status": "PRESERVED_ORIGINAL_FAILURE",
+      "purpose": "Failed integer-count/sign or memory-policy evidence; never reused as a backward pass"
+    }
+  ],
+  "production_resource_accounting": {
+    "file": "/home/ubuntu/dario/local/science/preparation-256/resource-feasibility.json",
+    "sha256": "d7880705e148fcbed625c9ecae8b20155edfafe2c6d4ab19733a7fff3599eed8"
+  },
+  "qualified_active_code_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "qualified_original_assets": {
+    "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+    "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "note": "Pilot qualification and production science data differ explicitly. No token arrays, new audit, or final answers read for this map.",
+    "qualification_records_sha256": "84eb6dcfe29528dd5de57c43904ba50cfd16da34c65d3068540808ae1bfeb8c1",
+    "science_records_sha256_from_existing_manifest": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff"
+  },
+  "receipt_assembly_did_not_rerun_hardware": true,
+  "root_to_fill": [],
+  "schema": 1,
+  "schema_blockers": [],
+  "schema_notes": [
+    "validate_qualification requires platform=neuron, synthetic=false, exact frozen spec/source/assets, all nine passed=true/nonempty command/observations/evidence path+SHA and at least10 positive full-step seconds.",
+    "The validator does not inspect receipt.status. DRAFT_NOT_READY text alone is not a gate: null spec, pending check and missing times deliberately prevent readiness.",
+    "The validator verifies bindings, not historical truth or component-bridge sufficiency; root must review those observations. All evidence paths here are absolute so sealed-source cwd does not silently relocate them.",
+    "This assembly only hashes source/small existing receipts. No model/tensor/data-array processing, fresh audit, numeric test, device work, freeze, release or launch was performed."
+  ],
+  "source_archive_manifest": {
+    "evidence_file": "/home/ubuntu/dario/local/science/source-256-001.manifest.json",
+    "evidence_sha256": "8a0641c679b0e1bf61ed984d74a14a0385e19976470d1ab96acbe7a75b77faa4"
+  },
+  "source_bridges": {
+    "FE_forward": {
+      "changed_functions": [
+        "NeuronCausalBackend.replay_one_loss"
+      ],
+      "older_commit": "fe667bfced1562023c361706aba98feba26d86af",
+      "older_file_sha256": "2439e87787687e669fcc52a7624e7fd36c5375eba8a66fa206fbd192e2fa8a0d",
+      "prior_recorded_AST_bundle_sha256": "aa57a7124e3fc57624879a8316b8aa201f295a22d35660c62f812b13dc2ae33d",
+      "prior_recorded_AST_method": "sha256(ast.dump(include_attributes=False)); hash sorted name/hash dictionary",
+      "production_file_sha256": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "scope": "Only old reader/forward target reference. Do not reuse failed old backward or label whole source common3aa. Prior AST bridge is recorded in assembly_context map; not a new numerical test.",
+      "unchanged_functions": [
+        "_CausalCacheLayer.__init__",
+        "_CausalCacheLayer.lazy_initialization",
+        "_CausalCacheLayer.update",
+        "_CausalCacheLayer.get_seq_length",
+        "_CausalCacheLayer.get_max_length",
+        "_CausalCacheLayer.get_mask_sizes",
+        "_CausalCacheLayer.reset",
+        "CausalCache.__init__",
+        "CausalCache.set_positions",
+        "causal_mask",
+        "pack_reader",
+        "NeuronCausalBackend.__init__",
+        "NeuronCausalBackend.device",
+        "NeuronCausalBackend._prompt",
+        "NeuronCausalBackend.hidden",
+        "NeuronCausalBackend._next",
+        "NeuronCausalBackend.sample",
+        "NeuronCausalBackend.score",
+        "NeuronCausalBackend.clean_score",
+        "NeuronCausalBackend.replay",
+        "NeuronCausalBackend.vanilla_loss"
+      ]
+    },
+    "P1": {
+      "contemporaneous_source_hash_recorded": false,
+      "rationale": "Historical P1 pins assets, CPU/device fingerprint/tie and selected logps only. Do not assign common source identity to it. Current-source evaluator independently records the same pinned B0 assets and e5914f... fingerprint; actual C/R use strict pinned loader."
+    },
+    "P2_signed": {
+      "older_commit": "8b44cc1ccccdd52c87180fb3fbc346053b7879a3",
+      "older_whole_source_sha256": "224d7853960c8a705299ef1fb15c0fbb13afebaccc018629ed1615009a93eb57",
+      "rationale": "Signed fixed-trajectory gradient path unchanged. Driver RNG/checkpoint and backup code subsequently changed; no claim that full-run/resume outcomes ran on common3aa. Diagnostic additionally specified --cache_dir, an operational cache-location flag; ordinary common runtime update is separately evidenced.",
+      "relevant_files_byte_identical_to_production": {
+        "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "train/qualify_backend.py": "f46c4306fa43b1e8ab9ce495bf47e146dff506545e272b4b0d7d720e3cd9ae4c",
+        "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+        "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+        "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+        "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+      },
+      "verified_against_contemporaneous_prepared_source_files": true
+    },
+    "data_preparation": {
+      "contemporaneous_source_fingerprint_recorded": false,
+      "current_component_hashes": {
+        "scripts/prepare_audited_corpus.py": "16f1eb1526519e645cedf2bbaf151cdc114e331a9d8b1df63ea6b2d3e43c4be3",
+        "scripts/verify_corpus_assets.py": "d9c939d5a89cb01e56888ec369a53ffd3d1da25a8980d6920f5126f8d3938646",
+        "weekend_thinking/corpus_audit.py": "cdad66c2683b9dbb592d037cd3c4a9a32fad3632d14d4ee7d83027e929255f4a",
+        "weekend_thinking/data.py": "2b058d35ff9e2c380f483f4e186e7514e6d813063ea9ef6e3ede27b94019df17"
+      },
+      "rationale": "Existing v2 manifests bind raw/output/tokenizer/question assets and policy. Current code lineage is not proof that preparation ran on the later complete source archive; no new audit claimed."
+    },
+    "format_metadata_only": {
+      "all_other_JSON_fields_exact": true,
+      "failed_freeze": {
+        "exit_code": 1,
+        "frozen_file_created": false,
+        "stderr_file": "/home/ubuntu/dario/local/science/preparation-256/freeze.stderr.log",
+        "stderr_sha256": "ea90f55a87d34a660f4642ce77976e8debda02a145fd8261a92d0328ad61fa5d",
+        "time_file": "/home/ubuntu/dario/local/science/preparation-256/freeze.time.txt",
+        "time_sha256": "ed1ac0e39177f68dcec433f04e0988a1ed1278c9d748c4e20fb328901f79f09c"
+      },
+      "format_dictionary_exact": true,
+      "new_tokenizer_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+      "normalized_file": "/home/ubuntu/dario/local/science/resolved_format.absolute.json",
+      "normalized_sha256": "dbb5ad67ab9af52ff1d231980b85fa643add2d26fc9328d539ff8aff4e8b9346",
+      "old_tokenizer_dir": "local/assets/qwen3-1.7b-base",
+      "original_file": "/home/ubuntu/dario/local/resolved_format.json",
+      "original_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+      "reason": "Archive-relative freeze must resolve the tokenizer path to the same original immutable released B0 assets. No format token, stop, mask, sampler or model setting changes. Original artifact remains untouched.",
+      "resolved_same_actual_tokenizer": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+      "schema": "format-tokenizer-path-only-normalization-v1",
+      "utc": "2026-10-17T08:29:10.150815+00:00"
+    }
+  },
+  "source_files_verified": 61,
+  "source_root": "/home/ubuntu/dario/local/science/source-256-001",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "status": "RECORDED_ACTUAL_NEURON_EVIDENCE_BOUND_TO_FROZEN_256_SPEC",
+  "synthetic": false
+}
