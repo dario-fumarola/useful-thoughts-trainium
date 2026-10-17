@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 06:32 UTC
+# Current state — 2026-10-17 06:57 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -15,10 +15,10 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 **Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
 world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped; **update5 completed at06:23:57**,902.195s, finite norm76.8007,
-sampled replicas equal and replay error.0000677. Update6 is running. The first
-of ten prospective timings5–14 is902.195s, including actual upper recovery work;
-all ten remain unadjusted. No isolated host-policy speedup claim or science arm.
+are mapped; **update7 completed at06:51:01**,757.668s, finite norm68.2449,
+sampled replicas equal and replay error.0000429. Update8 is running. Three of ten
+prospective timings5–14 are complete:902.195/865.627/757.668s, including actual
+shared-host recovery work. All ten remain unadjusted. No isolated speedup claim.
 
 - Control `local/qualification/ram-sequence-v2/lower`; output
   `local/nvme/qualification/qwen-r-fp32-ram-tmp-005`, raw logs/monitor in its
@@ -43,8 +43,9 @@ all ten remain unadjusted. No isolated host-policy speedup claim or science arm.
   Python1272287, startticks4830210/211/212. Same deadline; state/control in v2
   lower, raw events/logs in NVMe observation. Destination
   `local/backups/qwen-r-fp32-ram-tmp-005`, retain2/all NVMe originals preserved.
-  EBS3/4 copied/verified05:56:28/06:14:47. COMPLETE4dfb48b6f…645349e,
-  save wall45.990s. State records actual verified events; all owned identities match.
+  EBS4/7 retained, latest copy7 verified06:55:56;3 pruned only after verification,
+  all NVMe originals preserved. COMPLETE7 **10c248f3…e4d61f5**, save45.723s.
+  State records actual verified events; all owned watcher identities match.
   Stop this watcher if the driver fails/stops early.
 - Distributed reuses the existing read-only host observer in tmux
   `dario-ram005-observe` for actual overlap/HBM evidence. No extra device job.
