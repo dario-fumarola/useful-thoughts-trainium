@@ -162,6 +162,8 @@ Routine formatting changes do not need a decision entry.
   its C checkpoint. Prefer this schedule if concurrent-R isolation qualifies;
   preserve global128/accum4, existing sampling streams and qualified topology.
   Do not add world64 qualification solely on the faulty speedup assumption.
+- Before freeze, record core placement by seed chain rather than contradictory
+  fixed per-arm core ranges; runtime/cache policy remains declared per arm.
 - Overlap one bounded upper-partition R update with the already-required lower
   fresh-process resume. Retain exact lower stochastic tapes/RNG and full-state
   checks, real upper update/replica/counters, separate endpoints, and memory/cost

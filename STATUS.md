@@ -1,4 +1,4 @@
-# Current state — 2026-10-16 23:53 UTC
+# Current state — 2026-10-17 00:04 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -33,7 +33,9 @@ The prospective 14-day science schedule is a planning limit, not a shutdown date
   All workers exited; only development/interface items used. See
   `validation/evaluator_fp32_fullcap_20261016.json`.
 - Latest required source checks: **233 CPU tests plus toy smoke PASS**,
-  `local/checks/tests.Yr1uiR`. Later commits change documentation/receipts only.
+  `local/checks/tests.Yr1uiR`. Active source remains unchanged; later commits add
+  documentation, receipts and identical reviewed diagnostic copies. Their four
+  public-path CPU fixtures also pass.
 
 ## C numerical diagnosis and held-seed validation
 
@@ -78,10 +80,11 @@ Host store 127.0.0.1:64231; Neuron root 127.0.0.1:64194. Prior attempt 002 faile
 before loading because the default host-store port collided with C; its failure
 and bounded cleanup are preserved. Attempt 003 has loaded actual weights and
 started update 1. Its first backward graph compiled at 23:48:39 UTC after
-43 minutes; one rank has completed the backward with zero execution errors,
-while other ranks are still loading. Observed current bank allocation reaches
-19.78 GiB. The next trajectory scalar loss is now cold-compiling
-(`MODULE_9300468192447712346`); accumulation backward has not yet qualified.
+43 minutes. All 32 ranks have since completed the first backward with zero
+recorded execution failures and hold gradient-bearing tensors. Current bank
+allocation is about 19.78 GiB. The next scalar loss passed at 23:54:13. First
+accumulated backward `MODULE_7801530274365426598` is cold-compiling, with
+backend/CPU progress observed at 00:02:54. Its real memory/execution is pending.
 **No complete R update yet.** Separate sysfs memory sampling is read-only.
 
 Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
