@@ -1,0 +1,112 @@
+{
+  "created_utc": "2026-10-17T02:59:39.094163+00:00",
+  "fixed_lower_milestone": 3,
+  "hard_timeout_max_seconds": 28800,
+  "helpers_sha256": {
+    "/home/ubuntu/dario/local/qualification/ram-sequence-v2/coordinate.py": "5a40757aad4af7733d8a4b080943e148f9883ff343134a522314f227426d458c",
+    "/home/ubuntu/dario/local/qualification/ram-sequence-v2/lower.launch.sh": "1df00f3a51b9cd8a14863fc9329850d9cf7a68b36eb88b35a22eb28a08684e96",
+    "/home/ubuntu/dario/local/qualification/ram-sequence-v2/test_coordinate.py": "666134263624aae728d0615b87c9155669b13fef66eb6a3b696d569e9cf40d99",
+    "/home/ubuntu/dario/local/qualification/ram-sequence-v2/upper.launch.sh": "9cce371674dca060597a49dbf16c0eafc7e04861e9b277beb481caa1eb22bbe5"
+  },
+  "inherited_criteria_sha256": "5558cf957f3f1a904a73f63a665e760bf4be93f44a09698853f37f23c78a00a4",
+  "lower_readiness_max_age_seconds": 300,
+  "lower_steady_timing_steps": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "no_active_source_changes": true,
+  "no_automatic_retry": true,
+  "no_v1_release_files": true,
+  "numerical_oracle_changed": false,
+  "original_STOP_policy_changed": false,
+  "performance_note": "Ten complete lower timings and one actual simultaneous-update episode are reported separately; no assumed RAM speedup or ten-step simultaneous-throughput claim.",
+  "previous_reviewed_draft_sha256": "0175d846f6490c734aae0513c52580cc42540919d21241910a9b55d2a755455c",
+  "prospective_review_fixes": [
+    "Launcher PID/start/parent/PGID/argv identity stays exact; only exec timeout/driver/workers require in-script exported env.",
+    "V2 upper launcher uses the existing lower two-child TERM/INT cleanup; original v1 remains unchanged.",
+    "Original full strict fork/hash verification is retained; freshness expiry fails closed."
+  ],
+  "readiness_expiry_note": "Operational freshness window only. Published once at latest complete step3; upper validates current identities/allocations/run/CP3 and refuses expired readiness. No later-milestone substitution or automatic retry.",
+  "release_template": {
+    "fork_sha256": "ACTUAL_ORIGINAL_UPPER_FORK",
+    "hard_deadline_utc": "CURRENT_FINITE_AT_MOST_EIGHT_HOURS",
+    "host_io_policy_sha256": "ROLE_BOUND_POLICY",
+    "issued_utc": "AT_EXPLICIT_RELEASE",
+    "lower_ready_sha256": "UPPER_ROLE_ONLY_ACTUAL_FIXED_COMPLETE3_READY",
+    "manifest_sha256": "AFTER_REVIEW",
+    "purpose": "R32_RAM_sequence_v2_ROLE",
+    "r003_exit_sha256": "ACTUAL",
+    "r004_complete14_sha256": "ACTUAL",
+    "r004_exit_sha256": "ACTUAL",
+    "released_by": "/root",
+    "role": "ROLE",
+    "stop_sha256": "ACTUAL_ORIGINAL_STRICT_STOP"
+  },
+  "roles": {
+    "lower": {
+      "TMPDIR": "/dev/shm/dario/qwen-r-fp32-ram-tmp-005",
+      "control": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/lower",
+      "expected_spec_hash": "b61afe63b4001620fa29f36074ea2ad14425ae1249a48ac12a6570bd75bac80c",
+      "host_io_policy_sha256": "c6cc7268a0e205dfd5a518e2569183491d90d21685dac3c886dcb2829ae4ec21",
+      "launch_script": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/lower.launch.sh",
+      "output": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-tmp-005",
+      "ports": [
+        64331,
+        64332
+      ],
+      "seed": 5678,
+      "source_dir": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005-source",
+      "stop_file": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/STOP",
+      "v1_control": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005",
+      "v1_preflight": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/preflight.py",
+      "v1_prepared": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/prepared.json"
+    },
+    "upper": {
+      "TMPDIR": "/dev/shm/dario/qwen-r-fp32-ram-resume-004",
+      "control": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/upper",
+      "expected_spec_hash": "92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac",
+      "host_io_policy_sha256": "30ba836dcc3fb5df105a0a43674ba305bcb5489657077c5595d99f261125b030",
+      "launch_script": "/home/ubuntu/dario/local/qualification/ram-sequence-v2/upper.launch.sh",
+      "output": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004",
+      "ports": [
+        64321,
+        64322
+      ],
+      "seed": 1234,
+      "source_dir": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-nvme-tmp-004-source",
+      "stop_file": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/STOP",
+      "v1_control": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004",
+      "v1_preflight": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/preflight.py",
+      "v1_prepared": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/prepared.json"
+    }
+  },
+  "schema": "RAM-sequence-v2-preparation",
+  "sequence": [
+    "After R004 terminal14/exit and original workers gone: prepare and verify original upper cp3-only fork and precreated STOP using original --prepare-fork.",
+    "Launch lower fresh B0/seed5678 max14 only when both partitions are free.",
+    "At fixed lower COMPLETE3, publish actual lower32 mapped worker/ancestry/env readiness with --ready; root separately reviews and releases upper.",
+    "Launch upper strict checkpoint3-to4 while lower continues; preserve exact restored3/tape4/fullstate4 criteria and immutable STOP."
+  ],
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "status": "PREPARED_NOT_RELEASED_NOT_LAUNCHED",
+  "updated_utc": "2026-10-17T03:02:13.752090+00:00",
+  "v1_files_sha256": {
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/launch.sh": "08b0bfdd661a41374325d4ba237c15240b11ea9f78facb6d4f349634162862fc",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/preflight.py": "4ad3bf74866b52d5680de26cd56fad01dcc1339953f1af352b5432c472d058c5",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/prepared.json": "304c76caf53ea56c98774db686a9c90cc9bdeac97dabd7f3508c4a3bd6a32e9a",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-resume-004/test_preflight.py": "7490722c88557aa0387fface5732a4cd0473b107eed31fb26f68dfe16405f359",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/launch.sh": "fd1aa354cf3c5dc2331d0580abc08ea9f48c17c690e80c57b45cd981594bfad1",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/preflight.py": "4117b0a04ea7149eac4c6df47bd84dc19bd655e7f38709a28f8614a8106f6b0e",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/prepared.json": "96068a0dd96489aa53c6bb05e86cb6f32dcd9fb5ab86e3a90217159a76cc9241",
+    "/home/ubuntu/dario/local/qualification/qwen-r-fp32-ram-tmp-005/test_preflight.py": "1a409d5a1e3c47d5ee8d64a750f9c871eb98e5e55731472a55a8f6927e12de27"
+  }
+}

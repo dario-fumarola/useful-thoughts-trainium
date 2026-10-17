@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 02:46 UTC
+# Current state — 2026-10-17 03:08 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -92,15 +92,17 @@ actual preflight passed 01:38:30. Output:
 cache stays EBS device66305. Separately bound host I/O policy SHA
 `9d2e1f20f3f38cb30ce41a80f4c3b453f44c4471aed15b382a84a2d8dd8cfb21`.
 
-**R004 latest complete update3 at 02:37:36 UTC**, 897.506 seconds.
-Norm47.89022, sampled FP32 changed fraction .98256046, sampled replicas bitwise
-equal; replay error .00004542. COMPLETE checkpoint3 is published and its CPU
-state inspection passes all310 model tensors/all9,920 initialized FP32 masters
-and moment sets, with exact master slices and Adam step3. EBS backup3 published
-02:42:36; root independently rehashed all33 payloads at original and copy, PASS.
-COMPLETE88190797…e8bbe0,27,542,553,263bytes; verification in
-`local/qualification/qwen-r-fp32-nvme-tmp-004/checkpoint3-backup-verification.json`. Save directory→COMPLETE took49.368s (separate from step elapsed).
-Next ordinary checkpoint4.
+**R004 latest complete update5 at 03:07:24 UTC**, 820.798 seconds.
+Norm76.55524 is finite, sampled replicas bitwise equal; replay error .00004911.
+Update6 is running; next ordinary checkpoint7. Three post-cold full timings so
+far (3–5); ten-step distribution remains pending.
+Checkpoint4 save directory→COMPLETE47.404s; checkpoint3 took49.368s, separate
+from full-step elapsed. Both verified EBS copies3/4 are retained, copy4 published
+02:58:09, COMPLETE86046ff4…9db38c7. Root separately rehashed all33 original/EBS
+checkpoint3 payloads, PASS; COMPLETE88190797…e8bbe0,27,542,553,263bytes.
+Verification: `local/qualification/qwen-r-fp32-nvme-tmp-004/checkpoint3-backup-verification.json`.
+CP3 serialized inspection also passes all310 model tensors/all9,920 initialized
+masters/moment sets, exact master slices, finite values and Adam step3.
 Median/P90 of ten steady updates remain pending. Update2 took1,501.217 seconds
 including stateful optimizer cold compilation. Update1 passed at01:57:33 in1,093.263s,
 including shared cold work: its
@@ -147,28 +149,30 @@ engineering observations, not a perfectly isolated TMPDIR performance estimate
 or full-state recovery. Receipts: `validation/r_warm_cache_io_20261017.json` and
 `validation/r_host_io_tape_parity_20261017.json`.
 
-**Conditional RAM preparations, independently reviewed, unlaunched:**
-upper `local/qualification/qwen-r-fp32-ram-resume-004/prepared.json`, SHA
-`304c76caf53ea56c98774db686a9c90cc9bdeac97dabd7f3508c4a3bd6a32e9a`,
-retains original criteria `5558cf95…8a00a4`, exact restored state and strict
-checkpoint3→4 with STOP precreated. No fork/STOP/release exists yet. Source is
-R004's immutable archive; ports64321/64322, upper partition, same spec/run basename.
-Lower `local/qualification/qwen-r-fp32-ram-tmp-005/prepared.json`, SHA
-`96068a0dd96489aa53c6bb05e86cb6f32dcd9fb5ab86e3a90217159a76cc9241`,
-is fresh B0 seed5678/max14, lower partition, ports64331/64332. It can provide
-RAM warm timings alongside two-R coexistence. Seven lower/three upper guard
-fixtures and actual host static probes pass. Shared host helper SHA
-`4117b0a04ea7149eac4c6df47bd84dc19bd655e7f38709a28f8614a8106f6b0e`.
-Both keep checkpoints/raw logs on NVMe and the existing compiler cache on EBS;
-private0700 TMPDIRs under `/dev/shm/dario`, filesystem26. Observed available RAM
-exceeds1.2TiB; largest64 temporary NEFF copies total24.23GiB. Launch guards require
-128GiB actual MemAvailable and64GiB tmpfs free. Host policies are separately bound.
-Upper requires completed R00414/exit/all64free and a fresh root release binding
-fork/exit/COMPLETE14. Lower additionally requires actual mapped upper32-worker
-restored3 readiness plus immutable STOP and lower-free topology. No RAM speed
-claim; final science policy follows measurements. Do not launch original R003
-resume or old `qwen-r-fp32-upper-overlap-001`: their terminal14 guards cannot pass.
-Preserve their original bytes.
+**Conditional RAM sequence v2, reviewed/unlaunched:**
+`local/qualification/ram-sequence-v2/manifest.json`, SHA
+`daf199d05b620a05105520f734a3d53622ed1771cbb6662557125c11243ac1c6`.
+Public exact copy: `validation/r_ram_sequence_20261017.json`.
+After R00414/exit/all workers gone and all64 cores free, first create the ORIGINAL
+upper cp3-only verified fork/strict STOP with its unchanged --prepare-fork.
+Then launch v2 LOWER freshB0/seed5678 through14. At fixed lower COMPLETE3,
+promptly capture its actual32 workers/env/ancestry/topology via v2 --ready, review
+its300s freshness window, and release v2 UPPER strict restored3→update4/save/exit.
+This reverses only coordination so lower cold startup cannot consume the sole
+upper update. Report actual overlap separately from ten lower timings5–14.
+
+All eight original v1 prepared/helper/launcher/test files stay byte-identical;
+do not release their original launchers. Upper prepared SHA304c76ca…a32e9a,
+lower96068a0d…cc9241; original resume criteria5558cf95…8a00a4 and shared host
+helper4117b0a0…6b0e unchanged. Outputs, private0700 RAM TMPDIRs, source244…,
+FP32/LRU2/G4/cap1024/K1, ports and seeds remain exactly as v1: lower0–31/64331–2,
+upper32–63/64321–2. Raw logs/checkpoints stay NVMe; compiler cache stays EBS.
+Six host guard fixtures, root rerun, two actual host static probes and independent
+review pass. Bash initial environment is diagnostic; exact exec-child/worker
+environments remain required. Both launchers clean owned driver/monitor on TERM.
+Original full fork/hash/STOP verification is retained. No fork/STOP/root release
+or RAM training exists yet. V2 controls are lower/upper under ram-sequence-v2.
+Old R003 resume and upper-overlap-001 remain preserved and unlaunched.
 
 All four fixed step1/rank0/micro0 TRAIN notes are saved in full at
 `local/qualification/qwen-r-fp32-final-003.step1-rank0-micro0.example.{json,txt}`
@@ -216,6 +220,14 @@ host policyaafe605d…; actual fresh tempfile/MemAvailable probe passed. Deadlin
 and supervises completion/cleanup, no automatic retry. This is held development,
 not final test or hardware evidence. R004 timings will disclose this concurrent
 one-core host workload. Strict RAM qualification waits for all64 cores free.
+
+B0 **direct completed113/128 correct (88.28125%)** on this fixed TRAIN
+held-development subset, all128 statusOK, no errors/format failures/truncations.
+Generated13,590 answer tokens; generation wall1,255.0s, first item222.53s,
+median item7.63s. Outer startup/model loading is separate. Other modes remain
+pending; no official test or C/R scientific outcome. Empty-format evaluator
+1119930/startticks4109637 now runs under the same mode shell1079049/PGID1079002.
+Review retains per-mode identities, predictions, scored rows and original logs.
 
 **Prospective production256 exposure prepared**, no science freeze/launch:
 `local/science/preparation-256/manifest.json` SHAef205d2c…7cea1. Each seed has

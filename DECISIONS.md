@@ -267,3 +267,19 @@ Routine formatting changes do not need a decision entry.
   CPU/source-API evidence exists. Prepare one bounded unchanged-backend full-cap
   device check on an idle core, with independent review before launch. This closes
   existing named evidence; it introduces no new oracle, gradients or investigation.
+
+
+## 2026-10-17 03:04 UTC — reverse only RAM qualification coordination
+
+The upper-first plan could consume its sole strict update while the fresh lower
+job is loading or initializing its optimizer. Keep the same two jobs and reverse
+their order: prepare/verify the original upper fork/STOP, start lower freshB0 to14,
+then release upper strict3→4 immediately after fixed lower COMPLETE3. This gives
+initialized lower optimizer state before the overlap. No extra profiling job,
+source/math/host-policy change or relaxed recovery criterion is introduced.
+All v1 bytes remain immutable; reviewed v2 coordinator/launchers bind them and
+actual ancestry/mapping/readiness, with finite root releases. Six host fixtures
+and both static probes pass; no RAM full-update result exists. Original fork
+hashing remains required. Report the actual overlap and ten lower timings5–14
+separately, retaining serial fallback. Public prospective manifest:
+`validation/r_ram_sequence_20261017.json` (daf199d0…ac1c6).
