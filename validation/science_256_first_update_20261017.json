@@ -1,0 +1,216 @@
+{
+  "schema": "first-science-C1234-completed-update-v1",
+  "captured_utc": "2026-10-17T08:44:11.324590+00:00",
+  "status": "FIRST_SCIENTIFIC_UPDATE_RECORDED",
+  "scientific_launch": true,
+  "run_id": "qwen-c-seed1234-science-256-001",
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "seed": 1234,
+  "arm": "vanilla",
+  "first_update": {
+    "step": 1,
+    "arm": "vanilla",
+    "elapsed_seconds": 237.86599817900424,
+    "gradient_norm": 1.6774256229400635,
+    "metrics": {
+      "abs_advantage": null,
+      "actions": 0.0,
+      "capped": null,
+      "clean": null,
+      "gain": null,
+      "loss": 1.4334802627563477,
+      "mean_signed_length": null,
+      "padded_decode_slots": 0.0,
+      "thought": null
+    },
+    "max_replay_logp_error": null,
+    "replay_audit_performed": false,
+    "sampled_parameter_update": {
+      "sampled_elements": 9920,
+      "sampled_update_l2": 0.00010429777466924861,
+      "sampled_changed_fraction": 0.9896169304847717,
+      "sampled_replicas_bitwise_equal": true
+    },
+    "counters": {
+      "source_records": 128,
+      "source_tokens": 65664,
+      "sampled_actions": 0
+    },
+    "time_utc": "2026-10-17T08:43:17+00:00",
+    "status": "science"
+  },
+  "first_metric_line_sha256": "fa85136792d5f770d695ea1b3fed34003a4cd98aa76e486adf95ba6d675a61c4",
+  "metrics_file_bytes_at_capture": 702,
+  "metric_line_index": 0,
+  "all32_original_worker_identities_exact": true,
+  "worker_identity_checks": [
+    {
+      "pid": 1607192,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607195,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607196,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607197,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607198,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607199,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607200,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607201,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607202,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607203,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607204,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607205,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607206,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607207,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607208,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607209,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607210,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607211,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607212,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607213,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607214,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607215,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607216,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607217,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607218,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607219,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607220,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607221,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607222,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607223,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607224,
+      "identity_exact": true
+    },
+    {
+      "pid": 1607225,
+      "identity_exact": true
+    }
+  ],
+  "actual_physical_devices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "frozen_terminal_step": 256,
+  "fixed_development_step": 64,
+  "initialization": "Fresh immutable released B0; no resume or qualification/C weights.",
+  "production_train_records": 329535,
+  "existing_global_monitor_and_backup_owner": "/root",
+  "scope": "Read-only first completed production optimizer update and startup lineage. This records an update, not a downstream evaluation result or a new numerical acceptance oracle. No new monitor/device job.",
+  "artifacts": [
+    {
+      "path": "local/science/control/qwen-c-seed1234-science-256-001/release.json",
+      "bytes": 1617,
+      "sha256": "6647f1ec9f6b774db52a54f61603ffe79d79357dd6d9b9af8e4f24a850d7154e"
+    },
+    {
+      "path": "local/science/control/qwen-c-seed1234-science-256-001/execution.first-live.json",
+      "bytes": 3801,
+      "sha256": "677056355c043eff3ab923e30d6f52170c1018ba7dcb8e13ce4abb2a8cd86fb0"
+    },
+    {
+      "path": "local/science/control/qwen-c-seed1234-science-256-001/processes.json",
+      "bytes": 49944,
+      "sha256": "4ab7f6a4a0fb05da3b4bced0c39a3a1d8daf8d8c80211fad86c436131a97fbbe"
+    },
+    {
+      "path": "local/nvme/runs/qwen-c-seed1234-science-256-001/run.json",
+      "bytes": 22845,
+      "sha256": "383afc7f6983ac2661c0f57ff3fbeb5aca4a68da534200bf6e18105e0e89ebdc"
+    }
+  ]
+}

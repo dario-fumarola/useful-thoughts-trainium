@@ -29,8 +29,8 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**Finite FP32 accelerator qualification is complete. The first study is frozen;
-no scientific training arm or primary result is claimed yet.**
+**The first scientific continuation run is active. FP32 qualification and the
+256-update specification are complete; no trained C/R comparison is available.**
 
 - Released model weights and tokenizer are pinned and loaded.
 - The audited FineMath slice contains **329,535 train**, **18,360 dev**, and

@@ -1,6 +1,6 @@
-# Current state — 2026-10-17 08:36 UTC
+# Current state — 2026-10-17 08:45 UTC
 
-**Finite R qualification and frozen-spec readiness pass; no scientific arm has launched.**
+**First scientific C1234 is running; no trained C/R comparison is available.**
 The first study remains **256 terminal updates**, with fixed step64 development.
 Public repository: https://github.com/dario-fumarola/useful-thoughts-trainium .
 Work is isolated in `/home/ubuntu/dario`; original repositories are unchanged.
@@ -15,15 +15,31 @@ exit0 at08:13:18; all original workers/driver/launcher/monitor/observer are gone
 All16 devices were empty at cleanup. Root's lower backup watcher also exited0,
 all owned processes gone. Original v1 coordinators remain unused.
 
+**C1234 is active**, fresh released B0, source-256-001, FP32/world32/global128/
+accum4/default qualified C cache/unset LRU/EBS temp; production329535 TRAIN pool,
+terminal256/fixeddev64. Lower logical0–31; actual32 workers occupy devices0–7
+(four/device), upper8–15 free. Launcher1607173, timeout/PGID1607186, driver1607187;
+all32 actual worker/start/ancestry/env/device bindings are in control/processes.json.
+Root release08:37:57.545140UTC SHA6647f1ec…7154e; run started08:38:35; firstupdate
+loop marker08:39:19. **First real optimizer update completed08:43:17**,237.866s, norm1.677426,
+sampled replicas exact,98.9617% sampled entries changed;128records/65664source
+tokens. Startup step is separate from qualified warm timing; no efficacy claim.
+Receipt `validation/science_256_first_update_20261017.json`, SHA705dd2e1…caaa7.
+Distributed owns read-only startup/progress observation; no extra monitor.
+Control `local/science/control/qwen-c-seed1234-science-256-001`;
+output `local/nvme/runs/qwen-c-seed1234-science-256-001`; rawlog
+`local/nvme/science/launch-logs/qwen-c-seed1234-science-256-001.log`.
+Tmux `dario-science-C1234-256`. Let healthy startup and all256 updates finish.
+
 Root owns both active shared host supervisors, matching the frozen spec/deadline:
 backup helper PID1606740; node helper1606741, producer1606742, gzip1606743,
-node timeout/PGID1606734. Roster/config are `local/science/{backups.roster,monitor.config}.json`;
-state is `local/science/shared-backups.state.json` and
-`local/nvme/science/shared-node-monitor/state.json`. Both publish RUNNING.
-No accelerator job or science-arm release exists yet. FirstC fresh-host checks are next. Unique upper continued4 has a
-verified EBS copy at `local/backups/qwen-r-fp32-ram-resume-004/step-0000004`;
-copy receipt is `local/qualification/ram-sequence-v2/upper/backup.receipt.json`.
-All old qualification/watchers/observers are gone.
+node timeout/PGID1606734. Roster/config `local/science/{backups.roster,monitor.config}.json`;
+state `local/science/shared-backups.state.json` and
+`local/nvme/science/shared-node-monitor/state.json`. Both RUNNING. No second
+training group or evaluation is released. Other qualification processes are gone.
+Unique upper continued4 has a verified EBS copy at
+`local/backups/qwen-r-fp32-ram-resume-004/step-0000004`; its receipt is
+`local/qualification/ram-sequence-v2/upper/backup.receipt.json`.
 
 Frozen spec **653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7**,
 `local/science/experiment-256.json`, file SHA22157721…c0dcda; deadline
@@ -70,19 +86,17 @@ All1,792 RAM005 tapes and14 rank0 example traces remain local. The prospective
 
 ## Production plan and next actions
 
-1. Start the matching reviewed shared backup/node supervisors from sealed
-   roster/config and verify actual live identities, then bind firstC's fresh
-   output, unused ports, free partition, effective temp/cache filesystem, current
-   memory/storage and finite deadline. Issue root release and launch the reviewed
-   script; record actual32 workers/env/mapping and ongoing progress.
+1. Observe firstC through real updates, checkpoint64/128/256 and verified EBS
+   copies. Preserve actual order/counters and all old qualifications. Require
+   terminal256/exit/backup/cleanup before the next training group.
 2. Launch **one32-core training group at a time: C1234, C5678, R1234, R5678**.
    Every arm independently starts from released B0, never C/qualification weights.
    Seed1234 uses lower0–31, seed5678 upper32–63; C/R share each seed's exact order
    and32,768 fresh TRAIN records. Cross-seed overlap3,182 is disclosed.
    Serial fallback was selected before science from full-pool memory uncertainty.
    Use one reviewed shared EBS queue and one compressed node monitor; bind their
-   live matching identities before each finite root release. No supervisor or
-   science release exists yet. Idle cores may serve genuine development work
+   live matching identities before each finite root release. Only firstC is released;
+   matching shared supervisors are active. Idle cores may serve genuine development work
    subject to actual host headroom.
 3. Complete fixed held-development C/R64/256 in direct/empty_format/one_thought,
    plus the local fixed DEV512 controls. Never select the terminal by dev score.
@@ -90,8 +104,7 @@ All1,792 RAM005 tapes and14 rank0 example traces remain local. The prospective
 
 Immutable `local/science/source-256-001` matches all61 qualified active files,
 archived from commit85c64a9. Its manifest SHA8a0641c6…77faa4 binds the tar and
-qualified source. Four finite launchers passed independent review and remain
-unreleased. Use archive cwd/PYTHONPATH and absolute evidence/control paths;
+qualified source. Four finite launchers passed independent review; only C1234 is released. Use archive cwd/PYTHONPATH and absolute evidence/control paths;
 current root docs govern operations. Frozen training spec and actual qualification
 receipt now pass original readiness. The normalized production format changes
 only tokenizer_dir to the same absolute B0 path; original format remains intact.
