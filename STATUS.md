@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 02:41 UTC
+# Current state — 2026-10-17 02:46 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -96,8 +96,10 @@ cache stays EBS device66305. Separately bound host I/O policy SHA
 Norm47.89022, sampled FP32 changed fraction .98256046, sampled replicas bitwise
 equal; replay error .00004542. COMPLETE checkpoint3 is published and its CPU
 state inspection passes all310 model tensors/all9,920 initialized FP32 masters
-and moment sets, with exact master slices and Adam step3. The verified EBS copy
-is in progress. Save directory→COMPLETE took49.368s (separate from step elapsed).
+and moment sets, with exact master slices and Adam step3. EBS backup3 published
+02:42:36; root independently rehashed all33 payloads at original and copy, PASS.
+COMPLETE88190797…e8bbe0,27,542,553,263bytes; verification in
+`local/qualification/qwen-r-fp32-nvme-tmp-004/checkpoint3-backup-verification.json`. Save directory→COMPLETE took49.368s (separate from step elapsed).
 Next ordinary checkpoint4.
 Median/P90 of ten steady updates remain pending. Update2 took1,501.217 seconds
 including stateful optimizer cold compilation. Update1 passed at01:57:33 in1,093.263s,
@@ -196,6 +198,26 @@ development. Manifest `local/evaluation/held-dev128-v1/manifest.json`, SHA
 `9bc3d2e5c8d2e659ede1dd9c007dd45b63f43e493ebc3203657d15c92081e6e7`.
 Independent review reproduced selection/disjointness/gold alignment. Public
 protocol copy `validation/held_dev_protocol_20261017.json`. No TEST source read.
+
+**Review owns active B0 held-development suite**, launched02:45:18 UTC,
+tmux `dario-held-dev128-B0-001`, one lower logical core0, ports64351/64352.
+Root launcher1078999; timeout1079003/startticks3981062. Three sequential freshB0
+loads: direct→empty_format→one_thought, FP32 compute/head, fixed128 TRAIN-only
+questions/prompt/gold, caps1024/256. No duplicate monitor. Private RAM TMPDIR
+`/dev/shm/dario/held-dev128-v1-B0-001`; unchanged EBS driver cache, NVMe output
+`local/nvme/evaluation/held-dev128-v1-B0-001`. Prepared95e25064…, launcher9bfb2a10…,
+host policyaafe605d…; actual fresh tempfile/MemAvailable probe passed. Deadline
+**06:45:00.434277 UTC** plus30s. Root release/launch/state under
+`local/evaluation/held-dev128-v1/b0-plan-v1`; review records actual process/mapping
+and supervises completion/cleanup, no automatic retry. This is held development,
+not final test or hardware evidence. R004 timings will disclose this concurrent
+one-core host workload. Strict RAM qualification waits for all64 cores free.
+
+**Prospective production256 exposure prepared**, no science freeze/launch:
+`local/science/preparation-256/manifest.json` SHAef205d2c…7cea1. Each seed has
+32,768 unique TRAIN IDs from329,535, shared exactly between C/R; full production
+order hashes dcc8c626…70b42 (1234), ee771ea3…2071d (5678). Independent header-only
+review reproduces orders. Cross-seed overlap3,182 is disclosed, not filtered.
 
 **Held-seed jobs complete:** C32 update/COMPLETE and FP64 full derivative both
 exited 0; comparator exited 0/PASS. All upper-core workers and supervisors are
