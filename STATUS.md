@@ -163,6 +163,8 @@ At03:25 EBS free **269.9GiB**, mounted NVMe **1.20TiB**, tmpfs about1,000GiB.
 Only one NVMe is formatted; other3 SSDs remain untouched. Science uses one reviewed
 serialized backup queue and one compressed shared node monitor. Backup helper at
 `validation/orchestration` passes its6 host fixtures/TERM review, unlaunched.
+The node monitor wrapper also passes6 host pipe/cleanup checks, independently
+rerun by root; no live capture exists. Both helper hashes are in the draft site.
 Reserve **two new checkpoint payloads +20GiB≈71.3GiB** for a backlogged rollover.
 Before science, reclaim only obsolete EBS qualification duplicates after full
 verification of every preserved NVMe payload; retain recoverable latest states.

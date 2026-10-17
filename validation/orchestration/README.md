@@ -39,3 +39,8 @@ On restart or backlog, the existing cycle can copy both unseen survivors before
 pruning older copies. Shared serialization prevents concurrent cycles from adding
 to that peak; it does not reduce the within-cycle backlog requirement. With
 25.65 GiB payloads, this needs roughly 71.3 GiB free at rollover.
+
+The separate shared gzip node monitor is described in
+[SHARED_NODE_MONITOR.md](SHARED_NODE_MONITOR.md). It replaces duplicate per-arm
+node captures during science and does not start or stop trainers. Its narrow
+host process/pipe smoke tests do not add a hardware qualification gate.
