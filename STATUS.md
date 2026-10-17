@@ -201,7 +201,11 @@ protocol copy `validation/held_dev_protocol_20261017.json`. No TEST source read.
 
 **Review owns active B0 held-development suite**, launched02:45:18 UTC,
 tmux `dario-held-dev128-B0-001`, one lower logical core0, ports64351/64352.
-Root launcher1078999; timeout1079003/startticks3981062. Three sequential freshB0
+Root launcher1078999; actual timeout/PGID1079002/startticks3981062, evaluator
+1079050 in initial direct mode. Original execution.json supervisorPID1079003
+was the exited command-substitution subshell; its bytes are preserved and the
+observed process correction is recorded in supervision.json. Target only the
+verified actual timeout/group when stopping this suite. Three sequential freshB0
 loads: direct→empty_format→one_thought, FP32 compute/head, fixed128 TRAIN-only
 questions/prompt/gold, caps1024/256. No duplicate monitor. Private RAM TMPDIR
 `/dev/shm/dario/held-dev128-v1-B0-001`; unchanged EBS driver cache, NVMe output
