@@ -1,288 +1,228 @@
-# Current state — 2026-10-17 16:51 UTC
+# Current state — 2026-10-17 17:30 UTC
 
-**Both scientific C runs completed 256 updates and verified terminal backups.
-R1234 completed step32/256; two fixed development jobs are running. No trained C/R comparison is available.**
-The first study remains **256 terminal updates**, with fixed step64 development.
-Public repository: https://github.com/dario-fumarola/useful-thoughts-trainium .
-Work is isolated in `/home/ubuntu/dario`; original repositories are unchanged.
-The owner authorizes sustained autonomous work, review agents and public updates.
-`CODEX_NEXT_DAY.md` governs the queue. Its companion review file was not found.
-Weeks are available; the14-day planning window is not an instance shutdown date.
+**Both C runs finished256/exit0/cleanup and verified terminal backups. R1234 is
+at35/256. Two development jobs are advancing; no complete trained comparison yet.**
+The owner authorizes sustained autonomous work, agents and public Git updates.
+Follow `CODEX_NEXT_DAY.md`; its companion review file was not found. Weeks are
+available. The frozen14-day window is a planning bound, not an instance shutdown.
+Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium .
+Only `/home/ubuntu/dario` and its authorized local assets/outputs are used.
 
-## Current work and ownership
+## Active work and ownership
 
-**C1234 completed all256 scientific updates**, fresh released B0, FP32/world32/
-global128/accum4, on the audited production TRAIN pool. Terminal COMPLETE
-published09:29:22; exit0 at09:29:37; all35 original identities and owned process
-groups are gone. Exact planned order and32,768 records /16,809,984 source tokens.
-Steps1/2 took237.866/94.141s; all254 steps3–256 retained: mean10.0564s, median
-10.0566s, P90 10.0963s. Three save-publication walls total113.920s, separate from
-step elapsed; release-to-exit3100.071s. Sampled replica checks pass throughout.
-`validation/science_C_seed1234_execution_20261017.json`, SHAbc04dec0…21209.
+| Job | Current state | Control / output | tmux / actual processes |
+|---|---|---|---|
+| R1234 | Complete35 at17:23:36UTC,656.008s;4,480 records,2,298,240 source tokens,1,639,236 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
+| B0 local DEV512 |223/512 original notes at17:30; likelihood scoring not started | `local/evaluation/local-dev512-v1/b0-plan-v1` / `local/nvme/evaluation/local-dev512-v1-B0-001` | `dario-dev-local-B0-512`; launcher1857552, generation timeout1857562, worker1857563; core32/device8 |
+| Held C1234@64 |128 direct and128 empty complete/scored;117/128 thought items at17:30 | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0064` / `local/nvme/evaluation/held-dev128-v1-C1234-step0064-001` | `dario-dev-held-C1234-64`; launcher1858559, current thought timeout1883088/worker1883089; core36/device9 |
 
-Root's shared queue verified terminal EBS256 at09:33:48 and completed retention
-at09:34:28: latest two128/256, all original NVMe64/128/256 preserved. Root checked
-exact source/copy manifests, receipts and all33 payload sizes; the pinned helper
-performed full payload hashing. `validation/science_C_seed1234_backup_20261017.json`,
-SHA45847387…7df9d. No model-quality claim follows from execution.
+PIDs are observations, not launch authority; recheck start times, ancestry and
+actual topology at each action. Each evaluator changes its child at stage changes.
+The held suite's earlier direct timeout/worker1858570/1858571 are historical.
+Both development jobs were released at15:37–15:38 on separate idle devices;
+`validation/science_development_start_20261017.json` pins their actual allocations.
+They are nonfinal development, with qualification=true and final identity null.
+No prompt/cap/seed/terminal rule was changed after observing outputs.
 
-**C5678 also completed all256 updates**, independently fresh released B0 with
-the same spec/precision/recipe. Terminal COMPLETE published10:27:17; exit0 at
-10:27:32; all35 original identities and owned process groups are gone. Its exact
-planned order consumed32,768 records /16,809,984 source tokens. All254 steps3–256
-retained: mean10.0298s, median10.0311s, P90 10.0674s; three save-publication walls
-total110.654s, separate from step elapsed. Release-to-exit3093.213s.
-`validation/science_C_seed5678_execution_20261017.json`, SHAef59f04e…1680b6.
-The shared helper verified terminal EBS256 at10:31:44 and finished retention at
-10:32:24: latest two128/256; all original NVMe64/128/256 remain. Exact source/copy
-COMPLETE bytes, receipt/retention ownership and all33 payload sizes were checked
-without repeating the helper's full payload hashing.
-`validation/science_C_seed5678_backup_20261017.json`, SHA5efd47fd…193a4d.
-These execution and recovery observations do not establish capability.
+Existing agents: `/root/distributed` supervises R through32/48/64 and verified
+EBS64; `/root/data` supervises the held suite through complete coverage/exit/cleanup,
+then computes the full paired B0 comparison. It has not inspected partial C
+accuracy. `/root/review` is idle after static preparation/review. Root owns all
+releases, launches, backups, signals and public updates. No automatic retry/run-all.
 
-**R1234 is active**, independently fresh released B0, sealed source-256-001,
-FP32/world32/global128/accum4/G4/cap1024/K1/T.7, LRU2/private RAM temp. Root
-release10:32:53.082689UTC SHA0a74325f…828543; run started10:33:30. Released lower
-logical0–31; ports64421/64422. Launcher1668169, timeout/PGID1668180, driver1668181.
-Latest complete metric is **32/256 at16:50:10**,699.285s; cumulative4,096 source
-records /2,101,248 source tokens /1,594,971 sampled actions. Generated workload has
-risen again after the early short-note updates; no permanent stopping pattern
-or downstream result is inferred. No R checkpoint has
-published yet; fixed development64 and the12-hour save cadence remain unchanged.
-Control `local/science/control/qwen-r-seed1234-science-256-001`;
-output `local/nvme/runs/qwen-r-seed1234-science-256-001`; rawlog
-`local/nvme/science/launch-logs/qwen-r-seed1234-science-256-001.log`;
-tmux `dario-science-R1234-256`. Continue through fixed256; R5678 remains unreleased.
+Root-owned shared supervisors remain RUNNING:
 
-Root released **B0 local DEV512** at15:37:45 and launched it at15:37:49 on idle
-core32/device8, ports64441/64442; tmux `dario-dev-local-B0-512`. Launcher1857552,
-timeout1857562, actual worker1857563; no completed evaluation result yet.
-Control `local/evaluation/local-dev512-v1/b0-plan-v1`; output
-`local/nvme/evaluation/local-dev512-v1-B0-001`; release SHA521643aa…51c214.
-Root also launched **held C1234@64** at15:38:07 on separate core36/device9;
-release SHAd0d27836…8c6724. Launcher1858559, timeout1858570, actual worker1858571.
-Root checked both actual device allocations, process ancestry, archive cwd,
-runtime environment and private0700 RAM temp; receipts are in each control's
-`processes.first-live.json`. Public start evidence:
-`validation/science_development_start_20261017.json`, SHAd6c4cc4a…284534. Both jobs
-are nonfinal held development; root owns their health, allocation and scheduling.
-At16:51 B0 has145/512 original notes. Held C1234@64 has complete/scored128 direct
-and128 empty_format items, with55/128 one_thought items saved. Its complete
-three-mode accuracy comparison remains pending. Data supervises this suite;
-distributed supervises R through64 and its first verified EBS copy.
-R1234's exact public live receipt is `validation/science_R_seed1234_progress_20261017.json`,
-SHA6c5c95a5…b4a0912, observed15:37:51 at step26; all26 recorded updates are finite
-with sampled replicas equal. It records the historical first loop at10:34:10 and
-first metric at10:49:58. All24 steps3–26: median594.303s, linearP90802.193s;
-the sampled action workload shrinks substantially. This is execution evidence;
-negative raw gains and early stopping are TRAIN diagnostics, not a capability result.
+- Backup1606740, parent timeout/PGID1606728, tmux `dario-science-backups-256`;
+  roster `local/science/backups.roster.json`, state `local/science/shared-backups.state.json`.
+  Both C runs are terminal-verified. One serialized queue, latest-two EBS/run,
+  allowance for two incoming payloads before prune; all NVMe originals retained.
+- Node helper1606741, producer1606742, gzip1606743, timeout/PGID1606734, tmux
+  `dario-science-node-256`. Config `local/science/monitor.config.json`; execution
+  `local/nvme/science/shared-node-monitor/{state,launch}.json`, ongoing
+  `node.jsonl.gz.partial`. Exactly one global producer. The initial static gzip
+  argv capture was pre-exec; actual live argv is correct. Do not mistake static
+  startup metadata for current process state or an active prefix for a closed log.
 
-Root saved all first32 R metrics and a standalone execution plot in
-`validation/science_R_seed1234_first32_20261017.json` (SHAe2e50f5f…7e7c5d) and
-`validation/figures/science_R_seed1234_first32_20261017.svg`. All30 steps3–32:
-mean662.489s, median623.155s, linearP90811.018s. No observations or overlap costs
-are removed. TRAIN reader likelihoods use different records each update; this
-figure is not a fixed-anchor learning curve or a downstream result. The R32 live
-identity receipt is `local/science/control/qwen-r-seed1234-science-256-001/health.milestone-0000032.json`, SHA43a4e38c…3d239.
+## Immediate next actions
 
-Both completed C runs' raw metrics, run metadata, all three checkpoint manifests
-and launch logs also have verified EBS copies in `local/backups/run-artifacts`:
-C1234 receipt SHA19a469d2…53afa, C5678 SHA107eb8b7…fc5df, six files each/about0.6MB.
-These small archives are separate from the latest-two model/optimizer queue.
+1. Let R1234 finish the fixed256 updates. Preserve64/128/256 plus12-hour saves;
+   no R checkpoint has published yet. Do not stop for early short notes or poor
+   TRAIN utility. R5678 remains unreleased.
+2. Wait for the current held C64 suite's all-three128 rows, exit0 and cleanup,
+   and the data agent's complete paired report/progress-writer shutdown. Verify
+   exact model/protocol/coverage, archive all outputs, then explicitly release:
 
-Root owns both matching shared supervisors: backup1606740; node helper1606741,
-producer1606742, gzip1606743, timeout/PGID1606734. Roster/config
-`local/science/{backups.roster,monitor.config}.json`; states
-`local/science/shared-backups.state.json` and
-`local/nvme/science/shared-node-monitor/state.json`. Both RUNNING. Both C runs are
-terminal-verified; R1234 and both development jobs have separate releases. Qualification jobs,
-watchers and original v1 coordinators are inactive. Unique upper qualification
-continued4 has a verified EBS copy at
-`local/backups/qwen-r-fp32-ram-resume-004/step-0000004`.
+   `python3 local/evaluation/release_idle_development.py held-C C1234-step0256`
 
-Frozen spec **653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7**,
-`local/science/experiment-256.json`, file SHA22157721…c0dcda; deadline
-**2026-10-31T08:27:49+00:00**. Actual nine-check receipt
-`local/science/qualification-256.json`, SHA3785fed6…45fd9; all ten timings included.
-Original archive `check_ready.py` succeeds, stdout/stderr in preparation-256.
-Public byte-identical copies: `validation/science_256_{frozen,qualification,resources}_20261017.json`.
+   Launch that slot's reviewed `launch.sh` in a fresh tmux session, writing its
+   own `launcher.log`. The helper only releases; it never launches/retries.
+   Queue C5678@64/@256 and actual R64 without checkpoint selection, one held suite.
+3. Closed held/same-model development output backup:
 
-## Qualification evidence
+   `python3 local/evaluation/archive_completed.py --control <exact-slot-directory> --output <exact-NVMe-output>`
 
-- **R full execution PASS:** RAM005 freshB0/seed5678, lower0–31, world32/global128/
-  accum4, FP32/LRU2/private RAM temp, G4/cap1024/K1/T.7;14 complete updates.
-  Fixed **all steps5–14**: mean735.977s, median704.789s, linear P90 869.283s.
-  Preserve all shared-host recovery/CPU comparison/backup overlaps without
-  subtraction. Checkpoint saves43.617–46.908s are separate; issued-to-exit wall
-  11,279.171s. Actions shrink substantially: timing is this measured workload,
-  not an isolated TMPDIR speedup. Report:
-  `validation/r_fp32_ram_execution_20261017.json`, SHA57116908…25a3aa4e.
-- **Strict R recovery PASS:** actual restored3 model/all32 optimizer shards/RNG/
-  order/counters byte-exact; all128 first-resumed4 tapes identical. Full continued4
-  meets original1e-7abs+1e-6rel, with retained non-bitwise differences (model max
-  9.095e-13, optimizer2.910e-11). Sole update4/unchanged STOP/exit0/cleanup.
-  `validation/r_fp32_ram_resume_20261017.json`, SHA099634ce…f0f321.
-- **Actual coexistence observed:** both mapped32-worker groups executed in two
-  same~5s raw windows, one after upper gradient work. This is one strict recovery
-  episode with cold optimizer compilation, not ten simultaneous steady timings.
-  No concurrency multiplier is credited. Evidence is in the execution report.
-- **C qualification PASS:**12 updates, ten steady3–12 mean10.007s, strict actual
-  restore/continued-state recovery with declared bitwise/tolerance distinctions.
-  `validation/c_fp32_final_resume_20261016.json`.
-- Qualified active source **3aaaf8a**, fingerprint
-  **244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7**,
-  unchanged. Latest required checks233CPU+toy smoke PASS. Signed P2 derivative,
-  original device future-perturbation counterfactual and FP32 evaluator parity
-  pass with their explicit older-component provenance limits. **C coordinate v1
-  FAIL remains preserved; separately prospective held-seed v2 derivative PASS.**
-  Do not add v3/FP64 work without a concrete fault.
+   Reviewed SHA3d10ad2a…3bdce. Requires complete successful exit, departed owned
+   PID/groups and idle owned device, then hashes every ordinary small source/copy
+   file on distinct NVMe/EBS. Original predictions/scores/failures/logs remain.
+   This helper intentionally excludes the separately labeled crossed-reader pack.
+4. After complete B0 local512 notes **and9216 score rows**, exit/cleanup and backup,
+   run `python3 local/analysis/freeze_dev_strata.py` once. It implements the already
+   public token-class and tie-broken B0 raw-K1 surprisal quartiles using original
+   score-row target texts, without opening corpus/final targets. Synthetic
+   class/tie/failure checks pass; no actual likelihood/map has been read/created.
+   Then release `local-trained C1234-step0064` with the same root helper and use
+   `local/evaluation/local-dev512-v1/trained-plans-v1/launch.sh C1234-step0064`.
+5. The reviewed additional helper `local/evaluation/release_idle_development.r-ready.py`
+   SHA279c984b…e31f4 supports `held-R R1234-step0064` once that real checkpoint
+   exists. It reuses the pinned R pack checker and binds actual counters; no
+   forecasted actions or changed numerical gate. Root review
+   `release_idle_development.r-ready.root-review.json`, SHAc315e460…2e8a.
+   Current original helper remains bf5460b4…8b213. Both have pending-release
+   reservations, exact process/leader/phase, host/ports/private-temp checks and
+   dynamic EBS retention accounting. Only the R1234-lower/idle-upper phase is
+   supported now. Later R5678-upper/post-training releases need actual-phase
+   support. R1 terminal development waits for that phase; do not delay R2 with it.
+6. After actual R1234 terminal256, exit/whole-group cleanup and verified EBS256,
+   release independently fresh-B0 R5678 using
+   `local/science/preparation-256/release_next_arm.py` (SHAc25a8347…6128d) and its
+   reviewed finite launcher. Require fresh runtime topology, free ports, actual
+   headroom, matching leaders and private RAM tempfile proof. Remove the probe's
+   empty outer TMPDIR before the launcher creates it. Never execute old coordinators.
 
-Final qualification TRAIN tapes show **511/512 empty notes**, all512 stop at base
-EOS; mean raw gain is negative. R004's terminal also had509/512 empty notes. These
-are stopping diagnostics, not useful-thought or downstream efficacy evidence.
-All1,792 RAM005 tapes and14 rank0 example traces remain local. The prospective
-256 terminal, objective, prompts and evaluation comparisons remain unchanged.
+## Scientific execution and saved evidence
 
-## Production plan and next actions
+Both C seeds consumed exactly32,768 unique TRAIN records /16,809,984 source
+tokens, with exact within-seed planned order. All original35 processes/groups
+are gone. Latest-two verified EBS copies are128/256; NVMe64/128/256 remain.
 
-1. Observe active R1234 through fixed256, checkpoint64/128/256 and verified EBS
-   copies. Both C runs are terminal, exited and backed up. Require R1234's actual
-   terminal256/exit/backup/cleanup before independently fresh-B0 R5678.
-2. Launch **one32-core training group at a time: C1234, C5678, R1234, R5678**.
-   Every arm independently starts from released B0, never C/qualification weights.
-   Seed1234 uses lower0–31, seed5678 upper32–63; C/R share each seed's exact order
-   and32,768 fresh TRAIN records. Cross-seed overlap3,182 is disclosed.
-   Serial fallback was selected before science from full-pool memory uncertainty.
-   Use one reviewed shared EBS queue and one compressed node monitor; bind their
-   live matching identities before each finite root release. Both C runs and R1234 have separate actual releases;
-   matching shared supervisors are active. Idle cores may serve genuine development work
-   subject to actual host headroom.
-3. Complete fixed held-development C/R64/256 in direct/empty_format/one_thought,
-   plus the local fixed DEV512 controls. Never select the terminal by dev score.
-   Keep official final outcomes sealed until protocol/model inventory is fixed.
+| Arm | Terminal / exit UTC | All254 steps3–256: mean / median / linearP90 | Save-publication total / release-to-exit | Reports in `validation/` |
+|---|---|---|---|---|
+| C1234 |09:29:22 /09:29:37 |10.0564 /10.0566 /10.0963s |113.920 /3100.071s |`science_C_seed1234_{execution,backup}_20261017.json` |
+| C5678 |10:27:17 /10:27:32 |10.0298 /10.0312 /10.0674s |110.654 /3093.213s |`science_C_seed5678_{execution,backup}_20261017.json` |
 
-Immutable `local/science/source-256-001` matches all61 qualified active files,
-archived from commit85c64a9. Its manifest SHA8a0641c6…77faa4 binds the tar and
-qualified source. Four finite launchers passed independent review; both C runs and R1234 are released, R5678 is not. Use archive cwd/PYTHONPATH and absolute evidence/control paths;
-current root docs govern operations. Frozen training spec and actual qualification
-receipt now pass original readiness. The normalized production format changes
-only tokenizer_dir to the same absolute B0 path; original format remains intact.
-The failed first freeze is preserved; reviewed bridge is public. No new numerical
-gate or changed token/stop/sampling policy.
+C1234 terminal COMPLETE8c20a705…6706/modelb2b8e2eb…fc6a1;
+C5678 terminal16f22b7c…97bb/model740b4023…4cc. Root checked exact source/copy
+manifests, helper receipts and all33 payload sizes; the pinned queue performed
+full payload hashes. Raw C run metadata, metrics, all checkpoint manifests and
+launch logs also have verified EBS copies in `local/backups/run-artifacts`.
+C5678's earlier pre-loop label was a bounded-tail monitoring error, corrected
+from its whole log and metrics; original captures remain preserved.
 
-## Data, development and interpretation
+R1234 released10:32:53, started10:33:30; freshB0/world32/global128/accum4/G4/
+cap1024/K1/T.7/FP32/LRU2/private RAM temp. Raw log:
+`local/nvme/science/launch-logs/qwen-r-seed1234-science-256-001.log`.
+The public first-live receipt observes26 at15:37 (not a fabricated early capture):
+`validation/science_R_seed1234_progress_20261017.json`. All first32 metric rows
+are preserved in `validation/science_R_seed1234_first32_20261017.json`, SHAe2e50f5f…7e7c5d,
+with standalone plot `validation/figures/science_R_seed1234_first32_20261017.svg`.
+All30 steps3–32: mean662.489s, median623.155s, P90811.018s; all observations and
+shared-host development costs retained. These are changing-workload TRAIN
+measurements, not a fixed-anchor learning curve or downstream result. Short-note
+updates were followed by increased generation; no permanent stopping pattern.
+R32 live identity receipt SHA43a4e38c…3d239 is in its control directory.
 
-Actual released Qwen3-1.7B-Base revisionea980cb0…604c1,1,720,574,976 unique values,
-original embedding/head tie, FP32 both arms. FineMath production revisione92b25a6…,
-audited329535train/18360dev/18239test, fixed512-prefix/16-future random anchors;
-K1 training, no whitespace/entropy filtering or cycling. Source/load/format and
-production order hashes are in `local/science/preparation-256/manifest.json`.
+All32 completed rank0/micro0 example bundles, run snapshot, first32 metrics and
+explicit ongoing-log byte prefix have verified EBS copies:
+`local/backups/run-snapshots/qwen-r-seed1234-science-256-001/step-0000032/VERIFIED.json`,
+SHAabcdbdb7…cff03,39 files/22,205,371B. This is **not a model/optimizer checkpoint**.
 
-Fixed128 held GSM8K **TRAIN** development B0 is complete: direct113/128,
-empty107/128, thought63/128. All failures/truncations and51 payload files are
-preserved with independently verified EBS copies. Primary R-thought−C-thought;
-also R-direct−C-direct, R-thought−R-empty and every arm versusB0. Format recovery
-or C degradation alone is not capability above B0. Direct allows calculations.
-Local K1 primary/K4,16 secondary; retain absolute clean/empty/own/filler plus
-content controls and fixed random token-class/surprisal strata. No official final
-outcomes read; earlier exclusion preparation used question-only benchmark data.
+## Frozen source, qualification and interpretation
 
-Prepared/reviewed finite development packs: held128 C suites in
-`local/evaluation/held-dev128-v1/c-plans-v1` (manifest8506c2d7…), local DEV512 B0
-`local/evaluation/local-dev512-v1/b0-plan-v1` (prepared0b54fd2d…), and eight trained
-local slots `local/evaluation/local-dev512-v1/trained-plans-v1` (manifest7cbdbc51…).
-B0 local and held C1234@64 are now released/running; the remaining C suites and
-trained local slots await root release.
-Root also reviewed the four R held128 plans in
-`local/evaluation/held-dev128-v1/r-plans-v1` (manifest9cbdf2fe…) and the12 original
-terminal writer/reader crosses in `local/evaluation/local-dev512-v1/crossed-plans-v1`
-(manifest0b566808…). Both remain unreleased. Crosses reuse complete original512
-writer bundles; they do not resample or claim deployed-policy performance.
-R5678-terminal jobs use an honest post-training phase. No active source change,
-new numerical gate or final-test access was introduced.
-`validation/local_dev_strata_protocol_20261017.json` fixes descriptive token classes
-and B0 raw-K1 surprisal quartiles before local likelihood outcomes. Reuse one
-item-to-bin map for every reader; failures stay counted. These secondary strata
-do not filter training or replace the aggregate K1 primary.
-Use full global512 note bundles before controls; preserve writer bundles for later
-terminal reader crosses. Planned idle cores32/36 during lower R1234,0/4 during
-upper R5678 or honest post-training phase; one local job and one held suite at
-a time, only with actual host headroom. All children use the same frozen deadline.
-Source, sampling, prompts, controls and B0 pack are unchanged; no new numerical gate.
+Fixed spec653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7,
+`local/science/experiment-256.json` file SHA22157721…c0dcda; exact deadline
+**2026-10-31T08:27:49+00:00**. Immutable source `local/science/source-256-001`,
+manifest SHA8a0641c6…77faa4, qualified61-file fingerprint
+**244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7**.
+Numerical source remains unchanged. Use archive cwd and override PYTHONPATH to
+archive+`local/test-deps` **after** sourcing env.sh, which hardcodes live-root paths.
+Python `/home/ubuntu/ema-trainium/.venv/bin/python`. Installed CLI is
+`/opt/aws/neuron/bin/neuron-ls --json-output`; default view identifies allocations.
+Normalized format changes only tokenizer_dir to the same absolute B0 tokenizer;
+original format and failed first freeze are preserved with the public path bridge.
 
-## Final evaluation preparation
+Qualification is CLOSED: actual nine-check receipt
+`local/science/qualification-256.json`, SHA3785fed6…45fd9. Public exact copies:
+`validation/science_256_{frozen,qualification,resources}_20261017.json`.
+R14 full execution/recovery pass; actual two-R execution observed, not ten steady
+simultaneous updates or a2× credit. Reports `r_fp32_ram_{execution,resume}_20261017.json`.
+C12 recovery passes its declared distinctions. Original coordinate v1 FAIL and
+prospective held-seed v2 derivative PASS remain; no v3/FP64 investigation without
+an actual new fault. Latest required233 CPU checks +toy PASS in
+`local/checks/tests.XAA5WQ` (existing `local/test-deps` on PYTHONPATH). Qualification
+EOS/negative-utility diagnostics are preserved, not capability evidence.
 
-Reviewed controllers and15 synthetic provenance/projection tests are published in
-`validation/orchestration/final_protocol`; exact copies are staged in
-`local/evaluation/final-protocol-v1`. Required233 CPU checks and toy smoke pass
-in `local/checks/tests.XAA5WQ`; the first invocation lacked existing local test
-dependencies, then succeeded with `local/test-deps` on PYTHONPATH. No stack change.
-All61 active numerical files remain exact244e2f13…. Small report:
-`validation/final_evaluation_preparation_20261017.json`, SHAf06dea41…b3b5ca.
+The first study is one serial C1234,C5678,R1234,R5678 reference, independently
+freshB0 in every arm. Within each seed, exact source order/exposure match; cross-seed
+overlap3,182 is disclosed. Terminal256 is primary, fixed64 development never
+selects a checkpoint. Primary R-thought−C-thought; also R-direct−C-direct,
+R-thought−R-empty and each arm versus B0. Direct permits ordinary calculations.
+Format recovery or C degradation alone is not capability above the starting model.
 
-No actual final plan/lock/projection/freeze exists. Metadata declaration first
-waits for complete B0 local scoring so it can reuse the exact development protocol
-dictionaries. After all four actual terminal256/exit/cleanup/verified backups,
-the controller calls existing full-payload final-model verification and writes an
-immutable pre-gold recipe/model lock. Only then project canonical official data;
-assemble evaluation-freeze-v2 afterward with its actual later timestamp. This
-resolves the projected-gold-hash dependency without changing numerical evaluators
-or pretending a complete manifest preceded projection. New TEST2048 bundles and
-real final-gated inference remain required; DEV bundles cannot be relabeled.
+Actual Qwen3-1.7B-Base/FineMath revisions, asset hashes and audited corpus are in
+the frozen spec:329535 TRAIN/18360 DEV/18239 TEST, random512-prefix/16-future
+anchors; no whitespace/entropy filtering/cycling. B0 held128 GSM8K **TRAIN**
+baseline is113 direct/107 empty/63 thought, all failures counted. Its full51-file
+payload archive is verified on EBS; public `validation/held_dev_B0_20261017.json`.
+Local fixed DEV512 uses one original sampled note/doc (seed1729/T.7), all global
+notes before controls,6 absolute conditions/K1 primary/K4,16 secondary. Reuse one
+B0-derived stratum map for all readers; `validation/local_dev_strata_protocol_20261017.json`
+was declared before local likelihood outcomes. Paired5000/seed17 document
+bootstrap is conditional on checkpoints, not training-seed uncertainty.
 
-After the current held suite completes/cleans up and root backs up its outputs,
-the next explicit release is `python3 local/evaluation/release_idle_development.py held-C C1234-step0256`, followed by that slot's reviewed `launch.sh` in a fresh
-tmux session. After B0 local completion/cleanup/backup, the same helper accepts
-`local-trained C1234-step0064`, then use trained-plans-v1/launch.sh with that slot.
-Helper SHA **bf5460b4…8b213**, reviewed/AST-checked, finite host probes30/15s,
-pending-release reservations and actual dynamic EBS retention accounting. Each
-call only releases one job; it never launches/retries. Continue all healthy jobs.
+Reviewed packs are under `local/evaluation/held-dev128-v1/{c,r}-plans-v1` and
+`local/evaluation/local-dev512-v1/{b0-plan,trained-plans,crossed-plans}-v1`.
+The12 prospective terminal DEV crosses reuse original complete global writer
+bundles; no resampling or deployed-policy claim. Root releases one local job and
+one held suite at a time, only with actual host headroom. Current two packs use
+core32/36 during R1; opposite-phase plans use0/4 during R2 or honest post-training.
 
-Closed development outputs can be copied once with the reviewed stdlib helper
-`python3 local/evaluation/archive_completed.py --control <exact-slot-directory> --output <exact-NVMe-output>`.
-It requires successful completion, departed PID/process groups and an idle owned
-device, then hashes every small source/copy file on distinct NVMe/EBS. It does
-not handle the separately labeled crossed-reader pack. After complete B0 scoring,
-run `python3 local/analysis/freeze_dev_strata.py` once: it implements the already
-public token-class/tie-broken B0 quartile rule using original score-row target
-texts, with no corpus/final-target reads. Synthetic class/tie/failure checks pass;
-no actual B0 likelihood file or stratum mapping has been read/created yet.
-An agent is preparing metadata-only final CLI job scheduling under ignored
-`local/evaluation/final-execution-v1`; no final job is released or launched.
+## Final evaluation — prepared, unlaunched
 
-## Review snapshot
+No actual final plan/model lock/projection/freeze/roster exists. Earlier exclusion
+prepared question/context screening data, with the LAMBADA final target removed;
+do not claim test questions were never accessed. No official performance scores
+have been computed.
 
-Local review ZIP was built from public HEAD04e8971 after fixed checkpoint64,
-then independently checked:388 entries,3,886,635bytes, SHA
-`17f3b5070bd5980d093953ca151bd0e5b5a29210ea23d101992949484006e5a9`.
-Path `local/review/2026-10-17-first-science/dario-first-science-20261017-checkpoint64.zip`.
-Includes source/notices/frozen reports, fixed rank0 TRAIN examples1/7/14 for
-R004/RAM005, and unchanged held128 B0 predictions/scores. Eight raw metadata
-omissions are explicit in the manifest; no tensors/corpus/cache/full environment.
-Link shared with owner; training continued. This snapshot has no trained C/R
-comparison or final test score. It remains local, with no external upload.
+Reviewed public controllers in `validation/orchestration/final_protocol` have
+exact staged copies in `local/evaluation/final-protocol-v1`;15 synthetic tests
+pass. After complete B0 local scores, `prepare_final.py declare` can reuse exact
+DEV protocol dictionaries. Only after all four actual terminal256/exit/cleanup/
+verified EBS states: full existing final-model payload verification, immutable
+pre-gold recipe/model lock, then canonical official projections, then separately
+timed evaluation-freeze-v2. Never relabel DEV bundles as final TEST2048.
+Public report: `validation/final_evaluation_preparation_20261017.json`.
 
-## Storage and limits
+Additional reviewed **ignored preparation only**, `local/evaluation/final-execution-v1`:
+plan.py SHA3a15e3bd…5bfca, aggregate.py SHAd47178f9…fddde, root review
+SHAabffe6fb…981b. Nine tiny synthetic tests pass; no real rows/models/gold read.
+Planner binds all5 models/13 protocols and supports1/2/4/8/16 shards/concurrency
+(default4). All global writer notes precede scoring; every reader receives all
+its writer shards. Controls are globally constructed but output partitioned.
+Same-model cells alone are scheduled; writer-specific protocols are not a reader/
+writer pair allowlist. Aggregator uses exact sealed summary/bootstrap ASTs,
+full global coverage and failures, one complete cell only. Root-owned finite
+executor/actual host releases and successful cleanup receipts are still needed;
+whole-suite model contrasts/report follow real complete coverage. No new gate
+or numerical driver/evaluator change.
 
-Root independently rehashed **all132 source/EBS payload reads** for RAM0057/14,
-PASS: `local/qualification/ram-sequence-v2/lower/terminal-backup-verification.json`,
-SHAd92787e4…8d084b7. The watcher retained7/14 then exited normally. Afterward,
-root verified all33 preserved NVMe payloads for each obsolete EBS duplicate before
-retiring C6, R0031, R0047 and RAM0057. All original NVMe states remain. Aggregate
-retirement receipt `local/qualification/ebs-retirement-before-science-20261017.json`,
-SHA011afcd5…6366b. Current latest qualification EBS copies: C12/R00414/RAM00514;
-unique resumed4 is verified. Actual resource projection leaves12.38GiB EBS beyond
-all retention/rollover/allowances and156.51GiB NVMe beyond saves/logs/contingency.
-Science reserves latest-two EBS copies/run plus **two new payloads+20GiB** for
-backlogged rollover, about71.3GiB. Only one NVMe is formatted; other3 are untouched.
+## Storage and review snapshot
 
-Pilot lowest ordinary MemAvailable point285.93GiB is not a continuous minimum;
-node-monitor total-minus-used is not MemAvailable. One saved exact32-worker
-snapshot sums cumulative VmHWM1,237,113,118,720bytes, overcounting shared pages and
-non-simultaneous peaks. Successful full-loader freeze peak6882680KiB ×32×1.25, plus worker/owner peaks,
-idle host use,64GiB temp and128GiB reserve leaves372.75GiB extra. This is a
-conservative planning projection, not a mathematical peak guarantee. Full resource
-receipt `local/science/preparation-256/resource-feasibility.json`, SHAd7880705…eed8.
-EBS/NVMe share this instance. **Off-instance backup remains unresolved**; no
-approved external destination. No stack upgrade, new instances/IAM/paid teachers,
-unapproved uploads, or additional disk formatting.
+Actual EBS free190.7GiB /NVMe~871GiB at this observation. Reserve eight science
+EBS payloads total plus two rollover copies and20GiB; compute remaining capacity
+from actual retained count, not a stale flat floor. All NVMe originals remain.
+Obsolete qualification EBS duplicates were retired only after verifying all33
+preserved NVMe payloads; receipt `local/qualification/ebs-retirement-before-science-20261017.json`.
+Latest qualification EBS C12/R00414/RAM00514 remain, with unique upper continued4
+at `local/backups/qwen-r-fp32-ram-resume-004/step-0000004`. No new disk formatted.
+Cumulative per-process HWM overcounts shared pages/non-simultaneous peaks; use
+actual MemAvailable plus frozen future-loader/workspace/safety reservations.
+Current available~1TiB. Serial science was selected before its outcomes.
+**Off-instance backup has no approved destination**; EBS and NVMe share this instance.
+No new instances/IAM/networking/stack upgrade/paid teachers/unapproved uploads.
+
+One review ZIP was built/shared today, from public HEAD04e8971 at08:59:
+`local/review/2026-10-17-first-science/dario-first-science-20261017-checkpoint64.zip`,
+3,886,635B, SHA17f3b507…6e5a9,388 entries. It preserves source/notices/frozen
+reports, fixed TRAIN examples and full B0 held128 outputs; no weights/corpus/
+cache/secrets. It is an earlier snapshot, not current HEAD. Next daily review
+around Oct18 or if actually stuck; do not repeatedly rebuild or upload it.
