@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 02:06 UTC
+# Current state — 2026-10-17 02:33 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -92,14 +92,21 @@ actual preflight passed 01:38:30. Output:
 cache stays EBS device66305. Separately bound host I/O policy SHA
 `9d2e1f20f3f38cb30ce41a80f4c3b453f44c4471aed15b382a84a2d8dd8cfb21`.
 
-**R004 first full update passed at 01:57:33 UTC**, 1,093.263 seconds including
-cold shared-cache work. Norm37.18666, sampled FP32 changed fraction .9895161,
-sampled replicas bitwise equal; replay error .00005579. All 32 rank-specific
-optimizer cache hits match actual R003 compilation completions. Update2 began
-01:57:37. Warm-step times and ordinary checkpoint3 state remain pending;
-distributed prepared a reviewed CPU-only state inspection for that checkpoint.
+**R004 latest complete update2 at 02:22:38 UTC**, 1,501.217 seconds including
+the stateful optimizer cold compilation. Norm72.66261, sampled FP32 changed
+fraction .984375, sampled replicas bitwise equal; replay error .00004059.
+Update3 is running; next ordinary checkpoint3. Median/P90 steady timings remain
+pending. Update1 passed at01:57:33 in1,093.263s, including shared cold work: its
+32 optimizer cache hits match actual R003 compilations. Neither is a warm sample.
+Distributed prepared the reviewed CPU state inspection for checkpoint3 and will
+measure checkpoint time separately from per-step elapsed.
 Transient CCOM RX retries during rank convergence cleared into the successful
 update. No recorded device execution failure. No steady-speed claim yet.
+HBM correction: sysfs rows are per physical NC; adjacent pairs share one bank in
+LNC2. Sampled R004 maximum pair21.7915GiB versus maximum single NC20.5666GiB.
+Installed driver exposes23.984375GiB after firmware carveout, split into pools;
+this is not guaranteed contiguous space. Existing runtime aggregate reports are
+not doubled. See `validation/r_hbm_capacity_20261017.json`.
 
 **Root owns active R004 backup supervisor:** launcher897722, timeout/PGID897725,
 Python897726; startticks3586343/3586344; tmux `dario-r-nvme-tmp004-backup`.
@@ -162,6 +169,27 @@ and checked against the tape. Lengths342/1024/146/298, three EOS/one cap;
 all raw gains negative on this prefix. The initial full128-prefix batch's mean
 gain is also negative. Preserve these observations; neither is a downstream
 result or an outcome-based stop condition.
+
+**Data owns active original prefix-only check**, one lower logical core0.
+Launcher1032724, timeout/PGID1032802, probe1032804, monitor timeout1032801/worker
+1032803; identities in `local/qualification/qwen-prefix-only-fp32-001/`.
+Reviewed prep14be2430…, root release115b1745…; launched02:30:40 after fresh
+lower-free preflight. Deadline **03:00:27.908367 UTC** plus15s grace. Source
+common3aa/244…, actualB0, G4/cap1024/FP32/T.7, no gradients/optimizer; two
+actual future inputs differ at K1 while model/device RNG stay fixed. This closes
+one original missing accelerator counterfactual; no new oracle. Private RAM
+TMPDIR, NVMe output/observations, unchanged EBS cache. Upper R00432 identities
+remain unchanged. No automatic retry; data owns finite cleanup/results.
+
+**Fixed held development prepared/reviewed, no models scored:**128 deterministic
+GSM8K TRAIN items, all11 past demonstration/interface questions excluded by ID
+and normalized text. Existing4shot prompt unchanged; gold stays separate.
+Plan B0 plus C/R1234/5678 at64/256, three modes each, FP32/caps1024/256.
+Source TRAIN flags are required by existing CLI; wrapper purpose is held
+development. Manifest `local/evaluation/held-dev128-v1/manifest.json`, SHA
+`9bc3d2e5c8d2e659ede1dd9c007dd45b63f43e493ebc3203657d15c92081e6e7`.
+Independent review reproduced selection/disjointness/gold alignment. Public
+protocol copy `validation/held_dev_protocol_20261017.json`. No TEST source read.
 
 **Held-seed jobs complete:** C32 update/COMPLETE and FP64 full derivative both
 exited 0; comparator exited 0/PASS. All upper-core workers and supervisors are

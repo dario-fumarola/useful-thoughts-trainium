@@ -1,0 +1,78 @@
+{
+  "HBM_stacks_per_device": 4,
+  "created_utc": "2026-10-17T02:22:22.778129+00:00",
+  "device_architecture": "NDv3",
+  "device_name": "Trainium2",
+  "driver_accessible_HBM_interval_GiB": 23.984375,
+  "driver_accessible_HBM_interval_bytes": 25753026560,
+  "driver_interval_minus_sampled_allocated_GiB": 2.192859649658203,
+  "driver_interval_minus_sampled_allocated_bytes": 2354565120,
+  "firmware_carveout_bytes": 16777216,
+  "interpretation_limits": "Sampled allocated counters, not a continuous high-water trace. Driver-accessible interval does not guarantee that any single allocation can use all residual bytes; runtime pools, fragmentation and sampling gaps remain distinct. The rounded TOTAL in the old OOM dump is current usage, not the stack limit.",
+  "loaded_driver_version": "2.30.2.0",
+  "original_raw_preserved": true,
+  "peak_HBM_index": 2,
+  "peak_device": 9,
+  "peak_paired_allocated_GiB": 21.791515350341797,
+  "peak_paired_allocated_bytes": 23398461440,
+  "peak_per_NC_raw_fields": {
+    "4": {
+      "bank_total": 22083190784,
+      "collectives": 101867520,
+      "constants": 3383296,
+      "dma_rings": 274182144,
+      "driver_memory": 0,
+      "model_code": 1135624192,
+      "model_shared_scratchpad": 6106906624,
+      "nonshared_scratchpad": 8192,
+      "notifications": 0,
+      "runtime_memory": 47902720,
+      "tensors": 14413316096,
+      "uncategorized": 0
+    },
+    "5": {
+      "bank_total": 1315270656,
+      "collectives": 0,
+      "constants": 3383296,
+      "dma_rings": 205938688,
+      "driver_memory": 0,
+      "model_code": 1063976960,
+      "model_shared_scratchpad": 0,
+      "nonshared_scratchpad": 0,
+      "notifications": 0,
+      "runtime_memory": 41971712,
+      "tensors": 0,
+      "uncategorized": 0
+    }
+  },
+  "peak_physical_NC_membership": [
+    4,
+    5
+  ],
+  "peak_sample_utc": "2026-10-17T02:01:05.315287+00:00",
+  "physical_HBM_GiB": 24.0,
+  "physical_HBM_bytes": 25769803776,
+  "recorded_runtime_device_memory_size_bytes": {
+    "10": 103079215104,
+    "11": 103079215104,
+    "12": 103079215104,
+    "13": 103079215104,
+    "14": 103079215104,
+    "15": 103079215104,
+    "8": 103079215104,
+    "9": 103079215104
+  },
+  "runtime_topology_sha256": "464c4b2062cf3c5c6353e6a07244d4deaf4b7c619e9fccd5aff13792705588a7",
+  "schema": "R004-HBM-capacity-binding-v1",
+  "scope": "Installed driver source and recorded runtime topology only; no library initialization, allocation or new device work.",
+  "source_definitions": {
+    "firmware_carveout": "neuron_mempool.c:317 MEMPOOL_CARVEOUT_SIZE=0x1000000; mpset_block_carveout_regions reserves it per HBM and shifts effective base",
+    "pair_membership": "v3/neuron_dhal_v3.c:1318-1322 ncdev_get_default_tpbs_for_hbm_v3: tpbs={2*hbm_index,2*hbm_index+1}",
+    "physical_capacity": "v3/address_map.h:92 V3_HBM_ACTIVE_SIZE=0x600000000ull"
+  },
+  "source_files_sha256": {
+    "/usr/src/aws-neuronx-2.30.2.0/neuron_mempool.c": "c502557450326a1b8309a6ad5307adec4fb251ad1019f76cf6fd4c3ae72ef287",
+    "/usr/src/aws-neuronx-2.30.2.0/v3/address_map.h": "fe10c6c2dcd241547e4feb042d5ba9ebe47448b0e6c14138aa04379a028e1fa6",
+    "/usr/src/aws-neuronx-2.30.2.0/v3/neuron_dhal_v3.c": "863f0b878b17f3f744bdfbfd34924c5a5f4f6b7eadf28c8d7a9079f4db60be5c"
+  }
+}

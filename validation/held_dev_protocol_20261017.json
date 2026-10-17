@@ -1,0 +1,158 @@
+{
+  "created_utc": "2026-10-17T02:26:23.776204+00:00",
+  "dataset": {
+    "configuration": "main",
+    "id": "openai/gsm8k",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "source_file": "/home/ubuntu/dario/local/data/benchmark_exclusion/sources/openai--gsm8k/main/train-00000-of-00001.parquet",
+    "source_sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+    "split": "train"
+  },
+  "dependency_sha256": {
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "disjointness_and_file_checks": {
+    "all_prior_interface_inputs_unchanged": true,
+    "canonical_train_ids_only": true,
+    "excluded_id_overlap": [],
+    "excluded_normalized_question_overlap": 0,
+    "generation_rows_have_no_gold_fields": true,
+    "items": 128,
+    "locked_prompt_byte_identical": true,
+    "no_device_allocations": true,
+    "no_models_scored": true,
+    "no_test_parquet_or_test_gold_opened": true,
+    "question_gold_order_identical": true,
+    "source_train_parquet_unchanged": true,
+    "unique_ids": true,
+    "unique_normalized_questions": true
+  },
+  "existing_cli": {
+    "generation_flag": "--qualification",
+    "meaning": "These flags permit canonical TRAIN input. External purpose remains held development, never hardware qualification evidence or official test.",
+    "required_generation_flags": [
+      "--qualification",
+      "--compute",
+      "fp32",
+      "--head-precision",
+      "fp32",
+      "--thought-cap",
+      "1024",
+      "--max-answer-tokens",
+      "256"
+    ],
+    "scoring_flag": "--qualification"
+  },
+  "files": {
+    "gold.jsonl": {
+      "path": "/home/ubuntu/dario/local/evaluation/held-dev128-v1/gold.jsonl",
+      "sha256": "3bb09430a965837a1ba86a4c1c7d27915f5794e19c5afc78251d1bbdbd1d6eb3"
+    },
+    "prompt.json": {
+      "path": "/home/ubuntu/dario/local/evaluation/held-dev128-v1/prompt.json",
+      "sha256": "63de67bc2cfe72f698feb32580ec3aa42a716114d7bc1c4e6239b2df39eb441a"
+    },
+    "questions.jsonl": {
+      "path": "/home/ubuntu/dario/local/evaluation/held-dev128-v1/questions.jsonl",
+      "sha256": "c5030a8fc1cc8ba258b93e69a35159bdfff890fea635299342585d423e6321a6"
+    }
+  },
+  "inventory_binding_note": "Actual checkpoint/source/run/model hashes must be recorded when used; this file does not invent future checkpoint identities.",
+  "planned_conditions": 27,
+  "planned_model_count": 9,
+  "planned_model_inventory": [
+    {
+      "arm": "B0",
+      "checkpoint_rule": "released pretrained B0",
+      "seed": null,
+      "step": 0
+    },
+    {
+      "arm": "vanilla",
+      "checkpoint_rule": "fixed development milestone",
+      "seed": 1234,
+      "step": 64
+    },
+    {
+      "arm": "thought",
+      "checkpoint_rule": "fixed development milestone",
+      "seed": 1234,
+      "step": 64
+    },
+    {
+      "arm": "vanilla",
+      "checkpoint_rule": "fixed terminal primary checkpoint",
+      "seed": 1234,
+      "step": 256
+    },
+    {
+      "arm": "thought",
+      "checkpoint_rule": "fixed terminal primary checkpoint",
+      "seed": 1234,
+      "step": 256
+    },
+    {
+      "arm": "vanilla",
+      "checkpoint_rule": "fixed development milestone",
+      "seed": 5678,
+      "step": 64
+    },
+    {
+      "arm": "thought",
+      "checkpoint_rule": "fixed development milestone",
+      "seed": 5678,
+      "step": 64
+    },
+    {
+      "arm": "vanilla",
+      "checkpoint_rule": "fixed terminal primary checkpoint",
+      "seed": 5678,
+      "step": 256
+    },
+    {
+      "arm": "thought",
+      "checkpoint_rule": "fixed terminal primary checkpoint",
+      "seed": 5678,
+      "step": 256
+    }
+  ],
+  "preparation_source_sha256": "65dfba5496e42f6581622fd5fb07748019100167e2aea0c9bcc09619ab424592",
+  "primary_checkpoint_rule": "fixed terminal256; milestone64 is development only, no best-checkpoint selection",
+  "prompt": {
+    "locked_source": "/home/ubuntu/dario/local/evaluation/dev-inputs-4shot-v1/prompt.json",
+    "protocol_name": "qwen_family_4shot_hash4_v1",
+    "sha256": "63de67bc2cfe72f698feb32580ec3aa42a716114d7bc1c4e6239b2df39eb441a",
+    "unchanged": true
+  },
+  "prospective_terminal_step": 256,
+  "protocol": {
+    "compute": "fp32",
+    "head_precision": "fp32",
+    "max_answer_tokens": 256,
+    "modes": [
+      "direct",
+      "empty_format",
+      "one_thought"
+    ],
+    "no_prompt_or_parser_changes": true,
+    "parser": "existing strict_final_hash4_number_v1",
+    "retain_errors_and_truncations_in_denominator": true,
+    "selection_policy": "single_greedy",
+    "thought_cap": 1024
+  },
+  "purpose": "held_development",
+  "pyarrow_version": "25.0.1",
+  "schema": "held-gsm8k-development-manifest-v1",
+  "selection": {
+    "file": "/home/ubuntu/dario/local/evaluation/held-dev128-v1/selection.json",
+    "items": 128,
+    "ordered_item_ids_sha256": "414398067ac354f5e42dfdbc25a557a353ac971a75d85ec9162fd293bd5def39",
+    "sha256": "044bf30b847cd3294f30d8622b358e891563be9081787a61b24221b68d27780f"
+  },
+  "status": "PREPARED_NOT_EVALUATED_PENDING_REVIEW"
+}
