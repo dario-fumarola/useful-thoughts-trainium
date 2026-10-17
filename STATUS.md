@@ -174,6 +174,17 @@ Prepared/reviewed finite development packs: held128 C suites in
 local slots `local/evaluation/local-dev512-v1/trained-plans-v1` (manifest7cbdbc51…).
 B0 local and held C1234@64 are now released/running; the remaining C suites and
 trained local slots await root release.
+Root also reviewed the four R held128 plans in
+`local/evaluation/held-dev128-v1/r-plans-v1` (manifest9cbdf2fe…) and the12 original
+terminal writer/reader crosses in `local/evaluation/local-dev512-v1/crossed-plans-v1`
+(manifest0b566808…). Both remain unreleased. Crosses reuse complete original512
+writer bundles; they do not resample or claim deployed-policy performance.
+R5678-terminal jobs use an honest post-training phase. No active source change,
+new numerical gate or final-test access was introduced.
+`validation/local_dev_strata_protocol_20261017.json` fixes descriptive token classes
+and B0 raw-K1 surprisal quartiles before local likelihood outcomes. Reuse one
+item-to-bin map for every reader; failures stay counted. These secondary strata
+do not filter training or replace the aggregate K1 primary.
 Use full global512 note bundles before controls; preserve writer bundles for later
 terminal reader crosses. Planned idle cores32/36 during lower R1234,0/4 during
 upper R5678 or honest post-training phase; one local job and one held suite at

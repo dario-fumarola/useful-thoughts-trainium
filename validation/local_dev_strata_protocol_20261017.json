@@ -1,0 +1,77 @@
+{
+  "B0_surprisal": {
+    "assignment": "After complete B0 local scoring, sort finite B0 raw K1 surprisal ascending, break exact ties by item_id lexical order; zero-based rank r of n valid baselines goes to bin floor(4*r/n)+1. All512 valid gives four128-document bins.",
+    "baseline_only": true,
+    "definition": "Negative B0 raw K1 log likelihood of the true first continuation token; not predictive entropy.",
+    "missing": "Every unavailable/nonfinite/error B0 raw K1 item stays in an explicit unassigned_baseline_failure stratum; do not impute, drop, or resample it.",
+    "reuse": "Freeze one item-to-bin map with source score SHA and empirical ranges before trained local analysis; reuse unchanged for all same-model and crossed-reader DEV512 results. Never recompute bins from C/R outcomes."
+  },
+  "checkpoint_selection_changed": false,
+  "comparisons": {
+    "absolute_arms": "All six conditions at each horizon, including statuses and denominator in every stratum.",
+    "cross_model": "Same fixed stratum membership for predeclared C/R/B0 contrasts; seed-specific results remain separate.",
+    "multiplicity": "Strata and K4/K16 are secondary descriptive analyses; they do not select checkpoints or replace the aggregate K1 primary.",
+    "uncertainty": "Paired document bootstrap,5000 replicates,seed17, sampling documents within the fixed stratum with replacement; conditional on checkpoints. No numeric contrast/CI with fewer than2 documents or any required pair missing/nonfinite. Successful-only descriptive likelihoods must be explicitly labeled.",
+    "within_reader": [
+      "own-raw",
+      "own-empty",
+      "own-filler",
+      "own-shuffled",
+      "own-other"
+    ]
+  },
+  "controls": [
+    "raw",
+    "empty",
+    "own",
+    "filler",
+    "shuffled",
+    "other"
+  ],
+  "declared_utc": "2026-10-17T15:59:12.393258+00:00",
+  "frozen_spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+  "horizons": [
+    1,
+    4,
+    16
+  ],
+  "items": 512,
+  "new_hardware_or_numerical_gate": false,
+  "observed_at_declaration": {
+    "B0_local_score_directory_exists": false,
+    "B0_local_stage": "generate",
+    "held_GSM8K_development_running": true,
+    "training_metrics_already_observed": true
+  },
+  "official_final_test_access": false,
+  "ordered_item_ids_sha256": "4f58ecd7b6faeaad010485d858e42f8498aa804c5bd120bc4ae126dcbf6b7127",
+  "primary_horizon": 1,
+  "purpose": "Secondary description of existing fixed random development audit; primary all-document contrasts and training unchanged",
+  "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff",
+  "schema": "fixed-DEV512-descriptive-strata-v1",
+  "selection_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+  "status": "declared_before_local_likelihood_outcomes",
+  "token_class": {
+    "decode": {
+      "clean_up_tokenization_spaces": false,
+      "skip_special_tokens": false
+    },
+    "existing_descriptive_report_sha256": "b925469d49abe63d1669eef8aff091f45c652b336a1d000f1024e15f62da9ead",
+    "existing_descriptive_script_sha256": "c280a09fde03a39a7f421a9acb6bd632bd3f1a48d122c75fd0a5ea095916e003",
+    "fixed_DEV512_counts": {
+      "contains_digit_no_letter": 59,
+      "contains_letter": 303,
+      "punctuation_or_symbol": 117,
+      "whitespace_only": 33
+    },
+    "rule_order": [
+      "empty decoded first target token",
+      "whitespace_only: text.isspace()",
+      "contains_letter: any Unicode character isalpha()",
+      "contains_digit_no_letter: any character isdigit()",
+      "punctuation_or_symbol: every character is whitespace or Unicode category P or S",
+      "other"
+    ]
+  },
+  "training_anchor_filtering": false
+}
