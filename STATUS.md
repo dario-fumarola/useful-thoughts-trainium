@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 00:58 UTC
+# Current state — 2026-10-17 01:21 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -90,9 +90,14 @@ increased by one, with zero failure increments. All main banks fell to about
 backward `MODULE_922332460170596362` compiled at 00:32:51 and passed on all ranks.
 Fourth-thought backward `MODULE_4430468595289365099` compiled at 00:54:18.
 All 32 micro-0 tapes now exist, written after each rank's four synchronized
-backwards. Subsequent sampling/scalar graphs are reusing cached executables;
-later-micro g0 accumulation, initialized optimizer state and a complete update
-remain pending. Replay audit runs only at micro 0; later micros skip that audit.
+backwards. Later-micro g0 accumulation `MODULE_16022798442968481532` compiled at
+01:15:08 and executed on all 32 workers by 01:19:06, with zero failure increments.
+The current bank maximum is about 16.52 GiB. Subsequent sampling, scalar losses
+and thought-slot backwards are reusing cached executables; no compiler is active
+at the latest observation. Complete micro coverage, initialized optimizer state
+and a full update remain pending. Existing logs will distinguish program load,
+execution and rank skew once complete warm-step timings exist. Replay audit runs
+only at micro 0; later micros skip that audit.
 **No complete R update yet.** Separate sysfs memory sampling is read-only.
 
 The fixed step-1/rank-0/micro-0 TRAIN example is saved in full as
