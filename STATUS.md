@@ -1,7 +1,7 @@
-# Current state — 2026-10-17 17:49 UTC
+# Current state — 2026-10-17 18:32 UTC
 
 **Both C runs finished256/exit0/cleanup and verified terminal backups. R1234 is
-at37/256. C1234@64 development is complete; its terminal evaluation is running.**
+at41/256. C1234@64 development is complete; its terminal thought evaluation is running.**
 The owner authorizes sustained autonomous work, agents and public Git updates.
 Follow `CODEX_NEXT_DAY.md`; its companion review file was not found. Weeks are
 available. The frozen14-day window is a planning bound, not an instance shutdown.
@@ -12,9 +12,9 @@ Only `/home/ubuntu/dario` and its authorized local assets/outputs are used.
 
 | Job | Current state | Control / output | tmux / actual processes |
 |---|---|---|---|
-| R1234 | Complete37 at17:46:56UTC,697.712s;4,736 records,2,429,568 source tokens,1,667,911 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
-| B0 local DEV512 |261/512 original notes at17:49; likelihood scoring not started | `local/evaluation/local-dev512-v1/b0-plan-v1` / `local/nvme/evaluation/local-dev512-v1-B0-001` | `dario-dev-local-B0-512`; launcher1857552, generation timeout1857562, worker1857563; core32/device8 |
-| Held C1234@256 |30/128 direct items at17:49; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current direct timeout1934668/worker1934669; core36/device9 |
+| R1234 | Complete41 at18:30:16UTC,640.191s;5,248 records,2,692,224 source tokens,1,690,126 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
+| B0 local DEV512 |347/512 original notes at18:32; likelihood scoring not started | `local/evaluation/local-dev512-v1/b0-plan-v1` / `local/nvme/evaluation/local-dev512-v1-B0-001` | `dario-dev-local-B0-512`; launcher1857552, generation timeout1857562, worker1857563; core32/device8 |
+| Held C1234@256 |Direct and empty-format128/128 generated/scored; thought6/128 at18:32; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current thought timeout1958512/worker1958513; core36/device9 |
 
 PIDs are observations, not launch authority; recheck start times, ancestry and
 actual topology at each action. Each evaluator changes its child at stage changes.
@@ -26,8 +26,9 @@ No prompt/cap/seed/terminal rule was changed after observing outputs.
 
 Existing agents: `/root/distributed` supervises R through32/48/64 and verified
 EBS64; `/root/data` supervises the held suite through complete coverage/exit/cleanup,
-then computes the full paired comparison. It now watches C256, without partial
-accuracy inspection. The completed C64/B0 report is saved and backed up. `/root/review` is idle after static preparation/review. Root owns all
+then computes the full paired comparison and the same fixed-first4 example set.
+It now watches C256, without partial accuracy inspection. The completed C64/B0
+report is saved and backed up. `/root/review` is idle after final-controller preparation/review. Root owns all
 releases, launches, backups, signals and public updates. No automatic retry/run-all.
 
 Root-owned shared supervisors remain RUNNING:
@@ -229,10 +230,22 @@ Planner binds all5 models/13 protocols and supports1/2/4/8/16 shards/concurrency
 its writer shards. Controls are globally constructed but output partitioned.
 Same-model cells alone are scheduled; writer-specific protocols are not a reader/
 writer pair allowlist. Aggregator uses exact sealed summary/bootstrap ASTs,
-full global coverage and failures, one complete cell only. Root-owned finite
-executor/actual host releases and successful cleanup receipts are still needed;
-whole-suite model contrasts/report follow real complete coverage. No new gate
-or numerical driver/evaluator change.
+full global coverage and failures, one complete cell only.
+
+The finite foreground `execute_group.py` is also reviewed preparation only,
+SHAbcf73aa5…5759ac; `executor.root-review.json` SHA9ededf0b…1e4831.
+It executes exactly one explicit root-released roster group, checks real final
+metadata/source/dependencies and all-writer barriers, then freshly admits actual
+idle devices/headroom/private RAM/ports. Pending/preallocation development jobs
+and prior final owned survivors block admission. Remaining-deadline GNU timeouts,
+actual PID/start/environment/mapping and process-local subreaper cleanup produce
+immutable exits and aggregator-compatible snapshots. Nine tiny synthetic tests
+pass; two pre-use draft defects (missing note-helper SCHEMA and incomplete live-job
+exclusion) were corrected and specifically tested, with drafts preserved. No
+actual final inputs, probes, roster/release or jobs were used. Actual root resource
+floors/releases and successful execution/cleanup receipts are still required;
+SIGKILL/host loss needs manual recovery. Whole-suite contrasts/report follow real
+complete coverage. No numerical driver/evaluator or protocol change.
 
 ## Storage and review snapshot
 

@@ -63,7 +63,7 @@ idle devices while R1234 continues through its fixed256 updates.
   [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
   [C5678](validation/science_C_seed5678_execution_20261017.json),
   [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from B0 and reached37/256 at17:46UTC. The
+- R1234 independently started from B0 and reached41/256 at18:30UTC. The
   [first32-update record](validation/science_R_seed1234_first32_20261017.json) and
   [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg)
   retain every elapsed observation and changing generation workload. TRAIN

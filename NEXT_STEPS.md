@@ -2,8 +2,8 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active R1234 on lower0–31 through fixed256; latest complete step37 at
-   17:46:56UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step41 at
+   18:30:16UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
    Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
    all NVMe originals remain. Both shared supervisors are RUNNING.
 
@@ -19,7 +19,8 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
    No new numerical gates.
 
 3. Supervise root-released B0 local DEV512 on idle core32 (started15:37:49UTC)
-   and held128 C1234@256 on separate core36 (started17:44:55UTC). Root owns their
+   and held128 C1234@256 on separate core36 (started17:44:55UTC; direct/empty
+   complete, thought running). Root owns their
    actual allocation/headroom and health. C64 all3 modes/exit0/cleanup/paired report
    are complete and verified on EBS:111/108/60 versus B0113/107/63; conditional CIs
    include0. Packs/roles are in STATUS; all other development slots are unreleased.
