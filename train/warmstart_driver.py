@@ -51,6 +51,41 @@ def validate_source_files(files):
         raise ValueError("Protocol omits a required training/packing/loss source")
 
 
+def training_layout(p):
+    layout = p.get("training_layout", "joint_reanchor32")
+    if layout not in ("joint_reanchor32", "writer_only"):
+        raise ValueError("Unknown training_layout")
+    return layout
+
+
+def validate_dataset_layout(p, dataset, rows):
+    layout = training_layout(p)
+    if (dataset.get("training_layout", "joint_reanchor32") != layout
+            or any(row.get("training_layout", "joint_reanchor32") != layout for row in rows)):
+        raise ValueError("Protocol/dataset/every row must share one training_layout")
+    if layout == "writer_only":
+        if dataset.get("packer_source") != "train/warmstart_data.py":
+            raise ValueError("Writer-only dataset must bind the actual packer source")
+        for role in ("selector", "packer"):
+            name, digest = dataset.get(f"{role}_source"), dataset.get(f"{role}_source_sha256")
+            if not name or not digest or p["source_files"].get(name) != digest:
+                raise ValueError(f"Dataset {role} source differs from the training source closure")
+        if (dataset.get("source_sha256") != dataset["selector_source_sha256"]
+                or not dataset.get("source_files")
+                or any(p["source_files"].get(name) != digest for name,digest in dataset["source_files"].items())):
+            raise ValueError("Dataset selection/source closure differs from training")
+    return layout
+
+
+def supervision_counts(packed, arm, layout):
+    note = int(packed["note_close_mask"].sum())
+    future = int(packed["future_mask"].sum())
+    expected_future = 0 if arm == "warmstart" and layout == "writer_only" else 16
+    if future != expected_future or (note != 0 if arm == "raw_control" else not 2 <= note <= 258):
+        raise ValueError("Packed supervision masks disagree with the declared arm/layout")
+    return note, future
+
+
 def validate_protocol(p, processes):
     from weekend_thinking.runtime_policy import POLICY_ENVIRONMENT
     expected = dict(seed=20261018, world_size=8, steps=64, lr=1e-5,
@@ -61,6 +96,7 @@ def validate_protocol(p, processes):
     for name, value in expected.items():
         if isinstance(p.get(name), bool) or p.get(name) != value:
             raise ValueError(f"Unsupported frozen setting: {name}")
+    training_layout(p)
     for name in ("seed", "world_size", "steps"):
         if type(p[name]) is not int:
             raise ValueError(f"Expected integer {name}")
@@ -95,11 +131,13 @@ def load_inputs(p):
             or dataset["examples_sha256"] != p["data_sha256"] or len(set(ids)) != len(ids)
             or dataset["item_ids_sha256"] != canonical_hash(ids)):
         raise ValueError("Dataset metadata/unique TRAIN examples mismatch")
+    layout = validate_dataset_layout(p, dataset, rows)
     fmt = Format.from_dict(json.loads(Path(p["format_file"]).read_text())["format"])
     vocab = json.loads((Path(p["model_dir"]) / "config.json").read_text())["vocab_size"]
     for row in rows:
         for arm in ARMS:
             packed = pack_example(row, fmt, arm)
+            supervision_counts(packed, arm, layout)
             if bool((packed["input_ids"] >= vocab).any()):
                 raise ValueError("Packed input token outside released vocabulary")
     return rows, fmt, model
@@ -143,11 +181,16 @@ def worker(_index, args, p, rows, fmt, assets, protocol_hash):
     found_inf = torch.zeros((), device=device)
     order = [order_index(i, len(rows), p["seed"]) for i in range(world*p["steps"])]
     order_hash = canonical_hash([rows[i]["item_id"] for i in order]); spec_hash = canonical_hash(p)
+    layout = training_layout(p)
+    objective = ("raw_future16_ce" if args.arm == "raw_control" else
+                 "writer_note_close_ce" if layout == "writer_only" else "joint_note_close_and_future16_ce")
     if rank == 0:
         args.output.mkdir(parents=True, exist_ok=False)
         atomic_json(args.output/"run.json", dict(started_utc=utc_now(), arm=args.arm, seed=p["seed"],
             protocol_sha256=protocol_hash, spec_hash=spec_hash, order_hash=order_hash, model=assets,
             dataset_items=len(rows), planned_steps=p["steps"], world_size=world, compute="fp32",
+            training_layout=layout, objective=objective,
+            source_tokens_definition="Processed prefix tokens plus supervised true-future tokens; note/close labels counted separately",
             runtime_policy=runtime_policy(), limitations="Future-selected TRAIN supervision; no deployed-policy benefit claim."))
     xm.rendezvous('warmstart-output-ready'); torch_xla.sync(wait=True)
     xm.set_rng_state(p["seed"]+100003*rank, device)
@@ -162,6 +205,7 @@ def worker(_index, args, p, rows, fmt, assets, protocol_hash):
         if rank == 0:
             atomic_json(args.output/"completion.json", dict(completed_utc=utc_now(),
                 arm=args.arm, actual_steps=0, planned_steps=p["steps"],
+                training_layout=layout, objective=objective,
                 stopped_after_setup=True, counters=counters, protocol_sha256=protocol_hash))
         dist.destroy_process_group()
         return
@@ -170,6 +214,7 @@ def worker(_index, args, p, rows, fmt, assets, protocol_hash):
     for step in range(p["steps"]):
         started = time.monotonic(); optimizer.zero_grad(set_to_none=True); before = sample_parameters()
         row = rows[order[step*world+rank]]; packed = pack_example(row, fmt, args.arm)
+        note_count, future_count = supervision_counts(packed, args.arm, layout)
         ce = masked_causal_ce(backend, **packed, note_weight=p["note_weight"], future_weight=p["future_weight"])
         losses = torch.stack([ce.loss.detach(), ce.note_close_loss.detach(), ce.future_loss.detach()]).cpu().tolist()
         if not all(math.isfinite(x) for x in losses):
@@ -184,12 +229,14 @@ def worker(_index, args, p, rows, fmt, assets, protocol_hash):
         if (not math.isfinite(norm) or norm <= 0 or not bool(torch.isfinite(after).all()) or not bool(delta.ne(0).any())
                 or not torch.equal(replicas, replicas[:1].expand_as(replicas))):
             raise RuntimeError("Nonfinite/unchanged sampled parameters or replica mismatch")
-        local = losses+[int(packed["note_close_mask"].sum()), int(packed["future_mask"].sum())]
+        local = losses+[note_count, future_count]
         totals = xm.all_reduce(xm.REDUCE_SUM, torch.tensor(local, device=device)).cpu().tolist()
-        counters["source_records"] += world; counters["source_tokens"] += world*528
+        counters["source_records"] += world; counters["source_tokens"] += world*512 + int(totals[4])
         counters["note_close_labels"] += int(totals[3]); counters["future_labels"] += int(totals[4])
         passes, partial = divmod(counters["source_records"], len(rows))
         metric = dict(step=step+1, time_utc=utc_now(), arm=args.arm, elapsed_seconds=time.monotonic()-started,
+            training_layout=layout, objective=objective,
+            supervised_note_close_labels_this_update=int(totals[3]), supervised_future_labels_this_update=int(totals[4]),
             loss=totals[0]/world, note_close_loss=totals[1]/world, future_loss=totals[2]/world,
             gradient_norm=norm, counters=counters.copy(), complete_ordered_passes=passes,
             next_pass_records=partial, ordered_item_ids=[rows[i]["item_id"] for i in order[step*world:(step+1)*world]],
@@ -207,6 +254,7 @@ def worker(_index, args, p, rows, fmt, assets, protocol_hash):
                 dict(spec_hash=spec_hash, order_hash=order_hash, counters=counters.copy(), arm=args.arm,
                      seed=p["seed"], global_batch=world, accumulation=1, protocol_sha256=protocol_hash,
                      data_sha256=p["data_sha256"], dataset_sha256=p["dataset_sha256"],
+                     training_layout=layout, objective=objective,
                      parameter_dtype="fp32", compute_dtype="fp32", runtime_policy=runtime_policy(),
                      complete_ordered_passes=passes, next_pass_records=partial,
                      stopped_early=stop and step+1<p["steps"]),

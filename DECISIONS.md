@@ -463,3 +463,41 @@ follow measured availability, not the existence of new infrastructure.
 
 Padding diagnosis passed both signs/empty/real89-action/full1.72B gradients;
 record the isolated warm improvement, not a distributed throughput claim.
+
+### 2026-10-17 23:50 UTC — learn the writer against a fixed low-tax reader
+
+Prepending the SAME2048 TRAIN candidates yields K16 best16−empty+1.026,
+with max-own−max-unrelated+.535 CI[+.325,+.749] and max-own−max-shuffled
++.273 CI[+.088,+.466]. Average own−empty remains−1.072. These are TRAIN
+oracle statistics, not a usable prefix-only policy. The boundary repair exposes
+a candidate signal worth learning without claiming the present writer helps.
+
+Choose a short positive-only writer behavior-cloning experiment, rather than
+joint reader training or another RL run. At each TRAIN doc select highest own
+K16 first, then require a nonempty strict win over raw, same-empty and each
+same-index content control.77/128 remain, all128 decisions saved. Preserve the
+older31-label reanchor dataset as a separate unused artifact. Future labels
+serve TRAIN selection only; actual writer tensors contain header/prefix/open/
+selected note/canonical close, no true future or reanchor, verified by replacing
+every future. Supervise note+synthetic canonical close only at T1/full support.
+
+Release64updates/global8/LR1e-5/FP32 from actual B0 with eight-rank ZeRO,
+complete16/64 states, finite6h deadline and monitored first actual update.
+Then ordinary future16 CE control from B0 on identical selected IDs/order/
+updates/optimizer, reporting unequal CE-token counts and compute. Primary
+evaluation uses fresh G1 DEV64 notes with unchanged B0 prepend reader; adapted
+reader diagonals/crosses are secondary. Selected TRAIN utility cannot pass it.
+
+Separately release the local Qwen3-4B TRAIN16 prefix-only/hindsight pilot after
+CPU reference preparation. Both native/device forward checks pass before any
+generation (max.000447). First actual replay gates and all32 notes must close
+before content-control scoring. This remains teacher-assisted label evidence.
+
+The first eight-rank launch failed at the initial rendezvous before updates:
+the installed list parser correctly remapped ranks, but the sparse collective
+device graph had no supported path. Preserve V1 exit1/log/run.json/zero-update
+receipt. V2 changes only launch placement to contiguous aligned cores8-15 on
+adjacent chips2/3; source/data/pair protocol are identical. The official
+[runtime developer guide](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-runtime/guides/nrt-developer-guide.html)
+also requires a contiguous resulting core range. Actual V2 execution remains
+to be checked; no source-level acceptance is called a hardware pass.

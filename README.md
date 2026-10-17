@@ -29,8 +29,8 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**The initial R study has been stopped. We are investigating the thought
-interface and candidate signal before another training run.** Both C seeds
+**The initial R study has been stopped. A short writer-only warmstart now tests
+whether useful selected candidates can become useful fresh notes.** Both C seeds
 finished256 updates. R1234 stopped cleanly after update63 and saved its state;
 R5678 was not launched. The original primary R/C comparison is incomplete.
 
@@ -90,7 +90,13 @@ The [note-before-prefix probe](validation/prepend_reader_dev32_20261017.json)
 provides a cleaner boundary: empty−raw is+.009 nats atK1 and+.032 atK16.
 Original G1 content still hurts over16 future tokens: own−empty−1.783,
 95% paired interval[−3.041,−.740]. This repairs format cost without establishing
-useful thoughts. A separate TRAIN rescore now reuses all2048 saved candidates.
+useful thoughts. The [completed TRAIN rescore](validation/candidate_prepend_train128_20261017.json)
+reuses all2048 saved candidates. Across128 documents, prepend K16 mean16−empty
+is−1.072, while future-selected best16−empty is+1.026 [+.841,+1.226].
+Max16-own beats max16-unrelated by+.535 [+.325,+.749] and max16-shuffled
+by+.273 [+.088,+.466]. This is conditional TRAIN oracle evidence, not fresh
+one-sample utility. A strict nonempty winner rule, also requiring a raw-text
+win and all three same-index content-control wins, retains77 training labels.
 
 The [genuine DEV32/G16 oracle](validation/candidate_oracle_dev32_cap256_20261017.json)
 is complete. At cap256/reanchor32, ordinary mean16−empty is−1.612 K1;
@@ -99,13 +105,21 @@ future-selected best16 is+.330 [+.051,+.684]. K16 best16 is+.395
 Oracle selection sees the continuation and does not establish deployed utility.
 The [original TRAIN corpus](validation/candidate_corpus_train128_20261017.json)
 and [fresh DEV64/G1 baseline](validation/warmstart_dev64_B0_20261017.json)
-also remain negative on average. No student has trained under the new direction.
+also remain negative on average. A separate64-update FP32 writer-only run is
+now starting from B0 on those77 labels. It supervises note+canonical close,
+with no true continuation in the writer input or loss. The raw control uses
+the same selected documents/order and16 continuation targets. The primary
+development check is fresh G1 notes on DEV64 with the unchanged B0 prepend
+reader; training-label gains do not qualify this check.
 
 The [full-gradient padding profile](validation/replay_padding_20261017.json)
 preserves reader/signed-loss gradients while reducing isolated real-note warm
 replay from~4.24s to~.46s. This is not measured end-to-end training throughput.
-A separate local Qwen3-4B teacher is being prepared for explicitly disclosed
-prefix-only/hindsight TRAIN supervision; base weights and identities stay separate.
+A separate local Qwen3-4B teacher pilot is running for explicitly disclosed
+prefix-only/hindsight TRAIN supervision. Both initial device next-logp matrices
+match native CPU references within.000447 nats; first cached/replay audits also
+pass (max.0000315). Generation remains in progress. Base weights and identities
+stay separate.
 
 Fixed128-question GSM8K **TRAIN development** results:
 

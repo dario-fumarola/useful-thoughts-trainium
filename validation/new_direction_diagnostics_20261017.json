@@ -1,8 +1,8 @@
 {
-  "time_utc": "2026-10-17T23:39:04.852686+00:00",
-  "status": "diagnostics_running_no_training",
+  "time_utc": "2026-10-17T23:54:12.396267+00:00",
+  "status": "short_writer_training_and_teacher_pilot_running",
   "previous_result": "interface_tax_dev32_20261017.json",
-  "tests": "317 passed + CPU toy smoke; local/checks/tests.2NxtGc",
+  "tests": "352 CPU tests + toy smoke, tests.u9JYfw; newprepend evaluator separately367 tests + toy smoke before final primary-text review",
   "candidate": {
     "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
     "protocol": "candidate_oracle_dev32_protocol_20261017.json",
@@ -128,25 +128,65 @@
     "failures": 0
   },
   "prepend_train_rescore": {
-    "status": "running",
+    "status": "complete",
     "experiment_id": "candidate-prepend-train128-g16-v1",
     "protocol_sha256": "e19600403a71164f4980d7d4908e39672f32778b1b8d27df28cc6f939f7b8b19",
     "rows": 8704,
     "reused_samples": 2048,
     "new_sampling": 0,
-    "deadline_utc": "2026-10-18T00:36:25.234126+00:00"
+    "deadline_utc": "2026-10-18T00:36:25.234126+00:00",
+    "failures": 0,
+    "report": "candidate_prepend_train128_20261017.json",
+    "mean16_own_minus_empty_K16": -1.07156008,
+    "best16_own_minus_empty_K16": 1.02557786,
+    "max16_own_minus_max16_other_K16": 0.53505564,
+    "max16_own_minus_max16_shuffled_K16": 0.27345652,
+    "deployed_G1_utility_claim": false
   },
   "local_teacher": {
-    "status": "download_verified_CPU_preparation_only",
+    "status": "running_generation_after_both_native_CPU_device_forward_gates",
     "model_id": "Qwen/Qwen3-4B",
     "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
     "manifest_sha256": "5e90de838673e59d713687fe010143257a71b071beb86a89f287125d7f61e742",
     "bytes": 8060925157,
-    "hardware_released": false,
+    "hardware_released": true,
     "conditions": [
       "prefix_only",
       "hindsight_TRAIN_future16"
     ],
-    "B0_unchanged": true
+    "B0_unchanged": true,
+    "experiment_id": "hindsight-teacher-train16-v1",
+    "protocol_sha256": "bacf19a47b4304d9a1852339285b59cd2b6d0199d3eb5a49a268ae6970f50961",
+    "max_forward_error": 0.000446319580078125,
+    "forward_atol": 0.002,
+    "first_replay_pending": true,
+    "deadline_utc": "2026-10-18T01:47:20.124466+00:00"
+  },
+  "writer_learning": {
+    "experiment_id": "writer-bc-prepend-train77-64-v2",
+    "status": "running_first_update_pending",
+    "protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+    "selected_TRAIN_documents": 77,
+    "selection_denominator": 128,
+    "selection": "highestownK16 then strictnonempty raw/empty/sameindexcontrols; futureselectedTRAIN",
+    "training_layout": "writer_only",
+    "future_tokens_in_writer_input": 0,
+    "future_labels_in_writer_loss": 0,
+    "steps": 64,
+    "world_size": 8,
+    "global_batch": 8,
+    "lr": 1e-05,
+    "precision": "fp32",
+    "primary_eval": "fresh G1 DEV64 K16 own-empty/contentcontrols read by fixedB0prepend; K1secondary; no officialfinal",
+    "raw_control": "unreleased; same77IDs/order/optimizer/updates, rawfuture16CE",
+    "prior_attempt": {
+      "experiment_id": "writer-bc-prepend-train77-64-v1",
+      "status": "failed_before_updates",
+      "actual_steps": 0,
+      "cause": "Sparse collective topology no_hier/no_mesh, before first rendezvous; rank list remapping succeeded",
+      "repair": "launch topology only to contiguous8-15, same source/data/pairprotocol"
+    },
+    "deadline_utc": "2026-10-18T05:52:12.438311+00:00",
+    "report": "positive_writer_train77_protocol_20261017.json"
   }
 }

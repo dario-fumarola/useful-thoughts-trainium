@@ -26,16 +26,27 @@ def pack_example(row, fmt, arm):
         raise ValueError('Token IDs must be nonnegative integers')
     if any(v in {fmt.stop_id, *fmt.additional_stop_ids} for v in note):
         raise ValueError('Content must exclude sampled terminators')
+    layout = row.get('training_layout', 'joint_reanchor32')
+    if layout not in {'joint_reanchor32', 'writer_only'}:
+        raise ValueError('Unknown warmstart training layout')
     if arm == 'warmstart':
         prompt = list(fmt.header_ids)+prefix+list(fmt.open_ids)
         continuation = note+list(fmt.close_ids)
-        ids = prompt+continuation+prefix[-32:]+future
         note_positions = list(range(len(prompt), len(prompt)+len(continuation)))
-        future_positions = list(range(len(ids)-16, len(ids)))
-        positions = note_positions+[0]*(258-len(note_positions))+future_positions
-        note_mask = [True]*len(note_positions)+[False]*(274-len(note_positions))
-        future_mask = [False]*258+[True]*16
-        width = 864
+        if layout == 'writer_only':
+            if len(fmt.close_ids) != 2:
+                raise ValueError('Writer-only supervision requires the canonical two-token close')
+            ids = prompt+continuation
+            positions = note_positions+[0]*(258-len(note_positions))
+            note_mask = [True]*len(note_positions)+[False]*(258-len(note_positions))
+            future_mask, width = [False]*258, 832
+        else:
+            ids = prompt+continuation+prefix[-32:]+future
+            future_positions = list(range(len(ids)-16, len(ids)))
+            positions = note_positions+[0]*(258-len(note_positions))+future_positions
+            note_mask = [True]*len(note_positions)+[False]*(274-len(note_positions))
+            future_mask = [False]*258+[True]*16
+            width = 864
     elif arm == 'raw_control':
         ids = prefix+future
         positions = list(range(512,528))

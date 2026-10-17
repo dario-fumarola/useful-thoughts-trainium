@@ -1,0 +1,259 @@
+{
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 43,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/positive-writer-prepend-train77-64-v1/ARCHIVE.json",
+    "payload_bytes": 2355882,
+    "sha256": "ba62034d69732fe0a0055746a2b8555520b65e83807810474019d68a07c67906"
+  },
+  "attempts": [
+    {
+      "actual_optimizer_updates": 0,
+      "attempt": "v1",
+      "cause": "Sparse Neuron collective graph: failed to find device-to-device paths / no_hier no_mesh / nrt status2; explicit list remapping succeeded",
+      "exit_code": 1,
+      "exit_sha256": "e72ab878905bee5197a465f444a2e34138d9bda31cb5f6fc2c2e538c7914a46b",
+      "exit_utc": "2026-10-17T23:50:55.879208+00:00",
+      "failure_sha256": "fda5a014d4741bb91bdea49dfb4509540ad6286b5d56c8ec8318c74557c88447",
+      "log_sha256": "f8470f9593a88ab2cb008de91ac3c695202b467ce2cbce3aad69df6b13fa1387",
+      "logical_cores": [
+        4,
+        12,
+        16,
+        20,
+        24,
+        28,
+        36,
+        40
+      ],
+      "metrics_or_checkpoints": false,
+      "output_files": [
+        "run.json"
+      ],
+      "release": {
+        "arm": "warmstart",
+        "deadline_utc": "2026-10-18T05:50:20.700497+00:00",
+        "launch_script_sha256": "9c5909a778e8a161b96e472993a326cd7c17f31688189ef4fd0f2349456525cb",
+        "raw_control": "Separately released serially after writer BC closes",
+        "sha256": "820dc73bdce011ababd5f047ca1ccb262c8648125fdaf232557b5309320c0532",
+        "status": "released_short_writer_bc",
+        "utc": "2026-10-17T23:50:20.700497+00:00"
+      },
+      "status": "failed_before_optimizer_update"
+    },
+    {
+      "attempt": "v2",
+      "logical_cores": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "output_identity": "writer-bc-prepend-train77-64-v2",
+      "physical_devices": [
+        2,
+        3
+      ],
+      "source_data_protocol_unchanged": true,
+      "status": "released_actual_update_outcome_pending",
+      "topology_only_repair": true
+    }
+  ],
+  "dataset": {
+    "audit_sha256": "10004906d4a432e5c2aa71e0082d4715d58a6e0aa2f1936b640f3fe92d49ca15",
+    "content_tokens": {
+      "max": 256,
+      "mean": 203.02597402597402,
+      "min": 12
+    },
+    "dataset_sha256": "a19149a3cb63a5fbb09fe151b062a1e20ace213b72b290599607daa70052906b",
+    "examples_sha256": "ee2b384dc6fc6b032745a1340603f78eda06beb08d88ae0a461c1c9e70b9ffe7",
+    "fallback": false,
+    "future_aware_selection": true,
+    "items": 77,
+    "margin": 0.0,
+    "original_stop_counts": {
+      "length_cap": 50,
+      "token:151643": 27
+    },
+    "packer_source_sha256": "d8d3de30c5c65b5248133bdb2be4fcc75fafd10171d4d21ccbc82058562cdcb5",
+    "prepend_protocol_sha256": "e19600403a71164f4980d7d4908e39672f32778b1b8d27df28cc6f939f7b8b19",
+    "prepend_summary_sha256": "1d142f18fdcb42ec768ec9d932036b56d088bf7bae9f64241f2f01487cf95db4",
+    "rule": "At each TRAIN document choose highest own K16 among16 (math.fsum; exact ties lowest index), then retain nonempty ONLY if strictly above raw, same prepend-empty, same-index filler/shuffled/other. Zero margin; no fallback candidate.",
+    "schema": "positive-prepend-writer-train128-v1",
+    "selection_denominator": 128,
+    "selector_source_sha256": "6102b3dd4dea9dc3bad656698c006ae06b5137c6f72ab46a144336581d4fc010",
+    "source_candidates_per_document": 16,
+    "split": "train",
+    "synthetic_close": "Both rendered close tokens (</think> and newline) are CE labels; they are not fabricated sampled actions",
+    "training_layout": "writer_only",
+    "utility_reader": "prepend_plain"
+  },
+  "evaluation_plan_archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 2,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/positive-writer-prepend-train77-evaluation-plan-v1/ARCHIVE.json",
+    "payload_bytes": 4475,
+    "sha256": "9ee7e86ad52b5ad6a4c6ab225248d5c096d8fb197f0e9fbe3fb462c5f9534264"
+  },
+  "evidence": {
+    "CPU_tests": 352,
+    "CPU_toy_smoke": true,
+    "hardware_update_qualification": "V1 failed before any optimizer update. V2 released with launch-topology repair only; no successful update asserted in this report.",
+    "independent_77_input_and_128_selection_review": "pass",
+    "noncontiguous_mapping": "Python rank-to-core-list remapping succeeded, but the actual sparse collective graph failed at the first rendezvous. Parser acceptance did not establish collective support. V2 uses contiguous cores8-15; update qualification remains pending.",
+    "source_files": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/anchor_scan.py": "078d82b23f5d1aead7832dd9678494bd73e7356a5e9c8b73215d3a29acc9e122",
+      "train/candidate_corpus.py": "850d74564e06774db4ea545061aee54555c55ee59172958179ffdc452fd2cc4f",
+      "train/candidate_prepend.py": "ccfcc1f9f00a853a31aa65c0d2eec4db73d855ee41b4c6e4c79a09cb86fb7203",
+      "train/candidate_probe.py": "8e1d5e84a91db104d7186ec9354d15c724c34fe2fd764139420d3ed09c316868",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+      "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+      "train/positive_writer_data.py": "6102b3dd4dea9dc3bad656698c006ae06b5137c6f72ab46a144336581d4fc010",
+      "train/prepend_probe.py": "595c8557792fb49c0b64597351def35818922c1712f6c0cc716a46dd85d39e20",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "train/warmstart_data.py": "d8d3de30c5c65b5248133bdb2be4fcc75fafd10171d4d21ccbc82058562cdcb5",
+      "train/warmstart_driver.py": "d0b8ed4e105d2b1249e1169014a1acd9b9963522a5ed866e26db117e1cb3f585",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    }
+  },
+  "experiment_id": "positive-writer-prepend-train77-64-v1",
+  "limitations": [
+    "Future-selected TRAIN supervision, not an unsupervised writer reward or deployed oracle.",
+    "Positive selected labels do not establish fresh policy utility or reasoning; all128 selection decisions remain in the private archive.",
+    "The77-row writer-only dataset is distinct from the preserved31-row joint_reanchor32 dataset.",
+    "Writer and raw control match documents/order/updates/optimizer but have different CE target counts and compute.",
+    "Tied shared weights can change reader behavior indirectly; primary fixed-B0-reader evaluation helps distinguish writer changes.",
+    "No optimizer-update success, trained result, official final-test result or speedup is asserted here."
+  ],
+  "planned_evaluation": {
+    "checkpoint_policy": "Evaluate completed64 as planned; keep16 for recovery/trajectory, no best-checkpoint selection on DEV outcomes.",
+    "evaluation_plan_declared_utc": "2026-10-17T23:53:11.832660+00:00",
+    "evaluation_plan_sha256": "0e170b4615a061574bc34e6409f6c1e147ee0d2cf5b9f2308096a6a2eeba2ebb",
+    "policy": "Fresh prefix-only G1/cap256 on fixed DEV64, no future-selected inference",
+    "primary": "Fresh prefix-only G1/cap256 notes on separately fixed DEV64, read by unchanged B0 prepend_plain; paired own-empty/content controls and raw likelihood. No future-selected evaluation.",
+    "primary_contrasts": [
+      "own-minus-empty",
+      "own-minus-filler",
+      "own-minus-shuffled",
+      "own-minus-other",
+      "own-minus-raw",
+      "student_own_minus_empty_minus_B0_own_minus_empty",
+      "writerBC_own_minus_empty_minus_rawcontrol_own_minus_empty"
+    ],
+    "primary_horizon": 16,
+    "primary_reader": "unchanged B0",
+    "secondary": "Adapted-reader diagonals/crosses and raw_control effects; note lengths/empty/caps and actual costs; exploratory development, not official final.",
+    "secondary_horizon": 1,
+    "uncertainty": "5000 paired document bootstrap; all64 and frozen16-per-surprisal-quartile separately; conditional on trained checkpoints, not seed uncertainty"
+  },
+  "protocol": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "checkpoint_steps": [
+      16,
+      64
+    ],
+    "complete_ordered_passes": 6,
+    "epsilon": 1e-08,
+    "global_batch": 8,
+    "gradient_clip_norm": 1.0,
+    "gradient_reduction": "Sole ZeRO-1 mean reduce-scatter and global clipping; no manual gradient average",
+    "initialization": "Each arm independently loads unchanged released Qwen3-1.7B-Base; no resume or C initialization",
+    "learning_rate": 1e-05,
+    "matching": "Same selected77 IDs, seed, occurrence order, global8, updates64, optimizer, precision; writer note/close CE versus raw true-future16 CE. Unequal token CE counts and compute disclosed.",
+    "next_pass_records": 50,
+    "planned_control_true_future_labels": 8192,
+    "planned_occurrences_each_arm": 512,
+    "planned_writer_note_close_labels": 104606,
+    "precision": "fp32",
+    "raw_control_objective": "Full-support T1 mean16 true-future CE on prefix512; identical selected IDs/occurrence order/updates/optimizer",
+    "raw_control_static_width": 544,
+    "raw_control_target_slots": 16,
+    "runtime_policy": {
+      "environment": {
+        "MKL_NUM_THREADS": "2",
+        "NEURON_CC_FLAGS": "--model-type=transformer",
+        "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+        "OMP_NUM_THREADS": "2",
+        "PJRT_DEVICE": "NEURON",
+        "XLA_COMPILATION_CACHE_SIZE": "2",
+        "XLA_DOWNCAST_BF16": null,
+        "XLA_USE_BF16": null
+      },
+      "schema": 1
+    },
+    "seed": 20261018,
+    "sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+    "steps_per_arm": 64,
+    "unique_selected_documents": 77,
+    "weight_decay": 0.1,
+    "world_size": 8,
+    "writer_input": "header+prefix512+open+note+close only",
+    "writer_objective": "Full-support T1 mean note+canonical-close CE per example; then rank mean",
+    "writer_static_width": 832,
+    "writer_target_slots": 258,
+    "writer_true_future_labels": 0
+  },
+  "release": {
+    "arm": "warmstart",
+    "deadline_utc": "2026-10-18T05:52:12.438311+00:00",
+    "launch_script_sha256": "4a0dd52152f394939e513aeba81fb4122172e6978246c80a2ea33f4b3be78165",
+    "logical_cores": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "physical_devices": [
+      2,
+      3
+    ],
+    "raw_control": "same exact protocol/data/order, separately released after this arm frees the eight devices",
+    "sha256": "4e8131aed26ec5a9c5b7169974fbc2a4bcf475162ac8ebf1d426186bc6d5c5a0",
+    "status": "released_short_writer_bc_contiguous_v2",
+    "utc": "2026-10-17T23:52:12.438311+00:00"
+  },
+  "report_utc": "2026-10-17T23:55:49.836293+00:00",
+  "schema": "positive-TRAIN77-short-learning-protocol-v1",
+  "status": "v1_failed_before_first_update_v2_released_outcome_pending",
+  "topology_attempts_archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 14,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/positive-writer-prepend-train77-topology-attempts-v1/ARCHIVE.json",
+    "payload_bytes": 60782,
+    "sha256": "44a1307f0f1bee0b91a9b8610fd3740b91110dcddd3d45f864856746176c5c79"
+  }
+}

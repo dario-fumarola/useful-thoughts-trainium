@@ -1,0 +1,701 @@
+{
+  "aggregate_metrics": {
+    "prepend_plain/K1/empty_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.074724484235048,
+      "median_nats": -3.6028987169265747,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/max16_own_minus_max16_filler": {
+      "ci95_nats": [
+        0.46225397669768425,
+        0.9123376524550308
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.680972670125243,
+      "median_nats": 0.24458885192871094,
+      "positive_documents": 98
+    },
+    "prepend_plain/K1/max16_own_minus_max16_other": {
+      "ci95_nats": [
+        0.33195094589972884,
+        0.6232043326178967
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.475550302224633,
+      "median_nats": 0.2095927596092224,
+      "positive_documents": 103
+    },
+    "prepend_plain/K1/max16_own_minus_max16_shuffled": {
+      "ci95_nats": [
+        0.16764296771231385,
+        0.4051438625366927
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.28482309767457537,
+      "median_nats": 0.10712158679962158,
+      "positive_documents": 88
+    },
+    "prepend_plain/K1/mean16_filler_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.319243402060238,
+      "median_nats": -3.8254329636693,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/mean16_other_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.141789668807178,
+      "median_nats": -3.7960577458143234,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/mean16_own_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.427430481213882,
+      "median_nats": -3.976927075535059,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/mean16_own_minus_empty": {
+      "ci95_nats": [
+        -0.4662997101693483,
+        -0.24477220527304028
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.352705996978834,
+      "median_nats": -0.14560882933437824,
+      "positive_documents": 36
+    },
+    "prepend_plain/K1/mean16_own_minus_filler": {
+      "ci95_nats": [
+        -0.28822236669616785,
+        0.08047797851357802
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.10818707915364456,
+      "median_nats": -0.08424608409404755,
+      "positive_documents": 55
+    },
+    "prepend_plain/K1/mean16_own_minus_other": {
+      "ci95_nats": [
+        -0.40928120494956044,
+        -0.16812482233020673
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.28564081240670447,
+      "median_nats": -0.08629660680890083,
+      "positive_documents": 49
+    },
+    "prepend_plain/K1/mean16_own_minus_raw": {
+      "ci95_nats": [
+        -0.46399003318911125,
+        -0.2425832979994337
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.35048800011332304,
+      "median_nats": -0.12713445723056793,
+      "positive_documents": 32
+    },
+    "prepend_plain/K1/mean16_own_minus_repeat32": {
+      "ci95_nats": [
+        0.767070917480049,
+        1.4047762129419707
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.0839374088386151,
+      "median_nats": 0.8059844747185707,
+      "positive_documents": 89
+    },
+    "prepend_plain/K1/mean16_own_minus_repeat64": {
+      "ci95_nats": [
+        1.5056255882247358,
+        2.368890602161355
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.9268070961947572,
+      "median_nats": 1.404422901570797,
+      "positive_documents": 101
+    },
+    "prepend_plain/K1/mean16_own_minus_shuffled": {
+      "ci95_nats": [
+        -0.42537530728000517,
+        -0.2147709291860297
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.31741365685643785,
+      "median_nats": -0.1081753522157669,
+      "positive_documents": 43
+    },
+    "prepend_plain/K1/mean16_shuffled_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.110016824357444,
+      "median_nats": -3.5471619591116905,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/oracle_max_own_minus_empty": {
+      "ci95_nats": [
+        0.520283611465129,
+        0.7978382390791919
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.6564560736663907,
+      "median_nats": 0.4007258415222168,
+      "positive_documents": 121
+    },
+    "prepend_plain/K1/oracle_selected_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -3.4182684105686576,
+      "median_nats": -2.7542147636413574,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/oracle_selected_own_minus_filler": {
+      "ci95_nats": [
+        0.6538277514977381,
+        1.1248448954406398
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.8831865442119806,
+      "median_nats": 0.35686278343200684,
+      "positive_documents": 102
+    },
+    "prepend_plain/K1/oracle_selected_own_minus_other": {
+      "ci95_nats": [
+        0.5509960149773263,
+        0.8511107506391595
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.6996394781530171,
+      "median_nats": 0.38062071800231934,
+      "positive_documents": 119
+    },
+    "prepend_plain/K1/oracle_selected_own_minus_raw": {
+      "ci95_nats": [
+        0.5165400422545418,
+        0.8063549399400302
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.6586740705319016,
+      "median_nats": 0.361644983291626,
+      "positive_documents": 123
+    },
+    "prepend_plain/K1/oracle_selected_own_minus_repeat32": {
+      "ci95_nats": [
+        1.7474128701578593,
+        2.4452398639394404
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 2.09309947948384,
+      "median_nats": 1.827847957611084,
+      "positive_documents": 115
+    },
+    "prepend_plain/K1/oracle_selected_own_minus_repeat64": {
+      "ci95_nats": [
+        2.5178847712756265,
+        3.3600103896569635
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 2.935969166839982,
+      "median_nats": 2.2769561409950256,
+      "positive_documents": 121
+    },
+    "prepend_plain/K1/oracle_selected_own_minus_shuffled": {
+      "ci95_nats": [
+        0.4307738199391139,
+        0.6837096489363915
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.5532640879176824,
+      "median_nats": 0.2686954736709595,
+      "positive_documents": 111
+    },
+    "prepend_plain/K1/raw_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.076942481100559,
+      "median_nats": -3.6559536457061768,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/repeat32_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.511367890052497,
+      "median_nats": -4.890116930007935,
+      "positive_documents": 0
+    },
+    "prepend_plain/K1/repeat64_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.3542375774086395,
+      "median_nats": -6.166952610015869,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/empty_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -30.005604802266422,
+      "median_nats": -27.8790298991662,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/max16_own_minus_max16_filler": {
+      "ci95_nats": [
+        1.3563499823859722,
+        2.3391366762702908
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.8260523899293226,
+      "median_nats": 1.1184697882272303,
+      "positive_documents": 104
+    },
+    "prepend_plain/K16/max16_own_minus_max16_other": {
+      "ci95_nats": [
+        0.32505266385783127,
+        0.7492690237562125
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.5350556404677019,
+      "median_nats": 0.25010367669165134,
+      "positive_documents": 89
+    },
+    "prepend_plain/K16/max16_own_minus_max16_shuffled": {
+      "ci95_nats": [
+        0.08812374439859455,
+        0.46579002562991895
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.2734565173023138,
+      "median_nats": 0.03524604035192169,
+      "positive_documents": 67
+    },
+    "prepend_plain/K16/mean16_filler_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -32.379917566163094,
+      "median_nats": -29.599951836892174,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/mean16_other_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -30.369660670517902,
+      "median_nats": -27.555492520477856,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/mean16_own_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -31.07716487754068,
+      "median_nats": -29.3292869099553,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/mean16_own_minus_empty": {
+      "ci95_nats": [
+        -1.3165388492433814,
+        -0.828731313822626
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.0715600752742578,
+      "median_nats": -0.659405705268,
+      "positive_documents": 26
+    },
+    "prepend_plain/K16/mean16_own_minus_filler": {
+      "ci95_nats": [
+        0.6878350286495704,
+        1.9414950823856303
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.3027526886224152,
+      "median_nats": 0.9617792668459515,
+      "positive_documents": 80
+    },
+    "prepend_plain/K16/mean16_own_minus_other": {
+      "ci95_nats": [
+        -0.983437292137772,
+        -0.43882596084522296
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.7075042070227766,
+      "median_nats": -0.4764634295133874,
+      "positive_documents": 48
+    },
+    "prepend_plain/K16/mean16_own_minus_raw": {
+      "ci95_nats": [
+        -1.3367246660925927,
+        -0.8438092049128476
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.0889779346129618,
+      "median_nats": -0.6772711490531051,
+      "positive_documents": 23
+    },
+    "prepend_plain/K16/mean16_own_minus_repeat32": {
+      "ci95_nats": [
+        0.8480417701480512,
+        2.005266386567371
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.4231840968899916,
+      "median_nats": 0.7164163323104731,
+      "positive_documents": 79
+    },
+    "prepend_plain/K16/mean16_own_minus_repeat64": {
+      "ci95_nats": [
+        1.8643494430244905,
+        3.048879319459811
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 2.4588075363568582,
+      "median_nats": 1.9476681679007015,
+      "positive_documents": 93
+    },
+    "prepend_plain/K16/mean16_own_minus_shuffled": {
+      "ci95_nats": [
+        -1.0710133930768992,
+        -0.6008276578158611
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.8344797663803677,
+      "median_nats": -0.49587196519132704,
+      "positive_documents": 36
+    },
+    "prepend_plain/K16/mean16_shuffled_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -30.242685111160313,
+      "median_nats": -28.104276175999303,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/oracle_max_own_minus_empty": {
+      "ci95_nats": [
+        0.8407484667455435,
+        1.2255137705687096
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.0255778562828226,
+      "median_nats": 0.7921356158803974,
+      "positive_documents": 112
+    },
+    "prepend_plain/K16/oracle_selected_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -28.9800269459836,
+      "median_nats": -27.118152754637777,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/oracle_selected_own_minus_filler": {
+      "ci95_nats": [
+        2.7376027293387204,
+        4.180994077657698
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 3.42433852498577,
+      "median_nats": 2.450532705988735,
+      "positive_documents": 109
+    },
+    "prepend_plain/K16/oracle_selected_own_minus_other": {
+      "ci95_nats": [
+        1.1504477230450771,
+        1.6534522439724146
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.3968747174321974,
+      "median_nats": 1.1074625166802434,
+      "positive_documents": 112
+    },
+    "prepend_plain/K16/oracle_selected_own_minus_raw": {
+      "ci95_nats": [
+        0.8226272803663491,
+        1.2093879275970447
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.0081599969441188,
+      "median_nats": 0.7716233752435073,
+      "positive_documents": 113
+    },
+    "prepend_plain/K16/oracle_selected_own_minus_repeat32": {
+      "ci95_nats": [
+        2.965453527253576,
+        4.084005459377291
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 3.520322028447072,
+      "median_nats": 2.9148349203460384,
+      "positive_documents": 119
+    },
+    "prepend_plain/K16/oracle_selected_own_minus_repeat64": {
+      "ci95_nats": [
+        3.9665631497215816,
+        5.126426255124601
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 4.555945467913939,
+      "median_nats": 4.360013174766209,
+      "positive_documents": 119
+    },
+    "prepend_plain/K16/oracle_selected_own_minus_shuffled": {
+      "ci95_nats": [
+        0.6850679078695388,
+        1.0994226850773696
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.8881382496164836,
+      "median_nats": 0.5856534745544195,
+      "positive_documents": 102
+    },
+    "prepend_plain/K16/raw_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -29.98818694292772,
+      "median_nats": -27.777007810487703,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/repeat32_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -32.50034897443067,
+      "median_nats": -31.12316298636142,
+      "positive_documents": 0
+    },
+    "prepend_plain/K16/repeat64_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -33.53597241389754,
+      "median_nats": -30.392164616845548,
+      "positive_documents": 0
+    }
+  },
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 130,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/candidate-prepend-train128-g16-v1/ARCHIVE.json",
+    "payload_bytes": 63429211,
+    "private_selected_records": 128,
+    "sha256": "19f5e361990418b6eb30bf7cf82ff494b0292ac76a4752b240d2d78d9a06ffed"
+  },
+  "candidates_per_document": 16,
+  "cap": 256,
+  "compute": "fp32",
+  "controls_sha256": "bfdb2d2f23f9be26d43662e17ad016ad8216dd25ffe04acae35714b550132cfc",
+  "corpus_protocol_sha256": "a02a536613846765f30d7ed01ef69a05109698ebcbc3dd23ea64979a37d07f9e",
+  "corpus_summary_sha256": "6a497394d1f8c0e012f7f3942caa62a95b0b3037dfb922b505d13fe251cb96f3",
+  "cost": {
+    "interpretation": "No new sampling. Reused generation counted once per original G4 group; new process sums are aggregate work across eight devices, not serial latency or training speed.",
+    "new_sampling_seconds": 0,
+    "new_score_process_wall_seconds_sum": 1234.0,
+    "new_score_row_wall_seconds_sum": 1233.1291000545461,
+    "new_score_rows": 8704,
+    "new_score_stage_span_seconds": 156.0,
+    "release_to_latest_wrapper_exit_seconds": 174.557154,
+    "reused_replay_audit_group_seconds_counted_once": 1.9718494599947007,
+    "reused_sampling_group_count": 512,
+    "reused_sampling_group_seconds_counted_once": 6068.902138029065
+  },
+  "documents": 128,
+  "empty_candidates": 76,
+  "experiment_id": "candidate-prepend-train128-g16-v1",
+  "failures": 0,
+  "generation": [
+    {
+      "candidates_sha256": "7b51568d117973541f9ce254476043cfb499ebcf4b5c2134c678728d3574397c",
+      "run_sha256": "7d3c00aea1b1895e6a6dde04ddf1aab2e31cf06496789ce86ce9166c8442e293",
+      "shard": 0
+    },
+    {
+      "candidates_sha256": "a5a2c038dc813699c1aa3f461de8be200ba66f7eb642432b907904dc47253b88",
+      "run_sha256": "715e7a6a2bc327679fbeb920ad0d82aefd1ce41660c2bbc7e31b353f1e262f5d",
+      "shard": 1
+    },
+    {
+      "candidates_sha256": "66d5e42979200c901396c39dde454bc2e7ef683c8f41ee3af2cc41fd93e023d9",
+      "run_sha256": "4ade924ee458388bc1fb27f41c163ee4f123ec540609a20d650c51e713d217df",
+      "shard": 2
+    },
+    {
+      "candidates_sha256": "700d8d9515e83a291a8b1816c6286e614f04583982184040a3fd8f8d3598ea81",
+      "run_sha256": "7da73fb6c3ed01431dbc410583f9d8dd7a16d8e84c817eb406a5faf8bfb00a4d",
+      "shard": 3
+    },
+    {
+      "candidates_sha256": "91b668603a3cf136e6e0e3ef684eddd9cc1b3575c904b9a77ad04924487973ba",
+      "run_sha256": "eebc2951cad653721e8b013036ca53a981f3c08f94fb254f378b9751370fab1e",
+      "shard": 4
+    },
+    {
+      "candidates_sha256": "fd286aa26f0404c8309be586117955f1d8718049cc9fc3d1ba6eed6a26087e23",
+      "run_sha256": "9689f7e13c764f9e7010b0bd38726c1dc2c96bf620bf213a7c9c21a650328387",
+      "shard": 5
+    },
+    {
+      "candidates_sha256": "d81bea837dff5f3fca4e090686676ab24d4c9180da4a81851a3f82f9636e4677",
+      "run_sha256": "f449fceb158899c5ae1561717026a29a85fcc00b40a68c58e11b75c1f58ba374",
+      "shard": 6
+    },
+    {
+      "candidates_sha256": "9a152df7e1fa0d01457cf5738cc1e25e6019aee38193f7f141ba2bae0fb0c26d",
+      "run_sha256": "07deab4c4dda38833548ff65b4920640a3ef21837a17f255c5286ccfbe48ee2d",
+      "shard": 7
+    }
+  ],
+  "horizons": [
+    1,
+    16
+  ],
+  "limitations": [
+    "All128 selected on TRAIN target surprisal; not held-out utility.",
+    "Same2048 previously sampled candidates/global controls; no new generation.",
+    "Future-selected oracle is potential TRAIN supervision, not a deployed prefix-only policy.",
+    "Adaptive interface choice follows DEV32 development; no confirmatory claim.",
+    "Positive future-selected max16 is TRAIN candidate availability, not fresh G1 or deployed-policy utility.",
+    "Both ordinary mean16 and future-selected max16 are retained with raw, empty and all matched/maximized controls.",
+    "No positive-subset filtering enters these128-document aggregates. No student training or official final-test result is established.",
+    "Token notes, true targets, raw text, IDs and process/topology details remain in local/EBS artifacts."
+  ],
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "new_sampling": false,
+  "new_score_rows": 8704,
+  "oracle_winner_counts": {
+    "K1": {
+      "candidates_beating_empty": 837,
+      "capped": 89,
+      "documents": 128,
+      "documents_with_candidate_beating_empty": 121,
+      "nonempty": 127
+    },
+    "K16": {
+      "candidates_beating_empty": 671,
+      "capped": 83,
+      "documents": 128,
+      "documents_with_candidate_beating_empty": 112,
+      "nonempty": 124
+    }
+  },
+  "original_global_barrier_sha256": "c0fa51b7fc29381c18e5dad52a829e2e61781777826358d1e3d9f77f12691663",
+  "parameters": 1720574976,
+  "protocol_sha256": "e19600403a71164f4980d7d4908e39672f32778b1b8d27df28cc6f939f7b8b19",
+  "raw_parity": {
+    "bound": 0.002,
+    "max_token_error": 2.1457672119140625e-05,
+    "rows": 384,
+    "scope": "raw/raw versus TRAIN scanner; repeat32/64 versus identical completed original-corpus raw-repeat contexts"
+  },
+  "reader": "Unchanged B0; note+two-newline separator+all512 original prefix tokens",
+  "reader_serialization": "content_ids + encode('\\n\\n') + all512 prefix_ids; empty uses separator + full prefix",
+  "reused_candidates": 2048,
+  "sampling_stop_counts": {
+    "length_cap": 1333,
+    "token:151643": 715
+  },
+  "schema": "TRAIN-prepend-candidate-rescore-result-v1",
+  "scoring": [
+    {
+      "run_sha256": "f047515870271917cb6f5b14647043479afa4ed65ee5a4e346e20a5b5d70ef66",
+      "scores_sha256": "54487d02b96df9cf58af1cbd2f11689ce69089959da24f5818d5f8f36971cee1",
+      "shard": 0
+    },
+    {
+      "run_sha256": "3135ab432ab3fb247074feb35dd21ddd7f52db5b31a004ed16c767753faebd43",
+      "scores_sha256": "3a22852ec1cc011d03c3381da36293b94d9c5d431e7baf2ea24e32e944d4c676",
+      "shard": 1
+    },
+    {
+      "run_sha256": "a27f4b674a89a3c59d6b7cd28033bf29d584890bcf0de35a758a80bf14a8642e",
+      "scores_sha256": "0d59796faf58c315081db97872fef473ccff90e3971ee3af7783ff4a3d28fca3",
+      "shard": 2
+    },
+    {
+      "run_sha256": "c73dd0fe255694ff1b7dde2d555184efcd0f19a2aeb251749d75a518b805327f",
+      "scores_sha256": "64d0488d7d59ae8454fa7dcda4b542d114f63051c380dde6886e9b9813442b52",
+      "shard": 3
+    },
+    {
+      "run_sha256": "32de6ff1aef3c986acd1868fd288434ba4568d1ccc6ed79fe0acf09bbccdfeff",
+      "scores_sha256": "e620b1f5532692c6875676f04bed1bbb9f01c4dd2edf19751442301e86011765",
+      "shard": 4
+    },
+    {
+      "run_sha256": "43e58f2f4a099e6bebb0fdf1c1c8817ecfdfb8662854b91a0d4770048390099f",
+      "scores_sha256": "654c3cf0a104ed1db8b60b9e196dd66505b8aa346783ecfc69a5ff7bb03bbb61",
+      "shard": 5
+    },
+    {
+      "run_sha256": "d88d1a4cb79a27cd21d1d66a088aa0c5437a6d08ea1ac9e666cfca8d3d87e6d1",
+      "scores_sha256": "472bb385f032daf7468da9176fd0fc7a22210e2cd08404648e7048789ee07d67",
+      "shard": 6
+    },
+    {
+      "run_sha256": "39338944694c9552f62a62bdb6b7c88456cb0b40ca6476391db115c3d6eacc43",
+      "scores_sha256": "eee40f227ef799000850ae959dbcd0488c0d444d0ccc72c7a87b4946ded9229a",
+      "shard": 7
+    }
+  ],
+  "selection": "Same first128 qualifying TRAIN anchors from the prospective TRAIN1024 surprisal>=1.7 scan; not held-out",
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/anchor_scan.py": "078d82b23f5d1aead7832dd9678494bd73e7356a5e9c8b73215d3a29acc9e122",
+    "train/candidate_corpus.py": "850d74564e06774db4ea545061aee54555c55ee59172958179ffdc452fd2cc4f",
+    "train/candidate_prepend.py": "ccfcc1f9f00a853a31aa65c0d2eec4db73d855ee41b4c6e4c79a09cb86fb7203",
+    "train/candidate_probe.py": "8e1d5e84a91db104d7186ec9354d15c724c34fe2fd764139420d3ed09c316868",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/prepend_probe.py": "595c8557792fb49c0b64597351def35818922c1712f6c0cc716a46dd85d39e20",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "split": "train",
+  "status": "complete",
+  "summary_sha256": "1d142f18fdcb42ec768ec9d932036b56d088bf7bae9f64241f2f01487cf95db4",
+  "temperature": 0.7,
+  "uncertainty": "Each candidate statistic is reduced within its document before5000 paired-document bootstrap draws/seed17/percentile95%. Conditional on B0, these16 samples and selected TRAIN anchors; no training-seed uncertainty.",
+  "writer": "Original B0 header+prefix+open prefix-only samples; unchanged from the closed original corpus"
+}

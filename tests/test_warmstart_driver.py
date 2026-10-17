@@ -3,6 +3,7 @@ import pytest
 from datetime import datetime, timedelta, timezone
 
 from train.warmstart_driver import order_index, parse_args, stop_due, validate_protocol, validate_source_files
+from train.warmstart_driver import training_layout, validate_dataset_layout, supervision_counts
 
 
 def protocol():
@@ -77,3 +78,47 @@ def test_stop_arriving_during_setup_and_expired_deadline_prevent_first_update(tm
     # expensive setup runs. The post-setup guard must observe it independently.
     stop.write_text("owner stop")
     assert stop_due(stop, deadline, now=before_setup+timedelta(seconds=30))
+
+
+def writer_dataset():
+    sources={"train/positive_writer_data.py":"b"*64,"train/warmstart_data.py":"c"*64}
+    p=dict(training_layout="writer_only",source_files=sources)
+    dataset=dict(training_layout="writer_only",selector_source="train/positive_writer_data.py",
+        selector_source_sha256="b"*64,packer_source="train/warmstart_data.py",packer_source_sha256="c"*64,
+        source_sha256="b"*64,source_files=sources.copy())
+    return p,dataset,[dict(training_layout="writer_only"),dict(training_layout="writer_only")]
+
+
+def test_explicit_layout_binding_preserves_only_the_legacy_joint_default():
+    assert training_layout({})=="joint_reanchor32"
+    assert validate_dataset_layout({}, {}, [{},{}])=="joint_reanchor32"
+    p,dataset,rows=writer_dataset()
+    assert validate_dataset_layout(p,dataset,rows)=="writer_only"
+    validate_protocol(dict(protocol(),training_layout="writer_only"),8)
+    with pytest.raises(ValueError,match="training_layout"):
+        validate_protocol(dict(protocol(),training_layout="other"),8)
+
+
+@pytest.mark.parametrize("bad",["protocol","dataset","mixed_row","missing_row","selector","packer","dependency"])
+def test_writer_layout_refuses_mixed_metadata_and_unbound_selection_sources(bad):
+    p,dataset,rows=writer_dataset()
+    if bad=="protocol":p.pop("training_layout")
+    if bad=="dataset":dataset.pop("training_layout")
+    if bad=="mixed_row":rows[1]["training_layout"]="joint_reanchor32"
+    if bad=="missing_row":rows[1].pop("training_layout")
+    if bad=="selector":p["source_files"]["train/positive_writer_data.py"]="d"*64
+    if bad=="packer":dataset["packer_source"]="unused.py"
+    if bad=="dependency":dataset["source_files"]["train/unbound.py"]="e"*64
+    with pytest.raises(ValueError):validate_dataset_layout(p,dataset,rows)
+
+
+def test_actual_future_masks_are_zero_only_for_writer_only_warmstart():
+    import torch
+    writer=dict(note_close_mask=torch.ones((1,258),dtype=torch.bool),future_mask=torch.zeros((1,258),dtype=torch.bool))
+    assert supervision_counts(writer,"warmstart","writer_only")== (258,0)
+    writer["future_mask"][0,0]=True
+    with pytest.raises(ValueError,match="supervision masks"):supervision_counts(writer,"warmstart","writer_only")
+    raw=dict(note_close_mask=torch.zeros((1,16),dtype=torch.bool),future_mask=torch.ones((1,16),dtype=torch.bool))
+    assert supervision_counts(raw,"raw_control","writer_only")== (0,16)
+    joint=dict(note_close_mask=torch.tensor([[1]*4+[0]*16],dtype=torch.bool),future_mask=torch.tensor([[0]*4+[1]*16],dtype=torch.bool))
+    assert supervision_counts(joint,"warmstart","joint_reanchor32")== (4,16)
