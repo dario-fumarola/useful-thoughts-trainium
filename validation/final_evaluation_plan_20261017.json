@@ -1,0 +1,752 @@
+{
+  "canonical_sources": {
+    "arc_challenge": {
+      "items": 1172,
+      "path": "/home/ubuntu/dario/local/data/benchmark_exclusion/sources/allenai--ai2_arc/ARC-Challenge/test-00000-of-00001.parquet",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "sha256": "62f03257e737aed263f55c6abf87c7bb0028a44a6bdd2a26eb1279eb42c1d1e9"
+    },
+    "gsm8k": {
+      "items": 1319,
+      "path": "/home/ubuntu/dario/local/data/benchmark_exclusion/sources/openai--gsm8k/main/test-00000-of-00001.parquet",
+      "revision": "740312add88f781978c0658806c59bc2815b9866",
+      "sha256": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59"
+    },
+    "lambada": {
+      "items": 5153,
+      "path": "/home/ubuntu/dario/local/data/benchmark_exclusion/sources/EleutherAI--lambada_openai/en/test/en.parquet",
+      "revision": "900124bf3b8235c6daf21033af9948b3f07346c4",
+      "sha256": "99d8a9e54cda761c6340ddd4fa6feda7f846ffb0e716afa52968dea75495eea7"
+    }
+  },
+  "declared_utc": "2026-10-17T20:14:31.316051+00:00",
+  "expected_models": {
+    "B0": {
+      "arm": "B0",
+      "checkpoint": null,
+      "seed": null
+    },
+    "C1234": {
+      "arm": "vanilla",
+      "checkpoint": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000256/model.pt",
+      "run_id": "qwen-c-seed1234-science-256-001",
+      "seed": 1234
+    },
+    "C5678": {
+      "arm": "vanilla",
+      "checkpoint": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000256/model.pt",
+      "run_id": "qwen-c-seed5678-science-256-001",
+      "seed": 5678
+    },
+    "R1234": {
+      "arm": "thought",
+      "checkpoint": "/home/ubuntu/dario/local/nvme/runs/qwen-r-seed1234-science-256-001/step-0000256/model.pt",
+      "run_id": "qwen-r-seed1234-science-256-001",
+      "seed": 1234
+    },
+    "R5678": {
+      "arm": "thought",
+      "checkpoint": "/home/ubuntu/dario/local/nvme/runs/qwen-r-seed5678-science-256-001/step-0000256/model.pt",
+      "run_id": "qwen-r-seed5678-science-256-001",
+      "seed": 5678
+    }
+  },
+  "failure_policy": "Every original item and error/truncation remains; no score-based retries, checkpoint selection, filtering or best-of inference.",
+  "final_outcomes_accessed": false,
+  "frozen_file": "/home/ubuntu/dario/local/science/experiment-256.json",
+  "frozen_file_sha256": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+  "gsm_protocol_templates": {
+    "direct": {
+      "answer_stop": "first_complete_hash4_numeric_line_or_eos_v1",
+      "answer_stop_ids": [
+        151643
+      ],
+      "backend_sha256": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "compute": "fp32",
+      "dependencies": {
+        "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+        "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+        "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+        "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+        "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+        "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+        "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+        "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+        "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+        "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+        "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+        "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+        "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+        "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+        "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+      },
+      "evaluator_sha256": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "head_precision": "fp32",
+      "item_ids_sha256": "414398067ac354f5e42dfdbc25a557a353ac971a75d85ec9162fd293bd5def39",
+      "max_answer_tokens": 256,
+      "mode": "direct",
+      "prompt_spec": {
+        "demonstrations": [
+          {
+            "answer": "Let's think step by step\nIn 2005, 60/2=30 kids came to the cookout.\nIn 2006, 30/3*2=20 kids came to the cookout.\n#### 20",
+            "item_id": "gsm8k:train:04997",
+            "question": "In 2004, there were 60 kids at a cookout. In 2005, half the number of kids came to the cookout as compared to 2004. In 2006, 2/3 as many kids came to the cookout as in 2005. How many kids came to the cookout in 2006?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nSince $133 is equal to 7% of her earnings, then 1% is equal to $133/7 = $19.\nThe total monthly earning of Zilla is represented by 100%, so $19 x 100 = $1900 is her monthly earnings.\nSo, $1900/2 = $950 is spent on her other monthly expenses.\nThe total amount spent on the rent and other monthly expenses is $133 + $950 = $1083.\nHence, she saves $1900 - $1083 = $817 per month.\n#### 817",
+            "item_id": "gsm8k:train:04280",
+            "question": "Zilla spent 7% of her monthly earnings on rent, half of it on her other monthly expenses, and put the rest in her savings. If she spent $133 on her rent, how much does she deposit into her savings account in a month?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nThe total ratio representing the slices of pizza that Buzz bought is 5+8=13\nIf he shared the slices of pizza with the waiter, the waiter received a fraction of 8/13 of the total number of slices, which totals 8/13 * 78 = 48 slices\nTwenty less the number of slices of pizza that the waiter ate is 48-20 = 28\n#### 28",
+            "item_id": "gsm8k:train:03996",
+            "question": "If Buzz bought a pizza with 78 slices at a restaurant and then decided to share it with the waiter in the ratio of 5:8, with Buzz's ratio being 5, what's twenty less the number of slices of pizza that the waiter ate?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nHe makes 20*40=$800 per week\nHe used to make 16*25=$400 per week\nSo his raise was 800-400=$400 per week\nSo he makes 400*52=$20,800 per year more\n#### 20800",
+            "item_id": "gsm8k:train:01344",
+            "question": "Jame gets a raise to $20 per hour and works 40 hours a week.  His old job was $16 an hour for 25 hours per week.  How much more money does he make per year in his new job than the old job if he works 52 weeks a year?",
+            "split": "train"
+          }
+        ],
+        "instruction": "Solve the following math word problem. Show your calculation and finish with a line in the form #### <number>, followed by a newline.",
+        "protocol_name": "qwen_family_4shot_hash4_v1",
+        "source": {
+          "dataset": "openai/gsm8k",
+          "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+          "decision": "First four fixed official old-Qwen eight-shot TRAIN examples; selected by Qwen3 reported four-shot count before training outcomes. Final phrase changed to hash4 and Q/A serialization used. Not byte-identical Qwen3 evaluation.",
+          "qwen_prompt_revision": "ba2d85a13b28ed1ee0dde2d6c3e4d5a55dc5964c",
+          "qwen_prompt_sha256": "b067972c3ba476496af49bacfc2ade83e4bc72c47a52f7f0e70d7d9e8f573e0d"
+        }
+      },
+      "schema": "gsm8k_single_greedy_v1",
+      "selection_policy": "single_greedy",
+      "support": "tokenizer_defined_ids_only",
+      "task": "gsm8k",
+      "task_file_sha256": "c5030a8fc1cc8ba258b93e69a35159bdfff890fea635299342585d423e6321a6",
+      "task_revision": "740312add88f781978c0658806c59bc2815b9866",
+      "thought_cap": 0,
+      "thought_format": null,
+      "thought_reader_suffix_template": null,
+      "tokenizer_and_config_sha256": "12069ffe0ac8aee2792f2c6160c51e240396084fe3e7aa2753d362a3f978238e"
+    },
+    "empty_format": {
+      "answer_stop": "first_complete_hash4_numeric_line_or_eos_v1",
+      "answer_stop_ids": [
+        151643
+      ],
+      "backend_sha256": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "compute": "fp32",
+      "dependencies": {
+        "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+        "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+        "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+        "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+        "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+        "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+        "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+        "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+        "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+        "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+        "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+        "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+        "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+        "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+        "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+      },
+      "evaluator_sha256": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "head_precision": "fp32",
+      "item_ids_sha256": "414398067ac354f5e42dfdbc25a557a353ac971a75d85ec9162fd293bd5def39",
+      "max_answer_tokens": 256,
+      "mode": "empty_format",
+      "prompt_spec": {
+        "demonstrations": [
+          {
+            "answer": "Let's think step by step\nIn 2005, 60/2=30 kids came to the cookout.\nIn 2006, 30/3*2=20 kids came to the cookout.\n#### 20",
+            "item_id": "gsm8k:train:04997",
+            "question": "In 2004, there were 60 kids at a cookout. In 2005, half the number of kids came to the cookout as compared to 2004. In 2006, 2/3 as many kids came to the cookout as in 2005. How many kids came to the cookout in 2006?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nSince $133 is equal to 7% of her earnings, then 1% is equal to $133/7 = $19.\nThe total monthly earning of Zilla is represented by 100%, so $19 x 100 = $1900 is her monthly earnings.\nSo, $1900/2 = $950 is spent on her other monthly expenses.\nThe total amount spent on the rent and other monthly expenses is $133 + $950 = $1083.\nHence, she saves $1900 - $1083 = $817 per month.\n#### 817",
+            "item_id": "gsm8k:train:04280",
+            "question": "Zilla spent 7% of her monthly earnings on rent, half of it on her other monthly expenses, and put the rest in her savings. If she spent $133 on her rent, how much does she deposit into her savings account in a month?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nThe total ratio representing the slices of pizza that Buzz bought is 5+8=13\nIf he shared the slices of pizza with the waiter, the waiter received a fraction of 8/13 of the total number of slices, which totals 8/13 * 78 = 48 slices\nTwenty less the number of slices of pizza that the waiter ate is 48-20 = 28\n#### 28",
+            "item_id": "gsm8k:train:03996",
+            "question": "If Buzz bought a pizza with 78 slices at a restaurant and then decided to share it with the waiter in the ratio of 5:8, with Buzz's ratio being 5, what's twenty less the number of slices of pizza that the waiter ate?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nHe makes 20*40=$800 per week\nHe used to make 16*25=$400 per week\nSo his raise was 800-400=$400 per week\nSo he makes 400*52=$20,800 per year more\n#### 20800",
+            "item_id": "gsm8k:train:01344",
+            "question": "Jame gets a raise to $20 per hour and works 40 hours a week.  His old job was $16 an hour for 25 hours per week.  How much more money does he make per year in his new job than the old job if he works 52 weeks a year?",
+            "split": "train"
+          }
+        ],
+        "instruction": "Solve the following math word problem. Show your calculation and finish with a line in the form #### <number>, followed by a newline.",
+        "protocol_name": "qwen_family_4shot_hash4_v1",
+        "source": {
+          "dataset": "openai/gsm8k",
+          "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+          "decision": "First four fixed official old-Qwen eight-shot TRAIN examples; selected by Qwen3 reported four-shot count before training outcomes. Final phrase changed to hash4 and Q/A serialization used. Not byte-identical Qwen3 evaluation.",
+          "qwen_prompt_revision": "ba2d85a13b28ed1ee0dde2d6c3e4d5a55dc5964c",
+          "qwen_prompt_sha256": "b067972c3ba476496af49bacfc2ade83e4bc72c47a52f7f0e70d7d9e8f573e0d"
+        }
+      },
+      "schema": "gsm8k_single_greedy_v1",
+      "selection_policy": "single_greedy",
+      "support": "tokenizer_defined_ids_only",
+      "task": "gsm8k",
+      "task_file_sha256": "c5030a8fc1cc8ba258b93e69a35159bdfff890fea635299342585d423e6321a6",
+      "task_revision": "740312add88f781978c0658806c59bc2815b9866",
+      "thought_cap": 0,
+      "thought_format": {
+        "additional_stop_ids": [
+          151643
+        ],
+        "close_ids": [
+          151668,
+          198
+        ],
+        "header_ids": [
+          37175,
+          1128,
+          73045,
+          11017,
+          504,
+          279,
+          17221,
+          21085,
+          13,
+          10224,
+          697,
+          18778,
+          975,
+          4766,
+          279,
+          12864,
+          3772,
+          11,
+          1221,
+          15688,
+          279,
+          21085,
+          448,
+          12579,
+          44197,
+          323,
+          16232,
+          13,
+          3155,
+          537,
+          8290,
+          279,
+          41171,
+          448,
+          264,
+          4586,
+          16148,
+          382,
+          12187,
+          424,
+          510
+        ],
+        "open_ids": [
+          198,
+          151667
+        ],
+        "pad_id": 151643,
+        "stop_id": 151668
+      },
+      "thought_reader_suffix_template": "\n\nUse the scratch work to answer the following question. Finish with a line in the form #### <number>, followed by a newline.\nQuestion: {question}\nAnswer:",
+      "tokenizer_and_config_sha256": "12069ffe0ac8aee2792f2c6160c51e240396084fe3e7aa2753d362a3f978238e"
+    },
+    "one_thought": {
+      "answer_stop": "first_complete_hash4_numeric_line_or_eos_v1",
+      "answer_stop_ids": [
+        151643
+      ],
+      "backend_sha256": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "compute": "fp32",
+      "dependencies": {
+        "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+        "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+        "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+        "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+        "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+        "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+        "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+        "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+        "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+        "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+        "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+        "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+        "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+        "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+        "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+      },
+      "evaluator_sha256": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "head_precision": "fp32",
+      "item_ids_sha256": "414398067ac354f5e42dfdbc25a557a353ac971a75d85ec9162fd293bd5def39",
+      "max_answer_tokens": 256,
+      "mode": "one_thought",
+      "prompt_spec": {
+        "demonstrations": [
+          {
+            "answer": "Let's think step by step\nIn 2005, 60/2=30 kids came to the cookout.\nIn 2006, 30/3*2=20 kids came to the cookout.\n#### 20",
+            "item_id": "gsm8k:train:04997",
+            "question": "In 2004, there were 60 kids at a cookout. In 2005, half the number of kids came to the cookout as compared to 2004. In 2006, 2/3 as many kids came to the cookout as in 2005. How many kids came to the cookout in 2006?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nSince $133 is equal to 7% of her earnings, then 1% is equal to $133/7 = $19.\nThe total monthly earning of Zilla is represented by 100%, so $19 x 100 = $1900 is her monthly earnings.\nSo, $1900/2 = $950 is spent on her other monthly expenses.\nThe total amount spent on the rent and other monthly expenses is $133 + $950 = $1083.\nHence, she saves $1900 - $1083 = $817 per month.\n#### 817",
+            "item_id": "gsm8k:train:04280",
+            "question": "Zilla spent 7% of her monthly earnings on rent, half of it on her other monthly expenses, and put the rest in her savings. If she spent $133 on her rent, how much does she deposit into her savings account in a month?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nThe total ratio representing the slices of pizza that Buzz bought is 5+8=13\nIf he shared the slices of pizza with the waiter, the waiter received a fraction of 8/13 of the total number of slices, which totals 8/13 * 78 = 48 slices\nTwenty less the number of slices of pizza that the waiter ate is 48-20 = 28\n#### 28",
+            "item_id": "gsm8k:train:03996",
+            "question": "If Buzz bought a pizza with 78 slices at a restaurant and then decided to share it with the waiter in the ratio of 5:8, with Buzz's ratio being 5, what's twenty less the number of slices of pizza that the waiter ate?",
+            "split": "train"
+          },
+          {
+            "answer": "Let's think step by step\nHe makes 20*40=$800 per week\nHe used to make 16*25=$400 per week\nSo his raise was 800-400=$400 per week\nSo he makes 400*52=$20,800 per year more\n#### 20800",
+            "item_id": "gsm8k:train:01344",
+            "question": "Jame gets a raise to $20 per hour and works 40 hours a week.  His old job was $16 an hour for 25 hours per week.  How much more money does he make per year in his new job than the old job if he works 52 weeks a year?",
+            "split": "train"
+          }
+        ],
+        "instruction": "Solve the following math word problem. Show your calculation and finish with a line in the form #### <number>, followed by a newline.",
+        "protocol_name": "qwen_family_4shot_hash4_v1",
+        "source": {
+          "dataset": "openai/gsm8k",
+          "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+          "decision": "First four fixed official old-Qwen eight-shot TRAIN examples; selected by Qwen3 reported four-shot count before training outcomes. Final phrase changed to hash4 and Q/A serialization used. Not byte-identical Qwen3 evaluation.",
+          "qwen_prompt_revision": "ba2d85a13b28ed1ee0dde2d6c3e4d5a55dc5964c",
+          "qwen_prompt_sha256": "b067972c3ba476496af49bacfc2ade83e4bc72c47a52f7f0e70d7d9e8f573e0d"
+        }
+      },
+      "schema": "gsm8k_single_greedy_v1",
+      "selection_policy": "single_greedy",
+      "support": "tokenizer_defined_ids_only",
+      "task": "gsm8k",
+      "task_file_sha256": "c5030a8fc1cc8ba258b93e69a35159bdfff890fea635299342585d423e6321a6",
+      "task_revision": "740312add88f781978c0658806c59bc2815b9866",
+      "thought_cap": 1024,
+      "thought_format": {
+        "additional_stop_ids": [
+          151643
+        ],
+        "close_ids": [
+          151668,
+          198
+        ],
+        "header_ids": [
+          37175,
+          1128,
+          73045,
+          11017,
+          504,
+          279,
+          17221,
+          21085,
+          13,
+          10224,
+          697,
+          18778,
+          975,
+          4766,
+          279,
+          12864,
+          3772,
+          11,
+          1221,
+          15688,
+          279,
+          21085,
+          448,
+          12579,
+          44197,
+          323,
+          16232,
+          13,
+          3155,
+          537,
+          8290,
+          279,
+          41171,
+          448,
+          264,
+          4586,
+          16148,
+          382,
+          12187,
+          424,
+          510
+        ],
+        "open_ids": [
+          198,
+          151667
+        ],
+        "pad_id": 151643,
+        "stop_id": 151668
+      },
+      "thought_reader_suffix_template": "\n\nUse the scratch work to answer the following question. Finish with a line in the form #### <number>, followed by a newline.\nQuestion: {question}\nAnswer:",
+      "tokenizer_and_config_sha256": "12069ffe0ac8aee2792f2c6160c51e240396084fe3e7aa2753d362a3f978238e"
+    }
+  },
+  "hard_deadline_utc": "2026-10-31T08:27:49+00:00",
+  "local_generate_template": {
+    "command": "generate",
+    "compute": "fp32",
+    "dependencies": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "head_precision": "fp32",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff",
+    "schema": "local_content_audit_v1",
+    "seed": 1729,
+    "seed_rule": "record-local item_seed(seed,item_id); invariant to shards",
+    "selection_item_ids_sha256": "4f58ecd7b6faeaad010485d858e42f8498aa804c5bd120bc4ae126dcbf6b7127",
+    "selection_policy": "sample",
+    "selection_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+    "split": "dev",
+    "support": "tokenizer_defined_ids_only",
+    "temperature": 0.7,
+    "thought_cap": 1024,
+    "thought_format": {
+      "additional_stop_ids": [
+        151643
+      ],
+      "close_ids": [
+        151668,
+        198
+      ],
+      "header_ids": [
+        37175,
+        1128,
+        73045,
+        11017,
+        504,
+        279,
+        17221,
+        21085,
+        13,
+        10224,
+        697,
+        18778,
+        975,
+        4766,
+        279,
+        12864,
+        3772,
+        11,
+        1221,
+        15688,
+        279,
+        21085,
+        448,
+        12579,
+        44197,
+        323,
+        16232,
+        13,
+        3155,
+        537,
+        8290,
+        279,
+        41171,
+        448,
+        264,
+        4586,
+        16148,
+        382,
+        12187,
+        424,
+        510
+      ],
+      "open_ids": [
+        198,
+        151667
+      ],
+      "pad_id": 151643,
+      "stop_id": 151668
+    },
+    "tokenizer_and_config_sha256": "4813728aadd501e0da5d155e00cc22bb82d903f5efcefb189f8624dd84039598"
+  },
+  "local_score_template": {
+    "command": "score",
+    "compute": "fp32",
+    "control_seed": 17,
+    "dependencies": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "filler_text": " ",
+    "head_precision": "fp32",
+    "horizons": [
+      1,
+      4,
+      16
+    ],
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "modes": [
+      "raw",
+      "empty",
+      "own",
+      "filler",
+      "shuffled",
+      "other"
+    ],
+    "other_note": "next global selected item, cyclic repeat/trim to recipient content length; empty donor uses filler",
+    "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff",
+    "schema": "local_content_audit_v1",
+    "selection_item_ids_sha256": "4f58ecd7b6faeaad010485d858e42f8498aa804c5bd120bc4ae126dcbf6b7127",
+    "selection_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+    "split": "dev",
+    "thought_cap": 1024,
+    "thought_format": {
+      "additional_stop_ids": [
+        151643
+      ],
+      "close_ids": [
+        151668,
+        198
+      ],
+      "header_ids": [
+        37175,
+        1128,
+        73045,
+        11017,
+        504,
+        279,
+        17221,
+        21085,
+        13,
+        10224,
+        697,
+        18778,
+        975,
+        4766,
+        279,
+        12864,
+        3772,
+        11,
+        1221,
+        15688,
+        279,
+        21085,
+        448,
+        12579,
+        44197,
+        323,
+        16232,
+        13,
+        3155,
+        537,
+        8290,
+        279,
+        41171,
+        448,
+        264,
+        4586,
+        16148,
+        382,
+        12187,
+        424,
+        510
+      ],
+      "open_ids": [
+        198,
+        151667
+      ],
+      "pad_id": 151643,
+      "stop_id": 151668
+    },
+    "tokenizer_and_config_sha256": "4813728aadd501e0da5d155e00cc22bb82d903f5efcefb189f8624dd84039598",
+    "writer_model_identity": {
+      "base_assets_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+      "checkpoint_sha256": null
+    },
+    "writer_protocol": {
+      "command": "generate",
+      "compute": "fp32",
+      "dependencies": {
+        "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+        "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+        "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+        "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+        "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+        "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+        "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+        "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+        "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+        "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+        "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+        "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+        "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+        "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+        "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+      },
+      "head_precision": "fp32",
+      "model_id": "Qwen/Qwen3-1.7B-Base",
+      "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+      "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff",
+      "schema": "local_content_audit_v1",
+      "seed": 1729,
+      "seed_rule": "record-local item_seed(seed,item_id); invariant to shards",
+      "selection_item_ids_sha256": "4f58ecd7b6faeaad010485d858e42f8498aa804c5bd120bc4ae126dcbf6b7127",
+      "selection_policy": "sample",
+      "selection_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+      "split": "dev",
+      "support": "tokenizer_defined_ids_only",
+      "temperature": 0.7,
+      "thought_cap": 1024,
+      "thought_format": {
+        "additional_stop_ids": [
+          151643
+        ],
+        "close_ids": [
+          151668,
+          198
+        ],
+        "header_ids": [
+          37175,
+          1128,
+          73045,
+          11017,
+          504,
+          279,
+          17221,
+          21085,
+          13,
+          10224,
+          697,
+          18778,
+          975,
+          4766,
+          279,
+          12864,
+          3772,
+          11,
+          1221,
+          15688,
+          279,
+          21085,
+          448,
+          12579,
+          44197,
+          323,
+          16232,
+          13,
+          3155,
+          537,
+          8290,
+          279,
+          41171,
+          448,
+          264,
+          4586,
+          16148,
+          382,
+          12187,
+          424,
+          510
+        ],
+        "open_ids": [
+          198,
+          151667
+        ],
+        "pad_id": 151643,
+        "stop_id": 151668
+      },
+      "tokenizer_and_config_sha256": "4813728aadd501e0da5d155e00cc22bb82d903f5efcefb189f8624dd84039598"
+    }
+  },
+  "local_selection": "/home/ubuntu/dario/local/data/finemath/fixed-local-evaluation-v1.ids.json",
+  "local_test_ids_sha256": "dca59b6e7ed5c78398a93085f9a736da94768a9dac4a19f1f7e01f1a598a2b54",
+  "planner_sha256": "7dc9b6c8a6dd70f93081d427ce7289f4f0ad20397a20b9be11c5035ac9f94f33",
+  "primary": "Terminal256 R.one_thought minus C.one_thought on full official GSM8K test; seeds separately.",
+  "projector_sha256": "cd829a2c27f95faeaf4325c708c1bcaa57626904c106b6bdcf98fb56b40f7dbc",
+  "schema": "final-evaluation-plan-v1",
+  "secondary": {
+    "compute": "fp32",
+    "conventions": {
+      "arc_challenge": "Question: {question}\\nAnswer:; choices retain one added leading space; raw=sum token logP; normalized=raw/token_count; first index wins exact ties",
+      "lambada": "context=text.rsplit(' ',1)[0]; target=' '+last word; sum all target token logP; exact requires every greedy-on-gold-prefix token to match",
+      "likelihood_support": "raw full released-model vocabulary; writer alone masks model-only tokenizer-undefined rows",
+      "padding": "contiguous real context+target, right padded; fixed-width prediction positions; mask every non-target continuation slot",
+      "thought": "one greedy prefix-only note, fixed before any continuation scoring; header+context+open+content+close; no target-dependent note selection",
+      "tokenization": "context and leading-space continuation encoded separately, add_special_tokens=False, matching legacy benchmark definitions"
+    },
+    "future_width": 128,
+    "head_precision": "fp32",
+    "max_context_tokens": 768,
+    "schema": "secondary_fp32_likelihood_v1",
+    "thought_cap": 1024
+  },
+  "secondary_contrasts": [
+    "R.direct-C.direct",
+    "R.one_thought-R.empty_format",
+    "each trained model minus B0 in same mode"
+  ],
+  "sharding": "Root allocates finite disjoint shards; every global item exactly once; local donors use all saved global notes before any score shard.",
+  "small_input_sha256": {
+    "/home/ubuntu/dario/local/data/benchmark_exclusion/questions.manifest.json": "89aef24c41ffc23ffa277959ab7c563a4bdc141f6c74eb1ab391cebc98cd63c8",
+    "/home/ubuntu/dario/local/data/finemath/fixed-local-evaluation-v1.ids.json": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+    "/home/ubuntu/dario/local/evaluation/final-protocol-v1/postlock_project.py": "cd829a2c27f95faeaf4325c708c1bcaa57626904c106b6bdcf98fb56b40f7dbc",
+    "/home/ubuntu/dario/local/evaluation/held-dev128-v1/prompt.json": "63de67bc2cfe72f698feb32580ec3aa42a716114d7bc1c4e6239b2df39eb441a",
+    "/home/ubuntu/dario/local/resolved_format.json": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+    "/home/ubuntu/dario/local/science/experiment-256.json": "2215772156ff3fbc9fdd41b450ac3263fde2c10c5aa32c35c23981902fc0dcda",
+    "/home/ubuntu/dario/local/science/resolved_format.absolute.json": "dbb5ad67ab9af52ff1d231980b85fa643add2d26fc9328d539ff8aff4e8b9346",
+    "/home/ubuntu/dario/local/science/source-256-001.manifest.json": "8a0641c679b0e1bf61ed984d74a14a0385e19976470d1ab96acbe7a75b77faa4"
+  },
+  "source_manifest_file": "/home/ubuntu/dario/local/science/source-256-001.manifest.json",
+  "source_manifest_sha256": "8a0641c679b0e1bf61ed984d74a14a0385e19976470d1ab96acbe7a75b77faa4",
+  "source_root": "/home/ubuntu/dario/local/science/source-256-001",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "status": "PREPARED_NOT_LOCKED"
+}

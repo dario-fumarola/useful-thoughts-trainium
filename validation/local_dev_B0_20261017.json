@@ -1,0 +1,4769 @@
+{
+  "B0_map_source_scores_sha256": "3a2902989f0f2259910ded56d7d989587016929f01bb04845f6f761e993746d1",
+  "B0_strata_map_sha256": "fec318f79d566fc44342d79819bcfd2eb5d1186c7f8e0ce3bc5da939937d5598",
+  "COMPLETE_sha256": "9e180b74ac07cafb9562f27904e3b32cfcb19da438a3a7c6a0c4f3e4680af8f4",
+  "checkpoint": null,
+  "complete_suite_claim": false,
+  "created_utc": "2026-10-17T20:12:06.701533+00:00",
+  "declaration_sha256": "f3c87014d4edbca28f13fcfd5f6ae52533704c50afd2cf606848adbbf88dfeab",
+  "exit_sha256": "aa64f90189b6ce3cdaae094756f7ed0d8e3a2d2f9594fca867a819388603a967",
+  "fixed_token_class_counts": {
+    "contains_digit_no_letter": 59,
+    "contains_letter": 303,
+    "punctuation_or_symbol": 117,
+    "whitespace_only": 33
+  },
+  "frozen_B0_surprisal_ranges": {
+    "B0_raw_K1_surprisal_Q1": {
+      "finite_baselines": 128,
+      "items": 128,
+      "maximum": 0.0062093669548630714,
+      "minimum": 9.337242090623477e-10
+    },
+    "B0_raw_K1_surprisal_Q2": {
+      "finite_baselines": 128,
+      "items": 128,
+      "maximum": 0.22505374252796173,
+      "minimum": 0.006218015681952238
+    },
+    "B0_raw_K1_surprisal_Q3": {
+      "finite_baselines": 128,
+      "items": 128,
+      "maximum": 1.7245630025863647,
+      "minimum": 0.2271149605512619
+    },
+    "B0_raw_K1_surprisal_Q4": {
+      "finite_baselines": 128,
+      "items": 128,
+      "maximum": 10.132084846496582,
+      "minimum": 1.7282317876815796
+    }
+  },
+  "helper_sha256": "194281ae69dff8b3415e42d63d45c410e4c16126e9d672661c4f067675f5fc90",
+  "input_files": {
+    "COMPLETE": "/home/ubuntu/dario/local/nvme/evaluation/local-dev512-v1-B0-001/COMPLETE.json",
+    "exit": "/home/ubuntu/dario/local/evaluation/local-dev512-v1/b0-plan-v1/exit.json",
+    "notes": "/home/ubuntu/dario/local/nvme/evaluation/local-dev512-v1-B0-001/notes/notes.jsonl",
+    "root_verification": "/home/ubuntu/dario/local/evaluation/local-dev512-v1/b0-plan-v1/root-verification.json",
+    "scores": "/home/ubuntu/dario/local/nvme/evaluation/local-dev512-v1-B0-001/scores/scores.jsonl",
+    "strata_map": "/home/ubuntu/dario/local/analysis/local-dev512-v1.strata.json"
+  },
+  "items": 512,
+  "model_binding": {
+    "base_assets_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+    "checkpoint_sha256": null
+  },
+  "no_imputation": true,
+  "no_rebinning": true,
+  "notes_protocol_sha256": "e2e4888734452e6c15fa9c3e559fabbba045223ef9729ea8a925fd91b4b08e8d",
+  "notes_run_sha256": "26954196593ac01fa338e64b266cb929c6f60b527a7ca68ec670bb1fa661a8a4",
+  "notes_sha256": "a6a60c1cf015106bdb09affa800cb7036a28e727e6c1c439afb7e853288fa71f",
+  "official_final_test_access": false,
+  "original_files_modified": false,
+  "priority": "Aggregate all-document K1 primary; all strata and K4/K16 secondary descriptive, no selection change.",
+  "protocol": {
+    "command": "score",
+    "compute": "fp32",
+    "control_seed": 17,
+    "dependencies": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "filler_text": " ",
+    "head_precision": "fp32",
+    "horizons": [
+      1,
+      4,
+      16
+    ],
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "modes": [
+      "raw",
+      "empty",
+      "own",
+      "filler",
+      "shuffled",
+      "other"
+    ],
+    "other_note": "next global selected item, cyclic repeat/trim to recipient content length; empty donor uses filler",
+    "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff",
+    "schema": "local_content_audit_v1",
+    "selection_item_ids_sha256": "4f58ecd7b6faeaad010485d858e42f8498aa804c5bd120bc4ae126dcbf6b7127",
+    "selection_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+    "split": "dev",
+    "thought_cap": 1024,
+    "thought_format": {
+      "additional_stop_ids": [
+        151643
+      ],
+      "close_ids": [
+        151668,
+        198
+      ],
+      "header_ids": [
+        37175,
+        1128,
+        73045,
+        11017,
+        504,
+        279,
+        17221,
+        21085,
+        13,
+        10224,
+        697,
+        18778,
+        975,
+        4766,
+        279,
+        12864,
+        3772,
+        11,
+        1221,
+        15688,
+        279,
+        21085,
+        448,
+        12579,
+        44197,
+        323,
+        16232,
+        13,
+        3155,
+        537,
+        8290,
+        279,
+        41171,
+        448,
+        264,
+        4586,
+        16148,
+        382,
+        12187,
+        424,
+        510
+      ],
+      "open_ids": [
+        198,
+        151667
+      ],
+      "pad_id": 151643,
+      "stop_id": 151668
+    },
+    "tokenizer_and_config_sha256": "4813728aadd501e0da5d155e00cc22bb82d903f5efcefb189f8624dd84039598",
+    "writer_model_identity": {
+      "base_assets_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+      "checkpoint_sha256": null
+    },
+    "writer_protocol": {
+      "command": "generate",
+      "compute": "fp32",
+      "dependencies": {
+        "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+        "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+        "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+        "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+        "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+        "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+        "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+        "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+        "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+        "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+        "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+        "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+        "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+        "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+        "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+        "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+      },
+      "head_precision": "fp32",
+      "model_id": "Qwen/Qwen3-1.7B-Base",
+      "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+      "records_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff",
+      "schema": "local_content_audit_v1",
+      "seed": 1729,
+      "seed_rule": "record-local item_seed(seed,item_id); invariant to shards",
+      "selection_item_ids_sha256": "4f58ecd7b6faeaad010485d858e42f8498aa804c5bd120bc4ae126dcbf6b7127",
+      "selection_policy": "sample",
+      "selection_sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b",
+      "split": "dev",
+      "support": "tokenizer_defined_ids_only",
+      "temperature": 0.7,
+      "thought_cap": 1024,
+      "thought_format": {
+        "additional_stop_ids": [
+          151643
+        ],
+        "close_ids": [
+          151668,
+          198
+        ],
+        "header_ids": [
+          37175,
+          1128,
+          73045,
+          11017,
+          504,
+          279,
+          17221,
+          21085,
+          13,
+          10224,
+          697,
+          18778,
+          975,
+          4766,
+          279,
+          12864,
+          3772,
+          11,
+          1221,
+          15688,
+          279,
+          21085,
+          448,
+          12579,
+          44197,
+          323,
+          16232,
+          13,
+          3155,
+          537,
+          8290,
+          279,
+          41171,
+          448,
+          264,
+          4586,
+          16148,
+          382,
+          12187,
+          424,
+          510
+        ],
+        "open_ids": [
+          198,
+          151667
+        ],
+        "pad_id": 151643,
+        "stop_id": 151668
+      },
+      "tokenizer_and_config_sha256": "4813728aadd501e0da5d155e00cc22bb82d903f5efcefb189f8624dd84039598"
+    }
+  },
+  "protocol_sha256": "0fca0d71f98122d04a957d7861049bd7b48deb9690cf15803e6c8bbad6559876",
+  "purpose": "Fixed local development audit, not a final or matrix report",
+  "root_verification_sha256": "2e65b744a3e47365f4cac0d953c1eb34baa940461d3074c987fd71a3f3de7a07",
+  "rows": 9216,
+  "schema": "one-same-model-DEV512-stratified-summary-v1",
+  "score_run_sha256": "e94ac1aa682042fd484d9756e41c5962eec04f8f010b77d2b99ab7aa350bf31e",
+  "scores_sha256": "3a2902989f0f2259910ded56d7d989587016929f01bb04845f6f761e993746d1",
+  "strata": {
+    "B0_surprisal_bin": {
+      "B0_raw_K1_surprisal_Q1": {
+        "item_ids_sha256": "0cd9c23f89a7b4952e1e2be6b18c3ffc4df372c9c33a50405ed027b5b1fe5ad4",
+        "items": 128,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -7.177029785547347,
+              "mean_log_likelihood_successful_only": -7.177931441925466,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -12.742588157349221,
+              "mean_log_likelihood_successful_only": -19.81111741411742,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.379420288907092,
+              "mean_log_likelihood_successful_only": -11.33780358065119,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.643841274861188,
+              "mean_log_likelihood_successful_only": -8.644742931239307,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -20.30940498081803,
+              "mean_log_likelihood_successful_only": -27.377934237586228,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -14.589647433053383,
+              "mean_log_likelihood_successful_only": -15.548030724797481,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -9.833727799203189,
+              "mean_log_likelihood_successful_only": -9.834629455581307,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -28.679330338683688,
+              "mean_log_likelihood_successful_only": -35.747859595451885,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -18.707349266269375,
+              "mean_log_likelihood_successful_only": -19.665732558013474,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.505285091545375,
+              "mean_log_likelihood_successful_only": -10.506186747923493,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -27.667753109297095,
+              "mean_log_likelihood_successful_only": -34.736282366065296,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -18.993401088602113,
+              "mean_log_likelihood_successful_only": -19.95178438034621,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.00090165637811912,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -7.068529256768199,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.958383291744098,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -6.853647059608193,
+              "mean_log_likelihood_successful_only": -6.854548715986311,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -28.582168318421118,
+              "mean_log_likelihood_successful_only": -35.65069757518932,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -16.31097855998553,
+              "mean_log_likelihood_successful_only": -17.269361851729627,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 128,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.1384367029415445,
+                -2.5531113902572544
+              ],
+              "difference_b_minus_a": -3.3282553059980273,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -16.804877745055702,
+                -13.125542709620117
+              ],
+              "difference_b_minus_a": -14.925164951947876,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.897743432172096,
+                -7.390203973649386
+              ],
+              "difference_b_minus_a": -8.613980799695021,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.6092465907800944,
+                -1.1312381602823742
+              ],
+              "difference_b_minus_a": -1.8614438166841865,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -8.965846356837254,
+                -5.836645307910404
+              ],
+              "difference_b_minus_a": -7.358348128479067,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.534447613063979,
+                -3.34827510360351
+              ],
+              "difference_b_minus_a": -4.403753655548729,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.433923638286069,
+                0.05370113537646756
+              ],
+              "difference_b_minus_a": -0.671557292342186,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.7819677693212709,
+                2.7655794714615967
+              ],
+              "difference_b_minus_a": 1.0115772293865923,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.401347492605397,
+                0.774556553087227
+              ],
+              "difference_b_minus_a": -0.28605182233273674,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -11.405290593923125,
+                -9.644239820578541
+              ],
+              "difference_b_minus_a": -10.505285091545375,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -29.92282615111885,
+                -25.495198831601574
+              ],
+              "difference_b_minus_a": -27.6677531092971,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -20.415956459098634,
+                -17.584119587420123
+              ],
+              "difference_b_minus_a": -18.993401088602113,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.403043368109502,
+                -2.9113224076107156
+              ],
+              "difference_b_minus_a": -3.651638031937182,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6920459859839314,
+                2.4817572876613654
+              ],
+              "difference_b_minus_a": 0.9144152091240232,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.6976338215529325,
+                -1.706020559065414
+              ],
+              "difference_b_minus_a": -2.6824225286165833,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "B0_raw_K1_surprisal_Q2": {
+        "item_ids_sha256": "8c823d926f89a3434904b85743f098b43e9c3b8b2392498e9d5353aa4aafe47a",
+        "items": 128,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -6.1485206207034935,
+              "mean_log_likelihood_successful_only": -6.22265373962,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.9480296995696,
+              "mean_log_likelihood_successful_only": -25.27620348612227,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -7.718801302725328,
+              "mean_log_likelihood_successful_only": -10.674426122253806,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.344181692857092,
+              "mean_log_likelihood_successful_only": -8.418314811773598,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -16.11579244817797,
+              "mean_log_likelihood_successful_only": -32.44396623473064,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -12.343334661575568,
+              "mean_log_likelihood_successful_only": -15.298959481104045,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.862686896394735,
+              "mean_log_likelihood_successful_only": -10.936820015311241,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -26.99640303079298,
+              "mean_log_likelihood_successful_only": -43.32457681734565,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -18.35811987690349,
+              "mean_log_likelihood_successful_only": -21.313744696431968,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.670727473847364,
+              "mean_log_likelihood_successful_only": -10.744860592763871,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -24.897005581535286,
+              "mean_log_likelihood_successful_only": -41.22517936808796,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -16.94590681867894,
+              "mean_log_likelihood_successful_only": -19.901531638207416,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.07413311891650665,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -16.328173786552668,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -2.9556248195284773,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -6.594882640685682,
+              "mean_log_likelihood_successful_only": -6.669015759602189,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -25.519231064252352,
+              "mean_log_likelihood_successful_only": -41.84740485080502,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -15.232094391182816,
+              "mean_log_likelihood_successful_only": -18.187719210711293,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 128,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.315822325833142,
+                -3.7557257405482236
+              ],
+              "difference_b_minus_a": -4.522206853143871,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -17.99391946530471,
+                -14.020365267515478
+              ],
+              "difference_b_minus_a": -15.948975881965685,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -10.37595281612139,
+                -8.070971965191541
+              ],
+              "difference_b_minus_a": -9.22710551595361,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.1067609726102092,
+                -1.5632816036697477
+              ],
+              "difference_b_minus_a": -2.3265457809902728,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -10.354425026364964,
+                -7.2721274786269445
+              ],
+              "difference_b_minus_a": -8.781213133357316,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.667291852522372,
+                -3.559469471940106
+              ],
+              "difference_b_minus_a": -4.602572157103371,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6070855040103197,
+                0.9729463263996875
+              ],
+              "difference_b_minus_a": 0.1919594225473702,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                0.1813698564106673,
+                4.045891087286675
+              ],
+              "difference_b_minus_a": 2.0993974492576934,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                0.22810214799333153,
+                2.62019910608908
+              ],
+              "difference_b_minus_a": 1.4122130582245518,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -11.502472948770901,
+                -9.862283527040018
+              ],
+              "difference_b_minus_a": -10.670727473847364,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -27.434879505016703,
+                -22.58865998309964
+              ],
+              "difference_b_minus_a": -24.897005581535286,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -18.297819433762882,
+                -15.631331743443528
+              ],
+              "difference_b_minus_a": -16.94590681867894,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.863885520189069,
+                -3.305312140472234
+              ],
+              "difference_b_minus_a": -4.075844833161682,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.9185878851337694,
+                2.0815388598949345
+              ],
+              "difference_b_minus_a": 0.6222254827170656,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.6996873619598887,
+                -0.7315636404525327
+              ],
+              "difference_b_minus_a": -1.7138124274961228,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "B0_raw_K1_surprisal_Q3": {
+        "item_ids_sha256": "76260f93c141f52f515da593962b912f2862792db40a4c4a4d44121d9459ecc1",
+        "items": 128,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -6.2223170613870025,
+              "mean_log_likelihood_successful_only": -7.065371295902878,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.955488334102103,
+              "mean_log_likelihood_successful_only": -32.51556751477608,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -7.420858132339668,
+              "mean_log_likelihood_successful_only": -12.670535605035106,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.706221176777035,
+              "mean_log_likelihood_successful_only": -9.54927541129291,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -16.01992795477925,
+              "mean_log_likelihood_successful_only": -39.58000713545323,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -11.89409817674381,
+              "mean_log_likelihood_successful_only": -17.14377564943925,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.046999760437757,
+              "mean_log_likelihood_successful_only": -10.890053994953632,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -24.90361251018394,
+              "mean_log_likelihood_successful_only": -48.46369169085792,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -17.15658637724745,
+              "mean_log_likelihood_successful_only": -22.40626384994289,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.664503492036602,
+              "mean_log_likelihood_successful_only": -11.507557726552477,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -24.473973630875037,
+              "mean_log_likelihood_successful_only": -48.03405281154902,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -16.73950174420845,
+              "mean_log_likelihood_successful_only": -21.98917921690389,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.8430542345158756,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -23.56007918067398,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -5.249677472695438,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -6.803955447860062,
+              "mean_log_likelihood_successful_only": -7.647009682375938,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -24.12376006421495,
+              "mean_log_likelihood_successful_only": -47.68383924488893,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -14.86733548101951,
+              "mean_log_likelihood_successful_only": -20.117012953714948,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 128,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.079858688722743,
+                -3.829168227728952
+              ],
+              "difference_b_minus_a": -4.442186430649599,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -16.91881991572074,
+                -14.208023503970738
+              ],
+              "difference_b_minus_a": -15.518485296772933,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -10.309808833696046,
+                -8.41127959687666
+              ],
+              "difference_b_minus_a": -9.318643611868783,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.6065333604288754,
+                -1.338347689361399
+              ],
+              "difference_b_minus_a": -1.9582823152595665,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.681980458848127,
+                -7.278514424061646
+              ],
+              "difference_b_minus_a": -8.454045676095785,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.732402517101896,
+                -3.995058685557189
+              ],
+              "difference_b_minus_a": -4.84540356746464,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.2163873151097504,
+                -0.018552730391093245
+              ],
+              "difference_b_minus_a": -0.6175037315988448,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.950994030603078,
+                1.8107974316160953
+              ],
+              "difference_b_minus_a": 0.4296388793089063,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.5237934655585207,
+                1.3600533697655741
+              ],
+              "difference_b_minus_a": 0.4170846330389999,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -11.39774678847316,
+                -9.964070649443602
+              ],
+              "difference_b_minus_a": -10.664503492036602,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -26.033069489690778,
+                -22.970561704093804
+              ],
+              "difference_b_minus_a": -24.473973630875037,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -17.85254453196828,
+                -15.67145652250037
+              ],
+              "difference_b_minus_a": -16.739501744208454,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.53265950170462,
+                -3.2278921400837137
+              ],
+              "difference_b_minus_a": -3.8605480441765394,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.4322083767874965,
+                0.7047073795211747
+              ],
+              "difference_b_minus_a": -0.3502135666600852,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.6647646770611395,
+                -1.1131759343695125
+              ],
+              "difference_b_minus_a": -1.8721662631889409,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "B0_raw_K1_surprisal_Q4": {
+        "item_ids_sha256": "753ff7b89d23ef27e63dab0bea8e0e86e98149853156de7c42f3a36bfd362f31",
+        "items": 128,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -5.4231624789536,
+              "mean_log_likelihood_successful_only": -8.978029057383537,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.760107795176515,
+              "mean_log_likelihood_successful_only": -39.12354148686819,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -7.096796541191669,
+              "mean_log_likelihood_successful_only": -16.25432263827968,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -7.038734372705221,
+              "mean_log_likelihood_successful_only": -10.593600951135159,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -14.1841211627802,
+              "mean_log_likelihood_successful_only": -44.547554854471876,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -10.278777841296852,
+              "mean_log_likelihood_successful_only": -19.436303938384867,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.458535954356194,
+              "mean_log_likelihood_successful_only": -12.013402532786131,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -23.074552857008584,
+              "mean_log_likelihood_successful_only": -53.43798654870026,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -14.837044896765798,
+              "mean_log_likelihood_successful_only": -23.994570993853813,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -8.498542327433825,
+              "mean_log_likelihood_successful_only": -12.053408905863762,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -21.55977240807124,
+              "mean_log_likelihood_successful_only": -51.923206099762915,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -14.078734005740777,
+              "mean_log_likelihood_successful_only": -23.23626010282879,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -3.5548665784299374,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -30.363433691691675,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -9.157526097088015,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -4.582158958539367,
+              "mean_log_likelihood_successful_only": -8.137025536969304,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -20.90383041263421,
+              "mean_log_likelihood_successful_only": -51.26726410432589,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 128,
+              "mean_gain_over_raw_paired_successful_only": -11.952390459888699,
+              "mean_log_likelihood_successful_only": -21.109916556976714,
+              "paired_successful_items": 128,
+              "statuses": {
+                "ok": 128
+              },
+              "successful_items": 128
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 128,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.714429401466623,
+                -2.456293318839744
+              ],
+              "difference_b_minus_a": -3.0753798484802246,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -14.52211308494311,
+                -11.155002280083526
+              ],
+              "difference_b_minus_a": -12.799664612894725,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -8.013124774697975,
+                -5.987021182260042
+              ],
+              "difference_b_minus_a": -6.981937464549108,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.0928927592467517,
+                -0.8613655667286371
+              ],
+              "difference_b_minus_a": -1.4598079547286034,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -8.745157361434988,
+                -6.052539406188086
+              ],
+              "difference_b_minus_a": -7.375651245291039,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.731696637940296,
+                -2.9192824123839403
+              ],
+              "difference_b_minus_a": -3.7999561644439237,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6685262098442764,
+                0.5640715085435654
+              ],
+              "difference_b_minus_a": -0.040006373077631,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.07159633267339643,
+                3.161945721273314
+              ],
+              "difference_b_minus_a": 1.5147804489373438,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.11637161293397663,
+                1.62767430625741
+              ],
+              "difference_b_minus_a": 0.758310891025022,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.302622447628528,
+                -7.737717987271026
+              ],
+              "difference_b_minus_a": -8.498542327433825,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -23.380527725716025,
+                -19.8638320246405
+              ],
+              "difference_b_minus_a": -21.55977240807124,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -15.230313806451974,
+                -12.95790006875711
+              ],
+              "difference_b_minus_a": -14.078734005740777,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.5928161242511125,
+                -3.271607622178272
+              ],
+              "difference_b_minus_a": -3.916383368894458,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.793994817489379,
+                0.501704348692324
+              ],
+              "difference_b_minus_a": -0.6559419954370278,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.908978061722977,
+                -1.3323929272946629
+              ],
+              "difference_b_minus_a": -2.126343545852077,
+              "documents": 128,
+              "items": 128,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "unassigned_baseline_failure": {
+        "item_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "items": 0,
+        "role": "secondary_descriptive",
+        "status": "empty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            }
+          },
+          "failure_free": null,
+          "items": 0,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_empty_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_empty_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            }
+          },
+          "primary": null
+        }
+      }
+    },
+    "token_class": {
+      "contains_digit_no_letter": {
+        "item_ids_sha256": "6bc171147890e13fee09316be20138fc585aa6da488d0d4bc22c8e664d9bd316",
+        "items": 59,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -4.368964037133801,
+              "mean_log_likelihood_successful_only": -4.998766658669811,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -11.257065601392126,
+              "mean_log_likelihood_successful_only": -26.21722255653771,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -8.32584352443431,
+              "mean_log_likelihood_successful_only": -11.443213594591926,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -5.674536417587654,
+              "mean_log_likelihood_successful_only": -6.304339039123665,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -17.452346191106127,
+              "mean_log_likelihood_successful_only": -32.41250314625171,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -11.885749288557031,
+              "mean_log_likelihood_successful_only": -15.003119358714645,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -5.872348334310744,
+              "mean_log_likelihood_successful_only": -6.502150955846754,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -24.622747501420843,
+              "mean_log_likelihood_successful_only": -39.582904456566425,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -15.19615061847873,
+              "mean_log_likelihood_successful_only": -18.313520688636345,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -5.791705195857127,
+              "mean_log_likelihood_successful_only": -6.421507817393137,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -23.99779256964151,
+              "mean_log_likelihood_successful_only": -38.95794952478709,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -14.725243222032347,
+              "mean_log_likelihood_successful_only": -17.842613292189963,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.6298026215360105,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -14.960156955145584,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -3.1173700701576155,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -4.257887995330279,
+              "mean_log_likelihood_successful_only": -4.88769061686629,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -24.97513838341261,
+              "mean_log_likelihood_successful_only": -39.93529533855819,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 59,
+              "mean_gain_over_raw_paired_successful_only": -12.748764984378676,
+              "mean_log_likelihood_successful_only": -15.86613505453629,
+              "paired_successful_items": 59,
+              "statuses": {
+                "ok": 59
+              },
+              "successful_items": 59
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 59,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.110728689725116,
+                -0.7495548949087582
+              ],
+              "difference_b_minus_a": -1.422741158723326,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -15.151636291903639,
+                -10.450847836927347
+              ],
+              "difference_b_minus_a": -12.740726968249387,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -8.011888311675543,
+                -4.914355720113588
+              ],
+              "difference_b_minus_a": -6.399399697598036,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.8713547814700563,
+                0.6028491998770094
+              ],
+              "difference_b_minus_a": -0.11716877826947276,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -8.81579406814803,
+                -4.3154699673053365
+              ],
+              "difference_b_minus_a": -6.545446378535382,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.36324570044364,
+                -1.3921616128727605
+              ],
+              "difference_b_minus_a": -2.8394939334753153,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6741028998410171,
+                0.8417384243317705
+              ],
+              "difference_b_minus_a": 0.08064313845361694,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.662856391119638,
+                2.898845911280451
+              ],
+              "difference_b_minus_a": 0.6249549317793341,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.7615887964075447,
+                1.7086767459232004
+              ],
+              "difference_b_minus_a": 0.4709073964463834,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -6.477601189375072,
+                -5.097140294212219
+              ],
+              "difference_b_minus_a": -5.791705195857127,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -26.243714904090613,
+                -21.717586122898684
+              ],
+              "difference_b_minus_a": -23.997792569641508,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -16.36953444603166,
+                -13.093116203301918
+              ],
+              "difference_b_minus_a": -14.725243222032347,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.0621947506600518,
+                -1.0389151068388536
+              ],
+              "difference_b_minus_a": -1.5338172005268478,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.9333122585821811,
+                2.927223802247505
+              ],
+              "difference_b_minus_a": 0.9773458137710997,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.091425431019186,
+                -0.9120072257222738
+              ],
+              "difference_b_minus_a": -1.9764782376536714,
+              "documents": 59,
+              "items": 59,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "contains_letter": {
+        "item_ids_sha256": "734f02aee3017cd72c20b96d1f6a634cf5aed18db482220d3becb0cd9861f3be",
+        "items": 303,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -6.585626569017962,
+              "mean_log_likelihood_successful_only": -8.1175507299184,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -9.862827709538974,
+              "mean_log_likelihood_successful_only": -32.60909979714491,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -8.149087455628266,
+              "mean_log_likelihood_successful_only": -13.697449835372792,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -8.775816113928608,
+              "mean_log_likelihood_successful_only": -10.307740274829046,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -16.812168119746563,
+              "mean_log_likelihood_successful_only": -39.558440207352504,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -12.29407918313995,
+              "mean_log_likelihood_successful_only": -17.842441562884474,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -10.985000885252362,
+              "mean_log_likelihood_successful_only": -12.516925046152801,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -27.050519233867806,
+              "mean_log_likelihood_successful_only": -49.79679132147374,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -18.033416906752237,
+              "mean_log_likelihood_successful_only": -23.58177928649676,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -11.401388559100894,
+              "mean_log_likelihood_successful_only": -12.933312720001334,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -25.82387125481417,
+              "mean_log_likelihood_successful_only": -48.5701433424201,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -17.51692225681638,
+              "mean_log_likelihood_successful_only": -23.065284636560904,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -1.5319241609004395,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -22.746272087605934,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -5.548362379744526,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -6.7668068876080065,
+              "mean_log_likelihood_successful_only": -8.298731048508445,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -25.648830602489014,
+              "mean_log_likelihood_successful_only": -48.395102690094944,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 303,
+              "mean_gain_over_raw_paired_successful_only": -15.352167957704097,
+              "mean_log_likelihood_successful_only": -20.900530337448625,
+              "paired_successful_items": 303,
+              "statuses": {
+                "ok": 303
+              },
+              "successful_items": 303
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 303,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.31031317920378,
+                -4.322317097845054
+              ],
+              "difference_b_minus_a": -4.815761990082933,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -17.141377964303555,
+                -14.769339398272992
+              ],
+              "difference_b_minus_a": -15.961043545275196,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -10.093424971129368,
+                -8.639471533130658
+              ],
+              "difference_b_minus_a": -9.367834801188113,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.1285031813304416,
+                -2.138001518876049
+              ],
+              "difference_b_minus_a": -2.625572445172288,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.997607525571725,
+                -8.015130029850743
+              ],
+              "difference_b_minus_a": -9.011703135067604,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.869434761455528,
+                -4.604117834471168
+              ],
+              "difference_b_minus_a": -5.222843073676429,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.9412580302839625,
+                0.08333447363116951
+              ],
+              "difference_b_minus_a": -0.416387673848533,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                0.053365838766662475,
+                2.450188989427778
+              ],
+              "difference_b_minus_a": 1.2266479790536375,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.2054128512384258,
+                1.212330016417336
+              ],
+              "difference_b_minus_a": 0.516494649935858,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -11.94727795455578,
+                -10.886400898031344
+              ],
+              "difference_b_minus_a": -11.401388559100894,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -27.270726695308777,
+                -24.40855922922603
+              ],
+              "difference_b_minus_a": -25.823871254814165,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -18.39736813499702,
+                -16.682260646952482
+              ],
+              "difference_b_minus_a": -17.51692225681638,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -5.163996849477094,
+                -4.148327613983414
+              ],
+              "difference_b_minus_a": -4.634581671492888,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.072016621778265,
+                0.7416763732291322
+              ],
+              "difference_b_minus_a": -0.17504065232515487,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.77887799337405,
+                -1.5901934907799655
+              ],
+              "difference_b_minus_a": -2.1647542991122797,
+              "documents": 303,
+              "items": 303,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "empty": {
+        "item_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "items": 0,
+        "role": "secondary_descriptive",
+        "status": "empty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            }
+          },
+          "failure_free": null,
+          "items": 0,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_empty_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_empty_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            }
+          },
+          "primary": null
+        }
+      },
+      "other": {
+        "item_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "items": 0,
+        "role": "secondary_descriptive",
+        "status": "empty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 0,
+              "mean_gain_over_raw_paired_successful_only": null,
+              "mean_log_likelihood_successful_only": null,
+              "paired_successful_items": 0,
+              "statuses": {
+                "error": 0,
+                "ok": 0
+              },
+              "successful_items": 0
+            }
+          },
+          "failure_free": null,
+          "items": 0,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_empty_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_empty_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_filler_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_other_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_raw_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K1": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K16": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            },
+            "own_minus_shuffled_K4": {
+              "items": 0,
+              "reason": "Empty fixed stratum; no documents for inference",
+              "result": null
+            }
+          },
+          "primary": null
+        }
+      },
+      "punctuation_or_symbol": {
+        "item_ids_sha256": "6975d872755e10c85b46214c55dc6c620f0660a06fa9c8b29b6f79e27d76dce2",
+        "items": 117,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -5.89684272192425,
+              "mean_log_likelihood_successful_only": -6.388605969583886,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -8.708894007116937,
+              "mean_log_likelihood_successful_only": -22.65316607400193,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -7.5592947990439505,
+              "mean_log_likelihood_successful_only": -10.83449013411671,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -8.247720785354383,
+              "mean_log_likelihood_successful_only": -8.73948403301402,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -15.952238198267866,
+              "mean_log_likelihood_successful_only": -29.896510265152862,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -12.307715277002059,
+              "mean_log_likelihood_successful_only": -15.582910612074818,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -9.10079917920903,
+              "mean_log_likelihood_successful_only": -9.592562426868668,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -24.510616770547173,
+              "mean_log_likelihood_successful_only": -38.45488883743217,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -16.907703411657014,
+              "mean_log_likelihood_successful_only": -20.182898746729773,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -9.262329033021679,
+              "mean_log_likelihood_successful_only": -9.754092280681316,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -22.93202543804445,
+              "mean_log_likelihood_successful_only": -36.87629750492944,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -16.10287163430448,
+              "mean_log_likelihood_successful_only": -19.37806696937724,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.4917632476596369,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -13.944272066884995,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -3.275195335072758,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -6.014951785639247,
+              "mean_log_likelihood_successful_only": -6.5067150332988835,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -23.64981038381725,
+              "mean_log_likelihood_successful_only": -37.594082450702246,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 117,
+              "mean_gain_over_raw_paired_successful_only": -14.345067994781589,
+              "mean_log_likelihood_successful_only": -17.620263329854346,
+              "paired_successful_items": 117,
+              "statuses": {
+                "ok": 117
+              },
+              "successful_items": 117
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 117,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.9682204247794597,
+                -2.766945870348022
+              ],
+              "difference_b_minus_a": -3.3654863110974302,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -15.810516964659724,
+                -12.680235764601706
+              ],
+              "difference_b_minus_a": -14.223131430927511,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.595185633443396,
+                -7.504602521189802
+              ],
+              "difference_b_minus_a": -8.54357683526053,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.5756980057964978,
+                -0.458415828403245
+              ],
+              "difference_b_minus_a": -1.0146082476672964,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -8.17905061675648,
+                -5.778245575828318
+              ],
+              "difference_b_minus_a": -6.9797872397765826,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.710752522725552,
+                -2.9069892272983626
+              ],
+              "difference_b_minus_a": -3.7951563573024227,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.7650099346270928,
+                0.4402969525155855
+              ],
+              "difference_b_minus_a": -0.16152985381264973,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                0.05843684149641623,
+                3.107847925373411
+              ],
+              "difference_b_minus_a": 1.5785913325027245,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.25664373237682453,
+                1.8206670350073864
+              ],
+              "difference_b_minus_a": 0.8048317773525332,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.964928018410639,
+                -8.57186538294779
+              ],
+              "difference_b_minus_a": -9.262329033021679,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -24.818870203570878,
+                -21.152914744110685
+              ],
+              "difference_b_minus_a": -22.932025438044448,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -17.309914696877488,
+                -14.959362533480913
+              ],
+              "difference_b_minus_a": -16.10287163430448,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.868515231224716,
+                -2.6645873445476225
+              ],
+              "difference_b_minus_a": -3.247377247382433,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.5343696740772557,
+                1.980520261573353
+              ],
+              "difference_b_minus_a": 0.717784945772801,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.655846884608372,
+                -0.8963412571419208
+              ],
+              "difference_b_minus_a": -1.7578036395228929,
+              "documents": 117,
+              "items": 117,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      },
+      "whitespace_only": {
+        "item_ids_sha256": "22ea272406e5298571ee0db93fb0b02852de881981f8212de30019eb857a438c",
+        "items": 33,
+        "role": "secondary_descriptive",
+        "status": "nonempty_stratum",
+        "summary": {
+          "conditions": {
+            "empty_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -7.671136548340328,
+              "mean_log_likelihood_successful_only": -8.085398363344597,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "empty_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -11.286397725095332,
+              "mean_log_likelihood_successful_only": -26.157249315523888,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "empty_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -9.999891013813027,
+              "mean_log_likelihood_successful_only": -12.934394218957515,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "filler_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -6.999029913853523,
+              "mean_log_likelihood_successful_only": -7.413291728857792,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "filler_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -16.313827975857183,
+              "mean_log_likelihood_successful_only": -31.184679566285745,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "filler_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -12.70248334836971,
+              "mean_log_likelihood_successful_only": -15.636986553514197,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "other_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -8.428252382027388,
+              "mean_log_likelihood_successful_only": -8.842514197031656,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "other_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -22.754771081632207,
+              "mean_log_likelihood_successful_only": -37.625622672060764,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "other_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -15.171677121205434,
+              "mean_log_likelihood_successful_only": -18.10618032634992,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "own_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -8.587140498054758,
+              "mean_log_likelihood_successful_only": -9.001402313059026,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "own_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -21.122996283118965,
+              "mean_log_likelihood_successful_only": -35.993847873547516,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "own_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -14.682206454441822,
+              "mean_log_likelihood_successful_only": -17.61670965958631,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "raw_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -0.4142618150042687,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "raw_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -14.870851590428556,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "raw_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": 0.0,
+              "mean_log_likelihood_successful_only": -2.934503205144487,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "shuffled_K1": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -5.258400244461775,
+              "mean_log_likelihood_successful_only": -5.672662059466044,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "shuffled_K16": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -20.49557727081103,
+              "mean_log_likelihood_successful_only": -35.366428861239584,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            },
+            "shuffled_K4": {
+              "invalid_numeric_outcomes": 0,
+              "items": 33,
+              "mean_gain_over_raw_paired_successful_only": -11.763069016171798,
+              "mean_log_likelihood_successful_only": -14.697572221316284,
+              "paired_successful_items": 33,
+              "statuses": {
+                "ok": 33
+              },
+              "successful_items": 33
+            }
+          },
+          "crossed_writer_reader": false,
+          "failure_free": true,
+          "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+          "greedy_note": null,
+          "items": 33,
+          "paired_document_contrasts": {
+            "own_minus_empty_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.6847061516660633,
+                -0.1756865313558872
+              ],
+              "difference_b_minus_a": -0.9160039497144294,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -12.669802603159873,
+                -7.151986502477701
+              ],
+              "difference_b_minus_a": -9.836598558023631,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -6.286419096883978,
+                -3.1996829693377307
+              ],
+              "difference_b_minus_a": -4.682315440628796,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.494803264646819,
+                -0.7290613026329968
+              ],
+              "difference_b_minus_a": -1.5881105842012349,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -7.074434739913075,
+                -2.624830092147275
+              ],
+              "difference_b_minus_a": -4.80916830726178,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.6857738574915704,
+                -0.3628806010329118
+              ],
+              "difference_b_minus_a": -1.9797231060721132,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.0420949856440225,
+                0.7222680966059364
+              ],
+              "difference_b_minus_a": -0.15888811602736963,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.107338926805724,
+                4.364553300321701
+              ],
+              "difference_b_minus_a": 1.631774798513242,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.5712946188680332,
+                2.474054728075749
+              ],
+              "difference_b_minus_a": 0.4894706667636108,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -9.691769312379654,
+                -7.564604403438564
+              ],
+              "difference_b_minus_a": -8.587140498054758,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -24.339040443241363,
+                -18.048556722293576
+              ],
+              "difference_b_minus_a": -21.122996283118965,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -16.751222832919492,
+                -12.70780080763807
+              ],
+              "difference_b_minus_a": -14.682206454441822,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K1": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.419764970920302,
+                -2.27682515689821
+              ],
+              "difference_b_minus_a": -3.3287402535929824,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K16": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.3653198874312795,
+                0.998960426407817
+              ],
+              "difference_b_minus_a": -0.6274190123079328,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled_K4": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.4004186836396855,
+                -1.4888604032653823
+              ],
+              "difference_b_minus_a": -2.9191374382700253,
+              "documents": 33,
+              "items": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          },
+          "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+          "writer_policy": "sample"
+        }
+      }
+    }
+  },
+  "summary_loader_sha256": "d47178f9ffd238dd35ca8145e6cec0c40d9d2f25660b0d0e0dc7cae72dcfddde",
+  "uncertainty": "Document bootstrap5000 seed17 conditional on checkpoints, not training-seed uncertainty.",
+  "whole_slice": {
+    "conditions": {
+      "empty_K1": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -6.242757486647861,
+        "mean_log_likelihood_successful_only": -7.36099638370797,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "empty_K16": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -9.851553496549359,
+        "mean_log_likelihood_successful_only": -29.18160747547099,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "empty_K4": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -8.153969066290939,
+        "mean_log_likelihood_successful_only": -12.734271986554946,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "filler_K1": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -8.183244629300134,
+        "mean_log_likelihood_successful_only": -9.301483526360244,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "filler_K16": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -16.657311636638862,
+        "mean_log_likelihood_successful_only": -35.98736561556049,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "filler_K4": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -12.276464528167404,
+        "mean_log_likelihood_successful_only": -16.856767448431413,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "other_K1": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -9.800487602597968,
+        "mean_log_likelihood_successful_only": -10.918726499658078,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "other_K16": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -25.913474684167298,
+        "mean_log_likelihood_successful_only": -45.24352866308893,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "other_K4": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -17.26477510429653,
+        "mean_log_likelihood_successful_only": -21.845078024560536,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "own_K1": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -10.084764596215791,
+        "mean_log_likelihood_successful_only": -11.2030034932759,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "own_K16": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -24.649626182444663,
+        "mean_log_likelihood_successful_only": -43.979680161366296,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "own_K4": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -16.68938591430757,
+        "mean_log_likelihood_successful_only": -21.269688834571575,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "raw_K1": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": 0.0,
+        "mean_log_likelihood_successful_only": -1.1182388970601096,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "raw_K16": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": 0.0,
+        "mean_log_likelihood_successful_only": -19.33005397892163,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "raw_K4": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": 0.0,
+        "mean_log_likelihood_successful_only": -4.580302920264007,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "shuffled_K1": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -6.208661026673326,
+        "mean_log_likelihood_successful_only": -7.326899923733436,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "shuffled_K16": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -24.78224746488066,
+        "mean_log_likelihood_successful_only": -44.11230144380229,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      },
+      "shuffled_K4": {
+        "invalid_numeric_outcomes": 0,
+        "items": 512,
+        "mean_gain_over_raw_paired_successful_only": -14.590699723019139,
+        "mean_log_likelihood_successful_only": -19.171002643283146,
+        "paired_successful_items": 512,
+        "statuses": {
+          "ok": 512
+        },
+        "successful_items": 512
+      }
+    },
+    "crossed_writer_reader": false,
+    "failure_free": true,
+    "failure_note": "No numerical value is imputed for execution failures. All failures remain rows/counts; likelihood means condition on successful execution. An incomplete audit cannot establish unconditional primary utility.",
+    "greedy_note": null,
+    "items": 512,
+    "paired_document_contrasts": {
+      "own_minus_empty_K1": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -4.216340137989937,
+          -3.494003716866064
+        ],
+        "difference_b_minus_a": -3.8420071095679305,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_empty_K16": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -15.663764432018993,
+          -13.963118668625981
+        ],
+        "difference_b_minus_a": -14.798072685895306,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_empty_K4": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -9.089209657970319,
+          -8.01420794011211
+        ],
+        "difference_b_minus_a": -8.53541684801663,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_filler_K1": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -2.263456022173705,
+          -1.5634077782431643
+        ],
+        "difference_b_minus_a": -1.9015199669156573,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_filler_K16": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -8.722363076944632,
+          -7.2997413126231345
+        ],
+        "difference_b_minus_a": -7.992314545805802,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_filler_K4": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -4.9211403513880105,
+          -3.937204498991421
+        ],
+        "difference_b_minus_a": -4.412921386140166,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_other_K1": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.6413725111779058,
+          0.05857338197693011
+        ],
+        "difference_b_minus_a": -0.2842769936178229,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_other_K16": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.4154074761340971,
+          2.12768277020349
+        ],
+        "difference_b_minus_a": 1.263848501722634,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_other_K4": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.04349684027410823,
+          1.095374605052388
+        ],
+        "difference_b_minus_a": 0.5753891899889593,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_raw_K1": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -10.517006197390984,
+          -9.681983515861857
+        ],
+        "difference_b_minus_a": -10.084764596215791,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_raw_K16": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -25.69921831961304,
+          -23.637669546651303
+        ],
+        "difference_b_minus_a": -24.649626182444663,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_raw_K4": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -17.348079901778984,
+          -16.0479012375502
+        ],
+        "difference_b_minus_a": -16.68938591430757,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_shuffled_K1": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -4.241037786935886,
+          -3.531925931715523
+        ],
+        "difference_b_minus_a": -3.8761035695424653,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_shuffled_K16": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.5197625851518651,
+          0.8018096030029461
+        ],
+        "difference_b_minus_a": 0.13262128243599394,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "own_minus_shuffled_K4": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -2.5445903203632456,
+          -1.6567716478508843
+        ],
+        "difference_b_minus_a": -2.098686191288431,
+        "documents": 512,
+        "items": 512,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "primary": "own K=1: independent one-sample mean utility, not an oracle best-of statistic",
+    "writer_policy": "sample"
+  }
+}

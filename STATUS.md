@@ -1,8 +1,8 @@
-# Current state — 2026-10-17 19:56 UTC
+# Current state — 2026-10-17 20:16 UTC
 
 **Both C runs finished256/exit0/cleanup and verified terminal backups. R1234 is
-at49/256. B0 local512 notes are complete and scoring is running. C1234@64
-development is complete; its terminal thought evaluation is running.**
+at51/256. B0 local DEV512 is complete, analyzed and backed up; local C1234@64
+and held C1234@256 are running. The matched R/C capability result is pending.**
 The owner authorizes sustained autonomous work, agents and public Git updates.
 Follow `CODEX_NEXT_DAY.md`; its companion review file was not found. Weeks are
 available. The frozen14-day window is a planning bound, not an instance shutdown.
@@ -13,19 +13,16 @@ Only `/home/ubuntu/dario` and its authorized local assets/outputs are used.
 
 | Job | Current state | Control / output | tmux / actual processes |
 |---|---|---|---|
-| R1234 | Complete49 at19:51:58UTC,689.975s;6,272 records,3,217,536 source tokens,1,723,078 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
-| B0 local DEV512 |512 original notes complete19:54:21; scores198/9216 at19:55; scoring started19:54:29 | `local/evaluation/local-dev512-v1/b0-plan-v1` / `local/nvme/evaluation/local-dev512-v1-B0-001` | `dario-dev-local-B0-512`; launcher1857552, current score timeout2017487/worker2017488; core32/device8 |
-| Held C1234@256 |Direct and empty-format128/128 generated/scored; thought61/128 at19:55; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current thought timeout1958512/worker1958513; core36/device9 |
+| R1234 | Complete51 at20:14:37UTC,653.821s;6,528 records,3,348,864 source tokens,1,743,569 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
+| Local C1234@64 |First note1/512 at20:16; started20:14:13.534663UTC, all512 original notes before scoring | `local/evaluation/local-dev512-v1/trained-plans-v1/C1234-step0064` / `local/nvme/evaluation/local-dev512-v1-C1234-step0064-001` | `dario-dev-local-C1234-64`; launcher2030185, generation timeout2030200/worker2030201; core32/device8, ports64501/64502 |
+| Held C1234@256 |Direct and empty-format128/128 generated/scored; thought75/128 at20:16; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current thought timeout1958512/worker1958513; core36/device9 |
 
 PIDs are observations, not launch authority; recheck start times, ancestry and
 actual topology at each action. Each evaluator changes its child at stage changes.
-All C64 processes/groups are gone. Its earlier PIDs are historical.
-B0's generation timeout1857562/worker1857563 are also historical. Original full
-512-note bundle SHAa6a60c1c…8fa71f; complete writer receipt SHA26954196…61a8a4.
-Generation wall15373.6455s includes loading/compilation/execution. Root score-stage
-live proof `b0-plan-v1/processes.score-first-live.json`, SHAd78642a7…eb16f7,
-checks actual source cwd/environment/private RAM temp/device8, all32 R identities
-and separate C256 device9. MemAvailable995,335,467,008B at that observation.
+All held C64 and B0 local processes/groups are gone; their earlier PIDs are
+historical. C1 local root first-live proof SHAa794aa84…3fb885 verifies its actual
+source/environment/private RAM/device8, real C64 checkpoint, all32 original R
+identities and separate held C256 device9. Release07d61d34…0f940/host5f8a23db…662a14.
 B0 local and the now-complete C64 suite started at15:37–15:38 on separate devices;
 `validation/science_development_start_20261017.json` pins their actual allocations.
 They are nonfinal development, with qualification=true and final identity null.
@@ -35,7 +32,7 @@ Existing agents: `/root/distributed` supervises R through32/48/64 and verified
 EBS64; `/root/data` supervises the held suite through complete coverage/exit/cleanup,
 then computes the full paired comparison and the same fixed-first4 example set.
 It now watches C256, without partial accuracy inspection. The completed C64/B0
-report is saved and backed up. `/root/review` is idle after final-controller preparation/review. Root owns all
+report is saved and backed up. `/root/review` is idle after final-controller and DEV-summary preparation/review. Root owns all
 releases, launches, backups, signals and public updates. No automatic retry/run-all.
 
 Root-owned shared supervisors remain RUNNING:
@@ -70,21 +67,14 @@ Root-owned shared supervisors remain RUNNING:
    PID/groups and idle owned device, then hashes every ordinary small source/copy
    file on distinct NVMe/EBS. Original predictions/scores/failures/logs remain.
    This helper intentionally excludes the separately labeled crossed-reader pack.
-4. After complete B0 local512 notes **and9216 score rows**, exit/cleanup and root verification,
-   run `python3 local/analysis/freeze_dev_strata.py` once. It implements the already
-   public token-class and tie-broken B0 raw-K1 surprisal quartiles using original
-   score-row target texts, without opening corpus/final targets. Synthetic
-   class/tie/failure checks pass; no actual likelihood/map has been read/created.
-   The reviewed `local/analysis/summarize_dev_strata.py` SHA194281ae…5fc90 then
-   reports one same-model DEV cell using that single map and the exact sealed
-   summary/bootstrap functions. It requires an explicit root artifact/cleanup
-   verification receipt; docstring gives the small schema. All18 absolute arms,
-   statuses, fixed classes/quartiles (including empty strata) remain; invalid
-   pairs withhold CIs. Four synthetic tests pass; root review7afeb930…ac067c.
-   No actual map/root cell verification/likelihood summary has been created.
-   Close all analysis writers, archive the original outputs/control with action3,
-   then release `local-trained C1234-step0064` with the same root helper and use
-   `local/evaluation/local-dev512-v1/trained-plans-v1/launch.sh C1234-step0064`.
+4. Let local C1234@64 finish all512 original notes and9216 scores, exit/cleanup.
+   Reuse the single actual B0 map `local/analysis/local-dev512-v1.strata.json`,
+   SHAfec318f7…7d5598; never rerun freeze_dev_strata.py or rebin trained outcomes.
+   Root verifies artifacts/owned cleanup, then uses reviewed summarize_dev_strata.py
+   SHA194281ae…5fc90 (small root-verification schema in its docstring). All18
+   absolute arms, all statuses and fixed strata remain; invalid pairs withhold CIs.
+   Archive the closed output/control before reusing device8 for another fixed
+   development slot. All prospective cells remain required; no checkpoint selection.
 5. The reviewed additional helper `local/evaluation/release_idle_development.r-ready.py`
    SHA279c984b…e31f4 supports `held-R R1234-step0064` once that real checkpoint
    exists. It reuses the pinned R pack checker and binds actual counters; no
@@ -101,6 +91,39 @@ Root-owned shared supervisors remain RUNNING:
    reviewed finite launcher. Require fresh runtime topology, free ports, actual
    headroom, matching leaders and private RAM tempfile proof. Remove the probe's
    empty outer TMPDIR before the launcher creates it. Never execute old coordinators.
+
+## Complete unchanged-B0 local DEV512 audit
+
+Completed20:11:02.407720UTC/exit0/cleanup, all512 notes and9216 scores statusok.
+Root verified exact IDs/documents/18 keys, original notes/controls/protocol/model/
+source hashes and all18 absolute means. Root proof2e65b744…de7a07.
+Public exact `validation/local_dev_B0_20261017.json`, SHA706f7081…c8c034:
+
+| K1 condition | Mean true-next-token log likelihood, nats |
+|---|---:|
+| Raw prefix |−1.118239 |
+| Empty format |−7.360996 |
+| Own sampled note |−11.203003 |
+| Length-matched filler |−9.301484 |
+| Shuffled own content |−7.326900 |
+| Other note |−10.918726 |
+
+Own−raw=−10.084765,95% conditional CI[−10.517006,−9.681984]; own−empty=−3.842007,
+CI[−4.216340,−3.494004]. This is a baseline interface/content cost on fixed random
+DEV documents, not an R result or proof training cannot help. All K4/K16 and
+content contrasts/strata remain in the report. No protocol was changed.
+
+Single B0 map fec318f7…7d5598 is frozen:303 letter/117 punctuation/59 digit/33
+whitespace; four surprisal bins128 each, no failures/unassigned. Reuse memberships
+unchanged for every trained reader. Actual summary helper review7afeb930…ac067c;
+four synthetic tests and actual full B0 execution passed, without a new math gate.
+Writer293480 actions/mean573.203,329 EOS/183 caps; original wall15373.6455s;
+reader975.6816s; launcher16392.8894s. Shared-host/cold costs retained.
+Execution report cc0b0007…a0b97; backup/start report740fca0d…d9116.
+EBS `local/backups/evaluation/local-dev512-v1-B0-001/VERIFIED.json`, SHA325f94bd…ba90b,
+31 files/28,195,977B, source/copy hashes verified. Includes complete originals,
+strata map, reports and the first4 frozen-order readable prefix/note/DEV-future/
+all-control examples; no score selection. All B0 control writers are stopped.
 
 ## Complete first trained development check
 
@@ -228,15 +251,18 @@ core32/36 during R1; opposite-phase plans use0/4 during R2 or honest post-traini
 
 ## Final evaluation — prepared, unlaunched
 
-No actual final plan/model lock/projection/freeze/roster exists. Earlier exclusion
+Actual metadata-only plan-v1.json was declared20:14:31.316051UTC,
+SHA97f6bb40…51a6e, PREPARED_NOT_LOCKED; public exact
+`validation/final_evaluation_plan_20261017.json`. No actual model lock, official
+projection, evaluation freeze or execution roster exists. Earlier exclusion
 prepared question/context screening data, with the LAMBADA final target removed;
 do not claim test questions were never accessed. No official performance scores
 have been computed.
 
 Reviewed public controllers in `validation/orchestration/final_protocol` have
 exact staged copies in `local/evaluation/final-protocol-v1`;15 synthetic tests
-pass. After complete B0 local scores, `prepare_final.py declare` can reuse exact
-DEV protocol dictionaries. Only after all four actual terminal256/exit/cleanup/
+pass. The declaration reused exact completed B0 protocol dictionaries and ID-only
+metadata; it never relabels DEV output. Only after all four actual terminal256/exit/cleanup/
 verified EBS states: full existing final-model payload verification, immutable
 pre-gold recipe/model lock, then canonical official projections, then separately
 timed evaluation-freeze-v2. Never relabel DEV bundles as final TEST2048.

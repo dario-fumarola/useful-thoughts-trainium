@@ -1,0 +1,59 @@
+{
+  "all_originals_retained": true,
+  "approved_off_instance_backup_destination": null,
+  "backup": {
+    "payload_bytes": 28195977,
+    "payload_file_count": 31,
+    "receipt_path": "/home/ubuntu/dario/local/backups/evaluation/local-dev512-v1-B0-001/VERIFIED.json",
+    "receipt_sha256": "325f94bd32ab1295acf77f73f8652251b7800503ecba5602ab4ad576e11ba90b",
+    "run_id": "local-dev512-v1-B0-001",
+    "status": "VERIFIED"
+  },
+  "backup_shares_same_instance": true,
+  "completed_run_id": "local-dev512-v1-B0-001",
+  "created_utc": "2026-10-17T20:15:46.474002+00:00",
+  "execution_summary_sha256": "cc0b0007355e334ca355d1bb81a70bf99d8480dbec55fe3a948dff5024ca0b97",
+  "final_plan": {
+    "actual_terminal_model_lock_or_gold_projection_created": false,
+    "path": "/home/ubuntu/dario/local/evaluation/final-protocol-v1/plan-v1.json",
+    "sha256": "97f6bb403c1b1ae7922478d85d420cca403d8703482704e01ff74b3720451a6e",
+    "status": "PREPARED_NOT_LOCKED"
+  },
+  "fixed_first4_examples": {
+    "all_original_512_notes_and_9216_scores_retained": true,
+    "json_sha256": "dfd574146a08e5b91ba53ac7595a7777aeaef8cabbdb83093289ef2ec0c90eab",
+    "markdown_file": "/home/ubuntu/dario/local/evaluation/local-dev512-v1/b0-plan-v1/fixed-first4-examples.md",
+    "markdown_sha256": "baa0ed9b5aa95948d173fb7f8066dd5d1422096a30189bb55fa12bd2a8d8e7e6",
+    "selection": "First4 frozen DEV512 IDs, no score selection"
+  },
+  "frozen_strata": {
+    "finite_baselines": 512,
+    "no_training_anchor_filtering": true,
+    "path": "/home/ubuntu/dario/local/analysis/local-dev512-v1.strata.json",
+    "quartile_counts": [
+      128,
+      128,
+      128,
+      128
+    ],
+    "sha256": "fec318f79d566fc44342d79819bcfd2eb5d1186c7f8e0ce3bc5da939937d5598",
+    "unassigned_baseline_failures": 0
+  },
+  "next_job": {
+    "core": 32,
+    "first_live_sha256": "a794aa84af5d43ac1c0a76b11ca7f7543e56d28a35e18e8c4ca44c51ba3fb885",
+    "host_sha256": "5f8a23dbbd4920cf1acf9f3a9bb63baab3610a0770b13efd335f852f26662a14",
+    "physical_device": 8,
+    "release_sha256": "07d61d345070798d33ba2e0ddf0157c23658718084f0562a54b922744ed0f940",
+    "run_id": "local-dev512-v1-C1234-step0064-001",
+    "started_utc": "2026-10-17T20:14:13.534663+00:00",
+    "training_checkpoint_step": 64,
+    "training_seed": 1234,
+    "unchanged_policy_and_controls": true,
+    "writer_sample_seed": 1729
+  },
+  "no_numerical_source_or_protocol_change": true,
+  "official_final_performance_scores_computed": false,
+  "schema": "local-DEV512-B0-backup-and-next-release-v1",
+  "summary_sha256": "706f7081b3ae285ef4ec99dd7cbdc7a785d91fcdb659a13fa7f178d711c8c034"
+}

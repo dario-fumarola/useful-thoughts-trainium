@@ -1,0 +1,46 @@
+{
+  "COMPLETE_sha256": "9e180b74ac07cafb9562f27904e3b32cfcb19da438a3a7c6a0c4f3e4680af8f4",
+  "all18_absolute_means_independently_verified": true,
+  "created_utc": "2026-10-17T20:13:51.844808+00:00",
+  "exit_sha256": "aa64f90189b6ce3cdaae094756f7ed0d8e3a2d2f9594fca867a819388603a967",
+  "frozen_strata_map_sha256": "fec318f79d566fc44342d79819bcfd2eb5d1186c7f8e0ce3bc5da939937d5598",
+  "items": 512,
+  "launcher": {
+    "finished_utc": "2026-10-17T20:11:02.407720+00:00",
+    "started_utc": "2026-10-17T15:37:49.518362+00:00",
+    "wall_seconds": 16392.889358
+  },
+  "official_final_test_access": false,
+  "reader": {
+    "finished_utc": "2026-10-17T20:11:00+00:00",
+    "started_utc": "2026-10-17T19:54:29+00:00",
+    "statuses": {
+      "ok": 9216
+    },
+    "wall_seconds": 975.681626931997
+  },
+  "root_verification_sha256": "2e65b744a3e47365f4cac0d953c1eb34baa940461d3074c987fd71a3f3de7a07",
+  "run_id": "local-dev512-v1-B0-001",
+  "schema": "local-DEV512-B0-execution-v1",
+  "scope": "Unchanged B0 local DEV512, not an R result or final benchmark.",
+  "score_rows": 9216,
+  "stratified_summary_sha256": "706f7081b3ae285ef4ec99dd7cbdc7a785d91fcdb659a13fa7f178d711c8c034",
+  "timing_note": "Original actual startup/load/compile/execution and shared-host costs retained; no subtraction or causal throughput claim.",
+  "writer": {
+    "finished_utc": "2026-10-17T19:54:21+00:00",
+    "item_wall_mean_seconds": 30.025226332997676,
+    "item_wall_sum_seconds": 15372.91588249481,
+    "mean_actions": 573.203125,
+    "mean_content_tokens": 572.560546875,
+    "started_utc": "2026-10-17T15:37:55+00:00",
+    "statuses": {
+      "ok": 512
+    },
+    "stops": {
+      "length_cap": 183,
+      "token:151643": 329
+    },
+    "total_actions": 293480,
+    "wall_seconds": 15373.645495834004
+  }
+}

@@ -2,8 +2,8 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active R1234 on lower0–31 through fixed256; latest complete step49 at
-   19:51:58UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step51 at
+   20:14:37UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
    Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
    all NVMe originals remain. Both shared supervisors are RUNNING.
 
@@ -18,8 +18,9 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
    tempfile probe must remove its empty outer directory before launcher mkdir.
    No new numerical gates.
 
-3. Supervise root-released B0 local DEV512 on idle core32 through scoring
-   (512 notes complete19:54:21; score stage started19:54:29)
+3. B0 local DEV512 completed512 notes/9216 scores/exit0/cleanup, report/strata and
+   verified31-file EBS archive. The single map fec318f7…7d5598 stays fixed.
+   Supervise root-released local C1234@64 on core32 (started20:14:13UTC)
    and held128 C1234@256 on separate core36 (started17:44:55UTC; direct/empty
    complete, thought running). Root owns their
    actual allocation/headroom and health. C64 all3 modes/exit0/cleanup/paired report
@@ -34,9 +35,10 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
    Local K1 primary,K4/16 secondary. Final outcomes stay sealed until protocol and
    actual terminal model inventory are frozen. Do not rush healthy runs.
 
-4. Final preparation controllers are reviewed/tested in
-   validation/orchestration/final_protocol. After complete B0 local scores, declare
-   metadata using the unchanged development templates. Actual final model lock
+4. Final metadata plan was declared20:14:31UTC using unchanged B0 templates,
+   SHA97f6bb40…51a6e; public validation/final_evaluation_plan_20261017.json,
+   PREPARED_NOT_LOCKED. Controllers in validation/orchestration/final_protocol
+   are reviewed/tested. Actual final model lock
    waits for all four real terminal256/exit/cleanup/verified backups; only then
    project canonical official gold and assemble the separately timed v2 freeze.
    No actual final plan/lock/projection/freeze has been created. Source remains244.

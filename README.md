@@ -53,8 +53,19 @@ The [complete comparison](validation/held_dev_C_seed1234_step64_20261017.json)
 retains all modes, errors, caps, token/latency distributions and provenance.
 All53 raw output/control files and fixed-order examples have verified EBS copies;
 see [backup and next release](validation/held_dev_C_seed1234_step64_backup_20261017.json).
-C1234@256 evaluation and the B0 local DEV512 audit are now running on separate
+C1234@256 held evaluation and C1234@64 local evaluation are running on separate
 idle devices while R1234 continues through its fixed256 updates.
+
+The unchanged B0 **local DEV512** audit is also complete: all512 sampled notes
+and9216 likelihood rows, no execution failures. Mean K1 log likelihood was−1.118
+for the raw prefix,−7.361 for empty format and−11.203 with its own note. Own−raw
+is−10.085 nats (95% conditional interval[−10.517,−9.682]); own−empty is−3.842.
+This measures the starting interface/content cost; it is not a trained-R result.
+The [full local audit](validation/local_dev_B0_20261017.json) retains all6 absolute
+conditions, K1/K4/K16, content contrasts and prospective token/surprisal strata.
+One B0-derived membership map is frozen for all later readers. [Execution costs](validation/local_dev_B0_execution_20261017.json)
+and the [verified backup/next release](validation/local_dev_B0_backup_20261017.json)
+retain all outputs and fixed-order examples.
 
 - Both C runs consumed32,768 unique TRAIN records /16.81M source tokens and exited
   normally. All254 steps3–256 average10.056s (seed1234) and10.030s (seed5678).
@@ -63,7 +74,7 @@ idle devices while R1234 continues through its fixed256 updates.
   [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
   [C5678](validation/science_C_seed5678_execution_20261017.json),
   [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from B0 and reached49/256 at19:51UTC. The
+- R1234 independently started from B0 and reached51/256 at20:14UTC. The
   [first32-update record](validation/science_R_seed1234_first32_20261017.json) and
   [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg)
   retain every elapsed observation and changing generation workload. TRAIN
