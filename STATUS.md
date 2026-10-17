@@ -1,7 +1,8 @@
-# Current state — 2026-10-17 18:32 UTC
+# Current state — 2026-10-17 19:56 UTC
 
 **Both C runs finished256/exit0/cleanup and verified terminal backups. R1234 is
-at41/256. C1234@64 development is complete; its terminal thought evaluation is running.**
+at49/256. B0 local512 notes are complete and scoring is running. C1234@64
+development is complete; its terminal thought evaluation is running.**
 The owner authorizes sustained autonomous work, agents and public Git updates.
 Follow `CODEX_NEXT_DAY.md`; its companion review file was not found. Weeks are
 available. The frozen14-day window is a planning bound, not an instance shutdown.
@@ -12,13 +13,19 @@ Only `/home/ubuntu/dario` and its authorized local assets/outputs are used.
 
 | Job | Current state | Control / output | tmux / actual processes |
 |---|---|---|---|
-| R1234 | Complete41 at18:30:16UTC,640.191s;5,248 records,2,692,224 source tokens,1,690,126 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
-| B0 local DEV512 |347/512 original notes at18:32; likelihood scoring not started | `local/evaluation/local-dev512-v1/b0-plan-v1` / `local/nvme/evaluation/local-dev512-v1-B0-001` | `dario-dev-local-B0-512`; launcher1857552, generation timeout1857562, worker1857563; core32/device8 |
-| Held C1234@256 |Direct and empty-format128/128 generated/scored; thought6/128 at18:32; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current thought timeout1958512/worker1958513; core36/device9 |
+| R1234 | Complete49 at19:51:58UTC,689.975s;6,272 records,3,217,536 source tokens,1,723,078 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
+| B0 local DEV512 |512 original notes complete19:54:21; scores198/9216 at19:55; scoring started19:54:29 | `local/evaluation/local-dev512-v1/b0-plan-v1` / `local/nvme/evaluation/local-dev512-v1-B0-001` | `dario-dev-local-B0-512`; launcher1857552, current score timeout2017487/worker2017488; core32/device8 |
+| Held C1234@256 |Direct and empty-format128/128 generated/scored; thought61/128 at19:55; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current thought timeout1958512/worker1958513; core36/device9 |
 
 PIDs are observations, not launch authority; recheck start times, ancestry and
 actual topology at each action. Each evaluator changes its child at stage changes.
 All C64 processes/groups are gone. Its earlier PIDs are historical.
+B0's generation timeout1857562/worker1857563 are also historical. Original full
+512-note bundle SHAa6a60c1c…8fa71f; complete writer receipt SHA26954196…61a8a4.
+Generation wall15373.6455s includes loading/compilation/execution. Root score-stage
+live proof `b0-plan-v1/processes.score-first-live.json`, SHAd78642a7…eb16f7,
+checks actual source cwd/environment/private RAM temp/device8, all32 R identities
+and separate C256 device9. MemAvailable995,335,467,008B at that observation.
 B0 local and the now-complete C64 suite started at15:37–15:38 on separate devices;
 `validation/science_development_start_20261017.json` pins their actual allocations.
 They are nonfinal development, with qualification=true and final identity null.
@@ -63,12 +70,20 @@ Root-owned shared supervisors remain RUNNING:
    PID/groups and idle owned device, then hashes every ordinary small source/copy
    file on distinct NVMe/EBS. Original predictions/scores/failures/logs remain.
    This helper intentionally excludes the separately labeled crossed-reader pack.
-4. After complete B0 local512 notes **and9216 score rows**, exit/cleanup and backup,
+4. After complete B0 local512 notes **and9216 score rows**, exit/cleanup and root verification,
    run `python3 local/analysis/freeze_dev_strata.py` once. It implements the already
    public token-class and tie-broken B0 raw-K1 surprisal quartiles using original
    score-row target texts, without opening corpus/final targets. Synthetic
    class/tie/failure checks pass; no actual likelihood/map has been read/created.
-   Then release `local-trained C1234-step0064` with the same root helper and use
+   The reviewed `local/analysis/summarize_dev_strata.py` SHA194281ae…5fc90 then
+   reports one same-model DEV cell using that single map and the exact sealed
+   summary/bootstrap functions. It requires an explicit root artifact/cleanup
+   verification receipt; docstring gives the small schema. All18 absolute arms,
+   statuses, fixed classes/quartiles (including empty strata) remain; invalid
+   pairs withhold CIs. Four synthetic tests pass; root review7afeb930…ac067c.
+   No actual map/root cell verification/likelihood summary has been created.
+   Close all analysis writers, archive the original outputs/control with action3,
+   then release `local-trained C1234-step0064` with the same root helper and use
    `local/evaluation/local-dev512-v1/trained-plans-v1/launch.sh C1234-step0064`.
 5. The reviewed additional helper `local/evaluation/release_idle_development.r-ready.py`
    SHA279c984b…e31f4 supports `held-R R1234-step0064` once that real checkpoint
@@ -150,6 +165,11 @@ shared-host development costs retained. These are changing-workload TRAIN
 measurements, not a fixed-anchor learning curve or downstream result. Short-note
 updates were followed by increased generation; no permanent stopping pattern.
 R32 live identity receipt SHA43a4e38c…3d239 is in its control directory.
+R48 completed19:40:28,650.880s. Its immutable health receipt SHA2f06c80e…6cf5b6
+retains all46 steps3–48: mean654.096s, median641.035s, linearP90772.742s, no drops
+or overlap subtraction. Root independently checked its original48-row byte-prefix
+SHA, step coverage, counters and timing statistics. All32 identities/finite values/
+sampled replicas pass. Actual R checkpoint/order metadata and EBS64 remain pending.
 
 All32 completed rank0/micro0 example bundles, run snapshot, first32 metrics and
 explicit ongoing-log byte prefix have verified EBS copies:
