@@ -29,43 +29,43 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**The first trained development check is complete. Both C seeds finished256
+**The first terminal-C development result is complete. Both C seeds finished256
 updates; R1234 is running. The primary R/C comparison remains pending.**
 
-On the fixed128-question GSM8K **TRAIN development** subset, C1234 at the
-prospectively fixed step64 has no clear accuracy change from unchanged B0:
+Fixed128-question GSM8K **TRAIN development** results:
 
-| Inference mode | B0 correct /128 | C64 correct /128 | C−B0 percentage points,95% conditional interval |
-|---|---:|---:|---:|
-| Direct |113 |111 |−1.56 [−6.25,+3.13] |
-| Empty format |107 |108 |+0.78 [−4.69,+6.25] |
-| One thought |63 |60 |−2.34 [−11.72,+7.03] |
+| Mode | B0 /128 | C1234@64 /128 | C1234@256 /128 | C256−B0 pp,95% conditional interval |
+|---|---:|---:|---:|---:|
+| Direct |113 |111 |109 |−3.13 [−8.59,+1.58] |
+| Empty format |107 |108 |109 |+1.56 [−3.13,+6.25] |
+| One thought |63 |60 |91 |+21.88 [+11.72,+32.03] |
 
-Every failure stays in the denominator. Intervals use5000 paired document
-bootstrap draws, conditional on these checkpoints; they are not training-seed
-uncertainty. Thought inference used326 versus124 mean thought actions and38
-versus23 seconds/item (C64 versusB0). Thought caps increased32 versus4; answer
-truncations36 versus14. These are measured costs under actual cache/shared-host
-conditions, not a causal throughput benchmark. Fixed terminal256 remains primary;
-no checkpoint or prompt was selected using this development result.
+The thought-mode gain has substantial format and resource qualifications.
+C256 thought still trails its direct/empty modes by18 answers and B0 direct by22.
+Of B0's33 thought-mode format-error cases,26 become correct under C256. Every
+C256 thought reaches the1024-action cap, versus4 caps for B0; mean item wall is91
+versus23 seconds. Answer truncations are14 in both. All failures remain counted.
+These are actual cold/cache/shared-host costs, not a causal throughput comparison.
 
-The [complete comparison](validation/held_dev_C_seed1234_step64_20261017.json)
-retains all modes, errors, caps, token/latency distributions and provenance.
-All53 raw output/control files and fixed-order examples have verified EBS copies;
-see [backup and next release](validation/held_dev_C_seed1234_step64_backup_20261017.json).
-C1234@256 held evaluation and C1234@64 local evaluation are running on separate
-idle devices while R1234 continues through its fixed256 updates.
+The [complete terminal-C comparison](validation/held_dev_C_seed1234_step256_20261017.json)
+retains all9 conditions, paired intervals, original failures and token/latency
+costs. Intervals use5000 paired document draws, conditional on the checkpoints;
+they are not training-seed uncertainty. Both64 and256 were fixed prospectively;
+terminal256 remains primary. The [C64 report](validation/held_dev_C_seed1234_step64_20261017.json)
+and every original output remain. [Verified backup and next release](validation/held_dev_C_seed1234_step256_backup_20261017.json)
+records the54-file EBS archive and the now-running C5678@64 held evaluation.
+Local C1234@64 is also running on a separate idle device.
 
-The unchanged B0 **local DEV512** audit is also complete: all512 sampled notes
-and9216 likelihood rows, no execution failures. Mean K1 log likelihood was−1.118
+The unchanged B0 **local DEV512** audit is complete: all512 sampled notes and
+9216 likelihood rows, no execution failures. Mean K1 log likelihood was−1.118
 for the raw prefix,−7.361 for empty format and−11.203 with its own note. Own−raw
 is−10.085 nats (95% conditional interval[−10.517,−9.682]); own−empty is−3.842.
-This measures the starting interface/content cost; it is not a trained-R result.
 The [full local audit](validation/local_dev_B0_20261017.json) retains all6 absolute
 conditions, K1/K4/K16, content contrasts and prospective token/surprisal strata.
 One B0-derived membership map is frozen for all later readers. [Execution costs](validation/local_dev_B0_execution_20261017.json)
 and the [verified backup/next release](validation/local_dev_B0_backup_20261017.json)
-retain all outputs and fixed-order examples.
+retain all outputs and fixed-order examples. This is the starting local baseline;
+trained R results and official test outcomes remain pending.
 
 - Both C runs consumed32,768 unique TRAIN records /16.81M source tokens and exited
   normally. All254 steps3–256 average10.056s (seed1234) and10.030s (seed5678).
@@ -74,7 +74,7 @@ retain all outputs and fixed-order examples.
   [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
   [C5678](validation/science_C_seed5678_execution_20261017.json),
   [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from B0 and reached51/256 at20:14UTC. The
+- R1234 independently started from B0 and reached59/256 at21:41UTC. The
   [first32-update record](validation/science_R_seed1234_first32_20261017.json) and
   [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg)
   retain every elapsed observation and changing generation workload. TRAIN

@@ -2,8 +2,8 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active R1234 on lower0–31 through fixed256; latest complete step51 at
-   20:14:37UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step59 at
+   21:41:19UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
    Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
    all NVMe originals remain. Both shared supervisors are RUNNING.
 
@@ -21,11 +21,13 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 3. B0 local DEV512 completed512 notes/9216 scores/exit0/cleanup, report/strata and
    verified31-file EBS archive. The single map fec318f7…7d5598 stays fixed.
    Supervise root-released local C1234@64 on core32 (started20:14:13UTC)
-   and held128 C1234@256 on separate core36 (started17:44:55UTC; direct/empty
-   complete, thought running). Root owns their
-   actual allocation/headroom and health. C64 all3 modes/exit0/cleanup/paired report
-   are complete and verified on EBS:111/108/60 versus B0113/107/63; conditional CIs
-   include0. Packs/roles are in STATUS; all other development slots are unreleased.
+   and held128 C5678@64 on separate core36 (started21:41:24UTC). Root owns their
+   actual allocation/headroom and health. C1234 held64 and256 are both closed/
+   verified/backed up:111/108/60 and109/109/91 versus B0113/107/63. C256 thought
+   gains28 answers versus B0 thought, with all128 thoughts capped1024; format/
+   cost qualifications and full paired intervals are in the public report.
+   After C5678@64, prefer actual available R1234@64 (with verified backup), else
+   C5678@256; all cells remain required and no score chooses a checkpoint.
    Train through fixed256; save/evaluate fixed64 development without checkpoint
    selection. Complete fixed held-development B0/C/R × direct/empty_format/
    one_thought and local random DEV512 controls/strata. B0 held128 is113/107/63.

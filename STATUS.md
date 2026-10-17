@@ -1,8 +1,8 @@
-# Current state — 2026-10-17 20:16 UTC
+# Current state — 2026-10-17 21:43 UTC
 
 **Both C runs finished256/exit0/cleanup and verified terminal backups. R1234 is
-at51/256. B0 local DEV512 is complete, analyzed and backed up; local C1234@64
-and held C1234@256 are running. The matched R/C capability result is pending.**
+at59/256. Held C1234@256 is complete/analyzed/backed up; held C5678@64 and
+local C1234@64 are running. The matched R/C capability result is pending.**
 The owner authorizes sustained autonomous work, agents and public Git updates.
 Follow `CODEX_NEXT_DAY.md`; its companion review file was not found. Weeks are
 available. The frozen14-day window is a planning bound, not an instance shutdown.
@@ -13,16 +13,18 @@ Only `/home/ubuntu/dario` and its authorized local assets/outputs are used.
 
 | Job | Current state | Control / output | tmux / actual processes |
 |---|---|---|---|
-| R1234 | Complete51 at20:14:37UTC,653.821s;6,528 records,3,348,864 source tokens,1,743,569 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
-| Local C1234@64 |First note1/512 at20:16; started20:14:13.534663UTC, all512 original notes before scoring | `local/evaluation/local-dev512-v1/trained-plans-v1/C1234-step0064` / `local/nvme/evaluation/local-dev512-v1-C1234-step0064-001` | `dario-dev-local-C1234-64`; launcher2030185, generation timeout2030200/worker2030201; core32/device8, ports64501/64502 |
-| Held C1234@256 |Direct and empty-format128/128 generated/scored; thought75/128 at20:16; started17:44:55.869722UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256` / `local/nvme/evaluation/held-dev128-v1-C1234-step0256-001` | `dario-dev-held-C1234-256`; launcher1934659, current thought timeout1958512/worker1958513; core36/device9 |
+| R1234 | Complete59 at21:41:19UTC,676.415s;7,552 records,3,874,176 source tokens,1,777,519 sampled actions; finite sampled updates, replicas agree | `local/science/control/qwen-r-seed1234-science-256-001` / `local/nvme/runs/qwen-r-seed1234-science-256-001` | `dario-science-R1234-256`; launcher1668169, timeout/PGID1668180, driver1668181,32 workers on logical0–31 |
+| Local C1234@64 |130/512 notes at21:43; started20:14:13.534663UTC, all512 original notes before scoring | `local/evaluation/local-dev512-v1/trained-plans-v1/C1234-step0064` / `local/nvme/evaluation/local-dev512-v1-C1234-step0064-001` | `dario-dev-local-C1234-64`; launcher2030185, generation timeout2030200/worker2030201; core32/device8, ports64501/64502 |
+| Held C5678@64 |10/128 direct at21:43; started21:41:24.431770UTC | `local/evaluation/held-dev128-v1/c-plans-v1/C5678-step0064` / `local/nvme/evaluation/held-dev128-v1-C5678-step0064-001` | `dario-dev-held-C5678-64`; launcher2082723, direct timeout2082732/worker2082733; core36/device9, ports64471/64472 |
 
 PIDs are observations, not launch authority; recheck start times, ancestry and
 actual topology at each action. Each evaluator changes its child at stage changes.
-All held C64 and B0 local processes/groups are gone; their earlier PIDs are
+All held C1234@64/@256 and B0 local processes/groups are gone; their earlier PIDs are
 historical. C1 local root first-live proof SHAa794aa84…3fb885 verifies its actual
 source/environment/private RAM/device8, real C64 checkpoint, all32 original R
-identities and separate held C256 device9. Release07d61d34…0f940/host5f8a23db…662a14.
+identities and separate held C256 device9 at capture. Release07d61d34…0f940/host5f8a23db…662a14.
+Current C5678@64 release6d754ca9…f04fb8/host4d0732b5…caade; first-live96a68e1f…3375ac
+verifies actual source/environment/private RAM/device9 and the unchanged R/local groups.
 B0 local and the now-complete C64 suite started at15:37–15:38 on separate devices;
 `validation/science_development_start_20261017.json` pins their actual allocations.
 They are nonfinal development, with qualification=true and final identity null.
@@ -31,8 +33,8 @@ No prompt/cap/seed/terminal rule was changed after observing outputs.
 Existing agents: `/root/distributed` supervises R through32/48/64 and verified
 EBS64; `/root/data` supervises the held suite through complete coverage/exit/cleanup,
 then computes the full paired comparison and the same fixed-first4 example set.
-It now watches C256, without partial accuracy inspection. The completed C64/B0
-report is saved and backed up. `/root/review` is idle after final-controller and DEV-summary preparation/review. Root owns all
+It now watches C5678@64, without partial accuracy inspection. Both closed
+C1234 held reports and B0 local are saved and backed up. `/root/review` is idle after final-controller and DEV-summary preparation/review. Root owns all
 releases, launches, backups, signals and public updates. No automatic retry/run-all.
 
 Root-owned shared supervisors remain RUNNING:
@@ -53,12 +55,13 @@ Root-owned shared supervisors remain RUNNING:
 1. Let R1234 finish the fixed256 updates. Preserve64/128/256 plus12-hour saves;
    no R checkpoint has published yet. Do not stop for early short notes or poor
    TRAIN utility. R5678 remains unreleased.
-2. Let the current C1234@256 suite finish all three128 modes/exit0/cleanup and
-   its data-agent report/progress-writer shutdown. Verify/archive, then explicitly
-   release `python3 local/evaluation/release_idle_development.py held-C C5678-step0064`
-   and launch that slot's reviewed `launch.sh` in fresh tmux/its own launcher.log.
-   Queue C5678@256 and actual R64 without checkpoint selection, one held suite.
-   The helper only releases; it never launches/retries.
+2. Let held C5678@64 finish all3 full128 modes/exit0/cleanup and its data-agent
+   complete report/fixed-first4 rendering/all-control-writers-stopped callback.
+   Root verifies and archives before another held release. If actual R1234@64
+   and its verified EBS backup are ready then, evaluate that fixed milestone next
+   with the reviewed R helper; otherwise release C5678@256 with the original
+   helper. Every fixed64/terminal cell stays required; availability determines
+   scheduling, not scores. One held suite, no retry/checkpoint selection.
 3. Closed held/same-model development output backup:
 
    `python3 local/evaluation/archive_completed.py --control <exact-slot-directory> --output <exact-NVMe-output>`
@@ -125,37 +128,36 @@ EBS `local/backups/evaluation/local-dev512-v1-B0-001/VERIFIED.json`, SHA325f94bd
 strata map, reports and the first4 frozen-order readable prefix/note/DEV-future/
 all-control examples; no score selection. All B0 control writers are stopped.
 
-## Complete first trained development check
+## Complete C1234 held development64 and terminal256
 
-C1234@64 finished17:37:02.403816UTC/exit0, all original identities and six timeout
-process groups gone. Same fixed128 GSM8K TRAIN items, three exact B0 protocols,
-FP32/cap1024/answer256/parser/source/checkpoint/output hashes verified. Full report
-`validation/held_dev_C_seed1234_step64_20261017.json`, SHA2c4ef1cf…aff178:
+C256 completed21:37:20.790107UTC/exit0/all identities and7 groups gone. Root
+verified actual terminal checkpoint8c20a705…6706/modelb2b8e2eb…fc6a1, exact B0
+protocols/ordered128 TRAIN IDs/gold/output hashes and all9 cells' score/status/
+cap/action/token/latency totals. Raw proofdc03c054…177e1a; report proof7bca83a9…b91f45.
+Final public report `validation/held_dev_C_seed1234_step256_20261017.json`,
+SHAa10ee312…9379de (all superseded analysis drafts preserved outside closed control):
 
-| Mode | B0 /128 | C64 /128 | C−B0,95% conditional interval (percentage points) |
-|---|---:|---:|---:|
-| Direct |113 |111 |−1.5625 [−6.25,+3.125] |
-| Empty format |107 |108 |+0.78125 [−4.6875,+6.25] |
-| One thought |63 |60 |−2.34375 [−11.71875,+7.03125] |
+| Mode | B0 | C64 | C256 | C256−B0 pp,95% conditional interval |
+|---|---:|---:|---:|---:|
+| Direct |113 |111 |109 |−3.125 [−8.59375,+1.58203] |
+| Empty |107 |108 |109 |+1.5625 [−3.125,+6.25] |
+| Thought |63 |60 |91 |+21.875 [+11.71875,+32.03125] |
 
-No clear C−B0 change on this small fixed development subset. Thought caps C32/B04,
-answer truncations36/14, format errors11/33; all stay counted. Mean thought/answer
-actions326.242/151.547 for C versus124.484/126.297 for B0. Mean item wall37.994/22.858s;
-actual cold/cache/shared-host observations, no subtraction/causal throughput claim.
-Terminal256 remains primary; R comparison pending. Two analysis-only field-projection
-errors (device xla:0 and public asset-field naming) are preserved as helper errors,
-not evaluation failures; source/output/criteria never changed.
+C256 thought still trails its own direct/empty by18/128, CI[−21.875,−7.03125]pp.
+Its128 thoughts all cap1024, with131072 thought/16130 answer actions, mean91.414s
+per item. B0 thought has4 caps/33 format errors/14 answer truncations; C256 has128
+caps/0 format errors/14 truncations. Of the33 B0 format-error cases,26 become
+correct; other B0-status cohorts contribute−8(ok)/+10(truncated), net+28. This is
+an observed status decomposition, not isolated reasoning-content causation.
+Both64 and256 were fixed before outcomes; terminal256 remains primary. No R or
+final-test result is established by this C development comparison.
 
-Root verified every score/ID/protocol/hash, then all6 cells' caps/tokens/latency.
-EBS `local/backups/evaluation/held-dev128-v1-C1234-step0064-001/VERIFIED.json`,
-SHAc16c61e4…c1215d,53 files/8,966,243B, source/copy hashes verified. Includes full
-predictions/scores/logs/control/report and a human-readable fixed-first4 example
-render for B0/C64×all3 modes (verbatim outputs, failures, counts/stops/timing).
-Public backup/start receipt: `validation/held_dev_C_seed1234_step64_backup_20261017.json`.
-C256 actual release053a645c…2522b8; hostc1a6ae6a…7e1825a; root first-live
-f27f662b…65b2f verifies source cwd/environment/private RAM temp/actual device9,
-B0 device8 and the unchanged32-worker R group. Its first capture is honestly
-later than startup; exact UTC is in that control's `processes.first-live.json`.
+EBS `local/backups/evaluation/held-dev128-v1-C1234-step0256-001/VERIFIED.json`,
+SHA00331dc2…94538:54 files/10,268,574B, every ordinary source/copy verified.
+Includes all raw outputs, reports and the same first4 frozen-order TRAIN cases,
+B0+C256 ×all3 modes, with verbatim outputs/gold/score/status/cost/stop metadata.
+Public backup/next-start report8bc891f3…001f9. C256 control writers remain stopped.
+Earlier C64 report2c4ef1cf…aff178 and its53-file EBS backupc16c61e4…c1215d remain.
 
 ## Scientific execution and saved evidence
 

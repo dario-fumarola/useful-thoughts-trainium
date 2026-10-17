@@ -1,0 +1,64 @@
+{
+  "all_originals_retained": true,
+  "backup": {
+    "payload_bytes": 10268574,
+    "payload_file_count": 54,
+    "receipt_path": "/home/ubuntu/dario/local/backups/evaluation/held-dev128-v1-C1234-step0256-001/VERIFIED.json",
+    "receipt_sha256": "00331dc29eab1d640351d7afb88b0bd2ddd2c382af1496a50f12dcf569f94538",
+    "run_id": "held-dev128-v1-C1234-step0256-001",
+    "status": "VERIFIED"
+  },
+  "backup_shares_instance": true,
+  "completed_run_id": "held-dev128-v1-C1234-step0256-001",
+  "created_utc": "2026-10-17T21:43:09.820743+00:00",
+  "descriptive_thought_accuracy_transition_by_B0_status": {
+    "format_error": {
+      "B0_correct": 0,
+      "C256_correct": 26,
+      "items": 33,
+      "net_correct_change": 26
+    },
+    "ok": {
+      "B0_correct": 63,
+      "C256_correct": 55,
+      "items": 81,
+      "net_correct_change": -8
+    },
+    "truncated": {
+      "B0_correct": 0,
+      "C256_correct": 10,
+      "items": 14,
+      "net_correct_change": 10
+    }
+  },
+  "fixed_first4": {
+    "json_sha256": "fe79839400b973f77a9bc8a64ae384e0e8efec09774e11b0157f3ce8cb5a0124",
+    "markdown_path": "/home/ubuntu/dario/local/evaluation/held-dev128-v1/c-plans-v1/C1234-step0256/fixed-first4-examples.md",
+    "markdown_sha256": "178ab1fb06580e0cc5fcad5d0ba45610e1a4ddcfd81974599fc63fd0fe591cc0",
+    "selection": "Same first4 frozen TRAIN question IDs for B0/C256, all modes; no score selection"
+  },
+  "interpretation": "Paired baseline-status decomposition of observed accuracy, not a causal mediation analysis or isolated reasoning-content effect.",
+  "next_job": {
+    "checkpoint": {
+      "COMPLETE_sha256": "b34ad4758aae32c7e1a9d05e6e3ca246bd4dc918f48e05454907282a4e6cef41",
+      "model_sha256": "4b110c8605a8efe19d8bf7e5b78b3e2868bfbeaf06b11a6253b985ea70ea268e",
+      "run_id": "qwen-c-seed5678-science-256-001",
+      "spec_hash": "653b4efa43e933839733075eb5c2184a80de6dd24404263a8c9297adb9e241f7",
+      "step": 64
+    },
+    "core": 36,
+    "first_live_sha256": "96a68e1f9b9d74ed244111d6a4bc93b631188d6b526b83aca71a38ff503375ac",
+    "host_sha256": "4d0732b56a14258d169a1044b85f623487117ee6179942b18a7f9c14f48caade",
+    "physical_device": 9,
+    "release_sha256": "6d754ca91f4643830b436cce3eea2b0ccd3e3be8d2c73e0477c39c18b0f04fb8",
+    "run_id": "held-dev128-v1-C5678-step0064-001",
+    "started_utc": "2026-10-17T21:41:24.431770+00:00"
+  },
+  "numerical_source_and_protocol_unchanged": true,
+  "off_instance_backup_destination": null,
+  "official_test_or_R_effect_claim": false,
+  "report_sha256": "a10ee312efe2e58d3c4b7456846e96e5c4ad440fd40b74af39835b97fd9379de",
+  "root_raw_verification_sha256": "dc03c05410c52bd91b731dec10a633b9fb16cd1a7edec0674f0d4258c5177e1a",
+  "root_report_verification_sha256": "7bca83a98d3c273d4ceb05d59f3fbb92a434ff2f238727c13a9798e5eab91f45",
+  "schema": "held-C256-development-backup-and-next-release-v1"
+}
