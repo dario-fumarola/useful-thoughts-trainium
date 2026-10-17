@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 00:18 UTC
+# Current state — 2026-10-17 00:58 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -86,10 +86,22 @@ bank allocation was about 19.78 GiB. The next scalar loss passed at 23:54:13.
 First accumulated backward `MODULE_7801530274365426598` compiled at 00:10:50
 and executed successfully on all 32 workers by 00:14:12: every success counter
 increased by one, with zero failure increments. All main banks fell to about
-16.52 GiB, consistent with the compiled gradient-buffer aliasing. The next scalar
-loss `MODULE_2206265331420854255` is cold-compiling. Later-micro accumulation,
-initialized optimizer state and a complete update remain pending.
+16.52 GiB, consistent with the compiled gradient-buffer aliasing. Third-thought
+backward `MODULE_922332460170596362` compiled at 00:32:51 and passed on all ranks.
+Fourth-thought backward `MODULE_4430468595289365099` compiled at 00:54:18.
+All 32 micro-0 tapes now exist, written after each rank's four synchronized
+backwards. Subsequent sampling/scalar graphs are reusing cached executables;
+later-micro g0 accumulation, initialized optimizer state and a complete update
+remain pending. Replay audit runs only at micro 0; later micros skip that audit.
 **No complete R update yet.** Separate sysfs memory sampling is read-only.
+
+The fixed step-1/rank-0/micro-0 TRAIN example is saved in full as
+`local/qualification/qwen-r-fp32-final-003.step1-rank0-micro0.example.{json,txt}`,
+cross-checked against its binary tape without errors. All four notes are retained:
+lengths 342/1024/146/298, three EOS stops and one cap. For this single prefix,
+target `+`, raw logp is −.12897 and thought logps range from −6.92639 to −10.05456;
+all raw gains are negative and signed LOO advantages have both signs. This is
+untrained starting behavior on one TRAIN example, not an efficacy estimate.
 
 Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
 Receipts/logs: `local/qualification/qwen-r-fp32-final-003*`.
@@ -119,6 +131,9 @@ SHA `26a6081f…2313d4b6`; state/receipts under
 remain.
 Root owns integration, decisions and public pushes. Do not edit common active
 code during these jobs; later documentation commits do not alter its fingerprint.
+The ignored local site draft now binds exact measured per-arm runtime policies,
+12-hour checkpoint interval, per-seed partitions, NVMe outputs and EBS backups.
+Terminal exposure and finite launch deadline remain unset until R qualification.
 
 ## Immediate commands and remaining work
 
