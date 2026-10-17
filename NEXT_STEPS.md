@@ -4,11 +4,10 @@ Mark complete only from actual artifacts. Live jobs, owners and commands are in
 STATUS.md. Follow `CODEX_NEXT_DAY.md`; the first research terminal remains the
 prospective **256 updates**, with a fixed step64 development milestone.
 
-1. Monitor active lower RAM005 through its fixed COMPLETE3. Data owns the
-   one-shot `ram-sequence-v2/lower.launch.sh --ready` capture; root reviews and
-   releases v2 upper within the300s freshness window. Shared deadline13:05:19 UTC.
-   R00414/exit/cleanup and verified EBS7/14 are complete; the original strict
-   cp3-only fork/STOP is prepared. Never release an original v1 launcher.
+1. Monitor active v2 lower RAM005 and upper strict recovery. Fixed lower COMPLETE3
+   and one-shot actual32-worker readiness passed; root reviewed/released/launched
+   upper within300s freshness. Shared deadline13:05:19 UTC. Original cp3-only fork
+   and STOP remain unchanged. Never release an original v1 launcher.
 2. Require actual restored3 state/RNG raw-byte equality, all128 new resumed tapes,
    and complete post-update4 state at the original tight tolerances. Upper must
    save/exit after exactly update4 with its precreated STOP intact. Review owns

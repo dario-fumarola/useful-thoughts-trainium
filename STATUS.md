@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 05:23 UTC
+# Current state — 2026-10-17 05:54 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -15,9 +15,9 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 **Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
 world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped; **update1 completed at05:22:31**,939.926s, finite norm38.17278,
-sampled replicas equal and replay error.00004482. Update2 is running. First-update
-workload313,625 actions; no isolated host-policy speedup claim. The prospective
+are mapped; **update3 completed at05:51:28**,869.016s, finite norm73.19961,
+sampled replicas equal and replay error.00003791. Update4 is running. Full-step
+times1–3 are939.926/867.743/869.016s; no isolated host-policy speedup claim. The prospective
 steady timing window is updates5–14. No scientific arm launched.
 
 - Control `local/qualification/ram-sequence-v2/lower`; output
@@ -34,16 +34,17 @@ steady timing window is updates5–14. No scientific arm launched.
   remain NVMe66310. Qualified source commit3aaaf8a and code SHA
   **244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7**
   are unchanged. Latest required source checks:233 CPU tests + toy smoke PASS.
-- **Data owns one-shot COMPLETE3 readiness capture**,5s file polling, tmux
-  `dario-ram-lower005-ready-watch`, PID1271879/startticks4830085, same deadline.
-  Capture only at latest complete metric3; readiness expires300s. Root alone
-  reviews/releases/launches upper. No retry or later-milestone substitution.
+- **One-shot COMPLETE3 readiness capture finished**, exit0 at05:52:19, all32
+  actual workers/ancestry/env/mapping validated. Ready SHAb674fd49…7d9b0 was
+  immutable and fresh when root independently reviewed/released upper. Capture
+  watcher1271879 is gone; no retry or later-milestone substitution occurred.
 - **Root owns the only active backup watcher**, tmux
   `dario-ram-v2-lower005-backup`: launcher1272281, timeout/PGID1272286,
   Python1272287, startticks4830210/211/212. Same deadline; state/control in v2
   lower, raw events/logs in NVMe observation. Destination
   `local/backups/qwen-r-fp32-ram-tmp-005`, retain2/all NVMe originals preserved.
-  No complete checkpoint yet. Stop this watcher if the driver fails/stops early.
+  COMPLETE3ed24af26…7f1336 published05:52:15.789; first EBS copy/verification is
+  active. Stop this watcher if the driver fails/stops early.
 - Distributed reuses the existing read-only host observer in tmux
   `dario-ram005-observe` for actual overlap/HBM evidence. No extra device job.
 
@@ -68,8 +69,17 @@ SHA4e614878…5ee89. All NVMe originals remain.
 The original strict upper **cp3-only verified hardlink fork and precreated STOP**
 were prepared at05:01:07; no future metrics/tapes copied. Original fork receipt
 `local/qualification/qwen-r-fp32-ram-resume-004/fork.json`; STOP SHA9a9df879…eecf8.
-Upper32–63 remains free/unreleased. Its strict restored3→one update4/save/exit
-will start only after root reviews actual lower COMPLETE3 readiness.
+**Upper recovery is active**, control `local/qualification/ram-sequence-v2/upper`,
+tmux `dario-ram-v2-upper004`; original v1 stays unreleased. Root issued release
+at05:52:33, SHAf882c0fd…ca035, binding actual lower readyb674fd49…7d9b0 and the
+unchanged original fork/STOP. Full original fork preflight passed before readiness
+expired05:57:19. Launcher1327148, timeout/PGID1328412, driver1328414,
+monitor timeout1328411. Review independently verified all32 actual workers/env/
+ancestry on physical devices8–15 at05:54:32; all lower identities remain exact.
+Receipt `upper/review.processes.json`, SHA90af9654…1c64d. Review owns STOP supervision and original tape/state
+comparators; distributed owns actual simultaneous execution evidence. Output
+`local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004`.
+Strict restored3→one update4/save/exit is required; same deadline13:05:19 UTC.
 
 **B0 held-development suite complete, exit0**, all128 fixed GSM8K TRAIN items in
 three modes: **direct113/128 (88.28125%)**, **empty107/128 (83.59375%)**,
@@ -84,8 +94,8 @@ wall9.80/10.53/22.86s includes first-item cold work; generation sums and separat
 outer wall are retained. Public report with paired descriptive intervals and all
 input/output hashes: `validation/held_dev_B0_20261017.json`.
 
-All owned B0 processes/PGID1079002 are gone and lower devices0–7 are idle; all32
-original R004 workers remained unchanged. The original PID-recording correction
+At B0 cleanup all owned processes/PGID1079002 were gone and lower devices0–7
+were idle; all32 original R004 workers remained unchanged. The PID-recording correction
 stays preserved in control `local/evaluation/held-dev128-v1/b0-plan-v1`.
 Raw outputs `local/nvme/evaluation/held-dev128-v1-B0-001` and approved EBS copy
 `local/backups/evaluation/held-dev128-v1-B0-001` retain every prediction, score,
@@ -144,25 +154,23 @@ and qualification success do not establish useful deployed thoughts.
 
 ## Exact next sequence
 
-Original baseline cleanup/fork preparation is complete and v2 lower is active.
+Original baseline cleanup/fork preparation and one-shot lower readiness are
+complete; v2 lower training and upper strict recovery are active.
 
-1. At fixed lower COMPLETE3, data captures actual32 worker/env/ancestry/topology
-   with v2 `lower.launch.sh --ready`. Root promptly reviews the actual receipt and
-   issues finite upper release, binding the original fork/STOP and ready hash.
-2. Launch **v2 upper** strict restored3→one update4/save/exit. Review independently
+1. Follow **v2 upper** strict restored3→one update4/save/exit. Review independently
    compares actual restored state/RNG raw bytes, all128 new stochastic tapes and
    complete post-update state using original criteria **5558cf95…8a00a4** and
    tolerances1e-7+1e-6. Never force RNG or loosen bounds. Original v1 stays unused.
-3. Lower continues14. Report ten full timings5–14 and genuine overlapping device
+2. Lower continues14. Report ten full timings5–14 and genuine overlapping device
    execution separately. No extra upper profiling job or assumed simultaneous
    throughput multiplier. Finish verified backups and owned-process cleanup.
-4. Choose qualified host placement, account for production-loader RAM/storage and
+3. Choose qualified host placement, account for production-loader RAM/storage and
    actual measured costs, freeze256, then launch the matched fresh-B0 seed chains.
 
 Reviewed controls `local/qualification/ram-sequence-v2`, manifest
 **daf199d05b620a05105520f734a3d53622ed1771cbb6662557125c11243ac1c6**;
 public `validation/r_ram_sequence_20261017.json`. Six host fixtures and both static
-probes pass; **lower released/running; upper fork/STOP prepared but unreleased**. All original v1 files stay
+probes pass; **lower running; upper strict recovery launched after actual ready review**. All original v1 files stay
 immutable; **never release original v1 launchers**, old R003 resume, or old
 upper-overlap-001. Lower0–31 ports64331/2, upper32–63 ports64321/2. Private RAM TMPDIRs
 are separately bound; raw logs/checkpoints stay NVMe, compiler cache stays EBS.
