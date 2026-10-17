@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 01:31 UTC
+# Current state — 2026-10-17 01:41 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -106,11 +106,39 @@ Read-only performance attribution found substantial EBS temporary-program I/O:
 125.07 MiB/s and no physical reads. Open worker files were `/tmp/tmp*/model.neff`;
 existing kernel latencies are brief. Receipt:
 `validation/r_warm_cache_io_20261017.json`. Distributed is preparing
-`qwen-r-fp32-nvme-tmp-004`, upper partition, same seed1234/source/spec/recipe,
-changing only fresh-process TMPDIR to NVMe. No new run has launched and no speedup
-is measured. Root will review/release; R003 remains intact until then, with any
-cooperative stop after a complete update/save. Host I/O paths will be bound
-separately from the unchanged runtime whitelist.
+`qwen-r-fp32-nvme-tmp-004`, upper partition, with the same numerical identity and
+NVMe TMPDIR/raw logs. This configuration is now running; no complete-step speedup
+is measured yet. Its physical placement and monitoring output also differ from
+R003, so do not claim a perfectly isolated TMPDIR causal comparison.
+
+**Distributed agent: active R004.** Reviewed preparation SHA
+`49c770b7700c070fec3bf7b968dd333ee81e1b5393fb74a4656bbb432b9fec9a`;
+root release SHA `cb29f2b8c1cf83ffd8433d3a6f0afee160f2cda1d13f1a4b3a0b1f4e048315a3`.
+Fresh preflight passed at 01:38:30 UTC. Launcher 871318, timeout/PGID 871404,
+driver 871406, all 32 workers on logical cores 32–63; exact identities in
+`local/qualification/qwen-r-fp32-nvme-tmp-004/{processes,rank-processes}.json`.
+Same spec `92f866c8…`, source `3aaaf8a` / code hash `244e2f13…`, seed1234,
+G4/cap1024/global128/accum4/FP32/LRU2, max14. Ports 64301/64302.
+Deadline **2026-10-17 09:38:07 UTC** plus 30s grace.
+Output `local/nvme/qualification/qwen-r-fp32-nvme-tmp-004`;
+raw logs/monitor in adjacent `qwen-r-fp32-nvme-tmp-004-observation`.
+TMPDIR is `local/nvme/tmp/qwen-r-fp32-nvme-tmp-004`, NVMe device 66310;
+persistent compiler cache remains EBS device 66305. Host I/O policy SHA
+`9d2e1f20f3f38cb30ce41a80f4c3b453f44c4471aed15b382a84a2d8dd8cfb21`
+is separately bound. Actual run spec/runtime/environment match the preparation;
+sampling and cached full backward execution are underway. No complete update yet.
+Root owns its active backup supervisor: launcher 897722, timeout/PGID 897725,
+Python 897726, starts 3586343/3586344, tmux `dario-r-nvme-tmp004-backup`.
+Same deadline; state in R004 control directory, events/logs in its NVMe observation
+directory. Stop that watcher if R004 fails or stops before terminal backup.
+
+**R003 cooperative stop requested at 01:40:24 UTC**, after R004's actual all-rank
+initialization/spec/host-I/O verification. All 96 micro-0/1/2 tapes exist; current
+update's micro 3 continues. No signal was sent. It will finish the full optimizer
+boundary, save and exit; reason is measured host I/O, not reward/numerical failure.
+Receipt `local/qualification/qwen-r-fp32-final-003.cooperative-stop-request.json`.
+Data monitors this completion; root will verify its checkpoint backup, then stop
+the waiting terminal14 backup supervisor. Preserve every artifact.
 
 The fixed step-1/rank-0/micro-0 TRAIN example is saved in full as
 `local/qualification/qwen-r-fp32-final-003.step1-rank0-micro0.example.{json,txt}`,
@@ -132,12 +160,14 @@ After checkpoint 3 exists, prepare a fresh process with STOP precreated: export
 actual restored state before sampling, run exactly update 4, compare all 32×4
 stochastic tapes and full post-update checkpoint. The prepared resume is not
 launched. Require ten complete steady updates before exposure selection.
-The upper one-update R overlap smoke is prepared/reviewed, not launched:
+The original upper one-update R overlap smoke is preserved, not launched:
 `local/qualification/qwen-r-fp32-upper-overlap-001/prepared.json`, SHA
 `dee151f1af85b76f86eb64ebb49c293d796463466e0c801a94e682a8db1d18f4`.
 It binds actual lower fork/checkpoint 3/STOP readiness, source/settings and fresh
 root release; separate host/Neuron ports 64251/64252, upper cores 32–63.
-Data owns lower recovery; distributed prepared upper; root coordinates overlap.
+Its R003-terminal14 guard will not be satisfied after the cooperative stop.
+Do not launch it. After R004 completes, rebind fresh upper R004 recovery and
+lower NVMe coexistence under new reviewed identities; preserve these old bytes.
 
 **Held-seed jobs complete:** C32 update/COMPLETE and FP64 full derivative both
 exited 0; comparator exited 0/PASS. All upper-core workers and supervisors are
@@ -159,8 +189,8 @@ python3 local/qualification/qwen-r-fp32-final-003.status.py
 cat local/qualification/qwen-c-heldseed-001/comparison.result.json
 ```
 
-Complete distributed R update/resume/timing.
-Overlap the required lower R resume with one bounded upper R update to qualify
+Complete distributed R004 update/resume/timing and R003's cooperative save.
+Overlap the required upper R004 resume with one bounded lower NVMe R update to qualify
 two-R coexistence. Prefer parallel seed chains C1→R1 and C2→R2 on the existing
 32-core partitions; ideal world 64 saves no study time against that schedule.
 Freeze terminal exposure from measured complete-step costs and fresh-data supply before any final test access. Save
