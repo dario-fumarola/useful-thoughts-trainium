@@ -1,224 +1,126 @@
-# Current state — 2026-10-17 07:41 UTC
+# Current state — 2026-10-17 08:23 UTC
 
-**R qualification is running; no scientific C/R pair has launched.**
-The first-study terminal target is prospectively **256 updates**, with fixed
-step64 development evaluation. Public repository:
-https://github.com/dario-fumarola/useful-thoughts-trainium . Work is isolated in
-`/home/ubuntu/dario`; original repositories remain unchanged.
+**Finite R qualification has passed; no scientific C/R arm has launched.**
+The first study remains **256 terminal updates**, with fixed step64 development.
+Public repository: https://github.com/dario-fumarola/useful-thoughts-trainium .
+Work is isolated in `/home/ubuntu/dario`; original repositories are unchanged.
+The owner authorizes sustained autonomous work, review agents and public updates.
+`CODEX_NEXT_DAY.md` governs the queue. Its companion review file was not found.
+Weeks are available; the14-day planning window is not an instance shutdown date.
 
-The owner authorizes sustained autonomous work and review agents, with weeks
-available. `CODEX_NEXT_DAY.md` governs the next-day queue; its snapshot5cd4c79
-predates the completed R updates below. Referenced `REVIEW_AND_NEXT_24H.md` was
-not found locally. The 14-day schedule is a planning limit, not a shutdown date.
+## Current work and ownership
 
-## Live jobs and ownership
+No accelerator training/evaluation job is active. RAM005 completed14 updates,
+exit0 at08:13:18; all original workers/driver/launcher/monitor/observer are gone.
+All16 devices were empty at cleanup. Root's lower backup watcher also exited0,
+all owned processes gone. Original v1 coordinators remain unused.
 
-**Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
-world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped; **update11 completed at07:39:20**,689.444s, finite norm1.81071,
-sampled replicas equal and replay error.00000787. Update12 is running. Seven of ten
-prospective timings5–14 are complete, including actual shared-host recovery work.
-All ten remain unadjusted. No isolated speedup claim.
+Root is finishing storage and production resource preparation. The only active
+copy is the unique strict upper continued4 checkpoint, using the sealed source's
+`scripts/backup_checkpoint.py`. Source:
+`local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004/step-0000004`.
+Destination: `local/backups/qwen-r-fp32-ram-resume-004/step-0000004`.
+Result/stderr: `local/qualification/ram-sequence-v2/upper/backup.{receipt.json,stderr.log}`.
+Wait for successful copy/readback before the timed freeze. No automatic relaunch.
 
-- Control `local/qualification/ram-sequence-v2/lower`; output
-  `local/nvme/qualification/qwen-r-fp32-ram-tmp-005`, raw logs/monitor in its
-  adjacent `-observation` directory. tmux `dario-ram-v2-lower005`.
-- Launcher1246580, timeout/PGID1246667, driver1246669, monitor timeout1246666.
-  Actual32 worker identities are in control `{processes,rank-processes}.json`;
-  actual launch receipt `launch.execution.json`. Ports64331/64332.
-- Root release at05:05:19 UTC, SHA2a3a46e9…b74f83. Preflight passed; run metadata
-  started05:06:33. Specb61afe63…bac80c. Hard deadline **13:05:19.591488 UTC**,
-  30s kill grace. Original v1 prepared96068a0d…cc9241 stays immutable/unreleased.
-- Private0700 TMPDIR `/dev/shm/dario/qwen-r-fp32-ram-tmp-005` on tmpfs26;
-  host policyc6cc7268…4ec21. Persistent cache remains EBS66305; logs/checkpoints
-  remain NVMe66310. Qualified source commit3aaaf8a and code SHA
-  **244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7**
-  are unchanged. Latest required source checks:233 CPU tests + toy smoke PASS.
-- **One-shot COMPLETE3 readiness capture finished**, exit0 at05:52:19, all32
-  actual workers/ancestry/env/mapping validated. Ready SHAb674fd49…7d9b0 was
-  immutable and fresh when root independently reviewed/released upper. Capture
-  watcher1271879 is gone; no retry or later-milestone substitution occurred.
-- **Root owns the only active backup watcher**, tmux
-  `dario-ram-v2-lower005-backup`: launcher1272281, timeout/PGID1272286,
-  Python1272287, startticks4830210/211/212. Same deadline; state/control in v2
-  lower, raw events/logs in NVMe observation. Destination
-  `local/backups/qwen-r-fp32-ram-tmp-005`, retain2/all NVMe originals preserved.
-  EBS4/7 retained, latest copy7 verified06:55:56;3 pruned only after verification,
-  all NVMe originals preserved. COMPLETE7 **10c248f3…e4d61f5**, save45.723s.
-  State records actual verified events; all owned watcher identities match.
-  Stop this watcher if the driver fails/stops early.
-- Distributed reuses the existing read-only host observer in tmux
-  `dario-ram005-observe` for actual overlap/HBM evidence. No extra device job.
+## Qualification evidence
 
-**R004 completed14 updates and exit0 at04:58:17 UTC**, all original workers,
-launcher, monitor and observer gone. Full-step14:655.480s; CP14 save44.802s,
-COMPLETE39a26e7f…276673e. All post-cold updates3–14: median734.750s,
-P90 873.985s, mean761.221s. Workloads shrink greatly; no TMPDIR-only causal
-speedup is claimed. Cold work, checkpoint wall and shared-host intervals are
-separate. Single report `validation/r_fp32_nvme_execution_20261017.json`.
-
-R004 final TRAIN tapes have **509/512 empty notes**, all512 stop at base EOS;
-action lengths1/2/3 occur509/2/1 times. Mean raw gain remains negative. This is
-qualification behavior, not useful-thought evidence or a trained C/R result.
-The fixed research protocol and prospective256 terminal remain unchanged.
-
-R004 EBS **7/14** are verified, terminal copy published05:02:16; watcher exit0 at
-05:02:57 and all its owned PIDs gone. Root independently rehashed all33 original
-and EBS payloads for BOTH checkpoints, PASS:
-`local/qualification/qwen-r-fp32-nvme-tmp-004/terminal-backup-verification.json`,
-SHA4e614878…5ee89. All NVMe originals remain.
-
-**Strict upper recovery PASS**, original criteria5558cf95…8a00a4 unchanged.
-Actual restored3 model/all32 optimizer shards/RNG/counters/order are byte-exact;
-all128 first-resumed4 tapes are identical. Complete post-update4 model/optimizer
-passes1e-7+1e-6, with small non-bitwise differences retained (model max9.095e-13,
-optimizer max2.910e-11); RNG/counters/Adam steps and loss/norm remain exact.
-Original cp3-only fork/STOP stayed intact; sole metric4, exit0 at06:22:27,
-all owned upper processes gone/devices8–15 idle at06:23:12. Original v1 unused.
-Report `validation/r_fp32_ram_resume_20261017.json`; local control
-`local/qualification/ram-sequence-v2/upper`, aggregate1bf34ff1…6ad0f.
-Output `local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004`.
-Its unique continued4 EBS copy waits for the existing lower watcher to finish;
-all original NVMe payloads remain. No external destination is approved.
-
-Upper update4 began05:56:32, full elapsed1488.798s includes32 cold restored-optimizer
-compilations; CP4 COMPLETE06:22:17. Startup/export/compile/checkpoint are separated
-in the report. Two raw approximately5s monitor windows record nonzero execution
-on both mapped partitions, the latter after upper gradient work. Root verified
-the first raw segment/all64 PID-count bindings (444 lower/4 upper; errors0),
-`-observation/root-overlap-review.json`. This is sampled coexistence, not steady
-two-R throughput. Lower timings5–14 include all actual overlap without subtraction.
-
-**B0 held-development suite complete, exit0**, all128 fixed GSM8K TRAIN items in
-three modes: **direct113/128 (88.28125%)**, **empty107/128 (83.59375%)**,
-**thought63/128 (49.21875%)**. Empty has2 format failures/1 answer truncation;
-thought33/14 plus4 capped thoughts. Runtime errors0. Every failure stays counted.
-This is a substantial B0 protocol cost, not a trained C/R or official-test result.
-No subset, prompt, cap, parser or prospective256 target changes follow it.
-
-Started02:45:18.503479, completed04:18:35.923680 UTC, total93.29min including
-loading/cold work. Generated tokens13,590/15,119/32,100 respectively. Mean item
-wall9.80/10.53/22.86s includes first-item cold work; generation sums and separate
-outer wall are retained. Public report with paired descriptive intervals and all
-input/output hashes: `validation/held_dev_B0_20261017.json`.
-
-At B0 cleanup all owned processes/PGID1079002 were gone and lower devices0–7
-were idle; all32 original R004 workers remained unchanged. The PID-recording correction
-stays preserved in control `local/evaluation/held-dev128-v1/b0-plan-v1`.
-Raw outputs `local/nvme/evaluation/held-dev128-v1-B0-001` and approved EBS copy
-`local/backups/evaluation/held-dev128-v1-B0-001` retain every prediction, score,
-log and process receipt. Root independently rehashed **all51 source/copy payloads
-plus the copied verification receipt**, PASS. Reviewer result52d82625…c4af7a,
-backup receiptf472897d…42ffbc. No B0 process or deadline remains active.
-
-## Completed evidence
-
-Actual Qwen3-1.7B-Base revision `ea980cb0a6c2ae4b936e82123acc929f1cec04c1`,
-released weights/original embedding tie, FP32 both arms. Audited FineMath
-production: **329,535 train /18,360 dev /18,239 test**. No official final benchmark
-outcomes read. Earlier exclusion preparation used question-only benchmark data.
-
-- **C32 recovery PASS:**12 updates, ten steady mean10.007s. Actual restored full
-  model/all optimizer shards/metadata/counters/CPU-device RNG raw-byte exact;
-  continuation through12 meets original tolerance, RNG/Adam steps exact, weights
-  not bitwise equal. Verified EBS6/12; all owned processes gone.
+- **R full execution PASS:** RAM005 freshB0/seed5678, lower0–31, world32/global128/
+  accum4, FP32/LRU2/private RAM temp, G4/cap1024/K1/T.7;14 complete updates.
+  Fixed **all steps5–14**: mean735.977s, median704.789s, linear P90 869.283s.
+  Preserve all shared-host recovery/CPU comparison/backup overlaps without
+  subtraction. Checkpoint saves43.617–46.908s are separate; issued-to-exit wall
+  11,279.171s. Actions shrink substantially: timing is this measured workload,
+  not an isolated TMPDIR speedup. Report:
+  `validation/r_fp32_ram_execution_20261017.json`, SHA57116908…25a3aa4e.
+- **Strict R recovery PASS:** actual restored3 model/all32 optimizer shards/RNG/
+  order/counters byte-exact; all128 first-resumed4 tapes identical. Full continued4
+  meets original1e-7abs+1e-6rel, with retained non-bitwise differences (model max
+  9.095e-13, optimizer2.910e-11). Sole update4/unchanged STOP/exit0/cleanup.
+  `validation/r_fp32_ram_resume_20261017.json`, SHA099634ce…f0f321.
+- **Actual coexistence observed:** both mapped32-worker groups executed in two
+  same~5s raw windows, one after upper gradient work. This is one strict recovery
+  episode with cold optimizer compilation, not ten simultaneous steady timings.
+  No concurrency multiplier is credited. Evidence is in the execution report.
+- **C qualification PASS:**12 updates, ten steady3–12 mean10.007s, strict actual
+  restore/continued-state recovery with declared bitwise/tolerance distinctions.
   `validation/c_fp32_final_resume_20261016.json`.
-- **Preserve C CPU-coordinate v1 FAIL:**754/1,720,574,976 coordinates. Independent
-  identical-gradient Adam passes. Separate FP64 diagnosis finds device derivative
-  closer than CPU FP32 overall, with residual sign disagreements retained.
-  Prospectively declared held-seed **v2 derivative PASS**, relativeL2.00010316,
-  cosine.9999999947, worst tensor.004933<.01, all8 gates.15,186 diagnostic sign
-  differences retained. No v3/FP64 expansion absent a concrete new fault.
-  `validation/c_fp32_accuracy_v2_{20261016,result_20261016}.json`.
-- **R full-cap math PASS:** FP32 cached replay fixes the trajectory that failed
-  BF16 at.001. Signed full-model backward passes CPU loss/norm and declared
-  cosine/L2 bounds. Float counting repairs the device int64 clamp/sign defect.
-  `validation/p2_repaired_signed_gradient_20261016.json` and
-  `validation/int64_clamp_mechanism_20261016.json`.
-- **R003 first full update PASS**, cooperative STOP/save/exit0 by01:59:02. Full
-  serialized model/initialized masters/moments inspection passes; all33 original
-  and EBS payload hashes independently verified, COMPLETEe563c4c2…2d966. Every
-  owned worker/monitor and obsolete watcher is gone. Original and EBS retainstep1.
-  `validation/r_fp32_first_update_20261017.json`.
-- **Host I/O/parity:** EBS temporary NEFF copies observed125.07MiB/s; NVMe placement
-  verified. All128 R003/R004 first-step tape pairs pass, tensor payloads byte
-  identical. This is not a TMPDIR-only causal estimate or strict recovery proof.
-  `validation/r_warm_cache_io_20261017.json` and
-  `validation/r_host_io_tape_parity_20261017.json`.
-- **Prefix-only accelerator check PASS:** actualB0 G4/cap1024, fixed writer RNG,
-  same prefix with K1 target10→220; actions/masks/lengths/metadata/log-probs exact.
-  One TRAIN prefix, two EOS/two caps; all owned processes gone. Original CPU
-  fixture separately retained. `validation/prefix_only_fp32_20261017.json`.
-- **Full-cap FP32 evaluation parity PASS:** local192 token comparisons max.00023079;
-  secondary90 max.000070572, no ranking/token mismatch. All jobs exited.
-  `validation/evaluator_fp32_fullcap_20261016.json`.
-- **HBM accounting:** adjacent physical NC pairs share banks inLNC2; sampled R004
-  max pair21.7915GiB, exposed allocator23.984375GiB. Residual is not guaranteed
-  contiguous free capacity. `validation/r_hbm_capacity_20261017.json`.
+- Qualified active source **3aaaf8a**, fingerprint
+  **244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7**,
+  unchanged. Latest required checks233CPU+toy smoke PASS. Signed P2 derivative,
+  original device future-perturbation counterfactual and FP32 evaluator parity
+  pass with their explicit older-component provenance limits. **C coordinate v1
+  FAIL remains preserved; separately prospective held-seed v2 derivative PASS.**
+  Do not add v3/FP64 work without a concrete fault.
 
-All failures and fixed first-batch examples are preserved. R003's four saved
-notes and first full batch have negative absolute raw gains; centered advantages
-and qualification success do not establish useful deployed thoughts.
+Final qualification TRAIN tapes show **511/512 empty notes**, all512 stop at base
+EOS; mean raw gain is negative. R004's terminal also had509/512 empty notes. These
+are stopping diagnostics, not useful-thought or downstream efficacy evidence.
+All1,792 RAM005 tapes and14 rank0 example traces remain local. The prospective
+256 terminal, objective, prompts and evaluation comparisons remain unchanged.
 
-## Exact next sequence
+## Production plan and next actions
 
-Upper strict recovery and actual sampled two-R coexistence passed. Lower is active.
+1. Finish the current upper4 EBS copy. Then run the sole necessary timed full-asset
+   freeze, capture peak RSS, and complete the conservative32-loader memory and
+   storage/timing projection. Assemble the actual nine-check qualification receipt
+   against the exact frozen spec and run `scripts/check_ready.py` from the archive.
+2. Launch **one32-core training group at a time: C1234, C5678, R1234, R5678**.
+   Every arm independently starts from released B0, never C/qualification weights.
+   Seed1234 uses lower0–31, seed5678 upper32–63; C/R share each seed's exact order
+   and32,768 fresh TRAIN records. Cross-seed overlap3,182 is disclosed.
+   Serial fallback was selected before science from full-pool memory uncertainty.
+   Use one reviewed shared EBS queue and one compressed node monitor; bind their
+   live matching identities before each finite root release. No supervisor or
+   science release exists yet. Idle cores may serve genuine development work
+   subject to actual host headroom.
+3. Complete fixed held-development C/R64/256 in direct/empty_format/one_thought,
+   plus the local fixed DEV512 controls. Never select the terminal by dev score.
+   Keep official final outcomes sealed until protocol/model inventory is fixed.
 
-1. Lower continues14. Report ten full timings5–14 and genuine overlapping device
-   execution separately. No extra upper profiling job or assumed simultaneous
-   throughput multiplier. Finish verified backups and owned-process cleanup.
-2. Choose qualified host placement, account for production-loader RAM/storage and
-   actual measured costs, freeze256, then launch the matched fresh-B0 seed chains.
-   Prospective command note `local/science/preparation-256/LAUNCH_NOTE.md` is a
-   draft, not a release. Necessary timed freeze supplies full-loader peak RSS.
+Immutable `local/science/source-256-001` matches all61 qualified active files,
+archived from commit85c64a9. Its manifest SHA8a0641c6…77faa4 binds the tar and
+qualified source. Four finite launchers passed independent review and remain
+unreleased. Use archive cwd/PYTHONPATH and absolute evidence/control paths;
+current root docs govern operations. Existing local qualification pre-freeze
+assembly contains all9 actual checks and all10 timings, but spec_hash=null:
+**not ready until the actual freeze and resource review**. No new numerical gate.
 
-Reviewed controls `local/qualification/ram-sequence-v2`, manifest
-**daf199d05b620a05105520f734a3d53622ed1771cbb6662557125c11243ac1c6**;
-public `validation/r_ram_sequence_20261017.json`. Six host fixtures and both static
-probes pass; **lower running; upper strict recovery PASS after actual ready review**. All original v1 files stay
-immutable; **never release original v1 launchers**, old R003 resume, or old
-upper-overlap-001. Lower0–31 ports64331/2, upper32–63 ports64321/2. Private RAM TMPDIRs
-are separately bound; raw logs/checkpoints stay NVMe, compiler cache stays EBS.
+## Data, development and interpretation
 
-Serial production is selected prospectively from host-memory headroom: one32-core
-training group at a time, **C1234, C5678, R1234, R5678**. Every arm independently
-starts from B0, seed1234 lower0–31 and5678 upper32–63. The necessary timed freeze
-supplies full-loader peak RSS before launch; do not assume a concurrency multiplier.
-Idle cores may serve genuine development evaluation subject to actual memory.
-Immutable `local/science/source-256-001` matches all61 qualified active files
-(SHA244e2f13…287ff7); four reviewed finite launchers are staged with no releases.
-Use archive cwd/PYTHONPATH and absolute evidence/control paths. Prospective
-production256 exposure `local/science/preparation-256/manifest.json` fixes32,768
-unique TRAIN IDs/seed, exact C/R order and3,182 disclosed cross-seed overlaps.
-No science freeze/release exists.
+Actual released Qwen3-1.7B-Base revisionea980cb0…604c1,1,720,574,976 unique values,
+original embedding/head tie, FP32 both arms. FineMath production revisione92b25a6…,
+audited329535train/18360dev/18239test, fixed512-prefix/16-future random anchors;
+K1 training, no whitespace/entropy filtering or cycling. Source/load/format and
+production order hashes are in `local/science/preparation-256/manifest.json`.
 
-Held-development protocol `validation/held_dev_protocol_20261017.json` fixes128
-GSM8K TRAIN items excluding all11 past demo/interface cases, B0 plus both C/R seeds
-at64/256, all3 modes. Report primary R-thought−C-thought, R-direct−C-direct,
-R-thought−R-empty and each arm versusB0, retaining errors/truncations/token costs.
-Direct permits ordinary calculations. Official final outcomes stay sealed until
-protocol/model inventory is frozen. Local K1 primary, K4/K16 secondary; preserve
-absolute clean/empty/own/filler and fixed random dev token-class/surprisal strata.
+Fixed128 held GSM8K **TRAIN** development B0 is complete: direct113/128,
+empty107/128, thought63/128. All failures/truncations and51 payload files are
+preserved with independently verified EBS copies. Primary R-thought−C-thought;
+also R-direct−C-direct, R-thought−R-empty and every arm versusB0. Format recovery
+or C degradation alone is not capability above B0. Direct allows calculations.
+Local K1 primary/K4,16 secondary; retain absolute clean/empty/own/filler plus
+content controls and fixed random token-class/surprisal strata. No official final
+outcomes read; earlier exclusion preparation used question-only benchmark data.
 
-## Storage and operational limits
+## Storage and limits
 
-At05:09 EBS free **269.8GiB**, mounted NVMe **1.15TiB**, tmpfs about1,000GiB.
-During actual two-R update loops, ordinary host-memory reads at05:59:10 and
-06:00:49 gave MemAvailable **285.93/614.27GiB**. The first is the lowest observed
-point, not a time-series minimum; tmpfs retained only about.078GiB at that point.
-Pilot success does not establish production-loader headroom. Necessary timed
-freeze will supply its peak RSS for a conservative rank-copy projection; use
-the declared serial fallback if concurrent production cannot retain headroom.
-Only one NVMe is formatted; other3 SSDs remain untouched. Science uses one reviewed
-serialized backup queue and one compressed shared node monitor. Backup helper at
-`validation/orchestration` passes its6 host fixtures/TERM review, unlaunched.
-The node monitor wrapper also passes6 host pipe/cleanup checks, independently
-rerun by root; no live capture exists. Both helper hashes are in the draft site.
-Reserve **two new checkpoint payloads +20GiB≈71.3GiB** for a backlogged rollover.
-Before science, reclaim only obsolete EBS qualification duplicates after full
-verification of every preserved NVMe payload; retain recoverable latest states.
-Existing retirement/relocation receipts stay under `local/qualification`.
+Root independently rehashed **all132 source/EBS payload reads** for RAM0057/14,
+PASS: `local/qualification/ram-sequence-v2/lower/terminal-backup-verification.json`,
+SHAd92787e4…8d084b7. The watcher retained7/14 then exited normally. Afterward,
+root verified all33 preserved NVMe payloads for each obsolete EBS duplicate before
+retiring C6, R0031, R0047 and RAM0057. All original NVMe states remain. Aggregate
+retirement receipt `local/qualification/ebs-retirement-before-science-20261017.json`,
+SHA011afcd5…6366b. Current latest qualification EBS copies: C12/R00414/RAM00514;
+unique resumed4 is copying. Before that copy, EBS free319.6GiB, NVMe1.001TiB.
+Science reserves latest-two EBS copies/run plus **two new payloads+20GiB** for
+backlogged rollover, about71.3GiB. Only one NVMe is formatted; other3 are untouched.
 
-EBS and NVMe share this instance. **Off-instance backup remains unresolved**;
-no external destination is approved. No stack upgrades, extra disk formatting,
-new cloud resources, IAM changes, paid teachers or unapproved uploads.
+Pilot lowest ordinary MemAvailable point285.93GiB is not a continuous minimum;
+node-monitor total-minus-used is not MemAvailable. One saved exact32-worker
+snapshot sums cumulative VmHWM1,237,113,118,720bytes, overcounting shared pages and
+non-simultaneous peaks. Add32 conservative full-loader copies, RAM temp and host
+reserve using the necessary freeze RSS; this is an estimate, not a new model run.
+EBS/NVMe share this instance. **Off-instance backup remains unresolved**; no
+approved external destination. No stack upgrade, new instances/IAM/paid teachers,
+unapproved uploads, or additional disk formatting.
