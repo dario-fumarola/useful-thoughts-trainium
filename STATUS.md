@@ -151,10 +151,14 @@ all failures, examples and outputs; no outcome-based terminal selection.
 
 Large artifacts remain ignored under `local/`. One verified unused NVMe is
 mounted at `local/nvme`; the other three SSDs are untouched. Latest space:
-EBS 324.5 GiB free, NVMe 1.4 TiB free. An obsolete EBS C duplicate was retired
+EBS 346.7 GiB free, NVMe 1.3 TiB free. An obsolete EBS C duplicate was retired
 after full verification of its preserved NVMe original; receipt:
 `local/qualification/ebs-retirement-c-fe-20261017.json`. The science backup queue
-will serialize copies across runs to preserve rollover space; preparation/review
-is pending. EBS backups and scratch share this instance;
+will serialize copies across runs; its six host fixtures and independent TERM
+review pass, and it remains unlaunched. A backlog can need two new payloads
+before pruning. The old C4 checkpoint and its hardlink alias were relocated to
+verified NVMe archives, preserving all bytes and receipts:
+`local/qualification/c4-checkpoint-relocation-20261017.json`.
+EBS backups and scratch share this instance;
 no external backup location is approved. The reviewed backup supervisor retains
 two verified complete states per run; see `docs/CHECKPOINT_BACKUP.md`.

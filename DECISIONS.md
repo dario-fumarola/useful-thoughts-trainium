@@ -184,3 +184,11 @@ Routine formatting changes do not need a decision entry.
 - Put science monitoring logs on NVMe and include checkpoint storage/rollover
   space in the final exposure plan. The active qualification driver, runtime,
   mathematical recipe and existing R backup supervisor are unchanged.
+- Independent review found that one backlogged cycle can copy two unseen
+  checkpoints before pruning. Reserve two payloads plus 20 GiB (about 71.3 GiB),
+  including actual incomplete staging at any restart. Relocate the old C4 EBS
+  checkpoint and its hardlink alias to a fully readback-verified NVMe archive;
+  preserve both identities, bytes and relocation receipts before retiring the
+  EBS aliases. This recovers another 25.64 GiB; current EBS free space is about
+  346.7 GiB. The shared host helper passes six fixtures and independent TERM
+  review; no shared science supervisor has launched.

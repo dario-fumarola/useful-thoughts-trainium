@@ -38,3 +38,12 @@ files. All source checkpoints remain on scratch. On copy/verification failure,
 deadline expiry, or a termination signal, it requests the driver's stop-file and
 exits; it does not automatically retry a failed operation. A restart re-verifies
 the retained copies. Both storage locations remain instance-local.
+
+For the four science runs, use the reviewed
+[shared host supervisor](../validation/orchestration/README.md) to queue these
+existing per-run cycles under one leader. Bind its helper/launcher hashes in the
+frozen site and its fixed roster hash in the subsequent launch receipt. Reserve
+space for two unseen checkpoint payloads plus 20 GiB: a restarted cycle may copy
+both new survivors before pruning old copies. Count incomplete staging files in
+actual disk use. Six small host fixtures and an independent TERM check pass;
+the science supervisor has not launched.
