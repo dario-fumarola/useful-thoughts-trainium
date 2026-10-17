@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 04:23 UTC
+# Current state — 2026-10-17 04:36 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -14,9 +14,11 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 ## Live jobs and ownership
 
 **Distributed owns R004**, upper logical32–63, freshB0/seed1234, world32/global128/
-accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update10 at04:11:51**,
-715.095s; update11 runs; next checkpoint14. Steps3–10 take715.095–897.506s;
-ten full steady timings and median/P90 are still pending. All recorded norms are
+accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update12 at04:35:30**,
+695.022s; update13 runs; next checkpoint14. Ten post-cold observations3–12:
+median754.124s/P90876.890s, range695.022–897.506s. The final distribution retains
+all post-cold steps through14. Workload actions/padded slots shrink across these
+steps; these are not a TMPDIR-only causal estimate. All recorded norms are
 finite, sampled replicas equal, replay errors below.001. Updates1/2 include cold
 optimizer work and are excluded from steady samples. Checkpoint3/4/7 save wall
 49.368/47.404/47.230s is separate from per-step elapsed.

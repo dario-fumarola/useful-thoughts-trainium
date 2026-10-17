@@ -285,7 +285,7 @@ separately, retaining serial fallback. Public prospective manifest:
 `validation/r_ram_sequence_20261017.json` (daf199d0…ac1c6).
 
 
-## 2026-10-17 04:23 UTC — retain the complete B0 development baseline
+## 2026-10-17 04:21 UTC — retain the complete B0 development baseline
 
 The fixed128 TRAIN suite completes all3 modes: direct113/128, empty107/128,
 thought63/128. Thought mode has33 format failures and14 answer truncations;
