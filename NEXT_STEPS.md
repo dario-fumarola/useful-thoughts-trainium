@@ -9,7 +9,7 @@ prospective **256 updates**, with a fixed step64 development milestone.
    recovery PASS: exact restored3/RNG, all128 identical tapes, complete update4
    within original tolerances, unchanged STOP/exit0/cleanup. Its report is
    `validation/r_fp32_ram_resume_20261017.json`. Original v1 stays unused.
-2. Use actual full timings and resource headroom to choose placement/schedule.
+2. Finish the resource review for the selected serial production schedule.
    Production-loader RAM must be budgeted beyond pilot coexistence: observed
    MemAvailable reached285.93GiB while both pilot R groups were live. Use the
    necessary timed freeze's full-loader RSS; declare the serial fallback if
@@ -20,7 +20,7 @@ prospective **256 updates**, with a fixed step64 development milestone.
    from the timing distribution; do not assume a concurrency multiplier. No
    extra upper profiling job.
 3. Freeze256 once these existing qualification requirements pass, then launch
-   two32-core science chains: C1234→freshB0 R1234 and C5678→freshB0 R5678. Each
+   one32-core group at a time: C1234, C5678, freshB0 R1234, freshB0 R5678. Each
    arm starts independently from B0 and shares its seed's exact source order and
    exposure; no qualification or C checkpoint initializes R. Use the reviewed
    serialized EBS backup queue and one compressed node monitor. If timing makes

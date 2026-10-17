@@ -315,3 +315,28 @@ The original strict cp3-only fork/STOP is now verified. Root releases v2 lower
 freshB0/seed5678 RAM qualification, deadline13:05:19.591488 UTC. Data owns the
 one-shot fixed COMPLETE3 readiness; root owns upper release/launch and the sole
 active backup queue. No original v1 launcher is released.
+
+
+## 2026-10-17 07:41 UTC — choose serial production before outcomes
+
+Use one32-core training group at a time: **C1234, C5678, R1234, R5678**.
+Each arm independently loads unchanged B0; within-seed order/exposure, FP32,
+qualified host policy and prospective256/64 terminal/development remain fixed.
+Keep seed1234 on lower0–31 and5678 on upper32–63. Both controls finishing first
+also makes their fixed development checkpoints available during R training.
+
+This is the documented serial fallback. Actual two-R pilot execution passed,
+but ordinary MemAvailable reached285.93GiB. Each production rank independently
+loads329535 TRAIN records versus3180 in the pilot, so concurrency lacks a
+conservative reserve. Do not credit unmeasured restore-memory release or a2x
+throughput multiplier. The necessary timed freeze supplies full-loader peak RSS
+for the32-rank resource projection before launch. The final ten R timings5–14
+remain pending; retain all overlaps and checkpoint/backup costs. No new loader
+rewrite, world64 qualification, upper profiling run or numerical gate is needed.
+Use idle cores for genuine development evaluation when actual memory permits.
+
+Immutable production source `local/science/source-256-001` matches all61 qualified
+active files (SHA244e2f13…287ff7), archived from public commit85c64a9. Its four
+finite per-arm launchers passed independent review but have no releases. Freeze,
+readiness and drivers must use that archive and absolute evidence/control paths;
+root operational docs remain current. Science is not frozen or launched.

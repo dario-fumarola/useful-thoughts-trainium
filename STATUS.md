@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 06:57 UTC
+# Current state — 2026-10-17 07:41 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -15,10 +15,10 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 **Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
 world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped; **update7 completed at06:51:01**,757.668s, finite norm68.2449,
-sampled replicas equal and replay error.0000429. Update8 is running. Three of ten
-prospective timings5–14 are complete:902.195/865.627/757.668s, including actual
-shared-host recovery work. All ten remain unadjusted. No isolated speedup claim.
+are mapped; **update11 completed at07:39:20**,689.444s, finite norm1.81071,
+sampled replicas equal and replay error.00000787. Update12 is running. Seven of ten
+prospective timings5–14 are complete, including actual shared-host recovery work.
+All ten remain unadjusted. No isolated speedup claim.
 
 - Control `local/qualification/ram-sequence-v2/lower`; output
   `local/nvme/qualification/qwen-r-fp32-ram-tmp-005`, raw logs/monitor in its
@@ -180,12 +180,17 @@ immutable; **never release original v1 launchers**, old R003 resume, or old
 upper-overlap-001. Lower0–31 ports64331/2, upper32–63 ports64321/2. Private RAM TMPDIRs
 are separately bound; raw logs/checkpoints stay NVMe, compiler cache stays EBS.
 
-Then select qualified host placement, budget using actual timing/storage, freeze
-256 and launch **C1234→freshB0 R1234** and **C5678→freshB0 R5678** on32-core
-partitions. Explicit serial fallback remains available. Prospective production256
-exposure is prepared/reviewed at `local/science/preparation-256/manifest.json`:
-32,768 unique TRAIN IDs/seed, exact C/R within-seed order,3,182 cross-seed overlaps
-disclosed. No science freeze/release exists.
+Serial production is selected prospectively from host-memory headroom: one32-core
+training group at a time, **C1234, C5678, R1234, R5678**. Every arm independently
+starts from B0, seed1234 lower0–31 and5678 upper32–63. The necessary timed freeze
+supplies full-loader peak RSS before launch; do not assume a concurrency multiplier.
+Idle cores may serve genuine development evaluation subject to actual memory.
+Immutable `local/science/source-256-001` matches all61 qualified active files
+(SHA244e2f13…287ff7); four reviewed finite launchers are staged with no releases.
+Use archive cwd/PYTHONPATH and absolute evidence/control paths. Prospective
+production256 exposure `local/science/preparation-256/manifest.json` fixes32,768
+unique TRAIN IDs/seed, exact C/R order and3,182 disclosed cross-seed overlaps.
+No science freeze/release exists.
 
 Held-development protocol `validation/held_dev_protocol_20261017.json` fixes128
 GSM8K TRAIN items excluding all11 past demo/interface cases, B0 plus both C/R seeds
