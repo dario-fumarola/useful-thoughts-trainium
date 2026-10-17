@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 00:04 UTC
+# Current state — 2026-10-17 00:18 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -81,10 +81,14 @@ before loading because the default host-store port collided with C; its failure
 and bounded cleanup are preserved. Attempt 003 has loaded actual weights and
 started update 1. Its first backward graph compiled at 23:48:39 UTC after
 43 minutes. All 32 ranks have since completed the first backward with zero
-recorded execution failures and hold gradient-bearing tensors. Current bank
-allocation is about 19.78 GiB. The next scalar loss passed at 23:54:13. First
-accumulated backward `MODULE_7801530274365426598` is cold-compiling, with
-backend/CPU progress observed at 00:02:54. Its real memory/execution is pending.
+recorded execution failures and hold gradient-bearing tensors. First backward
+bank allocation was about 19.78 GiB. The next scalar loss passed at 23:54:13.
+First accumulated backward `MODULE_7801530274365426598` compiled at 00:10:50
+and executed successfully on all 32 workers by 00:14:12: every success counter
+increased by one, with zero failure increments. All main banks fell to about
+16.52 GiB, consistent with the compiled gradient-buffer aliasing. The next scalar
+loss `MODULE_2206265331420854255` is cold-compiling. Later-micro accumulation,
+initialized optimizer state and a complete update remain pending.
 **No complete R update yet.** Separate sysfs memory sampling is read-only.
 
 Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
