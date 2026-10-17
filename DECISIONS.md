@@ -234,3 +234,36 @@ Routine formatting changes do not need a decision entry.
   No launch until R004 completes, actual topology is free, and a finite root
   release binds concrete input/fork/readiness receipts. No new numerical oracle.
   Select science host policy and exposure from actual measurements.
+
+## 2026-10-17 — adopt the owner's next-day guidance and small first study
+
+- Read owner-provided `CODEX_NEXT_DAY.md` (review snapshot5cd4c79). The referenced
+  companion review file is absent locally. Current verified R003 save/backup and
+  R004 update1 supersede its historical pending status; active jobs stay unchanged.
+- Prospectively target **256 terminal updates per scientific arm/seed**, rather
+  than choosing the largest affordable candidate. No scientific pair or outcome
+  exists yet. Final freeze waits for R recovery, steady/simultaneous costs and
+  storage. If timing makes256 unsuitable, explicitly choose a declared alternative
+  before outcomes. Each C and R independently starts from B0 with matched order.
+- Keep step64 as a fixed development milestone, without selecting the primary
+  checkpoint by its score. Use a fixed held subset, disjoint demonstrations, all
+  three modes direct/empty_format/one_thought, errors/truncations and measured
+  token/latency costs. Preserve the same-policy primary, R-direct minus C-direct,
+  R-thought minus R-empty and each arm versus B0; C degradation alone is not an
+  improvement above B0. Direct allows ordinary calculations. Local K1 primary,
+  K4/K16 secondary, with absolute clean/empty/own/filler evidence and fixed random
+  dev token-class/surprisal descriptions; do not filter whitespace or training.
+- One bounded host-storage optimization branch at a time, no more disks, stack
+  upgrades or external destinations. Close original missing evidence only; no
+  new numerical investigations/gates absent a concrete fault. Keep monitoring
+  patient and summaries compact. Long healthy runs are expected.
+- Keep the two reviewed RAM preparations unchanged; no extra upper profiling job.
+  Report the actual overlap episode honestly, separately from ten warm timings,
+  and budget an explicit serial fallback. At256, the initial204 usable training
+  hours allow about23.74min/R step even for two serial C/R chains (C about10s).
+  That is a feasibility ceiling, not a measured throughput or concurrency claim.
+- Required receipt assembly found one original single-accelerator requirement
+  lacks a saved counterfactual: future perturbation under fixed writer RNG/model.
+  CPU/source-API evidence exists. Prepare one bounded unchanged-backend full-cap
+  device check on an idle core, with independent review before launch. This closes
+  existing named evidence; it introduces no new oracle, gradients or investigation.

@@ -1,6 +1,8 @@
 # Short execution queue
 
 Mark complete only from actual artifacts. Active jobs and commands are in STATUS.md.
+Owner's next-day guidance: `CODEX_NEXT_DAY.md`. First prospective research target
+is **256 terminal updates**; weeks available do not imply maximizing exposure.
 
 1. Complete R32 NVMe-host-I/O qualification004 on common source3aaaf8a. First
    full update passes; require ten complete steady steps and ordinary checkpoints.
@@ -20,14 +22,20 @@ Mark complete only from actual artifacts. Active jobs and commands are in STATUS
    each R starts from fresh B0. Avoid world64 work without a measured benefit.
    Original R003 resume/overlap preparations stay preserved and unlaunched;
    review new identities/guards before allocating either replacement. Final host
-   I/O policy and exposure follow measurements, not feasibility estimates.
-4. Freeze two-seed terminal exposure from complete-step timing, fresh-data supply
-   and the prospective 14-day schedule. Start C/R from identical released weights;
-   supervise finite runs and verified EBS checkpoint copies.
-5. Evaluate terminal direct/thought policies, base, local controls and crossed
-   readers. Full-cap evaluator parity passes. Keep official final outcomes unread
-   until configuration and terminal selection are frozen. Save failures, costs,
-   examples and uncertainty; choose the next experiment from actual results.
+   I/O policy and exposure follow measurements, not feasibility estimates. Report
+   the actual overlap episode separately from ten warm steps; budget an explicit
+   serial fallback instead of assuming an unmeasured concurrency multiplier.
+4. Freeze the first two-seed study at the prospective256 target once measured
+   simultaneous costs, fresh-data supply and backup space support it. If unsuitable,
+   explicitly record a declared alternative before scientific outcomes. Every C/R
+   starts independently from B0. Supervise finite runs and verified EBS copies.
+5. Complete a fixed held-development matrix for B0/C/R in direct, empty_format and
+   one_thought, including the fixed step64 milestone without terminal selection.
+   Preserve errors/truncations, tokens/latency and absolute evidence. Report the
+   primary R-thought minus C-thought, R-direct minus C-direct, R-thought minus
+   R-empty and trained arms versus B0. Keep official final outcomes unread until
+   protocol/model inventory is frozen; local K1 primary, K4/K16 secondary, with
+   clean/empty/own/filler and content controls. Direct permits ordinary calculations.
 
 Active driver: `train/neuron_driver.py`. CPU semantics: `weekend_thinking/core.py`
 and `reference.py`. Never execute archived launchers or use a long run as a

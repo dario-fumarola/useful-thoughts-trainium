@@ -5,6 +5,12 @@ Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work i
 isolated in `/home/ubuntu/dario`; original repositories remain unchanged. The
 owner authorizes sustained autonomous work and review agents, with weeks available.
 The prospective 14-day science schedule is a planning limit, not a shutdown date.
+The owner's `CODEX_NEXT_DAY.md` is the current next-day guidance. It references
+snapshot5cd4c79; completed updates/save/backup below supersede that snapshot.
+Adopt **256 updates** as the prospective first-study terminal target, subject to
+qualified measured feasibility. Do not automatically maximize to2048. Its companion
+`REVIEW_AND_NEXT_24H.md` was not found in the workspace; work continues from the
+available handoff. No scientific outcomes informed this budget choice.
 
 ## Completed evidence
 
@@ -181,7 +187,9 @@ Complete distributed R004 timing/checkpoints/exit, then the reviewed strict uppe
 RAM recovery and lower fresh RAM timing/coexistence qualification. Preserve the
 strict STOP-at-4 proof. Final host-I/O policy requires actual measurements. Prefer parallel seed chains C1→R1 and C2→R2 on the existing
 32-core partitions; ideal world 64 saves no study time against that schedule.
-Freeze terminal exposure from measured complete-step costs and fresh-data supply before any final test access. Save
+Freeze the prospective256 target using measured simultaneous costs and fresh-data
+supply before final-test access. Complete fixed-development B0/C/R direct/empty/
+thought comparisons; step64 never selects the primary terminal. Save
 all failures, examples and outputs; no outcome-based terminal selection.
 
 Large artifacts remain ignored under `local/`. One verified unused NVMe is
