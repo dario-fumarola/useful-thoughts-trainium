@@ -1,0 +1,66 @@
+{
+  "all_32_owned_identities_live": true,
+  "changes_executed": false,
+  "conclusion": "Observed worker temporary NEFF writes materially consume EBS throughput during the warm path. This does not attribute every second of latency or measure any alternative speedup.",
+  "created_utc": "2026-10-17T01:30:17.954412+00:00",
+  "duration_seconds": 30.10371235099592,
+  "end_utc": "2026-10-17T01:29:15.171519+00:00",
+  "installed_source": {
+    "/home/ubuntu/ema-trainium/.venv/lib/python3.12/site-packages/libneuronxla/neuron_cc_cache.py": {
+      "sha256": "4ce263f6e2ee9655c64d21a2faf370db8276551d745569ce18b194198b864d1e"
+    },
+    "/home/ubuntu/ema-trainium/.venv/lib/python3.12/site-packages/libneuronxla/neuron_cc_wrapper.py": {
+      "sha256": "2068ce8be8a95fdb4e8a56c6927ef3357adb1e6242ce729ed40d7e02bd3d9036"
+    }
+  },
+  "measured": {
+    "cwd": [
+      "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003-source"
+    ],
+    "ebs_write_MiB_per_second": 125.07087539073696,
+    "ebs_written_bytes": 3947991040,
+    "nvme_written_bytes": 0,
+    "open_temporary_files": [
+      "/tmp/tmp21pz8fic/model.neff",
+      "/tmp/tmpqlpj_cqs/model.neff"
+    ],
+    "worker_cancelled_write_bytes": 1599033344,
+    "worker_net_written_bytes": 3914174464,
+    "worker_physical_read_bytes": 0,
+    "worker_write_bytes": 5513207808
+  },
+  "observation_path": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003.worker-io-observation-20261017.json",
+  "observation_sha256": "7678e73439158387b2a9b7623128f0daaa860626e1f2b15f9f3d0957b31bb977",
+  "prospective_host_only_change": {
+    "candidate": "Set TMPDIR to a precreated private directory on existing NVMe before each fresh Python launch.",
+    "identity": "Record exact TMPDIR and filesystem in frozen site/launch metadata; current runtime-policy whitelist does not include TMPDIR.",
+    "preserve": [
+      "Existing installed packages and compiler flags",
+      "Persistent cache directory and locks",
+      "Exact cached NEFF bytes",
+      "Model/data/objective/device precision",
+      "Existing XLA LRU size and synchronization/RNG program"
+    ],
+    "scope": "Routes outer warm-cache temporary HLO/NEFF files to NVMe; does not relocate hardcoded cold compiler work_dir.",
+    "status": "NOT_EXECUTED"
+  },
+  "schema": "read-only-warm-cache-io-assessment-v1",
+  "source_evidence": [
+    {
+      "file": "neuron_cc_wrapper.py",
+      "line": 254,
+      "observation": "Outer neuron_xla_compile uses tempfile.TemporaryDirectory for model.hlo and model.neff, reads resulting NEFF bytes, then deletes temporary files."
+    },
+    {
+      "file": "neuron_cc_wrapper.py",
+      "line": 380,
+      "observation": "Warm cache path downloads NEFF before logging Using a cached neff; compile_cache_entry and its cold work_dir are bypassed."
+    },
+    {
+      "file": "neuron_cc_cache.py",
+      "line": 354,
+      "observation": "CompileCacheFs.download_file uses shutil.copy(cache_path,dst_path)."
+    }
+  ],
+  "start_utc": "2026-10-17T01:28:45.067825+00:00"
+}

@@ -192,3 +192,24 @@ Routine formatting changes do not need a decision entry.
   EBS aliases. This recovers another 25.64 GiB; current EBS free space is about
   346.7 GiB. The shared host helper passes six fixtures and independent TERM
   review; no shared science supervisor has launched.
+
+## 2026-10-17 — qualify NVMe temporary program copies
+
+- A bounded read-only capture attributes substantial warm-path delay to EBS
+  temporary NEFF writes: 32 workers net-wrote 3.914 GB in 30.10 seconds; the root
+  disk wrote 3.948 GB at an observed 125.07 MiB/s, with no physical reads.
+  Open worker files were `/tmp/tmp*/model.neff`. Device executions were brief.
+  This is observed throughput, not a claim about a configured volume limit.
+- The pinned wrapper copies each warm cached NEFF into an outer
+  `tempfile.TemporaryDirectory()`. A fresh-process NVMe `TMPDIR` redirects this
+  path without changing program bytes, flags, code, synchronization or math.
+  It does not relocate the separate hardcoded cold compiler work directory.
+- Prepare a new bounded upper-partition R qualification with the same seed1234,
+  B0, data, common source and full recipe. Change only temporary-file placement;
+  keep the persistent cache unchanged. Bind its exact host I/O environment and
+  filesystem separately in site/launch metadata, because the current runtime
+  allowlist excludes TMPDIR. Measure the speedup before claiming it.
+- R003 remains intact pending reviewed preparation and explicit release. Preserve
+  its artifacts and finish a complete optimizer boundary before any cooperative
+  stop. New full-update, steady timing and recovery evidence remain required.
+  See `validation/r_warm_cache_io_20261017.json`.

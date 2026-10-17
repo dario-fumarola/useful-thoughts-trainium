@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 01:21 UTC
+# Current state — 2026-10-17 01:31 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -98,7 +98,19 @@ at the latest observation. Complete micro coverage, initialized optimizer state
 and a full update remain pending. Existing logs will distinguish program load,
 execution and rank skew once complete warm-step timings exist. Replay audit runs
 only at micro 0; later micros skip that audit.
-**No complete R update yet.** Separate sysfs memory sampling is read-only.
+All micro-0 and micro-1 tapes exist (64 total). **No complete R update yet.**
+Separate sysfs memory sampling is read-only.
+
+Read-only performance attribution found substantial EBS temporary-program I/O:
+32 workers net-wrote 3.914 GB over 30.10 seconds, while EBS wrote 3.948 GB at
+125.07 MiB/s and no physical reads. Open worker files were `/tmp/tmp*/model.neff`;
+existing kernel latencies are brief. Receipt:
+`validation/r_warm_cache_io_20261017.json`. Distributed is preparing
+`qwen-r-fp32-nvme-tmp-004`, upper partition, same seed1234/source/spec/recipe,
+changing only fresh-process TMPDIR to NVMe. No new run has launched and no speedup
+is measured. Root will review/release; R003 remains intact until then, with any
+cooperative stop after a complete update/save. Host I/O paths will be bound
+separately from the unchanged runtime whitelist.
 
 The fixed step-1/rank-0/micro-0 TRAIN example is saved in full as
 `local/qualification/qwen-r-fp32-final-003.step1-rank0-micro0.example.{json,txt}`,
