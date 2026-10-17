@@ -2,8 +2,8 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active R1234 on lower0–31 through fixed256; latest complete step35 at
-   17:23:36UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step37 at
+   17:46:56UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
    Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
    all NVMe originals remain. Both shared supervisors are RUNNING.
 
@@ -19,10 +19,10 @@ Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
    No new numerical gates.
 
 3. Supervise root-released B0 local DEV512 on idle core32 (started15:37:49UTC)
-   and held128 C1234@64 on separate core36 (started15:38:07UTC). Root owns their
-   actual allocation/headroom and health. C64 direct/empty are complete; its
-   one_thought mode is running. No completed three-mode trained comparison exists
-   yet. Packs/roles are in STATUS; all other development slots remain unreleased.
+   and held128 C1234@256 on separate core36 (started17:44:55UTC). Root owns their
+   actual allocation/headroom and health. C64 all3 modes/exit0/cleanup/paired report
+   are complete and verified on EBS:111/108/60 versus B0113/107/63; conditional CIs
+   include0. Packs/roles are in STATUS; all other development slots are unreleased.
    Train through fixed256; save/evaluate fixed64 development without checkpoint
    selection. Complete fixed held-development B0/C/R × direct/empty_format/
    one_thought and local random DEV512 controls/strata. B0 held128 is113/107/63.

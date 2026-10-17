@@ -1,0 +1,33 @@
+{
+  "backup": {
+    "payload_bytes": 8966243,
+    "payload_file_count": 53,
+    "receipt_path": "/home/ubuntu/dario/local/backups/evaluation/held-dev128-v1-C1234-step0064-001/VERIFIED.json",
+    "receipt_sha256": "c16c61e4a6722de02bdb1b35db88b57e4d5dda7aec9d5d14f737861a92c1215d",
+    "run_id": "held-dev128-v1-C1234-step0064-001",
+    "status": "VERIFIED"
+  },
+  "comparison_report_sha256": "2c4ef1cfe8fcf790d4d31803c453673eb9c7104de59fb5ff89c02b67f4aff178",
+  "destination_st_dev": 66305,
+  "examples_selection": "First4 frozen question-order TRAIN cases, both models/all3 modes, rendered after complete suite, no correctness selection; raw outputs remain local.",
+  "external_upload": false,
+  "fixed_first4_render_sha256": "0a0f5ae4c5cd77302b59a8b29e9622a3c560faeeeb6be16f57ff6ddfff02df74",
+  "next_development": {
+    "first_live_sha256": "f27f662bcf8980ebde456ef9f6b149b2573edeb811a7a688891138673f165b2f",
+    "host_allocation_sha256": "c1a6ae6a3fe226d81ccaeba0a4b51c904f02ae1dcb083a6517d315d427e1825a",
+    "physical_device": 9,
+    "release_sha256": "053a645ca81f7821a752a5493bed658276d65922a8afe1cfceebb92a472522b8",
+    "run_id": "held-dev128-v1-C1234-step0256-001",
+    "started_utc": "2026-10-17T17:44:55.869722+00:00",
+    "step": 256,
+    "tmux": "dario-dev-held-C1234-256",
+    "visible_core": 36
+  },
+  "no_official_test_or_R_effect_claim": true,
+  "original_files_retained": true,
+  "root_complete_verification_sha256": "f94f2bec9c60fb326bf357d7654fdef98cc82f18a31edee2895e70ed16850361",
+  "schema": "held-development-C64-backup-and-next-release-v1",
+  "source_output": "/home/ubuntu/dario/local/nvme/evaluation/held-dev128-v1-C1234-step0064-001",
+  "source_output_st_dev": 66310,
+  "utc": "2026-10-17T17:48:45.173254+00:00"
+}

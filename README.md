@@ -29,59 +29,59 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**Both scientific C runs completed 256 updates; R1234 is running. FP32 qualification
-and the fixed specification are complete; no trained C/R comparison is available.**
+**The first trained development check is complete. Both C seeds finished256
+updates; R1234 is running. The primary R/C comparison remains pending.**
 
-- Released model weights and tokenizer are pinned and loaded.
-- Each scientific C run consumed 32,768 unique TRAIN records and 16.81M source
-  tokens, completed all 256 updates and exited normally. Full-step means after
-  two startup steps were 10.056s (seed1234) and 10.030s (seed5678). Both retain
-  verified EBS copies of terminal256 and preceding128, plus all NVMe originals.
-  See [C1234 execution](validation/science_C_seed1234_execution_20261017.json),
+On the fixed128-question GSM8K **TRAIN development** subset, C1234 at the
+prospectively fixed step64 has no clear accuracy change from unchanged B0:
+
+| Inference mode | B0 correct /128 | C64 correct /128 | C−B0 percentage points,95% conditional interval |
+|---|---:|---:|---:|
+| Direct |113 |111 |−1.56 [−6.25,+3.13] |
+| Empty format |107 |108 |+0.78 [−4.69,+6.25] |
+| One thought |63 |60 |−2.34 [−11.72,+7.03] |
+
+Every failure stays in the denominator. Intervals use5000 paired document
+bootstrap draws, conditional on these checkpoints; they are not training-seed
+uncertainty. Thought inference used326 versus124 mean thought actions and38
+versus23 seconds/item (C64 versusB0). Thought caps increased32 versus4; answer
+truncations36 versus14. These are measured costs under actual cache/shared-host
+conditions, not a causal throughput benchmark. Fixed terminal256 remains primary;
+no checkpoint or prompt was selected using this development result.
+
+The [complete comparison](validation/held_dev_C_seed1234_step64_20261017.json)
+retains all modes, errors, caps, token/latency distributions and provenance.
+All53 raw output/control files and fixed-order examples have verified EBS copies;
+see [backup and next release](validation/held_dev_C_seed1234_step64_backup_20261017.json).
+C1234@256 evaluation and the B0 local DEV512 audit are now running on separate
+idle devices while R1234 continues through its fixed256 updates.
+
+- Both C runs consumed32,768 unique TRAIN records /16.81M source tokens and exited
+  normally. All254 steps3–256 average10.056s (seed1234) and10.030s (seed5678).
+  Verified EBS128/256 and all original NVMe64/128/256 states remain. Execution and
+  backup reports: [C1234](validation/science_C_seed1234_execution_20261017.json),
   [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
-  [C5678 execution](validation/science_C_seed5678_execution_20261017.json) and
+  [C5678](validation/science_C_seed5678_execution_20261017.json),
   [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from released B0 and reached step32/256 at
-  16:50UTC. All30 steps3–32 have median623.155s and P90 811.018s; changing
-  generated workload and shared-host development overlaps remain included.
-  See [all first32 updates](validation/science_R_seed1234_first32_20261017.json)
-  and the [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg).
-  The B0 local DEV512 audit and fixed held128 C1234@64 suite are advancing on
-  separate devices; no trained evaluation result is complete. See
-  [development starts](validation/science_development_start_20261017.json).
-- The audited FineMath slice contains **329,535 train**, **18,360 dev**, and
-  **18,239 test** document-level records.
-- Full FP32 cached generation agrees with replay on the exact long trajectory
-  that failed BF16 qualification; the fixed tolerance was not relaxed.
-- Full-cap FP32 backward now fits and passes signed CPU reference checks after
-  correcting an integer upper-bound conversion in sequence normalization.
-  The original failures and unchanged tolerances are preserved.
-- The 32-core continuation run completed 12 updates, including ten steady steps
-  averaging about 10 seconds. Full-model checkpoint recovery now passes, including exact restored state and all 32 RNG states. The
-  original CPU per-weight comparison remains failed. A separate, prospectively
-  fixed full-gradient comparison against FP64 passes on a new held seed.
-- R completed14 updates, all ten fixed timings5–14, and strict restored-state/
-  stochastic-tape/full-update recovery. Median full-step time is11.75min, P90
-  14.49min; shared-host overlaps remain included. Sampled two-R execution was
-  observed; steady simultaneous throughput was not measured. See the
+- R1234 independently started from B0 and reached37/256 at17:46UTC. The
+  [first32-update record](validation/science_R_seed1234_first32_20261017.json) and
+  [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg)
+  retain every elapsed observation and changing generation workload. TRAIN
+  likelihoods and numerical checks do not establish useful deployed thoughts.
+- Actual released Qwen3-1.7B-Base assets, audited FineMath329535 TRAIN/18360 DEV/
+  18239 TEST records, the [fixed256 specification](validation/science_256_frozen_20261017.json),
+  [qualification](validation/science_256_qualification_20261017.json) and
+  [resource projection](validation/science_256_resources_20261017.json) are pinned.
+  FP32 signed gradients, full-cap replay and checkpoint recovery pass their
+  declared criteria. The original coordinate v1 FAIL and separately prospective
+  held-seed v2 derivative PASS remain preserved. R
   [execution](validation/r_fp32_ram_execution_20261017.json) and
-  [recovery](validation/r_fp32_ram_resume_20261017.json) reports.
-- Qualification ended with511/512 empty notes and negative raw utility. Passing
-  numerical checks does not establish useful thoughts.
-- The [first256-update specification](validation/science_256_frozen_20261017.json)
-  fixes two matched seeds with independently fresh-B0 C/R arms. Training will be
-  serial from production memory headroom; idle cores may serve development.
-  [Recorded qualification](validation/science_256_qualification_20261017.json) and
-  [resource projection](validation/science_256_resources_20261017.json) are separate
-  from actual per-arm launch releases.
-- The fixed128-item TRAIN development baseline scores113/128 direct,107/128
-  empty-format and63/128 with a thought. Failures stay counted; this is not a
-  training effect or official-test result. See
-  [the B0 report](validation/held_dev_B0_20261017.json).
+  [recovery](validation/r_fp32_ram_resume_20261017.json) evidence is separate from
+  scientific capability. Training is serial; no two-R speed multiplier is claimed.
 
-See [STATUS.md](STATUS.md) for active work and [DECISIONS.md](DECISIONS.md) for
-material choices. CPU checks and historical results are distinguished from
-current accelerator evidence.
+See [STATUS.md](STATUS.md) for exact live ownership/commands and
+[DECISIONS.md](DECISIONS.md) for material choices. Official final performance
+scores remain uncomputed; earlier overlap screening used benchmark questions.
 
 ## Code and plan
 
