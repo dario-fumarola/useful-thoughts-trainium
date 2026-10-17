@@ -1,0 +1,727 @@
+{
+  "schema": "replay-padding-fixed-DEV-diagnostic-v1",
+  "status": "fixed_note_reader_and_signed_full_gradient_agreement_passed",
+  "experiment_id": "replay-padding-dev2-runtimefix-v1",
+  "completed_utc": "2026-10-17T23:15:56.151769+00:00",
+  "released_B0_model": {
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "asset_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "released_asset_files_identity_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+    "parameter_dtype": "fp32",
+    "compute_dtype": "fp32"
+  },
+  "source_profile_sha256": "a8a492ae8a7728031551f00db563ce54326669a40326c78b7596efd8d496adef",
+  "source_backend_sha256": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+  "runtime_scope": {
+    "processes": 1,
+    "cache": "XLA_COMPILATION_CACHE_SIZE=2",
+    "compiler_flags": "--model-type=transformer",
+    "temporary_filesystem": "private tmpfs, effective st_dev26 observed",
+    "optimizer": false,
+    "sampling": false,
+    "weight_updates": false
+  },
+  "protocol": {
+    "path": "local/nvme/diagnostics/replay-padding-dev2-runtimefix-v1/protocol.json",
+    "sha256": "7b1f008901b7ddf877fe9747809266fb54c9ef317459f2fd1b51c10fd314ab8d"
+  },
+  "result": {
+    "path": "local/nvme/diagnostics/replay-padding-dev2-runtimefix-v1/result.json",
+    "sha256": "71f8a6ba18b17cad132d73de6b79bd0e0c71e146641bba36ef37d85c28419f8b"
+  },
+  "log": {
+    "path": "local/nvme/diagnostics/replay-padding-dev2-runtimefix-v1/run.log",
+    "sha256": "82b951fbc9d0cd43c16757c519d6729913a0352532efe2b8dc38d69145a91000"
+  },
+  "xla_metrics": {
+    "path": "local/nvme/diagnostics/replay-padding-dev2-runtimefix-v1/xla-metrics.txt",
+    "sha256": "97259b385afe00be6b89c62db7983016cc55cfdb6e66f402a200dd5cbb891f2a"
+  },
+  "release": {
+    "path": "local/diagnostics/replay-padding-dev2-runtimefix-v1/release.json",
+    "sha256": "1078cc61749611c83b16e5364f7e295ca83f74c0816deebaa53e103c3b1c7503"
+  },
+  "exit": {
+    "path": "local/diagnostics/replay-padding-dev2-runtimefix-v1/exit.json",
+    "sha256": "663ffbcce71070df752f2ba9c3a75345d6afefcf71c9cbaa2690ff784e494451"
+  },
+  "cleanup": {
+    "path": "local/diagnostics/replay-padding-dev2-runtimefix-v1/execution.cleanup.json",
+    "sha256": "6aee835a87e14658543747b3bb761c72203c631a0078ef83f487eec43dd2132c"
+  },
+  "cases": [
+    {
+      "name": "first_DEV_empty",
+      "active_actions": 1,
+      "full_width": 1024,
+      "shortened_width": 1,
+      "split": "dev",
+      "projection_sha256": "0d2d695d6d4d92a98af4c62d028dec4634b301bec5a9a7d05a6c992db57d72f5",
+      "synthetic_empty_control": true
+    },
+    {
+      "name": "first_short_saved",
+      "active_actions": 89,
+      "full_width": 1024,
+      "shortened_width": 128,
+      "split": "dev",
+      "projection_sha256": "a9c96553791c984d1ad160f7c275e5dd709a2f65b01ff64b97b86cb40b174c85",
+      "synthetic_empty_control": false
+    }
+  ],
+  "case_selection": "First frozen DEV prefix empty-stop control; first naturally stopped 2..128-action original B0 note in the same frozen order. Selection used lengths, never likelihood outcomes.",
+  "criteria": {
+    "full_gradient_cosine_min": 0.999999,
+    "full_gradient_relative_l2_max": 0.001,
+    "loss_atol": 0.001,
+    "reader_atol": 0.001
+  },
+  "reader_comparisons": [
+    {
+      "case": "first_DEV_empty",
+      "log_likelihoods": {
+        "full": [
+          -5.4810471534729,
+          -5.4810471534729
+        ],
+        "shortened": [
+          -5.481050491333008,
+          -5.481050491333008
+        ]
+      },
+      "max_abs_error": 3.337860107421875e-06,
+      "passed": true,
+      "timings": {
+        "full": [
+          {
+            "seconds": 1.120496779010864,
+            "XLA_counter_deltas": {
+              "CachedCompile": 0,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 1
+            }
+          },
+          {
+            "seconds": 0.024571119996835478,
+            "XLA_counter_deltas": {
+              "CachedCompile": 1,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 0
+            }
+          }
+        ],
+        "shortened": [
+          {
+            "seconds": 9.827800445011235,
+            "XLA_counter_deltas": {
+              "CachedCompile": 0,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 1
+            }
+          },
+          {
+            "seconds": 0.02479933800350409,
+            "XLA_counter_deltas": {
+              "CachedCompile": 1,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "first_short_saved",
+      "log_likelihoods": {
+        "full": [
+          -7.720569133758545,
+          -7.720569133758545
+        ],
+        "shortened": [
+          -7.720573425292969,
+          -7.720573425292969
+        ]
+      },
+      "max_abs_error": 4.291534423828125e-06,
+      "passed": true,
+      "timings": {
+        "full": [
+          {
+            "seconds": 1.2292373039963422,
+            "XLA_counter_deltas": {
+              "CachedCompile": 0,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 1
+            }
+          },
+          {
+            "seconds": 0.028067888008081354,
+            "XLA_counter_deltas": {
+              "CachedCompile": 1,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 0
+            }
+          }
+        ],
+        "shortened": [
+          {
+            "seconds": 38.698525430008885,
+            "XLA_counter_deltas": {
+              "CachedCompile": 0,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 1
+            }
+          },
+          {
+            "seconds": 0.025373243988724425,
+            "XLA_counter_deltas": {
+              "CachedCompile": 1,
+              "ExecuteComputation": 1,
+              "MarkStep": 1,
+              "UncachedCompile": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "all_four_signed_full_gradient_comparisons": [
+    {
+      "case": "first_DEV_empty",
+      "advantage": 1.0,
+      "losses": {
+        "full": [
+          1.424312949180603,
+          1.424312949180603
+        ],
+        "shortened": [
+          1.4243130683898926,
+          1.4243130683898926
+        ]
+      },
+      "loss_abs_error": 1.1920928955078125e-07,
+      "full_gradient_geometry": {
+        "actual_squared": 3317.9897834205717,
+        "cosine": 0.9999999999984764,
+        "dot": 3317.9905004958455,
+        "elements": 1720574976,
+        "error_squared": 1.0264310116230114e-08,
+        "max_abs": 8.702278137207031e-06,
+        "reference_squared": 3317.9912175813843,
+        "relative_l2": 1.758843776477515e-06
+      },
+      "unique_parameter_tensors": 310,
+      "bitwise_equal_parameter_tensors": 0,
+      "passed": true,
+      "compute_timings": {
+        "full": {
+          "forward": [
+            {
+              "seconds": 6.120904324008734,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 4.114328155003022,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 1006.7510992390016,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.09706424199976027,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        },
+        "shortened": {
+          "forward": [
+            {
+              "seconds": 61.611361558010685,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.3066455789958127,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 37.48171555400768,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.08353187999455258,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        }
+      },
+      "gradient_export_and_comparison_seconds": {
+        "full": 10.62146918498911,
+        "shortened": 25.677861407006276
+      }
+    },
+    {
+      "case": "first_DEV_empty",
+      "advantage": -1.0,
+      "losses": {
+        "full": [
+          -1.424312949180603,
+          -1.424312949180603
+        ],
+        "shortened": [
+          -1.4243130683898926,
+          -1.4243130683898926
+        ]
+      },
+      "loss_abs_error": 1.1920928955078125e-07,
+      "full_gradient_geometry": {
+        "actual_squared": 3317.9897834205717,
+        "cosine": 0.9999999999984764,
+        "dot": 3317.9905004958455,
+        "elements": 1720574976,
+        "error_squared": 1.0264310116230114e-08,
+        "max_abs": 8.702278137207031e-06,
+        "reference_squared": 3317.9912175813843,
+        "relative_l2": 1.758843776477515e-06
+      },
+      "unique_parameter_tensors": 310,
+      "bitwise_equal_parameter_tensors": 0,
+      "passed": true,
+      "compute_timings": {
+        "full": {
+          "forward": [
+            {
+              "seconds": 5.787159924002481,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 4.109238559991354,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 20.664970324010937,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.10303034400567412,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        },
+        "shortened": {
+          "forward": [
+            {
+              "seconds": 13.050546029000543,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.30323306799982674,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 1.6366883110022172,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.08312724200368393,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        }
+      },
+      "gradient_export_and_comparison_seconds": {
+        "full": 10.438188689993694,
+        "shortened": 24.652591706006206
+      }
+    },
+    {
+      "case": "first_short_saved",
+      "advantage": 1.0,
+      "losses": {
+        "full": [
+          0.0945865735411644,
+          0.0945865735411644
+        ],
+        "shortened": [
+          0.0945865735411644,
+          0.0945865735411644
+        ]
+      },
+      "loss_abs_error": 0.0,
+      "full_gradient_geometry": {
+        "actual_squared": 4.348507637160405,
+        "cosine": 0.9999999999983378,
+        "dot": 4.348508035101787,
+        "elements": 1720574976,
+        "error_squared": 1.4490769138554544e-11,
+        "max_abs": 3.501772880554199e-07,
+        "reference_squared": 4.3485084330576615,
+        "relative_l2": 1.8254736162335657e-06
+      },
+      "unique_parameter_tensors": 310,
+      "bitwise_equal_parameter_tensors": 0,
+      "passed": true,
+      "compute_timings": {
+        "full": {
+          "forward": [
+            {
+              "seconds": 5.1403588829998625,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 4.105420437990688,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 22.21443203999661,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.13816512998891994,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        },
+        "shortened": {
+          "forward": [
+            {
+              "seconds": 65.58668951599975,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.3746350879955571,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 93.22130587199354,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.08641238500422332,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        }
+      },
+      "gradient_export_and_comparison_seconds": {
+        "full": 10.554471233990625,
+        "shortened": 24.29063251199841
+      }
+    },
+    {
+      "case": "first_short_saved",
+      "advantage": -1.0,
+      "losses": {
+        "full": [
+          -0.0945865735411644,
+          -0.0945865735411644
+        ],
+        "shortened": [
+          -0.0945865735411644,
+          -0.0945865735411644
+        ]
+      },
+      "loss_abs_error": 0.0,
+      "full_gradient_geometry": {
+        "actual_squared": 4.348507637160405,
+        "cosine": 0.9999999999983378,
+        "dot": 4.348508035101787,
+        "elements": 1720574976,
+        "error_squared": 1.4490769138554544e-11,
+        "max_abs": 3.501772880554199e-07,
+        "reference_squared": 4.3485084330576615,
+        "relative_l2": 1.8254736162335657e-06
+      },
+      "unique_parameter_tensors": 310,
+      "bitwise_equal_parameter_tensors": 0,
+      "passed": true,
+      "compute_timings": {
+        "full": {
+          "forward": [
+            {
+              "seconds": 5.515605473003234,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 4.100680558010936,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 20.343493942986242,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.10367929600761272,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        },
+        "shortened": {
+          "forward": [
+            {
+              "seconds": 11.54198923399963,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.3713115280115744,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ],
+          "backward": [
+            {
+              "seconds": 3.1525418810051633,
+              "XLA_counter_deltas": {
+                "CachedCompile": 0,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 1
+              }
+            },
+            {
+              "seconds": 0.08536307800386567,
+              "XLA_counter_deltas": {
+                "CachedCompile": 1,
+                "ExecuteComputation": 1,
+                "MarkStep": 1,
+                "UncachedCompile": 0
+              }
+            }
+          ]
+        }
+      },
+      "gradient_export_and_comparison_seconds": {
+        "full": 10.654875084001105,
+        "shortened": 24.591547146002995
+      }
+    }
+  ],
+  "coverage": {
+    "reader_comparisons": 2,
+    "signed_gradient_comparisons": 4,
+    "unique_parameter_tensors_per_gradient_comparison": 310,
+    "values_per_gradient_comparison": 1720574976,
+    "completed_phases": 48
+  },
+  "timing_interpretation": {
+    "compute_pair_order": [
+      "first observed",
+      "immediate repeat"
+    ],
+    "sum_all_compute_phase_seconds": 1449.3656002240605,
+    "sum_separate_gradient_export_comparison_seconds": 141.48163696398842,
+    "release_to_exit_wall_seconds": 1627.812355,
+    "wall_not_assigned_to_those_phases_seconds": 36.96511781195113,
+    "metric_scope": "XLA CachedCompile/UncachedCompile counters describe the XLA cache path; an UncachedCompile event can reuse disk-cached NEFF. Accumulator times are not disjoint wall-time components.",
+    "first_full_backward_first_observed_wall_seconds": 1006.7510992390016
+  },
+  "EBS_archive": {
+    "path": "local/backups/diagnostics/replay-padding-dev2-runtimefix-v1/ARCHIVE.json",
+    "sha256": "cef2894c906892e041bc9c44d3769c2b3d468f11ee297164a4e95b189af2490b"
+  },
+  "archive_verification": {
+    "files": 23,
+    "separate_trees": [
+      "output",
+      "control",
+      "source"
+    ],
+    "exact_bound_source_files": 10,
+    "every_file_source_and_destination_SHA256_readback_verified": true,
+    "originals_retained": true,
+    "off_instance_backup": false
+  },
+  "preserved_preceding_failure": {
+    "experiment_id": "replay-padding-dev2-v2",
+    "exit_code": 1,
+    "cause": "Diagnostic omitted existing driver XLA device-module registration; failed before first backward.",
+    "repair": "Only original driver two-line device registration before device operations; exact cases/settings/criteria retained.",
+    "source_snapshot_manifest": {
+      "path": "local/nvme/diagnostics/replay-padding-dev2-v2/source-snapshot/SOURCE.json",
+      "sha256": "351b07ed3efc2775cf8dabb0a8492a0cf9f9d04a92c29523044567ca69dccae3"
+    },
+    "verified_EBS_archive": {
+      "path": "local/backups/diagnostics/replay-padding-dev2-v2/VERIFIED_FAILED.json",
+      "sha256": "7b7cc5c77d4d22e66559552c2d170f642aacf36a6b85dce85b264163b441d9e3"
+    }
+  },
+  "limits": [
+    "This is an isolated fixed-note semantic/performance diagnostic, not a scientific training or deployed-policy capability result.",
+    "Right truncation preserves active actions/real stop and normalization in these two cases; these results are not an all-input or stochastic-resume proof.",
+    "First observations may load disk-cached executables. Immediate repeats do not reproduce the sampler/reader/replay/optimizer residency pattern of a distributed update.",
+    "No distributed end-to-end speedup is claimed. Sampler, optimizer, collectives, other stage alternation and checkpoint costs are absent.",
+    "Full unique-parameter gradients were compared with FP64 accumulation; raw-gradient byte hashes/per-parameter diagnostics remain in the local/EBS result. Numeric agreement is separate from byte equality.",
+    "No official final-test outcomes were accessed. Raw text, weights, process identities and topology are excluded from this public receipt."
+  ]
+}

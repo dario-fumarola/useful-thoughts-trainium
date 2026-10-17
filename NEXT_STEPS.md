@@ -1,36 +1,25 @@
 # Current queue — owner redirection, 2026-10-17
 
-1. DONE: old R1234 stopped63/exit0/checkpoint+EBS backup verified; R5678
-   cancelled, two interrupted DEV suites archived honestly, old shared services
-   retired. Never resume the old run order or final matrix.
-2. DONE: interface-tax-dev32-v1,896scores/no failures. Reanchor32 reduces
-   empty−raw loss from6.425 to1.080 nats; own−empty remains−1.906. All matched
-   controls, raw repetition and K16/strata retained. This repairs a boundary,
-   not demonstrated useful thinking. Public report/plot and verified EBS archive.
-3. ACTIVE: candidate-oracle-dev32-cap256-v1 on logical32/device8, deadline
-   Oct18 00:44:46UTC. Genuine16 draws/context, cap256/T.7, original writer,
-   original+reanchor32 readers. All sampling before future scoring. Inspect
-   ordinary mean16, future-selected winner and max16-control differences.
-   B0 DEV512 is G1; K16 means future horizon. Do not call oracle deployment.
-4. ACTIVE: replay-padding-dev2-runtimefix-v1 on logical0/device0, deadlineOct18 00:48UTC.
-   Fixed actual B0 cases, full1024 vs right-truncated replay, signed gradients
-   and separate cold/repeat phase costs under oldLRU2. No optimizer/sampling.
-   Measure before claiming a faster loop or changing production precision.
-5. DONE: published-prompt/plain-boundary reader probe and undefined-output mass
-   check. Plain+repeat32 reduces damage, but own thoughts still hurt on average;
-   output-support mass explains only .000549 nats of a5.678-nat tax on DEV8.
-   B0 think/end-think/chat marker input rows are exactly equal, a concrete
-   initialization detail to address, not proof of a sufficient remedy.
-6. ACTIVE: candidate-corpus-train128-g16-v1 GENERATION ONLY on eight devices,
-   deadlineOct18 01:07:20UTC. Frozen TRAIN128 from237 qualifying TRAIN1024,
-   fourG4 groups/doc,2048 prefix-only candidates. Verify every shard, publish
-   global donors/controls, then release eight finite score shards. No future
-   scoring before complete sampling; source/protocol fixed while running.
-7. Choose one short explicit warmstart using measured TRAIN availability:
-   selected useful candidates and a reader learning path, with prefix-only
-   student sampling, disclosed future-based TRAIN labels and ordinary raw-LM
-   controls. Evaluate fresh single-sample utility, raw/empty/content controls;
-   a good oracle alone is insufficient. No new long RL run yet.
+1. DONE: original R stopped63/state backed up; old run/final order cancelled.
+2. DONE: reader-tax pilots, genuine DEV32 G16 oracle, separate high-surprisal
+   TRAIN128/G16 corpus, fresh DEV64 G1 baseline and actual padding profiler.
+   Prepending preserves the clean continuation boundary (empty tax~0), but
+   original G1 content still hurts. All original outputs/controls retained.
+3. ACTIVE: candidate-prepend-train128-g16-v1, eight finite scores/deadlineOct18
+   00:36UTC. All2048 original TRAIN candidates already closed; rescore8704
+   contexts with notes before fullprefix. Summarize only after complete8shards.
+   Compare mean16, future-selected oracle, raw/empty and max16-control results.
+4. ACTIVE PREPARATION: pinned local Qwen3-4B teacher, first16 TRAIN docs,
+   prefix-only vs hindsight labels. CPU references first; require actual device
+   parity/replay before generation, then measure B0-reader note utility with
+   global matched controls. No paid API, no DEV labels or B0 replacement.
+5. Choose ONE measured warmstart learning path/data/interface. Explicit future
+   access for TRAIN labels; prefix-only student generation. Masked full-support
+   CE/ZeRO infrastructure is prepared, no student training yet. A31-document
+   filtered label set is available but selected likelihood is not fresh utility.
+   Evaluate fresh G1, crossed reader/writer if useful, and raw/empty/filler/
+   shuffle/other before scaling. No old or new long RL run from this init.
 
-The old final plan is on hold, PREPARED_NOT_LOCKED. No official test outcomes
-for tuning. Existing released weights/data/runtime remain pinned.
+Use measured useful content and a working short loop before a larger study.
+Keep official final outcomes out of development. Preserve real data/weights,
+negative results, selected examples and actual costs; do not rush healthy runs.

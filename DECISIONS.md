@@ -436,3 +436,30 @@ then rejected a separate hypothesis: undefined output mass changes the original
 empty tax by only.000549 of5.678 nats on DEV8. Keep original full-support reader
 scores and do not introduce an unsupported masking fix. Reports and raw outputs
 are retained with hash-verified EBS copies; actual useful thoughts still pending.
+
+
+### 2026-10-17 23:39 UTC — repair the boundary; do not equate selected labels with useful thinking
+
+Genuine G16/cap256 DEV32 closed512samples/4256scores. Reanchor32 best16−empty
+K1+.330 has a positive conditional interval, but ordinary mean16 is−1.612;
+K16 oracle and every max-own/max-control interval span zero. Original TRAIN128
+best16K16 remains−.661 on average; strict future-selected controls yield31labels.
+No student was launched from those selected-label statistics.
+
+New reader intervention prepends the fixed original note before the fullprefix.
+Empty tax is now essentially zero, but ownK16−empty−1.783 and own−other−1.647.
+Rescore the same complete TRAIN candidates under that layout, separately named,
+without additional generation. A zero-tax reader may ignore or be distracted by
+notes; this repair does not establish useful content. Full-prefix repetition in
+the original insertion layout was worse and is not selected.
+
+A pinned open Qwen3-4B teacher was downloaded to authorized existing NVMe.
+Prepare first16 TRAIN prefix-only versus hindsight notes as a separate condition,
+with CPU/device forward and cached/replay checks before hardware generation.
+Hindsight supervision has TRAIN future access, always disclosed. Prefix-only
+student and fresh-control evaluation remain necessary. No paid teacher or B0
+switch. Masked CE/short ZeRO helpers are ready but the learning recipe/data must
+follow measured availability, not the existence of new infrastructure.
+
+Padding diagnosis passed both signs/empty/real89-action/full1.72B gradients;
+record the isolated warm improvement, not a distributed throughput claim.

@@ -1,0 +1,1035 @@
+{
+  "aggregate_metrics": {
+    "original/K1/empty_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -9.152212975546718,
+      "median_nats": -9.101547241210938,
+      "positive_documents": 0
+    },
+    "original/K1/max16_own_minus_max16_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.7602249477640726,
+      "median_nats": 0.7211878299713135,
+      "positive_documents": 83
+    },
+    "original/K1/max16_own_minus_max16_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.15813456842442974,
+      "median_nats": -0.08461785316467285,
+      "positive_documents": 58
+    },
+    "original/K1/max16_own_minus_max16_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.3158957366249524,
+      "median_nats": -2.0324989557266235,
+      "positive_documents": 19
+    },
+    "original/K1/mean16_filler_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -9.985003058973234,
+      "median_nats": -9.524700194597244,
+      "positive_documents": 0
+    },
+    "original/K1/mean16_other_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -11.288560139073525,
+      "median_nats": -11.266066461801529,
+      "positive_documents": 0
+    },
+    "original/K1/mean16_own_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -11.811952723244758,
+      "median_nats": -11.693806320428848,
+      "positive_documents": 0
+    },
+    "original/K1/mean16_own_minus_empty": {
+      "ci95_nats": [
+        -3.0555795072061303,
+        -2.2894460322962913
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.6597397476980404,
+      "median_nats": -2.2019377946853638,
+      "positive_documents": 9
+    },
+    "original/K1/mean16_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.826949664271524,
+      "median_nats": -1.4036450386047363,
+      "positive_documents": 19
+    },
+    "original/K1/mean16_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.5233925841712335,
+      "median_nats": -0.42636606097221375,
+      "positive_documents": 56
+    },
+    "original/K1/mean16_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -7.735010242144199,
+      "median_nats": -7.6273472905159,
+      "positive_documents": 0
+    },
+    "original/K1/mean16_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.300584833192261,
+      "median_nats": -6.068965949118137,
+      "positive_documents": 7
+    },
+    "original/K1/mean16_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.457715145836119,
+      "median_nats": -5.263713091611862,
+      "positive_documents": 7
+    },
+    "original/K1/mean16_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -3.1963020155344566,
+      "median_nats": -2.943032592535019,
+      "positive_documents": 7
+    },
+    "original/K1/mean16_shuffled_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -8.615650707710302,
+      "median_nats": -8.362499222159386,
+      "positive_documents": 0
+    },
+    "original/K1/oracle_max_own_minus_empty": {
+      "ci95_nats": [
+        0.30663197479443627,
+        1.0132729218676104
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.666107936820481,
+      "median_nats": 0.7393083572387695,
+      "positive_documents": 89
+    },
+    "original/K1/oracle_selected_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -8.486105038726237,
+      "median_nats": -8.1186842918396,
+      "positive_documents": 0
+    },
+    "original/K1/oracle_selected_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.4739149613888003,
+      "median_nats": 1.3255887031555176,
+      "positive_documents": 94
+    },
+    "original/K1/oracle_selected_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 2.4546900904388167,
+      "median_nats": 2.0782933235168457,
+      "positive_documents": 101
+    },
+    "original/K1/oracle_selected_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.409162557625677,
+      "median_nats": -4.2152005434036255,
+      "positive_documents": 12
+    },
+    "original/K1/oracle_selected_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.9747371486737393,
+      "median_nats": -2.5305362343788147,
+      "positive_documents": 28
+    },
+    "original/K1/oracle_selected_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.131867461317597,
+      "median_nats": -1.6733760833740234,
+      "positive_documents": 37
+    },
+    "original/K1/oracle_selected_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.7813992467126809,
+      "median_nats": -0.32422971725463867,
+      "positive_documents": 47
+    },
+    "original/K1/raw_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.076942481100559,
+      "median_nats": -3.6559536457061768,
+      "positive_documents": 0
+    },
+    "original/K1/repeat32_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.511367890052497,
+      "median_nats": -4.890116930007935,
+      "positive_documents": 0
+    },
+    "original/K1/repeat64_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.3542375774086395,
+      "median_nats": -6.166952610015869,
+      "positive_documents": 0
+    },
+    "original/K16/empty_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -38.42694052193218,
+      "median_nats": -36.72784858010709,
+      "positive_documents": 0
+    },
+    "original/K16/max16_own_minus_max16_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.305593341077602,
+      "median_nats": -0.8884735973551869,
+      "positive_documents": 37
+    },
+    "original/K16/max16_own_minus_max16_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.2776095219228444,
+      "median_nats": 0.0,
+      "positive_documents": 59
+    },
+    "original/K16/max16_own_minus_max16_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.1552304165743239,
+      "median_nats": 0.0,
+      "positive_documents": 50
+    },
+    "original/K16/mean16_filler_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -41.30204870545553,
+      "median_nats": -41.27752283348673,
+      "positive_documents": 0
+    },
+    "original/K16/mean16_other_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -50.22452344943498,
+      "median_nats": -49.99771409123059,
+      "positive_documents": 0
+    },
+    "original/K16/mean16_own_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -49.169528139922456,
+      "median_nats": -49.071949071107156,
+      "positive_documents": 0
+    },
+    "original/K16/mean16_own_minus_empty": {
+      "ci95_nats": [
+        -11.84045000718513,
+        -9.70583716601102
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -10.742587617990278,
+      "median_nats": -9.75806042100885,
+      "positive_documents": 1
+    },
+    "original/K16/mean16_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -7.867479434466925,
+      "median_nats": -6.395730984939291,
+      "positive_documents": 7
+    },
+    "original/K16/mean16_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.0549953095125273,
+      "median_nats": 1.6058605400685337,
+      "positive_documents": 74
+    },
+    "original/K16/mean16_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -19.18134119699474,
+      "median_nats": -18.415626827365486,
+      "positive_documents": 0
+    },
+    "original/K16/mean16_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -16.669179165491787,
+      "median_nats": -16.145316084232036,
+      "positive_documents": 2
+    },
+    "original/K16/mean16_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -15.63355572602492,
+      "median_nats": -14.814579030746245,
+      "positive_documents": 1
+    },
+    "original/K16/mean16_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.7921114769887279,
+      "median_nats": -0.4941710833227262,
+      "positive_documents": 55
+    },
+    "original/K16/mean16_shuffled_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -48.37741666293373,
+      "median_nats": -47.49800387263531,
+      "positive_documents": 0
+    },
+    "original/K16/oracle_max_own_minus_empty": {
+      "ci95_nats": [
+        -4.3918127310362385,
+        -2.7339129791808356
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -3.546911500243277,
+      "median_nats": -2.398416984360665,
+      "positive_documents": 29
+    },
+    "original/K16/oracle_selected_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -41.97385202217546,
+      "median_nats": -42.89125592308943,
+      "positive_documents": 0
+    },
+    "original/K16/oracle_selected_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.2438054644829317,
+      "median_nats": 0.0,
+      "positive_documents": 51
+    },
+    "original/K16/oracle_selected_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 5.679816257644833,
+      "median_nats": 4.27371874731034,
+      "positive_documents": 95
+    },
+    "original/K16/oracle_selected_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -11.98566507924774,
+      "median_nats": -11.221520550851665,
+      "positive_documents": 2
+    },
+    "original/K16/oracle_selected_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -9.473503047744787,
+      "median_nats": -8.722984530526446,
+      "positive_documents": 7
+    },
+    "original/K16/oracle_selected_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -8.43787960827792,
+      "median_nats": -7.76284771040082,
+      "positive_documents": 12
+    },
+    "original/K16/oracle_selected_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 2.587156751616466,
+      "median_nats": 0.5301793245598674,
+      "positive_documents": 74
+    },
+    "original/K16/raw_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -29.98818694292772,
+      "median_nats": -27.777007810487703,
+      "positive_documents": 0
+    },
+    "original/K16/repeat32_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -32.50034897443067,
+      "median_nats": -31.12316298636142,
+      "positive_documents": 0
+    },
+    "original/K16/repeat64_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -33.53597241389754,
+      "median_nats": -30.392164616845548,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/empty_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.887127139605582,
+      "median_nats": -5.106472492218018,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/max16_own_minus_max16_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.3166966903372668,
+      "median_nats": 0.24386146664619446,
+      "positive_documents": 79
+    },
+    "reanchor32/K1/max16_own_minus_max16_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.28240163408918306,
+      "median_nats": 0.14259541034698486,
+      "positive_documents": 76
+    },
+    "reanchor32/K1/max16_own_minus_max16_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.37731129984604195,
+      "median_nats": -0.2870750427246094,
+      "positive_documents": 49
+    },
+    "reanchor32/K1/mean16_filler_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.235157223563874,
+      "median_nats": -5.5519741624593735,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/mean16_other_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -7.079761165965465,
+      "median_nats": -6.708273470401764,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/mean16_own_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -7.656640537727071,
+      "median_nats": -7.4318317621946335,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/mean16_own_minus_empty": {
+      "ci95_nats": [
+        -2.0311747189238303,
+        -1.5052012990340702
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.7695133981214894,
+      "median_nats": -1.5310700759291649,
+      "positive_documents": 10
+    },
+    "reanchor32/K1/mean16_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.421483314163197,
+      "median_nats": -1.2216653227806091,
+      "positive_documents": 17
+    },
+    "reanchor32/K1/mean16_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.5768793717616063,
+      "median_nats": -0.46509015560150146,
+      "positive_documents": 39
+    },
+    "reanchor32/K1/mean16_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -3.579698056626512,
+      "median_nats": -3.3072019666433334,
+      "positive_documents": 9
+    },
+    "reanchor32/K1/mean16_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.145272647674574,
+      "median_nats": -2.0958043932914734,
+      "positive_documents": 19
+    },
+    "reanchor32/K1/mean16_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.3024029603184317,
+      "median_nats": -1.4880932420492172,
+      "positive_documents": 39
+    },
+    "reanchor32/K1/mean16_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.005671774448274,
+      "median_nats": -0.8852885439991951,
+      "positive_documents": 18
+    },
+    "reanchor32/K1/mean16_shuffled_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.650968763278797,
+      "median_nats": -6.159904897212982,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/oracle_max_own_minus_empty": {
+      "ci95_nats": [
+        0.1531531726301182,
+        0.5865096137655199
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.37575791630661115,
+      "median_nats": 0.3617156744003296,
+      "positive_documents": 86
+    },
+    "reanchor32/K1/oracle_selected_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.511369223298971,
+      "median_nats": -4.732836723327637,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/oracle_selected_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.6759145291871391,
+      "median_nats": 0.4325096607208252,
+      "positive_documents": 91
+    },
+    "reanchor32/K1/oracle_selected_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.5176353104761802,
+      "median_nats": 1.2125797271728516,
+      "positive_documents": 107
+    },
+    "reanchor32/K1/oracle_selected_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.4344267421984114,
+      "median_nats": -0.7352174520492554,
+      "positive_documents": 42
+    },
+    "reanchor32/K1/oracle_selected_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.333246473222971e-06,
+      "median_nats": -0.2158641815185547,
+      "positive_documents": 56
+    },
+    "reanchor32/K1/oracle_selected_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.8428683541096689,
+      "median_nats": 0.5263118743896484,
+      "positive_documents": 86
+    },
+    "reanchor32/K1/oracle_selected_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.6461203102371655,
+      "median_nats": 0.21213185787200928,
+      "positive_documents": 88
+    },
+    "reanchor32/K1/raw_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.076942481100559,
+      "median_nats": -3.6559536457061768,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/repeat32_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.511367890052497,
+      "median_nats": -4.890116930007935,
+      "positive_documents": 0
+    },
+    "reanchor32/K1/repeat64_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.3542375774086395,
+      "median_nats": -6.166952610015869,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/empty_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -33.49390331223218,
+      "median_nats": -31.82445597194601,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/max16_own_minus_max16_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.7081667075243443,
+      "median_nats": -0.0695274950703606,
+      "positive_documents": 52
+    },
+    "reanchor32/K16/max16_own_minus_max16_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.3126604650000151,
+      "median_nats": -0.03563306131400168,
+      "positive_documents": 52
+    },
+    "reanchor32/K16/max16_own_minus_max16_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.6362976783602764,
+      "median_nats": -0.22437349165556952,
+      "positive_documents": 37
+    },
+    "reanchor32/K16/mean16_filler_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -34.22247660132967,
+      "median_nats": -31.507524406439188,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/mean16_other_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -37.01219577628601,
+      "median_nats": -34.831477108422405,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/mean16_own_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -38.995138793482354,
+      "median_nats": -37.365241940075066,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/mean16_own_minus_empty": {
+      "ci95_nats": [
+        -6.259989601944333,
+        -4.778242911176477
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.501235481250177,
+      "median_nats": -4.882665387762245,
+      "positive_documents": 5
+    },
+    "reanchor32/K16/mean16_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.772662192152684,
+      "median_nats": -3.982217556567143,
+      "positive_documents": 10
+    },
+    "reanchor32/K16/mean16_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.9829430171963405,
+      "median_nats": -1.7263245252834167,
+      "positive_documents": 32
+    },
+    "reanchor32/K16/mean16_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -9.006951850554634,
+      "median_nats": -8.557918193459045,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/mean16_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -6.494789819051681,
+      "median_nats": -6.006657805728537,
+      "positive_documents": 9
+    },
+    "reanchor32/K16/mean16_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -5.459166379584813,
+      "median_nats": -5.1644016854377135,
+      "positive_documents": 17
+    },
+    "reanchor32/K16/mean16_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -2.3448340701056583,
+      "median_nats": -1.678169922406596,
+      "positive_documents": 20
+    },
+    "reanchor32/K16/mean16_shuffled_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -36.65030472337669,
+      "median_nats": -34.78181871975539,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/oracle_max_own_minus_empty": {
+      "ci95_nats": [
+        -1.2345456190069377,
+        -0.14265955125049806
+      ],
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.661407201662298,
+      "median_nats": 0.0,
+      "positive_documents": 51
+    },
+    "reanchor32/K16/oracle_selected_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -34.15531051389447,
+      "median_nats": -31.775031053926796,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/oracle_selected_own_minus_filler": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.08862348532048392,
+      "median_nats": 0.008061742875725031,
+      "positive_documents": 65
+    },
+    "reanchor32/K16/oracle_selected_own_minus_other": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 1.9887819306715575,
+      "median_nats": 1.317559295333922,
+      "positive_documents": 86
+    },
+    "reanchor32/K16/oracle_selected_own_minus_raw": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -4.167123570966755,
+      "median_nats": -3.878247807672551,
+      "positive_documents": 20
+    },
+    "reanchor32/K16/oracle_selected_own_minus_repeat32": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -1.6549615394638013,
+      "median_nats": -1.7561644818633795,
+      "positive_documents": 44
+    },
+    "reanchor32/K16/oracle_selected_own_minus_repeat64": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -0.6193380999969345,
+      "median_nats": -0.4786264970898628,
+      "positive_documents": 57
+    },
+    "reanchor32/K16/oracle_selected_own_minus_shuffled": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": 0.7894471362976273,
+      "median_nats": 0.0536272445533541,
+      "positive_documents": 69
+    },
+    "reanchor32/K16/raw_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -29.98818694292772,
+      "median_nats": -27.777007810487703,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/repeat32_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -32.50034897443067,
+      "median_nats": -31.12316298636142,
+      "positive_documents": 0
+    },
+    "reanchor32/K16/repeat64_log_likelihood": {
+      "complete_documents": 128,
+      "documents": 128,
+      "mean_nats": -33.53597241389754,
+      "median_nats": -30.392164616845548,
+      "positive_documents": 0
+    }
+  },
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "derived_subtree_separate": true,
+    "files": 154,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/candidate-corpus-train128-g16-v1/ARCHIVE.json",
+    "payload_bytes": 46373554,
+    "private_selected_records": 128,
+    "sha256": "aa888cc39a54e03566dec5105f5ea9245eb957af91479490b45b787a72585882"
+  },
+  "candidates": 2048,
+  "candidates_per_document": 16,
+  "cap": 256,
+  "compute": "fp32",
+  "cost": {
+    "generation_release_to_latest_wrapper_exit_seconds": 824.971986,
+    "generation_run_wall_seconds_per_shard": [
+      805.0,
+      722.0,
+      798.0,
+      754.0,
+      775.0,
+      744.0,
+      766.0,
+      709.0
+    ],
+    "group_cost_counted_once": true,
+    "groups": 512,
+    "interpretation": "Process/group sums are aggregate work on eight concurrent devices, not serial or end-to-end training latency; first observations include setup/cache effects.",
+    "median_group_sampling_seconds": 12.51390932949289,
+    "physical_devices": 8,
+    "scoring_release_to_latest_wrapper_exit_seconds": 327.811679,
+    "scoring_run_wall_seconds_per_shard": [
+      308.0,
+      304.0,
+      306.0,
+      306.0,
+      305.0,
+      302.0,
+      306.0,
+      306.0
+    ],
+    "sum_group_replay_audit_seconds": 1.9718494599947007,
+    "sum_group_sampling_seconds": 6068.902138029065,
+    "sum_group_wall_seconds": 6070.874582038072,
+    "sum_scoring_context_wall_seconds": 2440.5332737872814
+  },
+  "derived_prospective_labels": {
+    "actual_training_established": false,
+    "audit_sha256": "8049fc45624fc4075f93c70cbc7a92e129eaf177d9422c7dae0a4f2e88822c59",
+    "dataset_sha256": "0d0d298b0669f1c4ed757d7a23686be77f7d6aa30c22f25564ad4a58b34c5ff0",
+    "denominator": 128,
+    "examples_sha256": "71b040eec9991de5678a3719a02b32e891c7f74404ccddc7a80fac9e468b92e0",
+    "items": 31,
+    "rule": "At each TRAIN anchor choose highest own K16 among16; retain nonempty only when strictly above same-format empty and same-index filler/shuffle/other. No raw-win requirement; raw deltas retained.",
+    "selected_also_beating_raw": 13,
+    "selected_also_beating_raw_repeat32": 22,
+    "source_sha256": "478b22aac702f5a0b9187de10f86aa5638b14ef4579ea7a9f07973229779a4f1",
+    "stop_counts": {
+      "length_cap": 23,
+      "token:151643": 8
+    },
+    "synthetic_close": "Canonical </think> plus newline; disclosed closure supervision for capped/EOS samples, not fabricated sampled actions"
+  },
+  "documents": 128,
+  "experiment_id": "candidate-corpus-train128-g16-v1",
+  "failures": 0,
+  "first_group_replay": {
+    "atol": 0.001,
+    "max_active_logp_error": 1.430511474609375e-05,
+    "status": "ok"
+  },
+  "generation_shards": [
+    {
+      "candidates_sha256": "7b51568d117973541f9ce254476043cfb499ebcf4b5c2134c678728d3574397c",
+      "run_sha256": "7d3c00aea1b1895e6a6dde04ddf1aab2e31cf06496789ce86ce9166c8442e293",
+      "shard": 0
+    },
+    {
+      "candidates_sha256": "a5a2c038dc813699c1aa3f461de8be200ba66f7eb642432b907904dc47253b88",
+      "run_sha256": "715e7a6a2bc327679fbeb920ad0d82aefd1ce41660c2bbc7e31b353f1e262f5d",
+      "shard": 1
+    },
+    {
+      "candidates_sha256": "66d5e42979200c901396c39dde454bc2e7ef683c8f41ee3af2cc41fd93e023d9",
+      "run_sha256": "4ade924ee458388bc1fb27f41c163ee4f123ec540609a20d650c51e713d217df",
+      "shard": 2
+    },
+    {
+      "candidates_sha256": "700d8d9515e83a291a8b1816c6286e614f04583982184040a3fd8f8d3598ea81",
+      "run_sha256": "7da73fb6c3ed01431dbc410583f9d8dd7a16d8e84c817eb406a5faf8bfb00a4d",
+      "shard": 3
+    },
+    {
+      "candidates_sha256": "91b668603a3cf136e6e0e3ef684eddd9cc1b3575c904b9a77ad04924487973ba",
+      "run_sha256": "eebc2951cad653721e8b013036ca53a981f3c08f94fb254f378b9751370fab1e",
+      "shard": 4
+    },
+    {
+      "candidates_sha256": "fd286aa26f0404c8309be586117955f1d8718049cc9fc3d1ba6eed6a26087e23",
+      "run_sha256": "9689f7e13c764f9e7010b0bd38726c1dc2c96bf620bf213a7c9c21a650328387",
+      "shard": 5
+    },
+    {
+      "candidates_sha256": "d81bea837dff5f3fca4e090686676ab24d4c9180da4a81851a3f82f9636e4677",
+      "run_sha256": "f449fceb158899c5ae1561717026a29a85fcc00b40a68c58e11b75c1f58ba374",
+      "shard": 6
+    },
+    {
+      "candidates_sha256": "9a152df7e1fa0d01457cf5738cc1e25e6019aee38193f7f141ba2bae0fb0c26d",
+      "run_sha256": "07deab4c4dda38833548ff65b4920640a3ef21837a17f255c5286ccfbe48ee2d",
+      "shard": 7
+    }
+  ],
+  "global_barrier_sha256": "c0fa51b7fc29381c18e5dad52a829e2e61781777826358d1e3d9f77f12691663",
+  "group_size": 4,
+  "groups_per_document": 4,
+  "horizons": [
+    1,
+    16
+  ],
+  "interfaces": {
+    "original": [
+      true,
+      0
+    ],
+    "reanchor32": [
+      true,
+      32
+    ]
+  },
+  "limitations": [
+    "All128 were selected using observed TRAIN target surprisal; not held-out evaluation.",
+    "All2048 samples and global same-index donors must precede new future scoring.",
+    "Oracle selection sees TRAIN futures; a later student must use prefix-only inputs.",
+    "Cap256/G16 is a finite candidate search, not an impossibility bound.",
+    "This is TRAIN candidate availability after target-surprisal selection, not held-out or fresh G1 policy utility.",
+    "Oracle labels use true TRAIN futures and controls. Max16 is a future-aware selector, not a prefix-only deployment policy.",
+    "A positive candidate or selected subset does not imply that the average candidate helps, beats raw, or contains reasoning.",
+    "No student training or official final-test result is established by this receipt.",
+    "Raw text, token labels, individual IDs, process identities and topology stay in the local/EBS archive."
+  ],
+  "maximum_raw_width_parity_error": 2.1457672119140625e-05,
+  "model": {
+    "asset_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "checkpoint": null,
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "parameters": 1720574976,
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1"
+  },
+  "protocol_sha256": "a02a536613846765f30d7ed01ef69a05109698ebcbc3dd23ea64979a37d07f9e",
+  "raw_width_parity_atol": 0.002,
+  "sampling": {
+    "empty_candidates": 76,
+    "mean_actions": 196.08056640625,
+    "mean_content_tokens": 195.7314453125,
+    "oracle_winner_counts": {
+      "original/K1": {
+        "candidates_beating_empty": 296,
+        "capped": 83,
+        "documents": 128,
+        "documents_with_candidate_beating_empty": 89,
+        "nonempty": 120
+      },
+      "original/K16": {
+        "candidates_beating_empty": 82,
+        "capped": 68,
+        "documents": 128,
+        "documents_with_candidate_beating_empty": 29,
+        "nonempty": 112
+      },
+      "reanchor32/K1": {
+        "candidates_beating_empty": 313,
+        "capped": 88,
+        "documents": 128,
+        "documents_with_candidate_beating_empty": 86,
+        "nonempty": 121
+      },
+      "reanchor32/K16": {
+        "candidates_beating_empty": 175,
+        "capped": 80,
+        "documents": 128,
+        "documents_with_candidate_beating_empty": 51,
+        "nonempty": 112
+      }
+    },
+    "stop_counts": {
+      "length_cap": 1333,
+      "token:151643": 715
+    }
+  },
+  "schema": "TRAIN-candidate-corpus-result-v1",
+  "scoring_shards": [
+    {
+      "run_sha256": "f0c998d5f8462f47134880210428ec545836233bd6508ed7b19644d307da9c09",
+      "scores_sha256": "278c78805f40d1745c4a586237cd6f7c681d7b5ab764ea54e6c7693a9f66d4af",
+      "shard": 0
+    },
+    {
+      "run_sha256": "94758a358f7c58fc3b6f336a6556a1c148ee697bc219dad834d0a69af5d9a2dc",
+      "scores_sha256": "a3805be29c5039eb1f5922c8744bf68ef3ab0a2f294ae24eef740df597fd33a6",
+      "shard": 1
+    },
+    {
+      "run_sha256": "24547a6a4202908ac02c7c1630ed2000f79a5433c50575e2c2c73798954aa658",
+      "scores_sha256": "0590c2f16b5388629492afb1ea8df231e854a9dc6099e0bff0a03153c6dc8ff9",
+      "shard": 2
+    },
+    {
+      "run_sha256": "edab34cf10cf8c10bef2dd9f1786786717cac91ecd190e89ae9a924fe8230308",
+      "scores_sha256": "0a1e35bf63972352d6c8d3eb47dd763667ef045b6ec99f436261e2f6a26fdf27",
+      "shard": 3
+    },
+    {
+      "run_sha256": "bc5110f5fec5203742305a6210c5d9cca0eedb20bbff3d34bc66218ed7d5fa4e",
+      "scores_sha256": "cf856d4ac00bfc088fb2cdaa58bd76723c552efaceaaeaa126e3fb30d4b23066",
+      "shard": 4
+    },
+    {
+      "run_sha256": "42bdf42774a86fb16d4328c3d64b4e9a21330494c6ee3fc627472ba7314375bb",
+      "scores_sha256": "3a7a44e54d454e8053f252e463b5543e0d5e57ddd17302a65944e7f4375a5e7b",
+      "shard": 5
+    },
+    {
+      "run_sha256": "cdd752d918538e1965347e80a32015712c183c710e4f3f998abbf39792f85975",
+      "scores_sha256": "9c97e71a604ce7cdf5d4bf99597f99d5079fc7ebca706d7bdf0217bf34394864",
+      "shard": 6
+    },
+    {
+      "run_sha256": "90c3f7f934185149cfc587fe81fbe2f575b2fc4b8428e8e49a92adeaf72c3648",
+      "scores_sha256": "fae052e48700e91d382c9a25d43de0bab9daeae2834c437371cb7de07e3e90d7",
+      "shard": 7
+    }
+  ],
+  "selection": {
+    "pool": 1024,
+    "qualifying_pool": 237,
+    "raw_K1_surprisal_min_nats": 1.7,
+    "rule": "First128 qualifying anchors in the prospective hash-ordered TRAIN1024 pool; one document each; no fallback",
+    "selection_sha256": "39b9a3e0debd77be7a5420dcb6351890a6695c369d8da49f980eca256c4c1df3",
+    "split": "train",
+    "taken_first": 128
+  },
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/anchor_scan.py": "078d82b23f5d1aead7832dd9678494bd73e7356a5e9c8b73215d3a29acc9e122",
+    "train/candidate_corpus.py": "850d74564e06774db4ea545061aee54555c55ee59172958179ffdc452fd2cc4f",
+    "train/candidate_probe.py": "8e1d5e84a91db104d7186ec9354d15c724c34fe2fd764139420d3ed09c316868",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "split": "train",
+  "status": "complete",
+  "summary_sha256": "6a497394d1f8c0e012f7f3942caa62a95b0b3037dfb922b505d13fe251cb96f3",
+  "temperature": 0.7,
+  "uncertainty": "Candidates reduced within documents first; existing CIs use5000 paired-document bootstrap draws/seed17 conditional on this B0 and selected TRAIN set. No training-seed or deployment uncertainty claim."
+}

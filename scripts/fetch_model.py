@@ -9,7 +9,8 @@ import argparse, json, re, sys
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from weekend_thinking.artifacts import atomic_json,sha256_file,utc_now
 
-ALLOWED=('Qwen/Qwen3-1.7B-Base','Qwen/Qwen3-0.6B-Base')
+# Post-trained4B is a separate local-teacher condition, never a replacement B0.
+ALLOWED=('Qwen/Qwen3-1.7B-Base','Qwen/Qwen3-0.6B-Base','Qwen/Qwen3-4B')
 
 
 def main():

@@ -1,0 +1,3553 @@
+{
+  "archive": {
+    "off_instance": false,
+    "originals_retained": true,
+    "payload_bytes": 14874011,
+    "payload_file_count": 44,
+    "receipt_path": "/home/ubuntu/dario/local/backups/diagnostics/candidate-oracle-dev32-cap256-v1/VERIFIED.json",
+    "receipt_sha256": "3351e289489a2f490dedd88c53ba27278554ff9ea673194601488dca2e315e17"
+  },
+  "candidates_per_item": 16,
+  "candidates_sha256": "0199d785ea594aa1a72ebf46381633d3ef8177980924a457cf7694ddf34d716a",
+  "cap": 256,
+  "capped_candidates": 371,
+  "checkpoint": null,
+  "controls_sha256": "3f5d5ec8fd7aa6c63a2e8dcfaef9a9c1ac81d818287e25122c6d4b1863d5d244",
+  "cost": {
+    "candidates": 512,
+    "generation_wall_seconds": 1776.365185793009,
+    "group_cost_counted_once": true,
+    "groups": 128,
+    "median_group_sampling_seconds": 12.534498456501751,
+    "score_row_wall_seconds_sum": 625.9489833180851,
+    "score_stage_wall_seconds": 629.0,
+    "sum_group_replay_audit_seconds": 49.0310967869882,
+    "sum_group_sampling_seconds": 1727.0039969650534,
+    "total_wrapper_wall_seconds": 2439.778991
+  },
+  "empty_candidates": 12,
+  "experiment_id": "candidate-oracle-dev32-cap256-v1",
+  "failures": 0,
+  "first_group_replay": {
+    "atol": 0.001,
+    "group": 0,
+    "item_id": "59036ac4d17fe64bfaa40d3daa7e53a060288dda8c066910994f12f72bbf6049:3618",
+    "max_active_logp_error": 1.0967254638671875e-05,
+    "seed": 640817104830328237,
+    "status": "ok"
+  },
+  "group_size": 4,
+  "groups": {
+    "B0_raw_K1_surprisal_Q1": {
+      "original/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.717984095215797,
+        "positive_documents": 0
+      },
+      "original/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.518204003572464,
+        "positive_documents": 5
+      },
+      "original/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -1.2120604544878006,
+          1.7125488042831416
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.17184293270111084,
+        "positive_documents": 5
+      },
+      "original/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -5.224998235702515,
+          -0.9406472444534302
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.949181914329529,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.729795213788748,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.546433188021183,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.954622162505984,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -3.604660053923726,
+          -0.9034333787858486
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.236638067290187,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.2248269487172365,
+        "positive_documents": 3
+      },
+      "original/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.5918110255151987,
+        "positive_documents": 3
+      },
+      "original/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.954335507821346,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.171651735770865,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.19229119072412,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.755182622000575,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.199439540505409,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -1.8113545924425125,
+          1.8189446687698358
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.027755007147789,
+        "positive_documents": 3
+      },
+      "original/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.690229088068008,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.121275544166565,
+        "positive_documents": 6
+      },
+      "original/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 3.3782826364040375,
+        "positive_documents": 7
+      },
+      "original/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.68994243338337,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.9072586613328895,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.927898116286144,
+        "positive_documents": 1
+      },
+      "original/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.972778469324112,
+        "positive_documents": 3
+      },
+      "original/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.00028665468463806576,
+        "positive_documents": 0
+      },
+      "original/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.782970426735119,
+        "positive_documents": 0
+      },
+      "original/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.7623309717818643,
+        "positive_documents": 0
+      },
+      "original/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -25.84878171308357,
+        "positive_documents": 0
+      },
+      "original/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.5011222853925723,
+        "positive_documents": 3
+      },
+      "original/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -2.605788343877141,
+          7.117067222389899
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.750326613471156,
+        "positive_documents": 5
+      },
+      "original/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -2.0126306673715875,
+          4.75922223775167
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.5015257556983208,
+        "positive_documents": 5
+      },
+      "original/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -32.681897350622435,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -43.331855903402904,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -40.44487009104897,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -19.52953816961156,
+          -9.175892933665844
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -14.5960883779654,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.762972740426533,
+        "positive_documents": 1
+      },
+      "original/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.886985812353932,
+        "positive_documents": 4
+      },
+      "original/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -26.850105579577075,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -24.186443038134875,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -23.181103385318075,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.3417859919742974,
+        "positive_documents": 4
+      },
+      "original/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -40.78665608302327,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -12.878964714989827,
+          -3.9615294207851957
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.490926702791555,
+        "positive_documents": 1
+      },
+      "original/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.33970841587512,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.7686691397572396,
+        "positive_documents": 3
+      },
+      "original/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 8.935635830197437,
+        "positive_documents": 8
+      },
+      "original/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -20.74494390440323,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.08128136296103,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -17.075941710144228,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 5.328947192599525,
+        "positive_documents": 6
+      },
+      "original/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -13.594764511471897,
+        "positive_documents": 0
+      },
+      "original/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -16.258427052914097,
+        "positive_documents": 0
+      },
+      "original/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -17.263766705730895,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.27071083488408476,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.19343271306752285,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.008489945632391022,
+          0.3863076327902035
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.17383232077736466,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.111371709732839,
+          0.4665851243237738
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.12159161151248554,
+        "positive_documents": 4
+      },
+      "reanchor32/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.5660333863925189,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.0865259120555493,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1140727769490013,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -1.4613723949586557,
+          -0.23158946334033625
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.8433619420649165,
+        "positive_documents": 2
+      },
+      "reanchor32/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.5480393905564824,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.02754686489345204,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1137861222643632,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.33110235021388235,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.648258194832863,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.42197975282408606,
+        "positive_documents": 2
+      },
+      "reanchor32/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.6920930241249152,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.23506686429027468,
+          0.12507734003338555
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.01706788050614705,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.2877787153902318,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.2657288395366777,
+        "positive_documents": 7
+      },
+      "reanchor32/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.9986042928449024,
+        "positive_documents": 7
+      },
+      "reanchor32/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.28749206070559374,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.49519171134488715,
+        "positive_documents": 4
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.4745522563916325,
+        "positive_documents": 7
+      },
+      "reanchor32/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.19637878970570455,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.00028665468463806576,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.782970426735119,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.7623309717818643,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -15.835147325068279,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.7812058061160592,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.8715300565454301,
+          4.107913760374097
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.284370090480115,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.35385420069460216,
+          3.540574555834609
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.3749884753020645,
+        "positive_documents": 6
+      },
+      "reanchor32/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -16.449166256031944,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.49182166656475,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.89211111029625,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -4.81967596996618,
+          -1.2527469274107714
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.0569637852279676,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.4429448542643044,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.4002894437314979,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.297346598824349,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.6336840573821494,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.6283444045653503,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.6319479997270518,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.260163110569195,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.9522193366939958,
+          3.218561377568753
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.7559219301073963,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -15.079225394960883,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.2396422914850724,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 4.035268781895223,
+        "positive_documents": 6
+      },
+      "reanchor32/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.4844608834889854,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.1792016579532145,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.1845413107700136,
+        "positive_documents": 6
+      },
+      "reanchor32/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.912538915961747,
+        "positive_documents": 7
+      },
+      "reanchor32/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -13.594764511471897,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -16.258427052914097,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -17.263766705730895,
+        "positive_documents": 0
+      }
+    },
+    "B0_raw_K1_surprisal_Q2": {
+      "original/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.753707855939865,
+        "positive_documents": 0
+      },
+      "original/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.4302522838115692,
+        "positive_documents": 3
+      },
+      "original/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -1.7475499130785466,
+          2.0633959166705598
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.1950211524963379,
+        "positive_documents": 5
+      },
+      "original/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -4.185251960158348,
+          -1.3553686514496817
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.835742309689522,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.1828245259821415,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.275727113708854,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.94281586073339,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -4.676354333758354,
+          -1.6896232217550278
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.1891080047935247,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.7599913347512484,
+        "positive_documents": 2
+      },
+      "original/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.33291125297546387,
+        "positive_documents": 5
+      },
+      "original/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.873616866767406,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.829592566937208,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.288554387167096,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.425977853126824,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.516838007606566,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -1.835224062204361,
+          1.4538267940282819
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.3411100506782532,
+        "positive_documents": 3
+      },
+      "original/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.094817906618118,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.21732863783836365,
+        "positive_documents": 5
+      },
+      "original/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.834280103445053,
+        "positive_documents": 8
+      },
+      "original/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.025618912652135,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.981594612821937,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.440556433051825,
+        "positive_documents": 1
+      },
+      "original/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1670887768268585,
+        "positive_documents": 2
+      },
+      "original/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.06919899396598339,
+        "positive_documents": 0
+      },
+      "original/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1132232937961817,
+        "positive_documents": 0
+      },
+      "original/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.6542614735662937,
+        "positive_documents": 0
+      },
+      "original/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -24.223295511614197,
+        "positive_documents": 0
+      },
+      "original/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.3294522563264763,
+        "positive_documents": 2
+      },
+      "original/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -6.54101509500033,
+          7.661479251447045
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.30430933094976353,
+        "positive_documents": 2
+      },
+      "original/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          0.7649000466859435,
+          8.566038747001585
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 4.081635892773193,
+        "positive_documents": 5
+      },
+      "original/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -28.077967827748125,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -42.12918107782389,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -39.87695638909548,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -19.75138574745091,
+          -11.42855912830754
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -15.653660877481286,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -11.798988561347358,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.252224688728404,
+        "positive_documents": 5
+      },
+      "original/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -24.13211703894143,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -21.36756424030949,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -20.227840833109383,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.7605944106922493,
+        "positive_documents": 5
+      },
+      "original/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -40.63755079978773,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -8.262594822227447,
+          -0.6947254312996864
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.357372908782054,
+        "positive_documents": 1
+      },
+      "original/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -28.58066842039625,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.6078172991801694,
+        "positive_documents": 2
+      },
+      "original/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 10.53096989271944,
+        "positive_documents": 6
+      },
+      "original/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -12.835829070242198,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.071276271610259,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.93155286441015,
+        "positive_documents": 1
+      },
+      "original/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 9.909850794338126,
+        "positive_documents": 7
+      },
+      "original/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -15.744839350154052,
+        "positive_documents": 0
+      },
+      "original/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.50939214878599,
+        "positive_documents": 0
+      },
+      "original/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -19.6491155559861,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.2588578350842,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.5462641199119389,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.19016153924167156,
+          2.0767136421869505
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.6413098094053566,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.06383645337773487,
+          1.4746531609445799
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.6147286714985967,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.3470249132951722,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.4743060684995726,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.4004756778595038,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -1.9565874080144567,
+          -0.3990676842528047
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1416178427753039,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.0534507645643316,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.0738303906400688,
+        "positive_documents": 4
+      },
+      "reanchor32/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.3312766838935204,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.287252384063322,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.7462142042932101,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.4425529782020021,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.9579226996575017,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.03373165242373943,
+          1.8118390108342277
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.6818431024439633,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.5770147326402366,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.701095059979707,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.9328715321607888,
+        "positive_documents": 7
+      },
+      "reanchor32/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.5078157386742532,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.5362085611559451,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.077246740926057,
+        "positive_documents": 7
+      },
+      "reanchor32/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.9668966471217573,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.06919899396598339,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1132232937961817,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.6542614735662937,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -19.167492350265093,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.2408632117731031,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -1.3948287800885737,
+          2.4453636554946563
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.30467381115158787,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -1.5192331124198972,
+          2.5722600768831385
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.13322228733886732,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -19.560152480883062,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -23.66350905982347,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -23.983094964233857,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -6.415804486410592,
+          -3.1506380266938474
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.815602613968764,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.422942483350795,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.31958590441038837,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.238255614079804,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.473702815447865,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.333979408247757,
+        "positive_documents": 1
+      },
+      "reanchor32/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.8641222834318398,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -22.118972680802017,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.893936538291382,
+          2.48105895894696
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.4762913330050651,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.691201017260028,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.6894099300116068,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.576868999625731,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.9463616671059754,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.181808868474036,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.9579145387260724,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.1963284552766709,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -15.744839350154052,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.50939214878599,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -19.6491155559861,
+        "positive_documents": 0
+      }
+    },
+    "B0_raw_K1_surprisal_Q3": {
+      "original/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.142679333686829,
+        "positive_documents": 0
+      },
+      "original/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.33564770221710205,
+        "positive_documents": 5
+      },
+      "original/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.6523050796240568,
+          2.0847312346100804
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.8078701347112656,
+        "positive_documents": 5
+      },
+      "original/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -3.4912184178829193,
+          -0.3945849798619749
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.0000915229320526,
+        "positive_documents": 2
+      },
+      "original/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.7598340176045895,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -11.49907626118511,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.729415006935596,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -4.6530136305838825,
+          -2.518396906554702
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.586735673248768,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.969580989331007,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.7696612542495131,
+        "positive_documents": 5
+      },
+      "original/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.01466341689229,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.092966265976429,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.317948963493109,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.4838849678635597,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.245530039072037,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -1.263029807806015,
+          1.1961741074919698
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.049102187156677246,
+        "positive_documents": 4
+      },
+      "original/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.191781520843506,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.5325573086738586,
+        "positive_documents": 5
+      },
+      "original/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 4.070682525634766,
+        "positive_documents": 7
+      },
+      "original/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.4770299308001995,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.5553327798843384,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.780315477401018,
+        "positive_documents": 1
+      },
+      "original/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.15610980987548828,
+        "positive_documents": 3
+      },
+      "original/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.7147515900433064,
+        "positive_documents": 0
+      },
+      "original/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.6364487409591675,
+        "positive_documents": 0
+      },
+      "original/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.4114660434424877,
+        "positive_documents": 0
+      },
+      "original/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -39.47265555357444,
+        "positive_documents": 0
+      },
+      "original/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.5859421243949328,
+        "positive_documents": 2
+      },
+      "original/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -3.5512463304039557,
+          -0.43572568359159125
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.7677600402384996,
+        "positive_documents": 3
+      },
+      "original/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -2.163157306861831,
+          -0.11264794876333342
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.1027327251504175,
+        "positive_documents": 3
+      },
+      "original/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -42.25183148754331,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -52.94849920949491,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -52.53045574042608,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -17.03468022313882,
+          -9.21584351047386
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -13.057800186851637,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.278624252882764,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.4180434690688344,
+        "positive_documents": 3
+      },
+      "original/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -22.20284593253291,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -17.54646363880147,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.75507778777228,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.424641400636574,
+        "positive_documents": 1
+      },
+      "original/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -51.105814339789504,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -7.591469962819247,
+          -2.4476688761496916
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.949019187391968,
+        "positive_documents": 1
+      },
+      "original/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -44.42167474096641,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.1109322932898067,
+        "positive_documents": 3
+      },
+      "original/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 10.153867531276774,
+        "positive_documents": 7
+      },
+      "original/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -14.094064933073241,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.437682639341801,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.646296788312611,
+        "positive_documents": 1
+      },
+      "original/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.9225633859750815,
+        "positive_documents": 7
+      },
+      "original/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -30.327609807893168,
+        "positive_documents": 0
+      },
+      "original/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.98399210162461,
+        "positive_documents": 0
+      },
+      "original/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -33.7753779526538,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.166971370577812,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.17729425430297852,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.6192055744118988,
+          0.5613662675023079
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.008381534367799759,
+        "positive_documents": 4
+      },
+      "reanchor32/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.5196096904575824,
+          0.4121523939073085
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.049337685108184814,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.151729757897556,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.585120293544605,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.361267109401524,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -3.6061584865674376,
+          -1.0215583177283407
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.194295738823712,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.2095373515039682,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.7761468158569187,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.646515519358218,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.7248183684423566,
+        "positive_documents": 2
+      },
+      "reanchor32/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.9498010659590364,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.0077431099489331,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.353523999452591,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.06867356933653354,
+          0.9245586976408943
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.423531711101532,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.74343965947628,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.3674139082431793,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.066926971077919,
+        "positive_documents": 7
+      },
+      "reanchor32/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.028688069432974,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.8930090814828873,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.3319736160337925,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.1676620990037918,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.7147515900433064,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.6364487409591675,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.4114660434424877,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.69545472844038,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.49818126298487186,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -2.5817174551768405,
+          0.30165486671939995
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.9737754483503522,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.7735418684897013,
+          0.5908201389247552
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.013588002562755719,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.36918040816363,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -37.46834590687922,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -40.59326022529967,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -8.776864664990399,
+          -2.789806683387817
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.8978054968592915,
+        "positive_documents": 1
+      },
+      "reanchor32/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.224079817136044,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.1249143184204513,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.265650417406505,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.609268123675065,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.817882272645875,
+        "positive_documents": 1
+      },
+      "reanchor32/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.663632351400338,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -37.929627873899335,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -1.606685098674643,
+          1.9562825730863533
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.1978305955126416,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.49762413292774,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.18621549049566966,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 3.4875495130982017,
+        "positive_documents": 6
+      },
+      "reanchor32/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.170014325034572,
+        "positive_documents": 1
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.48636796869686805,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.7222461802739417,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.6270975082006771,
+        "positive_documents": 7
+      },
+      "reanchor32/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -30.327609807893168,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.98399210162461,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -33.7753779526538,
+        "positive_documents": 0
+      }
+    },
+    "B0_raw_K1_surprisal_Q4": {
+      "original/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.868144631385803,
+        "positive_documents": 0
+      },
+      "original/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.0997755527496338,
+        "positive_documents": 5
+      },
+      "original/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -1.2433323368430138,
+          3.009957790374756
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.6458108425140381,
+        "positive_documents": 3
+      },
+      "original/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -4.367978453636169,
+          -1.6582064598798754
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.111150026321411,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -10.52828662097454,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -12.811363995075226,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -12.421860493719578,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -4.352013831026852,
+          -0.8514063358306885
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.5537158623337746,
+        "positive_documents": 2
+      },
+      "original/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.893573872745037,
+        "positive_documents": 2
+      },
+      "original/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.38950350135564804,
+        "positive_documents": 4
+      },
+      "original/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.422330148518085,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.738213963806629,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.613454855978489,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.747020334005356,
+        "positive_documents": 1
+      },
+      "original/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.674840159714222,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.717237228155136,
+          2.7784575819969177
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.9457237124443054,
+        "positive_documents": 5
+      },
+      "original/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -8.922420918941498,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.5038821697235107,
+        "positive_documents": 6
+      },
+      "original/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 3.3548623919487,
+        "positive_documents": 6
+      },
+      "original/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.9228905737400055,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.238774389028549,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.114015281200409,
+        "positive_documents": 1
+      },
+      "original/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.506351113319397,
+        "positive_documents": 2
+      },
+      "original/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.9995303452014923,
+        "positive_documents": 0
+      },
+      "original/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.683646529912949,
+        "positive_documents": 0
+      },
+      "original/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.808405637741089,
+        "positive_documents": 0
+      },
+      "original/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -41.757403001140084,
+        "positive_documents": 0
+      },
+      "original/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.9455288750618145,
+        "positive_documents": 3
+      },
+      "original/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.193448732199613,
+          9.299961389402597
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 3.8580463585381146,
+        "positive_documents": 6
+      },
+      "original/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.46862962900507366,
+          2.6278167468931035
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.9596763150268082,
+        "positive_documents": 6
+      },
+      "original/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -43.06269832248063,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -55.08668601359928,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -49.194619200497065,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -10.848409256852918,
+          -4.3174516085752295
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.437216199356983,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.131920878016438,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 5.892066813102208,
+        "positive_documents": 7
+      },
+      "original/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -18.954266540618665,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -16.244345873054034,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -14.376934637487487,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.6022714699769042,
+        "positive_documents": 5
+      },
+      "original/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -49.79689067047397,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -3.5620089859595683,
+          2.8333667209948143
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.39080585007453905,
+        "positive_documents": 5
+      },
+      "original/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -42.14820885121462,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.7460001661642544,
+        "positive_documents": 3
+      },
+      "original/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 15.71380115346751,
+        "positive_documents": 8
+      },
+      "original/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -11.90785619133622,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -9.19793552377159,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.3305242882050425,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 5.660245306267097,
+        "positive_documents": 6
+      },
+      "original/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -30.240352659878404,
+        "positive_documents": 0
+      },
+      "original/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -32.95027332744303,
+        "positive_documents": 0
+      },
+      "original/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.81768456300958,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.406071662902832,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.13854330778121948,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.29109446406364436,
+          0.8234137296676636
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.26308098435401917,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.39884201530367136,
+          0.35006685201078647
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.008432678878307343,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.616584252566099,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.098811569157988,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -6.675612873863429,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -3.3395287082064895,
+          -1.1457687043584883
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.269541210960597,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.0590286212973297,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.576801304705441,
+        "positive_documents": 2
+      },
+      "reanchor32/K1/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.6760825286619365,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.9919663439504802,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.86720723612234,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.0950859058648348,
+        "positive_documents": 2
+      },
+      "reanchor32/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.580526967998594,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.2359138175845146,
+          0.6558548621833322
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.23204633593559265,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.174025326967239,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.35415786504745483,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.145841121673584,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.17449498176574707,
+        "positive_documents": 3
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.5096212029457092,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 1.6343803107738495,
+        "positive_documents": 6
+      },
+      "reanchor32/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.8163876235485077,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -3.9995303452014923,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.683646529912949,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -5.808405637741089,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/empty_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -32.92203444064171,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.28192706409870993,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -1.185914813984573,
+          0.4734770083044371
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.331123601002588,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.9927816632134365,
+          1.379218454412892
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.1256305428414919,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -33.0383803340804,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_other_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -36.55479333712518,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -37.6610953284539,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -5.728675948228556,
+          -3.597558485237983
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.7390608878121885,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.6227149943734975,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -1.106301991328714,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/mean16_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -7.420742668575496,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -4.710822001010866,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.8434107654443186,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -0.5595343801961854,
+        "positive_documents": 1
+      },
+      "reanchor32/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -37.10156094825771,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.7462068285109005,
+          0.894003118885422
+        ],
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.14875726604034867,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -32.77327717460136,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.20000087575769498,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 3.101129319740295,
+        "positive_documents": 7
+      },
+      "reanchor32/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -2.532924514722959,
+        "positive_documents": 1
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 0.1769961528416708,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.044407388408219,
+        "positive_documents": 4
+      },
+      "reanchor32/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": 2.120749025039032,
+        "positive_documents": 6
+      },
+      "reanchor32/K16/raw_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -30.240352659878404,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat32_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -32.95027332744303,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat64_log_likelihood": {
+        "complete_documents": 8,
+        "documents": 8,
+        "mean_nats": -34.81768456300958,
+        "positive_documents": 0
+      }
+    },
+    "all": {
+      "original/K1/empty_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -7.620628979057074,
+        "positive_documents": 0
+      },
+      "original/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.38084374368190765,
+        "positive_documents": 18
+      },
+      "original/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.38854221617802975,
+          1.3451636594720175
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.4551362656056881,
+        "positive_documents": 18
+      },
+      "original/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -3.572689376678318,
+          -1.8567312157712887
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.7240414433181286,
+        "positive_documents": 5
+      },
+      "original/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -8.300185094587505,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_other_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -11.033150139497593,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -10.512178380973637,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -3.6394238113542086,
+          -2.131910854578019
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.8915494019165635,
+        "positive_documents": 4
+      },
+      "original/K1/mean16_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.2119932863861322,
+        "positive_documents": 7
+      },
+      "original/K1/mean16_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.5209717585239559,
+        "positive_documents": 17
+      },
+      "original/K1/mean16_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -9.316236484999783,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -7.958106133122783,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -7.6030623493407035,
+        "positive_documents": 0
+      },
+      "original/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -3.3530164442490786,
+        "positive_documents": 2
+      },
+      "original/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -7.1591619367245585,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.6770520971156657,
+          1.0272585985250768
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.145816620439291,
+        "positive_documents": 15
+      },
+      "original/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -7.474812358617783,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.8437609151005745,
+        "positive_documents": 22
+      },
+      "original/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 3.409526914358139,
+        "positive_documents": 28
+      },
+      "original/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -6.278870462643928,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -4.920740110766928,
+        "positive_documents": 0
+      },
+      "original/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -4.565696326984849,
+        "positive_documents": 4
+      },
+      "original/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.200582042336464,
+        "positive_documents": 10
+      },
+      "original/K1/raw_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.195941895973855,
+        "positive_documents": 0
+      },
+      "original/K1/repeat32_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.554072247850854,
+        "positive_documents": 0
+      },
+      "original/K1/repeat64_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.9091160316329336,
+        "positive_documents": 0
+      },
+      "original/K16/empty_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -32.82553394485307,
+        "positive_documents": 0
+      },
+      "original/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.840511385293949,
+        "positive_documents": 10
+      },
+      "original/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -1.6639539523411357,
+          3.6560938451687766
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.8840759002052518,
+        "positive_documents": 16
+      },
+      "original/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.07226936129788113,
+          3.0409514277403034
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 1.360026309586976,
+        "positive_documents": 19
+      },
+      "original/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -36.51859874709863,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_other_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -48.37405555108025,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -45.5117253552669,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -15.079501496365266,
+          -10.345785356432874
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -12.686191410413826,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -8.993126608168273,
+        "positive_documents": 1
+      },
+      "original/K16/mean16_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 2.8623301958133442,
+        "positive_documents": 19
+      },
+      "original/K16/mean16_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -23.03483377291752,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -19.83620419757497,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -19.135239160921806,
+        "positive_documents": 0
+      },
+      "original/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.07000261800171922,
+        "positive_documents": 15
+      },
+      "original/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -45.58172797326862,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -6.725213666727722,
+          -2.540335677334573
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -4.547031162260029,
+        "positive_documents": 8
+      },
+      "original/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -37.372565107113104,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.3083547245978675,
+        "positive_documents": 11
+      },
+      "original/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 11.33356860191529,
+        "positive_documents": 29
+      },
+      "original/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -14.895673524763723,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -11.69704394942117,
+        "positive_documents": 0
+      },
+      "original/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -10.99607891276801,
+        "positive_documents": 2
+      },
+      "original/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 5.705401669794957,
+        "positive_documents": 26
+      },
+      "original/K16/raw_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -22.47689158234938,
+        "positive_documents": 0
+      },
+      "original/K16/repeat32_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -25.675521157691932,
+        "positive_documents": 0
+      },
+      "original/K16/repeat64_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -26.376486194345095,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/empty_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.2756529258622322,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/max16_own_minus_max16_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.26388359876591494,
+        "positive_documents": 21
+      },
+      "reanchor32/K1/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.05883014397683154,
+          0.7028130149823482
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.27165116222613506,
+        "positive_documents": 20
+      },
+      "reanchor32/K1/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.08284866218300521,
+          0.4642306679531078
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.1696374797561475,
+        "positive_documents": 16
+      },
+      "reanchor32/K1/mean16_filler_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.4203430775378365,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_other_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -3.5611909608144288,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -3.8878571095183645,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -2.1658190330531633,
+          -1.094426406920349
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.6122041836561323,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/mean16_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.467514031980528,
+        "positive_documents": 5
+      },
+      "reanchor32/K1/mean16_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -0.32666614870393573,
+        "positive_documents": 12
+      },
+      "reanchor32/K1/mean16_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.6919152135445095,
+        "positive_documents": 1
+      },
+      "reanchor32/K1/mean16_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.3337848616675103,
+        "positive_documents": 9
+      },
+      "reanchor32/K1/mean16_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -0.9787410778854309,
+        "positive_documents": 12
+      },
+      "reanchor32/K1/mean16_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -0.741840436709964,
+        "positive_documents": 8
+      },
+      "reanchor32/K1/mean16_shuffled_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -3.1460166728084005,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          0.051025342810021364,
+          0.6843712158150651
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.3300883172437352,
+        "positive_documents": 22
+      },
+      "reanchor32/K1/oracle_selected_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.945564608618497,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/oracle_selected_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.4220989182017547,
+        "positive_documents": 23
+      },
+      "reanchor32/K1/oracle_selected_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 1.7860609794392985,
+        "positive_documents": 27
+      },
+      "reanchor32/K1/oracle_selected_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -0.749622712644642,
+        "positive_documents": 4
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.6085076392323572,
+        "positive_documents": 20
+      },
+      "reanchor32/K1/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.9635514230144366,
+        "positive_documents": 23
+      },
+      "reanchor32/K1/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.7868312898449403,
+        "positive_documents": 22
+      },
+      "reanchor32/K1/raw_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.195941895973855,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat32_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.554072247850854,
+        "positive_documents": 0
+      },
+      "reanchor32/K1/repeat64_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.9091160316329336,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/empty_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -25.655032211103865,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/max16_own_minus_max16_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.06049017270139512,
+        "positive_documents": 15
+      },
+      "reanchor32/K16/max16_own_minus_max16_other": {
+        "ci95_nats": [
+          -0.8084388775673259,
+          1.069508761844795
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.07103621306969066,
+        "positive_documents": 15
+      },
+      "reanchor32/K16/max16_own_minus_max16_shuffled": {
+        "ci95_nats": [
+          -0.33964679966653544,
+          1.2691170596195982
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.405063325729917,
+        "positive_documents": 17
+      },
+      "reanchor32/K16/mean16_filler_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -25.85421986978976,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_other_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -29.044617492598157,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -30.28239040707092,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/mean16_own_minus_empty": {
+        "ci95_nats": [
+          -5.6897560499816695,
+          -3.5432031510995152
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -4.627358195967053,
+        "positive_documents": 3
+      },
+      "reanchor32/K16/mean16_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -4.428170537281161,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.237772914472763,
+        "positive_documents": 8
+      },
+      "reanchor32/K16/mean16_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -7.805498824721539,
+        "positive_documents": 2
+      },
+      "reanchor32/K16/mean16_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -4.6068692493789865,
+        "positive_documents": 5
+      },
+      "reanchor32/K16/mean16_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -3.905904212725825,
+        "positive_documents": 6
+      },
+      "reanchor32/K16/mean16_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -1.4298092536888538,
+        "positive_documents": 8
+      },
+      "reanchor32/K16/mean16_shuffled_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -28.852581153382065,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_max_own_minus_empty": {
+        "ci95_nats": [
+          -0.418495920826018,
+          1.2892517190138784
+        ],
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.3947002811663629,
+        "positive_documents": 18
+      },
+      "reanchor32/K16/oracle_selected_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -25.260331929937504,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/oracle_selected_own_minus_filler": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.48570940168967613,
+        "positive_documents": 18
+      },
+      "reanchor32/K16/oracle_selected_own_minus_other": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 3.3002041535898625,
+        "positive_documents": 24
+      },
+      "reanchor32/K16/oracle_selected_own_minus_raw": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -2.783440347588123,
+        "positive_documents": 7
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat32": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 0.41518922775442935,
+        "positive_documents": 16
+      },
+      "reanchor32/K16/oracle_selected_own_minus_repeat64": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 1.1161542644075908,
+        "positive_documents": 18
+      },
+      "reanchor32/K16/oracle_selected_own_minus_shuffled": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": 1.9641784761195318,
+        "positive_documents": 25
+      },
+      "reanchor32/K16/raw_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -22.47689158234938,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat32_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -25.675521157691932,
+        "positive_documents": 0
+      },
+      "reanchor32/K16/repeat64_log_likelihood": {
+        "complete_documents": 32,
+        "documents": 32,
+        "mean_nats": -26.376486194345095,
+        "positive_documents": 0
+      }
+    }
+  },
+  "groups_per_item": 4,
+  "horizons": [
+    1,
+    16
+  ],
+  "interfaces": [
+    "original",
+    "reanchor32"
+  ],
+  "interpretation": "Future-selected best16 has small availability tails on reanchor32, while ordinary mean16 remains negative versus same-interface empty and raw. Max16-vs-max16 controls constrain selection-noise interpretations. No deployed-policy improvement is established.",
+  "items": 32,
+  "items_per_quartile": 8,
+  "limitations": [
+    "G16 is newly sampled candidates; K1/K16 are future-token horizons.",
+    "Cap256 is a bounded search, not a long-note oracle ceiling.",
+    "Oracle selection uses the true future only after all sampling; it is not deployed policy utility.",
+    "A zero finite-sample oracle cannot establish impossibility."
+  ],
+  "model": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+  },
+  "model_id": "Qwen/Qwen3-1.7B-Base",
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "naturally_stopped_candidates": 141,
+  "original_summary_sha256": "b403da8f081bc0f836100acfffab1d3a48f342b5a57286af55db0db2b4b39988",
+  "paired_analysis_sha256": "f56f22717afdd0c98cda2764e144149a4705c4b855dc1d096e5e7d5af311f2e2",
+  "pilot_baseline_atol": 0.002,
+  "pilot_baseline_max_token_error": 1.3589859008789062e-05,
+  "pilot_baseline_rows": 96,
+  "postprocessing_sha256": "e383868538a98926b186d53fd005d9e3ad9d0e75d16c61e883d9068b10c2a221",
+  "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
+  "purpose": "exploratory held DEV candidate availability; no final test or training",
+  "schema": "candidate-oracle-development-v1",
+  "scores_sha256": "c9f2437eaf99800dbd24fc119d7da41fdca5e2efd68659c3972f6e332bdacb7d",
+  "selection_item_ids_sha256": "4dbcd73f568b8cb7870186b14f90318c11525ba620d6a915c5df171c1f6c71cb",
+  "source_sha256": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/candidate_probe.py": "8e1d5e84a91db104d7186ec9354d15c724c34fe2fd764139420d3ed09c316868",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "complete",
+  "temperature": 0.7,
+  "uncertainty": "5000 paired document bootstrap draws, seed17; repeated candidates reduced within documents; exploratory conditional uncertainty, not training-seed or deployment evidence"
+}

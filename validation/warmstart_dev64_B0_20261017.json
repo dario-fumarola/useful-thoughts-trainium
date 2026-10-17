@@ -1,0 +1,1622 @@
+{
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 89,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/warmstart-dev64-cap256-B0-v1/ARCHIVE.json",
+    "payload_bytes": 2081308,
+    "private_selected_records": 64,
+    "sha256": "69a519a2499ac92180aa492ca15e4d875b835f038512f61a153e009f48c33eb7"
+  },
+  "batch_size": 4,
+  "candidates_per_document": 1,
+  "cap": 256,
+  "compute": "fp32",
+  "controls_sha256": "170523c1bef8b33b6720c36bd14d224d8c4e8d707e63b1b2748bcf2bc16a3a04",
+  "cost": {
+    "batch_cost_counted_once": true,
+    "batches": 16,
+    "generation_release_to_latest_wrapper_exit_seconds": 153.715213,
+    "generation_run_seconds_per_shard": [
+      134.0,
+      134.0,
+      133.0,
+      135.0
+    ],
+    "interpretation": "Batch work sums count each four-prefix batch once. Parallel stage walls include startup/load/cold effects and are not training throughput.",
+    "physical_devices": 4,
+    "scoring_release_to_latest_wrapper_exit_seconds": 35.210476,
+    "scoring_run_seconds_per_shard": [
+      16.0,
+      17.0,
+      17.0,
+      17.0
+    ],
+    "sum_batch_replay_audit_seconds": 208.41046234099485,
+    "sum_batch_sampling_seconds": 328.3284764189739,
+    "sum_score_context_wall_seconds": 66.29882734704006
+  },
+  "documents": 64,
+  "experiment_id": "warmstart-dev64-cap256-B0-v1",
+  "failures": 0,
+  "first_batch_replay": {
+    "batches": 4,
+    "bound": 0.001,
+    "max_active_logp_error": 1.5735626220703125e-05,
+    "notes": 16
+  },
+  "global_controls_receipt_sha256": "383cc1371eab9bd2c4b2da26ee57d1888602707de9729e23385d671498bff162",
+  "groups": {
+    "B0_raw_K1_surprisal_Q1": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.4185327913528454
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.1767253279633678
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.4545892756796093
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.952331894582926
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -0.0012116749559689666
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.406057560350746
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.7795227794395032
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -2.465412504277886,
+                -0.5600050281673787
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.4173211163968764,
+              "median_nats": -0.38045338838128373,
+              "positive_documents": 0
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -0.805812217091443,
+                0.7843114486517605
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.012475231002099463,
+              "median_nats": -0.05035247281193733,
+              "positive_documents": 7
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -1.30758352149781,
+                0.26063386022570395
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.5337991032300806,
+              "median_nats": -0.2263781912624836,
+              "positive_documents": 4
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -1.723849823986575,
+                0.1017256546288611
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.7756065666195582,
+              "median_nats": -0.3326946198940277,
+              "positive_documents": 4
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.312201386736882,
+                0.27262347591688446
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.4977426189033167,
+              "median_nats": -0.05016893148422241,
+              "positive_documents": 5
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -2.937876633520409,
+                -1.0722893130226334
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.951120219626957,
+              "median_nats": -1.4997288618835682,
+              "positive_documents": 0
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -1.6045785858713288,
+                0.5624207316292729
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.5462743342321801,
+              "median_nats": -0.20612343586981297,
+              "positive_documents": 7
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -0.8933210543124005,
+                0.4991758071817443
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.1728091151434228,
+              "median_nats": 0.012346804157459701,
+              "positive_documents": 9
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -14.434307000319485
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -14.017300270334617
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -15.657948771049385
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -16.829946175153026
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -10.636565990765922
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -14.872628131815203
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -16.34535564200204
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -5.6306560025211185,
+                -2.172691289351217
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -3.7977410095535644,
+              "median_nats": -3.018901521281805,
+              "positive_documents": 2
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -0.8539395005228585,
+                1.947985449729585
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": 0.4383211314957167,
+              "median_nats": 0.2278172442165669,
+              "positive_documents": 9
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -4.652262778464629,
+                -0.6023024098553474
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.3956391748335406,
+              "median_nats": -2.5441191789941513,
+              "positive_documents": 5
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -5.322322258642987,
+                -0.9215643590687165
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.8126459048184094,
+              "median_nats": -2.7192279194255207,
+              "positive_documents": 5
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -3.713242805225577,
+                0.9169449544572182
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.1719974041036414,
+              "median_nats": -0.13541891527711414,
+              "positive_documents": 6
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -9.535298964608579,
+                -3.369460161535001
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -6.193380184387105,
+              "median_nats": -4.64407090624627,
+              "positive_documents": 1
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -4.866157419973687,
+                0.7024587557944582
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.9573180433378239,
+              "median_nats": -1.9772972829778155,
+              "positive_documents": 5
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.979115281317497,
+                0.7477368937071011
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.48459053315098544,
+              "median_nats": -0.16631550291970143,
+              "positive_documents": 5
+            }
+          }
+        }
+      },
+      "sampling": {
+        "empty_notes": 1,
+        "mean_actions": 188,
+        "mean_content_tokens": 187.6875,
+        "median_actions": 256.0,
+        "stop_counts": {
+          "length_cap": 11,
+          "token:151643": 5
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q2": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.3082643849775195
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.6570603037253022
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -2.498758463189006
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -2.805029122158885
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -0.06940419506281614
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.2001165261026472
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -1.8917557839304209
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -2.013247149036033,
+                -0.6116461688798156
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.2388601899147034,
+              "median_nats": -0.6460147276520729,
+              "positive_documents": 0
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -0.5363087455218192,
+                0.3451355076336756
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.10814785887487233,
+              "median_nats": -0.13063841685652733,
+              "positive_documents": 5
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -2.312299543549307,
+                -0.8123624291736634
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.4967647371813655,
+              "median_nats": -1.3027056157588959,
+              "positive_documents": 3
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -1.9687879992416129,
+                -0.44406031682156055
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.1479688184335828,
+              "median_nats": -1.0609305202960968,
+              "positive_documents": 5
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.04471247154288,
+                0.389352847496047
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.30627065896987915,
+              "median_nats": -0.14121544361114502,
+              "positive_documents": 7
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -4.253560840405408,
+                -1.511464916684784
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.735624927096069,
+              "median_nats": -1.7400707630440593,
+              "positive_documents": 0
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -2.2198902318428737,
+                -1.0092311998072552
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.6049125960562378,
+              "median_nats": -1.431060142815113,
+              "positive_documents": 2
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.5682441051118077,
+                -0.26439977330155673
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.9132733382284641,
+              "median_nats": -0.6253795623779297,
+              "positive_documents": 3
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -18.7285400396269
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -19.19885364691494
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -20.751548437818272
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -23.45610242999789
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -16.006575456657988
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -19.075346815411248
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -21.74118416605013
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -6.401665782165115,
+                -0.35935344336976455
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.721964582968914,
+              "median_nats": -1.0049170160164067,
+              "positive_documents": 4
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -0.4194925770140255,
+                1.2672550385448742
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": 0.34680677578434604,
+              "median_nats": 0.08477258635684848,
+              "positive_documents": 9
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -6.881812190228367,
+                -2.862633177502426
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -4.727562390370989,
+              "median_nats": -4.082682267679047,
+              "positive_documents": 1
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -6.468955793198724,
+                -2.305527496498375
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -4.2572487830829475,
+              "median_nats": -3.889477275119056,
+              "positive_documents": 2
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -4.471356943118345,
+                -1.0085400599491
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.7045539921796165,
+              "median_nats": -3.1808282969286665,
+              "positive_documents": 5
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -12.761555535093212,
+                -3.7999550688317303
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -7.4495269733399025,
+              "median_nats": -4.709460815090075,
+              "positive_documents": 1
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -6.327574466990039,
+                -2.6936280465043416
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -4.380755614586643,
+              "median_nats": -3.916317985014757,
+              "positive_documents": 2
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -3.139417874319001,
+                -0.5370032637229359
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.7149182639477605,
+              "median_nats": -0.9345724630402401,
+              "positive_documents": 4
+            }
+          }
+        }
+      },
+      "sampling": {
+        "empty_notes": 0,
+        "mean_actions": 188.125,
+        "mean_content_tokens": 187.625,
+        "median_actions": 242.0,
+        "stop_counts": {
+          "length_cap": 8,
+          "token:151643": 8
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q3": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -2.799292807467282
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -2.9782171002589166
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -3.548032606486231
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -4.065086537972093
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -0.7132669985294342
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -2.296974640339613
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -3.1343185622245073
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -2.926928932662122,
+                -1.3812580718658867
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.0860258089378476,
+              "median_nats": -1.7045873031020164,
+              "positive_documents": 1
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -1.467540797428228,
+                0.29004953172989173
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.5023181671276689,
+              "median_nats": -0.2985992431640625,
+              "positive_documents": 7
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -2.2990264450432734,
+                -0.4333215408725666
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.2657937305048108,
+              "median_nats": -0.6642469763755798,
+              "positive_documents": 6
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -2.006321571220178,
+                -0.2617157343891451
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.086869437713176,
+              "median_nats": -0.812709391117096,
+              "positive_documents": 5
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.1508809318183921,
+                0.10760443713515841
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.5170539314858615,
+              "median_nats": -0.48208189010620117,
+              "positive_documents": 4
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -4.9504219930619,
+                -1.9746324615553026
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -3.3518195394426584,
+              "median_nats": -1.9056203812360764,
+              "positive_documents": 2
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -3.4932468375656756,
+                -0.30348522257991245
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.7681118976324797,
+              "median_nats": -1.2990197837352753,
+              "positive_documents": 5
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.8876420252025128,
+                -0.1056734234094621
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.9307679757475853,
+              "median_nats": -0.28612756729125977,
+              "positive_documents": 6
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -28.292411380222624
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -28.895059355069957
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -31.174555277870198
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -33.724328414861276
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -24.505743441732747
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -27.521998339680202
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -32.15463419076586
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -4.77232599053098,
+                -2.859330585921328
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -3.7866679384898783,
+              "median_nats": -3.3229301176033914,
+              "positive_documents": 0
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -2.1552784320413507,
+                0.5401169811110846
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.7704130405424205,
+              "median_nats": 0.0649571850663051,
+              "positive_documents": 9
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -7.313919855381737,
+                -3.3899744540764782
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -5.431917034638649,
+              "median_nats": -6.34875601233216,
+              "positive_documents": 2
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -6.779669537783195,
+                -2.723311240178847
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -4.829269059791316,
+              "median_nats": -4.991711700335145,
+              "positive_documents": 1
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -4.453559615868099,
+                -0.752509786370823
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.5497731369910754,
+              "median_nats": -3.098972949082963,
+              "positive_documents": 3
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -11.662415563131663,
+                -6.523165999823234
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -9.218584973128527,
+              "median_nats": -10.886974775319686,
+              "positive_documents": 1
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -8.921253581844532,
+                -3.5290874414560838
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -6.202330075181069,
+              "median_nats": -6.066572858033396,
+              "positive_documents": 2
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -4.037001246479566,
+                0.7861007164885996
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.5696942240954117,
+              "median_nats": -1.2594802377279848,
+              "positive_documents": 6
+            }
+          }
+        }
+      },
+      "sampling": {
+        "empty_notes": 0,
+        "mean_actions": 203.8125,
+        "mean_content_tokens": 203.5,
+        "median_actions": 256.0,
+        "stop_counts": {
+          "length_cap": 11,
+          "token:151643": 5
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q4": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -4.399796575307846
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -4.907580740749836
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -5.865562655031681
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -6.443313911557198
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -3.0185660421848297
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -4.0690660029649734
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -5.217280887067318
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -2.1284908602014183,
+                -0.6438862800598152
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.3812305331230164,
+              "median_nats": -1.2818928956985474,
+              "positive_documents": 1
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -1.1180414084345103,
+                0.5975872579962008
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.3307305723428726,
+              "median_nats": -0.3201773166656494,
+              "positive_documents": 6
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -2.969368899986148,
+                -1.1093453753739597
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.0435173362493515,
+              "median_nats": -1.7401801347732544,
+              "positive_documents": 3
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -2.5011732440441845,
+                -0.613617178983987
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.5357331708073616,
+              "median_nats": -0.9073066711425781,
+              "positive_documents": 4
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.6545431872829794,
+                0.3864120198413726
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -0.5777512565255165,
+              "median_nats": -0.30565714836120605,
+              "positive_documents": 6
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -4.611701685003936,
+                -2.300285539403558
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -3.424747869372368,
+              "median_nats": -3.4116220474243164,
+              "positive_documents": 1
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -3.738299136981368,
+                -0.8652007691562194
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.374247908592224,
+              "median_nats": -2.547679901123047,
+              "positive_documents": 3
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -2.4809825040400026,
+                -0.2463661815971149
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.2260330244898796,
+              "median_nats": -0.4147801399230957,
+              "positive_documents": 5
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -28.03829732383631
+            },
+            "filler": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -28.461107898026043
+            },
+            "other": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -32.48349681449973
+            },
+            "own": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -33.73892696562394
+            },
+            "raw": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -23.554004631172806
+            },
+            "raw_repeat32": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -26.34303922681314
+            },
+            "shuffled": {
+              "complete_documents": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_log_likelihood": -31.21880743471062
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -6.283724993929332,
+                -2.827409332508832
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -4.484292692663505,
+              "median_nats": -3.796170512388926,
+              "positive_documents": 0
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -2.8208804799097007,
+                -0.5312979325872768
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.6952580970231708,
+              "median_nats": -1.4775510152569495,
+              "positive_documents": 4
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -8.59195600420769,
+                -2.961388286655617
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -5.7006296417876285,
+              "median_nats": -5.339591718686279,
+              "positive_documents": 2
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -7.6986791320681505,
+                -3.042907573526385
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -5.277819067597896,
+              "median_nats": -5.613402105303976,
+              "positive_documents": 2
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -3.910414657789614,
+                1.3265888037374125
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -1.2554301511242087,
+              "median_nats": -0.9018378283362836,
+              "positive_documents": 6
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -12.796605309201567,
+                -7.649254155664924
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -10.184922334451134,
+              "median_nats": -9.584722607396543,
+              "positive_documents": 0
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -10.317020655876675,
+                -4.477881435074224
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -7.395887738810799,
+              "median_nats": -6.933663242503826,
+              "positive_documents": 1
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -4.451937456463185,
+                -0.823048177227857
+              ],
+              "complete_pairs": 16,
+              "expected_documents": 16,
+              "failures": 0,
+              "mean_nats": -2.5201195309133197,
+              "median_nats": -1.4352953657507896,
+              "positive_documents": 6
+            }
+          }
+        }
+      },
+      "sampling": {
+        "empty_notes": 0,
+        "mean_actions": 241.625,
+        "mean_content_tokens": 241.5625,
+        "median_actions": 256.0,
+        "stop_counts": {
+          "length_cap": 15,
+          "token:151643": 1
+        }
+      }
+    },
+    "all": {
+      "documents": 64,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -2.481471639776373
+            },
+            "filler": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -2.6798958681743557
+            },
+            "other": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -3.341735750096632
+            },
+            "own": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -3.8164403665677753
+            },
+            "raw": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -0.9506122276832623
+            },
+            "raw_repeat32": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -2.243053682439495
+            },
+            "shuffled": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -3.0057195031654373
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -1.9531737126217583,
+                -1.1325580710125034
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -1.530859412093111,
+              "median_nats": -0.9258539993315935,
+              "positive_documents": 2
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -0.6215612525396864,
+                0.13718735099333793
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -0.23841795733687832,
+              "median_nats": -0.11797086894512177,
+              "positive_documents": 25
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -1.7863567070559447,
+                -0.9018253750011878
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -1.334968726791402,
+              "median_nats": -0.7319812178611755,
+              "positive_documents": 16
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -1.5898549106059363,
+                -0.7129133315799367
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -1.1365444983934196,
+              "median_nats": -0.6768531203269958,
+              "positive_documents": 18
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -0.8821691022874297,
+                -0.07351331405020081
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -0.4747046164711435,
+              "median_nats": -0.2937283515930176,
+              "positive_documents": 22
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -3.539106453523774,
+                -2.2525746275759295
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -2.8658281388845133,
+              "median_nats": -2.1012431974306764,
+              "positive_documents": 3
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -2.227106074361271,
+                -0.9526700005400928
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -1.5733866841282804,
+              "median_nats": -1.4534883871674538,
+              "positive_documents": 17
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.2720073291507894,
+                -0.3845447624795897
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -0.810720863402338,
+              "median_nats": -0.23887736350297928,
+              "positive_documents": 23
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -22.37338893600133
+            },
+            "filler": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -22.64308029258639
+            },
+            "other": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -25.016887325309398
+            },
+            "own": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -26.937325996409033
+            },
+            "raw": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -18.675722380082366
+            },
+            "raw_repeat32": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -21.95325312842995
+            },
+            "shuffled": {
+              "complete_documents": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_log_likelihood": -25.364995358382163
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -4.860668066079265,
+                -2.738605534081352
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -3.6976665559189654,
+              "median_nats": -2.872530851887859,
+              "positive_documents": 6
+            },
+            "empty_minus_raw_repeat32": {
+              "ci95_nats": [
+                -1.0672341998403432,
+                0.23640987033627486
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -0.42013580757138214,
+              "median_nats": -0.030642680256278254,
+              "positive_documents": 31
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -5.735360852846603,
+                -3.437237419110667
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -4.563937060407701,
+              "median_nats": -3.4647540068472154,
+              "positive_documents": 10
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -5.4146045747806415,
+                -3.230875039209724
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -4.294245703822643,
+              "median_nats": -3.889477275119056,
+              "positive_documents": 10
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -3.0655738031262167,
+                -0.8128647740750424
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -1.9204386710996355,
+              "median_nats": -1.155377290211618,
+              "positive_documents": 20
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -10.095867568813148,
+                -6.640936495120361
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -8.261603616326667,
+              "median_nats": -7.164971946234118,
+              "positive_documents": 3
+            },
+            "own_minus_raw_repeat32": {
+              "ci95_nats": [
+                -6.375294886583575,
+                -3.62771119044748
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -4.9840728679790836,
+              "median_nats": -3.940564126096433,
+              "positive_documents": 10
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -2.5189796780151035,
+                -0.6615545695978668
+              ],
+              "complete_pairs": 64,
+              "expected_documents": 64,
+              "failures": 0,
+              "mean_nats": -1.5723306380268693,
+              "median_nats": -0.6259526994435873,
+              "positive_documents": 21
+            }
+          }
+        }
+      },
+      "sampling": {
+        "empty_notes": 1,
+        "mean_actions": 205.390625,
+        "mean_content_tokens": 205.09375,
+        "median_actions": 256.0,
+        "stop_counts": {
+          "length_cap": 45,
+          "token:151643": 19
+        }
+      }
+    }
+  },
+  "groups_per_prefix": 1,
+  "horizons": [
+    1,
+    16
+  ],
+  "limitations": [
+    "Fixed exploratory DEV64; not official final/test",
+    "G1/cap256 bounded stochastic policy; no oracle",
+    "Batch RNG is explicit and fixed; not equivalent to four sequential item-seeded calls",
+    "Fresh cap256 stochastic notes differ from original cap1024 notes; no causal cap comparison.",
+    "DEV64 excludes the interface DEV32 pilot but still belongs to the already analyzed DEV512 pool; exploratory development, not a sealed final test.",
+    "No oracle, student checkpoint or official final-test result is established here.",
+    "Raw text, labels, IDs, process identities and actual topology remain local/EBS only."
+  ],
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "notes": 64,
+  "protocol_sha256": "fbe7a363a487c6eca2e4eb8918ea7abfcd6cc5cee3d2ffc434e25b11165a4125",
+  "raw_B0_parity": {
+    "bound": 0.002,
+    "items": 64,
+    "max_token_error": 9.059906005859375e-06,
+    "reference": "Original complete B0 DEV512 raw horizon16 vectors; compare every target token",
+    "reference_scores_sha256": "3a2902989f0f2259910ded56d7d989587016929f01bb04845f6f761e993746d1"
+  },
+  "reader": "B0",
+  "schema": "fresh-B0-DEV64-G1-result-v1",
+  "score_rows": 448,
+  "selection_rule": "First16 IDs per frozen B0 surprisal quartile in original fixed DEV512 order, excluding all32 interface-pilot IDs; no fallback",
+  "selection_sha256": "04a231ee3c2cb47124ff3bb7e2dbe6ea42627cc6a848c4e0fbab5c396f8b2b19",
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/warmstart_evaluate.py": "fadd9c469a46c0f9402b01bfb951bd23d26ab18444230163f727a26888eac5f1",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "split": "dev",
+  "status": "complete",
+  "temperature": 0.7,
+  "uncertainty": "5000 paired-document bootstrap draws, seed17, percentile95%; conditional on B0 and fixed exploratory DEV64. One note per document; no best-of selection or training-seed uncertainty.",
+  "writer": "B0"
+}

@@ -1,8 +1,8 @@
 {
-  "time_utc": "2026-10-17T23:11:12.105055+00:00",
+  "time_utc": "2026-10-17T23:39:04.852686+00:00",
   "status": "diagnostics_running_no_training",
   "previous_result": "interface_tax_dev32_20261017.json",
-  "tests": "256 passed + CPU toy smoke; local/checks/tests.uPXJBj",
+  "tests": "317 passed + CPU toy smoke; local/checks/tests.2NxtGc",
   "candidate": {
     "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
     "protocol": "candidate_oracle_dev32_protocol_20261017.json",
@@ -15,7 +15,10 @@
     "cache": 8,
     "deadline_utc": "2026-10-18T00:44:46.913949+00:00",
     "first_group_max_replay_error": 1.0967255e-05,
-    "first_group_replay_check": "passed"
+    "first_group_replay_check": "passed",
+    "status": "complete",
+    "report": "candidate_oracle_dev32_cap256_20261017.json",
+    "failures": 0
   },
   "replay": {
     "protocol_sha256": "7b1f008901b7ddf877fe9747809266fb54c9ef317459f2fd1b51c10fd314ab8d",
@@ -28,7 +31,7 @@
     "comparisons": "full1024 vs shortened padding; signed +/-1 losses and all unique-parameter gradients; compute vs export time separated",
     "deadline_utc": "2026-10-18T00:48:48.339414+00:00",
     "experiment_id": "replay-padding-dev2-runtimefix-v1",
-    "status": "running",
+    "status": "passed",
     "failed_prior_run": {
       "experiment_id": "replay-padding-dev2-v2",
       "status": "runtime_setup_failure_before_first_backward",
@@ -38,7 +41,8 @@
       "source_snapshot_sha256": "351b07ed3efc2775cf8dabb0a8492a0cf9f9d04a92c29523044567ca69dccae3",
       "result_sha256": "7c425cdeeec350f1616e3eb76d26ca4e0c54160616bd48c86f8b5f8af515490c",
       "repair": "Original driver registration, two lines; unchanged cases/settings/criteria"
-    }
+    },
+    "report": "replay_padding_20261017.json"
   },
   "limits": [
     "No optimizer or training in either job",
@@ -92,7 +96,7 @@
   },
   "train_corpus": {
     "experiment_id": "candidate-corpus-train128-g16-v1",
-    "status": "generation_running",
+    "status": "complete",
     "source": "train/candidate_corpus.py",
     "protocol_sha256": "a02a536613846765f30d7ed01ef69a05109698ebcbc3dd23ea64979a37d07f9e",
     "items": 128,
@@ -104,6 +108,45 @@
     "expected_score_contexts": 17024,
     "deadline_utc": "2026-10-18T01:07:20.046411+00:00",
     "future_barrier": "All generation shards complete, global controls/donors before new scoring",
-    "training": false
+    "training": false,
+    "report": "candidate_corpus_train128_20261017.json",
+    "failures": 0,
+    "selected_training_labels": 31,
+    "student_training": false
+  },
+  "prepend_reader": {
+    "status": "complete",
+    "report": "prepend_reader_dev32_20261017.json",
+    "rows": 704,
+    "failures": 0
+  },
+  "fresh_DEV64_B0": {
+    "status": "complete",
+    "report": "warmstart_dev64_B0_20261017.json",
+    "notes": 64,
+    "rows": 448,
+    "failures": 0
+  },
+  "prepend_train_rescore": {
+    "status": "running",
+    "experiment_id": "candidate-prepend-train128-g16-v1",
+    "protocol_sha256": "e19600403a71164f4980d7d4908e39672f32778b1b8d27df28cc6f939f7b8b19",
+    "rows": 8704,
+    "reused_samples": 2048,
+    "new_sampling": 0,
+    "deadline_utc": "2026-10-18T00:36:25.234126+00:00"
+  },
+  "local_teacher": {
+    "status": "download_verified_CPU_preparation_only",
+    "model_id": "Qwen/Qwen3-4B",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "manifest_sha256": "5e90de838673e59d713687fe010143257a71b071beb86a89f287125d7f61e742",
+    "bytes": 8060925157,
+    "hardware_released": false,
+    "conditions": [
+      "prefix_only",
+      "hindsight_TRAIN_future16"
+    ],
+    "B0_unchanged": true
   }
 }

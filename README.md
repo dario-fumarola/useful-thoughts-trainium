@@ -42,8 +42,8 @@ before spending more training compute. The [full B0 audit](validation/local_dev_
 includes all controls, horizons and strata. It has **one candidate per item**;
 K16 means16 future tokens, not a best-of16 thought oracle.
 
-Current small DEV-only work compares header removal and prefix re-anchoring,
-then measures a genuine candidate oracle and actual pipeline stage costs.
+Current work measures reader interfaces, candidate availability on TRAIN/DEV,
+and actual pipeline stage costs.
 Oracle gains will be reported separately from ordinary one-sample utility.
 Official final tests remain on hold. See [current queue](NEXT_STEPS.md).
 
@@ -66,8 +66,8 @@ thoughts or a deployed-policy improvement. The [complete pilot report](validatio
 includes K16, all matched controls and quartiles. [Plot](validation/figures/interface_tax_dev32_20261017.svg).
 All896 scores succeeded; original-format token likelihoods reproduce B0 to
 0.0000382 nats. Original outputs, selected inputs and fixed first4 examples
-are saved in a verified2MB EBS archive. Fresh G16 candidate search and a separate replay-stage profiler are now running;
-[source and declared plan](validation/new_direction_diagnostics_20261017.json).
+are saved in a verified2MB EBS archive. The subsequent G16 search and replay
+profiler are complete; [current diagnostic state](validation/new_direction_diagnostics_20261017.json).
 
 A second [DEV32 reader probe](validation/prompt_interface_dev32_20261017.json)
 found published RLP instruction wording still carries a6.223-nat empty-format
@@ -82,9 +82,30 @@ renormalization changes the original empty penalty by only0.000549 nats.
 
 The [frozen TRAIN scan](validation/anchors_train1024_20261017.json) found237
 high-surprisal anchors among1024 prospectively ordered real FineMath documents;
-the first128 now feed a separate2048-candidate TRAIN search. Training examples
-will come from TRAIN, and any future-based selection will be reported explicitly.
+the first128 fed the completed2048-candidate TRAIN search. Future-based
+training-label selection is reported explicitly.
 No new training improvement has been established.
+
+The [note-before-prefix probe](validation/prepend_reader_dev32_20261017.json)
+provides a cleaner boundary: empty−raw is+.009 nats atK1 and+.032 atK16.
+Original G1 content still hurts over16 future tokens: own−empty−1.783,
+95% paired interval[−3.041,−.740]. This repairs format cost without establishing
+useful thoughts. A separate TRAIN rescore now reuses all2048 saved candidates.
+
+The [genuine DEV32/G16 oracle](validation/candidate_oracle_dev32_cap256_20261017.json)
+is complete. At cap256/reanchor32, ordinary mean16−empty is−1.612 K1;
+future-selected best16 is+.330 [+.051,+.684]. K16 best16 is+.395
+[−.418,+1.289]. All max-own versus max-unrelated/shuffled intervals span zero.
+Oracle selection sees the continuation and does not establish deployed utility.
+The [original TRAIN corpus](validation/candidate_corpus_train128_20261017.json)
+and [fresh DEV64/G1 baseline](validation/warmstart_dev64_B0_20261017.json)
+also remain negative on average. No student has trained under the new direction.
+
+The [full-gradient padding profile](validation/replay_padding_20261017.json)
+preserves reader/signed-loss gradients while reducing isolated real-note warm
+replay from~4.24s to~.46s. This is not measured end-to-end training throughput.
+A separate local Qwen3-4B teacher is being prepared for explicitly disclosed
+prefix-only/hindsight TRAIN supervision; base weights and identities stay separate.
 
 Fixed128-question GSM8K **TRAIN development** results:
 
@@ -119,7 +140,7 @@ conditions, K1/K4/K16, content contrasts and prospective token/surprisal strata.
 One B0-derived membership map is frozen for all later readers. [Execution costs](validation/local_dev_B0_execution_20261017.json)
 and the [verified backup/next release](validation/local_dev_B0_backup_20261017.json)
 retain all outputs and fixed-order examples. This is the starting local baseline;
-trained R results and official test outcomes remain pending.
+the old R/C comparison is incomplete, and official test outcomes remain uninspected.
 
 - Both C runs consumed32,768 unique TRAIN records /16.81M source tokens and exited
   normally. All254 steps3–256 average10.056s (seed1234) and10.030s (seed5678).
