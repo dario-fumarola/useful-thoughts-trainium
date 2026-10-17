@@ -1,0 +1,176 @@
+{
+  "B0_fingerprint": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+  },
+  "CPU_fixture_distinction": "The existing TinyCausalLM future-change test is supporting CPU evidence; this receipt records a distinct actual-B0 accelerator execution, not a replacement or relabeling of that fixture.",
+  "actual_first_future_tokens": {
+    "A": 10,
+    "B": 220
+  },
+  "actual_mapping": {
+    "logical_nc_index": 2,
+    "neuron_device": 0,
+    "physical_NC_pair": [
+      4,
+      5
+    ]
+  },
+  "all32_original_upper_R004_worker_identities_and_allowlisted_environments_unchanged": true,
+  "all_owned_processes_gone": true,
+  "artifacts_sha256": {
+    "local/nvme/qualification/qwen-prefix-only-fp32-001/actual-inputs.pt": "ba4b93ed27186876da493aafa774f1bc6c55d832b582df9813a3ac5ffbe5821e",
+    "local/nvme/qualification/qwen-prefix-only-fp32-001/case-A.pt": "59c006d5a980840e23d3a4aaacae11512ab88b307a54435b22f47057b7d0af55",
+    "local/nvme/qualification/qwen-prefix-only-fp32-001/case-B.pt": "7e56b0fa442568e83cb290f9c96a5be9b7d17cc58af85d6631635e245f59c876",
+    "local/nvme/qualification/qwen-prefix-only-fp32-001/result.json": "46df770b0b79621ed5d2cb9b7d3f4b3f38d047e2d6aa436ef976f0c72f1ce27a",
+    "local/qualification/qwen-prefix-only-fp32-001/execution.json": "6dbab3d96882171b22b1f413b5f79d6d3a62b9e01e4c20346519f4a8368817ab",
+    "local/qualification/qwen-prefix-only-fp32-001/exit.json": "3c1c9f0e8e5179ab634ff47660732a8d0cb11e0f519f744427933e59282901bc",
+    "local/qualification/qwen-prefix-only-fp32-001/inputs.json": "bc7ee440fca7ba874ce18fa7e7cfd9e2d0e7286a956caa7a8a4babbb35e9c983",
+    "local/qualification/qwen-prefix-only-fp32-001/launch.sh": "a8bbd910d3b037e56e259416f21d0f0f8b5cf59c5a06fde1cecc59c2bb582ebc",
+    "local/qualification/qwen-prefix-only-fp32-001/preflight.json": "452679c64d6d07ad5af2d989397c28b8925587b55bd4cad5f2670806112bb10c",
+    "local/qualification/qwen-prefix-only-fp32-001/preflight.py": "3bc1f599e18ebe9ff62378f0217c4c8992226d74e1fdb761c3bdbd138f33cc5b",
+    "local/qualification/qwen-prefix-only-fp32-001/prepared.json": "14be243082c8d51a324706b4e79fbe49391adec6b9dabeb59d8d237d33986256",
+    "local/qualification/qwen-prefix-only-fp32-001/probe.py": "069aa86031da522b9f817a369346fd95b8737c7f1579b72e34d757872053e158",
+    "local/qualification/qwen-prefix-only-fp32-001/release.json": "115b1745196633cb7eb46f08ddfb5eb8c5ce9a3a73f75a7440f2f41769d8d5cb"
+  },
+  "behavior_logps_comparison": {
+    "atol": 1e-07,
+    "max_abs": 0.0,
+    "max_tolerance_fraction": 0.0,
+    "rtol": 1e-06,
+    "violations": 0
+  },
+  "byte_equality_diagnostic": {
+    "action_mask": true,
+    "actions": true,
+    "behavior_logps": true,
+    "lengths": true
+  },
+  "cases": [
+    {
+      "case": "A",
+      "clean_log_evidence": [
+        -0.12897489964962006
+      ],
+      "decode_iterations": 1024,
+      "device_rng_after_reader": 15998078035109183090,
+      "device_rng_after_reset": 1234,
+      "device_rng_after_sample": 17918659120603119661,
+      "lengths": [
+        [
+          1024,
+          160,
+          147,
+          1024
+        ]
+      ],
+      "tape_sha256": "59c006d5a980840e23d3a4aaacae11512ab88b307a54435b22f47057b7d0af55",
+      "thought_log_evidence": [
+        [
+          -7.7370829582214355,
+          -9.153478622436523,
+          -9.146571159362793,
+          -7.359951496124268
+        ]
+      ]
+    },
+    {
+      "case": "B",
+      "clean_log_evidence": [
+        -11.921154022216797
+      ],
+      "decode_iterations": 1024,
+      "device_rng_after_reader": 15998078035109183090,
+      "device_rng_after_reset": 1234,
+      "device_rng_after_sample": 17918659120603119661,
+      "lengths": [
+        [
+          1024,
+          160,
+          147,
+          1024
+        ]
+      ],
+      "tape_sha256": "7e56b0fa442568e83cb290f9c96a5be9b7d17cc58af85d6631635e245f59c876",
+      "thought_log_evidence": [
+        [
+          -4.987297534942627,
+          -5.341848373413086,
+          -5.040646076202393,
+          -4.448719501495361
+        ]
+      ]
+    }
+  ],
+  "checks": {
+    "action_mask": true,
+    "actions": true,
+    "behavior_logps_within_existing_bound": true,
+    "decode_iterations": true,
+    "identical_device_rng_reset": true,
+    "lengths": true
+  },
+  "created_utc": "2026-10-17T02:41:05.210958+00:00",
+  "criteria": {
+    "B0_model_and_RNG_condition": "same immutable released model; actual device seed1234 after pre-reset settlement, with no extra MarkStep/sync before sample",
+    "actions_masks_lengths_decode_metadata": "exact",
+    "actual_prefix_future_readback": "must equal fixed inputs and first scored future token must differ",
+    "behavior_logps_atol": 1e-07,
+    "behavior_logps_rtol": 1e-06,
+    "float_byte_equality": "reported separately, not a gate",
+    "reader_scores": "diagnostic only; no reward or semantic threshold"
+  },
+  "device0_final_allocations_zero": true,
+  "elapsed_seconds": 532.9353192369963,
+  "exit_code": 0,
+  "finished_utc": "2026-10-17T02:39:35+00:00",
+  "first_divergence": null,
+  "fixed_train_record_id": "9c136352c07152dd1538c6172ad9d3ede43314424ec2a07f69d059ae33d95bd7:1451",
+  "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+  "future_enters": "Reader only after each completed prefix-only rollout; sampler receives prefix only",
+  "future_inputs": "Same fixed TRAIN prefix; futureA is original16-token future; futureB changes first scored K1 target10 to220 and keeps remaining15. Actual device readbacks equal frozen inputs.",
+  "hard_deadline_utc": "2026-10-17T03:00:27.908367+00:00",
+  "host_io_policy_sha256": "79233f66f88ee1598fb8a0be0aa60997243a99384880bfa47df1bbe9cf2c056a",
+  "limitations": [
+    "One fixed TRAIN prefix and two explicit futures, with four full-cap samples each; not proof for every possible future or a downstream outcome.",
+    "Reader score differences are retained diagnostically and are not a success threshold.",
+    "Strict distributed stochastic recovery, chosen-host-policy ten warm timings, coexistence and final science freeze remain separate pending requirements."
+  ],
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "no_automatic_retry": true,
+  "no_optimizer_or_gradient_work": true,
+  "post_sample_rng_equal_diagnostic": true,
+  "precision": "fp32, unchanged qualified backend and no autocast",
+  "reader_scores_diagnostic_only": true,
+  "records_sha256": "84eb6dcfe29528dd5de57c43904ba50cfd16da34c65d3068540808ae1bfeb8c1",
+  "requested_logical_core": 0,
+  "rng_sequence": "Wait for all prior device work; capture CPU/prior device RNG; set device seed; get actual device seed (installed getter has no MarkStep); sample unchanged; synchronize; save actual states/tapes. Release rollout refs before second settled reset.",
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": "2",
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "sampling_policy": {
+    "cap": 1024,
+    "device_seed": 1234,
+    "group_size": 4,
+    "temperature": 0.7
+  },
+  "schema": 1,
+  "scope": "Original named accelerator future-perturbation invariant; engineering qualification only",
+  "single_process": true,
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "started_utc": "2026-10-17T02:30:42+00:00",
+  "status": "PASS"
+}

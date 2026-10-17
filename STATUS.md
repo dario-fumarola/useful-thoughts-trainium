@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 02:39 UTC
+# Current state — 2026-10-17 02:41 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -94,8 +94,11 @@ cache stays EBS device66305. Separately bound host I/O policy SHA
 
 **R004 latest complete update3 at 02:37:36 UTC**, 897.506 seconds.
 Norm47.89022, sampled FP32 changed fraction .98256046, sampled replicas bitwise
-equal; replay error .00004542. COMPLETE checkpoint3 is published; its bounded
-CPU state inspection and verified EBS copy are pending. Next ordinary checkpoint4.
+equal; replay error .00004542. COMPLETE checkpoint3 is published and its CPU
+state inspection passes all310 model tensors/all9,920 initialized FP32 masters
+and moment sets, with exact master slices and Adam step3. The verified EBS copy
+is in progress. Save directory→COMPLETE took49.368s (separate from step elapsed).
+Next ordinary checkpoint4.
 Median/P90 of ten steady updates remain pending. Update2 took1,501.217 seconds
 including stateful optimizer cold compilation. Update1 passed at01:57:33 in1,093.263s,
 including shared cold work: its
@@ -172,16 +175,17 @@ all raw gains negative on this prefix. The initial full128-prefix batch's mean
 gain is also negative. Preserve these observations; neither is a downstream
 result or an outcome-based stop condition.
 
-**Data owns active original prefix-only check**, one lower logical core0.
-Launcher1032724, timeout/PGID1032802, probe1032804, monitor timeout1032801/worker
-1032803; identities in `local/qualification/qwen-prefix-only-fp32-001/`.
-Reviewed prep14be2430…, root release115b1745…; launched02:30:40 after fresh
-lower-free preflight. Deadline **03:00:27.908367 UTC** plus15s grace. Source
-common3aa/244…, actualB0, G4/cap1024/FP32/T.7, no gradients/optimizer; two
-actual future inputs differ at K1 while model/device RNG stay fixed. This closes
-one original missing accelerator counterfactual; no new oracle. Private RAM
-TMPDIR, NVMe output/observations, unchanged EBS cache. Upper R00432 identities
-remain unchanged. No automatic retry; data owns finite cleanup/results.
+**Original prefix-only accelerator check PASS**, common source3aa/244…,
+actualB0, G4/cap1024/FP32/T.7 on one lower logical core. Changing the actual
+K1 target10→220 with the same prefix/model/device RNG produces identical actions,
+masks, lengths, decode metadata and behavior log probabilities (max difference0,
+original1e-7+1e-6 bound). Lengths1024/160/147/1024, two EOS/two caps.
+Reader-score differences remain diagnostic only. Finished02:39:35, elapsed532.94s,
+exit0; all owned processes/timeout groups gone and device0 allocations zero.
+All32 original upper R004 identities/environments stayed unchanged. Raw tapes,
+inputs and report remain on NVMe. Public receipt:
+`validation/prefix_only_fp32_20261017.json`. The original CPU fixture is separately
+retained; this one-prefix device counterfactual is not a downstream result.
 
 **Fixed held development prepared/reviewed, no models scored:**128 deterministic
 GSM8K TRAIN items, all11 past demonstration/interface questions excluded by ID
