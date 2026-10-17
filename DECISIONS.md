@@ -213,3 +213,24 @@ Routine formatting changes do not need a decision entry.
   its artifacts and finish a complete optimizer boundary before any cooperative
   stop. New full-update, steady timing and recovery evidence remain required.
   See `validation/r_warm_cache_io_20261017.json`.
+
+## 2026-10-17 — first R update and conditional RAM host qualification
+
+- R003 and R004 complete the same first update with identical numerical metrics;
+  all128 rollout tape pairs are byte-identical. R003 cooperatively saves/exit0.
+  All serialized model/master/moment state passes inspection; original and EBS
+  backup payloads are independently rehashed. Retire its obsolete terminal14
+  watcher after verification. Preserve the initial negative mean gain.
+- R004 continues through14 for actual steady timing/checkpoints. Its first-step
+  time includes programs compiled by R003; core placement and raw-log placement
+  also differ. Neither startup time nor partial I/O implies a steady speedup.
+- Existing RAM comfortably accommodates temporary NEFF copies. Prepare the
+  required upper checkpoint3→4 recovery with a separately bound private RAM
+  TMPDIR and the original precreated STOP. Keep every exact restoration/tape/RNG
+  and tight update criterion. A longer continuation cannot replace this proof.
+- Prepare a lower fresh-B0 seed5678/max14 RAM job for coexistence and ten warm
+  timings. Same source, recipe and persistent EBS cache; raw logs/checkpoints stay
+  on NVMe. Three upper/seven lower host fixtures and independent review pass.
+  No launch until R004 completes, actual topology is free, and a finite root
+  release binds concrete input/fork/readiness receipts. No new numerical oracle.
+  Select science host policy and exposure from actual measurements.

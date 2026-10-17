@@ -1,0 +1,143 @@
+{
+  "created_utc": "2026-10-17T02:05:36+00:00",
+  "first_update_numeric_metrics_identical_across_configurations": true,
+  "limitations": [
+    "First-step times include cold compilation/cache work; R004 reused optimizer programs compiled by R003. They are not steady-state speed estimates or an isolated storage causal estimate.",
+    "The fixed starting-policy batch has negative mean thought gain; preserve this observation. No downstream efficacy inference is made.",
+    "Serialized optimizer-state inspection tests structural/export consistency, not a new independent Adam or policy-gradient oracle.",
+    "Fresh-process stochastic recovery, ten steady timings and two-R coexistence remain pending.",
+    "EBS backup is on the same instance, not external storage."
+  ],
+  "r003": {
+    "all_workers_gone": true,
+    "backup": {
+      "backup_receipt_sha256": "5938bc8ab3e89573acae23b0f7869e9c27dc57ab3c2d42e2dbcad99663c0bcca",
+      "destination": "/home/ubuntu/dario/local/backups/qwen-r-fp32-final-003/step-0000001",
+      "destination_device": 66305,
+      "external_backup": false,
+      "identical_complete_manifest": true,
+      "manifest_sha256": "e563c4c2a6d4fa8c520afc74f9fd8839d1776920d27d09eda4a68cda2b02d966",
+      "payload_bytes": 27542553199,
+      "payload_files": 33,
+      "source": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-final-003/step-0000001",
+      "source_and_backup_all_files_rehashed": true,
+      "source_device": 66310,
+      "status": "PASS",
+      "verified_utc": "2026-10-17T02:04:12+00:00"
+    },
+    "backup_verification_sha256": "76e0076bff35216a96a674552b447cafc2abc2caa9c99eb368626ed1638c38e0",
+    "checkpoint": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-final-003/step-0000001",
+    "driver_exit": {
+      "XLA_COMPILATION_CACHE_SIZE": "2",
+      "driver_exit_code": 0,
+      "source_commit": "3aaaf8a"
+    },
+    "metric": {
+      "arm": "thought",
+      "counters": {
+        "sampled_actions": 269518,
+        "source_records": 128,
+        "source_tokens": 65664
+      },
+      "elapsed_seconds": 11113.461953609996,
+      "gradient_norm": 37.1866569519043,
+      "max_replay_logp_error": 5.5789947509765625e-05,
+      "metrics": {
+        "abs_advantage": 1.8969218730926514,
+        "actions": 269518.0,
+        "capped": 0.357421875,
+        "clean": -1.236146330833435,
+        "gain": -9.659700393676758,
+        "loss": 0.214664027094841,
+        "mean_signed_length": -83.83901977539062,
+        "padded_decode_slots": 420736.0,
+        "thought": -10.89584732055664
+      },
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_changed_fraction": 0.9895161390304565,
+        "sampled_elements": 9920,
+        "sampled_replicas_bitwise_equal": true,
+        "sampled_update_l2": 0.00010385487985331565
+      },
+      "status": "qualification",
+      "step": 1,
+      "time_utc": "2026-10-17T01:57:26+00:00"
+    },
+    "metrics_sha256": "a6ab0384f286d8d17a52cda93d9358fa26edf4d08a88a03fc920a545d4c6dae1",
+    "obsolete_terminal14_watcher_retired": true,
+    "output": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-final-003",
+    "serialized_state_inspection": {
+      "all_32_ranks_pass": true,
+      "all_masters_and_moments_finite_fp32": true,
+      "all_valid_master_slices_equal_saved_model": true,
+      "exact_adam_step_one_count": 9920,
+      "fresh_process_resume_qualified": false,
+      "harness_correction": "v1 expected a list for serialized Adam betas; installed Adam serializes the unchanged (0.9,0.95) tuple. Original v1 FAIL preserved.",
+      "initialized_first_moment_tensors": 9920,
+      "initialized_master_tensors": 9920,
+      "initialized_second_moment_tensors": 9920,
+      "inspection_helper_sha256": "03a5c61e6fd030168e566061c63820d68b1373c5cbaab433815e91e4eeb79fb6",
+      "inspection_result_path": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003.checkpoint_inspection_v2.json",
+      "inspection_result_sha256": "bae9cd2eda0e76762d56f288b64ce6886417cdc6423eab41c39dd075f8cbab17",
+      "model": {
+        "all_finite": true,
+        "all_fp32": true,
+        "all_shapes_match_released_asset_metadata": true,
+        "embedding_head_exact_tie_and_shared_storage": true,
+        "unique_parameter_values": 1720574976,
+        "unique_parameters": 310
+      },
+      "new_optimizer_oracle": false,
+      "original_recipe_counters_lineage_match": true,
+      "scope": "All serialized model/master/moment values, shapes and completed-step metadata; no independent optimizer oracle or resume claim",
+      "second_moments_nonnegative": true
+    }
+  },
+  "r004": {
+    "continues_to_step14": true,
+    "first_metric": {
+      "arm": "thought",
+      "counters": {
+        "sampled_actions": 269518,
+        "source_records": 128,
+        "source_tokens": 65664
+      },
+      "elapsed_seconds": 1093.2626691149999,
+      "gradient_norm": 37.1866569519043,
+      "max_replay_logp_error": 5.5789947509765625e-05,
+      "metrics": {
+        "abs_advantage": 1.8969218730926514,
+        "actions": 269518.0,
+        "capped": 0.357421875,
+        "clean": -1.236146330833435,
+        "gain": -9.659700393676758,
+        "loss": 0.214664027094841,
+        "mean_signed_length": -83.83901977539062,
+        "padded_decode_slots": 420736.0,
+        "thought": -10.89584732055664
+      },
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_changed_fraction": 0.9895161390304565,
+        "sampled_elements": 9920,
+        "sampled_replicas_bitwise_equal": true,
+        "sampled_update_l2": 0.00010385487985331565
+      },
+      "status": "qualification",
+      "step": 1,
+      "time_utc": "2026-10-17T01:57:33+00:00"
+    },
+    "first_optimizer_cache_lineage_receipt": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/initial-optimizer-cache-observation.json",
+    "first_optimizer_cache_lineage_sha256": "48710dbd6aa8c7df2c62ae27ab907b74321501394184f8bad89fb4f280b08427",
+    "output": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004",
+    "serialized_checkpoint_state_pending": true
+  },
+  "schema": "R32-first-complete-update-v1",
+  "scope": "Real Qwen/FineMath engineering qualification, not a scientific C/R efficacy result.",
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac",
+  "status": "FIRST_UPDATE_AND_R003_DURABLE_SAVE_PASS",
+  "stochastic_tape_parity_receipt": "validation/r_host_io_tape_parity_20261017.json"
+}

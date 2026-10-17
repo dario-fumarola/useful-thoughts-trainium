@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 01:57 UTC
+# Current state — 2026-10-17 02:06 UTC
 
 Real-asset Trainium qualification; **no scientific C/R pair has launched**.
 Public repo: https://github.com/dario-fumarola/useful-thoughts-trainium . Work is
@@ -70,128 +70,92 @@ fixtures/source review pass. Independent outcome audit passes, including all
 
 ## Active work and process ownership
 
-**Data agent: R32 qualification attempt 003**, lower logical cores 0–31.
-Launcher 779314, timeout/PGID 779372, driver 779374, 32 workers 779498–779532.
-Started 22:51:17 UTC; hard deadline **2026-10-17 06:51:17 UTC** plus 30s grace.
+**Distributed owns active R004**, upper logical cores 32–63.
+Launcher 871318, timeout/PGID 871404, driver 871406; all 32 worker identities in
+`local/qualification/qwen-r-fp32-nvme-tmp-004/{processes,rank-processes}.json`.
 Source `3aaaf8a18baeccb8d1a543d348a53f6863599114`, active code hash
 `244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7`.
-World 32 / global batch 128 / accumulation 4, G4, cap 1024, FP32, seed 1234, XLA executable LRU 2.
-Host store 127.0.0.1:64231; Neuron root 127.0.0.1:64194. Prior attempt 002 failed
-before loading because the default host-store port collided with C; its failure
-and bounded cleanup are preserved. Attempt 003 has loaded actual weights and
-started update 1. Its first backward graph compiled at 23:48:39 UTC after
-43 minutes. All 32 ranks have since completed the first backward with zero
-recorded execution failures and hold gradient-bearing tensors. First backward
-bank allocation was about 19.78 GiB. The next scalar loss passed at 23:54:13.
-First accumulated backward `MODULE_7801530274365426598` compiled at 00:10:50
-and executed successfully on all 32 workers by 00:14:12: every success counter
-increased by one, with zero failure increments. All main banks fell to about
-16.52 GiB, consistent with the compiled gradient-buffer aliasing. Third-thought
-backward `MODULE_922332460170596362` compiled at 00:32:51 and passed on all ranks.
-Fourth-thought backward `MODULE_4430468595289365099` compiled at 00:54:18.
-All 32 micro-0 tapes now exist, written after each rank's four synchronized
-backwards. Later-micro g0 accumulation `MODULE_16022798442968481532` compiled at
-01:15:08 and executed on all 32 workers by 01:19:06, with zero failure increments.
-The current bank maximum is about 16.52 GiB. Subsequent sampling, scalar losses
-and thought-slot backwards are reusing cached executables; no compiler is active
-at the latest observation. Complete micro coverage, initialized optimizer state
-and a full update remain pending. Existing logs will distinguish program load,
-execution and rank skew once complete warm-step timings exist. Replay audit runs
-only at micro 0; later micros skip that audit.
-All 128 first-step tapes now exist. At 01:51:26 all 32 workers owned distinct
-cold optimizer compile launchers; current banks dropped to about 6.73 GiB.
-Transient CCOM RX retries occurred while ranks converged on the collective;
-no execution failure is recorded. **No complete R optimizer update yet.**
-Separate sysfs memory sampling is read-only.
+World32 / global128 / accum4, G4/cap1024/FP32/seed1234/LRU2, max14.
+Spec `92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac`.
+Ports 64301/64302; hard deadline **2026-10-17 09:38:07 UTC** plus 30s grace.
+Reviewed prepared SHA `49c770b7…b9fec9a`, root release `cb29f2b8…048315a3`;
+actual preflight passed 01:38:30. Output:
+`local/nvme/qualification/qwen-r-fp32-nvme-tmp-004`; raw logs/monitor in adjacent
+`qwen-r-fp32-nvme-tmp-004-observation`. TMPDIR:
+`local/nvme/tmp/qwen-r-fp32-nvme-tmp-004`, NVMe device66310; persistent compiler
+cache stays EBS device66305. Separately bound host I/O policy SHA
+`9d2e1f20f3f38cb30ce41a80f4c3b453f44c4471aed15b382a84a2d8dd8cfb21`.
 
-Read-only performance attribution found substantial EBS temporary-program I/O:
-32 workers net-wrote 3.914 GB over 30.10 seconds, while EBS wrote 3.948 GB at
-125.07 MiB/s and no physical reads. Open worker files were `/tmp/tmp*/model.neff`;
-existing kernel latencies are brief. Receipt:
-`validation/r_warm_cache_io_20261017.json`. Distributed prepared
-`qwen-r-fp32-nvme-tmp-004`, upper partition, with the same numerical identity and
-NVMe TMPDIR/raw logs. This configuration is now running; no complete-step speedup
-is measured yet. Its physical placement and monitoring output also differ from
-R003, so do not claim a perfectly isolated TMPDIR causal comparison.
+**R004 first full update passed at 01:57:33 UTC**, 1,093.263 seconds including
+cold shared-cache work. Norm37.18666, sampled FP32 changed fraction .9895161,
+sampled replicas bitwise equal; replay error .00005579. All 32 rank-specific
+optimizer cache hits match actual R003 compilation completions. Update2 began
+01:57:37. Warm-step times and ordinary checkpoint3 state remain pending;
+distributed prepared a reviewed CPU-only state inspection for that checkpoint.
+Transient CCOM RX retries during rank convergence cleared into the successful
+update. No recorded device execution failure. No steady-speed claim yet.
 
-**Distributed agent: active R004.** Reviewed preparation SHA
-`49c770b7700c070fec3bf7b968dd333ee81e1b5393fb74a4656bbb432b9fec9a`;
-root release SHA `cb29f2b8c1cf83ffd8433d3a6f0afee160f2cda1d13f1a4b3a0b1f4e048315a3`.
-Fresh preflight passed at 01:38:30 UTC. Launcher 871318, timeout/PGID 871404,
-driver 871406, all 32 workers on logical cores 32–63; exact identities in
-`local/qualification/qwen-r-fp32-nvme-tmp-004/{processes,rank-processes}.json`.
-Same spec `92f866c8…`, source `3aaaf8a` / code hash `244e2f13…`, seed1234,
-G4/cap1024/global128/accum4/FP32/LRU2, max14. Ports 64301/64302.
-Deadline **2026-10-17 09:38:07 UTC** plus 30s grace.
-Output `local/nvme/qualification/qwen-r-fp32-nvme-tmp-004`;
-raw logs/monitor in adjacent `qwen-r-fp32-nvme-tmp-004-observation`.
-TMPDIR is `local/nvme/tmp/qwen-r-fp32-nvme-tmp-004`, NVMe device 66310;
-persistent compiler cache remains EBS device 66305. Host I/O policy SHA
-`9d2e1f20f3f38cb30ce41a80f4c3b453f44c4471aed15b382a84a2d8dd8cfb21`
-is separately bound. Actual run spec/runtime/environment match the preparation;
-All 128 first-step tapes exist by 01:55:12; the optimizer boundary is pending.
-Three transient CCOM RX retries were preserved while ranks converged; no fatal
-error is recorded. No complete update yet.
-Root owns its active backup supervisor: launcher 897722, timeout/PGID 897725,
-Python 897726, starts 3586343/3586344, tmux `dario-r-nvme-tmp004-backup`.
-Same deadline; state in R004 control directory, events/logs in its NVMe observation
-directory. Stop that watcher if R004 fails or stops before terminal backup.
+**Root owns active R004 backup supervisor:** launcher897722, timeout/PGID897725,
+Python897726; startticks3586343/3586344; tmux `dario-r-nvme-tmp004-backup`.
+Same deadline. State/control in R004 qualification directory, events/logs in its
+NVMe observation directory. Destination `local/backups/qwen-r-fp32-nvme-tmp-004`;
+retains two verified EBS copies, preserving every NVMe original. Stop the watcher
+if R004 fails or stops before terminal backup.
 
-**R003 cooperative stop requested at 01:40:24 UTC**, after R004's actual all-rank
-initialization/spec/host-I/O verification. All 96 micro-0/1/2 tapes exist; current
-update's micro 3 continues. No signal was sent. It will finish the full optimizer
-boundary, save and exit; reason is measured host I/O, not reward/numerical failure.
-Receipt `local/qualification/qwen-r-fp32-final-003.cooperative-stop-request.json`.
-Data monitors this completion; root will verify its checkpoint backup, then stop
-the waiting terminal14 backup supervisor. Preserve every artifact.
+**R003 completed one full update, cooperatively saved and exited0 by 01:59:02.**
+All workers, launcher and monitor are gone. STOP was requested at01:40:24 for
+measured EBS host-I/O cost; no driver signal was sent. Its update metrics match
+R004 exactly except elapsed/time. All 310 model tensors and 32×310 FP32 masters
+and moments pass serialized-state checks; all 9,920 Adam steps equal1, and every
+valid master slice equals the saved model. Original:
+`local/nvme/qualification/qwen-r-fp32-final-003/step-0000001`.
+Root rehashed all33 payload files at both original and EBS backup, identical
+COMPLETE `e563c4c2…2d966`, total27,542,553,199bytes. Verified copy:
+`local/backups/qwen-r-fp32-final-003/step-0000001`.
+After verification, root retired its obsolete terminal14 watcher by identity-
+checked SIGTERM; launcher849074/timeout849075/Python849077 are all gone. Expected
+watcher exit1 reflects explicit retirement, not driver/checkpoint failure.
+State and verification: `local/qualification/qwen-r-fp32-final-003.backup-*`.
+Public receipt: `validation/r_fp32_first_update_20261017.json`.
 
-The fixed step-1/rank-0/micro-0 TRAIN example is saved in full as
-`local/qualification/qwen-r-fp32-final-003.step1-rank0-micro0.example.{json,txt}`,
-cross-checked against its binary tape without errors. All four notes are retained:
-lengths 342/1024/146/298, three EOS stops and one cap. For this single prefix,
-target `+`, raw logp is −.12897 and thought logps range from −6.92639 to −10.05456;
-all raw gains are negative and signed LOO advantages have both signs. This is
-untrained starting behavior on one TRAIN example, not an efficacy estimate.
+**Host-I/O diagnosis and stochastic parity:** EBS temporary NEFF copies sustained
+125.07MiB/s (3.948GB/30.10s); open worker destinations were `/tmp/tmp*/model.neff`.
+NVMe placement is now actually observed. All128 first-step R003/R004 tape pairs
+pass original exact metadata/actions/masks and1e-7+1e-6 float bounds; every tensor
+payload is also byte-identical. Root reverified all256 hashes. These are
+engineering observations, not a perfectly isolated TMPDIR performance estimate
+or full-state recovery. Receipts: `validation/r_warm_cache_io_20261017.json` and
+`validation/r_host_io_tape_parity_20261017.json`.
 
-Output: `local/nvme/qualification/qwen-r-fp32-final-003`.
-Receipts/logs: `local/qualification/qwen-r-fp32-final-003*`.
-Root owns the active EBS backup supervisor: launcher 849074, timeout/PGID 849075,
-Python 849077, tmux `dario-r-final003-backup`, same 06:51:17 UTC deadline.
-It awaits the first COMPLETE checkpoint and retains two verified EBS copies in
-`local/backups/qwen-r-fp32-final-003`; source NVMe checkpoints remain untouched.
-State: `local/qualification/qwen-r-fp32-final-003.backup-supervisor.state.json`.
-Stop this waiting supervisor if the original driver fails or stops early.
-The original R003 checkpoint3 resume preparation remains unlaunched and cannot
-satisfy its terminal14 guard after this cooperative stop. Rebind recovery to R004:
-export actual restored state before sampling, then exactly update4 with STOP
-precreated; compare all 32×4 tapes and full post-update checkpoint. Require ten
-complete steady updates before exposure selection.
-The original upper one-update R overlap smoke is preserved, not launched:
-`local/qualification/qwen-r-fp32-upper-overlap-001/prepared.json`, SHA
-`dee151f1af85b76f86eb64ebb49c293d796463466e0c801a94e682a8db1d18f4`.
-It binds actual lower fork/checkpoint 3/STOP readiness, source/settings and fresh
-root release; separate host/Neuron ports 64251/64252, upper cores 32–63.
-Its R003-terminal14 guard will not be satisfied after the cooperative stop.
-Do not launch it. After R004 completes, rebind fresh upper R004 recovery and
-lower NVMe coexistence under new reviewed identities; preserve these old bytes.
+**Conditional RAM preparations, independently reviewed, unlaunched:**
+upper `local/qualification/qwen-r-fp32-ram-resume-004/prepared.json`, SHA
+`304c76caf53ea56c98774db686a9c90cc9bdeac97dabd7f3508c4a3bd6a32e9a`,
+retains original criteria `5558cf95…8a00a4`, exact restored state and strict
+checkpoint3→4 with STOP precreated. No fork/STOP/release exists yet. Source is
+R004's immutable archive; ports64321/64322, upper partition, same spec/run basename.
+Lower `local/qualification/qwen-r-fp32-ram-tmp-005/prepared.json`, SHA
+`96068a0dd96489aa53c6bb05e86cb6f32dcd9fb5ab86e3a90217159a76cc9241`,
+is fresh B0 seed5678/max14, lower partition, ports64331/64332. It can provide
+RAM warm timings alongside two-R coexistence. Seven lower/three upper guard
+fixtures and actual host static probes pass. Shared host helper SHA
+`4117b0a04ea7149eac4c6df47bd84dc19bd655e7f38709a28f8614a8106f6b0e`.
+Both keep checkpoints/raw logs on NVMe and the existing compiler cache on EBS;
+private0700 TMPDIRs under `/dev/shm/dario`, filesystem26. Observed available RAM
+exceeds1.2TiB; largest64 temporary NEFF copies total24.23GiB. Launch guards require
+128GiB actual MemAvailable and64GiB tmpfs free. Host policies are separately bound.
+Upper requires completed R00414/exit/all64free and a fresh root release binding
+fork/exit/COMPLETE14. Lower additionally requires actual mapped upper32-worker
+restored3 readiness plus immutable STOP and lower-free topology. No RAM speed
+claim; final science policy follows measurements. Do not launch original R003
+resume or old `qwen-r-fp32-upper-overlap-001`: their terminal14 guards cannot pass.
+Preserve their original bytes.
 
-**Same-seed host-configuration tape parity PASS at 01:55:31 UTC.** All 128
-R003/R004 pairs pass exact actions/masks/record/decode metadata and the existing
-1e-7 + 1e-6 floating criterion. Every tensor payload is also raw-byte identical.
-Each original was validated against its own run before normalizing only run_id
-in memory. Root reverified all 256 tape hashes, bound inputs and coverage. This
-does not compare optimizer/checkpoint state or establish training efficacy.
-Public receipt: `validation/r_host_io_tape_parity_20261017.json`.
-
-**Conditional RAM host-I/O preparation, not launched:** existing `/dev/shm` has
-about 1000 GiB free and observed MemAvailable exceeds 900 GiB. Sixty-four copies
-of the largest cached NEFF total about 24.23 GiB. Root is preparing the required
-upper R004 checkpoint3→4 recovery with a private RAM TMPDIR and unchanged STOP;
-review is preparing a lower fresh seed5678/max14 RAM timing/coexistence job.
-Both keep checkpoints/raw logs on NVMe and the existing EBS compiler cache.
-They require completed R004, original workers gone, independent review and fresh
-root release. Host storage policy is bound separately. No RAM speed claim or
-new numerical criterion; final science policy remains unset until measurements.
+All four fixed step1/rank0/micro0 TRAIN notes are saved in full at
+`local/qualification/qwen-r-fp32-final-003.step1-rank0-micro0.example.{json,txt}`
+and checked against the tape. Lengths342/1024/146/298, three EOS/one cap;
+all raw gains negative on this prefix. The initial full128-prefix batch's mean
+gain is also negative. Preserve these observations; neither is a downstream
+result or an outcome-based stop condition.
 
 **Held-seed jobs complete:** C32 update/COMPLETE and FP64 full derivative both
 exited 0; comparator exited 0/PASS. All upper-core workers and supervisors are
@@ -209,20 +173,20 @@ Terminal exposure and finite launch deadline remain unset until R qualification.
 ## Immediate commands and remaining work
 
 ```bash
-python3 local/qualification/qwen-r-fp32-final-003.status.py
-cat local/qualification/qwen-c-heldseed-001/comparison.result.json
+tail -1 local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/metrics.jsonl
+cat local/qualification/qwen-r-fp32-nvme-tmp-004/backup-supervisor.state.json
 ```
 
-Complete distributed R004 update/resume/timing and R003's cooperative save.
-Overlap the required upper R004 resume with one bounded lower NVMe R update to qualify
-two-R coexistence. Prefer parallel seed chains C1→R1 and C2→R2 on the existing
+Complete distributed R004 timing/checkpoints/exit, then the reviewed strict upper
+RAM recovery and lower fresh RAM timing/coexistence qualification. Preserve the
+strict STOP-at-4 proof. Final host-I/O policy requires actual measurements. Prefer parallel seed chains C1→R1 and C2→R2 on the existing
 32-core partitions; ideal world 64 saves no study time against that schedule.
 Freeze terminal exposure from measured complete-step costs and fresh-data supply before any final test access. Save
 all failures, examples and outputs; no outcome-based terminal selection.
 
 Large artifacts remain ignored under `local/`. One verified unused NVMe is
 mounted at `local/nvme`; the other three SSDs are untouched. Latest space:
-EBS 346.7 GiB free, NVMe 1.3 TiB free. An obsolete EBS C duplicate was retired
+EBS about323 GiB free after R003 backup, NVMe 1.3 TiB free. An obsolete EBS C duplicate was retired
 after full verification of its preserved NVMe original; receipt:
 `local/qualification/ebs-retirement-c-fe-20261017.json`. The science backup queue
 will serialize copies across runs; its six host fixtures and independent TERM

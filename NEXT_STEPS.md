@@ -2,13 +2,14 @@
 
 Mark complete only from actual artifacts. Active jobs and commands are in STATUS.md.
 
-1. Complete R32 NVMe-host-I/O qualification004 on common source3aaaf8a. Watch
-   actual full updates and require ten complete steady steps. R003 has a regular
-   cooperative STOP: finish its current full update/save and preserve the EBS-I/O
-   evidence. Stop its backup watcher after the saved checkpoint is verified.
+1. Complete R32 NVMe-host-I/O qualification004 on common source3aaaf8a. First
+   full update passes; require ten complete steady steps and ordinary checkpoints.
+   R003 saved/exit0, all state checks and EBS byte verification pass, obsolete
+   watcher stopped. Preserve its original evidence.
 2. Rebind the preserved resume preparation to completed R004 checkpoint3, keeping
    its upper partition, for exactly update4 with STOP precreated. A conditional
-   private RAM TMPDIR preparation binds that host policy separately; no launch yet.
+   private RAM TMPDIR preparation binds that host policy separately; independent
+   review/static checks pass, no launch yet.
    Require raw-byte
    exact actual restored state/RNG, exact first resumed stochastic tapes and
    original tight full-state post-update tolerances. C32 recovery already passes.
