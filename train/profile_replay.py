@@ -219,6 +219,8 @@ def run(args):
         tempdir=Path(tempfile.gettempdir()).resolve()
         report["host_io"] = dict(effective_tempdir=str(tempdir), tempdir_device=tempdir.stat().st_dev,
                                   compiler_cache_url=os.environ.get("NEURON_COMPILE_CACHE_URL"))
+        if not hasattr(torch, 'xla'):
+            torch._register_device_module('xla', torch_xla)
         model, tok = load_base(Path(protocol["model_dir"]))
         device = torch_xla.device(); model.to(device); model.tie_weights(); model.eval()
         if any(p.dtype != torch.float32 for p in model.parameters()):

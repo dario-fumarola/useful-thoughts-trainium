@@ -1,8 +1,8 @@
 {
-  "time_utc": "2026-10-17T22:46:16.682292+00:00",
+  "time_utc": "2026-10-17T22:55:47.846581+00:00",
   "status": "diagnostics_running_no_training",
   "previous_result": "interface_tax_dev32_20261017.json",
-  "tests": "243 passed + toy smoke; local/checks/tests.wgZ4D7",
+  "tests": "249 passed + CPU toy smoke; local/checks/tests.dVY2a0",
   "candidate": {
     "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
     "protocol": "candidate_oracle_dev32_protocol_20261017.json",
@@ -13,18 +13,32 @@
     "candidates": 512,
     "score_contexts": 4256,
     "cache": 8,
-    "deadline_utc": "2026-10-18T00:44:46.913949+00:00"
+    "deadline_utc": "2026-10-18T00:44:46.913949+00:00",
+    "first_group_max_replay_error": 1.0967255e-05,
+    "first_group_replay_check": "passed"
   },
   "replay": {
-    "protocol_sha256": "704e559001a1a47e443cb79b3b1af27bb27ba44dcb0b2d4452bedf45dd9f4c3d",
+    "protocol_sha256": "7b1f008901b7ddf877fe9747809266fb54c9ef317459f2fd1b51c10fd314ab8d",
     "source": "train/profile_replay.py",
-    "source_sha256": "fcf03a7391646cdeebf52ba07e14656f44eebf1f36bd77827d8c9e4180698851",
+    "source_sha256": "a8a492ae8a7728031551f00db563ce54326669a40326c78b7596efd8d496adef",
     "core": 0,
     "physical_device": 0,
     "cache": 2,
     "cases": "First frozen DEV prefix with an empty stop, plus first naturally stopped short B0 note (89 actions)",
     "comparisons": "full1024 vs shortened padding; signed +/-1 losses and all unique-parameter gradients; compute vs export time separated",
-    "deadline_utc": "2026-10-18T00:40:00.017549+00:00"
+    "deadline_utc": "2026-10-18T00:48:48.339414+00:00",
+    "experiment_id": "replay-padding-dev2-runtimefix-v1",
+    "status": "running",
+    "failed_prior_run": {
+      "experiment_id": "replay-padding-dev2-v2",
+      "status": "runtime_setup_failure_before_first_backward",
+      "error": "Standalone helper omitted XLA device-module registration already used by training driver",
+      "numerical_gradient_result": null,
+      "outputs_retained": true,
+      "source_snapshot_sha256": "351b07ed3efc2775cf8dabb0a8492a0cf9f9d04a92c29523044567ca69dccae3",
+      "result_sha256": "7c425cdeeec350f1616e3eb76d26ca4e0c54160616bd48c86f8b5f8af515490c",
+      "repair": "Original driver registration, two lines; unchanged cases/settings/criteria"
+    }
   },
   "limits": [
     "No optimizer or training in either job",
@@ -32,5 +46,29 @@
     "Right-truncation removes padding, preserving active actions and sampled terminator",
     "No official final outcomes; development only",
     "Isolated stage timing is not distributed throughput"
-  ]
+  ],
+  "train_anchor_scan": {
+    "experiment_id": "anchors-train1024-v1",
+    "status": "running",
+    "core": 4,
+    "physical_device": 1,
+    "source": "train/anchor_scan.py",
+    "source_sha256": "078d82b23f5d1aead7832dd9678494bd73e7356a5e9c8b73215d3a29acc9e122",
+    "protocol_sha256": "da8e82ff263630ef830f57ff378fce3e3a9b353376c0f55f255f0cc5ad1fad45",
+    "pool_items": 1024,
+    "rule": "Fixed hash order seed20261017, raw B0 surprisal>=1.7, first128 qualifying, no fallback; withhold selection on any score failure",
+    "no_training": true
+  },
+  "prompt_reader_probe": {
+    "experiment_id": "prompt-interface-dev32-v1",
+    "status": "running",
+    "core": 8,
+    "physical_device": 2,
+    "source": "train/prompt_interface_probe.py",
+    "source_sha256": "3e97f117a7fde9434342e75efdaed276a4029eef9c9060e426d23a3955093b65",
+    "protocol_sha256": "067d51d1582b2fa1cdf9a85ba31f3518735e4dbf82218d4e6de01a135fd532c2",
+    "rows_expected": 864,
+    "scope": "Published and explicitly corrected RLP instructions, corrected+reanchor32, plain boundaries+reanchor32; original G1 notes fixed",
+    "caveat": "Not a verified RLP serializer; no new writer or deployed-policy result"
+  }
 }

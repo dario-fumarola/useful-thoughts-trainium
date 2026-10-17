@@ -1,4 +1,4 @@
-# Status — 2026-10-17 22:46 UTC
+# Status — 2026-10-17 22:56 UTC
 
 The owner stopped the original 256-update R study and redirected work to the
 reward interface, genuine candidate oracles, and iteration speed. The old run
@@ -25,21 +25,41 @@ order in CODEX_NEXT_DAY.md and older handoffs is superseded. Follow NEXT_STEPS.m
   deadline2026-10-18T00:44:46.913949+00:00. Protocol SHA2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677.
   Original prefix-only B0 writer,16 draws per fixed pilot prefix (four
   independent G4 groups), cap256/T.7; original+reanchor32 readers. One standalone
-  cache8 process, private tmpfs; firstgroup FP32 cache/replay parity required.
+  cache8 process, private tmpfs; firstgroup FP32 cache/replay passed max1.097e-5
+  nats. First group sampling163.65s + audit49.03s; next twoG4 groups12.50/12.52s
+  (not a full-run average; group wall counted once).
   All512 candidates precede future access;4256 reader contexts include controls
   and same-interface empties. Oracle uses future selection and is distinct from
   mean16 utility; max16-control comparisons expose selection-only effects.
   Search is exploratory; cap256 does not bound the1024-token oracle.
-- **replay-padding-dev2-v2 RUNNING**, launched22:40UTC on logical0/device0.
-  tmux `dario-replay-padding-v2`; launcher2154097, timeout2154102/worker2154103.
-  Output/control under local/{nvme/diagnostics,diagnostics}/sameID. Protocol
-  SHA704e559001a1a47e443cb79b3b1af27bb27ba44dcb0b2d4452bedf45dd9f4c3d;
-  finite deadline2026-10-18T00:40:00.017549+00:00. Exact old R LRU2 runtime,
-  FP32, no optimizer/sampling; fixed firstDEV empty stop and first naturally
-  stopped short saved note(89 actions/bucket128). Full1024 vs shortened reader
-  and signed±1 replay; full unique-parameter gradient comparison outside timed
-  phases. First reader full/short repeat~.026s both, no speedup yet; first
-  replay forward is compiling. Do not infer distributed throughput from this.
+- **replay-padding-dev2-runtimefix-v1 RUNNING**, launched22:48:48UTC on
+  logical0/device0, tmux `dario-replay-padding-fix-v1`. Control/output under
+  local/{diagnostics,nvme/diagnostics}/sameID; read actual launcher/timeout PID
+  files there. Protocol7b1f008901b7ddf877fe9747809266fb54c9ef317459f2fd1b51c10fd314ab8d;
+  deadline2026-10-18T00:48:48.339414+00:00. Same cases/settings/criteria and
+  oldRLRU2 as prior diagnostic; only original-driver device registration added.
+  Prior replay-padding-dev2-v2 failed before its first backward (torch.xla
+  module unregistered); all outputs/exact10-file source snapshot retained.
+  Its full first forward269.6s is cold compile/setup, not a steady-state cost;
+  no gradient or speedup result exists yet. This is a runtime helper repair,
+  not a new scientific qualification or numerical backend change.
+- **anchors-train1024-v1 RUNNING** since22:55UTC, logical4/device1,
+  tmux `dario-anchor-scan-v1`. Metadata preparation remains local/diagnostics/
+  sameID; actual byte-identical protocol/pool and scoring under local/nvme/
+  diagnostics/sameID. Wrapper/PIDs/exit under local/diagnostics/sameID. One-hour
+  bound, cache8/privateRAM. Fixed1024 TRAIN docs chosen by seed20261017 hash
+  order before targets. Raw B0 K1/K16, one separate DEV width544 parity check;
+  select first128 TRAIN anchors with surprisal>=1.7, no fallback, any scoring
+  failure withholds selection. No candidate generation/training in this job.
+- **prompt-interface-dev32-v1 RUNNING** since22:55UTC, logical8/device2,
+  tmux `dario-prompt-interface-v1`. Control/output under standard local paths,
+  one-hour bound/cache8/privateRAM. Original G1 notes on same DEV32,864 reader
+  conditions: published RLP instruction wording with typo preserved, separately
+  corrected wording, corrected+reanchor32, plain-newline+reanchor32, original
+  reference; raw/raw-repeat32 controls and original-interface token parity.
+  Unknown paper serialization and reader-only intervention are explicit. Root
+  supervises this; reviewed source with no causal/reporting blocker. No learned
+  mixer or new policy is implied by prompt wording changes.
 - Old shared backup and node services were deliberately stopped at22:36:14,
   after verified R63 backup; all six owned helper/producer/compressor/timeout
   identities are gone. Node stream is a closed INTERRUPTED prefix, not a full
@@ -96,8 +116,8 @@ distributed agent supervises replay. Root owns signals and final archive/report.
 Do not edit either source/dependency closure while its job is active. Read
 candidate oracle only after complete score coverage; preserve all cases/costs.
 
-Latest required `bash scripts/run_checks.sh`:243 tests + CPU toy smoke passed,
-`local/checks/tests.wgZ4D7`. Candidate semantic tests6 and replay tests4 cover
+Latest required `bash scripts/run_checks.sh`:249 tests + CPU toy smoke passed,
+`local/checks/tests.dVY2a0` after the new reader/TRAIN scan scripts. Candidate semantic tests6 and replay tests4 cover
 stopping/seed/future barriers/document reduction/padding-gradient behavior;
 these are not hardware outcomes. First interface pilot has actual FP32 parity.
 

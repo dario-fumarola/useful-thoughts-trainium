@@ -400,3 +400,19 @@ reanchor32 readers using this pilot; genuine16 draws atcap256, no new writer
 interface yet. Original paritymax3.815e-5 nats; all400 report contrasts/intervals
 independently checked. R stopped at63/exit0/verified27.54GB checkpoint backup;
 old shared services retired after backup, with honest interrupted node capture.
+
+The standalone replay profiler failed before its first backward because it
+omitted the XLA device-module registration already in the training driver.
+Failed output/exact source retained; applied only that registration and relaunched
+same actual cases/settings/criteria as replay-padding-dev2-runtimefix-v1. No
+numerical discrepancy or speedup established by the failed run. Candidate G16
+sampling is separate and passed its first FP32 cache/replay audit(1.097e-5 nats).
+
+Prepared a separate real TRAIN pool before targets:1024 hash-ordered unique
+FineMath docs, B0 raw surprisal>=1.7, first128 qualifying/no fallback. This keeps
+any later warmstart off DEV. Small one-core scan and a separate published-RLP/
+plain-boundary DEV reader probe are running while G16 generation completes.
+Both reuse actual FP32 B0, preserve reference parity and fixed controls. Their
+results will guide the next explicitly identified short training experiment. G1 tail recheck found71/512
+nonempty-note wins vs empty,4 vs raw K1,0 vs raw K16; all498nonempty/512docs
+retained. These are descriptive tails, not proof of systematic useful thoughts.

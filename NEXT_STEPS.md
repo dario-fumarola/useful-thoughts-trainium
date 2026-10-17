@@ -12,7 +12,7 @@
    original+reanchor32 readers. All sampling before future scoring. Inspect
    ordinary mean16, future-selected winner and max16-control differences.
    B0 DEV512 is G1; K16 means future horizon. Do not call oracle deployment.
-4. ACTIVE: replay-padding-dev2-v2 on logical0/device0, deadlineOct18 00:40UTC.
+4. ACTIVE: replay-padding-dev2-runtimefix-v1 on logical0/device0, deadlineOct18 00:48UTC.
    Fixed actual B0 cases, full1024 vs right-truncated replay, signed gradients
    and separate cold/repeat phase costs under oldLRU2. No optimizer/sampling.
    Measure before claiming a faster loop or changing production precision.
