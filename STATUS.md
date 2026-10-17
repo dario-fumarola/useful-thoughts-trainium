@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 03:25 UTC
+# Current state — 2026-10-17 03:49 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -14,12 +14,12 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 ## Live jobs and ownership
 
 **Distributed owns R004**, upper logical32–63, freshB0/seed1234, world32/global128/
-accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update6 at03:21:58**,
-874.600s; update7 runs and saves the next checkpoint. Steps3–6 take820.798–897.506s;
+accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update8 at03:47:55**,
+761.552s; update9 runs; next checkpoint14. Steps3–8 take746.696–897.506s;
 ten full steady timings and median/P90 are still pending. All recorded norms are
 finite, sampled replicas equal, replay errors below.001. Updates1/2 include cold
-optimizer work and are excluded from steady samples. Checkpoint3/4 save wall
-49.368/47.404s is separate from per-step elapsed.
+optimizer work and are excluded from steady samples. Checkpoint3/4/7 save wall
+49.368/47.404/47.230s is separate from per-step elapsed.
 
 - Common source commit `3aaaf8a18baeccb8d1a543d348a53f6863599114`, active code
   SHA `244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7`.
@@ -36,8 +36,8 @@ optimizer work and are excluded from steady samples. Checkpoint3/4 save wall
   `local/neuron-cache-driver` on EBS66305. Separately bound host policy9d2e1f20….
 - Root owns backup watcher: tmux `dario-r-nvme-tmp004-backup`, launcher897722,
   timeout/PGID897725, Python897726, startticks3586343/3586344, same deadline.
-  `backup-supervisor.state.json` records **verified EBS steps3/4**, latest4 at
-  02:58:09, COMPLETE86046ff4…9db38c7. Retain2 copies and every NVMe original.
+  `backup-supervisor.state.json` records **verified EBS steps4/7**, latest7 at
+  03:39:32, COMPLETE5a98b70b…708caab. Retain2 copies and every NVMe original.
   Root also independently rehashed all33 original/EBS checkpoint3 payloads:
   PASS, COMPLETE88190797…e8bbe0,27,542,553,263bytes. Its serialized model/all32
   optimizer shards are finite, valid master slices match, all Adam steps3.
@@ -48,15 +48,16 @@ sequential freshB0 modes direct→empty_format→one_thought. Fixed128 GSM8K TRA
 questions, FP32 compute/head, unchanged4shot prompt, caps1024thought/256answer.
 Direct complete **113/128 correct (88.28125%)**, no errors/truncations;13,590
 answer tokens, generation wall1,255.0s, first item222.53s, median7.63s.
-Empty-format is active; failures/truncations stay in the128 denominator. Thought
-is pending. This is a development baseline, not an official test or training gain.
+Empty-format complete **107/128 (83.59375%)**,2 format failures/1 answer-cap
+truncation/0 runtime errors, generation wall1,347.9s. Thought mode is active; all
+failures/truncations stay in the128 denominator. This is a development baseline, not an official test or training gain.
 
 - Started02:45:18.503479; hard deadline **06:45:00.434277 UTC**,30s grace.
   tmux `dario-held-dev128-B0-001`. Control
   `local/evaluation/held-dev128-v1/b0-plan-v1`; output
   `local/nvme/evaluation/held-dev128-v1-B0-001`.
 - Root launcher1078999; **actual timeout/PGID1079002**, startticks3981062;
-  mode shell1079049; current empty-format evaluator1119930/startticks4109637.
+  mode shell1079049; current thought evaluator1135219/startticks4246270.
   Original execution.json mistakenly recorded an exited command-substitution
   subshell1079003. Preserve it; correction is in `supervision.json`.
 - Core0, ports64351/64352, private0700 TMPDIR
@@ -159,7 +160,7 @@ absolute clean/empty/own/filler and fixed random dev token-class/surprisal strat
 
 ## Storage and operational limits
 
-At03:25 EBS free **269.9GiB**, mounted NVMe **1.20TiB**, tmpfs about1,000GiB.
+At03:49 EBS free **269.9GiB**, mounted NVMe **1.20TiB**, tmpfs about1,000GiB.
 Only one NVMe is formatted; other3 SSDs remain untouched. Science uses one reviewed
 serialized backup queue and one compressed shared node monitor. Backup helper at
 `validation/orchestration` passes its6 host fixtures/TERM review, unlaunched.
