@@ -41,10 +41,13 @@ and the fixed specification are complete; no trained C/R comparison is available
   [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
   [C5678 execution](validation/science_C_seed5678_execution_20261017.json) and
   [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from released B0 and reached step26/256 at
-  15:37UTC. The B0 local DEV512 audit and fixed held128 C1234@64 suite have
-  started on separate idle devices; no trained evaluation result is complete.
-  See [R progress](validation/science_R_seed1234_progress_20261017.json) and
+- R1234 independently started from released B0 and reached step32/256 at
+  16:50UTC. All30 steps3–32 have median623.155s and P90 811.018s; changing
+  generated workload and shared-host development overlaps remain included.
+  See [all first32 updates](validation/science_R_seed1234_first32_20261017.json)
+  and the [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg).
+  The B0 local DEV512 audit and fixed held128 C1234@64 suite are advancing on
+  separate devices; no trained evaluation result is complete. See
   [development starts](validation/science_development_start_20261017.json).
 - The audited FineMath slice contains **329,535 train**, **18,360 dev**, and
   **18,239 test** document-level records.

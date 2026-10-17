@@ -2,8 +2,8 @@
 
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
-1. Observe active R1234 on lower0–31 through fixed256; latest complete step30 at
-   16:25:55UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
+1. Observe active R1234 on lower0–31 through fixed256; latest complete step32 at
+   16:50:10UTC. Preserve logs/counters and checkpoint64/128/256 plus12-hour saves.
    Both C runs completed256/exit0/cleanup and verified latest-two EBS128/256;
    all NVMe originals remain. Both shared supervisors are RUNNING.
 

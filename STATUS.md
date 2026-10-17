@@ -1,7 +1,7 @@
-# Current state — 2026-10-17 16:32 UTC
+# Current state — 2026-10-17 16:51 UTC
 
 **Both scientific C runs completed 256 updates and verified terminal backups.
-R1234 completed step30/256; two fixed development jobs are running. No trained C/R comparison is available.**
+R1234 completed step32/256; two fixed development jobs are running. No trained C/R comparison is available.**
 The first study remains **256 terminal updates**, with fixed step64 development.
 Public repository: https://github.com/dario-fumarola/useful-thoughts-trainium .
 Work is isolated in `/home/ubuntu/dario`; original repositories are unchanged.
@@ -44,8 +44,8 @@ These execution and recovery observations do not establish capability.
 FP32/world32/global128/accum4/G4/cap1024/K1/T.7, LRU2/private RAM temp. Root
 release10:32:53.082689UTC SHA0a74325f…828543; run started10:33:30. Released lower
 logical0–31; ports64421/64422. Launcher1668169, timeout/PGID1668180, driver1668181.
-Latest complete metric is **30/256 at16:25:55**,822.504s; cumulative3,840 source
-records /1,969,920 source tokens /1,538,314 sampled actions. Generated workload has
+Latest complete metric is **32/256 at16:50:10**,699.285s; cumulative4,096 source
+records /2,101,248 source tokens /1,594,971 sampled actions. Generated workload has
 risen again after the early short-note updates; no permanent stopping pattern
 or downstream result is inferred. No R checkpoint has
 published yet; fixed development64 and the12-hour save cadence remain unchanged.
@@ -66,8 +66,8 @@ runtime environment and private0700 RAM temp; receipts are in each control's
 `processes.first-live.json`. Public start evidence:
 `validation/science_development_start_20261017.json`, SHAd6c4cc4a…284534. Both jobs
 are nonfinal held development; root owns their health, allocation and scheduling.
-At16:32 B0 has104/512 original notes. Held C1234@64 has complete/scored128 direct
-and128 empty_format items, with23/128 one_thought items saved. Its complete
+At16:51 B0 has145/512 original notes. Held C1234@64 has complete/scored128 direct
+and128 empty_format items, with55/128 one_thought items saved. Its complete
 three-mode accuracy comparison remains pending. Data supervises this suite;
 distributed supervises R through64 and its first verified EBS copy.
 R1234's exact public live receipt is `validation/science_R_seed1234_progress_20261017.json`,
@@ -76,6 +76,14 @@ with sampled replicas equal. It records the historical first loop at10:34:10 and
 first metric at10:49:58. All24 steps3–26: median594.303s, linearP90802.193s;
 the sampled action workload shrinks substantially. This is execution evidence;
 negative raw gains and early stopping are TRAIN diagnostics, not a capability result.
+
+Root saved all first32 R metrics and a standalone execution plot in
+`validation/science_R_seed1234_first32_20261017.json` (SHAe2e50f5f…7e7c5d) and
+`validation/figures/science_R_seed1234_first32_20261017.svg`. All30 steps3–32:
+mean662.489s, median623.155s, linearP90811.018s. No observations or overlap costs
+are removed. TRAIN reader likelihoods use different records each update; this
+figure is not a fixed-anchor learning curve or a downstream result. The R32 live
+identity receipt is `local/science/control/qwen-r-seed1234-science-256-001/health.milestone-0000032.json`, SHA43a4e38c…3d239.
 
 Both completed C runs' raw metrics, run metadata, all three checkpoint manifests
 and launch logs also have verified EBS copies in `local/backups/run-artifacts`:
@@ -229,6 +237,18 @@ tmux session. After B0 local completion/cleanup/backup, the same helper accepts
 Helper SHA **bf5460b4…8b213**, reviewed/AST-checked, finite host probes30/15s,
 pending-release reservations and actual dynamic EBS retention accounting. Each
 call only releases one job; it never launches/retries. Continue all healthy jobs.
+
+Closed development outputs can be copied once with the reviewed stdlib helper
+`python3 local/evaluation/archive_completed.py --control <exact-slot-directory> --output <exact-NVMe-output>`.
+It requires successful completion, departed PID/process groups and an idle owned
+device, then hashes every small source/copy file on distinct NVMe/EBS. It does
+not handle the separately labeled crossed-reader pack. After complete B0 scoring,
+run `python3 local/analysis/freeze_dev_strata.py` once: it implements the already
+public token-class/tie-broken B0 quartile rule using original score-row target
+texts, with no corpus/final-target reads. Synthetic class/tie/failure checks pass;
+no actual B0 likelihood file or stratum mapping has been read/created yet.
+An agent is preparing metadata-only final CLI job scheduling under ignored
+`local/evaluation/final-execution-v1`; no final job is released or launched.
 
 ## Review snapshot
 
