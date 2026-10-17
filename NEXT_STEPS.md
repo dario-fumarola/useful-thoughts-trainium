@@ -7,14 +7,19 @@ Mark complete only from actual artifacts. Active jobs and commands are in STATUS
    cooperative STOP: finish its current full update/save and preserve the EBS-I/O
    evidence. Stop its backup watcher after the saved checkpoint is verified.
 2. Rebind the preserved resume preparation to completed R004 checkpoint3, keeping
-   its upper partition and host I/O settings, for exactly update4. Require raw-byte
+   its upper partition, for exactly update4 with STOP precreated. A conditional
+   private RAM TMPDIR preparation binds that host policy separately; no launch yet.
+   Require raw-byte
    exact actual restored state/RNG, exact first resumed stochastic tapes and
    original tight full-state post-update tolerances. C32 recovery already passes.
-3. Overlap the upper R004 resume with one bounded lower NVMe R update to qualify
-   two-R coexistence. Prefer concurrent 32-core chains C1→R1 and C2→R2;
+3. Overlap upper R004 recovery with lower fresh seed5678 R to qualify two-R
+   coexistence. Conditional lower RAM/max14 preparation also permits ten measured
+   warm updates if that policy is selected; preserve the strict resume STOP-at-4.
+   Prefer concurrent 32-core chains C1→R1 and C2→R2;
    each R starts from fresh B0. Avoid world64 work without a measured benefit.
    Original R003 resume/overlap preparations stay preserved and unlaunched;
-   review new identities/guards before allocating either replacement.
+   review new identities/guards before allocating either replacement. Final host
+   I/O policy and exposure follow measurements, not feasibility estimates.
 4. Freeze two-seed terminal exposure from complete-step timing, fresh-data supply
    and the prospective 14-day schedule. Start C/R from identical released weights;
    supervise finite runs and verified EBS checkpoint copies.

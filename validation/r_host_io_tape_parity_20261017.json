@@ -1,0 +1,117 @@
+{
+  "accumulation": 4,
+  "actual_tape_pairs": 128,
+  "all_tensor_payloads_bitwise_equal": true,
+  "compared_step": 1,
+  "comparison_source_sha256": "f163c001b2aa168fb3c69900a0f19896da37c2e15ff9d380965f3177ba0b5553",
+  "created_utc": "2026-10-17T01:55:31+00:00",
+  "criteria": {
+    "allowed_run_metadata_differences": [
+      "run_id",
+      "started_utc"
+    ],
+    "allowed_tape_metadata_differences": [
+      "run_id"
+    ],
+    "atol": 1e-07,
+    "authorization": "Root explicitly assigned read-only R003/R004 first-step tape comparison, exact actions/masks/meta and existing 1e-7+1e-6 floating criterion.",
+    "compared_step": 1,
+    "created_utc": "2026-10-17T01:43:31.029366+00:00",
+    "expected_tape_pairs": 128,
+    "full_state_or_resume_claim": false,
+    "helper": "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003-source/scripts/compare_stochastic_resume.py",
+    "inputs_sha256": {
+      "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-final-003/run.json": "e8a0d79bcb08d3b0ba8d74780f7c6c8ba6eceaa82c075f2d5d7d9be8f8ee61b0",
+      "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/run.json": "7c5dfe053efd86d6d49e10c07221044de66177b4d7fcdd265d70eea51baa5192",
+      "/home/ubuntu/dario/local/qualification/compare_r003_r004_tapes.py": "f163c001b2aa168fb3c69900a0f19896da37c2e15ff9d380965f3177ba0b5553",
+      "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003-source/scripts/compare_stochastic_resume.py": "affeb60457b5e1d691dd492e411a10e3ee25af2b74fed8d0fa0030ef500caa9c",
+      "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003-source/weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "/home/ubuntu/dario/local/qualification/qwen-r-fp32-final-003.prepared.json": "2f711be9d46a4eccce48d1e5cd0741fda9a855ff329df3d0dafeef7cc7440f25",
+      "/home/ubuntu/dario/local/qualification/qwen-r-fp32-nvme-tmp-004/prepared.json": "49c770b7700c070fec3bf7b968dd333ee81e1b5393fb74a4656bbb432b9fec9a"
+    },
+    "method": "Validate each original tape against its own immutable run, then normalize only run_id in an in-memory shallow copy for the unchanged pinned tensor comparator. Require exact128 coverage on each side; compare in micro-then-rank global order. No repair or repeated measurement after failure.",
+    "new_device_work": false,
+    "new_numeric_threshold_or_oracle": false,
+    "order_hash": "997307b43cb509f386ebd14d0428a675891afe41e1bdbd5514c3a7beb5765e5b",
+    "output": "/home/ubuntu/dario/local/qualification/r003-r004-first-step-tapes.result.json",
+    "preserve_both_originals": true,
+    "r003": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-final-003",
+    "r004": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004",
+    "recorded_external_provenance_differences": {
+      "host_ports": [
+        64231,
+        64301
+      ],
+      "logical_cores": [
+        "0-31",
+        "32-63"
+      ],
+      "neuron_root_ports": [
+        64194,
+        64302
+      ],
+      "run_id": [
+        "qwen-r-fp32-final-003",
+        "qwen-r-fp32-nvme-tmp-004"
+      ],
+      "temporary_storage": [
+        "observed default EBS /tmp",
+        "dedicated NVMe TMPDIR /home/ubuntu/dario/local/nvme/tmp/qwen-r-fp32-nvme-tmp-004"
+      ]
+    },
+    "rtol": 1e-06,
+    "schema": "host-io-first-update-tapes-criteria-v1",
+    "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+    "spec_hash": "92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac",
+    "tape_counts_at_plan_creation": {
+      "r003": 96,
+      "r004": 9
+    }
+  },
+  "criteria_sha256": "9d562b886bd9f219e45ff0c106862aeeb0cfcc414ae9403c4a5ae8131ff71d13",
+  "expected_tape_pairs": 128,
+  "first_divergence": null,
+  "independent_root_audit": {
+    "all_128_pairs_covered": true,
+    "all_256_tape_hashes_reverified": true,
+    "all_tensor_payloads_byte_identical_reported": true,
+    "criteria_and_bound_input_hashes_reverified": true,
+    "numerical_oracle_changed": false
+  },
+  "limitations": [
+    "Sampling/reward/backward tapes only; optimizer update and full checkpoint state were not compared.",
+    "This is same-seed host-configuration parity, not a training efficacy result.",
+    "Physical partition and monitoring output location also differ; performance is not a perfectly isolated TMPDIR causal estimate."
+  ],
+  "local_result_path": "/home/ubuntu/dario/local/qualification/r003-r004-first-step-tapes.result.json",
+  "local_result_sha256": "4922cddc4f61fab8e51e17f1445c69b904629e168957502f28f0b110c3b9c7ad",
+  "numerical_oracle_added": false,
+  "numerical_summary": {
+    "advantages": {
+      "different_values": 0,
+      "max_abs": 0.0,
+      "violations": 0
+    },
+    "behavior_logps": {
+      "different_values": 0,
+      "max_abs": 0.0,
+      "violations": 0
+    },
+    "clean": {
+      "different_values": 0,
+      "max_abs": 0.0,
+      "violations": 0
+    },
+    "thought": {
+      "different_values": 0,
+      "max_abs": 0.0,
+      "violations": 0
+    }
+  },
+  "originals_modified": false,
+  "pass": true,
+  "schema": "host-io-first-update-tapes-v1",
+  "scope": "Same-seed first-update stochastic tapes only; no full-state or resume claim",
+  "status": "PASS",
+  "world_size": 32
+}
