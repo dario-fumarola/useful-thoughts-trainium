@@ -111,6 +111,12 @@ The summary includes the predeclared own-minus-raw/empty/filler/shuffled/other
 document bootstrap contrasts at each horizon, with fixed 5,000 draws and seed 17.
 A contrast gets no CI when either complete paired condition has an error; the
 implementation never silently removes failed documents. Shard summaries describe
-their shard only. For a global summary, concatenate all score rows and call
-`summarize(rows, global_selection_ids)`; strict coverage rejects any missing,
-duplicated, or extra item/condition/horizon.
+their shard only. For a global summary, verify every shard's complete run receipt,
+score-file hash, common protocol and writer/reader identities before concatenating
+the rows. Read `policy` from the common
+`run["protocol"]["writer_protocol"]["selection_policy"]` and `crossed` from the
+verified common `run["crossed_writer_reader"]`, then call
+`summarize(rows, global_selection_ids, policy=policy, crossed=crossed)`.
+Do not use the function defaults for greedy or crossed-reader diagnostics.
+Strict coverage rejects any missing, duplicated, or extra
+item/condition/horizon.

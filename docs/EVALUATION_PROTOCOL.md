@@ -14,6 +14,10 @@ are described in [EVALUATION_INTEGRITY.md](EVALUATION_INTEGRITY.md). Secondary a
 local evaluators need their own execution evidence; this is not a completed final
 benchmark suite.
 
+Every final GSM8K launch must explicitly pass
+`--compute fp32 --head-precision fp32`; the CLI's compute default remains BF16.
+Lock these flags in the exact protocol. Local and secondary evaluators use FP32.
+
 ## Comparisons
 
 Primary: R-thought minus C-thought, same inference policy and cap.
