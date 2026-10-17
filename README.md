@@ -19,11 +19,13 @@ The initial recipe uses a 1,024-action cap, one-token reward, temperature 0.7,
 and no reader, teacher, or ordinary-language-model auxiliary loss in R.
 The writer never receives the true continuation.
 
-Evaluate both trained models with direct and thought-enabled inference. The
-primary comparison is **R-thought minus C-thought**; also report
-**R-direct minus C-direct** and **R-thought minus R-direct**. Keep unchanged
-base weights as a reference, use fixed terminal checkpoints, retain failures
-in evaluation denominators, and report training and inference costs.
+Evaluate both trained models with direct, empty-format and thought-enabled
+inference. The primary comparison is **R-thought minus C-thought**; also report
+**R-direct minus C-direct**, **R-thought minus R-empty**, and each trained arm
+against unchanged base weights. Direct inference permits ordinary calculations.
+The first study targets 256 terminal updates in each arm for two matched seeds,
+with a fixed step64 development milestone. Retain failures in evaluation
+denominators and report training and inference costs.
 
 ## Current status
 
@@ -41,7 +43,8 @@ in evaluation denominators, and report training and inference costs.
   averaging about 10 seconds. Full-model checkpoint recovery now passes, including exact restored state and all 32 RNG states. The
   original CPU per-weight comparison remains failed. A separate, prospectively
   fixed full-gradient comparison against FP64 passes on a new held seed.
-  R updates and stochastic recovery remain in progress.
+  R has completed real optimizer updates; its steady timing, strict stochastic
+  recovery and two-run coexistence qualification remain in progress.
 - Development-only math inference runs, including failed outputs, are retained.
 
 See [STATUS.md](STATUS.md) for active work and [DECISIONS.md](DECISIONS.md) for
