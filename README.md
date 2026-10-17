@@ -43,7 +43,7 @@ denominators and report training and inference costs.
   averaging about 10 seconds. Full-model checkpoint recovery now passes, including exact restored state and all 32 RNG states. The
   original CPU per-weight comparison remains failed. A separate, prospectively
   fixed full-gradient comparison against FP64 passes on a new held seed.
-  R completed14 real optimizer updates and verified terminal backups. Its strict
+  R completed 14 real optimizer updates and verified terminal backups. Its strict
   stochastic recovery and RAM coexistence qualification remain in progress.
 - The fixed128-item TRAIN development baseline scores113/128 direct,107/128
   empty-format and63/128 with a thought. Failures stay counted; this is not a
