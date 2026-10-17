@@ -1,4 +1,4 @@
-# Status — 2026-10-17 22:56 UTC
+# Status — 2026-10-17 23:11 UTC
 
 The owner stopped the original 256-update R study and redirected work to the
 reward interface, genuine candidate oracles, and iteration speed. The old run
@@ -41,33 +41,54 @@ order in CODEX_NEXT_DAY.md and older handoffs is superseded. Follow NEXT_STEPS.m
   Prior replay-padding-dev2-v2 failed before its first backward (torch.xla
   module unregistered); all outputs/exact10-file source snapshot retained.
   Its full first forward269.6s is cold compile/setup, not a steady-state cost;
-  no gradient or speedup result exists yet. This is a runtime helper repair,
+  the repaired run has passed both signed full-gradient empty1 comparisons
+  (relativeL2 1.759e-6,cosine .9999999999985). The real89-action comparison
+  remains pending. These are isolated stages, not distributed throughput.
+  This is a runtime helper repair,
   not a new scientific qualification or numerical backend change.
-- **anchors-train1024-v1 RUNNING** since22:55UTC, logical4/device1,
-  tmux `dario-anchor-scan-v1`. Metadata preparation remains local/diagnostics/
-  sameID; actual byte-identical protocol/pool and scoring under local/nvme/
-  diagnostics/sameID. Wrapper/PIDs/exit under local/diagnostics/sameID. One-hour
-  bound, cache8/privateRAM. Fixed1024 TRAIN docs chosen by seed20261017 hash
-  order before targets. Raw B0 K1/K16, one separate DEV width544 parity check;
-  select first128 TRAIN anchors with surprisal>=1.7, no fallback, any scoring
-  failure withholds selection. No candidate generation/training in this job.
-- **prompt-interface-dev32-v1 RUNNING** since22:55UTC, logical8/device2,
-  tmux `dario-prompt-interface-v1`. Control/output under standard local paths,
-  one-hour bound/cache8/privateRAM. Original G1 notes on same DEV32,864 reader
-  conditions: published RLP instruction wording with typo preserved, separately
-  corrected wording, corrected+reanchor32, plain-newline+reanchor32, original
-  reference; raw/raw-repeat32 controls and original-interface token parity.
-  Unknown paper serialization and reader-only intervention are explicit. Root
-  supervises this; reviewed source with no causal/reporting blocker. No learned
-  mixer or new policy is implied by prompt wording changes.
+- **anchors-train1024-v1 COMPLETE**, exit0 at22:58:32, all1024 raw TRAIN
+  rows finite/ordered,237 qualify at frozen surprisal>=1.7; first128 selected
+  without fallback. DEV width parity6.676e-6. Public report
+  `validation/anchors_train1024_20261017.json`; verified EBS33files/1,382,445B.
+  This is target-based TRAIN selection, not held-out utility.
+- **prompt-interface-dev32-v1 COMPLETE**, exit0 at22:59:20,864 finite rows.
+  Published wording empty−raw−6.223 nats; plain-newline+reanchor32−1.085,
+  own−empty−1.175, own−other−.175 with interval spanning zero. Matched
+  plain empty−raw-repeat32+.273, interval spans zero. Actual reader parity
+  max4.578e-5. Independently audited original summary/coverage/contrasts.
+  Public paired report `validation/prompt_interface_dev32_20261017.json`;
+  verified EBS31files/2,011,921B includes fixed inputs/examples/sealed sources.
+  No new writer, exact-paper serialization, or capability claim.
+- **Released marker embeddings inspected**: all25 defined non-EOS added IDs
+  151644–151668 are exactly identical at B0, including think/end-think/chat
+  boundaries; equality extends through151736 in the inspected tail (93rows).
+  They are nonzero. Input identity aliasing explains identical scores when
+  the published delimiter typo is corrected. The tied output head shares
+  those rows. No inference about training history or sole failure cause.
+  Reproducible scalar report `validation/B0_marker_embeddings_20261017.json`.
+- **reader-support-dev8-v1 COMPLETE**, exit0 at23:08:40;128 contexts/2048
+  token positions, no failures, full-support parity2.766e-5. Same-logit
+  defined-support renormalization changes original empty−raw tax by only
+  .000549 nats out of5.678. Maximum undefined mass .002060. This rejects
+  undefined-head mass as an explanation on these fixed8 development docs;
+  no masking/weight/policy change. Public report
+  `validation/reader_support_dev8_20261017.json`; verified EBS32files/2,180,375B.
+- **candidate-corpus-train128-g16-v1 GENERATING**, released23:07:20,
+  deadlineOct18 01:07:20UTC. Eight shards on distinct physical devices
+  1/3/4/5/6/7/9/10, logical4/12/16/20/24/28/36/40. Standard control/output
+  directories; per-shard PID/log/exit files under control/shard-XX, tmux
+  dario-corpus-00..07. Exact protocol a02a536613846765f30d7ed01ef69a05109698ebcbc3dd23ea64979a37d07f9e.
+  All2048 original-writer candidates (128 TRAIN docs,G16,cap256,T.7,FP32)
+  must close before global donors/controls and new future scoring. Only
+  generation released;17024 reader contexts planned. No student training yet.
 - Old shared backup and node services were deliberately stopped at22:36:14,
   after verified R63 backup; all six owned helper/producer/compressor/timeout
   identities are gone. Node stream is a closed INTERRUPTED prefix, not a full
   deadline capture. Backup handler's FAILED_STOP_REQUESTED state is expected
   from deliberate TERM; owner-cancellation receipt records the reason.
 - Agents: distributed verifies R closure/backup and profiles source costs;
-  data inventories genuine same-context candidate counts; review checks primary
-  papers, precision claims and the new probe. No old matrix releases.
+  data monitors DEV candidates and support closure; review audits new reports,
+  TRAIN shards and the next short warmstart design. No old matrix releases.
 
 ## Old study stopped, evidence retained
 
@@ -116,8 +137,8 @@ distributed agent supervises replay. Root owns signals and final archive/report.
 Do not edit either source/dependency closure while its job is active. Read
 candidate oracle only after complete score coverage; preserve all cases/costs.
 
-Latest required `bash scripts/run_checks.sh`:249 tests + CPU toy smoke passed,
-`local/checks/tests.dVY2a0` after the new reader/TRAIN scan scripts. Candidate semantic tests6 and replay tests4 cover
+Latest required `bash scripts/run_checks.sh`:256 tests + CPU toy smoke passed,
+`local/checks/tests.uPXJBj` after the new TRAIN corpus/support/statistics scripts. Candidate semantic tests6 and replay tests4 cover
 stopping/seed/future barriers/document reduction/padding-gradient behavior;
 these are not hardware outcomes. First interface pilot has actual FP32 parity.
 

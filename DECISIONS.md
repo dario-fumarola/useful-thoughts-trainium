@@ -416,3 +416,23 @@ Both reuse actual FP32 B0, preserve reference parity and fixed controls. Their
 results will guide the next explicitly identified short training experiment. G1 tail recheck found71/512
 nonempty-note wins vs empty,4 vs raw K1,0 vs raw K16; all498nonempty/512docs
 retained. These are descriptive tails, not proof of systematic useful thoughts.
+
+
+### 2026-10-17 23:11 UTC — real TRAIN candidates; reject support-mass hypothesis
+
+TRAIN raw scan completed1024/1024,237 qualify at frozen>=1.7; selected first128
+without fallback. Start a new TRAIN128/G16 corpus, eight finite generation shards
+on separate devices. All2048 must close before global controls and future scores;
+future-based labels will be training supervision, not deployed selection. No
+new student or long RL run yet. This reuses the qualified original writer and
+keeps DEV out of the training corpus.
+
+Published instructions did not repair the format tax. Plain-newline+reanchor32
+reduces damage, but own−empty remains−1.175 nats on fixed DEV32. Exact released
+BF16 input rows for all25 non-EOS added token identities are equal, including
+think/end-think. Thus the corrected delimiter gives byte-identical scores. No
+training-history or sole-cause inference. An explicit same-logit support probe
+then rejected a separate hypothesis: undefined output mass changes the original
+empty tax by only.000549 of5.678 nats on DEV8. Keep original full-support reader
+scores and do not introduce an unsupported masking fix. Reports and raw outputs
+are retained with hash-verified EBS copies; actual useful thoughts still pending.

@@ -1,0 +1,62 @@
+{
+  "experiment_id": "anchors-train1024-v1",
+  "expected_items": 1024,
+  "failure_policy": "Any unknown earlier qualifier withholds selection; no complete-case fallback",
+  "failures": 0,
+  "fewer_than_requested": false,
+  "generation_selection_available": true,
+  "mean_raw_K16_log_likelihood": -18.930516739965014,
+  "mean_raw_K1_surprisal_nats": 1.1672913655928254,
+  "protocol_sha256": "da8e82ff263630ef830f57ff378fce3e3a9b353376c0f55f255f0cc5ad1fad45",
+  "qualifying_items": 237,
+  "requested_generation_items": 128,
+  "rows": 1024,
+  "scores_sha256": "2b514741dc0db679475e9e5097bb19d317edab545b4c3250b5979ec1dee44707",
+  "selected_items": 128,
+  "status": "complete",
+  "threshold_surprisal_nats": 1.7,
+  "completed_utc": "2026-10-17T22:58:32.032374+00:00",
+  "split": "train",
+  "selection_rule": "First up to128 qualifying IDs in frozen pool order; no fallback",
+  "pool_rule": "First1024 unique TRAIN documents in seed20261017 canonical-hash order, before decoding targets",
+  "selection_ids_sha256": "39b9a3e0debd77be7a5420dcb6351890a6695c369d8da49f980eca256c4c1df3",
+  "DEV_width_parity_max_token_error": 6.67572021484375e-06,
+  "model_assets": {
+    "directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "files": {
+      "config.json": {
+        "bytes": 727,
+        "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+      },
+      "generation_config.json": {
+        "bytes": 138,
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+      },
+      "merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      "model.safetensors": {
+        "bytes": 3441185608,
+        "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+      },
+      "tokenizer.json": {
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      "tokenizer_config.json": {
+        "bytes": 9678,
+        "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+      },
+      "vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38"
+  },
+  "limitation": "TRAIN target-surprisal selection, not held-out utility. No candidate selection or training occurred in this scan."
+}

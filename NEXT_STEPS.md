@@ -16,9 +16,21 @@
    Fixed actual B0 cases, full1024 vs right-truncated replay, signed gradients
    and separate cold/repeat phase costs under oldLRU2. No optimizer/sampling.
    Measure before claiming a faster loop or changing production precision.
-5. If signal exists, test one explicit short experiment: high-surprisal anchors
-   and/or positive-candidate distillation, with prospective identity, prefix-only
-   deployed inputs and disclosed selection/teacher access.
+5. DONE: published-prompt/plain-boundary reader probe and undefined-output mass
+   check. Plain+repeat32 reduces damage, but own thoughts still hurt on average;
+   output-support mass explains only .000549 nats of a5.678-nat tax on DEV8.
+   B0 think/end-think/chat marker input rows are exactly equal, a concrete
+   initialization detail to address, not proof of a sufficient remedy.
+6. ACTIVE: candidate-corpus-train128-g16-v1 GENERATION ONLY on eight devices,
+   deadlineOct18 01:07:20UTC. Frozen TRAIN128 from237 qualifying TRAIN1024,
+   fourG4 groups/doc,2048 prefix-only candidates. Verify every shard, publish
+   global donors/controls, then release eight finite score shards. No future
+   scoring before complete sampling; source/protocol fixed while running.
+7. Choose one short explicit warmstart using measured TRAIN availability:
+   selected useful candidates and a reader learning path, with prefix-only
+   student sampling, disclosed future-based TRAIN labels and ordinary raw-LM
+   controls. Evaluate fresh single-sample utility, raw/empty/content controls;
+   a good oracle alone is insufficient. No new long RL run yet.
 
 The old final plan is on hold, PREPARED_NOT_LOCKED. No official test outcomes
 for tuning. Existing released weights/data/runtime remain pinned.

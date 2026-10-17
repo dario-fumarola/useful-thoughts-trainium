@@ -1,8 +1,8 @@
 {
-  "time_utc": "2026-10-17T22:55:47.846581+00:00",
+  "time_utc": "2026-10-17T23:11:12.105055+00:00",
   "status": "diagnostics_running_no_training",
   "previous_result": "interface_tax_dev32_20261017.json",
-  "tests": "249 passed + CPU toy smoke; local/checks/tests.dVY2a0",
+  "tests": "256 passed + CPU toy smoke; local/checks/tests.uPXJBj",
   "candidate": {
     "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
     "protocol": "candidate_oracle_dev32_protocol_20261017.json",
@@ -49,7 +49,7 @@
   ],
   "train_anchor_scan": {
     "experiment_id": "anchors-train1024-v1",
-    "status": "running",
+    "status": "complete",
     "core": 4,
     "physical_device": 1,
     "source": "train/anchor_scan.py",
@@ -57,11 +57,16 @@
     "protocol_sha256": "da8e82ff263630ef830f57ff378fce3e3a9b353376c0f55f255f0cc5ad1fad45",
     "pool_items": 1024,
     "rule": "Fixed hash order seed20261017, raw B0 surprisal>=1.7, first128 qualifying, no fallback; withhold selection on any score failure",
-    "no_training": true
+    "no_training": true,
+    "rows": 1024,
+    "failures": 0,
+    "qualifying_items": 237,
+    "selected_items": 128,
+    "report": "anchors_train1024_20261017.json"
   },
   "prompt_reader_probe": {
     "experiment_id": "prompt-interface-dev32-v1",
-    "status": "running",
+    "status": "complete",
     "core": 8,
     "physical_device": 2,
     "source": "train/prompt_interface_probe.py",
@@ -69,6 +74,36 @@
     "protocol_sha256": "067d51d1582b2fa1cdf9a85ba31f3518735e4dbf82218d4e6de01a135fd532c2",
     "rows_expected": 864,
     "scope": "Published and explicitly corrected RLP instructions, corrected+reanchor32, plain boundaries+reanchor32; original G1 notes fixed",
-    "caveat": "Not a verified RLP serializer; no new writer or deployed-policy result"
+    "caveat": "Not a verified RLP serializer; no new writer or deployed-policy result",
+    "rows": 864,
+    "failures": 0,
+    "report": "prompt_interface_dev32_20261017.json"
+  },
+  "reader_support_probe": {
+    "status": "complete",
+    "experiment_id": "reader-support-dev8-v1",
+    "rows": 128,
+    "failures": 0,
+    "report": "reader_support_dev8_20261017.json"
+  },
+  "marker_inspection": {
+    "status": "complete",
+    "report": "B0_marker_embeddings_20261017.json"
+  },
+  "train_corpus": {
+    "experiment_id": "candidate-corpus-train128-g16-v1",
+    "status": "generation_running",
+    "source": "train/candidate_corpus.py",
+    "protocol_sha256": "a02a536613846765f30d7ed01ef69a05109698ebcbc3dd23ea64979a37d07f9e",
+    "items": 128,
+    "candidates": 2048,
+    "shards": 8,
+    "cap": 256,
+    "temperature": 0.7,
+    "compute": "fp32",
+    "expected_score_contexts": 17024,
+    "deadline_utc": "2026-10-18T01:07:20.046411+00:00",
+    "future_barrier": "All generation shards complete, global controls/donors before new scoring",
+    "training": false
   }
 }

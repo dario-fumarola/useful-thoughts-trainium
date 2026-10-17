@@ -1,0 +1,709 @@
+{
+  "all_document_summary": {
+    "original/empty/K1": {
+      "defined_mean_log_likelihood": -6.488344669342041,
+      "documents": 8,
+      "full_mean_log_likelihood": -6.488893270492554,
+      "max_undefined_mass": 0.0020597197321263606,
+      "mean_log_defined_mass_per_token": -0.0005486011505126953,
+      "mean_undefined_mass_per_token": 0.0005482150267927907
+    },
+    "original/empty/K16": {
+      "defined_mean_log_likelihood": -30.779397814132032,
+      "documents": 8,
+      "full_mean_log_likelihood": -30.78014191851741,
+      "max_undefined_mass": 0.0020597197321263606,
+      "mean_log_defined_mass_per_token": -4.6506524085998535e-05,
+      "mean_undefined_mass_per_token": 4.647863978824712e-05
+    },
+    "original/empty_minus_raw/K1/defined": {
+      "documents": 8,
+      "mean_nats": -5.677646208418395,
+      "positive_documents": 0
+    },
+    "original/empty_minus_raw/K1/full": {
+      "documents": 8,
+      "mean_nats": -5.678194809568907,
+      "positive_documents": 0
+    },
+    "original/empty_minus_raw/K16/defined": {
+      "documents": 8,
+      "mean_nats": -10.020059945761576,
+      "positive_documents": 1
+    },
+    "original/empty_minus_raw/K16/full": {
+      "documents": 8,
+      "mean_nats": -10.020804050146952,
+      "positive_documents": 1
+    },
+    "original/filler/K1": {
+      "defined_mean_log_likelihood": -6.88942289352417,
+      "documents": 8,
+      "full_mean_log_likelihood": -6.89026951789856,
+      "max_undefined_mass": 0.0013913956122346975,
+      "mean_log_defined_mass_per_token": -0.0008466243743896484,
+      "mean_undefined_mass_per_token": 0.0008461039736115973
+    },
+    "original/filler/K16": {
+      "defined_mean_log_likelihood": -34.49754105616654,
+      "documents": 8,
+      "full_mean_log_likelihood": -34.4984382252797,
+      "max_undefined_mass": 0.0013913956122346975,
+      "mean_log_defined_mass_per_token": -5.607306957244873e-05,
+      "mean_undefined_mass_per_token": 5.6040249639368875e-05
+    },
+    "original/other/K1": {
+      "defined_mean_log_likelihood": -8.477541387081146,
+      "documents": 8,
+      "full_mean_log_likelihood": -8.477635562419891,
+      "max_undefined_mass": 0.0006635370860569492,
+      "mean_log_defined_mass_per_token": -9.417533874511719e-05,
+      "mean_undefined_mass_per_token": 9.414757728445424e-05
+    },
+    "original/other/K16": {
+      "defined_mean_log_likelihood": -50.24210224213789,
+      "documents": 8,
+      "full_mean_log_likelihood": -50.24221572938154,
+      "max_undefined_mass": 0.0006635370860569492,
+      "mean_log_defined_mass_per_token": -7.092952728271484e-06,
+      "mean_undefined_mass_per_token": 7.091187951002924e-06
+    },
+    "original/own/K1": {
+      "defined_mean_log_likelihood": -10.064542889595032,
+      "documents": 8,
+      "full_mean_log_likelihood": -10.06472909450531,
+      "max_undefined_mass": 0.0011285131401957667,
+      "mean_log_defined_mass_per_token": -0.0001862049102783203,
+      "mean_undefined_mass_per_token": 0.0001861171329354831
+    },
+    "original/own/K16": {
+      "defined_mean_log_likelihood": -42.26221499015416,
+      "documents": 8,
+      "full_mean_log_likelihood": -42.262527318492786,
+      "max_undefined_mass": 0.0011285131401957667,
+      "mean_log_defined_mass_per_token": -1.952052116394043e-05,
+      "mean_undefined_mass_per_token": 1.951111946340697e-05
+    },
+    "original/own_minus_empty/K1/defined": {
+      "documents": 8,
+      "mean_nats": -3.5761982202529907,
+      "positive_documents": 1
+    },
+    "original/own_minus_empty/K1/full": {
+      "documents": 8,
+      "mean_nats": -3.5758358240127563,
+      "positive_documents": 1
+    },
+    "original/own_minus_empty/K16/defined": {
+      "documents": 8,
+      "mean_nats": -11.482817176022131,
+      "positive_documents": 1
+    },
+    "original/own_minus_empty/K16/full": {
+      "documents": 8,
+      "mean_nats": -11.482385399975378,
+      "positive_documents": 1
+    },
+    "original/own_minus_filler/K1/defined": {
+      "documents": 8,
+      "mean_nats": -3.175119996070862,
+      "positive_documents": 2
+    },
+    "original/own_minus_filler/K1/full": {
+      "documents": 8,
+      "mean_nats": -3.1744595766067505,
+      "positive_documents": 2
+    },
+    "original/own_minus_filler/K16/defined": {
+      "documents": 8,
+      "mean_nats": -7.764673933987623,
+      "positive_documents": 1
+    },
+    "original/own_minus_filler/K16/full": {
+      "documents": 8,
+      "mean_nats": -7.764089093213087,
+      "positive_documents": 1
+    },
+    "original/own_minus_other/K1/defined": {
+      "documents": 8,
+      "mean_nats": -1.5870015025138855,
+      "positive_documents": 3
+    },
+    "original/own_minus_other/K1/full": {
+      "documents": 8,
+      "mean_nats": -1.5870935320854187,
+      "positive_documents": 3
+    },
+    "original/own_minus_other/K16/defined": {
+      "documents": 8,
+      "mean_nats": 7.979887251983726,
+      "positive_documents": 4
+    },
+    "original/own_minus_other/K16/full": {
+      "documents": 8,
+      "mean_nats": 7.979688410888755,
+      "positive_documents": 4
+    },
+    "original/own_minus_raw/K1/defined": {
+      "documents": 8,
+      "mean_nats": -9.253844428671385,
+      "positive_documents": 0
+    },
+    "original/own_minus_raw/K1/full": {
+      "documents": 8,
+      "mean_nats": -9.254030633581664,
+      "positive_documents": 0
+    },
+    "original/own_minus_raw/K16/defined": {
+      "documents": 8,
+      "mean_nats": -21.502877121783705,
+      "positive_documents": 0
+    },
+    "original/own_minus_raw/K16/full": {
+      "documents": 8,
+      "mean_nats": -21.503189450122328,
+      "positive_documents": 0
+    },
+    "original/own_minus_shuffled/K1/defined": {
+      "documents": 8,
+      "mean_nats": -4.112540751695633,
+      "positive_documents": 1
+    },
+    "original/own_minus_shuffled/K1/full": {
+      "documents": 8,
+      "mean_nats": -4.112722188234329,
+      "positive_documents": 1
+    },
+    "original/own_minus_shuffled/K16/defined": {
+      "documents": 8,
+      "mean_nats": -1.6664088269218809,
+      "positive_documents": 2
+    },
+    "original/own_minus_shuffled/K16/full": {
+      "documents": 8,
+      "mean_nats": -1.6667159100517637,
+      "positive_documents": 2
+    },
+    "original/shuffled/K1": {
+      "defined_mean_log_likelihood": -5.952002137899399,
+      "documents": 8,
+      "full_mean_log_likelihood": -5.952006906270981,
+      "max_undefined_mass": 3.623896737619506e-05,
+      "mean_log_defined_mass_per_token": -4.76837158203125e-06,
+      "mean_undefined_mass_per_token": 4.768289273752414e-06
+    },
+    "original/shuffled/K16": {
+      "defined_mean_log_likelihood": -40.59580616323228,
+      "documents": 8,
+      "full_mean_log_likelihood": -40.59581140844102,
+      "max_undefined_mass": 3.623896737619506e-05,
+      "mean_log_defined_mass_per_token": -3.2782554626464844e-07,
+      "mean_undefined_mass_per_token": 3.2782037357552983e-07
+    },
+    "plain_reanchor32/empty/K1": {
+      "defined_mean_log_likelihood": -1.8344592973589897,
+      "documents": 8,
+      "full_mean_log_likelihood": -1.8344592973589897,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "plain_reanchor32/empty/K16": {
+      "defined_mean_log_likelihood": -23.21751298108046,
+      "documents": 8,
+      "full_mean_log_likelihood": -23.21751298108046,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "plain_reanchor32/empty_minus_raw/K1/defined": {
+      "documents": 8,
+      "mean_nats": -1.0237608364353434,
+      "positive_documents": 1
+    },
+    "plain_reanchor32/empty_minus_raw/K1/full": {
+      "documents": 8,
+      "mean_nats": -1.0237608364353434,
+      "positive_documents": 1
+    },
+    "plain_reanchor32/empty_minus_raw/K16/defined": {
+      "documents": 8,
+      "mean_nats": -2.4581751127100038,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/empty_minus_raw/K16/full": {
+      "documents": 8,
+      "mean_nats": -2.4581751127100038,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/filler/K1": {
+      "defined_mean_log_likelihood": -1.786890834569931,
+      "documents": 8,
+      "full_mean_log_likelihood": -1.786890834569931,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "plain_reanchor32/filler/K16": {
+      "defined_mean_log_likelihood": -23.33402689610447,
+      "documents": 8,
+      "full_mean_log_likelihood": -23.33402689610447,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "plain_reanchor32/other/K1": {
+      "defined_mean_log_likelihood": -2.463246390223503,
+      "documents": 8,
+      "full_mean_log_likelihood": -2.463246628642082,
+      "max_undefined_mass": 1.9073468138242529e-06,
+      "mean_log_defined_mass_per_token": -2.384185791015625e-07,
+      "mean_undefined_mass_per_token": 2.384183517280316e-07
+    },
+    "plain_reanchor32/other/K16": {
+      "defined_mean_log_likelihood": -27.022340577377804,
+      "documents": 8,
+      "full_mean_log_likelihood": -27.022340815796383,
+      "max_undefined_mass": 1.9073468138242529e-06,
+      "mean_log_defined_mass_per_token": -1.4901161193847656e-08,
+      "mean_undefined_mass_per_token": 1.4901146983001976e-08
+    },
+    "plain_reanchor32/own/K1": {
+      "defined_mean_log_likelihood": -3.045624442398548,
+      "documents": 8,
+      "full_mean_log_likelihood": -3.045624442398548,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "plain_reanchor32/own/K16": {
+      "defined_mean_log_likelihood": -28.44901810827085,
+      "documents": 8,
+      "full_mean_log_likelihood": -28.449019538782323,
+      "max_undefined_mass": 1.1444026313506273e-05,
+      "mean_log_defined_mass_per_token": -8.940696716308594e-08,
+      "mean_undefined_mass_per_token": 8.940645557426775e-08
+    },
+    "plain_reanchor32/own_minus_empty/K1/defined": {
+      "documents": 8,
+      "mean_nats": -1.2111651450395584,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_empty/K1/full": {
+      "documents": 8,
+      "mean_nats": -1.2111651450395584,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_empty/K16/defined": {
+      "documents": 8,
+      "mean_nats": -5.231505127190388,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_empty/K16/full": {
+      "documents": 8,
+      "mean_nats": -5.231506557701863,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_filler/K1/defined": {
+      "documents": 8,
+      "mean_nats": -1.258733607828617,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_filler/K1/full": {
+      "documents": 8,
+      "mean_nats": -1.258733607828617,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_filler/K16/defined": {
+      "documents": 8,
+      "mean_nats": -5.11499121216638,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_filler/K16/full": {
+      "documents": 8,
+      "mean_nats": -5.114992642677855,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_other/K1/defined": {
+      "documents": 8,
+      "mean_nats": -0.582378052175045,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_other/K1/full": {
+      "documents": 8,
+      "mean_nats": -0.5823778137564659,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_other/K16/defined": {
+      "documents": 8,
+      "mean_nats": -1.4266775308930448,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_other/K16/full": {
+      "documents": 8,
+      "mean_nats": -1.4266787229859403,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_raw/K1/defined": {
+      "documents": 8,
+      "mean_nats": -2.234925981474902,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_raw/K1/full": {
+      "documents": 8,
+      "mean_nats": -2.234925981474902,
+      "positive_documents": 2
+    },
+    "plain_reanchor32/own_minus_raw/K16/defined": {
+      "documents": 8,
+      "mean_nats": -7.689680239900392,
+      "positive_documents": 1
+    },
+    "plain_reanchor32/own_minus_raw/K16/full": {
+      "documents": 8,
+      "mean_nats": -7.689681670411867,
+      "positive_documents": 1
+    },
+    "plain_reanchor32/own_minus_shuffled/K1/defined": {
+      "documents": 8,
+      "mean_nats": -0.6928069889545441,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_shuffled/K1/full": {
+      "documents": 8,
+      "mean_nats": -0.6928069889545441,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_shuffled/K16/defined": {
+      "documents": 8,
+      "mean_nats": -2.4314858004982227,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/own_minus_shuffled/K16/full": {
+      "documents": 8,
+      "mean_nats": -2.4314872310096973,
+      "positive_documents": 3
+    },
+    "plain_reanchor32/shuffled/K1": {
+      "defined_mean_log_likelihood": -2.352817453444004,
+      "documents": 8,
+      "full_mean_log_likelihood": -2.352817453444004,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "plain_reanchor32/shuffled/K16": {
+      "defined_mean_log_likelihood": -26.017532307772626,
+      "documents": 8,
+      "full_mean_log_likelihood": -26.017532307772626,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "raw/raw/K1": {
+      "defined_mean_log_likelihood": -0.8106984609236463,
+      "documents": 8,
+      "full_mean_log_likelihood": -0.8106984609236463,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "raw/raw/K16": {
+      "defined_mean_log_likelihood": -20.75933786837046,
+      "documents": 8,
+      "full_mean_log_likelihood": -20.75933786837046,
+      "max_undefined_mass": -0.0,
+      "mean_log_defined_mass_per_token": 0.0,
+      "mean_undefined_mass_per_token": 0.0
+    },
+    "reanchor32/empty/K1": {
+      "defined_mean_log_likelihood": -1.609545100480318,
+      "documents": 8,
+      "full_mean_log_likelihood": -1.609552014619112,
+      "max_undefined_mass": 5.1497087065425065e-05,
+      "mean_log_defined_mass_per_token": -6.9141387939453125e-06,
+      "mean_undefined_mass_per_token": 6.9139721318877126e-06
+    },
+    "reanchor32/empty/K16": {
+      "defined_mean_log_likelihood": -23.77072100897881,
+      "documents": 8,
+      "full_mean_log_likelihood": -23.770914366446462,
+      "max_undefined_mass": 0.0013228242468240612,
+      "mean_log_defined_mass_per_token": -1.208484172821045e-05,
+      "mean_undefined_mass_per_token": 1.2077889377805463e-05
+    },
+    "reanchor32/empty_minus_raw/K1/defined": {
+      "documents": 8,
+      "mean_nats": -0.7988466395566718,
+      "positive_documents": 1
+    },
+    "reanchor32/empty_minus_raw/K1/full": {
+      "documents": 8,
+      "mean_nats": -0.7988535536954657,
+      "positive_documents": 1
+    },
+    "reanchor32/empty_minus_raw/K16/defined": {
+      "documents": 8,
+      "mean_nats": -3.0113831406083538,
+      "positive_documents": 2
+    },
+    "reanchor32/empty_minus_raw/K16/full": {
+      "documents": 8,
+      "mean_nats": -3.011576498076005,
+      "positive_documents": 2
+    },
+    "reanchor32/filler/K1": {
+      "defined_mean_log_likelihood": -1.6275985389947891,
+      "documents": 8,
+      "full_mean_log_likelihood": -1.6275999695062637,
+      "max_undefined_mass": 3.8146899896766375e-06,
+      "mean_log_defined_mass_per_token": -1.430511474609375e-06,
+      "mean_undefined_mass_per_token": 1.4305096556217062e-06
+    },
+    "reanchor32/filler/K16": {
+      "defined_mean_log_likelihood": -24.379616647265614,
+      "documents": 8,
+      "full_mean_log_likelihood": -24.379873424075306,
+      "max_undefined_mass": 0.0011285131401957667,
+      "mean_log_defined_mass_per_token": -1.6048550605773926e-05,
+      "mean_undefined_mass_per_token": 1.604191886997409e-05
+    },
+    "reanchor32/other/K1": {
+      "defined_mean_log_likelihood": -2.8004974722862244,
+      "documents": 8,
+      "full_mean_log_likelihood": -2.8005518317222595,
+      "max_undefined_mass": 0.00020025155342584422,
+      "mean_log_defined_mass_per_token": -5.435943603515625e-05,
+      "mean_undefined_mass_per_token": 5.435545767416525e-05
+    },
+    "reanchor32/other/K16": {
+      "defined_mean_log_likelihood": -29.66117481319607,
+      "documents": 8,
+      "full_mean_log_likelihood": -29.66142133800686,
+      "max_undefined_mass": 0.0013856815116176588,
+      "mean_log_defined_mass_per_token": -1.5407800674438477e-05,
+      "mean_undefined_mass_per_token": 1.5400003679612345e-05
+    },
+    "reanchor32/own/K1": {
+      "defined_mean_log_likelihood": -2.9063443318009377,
+      "documents": 8,
+      "full_mean_log_likelihood": -2.906478561460972,
+      "max_undefined_mass": 0.0004900684758301089,
+      "mean_log_defined_mass_per_token": -0.0001342296600341797,
+      "mean_undefined_mass_per_token": 0.00013420512154742575
+    },
+    "reanchor32/own/K16": {
+      "defined_mean_log_likelihood": -30.362246204307326,
+      "documents": 8,
+      "full_mean_log_likelihood": -30.36289494126106,
+      "max_undefined_mass": 0.0017494140331828461,
+      "mean_log_defined_mass_per_token": -4.054605960845947e-05,
+      "mean_undefined_mass_per_token": 4.0522603280966276e-05
+    },
+    "reanchor32/own_minus_empty/K1/defined": {
+      "documents": 8,
+      "mean_nats": -1.2967992313206196,
+      "positive_documents": 2
+    },
+    "reanchor32/own_minus_empty/K1/full": {
+      "documents": 8,
+      "mean_nats": -1.2969265468418598,
+      "positive_documents": 2
+    },
+    "reanchor32/own_minus_empty/K16/defined": {
+      "documents": 8,
+      "mean_nats": -6.591525195328515,
+      "positive_documents": 1
+    },
+    "reanchor32/own_minus_empty/K16/full": {
+      "documents": 8,
+      "mean_nats": -6.591980574814599,
+      "positive_documents": 1
+    },
+    "reanchor32/own_minus_filler/K1/defined": {
+      "documents": 8,
+      "mean_nats": -1.2787457928061485,
+      "positive_documents": 2
+    },
+    "reanchor32/own_minus_filler/K1/full": {
+      "documents": 8,
+      "mean_nats": -1.278878591954708,
+      "positive_documents": 2
+    },
+    "reanchor32/own_minus_filler/K16/defined": {
+      "documents": 8,
+      "mean_nats": -5.982629557041712,
+      "positive_documents": 1
+    },
+    "reanchor32/own_minus_filler/K16/full": {
+      "documents": 8,
+      "mean_nats": -5.983021517185755,
+      "positive_documents": 1
+    },
+    "reanchor32/own_minus_other/K1/defined": {
+      "documents": 8,
+      "mean_nats": -0.10584685951471329,
+      "positive_documents": 5
+    },
+    "reanchor32/own_minus_other/K1/full": {
+      "documents": 8,
+      "mean_nats": -0.10592672973871231,
+      "positive_documents": 5
+    },
+    "reanchor32/own_minus_other/K16/defined": {
+      "documents": 8,
+      "mean_nats": -0.7010713911112543,
+      "positive_documents": 4
+    },
+    "reanchor32/own_minus_other/K16/full": {
+      "documents": 8,
+      "mean_nats": -0.7014736032541986,
+      "positive_documents": 4
+    },
+    "reanchor32/own_minus_raw/K1/defined": {
+      "documents": 8,
+      "mean_nats": -2.0956458708772914,
+      "positive_documents": 2
+    },
+    "reanchor32/own_minus_raw/K1/full": {
+      "documents": 8,
+      "mean_nats": -2.0957801005373256,
+      "positive_documents": 2
+    },
+    "reanchor32/own_minus_raw/K16/defined": {
+      "documents": 8,
+      "mean_nats": -9.602908335936869,
+      "positive_documents": 1
+    },
+    "reanchor32/own_minus_raw/K16/full": {
+      "documents": 8,
+      "mean_nats": -9.603557072890604,
+      "positive_documents": 1
+    },
+    "reanchor32/own_minus_shuffled/K1/defined": {
+      "documents": 8,
+      "mean_nats": -0.40069252997636795,
+      "positive_documents": 5
+    },
+    "reanchor32/own_minus_shuffled/K1/full": {
+      "documents": 8,
+      "mean_nats": -0.4008260443806648,
+      "positive_documents": 5
+    },
+    "reanchor32/own_minus_shuffled/K16/defined": {
+      "documents": 8,
+      "mean_nats": -2.217537812052001,
+      "positive_documents": 3
+    },
+    "reanchor32/own_minus_shuffled/K16/full": {
+      "documents": 8,
+      "mean_nats": -2.2180113113500965,
+      "positive_documents": 3
+    },
+    "reanchor32/shuffled/K1": {
+      "defined_mean_log_likelihood": -2.5056518018245697,
+      "documents": 8,
+      "full_mean_log_likelihood": -2.505652517080307,
+      "max_undefined_mass": 1.9073468138242529e-06,
+      "mean_log_defined_mass_per_token": -7.152557373046875e-07,
+      "mean_undefined_mass_per_token": 7.152550551840949e-07
+    },
+    "reanchor32/shuffled/K16": {
+      "defined_mean_log_likelihood": -28.144708392255325,
+      "documents": 8,
+      "full_mean_log_likelihood": -28.144883629910964,
+      "max_undefined_mass": 0.0008255410113705493,
+      "mean_log_defined_mass_per_token": -1.0952353477478027e-05,
+      "mean_undefined_mass_per_token": 1.0948657303173976e-05
+    }
+  },
+  "archive": {
+    "off_instance": false,
+    "originals_retained": true,
+    "payload_bytes": 2180375,
+    "payload_file_count": 32,
+    "receipt_path": "/home/ubuntu/dario/local/backups/diagnostics/reader-support-dev8-v1/VERIFIED.json",
+    "receipt_sha256": "eef339c100e47520b20970900ce88200a0d427c45b5486fd400832e0cdc7a7e5"
+  },
+  "checkpoint": null,
+  "compute": "fp32",
+  "conclusion": "Tokenizer-undefined output mass does not explain the measured format tax on these fixed eight development documents. No support-mask, model, behavior or training change is warranted by this diagnostic.",
+  "contexts": 128,
+  "controls": [
+    "raw",
+    "empty",
+    "own",
+    "filler",
+    "shuffled",
+    "other"
+  ],
+  "exact_fixed_context_coverage": true,
+  "experiment_id": "reader-support-dev8-v1",
+  "failures": 0,
+  "formula": "logP_defined(y)=logP_full(y)-logP_full(defined); all from identical logits",
+  "horizons": [
+    1,
+    16
+  ],
+  "interfaces": [
+    "original",
+    "reanchor32",
+    "plain_reanchor32"
+  ],
+  "items": 8,
+  "limitations": [
+    "Original G1 prefix-only notes and global controls; no new writer.",
+    "Renormalizing output support does not create reasoning or establish content utility.",
+    "Eight fixed development documents; not a confirmatory or final-test result."
+  ],
+  "maximum_full_support_reference_token_error": 2.765655517578125e-05,
+  "maximum_same_logit_identity_residual": 0.0,
+  "maximum_undefined_probability_mass": 0.0020597197321263606,
+  "model": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+  },
+  "model_id": "Qwen/Qwen3-1.7B-Base",
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "per_quartile": 2,
+  "protocol_sha256": "6836e67a460b3eb100e2c25ea27c7499a25c5df2af229689b06d3fa9f5c6f7be",
+  "purpose": "Exploratory held DEV output-support mass diagnostic; no sampling or training",
+  "reference_atol": 0.002,
+  "reference_score_sha256": {
+    "pilot_scores": "eff53e45d44403ab2459ee09c2eb8cb5041ae890cf996e9e2b5d18ec6ca35c16",
+    "prompt_scores": "d8d83f19ee9a8bb28c9b29450b33e7a0dc8ae98717595b6704776ba9db6b41e3"
+  },
+  "schema": "reader-support-development-v1",
+  "scores_sha256": "464b4d7537850bf2a7913690f89b979db76a058d63fc0c9fd43778d5a4339b1b",
+  "selection_item_ids_sha256": "a47411043c84b3f9a905ee070f17a6d3d2a63b72209090470df3cd5550576ad6",
+  "selection_rule": "First two IDs per frozen B0 quartile, in the completed DEV32 order",
+  "source_sha256": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/reader_support_probe.py": "3fc1af2436dcb9bd46a961e892318424af2356988f390fd88476966323af0679",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "complete",
+  "summary_sha256": "0049e41cddb10605fb21dd570dea4ff3a5b7228c48040cbd60ff580924710625",
+  "supports": [
+    "full_model_vocabulary",
+    "tokenizer_defined_renormalized"
+  ],
+  "token_positions": 2048
+}

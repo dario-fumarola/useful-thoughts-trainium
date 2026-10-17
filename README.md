@@ -69,6 +69,23 @@ All896 scores succeeded; original-format token likelihoods reproduce B0 to
 are saved in a verified2MB EBS archive. Fresh G16 candidate search and a separate replay-stage profiler are now running;
 [source and declared plan](validation/new_direction_diagnostics_20261017.json).
 
+A second [DEV32 reader probe](validation/prompt_interface_dev32_20261017.json)
+found published RLP instruction wording still carries a6.223-nat empty-format
+penalty. Plain newline boundaries plus repeat32 reduce it to1.085, but own
+thoughts still trail same-format empty by1.175 nats. A [weight inspection](validation/B0_marker_embeddings_20261017.json)
+found exactly identical input rows for the released think/end-think/chat boundary
+tokens; correcting the published delimiter therefore produces identical reader
+scores. This identifies an initialization detail, not a complete explanation.
+A separate [DEV8 support check](validation/reader_support_dev8_20261017.json)
+rules out undefined output probability as the measured tax's main source:
+renormalization changes the original empty penalty by only0.000549 nats.
+
+The [frozen TRAIN scan](validation/anchors_train1024_20261017.json) found237
+high-surprisal anchors among1024 prospectively ordered real FineMath documents;
+the first128 now feed a separate2048-candidate TRAIN search. Training examples
+will come from TRAIN, and any future-based selection will be reported explicitly.
+No new training improvement has been established.
+
 Fixed128-question GSM8K **TRAIN development** results:
 
 | Mode | B0 /128 | C1234@64 /128 | C1234@256 /128 | C256−B0 pp,95% conditional interval |
