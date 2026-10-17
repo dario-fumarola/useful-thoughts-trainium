@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 05:09 UTC
+# Current state — 2026-10-17 05:23 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -15,8 +15,10 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 **Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
 world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped and cached graph loads are progressing. First full update is pending.
-The prospective steady timing window is updates5–14. No scientific arm launched.
+are mapped; **update1 completed at05:22:31**,939.926s, finite norm38.17278,
+sampled replicas equal and replay error.00004482. Update2 is running. First-update
+workload313,625 actions; no isolated host-policy speedup claim. The prospective
+steady timing window is updates5–14. No scientific arm launched.
 
 - Control `local/qualification/ram-sequence-v2/lower`; output
   `local/nvme/qualification/qwen-r-fp32-ram-tmp-005`, raw logs/monitor in its
