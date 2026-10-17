@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 06:21 UTC
+# Current state — 2026-10-17 06:32 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -15,10 +15,10 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 **Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
 world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
-are mapped; **update4 completed at06:08:09**,953.322s, finite norm82.73212,
-sampled replicas equal and replay error.00004745. Update5 is running. Full-step
-times1–4 are939.926/867.743/869.016/953.322s; no isolated host-policy speedup claim. The prospective
-steady timing window is updates5–14. No scientific arm launched.
+are mapped; **update5 completed at06:23:57**,902.195s, finite norm76.8007,
+sampled replicas equal and replay error.0000677. Update6 is running. The first
+of ten prospective timings5–14 is902.195s, including actual upper recovery work;
+all ten remain unadjusted. No isolated host-policy speedup claim or science arm.
 
 - Control `local/qualification/ram-sequence-v2/lower`; output
   `local/nvme/qualification/qwen-r-fp32-ram-tmp-005`, raw logs/monitor in its
@@ -67,30 +67,26 @@ and EBS payloads for BOTH checkpoints, PASS:
 `local/qualification/qwen-r-fp32-nvme-tmp-004/terminal-backup-verification.json`,
 SHA4e614878…5ee89. All NVMe originals remain.
 
-The original strict upper **cp3-only verified hardlink fork and precreated STOP**
-were prepared at05:01:07; no future metrics/tapes copied. Original fork receipt
-`local/qualification/qwen-r-fp32-ram-resume-004/fork.json`; STOP SHA9a9df879…eecf8.
-**Upper recovery is active**, control `local/qualification/ram-sequence-v2/upper`,
-tmux `dario-ram-v2-upper004`; original v1 stays unreleased. Root issued release
-at05:52:33, SHAf882c0fd…ca035, binding actual lower readyb674fd49…7d9b0 and the
-unchanged original fork/STOP. Full original fork preflight passed before readiness
-expired05:57:19. Launcher1327148, timeout/PGID1328412, driver1328414,
-monitor timeout1328411. Review independently verified all32 actual workers/env/
-ancestry on physical devices8–15 at05:54:32; all lower identities remain exact.
-Receipt `upper/review.processes.json`, SHA90af9654…1c64d. Review owns STOP supervision and original tape/state
-comparators; distributed owns actual simultaneous execution evidence. Output
-`local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004`.
-Strict restored3→one update4/save/exit is required; same deadline13:05:19 UTC.
-Actual restored3 export is complete; update4 began05:56:32. Two raw approximately5s
-monitor windows record nonzero execution on both actual partitions, the latter
-after upper's first completed gradient tape. Root independently verified the
-first raw byte segment and all64 PID/count bindings (444 lower/4 upper; errors0),
-`-observation/root-overlap-review.json`. This is sampled coexecution, not recovery
-correctness or a simultaneous-throughput multiplier. Review comparisons pending.
-All128 upper gradient tapes are saved. The first restored optimizer path is
-performing32 rank-specific cold compilations, with no update4 metric/checkpoint
-yet. Preserve this cold recovery cost; don't call it steady work or drop any
-overlapping lower timing from the fixed5–14 set.
+**Strict upper recovery PASS**, original criteria5558cf95…8a00a4 unchanged.
+Actual restored3 model/all32 optimizer shards/RNG/counters/order are byte-exact;
+all128 first-resumed4 tapes are identical. Complete post-update4 model/optimizer
+passes1e-7+1e-6, with small non-bitwise differences retained (model max9.095e-13,
+optimizer max2.910e-11); RNG/counters/Adam steps and loss/norm remain exact.
+Original cp3-only fork/STOP stayed intact; sole metric4, exit0 at06:22:27,
+all owned upper processes gone/devices8–15 idle at06:23:12. Original v1 unused.
+Report `validation/r_fp32_ram_resume_20261017.json`; local control
+`local/qualification/ram-sequence-v2/upper`, aggregate1bf34ff1…6ad0f.
+Output `local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004`.
+Its unique continued4 EBS copy waits for the existing lower watcher to finish;
+all original NVMe payloads remain. No external destination is approved.
+
+Upper update4 began05:56:32, full elapsed1488.798s includes32 cold restored-optimizer
+compilations; CP4 COMPLETE06:22:17. Startup/export/compile/checkpoint are separated
+in the report. Two raw approximately5s monitor windows record nonzero execution
+on both mapped partitions, the latter after upper gradient work. Root verified
+the first raw segment/all64 PID-count bindings (444 lower/4 upper; errors0),
+`-observation/root-overlap-review.json`. This is sampled coexistence, not steady
+two-R throughput. Lower timings5–14 include all actual overlap without subtraction.
 
 **B0 held-development suite complete, exit0**, all128 fixed GSM8K TRAIN items in
 three modes: **direct113/128 (88.28125%)**, **empty107/128 (83.59375%)**,
@@ -165,23 +161,20 @@ and qualification success do not establish useful deployed thoughts.
 
 ## Exact next sequence
 
-Original baseline cleanup/fork preparation and one-shot lower readiness are
-complete; v2 lower training and upper strict recovery are active.
+Upper strict recovery and actual sampled two-R coexistence passed. Lower is active.
 
-1. Follow **v2 upper** strict restored3→one update4/save/exit. Review independently
-   compares actual restored state/RNG raw bytes, all128 new stochastic tapes and
-   complete post-update state using original criteria **5558cf95…8a00a4** and
-   tolerances1e-7+1e-6. Never force RNG or loosen bounds. Original v1 stays unused.
-2. Lower continues14. Report ten full timings5–14 and genuine overlapping device
+1. Lower continues14. Report ten full timings5–14 and genuine overlapping device
    execution separately. No extra upper profiling job or assumed simultaneous
    throughput multiplier. Finish verified backups and owned-process cleanup.
-3. Choose qualified host placement, account for production-loader RAM/storage and
+2. Choose qualified host placement, account for production-loader RAM/storage and
    actual measured costs, freeze256, then launch the matched fresh-B0 seed chains.
+   Prospective command note `local/science/preparation-256/LAUNCH_NOTE.md` is a
+   draft, not a release. Necessary timed freeze supplies full-loader peak RSS.
 
 Reviewed controls `local/qualification/ram-sequence-v2`, manifest
 **daf199d05b620a05105520f734a3d53622ed1771cbb6662557125c11243ac1c6**;
 public `validation/r_ram_sequence_20261017.json`. Six host fixtures and both static
-probes pass; **lower running; upper strict recovery launched after actual ready review**. All original v1 files stay
+probes pass; **lower running; upper strict recovery PASS after actual ready review**. All original v1 files stay
 immutable; **never release original v1 launchers**, old R003 resume, or old
 upper-overlap-001. Lower0–31 ports64331/2, upper32–63 ports64321/2. Private RAM TMPDIRs
 are separately bound; raw logs/checkpoints stay NVMe, compiler cache stays EBS.

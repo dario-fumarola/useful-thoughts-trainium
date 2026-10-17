@@ -1,0 +1,299 @@
+{
+  "accumulation": 4,
+  "artifacts": [
+    {
+      "path": "local/qualification/ram-sequence-v2/manifest.json",
+      "sha256": "daf199d05b620a05105520f734a3d53622ed1771cbb6662557125c11243ac1c6"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/lower/ready.json",
+      "sha256": "b674fd49e06c6ce5ed45359a088388e8773db5e45f8c312f4c0ee8d45c67d9b0"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.aggregates.json",
+      "sha256": "1bf34ff1244b5a2be6cd6e32ead0cabea990cd5874444bb84c98bd6ebf66ad0f"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-lru2-002.resume.criteria.json",
+      "sha256": "5558cf957f3f1a904a73f63a665e760bf4be93f44a09698853f37f23c78a00a4"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-lru2-002.resume_state_compare.py",
+      "sha256": "19a4dbc1872d25ced257fc7f78502ef343e41549ad7d078c8a17d790180eec6a"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004-source/scripts/compare_stochastic_resume.py",
+      "sha256": "affeb60457b5e1d691dd492e411a10e3ee25af2b74fed8d0fa0030ef500caa9c"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-ram-resume-004/fork.json",
+      "sha256": "ba458ff3e5b41b67674ea5c1245c17b324c84e75b4c8bcc89b3c7d3fd416754a"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-ram-resume-004/STOP",
+      "sha256": "9a9df879908d37edbf8f2e59dae3caaa180110bdcd71980787eda064c54eecf8"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/exit.json",
+      "sha256": "e43152e8ebb59bb50417d6e28d285e57f65a5ad1c31161755c3dc8a0bbfdac84"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/run.json",
+      "sha256": "7c5dfe053efd86d6d49e10c07221044de66177b4d7fcdd265d70eea51baa5192"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/metrics.jsonl",
+      "sha256": "ab4616a70258243b42454f6ae5feaa934787126716677fcda4772f50c6baefa5"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004/run.json",
+      "sha256": "7c5dfe053efd86d6d49e10c07221044de66177b4d7fcdd265d70eea51baa5192"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004/metrics.jsonl",
+      "sha256": "f3c85b5fdd2ce4612b9ff81b72b147a68fa88db82551fa82152160c54476114f"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/step-0000003/COMPLETE.json",
+      "sha256": "88190797f3cca3e5531bfde7a7323cf4836993d5e97f6e9dc57974d622e8bbe0"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/step-0000004/COMPLETE.json",
+      "sha256": "86046ff4c0ccd1df606a614d2818625889eacf71874ebd2c09defe0629db38c7"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004/resume-restored/step-0000003/COMPLETE.json",
+      "sha256": "d015bb0002ed87e6aeb802108f52651978c1e44c2e45bcf571eb878040f5bc02"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-ram-resume-004/qwen-r-fp32-nvme-tmp-004/step-0000004/COMPLETE.json",
+      "sha256": "ab2fb5aa9cb8e3831d4dee5d6b0f2e572bfdf04aa45b5e91ab464f6522d2ecd2"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/preflight.json",
+      "sha256": "5441ee97dcf593784315dc6a709a94870bdaeaed1e00cb241111b971ef4cf7d7"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/release.json",
+      "sha256": "f882c0fdb11239017dd968cf40d056b6059b9708c754ce22b9c234d0dc3ca035"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.cleanup.json",
+      "sha256": "74196433a9c597bb423f41a3b86a9e843cec95ccd9ceb0584fe189c2126facc0"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.optimizer-compilation.json",
+      "sha256": "121d4f75d96dc7f4175e402f5a6c10971a0c948c0e286c27177d6b75ecc97fbe"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.phase-timing.json",
+      "sha256": "d631d8968fea5a35c73a492503e4a24c516fd03d4d018c38addb196161af5099"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.processes.initial.json",
+      "sha256": "5c63b63e739480d6e9a27a5695b9a1799d0ecc702cb1c9ed4e6ebba218670b37"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.processes.json",
+      "sha256": "90af9654d8b7ab6cd762199b4066d6bed3d631216eb3e845ed548dfc8601c64d"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.restored-marker.json",
+      "sha256": "fb5b409b46890fe4d70f88686009547542b32b7d1fc9d69fd74bd41529747d2f"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.state.execution.json",
+      "sha256": "90ad7cf92abfabd33c4fc11341733fcc60d473a6a2b47fdeb2c4b8c194556a4a"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/review.tapes.execution.json",
+      "sha256": "11ce6f08cc6226677db57cd68f9556960a674fc1e2057489f0b8bfdd11462dc8"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/state.compare.log",
+      "sha256": "8703e12933ff71fbe62d164e2dae32f7552ebcb20d5dafb90dd337c0e8250fd4"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/state.result.json",
+      "sha256": "5e945efd8a8a4cd7e676b4831e625f8fb7c63825772ce878b492a744b3aadbc4"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/tapes.compare.log",
+      "sha256": "d55e07cbb97f605206f7937d1990974e46f34e2024982e814739a95b8860beaf"
+    },
+    {
+      "path": "local/qualification/ram-sequence-v2/upper/tapes.result.json",
+      "sha256": "113a49f2c2d86bb30076202d7039da110f90f01cb3ea48e78209cdb121b1fcd6"
+    }
+  ],
+  "backup": "Original R004 EBS7/14 verified. Unique continued upper4 is on NVMe; separate EBS copy awaits the existing lower backup watcher completion to preserve serialization. No off-instance destination is approved.",
+  "baseline4_elapsed_seconds": 868.4488137849985,
+  "comparisons": {
+    "first_update": {
+      "adam_steps_bitwise_equal": true,
+      "all_optimizer_bitwise_equal": false,
+      "all_rank_nonoptimizer_fields_bitwise_equal": true,
+      "compared_optimizer_tensor_values": 5161734848,
+      "files_compared": 33,
+      "model_bitwise_equal": false,
+      "model_max_abs": 9.094947017729282e-13,
+      "optimizer_max_abs": 2.9103830456733704e-11,
+      "optimizer_max_tolerance_fraction": 0.00029002546168273167,
+      "passed": true
+    },
+    "restore": {
+      "adam_steps_bitwise_equal": true,
+      "all_optimizer_bitwise_equal": true,
+      "all_rank_nonoptimizer_fields_bitwise_equal": true,
+      "compared_optimizer_tensor_values": 5161734848,
+      "files_compared": 33,
+      "model_bitwise_equal": true,
+      "model_max_abs": 0.0,
+      "optimizer_max_abs": 0.0,
+      "optimizer_max_tolerance_fraction": 0.0,
+      "passed": true
+    }
+  },
+  "compute_dtype": "fp32",
+  "created_utc": "2026-10-17T06:31:43.786863+00:00",
+  "criteria": {
+    "actions_masks_lengths_decode_metadata": "exact every rank and micro at first resumed4; any first action divergence fails",
+    "atol": 1e-07,
+    "baseline_qualification_checkpoint_steps": [
+      3,
+      4,
+      7,
+      14
+    ],
+    "behavior_logps_rewards_advantages": "elementwise absolute1e-7+relative1e-6",
+    "created_utc": "2026-10-16T22:00:02.698838+00:00",
+    "first_resumed_step": 4,
+    "first_update_cpu_xla_rng_order_counters": "exact on every rank at completed4",
+    "first_update_full_model_masters_adam_moments": "elementwise absolute1e-7+relative1e-6 at completed4",
+    "full_loaded_model_masters_moments": "bitwise exact before continuation",
+    "loaded_cpu_xla_rng_order_counters": "exact on every rank before continuation",
+    "loss_global_gradient_norm": "absolute1e-7+relative1e-6 at completed4",
+    "preserve_first_divergence": true,
+    "qualification_result": null,
+    "resume_checkpoint_step": 3,
+    "resume_output_layout": "same basename under distinct parent; run.json + completed3 only; no future tapes/metrics/checkpoints copied",
+    "resume_stop_policy": "STOP preexists so exactly first resumed update4 checkpoints and exits",
+    "rng_reset_or_consumption_to_force_match": false,
+    "rtol": 1e-06,
+    "sampler_replay_bound_is_not_resume_tolerance": true,
+    "scope": "Prospective full Qwen R32 FP32 fresh-process resume: exact restore from completed3; first resumed4 versus uninterrupted4, before scientific training",
+    "separate_sampler_replay_bound": 0.001,
+    "source_requirement": "Both baseline/resume use same reviewed immutable source with qualification tapes and prospective extra step4 checkpoint; old8749 prepared job held"
+  },
+  "global_gradient_norm": {
+    "bitwise_equal": true,
+    "first_divergence": null,
+    "max_abs": 0.0,
+    "max_tolerance_fraction": 0.0,
+    "passed": true,
+    "tensor_values": 1,
+    "violations": 0
+  },
+  "global_prefixes": 128,
+  "group_size": 4,
+  "loss": {
+    "bitwise_equal": true,
+    "first_divergence": null,
+    "max_abs": 0.0,
+    "max_tolerance_fraction": 0.0,
+    "passed": true,
+    "tensor_values": 1,
+    "violations": 0
+  },
+  "metric4": {
+    "arm": "thought",
+    "counters": {
+      "sampled_actions": 919944,
+      "source_records": 512,
+      "source_tokens": 262656
+    },
+    "elapsed_seconds": 1488.7983409559965,
+    "gradient_norm": 86.91526794433594,
+    "max_replay_logp_error": 3.3974647521972656e-05,
+    "metrics": {
+      "abs_advantage": 1.6644184589385986,
+      "actions": 158788.0,
+      "capped": 0.203125,
+      "clean": -1.2498120069503784,
+      "gain": -8.343143463134766,
+      "loss": 0.48319923877716064,
+      "mean_signed_length": -133.0614776611328,
+      "padded_decode_slots": 281984.0,
+      "thought": -9.592954635620117
+    },
+    "replay_audit_performed": true,
+    "sampled_parameter_update": {
+      "sampled_changed_fraction": 0.9803427457809448,
+      "sampled_elements": 9920,
+      "sampled_replicas_bitwise_equal": true,
+      "sampled_update_l2": 7.78559478931129e-05
+    },
+    "status": "qualification",
+    "step": 4,
+    "time_utc": "2026-10-17T06:21:21+00:00"
+  },
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "note": "Single cold recovery episode. Small continued-state differences are retained; exact restoration does not imply bitwise continued weights. No steady speedup or capability result follows. Original CPU-coordinate v1 FAIL remains separate and unchanged.",
+  "parameter_dtype": "fp32",
+  "platform": "neuron",
+  "remaining_qualification": "Lower RAM005 fixed full-step timing window5\u201314, terminal backups/cleanup and production resource decision are still pending.",
+  "reward_horizon": 1,
+  "runtime_note": "Original LRU2/runtime/source retained. Host TMPDIR changed from original NVMe to separately bound private RAM; no objective or numerical criteria change.",
+  "schema": "R32-strict-RAM-recovery-v1",
+  "seed": 1234,
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac",
+  "status": "PASS_ORIGINAL_STRICT_RECOVERY_CRITERIA",
+  "strict_completion": {
+    "all_owned_upper_processes_gone": true,
+    "exit_code": 0,
+    "lower_identities_environment_and_mapping_preserved": true,
+    "metric_steps": [
+      4
+    ],
+    "original_STOP_unchanged": true,
+    "upper_devices_idle_at_cleanup": true
+  },
+  "synthetic": false,
+  "tapes": {
+    "all_tapes_bitwise_equal": true,
+    "count": 128,
+    "expected_count": 128,
+    "passed": true
+  },
+  "temperature": 0.7,
+  "thought_cap": 1024,
+  "timing": {
+    "additional_compiler_note": "These separate graphs complete after the recorded update-4 metric and before CP4 COMPLETE. Their time is reported separately from the driver per-update elapsed; no new training update is present.",
+    "cleanup_observed_utc": "2026-10-17T06:23:12.296206+00:00",
+    "cold_compile_interval_note": "The 32 main compiler inputs were published 06:12:14.152665\u201306:12:14.317177 UTC; their matched completion logs span 06:20:49.000030\u201306:21:08.000059 UTC. This is a cold compilation interval, not steady execution latency.",
+    "compiler_snapshot_sha256": "121d4f75d96dc7f4175e402f5a6c10971a0c948c0e286c27177d6b75ecc97fbe",
+    "complete4_mtime_utc": "2026-10-17T06:22:17.442690+00:00",
+    "created_utc": "2026-10-17T06:25:28.121646+00:00",
+    "exit_mtime_utc": "2026-10-17T06:22:27.477476+00:00",
+    "first_tape_mtime_utc": "2026-10-17T06:00:34.691050+00:00",
+    "full_update_elapsed_seconds": 1488.7983409559965,
+    "interpretation": "Single cold recovery update. Startup, restored audit export, cold compilation, update elapsed, final export and exit are distinct; this is not a steady timing or a ten-update simultaneous throughput measurement.",
+    "last_tape_mtime_utc": "2026-10-17T06:12:08.831675+00:00",
+    "main_compiler_note": "Matched exactly to the 32 direct-worker compiler model paths captured in review.optimizer-compilation.json after all 128 tapes. Input mtimes, where retained, are pre-compilation observations rather than execution durations.",
+    "metric_time_resolution": "one second; full_update_elapsed_seconds is the driver monotonic duration",
+    "metric_time_utc": "2026-10-17T06:21:21+00:00",
+    "preflight_complete_mtime_utc": "2026-10-17T05:53:22.908228+00:00",
+    "preflight_sha256": "5441ee97dcf593784315dc6a709a94870bdaeaed1e00cb241111b971ef4cf7d7",
+    "rank0_update_start_line": "2026-10-17T05:56:32+00:00 rank0 thought update 4/14",
+    "rank0_update_time_resolution": "one second",
+    "restored_complete3_mtime_utc": "2026-10-17T05:56:32.896327+00:00",
+    "root_launch_time_note": "Parent launch notice, at one-second resolution. Launch to update-start includes original fork preflight, fresh process/model/optimizer startup and actual restored-state audit export; these components are not individually profiled.",
+    "root_reported_launch_utc": "2026-10-17T05:52:38+00:00",
+    "run_log_sha256": "cba8244e93f23e947413dec1143e3c013ffb672fdfe0942dd55d3feb5b4ac1d5",
+    "schema": "review-strict-upper-phase-timing-v1"
+  },
+  "upper_host_io_policy_sha256": "30ba836dcc3fb5df105a0a43674ba305bcb5489657077c5595d99f261125b030",
+  "world_size": 32
+}

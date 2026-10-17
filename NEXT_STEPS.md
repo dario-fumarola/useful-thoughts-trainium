@@ -4,26 +4,28 @@ Mark complete only from actual artifacts. Live jobs, owners and commands are in
 STATUS.md. Follow `CODEX_NEXT_DAY.md`; the first research terminal remains the
 prospective **256 updates**, with a fixed step64 development milestone.
 
-1. Monitor active v2 lower RAM005 and upper strict recovery. Fixed lower COMPLETE3
-   and one-shot actual32-worker readiness passed; root reviewed/released/launched
-   upper within300s freshness. Shared deadline13:05:19 UTC. Original cp3-only fork
-   and STOP remain unchanged. Never release an original v1 launcher.
-2. Require actual restored3 state/RNG raw-byte equality, all128 new resumed tapes,
-   and complete post-update4 state at the original tight tolerances. Upper must
-   save/exit after exactly update4 with its precreated STOP intact. Review owns
-   independent CPU comparisons. Never force RNG or loosen criteria.
-3. Finish lower14, its ten prospective full timings5–14, verified backups and
-   process cleanup. Report genuine simultaneous device execution separately
+1. Finish active lower RAM005 through14, its ten prospective full timings5–14,
+   verified backups and process cleanup, finite deadline13:05:19 UTC. Strict upper
+   recovery PASS: exact restored3/RNG, all128 identical tapes, complete update4
+   within original tolerances, unchanged STOP/exit0/cleanup. Its report is
+   `validation/r_fp32_ram_resume_20261017.json`. Original v1 stays unused.
+2. Use actual full timings and resource headroom to choose placement/schedule.
+   Production-loader RAM must be budgeted beyond pilot coexistence: observed
+   MemAvailable reached285.93GiB while both pilot R groups were live. Use the
+   necessary timed freeze's full-loader RSS; declare the serial fallback if
+   parallel production lacks reserve. Retire only verified obsolete EBS duplicates
+   to make rollover space; serialize the pending unique upper4 EBS copy after
+   lower's watcher finishes. Preserve all original NVMe payloads.
+   Report genuine simultaneous device execution separately
    from the timing distribution; do not assume a concurrency multiplier. No
-   extra upper profiling job. Choose host placement and retain a serial fallback
-   from actual evidence, including production-loader RAM and backup storage.
-4. Freeze256 once these existing qualification requirements pass, then launch
+   extra upper profiling job.
+3. Freeze256 once these existing qualification requirements pass, then launch
    two32-core science chains: C1234→freshB0 R1234 and C5678→freshB0 R5678. Each
    arm starts independently from B0 and shares its seed's exact source order and
    exposure; no qualification or C checkpoint initializes R. Use the reviewed
    serialized EBS backup queue and one compressed node monitor. If timing makes
    256 unsuitable, explicitly declare an alternative before scientific outcomes.
-5. Complete fixed held development for C/R at64/256 in direct, empty_format and
+4. Complete fixed held development for C/R at64/256 in direct, empty_format and
    one_thought; B0 is complete at113/107/63 correct out of128 respectively. Keep
    every failure/truncation. Primary R-thought−C-thought, plus R-direct−C-direct,
    R-thought−R-empty and every trained arm versusB0. The qualification's near-empty
