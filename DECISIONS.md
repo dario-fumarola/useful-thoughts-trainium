@@ -299,3 +299,19 @@ R-empty and R-direct versus C-direct alongside the primary same-policy contrast.
 A recovery of formatting or a gain over a degraded control alone must remain
 distinct from capability above the starting model. Public result/provenance:
 `validation/held_dev_B0_20261017.json`.
+
+
+## 2026-10-17 05:09 UTC — retain the stopping diagnostic and start RAM qualification
+
+R004 completes14 full updates and verified EBS7/14. Its final512 samples include
+509 empty notes after terminator stripping; all stop at base EOS. Mean absolute
+raw gain remains negative. Preserve this qualification TRAIN behavior and do not
+call shorter notes, centered advantages or a faster update evidence of usefulness.
+The prospective256 terminal and unchanged three-mode comparisons remain fixed;
+any later apparent benefit must be distinguished from empty-format recovery or
+control degradation. All scientific arms still start afresh from B0.
+
+The original strict cp3-only fork/STOP is now verified. Root releases v2 lower
+freshB0/seed5678 RAM qualification, deadline13:05:19.591488 UTC. Data owns the
+one-shot fixed COMPLETE3 readiness; root owns upper release/launch and the sole
+active backup queue. No original v1 launcher is released.

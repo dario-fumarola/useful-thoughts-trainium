@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 04:36 UTC
+# Current state — 2026-10-17 05:09 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -13,37 +13,61 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 
 ## Live jobs and ownership
 
-**Distributed owns R004**, upper logical32–63, freshB0/seed1234, world32/global128/
-accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update12 at04:35:30**,
-695.022s; update13 runs; next checkpoint14. Ten post-cold observations3–12:
-median754.124s/P90876.890s, range695.022–897.506s. The final distribution retains
-all post-cold steps through14. Workload actions/padded slots shrink across these
-steps; these are not a TMPDIR-only causal estimate. All recorded norms are
-finite, sampled replicas equal, replay errors below.001. Updates1/2 include cold
-optimizer work and are excluded from steady samples. Checkpoint3/4/7 save wall
-49.368/47.404/47.230s is separate from per-step elapsed.
+**Distributed owns active RAM005**, lower logical0–31, freshB0/seed5678,
+world32/global128/accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. All32 workers
+are mapped and cached graph loads are progressing. First full update is pending.
+The prospective steady timing window is updates5–14. No scientific arm launched.
 
-- Common source commit `3aaaf8a18baeccb8d1a543d348a53f6863599114`, active code
-  SHA `244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7`.
-  No active-code edits during these jobs. Latest required source checks:
-  **233 CPU tests plus toy smoke PASS**, `local/checks/tests.Yr1uiR`.
-- Spec `92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac`.
-  Control `local/qualification/qwen-r-fp32-nvme-tmp-004`, output
-  `local/nvme/qualification/qwen-r-fp32-nvme-tmp-004`, raw logs/monitor in its
-  adjacent `-observation` directory. Prepared49c770b7…, root releasecb29f2b8….
-- Launcher871318, timeout/PGID871404, driver871406; recorded32 worker identities
-  in `{processes,rank-processes}.json`. Ports64301/64302. Hard deadline
-  **2026-10-17 09:38:07.402054 UTC**,30s kill grace.
-- TMPDIR `local/nvme/tmp/qwen-r-fp32-nvme-tmp-004`, device66310; persistent cache
-  `local/neuron-cache-driver` on EBS66305. Separately bound host policy9d2e1f20….
-- Root owns backup watcher: tmux `dario-r-nvme-tmp004-backup`, launcher897722,
-  timeout/PGID897725, Python897726, startticks3586343/3586344, same deadline.
-  `backup-supervisor.state.json` records **verified EBS steps4/7**, latest7 at
-  03:39:32, COMPLETE5a98b70b…708caab. Retain2 copies and every NVMe original.
-  Root also independently rehashed all33 original/EBS checkpoint3 payloads:
-  PASS, COMPLETE88190797…e8bbe0,27,542,553,263bytes. Its serialized model/all32
-  optimizer shards are finite, valid master slices match, all Adam steps3.
-  Stop this watcher if the driver fails or stops before terminal14.
+- Control `local/qualification/ram-sequence-v2/lower`; output
+  `local/nvme/qualification/qwen-r-fp32-ram-tmp-005`, raw logs/monitor in its
+  adjacent `-observation` directory. tmux `dario-ram-v2-lower005`.
+- Launcher1246580, timeout/PGID1246667, driver1246669, monitor timeout1246666.
+  Actual32 worker identities are in control `{processes,rank-processes}.json`;
+  actual launch receipt `launch.execution.json`. Ports64331/64332.
+- Root release at05:05:19 UTC, SHA2a3a46e9…b74f83. Preflight passed; run metadata
+  started05:06:33. Specb61afe63…bac80c. Hard deadline **13:05:19.591488 UTC**,
+  30s kill grace. Original v1 prepared96068a0d…cc9241 stays immutable/unreleased.
+- Private0700 TMPDIR `/dev/shm/dario/qwen-r-fp32-ram-tmp-005` on tmpfs26;
+  host policyc6cc7268…4ec21. Persistent cache remains EBS66305; logs/checkpoints
+  remain NVMe66310. Qualified source commit3aaaf8a and code SHA
+  **244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7**
+  are unchanged. Latest required source checks:233 CPU tests + toy smoke PASS.
+- **Data owns one-shot COMPLETE3 readiness capture**,5s file polling, tmux
+  `dario-ram-lower005-ready-watch`, PID1271879/startticks4830085, same deadline.
+  Capture only at latest complete metric3; readiness expires300s. Root alone
+  reviews/releases/launches upper. No retry or later-milestone substitution.
+- **Root owns the only active backup watcher**, tmux
+  `dario-ram-v2-lower005-backup`: launcher1272281, timeout/PGID1272286,
+  Python1272287, startticks4830210/211/212. Same deadline; state/control in v2
+  lower, raw events/logs in NVMe observation. Destination
+  `local/backups/qwen-r-fp32-ram-tmp-005`, retain2/all NVMe originals preserved.
+  No complete checkpoint yet. Stop this watcher if the driver fails/stops early.
+- Distributed reuses the existing read-only host observer in tmux
+  `dario-ram005-observe` for actual overlap/HBM evidence. No extra device job.
+
+**R004 completed14 updates and exit0 at04:58:17 UTC**, all original workers,
+launcher, monitor and observer gone. Full-step14:655.480s; CP14 save44.802s,
+COMPLETE39a26e7f…276673e. All post-cold updates3–14: median734.750s,
+P90 873.985s, mean761.221s. Workloads shrink greatly; no TMPDIR-only causal
+speedup is claimed. Cold work, checkpoint wall and shared-host intervals are
+separate. Single report `validation/r_fp32_nvme_execution_20261017.json`.
+
+R004 final TRAIN tapes have **509/512 empty notes**, all512 stop at base EOS;
+action lengths1/2/3 occur509/2/1 times. Mean raw gain remains negative. This is
+qualification behavior, not useful-thought evidence or a trained C/R result.
+The fixed research protocol and prospective256 terminal remain unchanged.
+
+R004 EBS **7/14** are verified, terminal copy published05:02:16; watcher exit0 at
+05:02:57 and all its owned PIDs gone. Root independently rehashed all33 original
+and EBS payloads for BOTH checkpoints, PASS:
+`local/qualification/qwen-r-fp32-nvme-tmp-004/terminal-backup-verification.json`,
+SHA4e614878…5ee89. All NVMe originals remain.
+
+The original strict upper **cp3-only verified hardlink fork and precreated STOP**
+were prepared at05:01:07; no future metrics/tapes copied. Original fork receipt
+`local/qualification/qwen-r-fp32-ram-resume-004/fork.json`; STOP SHA9a9df879…eecf8.
+Upper32–63 remains free/unreleased. Its strict restored3→one update4/save/exit
+will start only after root reviews actual lower COMPLETE3 readiness.
 
 **B0 held-development suite complete, exit0**, all128 fixed GSM8K TRAIN items in
 three modes: **direct113/128 (88.28125%)**, **empty107/128 (83.59375%)**,
@@ -118,26 +142,25 @@ and qualification success do not establish useful deployed thoughts.
 
 ## Exact next sequence
 
-After **R00414/exit/all original workers gone and B0 cleanup/all64 cores free**:
+Original baseline cleanup/fork preparation is complete and v2 lower is active.
 
-1. Use ORIGINAL upper `local/qualification/qwen-r-fp32-ram-resume-004/launch.sh
-   --prepare-fork` to create fully verified cp3-only hardlinks and strict STOP.
-2. Root releases **v2 lower**, then launches freshB0/seed5678 RAM005 through14.
-   At fixed lower COMPLETE3, promptly capture actual32 worker/env/ancestry/topology
-   with v2 `lower.launch.sh --ready`. Readiness is published once, expires300s;
-   no later milestone substitution or automatic retry.
-3. Root reviews actual readiness, releases **v2 upper**, launches original strict
-   restored3→one update4/save/exit. Compare actual restored state/RNG raw bytes,
-   first stochastic tapes and complete post-update state using original criteria
-   **5558cf95…8a00a4** and tight float tolerances; never force RNG or loosen bounds.
-4. Lower continues14. Report its ten full timings5–14 and genuine upper/lower
-   overlapping execution separately. No extra upper profiling job or assumed
-   simultaneous-throughput multiplier. Back up terminal states and verify cleanup.
+1. At fixed lower COMPLETE3, data captures actual32 worker/env/ancestry/topology
+   with v2 `lower.launch.sh --ready`. Root promptly reviews the actual receipt and
+   issues finite upper release, binding the original fork/STOP and ready hash.
+2. Launch **v2 upper** strict restored3→one update4/save/exit. Review independently
+   compares actual restored state/RNG raw bytes, all128 new stochastic tapes and
+   complete post-update state using original criteria **5558cf95…8a00a4** and
+   tolerances1e-7+1e-6. Never force RNG or loosen bounds. Original v1 stays unused.
+3. Lower continues14. Report ten full timings5–14 and genuine overlapping device
+   execution separately. No extra upper profiling job or assumed simultaneous
+   throughput multiplier. Finish verified backups and owned-process cleanup.
+4. Choose qualified host placement, account for production-loader RAM/storage and
+   actual measured costs, freeze256, then launch the matched fresh-B0 seed chains.
 
 Reviewed controls `local/qualification/ram-sequence-v2`, manifest
 **daf199d05b620a05105520f734a3d53622ed1771cbb6662557125c11243ac1c6**;
 public `validation/r_ram_sequence_20261017.json`. Six host fixtures and both static
-probes pass; **no fork/STOP/release/RAM training yet**. All original v1 files stay
+probes pass; **lower released/running; upper fork/STOP prepared but unreleased**. All original v1 files stay
 immutable; **never release original v1 launchers**, old R003 resume, or old
 upper-overlap-001. Lower0–31 ports64331/2, upper32–63 ports64321/2. Private RAM TMPDIRs
 are separately bound; raw logs/checkpoints stay NVMe, compiler cache stays EBS.
@@ -159,7 +182,7 @@ absolute clean/empty/own/filler and fixed random dev token-class/surprisal strat
 
 ## Storage and operational limits
 
-At03:49 EBS free **269.9GiB**, mounted NVMe **1.20TiB**, tmpfs about1,000GiB.
+At05:09 EBS free **269.8GiB**, mounted NVMe **1.15TiB**, tmpfs about1,000GiB.
 Only one NVMe is formatted; other3 SSDs remain untouched. Science uses one reviewed
 serialized backup queue and one compressed shared node monitor. Backup helper at
 `validation/orchestration` passes its6 host fixtures/TERM review, unlaunched.

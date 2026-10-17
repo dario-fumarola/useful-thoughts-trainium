@@ -1,0 +1,854 @@
+{
+  "schema": "r004-finite-execution-report-v1",
+  "created_utc": "2026-10-17T05:03:44.207266+00:00",
+  "status": "PASS_EXECUTION_ONLY",
+  "scientific_launch": false,
+  "run_id": "qwen-r-fp32-nvme-tmp-004",
+  "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+  "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+  "spec_hash": "92f866c86cb654b0daed9079e634837ae3aa5d950ffad21415022e24195ed7ac",
+  "seed": 1234,
+  "actual_B0_loaded": true,
+  "seed_order_sha256": "997307b43cb509f386ebd14d0428a675891afe41e1bdbd5514c3a7beb5765e5b",
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "records_sha256": "84eb6dcfe29528dd5de57c43904ba50cfd16da34c65d3068540808ae1bfeb8c1",
+  "format_sha256": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50",
+  "configuration": {
+    "world_size": 32,
+    "global_prefixes": 128,
+    "accumulation": 4,
+    "groups": 4,
+    "cap": 1024,
+    "reward_tokens": 1,
+    "temperature": 0.7,
+    "precision": "fp32",
+    "logical_cores": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "runtime_policy": {
+      "environment": {
+        "MKL_NUM_THREADS": "2",
+        "NEURON_CC_FLAGS": "--model-type=transformer",
+        "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+        "OMP_NUM_THREADS": "2",
+        "PJRT_DEVICE": "NEURON",
+        "XLA_COMPILATION_CACHE_SIZE": "2",
+        "XLA_DOWNCAST_BF16": null,
+        "XLA_USE_BF16": null
+      },
+      "schema": 1
+    },
+    "host_io_policy": {
+      "TMPDIR": "/home/ubuntu/dario/local/nvme/tmp/qwen-r-fp32-nvme-tmp-004",
+      "compiler_cache_resolved": "/home/ubuntu/dario/local/neuron-cache-driver",
+      "compiler_cache_st_dev": 66305,
+      "compiler_cache_url": "/home/ubuntu/dario/local/neuron-cache-driver",
+      "nvme_mount": "/home/ubuntu/dario/local/nvme",
+      "nvme_st_dev": 66310,
+      "observation_directory": "/home/ubuntu/dario/local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation",
+      "observation_st_dev": 66310,
+      "schema": 1,
+      "tmpdir_resolved": "/home/ubuntu/dario/local/nvme/tmp/qwen-r-fp32-nvme-tmp-004",
+      "tmpdir_st_dev": 66310
+    }
+  },
+  "full_updates": 14,
+  "driver_exit_code": 0,
+  "counters": {
+    "source_records": 1792,
+    "source_tokens": 919296,
+    "sampled_actions": 1207631
+  },
+  "per_step": [
+    {
+      "step": 1,
+      "time_utc": "2026-10-17T01:57:33+00:00",
+      "start_log_utc": "2026-10-17T01:39:19+00:00",
+      "concurrent_B0_held_dev": false,
+      "full_step_seconds": 1093.2626691149999,
+      "gradient_norm": 37.1866569519043,
+      "samples": 512,
+      "mean_action_length": 526.40234375,
+      "actions": 269518,
+      "padded_decode_slots": 420736,
+      "abs_advantage": 1.8969218730926514,
+      "mean_gain": -9.659700393676758,
+      "capped_fraction": 0.357421875,
+      "replay_error": 5.5789947509765625e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 0.00010385487985331565,
+        "sampled_changed_fraction": 0.9895161390304565,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 2,
+      "time_utc": "2026-10-17T02:22:38+00:00",
+      "start_log_utc": "2026-10-17T01:57:37+00:00",
+      "concurrent_B0_held_dev": false,
+      "full_step_seconds": 1501.217298276002,
+      "gradient_norm": 72.66261291503906,
+      "samples": 512,
+      "mean_action_length": 490.849609375,
+      "actions": 251315,
+      "padded_decode_slots": 419840,
+      "abs_advantage": 2.004225492477417,
+      "mean_gain": -8.861654281616211,
+      "capped_fraction": 0.314453125,
+      "replay_error": 4.0590763092041016e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 8.616698323749006e-05,
+        "sampled_changed_fraction": 0.984375,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 3,
+      "time_utc": "2026-10-17T02:37:36+00:00",
+      "start_log_utc": "2026-10-17T02:22:38+00:00",
+      "concurrent_B0_held_dev": false,
+      "full_step_seconds": 897.5058787680027,
+      "gradient_norm": 47.89022445678711,
+      "samples": 512,
+      "mean_action_length": 469.380859375,
+      "actions": 240323,
+      "padded_decode_slots": 389632,
+      "abs_advantage": 1.6925783157348633,
+      "mean_gain": -9.032492637634277,
+      "capped_fraction": 0.322265625,
+      "replay_error": 4.5418739318847656e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 8.062791312113404e-05,
+        "sampled_changed_fraction": 0.9825604557991028,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 4,
+      "time_utc": "2026-10-17T02:52:55+00:00",
+      "start_log_utc": "2026-10-17T02:38:27+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 868.4488137849985,
+      "gradient_norm": 86.91526794433594,
+      "samples": 512,
+      "mean_action_length": 310.1328125,
+      "actions": 158788,
+      "padded_decode_slots": 281984,
+      "abs_advantage": 1.6644184589385986,
+      "mean_gain": -8.343143463134766,
+      "capped_fraction": 0.203125,
+      "replay_error": 3.3974647521972656e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 7.78559478931129e-05,
+        "sampled_changed_fraction": 0.9803427457809448,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 5,
+      "time_utc": "2026-10-17T03:07:24+00:00",
+      "start_log_utc": "2026-10-17T02:53:43+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 820.7982150609969,
+      "gradient_norm": 76.55523681640625,
+      "samples": 512,
+      "mean_action_length": 242.234375,
+      "actions": 124024,
+      "padded_decode_slots": 251264,
+      "abs_advantage": 1.6374489068984985,
+      "mean_gain": -7.839244842529297,
+      "capped_fraction": 0.15625,
+      "replay_error": 4.9114227294921875e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 7.644159632036462e-05,
+        "sampled_changed_fraction": 0.9811491966247559,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 6,
+      "time_utc": "2026-10-17T03:21:58+00:00",
+      "start_log_utc": "2026-10-17T03:07:24+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 874.5998549369979,
+      "gradient_norm": 46.37054443359375,
+      "samples": 512,
+      "mean_action_length": 136.9296875,
+      "actions": 70108,
+      "padded_decode_slots": 170112,
+      "abs_advantage": 1.1535671949386597,
+      "mean_gain": -8.135077476501465,
+      "capped_fraction": 0.068359375,
+      "replay_error": 5.2094459533691406e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 7.406717486446723e-05,
+        "sampled_changed_fraction": 0.9792338609695435,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 7,
+      "time_utc": "2026-10-17T03:34:25+00:00",
+      "start_log_utc": "2026-10-17T03:21:59+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 746.6958556099999,
+      "gradient_norm": 41.353939056396484,
+      "samples": 512,
+      "mean_action_length": 88.83203125,
+      "actions": 45482,
+      "padded_decode_slots": 107264,
+      "abs_advantage": 0.8918099999427795,
+      "mean_gain": -8.069134712219238,
+      "capped_fraction": 0.052734375,
+      "replay_error": 4.9591064453125e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 7.238786929519847e-05,
+        "sampled_changed_fraction": 0.9787298440933228,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 8,
+      "time_utc": "2026-10-17T03:47:55+00:00",
+      "start_log_utc": "2026-10-17T03:35:13+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 761.552381280002,
+      "gradient_norm": 21.710166931152344,
+      "samples": 512,
+      "mean_action_length": 60.564453125,
+      "actions": 31009,
+      "padded_decode_slots": 73728,
+      "abs_advantage": 0.5895001888275146,
+      "mean_gain": -8.286481857299805,
+      "capped_fraction": 0.029296875,
+      "replay_error": 2.09808349609375e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 7.009565160842612e-05,
+        "sampled_changed_fraction": 0.9781249761581421,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 9,
+      "time_utc": "2026-10-17T03:59:56+00:00",
+      "start_log_utc": "2026-10-17T03:47:55+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 721.2363446059971,
+      "gradient_norm": 14.065814971923828,
+      "samples": 512,
+      "mean_action_length": 18.3828125,
+      "actions": 9412,
+      "padded_decode_slots": 33408,
+      "abs_advantage": 0.3680473268032074,
+      "mean_gain": -7.650470733642578,
+      "capped_fraction": 0.005859375,
+      "replay_error": 1.52587890625e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 6.825811578892171e-05,
+        "sampled_changed_fraction": 0.9791330695152283,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 10,
+      "time_utc": "2026-10-17T04:11:51+00:00",
+      "start_log_utc": "2026-10-17T03:59:56+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 715.0945080340025,
+      "gradient_norm": 6.047351837158203,
+      "samples": 512,
+      "mean_action_length": 5.794921875,
+      "actions": 2967,
+      "padded_decode_slots": 24960,
+      "abs_advantage": 0.17283885180950165,
+      "mean_gain": -7.889153480529785,
+      "capped_fraction": 0.00390625,
+      "replay_error": 2.6226043701171875e-05,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 6.560395559063181e-05,
+        "sampled_changed_fraction": 0.975806474685669,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 11,
+      "time_utc": "2026-10-17T04:23:54+00:00",
+      "start_log_utc": "2026-10-17T04:11:52+00:00",
+      "concurrent_B0_held_dev": true,
+      "full_step_seconds": 722.8041655439956,
+      "gradient_norm": 5.646385669708252,
+      "samples": 512,
+      "mean_action_length": 5.611328125,
+      "actions": 2873,
+      "padded_decode_slots": 21504,
+      "abs_advantage": 0.07098978757858276,
+      "mean_gain": -7.649633407592773,
+      "capped_fraction": 0.00390625,
+      "replay_error": 2.3562461137771606e-07,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 6.34479001746513e-05,
+        "sampled_changed_fraction": 0.9746975898742676,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 12,
+      "time_utc": "2026-10-17T04:35:30+00:00",
+      "start_log_utc": "2026-10-17T04:23:55+00:00",
+      "concurrent_B0_held_dev": false,
+      "full_step_seconds": 695.0220251559949,
+      "gradient_norm": 1.3116607666015625,
+      "samples": 512,
+      "mean_action_length": 1.525390625,
+      "actions": 781,
+      "padded_decode_slots": 16896,
+      "abs_advantage": 0.020333368331193924,
+      "mean_gain": -8.178984642028809,
+      "capped_fraction": 0.0,
+      "replay_error": 2.3748725652694702e-07,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 5.8618345065042377e-05,
+        "sampled_changed_fraction": 0.9732862710952759,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 13,
+      "time_utc": "2026-10-17T04:46:25+00:00",
+      "start_log_utc": "2026-10-17T04:35:30+00:00",
+      "concurrent_B0_held_dev": false,
+      "full_step_seconds": 655.4148180679986,
+      "gradient_norm": 0.6271638870239258,
+      "samples": 512,
+      "mean_action_length": 1.005859375,
+      "actions": 515,
+      "padded_decode_slots": 16384,
+      "abs_advantage": 0.0033963583409786224,
+      "mean_gain": -8.505273818969727,
+      "capped_fraction": 0.0,
+      "replay_error": 5.7220458984375e-06,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 5.485366637003608e-05,
+        "sampled_changed_fraction": 0.9715725779533386,
+        "sampled_replicas_bitwise_equal": true
+      }
+    },
+    {
+      "step": 14,
+      "time_utc": "2026-10-17T04:57:21+00:00",
+      "start_log_utc": "2026-10-17T04:46:26+00:00",
+      "concurrent_B0_held_dev": false,
+      "full_step_seconds": 655.4802490139991,
+      "gradient_norm": 0.5197754502296448,
+      "samples": 512,
+      "mean_action_length": 1.0078125,
+      "actions": 516,
+      "padded_decode_slots": 16384,
+      "abs_advantage": 0.004056859761476517,
+      "mean_gain": -8.82470989227295,
+      "capped_fraction": 0.0,
+      "replay_error": 7.62939453125e-06,
+      "replay_audit_performed": true,
+      "sampled_parameter_update": {
+        "sampled_elements": 9920,
+        "sampled_update_l2": 5.168448842596263e-05,
+        "sampled_changed_fraction": 0.9693548679351807,
+        "sampled_replicas_bitwise_equal": true
+      }
+    }
+  ],
+  "final_TRAIN_behavior": {
+    "schema": "R004-final-TRAIN-length-stop-diagnostic-v1",
+    "created_utc": "2026-10-17T04:59:36.994878+00:00",
+    "scope": "Descriptive qualification TRAIN behavior only. No downstream efficacy claim, changed gate, or device work.",
+    "step": 14,
+    "seed": 1234,
+    "rank_micro_tapes": 128,
+    "samples": 512,
+    "total_valid_actions": 516,
+    "action_length_includes_first_terminator": true,
+    "action_length_distribution": {
+      "1": 509,
+      "2": 2,
+      "3": 1
+    },
+    "note_content_length_distribution": {
+      "0": 509,
+      "1": 2,
+      "2": 1
+    },
+    "first_stop_token_counts": {
+      "151643": 512
+    },
+    "stop_token_labels": {
+      "151668": "explicit thought-end token </think>",
+      "151643": "base EOS"
+    },
+    "zero_content_samples": 509,
+    "immediate_stop_samples": 509,
+    "mean_action_length": 1.0078125,
+    "mean_note_content_length": 0.0078125,
+    "min_action_length": 1,
+    "max_action_length": 3,
+    "decode_iterations_distribution": {
+      "32": 128
+    },
+    "termination_counts": {
+      "base_EOS_151643": 512,
+      "explicit_thought_end_151668": 0,
+      "no_terminator_at_cap": 0
+    },
+    "interpretation": "509/512 final TRAIN notes contain no content after stripping the terminator. This is near immediate stopping during qualification, not evidence of useful thought or downstream efficacy."
+  },
+  "timing": {
+    "first_ten_post_cold": {
+      "steps": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "count": 10,
+      "mean_seconds": 782.3758042780988,
+      "median_seconds": 754.1241184450009,
+      "p90_seconds": 876.8904573200983,
+      "p90_method": "Linear interpolation at (n-1)*0.9",
+      "min_seconds": 695.0220251559949,
+      "max_seconds": 897.5058787680027
+    },
+    "all_post_cold": {
+      "steps": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "count": 12,
+      "mean_seconds": 761.2210924885821,
+      "median_seconds": 734.7500105769977,
+      "p90_seconds": 873.9847508217979,
+      "p90_method": "Linear interpolation at (n-1)*0.9",
+      "min_seconds": 655.4148180679986,
+      "max_seconds": 897.5058787680027
+    },
+    "cold_steps_excluded": [
+      1,
+      2
+    ],
+    "primary_descriptive_set": "All post-cold R004 updates 3\u201314. The first-ten 3\u201312 subset is descriptive and was not a prospectively preregistered timing window.",
+    "total_full_step_seconds": 11729.133077253988,
+    "summed_checkpoint_post_metric_to_complete_seconds": 193.743304,
+    "ready_preflight_utc": "2026-10-17T01:38:30+00:00",
+    "driver_exit_file_mtime_utc": "2026-10-17T04:58:17.374416+00:00",
+    "preflight_to_driver_exit_wall_seconds": 11987.374416,
+    "total_wall_semantics": "Preflight READY timestamp to driver exit file publication includes initialization, all steps, checkpoint work and driver cleanup. READY has one-second resolution and precedes allocation; it is a wall proxy, not an instrumented driver timer.",
+    "cold_reason": "Initial optimizer work shared with R003 and stateful optimizer compilation; cache/NEFF hashes retained.",
+    "step_elapsed_excludes_checkpoint": true,
+    "qualification_overhead": "Every qualification update audits micro0 replay and saves per-rank/micro stochastic tapes.",
+    "workload_caveat": "Actions and padded slots shrink during training. Warm cache does not mean constant workload. No isolated TMPDIR speedup or note-usefulness claim."
+  },
+  "checkpoints": [
+    {
+      "step": 3,
+      "complete": {
+        "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/step-0000003/COMPLETE.json",
+        "bytes": 9440,
+        "sha256": "88190797f3cca3e5531bfde7a7323cf4836993d5e97f6e9dc57974d622e8bbe0"
+      },
+      "payload_bytes": 27542553263,
+      "wall": {
+        "schema": "checkpoint-wall-observation-v1",
+        "created_utc": "2026-10-17T02:39:13.118348+00:00",
+        "step": 3,
+        "metric_utc": "2026-10-17T02:37:36+00:00",
+        "metric_resolution_seconds": 1,
+        "metric_fullstep_elapsed_seconds": 897.5058787680027,
+        "directory_birth_utc": "2026-10-17T02:37:37.835563+00:00",
+        "complete_mtime_utc": "2026-10-17T02:38:27.203374+00:00",
+        "next_update_log_line": "2026-10-17T02:38:27+00:00 rank0 thought update 4/14",
+        "directory_birth_to_complete_seconds": 49.367811,
+        "post_metric_to_complete_seconds": 51.203374,
+        "post_metric_to_next_update_seconds": 51.0,
+        "scope": "Wall observations only: metric precedes save decisions/barriers, directory is created after checkpoint entry barrier, COMPLETE precedes final barrier. Metric and next-update log have one-second resolution. Separate asynchronous EBS backup is excluded.",
+        "complete_sha256": "88190797f3cca3e5531bfde7a7323cf4836993d5e97f6e9dc57974d622e8bbe0",
+        "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114"
+      }
+    },
+    {
+      "step": 4,
+      "complete": {
+        "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/step-0000004/COMPLETE.json",
+        "bytes": 9440,
+        "sha256": "86046ff4c0ccd1df606a614d2818625889eacf71874ebd2c09defe0629db38c7"
+      },
+      "payload_bytes": 27542553263,
+      "wall": {
+        "schema": "checkpoint-wall-observation-v1",
+        "created_utc": "2026-10-17T02:54:06.992290+00:00",
+        "step": 4,
+        "metric_utc": "2026-10-17T02:52:55+00:00",
+        "metric_resolution_seconds": 1,
+        "metric_fullstep_elapsed_seconds": 868.4488137849985,
+        "directory_birth_utc": "2026-10-17T02:52:55.921821+00:00",
+        "complete_mtime_utc": "2026-10-17T02:53:43.325437+00:00",
+        "next_update_log_line": "2026-10-17T02:53:43+00:00 rank0 thought update 5/14",
+        "directory_birth_to_complete_seconds": 47.403616,
+        "post_metric_to_complete_seconds": 48.325437,
+        "post_metric_to_next_update_seconds": 48.0,
+        "scope": "Wall observations only: metric precedes save decisions/barriers, directory is created after checkpoint entry barrier, COMPLETE precedes final barrier. Metric and next-update log have one-second resolution. Separate asynchronous EBS backup is excluded.",
+        "complete_sha256": "86046ff4c0ccd1df606a614d2818625889eacf71874ebd2c09defe0629db38c7",
+        "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114"
+      }
+    },
+    {
+      "step": 7,
+      "complete": {
+        "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/step-0000007/COMPLETE.json",
+        "bytes": 9441,
+        "sha256": "5a98b70b120ba08b2495908dce77c7ca78b985d9de8f963bbf5a2e2b2708caab"
+      },
+      "payload_bytes": 27542553263,
+      "wall": {
+        "schema": "checkpoint-wall-observation-v1",
+        "created_utc": "2026-10-17T03:35:48.798859+00:00",
+        "step": 7,
+        "metric_utc": "2026-10-17T03:34:25+00:00",
+        "metric_resolution_seconds": 1,
+        "metric_fullstep_elapsed_seconds": 746.6958556099999,
+        "directory_birth_utc": "2026-10-17T03:34:26.217042+00:00",
+        "complete_mtime_utc": "2026-10-17T03:35:13.446957+00:00",
+        "next_update_log_line": "2026-10-17T03:35:13+00:00 rank0 thought update 8/14",
+        "directory_birth_to_complete_seconds": 47.229915,
+        "post_metric_to_complete_seconds": 48.446957,
+        "post_metric_to_next_update_seconds": 48.0,
+        "scope": "Wall observations only: metric precedes save decisions/barriers, directory is created after checkpoint entry barrier, COMPLETE precedes final barrier. Metric and next-update log have one-second resolution. Separate asynchronous EBS backup is excluded.",
+        "complete_sha256": "5a98b70b120ba08b2495908dce77c7ca78b985d9de8f963bbf5a2e2b2708caab",
+        "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114"
+      }
+    },
+    {
+      "step": 14,
+      "complete": {
+        "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/step-0000014/COMPLETE.json",
+        "bytes": 9443,
+        "sha256": "39a26e7f9efd2cb560fc6566fd6a2616ba5a853b8ff4c19ce9a322cbc276673e"
+      },
+      "payload_bytes": 27542553263,
+      "wall": {
+        "schema": "checkpoint-wall-observation-v1",
+        "created_utc": "2026-10-17T04:58:48.335820+00:00",
+        "step": 14,
+        "metric_utc": "2026-10-17T04:57:21+00:00",
+        "metric_resolution_seconds": 1,
+        "metric_fullstep_elapsed_seconds": 655.4802490139991,
+        "directory_birth_utc": "2026-10-17T04:57:21.965523+00:00",
+        "complete_mtime_utc": "2026-10-17T04:58:06.767536+00:00",
+        "directory_birth_to_complete_seconds": 44.802013,
+        "post_metric_to_complete_seconds": 45.767536,
+        "driver_exit_file_mtime_utc": "2026-10-17T04:58:17.374416+00:00",
+        "post_metric_to_driver_exit_seconds": 56.374416,
+        "complete_to_driver_exit_seconds": 10.60688,
+        "scope": "Wall observations: metric precedes save decisions/barriers, directory creation follows checkpoint entry barrier, COMPLETE precedes final barrier. Exit-file publication additionally includes driver worker cleanup. Metric has one-second resolution. Async EBS backup excluded.",
+        "complete_sha256": "39a26e7f9efd2cb560fc6566fd6a2616ba5a853b8ff4c19ce9a322cbc276673e",
+        "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114"
+      }
+    }
+  ],
+  "backup_observation": {
+    "owner": "/root",
+    "retain_verified_EBS_copies": 2,
+    "all_NVMe_originals_preserved": true,
+    "published_EBS_copies": [
+      {
+        "step": 7,
+        "manifest": {
+          "path": "local/backups/qwen-r-fp32-nvme-tmp-004/step-0000007/BACKUP.json",
+          "bytes": 481,
+          "sha256": "52661685f3456af4f5a00206bd998c5e33af60666c50ce0fa9d66f5adcdd9d0e"
+        },
+        "complete": {
+          "path": "local/backups/qwen-r-fp32-nvme-tmp-004/step-0000007/COMPLETE.json",
+          "bytes": 9441,
+          "sha256": "5a98b70b120ba08b2495908dce77c7ca78b985d9de8f963bbf5a2e2b2708caab"
+        }
+      },
+      {
+        "step": 14,
+        "manifest": {
+          "path": "local/backups/qwen-r-fp32-nvme-tmp-004/step-0000014/BACKUP.json",
+          "bytes": 481,
+          "sha256": "679763a78a646719f1c9e7f21078ca324facf2d48b40525b50d2e2d32a9de319"
+        },
+        "complete": {
+          "path": "local/backups/qwen-r-fp32-nvme-tmp-004/step-0000014/COMPLETE.json",
+          "bytes": 9443,
+          "sha256": "39a26e7f9efd2cb560fc6566fd6a2616ba5a853b8ff4c19ce9a322cbc276673e"
+        }
+      }
+    ],
+    "scope": "The existing backup utility publishes BACKUP.json after source validation and complete destination hash/readback. Root owns separate original/copy rehash receipts; this report does not repeat the payload scans."
+  },
+  "initialized_optimizer_checkpoint3": {
+    "status": "PASS",
+    "unique_model_parameters": 310,
+    "model_parameter_values": 1720574976,
+    "initialized_master_tensors": 9920,
+    "initialized_first_moment_tensors": 9920,
+    "initialized_second_moment_tensors": 9920,
+    "exact_Adam_step_three_count": 9920,
+    "scope": "Serialized finite FP32 values/shapes/recipe/counters/tie and valid master-to-model slice consistency. Not an independent optimizer oracle or fresh-process recovery."
+  },
+  "memory": {
+    "samples": 2364,
+    "read_errors": 0,
+    "max_same_sample_adjacent_nc_pair": {
+      "bytes": 23398502400,
+      "device": 12,
+      "hbm_index": 2,
+      "physical_ncs": [
+        4,
+        5
+      ],
+      "per_nc_bytes": [
+        22083231744,
+        1315270656
+      ],
+      "sample_utc": "2026-10-17T04:48:39.580782+00:00"
+    },
+    "max_individual_nc": {
+      "bytes": 22083231744,
+      "device": 12,
+      "physical_nc": 4,
+      "sample_utc": "2026-10-17T04:48:39.580782+00:00"
+    },
+    "physical_hbm_capacity_bytes": 25769803776,
+    "firmware_carveout_bytes": 16777216,
+    "total_post_firmware_allocator_interval_bytes": 25753026560,
+    "semantics": "Historical sysfs bank_total fields are per physical NC. Adjacent NC pairs share HBM; this report sums the pair within each sample. Post-firmware capacity is split into pools and is not guaranteed contiguous free space. Sampled peaks can miss short events."
+  },
+  "concurrency": {
+    "semantics": "Observed shared-host workloads; no instruction-level simultaneous-execution claim.",
+    "original_R003": "Same-window mapped device execution observed initially; R003 exited 01:59:02 UTC.",
+    "prefix_invariant_probe": {
+      "logical_core": 0,
+      "start_utc": "2026-10-17T02:30:40+00:00",
+      "end_utc": "2026-10-17T02:39:35+00:00"
+    },
+    "B0_held_dev": {
+      "logical_core": 0,
+      "start_utc": "2026-10-17T02:45:18.503479+00:00",
+      "finished_utc": "2026-10-17T04:18:35.923680+00:00",
+      "metadata_status": "COMPLETE_AND_CLEAN",
+      "overlapping_R004_updates": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "metadata_path": "local/evaluation/held-dev128-v1/b0-plan-v1/supervision.json",
+      "note": "This receipt reads supervision metadata only, without held-development outcomes or gold. The owner records the complete supervision/cleanup interval."
+    },
+    "checkpoint_copy_and_CPU_checks": "Asynchronous EBS backups, root payload rehashes, and the 8-thread CP3 structural inspection overlap training."
+  },
+  "recovery": "PENDING: exact restored state, stochastic tapes/RNG, and continued full-state comparison remain separately required.",
+  "two_R_coexistence": "PENDING: the initial R003/R004 window is not the planned warm recovery/coexistence episode.",
+  "off_instance_backup": "Unresolved; no approved external checkpoint destination.",
+  "preserved_examples": "Original per-rank/micro qualification tapes and rank0 traces remain on NVMe; fixed initial examples are saved locally.",
+  "artifacts": [
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/prepared.json",
+      "bytes": 36343,
+      "sha256": "49c770b7700c070fec3bf7b968dd333ee81e1b5393fb74a4656bbb432b9fec9a"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/release.json",
+      "bytes": 814,
+      "sha256": "cb29f2b8c1cf83ffd8433d3a6f0afee160f2cda1d13f1a4b3a0b1f4e048315a3"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/launch.execution.json",
+      "bytes": 3725,
+      "sha256": "fb10e02e321ae4076cd7fe0ad1bfb2242467ca0302d5a1f2891ebbc60b535a80"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/processes.json",
+      "bytes": 36440,
+      "sha256": "152a235e9b59ba44ec8788f34799a71866b38145416c42d8d8d6588995a532da"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/rank-processes.json",
+      "bytes": 30979,
+      "sha256": "555a0213bc8301a3cc0a2f5f9ca0319d39898d7df89e97a155cce024525de0c0"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/running.topology.json",
+      "bytes": 24007,
+      "sha256": "464c4b2062cf3c5c6353e6a07244d4deaf4b7c619e9fccd5aff13792705588a7"
+    },
+    {
+      "path": "local/qualification/qwen-r-fp32-nvme-tmp-004/exit.json",
+      "bytes": 197,
+      "sha256": "68fdf69b7b6c15d1997dcbea6e7275ea3b5554a4a20883f1385f2603d367f3a3"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/run.json",
+      "bytes": 8570,
+      "sha256": "7c5dfe053efd86d6d49e10c07221044de66177b4d7fcdd265d70eea51baa5192"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004/metrics.jsonl",
+      "bytes": 11389,
+      "sha256": "ab4616a70258243b42454f6ae5feaa934787126716677fcda4772f50c6baefa5"
+    },
+    {
+      "path": "local/evaluation/held-dev128-v1/b0-plan-v1/supervision.json",
+      "bytes": 15510,
+      "sha256": "2b4500066a18079e673fa0daefdbb5e73b1a59afe50c4d69d72671b1e00ee39d"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/first-update-observation.json",
+      "bytes": 22812,
+      "sha256": "15141c9d2209dd7c1fa76d60dfbdbd69047391e1496075ef1f78c09e810f416e"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/initial-optimizer-cache-observation.json",
+      "bytes": 22047,
+      "sha256": "48710dbd6aa8c7df2c62ae27ab907b74321501394184f8bad89fb4f280b08427"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/stateful-optimizer-compile.result.json",
+      "bytes": 21289,
+      "sha256": "015d6660773be8e0f76fae07a05292b15c1ecf471b937d84699806c232c86b41"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/checkpoint3-inspection.json",
+      "bytes": 18529,
+      "sha256": "fe68d05eb286868521517c59014c00cf2b1be9ec9022ad68c57f87b7e0e70194"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/hbm-capacity-binding.json",
+      "bytes": 3250,
+      "sha256": "822ee000143c58464cb6db6419117fe91886f8852905739fe79ded7d2b7a7b0e"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/final-lengths.json",
+      "bytes": 21994,
+      "sha256": "ea4427705289e946e8eb95e9b6d6e18956fcf02c1bed8ec8dd5366aa1f938a67"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/memory-interpretation-correction.json",
+      "bytes": 1283,
+      "sha256": "95cbf7ed4bd26cc6509524473a198f2f4b14da41f06aa24b3537b7f5b3e6f38b"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/worker-io-first-window.json",
+      "bytes": 23647,
+      "sha256": "35729774bf448a8ab8038055f23702ba3390abe09f793d77f96bbf33e35fea87"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/cleanup.json",
+      "bytes": 4703,
+      "sha256": "2ed17c4af34a92557b7a2a50d706b1557ebc71c28b3fefc6cc8dc0a6532ad983"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/memory.jsonl",
+      "bytes": 1479303597,
+      "sha256": "10ecf13d604b04a62eec5c62fddffafde11098733a7ac9050e7ff93ee40dc46e"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/sysfs-memory.jsonl",
+      "bytes": 45032077,
+      "sha256": "969aaa64288bd89a667221de5f294d581ced8e0d63105aecb4f879fead05c97a"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/execution-windows.jsonl",
+      "bytes": 24568249,
+      "sha256": "c2030128fc0d5d9a5d217328efe970427f60d64719f00203af697904ad0cddb8"
+    },
+    {
+      "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/run.log",
+      "bytes": 19142187,
+      "sha256": "26eda378b12541bbc1232580e21f3f7d5610c001bacc9f475476efccfa5d07b5"
+    }
+  ],
+  "report_builder": {
+    "path": "local/nvme/qualification/qwen-r-fp32-nvme-tmp-004-observation/finalize_execution_receipt.py",
+    "bytes": 13949,
+    "sha256": "66bad4144f55c455ac2bc71dba9a35d0df7b0ce7a7c4a6d44db9a2b5b4407a7b"
+  }
+}
