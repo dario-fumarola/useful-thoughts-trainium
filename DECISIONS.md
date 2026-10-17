@@ -283,3 +283,19 @@ and both static probes pass; no RAM full-update result exists. Original fork
 hashing remains required. Report the actual overlap and ten lower timings5–14
 separately, retaining serial fallback. Public prospective manifest:
 `validation/r_ram_sequence_20261017.json` (daf199d0…ac1c6).
+
+
+## 2026-10-17 04:23 UTC — retain the complete B0 development baseline
+
+The fixed128 TRAIN suite completes all3 modes: direct113/128, empty107/128,
+thought63/128. Thought mode has33 format failures and14 answer truncations;
+all remain incorrect, alongside the ordinary wrong answers. No runtime errors.
+The results show a substantial cost for this unchanged B0 thought protocol;
+they do not isolate arithmetic ability or establish a training benefit.
+Preserve all outputs and verified EBS copies. Do not change the selected items,
+prompt, parser, caps, primary contrast or prospective256 terminal because of this
+outcome. Report trained models against B0 in every mode, with R-thought versus
+R-empty and R-direct versus C-direct alongside the primary same-policy contrast.
+A recovery of formatting or a gain over a degraded control alone must remain
+distinct from capability above the starting model. Public result/provenance:
+`validation/held_dev_B0_20261017.json`.

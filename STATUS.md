@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 03:49 UTC
+# Current state — 2026-10-17 04:23 UTC
 
 **R qualification is running; no scientific C/R pair has launched.**
 The first-study terminal target is prospectively **256 updates**, with fixed
@@ -14,8 +14,8 @@ not found locally. The 14-day schedule is a planning limit, not a shutdown date.
 ## Live jobs and ownership
 
 **Distributed owns R004**, upper logical32–63, freshB0/seed1234, world32/global128/
-accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update8 at03:47:55**,
-761.552s; update9 runs; next checkpoint14. Steps3–8 take746.696–897.506s;
+accum4, G4/cap1024/K1/T.7, FP32/LRU2, max14. Latest complete **update10 at04:11:51**,
+715.095s; update11 runs; next checkpoint14. Steps3–10 take715.095–897.506s;
 ten full steady timings and median/P90 are still pending. All recorded norms are
 finite, sampled replicas equal, replay errors below.001. Updates1/2 include cold
 optimizer work and are excluded from steady samples. Checkpoint3/4/7 save wall
@@ -43,30 +43,27 @@ optimizer work and are excluded from steady samples. Checkpoint3/4/7 save wall
   optimizer shards are finite, valid master slices match, all Adam steps3.
   Stop this watcher if the driver fails or stops before terminal14.
 
-**Review owns B0 held-development evaluation**, one lower logical core0, three
-sequential freshB0 modes direct→empty_format→one_thought. Fixed128 GSM8K TRAIN
-questions, FP32 compute/head, unchanged4shot prompt, caps1024thought/256answer.
-Direct complete **113/128 correct (88.28125%)**, no errors/truncations;13,590
-answer tokens, generation wall1,255.0s, first item222.53s, median7.63s.
-Empty-format complete **107/128 (83.59375%)**,2 format failures/1 answer-cap
-truncation/0 runtime errors, generation wall1,347.9s. Thought mode is active; all
-failures/truncations stay in the128 denominator. This is a development baseline, not an official test or training gain.
+**B0 held-development suite complete, exit0**, all128 fixed GSM8K TRAIN items in
+three modes: **direct113/128 (88.28125%)**, **empty107/128 (83.59375%)**,
+**thought63/128 (49.21875%)**. Empty has2 format failures/1 answer truncation;
+thought33/14 plus4 capped thoughts. Runtime errors0. Every failure stays counted.
+This is a substantial B0 protocol cost, not a trained C/R or official-test result.
+No subset, prompt, cap, parser or prospective256 target changes follow it.
 
-- Started02:45:18.503479; hard deadline **06:45:00.434277 UTC**,30s grace.
-  tmux `dario-held-dev128-B0-001`. Control
-  `local/evaluation/held-dev128-v1/b0-plan-v1`; output
-  `local/nvme/evaluation/held-dev128-v1-B0-001`.
-- Root launcher1078999; **actual timeout/PGID1079002**, startticks3981062;
-  mode shell1079049; current thought evaluator1135219/startticks4246270.
-  Original execution.json mistakenly recorded an exited command-substitution
-  subshell1079003. Preserve it; correction is in `supervision.json`.
-- Core0, ports64351/64352, private0700 TMPDIR
-  `/dev/shm/dario/held-dev128-v1-B0-001`, same EBS cache. Prepared95e25064…,
-  launch9bfb2a10…, host policyaafe605d…. No additional node monitor.
-- On full suite completion and owned-process cleanup, review verifies/copies the
-  stable small output tree to `local/backups/evaluation/held-dev128-v1-B0-001`
-  on EBS with per-file hashes. No weights/compiler payload or external upload.
-  R004 timing discloses the overlapping one-core host workload.
+Started02:45:18.503479, completed04:18:35.923680 UTC, total93.29min including
+loading/cold work. Generated tokens13,590/15,119/32,100 respectively. Mean item
+wall9.80/10.53/22.86s includes first-item cold work; generation sums and separate
+outer wall are retained. Public report with paired descriptive intervals and all
+input/output hashes: `validation/held_dev_B0_20261017.json`.
+
+All owned B0 processes/PGID1079002 are gone and lower devices0–7 are idle; all32
+original R004 workers remained unchanged. The original PID-recording correction
+stays preserved in control `local/evaluation/held-dev128-v1/b0-plan-v1`.
+Raw outputs `local/nvme/evaluation/held-dev128-v1-B0-001` and approved EBS copy
+`local/backups/evaluation/held-dev128-v1-B0-001` retain every prediction, score,
+log and process receipt. Root independently rehashed **all51 source/copy payloads
+plus the copied verification receipt**, PASS. Reviewer result52d82625…c4af7a,
+backup receiptf472897d…42ffbc. No B0 process or deadline remains active.
 
 ## Completed evidence
 

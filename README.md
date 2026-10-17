@@ -45,7 +45,10 @@ denominators and report training and inference costs.
   fixed full-gradient comparison against FP64 passes on a new held seed.
   R has completed real optimizer updates; its steady timing, strict stochastic
   recovery and two-run coexistence qualification remain in progress.
-- Development-only math inference runs, including failed outputs, are retained.
+- The fixed128-item TRAIN development baseline scores113/128 direct,107/128
+  empty-format and63/128 with a thought. Failures stay counted; this is not a
+  training effect or official-test result. See
+  [the B0 report](validation/held_dev_B0_20261017.json).
 
 See [STATUS.md](STATUS.md) for active work and [DECISIONS.md](DECISIONS.md) for
 material choices. CPU checks and historical results are distinguished from

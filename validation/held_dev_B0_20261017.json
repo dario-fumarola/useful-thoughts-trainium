@@ -1,0 +1,382 @@
+{
+  "interpretation": [
+    "Fixed TRAIN development only; no official-test result or trained C/R effect.",
+    "Mode differences include prompt structure; format errors and truncations remain incorrect.",
+    "The development subset, prompts, caps, parser and prospective 256-update budget remain unchanged after these outcomes."
+  ],
+  "paired_baseline_contrasts": {
+    "empty_minus_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.1171875,
+        0.0234375
+      ],
+      "difference_b_minus_a": -0.046875,
+      "documents": 128,
+      "items": 128,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "thought_minus_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.484375,
+        -0.3046875
+      ],
+      "difference_b_minus_a": -0.390625,
+      "documents": 128,
+      "items": 128,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "thought_minus_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.4453125,
+        -0.2421875
+      ],
+      "difference_b_minus_a": -0.34375,
+      "documents": 128,
+      "items": 128,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    }
+  },
+  "result": {
+    "all_failure_rows_retained": true,
+    "approved_backup_destination": "/home/ubuntu/dario/local/backups/evaluation/held-dev128-v1-B0-001",
+    "cleanup_sha256": "e41311426f09ccc087d0d1d133b45b18d56fd683532025023fe04931cf037c2c",
+    "complete_sha256": "a62458e3d2192c46afc2630c30727a2133cce9b8dca12e7d5d617bf317672999",
+    "compute": "fp32",
+    "conditions": {
+      "direct": {
+        "accuracy": 0.8828125,
+        "answer_stop_types": {
+          "token:151643": 128
+        },
+        "correct": 113,
+        "failure_item_ids": {
+          "error": [],
+          "format_error": [],
+          "truncated": []
+        },
+        "finished_utc": "2026-10-17T03:06:42+00:00",
+        "generated_tokens": {
+          "answer": {
+            "max": 242,
+            "mean": 106.171875,
+            "median": 99.0,
+            "min": 43,
+            "p95": 180.89999999999995,
+            "total": 13590
+          },
+          "generated": {
+            "max": 242,
+            "mean": 106.171875,
+            "median": 99.0,
+            "min": 43,
+            "p95": 180.89999999999995,
+            "total": 13590
+          },
+          "thought": {
+            "max": 0,
+            "mean": 0,
+            "median": 0.0,
+            "min": 0,
+            "p95": 0.0,
+            "total": 0
+          }
+        },
+        "generation_wall_seconds": 1254.995108119001,
+        "item_wall_seconds": {
+          "max": 222.5324016759987,
+          "mean": 9.802362329109428,
+          "median": 7.62987801700001,
+          "min": 3.4138010969982133,
+          "p95": 14.6653312316499,
+          "total": 1254.7023781260068
+        },
+        "items": 128,
+        "predictions_sha256": "1eb61d1cef230ac676536b6da5aef3d4e416411873514c2f6d4a1e4b701972e9",
+        "protocol_sha256": "b39283556c3567e269a03e279c11d9147d86a816639cc85327c726da41920a04",
+        "run_sha256": "7ffec6f2153f11279106a4275d43dc81507d7237c3c528e4d76fd9c84614afdc",
+        "scored_sha256": "3dd45025d60a9dca4a15d14ce7cd3a02f37e434a245a6ccdfd4cf4b3130aadee",
+        "started_utc": "2026-10-17T02:45:26+00:00",
+        "statuses": {
+          "error": 0,
+          "format_error": 0,
+          "ok": 128,
+          "truncated": 0
+        },
+        "summary_sha256": "b3698c91e2710c0d51d6cedaa00091618d41d8d6a68237667724653799352525",
+        "thought_length_cap_count": 0,
+        "thought_stop_types": {
+          "not_requested": 128
+        }
+      },
+      "empty_format": {
+        "accuracy": 0.8359375,
+        "answer_stop_types": {
+          "length_cap": 1,
+          "token:151643": 127
+        },
+        "correct": 107,
+        "failure_item_ids": {
+          "error": [],
+          "format_error": [
+            "gsm8k:train:04994",
+            "gsm8k:train:03392"
+          ],
+          "truncated": [
+            "gsm8k:train:05252"
+          ]
+        },
+        "finished_utc": "2026-10-17T03:29:28+00:00",
+        "generated_tokens": {
+          "answer": {
+            "max": 256,
+            "mean": 118.1171875,
+            "median": 113.0,
+            "min": 43,
+            "p95": 204.89999999999998,
+            "total": 15119
+          },
+          "generated": {
+            "max": 256,
+            "mean": 118.1171875,
+            "median": 113.0,
+            "min": 43,
+            "p95": 204.89999999999998,
+            "total": 15119
+          },
+          "thought": {
+            "max": 0,
+            "mean": 0,
+            "median": 0.0,
+            "min": 0,
+            "p95": 0.0,
+            "total": 0
+          }
+        },
+        "generation_wall_seconds": 1347.9075670460006,
+        "item_wall_seconds": {
+          "max": 187.12660827899526,
+          "mean": 10.52644620870268,
+          "median": 8.87110676249722,
+          "min": 3.356734463995963,
+          "p95": 15.931724244447828,
+          "total": 1347.385114713943
+        },
+        "items": 128,
+        "predictions_sha256": "5dedcef5cc19270186f15000a60a7e4488926ed27b1be14a3a5e354def9149b3",
+        "protocol_sha256": "74ee9264f40e98e62086e2e0ed37d8fde68275c2886f78779a79ff8c2a92bc89",
+        "run_sha256": "e370c72d03e395573d08167539c1205d10331239c8ea0af267fed5af54e8ae1f",
+        "scored_sha256": "5c5f88e9e5ab7aa0b0b6f0eb2b52253cd8119a60f9802c2838dd0a47f5064dd5",
+        "started_utc": "2026-10-17T03:06:48+00:00",
+        "statuses": {
+          "error": 0,
+          "format_error": 2,
+          "ok": 125,
+          "truncated": 1
+        },
+        "summary_sha256": "17642c147a0d59b039d7fc607527d486f8d8c5ebc8bb620d22af2813b10509c3",
+        "thought_length_cap_count": 0,
+        "thought_stop_types": {
+          "empty_control": 128
+        }
+      },
+      "one_thought": {
+        "accuracy": 0.4921875,
+        "answer_stop_types": {
+          "answer_line": 1,
+          "length_cap": 14,
+          "token:151643": 113
+        },
+        "correct": 63,
+        "failure_item_ids": {
+          "error": [],
+          "format_error": [
+            "gsm8k:train:02978",
+            "gsm8k:train:01206",
+            "gsm8k:train:03713",
+            "gsm8k:train:05913",
+            "gsm8k:train:06122",
+            "gsm8k:train:04985",
+            "gsm8k:train:04414",
+            "gsm8k:train:05469",
+            "gsm8k:train:02837",
+            "gsm8k:train:03895",
+            "gsm8k:train:00368",
+            "gsm8k:train:00844",
+            "gsm8k:train:01560",
+            "gsm8k:train:06867",
+            "gsm8k:train:05082",
+            "gsm8k:train:03128",
+            "gsm8k:train:01990",
+            "gsm8k:train:04664",
+            "gsm8k:train:02230",
+            "gsm8k:train:04391",
+            "gsm8k:train:01421",
+            "gsm8k:train:02966",
+            "gsm8k:train:02682",
+            "gsm8k:train:01341",
+            "gsm8k:train:03650",
+            "gsm8k:train:07242",
+            "gsm8k:train:03129",
+            "gsm8k:train:00695",
+            "gsm8k:train:04440",
+            "gsm8k:train:06154",
+            "gsm8k:train:00514",
+            "gsm8k:train:03807",
+            "gsm8k:train:03298"
+          ],
+          "truncated": [
+            "gsm8k:train:01253",
+            "gsm8k:train:04678",
+            "gsm8k:train:02420",
+            "gsm8k:train:07225",
+            "gsm8k:train:05718",
+            "gsm8k:train:04834",
+            "gsm8k:train:01758",
+            "gsm8k:train:00820",
+            "gsm8k:train:06693",
+            "gsm8k:train:01216",
+            "gsm8k:train:02354",
+            "gsm8k:train:01258",
+            "gsm8k:train:01194",
+            "gsm8k:train:02204"
+          ]
+        },
+        "finished_utc": "2026-10-17T04:18:33+00:00",
+        "generated_tokens": {
+          "answer": {
+            "max": 256,
+            "mean": 126.296875,
+            "median": 105.5,
+            "min": 36,
+            "p95": 256.0,
+            "total": 16166
+          },
+          "generated": {
+            "max": 1280,
+            "mean": 250.78125,
+            "median": 209.0,
+            "min": 71,
+            "p95": 429.7999999999997,
+            "total": 32100
+          },
+          "thought": {
+            "max": 1024,
+            "mean": 124.484375,
+            "median": 88.5,
+            "min": 31,
+            "p95": 207.84999999999974,
+            "total": 15934
+          }
+        },
+        "generation_wall_seconds": 2926.2165697320015,
+        "item_wall_seconds": {
+          "max": 342.2821311939988,
+          "mean": 22.85843743331202,
+          "median": 17.095685983502335,
+          "min": 6.171633056001156,
+          "p95": 36.82885761950345,
+          "total": 2925.8799914639385
+        },
+        "items": 128,
+        "predictions_sha256": "e82501c7eef5e670e5f9b8a31146850e4140a4583bc209670bcacfebd6caa46b",
+        "protocol_sha256": "83d8ec8d1d09892ceb973d6594b870032b86cd313523fff4e5e4bc96d976fcbe",
+        "run_sha256": "3cfe08fe974b4b065d00b3af1348352bbeee2d3493d7613c33fb7f6e4c23a8f8",
+        "scored_sha256": "e7e8efe694f86056b8b382f47c4f64614e7cc8a26a08ce48c34904bc2e81b2d3",
+        "started_utc": "2026-10-17T03:29:35+00:00",
+        "statuses": {
+          "error": 0,
+          "format_error": 33,
+          "ok": 81,
+          "truncated": 14
+        },
+        "summary_sha256": "cd8a91f6159cbb474ace67d735c10344da54ce50958d6df4f2d02c824fa93c86",
+        "thought_length_cap_count": 4,
+        "thought_stop_types": {
+          "length_cap": 4,
+          "token:151643": 124
+        }
+      }
+    },
+    "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+    "exit_code": 0,
+    "finished_utc": "2026-10-17T04:18:35.923680+00:00",
+    "gold_sha256": "3bb09430a965837a1ba86a4c1c7d27915f5794e19c5afc78251d1bbdbd1d6eb3",
+    "hardware_qualification_claim": false,
+    "head_precision": "fp32",
+    "interpretation": "Absolute B0 outcomes on a fixed TRAIN held-development subset. No C/R training effect or official-test accuracy is measured. Formatting/cap failures count as incorrect; they do not isolate arithmetic ability.",
+    "items_per_mode": 128,
+    "max_answer_tokens": 256,
+    "model": {
+      "arm": "B0",
+      "asset_files_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+      "checkpoint": null,
+      "files": {
+        "config.json": {
+          "bytes": 727,
+          "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+        },
+        "generation_config.json": {
+          "bytes": 138,
+          "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+        },
+        "merges.txt": {
+          "bytes": 1671853,
+          "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+        },
+        "model.safetensors": {
+          "bytes": 3441185608,
+          "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+        },
+        "tokenizer.json": {
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+        },
+        "tokenizer_config.json": {
+          "bytes": 9678,
+          "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+        },
+        "vocab.json": {
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      },
+      "model_id": "Qwen/Qwen3-1.7B-Base",
+      "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+      "training_seed": null
+    },
+    "no_retry_or_protocol_change": true,
+    "no_test_gold_or_test_parquet_access": true,
+    "official_test": false,
+    "output_directory": "/home/ubuntu/dario/local/nvme/evaluation/held-dev128-v1-B0-001",
+    "prompt_sha256": "63de67bc2cfe72f698feb32580ec3aa42a716114d7bc1c4e6239b2df39eb441a",
+    "purpose": "held_development",
+    "questions_sha256": "c5030a8fc1cc8ba258b93e69a35159bdfff890fea635299342585d423e6321a6",
+    "schema": "held-gsm8k-B0-development-result-v1",
+    "selection_policy": "single_greedy",
+    "selection_sha256": "044bf30b847cd3294f30d8622b358e891563be9081787a61b24221b68d27780f",
+    "source_commit": "3aaaf8a18baeccb8d1a543d348a53f6863599114",
+    "source_sha256": "244e2f13f91dfc746f0829b236a35b8f2c5452f5d62da7a1bc3b3bbe31287ff7",
+    "started_utc": "2026-10-17T02:45:18.503479+00:00",
+    "status": "COMPLETE",
+    "subset_manifest_sha256": "9bc3d2e5c8d2e659ede1dd9c007dd45b63f43e493ebc3203657d15c92081e6e7",
+    "thought_cap": 1024,
+    "verified_complete_file_count": 15,
+    "whole_suite_wall_seconds": 5597.420201
+  },
+  "root_verification": {
+    "all_51_original_and_backup_payload_sha256_rechecked": true,
+    "backup_receipt_original_and_copy_sha256": "f472897d3baf82cbcd0d174d7a4f5651cbf9873c772e4f93aa5aa3e9ee42ffbc",
+    "bootstrap_implementation_sha256": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66",
+    "captured_utc": "2026-10-17T04:20:51.551389+00:00",
+    "owner": "/root",
+    "result_sha256": "52d8262514c5ea9706bf1ad2513159d5105dae47215a1929fcd6b2c7dfc4af7a",
+    "strictly_paired_128_TRAIN_items_per_mode": true
+  },
+  "schema": "held-gsm8k-B0-development-report-v1"
+}
