@@ -3,8 +3,8 @@
 Follow `CODEX_NEXT_DAY.md`. Current ownership/commands are in STATUS.md.
 
 1. Observe active firstC1234 (32 mapped lower workers) through actual updates and
-   checkpoints64/128/256. Both shared supervisors are RUNNING. Let healthy startup
-   finish; first real optimizer update completed08:43:17 with finite/equal replicas. Root released once with exact
+   checkpoints128/256. Checkpoint64 and its EBS copy are verified; local review ZIP
+   shared with owner. Both shared supervisors are RUNNING. Root released once with exact
    source/spec/assets/deadline/host/topology/temp/ports bindings. Preserve logs.
 
 2. Follow selected serial schedule C1234,C5678,freshB0 R1234,freshB0 R5678. Use

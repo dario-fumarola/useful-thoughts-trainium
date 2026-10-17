@@ -1,4 +1,4 @@
-# Current state — 2026-10-17 08:45 UTC
+# Current state — 2026-10-17 09:02 UTC
 
 **First scientific C1234 is running; no trained C/R comparison is available.**
 The first study remains **256 terminal updates**, with fixed step64 development.
@@ -10,10 +10,9 @@ Weeks are available; the14-day planning window is not an instance shutdown date.
 
 ## Current work and ownership
 
-No accelerator training/evaluation job is active. RAM005 completed14 updates,
-exit0 at08:13:18; all original workers/driver/launcher/monitor/observer are gone.
-All16 devices were empty at cleanup. Root's lower backup watcher also exited0,
-all owned processes gone. Original v1 coordinators remain unused.
+RAM005 completed14 qualification updates and exited0 at08:13:18. Its original
+workers/driver/launcher/monitor/observer and lower backup watcher are gone.
+Original v1 coordinators remain unused. Scientific C1234 is active below.
 
 **C1234 is active**, fresh released B0, source-256-001, FP32/world32/global128/
 accum4/default qualified C cache/unset LRU/EBS temp; production329535 TRAIN pool,
@@ -26,6 +25,10 @@ sampled replicas exact,98.9617% sampled entries changed;128records/65664source
 tokens. Startup step is separate from qualified warm timing; no efficacy claim.
 Receipt `validation/science_256_first_update_20261017.json`, SHA705dd2e1…caaa7.
 Distributed owns read-only startup/progress observation; no extra monitor.
+**Checkpoint64 published08:55:55**, save38.891s, exact spec/order and
+8,192 records /4,202,496 source tokens /zero sampled actions. Shared queue
+completed its verified EBS copy09:00:22; COMPLETE SHAcd06a3a8…b17fa63.
+Training continued beyond94 without interruption; terminal remains256.
 Control `local/science/control/qwen-c-seed1234-science-256-001`;
 output `local/nvme/runs/qwen-c-seed1234-science-256-001`; rawlog
 `local/nvme/science/launch-logs/qwen-c-seed1234-science-256-001.log`.
@@ -127,6 +130,18 @@ or C degradation alone is not capability above B0. Direct allows calculations.
 Local K1 primary/K4,16 secondary; retain absolute clean/empty/own/filler plus
 content controls and fixed random token-class/surprisal strata. No official final
 outcomes read; earlier exclusion preparation used question-only benchmark data.
+
+## Review snapshot
+
+Local review ZIP was built from public HEAD04e8971 after fixed checkpoint64,
+then independently checked:388 entries,3,886,635bytes, SHA
+`17f3b5070bd5980d093953ca151bd0e5b5a29210ea23d101992949484006e5a9`.
+Path `local/review/2026-10-17-first-science/dario-first-science-20261017-checkpoint64.zip`.
+Includes source/notices/frozen reports, fixed rank0 TRAIN examples1/7/14 for
+R004/RAM005, and unchanged held128 B0 predictions/scores. Eight raw metadata
+omissions are explicit in the manifest; no tensors/corpus/cache/full environment.
+Link shared with owner; training continued. This snapshot has no trained C/R
+comparison or final test score. It remains local, with no external upload.
 
 ## Storage and limits
 
