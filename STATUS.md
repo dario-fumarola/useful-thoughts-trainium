@@ -1,4 +1,4 @@
-# Status — 2026-10-17 22:37 UTC
+# Status — 2026-10-17 22:46 UTC
 
 The owner stopped the original 256-update R study and redirected work to the
 reward interface, genuine candidate oracles, and iteration speed. The old run
@@ -18,10 +18,28 @@ order in CODEX_NEXT_DAY.md and older handoffs is superseded. Follow NEXT_STEPS.m
   but original G1 thoughts still hurt on average. K16/strata/control results
   remain in the report. EBS archive `local/backups/diagnostics/interface-tax-dev32-v1/VERIFIED.json`:
   16files/2,026,409B, originals/selected inputs/first4 examples/sealed sources.
-- **Candidate G16 and replay-stage profiler** are being implemented/reviewed,
-  not launched. Candidate search: original writer,16 real draws per fixed
-  pilot prefix (four independent G4 groups), cap256/T.7, original+reanchor32
-  readers. Search is exploratory; cap256 does not establish a1024-token ceiling.
+- **candidate-oracle-dev32-cap256-v1 RUNNING**, launched22:44:46UTC on
+  logical32/device8. tmux `dario-candidate-oracle-v1`; launcher2157411,
+  generation timeout2157416/worker2157417. Control `local/diagnostics/` and
+  output `local/nvme/diagnostics/` under that experiment ID. Overall finite
+  deadline2026-10-18T00:44:46.913949+00:00. Protocol SHA2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677.
+  Original prefix-only B0 writer,16 draws per fixed pilot prefix (four
+  independent G4 groups), cap256/T.7; original+reanchor32 readers. One standalone
+  cache8 process, private tmpfs; firstgroup FP32 cache/replay parity required.
+  All512 candidates precede future access;4256 reader contexts include controls
+  and same-interface empties. Oracle uses future selection and is distinct from
+  mean16 utility; max16-control comparisons expose selection-only effects.
+  Search is exploratory; cap256 does not bound the1024-token oracle.
+- **replay-padding-dev2-v2 RUNNING**, launched22:40UTC on logical0/device0.
+  tmux `dario-replay-padding-v2`; launcher2154097, timeout2154102/worker2154103.
+  Output/control under local/{nvme/diagnostics,diagnostics}/sameID. Protocol
+  SHA704e559001a1a47e443cb79b3b1af27bb27ba44dcb0b2d4452bedf45dd9f4c3d;
+  finite deadline2026-10-18T00:40:00.017549+00:00. Exact old R LRU2 runtime,
+  FP32, no optimizer/sampling; fixed firstDEV empty stop and first naturally
+  stopped short saved note(89 actions/bucket128). Full1024 vs shortened reader
+  and signed±1 replay; full unique-parameter gradient comparison outside timed
+  phases. First reader full/short repeat~.026s both, no speedup yet; first
+  replay forward is compiling. Do not infer distributed throughput from this.
 - Old shared backup and node services were deliberately stopped at22:36:14,
   after verified R63 backup; all six owned helper/producer/compressor/timeout
   identities are gone. Node stream is a closed INTERRUPTED prefix, not a full
@@ -72,14 +90,16 @@ outcomes will guide interface development.
 
 ## Next command and validation
 
-Review `train/candidate_probe.py` and `train/profile_replay.py` after their agent
-ready callbacks. Prepare explicit protocols, then launch each on an actually
-idle distinct device with private RAM temp and finite timeout. Do not revive
-old training/evaluation. Root owns releases and hardware supervision.
+Observe candidate generation count/parity and replay phases in their run logs.
+Both wrappers are finite and have no retry. Data agent supervises candidates;
+distributed agent supervises replay. Root owns signals and final archive/report.
+Do not edit either source/dependency closure while its job is active. Read
+candidate oracle only after complete score coverage; preserve all cases/costs.
 
-`bash scripts/run_checks.sh`:233 passed/CPU toy checks passed,13.64s,
-`local/checks/tests.K758Hy`. New probe reuses qualified FP32 likelihood code;
-actual hardware reference parity remains a required measured check.
+Latest required `bash scripts/run_checks.sh`:243 tests + CPU toy smoke passed,
+`local/checks/tests.wgZ4D7`. Candidate semantic tests6 and replay tests4 cover
+stopping/seed/future barriers/document reduction/padding-gradient behavior;
+these are not hardware outcomes. First interface pilot has actual FP32 parity.
 
 Public repo https://github.com/dario-fumarola/useful-thoughts-trainium.
 Keep weights/corpus/raw text/full topology/cache/secrets out of Git. Existing

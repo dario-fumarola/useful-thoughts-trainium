@@ -66,7 +66,8 @@ thoughts or a deployed-policy improvement. The [complete pilot report](validatio
 includes K16, all matched controls and quartiles. [Plot](validation/figures/interface_tax_dev32_20261017.svg).
 All896 scores succeeded; original-format token likelihoods reproduce B0 to
 0.0000382 nats. Original outputs, selected inputs and fixed first4 examples
-are saved in a verified2MB EBS archive. Fresh G16 candidate search comes next.
+are saved in a verified2MB EBS archive. Fresh G16 candidate search and a separate replay-stage profiler are now running;
+[source and declared plan](validation/new_direction_diagnostics_20261017.json).
 
 Fixed128-question GSM8K **TRAIN development** results:
 

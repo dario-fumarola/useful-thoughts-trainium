@@ -1,0 +1,36 @@
+{
+  "time_utc": "2026-10-17T22:46:16.682292+00:00",
+  "status": "diagnostics_running_no_training",
+  "previous_result": "interface_tax_dev32_20261017.json",
+  "tests": "243 passed + toy smoke; local/checks/tests.wgZ4D7",
+  "candidate": {
+    "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
+    "protocol": "candidate_oracle_dev32_protocol_20261017.json",
+    "source": "train/candidate_probe.py",
+    "source_sha256": "8e1d5e84a91db104d7186ec9354d15c724c34fe2fd764139420d3ed09c316868",
+    "core": 32,
+    "physical_device": 8,
+    "candidates": 512,
+    "score_contexts": 4256,
+    "cache": 8,
+    "deadline_utc": "2026-10-18T00:44:46.913949+00:00"
+  },
+  "replay": {
+    "protocol_sha256": "704e559001a1a47e443cb79b3b1af27bb27ba44dcb0b2d4452bedf45dd9f4c3d",
+    "source": "train/profile_replay.py",
+    "source_sha256": "fcf03a7391646cdeebf52ba07e14656f44eebf1f36bd77827d8c9e4180698851",
+    "core": 0,
+    "physical_device": 0,
+    "cache": 2,
+    "cases": "First frozen DEV prefix with an empty stop, plus first naturally stopped short B0 note (89 actions)",
+    "comparisons": "full1024 vs shortened padding; signed +/-1 losses and all unique-parameter gradients; compute vs export time separated",
+    "deadline_utc": "2026-10-18T00:40:00.017549+00:00"
+  },
+  "limits": [
+    "No optimizer or training in either job",
+    "Candidate oracle uses future selection; mean16 is separate",
+    "Right-truncation removes padding, preserving active actions and sampled terminator",
+    "No official final outcomes; development only",
+    "Isolated stage timing is not distributed throughput"
+  ]
+}
