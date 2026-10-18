@@ -48,6 +48,10 @@
    first5120eligible positives if quota passes. Keep compound5120 unchanged.
    Proposed16independent workers on physical8/9/10/15 require source/runtime review;
    no new model job is released yet, no cutoff shrink or quota claim.
+   New general high-surprisal DEV256 is sealed before SFT outcomes: first256 of
+   535 qualifiers among2048 previously unseenDEV documents, allrawscores complete.
+   Report: validation/general_high_surprisal_DEV256_sealed_20261018.json.
+   Review agent is building its separate prefix-only evaluator without active source edits.
    Recovery v4 is locally committed and independently accepted with 1389 CPU tests,
    smoke and compile. Keep it isolated in local/worktrees/recovery-v4 until active
    v3 closes; run the private actual T-state restore/fourth-update probe before merge.

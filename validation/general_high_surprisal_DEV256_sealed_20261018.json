@@ -1,0 +1,76 @@
+{
+  "complete_raw_scores": {
+    "file": "general_high_surprisal_DEV256_raw2048_20261018.jsonl",
+    "rows": 2048,
+    "sha256": "8ae5e95c14986c1f9d10486fea265d42f674dba396d8cb56dc6e0be827abe902"
+  },
+  "created_utc": "2026-10-18T08:27:48.572454+00:00",
+  "design": {
+    "all_raw_qualifiers": 535,
+    "full16_primary": true,
+    "prior_exposed_DEV_documents_excluded": 828,
+    "raw_unique_DEV_documents": 2048,
+    "selected_unique_DEV_documents": 256,
+    "selection": "First256 with frozen B0 raw K1 surprisal>=1.7 in frozen2048 hash order; all raw attempts must close first. No outcome ranking, missing-item skip, quota shrink or alternate pool.",
+    "source": "Original approved FineMath production native512+16, exact last24prefix reanchor; TEST payloads skipped before JSON.",
+    "threshold_K1_surprisal_nats": 1.7
+  },
+  "endpoints": {
+    "bootstrap": "Paired by document;5000 repetitions,seed17. Repeated seeds must be combined per document before treating documents as resampling units.",
+    "pass_rule": "Self-reader own-minus-raw AND own-minus-other paired lower95% bounds>0. Oracle-minus-own lower95% bound>0 is remaining headroom; mean empty-minus-raw>=-0.5 is tax qualification. FrozenB0-reader contrasts reported separately.",
+    "prospective": "Terminal fresh prefix-only own-minus-raw and own-minus-intact-other full16 likelihood, paired document bootstrap. Raw/empty/oracle controls alongside. FrozenB0 and self readers; B0/Cprime/W/T regardless outcome."
+  },
+  "execution": {
+    "actual_worker_PID_start_environment_and_physical_mapping_verified": true,
+    "all2048_scores_finite": true,
+    "all4_exit0": true,
+    "closure_limitation": "Original capture did not include POSIX session IDs; no explicit whole-SID absence claim. Exact identities/groups, unique inherited TMPDIR, tmux and physical mappings are checked.",
+    "native_max_errors": [
+      0.00016021728515625,
+      8.96453857421875e-05,
+      3.814697265625e-05,
+      0.00016021728515625
+    ],
+    "wall_seconds_per_worker": [
+      89.90248733700719,
+      91.68656659001135,
+      90.40653956501046,
+      90.6159683590231
+    ]
+  },
+  "finding": "A new general high-surprisal developmental panel is frozen; no useful generated-thought claim.",
+  "independent_readback": {
+    "created_utc": "2026-10-18T08:25:42.710422+00:00",
+    "exact_native16_metrics_and_hashes": true,
+    "excluded_documents": 828,
+    "independent_hash_order_reconstructed_from_DEV_metadata": true,
+    "prefix_projection_has_no_future": true,
+    "protocol_sha256": "68fc6bf9a8c621c254d7e7946ae6b89e17aba87dc67a00a119972a60cf4e9009",
+    "qualifiers": 535,
+    "raw_documents": 2048,
+    "scope": "CPU independent reconstruction, no extra model pass.",
+    "selected": 256,
+    "selection_sha256": "d2c48a1f1825c4455489e4ab7c1496cc162c27c5643305eaab45630d0f310669",
+    "status": "PASS_COMPLETE_2048_AND_EXACT_SELECTION"
+  },
+  "limitations": [
+    "DEV is developmental, never finalTEST. Selection uses B0 surprisal, not supplied-note gain or future supervised outcomes.",
+    "Existing arithmetic held256 remains unchanged and complementary; no source payload from TEST is decoded.",
+    "This is a selected DEV cohort for development, not an independent final benchmark. Arithmetic held256 remains unchanged."
+  ],
+  "model": {
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "precision": "fp32",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1"
+  },
+  "provenance": {
+    "archive": "local/backups/diagnostics/general-note-held256-v1/ARCHIVE.json",
+    "archive_sha256": "3f70355e4247165765fc1070d579c689a4d9567a08aa20db4ce017ccef38a6ee",
+    "closure_sha256": "6222a14bcb2e85c9319427dd38f93aa80aa028011976416c32f03cc6f27c1a65",
+    "protocol_sha256": "68fc6bf9a8c621c254d7e7946ae6b89e17aba87dc67a00a119972a60cf4e9009",
+    "selection_sha256": "d2c48a1f1825c4455489e4ab7c1496cc162c27c5643305eaab45630d0f310669"
+  },
+  "schema": "general-high-surprisal-DEV256-sealing-report-v1",
+  "status": "SEALED_BEFORE_ANY_SFT_OUTCOMES"
+}

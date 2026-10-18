@@ -21,6 +21,20 @@ areas. Keep their objectives distinct from predicting generic text or producing
 plausible social commentary. The roadmap identifies narrower causal questions.
 The primary citations and versioned paper links are in SOURCES.md.
 
+## Warm-start interpretation — checked 2026-10-18
+
+[BoLT v2](https://arxiv.org/html/2503.18866v2) trains both the prefix-conditioned
+joint model and a future-conditioned posterior, with different formatting. Our
+writer/reader/source loss does not reproduce that posterior training. Its appendix
+also reports degrading few-shot GSM8K across some bootstrap iterations; likelihood
+and downstream improvement need separate measurement. Its 480M unique-token,
+8B training-token study is much larger than our initial interface warm start.
+
+[TPT](https://arxiv.org/html/2509.20186v1) concatenates each original document
+followed by its generated thinking trajectory. Our T arm interleaves a note at an
+anchor and repeats the prefix tail. Keep calling it augmented causal CE rather
+than a TPT reproduction; a negative small warm start cannot refute the paper.
+
 ## Packaging-time official documentation checks — 2026-10-16
 
 - Codex reads project AGENTS.md instructions. The root file here is kept short;

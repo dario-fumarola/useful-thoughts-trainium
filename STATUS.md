@@ -1,4 +1,4 @@
-# Status — 2026-10-18 08:20 UTC
+# Status — 2026-10-18 08:29 UTC
 
 ## Active: canonical-reference BF16-storage qualification
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -8,12 +8,26 @@ W launched07:44UTC, deadline13:43:43UTC; logical0–31/physical0–7, private RA
 Original launcher2658497, timeout/group2658570, driver2658572; all32actual mappings recorded.
 All32local+global native gates pass; maxKL .003104, hidden/headBF16.
 All32initial FP32 master samples exactly match released CPU shard values.
-W update 1 completed: finite gradient, genuine FP32 master changes and matching replicas.
-Updates 2–3 still pending; cold elapsed 1507 s does not establish steady throughput.
+W updates 1–2 completed: finite gradients, genuine FP32 master changes and matching replicas.
+All32 full master/moment scans and Adam step2 pass; update3 remains active.
+Elapsed1507/776s includes compilation; steady throughput is unqualified and under investigation.
 V2failed check remains failed; model-free four-rank mixed-failure consensus test passed.
 W/C′ small diagnostic slices; T will save full state on NVMe for recovery preparation.
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
 Sources frozen; recovery work isolated at local/worktrees/recovery-v4; science unreleased.
+
+## Closed: general high-surprisal DEV cohort
+Question: can a separate comparable general DEV panel be fixed before supervised outcomes?
+ID: general-note-held256-v1; first 2,048 hash-ordered unseen approved DEV documents.
+Exclude 828 prior exposed DEV documents; TEST payloads skipped before JSON.
+Frozen B0 FP32 raw16 scores all 2,048, with zero errors and all native gates passing.
+535 meet K1 surprisal >=1.7; first 256 in frozen order sealed, no ranking or fallback.
+Future-free writer projection and exact original512+16 reader projection saved separately.
+All four exits0; original identities/groups, tmux, devices and unique TMPDIR descendants closed.
+POSIX SIDs were not captured; no whole-SID closure claim. EBS archive verified.
+Independent complete metric/hash/order readback passes; no trained-thought result.
+Public: validation/general_high_surprisal_DEV256_sealed_20261018.json plus all raw vectors.
+Decision: evaluate B0 and every later terminal arm on this panel and arithmetic held256.
 
 ## CPU preparation: filtered general hindsight labels
 Question: can strict frozen-reader filtering supply 5,120 general TRAIN labels?
