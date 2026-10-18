@@ -632,3 +632,11 @@ exploratory reuse. No gold-selected sample, model update, teacher or official
 TEST. Equal maximum generated-token budgets do not establish equal compute.
 Require focused/full CPU checks and actual native/device/replay qualification
 before interpreting results; preserve every capped/empty/malformed output.
+
+Posthoc exhaustive discordance inspection narrows the accuracy interpretation:
+all3 verified-over-empty wins are2 missing-hash4 repairs and1 avoided cap. No
+wrong parsed answer was corrected in that contrast. A separate5-item panel also
+retains teacher’s wrong48-hour answer being copied and the verified reader
+miscomputing6+22 as26. Keep original reports, strict scores and fixedfirst4
+unchanged; publish the transparent posthoc panel separately. Positive forced
+numeric LL is distinct from a demonstrated arithmetic-capability gain.

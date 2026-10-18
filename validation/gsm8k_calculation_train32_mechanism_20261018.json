@@ -1,0 +1,189 @@
+{
+  "created_utc": "2026-10-18T02:10:56+00:00",
+  "examples": [
+    {
+      "gold_number": "50",
+      "interpretation": "Verified gain avoids empty-context cap after correct car and motorcycle profits and the final subtraction expression.",
+      "item_id": "gsm8k:train:07451",
+      "question": "A factory decides to stop making cars and start making motorcycles instead. When it made cars, per month, it cost $100 for materials, they could make 4 cars, and they sold each car for $50. Now that they make motorcycles it costs $250 for materials, but they sell 8 of them for $50 each. How much more profit do they make per month selling motorcycles instead of cars?",
+      "reader_modes": {
+        "empty": {
+          "generated_text": "Let's think step by step\nFirst, let's calculate the profit from making cars:\nCost of materials per month = $100\nNumber of cars made per month = 4\nSelling price per car = $50\nProfit from cars = (Number of cars made per month * Selling price per car) - Cost of materials per month\nProfit from cars = (4 * $50) - $100 = $200 - $100 = $100\n\nNow, let's calculate the profit from making motorcycles:\nCost of materials per month = $250\nNumber of motorcycles made per month = 8\nSelling price per motorcycle = $50\nProfit from motorcycles = (Number of motorcycles made per month * Selling price per motorcycle) - Cost of materials per month\nProfit from motorcycles = (8 * $50) - $250 = $400 - $250 = $150\n\nTo find out how much more profit they make per month selling motorcycles instead of cars, we subtract the profit from cars from the profit from motorcycles:\nProfit difference = Profit from motorcycles - Profit from cars\nProfit difference = $150 - $100 =",
+          "parsed_number": null,
+          "status": "truncated",
+          "strict_score": 0.0,
+          "tokens": 256
+        },
+        "generated": {
+          "generated_text": "#### 50",
+          "parsed_number": "50",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 5
+        },
+        "verified": {
+          "generated_text": "The difference in profit is 150 - 100 = 50 dollars.\n#### 50",
+          "parsed_number": "50",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 25
+        }
+      },
+      "teacher_note": "Materials cost for cars: $100  \nRevenue from cars: 4 * $50 = $200  \nProfit from cars: $200 - $100 = $100  \n\nMaterials cost for motorcycles: $250  \nRevenue from motorcycles: 8 * $50 = $400  \nProfit from motorcycles: $400 - $250 = $150  \n\nDifference in profit: $150 - $100 = $50",
+      "verified_note": "Monthly car profit is 4 * 50 - 100 = 100 dollars. Monthly motorcycle profit is 8 * 50 - 250 = 150 dollars."
+    },
+    {
+      "gold_number": "40",
+      "interpretation": "Teacher counts six days despite the excluded8th, writes48 and reader copies48. Verified partial counts five; empty and verified readers answer40.",
+      "item_id": "gsm8k:train:00588",
+      "question": "John worked 8 hours a day every day from the 3rd to the 8th, including the 3rd and not including the 8th.  How many hours did he work?",
+      "reader_modes": {
+        "empty": {
+          "generated_text": "Let's think step by step\nJohn worked from the 3rd to the 7th, which is a total of 7 - 3 + 1 = 5 days.\nHe worked 8 hours a day, so he worked a total of 5 * 8 = 40 hours.\n#### 40",
+          "parsed_number": "40",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 68
+        },
+        "generated": {
+          "generated_text": "#### 48",
+          "parsed_number": "48",
+          "status": "ok",
+          "strict_score": 0.0,
+          "tokens": 5
+        },
+        "verified": {
+          "generated_text": "He worked 8 hours a day for 5 days, so he worked 8*5 = 40 hours.\n#### 40",
+          "parsed_number": "40",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 30
+        }
+      },
+      "teacher_note": "From the 3rd to the 8th, inclusive of the 3rd and exclusive of the 8th, there are 6 days (3rd, 4th, 5th, 6th, 7th, and 8th).  \nHe worked 8 hours each day, so total hours = 6 \u00d7 8 = 48.",
+      "verified_note": "The worked dates are the 3rd, 4th, 5th, 6th and 7th: 5 working days."
+    },
+    {
+      "gold_number": "28",
+      "interpretation": "Verified reader writes the correct expression5*0+3*2+22*1 but evaluates it as26; empty answers55. Teacher provides full correct28 and reader copies28.",
+      "item_id": "gsm8k:train:04175",
+      "question": "The vending machine fails to drop a snack when it\u2019s purchased one in six times. One in ten times, it will accidentally drop two snacks. The rest of the time, it drops the purchased snack. If thirty people have used the vending machine once each to purchase a snack, how many snacks has the vending machine dropped?",
+      "reader_modes": {
+        "empty": {
+          "generated_text": "Let's think step by step\nThe vending machine fails to drop a snack 1/6 of the time, so it drops a snack 5/6 of the time.\nThe vending machine accidentally drops two snacks 1/10 of the time, so it drops one snack 9/10 of the time.\nThe rest of the time, it drops the purchased snack, which is 1 - (5/6 + 1/10) = 1/3 of the time.\nSo, the vending machine drops a snack 5/6 * 30 = 25 times.\nIt accidentally drops two snacks 1/10 * 30 = 3 times.\nIt drops one snack 9/10 * 30 = 27 times.\nTherefore, the vending machine has dropped 25 + 3 + 27 = 55 snacks in total.\n#### 55",
+          "parsed_number": "55",
+          "status": "ok",
+          "strict_score": 0.0,
+          "tokens": 193
+        },
+        "generated": {
+          "generated_text": "#### 28",
+          "parsed_number": "28",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 5
+        },
+        "verified": {
+          "generated_text": "So the vending machine has dropped 5 * 0 + 3 * 2 + 22 * 1 = 26 snacks.\n#### 26",
+          "parsed_number": "26",
+          "status": "ok",
+          "strict_score": 0.0,
+          "tokens": 35
+        }
+      },
+      "teacher_note": "The vending machine fails to drop a snack 1/6 of the time, drops two snacks 1/10 of the time, and drops one snack the rest of the time. For 30 purchases:\n\n- Failed drops: $30 \\times \\frac{1}{6} = 5$ (no snacks dropped)\n- Two-snack drops: $30 \\times \\frac{1}{10} = 3$ (3 \u00d7 2 = 6 snacks dropped)\n- One-snack drops: $30 - 5 - 3 = 22$ (22 \u00d7 1 = 22 snacks dropped)\n\nTotal snacks dropped: $6 + 22 = 28$.",
+      "verified_note": "Of 30 purchases, the stated rates give 30 / 6 = 5 failures and 30 / 10 = 3 double drops. The remaining 22 purchases drop one snack each."
+    },
+    {
+      "gold_number": "3",
+      "interpretation": "Verified gain repairs a missing hash4 answer marker; empty context already computes and states the canonical number3.",
+      "item_id": "gsm8k:train:05889",
+      "question": "Aziz's parents moved to America in 1982. The year is 2021 and Aziz just celebrated his 36th birthday. How many years had his parents been living in America before Aziz was born?",
+      "reader_modes": {
+        "empty": {
+          "generated_text": "Let's think step by step\nAziz's parents moved to America in 1982, and Aziz just celebrated his 36th birthday in 2021. To find out how many years his parents had been living in America before Aziz was born, we need to calculate the difference between the year Aziz was born and the year his parents moved to America.\n\nFirst, let's find out the year Aziz was born. Since Aziz just celebrated his 36th birthday in 2021, we can subtract 36 from 2021 to find the year he was born:\n\n2021 - 36 = 1985\n\nSo, Aziz was born in 1985.\n\nNow, let's find out how many years his parents had been living in America before Aziz was born. Since his parents moved to America in 1982, we can subtract 1982 from 1985 to find the number of years:\n\n1985 - 1982 = 3\n\nTherefore, Aziz's parents had been living in America for 3 years before Aziz was born.",
+          "parsed_number": null,
+          "status": "format_error",
+          "strict_score": 0.0,
+          "tokens": 251
+        },
+        "generated": {
+          "generated_text": "#### 3",
+          "parsed_number": "3",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 4
+        },
+        "verified": {
+          "generated_text": "His parents moved to America in 1982, so they had been living in America for 1985 - 1982 = 3 years before Aziz was born.\n#### 3",
+          "parsed_number": "3",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 45
+        }
+      },
+      "teacher_note": "Aziz was born in 2021 - 36 = 1985. His parents moved to America in 1982, so they had been living in America for 1985 - 1982 = 3 years before Aziz was born.",
+      "verified_note": "Aziz was born in 2021 - 36 = 1985."
+    },
+    {
+      "gold_number": "450",
+      "interpretation": "Verified gain repairs a missing hash4 answer marker; empty context already computes and states450.",
+      "item_id": "gsm8k:train:02918",
+      "question": "Monica charges $25.00 per person when catering a dinner party.  For repeat customers, she offers a 10% discount.  Phoebe is a repeat customer who is having a dinner party for 20 guests.  How much will Monica make from the party?",
+      "reader_modes": {
+        "empty": {
+          "generated_text": "Let's think step by step\nMonica charges $25.00 per person, so for 20 guests, she would charge 25 * 20 = $500.00 without the discount.\nSince Phoebe is a repeat customer, she gets a 10% discount. To calculate the discount, we need to find 10% of $500.00, which is 0.10 * 500 = $50.00.\nNow, we subtract the discount from the original amount: $500.00 - $50.00 = $450.00.\nMonica will make $450.00 from the party.",
+          "parsed_number": null,
+          "status": "format_error",
+          "strict_score": 0.0,
+          "tokens": 158
+        },
+        "generated": {
+          "generated_text": "Monica will make $450 from the party.",
+          "parsed_number": null,
+          "status": "format_error",
+          "strict_score": 0.0,
+          "tokens": 13
+        },
+        "verified": {
+          "generated_text": "For 20 guests, Monica will make 20 * 22.50 = 450 dollars.\n#### 450",
+          "parsed_number": "450",
+          "status": "ok",
+          "strict_score": 1.0,
+          "tokens": 32
+        }
+      },
+      "teacher_note": "25 * 20 = 500  \n500 * 0.90 = 450",
+      "verified_note": "The repeat-customer discount is 25 * 10 / 100 = 2.50 dollars per guest, so the discounted price is 22.50 dollars per guest."
+    }
+  ],
+  "findings": {
+    "statement": "All3 strict accuracy gains over empty are format/cap repairs. This sample does not demonstrate correction of a wrong parsed numeric answer by verified partial notes. The separately positive forced numeric likelihood contrast remains unchanged.",
+    "verified_minus_empty_losses": 0,
+    "verified_minus_empty_wins": 3,
+    "wins_from_empty_format_error": 2,
+    "wins_from_empty_truncation": 1,
+    "wins_from_empty_wrong_parsed_number": 0
+  },
+  "limitations": [
+    "Posthoc explanatory analysis of existing retained outputs; no new generation, relaxed parsing, recovered-number scoring or change to original results.",
+    "A mathematically correct calculation or number in unscored prose does not change strict accuracy; all original failures remain.",
+    "Teacher includes final answers in these examples and its assisted correction is not evidence of student-discovered intermediate reasoning."
+  ],
+  "schema": "gsm8k-calculation-train32-posthoc-mechanism-v1",
+  "selection": "Posthoc exhaustive discordance panel: verified correctness differs from empty, OR teacher-assisted correctness differs from verified. Exactly5/32 items, selection after outcomes; not the fixed-first4 panel.",
+  "source_hashes": {
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/answers/shard-0/predictions.jsonl": "e6cb2b33898c302769a8cb4e4e05fc8c31868a4c2fef77fd518f8aacf273320d",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/answers/shard-1/predictions.jsonl": "b3253ce28ec0a154c404ca6280793421dea7eaeac190d3c2b87f1a5254824f84",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/answers/shard-2/predictions.jsonl": "2fc2e4bac71d4080e89f24107de1e2f721d5640fca6116fa8fcd0daf759e804c",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/answers/shard-3/predictions.jsonl": "a0b777a3b8b2461873946b83580de034ddc11fd2b8b3b8c641bd0becf4534f2c",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/gold.json": "2523e552b274b9c1e4b221ebbe432a167ed715c6e380b34d4b7f88ea1cee5da3",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/inputs.json": "93fffcd5ac21c96d51cf91b5e23c89ed34d77af5650eacc7ee75d822f68d0660",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/protocol.json": "2a85462169f4904470bf97398602bff3c31fe00221a6cbfbe047fbb18c5b5ca1",
+    "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/summary.json": "efab1a67fb8119e10553dadeb18c834d1d1ec558e41f5e113ac3124b40f25f63"
+  },
+  "source_report": {
+    "path": "validation/gsm8k_calculation_train32_20261018.json",
+    "sha256": "25ee92684dad4b592353bb47021a7ad790733c43df7969fd5c2197ab9b805c06"
+  }
+}

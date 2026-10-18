@@ -1,4 +1,4 @@
-# Status — 2026-10-18 02:07 UTC
+# Status — 2026-10-18 02:14 UTC
 
 The owner stopped the original R study and authorized a new direction. Old
 launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
@@ -30,7 +30,7 @@ launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
   206 files/9,879,515B, all readback verified. Private sources/notes/examples kept.
   All teacher/answer/LL jobs exit0 and original identities/groups/sessions gone.
 
-## Active work — no live device jobs
+## Active work — reviewed self-note probe released for qualification
 
 Implement/review the bounded unchanged-B0 self-note experiment before training.
 Data agent owns train/calculation_self_notes.py and focused tests: same32 known
@@ -48,26 +48,33 @@ Known TRAIN32 reuse is exploratory, not blinded confirmation. Equal tokencaps
 are not equal FLOPs/latency. Prior gold is hash-bound to all4 original LL receipts
 and parsed only after fresh answer closure. No official TEST.
 
-Distributed owns future runtime/closure/summary/archive; NO launch until root
-releases reviewed sources and full CPU checks. Runtime plan:
+Distributed owns runtime/closure/summary/archive. Both exact sources were
+independently reviewed;492 tests + toy smoke PASS local/checks/tests.mXGFmo.
+Root releases prepare/nativeCPUreference/qualified finite generation, then the
+reader pipeline after strict128-note closure. Hardware checks are not yet run.
+Runtime plan:
 local/diagnostics/gsm8k-self-note-train32-g4-v1/RUNTIME_PLAN.json.
 Proposed cores28/32/36/40 (devices7–10), deadline06:00UTC. Reserved valid port
 blocks65031–38 writer /65041–48 answers /65051–58 LL; rebind-check at release.
 Writer output: local/nvme/diagnostics/gsm8k-calculation-self-notes-train32-g4-v1.
 Reader output: local/nvme/diagnostics/gsm8k-self-note-reader-train32-g4-v1.
-Neither new output/protocol exists yet. Shared runtime/training helpers untouched.
+No shared runtime/training helpers changed. Exact worker identities and actual
+protocol hashes must be recorded after launch. No automatic retry.
 
 ## Next actions
 
-1. Finish writer source/tests; reader reviewed, focused15 PASS before additional
-   repaired-gold tests. Run required bash scripts/run_checks.sh once both settle.
-   Source scripts/env.sh first (includes local pytest dependency path).
-2. Review final source, freeze/prepare then nativeCPUreference and bounded device
-   generation/qualification; close all128 notes before reader preparation.
+1. Run prepared writer/nativeCPUreference and bounded device qualification;
+   first4 CPU/device≤.002 and all-action cache/replay≤.001 required. Close all128
+   notes and workers before reader preparation.
+2. Preserve source hashes: writer3cedd5f9868a255b5bd5691647a8008d4ec0637928130eea97812a4258bf831d;
+   reader9c7342ceeea83895cc21aadc481f0f0b56de079eec76a94c86ef930618eb1bc5.
 3. Close all416 answers/groups before late gold, then all416 finite LL. Review
    fixed examples and actual content/accuracy/cost before any larger training.
-4. Publish reviewed new sources plus closed calculation report/docs. Last full
-   suite445+toy_smoke PASS local/checks/tests.sKjRbj predates new self-note modules.
+4. Publish reviewed new sources and the posthoc mechanism annex. All3 earlier
+   verified−empty wins are2 format repairs +1 avoided cap, no wrong parsed
+   numeric answer corrected. Original report/scores unchanged. Separate EBS
+   mechanism annex ARCHIVE SHA04c0112e…8509 is verified.
+   Latest full492+toy_smoke PASS local/checks/tests.mXGFmo; native checks separate.
 
 Original R1234 stopped at63/backed up; R5678 never launched; old C256 both
 finished. Original primary R/C comparison incomplete. Preserve all old evidence.

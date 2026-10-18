@@ -64,7 +64,10 @@ The completed [32-question calculation pilot](validation/gsm8k_calculation_train
 finds that verified partial calculations at the natural `Answer:` position score
 30/32, empty context 27/32, and same-length numeric corruptions 5/32. Accuracy
 benefit over empty remains uncertain: +9.375 percentage points, paired interval
-[0,21.875]. Forced canonical-number likelihood improves by +0.945 nats
+[0,21.875]. All three added strict successes repair a missing answer marker or
+avoid the token limit; they do not correct a wrong parsed answer in this sample.
+The [exhaustive posthoc discordance panel](validation/gsm8k_calculation_train32_mechanism_20261018.json)
+preserves those outputs without rescoring. Forced canonical-number likelihood improves by +0.945 nats
 [0.258,1.591]. The large correct-versus-corrupted gap shows sensitivity and
 vulnerability to wrong intermediates; it alone does not establish improvement
 over silence. Local4B notes score29/32 and include final answers in the fixed
