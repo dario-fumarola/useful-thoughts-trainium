@@ -18,7 +18,9 @@ import unicodedata
 
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
-SCHEMA = 'finemath-arithmetic-boundaries-train-dev-v1'
+# V2 changes only the numeric-copy filter. Retain the salt to isolate that
+# repair from the fixed search starts and accepted-pool hash ordering.
+SCHEMA = 'finemath-arithmetic-boundaries-train-dev-v2'
 SALT = 'finemath-arithmetic-boundaries-v1'
 SOURCE_SHA = 'bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff'
 MAX_OPS, MAX_NODES, MAX_POWER, MAX_VALUE, MAX_PART = 6, 63, 8, 10**12, 10**18
@@ -26,6 +28,7 @@ MIN_PAST, SOURCE_PREFIX, SOURCE_FUTURE, MAX_RHS = 128, 512, 16, 16
 HEADER = re.compile(r'^\{\s*"id"\s*:\s*"([^"\\]+)"\s*,\s*"document_id"\s*:\s*"([^"\\]+)"\s*,\s*"split"\s*:\s*"(train|dev|test)"\s*,\s*"prefix"\s*:\s*')
 NUM = r'(?:\d+(?:\.\d+)?|\.\d+)'
 RATIONAL = rf'[+\-\u2212]?\s*{NUM}(?:\s*/\s*[+\-\u2212]?\s*{NUM})?'
+GROUPED = re.compile(r'(?:\d{1,3}(?:,\d{3})+|\d{1,2}(?:,\d{2})*,\d{3})(?:\.\d+)?')
 MATH_SUFFIX = re.compile(r'[\d\s.()+*/^\-+\u2212\u00d7\u00f7]+$')
 FUNCTIONS = {'sin','cos','tan','cot','sec','csc','asin','acos','atan','arcsin','arccos','arctan',
              'sinh','cosh','tanh','log','ln','exp','sqrt','abs','max','min'}
@@ -149,9 +152,12 @@ def whole_value_visible(past: str, value: Fraction) -> str | None:
     """Conservative numeric-copy check, not semantic proof of a hidden answer.
 
     Whole decimal/rational spans, their components, scientific literals and
-    percentage interpretations are checked. Ambiguous LaTeX/vulgar fractions or
-    mixed-number spans are rejected. Computed expressions/prose paraphrases can
-    still encode the answer; this filter does not claim to detect all of them.
+    percentage interpretations are checked. Abbreviation/ellipsis dots cannot
+    silently become a leading decimal point. Compact comma runs are consumed
+    whole: only canonical Western/Indian grouping is interpreted, with list
+    components checked too; other runs are ambiguous, never split and retried.
+    Computed expressions/prose paraphrases can still encode the answer; this
+    filter does not claim to detect all of them.
     """
     if re.search(r'\\(?:[dt]?frac)\b|[\u00bc-\u00be\u2150-\u215e]', past):
         return 'ambiguous_fraction_copy_span'
@@ -159,9 +165,17 @@ def whole_value_visible(past: str, value: Fraction) -> str | None:
         return 'ambiguous_unicode_numeric_copy_span'
     if re.search(rf'{NUM}\s+{NUM}\s*/\s*{NUM}', past):
         return 'ambiguous_mixed_number_copy_span'
-    # Thousands/exponents are accepted here only to avoid missing visible
-    # numbers; they are not accepted by the LHS or source-label grammar.
-    atom = r'(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?|\.\d+'
+    if (re.search(r'[^\W\d_]\.(?=\d)|\.{2,}(?=\d)|\d*(?:\.\d+){2,}',past)
+            or re.search(r'\b(?:rs|re|inr)[^\S\r\n]*\.(?=\d)',past,re.IGNORECASE)):
+        return 'ambiguous_decimal_boundary_copy_span'
+    for match in re.finditer(r'\d[\d,.]*',past):
+        run=match.group().rstrip('.,')  # Sentence/list punctuation is not a number.
+        if ',' in run and GROUPED.fullmatch(run) is None:
+            return 'ambiguous_grouped_numeric_copy_span'
+    # Consume MAXIMAL comma runs before validating grouping, so e.g.1,32,600
+    # cannot be silently split into1 and32,600. A list-like4,5 is unsupported,
+    # not evidence that45 was visible. Grouping is copy-only, never LHS/RHS.
+    atom = r'\d+(?:,\d+)*(?:\.\d+)?|\.\d+'
     atom = rf'(?:{atom})(?:[eE][+-]?\d+)?'
     if re.search(r'[eE]\s*\u2212\s*\d',past): return 'ambiguous_numeric_copy_span'
     for m in re.finditer(rf'[+\-\u2212]?\s*{atom}(?:\s*/\s*[+\-\u2212]?\s*{atom})?\s*%?', past):
@@ -170,8 +184,17 @@ def whole_value_visible(past: str, value: Fraction) -> str | None:
             parts = text.split('/')
             if any(len(v)>80 or any(abs(int(e))>18 for e in re.findall(r'[eE]([+-]?\d+)',v)) for v in parts):
                 return 'ambiguous_or_unbounded_numeric_copy_span'
-            values = [Fraction(re.sub(r'\s+','',v).replace(',', '').replace('\u2212','-')) for v in parts]
+            normalized=[re.sub(r'\s+','',v).replace('\u2212','-') for v in parts]
+            components=[]
+            for v in normalized:
+                mantissa=re.split(r'[eE]',v)[0].lstrip('+-')
+                if ',' in mantissa:
+                    if GROUPED.fullmatch(mantissa) is None:
+                        return 'ambiguous_grouped_numeric_copy_span'
+                    components.extend(Fraction(c) for c in mantissa.split(','))
+            values = [Fraction(v.replace(',', '')) for v in normalized]
             candidates = list(values) + [abs(v) for v in values]  # Binary/unary signs can be ambiguous in prose.
+            candidates += components+[abs(v) for v in components]+[-v for v in components]
             v = values[0]/values[1] if len(values) == 2 else values[0]; candidates += [v, abs(v)]
             if percent: candidates += [v/100, abs(v)/100]
         except (ValueError, ZeroDivisionError): return 'ambiguous_numeric_copy_span'
@@ -371,6 +394,7 @@ def prepare(source, output, tokenizer_dir, deadline_utc=None):
         tokenizer_vocab_sha256=canonical_hash(tok.get_vocab()),selection_salt=SALT,selection=selection,counts=counts,
         boundary_selection='SHA256(salt,document_id,item_id,role=search_start) modulo65 +128, then first prefix-eligible cut; immediate return, no RHS quality retry',
         number_display='Exact terminating decimal when <=24 fractional digits; otherwise reduced fraction; integers unchanged',
+        numeric_copy_filter='V2 rejects ambiguous contextual dots and malformed maximal comma runs; Western/Indian grouped values and components checked; V1 salt unchanged',
         ready_for_feasibility=all(v['available']>=v['requested'] for v in selection.values()),
         accepted_sha256=sha256_file(output/'accepted.jsonl'),audit_sha256=sha256_file(output/'audit.jsonl'),
         limits=['Strict plaintext grammar and original-token roundtrip can reject legitimate math; unsupported is not false.',

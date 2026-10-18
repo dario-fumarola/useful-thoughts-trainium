@@ -4,19 +4,22 @@ from __future__ import annotations
 import argparse
 from dataclasses import asdict
 from datetime import datetime, timezone
+from fractions import Fraction
 import json
 import math
 from pathlib import Path
 import random
+import re
 import time
 from types import SimpleNamespace
 
 import torch
 
-from train.evaluate import asset_provenance
+from train.evaluate import asset_provenance, GreedyDecoder, GenerationFailure
 from train.evaluate_likelihood import score_continuations
 from train.evaluate_local import setup_model
 from train.evaluation_integrity import evaluation_dependencies
+from train.neuron_backend import CausalCache
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 from weekend_thinking.pretrained import load_base, sampled_fingerprint
 from weekend_thinking.stats import paired_cluster_bootstrap
@@ -28,6 +31,7 @@ CONTRASTS = (('raw', 'empty'), ('raw', 'correct'), ('empty', 'correct'),
              ('corrupt', 'correct'), ('shuffled', 'correct'), ('other', 'correct'))
 COUNTS = {'train': 256, 'dev': 64}
 WIDTH, FUTURE, PAD, SHARDS = 1024, 16, 151643, 4
+ANSWER_CAP = 32
 MODEL, REVISION = 'Qwen/Qwen3-1.7B-Base', 'ea980cb0a6c2ae4b936e82123acc929f1cec04c1'
 
 
@@ -47,6 +51,53 @@ def sources():
 
 def decode(tok, ids):
     return tok.decode(ids, skip_special_tokens=False, clean_up_tokenization_spaces=False)
+
+
+def answer_recipe(deadline):
+    require_utc_deadline(deadline)
+    return dict(split='dev', expected_rows=384, cap=ANSWER_CAP, deadline_utc=deadline,
+        policy='single greedy; tokenizer-defined IDs; defined specials preserved; EOS151643 or cap32 only',
+        support='backend.banned_ids excludes undefined IDs; native qualification and likelihood use the FULL released head',
+        context='Exactly the frozen likelihood context; no suffix, QA/CoT prompt or parser-based stopping',
+        parser='initial ASCII signed decimal/fraction v1; exact Fraction; EOS certifies terminal literal, cap needs right lookahead',
+        denominator='All64 DEV documents in all six modes; errors/incomplete/unsupported/format failures score zero')
+
+
+def parse_initial_scalar(text, stop):
+    """Target-independent, bounded syntax only; never recover a later number."""
+    if not isinstance(text,str) or len(text)>8192: return dict(status='unsupported')
+    if stop not in ('length_cap',f'token:{PAD}'): return dict(status='error')
+    terminal=stop==f'token:{PAD}'; s=text.lstrip()
+    number=r'[+-]?(?:[0-9]+(?:\.[0-9]+)?|\.[0-9]+)'
+    match=re.match(rf'({number})(?:[ \t]*/[ \t]*({number}))?',s)
+    if not match:
+        return dict(status='incomplete' if not terminal and s in ('','+','-','.') else 'format_error')
+    literal=match.group(); tail=s[match.end():]; rest=tail.lstrip()
+    if len(literal)>128 or sum(c.isdigit() for c in literal)>64: return dict(status='unsupported')
+    if not rest:
+        if not terminal: return dict(status='incomplete')
+    else:
+        # A decimal point/comma is a delimiter only with nonnumeric lookahead or EOS.
+        if rest[0] in '.,;':
+            following=rest[1:]
+            if not following.strip():
+                if not terminal: return dict(status='incomplete')
+                rest=''
+            elif following[:1].isspace(): rest=following.lstrip()
+            else: return dict(status='unsupported')
+        elif not tail[:1].isspace(): return dict(status='unsupported')
+        if rest:
+            word=re.match(r'[A-Za-z]+\b',rest)
+            if (not word or len(word.group())==1 or word.group().lower() in
+                    ('plus','minus','times','over','divide','divided','dividing','multiply','multiplied','multiplying',
+                     'mod','modulo','squared','square','cubed','cube','power','powers','raised','root','sqrt',
+                     'percent','percentage','factorial','choose','point','dot','by','added','subtract','subtracted',
+                     'sin','cos','tan','log','ln','and','or','to','e','exp')):
+                return dict(status='unsupported')
+    try:
+        value=Fraction(match[1])/(Fraction(match[2]) if match[2] is not None else 1)
+    except (ValueError,ZeroDivisionError): return dict(status='unsupported')
+    return dict(status='valid',value=str(value),literal=literal)
 
 
 def dataset(directory, tok):
@@ -153,7 +204,7 @@ def prepare(output, directory, model_dir, deadline):
         primary='numeric_nonwhitespace_ll: sum native first-n token logps excluding pure-whitespace tokens',
         secondary='Full scalar joint LL and full natural16 LL; one natural16 forward/cell, same actual source spelling',
         qualification='Native full-head log-softmax first TRAIN raw/second TRAIN correct/first DEV raw/second DEV correct; shard i checks ref i before scores',
-        forward_atol=.002, bootstrap=dict(unit='document', repeats=5000, seed=17),
+        forward_atol=.002, answers=answer_recipe(deadline), bootstrap=dict(unit='document', repeats=5000, seed=17),
         limitations=manifest['limits']+['External exact arithmetic feasibility, not student-generated thought or training benefit.',
             'Source-verified accepted boundaries are a curated subset; all preparer failures/reserves remain in the pinned audit.',
             'TRAIN and DEV contrasts are separate, conditional fixed-document estimates, not training-seed uncertainty.',
@@ -167,7 +218,7 @@ def load(output):
     p = read(output/'protocol.json')
     if (p['schema'] != SCHEMA or p['source_files'] != sources() or p['counts'] != COUNTS
             or p['modes'] != list(MODES) or p['metrics'] != list(METRICS) or p['compute'] != 'fp32'
-            or p['separator_ids'] != [271] or p['pad_id'] != PAD or p['forward_atol'] != .002
+            or p['answers'] != answer_recipe(p['answers']['deadline_utc']) or p['separator_ids'] != [271] or p['pad_id'] != PAD or p['forward_atol'] != .002
             or (p['width'],p['future_width'],p['shards'],p['expected_rows']) != (1024,16,4,1920)):
         raise ValueError('Probe recipe/source changed')
     for f,h in [(output/'inputs.json',p['inputs_sha256']), *p['input_hashes'].items(),
@@ -212,6 +263,46 @@ def reference(output,p,x):
     return r,t
 
 
+def qualified_reader(output,p,x,ref,native,shard,d,report,*,generation=False):
+    if asset_provenance(Path(p['model_dir']))!=p['assets']: raise ValueError('Released model bytes changed')
+    start=time.monotonic()
+    backend,tok,loaded,signature,_=setup_model(SimpleNamespace(model_dir=Path(p['model_dir']),checkpoint=None,device='xla'))
+    report['model_setup_wall_seconds']=time.monotonic()-start; check_deadline(report['deadline_utc'])
+    if (loaded is not None or signature!=ref['signature'] or any(t.dtype!=torch.float32 for t in backend.model.parameters())
+            or backend.model.get_input_embeddings().weight is not backend.model.get_output_embeddings().weight):
+        raise ValueError('Tied actual native FP32 B0 required')
+    report['model_signature']=signature; q=x['qualification_refs'][shard]; start=time.monotonic(); decoder=None
+    ids=torch.full((1,WIDTH),PAD,dtype=torch.long); ids[0,:len(q['context_ids'])]=torch.tensor(q['context_ids']); ids=ids.to(backend.device)
+    if generation:
+        banned=tuple(sorted(set(range(p['vocab_size']))-set(tok.get_vocab().values())))
+        if tuple(backend.banned_ids)!=banned: raise ValueError('Tokenizer-defined generation support changed')
+        report['banned_ids_sha256']=canonical_hash(banned)
+        decoder=GreedyDecoder(backend.model,tok,sync=backend.sync,banned_ids=tuple(backend.banned_ids))
+        logits=decoder._next(ids,torch.arange(WIDTH,device=backend.device),
+            CausalCache(backend.model.config.num_hidden_layers,WIDTH+ANSWER_CAP),
+            torch.tensor([len(q['context_ids'])-1],device=backend.device))
+    else:
+        h=backend.hidden(ids)
+        if h.dtype!=torch.float32: raise ValueError('Actual FP32 trunk required')
+        logits=backend.model.lm_head(h[:,len(q['context_ids'])-1])
+    actual=logits.float().log_softmax(-1); backend.sync(); actual=actual.cpu(); torch.save(actual,d/'forward-logps.pt')
+    error=(actual-native[shard:shard+1]).abs().max().item()
+    report['forward_check']=dict(ref=q,max_error=error if math.isfinite(error) else str(error),atol=.002,
+        forward_logps_sha256=sha256_file(d/'forward-logps.pt'),wall_seconds=time.monotonic()-start)
+    if not math.isfinite(error) or error>.002: raise RuntimeError('Native CPU/device next-LP gate failed')
+    atomic_json(d/'run.json',report,overwrite=True); return backend,tok,decoder
+
+
+def verify_gate(d,r,p,x,ref,native,shard):
+    gate=r['forward_check']; actual=torch.load(d/'forward-logps.pt',weights_only=True,map_location='cpu')
+    if list(actual.shape)!=[1,p['vocab_size']] or actual.dtype!=torch.float32 or not torch.isfinite(actual).all():
+        raise ValueError('Invalid actual qualification vector')
+    error=(actual-native[shard:shard+1]).abs().max().item()
+    if (gate['ref']!=x['qualification_refs'][shard] or gate['atol']!=.002 or not math.isfinite(error)
+            or error!=gate['max_error'] or error>.002 or gate['forward_logps_sha256']!=sha256_file(d/'forward-logps.pt')
+            or r['model_signature']!=ref['signature']): raise ValueError('Actual native/device qualification evidence differs')
+
+
 @torch.no_grad()
 def score(output,shard,deadline):
     if type(shard) is not int or shard not in range(4): raise ValueError('Four shards only')
@@ -220,23 +311,7 @@ def score(output,shard,deadline):
     report=dict(status='running',shard=shard,rows=0,deadline_utc=deadline,protocol_sha256=sha256_file(output/'protocol.json'),started_utc=utc_now())
     atomic_json(d/'run.json',report)
     try:
-        if asset_provenance(Path(p['model_dir']))!=p['assets']: raise ValueError('Released model bytes changed')
-        start=time.monotonic()
-        backend,_,loaded,signature,_=setup_model(SimpleNamespace(model_dir=Path(p['model_dir']),checkpoint=None,device='xla'))
-        report['model_setup_wall_seconds']=time.monotonic()-start; check_deadline(deadline)
-        if loaded is not None or signature!=ref['signature']: raise ValueError('Reader differs from actual native B0')
-        report['model_signature']=signature; q=x['qualification_refs'][shard]; start=time.monotonic()
-        ids=torch.full((1,WIDTH),PAD,dtype=torch.long); ids[0,:len(q['context_ids'])]=torch.tensor(q['context_ids'])
-        h=backend.hidden(ids.to(backend.device))
-        if h.dtype!=torch.float32 or any(t.dtype!=torch.float32 for t in backend.model.parameters()):
-            raise ValueError('Actual FP32 trunk and parameters required')
-        actual=backend.model.lm_head(h[:,len(q['context_ids'])-1]).float().log_softmax(-1)
-        backend.sync(); actual=actual.cpu(); torch.save(actual,d/'forward-logps.pt')
-        error=(actual-native[shard:shard+1]).abs().max().item()
-        report['forward_check']=dict(ref=q,max_error=error if math.isfinite(error) else str(error),atol=.002,
-            forward_logps_sha256=sha256_file(d/'forward-logps.pt'),wall_seconds=time.monotonic()-start)
-        if not math.isfinite(error) or error>.002: raise RuntimeError('Native CPU/device next-LP gate failed')
-        atomic_json(d/'run.json',report,overwrite=True)
+        backend,_,_=qualified_reader(output,p,x,ref,native,shard,d,report)
         with (d/'scores.jsonl').open('x') as stream:
             for r in x['rows'][shard::4]:
                 for mode in MODES:
@@ -263,6 +338,87 @@ def derive_metrics(logps,mask):
                 scalar_joint_ll=sum(logps[:len(mask)]),natural16_ll=sum(logps))
 
 
+@torch.no_grad()
+def answers(output,shard,deadline):
+    if type(shard) is not int or shard not in range(4): raise ValueError('Four shards only')
+    check_deadline(deadline); p,x=load(output); ref,native=reference(output,p,x)
+    if deadline!=p['answers']['deadline_utc']: raise ValueError('Frozen answer deadline required')
+    selected=[r for r in x['rows'] if r['split']=='dev'][shard::4]
+    d=output/'answers'/f'shard-{shard}'; d.mkdir(parents=True,exist_ok=False)
+    report=dict(status='running',shard=shard,rows=0,deadline_utc=deadline,
+        protocol_sha256=sha256_file(output/'protocol.json'),started_utc=utc_now())
+    atomic_json(d/'run.json',report)
+    try:
+        _,tok,decoder=qualified_reader(output,p,x,ref,native,shard,d,report,generation=True)
+        with (d/'predictions.jsonl').open('x') as stream:
+            for r in selected:
+                for mode in MODES:
+                    check_deadline(deadline); start=time.monotonic(); context=x['contexts'][r['item_id']]['values'][mode]
+                    v=dict(item_id=r['item_id'],document_id=r['document_id'],split='dev',mode=mode,status='ok',
+                        context_sha256=canonical_hash(context),actions=[],content_ids=[],generated_text='',stop_type='error')
+                    try:
+                        result=decoder.decode(context,max_new_tokens=ANSWER_CAP,prefill_width=WIDTH,
+                            pad_id=PAD,stop_ids=(PAD,),answer_line_stop=False)
+                    except Exception as e:
+                        v.update(status='error',error=f'{type(e).__name__}: {e}')
+                        result=e.partial if isinstance(e,GenerationFailure) else None
+                    if result is not None:
+                        v.update(actions=result.actions,content_ids=result.content_ids,generated_text=result.raw_text,stop_type=result.stop_type)
+                    v.update(raw_action_text=decode(tok,v['actions']),n_generated_tokens=len(v['actions']),
+                        parsed=parse_initial_scalar(v['generated_text'],v['stop_type']) if v['status']=='ok' else dict(status='error'),
+                        wall_seconds=time.monotonic()-start)
+                    stream.write(json.dumps(v,allow_nan=False)+'\n'); stream.flush(); report['rows']+=1
+                print(json.dumps(dict(shard=shard,rows=report['rows'],utc=utc_now())),flush=True)
+        report.update(status='complete',predictions_sha256=sha256_file(d/'predictions.jsonl'))
+    except BaseException as e: report.update(status='failed',error=f'{type(e).__name__}: {e}'); raise
+    finally: report['finished_utc']=utc_now(); atomic_json(d/'run.json',report,overwrite=True)
+
+
+def summarize_answers(output):
+    from transformers import AutoTokenizer
+    p,x=load(output); ref,native=reference(output,p,x); values=[]
+    tok=AutoTokenizer.from_pretrained(p['model_dir'],local_files_only=True,trust_remote_code=False)
+    defined=set(tok.get_vocab().values()); banned=tuple(sorted(set(range(p['vocab_size']))-defined))
+    selected=[r for r in x['rows'] if r['split']=='dev']; by_id={r['item_id']:r for r in selected}
+    for shard in range(4):
+        d=output/'answers'/f'shard-{shard}'; r=read(d/'run.json'); v=rows(d/'predictions.jsonl')
+        if (r['status']!='complete' or r['shard']!=shard or r['rows']!=96 or len(v)!=96
+                or r['deadline_utc']!=p['answers']['deadline_utc'] or r['protocol_sha256']!=sha256_file(output/'protocol.json')
+                or r['predictions_sha256']!=sha256_file(d/'predictions.jsonl') or r['banned_ids_sha256']!=canonical_hash(banned)
+                or {(q['item_id'],q['mode']) for q in v}!={(q['item_id'],m) for q in selected[shard::4] for m in MODES}):
+            raise ValueError('All384 unique complete DEV attempts required')
+        verify_gate(d,r,p,x,ref,native,shard)
+        for q in v:
+            item=by_id[q['item_id']]; actions=q['actions']; stop=q['stop_type']; error=q['status']=='error'
+            content=actions[:-1] if stop==f'token:{PAD}' else actions
+            parsed=dict(status='error') if error else parse_initial_scalar(q['generated_text'],stop)
+            if (q['status'] not in ('ok','error') or q['split']!='dev' or q['document_id']!=item['document_id']
+                    or q['context_sha256']!=canonical_hash(x['contexts'][q['item_id']]['values'][q['mode']])
+                    or any(type(t) is not int or t not in defined for t in actions) or len(actions)>ANSWER_CAP
+                    or q['n_generated_tokens']!=len(actions) or q['content_ids']!=content
+                    or q['raw_action_text']!=decode(tok,actions) or q['generated_text']!=decode(tok,content)
+                    or q['parsed']!=parsed or not math.isfinite(q['wall_seconds']) or q['wall_seconds']<0
+                    or (error and (stop!='error' or not q.get('error')))
+                    or (not error and (not actions or (stop==f'token:{PAD}' and actions[-1]!=PAD)
+                        or PAD in content or stop not in ('length_cap',f'token:{PAD}')
+                        or (stop=='length_cap' and len(actions)!=ANSWER_CAP)))):
+                raise ValueError('Changed answer actions, context, parser, stop or retained failure')
+            correct=parsed['status']=='valid' and Fraction(parsed['value'])==Fraction(item['verified_numeric_rhs']['value'])
+            q.update(score=int(correct),value_status=('correct' if correct else 'wrong_value') if parsed['status']=='valid' else parsed['status'])
+        values.extend(v)
+    groups={m:[dict(item_id=q['item_id'],document_id=q['document_id'],score=q['score']) for q in values if q['mode']==m] for m in MODES}
+    result=dict(schema=SCHEMA,status='complete',protocol_sha256=sha256_file(output/'protocol.json'),rows=384,
+        endpoint=p['answers'],absolute={m:dict(correct=sum(q['score'] for q in values if q['mode']==m),denominator=64,
+            accuracy=sum(q['score'] for q in values if q['mode']==m)/64,
+            statuses={s:sum(q['mode']==m and q['value_status']==s for q in values) for s in
+                ('correct','wrong_value','format_error','unsupported','incomplete','error')}) for m in MODES},
+        contrasts={f'{b}_minus_{a}':paired_cluster_bootstrap(groups[a],groups[b],seed=17,repeats=5000) for a,b in CONTRASTS},
+        generated_tokens=sum(q['n_generated_tokens'] for q in values),generation_wall_seconds=sum(q['wall_seconds'] for q in values),
+        answer_rows=values,limitations=p['limitations']+['Free initial scalar value accuracy, not argmax on gold or full continuation correctness.',
+            'Unsupported syntax and generation errors count as zero; a valid wrong scalar does not identify the internal cause.'],created_utc=utc_now())
+    atomic_json(output/'answers.summary.json',result); return result
+
+
 def summarize(output):
     p,x=load(output); ref,native=reference(output,p,x); by_id={r['item_id']:r for r in x['rows']}; values=[]; signatures=[]
     for shard in range(4):
@@ -271,13 +427,7 @@ def summarize(output):
         if (r['status']!='complete' or r['rows']!=480 or len(v)!=480 or r['shard']!=shard
                 or r['protocol_sha256']!=sha256_file(output/'protocol.json') or r['scores_sha256']!=sha256_file(d/'scores.jsonl')
                 or {(q['item_id'],q['mode']) for q in v}!=expected): raise ValueError('All1920 unique complete cells required')
-        gate=r['forward_check']; actual=torch.load(d/'forward-logps.pt',weights_only=True,map_location='cpu')
-        if list(actual.shape)!=[1,p['vocab_size']] or actual.dtype!=torch.float32 or not torch.isfinite(actual).all():
-            raise ValueError('Invalid actual qualification vector')
-        error=(actual-native[shard:shard+1]).abs().max().item()
-        if (gate['ref']!=x['qualification_refs'][shard] or gate['atol']!=.002 or not math.isfinite(error)
-                or error!=gate['max_error'] or error>.002 or gate['forward_logps_sha256']!=sha256_file(d/'forward-logps.pt')
-                or r['model_signature']!=ref['signature']): raise ValueError('Actual native/device qualification evidence differs')
+        verify_gate(d,r,p,x,ref,native,shard)
         for q in v:
             item=by_id[q['item_id']]; correct=derive_metrics(q['token_log_likelihoods'],item['numeric_token_mask'])
             if (q['status']!='ok' or q['document_id']!=item['document_id'] or q['split']!=item['split']
@@ -299,15 +449,17 @@ def summarize(output):
 
 
 def main():
-    a=argparse.ArgumentParser(description=__doc__); a.add_argument('command',choices=('prepare','cpu-reference','score','summarize'))
+    a=argparse.ArgumentParser(description=__doc__); a.add_argument('command',choices=('prepare','cpu-reference','score','answers','summarize','summarize-answers'))
     a.add_argument('--output',type=Path,required=True); a.add_argument('--dataset',type=Path)
     a.add_argument('--model-dir',type=Path,default=Path('local/assets/qwen3-1.7b-base')); a.add_argument('--cpu-threads',type=int,default=16)
     a.add_argument('--shard-index',type=int); a.add_argument('--deadline-utc'); p=a.parse_args()
-    if p.command!='summarize' and not p.deadline_utc: a.error('Explicit finite --deadline-utc required')
+    if not p.command.startswith('summarize') and not p.deadline_utc: a.error('Explicit finite --deadline-utc required')
     if p.command=='prepare': prepare(p.output,p.dataset,p.model_dir,p.deadline_utc)
     elif p.command=='cpu-reference': cpu_reference(p.output,p.cpu_threads,p.deadline_utc)
     elif p.command=='score': score(p.output,p.shard_index,p.deadline_utc)
-    else: summarize(p.output)
+    elif p.command=='answers': answers(p.output,p.shard_index,p.deadline_utc)
+    elif p.command=='summarize': summarize(p.output)
+    else: summarize_answers(p.output)
 
 
 if __name__=='__main__': main()

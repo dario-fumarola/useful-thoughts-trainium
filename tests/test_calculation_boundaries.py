@@ -100,6 +100,56 @@ def test_copy_check_never_accepts_numeric_prefix_and_marks_ambiguous_fraction_sp
     assert probe.whole_value_visible('Earlier\\frac{1}{2}; now calculation=',99)=='ambiguous_fraction_copy_span'
 
 
+@pytest.mark.parametrize('past,value',[
+    ('Earlier Rs.132600; now calculation=',132600),
+    ('Earlier Rs.38000; now calculation=',38000),
+    ('Earlier Rs .132600; now calculation=',132600),
+    ('Earlier Rs .1,32,600; now calculation=',132600),
+    ('Earlier Re .38000; now calculation=',38000),
+    ('Earlier INR .132600; now calculation=',132600),
+    ('Option C.25.2 million; now calculation=',Fraction(126,5)),
+    ('Earlier e.g.132600; now calculation=',132600),
+    ('Earlier amount...132600; now calculation=',132600),
+    ('Earlier17.02.2022; now calculation=',2022),
+    ('Earlier .5.6; now calculation=',999),
+])
+def test_contextual_dot_cannot_hide_a_visible_integer_or_decimal(past,value):
+    assert probe.whole_value_visible(past,Fraction(value))=='ambiguous_decimal_boundary_copy_span'
+
+
+def test_unambiguous_leading_decimal_is_still_parsed_without_inventing_integer_copy():
+    assert probe.whole_value_visible('Earlier .5; now calculation=',Fraction(1,2))=='whole_value_already_visible'
+    assert probe.whole_value_visible('Earlier -.5; now calculation=',Fraction(-1,2))=='whole_value_already_visible'
+    assert probe.whole_value_visible('Earlier .132600; now calculation=',132600) is None
+    assert probe.whole_value_visible('Earlier Rs. 132600; now calculation=',132600)=='whole_value_already_visible'
+
+
+@pytest.mark.parametrize('text,value',[
+    ('1,000',1000),('1,234,567.5',Fraction(2469135,2)),
+    ('1,32,600',132600),('12,34,567',1234567),('80,00,000',8000000),
+    ('-1,32,600',-132600),('1,32,600/2',66300),('1,32,600%',1326),
+    ('1,32,600e-2',1326),
+    ('0,100',100),('1,000',1),  # Also retain possible list components.
+])
+def test_maximal_western_and_indian_groups_are_checked_as_whole_values(text,value):
+    assert probe.whole_value_visible('Earlier '+text+'; now calculation=',Fraction(value))=='whole_value_already_visible'
+
+
+@pytest.mark.parametrize('text',['4,5','1,1','1,4','1,2345','1,23,45','1234,567','1,2,3,4','1,234,56.7',
+    '1,,234','1,234,,567','1,234.5,6'])
+def test_malformed_or_list_like_comma_run_is_ambiguous_not_split_or_concatenated(text):
+    assert probe.whole_value_visible('Earlier '+text+'; now calculation=',999)=='ambiguous_grouped_numeric_copy_span'
+
+
+def test_bad_currency_boundary_is_past_ineligible_before_rhs_curation():
+    tok=Characters();r=record(tok,expr='130000+2000+300*2',rhs='132600')
+    text='Earlier Rs.132600; now: 130000+2000+300*2='
+    r['prefix']=[ord('a')]*(512-len(text))+tok.encode(text)
+    selected,audit=probe.choose_boundary(r['prefix'],r['document_id'],r['id'],tok)
+    assert selected is None and audit[-1]['reason']=='ambiguous_decimal_boundary_copy_span'
+    assert probe.SCHEMA.endswith('-v2') and probe.SALT=='finemath-arithmetic-boundaries-v1'
+
+
 @pytest.mark.parametrize('text',['1e1000000000','9'*81])
 def test_copy_check_bounds_unsafe_literals_before_fraction_construction(monkeypatch,text):
     monkeypatch.setattr(probe,'Fraction',lambda _:pytest.fail('Unsafe Fraction construction reached'))

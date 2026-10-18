@@ -36,6 +36,7 @@ class TinyTied(torch.nn.Module):
         torch.nn.init.zeros_(self.head.weight)
         self.model=lambda input_ids,**kw:SimpleNamespace(last_hidden_state=torch.zeros(*input_ids.shape,1))
         self.lm_head=self.head
+        self.config=SimpleNamespace(num_hidden_layers=1,model_type='qwen3',layer_types=['full_attention'])
     def get_input_embeddings(self):return self.embedding
     def get_output_embeddings(self):return self.head
 
@@ -54,7 +55,7 @@ def prepared(tmp_path,monkeypatch):
         for i in range(n):
             key=f'{split}-{i}';pair=dict(correct_ids=good,corrupted_ids=bad,
                 correct_text=tok.decode(good),corrupted_text=tok.decode(bad))
-            rhs=dict(token_ids=full[cut:cut+3],token_count=3,serialized_text=' 10',numeric_token_mask=[False,True,True])
+            rhs=dict(token_ids=full[cut:cut+3],token_count=3,serialized_text=' 10',value='10',numeric_token_mask=[False,True,True])
             accepted.append(dict(item_id=key,document_id='doc-'+key,split=split,source_file=str(source),
                 source_sha256=source_hash,source_record_id='record-'+key,ordinary_source_ids=full,
                 original_prefix_ids=full[:512],original_future_ids=full[512:],prefix_ids=prefix,
@@ -87,6 +88,7 @@ def prepared(tmp_path,monkeypatch):
     model=TinyTied();monkeypatch.setattr(probe,'load_base',lambda p:(model,tok))
     monkeypatch.setattr(probe,'sampled_fingerprint',lambda model:SIGNATURE)
     backend=SimpleNamespace(model=model,device=torch.device('cpu'),sync=lambda:None,
+        banned_ids=tuple(sorted(set(range(151936))-set(tok.get_vocab().values()))),
         hidden=lambda ids:model.model(input_ids=ids).last_hidden_state)
     monkeypatch.setattr(probe,'setup_model',lambda args:(backend,tok,None,SIGNATURE,None))
     output=tmp_path/'probe';p=probe.prepare(output,directory,model_dir,DEADLINE)
@@ -103,6 +105,7 @@ def reseal_dataset(f,rows):
 def test_preparation_freezes_complete_inventory_and_both_native_context_roles(prepared):
     p,x=probe.load(prepared.output)
     assert len(x['rows'])==320 and p['expected_rows']==1920
+    assert p['answers']==probe.answer_recipe(DEADLINE) and p['answers']['expected_rows']==384
     assert [(r['split'],r['mode']) for r in x['qualification_refs']]==[
         ('train','raw'),('train','correct'),('dev','raw'),('dev','correct')]
     for r in x['rows']:
@@ -206,3 +209,111 @@ def test_summary_refuses_resealed_cell_or_gate_damage(closed,damage):
     atomic_json(d/'run.json',r,overwrite=True)
     with pytest.raises(ValueError):probe.summarize(closed.output)
     assert not (closed.output/'summary.json').exists()
+
+
+@pytest.mark.parametrize('text,stop,value',[
+    ('  +10',f'token:{probe.PAD}','10'),('-0.5',f'token:{probe.PAD}','-1/2'),
+    (' +2 / -4',f'token:{probe.PAD}','-1/2'),('.50. Thus more follows','length_cap','1/2'),
+    ('10, with later unrelated continuation','length_cap','10'),('10\nThe next step follows','length_cap','10'),
+    ('10.',f'token:{probe.PAD}','10'),('10   ',f'token:{probe.PAD}','10'),
+    ('8.3/2',f'token:{probe.PAD}','83/20'),('4.15',f'token:{probe.PAD}','83/20')])
+def test_initial_scalar_exact_equivalence_and_genuine_delimiters(text,stop,value):
+    assert probe.parse_initial_scalar(text,stop)['value']==value
+
+
+@pytest.mark.parametrize('text',[
+    '10','10 ','10.','10,','+','-', '.',''])
+def test_cap_cannot_certify_unterminated_scalar(text):
+    assert probe.parse_initial_scalar(text,'length_cap')['status']=='incomplete'
+
+
+@pytest.mark.parametrize('text',[
+    '10+2','10 - 2','10*2','10 /','10/0','10/2/3','10^2','10e2','10E-2','10 1/2',
+    '10 0.5','10,000','10, 000','10.2.3','10%','10 x','10 times 2','10 over 2','10 or 11',
+    '10 modulo 3','10 squared','10 cubed','10 percent','10 percentage','10 raised to 2',
+    '10 dividing 3','10 multiplied by 3','10 factorial','10 sqrt 3','10 powers of 2',
+    '10 to 11','10×2','10 ÷ 2','10−2','10²','10_2','10\\times2','10\\frac{1}{2}',
+    '10 : 2','10 = 2','10 < 11','10(2)','10. e+2','10. 2','１０','−10','The answer is 10',
+    '__import__("os")', '1'*65,'1/0.0'])
+def test_expression_prefix_unicode_or_unbounded_syntax_never_scores(text):
+    assert probe.parse_initial_scalar(text,f'token:{probe.PAD}')['status']!='valid'
+    assert probe.parse_initial_scalar(text,'length_cap')['status']!='valid'
+
+
+class FakeGreedy:
+    """Exercises the actual endpoint orchestration, not accelerator evidence."""
+    calls=[]
+    def __init__(self,model,tok,**kwargs):self.model=model;self.tok=tok
+    def _next(self,ids,positions,cache,selected_position):
+        assert ids.shape==(1,probe.WIDTH) and cache.holder['width']==probe.WIDTH+32
+        assert selected_position.shape==(1,)
+        return self.model.lm_head(torch.zeros(1,1))
+    def decode(self,context,**kwargs):
+        from train.evaluate import Decoded,GenerationFailure
+        assert kwargs==dict(max_new_tokens=32,prefill_width=1024,pad_id=151643,stop_ids=(151643,),answer_line_stop=False)
+        self.calls.append(context)
+        # Raw is an equivalent fraction; correct is an unrelated continuation capped after a valid number.
+        if context[0]!=271 and context[0]!=ord('C'):
+            text='20/2';ids=self.tok.encode(text);return Decoded(ids+[probe.PAD],ids,text,text,f'token:{probe.PAD}')
+        if context[0]==271:
+            ids=self.tok.encode('10');raise GenerationFailure(RuntimeError('retained fixture failure'),Decoded(ids,ids,'10','10','error'))
+        text='10. Further prose follows'.ljust(32);assert len(text)==32
+        ids=self.tok.encode(text);return Decoded(ids,ids,text,text,'length_cap')
+
+
+@pytest.fixture
+def answered(prepared,monkeypatch):
+    FakeGreedy.calls=[];probe.cpu_reference(prepared.output,1,DEADLINE)
+    monkeypatch.setattr(probe,'GreedyDecoder',FakeGreedy)
+    for shard in range(4):probe.answers(prepared.output,shard,DEADLINE)
+    return prepared
+
+
+def test_answer_endpoint_all384_exact_contexts_raw_actions_errors_and_document_cis(answered):
+    result=probe.summarize_answers(answered.output);p,x=probe.load(answered.output)
+    assert result['rows']==len(FakeGreedy.calls)==384 and result['absolute']['raw']['correct']==64
+    assert result['absolute']['correct']['correct']==64 and result['absolute']['empty']['statuses']['error']==64
+    assert all(v['denominator']==sum(v['statuses'].values())==64 for v in result['absolute'].values())
+    expected=[x['contexts'][q['item_id']]['values'][m] for shard in range(4)
+        for q in [r for r in x['rows'] if r['split']=='dev'][shard::4] for m in probe.MODES]
+    assert FakeGreedy.calls==expected
+    for q in result['answer_rows']:
+        assert 'raw_action_text' in q and q['score'] in (0,1)
+        if q['status']=='error':assert q['actions']==[49,48] and q['score']==0 and q['parsed']=={'status':'error'}
+    assert all(v['documents']==v['items']==64 for v in result['contrasts'].values())
+    assert not (answered.output/'summary.json').exists()  # Separate endpoint, no LL replacement.
+
+
+@pytest.mark.parametrize('damage',['missing','duplicate','context','parser','stop','raw_text','support','gate','running'])
+def test_free_value_summary_requires_all384_identity_and_actual_gates(answered,damage):
+    d=answered.output/'answers/shard-0';v=probe.rows(d/'predictions.jsonl');r=probe.read(d/'run.json')
+    if damage=='missing':v.pop();r['rows']-=1
+    elif damage=='duplicate':v[-1]=v[0]
+    elif damage=='context':v[0]['context_sha256']='changed'
+    elif damage=='parser':v[0]['parsed']['value']='99'
+    elif damage=='stop':v[0]['stop_type']='length_cap'
+    elif damage=='raw_text':v[0]['raw_action_text']='changed'
+    elif damage=='support':r['banned_ids_sha256']='changed'
+    elif damage=='gate':r['forward_check']['max_error']=.01
+    else:r['status']='running'
+    (d/'predictions.jsonl').write_text(''.join(json.dumps(q)+'\n' for q in v));r['predictions_sha256']=sha256_file(d/'predictions.jsonl')
+    atomic_json(d/'run.json',r,overwrite=True)
+    with pytest.raises(ValueError):probe.summarize_answers(answered.output)
+    assert not (answered.output/'answers.summary.json').exists()
+
+
+def test_cached_forward_gate_fails_before_any_generation_and_retains_vector(prepared,monkeypatch):
+    probe.cpu_reference(prepared.output,1,DEADLINE);d=prepared.output/'cpu-reference'
+    t=torch.load(d/'next-logps.pt',weights_only=True);t[3,0]+=.01;torch.save(t,d/'next-logps.pt')
+    r=probe.read(d/'reference.json');r['logps_sha256']=sha256_file(d/'next-logps.pt');atomic_json(d/'reference.json',r,overwrite=True)
+    FakeGreedy.calls=[];monkeypatch.setattr(probe,'GreedyDecoder',FakeGreedy)
+    with pytest.raises(RuntimeError,match='gate failed'):probe.answers(prepared.output,3,DEADLINE)
+    run=prepared.output/'answers/shard-3'
+    assert not FakeGreedy.calls and not (run/'predictions.jsonl').exists()
+    assert probe.read(run/'run.json')['status']=='failed' and (run/'forward-logps.pt').exists()
+
+
+def test_frozen_answer_deadline_cannot_be_extended(prepared):
+    probe.cpu_reference(prepared.output,1,DEADLINE)
+    with pytest.raises(ValueError,match='Frozen answer deadline'):probe.answers(prepared.output,0,'2100-01-02T00:00:00+00:00')
+    assert not (prepared.output/'answers').exists()

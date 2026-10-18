@@ -16,12 +16,16 @@ The owner stopped the original R study and authorized adapting the experiment.
    eligible causal boundary after a fixed hash-start per TRAIN/DEV document,
    exact source RHS quality checks after selection, proper-subexpression notes,
    no already-visible answer, matched numeric corruption. Preserve all rejections.
-   Source/tests reviewed;599 required checks pass. Full CPU scan is active.
+   V1 scan found3 visible-answer filter misses; preserve it as blocked.
+   Corrected v2 source is reviewed;714 required checks pass; fresh CPU scan active.
    Inspect actual counts, rejection reasons and fixed examples before scoring.
    Official TEST remains unused.
 5. Seal prospective TRAIN256/DEV64 pools before B0 scores. Test raw, empty,
    correct partial, corrupted, shuffled and unrelated notes on actual source
-   numeric spans and natural16 continuations. Qualify new contexts against CPU.
+   numeric spans and natural16 continuations. Add greedy immediate numerical
+   completion on the same64DEV×six contexts,384 attempts/cap32, before any model
+   outcome. Retain every error/unsupported value. Review/check the final added
+   source, then qualify new contexts against CPU.
 6. Choose learning only after examining real examples and reader feasibility.
    A new warmstart must use diverse real data, fresh generated-note evaluation,
    full-source ordinary CE on the same accepted chunks as its raw control, and

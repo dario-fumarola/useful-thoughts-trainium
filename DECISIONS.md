@@ -700,3 +700,26 @@ training release yet; require actual accepted counts and examples first. Source
 RHS validation curates a mathematical subset, not unrestricted FineMath utility.
 A subsequent learning pilot, if warranted, should add note BC to full-source CE
 versus the same source CE alone, with fresh generated-note and downstream tests.
+
+
+### 2026-10-18 03:26 UTC — repair visible-answer filter before any model outcomes
+
+V1 closed1304 exact numeric examples (TRAIN1220/DEV84). Full arithmetic/source
+alignment passed, but root's fixed first4 panel exposed Rs.132600 already in the
+writer prefix: the copy filter interpreted .132600 as a decimal. Independent
+maximal-span review found3 confirmed misses, all TRAIN, one selected. This shows
+why arithmetic/byte conformance does not certify the intended data condition.
+Keep completev1, original source/tests and every diagnosis unchanged. No model
+was prepared or scored on it. Curatorv2 repairs contextual dots and malformed
+maximal comma spans, preserving source salt and causal stopping-time selection.
+The repaired source/fixtures passed122 focused tests and independent review;
+release fresh CPUv2 under05:00UTC bound, no model launch yet.
+
+Before any model outcome, add384 greedy immediate scalar completions on the same
+64DEV×six modes, cap32, alongside1920 source-likelihood cells. Compare complete
+initial values exactly; equivalent8.3/2 and4.15 count alike, unlike literal source
+NLL. Unsupported/incomplete/error paths stay zero in all denominators. All actual
+actions/stops/costs retained. Parser scope and EOS/cap completeness rules are fixed
+in source; generation has tokenizer-defined support, LL/native full-head support.
+Source review and100 focused tests pass; final714+toy_smoke+compileall pass at
+local/checks/tests.zL7PFQ. No hardware or capability result is implied.

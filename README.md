@@ -35,7 +35,10 @@ The next experiment prepares verifiable calculation boundaries from real FineMat
 TRAIN/DEV documents. A note computes a proper subexpression using only the past;
 the natural source continuation remains the target. This is explicit external
 arithmetic supervision, distinct from spontaneous self-discovery. Eligibility and
-selection precede model scoring. No further long RL run is active.
+selection precede model scoring. The first scan produced1,304 exact equations,
+but fixed-example review found three answers already visible through currency
+or option punctuation. Its original data is preserved; a corrected v2 scan is
+running, and no model was scored on v1. No further long RL run is active.
 [Current queue](NEXT_STEPS.md) · [Exact work state](STATUS.md).
 
 ## What led here
