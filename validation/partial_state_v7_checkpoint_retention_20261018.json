@@ -25,9 +25,17 @@
       "retention_receipt": "local/backups/science/partial-state-v7-writer-TRAIN5120-seed2026101806-v1/terminal320/OPTIMIZER_DUPLICATE_RETIRED.json",
       "retention_receipt_sha256": "9750fa84dbf3da2d545ad6d60882e878f2c2abf54e7f86259d234fe6f5e5807c",
       "retired_duplicate_bytes": 20648573596
+    },
+    {
+      "original_full_checkpoint": "/home/ubuntu/dario/local/nvme/runs/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/step-0000640",
+      "EBS_model": "/home/ubuntu/dario/local/backups/science/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/terminal640/output/step-0000640/model.pt",
+      "optimizer_source_complete": true,
+      "retention_receipt": "local/backups/science/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/terminal640/OPTIMIZER_DUPLICATE_RETIRED.json",
+      "retention_receipt_sha256": "d2c6fe3296317d0652213bf442ff9a4add4d03d939bc6c440cd81ffdfadcc87a",
+      "retired_duplicate_bytes": 20648573596
     }
   ],
-  "as_of_utc": "2026-10-18T22:56:38.950662+00:00",
-  "latest_full_EBS": "/home/ubuntu/dario/local/backups/science/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/terminal640",
-  "latest_full_checkpoint_manifest_sha256": "d694c9f2abc682b86a392d2a6ddc7a734ac3a3db53b5870b1b2cbc2c95564a25"
+  "as_of_utc": "2026-10-18T23:09:56.241152+00:00",
+  "latest_full_EBS": "/home/ubuntu/dario/local/backups/science/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/terminal640",
+  "latest_full_checkpoint_manifest_sha256": "9c161efaddab714bdbadea0eb973a8130a2faf498a534c195f510fdbc3e5af8e"
 }

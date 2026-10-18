@@ -36,7 +36,10 @@
    Then release seed2026101807 reader320,writer320,A640,compact640,full640 in order.
    Second-seed controllers prepared/unreleased; all17source hashes must match57d3220.
    Full analysis registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
-   Public independent audit requires all10four-panel controllers closed before gold/outcome review.
+   Public independent audit requires all11four-panel controllers closed before gold/outcome review.
+   The additional single shared untouched-B0 reference (direct/cot/empty) is active
+   on physical4, ports64761+, no training. Its prospective amendment leaves the
+   four-system/two-seed primary unchanged; never count B0 as two seed replicas.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+

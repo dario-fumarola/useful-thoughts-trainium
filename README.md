@@ -53,7 +53,7 @@ Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
 compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
 Both compact and full-trace baselines remain competitors. First-seed reader320,
 writer320 and direct640 training is complete and independently audited. Compact
-CoT640 is complete with its state audit underway; full-trace CoT640 is training.
+CoT640 is also independently audited; full-trace CoT640 is training.
 No new DEV accuracy is reported yet.
 [Reader training](validation/partial_state_v7_reader_seed2026101806_training_20261018.json) ·
 [writer training](validation/partial_state_v7_writer_seed2026101806_training_20261018.json) ·
@@ -62,6 +62,10 @@ No new DEV accuracy is reported yet.
 already exists at1.7B. All original full states remain on local SSDs; EBS keeps
 all terminal models and the latest full resumable state under the
 [recorded retention policy](validation/partial_state_v7_checkpoint_retention_20261018.json).
+
+An auxiliary untouched-B0 reference uses the same direct, empty and CoT prompts.
+It was added before new outcome review; the four-system primary remains fixed.
+[Prospective reference amendment](validation/partial_state_v7_untouched_reference_amendment_20261018.json).
 
 ## Earlier matched developmental64 comparison
 

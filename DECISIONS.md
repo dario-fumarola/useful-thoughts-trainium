@@ -1125,3 +1125,12 @@ Keep every original full state, all terminal models and results. EBS retains lat
 full resumable state; old EBS optimizer duplicates retire only after fresh both-side
 hashes and latest full-state verification. Current retention index is public;
 R64/R320/W320 originals intact, models/metadata remain onEBS. A full state protected.
+
+2026-10-18 23:16 UTC — Add one auxiliary unchanged-B0 direct/cot/empty reference before any
+new accuracy/state outcome review. The matched four-system/two-seed primary,
+training, checkpoints and original design remain fixed. A zero-training reference
+is necessary to distinguish a trained-system advantage from improvement over
+an adapted/degraded model alone. Single shared B0, not two independent replicas;
+6144additional answers, all failures retained, no TEST. Prospective amendment and
+registry pin the addition. Independent analysis requires all11controllers closed;
+1610CPUchecks pass. Compact640 full state/EBS audit also passes; full-CoT640active.

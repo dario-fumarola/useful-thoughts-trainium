@@ -1,21 +1,21 @@
-# Status — 2026-10-18 23:08 UTC
+# Status — 2026-10-18 23:16 UTC
 
 
 ## Active: matched-cost partial-computation study
 Question: does the useful fresh channel beat competitive one-model solvers at matched updates?
-ID:partial-state-v7-matched5120; two seeds, terminal primary, immutable source57d3220,1608checks pass.
+ID:partial-state-v7-matched5120; two seeds, terminal primary, immutable source57d3220,1610checks pass.
 First-seed reader320/writer320/direct640 independently pass all updates/full states; original full states intact.
 Reader actual64 restart passes; R/W/A frozen. A receipt320digest corrected by explicit preserved annex for640.
-Compact CoT640 closes23:02UTC; strict binding via same explicit annex passes, independent state audit active.
+Compact CoT640 closes23:02UTC; explicit binding annex and independent full-state/EBS audits pass.
 Full-CoT640 active:PID181369/start19938224,tmux dario-ps7-fullcot640,physical3/logical12–15,deadline04:30UTC.
 Controls/output basename partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1 under diagnostics/nvme-study/runs.
 Last observed64; full64 published. Source/recipe unchanged; unstarted640receipt templates corrected.
 All2048first-seed writer attempts close and EBS readback passes; no new accuracy/states inspected.
 Reader/device9 and direct/device5 evaluations live; new cache graph actively compiling, memory within floor.
-Compact eval CPU preparation active, then launch device6. Full-CoT eval/device7 and all second-seed jobs pending.
+Compact eval/device6 and auxiliary shared B0/device4 active. Full-CoT eval/device7 and seed2 pending.
 All second-seed training controllers prepared/unreleased; next fresh reader320 after full-CoT640 closes.
 EBS keeps all terminal models/latest full state; older optimizer duplicates retired only against intact originals.
-Public A training/receipt correction and current retention JSON; keep35GiB floors, no TEST/RL/8B.
+B0 auxiliary prospectively added before outcome review; primary fixed. All11controllers must close; no TEST/RL/8B.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?

@@ -9,7 +9,7 @@ they do not authorize restarting the retired study or override the active plan.
 October18 23:08UTC handoff: finish the current matched5120/two-seed question.
 V6 fresh result is positive only for synthetic computation; split had twice the
 updates. All original outputs/frozen source3301d22 stay intact. Science v7 source
-57d3220 is immutable; current main analysis passes1608checks.
+57d3220 is immutable; current main analysis passes1610checks.
 R320/W320/A640 seed2026101806 independently audited/frozen. Actual reader64 restart
 passes. Compact640 closes, corrected strict terminal binding passes, CPU full audit
 session20128 active. Full-CoT640 active tmux dario-ps7-fullcot640, PID181369/start
@@ -30,8 +30,11 @@ Then release all seed2026101807 training controllers in R/W/A/compact/full order
 prepared but unreleased, samephysical3. Adapt S1W/R CPU prep/controllers to seed2
 with distinct physical10/11,ports64801/64821,tmp shortw7b/r7b. Single-model eval
 prep utility supports seed2; use physical0/1/2,ports64901/64921/64941.
-Registry already names all10four-panel jobs; public scripts/audit_partial_state_study.py
-requires all closed before any outcomes. Source only, not a new scientific result.
+Registry names all10primary four-panel jobs plus one shared untouched-B0 reference
+(direct/cot/empty), added prospectively before any new outcome review. B0 controller
+active on physical4,ports64761+,tmux dario-ps7-dev-B0,deadline10:30UTC. Primary
+training comparisons unchanged; never count B0 as two seed replicas. Public
+scripts/audit_partial_state_study.py requires all11closed before any outcomes. Source only, not a new scientific result.
 
 Extra verified local SSD local/nvme-study holds future runs/evaluations; old paths
 stay fixed. Four old EBS qualification duplicates retired, originals intact.

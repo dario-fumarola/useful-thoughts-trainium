@@ -29,6 +29,12 @@ def require_complete(registry):
             or tuple(registry['seeds']) != SEEDS or tuple(registry['panels']) != PANELS
             or registry['action_budget'] != 96):
         raise ValueError('The declared two-seed/four-panel/96-action study is required')
+    reference = registry.get('untouched_reference')
+    if (not isinstance(reference, dict) or set(reference['outputs']) != set(PANELS)
+            or reference['modes'] != ['direct', 'cot', 'empty']):
+        raise ValueError('The prospectively added untouched reference is required')
+    if read(Path(reference['control'])/'completion.json')['status'] != 'COMPLETE_ALL_FOUR_FIXED_DEV_PANELS':
+        raise ValueError('The untouched reference must close before outcome review')
     for seed in SEEDS:
         if set(registry['jobs'][seed]) != set(ARMS):
             raise ValueError('Both ordinary CoT competitors and all split controls are required')
@@ -64,6 +70,104 @@ def numerical(path, shard, *, reference=None, notes=False):
     return dict(native=native, cache=cache, actual_vectors_recomputed=True)
 
 
+def audit_untouched_reference(root, registry, tokenizer, public, copy):
+    """One shared, zero-training reference; never count it as two seed replicas."""
+    from train.partial_state_answers import score_answer
+    from train.partial_state_evaluation import prompt_tokens, reader_tokens
+    job = registry['untouched_reference']
+    source_root = Path(registry['source_root'])
+    reference, allcells, payloads = {}, {}, {}
+    copy('B0/control', Path(job['control']))
+    for index, panel in enumerate(PANELS):
+        path = Path(job['outputs'][panel])
+        stage = Path(job['control'])/f'stage-{index}'
+        completed = read(stage/'completion.json')
+        if (completed['status'] != 'COMPLETE_FIXED_PANEL_ALL512_ATTEMPTS'
+                or completed['output'] != str(path)
+                or completed['result_sha256'] != sha(path/'summary.json')
+                or read(path/'generation-closure.json')['status'] !=
+                'ALL_FOUR_GENERATION_SESSIONS_AND_DEVICE_PHYSICALLY_CLOSED'):
+            raise ValueError('Original untouched-reference closure is required')
+        copy('B0/'+panel, path)
+        p = read(path/'protocol.json')
+        if (p['schema'] != 'partial-state-complete-answers-v5'
+                or p['reader'] != dict(id='B0', checkpoint=None)
+                or p['modes'] != ['direct', 'cot', 'empty'] or p['panel'] != panel
+                or p['direct_and_cot_cap'] != 96 or p['reader_answer_cap'] != 32):
+            raise ValueError('Unchanged B0 and the exact declared inference budget are required')
+        for name, digest in p['source_files'].items():
+            if sha(source_root/name) != digest:
+                raise ValueError('Original B0 evaluation source changed')
+        for name, digest in p['files'].items():
+            if sha(path/name) != digest:
+                raise ValueError('Original B0 inputs/references changed')
+        questions = rows(path/'questions.jsonl')
+        ids = [q['item_id'] for q in questions]
+        if len(ids) != 512 or len(set(ids)) != 512 or ids != p['ordered_item_ids']:
+            raise ValueError('A complete fixed untouched-reference cohort is required')
+        question = {q['item_id']: q for q in questions}
+        gold = {q['item_id']: exact_trace(q['expression_tree'])[0] for q in questions}
+        if gold != {v['item_id']: int(v['answer']) for v in rows(path/'gold.jsonl')}:
+            raise ValueError('Reference gold differs from prefix arithmetic')
+        cells, raw, checks = {}, [], []
+        for shard in range(4):
+            exited = read(stage/f'shard-{shard}/exit.json')
+            directory = path/f'answers/shard-{shard}'
+            run = read(directory/'run.json')
+            if (exited['exit_code'] != 0 or exited['original_session_remaining']
+                    or run['status'] != 'complete_all_attempts' or run['rows'] != 384
+                    or sha(directory/'answers.jsonl') != run['answers_sha256']):
+                raise ValueError('All original reference attempts must complete and close')
+            checks.append(numerical(path, shard))
+            for value in rows(directory/'answers.jsonl'):
+                key = (value['item_id'], value['mode'])
+                if key in cells or value['item_id'] not in gold or value['mode'] not in p['modes']:
+                    raise ValueError('Unexpected or duplicated reference answer')
+                q, mode = question[value['item_id']], value['mode']
+                plain = mode in ('direct', 'cot')
+                prompt = (prompt_tokens(q, tokenizer, cot=mode == 'cot') if plain else
+                          reader_tokens(q, [], tokenizer))
+                if (value['prompt_ids'] != prompt or value['cap'] != (96 if plain else 32)
+                        or value['prefill_width'] != (32 if plain else 128)
+                        or value['n_actions'] != len(value['actions'])
+                        or value['n_writer_actions'] != 0 or value['source_note'] is not None):
+                    raise ValueError('Actual B0 input, budget, or no-writer reference changed')
+                independent = independent_score(value, gold[value['item_id']])
+                production = score_answer(value, gold[value['item_id']], cot=mode == 'cot')
+                if independent != {k: production[k] for k in ('score', 'status')}:
+                    raise ValueError('Reference complete-answer parsers disagree')
+                cells[key] = {**value, 'generation_status': value['status'], **independent}
+                raw.append(dict(arm='B0', **cells[key]))
+        if len(cells) != 1536:
+            raise ValueError('All reference outcomes must stay in their denominator')
+        metrics = {}
+        summary = read(path/'summary.json')
+        for mode in p['modes']:
+            vs = [cells[key, mode] for key in ids]
+            metrics[mode] = dict(items=512, correct=sum(v['score'] for v in vs),
+                unsupported=sum(v['status'] != 'ok' for v in vs),
+                status_counts=dict(Counter(v['status'] for v in vs)),
+                generated_actions=sum(v['n_actions'] for v in vs), writer_actions=0,
+                decode_wall_seconds=sum(v['wall_seconds'] for v in vs), writer_wall_seconds=0)
+            if metrics[mode] != summary['results'][mode]:
+                raise ValueError('Original B0 aggregate does not reproduce')
+        for name, result in summary['contrasts'].items():
+            b, a = name.split('_minus_')
+            actual = paired([cells[key, b]['score']-cells[key, a]['score'] for key in ids])
+            if actual['difference'] != result['difference'] or actual['ci95'] != result['ci95']:
+                raise ValueError('Original B0 interval does not reproduce')
+        file = public/f'B0-{panel}-all1536-original-answers.jsonl.gz'
+        with gzip.GzipFile(filename=str(file), mode='wb', mtime=0) as stream:
+            for value in raw:
+                stream.write((json.dumps(value, separators=(',', ':'))+'\n').encode())
+        payloads[str(file.relative_to(root))] = dict(rows=len(raw), bytes=file.stat().st_size, sha256=sha(file))
+        reference[panel] = dict(results=metrics, numerical_checks=checks,
+            model_identity='unchanged_B0', shared_across_both_trained_seeds=True,
+            additional_independent_seed_replications=False)
+        allcells[panel] = cells
+    return reference, allcells, payloads
+
+
 def audit(root, registry_file):
     root, registry_file = Path(root).resolve(), Path(registry_file).resolve()
     registry = read(registry_file)
@@ -71,6 +175,9 @@ def audit(root, registry_file):
     design = root/'validation/partial_state_v7_matched_design_20261018.json'
     if sha(design) != registry['design_sha256']:
         raise ValueError('Prospective scientific design changed')
+    amendment = root/'validation/partial_state_v7_untouched_reference_amendment_20261018.json'
+    if sha(amendment) != registry['reference_amendment_sha256']:
+        raise ValueError('The auxiliary unchanged-reference amendment changed')
     source_root = Path(registry['source_root'])
     from transformers import AutoTokenizer
     from train.partial_state_answers import score_answer
@@ -100,6 +207,9 @@ def audit(root, registry_file):
                     raise ValueError('Archive readback differs')
                 archived[str(out.relative_to(archive))] = dict(bytes=file.stat().st_size, sha256=digest)
 
+    reference, reference_cells, reference_payloads = audit_untouched_reference(
+        root, registry, tokenizer, public, copy)
+    payloads.update(reference_payloads)
     for seed in SEEDS:
         jobs = registry['jobs'][seed]
         for arm in ARMS:
@@ -227,7 +337,7 @@ def audit(root, registry_file):
                         production = score_answer(value, gold[value['item_id']], cot=mode == 'cot')
                         if independent != {k: production[k] for k in ('score', 'status')}:
                             raise ValueError('Independent complete-answer parsers disagree')
-                        cells[key] = {**value, **independent}
+                        cells[key] = {**value, 'generation_status': value['status'], **independent}
                         raw.append(dict(arm=arm, **cells[key]))
                 summary = read(path/'summary.json')
                 metrics[arm] = {}
@@ -261,6 +371,12 @@ def audit(root, registry_file):
                 mode = 'direct' if arm == 'direct' else 'cot'
                 contrasts['split_minus_'+arm] = paired([cells['reader', key, 'own']['score']-
                                                        cells[arm, key, mode]['score'] for key in ids])
+            for mode in ('direct', 'cot', 'empty'):
+                if {key for key, _ in reference_cells[panel]} != set(ids):
+                    raise ValueError('Untouched and trained cohorts must match exactly')
+                contrasts['split_minus_untouched_B0_'+mode] = paired([
+                    cells['reader', key, 'own']['score']-reference_cells[panel][key, mode]['score']
+                    for key in ids])
             identical, duplicates = {}, 0
             for (arm, _, _), value in cells.items():
                 if arm != 'reader' or value['status'] == 'error':
@@ -301,18 +417,22 @@ def audit(root, registry_file):
     report = dict(schema='partial-state-v7-matched5120-complete-v1',
         status='COMPLETE_BOTH_SEEDS_ALL_FOUR_PANELS_NO_FILTERING',
         finished_utc=datetime.now(timezone.utc).isoformat(), results=results,
-        answer_attempts=total_answers, writer_attempts=total_notes,
+        untouched_reference=reference, primary_answer_attempts=total_answers,
+        untouched_reference_answer_attempts=6144,
+        answer_attempts=total_answers+6144, writer_attempts=total_notes,
         audit_script_sha256=sha(__file__), registry_sha256=sha(registry_file),
         design_sha256=sha(design), public_payloads=payloads,
+        untouched_reference_amendment_sha256=sha(amendment),
         EBS_archive_receipt_sha256=sha(archive/'ARCHIVE.json'),
         limitations=['Two training seeds, same four development-exposed synthetic panels; never pool item/seed uncertainty or claim a pristine final test.',
                      'Split has two models. Equal total updates/action caps do not equal FLOPs or end-to-end latency; raw supervised token counts and timings are separate costs.',
+                     'Unchanged B0 is a single shared zero-training reference, not two independent baseline replicas. It is auxiliary to the original matched-training primary comparisons.',
                      'All errors, caps, unsupported outputs and wrong student states remain in denominators.',
                      'Independent complete-answer and writer-state parsers re-execute prefix math; all saved numerical vectors are recomputed.',
                      'Root-operation counts cover fully parsed equation notes; they do not establish absence of final-answer text in unsupported formats.',
                      'This is a synthetic computation study, not evidence of general natural-text pretraining improvement.'])
     write(root/'validation/partial_state_v7_matched5120_complete_20261018.json', report)
-    return dict(status=report['status'], answer_attempts=total_answers, writer_attempts=total_notes)
+    return dict(status=report['status'], answer_attempts=total_answers+6144, writer_attempts=total_notes)
 
 
 if __name__ == '__main__':

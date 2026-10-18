@@ -1,0 +1,32 @@
+{
+  "schema": "partial-state-v7-auxiliary-untouched-reference-amendment-v1",
+  "created_utc": "2026-10-18T23:12:12.130046+00:00",
+  "question": "Do the trained systems also improve upon the untouched starting model at the same inference budget?",
+  "reason": "The original four-system matched-training primary can show relative utility among adapted models without establishing improvement over unchanged B0. Add the zero-training reference before reviewing any new study accuracy/state outcomes.",
+  "primary_design_unchanged": "validation/partial_state_v7_matched_design_20261018.json",
+  "new_training": "None; every existing arm, checkpoint, seed, learning rate, document order and primary contrast stays fixed.",
+  "reference": {
+    "model": "unchanged released Qwen/Qwen3-1.7B-Base",
+    "panels": [
+      "DEV_interpolation",
+      "DEV_structure",
+      "DEV_range",
+      "DEV_composition"
+    ],
+    "items_each": 512,
+    "modes": [
+      "direct",
+      "cot",
+      "empty"
+    ],
+    "attempts": 6144,
+    "action_budget": {
+      "direct": 96,
+      "cot": 96,
+      "empty": 32
+    },
+    "selection": "One greedy attempt, all errors/caps/unsupported retained; no filters or repairs."
+  },
+  "analysis": "Single shared B0 reference, not two independent baseline replications. Per-panel paired item intervals versus each trained seed; existing primary matched comparisons remain unchanged. Whole question closes before outcome review.",
+  "scope": "Synthetic development-exposed panels; no official TEST or broad language capability claim."
+}
