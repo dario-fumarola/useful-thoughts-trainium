@@ -80,6 +80,11 @@ this distinction between arithmetic content and boundary/formatting gains.
 Before mixing, none of six interfaces passed; re-anchoring alone enabled strong
 general copying but retained a3.007-nat empty-format tax.
 [Earlier six-interface batch:15,872 complete cells](validation/interface_target_copy_dev256x2_20261018.json).
+A separate [controlled arithmetic diagnostic](validation/controlled_arithmetic_DEV256_design_20261018.json)
+has frozen256 novel compound expressions without model-based selection. Complete
+notes reveal the answer; partial notes omit the final calculation. It will test
+reader use of intermediate work and later supervised transfer, alongside the
+unchanged real-document evaluations.
 
 Next is supervised writer-and-reader warm-start under the underlying re-anchored
 interface, with ordinary source-CE and augmented-source controls. This is the

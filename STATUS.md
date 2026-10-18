@@ -1,4 +1,4 @@
-# Status — 2026-10-18 10:03 UTC
+# Status — 2026-10-18 10:09 UTC
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -81,7 +81,7 @@ ID:postorder-reader-learning-compound5120-W-seed20261018-v4r2; fresh B0, no resu
 W noteCE+natural16readerCE+0.5rawsourceCE; BF16 storage/gradients with FP32master/moments.
 Launched09:43UTC on logical0–31/physical0–7; softdeadline21:42UTC, checkpointgrace to21:57UTC.
 Launcher3118414, timeout/group3118483, driver3118485; all32 actual worker identities/mappings captured.
-All32 native/consensus/initialmaster checks pass; first two updates60/62s with valid real changes.
+All32 native/consensus/initialmaster checks pass; through32 ordered updates/master/replica checks pass.
 Output:local/nvme/runs/postorder-reader-learning-compound5120-W-seed20261018-v4r2.
 Controls:local/science/control/same basename; Distributed supervises progress/checkpoints/closure.
 Terminal320 primary; step64 development only. Every terminal evaluated regardless of local sign.
@@ -159,16 +159,27 @@ Verified231file EBS archive; root independent512native notes/12288contexts/vecto
 Public validation/general_prefix_helper_20261018.json plus complete cells/notes/fixedfirst6examples.
 Decision: preserve negative prompt result; continue supervised warm-start, no RL.
 
-## Active: sixteen-worker GSM8K equivalence
+## Closed: sixteen-worker GSM8K equivalence — pass
 Question: can16concurrent workers preserve the original four-worker native evaluation paths?
 ID:gsm8k-first32-native96-equivalence-v2; fixedfirst32 of512, all96 direct/empty/thought paths.
-Exact same all512 common widths/caps/policy; original B0 archive references, no gold or accuracy read.
-Reviewed35focused/1494combined checks pass; root verifies helper closure/archive, idle devices and pins.
-Launched10:00UTC, deadline13:30UTC; logical44–59/physical11–14, new privateRAM/32freeports.
-All48actualPID-start/SID/env/mappings captured; all16native gates pass, no runtime errors.
-Output:local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2; controls local/diagnostics/same name.
-Review owns whole96 generation→physical closure→native field comparison→closure/archive.
-A qualifying96-path comparison cannot pass the full1536-path accuracy loader; no full512 job released.
+Exact all512 common widths877/1208/cache1720 and caps/policy; original B0 references.
+All96 prompt/action/content/stop/status/text fields match exactly; zeroerrors/differences.
+All16native gates pass; all17exit0/all51actualPID-start/SIDs/groups/tmux/devices closed10:04UTC.
+Verified314file EBS archive; root independently compares all96paths and all314source/copy hashes.
+Public validation/useful_note_gsm8k_sixteen_worker_equivalence_20261018.json.
+No gold, accuracy, full512 generation or full512 throughput claim; subset scope explicit.
+Decision: use reviewed16shard path for later complete512 terminal evaluations with fresh releases.
+
+## CPU prepared: secondary controlled arithmetic diagnostic
+Question: does the weak real-arithmetic oracle reflect low answer headroom or reader insensitivity?
+ID:controlled-compound-arithmetic256-v1; fixedseed,64each of four compound expression grammars.
+Positive2–3digit leaves, exactroot magnitude>=1000,64negative/192positive; no model-based selection.
+No zero/identity intermediates, partial final-answer copies or canonical TRAIN-AST collisions.
+All256 frozen before model outcomes; independent exact AST/native-surface readback and19CPUtests pass.
+Full integer+newline primary; digit-only descriptive; supplied full/partial correct/wrong, raw/empty/own/other.
+Separate prefix-only128action writer, intact global donors, I3/fixedI6;4096cells per same-reader model.
+Public prospective design/cohort/source; final1535CPUchecks/smoke/compile pass; runtime ready, no models yet.
+This is secondary; original realDEV/GSM endpoints and active W science continue unchanged.
 
 ## Closed negative: fixed first-line note ablation
 Question: does target-independent truncation remove damage from sprawling B0 notes?

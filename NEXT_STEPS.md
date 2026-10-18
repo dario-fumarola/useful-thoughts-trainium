@@ -19,16 +19,17 @@
    Data owns all teacher attempts→physical closure→global intact donors→all196608
    reader cells→closure→first5120 eligible I3positive labels, with full archive.
    No cutoff changes, gain ranking, shortened quota, source edits or automatic retry.
-4. Prefix-helper is closed negative and independently verified/archived:512whole
-   notes/12288cells, every own−raw interval negative; soleprimary fails. Finish
-   active GSM96 exact-native equivalence on logical44–59/physical11–14,
-   deadline13:30UTC. Review owns all16jobs/48actual identities/native gates,
-   whole96path generation/physical closure, fixedreference compare and archive.
-   No gold, accuracy, full512 generation or retry. All16native gates currently pass.
-   A separate secondary synthetic compound-arithmetic256 diagnostic is CPU-only
-   in preparation; it separates low arithmetic headroom from reader insensitivity
-   and never replaces or gates the real-document study. No synthetic allocation
-   until GSM96 closure/archive and reviewed source/CPU checks.
+4. Prefix-helper and GSM16 equivalence are closed/independently verified/archived.
+   Helper soleprimary fails; all eight own−raw intervals negative. GSM16 matches
+   all96fixedfirst32 native paths exactly; full512 accuracy loader unchanged.
+   Use16shards for future complete512 evaluations with fresh runtime releases.
+   Secondary controlled-arithmetic256 cohort is frozen/tokenizer-prepared and
+   exact-AST-verified:64/fixedgrammar, no model-based selection or replacements.
+   Review is implementing isolated eight-mode I3/I6 evaluator/CPUtests; Data's
+   data module19focused tests pass. Root reviews finalsource, runs one combined
+   main check, publishes prospective design/cohort/source, then permits one
+   bounded4core B0 diagnostic on now-free physical11–14. No extra training or
+   real-study gate; terminal transfer uses the same frozen secondary cohort.
 5. Once all upper-partition data/probes close and archive, prepare a separate
    matched C′ seed1 release on logical32–63 while W uses0–31. Same world32/global32
    recipe and ordered documents; new actual topology/port evidence required.

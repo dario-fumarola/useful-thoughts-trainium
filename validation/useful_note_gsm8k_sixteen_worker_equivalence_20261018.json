@@ -1,0 +1,255 @@
+{
+  "schema": "gsm8k-sixteen-worker-equivalence-public-v1",
+  "status": "PASS_FIXED96_NATIVE_PATHS",
+  "question": "Can sixteen concurrent workers reproduce the unchanged four-worker B0 generation policy?",
+  "design": {
+    "questions": 32,
+    "paths": 96,
+    "workers": 16,
+    "logical_cores": "44-59",
+    "physical_devices": "11-14",
+    "full_shape_preparation_questions": 512,
+    "question_prefill_width": 877,
+    "answer_prefill_width": 1208,
+    "answer_cache_width": 1720,
+    "thought_cap": 128,
+    "answer_cap": 512,
+    "modes": [
+      "direct",
+      "empty_format",
+      "one_thought"
+    ],
+    "precision": "FP32",
+    "reference": "Original closed and independently verified B0TRAIN512 batch; fixedfirst32 questions, no gold or accuracy read."
+  },
+  "result": {
+    "differences": [],
+    "exact_fields": [
+      "item_id",
+      "document_id",
+      "task",
+      "split",
+      "mode",
+      "selection_policy",
+      "status",
+      "question_prompt_ids",
+      "writer_prompt_ids",
+      "reader_suffix_ids",
+      "answer_prompt_ids",
+      "thought_actions",
+      "thought_content_ids",
+      "thought_text",
+      "thought_stop_type",
+      "answer_actions",
+      "answer_content_ids",
+      "generated_text",
+      "raw_generated_text",
+      "answer_stop_type",
+      "n_generated_tokens",
+      "n_answer_tokens",
+      "n_thought_tokens",
+      "answer_cap",
+      "thought_cap"
+    ],
+    "input_hashes": {
+      "/home/ubuntu/dario/local/diagnostics/gsm8k-first32-native96-equivalence-v2/generate.closure.json": "db1ff33095a50bb64b8d7b91a01e9581f729f9e5428b711ff1165cfbecf51e0b",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-0/predictions.jsonl": "410bd3135f43af276631acbe7cec7e4635c726de880a980e452d9a7279aaa346",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-0/run.json": "67c3baadbb35bcf013690473ee5bc5db11249a42a8fe5eb07c8f79d55831660e",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-1/predictions.jsonl": "b6f310b18c2738f8a0fcf1870ea9e878a1aa9b8ed1fc183a78265d8d16a447c0",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-1/run.json": "938da2cac942d40c2ae98bfcfc7b3e1032b0b65cf3dfb72f71e1a20991b0aee4",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-10/predictions.jsonl": "eddc2361c64377759e88271fe9f05ebd97f9804695fe148318106fdf145fbf28",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-10/run.json": "39f4a6b12f6159c848cffaa38ff6e6f4040f5d940eaf42debbeddcc8c699fc95",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-11/predictions.jsonl": "6441305d5f97c345a0743c7ef01c2065115c3ff76576e334a8b0f7d6e3895456",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-11/run.json": "4bbd1e202bdec7d9fc2ffdb0aefc10b03666173c1383d0bda4ef31af744ba834",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-12/predictions.jsonl": "4d0f837cebd1d777a0838451ff0579d02169a9144427c2789b52b334721c0d50",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-12/run.json": "86e1d4f78010e3d68095b4b7e487e5f372a54920cb5b9c679a17c0e5ad09db57",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-13/predictions.jsonl": "7d91122fb977302a7b758a09a76bca4b03db7212f8723eefdea0540c4b6e1ced",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-13/run.json": "149b16fff68362d9b7cd011b472013ae5fdb64b3e4b4d5baec37d9bd66e0e692",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-14/predictions.jsonl": "330879577f480e91e5812e507af0a8ed62cdcd4a8df67719f5514975593f14d0",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-14/run.json": "ee8ec9e1d4677d9b1a3d1096c94aee65496783b807c533990606a48288e9cfcc",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-15/predictions.jsonl": "2cf739a31245e89ea60b6260946f72012f1508d65c04d4977bdda6d160580d7f",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-15/run.json": "51fc65c2fb6f4da667900a433fc0250a8d1aa629214e55f23cf80e06f16a81d5",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-2/predictions.jsonl": "9749203f8f4782ed157c8785b16a42a294adce872ea7405a419103ff531908e1",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-2/run.json": "bdb35455506d5e0f18fcc0b1301a3ee4cd3790f5a655df5def55bfc635db7b4c",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-3/predictions.jsonl": "202cd5dd9a5e677ec6b0206ba3544a580a498a1da3968281d38963d900c32e2c",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-3/run.json": "f2af6998452772075fdf3b2d3b620278e02a2f3763ea5c70d5698af90a27b67e",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-4/predictions.jsonl": "6b54fa20f8445f6cf50d43d5d8e1f70ea05afc20d588899e1fb6f89ed57507f5",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-4/run.json": "4a7df788a2671c64050096973470f8e19aa2e7533ccb19eaf8d228b7bd672b8e",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-5/predictions.jsonl": "0e250e514221efc72ff1563e6968f0558fe48c51c36945c242888d1a4ce8f5c6",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-5/run.json": "ac14315f6d60976abe206bcbe1bb65f86632d17837b2f842731e9c9f00c47ab3",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-6/predictions.jsonl": "9fda8439e9b87d3c056a1e6fb445e1949fd97cc968b58b1e873061bbfcdb4448",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-6/run.json": "023fbeea1aab4436a1535752fd0cd8ccb8673e9faeb0d9274cca49d045f3e473",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-7/predictions.jsonl": "bbd929dde67d9f7420829cadb6939cf0374660d15ea1cdc20179661d767cfdad",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-7/run.json": "5932a3b0d22d2d8f2dbd74688ae56ab58046c98bf53d2e2247a8bbfac970ab45",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-8/predictions.jsonl": "1579098e8d1c5b18ad683a235dee65b03befae3f3ace1e23ba30bde0cd5f9b71",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-8/run.json": "fbf7176e244425c60e3235134f5d80bea424111b748153d1e59d85eb1d453122",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-9/predictions.jsonl": "7e9dbc94727386bf250b42ab6112a9d359e67d9ab96e19164d6bc0db1391ac1e",
+      "/home/ubuntu/dario/local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/generation/shard-9/run.json": "6c551b7301aa7eaf9645d5df9f2fece8d708828d62223fccc4dd14914416f4c5"
+    },
+    "items": 32,
+    "paths": 96,
+    "protocol_sha256": "395aab6443763c75781f23a5a446bf2cb4cbe5b13c0a3eeb779110b9cff103d7",
+    "schema": "gsm8k-first32-native96-equivalence-v1",
+    "scope": "All native action/prompt/stop/status/text fields, fixed first32 only; no gold or accuracy read, and no full1536 suite claim.",
+    "status": "PASS_FIXED96_NATIVE_PATHS"
+  },
+  "native_gate_checks": [
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "c52995e86cca89662e37dc77ffb2151da33ca8e3fbfd5e776d16251e8bb2599b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 8.96453857421875e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "33c375ac1b86d7b0e48cdfa9ef702e7df0772128abfb322c3938241474c48b15"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 3.814697265625e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "308f55e6785abe73f76c8f3c05d03dc61ba95dfd0dd1586439e177d2f53f0f34"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "2225245680365bbdd315dfd238cf5d7927e5808c2ba9510efcf004cdafc0111b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "c52995e86cca89662e37dc77ffb2151da33ca8e3fbfd5e776d16251e8bb2599b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 8.96453857421875e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "33c375ac1b86d7b0e48cdfa9ef702e7df0772128abfb322c3938241474c48b15"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 3.814697265625e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "308f55e6785abe73f76c8f3c05d03dc61ba95dfd0dd1586439e177d2f53f0f34"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "2225245680365bbdd315dfd238cf5d7927e5808c2ba9510efcf004cdafc0111b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "c52995e86cca89662e37dc77ffb2151da33ca8e3fbfd5e776d16251e8bb2599b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 8.96453857421875e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "33c375ac1b86d7b0e48cdfa9ef702e7df0772128abfb322c3938241474c48b15"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 3.814697265625e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "308f55e6785abe73f76c8f3c05d03dc61ba95dfd0dd1586439e177d2f53f0f34"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "2225245680365bbdd315dfd238cf5d7927e5808c2ba9510efcf004cdafc0111b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "c52995e86cca89662e37dc77ffb2151da33ca8e3fbfd5e776d16251e8bb2599b"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 8.96453857421875e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "33c375ac1b86d7b0e48cdfa9ef702e7df0772128abfb322c3938241474c48b15"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 3.814697265625e-05,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "308f55e6785abe73f76c8f3c05d03dc61ba95dfd0dd1586439e177d2f53f0f34"
+    },
+    {
+      "atol": 0.002,
+      "max_error": 0.00016021728515625,
+      "scope": "Initial FP32 B0 native full-head",
+      "sha256": "2225245680365bbdd315dfd238cf5d7927e5808c2ba9510efcf004cdafc0111b"
+    }
+  ],
+  "independent": {
+    "status": "PASS_INDEPENDENT_ALL96_NATIVE_FIELDS_AND_ARCHIVE",
+    "paths": 96,
+    "items": 32,
+    "archive_source_and_copy_hashes_verified": 314,
+    "fields": [
+      "item_id",
+      "document_id",
+      "task",
+      "split",
+      "mode",
+      "selection_policy",
+      "status",
+      "question_prompt_ids",
+      "writer_prompt_ids",
+      "reader_suffix_ids",
+      "answer_prompt_ids",
+      "thought_actions",
+      "thought_content_ids",
+      "thought_text",
+      "thought_stop_type",
+      "answer_actions",
+      "answer_content_ids",
+      "generated_text",
+      "raw_generated_text",
+      "answer_stop_type",
+      "n_generated_tokens",
+      "n_answer_tokens",
+      "n_thought_tokens",
+      "answer_cap",
+      "thought_cap"
+    ],
+    "method": "Independent direct projection comparison of all16 new native shards against allfour original reference shards; no experiment reducer called."
+  },
+  "closure": {
+    "all17_exit0": true,
+    "all51_actual_PID_start_identities_absent": true,
+    "all17_actual_POSIX_sessions_absent": true,
+    "all_groups_tmux_assigned_devices_closed": true
+  },
+  "archive": {
+    "files": 314,
+    "payload_bytes": 45731827,
+    "status": "complete_SHA256_source_and_destination_readback_verified"
+  },
+  "provenance": {
+    "local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/protocol.json": "395aab6443763c75781f23a5a446bf2cb4cbe5b13c0a3eeb779110b9cff103d7",
+    "local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2/comparison.json": "38ead1a14a5fe0e8b0b6827fcce97ab7bda2c24e044a7a1f60694a5406abac04",
+    "local/diagnostics/gsm8k-first32-native96-equivalence-v2/runtime.prepared.json": "5f7c3306e1105629ffd47d12b34eb116662a59e15e5b2b0456491f94151792d4",
+    "local/diagnostics/gsm8k-first32-native96-equivalence-v2/release.json": "430652f99c727eb81edefd87e054c99601f33eefc7187ceb59264351a4cb1e03",
+    "local/diagnostics/gsm8k-first32-native96-equivalence-v2/root-preflight.json": "dd66a0c35f76fa4830c111318a4883b02f422a4f16dfd1840403c1c63cb94e5f",
+    "local/diagnostics/gsm8k-first32-native96-equivalence-v2/generate.closure.json": "db1ff33095a50bb64b8d7b91a01e9581f729f9e5428b711ff1165cfbecf51e0b",
+    "local/diagnostics/gsm8k-first32-native96-equivalence-v2/final.cleanup.json": "1fb991e504913c365a04132ecb39fb5af8e5e55711306f7aedec7b1a604192f0",
+    "local/backups/diagnostics/gsm8k-first32-native96-equivalence-v2/ARCHIVE.json": "54d4d4631333af62de25152bf084fef3aeeabc75be1a5236a897a72ee8145504"
+  },
+  "decision": "Use the reviewed sixteen-shard evaluator for future complete512 terminal evaluations, with fresh bounded runtime releases. No duplicate full512 B0 job is needed.",
+  "limitations": [
+    "The actual native comparison covers fixedfirst32/96 paths, not all1536 paths.",
+    "No new accuracy result, model capability result or full512 throughput qualification.",
+    "The independent full512 loader still requires all1536 unique attempted paths and retains unsupported counts."
+  ]
+}
