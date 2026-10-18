@@ -756,3 +756,28 @@ qualification and physical cleanup between stages, no automatic retry. No
 training release. Any later arithmetic evaluation keeps its exact writer prompt;
 GSM uses the unchanged qualified question-only prompt across all arms and is
 explicitly a prompt/domain transfer check.
+
+
+### 2026-10-18 04:07 UTC — weak external-note result; repair measurement and placement
+
+All1920 LL cells and384 free attempts closed with0 runtime errors, all8 native
+and cached gates passed. TRAIN numeric correct−raw−.057nats; DEV+.091 with
+interval crossing zero. The declared scalar parser scores27correct/23raw/24empty,
+but199/384 are unsupported. Complete numerical lines can be falsely rejected by
+later prose ('I' versus 'Answer') or equality. Preserve those original scores;
+they are not mathematical capability estimates.
+
+All primary discordances are retained and read. The1/26 gain is parser-only;
+3310201/331921→331777 is a real initial-number repair despite the old unsupported
+label. Key numeric repairs also occur under the corrupted notes; no proof they
+depend on correct intermediate values. No parsed changed-counterfactual output
+matches. All source/outputs/control failures are independently checked and EBS
+archived before any source integration; public result projection accepted.
+
+Do not scale this into long RL. Next repair the target-independent scalar
+completion boundary, retaining old endpoint/results. Any reinterpretation of old
+paths is explicitly exploratory. Then isolate note placement/reanchoring on the
+same fixed documents and single-step labels, with raw and matched-empty controls.
+Do not combine a stronger multi-step external oracle or shrink to current failures.
+No next hardware or learning release yet. Ordinary downstream checks remain a
+requirement of any later learning pilot, regardless of local likelihood sign.

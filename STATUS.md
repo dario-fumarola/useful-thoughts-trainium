@@ -1,4 +1,4 @@
-# Status — 2026-10-18 03:47 UTC
+# Status — 2026-10-18 04:07 UTC
 
 The owner stopped the original R study and authorized repair/adaptation. Old
 launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
@@ -31,40 +31,56 @@ reserves, SHA f6005e96e8ad246ea78fd00cb282aacc0e7d4cd5be57ee46908b4ee502973f9b.
 No training release. Exact normalized formula overlap affects4/64DEV versus
 TRAIN256,6/64 versus proposedTRAIN512; report overlap, never alter fixed pools.
 
-## Reader feasibility released and active
+## Reader feasibility CLOSED; measurement/interface repair next
 
 Output local/nvme/diagnostics/finemath-calculation-boundary-probe-v2;
 controls local/diagnostics/finemath-calculation-boundary-probe-v2.
-Root release a1bf68896a54529134d285596f576ae871021c9da8de9f8fa9a8c1d882c8a3f1,
-proposal279a498e…4b208. Distributed agent owns the finite sequence:
-prepare -> nativeCPU16 reference -> four LL shards -> physical cleanup -> four
-answer shards -> physical cleanup. Each stage inspected before next; no retry,
-source mutation or denominator reduction. Deadline2026-10-18T06:00:00+00:00.
-No further root/user permission is needed for these already released stages.
-
-Prepare exit0 at03:43:10. Protocol5a0c6563bdcfa2d7b7dadabd30a9868c3b400ba77063483f2c030eeab15e3cf8;
+Protocol5a0c6563bdcfa2d7b7dadabd30a9868c3b400ba77063483f2c030eeab15e3cf8;
 inputs49c1e083e039ed80ba8922715681302e3e0c77715fba0956c0c3569db972ea8e.
-Native CPU reference exit0 at03:43:53, tied FP32/4×151936 finite vectors.
-Setup2.01s; actual forwards0.33/0.44/0.41/0.83s. Receiptf0aaaae1…8bcc3c.
-First score wrappers failed on nested shell quotes BEFORE allocation/model/TMPDIR;
-all4 originals/exits retained. Standalone argv hash guard executed, all8 corrected
-wrappers hash/syntax checked by root. Correction release50871d3c…31e9cc.
-Corrected four LL workers LIVE from03:46:56 after actual device/port checks:
-2451267/start12990857,2451270/start12990858,2451277/start12990860,
-2451280/start12990861. Timeout PGIDs2451264/2451268/2451275/2451278.
-Cores28/32/36/40, ports65061–68, private RAM/FP32/LRU2/OMP-MKL2 actual env.
-All12 identities/argv/env saved in control/score.processes.json. Cached NEFFs
-loading normally; no new error. No source/protocol change or automatic retry.
+All1920 likelihood cells and384 greedy attempts complete,0 runtime errors.
+All8 native full-head/cached gates pass, maximum1.335e-4 versus.002.
+All worker PID/start identities/groups/sessions gone, devices7–10 empty.
+Score closure5e7834c8…1f70e; answer closurec9969818…6ef58 at03:58:02.
+Four wrappers first failed nested shell quoting BEFORE any model/allocation;
+originals preserved, argv-only hash guard reviewed before one corrected launch.
+No numerical source or protocol was changed during the run.
 
-Frozen1920 likelihood cells=320docs×raw/empty/correct/corrupt/shuffled/other.
-Unchanged prepend_plain: note+[271]+same exact past; raw=past; empty=[271]+past.
-One actual natural16 pass supplies masked numeric, whole scalar and natural16 LL.
-Separate384 DEV greedy cap32 numerical completions with exact Fraction values.
-All unsupported/incomplete/error paths stay in denominators. Source-spelling LL
-can penalize equivalent correct values; keep endpoints separate. Generation masks
-267 undefined IDs; LL/native checks retain the full151936 released head.
-Actual noncached and cached CPU/device next-LP gates<=.002 before any rows.
-No model result yet. Review agent stages independent final result audit.
+LL summary45751713c9e1a66ce4cce6e58c908d85f9952abd3df00d8fb443589c87695385.
+TRAIN numeric correct−raw−.0571 CI[−.1195,−.00037]; DEV+.0915[−.0836,+.3373].
+DEV correct−empty+.0714[−.1001,+.3219]; own−other weak. No consistent utility.
+Exploratory hardest TRAIN quartile also has mean−.0575 versus raw, without any
+cohort/filter changes; saved local/analysis/calculation-boundary-v2-train-surprisal.json.
+
+Answer summary2dbac54d4be8d6bcf7255a9e110a556de76328c259199f365f68fb0e37edef6a.
+Declared parser correct27/64, raw23, empty24, corrupt25, shuffled25, other24.
+But199/384 paths are unsupported, including complete correct numeric lines.
+Do NOT call these mathematical capability scores. Original scores unchanged.
+All4 raw/correct discordances read:1/26→1/26 is parser-only;124/122→120 and
+3310201/331921→331777 are actual initial-number repairs but corrupt also gives
+120/331777;12→24 also occurs with empty alone. Correct−corrupt has384→336,
+not the predicted396; no correct-over-raw benefit there. No parsed counterfactual
+propagation observed; unsupported syntax does not establish arithmetic inability.
+
+Independent all1920/384/42CI audit5cd56c10…55d04c; public projection independently
+accepted: validation/finemath_arithmetic_reader_20261018.json
+SHA5be63057060bc10159d7443f7022f15161bc17dcf0289c64a4352f8401b1c73d.
+189-file/38465976B EBS archive with ALL18 exact old sources, controls, outputs,
+reviews, mechanism tables and required-check logs, all SHA readbacks verified:
+local/backups/diagnostics/finemath-calculation-boundary-probe-v2/ARCHIVE.json
+SHA806b3acfeac155c09ba6775289f07018fb78b5b2e6066432d558874d9759dcfd.
+Actual oldprobe f8a54017…1a95f preserved before any subsequent source integration.
+
+NEXT CODE, no new model launch: distributed writes pure train/scalar_completion.py
+with a versioned target-independent parser and focused fixtures. Root requested
+preserving ordinary inline word/unit coverage, local line/equality completion,
+no pronoun denylist, actual expression/scale-word ambiguities retained. Draft is
+NOT integrated/reviewed/released yet. Legacy parser remains unchanged. Any later
+v2 interpretation of old384 outputs must be labeled exploratory, never replace v1.
+Then test same notes AFTER past with exact LHS bytes reanchored before target;
+empty uses identical separators/reanchor, raw unchanged. Keep all fixed cohorts
+and six controls; do not combine stronger multi-step notes. Review first actual
+parser/case coverage and require new reviewed source/checks/protocol/qualification.
+No training or new accelerator job active.
 
 ## Sources, checks and next learning decision
 
@@ -108,7 +124,7 @@ question short-note prompt in every arm; disclose prompt/domain shift. No longRL
 
 ## Runtime boundaries
 
-Latest Git45c8696 pushed publicly. No stack upgrades, new resources, paid APIs,
+Latest Git e1321d2 pushed publicly; closed-result publication pending. No stack upgrades, new resources, paid APIs,
 IAM/network changes or unapproved uploads. Source scripts/env.sh for Python;
 CPU work USE_TORCH_XLA=0. Current EBS about109GiB free, NVMe735GiB; keep35GiB
 checkpoint-backup reserve. Preserve exact PID/start/group ownership; no broad
@@ -116,6 +132,6 @@ signals or automatic retries. Healthy cold compilation is allowed to finish.
 Known future8-rank FP32 training allocator repair is
 NEURON_RT_CONTIGUOUS_SCRATCHPAD=0; old contiguous raw attempts failed, not numerics.
 
-NEXT: monitor native reference and already authorized four-shard stages, inspect
-complete LL/value outcomes and actual examples, then choose learning or smallest
-interface repair. Do not duplicate the distributed agent's jobs.
+NEXT: publish the independently checked closed result; finish/review the numeric
+boundary parser, then implement the isolated same-note placement/reanchor probe.
+Do not launch training or reuse an archived launcher.

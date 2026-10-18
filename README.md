@@ -7,38 +7,31 @@ on AWS Trainium.
 
 ## Current finding
 
-**Useful self-generated thoughts have not been established.** The latest bounded
-probe uses unchanged Qwen3-1.7B-Base on 32 GSM8K TRAIN development questions:
+**Useful self-generated thoughts have not been established.** The latest probe
+tests supplied, exact partial calculations on real FineMath documents with an
+unchanged Qwen3-1.7B-Base reader. Fixed TRAIN256/DEV64 pools precede model scores;
+the notes compute proper subexpressions using only the past. This is external
+arithmetic assistance, not a trained writer or spontaneous discovery.
 
-| Inference | Strict accuracy | Canonical-number log likelihood |
-|---|---:|---:|
-| Ordinary calculation, cap256 | 24/32 (75.0%) | −2.739 |
-| Generate then discard note, reader cap192 | 24/32 (75.0%) | −2.819 |
-| Sampled note cap64 + reader cap192 | 86/128 paths (67.2%) | −2.978 |
+Correct notes do not consistently improve numeric source likelihood. Relative
+to raw text, the mean change is −0.057 nats on TRAIN and +0.091 on DEV
+(DEV paired 95% interval [−0.084,+0.337]). Empty, corrupted, shuffled and unrelated
+notes are also reported. All 1,920 likelihood cells and 384 numeric completions
+finished without runtime errors and passed independent checks.
 
-Four notes per question estimate a **single sampled-note policy** by averaging
-within each question; there is no best-of-four selection or voting. The accuracy
-difference from ordinary calculation is −7.81 percentage points, paired 95%
-interval [−18.75,+2.34]. Notes also fail to improve numeric likelihood. They beat
-shuffled and unrelated text, but that does not establish improvement over silence.
-This is exploratory reuse of known TRAIN questions, not blinded confirmation.
-Equal maximum token budgets do not imply equal FLOPs or latency.
-[Full result, controls, failures, costs and provenance](validation/gsm8k_self_note_train32_20261018.json).
+The declared completion parser scores correct notes 27/64, raw 23/64 and empty
+24/64, but rejects 199/384 paths, including some already complete correct numbers.
+These counts are **not arithmetic capability scores**. Manual review separates
+actual wrong-number corrections from parser effects; the key corrections also
+occur with corrupted notes, so dependence on the partial's correct value is
+unproven. Original outputs and scores remain unchanged.
+[Full result, every condition, examples and limitations](validation/finemath_arithmetic_reader_20261018.json).
 
-All 128 notes, 416 fresh reader attempts, 416 likelihood rows and 32 reused exact
-baseline cells are retained. Independent audits reproduce all means and paired
-intervals. A manual audit finds final-answer claims, arithmetic mistakes, wrong
-quantity interpretations and unfinished notes; those annotations do not filter
-any result. Raw evidence and fixed-order examples have verified local EBS copies.
-
-The next experiment prepares verifiable calculation boundaries from real FineMath
-TRAIN/DEV documents. A note computes a proper subexpression using only the past;
-the natural source continuation remains the target. This is explicit external
-arithmetic supervision, distinct from spontaneous self-discovery. Eligibility and
-selection precede model scoring. The first scan produced1,304 exact equations,
-but fixed-example review found three answers already visible through currency
-or option punctuation. Its original data is preserved; a corrected v2 scan is
-running, and no model was scored on v1. No further long RL run is active.
+The corrected data contains 996 TRAIN and 68 DEV examples. An earlier scan was
+blocked after three visible-answer filter misses; it is preserved and no models
+ran on it. Next, repair the numeric completion boundary rule and test note
+placement near the equation while keeping documents and calculations fixed.
+No further long RL run is active.
 [Current queue](NEXT_STEPS.md) · [Exact work state](STATUS.md).
 
 ## What led here
@@ -80,6 +73,13 @@ running, and no model was scored on v1. No further long RL run is active.
   not evidence of useful student computation.
   [Pilot](validation/gsm8k_calculation_train32_20261018.json) ·
   [Exhaustive posthoc mechanism panel and correction](validation/gsm8k_calculation_train32_mechanism_20261018.json).
+- **Short self-generated notes also failed.** On known GSM8K TRAIN32 questions,
+  unchanged B0 scored 86/128 sampled paths (67.2%), versus 24/32 (75%) for both
+  direct calculation and generate-then-discard. Four paths estimate a single-note
+  policy, never best-of-four or voting. Own−direct is −7.81pp [−18.75,+2.34];
+  numeric likelihood also declines. All notes, failures and costs are retained.
+  Equal token caps do not establish equal FLOPs or latency.
+  [Complete self-note result](validation/gsm8k_self_note_train32_20261018.json).
 
 All official final tests remain unused. Failures stay in denominators, controls
 are reported alongside raw performance, and oracle results remain separate from

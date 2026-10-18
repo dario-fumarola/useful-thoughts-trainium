@@ -22,14 +22,18 @@ The owner stopped the original R study and authorized adapting the experiment.
    resolved separately, original flags preserved. Fixed examples inspected,
    complete data EBS archived.739 required checks pass.
    Official TEST remains unused.
-5. ACTIVE: prospective TRAIN256/DEV64 and futureTRAIN512 IDs sealed before scores.
-   Frozen reader probe released; native CPU reference running. Test raw, empty,
-   correct partial, corrupted, shuffled and unrelated notes on actual source
-   numeric spans and natural16 continuations. Add greedy immediate numerical
-   completion on the same64DEV×six contexts,384 attempts/cap32, before any model
-   outcome. Retain every error/unsupported value. Exact reviewed sources/checks
-   pass; qualify new actual device contexts against CPU before any result rows.
-6. Choose learning only after examining real examples and reader feasibility.
+5. DONE: original prepend reader probe.1920 LL/384 completions closed, all8
+   native/device gates pass, all workers/groups/devices clear. No consistent
+   numeric LL benefit. Declared scalar counts27correct/23raw/24empty mix true
+   numeric repairs with false zeros from a restrictive parser;199unsupported.
+   Complete independent audit, public projection and EBS archive verified.
+   Repairs also occur with corrupt notes; correct partial value causality unproven.
+6. ACTIVE: preserve legacy scores/parser; finish/review a versioned scalar-boundary
+   repair. Any scoring of old outputs with it is exploratory. Then test ONLY
+   note placement near the target plus exact prefix-derived LHS repetition, on
+   the same frozen320docs/six controls/caps. Raw unchanged; empty repeats LHS and
+   separators identically. No stronger multi-step oracle mixed into this change.
+7. Choose learning only after examining real examples and reader feasibility.
    A new warmstart must use diverse real data, fresh generated-note evaluation,
    full-source ordinary CE on the same accepted chunks as its raw control, and
    downstream correctness checks. No claim of spontaneous discovery from external
