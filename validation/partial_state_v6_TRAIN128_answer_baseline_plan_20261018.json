@@ -1,0 +1,41 @@
+{
+  "schema": "partial-state-TRAIN128-B0-complete-answers-v1",
+  "created_utc": "2026-10-18T18:01:58.242409+00:00",
+  "question": "How does unchanged B0 answer exact partial-state TRAIN128 questions under all supplied-state and compact-CoT controls?",
+  "protocol_sha256": "a18c7e386a0397b665c5fe35e68640c11d69aa0be6b85e91eb450f915c7008a2",
+  "supervisor_sha256": "a33bd42135ee491ae872bf4eacc1986d134861a47e03622c5f5faa8bbea9c197",
+  "source_commit": "71609ee",
+  "hardware": "Four independent single-core shards logical12-15 on physical3, after complete short-pack qualification closure. FP32 evaluation as existing validated loader.",
+  "deadline_utc": "2026-10-18T21:00:00+00:00",
+  "items": 128,
+  "modes": [
+    "direct",
+    "cot",
+    "empty",
+    "teacher",
+    "corrupt",
+    "other_teacher",
+    "restatement"
+  ],
+  "attempts": 896,
+  "endpoint": "Complete numeric-answer accuracy; teacher-minus-empty/raw primary reader characterization, all unsupported/caps/errors retained. Paired item bootstrap5000/seed17.",
+  "controls": "Teacher non-root exact partials, one corrupt intermediate, intact length-matched unrelated partials, prefix restatement, empty, direct and compact CoT. All128 unrelated teacher notes match native length.",
+  "native": "Same original canonical full-head reference before decoding, plus actual cached/ordinary prefill comparisons on all3 used prompt shapes <=.001max normalized logp error.",
+  "resources": "At most3hours per single-core shard,512GiB available floor, exact-owned TERM/KILL, no automatic retries. No training or TEST.",
+  "gold": "Generation reads only questions/control projections. Separate CPU scorer only after all four original sessions/device physically close.",
+  "limits": [
+    "TRAIN-only diagnostic, not generalization or final TEST.",
+    "No learning qualification or trained-model release.",
+    "Direct prompt asks for the answer; compact CoT starts at Work. Equal80 action caps do not equal measured FLOPs.",
+    "Supplied-state reading is achievable-reader evidence, not student utility.",
+    "Reader conditions use16 answer actions; direct/CoT80. Report actual actions and latency separately.",
+    "Frozen-reader failure here does not block reader SFT; this is characterization, not a reader training gate."
+  ],
+  "release": {
+    "status": "RELEASED_BOUNDED_TRAIN_ONLY_BASELINE",
+    "utc": "2026-10-18T18:01:58.242560+00:00",
+    "plan_sha256": "ddbfd4dbf4b2e3353afaaaa58d40515acad4300c0b461c1898a2beff0dbe8fb9",
+    "review": "All source/shape/projection/parser changes read and1582CPU tests/smoke/compile pass. Only actual B0 accepted. Training qualification closed; all7 conditions batched, no gold until physical closure.",
+    "bounds": "Existing node, four cores only, finite21:00UTC/3hours each,512GiB floor, no retries; no broad scientific learning release."
+  }
+}

@@ -1020,3 +1020,11 @@ these are not sufficient fixes. Exactly one rank per adjacent pair grows rapidly
 Flat live tensor counts but repeated compile handles under LRU2 motivate one
 explicit world4/global4 cache2/cache256 causal probe, with native/finite gates
 and no science model reuse. No runtime/stack change or long learning release.
+
+2026-10-18 18:04UTC — Short-pack mechanics independently pass eight native/master
+witnesses, full3/6 raw-state/cast audits, exact actual restore and subsequent
+updates. Merge the additive qualified partial-state source to main; active
+baseline retains its immutable worktree. Start one complete896-cell TRAIN128
+B0 answer characterization with intermediate-only controls, separate offline
+gold, exact parser and actual cached-prefill checks. Its outcome cannot block
+reader training; it is not held-out or student-utility evidence.

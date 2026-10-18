@@ -7,14 +7,15 @@
    Synthetic LL improves despite many wrong Result values. No broad capability
    or RL release. Original terminal320 remains incomplete. Old evaluation memory
    observer was stopped only after both finite sequences completely closed.
-2. Active short-pack mechanics on isolated partial-state-v6 commit7623864:
-   local/diagnostics/partial-state-v6-world4-micro8-qualification-v1.
-   Its finite supervisor4025222 owns fresh3→full-save/closure→actual-restart3.
-   Physical3/logical12–15; fresh3/full24.09GB/closure done, actual restart update4 complete.
-   Source immutable through both stages. All4native and initial master checks
-   precede updates. Deadline19:00UTC; own external512GiB available floor and
-  60-minute stage caps; no retries. Independently audit full checkpoint3/6,
-   exact restored model/master/moment bytes and actual Adam counters before PASS.
+2. Short-pack actual3/full-save/restore/6 is independently PASS, both stages
+   closed. validation/partial_state_v6_training_hardware_20261018.json; latest
+   full6 and all nonweight evidence verified onEBS, full3 original staysNVMe.
+   No steady-memory/throughput or uninterrupted/RNG-readback claim. Qualified
+   training and complete-answer code merged to main; active baseline still uses
+   immutable partial-state-v6 worktree71609ee. Do not edit its pinned sources.
+   B0 TRAIN128 all7answer controls are active on physical3/logical12–15:
+   local/diagnostics/partial-state-v6-TRAIN128-B0-answers-v1, deadline21:00UTC.
+   All4actual mappings captured; score gold only after entire physical closure.
 3. Full-loop2×2 is closed and archived; all four conditions grow4–6.5GiB/node
    private RAM per update. ConstantLR/reduced sampled diagnostics do not fix it.
    validation/host_memory_full_loop_attribution_20261018.json preserves all
@@ -23,7 +24,10 @@
    local/diagnostics/host-memory-cache-capacity-v1, deadline19:30UTC, no retries.
    World4/global4 is explicitly engineering, not a world32 stability pass.
    Review after both conditions close; target-loop extended memory still needed.
-4. After mechanics/restart, run a separately frozen128TRAIN overfit check:
+4. Reader128-overfit protocol is prepared, NOT released:
+   local/diagnostics/partial-state-v6-reader-TRAIN128-overfit-v1. Wait for both
+   cache conditions and numerical readback; LRU256 needs <=64MiB/rank/update.
+   Planned reader128updates/32passes, LR1e−5, periodicfull32, physical5. Then:
    reader first with correct partial/empty/raw paths, freeze checkpoint; then a
    separate prefix-only writer trained on exact non-root operations and stop.
    Ordinary compact CoT uses the same verified traces and may win. No fresh DEV

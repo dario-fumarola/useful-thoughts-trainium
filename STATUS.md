@@ -1,4 +1,4 @@
-# Status — 2026-10-18 17:52 UTC
+# Status — 2026-10-18 18:04 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -15,20 +15,32 @@ Two math-self live placement captures missed; explicit annexes retained, no inve
 Public:validation/reader_learning_matched64_summary_20261018.json and four linked complete panels.
 Decision: no overall capability gain; exact partial-state/frozen-reader/compact-CoT comparison next.
 
-## Active: short-pack batched SFT and restart qualification
-Question: do four ranks×eight causal examples train and recover full state correctly?
-ID:partial-state-v6-world4-micro8-qualification-v1; first128TRAIN expressions only, writer arm.
-Fresh actual B0, BF16weights/gradients, FP32masters/Adam; global32,width128,target64, constant1e−5.
-Three updates/full save/physical closure, then fresh full restore and ordered updates4–6.
-Endpoint: all4native KL<=.01, exact initial masters, genuine updates/replicas/cast-master, full byte restore.
-Released after W evaluation closure, logical12–15/physical3; own external512GiB floor and19:00UTC bound.
-Supervisor4025222; initial timeout/group/session4025278; all4actual physical3 workers captured.
-Fresh3 exited0 with verified24.09GB full state and physical closure; actual full restore then update4 complete.
-Resume timeout/group/session4171129; restored4-rank worker group active. No recovery PASS until full6 readback.
-Controls:local/diagnostics/partial-state-v6-world4-micro8-qualification-v1.
-Output:local/nvme/diagnostics/partial-state-v6-world4-micro8-qualification-v1/writer.
-Source:isolated partial-state-v6 commit7623864;1561CPUtests/smoke/compile pass; live source frozen.
-Decision: pending; qualification models are excluded from scientific comparisons and128TRAIN overfit.
+## Closed: short-pack batched SFT and restart qualification — pass
+Question: do four ranks×eight short causal examples train and recover full state correctly?
+ID:partial-state-v6-world4-micro8-qualification-v1; first128TRAIN, disposable writer mechanics only.
+Fresh B0, BF16weights/gradients, FP32masters/Adam; global32,width128,target64, constant1e−5.
+Actual updates1–3/full save/physical closure, then fresh process full restore and updates4–6.
+Independent eight native checks maxKL.003104 and eight exact released initial-master witnesses pass.
+All complete3/6 models and1,240master/moment shards each finite; counters and cast-master bytes agree.
+All4full restored optimizer digests match saved3; genuine ordered continuation reaches192expressions/4,826labels.
+Both sessions/devices physically closed17:54UTC; latest full6 and all nonweight evidence EBS verified.
+Public:validation/partial_state_v6_training_hardware_20261018.json and all6update metrics.
+Full3 remains onNVMe with manifest/digests onEBS; no uninterrupted-parity or new RNG-readback claim.
+Cold graph costs dominate; last update14.5s alone does not establish steady throughput/memory.
+Decision: mechanics pass; qualification model excluded from scientific training or warm starts.
+
+## Active: complete-answer B0 characterization for partial states
+Question: do supplied intermediate-only states improve complete answers of unchanged B0?
+ID:partial-state-v6-TRAIN128-B0-answers-v1; fixed first128TRAIN questions, all896attempts.
+Direct/compactCoT/empty/teacher/one-corrupt-state/intact-other/restatement in one four-shard job.
+All128other teacher notes match native token length; generation never opens gold or supervised rows.
+Endpoint: complete numeric-answer accuracy, paired item bootstrap5000/seed17; failures retained.
+Four single-core shards logical12–15/physical3, FP32, canonical/native and actual cache-prefill checks.
+Bound21:00UTC/3hours per shard, external512GiB floor, no retries; all4actual placements captured.
+Separate gold scorer runs only after complete generation/session/device closure; no DEV or TEST.
+Controls:local/diagnostics/partial-state-v6-TRAIN128-B0-answers-v1; source commit71609ee now merged.
+Output:local/nvme/evaluation/partial-state-v6-TRAIN128-B0-answers-v1;1582CPUtests/smoke/compile pass.
+Decision: pending; untrained-reader failure would not block reader SFT.
 
 ## Closed: bounded backward-path host-memory probe
 Question: does original real-data BF16 W backward retain hostRAM before optimizer/update stages?
@@ -71,7 +83,7 @@ All25,600native causal packs and batch8 shapes pass; no prior known expression o
 Longest partial47tokens; root answer coincidences counted, not filtered. NativeEOS/boundaries verified.
 All1552CPUtests/smoke/compile pass; EBS data read-back verified, source commitd921a11.
 Public branch validation/partial_state_v6_{design,CPU_readiness}_20261018.json.
-Decision: reader→freeze→writer, same-reader controls and ordinary CoT baseline; no hardware/learning release.
+Decision: reader→freeze→writer and compact CoT; CPU/data scope only here, separate mechanics pass above.
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
