@@ -1,0 +1,84 @@
+{
+  "schema": "partial-state-v6-prospective-design",
+  "created_utc": "2026-10-18T16:06:09.671707+00:00",
+  "status": "CPU_DATA_ONLY_NO_MODEL_OR_LEARNING_RELEASE",
+  "question": "Can a prefix-only student generate short partial computations that improve complete answers of a trained frozen reader, beyond ordinary compact CoT at matched inference budget?",
+  "label_rule": "Exact postorder non-root operations only. Root operation/final answer omitted structurally; incidental equality is counted rather than filtered.",
+  "data": {
+    "schema": "partial-state-arithmetic-v6",
+    "seed": 2026101806,
+    "generated_from": "exact prefix expression only; no model filtering",
+    "code_sha256": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "files": {
+      "TRAIN.jsonl": {
+        "rows": 5120,
+        "bytes": 2060952,
+        "sha256": "020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb",
+        "incidental_answer_in_partial": 27
+      },
+      "DEV_interpolation.jsonl": {
+        "rows": 512,
+        "bytes": 212475,
+        "sha256": "ef5af497e8a2a45c0ceede5e3a164f446c39a5cfc49d7d4f20347094cc63f018",
+        "incidental_answer_in_partial": 0
+      },
+      "DEV_structure.jsonl": {
+        "rows": 512,
+        "bytes": 211138,
+        "sha256": "015528413c842defa168365cea4368f0c9f0a08f712fea02021d90cbc5a90662",
+        "incidental_answer_in_partial": 2
+      },
+      "DEV_range.jsonl": {
+        "rows": 512,
+        "bytes": 220306,
+        "sha256": "b79c962fe3b6c0c3787363e5d5debb8a3f00dfdcdd2868a7481af4a1c9a74189",
+        "incidental_answer_in_partial": 1
+      },
+      "DEV_composition.jsonl": {
+        "rows": 512,
+        "bytes": 236466,
+        "sha256": "cbe5d61ee280e12fd5152c0637f39f72e0394456df45d217a987e5db21132983",
+        "incidental_answer_in_partial": 5
+      }
+    },
+    "overfit128_sha256": "86c315f36253092ee38baf6c4c1a5f72c9ca989e8afd5c2c90fd229bb3d1f29a",
+    "limits": [
+      "Synthetic computation diagnostic; no general-language claim.",
+      "Root step excluded structurally, not by banning numerical coincidences.",
+      "DEV panels are separate; never pool their generalization claims.",
+      "This prepares data only; no model or learning qualification."
+    ]
+  },
+  "training_sequence": [
+    "TRAIN-only128 overfit mechanics, including stop and actual resumable save/restart.",
+    "Train reader on verified partials with preserved ordinary no-note paths; freeze it.",
+    "Train separate prefix-only writer on partial steps plus actual stop token.",
+    "Evaluate same frozen reader: teacher/student/empty/intact-unrelated/restatement/one-corrupt-intermediate.",
+    "Student-note reader adaptation and on-policy refinement are later separate experiments."
+  ],
+  "arms": {
+    "A": "Ordinary answer SFT.",
+    "B": "Single-stream compact CoT using the same verified partial steps followed by Answer and final number.",
+    "C": "Partial-state writer plus trained frozen reader. Writer labels contain no root calculation.",
+    "D": "Optional later refinement, deferred."
+  },
+  "primary": "Free complete-answer accuracy, failures retained: C student-minus-same-reader empty and raw, plus B comparison at matched total generated-token cap. Separate512-item interpolation, unseen structure, operand-range and composition panels; never pool generalization claims.",
+  "supporting": [
+    "Intermediate correctness and unsupported counts.",
+    "Teacher achievable gain, unrelated/restatement/wrong-state controls.",
+    "Answer numeral, closing-boundary and surrounding-text likelihood separately; available headroom reported.",
+    "Actual tokens/latency including extra model/stage, and separate training compute/teacher data."
+  ],
+  "statistics": "Paired bootstrap5000 draws seed17 per panel/checkpoint; two training seeds after mechanics qualification. Conditional item intervals do not establish training-seed robustness.",
+  "unresolved_before_learning": [
+    "Bounded full-loop host memory and periodic resumable checkpoint/restart.",
+    "Exact model-size identity, qualified topology and optimizer.",
+    "Final training budget, parser and generation caps frozen before any new trained DEV outcome."
+  ],
+  "limits": [
+    "Synthetic mechanism study only.",
+    "No oracle-dependent student selection/repair at deployment.",
+    "Compact CoT is allowed to win.",
+    "Official TEST stays unopened."
+  ]
+}
