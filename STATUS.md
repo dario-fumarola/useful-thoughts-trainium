@@ -1,17 +1,16 @@
-# Status — 2026-10-18 08:39 UTC
+# Status — 2026-10-18 09:02 UTC
 
 ## Active: canonical-reference BF16-storage qualification
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
 ID:postorder-note-bf16-storage-world32-qualification-v3; new reference, unchanged .01KL bound.
 Sequential W/C′/T, world32/accum1, first64unchanged science documents, three updates each.
 W launched07:44UTC, deadline13:43:43UTC; logical0–31/physical0–7, private RAM0700.
-Original launcher2658497, timeout/group2658570, driver2658572; all32actual mappings recorded.
 All32local+global native gates pass; maxKL .003104, hidden/headBF16.
 All32initial FP32 master samples exactly match released CPU shard values.
 W passes all three updates, full FP32 master/moment scans, Adam counters and replica checks.
-W physically closed; C′ now active, all32 native gates and initial master samples pass.
-C′ launcher2836604, timeout/group2836693, driver2836695; first update pending.
-W step times1507/776/593s include compilation; steady throughput remains unqualified.
+W/C′ pass all three updates and are physically closed; T active from08:54UTC.
+T launcher2908454, timeout/group2908546, driver2908548; all32native/master gates pass.
+C′ steps1042/52/47s; reused optimizer5–7s. W1507/776/593s include cold compilation.
 V2failed check remains failed; model-free four-rank mixed-failure consensus test passed.
 W/C′ save diagnostic slices; T will save full state on NVMe for recovery preparation.
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
@@ -40,7 +39,7 @@ Keep first 5,120 eligible notes with I3 full16 teacher−empty >0; shortfall sta
 Reject empty/special-token notes and complete literal future16 copies; retain all attempts.
 All131072 native projections independently match;1399 CPU tests/smoke/compile pass.
 Sixteen FP32 workers on logical32–43/60–63, physical8/9/10/15; deadline14:36:32UTC.
-Root released raw→teacher→reader batch once; data agent owns launch, health and closure.
+Raw launched08:39UTC; all16 native gates and48actual mappings pass. Data owns closure.
 Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
 
 ## CPU complete: full-state recovery implementation
@@ -48,7 +47,7 @@ Question: can original science runs recover FP32 master/Adam state without losin
 ID: useful-note-recovery-v4; isolated branch in local/worktrees/recovery-v4.
 Strict original identity, complete-file hashes, full state byte audit and RNG reset last.
 Abandoned metric/checkpoint tails are preserved; later complete states cannot be skipped.
-Independent review and 1,389 CPU tests plus smoke/compile pass; locally committed.
+Independent review and 1,389 CPU tests plus smoke/compile pass; public branch recovery-v4.
 No hardware recovery claim. Reviewer staged a private restore plus actual fourth update.
 Wait for v3 T full step-3 state and physical closure; keep active main source unchanged.
 
@@ -66,7 +65,7 @@ I3teacher−empty−.646[−1.179,−.077], teacher−raw−3.633; strict positi
 I6teacher−raw+.495[.209,.815], −empty+.660[.400,.953], −other+.794[.541,1.074].
 No extracted full16copy;10extracted8gram overlaps; allnotes/actions/copying retained.
 Independent all2048vectors/8CIs/copying/costs match; validation/general_hindsight_TRAIN256_20261018.json.
-No5000quota or deployed prefix-only utility; compound recipe unchanged, larger branch CPU planning only.
+No5000quota or deployed prefix-only utility; compound recipe unchanged, larger batch active.
 
 ## Closed failed: BF16-storage qualification
 Question: can BF16 model/gradient storage fit W/C′/T while preserving FP32 masters?
@@ -83,17 +82,28 @@ CPU BF16 itself differs from CPUFP32 by .014382; reference/consensus repair unde
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2; EBS archive verified.
 No training, recovery or throughput pass; science remains unreleased.
 
-## Active: B0 GSM8K TRAIN512 baseline
+## Closed: B0 GSM8K TRAIN512 baseline — negative
 Question: does one generated note improve answers relative to direct and matched empty?
 ID:postorder-gsm8k-train512-B0-v1; all512TRAIN questions, all three modes in one batch.
-Four workers logical44/48/52/56, physical11–14; launched07:15UTC, deadline13:30UTC.
-Original worker PIDs2598159/2598163/2598169/2598172; reviewer owns health/closure.
-All four native gates pass; answer prefill/decode compiled, saved paths progressing.
-No gold or accuracy inspection before all1536attempts complete; unsupported remains in512.
+All1536attempts/native gates complete; generation closed08:49UTC before gold read.
+Direct/empty/thought strict correct429/433/276; unsupported11/18/147, all denominators512.
+Thought−empty−30.66pp[−35.74,−25.78]; thought−direct−29.88pp[−34.77,−24.80].
 Greedy native note cap128actions and answer512; full-question reanchor, no instruction header.
 First128questions reuse a known development panel; this is not blind final performance.
-Controls:local/diagnostics/postorder-gsm8k-train512-B0-v1; NVMe output same basename.
-Exact source/runtime pins, PID/start identities and first-live mappings retained.
+All owned identities/groups/actual generation SIDs/tmux/devices closed; verified EBS archive.
+Independent all1536score/status/cost checks and both CIs exactly match; all148archive entries verified.
+Public validation/postorder_gsm8k_TRAIN512_B0_20261018.json plus all1536outputs and fixed first3examples.
+Decision: retain negative B0 reference and evaluate every terminal trained arm identically.
+
+## Active: B0 general held256 baseline
+Question: do prefix-only B0 notes help the separate high-surprisal general DEV panel?
+ID:general-note-held256-B0-v1; all256 prefix-only cap128 attempts before future controls.
+Raw/empty/own/intact other/target copy/corrupt copy ×I3/fixedI6;3072cells, full16primary.
+Paired-document intervals; prospective own−raw and own−other lower95%>0 required.
+Launched08:51UTC on logical44/48/52/56, physical11–14; deadline13:30UTC.
+All4native gates and12actual PID/start/session/mapping checks pass; notes progressing.
+Reviewer owns all stages/physical closure/archive; source and1418CPU checks pass.
+No partial utility inspection. Fixed mixing remains secondary to future I3self-reader SFT gate.
 Reviewer supervises completion, physical closure, one summary and verified EBS archive.
 
 ## Closed negative: fixed first-line note ablation
@@ -204,7 +214,8 @@ All5120uniqueTRAINdocs, exact math/native sources/notes and20480component packs 
 Independent heldDEV overlap0; selected operations2/3/4/5/6=2817/1406/448/348/101.
 Plan W/C′/T, twoepochs/global32/LR1e−5, two seeds; scientific training not released.
 C′=rawnatural16mean+.5source mean; exact one-pass helper has11CPUloss/gradient tests.
-Full1323CPUchecks+smoke/compile pass including new preparer and GSMwrapper; no model.
+Full data preparation checks pass; new v4 science protocols validate both seeds and native refs on CPU.
+Protocols:local/diagnostics/postorder-reader-learning-compound5120-sft-v4; no training release.
 Public inventory:validation/reader_learning_compound5120_data_20261018.json.
 
 ## Closed: fresh held reader baseline — negative
@@ -244,7 +255,7 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 Root: science/data/precision decisions, training release, current public findings.
 Data: larger filtered general hindsight batch, native-label adapter and CPU projections.
 Distributed: active sequential W/C′/T BF16-storage qualification and physical closure.
-Review: active GSM512 supervision and precision/master/RoPE source acceptance.
+Review: general held256 baseline, cheap prefix-helper preparation and recovery proof.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.

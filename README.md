@@ -39,6 +39,20 @@ is −5.064 [−5.618,−4.525] nats and own−other −1.388 [−1.873,−.903]
 All 256 documents, absolute controls, fixed-mixer results and complete cells remain
 in the [truncation result](validation/postorder_firstline_note_held256_20261018.json).
 
+The completed GSM8K TRAIN512 B0 baseline is also negative:
+
+| Mode | Strict correct /512 | Unsupported /512 |
+|---|---:|---:|
+| Direct calculation |429|11|
+| Empty thought format |433|18|
+| One generated thought |276|147|
+
+Thought−empty is −30.66 percentage points [−35.74,−25.78]. The increase in
+format and truncation failures prevents interpreting this solely as an arithmetic
+change. Every attempted answer and note is retained; the first128 questions have
+known development outcomes, and official TEST remains unused.
+[Complete results, all1,536 outputs and paired outcomes](validation/postorder_gsm8k_TRAIN512_B0_20261018.json).
+
 A separate 256-document TRAIN pilot finds a positive **future-aware note signal**.
 Teacher notes improve the fixed mixed reader over raw by +.495 [.209,.815], over
 empty by +.660 [.400,.953], and over unrelated notes by +.794 [.541,1.074] nats.
@@ -46,7 +60,7 @@ The ordinary reader still loses on average; 82/256 labels beat its empty control
 The teacher sees the continuation. This does not establish a useful prefix-only
 writer. [All notes, controls, scores and copying diagnostics](validation/general_hindsight_TRAIN256_20261018.json).
 A [general high-surprisal DEV panel](validation/general_high_surprisal_DEV256_sealed_20261018.json)
-is now sealed before supervised outcomes; the broader filtered TRAIN batch is in preparation.
+is now sealed before supervised outcomes; the broader filtered TRAIN batch is running.
 
 Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
@@ -80,8 +94,10 @@ An initial hardware qualification stopped before updates at its native-reference
 Device BF16 was closer to CPU FP32 than the CPU BF16 reference was; an explicit
 high-precision reference repair retains the same KL bound and the
 [original failure](validation/useful_note_bf16_native_failure_20261018.json).
-The repaired-reference qualification has completed two W updates with finite FP32
-masters and moments; the remaining updates and arms are pending. Scientific SFT awaits qualification;
+The repaired-reference qualification has completed three W and three C′ updates
+with finite FP32 masters and moments. C′ updates2/3 took52/47 seconds after
+compilation; T qualification and actual checkpoint recovery remain pending.
+Scientific SFT awaits qualification;
 official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 

@@ -1,68 +1,51 @@
 # Current queue
 
-1. The complete `postorder-note-frozen-filter-v1` found3147/14669 strictly
-   positive scalar+boundary notes, short of5120 by1973. Preserve the threshold,
-   all44007scores, failed quota and verified EBS archive. Closed token decomposition
-   shows numerical improvement offset by the original closing-certificate token.
-   New `postorder-reader-learning-compound5120-v1` selects first5120 verified
-   compound representative TRAIN documents without likelihood filtering.5438are
-   eligible; all5120documents and20480CPU packs are independently verified.
-   Preserve the separate manifest; do not claim an
-   original filter pass, duplicate verbalizations or quietly shrink its quota.
-2. The first actual hardware batch is CLOSED: W0/C1/T2 updates, overall FAIL.
-   T passes full optimizer checks; W/C exhaust24GiB banks with FP32 model/grad
-   storage plus compiler spill buffers. Preserve failures and verified archive.
-   Qualify a NEW BF16-parameter/gradient, FP32-master/moment path, preserving FP32
-   RoPE buffers. New v2 W stopped before updates: CPU-BF16 reference KL .010121
-   exceeds unchanged .01. Three-way audit shows deviceBF16 is closer to CPUFP32
-   (maxKL .003103); CPU BF16 itself differs by .014382. Review a new high-precision
-   reference identity and uniform all-rank failure consensus before retry. Preserve
-   original FAIL; no threshold relaxation. V3 is now running W on lower32cores;
-   W passes all3 realupdates/fullmaster+moment checks and is physicallyclosed. C′ is active. Finish
-   the sequential W/C′/T three-update batch and actual optimizer/memory checks.
-3. `postorder-held256-B0-v1` is CLOSED/archived: all256notes/3072cells, negative
-   own−raw in both I3 and fixedI6, own−other intervals cross0. Independent36CI
-   readback matches exactly. No useful generated-content result before training.
-4. Before science, replace the weak source-only main control with C′ = raw
-   natural16mean+.5sourcemean, matching W's anchor emphasis. A separate CPU helper
-   implements the exact objective in one ordinary source pass and is integrated
-   in the reviewed v2 driver. Actual hardware qualification remains required.
-   Keep T=all-token interleaved augmentedCE, not an exact publishedTPT reproduction.
-5. With>=5000declared examples and hardware qualification, freeze the W/C′/T
-   comparison from freshB0, same occurrences/order/updates, twoepochs/global32,
-   LR1e−5/20warmup/cosine, two seeds. W=writer+reader+.5source means. Document
-   unequal supervision and measured compute. No scientific training is released yet.
-6. Evaluate every terminal arm on the sealedDEV256 with B0 and self readers,
-   raw/empty/freshown/intactother/oracles; natural16primary, scalar/numeric diagnostics,
-   fixedI6w=.375 additional control. GSM8KTRAIN512 B0 is running all3modes on4cores
-   with fixed deadline13:30UTC while qualifying training. All1536paths finish before gold; unsupported stays
-   in denominator. Run every later terminal arm regardless of local sign.
-   Separate fixed first-line truncation on cached B0 notes is CLOSED/negative:
-   less damage than full notes, still worse than raw and short unrelated notes.
-   It does not change the main cap128 policy or training data. Inventory genuine
-   general TRAIN high-surprisal anchors for the owner's broader hindsight branch:
-   fixed256pilot is CLOSED/archived/independently verified: I3strict positives82/256;
-   fixedI6 teacher beats raw/empty/other. All future-aware labels/copying retained.
-   Prepare a separate larger TRAIN-only branch on CPU: fixed131072raw anchors,
-   first24576high-surprisal qualifiers, same one-teacher policy and strict I3filter,
-   first5120eligible positives if quota passes. Keep compound5120 unchanged.
-   Reviewed16independent FP32 workers on physical8/9/10/15 are now released once,
-   deadline14:36:32UTC. Data agent owns raw→teacher→reader→strictquota/closure/archive;
-   no cutoff shrink or quota claim. Sources/projections/tests are verified.
-   New general high-surprisal DEV256 is sealed before SFT outcomes: first256 of
-   535 qualifiers among2048 previously unseenDEV documents, allrawscores complete.
-   Report: validation/general_high_surprisal_DEV256_sealed_20261018.json.
-   Its separate prefix-only evaluator is accepted; all1418 main CPU tests/smoke/compile
-   pass. Reviewer is preparing B0 baseline on physical11–14 only after GSM closure.
-   Recovery v4 is locally committed and independently accepted with 1389 CPU tests,
-   smoke and compile. Keep it isolated in local/worktrees/recovery-v4 until active
-   v3 closes; run the private actual T-state restore/fourth-update probe before merge.
-7. No RL until fresh own beats raw and other with oracle headroom. Then fullspan
-   reward/G16/cap256/Wreference stabilization. Require measured<=90s completeRLsteps
-   before longRL. The old empty profiler supplies no warmed or BF16 throughput pass.
+1. Finish `postorder-note-bf16-storage-world32-qualification-v3` on logical0–31.
+   W/C′ pass all three real updates and are physically closed. T is active
+   under the existing release, deadline13:43:43UTC. Distributed owns health,
+   full FP32 master/moment/counter checks and closure. Preserve the original v2
+   native-reference failure. C′ updates2/3 took52/47s after compilation;
+   these SFT timings do not qualify the complete RL-step gate.
+2. Finish the released `general-hindsight-filtered-train5120-v1` pipeline.
+   Data owns16 workers on logical32–43/60–63, deadline14:36:32UTC. All native gates
+   and actual mappings pass. Close all131072 raw attempts before first24576 with
+   K1 surprisal>=1.7; close all teacher attempts before intact global donors;
+   close all196608 reader cells before selecting first5120 eligible I3-positive
+   labels. No gain ranking, replacement pool, cutoff shrink or automatic retry.
+3. Finish active B0 `general-note-held256-B0-v1` on logical44/48/52/56, deadline13:30UTC.
+   Review owns all256 notes, physical closure, global controls, all3072 reader
+   cells and archive. Its release binds the completed/archived GSM512 baseline:
+   direct/empty/thought429/433/276, unsupported11/18/147; all1536 outcomes independently verified.
+   Review may prepare the separate prefix-only fewshot/full-versus-firstline
+   helper ablation on CPU while this runs; no model release or source mutation.
+4. Use v3 T's full step3 state for the staged actual restore/fourth-update probe:
+   `local/qualification/useful-note-state-recovery-001`. Root issues a fresh finite
+   release after T closure. Verify actual BF16 model/FP32 masters/moments/counters
+   byte equality and a genuine fourth update; do not claim uninterrupted parity.
+   Recovery code stays isolated on public branch `recovery-v4` while v3 runs.
+5. After qualification/recovery/source review, merge accepted v4 and run combined
+   checks. CPU-only full compound protocols are ready under
+   `local/diagnostics/postorder-reader-learning-compound5120-sft-v4`: two seeds,
+   5120 distinct TRAIN documents, two epochs/320 updates/global32/LR1e−5.
+   C′ matches W's natural16 emphasis in one ordinary-source pass. T is interleaved
+   augmented CE, not a TPT reproduction. Measure reused update/checkpoint time,
+   confirm disk retention and issue a new finite science release before training.
+6. Evaluate every terminal arm regardless of local sign: arithmetic held256 and
+   newly sealed general high-surprisal DEV256, frozenB0 and self readers, full16
+   raw/empty/freshown/intactother/oracles. Also GSM8K TRAIN512 direct/empty/one-thought;
+   unsupported remains in512. Terminal is primary; step64 is developmental.
+   Combine repeated training seeds per document before document bootstrap.
+7. If the separate general-label quota passes, prepare an explicit general SFT
+   identity using its native-ID adapter; never masquerade as symbolic equations.
+   Compound5120 remains unchanged. Gate RL on fresh own>raw AND own>other with
+   oracle headroom, then fullspan/G16/cap256/W-reference stabilization. Require
+   measured<=90s complete RL steps; no old profiler or cold SFT timing qualifies it.
 
-I0–I6 are complete and public. TRAIN-fitted scalar mixing qualifies GENERAL
-supplied copying; ARITHMETIC fails unchanged+2gates. UnderlyingI3 SFT is the
-explicitly allowed reader-learning fallback, not mixed-reader training.
-Exact postorder labels are future-aware supervision; policy inputs remain prefix-only.
-Keep STATUS entries<=15lines/question and hashes/receipts in JSON. Never readTEST.
+Safe next progress command while raw workers run:
+`wc -l local/nvme/diagnostics/general-hindsight-filtered-train5120-v1/raw/shard-*/scores.jsonl`
+
+All official TEST remains forbidden. R1234 stopped63: never resume old launchers.
+The old symbolic filter remains failed3147/14669; compound supervision is an explicit
+reader-learning fallback. General teacher labels see the future and cannot establish
+prefix-only utility. Keep full states on NVMe; EBS holds terminal models/results and
+one rolling verified full-state backup, with35GiB reserve and no new capacity.

@@ -1,0 +1,445 @@
+{
+  "schema": "postorder-gsm8k-TRAIN512-B0-public-v1",
+  "status": "COMPLETE_NEGATIVE",
+  "question": "Does a fresh prefix-only B0 thought improve strict GSM8K TRAIN answers over the same empty format?",
+  "design": {
+    "items": 512,
+    "paths": 1536,
+    "modes": [
+      "direct",
+      "empty_format",
+      "one_thought"
+    ],
+    "model": {
+      "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "id": "B0",
+      "loaded_checkpoint": null,
+      "model": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      }
+    },
+    "selection": "One greedy path per question/mode.",
+    "thought_cap_total_actions": 128,
+    "answer_cap_total_actions": 512,
+    "compute": "FP32",
+    "parser": "strict_final_hash4_number_v1",
+    "bootstrap": "5000 paired document draws, seed17",
+    "gold_opened_only_after_whole_generation_closure": true,
+    "official_TEST_used": false
+  },
+  "absolute": {
+    "direct": {
+      "items": 512,
+      "correct": 429,
+      "accuracy": 0.837890625,
+      "statuses": {
+        "ok": 501,
+        "truncated": 3,
+        "error": 0,
+        "format_error": 8
+      },
+      "unsupported": 11,
+      "thought_actions": 0,
+      "answer_actions": 57438,
+      "thought_caps": 0,
+      "answer_caps": 3,
+      "wall_seconds_total": 4710.985918785911
+    },
+    "empty_format": {
+      "items": 512,
+      "correct": 433,
+      "accuracy": 0.845703125,
+      "statuses": {
+        "ok": 494,
+        "truncated": 2,
+        "error": 0,
+        "format_error": 16
+      },
+      "unsupported": 18,
+      "thought_actions": 0,
+      "answer_actions": 65976,
+      "thought_caps": 0,
+      "answer_caps": 2,
+      "wall_seconds_total": 4824.910015720554
+    },
+    "one_thought": {
+      "items": 512,
+      "correct": 276,
+      "accuracy": 0.5390625,
+      "statuses": {
+        "ok": 365,
+        "truncated": 33,
+        "error": 0,
+        "format_error": 114
+      },
+      "unsupported": 147,
+      "thought_actions": 45096,
+      "answer_actions": 70270,
+      "thought_caps": 115,
+      "answer_caps": 33,
+      "wall_seconds_total": 12510.518671854748
+    }
+  },
+  "contrasts": {
+    "thought_minus_empty_format": {
+      "difference_b_minus_a": -0.306640625,
+      "ci95": [
+        -0.357421875,
+        -0.2578125
+      ],
+      "items": 512,
+      "documents": 512,
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17
+    },
+    "thought_minus_direct": {
+      "difference_b_minus_a": -0.298828125,
+      "ci95": [
+        -0.34765625,
+        -0.248046875
+      ],
+      "items": 512,
+      "documents": 512,
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17
+    }
+  },
+  "matched_empty_rows_thought_columns": {
+    "correct": {
+      "correct": 246,
+      "parsed_wrong": 60,
+      "unsupported": 127
+    },
+    "parsed_wrong": {
+      "correct": 22,
+      "parsed_wrong": 27,
+      "unsupported": 12
+    },
+    "unsupported": {
+      "correct": 8,
+      "parsed_wrong": 2,
+      "unsupported": 8
+    }
+  },
+  "interpretation": "Generated thoughts reduce strict success versus both raw and empty. Format and cap failures increase substantially; these counts do not isolate a change in arithmetic reasoning.",
+  "decision": "Preserve B0 reference and apply identical evaluation to every terminal trained arm. No prefix-only utility pass.",
+  "policy": {
+    "prompt": {
+      "demonstrations": [
+        {
+          "answer": "Let's think step by step\nIn 2005, 60/2=30 kids came to the cookout.\nIn 2006, 30/3*2=20 kids came to the cookout.\n#### 20",
+          "item_id": "gsm8k:train:04997",
+          "question": "In 2004, there were 60 kids at a cookout. In 2005, half the number of kids came to the cookout as compared to 2004. In 2006, 2/3 as many kids came to the cookout as in 2005. How many kids came to the cookout in 2006?",
+          "split": "train"
+        },
+        {
+          "answer": "Let's think step by step\nSince $133 is equal to 7% of her earnings, then 1% is equal to $133/7 = $19.\nThe total monthly earning of Zilla is represented by 100%, so $19 x 100 = $1900 is her monthly earnings.\nSo, $1900/2 = $950 is spent on her other monthly expenses.\nThe total amount spent on the rent and other monthly expenses is $133 + $950 = $1083.\nHence, she saves $1900 - $1083 = $817 per month.\n#### 817",
+          "item_id": "gsm8k:train:04280",
+          "question": "Zilla spent 7% of her monthly earnings on rent, half of it on her other monthly expenses, and put the rest in her savings. If she spent $133 on her rent, how much does she deposit into her savings account in a month?",
+          "split": "train"
+        },
+        {
+          "answer": "Let's think step by step\nThe total ratio representing the slices of pizza that Buzz bought is 5+8=13\nIf he shared the slices of pizza with the waiter, the waiter received a fraction of 8/13 of the total number of slices, which totals 8/13 * 78 = 48 slices\nTwenty less the number of slices of pizza that the waiter ate is 48-20 = 28\n#### 28",
+          "item_id": "gsm8k:train:03996",
+          "question": "If Buzz bought a pizza with 78 slices at a restaurant and then decided to share it with the waiter in the ratio of 5:8, with Buzz's ratio being 5, what's twenty less the number of slices of pizza that the waiter ate?",
+          "split": "train"
+        },
+        {
+          "answer": "Let's think step by step\nHe makes 20*40=$800 per week\nHe used to make 16*25=$400 per week\nSo his raise was 800-400=$400 per week\nSo he makes 400*52=$20,800 per year more\n#### 20800",
+          "item_id": "gsm8k:train:01344",
+          "question": "Jame gets a raise to $20 per hour and works 40 hours a week.  His old job was $16 an hour for 25 hours per week.  How much more money does he make per year in his new job than the old job if he works 52 weeks a year?",
+          "split": "train"
+        }
+      ],
+      "instruction": "Solve the following math word problem. Show your calculation and finish with a line in the form #### <number>, followed by a newline.",
+      "protocol_name": "qwen_family_4shot_hash4_v1",
+      "source": {
+        "dataset": "openai/gsm8k",
+        "dataset_revision": "740312add88f781978c0658806c59bc2815b9866",
+        "decision": "First four fixed official old-Qwen eight-shot TRAIN examples; selected by Qwen3 reported four-shot count before training outcomes. Final phrase changed to hash4 and Q/A serialization used. Not byte-identical Qwen3 evaluation.",
+        "qwen_prompt_revision": "ba2d85a13b28ed1ee0dde2d6c3e4d5a55dc5964c",
+        "qwen_prompt_sha256": "b067972c3ba476496af49bacfc2ade83e4bc72c47a52f7f0e70d7d9e8f573e0d"
+      }
+    },
+    "format": {
+      "close_text": "</think>\n",
+      "extra_stop_policy": "Both the explicit thought-end token and the base EOS terminate generation. The actually sampled first terminator is included in the policy loss, stripped from note content, and rendered with the reader close delimiter. Log which terminator occurred.",
+      "format": {
+        "additional_stop_ids": [
+          151643
+        ],
+        "close_ids": [
+          151668,
+          198
+        ],
+        "header_ids": [],
+        "open_ids": [
+          198,
+          151667
+        ],
+        "pad_id": 151643,
+        "stop_id": 151668
+      },
+      "header_text": "",
+      "open_text": "\n<think>",
+      "purpose": "New development interface: no instruction header; native think tags; existing GSM full-question reader suffix.",
+      "source": "Paraphrase informed by RLP v2 PDF page 21, not exact paper serialization.",
+      "tokenizer_dir": "local/assets/qwen3-1.7b-base"
+    },
+    "full_question_reanchor": true,
+    "question_prefill_width": 877,
+    "answer_prefill_width": 1208
+  },
+  "costs": {
+    "sum_path_generation_seconds": 22047.298495091964,
+    "sum_job_stage_wall_seconds": 22118.892483908014,
+    "model_setup_seconds": 64.44968053101911,
+    "native_gate_seconds": 4.946962732006796
+  },
+  "complete_outputs": {
+    "path": "validation/postorder_gsm8k_TRAIN512_B0_outputs_20261018.jsonl",
+    "sha256": "b0df3d4971623e68528a1fe12bfc12f1eb79a90dae305a83c41d605bcd0cc88f",
+    "rows": 1536,
+    "retained": "All raw/processed answers, native actions/content, actual costs, strict outcomes and normalized TRAIN gold.",
+    "omitted_repetition": "Shared prompt text and full native input vectors are hash-pinned per row and retained exactly in verified EBS archive."
+  },
+  "examples_selection": "First3 questions in the fixed pre-generation panel order; all3 modes, no outcome filtering.",
+  "examples": [
+    {
+      "item_id": "gsm8k:train:06418",
+      "question": "Macy has a goal of running a total of 24 miles per week. If she runs 3 miles per day, how many miles does Macy have left to run after 6 days so that she could meet her goal?",
+      "gold": "6",
+      "modes": {
+        "direct": {
+          "generated_text": " Let's think step by step\nMacy runs 3 miles per day, so in 6 days she runs 3 miles/day * 6 days = 18 miles.\nHer goal is to run 24 miles per week, so after 6 days she has 24 miles - 18 miles = 6 miles left to run to meet her goal.\n#### 6",
+          "thought_text": null,
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "6",
+          "n_thought_tokens": 0,
+          "n_answer_tokens": 81
+        },
+        "empty_format": {
+          "generated_text": " Let's think step by step\nMacy runs 3 miles per day, so in 6 days she runs 3 * 6 = 18 miles.\nHer goal is to run 24 miles per week, so she has 24 - 18 = 6 miles left to run.\n#### 6",
+          "thought_text": "",
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "6",
+          "n_thought_tokens": 0,
+          "n_answer_tokens": 68
+        },
+        "one_thought": {
+          "generated_text": " Let's think step by step\nShe runs 3 miles per day for 6 days, so she has run 3 * 6 = 18 miles so far. To meet her goal of 24 miles, she has 24 - 18 = 6 miles left to run. #### 6",
+          "thought_text": " 3 miles per day for 6 days is 3*6 = 18 miles.\nTo meet her goal of 24 miles, Macy has 24-18 = 6 miles left to run.\n#### 6",
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "6",
+          "n_thought_tokens": 50,
+          "n_answer_tokens": 67
+        }
+      }
+    },
+    {
+      "item_id": "gsm8k:train:05684",
+      "question": "The kindergartners each need to bring one mini tissue box to class for the school year.  There are three kindergartner groups with 9, 10, and 11 students respectively.  Each mini tissue box contains 40 tissues.  How many tissues do the kindergartner groups bring together?",
+      "gold": "1200",
+      "modes": {
+        "direct": {
+          "generated_text": " Let's think step by step\nThe total number of students in the three groups is 9 + 10 + 11 = 30 students.\nEach student needs one mini tissue box, so there are 30 mini tissue boxes in total.\nEach mini tissue box contains 40 tissues, so the total number of tissues brought by the kindergartner groups is 30 * 40 = 1200 tissues.\n#### 1200",
+          "thought_text": null,
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "1200",
+          "n_thought_tokens": 0,
+          "n_answer_tokens": 99
+        },
+        "empty_format": {
+          "generated_text": " Let's think step by step\nThe total number of students in the three kindergartner groups is 9 + 10 + 11 = 30 students.\nSince each student needs one mini tissue box, the total number of mini tissue boxes needed is 30.\nEach mini tissue box contains 40 tissues, so the total number of tissues needed is 30 * 40 = 1200 tissues.\n#### 1200",
+          "thought_text": "",
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "1200",
+          "n_thought_tokens": 0,
+          "n_answer_tokens": 98
+        },
+        "one_thought": {
+          "generated_text": " Let's think step by step\nThe kindergartners bring 1 mini tissue box each, so the total number of mini tissue boxes is 9 + 10 + 11 = 30.\nSince each mini tissue box contains 40 tissues, the total number of tissues brought by the kindergartner groups is 30 * 40 = 1200.\n#### 1200",
+          "thought_text": " each group brings 1 mini tissue box, so the total number of mini tissue boxes is 9 + 10 + 11 = 30.\nSince each mini tissue box contains 40 tissues, the total number of tissues brought by the kindergartner groups is 30 * 40 = 1200.\n#### 1200",
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "1200",
+          "n_thought_tokens": 78,
+          "n_answer_tokens": 89
+        }
+      }
+    },
+    {
+      "item_id": "gsm8k:train:03120",
+      "question": "There are 192 soaps in a package. They put them in 2 big boxes. If each box contains 6 packages, how much soap do the 2 boxes contain in total?",
+      "gold": "2304",
+      "modes": {
+        "direct": {
+          "generated_text": " Let's think step by step\nEach box contains 6 packages, so 2 boxes contain 6 * 2 = 12 packages.\nEach package contains 192 soaps, so 12 packages contain 12 * 192 = 2304 soaps.\nThe 2 boxes contain a total of 2304 soaps.\n#### 2304",
+          "thought_text": null,
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "2304",
+          "n_thought_tokens": 0,
+          "n_answer_tokens": 86
+        },
+        "empty_format": {
+          "generated_text": " Let's think step by step\nEach box contains 6 packages, so 2 boxes contain 6 * 2 = 12 packages.\nEach package contains 192 soaps, so 12 packages contain 12 * 192 = 2304 soaps.\n#### 2304",
+          "thought_text": "",
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "2304",
+          "n_thought_tokens": 0,
+          "n_answer_tokens": 70
+        },
+        "one_thought": {
+          "generated_text": " Let's think step by step\nEach box contains 6 packages, so the total number of packages in both boxes is 2 * 6 = 12 packages.\nSince each package contains 192 soaps, the total number of soaps in both boxes is 12 * 192 = 2304 soaps.\n#### 2304",
+          "thought_text": " each box contains 6 packages, so the total number of packages in both boxes is 2 * 6 = 12 packages.\nSince each package contains 192 soaps, the total number of soaps in both boxes is 12 * 192 = 2304 soaps.\n#### 2304",
+          "strict_status": "ok",
+          "strict_score": 1,
+          "parsed_answer": "2304",
+          "n_thought_tokens": 73,
+          "n_answer_tokens": 80
+        }
+      }
+    }
+  ],
+  "independent": {
+    "status": "PASS_INDEPENDENT_ALL1536_SCORES_STATUSES_AND_TWO_CIS",
+    "method": "Separate strict regex/Decimal parser, separate vectorized document bootstrap; no experiment reducer called.",
+    "archive_entries_source_and_EBS_destination_verified": 148,
+    "source_files": {
+      "local/analysis/publish_gsm512_B0_20261018.py": "570855cfdb2e0f531f2d08c2f697445eedf4bd1b984ed21f539db95ff288c4d9"
+    },
+    "all_attempts_preserved": true,
+    "absolute": {
+      "direct": {
+        "items": 512,
+        "correct": 429,
+        "accuracy": 0.837890625,
+        "statuses": {
+          "ok": 501,
+          "truncated": 3,
+          "error": 0,
+          "format_error": 8
+        },
+        "unsupported": 11,
+        "thought_actions": 0,
+        "answer_actions": 57438,
+        "thought_caps": 0,
+        "answer_caps": 3,
+        "wall_seconds_total": 4710.985918785911
+      },
+      "empty_format": {
+        "items": 512,
+        "correct": 433,
+        "accuracy": 0.845703125,
+        "statuses": {
+          "ok": 494,
+          "truncated": 2,
+          "error": 0,
+          "format_error": 16
+        },
+        "unsupported": 18,
+        "thought_actions": 0,
+        "answer_actions": 65976,
+        "thought_caps": 0,
+        "answer_caps": 2,
+        "wall_seconds_total": 4824.910015720554
+      },
+      "one_thought": {
+        "items": 512,
+        "correct": 276,
+        "accuracy": 0.5390625,
+        "statuses": {
+          "ok": 365,
+          "truncated": 33,
+          "error": 0,
+          "format_error": 114
+        },
+        "unsupported": 147,
+        "thought_actions": 45096,
+        "answer_actions": 70270,
+        "thought_caps": 115,
+        "answer_caps": 33,
+        "wall_seconds_total": 12510.518671854748
+      }
+    },
+    "contrasts": {
+      "thought_minus_empty_format": {
+        "difference_b_minus_a": -0.306640625,
+        "ci95": [
+          -0.357421875,
+          -0.2578125
+        ],
+        "items": 512,
+        "documents": 512,
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17
+      },
+      "thought_minus_direct": {
+        "difference_b_minus_a": -0.298828125,
+        "ci95": [
+          -0.34765625,
+          -0.248046875
+        ],
+        "items": 512,
+        "documents": 512,
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17
+      }
+    },
+    "matched_empty_rows_thought_columns": {
+      "correct": {
+        "correct": 246,
+        "parsed_wrong": 60,
+        "unsupported": 127
+      },
+      "parsed_wrong": {
+        "correct": 22,
+        "parsed_wrong": 27,
+        "unsupported": 12
+      },
+      "unsupported": {
+        "correct": 8,
+        "parsed_wrong": 2,
+        "unsupported": 8
+      }
+    }
+  },
+  "provenance": {
+    "local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1/summary.json": "bfedc4d3d9e7941f6f561d4772fa246f87f37f488eda48f3f9c8552a47255e46",
+    "local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1/protocol.json": "7d67b7bf1c1ba4a2d55d6ba26757ce0cb76f96625388995cbb1f515099db9760",
+    "local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1/scores.jsonl": "f97e46aca2e61410f3630909148ac6d861ab9430ff9c6ef3f697da7992ed6d45",
+    "local/diagnostics/postorder-gsm8k-train512-B0-v1/generate.closure.json": "bb72b9af6aff77aef72bb69218714e4c9fb1315ee1d62827d88322d6dc402a8f",
+    "local/diagnostics/postorder-gsm8k-train512-B0-v1/generation.sessions-observed.json": "252da14a4d84e64de3c7cd4b7d9ebc2ec13b40adb3227a3cd1bb6453aaf5922e",
+    "local/diagnostics/postorder-gsm8k-train512-B0-v1/final.cleanup.json": "99ddc651652632cb3ff53a07a51a00ab16d39e2bde1816898874936f5659bf91",
+    "local/backups/diagnostics/postorder-gsm8k-train512-B0-v1/ARCHIVE.json": "5080542c82522e491e65975cb23bfe7d5037c2125438fbaf513d4b6eea4faf3d",
+    "local/analysis/postorder-gsm8k-TRAIN512-B0-independent-20261018.json": "7b6d46955644ee083987cb82f596224d606948a10eeb80b84f8b4a056be312c1"
+  },
+  "archive": {
+    "path": "local/backups/diagnostics/postorder-gsm8k-train512-B0-v1/ARCHIVE.json",
+    "status": "complete_SHA256_source_and_destination_readback_verified",
+    "files": 148,
+    "payload_bytes": 45106672
+  },
+  "limitations": [
+    "First128 TRAIN questions have known prior development outcomes; this is not blind or official TEST.",
+    "Direct/empty/one-thought share one model load per question shard; decoding itself reuses the sequential qualified decoder.",
+    "Thought128 is TOTAL sampled actions including native close/EOS; all capped content is retained.",
+    "Strict parser retains execution errors, truncations and format failures in every512 denominator.",
+    "Conditional document-bootstrap intervals are not training-seed uncertainty.",
+    "Complete module receipts are separate from external owned-process/physical closure evidence.",
+    "One unchanged B0 checkpoint; paired document intervals do not measure training-seed uncertainty.",
+    "Generation wall totals include cold graphs and are sums over workers, not wall-clock latency or accelerator FLOPs.",
+    "Transition counts describe paired outcomes, not causal attribution of reasoning versus formatting."
+  ]
+}
