@@ -12,20 +12,23 @@ The owner stopped the original R study and authorized adapting the experiment.
    67.2% versus direct75% and discard75%; LL also slightly worse. Four samples
    per question estimate a single-note policy, without oracle selection.
    All notes/failures/costs retained, independently checked and EBS archived.
-4. ACTIVE: run the reviewed real-FineMath arithmetic-boundary preparer. First
+4. DONE: reviewed real-FineMath arithmetic-boundary preparation. First
    eligible causal boundary after a fixed hash-start per TRAIN/DEV document,
    exact source RHS quality checks after selection, proper-subexpression notes,
    no already-visible answer, matched numeric corruption. Preserve all rejections.
    V1 scan found3 visible-answer filter misses; preserve it as blocked.
-   Corrected v2 source is reviewed;739 required checks pass; fresh CPU scan active.
-   Inspect actual counts, rejection reasons and fixed examples before scoring.
+   V2 closed347895 audits/1064 accepted=996TRAIN68DEV. Exact source/token/
+   arithmetic and independent bounded copy review pass;6 scanner overcaptures
+   resolved separately, original flags preserved. Fixed examples inspected,
+   complete data EBS archived.739 required checks pass.
    Official TEST remains unused.
-5. Seal prospective TRAIN256/DEV64 pools before B0 scores. Test raw, empty,
+5. ACTIVE: prospective TRAIN256/DEV64 and futureTRAIN512 IDs sealed before scores.
+   Frozen reader probe released; native CPU reference running. Test raw, empty,
    correct partial, corrupted, shuffled and unrelated notes on actual source
    numeric spans and natural16 continuations. Add greedy immediate numerical
    completion on the same64DEV×six contexts,384 attempts/cap32, before any model
-   outcome. Retain every error/unsupported value. Review/check the final added
-   source, then qualify new contexts against CPU.
+   outcome. Retain every error/unsupported value. Exact reviewed sources/checks
+   pass; qualify new actual device contexts against CPU before any result rows.
 6. Choose learning only after examining real examples and reader feasibility.
    A new warmstart must use diverse real data, fresh generated-note evaluation,
    full-source ordinary CE on the same accepted chunks as its raw control, and

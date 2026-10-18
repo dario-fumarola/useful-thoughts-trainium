@@ -738,3 +738,21 @@ Packer25 focused tests and independent exact-source review pass; required739
 checks, toy smoke and compileall pass at local/checks/tests.WLpLnu. Dataset
 publication/order, optimizer and fresh generated-note evaluation remain to be
 fixed only after actual reader feasibility. No training has started.
+
+### 2026-10-18 03:44 UTC — qualified corrected data; release actual reader probe
+
+V2 closed all347895 TRAIN/DEV audits, accepted996TRAIN/68DEV. Independent
+arithmetic/source/token/pool checks pass. Six leading-comma scanner flags were
+ordinary prose/index delimiters or distinct-value TeX notation; preserve the
+initial flagged result and separate manual resolutions. No dataset/source edits.
+Root inspected all first4 prefixes per split. The claim remains exact local
+arithmetic and bounded literal-copy coverage, not trustworthy surrounding prose.
+V1 and V2 complete data/evidence have separate SHA-readback EBS archives.
+
+Seal prospective TRAIN512 IDs before any model outcomes, without filtering.
+Exact formula overlap affects6/64DEV; disclose it and retain the fixed panel.
+Release finite prepare/nativeCPU/four LL/four completion stages with actual
+qualification and physical cleanup between stages, no automatic retry. No
+training release. Any later arithmetic evaluation keeps its exact writer prompt;
+GSM uses the unchanged qualified question-only prompt across all arms and is
+explicitly a prompt/domain transfer check.
