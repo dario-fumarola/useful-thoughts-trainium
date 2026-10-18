@@ -53,9 +53,14 @@ def test_checkpoint_identity_requires_same_arm_cursor_and_full_model_lineage():
 
 def test_science_order_is_two_complete_passes_and_compute_baseline_four():
     p=protocol();p.update(purpose='TRAIN5120_partial_state_study',items=5120,steps=320,
-        save_every=160,seed=2026101806,data_sha256='020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb')
+        save_every=160,seed=2026101806,reader_view_schedule='one_teacher_one_plain_per_two_passes',
+        data_sha256='020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb')
     validate(p);order=order_for(p)
     assert len(order)==10240 and Counter(order)==Counter({i:2 for i in range(5120)})
+    views=defaultdict(Counter)
+    for pos,item in enumerate(order):views[item][role_for('reader',pos,5120,item)]+=1
+    assert all(v['reader_teacher']==1 and v['direct']+v['reader_empty']==1 for v in views.values())
+    assert sum(v['direct'] for v in views.values())==sum(v['reader_empty'] for v in views.values())==2560
     assert all(role_for('cot_full',pos,5120,item)=='cot_full' for pos,item in enumerate(order))
     p['steps']=640;validate(p)
     assert Counter(order_for(p))==Counter({i:4 for i in range(5120)})

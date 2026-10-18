@@ -49,6 +49,7 @@ def validate(p):
     if science:
         if (p.get('items')!=5120 or p.get('steps') not in (320,640)
                 or p.get('save_every')!=160 or p.get('lr')!=1e-5
+                or p.get('reader_view_schedule')!='one_teacher_one_plain_per_two_passes'
                 or p.get('data_sha256')!='020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb'
                 or p.get('seed') not in (2026101806,2026101807)):
             raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
@@ -77,6 +78,11 @@ def role_for(arm, position, items, item_index):
         raise ValueError('Unknown short-pack arm')
     if arm != 'reader':
         return arm
+    if items==5120:
+        # Two-pass study: every expression gets one teacher and one plain view.
+        # Interleave roles within each epoch, preserving50/25/25 aggregate mix.
+        if (item_index+position//items)%2==0:return 'reader_teacher'
+        return 'reader_empty' if (item_index//2)%2==0 else 'direct'
     # Over four epochs, every expression receives teacher/teacher/empty/direct.
     return ('reader_teacher', 'reader_teacher', 'reader_empty', 'direct')[(item_index + position // items) % 4]
 
