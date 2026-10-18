@@ -1,0 +1,322 @@
+"""Bounded short-pack SFT mechanics; fresh B0, one ZeRO reducer, full recovery.
+
+This driver initially admits qualification and TRAIN-only overfit work. A large
+scientific study needs a separately frozen protocol after those checks pass.
+"""
+import argparse
+from datetime import datetime, timezone
+import fcntl
+import json
+import math
+import os
+from pathlib import Path
+import random
+import re
+import shutil
+import time
+
+from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
+from train.partial_state_packing import batch_packs, training_pack
+
+ROOT = Path(__file__).resolve().parents[1]
+SCHEMA = 'partial-state-sft-v6'
+ARMS = ('direct', 'cot', 'writer', 'reader')
+
+
+def source_files():
+    names = ('train/partial_state_driver.py', 'train/partial_state_data.py',
+             'train/partial_state_packing.py', 'train/useful_note_sft_data.py',
+             'train/masked_causal_ce.py', 'train/neuron_backend.py',
+             'train/neuron_driver.py', 'train/runtime_compat.py',
+             'train/useful_note_precision.py', 'train/useful_note_recovery.py',
+             'train/useful_note_sft_driver.py', 'weekend_thinking/pretrained.py',
+             'weekend_thinking/checkpoints.py', 'weekend_thinking/core.py',
+             'weekend_thinking/runtime_policy.py', 'weekend_thinking/artifacts.py',
+             'train/evaluate.py')
+    return {name: sha256_file(ROOT / name) for name in names}
+
+
+def validate(p):
+    fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base', items=128,
+                 world_size=4, micro_batch=8, global_batch=32, accumulation=1,
+                 width=128, target_slots=64, schedule='constant',
+                 parameter_dtype='bf16', optimizer_dtype='fp32', head_chunk=32)
+    if any(p.get(k) != v or isinstance(p.get(k), bool) for k, v in fixed.items()):
+        raise ValueError('Require explicit short-pack world4/micro8 qualification identity')
+    if p.get('purpose') not in ('qualification', 'TRAIN_overfit_only'):
+        raise ValueError('No scientific learning release in this mechanics driver')
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= 128
+            or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= 32
+            or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
+        raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
+    if p['source_files'] != source_files():
+        raise ValueError('Frozen short-pack implementation changed')
+
+
+def order_for(p):
+    order = []
+    for epoch in range((p['steps'] * p['global_batch'] + p['items'] - 1) // p['items']):
+        indices = list(range(p['items']))
+        random.Random(p['seed'] + epoch).shuffle(indices)
+        order.extend(indices)
+    return order[:p['steps'] * p['global_batch']]
+
+
+def role_for(arm, position, items, item_index):
+    if arm not in ARMS:
+        raise ValueError('Unknown short-pack arm')
+    if arm != 'reader':
+        return arm
+    # Over four epochs, every expression receives teacher/teacher/empty/direct.
+    return ('reader_teacher', 'reader_teacher', 'reader_empty', 'direct')[(item_index + position // items) % 4]
+
+
+def batch_at(rows, tokenizer, p, order, arm, step, rank):
+    if not 0 <= step < p['steps'] or not 0 <= rank < p['world_size']:
+        raise ValueError('Actual bounded step/rank required')
+    start = step * p['global_batch'] + rank * p['micro_batch']
+    packs = [training_pack(rows[order[pos]], tokenizer, role_for(arm, pos, p['items'], order[pos]),
+                           width=p['width'], target_slots=p['target_slots'])
+             for pos in range(start, start + p['micro_batch'])]
+    return batch_packs(packs)
+
+
+def checkpoint_identity(manifest, weights, saved, p, arm, run_id, rank, order_hash, protocol_sha):
+    """Check lineage before supported loading and full actual byte verification."""
+    step = manifest['step']
+    expected = dict(spec_hash=canonical_hash(p), arm=arm, seed=p['seed'],
+                    order_hash=order_hash, protocol_sha256=protocol_sha,
+                    pipeline_schema=SCHEMA, data_sha256=p['data_sha256'])
+    if (manifest['run_id'] != run_id or manifest['world_size'] != p['world_size']
+            or not 1 <= step <= p['steps'] or manifest['spec_hash'] != expected['spec_hash']
+            or any(manifest['metadata'].get(k) != v or saved.get(k) != v for k, v in expected.items())
+            or any(weights.get(k) != v for k, v in dict(step=step, run_id=run_id, spec_hash=expected['spec_hash']).items())
+            or saved.get('rank') != rank or saved.get('world_size') != p['world_size']
+            or saved.get('step') != step or saved.get('counters') != manifest['metadata']['counters']
+            or saved['counters']['expressions'] != step * p['global_batch']):
+        raise ValueError('Full short-pack checkpoint lineage/cursor differs')
+    return step
+
+
+def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha):
+    import numpy as np
+    import torch
+    import torch.distributed as dist
+    import torch_xla
+    import torch_xla.core.xla_model as xm
+    import torch_xla.runtime as xr
+    import torch_xla.distributed.xla_backend  # noqa: F401
+    from torch_xla.amp.syncfree import AdamW
+    from torch_xla.distributed.zero_redundancy_optimizer import ZeroRedundancyOptimizer
+    from train.masked_causal_ce import masked_causal_ce
+    from train.neuron_backend import NeuronCausalBackend
+    from train.neuron_driver import restore_rng_after_sync, save_checkpoint
+    from train.runtime_compat import configure_runtime
+    from train.useful_note_precision import cast_parameters, master_samples, active_shard_samples, shard_expectations
+    from train.useful_note_sft_driver import inspect_optimizer, native_gate_consensus, publish_native_gate, recovery_consensus, replicas_bitwise_equal
+    from weekend_thinking.pretrained import load_base, sampled_fingerprint
+    from weekend_thinking.runtime_policy import require_runtime_policy, runtime_policy
+
+    configure_runtime()
+    if not hasattr(torch, 'xla'):
+        torch._register_device_module('xla', torch_xla)
+    require_runtime_policy(p['runtime_policy'], runtime_policy())
+    device = torch_xla.device(); rank, world = xr.global_ordinal(), xr.world_size()
+    if world != p['world_size'] or os.environ.get('NEURON_RT_CONTIGUOUS_SCRATCHPAD') != '0':
+        raise ValueError('Actual world/allocator differs')
+    dist.init_process_group('xla', init_method='xla://')
+    random.seed(p['seed'] + rank); np.random.seed((p['seed'] + rank) % 2**32); torch.manual_seed(p['seed'])
+    model, _ = load_base(p['model_dir'])
+    if sampled_fingerprint(model) != p['base_signature']:
+        raise ValueError('Fresh actual released B0 required')
+    conversion = cast_parameters(model); expected = shard_expectations(model, rank, world)
+    model.to(device); model.tie_weights()
+    if any(t.dtype != torch.bfloat16 for t in model.parameters()) or sampled_fingerprint(model) != p['base_signature']:
+        raise ValueError('Actual released tied BF16 parameters required')
+    for name, value in model.named_buffers():
+        if value.is_floating_point() and (value.dtype != torch.float32 or canonical_hash(value.detach().cpu().reshape(-1).tolist()) != conversion['buffers'][name]['sha256']):
+            raise ValueError('Original FP32 rotary buffer changed')
+    sync = lambda: torch_xla.sync(wait=True)
+    backend = NeuronCausalBackend(model, sync=sync, head_chunk=p['head_chunk'])
+    evidence = args.output if args.resume is None else args.recovery_dir / 'initialization'
+    if rank == 0:
+        evidence.mkdir(parents=True, exist_ok=False)
+    xm.rendezvous('partial-native-directory')
+    with torch.no_grad():
+        context = refs[rank]['context_ids']; x = torch.full((1, 1024), 151643, dtype=torch.long)
+        x[0, :len(context)] = torch.tensor(context)
+        h = backend.hidden(x.to(device)); z = model.lm_head(h[:, len(context)-1]); lp = z.float().log_softmax(-1); sync()
+        gate = publish_native_gate(evidence, rank, rank, lp.cpu(), native[rank:rank+1], str(h.dtype), str(z.dtype), p, protocol_sha, raise_on_failure=False)
+        del x, h, z, lp
+    native_gate_consensus(evidence, rank, world, gate, xm, device)
+    optimizer = ZeroRedundancyOptimizer(model.parameters(), AdamW, optimizer_dtype=torch.float32,
+        grad_clipping=True, max_norm=1., save_master_weights=True, lr=p['lr'], betas=(.9, .95),
+        eps=1e-8, weight_decay=.1, use_grad_acc_hook=False, higher_cc_precision=False)
+    initial = master_samples(optimizer, expected)
+    if not torch.equal(initial.view(torch.uint8), expected['values'].contiguous().view(torch.uint8)):
+        raise RuntimeError('FP32 masters differ from released CPU shard samples')
+    atomic_json(evidence/f'initial-master-rank-{rank:05d}.json', dict(rank=rank, exact_released_FP32_samples=True))
+    torch.save(dict(expected_cpu=expected['values'], actual_fp32_masters=initial), evidence/f'initial-master-rank-{rank:05d}.pt')
+    found_inf = torch.zeros((), device=device); order_hash = canonical_hash(order)
+    state = dict(pipeline_schema=SCHEMA, spec_hash=canonical_hash(p), arm=args.arm, seed=p['seed'],
+                 order_hash=order_hash, protocol_sha256=protocol_sha, data_sha256=p['data_sha256'])
+    deadline = require_utc_deadline(args.deadline_utc)
+    def stopped():
+        return bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(float(args.stop_file.exists() or datetime.now(timezone.utc) >= deadline), device=device)).cpu())
+    counters = dict(expressions=0, supervised_tokens=0); begin = 0
+    if args.resume is not None:
+        error = None
+        try:
+            weights = torch.load(args.resume/'model.pt', map_location='cpu', weights_only=True)
+            saved = torch.load(args.resume/f'rank-{rank:05d}.pt', map_location='cpu', weights_only=True)
+            begin = checkpoint_identity(args.resume_manifest, weights, saved, p, args.arm, args.output.name, rank, order_hash, protocol_sha)
+        except Exception as e:
+            error = f'{type(e).__name__}: {e}'
+        recovery_consensus(args.recovery_dir, rank, world, error, xm, device, 'payload')
+        error = None
+        try:
+            from train.useful_note_recovery import restore_and_verify
+            report = restore_and_verify(model, optimizer, weights, saved, xm=xm, device=device, sync=torch_xla.sync)
+            inspect_optimizer(optimizer, begin, len(list(model.parameters())))
+        except Exception as e:
+            error = f'{type(e).__name__}: {e}'
+        recovery_consensus(args.recovery_dir, rank, world, error, xm, device, 'restored')
+        atomic_json(args.recovery_dir/f'restored-rank-{rank:05d}.json', report)
+        counters = saved['counters']; run_updates = not stopped()
+        restore_rng_after_sync(saved['rng'], xm, device, torch_xla.sync)
+        del saved, weights
+    elif rank == 0:
+        atomic_json(args.output/'run.json', dict(state, purpose=p['purpose'], planned_steps=p['steps'],
+            assets=assets, model='Qwen/Qwen3-1.7B-Base', global_batch=32, micro_batch=8, started_utc=utc_now()))
+    if args.resume is None:
+        run_updates = not stopped()
+    last = begin; checkpoint_walls = []; loop_started = time.monotonic()
+    for step in (range(begin, p['steps']) if run_updates else ()):
+        started = time.monotonic(); optimizer.zero_grad(set_to_none=True)
+        audited = step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
+        before = master_samples(optimizer, expected) if audited else None
+        batch = batch_at(rows, tok, p, order, args.arm, step, rank)
+        ce = masked_causal_ce(backend, **batch); ce.loss.backward(); sync()
+        loss = float(ce.loss.detach().cpu())
+        if not math.isfinite(loss) or any(t.grad is not None and t.grad.dtype != torch.bfloat16 for t in model.parameters()):
+            raise RuntimeError('Nonfinite loss or wrong gradient storage')
+        finite = torch.stack([torch.isfinite(t.grad).all() for t in model.parameters() if t.grad is not None]).all()
+        if bool(xm.all_reduce(xm.REDUCE_MAX, (~finite).float()).cpu()):
+            raise RuntimeError('Nonfinite actual gradient')
+        optimizer.step(found_inf=found_inf); sync(); norm = float(optimizer.grad_norm.cpu())
+        if not math.isfinite(norm) or norm <= 0:
+            raise RuntimeError('Invalid global clipped norm')
+        if audited:
+            after = master_samples(optimizer, expected); active = active_shard_samples(model, expected)
+            if not torch.isfinite(after).all() or not (after-before).ne(0).any() or not torch.equal(active.view(torch.uint8), after.bfloat16().view(torch.uint8)):
+                raise RuntimeError('Actual FP32 master update/cast check failed')
+            # Shard samples differ by rank; compare replicated MODEL samples.
+            sampled = torch.cat([v.detach().reshape(-1)[:32] for v in model.parameters()]).cpu()
+            replicas = xm.all_gather(sampled.to(device)).reshape(world, -1).cpu()
+            if not replicas_bitwise_equal(replicas):
+                raise RuntimeError('Replicated BF16 model samples disagree')
+        if step == 2:
+            inspection, _ = inspect_optimizer(optimizer, step+1, len(list(model.parameters())))
+            atomic_json(evidence/f'optimizer-after3-rank-{rank:05d}.json', inspection)
+        labels = int((batch['note_close_mask'] | batch['future_mask']).sum())
+        total_loss, total_labels = xm.all_reduce(xm.REDUCE_SUM, torch.tensor([loss, float(labels)], device=device)).cpu().tolist()
+        counters['expressions'] += p['global_batch']; counters['supervised_tokens'] += int(total_labels); last = step+1
+        stop = stopped()
+        halt = args.halt_after is not None and last == args.halt_after
+        if rank == 0:
+            metric = dict(step=last, time_utc=utc_now(), elapsed_seconds=time.monotonic()-started,
+                          loss=total_loss/world, gradient_norm=norm, actual_master_and_replica_audit=audited,
+                          counters=dict(counters), ordered_item_ids=[rows[k]['item_id'] for k in order[step*32:(step+1)*32]])
+            with (args.output/'metrics.jsonl').open('a') as f:
+                f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
+        if last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
+            saving = time.monotonic()
+            # Full state is approximately14 bytes/parameter; reserve16 plus
+            # the existing35GiB floor before any rank starts writing.
+            scarce = float(shutil.disk_usage(args.output).free < 35*2**30 + 16*p['base_signature']['parameters'])
+            if bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(scarce, device=device)).cpu()):
+                raise RuntimeError('Insufficient space for full state plus35GiB reserve; retain prior checkpoints')
+            inspect_optimizer(optimizer, last, len(list(model.parameters())))
+            save_checkpoint(args.output, model, optimizer, last, dict(state, counters=dict(counters)), rank, world, xm, device)
+            checkpoint_walls.append(dict(step=last, rank0_wall_seconds=time.monotonic()-saving))
+        del ce, batch
+        if stop or halt:
+            break
+    if rank == 0:
+        atomic_json(args.output/'completion.json', dict(status='complete' if last == p['steps'] else 'stopped_at_boundary',
+            actual_steps=last, planned_steps=p['steps'], purpose=p['purpose'], finished_utc=utc_now(),
+            checkpoint_walls=checkpoint_walls, loop_including_saves_seconds=time.monotonic()-loop_started), overwrite=args.resume is not None)
+    dist.destroy_process_group()
+
+
+def main():
+    a = argparse.ArgumentParser(description=__doc__)
+    for name in ('protocol', 'output', 'stop-file'):
+        a.add_argument('--'+name, type=Path, required=True)
+    a.add_argument('--arm', choices=ARMS, required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
+    args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
+    if args.halt_after is not None and not 1 <= args.halt_after < p['steps']:
+        raise ValueError('Explicit unfinished complete-update boundary required')
+    if (args.resume is None) != (args.attempt_id is None) or args.resume is None and args.output.exists():
+        raise ValueError('Fresh output or explicit original-run recovery attempt required')
+    if require_utc_deadline(args.deadline_utc) <= datetime.now(timezone.utc):
+        raise ValueError('Future finite deadline required')
+    if (os.environ.get('NEURONCORE_NUM_DEVICES') != '4'
+            or os.environ.get('NEURON_RT_VISIBLE_CORES') != p['visible_cores']
+            or os.environ.get('NEURON_LOGICAL_NC_CONFIG') != '2'
+            or os.environ.get('NEURON_RT_CONTIGUOUS_SCRATCHPAD') != '0'
+            or any(not os.environ.get(k) for k in ('MASTER_PORT', 'NEURON_RT_ROOT_COMM_ID', 'MASTER_ADDR'))):
+        raise ValueError('Explicit qualified four-core topology and communication endpoints required')
+    if args.attempt_id is not None and not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,63}', args.attempt_id):
+        raise ValueError('One fresh simple recovery attempt ID required')
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with (args.output.parent/('.'+args.output.name+'.writer.lock')).open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        from transformers import AutoTokenizer
+        from train.evaluate import asset_provenance
+        from train.useful_note_sft_driver import load_native_reference
+        if sha256_file(p['data_file']) != p['data_sha256'] or sha256_file(p['base_protocol']) != p['base_protocol_sha256']:
+            raise ValueError('Frozen data or native base protocol changed')
+        rows = [json.loads(x) for x in Path(p['data_file']).read_text().splitlines()][:p['items']]
+        if len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items'] or any(r['panel'] != 'TRAIN' for r in rows):
+            raise ValueError('First128 distinct TRAIN expressions required')
+        assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
+        if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']
+                or p['base_signature'] != base['base_signature'] or p['precision_contract'] != base['precision_contract']):
+            raise ValueError('Pinned real released model required')
+        tok = AutoTokenizer.from_pretrained(p['model_dir'], local_files_only=True, trust_remote_code=False)
+        refs, native = load_native_reference(base, assets); order = order_for(p)
+        if args.resume is not None:
+            from train.neuron_driver import verify_checkpoint
+            args.resume_manifest = verify_checkpoint(args.resume, canonical_hash(p), p['world_size'])
+            if (args.resume.parent.resolve() != args.output.resolve() or args.resume.is_symlink()
+                    or json.loads((args.output/'run.json').read_text())['arm'] != args.arm
+                    or args.resume_manifest['step'] >= p['steps']):
+                raise ValueError('Original run/arm full checkpoint required')
+            metric_file = args.output/'metrics.jsonl'; lines = metric_file.read_bytes().splitlines(keepends=True)
+            step = args.resume_manifest['step']
+            if len(lines) < step or [json.loads(x)['step'] for x in lines[:step]] != list(range(1, step+1)):
+                raise ValueError('Saved complete metric prefix required')
+            for i, line in enumerate(lines[:step]):
+                m = json.loads(line)
+                if m['ordered_item_ids'] != [rows[k]['item_id'] for k in order[i*32:(i+1)*32]] or m['counters']['expressions'] != (i+1)*32:
+                    raise ValueError('Saved completed order/counters differ')
+            later = [q for q in args.output.glob('step-*') if int(q.name[5:]) > step]
+            if any((q/'COMPLETE.json').exists() for q in later):
+                raise ValueError('Use the latest complete resumable checkpoint')
+            args.recovery_dir = args.output/'recoveries'/args.attempt_id; args.recovery_dir.mkdir(parents=True, exist_ok=False)
+            (args.recovery_dir/'previous-metrics.jsonl').write_bytes(b''.join(lines))
+            if (args.output/'completion.json').exists():
+                (args.recovery_dir/'previous-completion.json').write_bytes((args.output/'completion.json').read_bytes())
+            for q in later:
+                dest = args.recovery_dir/'abandoned'/q.name; dest.parent.mkdir(exist_ok=True); q.rename(dest)
+            from weekend_thinking.artifacts import atomic_bytes
+            atomic_bytes(metric_file, b''.join(lines[:step]), overwrite=True)
+        import torch_xla.distributed.xla_multiprocessing as xmp
+        xmp.spawn(worker, args=(args, p, rows, tok, assets, refs, native, order, sha256_file(args.protocol)), nprocs=None)
+
+
+if __name__ == '__main__':
+    main()
