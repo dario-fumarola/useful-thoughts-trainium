@@ -51,9 +51,13 @@ outputs and the fixed first two examples per panel are public and EBS-archived:
 
 Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
 compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
-Both compact and full-trace baselines remain competitors. Qualify full64 recovery
-and storage before longer continuation. More capacity stays an option; the useful
-signal already exists at1.7B. [Current queue](NEXT_STEPS.md).
+Both compact and full-trace baselines remain competitors. First-seed reader and
+writer320 training is complete and independently audited; full64 reader recovery
+passes, and the direct640 control is running. No new DEV accuracy is reported yet.
+[Reader training](validation/partial_state_v7_reader_seed2026101806_training_20261018.json) ·
+[writer training](validation/partial_state_v7_writer_seed2026101806_training_20261018.json) ·
+[current queue](NEXT_STEPS.md). More capacity remains an option; the useful signal
+already exists at1.7B.
 
 ## Earlier matched developmental64 comparison
 

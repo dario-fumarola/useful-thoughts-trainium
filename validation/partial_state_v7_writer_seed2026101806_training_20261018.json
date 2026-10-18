@@ -1,0 +1,181 @@
+{
+  "schema": "partial-state-v7-writer320-full-state-training-v1",
+  "status": "PASS_ACTUAL_WRITER320_FULL_CHECKPOINTS_PREFIX_ONLY_AND_PROTECTED_TERMINAL",
+  "finished_utc": "2026-10-18T22:34:19.802098+00:00",
+  "run_id": "partial-state-v7-writer-TRAIN5120-seed2026101806-v1",
+  "step": 320,
+  "planned_terminal": 320,
+  "checkpoints": {
+    "64": {
+      "COMPLETE_sha256": "11a3c204425bac8cc6010ebf9b71b1c4067af97de2598e53359d43d23299d6d6",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "c2eb973129507cc63cc12d3ad9dc954294d53b4eb5a690e3cade82286ee318d5"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "b42f7f1ea7b04ef3fd0d8964118014c0a219d1058af97b23900e7c6c037f7a16"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "a9f2ce89ef76740040e177a233fc66c585d178aaea25ce6a649b5151e926e4c2"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "fc4e1a0678246117a34b103aa2d8f6935155c3dfb852171b9510daee7bbe55f2"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "4d123659b75087d06dfd2efe7cfed9bcd9d6059a9ee8d2fbfca9b402c05ac636"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 64,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "160": {
+      "COMPLETE_sha256": "ca38c12780e893f91a9c142d6dfea96af80e45c870446bc741a04a7a0c0da529",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "e725ea6198bcafaf4e1465b77765ac03e88a7f9a55cf000676de248d496c421e"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "d3531bc68dd5468ef6db9d6e9e2c5fa84995a0ef8de3ab1c9c2b8a693513693e"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "d48c16cdb1b41f085eae0e3c54e1c402465b94ef30ace4c42f3ba1215db6b280"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "1c94b14b660fe466ad4324ecf5baec22d7415d11dcdbdcb9f4b58c1d6a96a03b"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "3142e711b1ef662ad0d2869c7ca3b154f9747495d751d4d803bf73c1386d57c5"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 160,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "320": {
+      "COMPLETE_sha256": "8e5ce3f23f233e171677d65d100b3b7f76e11afa2adb0ac6b34c47bccc288fa3",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "547935363a0dddc444f28eb30c2508f8af26042fa887208a753687e570d80f7d"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "99729faad6898ac39f19a2cc1f0b81752ac62aaeffde1c173a853d691f1adf66"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "6402033e5e413e18e38868da3729450d44cdb2fbc1131100e848837e76e8625b"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "9514a37dc2b2a5d94ab0f7fcc7759dab2c4c0979479e729e38e961cb182bf758"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "538e0c152d7c14d54f336173125259b32fe22ea447b34a45665ac78c0bfd3cc5"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 320,
+      "exported_model_equals_reassembled_cast_masters": true
+    }
+  },
+  "expressions": 10240,
+  "supervised_tokens": 255116,
+  "actual_native_checks": [
+    {
+      "reference_to_device_kl_nats": 0.003038018943671619,
+      "device_to_reference_kl_nats": 0.0031035199827923296,
+      "max_bidirectional_kl_nats": 0.0031035199827923296,
+      "passed": true,
+      "max_logp_error": 0.4776469232392877,
+      "rms_logp_error": 0.11136195315202933,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0030697297315727835,
+      "device_to_reference_kl_nats": 0.003041836099938893,
+      "max_bidirectional_kl_nats": 0.0030697297315727835,
+      "passed": true,
+      "max_logp_error": 0.3318406019216269,
+      "rms_logp_error": 0.06558423713648606,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 2.110202660403744e-05,
+      "device_to_reference_kl_nats": 2.157230339493209e-05,
+      "max_bidirectional_kl_nats": 2.157230339493209e-05,
+      "passed": true,
+      "max_logp_error": 0.19990114601651499,
+      "rms_logp_error": 0.04093075259376543,
+      "relative_l2_logp_error": 0.0014795616361593922,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0003244116031699334,
+      "device_to_reference_kl_nats": 0.000325946147481554,
+      "max_bidirectional_kl_nats": 0.000325946147481554,
+      "passed": true,
+      "max_logp_error": 0.2453446255999836,
+      "rms_logp_error": 0.04909559206530713,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "argmax_equal": true
+    }
+  ],
+  "all1240_FP32_master_and_moment_shards_finite": true,
+  "all_adam_steps": 320,
+  "exported_BF16_model_bytes_equal_all_reassembled_cast_masters": true,
+  "all_original_sessions_and_device_physically_closed": true,
+  "checkpoint_manifest_sha256": "8e5ce3f23f233e171677d65d100b3b7f76e11afa2adb0ac6b34c47bccc288fa3",
+  "complete_checkpoint_bytes": 24089821871,
+  "EBS_archive_receipt_sha256": "7932e47dff1d0fed508803d2c7b8723e533a726f639a52eb4fff6e6cd0733582",
+  "warm_update_median_seconds": 0.7061262335046194,
+  "observed_peak_node_process_PSS_GiB": 78.33286666870117,
+  "limits": [
+    "No held DEV evaluated or capability inference from training loss.",
+    "First-seed reader and writer complete; all single-model competitors and second seed remain pending. No new trained DEV answers evaluated.",
+    "Writer is one uninterrupted fresh-B0 run; actual restart qualification belongs to the separately reported reader and mechanics models, not this writer.",
+    "Bounded target-topology observation, not a general multi-hour or oldworld32 memory guarantee.",
+    "Full64 and full160 payloads remain on NVMe, with manifests/digests on EBS; terminal320 full state is also protected on EBS."
+  ],
+  "public_metrics": {
+    "validation/partial_state_v7_writer_seed2026101806_training_20261018/all320-update-metrics.jsonl.gz": {
+      "bytes": 409125,
+      "sha256": "dd88c5e1ae85a950c0c48a039a37fb9f70c335a542255261815dcd834e7f3857"
+    }
+  },
+  "audit_script_sha256": "c206d861fadb4cd155bf156712e0628a9dee0efe512139f40fba7cb3866ac144",
+  "protocol_sha256": "20ab8021431e696917237f31d7ef9980e1ccd9f33edd835874d6ba225ea68219",
+  "source_files": {
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "b4bb9756d89f5071521efd0ab2abcb2b8389f24f78915b4f212452a095344b09",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  }
+}

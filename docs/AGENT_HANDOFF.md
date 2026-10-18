@@ -6,27 +6,29 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 22:38UTC handoff: v6 fresh comparison is complete and positive in the
-restricted synthetic setting. Public18432answers/2048notes and independent audits:
-validation/partial_state_v6_DEV512_frozen128_20261018.json. Split had two models/
-twice the updates; preserve that caveat and frozen source3301d22.
+October18 current handoff: v6 fresh comparison is complete, positive only for
+restricted synthetic computation; split had two models/twice the training updates.
+Frozen source3301d22 and all18432answers/2048notes remain preserved/public.
+Current matched5120/two-seed study uses immutable source57d3220,1601checks pass.
+First-seed reader320 and writer320 both independently pass every ordered update,
+full64/160/320 state readbacks and EBS full terminal archives; both are frozen.
+Reader fresh64 restore passes all4actual active/optimizer bytes then updates65–320.
+No new trained DEV outcomes inspected. CPU/native preparations running in
+local/analysis/partial-state-v7-seed1806-evaluation-preparation-20261018.log.
+Direct640 active:tmux dario-ps7-direct640, timeout PID144944/startticks19762841,
+physical3/logical12–15, deadline Oct19 02:30UTC. Controls/output basename
+partial-state-v7-direct-TRAIN5120-seed2026101806-v1 under local/diagnostics and
+local/nvme/runs. Last observed160, full64/160. Watch run.log and ordered metrics.
+Next:launch frozen writer/reader evaluation, finish A640audit, then both CoT640
+controls and second seed. Prepared baseline controllers remain unreleased.
 
-Current question:matched-cost/two-seed study at fresh B0,5120expressions, source
-57d3220 in immutable local/worktrees/partial-state-science-v7. All1601checks pass.
-Design includes A640/Bcompact640/Bfull640 versus R320+W320,96total inference actions.
-First-seed reader320 independently passes full64/160/320, actual fresh64 restore
-and ordered65–320, protected full terminal and frozen binding. First writer320
-physically closes22:29UTC; its independent audit/EBS copy runs in tool session33884:
-local/analysis/partial-state-v7-writer320-terminal-audit-20261018.log.
-Controls/output:local/{diagnostics,nvme/runs}/partial-state-v7-writer-TRAIN5120-seed2026101806-v1.
-Next:finish writer audit/binding, then launch direct640 and both CoT640 controls,
-then seed2. No new DEV answers inspected. Check NEXT_STEPS.md before action.
-
-Keep35GiB EBS reserve. Three inactive engineering EBS duplicates retired only
-after fresh full readback on both sides; complete original NVMe copies remain.
-Four NVMe alias pairs already shared inodes, so re-verification freed0bytes.
-Further states need verified lossless archival/retention before disk exhaustion.
-No8B launched; full replicated weights+grads exceed24GiB/logical bank. No RL.
+Storage:extra previously unformatted/unmounted local SSD is verified and mounted
+local/nvme-study,1.7TiB free initially; future runs/evaluations go there. No cloud
+resource changes. Actual preflight/write-readback receipt in local/analysis.
+Three inactive EBS engineering duplicates retired after fresh both-side hashes;
+original full NVMe copies remain. All41bounded archive payloads are restored to
+exact original paths. Keep35GiB reserves and a protected full resumable state.
+No8B launched; current replicated weights+grads exceed24GiB/logical bank. No RL.
 
 ## Your job
 

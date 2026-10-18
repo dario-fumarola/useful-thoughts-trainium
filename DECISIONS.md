@@ -1103,3 +1103,12 @@ engineering EBS duplicate payload sets retired after both copies freshly hash
 match; complete originals stay on NVMe, all receipts preserved. Four NVMe alias
 pairs already share inodes, so the duplicate check freed0bytes. Do not budget
 imaginary102GiB reclamation; preserve unique science with verified lossless archives.
+
+2026-10-18 22:40 UTC — Writer320 independently passes4native gates, all320orders/counters,
+full64/160/320 model/master/moment states and full EBS terminal readback. Both R/W
+terminals frozen; direct640 starts fresh B0 on physical3, no new DEV review.
+Storage investigation finds three unused unformatted local instance SSDs. Initialize
+one only after no signatures/partitions/mounts/holders/raw users, and verify a real
+write/readback; local/nvme-study adds1.7TiB without cloud changes. Stop unnecessary
+compression and restore all41bounded old payloads, every original byte rehashed.
+Future baselines use the extra disk; current runs/identities remain in place.

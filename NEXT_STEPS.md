@@ -16,18 +16,20 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. First-seed reader320 is complete, independently audited, full terminal protected
-   on EBS, and frozen. Actual full64 fresh restore and ordered65–320 pass.
-   Writer320 is physically closed; finish its independent full-state audit,
-   EBS terminal readback and frozen binding before evaluating it.
-   Audit: `local/analysis/partial-state-v7-writer320-terminal-audit-20261018.log`.
-   Controls: `local/diagnostics/partial-state-v7-writer-TRAIN5120-seed2026101806-v1`.
-   Next launch direct640, then both CoT640 controls, then seed2. Use logical12–15/
-   physical3, unique ports/private TMPDIR. One training arm at a time; monitor
-   memory and disks, keep a protected recent full state, no automatic retry.
+3. First-seed reader320 and writer320 are complete, independently audited,
+   full terminal protected on EBS, and frozen. Actual reader64 fresh restore and
+   ordered65–320 pass. No new DEV answers inspected. Prepare full fixed-panel
+   generation on physical8(writer)/9(reader) while training stays on physical3.
+   Preparation log: `local/analysis/partial-state-v7-seed1806-evaluation-preparation-20261018.log`.
+   Direct640 is active in tmux `dario-ps7-direct640`, timeout PID144944/start19762841,
+   controls `local/diagnostics/partial-state-v7-direct-TRAIN5120-seed2026101806-v1`;
+   output same basename under `local/nvme/runs`. Deadline Oct19 02:30UTC.
+   Next finish its full state audit, then compact/full CoT640, then seed2.
+   Baseline controllers are prepared, unreleased; outputs use `local/nvme-study/runs`.
+   Unique ports/private TMPDIR, one training arm at a time, memory/disk floors,
+   no automatic retry. All17source hashes must match immutable source57d3220.
    Fixed320/640 protocols live in
    `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
-   Verify all17source hashes and actual per-job release; no source mutation.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -63,7 +65,12 @@ Three inactive EBS qualification duplicates were retired after fresh complete
 readbacks of both copies; original full NVMe states and all EBS metadata remain.
 Receipts: `local/analysis/retire-{one,second,third}-inactive-EBS-duplicate-20261018.json`.
 Four older NVMe alias pairs already shared inodes: fresh readback reclaimed0bytes,
-not102GiB. Storage needs explicit planning before remaining640-step arms: use
-verified duplicate retirement or lossless archives with decompressed byte hashes;
-keep unique science/model outputs and a recent full optimizer state. EBS is
-same-instance. Root owns work; subagents unavailable due account usage limits.
+not102GiB. The bounded lossless archive was fully restored to original .pt paths
+(all41payloads rehashed). Three previously unformatted/unmounted local instance
+SSDs were identified; one is now initialized/mounted at `local/nvme-study`, adding
+1.7TiB. Real write/readback and no-signature/no-device-user preflight receipt:
+`local/analysis/extra-local-store-initialization-20261018.json`. No cloud changes.
+A and old science stay on the original disk; future outputs use the extra store.
+Retain full terminals and all results; EBS same-instance backups still require
+35GiB reserve and explicit full-state/model retention. No destructive disk moves.
+Root owns work; subagents unavailable due account usage limits.
