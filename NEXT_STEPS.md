@@ -16,20 +16,27 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. First-seed reader320 and writer320 are complete, independently audited,
-   full terminal protected on EBS, and frozen. Actual reader64 fresh restore and
-   ordered65–320 pass. No new DEV answers inspected. Prepare full fixed-panel
-   generation on physical8(writer)/9(reader) while training stays on physical3.
-   Preparation log: `local/analysis/partial-state-v7-seed1806-evaluation-preparation-20261018.log`.
-   Direct640 is active in tmux `dario-ps7-direct640`, timeout PID144944/start19762841,
-   controls `local/diagnostics/partial-state-v7-direct-TRAIN5120-seed2026101806-v1`;
-   output same basename under `local/nvme/runs`. Deadline Oct19 02:30UTC.
-   Next finish its full state audit, then compact/full CoT640, then seed2.
-   Baseline controllers are prepared, unreleased; outputs use `local/nvme-study/runs`.
-   Unique ports/private TMPDIR, one training arm at a time, memory/disk floors,
-   no automatic retry. All17source hashes must match immutable source57d3220.
-   Fixed320/640 protocols live in
-   `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
+3. First-seed reader320,writer320,direct640 independently pass all updates/full
+   states and are frozen. Actual reader64 restart passes. Compact-CoT640 closes
+   and passes strict640 binding; its independent CPU audit is active (session20128).
+   Full-CoT640 runs in tmux `dario-ps7-fullcot640`, timeout PID181369/start19938224,
+   physical3/logical12–15, deadline Oct19 04:30UTC. Controls/output basename
+   `partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1` under diagnostics and
+   `local/nvme-study/runs`; last observed64/full64. One training arm at a time.
+   A and compact S1 controller receipts copied320digest after verifying all5states;
+   originals preserved; `closure-terminal640-correction-v1.json` binds actual640.
+   A strict gate initially rejected it; both corrected bindings now pass. Every
+   unstarted640template is fixed. Never silently edit an old receipt or live source.
+   First-seed writer evaluation complete, all2048attempts EBS readback verified.
+   Reader/physical9 and direct/physical5 evaluations live; first96-action cache
+   graph still compiling actively. No new accuracy or state diagnostics reviewed.
+   Compact CPU preparation session6403/log `partial-state-v7-cot1-evaluation-preparation-20261018.log`;
+   when READY, launch `dario-ps7-dev-cot1` from its generated launch-controller.sh.
+   Full-CoT completes -> generic full audit/frozen binding/CPU prep/eval physical7.
+   Then release seed2026101807 reader320,writer320,A640,compact640,full640 in order.
+   Second-seed controllers prepared/unreleased; all17source hashes must match57d3220.
+   Full analysis registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
+   Public independent audit requires all10four-panel controllers closed before gold/outcome review.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -61,9 +68,9 @@ proving the originalworld32 OOM fixed or qualifying the old RL loop.
 
 Keep35GiB EBS reserve; EBS is same-instance storage. Full fitting states remain
 on NVMe, frozen models/output/numerical evidence on read-back verified EBS.
-Three inactive EBS qualification duplicates were retired after fresh complete
+Four inactive EBS qualification duplicates were retired after fresh complete
 readbacks of both copies; original full NVMe states and all EBS metadata remain.
-Receipts: `local/analysis/retire-{one,second,third}-inactive-EBS-duplicate-20261018.json`.
+Receipts: `local/analysis/retire-{one,second,third,fourth}-inactive-EBS-duplicate-20261018.json`.
 Four older NVMe alias pairs already shared inodes: fresh readback reclaimed0bytes,
 not102GiB. The bounded lossless archive was fully restored to original .pt paths
 (all41payloads rehashed). Three previously unformatted/unmounted local instance
@@ -71,6 +78,10 @@ SSDs were identified; one is now initialized/mounted at `local/nvme-study`, addi
 1.7TiB. Real write/readback and no-signature/no-device-user preflight receipt:
 `local/analysis/extra-local-store-initialization-20261018.json`. No cloud changes.
 A and old science stay on the original disk; future outputs use the extra store.
-Retain full terminals and all results; EBS same-instance backups still require
-35GiB reserve and explicit full-state/model retention. No destructive disk moves.
+Retain every original full checkpoint on local SSDs and all scientific outputs.
+EBS keeps every terminal model and the latest full resumable state. Retire only
+older EBS optimizer duplicates after fresh both-side full hashes and verification
+of latest full recovery; preserve all metadata/receipts. Current index:
+`validation/partial_state_v7_checkpoint_retention_20261018.json`. EBS is same-instance;
+keep35GiB floors. Do not change frozen checkpoint paths or live source.
 Root owns work; subagents unavailable due account usage limits.

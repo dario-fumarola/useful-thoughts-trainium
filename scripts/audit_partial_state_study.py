@@ -145,6 +145,11 @@ def audit(root, registry_file):
                     or read(writer['training_protocol'])['seed'] != int(seed)):
                 raise ValueError('Actual terminal writer belongs to another arm, step, or seed')
             for q, c, generated in zip(questions, controls, bundle['controls']):
+                expected_writer_prompt = prompt_tokens(q, tokenizer, cot=True)
+                if generated['own']['prompt_ids'] != expected_writer_prompt:
+                    raise ValueError('Actual writer input is not the prefix-only projection')
+                if generated['own']['n_actions'] != len(generated['own']['actions']):
+                    raise ValueError('Writer action inventory differs from its native trace')
                 _, trace, expression = exact_trace(q['expression_tree'])
                 partial = trace[:-1]
                 teacher = ''.join(f'{a} {op} {b} = {v}\n' for a, op, b, v in partial)
@@ -168,6 +173,11 @@ def audit(root, registry_file):
                     raise ValueError('Unrelated supplied state is changed or self-paired')
             writer_prep = Path(protocols['writer']['model_preparation'])
             copy(seed+'/'+panel+'/writer-native-preparation', writer_prep)
+            for shard in range(4):
+                stage = Path(jobs['writer']['control'])/f'stage-{index}'
+                exited = read(stage/f'shard-{shard}/exit.json')
+                if exited['exit_code'] != 0 or exited['original_session_remaining']:
+                    raise ValueError('Every original writer session must complete and close')
             checks = {'writer': [numerical(paths['writer'], shard, reference=writer_prep, notes=True)
                                   for shard in range(4)]}
             state = {q['item_id']: independent_state(note['own'], q['expression_tree'])
@@ -274,6 +284,9 @@ def audit(root, registry_file):
             seed_results[panel] = dict(results=metrics, contrasts=contrasts, numerical_checks=checks,
                 writer_state_diagnostics=dict(items=512, canonical_nonroot_exact=sum(v['canonical_nonroot_exact'] for v in state.values()),
                     canonical_and_natural_stop=sum(v['canonical_and_natural_stop'] for v in state.values()),
+                    equations_supported=sum(v['equations_supported'] for v in state.values()),
+                    all_stated_equations_correct=sum(v['all_stated_equations_correct'] for v in state.values()),
+                    root_operation_transmitted=sum(v['root_operation_transmitted'] for v in state.values()),
                     stop_counts=dict(Counter(v['stop_type'] for v in notes)), status_counts=dict(Counter(v['status'] for v in notes))),
                 identical_reader_inputs=dict(duplicate_attempts=duplicates, all_matched=True, additional_independent_observations=False),
                 examples_fixed_first_two=[dict(question=q, writer=notes[i],
@@ -296,6 +309,7 @@ def audit(root, registry_file):
                      'Split has two models. Equal total updates/action caps do not equal FLOPs or end-to-end latency; raw supervised token counts and timings are separate costs.',
                      'All errors, caps, unsupported outputs and wrong student states remain in denominators.',
                      'Independent complete-answer and writer-state parsers re-execute prefix math; all saved numerical vectors are recomputed.',
+                     'Root-operation counts cover fully parsed equation notes; they do not establish absence of final-answer text in unsupported formats.',
                      'This is a synthetic computation study, not evidence of general natural-text pretraining improvement.'])
     write(root/'validation/partial_state_v7_matched5120_complete_20261018.json', report)
     return dict(status=report['status'], answer_attempts=total_answers, writer_attempts=total_notes)

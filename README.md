@@ -51,13 +51,17 @@ outputs and the fixed first two examples per panel are public and EBS-archived:
 
 Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
 compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
-Both compact and full-trace baselines remain competitors. First-seed reader and
-writer320 training is complete and independently audited; full64 reader recovery
-passes, and the direct640 control is running. No new DEV accuracy is reported yet.
+Both compact and full-trace baselines remain competitors. First-seed reader320,
+writer320 and direct640 training is complete and independently audited. Compact
+CoT640 is complete with its state audit underway; full-trace CoT640 is training.
+No new DEV accuracy is reported yet.
 [Reader training](validation/partial_state_v7_reader_seed2026101806_training_20261018.json) ·
 [writer training](validation/partial_state_v7_writer_seed2026101806_training_20261018.json) ·
+[direct control and explicit receipt correction](validation/partial_state_v7_direct_seed2026101806_training_20261018.json) ·
 [current queue](NEXT_STEPS.md). More capacity remains an option; the useful signal
-already exists at1.7B.
+already exists at1.7B. All original full states remain on local SSDs; EBS keeps
+all terminal models and the latest full resumable state under the
+[recorded retention policy](validation/partial_state_v7_checkpoint_retention_20261018.json).
 
 ## Earlier matched developmental64 comparison
 

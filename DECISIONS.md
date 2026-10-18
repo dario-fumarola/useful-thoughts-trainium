@@ -1112,3 +1112,16 @@ one only after no signatures/partitions/mounts/holders/raw users, and verify a r
 write/readback; local/nvme-study adds1.7TiB without cloud changes. Stop unnecessary
 compression and restore all41bounded old payloads, every original byte rehashed.
 Future baselines use the extra disk; current runs/identities remain in place.
+
+2026-10-18 23:08 UTC — First A640 independently passes640ordered updates, all5full state
+publications, native gates and EBS full terminal readback;123368answer labels,
+warm median.724s, bounded observed PSS116.8GiB. Its identity gate catches a copied
+320digest in the controller's final640receipt. Original receipt/source preserved;
+explicit annex corrects the digest and strict640binding passes. Same live compact
+S1 template gets an annex after closure; every unstarted640template is corrected.
+No training/data changes, no outcome review. Compact640closes, full-CoT640starts.
+All2048Wnotes close/EBS readback passes; R/A cache compilation actively progressing.
+Keep every original full state, all terminal models and results. EBS retains latest
+full resumable state; old EBS optimizer duplicates retire only after fresh both-side
+hashes and latest full-state verification. Current retention index is public;
+R64/R320/W320 originals intact, models/metadata remain onEBS. A full state protected.

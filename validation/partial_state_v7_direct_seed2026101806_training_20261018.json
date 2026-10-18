@@ -1,0 +1,250 @@
+{
+  "schema": "partial-state-v7-terminal-full-state-training-v1",
+  "status": "PASS_ACTUAL_TERMINAL_FULL_CHECKPOINTS_AND_PROTECTED_STATE",
+  "finished_utc": "2026-10-18T22:53:32.609864+00:00",
+  "run_id": "partial-state-v7-direct-TRAIN5120-seed2026101806-v1",
+  "arm": "direct",
+  "seed": 2026101806,
+  "step": 640,
+  "planned_terminal": 640,
+  "checkpoints": {
+    "64": {
+      "COMPLETE_sha256": "0c700c7cff92339f5c56f3bee282ddcb36d3f897517c9466160d0281e8f6d719",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "4faafbc2cd993311479d74ab3f864c15ee0dcc7175c3288bba39740dbdbe3248"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "022ba81a71be0a6fa1fec16b7ea00616e38f3582bfa01590933a94425b77986e"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "d09257910cd58d5478e93900075406a835e5b99f5031bcb3fbed1b1aaea55499"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "5b893bee52d5fa3164bcb8d39cc0f9a5308514f61c7f072bf9a8125b06952388"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "1b036d23175090f2c36aede4db7356f44fe05e83777ae9d2272ff451af934133"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 64,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "160": {
+      "COMPLETE_sha256": "05fa293137a7e39935e6012a62b271b801272e931f8f0819415a18e9253d5ffa",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "5af1c4e305e83de77d2f58b9e44a538673b04062714476be9398c3f3af9d16a4"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "372d0ca7391a282a06ae855e2eb9a35bace4213d3b00f197568a6235a9b0f9d7"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "9821a6eb237c796a63dcb468da6c069ffd4474199eb515a253d0110514120cc8"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "c3da4d59aa95313718090abd0920e14e0cf9f675e2ebb945bf62e46d156293a1"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "f9232b89b489c74a19300b9a8771da35bd8e03d9f8d964784ef43f4d01723f33"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 160,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "320": {
+      "COMPLETE_sha256": "db750ad2f8b31020381238a9a25fc68a485bb51036bb93ccc3ec6b08cdb79ddf",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "6db96ee9acec9b0e25c949b942af12eef2ba785091a66ab1fc481dad1efbb326"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "14edf0736fc7477e0720c7de09f9192a53b8e33afe517dda11fcbe4e0726d8a4"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "d614fc96e0421994dfb6b72236b039cc45b53796b5f2adafecb5b35856afa5e3"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "c199812ff96999f282546dec899863f02ba48fe8e713377bffc40b24debdbcf2"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "b6f7a252189af2477452f694e25d7a4451c4377114bf4f7459af8c2f88a4c877"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 320,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "480": {
+      "COMPLETE_sha256": "6c1ffc625494942d93e94024153b5382ba0abe70cd3f5d946e61381e41fb0b18",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "ca0e7edaca3f85a3824d221b28b0b02d43fd876e69a6edf1c0e638b13f6636e8"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "a8f09e7fc5954302fbcfe372d6a0d9028dbf631b8591f73943844cb39e4e66bf"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "9cbec0e3ecbb533aac757ea1efb03860a3eaafa1d27fbeba4392600c87c6bd11"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "3b838dd3933a17a57e0f13d74e55029b63553f22bf5e94cf0b03c5ca94398165"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "d8bebe3154e2c55b3204fad64d5b9d3bfb720adccebe973f01ccd47f608fa681"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 480,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "640": {
+      "COMPLETE_sha256": "d694c9f2abc682b86a392d2a6ddc7a734ac3a3db53b5870b1b2cbc2c95564a25",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "90d816ac857397da911cd040444d53ecff862f297683ef6c82c769eebc028412"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "3d9cb13c4c4a7275f3db18d3947ae18f5b189aa4b4aff97e40813afa9f3a7eaf"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "c14aa856d34a4bb976c4d33654df799501755f6d587b06c24fd637d302cbabaa"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "1d4da16a20d845b80af02da8c4bfdf31e81bf5e3d104c9cbedde8b3f53be6708"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "52304462e1667a27ef8c68fdbae380feb2eddf23faeca30d954834129c0fdfc1"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 640,
+      "exported_model_equals_reassembled_cast_masters": true
+    }
+  },
+  "expressions": 20480,
+  "supervised_tokens": 123368,
+  "actual_native_checks": [
+    {
+      "reference_to_device_kl_nats": 0.003038018943671619,
+      "device_to_reference_kl_nats": 0.0031035199827923296,
+      "max_bidirectional_kl_nats": 0.0031035199827923296,
+      "passed": true,
+      "max_logp_error": 0.4776469232392877,
+      "rms_logp_error": 0.11136195315202933,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0030697297315727835,
+      "device_to_reference_kl_nats": 0.003041836099938893,
+      "max_bidirectional_kl_nats": 0.0030697297315727835,
+      "passed": true,
+      "max_logp_error": 0.3318406019216269,
+      "rms_logp_error": 0.06558423713648606,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 2.110202660403744e-05,
+      "device_to_reference_kl_nats": 2.157230339493209e-05,
+      "max_bidirectional_kl_nats": 2.157230339493209e-05,
+      "passed": true,
+      "max_logp_error": 0.19990114601651499,
+      "rms_logp_error": 0.04093075259376543,
+      "relative_l2_logp_error": 0.0014795616361593922,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0003244116031699334,
+      "device_to_reference_kl_nats": 0.000325946147481554,
+      "max_bidirectional_kl_nats": 0.000325946147481554,
+      "passed": true,
+      "max_logp_error": 0.2453446255999836,
+      "rms_logp_error": 0.04909559206530713,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "argmax_equal": true
+    }
+  ],
+  "all1240_FP32_master_and_moment_shards_finite": true,
+  "all_adam_steps": 640,
+  "exported_BF16_model_bytes_equal_all_reassembled_cast_masters": true,
+  "all_original_sessions_and_device_physically_closed": true,
+  "checkpoint_manifest_sha256": "d694c9f2abc682b86a392d2a6ddc7a734ac3a3db53b5870b1b2cbc2c95564a25",
+  "complete_checkpoint_bytes": 24089821871,
+  "EBS_archive_receipt_sha256": "19df01b9132a105e3ba679381198ac7248ba41733eb8694344b9243d6f01aea9",
+  "warm_update_median_seconds": 0.7243495909933699,
+  "observed_peak_node_process_PSS_GiB": 116.78825092315674,
+  "limits": [
+    "No held DEV evaluated or capability inference from training loss.",
+    "Part of the prospective two-seed matched-cost study; no capability conclusion follows from training metrics.",
+    "One uninterrupted fresh-B0 run; actual restart qualification belongs to the separately reported first reader and mechanics models.",
+    "Bounded target-topology observation, not a general multi-hour or oldworld32 memory guarantee.",
+    "All declared full checkpoints remain at the original output; terminal full state and all nonweight metadata also have a readback-verified EBS copy. EBS is same-instance storage."
+  ],
+  "public_metrics": {
+    "validation/partial_state_v7_direct_seed2026101806_training_20261018/all640-update-metrics.jsonl.gz": {
+      "bytes": 816746,
+      "sha256": "61694adb26bbf02353365d784555c12c5c1233795c9291392f92a5782f49b208"
+    }
+  },
+  "audit_script_sha256": "b62147389e2235341882f5f5123264b2afb36642f2bfaf65b16d66c78390feed",
+  "protocol_sha256": "599e78e4700464b6bcf294e918d6b121d3a114a5ded677a2ae8a0a7ec565df73",
+  "source_files": {
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "b4bb9756d89f5071521efd0ab2abcb2b8389f24f78915b4f212452a095344b09",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "post_audit_publication_binding": {
+    "utc": "2026-10-18T22:58:38.049586+00:00",
+    "actual_frozen_terminal_step": 640,
+    "model_sha256": "90d816ac857397da911cd040444d53ecff862f297683ef6c82c769eebc028412",
+    "original_identity_gate_rejection": "Original controller closure named the step320 digest after successfully verifying full64/160/320/480/640; the strict terminal identity gate rejected that field.",
+    "correction_file": "local/diagnostics/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/closure-terminal640-correction-v1.json",
+    "correction_sha256": "a96b9fabb7557606af5cf040c957f9b866bcfc00f5076e56e70deba51f37aa6a",
+    "original_closure_preserved": true,
+    "full_terminal_identity_now_passed": true,
+    "source_training_and_model_files_unchanged": true
+  }
+}

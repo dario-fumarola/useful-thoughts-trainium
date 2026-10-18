@@ -6,29 +6,41 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 current handoff: v6 fresh comparison is complete, positive only for
-restricted synthetic computation; split had two models/twice the training updates.
-Frozen source3301d22 and all18432answers/2048notes remain preserved/public.
-Current matched5120/two-seed study uses immutable source57d3220,1601checks pass.
-First-seed reader320 and writer320 both independently pass every ordered update,
-full64/160/320 state readbacks and EBS full terminal archives; both are frozen.
-Reader fresh64 restore passes all4actual active/optimizer bytes then updates65–320.
-No new trained DEV outcomes inspected. CPU/native preparations running in
-local/analysis/partial-state-v7-seed1806-evaluation-preparation-20261018.log.
-Direct640 active:tmux dario-ps7-direct640, timeout PID144944/startticks19762841,
-physical3/logical12–15, deadline Oct19 02:30UTC. Controls/output basename
-partial-state-v7-direct-TRAIN5120-seed2026101806-v1 under local/diagnostics and
-local/nvme/runs. Last observed160, full64/160. Watch run.log and ordered metrics.
-Next:launch frozen writer/reader evaluation, finish A640audit, then both CoT640
-controls and second seed. Prepared baseline controllers remain unreleased.
+October18 23:08UTC handoff: finish the current matched5120/two-seed question.
+V6 fresh result is positive only for synthetic computation; split had twice the
+updates. All original outputs/frozen source3301d22 stay intact. Science v7 source
+57d3220 is immutable; current main analysis passes1608checks.
+R320/W320/A640 seed2026101806 independently audited/frozen. Actual reader64 restart
+passes. Compact640 closes, corrected strict terminal binding passes, CPU full audit
+session20128 active. Full-CoT640 active tmux dario-ps7-fullcot640, PID181369/start
+19938224,physical3/logical12–15,deadline04:30UTC, last64/full64. Basename
+partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1 under diagnostics/nvme-study/runs.
+A and live compact S1 templates copied320digest into their640closure receipts.
+Do not overwrite originals: explicit closure-terminal640-correction-v1.json annexes
+and strict actual640bindings pass. All unstarted640templates fixed; model/data
+were correct. A publication annex/EBS readback preserved. Compact's audit now
+requires the explicit correction and records both receipt identities.
 
-Storage:extra previously unformatted/unmounted local SSD is verified and mounted
-local/nvme-study,1.7TiB free initially; future runs/evaluations go there. No cloud
-resource changes. Actual preflight/write-readback receipt in local/analysis.
-Three inactive EBS engineering duplicates retired after fresh both-side hashes;
-original full NVMe copies remain. All41bounded archive payloads are restored to
-exact original paths. Keep35GiB reserves and a protected full resumable state.
-No8B launched; current replicated weights+grads exceed24GiB/logical bank. No RL.
+All2048first-seed writer attempts close and are EBS backed up, with no outcome
+review. Reader/device9 and direct/device5 evaluations active; new96action cache
+graph compiling actively (walrus_driver ~4CPUcores/48GiB), not stalled or OOM.
+Compact eval preparation session6403; after READY launch its generated controller
+on physical6. Full-CoT terminal -> full audit/freeze/prep/eval on physical7.
+Then release all seed2026101807 training controllers in R/W/A/compact/full order;
+prepared but unreleased, samephysical3. Adapt S1W/R CPU prep/controllers to seed2
+with distinct physical10/11,ports64801/64821,tmp shortw7b/r7b. Single-model eval
+prep utility supports seed2; use physical0/1/2,ports64901/64921/64941.
+Registry already names all10four-panel jobs; public scripts/audit_partial_state_study.py
+requires all closed before any outcomes. Source only, not a new scientific result.
+
+Extra verified local SSD local/nvme-study holds future runs/evaluations; old paths
+stay fixed. Four old EBS qualification duplicates retired, originals intact.
+All41temporary compressed payloads restored to exact .pt originals. EBS policy:
+all terminal models/metadata plus latest full resumable checkpoint; older EBS
+optimizer duplicates retire only after full both-side readback against originals.
+Actual current index validation/partial_state_v7_checkpoint_retention_20261018.json.
+All original full states stay on local SSDs. Keep35GiB floors. No cloud changes,
+no RL/8B, no official TEST. Never auto-retry a failed scientific attempt.
 
 ## Your job
 
