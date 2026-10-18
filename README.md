@@ -51,13 +51,16 @@ outputs and the fixed first two examples per panel are public and EBS-archived:
 
 Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
 compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
-Both compact and full-trace baselines remain competitors. First-seed reader320,
-writer320 and direct640 training is complete and independently audited. Compact
-CoT640 is also independently audited; full-trace CoT640 is training.
-No new DEV accuracy is reported yet.
+Both compact and full-trace baselines remain competitors. All five first-seed
+training runs independently pass their declared updates and full-state audits.
+The second reader320 is also audited/frozen; its writer320 is training. No new
+DEV accuracy is reported yet.
 [Reader training](validation/partial_state_v7_reader_seed2026101806_training_20261018.json) ·
-[writer training](validation/partial_state_v7_writer_seed2026101806_training_20261018.json) ·
+[writer](validation/partial_state_v7_writer_seed2026101806_training_20261018.json) ·
 [direct control and explicit receipt correction](validation/partial_state_v7_direct_seed2026101806_training_20261018.json) ·
+[compact CoT](validation/partial_state_v7_cot_seed2026101806_training_20261018.json) ·
+[full-trace CoT](validation/partial_state_v7_cot_full_seed2026101806_training_20261018.json) ·
+[second reader](validation/partial_state_v7_reader_seed2026101807_training_20261018.json) ·
 [current queue](NEXT_STEPS.md). More capacity remains an option; the useful signal
 already exists at1.7B. All original full states remain on local SSDs; EBS keeps
 all terminal models and the latest full resumable state under the

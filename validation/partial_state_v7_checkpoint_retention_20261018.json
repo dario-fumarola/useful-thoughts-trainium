@@ -33,9 +33,25 @@
       "retention_receipt": "local/backups/science/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/terminal640/OPTIMIZER_DUPLICATE_RETIRED.json",
       "retention_receipt_sha256": "d2c6fe3296317d0652213bf442ff9a4add4d03d939bc6c440cd81ffdfadcc87a",
       "retired_duplicate_bytes": 20648573596
+    },
+    {
+      "original_full_checkpoint": "/home/ubuntu/dario/local/nvme-study/runs/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/step-0000640",
+      "EBS_model": "/home/ubuntu/dario/local/backups/science/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/terminal640/output/step-0000640/model.pt",
+      "optimizer_source_complete": true,
+      "retention_receipt": "local/backups/science/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/terminal640/OPTIMIZER_DUPLICATE_RETIRED.json",
+      "retention_receipt_sha256": "b93a55a52c949657679553fd67939763143ce432d3f46b5bd0eb28b5cea4eb71",
+      "retired_duplicate_bytes": 20648573596
+    },
+    {
+      "original_full_checkpoint": "/home/ubuntu/dario/local/nvme-study/runs/partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1/step-0000640",
+      "EBS_model": "/home/ubuntu/dario/local/backups/science/partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1/terminal640/output/step-0000640/model.pt",
+      "optimizer_source_complete": true,
+      "retention_receipt": "local/backups/science/partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1/terminal640/OPTIMIZER_DUPLICATE_RETIRED.json",
+      "retention_receipt_sha256": "c77f8d5e8a6c3bbaf9fd5bb1c3d76101607a7614d01b2e176f14da1f322a7f60",
+      "retired_duplicate_bytes": 20648573596
     }
   ],
-  "as_of_utc": "2026-10-18T23:09:56.241152+00:00",
-  "latest_full_EBS": "/home/ubuntu/dario/local/backups/science/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/terminal640",
-  "latest_full_checkpoint_manifest_sha256": "9c161efaddab714bdbadea0eb973a8130a2faf498a534c195f510fdbc3e5af8e"
+  "as_of_utc": "2026-10-18T23:34:18.761965+00:00",
+  "latest_full_EBS": "/home/ubuntu/dario/local/backups/science/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/terminal320",
+  "latest_full_checkpoint_manifest_sha256": "76c8414cd3b3313fe0910543aa4490e2081b71ec9005955f282078a7206441f4"
 }

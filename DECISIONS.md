@@ -1134,3 +1134,12 @@ an adapted/degraded model alone. Single shared B0, not two independent replicas;
 6144additional answers, all failures retained, no TEST. Prospective amendment and
 registry pin the addition. Independent analysis requires all11controllers closed;
 1610CPUchecks pass. Compact640 full state/EBS audit also passes; full-CoT640active.
+
+2026-10-18 23:39 UTC — All5first-seed training models pass independent full updates/state/
+native/backup audits and are frozen. Full-CoT640labels941956,warm.728s, observed
+bounded PSS121.6GiB; original640closure correct. Second reader320 also passes,
+full terminal protected/frozen; second writer320active. All data/source/primary
+endpoints fixed, no new accuracy/state review. W1notes/A1answers fully archived;
+compact/full evaluations advance while longer note-cache compile actively runs.
+First-seed temporary path ps7r2 belongs to prior recovery; use fresh p7s2r/w/a/c/f
+for second seed, repaired before any scientific launch. No actual attempt retried.

@@ -1,21 +1,21 @@
-# Status — 2026-10-18 23:16 UTC
+# Status — 2026-10-18 23:39 UTC
 
 
 ## Active: matched-cost partial-computation study
 Question: does the useful fresh channel beat competitive one-model solvers at matched updates?
-ID:partial-state-v7-matched5120; two seeds, terminal primary, immutable source57d3220,1610checks pass.
-First-seed reader320/writer320/direct640 independently pass all updates/full states; original full states intact.
-Reader actual64 restart passes; R/W/A frozen. A receipt320digest corrected by explicit preserved annex for640.
-Compact CoT640 closes23:02UTC; explicit binding annex and independent full-state/EBS audits pass.
-Full-CoT640 active:PID181369/start19938224,tmux dario-ps7-fullcot640,physical3/logical12–15,deadline04:30UTC.
-Controls/output basename partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1 under diagnostics/nvme-study/runs.
-Last observed64; full64 published. Source/recipe unchanged; unstarted640receipt templates corrected.
-All2048first-seed writer attempts close and EBS readback passes; no new accuracy/states inspected.
-Reader/device9 and direct/device5 evaluations live; new cache graph actively compiling, memory within floor.
-Compact eval/device6 and auxiliary shared B0/device4 active. Full-CoT eval/device7 and seed2 pending.
-All second-seed training controllers prepared/unreleased; next fresh reader320 after full-CoT640 closes.
-EBS keeps all terminal models/latest full state; older optimizer duplicates retired only against intact originals.
-B0 auxiliary prospectively added before outcome review; primary fixed. All11controllers must close; no TEST/RL/8B.
+ID:partial-state-v7-matched5120; two seeds, terminal primary, immutable source57d3220,1610CPUchecks pass.
+All5first-seed models independently pass every declared update/full checkpoint/native gate and are frozen.
+Second reader320 closes23:28UTC, independently passes/fullEBS backup, and is frozen; no new DEV review.
+Second writer320 active:PID233263/start20113193,tmux dario-ps7-writer2,physical3/logical12–15,deadline06:30UTC.
+Controls/output basename partial-state-v7-writer-TRAIN5120-seed2026101807-v1 under diagnostics/nvme-study/runs.
+Last observed197/full64/160. Next full320audit/freeze, then A640/compact640/full640 sequentially, all fresh B0.
+First-seed Wnotes and Aanswers complete/EBS-readback; compact eval3panels/fullCoT1panel closed.
+Reader/physical9 and B0/physical4 wait on active long note-cache compile;512GiB memory floor respected.
+Compact/full-CoT evals physical6/7 active. New outcomes stay unopened until all11four-panel controllers close.
+After W2freeze run prepared seed1807CPU/native and W/Rcontroller scripts; use physical10/11,ports64801/64821.
+Single-model seed2eval uses physical0/1/2,ports64901/64921/64941. Registry names every fixed endpoint.
+A/compactS1receipt320digest errors have explicit preserved640annexes; all unstartedtemplates fixed.
+EBS retains all terminal models/latest full state; original full states intact;35GiB floors; no TEST/RL/8B.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?

@@ -16,30 +16,30 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. First-seed reader320,writer320,direct640 independently pass all updates/full
-   states and are frozen. Actual reader64 restart passes. Compact-CoT640 closes
-   and passes strict640 binding; its independent CPU audit is active (session20128).
-   Full-CoT640 runs in tmux `dario-ps7-fullcot640`, timeout PID181369/start19938224,
-   physical3/logical12–15, deadline Oct19 04:30UTC. Controls/output basename
-   `partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1` under diagnostics and
-   `local/nvme-study/runs`; last observed64/full64. One training arm at a time.
-   A and compact S1 controller receipts copied320digest after verifying all5states;
-   originals preserved; `closure-terminal640-correction-v1.json` binds actual640.
-   A strict gate initially rejected it; both corrected bindings now pass. Every
-   unstarted640template is fixed. Never silently edit an old receipt or live source.
-   First-seed writer evaluation complete, all2048attempts EBS readback verified.
-   Reader/physical9 and direct/physical5 evaluations live; first96-action cache
-   graph still compiling actively. No new accuracy or state diagnostics reviewed.
-   Compact CPU preparation session6403/log `partial-state-v7-cot1-evaluation-preparation-20261018.log`;
-   when READY, launch `dario-ps7-dev-cot1` from its generated launch-controller.sh.
-   Full-CoT completes -> generic full audit/frozen binding/CPU prep/eval physical7.
-   Then release seed2026101807 reader320,writer320,A640,compact640,full640 in order.
-   Second-seed controllers prepared/unreleased; all17source hashes must match57d3220.
-   Full analysis registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
-   Public independent audit requires all11four-panel controllers closed before gold/outcome review.
-   The additional single shared untouched-B0 reference (direct/cot/empty) is active
-   on physical4, ports64761+, no training. Its prospective amendment leaves the
-   four-system/two-seed primary unchanged; never count B0 as two seed replicas.
+3. All5first-seed models independently pass full updates/states and are frozen.
+   Second reader320 also passes full audit/EBS backup and is frozen. Second writer
+   runs in tmux `dario-ps7-writer2`, timeout PID233263/start20113193,
+   physical3/logical12–15, deadline Oct19 06:30UTC; last197,full64/160.
+   Controls/output basename `partial-state-v7-writer-TRAIN5120-seed2026101807-v1`
+   under diagnostics and `local/nvme-study/runs`. After320closure: generic full
+   audit, freeze actual writer2 with checkpoint.identity, preserve binding onEBS.
+   Then release seed2 direct640,compact640,full640 sequentially, one training arm.
+   All controllers/protocols prepared; verify hashes and actual release. Fresh
+   short TMPDIRs are p7s2r/w/a/c/f; old ps7r2 belonged to prior recovery and stays intact.
+   Source remains immutable57d3220. No automatic training retry or outcome selection.
+   A/compactS1receipts copied320digest after verifying all5states: preserved originals
+   plus explicit640correction annexes pass strict identity. Every other640template fixed.
+   First-seed Wnotes and Aanswers complete/EBS readback; compact3/full-CoT1panels closed.
+   Reader/device9 and B0/device4 wait on active longer cache compilation; node memory safe.
+   Compact/device6 and full-CoT/device7 evaluations advance. No new outcome review.
+   After W2freeze execute `local/analysis/prepare_partial_state_v7_seed1807_evaluation_20261018.py`,
+   then `prepare_v7_second_seed_eval_controllers_20261018.py` with frozen57PYTHONPATH.
+   Launch W2/R2 evalcontrollers on physical10/11 (ports64801/64821,shortw7b/r7b).
+   Single-model evalprep utility accepts seed2026101807; use physical0/1/2,ports64901/64921/64941.
+   Registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
+   Public independent audit requires all11controllers closed (10primary+1shared B0)
+   before any gold/accuracy/state review. B0direct/cot/empty is one shared auxiliary,
+   not two seed replicas; primary training comparisons remain fixed.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+

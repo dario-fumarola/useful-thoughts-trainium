@@ -6,44 +6,48 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 23:08UTC handoff: finish the current matched5120/two-seed question.
-V6 fresh result is positive only for synthetic computation; split had twice the
-updates. All original outputs/frozen source3301d22 stay intact. Science v7 source
-57d3220 is immutable; current main analysis passes1610checks.
-R320/W320/A640 seed2026101806 independently audited/frozen. Actual reader64 restart
-passes. Compact640 closes, corrected strict terminal binding passes, CPU full audit
-session20128 active. Full-CoT640 active tmux dario-ps7-fullcot640, PID181369/start
-19938224,physical3/logical12–15,deadline04:30UTC, last64/full64. Basename
-partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1 under diagnostics/nvme-study/runs.
-A and live compact S1 templates copied320digest into their640closure receipts.
-Do not overwrite originals: explicit closure-terminal640-correction-v1.json annexes
-and strict actual640bindings pass. All unstarted640templates fixed; model/data
-were correct. A publication annex/EBS readback preserved. Compact's audit now
-requires the explicit correction and records both receipt identities.
+October18 23:39UTC handoff: continue until user stops. Active matched5120/two-seed
+question uses immutable science source57d3220; current main analysis1610checks pass.
+All5first-seed training models independently audited/full state preserved/frozen.
+Second reader320 closes23:28UTC and independently passes all3full states/native4/
+ordered10,240expressions/61,684labels and EBS full320 readback; frozen-reader.json.
+Second writer320 active tmux dario-ps7-writer2,PID233263/start20113193,physical3/
+logical12–15,deadline06:30UTC. Controls/output basename
+partial-state-v7-writer-TRAIN5120-seed2026101807-v1 under diagnostics/nvme-study/runs.
+Last197/full64/160. Exact next:finish320; generic CPU full audit, freeze writer2,
+then launch all three seed2single-model640 controls in order. Source/recipes fixed.
+Controller/protocols prepared/unreleased; fresh short tmpdirs p7s2w/a/c/f (R2 used
+p7s2r). Old ps7r2 is prior reader64 recovery; prelaunch conflict repaired before
+any attempt, no data change. All actual launches require fresh short paths.
 
-All2048first-seed writer attempts close and are EBS backed up, with no outcome
-review. Reader/device9 and direct/device5 evaluations active; new96action cache
-graph compiling actively (walrus_driver ~4CPUcores/48GiB), not stalled or OOM.
-Compact eval preparation session6403; after READY launch its generated controller
-on physical6. Full-CoT terminal -> full audit/freeze/prep/eval on physical7.
-Then release all seed2026101807 training controllers in R/W/A/compact/full order;
-prepared but unreleased, samephysical3. Adapt S1W/R CPU prep/controllers to seed2
-with distinct physical10/11,ports64801/64821,tmp shortw7b/r7b. Single-model eval
-prep utility supports seed2; use physical0/1/2,ports64901/64921/64941.
-Registry names all10primary four-panel jobs plus one shared untouched-B0 reference
-(direct/cot/empty), added prospectively before any new outcome review. B0 controller
-active on physical4,ports64761+,tmux dario-ps7-dev-B0,deadline10:30UTC. Primary
-training comparisons unchanged; never count B0 as two seed replicas. Public
-scripts/audit_partial_state_study.py requires all11closed before any outcomes. Source only, not a new scientific result.
+First-seed Wnotes and direct answers are fully closed/EBS backed up. Compact3of4
+panels and full-CoT1of4 closed; no outcome review. Reader/device9 and B0/device4
+wait on active long note-cache compilation (one new graph passed, longer one active,
+not OOM; MemAvailable~1.7TiB). Compact/device6/full/device7 advance independently.
+After W2freeze run prepared seed1807CPU/native script then second-seed W/Rcontroller
+prep script in local/analysis, PYTHONPATH=frozen57 first. Eval W2/R2 physical10/11,
+ports64801/64821,shortw7b/r7b. Single-model eval utility supports seed2:physical0/1/2,
+ports64901/64921/64941. Registry names all10primary four-panel jobs plus shared
+untouchedB0 direct/cot/empty (prospective amendment). Public audit requires all11
+closed before any new accuracy/state review;51200answers/4096notes planned total.
+Single B0 reference is not two independent seed replications. Primary unchanged.
 
-Extra verified local SSD local/nvme-study holds future runs/evaluations; old paths
-stay fixed. Four old EBS qualification duplicates retired, originals intact.
-All41temporary compressed payloads restored to exact .pt originals. EBS policy:
-all terminal models/metadata plus latest full resumable checkpoint; older EBS
-optimizer duplicates retire only after full both-side readback against originals.
-Actual current index validation/partial_state_v7_checkpoint_retention_20261018.json.
-All original full states stay on local SSDs. Keep35GiB floors. No cloud changes,
-no RL/8B, no official TEST. Never auto-retry a failed scientific attempt.
+A/compactS1private templates copied320digest into640closure. Strict identity gate
+caught it; originals preserved and explicit closure-terminal640-correction-v1.json
+annexes pass true640binding. Every unstarted640template fixed; full-CoT original
+receipt is correct. Never edit a live source or quietly rewrite an old receipt.
+Extra verified local store local/nvme-study holds future outputs; old paths fixed.
+All original full states remain onlocalSSDs; EBS all terminal models/metadata and
+latest full resumable state. Older EBS optimizer duplicates retired only after
+fresh source/EBS full hashes and latest full recovery check; current retention
+index is public. Latest verifiedfull R2currently; originals intact. Keep35GiB floors.
+No cloud changes/RL/8B/officialTEST; never auto-retry a failed scientific attempt.
+
+Interpretation after results: two-model split also changes relative note/answer
+loss weighting (separate per-example means versus ordinary all-completion CoT).
+If it wins, do not attribute uniquely to architecture/extra parameters; a shared
+model with balanced objectives is a cheap possible next ablation before scaling.
+If ordinary CoT matches, prefer it. Decide only after the complete fixed question.
 
 ## Your job
 
