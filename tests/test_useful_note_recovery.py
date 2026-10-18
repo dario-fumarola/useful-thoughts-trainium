@@ -21,7 +21,7 @@ class Tied(torch.nn.Module):
 
 
 class CPUZeROContract:
-    """Real AdamW on separate FP32 masters; no claim of an XLA fixture."""
+    """Real CPU AdamW plus the observed empty syncfree placeholder, not XLA."""
     def __init__(self,model):
         self.model=model;self.master=torch.nn.Parameter(next(model.parameters()).float().clone())
         self.base_optimizer=torch.optim.AdamW([self.master],lr=1e-5,betas=(.9,.95),eps=1e-8,weight_decay=.1)
@@ -32,6 +32,8 @@ class CPUZeROContract:
         loss=(self.model.model.embed_tokens(ids).float()-torch.arange(4).float()/10).square().mean()
         loss.backward();self.master.grad=next(self.model.parameters()).grad.float().clone()
         self.base_optimizer.step()
+        for state in self.base_optimizer.state.values():
+            state.setdefault('max_exp_avg_sq',torch.empty(0,dtype=torch.float32))
         with torch.no_grad():next(self.model.parameters()).copy_(self.master.bfloat16())
         return float(loss.detach())
     def state_dict(self):
@@ -84,7 +86,8 @@ def test_roundtrip_actual_fp32_masters_not_rounded_bf16_model_and_next_update(tm
     assert all(torch.equal(a.view(torch.uint8),b.view(torch.uint8)) for a,b in zip(model.parameters(),new.parameters()))
 
 
-@pytest.mark.parametrize('defect',['arm','rank','world','order','data','step','counter','bf16_master','nan_moment','negative_v','wrong_lr','untied_values','missing_master','missing_model','model_only','rng'])
+@pytest.mark.parametrize('defect',['arm','rank','world','order','data','step','counter','bf16_master','nan_moment','negative_v','wrong_lr','untied_values','missing_master','missing_model','model_only','rng',
+    'missing_placeholder','nonempty_placeholder','bf16_placeholder','wrong_placeholder_shape','extra_optimizer_state','amsgrad'])
 def test_payload_rejects_mixed_or_incomplete_state_before_mutation(defect):
     model,opt,m,w,s,k=fixture();before={n:r.tensor_digest(t) for n,t in model.state_dict().items()}
     assert r.validate_payload(m,w,s,model,**k)==3
@@ -103,6 +106,12 @@ def test_payload_rejects_mixed_or_incomplete_state_before_mutation(defect):
     elif defect=='missing_master':s['optimizer']['sharded_master_weights']={}
     elif defect=='missing_model':w['model'].pop('lm_head.weight')
     elif defect=='model_only':m.update(schema='useful-note-model-only-v1',files={'model.pt':{}})
+    elif defect=='missing_placeholder':s['optimizer']['base_state'][0].pop('max_exp_avg_sq')
+    elif defect=='nonempty_placeholder':s['optimizer']['base_state'][0]['max_exp_avg_sq']=torch.zeros_like(s['optimizer']['base_state'][0]['exp_avg_sq'])
+    elif defect=='bf16_placeholder':s['optimizer']['base_state'][0]['max_exp_avg_sq']=torch.empty(0,dtype=torch.bfloat16)
+    elif defect=='wrong_placeholder_shape':s['optimizer']['base_state'][0]['max_exp_avg_sq']=torch.empty(0,0)
+    elif defect=='extra_optimizer_state':s['optimizer']['base_state'][0]['unqualified']=torch.zeros(())
+    elif defect=='amsgrad':s['optimizer']['param_groups'][0]['amsgrad']=True
     else:s.pop('rng')
     with pytest.raises(ValueError):r.validate_payload(m,w,s,model,**k)
     assert before=={n:r.tensor_digest(t) for n,t in model.state_dict().items()}
@@ -119,3 +128,23 @@ def test_supported_loader_that_loses_master_precision_is_detected():
     xm=SimpleNamespace(set_rng_state=lambda *args:pytest.fail('Must not restore RNG after failed state audit'))
     with pytest.raises(RuntimeError,match='FP32 masters'):
         r.restore_and_verify(new,bad,w,s,xm=xm,device='cpu',sync=lambda **kwargs:None)
+
+
+def test_loader_cannot_drop_the_installed_empty_optimizer_tensor():
+    model,opt,m,w,s,k=fixture();new=Tied();bad=CPUZeROContract(new)
+    original=bad.load_state_dict
+    def drop(state):
+        original(state)
+        bad.base_optimizer.state[bad.master].pop('max_exp_avg_sq')
+    bad.load_state_dict=drop
+    xm=SimpleNamespace(set_rng_state=lambda *args:pytest.fail('Failed state audit must precede RNG reset'))
+    with pytest.raises(RuntimeError,match='tensor inventory'):
+        r.restore_and_verify(new,bad,w,s,xm=xm,device='cpu',sync=lambda **kwargs:None)
+
+
+def test_optimizer_digest_covers_empty_placeholder_dtype_and_shape():
+    model,opt,m,w,s,k=fixture();state=s['optimizer'];before=r.optimizer_digest(state)
+    state['base_state'][0]['max_exp_avg_sq']=torch.empty(0,dtype=torch.bfloat16)
+    assert r.optimizer_digest(state)!=before
+    state['base_state'][0]['max_exp_avg_sq']=torch.empty(0,0,dtype=torch.float32)
+    assert r.optimizer_digest(state)!=before

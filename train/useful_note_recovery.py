@@ -11,6 +11,8 @@ import math
 
 from weekend_thinking.artifacts import canonical_hash
 
+STATE_FIELDS=('exp_avg','exp_avg_sq','max_exp_avg_sq','step')
+
 
 def tensor_digest(value):
     """Hash actual CPU bytes, including BF16 without converting its values."""
@@ -25,9 +27,11 @@ def tensor_digest(value):
 def optimizer_digest(state):
     """All masters, moments and Adam counters, with no sampled-only claim."""
     masters=state['sharded_master_weights'];moments=state['base_state']
+    if set(masters)!=set(moments) or any(set(value)!=set(STATE_FIELDS) for value in moments.values()):
+        raise ValueError('Installed syncfree AdamW tensor inventory differs')
     return dict(param_groups=canonical_hash(state['param_groups']),
         tensors={str(i):dict(master=tensor_digest(master),
-            **{key:tensor_digest(moments[i][key]) for key in ('exp_avg','exp_avg_sq','step')})
+            **{key:tensor_digest(moments[i][key]) for key in STATE_FIELDS})
             for i,master in masters.items()})
 
 
@@ -89,14 +93,22 @@ def validate_payload(manifest,weights,saved,model,*,protocol,protocol_sha256,
     group=groups[0]
     if (not math.isfinite(expected_lr) or expected_lr<=0 or group.get('lr')!=expected_lr
             or tuple(group.get('betas',()))!=tuple(p['betas']) or group.get('eps')!=p['eps']
-            or group.get('weight_decay')!=p['weight_decay']):
+            or group.get('weight_decay')!=p['weight_decay'] or group.get('amsgrad') is not False):
         raise ValueError('Saved optimizer hyperparameters/LR differ')
     for i,param in enumerate(parameters):
         shape=((param.shape[0]+world-1)//world,*param.shape[1:]);master=masters[i];state=moments[i]
         if (not isinstance(master,torch.Tensor) or master.device.type!='cpu'
                 or master.dtype!=torch.float32 or tuple(master.shape)!=shape
-                or not torch.isfinite(master).all() or set(state)!={'exp_avg','exp_avg_sq','step'}):
+                or not torch.isfinite(master).all()):
             raise ValueError('Full FP32 master shard inventory/values invalid')
+        if set(state)!=set(STATE_FIELDS):
+            raise ValueError('Installed syncfree AdamW tensor inventory differs')
+        # Unlike ordinary CPU AdamW, installed syncfree AdamW always serializes
+        # this fourth tensor, even with AMSGrad disabled. Retain and audit it.
+        maximum=state['max_exp_avg_sq']
+        if (not isinstance(maximum,torch.Tensor) or maximum.device.type!='cpu'
+                or maximum.dtype!=torch.float32 or tuple(maximum.shape)!=(0,)):
+            raise ValueError('Non-AMSGrad empty FP32 maximum-second-moment placeholder required')
         for name in ('exp_avg','exp_avg_sq'):
             value=state[name]
             if (not isinstance(value,torch.Tensor) or value.device.type!='cpu' or value.dtype!=torch.float32
@@ -143,7 +155,9 @@ def restore_and_verify(model,optimizer,weights,saved,*,xm,device,sync):
         raise RuntimeError('Actual restored BF16 model differs from saved active model')
     if model.get_input_embeddings().weight is not model.get_output_embeddings().weight:
         raise RuntimeError('Restored embedding/head Parameter tie lost')
-    actual_optimizer=optimizer_digest(optimizer.state_dict())
+    try:actual_optimizer=optimizer_digest(optimizer.state_dict())
+    except (ValueError,KeyError,TypeError) as error:
+        raise RuntimeError('Actual restored FP32 optimizer tensor inventory differs') from error
     if actual_optimizer!=expected_optimizer:
         raise RuntimeError('Actual restored FP32 masters/moments/counters differ')
     report=dict(full_active_model_bytes_equal=True,full_optimizer_bytes_equal=True,
