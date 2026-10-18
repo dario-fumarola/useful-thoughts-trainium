@@ -89,6 +89,25 @@ def exact_tree(tree):
     return exact_trace(tree)[0]
 
 
+def independent_state(note,tree):
+    """Re-execute prefix arithmetic and parse saved text without producer scores."""
+    statements=[];lines=note['text'].strip().splitlines();supported=bool(lines)
+    for line in lines:
+        match=re.fullmatch(r'\s*([+-]?\d+)\s*([+*\-])\s*([+-]?\d+)\s*=\s*([+-]?\d+)\s*',line)
+        if match is None:
+            supported=False;break
+        statements.append((int(match[1]),match[2],int(match[3]),int(match[4])))
+    if not supported:statements=[]
+    trace=exact_trace(tree)[1];canonical=supported and statements==trace[:-1]
+    correct=supported and all((a+b if op=='+' else a-b if op=='-' else a*b)==v for a,op,b,v in statements)
+    return dict(canonical_nonroot_exact=canonical,
+                canonical_and_natural_stop=canonical and note['status']=='ok' and note['stop_type']=='token:151643',
+                equations_supported=supported,all_stated_equations_correct=correct,
+                root_operation_transmitted=supported and trace[-1] in statements,
+                expected_nonroot_statements=len(trace)-1,observed_statements=len(statements),
+                stop_type=note['stop_type'],status=note['status'])
+
+
 def paired(delta):
     delta=np.asarray(delta,float);n=len(delta)
     picks=np.random.default_rng(17).integers(0,n,size=(5000,n))
@@ -220,7 +239,9 @@ def audit(root):
         for b,a in [('own','direct'),('own','empty'),('own','other'),('teacher','own'),('teacher','direct'),('teacher','corrupt'),('teacher','other_teacher'),('own','restatement')]:
             contrasts[b+'_minus_'+a]=paired([cells['reader',k,b]['score']-cells['reader',k,a]['score'] for k in ids])
         contrasts['student_split_minus_compact_CoT']=paired([cells['reader',k,'own']['score']-cells['cot',k,'cot']['score'] for k in ids])
-        state=bundle['state_diagnostics'];notes=[v['own'] for v in bundle['controls']]
+        notes=[v['own'] for v in bundle['controls']]
+        state={q['item_id']:independent_state(note,q['expression_tree']) for q,note in zip(qs,notes)}
+        if state!=bundle['state_diagnostics']:raise ValueError('Writer-state diagnostics differ from independent prefix/text computation')
         states=dict(items=512,canonical_nonroot_exact=sum(v['canonical_nonroot_exact'] for v in state.values()),canonical_and_natural_stop=sum(v['canonical_and_natural_stop'] for v in state.values()),root_operation_transmitted=sum(v['root_operation_transmitted'] for v in state.values()),stop_counts=dict(Counter(v['stop_type'] for v in notes)),status_counts=dict(Counter(v['status'] for v in notes)))
         file=public/f'{panel}-all4608-original-answers.jsonl.gz'
         with gzip.GzipFile(filename=str(file),mode='wb',mtime=0) as stream:
@@ -233,7 +254,7 @@ def audit(root):
         panels[panel]=dict(results=metrics,contrasts=contrasts,writer_state_diagnostics=states,numerical_checks=checks,examples_fixed_first_two=examples,reader=rp['reader'],writer=bundle['writer'],CoT=cp['reader'])
     if answer_count!=18432:raise ValueError('All18,432answers required')
     write(archive/'ARCHIVE.json',dict(status='COMPLETE_FIXED_DEV_EBS_READBACK_VERIFIED',files=archived))
-    report=dict(schema='partial-state-fixed-DEV512-frozen128-complete-v1',status='COMPLETE_ALL_FOUR_PANELS_NO_FILTERING',finished_utc=datetime.now(timezone.utc).isoformat(),panels=panels,answer_attempts=answer_count,writer_attempts=2048,independent_prefix_gold_and_answer_reparse=True,all_original_intervals_recomputed=True,all_original_sessions_devices_closed=True,audit_script_sha256=sha(__file__),public_payloads=payloads,EBS_archive_receipt_sha256=sha(archive/'ARCHIVE.json'),limitations=['128TRAIN fitting models,32passes, one seed. DEV is diagnostic, not an official final test.','Separate512-item panels; do not pool generalization or claim seed robustness from item intervals.','No generation failures, truncations, unsupported answers or bad notes removed.','Ordinary compact CoT uses one model/128training updates; split has two models/256total updates. Equal80generated-action caps do not equal measured FLOPs.','Per-row timing includes first-call compilation in separate jobs; not an end-to-end matched latency benchmark.','These are synthetic exact-computation diagnostics, not broad language capability or pretraining gains.'])
+    report=dict(schema='partial-state-fixed-DEV512-frozen128-complete-v1',status='COMPLETE_ALL_FOUR_PANELS_NO_FILTERING',finished_utc=datetime.now(timezone.utc).isoformat(),panels=panels,answer_attempts=answer_count,writer_attempts=2048,independent_prefix_gold_and_answer_reparse=True,independent_writer_state_reparse=True,all_original_intervals_recomputed=True,all_original_sessions_devices_closed=True,audit_script_sha256=sha(__file__),public_payloads=payloads,EBS_archive_receipt_sha256=sha(archive/'ARCHIVE.json'),limitations=['128TRAIN fitting models,32passes, one seed. DEV is diagnostic, not an official final test.','Separate512-item panels; do not pool generalization or claim seed robustness from item intervals.','No generation failures, truncations, unsupported answers or bad notes removed.','Ordinary compact CoT uses one model/128training updates; split has two models/256total updates. Equal80generated-action caps do not equal measured FLOPs.','Per-row timing includes first-call compilation in separate jobs; not an end-to-end matched latency benchmark.','These are synthetic exact-computation diagnostics, not broad language capability or pretraining gains.'])
     write(root/'validation/partial_state_v6_DEV512_frozen128_20261018.json',report)
     return {panel:dict(writer=panels[panel]['writer_state_diagnostics'],answers={arm:{mode:(v['correct'],v['unsupported']) for mode,v in result.items()} for arm,result in panels[panel]['results'].items()},contrasts=panels[panel]['contrasts']) for panel in PANELS}
 
