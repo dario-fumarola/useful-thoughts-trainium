@@ -1028,3 +1028,11 @@ baseline retains its immutable worktree. Start one complete896-cell TRAIN128
 B0 answer characterization with intermediate-only controls, separate offline
 gold, exact parser and actual cached-prefill checks. Its outcome cannot block
 reader training; it is not held-out or student-utility evidence.
+
+2026-10-18 18:32UTC — LRU256 removes all94warm-tail reloads, preserves every
+component loss/global norm exactly, and cuts43.466s to1.925s onworld4/global4.
+Both small-topology tails are bounded; do not call this an originalworld32 OOM
+repair. Reader128 then completes at~.73s/update with all four full states and
+physical closure; freeze its terminal model before fresh writer128. Run ordinary
+compactCoT128 independently on the same traces, allowing it to win. These are
+TRAIN fitting diagnostics with two-run split training cost, not capability claims.

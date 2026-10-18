@@ -1,0 +1,150 @@
+{
+  "schema": "partial-state-TRAIN128-reader-writer-CoT-v1",
+  "scope": "TRAIN-only fitting and mechanics, not a generalization or matched-total-compute architecture claim",
+  "arms": {
+    "reader": {
+      "plan": {
+        "schema": "partial-state-v6-reader-TRAIN128-overfit-v1",
+        "status": "RELEASED_TRAIN_ONLY_READER_MECHANICS",
+        "created_utc": "2026-10-18T18:03:04.315062+00:00",
+        "question": "Can the reader fit canonical partial-state complete answers while retaining empty/raw paths, with bounded extended target-loop memory?",
+        "arm": "reader",
+        "initialization": "Fresh released B0; qualification writer is discarded.",
+        "protocol_sha256": "67ef4b7598e504ffa33884c418f797f0904bf5a4a53b7042a69621cc437b495b",
+        "items": 128,
+        "steps": 128,
+        "ordered_passes": 32,
+        "loss": "Answer+EOS CE only. Every expression receives teacher,teacher,empty,direct in each four epochs.",
+        "lr": 1e-05,
+        "schedule": "constant",
+        "hardware": "world4/micro8/global32,logical20-23/physical5, same short causal kernel; LRU256 only if direct cache-capacity probe qualifies.",
+        "checkpoints": "Complete model and four FP32 master/Adam/RNG shards every32 and terminal128, finite checkpoint scans and guards. Keep all on NVMe; latest state EBS where35GiB reserve permits.",
+        "primary": "Terminal128 TRAIN teacher complete-answer accuracy and answer-token CE; aim>=95% teacher accuracy and CE<=.1 as mechanics, not generalization.",
+        "controls": "Same frozen terminal reader teacher/empty/raw/unrelated/restatement/corrupt; no DEV outcomes select training, checkpoint or threshold.",
+        "memory": "External process-tree PSS/private/available every10s, checkpoint-aware tails, no OOM accepted as progress. Warm tails after32 and64 must show bounded growth before any larger learning release.",
+        "prerequisites": [
+          "Completed independent real3-save/restore/6 qualification PASS.",
+          "Both16-update cache-capacity conditions physically close and full numerical gates pass; max rank tail live-allocation slope<=64MiB/update forLRU256.",
+          "Reviewed finite resource/stop supervisor, exact native/master/real-update gates preserved."
+        ],
+        "scientific_scope": "TRAIN-only mechanical overfit. No scientific warm start, no RL, no5120-example or final DEV release.",
+        "next": "Freeze terminal reader, then train separate prefix-only writer from fresh B0 and compare actual student notes with this same reader. Compact CoT remains a required baseline before any capability claim.",
+        "controller_sources": {
+          "supervise.py": "f0c0c96c42a0a013d487a5c2bde0c936d8d77f892edcaa09c4c5771d27559a79",
+          "helpers.py": "ad41a5faf976d0a2dbd057b2f61bafd527104c90c3a68f090fbf788822a80430"
+        },
+        "deadline_utc": "2026-10-19T00:00:00+00:00",
+        "per_process_cap_seconds": 18000,
+        "released_utc": "2026-10-18T18:20:07.734985+00:00",
+        "cache_report_sha256": "6409e384460db9bca23f7dde172894dc173b6e149e13ba1dbd1152024356f178",
+        "review": "LRU256 has zero new compile handles in warm tail, exact cross-capacity losses/norms, max0.126MiB/rank/update live-allocation slope. Both capacities bounded onworld4, so this is a speed candidate, not originalworld32 OOM repair. This128-step target run is the extended memory check."
+      },
+      "release": {
+        "status": "RELEASED_TRAIN_ONLY_READER_MECHANICS",
+        "utc": "2026-10-18T18:20:07.735241+00:00",
+        "plan_sha256": "89b160ca5319c3d80c9e193b47d684001a4e9815aa33735042c4cf8c4eebe788",
+        "protocol_sha256": "67ef4b7598e504ffa33884c418f797f0904bf5a4a53b7042a69621cc437b495b",
+        "cache_report_sha256": "6409e384460db9bca23f7dde172894dc173b6e149e13ba1dbd1152024356f178",
+        "review": "Reviewed unchanged qualified short training source, native/master/finite-update gates, original128 exactTRAIN items, freshB0, periodic full32, exact-owned finite supervisor. Existing actual3/restore/6 passes. No DEV or scientific learning release.",
+        "resources": "One world4/micro8 reader onphysical5/logical20-23; at most5hours/midnightUTC, external512GiB floor, no retries, full states32/64/96/128."
+      }
+    },
+    "cot": {
+      "plan": {
+        "schema": "partial-state-v6-cot-TRAIN128-overfit-v1",
+        "status": "RELEASED_TRAIN_ONLY_COT_MECHANICS",
+        "created_utc": "2026-10-18T18:24:24.372680+00:00",
+        "question": "Can ordinary compact CoT fit the same verified partial traces and full answers at the same128TRAIN updates?",
+        "arm": "cot",
+        "initialization": "Fresh released B0; qualification writer is discarded.",
+        "protocol_sha256": "1b116ede0a265e2cd59d3b9853eab54db6bf0e54045aa1ebf0ce5cedc045636a",
+        "items": 128,
+        "steps": 128,
+        "ordered_passes": 32,
+        "loss": "Ordinary mean CE over partial calculations + Answer label + complete numeral + EOS, one stream.",
+        "lr": 1e-05,
+        "schedule": "constant",
+        "hardware": "world4/micro8/global32,logical24-27/physical6, fixed128updates32passes, LRU256.",
+        "checkpoints": "Complete model and four FP32 master/Adam/RNG shards every32 and terminal128, finite checkpoint scans and guards. Keep all on NVMe; latest state EBS where35GiB reserve permits.",
+        "primary": "Terminal128 TRAIN complete-answer and canonical trace accuracy; mechanics, not generalization.",
+        "controls": "Same frozen terminal reader teacher/empty/raw/unrelated/restatement/corrupt; no DEV outcomes select training, checkpoint or threshold.",
+        "memory": "External process-tree PSS/private/available every10s, checkpoint-aware tails, no OOM accepted as progress. Warm tails after32 and64 must show bounded growth before any larger learning release.",
+        "prerequisites": [
+          "Completed independent real3-save/restore/6 qualification PASS.",
+          "Both16-update cache-capacity conditions physically close and full numerical gates pass; max rank tail live-allocation slope<=64MiB/update forLRU256.",
+          "Reviewed finite resource/stop supervisor, exact native/master/real-update gates preserved."
+        ],
+        "scientific_scope": "TRAIN-only compact-CoT mechanics baseline. Same128expressions/order/128updates as reader and later writer; split channel consumes TWO model training runs, so this alone is not a compute-matched architecture claim.",
+        "next": "Preserve this simple baseline for complete answers, generated tokens and latency; it is allowed to win.",
+        "controller_sources": {
+          "supervise.py": "3e642f55a2a976a400b6dd36b91dc0095815bb684abbee091b0c7bc555f5eabf",
+          "helpers.py": "ad41a5faf976d0a2dbd057b2f61bafd527104c90c3a68f090fbf788822a80430"
+        },
+        "deadline_utc": "2026-10-19T00:00:00+00:00",
+        "per_process_cap_seconds": 18000,
+        "released_utc": "2026-10-18T18:20:07.734985+00:00",
+        "cache_report_sha256": "6409e384460db9bca23f7dde172894dc173b6e149e13ba1dbd1152024356f178",
+        "review": "LRU256 has zero new compile handles in warm tail, exact cross-capacity losses/norms, max0.126MiB/rank/update live-allocation slope. Both capacities bounded onworld4, so this is a speed candidate, not originalworld32 OOM repair. This128-step target run is the extended memory check."
+      },
+      "release": {
+        "status": "RELEASED_TRAIN_ONLY_COT_MECHANICS",
+        "utc": "2026-10-18T18:24:24.372837+00:00",
+        "plan_sha256": "2d0be3019a1e5404205c1835c720ef61e1657bff8d3b8c343ed00c4efb6d453e",
+        "protocol_sha256": "1b116ede0a265e2cd59d3b9853eab54db6bf0e54045aa1ebf0ce5cedc045636a",
+        "cache_report_sha256": "6409e384460db9bca23f7dde172894dc173b6e149e13ba1dbd1152024356f178",
+        "review": "Same qualified short causal CE and exact traces. CoT ordinary completion mean is CPU checked, caps/boundaries fixed; all actual native/master/finite and periodic full-state checks retained. Reader continues separately; no shared trainable weights.",
+        "resources": "One4-core physical6 arm,128updates, full32, midnight/5hour cap,512GiB floor, no retries. No DEV, scientific warm start or capability claim."
+      }
+    },
+    "writer": {
+      "plan": {
+        "schema": "partial-state-v6-writer-TRAIN128-overfit-v1",
+        "status": "RELEASED_TRAIN_ONLY_WRITER_MECHANICS",
+        "created_utc": "2026-10-18T18:30:41.444724+00:00",
+        "question": "Can an independently supervised prefix-only writer fit exact non-root computations and EOS after the reader is frozen?",
+        "arm": "writer",
+        "initialization": "Fresh released B0; qualification writer is discarded.",
+        "protocol_sha256": "9bf4000b6b6802e39fecf3ce5174473e763ef20054f399b8ac13459ce296c72f",
+        "items": 128,
+        "steps": 128,
+        "ordered_passes": 32,
+        "loss": "Note and actual EOS CE only. Root operation/final answer never appear in writer labels.",
+        "lr": 1e-05,
+        "schedule": "constant",
+        "hardware": "world4/micro8/global32,logical28-31/physical7, fixed128updates32passes, LRU256.",
+        "checkpoints": "Complete model and four FP32 master/Adam/RNG shards every32 and terminal128, finite checkpoint scans and guards. Keep all on NVMe; latest state EBS where35GiB reserve permits.",
+        "primary": "Terminal128 TRAIN canonical partial-state correctness and natural stopping; then same frozen reader with actual student outputs. No DEV or scientific warm start.",
+        "controls": "Same frozen terminal reader teacher/empty/raw/unrelated/restatement/corrupt; no DEV outcomes select training, checkpoint or threshold.",
+        "memory": "External process-tree PSS/private/available every10s, checkpoint-aware tails, no OOM accepted as progress. Warm tails after32 and64 must show bounded growth before any larger learning release.",
+        "prerequisites": [
+          "Completed independent real3-save/restore/6 qualification PASS.",
+          "Both16-update cache-capacity conditions physically close and full numerical gates pass; max rank tail live-allocation slope<=64MiB/update forLRU256.",
+          "Reviewed finite resource/stop supervisor, exact native/master/real-update gates preserved."
+        ],
+        "scientific_scope": "TRAIN-only mechanical overfit. No scientific warm start, no RL, no5120-example or final DEV release.",
+        "next": "Evaluate this writer with the already frozen reader, plus teacher/empty/raw/intact-other controls and compact CoT. Retain caps/unsupported and exact state diagnostics.",
+        "controller_sources": {
+          "supervise.py": "a6b20d30cf4f8b8fef2998a7c5745c759e8be47336c78773d48e6c07df0b4e14",
+          "helpers.py": "ad41a5faf976d0a2dbd057b2f61bafd527104c90c3a68f090fbf788822a80430"
+        },
+        "deadline_utc": "2026-10-19T00:00:00+00:00",
+        "per_process_cap_seconds": 18000,
+        "released_utc": "2026-10-18T18:20:07.734985+00:00",
+        "cache_report_sha256": "6409e384460db9bca23f7dde172894dc173b6e149e13ba1dbd1152024356f178",
+        "review": "LRU256 has zero new compile handles in warm tail, exact cross-capacity losses/norms, max0.126MiB/rank/update live-allocation slope. Both capacities bounded onworld4, so this is a speed candidate, not originalworld32 OOM repair. This128-step target run is the extended memory check.",
+        "frozen_reader_sha256": "4dbafc8bffa3056fbdb541f6b1ef23688c3ae32c18701d05220d2b683b4bc516",
+        "frozen_reader_checkpoint_sha256": "1670181dd68100f025e19263297e757fdfe1c32c9d2304ce662f18ed839181a2"
+      },
+      "release": {
+        "status": "RELEASED_TRAIN_ONLY_WRITER_MECHANICS",
+        "utc": "2026-10-18T18:30:41.444877+00:00",
+        "plan_sha256": "6d74bbd1c191fab6643a077abe40fda03ce5a2ec5ab26a421dd6d16c3a7d8aed",
+        "protocol_sha256": "9bf4000b6b6802e39fecf3ce5174473e763ef20054f399b8ac13459ce296c72f",
+        "cache_report_sha256": "6409e384460db9bca23f7dde172894dc173b6e149e13ba1dbd1152024356f178",
+        "frozen_reader_sha256": "4dbafc8bffa3056fbdb541f6b1ef23688c3ae32c18701d05220d2b683b4bc516",
+        "review": "Reader128 completed with all four complete states and physical closure, full lineage bound before launch. Writer starts fresh B0, same128 expressions/order/128updates. Same qualified note+EOS kernel as actual3/restore/6, now LRU256 with exact comparative losses/norms. Reader/writer never share trainable weights.",
+        "resources": "One4-core physical7 arm, full32, midnight/5hour cap,512GiB floor, no retries. Source/packing remain unchanged."
+      }
+    }
+  }
+}

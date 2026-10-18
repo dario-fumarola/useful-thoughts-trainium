@@ -1,4 +1,4 @@
-# Status — 2026-10-18 18:04 UTC
+# Status — 2026-10-18 18:32 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -63,17 +63,31 @@ All16 scheduled steps are inside warmup; no later cosine/export or long steady-s
 Public:validation/host_memory_full_loop_attribution_20261018.json plus all stage traces/update metrics.
 Decision: constantLR/reduced diagnostics are not repairs; cache-capacity is a hypothesis to test.
 
-## Active: compilation-cache capacity attribution
-Question: does retaining reusable compiled graphs remove repeated loading and host-allocation growth?
-ID:host-memory-cache-capacity-v1; one sequential LRU2/LRU256 batch,16 fresh-B0 W updates each.
-Logical16–19/physical4 only, world4/global4, same64 original ordered TRAIN occurrences and constantLR.
-This smaller engineering topology is explicit; it cannot certify original world32 or long-run stability.
-Endpoint: tail9–16 max-rank live allocation<=64MiB/update, process PSS and compile-handle growth.
-Original native/master/finite-update gates retained; no checkpoints/scientific models or retries.
-Bound2700s/condition,19:30UTC deadline, external512GiB floor; source/release reviewed before launch.
-Controls:local/diagnostics/host-memory-cache-capacity-v1; cache2 active, actual4-core mapping captured.
-Output:local/nvme/diagnostics/host-memory-cache-capacity-v1; keep production/live restart sources frozen.
-Decision: pending; a positive short test still needs extended target-loop memory qualification.
+## Closed: compilation-cache capacity attribution — speed candidate pass
+Question: does a larger cache remove repeated loading and host-allocation growth?
+ID:host-memory-cache-capacity-v1; fresh B0 LRU2/LRU256,16W updates each, world4/global4.
+All32updates complete, eight native/master witnesses and16full finite reports pass; physical closure18:18.
+Same ordered64TRAIN items; all stepwise component losses and gradient norms exactly equal.
+Warm median43.466s→1.925s; LRU2 creates94handles/tail, LRU256 reuses94 with zero new handles.
+Max rank tail live allocation.158/.126MiB/update: BOTH small-topology tails bounded.
+Thus speed improves, but the original world32/global32 host-memory failure is not reproduced or repaired.
+Fast external tail has only2samples; PSS slopes are null, not a steady-state pass.
+All traces/metrics and EBS readback archive verified; validation/host_memory_cache_capacity_20261018.json.
+Decision: release LRU256 for extended target-loop128TRAIN mechanics; no broad study or RL release.
+
+## Active: intermediate-only TRAIN128 fitting and simple CoT comparison
+Question: can a trained frozen reader use a separately produced partial state beyond compact CoT?
+ID:partial-state-v6-TRAIN128-overfit-v1; all arms fresh B0, same128expressions/order/128updates.
+Reader128 closed18:26; terminal loss.0161, warm~.73s, full32/64/96/128 states verified.
+Its model hash1670181d…1839181a2 is frozen before independent writer launch18:30 onphysical7.
+CompactCoT128 also completes; ordinary mean CE over partial+answer+EOS, terminal batchloss.0081.
+Writer trains partial+EOS only; root operation/final answer omitted; no qualification-model warm start.
+Endpoint: terminal TRAIN complete-answer and canonical-state accuracy/natural stop; aims95% and CE<=.1.
+PSS reader max74.5GiB including full-state exports;128updates are bounded, not a multi-hour plateau claim.
+Controls:local/diagnostics/partial-state-v6-{reader,cot,writer}-TRAIN128-overfit-v1; source7623864 unchanged.
+Outputs:local/nvme/runs/sameIDs; writer logical28–31, midnight/5hour cap,512GiB floor, no retries.
+The split method costs TWO training runs; equal per-arm updates are not matched total training compute.
+Decision: fit mechanics only; free answers/student utility and fresh generalization remain unmeasured.
 
 ## CPU ready: intermediate-only state diagnostic
 Question: can a supervised prefix-only writer aid a trained frozen reader beyond compact CoT?

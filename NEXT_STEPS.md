@@ -16,25 +16,24 @@
    B0 TRAIN128 all7answer controls are active on physical3/logical12–15:
    local/diagnostics/partial-state-v6-TRAIN128-B0-answers-v1, deadline21:00UTC.
    All4actual mappings captured; score gold only after entire physical closure.
-3. Full-loop2×2 is closed and archived; all four conditions grow4–6.5GiB/node
-   private RAM per update. ConstantLR/reduced sampled diagnostics do not fix it.
-   validation/host_memory_full_loop_attribution_20261018.json preserves all
-   traces. Live tensor counts are flat but compile handles keep accumulating.
-   Active smaller causal cache-capacity probe LRU2/LRU256 on physical4 only:
-   local/diagnostics/host-memory-cache-capacity-v1, deadline19:30UTC, no retries.
-   World4/global4 is explicitly engineering, not a world32 stability pass.
-   Review after both conditions close; target-loop extended memory still needed.
-4. Reader128-overfit protocol is prepared, NOT released:
-   local/diagnostics/partial-state-v6-reader-TRAIN128-overfit-v1. Wait for both
-   cache conditions and numerical readback; LRU256 needs <=64MiB/rank/update.
-   Planned reader128updates/32passes, LR1e−5, periodicfull32, physical5. Then:
-   reader first with correct partial/empty/raw paths, freeze checkpoint; then a
-   separate prefix-only writer trained on exact non-root operations and stop.
-   Ordinary compact CoT uses the same verified traces and may win. No fresh DEV
-   outcome chooses mechanics examples, checkpoints or later budgets. Complete
-   answers and student state correctness are primary for the new diagnostic;
-   retain unsupported, caps, latency and tokens. Verify steady target-loop RAM
-   and periodic complete states before scaling to5,120examples/two seeds.
+3. Cache-capacity comparison is independently complete: same losses/norms,
+   LRU2 tail43.466s versus2561.925s;94new handles versus94cache hits/zero new.
+   Both world4/global4 tails bounded, so no originalworld32 OOM repair claim.
+   validation/host_memory_cache_capacity_20261018.json and raw records are ready.
+4. TRAIN128 mechanics: reader128 physically closed, full32/64/96/128 verified,
+   terminal CE.0161; frozen-reader binding in its control folder. CoT128 also
+   completed. Fresh independent writer128 launched18:30 onphysical7/logical28–31:
+   local/diagnostics/partial-state-v6-writer-TRAIN128-overfit-v1. Boundmidnight,
+   5hours,512GiB floor; all use exact unchanged training source7623864/LRU256.
+   Main's trained-reader evaluator now has1584CPUchecks; freeze it in a separate
+   worktree before new hardware. Prepare its own CPU native reference for the
+   frozen reader, then all128free-answer controls. Existing B0v1 evaluation
+   remains on immutable partial-state-v6 worktree71609ee; never edit its sources.
+   Evaluate actual writer notes with this SAME frozen reader; retain all actions,
+   caps/unsupported, correct/corrupt/intact-other/restatement/raw/empty controls
+   and compact CoT. TRAIN fitting is not generalization or a complexity gain.
+   Archive frozen model weights/nonweight evidence onEBS while keeping35GiB free;
+   full optimizer states remain onNVMe. No mechanical model silently warms science.
 5. Separate512-item interpolation, structure, range and composition DEV panels
    are ready; do not pool their generalization claims. Qualification/overfit
    models are mechanical and do not become scientific warm starts implicitly.

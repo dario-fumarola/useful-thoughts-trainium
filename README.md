@@ -68,7 +68,7 @@ range, composition and interpolation DEV panels are prepared; the initial128TRAI
 overfit check is mechanical. The short batched driver completed actual updates1–3,
 full save, fresh-process full restore and updates4–6. Independent model/master/
 moment byte checks pass; this does not establish long-run memory stability.
-The source is merged to main, with1,582CPU checks passing. A complete seven-condition
+The source is merged to main. A complete seven-condition
 TRAIN128 free-answer baseline is running before reader training.
 [Short-pack hardware evidence](validation/partial_state_v6_training_hardware_20261018.json) ·
 [Intermediate-only design](validation/partial_state_v6_design_20261018.json) ·
@@ -81,9 +81,14 @@ A four-condition backward-only probe does not reproduce runaway RAM over16 rows.
 The complete update loop does: constant/scheduledLR and full/reduced sampled
 diagnostics all retain substantial private host memory. Live XLA tensor counts
 stay flat while compilation handles keep accumulating under a two-entry cache.
-A bounded cache-capacity comparison is testing that lead; no repair is yet claimed.
+A four-core cache-capacity comparison cuts warm W updates43.466s→1.925s,
+with exactly equal losses/norms and94graph reloads replaced by94cache hits. Both
+small-topology memory tails are bounded, so this is a speed gain rather than a
+repair of the original32-rank failure. The new short reader completed128updates
+with full checkpoints in about five minutes; free-answer utility remains pending.
 [Backward probe](validation/host_memory_backward_probe_20261018.json) ·
-[Full-loop attribution and raw traces](validation/host_memory_full_loop_attribution_20261018.json).
+[Full-loop attribution and raw traces](validation/host_memory_full_loop_attribution_20261018.json) ·
+[Cache-capacity comparison](validation/host_memory_cache_capacity_20261018.json).
 The separate future-aware general-label dataset and CPU-only `general-sft-v5` branch
 remain on hold; selected teacher usefulness does not establish prefix-only
 attainability. [Complete general teacher batch](validation/general_hindsight_filtered_TRAIN24576_20261018.json).

@@ -1,0 +1,295 @@
+{
+  "schema": "host-memory-cache-capacity-v1",
+  "status": "PASS_CACHE256_CANDIDATE_TARGET_LOOP_STILL_REQUIRED",
+  "finished_utc": "2026-10-18T18:19:03.731129+00:00",
+  "design": {
+    "schema": "host-memory-cache-capacity-v1",
+    "created_utc": "2026-10-18T17:46:51.653955+00:00",
+    "question": "Does retaining reusable compiled graphs prevent the repeated compile-handle creation and host-allocation growth seen with LRU2?",
+    "original_protocol": "/home/ubuntu/dario/local/diagnostics/postorder-reader-learning-compound5120-sft-v4r2/protocol.seed-20261018.json",
+    "original_protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+    "conditions": {
+      "cache2": {
+        "cache_capacity": 2
+      },
+      "cache256": {
+        "cache_capacity": 256
+      }
+    },
+    "iterations": 16,
+    "world_size": 4,
+    "global_batch": 4,
+    "arm": "W",
+    "deadline_utc": "2026-10-18T19:30:00+00:00",
+    "hardware": "Sequential fresh B0s logical16-19/physical4 only; <=2700s per condition, external512GiB floor, no retries.",
+    "data": "Same first64 original ordered real TRAIN occurrences per condition. Reduced topology/global4 is engineering only; original world32 conclusions remain separate.",
+    "unchanged": "Same BF16 weights/gradients, FP32 Adam/masters, constantLR1e-5, one ZeRO reducer, native reference and initial-master gates, reduced sampled diagnostics retaining first3/last.",
+    "measurement": "Stage glibc live allocation and RSS, external whole-session PSS/private bytes, XLA metrics every update; grad-norm CPU observation separately marked.",
+    "endpoint": "Tail9-16 max rank glibc live-allocation slope and process-tree PSS slope, repeated CreateCompileHandles, elapsed update times.",
+    "candidate_pass": "After warm-up, max rank live-allocation slope <=64MiB/update and no continuing repeated large-graph loads. Still requires extended target-loop qualification before science.",
+    "helper_files": {
+      "run_profile.py": "6c7cd19d505284dd3d8fcefdb1ec21d129b9f8d602f7ffbdf65b2d570e5630b3",
+      "profile_worker.py": "3c8426e598527f6588573e0a60a91597e27539f708ef525315a0bd8f40ae270a",
+      "supervise.py": "2627f85ff6ed24a6da19cf2e59923574f05dd4cf1fddb838cfe2856a17879fe2"
+    },
+    "limits": [
+      "World4/global4 cannot certify world32/global32.",
+      "No checkpoints or science models emitted.",
+      "Sixteen updates cannot establish long-term steady state.",
+      "Cold compilation/cache history and concurrent restart job affect timing.",
+      "The only between-condition change is compilation-cache capacity."
+    ]
+  },
+  "results": {
+    "cache2": {
+      "rank_statistics": [
+        {
+          "rank": 0,
+          "tail_glibc_live_MiB_per_update": 0.15674445742658605,
+          "tail_RSS_MiB_per_update": -80.31635974702361,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        },
+        {
+          "rank": 1,
+          "tail_glibc_live_MiB_per_update": 0.15756806873143522,
+          "tail_RSS_MiB_per_update": 220.96949404761938,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        },
+        {
+          "rank": 2,
+          "tail_glibc_live_MiB_per_update": 0.15713228498187662,
+          "tail_RSS_MiB_per_update": 9.345191592262042,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        },
+        {
+          "rank": 3,
+          "tail_glibc_live_MiB_per_update": 0.1569437299456418,
+          "tail_RSS_MiB_per_update": 212.11058407738116,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        }
+      ],
+      "max_rank_tail_live_allocation_MiB_per_update": 0.15756806873143522,
+      "external_tail_samples": 31,
+      "external_tail_session_PSS_GiB_per_update": 0.5134406901193821,
+      "external_tail_session_private_GiB_per_update": 0.513441010020222,
+      "cold_first_update_seconds": 1017.4003900370153,
+      "tail_step_median_seconds": 43.46629036248487,
+      "tail_optimizer_mean_rank_median_seconds": 5.823571443557739
+    },
+    "cache256": {
+      "rank_statistics": [
+        {
+          "rank": 0,
+          "tail_glibc_live_MiB_per_update": 0.12325395856608139,
+          "tail_RSS_MiB_per_update": 0.1049572172624992,
+          "compile_handles_created_step8_to16": 0,
+          "cached_compile_step8_to16": 94,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        },
+        {
+          "rank": 1,
+          "tail_glibc_live_MiB_per_update": 0.1250078110474796,
+          "tail_RSS_MiB_per_update": 0.09960937500018137,
+          "compile_handles_created_step8_to16": 0,
+          "cached_compile_step8_to16": 94,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        },
+        {
+          "rank": 2,
+          "tail_glibc_live_MiB_per_update": 0.12409155709429366,
+          "tail_RSS_MiB_per_update": 0.10328311011956316,
+          "compile_handles_created_step8_to16": 0,
+          "cached_compile_step8_to16": 94,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        },
+        {
+          "rank": 3,
+          "tail_glibc_live_MiB_per_update": 0.1256147112168271,
+          "tail_RSS_MiB_per_update": 0.10226004464340067,
+          "compile_handles_created_step8_to16": 0,
+          "cached_compile_step8_to16": 94,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175
+        }
+      ],
+      "max_rank_tail_live_allocation_MiB_per_update": 0.1256147112168271,
+      "external_tail_samples": 2,
+      "external_tail_session_PSS_GiB_per_update": null,
+      "external_tail_session_private_GiB_per_update": null,
+      "cold_first_update_seconds": 39.55360435397597,
+      "tail_step_median_seconds": 1.9250857010047184,
+      "tail_optimizer_mean_rank_median_seconds": 0.07788288220763206
+    }
+  },
+  "short_tail_bounded": {
+    "cache2": true,
+    "cache256": true
+  },
+  "cached_graph_reuse_improves": true,
+  "same_ordered64_TRAIN_occurrences": true,
+  "max_same_step_component_loss_difference": 0.0,
+  "max_same_step_gradient_norm_difference": 0.0,
+  "independent_native_master_state_checks": [
+    {
+      "condition": "cache2",
+      "rank": 0,
+      "native_max_KL": 0.0031035199827929003,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache2",
+      "rank": 1,
+      "native_max_KL": 0.003069729731572845,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache2",
+      "rank": 2,
+      "native_max_KL": 2.1572303394931953e-05,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache2",
+      "rank": 3,
+      "native_max_KL": 0.00032594614748145167,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache256",
+      "rank": 0,
+      "native_max_KL": 0.0031035199827929003,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache256",
+      "rank": 1,
+      "native_max_KL": 0.003069729731572845,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache256",
+      "rank": 2,
+      "native_max_KL": 2.1572303394931953e-05,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    },
+    {
+      "condition": "cache256",
+      "rank": 3,
+      "native_max_KL": 0.00032594614748145167,
+      "initial_exact_FP32_masters": true,
+      "full_optimizer_finite_steps": [
+        2,
+        3
+      ]
+    }
+  ],
+  "all_original_sessions_and_devices_closed": true,
+  "public_payloads": {
+    "validation/host_memory_cache_capacity_20261018/cache2-all4-stage-traces.jsonl.gz": {
+      "rows": 448,
+      "bytes": 16715,
+      "sha256": "a4eb773c21fbff94b8205e35b3314e22a3d9d59562f05430f35b108e79a18920"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache2-all16-update-metrics.jsonl.gz": {
+      "rows": 16,
+      "bytes": 6410,
+      "sha256": "edb0e2bcfea3dc59befcfb18c0642d7ed93444645001fbeb4db681af917d894e"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache2-XLA-rank-00000-step-16.txt": {
+      "bytes": 6608,
+      "sha256": "e2c67e4a93091b17b3b7a82ea8bfc3bc87509c52a71eba0752720e480f79f418"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache2-XLA-rank-00001-step-16.txt": {
+      "bytes": 6604,
+      "sha256": "a1217e0aa47efedf23988dc33bdc938ad74475336cfeb73f450c803b3b49f7e7"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache2-XLA-rank-00002-step-16.txt": {
+      "bytes": 6617,
+      "sha256": "a82039b36757c7482ff91a6c5660a241b03a99cb5c3b29593429779ed8875aeb"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache2-XLA-rank-00003-step-16.txt": {
+      "bytes": 6622,
+      "sha256": "fb459ebf3ce91aa823b4021ca182ee6c6d399a6a4d0a571509c1b8264ab83db1"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache256-all4-stage-traces.jsonl.gz": {
+      "rows": 448,
+      "bytes": 12604,
+      "sha256": "683eafece1bc56b105da80ad1f2c63694c80e441ecc9d1e47320132d048973ae"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache256-all16-update-metrics.jsonl.gz": {
+      "rows": 16,
+      "bytes": 6387,
+      "sha256": "e016dd6ab4bba496b140571486953657c44eaeb84ed34964341b3db482b47fd7"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache256-XLA-rank-00000-step-16.txt": {
+      "bytes": 6585,
+      "sha256": "48073f17299cd23704ad49629dcfc0d9e69149939169ae35bcab7f099efeb443"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache256-XLA-rank-00001-step-16.txt": {
+      "bytes": 6584,
+      "sha256": "04b499915f5156b793b6a3724fa17272d11ccad2abe14eeeb01b2eb632ed1922"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache256-XLA-rank-00002-step-16.txt": {
+      "bytes": 6589,
+      "sha256": "143c43cdabbb307b118936c2fc4b84045846e40e99e08405de4c57272beaec24"
+    },
+    "validation/host_memory_cache_capacity_20261018/cache256-XLA-rank-00003-step-16.txt": {
+      "bytes": 6589,
+      "sha256": "b6e1a64a23d6feb1572cff352acdf5e134bef87ca61d6f4787d0f9340ba95180"
+    }
+  },
+  "archive_receipt_sha256": "97e0016bad1c690defee72ea796227fb6b8056b29cabacd227b2c576424f57cd",
+  "interpretation": "World4/global4 short tails are interpreted separately from the leaking original world32/global32 loop. Cache capacity can affect graph reuse and speed without identifying or repairing the original topology-dependent memory growth.",
+  "limits": [
+    "Same original W objective, but world4/global4 is an explicit smaller engineering identity.",
+    "Sixteen updates do not qualify extended target-loop memory, reader fitting, recovery or generalization.",
+    "If both capacities are bounded here, this comparison does not reproduce or causally repair original world32 memory growth.",
+    "Cold first condition compiled new topology graphs; second benefits from disk cache. Use warm tails for descriptive speed.",
+    "Concurrent B0 evaluation compilations affect timings.",
+    "External memory sampling every10seconds may be sparse in a fast tail; fewer than5 samples gives null slope.",
+    "No checkpoints or scientific model outputs emitted."
+  ]
+}
