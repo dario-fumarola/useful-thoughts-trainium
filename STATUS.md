@@ -1,4 +1,4 @@
-# Status — 2026-10-18 19:58 UTC
+# Status — 2026-10-18 20:01 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -32,15 +32,15 @@ Decision: mechanics pass; qualification model excluded from scientific training 
 ## Active: fixed fresh computation panels
 Question: do frozen TRAIN128 models transfer, and can student partials improve the same reader?
 ID:partial-state-v6-fixed-DEV512; four separate512-item interpolation/structure/range/composition panels.
-Writer128 and ordinary compactCoT128 run four-stage finite jobs onphysical8/9, logical32–39.
-Controls:local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot}128-v1.
+Writer128/compactCoT128 run onphysical8/9, logical32–39; same frozen reader on10/logical40–43.
+Controls:local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
 Outputs:local/nvme/evaluation/partial-state-v6-DEV_{panel}-{writer128-XLA-notes-v2,cot128-answers-v4}.
 Source:immutable partial-state-held-v6/3301d22;1588CPUchecks, fixed hashes/models/native refs verified.
 Single greedy attempt, cap64writer/80CoT; all512 failures retained, no repair/filtering or TEST.
 Endpoint: separate complete-answer accuracies and paired5000item/seed17 contrasts; never pool panels.
 Actual4 live placements captured for each device; native and new cache-shape gates precede sampling.
 Bound01:30UTC Oct19/3hours per child,512GiB memory floor, no automatic retries.
-After writer closure, prepare same frozen reader plus B0 with own/empty/direct/intact-other and teacher controls.
+Each reader panel starts only after its512actual writer attempts close; all8conditions, no utility gating.
 Original TRAIN128 XLAwriter physically closed19:55UTC:128exact/natural stops, all native actions equalCPU.
 Decision: pending fresh results; larger5120study and RL remain unreleased.
 

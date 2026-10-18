@@ -39,8 +39,12 @@
    partial-state-v6-fixed-DEV512-{writer,cot}128-v1; physical8/9 logical32–39.
    Both actual live placements captured; bound01:30UTC Oct19,3hours per child.
    Monitor stage-*/shard-*/run.log and native/cache JSON; do not edit snapshot.
-   After each notes-bundle closes, prepare R/B0 all8content controls with those
-   exact native note IDs, then run the finite same-reader answer matrices.
+   Same-reader all8content controls run onphysical10/logical40–43:
+   local/diagnostics/partial-state-v6-fixed-DEV512-reader128-v1. Its finite
+   controller waits for each complete512writer bundle, prepares it exactly
+   once and retains all failures. No utility selection or repair. Original
+   source3301d22 and80total-action budget stay fixed. No extra B0 terse-format
+   repetition; preserve its known unsupported counts, not capability zeros.
    No TEST. Finish all panels and compare natural CoT, retaining every failure.
    Full-trace CoT, including root operation, is a stronger future baseline;
    data-only census showsTRAIN fits64label slots. Do not relabel old compactCoT.
@@ -59,6 +63,7 @@ subagents are unavailable due account usage limits. Preserve negatives and contr
 
 Future study source is isolated in local/worktrees/partial-state-study-v7.
 It adds root-inclusive ordinary CoT, fixed5120scope, full64/160/terminal saves.
+Public branch:partial-state-study-v7; validation/partial_state_v7_CPU_readiness_20261018.json.
 CPU audit:25,600 existing component packs bitwise match qualified v6; no forward
 or learning claim. Proposed A320/B640/R320/W320 per seed explicitly counts two
 split models/runs; B320 is the data-matched development milestone. No learning
