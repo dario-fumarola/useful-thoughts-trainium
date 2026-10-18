@@ -6,6 +6,25 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
+October18 20:16UTC live handoff: all TRAIN128 fitting jobs are closed, native CPU/
+Trainium writer actions exactly match128/128, and frozen-reader/compactCoT both
+answer128/128. This establishes fitting mechanics, no architecture advantage.
+Fresh four512DEV panels run on immutable partial-state-held-v6/3301d22:
+writerphysical8, compactCoT9, same frozen reader10; logical32–43. Controllers:
+local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
+Bound01:30UTC Oct19,3h per child,512GiB floor, no retries. Reader preparation
+waits for each complete512writer bundle; never selects by utility. Three writer
+panels close; final composition generates. R/CoT compile a shared longer-cache
+graph. Monitor active logs/native gates; let healthy compilation finish.
+Only after all three four-panel controllers close, run:
+`source scripts/env.sh; USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario`.
+Audit actual complete answers, controls, vectors, intervals and archives, then
+report all panels separately. Official TEST untouched. Future public branch
+partial-state-study-v7 is CPU-only/unreleased; current jobs never use it.
+Budget proposal is A640/Bpartial640 versus R320+W320, total640updates per system;
+full-root CoT is an extra prepared variant, not a replacement for compact CoT.
+No larger learning release until fresh diagnosis, memory/disk/recovery review.
+
 ## Your job
 
 Implement and qualify one production driver for the frozen experiment in `configs/weekend.json`. Use the bundled `legacy/ema-trainium-pre-thinking` repository snapshot and the already working instance environment. The CPU reference in this kit defines semantics; it is **not** an efficient accelerator trainer. Do not run it on every Neuron core and assume the hardware will fix the full-prefix generation cost.

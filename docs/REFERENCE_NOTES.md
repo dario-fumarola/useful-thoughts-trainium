@@ -58,3 +58,32 @@ than a TPT reproduction; a negative small warm start cannot refute the paper.
 
 These checks support interface choices, not hardware performance or scientific
 claims. Pin resolved asset revisions and inspect installed library APIs at use.
+
+## 2026-10-18: check the bootstrap mechanisms against the original papers
+
+Quiet-STaR trains the prediction/mixing path with a likelihood loss alongside
+rationale REINFORCE. Its published algorithm also drops negative rationale
+advantages, and its learned boundary embeddings are part of the adaptation.
+These are material differences from the stopped writer-only signed-advantage
+recipe, not evidence that another unqualified RL run will work.
+[Quiet-STaR, sections4.3–4.4](https://arxiv.org/html/2403.09629v2).
+
+BoLT trains both a latent-conditioned joint model and a future-aware posterior
+through two sequence orderings, after supervised initialization. Its later
+candidate weights use the joint probability divided by the posterior proposal
+probability, rather than continuation likelihood alone.
+[BoLT, sections3.2 and4.1, Algorithm1](https://arxiv.org/html/2503.18866v1).
+Our inference: a note selected only for predicting an observed future need not
+be recoverable by a prefix-only writer. If returning to general text, distinguish
+posterior usefulness from prior/deployed utility; do not describe the previous
+positive-reader filter as the BoLT weighting rule.
+
+STaR's arithmetic study distinguishes ordinary fine-tuning, rationale
+bootstrapping and answer-conditioned rationalization, including digit-length
+generalization. It does not establish that arbitrary future-aware annotations
+will be useful under a prefix-only policy.
+[STaR, sections4.1–4.3](https://arxiv.org/html/2203.14465v2).
+For our current experiment, exact prefix-computable partial states eliminate
+that information mismatch, while separately held structure/range/composition
+panels test transfer. Correct teacher reading, actual student benefit and a gain
+over ordinary compact CoT remain three different claims.

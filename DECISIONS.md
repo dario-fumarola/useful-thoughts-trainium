@@ -1064,3 +1064,11 @@ physical8/9, bounded01:30UTC Oct19. Keep ordinary partial-CoT as a real cost
 competitor when considering the stronger full-trace training variant; extra root
 steps may increase answer accuracy and also add inference tokens. No larger
 learning or RL release yet.
+
+2026-10-18 20:16UTC — Before reviewing any fresh DEV outcomes, revise the
+unreleased larger budget to A640/Bpartial640 versus reader320+writer320: each
+system gets640total updates/20,480ordered expressions. A/B each see four passes,
+R/W each two; actual supervised labels/chip-time/capacity remain explicit. The
+full-root CoT variant is prepared but cannot displace the compact cost baseline.
+A320in the first CPU proposal was never launched. The currently active128-model
+DEV question retains its original80-action budget/settings; no new learning.

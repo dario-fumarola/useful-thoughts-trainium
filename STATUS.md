@@ -500,9 +500,7 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
 Root: science/data/precision decisions, training release, current public findings.
-Data: larger filtered general hindsight batch, native-label adapter and CPU projections.
-Distributed: active W science, checkpoint/closure checks and next C′ CPU preparation.
-Review: independent scientific interpretation; arithmetic/helper/GSM16 jobs are closed.
+Earlier data/distributed/review assignments are closed; root owns all current finite jobs.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.

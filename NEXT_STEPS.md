@@ -65,6 +65,9 @@ Future study source is isolated in local/worktrees/partial-state-study-v7.
 It adds root-inclusive ordinary CoT, fixed5120scope, full64/160/terminal saves.
 Public branch:partial-state-study-v7; validation/partial_state_v7_CPU_readiness_20261018.json.
 CPU audit:25,600 existing component packs bitwise match qualified v6; no forward
-or learning claim. Proposed A320/B640/R320/W320 per seed explicitly counts two
-split models/runs; B320 is the data-matched development milestone. No learning
-release yet. Review fresh128-model DEV results, bounded memory and disk first.
+or learning claim. Budget revision before any fresh outcome review: primary A640/Bpartial640
+versus R320+W320, matching640total updates and20480total ordered expressions
+per system/seed. A/B see four passes; R/W each two. Full-root CoT is an extra
+prepared variant; it does not replace the compact cost competitor. Earlier
+A320proposal remains archived as a proposal, never run. No learning release yet.
+Review completed128-model DEV results, bounded memory and disk first.
