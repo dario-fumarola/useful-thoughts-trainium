@@ -35,9 +35,10 @@
    validation/partial_state_v6_TRAIN128_writer_XLA_20261018.json. Every fitting
    job is now closed. No fresh generalization or matched latency claim yet.
    Main v4 is CPU-checked and frozen at partial-state-held-v6/3301d22.
-   Active four-stage writer/CoT DEV jobs: local/diagnostics/
-   partial-state-v6-fixed-DEV512-{writer,cot}128-v1; physical8/9 logical32–39.
-   Both actual live placements captured; bound01:30UTC Oct19,3hours per child.
+   All2048actual writer notes close20:16UTC; their outcome counts remain unread
+   until the whole paired question closes. Active CoT/reader jobs: local/diagnostics/
+   partial-state-v6-fixed-DEV512-{cot,reader}128-v1; physical9/10 logical36–43.
+   Actual live placements captured for all jobs; bound01:30UTC Oct19,3hours per child.
    Monitor stage-*/shard-*/run.log and native/cache JSON; do not edit snapshot.
    Same-reader all8content controls run onphysical10/logical40–43:
    local/diagnostics/partial-state-v6-fixed-DEV512-reader128-v1. Its finite
@@ -71,3 +72,15 @@ per system/seed. A/B see four passes; R/W each two. Full-root CoT is an extra
 prepared variant; it does not replace the compact cost competitor. Earlier
 A320proposal remains archived as a proposal, never run. No learning release yet.
 Review completed128-model DEV results, bounded memory and disk first.
+
+Final audit is implemented,1598CPU checks pass; actual closed TRAIN numerical
+vectors independently reproduce native/cache gates. Run only after all writer/
+CoT/reader controller completion.json files say all four panels are complete:
+`source scripts/env.sh; USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario`.
+It rereads18,432answers/2,048notes, independent prefix gold/control math and parser,
+all paired intervals and actual numerical tensors; archives complete batches onEBS.
+Review all panels once, then choose the next learning experiment. No outcome peeking
+or source mutation on the frozen worktree. Inactive old qualification manifests
+identify102.6GiB of potential NVMe duplicates, excluded from active/current science;
+full readback is running as a finite read-only inventory (local/analysis/inactive-
+qualification-archive-readback-20261018.log). Nothing has been removed.

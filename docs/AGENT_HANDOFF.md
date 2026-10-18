@@ -13,8 +13,8 @@ Fresh four512DEV panels run on immutable partial-state-held-v6/3301d22:
 writerphysical8, compactCoT9, same frozen reader10; logical32–43. Controllers:
 local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
 Bound01:30UTC Oct19,3h per child,512GiB floor, no retries. Reader preparation
-waits for each complete512writer bundle; never selects by utility. Three writer
-panels close; final composition generates. R/CoT compile a shared longer-cache
+waits for each complete512writer bundle; never selects by utility. All2048writer
+notes close20:16UTC; their utility remains unread. R/CoT compile a shared longer-cache
 graph. Monitor active logs/native gates; let healthy compilation finish.
 Only after all three four-panel controllers close, run:
 `source scripts/env.sh; USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario`.

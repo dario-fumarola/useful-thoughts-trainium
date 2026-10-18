@@ -1,4 +1,4 @@
-# Status — 2026-10-18 20:01 UTC
+# Status — 2026-10-18 20:18 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -32,7 +32,7 @@ Decision: mechanics pass; qualification model excluded from scientific training 
 ## Active: fixed fresh computation panels
 Question: do frozen TRAIN128 models transfer, and can student partials improve the same reader?
 ID:partial-state-v6-fixed-DEV512; four separate512-item interpolation/structure/range/composition panels.
-Writer128/compactCoT128 run onphysical8/9, logical32–39; same frozen reader on10/logical40–43.
+All2048writer attempts close20:16UTC onphysical8; CoT9/reader10 remain active, logical36–43.
 Controls:local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
 Outputs:local/nvme/evaluation/partial-state-v6-DEV_{panel}-{writer128-XLA-notes-v2,cot128-answers-v4}.
 Source:immutable partial-state-held-v6/3301d22;1588CPUchecks, fixed hashes/models/native refs verified.
@@ -42,7 +42,8 @@ Actual4 live placements captured for each device; native and new cache-shape gat
 Bound01:30UTC Oct19/3hours per child,512GiB memory floor, no automatic retries.
 Each reader panel starts only after its512actual writer attempts close; all8conditions, no utility gating.
 Original TRAIN128 XLAwriter physically closed19:55UTC:128exact/natural stops, all native actions equalCPU.
-Decision: pending fresh results; larger5120study and RL remain unreleased.
+Audit command after all controllers close: scripts/audit_partial_state_panels.py --root /home/ubuntu/dario.
+Decision: pending complete answers; larger5120study and RL remain unreleased.
 
 ## Closed: actual Trainium prefix-only fitting writer
 Question: does the actual Trainium writer reproduce the CPU state/stopping result?
