@@ -1,92 +1,80 @@
-# Status — 2026-10-18 01:23 UTC
+# Status — 2026-10-18 01:52 UTC
 
-The owner stopped the original R study. Its old launch orders, including
-CODEX_NEXT_DAY.md, are superseded. Follow NEXT_STEPS.md; preserve old evidence.
+The owner stopped the original R study and authorized a new direction. Old
+launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
 
-## Result so far
+## Completed comparison: negative
 
-Writer-only cloning on 77 future-selected TRAIN notes completed 64 updates.
-Fresh notes on the fixed DEV64 remain harmful with the unchanged B0 reader:
-K16 own minus empty −0.649 nats (95% CI −1.117 to −0.176), and own minus unrelated
-−0.636 (−1.129 to −0.136). Of 64 notes, 63 hit cap 256. The paired change versus
-B0 is +0.451 (−0.150 to +1.128), which does not establish improvement.
+All three fresh G1 DEV64 cells are closed, with an unchanged B0 prepend reader,
+all 1152 finite score rows, exact raw-vector parity, saved controls and examples.
 
-Adapting the reader also fails: own minus empty is −2.502 for B0 notes and
-−3.253 for cloned notes. Adapted raw K16 drops 3.887 nats. Reports and verified
-EBS archives retain every note, control, score and fixed example:
+| Writer | K16 own minus empty | Own minus unrelated | Cap256 |
+|---|---:|---:|---:|
+| B0 | −1.101 | −1.023 | 45/64 |
+| Raw CE64 | −0.956 | −0.939 | 50/64 |
+| Note BC64 | −0.649 | −0.636 | 63/64 |
 
-- validation/warmstart_prepend_dev64_writerBC64_20261018.json
-- validation/warmstart_reader_cross_dev64_20261018.json
-- validation/writer_bc_train77_64_20261018.json
+BC minus raw in own-minus-empty is +0.307 nats, CI [−0.209,+0.908]; no clear
+improvement, and both policies still hurt absolute prediction. Independent
+arithmetic audit matches all 330 mean cells and 100 paired CIs exactly.
+Public result: validation/warmstart_dev64_three_arm_20261018.json.
 
-The final writer checkpoint (27.53 GB, all 9 files) is verified on EBS under
-local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064.
-Model SHA: 06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882.
-Training checks cover finite gradients, real sampled changes and replica slices;
-they do not prove full-weight bitwise equality or numerical resume parity.
+Both training arms completed 64 updates and exited 0. Same 512 occurrences,
+order and optimizer; 77 TRAIN documents; unequal labels (BC 104606, raw 8192)
+and actual compute. All 9 files of both 27.53GB checkpoints are verified on EBS:
+local/backups/diagnostics/{writer-bc-prepend-train77-64-v2,raw-control-prepend-train77-64-noncontiguous-v3}/step-0000064.
+Recovery step16 checkpoints remain verified on NVMe only. Raw allocator repair was
+NEURON_RT_CONTIGUOUS_SCRATCHPAD=0 alone; actual environment is independently
+attested because old runtime_policy omits this key. Reports preserve both failed
+attempts and the successful condition. Training integrity is not full-weight
+bitwise equality or numerical-resume qualification.
 
-## Running work
+Adapted-reader crosses also fail (raw K16 drift −3.887 nats). Full GSM8K
+TRAIN128 direct/empty/thought256 results: B0 113/107/63, BC 92/92/61,
+raw 56/112/76. Every thought arm loses to its same-model empty wrapper.
+Raw direct has 59 format errors (57 lack the hash4 marker), so do not interpret
+its strict score as isolated arithmetic loss or relax the parser after outcomes.
+Full report: validation/warmstart_gsm8k_train128_terminal64_20261018.json.
+All nine cells and processes are closed; verified EBS archive has 353 files.
+Official tests remain unused.
 
-1. **Matched raw control:** raw-control-prepend-train77-64-noncontiguous-v3.
-   Latest observed update 45 at 2026-10-18T01:22:37+00:00, loss 0.067124. Same B0, 77 IDs/order, 64 updates,
-   global batch 8, seed 20261018, LR 1e-5, FP32. The only repair after two
-   archived allocator failures is NEURON_RT_CONTIGUOUS_SCRATCHPAD=0.
-   New protocol SHA 89639736dec69f9f07e9814b0339b7f3f2328d50ee057af3ecf25194227d4690;
-   spec 4e7ff6f4a8bd0b75246229649f8617c095dcd572d4cb720b6c0c6ad7d3a70418.
-   Actual parent and all 8 workers attest this allocator flag; old runtime_policy
-   does not capture it. Checkpoint 16 passed all-file SHA readback at 01:11:01.
-   Cores 8–15 / devices 2–3; tmux dario-raw-control-train77-v3.
-   Launcher 2314497, timeout 2314503; deadline 06:58:14 UTC.
-   Output: local/nvme/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3.
-   Control: local/diagnostics/positive-writer-prepend-train77-64-v1/raw-control-noncontiguous-v3.
-   Keep healthy work running. After COMPLETE and exit/closure, verify and copy
-   final 64 using scripts/backup_checkpoint.py with a 35 GiB reserve.
-   Writer and control have unequal CE label counts and measured compute.
-2. **GSM8K TRAIN128 correctness:** B0 thought-cap256 and cloned writer
-   direct / empty / thought-cap256 are all closed and scored; all 16 shards
-   exited 0 and owned sessions are gone. Agent data is compiling results/archive. B0 direct113/128 and
-   empty107/128 are independently validated reused references. Fixed prompts,
-   strict parser, greedy FP32, answer cap256; all failures stay in denominator.
-   Output: local/nvme/evaluation/warmstart-gsm8k-train128-terminal64-v1.
-   Control: local/diagnostics/warmstart-gsm8k-train128-terminal64-v1.
-   First four cells deadline05:03:56 UTC. Raw three modes wait for actual64.
-3. **New calculation pilot:** 32 hash-selected TRAIN questions disjoint from all
-   139 earlier dev/demo IDs and normalized questions; no model-outcome selection.
-   Questions and 32 verified partial notes / length-matched one-number corruptions
-   are frozen in local/diagnostics/gsm8k-calculation-train32-v1. Root independently
-   read all triples and checked all 61 intermediate equations, without gold.
-   Actual native CPU reference passed (4.022B parameters,398 tied FP32 tensors,
-   no loading mismatches). Agent distributed launched four greedy-note shards
-   at01:27:47 on cores28/32/36/40 only, ports65001–65008, deadline03:30 UTC.
-   Actual workers2368278/2368281/2368287/2368289, mapped to devices7/8/9/10.
-   Protocol SHA ff1dc3234c674294164a0580fb46a436247d25a0a4170e8891b46d3bb8b98bd7.
-   Output: local/nvme/diagnostics/gsm8k-calculation-teacher-train32-v1.
-   Control: local/diagnostics/gsm8k-calculation-teacher-train32-v1.
-   A native tokenizer container mismatch was fixed before any prepared output or
-   device allocation; exact token IDs matched. New source is frozen after 445 tests.
-   All notes must close before reader prepare. Agent distributed then owns
-   the ten-condition reader on the same four cores, ports65011–65018 (answers)
-   and65021–65028 (likelihood), deadline04:30 UTC; gold only after answer closure.
+## Active work
 
-## Exact next steps
+1. GSM128 and raw DEV64 pipelines are complete; agents data/review own no live
+   hardware jobs. Their closed reports/archives need the final public commit.
+2. **Calculation pilot:** agent distributed owns reader answers then likelihood.
+   32 new hash-selected TRAIN questions are disjoint from 139 earlier dev/demo IDs
+   and normalized questions. Root verified all 61 equations in manual partial
+   notes, each with a same-length one-number corruption. No note selection.
+   Question/verified inputs: local/diagnostics/gsm8k-calculation-train32-v1.
+   Actual local 4B teacher32 is closed/exit0/cleanup: all 32 EOS, zero caps/empty,
+   2244 content tokens. Native CPU/device and cached replay checks passed.
+   All first4 teacher notes include final answers despite the omission instruction;
+   retain them, report this failure, and do not confuse teacher answer copying
+   with intermediate reasoning. Verified manual notes omit final requested values.
+   Reader launched01:45:56 on cores28/32/36/40 (devices7–10), ports65011–65018.
+   Workers2407546/2407549/2407554/2407556; hard deadline04:30UTC.
+   Output: local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1.
+   Control: local/diagnostics/gsm8k-calculation-reader-train32-v1.
+   Protocol SHA2a85462169f4904470bf97398602bff3c31fe00221a6cbfbe047fbb18c5b5ca1.
+   Ten conditions,320 answer attempts, cap256, FP32 greedy. Raw is full four-shot QA;
+   other modes append [198]+note+[198] after Answer:; empty keeps both separators.
+   This prospective interface was independently reviewed before reader outcomes.
+   All four answer shards must close/exit/clean up BEFORE project-gold. Then four
+   LL shards on same cores, ports65021–65028, same deadline; all 320 finite before
+   summarize. Free-running accuracy and forced numeric LL after '\n#### ' are
+   separate metrics. No training or official TEST. Teacher protocolff1dc323…98bd7.
 
-- Observe raw control, then back up final64 and run fresh G1 DEV64 with existing
-  train.warmstart_evaluate / train.warmstart_prepend_evaluate. Use original fixed
-  selection local/diagnostics/warmstart-dev64-cap256-v1/selection.json, explicit
-  terminal model SHA and unchanged B0 reader. No checkpoint selection.
-- Run train.warmstart_compare on closed B0 / writer64 / raw64 prepend outputs.
-- After teacher closure, prepare train.calculation_pilot with its teacher bundle,
-  verified_notes.jsonl and the unchanged held-dev128 prompt.json. Raw is complete
-  four-shot QA; all note conditions append [198] + note + [198] after Answer:.
-  Empty preserves both separators. This prospective change was independently
-  reviewed before any reader preparation, outcome or gold; teacher is unchanged.
-  Run all four answer shards (10 conditions ×32 questions, greedy answer cap256)
-  before project-gold. Then score forced canonical numbers after '\n#### ',
-  independently of free-running accuracy. Retain all errors and controls.
-- No further training until useful calculation is demonstrated. This is curated
-  QA feasibility with external assistance, not FineMath transfer or self-discovery.
+## Next actions
 
-Latest CPU suite: 445 tests + toy smoke PASS, local/checks/tests.sKjRbj.
-Native CPU/device parity and actual cached replay still need new hardware evidence.
-Original R1234 stopped at63 and was backed up; R5678 never launched. Old C seeds
-finished256; original R/C primary is incomplete. Official final tests remain unused.
+- Let the finite calculation pipeline finish. Do not rush healthy compilations, retry failed
+  jobs automatically, alter sources, select checkpoints, or drop failed answers.
+- Publish the completed reports and collect the calculation-pilot evidence.
+  Read fixed examples and check actual semantic benefit before more training.
+- New QA feasibility with external calculations is not FineMath transfer or
+  self-discovery. Teacher-generated final answers are a separate assistance cost.
+- Latest full CPU suite: 445 tests + toy smoke PASS, local/checks/tests.sKjRbj.
+  Actual device evidence is separate. All shared runtime/training sources unchanged.
+
+Original R1234 stopped at63 and was backed up; R5678 never launched. Both
+old C256 runs finished; original primary R/C comparison is incomplete. All old evidence retained.

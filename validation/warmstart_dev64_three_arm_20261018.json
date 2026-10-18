@@ -1,0 +1,866 @@
+{
+  "all_documents": {
+    "K1": {
+      "arms": {
+        "B0": {
+          "absolute_mean_nats": {
+            "empty": -0.94506236151328,
+            "filler": -1.3105824292773853,
+            "other": -0.9454011580301098,
+            "own": -1.249788430838501,
+            "raw": -0.9506122276832623,
+            "shuffled": -0.9431826436386546
+          },
+          "utility_mean_nats": {
+            "own_minus_empty": -0.30472606932522095,
+            "own_minus_filler": 0.060793998438884334,
+            "own_minus_other": -0.3043872728083912,
+            "own_minus_raw": -0.29917620315523874,
+            "own_minus_shuffled": -0.30660578719984644
+          }
+        },
+        "raw_control": {
+          "absolute_mean_nats": {
+            "empty": -0.94506236151328,
+            "filler": -1.2210015863593142,
+            "other": -0.9213594258502253,
+            "own": -1.1485472032748723,
+            "raw": -0.9506122276832623,
+            "shuffled": -0.9318162317747891
+          },
+          "utility_mean_nats": {
+            "own_minus_empty": -0.2034848417615922,
+            "own_minus_filler": 0.07245438308444196,
+            "own_minus_other": -0.2271877774246469,
+            "own_minus_raw": -0.19793497559161,
+            "own_minus_shuffled": -0.21673097150008314
+          }
+        },
+        "writerBC": {
+          "absolute_mean_nats": {
+            "empty": -0.94506236151328,
+            "filler": -1.270298845522177,
+            "other": -0.9471211801160315,
+            "own": -1.1422250394668139,
+            "raw": -0.9506122276832623,
+            "shuffled": -0.9301268397412521
+          },
+          "utility_mean_nats": {
+            "own_minus_empty": -0.19716267795353382,
+            "own_minus_filler": 0.12807380605536323,
+            "own_minus_other": -0.19510385935078234,
+            "own_minus_raw": -0.1916128117835516,
+            "own_minus_shuffled": -0.21209819972556176
+          }
+        }
+      },
+      "paired_comparisons": {
+        "writerBC_minus_B0": {
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.17590200661837221,
+              0.4253405189532116
+            ],
+            "difference_b_minus_a": 0.10756339137168713,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.00015049497596919537,
+            "positive_documents": 36,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_filler": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.22467552328967902,
+              0.4027615577938489
+            ],
+            "difference_b_minus_a": 0.06727980761647889,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.000237165906582959,
+            "positive_documents": 40,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.17462337076104215,
+              0.42885094886275243
+            ],
+            "difference_b_minus_a": 0.10928341345760884,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 9.923467359840288e-06,
+            "positive_documents": 35,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.17590200661837221,
+              0.4253405189532116
+            ],
+            "difference_b_minus_a": 0.10756339137168713,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.00015049497596919537,
+            "positive_documents": 36,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_shuffled": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.18263874852656733,
+              0.4035270344418477
+            ],
+            "difference_b_minus_a": 0.09450758747428467,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -5.36286552232923e-06,
+            "positive_documents": 32,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        },
+        "writerBC_minus_raw_control": {
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.3126722486449319,
+              0.38737992575781
+            ],
+            "difference_b_minus_a": 0.00632216380805839,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -4.6722875822524657e-05,
+            "positive_documents": 29,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_filler": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.2606145136916458,
+              0.4405653928023043
+            ],
+            "difference_b_minus_a": 0.05561942297092126,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 3.5377772292122245e-05,
+            "positive_documents": 35,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.288516232463001,
+              0.4094715174759916
+            ],
+            "difference_b_minus_a": 0.03208391807386457,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 9.65558500354291e-06,
+            "positive_documents": 33,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.3126722486449319,
+              0.38737992575781
+            ],
+            "difference_b_minus_a": 0.00632216380805839,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -4.6722875822524657e-05,
+            "positive_documents": 29,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_shuffled": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.314884444789169,
+              0.37829322963409595
+            ],
+            "difference_b_minus_a": 0.0046327717745213715,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -0.00018547835810522884,
+            "positive_documents": 25,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        }
+      }
+    },
+    "K16": {
+      "arms": {
+        "B0": {
+          "absolute_mean_nats": {
+            "empty": -18.64585319487734,
+            "filler": -22.85626028486289,
+            "other": -18.723611390090383,
+            "own": -19.746398951882266,
+            "raw": -18.675722380082366,
+            "shuffled": -18.868010098840298
+          },
+          "utility_mean_nats": {
+            "own_minus_empty": -1.100545757004927,
+            "own_minus_filler": 3.1098613329806226,
+            "own_minus_other": -1.0227875617918847,
+            "own_minus_raw": -1.0706765717999025,
+            "own_minus_shuffled": -0.878388853041969
+          }
+        },
+        "raw_control": {
+          "absolute_mean_nats": {
+            "empty": -18.64585319487734,
+            "filler": -22.756006599483545,
+            "other": -18.66261167276126,
+            "own": -19.601961075487083,
+            "raw": -18.675722380082366,
+            "shuffled": -18.739094042536834
+          },
+          "utility_mean_nats": {
+            "own_minus_empty": -0.9561078806097407,
+            "own_minus_filler": 3.154045523996463,
+            "own_minus_other": -0.9393494027258238,
+            "own_minus_raw": -0.9262386954047162,
+            "own_minus_shuffled": -0.8628670329502484
+          }
+        },
+        "writerBC": {
+          "absolute_mean_nats": {
+            "empty": -18.64585319487734,
+            "filler": -23.147537111322933,
+            "other": -18.658900801449633,
+            "own": -19.295015491848854,
+            "raw": -18.675722380082366,
+            "shuffled": -18.91239353777375
+          },
+          "utility_mean_nats": {
+            "own_minus_empty": -0.6491622969715136,
+            "own_minus_filler": 3.8525216194740772,
+            "own_minus_other": -0.6361146903992196,
+            "own_minus_raw": -0.619293111766489,
+            "own_minus_shuffled": -0.38262195407510546
+          }
+        }
+      },
+      "paired_comparisons": {
+        "writerBC_minus_B0": {
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.150071642220099,
+              1.127633687717445
+            ],
+            "difference_b_minus_a": 0.45138346003341345,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.006660860298744353,
+            "positive_documents": 33,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_filler": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.006569183538933172,
+              1.5364573983203487
+            ],
+            "difference_b_minus_a": 0.7426602864934546,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.14497979657613058,
+            "positive_documents": 38,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.24437574941070128,
+              1.0861781055389332
+            ],
+            "difference_b_minus_a": 0.38667287139266504,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -0.004539732375334893,
+            "positive_documents": 31,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.150071642220099,
+              1.127633687717445
+            ],
+            "difference_b_minus_a": 0.45138346003341345,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.006660860298744353,
+            "positive_documents": 33,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_shuffled": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.09160087852238016,
+              1.1483781448870167
+            ],
+            "difference_b_minus_a": 0.49576689896686355,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.03559033990931226,
+            "positive_documents": 36,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        },
+        "writerBC_minus_raw_control": {
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.20911881937921786,
+              0.9084708452713868
+            ],
+            "difference_b_minus_a": 0.3069455836382271,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -0.1053737506808261,
+            "positive_documents": 26,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_filler": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.059139848473125985,
+              1.407844391448409
+            ],
+            "difference_b_minus_a": 0.6984760954776141,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.02882096504581,
+            "positive_documents": 35,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.25592236602250945,
+              0.9328720319133436
+            ],
+            "difference_b_minus_a": 0.30323471232660415,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -0.0702721158049826,
+            "positive_documents": 26,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.20911881937921786,
+              0.9084708452713868
+            ],
+            "difference_b_minus_a": 0.3069455836382271,
+            "documents": 64,
+            "items": 64,
+            "median_nats": -0.1053737506808261,
+            "positive_documents": 26,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_shuffled": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.05190011885857589,
+              1.0859349771517697
+            ],
+            "difference_b_minus_a": 0.4802450788751429,
+            "documents": 64,
+            "items": 64,
+            "median_nats": 0.1281813241657801,
+            "positive_documents": 34,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        }
+      }
+    }
+  },
+  "archive": {
+    "SHA256_copy_readback_verified": true,
+    "bytes": 1299371,
+    "files": 39,
+    "notes_or_weights_duplicated": false,
+    "off_instance": false,
+    "original_comparator_unchanged": true,
+    "path": "local/backups/diagnostics/warmstart-dev64-terminal64-three-arm-20261018/ARCHIVE.json",
+    "per_arm_full_raw_outputs_already_verified": true,
+    "sha256": "cd2abfebeeafe609bf4ec7f6d3bdb8d33296b02de4aeeb64d3d117cb9f1e7940"
+  },
+  "arms": {
+    "B0": {
+      "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+      "checkpoint_sha256": null,
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 57.710249268930056,
+        "new_score_process_seconds": 114.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 208.41046234099485,
+        "reused_sampling_batch_seconds_counted_once": 328.3284764189739,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 29.0
+      },
+      "note_context": {
+        "actions_total": 13145,
+        "caps": 45,
+        "content_length_counts": {
+          "0": 1,
+          "11": 1,
+          "117": 1,
+          "133": 1,
+          "15": 1,
+          "162": 1,
+          "164": 1,
+          "2": 1,
+          "214": 1,
+          "22": 1,
+          "227": 1,
+          "25": 1,
+          "253": 1,
+          "256": 45,
+          "37": 1,
+          "43": 1,
+          "5": 1,
+          "8": 1,
+          "81": 1,
+          "87": 1
+        },
+        "content_tokens_mean": 205.09375,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 13126,
+        "empty": 1,
+        "stop_counts": {
+          "length_cap": 45,
+          "token:151643": 19
+        }
+      },
+      "public_arm_report": "validation/warmstart_prepend_dev64_B0_20261017.json",
+      "public_arm_report_sha256": "96f56445572beb68a921ebff1a52ee64dafe1f9f857445f22791aa2d7f6934c0",
+      "sampled_model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      },
+      "training_checkpoint_metadata": null,
+      "writer_id": "B0"
+    },
+    "raw_control": {
+      "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+      "checkpoint_sha256": "2dc1f12fbd28f136924f045f6521afd32c1a927b6300da44c7a1d0326ed4a233",
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 60.21018861500488,
+        "new_score_process_seconds": 136.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 8.508623892033938,
+        "reused_sampling_batch_seconds_counted_once": 213.4454000800033,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 35.0
+      },
+      "note_context": {
+        "actions_total": 13892,
+        "caps": 50,
+        "content_length_counts": {
+          "111": 1,
+          "124": 1,
+          "159": 1,
+          "171": 1,
+          "20": 2,
+          "256": 50,
+          "35": 1,
+          "37": 1,
+          "4": 1,
+          "64": 1,
+          "66": 1,
+          "86": 1,
+          "90": 1,
+          "91": 1
+        },
+        "content_tokens_mean": 216.84375,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 13878,
+        "empty": 0,
+        "stop_counts": {
+          "length_cap": 50,
+          "token:151643": 14
+        }
+      },
+      "public_arm_report": "validation/warmstart_prepend_dev64_rawcontrol64_20261018.json",
+      "public_arm_report_sha256": "55fbf01187dd2760752c8a76a1e49d2c688496481a87fba1fbda8907f881d206",
+      "sampled_model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "0088a8257b51af8c84cf3e5547182541d00b1bf182ddeb021b79b78386076440"
+      },
+      "training_checkpoint_metadata": {
+        "run_id": "raw-control-prepend-train77-64-noncontiguous-v3",
+        "spec_hash": "4e7ff6f4a8bd0b75246229649f8617c095dcd572d4cb720b6c0c6ad7d3a70418",
+        "step": 64
+      },
+      "writer_id": "rawcontrol64"
+    },
+    "writerBC": {
+      "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+      "checkpoint_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 58.837357038108166,
+        "new_score_process_seconds": 114.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 7.2975285200082,
+        "reused_sampling_batch_seconds_counted_once": 210.3831112950429,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 29.0
+      },
+      "note_context": {
+        "actions_total": 16165,
+        "caps": 63,
+        "content_length_counts": {
+          "256": 63,
+          "36": 1
+        },
+        "content_tokens_mean": 252.5625,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 16164,
+        "empty": 0,
+        "stop_counts": {
+          "length_cap": 63,
+          "token:151643": 1
+        }
+      },
+      "public_arm_report": "validation/warmstart_prepend_dev64_writerBC64_20261018.json",
+      "public_arm_report_sha256": "b3ffcd4d321629978d74b0e5dfeda3c51a904f0316733d773beb1c5f54597c76",
+      "sampled_model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "5d79581fef782f80e95d2bec1dbc05c8efd75ff9b0c96911300fd56dd8686c7e"
+      },
+      "training_checkpoint_metadata": {
+        "run_id": "writer-bc-prepend-train77-64-v2",
+        "spec_hash": "9efb85c3ea05bb7fc605b7785f40771877ecabe601a674262ae075acd21e115f",
+        "step": 64
+      },
+      "writer_id": "writerBC64"
+    }
+  },
+  "bootstrap": {
+    "draws": 5000,
+    "qualification": "Conditional on these checkpoints/documents, not training-seed uncertainty.",
+    "seed": 17,
+    "unit": "document"
+  },
+  "complete_comparator": {
+    "path": "local/analysis/warmstart-dev64-terminal64-three-arm-20261018.json",
+    "sha256": "2ec321261aaf4da76034b0c4e52aea9a41c9eea6d5dc4d37926bd745293b5373",
+    "source_files": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "train/warmstart_compare.py": "b964bf938b357011a880f96249782fbb7e036c14efbd9a1cd356286936be2608",
+      "train/warmstart_evaluate.py": "fadd9c469a46c0f9402b01bfb951bd23d26ab18444230163f727a26888eac5f1",
+      "train/warmstart_prepend_evaluate.py": "f7f83030b848249827e9bb3e722ed4195c5b676841036f5844913df8c6761ba0",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    }
+  },
+  "created_utc": "2026-10-18T01:42:05+00:00",
+  "documents": 64,
+  "generation": {
+    "batch_size": 4,
+    "cap": 256,
+    "fresh_notes_per_document": 1,
+    "selection": "Same prospectively fixed64 DEV documents,16 per frozen B0-surprisal quartile; no checkpoint selection",
+    "temperature": 0.7
+  },
+  "independent_audit": {
+    "absolute_mean_cells": 180,
+    "max_error": 0,
+    "method": "Separate direct NumPy document bootstrap; comparator reducer/bootstrap helper not called",
+    "paired_contrasts_CIs": 100,
+    "path": "local/analysis/warmstart-dev64-terminal64-three-arm-20261018.audit.json",
+    "sha256": "b44c6f0ba827e4cb42dd53a6eb9ef51099e77a0c72e84622a314b92bba94a6e3",
+    "utility_mean_cells": 150
+  },
+  "interface": "note content + [271] + identical original512-token prefix; raw=prefix, empty=[271]+prefix",
+  "interpretation": "Both trained policies lose to empty and unrelated controls; own-minus-shuffled point estimates are also negative. BC minus raw intervals include zero for all three content contrasts. Positive filler contrasts alone do not establish useful content.",
+  "limitations": [
+    "Exploratory held development, one seed/checkpoint per recipe; official final tests unused.",
+    "Shared IDs/order/64 updates/optimizer do not equal matched CE labels or FLOPs. Writer has 104606 supervised labels; raw has 8192 future labels.",
+    "Raw control is future16-only CE, not ordinary full-prefix CPT. Runtime allocator differs under an explicit new protocol; numerical precision remains FP32.",
+    "Quartile intervals and all full per-document values/contrasts are retained, with no subgroup selected for a positive headline.",
+    "Both note-length distributions and all capped/empty outputs are retained. Conditional bootstrap intervals do not include training-seed or note-resampling uncertainty.",
+    "Actual sampling/replay/scoring costs are retained; shared-host cold/cache effects prevent a controlled speed comparison.",
+    "Archive is on the same-instance EBS volume, not off-instance recovery."
+  ],
+  "original_score_rows": 1152,
+  "primary": "K16 own-minus-empty, with matched content controls; K1 secondary",
+  "quartiles": {
+    "B0_raw_K1_surprisal_Q1": {
+      "documents": 16,
+      "paired_K16_own_minus_empty": {
+        "writerBC_minus_B0": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.3268725802402643,
+            0.5243368314651247
+          ],
+          "difference_b_minus_a": 0.10645241011471995,
+          "documents": 16,
+          "items": 16,
+          "median_nats": 0.006660860298744353,
+          "positive_documents": 9,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "writerBC_minus_raw_control": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.10723167913857079,
+            0.618694096911809
+          ],
+          "difference_b_minus_a": 0.2035148769379953,
+          "documents": 16,
+          "items": 16,
+          "median_nats": -0.001014591143999155,
+          "positive_documents": 8,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "primary_K16_utility_mean_nats": {
+        "B0": {
+          "own_minus_empty": -0.20103286119325858,
+          "own_minus_filler": 4.3678596909100476,
+          "own_minus_other": -0.13258963260410805,
+          "own_minus_raw": -0.20122809739501335,
+          "own_minus_shuffled": -0.07871485366885356
+        },
+        "raw_control": {
+          "own_minus_empty": -0.29809532801653393,
+          "own_minus_filler": 4.772282048448218,
+          "own_minus_other": -0.29549165346011197,
+          "own_minus_raw": -0.2982905642182887,
+          "own_minus_shuffled": -0.12774759468997043
+        },
+        "writerBC": {
+          "own_minus_empty": -0.09458045107853863,
+          "own_minus_filler": 4.9428756646501055,
+          "own_minus_other": 0.007305234176567588,
+          "own_minus_raw": -0.0947756872802934,
+          "own_minus_shuffled": 0.2114047018841818
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q2": {
+      "documents": 16,
+      "paired_K16_own_minus_empty": {
+        "writerBC_minus_B0": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -1.0032777283321463,
+            0.612194526595611
+          ],
+          "difference_b_minus_a": -0.1838646654803373,
+          "documents": 16,
+          "items": 16,
+          "median_nats": -0.16536348663066747,
+          "positive_documents": 7,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "writerBC_minus_raw_control": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.9697505320650736,
+            0.32850174061187853
+          ],
+          "difference_b_minus_a": -0.346637652213337,
+          "documents": 16,
+          "items": 16,
+          "median_nats": -0.37655258175827555,
+          "positive_documents": 6,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "primary_K16_utility_mean_nats": {
+        "B0": {
+          "own_minus_empty": -0.9971734294071668,
+          "own_minus_filler": 3.665120058656199,
+          "own_minus_other": -0.9672186803801184,
+          "own_minus_raw": -0.9506397293285476,
+          "own_minus_shuffled": -0.7829561153814959
+        },
+        "raw_control": {
+          "own_minus_empty": -0.8344004426741671,
+          "own_minus_filler": 3.183580045939487,
+          "own_minus_other": -0.9532588064435261,
+          "own_minus_raw": -0.7878667425955479,
+          "own_minus_shuffled": -0.5556654397653231
+        },
+        "writerBC": {
+          "own_minus_empty": -1.181038094887504,
+          "own_minus_filler": 3.5506178932333397,
+          "own_minus_other": -1.424907147789484,
+          "own_minus_raw": -1.1345043948088849,
+          "own_minus_shuffled": -1.0540552514276245
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q3": {
+      "documents": 16,
+      "paired_K16_own_minus_empty": {
+        "writerBC_minus_B0": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.8876722521571878,
+            2.4541103805964206
+          ],
+          "difference_b_minus_a": 0.6787608540559518,
+          "documents": 16,
+          "items": 16,
+          "median_nats": 0.21031203675829602,
+          "positive_documents": 10,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "writerBC_minus_raw_control": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.7724880935901708,
+            1.6728520304567438
+          ],
+          "difference_b_minus_a": 0.4031297425165814,
+          "documents": 16,
+          "items": 16,
+          "median_nats": -0.18338817412222852,
+          "positive_documents": 5,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "primary_K16_utility_mean_nats": {
+        "B0": {
+          "own_minus_empty": -1.5951605118078618,
+          "own_minus_filler": 1.7735872491284015,
+          "own_minus_other": -1.41584707800871,
+          "own_minus_raw": -1.5560416881825425,
+          "own_minus_shuffled": -1.4594962484886764
+        },
+        "raw_control": {
+          "own_minus_empty": -1.3195294002684914,
+          "own_minus_filler": 2.17353258877555,
+          "own_minus_other": -1.066365115231454,
+          "own_minus_raw": -1.2804105766431721,
+          "own_minus_shuffled": -1.2955485689188313
+        },
+        "writerBC": {
+          "own_minus_empty": -0.91639965775191,
+          "own_minus_filler": 2.8239441313058835,
+          "own_minus_other": -0.5662123775195482,
+          "own_minus_raw": -0.8772808341265907,
+          "own_minus_shuffled": -0.5816074098713315
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q4": {
+      "documents": 16,
+      "paired_K16_own_minus_empty": {
+        "writerBC_minus_B0": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.2190242207397657,
+            2.959625230075654
+          ],
+          "difference_b_minus_a": 1.2041852414433194,
+          "documents": 16,
+          "items": 16,
+          "median_nats": -0.06097798468545079,
+          "positive_documents": 7,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "writerBC_minus_raw_control": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.43920021741679693,
+            2.831506574857482
+          ],
+          "difference_b_minus_a": 0.9677753673116687,
+          "documents": 16,
+          "items": 16,
+          "median_nats": -0.2806147119135858,
+          "positive_documents": 7,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "primary_K16_utility_mean_nats": {
+        "B0": {
+          "own_minus_empty": -1.6088162256114211,
+          "own_minus_filler": 2.6328783332278425,
+          "own_minus_other": -1.5754948561746023,
+          "own_minus_raw": -1.5747967722935066,
+          "own_minus_shuffled": -1.1923881946288502
+        },
+        "raw_control": {
+          "own_minus_empty": -1.3724063514797704,
+          "own_minus_filler": 2.486787412822598,
+          "own_minus_other": -1.4422820357682031,
+          "own_minus_raw": -1.3383868981618559,
+          "own_minus_shuffled": -1.4725065284268686
+        },
+        "writerBC": {
+          "own_minus_empty": -0.4046309841681017,
+          "own_minus_filler": 4.09264878870698,
+          "own_minus_other": -0.560644470464414,
+          "own_minus_raw": -0.37061153085018717,
+          "own_minus_shuffled": -0.10622985688564768
+        }
+      }
+    }
+  },
+  "reader": "Unchanged released Qwen3-1.7B-Base",
+  "schema": "warmstart-dev64-terminal64-three-arm-result-v1",
+  "status": "COMPLETE_NEGATIVE_USEFUL_CONTENT_RESULT"
+}

@@ -589,3 +589,24 @@ recommended ordinary partial-CoT continuation as the stronger feasibility test.
 Use one interface and the same ten frozen conditions; do not expand a matrix
 after results. Teacher source, native prompt, question selection and notes are
 unchanged. Accuracy remains distinct from forced canonical-number likelihood.
+
+### 2026-10-18 01:52 UTC — completed matched study remains negative
+
+The raw control completed 64 updates with the documented allocator repair; all
+9 terminal files are verified on EBS. Its exact 512 occurrences match the writer.
+Fresh DEV64 own−empty is −0.956 for raw versus −0.649 for BC. The paired change
+of +0.307 has CI [−0.209,+0.908]. Independent recalculation matches all 330 means
+and 100 CIs. No useful-content improvement established. Preserve this negative
+study, all generated notes, both failed attempts and actual costs.
+
+All nine GSM8K TRAIN128 cells are closed. B0 direct/empty/thought256 =113/107/63;
+BC =92/92/61; raw =56/112/76. Every thought mode loses to its same-model empty
+wrapper. Raw direct has 59 format errors, 57 without hash4. Keep the frozen
+parser and avoid interpreting the score as isolated arithmetic ability. Fixed
+first-four examples remain unselected; a separate posthoc first-format-error
+panel documents mechanism without rescoring.
+
+The new 32-question QA pilot continues. Its teacher includes final answers in
+the first four notes despite the omission instruction. Keep those outputs and
+distinguish copying assistance from verified intermediate-calculation utility
+before choosing further training.

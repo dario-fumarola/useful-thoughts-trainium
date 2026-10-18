@@ -1,0 +1,151 @@
+{
+  "allocator": {
+    "LRU": 2,
+    "actual_parent_and_eight_worker_attestation_sha256": "5f575638bd4f40c3fb2a8547b85d7102637e1d9d3739b9d85e6ea79846a5cde9",
+    "change": "NEURON_RT_CONTIGUOUS_SCRATCHPAD=0 only",
+    "compiler_flags": "--model-type=transformer",
+    "first_two_HBM_observer_review_sha256": "3b8727b3c46589031d5c95e8100e46fec0ff5498f1a07a1e86a1d5c30c801bf8",
+    "instantaneous_peak_known": false,
+    "largest_sampled_bank_GiB": 23.326,
+    "old_runtime_policy_helper_omits_allocator_key": true,
+    "page_size_override": null,
+    "precision_and_NEFF_bytes_unchanged": true,
+    "private_scratchpad_tradeoff": true
+  },
+  "artifact_sha256": {
+    "checkpoint16_verification": "1e7cb50b218ac34789e34c8ee24fc5204041a9e7e557299905540537a9302caf",
+    "metrics": "2e29b22351249cd6274bca6fe85fe9343c4e9cd3c763a105e50a4f4a37b6fb34",
+    "release": "879ca864423bed5738500c398fc68d5d1cb8a50b7d1ec3364da125c621063f9f",
+    "run": "18b06478ca8aebe8534979ecde796e96a5c0bd394d389e6f82a4c17dc754d173",
+    "terminal_verification": "5511165682d127d9aeba8a6b8f73c0f29712dea1e8cbf05d51d2382b8aff3abf"
+  },
+  "closure": {
+    "all12_observed_owned_identities_absent": true,
+    "assigned_devices_empty": true,
+    "closure_sha256": "e6f97beea7df9cd67b08e21dde892446952197da9bcbc28abe97a61c8fd84a72",
+    "exit_code": 0,
+    "exit_utc": "2026-10-18T01:33:01.878137+00:00",
+    "runtime_field": "neuron_processes"
+  },
+  "cost": {
+    "checkpoint_export_cost_excluded_from_update_elapsed": true,
+    "qualification": "Global8 raw_future16 CE with changed allocator; not old RL/global128 throughput or matched FLOPs. Writer CE has104606 labels vs8192 raw labels.",
+    "update_elapsed_seconds": {
+      "first": 30.782366344996262,
+      "second": 33.186611365003046,
+      "sum": 1937.7734127739677,
+      "warm3_to64_median": 30.071718398001394
+    }
+  },
+  "counts": {
+    "complete_ordered_passes": 6,
+    "future_labels": 8192,
+    "next_pass_records": 50,
+    "note_close_labels": 0,
+    "occurrence_histogram": {
+      "6": 27,
+      "7": 50
+    },
+    "prefix_tokens": 262144,
+    "sampled_actions": 0,
+    "source_records": 512,
+    "source_tokens": 270336,
+    "unique_documents": 77
+  },
+  "created_utc": "2026-10-18T01:40:05+00:00",
+  "data_sha256": "ee2b384dc6fc6b032745a1340603f78eda06beb08d88ae0a461c1c9e70b9ffe7",
+  "dataset_sha256": "a19149a3cb63a5fbb09fe151b062a1e20ace213b72b290599607daa70052906b",
+  "execution": {
+    "accumulation": 1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "clip": 1.0,
+    "eps": 1e-08,
+    "global_batch": 8,
+    "lr": 1e-05,
+    "precision": "fp32",
+    "seed": 20261018,
+    "steps": 64,
+    "weight_decay": 0.1,
+    "world_size": 8
+  },
+  "final_checkpoint_backup": {
+    "all_payload_SHA256_readback_verified": true,
+    "bytes": 27532633863,
+    "checkpoint16": "SHA-verified on NVMe only",
+    "copied_utc": "2026-10-18T01:38:29+00:00",
+    "distinct_filesystems": true,
+    "files": 9,
+    "off_instance": false,
+    "path": "local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/BACKUP.json",
+    "sha256": "e516c07ae7870136b7971896a83873b1d37b7fca730d7ac85143eaacc1817fbf"
+  },
+  "limitations": [
+    "Execution/integrity only, not evidence of useful thoughts or mathematical accuracy.",
+    "Same IDs/order/updates/optimizer as writer, unequal supervised-label counts and compute; this raw control is not full-prefix CPT.",
+    "Replica check samples 32 entries per unique tensor; no full-model bitwise audit or numerical-resume claim.",
+    "First-two five-second HBM samples are current occupancy observations, not instantaneous peak or a future-run headroom guarantee.",
+    "Changed allocator completed64 on this attempt after two preserved default failures; no universal memory-fit or causal timing claim.",
+    "EBS backup is on this instance, not off-instance recovery. Official final tests unused."
+  ],
+  "model": {
+    "base_id": "Qwen/Qwen3-1.7B-Base",
+    "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "terminal64_COMPLETE_sha256": "71da89249237b6716dd6791fbde59793f03a883f7023edee9b5542c1326f5f82",
+    "terminal64_model_sha256": "2dc1f12fbd28f136924f045f6521afd32c1a927b6300da44c7a1d0326ed4a233",
+    "terminal_spec_hash": "4e7ff6f4a8bd0b75246229649f8617c095dcd572d4cb720b6c0c6ad7d3a70418"
+  },
+  "nonweight_archive": {
+    "all_regular_source_copy_SHA256_verified": true,
+    "bytes": 4125733,
+    "files": 60,
+    "path": "local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3-nonweight/VERIFIED.json",
+    "sha256": "2a9ee959839d39f50773f1437bea9ba4a4de3f271e70b09a10e32a767507fcfc"
+  },
+  "objective": "raw_future16_ce",
+  "order_and_checks": {
+    "exact512_order_matches_writer": true,
+    "finite_loss_gradients_all64": true,
+    "first_update_matches_both_failed_attempts_except_clock_and_cost": true,
+    "qualification": "First32 entries per unique tensor only; not full-weight bitwise equality or numerical resume qualification",
+    "real_sampled_parameter_changes_all64": true,
+    "replica_slice_equality_all64": true
+  },
+  "parent_protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+  "protocol_sha256": "89639736dec69f9f07e9814b0339b7f3f2328d50ee057af3ecf25194227d4690",
+  "run_id": "raw-control-prepend-train77-64-noncontiguous-v3",
+  "schema": "raw-control-train77-completed-execution-v1",
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/anchor_scan.py": "078d82b23f5d1aead7832dd9678494bd73e7356a5e9c8b73215d3a29acc9e122",
+    "train/candidate_corpus.py": "850d74564e06774db4ea545061aee54555c55ee59172958179ffdc452fd2cc4f",
+    "train/candidate_prepend.py": "ccfcc1f9f00a853a31aa65c0d2eec4db73d855ee41b4c6e4c79a09cb86fb7203",
+    "train/candidate_probe.py": "8e1d5e84a91db104d7186ec9354d15c724c34fe2fd764139420d3ed09c316868",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/positive_writer_data.py": "6102b3dd4dea9dc3bad656698c006ae06b5137c6f72ab46a144336581d4fc010",
+    "train/prepend_probe.py": "595c8557792fb49c0b64597351def35818922c1712f6c0cc716a46dd85d39e20",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/warmstart_data.py": "d8d3de30c5c65b5248133bdb2be4fcc75fafd10171d4d21ccbc82058562cdcb5",
+    "train/warmstart_driver.py": "d0b8ed4e105d2b1249e1169014a1acd9b9963522a5ed866e26db117e1cb3f585",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "COMPLETE64_EXIT0_VERIFIED_BACKUP"
+}

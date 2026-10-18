@@ -29,24 +29,43 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**The initial R study is stopped. A completed writer-only warm-start still
-produces harmful held-out notes.** On the same64 development documents, using
-an unchanged B0 reader and fresh one-sample notes:
+**The first warm-start comparison is negative.** On the same 64 development
+documents, with an unchanged B0 reader and fresh one-sample notes:
 
 | Writer | K16 own−empty, nats | K16 own−unrelated, nats | Cap256 |
 |---|---:|---:|---:|
-| B0 |−1.101 |−1.023 |45/64 |
-| Writer BC64 |−.649 |−.636 |63/64 |
+| B0 | −1.101 | −1.023 | 45/64 |
+| Raw future16 CE64 | −0.956 | −0.939 | 50/64 |
+| Note BC64 | −0.649 | −0.636 | 63/64 |
 
-The paired own−empty change is+.451 nats,95% interval[−.150,+1.128]. The trained
-writer still loses to silence and unrelated content; selected TRAIN oracle gains
-have not become useful deployed notes. [Full held-out result](validation/warmstart_prepend_dev64_writerBC64_20261018.json),
-[training execution and verified checkpoint backup](validation/writer_bc_train77_64_20261018.json).
-The adapted reader also hurts: raw K16 falls3.887 nats, and both reader-cross
-content contrasts remain negative. [Reader-cross results](validation/warmstart_reader_cross_dev64_20261018.json).
-The raw control and separate answer-correctness checks continue. A small curated
-math diagnostic will distinguish missing useful calculations from reader failure
-before further training.
+The paired BC-minus-control change in own−empty is +0.307 nats, 95% interval
+[−0.209, +0.908]. Both trained policies still lose to silence and unrelated
+content. Selected TRAIN oracle gains have not become useful deployed notes.
+[Complete three-arm result](validation/warmstart_dev64_three_arm_20261018.json).
+Both arms used the same 77 documents, order and 64 updates, with unequal CE
+labels and compute. Both terminal checkpoints have verified full EBS backups.
+
+The separate GSM8K **TRAIN development** check also requires the empty control.
+Correct answers out of 128, with unchanged prompts/parser and cap256:
+
+| Model | Direct | Empty-thought wrapper | Generated thought |
+|---|---:|---:|---:|
+| B0 | 113 | 107 | 63 |
+| Raw CE64 | 56 | 112 | 76 |
+| Note BC64 | 92 | 92 | 61 |
+
+Thoughts score below their same-model empty wrapper in every arm. Raw direct
+includes 59 format errors; these counts do not isolate arithmetic ability.
+[Full nine-cell result, failures and costs](validation/warmstart_gsm8k_train128_terminal64_20261018.json).
+Adapting the reader also failed: raw K16 fell 3.887 nats and both reader-cross
+content contrasts remained negative. [Reader crosses](validation/warmstart_reader_cross_dev64_20261018.json).
+
+Before more training, a new 32-question pilot tests verified partial calculations,
+numeric corruptions and prefix-only local-teacher notes at the natural `Answer:`
+position. Its teacher sometimes includes final answers despite the omission
+instruction; those outputs are retained and distinguished from intermediate
+calculation. This tests curated-QA feasibility with external help. Official
+final tests remain unused.
 
 Both old C seeds finished256 updates. R1234 stopped cleanly after update63;
 R5678 was not launched. The original primary R/C comparison is incomplete.

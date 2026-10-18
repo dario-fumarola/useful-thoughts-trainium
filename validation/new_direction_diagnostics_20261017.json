@@ -1,6 +1,6 @@
 {
-  "time_utc": "2026-10-18T01:08:05.732055+00:00",
-  "status": "writer64_fresh_G1_harmful_control_allocator_repair_running",
+  "time_utc": "2026-10-18T01:52:16.707775+00:00",
+  "status": "three_arm_and_nine_cell_negative_calculation_pilot_running",
   "previous_result": "interface_tax_dev32_20261017.json",
   "tests": "388 CPU tests + toy smoke; local/checks/tests.XEKEpb",
   "candidate": {
@@ -226,7 +226,7 @@
         "report": "raw_control_train77_serial_failed_attempt_20261018.json"
       },
       "allocator_retry": {
-        "status": "running_first2_passed",
+        "status": "COMPLETE64_EXIT0_VERIFIED_EBS",
         "experiment_id": "raw-control-prepend-train77-64-noncontiguous-v3",
         "released_utc": "2026-10-18T00:58:14.563002+00:00",
         "deadline_utc": "2026-10-18T06:58:14.563002+00:00",
@@ -235,7 +235,12 @@
         "parent_and_all8worker_environment_attested": true,
         "first_update_matches_prior_except_time": true,
         "sampled_max_bank_GiB": 23.326,
-        "sampled_values_are_not_instantaneous_peak": true
+        "sampled_values_are_not_instantaneous_peak": true,
+        "completed_updates": 64,
+        "execution_report": "raw_control_train77_64_20261018.json",
+        "terminal_model_sha256": "2dc1f12fbd28f136924f045f6521afd32c1a927b6300da44c7a1d0326ed4a233",
+        "COMPLETE_sha256": "71da89249237b6716dd6791fbde59793f03a883f7023edee9b5542c1326f5f82",
+        "backup_copied_utc": "2026-10-18T01:38:29+00:00"
       }
     },
     "prior_attempt": {
@@ -342,7 +347,7 @@
     "current_learning_labels_unchanged": true
   },
   "secondary_downstream": {
-    "status": "first4cells_16shards_running",
+    "status": "all_nine_cells_complete",
     "purpose": "correctness diagnostic regardless primary LL sign",
     "task": "existing fixed GSM8K TRAIN128",
     "models": [
@@ -367,6 +372,76 @@
     "primary_DEV64_unchanged": true,
     "official_test_used": false,
     "plan_sha256": "e10f3be82022957731482d728904ec9fa5fb6beb84bb031a4aeca023c313b296",
-    "review_sha256": "235235929a961c04a3d849a3f8f6c2e476067b3642c0b7a784a4679de5b67a94"
+    "review_sha256": "235235929a961c04a3d849a3f8f6c2e476067b3642c0b7a784a4679de5b67a94",
+    "report": "warmstart_gsm8k_train128_terminal64_20261018.json",
+    "correct_of128": {
+      "B0": [
+        113,
+        107,
+        63
+      ],
+      "writer64": [
+        92,
+        92,
+        61
+      ],
+      "raw64": [
+        56,
+        112,
+        76
+      ]
+    },
+    "cell_order": [
+      "direct",
+      "empty_format",
+      "one_thought256"
+    ],
+    "all_thought_below_same_model_empty": true,
+    "raw_direct_format_errors": 59,
+    "parser_unchanged": true
+  },
+  "three_arm_result": {
+    "status": "complete_negative",
+    "report": "warmstart_dev64_three_arm_20261018.json",
+    "documents": 64,
+    "rows": 1152,
+    "BC_minus_raw_own_minus_empty_K16": 0.3069455836382271,
+    "ci95": [
+      -0.20911881937921786,
+      0.9084708452713868
+    ],
+    "independent_mean_cells": 330,
+    "independent_paired_CIs": 100,
+    "max_audit_error": 0
+  },
+  "calculation_pilot": {
+    "status": "teacher32_closed_reader_answers_running",
+    "questions": 32,
+    "question_only_hash_selection": true,
+    "excluded_prior_dev_demo_ids": 139,
+    "teacher_model": "Qwen/Qwen3-4B",
+    "teacher_protocol_sha256": "ff1dc3234c674294164a0580fb46a436247d25a0a4170e8891b46d3bb8b98bd7",
+    "teacher_notes": 32,
+    "teacher_empty": 0,
+    "teacher_caps": 0,
+    "teacher_content_tokens": 2244,
+    "first4_final_answer_omission_failures": 4,
+    "all_teacher_outputs_retained": true,
+    "manual_verified_equations": 61,
+    "manual_corruptions_token_length_matched": true,
+    "reader_protocol_sha256": "2a85462169f4904470bf97398602bff3c31fe00221a6cbfbe047fbb18c5b5ca1",
+    "reader_interface": "QA+[198]+note+[198]; raw=QA; empty preserves both separators",
+    "answer_conditions": 10,
+    "answer_attempts": 320,
+    "gold_after_all_answers_closed": true,
+    "training": false,
+    "official_test": false,
+    "scope": "Curated QA assistance feasibility; generated final answers may act as copying hints, verified partial notes test intermediate calculation."
+  },
+  "latest_CPU_suite": {
+    "tests": 445,
+    "toy_smoke": "PASS",
+    "path": "local/checks/tests.sKjRbj",
+    "device_qualification_separate": true
   }
 }
