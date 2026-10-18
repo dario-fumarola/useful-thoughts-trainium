@@ -68,9 +68,15 @@ range, composition and interpolation DEV panels are prepared; the initial128TRAI
 overfit check is mechanical. The short batched driver completed actual updates1–3,
 full save, fresh-process full restore and updates4–6. Independent model/master/
 moment byte checks pass; this does not establish long-run memory stability.
-The source is merged to main. A complete seven-condition
-TRAIN128 free-answer baseline is running before reader training.
+All three TRAIN128 fitting runs now finish, with independent terminal model,
+master and moment audits passing. The prefix-only writer's CPU reference emits
+128/128 exact partial states with natural stops. This is fitting evidence;
+fresh generalization and useful reader effects remain unmeasured. B0, frozen-reader
+and compact-CoT free-answer matrices, plus paired Trainium writer generation,
+are running on isolated source snapshots.
 [Short-pack hardware evidence](validation/partial_state_v6_training_hardware_20261018.json) ·
+[Complete fitting audit](validation/partial_state_v6_TRAIN128_training_20261018.json) ·
+[Actual writer outputs](validation/partial_state_v6_TRAIN128_writer_CPU_20261018.json) ·
 [Intermediate-only design](validation/partial_state_v6_design_20261018.json) ·
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
