@@ -30,14 +30,23 @@
    AllCPU own/other prompts match executed teacher/other controls, including
    cap16,prefill128,decoder/stopping and frozen identity: explicit response reuse
    gives128/1, not new calls or extra samples. Full records public and onEBS.
-   Only paired Trainium writer generation remains active onphysical7:
-   local/diagnostics/partial-state-v6-TRAIN128-writer128-GPU-notes-v1;
-   source partial-state-channel-v6/a73c347, bound23:00UTC/3hours,512GiB floor.
-   Its compiler is active; never edit the snapshot or rush a healthy compilation.
-   Main v4 extends the fixed complete-answer protocol to four DEV512 panels,
-   permits predeclared condition subsets and reuses the same model's sealed
-   CPU native reference. No training-core source changes; original bindings stay
-   valid. Finish checks/snapshot then prepare/launch held diagnostics, no TEST.
+   Paired Trainium writer closed19:55UTC:128exact/natural stops, all native
+   actions matchCPU. Its complete output/proof/control archive is EBS-verified;
+   validation/partial_state_v6_TRAIN128_writer_XLA_20261018.json. Every fitting
+   job is now closed. No fresh generalization or matched latency claim yet.
+   Main v4 is CPU-checked and frozen at partial-state-held-v6/3301d22.
+   All2048actual writer notes close20:16UTC; their outcome counts remain unread
+   until the whole paired question closes. Active CoT/reader jobs: local/diagnostics/
+   partial-state-v6-fixed-DEV512-{cot,reader}128-v1; physical9/10 logical36–43.
+   Actual live placements captured for all jobs; bound01:30UTC Oct19,3hours per child.
+   Monitor stage-*/shard-*/run.log and native/cache JSON; do not edit snapshot.
+   Same-reader all8content controls run onphysical10/logical40–43:
+   local/diagnostics/partial-state-v6-fixed-DEV512-reader128-v1. Its finite
+   controller waits for each complete512writer bundle, prepares it exactly
+   once and retains all failures. No utility selection or repair. Original
+   source3301d22 and80total-action budget stay fixed. No extra B0 terse-format
+   repetition; preserve its known unsupported counts, not capability zeros.
+   No TEST. Finish all panels and compare natural CoT, retaining every failure.
    Full-trace CoT, including root operation, is a stronger future baseline;
    data-only census showsTRAIN fits64label slots. Do not relabel old compactCoT.
 5. Separate512-item interpolation, structure, range and composition DEV panels
@@ -52,3 +61,26 @@ both64model-only states are verified on EBS under
 local/backups/science/interrupted/host-oom-20261018. Model-only states cannot resume.
 Keep35GiB EBS reserve; existing EBS backup is same-instance. Root owns live work;
 subagents are unavailable due account usage limits. Preserve negatives and controls.
+
+Future study source is isolated in local/worktrees/partial-state-study-v7.
+It adds root-inclusive ordinary CoT, fixed5120scope, full64/160/terminal saves.
+Public branch:partial-state-study-v7; validation/partial_state_v7_CPU_readiness_20261018.json.
+CPU audit:25,600 existing component packs bitwise match qualified v6; no forward
+or learning claim. Budget revision before any fresh outcome review: primary A640/Bpartial640
+versus R320+W320, matching640total updates and20480total ordered expressions
+per system/seed. A/B see four passes; R/W each two. Full-root CoT is an extra
+prepared variant; it does not replace the compact cost competitor. Earlier
+A320proposal remains archived as a proposal, never run. No learning release yet.
+Review completed128-model DEV results, bounded memory and disk first.
+
+Final audit is implemented,1598CPU checks pass; actual closed TRAIN numerical
+vectors independently reproduce native/cache gates. Run only after all writer/
+CoT/reader controller completion.json files say all four panels are complete:
+`source scripts/env.sh; USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario`.
+It rereads18,432answers/2,048notes, independent prefix gold/control math and parser,
+all paired intervals and actual numerical tensors; archives complete batches onEBS.
+Review all panels once, then choose the next learning experiment. No outcome peeking
+or source mutation on the frozen worktree. Inactive old qualification manifests
+identify102.6GiB of potential NVMe duplicates, excluded from active/current science;
+full readback is running as a finite read-only inventory (local/analysis/inactive-
+qualification-archive-readback-20261018.log). Nothing has been removed.

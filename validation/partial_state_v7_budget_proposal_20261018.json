@@ -1,0 +1,57 @@
+{
+  "schema": "partial-state-v7-budget-proposal-v2",
+  "created_utc": "2026-10-18T20:16:35.619900+00:00",
+  "status": "PROPOSED_BEFORE_FRESH_DEV_REVIEW_NO_LEARNING_RELEASE",
+  "supersedes": "Candidate budget in partial_state_v7_CPU_readiness_20261018.json; originalA320proposal never executed",
+  "seeds": [
+    2026101806,
+    2026101807
+  ],
+  "fresh_B0_for_each_model": true,
+  "primary": {
+    "A_direct": 640,
+    "B_compact_partial_CoT": 640,
+    "C_reader": 320,
+    "C_prefix_writer": 320
+  },
+  "total_updates_per_system": 640,
+  "total_ordered_expression_occurrences_per_system": 20480,
+  "per_model_passes": {
+    "A": 4,
+    "B": 4,
+    "reader": 2,
+    "writer": 2
+  },
+  "optional": "Root-inclusive full-CoT training is implemented as an additional stronger supervision variant; never drop the compact baseline to create a token/latency advantage.",
+  "inference": {
+    "total_action_budget": 96,
+    "writer": 64,
+    "reader": 32,
+    "direct_or_CoT": 96
+  },
+  "checkpoint_steps": {
+    "single_model_640": [
+      64,
+      160,
+      320,
+      480,
+      640
+    ],
+    "split_model_320": [
+      64,
+      160,
+      320
+    ]
+  },
+  "release_pending": [
+    "Complete unchanged128-model DEV writer/reader/compactCoT diagnosis, all outcomes retained.",
+    "Bounded original-qualified world4/cache256 memory and actual full64restart before320 continuation.",
+    "Actual disk reserve calculation and any necessary independently verified duplicate reclamation.",
+    "Pin final source, budget, prompts, two seed orders and same teacher data before fresh larger learning."
+  ],
+  "limits": [
+    "No new trained DEV outcome inspected for this budget choice.",
+    "Equal updates with fixed shapes approximate training compute; record actual chip-time/labels and two-model capacity.",
+    "No outcome selected at a best checkpoint; terminal is primary. Midpoint data-matched evaluation needs an explicit developmental binding if used."
+  ]
+}

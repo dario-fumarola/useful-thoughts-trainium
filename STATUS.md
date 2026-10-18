@@ -1,4 +1,4 @@
-# Status — 2026-10-18 19:42 UTC
+# Status — 2026-10-18 20:18 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -28,6 +28,35 @@ Public:validation/partial_state_v6_training_hardware_20261018.json and all6updat
 Full3 remains onNVMe with manifest/digests onEBS; no uninterrupted-parity or new RNG-readback claim.
 Cold graph costs dominate; last update14.5s alone does not establish steady throughput/memory.
 Decision: mechanics pass; qualification model excluded from scientific training or warm starts.
+
+## Active: fixed fresh computation panels
+Question: do frozen TRAIN128 models transfer, and can student partials improve the same reader?
+ID:partial-state-v6-fixed-DEV512; four separate512-item interpolation/structure/range/composition panels.
+All2048writer attempts close20:16UTC onphysical8; CoT9/reader10 remain active, logical36–43.
+Controls:local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
+Outputs:local/nvme/evaluation/partial-state-v6-DEV_{panel}-{writer128-XLA-notes-v2,cot128-answers-v4}.
+Source:immutable partial-state-held-v6/3301d22;1588CPUchecks, fixed hashes/models/native refs verified.
+Single greedy attempt, cap64writer/80CoT; all512 failures retained, no repair/filtering or TEST.
+Endpoint: separate complete-answer accuracies and paired5000item/seed17 contrasts; never pool panels.
+Actual4 live placements captured for each device; native and new cache-shape gates precede sampling.
+Bound01:30UTC Oct19/3hours per child,512GiB memory floor, no automatic retries.
+Each reader panel starts only after its512actual writer attempts close; all8conditions, no utility gating.
+Original TRAIN128 XLAwriter physically closed19:55UTC:128exact/natural stops, all native actions equalCPU.
+Audit command after all controllers close: scripts/audit_partial_state_panels.py --root /home/ubuntu/dario.
+Decision: pending complete answers; larger5120study and RL remain unreleased.
+
+## Closed: actual Trainium prefix-only fitting writer
+Question: does the actual Trainium writer reproduce the CPU state/stopping result?
+ID:partial-state-v6-TRAIN128-writer128-GPU-notes-v1;128attempts, greedy64/nativeEOS.
+All four native/cache gates pass; all original sessions andphysical7 close19:55UTC.
+128/128canonical non-root states,128natural stops, zero caps/errors/empty/root-operation lines.
+Every native action, includingEOS, exactly matches the independently executed CPU reference.
+Actual reader own/other prompts equal all executed teacher/unrelated controls: response reuse
+establishes composed128/1 answers, with no new reader inference or independent observations.
+Ordinary compactCoT also128/128 using one model/run; split needs two. TRAIN fitting only.
+Public:validation/partial_state_v6_TRAIN128_writer_XLA_20261018.json and all original notes/proofs.
+Complete control/output EBS copy independently read back; freshDEV remains pending.
+Decision: hardware channel mechanics pass; no generalization, speed or architecture advantage claim.
 
 ## Closed: complete-answer TRAIN fitting comparison
 Question: do verified partial states and the actual prefix-only writer support free answers?
@@ -472,9 +501,7 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
 Root: science/data/precision decisions, training release, current public findings.
-Data: larger filtered general hindsight batch, native-label adapter and CPU projections.
-Distributed: active W science, checkpoint/closure checks and next C′ CPU preparation.
-Review: independent scientific interpretation; arithmetic/helper/GSM16 jobs are closed.
+Earlier data/distributed/review assignments are closed; root owns all current finite jobs.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.

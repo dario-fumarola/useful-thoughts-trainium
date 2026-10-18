@@ -1054,3 +1054,21 @@ gets128/128 with one training model/run; split has no demonstrated advantage.
 Evaluate the fixed four512DEV panels before scaling training, with no outcome
 filtering and separate interpolation/structure/range/composition claims. Preserve
 all old128fit models and source snapshots. Official TEST remains unused.
+
+2026-10-18 19:58UTC — Actual Trainium writer closes with all128canonical states
+and naturalEOS; every action matchesCPU, including intact donors. Frozen-reader
+conditional responses may be reused only with explicit exact-input provenance;
+composed128/1 does not add inference or samples. CompactCoT remains128/128 with
+one training model/run. Fresh fixed DEV writer/CoT sequences run at3301d22 on
+physical8/9, bounded01:30UTC Oct19. Keep ordinary partial-CoT as a real cost
+competitor when considering the stronger full-trace training variant; extra root
+steps may increase answer accuracy and also add inference tokens. No larger
+learning or RL release yet.
+
+2026-10-18 20:16UTC — Before reviewing any fresh DEV outcomes, revise the
+unreleased larger budget to A640/Bpartial640 versus reader320+writer320: each
+system gets640total updates/20,480ordered expressions. A/B each see four passes,
+R/W each two; actual supervised labels/chip-time/capacity remain explicit. The
+full-root CoT variant is prepared but cannot displace the compact cost baseline.
+A320in the first CPU proposal was never launched. The currently active128-model
+DEV question retains its original80-action budget/settings; no new learning.
