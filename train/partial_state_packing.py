@@ -6,10 +6,10 @@ means. A writer stop is supervised even though its ID also pads inactive slots.
 """
 import torch
 
-from train.partial_state_data import direct_prompt, evaluate, reader_prompt, teacher_partial, writer_prompt
+from train.partial_state_data import direct_prompt, evaluate, execute, reader_prompt, teacher_partial, writer_prompt
 from train.useful_note_sft_data import EOS, packed
 
-COMPONENTS = ('direct', 'cot', 'writer', 'reader_teacher', 'reader_empty')
+COMPONENTS = ('direct', 'cot', 'cot_full', 'writer', 'reader_teacher', 'reader_empty')
 
 
 def encode(tokenizer, text):
@@ -36,6 +36,9 @@ def training_pack(row, tokenizer, component, *, width=128, target_slots=64):
         context, completion = writer_prompt(tree), note
     elif component == 'cot':
         context, completion = writer_prompt(tree), note + 'Answer:\n' + answer
+    elif component == 'cot_full':
+        trace = ''.join(f'{a} {op} {b} = {value}\n' for a,op,b,value in execute(tree)[1])
+        context, completion = writer_prompt(tree), trace + 'Answer:\n' + answer
     elif component == 'direct':
         context, completion = direct_prompt(tree), answer
     else:
