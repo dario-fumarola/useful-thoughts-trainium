@@ -128,13 +128,14 @@ def load_arithmetic(directory,tok):
     else:raise ValueError('Only explicitly reviewed causal-v1 or supervised-v2 publication supported')
     if (m.get('selection_salt')!=selector.SALT
             or m.get('source_sha256')!=curator.SOURCE_SHA or m.get('source_files')!=selector.sources()
-            or m.get('ready_for_requested_pools') is not True
+            or type(m.get('ready_for_requested_pools')) is not bool
             or m.get('status')!=status or m.get('tokenizer_vocab_sha256')!=canonical_hash(tok.get_vocab())
             or m.get('accepted_sha256')!=sha256_file(directory/'accepted.jsonl')):
         raise ValueError('Complete exact native arithmetic publication required')
     if m['selection']!=selector.select_pools(accepted):raise ValueError('Frozen arithmetic hash pools changed')
     ids=m['selection']['dev']['selected_item_ids']
-    if len(ids)!=512 or len(set(ids))!=512:raise ValueError('Full frozen DEV512 pool required')
+    if not N<=len(ids)<=512 or len(set(ids))!=len(ids):raise ValueError('At least the complete fixed Phase1 DEV256 required')
+    if not m['ready_for_requested_pools'] and selector is not supervised:raise ValueError('Only complete supervised-v2 supports a reported optional-pool shortfall')
     index={r['item_id']:r for r in accepted}; selected=[]; defined=set(tok.get_vocab().values())
     if len(index)!=len(accepted) or len({r['document_id'] for r in accepted})!=len(accepted):raise ValueError('Unique arithmetic documents required')
     if m['phase1_dev_item_ids']!=ids[:N] or m['held_post_sft_dev_item_ids']!=ids[N:512]:raise ValueError('Fixed prospective DEV halves required')
@@ -170,7 +171,8 @@ def load_arithmetic(directory,tok):
     return m,selected
 
 
-def prepare(output,general,arithmetic,model_dir,format_path,published_path,until):
+def prepare(output,general,arithmetic,model_dir,format_path,published_path,until,
+            exclusions_path=ROOT/'local/diagnostics/postsft-arithmetic-held-dev-exclusions-v1.json'):
     from transformers import AutoTokenizer
     deadline(until); assets=asset_provenance(model_dir)
     if (assets['model_id'],assets['revision'])!=(MODEL,REVISION):raise ValueError('Released B0 required')
@@ -182,8 +184,18 @@ def prepare(output,general,arithmetic,model_dir,format_path,published_path,until
         if sha256_file(f)!=h:raise ValueError('General source selection changed')
     am,math_rows=load_arithmetic(arithmetic,tok); selected=read(general/'inputs.json')['rows']+math_rows
     gd={r['document_id'] for r in selected if r['cohort']=='general'};ad={r['document_id'] for r in math_rows}
-    reserved=set(am['selection']['dev']['selected_item_ids'][N:2*N])
-    rd={r['document_id'] for r in rows(arithmetic/'accepted.jsonl') if r['item_id'] in reserved}
+    accepted=rows(arithmetic/'accepted.jsonl');ai={r['item_id']:r for r in accepted}
+    dev_ids=am['selection']['dev']['selected_item_ids']+am['selection']['dev']['reserve_item_ids']
+    reserved=set(dev_ids[N:2*N]);rd={ai[key]['document_id'] for key in reserved}
+    exclusions=read(exclusions_path)
+    if exclusions['count']!=len(set(exclusions['exclusions'])):raise ValueError('Bound holdout exclusions required')
+    post_docs={ai[key]['document_id'] for key in dev_ids[N:]}
+    fresh=post_docs-set(exclusions['exclusions'])-ad
+    coverage=dict(curator_dev_requested=am['selection']['dev']['requested'],curator_dev_available=len(dev_ids),
+        curator_ready_for_requested_pools=am['ready_for_requested_pools'],phase1_documents=N,phase1_ready=True,
+        actual_post_phase1_remainder=len(post_docs),fresh_after_sealed_exclusions=len(fresh),
+        required_future_postsft_documents=256,future_postsft_shortfall=max(0,256-len(fresh)),
+        future_postsft_ready=len(fresh)>=256,training_or_future_held_release=False)
     overlap=dict(general_with_phase1_arithmetic=len(gd&ad),general_with_raw_next256_arithmetic=len(gd&rd),
         raw_next256_not_claimed_unexposed=True,later_postsft='Separate sealed exclusions and inventory; current pools unchanged')
     fmt=read(format_path);parts=serialization(tok,dict(fmt['format'],header_text=fmt['header_text']),read(published_path))
@@ -202,7 +214,7 @@ def prepare(output,general,arithmetic,model_dir,format_path,published_path,until
             context_ids=reader_context(r,[] if interface=='raw' else controls[key]['values'][mode],interface,parts)))
     output.mkdir(parents=True,exist_ok=False)
     atomic_json(output/'inputs.json',dict(rows=selected,controls=controls,context_hashes=contexts,parts=parts,qualification_refs=refs))
-    input_files=(general/'inputs.json',general/'manifest.json',arithmetic/'manifest.json',arithmetic/'accepted.jsonl',arithmetic/'audit.jsonl',format_path,published_path)
+    input_files=(general/'inputs.json',general/'manifest.json',arithmetic/'manifest.json',arithmetic/'accepted.jsonl',arithmetic/'audit.jsonl',format_path,published_path,exclusions_path)
     if sha256_file(arithmetic/'audit.jsonl')!=am['audit_sha256']:raise ValueError('Arithmetic complete audit changed')
     p=dict(schema=SCHEMA,identity='phase1-interface-oracle-v1',created_utc=utc_now(),deadline_utc=until,
         source_files=sources(),input_hashes={str(f.resolve()):sha256_file(f) for f in input_files},
@@ -214,7 +226,7 @@ def prepare(output,general,arithmetic,model_dir,format_path,published_path,until
         secondary='K1 and arithmetic numeric-only LL; never substitute for full span',
         control_semantics='GENERAL correct/corrupt = actual future16 copy versus different-document real future16, not isolated numeric-error sensitivity; other uses a distinct donor. Arithmetic corrupt = native different-value numeral.',
         selection='Fixed first256 DEV of each frozen512 pool; no outcome exclusion; raw arithmetic next256 not claimed unexposed',
-        arithmetic_selection_policy=am['boundary_selection'],cohort_document_overlap=overlap,
+        arithmetic_selection_policy=am['boundary_selection'],cohort_document_overlap=overlap,arithmetic_publication_coverage=coverage,
         qualification='Four native full-head next-logp refs: general raw/I4correct, arithmetic raw/I3correct',
         serialization='Native array concatenation; original prefix/target IDs never jointly retokenized. I2 added inline spaces retained. I4 published text/typo, not claimed author implementation.',
         selection_rule='Per cohort mean thresholds inclusive, then greatest correct-minus-raw fullspan gain; exact ties lowest interface ID. Report cohort agreement; no posthoc subset.',
@@ -369,7 +381,7 @@ def summarize_rows(p,x,actual):
             raw_reused_exactly_once_per_document=True)
     return dict(status='complete',cohorts=results,rows=len(actual),failures=0,thresholds=THRESHOLDS,
         cohort_choice_agreement=results['general']['chosen_interface'] is not None and results['general']['chosen_interface']==results['arithmetic']['chosen_interface'],
-        cohort_document_overlap=p['cohort_document_overlap'],
+        cohort_document_overlap=p['cohort_document_overlap'],arithmetic_publication_coverage=p['arithmetic_publication_coverage'],
         interpretation='Future-visible target-copy plumbing and interface selection only; not useful policy, training, or held-out confirmation.')
 
 
@@ -393,11 +405,12 @@ def main():
     parser.add_argument('--arithmetic',type=Path);parser.add_argument('--selection',type=Path);parser.add_argument('--records',type=Path)
     parser.add_argument('--model-dir',type=Path,default=ROOT/'local/assets/qwen3-1.7b-base')
     parser.add_argument('--format',type=Path,default=ROOT/'local/resolved_format.json');parser.add_argument('--published',type=Path,default=ROOT/'configs/rlp_published_prompt.json')
+    parser.add_argument('--holdout-exclusions',type=Path,default=ROOT/'local/diagnostics/postsft-arithmetic-held-dev-exclusions-v1.json')
     parser.add_argument('--cpu-threads',type=int,default=16);parser.add_argument('--shard-index',type=int)
     a=parser.parse_args()
     if a.command!='summarize' and a.deadline_utc is None:parser.error('--deadline-utc required')
     if a.command=='prepare-general':prepare_general(a.output,a.selection,a.records,a.model_dir,a.deadline_utc)
-    elif a.command=='prepare':prepare(a.output,a.general,a.arithmetic,a.model_dir,a.format,a.published,a.deadline_utc)
+    elif a.command=='prepare':prepare(a.output,a.general,a.arithmetic,a.model_dir,a.format,a.published,a.deadline_utc,a.holdout_exclusions)
     elif a.command=='cpu-reference':cpu_reference(a.output,a.cpu_threads,a.deadline_utc)
     elif a.command=='score':score(a.output,a.shard_index,a.deadline_utc)
     else:summarize(a.output)

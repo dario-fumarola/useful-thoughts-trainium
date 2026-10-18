@@ -115,11 +115,11 @@ def prepared(tmp_path,monkeypatch):
         r.update(original_source_ids=(r['prefix_ids']+r['target_ids']+[32]*528)[:528],natural_future16_ids=r['target_ids']+[32]*(16-len(r['target_ids'])),
             verified_numeric_rhs=dict(token_ids=r['target_ids'],value=r['numeric_value'],numeric_token_mask=r['numeric_token_mask'],closing_boundary_ids=r['closing_boundary_ids'],closing_boundary_token_start=r['closing_boundary_token_start']),
             source_file=str(source),source_sha256=curator.SOURCE_SHA)
-    monkeypatch.setattr(curator,'select_pools',lambda accepted:dict(dev=dict(selected_item_ids=[r['item_id'] for r in accepted])))
+    monkeypatch.setattr(curator,'select_pools',lambda accepted:dict(dev=dict(requested=512,available=len(accepted),selected_item_ids=[r['item_id'] for r in accepted[:512]],reserve_item_ids=[r['item_id'] for r in accepted[512:]])))
     (mathdir/'accepted.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in ar))
     (mathdir/'audit.jsonl').write_text('Synthetic complete audit\n')
     atomic_json(mathdir/'manifest.json',dict(schema=curator.SCHEMA,selection_salt=curator.SALT,source_sha256=curator.SOURCE_SHA,source_file=str(source),source_files=curator.sources(),ready_for_requested_pools=True,phase1_dev_item_ids=[r['item_id'] for r in ar[:2]],held_post_sft_dev_item_ids=[r['item_id'] for r in ar[2:]],boundary_selection='Synthetic causal fixture policy',status='complete_CPU_preparation_not_model_or_training_qualification',tokenizer_vocab_sha256=canonical_hash(tok.get_vocab()),
-        audit_sha256=sha256_file(mathdir/'audit.jsonl'),accepted_sha256=sha256_file(mathdir/'accepted.jsonl'),selection=dict(dev=dict(selected_item_ids=[r['item_id'] for r in ar]))))
+        audit_sha256=sha256_file(mathdir/'audit.jsonl'),accepted_sha256=sha256_file(mathdir/'accepted.jsonl'),selection=curator.select_pools(ar)))
     modeldir=tmp_path/'model';modeldir.mkdir();atomic_json(modeldir/'config.json',dict(vocab_size=151936));atomic_json(modeldir/'ASSET_MANIFEST.json',{})
     assets=dict(model_id=probe.MODEL,revision=probe.REVISION,manifest_sha256=sha256_file(modeldir/'ASSET_MANIFEST.json'))
     monkeypatch.setattr(probe,'asset_provenance',lambda path:assets if isinstance(path,Path) else pytest.fail('Path API required'))
@@ -127,7 +127,8 @@ def prepared(tmp_path,monkeypatch):
     model=TinyTied();monkeypatch.setattr(probe,'load_base',lambda p:(model,tok));monkeypatch.setattr(probe,'sampled_fingerprint',lambda m:SIGNATURE)
     backend=SimpleNamespace(model=model,device=torch.device('cpu'),sync=lambda:None,hidden=lambda ids:model.model(input_ids=ids).last_hidden_state)
     monkeypatch.setattr(probe,'setup_model',lambda args:(backend,tok,None,SIGNATURE,None))
-    f,p=format_files(tmp_path);output=tmp_path/'output';protocol=probe.prepare(output,gen,mathdir,modeldir,f,p,UNTIL)
+    f,p=format_files(tmp_path);excluded=tmp_path/'exclusions.json';atomic_json(excluded,dict(count=0,exclusions=[]))
+    output=tmp_path/'output';protocol=probe.prepare(output,gen,mathdir,modeldir,f,p,UNTIL,excluded)
     yield SimpleNamespace(output=output,p=protocol,tok=tok,gen=gen,mathdir=mathdir,modeldir=modeldir)
 
 
@@ -276,3 +277,24 @@ def test_overlap_reporting_does_not_change_frozen_cohorts(prepared):
     assert p['cohort_document_overlap']['general_with_raw_next256_arithmetic']==0
     assert p['cohort_document_overlap']['raw_next256_not_claimed_unexposed'] is True
     assert [r['item_id'] for r in x['rows']]==['g0','g1','a0','a1']
+
+
+def test_optional_supervised_pool_shortfall_does_not_shrink_phase1(prepared,monkeypatch):
+    from train import computable_equations as base,computable_equations_supervised as supervised
+    path=prepared.mathdir/'accepted.jsonl';actual=probe.rows(path)[:320]
+    path.write_text(''.join(json.dumps(r)+'\n' for r in actual))
+    monkeypatch.setattr(supervised,'select_pools',base.select_pools)
+    m=probe.read(prepared.mathdir/'manifest.json')
+    ids=[r['item_id'] for r in actual]
+    m.update(schema=supervised.SCHEMA,selection_salt=supervised.SALT,source_files=supervised.sources(),
+        status='complete_supervised_CPU_preparation_not_model_or_training_qualification',ready_for_requested_pools=False,
+        accepted_sha256=sha256_file(path),selection=supervised.select_pools(actual),
+        phase1_dev_item_ids=ids[:2],held_post_sft_dev_item_ids=ids[2:512])
+    atomic_json(prepared.mathdir/'manifest.json',m,overwrite=True)
+    publication,chosen=probe.load_arithmetic(prepared.mathdir,prepared.tok)
+    assert not publication['ready_for_requested_pools']
+    assert publication['selection']['dev']['available']==320
+    assert [r['item_id'] for r in chosen]==ids[:2]
+    # Too few for the ACTUAL scientific requirement still refuses: no shrink.
+    monkeypatch.setattr(probe,'N',321)
+    with pytest.raises(ValueError,match='complete fixed Phase1'):probe.load_arithmetic(prepared.mathdir,prepared.tok)

@@ -818,3 +818,13 @@ Zero-weight mixing guarantees zero tax only; negative thinking-augmented CE is
 not a proof that every RL approach is impossible. Both remain empirical tests.
 Published RLP prompt text is separately attributed under its CC BY-SA4.0 license;
 the two closing delimiters in its figure are preserved, not silently repaired.
+
+### 2026-10-18 — Full-span interface question closed; fit scalar mixing next
+All six interfaces and controls completed on256+256DEV documents. I3 re-anchoring
+strongly enables literal future copying in general text (+15.364nats), while its
+empty tax remains−3.007. Arithmetic I3/I5 positive estimates have intervals crossing0;
+other arithmetic interfaces are strongly negative. No declared gate passes. The
+complete180-CI independent review passes; all cells and verified EBS evidence remain.
+Next fit one scalar I3 logit-mixture weight on separate first256uniqueTRAIN records,
+fixed nine-weight grid and TRAIN empty-tax constraint−.4; evaluate once on the same
+complete DEV panel. This is supplied-target plumbing, not a useful writer result.

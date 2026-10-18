@@ -7,44 +7,47 @@ on AWS Trainium.
 
 ## Current finding
 
-**Useful self-generated thoughts have not been established.** Correct partial
-calculations supplied to unchanged Qwen3-1.7B-Base do not give consistent net
-assistance. Moving those same notes beside the equation makes the reader follow
-wrong values, but still fails to improve over raw text or matched empty format.
+**Useful self-generated thoughts have not been established.** The latest frozen
+B0 experiment does establish that re-anchoring lets the reader copy supplied
+future text. It still carries an empty-format penalty. Even the best re-anchored interfaces
+give small, uncertain supplied-answer gains on real arithmetic boundaries.
 
-The latest fixed TRAIN 256 / DEV 64 probe completed all 1,920 likelihood cells and 384
-numeric completions. Correct−raw numeric likelihood is −1.351 nats on TRAIN and
-−1.600 on DEV, with both paired intervals below zero. DEV initial-scalar scores:
+All 15,872 cells completed on 256 general and 256 arithmetic DEV documents, crossing
+six interfaces and all content controls. Full 16-token likelihood is primary for
+general text; arithmetic scores every numeral token plus its actual closing boundary.
+For the re-anchored I3 interface, paired document-bootstrap 95% intervals are:
 
-| Condition | Correct /64 | Unsupported /64 |
-|---|---:|---:|
-| Raw |31|22|
-| Empty format |31|22|
-| Correct partial |28|31|
-| Corrupted partial |10|29|
-| Shuffled |24|29|
-| Unrelated |25|25|
+| Cohort | Empty−raw | Supplied correct−raw | Correct−corrupt |
+|---|---:|---:|---:|
+| General,256 |−3.007 [−3.438,−2.590]|+15.364 [13.540,17.264]|+20.039 [18.102,22.001]|
+| Arithmetic,256 |−0.520 [−0.648,−0.395]|+0.190 [−0.079,0.475]|+1.268 [1.076,1.476]|
 
-These are bounded parser scores, not exhaustive mathematical capability scores;
-unsupported paths include correct multi-step calculations. Eighteen corrupted
-paths match the recomputed wrong whole value (one also matches the original
-partial). The reader therefore can transmit supplied values in this format,
-but sensitivity alone is insufficient. All paths, controls and negative results
-are retained and independently checked.
-[Complete result and mechanism](validation/finemath_arithmetic_near_lhs_reader_20261018.json) ·
-[Earlier prepend probe and parser limits](validation/finemath_arithmetic_reader_20261018.json).
+The declared gate requires these means to reach −0.5, +2, +2 nats respectively;
+none of I0–I5 passes. General controls distinguish the true future from a different
+document's future; they do not isolate numeric correctness. Arithmetic corruption
+changes a numeral while preserving surface length and closing bytes. Arithmetic's
+entire raw likelihood headroom is 2.062 nats, so the +2 threshold is particularly strict.
+The supplied note deliberately contains the complete target; this qualifies reader
+plumbing and provides no evidence about a prefix-only writer.
+[All interfaces, absolute scores, contrasts and complete cell projection](validation/interface_target_copy_dev256x2_20261018.json).
 
-The next phase batches six reader interfaces with full-answer/target-copy oracles
-on at least 256 DEV documents per cohort. Full numeral plus closing boundary or
-natural 16-token likelihood is primary; K1 is secondary. Native digit-token inspection
-confirms that K1 often measures only a leading space or first digit.
-A larger real-data warmstart will teach writer and reader together after this
-interface test. The unlaunched 512-example training draft was superseded; no
-training or long RL run is active. Official TEST remains unused.
+Next is a scalar logit mixer fitted only on separate TRAIN documents, then tested
+on the same complete DEV panel. A real-data scan yielded 5,520 verified full-calculation
+TRAIN labels. Independent post-training DEV remains short; a bounded raw-document
+extension is running. No new SFT or RL is active; official TEST remains unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here
 
+- **Nearby partial notes did not help.** The fixed TRAIN 256 / DEV 64 probe completed
+  all 1,920 likelihood cells and 384 numeric paths. Correct−raw numeric likelihood
+  was −1.351/−1.600 nats, both intervals negative. DEV correct/raw/empty/corrupt
+  initial-scalar counts were 28/31/31/10 of 64, with unsupported 31/22/22/29.
+  Eighteen corrupted outputs matched the changed whole value (one also matched
+  the original partial): sensitivity existed without net assistance. These bounded
+  parser scores exclude some correct multistep calculations; all paths remain saved.
+  [Complete likelihood, generation and mechanism evidence](validation/finemath_arithmetic_near_lhs_reader_20261018.json) ·
+  [Earlier prepend probe and parser limits](validation/finemath_arithmetic_reader_20261018.json).
 - **Initial R study stopped.** Inserting the original thought format carried a
   large initial penalty: B0 DEV512 K1 raw −1.118, empty −7.361, own −11.203 nats.
   Own versus unrelated content was indistinguishable from zero. R1234 stopped
@@ -101,7 +104,9 @@ available in Git and the linked reports.
 |---|---|
 | [configs/weekend.json](configs/weekend.json) | Original stopped experiment configuration |
 | [docs/WEEKEND_PLAN.md](docs/WEEKEND_PLAN.md) | Original scientific design and interpretation |
-| [train/calculation_boundaries.py](train/calculation_boundaries.py) | Current exact-arithmetic source curator |
+| [train/computable_equations_supervised.py](train/computable_equations_supervised.py) | Verified real equations for supervised labels; future-aware curation |
+| [train/interface_oracle_probe.py](train/interface_oracle_probe.py) | Complete six-interface full-span target-copy probe |
+| [train/calculation_boundaries.py](train/calculation_boundaries.py) | Bounded exact-arithmetic parser and original stricter curator |
 | [train/calculation_boundary_probe.py](train/calculation_boundary_probe.py) | Controlled reader feasibility and exact LHS reanchoring |
 | [train/scalar_completion.py](train/scalar_completion.py) | Versioned initial-scalar boundaries; legacy scores remain preserved |
 | [train/neuron_driver.py](train/neuron_driver.py) | Historical C/R qualification and driver |

@@ -1,13 +1,17 @@
 # Current queue
 
-1. Run one batched frozen-B0 interface question on>=256 DEV documents, all six
-   interfaces and raw/empty/correct/corrupt/shuffled/other conditions. Full numeral
-   plus closing boundary or general natural16 is primary; K1 secondary. Report
-   tax, oracle gain and sensitivity with paired document intervals. Thresholds:
-   >=−0.5, >=+2, >=+2 nats respectively. Target-copy oracle is plumbing only.
-2. If no interface passes, test scalar logit mixing. Zero weight establishes
-   zero tax, not utility. If still none passes, select the best transparently and
-   learn the reader with SFT, then repeat the complete oracle.
+1. Finish I6 scalar logit mixing on the same full DEV256+256 panel. I0–I5
+   are complete; no interface passes all thresholds. I3 general oracle gain is
+   +15.364 nats but empty tax−3.007; arithmetic gain+.190 has an interval crossing0.
+   Fit one shared scalar on separate first256 unique TRAIN documents with the
+   fixed weight grid0,1/32,1/16,1/8,1/4,3/8,1/2,3/4,1. Maximize supplied-copy
+   full16 LL subject to TRAIN empty tax>=−.4; ties smaller weight. All DEV controls,
+   prior gate−.5/+2/+2 and document intervals remain unchanged. Zero is an identity,
+   not utility. Keep base weights frozen; report both cohort outcomes/headroom.
+2. After complete I6 results, select the interface explicitly. Arithmetic's raw
+   full-span headroom is only2.062 nats. If it still fails, the owner allows a
+   declared reader-learning SFT fallback under the best interface; do not quietly
+   relax thresholds or describe supplied-target copying as a generated-note result.
 3. Prepare>=5000 real TRAIN examples and>=256 held DEV. Relax arithmetic to
    computable equations; general hindsight notes use high-surprisal anchors and
    frozen-reader positive full-span gain filtering. Save all acceptance/rejection

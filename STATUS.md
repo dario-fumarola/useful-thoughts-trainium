@@ -1,16 +1,17 @@
-# Status — 2026-10-18 05:03 UTC
+# Status — 2026-10-18 05:31 UTC
 
-## Active: batched reader interface qualification
-Question: can unchanged B0 use a supplied note under any affordable interface?
-ID: phase1-interface-oracle-v1 (implementation/preparation underway; no model job yet).
-Design: original/header-free/inline/reanchored/RLP/plain-scratch interfaces;
-raw, empty, full-target-copy oracle, corrupt, shuffled and unrelated controls.
-At least256 DEV documents per reported cohort; all conditions in one four-core job.
-Primary: full numeral+closing boundary for arithmetic, natural16 for general.
-Gate: mean empty−raw>=−0.5, oracle−raw>=2, oracle−corrupt>=2 nats; document CIs.
-K1 secondary. Confirmed native tokenizer uses separate decimal digit tokens.
-No TEST access. Published RLP prompt typo retained and attributed separately.
-Next: finish data/code checks, run batch directly under bounded four-core probe policy.
+## Closed: batched reader interface qualification
+Question: can unchanged B0 use a supplied full-target-copy note?
+ID: phase1-interface-oracle-v1; all15872cells/512DEV documents/six interfaces complete.
+All native gates pass; four exits0, owned processes/groups/devices7–10 physically closed.
+Full numeral+actual boundary/arithmetic, natural16/general; K1 secondary, no TEST.
+Gate mean empty−raw>=−0.5, correct−raw>=2, correct−corrupt>=2 nats; no interface passes.
+I3 general:−3.007/+15.364/+20.039; arithmetic:−0.520/+0.190/+1.268 nats.
+Arithmetic oracle CI crosses0; entire raw full-span headroom2.062 nats.
+All absolute modes, document intervals and balanced arithmetic examples saved publicly:
+validation/interface_target_copy_dev256x2_20261018.json; complete EBS archive verified.
+Decision: fit one I3 scalar logit mixer on separate TRAIN256, test same complete DEV panel.
+Independent complete-matrix/180-CI review passed. No generated-writer claim.
 
 ## Closed: nearby partial-note reader probe
 ID: finemath-calculation-boundary-near-lhs-v3; same fixed320 documents/six modes.
@@ -29,6 +30,18 @@ Reviewed packers/trainer and1079 CPU tests passed; CPU-only512 preparation compl
 Owner replaced this with >=5000 examples, larger held DEV and BF16 training.
 Draft protocol/plan and CPU outputs retained; do not launch old draft.
 CPU preparation/audit complete; relaxed computable-equation curation now running.
+
+## Active: real supervised calculation data
+Question: can the real corpus supply>=5000 labels and independent held DEV?
+Causal first-cut scan closed:4221TRAIN/252DEV; both requested quotas short.
+Supervised all-equation scan closed:5520TRAIN/320DEV, one hash-chosen equation/document.
+Full Phase1 math256 and training5120 available; fresh postSFT held51/256, short205.
+Original scans/pools unchanged. Separate bounded raw-document extension in implementation.
+Symbolic-note-candidates-v1 CPU preparation closed:5520 full-calculation notes, zero rejects.
+Writer future-separation/stop/mask tests pass; token/label widths measured on all candidates.
+These are future-aware supervised labels, not prefix-generated thoughts or final training data.
+Next: frozen-B0 positive full-scalar gain filtering after interface selection; retain all attempts.
+No SFT launched. New runner in preparation; BF16 update path still needs actual qualification.
 
 ## Active: fixed empty-pipeline cost
 Question: how much work survives immediate EOS; how do cap and precision affect it?
