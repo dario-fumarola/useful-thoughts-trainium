@@ -7,8 +7,11 @@ on AWS Trainium.
 
 ## Current finding
 
-**Useful self-generated thoughts have not been established.** We now have a
-reader interface that can use supplied future text without a large format penalty.
+**Useful self-generated thoughts have not been established on real-document DEV
+or GSM8K.** A secondary controlled-arithmetic test now shows reader use of supplied
+intermediate steps; generated-note gains with fixed mixing are concentrated in one
+grammar family. [All256 items and4,096 comparisons](validation/controlled_arithmetic_DEV256_B0_20261018.json).
+We now have a reader interface that can use supplied future text without a large format penalty.
 A scalar logit mixer combines the raw and re-anchored reader, with weight3/8
 fitted on256 separate TRAIN documents. Complete DEV results are:
 
@@ -19,7 +22,7 @@ fitted on256 separate TRAIN documents. Complete DEV results are:
 
 These are full-span log-likelihood contrasts in nats, with paired document-bootstrap
 95% intervals. The unchanged gate requires the three means to reach−0.5,+2,+2.
-**General text passes; arithmetic fails.** General notes literally copy the next16
+**The general panel passes; the original arithmetic panel fails.** General notes literally copy the next16
 tokens; their different-document controls do not isolate numeric correctness.
 Arithmetic notes copy the complete numeral and its actual closing boundary;
 corruption changes only the numeral while preserving surface length and closing bytes.
@@ -73,21 +76,31 @@ own−unrelated −.056 [−.150,+.031] nats. All512 notes and12,288 cells are r
 in the [complete helper result](validation/general_prefix_helper_20261018.json).
 The broader filtered TRAIN batch is generating teacher notes.
 
-Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
+The original real-document arithmetic panel has little numeric headroom:
+its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
 correct note, while a wrong note also improves by0.112 [0.030,0.217]. We retain
 this distinction between arithmetic content and boundary/formatting gains.
 Before mixing, none of six interfaces passed; re-anchoring alone enabled strong
 general copying but retained a3.007-nat empty-format tax.
 [Earlier six-interface batch:15,872 complete cells](validation/interface_target_copy_dev256x2_20261018.json).
-A separate [controlled arithmetic diagnostic](validation/controlled_arithmetic_DEV256_design_20261018.json)
-has frozen256 novel compound expressions without model-based selection. Complete
-notes reveal the answer; partial notes omit the final calculation. It will test
-reader use of intermediate work and later supervised transfer, alongside the
-unchanged real-document evaluations.
+The completed [controlled arithmetic diagnostic](validation/controlled_arithmetic_DEV256_B0_20261018.json)
+uses256 novel compound expressions, fixed without model-based hardness selection.
+Raw full-span headroom is18.239 nats. Under ordinary re-anchoring, supplied correct
+partial steps improve likelihood by6.978 [6.417,7.544] over raw and4.866
+[4.357,5.366] over empty, and beat a wrong intermediate result by4.535 [4.253,4.813]. These notes omit the final operation and answer, so
+this supports use of intermediate work; complete supplied notes remain copy controls.
+With fixed mixing, B0's generated notes gain0.473 [0.167,0.794] over empty and
+0.925 [0.616,1.246] over unrelated notes (own−raw2.400 [2.078,2.738]). Ordinary
+re-anchoring own−raw is negative. All256 generated notes hit the128-action cap;
+descriptive family means show the aggregate mixed-reader benefit is concentrated
+in `(a+b)*(c-d)`. Every item, control, native vector and fixed-first8 examples is
+retained. Unrelated donors cross grammar families, while all note lengths are128tokens.
+The generated-note contrast does not isolate calculation from expression restatement.
+This synthetic result does not replace the real-document endpoints or release RL. The same frozen cohort can measure later supervised transfer.
 
-Next is supervised writer-and-reader warm-start under the underlying re-anchored
-interface, with ordinary source-CE and augmented-source controls. This is the
+Supervised writer-and-reader warm-start is active under the underlying re-anchored
+interface, with ordinary source-CE and augmented-source controls planned. This is the
 declared reader-learning fallback for arithmetic; fixed mixing remains a separate
 evaluation control. Of 14,669 exact symbolic substep labels from real source equations,
 3,147 beat the empty-format reader on the full numeral plus closing boundary

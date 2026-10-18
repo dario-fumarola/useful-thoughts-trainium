@@ -1,4 +1,4 @@
-# Status — 2026-10-18 10:09 UTC
+# Status — 2026-10-18 10:40 UTC
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -43,6 +43,17 @@ All131072raw rows/16gates/exits0 closed;32176qualify, first24576selected in froz
 Teacher launched09:04UTC; all16native gates/48actual PID-start-session-mappings pass.
 Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
 
+## Ready on isolated branch: native general SFT adapter
+Question: can the original filtered native labels enter honest causal W/C′/T packing?
+ID:general-sft-v5; isolated public branch, unchanged active main sources.
+Separate future-aware teacher schema, exact original first5120 acceptance order/provenance.
+Native512-token window cut is explicit; no fabricated absolute source offset.
+Qualification requires actual complete5120 unique-document parent, including all parent rows.
+Writer note+stop, natural16 reader, rawsource and augmented objectives remain unchanged.
+Both source reviews pass;1557CPUtests/smoke/compile pass. No hardware or compiler-reuse claim.
+Public branch general-sft-v5, validation/general_native_SFT_v5_CPU_readiness_20261018.json.
+Decision: await original full pipeline closure/quota/archive; no actual inventory or training release.
+
 ## Closed: full-state recovery implementation
 Question: can original science recover FP32 master/Adam state without losing evidence?
 ID: useful-note-recovery-v4; reviewed branch merged into main after actual002 closure.
@@ -81,7 +92,7 @@ ID:postorder-reader-learning-compound5120-W-seed20261018-v4r2; fresh B0, no resu
 W noteCE+natural16readerCE+0.5rawsourceCE; BF16 storage/gradients with FP32master/moments.
 Launched09:43UTC on logical0–31/physical0–7; softdeadline21:42UTC, checkpointgrace to21:57UTC.
 Launcher3118414, timeout/group3118483, driver3118485; all32 actual worker identities/mappings captured.
-All32 native/consensus/initialmaster checks pass; through32 ordered updates/master/replica checks pass.
+All32 native/consensus/initialmaster checks pass; through64 ordered updates/master/replica checks pass.
 Output:local/nvme/runs/postorder-reader-learning-compound5120-W-seed20261018-v4r2.
 Controls:local/science/control/same basename; Distributed supervises progress/checkpoints/closure.
 Terminal320 primary; step64 development only. Every terminal evaluated regardless of local sign.
@@ -170,16 +181,19 @@ Public validation/useful_note_gsm8k_sixteen_worker_equivalence_20261018.json.
 No gold, accuracy, full512 generation or full512 throughput claim; subset scope explicit.
 Decision: use reviewed16shard path for later complete512 terminal evaluations with fresh releases.
 
-## CPU prepared: secondary controlled arithmetic diagnostic
-Question: does the weak real-arithmetic oracle reflect low answer headroom or reader insensitivity?
-ID:controlled-compound-arithmetic256-v1; fixedseed,64each of four compound expression grammars.
-Positive2–3digit leaves, exactroot magnitude>=1000,64negative/192positive; no model-based selection.
-No zero/identity intermediates, partial final-answer copies or canonical TRAIN-AST collisions.
-All256 frozen before model outcomes; independent exact AST/native-surface readback and19CPUtests pass.
-Full integer+newline primary; digit-only descriptive; supplied full/partial correct/wrong, raw/empty/own/other.
-Separate prefix-only128action writer, intact global donors, I3/fixedI6;4096cells per same-reader model.
-Public prospective design/cohort/source; final1535CPUchecks/smoke/compile pass; runtime ready, no models yet.
-This is secondary; original realDEV/GSM endpoints and active W science continue unchanged.
+## Closed: secondary controlled arithmetic diagnostic — reader signal
+Question: can a reader use supplied intermediate work when the raw answer has headroom?
+ID:controlled-arithmetic-reader-B0-v1; fixed256 synthetic expressions,64pergrammar, no model selection.
+All256prefix-only cap128notes and4096I3/fixedI6 cells finish; zeroerrors/all8native gates pass.
+Full signed integer+newline primary, digit-only descriptive; raw headroom18.239nats.
+I3 partial−raw6.978[6.417,7.544], −empty4.866[4.357,5.366], −wrong4.535[4.253,4.813].
+I3 own−raw−1.081[−1.710,−.423]; own−other CI crosses0.
+I6 own−raw2.400[2.078,2.738], −empty.473[.167,.794], −other.925[.616,1.246].
+All256notes capped; own benefit is concentrated in product_sum_difference family descriptively.
+All10exit0/all30PID-start identities/SIDs/groups/tmux and physical11–14 closed10:38UTC.
+Original complete artifacts retained;224file EBS archive verified; independent44CIs/vectors exact.
+Public validation/controlled_arithmetic_DEV256_B0_20261018.json plus allcells/notes/fixedfirst8.
+Decision: useful supplied intermediate work on synthetic cohort; realDEV/GSM study unchanged, noRL.
 
 ## Closed negative: fixed first-line note ablation
 Question: does target-independent truncation remove damage from sprawling B0 notes?
@@ -330,7 +344,7 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 Root: science/data/precision decisions, training release, current public findings.
 Data: larger filtered general hindsight batch, native-label adapter and CPU projections.
 Distributed: active W science, checkpoint/closure checks and next C′ CPU preparation.
-Review: active prefix-helper probe and separate GSM16 equivalence/runtime CPU preparation.
+Review: independent scientific interpretation; arithmetic/helper/GSM16 jobs are closed.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.

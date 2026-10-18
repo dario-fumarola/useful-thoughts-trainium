@@ -1,0 +1,1261 @@
+{
+  "schema": "controlled-arithmetic-public-v1",
+  "status": "COMPLETE_SECONDARY_DIAGNOSTIC",
+  "question": "Can B0 use correct intermediate work on fixed novel compound arithmetic?",
+  "design": {
+    "items": 256,
+    "paths": [
+      "I3",
+      "I6w0.375"
+    ],
+    "modes": [
+      "raw",
+      "empty",
+      "full_correct",
+      "full_wrong",
+      "partial_correct",
+      "partial_wrong",
+      "own",
+      "other"
+    ],
+    "max_actions": 128,
+    "primary": "Full exact scalar span including leading separator, sign and closing newline.",
+    "secondary": "Digit-only native-token sum, descriptive.",
+    "cohort": "controlled_arithmetic_DEV256_cohort_20261018.jsonl",
+    "selection": "64 fixed samples per grammar, no model-based hardness selection."
+  },
+  "groups": {
+    "I3": {
+      "fullspan_ll": {
+        "absolute": {
+          "empty": {
+            "errors": 0,
+            "items": 256,
+            "mean": -16.127228524408565,
+            "unsupported": 0
+          },
+          "full_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -4.353044806129901,
+            "unsupported": 0
+          },
+          "full_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -9.104742961370903,
+            "unsupported": 0
+          },
+          "other": {
+            "errors": 0,
+            "items": 256,
+            "mean": -19.293433468905278,
+            "unsupported": 0
+          },
+          "own": {
+            "errors": 0,
+            "items": 256,
+            "mean": -19.319531160825136,
+            "unsupported": 0
+          },
+          "partial_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -11.261150300797226,
+            "unsupported": 0
+          },
+          "partial_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -15.796062282165849,
+            "unsupported": 0
+          },
+          "raw": {
+            "errors": 0,
+            "items": 256,
+            "mean": -18.238967084500473,
+            "unsupported": 0
+          }
+        },
+        "contrasts": {
+          "empty_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              1.9194381220263494,
+              2.3011167870446116
+            ],
+            "difference_b_minus_a": 2.111738560091908,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              11.40285752087359,
+              12.13979876944236
+            ],
+            "difference_b_minus_a": 11.774183718278664,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_full_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              4.61934154168232,
+              4.883855205378649
+            ],
+            "difference_b_minus_a": 4.751698155241002,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_own": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              14.25215240932929,
+              15.671718485058335
+            ],
+            "difference_b_minus_a": 14.966486354695235,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              13.495293477393284,
+              14.269993258904469
+            ],
+            "difference_b_minus_a": 13.885922278370572,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -3.809927408514659,
+              -2.535203638706527
+            ],
+            "difference_b_minus_a": -3.1923026364165707,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.6980104524319131,
+              0.6889618074335201
+            ],
+            "difference_b_minus_a": -0.026097691919858335,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -1.7100255515608525,
+              -0.4229390414444888
+            ],
+            "difference_b_minus_a": -1.080564076324663,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              4.357305494771339,
+              5.365593614736349
+            ],
+            "difference_b_minus_a": 4.866078223611339,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_partial_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              4.253085685181878,
+              4.813134772520561
+            ],
+            "difference_b_minus_a": 4.534911981368623,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              6.417120551351968,
+              7.544485305592962
+            ],
+            "difference_b_minus_a": 6.977816783703247,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        },
+        "raw_mean_maximum_possible_gain": 18.238967084500473
+      },
+      "numeric_only_ll": {
+        "absolute": {
+          "empty": {
+            "errors": 0,
+            "items": 256,
+            "mean": -13.078524297907279,
+            "unsupported": 0
+          },
+          "full_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -0.1521107782261879,
+            "unsupported": 0
+          },
+          "full_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -4.770957846793863,
+            "unsupported": 0
+          },
+          "other": {
+            "errors": 0,
+            "items": 256,
+            "mean": -15.234105490613729,
+            "unsupported": 0
+          },
+          "own": {
+            "errors": 0,
+            "items": 256,
+            "mean": -15.350466869491356,
+            "unsupported": 0
+          },
+          "partial_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -7.1458300164701996,
+            "unsupported": 0
+          },
+          "partial_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -11.70912750652792,
+            "unsupported": 0
+          },
+          "raw": {
+            "errors": 0,
+            "items": 256,
+            "mean": -13.689533955825027,
+            "unsupported": 0
+          }
+        },
+        "contrasts": {
+          "empty_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.4760730944226452,
+              0.7465386008198945
+            ],
+            "difference_b_minus_a": 0.611009657917748,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              12.581695996285486,
+              13.26579732790401
+            ],
+            "difference_b_minus_a": 12.926413519681091,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_full_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              4.490059938676763,
+              4.749702920431053
+            ],
+            "difference_b_minus_a": 4.618847068567675,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_own": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              14.467414031888802,
+              15.915477520609437
+            ],
+            "difference_b_minus_a": 15.198356091265168,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              13.164480898742625,
+              13.894421129026284
+            ],
+            "difference_b_minus_a": 13.53742317759884,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -2.869322418313504,
+              -1.6235387911943016
+            ],
+            "difference_b_minus_a": -2.271942571584077,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -0.7662991549454545,
+              0.568530451056722
+            ],
+            "difference_b_minus_a": -0.11636137887762743,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              -2.247226929209887,
+              -1.0370116678447403
+            ],
+            "difference_b_minus_a": -1.6609329136663291,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              5.439495480392191,
+              6.425538823538101
+            ],
+            "difference_b_minus_a": 5.9326942814370796,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_partial_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              4.276593939086541,
+              4.845380244332938
+            ],
+            "difference_b_minus_a": 4.563297490057721,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              6.021514588225875,
+              7.067828765790283
+            ],
+            "difference_b_minus_a": 6.5437039393548275,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        },
+        "raw_mean_maximum_possible_gain": 13.689533955825027
+      }
+    },
+    "I6w0.375": {
+      "fullspan_ll": {
+        "absolute": {
+          "empty": {
+            "errors": 0,
+            "items": 256,
+            "mean": -16.311517120699136,
+            "unsupported": 0
+          },
+          "full_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -5.7214950067073005,
+            "unsupported": 0
+          },
+          "full_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -7.400275903659349,
+            "unsupported": 0
+          },
+          "other": {
+            "errors": 0,
+            "items": 256,
+            "mean": -16.763998448179336,
+            "unsupported": 0
+          },
+          "own": {
+            "errors": 0,
+            "items": 256,
+            "mean": -15.838901014638395,
+            "unsupported": 0
+          },
+          "partial_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -10.773725350446512,
+            "unsupported": 0
+          },
+          "partial_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -12.977295956821763,
+            "unsupported": 0
+          },
+          "raw": {
+            "errors": 0,
+            "items": 256,
+            "mean": -18.238967084500473,
+            "unsupported": 0
+          }
+        },
+        "contrasts": {
+          "empty_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              1.8282989044593705,
+              2.0296553226810827
+            ],
+            "difference_b_minus_a": 1.9274499638013367,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              10.292423988318115,
+              10.888838686369672
+            ],
+            "difference_b_minus_a": 10.590022113991836,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_full_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              1.6027355310941858,
+              1.7582878405283053
+            ],
+            "difference_b_minus_a": 1.6787808969520484,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_own": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              9.66592203658056,
+              10.567425811950011
+            ],
+            "difference_b_minus_a": 10.117406007931095,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              12.215467442402769,
+              12.813937732678824
+            ],
+            "difference_b_minus_a": 12.517472077793173,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.16649639823335746,
+              0.7943393348026802
+            ],
+            "difference_b_minus_a": 0.472616106060741,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.6163848923203659,
+              1.2455913459551993
+            ],
+            "difference_b_minus_a": 0.925097433540941,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              2.0784617694060215,
+              2.7379680341170567
+            ],
+            "difference_b_minus_a": 2.4000660698620777,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              5.179670544712326,
+              5.902622938867761
+            ],
+            "difference_b_minus_a": 5.537791770252625,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_partial_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              2.0606503339524123,
+              2.347706398114906
+            ],
+            "difference_b_minus_a": 2.2035706063752514,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              7.080931557159579,
+              7.854483812317789
+            ],
+            "difference_b_minus_a": 7.465241734053961,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        },
+        "raw_mean_maximum_possible_gain": 18.238967084500473
+      },
+      "numeric_only_ll": {
+        "absolute": {
+          "empty": {
+            "errors": 0,
+            "items": 256,
+            "mean": -13.102721961808129,
+            "unsupported": 0
+          },
+          "full_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -2.6677601322380724,
+            "unsupported": 0
+          },
+          "full_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -4.360373855473881,
+            "unsupported": 0
+          },
+          "other": {
+            "errors": 0,
+            "items": 256,
+            "mean": -13.436999723693589,
+            "unsupported": 0
+          },
+          "own": {
+            "errors": 0,
+            "items": 256,
+            "mean": -12.698334108968993,
+            "unsupported": 0
+          },
+          "partial_correct": {
+            "errors": 0,
+            "items": 256,
+            "mean": -7.838723055844639,
+            "unsupported": 0
+          },
+          "partial_wrong": {
+            "errors": 0,
+            "items": 256,
+            "mean": -9.980348593278904,
+            "unsupported": 0
+          },
+          "raw": {
+            "errors": 0,
+            "items": 256,
+            "mean": -13.689533955825027,
+            "unsupported": 0
+          }
+        },
+        "contrasts": {
+          "empty_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.5272599077266932,
+              0.649809542092862
+            ],
+            "difference_b_minus_a": 0.5868119940168981,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              10.141727745196794,
+              10.720335866899699
+            ],
+            "difference_b_minus_a": 10.434961829570057,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_full_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              1.6226990080915584,
+              1.7657340206378649
+            ],
+            "difference_b_minus_a": 1.6926137232358087,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_own": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              9.59342373931231,
+              10.463717322498633
+            ],
+            "difference_b_minus_a": 10.03057397673092,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "full_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              10.704363645054627,
+              11.324444226625724
+            ],
+            "difference_b_minus_a": 11.021773823586955,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.11149612024073577,
+              0.7179945561283603
+            ],
+            "difference_b_minus_a": 0.40438785283913603,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_other": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.442004486674432,
+              1.0509142313720077
+            ],
+            "difference_b_minus_a": 0.7386656147245958,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "own_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              0.704582405445126,
+              1.2943016362402886
+            ],
+            "difference_b_minus_a": 0.9911998468560341,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_empty": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              4.931417211664848,
+              5.608784376561129
+            ],
+            "difference_b_minus_a": 5.26399890596349,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_partial_wrong": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              1.9994293465833608,
+              2.2847440891149744
+            ],
+            "difference_b_minus_a": 2.1416255374342654,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          },
+          "partial_correct_minus_raw": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "ci95": [
+              5.495479332387754,
+              6.208666362410076
+            ],
+            "difference_b_minus_a": 5.850810899980388,
+            "documents": 256,
+            "items": 256,
+            "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+          }
+        },
+        "raw_mean_maximum_possible_gain": 13.689533955825027
+      }
+    }
+  },
+  "counts": {
+    "attempts": 256,
+    "caps": 256,
+    "empty": 0,
+    "eos": 0,
+    "first_close": 0,
+    "generation_errors": 0,
+    "numeric_supported": 256,
+    "scoring_errors": 0
+  },
+  "costs": {
+    "mean_actions_per_attempt": 128.0,
+    "mean_content_tokens_per_attempt": 128.0,
+    "note_generation_seconds_mean": 13.953346490916829,
+    "note_generation_seconds_sum": 3572.056701674708,
+    "raw_full_logits_seconds_sum": 40.95378924012766,
+    "scope": "Observed action/content and note latency include all saved attempts, including errors/partials. Score cell times count shared I3/I6 work once and include actual raw forward/softmax/transfer costs. Model setup/native gate/process-stage times are separate; no warm or end-to-end throughput claim.",
+    "scoring_cell_seconds_sum": 301.72976309387013,
+    "scoring_shared_timing_groups": 2048,
+    "total_content_tokens": 32768,
+    "total_generated_actions": 32768
+  },
+  "family_means": {
+    "nested_product": {
+      "items": 64,
+      "descriptive_only": true,
+      "paths": {
+        "I3": {
+          "raw": -19.27595870057121,
+          "empty": -17.964404260274023,
+          "full_correct": -4.168025382009546,
+          "full_wrong": -9.314680946989029,
+          "partial_correct": -15.194069732300704,
+          "partial_wrong": -19.406532141805656,
+          "own": -23.0816992460459,
+          "other": -23.154902023728937
+        },
+        "I6w0.375": {
+          "raw": -19.27595870057121,
+          "empty": -17.850264072883874,
+          "full_correct": -5.1996590730850585,
+          "full_wrong": -6.840378688182682,
+          "partial_correct": -13.873604817374144,
+          "partial_wrong": -15.978001413866878,
+          "own": -18.52013491326943,
+          "other": -18.660269828047603
+        }
+      }
+    },
+    "product_sum_difference": {
+      "items": 64,
+      "descriptive_only": true,
+      "paths": {
+        "I3": {
+          "raw": -19.26436811313033,
+          "empty": -16.917333197779953,
+          "full_correct": -4.157314436976776,
+          "full_wrong": -9.166658082471258,
+          "partial_correct": -14.959290758843053,
+          "partial_wrong": -19.875574847261305,
+          "own": -14.747264387493487,
+          "other": -20.013186430558562
+        },
+        "I6w0.375": {
+          "raw": -19.26436811313033,
+          "empty": -16.9661975922063,
+          "full_correct": -6.41294113942422,
+          "full_wrong": -8.234843575162813,
+          "partial_correct": -13.780021646874957,
+          "partial_wrong": -16.15008365456015,
+          "own": -13.648197096888907,
+          "other": -17.469415633939207
+        }
+      }
+    },
+    "signed_three_products": {
+      "items": 64,
+      "descriptive_only": true,
+      "paths": {
+        "I3": {
+          "raw": -17.61390005145222,
+          "empty": -15.97500851424411,
+          "full_correct": -4.618983724706595,
+          "full_wrong": -9.590222517112124,
+          "partial_correct": -8.216066716579917,
+          "partial_wrong": -12.430837656626863,
+          "own": -21.788266497067525,
+          "other": -17.909136712085456
+        },
+        "I6w0.375": {
+          "raw": -17.61390005145222,
+          "empty": -16.172221721615642,
+          "full_correct": -5.5798769077518955,
+          "full_wrong": -7.533521027769893,
+          "partial_correct": -8.426434127381071,
+          "partial_wrong": -10.541022674646229,
+          "own": -16.690284382086247,
+          "other": -16.47368319844827
+        }
+      }
+    },
+    "sum_products": {
+      "items": 64,
+      "descriptive_only": true,
+      "paths": {
+        "I3": {
+          "raw": -16.801641472848132,
+          "empty": -13.652168125336175,
+          "full_correct": -4.467855680826688,
+          "full_wrong": -8.3474102989112,
+          "partial_correct": -6.675173995465229,
+          "partial_wrong": -11.471304482969572,
+          "own": -17.66089451269363,
+          "other": -16.096508709248155
+        },
+        "I6w0.375": {
+          "raw": -16.801641472848132,
+          "empty": -14.25738509609073,
+          "full_correct": -5.693502906568028,
+          "full_wrong": -6.992360323522007,
+          "partial_correct": -7.014840810155874,
+          "partial_wrong": -9.240076084213797,
+          "own": -14.496987666308996,
+          "other": -14.452625132282265
+        }
+      }
+    }
+  },
+  "independent": {
+    "status": "PASS_INDEPENDENT_4096_CELLS_256_NOTES_AND_ALL_CONTRASTS",
+    "contrasts": 44,
+    "max_summary_error": 0.0,
+    "archive_source_and_copy_hashes_verified": 224,
+    "method": "Native prompt/stop/context reconstruction, independent full-span and digit-only sums, vectorized paired bootstrap; experiment reducer not called.",
+    "source_sha256": "6c3d43255aabbb99b90da677d943477f8baf53fb5cf954f6a054260cea18604e"
+  },
+  "complete_outputs": {
+    "validation/controlled_arithmetic_DEV256_B0_cells_20261018.jsonl": {
+      "sha256": "514a08dcd8905e575dc351fb0c830a7fef0a1fa30c912e52a692de2243670e69",
+      "bytes": 3331960,
+      "rows": 4096
+    },
+    "validation/controlled_arithmetic_DEV256_B0_notes_20261018.jsonl": {
+      "sha256": "178560c17c3c6e99904fd0b6a575ff29c67d99d846c2886b3142603ee68839d3",
+      "bytes": 642850,
+      "rows": 256
+    }
+  },
+  "examples_selection": "First8 fixed items, two per grammar; no outcome selection.",
+  "examples": [
+    {
+      "item_id": "aeb48d0403ca8c3bbda57e1ef079ae45dbdfea5135a8cf891a5f8dbd64ce9973",
+      "family": "sum_products",
+      "prefix": "Calculate ((52 * 68) + (38 * 89)) =",
+      "target": " 6918\n",
+      "supplied_notes": {
+        "correct": "Compute: 52 * 68 = 3536. 38 * 89 = 3382. 3536 + 3382 = 6918. Result: 6918.",
+        "partial_correct": "Compute: 52 * 68 = 3536. 38 * 89 = 3382.",
+        "partial_wrong": "Compute: 52 * 68 = 3536. 38 * 89 = 3383.",
+        "wrong": "Compute: 52 * 68 = 3536. 38 * 89 = 3382. 3536 + 3382 = 6919. Result: 6919."
+      },
+      "own": "\nTo calculate the expression \\((52 \\times 68) + (38 \\times 89)\\), we will break it down into two parts and then sum the results.\n\nFirst, we calculate \\(52 \\times 68\\):\n\\[\n52 \\times 68 = 52 \\times (70 - 2) = 52 \\times 70 - 52 \\times 2 = 3640 - 104 = 3536\n\\]\n\nNext, we calculate \\(38 \\times 89\\):\n\\",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -15.055508613586426,
+          "empty": -11.895756602287292,
+          "full_correct": -4.630902584292926,
+          "full_wrong": -8.34223886183463,
+          "partial_correct": -7.711983301443979,
+          "partial_wrong": -12.711142510175705,
+          "own": -15.396373867988586,
+          "other": -12.540218710899353
+        },
+        "I6w0.375": {
+          "raw": -15.055508613586426,
+          "empty": -12.825470328330994,
+          "full_correct": -5.233547329902649,
+          "full_wrong": -6.256800293922424,
+          "partial_correct": -6.800143927335739,
+          "partial_wrong": -8.944171011447906,
+          "own": -13.193763136863708,
+          "other": -12.916506171226501
+        }
+      }
+    },
+    {
+      "item_id": "973939912884fb107e5a3a32fa435b64cea62859292d0d61462264bfe0680c4e",
+      "family": "product_sum_difference",
+      "prefix": "Calculate ((742 + 98) * (700 - 453)) =",
+      "target": " 207480\n",
+      "supplied_notes": {
+        "correct": "Compute: 742 + 98 = 840. 700 - 453 = 247. 840 * 247 = 207480. Result: 207480.",
+        "partial_correct": "Compute: 742 + 98 = 840. 700 - 453 = 247.",
+        "partial_wrong": "Compute: 742 + 98 = 840. 700 - 453 = 248.",
+        "wrong": "Compute: 742 + 98 = 840. 700 - 453 = 247. 840 * 247 = 207481. Result: 207481."
+      },
+      "own": "\nTo solve the expression \\((742 + 98) \\times (700 - 453)\\), we will break it down into smaller steps and solve each part sequentially.\n\nFirst, we need to calculate the value inside the first set of parentheses:\n\\[742 + 98\\]\n\nAdding these two numbers together:\n\\[742 + 98 = 840\\]\n\nNext, we need to calculate the value inside the second set of parentheses:\n\\[700 - 453\\]\n\nSubtracting these two numbers together:\n\\[700 - ",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -18.34994649887085,
+          "empty": -16.108084321022034,
+          "full_correct": -4.151281006284989,
+          "full_wrong": -9.267431989312172,
+          "partial_correct": -14.499775353819132,
+          "partial_wrong": -18.223016798496246,
+          "own": -16.635930567979813,
+          "other": -25.104318976402283
+        },
+        "I6w0.375": {
+          "raw": -18.34994649887085,
+          "empty": -16.20803475379944,
+          "full_correct": -5.399310380220413,
+          "full_wrong": -7.156592845916748,
+          "partial_correct": -12.48255604505539,
+          "partial_wrong": -14.461756229400635,
+          "own": -15.141544938087463,
+          "other": -16.692764282226562
+        }
+      }
+    },
+    {
+      "item_id": "778cd3a43ef5dd0d67992151a4f2400ce7f5558dbdba2a896651ed951be5812f",
+      "family": "signed_three_products",
+      "prefix": "Calculate (((214 * 23) - (19 * 54)) + (743 * 638)) =",
+      "target": " 477930\n",
+      "supplied_notes": {
+        "correct": "Compute: 214 * 23 = 4922. 19 * 54 = 1026. 4922 - 1026 = 3896. 743 * 638 = 474034. 3896 + 474034 = 477930. Result: 477930.",
+        "partial_correct": "Compute: 214 * 23 = 4922. 19 * 54 = 1026. 4922 - 1026 = 3896. 743 * 638 = 474034.",
+        "partial_wrong": "Compute: 214 * 23 = 4922. 19 * 54 = 1026. 4922 - 1026 = 3896. 743 * 638 = 474035.",
+        "wrong": "Compute: 214 * 23 = 4922. 19 * 54 = 1026. 4922 - 1026 = 3896. 743 * 638 = 474034. 3896 + 474034 = 477931. Result: 477931."
+      },
+      "own": "\nTo solve the expression \\(((214 \\times 23) - (19 \\times 54)) + (743 \\times 638)\\), we will break it down into smaller steps and compute each part sequentially.\n\nFirst, we calculate \\(214 \\times 23\\):\n\\[\n214 \\times 23 = 214 \\times (20 + 3) = 214 \\times 20 + 214 \\times 3 = 4280 + 642 = 4922",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -17.674350261688232,
+          "empty": -15.495792746543884,
+          "full_correct": -4.497059244662523,
+          "full_wrong": -10.872900577727705,
+          "partial_correct": -8.226487904787064,
+          "partial_wrong": -13.248295340687037,
+          "own": -30.988127037882805,
+          "other": -21.49708843231201
+        },
+        "I6w0.375": {
+          "raw": -17.674350261688232,
+          "empty": -15.9818634390831,
+          "full_correct": -4.9141271114349365,
+          "full_wrong": -7.533454865217209,
+          "partial_correct": -8.642664283514023,
+          "partial_wrong": -10.832327902317047,
+          "own": -17.313154816627502,
+          "other": -16.460027039051056
+        }
+      }
+    },
+    {
+      "item_id": "4a82a38976db706da3da1cb7ec2c7f1e4ae53d03d76aa9f7ca6c5931880d4f2c",
+      "family": "nested_product",
+      "prefix": "Calculate (((450 * 64) + 10) * 108) =",
+      "target": " 3111480\n",
+      "supplied_notes": {
+        "correct": "Compute: 450 * 64 = 28800. 28800 + 10 = 28810. 28810 * 108 = 3111480. Result: 3111480.",
+        "partial_correct": "Compute: 450 * 64 = 28800. 28800 + 10 = 28810.",
+        "partial_wrong": "Compute: 450 * 64 = 28800. 28800 + 10 = 28811.",
+        "wrong": "Compute: 450 * 64 = 28800. 28800 + 10 = 28810. 28810 * 108 = 3111481. Result: 3111481."
+      },
+      "own": "\nTo solve the expression \\(((450 \\times 64) + 10) \\times 108\\), we will follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).\n\n1. **Evaluate the expression inside the parentheses first:**\n   \\[\n   450 \\times 64\n   \\]\n   Calculate \\(450 \\times 64\\):\n   \\[\n   450 \\times 64",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -19.23914933204651,
+          "empty": -15.30847054719925,
+          "full_correct": -4.118193941190839,
+          "full_wrong": -7.71159243164584,
+          "partial_correct": -15.351153649389744,
+          "partial_wrong": -16.79638037085533,
+          "own": -29.40862774848938,
+          "other": -19.361732959747314
+        },
+        "I6w0.375": {
+          "raw": -19.23914933204651,
+          "empty": -16.67523545026779,
+          "full_correct": -5.062968462705612,
+          "full_wrong": -6.359986633062363,
+          "partial_correct": -14.181464910507202,
+          "partial_wrong": -15.843935713171959,
+          "own": -19.259590685367584,
+          "other": -16.92821830511093
+        }
+      }
+    },
+    {
+      "item_id": "6fe820f65121ef57d91a255336b4e9189cdbf397e45c95c7966db8acad2e81e7",
+      "family": "sum_products",
+      "prefix": "Calculate ((40 * 91) + (19 * 87)) =",
+      "target": " 5293\n",
+      "supplied_notes": {
+        "correct": "Compute: 40 * 91 = 3640. 19 * 87 = 1653. 3640 + 1653 = 5293. Result: 5293.",
+        "partial_correct": "Compute: 40 * 91 = 3640. 19 * 87 = 1653.",
+        "partial_wrong": "Compute: 40 * 91 = 3640. 19 * 87 = 1654.",
+        "wrong": "Compute: 40 * 91 = 3640. 19 * 87 = 1653. 3640 + 1653 = 5294. Result: 5294."
+      },
+      "own": "\nTo solve the expression \\((40 \\times 91) + (19 \\times 87)\\), we will break it down into two parts and then sum the results.\n\nFirst, we calculate \\(40 \\times 91\\):\n\\[\n40 \\times 91 = 40 \\times (90 + 1) = 40 \\times 90 + 40 \\times 1 = 3600 + 40 = 3640\n\\]\n\nNext, we calculate \\(19 \\times 87\\):\n\\[\n",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -14.621216058731079,
+          "empty": -11.651710093021393,
+          "full_correct": -4.462534602032974,
+          "full_wrong": -8.403206696966663,
+          "partial_correct": -6.104341543279588,
+          "partial_wrong": -11.863234084099531,
+          "own": -14.42166867852211,
+          "other": -13.44845199584961
+        },
+        "I6w0.375": {
+          "raw": -14.621216058731079,
+          "empty": -12.421817660331726,
+          "full_correct": -5.478003680706024,
+          "full_wrong": -7.137701362371445,
+          "partial_correct": -6.455039173364639,
+          "partial_wrong": -9.56178230047226,
+          "own": -12.425272077322006,
+          "other": -12.321418344974518
+        }
+      }
+    },
+    {
+      "item_id": "47931e933f4d5a60d3461c90957291d1405d52634d10899bad039a2a281e9192",
+      "family": "product_sum_difference",
+      "prefix": "Calculate ((27 + 527) * (16 - 644)) =",
+      "target": " -347912\n",
+      "supplied_notes": {
+        "correct": "Compute: 27 + 527 = 554. 16 - 644 = -628. 554 * -628 = -347912. Result: -347912.",
+        "partial_correct": "Compute: 27 + 527 = 554. 16 - 644 = -628.",
+        "partial_wrong": "Compute: 27 + 527 = 554. 16 - 644 = -629.",
+        "wrong": "Compute: 27 + 527 = 554. 16 - 644 = -628. 554 * -628 = -347913. Result: -347913."
+      },
+      "own": "\nTo solve the expression \\((27 + 527) \\times (16 - 644)\\), we will follow these steps:\n\n1. Calculate the value inside the first set of parentheses: \\(27 + 527\\).\n2. Calculate the value inside the second set of parentheses: \\(16 - 644\\).\n3. Multiply the results from the two calculations.\n\nLet's start with the first part:\n\n\\[27 + 527 = 554\\]\n\nNext, we calculate the second part:\n\n\\[16 - 644 = -",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -23.677213549613953,
+          "empty": -18.902339696884155,
+          "full_correct": -4.127016779966652,
+          "full_wrong": -9.087601431179792,
+          "partial_correct": -17.481980875134468,
+          "partial_wrong": -19.141811668872833,
+          "own": -25.03872036933899,
+          "other": -22.10993731021881
+        },
+        "I6w0.375": {
+          "raw": -23.677213549613953,
+          "empty": -20.260449051856995,
+          "full_correct": -7.536283433437347,
+          "full_wrong": -9.785820573568344,
+          "partial_correct": -17.58170247077942,
+          "partial_wrong": -18.788886785507202,
+          "own": -21.135339736938477,
+          "other": -21.608124017715454
+        }
+      }
+    },
+    {
+      "item_id": "ada1c9b7b8902258d980e15ee366837a11ae042732614f9602c5806f528ea35c",
+      "family": "signed_three_products",
+      "prefix": "Calculate (((895 * 89) - (977 * 985)) + (72 * 115)) =",
+      "target": " -874410\n",
+      "supplied_notes": {
+        "correct": "Compute: 895 * 89 = 79655. 977 * 985 = 962345. 79655 - 962345 = -882690. 72 * 115 = 8280. -882690 + 8280 = -874410. Result: -874410.",
+        "partial_correct": "Compute: 895 * 89 = 79655. 977 * 985 = 962345. 79655 - 962345 = -882690. 72 * 115 = 8280.",
+        "partial_wrong": "Compute: 895 * 89 = 79655. 977 * 985 = 962345. 79655 - 962345 = -882690. 72 * 115 = 8281.",
+        "wrong": "Compute: 895 * 89 = 79655. 977 * 985 = 962345. 79655 - 962345 = -882690. 72 * 115 = 8280. -882690 + 8280 = -874411. Result: -874411."
+      },
+      "own": "\nTo solve the expression \\(((895 \\times 89) - (977 \\times 985)) + (72 \\times 115)\\), we will break it down into smaller steps and compute each part sequentially.\n\nFirst, we calculate \\(895 \\times 89\\):\n\\[\n895 \\times 89 = 895 \\times (90 - 1) = 895 \\times 90 - 895 \\times 1 = 80550 - 895 = 80",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -22.100219130516052,
+          "empty": -18.676724910736084,
+          "full_correct": -4.505995801882818,
+          "full_wrong": -9.503810134716332,
+          "partial_correct": -8.065765077248216,
+          "partial_wrong": -11.283320841845125,
+          "own": -25.479618668556213,
+          "other": -20.274279952049255
+        },
+        "I6w0.375": {
+          "raw": -22.100219130516052,
+          "empty": -19.85454750061035,
+          "full_correct": -7.2070688009262085,
+          "full_wrong": -9.28851991891861,
+          "partial_correct": -9.089135259389877,
+          "partial_wrong": -11.489563047885895,
+          "own": -20.56670880317688,
+          "other": -20.1637099981308
+        }
+      }
+    },
+    {
+      "item_id": "46f2d6e704eabee9fa19175723628aae6cb39076152e89b45543cf493b4d6ac4",
+      "family": "nested_product",
+      "prefix": "Calculate (((342 * 939) + 63) * 385) =",
+      "target": " 123662385\n",
+      "supplied_notes": {
+        "correct": "Compute: 342 * 939 = 321138. 321138 + 63 = 321201. 321201 * 385 = 123662385. Result: 123662385.",
+        "partial_correct": "Compute: 342 * 939 = 321138. 321138 + 63 = 321201.",
+        "partial_wrong": "Compute: 342 * 939 = 321138. 321138 + 63 = 321202.",
+        "wrong": "Compute: 342 * 939 = 321138. 321138 + 63 = 321201. 321201 * 385 = 123662386. Result: 123662386."
+      },
+      "own": "\nTo solve the expression \\(((342 \\times 939) + 63) \\times 385\\), we will break it down step by step.\n\nFirst, we need to calculate the product of 342 and 939:\n\\[ 342 \\times 939 \\]\n\nLet's perform the multiplication:\n\\[ 342 \\times 939 = 342 \\times (900 + 30 + 9) \\]\n\\[ = 342 \\times 900 + 342 \\times",
+      "stop": "length_cap",
+      "fullspan_ll": {
+        "I3": {
+          "raw": -22.822574138641357,
+          "empty": -21.681010484695435,
+          "full_correct": -4.252968686516397,
+          "full_wrong": -10.401687655132264,
+          "partial_correct": -18.41989878937602,
+          "partial_wrong": -21.150619387626648,
+          "own": -28.4766184091568,
+          "other": -28.683283388614655
+        },
+        "I6w0.375": {
+          "raw": -22.822574138641357,
+          "empty": -21.4912149310112,
+          "full_correct": -5.930459752678871,
+          "full_wrong": -6.939330458641052,
+          "partial_correct": -18.815708622336388,
+          "partial_wrong": -19.99354127049446,
+          "own": -22.92581808567047,
+          "other": -22.115268349647522
+        }
+      }
+    }
+  ],
+  "provenance": {
+    "local/nvme/diagnostics/controlled-arithmetic-reader-B0-v1/protocol.json": "be2796627487b3704abb2396d626fc95fbb6a3dd9f28d7e9b17a0bd9dc45b72a",
+    "local/nvme/diagnostics/controlled-arithmetic-reader-B0-v1/summary.json": "73f90e239ce53bb0304c3cd9d4015c79c3e73743f8ea0d59f270b30752169bda",
+    "local/nvme/diagnostics/controlled-arithmetic-reader-B0-v1/controls.json": "46e6fa4d69bafcaf4bd4ef206c2d9bbc75fa02a1f2f2fdcb860623c2a8c117ca",
+    "local/diagnostics/controlled-arithmetic-reader-B0-v1/generate.closure.json": "4114bc19b6b4a324101f7b3099423ff6e59eb657d7e5fce86c8b874fe5d2f6d2",
+    "local/diagnostics/controlled-arithmetic-reader-B0-v1/score.closure.json": "b75add0bcd171b54e28366de346f9e5a86bc2f4286ec99cbabfaa3c24999b1d0",
+    "local/diagnostics/controlled-arithmetic-reader-B0-v1/final.cleanup.json": "a88d145880feb1c28b870a012c2c394886410df7697b0b4a64cf9d8f07a9833e",
+    "local/backups/diagnostics/controlled-arithmetic-reader-B0-v1/ARCHIVE.json": "e1c7da5cfb53bd8d6c6cf89fc4b8f376dbb19d27cf6ea7020ed919e6403aa533"
+  },
+  "archive": {
+    "path": "local/backups/diagnostics/controlled-arithmetic-reader-B0-v1/ARCHIVE.json",
+    "files": 224,
+    "payload_bytes": 26527540,
+    "status": "complete_SHA256_source_and_destination_readback_verified"
+  },
+  "limitations": [
+    "Synthetic secondary diagnostic; does not replace real-document DEV or GSM8K TRAIN endpoints.",
+    "No model-based hardness filter or replacement; actual raw headroom must be reported for every item.",
+    "Full notes contain the answer: answer-copy plumbing, not self-generated computation evidence.",
+    "Partial notes omit the root operation; corrupt notes introduce a deterministic off-by-one result.",
+    "Numeric-only mask is descriptive: only native tokens wholly inside the integer digit span; sign and boundary bytes are excluded.",
+    "Fixed grammar/seed sampling uncertainty is not natural-document or training-seed uncertainty.",
+    "All eight conditions and failures retained; no outcome-based replacement.",
+    "I6=.375 interpolates full logits; no likelihood-only mixture or fit.",
+    "Own is prefix-only greedy cap128 TOTAL actions; intact cyclic unrelated donors retain empty/error outcomes.",
+    "Numeric-only is descriptive, digit-only native-token support; no silent subset or error imputation.",
+    "All head/mix computations use16 positions; only actual native target slots enter saved vectors/metrics, never unused EOS filler.",
+    "Same frozen256 supports B0 and later terminal writers; scoring uses that SAME model as reader, no crossed-reader matrix.",
+    "No generated scalar answers, deployed arithmetic accuracy or generalization claim.",
+    "Family means are descriptive; no added post-hoc pass threshold.",
+    "All cost sums retain compilation and waiting; summed worker seconds are not elapsed wall time.",
+    "Global intact donors rotate across grammar families without grammar/content matching. Every own and donor note in this completed batch contains128tokens, so actual note lengths are equal itemwise.",
+    "Supplied-note sensitivity concerns true-answer likelihood, not verified arithmetic or greedy generated answers; own-note gains do not isolate calculation from expression restatement."
+  ],
+  "interpretation": {
+    "reader_mechanism": "Under I3, correct partial notes omit the root operation and final answer, improve full-span likelihood over raw, and beat a closely matched wrong intermediate result. This demonstrates reader use of supplied intermediate work on this synthetic cohort.",
+    "generated_notes": "Fixed I6 has positive aggregate own-minus-raw, own-minus-empty and own-minus-other intervals. Ordinary I3 own-minus-raw is negative and own-minus-other includes zero. All own notes hit the128-action cap. All donors therefore also contain128tokens; the control is length equal in this completed batch but crosses grammar families. The own-note contrasts do not isolate computed intermediate values from matching-expression or grammar restatement.",
+    "heterogeneity": "Descriptive family means show the mixed-reader own-minus-empty and own-minus-other benefit is concentrated in product_sum_difference; the other three family own-minus-empty means are negative. No family was selected or removed, and no family-level confirmatory gate was added.",
+    "scope": "Synthetic secondary diagnostic, not evidence of useful thoughts on real-document DEV or GSM8K. No generated-answer accuracy was measured. Complete supplied notes include the final answer and are copy controls.",
+    "decision": "Keep current real-document supervised runs and terminal evaluation unchanged. Preserve all256 items and controls; this result does not release RL."
+  }
+}

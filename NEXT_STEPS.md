@@ -23,13 +23,13 @@
    Helper soleprimary fails; all eight own−raw intervals negative. GSM16 matches
    all96fixedfirst32 native paths exactly; full512 accuracy loader unchanged.
    Use16shards for future complete512 evaluations with fresh runtime releases.
-   Secondary controlled-arithmetic256 cohort is frozen/tokenizer-prepared and
-   exact-AST-verified:64/fixedgrammar, no model-based selection or replacements.
-   Review is implementing isolated eight-mode I3/I6 evaluator/CPUtests; Data's
-   data module19focused tests pass. Root reviews finalsource, runs one combined
-   main check, publishes prospective design/cohort/source, then permits one
-   bounded4core B0 diagnostic on now-free physical11–14. No extra training or
-   real-study gate; terminal transfer uses the same frozen secondary cohort.
+   Controlled-arithmetic B0 is also closed/archived:256notes/all4096cells/zeroerrors.
+   Supplied partialwork strongly helps and wrong steps hurt relative to correct;
+   fixedI6 generated-note gains are positive in aggregate but concentrated in one
+   grammar family. Allnotes cap128; ordinaryI3 selfnotes still hurt. Root independently
+   verified allvectors/44CIs/archive. No extra real-study gate orRLrelease; use the
+   same frozen secondary cohort for later terminal transfer.
+
 5. Once all upper-partition data/probes close and archive, prepare a separate
    matched C′ seed1 release on logical32–63 while W uses0–31. Same world32/global32
    recipe and ordered documents; new actual topology/port evidence required.
@@ -45,6 +45,10 @@
    RL additionally requires measured<=90s complete steps; cold or warm SFT timings
    do not qualify it. A passing general-label quota needs its own explicit native-ID
    SFT identity/adapter; never disguise general labels as symbolic equations.
+   Isolated public branch general-sft-v5 has reviewed native dispatch/provenance and
+   exact5120-parent guards;1557CPUchecks/smoke/compile pass. Keep it isolated while
+   main jobs run. Actual CPU inventory waits for the full quota/closure/archive;
+   neither this code readiness nor a partial quota releases a hardware job.
 
 All official TEST remains forbidden. R1234 stopped63: never resume old launchers.
 The old symbolic filter remains failed3147/14669; compound5120 is an explicit
