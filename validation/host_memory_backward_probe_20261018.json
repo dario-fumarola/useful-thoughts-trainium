@@ -1,0 +1,641 @@
+{
+  "schema": "host-memory-backward-probe-v1",
+  "status": "COMPLETE_NO_BACKWARD_GROWTH_REPRODUCTION_IN16",
+  "finished_utc": "2026-10-18T16:23:53.260899+00:00",
+  "question": "Does garbage collection, allocator trimming or a two-arena limit bound host-RSS growth in the original BF16 real-data W backward path?",
+  "design": {
+    "schema": "host-memory-backward-probe-v1",
+    "created_utc": "2026-10-18T15:46:03.331366+00:00",
+    "question": "Does garbage collection, allocator trimming or a two-arena limit bound host-RSS growth in the original BF16 real-data W backward path?",
+    "conditions": [
+      "baseline",
+      "gc",
+      "trim",
+      "arena2"
+    ],
+    "design": "One fresh actual B0/model per condition, same first16 original TRAIN rows, original three W backward components. No optimizer, reductions or weight updates: isolates the backward path only.",
+    "iterations": 16,
+    "training_protocol": "/home/ubuntu/dario/local/diagnostics/postorder-reader-learning-compound5120-sft-v4r2/protocol.seed-20261018.json",
+    "training_protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+    "deadline_utc": "2026-10-18T17:00:00+00:00",
+    "native_gate": "Same full-head canonical CPUFP32/BF16 bidirectionalKL<=.01; all four use reference0.",
+    "endpoints": "Post-gradient-clear RSS and glibc mallinfo2 before/after treatment; slope over iterations9\u201316; per-component wall and process CPU seconds; identical fixed-row loss values across conditions as arithmetic-replay diagnostic only.",
+    "prospective_criteria": "Candidate bounded backward-path behavior: tail RSS slope<=64MiB/iteration, no native/failure/96GiB RSS ceiling. If baseline grows>=256MiB/iteration, require>=80% lower tail slope. This does not qualify the absent optimizer or a full training run.",
+    "limitations": [
+      "Engineering profile, not a likelihood/ability comparison;16 rows do not replace held256.",
+      "No Adam/ZeRO/collective or per-update master/replica diagnostic path is included. If all backward paths are bounded, inspect those omitted stages next.",
+      "gc means Python gc.collect; trim means gc.collect plus libc malloc_trim(0); arena2 sets MALLOC_ARENA_MAX=2 before imports.",
+      "No installed package or library is changed. Conditions differ in host allocation only.",
+      "Finite external60\u201380min bounds and96GiB privateRSS ceiling; no automatic retries."
+    ],
+    "cores": {
+      "baseline": 32,
+      "gc": 36,
+      "trim": 40,
+      "arena2": 44
+    },
+    "probe_sha256": "12969f1f3fae82cec71ceb92661cde8643b5ea989334c68b3fae154ae137079e",
+    "research_reference": "https://awsdocs-neuron.readthedocs-hosted.com/en/v2.27.0/release-notes/torch/torch-neuronx/#memory-leaking-in-glibc"
+  },
+  "results": {
+    "baseline": {
+      "iterations": 16,
+      "optimizer_updates": 0,
+      "tail9_16_RSS_slope_MiB_per_iteration": 6.469122023809939,
+      "final_RSS_GiB": 8.440921783447266,
+      "tail9_16_median_wall_seconds": 33.921556935994886,
+      "median_trim_RSS_release_GiB": 0.0,
+      "bounded_short_backward_tail": true,
+      "native": {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T15:57:58+00:00",
+        "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "canonical_reference_compute_dtype": "fp32",
+          "canonical_reference_parameter_dtype": "fp32",
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-device-canonical-fp32-native-v2",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+        "rank": 0,
+        "reference_index": 0,
+        "status": "PASS"
+      },
+      "files": {
+        "forward-rank-00000.pt": {
+          "bytes": 609321,
+          "sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        "XLA-metrics-01.txt": {
+          "bytes": 6050,
+          "sha256": "f46885cb7c90ce4481eba644f93bb40841d13f14d2ec5da8791872e7aea8ed16"
+        },
+        "host-before-import.json": {
+          "bytes": 348,
+          "sha256": "6f91419eb4ef0acdc5a8466a78be5a5fb2c576a2063ef87bd22d7f177b1902d9"
+        },
+        "XLA-metrics-08.txt": {
+          "bytes": 6102,
+          "sha256": "3d915787fc8d414c920b669a63fa68be36df87f9bd8ab4ddd3c1b20c631651f2"
+        },
+        "XLA-metrics-09.txt": {
+          "bytes": 6101,
+          "sha256": "48d8f24fb47eb60b62507b50b1531ada2e0e3f5f2ee7d90848cd35ef599f4ae1"
+        },
+        "XLA-metrics-07.txt": {
+          "bytes": 6100,
+          "sha256": "0a7d3fc90accc5cb74c18843990cbbb0309518066695908938ce4631c395a568"
+        },
+        "XLA-metrics-16.txt": {
+          "bytes": 6109,
+          "sha256": "962e8130ddab2b642cfc5f460b1db94a480309ab27d4d2d28204a72ed6f40a9f"
+        },
+        "XLA-metrics-12.txt": {
+          "bytes": 6107,
+          "sha256": "fb68d6898df6c1028866740da1648e61b0b2fb4e23c4b3ca91f45b34a46d82e9"
+        },
+        "XLA-metrics-06.txt": {
+          "bytes": 6101,
+          "sha256": "bb744f19e11161dca2d2d0b26a09e0b6abc32a0f4660064fe029acf497b7989e"
+        },
+        "XLA-metrics-05.txt": {
+          "bytes": 6101,
+          "sha256": "afa8866c3261724976bb3ac3631166066f372c7bf702d3db2fa7a21ea31ef73b"
+        },
+        "qualification-rank-00000.json": {
+          "bytes": 1672,
+          "sha256": "b0f194aac0e413f0c861acac598be24614914f63bc59a23a5a63d7b8187273cb"
+        },
+        "XLA-metrics-04.txt": {
+          "bytes": 6089,
+          "sha256": "4a303fccae07c9fa66e50519f2461ef44959b38388bf131c27f396c8f95a5f2c"
+        },
+        "XLA-metrics-11.txt": {
+          "bytes": 6109,
+          "sha256": "37be98aac0d51332005d33a41b3752884f86d212c00ffe6de735b42aa1012569"
+        },
+        "XLA-metrics-15.txt": {
+          "bytes": 6113,
+          "sha256": "17c6b56275d6918644e71350525cab20f1302845d26c854d25142cff32e7159f"
+        },
+        "ready.json": {
+          "bytes": 541,
+          "sha256": "44de6889a3a3d335d27e3dc195b9f3f6d57c48271eb059067da92011cab7e606"
+        },
+        "XLA-metrics-13.txt": {
+          "bytes": 6111,
+          "sha256": "28999d48d0a8dcaf5c92aea177a29ff7b6d14cf53b8361e780d807416ce66771"
+        },
+        "completion.json": {
+          "bytes": 603,
+          "sha256": "5a0a7aa80c71eac089175655335c8ebcca27d8a5443b4076ec5ed2cbfdf0f6a7"
+        },
+        "iterations.jsonl": {
+          "bytes": 27383,
+          "sha256": "c837b8d7157dc5fe31ac1397d44891fd903e62131e0dd9e0877e037c3e8a9f9a"
+        },
+        "XLA-metrics-02.txt": {
+          "bytes": 6071,
+          "sha256": "32b2dd19ced5772e922aca4925970bb98c2ac501694436103d4868d6b361233a"
+        },
+        "XLA-metrics-03.txt": {
+          "bytes": 6092,
+          "sha256": "20521dc8e5a458ebc894a1d77438dace4587dbdaf63ccc628a5a91e86fb7e0cd"
+        },
+        "XLA-metrics-10.txt": {
+          "bytes": 6105,
+          "sha256": "40cff05df988c18e9b1b9a97bfafb49865cbb919a7fa8afd46e83e16992db106"
+        },
+        "XLA-metrics-14.txt": {
+          "bytes": 6109,
+          "sha256": "2f7e42ae9668d1017bfb57166415871d0c3ce8325dcec617a7eb47f8f7814399"
+        }
+      }
+    },
+    "gc": {
+      "iterations": 16,
+      "optimizer_updates": 0,
+      "tail9_16_RSS_slope_MiB_per_iteration": -6.7853422619044785,
+      "final_RSS_GiB": 8.180042266845703,
+      "tail9_16_median_wall_seconds": 34.256977252007346,
+      "median_trim_RSS_release_GiB": 0.0,
+      "bounded_short_backward_tail": true,
+      "native": {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T15:57:58+00:00",
+        "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "canonical_reference_compute_dtype": "fp32",
+          "canonical_reference_parameter_dtype": "fp32",
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-device-canonical-fp32-native-v2",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+        "rank": 0,
+        "reference_index": 0,
+        "status": "PASS"
+      },
+      "files": {
+        "forward-rank-00000.pt": {
+          "bytes": 609321,
+          "sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        "XLA-metrics-01.txt": {
+          "bytes": 6055,
+          "sha256": "787561350a16bf58beb05ffdeb831b2e4ef2b9a0ab84ed464bfdf1497054c4db"
+        },
+        "host-before-import.json": {
+          "bytes": 342,
+          "sha256": "ebb2c300172ae4b0981c4310934025264c1436baea57c75dd83e51e2fe880727"
+        },
+        "XLA-metrics-08.txt": {
+          "bytes": 6098,
+          "sha256": "56828fb8b482fee61e2683033a11acdd92354a57a8afdf265a917db2ac8331ff"
+        },
+        "XLA-metrics-09.txt": {
+          "bytes": 6099,
+          "sha256": "9f49dc9419620f922e57f71b2c7c1d8c638eb8f68f50b5ae5cf5cdcaa083a160"
+        },
+        "XLA-metrics-07.txt": {
+          "bytes": 6096,
+          "sha256": "e8a0161d5f96bc75a6e9ddb2097eb0e6e72371937f8a7feb5cb14ee33b81b48a"
+        },
+        "XLA-metrics-16.txt": {
+          "bytes": 6113,
+          "sha256": "d3eef4b98c794ae46d26cd56d964f3de295c1eb6dd9df697b927b2860b51e2aa"
+        },
+        "XLA-metrics-12.txt": {
+          "bytes": 6111,
+          "sha256": "5337b94fe7709b978c0d247a1f5463287c25c901ee5d033ccc5f647a521eea81"
+        },
+        "XLA-metrics-06.txt": {
+          "bytes": 6097,
+          "sha256": "d9a075715ea05bf7884e2817c5b2309ff07b2095caaafb426e0424f3f659c1fe"
+        },
+        "XLA-metrics-05.txt": {
+          "bytes": 6088,
+          "sha256": "e591b86fb337c270b047850740ab8f235bfeffb4cc985e4cfa32c9df0400ef6c"
+        },
+        "qualification-rank-00000.json": {
+          "bytes": 1672,
+          "sha256": "b0f194aac0e413f0c861acac598be24614914f63bc59a23a5a63d7b8187273cb"
+        },
+        "XLA-metrics-04.txt": {
+          "bytes": 6092,
+          "sha256": "ba6dcf88895ba76cd5623281e6768fd7b8d219cff26293884a0b76d8194a43ad"
+        },
+        "XLA-metrics-11.txt": {
+          "bytes": 6109,
+          "sha256": "214969a4b28c7dd592508ac60bf16243bef908e67a97873a5bd7a9c013f02e09"
+        },
+        "XLA-metrics-15.txt": {
+          "bytes": 6112,
+          "sha256": "d4d3be5c7a5d9d998b85ef4d79d2adfdba9b05ba3949650e561aefd557220bb1"
+        },
+        "ready.json": {
+          "bytes": 534,
+          "sha256": "c875896d114744bae262c1a21fe09ca4a54cd8605a842777e4f54e72cd259cd9"
+        },
+        "XLA-metrics-13.txt": {
+          "bytes": 6108,
+          "sha256": "b3dfbd1e55f8e4065d8db371789e20249b8f63b0ad0ac690b68315bfc3859cf0"
+        },
+        "completion.json": {
+          "bytes": 595,
+          "sha256": "20ca69e5beb96da6e4196c003ce31416f31b037240d753d8ad075d0fd4ccd788"
+        },
+        "iterations.jsonl": {
+          "bytes": 27308,
+          "sha256": "f73e8099b05be84123052116a1dc76650aebf613d835e4dd54edaec8e8516b03"
+        },
+        "XLA-metrics-02.txt": {
+          "bytes": 6070,
+          "sha256": "bd4af132e306d870c7b5bad0c1d92fcdc5c98b4b637baa76b4c1c351b68568dd"
+        },
+        "XLA-metrics-03.txt": {
+          "bytes": 6088,
+          "sha256": "e5cb2d0ab888d51f1cc0b27991dea176633c2f6cdc5386bf74a23752376fa0ed"
+        },
+        "XLA-metrics-10.txt": {
+          "bytes": 6100,
+          "sha256": "e9a4fbb1eb79afabaecbb8214ae0a46210a2098a2731b868709e52458b400e06"
+        },
+        "XLA-metrics-14.txt": {
+          "bytes": 6108,
+          "sha256": "69d5ee74c0ed3434792853758d37b02d4555270ea76b4891d5fb3d8ccfe7475c"
+        }
+      }
+    },
+    "trim": {
+      "iterations": 16,
+      "optimizer_updates": 0,
+      "tail9_16_RSS_slope_MiB_per_iteration": 0.4021112351191001,
+      "final_RSS_GiB": 4.86846923828125,
+      "tail9_16_median_wall_seconds": 34.65262849999999,
+      "median_trim_RSS_release_GiB": 3.4589786529541016,
+      "bounded_short_backward_tail": true,
+      "native": {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T15:57:59+00:00",
+        "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "canonical_reference_compute_dtype": "fp32",
+          "canonical_reference_parameter_dtype": "fp32",
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-device-canonical-fp32-native-v2",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+        "rank": 0,
+        "reference_index": 0,
+        "status": "PASS"
+      },
+      "files": {
+        "forward-rank-00000.pt": {
+          "bytes": 609321,
+          "sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        "XLA-metrics-01.txt": {
+          "bytes": 6047,
+          "sha256": "a46f4898513b25e56ab898d9dc16ea197f9dfcb893cf6cf1eb90e39fce4c4798"
+        },
+        "host-before-import.json": {
+          "bytes": 344,
+          "sha256": "7f417cd010d221c2ae52a459dd7e764a408bb6f84da0883d694604bac824bed0"
+        },
+        "XLA-metrics-08.txt": {
+          "bytes": 6097,
+          "sha256": "11d5d493f0a783db83ae5993a24f9ddee9fd6ca192f430cb7becaf773eed315f"
+        },
+        "XLA-metrics-09.txt": {
+          "bytes": 6096,
+          "sha256": "5006cb3fee00d1c282b1553c73fdbb682a869de3d1a5670984cd17be64f9bb01"
+        },
+        "XLA-metrics-07.txt": {
+          "bytes": 6095,
+          "sha256": "566ee43e447782105c791ef72c39896429e9161de03797ab20f3886192ed334b"
+        },
+        "XLA-metrics-16.txt": {
+          "bytes": 6103,
+          "sha256": "18aba977c0db8e60ba131be0fc831d0914618c4846f0723a02d751311f3bb284"
+        },
+        "XLA-metrics-12.txt": {
+          "bytes": 6103,
+          "sha256": "479dd712635a8d37ae42be156a6ce4e5dea35e6744f3d25f77ac4b5689c070dc"
+        },
+        "XLA-metrics-06.txt": {
+          "bytes": 6095,
+          "sha256": "4e16289c183980221c2b4322a472f1dc33aa696d6212dd5b755c404abfab8f13"
+        },
+        "XLA-metrics-05.txt": {
+          "bytes": 6085,
+          "sha256": "1a0bb1619b7fd51db25c894d8a976fb616d1612c73b54ffa0fe17b7b8cecaddc"
+        },
+        "qualification-rank-00000.json": {
+          "bytes": 1672,
+          "sha256": "a5556c23742119413e79e37c7396fab20eba463500e350f8973f37334f171497"
+        },
+        "XLA-metrics-04.txt": {
+          "bytes": 6088,
+          "sha256": "f48610a442c2bb1e4688a5df92d6c16006bf6d40d233be5def4f59cda34d3fdb"
+        },
+        "XLA-metrics-11.txt": {
+          "bytes": 6104,
+          "sha256": "9b909ebcd262bc2af170b8182f9d6828014bf3c95d133e9e603042448f4bf693"
+        },
+        "XLA-metrics-15.txt": {
+          "bytes": 6100,
+          "sha256": "412e6c1203b8fb8d55bb3444c83f3e19e496cbde853811a13bc7b240c35dea6f"
+        },
+        "ready.json": {
+          "bytes": 537,
+          "sha256": "aac61026e83b75c47e0c3d641e690153e7e2a32f1e171a8deeb0eade36dae1c2"
+        },
+        "XLA-metrics-13.txt": {
+          "bytes": 6108,
+          "sha256": "08bc0b7c9914c0e49e6f98efa1a4eefebab34e73542ca002de2388a73132fb61"
+        },
+        "completion.json": {
+          "bytes": 584,
+          "sha256": "7d946be8e37fabcdf229fc81517e4a2acd73bcccbef06eeca222c360288aca58"
+        },
+        "iterations.jsonl": {
+          "bytes": 27046,
+          "sha256": "ebf7d2e16631bca20b0faaacdc38465092a0e0712ce09f1185fcb7287ba151e8"
+        },
+        "XLA-metrics-02.txt": {
+          "bytes": 6064,
+          "sha256": "41a4cd5b81ce173844327c399c9855cdbacfea193bb7dbb9f050006b6ccf95d3"
+        },
+        "XLA-metrics-03.txt": {
+          "bytes": 6083,
+          "sha256": "65ae11a344420755f9a7ec98b75e1a1d520494766d30244cba921d24ccdb6b33"
+        },
+        "XLA-metrics-10.txt": {
+          "bytes": 6093,
+          "sha256": "508851b367c5d56c1384f73b83b12a93023f67e643dad0935dd31b4c0def8243"
+        },
+        "XLA-metrics-14.txt": {
+          "bytes": 6099,
+          "sha256": "611ee9187d55b0e5c7199faa51610598983432f32cea6cdce57c122f6260022f"
+        }
+      }
+    },
+    "arena2": {
+      "iterations": 16,
+      "optimizer_updates": 0,
+      "tail9_16_RSS_slope_MiB_per_iteration": 15.295898437500341,
+      "final_RSS_GiB": 8.139549255371094,
+      "tail9_16_median_wall_seconds": 33.80384999800299,
+      "median_trim_RSS_release_GiB": 0.0,
+      "bounded_short_backward_tail": true,
+      "native": {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T15:57:55+00:00",
+        "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "canonical_reference_compute_dtype": "fp32",
+          "canonical_reference_parameter_dtype": "fp32",
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-device-canonical-fp32-native-v2",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+        "rank": 0,
+        "reference_index": 0,
+        "status": "PASS"
+      },
+      "files": {
+        "forward-rank-00000.pt": {
+          "bytes": 609321,
+          "sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        "XLA-metrics-01.txt": {
+          "bytes": 6038,
+          "sha256": "d242ac4f005dea6362ef92526d8b71d8b99607834d7b4252a121c52f36e5a407"
+        },
+        "host-before-import.json": {
+          "bytes": 346,
+          "sha256": "910eecf66e9e83740c4b9b49f8a87a3b0cd711504ea53514980bd55ee559a8f4"
+        },
+        "XLA-metrics-08.txt": {
+          "bytes": 6076,
+          "sha256": "d866ab88969c536a281afc647c7ec296654ae43de3abb14d85d33a5c5f8deb61"
+        },
+        "XLA-metrics-09.txt": {
+          "bytes": 6074,
+          "sha256": "4bb7df971632a45d0c124bf3998e2ce4a89fbbe6bd906d75e58067ee3f5d7cc9"
+        },
+        "XLA-metrics-07.txt": {
+          "bytes": 6075,
+          "sha256": "93ab895faf4bafbe341150728b41fdd3236fcca5873f9b5c5fe2677d612a8550"
+        },
+        "XLA-metrics-16.txt": {
+          "bytes": 6092,
+          "sha256": "cf0e33b6089d792c4d7988797b99652c96d8032c16bd116893db03940484663d"
+        },
+        "XLA-metrics-12.txt": {
+          "bytes": 6088,
+          "sha256": "dd16d78f147af289d021eb9859e17dcb2859dbb2560564479961f6114739767d"
+        },
+        "XLA-metrics-06.txt": {
+          "bytes": 6076,
+          "sha256": "0a7b62734480892a76c71714e3a6d5924780b03c1d6b920c43fef9fb9c7da05f"
+        },
+        "XLA-metrics-05.txt": {
+          "bytes": 6061,
+          "sha256": "c72db5e86e1aaee4dc1a625feff37fb92af4e5bf52bc46ee31cab96823464f71"
+        },
+        "qualification-rank-00000.json": {
+          "bytes": 1672,
+          "sha256": "4af9d0f5f30769a8a4929fd4e4071da6138d901e260266ed54393587ec3a6be5"
+        },
+        "XLA-metrics-04.txt": {
+          "bytes": 6066,
+          "sha256": "fa2a9a97179d30f54a08eb820ff32fc797a406b7ae96869553af6364ab53a65e"
+        },
+        "XLA-metrics-11.txt": {
+          "bytes": 6086,
+          "sha256": "45194a4d9c726b7b350a45902ed0edcc7c10b3e19f5c269f8bf5ca6bcff82e2d"
+        },
+        "XLA-metrics-15.txt": {
+          "bytes": 6089,
+          "sha256": "59e34e56bab7258cef1331720efa298a11ef93b69cf598b8182941e24a216ba0"
+        },
+        "ready.json": {
+          "bytes": 536,
+          "sha256": "543f361ceaa56cfda3a103cf6a77f0360917cf9ddc3fc498908ae214c3900ae3"
+        },
+        "XLA-metrics-13.txt": {
+          "bytes": 6089,
+          "sha256": "d53b6b3c93d4d419dc4fab80dbbe39ad2ef8989d81ae58516ab0f7470123cd49"
+        },
+        "completion.json": {
+          "bytes": 590,
+          "sha256": "c427a7745f55e061ffbbde4006d1eaee5da49a356478cf845beab868034c3a67"
+        },
+        "iterations.jsonl": {
+          "bytes": 27104,
+          "sha256": "2c4613bfbdcf31932114c3b69d8d3bea19a1b300cefd78a33805907efca09c7d"
+        },
+        "XLA-metrics-02.txt": {
+          "bytes": 6049,
+          "sha256": "351e7ea170093a0faf5fa5294d845f17cbba32c0a7a3ee7455bc7f55b8a97cd3"
+        },
+        "XLA-metrics-03.txt": {
+          "bytes": 6061,
+          "sha256": "63da8106769f73e2a4885abc1fa3d47e4af049c800c58ff0813e286b8398cd49"
+        },
+        "XLA-metrics-10.txt": {
+          "bytes": 6078,
+          "sha256": "2de02d8f31ddd3b9168682863d18234a70fdc4361dc4c9f82ffe7966b3fabed2"
+        },
+        "XLA-metrics-14.txt": {
+          "bytes": 6088,
+          "sha256": "9fdb0d834520bece07786650e5641f30db5de3eb7b7bcc011639d53efff944b3"
+        }
+      }
+    }
+  },
+  "all64_actual_row_component_losses_bitwise_equal": true,
+  "all4_exit0": true,
+  "all_owned_sessions_absent": true,
+  "assigned_physical8_11_empty": true,
+  "interpretation": "The original W backward path alone does not reproduce the sustained host-memory growth over16 rows. Trimming lowers RSS by roughly3.4GiB but is not established as the cause or repair of the failed full optimizer loop.",
+  "limitations": [
+    "Engineering profile, not a likelihood/ability comparison;16 rows do not replace held256.",
+    "No Adam/ZeRO/collective or per-update master/replica diagnostic path is included. If all backward paths are bounded, inspect those omitted stages next.",
+    "gc means Python gc.collect; trim means gc.collect plus libc malloc_trim(0); arena2 sets MALLOC_ARENA_MAX=2 before imports.",
+    "No installed package or library is changed. Conditions differ in host allocation only.",
+    "Finite external60\u201380min bounds and96GiB privateRSS ceiling; no automatic retries.",
+    "Probe uses OMP/MKL1; original full training uses2. The next full-loop2x2 preserves2.",
+    "Sixteen no-update iterations do not establish long-run training memory stability."
+  ],
+  "archive_receipt_sha256": "b7ccfd13da6e0716431322b60ee0d4598243d89b25a0dd4dec115b0b1cdc3050"
+}

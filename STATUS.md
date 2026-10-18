@@ -1,4 +1,4 @@
-# Status — 2026-10-18 16:08 UTC
+# Status — 2026-10-18 16:30 UTC
 
 ## Active: matched developmental step64 evaluation
 Question: what did the interrupted matched W/C′ runs learn by their common64 milestone?
@@ -13,17 +13,37 @@ Independent finite external guard samples hostRAM every10s; stops owned jobs bel
 Deadline01:30UTC next day; no outcome-dependent stopping, no automatic learning restart.
 Wself I3 own−raw−.616/−empty+.749/−other+3.865; fixedI6 own−raw+.132 [.015,.256].
 Wmixed own−B0raw−.175 [−.395,.065]; no absolute improvement. Two self-score live captures missed/preserved.
-General note generation active; full arithmetic result:validation/reader_learning_compound_DEV256_step64_20261018.json.
+General closed: WselfI6 own−raw−.257/−empty−.174/−other−.151, allCIs negative; all vectors audited.
+GSMTRAIN512 generation active; arithmetic/general full results in validation/*DEV256_step64_20261018.json.
 Decision: complete remaining panels; broad general SFT/RL hold; original I3 gate failed.
 
-## Active: bounded backward-path host-memory probe
+## Closed: bounded backward-path host-memory probe
 Question: does original real-data BF16 W backward retain hostRAM before optimizer/update stages?
-ID:host-memory-backward-probe-v1; four fresh B0 processes, same16 actualTRAIN rows, no optimizer.
-Batch:default allocator, explicitGC, GC+malloc_trim, MALLOC_ARENA_MAX=2; logical32/36/40/44.
-Endpoint: post-clear RSS/PSS, allocator counters, XLA metrics and stage CPU/wall; tail slope9–16.
-Candidate bound<=64MiB/iteration; if baseline>=256MiB, require>=80% slope reduction.
-Controls:local/diagnostics/host-memory-backward-probe-v1; external deadline17:00UTC/RSS96GiB/floor512GiB.
-Decision: pending; this isolates backward only and cannot qualify full-loop optimizer or recovery.
+ID:host-memory-backward-probe-v1; four fresh B0s, same16 realTRAIN rows, no optimizer/update.
+Default, GC, GC+trim, arena2 all complete16, exit0, exact losses and native gates; sessions/devices closed.
+Default tailRSS slope6.47MiB/iteration; all four short tails below64MiB. Trim lowers RSS, not a proven OOM repair.
+Complete EBS archive read-back verified; validation/host_memory_backward_probe_20261018.json.
+Decision: backward-only does not reproduce runaway growth in16; full optimizer/diagnostics attribution follows.
+
+## Active: original full-loop host-memory attribution
+Question: does full-loop growth depend on LR scheduling or repeated sampled diagnostics?
+ID:host-memory-full-loop-attribution-v1; one sequential2×2 batch,16updates per fresh B0 condition.
+Same original W realTRAIN order/global32/world32/OMP2/BF16+FP32masters, physical8–15.
+Constant/scheduledLR × full/reduced diagnostics; reduced keeps first3/last proofs, missing metrics null.
+Record stage RSS/glibc and external process PSS; tail9–16 slopes, step costs and compilation counters.
+Bound512GiB available, each<=2400s, batch18:30UTC; exact-owned stop, no retries or science-model reuse.
+Controls:local/diagnostics/host-memory-full-loop-attribution-v1; first scheduled/full condition active.
+Decision: pending; short attribution cannot qualify long-run steady memory or resumption.
+
+## CPU ready: intermediate-only state diagnostic
+Question: can a supervised prefix-only writer aid a trained frozen reader beyond compact CoT?
+ID:partial-state-v6, isolated public branch; exact interpreter supplies non-root steps only.
+5,120TRAIN;512each fresh interpolation/structure/range/composition DEV;128TRAIN mechanics subset.
+All25,600native causal packs and batch8 shapes pass; no prior known expression overlap, no target filtering.
+Longest partial47tokens; root answer coincidences counted, not filtered. NativeEOS/boundaries verified.
+All1552CPUtests/smoke/compile pass; EBS data read-back verified, source commitd921a11.
+Public branch validation/partial_state_v6_{design,CPU_readiness}_20261018.json.
+Decision: reader→freeze→writer, same-reader controls and ordinary CoT baseline; no hardware/learning release.
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?

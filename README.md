@@ -27,10 +27,16 @@ primary gate fails. W's mixed thought path is still−.175 [−.395,.065] versus
 untouched B0 raw prediction; its own raw path loses−.307 [−.499,−.092]. Thus the
 small within-model gain does not establish improvement above the starting model.
 W supervision includes complete answers, so this does not isolate intermediate
-computation. General DEV and GSMTRAIN512 evaluation are pending.
+computation. On general DEV256 the same trained W/mixed path still loses
+−.257 [−.401,−.116] versus raw, −.174 [−.267,−.085] versus empty, and
+−.151 [−.246,−.062] versus unrelated notes. The arithmetic signal does not
+transfer; [all general vectors and examples](validation/reader_learning_general_DEV256_step64_20261018.json)
+are retained. GSMTRAIN512 evaluation is running.
 [Complete developmental arithmetic result, all vectors and notes](validation/reader_learning_compound_DEV256_step64_20261018.json).
 The next study isolates exact partial states, freezes the trained reader, and
 compares a supervised writer with ordinary compact CoT.
+[Exact data and CPU packing are prepared on partial-state-v6](https://github.com/dario-fumarola/useful-thoughts-trainium/blob/partial-state-v6/validation/partial_state_v6_CPU_readiness_20261018.json);
+no new learning run is released.
 
 Fresh B0 notes give these likelihood changes with the fixed mixed reader:
 
