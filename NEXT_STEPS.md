@@ -13,9 +13,11 @@
    T passes full optimizer checks; W/C exhaust24GiB banks with FP32 model/grad
    storage plus compiler spill buffers. Preserve failures and verified archive.
    Qualify a NEW BF16-parameter/gradient, FP32-master/moment path, preserving FP32
-   RoPE buffers. New v2 source review and CPU BF16 references pass; finish full
-   CPU sweep/runtime review, then sequential world32/accum1 W/C′/T, three real
-   updates each. No model/grad storage equivalence or exact-resume claim.
+   RoPE buffers. New v2 W stopped before updates: CPU-BF16 reference KL .010121
+   exceeds unchanged .01. Three-way audit shows deviceBF16 is closer to CPUFP32
+   (maxKL .003103); CPU BF16 itself differs by .014382. Review a new high-precision
+   reference identity and uniform all-rank failure consensus before retry. Preserve
+   original FAIL; no threshold relaxation or hardware-training/resume pass.
 3. `postorder-held256-B0-v1` is CLOSED/archived: all256notes/3072cells, negative
    own−raw in both I3 and fixedI6, own−other intervals cross0. Independent36CI
    readback matches exactly. No useful generated-content result before training.
@@ -33,8 +35,10 @@
    fixedI6w=.375 additional control. GSM8KTRAIN512 B0 is running all3modes on4cores
    with fixed deadline13:30UTC while qualifying training. All1536paths finish before gold; unsupported stays
    in denominator. Run every later terminal arm regardless of local sign.
-   A separate fixed first-line truncation probe on cached B0 notes is being
-   prepared on reused DEV; it cannot change the main cap128 policy or training data.
+   Separate fixed first-line truncation on cached B0 notes is CLOSED/negative:
+   less damage than full notes, still worse than raw and short unrelated notes.
+   It does not change the main cap128 policy or training data. Inventory genuine
+   general TRAIN high-surprisal anchors for the owner's broader hindsight branch.
 7. No RL until fresh own beats raw and other with oracle headroom. Then fullspan
    reward/G16/cap256/Wreference stabilization. Require measured<=90s completeRLsteps
    before longRL. The old empty profiler supplies no warmed or BF16 throughput pass.

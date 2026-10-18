@@ -1,23 +1,25 @@
-# Status — 2026-10-18 07:24 UTC
+# Status — 2026-10-18 07:34 UTC
 
-## CPU prepared: BF16-storage qualification
+## Closed failed: BF16-storage qualification
 Question: can BF16 model/gradient storage fit W/C′/T while preserving FP32 masters?
 ID:postorder-note-bf16-storage-world32-qualification-v2; sequential three-update arms.
 New first64 unchanged science rows preserve global packing; never a science-quota pass.
-World32/accum1, cores0–31/devices0–7; hardware launch still awaits final runtime review.
-Source review accepted; all62focused tests pass; required full CPU sweep running.
-CPU canonical reference passes: released initial values/ties, BF16 weights, FP32 rotary buffers.
-Gate: every full-head reference finite, both normalized FP64 KL directions<=.01nat.
-Actual FP32 master updates/BF16 cast equality/replicas and complete moments after2/3 required.
-Native vectors and failed gate receipts persist before optimizer construction.
-Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2.
-CPU-only preparation exit0; hardware fit and three actual updates remain unqualified.
-No resume implementation or steady-throughput claim; scientific training remains unreleased.
+World32/accum1, cores0–31/devices0–7; W launched07:28UTC, C′/T never launched.
+Source/CPU references and1356tests/smoke/compile pass; all32actual mappings recorded.
+All native vectors finite; reference0 fails KL .010121>.01, others pass, zero updates.
+Every failed/passed full vector saved; old bound and FAIL remain unchanged.
+Failure reveals asymmetric local raises can strand other workers in a rendezvous.
+Exact owned group TERM once07:32UTC, no KILL; all identities/groups/devices physically closed.
+Three-way CPU audit: deviceBF16 is closer to CPUFP32(maxKL .003103) than CPUBF16.
+CPU BF16 itself differs from CPUFP32 by .014382; reference/consensus repair under review.
+Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2; EBS archive verified.
+No training, recovery or throughput pass; science remains unreleased.
 
 ## Active: B0 GSM8K TRAIN512 baseline
 Question: does one generated note improve answers relative to direct and matched empty?
 ID:postorder-gsm8k-train512-B0-v1; all512TRAIN questions, all three modes in one batch.
 Four workers logical44/48/52/56, physical11–14; launched07:15UTC, deadline13:30UTC.
+Original worker PIDs2598159/2598163/2598169/2598172; reviewer owns health/closure.
 All four native gates pass; answer prefill/decode compiled, saved paths progressing.
 No gold or accuracy inspection before all1536attempts complete; unsupported remains in512.
 Greedy native note cap128actions and answer512; full-question reanchor, no instruction header.
@@ -26,7 +28,7 @@ Controls:local/diagnostics/postorder-gsm8k-train512-B0-v1; NVMe output same base
 Exact source/runtime pins, PID/start identities and first-live mappings retained.
 Reviewer supervises completion, physical closure, one summary and verified EBS archive.
 
-## CPU preparation: fixed first-line note ablation
+## Closed negative: fixed first-line note ablation
 Question: does target-independent truncation remove damage from sprawling B0 notes?
 ID:postorder-firstline-note-held256-v1; reused exploratory DEV, no new writer generation.
 Keep exact cached token prefix through first completed content line, at most64tokens.
@@ -35,8 +37,11 @@ Batch raw/empty/full-own/full-other/short-own/short-other in I3 and fixedI6w=.37
 Original global intact-note donor permutation retained; all256documents and3072cells.
 Pass only if short-own beats raw AND short-other with both paired lower95% bounds>0.
 Original128-action generation costs retained; fewer kept tokens are not latency savings.
-Controls:local/diagnostics/postorder-firstline-note-held256-v1; no model allocated yet.
-Source/tests and closed-bundle provenance bridge under root review; CPU prepare authorized.
+All3072finite cells/zeroerrors, four exits0; groups/devices physically closed, EBS archive verified.
+I3 short-own−raw−5.064[−5.618,−4.525]; short-own−short-other−1.388[−1.873,−.903].
+I6 short-own−raw−.405[−.529,−.284]; own−other−.152[−.250,−.059]; both FAIL.
+Independent3072vectors/36intervals match exactly; all2048repeated full vectors identical.
+Public:validation/postorder_firstline_note_held256_20261018.json plus compact complete cells.
 
 ## Closed: batched reader interface qualification
 Question: can unchanged B0 use a supplied full-target-copy note?

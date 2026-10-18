@@ -1,0 +1,830 @@
+{
+  "complete_cells": {
+    "bytes": 3281846,
+    "file": "validation/postorder_firstline_note_held256_cells_20261018.jsonl",
+    "sha256": "bb35d36858d136a0a88faaf7ce5b8c7f81ed9df4e358be62c2587c78b036e966"
+  },
+  "costs": {
+    "completed_content_lines": 206,
+    "kept_content_tokens": 5463,
+    "mean_actions_per_attempt": 123.4765625,
+    "mean_content_tokens_per_attempt": 123.421875,
+    "measured_generation_latency_savings": null,
+    "note_generation_seconds_mean": 12.572877755265267,
+    "note_generation_seconds_sum": 3218.6567053479084,
+    "notes_shortened": 249,
+    "raw_full_logits_seconds_sum": 39.04204251791816,
+    "scope": "Observed action/content and note latency include all saved attempts, including errors/partials. Score cell times count shared I3/I6 work once and include actual raw forward/softmax/transfer costs. Model setup/native gate/process-stage times are separate; no warm or end-to-end throughput claim.",
+    "scoring_cell_seconds_sum": 219.0159244845563,
+    "scoring_shared_timing_groups": 1536,
+    "total_content_tokens": 31596,
+    "total_generated_actions": 31610
+  },
+  "created_utc": "2026-10-18T07:33:41+00:00",
+  "design": {
+    "bootstrap": {
+      "repeats": 5000,
+      "seed": 17
+    },
+    "cells": 3072,
+    "documents": 256,
+    "modes": [
+      "raw",
+      "empty",
+      "full_own",
+      "full_other",
+      "short_own",
+      "short_other"
+    ],
+    "pass_rule": "Both primary contrasts have positive95%lower bounds on natural16 within a path; report both paths/all controls regardless sign. Improvement over full notes alone does not pass. Any PASS remains exploratory on this reused DEV.",
+    "paths": [
+      "I3",
+      "I6w0.375"
+    ],
+    "policy": {
+      "content_cap": 64,
+      "generation_reuse": "Postprocess cached single-greedy B0 content, not newly sampled or oracle-selected. Forced canonical reader close/reanchor remains unchanged.",
+      "inputs": "Only original generated content token IDs and fixed native tokenizer; NO document future/gold/target/scoring inputs",
+      "name": "first-completed-content-line-cap64-v1",
+      "rule": "Keep exact token prefix through the FIRST token whose decoded prefix contains a newline AFTER its first non-whitespace character. Preserve leading whitespace and include the complete boundary token. If no such newline by64content tokens, keep first64. Empty stays empty; original short notes stay unchanged. No replacement, re-tokenization, numeric searching or correctness checking.",
+      "teacher_tokens": false
+    },
+    "selection": "Same reused held256 DEV, fixed original order; first6 examples are not selected by gain."
+  },
+  "examples": [
+    {
+      "content_tokens_full": 128,
+      "content_tokens_short": 14,
+      "full_note": " 320 + 32 = 352\n\n## How to calculate Minecraft stacks? \u2014 A practical example\n\nLet's say we're building a small farm that produces 100 wheat \ud83c\udf5e every hour. We want to store the harvest in a chest, but we don't know how many stacks we'll need. Let's put what we've learned into practice.\n\nIn Minecraft, wheat stacks to 64. Knowing the maximum stack size to be 64, we can calculate that 100 wheat translates to:\n\nfloor(100/64) = floor(1.5",
+      "item_id": "5adf441dc56285e777af8073886a8b0a2a1b57b7c2ad077ecf50717650af9ae6:raw-equation-v3:1416",
+      "policy_reason": "completed_content_line",
+      "scalar_surface": "352",
+      "short_note": " 320 + 32 = 352\n\n",
+      "source_expression": "5 \u00d7 64 + 32"
+    },
+    {
+      "content_tokens_full": 128,
+      "content_tokens_short": 6,
+      "full_note": " decimal number 35\n\n### Binary to Octal Conversion\n\nOctal number system is a base 8 number system. It is a number system that uses 8 different digits from 0 to 7. The octal number system is a base 8 number system. It is a number system that uses 8 different digits from 0 to 7. The octal number system is a base 8 number system. It is a number system that uses 8 different digits from 0 to 7. The octal number system is a base 8 number system. It is a number system that uses 8 different",
+      "item_id": "ffec00ac37ce622810baa2012004f40647474b5980ec6427440d12b313e481d6:raw-equation-v3:1248",
+      "policy_reason": "completed_content_line",
+      "scalar_surface": "35",
+      "short_note": " decimal number 35\n\n",
+      "source_expression": "32 + 0 + 0 + 0 + 2 + 1"
+    },
+    {
+      "content_tokens_full": 128,
+      "content_tokens_short": 37,
+      "full_note": "\n\ndegrees of freedom. The t-statistic for a 95% probability level is 2.179. The 95% confidence interval for the mean is\n\nx t n 1;a 2 s x\n\n1.000 2.179 0.050\n\n0.900 0.950 1.000 1.050 1.100 1.150 1.200 1.250 1.300 1.350 1.",
+      "item_id": "82310e1fea192d4454434ed5b0d51c2b8f363a13d740f4a2cd8f9656b97a0016:raw-equation-v3:3260",
+      "policy_reason": "completed_content_line",
+      "scalar_surface": "11",
+      "short_note": "\n\ndegrees of freedom. The t-statistic for a 95% probability level is 2.179. The 95% confidence interval for the mean is\n\n",
+      "source_expression": "12-1"
+    },
+    {
+      "content_tokens_full": 128,
+      "content_tokens_short": 7,
+      "full_note": " 12348\n\nNow 73.5% of 12348 = 9261\nHence total votes = 12348*100/73.5 = 16800\nIntern\nJoined: 20 Oct 2010\nPosts: 4\nFollowers: 0\n\nKudos [?]: 5 [0], given: 7\n\nRe: In an election between...Help required.\u00a0[#permalink]\n\n### Show Tags\n\n26 Oct 2010, 07:3",
+      "item_id": "07bd280db0cbf48f10f8b888184e6cff1e21ab6db0c269e47dc24343035b6683:raw-equation-v3:556",
+      "policy_reason": "completed_content_line",
+      "scalar_surface": "12348",
+      "short_note": " 12348\n\n",
+      "source_expression": "9261*4/3"
+    },
+    {
+      "content_tokens_full": 128,
+      "content_tokens_short": 3,
+      "full_note": " 9\n// 9 - 1 = 8\n// 8 / 2 = 4\nvar t = 2 * k + 1;\n\n// x = 4\nvar x = t - y;\n\n// y = 4\nvar y = t - x;\n\n// return x, y\nreturn [x, y];\n}\n\n\nI need to get user_id from coordinates.\nI tried to reverse the function, but I can't.\nI need to get user_id from coordinates.\nI tried to reverse the function, but I can't.\nI need to get user_id from coordinates.\nI tried to reverse",
+      "item_id": "2669fbaeffe38dea5b0232b21fae6e279eca05000bdb734c96a64051cf6bd405:raw-equation-v3:181",
+      "policy_reason": "completed_content_line",
+      "scalar_surface": "9",
+      "short_note": " 9\n",
+      "source_expression": "2 * 4 + 1"
+    },
+    {
+      "content_tokens_full": 128,
+      "content_tokens_short": 64,
+      "full_note": "\n. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if",
+      "item_id": "ab282f659cb5fc208c04338db51ad7244a351006e971b6120ed3fe32453d9ecf:raw-equation-v3:2526",
+      "policy_reason": "content_cap",
+      "scalar_surface": "1750",
+      "short_note": "\n. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if it takes different elements of A into different elements of B. The function f is called an one to one, if it takes different elements of",
+      "source_expression": "25\u00d770"
+    }
+  ],
+  "finding": "Shortening reduces long-note damage but still loses to raw and shortened unrelated notes; neither reader path passes.",
+  "groups": {
+    "I3": {
+      "absolute": {
+        "empty/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -17.419385478432773
+        },
+        "empty/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.6977872107886469
+        },
+        "empty/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -2.523535881387943
+        },
+        "full_other/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -23.76967406523687
+        },
+        "full_other/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.576697845407125
+        },
+        "full_other/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -4.817932574786482
+        },
+        "full_own/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -23.644833373628412
+        },
+        "full_own/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.4585160043966425
+        },
+        "full_own/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -4.508122715807531
+        },
+        "raw/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.154587640001036
+        },
+        "raw/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4319529496703889
+        },
+        "raw/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.924805376466738
+        },
+        "short_other/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -19.83083634864323
+        },
+        "short_other/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.0273286541755624
+        },
+        "short_other/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -3.43497950306255
+        },
+        "short_own/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -21.21840933455495
+        },
+        "short_own/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.1039614810399598
+        },
+        "short_own/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -3.5463966711106423
+        }
+      },
+      "contrasts": {
+        "full_own_minus_full_other/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.6696657058248395,
+            0.8922538424694348
+          ],
+          "difference_b_minus_a": 0.12484069160846079,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_full_other/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.08813417736038787,
+            0.32254081732981466
+          ],
+          "difference_b_minus_a": 0.11818184101048246,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_full_other/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.04535285498137112,
+            0.6549100986799428
+          ],
+          "difference_b_minus_a": 0.3098098589789515,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_raw/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -8.17311893401506,
+            -6.8397676933707245
+          ],
+          "difference_b_minus_a": -7.490245733627374,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_raw/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -1.2549698392677437,
+            -0.8090473740605287
+          ],
+          "difference_b_minus_a": -1.0265630547262536,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_raw/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -2.927432965280624,
+            -2.25856649706604
+          ],
+          "difference_b_minus_a": -2.583317339340793,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_empty/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -4.276066168958926,
+            -3.3416693280696173
+          ],
+          "difference_b_minus_a": -3.7990238561221763,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_empty/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.5626578299130756,
+            -0.2649077564340986
+          ],
+          "difference_b_minus_a": -0.4061742702513129,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_empty/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -1.2458891954013438,
+            -0.8196839507353845
+          ],
+          "difference_b_minus_a": -1.0228607897226993,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_full_own/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            1.872220730333566,
+            2.996521946800961
+          ],
+          "difference_b_minus_a": 2.4264240390734604,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_full_own/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            0.21806080376082376,
+            0.498447045829232
+          ],
+          "difference_b_minus_a": 0.3545545233566827,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_full_own/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            0.7255288406900717,
+            1.2062243700138136
+          ],
+          "difference_b_minus_a": 0.9617260446968885,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_raw/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -5.6175157873572115,
+            -4.52472482823855
+          ],
+          "difference_b_minus_a": -5.063821694553913,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_raw/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.869939486839608,
+            -0.48773366339830804
+          ],
+          "difference_b_minus_a": -0.672008531369571,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_raw/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -1.903099980226638,
+            -1.3568965877412136
+          ],
+          "difference_b_minus_a": -1.6215912946439042,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_short_other/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -1.8731891218013086,
+            -0.9032871456766802
+          ],
+          "difference_b_minus_a": -1.3875729859117194,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_short_other/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.2393049673428777,
+            0.07033746748745079
+          ],
+          "difference_b_minus_a": -0.07663282686439743,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_short_other/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.35919168114133415,
+            0.1254301820544242
+          ],
+          "difference_b_minus_a": -0.11141716804809221,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "exploratory_primary_pass": false
+    },
+    "I6w0.375": {
+      "absolute": {
+        "empty/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.252858694139228
+        },
+        "empty/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4344662732776641
+        },
+        "empty/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.9476614039308373
+        },
+        "full_other/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.728812666086302
+        },
+        "full_other/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4552007271325351
+        },
+        "full_other/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -2.056309349097118
+        },
+        "full_own/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.8277012074499
+        },
+        "full_own/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4450777257313234
+        },
+        "full_own/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -2.081688195324219
+        },
+        "raw/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.154587640001036
+        },
+        "raw/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4319529496703889
+        },
+        "raw/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.924805376466738
+        },
+        "short_other/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.407242235947415
+        },
+        "short_other/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4424276130438898
+        },
+        "short_other/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -2.0039457886440672
+        },
+        "short_own/natural16_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -16.55935684936988
+        },
+        "short_own/numeric_only_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -0.4471705091164324
+        },
+        "short_own/scalar_boundary_ll": {
+          "errors": 0,
+          "items": 256,
+          "mean": -1.9938826333436452
+        }
+      },
+      "contrasts": {
+        "full_own_minus_full_other/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.23899498706129987,
+            0.041902345192316066
+          ],
+          "difference_b_minus_a": -0.09888854136359582,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_full_other/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.02520518418325821,
+            0.04219311187740259
+          ],
+          "difference_b_minus_a": 0.010123001401211695,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_full_other/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.09208153495618236,
+            0.03924180319177659
+          ],
+          "difference_b_minus_a": -0.025378846227100738,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_raw/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.8369823835741058,
+            -0.5077201952763652
+          ],
+          "difference_b_minus_a": -0.6731135674488622,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_raw/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.06760606370330904,
+            0.04620067968610656
+          ],
+          "difference_b_minus_a": -0.01312477606093454,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "full_own_minus_raw/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.24162438902212643,
+            -0.07432836126596513
+          ],
+          "difference_b_minus_a": -0.15688281885748068,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_empty/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.41927163728665917,
+            -0.19779085858762108
+          ],
+          "difference_b_minus_a": -0.30649815523065504,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_empty/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.04656618933714292,
+            0.02205475516684523
+          ],
+          "difference_b_minus_a": -0.01270423583876834,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_empty/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.09874555564538205,
+            0.005753539669036886
+          ],
+          "difference_b_minus_a": -0.04622122941280793,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_full_own/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            0.13920123304176582,
+            0.3986983862459813
+          ],
+          "difference_b_minus_a": 0.26834435808001755,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_full_own/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.020901527677258256,
+            0.015797370288321833
+          ],
+          "difference_b_minus_a": -0.002092783385108987,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_full_own/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            0.04510790943530836,
+            0.13713680047429475
+          ],
+          "difference_b_minus_a": 0.08780556198057354,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_raw/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.5288259083697583,
+            -0.2839967924761633
+          ],
+          "difference_b_minus_a": -0.4047692093688446,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_raw/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.062214434653630434,
+            0.03345937010524199
+          ],
+          "difference_b_minus_a": -0.015217559446043527,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_raw/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.13953140173245393,
+            0.00237218266034134
+          ],
+          "difference_b_minus_a": -0.06907725687690713,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_short_other/natural16_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.24959982211529808,
+            -0.058613135109477014
+          ],
+          "difference_b_minus_a": -0.15211461342246596,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_short_other/numeric_only_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.03637322962892782,
+            0.02287955594321644
+          ],
+          "difference_b_minus_a": -0.004742896072542635,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "short_own_minus_short_other/scalar_boundary_ll": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.03994168549256223,
+            0.05960257969119894
+          ],
+          "difference_b_minus_a": 0.010063155300422011,
+          "documents": 256,
+          "items": 256,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "exploratory_primary_pass": false
+    }
+  },
+  "independent_allcell_and_CI_readback": {
+    "bootstrap_repeats": 5000,
+    "cells": 3072,
+    "contrasts": 36,
+    "created_utc": "2026-10-18T07:31:48+00:00",
+    "max_abs_mean_or_CI_difference": 0.0,
+    "max_abs_repeated_full_vector_difference": 0,
+    "protocol_sha256": "71d038085142b34376c02931f6f2b94de014ad583bbb5bf73a0d1175e8fef41d",
+    "seed": 17,
+    "status": "PASS_INDEPENDENT_ALL_CELL_AND_36_CI_READBACK",
+    "summary_sha256": "ba068b86e68aba63f4d61aa173c72452be803f4f95a4c91905e843cdd653d3a3",
+    "unchanged_contexts": 2048
+  },
+  "legacy_source_bridge": {
+    "train/useful_note_evaluation.py": {
+      "archived_file": "/home/ubuntu/dario/local/backups/diagnostics/postorder-held256-B0-v1/payload/train/useful_note_evaluation.py",
+      "current_sha256": "7bade797bc11d8a26e25d296d20e86d7a3bde6de50532318c82993778cf5cfc4",
+      "old_sha256": "4de1bf8516e5458215779a6257e8d936abd11a70b3a267b25ce84b6bfaee7447",
+      "scope": "Only trained_identity differs; every remaining module AST node unchanged. Old outcomes retain old source identity."
+    }
+  },
+  "limitations": [
+    "First6 fixed-held-order note inspection after the complete negative baseline found ordinary source continuations that sometimes compute the answer and then continue into unrelated article text. This motivates an exploratory truncation ablation, not a new blind confirmation.",
+    "Retain original actual generation actions/time in cost reports. Fewer kept tokens are NOT measured generation/latency savings. No trained-policy or speed claim.",
+    "No best-of/target-aware truncation, replacement or omitted note.",
+    "Two paths share computation; score wall time is counted once per item/mode timing group.",
+    "Both positive primary lower bounds within a path are required; any PASS remains exploratory on reused DEV.",
+    "Truncation was motivated by inspecting first6 original notes, so this is explicitly outcome-informed exploratory reuse.",
+    "No training or new generation; no change to main cap128 policy."
+  ],
+  "provenance": {
+    "archive": "local/backups/diagnostics/postorder-firstline-note-held256-v1/ARCHIVE.json",
+    "archive_sha256": "a225225bdab8a45ffff181aa70a5e068eafa50467a6a8fbe43fd035b3de7ef03",
+    "archived_files": 167,
+    "physical_closure_sha256": "b7c9ae67d6fd7acbeb5f2ec492184c289fc15e02b935961a37ca7458887d95f5",
+    "protocol_sha256": "71d038085142b34376c02931f6f2b94de014ad583bbb5bf73a0d1175e8fef41d",
+    "summary_sha256": "ba068b86e68aba63f4d61aa173c72452be803f4f95a4c91905e843cdd653d3a3"
+  },
+  "question": "Does fixed, target-independent first-line truncation make existing B0 notes useful?",
+  "reader": {
+    "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "checkpoint": null,
+    "checkpoint_sha256": null,
+    "id": "B0",
+    "loaded_checkpoint": null,
+    "model": {
+      "parameters": 1720574976,
+      "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+      "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+    }
+  },
+  "schema": "postorder-firstline-note-held256-20261018",
+  "scoring_errors": 0,
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/filter_symbolic_notes.py": "576b0e56c7b20d7a059498d99f822e112748a3cea7d4f6db10a1f9e1cfe6d6b8",
+    "train/firstline_note_probe.py": "30874089f3256de2d098efd8e9c100ffcf55a6fde5867b19d15c0280bebc4f57",
+    "train/interface_mixer_probe.py": "d86edd1fcdba3ee5ac824c04acd3cd9304d2420c85fc95fc6252b72ed214a02d",
+    "train/interface_oracle_probe.py": "f4131becd05134eb22bac0ca19c6ec1b308fbd6c835071cf951b73e195172859",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_evaluation.py": "7bade797bc11d8a26e25d296d20e86d7a3bde6de50532318c82993778cf5cfc4",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/warmstart_evaluate.py": "fadd9c469a46c0f9402b01bfb951bd23d26ab18444230163f727a26888eac5f1",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "COMPLETE_NEGATIVE_EXPLORATORY_RESULT"
+}

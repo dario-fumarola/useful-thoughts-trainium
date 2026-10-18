@@ -912,3 +912,27 @@ whole boundary tokens, intact cyclic donors, full/raw/empty controls and origina
 generation costs. Require positive paired lower95% bounds against BOTH raw and
 short unrelated notes. This outcome-informed probe cannot silently change the
 primary128-action writer policy, training data or an old result.
+
+### 2026-10-18 — Preserve failed CPU-BF16 reference; use a high-precision golden reference
+The v2 W qualification fails before updates: one of four contexts exceeds the
+declared .01 KL bound (.010121); all32saved native vectors are finite and replicas
+are byte exact. Asymmetric local failure also strands passing ranks before a
+later rendezvous. Preserve FAIL, all vectors and physical closure; exact owned
+group TERM was needed, with no KILL or effect on the concurrent GSM evaluation.
+
+Three-way comparison on the identical four contexts finds device BF16 within
+.003103 of CPU FP32, whereas CPU BF16 itself differs by .014382. Released BF16
+weights widen exactly; CPU BF16 intermediate rounding is not the accuracy target.
+Declare a new CPU-FP32 golden-reference identity with the SAME .01 bidirectional
+KL bound and unchanged BF16 training/storage. This repair is informed by a failed
+engineering check, not a prospective pass of the old gate. Persist every rank's
+native receipt, collectively agree on failed ranks, and raise uniformly before
+ZeRO initialization. Forward sanity still does not establish gradient equivalence.
+No training or long-run release follows without actual new hardware qualification.
+
+The closed first-line ablation is independently verified negative in both paths:
+shorter notes reduce damage but remain worse than raw and short unrelated notes.
+No main-policy change. Existing genuinely general TRAIN scores contain296unique
+anchors with B0 K1 surprisal>=1.7nats and no held overlap. Prepare a separately
+declared256-document hindsight-label pilot before expanding beyond arithmetic;
+it measures teacher-label feasibility, never prefix-only deployment utility.

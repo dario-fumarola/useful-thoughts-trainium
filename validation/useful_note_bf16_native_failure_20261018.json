@@ -1,0 +1,2039 @@
+{
+  "closure": {
+    "actual_optimizer_updates": 0,
+    "all32_original_worker_identities_absent": true,
+    "all_arms_exit0": false,
+    "all_original_PID_start_identities_absent": true,
+    "arm": "W",
+    "assigned_devices_empty": true,
+    "cancellation_sha256": "98af7544f4b92d08b619bff3ea82e83ecd982b7aa14cdfc20092db8d6e8f2902",
+    "closed_utc": "2026-10-18T07:33:42+00:00",
+    "exit": {
+      "exit_code": 143,
+      "time_utc": "2026-10-18T07:32:53.159651+00:00"
+    },
+    "native_failure_sha256": "0e925c9b27599431a45dcf9898e55b602e05a7b9381a59db0d9bc581e15a5253",
+    "native_gate_failure": "ref0 KL=.010120860996620467 exceeds frozen.01;24ranks pass8fail;all32finite vectors preserved.",
+    "original_identities": [
+      {
+        "argv": "bash /home/ubuntu/dario/local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2/W/launch.sh ",
+        "environment": {
+          "MASTER_ADDR": null,
+          "MASTER_PORT": null,
+          "MKL_NUM_THREADS": "8",
+          "NEURONCORE_NUM_DEVICES": null,
+          "NEURON_CC_FLAGS": null,
+          "NEURON_COMPILE_CACHE_URL": null,
+          "NEURON_LOGICAL_NC_CONFIG": null,
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": null,
+          "NEURON_RT_ROOT_COMM_ID": null,
+          "NEURON_RT_VISIBLE_CORES": null,
+          "OMP_NUM_THREADS": "8",
+          "PJRT_DEVICE": null,
+          "TMPDIR": null,
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": null,
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "3728 kB",
+          "VmRSS": "3728 kB",
+          "VmSize": "7888 kB"
+        },
+        "pgid": 2611844,
+        "pid": 2611844,
+        "ppid": 2598033,
+        "session": 2611844,
+        "start_ticks": 14318577,
+        "state": "S",
+        "stime_ticks": 0,
+        "utime_ticks": 0
+      },
+      {
+        "argv": "timeout --signal=TERM --kill-after=30s 21571s python -u -m train.useful_note_sft_driver --protocol /home/ubuntu/dario/local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2/protocol.json --output /home/ubuntu/dario/local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-W-v2 --arm W --qualify --deadline-utc 2026-10-18T13:27:50.993748+00:00 --stop-file /home/ubuntu/dario/local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2/W/STOP ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "2172 kB",
+          "VmRSS": "2172 kB",
+          "VmSize": "6136 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612036,
+        "ppid": 2611844,
+        "session": 2611844,
+        "start_ticks": 14319265,
+        "state": "S",
+        "stime_ticks": 0,
+        "utime_ticks": 0
+      },
+      {
+        "argv": "python -u -m train.useful_note_sft_driver --protocol /home/ubuntu/dario/local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2/protocol.json --output /home/ubuntu/dario/local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-W-v2 --arm W --qualify --deadline-utc 2026-10-18T13:27:50.993748+00:00 --stop-file /home/ubuntu/dario/local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2/W/STOP ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1142316 kB",
+          "VmRSS": "1119420 kB",
+          "VmSize": "6220248 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612038,
+        "ppid": 2612036,
+        "session": 2611844,
+        "start_ticks": 14319265,
+        "state": "S",
+        "stime_ticks": 190,
+        "utime_ticks": 1095
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=12) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192712 kB",
+          "VmRSS": "1192712 kB",
+          "VmSize": "149443064 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612269,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320094,
+        "state": "S",
+        "stime_ticks": 741,
+        "utime_ticks": 478
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=14) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192208 kB",
+          "VmRSS": "1192208 kB",
+          "VmSize": "149369968 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612272,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320094,
+        "state": "S",
+        "stime_ticks": 1780,
+        "utime_ticks": 476
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=16) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192316 kB",
+          "VmRSS": "1192316 kB",
+          "VmSize": "149369520 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612275,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320108,
+        "state": "S",
+        "stime_ticks": 1765,
+        "utime_ticks": 475
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=18) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1191948 kB",
+          "VmRSS": "1191948 kB",
+          "VmSize": "149369464 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612277,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320108,
+        "state": "S",
+        "stime_ticks": 1752,
+        "utime_ticks": 475
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=21) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192364 kB",
+          "VmRSS": "1192364 kB",
+          "VmSize": "149369844 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612278,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320108,
+        "state": "S",
+        "stime_ticks": 579,
+        "utime_ticks": 478
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=23) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192564 kB",
+          "VmRSS": "1192564 kB",
+          "VmSize": "149369332 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612280,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320108,
+        "state": "S",
+        "stime_ticks": 1631,
+        "utime_ticks": 484
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=27) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192276 kB",
+          "VmRSS": "1192276 kB",
+          "VmSize": "149369584 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612283,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "S",
+        "stime_ticks": 1594,
+        "utime_ticks": 506
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=30) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192556 kB",
+          "VmRSS": "1192556 kB",
+          "VmSize": "149369396 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612284,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "S",
+        "stime_ticks": 1596,
+        "utime_ticks": 487
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=32) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192248 kB",
+          "VmRSS": "1192248 kB",
+          "VmSize": "149369328 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612285,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "S",
+        "stime_ticks": 760,
+        "utime_ticks": 505
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=34) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189440 kB",
+          "VmRSS": "1189440 kB",
+          "VmSize": "149265924 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612286,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1661,
+        "utime_ticks": 485
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=36) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189500 kB",
+          "VmRSS": "1189500 kB",
+          "VmSize": "149265988 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612287,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1619,
+        "utime_ticks": 511
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=38) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189192 kB",
+          "VmRSS": "1189192 kB",
+          "VmSize": "149265604 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612288,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1619,
+        "utime_ticks": 495
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=40) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189396 kB",
+          "VmRSS": "1189396 kB",
+          "VmSize": "149265928 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612289,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1571,
+        "utime_ticks": 515
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=42) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1191808 kB",
+          "VmRSS": "1191808 kB",
+          "VmSize": "149369520 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612290,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "S",
+        "stime_ticks": 584,
+        "utime_ticks": 521
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=44) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189700 kB",
+          "VmRSS": "1189700 kB",
+          "VmSize": "149265800 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612291,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1567,
+        "utime_ticks": 505
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=46) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189732 kB",
+          "VmRSS": "1189732 kB",
+          "VmSize": "149265796 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612292,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1556,
+        "utime_ticks": 500
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=48) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1191944 kB",
+          "VmRSS": "1191944 kB",
+          "VmSize": "149369460 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612293,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "S",
+        "stime_ticks": 683,
+        "utime_ticks": 500
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=50) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189976 kB",
+          "VmRSS": "1189976 kB",
+          "VmSize": "149265800 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612294,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1520,
+        "utime_ticks": 505
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=52) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189928 kB",
+          "VmRSS": "1189928 kB",
+          "VmSize": "149265604 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612295,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1508,
+        "utime_ticks": 502
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=54) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189744 kB",
+          "VmRSS": "1189744 kB",
+          "VmSize": "149265860 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612296,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1505,
+        "utime_ticks": 491
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=56) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192364 kB",
+          "VmRSS": "1192364 kB",
+          "VmSize": "149369392 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612297,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "S",
+        "stime_ticks": 660,
+        "utime_ticks": 502
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=58) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1190156 kB",
+          "VmRSS": "1190156 kB",
+          "VmSize": "149265796 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612298,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320109,
+        "state": "R",
+        "stime_ticks": 1465,
+        "utime_ticks": 500
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=60) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189988 kB",
+          "VmRSS": "1189988 kB",
+          "VmSize": "149265736 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612299,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320110,
+        "state": "R",
+        "stime_ticks": 1445,
+        "utime_ticks": 506
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=62) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189304 kB",
+          "VmRSS": "1189304 kB",
+          "VmSize": "149265668 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612302,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320122,
+        "state": "R",
+        "stime_ticks": 1428,
+        "utime_ticks": 504
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=64) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192488 kB",
+          "VmRSS": "1192488 kB",
+          "VmSize": "149369204 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612303,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "S",
+        "stime_ticks": 667,
+        "utime_ticks": 496
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=67) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189780 kB",
+          "VmRSS": "1189780 kB",
+          "VmSize": "149265664 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612304,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "R",
+        "stime_ticks": 1407,
+        "utime_ticks": 496
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=69) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189980 kB",
+          "VmRSS": "1189980 kB",
+          "VmSize": "149265668 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612307,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "R",
+        "stime_ticks": 1387,
+        "utime_ticks": 501
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=71) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1190156 kB",
+          "VmRSS": "1190156 kB",
+          "VmSize": "149265604 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612308,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "R",
+        "stime_ticks": 1373,
+        "utime_ticks": 499
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=73) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1192672 kB",
+          "VmRSS": "1192672 kB",
+          "VmSize": "149369196 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612309,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "S",
+        "stime_ticks": 644,
+        "utime_ticks": 496
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=75) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1190152 kB",
+          "VmRSS": "1190152 kB",
+          "VmSize": "149265736 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612310,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "R",
+        "stime_ticks": 1346,
+        "utime_ticks": 491
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=77) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189632 kB",
+          "VmRSS": "1189632 kB",
+          "VmSize": "149265732 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612311,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "R",
+        "stime_ticks": 1333,
+        "utime_ticks": 489
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=79) --multiprocessing-fork ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "1189708 kB",
+          "VmRSS": "1189708 kB",
+          "VmSize": "149265668 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612312,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320123,
+        "state": "R",
+        "stime_ticks": 1317,
+        "utime_ticks": 489
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -c from multiprocessing.resource_tracker import main;main(7) ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65421",
+          "MKL_NUM_THREADS": "2",
+          "NEURONCORE_NUM_DEVICES": "32",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65422",
+          "NEURON_RT_VISIBLE_CORES": "0-31",
+          "OMP_NUM_THREADS": "2",
+          "PJRT_DEVICE": "NEURON",
+          "TMPDIR": "/dev/shm/dario/postorder-note-bf16-storage-world32-qualification-W-v2",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2",
+          "XLA_DOWNCAST_BF16": null,
+          "XLA_USE_BF16": null
+        },
+        "memory": {
+          "VmHWM": "12660 kB",
+          "VmRSS": "12660 kB",
+          "VmSize": "20060 kB"
+        },
+        "pgid": 2612036,
+        "pid": 2612268,
+        "ppid": 2612038,
+        "session": 2611844,
+        "start_ticks": 14320094,
+        "state": "S",
+        "stime_ticks": 0,
+        "utime_ticks": 1
+      }
+    ],
+    "other_arms_not_launched": [
+      "Cprime",
+      "T"
+    ],
+    "owned_group_survivors": [],
+    "physical_cleanup_complete": true,
+    "prepared_sha256": "78cd8eaf96f094a3bdf379c11eae11936f009a06723546c86722d77b731c30b2",
+    "propagation_failure": "Per-rank native raise before later shared rendezvous left passed ranks waiting; installedProcessPoolExecutor shutdown waits running work. Root authorized exact ownedW group cancellation.",
+    "protocol_sha256": "20e69219bcdd2e2ab603181d12e59170bf1e2d74a18124ae41eef97d07656e9a",
+    "release_sha256": "aa67a60fdda3ae2f2ab2504a367cc1b6c37113bc769692803a5126a60c549b44",
+    "runtime_log_sha256": "1ef3d7da898b76ac62817d89fc33063efc707b9859d680030901231f3f6d714e",
+    "source_frozen": true,
+    "status": "FAILED_BATCH_NATIVE_GATE_W_ONLY",
+    "termination": "One validated exactPGID TERM at07:32:52; noKILL/retry/othergroup signal.",
+    "topology": [
+      {
+        "bdf": "0000:cc:00.0",
+        "connected_to": [
+          12,
+          3,
+          4,
+          1
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 0,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:b5:00.0",
+        "connected_to": [
+          13,
+          0,
+          5,
+          2
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 1,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:b6:00.0",
+        "connected_to": [
+          14,
+          1,
+          6,
+          3
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 2,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:cb:00.0",
+        "connected_to": [
+          15,
+          2,
+          7,
+          0
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 3,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:6f:00.0",
+        "connected_to": [
+          0,
+          7,
+          8,
+          5
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 4,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          16,
+          17,
+          18,
+          19
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:58:00.0",
+        "connected_to": [
+          1,
+          4,
+          9,
+          6
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 5,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          20,
+          21,
+          22,
+          23
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:59:00.0",
+        "connected_to": [
+          2,
+          5,
+          10,
+          7
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 6,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:6e:00.0",
+        "connected_to": [
+          3,
+          6,
+          11,
+          4
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 7,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          28,
+          29,
+          30,
+          31
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:9b:00.0",
+        "connected_to": [
+          4,
+          11,
+          12,
+          9
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 8,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          32,
+          33,
+          34,
+          35
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:84:00.0",
+        "connected_to": [
+          5,
+          8,
+          13,
+          10
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 9,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          36,
+          37,
+          38,
+          39
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:85:00.0",
+        "connected_to": [
+          6,
+          9,
+          14,
+          11
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 10,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          40,
+          41,
+          42,
+          43
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:9a:00.0",
+        "connected_to": [
+          7,
+          10,
+          15,
+          8
+        ],
+        "cpu_affinity": "0-47,96-143",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 11,
+        "neuron_processes": [
+          {
+            "command": "/home/ubuntu/ema-trainium/.venv/bin/python -u -m train.useful_note_gsm8k generate --output /home/ubuntu/dario/local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1 --shard-index 0 --deadline-utc 2026-10-18T13:30:00+00:00 --device xla",
+            "neuron_runtime_version": "2.34.10",
+            "pid": 2598159
+          }
+        ],
+        "neuroncore_ids": [
+          44,
+          45,
+          46,
+          47
+        ],
+        "numa_node": "0"
+      },
+      {
+        "bdf": "0000:f8:00.0",
+        "connected_to": [
+          8,
+          15,
+          0,
+          13
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 12,
+        "neuron_processes": [
+          {
+            "command": "/home/ubuntu/ema-trainium/.venv/bin/python -u -m train.useful_note_gsm8k generate --output /home/ubuntu/dario/local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1 --shard-index 1 --deadline-utc 2026-10-18T13:30:00+00:00 --device xla",
+            "neuron_runtime_version": "2.34.10",
+            "pid": 2598163
+          }
+        ],
+        "neuroncore_ids": [
+          48,
+          49,
+          50,
+          51
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:e1:00.0",
+        "connected_to": [
+          9,
+          12,
+          1,
+          14
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 13,
+        "neuron_processes": [
+          {
+            "command": "/home/ubuntu/ema-trainium/.venv/bin/python -u -m train.useful_note_gsm8k generate --output /home/ubuntu/dario/local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1 --shard-index 2 --deadline-utc 2026-10-18T13:30:00+00:00 --device xla",
+            "neuron_runtime_version": "2.34.10",
+            "pid": 2598169
+          }
+        ],
+        "neuroncore_ids": [
+          52,
+          53,
+          54,
+          55
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:e2:00.0",
+        "connected_to": [
+          10,
+          13,
+          2,
+          15
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 14,
+        "neuron_processes": [
+          {
+            "command": "/home/ubuntu/ema-trainium/.venv/bin/python -u -m train.useful_note_gsm8k generate --output /home/ubuntu/dario/local/nvme/diagnostics/postorder-gsm8k-train512-B0-v1 --shard-index 3 --deadline-utc 2026-10-18T13:30:00+00:00 --device xla",
+            "neuron_runtime_version": "2.34.10",
+            "pid": 2598172
+          }
+        ],
+        "neuroncore_ids": [
+          56,
+          57,
+          58,
+          59
+        ],
+        "numa_node": "1"
+      },
+      {
+        "bdf": "0000:f7:00.0",
+        "connected_to": [
+          11,
+          14,
+          3,
+          12
+        ],
+        "cpu_affinity": "48-95,144-191",
+        "instance_id": "i-093530c991697e3c2",
+        "instance_type": "trn2.48xlarge",
+        "logical_neuroncore_config": 2,
+        "memory_size": 103079215104,
+        "nc_count": 4,
+        "neuron_device": 15,
+        "neuron_processes": [],
+        "neuroncore_ids": [
+          60,
+          61,
+          62,
+          63
+        ],
+        "numa_node": "1"
+      }
+    ]
+  },
+  "created_utc": "2026-10-18T07:35:12+00:00",
+  "decision": "Preserve original FAIL. Inspect high-precision reference suitability and uniform all-rank failure consensus before any new identity; no threshold relaxation or launch from this report.",
+  "experiment_id": "postorder-note-bf16-storage-world32-qualification-v2",
+  "independent_root_full_vector_and_KL_audit": {
+    "all32vectors_checked": true,
+    "max_absolute_KL_difference_tolerance": 1e-12
+  },
+  "limitations": [
+    "BF16 device being closer to FP32 on four contexts is a diagnostic, not a training, gradient or recovery qualification.",
+    "CPU-BF16 reference selection was made before hardware; new-reference investigation is informed by this failed engineering check.",
+    "One exact owned-group TERM was needed after asymmetric local failures stranded remaining workers; no KILL, no other workloads affected."
+  ],
+  "original_gate": "Every reference full-head both normalizedFP64 KL directions<=.01 vs canonical CPU BF16; finite and actual BF16 hidden/head.",
+  "precision": "BF16 parameters/gradients/compute; FP32 rotary buffers and planned FP32 optimizer masters",
+  "provenance": {
+    "archive": "local/backups/diagnostics/postorder-note-bf16-storage-world32-qualification-v2/ARCHIVE.json",
+    "archive_sha256": "7f64aac7ddaed0f6470b19b094e3ab8f88bac321eccccec6d597625fe15439bf",
+    "files": 173,
+    "prepared_sha256": "78cd8eaf96f094a3bdf379c11eae11936f009a06723546c86722d77b731c30b2",
+    "release_sha256": "aa67a60fdda3ae2f2ab2504a367cc1b6c37113bc769692803a5126a60c549b44"
+  },
+  "result": {
+    "Cprime_launched": false,
+    "T_launched": false,
+    "all_eight_replica_vectors_per_reference_byte_exact": true,
+    "failed": 8,
+    "finite_vectors": 32,
+    "passed": 24,
+    "ranks": 32,
+    "references": [
+      {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T07:29:40+00:00",
+        "failure": "Bidirectional KL or actual BF16 dtype does not meet the declared native contract",
+        "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.009541294633390653,
+          "max_bidirectional_kl_nats": 0.010120860996620467,
+          "max_logp_error": 0.9432557579240459,
+          "passed": false,
+          "reference_to_device_kl_nats": 0.010120860996620467,
+          "relative_l2_logp_error": 0.007171126783867557,
+          "rms_logp_error": 0.20710971828453656
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-storage-native-v1",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "20e69219bcdd2e2ab603181d12e59170bf1e2d74a18124ae41eef97d07656e9a",
+        "rank": 0,
+        "reference_index": 0,
+        "status": "FAILED_NATIVE_GATE"
+      },
+      {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T07:29:40+00:00",
+        "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00846700498470061,
+          "max_bidirectional_kl_nats": 0.008617537717419136,
+          "max_logp_error": 0.6911305575367592,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.008617537717419136,
+          "relative_l2_logp_error": 0.007368583290293447,
+          "rms_logp_error": 0.14051555912709668
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-storage-native-v1",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "20e69219bcdd2e2ab603181d12e59170bf1e2d74a18124ae41eef97d07656e9a",
+        "rank": 1,
+        "reference_index": 1,
+        "status": "PASS"
+      },
+      {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T07:29:45+00:00",
+        "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 1.7673532699554137e-05,
+          "max_bidirectional_kl_nats": 1.7673532699554137e-05,
+          "max_logp_error": 0.3736205264027568,
+          "passed": true,
+          "reference_to_device_kl_nats": 1.733572140537112e-05,
+          "relative_l2_logp_error": 0.003554334138494677,
+          "rms_logp_error": 0.0985368430875448
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-storage-native-v1",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "20e69219bcdd2e2ab603181d12e59170bf1e2d74a18124ae41eef97d07656e9a",
+        "rank": 2,
+        "reference_index": 2,
+        "status": "PASS"
+      },
+      {
+        "actual_head_dtype": "torch.bfloat16",
+        "actual_hidden_dtype": "torch.bfloat16",
+        "actual_nonfinite_values": 0,
+        "created_utc": "2026-10-18T07:29:40+00:00",
+        "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291",
+        "native_check": {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0025021237270147056,
+          "max_bidirectional_kl_nats": 0.0025021237270147056,
+          "max_logp_error": 0.49440131633686946,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0024562229238621874,
+          "relative_l2_logp_error": 0.005190772642673178,
+          "rms_logp_error": 0.095739957757519
+        },
+        "parameter_dtype": "bf16",
+        "precision_contract": {
+          "autocast": false,
+          "compute_dtype": "bf16",
+          "diagnostics_only": [
+            "max_logp_error",
+            "rms_logp_error",
+            "relative_l2_logp_error",
+            "argmax_equal"
+          ],
+          "floating_buffer_dtype": "fp32",
+          "gradient_dtype": "bf16",
+          "higher_cc_precision": false,
+          "log_softmax_dtype": "fp32",
+          "max_bidirectional_kl_nats": 0.01,
+          "normalization": "independent_FP64_logsumexp",
+          "optimizer_dtype": "fp32",
+          "parameter_dtype": "bf16",
+          "reduce_scatter_input_dtype": "bf16",
+          "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+          "schema": "useful-note-bf16-storage-native-v1",
+          "support": "full_released_head",
+          "use_grad_acc_hook": false
+        },
+        "protocol_sha256": "20e69219bcdd2e2ab603181d12e59170bf1e2d74a18124ae41eef97d07656e9a",
+        "rank": 3,
+        "reference_index": 3,
+        "status": "PASS"
+      }
+    ],
+    "updates": 0
+  },
+  "schema": "useful-note-BF16-native-failure-20261018",
+  "status": "FAILED_NATIVE_GATE_ZERO_TRAINING_UPDATES",
+  "three_way_diagnostic": {
+    "CPU_BF16_vs_device_BF16": {
+      "KL_u_v": [
+        0.0101208609966204,
+        0.008617537717419289,
+        1.7335721405369533e-05,
+        0.0024562229238623244
+      ],
+      "KL_v_u": [
+        0.009541294633390715,
+        0.008467004984700436,
+        1.767353269955575e-05,
+        0.0025021237270145755
+      ],
+      "argmax_same": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_logp_error": [
+        0.9432557579240459,
+        0.6911305575367557,
+        0.3736205264027568,
+        0.49440131633686946
+      ]
+    },
+    "CPU_FP32_vs_CPU_BF16": {
+      "KL_u_v": [
+        0.013507427545662256,
+        0.002681144867237221,
+        1.990001469961299e-06,
+        0.0017736097179241678
+      ],
+      "KL_v_u": [
+        0.014381870882976155,
+        0.002713456528617127,
+        1.9969315952823456e-06,
+        0.0017452715823399207
+      ],
+      "argmax_same": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_logp_error": [
+        0.892772432286403,
+        0.5277851680641596,
+        0.27433568239892026,
+        0.4483022979351716
+      ]
+    },
+    "CPU_FP32_vs_device_BF16": {
+      "KL_u_v": [
+        0.0030378865575203112,
+        0.003069616954946522,
+        2.109949548761569e-05,
+        0.00032437941619179855
+      ],
+      "KL_v_u": [
+        0.003103360267386316,
+        0.0030417233499613304,
+        2.1569687933851082e-05,
+        0.0003259131955918092
+      ],
+      "argmax_same": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "max_logp_error": [
+        0.47764882619677707,
+        0.3318310309520882,
+        0.1998841329442662,
+        0.24534828597982283
+      ]
+    },
+    "created_utc": "2026-10-18T07:32:30+00:00",
+    "same_four_contexts": true,
+    "status": "DIAGNOSTIC_ONLY_OLD_NATIVE_GATE_REMAINS_FAILED"
+  }
+}

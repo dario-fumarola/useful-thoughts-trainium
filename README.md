@@ -33,6 +33,11 @@ hurt**: own−raw is −7.490 [−8.173,−6.840] nats with re-anchoring and
 both paths; 242 of 256 notes hit the 128-action cap. Empty controls, absolute
 likelihoods, all 3,072 cells and examples are retained in the
 [complete generated-note baseline](validation/postorder_held256_B0_20261018.json).
+An exploratory first-line truncation probe also fails: shortening improves over
+the long notes, but still loses to raw and shortened unrelated notes. I3 own−raw
+is −5.064 [−5.618,−4.525] nats and own−other −1.388 [−1.873,−.903].
+All 256 documents, absolute controls, fixed-mixer results and complete cells remain
+in the [truncation result](validation/postorder_firstline_note_held256_20261018.json).
 
 Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
@@ -60,8 +65,13 @@ weighting to avoid confusing anchor emphasis with note utility.
 [Verified data inventory](validation/reader_learning_compound5120_data_20261018.json) ·
 [Native label recipe and examples](validation/postorder_symbolic_candidate_inventory_20261018.json).
 Two-update BF16-compute hardware checks passed for T; W and C ran out of memory
-with FP32 model storage. A new BF16-storage path will retain FP32 optimizer masters
-and preserve FP32 positional buffers. Scientific SFT awaits that qualification;
+with FP32 model storage. A new BF16-storage path retains FP32 optimizer masters
+and positional buffers; its [CPU checks pass](validation/useful_note_bf16_storage_cpu_20261018.json).
+Hardware qualification stopped before updates at its native-reference tolerance.
+Device BF16 was closer to CPU FP32 than the CPU BF16 reference was; an explicit
+high-precision reference repair retains the same KL bound and the
+[original failure](validation/useful_note_bf16_native_failure_20261018.json).
+Scientific SFT awaits qualification;
 official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
