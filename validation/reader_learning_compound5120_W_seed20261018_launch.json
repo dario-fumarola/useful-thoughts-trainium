@@ -1,0 +1,527 @@
+{
+  "schema": "compound5120-W-science-launch-v1",
+  "status": "ACTIVE_NOT_A_SCIENTIFIC_RESULT",
+  "created_utc": "2026-10-18T09:48:04.707395+00:00",
+  "run_id": "postorder-reader-learning-compound5120-W-seed20261018-v4r2",
+  "design": {
+    "arm": "W",
+    "fresh_B0": true,
+    "resume": false,
+    "unique_TRAIN_documents": 5120,
+    "epochs": 2,
+    "updates": 320,
+    "seed": 20261018,
+    "world_size": 32,
+    "gradient_accumulation": 1,
+    "global_batch": 32,
+    "logical_cores": "0-31",
+    "physical_devices": "0-7",
+    "objective": "Mean note CE + mean natural-next16 reader CE + 0.5 mean raw-source CE. Prefix-only student; symbolic labels may use future data.",
+    "parameter_and_gradient_storage": "BF16",
+    "optimizer_masters_and_moments": "FP32",
+    "soft_deadline_utc": "2026-10-18T21:42:24.725109+00:00",
+    "hard_deadline_utc": "2026-10-18T21:57:24.725109+00:00",
+    "terminal_primary": true,
+    "development_checkpoint": 64,
+    "comparators": "Cprime/T from fresh B0, same documents, order and updates; unequal labels, tokens and compute.",
+    "endpoints": "Terminal320 primary; everyterminal evaluated regardlesssign on arithmetic/generalDEV256 B0+self raw/empty/own/intactother/oracles and GSMTRAIN512direct/empty/one-thought withunsupported. No officialTEST."
+  },
+  "initial_hardware_checks": {
+    "all32_initial_master_samples_exact": true,
+    "all32_native_PASS": true,
+    "all32_native_consensus_PASS": true,
+    "all32_native_hidden_head_BF16": true,
+    "created_utc": "2026-10-18T09:46:13+00:00",
+    "first_live_sha256": "95343be60a29076c2d47030b4d1e73421c27edeff00dfcd5da94eef4f11b8540",
+    "initial_master_receipts": {
+      "initial-master-rank-00000.json": "62b40da1c3bfd1f97f408bfb9b954bbe4326cb8eb078e031f2f095213998388f",
+      "initial-master-rank-00001.json": "c359f8d386444f8dcbf83c2a932c9ca1c50a3869d6e035894481e854694ef7a6",
+      "initial-master-rank-00002.json": "3fe7d97da9a26e5454c0ae3d3430ff8142fa0aece8a476e9ddfd53836a88cd65",
+      "initial-master-rank-00003.json": "5b74bce130fa45cd0434c51b6e875496f0a6adb8a5fc158c2f59fd4090ad35e0",
+      "initial-master-rank-00004.json": "e66db8156dd2f9ef3747f013e79f1bfd45c54e696acb299b8803ba222329b613",
+      "initial-master-rank-00005.json": "1fa73af782a4a3ca70aa8bfbe595fa8935bbe415b4c2596119657b9a53ebaf4a",
+      "initial-master-rank-00006.json": "8df011a14676185994d63eff14c3cb0ef07fdb05d2e640c392d15eba952ceab4",
+      "initial-master-rank-00007.json": "069d1ae197ac555f6a4ed141a738f6daad96cd5362f8994cdffa1bf0234fde06",
+      "initial-master-rank-00008.json": "c90e87a87b043fc312481fecf875a0e5c298e6c6f15259c5fef00d74988658e5",
+      "initial-master-rank-00009.json": "2e7317179c377603e19905e4b319e72f9c3da3afe945a2bb6ddeccda4b9ae4ba",
+      "initial-master-rank-00010.json": "400d816d9502bdb366676b8b192d18551ac8d169d42e7dbfde1ffde960a8af35",
+      "initial-master-rank-00011.json": "aee4362d0cbd1aa41049f0428dc9e957455edfd67ec4c2a07668535a79e558a2",
+      "initial-master-rank-00012.json": "6ba7c54cd01685b93c3782a4caab14bf9dee7a8fb36925b75e9912169b2562ae",
+      "initial-master-rank-00013.json": "5e80a5a4316b5ef455fb8c87bf29840410c881679bf7038db3398e260b90597b",
+      "initial-master-rank-00014.json": "032d6b3f57620f5b337212454aa91d15d79d8bb4c6b83a063e2921c5e23c1eae",
+      "initial-master-rank-00015.json": "44516e81569093e4e49884c634f5f6c3de57d65169242a41b0fcab99885e6ed7",
+      "initial-master-rank-00016.json": "389f1302c5c36e9b105db4f3332fd3553057cc1812cd5fa5c0f33ec87838b191",
+      "initial-master-rank-00017.json": "a31ff3d7e5abef405a1ac2e54e1f294b7eb4ab4f6edfea107b73712c20e05293",
+      "initial-master-rank-00018.json": "c1bb656d2fb814f253e376fc9cb72bead846dc5d010eed4c9c4676e0e6427e28",
+      "initial-master-rank-00019.json": "d926f35e88ec2011843c69582348961f4775a9f24197efef5be546f3e97e0cab",
+      "initial-master-rank-00020.json": "c061ce0fd671780299337337368b8f94ebeac113939a95e35071c007254622cc",
+      "initial-master-rank-00021.json": "057ba9fab2e9531b39c1220e1b4cdeaf40e1356025bc0de639ead2442388d2ab",
+      "initial-master-rank-00022.json": "c8b2aec7c2218c820460fa1a45361a581f39375b15d05568d0ef717fac5bafe6",
+      "initial-master-rank-00023.json": "0ae555e23eec0167e526c227dd863ddeb0eea97a799845bc61f0e8207467fa52",
+      "initial-master-rank-00024.json": "c17b8a2fa3d82e5926392d5f736cc978bcea8390e8367953596ecc39c76872a0",
+      "initial-master-rank-00025.json": "1d49f34a98b43969d581d243c6c17166f5fe8fb11660c964f9c2c70ce4c57974",
+      "initial-master-rank-00026.json": "40e10dc12e30a83b9c919a1ec0b0fd638b9b34aef492fc20e1b702fb03aad9ff",
+      "initial-master-rank-00027.json": "59cc38ca58a7040f5f8866368512411c2eb52313fde5bad2f55417b878aed1dc",
+      "initial-master-rank-00028.json": "2cf4892d88a53b540fa8f5f9bb5dcf2e5bcf57efebf34ae33dc542b1b62010f6",
+      "initial-master-rank-00029.json": "bc7d5ae847dfcaaa2e4610ab21876689c61758c3c8accb5f3a63fd50974788a0",
+      "initial-master-rank-00030.json": "c99c28d47db5ed2df3c9abc826a71edb87dd62fffdea3d5b59e9baba74281594",
+      "initial-master-rank-00031.json": "86a5a0fb6c3fa2422ce2f7b118a88e4191637089d44580a08c997ca3c8e68521"
+    },
+    "launcher_environment_caveat": "First live all_task_environment_exact=false reflects launch shell proc initial environment before exports only; timeout/driver/all32 workers match allocation policy exactly. Original first-live receipt preserved.",
+    "mapping_sha256": "13e88ec98bf47ae5248950276941db26b5153af7570ec923ffa6e04a8b0bfe94",
+    "native_consensus_receipts": {
+      "native-consensus-rank-00000.json": "c49e91c4ebf7dff66cf2c229c8eb8691191fea08d04c52fd4ade4b87bf3a20b3",
+      "native-consensus-rank-00001.json": "0779f0215e6d9b80e1fa0fa6b077bca235956c64a80f7989f5b03d143ffa7316",
+      "native-consensus-rank-00002.json": "c2aa6e220648ee1f5022b6b4c2165e2e4f3dbb670fdd2f717d48fd0f27284edf",
+      "native-consensus-rank-00003.json": "a8c0186fd330d9b1a5ebc02df6f40d8ac414bfefe74aecdf8d0d6ee64e7f37ad",
+      "native-consensus-rank-00004.json": "5391f14cf13038c7b073bb2da3fac4275f424dd634599b27c22b950f285abf75",
+      "native-consensus-rank-00005.json": "572ea61e1102aa4047a07edded584d218d498839eb7b9587a99eae3de77fcba6",
+      "native-consensus-rank-00006.json": "1bb751eb0931b62a3ce4e2872b9737f3a417f72ae10c954017cb0f61ba4ae61f",
+      "native-consensus-rank-00007.json": "2f90dcc69cd18c04f965ec18eee144efce6f36c8ad8e4289ace8ffa1642ac2d8",
+      "native-consensus-rank-00008.json": "8e4276c236425085da8efce6bdc12b7e5ea2ca1f7e64a44298e14382d357f254",
+      "native-consensus-rank-00009.json": "e019af6fd35733a2db8b4dc425905304ac27823a94b38b29c5d9f65afb413d38",
+      "native-consensus-rank-00010.json": "5f052561bd77ee85d14b7aaa29c51effaaced07173fbfaff4a56bb72b15dd418",
+      "native-consensus-rank-00011.json": "96b8c2ba7b46501e77c9f1126a18407de9a221e2a230f2174c470970e8fa6093",
+      "native-consensus-rank-00012.json": "f76ffe9b62a0a71e25344f86e3f3c7072d945fdffded5b8809354b1f3a583ad7",
+      "native-consensus-rank-00013.json": "eb36e395c7c30a3334afbf3f24e5c3ffd54cbba1d4f76fb67844c8ea3cf1bc7b",
+      "native-consensus-rank-00014.json": "a4fe36d71d59da4f29cfcc9fda06c19f455fdb8c2ca4d8dae27565b6c5360d67",
+      "native-consensus-rank-00015.json": "5135534d4c719430fe13aebbc7eabe77e202edc2c72320e01feeb1b694a63451",
+      "native-consensus-rank-00016.json": "2a713ec9d63332dcc7a4fe04ed4603ef2179d09bb920b53864c63140c6ca7f04",
+      "native-consensus-rank-00017.json": "60aea00a7745441e93998eb5f0c97ba2327219661bfc55d66ccb96573d03a387",
+      "native-consensus-rank-00018.json": "27d9ba4829dc048b2385d41bca104de9d272a1058d0ae77e485300bfdcc1666f",
+      "native-consensus-rank-00019.json": "70d29e3c9081afba516355d9c280de86e17dc59a03d8de454e59e184890500cf",
+      "native-consensus-rank-00020.json": "318ab8f8f8f4b07c74b045fd2665e4bb739d5bdf401d7d9af216f8699563aab5",
+      "native-consensus-rank-00021.json": "7097b02a77c7f45b29fbf5cfdb2260c78c59b0df2dbd7896f42c150560874f9b",
+      "native-consensus-rank-00022.json": "97f7d6a58a3820af109adec2d7f5dd17cab4ed1dbaccf0efd775eda5f4709766",
+      "native-consensus-rank-00023.json": "3e0fcb8903b1e57761924e362728c4b654ba204acf38ff24d066a16f50a45680",
+      "native-consensus-rank-00024.json": "9d7c4816a1fea5ac9b4c79f43cb627c266df237192f4e6253d564b4d38769665",
+      "native-consensus-rank-00025.json": "31dee2d60df76a9abdd9b4fe942a7c2628e5ee6920497515eb4b19947aacdfcb",
+      "native-consensus-rank-00026.json": "e9be5d0dd278ac8cbe385f956501e923b43565a6b42ff21de99885452c03308b",
+      "native-consensus-rank-00027.json": "f29d9c41819d1fd3ab00fc8859211a87136016714bb5b35d80e19fda1c9c06a5",
+      "native-consensus-rank-00028.json": "f963dcf8154a019a7c732d29b73cc90c88dd58e0f145b2911ae3694effc50f94",
+      "native-consensus-rank-00029.json": "41bada6b7f7e402a04811990925cc2a88af9da766929906ee8b37e53d0537ab9",
+      "native-consensus-rank-00030.json": "f6c8de3a0fd7f9839198797cdd217cf3bed7a16284e717f615ea24846e7bc717",
+      "native-consensus-rank-00031.json": "99ee65e6b082de9e78c69cb19c0c0b33cfabfcbbb2fc68c9c6dbbfaa8671d51c"
+    },
+    "native_gate_receipts": {
+      "qualification-rank-00000.json": "6a0e4e8e500fe72675a82406581743ec8a4589ebe5a2a320f2e115ddea755b75",
+      "qualification-rank-00001.json": "3c71b57cbd690bc7f6a32cb15ca70901ac342dc03c82da531f528b969dbbd2fa",
+      "qualification-rank-00002.json": "de80001eebfe113d99ebaa8698f7501b1598d0c35909d7b6bd36ae298576ed3d",
+      "qualification-rank-00003.json": "40d1d6c96c2fb4591164dc6db2ea2bd951b3a4b07f525aa1548a1b4b9f73477c",
+      "qualification-rank-00004.json": "d06c7db5c5bd99ed800884e08bf24e7a85d354000f9bd4a00bd2dd9777a2e760",
+      "qualification-rank-00005.json": "7f440a8f05cfbeffc0138d5fa29afaf72a5b93c50e1b514f0d6bfe7b42c61a62",
+      "qualification-rank-00006.json": "551cb87ff1c06ba6e54be5e963d4c7e5212b44ada6830a69fbf5aedcecca91d0",
+      "qualification-rank-00007.json": "c609ddaee2cd5972349f2bd4204b11a9f41f6579d8edcaaf72e3b49a47e121d1",
+      "qualification-rank-00008.json": "159c9782c1bbef651bf5aff6423376ec61693d557bae9335408d78e9c615631e",
+      "qualification-rank-00009.json": "a8e02630b41fa4557e5acbc56a6bd291bc2b4d0a5062c7d6dc3e073299d396f4",
+      "qualification-rank-00010.json": "ec278c73ff0ce274461b7434ce3ba9f2aa6ad74c24142e2897196443e1045ac6",
+      "qualification-rank-00011.json": "8bc69b5a9753c0e5ecbff6649b717739443de7b9be39a41a7548739524da8db0",
+      "qualification-rank-00012.json": "77ac96581d10284c4c1b6def583be5018ba59cfe2c305e35b386a9cf676e51b3",
+      "qualification-rank-00013.json": "49f6e819ecbcdf397d82faaca6a90ef7016eb939afa0e0bc1b1a5283a83add10",
+      "qualification-rank-00014.json": "993e13465b3b0ba95599e430d6c70f0acd869f45211849f17eb571751f449841",
+      "qualification-rank-00015.json": "4e9800997d35b80755bb8ae33512e5bacae898ed3787e315b41debb06ffa22fc",
+      "qualification-rank-00016.json": "b79f4df3d29927acdaee104c94ffc87670d487ec04a45bdeb92faf3708be098f",
+      "qualification-rank-00017.json": "d253a4c71bfaee1f774f7da78e05f6cd8e7159b6f6acf4ff68bd0f036fb797c0",
+      "qualification-rank-00018.json": "d834852fae2b4800b7c3309deed52847c3a60e8e48295b6843cebdcf7a04cfc3",
+      "qualification-rank-00019.json": "7d79d319c0b500dee95876bcdab1b33b0c3cf21882f0a8593545facdc338df55",
+      "qualification-rank-00020.json": "2b46c24362df47d823f1e998c43fe483c950cfcf1aeba63eeea2e726a93bf534",
+      "qualification-rank-00021.json": "d2ed55b6a44732e7aa3a86c6fa403ab3901e3d98a6395935dd360da2efc958c4",
+      "qualification-rank-00022.json": "6a600d20a083cf103fe8e87a45832210670c914ee88c681c0c523f9db9c008aa",
+      "qualification-rank-00023.json": "4bca38d900115e68167922670c00d9f57d93b83c10f145030a6bcee9a9942084",
+      "qualification-rank-00024.json": "5e0d62de36b1780a41de302f959dc6c293e100a8fcdca2f244a8c7fcc1f2f691",
+      "qualification-rank-00025.json": "64324f0c15decaafa8b67b17357d6dfec92c285d13a419b5b47cd345d459d331",
+      "qualification-rank-00026.json": "6946f451165c0e53ea5d6e648a891c34e834930aaf144358dca1630c4d6639b0",
+      "qualification-rank-00027.json": "d39d11defd9375ead05eea5904242d83c82a4c067c2db695ad7a90c69d516d03",
+      "qualification-rank-00028.json": "8a8b3134eb5f436be0e330bb2e342b704017f054f54dafa842542227500cf8ab",
+      "qualification-rank-00029.json": "5070df789296ada7c96b5f4527dd9f2e358468feba80e5845ef577cc1d926bc7",
+      "qualification-rank-00030.json": "0f119721c8a885ef61652c94ab2bd695a7f5330dd6e045c6aff3c5b55d0770ae",
+      "qualification-rank-00031.json": "63da62abd8f3f791688170c9cde6c2385dc08e88b06e7e1b650892df4fbe08d7"
+    },
+    "native_max_bidirectional_KL": 0.0031035199827923296,
+    "native_per_reference": {
+      "0": {
+        "max_bidirectional_kl_nats": 0.0031035199827923296,
+        "ranks": 8
+      },
+      "1": {
+        "max_bidirectional_kl_nats": 0.0030697297315727835,
+        "ranks": 8
+      },
+      "2": {
+        "max_bidirectional_kl_nats": 2.157230339493209e-05,
+        "ranks": 8
+      },
+      "3": {
+        "max_bidirectional_kl_nats": 0.000325946147481554,
+        "ranks": 8
+      }
+    },
+    "processes_sha256": "0019a2da709759a94424a1363f5b8fe1b0595327a49f7d77bb8da7114973e63f",
+    "protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+    "release_sha256": "9d7dbc9ed7b56d43284fbf2dde3e46ad273a28f76973bad869c83157ee447429",
+    "run_id": "postorder-reader-learning-compound5120-W-seed20261018-v4r2"
+  },
+  "initial_updates": [
+    {
+      "step": 1,
+      "time_utc": "2026-10-18T09:45:47+00:00",
+      "elapsed_seconds": 60.45406720499159,
+      "lr": 5.000000000000001e-07,
+      "components": {
+        "source": {
+          "loss": 1.3680859804153442,
+          "labels": 16864,
+          "real_input_tokens": 16896,
+          "trunk_slots": 17376,
+          "head_slots": 17408,
+          "rank_seconds": 728.7373657226562
+        },
+        "writer": {
+          "loss": 1.8630448579788208,
+          "labels": 1481,
+          "real_input_tokens": 14216,
+          "trunk_slots": 20448,
+          "head_slots": 4096,
+          "rank_seconds": 277.0972900390625
+        },
+        "reader": {
+          "loss": 1.1994521617889404,
+          "labels": 512,
+          "real_input_tokens": 15131,
+          "trunk_slots": 22496,
+          "head_slots": 512,
+          "rank_seconds": 259.9855041503906
+        },
+        "augmented": {
+          "loss": 0.0,
+          "labels": 0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0,
+          "head_slots": 0,
+          "rank_seconds": 0.0
+        },
+        "continuation": {
+          "loss": 0.0,
+          "labels": 0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0,
+          "head_slots": 0,
+          "rank_seconds": 0.0
+        }
+      },
+      "gradient_norm": 36.12503433227539,
+      "sampled_update_l2": 5.624433470075019e-06,
+      "sampled_changed_fraction": 0.005241935607045889,
+      "sampled_replicas_bitwise_equal": true,
+      "sampled_fp32_master_update_l2": 5.259124009171501e-05,
+      "sampled_fp32_master_changed_fraction": 0.9844348430633545,
+      "sampled_active_model_matches_cast_master": true,
+      "parameter_dtype": "bf16",
+      "gradient_dtype": "bf16",
+      "master_moment_dtype": "fp32",
+      "optimizer_rank_seconds": 197.42623901367188,
+      "compute_dtypes_before_float": {
+        "first_q_proj": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        },
+        "head_before_float": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        }
+      },
+      "counters": {
+        "source_records": 32,
+        "source_tokens": 16896,
+        "sampled_actions": 0,
+        "labels": {
+          "source": 16864,
+          "writer": 1481,
+          "reader": 512,
+          "augmented": 0,
+          "continuation": 0
+        }
+      },
+      "dense_checkpointed_matmul_proxy_operations": 734929769201664,
+      "proxy_excludes": "Quadratic attention, lookup/normalization, optimizer, collectives and data/cache I/O; not measured FLOPs.",
+      "complete_ordered_passes": 0,
+      "ordered_item_ids": [
+        "bc2bad0a79c1c44ef176fcc7373b45fd2301cd80ad8d46aff40d5767eaf911c2:compound-priority-v1:162",
+        "891fc886b2e1b9efbcea77fa3fa91d75537540d409bf4a9684e09895cd96fb37:compound-priority-v1:195",
+        "0a38277baae46560cca26b9cc46af0ba7ac068dff57a12435ebf92f9f2538d8d:compound-priority-v1:213",
+        "7f03b06e0e55592187981f186364fba09b987c01ce44d43b25c099e3b6051d36:compound-priority-v1:228",
+        "1481de1478561f497077583d0c8463308b2c36a307a1ca077c231b69844e804d:compound-priority-v1:480",
+        "3835387aba0024a3dbe15c9b1afc367b8f7f1674d3fb6092adb1da040f51b0bc:compound-priority-v1:1980",
+        "f9fc9a187af726842e637ea22c7fdfd71b684aaf037c535d373db957e7a79af8:compound-priority-v1:422",
+        "8321332bbb92b4f0c819a65407281ad4fdf1fd59708c3cd9e2e1a7672471da3e:compound-priority-v1:416",
+        "f4202e97bd536ce178ab6782f4a95225871660487c1744dd366b2259609d1dc0:compound-priority-v1:334",
+        "08fae5d75de2fbd3f5c2c39480411d702b3412bf7ae3f54ee3c290109bc7b7b0:compound-priority-v1:1106",
+        "b734c3596f36b4d83ee966e4318a07a2c1f67e2d34841b78ade462fd93bce347:compound-priority-v1:1878",
+        "3a2b7600d8cbfe4166043f2c13b48f5b12990517e6dd2435314debceff34dea6:compound-priority-v1:878",
+        "c500b17a9f112f8a3a1dbf4dfa4b6d5c9e5bf71cd97cc18c63c03f9652c56763:compound-priority-v1:1055",
+        "ad3893e967bda86929b8c0d1dcbc2a243184102066e162854364cd87183d1997:compound-priority-v1:1093",
+        "7747f8538a25748bdeb366ac2297da8052dfd589ce51fa2b26b27406e4f7690b:compound-priority-v1:784",
+        "2388a2f917bf8205dffcbd2e86c225c4e6842a63441aac8cef1ea7aacf78803b:compound-priority-v1:139",
+        "bbeb565dd30bce49e5dc0b5544a5acc2efc7713c892129bd917f2add647799e3:compound-priority-v1:818",
+        "3e625ba48b2162a53366f235ddd54def9817f7abc00859ca891ad4920f8acf41:compound-priority-v1:5001",
+        "26ec4d439ec5cd1326ea817529a67217a3b7648ad323bf634e571d9bb6339aee:compound-priority-v1:355",
+        "7b4f5df88cd74b9e0079ac2b3a82daa5df7a079c6694bab67ef83bc95d5a4a50:compound-priority-v1:3854",
+        "e57d957451646af2bba4bb5caaea1c0ceb596bdfbe805b432e2618593e350e3f:compound-priority-v1:421",
+        "9f5a14e15b66f6952fcabc699477e7f503a5f2514006e707d880ce276f99d088:compound-priority-v1:240",
+        "02ba95400530ad0c36baf22d3b47e363116e5418f6e394b5cf7cba9a86b129b8:compound-priority-v1:508",
+        "e568ae423503b765c19c1b838c38cb4b9248eb6452205e339d83518f2b8a308a:compound-priority-v1:137",
+        "0beb2a47583a096b71f9bead89a3c309fe17a689a08b24b2337b9c49970803ce:compound-priority-v1:3584",
+        "2ef289c15df72f02be2c8aaab0014004dff7cf179b2a100a39802220ede39964:compound-priority-v1:519",
+        "b1f3f658cc989a24a67611ea64ca7e30c3c5f2590a427e2151562af7467293c0:compound-priority-v1:2455",
+        "dc140a3e3aa18d2c859a09e89e3b107547638a7e0d6cc914bd8e5dbed8ff8bfb:compound-priority-v1:515",
+        "b5f3e9b739e5c26851ca83aa5770e961e6d3e10904a64c5557dc38dfe576a078:compound-priority-v1:4231",
+        "8b194b979e0a6fa98ceed32c47900b2807cb6be025a303b91a87cc8a97ae2e40:compound-priority-v1:136",
+        "68a12236d6da40affcc87889df700bea62daf8fbc1d5de1ee30b75c281de1a42:compound-priority-v1:444",
+        "3fae4abc5a4d2da9368fbdf865abaa811f05146d184093b877a83e794718b95f:compound-priority-v1:2027"
+      ]
+    },
+    {
+      "step": 2,
+      "time_utc": "2026-10-18T09:46:49+00:00",
+      "elapsed_seconds": 62.094117703003576,
+      "lr": 1.0000000000000002e-06,
+      "components": {
+        "source": {
+          "loss": 1.3176002502441406,
+          "labels": 16864,
+          "real_input_tokens": 16896,
+          "trunk_slots": 17376,
+          "head_slots": 17408,
+          "rank_seconds": 699.8323974609375
+        },
+        "writer": {
+          "loss": 1.8750205039978027,
+          "labels": 1404,
+          "real_input_tokens": 15251,
+          "trunk_slots": 20448,
+          "head_slots": 4096,
+          "rank_seconds": 258.94757080078125
+        },
+        "reader": {
+          "loss": 1.3037110567092896,
+          "labels": 512,
+          "real_input_tokens": 16170,
+          "trunk_slots": 22496,
+          "head_slots": 512,
+          "rank_seconds": 278.02239990234375
+        },
+        "augmented": {
+          "loss": 0.0,
+          "labels": 0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0,
+          "head_slots": 0,
+          "rank_seconds": 0.0
+        },
+        "continuation": {
+          "loss": 0.0,
+          "labels": 0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0,
+          "head_slots": 0,
+          "rank_seconds": 0.0
+        }
+      },
+      "gradient_norm": 33.64877700805664,
+      "sampled_update_l2": 1.2075237464159727e-05,
+      "sampled_changed_fraction": 0.006754032336175442,
+      "sampled_replicas_bitwise_equal": true,
+      "sampled_fp32_master_update_l2": 7.949114660732448e-05,
+      "sampled_fp32_master_changed_fraction": 0.9871886968612671,
+      "sampled_active_model_matches_cast_master": true,
+      "parameter_dtype": "bf16",
+      "gradient_dtype": "bf16",
+      "master_moment_dtype": "fp32",
+      "optimizer_rank_seconds": 195.61012268066406,
+      "compute_dtypes_before_float": {
+        "first_q_proj": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        },
+        "head_before_float": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        }
+      },
+      "counters": {
+        "source_records": 64,
+        "source_tokens": 33792,
+        "sampled_actions": 0,
+        "labels": {
+          "source": 33728,
+          "writer": 2885,
+          "reader": 1024,
+          "augmented": 0,
+          "continuation": 0
+        }
+      },
+      "dense_checkpointed_matmul_proxy_operations": 734929769201664,
+      "proxy_excludes": "Quadratic attention, lookup/normalization, optimizer, collectives and data/cache I/O; not measured FLOPs.",
+      "complete_ordered_passes": 0,
+      "ordered_item_ids": [
+        "9a8135ff751ee301d45326ee6cf2b1f7d98d5e6fdc956764015934ddfbca2265:compound-priority-v1:1128",
+        "7e8570d66d876402c24493f7ad8adf974d8dd9427e8d6cc6bdaadca47600e6ea:compound-priority-v1:1507",
+        "439d059390305738890830f25168fa96fdcfe6f133f9ce6f5d25c43ae01f1ce5:compound-priority-v1:639",
+        "6e63e3a245185e4aca651c5500a810fb5ba3b3e993e9a669b0bbdeedebee213e:compound-priority-v1:590",
+        "a7831060a47b074ca3d06b2cbce026bc4d4c0bfc893997af050f0ddaa582bc79:compound-priority-v1:424",
+        "8bed7a239024bbf58372df9413a1a6b1da421407d81e59782cd6c1223ef47a0b:compound-priority-v1:649",
+        "4b6284f91d5e55798c4046d04654e1d798c5b6c49f40484b211bbd772c70bcfb:compound-priority-v1:4803",
+        "26951c729fc1072c4f7dfe73b46ef9c5ce36cd2832346772585d1e221965177d:compound-priority-v1:518",
+        "8398fa4bf860d203aea91730ef3c1e9fdcd153e0721ec466d08a6fda618fb87d:compound-priority-v1:741",
+        "0cc71af33776c45509b22bc3a04dbfd28f45431b64e844c18e66bb7c2f9bc8c6:compound-priority-v1:3403",
+        "4bd89929d928e32e8e8228c449cde88041022394c22af1ab3f6609140a09a095:compound-priority-v1:6657",
+        "1834121ab74f1687de6c85620863eda67e6b21443d31a5652bea4db105fbd806:compound-priority-v1:1496",
+        "bf92f074fb6870065e6c2f70d4ad5d117367a0fb378b0bef6c5754c318f7b941:compound-priority-v1:420",
+        "8972c083274684ec7894c3876537fb35258998f7733a35de7377af2f54014676:compound-priority-v1:329",
+        "fc7c74b010ae24cfe502e4b05bf5ed2c6d0b948b289bb1dd64e5f66a27079ab3:compound-priority-v1:554",
+        "932a40a7d3922605f5d334fdd1ad27a0f43936d5bb2695d420a6ae81b273c009:compound-priority-v1:652",
+        "e76313ce1ec6794f0c9ada91dca739b9fb38b2226d19a38171c7ee08d15bb73f:compound-priority-v1:732",
+        "b1d8282e2a570e363be7dda0ae1aabc4d818ad6f403ffa2fb3dc1987fc163fca:compound-priority-v1:431",
+        "9c3cabb6d21ccdacabda89e87402ded65506d214ac58b35d83effea1f81b2b4a:compound-priority-v1:368",
+        "892141985f4d55ac3a9af66c39878c951cbc7c8809c2335800af643f201b1485:compound-priority-v1:1346",
+        "4da81b0696c022c201f75bba036ced13af1074dc70d34c2d74501680bc50e5a3:compound-priority-v1:173",
+        "4ba26b8b44b062e71dc9ebf1c4407ff03d89f264efae4222bae2014de1f0a61f:compound-priority-v1:493",
+        "5b0669ca01d8b610ab76719378abade04c1714eeabcf8c6472c75b87693c4c07:compound-priority-v1:978",
+        "19834e20886ece07f2cbbf9b1ac28a734bfa1f358cfcb65b9a7f8d0d1e1e3aaa:compound-priority-v1:449",
+        "447cae667d707f2faf76c9eed4bca133fc5584fa0b84ecfd31321789d171c2e4:compound-priority-v1:2157",
+        "d06519caade87613b4b6384d5b394be33b5b3148d8e108a5082e445aada99371:compound-priority-v1:178",
+        "a1e5988d4bfee599cdf5cc47e207468b27f8ba63356fcb37ee6656f92e8dfa84:compound-priority-v1:1757",
+        "6957d14895c82889e45aed7b44aa6782f251a4257c21ae5f6b29845ca3369995:compound-priority-v1:950",
+        "d3ee71486bb8a29519252bd4c8bee042af577e100685964dd5eee97630c0465b:compound-priority-v1:309",
+        "e08f68c210a8b35d9847d0b517d4170ed70303492f6cb0ea0c928b32f972bfd2:compound-priority-v1:992",
+        "e193e13518a8ad1cd884c53ae2b2879cce9a4f002c92e46c56978756c5fbc504:compound-priority-v1:450",
+        "5180ea2dae879f8aa2c85b14a355f65eccba452fb47ebbdcda0d943e3ad06be1:compound-priority-v1:563"
+      ]
+    }
+  ],
+  "CPU_validation": {
+    "status": "PASS_REQUIRED_COMBINED_MAIN_CPU_SMOKE_COMPILE",
+    "tests_passed": 1494,
+    "test_wall_seconds": 60.02,
+    "logs": {
+      "local/checks/tests.DxzFY0/tests.txt": "3a38d6aaaa8dd25997c2be468cf76f36d43191ceb273be690d55c97d63a60a0a",
+      "local/checks/tests.DxzFY0/toy_smoke.json": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3",
+      "local/checks/tests.DxzFY0/toy_smoke.txt": "c032aecf93759328a9177215bc95f5ecdcee4c3e384236e02bdf8c29be815a40"
+    },
+    "source_files": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+      "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+      "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/filter_symbolic_notes.py": "576b0e56c7b20d7a059498d99f822e112748a3cea7d4f6db10a1f9e1cfe6d6b8",
+      "train/interface_oracle_probe.py": "f4131becd05134eb22bac0ca19c6ec1b308fbd6c835071cf951b73e195172859",
+      "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+      "train/prepare_reader_learning_data.py": "45671312d69e838f5cec78e9b1aadacca2e621c42a88c87ac905e8b273e2a455",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+      "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+      "train/useful_note_controls.py": "30d08eb4100662b97cbb38aec89b7f6cebf0cb78275f8595cf90d3e6ebcbec27",
+      "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+      "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+      "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+      "train/warmstart_driver.py": "d0b8ed4e105d2b1249e1169014a1acd9b9963522a5ed866e26db117e1cb3f585",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "source_scope": "Reviewed mergedv4+installedplaceholderfix and currentGSM4/16 extension included in fullsuite; actualBF16/native/runtime+restore proof are separately bound.",
+    "source_review_files": {
+      "/home/ubuntu/dario/local/analysis/useful-note-recovery-v4-source-acceptance-20261018.json": "53d25afc204ce8ba2895c6f9d68d7ac07a61d759d1088c8bee149a34a9d72f61",
+      "/home/ubuntu/dario/local/analysis/useful-note-recovery-v4-placeholder-fix-review-20261018.json": "ac799781805937e2153626f6d70dd86f274b2d7f4ede283c0e3c41a1359663a3"
+    }
+  },
+  "process_summary": {
+    "launcher_pid": 3118414,
+    "timeout_pgid": 3118483,
+    "driver_pid": 3118485,
+    "all32_worker_identities_observed": true,
+    "all32_runtime_workers_mapped": true,
+    "actual_device_processes": {
+      "0": [
+        3118513,
+        3118516,
+        3118518,
+        3118520
+      ],
+      "1": [
+        3118519,
+        3118522,
+        3118523,
+        3118524
+      ],
+      "2": [
+        3118525,
+        3118526,
+        3118527,
+        3118528
+      ],
+      "3": [
+        3118529,
+        3118530,
+        3118531,
+        3118532
+      ],
+      "4": [
+        3118533,
+        3118534,
+        3118535,
+        3118536
+      ],
+      "5": [
+        3118537,
+        3118538,
+        3118539,
+        3118541
+      ],
+      "6": [
+        3118540,
+        3118542,
+        3118543,
+        3118544
+      ],
+      "7": [
+        3118545,
+        3118546,
+        3118547,
+        3118548
+      ]
+    },
+    "environment_caveat": "First live all_task_environment_exact=false reflects launch shell proc initial environment before exports only; timeout/driver/all32 workers match allocation policy exactly. Original first-live receipt preserved."
+  },
+  "provenance": {
+    "local/science/control/postorder-reader-learning-compound5120-W-seed20261018-v4r2/release.json": "9d7dbc9ed7b56d43284fbf2dde3e46ad273a28f76973bad869c83157ee447429",
+    "local/science/control/postorder-reader-learning-compound5120-W-seed20261018-v4r2/runtime-plan.json": "0c94037cc47fca91b8589a72090b51e27ab04e484c9b641cd0a8604c57ff112e",
+    "local/science/control/postorder-reader-learning-compound5120-W-seed20261018-v4r2/launch.sh": "083ca4880ca0ebb68a28b0aed152409f845c4b92efbcc4c1c503d44778fa1e96",
+    "local/science/control/postorder-reader-learning-compound5120-W-seed20261018-v4r2/processes.json": "0019a2da709759a94424a1363f5b8fe1b0595327a49f7d77bb8da7114973e63f",
+    "local/science/control/postorder-reader-learning-compound5120-W-seed20261018-v4r2/mapping.live.json": "13e88ec98bf47ae5248950276941db26b5153af7570ec923ffa6e04a8b0bfe94",
+    "local/science/control/postorder-reader-learning-compound5120-W-seed20261018-v4r2/execution.native-initial.json": "115536bec10e10934be4324bde2a99329c8e558f845b9c34252b6e29649c6f79",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb"
+  },
+  "limitations": [
+    "Two early updates establish execution, not useful thoughts or generalization.",
+    "SFT step timings do not qualify the full RL-step throughput gate.",
+    "Every terminal checkpoint will be evaluated, regardless of intermediate losses.",
+    "No official TEST was used."
+  ]
+}

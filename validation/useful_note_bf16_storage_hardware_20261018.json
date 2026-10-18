@@ -1,0 +1,1424 @@
+{
+  "schema": "useful-note-bf16-storage-hardware-qualification-v3-public",
+  "status": "PASS_STARTUP_THREE_UPDATE_HARDWARE_QUALIFICATION",
+  "question": "Do BF16 active parameters and gradients with FP32 optimizer masters complete W/Cprime/T on actual Trainium?",
+  "design": {
+    "world_size": 32,
+    "accumulation": 1,
+    "global_batch": 32,
+    "items": 64,
+    "actual_updates_per_arm": 3,
+    "source": "Exact first64 unchanged compound science documents, same global packing; not science quota.",
+    "compute_and_active_storage": "BF16",
+    "masters_and_moments": "FP32",
+    "rotary_buffers": "Original FP32",
+    "canonical_reference": "Released BF16 tensor values widened to FP32 for CPU forward; unchanged bidirectionalKL<.01.",
+    "one_reduction_owner": "Standard XLA ZeRO-1",
+    "official_TEST_used": false
+  },
+  "arms": {
+    "W": {
+      "run_id": "postorder-note-bf16-storage-world32-qualification-W-v3",
+      "status": "PASS_THREE_REAL_UPDATES_PHYSICALLY_CLOSED",
+      "native": [
+        {
+          "rank": 0,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 1,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 2,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 3,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 4,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 5,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 6,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 7,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 8,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 9,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 10,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 11,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 12,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 13,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 14,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 15,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 16,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 17,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 18,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 19,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 20,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 21,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 22,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 23,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 24,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 25,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 26,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 27,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 28,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 29,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 30,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 31,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        }
+      ],
+      "full_fp32_state_checks": {
+        "ranks": 32,
+        "steps": [
+          2,
+          3
+        ],
+        "parameters": 1720574976,
+        "active_parameters": 310,
+        "masters_and_moments_finite": true,
+        "second_moments_nonnegative": true,
+        "actual_Adam_counters_exact": true
+      },
+      "metrics": [
+        {
+          "step": 1,
+          "elapsed_seconds": 1507.2907058580022,
+          "lr": 5.000000000000001e-07,
+          "gradient_norm": 31.734899520874023,
+          "sampled_update_l2": 5.7047127484111115e-06,
+          "sampled_changed_fraction": 0.005342741962522268,
+          "sampled_fp32_master_update_l2": 5.256181611912325e-05,
+          "sampled_fp32_master_changed_fraction": 0.9832375645637512,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 1.3843830823898315,
+              "labels": 16864,
+              "real_input_tokens": 16896,
+              "trunk_slots": 17376,
+              "head_slots": 17408,
+              "rank_seconds": 23258.822265625
+            },
+            "writer": {
+              "loss": 1.8075681924819946,
+              "labels": 1458,
+              "real_input_tokens": 15364,
+              "trunk_slots": 20448,
+              "head_slots": 4096,
+              "rank_seconds": 4946.9931640625
+            },
+            "reader": {
+              "loss": 1.4261579513549805,
+              "labels": 512,
+              "real_input_tokens": 16292,
+              "trunk_slots": 22496,
+              "head_slots": 512,
+              "rank_seconds": 3381.43408203125
+            },
+            "augmented": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "continuation": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 32,
+            "source_tokens": 16896,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 16864,
+              "writer": 1458,
+              "reader": 512,
+              "augmented": 0,
+              "continuation": 0
+            }
+          },
+          "optimizer_rank_seconds": 12721.7861328125
+        },
+        {
+          "step": 2,
+          "elapsed_seconds": 776.1182275949977,
+          "lr": 1.0000000000000002e-06,
+          "gradient_norm": 33.116180419921875,
+          "sampled_update_l2": 1.2838438124163076e-05,
+          "sampled_changed_fraction": 0.007560483645647764,
+          "sampled_fp32_master_update_l2": 7.943762466311455e-05,
+          "sampled_fp32_master_changed_fraction": 0.9855124354362488,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 1.2415122985839844,
+              "labels": 16864,
+              "real_input_tokens": 16896,
+              "trunk_slots": 17376,
+              "head_slots": 17408,
+              "rank_seconds": 683.5072631835938
+            },
+            "writer": {
+              "loss": 1.8645758628845215,
+              "labels": 1388,
+              "real_input_tokens": 13675,
+              "trunk_slots": 20448,
+              "head_slots": 4096,
+              "rank_seconds": 253.18246459960938
+            },
+            "reader": {
+              "loss": 1.28232741355896,
+              "labels": 512,
+              "real_input_tokens": 14586,
+              "trunk_slots": 22496,
+              "head_slots": 512,
+              "rank_seconds": 265.4444274902344
+            },
+            "augmented": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "continuation": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 64,
+            "source_tokens": 33792,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 33728,
+              "writer": 2846,
+              "reader": 1024,
+              "augmented": 0,
+              "continuation": 0
+            }
+          },
+          "optimizer_rank_seconds": 16733.802734375
+        },
+        {
+          "step": 3,
+          "elapsed_seconds": 593.0737410240108,
+          "lr": 1.5000000000000002e-06,
+          "gradient_norm": 32.05912399291992,
+          "sampled_update_l2": 2.9677727070520632e-05,
+          "sampled_changed_fraction": 0.011794354766607285,
+          "sampled_fp32_master_update_l2": 0.0001192833369714208,
+          "sampled_fp32_master_changed_fraction": 0.9925765991210938,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 1.303156852722168,
+              "labels": 16864,
+              "real_input_tokens": 16896,
+              "trunk_slots": 17376,
+              "head_slots": 17408,
+              "rank_seconds": 656.4099731445312
+            },
+            "writer": {
+              "loss": 1.8951787948608398,
+              "labels": 1384,
+              "real_input_tokens": 14543,
+              "trunk_slots": 20448,
+              "head_slots": 4096,
+              "rank_seconds": 247.509521484375
+            },
+            "reader": {
+              "loss": 1.2892810106277466,
+              "labels": 512,
+              "real_input_tokens": 15470,
+              "trunk_slots": 22496,
+              "head_slots": 512,
+              "rank_seconds": 238.80101013183594
+            },
+            "augmented": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "continuation": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 96,
+            "source_tokens": 50688,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 50592,
+              "writer": 4230,
+              "reader": 1536,
+              "augmented": 0,
+              "continuation": 0
+            }
+          },
+          "optimizer_rank_seconds": 16797.2578125
+        }
+      ],
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 7.404624838003656,
+          "step": 3
+        }
+      ],
+      "full_checkpoint": null,
+      "closed_utc": "2026-10-18T08:34:04+00:00"
+    },
+    "Cprime": {
+      "run_id": "postorder-note-bf16-storage-world32-qualification-Cprime-v3",
+      "status": "PASS_THREE_REAL_UPDATES_PHYSICALLY_CLOSED",
+      "native": [
+        {
+          "rank": 0,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 1,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 2,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 3,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 4,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 5,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 6,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 7,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 8,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 9,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 10,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 11,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 12,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 13,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 14,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 15,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 16,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 17,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 18,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 19,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 20,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 21,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 22,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 23,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 24,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 25,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 26,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 27,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 28,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 29,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 30,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 31,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        }
+      ],
+      "full_fp32_state_checks": {
+        "ranks": 32,
+        "steps": [
+          2,
+          3
+        ],
+        "parameters": 1720574976,
+        "active_parameters": 310,
+        "masters_and_moments_finite": true,
+        "second_moments_nonnegative": true,
+        "actual_Adam_counters_exact": true
+      },
+      "metrics": [
+        {
+          "step": 1,
+          "elapsed_seconds": 1041.8507161629968,
+          "lr": 5.000000000000001e-07,
+          "gradient_norm": 10.970009803771973,
+          "sampled_update_l2": 5.783877440990182e-06,
+          "sampled_changed_fraction": 0.005443548317998648,
+          "sampled_fp32_master_update_l2": 5.32087215106003e-05,
+          "sampled_fp32_master_changed_fraction": 0.9838362336158752,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 1.3843830823898315,
+              "labels": 16864,
+              "real_input_tokens": 16896,
+              "trunk_slots": 17376,
+              "head_slots": 17408,
+              "rank_seconds": 32749.7890625
+            },
+            "writer": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "reader": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "augmented": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "continuation": {
+              "loss": 1.2388361692428589,
+              "labels": 512,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 32,
+            "source_tokens": 16896,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 16864,
+              "writer": 0,
+              "reader": 0,
+              "augmented": 0,
+              "continuation": 512
+            }
+          },
+          "optimizer_rank_seconds": 180.7280731201172
+        },
+        {
+          "step": 2,
+          "elapsed_seconds": 51.583199960005004,
+          "lr": 1.0000000000000002e-06,
+          "gradient_norm": 10.0939359664917,
+          "sampled_update_l2": 1.1054372407670598e-05,
+          "sampled_changed_fraction": 0.006451612804085016,
+          "sampled_fp32_master_update_l2": 7.285863830475137e-05,
+          "sampled_fp32_master_changed_fraction": 0.9861111044883728,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 1.242130994796753,
+              "labels": 16864,
+              "real_input_tokens": 16896,
+              "trunk_slots": 17376,
+              "head_slots": 17408,
+              "rank_seconds": 861.27392578125
+            },
+            "writer": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "reader": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "augmented": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "continuation": {
+              "loss": 1.079445242881775,
+              "labels": 512,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 64,
+            "source_tokens": 33792,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 33728,
+              "writer": 0,
+              "reader": 0,
+              "augmented": 0,
+              "continuation": 1024
+            }
+          },
+          "optimizer_rank_seconds": 216.20484924316406
+        },
+        {
+          "step": 3,
+          "elapsed_seconds": 47.28867708600592,
+          "lr": 1.5000000000000002e-06,
+          "gradient_norm": 9.990111351013184,
+          "sampled_update_l2": 2.77335802820744e-05,
+          "sampled_changed_fraction": 0.010786290280520916,
+          "sampled_fp32_master_update_l2": 0.00010884802759392187,
+          "sampled_fp32_master_changed_fraction": 0.9928160905838013,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 1.303395390510559,
+              "labels": 16864,
+              "real_input_tokens": 16896,
+              "trunk_slots": 17376,
+              "head_slots": 17408,
+              "rank_seconds": 857.3810424804688
+            },
+            "writer": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "reader": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "augmented": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "continuation": {
+              "loss": 1.1271886825561523,
+              "labels": 512,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 96,
+            "source_tokens": 50688,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 50592,
+              "writer": 0,
+              "reader": 0,
+              "augmented": 0,
+              "continuation": 1536
+            }
+          },
+          "optimizer_rank_seconds": 170.4611358642578
+        }
+      ],
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 2.3018629279977176,
+          "step": 3
+        }
+      ],
+      "full_checkpoint": null,
+      "closed_utc": "2026-10-18T08:54:46+00:00"
+    },
+    "T": {
+      "run_id": "postorder-note-bf16-storage-world32-qualification-T-v3",
+      "status": "PASS_THREE_REAL_UPDATES_PHYSICALLY_CLOSED",
+      "native": [
+        {
+          "rank": 0,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 1,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 2,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 3,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 4,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 5,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 6,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 7,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 8,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 9,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 10,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 11,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 12,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 13,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 14,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 15,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 16,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 17,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 18,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 19,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 20,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 21,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 22,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 23,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 24,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 25,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 26,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 27,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        },
+        {
+          "rank": 28,
+          "reference_index": 0,
+          "reference_to_device_kl": 0.003038018943671797,
+          "device_to_reference_kl": 0.0031035199827921453,
+          "forward_sha256": "98c5ba7343178362fd91e49a9136a635153d8d728429bf7966e6f4376cc2ad96"
+        },
+        {
+          "rank": 29,
+          "reference_index": 1,
+          "reference_to_device_kl": 0.003069729731572775,
+          "device_to_reference_kl": 0.003041836099938914,
+          "forward_sha256": "aefbf0131a4dff33cb22bd176b5e9bfb2ed56b0ab117f521c17ab099b1e51bae"
+        },
+        {
+          "rank": 30,
+          "reference_index": 2,
+          "reference_to_device_kl": 2.1102026603817703e-05,
+          "device_to_reference_kl": 2.157230339515165e-05,
+          "forward_sha256": "2e052bc9a1a2908eb6e1b1c2d0f5dfb84e4f34a4d08e20e6185556d0e434334b"
+        },
+        {
+          "rank": 31,
+          "reference_index": 3,
+          "reference_to_device_kl": 0.00032441160316988116,
+          "device_to_reference_kl": 0.0003259461474816056,
+          "forward_sha256": "778620b1d7d326c034d898c22fb50d13cc5df12c0f4f5a3d55c08e885e657291"
+        }
+      ],
+      "full_fp32_state_checks": {
+        "ranks": 32,
+        "steps": [
+          2,
+          3
+        ],
+        "parameters": 1720574976,
+        "active_parameters": 310,
+        "masters_and_moments_finite": true,
+        "second_moments_nonnegative": true,
+        "actual_Adam_counters_exact": true
+      },
+      "metrics": [
+        {
+          "step": 1,
+          "elapsed_seconds": 786.450312393019,
+          "lr": 5.000000000000001e-07,
+          "gradient_norm": 3.1968486309051514,
+          "sampled_update_l2": 5.8619734772946686e-06,
+          "sampled_changed_fraction": 0.005544354673475027,
+          "sampled_fp32_master_update_l2": 5.2960611355956644e-05,
+          "sampled_fp32_master_changed_fraction": 0.9837164878845215,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "writer": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "reader": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "augmented": {
+              "loss": 1.4860661029815674,
+              "labels": 18802,
+              "real_input_tokens": 18834,
+              "trunk_slots": 22496,
+              "head_slots": 22528,
+              "rank_seconds": 24538.994140625
+            },
+            "continuation": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 32,
+            "source_tokens": 16896,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 0,
+              "writer": 0,
+              "reader": 0,
+              "augmented": 18802,
+              "continuation": 0
+            }
+          },
+          "optimizer_rank_seconds": 206.09515380859375
+        },
+        {
+          "step": 2,
+          "elapsed_seconds": 42.43914540100377,
+          "lr": 1.0000000000000002e-06,
+          "gradient_norm": 3.0969114303588867,
+          "sampled_update_l2": 1.1721523151209112e-05,
+          "sampled_changed_fraction": 0.006754032336175442,
+          "sampled_fp32_master_update_l2": 7.631391054019332e-05,
+          "sampled_fp32_master_changed_fraction": 0.9849137663841248,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "writer": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "reader": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "augmented": {
+              "loss": 1.3646589517593384,
+              "labels": 18715,
+              "real_input_tokens": 18747,
+              "trunk_slots": 22496,
+              "head_slots": 22528,
+              "rank_seconds": 659.2576904296875
+            },
+            "continuation": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 64,
+            "source_tokens": 33792,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 0,
+              "writer": 0,
+              "reader": 0,
+              "augmented": 37517,
+              "continuation": 0
+            }
+          },
+          "optimizer_rank_seconds": 191.15292358398438
+        },
+        {
+          "step": 3,
+          "elapsed_seconds": 42.76931912897271,
+          "lr": 1.5000000000000002e-06,
+          "gradient_norm": 3.1033101081848145,
+          "sampled_update_l2": 2.87781822407851e-05,
+          "sampled_changed_fraction": 0.010987902991473675,
+          "sampled_fp32_master_update_l2": 0.00011432786413934082,
+          "sampled_fp32_master_changed_fraction": 0.9916187524795532,
+          "sampled_replicas_bitwise_equal": true,
+          "sampled_active_model_matches_cast_master": true,
+          "components": {
+            "source": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "writer": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "reader": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            },
+            "augmented": {
+              "loss": 1.4214794635772705,
+              "labels": 18727,
+              "real_input_tokens": 18759,
+              "trunk_slots": 22496,
+              "head_slots": 22528,
+              "rank_seconds": 663.4647216796875
+            },
+            "continuation": {
+              "loss": 0.0,
+              "labels": 0,
+              "real_input_tokens": 0,
+              "trunk_slots": 0,
+              "head_slots": 0,
+              "rank_seconds": 0.0
+            }
+          },
+          "counters": {
+            "source_records": 96,
+            "source_tokens": 50688,
+            "sampled_actions": 0,
+            "labels": {
+              "source": 0,
+              "writer": 0,
+              "reader": 0,
+              "augmented": 56244,
+              "continuation": 0
+            }
+          },
+          "optimizer_rank_seconds": 188.22535705566406
+        }
+      ],
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 87.37425365002127,
+          "step": 3
+        }
+      ],
+      "full_checkpoint": {
+        "complete_sha256": "034eab7c16207f9bfc7c08a4a65226958ce9c4be3bb76ba1db499a3ead0bebde",
+        "path": "/home/ubuntu/dario/local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-T-v3/step-0000003/COMPLETE.json",
+        "payload_bytes": 24101411251,
+        "verification": "Saver hashes recorded; all33sizes checked; no duplicate24GB payload rehash or EBS copy here. Actual recovery remains unqualified."
+      },
+      "closed_utc": "2026-10-18T09:12:30+00:00"
+    }
+  },
+  "independent": {
+    "status": "PASS_96_NATIVE_VECTORS_96_INITIAL_MASTER_SAMPLES_192_FULL_STATE_REPORTS_AND_NINE_UPDATES",
+    "native_bidirectional_KLs_independently_recomputed_max_error": 2.197372871767106e-16,
+    "archive_source_and_EBS_entries_verified": 1142,
+    "scope": "Actual saved tensors and full-state reports; raw full optimizer tensors are validated by the separate hardware recovery.",
+    "source_sha256": "49504802017bf07c1e42b2d8dee8bc9ef837dfc156d68777d0b3acaaa668986f"
+  },
+  "provenance": {
+    "local/backups/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/ARCHIVE.json": "638146076e10666f39d8db048a8c791a4cff9ae31061e7b603fbaace14612e96",
+    "local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/W/physical.closure.json": "c63326ec047d86ee03058794212985cd28e0be9d90d9dd07ff4022c96e39f618",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-W-v3/run.json": "095fae3d0cf0eee0f81cddf185983e8372b4419493c33043d63ed1fc7c80cb4b",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-W-v3/completion.json": "7222d9e55fc58aa135d54b06ca2787083125bf968534b92f8dcf7f7b406b6593",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-W-v3/metrics.jsonl": "a5dec50fe5b4df1f17f1e8ee084ca0a2bde94a5e987a50c1f9d897d92015b58f",
+    "local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/protocol.json": "9abf4b1459c34e202f90dc18502eedeba7756bef81264acee38a4ef79d64276d",
+    "local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/Cprime/physical.closure.json": "b3d79bb26327dd628abf80a05b0b64c9b6c0a048374850c343a874371c41c48b",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-Cprime-v3/run.json": "608357b419235c7ecbd5c435bec171e8df8a35ba5d98269f07f66e494deb9ec7",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-Cprime-v3/completion.json": "a438f49f3410dc073b4e5f80d71810a4685a51310549f3e0efe5a7edb3573d27",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-Cprime-v3/metrics.jsonl": "9ecb068de452fbc6c6f92755e3cb9cc3098dd91afc425777cb73089dc3d0e7a4",
+    "local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/T/physical.closure.json": "d65c33f567f3c409d0ffdde21e376cb17e6aa74235ae15797622b2bba6fcd85c",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-T-v3/run.json": "20432ff4c4846a40f528b674148b681b36e2242d3f8a7e91de0c4430949393bd",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-T-v3/completion.json": "bb2c5a7a96b9006091a1b6fdf4ae1af66ae8b8f26aa9c9348606b25efeb7f45a",
+    "local/nvme/diagnostics/postorder-note-bf16-storage-world32-qualification-T-v3/metrics.jsonl": "6e9d4c175c0f294d8db7926ab9625ce8afd7b076a10b937edb5e2cd182b75a61",
+    "local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/protocol.T.json": "696be05ad408cc2667b67a9d2c6cd33523eff7971c2f2e5d6f56159a1f03faa7"
+  },
+  "archive": {
+    "path": "local/backups/diagnostics/postorder-note-bf16-storage-world32-qualification-v3/ARCHIVE.json",
+    "sha256": "638146076e10666f39d8db048a8c791a4cff9ae31061e7b603fbaace14612e96",
+    "files": 1142,
+    "payload_bytes": 110517849,
+    "scope": "Nonweight evidence, all vectors/slices/source snapshots; T full33 payloads remain on NVMe with archived COMPLETE."
+  },
+  "decision": "Precision/storage path passes startup qualification. Actual full-state restore plus next update remains a separate required check before science.",
+  "limitations": [
+    "No useful-thought scientific result from64documents/threeupdates.",
+    "Early W times include cold compilation; Cprime/T later updates show reuse but do not qualify the complete RL-step90s gate.",
+    "Native forward KL and finite real updates do not establish exact CPU/device gradients or uninterrupted trajectory parity.",
+    "Checkpoint wall includes slices/full save/verification/barriers, not isolated disk-write time.",
+    "The original v2 native-gate failure remains failed and archived."
+  ]
+}

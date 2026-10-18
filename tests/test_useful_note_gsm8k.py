@@ -92,7 +92,7 @@ def pipeline(tmp_path,monkeypatch,failure=False):
     (tmp_path/'prompt.json').write_text(json.dumps(prompt));(tmp_path/'format.json').write_text(json.dumps(format_data()))
     (tmp_path/'protocol.json').write_text('{}')
     identity=dict(id='B0',checkpoint=None,checkpoint_sha256=None)
-    p=dict(model=identity,deadline_utc='future',ordered_item_ids=[q['item_id'] for q in qs],purpose='TRAIN development',
+    p=dict(model=identity,shards=2,deadline_utc='future',ordered_item_ids=[q['item_id'] for q in qs],purpose='TRAIN development',
         **e.measure_widths(qs,prompt,e.validate_format(tok,format_data()),tok),source_files={},input_hashes={},limitations=[])
     monkeypatch.setattr(e,'load',lambda output:(p,qs))
     backend=SimpleNamespace(model=SimpleNamespace(parameters=lambda:iter([torch.zeros(1)])),

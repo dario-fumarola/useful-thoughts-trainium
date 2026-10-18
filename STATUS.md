@@ -1,20 +1,20 @@
-# Status — 2026-10-18 09:12 UTC
+# Status — 2026-10-18 09:49 UTC
 
-## Active: canonical-reference BF16-storage qualification
+## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
 ID:postorder-note-bf16-storage-world32-qualification-v3; new reference, unchanged .01KL bound.
 Sequential W/C′/T, world32/accum1, first64unchanged science documents, three updates each.
-W launched07:44UTC, deadline13:43:43UTC; logical0–31/physical0–7, private RAM0700.
+Sequential batch ran07:44–09:12UTC on logical0–31/physical0–7, private RAM0700.
 All32local+global native gates pass; maxKL .003104, hidden/headBF16.
 All32initial FP32 master samples exactly match released CPU shard values.
-W passes all three updates, full FP32 master/moment scans, Adam counters and replica checks.
-W/C′ pass all three updates and are physically closed; T active from08:54UTC.
-T launcher2908454, timeout/group2908546, driver2908548; all32native/master gates pass.
-C′ steps1042/52/47s; reused optimizer5–7s. W1507/776/593s include cold compilation.
+All three arms pass three real updates, full FP32 state scans/counters and replica checks.
+All96initial native/master checks pass; all original identities/groups/sessions/devices closed.
+C′ later steps52/47s; T42/43s; cached optimizer5–7s. Wtimes include cold compilation.
 V2failed check remains failed; model-free four-rank mixed-failure consensus test passed.
-W/C′ save diagnostic slices; T will save full state on NVMe for recovery preparation.
+W/C′ save slices; Tfull step3 is24,101,411,251bytes/33payloads,87.37s combined checkpoint wall.
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
-Sources frozen; recovery work isolated at local/worktrees/recovery-v4; science unreleased.
+Independent96vectors/96initialmasters/192state reports/nineupdates pass; EBS nonweight archive verified.
+Public validation/useful_note_bf16_storage_hardware_20261018.json; W science now active.
 
 ## Closed: general high-surprisal DEV cohort
 Question: can a separate comparable general DEV panel be fixed before supervised outcomes?
@@ -43,14 +43,50 @@ All131072raw rows/16gates/exits0 closed;32176qualify, first24576selected in froz
 Teacher launched09:04UTC; all16native gates/48actual PID-start-session-mappings pass.
 Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
 
-## CPU complete: full-state recovery implementation
-Question: can original science runs recover FP32 master/Adam state without losing evidence?
-ID: useful-note-recovery-v4; isolated branch in local/worktrees/recovery-v4.
+## Closed: full-state recovery implementation
+Question: can original science recover FP32 master/Adam state without losing evidence?
+ID: useful-note-recovery-v4; reviewed branch merged into main after actual002 closure.
 Strict original identity, complete-file hashes, full state byte audit and RNG reset last.
-Abandoned metric/checkpoint tails are preserved; later complete states cannot be skipped.
-Independent review and 1,389 CPU tests plus smoke/compile pass; public branch recovery-v4.
-No hardware recovery claim. Reviewer staged a private restore plus actual fourth update.
-Wait for v3 T full step-3 state and physical closure; keep active main source unchanged.
+Abandoned metric/checkpoint tails preserved; later complete states cannot be skipped.
+Actual001 exposed installed emptyFP32 max_exp_avg_sq; repair validates all four native fields.
+39focused/1397isolated checks and real-payload CPU witness pass; failure remains preserved.
+Actual002 all32 full bytes/RNG plus genuine orderedT4 pass; no uninterrupted-parity claim.
+Combined final main1,494 checks/smoke/compile pass; science source frozen during W.
+
+## Closed failed: full-state restore001
+ID:useful-note-state-recovery-001; exact Tstep3/full33 payloads and mainv3, world32.
+All33producer hashes pass; all32ranks reject validation before restore or update.
+Cause: installed syncfreeAdamW has four fields, including emptyFP32[0] max_exp_avg_sq.
+Old helper incorrectly required exactlythree. Rank0 full serialized-state diagnosis confirms it.
+Zero restored ranks/updates; exit1, no signals, all owned identities/groups/sessions/devices closed.
+Failed archive and separate diagnosis annex verified; original payload/checkpoint unchanged.
+Public validation/useful_note_state_recovery_failed_001_20261018.json;001 remains failed.
+
+## Closed: repaired full-state restore002 — pass
+Question: can actual T3 model/master/moment/counter/RNG state restore and perform orderedT4?
+ID:useful-note-state-recovery-002; separate output/TMPDIR/ports, original T3 unchanged.
+All32 restored BF16model/FP32master/m/v/step/emptymax bytes exactly match saved payloads.
+All32 CPU/device RNG checks and tied parameters pass; genuine unchanged orderedT4 completed.
+All32 finiteBF16 gradients, FP32master changes, replicas/cast-master equality and Adamstep4 pass.
+Exit0 at09:36:55UTC; original identities/groups/actual sessions/devices0–7 physically closed.
+Root independently verifies all32 proof/state/order/counters; EBS nonweight archive+annex verified.
+Restored optimizer compiled a distinct alias-input family; no model recompute or LR-literal claim.
+Public validation/useful_note_state_recovery_002_20261018.json; no uninterrupted-trajectory parity.
+Decision: merged reviewed recovery source and passed combined checks; W science released.
+
+## Active: compound5120 writer-and-reader training
+Question: can supervised prefix-only notes and reader adaptation create useful self-generated content?
+ID:postorder-reader-learning-compound5120-W-seed20261018-v4r2; fresh B0, no resume/qualification.
+5,120 distinct real TRAIN documents, two epochs/320updates, seed20261018, world/global32.
+W noteCE+natural16readerCE+0.5rawsourceCE; BF16 storage/gradients with FP32master/moments.
+Launched09:43UTC on logical0–31/physical0–7; softdeadline21:42UTC, checkpointgrace to21:57UTC.
+Launcher3118414, timeout/group3118483, driver3118485; all32 actual worker identities/mappings captured.
+All32 native/consensus/initialmaster checks pass; first two updates60/62s with valid real changes.
+Output:local/nvme/runs/postorder-reader-learning-compound5120-W-seed20261018-v4r2.
+Controls:local/science/control/same basename; Distributed supervises progress/checkpoints/closure.
+Terminal320 primary; step64 development only. Every terminal evaluated regardless of local sign.
+Cprime/T comparisons pending fresh releases; same documents/updates do not match tokens or FLOPs.
+Public validation/reader_learning_compound5120_W_seed20261018_launch.json; no trained utility claim yet.
 
 ## Closed: general hindsight-note feasibility
 Question: can B0 hindsight notes improve full16 likelihood on general high-surprisal text?
@@ -273,8 +309,8 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 ## Work ownership and boundaries
 Root: science/data/precision decisions, training release, current public findings.
 Data: larger filtered general hindsight batch, native-label adapter and CPU projections.
-Distributed: active sequential W/C′/T BF16-storage qualification and physical closure.
-Review: general held256 baseline, cheap prefix-helper preparation and recovery proof.
+Distributed: active W science, checkpoint/closure checks and next C′ CPU preparation.
+Review: active prefix-helper probe and separate GSM16 equivalence/runtime CPU preparation.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.

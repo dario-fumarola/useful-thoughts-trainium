@@ -1,4 +1,4 @@
-"""Four model jobs, each running all three modes on its fixed TRAIN512 shard.
+"""Frozen four or sixteen model jobs; all three modes and all TRAIN512 paths.
 
 Generation uses only question projection, worked-example prompt and format.
 Gold is opened by summarize only after all1536 attempted paths are complete.
@@ -21,12 +21,19 @@ from weekend_thinking.evaluation import score_predictions
 from weekend_thinking.stats import paired_cluster_bootstrap
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'useful-note-gsm8k-train512-v1'
+SCHEMA = 'useful-note-gsm8k-train512-v2-sharded'
 PANEL_SHA256 = 'c8cadad08a84bc813566085ad0d7b1d5d1f289f22287683b8f2bae1002c12231'
 N, SHARDS, THOUGHT_CAP, ANSWER_CAP = 512, 4, 128, 512
 MODES = ('direct', 'empty_format', 'one_thought')
 MODEL_IDS = ('B0', 'W', 'Cprime', 'T')
 STATUSES = ('ok', 'truncated', 'error', 'format_error')
+NATIVE_REFERENCES = 4
+
+
+def validate_shards(value):
+    if type(value) is not int or value not in (4,16):
+        raise ValueError('Frozen GSM shard count must be exactly four or sixteen')
+    return value
 
 
 def sources():
@@ -94,10 +101,10 @@ def measure_widths(questions, prompt, fmt, tokenizer):
         reader_suffix_lengths=dict(min=min(suffixes), max=max(suffixes), total=sum(suffixes)))
 
 
-def prepare(output, panel, model_dir, native_reference, until, model_id, **checkpoint_args):
+def prepare(output, panel, model_dir, native_reference, until, model_id, *, shards=SHARDS, **checkpoint_args):
     from transformers import AutoTokenizer
     from train.interface_oracle_probe import load as load_native, reference
-    shared.check(until); output = Path(output); panel = Path(panel); model_dir = Path(model_dir)
+    shared.check(until); shards=validate_shards(shards); output = Path(output); panel = Path(panel); model_dir = Path(model_dir)
     if sha256_file(panel/'manifest.json') != PANEL_SHA256 or output.exists():
         raise ValueError('Exact closed TRAIN512 panel and fresh output required')
     panel_manifest = shared.read(panel/'manifest.json')
@@ -125,7 +132,7 @@ def prepare(output, panel, model_dir, native_reference, until, model_id, **check
         raise ValueError('Common answer prefill/continuation exceeds released context')
     assets = evaluator.asset_provenance(model_dir)
     old, native = load_native(Path(native_reference)); ref, _ = reference(Path(native_reference), old, native)
-    if old['assets'] != assets or len(native['qualification_refs']) < SHARDS:
+    if old['assets'] != assets or len(native['qualification_refs']) != NATIVE_REFERENCES:
         raise ValueError('Actual released B0 native FP32 reference required')
     identity = resolve_identity(model_id, **checkpoint_args)
     shared.check(until); output.mkdir(parents=True, exist_ok=False)
@@ -133,7 +140,7 @@ def prepare(output, panel, model_dir, native_reference, until, model_id, **check
     for name in ('questions.jsonl','prompt.json','format.json'):
         (output/name).write_bytes((panel/name).read_bytes())
     protocol = dict(schema=SCHEMA, created_utc=utc_now(), purpose='Nonfinal GSM8K TRAIN development; official TEST unused',
-        items=N, shards=SHARDS, modes=list(MODES), model=identity, model_dir=str(model_dir.resolve()),
+        items=N, shards=shards, native_reference_indices=[i%NATIVE_REFERENCES for i in range(shards)], modes=list(MODES), model=identity, model_dir=str(model_dir.resolve()),
         assets=assets, model_manifest_sha256=assets['manifest_sha256'], base_signature=ref['signature'],
         native_reference=str(Path(native_reference).resolve()),
         native_inputs=shared.pin([Path(native_reference)/'protocol.json',Path(native_reference)/'cpu-reference/reference.json',
@@ -156,7 +163,8 @@ def prepare(output, panel, model_dir, native_reference, until, model_id, **check
 
 def load(output):
     output = Path(output); p = shared.read(output/'protocol.json')
-    if (p['schema'] != SCHEMA or p['source_files'] != sources() or p['items'] != N or p['shards'] != SHARDS
+    if (p['schema'] != SCHEMA or p['source_files'] != sources() or p['items'] != N or type(p['shards']) is not int or p['shards'] not in (4,16)
+            or p['native_reference_indices'] != [i%NATIVE_REFERENCES for i in range(p['shards'])]
             or p['modes'] != list(MODES) or p['thought_cap'] != THOUGHT_CAP or p['max_answer_tokens'] != ANSWER_CAP
             or p['compute'] != 'fp32' or p['head_precision'] != 'fp32' or p['parser'] != 'strict_final_hash4_number_v1'):
         raise ValueError('Frozen GSM wrapper/policy/source changed')
@@ -172,7 +180,7 @@ def load(output):
 def generate(output, shard, until, device='xla'):
     import torch
     shared.check(until); output = Path(output); p, questions = load(output)
-    if type(shard) is not int or shard not in range(SHARDS) or until != p['deadline_utc']:
+    if type(shard) is not int or shard not in range(p['shards']) or until != p['deadline_utc']:
         raise ValueError('Fixed shard/deadline required')
     d = output/'generation'/f'shard-{shard}'; d.mkdir(parents=True, exist_ok=False)
     report = dict(status='started', rows=0, started_utc=utc_now(), shard=shard,
@@ -183,14 +191,15 @@ def generate(output, shard, until, device='xla'):
         validate_identity(actual); report['model'] = actual; report['model_setup_seconds'] = time.monotonic()-before
         if any(v.dtype != torch.float32 for v in backend.model.parameters()):
             raise ValueError('GSM inference requires actual FP32 parameters/head')
-        before = time.monotonic(); report['gate'] = shared.base_gate(backend, p, shard, d, actual)
+        before = time.monotonic(); report['native_reference_index']=shard%NATIVE_REFERENCES
+        report['gate'] = shared.base_gate(backend, p, report['native_reference_index'], d, actual)
         report['native_gate_seconds'] = time.monotonic()-before
         fmt = validate_format(tok, shared.read(output/'format.json')); prompt = shared.read(output/'prompt.json')
         widths = measure_widths(questions, prompt, fmt, tok)
         if any(widths[k] != p[k] for k in widths):
             raise ValueError('Actual native common prompt shapes changed')
         decoder = evaluator.GreedyDecoder(backend.model, tok, sync=backend.sync, banned_ids=backend.banned_ids)
-        local = evaluator.shard_questions(questions, shard, SHARDS)
+        local = evaluator.shard_questions(questions, shard, p['shards'])
         report['path_generation_started_utc'] = utc_now(); path_started = time.monotonic()
         with (d/'predictions.jsonl').open('x') as stream:
             for mode in MODES:
@@ -214,16 +223,17 @@ def generate(output, shard, until, device='xla'):
 
 
 def complete_predictions(output, p, questions):
-    """All four whole jobs/all1536 paths before any gold read; errors count."""
+    """Every frozen shard/all1536 paths before any gold read; errors count."""
     output = Path(output); values = []; reports = []; pins = {}; identity = None
-    for shard in range(SHARDS):
+    for shard in range(p['shards']):
         d = output/'generation'/f'shard-{shard}'; run = shared.read(d/'run.json'); rows = shared.rows(d/'predictions.jsonl')
-        expected = [(q['item_id'],mode) for mode in MODES for q in evaluator.shard_questions(questions,shard,SHARDS)]
+        expected = [(q['item_id'],mode) for mode in MODES for q in evaluator.shard_questions(questions,shard,p['shards'])]
         if (run['status'] != 'complete_attempts' or run['shard'] != shard or run['rows'] != len(expected)
+                or run['native_reference_index'] != shard%NATIVE_REFERENCES
                 or run['protocol_sha256'] != sha256_file(output/'protocol.json')
                 or run['predictions_sha256'] != sha256_file(d/'predictions.jsonl')
                 or [(r['item_id'],r['mode']) for r in rows] != expected):
-            raise ValueError('All four complete original question/mode path shards required')
+            raise ValueError('All frozen complete original question/mode path shards required')
         validate_identity(run['model'])
         if any(run['model'].get(k) != v for k,v in p['model'].items()) or (identity is not None and run['model'] != identity):
             raise ValueError('Actual model identity differs across shards/protocol')
@@ -305,13 +315,14 @@ def main():
     for name in ('output','panel','model-dir','native-reference'):
         p.add_argument('--'+name,type=Path,required=True)
     p.add_argument('--model-id',choices=MODEL_IDS,required=True); p.add_argument('--deadline-utc',required=True)
+    p.add_argument('--shards',type=int,choices=(4,16),default=SHARDS)
     p.add_argument('--checkpoint',type=Path); p.add_argument('--checkpoint-sha256'); p.add_argument('--complete-sha256'); p.add_argument('--training-protocol',type=Path)
     p = sub.add_parser('generate'); p.add_argument('--output',type=Path,required=True)
     p.add_argument('--shard-index',type=int,required=True); p.add_argument('--deadline-utc',required=True); p.add_argument('--device',choices=('cpu','xla'),default='xla')
     p = sub.add_parser('summarize'); p.add_argument('--output',type=Path,required=True)
     a = parser.parse_args()
     if a.command=='prepare':
-        result=prepare(a.output,a.panel,a.model_dir,a.native_reference,a.deadline_utc,a.model_id,
+        result=prepare(a.output,a.panel,a.model_dir,a.native_reference,a.deadline_utc,a.model_id,shards=a.shards,
             checkpoint=a.checkpoint,checkpoint_sha256=a.checkpoint_sha256,complete_sha256=a.complete_sha256,training_protocol=a.training_protocol)
         print(json.dumps(dict(items=result['items'],modes=result['modes'],model=result['model']['id'],answer_prefill_width=result['answer_prefill_width'])))
     elif a.command=='generate':generate(a.output,a.shard_index,a.deadline_utc,a.device)

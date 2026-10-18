@@ -101,11 +101,21 @@ An initial hardware qualification stopped before updates at its native-reference
 Device BF16 was closer to CPU FP32 than the CPU BF16 reference was; an explicit
 high-precision reference repair retains the same KL bound and the
 [original failure](validation/useful_note_bf16_native_failure_20261018.json).
-The repaired-reference qualification has completed three W and three C′ updates
-with finite FP32 masters and moments. C′ updates2/3 took52/47 seconds after
-compilation; T qualification and actual checkpoint recovery remain pending.
-Scientific SFT awaits qualification;
-official TEST is unused.
+The repaired-reference qualification completed all three W/C′/T updates per arm,
+with finite FP32 masters and moments. C′ later updates took52/47 seconds and
+T42/43 seconds. [Complete hardware evidence](validation/useful_note_bf16_storage_hardware_20261018.json).
+Actual recovery then restored every rank's complete model, master, moment,
+counter and RNG state exactly and completed the next real update. An earlier
+validation failure is preserved alongside the
+[successful recovery](validation/useful_note_state_recovery_002_20261018.json).
+
+**The first longer W run is active:** fresh B0,5,120 distinct real documents,
+two epochs and320updates. All32 numerical/initialization checks and the first
+two updates pass; those updates took60/62 seconds. This establishes execution,
+not useful thoughts. Every terminal arm will receive the same held likelihood
+and GSM8K TRAIN512 evaluations, regardless of intermediate losses.
+[Declared launch and evidence](validation/reader_learning_compound5120_W_seed20261018_launch.json).
+Official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here
