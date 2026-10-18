@@ -60,7 +60,14 @@ The ordinary reader still loses on average; 82/256 labels beat its empty control
 The teacher sees the continuation. This does not establish a useful prefix-only
 writer. [All notes, controls, scores and copying diagnostics](validation/general_hindsight_TRAIN256_20261018.json).
 A [general high-surprisal DEV panel](validation/general_high_surprisal_DEV256_sealed_20261018.json)
-is now sealed before supervised outcomes; the broader filtered TRAIN batch is running.
+was sealed before supervised outcomes. Its completed B0 baseline also fails:
+own−raw is −8.391 [−9.072,−7.696] with re-anchoring and
+−.847 [−1.035,−.651] with fixed mixing. Own−unrelated is negative on both
+paths, despite supplied-copy gains of +25.572/+18.520 nats. Of256 notes,
+227 hit the cap. The [complete baseline](validation/general_note_held256_B0_20261018.json)
+retains every note/control/vector, costs and the first6 fixed examples. This
+panel conditions on high B0 surprisal; that does not guarantee reasoning-worthy
+text. The broader filtered TRAIN batch is generating teacher notes.
 
 Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the

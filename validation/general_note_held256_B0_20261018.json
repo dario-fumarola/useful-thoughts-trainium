@@ -1,0 +1,504 @@
+{
+  "schema": "general-note-held256-B0-public-v1",
+  "status": "COMPLETE_NEGATIVE",
+  "question": "Can fresh prefix-only B0 notes improve held high-surprisal general continuation likelihood?",
+  "design": {
+    "items": 256,
+    "cells": 3072,
+    "writer": {
+      "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "id": "B0",
+      "loaded_checkpoint": null,
+      "model": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      }
+    },
+    "reader": {
+      "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "id": "B0",
+      "loaded_checkpoint": null,
+      "model": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      }
+    },
+    "note_cap_total_actions": 128,
+    "policy": "One greedy native I3 attempt per prefix, no header; intact global next-document note donors.",
+    "reward": "All16 original continuation tokens; no arithmetic mask or scalar teacher.",
+    "interface": "I3 reanchor24, fixedI6=.375 secondary, full-vocabulary logits.",
+    "panel": "Separate sealed B0-surprisal>=1.7 developmental DEV, first256 among2048; no official TEST."
+  },
+  "groups": {
+    "I3": {
+      "absolute": {
+        "raw": {
+          "items": 256,
+          "errors": 0,
+          "mean": -31.072810463096207
+        },
+        "empty": {
+          "items": 256,
+          "errors": 0,
+          "mean": -34.25031548783821
+        },
+        "own": {
+          "items": 256,
+          "errors": 0,
+          "mean": -39.46391564412575
+        },
+        "other": {
+          "items": 256,
+          "errors": 0,
+          "mean": -37.50339963668559
+        },
+        "target_copy": {
+          "items": 256,
+          "errors": 0,
+          "mean": -5.50048745198682
+        },
+        "corrupt_copy": {
+          "items": 256,
+          "errors": 0,
+          "mean": -35.925347329632956
+        }
+      },
+      "contrasts": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -3.177505024742002,
+          "ci95": [
+            -3.6316329003772094,
+            -2.734071670397305
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -5.213600156287538,
+          "ci95": [
+            -5.782595936189763,
+            -4.639974423047898
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": -1.9605160074401562,
+          "ci95": [
+            -2.577231250920608,
+            -1.325650889927492
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -8.39110518102954,
+          "ci95": [
+            -9.072386004112369,
+            -7.696424862934017
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "target_copy_minus_corrupt_copy": {
+          "difference_b_minus_a": 30.424859877646135,
+          "ci95": [
+            28.38579889498306,
+            32.48071746220197
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "target_copy_minus_own": {
+          "difference_b_minus_a": 33.96342819213892,
+          "ci95": [
+            31.855736132792785,
+            36.10184468394702
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "target_copy_minus_raw": {
+          "difference_b_minus_a": 25.572323011109386,
+          "ci95": [
+            23.58451018578361,
+            27.572350038997733
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        }
+      },
+      "gates": {
+        "empty_tax_qualified": false,
+        "own_over_other": false,
+        "own_over_raw": false,
+        "target_copy_headroom": true,
+        "useful_content": false
+      }
+    },
+    "I6w0.375": {
+      "absolute": {
+        "raw": {
+          "items": 256,
+          "errors": 0,
+          "mean": -31.072810463096207
+        },
+        "empty": {
+          "items": 256,
+          "errors": 0,
+          "mean": -31.286884147217368
+        },
+        "own": {
+          "items": 256,
+          "errors": 0,
+          "mean": -31.920001855273213
+        },
+        "other": {
+          "items": 256,
+          "errors": 0,
+          "mean": -31.55101751736294
+        },
+        "target_copy": {
+          "items": 256,
+          "errors": 0,
+          "mean": -12.553220875088197
+        },
+        "corrupt_copy": {
+          "items": 256,
+          "errors": 0,
+          "mean": -31.44293909909212
+        }
+      },
+      "contrasts": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -0.21407368412116223,
+          "ci95": [
+            -0.33320632024961516,
+            -0.09164567951109982
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -0.6331177080558446,
+          "ci95": [
+            -0.7847541874549993,
+            -0.47936113223502186
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": -0.368984337910273,
+          "ci95": [
+            -0.5352466104651338,
+            -0.2022797260350187
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -0.8471913921770068,
+          "ci95": [
+            -1.0351255441491392,
+            -0.6511660167226975
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "target_copy_minus_corrupt_copy": {
+          "difference_b_minus_a": 18.88971822400392,
+          "ci95": [
+            17.566339964163983,
+            20.232382430978884
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "target_copy_minus_own": {
+          "difference_b_minus_a": 19.366780980185016,
+          "ci95": [
+            18.025496107765402,
+            20.747682948329974
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        },
+        "target_copy_minus_raw": {
+          "difference_b_minus_a": 18.51958958800801,
+          "ci95": [
+            17.203166483356704,
+            19.865960206969724
+          ],
+          "documents": 256,
+          "items": 256,
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17
+        }
+      },
+      "gates": {
+        "empty_tax_qualified": true,
+        "own_over_other": false,
+        "own_over_raw": false,
+        "target_copy_headroom": true,
+        "useful_content": false
+      }
+    }
+  },
+  "counts": {
+    "caps": 227,
+    "empty": 2,
+    "eos": 29,
+    "first_close": 0,
+    "generation_errors": 0,
+    "notes": 256,
+    "scoring_errors": 0,
+    "target_copy_equals_corrupt_copy": 0
+  },
+  "costs": {
+    "mean_actions_per_attempt": 118.84765625,
+    "mean_content_tokens_per_attempt": 118.734375,
+    "note_generation_seconds_mean": 9.74098777102779,
+    "note_generation_seconds_sum": 2493.692869383114,
+    "raw_full_logits_seconds_sum": 39.93929128203308,
+    "scope": "Observed action/content and note latency include all saved attempts, including errors/partials. Score cell times count shared I3/I6 work once and include actual raw forward/softmax/transfer costs. Model setup/native gate/process-stage times are separate; no warm or end-to-end throughput claim.",
+    "scoring_cell_seconds_sum": 223.35254955961136,
+    "scoring_shared_timing_groups": 1536,
+    "total_content_tokens": 30396,
+    "total_generated_actions": 30425
+  },
+  "interpretation": "Own notes hurt raw and empty likelihood and score below intact unrelated notes on both paths. Copying supplied future16 strongly helps, preserving reader headroom without establishing useful prefix-only generation.",
+  "decision": "B0 fails useful-content gate on both paths. Continue declared supervised reader/writer warm-start and separate prospective prefix-helper prompt probe; no RL release.",
+  "independent": {
+    "status": "PASS_INDEPENDENT_3072_CELLS_14_CONTRASTS_AND_COSTS",
+    "max_summary_error": 0.0,
+    "original_sealing_raw_vectors_exact": 256,
+    "archive_entries_source_and_destination_verified": 218,
+    "context_and_target_native_hashes_verified": 3072,
+    "genuine_notes_native_actions_verified": 256,
+    "method": "Separate native context reconstruction, full16-vector sums and vectorized paired document bootstrap; no experiment reducer called.",
+    "source_sha256": "a3fcf90f262dc190d23ada28c2e924031b8f1f1a8338d0afaa2a3c8e5b7e694b"
+  },
+  "complete_outputs": {
+    "validation/general_note_held256_B0_cells_20261018.jsonl": {
+      "sha256": "e6624ff33915832393f8b9e834993ed6516bd31cf1557c1fcfad07aae7b9b951",
+      "rows": 3072,
+      "bytes": 3105201
+    },
+    "validation/general_note_held256_B0_notes_20261018.jsonl": {
+      "sha256": "e16ca23b8304de9d5cba94fcd39f5cf54a28bf2706679c65f4b0be1f7075a206",
+      "rows": 256,
+      "bytes": 1890019
+    }
+  },
+  "examples_selection": "First6 fixed panel documents, all controls; no gain-based selection.",
+  "examples": [
+    {
+      "item_id": "46047508378530ce68f040bdc7f6c58531e2a90795fe65cd53c484631a6b6fcc:550",
+      "prefix_tail": " facing each other and so we have a force in the Y direction from each magnet but still not sure of the math. Propulsion is from force of gravity. Any help would be greatly appreciated!\n... note: \"weight\" = \"force of gravity\". The force needed to levitate a car mass m is mg. The first equation tells you the force at different separations ... what is the problem?\nSince you already have the magnets, why not measure the force?\n\nI have",
+      "future16": ":\nb(naught)= .000104 T\nM",
+      "note": " = 1.2566370614359172953850573533118\nM = 2B(naught)/u(naught)\nh = 3/16\nx = 1/2\n\nI am not sure how to use this to find the weight of the magnets. I am not sure how to use the equation to find the weight of the magnets. I am not sure how to use the equation to find the weight of the magnets. I am not sure how to use the equation to find the weight",
+      "stop": "length_cap",
+      "full16_ll": {
+        "I3": {
+          "raw": -36.38912307202554,
+          "empty": -40.34978915145621,
+          "own": -39.47737073054304,
+          "other": -38.181270724278875,
+          "target_copy": -5.75771406898275,
+          "corrupt_copy": -42.54405943362508
+        },
+        "I6w0.375": {
+          "raw": -36.38912307202554,
+          "empty": -34.59289613488363,
+          "own": -32.57361419746303,
+          "other": -34.00435223986278,
+          "target_copy": -14.30264082121721,
+          "corrupt_copy": -34.25191316579003
+        }
+      }
+    },
+    {
+      "item_id": "a9cd3007a2e7120d20e9a8eddd032f748a0ee7d38bc40a8fe094c1cdfadecffe:871",
+      "prefix_tail": " die sinne.\n\n a b h t t s o n k o m m a v e r e e n v o u d i g h e d b l k o a e n r a j f e k a l e e a m d o e p b l h s e n m l e i n r o r v m r r s e d r g e j o e o n t s a r f s s g h g u u",
+      "future16": " s n x l m g b t t p k d e e k w",
+      "note": "\n\n15.1\n\n15.2\n\n15.3\n\n15.4\n\n15.5\n\n15.6\n\n15.7\n\n15.8\n\n15.9\n\n15.10\n\n15.11\n\n15.12\n\n15.13\n\n15.14\n\n15.15\n\n15.16\n\n15.17\n\n15.18\n\n15.19\n\n15.20\n\n15.21\n\n15.22\n\n15.2",
+      "stop": "length_cap",
+      "full16_ll": {
+        "I3": {
+          "raw": -54.85351228713989,
+          "empty": -57.73513221740723,
+          "own": -58.12220573425293,
+          "other": -59.37775468826294,
+          "target_copy": -6.421980068087578,
+          "corrupt_copy": -57.68021035194397
+        },
+        "I6w0.375": {
+          "raw": -54.85351228713989,
+          "empty": -55.170708417892456,
+          "own": -55.40014410018921,
+          "other": -55.266409397125244,
+          "target_copy": -23.19332778453827,
+          "corrupt_copy": -55.22216773033142
+        }
+      }
+    },
+    {
+      "item_id": "14b529f2066857f430aec42a5c1fee59007f6fadd7de1ebecdd49cb8aca63427:616",
+      "prefix_tail": "200500700750Year199419951996199719981999\n\nStep 1:Make a scatter plot by graphing the (wolf, moose) ordered pairs. Use the x-axis for wolves and the y-axis for moose.\n\nStep 2:Sketch a trend line. The line should be as close as possible to each data point. There",
+      "future16": " should be about as many points above the trend line as below it.\n\nProblem Sol",
+      "note": " no correlation between the number of wolves and the number of moose.\n\nStep 3:Use the trend line to predict the number of moose when there are 16 wolves. The trend line\nis approximately 1.5 moose per wolf. So, when there are 16 wolves, there will be about 24 moose.\n\nProblem Solving Strategy: Solve by Graphing Use the data in the table below. Suppose this year there are 16 wolves on the island. Predict how many moose are on the island.Isle Royale PopulationsWolfMoose142324222",
+      "stop": "length_cap",
+      "full16_ll": {
+        "I3": {
+          "raw": -16.19512621150352,
+          "empty": -16.411096131429076,
+          "own": -30.727444034069777,
+          "other": -19.120501856319606,
+          "target_copy": -5.06941204611212,
+          "corrupt_copy": -17.361143050715327
+        },
+        "I6w0.375": {
+          "raw": -16.19512621150352,
+          "empty": -15.655961383832619,
+          "own": -16.682479362934828,
+          "other": -14.865451861638576,
+          "target_copy": -6.760020012385212,
+          "corrupt_copy": -15.952468596631661
+        }
+      }
+    },
+    {
+      "item_id": "0e3a2ab8b3fcbcd35e22d8e87822723f2a787f4bf6b2164601a36c9564155b1e:1189",
+      "prefix_tail": " quotient, $$h^{-1}(f(x+h)-f(x))$$, as $$h\\to0$$.\n2. Define an anti-derivative of a function $$f$$ as a function $$F$$ for which $$F'=f$$.\n3. Define the definite integral of a function $$f$$ over $$[a,b]$$, say as the limit of Riemann sums.\n4. Discover that (2) and (3) are related,",
+      "future16": " in the sense that $$\\int_a^bf=F(b)-F(a)",
+      "note": " $$\\int_a^b f(x)\\,dx = F(b)-F(a)$$ for some anti-derivative $$F$$ of $$f$$.\n5. Discover that (1) and (4) are related,\numably by the Fundamental Theorem of Calculus.\n\nNow, the problem is that (1) and (4) are not really related. The derivative is a local property, and the integral is a global property. So, the Fundamental Theorem of Calculus is really a statement about the relationship between local and global properties. It's not a statement about the relationship between the derivative and the integral.\n\nSo",
+      "stop": "length_cap",
+      "full16_ll": {
+        "I3": {
+          "raw": -11.86537016776856,
+          "empty": -14.27883012033999,
+          "own": -20.840536766219884,
+          "other": -15.112008450552821,
+          "target_copy": -3.5795978344685864,
+          "corrupt_copy": -15.841767880134284
+        },
+        "I6w0.375": {
+          "raw": -11.86537016776856,
+          "empty": -11.860602295259014,
+          "own": -12.96040317369625,
+          "other": -12.032332246890292,
+          "target_copy": -5.615938833449036,
+          "corrupt_copy": -12.231514457787853
+        }
+      }
+    },
+    {
+      "item_id": "db41abae6b5701feb58686cac4447aff7002f7745139971698baaddb1b5997a5:560",
+      "prefix_tail": " get:\n$\\alpha = 0.114$\n\nNote:\nThe change in values of concentration, pressure, catalyst, inert gas addition, etc. not affect equilibrium constant. The Le Chatelier's principle states that the temperature, concentration, pressure, catalyst, inert gas addition to a chemical reaction can lead to a shift in equilibrium position only. We know that activation energy is the minimum energy required to start a chemical reaction. Collisions of particles lead to reactions. Only particles",
+      "future16": " that collide sufficiently, can react. Now comes the important point. From the kinetic",
+      "note": " with energy greater than the activation energy will react.",
+      "stop": "token:151643",
+      "full16_ll": {
+        "I3": {
+          "raw": -50.3391592502594,
+          "empty": -48.58832910656929,
+          "own": -59.04854264855385,
+          "other": -51.902618050575256,
+          "target_copy": -2.347695174627006,
+          "corrupt_copy": -49.13471567630768
+        },
+        "I6w0.375": {
+          "raw": -50.3391592502594,
+          "empty": -49.29434135556221,
+          "own": -52.515735030174255,
+          "other": -49.27254298329353,
+          "target_copy": -16.186526741832495,
+          "corrupt_copy": -49.251506090164185
+        }
+      }
+    },
+    {
+      "item_id": "7e11180781191c4b2067ee445d60f16b95d53cf9ae3ce77233b464da72e8f67d:564",
+      "prefix_tail": "收录于以下专栏：\n\n[LeetCode]62 不同的路径总数\n\nUnique Paths(不同的路径总数)【难度：Medium】 A robot is located at the top-left corner of a m x n grid (marked ...\n• qq_14821023\n• 2016年02月28日 13:31\n• 702\n\n[LeetCode]63 不同的路径总数",
+      "future16": "之二\n\nUnique Paths II(不同的路径总数之二)【难度：",
+      "note": "不同的路径总数【难度：Medium】 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the...\n• qq_14821023\n• 2016年02月28日 13:31\n• 691\n\n[LeetCode]64 不同的路径\n不同的路径【难度：Medium】 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the...\n• qq_14821023\n• 2016",
+      "stop": "length_cap",
+      "full16_ll": {
+        "I3": {
+          "raw": -7.930016586789861,
+          "empty": -17.518366191536188,
+          "own": -20.310508432798088,
+          "other": -17.090160547289997,
+          "target_copy": -5.372289594844915,
+          "corrupt_copy": -18.400726553983986
+        },
+        "I6w0.375": {
+          "raw": -7.930016586789861,
+          "empty": -7.7721567375119776,
+          "own": -7.9316840739920735,
+          "other": -7.6151807548012584,
+          "target_copy": -4.911970632150769,
+          "corrupt_copy": -7.851806314196438
+        }
+      }
+    }
+  ],
+  "provenance": {
+    "local/nvme/diagnostics/general-note-held256-B0-v1/protocol.json": "f887c1afbeee216378131d02d6e3a9bf140f1fe1e9032a011f8f0d77fd558c2b",
+    "local/nvme/diagnostics/general-note-held256-B0-v1/summary-B0.json": "52d1e3d3f51caeaa0149704ae04475af1ede7b0cc3ddcfffe7059cc0e431fe39",
+    "local/nvme/diagnostics/general-note-held256-B0-v1/controls.json": "00343aed41f44bce9871e9ba65bbba6573d9aa4e718ea37e4eaf863ffa3d2277",
+    "local/diagnostics/general-note-held256-B0-v1/generate.closure.json": "7df8728b379835fdae6680adc6bd8994b99d4786dd8ceb585ca8d812dff85ade",
+    "local/diagnostics/general-note-held256-B0-v1/score-B0.closure.json": "e3d7004357fcb6448c0560ee80f7eeb594c1d3e10518099990ad1cdca97e2586",
+    "local/diagnostics/general-note-held256-B0-v1/final.cleanup.json": "85b962a78d6ed417c0a356294000f0c84233586fdfd71095ff6b81e75a31a935",
+    "local/backups/diagnostics/general-note-held256-B0-v1/ARCHIVE.json": "1f07be3bd7daf8ec4b8c500d78b5bedf146f88adaf4a40ca075c162bd5edfcac"
+  },
+  "archive": {
+    "path": "local/backups/diagnostics/general-note-held256-B0-v1/ARCHIVE.json",
+    "status": "complete_SHA256_source_and_destination_readback_verified",
+    "files": 218,
+    "payload_bytes": 28344723
+  },
+  "limitations": [
+    "B0-surprisal-conditioned developmental DEV, not unselected GENERAL or official TEST.",
+    "Cap128 TOTAL actions includes sampled native first-close/EOS; capped content is never truncated.",
+    "Other is an intact global cyclic own-note permutation; per-item lengths differ, population lengths are preserved.",
+    "target_copy is exact native future16; corrupt_copy is next-document future16, not a certified mathematically false note.",
+    "Target-copy headroom is plumbing, not useful prefix-only writer evidence. No arithmetic teacher or numeric mask.",
+    "Fixed I6=.375 uses full logits; no fit or policy-training change. Shared score costs count once per timing group.",
+    "Document bootstrap is conditional on B0 and the selected development panel, not training-seed uncertainty.",
+    "Latency totals sum actual concurrent-worker paths and include cold work; not an end-to-end or steady-throughput benchmark."
+  ]
+}

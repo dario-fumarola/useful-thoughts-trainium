@@ -1,4 +1,4 @@
-# Status — 2026-10-18 09:02 UTC
+# Status — 2026-10-18 09:12 UTC
 
 ## Active: canonical-reference BF16-storage qualification
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -39,7 +39,8 @@ Keep first 5,120 eligible notes with I3 full16 teacher−empty >0; shortfall sta
 Reject empty/special-token notes and complete literal future16 copies; retain all attempts.
 All131072 native projections independently match;1399 CPU tests/smoke/compile pass.
 Sixteen FP32 workers on logical32–43/60–63, physical8/9/10/15; deadline14:36:32UTC.
-Raw launched08:39UTC; all16 native gates and48actual mappings pass. Data owns closure.
+All131072raw rows/16gates/exits0 closed;32176qualify, first24576selected in frozen order.
+Teacher launched09:04UTC; all16native gates/48actual PID-start-session-mappings pass.
 Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
 
 ## CPU complete: full-state recovery implementation
@@ -95,15 +96,33 @@ Independent all1536score/status/cost checks and both CIs exactly match; all148ar
 Public validation/postorder_gsm8k_TRAIN512_B0_20261018.json plus all1536outputs and fixed first3examples.
 Decision: retain negative B0 reference and evaluate every terminal trained arm identically.
 
-## Active: B0 general held256 baseline
+## Closed: B0 general held256 baseline — negative
 Question: do prefix-only B0 notes help the separate high-surprisal general DEV panel?
 ID:general-note-held256-B0-v1; all256 prefix-only cap128 attempts before future controls.
 Raw/empty/own/intact other/target copy/corrupt copy ×I3/fixedI6;3072cells, full16primary.
 Paired-document intervals; prospective own−raw and own−other lower95%>0 required.
-Launched08:51UTC on logical44/48/52/56, physical11–14; deadline13:30UTC.
-All4native gates and12actual PID/start/session/mapping checks pass; notes progressing.
-Reviewer owns all stages/physical closure/archive; source and1418CPU checks pass.
-No partial utility inspection. Fixed mixing remains secondary to future I3self-reader SFT gate.
+All256notes/3072finite cells, zeroerrors; all8native gates and10stage exits0.
+I3own−raw−8.391[−9.072,−7.696], own−other−1.961[−2.577,−1.326].
+I6own−raw−.847[−1.035,−.651], own−other−.369[−.535,−.202]; bothFAIL.
+Empty−rawI3/I6−3.178/−.214; supplied target-copy−raw+25.572/+18.520.
+227capped/29EOS/2empty;30425actualactions. Allowned PID-start/groups/SIDs/tmux/devices closed.
+Verified218file EBS archive; independent all3072vectors/14CIs/context/cost checks exact.
+Public validation/general_note_held256_B0_20261018.json plus complete cells/notes/fixedfirst6examples.
+Decision: retain negative B0 baseline; prospective helper probe and supervised warm-start next.
+
+## Released: prefix-only helper prompting
+Question: does a concise fewshot helper prompt improve held general full16 likelihood?
+ID:general-prefix-helper-held256-v1; same256DEV, plain/fewshot ×full/firstline.
+Two genuine prefix-only cap64attempts/document; actual query has no continuation field.
+Reuse three fixed synthetic demonstrations; all512attempts close before controls/future scoring.
+Intact global donors per policy/extraction; raw/empty/own/other/copy/corrupt×I3/I6,12288cells.
+Sole primary: fewshot/firstline I6 own−raw AND own−other paired lower95%>0.
+Allother variants are secondary; no SFT gate change, rank selection or discarded generation cost.
+20focused/1438combinedCPUchecks, smoke/compile and root source/runtime review pass.
+Plain/fewshot prompt514/739tokens; prefill544/768; maximumreader604+16<1024.
+Released logical44/48/52/56, physical11–14; ports65521–28, deadline13:30UTC.
+Root verifies emptydevices/ports/pins and binds completed generalbaseline archive; reviewer owns stages.
+Public prospective design: validation/general_prefix_helper_design_20261018.json; no outcome yet.
 Reviewer supervises completion, physical closure, one summary and verified EBS archive.
 
 ## Closed negative: fixed first-line note ablation

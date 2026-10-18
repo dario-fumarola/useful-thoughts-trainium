@@ -12,12 +12,15 @@
    K1 surprisal>=1.7; close all teacher attempts before intact global donors;
    close all196608 reader cells before selecting first5120 eligible I3-positive
    labels. No gain ranking, replacement pool, cutoff shrink or automatic retry.
-3. Finish active B0 `general-note-held256-B0-v1` on logical44/48/52/56, deadline13:30UTC.
-   Review owns all256 notes, physical closure, global controls, all3072 reader
-   cells and archive. Its release binds the completed/archived GSM512 baseline:
-   direct/empty/thought429/433/276, unsupported11/18/147; all1536 outcomes independently verified.
-   Review may prepare the separate prefix-only fewshot/full-versus-firstline
-   helper ablation on CPU while this runs; no model release or source mutation.
+3. Finish the released separate prefix-only fewshot/full-versus-firstline helper
+   probe on logical44/48/52/56, bound to completed general B0 closure/archive.
+   All256notes/3072cells closed/archived/independently verified; B0own−raw and
+   own−other negative on both I3/I6. Supplied-copy headroom remains large.
+   Helper source passes20 focused and1438 combined CPU checks/smoke/compile.
+   Sole prospective primary: fewshot/firstline fixedI6 own−raw AND own−other
+   lower95%>0; allfour writer/extraction conditions and absolute controls retained.
+   No SFT gate change. Actual prompt514/739, cache608/832; root runtime/emptybank/
+   port/hash checks pass, release issued with deadline13:30UTC. Review owns stages/archive.
 4. Use v3 T's full step3 state for the staged actual restore/fourth-update probe:
    `local/qualification/useful-note-state-recovery-001`. Root issues a fresh finite
    release after T closure. Verify actual BF16 model/FP32 masters/moments/counters
