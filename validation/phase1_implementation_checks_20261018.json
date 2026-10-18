@@ -1,0 +1,26 @@
+{
+  "schema": "phase1_implementation_cpu_check_v1",
+  "created_utc": "2026-10-18T05:03:47.393410+00:00",
+  "source_files": {
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+    "train/interface_oracle_probe.py": "d0cde26dd06b507fa3a5421d1c2d19e6f9b02d9ef6d00de0ec0116787691882f",
+    "train/profile_empty_pipeline.py": "859a9fdc4a0a1ffbd53add349deac58f01d58bf9eb99221932b1b861d94ffe9d",
+    "tests/test_computable_equations.py": "ab09f5a9939cfad2814cd13f32bdb69a3ca0cb4cf0d674421cc630cf82ee1d4c",
+    "tests/test_computable_equations_supervised.py": "382426a382dd1e39348fa9fcd714ce0f770fc2fad3c51141fafc8c6eb7d75aea",
+    "tests/test_interface_oracle_probe.py": "a137d6478fd9ffb4cda17f07b5d2b47e0cd4e8fff12f9a323aac6c9af6a0172d"
+  },
+  "cpu_checks": {
+    "path": "local/checks/tests.vjVvoK",
+    "tests_passed": 1136,
+    "seconds": 48.3,
+    "toy_smoke": "passed",
+    "compileall": "passed"
+  },
+  "review": "Independent probe and both curator reviews accepted; profiler registration repair is qualifying on actual hardware.",
+  "limitations": [
+    "CPU checks do not qualify Neuron training, BF16, distributed updates or useful thoughts.",
+    "Forced-EOS profiler v1 failed before first backward; complete failure remains locally preserved.",
+    "Actual interface model batch not yet launched."
+  ]
+}

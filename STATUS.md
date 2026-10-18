@@ -1,4 +1,4 @@
-# Status — 2026-10-18 04:36 UTC
+# Status — 2026-10-18 05:03 UTC
 
 ## Active: batched reader interface qualification
 Question: can unchanged B0 use a supplied note under any affordable interface?
@@ -28,7 +28,20 @@ ID: calculation-joint-fullsource-train512-v1. No training/qualification launched
 Reviewed packers/trainer and1079 CPU tests passed; CPU-only512 preparation completed.
 Owner replaced this with >=5000 examples, larger held DEV and BF16 training.
 Draft protocol/plan and CPU outputs retained; do not launch old draft.
-Data agent finishes existing CPU audit, then investigates relaxed real arithmetic data.
+CPU preparation/audit complete; relaxed computable-equation curation now running.
+
+## Active: fixed empty-pipeline cost
+Question: how much work survives immediate EOS; how do cap and precision affect it?
+IDs: empty-pipeline-profile-v1 failed on missing torch.xla checkpoint registration;
+v1 source/error retained, all owned processes and device15 closed. Explicit repair v2 running.
+V2 one core60/device15, worker 2487742 in tmux dario-empty-profile-v2.
+Same real TRAIN prefix, forced one-action notes, caps1024/256/32, FP32/BF16, three repeats.
+Unchanged old sampler/reader/replay; completed and failed stage costs saved immediately.
+Native initial FP32 gate; finite full gradients; unchanged sampled weight signature.
+No optimizer or parameter updates; not complete RL-step throughput qualification.
+Output local/nvme/diagnostics/empty-pipeline-profile-v2; controls same basename offNVMe.
+Timeout3200s/deadline05:57UTC; next inspect stages.jsonl and exact process/device closure.
+1136 CPU tests plus toy smoke/compileall pass; Neuron backward repair still qualifying.
 
 ## Earlier completed evidence
 Original R1234 stopped63; no R5678. Never resume old launchers.
@@ -40,7 +53,7 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 ## Work ownership and boundaries
 Root: batched probe source/interfaces and current public findings.
 Data: >=5K TRAIN arithmetic / >=256 DEV feasibility, preserve original real corpus.
-Distributed: completed v3 EBS archive; training draft marked superseded; no live accelerator jobs.
+Distributed: batched interface implementation/preparation; completed v3 EBS archive; old training draft superseded.
 Review: one review per question, endpoint/design caveats and final result checks.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
