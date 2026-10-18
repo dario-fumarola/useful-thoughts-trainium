@@ -1081,3 +1081,15 @@ logical banks. Replicated full SFT cannot reuse the present layout unchanged;
 inference/adapters/sharding remain unqualified alternatives. No weights downloaded
 or larger run launched. Proof ladder and primary-paper corrections updated;
 capacity metadata/lower bounds preserved, with no forward or efficacy claim.
+
+2026-10-18 21:36UTC — All four fresh panels close and independently pass18432
+answer/2048note/state/interval/vector audits and full EBS readback. Student correct
+285/238/140/151 versus compactCoT287/235/118/48 of512; own beats same-reader raw,
+empty and unrelated on every panel. All2048notes stop naturally. This is a useful
+fresh synthetic channel, one seed; two-model split received twice the updates.
+Keep1.7B for the next varied-data/matched-cost study, with answer-only, compact
+partial-CoT and full-root CoT640 each versus reader320+writer320, two seeds.
+Full-root CoT is an additional strong baseline, not a relabeling or replacement
+of compact CoT. Terminal primary; all four existing DEV panels stay separate and
+explicitly developmental. Preserve old negatives. Release first reader only after
+source/checks/disk review; full64 save/restart precedes longer continuation.

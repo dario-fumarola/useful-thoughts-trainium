@@ -8,6 +8,55 @@ prefix-only computation, actual student benefit, cost, and return to real text.
 
 ## Current finding
 
+**Self-generated partial computation helps on fresh synthetic problems.** The
+trained128-example writer produces useful work beyond its fitting set, and the
+same frozen reader benefits on all four512-item panels. This establishes the
+restricted computation channel. A matched-cost advantage and real-text
+pretraining gains remain unestablished.
+
+| Fresh panel,512 items each | Reader direct | Empty | Correct supplied state | Student state | Ordinary compact CoT |
+|---|---:|---:|---:|---:|---:|
+| Interpolation |21|21|343|285|287|
+| Unseen structure |18|19|315|238|235|
+| Larger operands |8|8|257|140|118|
+| Longer composition |2|0|296|151|48|
+
+Entries are complete correct answers, not likelihood scores. Student minus compact
+CoT is−0.39percentage points [−4.49,3.52],+0.59 [−3.52,4.69],+4.30 [0.98,7.62],
+and+20.12 [15.82,24.41], respectively; intervals pair questions within each panel.
+Student beats the same reader's direct, empty and unrelated-note paths on every
+panel. Unrelated generated notes yield3/0/0/1correct; expression restatements
+yield34/31/9/2. Unsupported student answers are0/1/0/0; compact CoT1/3/1/2.
+
+All2,048 writer attempts stop naturally, with no caps or generation errors.
+Exact canonical intermediate states number416/311/288/227 of512. Supplied correct
+states still yield only50–67% answer accuracy, so both writer reliability and the
+reader's remaining calculation limit performance. The reader's weak direct path
+also makes this a mechanism result rather than a comparison with a strong direct
+solver.
+
+**The split uses two models and256total training updates; compact CoT uses one
+model and128.** Each model makes32passes over128expressions. Inference caps are80total
+actions (writer64+reader16 versus CoT80). Actual mean actions are30.2/31.8/36.3/37.8
+for the split versus31.2/31.8/37.4/32.9 for CoT. Separate-job timings are not a
+matched end-to-end latency benchmark. This is one training seed, synthetic DEV,
+and development evidence; official TEST remains unopened.
+
+All18,432 answers,2,048 notes, controls, numerical vectors and paired intervals
+passed the independent audit. Identical reader inputs produce identical actual
+answers; repeated conditions do not add independent observations. Complete
+outputs and the fixed first two examples per panel are public and EBS-archived:
+[full result and payloads](validation/partial_state_v6_DEV512_frozen128_20261018.json) ·
+[descriptive state-error decomposition](validation/partial_state_v6_DEV512_state_error_analysis_20261018.json).
+
+Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
+compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
+Both compact and full-trace baselines remain competitors. Qualify full64 recovery
+and storage before longer continuation. More capacity stays an option; the useful
+signal already exists at1.7B. [Current queue](NEXT_STEPS.md).
+
+## Earlier matched developmental64 comparison
+
 **No overall capability gain is established.** The completed matched development64
 comparison shows learned stopping and restricted note use, alongside degraded raw
 prediction and no reliable GSM8K gain over the matching empty format. The original
@@ -62,7 +111,7 @@ out of256. Exact non-root postorder statements match135/256. Large likelihood ga
 can coexist with wrong final calculations.
 [All synthetic results, families, notes and vectors](validation/reader_learning_controlled_DEV256_step64_20261018.json).
 
-The next study uses exact, prefix-computable **intermediate-only** labels, a trained
+The subsequent partial-state study uses exact, prefix-computable **intermediate-only** labels, a trained
 then frozen reader, a separately supervised writer, and ordinary compact CoT with
 the same verified computations as a baseline. Complete-answer accuracy and actual
 student-note correctness are primary. Data5,120TRAIN plus separate512-item structure,
@@ -74,7 +123,7 @@ All three TRAIN128 fitting runs now finish, with independent terminal model,
 master and moment audits passing. The prefix-only writer emits identical native
 actions on CPU and Trainium:128/128 exact partial states with natural stops.
 This is fitting evidence;
-fresh generalization remains unmeasured. The frozen reader answers128/128 with
+fresh generalization is reported above. The frozen reader answers128/128 with
 correct partial states, versus120/128direct and119/128empty; corrupted states
 yield4/128. Actual CPU-writer own/other contexts exactly match the executed
 teacher/unrelated controls, allowing explicitly documented response reuse:
@@ -82,8 +131,8 @@ own128/128, unrelated1/128. **Ordinary compact CoT also gets128/128 using one
 training run; the two-model split has not earned its complexity.** All2,688
 original B0/reader/CoT answers were independently re-parsed, with unsupported
 outputs retained. B0 fails the terse prompt format, so its zeros are not a
-broad capability baseline. All fitting jobs are closed; the four fixed fresh
-DEV panels are running.
+broad capability baseline. All fitting jobs and all four fixed fresh
+DEV panels are now closed.
 [Short-pack hardware evidence](validation/partial_state_v6_training_hardware_20261018.json) ·
 [Complete fitting audit](validation/partial_state_v6_TRAIN128_training_20261018.json) ·
 [CPU writer outputs](validation/partial_state_v6_TRAIN128_writer_CPU_20261018.json) ·

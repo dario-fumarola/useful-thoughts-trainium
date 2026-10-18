@@ -1,72 +1,63 @@
-# Current queue — exact partial-computation channel
+# Current queue — matched useful-computation study
 
-The next uncompleted task is the **frozen four-panel DEV answer comparison**.
-The north star and causal steps are in [RESEARCH_ROADMAP.md](docs/RESEARCH_ROADMAP.md).
+1. The frozen128-model DEV question is **complete and independently audited**:
+   `validation/partial_state_v6_DEV512_frozen128_20261018.json`. All18432answers,
+   2048notes, numerical vectors, paired intervals and complete EBS archives pass.
+   Student answers285/238/140/151 versus compact CoT287/235/118/48 of512;
+   interpolation/structure tie, range+4.30pp, composition+20.12pp. Same-reader
+   raw/empty/unrelated contrasts are positive on all four panels. All notes stop
+   naturally. This is one-seed synthetic evidence; split used two models and
+   twice the training updates. No matched-cost or real-text pretraining claim.
+2. Integrate reviewed `partial-state-study-v7` source from2e22fa2 and run the full
+   repository checks. The next design is fixed before new learning:
+   `validation/partial_state_v7_matched_design_20261018.json`.
+   Each seed compares answer-only640, compact-CoT640, full-trace-CoT640, and
+   reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
+   stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
+   Reader gets one teacher and one plain view per expression over two passes.
+3. Resolve actual disk reserve and a protected full optimizer-state destination.
+   First start only reader seed2026101806, halt64/full save, physically close,
+   independently verify, then fresh-process exact restore and ordered continuation.
+   Use logical12–15/physical3, unique ports and private short TMPDIR. Run one
+   training arm at a time, monitor memory, retain a recent full resumable state;
+   no automatic retry. Source changes need explicit new protocol hashes.
+   Candidate320/640 protocols and aligned orders were validated before fresh
+   outcomes in `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
+   These are not a launch receipt. Verify final source and bind the actual release.
+4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
+   checkpoint selection. Evaluate all four512-item panels separately, retaining
+   every error, cap and unsupported answer. New inference budget96: writer64+
+   reader32 or single-model96. Measure actual tokens/chip-time/latency, supervised
+   labels and two-model capacity. Compare own−raw/empty/unrelated and split versus
+   answer-only and both CoT baselines; report both seeds. Existing DEV is explicitly
+   developmental after the precursor inspection. Official TEST remains unopened.
 
-1. Let the remaining reader controller finish on immutable
-   `local/worktrees/partial-state-held-v6` at `3301d22`; never edit that worktree.
-   Controls: `local/diagnostics/partial-state-v6-fixed-DEV512-{cot,reader}128-v1`.
-   CoT has closed all four panels; the reader runs physical10/logical40–43.
-   All2048writer attempts closed20:16UTC, with their complete EBS archive verified.
-   At21:24UTC the reader has closed three panels and is generating composition.
-   Outcome counts remain unread until the paired question closes. Each reader panel
-   consumes its whole512-note bundle, including failures and intact unrelated donors.
-   Four separate interpolation/structure/range/composition panels; single greedy
-   attempt,80total-action budget (writer64+reader16, direct/CoT80), no TEST.
-   Existing finite bound01:30UTC Oct19,3hours per child,512GiB memory floor, no retries.
-   Monitor original stage/shard logs, compiler progress, process memory and placement.
-2. After **all three** writer/CoT/reader controller `completion.json` files say
-   `COMPLETE_ALL_FOUR_FIXED_DEV_PANELS`, execute:
+The north star and necessary components are in `docs/RESEARCH_ROADMAP.md`.
+Reader use and student-note benefit now have fresh evidence. Matched-cost value
+is the next unresolved link. Both writer reliability and the reader's remaining
+calculation still fail; the descriptive post-hoc decomposition is saved separately.
+Prefer the simpler solver if it matches. Broad general SFT/RL stays held while
+this question is resolved, followed by a source-matched real-document study.
 
-   ```bash
-   source scripts/env.sh
-   USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario
-   ```
-
-   Redirect the full audit log to `local/analysis/`. It independently re-executes
-   prefix gold and writer states, re-parses18,432answers, reproduces all intervals
-   and actual numerical vectors, and archives complete batches on EBS. All failures
-   stay in denominators.1598CPU checks pass; the independent state reparse agrees
-   with all128closed fitting traces. No fresh outcomes have been read for this check.
-3. Review once for the whole question. Separate teacher reading, student computation,
-   composed benefit and comparison with ordinary compact CoT. Retain all four panels
-   separately, unsupported counts, actual tokens, first-compile costs and fixed examples.
-   Use that diagnosis to select the next learning intervention; publish negative results.
-
-The public `partial-state-study-v7` branch is CPU/data-ready, **not released**.
-Four validated local protocol drafts, created before fresh outcome review, are
-in `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
-It gives each5120training expression one teacher and one plain reader view over
-its two passes; both proposed seed schedules are exhaustively audited. The original
-128fitting schedule is unchanged. The corrected primary budget is answer-only640,
-compact partial-CoT640, versus reader320+writer320:640total updates and20480ordered
-expression occurrences per system/seed, two seeds. A/B see four passes; R/W each two.
-Full-root CoT is an additional prepared variant, never a replacement for compact CoT.
-The proposed96action budget is writer64+reader32 versus single-model96. Actual chip-time,
-supervised labels and two-model capacity still matter; equal updates approximate cost.
-Before learning: freeze final source/protocols/orders; resolve disk; run one arm at a time;
-full-save64, physically close and actually restore before completing320. Preserve a recent
-full optimizer state as well as weights. Terminal checkpoints are primary.
-
-Qwen3-8B-Base metadata and actual bank sizing are in
+Qwen3-8B-Base metadata/static sizing is in
 `validation/qwen3_8b_capacity_assessment_20261018.json`:15.26GiB BF16 weights,
-30.51GiB weights+gradients versus24GiB/logical core. Full replicated SFT cannot use
-this layout unchanged. BF16 inference, adapters and parameter/gradient sharding remain
-unqualified options. No8B weights downloaded or run started. Papers and objective
-corrections are in `docs/REFERENCE_NOTES.md`; size should address the failed causal link.
+30.51GiB weights+gradients versus24GiB/logical core. Full replicated SFT cannot
+reuse this layout unchanged. Adapters/inference/sharding remain unqualified;
+no8B weights or run launched. The installed gradient hook is not gradient sharding.
+Continue1.7B for the matched-cost test because useful fresh computation already exists.
+Papers and objective corrections are in `docs/REFERENCE_NOTES.md`.
 
-Completed evidence is indexed in `STATUS.md` and the README: matched developmental64
-is negative overall; all128fitting runs and answers are closed; CPU/Trainium writer
-native actions match exactly; reader and ordinary compact CoT both fit128/128.
-Original terminal320 was interrupted by host OOM and remains incomplete. The short
-world4 save3/restore/update6 is verified; cache256 speeds that small topology22.6×,
-but does not prove the originalworld32 OOM fixed or qualify the old RL loop.
+All prior jobs are closed. Frozen v6 sources and all outcomes stay intact;
+old R1234 remains stopped63. The complete matched developmental64 result is
+negative overall and original terminal320 remains interrupted. Short world4
+save3/restore/update6 is verified; cache256 is faster on that topology, without
+proving the originalworld32 OOM fixed or qualifying the old RL loop.
 
-Keep35GiB EBS reserve. Full fitting states32/64/96/128 remain on NVMe; frozen models
-and complete numerical/output evidence have read-back verified EBS copies. EBS is
-same-instance storage. Four inactive engineering qualification duplicates totaling
-102.6GiB have complete readback matches at
-`local/analysis/inactive-qualification-archive-readback-20261018.json`; nothing removed.
-General-sft-v5/broad RL remain held; R1234 stays stopped63 and old launchers retired.
-Official TEST remains unused. Root owns live work; subagents are unavailable due
-account usage limits. Preserve current science, controls and negative outcomes.
+Keep35GiB EBS reserve; EBS is same-instance storage. Full fitting states remain
+on NVMe, frozen models/output/numerical evidence on read-back verified EBS.
+Four inactive qualification duplicates totaling102.6GiB have complete readback
+matches at `local/analysis/inactive-qualification-archive-readback-20261018.json`;
+nothing has been removed. Broader storage inventory shows690GiB of old qualification
+files on NVMe. Preserve unique science; use verified duplicate retirement or fully
+read-back verified lossless archives when needed, with explicit relocation receipts.
+Root owns the work; subagents remain unavailable due account usage limits.

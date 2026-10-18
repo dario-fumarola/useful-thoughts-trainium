@@ -6,32 +6,25 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 21:24UTC live handoff: all TRAIN128 fitting jobs are closed, native CPU/
-Trainium writer actions exactly match128/128, and frozen-reader/compactCoT both
-answer128/128. This establishes fitting mechanics, no architecture advantage.
-Fresh four512DEV panels run on immutable partial-state-held-v6/3301d22:
-Writer and all four compactCoT panels are closed. Same frozen reader10/logical40–43
-has closed three panels and is generating final composition. ControllerPID81024;
-stage3 timeout owners124166/124168/124169/124171, Python124167/124170/124172/124173.
-Controllers:
-local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
-Bound01:30UTC Oct19,3h per child,512GiB floor, no retries. Reader preparation
-waits for each complete512writer bundle; never selects by utility. All2048writer
-notes close20:16UTC; their utility remains unread. Long-cache compilation passed
-20:56UTC. Monitor the remaining reader job; do not inspect partial outcomes.
-Only after all three four-panel controllers close, run:
-`source scripts/env.sh; USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario`.
-Audit actual complete answers, controls, vectors, intervals and archives, then
-report all panels separately. Official TEST untouched. Future public branch
-partial-state-study-v7 is CPU-only/unreleased; current jobs never use it.
-Budget proposal is A640/Bpartial640 versus R320+W320, total640updates per system;
-full-root CoT is an extra prepared variant, not a replacement for compact CoT.
-No larger learning release until fresh diagnosis, memory/disk/recovery review.
-Main proof ladder and paper notes incorporate the owner's north-star/7–8B steering.
-Official8B metadata/static sizing is preserved; no weights or run launched. The
-installed gradient hook retains a full buffer, so it does not repair replicated fit.
-Local v7 protocol drafts were validated before fresh outcome review at
-local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review; not released.
+October18 21:40UTC handoff: all v6 jobs are closed. The complete fresh comparison
+passes independent18432answer/2048note/state/interval/vector checks and full762-file
+EBS readback. Public result:validation/partial_state_v6_DEV512_frozen128_20261018.json.
+Student285/238/140/151 versus compactCoT287/235/118/48 of512; same-reader controls
+lose on all panels, all notes stop. Positive restricted mechanism, one seed; split
+had two models/twice the updates. Preserve all old negatives and source3301d22.
+
+Next exact task: merge reviewed partial-state-study-v7/2e22fa2 and run full checks,
+resolve disk/recovery space, then release only fresh-B0 reader5120 seed2026101806
+on logical12–15/physical3 through full64 and an actual fresh-process restore.
+No learning launched yet. New prospective design includes A640/Bcompact640/Bfull640
+and R320+W320, two seeds; all panels/terminal checkpoints reported, no TEST.
+Protocol drafts created before fresh outcome review:
+local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review.
+See NEXT_STEPS.md and validation/partial_state_v7_matched_design_20261018.json.
+No8B launch: metadata/bank sizing only; current full replicated layout cannot fit.
+Keep35GiB EBS reserve. Old inactive qualification duplicates are fully read-back
+verified;690GiB old qualification storage offers lossless archival space. Preserve
+unique science and a recent full resumable checkpoint. No automatic retries.
 
 ## Your job
 

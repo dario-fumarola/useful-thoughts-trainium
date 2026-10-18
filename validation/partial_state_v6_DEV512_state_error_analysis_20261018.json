@@ -1,0 +1,82 @@
+{
+  "status": "DESCRIPTIVE_POSTHOC_AFTER_ALL_FIXED_OUTCOMES_CLOSED",
+  "primary_report": "validation/partial_state_v6_DEV512_frozen128_20261018.json",
+  "panels": {
+    "DEV_interpolation": {
+      "supported_equations": 512,
+      "all_stated_equations_correct": 417,
+      "split_generated_actions": 15450,
+      "CoT_generated_actions": 15984,
+      "canonical": {
+        "items": 416,
+        "student_correct": 284,
+        "teacher_correct": 284,
+        "direct_correct": 21
+      },
+      "noncanonical": {
+        "items": 96,
+        "student_correct": 1,
+        "teacher_correct": 59,
+        "direct_correct": 0
+      }
+    },
+    "DEV_structure": {
+      "supported_equations": 419,
+      "all_stated_equations_correct": 323,
+      "split_generated_actions": 16284,
+      "CoT_generated_actions": 16271,
+      "canonical": {
+        "items": 311,
+        "student_correct": 206,
+        "teacher_correct": 206,
+        "direct_correct": 15
+      },
+      "noncanonical": {
+        "items": 201,
+        "student_correct": 32,
+        "teacher_correct": 109,
+        "direct_correct": 3
+      }
+    },
+    "DEV_range": {
+      "supported_equations": 512,
+      "all_stated_equations_correct": 288,
+      "split_generated_actions": 18590,
+      "CoT_generated_actions": 19164,
+      "canonical": {
+        "items": 288,
+        "student_correct": 139,
+        "teacher_correct": 139,
+        "direct_correct": 8
+      },
+      "noncanonical": {
+        "items": 224,
+        "student_correct": 1,
+        "teacher_correct": 118,
+        "direct_correct": 0
+      }
+    },
+    "DEV_composition": {
+      "supported_equations": 469,
+      "all_stated_equations_correct": 355,
+      "split_generated_actions": 19338,
+      "CoT_generated_actions": 16843,
+      "canonical": {
+        "items": 227,
+        "student_correct": 138,
+        "teacher_correct": 138,
+        "direct_correct": 2
+      },
+      "noncanonical": {
+        "items": 285,
+        "student_correct": 13,
+        "teacher_correct": 158,
+        "direct_correct": 0
+      }
+    }
+  },
+  "limits": "Conditioning on writer correctness is descriptive and not a randomized subgroup comparison. No gate or denominator changes.",
+  "schema": "partial-state-state-error-decomposition-v1",
+  "primary_report_sha256": "1aae1e93fade7ddac59b420ee6445a6e3f36c677ea9413f668a80416714eefc9",
+  "interpretation": "Both writer reliability and reader completion fail on held problems. Correct canonical student states reproduce teacher answers exactly. Noncanonical groups are descriptive and include incomplete or alternative traces as well as errors."
+}

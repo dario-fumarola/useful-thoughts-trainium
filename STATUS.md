@@ -1,4 +1,4 @@
-# Status — 2026-10-18 21:24 UTC
+# Status — 2026-10-18 21:36 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -29,21 +29,20 @@ Full3 remains onNVMe with manifest/digests onEBS; no uninterrupted-parity or new
 Cold graph costs dominate; last update14.5s alone does not establish steady throughput/memory.
 Decision: mechanics pass; qualification model excluded from scientific training or warm starts.
 
-## Active: fixed fresh computation panels
+## Closed: fixed fresh computation panels — useful channel
 Question: do frozen TRAIN128 models transfer, and can student partials improve the same reader?
 ID:partial-state-v6-fixed-DEV512; four separate512-item interpolation/structure/range/composition panels.
-All2048writer and2048CoT attempts close; reader10/logical40–43 is on final composition panel.
-Controls:local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
-Outputs:local/nvme/evaluation/partial-state-v6-DEV_{panel}-{writer128-XLA-notes-v2,cot128-answers-v4}.
-Source:immutable partial-state-held-v6/3301d22;1588CPUchecks, fixed hashes/models/native refs verified.
-Single greedy attempt, cap64writer/80CoT; all512 failures retained, no repair/filtering or TEST.
-Endpoint: separate complete-answer accuracies and paired5000item/seed17 contrasts; never pool panels.
-Actual4 live placements captured for each device; native and new cache-shape gates precede sampling.
-Bound01:30UTC Oct19/3hours per child,512GiB memory floor, no automatic retries.
-Each reader panel starts only after its512actual writer attempts close; all8conditions, no utility gating.
-Original TRAIN128 XLAwriter physically closed19:55UTC:128exact/natural stops, all native actions equalCPU.
-Audit command after all controllers close: scripts/audit_partial_state_panels.py --root /home/ubuntu/dario.
-Decision: pending complete answers; larger5120study and RL remain unreleased.
+All2048notes/18432answers close21:30UTC; all gates, states, parsers, intervals and archives independently pass.
+Frozen128TRAIN/32pass models at3301d22, greedy80total actions; all failures retained, no TEST.
+Student correct285/238/140/151; same-reader direct21/18/8/2, empty21/19/8/0; each/512.
+Teacher343/315/257/296; unrelated generated3/0/0/1; compactCoT287/235/118/48.
+Student−CoT pp−.39[−4.49,3.52]/+.59[−3.52,4.69]/+4.30[.98,7.62]/+20.12[15.82,24.41].
+Canonical writer states416/311/288/227; all2048natural stops, zero caps/errors.
+Own−direct/empty/unrelated paired intervals are positive on all four panels; restatement does not explain gain.
+Split uses two models/256total updates versus one/128; no matched-cost architecture advantage yet.
+Complete762-file EBS readback archive; all230MB retained, all public notes/answers and fixed examples saved.
+Public:validation/partial_state_v6_DEV512_frozen128_20261018.json; all4panels separate, one seed.
+Decision: useful fresh synthetic channel; next5120matched-cost/two-seed study includes both CoT baselines.
 
 ## Closed: actual Trainium prefix-only fitting writer
 Question: does the actual Trainium writer reproduce the CPU state/stopping result?

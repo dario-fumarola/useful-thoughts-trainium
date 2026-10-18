@@ -1,0 +1,133 @@
+{
+  "schema": "partial-state-matched5120-design-v1",
+  "created_utc": "2026-10-18T21:38:56.105161+00:00",
+  "experiment_id": "partial-state-v7-matched5120",
+  "status": "PROSPECTIVE_DESIGN_NO_TRAINING_RELEASE_YET",
+  "question": "Does the useful partial-state channel survive more varied training and comparison with ordinary CoT at equal total updates?",
+  "motivation": "The complete frozen128-model DEV result establishes student-note utility but used twice the updates and models of compact CoT. Both writer reliability and reader completion remain limited.",
+  "precursor": "validation/partial_state_v6_DEV512_frozen128_20261018.json",
+  "model": "Qwen/Qwen3-1.7B-Base",
+  "initialization": "Fresh unchanged B0 for every model and seed; no fitting-model warm starts",
+  "seeds": [
+    2026101806,
+    2026101807
+  ],
+  "training_data": {
+    "items": 5120,
+    "file": "TRAIN.jsonl",
+    "sha256": "020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb",
+    "labels": "Exact prefix-computable non-root states; ordinary full CoT adds the root equation. No future-aware LM teacher."
+  },
+  "systems": {
+    "A_answer_only": {
+      "arms": {
+        "direct": 640
+      }
+    },
+    "B_compact_CoT": {
+      "arms": {
+        "cot": 640
+      }
+    },
+    "B_full_trace_CoT": {
+      "arms": {
+        "cot_full": 640
+      }
+    },
+    "C_split": {
+      "arms": {
+        "reader": 320,
+        "writer": 320
+      }
+    }
+  },
+  "matching": {
+    "total_updates_per_system_per_seed": 640,
+    "ordered_expression_occurrences_per_system_per_seed": 20480,
+    "global_batch": 32,
+    "micro_batch": 8,
+    "world_size": 4,
+    "width": 128,
+    "target_slots": 64,
+    "per_model_passes": {
+      "A": 4,
+      "B_compact": 4,
+      "B_full": 4,
+      "reader": 2,
+      "writer": 2
+    },
+    "limitation": "Same shapes/updates approximate compute. Measure supervised tokens, chip-time, actual generated tokens and latency; account for two full models in C."
+  },
+  "optimization": {
+    "lr": 1e-05,
+    "schedule": "constant",
+    "AdamW_betas": [
+      0.9,
+      0.95
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.1,
+    "clip_global_norm": 1.0,
+    "BF16_parameters_and_gradients": true,
+    "FP32_masters_and_moments": true,
+    "gradient_reduction_owner": "XLA ZeRO-1 optimizer only",
+    "loss": "Mean completion CE per example, then global mean over examples. Ordinary CoT treats its full completion as one component."
+  },
+  "reader_schedule": "Every expression gets one teacher and one plain view across two passes; aggregate50%teacher/25%empty/25%direct. Both seed schedules already exhaustively CPU audited.",
+  "inference": {
+    "action_budget": 96,
+    "writer_cap": 64,
+    "reader_cap": 32,
+    "single_model_cap": 96,
+    "greedy": true,
+    "attempts_per_condition": 1,
+    "native_EOS": 151643
+  },
+  "endpoints": {
+    "primary": "Terminal complete-answer accuracy on each separate512-item interpolation/structure/range/composition DEV panel.",
+    "contrasts": [
+      "C_own minus C_direct",
+      "C_own minus C_empty",
+      "C_own minus C_other",
+      "C_own minus A_direct",
+      "C_own minus B_compact_CoT",
+      "C_own minus B_full_CoT"
+    ],
+    "controls": [
+      "correct partial",
+      "corrupt partial",
+      "unrelated teacher partial",
+      "expression restatement"
+    ],
+    "uncertainty": "Paired question bootstrap5000/seed17 within each panel. Keep seed outcomes separate; do not pool panels or count conditions as independent items.",
+    "primary_checkpoint": "Terminal320 for each split component; terminal640 for each single-model comparator. No best-checkpoint selection.",
+    "reporting": "All writer failures, caps and unsupported answers retained. Canonical-state correctness and stopping are diagnostics; complete answers are primary."
+  },
+  "decision_rule": "Generated notes must beat same-reader raw/empty/unrelated controls to establish the channel at this budget. Claim practical superiority only where matched single-model competitors and actual costs support it. If ordinary CoT matches or wins, prefer it. Report every panel and both seeds.",
+  "development_limit": "These synthetic DEV panels have now been inspected for the128-model precursor and informed this follow-up. This is development evidence, not a pristine final test or broad language-model claim. Official TEST remains unopened.",
+  "recovery_and_release": {
+    "release_now": false,
+    "first_model": "reader seed2026101806, halt after64 with a full checkpoint",
+    "requirements": [
+      "Integrate the already CPU-reviewed v7 source and complete repository checks",
+      "Verify actual disk reserve and a protected complete optimizer-state destination",
+      "Independently verify full64 then fresh-process exact state restore and ordered continuation before releasing later models",
+      "Bound and monitor host memory; run one training arm at a time; no automatic retry loop"
+    ],
+    "checkpoint_steps": {
+      "single640": [
+        64,
+        160,
+        320,
+        480,
+        640
+      ],
+      "split320": [
+        64,
+        160,
+        320
+      ]
+    }
+  },
+  "capacity_decision": "Continue at1.7B because useful fresh computation exists. An8B change remains a separate adapter/sharding/inference qualification, not a model-name substitution."
+}
