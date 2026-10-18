@@ -87,9 +87,11 @@ available in Git and the linked reports.
 
 | Path | Purpose |
 |---|---|
-| [configs/weekend.json](configs/weekend.json) | Current proposed experiment, including FP32 precision |
-| [docs/WEEKEND_PLAN.md](docs/WEEKEND_PLAN.md) | Scientific design and interpretation |
-| [train/neuron_driver.py](train/neuron_driver.py) | Bounded qualification and guarded C/R driver |
+| [configs/weekend.json](configs/weekend.json) | Original stopped experiment configuration |
+| [docs/WEEKEND_PLAN.md](docs/WEEKEND_PLAN.md) | Original scientific design and interpretation |
+| [train/calculation_boundaries.py](train/calculation_boundaries.py) | Current exact-arithmetic source curator |
+| [train/calculation_boundary_probe.py](train/calculation_boundary_probe.py) | Current controlled reader feasibility probe |
+| [train/neuron_driver.py](train/neuron_driver.py) | Historical C/R qualification and driver |
 | [train/neuron_backend.py](train/neuron_backend.py) | Causal cache, generation, scoring, and policy replay |
 | [train/evaluate.py](train/evaluate.py) | Question-only, sharded math evaluation |
 | [train/evaluate_likelihood.py](train/evaluate_likelihood.py) | ARC and full-target LAMBADA likelihood |

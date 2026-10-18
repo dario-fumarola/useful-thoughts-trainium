@@ -12,11 +12,13 @@ The owner stopped the original R study and authorized adapting the experiment.
    67.2% versus direct75% and discard75%; LL also slightly worse. Four samples
    per question estimate a single-note policy, without oracle selection.
    All notes/failures/costs retained, independently checked and EBS archived.
-4. ACTIVE: implement and review a conservative real-FineMath arithmetic-boundary
-   preparer. One prefix-only hash-selected boundary per TRAIN/DEV document,
+4. ACTIVE: run the reviewed real-FineMath arithmetic-boundary preparer. First
+   eligible causal boundary after a fixed hash-start per TRAIN/DEV document,
    exact source RHS quality checks after selection, proper-subexpression notes,
    no already-visible answer, matched numeric corruption. Preserve all rejections.
-   Source/fixture work only until reviewed; official TEST remains unused.
+   Source/tests reviewed;599 required checks pass. Full CPU scan is active.
+   Inspect actual counts, rejection reasons and fixed examples before scoring.
+   Official TEST remains unused.
 5. Seal prospective TRAIN256/DEV64 pools before B0 scores. Test raw, empty,
    correct partial, corrupted, shuffled and unrelated notes on actual source
    numeric spans and natural16 continuations. Qualify new contexts against CPU.

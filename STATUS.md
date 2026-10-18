@@ -1,4 +1,4 @@
-# Status — 2026-10-18 02:49 UTC
+# Status — 2026-10-18 03:02 UTC
 
 The owner stopped the original R study and authorized the new direction. Old
 launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
@@ -42,37 +42,63 @@ Last device exit02:37:01UTC. Used cores28/32/36/40, devices7–10. Recheck topol
 processes and ports before a new allocation; no automatic relaunch.
 Writer protocoldd258a79…8ec / source3cedd5f9…831d; reader protocolc594ab02…3c1 /
 source9c7342ce…bc5. Native/device LP errors≤5.913e−5, all-action replay≤8.107e−6.
-Latest required492 tests + toy_smoke + compileall PASS local/checks/tests.mXGFmo.
-No model/runtime source has changed since that check. New data code will need
-focused review and required checks before use.
+Latest required599 tests + toy_smoke + compileall PASS local/checks/tests.sBcbKy
+on the final source bytes. Focused curator87/probe20 also PASS; independent
+source review accepts both. Initial599 pass0WlU0W preceded a final probe guard
+edit, so the required suite was repeated on the settled bytes. No model/runtime
+helper changed. No accelerator qualification is claimed by these CPU checks.
 Root EBS111GiB free, NVMe736GiB last measured02:43. Reserve35GiB for checkpoint
 backup. No new cloud resources, paid APIs, stack upgrades or official TEST.
 
 ## Active work and exact next action
 
-Data agent implements NEW train/calculation_boundaries.py and focused tests;
-source/fixture work only until root/review accept it. No full corpus prep yet.
-Source: local/data/finemath/production-500000.audit-v2.records.jsonl,
+CPU corpus preparation is ACTIVE once, tmux dario-arithmetic-data-v1.
+Launcher2446357/start12706533; timeout/PGID2446360;
+worker2446361/start12706534. Deadline2026-10-18T04:00:00Z plus15s external grace.
+Actual USE_TORCH_XLA=0, OMP/MKL1. Output:
+local/nvme/data/finemath-arithmetic-boundaries-v1.
+Controls/log: local/diagnostics/finemath-arithmetic-boundaries-v1.
+Source full SHA gate passed before output creation. At03:00:38, elapsed65s,
+24,289 audit lines/99 accepted; preparation counts only, no model outcomes.
+Data agent owns monitoring/closure/count audit/fixed first4 selected per split.
+Do not edit frozen sources or retry automatically.
+
+Accepted source:
+train/calculation_boundaries.py
+SHA177363c6bb2e56226ac22496c2b558eb0f0d0c56357ebf602a1590a79e6ee6af.
+Source records: local/data/finemath/production-500000.audit-v2.records.jsonl,
 SHAbd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff.
-TRAIN/DEV only. Existing prefix512 + future16 chunks. Safe exact-Fraction AST,
-2–6 numeric operations including multiplication/division/power; enough preceding
-context; complete causal token cut after '='; reject already-visible whole
-answer; select one boundary/document by fixed hash BEFORE RHS checks, no fallback.
-Then verify immediate source RHS and preserve every rejection. Correct note
-computes a proper subexpression from past only, not the whole answer. Freeze a
-same-token-length numeric corruption before scores. Keep original source chunk,
-natural continuation and numeric span. Hash-order TRAIN256/DEV64 feasibility
-pools before any model score. This is explicit external arithmetic supervision.
+TRAIN/DEV only. The final selector hashes a search start128..192 and returns at
+the FIRST eligible causal '=' cut; no later text is decoded to choose a task.
+This replaces the prototype full-window candidate minhash before any full prep
+or model outcome. Prefix-only safe Fraction arithmetic supplies a simplifying
+proper intermediate; final answer is not in the note. Exact source RHS quality
+checks happen afterward, with no alternate task if the chosen label fails.
+Original528-token chunks, source spelling, numeric target and whitespace mask,
+matched corruption and every rejection are retained. Exact decimals are rendered
+without rounding; source mismatch can reflect source rounding, not factual error.
+Hash-order accepted TRAIN256/DEV64 before any model score. Actual counts unknown.
 
-Review agent checks source/schema/causality and fixtures when supplied. Distributed
-proposed a lean new reader wrapper using unchanged setup_model/score_continuations:
-raw/empty/correct/corrupt/shuffle/unrelated under prepend_plain, width1024/future16,
-scalar LL derived from the same natural16 LPs when exact leading-span alignment
-is proved. No implementation/release until data schema arrives; no hardware yet.
-Later raw learning control must use FULL ordinary source CE on accepted chunks,
-not the old future16-only control. Do not train merely because labels exist.
+Reviewed reader source train/calculation_boundary_probe.py
+SHA7913b8512a6917416c18eff4c0e8b62902f78617d04bf9f03d5293daf8b6f36f.
+Raw/empty/correct/corrupt/shuffle/unrelated under unchanged prepend_plain,
+width1024/future16. One natural16 score yields nonwhitespace numeric LL primary,
+full scalar joint LL and natural16 secondary; absolute arms/split CIs retained.
+Complete1920 cells required, no shrink. Prospective native CPU refs cover first
+TRAIN raw/second TRAIN correct/first DEV raw/second DEV correct; each device
+must match full-head next-LP within.002 before scoring. This is external exact
+arithmetic feasibility, not self-generated utility or unrestricted FineMath.
 
-NEXT: inspect data agent's new source/fixture results, obtain independent review,
-fix real defects, then run `source scripts/env.sh && bash scripts/run_checks.sh`.
-Only after acceptance seal a new prospective data protocol and run full CPU prep.
-Inspect fixed examples/quality before B0 reader qualification/scoring. No long RL.
+Distributed saved runtime proposal only, NO model load/launch:
+local/diagnostics/finemath-calculation-boundary-probe-v1/runtime.prepared.json
+SHA9025c356…0e09d. Proposed cores28/32/36/40, ports65061–68,06:00UTC deadline;
+output local/nvme/diagnostics/finemath-calculation-boundary-probe-v1.
+Actual devices/ports were free during preparation; recheck at release.
+
+NEXT: monitor CPU prep. Require complete manifest/counts/source hashes and
+inspect fixed examples before releasing reader prepare/native CPU qualification
+and hardware scoring. Do not train merely because labels exist. If useful,
+short fresh-B0 noteBC+full-sourceCE versus full-sourceCE is the proposed next
+learning experiment; same source chunks/order, extra note labels/compute disclosed,
+freshG1 DEV with fixedB0 reader and downstream checks regardless of LL sign.
+No training protocol has been released. No long RL.

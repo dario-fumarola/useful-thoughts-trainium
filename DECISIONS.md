@@ -673,3 +673,30 @@ corpus prep until source/fixture review, no training until actual data and reade
 feasibility are understood. Future raw control gets full ordinary source CE on
 identical accepted chunks. This repairs a concrete data/reward weakness without
 converting external labels or oracle measurements into self-discovery claims.
+
+
+### 2026-10-18 03:02 UTC — causal arithmetic selector and full CPU preparation
+
+Before any corpus preparation or model score, replace the prototype minhash over
+all eligible cuts with a stopping-time selector: fixed hash-derived start128..192,
+then immediate return at the first prefix-eligible '=' cut. Full-window minhash
+was legitimate offline curation, but later candidates could inspect text beyond
+the selected cut. The final rule matches the intended causal selection claim.
+Chosen-RHS quality failure never triggers another boundary. Sentinel-suffix and
+no-fallback tests cover this distinction. Independent review accepts exactsource
+177363c6…6ee6af;87 focused tests pass.
+
+Partial labels skip unchanged rational identities, use exact finite decimals
+where short, and retain original source spelling/tokens. Numeric source mismatch
+is separate from unsupported notation and can reflect a rounding convention.
+Reader primary excludes pure-whitespace target tokens; joint scalar and natural16
+likelihoods remain separate. Four real CPU/device reference contexts include raw
+and correct-note inputs; no source mutation or reduced vocabulary. Reviewer
+accepts probe7913b851…b6f36f;20 focused tests pass. Final599 required tests,
+toy smoke and compileall pass at local/checks/tests.sBcbKy.
+
+Release one full CPU scan under a finite04:00UTC bound. No accelerator/model or
+training release yet; require actual accepted counts and examples first. Source
+RHS validation curates a mathematical subset, not unrestricted FineMath utility.
+A subsequent learning pilot, if warranted, should add note BC to full-source CE
+versus the same source CE alone, with fresh generated-note and downstream tests.
