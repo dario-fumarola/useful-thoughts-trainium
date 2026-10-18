@@ -42,9 +42,9 @@ they do not prove full-weight bitwise equality or numerical resume parity.
    Keep healthy work running. After COMPLETE and exit/closure, verify and copy
    final 64 using scripts/backup_checkpoint.py with a 35 GiB reserve.
    Writer and control have unequal CE label counts and measured compute.
-2. **GSM8K TRAIN128 correctness:** agent data owns B0 thought-cap256 and cloned
-   writer direct / empty / thought-cap256. Direct, empty and B0 thought are
-   closed; writer thought is progressing on device 5. B0 direct113/128 and
+2. **GSM8K TRAIN128 correctness:** B0 thought-cap256 and cloned writer
+   direct / empty / thought-cap256 are all closed and scored; all 16 shards
+   exited 0 and owned sessions are gone. Agent data is compiling results/archive. B0 direct113/128 and
    empty107/128 are independently validated reused references. Fixed prompts,
    strict parser, greedy FP32, answer cap256; all failures stay in denominator.
    Output: local/nvme/evaluation/warmstart-gsm8k-train128-terminal64-v1.
@@ -55,13 +55,18 @@ they do not prove full-weight bitwise equality or numerical resume parity.
    Questions and 32 verified partial notes / length-matched one-number corruptions
    are frozen in local/diagnostics/gsm8k-calculation-train32-v1. Root independently
    read all triples and checked all 61 intermediate equations, without gold.
-   Agent distributed owns native Qwen3-4B CPU reference then four greedy-note
-   shards on cores28/32/36/40 only, ports65601–65608, deadline03:30 UTC.
+   Actual native CPU reference passed (4.022B parameters,398 tied FP32 tensors,
+   no loading mismatches). Agent distributed launched four greedy-note shards
+   at01:27:47 on cores28/32/36/40 only, ports65001–65008, deadline03:30 UTC.
+   Actual workers2368278/2368281/2368287/2368289, mapped to devices7/8/9/10.
+   Protocol SHA ff1dc3234c674294164a0580fb46a436247d25a0a4170e8891b46d3bb8b98bd7.
    Output: local/nvme/diagnostics/gsm8k-calculation-teacher-train32-v1.
    Control: local/diagnostics/gsm8k-calculation-teacher-train32-v1.
    A native tokenizer container mismatch was fixed before any prepared output or
    device allocation; exact token IDs matched. New source is frozen after 445 tests.
-   All notes must close before reader prepare.
+   All notes must close before reader prepare. Agent distributed then owns
+   the ten-condition reader on the same four cores, ports65011–65018 (answers)
+   and65021–65028 (likelihood), deadline04:30 UTC; gold only after answer closure.
 
 ## Exact next steps
 
@@ -72,14 +77,16 @@ they do not prove full-weight bitwise equality or numerical resume parity.
 - Run train.warmstart_compare on closed B0 / writer64 / raw64 prepend outputs.
 - After teacher closure, prepare train.calculation_pilot with its teacher bundle,
   verified_notes.jsonl and the unchanged held-dev128 prompt.json. Raw is complete
-  four-shot QA; all note conditions prepend note + [271] + that identical QA.
+  four-shot QA; all note conditions append [198] + note + [198] after Answer:.
+  Empty preserves both separators. This prospective change was independently
+  reviewed before any reader preparation, outcome or gold; teacher is unchanged.
   Run all four answer shards (10 conditions ×32 questions, greedy answer cap256)
   before project-gold. Then score forced canonical numbers after '\n#### ',
   independently of free-running accuracy. Retain all errors and controls.
 - No further training until useful calculation is demonstrated. This is curated
   QA feasibility with external assistance, not FineMath transfer or self-discovery.
 
-Latest CPU suite: 445 tests + toy smoke PASS, local/checks/tests.Cmh8UX.
+Latest CPU suite: 445 tests + toy smoke PASS, local/checks/tests.sKjRbj.
 Native CPU/device parity and actual cached replay still need new hardware evidence.
 Original R1234 stopped at63 and was backed up; R5678 never launched. Old C seeds
 finished256; original R/C primary is incomplete. Official final tests remain unused.

@@ -577,3 +577,15 @@ independently verified partial calculations and matched numeric corruptions;
 fixed B0 prepend reader, silence/content controls, answer LL and correctness.
 Freeze all notes before gold. No training, official test, paid teacher, or
 FineMath-transfer/self-discovery claim. Preserve all32, including weak notes.
+
+### 2026-10-18 01:29 UTC — natural calculation position for the new QA pilot
+
+Before any reader preparation, model outcome or gold access, change this pilot's
+reader serialization to complete four-shot QA + newline + note + newline. Raw
+remains complete QA; empty preserves both newlines. The original prototype
+would place the calculation before the instruction and four unrelated demos,
+far from the question. Root identified this concern and independent review
+recommended ordinary partial-CoT continuation as the stronger feasibility test.
+Use one interface and the same ten frozen conditions; do not expand a matrix
+after results. Teacher source, native prompt, question selection and notes are
+unchanged. Accuracy remains distinct from forced canonical-number likelihood.

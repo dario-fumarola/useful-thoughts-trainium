@@ -7,18 +7,18 @@ from train import calculation_pilot as pilot
 from weekend_thinking.artifacts import atomic_json, sha256_file
 
 
-def test_prepend_preserves_complete_question_context_and_empty_tax_control():
+def test_partial_cot_preserves_complete_question_and_both_empty_separators():
     prefix=[11,12,13]
     controls=dict(filler=[4,4],shuffled=[7,6],other=[8,9])
     values=pilot.make_contexts(prefix,[6,7],[20,21],[20,22],controls,controls)
     assert set(values)==set(pilot.MODES)
-    assert values['raw']==prefix and values['empty']==[271]+prefix
-    assert values['generated']==[6,7,271]+prefix
-    assert values['verified']==[20,21,271]+prefix
-    assert values['corrupted']==[20,22,271]+prefix
-    assert all(v[-len(prefix):]==prefix for v in values.values())
+    assert values['raw']==prefix and values['empty']==prefix+[198,198]
+    assert values['generated']==prefix+[198,6,7,198]
+    assert values['verified']==prefix+[198,20,21,198]
+    assert values['corrupted']==prefix+[198,20,22,198]
+    assert all(v[:len(prefix)]==prefix for v in values.values())
     values['raw'][0]=999
-    assert prefix==[11,12,13] and values['empty']==[271,11,12,13]
+    assert prefix==[11,12,13] and values['empty']==[11,12,13,198,198]
 
 
 @pytest.fixture

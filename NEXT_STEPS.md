@@ -17,7 +17,8 @@ The owner stopped the original R study and authorized adapting the experiment.
 5. Run the new 32-question calculation pilot before more training. Questions are
    hash-selected and disjoint from prior development/demo questions. Compare one
    prefix-only local4B note with verified partial calculations and matched numeric
-   corruptions. Fixed B0 prepend reader, raw/empty/filler/shuffle/unrelated controls.
+   corruptions. Fixed B0 reader continues after the partial calculation at Answer:; retain
+   raw/empty/filler/shuffle/unrelated controls.
    Freeze notes and every generated answer before opening canonical gold; report
    free-running accuracy separately from forced numeric-answer likelihood.
 6. Choose the next training recipe from content utility and correctness. Curated

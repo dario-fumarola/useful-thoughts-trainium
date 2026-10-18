@@ -62,7 +62,9 @@ def make_contexts(prefix, generated, verified, corrupted, generated_controls, ve
     content = dict(empty=[], generated=list(generated), verified=list(verified), corrupted=list(corrupted),
                    **{k: generated_controls[k] for k in ("filler", "shuffled", "other")},
                    verified_shuffled=verified_controls["shuffled"], verified_other=verified_controls["other"])
-    return {"raw": list(prefix), **{mode: list(ids)+[271]+list(prefix) for mode, ids in content.items()}}
+    # Put partial calculations at their ordinary causal position after Answer:.
+    # Removing note content preserves both separators in the empty control.
+    return {"raw": list(prefix), **{mode: list(prefix)+[198]+list(ids)+[198] for mode, ids in content.items()}}
 
 
 def prepare(output, teacher_dir, verified_file, prompt_file, model_dir):
@@ -81,7 +83,7 @@ def prepare(output, teacher_dir, verified_file, prompt_file, model_dir):
            for q in questions):
         raise ValueError("Verified calculations must bind the exact current question text")
     tok = AutoTokenizer.from_pretrained(model_dir, local_files_only=True, trust_remote_code=False)
-    if tok.encode("\n\n", add_special_tokens=False) != [271]:
+    if tok.encode("\n", add_special_tokens=False) != [198]:
         raise ValueError("Released newline separator changed")
     spec = read(prompt_file); validate_prompt_spec(spec, set(ids))
     # Question-only notes and the reader context are fixed before any gold access.
@@ -114,7 +116,7 @@ def prepare(output, teacher_dir, verified_file, prompt_file, model_dir):
         model_dir=str(Path(model_dir).resolve()), items=32, item_ids=ids, modes=list(MODES),
         shards=4, answer_cap=256, answer_prefill_width=width, compute="fp32", controls_seed=17,
         score_width=((max_context+len(suffix)+16+127)//128)*128, target_width=16,
-        interface="raw=locked4shotQA; otherwise note+[271]+identical locked4shotQA",
+        interface="raw=locked4shotQA; otherwise identical locked4shotQA+[198]+note+[198]; partial-CoT continuation",
         likelihood="Forced final numeric answer: context+'\\n#### '+canonical number; no latent CoT; full released head",
         correctness="One greedy calculation+answer from Answer:, cap256, existing strict hash4 parser",
         control_construction="Seed17 token shuffle; cyclic next-item donor repeated/trimmed to recipient length; empty donor uses space filler",
