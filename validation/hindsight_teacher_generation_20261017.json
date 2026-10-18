@@ -1,0 +1,160 @@
+{
+  "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "batch_size": 4,
+  "cap": 256,
+  "compute": "fp32",
+  "conditions": [
+    "prefix_only",
+    "hindsight"
+  ],
+  "coverage": "Exact16 ordered distinct TRAIN documents in each condition; full prompts/actions/masks/behaviorLPs/stops validated, every note retained.",
+  "cpu_dtype": "float32",
+  "cpu_loading_exact": true,
+  "cpu_reference_sha256": "513112fd6b8d3f4b8ac2efc240622bffcacd3a2e6084b3ef8fe7fd26d7dd3c76",
+  "cpu_reference_wall_seconds": 34.37147593400732,
+  "cpu_tied": true,
+  "created_utc": "2026-10-17T23:58:51+00:00",
+  "descriptions": {
+    "hindsight": {
+      "content_tokens_max": 256,
+      "content_tokens_median": 140.0,
+      "content_tokens_min": 97,
+      "content_tokens_sum": 2404,
+      "empty_notes": 0,
+      "notes": 16,
+      "over150words": 1,
+      "replay_audit_batch_seconds_counted_once": 1.0744076979899546,
+      "sampling_B4_batches": 4,
+      "sampling_batch_seconds_counted_once": 76.44535726602771,
+      "stop_counts": {
+        "length_cap": 1,
+        "token:151645": 15
+      },
+      "words_max": 154,
+      "words_mean": 103.1875,
+      "words_min": 68
+    },
+    "prefix_only": {
+      "content_tokens_max": 243,
+      "content_tokens_median": 151.0,
+      "content_tokens_min": 106,
+      "content_tokens_sum": 2511,
+      "empty_notes": 0,
+      "notes": 16,
+      "over150words": 0,
+      "replay_audit_batch_seconds_counted_once": 67.53399866900872,
+      "sampling_B4_batches": 4,
+      "sampling_batch_seconds_counted_once": 363.38646927698574,
+      "stop_counts": {
+        "token:151645": 16
+      },
+      "words_max": 134,
+      "words_mean": 106.875,
+      "words_min": 78
+    }
+  },
+  "experiment_id": "hindsight-teacher-train16-v1",
+  "fixed_examples": {
+    "json_sha256": "e69cf5fd3af44a366d44b4dab37b8d5a2add948db58766f011ec9120d451c0c6",
+    "markdown_sha256": "4a16c373abfb770e1bd1ad2b74afea6519e51ff82ee3f1dde079fd15d57c4691",
+    "selection": "first4 ordered TRAIN documents, both conditions; private"
+  },
+  "forward_checks": {
+    "hindsight": {
+      "atol": 0.002,
+      "max_error": 0.000354766845703125,
+      "wall_seconds": 1.1103475080017233
+    },
+    "prefix_only": {
+      "atol": 0.002,
+      "max_error": 0.000446319580078125,
+      "wall_seconds": 46.56287972499558
+    }
+  },
+  "future_exposure": {
+    "hindsight": true,
+    "prefix_only": false
+  },
+  "generation_wall_seconds": 579.0,
+  "group_size": 1,
+  "items": 16,
+  "limitations": [
+    "TRAIN pool was target-surprisal selected, not held-out utility.",
+    "Hindsight teacher sees future16 for label creation; student generation must not.",
+    "Prefix-only 4B teacher is external assistance, not 1.7B self-generated reasoning.",
+    "Sampling differs from official recommended teacher settings; no utility claim.",
+    "Keep every note, empty/capped/overlength included; no outcome selection or retry.",
+    "No reader utility scores or student training are measured by this generation receipt.",
+    "EBS is same-instance storage; off-instance backup remains unresolved."
+  ],
+  "matched_condition_seeds": true,
+  "native_vocab": {
+    "entries": 151669,
+    "equal": true,
+    "mapping_sha256": "c96fa22dee2dd9c98c4f0c73ea423e21907bc96abda81fa5c6b2e24a670c66bf"
+  },
+  "notes": 32,
+  "notes_sha256": {
+    "hindsight": "4dd3e623a61ca48ea54f69d2a929c852fafc2ac02c455c475086cec8e8ff80d8",
+    "prefix_only": "e5175a6cc058df12c2e288761c6261f3273b45c9f7aa88633ac3bcc0bac6446c"
+  },
+  "preserved_prior_failure": "The separate CPU-reference-publication-failed-001 directory remains unchanged; loading-info set serialization failed before accelerator generation, not a numerical gate failure.",
+  "replay_checks": {
+    "hindsight": {
+      "atol": 0.001,
+      "max_error": 3.141164779663086e-05,
+      "wall_seconds": 1.0744076979899546
+    },
+    "prefix_only": {
+      "atol": 0.001,
+      "max_error": 2.205371856689453e-05,
+      "wall_seconds": 67.53399866900872
+    }
+  },
+  "schema": "hindsight-teacher-generation-report-v1",
+  "seed": 20261018,
+  "selected16_item_ids_sha256": "1c3ad6fd7918613ea2b4ca52099aa8d6b62c0d9840d2829435f3c738271ad6c3",
+  "selection_sha256": "39b9a3e0debd77be7a5420dcb6351890a6695c369d8da49f980eca256c4c1df3",
+  "split": "train",
+  "status": "complete_generation_only",
+  "stop_ids": [
+    151645,
+    151643
+  ],
+  "teacher_exit_sha256": "22ad9897ea68c8156455a90df24fdbd821c01d90bd72174baf319c23c5eaa3c0",
+  "teacher_inputs_sha256": "e33068b0726a34aaa5673cd1a223418c96098f23afbbade3d548223ceb820b28",
+  "teacher_manifest_sha256": "5e90de838673e59d713687fe010143257a71b071beb86a89f287125d7f61e742",
+  "teacher_model_id": "Qwen/Qwen3-4B",
+  "teacher_protocol_sha256": "bacf19a47b4304d9a1852339285b59cd2b6d0199d3eb5a49a268ae6970f50961",
+  "teacher_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "teacher_run_sha256": "63af41d4f49c49e33a787c9abfcf0bd0dfe7c626449fc814f080d6b164194bbe",
+  "teacher_source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/hindsight_teacher.py": "cdd854307b8e1feb0e4fc827e4296815de2045ba29c8b395dd29b2591e34ec38",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "temperature": 0.7,
+  "torch_version": "2.9.1+cu128",
+  "transformers_version": "5.15.1",
+  "verified_backup": {
+    "bytes": 6082447,
+    "files": 37,
+    "path": "/home/ubuntu/dario/local/backups/diagnostics/hindsight-teacher-train16-v1/VERIFIED.json",
+    "sha256": "89e167a47dab6a0483dad9f7dda08e0d880cd8ccc4585d3f3ec827d1f84c5c14"
+  }
+}

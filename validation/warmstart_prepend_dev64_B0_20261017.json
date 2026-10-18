@@ -1,0 +1,1241 @@
+{
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 81,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/warmstart-prepend-dev64-B0-v2/ARCHIVE.json",
+    "payload_bytes": 2454075,
+    "sha256": "0791baebb2e24f9e58aff5bafe4ca146f204b01826aa27b7906cdacda8891c7e"
+  },
+  "batch_size": 4,
+  "cap": 256,
+  "compute": "fp32",
+  "cost": {
+    "new_sampling_seconds": 0,
+    "new_score_context_seconds": 57.710249268930056,
+    "new_score_process_seconds": 114.0,
+    "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+    "reused_replay_audit_batch_seconds_counted_once": 208.41046234099485,
+    "reused_sampling_batch_seconds_counted_once": 328.3284764189739,
+    "reused_sampling_batches": 16,
+    "stage_span_seconds": 29.0
+  },
+  "documents": 64,
+  "experiment_id": "warmstart-prepend-dev64-B0-v2",
+  "failures": 0,
+  "global_controls_receipt_sha256": "383cc1371eab9bd2c4b2da26ee57d1888602707de9729e23385d671498bff162",
+  "groups": {
+    "B0_raw_K1_surprisal_Q1": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -0.0012414599816006344,
+              "mean_log_likelihood_per_target_token": -0.0012414599816006344
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -0.19426087361863154,
+              "mean_log_likelihood_per_target_token": -0.19426087361863154
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -0.0013560462066433132,
+              "mean_log_likelihood_per_target_token": -0.0013560462066433132
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -0.002254996764724737,
+              "mean_log_likelihood_per_target_token": -0.002254996764724737
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -0.0012116749559689666,
+              "mean_log_likelihood_per_target_token": -0.0012116749559689666
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -0.001953748481202666,
+              "mean_log_likelihood_per_target_token": -0.001953748481202666
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.0001811685919204109,
+                7.563537458707965e-05
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -2.978502563166785e-05,
+              "median_nats": 5.960578164376784e-08,
+              "positive_documents": 8
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -0.0028174152937157303,
+                -1.5055748788195281e-05
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.0010135367831241027,
+              "median_nats": -2.145795633623493e-06,
+              "positive_documents": 4
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                0.025278588377327528,
+                0.459330388242068
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.1920058768539068,
+              "median_nats": 0.0005175367505216855,
+              "positive_documents": 10
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -0.002944987668943888,
+                0.00026645641332687634
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.0008989505580814239,
+              "median_nats": 4.768463242044163e-07,
+              "positive_documents": 8
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -0.002842062728643668,
+                -2.5786721547871497e-05
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.0010433218087557705,
+              "median_nats": -1.192117125015102e-07,
+              "positive_documents": 8
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -0.002309749638739378,
+                0.0011234888137673124
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.0003012482835220709,
+              "median_nats": -5.960581006547727e-08,
+              "positive_documents": 7
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -10.636761226967677,
+              "mean_log_likelihood_per_target_token": -0.6647975766854798
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -15.205653779070982,
+              "mean_log_likelihood_per_target_token": -0.9503533611919364
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -10.705204455556828,
+              "mean_log_likelihood_per_target_token": -0.6690752784723017
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -10.837794088160935,
+              "mean_log_likelihood_per_target_token": -0.6773621305100584
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -10.636565990765922,
+              "mean_log_likelihood_per_target_token": -0.6647853744228701
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -10.75907923449208,
+              "mean_log_likelihood_per_target_token": -0.672442452155755
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.061643025912601804,
+                0.0490483086172472
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.00019523620175476708,
+              "median_nats": 0.010818820146141661,
+              "positive_documents": 10
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -0.44311557387519646,
+                0.0048233495909715445
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.20103286119325858,
+              "median_nats": 0.00035116763595510747,
+              "positive_documents": 8
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                1.3291653676239492,
+                7.988715327559458
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 4.3678596909100476,
+              "median_nats": 0.2101071065612814,
+              "positive_documents": 10
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -0.40806374522216987,
+                0.08689463343815537
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.13258963260410805,
+              "median_nats": 0.0007744385346200033,
+              "positive_documents": 10
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -0.43771861374158993,
+                0.006040178009625535
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.20122809739501335,
+              "median_nats": -0.003021835662487149,
+              "positive_documents": 7
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -0.28855500873818984,
+                0.0958544680259684
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.07871485366885356,
+              "median_nats": 0.0057430477331337215,
+              "positive_documents": 11
+            }
+          }
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q2": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -0.06990950263570994,
+              "mean_log_likelihood_per_target_token": -0.06990950263570994
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -0.6894736398826353,
+              "mean_log_likelihood_per_target_token": -0.6894736398826353
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -0.07307125051738694,
+              "mean_log_likelihood_per_target_token": -0.07307125051738694
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -0.2952132467471529,
+              "mean_log_likelihood_per_target_token": -0.2952132467471529
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -0.06940419506281614,
+              "mean_log_likelihood_per_target_token": -0.06940419506281614
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -0.07375673961360008,
+              "mean_log_likelihood_per_target_token": -0.07375673961360008
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.0031683099950896576,
+                0.002027488959720355
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.0005053075728937984,
+              "median_nats": -7.079355418682098e-05,
+              "positive_documents": 7
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -0.6884840925333264,
+                0.021624016683927036
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.22530374411144294,
+              "median_nats": -0.0028767967596650124,
+              "positive_documents": 7
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -0.4446229141460208,
+                1.3534805970506567
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.39426039313548245,
+              "median_nats": 0.006772235734388232,
+              "positive_documents": 10
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -0.6905432618965278,
+                0.028176571294170474
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.22214199622976594,
+              "median_nats": 0.0019711132626980543,
+              "positive_documents": 9
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -0.6902470006047224,
+                0.021576309797092085
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.22580905168433674,
+              "median_nats": -0.0009393366053700447,
+              "positive_documents": 7
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -0.6907857900812815,
+                0.027812530341179788
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.2214565071335528,
+              "median_nats": 0.0012540491297841072,
+              "positive_documents": 9
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -15.960041756579368,
+              "mean_log_likelihood_per_target_token": -0.9975026097862105
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -20.622335244642734,
+              "mean_log_likelihood_per_target_token": -1.2888959527901709
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -15.989996505606417,
+              "mean_log_likelihood_per_target_token": -0.999374781600401
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -16.957215185986534,
+              "mean_log_likelihood_per_target_token": -1.0598259491241584
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -16.006575456657988,
+              "mean_log_likelihood_per_target_token": -1.0004109660411242
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -16.17425907060504,
+              "mean_log_likelihood_per_target_token": -1.010891191912815
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.014859103971211773,
+                0.12310345411655688
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.04653370007861923,
+              "median_nats": 0.00010058385305455886,
+              "positive_documents": 8
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -1.8491075842629932,
+                -0.24763052363392477
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.9971734294071668,
+              "median_nats": -0.1303248441836331,
+              "positive_documents": 7
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                0.06324833903304729,
+                8.827236131318138
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 3.665120058656199,
+              "median_nats": 0.9028974641114473,
+              "positive_documents": 11
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.7733945626573866,
+                -0.23064860489924213
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.9672186803801184,
+              "median_nats": -0.0614885859012162,
+              "positive_documents": 6
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -1.7928043416519863,
+                -0.20473470553114204
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.9506397293285476,
+              "median_nats": -0.037093029022798873,
+              "positive_documents": 8
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.5309293582277899,
+                -0.08535797467920107
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.7829561153814959,
+              "median_nats": -0.03556914265391242,
+              "positive_documents": 8
+            }
+          }
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q3": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -0.6964519871398807,
+              "mean_log_likelihood_per_target_token": -0.6964519871398807
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -0.9571867696940899,
+              "mean_log_likelihood_per_target_token": -0.9571867696940899
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -0.6630443427711725,
+              "mean_log_likelihood_per_target_token": -0.6630443427711725
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -0.9614439597353339,
+              "mean_log_likelihood_per_target_token": -0.9614439597353339
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -0.7132669985294342,
+              "mean_log_likelihood_per_target_token": -0.7132669985294342
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -0.7188884569332004,
+              "mean_log_likelihood_per_target_token": -0.7188884569332004
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                0.0020455803023651247,
+                0.033953760657459496
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.016815011389553547,
+              "median_nats": 0.003567218780517578,
+              "positive_documents": 9
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -0.9271918886341155,
+                0.1556726779555901
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.26499197259545326,
+              "median_nats": -0.006760835647583008,
+              "positive_documents": 7
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -0.683784787170589,
+                0.5233819912187747
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.00425719004124403,
+              "median_nats": 0.10792450606822968,
+              "positive_documents": 11
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -0.9548815741669386,
+                0.12812111759558314
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.2983996169641614,
+              "median_nats": 0.007543489336967468,
+              "positive_documents": 9
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -0.9083089163992554,
+                0.17304700224194666
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.24817696120589972,
+              "median_nats": 0.03588014841079712,
+              "positive_documents": 10
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -0.823216887959279,
+                0.12093006416689578
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.24255550280213356,
+              "median_nats": -0.00491584837436676,
+              "positive_documents": 7
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -24.466624618107428,
+              "mean_log_likelihood_per_target_token": -1.5291640386317142
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -27.83537237904369,
+              "mean_log_likelihood_per_target_token": -1.7397107736902306
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -24.64593805190658,
+              "mean_log_likelihood_per_target_token": -1.5403711282441612
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -26.06178512991529,
+              "mean_log_likelihood_per_target_token": -1.6288615706197056
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -24.505743441732747,
+              "mean_log_likelihood_per_target_token": -1.5316089651082967
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -24.602288881426613,
+              "mean_log_likelihood_per_target_token": -1.5376430550891633
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.0038329853400026247,
+                0.08354611075553721
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.039118823625319266,
+              "median_nats": 0.017685151382465847,
+              "positive_documents": 10
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -3.032078413296557,
+                -0.37639943351438365
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.5951605118078618,
+              "median_nats": -0.2147025269327969,
+              "positive_documents": 6
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -0.12989128642889838,
+                3.641333685694479
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 1.7735872491284015,
+              "median_nats": 2.123402708316462,
+              "positive_documents": 12
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -2.9309279999243643,
+                -0.15607161561427083
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.41584707800871,
+              "median_nats": -0.1574409569943782,
+              "positive_documents": 6
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -2.9776011595746668,
+                -0.33883512065190435
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.5560416881825425,
+              "median_nats": -0.2555519321722386,
+              "positive_documents": 5
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -2.8943582153653495,
+                -0.18178101775899347
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.4594962484886764,
+              "median_nats": -0.505688318952707,
+              "positive_documents": 5
+            }
+          }
+        }
+      }
+    },
+    "B0_raw_K1_surprisal_Q4": {
+      "documents": 16,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -3.012646496295929,
+              "mean_log_likelihood_per_target_token": -3.012646496295929
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -3.4014084339141846,
+              "mean_log_likelihood_per_target_token": -3.4014084339141846
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -3.0441329926252365,
+              "mean_log_likelihood_per_target_token": -3.0441329926252365
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -3.7402415201067924,
+              "mean_log_likelihood_per_target_token": -3.7402415201067924
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -3.0185660421848297,
+              "mean_log_likelihood_per_target_token": -3.0185660421848297
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -2.978131629526615,
+              "mean_log_likelihood_per_target_token": -2.978131629526615
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.045618930645287034,
+                0.07930630389600986
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.005919545888900757,
+              "median_nats": -0.006282329559326172,
+              "positive_documents": 7
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -1.6815928671509028,
+                0.0012766884639858543
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.7275950238108635,
+              "median_nats": -0.10099983215332031,
+              "positive_documents": 6
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -1.3384949838742612,
+                0.5923482658341527
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.3388330861926079,
+              "median_nats": -0.47066569328308105,
+              "positive_documents": 6
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.6741343103349209,
+                0.08776498846709697
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.6961085274815559,
+              "median_nats": -0.23531591892242432,
+              "positive_documents": 4
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -1.6885688362643123,
+                0.011980399303137795
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.7216754779219627,
+              "median_nats": -0.12598121166229248,
+              "positive_documents": 5
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.7255111295729875,
+                -0.029670261219145254
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -0.7621098905801773,
+              "median_nats": -0.1571439504623413,
+              "positive_documents": 7
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 16,
+              "mean_log_likelihood": -23.519985177854892,
+              "mean_log_likelihood_per_target_token": -1.4699990736159307
+            },
+            "filler": {
+              "documents": 16,
+              "mean_log_likelihood": -27.761679736694155,
+              "mean_log_likelihood_per_target_token": -1.7351049835433847
+            },
+            "other": {
+              "documents": 16,
+              "mean_log_likelihood": -23.55330654729171,
+              "mean_log_likelihood_per_target_token": -1.472081659205732
+            },
+            "own": {
+              "documents": 16,
+              "mean_log_likelihood": -25.128801403466312,
+              "mean_log_likelihood_per_target_token": -1.5705500877166445
+            },
+            "raw": {
+              "documents": 16,
+              "mean_log_likelihood": -23.554004631172806,
+              "mean_log_likelihood_per_target_token": -1.4721252894483003
+            },
+            "shuffled": {
+              "documents": 16,
+              "mean_log_likelihood": -23.936413208837465,
+              "mean_log_likelihood_per_target_token": -1.4960258255523415
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.040820286347654534,
+                0.13805444159645627
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 0.03401945331791456,
+              "median_nats": 0.013261912137899401,
+              "positive_documents": 11
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -3.3052267293828628,
+                -0.3071254477063324
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.6088162256114211,
+              "median_nats": -0.6726141162216663,
+              "positive_documents": 6
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                0.33519097390404945,
+                5.256655788868624
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": 2.6328783332278425,
+              "median_nats": 1.6379647282592487,
+              "positive_documents": 13
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -3.4616884808546713,
+                -0.07263291882145195
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.5754948561746023,
+              "median_nats": -0.7155352107365616,
+              "positive_documents": 3
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -3.285988811804924,
+                -0.2763672576565904
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.5747967722935066,
+              "median_nats": -0.6700450898497365,
+              "positive_documents": 5
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -2.9774471923975505,
+                0.22075301082285023
+              ],
+              "complete_pairs": 16,
+              "documents": 16,
+              "failures": 0,
+              "mean_nats": -1.1923881946288502,
+              "median_nats": -0.238220515078865,
+              "positive_documents": 4
+            }
+          }
+        }
+      }
+    },
+    "all": {
+      "documents": 64,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -0.94506236151328,
+              "mean_log_likelihood_per_target_token": -0.94506236151328
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -1.3105824292773853,
+              "mean_log_likelihood_per_target_token": -1.3105824292773853
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9454011580301098,
+              "mean_log_likelihood_per_target_token": -0.9454011580301098
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -1.249788430838501,
+              "mean_log_likelihood_per_target_token": -1.249788430838501
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9506122276832623,
+              "mean_log_likelihood_per_target_token": -0.9506122276832623
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9431826436386546,
+              "mean_log_likelihood_per_target_token": -0.9431826436386546
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.00846437132751241,
+                0.024825672189589552
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": 0.005549866169982209,
+              "median_nats": -1.1921144960069796e-07,
+              "positive_documents": 31
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -0.6258834594879987,
+                -0.04708866952706559
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -0.30472606932522095,
+              "median_nats": -0.00024241791106760502,
+              "positive_documents": 24
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                -0.3198568319408997,
+                0.44045667346326023
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": 0.060793998438884334,
+              "median_nats": 0.001785385305993259,
+              "positive_documents": 37
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -0.6281667495693538,
+                -0.03726118342235755
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -0.3043872728083912,
+              "median_nats": -1.5497431178346233e-06,
+              "positive_documents": 30
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -0.6225936983180449,
+                -0.04064614065980567
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -0.29917620315523874,
+              "median_nats": -2.6822424388228683e-06,
+              "positive_documents": 30
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -0.6168288855962327,
+                -0.05714018310563373
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -0.30660578719984644,
+              "median_nats": -5.960546616279316e-07,
+              "positive_documents": 30
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -18.64585319487734,
+              "mean_log_likelihood_per_target_token": -1.1653658246798337
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -22.85626028486289,
+              "mean_log_likelihood_per_target_token": -1.4285162678039307
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -18.723611390090383,
+              "mean_log_likelihood_per_target_token": -1.170225711880649
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -19.746398951882266,
+              "mean_log_likelihood_per_target_token": -1.2341499344926417
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -18.675722380082366,
+              "mean_log_likelihood_per_target_token": -1.1672326487551479
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -18.868010098840298,
+              "mean_log_likelihood_per_target_token": -1.1792506311775186
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "ci95_nats": [
+                -0.001987952086744843,
+                0.06547792480589922
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": 0.029869185205024573,
+              "median_nats": 0.004882548460500402,
+              "positive_documents": 39
+            },
+            "own_minus_empty": {
+              "ci95_nats": [
+                -1.7281137551772763,
+                -0.566534816226985
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -1.100545757004927,
+              "median_nats": -0.19932638572754513,
+              "positive_documents": 27
+            },
+            "own_minus_filler": {
+              "ci95_nats": [
+                1.5757997786215965,
+                4.871634352087071
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": 3.1098613329806226,
+              "median_nats": 1.4372422287488007,
+              "positive_documents": 46
+            },
+            "own_minus_other": {
+              "ci95_nats": [
+                -1.6754557385894737,
+                -0.4648628457819319
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -1.0227875617918847,
+              "median_nats": -0.12320806559796438,
+              "positive_documents": 25
+            },
+            "own_minus_raw": {
+              "ci95_nats": [
+                -1.691865594752684,
+                -0.5389903934889024
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -1.0706765717999025,
+              "median_nats": -0.2272786734414467,
+              "positive_documents": 25
+            },
+            "own_minus_shuffled": {
+              "ci95_nats": [
+                -1.4990632205566987,
+                -0.34086799713217864
+              ],
+              "complete_pairs": 64,
+              "documents": 64,
+              "failures": 0,
+              "mean_nats": -0.878388853041969,
+              "median_nats": -0.05780704470137721,
+              "positive_documents": 28
+            }
+          }
+        }
+      }
+    }
+  },
+  "groups_per_prefix": 1,
+  "independent_audit": {
+    "absolute_cells": 60,
+    "all_four_wrapper_exits_zero": true,
+    "all_global_controls_reconstructed": true,
+    "max_aggregate_numeric_error": 0.0,
+    "paired_contrasts_and_CIs": 60,
+    "recorded_wrapper_pids_absent": true,
+    "review_sha256": "9fefd7130e402b1b00fee2f49230f9d93a68a0e9c61f03a1a9b45b230878c77e",
+    "status": "pass"
+  },
+  "interface": "content+[271]+full original512prefix; raw has prefix only",
+  "limitations": [
+    "Exploratory fixed DEV64, not official final/test or training-seed uncertainty.",
+    "Notes and global controls are reused unchanged; no future-selected winner.",
+    "Adapted readers are secondary crossed-reader diagnostics, not the fixed-reader primary.",
+    "Prepending changes the reader serialization; no reanchor32/header/close is inserted.",
+    "Reader interface changed while exactly the same notes/controls/targets and B0 weights are reused.",
+    "DEV64 excludes the interface DEV32 pilot but belongs to the previously analyzed DEV512 pool; this is exploratory development.",
+    "Near-zero empty-format cost does not establish useful content: absolute and matched-content arms are retained.",
+    "No learner result, oracle-selected evaluation, official final test or training-throughput claim.",
+    "Raw examples, full IDs, records, process and topology details remain local and in the EBS archive."
+  ],
+  "model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "note_context": {
+    "actions_total": 13145,
+    "caps": 45,
+    "content_length_counts": {
+      "0": 1,
+      "11": 1,
+      "117": 1,
+      "133": 1,
+      "15": 1,
+      "162": 1,
+      "164": 1,
+      "2": 1,
+      "214": 1,
+      "22": 1,
+      "227": 1,
+      "25": 1,
+      "253": 1,
+      "256": 45,
+      "37": 1,
+      "43": 1,
+      "5": 1,
+      "8": 1,
+      "81": 1,
+      "87": 1
+    },
+    "content_tokens_mean": 205.09375,
+    "content_tokens_median": 256.0,
+    "content_tokens_total": 13126,
+    "empty": 1,
+    "stop_counts": {
+      "length_cap": 45,
+      "token:151643": 19
+    }
+  },
+  "notes": 64,
+  "original_note_protocol_sha256": "fbe7a363a487c6eca2e4eb8918ea7abfcd6cc5cee3d2ffc434e25b11165a4125",
+  "policy": "One saved fresh cap256 G1 note per fixed DEV64 document, reused unchanged; no resampling or future selection.",
+  "primary_horizon": 16,
+  "protocol_sha256": "e0a862fea81f4465df8b2736367e9db98b4f0d2df85d4dcfa9c92efde52bfa0d",
+  "raw_B0_parity": {
+    "all_raw_vectors_exact": true,
+    "bound": 0.002,
+    "items": 64,
+    "max_token_error": 0.0,
+    "reference": "Complete original fresh DEV64 B0 raw16 vectors, from the same unchanged released weights.",
+    "target_tokens_per_item": 16
+  },
+  "reader": "B0",
+  "report_utc": "2026-10-17T23:58:38.706976+00:00",
+  "schema": "prepend-DEV64-B0-G1-result-v1",
+  "score_rows": 384,
+  "secondary_horizon": 1,
+  "selection_item_ids_sha256": "333a16d514b4e3457af1d72a59e7f2500f63d28951d8b418b75d709ea778a611",
+  "selection_rule": "First16 IDs per frozen B0 surprisal quartile in original fixed DEV512 order, excluding all32 interface-pilot IDs; no fallback",
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/warmstart_evaluate.py": "fadd9c469a46c0f9402b01bfb951bd23d26ab18444230163f727a26888eac5f1",
+    "train/warmstart_prepend_evaluate.py": "f7f83030b848249827e9bb3e722ed4195c5b676841036f5844913df8c6761ba0",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "split": "dev",
+  "status": "complete",
+  "summary_sha256": "965c6567033348c2a962531f9f464cf16879d8e1a0c9991d204f80b824585ae0",
+  "temperature": 0.7,
+  "uncertainty": "5000 paired document bootstrap draws, seed17, percentile95%; fixed checkpoints/documents, not training-seed uncertainty.",
+  "writer": "B0"
+}

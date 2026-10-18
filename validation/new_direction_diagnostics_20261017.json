@@ -1,8 +1,8 @@
 {
-  "time_utc": "2026-10-17T23:54:12.396267+00:00",
-  "status": "short_writer_training_and_teacher_pilot_running",
+  "time_utc": "2026-10-18T00:03:34.409222+00:00",
+  "status": "both_short_learning_arms_running_diagnostics_closed",
   "previous_result": "interface_tax_dev32_20261017.json",
-  "tests": "352 CPU tests + toy smoke, tests.u9JYfw; newprepend evaluator separately367 tests + toy smoke before final primary-text review",
+  "tests": "388 CPU tests + toy smoke; local/checks/tests.XEKEpb",
   "candidate": {
     "protocol_sha256": "2d433f847a091f67e70e0205142d7ba721f009eeeb4372032f64b7b81b79b677",
     "protocol": "candidate_oracle_dev32_protocol_20261017.json",
@@ -144,7 +144,7 @@
     "deployed_G1_utility_claim": false
   },
   "local_teacher": {
-    "status": "running_generation_after_both_native_CPU_device_forward_gates",
+    "status": "complete",
     "model_id": "Qwen/Qwen3-4B",
     "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
     "manifest_sha256": "5e90de838673e59d713687fe010143257a71b071beb86a89f287125d7f61e742",
@@ -159,8 +159,12 @@
     "protocol_sha256": "bacf19a47b4304d9a1852339285b59cd2b6d0199d3eb5a49a268ae6970f50961",
     "max_forward_error": 0.000446319580078125,
     "forward_atol": 0.002,
-    "first_replay_pending": true,
-    "deadline_utc": "2026-10-18T01:47:20.124466+00:00"
+    "first_replay_pending": false,
+    "deadline_utc": "2026-10-18T01:47:20.124466+00:00",
+    "notes": 32,
+    "exit_code": 0,
+    "max_replay_error": 3.141164779663086e-05,
+    "report": "hindsight_teacher_generation_20261017.json"
   },
   "writer_learning": {
     "experiment_id": "writer-bc-prepend-train77-64-v2",
@@ -178,7 +182,17 @@
     "lr": 1e-05,
     "precision": "fp32",
     "primary_eval": "fresh G1 DEV64 K16 own-empty/contentcontrols read by fixedB0prepend; K1secondary; no officialfinal",
-    "raw_control": "unreleased; same77IDs/order/optimizer/updates, rawfuture16CE",
+    "raw_control": {
+      "status": "running_first_update_pending",
+      "experiment_id": "raw-control-prepend-train77-64-v1",
+      "released_utc": "2026-10-18T00:01:13.719403+00:00",
+      "deadline_utc": "2026-10-18T06:01:13.719403+00:00",
+      "protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+      "same77_ids_seed_order_optimizer_updates": true,
+      "objective": "rawfuture16CE",
+      "planned_true_future_CE_labels": 8192,
+      "scheduling": "parallel isomorphic contiguoustwochipgroup; supersedes localserialintention aftersparsegraphrepair; sharedhostcostsdisclosed"
+    },
     "prior_attempt": {
       "experiment_id": "writer-bc-prepend-train77-64-v1",
       "status": "failed_before_updates",
@@ -188,5 +202,31 @@
     },
     "deadline_utc": "2026-10-18T05:52:12.438311+00:00",
     "report": "positive_writer_train77_protocol_20261017.json"
+  },
+  "fresh_prepend_DEV64_B0": {
+    "status": "complete",
+    "experiment_id": "warmstart-prepend-dev64-B0-v2",
+    "rows": 384,
+    "failures": 0,
+    "raw_reference_max_token_error": 0.0,
+    "K16_own_minus_empty": -1.100545757004927,
+    "K16_own_minus_other": -1.0227875617918847,
+    "K16_empty_minus_raw": 0.029869185205024573,
+    "report": "warmstart_prepend_dev64_B0_20261017.json"
+  },
+  "teacher_prepend": {
+    "status": "complete",
+    "experiment_id": "teacher-prepend-train16-v1",
+    "rows": 176,
+    "failures": 0,
+    "train_items": 16,
+    "prefix_only_K16_own_minus_empty": -0.6981149584312902,
+    "hindsight_K16_own_minus_empty": 2.8578375838639687,
+    "hindsight_K16_own_minus_other": 3.2209124341235755,
+    "hindsight_K16_own_minus_shuffled": 2.8052318984278344,
+    "hindsight_observes_true_future": true,
+    "deployed_reasoning_claim": false,
+    "copying": "7of16 hindsight exact4grams,3of16 exact8grams; absence of matches does not rule out target-derived hints",
+    "report": "teacher_prepend_train16_20261017.json"
   }
 }

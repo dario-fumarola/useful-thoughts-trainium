@@ -501,3 +501,26 @@ adjacent chips2/3; source/data/pair protocol are identical. The official
 [runtime developer guide](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-runtime/guides/nrt-developer-guide.html)
 also requires a contiguous resulting core range. Actual V2 execution remains
 to be checked; no source-level acceptance is called a hardware pass.
+
+### 2026-10-18 00:03 UTC — distinguish informative labels from a useful writer
+
+Fresh prepend DEV64 B0 baseline closed384 finite rows and exactly reproduces
+raw vectors. Empty tax is near zero; ordinary G1 K16 own−empty remains−1.101
+CI[−1.728,−.567]. Both32-note teacher generation and176-row B0 reader stage
+closed without failures, passing native/device and replay gates. Prefix-only
+4B teacher notes remain negative (own−empty−.698). Hindsight notes gain+2.858
+CI[+.730,+5.309], with positive matched-control intervals. They see the target;
+this establishes target-dependent label information, not deployed reasoning.
+Exact4/8gram overlap and all fixed examples are retained. No-copy groups can
+still encode future-derived hints, and actual examples include wrong math.
+Do not treat continuation likelihood as mathematical correctness. Audit anchor
+quality locally before another larger teacher dataset; keep current runs fixed.
+
+The contiguous repair passes the previously failing rendezvous and continues
+live first-shape compilation. It consumes only two chips. Release raw_control
+concurrently on an isomorphic adjacent two-chip group16-23 at00:01:13, same
+immutable pair protocol/source/data/order/optimizer/updates. This prospectively
+supersedes earlier local serial/same-core scheduling; keep actual shared-host
+compilation/cache contention in costs. Neither first update is claimed yet.
+Use completed64 checkpoints for fresh G1, unchanged B0 prepend reader and the
+prospectively saved K16 primary/K1 secondary analysis; no best-checkpoint choice.

@@ -1,4 +1,4 @@
-# Status — 2026-10-17 23:56 UTC
+# Status — 2026-10-18 00:08 UTC
 
 The owner stopped the initial R study and redirected work to the reward
 interface, genuine candidate availability and iteration speed. Older256-step
@@ -80,39 +80,66 @@ orders/CODEX_NEXT_DAY.md are superseded. Follow NEXT_STEPS.md.
   local/nvme/diagnostics/writer-bc-prepend-train77-64-v2. Contiguous logical
   cores8-15 on adjacent devices2/3, ports65371/65372.
   Watch first finite loss/gradient/actual update/replica agreement, then16/64
-  complete checkpoints. After exit and ownership closure, release raw_control
-  under this exact pair protocol on the same cores. No automatic relaunch.
+  complete checkpoints. Live compilation is progressing, no metrics/update yet.
+  No automatic relaunch. Raw control now runs concurrently as below.
   V1 failed before any update at first rendezvous, exit1 at23:50:55: sparse
   core-list remapping succeeded but collective graph had no device paths
   (no_hier/no_mesh). All observed owned PIDs absent, no metrics/checkpoints.
   V1 source/output/log preserved; V2 changes launch topology only, same exact
   source/data/pair protocol. A supported parser is not a qualified collective.
-- **hindsight-teacher-train16-v1 RUNNING**, released23:47:20UTC,
-  finite deadlineOct18 01:47:20. Qwen3-4B pinned1cfa9a72, FP32, logical0/device0,
-  ports65351/65352; tmux dario-hindsight-teacher-v1. Local control sameID,
-  launcher2210950, generate.log; output local/nvme/diagnostics/sameID.
-  Both actual B4 native-CPU/device next-logp checks passed before any notes:
-  prefix-only max.00044632, hindsight.00035477 (criterion.002).
-  Both first cached/replay audits passed: prefix-only2.2054e-5/hindsight3.1412e-5
-  (criterion.001).20/32 notes saved at23:56; wait for all32/exit0 before scores.
-  Protocol bacf19a47b4304d9a1852339285b59cd2b6d0199d3eb5a49a268ae6970f50961.
-  Earlier CPU reference publication failed only on loading-info set serialization;
-  failed source/output preserved separately, then exact inputs re-prepared and
-  reference completed. Teacher utility is not measured yet.
-- **warmstart-prepend-dev64-B0-v2 RUNNING**, released23:55:44, finite1h deadline
-  Oct18 00:55:44. Reuses all64 closed B0 G1 notes/global controls, no generation;
-  384 contexts, four16-doc shards on logical44/48/52/56, ports65401..65408.
-  Output under local/nvme/diagnostics/sameID; controls under local/diagnostics/
-  sameID/score-shard-0..3 (PIDs/log/exit). Protocol
-  e0a862fea81f4465df8b2736367e9db98b4f0d2df85d4dcfa9c92efde52bfa0d.
-  New evaluator independently reviewed; K16 primary/K1 secondary fixed before
-  new scores; prior prepared-only K1 protocol retained as pre-review. Same
-  students/fixedB0reader later, adapted readers secondary. On all4 exit0/groups
-  gone: `python -m train.warmstart_prepend_evaluate summarize --output
-  local/nvme/diagnostics/warmstart-prepend-dev64-B0-v2`.
-- **Teacher scorer ready**, train/teacher_prepend_probe.py source5bf158f2,
-  independently reviewed; data agent will prepare176 contexts only after teacher
-  closed32/exit0. Root alone launches/signals. Review maintains EBS/public reports.
+- **raw-control-prepend-train77-64-v1 RUNNING**, releasedOct18 00:01:13,
+  finite deadline06:01:13. Same exact pair protocol/source/data/order/seed/global8/
+  64updates/optimizer/FP32/LRU2; future16 CE only, width544/T16. Contiguous
+  cores16-23/devices4/5, ports65391/65392. Control pair/raw-control:
+  launcher2237372/timeout2237376, train.log, STOP. Output local/nvme/diagnostics/
+  raw-control-prepend-train77-64-v1; tmux dario-raw-control-train77-v1.
+  Topology repair leaves enough idle hardware for a parallel isomorphic two-chip
+  group, superseding earlier local serial/same-core scheduling. Actual shared-host
+  compile/cache costs stay reported, no causal throughput comparison. First update
+  pending. Retain16/64 states; verified EBS final64 backups for both arms.
+- **Fresh prepend DEV64 B0 COMPLETE**,384 finite rows/0fail, all4 exit0/owned
+  groups gone. Raw64×16 reference vectors exactly match. K16 empty−raw+.02987
+  CI[−.00199,+.06548]; own−empty−1.10055 CI[−1.72811,−.56653], own−other−1.02279
+  CI[−1.67546,−.46486]. Same closed64 G1 notes/global controls; no sampling here.
+  Independently reproduced all60 contrasts/CIs and60 absolute cells. Public
+  validation/warmstart_prepend_dev64_B0_20261017.json; EBS81files/2,454,075B.
+  Output local/nvme/diagnostics/warmstart-prepend-dev64-B0-v2/summary.json.
+  K16 primary/K1 secondary fixed before scores; pre-review K1 preparation retained.
+- **Local teacher COMPLETE**,32 notes/exit0 at23:57:08, allowned groups gone.
+  Qwen3-4B FP32/native CPU forward max.000447; both replay max3.142e-5 pass.
+  Prefix-only16EOS, noempty; hindsight15EOS/1cap, noempty. Public generation
+  report validation/hindsight_teacher_generation_20261017.json; verified EBS
+  37files/6,082,447B includes allprompts/notes/CPUrefs/fixedfirst4 examples.
+  Earlier CPU reference publication failure (set serialization) remains separately
+  retained; no numerical failure. B0 remains unchanged Qwen3-1.7B-Base.
+- **Teacher prepend reader COMPLETE**,176 finite rows/0fail/exit0, raw parity
+  7.868e-6. Prefix-only K16 own−empty−.69811 CI[−1.11234,−.33965]. Hindsight
+  own−empty+2.85784 CI[+.72989,+5.30923], own−other+3.22091, own−shuffled+2.80523
+  with positive intervals. Hindsight saw the continuation: target-derived label
+  information, not deployed useful thought.7/16 copy exact4grams,3/16 exact8grams;
+  gains also occur without those matches, which does not exclude paraphrase/hints.
+  Root/auditors inspected actual notes: some high gains reflect arbitrary future
+  details or erroneous math. Do not equate continuation LL with correctness.
+  Public validation/teacher_prepend_train16_20261017.json; EBS61files/7,735,157B.
+  Output local/nvme/diagnostics/teacher-prepend-train16-v1/summary.json.
+- **Quality audit saved**, validation/teacher_anchor_quality_20261018.json,
+  verified EBS43files/1,357,152B. Actual cached author assertion falsely calls
+  finite3.1416 irrational despite FineMath int_score5; correct teacher note
+  K16own−empty−.47978 versus false hindsight+1.56470. At least7/16 fixed panel
+  targets are manually classified scaffolding (posthoc/nonblinded, no population
+  frequency claim). Prefix-only calculation-boundary curriculum remains an
+  unimplemented prospective idea. No current labels/gates changed.
+- **Cold compile audit**, control warmstart-contiguous-v2/hlo-review/conclusion.json
+  SHA3a15fc52a1f3d141088e17452dcfb4880f3199e4c6a4ca6f751805d1e56344ab.
+  Eight optimizer HLOs differ only by rank-specific310 padding configurations;
+  raw_control uses the same exact8 cache keys. CE IDs/labels/positions/masks are
+  HLO parameters, no array constants. No first-batch data-value specialization
+  observed; actual first/initialized-state/later-update timings still pending.
+- **Next**: observe both first actual updates, preserve full16/64 checkpoints,
+  evaluate both completed64 models with original fresh G1 DEV64 generator and
+  fixed B0 prepend reader; compare paired student/B0/raw-control utilities.
+  No best-checkpoint selection. Data audits prefix-only anchor quality locally;
+  distributed watches live compilation; review maintains EBS/public receipts.
   Keep active teacher/SFT/evaluator dependencies fixed.
 - Latest complete CPU checks388+toy smoke (`local/checks/tests.XEKEpb`). Actual
   reader/parity/full-gradient evidence above is separate from new SFT execution.

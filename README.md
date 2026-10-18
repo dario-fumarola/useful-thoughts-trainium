@@ -115,11 +115,20 @@ reader; training-label gains do not qualify this check.
 The [full-gradient padding profile](validation/replay_padding_20261017.json)
 preserves reader/signed-loss gradients while reducing isolated real-note warm
 replay from~4.24s to~.46s. This is not measured end-to-end training throughput.
-A separate local Qwen3-4B teacher pilot is running for explicitly disclosed
-prefix-only/hindsight TRAIN supervision. Both initial device next-logp matrices
-match native CPU references within.000447 nats; first cached/replay audits also
-pass (max.0000315). Generation remains in progress. Base weights and identities
-stay separate.
+The [fresh prepend DEV64 baseline](validation/warmstart_prepend_dev64_B0_20261017.json)
+confirms near-zero empty tax, while ordinary G1 notes still hurt: K16 own−empty
+−1.101 [−1.728,−.567]. No fresh student improvement has been established.
+
+The local Qwen3-4B [teacher pilot](validation/teacher_prepend_train16_20261017.json)
+closed32 notes/176 B0-reader contexts with passing native/device and replay
+checks. Prefix-only notes remain negative (K16 own−empty−.698); hindsight
+notes gain+2.858 [+.730,+5.309]. Hindsight sees the target, so this is label
+information, not deployed reasoning. A [source/quality audit](validation/teacher_anchor_quality_20261018.json)
+also finds a concrete reward mismatch: a correct note classifies finite3.1416
+as rational and loses likelihood; an incorrect, target-congruent note calls it
+irrational and gains likelihood. Exact-copy controls cannot establish truth.
+All original notes, source records, controls, failures and fixed examples remain
+in verified local EBS archives. Current learning labels/runs are unchanged.
 
 Fixed128-question GSM8K **TRAIN development** results:
 

@@ -15,17 +15,21 @@
    complete16/64 checkpoints. V1 sparse collective failed before updates;
    V2 uses contiguous8-15 with unchanged source/data/protocol. Root-owned finite
    launch; exact paths in STATUS.
-   After it closes, run raw_control with the same77 IDs/order/optimizer/updates.
-   Source/packer/protocol fixed. Unequal CE-label counts and compute are disclosed.
-5. Prepare explicit prepend DEV64 scoring from the existing fresh B0 G1 bundle.
-   Generate fresh student G1 under the same fixed batches/seeds/cap256. Primary:
+   Matched raw_control now runs in parallel on contiguous16-23/devices4/5 after
+   the topology repair freed hardware. Same77 IDs/order/optimizer/updates.
+   Source/packer/protocol fixed. Unequal CE-label counts/shared-host costs disclosed.
+5. DONE B0 prepend DEV64 baseline,384 finite rows; ordinary G1 own−empty K16
+   remains−1.101 despite near-zero tax. After both completed64 checkpoints,
+   generate fresh student G1 under the same fixed batches/seeds/cap256. Primary:
    unchanged B0 reader, own−empty/controls/raw. Adapted-reader diagonals/crosses
    are secondary. Keep lengths, caps, failures, absolute LL and actual costs.
-6. ACTIVE: pinned local Qwen3-4B teacher, first16 TRAIN docs, prefix-only versus
-   hindsight. Initial native-CPU/device next-logp gates passed; observe first
-   replay checks and all32 notes before scoring with B0 prepend reader/global
-   controls. Hindsight utility is training-label evidence, never deployed utility.
-   No paid API, no DEV labels or B0 replacement. No long RL from the old init.
+6. DONE: local Qwen3-4B first16 TRAIN comparison,32 notes/176 finite B0 prepend
+   scores. Prefix-only own−empty K16−.698; hindsight+2.858, positive versus all
+   matched content controls. Hindsight uses target information and includes
+   copying/target-derived hints and wrong mathematical claims. It establishes
+   usable target-dependent content, not prefix-only reasoning. Audit real anchor
+   quality before choosing broader teacher supervision. No DEV labels/B0 switch.
+   No long RL from the old init.
 
 Use measured useful content and a working short loop before a larger study.
 Keep official final outcomes out of development. Preserve real data/weights,

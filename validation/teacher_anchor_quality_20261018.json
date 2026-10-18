@@ -1,0 +1,124 @@
+{
+  "audit": {
+    "additional_original_TRAIN128_positions": [
+      16,
+      32,
+      48,
+      64,
+      80,
+      96,
+      112,
+      127
+    ],
+    "blinded": false,
+    "frequency_scope": "Descriptive manual classifications of this fixed target-surprisal-selected panel only; not a population frequency estimate.",
+    "manually_reviewed_teacher_documents": 16,
+    "ordering": "Fixed first16 of the existing high-surprisal TRAIN128 selection, both notes per document.",
+    "posthoc": true,
+    "scaffold_classified_at_least": 7,
+    "scaffold_definition": "Immediate continuation dominated by forum acknowledgement, timestamp, site/lesson resource or translation/list links, rather than a new mathematical calculation.",
+    "scaffold_denominator": 16,
+    "scaffold_indices_zero_based": [
+      1,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10
+    ],
+    "teacher_notes": 32
+  },
+  "case6": {
+    "FineMath_metadata": {
+      "found_math": false,
+      "int_score": 5,
+      "score": 4.59375
+    },
+    "all11_original_reader_row_sha256": {
+      "hindsight/empty": "c975be593ce2b68a05a0cf44172ccff95ba54ea1678600e072248b12aa90d228",
+      "hindsight/filler": "115cefa0933e08eba6dabaed69e14a305429f18ce304bff8ab15ed521e09e6ee",
+      "hindsight/other": "e1468307485abb6cdd7d5a27310358e69637cc99fa54744755bc8f233fa89815",
+      "hindsight/own": "a21185ae31a01a3059802c2b383c9edb84491c3824f7eba55c856d3fdfc6a3e9",
+      "hindsight/shuffled": "3eb7164e8227dccb94b73e0267e1975b36828af359f288dcbf73785d110fd725",
+      "prefix_only/empty": "28d38fd54b0c22667874e68fa42f6eb8d8cd8e92dcabb41de37dd2496b19822e",
+      "prefix_only/filler": "2273995c7d611e881db032a1cae3668644ca5ed46a000b9573dce327b5daf08d",
+      "prefix_only/other": "3b3711048b27e366dac783d9fbe2263db2e8d20d7244a34b67e6c4d72975a4ac",
+      "prefix_only/own": "617f34939d110d6d0718bbf4fb70fd894d565e6eccd90726125ba25342874a2a",
+      "prefix_only/shuffled": "ba7f63ecee396f1217af4fd777393ebed35201b7959e9a7fd4afbdf461c0af38",
+      "raw/raw": "12e35b85b78ca3420736901a5f3b1e0c7c00f0446bee0b10864ba57ce3ad8ca6"
+    },
+    "author_assertion_classification": "Manual full-article inspection: the false finite-decimal classification is repeatedly asserted by the article author, not merely quoted as a question or distractor.",
+    "correct_classification": "rational",
+    "correct_finite_decimal_fraction": "3.1416 = 31416/10000",
+    "hindsight_note_classification": "False claim that finite3.1416 is irrational and cannot be written as an integer fraction.",
+    "input_future_ids_sha256": "93685d457ee9c2f40e8f39aa893675c281b14489472a930ad1931c9ff9a717c7",
+    "input_prefix_ids_sha256": "5700f22be822f52941e5cfa7b5faf804f5b9f22d7ddc11687e2db19a9c0ab96a",
+    "item_id": "ee5bd3b3507a6fd9440ce3a95740a39b10280540d26339e201fb9d7160e3b9ba:753",
+    "measured_reader": {
+      "hindsight": {
+        "K16_empty_log_likelihood": -13.762498108008003,
+        "K16_own_log_likelihood": -12.197803044095053,
+        "K16_own_minus_empty": 1.56469506391295,
+        "empty_row_sha256": "c975be593ce2b68a05a0cf44172ccff95ba54ea1678600e072248b12aa90d228",
+        "note_row_sha256": "586fbdc439b5441c166acd7cf7814a72a242ba82144371990a1cbf7f4852b22e",
+        "own_row_sha256": "a21185ae31a01a3059802c2b383c9edb84491c3824f7eba55c856d3fdfc6a3e9"
+      },
+      "prefix_only": {
+        "K16_empty_log_likelihood": -13.762498108008003,
+        "K16_own_log_likelihood": -14.242278659643489,
+        "K16_own_minus_empty": -0.4797805516354856,
+        "empty_row_sha256": "28d38fd54b0c22667874e68fa42f6eb8d8cd8e92dcabb41de37dd2496b19822e",
+        "note_row_sha256": "5766dcee0ec34c50ad8304efed8038d9fb8b19d41b8e2de7c445dcc0b22730d6",
+        "own_row_sha256": "617f34939d110d6d0718bbf4fb70fd894d565e6eccd90726125ba25342874a2a"
+      }
+    },
+    "prefix_only_note_classification": "Correct rational finite-truncation distinction.",
+    "raw_source_line_one_based": 389509,
+    "reader_row_hash_method": "SHA256 exact original JSONL row bytes including trailing newline.",
+    "selection_index_zero_based": 6,
+    "source_content_sha256": "836a1b532e9d9f9a287da2dbaf6fa4ce5b9f20a3096d6bdc2867fd7ea3177a38",
+    "source_content_sha256_method": "sha256(' '.join(text.split()).encode('utf-8'))",
+    "source_row_bytes_sha256": "3572020cb6d27d8a12adab833a43cacfb89e5b2b6e3e7790ca1e47066130484c",
+    "source_text_utf8_sha256": "272bbd5c10f9b932f46f874cf01a95a9fa0adcd684a4d6e2908335e36e5a9cef",
+    "source_url": "https://www.restonyc.com/is-3-1416-a-irrational-number/"
+  },
+  "copying_limit": "Absence of exact4/8-token overlap does not exclude future-derived paraphrases or lexical hints. Case7 has only a2-token longest exact span yet its hindsight note introduces future-only fifteen/fifth.",
+  "core_limitation": "Likelihood utility for the observed continuation is not mathematical correctness. This case rewards a factually false, target-congruent hint; hindsight is never deployment evidence.",
+  "created_utc": "2026-10-18T00:07:23+00:00",
+  "evidence": {
+    "B0_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "local_full_audit_sha256": "f84e1a263f9c0b16bc0850768a9ea97757ba9ea3c1977eadbed6f08e8e898974",
+    "reader_failures": 0,
+    "reader_protocol_sha256": "66f9ba01825aff512bf357712d1462a562bbc552ff79c5866373495a2ad94864",
+    "reader_rows": 176,
+    "reader_scores_sha256": "be28ed09905340fdbf7c797d99e6e414010c577c5bccf8e047746dd747c4d9d9",
+    "reader_summary_sha256": "e2f5dad6575f22a6a8b35b7c458722391ca3a0c36bf0000015a5be9815495b21",
+    "teacher_generation_run_sha256": "63af41d4f49c49e33a787c9abfcf0bd0dfe7c626449fc814f080d6b164194bbe",
+    "teacher_inputs_sha256": "e33068b0726a34aaa5673cd1a223418c96098f23afbbade3d548223ceb820b28",
+    "teacher_manifest_sha256": "5e90de838673e59d713687fe010143257a71b071beb86a89f287125d7f61e742",
+    "teacher_notes_sha256": {
+      "hindsight": "4dd3e623a61ca48ea54f69d2a929c852fafc2ac02c455c475086cec8e8ff80d8",
+      "prefix_only": "e5175a6cc058df12c2e288761c6261f3273b45c9f7aa88633ac3bcc0bac6446c"
+    },
+    "teacher_protocol_sha256": "bacf19a47b4304d9a1852339285b59cd2b6d0199d3eb5a49a268ae6970f50961"
+  },
+  "proposed_future_repair": {
+    "current_labels_or_runs_changed": false,
+    "idea": "A separately named curriculum from existing audited FineMath TRAIN documents: freeze prefix-only calculation-boundary cuts and eligibility before any new future inspection, with local math and boilerplate cues; keep matched raw-control order and separate fresh DEV.",
+    "limitations": "Document scores do not certify truth; a boundary heuristic does not guarantee correctness or note utility. No retrospective selection changes or current-run gate.",
+    "new_dataset_created": false,
+    "status": "unimplemented_prospective_idea_only"
+  },
+  "raw_passages_full_notes_or_topology_in_public_report": false,
+  "schema": "teacher-anchor-quality-audit-v1",
+  "status": "manual_posthoc_quality_audit",
+  "verified_EBS_archive": {
+    "bytes": 1357152,
+    "files": 43,
+    "off_instance": false,
+    "path": "/home/ubuntu/dario/local/backups/diagnostics/teacher-anchor-quality-20261018/VERIFIED.json",
+    "scope": "Full local audit, exact cached case6 document/provenance/inputs/notes/all11 rows, all32 teacher notes/all176 reader rows and source closure.",
+    "sha256": "e080b32290d6306b4cc192808e97fab7d9f51e18b69290086b5fee004f368138"
+  }
+}

@@ -1,0 +1,1413 @@
+{
+  "absolute_mean_log_likelihoods": {
+    "hindsight/empty/K1": -3.7014084309339523,
+    "hindsight/empty/K16": -28.403124360988077,
+    "hindsight/filler/K1": -3.721897140145302,
+    "hindsight/filler/K16": -28.58043707515982,
+    "hindsight/other/K1": -3.6475210189819336,
+    "hindsight/other/K16": -28.766199211247685,
+    "hindsight/own/K1": -3.3564607575535774,
+    "hindsight/own/K16": -25.545286777124108,
+    "hindsight/shuffled/K1": -3.604824997484684,
+    "hindsight/shuffled/K16": -28.350518675551942,
+    "prefix_only/empty/K1": -3.7014084309339523,
+    "prefix_only/empty/K16": -28.403124360988077,
+    "prefix_only/filler/K1": -3.7218167036771774,
+    "prefix_only/filler/K16": -28.57152812017976,
+    "prefix_only/other/K1": -3.7047096341848373,
+    "prefix_only/other/K16": -28.820294205134584,
+    "prefix_only/own/K1": -3.882255792617798,
+    "prefix_only/own/K16": -29.101239319419367,
+    "prefix_only/shuffled/K1": -3.7478487491607666,
+    "prefix_only/shuffled/K16": -28.685021787985317,
+    "raw/K1": -3.69014360755682,
+    "raw/K16": -28.38264452617011
+  },
+  "all16_primary": true,
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 61,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/teacher-prepend-train16-v1/ARCHIVE.json",
+    "payload_bytes": 7735157,
+    "sha256": "d04fd16ee80fbd084edbf9479980f70a40dcece29fda7358170b2042f0903672"
+  },
+  "batch_size": 4,
+  "cap": 256,
+  "compute": "fp32",
+  "conditions": {
+    "hindsight": "Same native prompt receives actual future16 for TRAIN label generation only; no deployable-policy interpretation.",
+    "prefix_only": "Native chat prompt receives full512prefix plus fixed16 newline blanks; never actual future16."
+  },
+  "controls": "Empty plus own, recipient-length matched filler, token permutation and next-global-note donors within each condition.",
+  "copy_breakdown_qualification": "Post-hoc descriptive subsets only; all16 remain in every primary contrast. Exact token overlap is not a test for semantic copying, paraphrase, shorter matches, or reasoning. No label selection/filtering or inferential subgroup claim.",
+  "cost": {
+    "new_reader_process_seconds": 26.0,
+    "new_reader_row_wall_seconds_sum": 25.91209831496235,
+    "new_sampling_seconds": 0,
+    "reused_forward_gate_seconds": 47.673227232997306,
+    "reused_replay_audit_batch_seconds_counted_once": 68.60840636699868,
+    "reused_sampling_batch_seconds_counted_once": 439.83182654301345,
+    "reused_teacher_batches": 8
+  },
+  "descriptions": {
+    "hindsight": {
+      "content_tokens_sum": 2404,
+      "documents_copying_4gram": 7,
+      "documents_copying_8gram": 3,
+      "empty": 0,
+      "items": 16,
+      "maximum_contiguous_copied_span": 12,
+      "mean_content_tokens": 150.25,
+      "mean_words": 103.1875,
+      "over150words": 1,
+      "stops": {
+        "length_cap": 1,
+        "token:151645": 15
+      }
+    },
+    "prefix_only": {
+      "content_tokens_sum": 2511,
+      "documents_copying_4gram": 3,
+      "documents_copying_8gram": 0,
+      "empty": 0,
+      "items": 16,
+      "maximum_contiguous_copied_span": 7,
+      "mean_content_tokens": 156.9375,
+      "mean_words": 106.875,
+      "over150words": 0,
+      "stops": {
+        "token:151645": 16
+      }
+    }
+  },
+  "descriptive_copy_breakdown": {
+    "hindsight": {
+      "exact_4gram_overlap": {
+        "copy": {
+          "documents": 7,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -3.2170933995928084,
+                "filler": -3.1779976912907193,
+                "other": -3.17451354435512,
+                "own": -3.006824016571045,
+                "shuffled": -3.048098121370588
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.09199285507202148,
+                  "mean_nats": 0.2102693830217634,
+                  "median_nats": 0.03592252731323242,
+                  "positive_documents": 6,
+                  "sum_nats": 1.4718856811523438
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 0.07488848268985748,
+                  "mean_nats": 0.17117367471967423,
+                  "median_nats": -0.0009696483612060547,
+                  "positive_documents": 3,
+                  "sum_nats": 1.1982157230377197
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 0.07336416840553284,
+                  "mean_nats": 0.16768952778407506,
+                  "median_nats": 0.0012569427490234375,
+                  "positive_documents": 4,
+                  "sum_nats": 1.1738266944885254
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.09609711170196533,
+                  "mean_nats": 0.2196505410330636,
+                  "median_nats": 0.02104330062866211,
+                  "positive_documents": 6,
+                  "sum_nats": 1.5375537872314453
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 0.01805742084980011,
+                  "mean_nats": 0.04127410479954311,
+                  "median_nats": -0.0015704631805419922,
+                  "positive_documents": 3,
+                  "sum_nats": 0.28891873359680176
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -18.86873913977436,
+                "filler": -18.873868469704387,
+                "other": -18.820964837065056,
+                "own": -15.340327374675853,
+                "shuffled": -18.396665981884723
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 1.5436801472305959,
+                  "mean_nats": 3.5284117650985047,
+                  "median_nats": 1.56469506391295,
+                  "positive_documents": 6,
+                  "sum_nats": 24.698882355689534
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 1.5459242290749842,
+                  "mean_nats": 3.5335410950285353,
+                  "median_nats": 1.4150556357126334,
+                  "positive_documents": 5,
+                  "sum_nats": 24.734787665199747
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 1.5227788897952754,
+                  "mean_nats": 3.480637462389201,
+                  "median_nats": 1.2070707641541958,
+                  "positive_documents": 7,
+                  "sum_nats": 24.364462236724407
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 1.5373001811163318,
+                  "mean_nats": 3.5138289854087583,
+                  "median_nats": 1.5479137404327048,
+                  "positive_documents": 6,
+                  "sum_nats": 24.59680289786131
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 1.3371481406538805,
+                  "mean_nats": 3.0563386072088696,
+                  "median_nats": 1.0762333319726167,
+                  "positive_documents": 6,
+                  "sum_nats": 21.39437025046209
+                }
+              }
+            }
+          }
+        },
+        "no_copy": {
+          "documents": 9,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -4.078097899754842,
+                "filler": -4.1449300448099775,
+                "other": -4.015415721469456,
+                "own": -3.628400444984436,
+                "shuffled": -4.03783479001787
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.2529548183083534,
+                  "mean_nats": 0.44969745477040607,
+                  "median_nats": 0.20507001876831055,
+                  "positive_documents": 5,
+                  "sum_nats": 4.047277092933655
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 0.2905478999018669,
+                  "mean_nats": 0.5165295998255411,
+                  "median_nats": 0.160430908203125,
+                  "positive_documents": 5,
+                  "sum_nats": 4.648766398429871
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 0.21769609302282333,
+                  "mean_nats": 0.38701527648501927,
+                  "median_nats": 0.25038623809814453,
+                  "positive_documents": 6,
+                  "sum_nats": 3.4831374883651733
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.23758573830127716,
+                  "mean_nats": 0.4223746458689372,
+                  "median_nats": 0.19734477996826172,
+                  "positive_documents": 5,
+                  "sum_nats": 3.8013718128204346
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 0.23030681908130646,
+                  "mean_nats": 0.4094343450334337,
+                  "median_nats": 0.026241779327392578,
+                  "positive_documents": 5,
+                  "sum_nats": 3.6849091053009033
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -35.81875731082097,
+                "filler": -36.12999043495849,
+                "other": -36.50138150227862,
+                "own": -33.48247742347275,
+                "shuffled": -36.09240410395978
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 1.3141574366333728,
+                  "mean_nats": 2.3362798873482182,
+                  "median_nats": 0.05218865181086585,
+                  "positive_documents": 5,
+                  "sum_nats": 21.026518986133965
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 1.489226068960729,
+                  "mean_nats": 2.6475130114857404,
+                  "median_nats": 0.36329855796066113,
+                  "positive_documents": 6,
+                  "sum_nats": 23.827617103371665
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 1.6981335443283,
+                  "mean_nats": 3.0189040788058668,
+                  "median_nats": 0.6231789775192738,
+                  "positive_documents": 8,
+                  "sum_nats": 27.1701367092528
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 1.3000575679296702,
+                  "mean_nats": 2.3112134540971914,
+                  "median_nats": 0.25372645202151034,
+                  "positive_documents": 5,
+                  "sum_nats": 20.800921086874723
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 1.4680837577739538,
+                  "mean_nats": 2.609926680487029,
+                  "median_nats": 0.7169812195788836,
+                  "positive_documents": 6,
+                  "sum_nats": 23.48934012438326
+                }
+              }
+            }
+          }
+        }
+      },
+      "exact_8gram_overlap": {
+        "copy": {
+          "documents": 3,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -4.074591398239136,
+                "filler": -3.9884113470713296,
+                "other": -3.9147961139678955,
+                "own": -3.738289753595988,
+                "shuffled": -3.758671998977661
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.06305655837059021,
+                  "mean_nats": 0.33630164464314777,
+                  "median_nats": 0.03592252731323242,
+                  "positive_documents": 3,
+                  "sum_nats": 1.0089049339294434
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 0.04689779877662659,
+                  "mean_nats": 0.2501215934753418,
+                  "median_nats": -0.027298450469970703,
+                  "positive_documents": 1,
+                  "sum_nats": 0.7503647804260254
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 0.033094942569732666,
+                  "mean_nats": 0.17650636037190756,
+                  "median_nats": -0.02000284194946289,
+                  "positive_documents": 1,
+                  "sum_nats": 0.5295190811157227
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.06466928124427795,
+                  "mean_nats": 0.34490283330281574,
+                  "median_nats": 0.02104330062866211,
+                  "positive_documents": 3,
+                  "sum_nats": 1.0347084999084473
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 0.0038216710090637207,
+                  "mean_nats": 0.020382245381673176,
+                  "median_nats": -0.11893844604492188,
+                  "positive_documents": 1,
+                  "sum_nats": 0.06114673614501953
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -20.73379135583188,
+                "filler": -20.659579530423798,
+                "other": -20.383082165479816,
+                "own": -13.355879389016385,
+                "shuffled": -19.92107764236668
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 1.383358493777905,
+                  "mean_nats": 7.3779119668154935,
+                  "median_nats": 5.9054254945367575,
+                  "positive_documents": 3,
+                  "sum_nats": 22.13373590044648
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 1.36944377651389,
+                  "mean_nats": 7.303700141407414,
+                  "median_nats": 5.914390251040459,
+                  "positive_documents": 3,
+                  "sum_nats": 21.91110042422224
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 1.3176005205868933,
+                  "mean_nats": 7.02720277646343,
+                  "median_nats": 5.7403219770640135,
+                  "positive_documents": 3,
+                  "sum_nats": 21.081608329390292
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 1.3753428761292525,
+                  "mean_nats": 7.3351620060226805,
+                  "median_nats": 5.894375879317522,
+                  "positive_documents": 3,
+                  "sum_nats": 22.00548601806804
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 1.23097467250318,
+                  "mean_nats": 6.565198253350293,
+                  "median_nats": 5.723211232572794,
+                  "positive_documents": 3,
+                  "sum_nats": 19.69559476005088
+                }
+              }
+            }
+          }
+        },
+        "no_copy": {
+          "documents": 13,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -3.6152892846327562,
+                "filler": -3.660393861623911,
+                "other": -3.58584215090825,
+                "own": -3.268346373851483,
+                "shuffled": -3.569321843293997
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.2818911150097847,
+                  "mean_nats": 0.3469429107812735,
+                  "median_nats": 0.19718551635742188,
+                  "positive_documents": 8,
+                  "sum_nats": 4.510257840156555
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 0.3185385838150978,
+                  "mean_nats": 0.3920474877724281,
+                  "median_nats": 0.12592840194702148,
+                  "positive_documents": 7,
+                  "sum_nats": 5.096617341041565
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 0.2579653188586235,
+                  "mean_nats": 0.3174957770567674,
+                  "median_nats": 0.25038623809814453,
+                  "positive_documents": 9,
+                  "sum_nats": 4.127445101737976
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.26901356875896454,
+                  "mean_nats": 0.33109362308795637,
+                  "median_nats": 0.19734477996826172,
+                  "positive_documents": 8,
+                  "sum_nats": 4.304217100143433
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 0.24454256892204285,
+                  "mean_nats": 0.3009754694425143,
+                  "median_nats": 0.026241779327392578,
+                  "positive_documents": 7,
+                  "sum_nats": 3.9126811027526855
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -30.172970439101046,
+                "filler": -30.408327277791212,
+                "other": -30.700764683347963,
+                "own": -28.358226943610507,
+                "shuffled": -30.295774298594697
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 1.4744790900860636,
+                  "mean_nats": 1.8147434954905397,
+                  "median_nats": 0.06641807037351555,
+                  "positive_documents": 8,
+                  "sum_nats": 23.591665441377017
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 1.6657065215218232,
+                  "mean_nats": 2.0501003341807054,
+                  "median_nats": 0.36329855796066113,
+                  "positive_documents": 8,
+                  "sum_nats": 26.65130434434917
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 1.9033119135366823,
+                  "mean_nats": 2.342537739737455,
+                  "median_nats": 0.6231789775192738,
+                  "positive_documents": 12,
+                  "sum_nats": 30.452990616586916
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 1.4620148729167495,
+                  "mean_nats": 1.7994029205129225,
+                  "median_nats": 0.25372645202151034,
+                  "positive_documents": 8,
+                  "sum_nats": 23.39223796666799
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 1.5742572259246543,
+                  "mean_nats": 1.93754735498419,
+                  "median_nats": 0.545737219043076,
+                  "positive_documents": 9,
+                  "sum_nats": 25.18811561479447
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "prefix_only": {
+      "exact_4gram_overlap": {
+        "copy": {
+          "documents": 3,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -3.8358048597971597,
+                "filler": -3.7827632427215576,
+                "other": -3.773378610610962,
+                "own": -3.7921384970347085,
+                "shuffled": -3.683704217274984
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.008187443017959595,
+                  "mean_nats": 0.04366636276245117,
+                  "median_nats": 0.047972679138183594,
+                  "positive_documents": 2,
+                  "sum_nats": 0.13099908828735352
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": -0.0017578601837158203,
+                  "mean_nats": -0.009375254313151041,
+                  "median_nats": -0.00746917724609375,
+                  "positive_documents": 0,
+                  "sum_nats": -0.028125762939453125
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": -0.0035174787044525146,
+                  "mean_nats": -0.018759886423746746,
+                  "median_nats": 0.0015659332275390625,
+                  "positive_documents": 2,
+                  "sum_nats": -0.056279659271240234
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.010703161358833313,
+                  "mean_nats": 0.057083527247111,
+                  "median_nats": 0.041457176208496094,
+                  "positive_documents": 2,
+                  "sum_nats": 0.171250581741333
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": -0.020331427454948425,
+                  "mean_nats": -0.10843427975972493,
+                  "median_nats": -0.06658792495727539,
+                  "positive_documents": 0,
+                  "sum_nats": -0.3253028392791748
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -13.036321407593277,
+                "filler": -13.01946972521849,
+                "other": -13.06525089150576,
+                "own": -13.374907614856056,
+                "shuffled": -12.907067652095975
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": -0.06348491386177102,
+                  "mean_nats": -0.33858620726277877,
+                  "median_nats": -0.4645879566669464,
+                  "positive_documents": 0,
+                  "sum_nats": -1.0157586217883363
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": -0.06664460430704366,
+                  "mean_nats": -0.35543788963756623,
+                  "median_nats": -0.45738017186522484,
+                  "positive_documents": 0,
+                  "sum_nats": -1.0663136689126986
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": -0.058060635628180535,
+                  "mean_nats": -0.3096567233502962,
+                  "median_nats": -0.3487195335328579,
+                  "positive_documents": 1,
+                  "sum_nats": -0.9289701700508886
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": -0.0654649327258312,
+                  "mean_nats": -0.34914630787109974,
+                  "median_nats": -0.47563757188618183,
+                  "positive_documents": 0,
+                  "sum_nats": -1.0474389236132993
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": -0.08771999301751521,
+                  "mean_nats": -0.4678399627600811,
+                  "median_nats": -0.6268461439758539,
+                  "positive_documents": 0,
+                  "sum_nats": -1.4035198882802433
+                }
+              }
+            }
+          }
+        },
+        "no_copy": {
+          "documents": 13,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -3.6703938704270582,
+                "filler": -3.707752117743859,
+                "other": -3.6888629473172703,
+                "own": -3.9030520915985107,
+                "shuffled": -3.762651333442101
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": -0.18903480470180511,
+                  "mean_nats": -0.23265822117145246,
+                  "median_nats": 0.0056002140045166016,
+                  "positive_documents": 7,
+                  "sum_nats": -3.024556875228882
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": -0.1586812287569046,
+                  "mean_nats": -0.1952999738546518,
+                  "median_nats": -0.006092071533203125,
+                  "positive_documents": 5,
+                  "sum_nats": -2.5388996601104736
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": -0.174028679728508,
+                  "mean_nats": -0.2141891442812406,
+                  "median_nats": -0.00323486328125,
+                  "positive_documents": 6,
+                  "sum_nats": -2.784458875656128
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": -0.20281534641981125,
+                  "mean_nats": -0.24961888790130615,
+                  "median_nats": 0.011309623718261719,
+                  "positive_documents": 7,
+                  "sum_nats": -3.24504554271698
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": -0.11407561600208282,
+                  "mean_nats": -0.14040075815640962,
+                  "median_nats": -0.10450148582458496,
+                  "positive_documents": 4,
+                  "sum_nats": -1.8252098560333252
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -31.949309657925337,
+                "filler": -32.16046467286313,
+                "other": -32.45607343135662,
+                "own": -32.73039278970321,
+                "shuffled": -32.326088127036705
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": -0.6346300445695192,
+                  "mean_nats": -0.7810831317778698,
+                  "median_nats": -0.6147040814394131,
+                  "positive_documents": 4,
+                  "sum_nats": -10.154080713112307
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": -0.4630665949325632,
+                  "mean_nats": -0.5699281168400778,
+                  "median_nats": -0.2644927832297981,
+                  "positive_documents": 2,
+                  "sum_nats": -7.409065518921011
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": -0.22288447865660288,
+                  "mean_nats": -0.27431935834658816,
+                  "median_nats": 0.016113430268205775,
+                  "positive_documents": 7,
+                  "sum_nats": -3.566151658505646
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": -0.6531298605234257,
+                  "mean_nats": -0.8038521360288317,
+                  "median_nats": -0.6981202948954888,
+                  "positive_documents": 2,
+                  "sum_nats": -10.450077768374811
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": -0.32849753841653495,
+                  "mean_nats": -0.40430466266650456,
+                  "median_nats": -0.26965497247874737,
+                  "positive_documents": 3,
+                  "sum_nats": -5.255960614664559
+                }
+              }
+            }
+          }
+        }
+      },
+      "exact_8gram_overlap": {
+        "copy": {
+          "documents": 0,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": null,
+                "filler": null,
+                "other": null,
+                "own": null,
+                "shuffled": null
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": null,
+                "filler": null,
+                "other": null,
+                "own": null,
+                "shuffled": null
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": 0.0,
+                  "mean_nats": null,
+                  "median_nats": null,
+                  "positive_documents": 0,
+                  "sum_nats": 0.0
+                }
+              }
+            }
+          }
+        },
+        "no_copy": {
+          "documents": 16,
+          "horizons": {
+            "K1": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -3.7014084309339523,
+                "filler": -3.7218167036771774,
+                "other": -3.7047096341848373,
+                "own": -3.882255792617798,
+                "shuffled": -3.7478487491607666
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": -0.18084736168384552,
+                  "mean_nats": -0.18084736168384552,
+                  "median_nats": 0.01193535327911377,
+                  "positive_documents": 9,
+                  "sum_nats": -2.8935577869415283
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": -0.16043908894062042,
+                  "mean_nats": -0.16043908894062042,
+                  "median_nats": -0.0067806243896484375,
+                  "positive_documents": 5,
+                  "sum_nats": -2.5670254230499268
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": -0.1775461584329605,
+                  "mean_nats": -0.1775461584329605,
+                  "median_nats": -0.0008344650268554688,
+                  "positive_documents": 8,
+                  "sum_nats": -2.840738534927368
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": -0.19211218506097794,
+                  "mean_nats": -0.19211218506097794,
+                  "median_nats": 0.011661171913146973,
+                  "positive_documents": 9,
+                  "sum_nats": -3.073794960975647
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": -0.13440704345703125,
+                  "mean_nats": -0.13440704345703125,
+                  "median_nats": -0.08554470539093018,
+                  "positive_documents": 4,
+                  "sum_nats": -2.1505126953125
+                }
+              }
+            },
+            "K16": {
+              "absolute_mean_log_likelihoods": {
+                "empty": -28.403124360988077,
+                "filler": -28.57152812017976,
+                "other": -28.820294205134584,
+                "own": -29.101239319419367,
+                "shuffled": -28.685021787985317
+              },
+              "contrasts": {
+                "own_minus_empty": {
+                  "contribution_to_full16_mean_nats": -0.6981149584312902,
+                  "mean_nats": -0.6981149584312902,
+                  "median_nats": -0.472184254151216,
+                  "positive_documents": 4,
+                  "sum_nats": -11.169839334900644
+                },
+                "own_minus_filler": {
+                  "contribution_to_full16_mean_nats": -0.5297111992396069,
+                  "mean_nats": -0.5297111992396069,
+                  "median_nats": -0.36093647754751146,
+                  "positive_documents": 2,
+                  "sum_nats": -8.47537918783371
+                },
+                "own_minus_other": {
+                  "contribution_to_full16_mean_nats": -0.2809451142847834,
+                  "mean_nats": -0.2809451142847834,
+                  "median_nats": -0.03321438459931869,
+                  "positive_documents": 8,
+                  "sum_nats": -4.495121828556535
+                },
+                "own_minus_raw": {
+                  "contribution_to_full16_mean_nats": -0.7185947932492569,
+                  "mean_nats": -0.7185947932492569,
+                  "median_nats": -0.5109271906330832,
+                  "positive_documents": 2,
+                  "sum_nats": -11.49751669198811
+                },
+                "own_minus_shuffled": {
+                  "contribution_to_full16_mean_nats": -0.41621753143405016,
+                  "mean_nats": -0.41621753143405016,
+                  "median_nats": -0.2737059604842216,
+                  "positive_documents": 3,
+                  "sum_nats": -6.6594805029448025
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "documents": 16,
+  "experiment_id": "teacher-prepend-train16-v1",
+  "failures": 0,
+  "fixed_examples": {
+    "items": 4,
+    "selection": "First4 fixed anchors by order, no outcome/copy selection; all note/prompt/target text and reader details remain local/EBS."
+  },
+  "group_size": 1,
+  "horizons": [
+    1,
+    16
+  ],
+  "independent_audit": {
+    "absolute_cells": 22,
+    "all176_context_hashes_verified": true,
+    "all32_copy_metrics_independently_recomputed": true,
+    "max_numeric_error": 0.0,
+    "paired_contrasts_and_CIs": 36,
+    "review_sha256": "6b2b1b795a0502faf5c6a23036c131d358922e6d26d8449f614d4bb3ab62f424",
+    "status": "pass"
+  },
+  "limitations": [
+    "TRAIN target-surprisal selected anchors; no held-out utility claim.",
+    "Hindsight teacher receives truefuture16 during writing: label-generation information, never deployment evidence.",
+    "Prefix-only teacher is external 4B assistance, not 1.7B self-generated reasoning.",
+    "All32 notes retained, including empty/capped/over150word notes; no filtering or resampling.",
+    "Copying statistics are descriptive and do not change denominators or label selection.",
+    "Stronger prefix-only external teacher remains negative atK16 under the same B0 prepend reader.",
+    "Hindsight positive utility is label-generation evidence with target access, not deployed prefix-only benefit or evidence of reasoning.",
+    "No student learning result, official final test or end-to-end training throughput result is asserted."
+  ],
+  "notes": 32,
+  "paired_document_contrasts": {
+    "hindsight/empty_minus_raw/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.03476930763572454,
+        0.006586212851107114
+      ],
+      "difference_b_minus_a": -0.011264823377132416,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/empty_minus_raw/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.09143655059482789,
+        0.0497052301740185
+      ],
+      "difference_b_minus_a": -0.02047983481796667,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_empty/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.03510922454297543,
+        0.7936563542112706
+      ],
+      "difference_b_minus_a": 0.3449476733803749,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_empty/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.7298853690347359,
+        5.3092340118884405
+      ],
+      "difference_b_minus_a": 2.8578375838639687,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_filler/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.05151562578976155,
+        0.8135830771178005
+      ],
+      "difference_b_minus_a": 0.3654363825917244,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_filler/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.980567684741422,
+        5.434999453274036
+      ],
+      "difference_b_minus_a": 3.0351502980357132,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_other/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.08215412124991417,
+        0.5898086257278916
+      ],
+      "difference_b_minus_a": 0.29106026142835617,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_other/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.2729195560415614,
+        5.559814202531318
+      ],
+      "difference_b_minus_a": 3.2209124341235755,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_raw/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.02353967633098364,
+        0.7814637176692482
+      ],
+      "difference_b_minus_a": 0.3336828500032425,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_raw/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.7281134945519039,
+        5.288293407826605
+      ],
+      "difference_b_minus_a": 2.837357749046002,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_shuffled/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.0313660878688097,
+        0.6447349723428475
+      ],
+      "difference_b_minus_a": 0.24836423993110657,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight/own_minus_shuffled/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.9254541777484111,
+        5.002526689663176
+      ],
+      "difference_b_minus_a": 2.8052318984278344,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_absolute/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.16210211254656315,
+        0.9590073764324183
+      ],
+      "difference_b_minus_a": 0.5257950350642204,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_absolute/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.4058055190024088,
+        6.114258385937464
+      ],
+      "difference_b_minus_a": 3.555952542295259,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_empty/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.16210211254656315,
+        0.9590073764324183
+      ],
+      "difference_b_minus_a": 0.5257950350642204,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_empty/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.4058055190024088,
+        6.114258385937464
+      ],
+      "difference_b_minus_a": 3.555952542295259,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_filler/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.15937409400939942,
+        0.9638748884201044
+      ],
+      "difference_b_minus_a": 0.5258754715323448,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_filler/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.404306562804833,
+        6.12839835439008
+      ],
+      "difference_b_minus_a": 3.56486149727532,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_other/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.11371005289256572,
+        0.8814453847706312
+      ],
+      "difference_b_minus_a": 0.4686064198613167,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_other/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.377689846908426,
+        6.075601332821503
+      ],
+      "difference_b_minus_a": 3.501857548408359,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_raw/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.16210211254656315,
+        0.9590073764324183
+      ],
+      "difference_b_minus_a": 0.5257950350642204,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_raw/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.4058055190024088,
+        6.114258385937464
+      ],
+      "difference_b_minus_a": 3.555952542295259,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_shuffled/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.10453868899494409,
+        0.7173274420201775
+      ],
+      "difference_b_minus_a": 0.3827712833881378,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "hindsight_minus_prefix_only/own_minus_shuffled/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.2542065171108387,
+        5.570860133182786
+      ],
+      "difference_b_minus_a": 3.2214494298618845,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/empty_minus_raw/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.03476930763572454,
+        0.006586212851107114
+      ],
+      "difference_b_minus_a": -0.011264823377132416,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/empty_minus_raw/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.09143655059482789,
+        0.0497052301740185
+      ],
+      "difference_b_minus_a": -0.02047983481796667,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_empty/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.46500376500189305,
+        0.020102993771433784
+      ],
+      "difference_b_minus_a": -0.18084736168384552,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_empty/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -1.1123416731335332,
+        -0.33965411311925486
+      ],
+      "difference_b_minus_a": -0.6981149584312902,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_filler/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.44807442761957644,
+        0.02844843417406077
+      ],
+      "difference_b_minus_a": -0.16043908894062042,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_filler/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.8404958245031426,
+        -0.23557070333641994
+      ],
+      "difference_b_minus_a": -0.5297111992396069,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_other/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.49108569212257863,
+        0.04508972577750681
+      ],
+      "difference_b_minus_a": -0.1775461584329605,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_other/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.6518783082061518,
+        0.055521946349605576
+      ],
+      "difference_b_minus_a": -0.2809451142847834,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_raw/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.47979399245232346,
+        0.01951818242669097
+      ],
+      "difference_b_minus_a": -0.19211218506097794,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_raw/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -1.1283418256722315,
+        -0.3609718123632317
+      ],
+      "difference_b_minus_a": -0.7185947932492569,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_shuffled/K1": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.34603452757000924,
+        0.03574612624943251
+      ],
+      "difference_b_minus_a": -0.13440704345703125,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "prefix_only/own_minus_shuffled/K16": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.6670830441061385,
+        -0.19757283585759766
+      ],
+      "difference_b_minus_a": -0.41621753143405016,
+      "documents": 16,
+      "items": 16,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    }
+  },
+  "protocol_sha256": "66f9ba01825aff512bf357712d1462a562bbc552ff79c5866373495a2ad94864",
+  "raw_B0_parity": {
+    "bound": 0.002,
+    "items": 16,
+    "max_token_error": 7.867813110351562e-06,
+    "target_tokens_per_item": 16
+  },
+  "reader_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "reader_model": "Qwen/Qwen3-1.7B-Base",
+  "reader_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "reader_serialization": "content + [271] + original512prefix; raw has original512prefix only",
+  "reader_unchanged_B0": true,
+  "report_utc": "2026-10-18T00:01:39.683174+00:00",
+  "schema": "teacher-prepend-TRAIN16-result-v1",
+  "score_rows": 176,
+  "selection_item_ids_sha256": "1c3ad6fd7918613ea2b4ca52099aa8d6b62c0d9840d2829435f3c738271ad6c3",
+  "selection_rule": "First16 in the already fixed high-surprisal TRAIN128 pool; no teacher-outcome selection or retry.",
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/anchor_scan.py": "078d82b23f5d1aead7832dd9678494bd73e7356a5e9c8b73215d3a29acc9e122",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/hindsight_teacher.py": "cdd854307b8e1feb0e4fc827e4296815de2045ba29c8b395dd29b2591e34ec38",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/teacher_prepend_probe.py": "5bf158f2f1af8ecef26d7d1e9b1a40de125abaadd8020b7a0e8134566fa83d84",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "split": "train",
+  "status": "complete",
+  "summary_sha256": "e2f5dad6575f22a6a8b35b7c458722391ca3a0c36bf0000015a5be9815495b21",
+  "teacher_cached_replay_checks": {
+    "hindsight": {
+      "atol": 0.001,
+      "max_error": 3.141164779663086e-05,
+      "wall_seconds": 1.0744076979899546
+    },
+    "prefix_only": {
+      "atol": 0.001,
+      "max_error": 2.205371856689453e-05,
+      "wall_seconds": 67.53399866900872
+    }
+  },
+  "teacher_forward_checks": {
+    "hindsight": {
+      "atol": 0.002,
+      "max_error": 0.000354766845703125,
+      "wall_seconds": 1.1103475080017233
+    },
+    "prefix_only": {
+      "atol": 0.002,
+      "max_error": 0.000446319580078125,
+      "wall_seconds": 46.56287972499558
+    }
+  },
+  "teacher_protocol_sha256": "bacf19a47b4304d9a1852339285b59cd2b6d0199d3eb5a49a268ae6970f50961",
+  "temperature": 0.7,
+  "uncertainty": "5000 paired-document bootstrap draws, seed17; conditional on these fixed weights and anchors, not training-seed uncertainty.",
+  "writer_manifest_sha256": "5e90de838673e59d713687fe010143257a71b071beb86a89f287125d7f61e742",
+  "writer_model": "Qwen/Qwen3-4B",
+  "writer_revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+}
