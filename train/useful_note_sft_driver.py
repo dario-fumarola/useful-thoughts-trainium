@@ -3,7 +3,8 @@
 W=writer mean+reader natural16 mean+0.5 source mean.
 Cprime=raw natural16 mean+0.5 source mean, in one ordinary source pass.
 T=ordinary all-token CE on note-augmented source, NOT an exact TPT recipe.
-No resume interface is implemented or qualified by this driver.
+Full-state recovery uses original protocols, FP32 masters and an actual byte
+audit before RNG reset. Hardware recovery qualification is separate.
 """
 from __future__ import annotations
 
@@ -21,7 +22,7 @@ import time
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'useful-note-sft-v3'
+SCHEMA = 'useful-note-sft-v4'
 WEIGHTS = {'W': {'writer': 1., 'reader': 1., 'source': .5},
            'Cprime': {'continuation': 1., 'source': .5}, 'T': {'augmented': 1.}}
 COMPONENTS = ('source', 'writer', 'reader', 'augmented')
@@ -51,6 +52,7 @@ def source_files():
              'train/masked_causal_ce.py', 'train/neuron_driver.py',
              'train/warmstart_driver.py', 'train/useful_note_precision.py',
              'train/useful_note_controls.py', 'train/prepare_reader_learning_data.py',
+             'train/useful_note_recovery.py',
              'weekend_thinking/runtime_policy.py',
              'weekend_thinking/checkpoints.py')
     return {**sources(), **{name: sha256_file(ROOT/name) for name in names}}
@@ -441,6 +443,108 @@ def save_development_model(output,model,step,state,rank,xm,device):
     return directory
 
 
+def prepare_resume(output,checkpoint,attempt,p,arm,protocol_hash,rows,order):
+    """Hash full state and preserve abandoned metric tails before device work.
+
+    A resumed attempt uses the original immutable run/protocol/ordered data.
+    Every old metric byte and completion receipt is retained in its segment.
+    The finite launcher must establish that the original process group is gone.
+    """
+    import re
+    from train.neuron_driver import verify_checkpoint
+    from weekend_thinking.artifacts import atomic_bytes
+    output=Path(output);checkpoint=Path(checkpoint)
+    if (output.is_symlink() or checkpoint.is_symlink() or (checkpoint/'COMPLETE.json').is_symlink()
+            or not output.is_dir() or checkpoint.parent.resolve()!=output.resolve()
+            or not re.fullmatch(r'[A-Za-z0-9_-]{1,80}',attempt)):
+        raise ValueError('Original ordinary run/checkpoint and safe unique recovery attempt required')
+    manifest=verify_checkpoint(checkpoint,canonical_hash(p),p['world_size'])
+    step=manifest['step'];run=json.loads((output/'run.json').read_text())
+    expected=dict(schema=SCHEMA,run_id=output.name,arm=arm,protocol_sha256=protocol_hash,
+        spec_hash=canonical_hash(p),order_hash=canonical_hash([rows[i]['item_id'] for i in order]),
+        world_size=p['world_size'],accumulation=p['accumulation'],purpose='science',
+        items=p['items'],scientific_steps=p['steps'],qualification=False)
+    if (any(run.get(k)!=v for k,v in expected.items()) or manifest['run_id']!=output.name
+            or type(step)is not int or not 1<=step<p['steps'] or checkpoint.name!=f'step-{step:07d}'
+            or manifest.get('metadata',{}).get('qualification') is not False):
+        raise ValueError('Unfinished original science identity and full checkpoint required')
+    if any(manifest['metadata'].get(k)!=expected[k] for k in
+            ('spec_hash','order_hash','arm','protocol_sha256','purpose','items')):
+        raise ValueError('Full checkpoint metadata differs from original run')
+    metrics=output/'metrics.jsonl';raw=metrics.read_bytes();lines=raw.splitlines(keepends=True)
+    if len(lines)<step:raise ValueError('Checkpoint metrics are incomplete')
+    for i,line in enumerate(lines[:step]):
+        value=json.loads(line)
+        ids=[rows[k]['item_id'] for k in order[i*p['global_batch']:(i+1)*p['global_batch']]]
+        if (value['step']!=i+1 or value['ordered_item_ids']!=ids
+                or value['counters']['source_records']!=(i+1)*p['global_batch']):
+            raise ValueError('Checkpoint metrics/order/counters changed')
+    abandoned=[]
+    for parent in (output,output/'development'):
+        for directory in parent.glob('step-*'):
+            if not re.fullmatch(r'step-[0-9]{7}',directory.name):
+                raise ValueError('Unexpected checkpoint directory name')
+            if int(directory.name[5:])<=step:continue
+            if directory.is_symlink() or not directory.is_dir():
+                raise ValueError('Ordinary checkpoint directory required')
+            if parent==output and (directory/'COMPLETE.json').exists():
+                raise ValueError('Resume requires the latest complete full checkpoint')
+            abandoned.append(directory)
+    completion=output/'completion.json'
+    if completion.exists() and json.loads(completion.read_text()).get('status')=='complete':
+        raise ValueError('Completed science run cannot be resumed')
+    segment=output/'recoveries'/attempt
+    if segment.exists():raise ValueError('Recovery segment must be fresh')
+    segment.mkdir(parents=True)
+    atomic_bytes(segment/'previous-metrics.jsonl',raw)
+    if sha256_file(segment/'previous-metrics.jsonl')!=sha256_file(metrics):
+        raise RuntimeError('Original metrics were not preserved byte exactly')
+    if completion.exists():
+        atomic_bytes(segment/'previous-completion.json',completion.read_bytes())
+    moved=[]
+    for directory in abandoned:
+        relative=directory.relative_to(output);destination=segment/'abandoned'/relative
+        destination.parent.mkdir(parents=True,exist_ok=True);directory.rename(destination)
+        moved.append(str(relative))
+    # COMPLETE at stepS certifies only the firstS updates. Preserve all later
+    # bytes, including a possibly interrupted JSON line, as an abandoned tail.
+    atomic_bytes(metrics,b''.join(lines[:step]),overwrite=True)
+    receipt=dict(status='CPU_INTEGRITY_AND_METRIC_PRESERVATION_ONLY',created_utc=utc_now(),
+        checkpoint=str(checkpoint.resolve()),checkpoint_complete_sha256=sha256_file(checkpoint/'COMPLETE.json'),
+        protocol_sha256=protocol_hash,run_sha256=sha256_file(output/'run.json'),start_step=step,
+        previous_metrics_sha256=sha256_file(segment/'previous-metrics.jsonl'),
+        continued_metrics_sha256=sha256_file(metrics),abandoned_metric_bytes=sum(map(len,lines[step:])),
+        preserved_abandoned_checkpoint_directories=moved,
+        limitations='No model/optimizer restore or next-update qualification follows from CPU integrity.')
+    atomic_json(segment/'prepared.json',receipt)
+    return manifest,segment
+
+
+def recovery_consensus(output,rank,world,error,xm,device,stage):
+    """Uniform refusal on payload/readback errors; retain all local evidence."""
+    import torch
+    if stage not in ('payload','restored'):raise ValueError('Unknown recovery barrier')
+    local=output/f'{stage}-local-rank-{rank:05d}.json'
+    atomic_json(local,dict(rank=rank,stage=stage,status='FAIL' if error else 'PASS',error=error))
+    flags=xm.all_gather(torch.tensor([float(bool(error))],device=device)).reshape(-1).cpu().tolist()
+    if len(flags)!=world or any(v not in (0.,1.) for v in flags):raise RuntimeError('Invalid recovery consensus')
+    failed=[i for i,value in enumerate(flags) if value]
+    report=dict(rank=rank,stage=stage,status='FAIL' if failed else 'PASS',failed_ranks=failed,
+        local_receipt_sha256=sha256_file(local))
+    atomic_json(output/f'{stage}-consensus-rank-{rank:05d}.json',report)
+    xm.rendezvous(f'recovery-{stage}-consensus-published')
+    if failed:raise RuntimeError(f'Recovery {stage} refused by ranks {failed}; all ranks stop')
+    return report
+
+
+def resume_boundary(stopped,rng,xm,device,sync):
+    """Finish the collective stop check before resetting continuation streams."""
+    from train.neuron_driver import restore_rng_after_sync
+    run_updates=not stopped()
+    restore_rng_after_sync(rng,xm,device,sync)
+    return run_updates
+
+
 def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,order):
     import numpy as np
     import torch
@@ -483,17 +587,18 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
             raise ValueError('Original rotary buffer values changed on transfer')
     sync=lambda:torch_xla.sync(wait=True)
     backend=NeuronCausalBackend(model,sync=sync)
-    if rank==0:args.output.mkdir(parents=True,exist_ok=False)
+    evidence=args.output if args.resume is None else args.recovery_dir/'initialization'
+    if rank==0:evidence.mkdir(parents=True,exist_ok=False)
     xm.rendezvous('native-output-root-ready');sync()
     ref_index=rank%len(refs);ref=refs[ref_index]
     with torch.no_grad():
         ids=torch.full((1,1024),151643,dtype=torch.long);ids[0,:len(ref['context_ids'])]=torch.tensor(ref['context_ids'])
         h=backend.hidden(ids.to(device));logits=model.lm_head(h[:,len(ref['context_ids'])-1]);lp=logits.float().log_softmax(-1)
         sync();actual=lp.cpu()
-        local_gate=publish_native_gate(args.output,rank,ref_index,actual,native[ref_index:ref_index+1],
+        local_gate=publish_native_gate(evidence,rank,ref_index,actual,native[ref_index:ref_index+1],
                             str(h.dtype),str(logits.dtype),p,protocol_hash,raise_on_failure=False)
         del h,logits,lp,ids
-    native_gate_consensus(args.output,rank,world,local_gate,xm,device)
+    native_gate_consensus(evidence,rank,world,local_gate,xm,device)
     dtypes={}
     def record(name):
         def hook(_module,inputs,output):
@@ -512,7 +617,7 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
         raise RuntimeError('Standard FP32 masters differ from exact released CPU shard samples')
     found_inf=torch.zeros((),device=device);spec_hash=canonical_hash(p)
     order_hash=canonical_hash([rows[i]['item_id'] for i in order]);steps=3 if args.qualify else p['steps']
-    if rank==0:
+    if rank==0 and args.resume is None:
         atomic_json(args.output/'run.json',dict(schema=SCHEMA,run_id=args.output.name,started_utc=utc_now(),
             arm=args.arm,protocol_sha256=protocol_hash,spec_hash=spec_hash,order_hash=order_hash,
             world_size=world,accumulation=p['accumulation'],planned_steps=steps,scientific_steps=p['steps'],
@@ -523,12 +628,13 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
             precision_contract=p['precision_contract'],released_weight_header=header,parameter_conversion=conversion,
             zero_use_grad_acc_hook=False,zero_higher_cc_precision=False,
             one_epoch_component_counts=inventory['component_counts'],
-            limitations=['No resume implementation or exact-resume claim.','Same documents/updates do not match labels, gradient dose, tokens or FLOPs.',
+            resume_implemented=True,
+            limitations=['Recovery implementation requires separate hardware qualification; no uninterrupted-parity claim.','Same documents/updates do not match labels, gradient dose, tokens or FLOPs.',
                         'BF16 native KL gate is a forward-distribution check, not tail CE/gradient equivalence.','T is ordinary augmented CE, not exact TPT.']))
     xm.rendezvous('useful-note-output-ready');sync()
     torch.save(dict(expected_cpu=expected_masters['values'],actual_fp32_masters=initial_masters),
-               args.output/f'initial-master-rank-{rank:05d}.pt')
-    atomic_json(args.output/f'initial-master-rank-{rank:05d}.json',dict(rank=rank,compute_dtype=p['compute_dtype'],
+               evidence/f'initial-master-rank-{rank:05d}.pt')
+    atomic_json(evidence/f'initial-master-rank-{rank:05d}.json',dict(rank=rank,compute_dtype=p['compute_dtype'],
         parameter_dtype='bf16',initial_master_samples_exact=True,master_inventory=expected_masters['entries'],
         base_signature=signature,protocol_sha256=protocol_hash))
     del actual
@@ -539,8 +645,33 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
     def sample():return torch.cat([t.detach().reshape(-1)[:32] for t in model.parameters()]).cpu()
     counters=dict(source_records=0,source_tokens=0,sampled_actions=0,labels={c:0 for c in METRIC_COMPONENTS})
     actual_steps=0;save_walls=[]
-    if not stopped():
-        for step in range(steps):
+    if args.resume is not None:
+        from train.useful_note_recovery import validate_payload,restore_and_verify
+        error=None
+        try:
+            weights=torch.load(args.resume/'model.pt',weights_only=True,map_location='cpu')
+            saved=torch.load(args.resume/f'rank-{rank:05d}.pt',weights_only=True,map_location='cpu')
+            actual_steps=validate_payload(args.resume_manifest,weights,saved,model,protocol=p,
+                protocol_sha256=protocol_hash,arm=args.arm,rank=rank,run_id=args.output.name,
+                order_hash=order_hash,expected_lr=learning_rate(args.resume_manifest['step'],p))
+        except Exception as exc:error=f'{type(exc).__name__}: {exc}'
+        recovery_consensus(args.recovery_dir,rank,world,error,xm,device,'payload')
+        counters=json.loads(json.dumps(saved['counters']))
+        error=None
+        try:restored=restore_and_verify(model,optimizer,weights,saved,xm=xm,device=device,sync=torch_xla.sync)
+        except Exception as exc:error=f'{type(exc).__name__}: {exc}'
+        recovery_consensus(args.recovery_dir,rank,world,error,xm,device,'restored')
+        atomic_json(args.recovery_dir/f'restored-rank-{rank:05d}.json',dict(restored,
+            rank=rank,step=actual_steps,checkpoint_complete_sha256=sha256_file(args.resume/'COMPLETE.json'),
+            protocol_sha256=protocol_hash,deadline_utc=args.deadline_utc))
+        # The local helper reset preceded this collective audit. Reset AGAIN
+        # after every recovery observation so the continuation has the exact
+        # saved stream. zero_grad next clears the ZeRO loader's dummy gradients.
+        run_updates=resume_boundary(stopped,saved['rng'],xm,device,torch_xla.sync)
+        del weights,saved
+    else:run_updates=not stopped()
+    if run_updates:
+        for step in range(actual_steps,steps):
             start=time.monotonic();optimizer.zero_grad(set_to_none=True);before=sample()
             master_before=master_samples(optimizer,expected_masters);lr=learning_rate(step+1,p)
             for group in optimizer.param_groups:group['lr']=lr
@@ -569,7 +700,7 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
                 raise RuntimeError('Actual matmul/head dtype before float differs from declared compute')
             if step in (1,2):
                 initialized,_=inspect_optimizer(optimizer,step+1,len(list(model.parameters())))
-                atomic_json(args.output/f'optimizer-after{step+1}-rank-{rank:05d}.json',initialized)
+                atomic_json(evidence/f'optimizer-after{step+1}-rank-{rank:05d}.json',initialized)
             keys=('loss','labels','real_input_tokens','trunk_slots','head_slots','rank_seconds')
             totals=xm.all_reduce(xm.REDUCE_SUM,torch.tensor([local[c][k] for c in METRIC_COMPONENTS for k in keys],device=device)).cpu().tolist()
             values={c:dict(zip(keys,totals[i*len(keys):(i+1)*len(keys)])) for i,c in enumerate(METRIC_COMPONENTS)}
@@ -601,7 +732,7 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
                 data_sha256=p['data_sha256'],dataset_sha256=p['dataset_sha256'],counters=counters,
                 parameter_dtype='bf16',gradient_dtype='bf16',optimizer_dtype='fp32',
                 precision_contract=p['precision_contract'],compute_dtype=p['compute_dtype'],runtime_policy=runtime_policy(),
-                allocator_environment=p['allocator_environment'],qualification=bool(args.qualify),resume_implemented=False,
+                allocator_environment=p['allocator_environment'],qualification=bool(args.qualify),resume_implemented=True,
                 purpose=p['purpose'],items=p['items'],unique_documents=inventory['unique_documents'])
             if actual_steps==64 or actual_steps==steps or stop:
                 if shutil.disk_usage(args.output).free<35*1024**3:raise RuntimeError('Less than35GiB before checkpoint')
@@ -616,7 +747,8 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
             if stop:break
     if rank==0:atomic_json(args.output/'completion.json',dict(status='complete' if actual_steps==steps else 'stopped',
         finished_utc=utc_now(),actual_steps=actual_steps,planned_steps=steps,qualification=bool(args.qualify),
-        counters=counters,checkpoint_walls=save_walls,protocol_sha256=protocol_hash,resume_implemented=False))
+        counters=counters,checkpoint_walls=save_walls,protocol_sha256=protocol_hash,resume_implemented=True,
+        recovery_attempt=args.attempt_id if args.resume is not None else None),overwrite=args.resume is not None)
     for hook in hooks:hook.remove()
     dist.destroy_process_group()
 
@@ -625,22 +757,39 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('protocol','output','stop-file'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--arm',choices=tuple(WEIGHTS),required=True);parser.add_argument('--qualify',action='store_true')
+    parser.add_argument('--resume',type=Path);parser.add_argument('--attempt-id')
     parser.add_argument('--deadline-utc',required=True);args=parser.parse_args()
     p=json.loads(args.protocol.read_text());validate_protocol(p)
     if args.qualify != (p['purpose']=='qualification'):
         raise ValueError('Qualification flag must match the separately declared subset purpose')
-    if (args.output.exists() or args.stop_file.is_symlink() or (args.stop_file.exists() and not args.stop_file.is_file())
+    if ((args.resume is None and args.output.exists()) or args.stop_file.is_symlink() or (args.stop_file.exists() and not args.stop_file.is_file())
             or require_utc_deadline(args.deadline_utc)<=datetime.now(timezone.utc)):
         raise ValueError('Fresh output, ordinary STOP and future finite deadline required')
     if (os.environ.get('NEURONCORE_NUM_DEVICES')!=str(p['world_size'])
             or os.environ.get('NEURON_RT_CONTIGUOUS_SCRATCHPAD')!='0'
             or any(not os.environ.get(k) for k in ('NEURON_RT_VISIBLE_CORES','NEURON_RT_ROOT_COMM_ID','MASTER_ADDR','MASTER_PORT'))):
         raise ValueError('Explicit qualified allocator/topology/host and Neuron endpoints required')
+    if (args.resume is not None and (args.qualify or not args.attempt_id)
+            or args.resume is None and args.attempt_id is not None):
+        raise ValueError('Recovery requires an original science checkpoint and a fresh attempt ID')
+    # Advisory lock survives process exceptions without a stale-file decision.
+    # Hold it across CPU preparation and the full distributed worker lifetime.
+    import fcntl
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    with (args.output.parent/f'.{args.output.name}.writer.lock').open('a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        execute(args,p)
+
+
+def execute(args,p):
     rows,tok,assets,inventory=load_inputs(p);refs,native=load_native_reference(p,assets)
     # Construct the shared order once on host, rather than shuffling the entire
     # dataset independently on every worker/component call.
     from train.warmstart_driver import order_index
     order=[order_index(i,len(rows),p['seed']) for i in range(p['steps']*p['global_batch'])]
+    if args.resume is not None:
+        args.resume_manifest,args.recovery_dir=prepare_resume(args.output,args.resume,args.attempt_id,
+            p,args.arm,sha256_file(args.protocol),rows,order)
     import torch_xla.distributed.xla_multiprocessing as xmp
     xmp.spawn(worker,args=(args,p,rows,tok,assets,inventory,refs,native,sha256_file(args.protocol),order),nprocs=None)
 
