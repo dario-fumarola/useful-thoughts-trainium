@@ -972,3 +972,13 @@ among existing accepted publications, below256. Count the entire2,048-document
 general raw-scoring pool as exposed, not only its selected256. Do not promote
 this shortfall to a fresh cohort or substitute TRAIN. Existing real held panels
 and the frozen synthetic mechanism panel remain the terminal comparisons.
+
+### 2026-10-18 — Repair C′ host startup without changing its learning recipe
+The first matched C′ launch exits before native checks or updates because its
+privateRAM TMPDIR plus Python's socket suffix exceeds Linux's107-byte AF_UNIX
+limit. All original identities/devices close and the failed attempt is archived.
+A separately reviewed/released r3 uses a short unique0700RAM path and an actual
+nested Unix socket-bind guard before heavy imports. Data, order, learner sources,
+precision, optimizer and objectives are unchanged. Native32/master and three
+actual update checks pass; root full-vector/master-sample readback agrees. Keep
+r2 failed and r3 active under distinct runtime identities; no automatic retries.

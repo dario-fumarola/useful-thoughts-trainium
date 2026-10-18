@@ -1,0 +1,400 @@
+{
+  "CPU_validation": {
+    "checks": "local/checks/tests.DxzFY0",
+    "no_new_full_suite_for_runtime_only_path_guard": true,
+    "smoke_and_compile_PASS": true,
+    "tests_passed": 1494
+  },
+  "created_utc": "2026-10-18T11:40:58+00:00",
+  "design": {
+    "actual_matmul_and_head_before_float": "BF16",
+    "arm": "Cprime",
+    "comparators": "W/T fresh B0, same fixed documents, seed order and updates; unequal labels/tokens/compute.",
+    "development_model_only_checkpoint": 64,
+    "epochs": 2,
+    "floating_buffers": "FP32",
+    "fresh_B0": true,
+    "full_checkpoint": "terminal_or_controlled_STOP",
+    "global_batch": 32,
+    "gradient_accumulation": 1,
+    "hard_deadline_utc": "2026-10-18T23:46:10.804010+00:00",
+    "objective": "Mean raw natural-next16 continuation CE +0.5 mean full527-source CE, computed in one masked source pass. No note/writer loss.",
+    "official_TEST": false,
+    "optimizer_masters_and_moments": "FP32",
+    "parameter_and_gradient_storage": "BF16",
+    "qualification": false,
+    "resume": false,
+    "seed": 20261018,
+    "soft_deadline_utc": "2026-10-18T23:31:10.804010+00:00",
+    "terminal_primary": true,
+    "unique_TRAIN_documents": 5120,
+    "updates": 320,
+    "world_size": 32
+  },
+  "first_three_updates": [
+    {
+      "complete_ordered_passes": 0,
+      "components": {
+        "augmented": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "continuation": {
+          "head_slots": 0,
+          "labels": 512,
+          "loss": 1.004721760749817,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "reader": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "source": {
+          "head_slots": 17408,
+          "labels": 16864,
+          "loss": 1.3680859804153442,
+          "rank_seconds": 971.9635620117188,
+          "real_input_tokens": 16896,
+          "trunk_slots": 17376
+        },
+        "writer": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        }
+      },
+      "compute_dtypes_before_float": {
+        "first_q_proj": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        },
+        "head_before_float": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        }
+      },
+      "counters": {
+        "labels": {
+          "augmented": 0,
+          "continuation": 512,
+          "reader": 0,
+          "source": 16864,
+          "writer": 0
+        },
+        "sampled_actions": 0,
+        "source_records": 32,
+        "source_tokens": 16896
+      },
+      "dense_checkpointed_matmul_proxy_operations": 239253344485376,
+      "elapsed_seconds": 52.26115706001292,
+      "gradient_dtype": "bf16",
+      "gradient_norm": 12.320239067077637,
+      "lr": 5.000000000000001e-07,
+      "master_moment_dtype": "fp32",
+      "optimizer_rank_seconds": 198.00546264648438,
+      "parameter_dtype": "bf16",
+      "proxy_excludes": "Quadratic attention, lookup/normalization, optimizer, collectives and data/cache I/O; not measured FLOPs.",
+      "sampled_active_model_matches_cast_master": true,
+      "sampled_changed_fraction": 0.005544354673475027,
+      "sampled_fp32_master_changed_fraction": 0.9843151569366455,
+      "sampled_fp32_master_update_l2": 5.296100789564662e-05,
+      "sampled_replicas_bitwise_equal": true,
+      "sampled_update_l2": 5.8619734772946686e-06,
+      "step": 1,
+      "time_utc": "2026-10-18T11:37:18+00:00"
+    },
+    {
+      "complete_ordered_passes": 0,
+      "components": {
+        "augmented": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "continuation": {
+          "head_slots": 0,
+          "labels": 512,
+          "loss": 0.9836581349372864,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "reader": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "source": {
+          "head_slots": 17408,
+          "labels": 16864,
+          "loss": 1.3177584409713745,
+          "rank_seconds": 885.5394287109375,
+          "real_input_tokens": 16896,
+          "trunk_slots": 17376
+        },
+        "writer": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        }
+      },
+      "compute_dtypes_before_float": {
+        "first_q_proj": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        },
+        "head_before_float": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        }
+      },
+      "counters": {
+        "labels": {
+          "augmented": 0,
+          "continuation": 1024,
+          "reader": 0,
+          "source": 33728,
+          "writer": 0
+        },
+        "sampled_actions": 0,
+        "source_records": 64,
+        "source_tokens": 33792
+      },
+      "dense_checkpointed_matmul_proxy_operations": 239253344485376,
+      "elapsed_seconds": 53.56247795600211,
+      "gradient_dtype": "bf16",
+      "gradient_norm": 10.235483169555664,
+      "lr": 1.0000000000000002e-06,
+      "master_moment_dtype": "fp32",
+      "optimizer_rank_seconds": 243.0973663330078,
+      "parameter_dtype": "bf16",
+      "proxy_excludes": "Quadratic attention, lookup/normalization, optimizer, collectives and data/cache I/O; not measured FLOPs.",
+      "sampled_active_model_matches_cast_master": true,
+      "sampled_changed_fraction": 0.006048386916518211,
+      "sampled_fp32_master_changed_fraction": 0.9851532578468323,
+      "sampled_fp32_master_update_l2": 7.251519855344668e-05,
+      "sampled_replicas_bitwise_equal": true,
+      "sampled_update_l2": 1.1178731256222818e-05,
+      "step": 2,
+      "time_utc": "2026-10-18T11:38:11+00:00"
+    },
+    {
+      "complete_ordered_passes": 0,
+      "components": {
+        "augmented": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "continuation": {
+          "head_slots": 0,
+          "labels": 512,
+          "loss": 1.2435388565063477,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "reader": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        },
+        "source": {
+          "head_slots": 17408,
+          "labels": 16864,
+          "loss": 1.3513829708099365,
+          "rank_seconds": 908.603271484375,
+          "real_input_tokens": 16896,
+          "trunk_slots": 17376
+        },
+        "writer": {
+          "head_slots": 0,
+          "labels": 0,
+          "loss": 0.0,
+          "rank_seconds": 0.0,
+          "real_input_tokens": 0,
+          "trunk_slots": 0
+        }
+      },
+      "compute_dtypes_before_float": {
+        "first_q_proj": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        },
+        "head_before_float": {
+          "input": "torch.bfloat16",
+          "output": "torch.bfloat16"
+        }
+      },
+      "counters": {
+        "labels": {
+          "augmented": 0,
+          "continuation": 1536,
+          "reader": 0,
+          "source": 50592,
+          "writer": 0
+        },
+        "sampled_actions": 0,
+        "source_records": 96,
+        "source_tokens": 50688
+      },
+      "dense_checkpointed_matmul_proxy_operations": 239253344485376,
+      "elapsed_seconds": 50.85050693701487,
+      "gradient_dtype": "bf16",
+      "gradient_norm": 14.052458763122559,
+      "lr": 1.5000000000000002e-06,
+      "master_moment_dtype": "fp32",
+      "optimizer_rank_seconds": 186.9145050048828,
+      "parameter_dtype": "bf16",
+      "proxy_excludes": "Quadratic attention, lookup/normalization, optimizer, collectives and data/cache I/O; not measured FLOPs.",
+      "sampled_active_model_matches_cast_master": true,
+      "sampled_changed_fraction": 0.008266128599643707,
+      "sampled_fp32_master_changed_fraction": 0.9912595748901367,
+      "sampled_fp32_master_update_l2": 9.778539242688566e-05,
+      "sampled_replicas_bitwise_equal": true,
+      "sampled_update_l2": 2.3284717826754786e-05,
+      "step": 3,
+      "time_utc": "2026-10-18T11:39:02+00:00"
+    }
+  ],
+  "initial_hardware_checks": {
+    "all32_actual_hidden_and_head_BF16": true,
+    "all32_after2_full_FP32_master_moment_scans_PASS": true,
+    "all32_after3_full_FP32_master_moment_scans_PASS": true,
+    "all32_exact_310_Adam_step2": true,
+    "all32_exact_310_Adam_step3": true,
+    "all32_initial_FP32_master_samples_exact": true,
+    "all32_native_PASS": true,
+    "all32_native_consensus_PASS": true,
+    "canonical_reference": "Released B0 CPU FP32 full head; independently normalized FP64 bidirectional KL.",
+    "full_state_scope": "All FP32 master/first-moment/second-moment arrays, nonnegative second moments and exact Adam counters inspected after2. Empty non-AMSGrad placeholder will be audited in the terminal serialized payload; it was not independently inspected by this startup observer.",
+    "native_bound_per_reference_nats": 0.01,
+    "native_max_bidirectional_KL_nats": 0.0031035199827923296,
+    "native_per_reference": {
+      "0": {
+        "max_bidirectional_kl_nats": 0.0031035199827923296,
+        "ranks": 8
+      },
+      "1": {
+        "max_bidirectional_kl_nats": 0.0030697297315727835,
+        "ranks": 8
+      },
+      "2": {
+        "max_bidirectional_kl_nats": 2.157230339493209e-05,
+        "ranks": 8
+      },
+      "3": {
+        "max_bidirectional_kl_nats": 0.000325946147481554,
+        "ranks": 8
+      }
+    },
+    "root_independent_startup_readback": {
+      "receipt_sha256": "94635123eca1927bc421d38048ff4cda31848582b96ffa0098a528a895b374b1",
+      "scope": "All32 complete full-head vectors independently FP64-normalized; all32 sampled initial master pairs;64 after2/3 JSON finite-state/counter reports; three actual update/replica/cast checks. Raw terminal optimizer payload/placeholder audit remains pending.",
+      "source_sha256": "3304c9e968650779adc61f96ed4da2c82d5a504c8b6af191fd239626dd0808c2",
+      "status": "PASS_ROOT_CPU_READBACK"
+    }
+  },
+  "limitations": [
+    "Three early updates establish execution, not useful thoughts, capability or generalization.",
+    "Same documents/order/updates do not match labels, token counts, gradient dose or FLOPs across arms.",
+    "SFT timings do not qualify the full RL-step throughput gate.",
+    "Terminal320 remains primary, with every terminal arm evaluated regardless of intermediate losses.",
+    "No raw PID/environment/device-topology dump is included; exact private observations are hash-bound.",
+    "No official TEST was accessed."
+  ],
+  "prior_failed_runtime": {
+    "Linux_AF_UNIX_max_path_bytes_excluding_NUL": 107,
+    "all_failed_originals_retained": true,
+    "all_original_36_PID_start_identities_absent": true,
+    "all_original_groups_sessions_and_tmux_absent": true,
+    "assigned_devices_empty": true,
+    "error": "OSError: AF_UNIX path too long in multiprocessing.resource_sharer during tensor argument serialization.",
+    "exit_code": 1,
+    "exit_utc": "2026-10-18T11:26:34.324263+00:00",
+    "model_runtime_allocation_observed": false,
+    "native_checks": 0,
+    "old_TMPDIR_encoded_bytes": 78,
+    "old_socket_template_encoded_bytes": 110,
+    "repair": "Separate root-reviewed/released r3 uses a shorter unique privateRAM TMPDIR and actual host socket guard. Scientific protocol, data, learner sources, precision, objectives and optimizer settings are unchanged.",
+    "run_id": "postorder-reader-learning-compound5120-Cprime-seed20261018-v4r2",
+    "signals_sent": false,
+    "status": "FAILED_HOST_MULTIPROCESSING_AF_UNIX_PATH_LENGTH_BEFORE_NATIVE_OR_UPDATES",
+    "updates": 0,
+    "verified_nonweight_EBS_archive": {
+      "bytes": 646525,
+      "files": 57,
+      "path": "local/backups/science/failed/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r2/ARCHIVE.json",
+      "sha256": "78141334471545c085279037e4bf0a569bd481c4429201d1ed34213b66219491"
+    }
+  },
+  "provenance": {
+    "local/analysis/Cprime-r3-startup-root-readback-20261018.json": "94635123eca1927bc421d38048ff4cda31848582b96ffa0098a528a895b374b1",
+    "local/analysis/verify_Cprime_r3_startup_20261018.py": "3304c9e968650779adc61f96ed4da2c82d5a504c8b6af191fd239626dd0808c2",
+    "local/backups/science/failed/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r2/ARCHIVE.json": "78141334471545c085279037e4bf0a569bd481c4429201d1ed34213b66219491",
+    "local/diagnostics/postorder-reader-learning-compound5120-sft-v4r2/protocol.seed-20261018.json": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r2/failure.diagnosis.json": "5d4f115b3589df285ab439f70cc6a90d29fd2c89c913e75ac5db4e569e6593d9",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r2/physical.closure.json": "c0700abd226979b64b084a2c19912c1763713063eb2312fdd326ba2a31dcbb9c",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r2/release.json": "97a4adb0dfad0f34261e4bd2895e5b5ebeb77bb01287c9b5fccddee61e820c5c",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/execution.first-two.json": "3e054dba0eac796d1f879ce2406d0c26cf3102f40f4f566a89c43fdcbbebb69f",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/execution.native-initial.json": "8ff81ae728be5cd2ea9f5eaaa76fd24d1b8709227b6e2555f2da7793488f60ea",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/launch.issued.json": "c34874d28b5fa0e1333c49191fe234e76d2bb2a8787a8625e4d06708bc0585e6",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/launch.sh": "3006103583a81fa79668dd98195eeb784f7392bb772a5d0c2e7e093caa7e551d",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/main-checks.json": "03fa9e87e61c25880fdf579a1782aa842f148e8820795a8b4cc4c9ad8c1b4b00",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/mapping.live.json": "62ac74eb68dfdefc92f25ef67fae925c97262e068445676fb1b4d738f2e54e79",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/pre-release-checks.json": "80a1ac45b65d7912a3a18ab56e48af521ca10c9f314432f1a377b815f2c85c34",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/preflight.py": "78dc27c19f8c91c340337fda0982d64a07ef53b16e53ebe295a4af2c161a8127",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/preparation-checks.json": "8b45bb1f4c463ada296570dd9728602f2b09ac03ef54858b8ed5e76a14db7710",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/processes.json": "3412401783daba6b8452b9c860fc8817cde27b022c805c29a51ec307df8d3ffd",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/release.json": "d5351cf67df14587597c0a87a7e05792bfb4146e86f8e25e115a976a43f64f9d",
+    "local/science/control/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3/runtime-plan.json": "dca141a9ad80afabc3e68ea98defee26df4e9fb085b519c5535ef54e9e2ad52e",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4"
+  },
+  "run_id": "postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3",
+  "runtime": {
+    "AF_UNIX_actual_host_bind_close_PASS": true,
+    "AF_UNIX_worst_case_template_bytes": 55,
+    "LRU_cache_size": 2,
+    "actual_invoked_utc": "2026-10-18T11:34:49+00:00",
+    "all32_original_worker_identities_and_device_allocation_observed": true,
+    "all_allocating_process_policy_environment_exact": true,
+    "concurrent_W_run": "postorder-reader-learning-compound5120-W-seed20261018-v4r2",
+    "noncontiguous_scratchpad": 0,
+    "preflight_PASS_utc": "2026-10-18T11:34:57+00:00",
+    "private_RAM_mode": "0o700",
+    "private_RAM_tmpfs_st_dev": 26,
+    "root_release_issued_utc": "2026-10-18T11:31:10.804010+00:00",
+    "timing": "Full observed update walls retain shared-host overlap/cache loading/checks; no subtraction. Continuation labels reuse the source pass, so its zero separate pass counters do not claim zero total compute."
+  },
+  "schema": "compound5120-Cprime-science-launch-v1",
+  "status": "ACTIVE_NOT_A_SCIENTIFIC_RESULT"
+}

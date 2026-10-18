@@ -8,41 +8,43 @@ on AWS Trainium.
 ## Current finding
 
 **Useful self-generated thoughts have not been established on real-document DEV
-or GSM8K.** A secondary controlled-arithmetic test now shows reader use of supplied
-intermediate steps; generated-note gains with fixed mixing are concentrated in one
-grammar family. [All256 items and4,096 comparisons](validation/controlled_arithmetic_DEV256_B0_20261018.json).
-We now have a reader interface that can use supplied future text without a large format penalty.
-A scalar logit mixer combines the raw and re-anchored reader, with weight3/8
-fitted on256 separate TRAIN documents. Complete DEV results are:
+or GSM8K.** Supplied intermediate work helps on controlled arithmetic. A larger
+future-aware teacher batch also supplies enough real training labels. The first
+matched supervised writer/reader and source-only control runs are now active;
+their terminal evaluations will test whether useful notes can be learned.
 
-| Cohort | Empty−raw | Supplied correct−raw | Correct−corrupt |
+Fresh B0 notes give these likelihood changes with the fixed mixed reader:
+
+| Cohort, 256 documents each | Own−raw | Own−empty | Own−unrelated |
 |---|---:|---:|---:|
-| General,256 |−0.154 [−0.241,−0.064]|+11.948 [10.707,13.230]|+12.203 [10.962,13.480]|
-| Arithmetic,256 |−0.018 [−0.061,0.028]|+0.641 [0.490,0.812]|+0.249 [0.188,0.316]|
+| Real arithmetic |−.673 [−.837,−.508]|−.575 [−.727,−.420]|−.099 [−.239,.042]|
+| Real general text |−.847 [−1.035,−.651]|−.633 [−.785,−.479]|−.369 [−.535,−.202]|
+| Controlled synthetic arithmetic |+2.400 [2.078,2.738]|+.473 [.167,.794]|+.925 [.616,1.246]|
 
-These are full-span log-likelihood contrasts in nats, with paired document-bootstrap
-95% intervals. The unchanged gate requires the three means to reach−0.5,+2,+2.
-**The general panel passes; the original arithmetic panel fails.** General notes literally copy the next16
-tokens; their different-document controls do not isolate numeric correctness.
-Arithmetic notes copy the complete numeral and its actual closing boundary;
-corruption changes only the numeral while preserving surface length and closing bytes.
-No note here was produced by a prefix-only writer. DEV was reused for interface
-development, so this is exploratory qualification rather than a fresh confirmation.
-[Complete mixer fit, all controls/cells, audit and archives](validation/interface_scalar_mixer_dev256x2_20261018.json).
+Values are nats with paired document-bootstrap 95% intervals, conditional on B0.
+The real panels score the next 16 natural tokens; the synthetic panel scores the
+complete signed integer and closing newline. Each comparison retains all attempts,
+empty notes and errors. Fixed mixing combines raw and re-anchored full logits with
+weight 3/8, fitted on separate TRAIN data. Ordinary re-anchoring hurts generated-note
+likelihood on all three panels. Complete results and examples:
+[real arithmetic](validation/postorder_held256_B0_20261018.json) ·
+[real general text](validation/general_note_held256_B0_20261018.json) ·
+[synthetic arithmetic](validation/controlled_arithmetic_DEV256_B0_20261018.json).
 
-On a separately sealed 256-document arithmetic DEV panel, **fresh B0 notes still
-hurt**: own−raw is −7.490 [−8.173,−6.840] nats with re-anchoring and
-−.673 [−.837,−.508] with fixed mixing. Own−unrelated intervals cross zero in
-both paths; 242 of 256 notes hit the 128-action cap. Empty controls, absolute
-likelihoods, all 3,072 cells and examples are retained in the
-[complete generated-note baseline](validation/postorder_held256_B0_20261018.json).
-An exploratory first-line truncation probe also fails: shortening improves over
-the long notes, but still loses to raw and shortened unrelated notes. I3 own−raw
-is −5.064 [−5.618,−4.525] nats and own−other −1.388 [−1.873,−.903].
-All 256 documents, absolute controls, fixed-mixer results and complete cells remain
-in the [truncation result](validation/postorder_firstline_note_held256_20261018.json).
+On the synthetic panel, **supplied correct partial work helps without revealing
+the final operation or answer**. Ordinary re-anchoring gains +6.978 [6.417,7.544]
+over raw, +4.866 [4.357,5.366] over empty, and +4.535 [4.253,4.813] over a wrong
+intermediate result. This supports reader use of intermediate values, without
+establishing verification or free-answer accuracy. Generated-note gains with fixed
+mixing are concentrated in `(a+b)*(c-d)`; the other three families have negative
+own−empty means. All 256 generated notes hit the 128-action cap. Unrelated donors
+cross grammar families, with equal 128-token lengths; their contrast does not
+isolate calculation from expression restatement. This secondary result does not
+replace the real endpoints or release RL.
 
-The completed GSM8K TRAIN512 B0 baseline is also negative:
+![Supplied partial work and generated-note contrasts, all256 fixed expressions](figures/controlled_arithmetic_B0_20261018.svg)
+
+The GSM8K TRAIN512 B0 reference is also negative:
 
 | Mode | Strict correct /512 | Unsupported /512 |
 |---|---:|---:|
@@ -50,112 +52,63 @@ The completed GSM8K TRAIN512 B0 baseline is also negative:
 | Empty thought format |433|18|
 | One generated thought |276|147|
 
-Thought−empty is −30.66 percentage points [−35.74,−25.78]. The increase in
-format and truncation failures prevents interpreting this solely as an arithmetic
-change. Every attempted answer and note is retained; the first128 questions have
-known development outcomes, and official TEST remains unused.
-[Complete results, all1,536 outputs and paired outcomes](validation/postorder_gsm8k_TRAIN512_B0_20261018.json).
+Thought−empty is −30.66 percentage points [−35.74,−25.78]. Format and truncation
+failures prevent interpreting this solely as an arithmetic change. All 1,536
+outputs remain in the [complete result](validation/postorder_gsm8k_TRAIN512_B0_20261018.json).
+The first 128 questions have known development outcomes; official TEST is unused.
 
-A separate 256-document TRAIN pilot finds a positive **future-aware note signal**.
-Teacher notes improve the fixed mixed reader over raw by +.495 [.209,.815], over
-empty by +.660 [.400,.953], and over unrelated notes by +.794 [.541,1.074] nats.
-The ordinary reader still loses on average; 82/256 labels beat its empty control.
-The teacher sees the continuation. This does not establish a useful prefix-only
-writer. [All notes, controls, scores and copying diagnostics](validation/general_hindsight_TRAIN256_20261018.json).
-A [general high-surprisal DEV panel](validation/general_high_surprisal_DEV256_sealed_20261018.json)
-was sealed before supervised outcomes. Its completed B0 baseline also fails:
-own−raw is −8.391 [−9.072,−7.696] with re-anchoring and
-−.847 [−1.035,−.651] with fixed mixing. Own−unrelated is negative on both
-paths, despite supplied-copy gains of +25.572/+18.520 nats. Of256 notes,
-227 hit the cap. The [complete baseline](validation/general_note_held256_B0_20261018.json)
-retains every note/control/vector, costs and the first6 fixed examples. This
-panel conditions on high B0 surprisal; that does not guarantee reasoning-worthy
-text. A completed concise-helper prompt probe also fails: the prospective
-fewshot/first-line mixed-reader result is own−raw −.439 [−.596,−.281] and
-own−unrelated −.056 [−.150,+.031] nats. All512 notes and12,288 cells are retained
-in the [complete helper result](validation/general_prefix_helper_20261018.json).
-The larger TRAIN batch is now complete: 24,576 future-aware teacher attempts,
-196,608 reader comparisons and zero errors. The strict ordinary-reader filter
-found 8,964 eligible positives; the first 5,120 in the frozen order form the
-warm-start dataset. Across the full candidate pool, fixed mixing gives
-teacher−raw +.831 [.788,.877], teacher−empty +1.009 [.967,1.053] and
-teacher−unrelated +1.147 [1.105,1.190] nats. Ordinary re-anchoring still loses
-2.840 [2.755,2.921] nats against raw. These are future-aware TRAIN labels;
-selected positivity is true by construction and does not establish prefix-only
-utility. The selected set includes 166 exact demonstration imitations, retained
-under the original filter. All attempts, extraction decisions and original labels
-are archived; [complete results, fixed examples and all196,608 score vectors](validation/general_hindsight_filtered_TRAIN24576_20261018.json)
-are public. Native causal packing for all5,120 labels passes on the isolated
-`general-sft-v5` branch; its hardware qualification and training remain pending.
+The completed general TRAIN batch contains 24,576 future-aware teacher attempts
+and 196,608 reader comparisons, with zero errors. Across the entire candidate pool,
+fixed mixing gives teacher−raw +.831 [.788,.877], teacher−empty +1.009 [.967,1.053]
+and teacher−unrelated +1.147 [1.105,1.190] nats. Ordinary re-anchoring still loses
+2.840 [2.755,2.921] nats against raw. The strict filter found 8,964 eligible positives;
+the first 5,120 in the frozen order form a separate warm-start dataset. Selected
+positivity is true by construction. The labels retain 166 exact demonstration
+imitations, and shorter future copying or paraphrase remains possible. These are
+future-aware TRAIN labels, without evidence yet for a useful prefix-only writer.
+[Complete results, fixed examples and all score vectors](validation/general_hindsight_filtered_TRAIN24576_20261018.json).
+Actual native packing passes on isolated `general-sft-v5`; hardware qualification
+and training remain pending. The earlier [256-document pilot](validation/general_hindsight_TRAIN256_20261018.json)
+and negative [prefix-helper probe](validation/general_prefix_helper_20261018.json) remain available.
 
-The original real-document arithmetic panel has little numeric headroom:
-its raw number-only NLL is0.648 nat.
-A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
-correct note, while a wrong note also improves by0.112 [0.030,0.217]. We retain
-this distinction between arithmetic content and boundary/formatting gains.
-Before mixing, none of six interfaces passed; re-anchoring alone enabled strong
-general copying but retained a3.007-nat empty-format tax.
-[Earlier six-interface batch:15,872 complete cells](validation/interface_target_copy_dev256x2_20261018.json).
-The completed [controlled arithmetic diagnostic](validation/controlled_arithmetic_DEV256_B0_20261018.json)
-uses256 novel compound expressions, fixed without model-based hardness selection.
-Raw full-span headroom is18.239 nats. Under ordinary re-anchoring, supplied correct
-partial steps improve likelihood by6.978 [6.417,7.544] over raw and4.866
-[4.357,5.366] over empty, and beat a wrong intermediate result by4.535 [4.253,4.813]. These notes omit the final operation and answer, so
-this supports use of intermediate work; complete supplied notes remain copy controls.
-With fixed mixing, B0's generated notes gain0.473 [0.167,0.794] over empty and
-0.925 [0.616,1.246] over unrelated notes (own−raw2.400 [2.078,2.738]). Ordinary
-re-anchoring own−raw is negative. All256 generated notes hit the128-action cap;
-descriptive family means show the aggregate mixed-reader benefit is concentrated
-in `(a+b)*(c-d)`. Every item, control, native vector and fixed-first8 examples is
-retained. Unrelated donors cross grammar families, while all note lengths are128tokens.
-The generated-note contrast does not isolate calculation from expression restatement.
-This synthetic result does not replace the real-document endpoints or release RL. The same frozen cohort can measure later supervised transfer.
-
-![Supplied partial work and generated-note contrasts, all256 fixed expressions](figures/controlled_arithmetic_B0_20261018.svg)
-
-Supervised writer-and-reader warm-start is active under the underlying re-anchored
-interface, with ordinary source-CE and augmented-source controls planned. This is the
-declared reader-learning fallback for arithmetic; fixed mixing remains a separate
-evaluation control. Of 14,669 exact symbolic substep labels from real source equations,
-3,147 beat the empty-format reader on the full numeral plus closing boundary
-(21.45%): short of the planned 5,120. Mean teacher−raw is −1.809 nats on that full
-span, despite a +.160-nat number-only gain. The closing-certificate token accounts
-for most of the loss. The failed filter and its threshold remain unchanged.
-[Complete TRAIN filter and token decomposition](validation/postorder_symbolic_frozen_reader_filter_20261018.json).
-The separately declared reader-learning experiment has 5,120 verified compound
-equations from distinct TRAIN documents, selected in the existing frozen order
-without likelihood filtering. This teaches the reader as well as the writer;
-it does not claim the old filter passed. C′ also matches W's continuation-loss
-weighting to avoid confusing anchor emphasis with note utility.
-[Declared experiment](validation/reader_learning_compound5120_design_20261018.json) ·
-[Verified data inventory](validation/reader_learning_compound5120_data_20261018.json) ·
-[Native label recipe and examples](validation/postorder_symbolic_candidate_inventory_20261018.json).
-Two-update BF16-compute hardware checks passed for T; W and C ran out of memory
-with FP32 model storage. A new BF16-storage path retains FP32 optimizer masters
-and positional buffers; its [CPU checks pass](validation/useful_note_bf16_storage_cpu_20261018.json).
-An initial hardware qualification stopped before updates at its native-reference tolerance.
-Device BF16 was closer to CPU FP32 than the CPU BF16 reference was; an explicit
-high-precision reference repair retains the same KL bound and the
-[original failure](validation/useful_note_bf16_native_failure_20261018.json).
-The repaired-reference qualification completed all three W/C′/T updates per arm,
-with finite FP32 masters and moments. C′ later updates took52/47 seconds and
-T42/43 seconds. [Complete hardware evidence](validation/useful_note_bf16_storage_hardware_20261018.json).
-Actual recovery then restored every rank's complete model, master, moment,
-counter and RNG state exactly and completed the next real update. An earlier
-validation failure is preserved alongside the
-[successful recovery](validation/useful_note_state_recovery_002_20261018.json).
-
-**The first longer W run is active:** fresh B0,5,120 distinct real documents,
-two epochs and320updates. All32 numerical/initialization checks and the first
-two updates pass; those updates took60/62 seconds. This establishes execution,
-not useful thoughts. Every terminal arm will receive the same held likelihood
-and GSM8K TRAIN512 evaluations, regardless of intermediate losses.
-[Declared launch and evidence](validation/reader_learning_compound5120_W_seed20261018_launch.json).
-Official TEST is unused.
-[Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
+**Training in progress:** W learns note tokens, the natural continuation and raw
+source text; C′ learns the same continuation and raw source without notes. Both
+start from fresh B0, share 5,120 distinct real TRAIN documents and seed order,
+and run two epochs / 320 updates. C′ matches W's continuation-loss weighting.
+An augmented-CE T arm is planned. Documents and updates match; tokens, gradient
+dose and compute differ. BF16 parameters/gradients use FP32 optimizer masters.
+[W launch](validation/reader_learning_compound5120_W_seed20261018_launch.json) ·
+[C′ launch and preserved startup failure](validation/reader_learning_compound5120_Cprime_seed20261018_launch.json).
+Every terminal arm receives the real held likelihood panels and GSM8K TRAIN512
+comparison regardless of training losses. Terminal checkpoints are primary;
+step64 is developmental. [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here
 
+- **A copying interface is qualified; arithmetic headroom is limited.** None of six
+  ordinary interfaces passed the initial full-span oracle. The TRAIN-fitted fixed
+  mixer passes general DEV256 (tax−.154, correct−raw+11.948, correct−corrupt+12.203
+  nats), while the original arithmetic panel fails (+.641/.249 gains). General
+  oracle notes copy the next16 tokens; they are not prefix-only thoughts. The
+  original arithmetic number-only NLL is just .648 nat. DEV reuse makes this
+  exploratory interface qualification.
+  [Six-interface batch](validation/interface_target_copy_dev256x2_20261018.json) ·
+  [Complete mixer fit and controls](validation/interface_scalar_mixer_dev256x2_20261018.json).
+- **The initial symbolic filter failed its quota.** Only3,147/14,669 notes beat
+  empty-format (21.45%); mean teacher−raw is−1.809nats including the closing boundary.
+  The new compound5120 study explicitly teaches the reader as well as the writer,
+  using verified compound equations selected without likelihood filtering. It does
+  not declare the old filter passed.
+  [Failed filter](validation/postorder_symbolic_frozen_reader_filter_20261018.json) ·
+  [New design](validation/reader_learning_compound5120_design_20261018.json) ·
+  [Data inventory](validation/reader_learning_compound5120_data_20261018.json).
+- **Memory and recovery repairs are qualified.** FP32 model storage exhausted
+  memory in W/C′. BF16 storage with FP32 masters completed three real updates per
+  arm, and actual full-state recovery restored all32ranks and performed the next
+  ordered update. Earlier numerical-reference and installed-optimizer validation
+  failures remain preserved. These are execution checks, not capability results.
+  [Hardware evidence](validation/useful_note_bf16_storage_hardware_20261018.json) ·
+  [Recovery](validation/useful_note_state_recovery_002_20261018.json).
 - **Nearby partial notes did not help.** The fixed TRAIN 256 / DEV 64 probe completed
   all 1,920 likelihood cells and 384 numeric paths. Correct−raw numeric likelihood
   was −1.351/−1.600 nats, both intervals negative. DEV correct/raw/empty/corrupt
