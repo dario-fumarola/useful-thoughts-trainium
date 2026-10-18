@@ -17,7 +17,7 @@ The owner stopped the original R study and authorized adapting the experiment.
    exact source RHS quality checks after selection, proper-subexpression notes,
    no already-visible answer, matched numeric corruption. Preserve all rejections.
    V1 scan found3 visible-answer filter misses; preserve it as blocked.
-   Corrected v2 source is reviewed;714 required checks pass; fresh CPU scan active.
+   Corrected v2 source is reviewed;739 required checks pass; fresh CPU scan active.
    Inspect actual counts, rejection reasons and fixed examples before scoring.
    Official TEST remains unused.
 5. Seal prospective TRAIN256/DEV64 pools before B0 scores. Test raw, empty,

@@ -723,3 +723,18 @@ actions/stops/costs retained. Parser scope and EOS/cap completeness rules are fi
 in source; generation has tokenizer-defined support, LL/native full-head support.
 Source review and100 focused tests pass; final714+toy_smoke+compileall pass at
 local/checks/tests.zL7PFQ. No hardware or capability result is implied.
+
+### 2026-10-18 03:35 UTC — keep any next warmstart causally separated
+
+While the corrected CPU scan runs, add only a reviewed CPU packer, without a
+trainer or learning release. Note labels use the causal prefix and exact proper
+intermediate, with the native newline encoded jointly. Mutating or removing
+all source-future/RHS fields leaves every writer tensor unchanged. The separate
+ordinary-source component supervises all527 next-token targets of the original
+528 tokens, including actual EOS tokens, rather than the old future16 control.
+An eventual treatment adds separately averaged note CE to the same full-source
+CE as its control; that adds labels and compute and is not a FLOPs-matched study.
+Packer25 focused tests and independent exact-source review pass; required739
+checks, toy smoke and compileall pass at local/checks/tests.WLpLnu. Dataset
+publication/order, optimizer and fresh generated-note evaluation remain to be
+fixed only after actual reader feasibility. No training has started.

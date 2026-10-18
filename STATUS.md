@@ -1,4 +1,4 @@
-# Status — 2026-10-18 03:26 UTC
+# Status — 2026-10-18 03:35 UTC
 
 The owner stopped the original R study and authorized the new direction. Old
 launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
@@ -42,8 +42,8 @@ Last device exit02:37:01UTC. Used cores28/32/36/40, devices7–10. Recheck topol
 processes and ports before a new allocation; no automatic relaunch.
 Writer protocoldd258a79…8ec / source3cedd5f9…831d; reader protocolc594ab02…3c1 /
 source9c7342ce…bc5. Native/device LP errors≤5.913e−5, all-action replay≤8.107e−6.
-Latest required714 tests + toy_smoke + compileall PASS local/checks/tests.zL7PFQ
-on final curatorv2 and scalar-endpoint sources. Focused curator122/probe100 PASS;
+Latest required739 tests + toy_smoke + compileall PASS local/checks/tests.WLpLnu
+on final curatorv2, scalar-endpoint and future packer sources. Focused curator122/probe100/packer25 PASS;
 independent exact-source review accepts both. Earlier599/710 runs predate final
 additions/fixes; they are not current qualification. Shared model/runtime helpers
 unchanged. CPU checks do not certify accelerator execution.
@@ -74,8 +74,8 @@ Launcher2448590/start12857626; timeout/PGID2448594;
 worker2448595/start12857629. Deadline05:00UTC plus15s external grace.
 Output local/nvme/data/finemath-arithmetic-boundaries-v2;
 control/log local/diagnostics/finemath-arithmetic-boundaries-v2.
-Actual USE_TORCH_XLA=0, OMP/MKL1, full source SHA gate passed. At03:25:35,
-18553 audit rows/61 accepted; no errors. Data agent owns monitoring/closure.
+Actual USE_TORCH_XLA=0, OMP/MKL1, full source SHA gate passed. At03:33:38,
+203427 audit rows/639 accepted; no errors. Data agent owns monitoring/closure.
 No source mutation, automatic retry or model/hardware release.
 
 Reviewed curatorv2 source0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55;
@@ -123,8 +123,9 @@ inspect fixed examples plus independent maximal numeric-span copy audit before
 reader prepare/native CPU reference/hardware release. Rebind runtime proposal
 to correctedv2 data and final source. No fullsource/sampler/checkpoint changes.
 
-Future packer only: distributed builds new train/calculation_warmstart_data.py
-+focused fixtures, no current driver edits, dataset prep or training. Fixed
+Future packer only: new train/calculation_warmstart_data.py source1595c1ca…b9ed
+and tests1b851f84…3c91 independently reviewed;25 focused/739 required PASS.
+No current driver edits, dataset prep or training. Fixed
 instruction/two partial-calculation format demos; exact past; note+native newline
 labels only. Separate source-only pack supervises all527 original targets.
 Proposed next pilot (NOT RELEASED): BC+fullsourceCE vs fullsourceCE, same512TRAIN
