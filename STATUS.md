@@ -1,4 +1,27 @@
-# Status — 2026-10-18 15:29 UTC
+# Status — 2026-10-18 15:59 UTC
+
+## Active: matched developmental step64 evaluation
+Question: what did the interrupted matched W/C′ runs learn by their common64 milestone?
+ID:matched-development64-20261018; explicit nonresumable64 identity, terminal320 remains incomplete.
+Both models saw identical2,048 ordered TRAIN occurrences; same arithmetic256/general256/GSMTRAIN512.
+Real panels: same fresh notes scored by frozenB0 and self, raw/empty/own/unrelated/oracles, I3/I6.
+All256 arithmetic generations per arm physically closed; B0 scores complete, summaries pending.
+Primary natural16 own−raw and own−other paired document CIs; empty controls beside each contrast.
+GSM direct/empty/thought and all unsupported retained; secondary synthetic four-family panel follows.
+Controls:local/science/control/{W,Cprime}-seed20261018-development64-evaluation-v1.
+Independent finite external guard samples hostRAM every10s; stops owned jobs below512GiB available.
+Deadline01:30UTC next day; no outcome-dependent stopping, no automatic learning restart.
+Source validation:1546 CPU tests/smoke/compile pass; actual64 identities and causal loaders verified.
+Decision: complete this developmental comparison; broad general SFT and RL remain on hold.
+
+## Active: bounded backward-path host-memory probe
+Question: does original real-data BF16 W backward retain hostRAM before optimizer/update stages?
+ID:host-memory-backward-probe-v1; four fresh B0 processes, same16 actualTRAIN rows, no optimizer.
+Batch:default allocator, explicitGC, GC+malloc_trim, MALLOC_ARENA_MAX=2; logical32/36/40/44.
+Endpoint: post-clear RSS/PSS, allocator counters, XLA metrics and stage CPU/wall; tail slope9–16.
+Candidate bound<=64MiB/iteration; if baseline>=256MiB, require>=80% slope reduction.
+Controls:local/diagnostics/host-memory-backward-probe-v1; external deadline17:00UTC/RSS96GiB/floor512GiB.
+Decision: pending; this isolates backward only and cannot qualify full-loop optimizer or recovery.
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -14,7 +37,7 @@ V2failed check remains failed; model-free four-rank mixed-failure consensus test
 W/C′ save slices; Tfull step3 is24,101,411,251bytes/33payloads,87.37s combined checkpoint wall.
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
 Independent96vectors/96initialmasters/192state reports/nineupdates pass; EBS nonweight archive verified.
-Public validation/useful_note_bf16_storage_hardware_20261018.json; W science now active.
+Public validation/useful_note_bf16_storage_hardware_20261018.json; later science interrupted below.
 
 ## Closed: general high-surprisal DEV cohort
 Question: can a separate comparable general DEV panel be fixed before supervised outcomes?

@@ -993,3 +993,23 @@ identity may evaluate these matched saved models; do not relax the old terminal
 identity or invent missing optimizer state. Profile bounded host-memory growth
 before restarting long learning. Periodic full checkpoints and a memory-triggered
 cooperative STOP are necessary for the next operational recipe. No auto-relaunch.
+
+
+## 2026-10-18 — intermediate-only computation channel and completed development64
+
+- Owner review supersedes broad general-hindsight learning as the next priority.
+  Teacher usefulness does not establish prefix-only attainability; full-answer
+  notes do not isolate intermediate computation. Do not scale original RL.
+- Finish both preserved matched64 evaluations under a separately declared
+  developmental identity; original terminal320 remains incomplete. Both fresh
+  notes and B0/self reader crosses are retained regardless of sign.
+- Next narrow study: exact prefix-derived partial states excluding root/final
+  answer, reader training then freezing, supervised prefix-only writer with stop,
+  and the same fixed-reader teacher/student/empty/unrelated/restatement/corrupt
+  cross. Ordinary compact CoT uses the same traces and may be the preferred result.
+- First128 TRAIN overfit is a mechanics check. Fresh structural/range/composition
+  DEV separate generalization questions; complete-answer accuracy is primary for
+  this new study, with errors retained, note correctness and measured costs.
+- Before long learning, isolate host memory, qualify a bounded complete update
+  loop, and add periodic resumable states with an actual restart. Four-condition
+  backward-only allocator probe is bounded and makes no full-loop qualification.

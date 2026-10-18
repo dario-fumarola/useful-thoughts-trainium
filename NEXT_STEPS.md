@@ -1,38 +1,39 @@
-# Current queue — host OOM interruption
+# Current queue — partial-computation pivot
 
-1. Both compound5120 seed20261018 attempts are physically closed after global
-   hostRAM exhaustion13:16UTC: W220updates, C′119. Kernel names W worker3118518
-   and user systemd6815 as OOM victims; both original training groups vanished.
-   No terminal/full optimizer checkpoints or per-job exit receipts survived.
-   Both exact step64 model-only snapshots and all run/control/log/source files
-   are read-back verified on EBS at local/backups/science/interrupted/host-oom-20261018.
-   Originals remain on NVMe. Do not resume from model-only states or reuse launchers.
-2. Root will declare an explicit DEVELOPMENTAL matched64 evaluation identity for
-   W/C′ using the preserved snapshots and original data/order. Keep terminal320
-   incomplete; do not weaken or masquerade as the existing terminal-only identity.
-   Mandatory real arithmetic256/general256 likelihood with B0/self readers and
-   raw/empty/own/intact-other/oracles; GSMTRAIN512 direct/empty/thought retains
-   unsupported in512. Frozen synthetic256 is secondary, all families retained.
-   Existing terminal320 runtime under local/science/control/W-seed20261018-terminal320-evaluation-v1
-   remains unbound and intentionally rejects these model-only states.
-3. Diagnose host-memory growth with a small bounded profile before restarting
-   learning. Kernel first-OOM process snapshots and sysstat RAM trajectory are
-   saved under local/analysis; the earlier75-second utilization sample showed
-   ~2%core utilization without runtime errors. Neither observation isolates the
-   cause. Investigate actual installed allocator/XLA/runtime behavior; no stack
-   upgrades, new capacity or numerical changes. Long-run recovery needs periodic
-   full state and an external memory STOP guard, separately declared/reviewed.
-4. General label data remains complete/verified: 24576teacher attempts,
-   196608reader cells,8964eligible strictI3positives, original first5120selected.
-   OrdinaryI3 teacher−raw remains negative; fixedI6positive, future-aware only.
-   Isolated general-sft-v5 source+actual causal inventory and W/C′/T three-update
-   qualification scripts are CPU-ready. No qualification or science launch.
-   Keep its source isolated and preserve main v4 source for old checkpoint lineage.
+1. Complete the explicit matched developmental64 evaluation already running:
+   local/science/control/{W,Cprime}-seed20261018-development64-evaluation-v1.
+   Arithmetic256 generations and B0 scores have completed; close/summarize B0,
+   score the same notes with self, then general256, GSMTRAIN512 and the secondary
+   synthetic256. Actual per-stage commands are runtime.py start PANEL STAGE and
+   observe.py capture/close PANEL STAGE. Do not overwrite existing receipts.
+   Guard:local/science/control/matched-development64-memory-guard-v1, independent
+  10s samples,512GiB host-available floor, finite01:30UTC deadline. Capture actual
+   live allocation before stages finish; retain every output/error/cap/unsupported.
+2. Finish bounded host-memory-backward-probe-v1 on four separate upper cores.
+   Its default/GC/trim/arena2 batch has no optimizer or updates. Attribute RSS/PSS
+   and allocator/graph behavior before a full-loop constant/scheduledLR ×
+   reduced/full-diagnostics comparison. No cause is established. Long learning
+   requires bounded full-loop memory plus periodic resumable saves and an actual
+   restart test. Do not resume from model-only checkpoints or reuse old launchers.
+3. Owner's new scientific priority: short prefix-computable INTERMEDIATE-ONLY
+   exact states, root operation/final answer omitted. Train reader then freeze;
+   supervise prefix-only writer including stop; evaluate the SAME reader with
+   teacher/student/empty/unrelated/restatement/corrupt notes. Complete-answer
+   accuracy and student state correctness are primary for this new diagnostic;
+   likelihood and corruption sensitivity support it. Ordinary compact CoT with
+   the same verified trace data is a baseline that may win. Start a128-example
+   training overfit mechanics check before larger learning. Fresh structure,
+   operand-range and composition DEV panels remain separate. CPU work is isolated
+   on partial-state-v6; no new learning release yet.
+4. Original W220/C′119 of320 remain interrupted by global hostOOM13:16UTC.
+   Both exact64 model-only states and all original run/control/log/source bytes
+   are verified on EBS:local/backups/science/interrupted/host-oom-20261018.
+   The strict terminal320 evaluator remains unbound; developmental64 is separate.
+5. Keep general-sft-v5 isolated and CPU-ready only. Its future-aware labels do not
+   establish prefix-only attainability. Broad general SFT and all RL are on hold
+   until the smaller computation channel and engineering loop work.
 
-Official TEST stays unused. R1234 remains stopped63; never resume old launchers.
-Keep raw/empty/own/unrelated controls and both absolute likelihood arms. Useful
-selfnotes on real held DEV and <=90s complete RL-step timing remain required
-before RL. No scientific negative/positive follows from these failed executions.
-Root owns current work; subagents reached account usage limits during monitoring.
-Use short0700RAM TMPDIRs plus actual Unix socket bind before heavy imports.
-Keep35GiB EBS reserve. Existing same-instance backup is not off-instance protection.
+Official TEST stays unused. R1234 remains stopped63. No automatic relaunches.
+Root owns current work; subagents reached account usage limits. Use short0700RAM
+TMPDIRs and actual Unix socket guards. Keep35GiB EBS reserve; EBS is same-instance
+backup, not off-instance protection. Preserve negative results and simple controls.

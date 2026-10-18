@@ -72,7 +72,12 @@ mark synthetic fixtures or old packaged outputs as a pass on this instance.
 Use small measured experiments to repair the initial reward landscape before
 another long training run. The 2026-10-18 owner direction requires one batched
 full-span interface oracle on>=256 DEV documents, then>=5000 warmstart examples;
-the unlaunched512-example pilot is superseded. STATUS entries are<=15 lines per
+the unlaunched512-example pilot is superseded. The later owner direction narrows
+the next study to exact intermediate-only states, reader-then-frozen-reader/writer
+training, and a matched ordinary compact CoT baseline. A128-example TRAIN overfit
+mechanics check is authorized before larger learning. Broad general SFT/RL wait
+for a completed useful student channel and bounded host-memory/recovery checks.
+STATUS entries are<=15 lines per
 experiment; hashes/archives belong in JSON. Review once per question. Probes on
 <=4 cores do not require a serial release gate; jobs over one accelerator-hour do. Profile actual stage costs. A zero mixer weight gives
 zero interface tax but does not establish content utility or a writer gradient.
