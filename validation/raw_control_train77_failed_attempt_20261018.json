@@ -1,0 +1,110 @@
+{
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 48,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/raw-control-prepend-train77-64-v1/ARCHIVE.json",
+    "payload_bytes": 1584818,
+    "sha256": "157585610c0636e43f044442506cb5db22568ff9cc15aac499a6e8fe753a8de2"
+  },
+  "arm": "raw_control",
+  "base_model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "causal_diagnosis": "Confirmed proximate failure is contiguous HBM scratchpad allocation during loading. Why the requested region was unavailable remains unresolved.",
+  "checkpoint_present": false,
+  "closure": {
+    "allocated_devices_empty_in_saved_topology": true,
+    "attempted_update": 2,
+    "last_successful_common_update": 1,
+    "no_checkpoint": true,
+    "owned_observed_processes_absent": 12,
+    "root_receipt_sha256": "e943feaed8dcc5b720513616435d5edd02ee8c3fc9171bc69bfa8a250f155d3d",
+    "root_verified_utc": "2026-10-18T00:22:58.944686+00:00",
+    "topology_sha256": "9954581d8e6eca929006a4b25dae7e7a3f2e86f3c7d08285a93471675cd3f69b",
+    "uncheckpointed_partial_state_not_resumed": true
+  },
+  "completed_successfully": false,
+  "completion_marker_present": false,
+  "compute": "fp32",
+  "cost_interpretation": "One cold first-update wall under shared-host/compile overlap; no steady-state or causal arm-throughput claim.",
+  "data_sha256": "ee2b384dc6fc6b032745a1340603f78eda06beb08d88ae0a461c1c9e70b9ffe7",
+  "dataset_sha256": "a19149a3cb63a5fbb09fe151b062a1e20ace213b72b290599607daa70052906b",
+  "driver_sha256": "d0b8ed4e105d2b1249e1169014a1acd9b9963522a5ed866e26db117e1cb3f585",
+  "evidence_updated_utc": "2026-10-18T00:29:30.845495+00:00",
+  "exit_code": 1,
+  "exit_utc": "2026-10-18T00:19:14.658178+00:00",
+  "experiment_id": "raw-control-prepend-train77-64-v1",
+  "first_published_update": {
+    "counters": {
+      "future_labels": 128,
+      "note_close_labels": 0,
+      "sampled_actions": 0,
+      "source_records": 8,
+      "source_tokens": 4224
+    },
+    "elapsed_seconds": 470.19266909,
+    "future_loss": 2.3077521324157715,
+    "gradient_norm": 27.202129364013672,
+    "loss": 2.3077521324157715,
+    "note_close_loss": 0.0,
+    "sampled_changed_fraction": 0.9986895322799683,
+    "sampled_replicas_bitwise_equal": true,
+    "sampled_update_l2": 0.001027862192131579,
+    "step": 1,
+    "supervised_future_labels_this_update": 128,
+    "supervised_note_close_labels_this_update": 0,
+    "time_utc": "2026-10-18T00:09:45+00:00"
+  },
+  "future_restart": "Root plans a separately released fresh-B0 attempt after writer64 closure, on its same contiguous group; no automatic retry or resume.",
+  "global_batch": 8,
+  "limitations": [
+    "This is an incomplete failed execution, not the matched control result.",
+    "No learner utility or official test outcome is asserted.",
+    "The healthy writer run is separate and was neither changed nor interrupted by this archive."
+  ],
+  "memory_closure_annex": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 11,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/raw-control-prepend-train77-64-v1-memory-closure-annex-v1/ARCHIVE.json",
+    "payload_bytes": 317443,
+    "sha256": "244a813ff4dcb8ff0bcb31873d20dbedead8b18c630ad1cda157dbbe7dde621c"
+  },
+  "memory_failure": {
+    "bytes_per_request": 67108864,
+    "conclusion_sha256": "8d020783c89cd4ffb7f794a239e49e7f592280adefd6edf028b227967d6236fb",
+    "first_kernel_utc": "2026-10-18T00:18:32+00:00",
+    "kernel_window_sha256": "69b548df35179d6413bc029ac76b7f337f778482a848717b566a53637e98cbdb",
+    "last_kernel_utc": "2026-10-18T00:19:07+00:00",
+    "matching_requests": 8,
+    "request_size_not_peak_bank_usage": true,
+    "status": "confirmed_contiguous_HBM_scratchpad_allocation_failure",
+    "unresolved": [
+      "Total-bank exhaustion versus fragmentation, fixed-address reservation or retained model/scratchpad placement.",
+      "Whether concurrent jobs contributed; separate physical banks prevent inferring direct shared-bank pressure.",
+      "Whether the planned fresh serial same-partition raw attempt will complete; it remains unexecuted."
+    ]
+  },
+  "objective": "raw_future16_ce",
+  "observed_error": "Initialized second-update optimizer loading failed with NRT_RESOURCE; kernel records eight failed 64 MiB contiguous HBM scratchpad allocations at matching load times.",
+  "order_hash": "149303c8c7d73f3eef50663e314e02965a4c13daa11aea06a10b87206578f243",
+  "partial_second_update": "No metric2 or checkpoint; state after the failed attempt is not treated as a usable completed update or resumable model.",
+  "planned_steps": 64,
+  "prior_report_sha256": "4189add456d3b233164a2c4739de98d8c7473e3787a174257f78c2a527f6ac6f",
+  "protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+  "published_complete_updates": 1,
+  "reported_utc": "2026-10-18T00:22:53.716962+00:00",
+  "runtime_source_hashes": {
+    "extraction_metadata_sha256": "5519a904346828b284dd60c3bb4f54686819942dcbdd392c5810a6e31be232d4",
+    "normalization": "Python universal-newline read_text then UTF-8 encode; 42 carriage-return progress updates normalized, no row filtering.",
+    "normalized_UTF8_sha256": "065b3ca18dcadc6747b3c8e7ba1f8b4a72cae50a1d9dd04d3cc0744723babdc6",
+    "raw_bytes_sha256": "af1101501236c58030d7e0f9e1907bd15d361375ab7e1658086567c4f2941b30"
+  },
+  "sampled_parameter_check": "First32 entries per unique parameter tensor; equality does not assert a full-state comparison.",
+  "schema": "raw-control-TRAIN77-partial-execution-v1",
+  "spec_hash": "9efb85c3ea05bb7fc605b7785f40771877ecabe601a674262ae075acd21e115f",
+  "status": "failed_incomplete",
+  "training_layout": "writer_only",
+  "world_size": 8
+}

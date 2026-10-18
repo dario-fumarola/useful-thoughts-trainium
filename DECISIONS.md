@@ -524,3 +524,22 @@ supersedes earlier local serial/same-core scheduling; keep actual shared-host
 compilation/cache contention in costs. Neither first update is claimed yet.
 Use completed64 checkpoints for fresh G1, unchanged B0 prepend reader and the
 prospectively saved K16 primary/K1 secondary analysis; no best-checkpoint choice.
+
+### 2026-10-18 00:28 UTC — preserve failed parallel control, test the known group serially
+
+Writer updates1-16 pass finite gradients, real sampled weight changes and
+sampled-slice replica agreement. First two updates include995/568s cold costs;
+later updates take25-27s. Keep the healthy64-update protocol unchanged. Checkpoint16
+closed00:26:52; all9 files/27.53GB SHA-readback verified00:28:00. No DEV
+selection at16.
+
+Parallel raw_control failed during update2 initialized-optimizer loading after
+one complete update. Exact shared NEFF keys match the writer's successful set.
+Kernel logs establish eight64MiB contiguous HBM scratchpad allocation failures
+on devices4/5. No contemporaneous HBM usage establishes exhaustion, fragmentation
+or concurrency as the cause. Preserve the complete failed attempt and separate
+kernel/closure annex; all12 observed PIDs are gone. No partial state is a result.
+After writer64/exit0/group closure, restart raw_control from actual B0 on exact
+writer cores8-15, same immutable source/data/order/settings and a new attempt ID.
+This is a serial placement test, not a silent numerical or allocator-policy fix.
+Keep actual shared-host/cold/export costs separate from warm step timing.

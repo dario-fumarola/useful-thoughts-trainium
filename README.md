@@ -123,7 +123,8 @@ The local Qwen3-4B [teacher pilot](validation/teacher_prepend_train16_20261017.j
 closed32 notes/176 B0-reader contexts with passing native/device and replay
 checks. Prefix-only notes remain negative (K16 own−empty−.698); hindsight
 notes gain+2.858 [+.730,+5.309]. Hindsight sees the target, so this is label
-information, not deployed reasoning. A [source/quality audit](validation/teacher_anchor_quality_20261018.json)
+information, not deployed reasoning. [Paired-control figure](validation/figures/teacher_prepend_train16_20261017.svg).
+A [source/quality audit](validation/teacher_anchor_quality_20261018.json)
 also finds a concrete reward mismatch: a correct note classifies finite3.1416
 as rational and loses likelihood; an incorrect, target-congruent note calls it
 irrational and gains likelihood. Exact-copy controls cannot establish truth.

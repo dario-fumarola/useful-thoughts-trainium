@@ -10,14 +10,18 @@
    max-own/max-unrelated and max-own/max-shuffled intervals. Strict raw/empty/
    matched-control selection retains77 nonempty labels; preserve all128 decisions.
 4. ACTIVE: writer-bc-prepend-train77-64-v2,64updates/global8/LR1e-5/FP32,
-   writer-only note+canonical-close CE; no true future input/loss. Monitor actual
-   first update, finite gradients/real weight changes/replica agreement, then
-   complete16/64 checkpoints. V1 sparse collective failed before updates;
-   V2 uses contiguous8-15 with unchanged source/data/protocol. Root-owned finite
-   launch; exact paths in STATUS.
-   Matched raw_control now runs in parallel on contiguous16-23/devices4/5 after
-   the topology repair freed hardware. Same77 IDs/order/optimizer/updates.
-   Source/packer/protocol fixed. Unequal CE-label counts/shared-host costs disclosed.
+   writer-only note+canonical-close CE; no true future input/loss. Update16
+   passed; full27.53GB checkpoint16 SHA-readback verified. Cold updates1/2~995/568s, then25-27s.
+   Finite gradients, real sampled changes and sampled-slice replica agreement
+   pass. Finish healthy64; no DEV checkpoint selection. Keep16/64 and verify
+   final64 on EBS. V1 sparse rendezvous failure remains separate/preserved.
+   Parallel raw-control-v1 failed after one update: eight64MiB contiguous HBM
+   scratchpad allocation failures during initialized optimizer loading. Cause
+   of region unavailability unresolved; no failure-time HBM snapshot. All owned
+   PIDs closed/no checkpoint. Preserve failure. After writer64 and group closure,
+   start fresh-B0 raw-control-v2 serially on exact writer8-15 cores, same source/
+   protocol/data/order/LRU2, new identity/deadline/ports. No automatic retry.
+   Unequal CE-label counts and actual costs stay explicit.
 5. DONE B0 prepend DEV64 baseline,384 finite rows; ordinary G1 own−empty K16
    remains−1.101 despite near-zero tax. After both completed64 checkpoints,
    generate fresh student G1 under the same fixed batches/seeds/cap256. Primary:

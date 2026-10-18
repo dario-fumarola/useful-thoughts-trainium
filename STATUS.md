@@ -1,4 +1,4 @@
-# Status — 2026-10-18 00:08 UTC
+# Status — 2026-10-18 00:28 UTC
 
 The owner stopped the initial R study and redirected work to the reward
 interface, genuine candidate availability and iteration speed. Older256-step
@@ -68,35 +68,40 @@ orders/CODEX_NEXT_DAY.md are superseded. Follow NEXT_STEPS.md.
   metadata SHAa19149a3cb63a5fbb09fe151b062a1e20ace213b72b290599607daa70052906b.
   All77 writer tensors unchanged when every future is replaced; zero future
   input/labels, width832/T258. Old31 joint-reader labels remain separate/unused.
-- **writer-bc-prepend-train77-64-v2 RUNNING**, released23:52:12UTC,
-  finite deadlineOct18 05:52:12. FP32/LRU2,64updates/global8/LR1e-5, one ZeRO
-  reduction owner, writer note+canonical-close CE only; raw_control later uses
-  the same77 ID/order/512 processed examples (6 full passes+50). Actual first
-  update/hardware qualification pending; do not infer it from CPU tests.
+- **writer-bc-prepend-train77-64-v2 RUNNING**, FP32/LRU2,64updates/global8/
+  LR1e-5, zero true-future writer input/loss. Update16 passed at00:25:15;
+  full16 checkpoint closed00:26:52, all9 files SHA-readback verified00:28:00. All16 metrics
+  have finite loss/gradient, actual sampled changes and equal sampled parameter
+  slices across8 replicas; these checks are not a full-weight equality audit.
+  Step1 took994.867s, initialized-optimizer step2 took567.618s; steps3-16
+  took25-27s. Cold costs remain separate from this short-loop warm timing.
   Protocol local/diagnostics/positive-writer-prepend-train77-64-v1/protocol.json
   SHAe5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4.
   Control subdir warmstart-contiguous-v2: launcher2221770/timeout2221774,
-  train.log and private STOP path; tmux dario-writer-bc-train77-v2. Output at
+  train.log and private STOP path; tmux dario-writer-bc-train77-v2. Output
   local/nvme/diagnostics/writer-bc-prepend-train77-64-v2. Contiguous logical
-  cores8-15 on adjacent devices2/3, ports65371/65372.
-  Watch first finite loss/gradient/actual update/replica agreement, then16/64
-  complete checkpoints. Live compilation is progressing, no metrics/update yet.
-  No automatic relaunch. Raw control now runs concurrently as below.
-  V1 failed before any update at first rendezvous, exit1 at23:50:55: sparse
-  core-list remapping succeeded but collective graph had no device paths
-  (no_hier/no_mesh). All observed owned PIDs absent, no metrics/checkpoints.
-  V1 source/output/log preserved; V2 changes launch topology only, same exact
-  source/data/pair protocol. A supported parser is not a qualified collective.
-- **raw-control-prepend-train77-64-v1 RUNNING**, releasedOct18 00:01:13,
-  finite deadline06:01:13. Same exact pair protocol/source/data/order/seed/global8/
-  64updates/optimizer/FP32/LRU2; future16 CE only, width544/T16. Contiguous
-  cores16-23/devices4/5, ports65391/65392. Control pair/raw-control:
-  launcher2237372/timeout2237376, train.log, STOP. Output local/nvme/diagnostics/
-  raw-control-prepend-train77-64-v1; tmux dario-raw-control-train77-v1.
-  Topology repair leaves enough idle hardware for a parallel isomorphic two-chip
-  group, superseding earlier local serial/same-core scheduling. Actual shared-host
-  compile/cache costs stay reported, no causal throughput comparison. First update
-  pending. Retain16/64 states; verified EBS final64 backups for both arms.
+  cores8-15/devices2/3, ports65371/65372; deadline05:52:12UTC. Let healthy
+  training finish64. Keep16/64 NVMe; verify EBS final64 backup. No automatic
+  relaunch or DEV outcome selection at16. V1 sparse launch failed at initial
+  rendezvous before any updates; all original evidence remains preserved.
+- **raw-control-prepend-train77-64-v1 FAILED**, exit1 at00:19:14 after one
+  published complete update. First loss2.307752/gradient27.202129, sampled
+  updateL2.00102786, sampled slices agree all8,128future/0note labels. During
+  initialized optimizer loading for update2, kernel logs record eight64MiB
+  contiguous HBM scratchpad allocation failures across devices4/5. Shared NEFF
+  hashes equal writer's successfully executed optimizer graphs. Why the region
+  was unavailable is unresolved: no failure-time HBM usage was measured;
+  total exhaustion, fragmentation and concurrency contribution are not proven.
+  All12 observed owned PIDs absent/devices4/5 empty at00:22:58. No checkpoint;
+  partial step2 is not a resumable or matched control result. Failed source,
+  metric/log/exit/control preserved in verified EBS archive; public receipt
+  validation/raw_control_train77_failed_attempt_20261018.json.
+  **Next control attempt:** after writer64/exit0/group closure, restart from B0
+  as raw-control-prepend-train77-64-v2 on the exact released writer cores8-15,
+  same immutable pair protocol/source/data/order/optimizer/LRU2. New output,
+  ports/private TMP/deadline; serial placement is the minimal next test. No
+  blind relaunch loop or changes to the healthy writer. Control matches IDs,
+  updates and optimizer; unequal CE-label counts/compute remain disclosed.
 - **Fresh prepend DEV64 B0 COMPLETE**,384 finite rows/0fail, all4 exit0/owned
   groups gone. Raw64×16 reference vectors exactly match. K16 empty−raw+.02987
   CI[−.00199,+.06548]; own−empty−1.10055 CI[−1.72811,−.56653], own−other−1.02279
@@ -134,9 +139,11 @@ orders/CODEX_NEXT_DAY.md are superseded. Follow NEXT_STEPS.md.
   Eight optimizer HLOs differ only by rank-specific310 padding configurations;
   raw_control uses the same exact8 cache keys. CE IDs/labels/positions/masks are
   HLO parameters, no array constants. No first-batch data-value specialization
-  observed; actual first/initialized-state/later-update timings still pending.
-- **Next**: observe both first actual updates, preserve full16/64 checkpoints,
-  evaluate both completed64 models with original fresh G1 DEV64 generator and
+  observed. Initial and initialized-state optimizer HLOs contain rank-specific
+  pad offsets; raw uses the same eight keys at each state. Both cold stages
+  and later25-27s writer updates are now measured.
+- **Next**: finish writer64 and its verified backup, run serial fresh-B0 control64,
+  preserve full16/64 checkpoints, then evaluate both64 models with fresh G1 and
   fixed B0 prepend reader; compare paired student/B0/raw-control utilities.
   No best-checkpoint selection. Data audits prefix-only anchor quality locally;
   distributed watches live compilation; review maintains EBS/public receipts.

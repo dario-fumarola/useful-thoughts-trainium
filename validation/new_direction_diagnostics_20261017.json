@@ -1,6 +1,6 @@
 {
-  "time_utc": "2026-10-18T00:03:34.409222+00:00",
-  "status": "both_short_learning_arms_running_diagnostics_closed",
+  "time_utc": "2026-10-18T00:27:10.634681+00:00",
+  "status": "writer_learning_running_control_failed_serial_restart_planned",
   "previous_result": "interface_tax_dev32_20261017.json",
   "tests": "388 CPU tests + toy smoke; local/checks/tests.XEKEpb",
   "candidate": {
@@ -168,7 +168,7 @@
   },
   "writer_learning": {
     "experiment_id": "writer-bc-prepend-train77-64-v2",
-    "status": "running_first_update_pending",
+    "status": "running_checkpoint16_verified",
     "protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
     "selected_TRAIN_documents": 77,
     "selection_denominator": 128,
@@ -183,7 +183,7 @@
     "precision": "fp32",
     "primary_eval": "fresh G1 DEV64 K16 own-empty/contentcontrols read by fixedB0prepend; K1secondary; no officialfinal",
     "raw_control": {
-      "status": "running_first_update_pending",
+      "status": "failed_after_one_published_complete_update",
       "experiment_id": "raw-control-prepend-train77-64-v1",
       "released_utc": "2026-10-18T00:01:13.719403+00:00",
       "deadline_utc": "2026-10-18T06:01:13.719403+00:00",
@@ -191,7 +191,28 @@
       "same77_ids_seed_order_optimizer_updates": true,
       "objective": "rawfuture16CE",
       "planned_true_future_CE_labels": 8192,
-      "scheduling": "parallel isomorphic contiguoustwochipgroup; supersedes localserialintention aftersparsegraphrepair; sharedhostcostsdisclosed"
+      "scheduling": "parallel isomorphic contiguoustwochipgroup; supersedes localserialintention aftersparsegraphrepair; sharedhostcostsdisclosed",
+      "first_actual_update": {
+        "step": 1,
+        "time_utc": "2026-10-18T00:09:45+00:00",
+        "elapsed_seconds": 470.19266909,
+        "loss": 2.3077521324157715,
+        "gradient_norm": 27.202129364013672,
+        "sampled_update_l2": 0.001027862192131579,
+        "sampled_changed_fraction": 0.9986895322799683,
+        "sampled_replicas_bitwise_equal": true,
+        "supervised_note_close_labels_this_update": 0,
+        "supervised_future_labels_this_update": 128
+      },
+      "exit_code": 1,
+      "exit_utc": "2026-10-18T00:19:14.658178+00:00",
+      "completed_updates": 1,
+      "checkpoint_present": false,
+      "failure": "Eight64MiB contiguous HBM scratchpad allocation failures during initialized optimizer graph load; shared NEFF hashes match writer",
+      "cause_limit": "Region unavailability cause unresolved; no failure-time HBM usage; total exhaustion/fragmentation/concurrency not established",
+      "owned_group_closed_utc": "2026-10-18T00:22:58+00:00",
+      "report": "raw_control_train77_failed_attempt_20261018.json",
+      "next_attempt": "fresh B0 raw-control-prepend-train77-64-v2 after writer64 closure on exact released writer8-15 cores; unchanged pair protocol/source/settings"
     },
     "prior_attempt": {
       "experiment_id": "writer-bc-prepend-train77-64-v1",
@@ -201,7 +222,35 @@
       "repair": "launch topology only to contiguous8-15, same source/data/pairprotocol"
     },
     "deadline_utc": "2026-10-18T05:52:12.438311+00:00",
-    "report": "positive_writer_train77_protocol_20261017.json"
+    "report": "positive_writer_train77_protocol_20261017.json",
+    "first_actual_update": {
+      "step": 1,
+      "time_utc": "2026-10-18T00:09:40+00:00",
+      "elapsed_seconds": 994.8665109760041,
+      "loss": 1.2185461521148682,
+      "gradient_norm": 6.43209171295166,
+      "sampled_update_l2": 0.0010313565144315362,
+      "sampled_changed_fraction": 0.9997983574867249,
+      "sampled_replicas_bitwise_equal": true,
+      "supervised_note_close_labels_this_update": 1986,
+      "supervised_future_labels_this_update": 0
+    },
+    "observed_completed_updates": 16,
+    "sampled_parameter_check": "First32 entries per unique tensor, not full-weight replica equality",
+    "timing_observations_seconds": {
+      "step1": 994.8665109760041,
+      "step2": 567.618,
+      "steps3_to16": "25-27; cold/export separate; new global8 CE diagnostic, not old RL throughput"
+    },
+    "checkpoint16": {
+      "complete_utc": "2026-10-18T00:26:52+00:00",
+      "verified_utc": "2026-10-18T00:28:00+00:00",
+      "files": 9,
+      "bytes": 27532633863,
+      "manifest_sha256": "1de521817c6ec28ce97bb471ed0d6da83caa49c71fc09cbf41b90042a104885d",
+      "model_sha256": "b8f1bc16afde1162a58e176b0bfef2be1fe2264fcb8ed4349d9421f20adfbf9e",
+      "location": "NVMe; final64 EBS backup planned"
+    }
   },
   "fresh_prepend_DEV64_B0": {
     "status": "complete",
@@ -228,5 +277,11 @@
     "deployed_reasoning_claim": false,
     "copying": "7of16 hindsight exact4grams,3of16 exact8grams; absence of matches does not rule out target-derived hints",
     "report": "teacher_prepend_train16_20261017.json"
+  },
+  "teacher_anchor_quality": {
+    "status": "complete_posthoc_manual_audit",
+    "report": "teacher_anchor_quality_20261018.json",
+    "counterexample": "Correct finite-decimal rationalnote reducescontinuationLL; false targetcongruent irrationalnote increasesLL. Qualityscore5 didnotcertifytruth.",
+    "current_learning_labels_unchanged": true
   }
 }
