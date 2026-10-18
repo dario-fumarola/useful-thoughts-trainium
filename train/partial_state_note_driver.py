@@ -42,7 +42,7 @@ def prepare(output, model_preparation, model_source_root, execution_device='xla'
         raise ValueError('Explicit CPU reference or XLA device required')
     model_preparation, model_source_root = Path(model_preparation).resolve(), Path(model_source_root).resolve()
     p = read(model_preparation/'protocol.json')
-    if (p['schema'] not in ('partial-state-TRAIN128-complete-answers-v2','partial-state-complete-answers-v4')
+    if (p['schema'] not in ('partial-state-TRAIN128-complete-answers-v2','partial-state-complete-answers-v4','partial-state-complete-answers-v5')
             or p['reader'].get('arm') != 'writer' or p['items'] not in (128,512)):
         raise ValueError('Own frozen writer/native preparation on a fixed cohort required')
     verify(p['reader'])

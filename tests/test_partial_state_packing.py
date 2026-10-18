@@ -53,6 +53,17 @@ def test_reader_teacher_is_conditioning_only_and_batch_keeps_every_example():
         training_pack(r, tok, 'writer')
 
 
+def test_full_cot_baseline_can_state_final_operation_with_ordinary_completion_loss():
+    r=example();tok=BytesTokenizer()
+    p=training_pack(r,tok,'cot_full',width=256,target_slots=128)
+    text=bytes(p['labels'][p['future_mask']][:-1].tolist()).decode()
+    assert text=='37 + 18 = 55\n92 - 57 = 35\n55 * 35 = 1925\nAnswer:\n1925\n'
+    assert not p['note_close_mask'].any()
+    # The separate writer still receives intermediate-only supervision.
+    w=training_pack(r,tok,'writer',width=256,target_slots=128)
+    assert '55 * 35' not in bytes(w['labels'][w['note_close_mask']][:-1].tolist()).decode()
+
+
 def test_overwidth_and_tampered_partial_are_rejected_without_truncation():
     tok = BytesTokenizer(); r = example()
     with pytest.raises(ValueError):

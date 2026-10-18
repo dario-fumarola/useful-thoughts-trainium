@@ -1,0 +1,135 @@
+{
+  "schema": "partial-state-v7-TRAIN-packing-readiness-v1",
+  "status": "CPU_READINESS_ONLY_LARGER_TRAINING_NOT_RELEASED",
+  "TRAIN_items": 5120,
+  "TRAIN_sha256": "020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb",
+  "source_files": {
+    "train/partial_state_driver.py": "6b4f400f4542afe151f00f855d95c42f62e42b20a52de42d122e3bc44a386895",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031"
+  },
+  "all25600_existing_component_packs_bitwise_equal_qualified_v6": true,
+  "total_supervised_labels_per_single_pass": {
+    "direct": 30842,
+    "cot": 163520,
+    "writer": 127558,
+    "reader_teacher": 30842,
+    "reader_empty": 30842,
+    "cot_full": 235489
+  },
+  "max_supervised_labels": {
+    "direct": 10,
+    "cot": 42,
+    "writer": 31,
+    "reader_teacher": 10,
+    "reader_empty": 10,
+    "cot_full": 63
+  },
+  "full_CoT_includes_root_operation": true,
+  "partial_writer_still_omits_root": true,
+  "exposure_audit": {
+    "2026101806": {
+      "reader_two_pass_component_counts": {
+        "reader_empty": 2560,
+        "reader_teacher": 5120,
+        "direct": 2560
+      },
+      "full_CoT_four_pass_occurrences": 20480
+    },
+    "2026101807": {
+      "reader_two_pass_component_counts": {
+        "reader_teacher": 5120,
+        "direct": 2560,
+        "reader_empty": 2560
+      },
+      "full_CoT_four_pass_occurrences": 20480
+    }
+  },
+  "limits": [
+    "CPU tensors only, no training forward or hardware pass.",
+    "Larger training remains unreleased pending completed fixed128-model DEV diagnosis, memory/storage/recovery review.",
+    "B640 matches the split total640updates; B320 matches data exposure and per-model updates but is developmental under that640 plan.",
+    "Four1.7B models per seed including separate writer/reader; record actual chip-time, supervised tokens, model storage and inference costs.",
+    "Full root CoT data supplies more intermediate supervision than partial-only writer data, openly counted.",
+    "Fixed constant LR preserves the qualified fast loop; not an optimized schedule.",
+    "First science reader should stop at64/full-save/physical closure and actually resume before320; preserve all current128models and their immutable evaluator snapshots.",
+    "No DEV outcomes or official TEST read by this audit.",
+    "Source prepares80-action prototype or96-action candidate study evaluation. Current live128-model DEV jobs retain their unchanged80-action3301d22 snapshot."
+  ],
+  "tested_source_commit": "63d383c00d2558d91c916c4723dc9483cc76bcfb",
+  "evaluation_source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/partial_state_answers.py": "f9cfc372056c0aaa54ead0ea77540f54246137144edd2c13f21133608ffa8677",
+    "train/partial_state_evaluation.py": "e8820c6ac8887461c266c380bfe37c14563840f4f194b504b48fba02d9552de2",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_checkpoint.py": "cd71dafcee176159053f993faf227d888f5c62350d7b685157ce9e7be16af0a3",
+    "train/partial_state_driver.py": "6b4f400f4542afe151f00f855d95c42f62e42b20a52de42d122e3bc44a386895",
+    "train/partial_state_note_driver.py": "88f6a452fd7577c94a3ca3565ec3e9573b3f7d0d4d2520b20a38ebf8f0122fc3",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "CPU_tests": {
+    "passed": 1591,
+    "seconds": 62.72,
+    "log": "/home/ubuntu/dario/local/analysis/partial-state-v7-release-source-checks-20261018.log",
+    "hardware_qualification": false
+  },
+  "candidate_budget_not_frozen": {
+    "A_direct_updates": 320,
+    "B_full_CoT_updates": 640,
+    "B_data_matched_development_step": 320,
+    "C_reader_updates": 320,
+    "C_writer_updates": 320,
+    "seeds": [
+      2026101806,
+      2026101807
+    ],
+    "fresh_B0_for_every_model": true,
+    "full_checkpoint_steps_320": [
+      64,
+      160,
+      320
+    ],
+    "full_checkpoint_steps_640": [
+      64,
+      160,
+      320,
+      480,
+      640
+    ],
+    "inference_action_cap": 96,
+    "writer_action_cap": 64,
+    "reader_answer_action_cap": 32
+  },
+  "budget_decision": "Unreleased candidate only. Keep ordinary partial-CoT as the actual cost competitor; full-root CoT is an additional stronger supervision variant, not a reason to drop the already successful compact baseline. Final arms, memory/storage and budgets await the complete fixed128-model DEV diagnosis."
+}

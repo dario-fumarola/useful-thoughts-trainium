@@ -3,9 +3,15 @@ import json
 from transformers import Qwen3Config, Qwen3ForCausalLM
 
 from train.neuron_backend import NeuronCausalBackend
-from train.partial_state_answer_driver import cache_prefill_check
+from train.partial_state_answer_driver import cache_prefill_check, prefill_audit_modes
 from train.partial_state_answers import NumberLineDecoder
 from weekend_thinking.artifacts import sha256_file
+
+
+def test_prefill_checks_cover_requested_shapes_without_unused_reader_path():
+    assert prefill_audit_modes(['cot'])==['cot']
+    assert prefill_audit_modes(['own','other'])==['own']
+    assert prefill_audit_modes(['direct','empty','own','teacher','cot'])==['direct','cot','empty']
 
 
 def test_padded_cached_prefill_matches_ordinary_causal_forward_on_real_cpu_model():

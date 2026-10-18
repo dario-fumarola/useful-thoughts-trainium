@@ -8,7 +8,8 @@ from weekend_thinking.artifacts import canonical_hash
 
 
 def inputs():
-    p=dict(schema='partial-state-sft-v6',model_id='Qwen/Qwen3-1.7B-Base',
+    # New source/version cannot silently adopt the old v6 publications.
+    p=dict(schema='partial-state-sft-v7',model_id='Qwen/Qwen3-1.7B-Base',
         items=128,world_size=4,micro_batch=8,global_batch=32,accumulation=1,
         width=128,target_slots=64,schedule='constant',parameter_dtype='bf16',
         optimizer_dtype='fp32',head_chunk=32,purpose='TRAIN_overfit_only',

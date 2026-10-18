@@ -1,7 +1,7 @@
-"""Bounded short-pack SFT mechanics; fresh B0, one ZeRO reducer, full recovery.
+"""Short-pack partial-state SFT; explicit fitting or fixed TRAIN5120 study.
 
-This driver initially admits qualification and TRAIN-only overfit work. A large
-scientific study needs a separately frozen protocol after those checks pass.
+Fresh released B0, one ZeRO reducer, periodic full checkpoints and full recovery.
+The v7 full-trace CoT arm includes the root operation; the writer omits it.
 """
 import argparse
 from datetime import datetime, timezone
@@ -19,8 +19,8 @@ from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_
 from train.partial_state_packing import batch_packs, training_pack
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-sft-v6'
-ARMS = ('direct', 'cot', 'writer', 'reader')
+SCHEMA = 'partial-state-sft-v7'
+ARMS = ('direct', 'cot', 'cot_full', 'writer', 'reader')
 
 
 def source_files():
@@ -37,17 +37,27 @@ def source_files():
 
 
 def validate(p):
-    fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base', items=128,
+    fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
                  parameter_dtype='bf16', optimizer_dtype='fp32', head_chunk=32)
     if any(p.get(k) != v or isinstance(p.get(k), bool) for k, v in fixed.items()):
         raise ValueError('Require explicit short-pack world4/micro8 qualification identity')
-    if p.get('purpose') not in ('qualification', 'TRAIN_overfit_only'):
-        raise ValueError('No scientific learning release in this mechanics driver')
-    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= 128
+    if type(p.get('items')) is not int:
+        raise ValueError('Explicit integer cohort size required')
+    science=p.get('purpose')=='TRAIN5120_partial_state_study'
+    if science:
+        if (p.get('items')!=5120 or p.get('steps') not in (320,640)
+                or p.get('save_every')!=160 or p.get('lr')!=1e-5
+                or p.get('reader_view_schedule')!='one_teacher_one_plain_per_two_passes'
+                or p.get('data_sha256')!='020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb'
+                or p.get('seed') not in (2026101806,2026101807)):
+            raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
+    elif p.get('purpose') not in ('qualification', 'TRAIN_overfit_only') or p.get('items')!=128:
+        raise ValueError('Explicit fitting or fixed TRAIN5120 study required')
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 128)
             or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
-            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= 32
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science else 32)
             or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
@@ -68,6 +78,11 @@ def role_for(arm, position, items, item_index):
         raise ValueError('Unknown short-pack arm')
     if arm != 'reader':
         return arm
+    if items==5120:
+        # Two-pass study: every expression gets one teacher and one plain view.
+        # Interleave roles within each epoch, preserving50/25/25 aggregate mix.
+        if (item_index+position//items)%2==0:return 'reader_teacher'
+        return 'reader_empty' if (item_index//2)%2==0 else 'direct'
     # Over four epochs, every expression receives teacher/teacher/empty/direct.
     return ('reader_teacher', 'reader_teacher', 'reader_empty', 'direct')[(item_index + position // items) % 4]
 
@@ -230,7 +245,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                           counters=dict(counters), ordered_item_ids=[rows[k]['item_id'] for k in order[step*32:(step+1)*32]])
             with (args.output/'metrics.jsonl').open('a') as f:
                 f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
-        if last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
+        if last==64 or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
             saving = time.monotonic()
             # Full state is approximately14 bytes/parameter; reserve16 plus
             # the existing35GiB floor before any rank starts writing.
@@ -281,7 +296,7 @@ def main():
             raise ValueError('Frozen data or native base protocol changed')
         rows = [json.loads(x) for x in Path(p['data_file']).read_text().splitlines()][:p['items']]
         if len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items'] or any(r['panel'] != 'TRAIN' for r in rows):
-            raise ValueError('First128 distinct TRAIN expressions required')
+            raise ValueError('Complete declared distinct TRAIN expressions required')
         assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
         if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']
                 or p['base_signature'] != base['base_signature'] or p['precision_contract'] != base['precision_contract']):

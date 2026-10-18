@@ -1,4 +1,4 @@
-"""Read-only terminal bindings for the explicitly nonfinal TRAIN128 models.
+"""Read-only terminal bindings for separately declared fitting/study models.
 
 Never treat a qualification, model-only snapshot or unfinished run as the
 reader. Training still starts from B0; this module is for frozen evaluation.
@@ -9,20 +9,23 @@ from pathlib import Path
 from train.partial_state_driver import ARMS, checkpoint_identity, order_for, validate
 from weekend_thinking.artifacts import canonical_hash, sha256_file
 
-SCOPE = 'partial-state-TRAIN128-terminal128'
+SCOPE = 'partial-state-full-terminal-v7'
 
 
 def terminal_scope(protocol, run, completion):
     validate(protocol)
-    if (protocol['purpose'] != 'TRAIN_overfit_only' or protocol['steps'] != 128
+    steps=protocol['steps']
+    fitting=protocol['purpose']=='TRAIN_overfit_only' and protocol['items']==128 and steps==128
+    science=protocol['purpose']=='TRAIN5120_partial_state_study' and protocol['items']==5120 and steps in (320,640)
+    if (not (fitting or science)
             or run.get('purpose') != protocol['purpose'] or run.get('arm') not in ARMS
             or run.get('pipeline_schema') != protocol['schema']
             or run.get('spec_hash') != canonical_hash(protocol)
-            or run.get('planned_steps') != 128
+            or run.get('planned_steps') != steps
             or completion.get('purpose') != protocol['purpose']
             or completion.get('status') != 'complete'
-            or completion.get('actual_steps') != 128 or completion.get('planned_steps') != 128):
-        raise ValueError('Completed TRAIN128 terminal128 model required; qualification is excluded')
+            or completion.get('actual_steps') != steps or completion.get('planned_steps') != steps):
+        raise ValueError('Declared full terminal model required; qualification is excluded')
 
 
 def identity(checkpoint, protocol_file, closure_file):
@@ -33,14 +36,18 @@ def identity(checkpoint, protocol_file, closure_file):
     if any(p.is_symlink() or not p.is_file() for p in paths):
         raise ValueError('Ordinary trusted checkpoint, protocol and closure files required')
     checkpoint, protocol_file, closure_file = [p.resolve() for p in paths]
-    if checkpoint.name != 'model.pt' or checkpoint.parent.name != 'step-0000128':
-        raise ValueError('Use the declared full terminal128 publication')
+    if checkpoint.name != 'model.pt':
+        raise ValueError('Use the declared full terminal publication')
     root = checkpoint.parent.parent
     read = lambda p: json.loads(p.read_text())
     protocol, run, completion = read(protocol_file), read(root/'run.json'), read(root/'completion.json')
     terminal_scope(protocol, run, completion)
+    steps=protocol['steps'];fitting=protocol['purpose']=='TRAIN_overfit_only'
+    if checkpoint.parent.name!=f'step-{steps:07d}':
+        raise ValueError('Use the declared full terminal publication')
     closure = read(closure_file)
-    if (closure.get('status') != 'COMPLETE128_TRAIN_ONLY_PHYSICALLY_CLOSED_CHECKPOINTS_VERIFIED'
+    closure_status='COMPLETE128_TRAIN_ONLY_PHYSICALLY_CLOSED_CHECKPOINTS_VERIFIED' if fitting else 'COMPLETE_TRAINING_PHYSICALLY_CLOSED_CHECKPOINTS_VERIFIED'
+    if (closure.get('status') != closure_status
             or closure.get('all_original_session_processes_absent') is not True
             or closure.get('completion_sha256') != sha256_file(root/'completion.json')
             or closure.get('terminal_COMPLETE_sha256') != sha256_file(checkpoint.parent/'COMPLETE.json')):
@@ -56,23 +63,23 @@ def identity(checkpoint, protocol_file, closure_file):
         checkpoint_identity(manifest, weights, saved, protocol, run['arm'], root.name, rank, run['order_hash'], protocol_sha)
     metrics_file = root/'metrics.jsonl'
     metrics = [json.loads(line) for line in metrics_file.read_text().splitlines() if line.strip()]
-    if ([m['step'] for m in metrics] != list(range(1,129))
+    if ([m['step'] for m in metrics] != list(range(1,steps+1))
             or metrics[-1]['counters'] != manifest['metadata']['counters']
-            or metrics[-1]['counters']['expressions'] != 4096):
-        raise ValueError('All original128 complete updates and counters required')
+            or metrics[-1]['counters']['expressions'] != steps*protocol['global_batch']):
+        raise ValueError('All original complete updates and counters required')
     provenance = {str(p):sha256_file(p) for p in
         (protocol_file, closure_file, root/'run.json', root/'completion.json', metrics_file, checkpoint.parent/'COMPLETE.json')}
-    return dict(id=run['arm']+'-TRAIN128-step128', arm=run['arm'], checkpoint=str(checkpoint),
+    return dict(id=f"{run['arm']}-TRAIN{protocol['items']}-step{steps}", arm=run['arm'], checkpoint=str(checkpoint),
         checkpoint_sha256=manifest['files']['model.pt']['sha256'],
-        checkpoint_scope=SCOPE, developmental_only=True, step=128, run_id=root.name,
+        checkpoint_scope=SCOPE, developmental_only=fitting, step=steps, run_id=root.name,
         spec_hash=canonical_hash(protocol), training_protocol=str(protocol_file),
         closure_file=str(closure_file), provenance=provenance,
         checkpoint_files={str(checkpoint.parent/k):v['sha256'] for k,v in manifest['files'].items()})
 
 
 def verify(value):
-    if value.get('checkpoint_scope') != SCOPE or value.get('developmental_only') is not True:
-        raise ValueError('Explicit TRAIN128 developmental scope required')
+    if value.get('checkpoint_scope') != SCOPE or type(value.get('developmental_only')) is not bool:
+        raise ValueError('Explicit v7 terminal scope required')
     actual = identity(value['checkpoint'], value['training_protocol'], value['closure_file'])
     if actual != value:
         raise ValueError('Frozen TRAIN128 reader identity changed')
