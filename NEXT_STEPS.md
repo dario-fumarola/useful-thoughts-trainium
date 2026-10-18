@@ -6,20 +6,23 @@
    shows numerical improvement offset by the original closing-certificate token.
    New `postorder-reader-learning-compound5120-v1` selects first5120 verified
    compound representative TRAIN documents without likelihood filtering.5438are
-   eligible. Finish the separate CPU preparer/native inventory; do not claim an
+   eligible; all5120documents and20480CPU packs are independently verified.
+   Preserve the separate manifest; do not claim an
    original filter pass, duplicate verbalizations or quietly shrink its quota.
 2. The first actual hardware batch is CLOSED: W0/C1/T2 updates, overall FAIL.
    T passes full optimizer checks; W/C exhaust24GiB banks with FP32 model/grad
    storage plus compiler spill buffers. Preserve failures and verified archive.
    Qualify a NEW BF16-parameter/gradient, FP32-master/moment path, preserving FP32
-   RoPE buffers. Prefer world32/accum1; no model/grad storage equivalence claim.
+   RoPE buffers. New v2 source review and CPU BF16 references pass; finish full
+   CPU sweep/runtime review, then sequential world32/accum1 W/C′/T, three real
+   updates each. No model/grad storage equivalence or exact-resume claim.
 3. `postorder-held256-B0-v1` is CLOSED/archived: all256notes/3072cells, negative
    own−raw in both I3 and fixedI6, own−other intervals cross0. Independent36CI
    readback matches exactly. No useful generated-content result before training.
 4. Before science, replace the weak source-only main control with C′ = raw
    natural16mean+.5sourcemean, matching W's anchor emphasis. A separate CPU helper
-   implements the exact objective in one ordinary source pass; it is not used by
-   old jobs. Integrate/review/qualify in the new driver after old source preservation.
+   implements the exact objective in one ordinary source pass and is integrated
+   in the reviewed v2 driver. Actual hardware qualification remains required.
    Keep T=all-token interleaved augmentedCE, not an exact publishedTPT reproduction.
 5. With>=5000declared examples and hardware qualification, freeze the W/C′/T
    comparison from freshB0, same occurrences/order/updates, twoepochs/global32,
@@ -27,10 +30,11 @@
    unequal supervision and measured compute. No scientific training is released yet.
 6. Evaluate every terminal arm on the sealedDEV256 with B0 and self readers,
    raw/empty/freshown/intactother/oracles; natural16primary, scalar/numeric diagnostics,
-   fixedI6w=.375 additional control. GSM8KTRAIN512 wrapper/review/CPUwidths are ready;
-   prepare the exact final identity/source-bound B0 batch, then run all3modes on4cores
-   while qualifying training. All1536paths must finish before gold; unsupported stays
+   fixedI6w=.375 additional control. GSM8KTRAIN512 B0 is running all3modes on4cores
+   with fixed deadline13:30UTC while qualifying training. All1536paths finish before gold; unsupported stays
    in denominator. Run every later terminal arm regardless of local sign.
+   A separate fixed first-line truncation probe on cached B0 notes is being
+   prepared on reused DEV; it cannot change the main cap128 policy or training data.
 7. No RL until fresh own beats raw and other with oracle headroom. Then fullspan
    reward/G16/cap256/Wreference stabilization. Require measured<=90s completeRLsteps
    before longRL. The old empty profiler supplies no warmed or BF16 throughput pass.

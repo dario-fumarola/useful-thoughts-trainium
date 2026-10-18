@@ -1,6 +1,7 @@
-"""Finite W/C/T supervised diagnostic; fresh B0 and one ZeRO reducer.
+"""Finite W/Cprime/T supervised diagnostic; fresh B0 and one ZeRO reducer.
 
-W=writer mean+reader natural16 mean+0.5 source mean; C=source mean.
+W=writer mean+reader natural16 mean+0.5 source mean.
+Cprime=raw natural16 mean+0.5 source mean, in one ordinary source pass.
 T=ordinary all-token CE on note-augmented source, NOT an exact TPT recipe.
 No resume interface is implemented or qualified by this driver.
 """
@@ -20,14 +21,15 @@ import time
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'useful-note-sft-v1'
+SCHEMA = 'useful-note-sft-v2'
 WEIGHTS = {'W': {'writer': 1., 'reader': 1., 'source': .5},
-           'C': {'source': 1.}, 'T': {'augmented': 1.}}
+           'Cprime': {'continuation': 1., 'source': .5}, 'T': {'augmented': 1.}}
 COMPONENTS = ('source', 'writer', 'reader', 'augmented')
+METRIC_COMPONENTS = COMPONENTS + ('continuation',)
 
 
 def planned_steps(p):
-    """Recipe exposure; --qualify caps the64-item recipe at2 actual updates."""
+    """Recipe exposure; --qualify caps the64-item recipe at3 actual updates."""
     if p.get('purpose') == 'qualification':
         if p['items'] != 64:
             raise ValueError('Qualification requires the declared first64-item subset')
@@ -47,20 +49,24 @@ def source_files():
     from train.filter_symbolic_notes import sources
     names = ('train/useful_note_sft_driver.py', 'train/useful_note_sft_data.py',
              'train/masked_causal_ce.py', 'train/neuron_driver.py',
-             'train/warmstart_driver.py', 'weekend_thinking/runtime_policy.py',
+             'train/warmstart_driver.py', 'train/useful_note_precision.py',
+             'train/useful_note_controls.py', 'train/prepare_reader_learning_data.py',
+             'weekend_thinking/runtime_policy.py',
              'weekend_thinking/checkpoints.py')
     return {**sources(), **{name: sha256_file(ROOT/name) for name in names}}
 
 
 def validate_protocol(p):
+    from train.useful_note_precision import contract
     from weekend_thinking.runtime_policy import POLICY_ENVIRONMENT
     fixed = dict(schema=SCHEMA, epochs=2,
         global_batch=32, lr=1e-5, warmup_steps=20, betas=[.9,.95], eps=1e-8,
-        weight_decay=.1, clip=1., loss_weights=WEIGHTS, parameter_dtype='fp32',
+        weight_decay=.1, clip=1., loss_weights=WEIGHTS, parameter_dtype='bf16',
+        gradient_dtype='bf16', precision_contract=contract(), compute_dtype='bf16',
         optimizer_dtype='fp32', schedule='linear_warmup_then_cosine',
         checkpoint_policy={'development_model_only': [64], 'full_state': 'terminal_or_STOP'})
     if any(isinstance(p.get(k), bool) or p.get(k) != v for k,v in fixed.items()):
-        raise ValueError('Freeze the two-epoch W/C/T recipe')
+        raise ValueError('Freeze the two-epoch W/Cprime/T BF16-storage recipe')
     if any(type(p[k]) is not int for k in ('seed','items','epochs','steps','global_batch','warmup_steps','world_size','accumulation')):
         raise ValueError('Integer recipe counts required')
     if not 0 <= p['seed'] < 2**63 or p['items'] < 1 or p['steps'] != planned_steps(p):
@@ -69,7 +75,9 @@ def validate_protocol(p):
         raise ValueError('Declare small nonresumable qualification slices or one full checkpoint')
     if (p['world_size'], p['accumulation']) not in ((8,4),(32,1)):
         raise ValueError('World8/accum4 or world32/accum1 must realize global32')
-    if p.get('compute_dtype') not in ('fp32','bf16') or p.get('interface') != 'I3':
+    if (p['world_size'],p['accumulation'])==(8,4) and p.get('topology_alternative')!='explicit_world8_BF16_accumulation':
+        raise ValueError('World32/accum1 primary; world8 needs an explicit alternate identity')
+    if p.get('interface') != 'I3':
         raise ValueError('Ordinary I3 reader-learning fallback and compute precision required; I6 is evaluation only')
     if set(p.get('packing',{})) != set(COMPONENTS):
         raise ValueError('All four component shapes must be frozen')
@@ -93,7 +101,7 @@ def learning_rate(step, p):
 
     Cosine denominator=steps-warmup+1. The last actual optimizer update remains
     positive; the hypothetical next rate is0. Qualification uses only the first
-    two warmup rates and need not complete the scientific schedule.
+    three warmup rates and need not complete the scientific schedule.
     """
     if type(step) is not int or not 1 <= step <= p['steps']+1:
         raise ValueError('LR requires an actual1-based planned update')
@@ -115,7 +123,7 @@ def validate_inventory(p,manifest,rows):
     """Unique item/cut identities; repeated TRAIN documents remain explicit."""
     ids=[r['item_id'] for r in rows];docs=[r['document_id'] for r in rows]
     cuts=[r.get('absolute_source_cut') for r in rows]
-    if (manifest.get('schema') != 'useful-note-positive-train-v2'
+    if (manifest.get('schema') != 'useful-note-supervised-train-v3'
             or manifest.get('status') != 'complete_CPU_inventory_NOT_Neuron_training_qualification'
             or len(rows) != p['items'] or len(set(ids)) != len(rows)
             or any(type(c) is not int or c < 0 for c in cuts)
@@ -124,6 +132,7 @@ def validate_inventory(p,manifest,rows):
             or manifest.get('items') != p['items'] or manifest.get('unique_documents') != len(set(docs))
             or manifest.get('purpose') != p['purpose'] or manifest.get('split') != 'train'
             or manifest.get('training_sha256') != p['data_sha256']
+            or manifest.get('selection_uses_likelihood') is not False
             or manifest.get('ordered_item_ids_sha256') != canonical_hash(ids)
             or manifest.get('ordered_document_ids_sha256') != canonical_hash(docs)
             or any(manifest.get(k) != p[k] for k in ('packing','interface','parts'))):
@@ -140,6 +149,18 @@ def load_inputs(p):
     manifest = json.loads(Path(p['dataset_file']).read_text())
     rows = [json.loads(s) for s in Path(p['data_file']).read_text().splitlines() if s.strip()]
     validate_inventory(p,manifest,rows)
+    if p['purpose']=='qualification':
+        parent=Path(manifest['parent_science_manifest'])
+        if (sha256_file(parent)!=manifest['parent_science_manifest_sha256']
+                or manifest['preparation_source_sha256']!=p['source_files']['train/useful_note_sft_driver.py']):
+            raise ValueError('Qualification subset preparation/parent changed')
+        science=json.loads(parent.read_text());data=Path(science['training_file'])
+        if (science['purpose']!='science' or science['schema']!='useful-note-supervised-train-v3'
+                or science['items']<5000 or sha256_file(data)!=manifest['parent_science_training_sha256']):
+            raise ValueError('Qualification requires the fixed new science parent')
+        with data.open('rb') as f: first=b''.join(next(f) for _ in range(64))
+        if Path(p['data_file']).read_bytes()!=first:
+            raise ValueError('Qualification must preserve the exact first64 science rows')
     for name,digest in {**manifest['filter_input_hashes'], **manifest['source_files']}.items():
         path = Path(name) if Path(name).is_absolute() else ROOT/name
         if sha256_file(path) != digest or (name in manifest['source_files'] and p['source_files'].get(name) != digest):
@@ -155,17 +176,104 @@ def load_inputs(p):
     return rows,tok,assets,manifest
 
 
+def prepare_qualification_inventory(science_dir,output,model_dir,deadline):
+    """First64 of the immutable science inventory; preserve its global shapes.
+
+    CPU packing only, no likelihood selection or model load. This subset does
+    not satisfy the >=5000 science quota and is never a scientific training arm.
+    """
+    from transformers import AutoTokenizer
+    from train.useful_note_sft_data import pack_example
+    science_dir=Path(science_dir);output=Path(output)
+    def check():
+        if datetime.now(timezone.utc)>=require_utc_deadline(deadline):raise TimeoutError('Qualification inventory deadline')
+    check();path=science_dir/'manifest.json';m=json.loads(path.read_text())
+    data=Path(m['training_file'])
+    if (output.exists() or m['schema']!='useful-note-supervised-train-v3' or m['purpose']!='science'
+            or m['status']!='complete_CPU_inventory_NOT_Neuron_training_qualification'
+            or m['items']<5000 or m['selection_uses_likelihood'] is not False
+            or sha256_file(data)!=m['training_sha256']):
+        raise ValueError('Fresh qualification output and complete new science inventory required')
+    lines=data.read_bytes().splitlines(keepends=True)
+    rows=[json.loads(line) for line in lines]
+    if (len(rows)!=m['items'] or canonical_hash([r['item_id'] for r in rows])!=m['ordered_item_ids_sha256']
+            or canonical_hash([r['document_id'] for r in rows])!=m['ordered_document_ids_sha256']):
+        raise ValueError('Parent science inventory/order changed')
+    for name,digest in {**m['input_hashes'],**m['source_files']}.items():
+        if sha256_file(Path(name) if Path(name).is_absolute() else ROOT/name)!=digest:
+            raise ValueError('Parent science provenance changed')
+    selected=rows[:64];tok=AutoTokenizer.from_pretrained(model_dir,local_files_only=True,trust_remote_code=False)
+    if canonical_hash(tok.get_vocab())!=m['tokenizer_vocab_sha256']:raise ValueError('Native vocabulary changed')
+    counts={c:dict(examples=0,active_labels=0,note_close_labels=0,non_note_labels=0) for c in COMPONENTS}
+    for row in selected:
+        check()
+        for c in COMPONENTS:
+            batch=pack_example(row,tok,c,interface=m['interface'],parts=m['parts'],**m['packing'][c]);packed_counts(batch,c)
+            n=int(batch['note_close_mask'].sum());f=int(batch['future_mask'].sum())
+            for key,value in dict(examples=1,active_labels=n+f,note_close_labels=n,non_note_labels=f).items():counts[c][key]+=value
+    check();output.mkdir(parents=True);target=output/'training.jsonl';target.write_bytes(b''.join(lines[:64]))
+    keys=('interface','parts','packing','tokenizer_vocab_sha256','writer_stop_ids','mask_semantics','reader_target',
+          'input_hashes','filter_input_hashes','source_files','selection_uses_likelihood')
+    manifest={k:m[k] for k in keys}
+    manifest.update(schema='useful-note-supervised-train-v3',status=m['status'],purpose='qualification',split='train',
+        items=64,unique_documents=len({r['document_id'] for r in selected}),component_counts=counts,
+        training_file=str(target.resolve()),training_sha256=sha256_file(target),created_utc=utc_now(),
+        ordered_item_ids_sha256=canonical_hash([r['item_id'] for r in selected]),
+        ordered_document_ids_sha256=canonical_hash([r['document_id'] for r in selected]),
+        selection='First64 unchanged science rows; no outcome selection, three actual global32 updates, NOT science quota.',
+        parent_science_manifest=str(path.resolve()),parent_science_manifest_sha256=sha256_file(path),
+        parent_science_training_sha256=m['training_sha256'],preparation_source_sha256=sha256_file(__file__))
+    atomic_json(output/'manifest.json',manifest)
+    return manifest
+
+
 def load_native_reference(p,assets):
-    from train.interface_oracle_probe import load, reference
-    output = Path(p['native_reference_output'])
-    for name,key in (('protocol.json','native_protocol_sha256'),
-                     ('cpu-reference/reference.json','native_reference_sha256'),
-                     ('cpu-reference/next-logps.pt','native_logps_sha256')):
-        if sha256_file(output/name) != p[key]: raise ValueError('Native reference changed')
-    old,inputs = load(output); report,values = reference(output,old,inputs)
-    if old['assets'] != assets or report['signature'] != p['base_signature']:
-        raise ValueError('Native reference belongs to different B0 weights')
-    return inputs['qualification_refs'],values
+    import torch
+    from train.useful_note_precision import SCHEMA as NATIVE_SCHEMA,contract,sources
+    output=Path(p['native_reference_output'])
+    for name,key in (('reference.json','native_reference_sha256'),('next-logps.pt','native_logps_sha256')):
+        if sha256_file(output/name)!=p[key]:raise ValueError('New BF16 native reference changed')
+    report=json.loads((output/'reference.json').read_text())
+    if (report.get('schema')!=NATIVE_SCHEMA or report.get('precision')!=contract()
+            or report.get('status')!='complete_CPU_BF16_parameter_FP32_RoPE_reference'
+            or report['assets']!=assets or report['base_signature']!=p['base_signature']
+            or report['source_files']!=sources() or report['width']!=1024):
+        raise ValueError('Require the new BF16-storage reference, not old FP32 parity')
+    if sha256_file(report['contexts_file'])!=report['contexts_sha256']:
+        raise ValueError('Native causal contexts changed')
+    values=torch.load(output/'next-logps.pt',map_location='cpu',weights_only=True)
+    if values.dtype!=torch.float32 or values.shape!=(4,151936) or not torch.isfinite(values).all():
+        raise ValueError('Four finite full released-head CPU reference vectors required')
+    return report['qualification_refs'],values
+
+
+def publish_native_gate(output,rank,reference_index,actual,reference,hidden_dtype,head_dtype,p,protocol_hash):
+    """Persist the actual vector and honest finite/KL result before any raise.
+
+    Called before ZeRO construction. An optimizer initialization failure must
+    not erase a completed forward diagnostic; NaN/Inf stay in the tensor file,
+    while the JSON contains finite counts/status rather than invalid numbers.
+    """
+    import torch
+    from train.neuron_driver import stream_save
+    from train.useful_note_precision import compare_distributions
+    actual=actual.detach().cpu();path=output/f'forward-rank-{rank:05d}.pt'
+    stream_save(path,actual)
+    report=dict(rank=rank,reference_index=reference_index,created_utc=utc_now(),
+        protocol_sha256=protocol_hash,precision_contract=p['precision_contract'],
+        parameter_dtype='bf16',actual_hidden_dtype=hidden_dtype,actual_head_dtype=head_dtype,
+        forward_sha256=sha256_file(path),actual_nonfinite_values=int((~torch.isfinite(actual)).sum()),
+        native_check=None,status='FAILED_NATIVE_GATE')
+    try:
+        report['native_check']=compare_distributions(reference,actual)[0]
+        if (report['native_check']['passed'] and hidden_dtype==head_dtype=='torch.bfloat16'):
+            report['status']='PASS'
+        else:report['failure']='Bidirectional KL or actual BF16 dtype does not meet the declared native contract'
+    except (ValueError,RuntimeError) as error:
+        report['failure']=str(error)
+    atomic_json(output/f'qualification-rank-{rank:05d}.json',report)
+    if report['status']!='PASS':raise RuntimeError(f'New BF16 native gate failed; actual evidence saved in {output}')
+    return report
 
 
 def packed_counts(batch,component):
@@ -264,7 +372,18 @@ def backward_components(row,tok,arm,backend,p,sync):
     """Accumulate means; never zero, clip or reduce gradients in this helper."""
     from train.useful_note_sft_data import pack_example
     from train.masked_causal_ce import masked_causal_ce
-    if arm not in WEIGHTS: raise ValueError('Unknown W/C/T arm')
+    if arm not in WEIGHTS: raise ValueError('Unknown W/Cprime/T arm')
+    if arm=='Cprime':
+        from train.useful_note_controls import plain_control_ce
+        started=time.monotonic()
+        batch=pack_example(row,tok,'source',interface=p['interface'],parts=p['parts'],**p['packing']['source'])
+        counts=packed_counts(batch,'source')
+        ce=plain_control_ce(backend,**batch,source_cut=len(row['prefix_ids']))
+        values=[float(t.detach().cpu()) for t in (ce.loss,ce.source_loss,ce.continuation_loss)]
+        if not all(math.isfinite(v) for v in values):raise RuntimeError('Nonfinite plain control CE')
+        (ce.loss/p['accumulation']).backward();sync()
+        return dict(source=dict(loss=values[1],**counts,rank_seconds=time.monotonic()-started),
+            continuation=dict(loss=values[2],labels=16,real_input_tokens=0,trunk_slots=0,head_slots=0,rank_seconds=0.))
     result = {}
     for component,weight in WEIGHTS[arm].items():
         started = time.monotonic()
@@ -315,6 +434,7 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
     from train.warmstart_driver import stop_due
     from weekend_thinking.pretrained import load_base,sampled_fingerprint
     from weekend_thinking.runtime_policy import require_runtime_policy,runtime_policy
+    from train.useful_note_precision import cast_parameters,released_bf16_header,shard_expectations,master_samples,active_shard_samples,compare_distributions
 
     configure_runtime()
     if not hasattr(torch,'xla'): torch._register_device_module('xla',torch_xla)
@@ -324,25 +444,32 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
     dist.init_process_group('xla',init_method='xla://')
     if any(os.environ.get(k)!=v for k,v in p['allocator_environment'].items()):raise ValueError('Actual allocator differs')
     random.seed(p['seed']+rank);np.random.seed((p['seed']+rank)%2**32);torch.manual_seed(p['seed'])
+    header=released_bf16_header(p['model_dir'])
     model,_=load_base(p['model_dir']);signature=sampled_fingerprint(model)
     if signature != p['base_signature']: raise ValueError('CPU initialization differs from B0')
+    conversion=cast_parameters(model);expected_masters=shard_expectations(model,rank,world)
+    if sampled_fingerprint(model)!=signature:raise ValueError('Initial BF16 values differ from released weights')
     model.to(device);model.tie_weights()
-    if (any(t.dtype != torch.float32 for t in model.parameters())
+    if (any(t.dtype != torch.bfloat16 for t in model.parameters())
+            or any(t.is_floating_point() and t.dtype!=torch.float32 for t in model.buffers())
             or model.get_input_embeddings().weight is not model.get_output_embeddings().weight
             or sampled_fingerprint(model) != signature):
-        raise ValueError('Actual tied FP32 parameters required before mixed compute')
+        raise ValueError('Actual tied BF16 parameters and original FP32 buffers required')
+    for name,value in model.named_buffers():
+        if canonical_hash(value.detach().cpu().reshape(-1).tolist())!=conversion['buffers'][name]['sha256']:
+            raise ValueError('Original rotary buffer values changed on transfer')
     sync=lambda:torch_xla.sync(wait=True)
     backend=NeuronCausalBackend(model,sync=sync)
+    if rank==0:args.output.mkdir(parents=True,exist_ok=False)
+    xm.rendezvous('native-output-root-ready');sync()
     ref_index=rank%len(refs);ref=refs[ref_index]
     with torch.no_grad():
         ids=torch.full((1,1024),151643,dtype=torch.long);ids[0,:len(ref['context_ids'])]=torch.tensor(ref['context_ids'])
-        h=backend.hidden(ids.to(device));lp=model.lm_head(h[:,len(ref['context_ids'])-1]).float().log_softmax(-1)
-        sync();actual=lp.cpu();error=float((actual-native[ref_index:ref_index+1]).abs().max())
-        if h.dtype != torch.float32 or not torch.isfinite(actual).all() or not math.isfinite(error) or error > .002:
-            raise RuntimeError('Initial FP32 full-head native gate failed')
-        del h,lp,ids
-    amp = nullcontext if p['compute_dtype']=='fp32' else lambda:torch_xla.amp.autocast(device,dtype=torch.bfloat16)
-    backend.amp=amp;backend.head_amp=amp
+        h=backend.hidden(ids.to(device));logits=model.lm_head(h[:,len(ref['context_ids'])-1]);lp=logits.float().log_softmax(-1)
+        sync();actual=lp.cpu()
+        publish_native_gate(args.output,rank,ref_index,actual,native[ref_index:ref_index+1],
+                            str(h.dtype),str(logits.dtype),p,protocol_hash)
+        del h,logits,lp,ids
     dtypes={}
     def record(name):
         def hook(_module,inputs,output):
@@ -354,11 +481,14 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
            model.lm_head.register_forward_hook(record('head_before_float'))]
     optimizer=ZeroRedundancyOptimizer(model.parameters(),AdamW,optimizer_dtype=torch.float32,
         grad_clipping=True,max_norm=p['clip'],save_master_weights=True,lr=p['lr'],
-        betas=tuple(p['betas']),eps=p['eps'],weight_decay=p['weight_decay'])
+        betas=tuple(p['betas']),eps=p['eps'],weight_decay=p['weight_decay'],
+        use_grad_acc_hook=False,higher_cc_precision=False)
+    initial_masters=master_samples(optimizer,expected_masters)
+    if not torch.equal(initial_masters.contiguous().view(torch.uint8),expected_masters['values'].contiguous().view(torch.uint8)):
+        raise RuntimeError('Standard FP32 masters differ from exact released CPU shard samples')
     found_inf=torch.zeros((),device=device);spec_hash=canonical_hash(p)
-    order_hash=canonical_hash([rows[i]['item_id'] for i in order]);steps=2 if args.qualify else p['steps']
+    order_hash=canonical_hash([rows[i]['item_id'] for i in order]);steps=3 if args.qualify else p['steps']
     if rank==0:
-        args.output.mkdir(parents=True,exist_ok=False)
         atomic_json(args.output/'run.json',dict(schema=SCHEMA,run_id=args.output.name,started_utc=utc_now(),
             arm=args.arm,protocol_sha256=protocol_hash,spec_hash=spec_hash,order_hash=order_hash,
             world_size=world,accumulation=p['accumulation'],planned_steps=steps,scientific_steps=p['steps'],
@@ -366,48 +496,59 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
             tail_policy=p.get('tail_policy'),deadline_utc=args.deadline_utc,
             qualification=bool(args.qualify),assets=assets,base_signature=signature,runtime_policy=runtime_policy(),
             allocator_environment=p['allocator_environment'],component_weights=WEIGHTS[args.arm],packing=p['packing'],
+            precision_contract=p['precision_contract'],released_weight_header=header,parameter_conversion=conversion,
+            zero_use_grad_acc_hook=False,zero_higher_cc_precision=False,
             one_epoch_component_counts=inventory['component_counts'],
             limitations=['No resume implementation or exact-resume claim.','Same documents/updates do not match labels, gradient dose, tokens or FLOPs.',
-                        'Initial FP32 gate does not qualify BF16 arithmetic.','T is ordinary augmented CE, not exact TPT.']))
+                        'BF16 native KL gate is a forward-distribution check, not tail CE/gradient equivalence.','T is ordinary augmented CE, not exact TPT.']))
     xm.rendezvous('useful-note-output-ready');sync()
-    torch.save(actual,args.output/f'forward-rank-{rank:05d}.pt')
-    atomic_json(args.output/f'qualification-rank-{rank:05d}.json',dict(rank=rank,reference_index=ref_index,
-        fp32_initial_max_full_head_error=error,atol=.002,compute_dtype=p['compute_dtype'],
-        parameter_dtype='fp32',base_signature=signature,protocol_sha256=protocol_hash))
+    torch.save(dict(expected_cpu=expected_masters['values'],actual_fp32_masters=initial_masters),
+               args.output/f'initial-master-rank-{rank:05d}.pt')
+    atomic_json(args.output/f'initial-master-rank-{rank:05d}.json',dict(rank=rank,compute_dtype=p['compute_dtype'],
+        parameter_dtype='bf16',initial_master_samples_exact=True,master_inventory=expected_masters['entries'],
+        base_signature=signature,protocol_sha256=protocol_hash))
     del actual
     deadline=require_utc_deadline(args.deadline_utc)
     def stopped():
         value=torch.tensor(float(stop_due(args.stop_file,deadline)),device=device)
         return bool(xm.all_reduce(xm.REDUCE_MAX,value).cpu())
     def sample():return torch.cat([t.detach().reshape(-1)[:32] for t in model.parameters()]).cpu()
-    counters=dict(source_records=0,source_tokens=0,sampled_actions=0,labels={c:0 for c in COMPONENTS})
+    counters=dict(source_records=0,source_tokens=0,sampled_actions=0,labels={c:0 for c in METRIC_COMPONENTS})
     actual_steps=0;save_walls=[]
     if not stopped():
         for step in range(steps):
-            start=time.monotonic();optimizer.zero_grad(set_to_none=True);before=sample();lr=learning_rate(step+1,p)
+            start=time.monotonic();optimizer.zero_grad(set_to_none=True);before=sample()
+            master_before=master_samples(optimizer,expected_masters);lr=learning_rate(step+1,p)
             for group in optimizer.param_groups:group['lr']=lr
-            local={c:dict(loss=0.,labels=0,real_input_tokens=0,trunk_slots=0,head_slots=0,rank_seconds=0.) for c in COMPONENTS}
+            local={c:dict(loss=0.,labels=0,real_input_tokens=0,trunk_slots=0,head_slots=0,rank_seconds=0.) for c in METRIC_COMPONENTS}
             for index in batch_indices(step,rank,p,order=order):
                 for c,v in backward_components(rows[index],tok,args.arm,backend,p,sync).items():
                     for k,z in v.items():local[c][k]+=z
+            if any(t.grad is not None and t.grad.dtype!=torch.bfloat16 for t in model.parameters()):
+                raise RuntimeError('Actual parameter-gradient storage must remain BF16')
             finite=torch.stack([torch.isfinite(t.grad).all() for t in model.parameters() if t.grad is not None]).all()
             if bool(xm.all_reduce(xm.REDUCE_MAX,(~finite).float()).cpu()):raise RuntimeError('Nonfinite accumulated gradient')
             opt_start=time.monotonic();optimizer.step(found_inf=found_inf);sync();opt_seconds=time.monotonic()-opt_start
-            norm=float(optimizer.grad_norm.cpu());after=sample();delta=after-before
+            norm=float(optimizer.grad_norm.cpu());after=sample();delta=after.float()-before.float()
+            master_after=master_samples(optimizer,expected_masters);master_delta=master_after-master_before
+            active=active_shard_samples(model,expected_masters)
+            if not torch.equal(active.contiguous().view(torch.uint8),master_after.bfloat16().contiguous().view(torch.uint8)):
+                raise RuntimeError('Active BF16 model samples differ from preserved FP32 master cast')
             replicas=xm.all_gather(after.to(device)).reshape(world,-1).cpu().contiguous()
             equal=replicas_bitwise_equal(replicas)
             if not math.isfinite(norm) or norm<=0 or not torch.isfinite(after).all() or not equal:
                 raise RuntimeError('Nonfinite norm/weights or sampled replica disagreement')
-            if step<2 and not delta.ne(0).any():raise RuntimeError('First real updates leave sampled parameters unchanged')
+            if not torch.isfinite(master_after).all() or not master_delta.ne(0).any():
+                raise RuntimeError('Real FP32 master samples must change; BF16 visible rounding may be unchanged')
             expected_dtype='torch.'+('bfloat16' if p['compute_dtype']=='bf16' else 'float32')
             if any(dtypes.get(name,{}).get('output')!=expected_dtype for name in ('first_q_proj','head_before_float')):
                 raise RuntimeError('Actual matmul/head dtype before float differs from declared compute')
-            if step==1:
-                initialized,_=inspect_optimizer(optimizer,2,len(list(model.parameters())))
-                atomic_json(args.output/f'optimizer-after2-rank-{rank:05d}.json',initialized)
+            if step in (1,2):
+                initialized,_=inspect_optimizer(optimizer,step+1,len(list(model.parameters())))
+                atomic_json(args.output/f'optimizer-after{step+1}-rank-{rank:05d}.json',initialized)
             keys=('loss','labels','real_input_tokens','trunk_slots','head_slots','rank_seconds')
-            totals=xm.all_reduce(xm.REDUCE_SUM,torch.tensor([local[c][k] for c in COMPONENTS for k in keys],device=device)).cpu().tolist()
-            values={c:dict(zip(keys,totals[i*len(keys):(i+1)*len(keys)])) for i,c in enumerate(COMPONENTS)}
+            totals=xm.all_reduce(xm.REDUCE_SUM,torch.tensor([local[c][k] for c in METRIC_COMPONENTS for k in keys],device=device)).cpu().tolist()
+            values={c:dict(zip(keys,totals[i*len(keys):(i+1)*len(keys)])) for i,c in enumerate(METRIC_COMPONENTS)}
             for c,v in values.items():
                 v['loss']/=p['global_batch']
                 for k in keys[1:-1]:v[k]=int(v[k])
@@ -418,6 +559,10 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
             metric=dict(step=actual_steps,time_utc=utc_now(),elapsed_seconds=time.monotonic()-start,lr=lr,
                 components=values,gradient_norm=norm,sampled_update_l2=float(delta.norm()),
                 sampled_changed_fraction=float(delta.ne(0).float().mean()),sampled_replicas_bitwise_equal=equal,
+                sampled_fp32_master_update_l2=float(master_delta.norm()),
+                sampled_fp32_master_changed_fraction=float(master_delta.ne(0).float().mean()),
+                sampled_active_model_matches_cast_master=True,
+                parameter_dtype='bf16',gradient_dtype='bf16',master_moment_dtype='fp32',
                 optimizer_rank_seconds=opt_rank_seconds,
                 compute_dtypes_before_float=dtypes,counters=json.loads(json.dumps(counters)),
                 dense_checkpointed_matmul_proxy_operations=dense_matmul_proxy(values,signature['parameters'],model.config.hidden_size,model.config.vocab_size),
@@ -430,7 +575,8 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
             stop=stopped();state=dict(spec_hash=spec_hash,order_hash=order_hash,arm=args.arm,seed=p['seed'],
                 global_batch=p['global_batch'],accumulation=p['accumulation'],protocol_sha256=protocol_hash,
                 data_sha256=p['data_sha256'],dataset_sha256=p['dataset_sha256'],counters=counters,
-                parameter_dtype='fp32',compute_dtype=p['compute_dtype'],runtime_policy=runtime_policy(),
+                parameter_dtype='bf16',gradient_dtype='bf16',optimizer_dtype='fp32',
+                precision_contract=p['precision_contract'],compute_dtype=p['compute_dtype'],runtime_policy=runtime_policy(),
                 allocator_environment=p['allocator_environment'],qualification=bool(args.qualify),resume_implemented=False,
                 purpose=p['purpose'],items=p['items'],unique_documents=inventory['unique_documents'])
             if actual_steps==64 or actual_steps==steps or stop:

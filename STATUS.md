@@ -1,4 +1,42 @@
-# Status — 2026-10-18 07:09 UTC
+# Status — 2026-10-18 07:24 UTC
+
+## CPU prepared: BF16-storage qualification
+Question: can BF16 model/gradient storage fit W/C′/T while preserving FP32 masters?
+ID:postorder-note-bf16-storage-world32-qualification-v2; sequential three-update arms.
+New first64 unchanged science rows preserve global packing; never a science-quota pass.
+World32/accum1, cores0–31/devices0–7; hardware launch still awaits final runtime review.
+Source review accepted; all62focused tests pass; required full CPU sweep running.
+CPU canonical reference passes: released initial values/ties, BF16 weights, FP32 rotary buffers.
+Gate: every full-head reference finite, both normalized FP64 KL directions<=.01nat.
+Actual FP32 master updates/BF16 cast equality/replicas and complete moments after2/3 required.
+Native vectors and failed gate receipts persist before optimizer construction.
+Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v2.
+CPU-only preparation exit0; hardware fit and three actual updates remain unqualified.
+No resume implementation or steady-throughput claim; scientific training remains unreleased.
+
+## Active: B0 GSM8K TRAIN512 baseline
+Question: does one generated note improve answers relative to direct and matched empty?
+ID:postorder-gsm8k-train512-B0-v1; all512TRAIN questions, all three modes in one batch.
+Four workers logical44/48/52/56, physical11–14; launched07:15UTC, deadline13:30UTC.
+All four native gates pass; answer prefill/decode compiled, saved paths progressing.
+No gold or accuracy inspection before all1536attempts complete; unsupported remains in512.
+Greedy native note cap128actions and answer512; full-question reanchor, no instruction header.
+First128questions reuse a known development panel; this is not blind final performance.
+Controls:local/diagnostics/postorder-gsm8k-train512-B0-v1; NVMe output same basename.
+Exact source/runtime pins, PID/start identities and first-live mappings retained.
+Reviewer supervises completion, physical closure, one summary and verified EBS archive.
+
+## CPU preparation: fixed first-line note ablation
+Question: does target-independent truncation remove damage from sprawling B0 notes?
+ID:postorder-firstline-note-held256-v1; reused exploratory DEV, no new writer generation.
+Keep exact cached token prefix through first completed content line, at most64tokens.
+Policy sees only original note IDs/tokenizer; no number search, future or retokenization.
+Batch raw/empty/full-own/full-other/short-own/short-other in I3 and fixedI6w=.375.
+Original global intact-note donor permutation retained; all256documents and3072cells.
+Pass only if short-own beats raw AND short-other with both paired lower95% bounds>0.
+Original128-action generation costs retained; fewer kept tokens are not latency savings.
+Controls:local/diagnostics/postorder-firstline-note-held256-v1; no model allocated yet.
+Source/tests and closed-bundle provenance bridge under root review; CPU prepare authorized.
 
 ## Closed: batched reader interface qualification
 Question: can unchanged B0 use a supplied full-target-copy note?
@@ -79,7 +117,7 @@ Tpasses actual updates/replica equality/all8FP32master+moment finite scans/Adams
 Cold compile times are not warmed throughput; two updates do not qualify exact resumption.
 All original identities/groups/sessions and devices0–5 physically closed, no retries.
 Controls:local/diagnostics/postorder-note-bf16-qualification-v1; individual NVMe W/C/T outputs.
-Oldsource snapshot retained; distributed finishes one complete verified EBS batch archive.
+Oldsource snapshot and complete verified EBS batch archive retained.
 Decision: qualify BF16 parameter storage with FP32 masters under a new precision identity.
 
 ## Closed CPU preparation: compound reader-learning data
@@ -131,9 +169,9 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
 Root: science/data/precision decisions, training release, current public findings.
-Data: settled GSM512batched wrapper; CPU widths/review complete, no models launched.
-Distributed: failed-qualification archive, then separately reviewed BF16-storage driver repair.
-Review: precision/master/RoPE API evidence and new source acceptance; oldbaseline archived.
+Data: fixed first-line ablation implementation/CPU preparation; no model launch yet.
+Distributed: new BF16-storage CPU references, then root-reviewed sequential qualification.
+Review: active GSM512 supervision and precision/master/RoPE source acceptance.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.

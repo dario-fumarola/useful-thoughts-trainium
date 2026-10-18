@@ -892,3 +892,23 @@ Saved model compute copies widen for FP32 evaluation; FP32 masters remain necess
 for recovery and must not be silently substituted as a different evaluation model.
 New CPU BF16-parameter reference and native distribution checks are prospective;
 the old FP32<=.002 gate is not BF16 arithmetic equivalence. No scientific run released.
+
+### 2026-10-18 — New storage-precision qualification and fixed note-prefix ablation
+Freeze a new BF16-parameter/FP32-rotary CPU reference before hardware. Gate both
+directions of independently FP64-normalized KL<=.01nat for each full-head native
+context; log tail errors without claiming rare-target or gradient equivalence.
+Three qualification updates cover initialized Adam state and the next non-aliased
+warmup LR. Initial master samples, actual master deltas, rounded active copies,
+replica agreement and full moments after updates2/3 must pass. No resumption or
+steady throughput follows from these tests. The real5120-example science quota
+and held/control endpoints remain unchanged.
+
+The first six fixed-order saved B0 notes sometimes compute the right number then
+continue into unrelated article text. Declare a separate exploratory ablation on
+the same256DEV documents: keep the exact native token prefix through the first
+completed nonblank content line, capped at64tokens. The policy receives only
+cached note IDs and tokenizer, never source, answer or correctness. Preserve
+whole boundary tokens, intact cyclic donors, full/raw/empty controls and original
+generation costs. Require positive paired lower95% bounds against BOTH raw and
+short unrelated notes. This outcome-informed probe cannot silently change the
+primary128-action writer policy, training data or an old result.

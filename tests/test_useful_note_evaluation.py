@@ -152,14 +152,15 @@ def test_metric_matrix_requires_exact_complete_keys(tmp_path,defect):
 
 def checkpoint_fixture(tmp_path,monkeypatch,*,items=5120,steps=320):
     from train import useful_note_sft_driver as driver
+    from train.useful_note_precision import contract
     from weekend_thinking.runtime_policy import runtime_policy
     run=tmp_path/'W-run';d=run/f'step-{steps:07d}';d.mkdir(parents=True)
     source_map={'train/useful_note_sft_driver.py':sha256_file(e.ROOT/'train/useful_note_sft_driver.py')}
     monkeypatch.setattr(driver,'source_files',lambda:source_map)
     policy=runtime_policy({});policy['environment'].update(PJRT_DEVICE='NEURON',XLA_COMPILATION_CACHE_SIZE='2')
-    p=dict(schema='useful-note-sft-v1',purpose='science',items=items,epochs=2,steps=steps,tail_policy='exact',world_size=8,accumulation=4,
+    p=dict(schema=driver.SCHEMA,purpose='science',items=items,epochs=2,steps=steps,tail_policy='exact',world_size=32,accumulation=1,
         global_batch=32,lr=1e-5,warmup_steps=20,betas=[.9,.95],eps=1e-8,weight_decay=.1,clip=1.,loss_weights=copy.deepcopy(driver.WEIGHTS),
-        parameter_dtype='fp32',optimizer_dtype='fp32',compute_dtype='bf16',schedule='linear_warmup_then_cosine',interface='I3',
+        parameter_dtype='bf16',gradient_dtype='bf16',precision_contract=contract(),optimizer_dtype='fp32',compute_dtype='bf16',schedule='linear_warmup_then_cosine',interface='I3',
         packing=dict(source=dict(width=544,target_slots=544),writer=dict(width=640,target_slots=128),reader=dict(width=704,target_slots=16),augmented=dict(width=704,target_slots=704)),
         checkpoint_policy={'development_model_only':[64],'full_state':'terminal_or_STOP'},runtime_policy=policy,
         allocator_environment={'NEURON_RT_CONTIGUOUS_SCRATCHPAD':'0'},source_files=source_map,seed=17)
@@ -167,18 +168,18 @@ def checkpoint_fixture(tmp_path,monkeypatch,*,items=5120,steps=320):
     spec=canonical_hash(p);ph=sha256_file(protocol);counts={'source_records':steps*32}
     (run/'run.json').write_text(json.dumps(dict(arm='W',qualification=False,purpose='science',spec_hash=spec,protocol_sha256=ph,scientific_steps=steps,order_hash='order')))
     (run/'completion.json').write_text(json.dumps(dict(status='complete',actual_steps=steps,planned_steps=steps,protocol_sha256=ph,counters=counts)))
-    for name in ['model.pt']+[f'rank-{i:05d}.pt' for i in range(8)]:(d/name).write_bytes(name.encode())
+    for name in ['model.pt']+[f'rank-{i:05d}.pt' for i in range(32)]:(d/name).write_bytes(name.encode())
     files={f.name:dict(bytes=f.stat().st_size,sha256=sha256_file(f)) for f in d.iterdir()}
     complete=d/'COMPLETE.json'
-    complete.write_text(json.dumps(dict(schema='neuron-v1',run_id=run.name,step=steps,spec_hash=spec,world_size=8,files=files,
-        metadata=dict(arm='W',qualification=False,parameter_dtype='fp32',order_hash='order',counters=counts))))
+    complete.write_text(json.dumps(dict(schema='neuron-v1',run_id=run.name,step=steps,spec_hash=spec,world_size=32,files=files,
+        metadata=dict(arm='W',qualification=False,parameter_dtype='bf16',order_hash='order',counters=counts))))
     return d/'model.pt',sha256_file(d/'model.pt'),sha256_file(complete),protocol
 
 
 def test_checkpoint_identity_hashes_all_master_shards_without_loading_tensors(tmp_path,monkeypatch):
     args=checkpoint_fixture(tmp_path,monkeypatch);identity=e.trained_identity(*args)
-    assert identity['id']=='W' and identity['step']==320 and len(identity['checkpoint_files'])==9
-    (args[0].parent/'rank-00007.pt').write_bytes(b'corrupt master')
+    assert identity['id']=='W' and identity['step']==320 and len(identity['checkpoint_files'])==33
+    (args[0].parent/'rank-00031.pt').write_bytes(b'corrupt master')
     with pytest.raises(ValueError,match='master/moment integrity'):e.trained_identity(*args)
 
 

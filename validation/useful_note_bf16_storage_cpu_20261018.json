@@ -1,0 +1,213 @@
+{
+  "CPU_inventory_and_reference": {
+    "all_originals_preserved": true,
+    "base_signature": {
+      "parameters": 1720574976,
+      "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+      "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+    },
+    "conversion": {
+      "buffers": {
+        "model.rotary_emb.inv_freq": {
+          "dtype": "torch.float32",
+          "sha256": "c730fe401f0596eeffdaea046f68da79d7f517fbfac6e4562450e889e27c7dda",
+          "shape": [
+            64
+          ]
+        },
+        "model.rotary_emb.original_inv_freq": {
+          "dtype": "torch.float32",
+          "sha256": "c730fe401f0596eeffdaea046f68da79d7f517fbfac6e4562450e889e27c7dda",
+          "shape": [
+            64
+          ]
+        }
+      },
+      "parameter_dtype": "torch.bfloat16",
+      "parameter_objects_preserved": true,
+      "parameters": 310
+    },
+    "cpu_exit": {
+      "exit_code": 0,
+      "time_utc": "2026-10-18T07:22:47+00:00"
+    },
+    "created_utc": "2026-10-18T07:23:54+00:00",
+    "items": 64,
+    "limitations": "CPU preparation only. Actual device KL/dtypes/fit/updates/master state remain unqualified.",
+    "native_dtypes": [
+      {
+        "head": "torch.bfloat16",
+        "hidden": "torch.bfloat16",
+        "logps": "torch.float32"
+      },
+      {
+        "head": "torch.bfloat16",
+        "hidden": "torch.bfloat16",
+        "logps": "torch.float32"
+      },
+      {
+        "head": "torch.bfloat16",
+        "hidden": "torch.bfloat16",
+        "logps": "torch.float32"
+      },
+      {
+        "head": "torch.bfloat16",
+        "hidden": "torch.bfloat16",
+        "logps": "torch.float32"
+      }
+    ],
+    "native_logps_sha256": "d6ff0c9a3b8a26bf3f17436926d11a3c33a1ec03eae78aa8acc444da1c2321f0",
+    "native_reference_sha256": "deef852e2cdfb4056a12f96df6aef12d950184f64681c42ca916cf2ec44a119f",
+    "no_accelerator_run": true,
+    "packing": {
+      "augmented": {
+        "target_slots": 704,
+        "width": 704
+      },
+      "reader": {
+        "target_slots": 16,
+        "width": 704
+      },
+      "source": {
+        "target_slots": 544,
+        "width": 544
+      },
+      "writer": {
+        "target_slots": 128,
+        "width": 640
+      }
+    },
+    "parent_science_manifest_sha256": "c6b671211c8941c0c00d4f78d4f52223c4c8d8cdfe71911da7e24d4a42391cf0",
+    "purpose": "qualification",
+    "qualification_manifest_sha256": "be959baec324eec2fdb0b7f376fde6466d75d44c64bb575a82e25e4fb7bfea0b",
+    "qualification_training_sha256": "b4dc5720027132a852eac07616a64008a1e8ad22fd3db271856402c1db26e2ca",
+    "reference_contract": {
+      "autocast": false,
+      "compute_dtype": "bf16",
+      "diagnostics_only": [
+        "max_logp_error",
+        "rms_logp_error",
+        "relative_l2_logp_error",
+        "argmax_equal"
+      ],
+      "floating_buffer_dtype": "fp32",
+      "gradient_dtype": "bf16",
+      "higher_cc_precision": false,
+      "log_softmax_dtype": "fp32",
+      "max_bidirectional_kl_nats": 0.01,
+      "normalization": "independent_FP64_logsumexp",
+      "optimizer_dtype": "fp32",
+      "parameter_dtype": "bf16",
+      "reduce_scatter_input_dtype": "bf16",
+      "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+      "schema": "useful-note-bf16-storage-native-v1",
+      "support": "full_released_head",
+      "use_grad_acc_hook": false
+    },
+    "reference_log_normalizers_FP64": [
+      4.891632668257984e-06,
+      1.529259387011983e-05,
+      2.013769096956622e-06,
+      1.7341252268376905e-05
+    ],
+    "reference_shape": [
+      4,
+      151936
+    ],
+    "released_header": {
+      "dtype": "BF16",
+      "headers": {
+        "model.safetensors": {
+          "header_bytes": 35648,
+          "tensors": 310
+        }
+      },
+      "parameters": 1720574976,
+      "tensors": 310
+    },
+    "source_files": {
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/useful_note_precision.py": "8bf1b4d2759b9e00c0ca8a1932f04c4341d4b59c335c6a2f0dd5ea0aa5a9e8a3",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+    },
+    "status": "PASS_CPU_INVENTORY_AND_NEW_NATIVE_REFERENCE_ONLY",
+    "unique_documents": 64
+  },
+  "created_utc": "2026-10-18T07:25:40+00:00",
+  "driver_schema": "useful-note-sft-v2",
+  "limitations": [
+    "CPU preparation and tests do not qualify hardware memory fit, real updates, resumption or warmed throughput.",
+    "Native KL is a full-distribution forward check; it does not establish rare-target CE or gradient fidelity.",
+    "Qualification64 rows do not satisfy the separate5120-example scientific quota."
+  ],
+  "precision_contract": {
+    "autocast": false,
+    "compute_dtype": "bf16",
+    "diagnostics_only": [
+      "max_logp_error",
+      "rms_logp_error",
+      "relative_l2_logp_error",
+      "argmax_equal"
+    ],
+    "floating_buffer_dtype": "fp32",
+    "gradient_dtype": "bf16",
+    "higher_cc_precision": false,
+    "log_softmax_dtype": "fp32",
+    "max_bidirectional_kl_nats": 0.01,
+    "normalization": "independent_FP64_logsumexp",
+    "optimizer_dtype": "fp32",
+    "parameter_dtype": "bf16",
+    "reduce_scatter_input_dtype": "bf16",
+    "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+    "schema": "useful-note-bf16-storage-native-v1",
+    "support": "full_released_head",
+    "use_grad_acc_hook": false
+  },
+  "question": "Can BF16 model and gradient storage support the controlled W/Cprime/T comparison while retaining standard FP32 optimizer masters?",
+  "required_checks": {
+    "command": "source scripts/env.sh && bash scripts/run_checks.sh",
+    "compileall": "passed",
+    "log": "local/checks/tests.5Co22G",
+    "seconds": 54.05,
+    "smoke": "passed",
+    "tests_passed": 1356
+  },
+  "review": {
+    "checks": [
+      "BF16 parameter-only CPU conversion retains tied Parameter identities and originalFP32 buffers; post-device buffer values are checked.",
+      "Released allBF16 headers and unchanged float-widened B0 fingerprint; standard installedZeRO creates initialFP32 masters, checked against exact CPUshard samples, no manual seeding.",
+      "Four NEW complete CPU-BF16 LP references/full released151936 head, independently FP64-normalized bidirectional per-referenceKL<=.01nat; tail maxima/RMS/relativeL2/argmax diagnostics only.",
+      "Native actual vectors/finite-KL-dtype status saved before raise and before ZeRO construction, including nonfinite tensor evidence with validJSON.",
+      "Cprime is exactly plain raw16mean+.5source527mean from one causal source pass: anchor16/complement511 coefficients reconstruct the original527 mean. Actual backward fixture compares tied dense objective gradients.",
+      "W sequential noteMean+reader16Mean+.5sourceMean; T all-token interleavedCE; one ZeRO average/clip/step, no duplicate reduction.",
+      "World32/acc1 primary, world8/acc4 requires explicit alternate precision/topology identity. Three actual qualification updates are separate from the64item two-epoch recipe.",
+      "New first64 qualification inventory preserves actual science parent bytes/global shapes and provenance; no likelihood selection or science quota substitution.",
+      "Actual BF16 gradients, FP32 master changes, activeBF16/master-cast consistency and sampled replica byte equality checked; fullFP32 masters/moments finite/step2+3 scans retained.",
+      "Model checkpoint exports preserve actualBF16 dtype/tie, FP32 masters/moments stay in optimizer shards; existing FP32 evaluator widens rounded model. No exact-resume implementation/claim."
+    ],
+    "file": "local/analysis/useful-note-sft-v2-source-review-20261018.json",
+    "repaired_finding": "Native failure/optimizer-init could lose completed native evidence. publish_native_gate now persists tensors and validJSON before gate raise/optimizer construction; four targeted new fixtures cover KL/NaN/dtype/pass.",
+    "sha256": "400474eaa4624d8b1d8bed5868efc8b5d059a12678add68e697fd739ac9af19a"
+  },
+  "root_independent_readback": {
+    "all_finite": true,
+    "all_four_CPU_hidden_and_head_BF16": true,
+    "dtype": "torch.float32",
+    "shape": [
+      4,
+      151936
+    ],
+    "sources_hashes_and_precision_exact": true
+  },
+  "schema": "useful-note-BF16-storage-CPU-qualification-20261018",
+  "sources": {
+    "tests/test_useful_note_controls.py": "3c9929deb06dd8539188283b7a9c04f44ace0a3c6dcd441164e27e6ba66d75fb",
+    "tests/test_useful_note_precision.py": "e46f36ac74ec15e15821ddd2729637e7d4b900215084f696b785f2425cc86666",
+    "tests/test_useful_note_sft_driver.py": "f89185fc00eadf48d99c5b2ddeb0c48c478554d522c897b01806f33a99f75bd8",
+    "train/useful_note_controls.py": "30d08eb4100662b97cbb38aec89b7f6cebf0cb78275f8595cf90d3e6ebcbec27",
+    "train/useful_note_precision.py": "8bf1b4d2759b9e00c0ca8a1932f04c4341d4b59c335c6a2f0dd5ea0aa5a9e8a3",
+    "train/useful_note_sft_driver.py": "3332a49e05501583b0c4b0ea5a87684160e2bd3274c7e0cacd4efb30ebe3092b"
+  },
+  "status": "CPU_ONLY_HARDWARE_UNQUALIFIED"
+}
