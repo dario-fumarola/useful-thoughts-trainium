@@ -1,0 +1,71 @@
+{
+  "schema": "partial-state-v7-paired-reader-CPU-readiness-v1",
+  "status": "CPU_DATA_ONLY_NO_LEARNING_RELEASE",
+  "source_commit": "f263b27363a09fccf63dd82f453bc4c17b0111b0",
+  "source_files": {
+    "train/partial_state_driver.py": "b4bb9756d89f5071521efd0ab2abcb2b8389f24f78915b4f212452a095344b09",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031"
+  },
+  "CPU_tests": 1601,
+  "TRAIN_sha256": "020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb",
+  "reader_view_schedule": "one_teacher_one_plain_per_two_passes",
+  "audits": [
+    {
+      "seed": 2026101806,
+      "all5120_have_exactly_one_teacher_and_one_plain": true,
+      "component_views": {
+        "reader_teacher": 5120,
+        "reader_empty": 2560,
+        "direct": 2560
+      },
+      "actual_CPU_packed_batches": 1280,
+      "actual_supervised_answer_tokens": 61684,
+      "ordering_file": "validation/partial_state_v7_paired_reader_20261018/seed-2026101806-all10240-reader-views.jsonl.gz",
+      "ordering_file_sha256": "c0029c7056a457a54cc6064faa805ba8adf81b6983df456c7575693854c66819"
+    },
+    {
+      "seed": 2026101807,
+      "all5120_have_exactly_one_teacher_and_one_plain": true,
+      "component_views": {
+        "reader_empty": 2560,
+        "direct": 2560,
+        "reader_teacher": 5120
+      },
+      "actual_CPU_packed_batches": 1280,
+      "actual_supervised_answer_tokens": 61684,
+      "ordering_file": "validation/partial_state_v7_paired_reader_20261018/seed-2026101807-all10240-reader-views.jsonl.gz",
+      "ordering_file_sha256": "3cd1b53f67f444498f1966863c469fb1a1b2769157b0014203eaa513d08c0433"
+    }
+  ],
+  "primary_proposal": {
+    "answer_only_updates": 640,
+    "compact_partial_CoT_updates": 640,
+    "reader_updates": 320,
+    "writer_updates": 320,
+    "total_updates_per_system": 640,
+    "total_expression_occurrences_per_system": 20480
+  },
+  "supporting_variant": "Full-root CoT packing remains ready, additional to compact CoT rather than its replacement.",
+  "limits": [
+    "CPU packing and scheduling only, no forward/training/hardware qualification.",
+    "Every TRAINproblem now has one teacher and one plain view; aggregate50/25/25 mix unchanged.",
+    "Short128overfit keeps its qualified four-pass schedule unchanged; all current live DEV jobs keep immutable3301d22 and80actions.",
+    "OlderA320and reader4view-cycle proposals were never run on5120.",
+    "Primary terminal outcomes, actual chip-time/tokens/capacity and two training seeds still required. Larger learning waits for completed current DEV diagnosis and memory/storage/recovery review."
+  ]
+}
