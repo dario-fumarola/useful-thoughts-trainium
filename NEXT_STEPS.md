@@ -28,8 +28,9 @@ The owner stopped the original R study and authorized adapting the experiment.
    numeric repairs with false zeros from a restrictive parser;199unsupported.
    Complete independent audit, public projection and EBS archive verified.
    Repairs also occur with corrupt notes; correct partial value causality unproven.
-6. ACTIVE: preserve legacy scores/parser; finish/review a versioned scalar-boundary
-   repair. Any scoring of old outputs with it is exploratory. Then test ONLY
+6. ACTIVE: legacy scores/source preserved; versioned scalar parser and placement
+   source reviewed,419 focused/1058 required checks pass. Actual320/1920 context
+   integrity check passes. Old-path new-parser audit is exploratory only. Test ONLY
    note placement near the target plus exact prefix-derived LHS repetition, on
    the same frozen320docs/six controls/caps. Raw unchanged; empty repeats LHS and
    separators identically. No stronger multi-step oracle mixed into this change.

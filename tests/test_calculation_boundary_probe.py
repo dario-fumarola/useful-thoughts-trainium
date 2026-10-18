@@ -119,6 +119,86 @@ def test_preparation_freezes_complete_inventory_and_both_native_context_roles(pr
     assert not (prepared.output/'cpu-reference').exists()
 
 
+def reanchor_rows():
+    tok=Tokenizer();result=[]
+    for split in ('train','dev'):
+        for i in range(2):
+            lhs='1 + 3^2 + 5^3' if i==0 else '2 × 3 + 4'
+            past='Original source paragraph. '*7+lhs+'\t=  \n'
+            result.append(dict(item_id=f'{split}-{i}',split=split,writer_prefix_text=past,
+                writer_prefix_ids=tok.encode(past),boundary=dict(expression=lhs),
+                note_ids=tok.encode(f'Compute 2*{i+3} = {2*(i+3)}.'),
+                corrupted_note_ids=tok.encode(f'Compute 2*{i+3} = {2*(i+3)+1}.'),
+                verified_numeric_rhs={'value':'never read'},ordinary_source_ids=[999]))
+    return tok,result
+
+
+def test_near_note_changes_placement_only_and_repeats_original_lhs_bytes():
+    tok,rows=reanchor_rows()
+    old=probe.make_contexts(rows)
+    near=probe.make_contexts(rows,interface='after_note_reanchor_lhs',tokenizer=tok)
+    for row in rows:
+        a,b=old[row['item_id']],near[row['item_id']];past=row['writer_prefix_ids']
+        assert b['values']['raw']==a['values']['raw']==past
+        assert b['donor_item_id']==a['donor_item_id'] and b['shuffle_seed']==a['shuffle_seed']
+        assert b['reanchor_text']==row['boundary']['expression']+'\t=  \n'
+        assert tok.decode(b['reanchor_ids'])==b['reanchor_text']
+        for mode in ('empty','correct','corrupt','shuffled','other'):
+            note=a['values'][mode][:-1-len(past)]
+            assert b['values'][mode]==past+[271]+note+[271]+b['reanchor_ids']
+        assert '^' in b['reanchor_text'] or '×' in b['reanchor_text']
+        assert '**' not in b['reanchor_text']  # Original math notation is not normalized for inference.
+
+
+def test_reanchoring_is_independent_of_all_future_fields_and_cannot_mutate_rows():
+    tok,rows=reanchor_rows();before=copy.deepcopy(rows)
+    actual=probe.make_contexts(rows,interface='after_note_reanchor_lhs',tokenizer=tok)
+    assert rows==before
+    for row in before:
+        row['verified_numeric_rhs']={'value':'different future'}
+        row['ordinary_source_ids']=[888]*528
+    assert probe.make_contexts(before,interface='after_note_reanchor_lhs',tokenizer=tok)==actual
+
+
+@pytest.mark.parametrize('damage',['missing_tokenizer','unknown_interface','wrong_lhs','normalized_lhs','changed_prefix'])
+def test_reanchor_rejects_undeclared_or_nonliteral_prefix_intervention(damage):
+    tok,rows=reanchor_rows();interface='after_note_reanchor_lhs'
+    if damage=='missing_tokenizer':tok=None
+    elif damage=='unknown_interface':interface='unregistered'
+    elif damage=='wrong_lhs':rows[0]['boundary']['expression']='unrelated 2+3'
+    elif damage=='normalized_lhs':rows[0]['boundary']['expression']='1 + 3**2 + 5**3'
+    else:rows[0]['writer_prefix_text']='changed source'
+    with pytest.raises(ValueError):probe.make_contexts(rows,interface=interface,tokenizer=tok)
+
+
+def test_prepare_binds_near_interface_and_its_literal_reanchor_metadata(prepared):
+    values=copy.deepcopy(prepared.accepted)
+    for row in values:row['boundary']['expression']='3*2+4'
+    reseal_dataset(prepared,values)
+    out=prepared.output.parent/'near-probe'
+    p=probe.prepare(out,prepared.directory,Path(prepared.p['model_dir']),DEADLINE,
+        interface='after_note_reanchor_lhs',scalar_parser='initial-scalar-v2')
+    p,x=probe.load(out)
+    assert p['interface']=='after_note_reanchor_lhs' and p['serialization']==probe.INTERFACES[p['interface']]
+    assert p['answers']['parser_version']=='initial-scalar-v2'
+    assert len(x['rows'])==320 and p['expected_rows']==1920 and p['answers']['expected_rows']==384
+    for row in x['rows']:assert x['contexts'][row['item_id']]['reanchor_text']=='3*2+4 ='
+    p['interface']='prepend_plain';atomic_json(out/'protocol.json',p,overwrite=True)
+    with pytest.raises(ValueError,match='recipe/source'):probe.load(out)
+
+
+def test_scalar_parser_version_is_frozen_before_generation_without_fallback():
+    legacy=probe.answer_recipe(DEADLINE,'initial-scalar-v1')
+    revised=probe.answer_recipe(DEADLINE,'initial-scalar-v2')
+    text='1/26\n\nI think this follows.'
+    assert probe.parse_answer(legacy,text,'length_cap')['status']=='unsupported'
+    assert probe.parse_answer(revised,text,'length_cap')['value']=='1/26'
+    assert probe.parse_answer(revised,'1/26 = 2+3','length_cap')['value']=='1/26'
+    assert probe.parse_answer(revised,'1/26 + 2','length_cap')['status']=='unsupported'
+    with pytest.raises(ValueError):probe.answer_recipe(DEADLINE,'posthoc_best_parser')
+    with pytest.raises(ValueError):probe.parse_answer({'parser_version':'posthoc_best_parser'},text,'length_cap')
+
+
 @pytest.mark.parametrize('damage',['short_split','duplicate_document','numeric_not_prefix','mask','causal_cut','missing_curator_hash','audit_bytes','source_bytes'])
 def test_resealed_schema_or_source_damage_never_silently_shrinks_or_relabels(prepared,damage):
     values=copy.deepcopy(prepared.accepted);m=probe.read(prepared.directory/'manifest.json')

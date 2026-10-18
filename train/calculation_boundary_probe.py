@@ -24,7 +24,12 @@ from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_
 from weekend_thinking.pretrained import load_base, sampled_fingerprint
 from weekend_thinking.stats import paired_cluster_bootstrap
 
-SCHEMA = 'finemath-calculation-boundary-reader-v1'
+SCHEMA = 'finemath-calculation-boundary-reader-v2'
+SCALAR_PARSERS = ('initial-scalar-v1', 'initial-scalar-v2')
+INTERFACES = {
+    'prepend_plain': 'raw=exact causal past128..512; otherwise note+[271]+same full past; empty=[271]+past',
+    'after_note_reanchor_lhs': 'raw=exact causal past; otherwise past+[271]+note+[271]+exact prefix-derived LHS-through-equals bytes; empty has the identical separators and LHS repeat',
+}
 MODES = ('raw', 'empty', 'correct', 'corrupt', 'shuffled', 'other')
 METRICS = ('numeric_nonwhitespace_ll', 'scalar_joint_ll', 'natural16_ll')
 CONTRASTS = (('raw', 'empty'), ('raw', 'correct'), ('empty', 'correct'),
@@ -45,7 +50,7 @@ def check_deadline(value):
 def sources():
     root = Path(__file__).resolve().parents[1]
     return {**evaluation_dependencies(), **{name: sha256_file(root/name) for name in
-        ('train/calculation_boundary_probe.py', 'train/calculation_boundaries.py',
+        ('train/calculation_boundary_probe.py', 'train/calculation_boundaries.py', 'train/scalar_completion.py',
          'train/evaluate_local.py', 'train/evaluate_likelihood.py')}}
 
 
@@ -53,13 +58,17 @@ def decode(tok, ids):
     return tok.decode(ids, skip_special_tokens=False, clean_up_tokenization_spaces=False)
 
 
-def answer_recipe(deadline):
+def answer_recipe(deadline, scalar_parser='initial-scalar-v1'):
     require_utc_deadline(deadline)
+    if scalar_parser not in SCALAR_PARSERS: raise ValueError('Declared scalar parser required')
+    grammar = ('Legacy initial ASCII signed decimal/fraction; EOS certifies terminal literal, cap needs right lookahead'
+        if scalar_parser == 'initial-scalar-v1' else
+        'Maximal initial ASCII signed decimal/fraction; local line/sentence/ordinary-word/equality boundary; no later-number search; ambiguous arithmetic/grouping/scale syntax remains unsupported')
     return dict(split='dev', expected_rows=384, cap=ANSWER_CAP, deadline_utc=deadline,
         policy='single greedy; tokenizer-defined IDs; defined specials preserved; EOS151643 or cap32 only',
         support='backend.banned_ids excludes undefined IDs; native qualification and likelihood use the FULL released head',
         context='Exactly the frozen likelihood context; no suffix, QA/CoT prompt or parser-based stopping',
-        parser='initial ASCII signed decimal/fraction v1; exact Fraction; EOS certifies terminal literal, cap needs right lookahead',
+        parser_version=scalar_parser, parser=grammar,
         denominator='All64 DEV documents in all six modes; errors/incomplete/unsupported/format failures score zero')
 
 
@@ -98,6 +107,16 @@ def parse_initial_scalar(text, stop):
         value=Fraction(match[1])/(Fraction(match[2]) if match[2] is not None else 1)
     except (ValueError,ZeroDivisionError): return dict(status='unsupported')
     return dict(status='valid',value=str(value),literal=literal)
+
+
+def parse_answer(recipe, text, stop):
+    """The protocol selects one version before generation; never retry a parser."""
+    version = recipe['parser_version']
+    if version == 'initial-scalar-v1': return parse_initial_scalar(text, stop)
+    if version == 'initial-scalar-v2':
+        from train.scalar_completion import parse_initial_scalar_v2
+        return parse_initial_scalar_v2(text, stop)
+    raise ValueError('Unknown frozen scalar parser')
 
 
 def dataset(directory, tok):
@@ -160,8 +179,28 @@ def dataset(directory, tok):
     return m, selected
 
 
-def make_contexts(selected):
+def exact_lhs_reanchor(row, tok):
+    """Repeat source-past bytes only; never use normalized math or a future RHS."""
+    past = decode(tok, row['writer_prefix_ids'])
+    lhs = row['boundary']['expression']
+    before = past.rstrip()
+    if (past != row['writer_prefix_text'] or not isinstance(lhs, str) or not lhs
+            or not before.endswith('=')):
+        raise ValueError('Exact causal prefix and original LHS bytes required')
+    left = before[:-1].rstrip()
+    if not left.endswith(lhs):
+        raise ValueError('Original LHS must be the actual terminal prefix expression')
+    text = past[len(left)-len(lhs):]
+    ids = tok.encode(text, add_special_tokens=False)
+    if not ids or decode(tok, ids) != text:
+        raise ValueError('Native exact LHS reanchor roundtrip required')
+    return text, ids
+
+
+def make_contexts(selected, *, interface='prepend_plain', tokenizer=None):
     """Freeze controls globally within each split, before sharding or model use."""
+    if interface not in INTERFACES or (interface != 'prepend_plain' and tokenizer is None):
+        raise ValueError('Declared interface and native tokenizer required')
     contexts = {}
     for split in COUNTS:
         group = [r for r in selected if r['split'] == split]
@@ -173,19 +212,25 @@ def make_contexts(selected):
             matched = (other*((len(note)+len(other)-1)//len(other)))[:len(note)]
             content = dict(empty=[], correct=note, corrupt=r['corrupted_note_ids'], shuffled=shuffled, other=matched)
             past = r['writer_prefix_ids']
-            contexts[r['item_id']] = dict(donor_item_id=donor['item_id'], shuffle_seed=seed,
-                values=dict(raw=list(past), **{k:list(v)+[271]+past for k,v in content.items()}))
+            metadata = dict(donor_item_id=donor['item_id'], shuffle_seed=seed)
+            if interface == 'prepend_plain':
+                values = dict(raw=list(past), **{k:list(v)+[271]+past for k,v in content.items()})
+            else:
+                text, ids = exact_lhs_reanchor(r, tokenizer)
+                metadata.update(reanchor_text=text, reanchor_ids=ids)
+                values = dict(raw=list(past), **{k:list(past)+[271]+list(v)+[271]+ids for k,v in content.items()})
+            contexts[r['item_id']] = dict(**metadata, values=values)
     return contexts
 
 
-def prepare(output, directory, model_dir, deadline):
+def prepare(output, directory, model_dir, deadline, *, interface='prepend_plain', scalar_parser='initial-scalar-v1'):
     from transformers import AutoTokenizer
     check_deadline(deadline); assets = asset_provenance(model_dir)
     if (assets.get('model_id'), assets.get('revision')) != (MODEL, REVISION): raise ValueError('Actual released B0 required')
     tok = AutoTokenizer.from_pretrained(model_dir, local_files_only=True, trust_remote_code=False)
     if tok.encode('\n\n', add_special_tokens=False) != [271] or tok.eos_token_id != PAD:
         raise ValueError('Native separator/EOS changed')
-    manifest, selected = dataset(directory, tok); contexts = make_contexts(selected)
+    manifest, selected = dataset(directory, tok); contexts = make_contexts(selected, interface=interface, tokenizer=tok)
     if any(len(v)+16 > WIDTH for r in contexts.values() for v in r['values'].values()):
         raise ValueError('Over-width context; never truncate an accepted note or source prefix')
     refs = [dict(item_id=next(r for r in selected if r['split']==s and r['item_id']==manifest['selection'][s]['selected_item_ids'][i])['item_id'],
@@ -200,11 +245,11 @@ def prepare(output, directory, model_dir, deadline):
         input_hashes={str(f.resolve()):sha256_file(f) for f in (directory/'manifest.json', directory/'accepted.jsonl', directory/'audit.jsonl', Path(manifest['source_file']))},
         item_ids=[r['item_id'] for r in selected], counts=COUNTS, modes=list(MODES), metrics=list(METRICS),
         compute='fp32', vocab_size=read(model_dir/'config.json')['vocab_size'], width=WIDTH, future_width=16, pad_id=PAD, separator_ids=[271], shards=4, expected_rows=1920,
-        serialization='raw=exact causal past128..512; otherwise note+[271]+same full past; empty=[271]+past',
+        interface=interface, serialization=INTERFACES[interface],
         primary='numeric_nonwhitespace_ll: sum native first-n token logps excluding pure-whitespace tokens',
         secondary='Full scalar joint LL and full natural16 LL; one natural16 forward/cell, same actual source spelling',
         qualification='Native full-head log-softmax first TRAIN raw/second TRAIN correct/first DEV raw/second DEV correct; shard i checks ref i before scores',
-        forward_atol=.002, answers=answer_recipe(deadline), bootstrap=dict(unit='document', repeats=5000, seed=17),
+        forward_atol=.002, answers=answer_recipe(deadline, scalar_parser), bootstrap=dict(unit='document', repeats=5000, seed=17),
         limitations=manifest['limits']+['External exact arithmetic feasibility, not student-generated thought or training benefit.',
             'Source-verified accepted boundaries are a curated subset; all preparer failures/reserves remain in the pinned audit.',
             'TRAIN and DEV contrasts are separate, conditional fixed-document estimates, not training-seed uncertainty.',
@@ -218,7 +263,9 @@ def load(output):
     p = read(output/'protocol.json')
     if (p['schema'] != SCHEMA or p['source_files'] != sources() or p['counts'] != COUNTS
             or p['modes'] != list(MODES) or p['metrics'] != list(METRICS) or p['compute'] != 'fp32'
-            or p['answers'] != answer_recipe(p['answers']['deadline_utc']) or p['separator_ids'] != [271] or p['pad_id'] != PAD or p['forward_atol'] != .002
+            or p.get('interface') not in INTERFACES or p['serialization'] != INTERFACES[p['interface']]
+            or p['answers'] != answer_recipe(p['answers']['deadline_utc'], p['answers'].get('parser_version'))
+            or p['separator_ids'] != [271] or p['pad_id'] != PAD or p['forward_atol'] != .002
             or (p['width'],p['future_width'],p['shards'],p['expected_rows']) != (1024,16,4,1920)):
         raise ValueError('Probe recipe/source changed')
     for f,h in [(output/'inputs.json',p['inputs_sha256']), *p['input_hashes'].items(),
@@ -365,7 +412,7 @@ def answers(output,shard,deadline):
                     if result is not None:
                         v.update(actions=result.actions,content_ids=result.content_ids,generated_text=result.raw_text,stop_type=result.stop_type)
                     v.update(raw_action_text=decode(tok,v['actions']),n_generated_tokens=len(v['actions']),
-                        parsed=parse_initial_scalar(v['generated_text'],v['stop_type']) if v['status']=='ok' else dict(status='error'),
+                        parsed=parse_answer(p['answers'],v['generated_text'],v['stop_type']) if v['status']=='ok' else dict(status='error'),
                         wall_seconds=time.monotonic()-start)
                     stream.write(json.dumps(v,allow_nan=False)+'\n'); stream.flush(); report['rows']+=1
                 print(json.dumps(dict(shard=shard,rows=report['rows'],utc=utc_now())),flush=True)
@@ -391,7 +438,7 @@ def summarize_answers(output):
         for q in v:
             item=by_id[q['item_id']]; actions=q['actions']; stop=q['stop_type']; error=q['status']=='error'
             content=actions[:-1] if stop==f'token:{PAD}' else actions
-            parsed=dict(status='error') if error else parse_initial_scalar(q['generated_text'],stop)
+            parsed=dict(status='error') if error else parse_answer(p['answers'],q['generated_text'],stop)
             if (q['status'] not in ('ok','error') or q['split']!='dev' or q['document_id']!=item['document_id']
                     or q['context_sha256']!=canonical_hash(x['contexts'][q['item_id']]['values'][q['mode']])
                     or any(type(t) is not int or t not in defined for t in actions) or len(actions)>ANSWER_CAP
@@ -452,9 +499,11 @@ def main():
     a=argparse.ArgumentParser(description=__doc__); a.add_argument('command',choices=('prepare','cpu-reference','score','answers','summarize','summarize-answers'))
     a.add_argument('--output',type=Path,required=True); a.add_argument('--dataset',type=Path)
     a.add_argument('--model-dir',type=Path,default=Path('local/assets/qwen3-1.7b-base')); a.add_argument('--cpu-threads',type=int,default=16)
-    a.add_argument('--shard-index',type=int); a.add_argument('--deadline-utc'); p=a.parse_args()
+    a.add_argument('--shard-index',type=int); a.add_argument('--deadline-utc')
+    a.add_argument('--interface',choices=tuple(INTERFACES),default='prepend_plain')
+    a.add_argument('--scalar-parser',choices=SCALAR_PARSERS,default='initial-scalar-v2'); p=a.parse_args()
     if not p.command.startswith('summarize') and not p.deadline_utc: a.error('Explicit finite --deadline-utc required')
-    if p.command=='prepare': prepare(p.output,p.dataset,p.model_dir,p.deadline_utc)
+    if p.command=='prepare': prepare(p.output,p.dataset,p.model_dir,p.deadline_utc,interface=p.interface,scalar_parser=p.scalar_parser)
     elif p.command=='cpu-reference': cpu_reference(p.output,p.cpu_threads,p.deadline_utc)
     elif p.command=='score': score(p.output,p.shard_index,p.deadline_utc)
     elif p.command=='answers': answers(p.output,p.shard_index,p.deadline_utc)

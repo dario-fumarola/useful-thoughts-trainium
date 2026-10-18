@@ -781,3 +781,22 @@ same fixed documents and single-step labels, with raw and matched-empty controls
 Do not combine a stronger multi-step external oracle or shrink to current failures.
 No next hardware or learning release yet. Ordinary downstream checks remain a
 requirement of any later learning pilot, regardless of local likelihood sign.
+
+
+### 2026-10-18 04:14 UTC — freeze the measurement repair and isolate placement
+
+Preserve the complete old run/source and published result at ae43438 before source
+integration. The reviewed new scalar parser certifies local boundaries rather
+than arbitrary later prose; arithmetic/grouping/scale ambiguity remains explicit.
+Its retrospective audit of old outputs is exploratory:31raw/32empty/35correct,
+with131unsupported still retained. Original23/24/27 endpoint remains unchanged.
+No claim that the new grammar measures every mathematically equivalent answer.
+
+The next interface repeats only the original LHS-through-equals bytes after the
+same note, now following the past. Empty has identical separators/reanchor; raw
+unchanged. All donor/shuffle/note assignments and320fixed documents retained.
+Real-data CPU check verifies all1920 contexts, maximum549+16 tokens, byte-exact
+reanchors and no future fields. Exact source reviews accepted;419 focused and
+1058required+toy_smoke+compileall pass. Next prepare explicitly selects both the
+interface and parser version, followed by fresh actual CPU/device qualification.
+No additional multi-step oracle, train subset filter or learning release.

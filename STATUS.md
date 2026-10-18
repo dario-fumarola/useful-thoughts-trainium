@@ -1,4 +1,4 @@
-# Status — 2026-10-18 04:07 UTC
+# Status — 2026-10-18 04:14 UTC
 
 The owner stopped the original R study and authorized repair/adaptation. Old
 launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
@@ -70,24 +70,43 @@ local/backups/diagnostics/finemath-calculation-boundary-probe-v2/ARCHIVE.json
 SHA806b3acfeac155c09ba6775289f07018fb78b5b2e6066432d558874d9759dcfd.
 Actual oldprobe f8a54017…1a95f preserved before any subsequent source integration.
 
-NEXT CODE, no new model launch: distributed writes pure train/scalar_completion.py
-with a versioned target-independent parser and focused fixtures. Root requested
-preserving ordinary inline word/unit coverage, local line/equality completion,
-no pronoun denylist, actual expression/scale-word ambiguities retained. Draft is
-NOT integrated/reviewed/released yet. Legacy parser remains unchanged. Any later
-v2 interpretation of old384 outputs must be labeled exploratory, never replace v1.
-Then test same notes AFTER past with exact LHS bytes reanchored before target;
-empty uses identical separators/reanchor, raw unchanged. Keep all fixed cohorts
-and six controls; do not combine stronger multi-step notes. Review first actual
-parser/case coverage and require new reviewed source/checks/protocol/qualification.
-No training or new accelerator job active.
+NEXT SOURCE READY, no new model launch yet. New train/scalar_completion.py
+SHAfc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31;
+testsb750f994…b7aef,310 focused PASS and independent review accepted.
+Versioned maximal-initial-scalar parser certifies local line/sentence/word/equality
+boundaries. It does not reject a completed number based on later I/Answer prose;
+math/grouping/scale ambiguities stay unsupported. It is bounded, not a general
+math-language parser. Legacy parse function and original declared scores retained.
+
+New probe SHAaa5b86c4c99c62da275d65c4ff85abc8887bdd663cb04efc466c5ffc16e2ad64;
+tests91dd5d73…21b42, independent review accepted.419 focused and final1058
+required+toy_smoke+compileall PASS local/checks/tests.oHURtM. New schema v2;
+explicit after_note_reanchor_lhs + initial-scalar-v2 before next generation.
+Context=past+[271]+same note+[271]+exact original terminal LHS-through-equals;
+empty has identical separators/reanchor, raw unchanged. No new labels/cohorts.
+Real-data CPU check8b39ff1c…87b59 verifies all320 suffixes/1920 contexts, exact
+old prepend controls/donors/shuffles and raw equality, no future inputs; maximum
+context549 +16=565/1024. No normalization of exponent/Unicode math notation.
+
+Exploratory new-parser audit of the OLD384 paths, NOT a replacement endpoint:
+local/analysis/calculation-boundary-v2-exploratory-parser-v2.json
+SHA111cc87abd2891f6389c41940cbd1cff5c571a0c0375eedce467f6e764b25c47.
+Raw31/64, empty32, correct35, corrupt34, shuffled32, other31;131unsupported
+remain and3format errors/arm. Parser was designed after old outcomes, so these
+numbers diagnose coverage only. It remains frozen before prospective v3 answers.
+
+Proposed output/control finemath-calculation-boundary-near-lhs-v3, same320docs,
+1920LL+384greedy/cap32, FP32/native CPU16/full-head and cached gates, cores
+28/32/36/40, ports65081–88,06:00UTC finite bound. Distributed stages runtime;
+await actual proposal/root release, then planned prepare/reference/score/answers
+with physical stage closures. No active accelerator job or training.
 
 ## Sources, checks and next learning decision
 
 Curator train/calculation_boundaries.py SHA0d32b6eb…1f4a55;
-probe train/calculation_boundary_probe.py SHAf8a54017…1a95f.
-739 required tests+toy_smoke+compileall PASS local/checks/tests.WLpLnu.
-Focused curator122/probe100/packer25 and independent source reviews PASS.
+Closed probe sourcef8a54017…1a95f is in Git/EBS; new reviewed probeaa5b86c4 above.
+1058 required tests+toy_smoke+compileall PASS local/checks/tests.oHURtM.
+Focused curator122/newprobe109/scalar310/packer25 and source reviews PASS.
 CPU checks do not qualify accelerator execution. Shared model/runtime unchanged.
 
 Reviewed CPU packer train/calculation_warmstart_data.py SHA1595c1ca…b9ed keeps
@@ -124,7 +143,7 @@ question short-note prompt in every arm; disclose prompt/domain shift. No longRL
 
 ## Runtime boundaries
 
-Latest Git e1321d2 pushed publicly; closed-result publication pending. No stack upgrades, new resources, paid APIs,
+Closed-result Git ae43438 pushed publicly; new reviewed source commit pending. No stack upgrades, new resources, paid APIs,
 IAM/network changes or unapproved uploads. Source scripts/env.sh for Python;
 CPU work USE_TORCH_XLA=0. Current EBS about109GiB free, NVMe735GiB; keep35GiB
 checkpoint-backup reserve. Preserve exact PID/start/group ownership; no broad
@@ -132,6 +151,6 @@ signals or automatic retries. Healthy cold compilation is allowed to finish.
 Known future8-rank FP32 training allocator repair is
 NEURON_RT_CONTIGUOUS_SCRATCHPAD=0; old contiguous raw attempts failed, not numerics.
 
-NEXT: publish the independently checked closed result; finish/review the numeric
-boundary parser, then implement the isolated same-note placement/reanchor probe.
-Do not launch training or reuse an archived launcher.
+NEXT: bind the final runtime proposal and release the reviewed same-note near-LHS
+probe after actual required/data/source gates above. No learning release. Do not
+reuse an archived launcher or duplicate distributed-owned jobs.
