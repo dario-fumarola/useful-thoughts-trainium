@@ -148,7 +148,12 @@ orders/CODEX_NEXT_DAY.md are superseded. Follow NEXT_STEPS.md.
   No best-checkpoint selection. Data audits prefix-only anchor quality locally;
   distributed watches live compilation; review maintains EBS/public receipts.
   Keep active teacher/SFT/evaluator dependencies fixed.
-- Latest complete CPU checks388+toy smoke (`local/checks/tests.XEKEpb`). Actual
+- Latest complete CPU checks417+toy smoke (`local/checks/tests.8ffa1r`),
+  including29 paired-analysis cases and independent review. New command
+  `python -m train.warmstart_compare --b0 <B0prepend> --writer <writer64prepend>
+  --control <raw64prepend> --output <fresh.json>` requires complete planned64
+  checkpoints and identical fixed-reader DEV64/policy; computes paired utility
+  changes before any student outcomes are available. Actual
   reader/parity/full-gradient evidence above is separate from new SFT execution.
 
 ## Old study retained
