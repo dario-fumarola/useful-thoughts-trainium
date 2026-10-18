@@ -65,17 +65,25 @@ then frozen reader, a separately supervised writer, and ordinary compact CoT wit
 the same verified computations as a baseline. Complete-answer accuracy and actual
 student-note correctness are primary. Data5,120TRAIN plus separate512-item structure,
 range, composition and interpolation DEV panels are prepared; the initial128TRAIN
-overfit check is mechanical. The short batched driver passes1,561CPU checks and is
-undergoing a finite actual-update/full-state/fresh-restart qualification.
-[Isolated partial-state-v6 branch](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/partial-state-v6) ·
+overfit check is mechanical. The short batched driver completed actual updates1–3,
+full save, fresh-process full restore and updates4–6. Independent model/master/
+moment byte checks pass; this does not establish long-run memory stability.
+The source is merged to main, with1,582CPU checks passing. A complete seven-condition
+TRAIN128 free-answer baseline is running before reader training.
+[Short-pack hardware evidence](validation/partial_state_v6_training_hardware_20261018.json) ·
+[Intermediate-only design](validation/partial_state_v6_design_20261018.json) ·
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 The original W220/320 and C′119/320 failures, preserved64model-only snapshots and
 read-back verified EBS archives remain documented in the
 [host-OOM incident](validation/reader_learning_compound5120_host_OOM_20261018.json).
-A four-condition backward-only probe does not reproduce runaway RAM over16 rows;
-full-loop attribution is separate from long-run memory qualification.
-[Backward probe](validation/host_memory_backward_probe_20261018.json).
+A four-condition backward-only probe does not reproduce runaway RAM over16 rows.
+The complete update loop does: constant/scheduledLR and full/reduced sampled
+diagnostics all retain substantial private host memory. Live XLA tensor counts
+stay flat while compilation handles keep accumulating under a two-entry cache.
+A bounded cache-capacity comparison is testing that lead; no repair is yet claimed.
+[Backward probe](validation/host_memory_backward_probe_20261018.json) ·
+[Full-loop attribution and raw traces](validation/host_memory_full_loop_attribution_20261018.json).
 The separate future-aware general-label dataset and CPU-only `general-sft-v5` branch
 remain on hold; selected teacher usefulness does not establish prefix-only
 attainability. [Complete general teacher batch](validation/general_hindsight_filtered_TRAIN24576_20261018.json).
@@ -105,11 +113,12 @@ The supplied-partial B0 mechanism check is preserved with its original limits:
   [Failed filter](validation/postorder_symbolic_frozen_reader_filter_20261018.json) ·
   [New design](validation/reader_learning_compound5120_design_20261018.json) ·
   [Data inventory](validation/reader_learning_compound5120_data_20261018.json).
-- **Memory and recovery repairs are qualified.** FP32 model storage exhausted
+- **Short storage and recovery mechanics are qualified.** FP32 model storage exhausted
   memory in W/C′. BF16 storage with FP32 masters completed three real updates per
   arm, and actual full-state recovery restored all32ranks and performed the next
   ordered update. Earlier numerical-reference and installed-optimizer validation
-  failures remain preserved. These are execution checks, not capability results.
+  failures remain preserved. These short checks did not prevent the later sustained
+  host-memory failure. They are execution checks, not long-run stability or capability results.
   [Hardware evidence](validation/useful_note_bf16_storage_hardware_20261018.json) ·
   [Recovery](validation/useful_note_state_recovery_002_20261018.json).
 - **Nearby partial notes did not help.** The fixed TRAIN 256 / DEV 64 probe completed

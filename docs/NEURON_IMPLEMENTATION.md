@@ -1,5 +1,12 @@
 # Production implementation: smallest useful path
 
+October18 update: the current short causal SFT path uses BF16 parameter/gradient
+storage with FP32 masters and Adam. Actual save3/restore/update6 is independently
+qualified; extended host-memory stability remains unresolved. See
+[hardware evidence](../validation/partial_state_v6_training_hardware_20261018.json)
+and [the current queue](../NEXT_STEPS.md). The earlier FP32/R implementation state
+below is preserved history, not the active learning recipe.
+
 ## State at delivery
 
 Instance update, October 16: full FP32 compute is now the production candidate.

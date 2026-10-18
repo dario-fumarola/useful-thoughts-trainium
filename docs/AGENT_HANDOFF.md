@@ -1,5 +1,11 @@
 # Handoff to the coding agent
 
+October18 update: the owner stopped the original R study. The active task is
+verified intermediate-only computation, a trained then frozen reader, a separate
+writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) and
+[status](../STATUS.md). The original driver instructions below are historical;
+they do not authorize restarting the retired study or override the active plan.
+
 ## Your job
 
 Implement and qualify one production driver for the frozen experiment in `configs/weekend.json`. Use the bundled `legacy/ema-trainium-pre-thinking` repository snapshot and the already working instance environment. The CPU reference in this kit defines semantics; it is **not** an efficient accelerator trainer. Do not run it on every Neuron core and assume the hardware will fix the full-prefix generation cost.
