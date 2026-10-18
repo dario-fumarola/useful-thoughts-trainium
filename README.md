@@ -1,115 +1,90 @@
 # Useful Thoughts on Trainium
 
-Controlled experiments on whether self-generated intermediate text improves
-language-model capability. This repository contains the experiment specification,
-implementation, checks, and research context for a pretrained-model comparison
-on AWS Trainium.
+Controlled experiments on whether self-generated intermediate computation improves
+language-model predictions. Actual Qwen3-1.7B-Base, real mathematical documents,
+and computation diagnostics run on AWS Trainium. Official TEST remains unused.
 
 ## Current finding
 
-**No overall capability improvement is established.** The preserved matched
-step64 models now show learned note use on real arithmetic, with a remaining
-interface cost and lower raw prediction quality. Their planned320-step training
-comparison was interrupted by host RAM exhaustion; step64 is developmental only.
+**No overall capability gain is established.** The completed matched development64
+comparison shows learned stopping and restricted note use, alongside degraded raw
+prediction and no reliable GSM8K gain over the matching empty format. The original
+320-update study was interrupted by host RAM exhaustion;64 is developmental only.
+[Complete four-panel summary](validation/reader_learning_matched64_summary_20261018.json).
 
-On256 real arithmetic DEV documents, using each model as its own reader:
+On real DEV documents, using W as both prefix-only writer and reader:
 
-| Development64 path | Own−raw | Own−empty | Own−unrelated |
-|---|---:|---:|---:|
-| W ordinary re-anchor |−.616 [−.972,−.274]|+.749 [.414,1.095]|+3.865 [3.374,4.353]|
-| W fixed mixer |+.132 [.015,.256]|+.289 [.188,.397]|+.305 [.200,.419]|
-| C′ ordinary re-anchor |−6.470 [−7.134,−5.810]|−5.602 [−6.207,−5.005]|+.990 [.193,1.760]|
-| C′ fixed mixer |−.582 [−.744,−.419]|−.566 [−.715,−.413]|−.010 [−.160,.146]|
+| Panel,256 documents | Interface | Own−raw | Own−empty | Own−unrelated |
+|---|---|---:|---:|---:|
+| Arithmetic | Ordinary re-anchor |−.616 [−.972,−.274]|+.749 [.414,1.095]|+3.865 [3.374,4.353]|
+| Arithmetic | Fixed mixer |+.132 [.015,.256]|+.289 [.188,.397]|+.305 [.200,.419]|
+| General | Ordinary re-anchor |−3.337 [−3.869,−2.828]|−1.237 [−1.635,−.864]|−.815 [−1.237,−.412]|
+| General | Fixed mixer |−.257 [−.401,−.116]|−.174 [−.267,−.085]|−.151 [−.246,−.062]|
 
-These are natural16 likelihood gains in nats, with paired-document95% intervals.
-W notes cap in7/256 attempts, versus253/256 for C′. The original ordinary-interface
-primary gate fails. W's mixed thought path is still−.175 [−.395,.065] versus
-untouched B0 raw prediction; its own raw path loses−.307 [−.499,−.092]. Thus the
-small within-model gain does not establish improvement above the starting model.
-W supervision includes complete answers, so this does not isolate intermediate
-computation. On general DEV256 the same trained W/mixed path still loses
-−.257 [−.401,−.116] versus raw, −.174 [−.267,−.085] versus empty, and
-−.151 [−.246,−.062] versus unrelated notes. The arithmetic signal does not
-transfer; [all general vectors and examples](validation/reader_learning_general_DEV256_step64_20261018.json)
-are retained. GSMTRAIN512 evaluation is running.
-[Complete developmental arithmetic result, all vectors and notes](validation/reader_learning_compound_DEV256_step64_20261018.json).
-The next study isolates exact partial states, freezes the trained reader, and
-compares a supervised writer with ordinary compact CoT.
-[Exact data and CPU packing are prepared on partial-state-v6](https://github.com/dario-fumarola/useful-thoughts-trainium/blob/partial-state-v6/validation/partial_state_v6_CPU_readiness_20261018.json);
-no new learning run is released.
+Values are natural16 likelihood gains in nats, with paired-document95% intervals.
+Fixed mixing combines raw and note full logits at weight3/8, previously fitted on
+separate TRAIN data. The ordinary-interface primary gate fails. W's mixed arithmetic
+path is−.175 [−.395,.065] versus untouched B0 raw; its own raw path loses−.307
+[−.499,−.092]. Thus its small within-model gain does not establish improvement
+above the starting model. Arithmetic W notes cap in7/256 attempts, versus253/256
+for C′. General W notes still cap in140/256. Both models' same notes were scored
+with B0 and self readers; all vectors, notes, controls and costs are retained:
+[arithmetic](validation/reader_learning_compound_DEV256_step64_20261018.json) ·
+[general](validation/reader_learning_general_DEV256_step64_20261018.json).
 
-Fresh B0 notes give these likelihood changes with the fixed mixed reader:
+The complete GSM8K TRAIN512 diagnostic gives:
 
-| Cohort, 256 documents each | Own−raw | Own−empty | Own−unrelated |
-|---|---:|---:|---:|
-| Real arithmetic |−.673 [−.837,−.508]|−.575 [−.727,−.420]|−.099 [−.239,.042]|
-| Real general text |−.847 [−1.035,−.651]|−.633 [−.785,−.479]|−.369 [−.535,−.202]|
-| Controlled synthetic arithmetic |+2.400 [2.078,2.738]|+.473 [.167,.794]|+.925 [.616,1.246]|
+| Model | Direct correct | Empty correct | Thought correct | Unsupported: direct/empty/thought |
+|---|---:|---:|---:|---:|
+| B0 |429|433|276|11 /18 /147|
+| C′64 |415|429|337|4 /4 /43|
+| W64 |391|400|412|2 /6 /2|
 
-Values are nats with paired document-bootstrap 95% intervals, conditional on B0.
-The real panels score the next 16 natural tokens; the synthetic panel scores the
-complete signed integer and closing newline. Each comparison retains all attempts,
-empty notes and errors. Fixed mixing combines raw and re-anchored full logits with
-weight 3/8, fitted on separate TRAIN data. Ordinary re-anchoring hurts generated-note
-likelihood on all three panels. Complete results and examples:
-[real arithmetic](validation/postorder_held256_B0_20261018.json) ·
-[real general text](validation/general_note_held256_B0_20261018.json) ·
-[synthetic arithmetic](validation/controlled_arithmetic_DEV256_B0_20261018.json).
+Every accuracy denominator is512. W thought−empty is+2.34percentage points
+[−.98,5.66]; W direct−C′ direct is−4.69 [−8.20,−1.36]. W's large improvement over
+C′'s thought path includes repaired stopping/formatting and cannot serve alone as
+a capability claim. Direct already requests calculations and includes worked CoT
+demonstrations. All3,072 trained outputs were independently re-parsed and remain
+available, alongside the1,536B0 paths:
+[matched64 results](validation/reader_learning_GSM8K_TRAIN512_step64_20261018.json) ·
+[B0 reference](validation/postorder_gsm8k_TRAIN512_B0_20261018.json).
 
-On the synthetic panel, **supplied correct partial work helps without revealing
-the final operation or answer**. Ordinary re-anchoring gains +6.978 [6.417,7.544]
-over raw, +4.866 [4.357,5.366] over empty, and +4.535 [4.253,4.813] over a wrong
-intermediate result. This supports reader use of intermediate values, without
-establishing verification or free-answer accuracy. Generated-note gains with fixed
-mixing are concentrated in `(a+b)*(c-d)`; the other three families have negative
-own−empty means. All 256 generated notes hit the 128-action cap. Unrelated donors
-cross grammar families, with equal 128-token lengths; their contrast does not
-isolate calculation from expression restatement. This secondary result does not
-replace the real endpoints or release RL.
+The frozen synthetic256 secondary panel has a stronger likelihood signal. W notes
+all stop naturally; fixed mixing gains+6.450 [5.952,6.963] over raw,+4.910
+[4.401,5.441] over empty, and+6.376 [5.894,6.878] over unrelated. All four family
+own−empty means are positive. Supplied correct partial work, omitting the root
+operation, still helps the trained reader: ordinary gain+9.811 [9.369,10.246]
+over raw. **This is not free-answer accuracy.** W's notes may contain the answer,
+and a post-hoc strict `Result` check finds only73correct,170incorrect and13unsupported
+out of256. Exact non-root postorder statements match135/256. Large likelihood gains
+can coexist with wrong final calculations.
+[All synthetic results, families, notes and vectors](validation/reader_learning_controlled_DEV256_step64_20261018.json).
 
-![Supplied partial work and generated-note contrasts, all256 fixed expressions](figures/controlled_arithmetic_B0_20261018.svg)
+The next study uses exact, prefix-computable **intermediate-only** labels, a trained
+then frozen reader, a separately supervised writer, and ordinary compact CoT with
+the same verified computations as a baseline. Complete-answer accuracy and actual
+student-note correctness are primary. Data5,120TRAIN plus separate512-item structure,
+range, composition and interpolation DEV panels are prepared; the initial128TRAIN
+overfit check is mechanical. The short batched driver passes1,561CPU checks and is
+undergoing a finite actual-update/full-state/fresh-restart qualification.
+[Isolated partial-state-v6 branch](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/partial-state-v6) ·
+[Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
-The GSM8K TRAIN512 B0 reference is also negative:
+The original W220/320 and C′119/320 failures, preserved64model-only snapshots and
+read-back verified EBS archives remain documented in the
+[host-OOM incident](validation/reader_learning_compound5120_host_OOM_20261018.json).
+A four-condition backward-only probe does not reproduce runaway RAM over16 rows;
+full-loop attribution is separate from long-run memory qualification.
+[Backward probe](validation/host_memory_backward_probe_20261018.json).
+The separate future-aware general-label dataset and CPU-only `general-sft-v5` branch
+remain on hold; selected teacher usefulness does not establish prefix-only
+attainability. [Complete general teacher batch](validation/general_hindsight_filtered_TRAIN24576_20261018.json).
 
-| Mode | Strict correct /512 | Unsupported /512 |
-|---|---:|---:|
-| Direct calculation |429|11|
-| Empty thought format |433|18|
-| One generated thought |276|147|
-
-Thought−empty is −30.66 percentage points [−35.74,−25.78]. Format and truncation
-failures prevent interpreting this solely as an arithmetic change. All 1,536
-outputs remain in the [complete result](validation/postorder_gsm8k_TRAIN512_B0_20261018.json).
-The first 128 questions have known development outcomes; official TEST is unused.
-
-The completed general TRAIN batch contains 24,576 future-aware teacher attempts
-and 196,608 reader comparisons, with zero errors. Across the entire candidate pool,
-fixed mixing gives teacher−raw +.831 [.788,.877], teacher−empty +1.009 [.967,1.053]
-and teacher−unrelated +1.147 [1.105,1.190] nats. Ordinary re-anchoring still loses
-2.840 [2.755,2.921] nats against raw. The strict filter found 8,964 eligible positives;
-the first 5,120 in the frozen order form a separate warm-start dataset. Selected
-positivity is true by construction. The labels retain 166 exact demonstration
-imitations, and shorter future copying or paraphrase remains possible. These are
-future-aware TRAIN labels, without evidence yet for a useful prefix-only writer.
-[Complete results, fixed examples and all score vectors](validation/general_hindsight_filtered_TRAIN24576_20261018.json).
-Actual native packing passes on isolated `general-sft-v5`; hardware qualification
-and training remain pending. The earlier [256-document pilot](validation/general_hindsight_TRAIN256_20261018.json)
-and negative [prefix-helper probe](validation/general_prefix_helper_20261018.json) remain available.
-
-**Training interrupted by host OOM:** W reached 220/320 updates and C′ 119/320
-before Linux exhausted host RAM around13:16UTC. Both step64 model-only snapshots
-survived and are hash-verified on EBS; no resumable optimizer checkpoint survived.
-[Incident, preserved models and complete run archives](validation/reader_learning_compound5120_host_OOM_20261018.json).
-These attempts started from fresh B0, shared5,120real TRAIN documents and seed
-order, and were planned for twoepochs/320updates. W learns note tokens, natural
-continuation and raw source; C′ matches continuation weighting without notes.
-Documents/updates match; tokens, gradient dose and compute differ.
-[Original W launch](validation/reader_learning_compound5120_W_seed20261018_launch.json) ·
-[Original C′ launch](validation/reader_learning_compound5120_Cprime_seed20261018_launch.json).
-The320-step comparison remains incomplete. The preserved matched step64 models
-are being evaluated explicitly as developmental checkpoints while host-memory growth
-is investigated. They do not replace the terminal endpoint or permit resumption
-without optimizer state. [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
+Earlier B0 real-note likelihood results remain negative:
+[arithmetic](validation/postorder_held256_B0_20261018.json),
+[general](validation/general_note_held256_B0_20261018.json).
+The supplied-partial B0 mechanism check is preserved with its original limits:
+[controlled result](validation/controlled_arithmetic_DEV256_B0_20261018.json).
 
 ## What led here
 

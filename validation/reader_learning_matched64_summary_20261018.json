@@ -1,0 +1,43 @@
+{
+  "schema": "matched-development64-complete-summary-v1",
+  "status": "COMPLETE_NO_OVERALL_CAPABILITY_GAIN_ESTABLISHED",
+  "finished_utc": "2026-10-18T17:26:56.789803+00:00",
+  "question": "What did the surviving matched64 models learn before original terminal320 runs died?",
+  "checkpoint_scope": "development_model_only_step64",
+  "training_seed": 20261018,
+  "updates_each": 64,
+  "matched_ordered_TRAIN_occurrences_each": 2048,
+  "panels": {
+    "real_arithmetic": {
+      "path": "validation/reader_learning_compound_DEV256_step64_20261018.json",
+      "sha256": "323b24571db17cc23d15a100cf6ebcb8ea6b8669c250b05f72f6d123523fbd3a"
+    },
+    "general": {
+      "path": "validation/reader_learning_general_DEV256_step64_20261018.json",
+      "sha256": "1a78bbe591e944d4721cc3c4d3ad48f8a22e455cad99b166d8ac290a422dcda7"
+    },
+    "GSMTRAIN512": {
+      "path": "validation/reader_learning_GSM8K_TRAIN512_step64_20261018.json",
+      "sha256": "e62a3f038c52c635678ed7835044c7f8e581f01c69eb082cf8ef24b727d43470"
+    },
+    "synthetic_secondary": {
+      "path": "validation/reader_learning_controlled_DEV256_step64_20261018.json",
+      "sha256": "2ddcb37224cddb191279b2a741d8a4e962b92010e4685ec30774237e3690ab02"
+    }
+  },
+  "findings": [
+    "Real arithmetic W/self fixed-mixer own\u2212raw+.132 [.015,.256] nats, but ordinary I3 primary fails and Wown\u2212B0raw\u2212.175 [\u2212.395,.065].",
+    "General W/self mixer own\u2212raw\u2212.257/\u2212empty\u2212.174/\u2212other\u2212.151, all paired CIs negative.",
+    "GSMTRAIN512 W direct391/empty400/thought412; Cprime415/429/337; B0429/433/276. Wthought\u2212empty+2.34pp [\u2212.98,5.66]; Wdirect\u2212Cprime\u22124.69pp [\u22128.20,\u22121.36].",
+    "Synthetic W notes stop256/256, mixer own\u2212empty+4.910 nats, descriptive means positive in all four families.",
+    "Post-hoc W Result fields:73 correct,170 incorrect,13 unsupported. Exact first non-root postorder statements match135/256. LL gain does not establish complete-answer correctness."
+  ],
+  "decision": "Keep broad general SFT/RL on hold. New exact partial-state experiment trains reader then freezes it, trains prefix-only writer, and compares ordinary compact CoT. Short-pack hardware/recovery qualification is active.",
+  "limits": [
+    "Original W220/Cprime119 runs remain interrupted; terminal320 not replaced by64.",
+    "One training seed; conditional item/document CIs do not establish seed robustness.",
+    "All outputs/controls/caps/errors retained; complete four-panel run/control EBS archives verified.",
+    "Two short arithmetic self-score stages missed live physical-placement capture; annexes retained without inventing mapping. All numerical row/hash/exit and physical closure checks passed.",
+    "Official TEST unused."
+  ]
+}

@@ -1,21 +1,33 @@
-# Status — 2026-10-18 16:30 UTC
+# Status — 2026-10-18 17:26 UTC
 
-## Active: matched developmental step64 evaluation
-Question: what did the interrupted matched W/C′ runs learn by their common64 milestone?
-ID:matched-development64-20261018; explicit nonresumable64 identity, terminal320 remains incomplete.
-Both models saw identical2,048 ordered TRAIN occurrences; same arithmetic256/general256/GSMTRAIN512.
-Real panels: same fresh notes scored by frozenB0 and self, raw/empty/own/unrelated/oracles, I3/I6.
-Arithmetic256 complete/archived; all12,288 token vectors and144 paired contrasts independently exact.
-Primary natural16 own−raw and own−other paired document CIs; empty controls beside each contrast.
-GSM direct/empty/thought and all unsupported retained; secondary synthetic four-family panel follows.
-Controls:local/science/control/{W,Cprime}-seed20261018-development64-evaluation-v1.
-Independent finite external guard samples hostRAM every10s; stops owned jobs below512GiB available.
-Deadline01:30UTC next day; no outcome-dependent stopping, no automatic learning restart.
-Wself I3 own−raw−.616/−empty+.749/−other+3.865; fixedI6 own−raw+.132 [.015,.256].
-Wmixed own−B0raw−.175 [−.395,.065]; no absolute improvement. Two self-score live captures missed/preserved.
-General closed: WselfI6 own−raw−.257/−empty−.174/−other−.151, allCIs negative; all vectors audited.
-GSMTRAIN512 generation active; arithmetic/general full results in validation/*DEV256_step64_20261018.json.
-Decision: complete remaining panels; broad general SFT/RL hold; original I3 gate failed.
+## Closed: matched developmental step64 comparison
+Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
+ID:matched-development64-20261018; same2,048ordered TRAIN occurrences per arm, one seed.
+Arithmetic256/general256 with same-note B0/self readers; GSMTRAIN512×3; secondary synthetic256.
+All stages exit0/physically closed, all outputs archived on EBS; original320 remains incomplete.
+Real WselfI6 math own−raw+.132 [.015,.256], but Wown−B0raw−.175 [−.395,.065]; I3primary fails.
+General WselfI6 own−raw−.257/−empty−.174/−other−.151, allCIs negative.
+GSM W391/400/412 direct/empty/thought; C′415/429/337; B0429/433/276, all/512.
+Wthought−empty+2.34pp [−.98,5.66]; Wdirect−C′direct−4.69pp [−8.20,−1.36].
+Synthetic W256natural stops; mixed own−empty+4.910; only73terminal Result fields correct.
+All32,768LL vectors/288paired contrasts and3,072strict trained answers independently reproduced.
+Two math-self live placement captures missed; explicit annexes retained, no invented mapping.
+Public:validation/reader_learning_matched64_summary_20261018.json and four linked complete panels.
+Decision: no overall capability gain; exact partial-state/frozen-reader/compact-CoT comparison next.
+
+## Active: short-pack batched SFT and restart qualification
+Question: do four ranks×eight causal examples train and recover full state correctly?
+ID:partial-state-v6-world4-micro8-qualification-v1; first128TRAIN expressions only, writer arm.
+Fresh actual B0, BF16weights/gradients, FP32masters/Adam; global32,width128,target64, constant1e−5.
+Three updates/full save/physical closure, then fresh full restore and ordered updates4–6.
+Endpoint: all4native KL<=.01, exact initial masters, genuine updates/replicas/cast-master, full byte restore.
+Released after W evaluation closure, logical12–15/physical3; own external512GiB floor and19:00UTC bound.
+Supervisor4025222; initial timeout/group/session4025278; all4actual physical3 workers captured.
+One actual update complete; subsequent new graphs compiling. No steady throughput or recovery PASS yet.
+Controls:local/diagnostics/partial-state-v6-world4-micro8-qualification-v1.
+Output:local/nvme/diagnostics/partial-state-v6-world4-micro8-qualification-v1/writer.
+Source:isolated partial-state-v6 commit7623864;1561CPUtests/smoke/compile pass; live source frozen.
+Decision: pending; qualification models are excluded from scientific comparisons and128TRAIN overfit.
 
 ## Closed: bounded backward-path host-memory probe
 Question: does original real-data BF16 W backward retain hostRAM before optimizer/update stages?

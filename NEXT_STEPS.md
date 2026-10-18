@@ -1,41 +1,44 @@
-# Current queue — partial-computation pivot
+# Current queue — exact partial-computation channel
 
-1. Complete the explicit matched developmental64 evaluation already running:
-   local/science/control/{W,Cprime}-seed20261018-development64-evaluation-v1.
-   Arithmetic256 is fully complete, independently audited and EBS archived;
-   general256 is also complete/audited/archived and remains negative. Finish
-   active GSMTRAIN512 generation/summary and secondary synthetic256. Actual per-stage commands are runtime.py start PANEL STAGE and
-   observe.py capture/close PANEL STAGE. Do not overwrite existing receipts.
-   Guard:local/science/control/matched-development64-memory-guard-v1, independent
-  10s samples,512GiB host-available floor, finite01:30UTC deadline. Capture actual
-   live allocation before stages finish; retain every output/error/cap/unsupported.
-2. Backward-only16×4 probe is closed: all native checks/losses pass, default
-   tailRSS slope6.47MiB/update; no runaway reproduction or full-loop qualification.
-   Full-loop constant/scheduledLR × reduced/full-diagnostics batch is now active
-   on physical8–15:local/diagnostics/host-memory-full-loop-attribution-v1. Each
-   condition16updates, finite18:30UTC, external512GiB floor. No cause is established.
-   Check the actual tails;16 steps do not prove long-run steady state. Long learning
-   requires bounded full-loop memory plus periodic resumable saves and an actual
-   restart test. Do not resume from model-only checkpoints or reuse old launchers.
-3. Owner's new scientific priority: short prefix-computable INTERMEDIATE-ONLY
-   exact states, root operation/final answer omitted. Train reader then freeze;
-   supervise prefix-only writer including stop; evaluate the SAME reader with
-   teacher/student/empty/unrelated/restatement/corrupt notes. Complete-answer
-   accuracy and student state correctness are primary for this new diagnostic;
-   likelihood and corruption sensitivity support it. Ordinary compact CoT with
-   the same verified trace data is a baseline that may win. Start a128-example
-   training overfit mechanics check before larger learning. Fresh structure,
-   operand-range and composition DEV panels remain separate. CPU work is isolated
-   on partial-state-v6; no new learning release yet.
-4. Original W220/C′119 of320 remain interrupted by global hostOOM13:16UTC.
-   Both exact64 model-only states and all original run/control/log/source bytes
-   are verified on EBS:local/backups/science/interrupted/host-oom-20261018.
-   The strict terminal320 evaluator remains unbound; developmental64 is separate.
-5. Keep general-sft-v5 isolated and CPU-ready only. Its future-aware labels do not
-   establish prefix-only attainability. Broad general SFT and all RL are on hold
-   until the smaller computation channel and engineering loop work.
+1. The complete matched developmental64 evaluation is closed and EBS-archived:
+   real arithmetic256/general256, GSMTRAIN512×3, and frozen synthetic256. See
+   validation/reader_learning_matched64_summary_20261018.json. Small mixed math
+   gain is below B0; general stays negative; GSM thought−empty CI crosses zero.
+   Synthetic LL improves despite many wrong Result values. No broad capability
+   or RL release. Original terminal320 remains incomplete. Old evaluation memory
+   observer was stopped only after both finite sequences completely closed.
+2. Active short-pack mechanics on isolated partial-state-v6 commit7623864:
+   local/diagnostics/partial-state-v6-world4-micro8-qualification-v1.
+   Its finite supervisor4025222 owns fresh3→full-save/closure→actual-restart3.
+   Physical3/logical12–15; first actual update complete, later graphs compiling.
+   Source immutable through both stages. All4native and initial master checks
+   precede updates. Deadline19:00UTC; own external512GiB available floor and
+  60-minute stage caps; no retries. Independently audit full checkpoint3/6,
+   exact restored model/master/moment bytes and actual Adam counters before PASS.
+3. Finish the active sequential2×2 full-loop RAM attribution batch on physical8–15:
+   local/diagnostics/host-memory-full-loop-attribution-v1, deadline18:30UTC.
+   Original W math/data/ZeRO; scheduled/full,constant/full,scheduled/reduced,
+   constant/reduced,16updates each. Report process PSS/stage RSS/glibc and limits.
+   All16 scheduled steps stay INSIDE20-step warmup; this does not assess later
+   cosine or step64 export. Background evaluation affected timing. Never infer
+   long-run steady state from it. Backward-only16×4 was bounded, not an OOM repair.
+4. After mechanics/restart, run a separately frozen128TRAIN overfit check:
+   reader first with correct partial/empty/raw paths, freeze checkpoint; then a
+   separate prefix-only writer trained on exact non-root operations and stop.
+   Ordinary compact CoT uses the same verified traces and may win. No fresh DEV
+   outcome chooses mechanics examples, checkpoints or later budgets. Complete
+   answers and student state correctness are primary for the new diagnostic;
+   retain unsupported, caps, latency and tokens. Verify steady target-loop RAM
+   and periodic complete states before scaling to5,120examples/two seeds.
+5. Separate512-item interpolation, structure, range and composition DEV panels
+   are ready; do not pool their generalization claims. Qualification/overfit
+   models are mechanical and do not become scientific warm starts implicitly.
+   Full study arms start from declared B0, with training and inference costs
+   including the split reader/writer; allow compact CoT to earn its simpler path.
 
-Official TEST stays unused. R1234 remains stopped63. No automatic relaunches.
-Root owns current work; subagents reached account usage limits. Use short0700RAM
-TMPDIRs and actual Unix socket guards. Keep35GiB EBS reserve; EBS is same-instance
-backup, not off-instance protection. Preserve negative results and simple controls.
+General-sft-v5 stays isolated/CPU-only. R1234 remains stopped63; old launchers stay
+retired. Official TEST remains unused. Full original run/control/log/source and
+both64model-only states are verified on EBS under
+local/backups/science/interrupted/host-oom-20261018. Model-only states cannot resume.
+Keep35GiB EBS reserve; existing EBS backup is same-instance. Root owns live work;
+subagents are unavailable due account usage limits. Preserve negatives and controls.
