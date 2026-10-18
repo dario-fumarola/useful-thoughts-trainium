@@ -1,0 +1,29 @@
+{
+  "schema": "partial-state-v6-complete-answer-evaluator-CPU-v1",
+  "status": "CPU_CHECKED_NOT_HARDWARE_QUALIFIED",
+  "utc": "2026-10-18T17:50:34.394136+00:00",
+  "purpose": "Prospective complete numeric answer parser and cached stopping for the new partial-state diagnostic; never reuse legacy GSM parsing as this endpoint.",
+  "parser": "First complete numeric line after optional Answer label; compact CoT uses its first Answer label. Exact Decimal equality, signed/comma/decimal/scientific surfaces, final newline or EOS. No later-answer rescue. Caps, errors and format failures stay in denominator.",
+  "generation": "Same causal cache and policy support as verified original decoder; only numeric-line stopping differs. Full native actions and raw decoded text retained when a token crosses the line boundary.",
+  "checks": {
+    "tests": 1572,
+    "seconds": 60.06,
+    "smoke": "PASS",
+    "compile": "PASS",
+    "log_sha256": "fdb98c0e85833907f45bac7d0f76bf87f0a7e3546517ee34d8346bf986500250"
+  },
+  "focused_cases": [
+    "All supported numeric surfaces and malformed/unknown outcomes.",
+    "Real tiny-Qwen cached CPU outputs equal original when number-line stop absent.",
+    "Explicit CPU fixture checks native token crossing newline; not hardware evidence."
+  ],
+  "source_files": {
+    "train/partial_state_answers.py": "f9cfc372056c0aaa54ead0ea77540f54246137144edd2c13f21133608ffa8677",
+    "tests/test_partial_state_answers.py": "2cb4a425c74b01f4ae8fba59cbb8ca71ccd36aba94d537033d2fe9592b7cc09c"
+  },
+  "limits": [
+    "No actual Trainium cached-generation parity is claimed by this receipt.",
+    "No new trained DEV outcomes read or used to choose the parser.",
+    "Reader/student complete-answer study is not released by this CPU check."
+  ]
+}
