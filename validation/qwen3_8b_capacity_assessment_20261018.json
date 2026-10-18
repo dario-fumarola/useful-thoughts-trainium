@@ -120,5 +120,12 @@
     "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
     "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
     "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+  },
+  "installed_optimizer_hook_inspection": {
+    "source_file": "torch_xla/distributed/zero_redundancy_optimizer.py",
+    "source_sha256": "c2839abd822d04603ab4f490b7eadf103584819e7962684b5c9bceed8c6c2920",
+    "observation": "_make_param_hook allocates optimizer-dtype main_grad with the complete param.shape; _reduce_gradients performs reduce_scatter during step. This hook is not backward-time gradient sharding.",
+    "implication": "Enabling use_grad_acc_hook cannot resolve the replicated 8B gradient-memory lower bound.",
+    "hardware_test_performed": false
   }
 }

@@ -3,11 +3,12 @@
 The next uncompleted task is the **frozen four-panel DEV answer comparison**.
 The north star and causal steps are in [RESEARCH_ROADMAP.md](docs/RESEARCH_ROADMAP.md).
 
-1. Let the two healthy answer controllers finish on immutable
+1. Let the remaining reader controller finish on immutable
    `local/worktrees/partial-state-held-v6` at `3301d22`; never edit that worktree.
    Controls: `local/diagnostics/partial-state-v6-fixed-DEV512-{cot,reader}128-v1`.
-   CoT runs physical9/logical36–39; the same frozen reader runs physical10/logical40–43.
+   CoT has closed all four panels; the reader runs physical10/logical40–43.
    All2048writer attempts closed20:16UTC, with their complete EBS archive verified.
+   At21:24UTC the reader has closed three panels and is generating composition.
    Outcome counts remain unread until the paired question closes. Each reader panel
    consumes its whole512-note bundle, including failures and intact unrelated donors.
    Four separate interpolation/structure/range/composition panels; single greedy
@@ -33,6 +34,8 @@ The north star and causal steps are in [RESEARCH_ROADMAP.md](docs/RESEARCH_ROADM
    Use that diagnosis to select the next learning intervention; publish negative results.
 
 The public `partial-state-study-v7` branch is CPU/data-ready, **not released**.
+Four validated local protocol drafts, created before fresh outcome review, are
+in `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
 It gives each5120training expression one teacher and one plain reader view over
 its two passes; both proposed seed schedules are exhaustively audited. The original
 128fitting schedule is unchanged. The corrected primary budget is answer-only640,

@@ -235,6 +235,15 @@ def audit(root):
                 if actual['difference']!=value['difference'] or actual['ci95']!=value['ci95']:raise ValueError('Original paired interval does not reproduce')
             metrics[arm]=result;checks[arm]=gates
         if len(cells)!=512*9:raise ValueError('Every original outcome must stay in denominator')
+        identical_inputs={};matched_inputs=0
+        for key,value in cells.items():
+            if key[0]!='reader' or value['status']=='error':continue
+            identity=(tuple(value['prompt_ids']),value['cap'],value['prefill_width'])
+            output=(value['actions'],value['text'],value['raw_text'],value['stop_type'])
+            if identity in identical_inputs:
+                if identical_inputs[identity]!=output:raise ValueError('Identical actual reader inputs produced different deterministic outputs')
+                matched_inputs+=1
+            else:identical_inputs[identity]=output
         contrasts={}
         for b,a in [('own','direct'),('own','empty'),('own','other'),('teacher','own'),('teacher','direct'),('teacher','corrupt'),('teacher','other_teacher'),('own','restatement')]:
             contrasts[b+'_minus_'+a]=paired([cells['reader',k,b]['score']-cells['reader',k,a]['score'] for k in ids])
@@ -251,7 +260,7 @@ def audit(root):
             for value in notes:stream.write((json.dumps(value,separators=(',',':'))+'\n').encode())
         for f,n in [(file,4608),(note_file,512)]:payloads[str(f.relative_to(root))]=dict(rows=n,bytes=f.stat().st_size,sha256=sha(f))
         examples=[dict(question=q,writer=notes[i],reader_direct=cells['reader',q['item_id'],'direct'],reader_own=cells['reader',q['item_id'],'own'],ordinary_CoT=cells['cot',q['item_id'],'cot']) for i,q in enumerate(qs[:2])]
-        panels[panel]=dict(results=metrics,contrasts=contrasts,writer_state_diagnostics=states,numerical_checks=checks,examples_fixed_first_two=examples,reader=rp['reader'],writer=bundle['writer'],CoT=cp['reader'])
+        panels[panel]=dict(results=metrics,contrasts=contrasts,writer_state_diagnostics=states,numerical_checks=checks,identical_reader_inputs=dict(duplicate_complete_answer_attempts=matched_inputs,all_matched=True,additional_independent_observations=False),examples_fixed_first_two=examples,reader=rp['reader'],writer=bundle['writer'],CoT=cp['reader'])
     if answer_count!=18432:raise ValueError('All18,432answers required')
     write(archive/'ARCHIVE.json',dict(status='COMPLETE_FIXED_DEV_EBS_READBACK_VERIFIED',files=archived))
     report=dict(schema='partial-state-fixed-DEV512-frozen128-complete-v1',status='COMPLETE_ALL_FOUR_PANELS_NO_FILTERING',finished_utc=datetime.now(timezone.utc).isoformat(),panels=panels,answer_attempts=answer_count,writer_attempts=2048,independent_prefix_gold_and_answer_reparse=True,independent_writer_state_reparse=True,all_original_intervals_recomputed=True,all_original_sessions_devices_closed=True,audit_script_sha256=sha(__file__),public_payloads=payloads,EBS_archive_receipt_sha256=sha(archive/'ARCHIVE.json'),limitations=['128TRAIN fitting models,32passes, one seed. DEV is diagnostic, not an official final test.','Separate512-item panels; do not pool generalization or claim seed robustness from item intervals.','No generation failures, truncations, unsupported answers or bad notes removed.','Ordinary compact CoT uses one model/128training updates; split has two models/256total updates. Equal80generated-action caps do not equal measured FLOPs.','Per-row timing includes first-call compilation in separate jobs; not an end-to-end matched latency benchmark.','These are synthetic exact-computation diagnostics, not broad language capability or pretraining gains.'])

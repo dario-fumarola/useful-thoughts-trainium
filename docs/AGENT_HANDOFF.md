@@ -6,16 +6,19 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 20:16UTC live handoff: all TRAIN128 fitting jobs are closed, native CPU/
+October18 21:24UTC live handoff: all TRAIN128 fitting jobs are closed, native CPU/
 Trainium writer actions exactly match128/128, and frozen-reader/compactCoT both
 answer128/128. This establishes fitting mechanics, no architecture advantage.
 Fresh four512DEV panels run on immutable partial-state-held-v6/3301d22:
-writerphysical8, compactCoT9, same frozen reader10; logical32–43. Controllers:
+Writer and all four compactCoT panels are closed. Same frozen reader10/logical40–43
+has closed three panels and is generating final composition. ControllerPID81024;
+stage3 timeout owners124166/124168/124169/124171, Python124167/124170/124172/124173.
+Controllers:
 local/diagnostics/partial-state-v6-fixed-DEV512-{writer,cot,reader}128-v1.
 Bound01:30UTC Oct19,3h per child,512GiB floor, no retries. Reader preparation
 waits for each complete512writer bundle; never selects by utility. All2048writer
-notes close20:16UTC; their utility remains unread. R/CoT compile a shared longer-cache
-graph. Monitor active logs/native gates; let healthy compilation finish.
+notes close20:16UTC; their utility remains unread. Long-cache compilation passed
+20:56UTC. Monitor the remaining reader job; do not inspect partial outcomes.
 Only after all three four-panel controllers close, run:
 `source scripts/env.sh; USE_TORCH_XLA=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python scripts/audit_partial_state_panels.py --root /home/ubuntu/dario`.
 Audit actual complete answers, controls, vectors, intervals and archives, then
@@ -24,6 +27,11 @@ partial-state-study-v7 is CPU-only/unreleased; current jobs never use it.
 Budget proposal is A640/Bpartial640 versus R320+W320, total640updates per system;
 full-root CoT is an extra prepared variant, not a replacement for compact CoT.
 No larger learning release until fresh diagnosis, memory/disk/recovery review.
+Main proof ladder and paper notes incorporate the owner's north-star/7–8B steering.
+Official8B metadata/static sizing is preserved; no weights or run launched. The
+installed gradient hook retains a full buffer, so it does not repair replicated fit.
+Local v7 protocol drafts were validated before fresh outcome review at
+local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review; not released.
 
 ## Your job
 
