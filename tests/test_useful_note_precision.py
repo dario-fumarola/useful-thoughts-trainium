@@ -89,7 +89,7 @@ def test_standard_shards_preserve_initial_fp32_values_padding_and_master_roundin
     with pytest.raises(RuntimeError,match='FP32 master'):p.master_samples(bad,expected)
 
 
-def test_cpu_reference_uses_native_bf16_parameters_full_head_and_receipt(monkeypatch,tmp_path):
+def test_cpu_reference_uses_canonical_fp32_parameters_full_head_and_receipt(monkeypatch,tmp_path):
     from train import evaluate,neuron_backend
     from weekend_thinking import pretrained
     m=TiedModel();m.emb.weight.data=m.emb.weight.data.bfloat16().float()
@@ -105,6 +105,6 @@ def test_cpu_reference_uses_native_bf16_parameters_full_head_and_receipt(monkeyp
     report=p.cpu_reference(contexts,tmp_path,tmp_path/'reference','2099-01-01T00:00:00+00:00',1)
     values=torch.load(tmp_path/'reference/next-logps.pt',weights_only=True)
     assert values.shape==(4,5) and values.dtype==torch.float32 and torch.isfinite(values).all()
-    assert report['precision']==p.contract() and report['next_logps_sha256']==sha256_file(tmp_path/'reference/next-logps.pt')
-    assert all(row=={'hidden':'torch.bfloat16','head':'torch.bfloat16','logps':'torch.float32'} for row in report['dtypes'])
+    assert report['precision']==p.contract() and report['conversion']['parameter_dtype']=='torch.float32' and report['next_logps_sha256']==sha256_file(tmp_path/'reference/next-logps.pt')
+    assert all(row=={'hidden':'torch.float32','head':'torch.float32','logps':'torch.float32'} for row in report['dtypes'])
     assert report['conversion']['buffers']['inv_freq']['dtype']=='torch.float32'

@@ -1,0 +1,226 @@
+{
+  "CPU_inventory_reference": {
+    "all_originals_preserved": true,
+    "base_signature": {
+      "parameters": 1720574976,
+      "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+      "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+    },
+    "conversion": {
+      "buffers": {
+        "model.rotary_emb.inv_freq": {
+          "dtype": "torch.float32",
+          "sha256": "c730fe401f0596eeffdaea046f68da79d7f517fbfac6e4562450e889e27c7dda",
+          "shape": [
+            64
+          ]
+        },
+        "model.rotary_emb.original_inv_freq": {
+          "dtype": "torch.float32",
+          "sha256": "c730fe401f0596eeffdaea046f68da79d7f517fbfac6e4562450e889e27c7dda",
+          "shape": [
+            64
+          ]
+        }
+      },
+      "parameter_dtype": "torch.float32",
+      "parameter_objects_preserved": true,
+      "parameters": 310,
+      "policy": "Canonical CPU FP32; device separately casts only parameters to BF16. Released weights are natively BF16 and widen exactly."
+    },
+    "cpu_exit": {
+      "exit_code": 0,
+      "time_utc": "2026-10-18T07:39:53+00:00"
+    },
+    "created_utc": "2026-10-18T07:40:46+00:00",
+    "items": 64,
+    "limitations": "CPU preparation only. Actual device KL/dtypes/fit/updates/master state remain unqualified; prior CPU-BF16 native failure remains FAIL.",
+    "native_dtypes": [
+      {
+        "head": "torch.float32",
+        "hidden": "torch.float32",
+        "logps": "torch.float32"
+      },
+      {
+        "head": "torch.float32",
+        "hidden": "torch.float32",
+        "logps": "torch.float32"
+      },
+      {
+        "head": "torch.float32",
+        "hidden": "torch.float32",
+        "logps": "torch.float32"
+      },
+      {
+        "head": "torch.float32",
+        "hidden": "torch.float32",
+        "logps": "torch.float32"
+      }
+    ],
+    "native_logps_sha256": "d6b7393c70004ce95b2da5d4d0c25d8a4b5e315fcd95ae6cb62191b8991b97b5",
+    "native_reference_sha256": "3568b6cfe6d9131ee0018bf62a0f377b50ca5db14bbdd437eed1e8c17b63e477",
+    "no_accelerator_run": true,
+    "original_FP32_reference_max_abs_delta": [
+      0.0001125335693359375,
+      2.09808349609375e-05,
+      2.288818359375e-05,
+      2.09808349609375e-05
+    ],
+    "original_FP32_reference_sha256": "7f60509074678d9e30001878ecf1017e9b78286687080a338a459ac13343e790",
+    "packing": {
+      "augmented": {
+        "target_slots": 704,
+        "width": 704
+      },
+      "reader": {
+        "target_slots": 16,
+        "width": 704
+      },
+      "source": {
+        "target_slots": 544,
+        "width": 544
+      },
+      "writer": {
+        "target_slots": 128,
+        "width": 640
+      }
+    },
+    "parent_science_manifest_sha256": "c6b671211c8941c0c00d4f78d4f52223c4c8d8cdfe71911da7e24d4a42391cf0",
+    "purpose": "qualification",
+    "qualification_manifest_sha256": "1886c7bf8c24185a183d0e4a7dc8cc96115e200d06e19ed213c5af89f7120a46",
+    "qualification_training_sha256": "b4dc5720027132a852eac07616a64008a1e8ad22fd3db271856402c1db26e2ca",
+    "reference_contract": {
+      "autocast": false,
+      "canonical_reference_compute_dtype": "fp32",
+      "canonical_reference_parameter_dtype": "fp32",
+      "compute_dtype": "bf16",
+      "diagnostics_only": [
+        "max_logp_error",
+        "rms_logp_error",
+        "relative_l2_logp_error",
+        "argmax_equal"
+      ],
+      "floating_buffer_dtype": "fp32",
+      "gradient_dtype": "bf16",
+      "higher_cc_precision": false,
+      "log_softmax_dtype": "fp32",
+      "max_bidirectional_kl_nats": 0.01,
+      "normalization": "independent_FP64_logsumexp",
+      "optimizer_dtype": "fp32",
+      "parameter_dtype": "bf16",
+      "reduce_scatter_input_dtype": "bf16",
+      "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+      "schema": "useful-note-bf16-device-canonical-fp32-native-v2",
+      "support": "full_released_head",
+      "use_grad_acc_hook": false
+    },
+    "reference_log_normalizers_FP64": [
+      4.653749667626883e-06,
+      2.0228336161776106e-05,
+      2.0395107861222866e-06,
+      2.0076911028787947e-05
+    ],
+    "reference_shape": [
+      4,
+      151936
+    ],
+    "released_header": {
+      "dtype": "BF16",
+      "headers": {
+        "model.safetensors": {
+          "header_bytes": 35648,
+          "tensors": 310
+        }
+      },
+      "parameters": 1720574976,
+      "tensors": 310
+    },
+    "source_files": {
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+    },
+    "status": "PASS_CPU_INVENTORY_AND_CANONICAL_FP32_NATIVE_REFERENCE_ONLY",
+    "unique_documents": 64
+  },
+  "created_utc": "2026-10-18T07:41:57+00:00",
+  "decision": "New explicit CPU FP32 golden-reference identity for unchanged BF16 device storage/compute; bothKL bound remains .01nat. Old CPU-BF16 native failure stays failed.",
+  "failure_handling": "Every rank persists local native evidence, all-gathers failureflags and saves consensus; all ranks refuse before ZeRO if any failed.",
+  "limitations": [
+    "Forward distribution sanity is not gradient accuracy, reader utility, memory-fit, resumed-training or warmed-throughput qualification.",
+    "64 unchanged TRAINrows are a qualification subset, not a5000-example science result.",
+    "The new reference choice is informed by the preserved failed engineering check."
+  ],
+  "precision_contract": {
+    "autocast": false,
+    "canonical_reference_compute_dtype": "fp32",
+    "canonical_reference_parameter_dtype": "fp32",
+    "compute_dtype": "bf16",
+    "diagnostics_only": [
+      "max_logp_error",
+      "rms_logp_error",
+      "relative_l2_logp_error",
+      "argmax_equal"
+    ],
+    "floating_buffer_dtype": "fp32",
+    "gradient_dtype": "bf16",
+    "higher_cc_precision": false,
+    "log_softmax_dtype": "fp32",
+    "max_bidirectional_kl_nats": 0.01,
+    "normalization": "independent_FP64_logsumexp",
+    "optimizer_dtype": "fp32",
+    "parameter_dtype": "bf16",
+    "reduce_scatter_input_dtype": "bf16",
+    "runtime_collective_accumulation_precision": "not_established_by_Python_contract",
+    "schema": "useful-note-bf16-device-canonical-fp32-native-v2",
+    "support": "full_released_head",
+    "use_grad_acc_hook": false
+  },
+  "required_CPU_checks": {
+    "compileall": "passed",
+    "log": "local/checks/tests.64U9Vz",
+    "seconds": 54.0,
+    "smoke": "passed",
+    "tests_passed": 1358
+  },
+  "root_independent_readback": {
+    "all_CPU_hidden_and_head_FP32": true,
+    "all_finite": true,
+    "full_shape": [
+      4,
+      151936
+    ],
+    "max_abs_logp_vs_original_FP32": 0.0001125335693359375,
+    "same_exact_four_contexts_as_original_FP32": true
+  },
+  "schema": "useful-note-BF16-high-precision-reference-repair-20261018",
+  "source_review": {
+    "created_utc": "2026-10-18T07:38:21.101618+00:00",
+    "focused_tests": "64 PASS reported by source owner on exact hashes; not redundantly rerun by reviewer.",
+    "limitations": [
+      "Four forward vectors do not prove gradient/optimizer accuracy; actual three-update qualification remains needed.",
+      "Reference identity was revised after a preserved failure; not a retroactive PASS."
+    ],
+    "no_hardware_or_model_execution_by_reviewer": true,
+    "previous_native_failure_audit": "local/analysis/bf16-native-independent-audit-20261018.json",
+    "previous_native_failure_audit_sha256": "e71325ade66592039dcf857fbf51173439242b9d15125d687e1a4b460f441b45",
+    "schema": "bf16-canonical-reference-consensus-source-review-v1",
+    "scope": [
+      "Canonical CPU FP32 parameter/compute reference for same released exact BF16 values; explicit new precision and driver schemas.",
+      "Unchanged device BF16 parameter/gradient path, FP32 master/moment/buffer path and per-reference bidirectional .01 KL.",
+      "All local vectors and results persisted before collective; XLA all_gather failure flags and per-rank global failed-rank receipt, publication rendezvous, common refusal before ZeRO.",
+      "Fatal pre-consensus device/I/O failure remains covered by existing finite external deadline."
+    ],
+    "source_sha256": {
+      "tests/test_useful_note_precision.py": "ffc0bb72488efe8e2f0088cd46db28519737963e76483a5025ef3757c41d1555",
+      "tests/test_useful_note_sft_driver.py": "9281ef01fcddfae97a37a15010e887b38111a21a325d324cbb87f7bbd652e963",
+      "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "train/useful_note_sft_driver.py": "5dfd728b34055973438e346613c1e1085e326ad55d9a3021defde9a91c1e278a"
+    },
+    "status": "ACCEPTED_STATIC_REPAIR",
+    "unchanged_old_v2_failure": true
+  },
+  "source_review_sha256": "1a5268c4c59ba8277949dd7ee7b8de65daa2097168ace5d25cf93ec0ce1deae4",
+  "status": "SOURCE_AND_CPU_ONLY_HARDWARE_UNQUALIFIED"
+}

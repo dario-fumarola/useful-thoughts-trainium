@@ -291,3 +291,40 @@ def test_passing_native_gate_is_published_before_optimizer_exists(tmp_path):
     report=d.publish_native_gate(tmp_path,3,3,actual,actual,'torch.bfloat16','torch.bfloat16',protocol(),'hash')
     assert report['status']=='PASS' and report['native_check']['passed']
     assert sorted(x.name for x in tmp_path.iterdir())==['forward-rank-00003.pt','qualification-rank-00003.json']
+
+
+class NativeConsensusXM:
+    def __init__(self,flags,output,rank):self.flags=flags;self.output=output;self.rank=rank;self.gathered=False;self.published=False
+    def all_gather(self,value):
+        assert value.shape==(1,) and value.item()==self.flags[self.rank]
+        self.gathered=True
+        return torch.tensor(self.flags)
+    def rendezvous(self,tag):
+        assert tag=='native-consensus-published' and self.gathered
+        assert (self.output/f'native-consensus-rank-{self.rank:05d}.json').is_file()
+        self.published=True
+
+
+def test_every_rank_persists_then_collectively_fails_before_optimizer_on_one_bad_reference(tmp_path):
+    flags=[0.,1.,0.,1.]
+    for rank,failed in enumerate(flags):
+        directory=tmp_path/str(rank);directory.mkdir();reference=torch.tensor([[0.,-2.,-3.]])
+        actual=torch.tensor([[-3.,0.,-2.]]) if failed else reference
+        # Failed local numerical gates return after publication, so every rank
+        # participates in the same collective before any local exception.
+        local=d.publish_native_gate(directory,rank,rank,actual,reference,'torch.bfloat16','torch.bfloat16',protocol(),'hash',raise_on_failure=False)
+        xm=NativeConsensusXM(flags,directory,rank)
+        with pytest.raises(RuntimeError,match='all ranks stop before ZeRO'):
+            d.native_gate_consensus(directory,rank,4,local,xm,'cpu')
+        report=json.loads((directory/f'native-consensus-rank-{rank:05d}.json').read_text())
+        assert xm.published and report['failed_ranks']==[1,3] and report['status']=='FAIL'
+        assert report['optimizer_construction_started'] is False
+        assert (directory/f'forward-rank-{rank:05d}.pt').is_file()
+
+
+def test_native_consensus_all_passes_without_loosening_local_gate(tmp_path):
+    reference=torch.tensor([[0.,-2.,-3.]])
+    local=d.publish_native_gate(tmp_path,0,0,reference,reference,'torch.bfloat16','torch.bfloat16',protocol(),'hash',raise_on_failure=False)
+    xm=NativeConsensusXM([0.,0.],tmp_path,0)
+    result=d.native_gate_consensus(tmp_path,0,2,local,xm,'cpu')
+    assert result['status']=='PASS' and result['failed_ranks']==[] and xm.published

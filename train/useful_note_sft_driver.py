@@ -21,7 +21,7 @@ import time
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'useful-note-sft-v2'
+SCHEMA = 'useful-note-sft-v3'
 WEIGHTS = {'W': {'writer': 1., 'reader': 1., 'source': .5},
            'Cprime': {'continuation': 1., 'source': .5}, 'T': {'augmented': 1.}}
 COMPONENTS = ('source', 'writer', 'reader', 'augmented')
@@ -235,7 +235,7 @@ def load_native_reference(p,assets):
         if sha256_file(output/name)!=p[key]:raise ValueError('New BF16 native reference changed')
     report=json.loads((output/'reference.json').read_text())
     if (report.get('schema')!=NATIVE_SCHEMA or report.get('precision')!=contract()
-            or report.get('status')!='complete_CPU_BF16_parameter_FP32_RoPE_reference'
+            or report.get('status')!='complete_CPU_FP32_canonical_reference_for_BF16_device'
             or report['assets']!=assets or report['base_signature']!=p['base_signature']
             or report['source_files']!=sources() or report['width']!=1024):
         raise ValueError('Require the new BF16-storage reference, not old FP32 parity')
@@ -247,7 +247,7 @@ def load_native_reference(p,assets):
     return report['qualification_refs'],values
 
 
-def publish_native_gate(output,rank,reference_index,actual,reference,hidden_dtype,head_dtype,p,protocol_hash):
+def publish_native_gate(output,rank,reference_index,actual,reference,hidden_dtype,head_dtype,p,protocol_hash,*,raise_on_failure=True):
     """Persist the actual vector and honest finite/KL result before any raise.
 
     Called before ZeRO construction. An optimizer initialization failure must
@@ -272,7 +272,30 @@ def publish_native_gate(output,rank,reference_index,actual,reference,hidden_dtyp
     except (ValueError,RuntimeError) as error:
         report['failure']=str(error)
     atomic_json(output/f'qualification-rank-{rank:05d}.json',report)
-    if report['status']!='PASS':raise RuntimeError(f'New BF16 native gate failed; actual evidence saved in {output}')
+    if report['status']!='PASS' and raise_on_failure:
+        raise RuntimeError(f'New BF16 native gate failed; actual evidence saved in {output}')
+    return report
+
+
+def native_gate_consensus(output,rank,world,local_report,xm,device):
+    """Every rank reaches the same decision before ZeRO or a local raise.
+
+    Persisted numerical/dtype failures are ordinary consensus participants.
+    Fatal device or I/O failures are still bounded by the external deadline.
+    """
+    import torch
+    flag=torch.tensor([float(local_report['status']!='PASS')],device=device)
+    values=xm.all_gather(flag).reshape(-1).cpu().tolist()
+    if len(values)!=world or any(v not in (0.,1.) for v in values):
+        raise RuntimeError('Invalid native failure consensus')
+    failed=[i for i,value in enumerate(values) if value]
+    report=dict(status='FAIL' if failed else 'PASS',rank=rank,world_size=world,
+        created_utc=utc_now(),failed_ranks=failed,all_rank_failure_flags=values,
+        local_gate_sha256=sha256_file(output/f'qualification-rank-{rank:05d}.json'),
+        optimizer_construction_started=False)
+    atomic_json(output/f'native-consensus-rank-{rank:05d}.json',report)
+    xm.rendezvous('native-consensus-published')
+    if failed:raise RuntimeError(f'Native gate failed on ranks {failed}; all ranks stop before ZeRO')
     return report
 
 
@@ -467,9 +490,10 @@ def worker(_index,args,p,rows,tok,assets,inventory,refs,native,protocol_hash,ord
         ids=torch.full((1,1024),151643,dtype=torch.long);ids[0,:len(ref['context_ids'])]=torch.tensor(ref['context_ids'])
         h=backend.hidden(ids.to(device));logits=model.lm_head(h[:,len(ref['context_ids'])-1]);lp=logits.float().log_softmax(-1)
         sync();actual=lp.cpu()
-        publish_native_gate(args.output,rank,ref_index,actual,native[ref_index:ref_index+1],
-                            str(h.dtype),str(logits.dtype),p,protocol_hash)
+        local_gate=publish_native_gate(args.output,rank,ref_index,actual,native[ref_index:ref_index+1],
+                            str(h.dtype),str(logits.dtype),p,protocol_hash,raise_on_failure=False)
         del h,logits,lp,ids
+    native_gate_consensus(args.output,rank,world,local_gate,xm,device)
     dtypes={}
     def record(name):
         def hook(_module,inputs,output):

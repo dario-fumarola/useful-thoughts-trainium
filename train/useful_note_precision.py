@@ -1,4 +1,4 @@
-"""BF16 parameter storage, FP32 RoPE/master contract and native reference.
+"""BF16 device storage with a canonical CPU FP32 native reference.
 
 No whole-module dtype conversion: Qwen's nonpersistent rotary buffers must
 retain their original FP32 values. The full released head is used here,
@@ -17,12 +17,13 @@ import torch
 
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
-SCHEMA = 'useful-note-bf16-storage-native-v1'
+SCHEMA = 'useful-note-bf16-device-canonical-fp32-native-v2'
 
 
 def contract():
     return dict(schema=SCHEMA, parameter_dtype='bf16', gradient_dtype='bf16',
         optimizer_dtype='fp32', floating_buffer_dtype='fp32', compute_dtype='bf16',
+        canonical_reference_parameter_dtype='fp32', canonical_reference_compute_dtype='fp32',
         reduce_scatter_input_dtype='bf16', higher_cc_precision=False, use_grad_acc_hook=False,
         runtime_collective_accumulation_precision='not_established_by_Python_contract',
         autocast=False, support='full_released_head', log_softmax_dtype='fp32',
@@ -153,21 +154,28 @@ def cpu_reference(contexts_file,model_dir,output,deadline,cpu_threads=16):
     if len(refs)!=4 or any(not 1<=len(r['context_ids'])<=1024 for r in refs):
         raise ValueError('Four prospectively fixed causal native contexts required')
     assets=asset_provenance(Path(model_dir));header=released_bf16_header(model_dir)
-    model,_=load_base(model_dir);signature=sampled_fingerprint(model);conversion=cast_parameters(model)
-    if sampled_fingerprint(model)!=signature or model.get_input_embeddings().weight is not model.get_output_embeddings().weight:
-        raise ValueError('BF16 initial values/tie differ from released B0')
+    model,_=load_base(model_dir);signature=sampled_fingerprint(model)
+    if (any(t.dtype!=torch.float32 for t in model.parameters())
+            or any(t.is_floating_point() and t.dtype!=torch.float32 for t in model.buffers())
+            or model.get_input_embeddings().weight is not model.get_output_embeddings().weight):
+        raise ValueError('Canonical CPU FP32 released B0 parameters/buffers/tie required')
+    conversion=dict(parameter_dtype='torch.float32',parameters=len(list(model.parameters())),
+        parameter_objects_preserved=True,
+        buffers={name:dict(shape=list(t.shape),dtype=str(t.dtype),sha256=canonical_hash(t.reshape(-1).tolist()))
+                 for name,t in model.named_buffers()},
+        policy='Canonical CPU FP32; device separately casts only parameters to BF16. Released weights are natively BF16 and widen exactly.')
     model.eval();backend=NeuronCausalBackend(model,checkpoint_trunk=False);values=[];dtypes=[]
     with torch.no_grad():
         for ref in refs:
             check();ids=torch.full((1,1024),151643,dtype=torch.long)
             ids[0,:len(ref['context_ids'])]=torch.tensor(ref['context_ids'])
             hidden=backend.hidden(ids);logits=model.lm_head(hidden[:,len(ref['context_ids'])-1]);lp=logits.float().log_softmax(-1)
-            if hidden.dtype!=torch.bfloat16 or logits.dtype!=torch.bfloat16 or not torch.isfinite(lp).all():
-                raise RuntimeError('Canonical native BF16 compute failed')
+            if hidden.dtype!=torch.float32 or logits.dtype!=torch.float32 or not torch.isfinite(lp).all():
+                raise RuntimeError('Canonical native CPU FP32 compute failed')
             values.append(lp);dtypes.append(dict(hidden=str(hidden.dtype),head=str(logits.dtype),logps=str(lp.dtype)))
     check();output.mkdir(parents=True)
     torch.save(torch.cat(values),output/'next-logps.pt')
-    report=dict(schema=SCHEMA,status='complete_CPU_BF16_parameter_FP32_RoPE_reference',created_utc=utc_now(),
+    report=dict(schema=SCHEMA,status='complete_CPU_FP32_canonical_reference_for_BF16_device',created_utc=utc_now(),
         precision=contract(),source_files=sources(),assets=assets,base_signature=signature,released_header=header,
         conversion=conversion,contexts_file=str(Path(contexts_file).resolve()),contexts_sha256=sha256_file(contexts_file),
         qualification_refs=refs,width=1024,dtypes=dtypes,cpu_threads=cpu_threads,
