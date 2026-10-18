@@ -20,7 +20,7 @@ from weekend_thinking.runtime_policy import require_runtime_policy, runtime_poli
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-complete-answers-v4'
+SCHEMA = 'partial-state-complete-answers-v5'
 TRAIN_SHA = '020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb'
 MODES = ('direct', 'cot', 'empty', 'teacher', 'corrupt', 'other_teacher', 'restatement')
 COHORTS = {
@@ -52,11 +52,13 @@ def sources():
 
 
 def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, notes_bundle=None,
-            panel='TRAIN', requested_modes=None, native_from=None):
+            panel='TRAIN', requested_modes=None, native_from=None, action_budget=80):
     from transformers import AutoTokenizer
     from train.evaluate import asset_provenance
     if panel not in COHORTS:
         raise ValueError('Only declared TRAIN/DEV panels; never TEST')
+    if type(action_budget)is not int or action_budget not in (80,96):
+        raise ValueError('Declared prototype80 or full-trace study96 action budget required')
     data_sha, items = COHORTS[panel]
     if sha256_file(data_file) != data_sha:
         raise ValueError('Exact fixed panel bytes required')
@@ -153,17 +155,17 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
         notes_bundle=None if bundle is None else str(Path(notes_bundle).resolve()),
         notes_bundle_sha256=None if bundle is None else sha256_file(notes_bundle),
         compute='fp32', selection='single_greedy_tokenizer_defined_support',
-        writer_or_cot_prefill=32, reader_prefill=128, direct_and_cot_cap=80, reader_answer_cap=16,
+        writer_or_cot_prefill=32, reader_prefill=128, direct_and_cot_cap=action_budget, reader_answer_cap=action_budget-64,
         future_split='Generation never opens gold.jsonl or original supervised TRAIN rows. Supplied notes are computed only from prefix expressions.',
-        endpoint='Complete numeric-answer accuracy; all unsupported/errors/caps retained. Own-minus-same-reader empty/direct/other, and ordinary compact-CoT at same80 total action cap.',
+        endpoint=f'Complete numeric-answer accuracy; all unsupported/errors/caps retained. Own-minus-same-reader empty/direct/other, and ordinary CoT at same{action_budget} total action cap.',
         controls='Intact global derangement, native-length matched when peers exist; no repeat, trim, repair or utility selection.',
         other_teacher_unmatched_lengths=sum(not c['other_teacher_length_matched'] for c in controls),
         runtime_policy=runtime_policy(), cache_prefill_max_logp_error=1e-3,
         limits=['TRAIN is fitting only. Separate512-item DEV panels test interpolation, unseen structures, range and composition; never pool them or call them official TEST.',
-                'Trained readers, if present, are explicitly TRAIN128 overfit diagnostics, not scientific warm starts.',
-                'Direct prompt asks for the answer; compact CoT starts at Work. Equal80 action caps do not equal measured FLOPs.',
+                ('Explicit TRAIN128 fitting model; not a scientific warm start.' if reader.get('developmental_only') else 'Frozen model training provenance is explicit; B0, if used, remains unchanged.'),
+                f'Direct prompt asks for the answer; CoT starts at Work. Equal{action_budget} action caps do not equal measured FLOPs.',
                 'Supplied-state reading is achievable-reader evidence, not student utility.',
-                'Reader conditions use16 answer actions; direct/CoT80. Report actual actions and latency separately.'])
+                f'Reader conditions use{action_budget-64} answer actions plus64writer; direct/CoT{action_budget}. Report actual actions and latency separately.'])
     atomic_json(output/'protocol.json', protocol)
     return protocol
 
@@ -210,6 +212,14 @@ def cache_prefill_check(backend, decoder, prompt, *, width, cap):
     return compare_distributions(a,b)[0], dict(ordinary=a,cached=b)
 
 
+def prefill_audit_modes(modes):
+    """Check each requested causal shape, never compile an unused pathway."""
+    selected=[m for m in ('direct','cot') if m in modes]
+    reader_modes=[m for m in modes if m not in ('direct','cot')]
+    if reader_modes:selected.append(reader_modes[0])
+    return selected
+
+
 def generate(output, shard, until):
     import torch
     from train.evaluate import GenerationFailure, asset_provenance
@@ -254,10 +264,11 @@ def generate(output, shard, until):
         del hidden,lp,x,actual
         decoder=NumberLineDecoder(backend.model,tok,sync=backend.sync,banned_ids=backend.banned_ids)
         q,c=questions[shard],controls[shard]
-        for mode in ('direct','cot','teacher'):
-            prompt=prompt_tokens(q,tok,cot=mode=='cot') if mode!='teacher' else reader_tokens(q,c['notes']['teacher'],tok)
-            width=p['writer_or_cot_prefill'] if mode!='teacher' else p['reader_prefill']
-            cap=p['direct_and_cot_cap'] if mode!='teacher' else p['reader_answer_cap']
+        for mode in prefill_audit_modes(p['modes']):
+            plain=mode in ('direct','cot')
+            prompt=prompt_tokens(q,tok,cot=mode=='cot') if plain else reader_tokens(q,c['notes'][mode],tok)
+            width=p['writer_or_cot_prefill'] if plain else p['reader_prefill']
+            cap=p['direct_and_cot_cap'] if plain else p['reader_answer_cap']
             audit,vectors=cache_prefill_check(backend,decoder,prompt,width=width,cap=cap)
             torch.save(vectors,d/f'cache-{mode}-logps.pt');atomic_json(d/f'cache-{mode}.json',audit)
             if audit['max_logp_error']>p['cache_prefill_max_logp_error']:
@@ -343,9 +354,10 @@ def main():
     a.add_argument('--output',type=Path,required=True);a.add_argument('--data-file',type=Path);a.add_argument('--model-dir',type=Path);a.add_argument('--base-protocol',type=Path)
     a.add_argument('--shard',type=int);a.add_argument('--deadline-utc');a.add_argument('--reader-binding',type=Path);a.add_argument('--notes-bundle',type=Path)
     a.add_argument('--panel',choices=tuple(COHORTS),default='TRAIN');a.add_argument('--modes',nargs='+');a.add_argument('--native-from',type=Path)
+    a.add_argument('--action-budget',type=int,choices=(80,96),default=80)
     v=a.parse_args()
     if v.command=='prepare':
-        result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol,v.reader_binding,v.notes_bundle,v.panel,v.modes,v.native_from)
+        result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol,v.reader_binding,v.notes_bundle,v.panel,v.modes,v.native_from,v.action_budget)
     elif v.command=='generate':
         result=generate(v.output,v.shard,v.deadline_utc)
     else:
