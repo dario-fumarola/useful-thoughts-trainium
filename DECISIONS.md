@@ -1036,3 +1036,12 @@ repair. Reader128 then completes at~.73s/update with all four full states and
 physical closure; freeze its terminal model before fresh writer128. Run ordinary
 compactCoT128 independently on the same traces, allowing it to win. These are
 TRAIN fitting diagnostics with two-run split training cost, not capability claims.
+
+2026-10-18 19:21UTC — Reader/writer/compactCoT128 all finish, all terminal
+active/master/moment bytes audited, frozen weights/nonweight evidence EBS verified.
+CPU writer actually emits all128 exact partial states with naturalEOS; fresh
+generalization remains unmeasured. All CPU own/other reader contexts equal the
+already scheduled teacher/other_teacher controls: verify executed prompt bindings
+and label any response reuse explicitly, without extra independent samples.
+Trainium prefix and complete-answer matrices remain active. Next-study ordinary
+CoT may include the full root calculation; account for two split models/runs.

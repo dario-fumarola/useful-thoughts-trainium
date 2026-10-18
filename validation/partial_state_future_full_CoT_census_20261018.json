@@ -1,0 +1,44 @@
+{
+  "schema": "partial-state-future-baseline-token-census-v1",
+  "scope": "CPU data-only proposal before any new trained DEV outcome; no learning release or changes to existing128mechanics.",
+  "finding": "Existing compact CoT128 trains non-root partials then final Answer. A conventional full-trace CoT can also state the root operation; allow this stronger baseline in the next study rather than silently constraining it to the partial writer format.",
+  "token_census": {
+    "DEV_range": {
+      "items": 512,
+      "max_full_CoT_completion_tokens": 73,
+      "max_total_tokens": 99,
+      "above80completion": 0
+    },
+    "DEV_interpolation": {
+      "items": 512,
+      "max_full_CoT_completion_tokens": 63,
+      "max_total_tokens": 85,
+      "above80completion": 0
+    },
+    "DEV_structure": {
+      "items": 512,
+      "max_full_CoT_completion_tokens": 63,
+      "max_total_tokens": 84,
+      "above80completion": 0
+    },
+    "TRAIN": {
+      "items": 5120,
+      "max_full_CoT_completion_tokens": 63,
+      "max_total_tokens": 85,
+      "above80completion": 0
+    },
+    "DEV_composition": {
+      "items": 512,
+      "max_full_CoT_completion_tokens": 86,
+      "max_total_tokens": 112,
+      "above80completion": 2
+    }
+  },
+  "prospective_comparison": "FreshB0: answer SFT, ordinary full-trace CoT, partial reader\u2192freeze\u2192writer. Count two split model training runs and inference stages; add matched-total-training-compute CoT if the split shows any benefit.",
+  "limits": [
+    "These are exact prefix-interpreter traces, never LM outcome selection.",
+    "Do not relabel or change completed compactCoT128.",
+    "Two full1.7B models have greater total parameter storage; within-reader gains do not establish architectural superiority.",
+    "Larger study remains unreleased; budgets/formats must be fixed before fresh DEV outcomes select them."
+  ]
+}

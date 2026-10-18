@@ -1,0 +1,130 @@
+{
+  "schema": "partial-state-TRAIN128-SFT-training-audit-v1",
+  "status": "ALL_THREE_TRAINING_RUNS_COMPLETE_ANSWER_AND_STATE_EVALUATION_PENDING",
+  "finished_utc": "2026-10-18T19:10:35.163585+00:00",
+  "results": {
+    "reader": {
+      "initial_native_KLs": [
+        0.0031035199827929003,
+        0.003069729731572845,
+        2.1572303394931953e-05,
+        0.00032594614748145167
+      ],
+      "all4_released_initial_master_samples_independently_exact": true,
+      "actual_updates": 128,
+      "expressions": 4096,
+      "supervised_tokens": 25440,
+      "terminal_model_sha256": "1670181dd68100f025e19263297e757fdfe1c32c9d2304ce662f18ed839181a2",
+      "terminal_all1240_master_and_moment_shards_finite_FP32": true,
+      "terminal_all_adam_steps": 128,
+      "terminal_full_active_BF16_bytes_equal_cast_masters": true,
+      "terminal_all_active_weights_finite_and_tied": true,
+      "full_checkpoint_steps": [
+        32,
+        64,
+        96,
+        128
+      ],
+      "all_full_checkpoint_hashes_verified_at_physical_closure": true,
+      "last_batch_train_loss": 0.016089413315057755,
+      "last16_batch_train_loss_mean": 0.03498925833264366,
+      "last16_update_seconds_median": 0.7241300340101589,
+      "max_observed_owned_session_PSS_GiB": 74.51224040985107,
+      "memory_samples": 27,
+      "memory_scope": "Observed bounded128-update process-tree peak includes full-state exports; coarse10s sampling does not establish a multi-hour steady-state plateau.",
+      "frozen_model_EBS_receipt_sha256": "fd125c66581db36e0f60a734cb0ec88ebd186799ca74aa070be97ed3d483c32b",
+      "numerical_EBS_receipt_sha256": "8c70b54a97c3423a7779c6f38b190ae295dc7ad822b14f3c3d8bcfc3b36a79d0"
+    },
+    "cot": {
+      "initial_native_KLs": [
+        0.0031035199827929003,
+        0.003069729731572845,
+        2.1572303394931953e-05,
+        0.00032594614748145167
+      ],
+      "all4_released_initial_master_samples_independently_exact": true,
+      "actual_updates": 128,
+      "expressions": 4096,
+      "supervised_tokens": 132416,
+      "terminal_model_sha256": "cc55aadb677330565d244682509445c4fa209b38b32fb145d2896374531c160a",
+      "terminal_all1240_master_and_moment_shards_finite_FP32": true,
+      "terminal_all_adam_steps": 128,
+      "terminal_full_active_BF16_bytes_equal_cast_masters": true,
+      "terminal_all_active_weights_finite_and_tied": true,
+      "full_checkpoint_steps": [
+        32,
+        64,
+        96,
+        128
+      ],
+      "all_full_checkpoint_hashes_verified_at_physical_closure": true,
+      "last_batch_train_loss": 0.008102296851575375,
+      "last16_batch_train_loss_mean": 0.0017653542399784783,
+      "last16_update_seconds_median": 0.731981196498964,
+      "max_observed_owned_session_PSS_GiB": 75.45952606201172,
+      "memory_samples": 28,
+      "memory_scope": "Observed bounded128-update process-tree peak includes full-state exports; coarse10s sampling does not establish a multi-hour steady-state plateau.",
+      "frozen_model_EBS_receipt_sha256": "fad81fd76691a087b555964fff2c571ecb66bdaadd6f192a5134bf20123ba045",
+      "numerical_EBS_receipt_sha256": "0c14ef6450e95ef775986d0aa8b8b509b99fd9841279428df6223ff9ab49308e"
+    },
+    "writer": {
+      "initial_native_KLs": [
+        0.0031035199827929003,
+        0.003069729731572845,
+        2.1572303394931953e-05,
+        0.00032594614748145167
+      ],
+      "all4_released_initial_master_samples_independently_exact": true,
+      "actual_updates": 128,
+      "expressions": 4096,
+      "supervised_tokens": 102880,
+      "terminal_model_sha256": "58553db64f9b7cfbf1a3389c53c3eb0f72150fd2524fb281b68fa2756a392355",
+      "terminal_all1240_master_and_moment_shards_finite_FP32": true,
+      "terminal_all_adam_steps": 128,
+      "terminal_full_active_BF16_bytes_equal_cast_masters": true,
+      "terminal_all_active_weights_finite_and_tied": true,
+      "full_checkpoint_steps": [
+        32,
+        64,
+        96,
+        128
+      ],
+      "all_full_checkpoint_hashes_verified_at_physical_closure": true,
+      "last_batch_train_loss": 2.530857159399602e-07,
+      "last16_batch_train_loss_mean": 1.1494934284428382e-06,
+      "last16_update_seconds_median": 0.7338555775058921,
+      "max_observed_owned_session_PSS_GiB": 74.74824714660645,
+      "memory_samples": 27,
+      "memory_scope": "Observed bounded128-update process-tree peak includes full-state exports; coarse10s sampling does not establish a multi-hour steady-state plateau.",
+      "frozen_model_EBS_receipt_sha256": "5201c244c6888e958492866f6907ea1c54fa3f11211b8b9f573ba9b30a6ca344",
+      "numerical_EBS_receipt_sha256": "9d49123b985227f0c0296e219118a9e71a0df5e1980b113bfd3742ee1c666836"
+    }
+  },
+  "all_arms_same4096_ordered_expressions": true,
+  "public_payloads": {
+    "validation/partial_state_v6_TRAIN128_training_20261018/reader-all128-update-metrics.jsonl.gz": {
+      "rows": 128,
+      "bytes": 23105,
+      "sha256": "83e7f8bedd7ebde76284d76d7c44f96600022e468c2e7ba223ee2abe48ae86cf"
+    },
+    "validation/partial_state_v6_TRAIN128_training_20261018/cot-all128-update-metrics.jsonl.gz": {
+      "rows": 128,
+      "bytes": 23204,
+      "sha256": "7d5c1a6ab40d62d71aa6651d1e0282b2bb534e04441732ce958b99729c06e2f5"
+    },
+    "validation/partial_state_v6_TRAIN128_training_20261018/writer-all128-update-metrics.jsonl.gz": {
+      "rows": 128,
+      "bytes": 23228,
+      "sha256": "f10343172eb5dfd4a90e0e6939ff2963d5b81932ef95c4171b54a850704f38fe"
+    }
+  },
+  "interpretation": "Short canonical fitting and actual state preservation work with fast cached graphs. Low teacher-forced loss does not establish prefix-only state generation, useful reader effects or generalization.",
+  "limits": [
+    "First128TRAIN expressions,32passes, one seed; no fresh DEV evaluation yet.",
+    "The split reader/writer consumes TWO128-update training runs; ordinary compactCoT consumes one.",
+    "This compactCoT128 uses identical non-root partial traces plus final Answer; a full-root-trace CoT is a stronger later baseline.",
+    "All terminal active/master/moment bytes independently audited; intermediate32/64/96 raw finite checks belong to the producer, all payload hashes checked by finite supervisor.",
+    "Frozen models and initialization/nonweight evidence have verified same-instance EBS copies; full optimizer states remain onNVMe, so EBS model-only archives cannot resume training.",
+    "No overall capability, multi-hour memory or RL release claim."
+  ]
+}

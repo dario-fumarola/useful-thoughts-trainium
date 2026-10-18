@@ -20,20 +20,26 @@
    LRU2 tail43.466s versus2561.925s;94new handles versus94cache hits/zero new.
    Both world4/global4 tails bounded, so no originalworld32 OOM repair claim.
    validation/host_memory_cache_capacity_20261018.json and raw records are ready.
-4. TRAIN128 mechanics: reader128 physically closed, full32/64/96/128 verified,
-   terminal CE.0161; frozen-reader binding in its control folder. CoT128 also
-   completed. Fresh independent writer128 launched18:30 onphysical7/logical28–31:
-   local/diagnostics/partial-state-v6-writer-TRAIN128-overfit-v1. Boundmidnight,
-   5hours,512GiB floor; all use exact unchanged training source7623864/LRU256.
-   Main's trained-reader evaluator now has1584CPUchecks; freeze it in a separate
-   worktree before new hardware. Prepare its own CPU native reference for the
-   frozen reader, then all128free-answer controls. Existing B0v1 evaluation
-   remains on immutable partial-state-v6 worktree71609ee; never edit its sources.
-   Evaluate actual writer notes with this SAME frozen reader; retain all actions,
-   caps/unsupported, correct/corrupt/intact-other/restatement/raw/empty controls
-   and compact CoT. TRAIN fitting is not generalization or a complexity gain.
-   Archive frozen model weights/nonweight evidence onEBS while keeping35GiB free;
-   full optimizer states remain onNVMe. No mechanical model silently warms science.
+4. All three128TRAIN fitting runs completed and independently passed full
+   terminal model/master/moment audits. Frozen models and numerical evidence
+   have verified EBS copies; full states32/64/96/128 remainNVMe. CPU writer
+   generation is128/128exact partial states with naturalEOS, no caps/errors.
+   Public training/CPU reports preserve complete outputs and all metrics.
+   Active answer controls: B0v1 onphysical3, reader128v2 on5, compactCoT128v2
+   on6, plus paired GPU writer notes on7. Every direct/CoT prefill check passes;
+   long-reader prefill and first generation graphs are still compiling. Retain
+   patience; all jobs have finite original timeouts and512GiB floor/no retries.
+   Controls/output folders share the partial-state-v6-TRAIN128-* IDs. B0 stops
+   by21:00UTC, others23:00UTC with3-hour per-process caps. CPU writer completed.
+   Source snapshots: partial-state-v6/71609ee, partial-state-eval-v6/ddb40b0,
+   partial-state-channel-v6/a73c347. NEVER edit these while their jobs are active.
+   CPU-generated own/other note IDs exactly match existing teacher/other_teacher
+   inputs on all128fit cases. After reader stages close, verify actual prompt
+   IDs/model/stop/cap/prefill hashes before explicitly composing those responses;
+   do not claim extra independent inference. Mismatches require actual new calls.
+   Main v3 supports complete own-note evaluation on later nonidentical cohorts.
+   Full-trace CoT, including root operation, is a stronger future baseline;
+   data-only census showsTRAIN fits64label slots. Do not relabel old compactCoT.
 5. Separate512-item interpolation, structure, range and composition DEV panels
    are ready; do not pool their generalization claims. Qualification/overfit
    models are mechanical and do not become scientific warm starts implicitly.

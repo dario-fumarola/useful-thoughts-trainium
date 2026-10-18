@@ -1,4 +1,4 @@
-# Status — 2026-10-18 18:32 UTC
+# Status — 2026-10-18 19:21 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -75,19 +75,21 @@ Fast external tail has only2samples; PSS slopes are null, not a steady-state pas
 All traces/metrics and EBS readback archive verified; validation/host_memory_cache_capacity_20261018.json.
 Decision: release LRU256 for extended target-loop128TRAIN mechanics; no broad study or RL release.
 
-## Active: intermediate-only TRAIN128 fitting and simple CoT comparison
-Question: can a trained frozen reader use a separately produced partial state beyond compact CoT?
-ID:partial-state-v6-TRAIN128-overfit-v1; all arms fresh B0, same128expressions/order/128updates.
-Reader128 closed18:26; terminal loss.0161, warm~.73s, full32/64/96/128 states verified.
-Its model hash1670181d…1839181a2 is frozen before independent writer launch18:30 onphysical7.
-CompactCoT128 also completes; ordinary mean CE over partial+answer+EOS, terminal batchloss.0081.
-Writer trains partial+EOS only; root operation/final answer omitted; no qualification-model warm start.
-Endpoint: terminal TRAIN complete-answer and canonical-state accuracy/natural stop; aims95% and CE<=.1.
-PSS reader max74.5GiB including full-state exports;128updates are bounded, not a multi-hour plateau claim.
-Controls:local/diagnostics/partial-state-v6-{reader,cot,writer}-TRAIN128-overfit-v1; source7623864 unchanged.
-Outputs:local/nvme/runs/sameIDs; writer logical28–31, midnight/5hour cap,512GiB floor, no retries.
-The split method costs TWO training runs; equal per-arm updates are not matched total training compute.
-Decision: fit mechanics only; free answers/student utility and fresh generalization remain unmeasured.
+## Active: intermediate-only TRAIN128 fitting and reader comparison
+Question: can a separately trained prefix-only writer aid a frozen reader beyond compact CoT?
+ID:partial-state-v6-TRAIN128-overfit-v1; all three fresh B0 arms finish128updates/32passes on same ordered data.
+Reader, compactCoT and writer are physically closed; terminal losses.0161/.0081/2.53e−7.
+Independent12native/master witnesses and all3terminal model/FP32master/moment/cast audits pass.
+All32/64/96/128 complete states verified; warm updates~.73s, observed nodePSS peaks75.5GiB including saves.
+Frozen models plus all nonweight/numerical evidence EBS readback verified; full optimizer states onNVMe.
+CPU writer generates128/128 exact partial states and natural EOS, with no caps/errors/empty or root lines.
+This is TRAIN fitting, not generalization or reader utility; paired XLA prefix generation remains active.
+All128own and unrelated CPU-note reader inputs exactly equal teacher/other_teacher controls; reuse must be explicit.
+B0/reader/CoT answer matrices each have896scheduled attempts; all direct/CoT cache checks pass, longer checks compiling.
+Active:physical3 B0,5 reader,6 CoT,7 writer; old/adapted sources frozen at71609ee/ddb40b0/a73c347.
+Controls:local/diagnostics/partial-state-v6-TRAIN128-{B0,reader128,cot128}-answers-v{1,2} and writer128-GPU-notes-v1.
+Public:validation/partial_state_v6_TRAIN128_{training,writer_CPU}_20261018.json; no DEV or RL release.
+Decision: finish actual free answers, paired hardware notes and same-reader controls; split training costs two runs.
 
 ## CPU ready: intermediate-only state diagnostic
 Question: can a supervised prefix-only writer aid a trained frozen reader beyond compact CoT?
