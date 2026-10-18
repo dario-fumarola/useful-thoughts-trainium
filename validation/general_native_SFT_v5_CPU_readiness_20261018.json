@@ -1,0 +1,93 @@
+{
+  "base_commit": "731a9ce",
+  "branch": "general-sft-v5",
+  "checks": {
+    "compile": true,
+    "focused": {
+      "log": "/home/ubuntu/dario/local/checks/general-sft-v5.focused-corrected.log",
+      "passed": 105,
+      "sha256": "9b897838678c327dfba369969d0203d4691313b0958fc7b1ce24c2f8bc7d9bc1"
+    },
+    "log_sha256": "7cf6e1233156e5cf5cc60c64042fa9354e51cc9cc2a06848833f7d42e4dd2d74",
+    "seconds": 71.5,
+    "smoke": true,
+    "tests": 1557
+  },
+  "data_schema": "general-native-supervised-train-v1",
+  "independent_scope_review": {
+    "file": "local/analysis/general-sft-v5-driver-scope-review-20261018.json",
+    "sha256": "dd7023224963d932b7f5e5de1ccaccdd24b9b0daeb0521dc00aec8075f60da3c"
+  },
+  "limits": [
+    "Only kind/schema/provenance/packing dispatch changed. Backward objective, one ZeRO reduction owner, BF16 model/FP32 optimizer masters and recovery math are unchanged.",
+    "Historical filter source hashes are checked at absolute unchanged main paths; worktree training sources have a distinct closure.",
+    "Fixed old component shapes explicitly add padding; actual compiler reuse and hardware qualification remain unmeasured.",
+    "CPU checks do not establish an actual5120-label quota, Neuron hardware behavior, compiler reuse, training or useful generated notes.",
+    "Current actual arithmetic training and general-label pipeline continue from unchanged main sources; this branch is isolated."
+  ],
+  "native_cut_semantics": "native_window_cut=512 is a cut within the saved native528-token window, NOT a proven absolute document offset. Symbolic rows retain absolute_source_cut.",
+  "observed_utc": "2026-10-18T10:36:24.830903+00:00",
+  "prerequisite": "Complete original fixed5120 quota and all raw/teacher/reader physical closures, then reviewed CPU native inventory. No fallback or partial qualification dataset.",
+  "protocol_contract": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "clip": 1.0,
+    "compute_dtype": "bf16",
+    "epochs": 2,
+    "eps": 1e-08,
+    "global_batch": 32,
+    "gradient_dtype": "bf16",
+    "interface": "I3",
+    "loss_weights": {
+      "Cprime": {
+        "continuation": 1.0,
+        "source": 0.5
+      },
+      "T": {
+        "augmented": 1.0
+      },
+      "W": {
+        "reader": 1.0,
+        "source": 0.5,
+        "writer": 1.0
+      }
+    },
+    "lr": 1e-05,
+    "optimizer_dtype": "fp32",
+    "packing": {
+      "augmented": {
+        "target_slots": 704,
+        "width": 704
+      },
+      "reader": {
+        "target_slots": 16,
+        "width": 704
+      },
+      "source": {
+        "target_slots": 544,
+        "width": 544
+      },
+      "writer": {
+        "target_slots": 128,
+        "width": 640
+      }
+    },
+    "parameter_dtype": "bf16",
+    "schema": "useful-note-sft-v5",
+    "steps": 320,
+    "tail_policy": "exact",
+    "warmup_steps": 20,
+    "weight_decay": 0.1
+  },
+  "qualification_parent_guard": "Exact actual5120-item/5120-unique-document parent and every full parent row checked;5000/5001 and duplicates beyondfirst64 rejected before assets.",
+  "schema": "general-native-sft-v5-CPU-readiness-v1",
+  "source_sha256": {
+    "tests/test_prepare_general_sft_data.py": "eb284a0133bcc1889613b088932efc40f8286abc86329f353370e484528992f1",
+    "train/prepare_general_sft_data.py": "2c0f58a6dda27a2614c34ba410f15a4116fab816989f8c953290ebd137c16788",
+    "train/useful_note_sft_data.py": "72f595325cbb6bbc3e29680385d639ddfb5f525dc776eb9351ae4c4bd509ab08",
+    "train/useful_note_sft_driver.py": "3d9cebba155abf95c85b89426c8489fe684cfbc8ff556c4b0682f0c0118a67ed"
+  },
+  "status": "PASS_CPU_ONLY_NO_DATA_QUOTA_OR_MODEL_RELEASE"
+}

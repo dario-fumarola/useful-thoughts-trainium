@@ -130,6 +130,14 @@ def pack_example(row, tokenizer, component, *, interface, parts, width, target_s
     that pass. T labels every real augmented token after the first, including
     inserted delimiters/reanchor; W excludes these from its reader labels.
     """
+    if row.get('teacher_kind') == 'future-aware-general-firstline-native-v1':
+        from train.general_hindsight_filtered_data import pack_native
+        if interface != 'I3':
+            raise ValueError('GENERAL native labels retain the original I3 interface')
+        return pack_native(row, tokenizer, component, parts=parts,
+                           width=width, target_slots=target_slots)
+    if row.get('teacher_kind') is not None:
+        raise ValueError('Unknown explicit teacher kind; never reinterpret as symbolic')
     if component not in COMPONENTS or row.get('split') != 'train':
         raise ValueError('A declared component and TRAIN document are required')
     past = list(row['prefix_ids']); original = list(row['original_source_ids'])

@@ -22,7 +22,7 @@ import time
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'useful-note-sft-v4'
+SCHEMA = 'useful-note-sft-v5'
 WEIGHTS = {'W': {'writer': 1., 'reader': 1., 'source': .5},
            'Cprime': {'continuation': 1., 'source': .5}, 'T': {'augmented': 1.}}
 COMPONENTS = ('source', 'writer', 'reader', 'augmented')
@@ -48,14 +48,16 @@ def planned_steps(p):
 
 def source_files():
     from train.filter_symbolic_notes import sources
+    from train.general_hindsight_filtered_data import sources as general_sources
     names = ('train/useful_note_sft_driver.py', 'train/useful_note_sft_data.py',
              'train/masked_causal_ce.py', 'train/neuron_driver.py',
              'train/warmstart_driver.py', 'train/useful_note_precision.py',
              'train/useful_note_controls.py', 'train/prepare_reader_learning_data.py',
+             'train/prepare_general_sft_data.py',
              'train/useful_note_recovery.py',
              'weekend_thinking/runtime_policy.py',
              'weekend_thinking/checkpoints.py')
-    return {**sources(), **{name: sha256_file(ROOT/name) for name in names}}
+    return {**sources(), **general_sources(), **{name: sha256_file(ROOT/name) for name in names}}
 
 
 def validate_protocol(p):
@@ -121,24 +123,40 @@ def batch_indices(step, rank, p, count=None, order=None):
         [order_index(pos,p['items'] if count is None else count,p['seed']) for pos in positions])
 
 
+def inventory_contract(manifest):
+    if manifest.get('schema') == 'useful-note-supervised-train-v3':
+        return 'teacher_note_kind', 'exact-postorder-v1', False
+    if manifest.get('schema') == 'general-native-supervised-train-v1':
+        return 'teacher_kind', 'future-aware-general-firstline-native-v1', True
+    raise ValueError('Explicit symbolic or GENERAL native training schema required')
+
+
 def validate_inventory(p,manifest,rows):
     """Unique item/cut identities; repeated TRAIN documents remain explicit."""
     ids=[r['item_id'] for r in rows];docs=[r['document_id'] for r in rows]
-    cuts=[r.get('absolute_source_cut') for r in rows]
-    if (manifest.get('schema') != 'useful-note-supervised-train-v3'
-            or manifest.get('status') != 'complete_CPU_inventory_NOT_Neuron_training_qualification'
+    kind_field, kind, likelihood = inventory_contract(manifest)
+    cut_field='native_window_cut' if likelihood else 'absolute_source_cut'
+    cuts=[r.get(cut_field) for r in rows]
+    if (manifest.get('status') != 'complete_CPU_inventory_NOT_Neuron_training_qualification'
             or len(rows) != p['items'] or len(set(ids)) != len(rows)
             or any(type(c) is not int or c < 0 for c in cuts)
             or len(set(zip(docs,cuts))) != len(rows)
-            or any(r.get('split') != 'train' or r.get('teacher_note_kind') != 'exact-postorder-v1' for r in rows)
+            or any(r.get('split') != 'train' or r.get(kind_field) != kind for r in rows)
             or manifest.get('items') != p['items'] or manifest.get('unique_documents') != len(set(docs))
             or manifest.get('purpose') != p['purpose'] or manifest.get('split') != 'train'
             or manifest.get('training_sha256') != p['data_sha256']
-            or manifest.get('selection_uses_likelihood') is not False
+            or manifest.get('selection_uses_likelihood') is not likelihood
             or manifest.get('ordered_item_ids_sha256') != canonical_hash(ids)
             or manifest.get('ordered_document_ids_sha256') != canonical_hash(docs)
             or any(manifest.get(k) != p[k] for k in ('packing','interface','parts'))):
         raise ValueError('Complete fixed TRAIN item/document/cut inventory and native packing required')
+    if likelihood and (manifest.get('teacher_kind') != kind
+            or p['items'] != (64 if p['purpose']=='qualification' else 5120)
+            or len(set(docs)) != len(rows) or any(c != 512 for c in cuts)
+            or any(len(r['prefix_ids']) != 512 or len(r['natural_future16_ids']) != 16
+                or r['original_source_ids'] != r['prefix_ids']+r['natural_future16_ids']
+                or r.get('selection_uses_likelihood') is not True for r in rows)):
+        raise ValueError('GENERAL requires unique documents, original native512+16 and honest gain selection')
     return len(set(docs))
 
 
@@ -157,9 +175,16 @@ def load_inputs(p):
                 or manifest['preparation_source_sha256']!=p['source_files']['train/useful_note_sft_driver.py']):
             raise ValueError('Qualification subset preparation/parent changed')
         science=json.loads(parent.read_text());data=Path(science['training_file'])
-        if (science['purpose']!='science' or science['schema']!='useful-note-supervised-train-v3'
+        if (science['purpose']!='science' or science['schema']!=manifest['schema']
                 or science['items']<5000 or sha256_file(data)!=manifest['parent_science_training_sha256']):
             raise ValueError('Qualification requires the fixed new science parent')
+        if manifest['schema']=='general-native-supervised-train-v1':
+            if (science['items']!=5120 or science['unique_documents']!=5120
+                    or science['training_sha256']!=manifest['parent_science_training_sha256']):
+                raise ValueError('GENERAL qualification requires the actual complete5120-document parent')
+            parent_rows=[json.loads(line) for line in data.read_text().splitlines()]
+            parent_protocol=dict(p,items=5120,purpose='science',data_sha256=science['training_sha256'])
+            validate_inventory(parent_protocol,science,parent_rows)
         with data.open('rb') as f: first=b''.join(next(f) for _ in range(64))
         if Path(p['data_file']).read_bytes()!=first:
             raise ValueError('Qualification must preserve the exact first64 science rows')
@@ -191,11 +216,14 @@ def prepare_qualification_inventory(science_dir,output,model_dir,deadline):
         if datetime.now(timezone.utc)>=require_utc_deadline(deadline):raise TimeoutError('Qualification inventory deadline')
     check();path=science_dir/'manifest.json';m=json.loads(path.read_text())
     data=Path(m['training_file'])
-    if (output.exists() or m['schema']!='useful-note-supervised-train-v3' or m['purpose']!='science'
+    _,_,uses_likelihood=inventory_contract(m)
+    if (output.exists() or m['purpose']!='science'
             or m['status']!='complete_CPU_inventory_NOT_Neuron_training_qualification'
-            or m['items']<5000 or m['selection_uses_likelihood'] is not False
+            or m['items']<5000 or m['selection_uses_likelihood'] is not uses_likelihood
             or sha256_file(data)!=m['training_sha256']):
         raise ValueError('Fresh qualification output and complete new science inventory required')
+    if uses_likelihood and (m['items']!=5120 or m['unique_documents']!=5120):
+        raise ValueError('GENERAL qualification requires the actual complete5120-document quota')
     lines=data.read_bytes().splitlines(keepends=True)
     rows=[json.loads(line) for line in lines]
     if (len(rows)!=m['items'] or canonical_hash([r['item_id'] for r in rows])!=m['ordered_item_ids_sha256']
@@ -217,7 +245,8 @@ def prepare_qualification_inventory(science_dir,output,model_dir,deadline):
     keys=('interface','parts','packing','tokenizer_vocab_sha256','writer_stop_ids','mask_semantics','reader_target',
           'input_hashes','filter_input_hashes','source_files','selection_uses_likelihood')
     manifest={k:m[k] for k in keys}
-    manifest.update(schema='useful-note-supervised-train-v3',status=m['status'],purpose='qualification',split='train',
+    if uses_likelihood:manifest['teacher_kind']=m['teacher_kind']
+    manifest.update(schema=m['schema'],status=m['status'],purpose='qualification',split='train',
         items=64,unique_documents=len({r['document_id'] for r in selected}),component_counts=counts,
         training_file=str(target.resolve()),training_sha256=sha256_file(target),created_utc=utc_now(),
         ordered_item_ids_sha256=canonical_hash([r['item_id'] for r in selected]),
