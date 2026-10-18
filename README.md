@@ -99,6 +99,8 @@ retained. Unrelated donors cross grammar families, while all note lengths are128
 The generated-note contrast does not isolate calculation from expression restatement.
 This synthetic result does not replace the real-document endpoints or release RL. The same frozen cohort can measure later supervised transfer.
 
+![Supplied partial work and generated-note contrasts, all256 fixed expressions](figures/controlled_arithmetic_B0_20261018.svg)
+
 Supervised writer-and-reader warm-start is active under the underlying re-anchored
 interface, with ordinary source-CE and augmented-source controls planned. This is the
 declared reader-learning fallback for arithmetic; fixed mixing remains a separate
