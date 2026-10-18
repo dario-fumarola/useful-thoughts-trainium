@@ -640,3 +640,36 @@ retains teacher’s wrong48-hour answer being copied and the verified reader
 miscomputing6+22 as26. Keep original reports, strict scores and fixedfirst4
 unchanged; publish the transparent posthoc panel separately. Positive forced
 numeric LL is distinct from a demonstrated arithmetic-capability gain.
+
+The second shared verified/empty failure exposed a manual-note flaw: carnations
+for14 friends were priced as14 singles, missing the additional dozen discount.
+Canonical TRAIN counts six dozen+two singles for25; all original readers answer27.
+Arithmetic checks passed, but the note did not justify the purchase assumption.
+Qualify the historical mode as arithmetic-verified, preserve frozen inputs and
+strict scores, and extend the separately versioned posthoc panel to all6 cases
+in the discordance-or-verified-failure union. Its originalv1 remains in Git/EBS.
+This does not change any active self-note input, source, target or analysis rule.
+
+
+### 2026-10-18 02:49 UTC — short self-notes fail; test real verified arithmetic
+
+The unchanged-B0 probe closed all128 notes,416 fresh answers and416 finite LL
+rows. Mean single-note policy accuracy is67.19%, versus75% direct256 and75%
+empty192; own−direct−7.81pp CI[−18.75,+2.34]. NumericLL differences from both
+controls are also negative with intervals crossing zero. Beating corrupted text
+is not success. Independent audits reproduce every row/mean/CI/source binding;
+all original processes are closed and210-file EBS evidence is verified.
+Do not scale this policy into long RL or treat final-answer notes as partials.
+
+The next data identity targets exact numerical calculations inside real FineMath
+TRAIN/DEV. Hash-select one eligible causal '=' boundary per document before RHS
+quality checks, without replacement on rejection. Prefix eligibility rejects
+already-visible answers and requires a proper computable subexpression. Safe
+exact arithmetic supplies partial labels, with explicit external-supervision
+status; the full source result must independently agree. Preserve unsupported,
+false-source and alignment rejections separately, exact source tokens and split
+identity. Fixed TRAIN256/DEV64 feasibility pools precede model scores. No full
+corpus prep until source/fixture review, no training until actual data and reader
+feasibility are understood. Future raw control gets full ordinary source CE on
+identical accepted chunks. This repairs a concrete data/reward weakness without
+converting external labels or oracle measurements into self-discovery claims.

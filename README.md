@@ -5,248 +5,83 @@ language-model capability. This repository contains the experiment specification
 implementation, checks, and research context for a pretrained-model comparison
 on AWS Trainium.
 
-## Initial experiment (stopped on 2026-10-17)
+## Current finding
 
-Start two copies of released **Qwen3-1.7B-Base** from identical weights and give
-them the same ordered mathematical documents:
+**Useful self-generated thoughts have not been established.** The latest bounded
+probe uses unchanged Qwen3-1.7B-Base on 32 GSM8K TRAIN development questions:
 
-- **C — continuation:** ordinary next-token training.
-- **R — thought training:** sample four prefix-only thoughts, score how each
-  changes the likelihood of the true next token, and apply a signed
-  leave-one-out policy update to all four samples.
+| Inference | Strict accuracy | Canonical-number log likelihood |
+|---|---:|---:|
+| Ordinary calculation, cap256 | 24/32 (75.0%) | −2.739 |
+| Generate then discard note, reader cap192 | 24/32 (75.0%) | −2.819 |
+| Sampled note cap64 + reader cap192 | 86/128 paths (67.2%) | −2.978 |
 
-The initial recipe uses a 1,024-action cap, one-token reward, temperature 0.7,
-and no reader, teacher, or ordinary-language-model auxiliary loss in R.
-The writer never receives the true continuation.
+Four notes per question estimate a **single sampled-note policy** by averaging
+within each question; there is no best-of-four selection or voting. The accuracy
+difference from ordinary calculation is −7.81 percentage points, paired 95%
+interval [−18.75,+2.34]. Notes also fail to improve numeric likelihood. They beat
+shuffled and unrelated text, but that does not establish improvement over silence.
+This is exploratory reuse of known TRAIN questions, not blinded confirmation.
+Equal maximum token budgets do not imply equal FLOPs or latency.
+[Full result, controls, failures, costs and provenance](validation/gsm8k_self_note_train32_20261018.json).
 
-Evaluate both trained models with direct, empty-format and thought-enabled
-inference. The primary comparison is **R-thought minus C-thought**; also report
-**R-direct minus C-direct**, **R-thought minus R-empty**, and each trained arm
-against unchanged base weights. Direct inference permits ordinary calculations.
-The first study targeted 256 terminal updates in each arm for two matched seeds,
-with a fixed step64 development milestone. Retain failures in evaluation
-denominators and report training and inference costs.
+All 128 notes, 416 fresh reader attempts, 416 likelihood rows and 32 reused exact
+baseline cells are retained. Independent audits reproduce all means and paired
+intervals. A manual audit finds final-answer claims, arithmetic mistakes, wrong
+quantity interpretations and unfinished notes; those annotations do not filter
+any result. Raw evidence and fixed-order examples have verified local EBS copies.
 
-## Current status
+The next experiment prepares verifiable calculation boundaries from real FineMath
+TRAIN/DEV documents. A note computes a proper subexpression using only the past;
+the natural source continuation remains the target. This is explicit external
+arithmetic supervision, distinct from spontaneous self-discovery. Eligibility and
+selection precede model scoring. No further long RL run is active.
+[Current queue](NEXT_STEPS.md) · [Exact work state](STATUS.md).
 
-**The first warm-start comparison is negative.** On the same 64 development
-documents, with an unchanged B0 reader and fresh one-sample notes:
+## What led here
 
-| Writer | K16 own−empty, nats | K16 own−unrelated, nats | Cap256 |
-|---|---:|---:|---:|
-| B0 | −1.101 | −1.023 | 45/64 |
-| Raw future16 CE64 | −0.956 | −0.939 | 50/64 |
-| Note BC64 | −0.649 | −0.636 | 63/64 |
+- **Initial R study stopped.** Inserting the original thought format carried a
+  large initial penalty: B0 DEV512 K1 raw −1.118, empty −7.361, own −11.203 nats.
+  Own versus unrelated content was indistinguishable from zero. R1234 stopped
+  after 63 updates; R5678 never launched. Both old C runs finished 256 updates.
+  The original primary R/C comparison is incomplete.
+  [B0 audit](validation/local_dev_B0_20261017.json) ·
+  [R execution and preserved checkpoint](validation/science_R_seed1234_stopped_20261017.json).
+- **Repairing format did not establish content utility.** Prepending notes
+  reduced empty-format tax to approximately zero. On fixed TRAIN128, a
+  future-selected best-of-16 tail gained +1.026 nats over empty, while the
+  ordinary mean lost 1.072 nats. Oracle selection sees the target.
+  [Interface probe](validation/prepend_reader_dev32_20261017.json) ·
+  [TRAIN oracle](validation/candidate_prepend_train128_20261017.json) ·
+  [DEV oracle](validation/candidate_oracle_dev32_cap256_20261017.json).
+- **The first learning comparison was negative.** A 64-update note-cloning arm
+  and a raw future16 CE control shared 77 documents and 512 ordered occurrences,
+  with unequal labels and compute. Fresh DEV64 notes still hurt the unchanged
+  reader: K16 own−empty B0 −1.101, raw −0.956, cloning −0.649 nats. The
+  cloning-minus-control change was +0.307 [−0.209,+0.908]. Both terminal states
+  are fully backed up. Reader adaptation also failed.
+  [Three-arm result](validation/warmstart_dev64_three_arm_20261018.json) ·
+  [Reader crosses](validation/warmstart_reader_cross_dev64_20261018.json).
+- **Downstream checks also failed.** GSM8K TRAIN128 direct/empty/thought correct
+  counts were B0 113/107/63, cloning 92/92/61, raw CE 56/112/76. Every thought
+  mode lost to its own empty control. Raw direct had 59 format errors, so its
+  score does not isolate arithmetic ability.
+  [All nine conditions](validation/warmstart_gsm8k_train128_terminal64_20261018.json).
+- **External partial calculations show limited assistance.** A separate TRAIN32
+  pilot scored arithmetic-verified manual notes 30/32, empty 27/32, corrupted
+  notes 5/32. All three added strict successes repaired answer formatting or
+  avoided truncation; none corrected a wrong parsed number. Numeric likelihood
+  improved +0.945 [0.258,1.591] nats. One manual note missed a purchasing
+  discount despite correct arithmetic; its frozen note and score are unchanged.
+  Local 4B notes included final answers. These are qualifications on assistance,
+  not evidence of useful student computation.
+  [Pilot](validation/gsm8k_calculation_train32_20261018.json) ·
+  [Exhaustive posthoc mechanism panel and correction](validation/gsm8k_calculation_train32_mechanism_20261018.json).
 
-The paired BC-minus-control change in own−empty is +0.307 nats, 95% interval
-[−0.209, +0.908]. Both trained policies still lose to silence and unrelated
-content. Selected TRAIN oracle gains have not become useful deployed notes.
-[Complete three-arm result](validation/warmstart_dev64_three_arm_20261018.json).
-Both arms used the same 77 documents, order and 64 updates, with unequal CE
-labels and compute. Both terminal checkpoints have verified full EBS backups.
-
-The separate GSM8K **TRAIN development** check also requires the empty control.
-Correct answers out of 128, with unchanged prompts/parser and cap256:
-
-| Model | Direct | Empty-thought wrapper | Generated thought |
-|---|---:|---:|---:|
-| B0 | 113 | 107 | 63 |
-| Raw CE64 | 56 | 112 | 76 |
-| Note BC64 | 92 | 92 | 61 |
-
-Thoughts score below their same-model empty wrapper in every arm. Raw direct
-includes 59 format errors; these counts do not isolate arithmetic ability.
-[Full nine-cell result, failures and costs](validation/warmstart_gsm8k_train128_terminal64_20261018.json).
-Adapting the reader also failed: raw K16 fell 3.887 nats and both reader-cross
-content contrasts remained negative. [Reader crosses](validation/warmstart_reader_cross_dev64_20261018.json).
-
-The completed [32-question calculation pilot](validation/gsm8k_calculation_train32_20261018.json)
-finds that verified partial calculations at the natural `Answer:` position score
-30/32, empty context 27/32, and same-length numeric corruptions 5/32. Accuracy
-benefit over empty remains uncertain: +9.375 percentage points, paired interval
-[0,21.875]. All three added strict successes repair a missing answer marker or
-avoid the token limit; they do not correct a wrong parsed answer in this sample.
-The [exhaustive posthoc discordance panel](validation/gsm8k_calculation_train32_mechanism_20261018.json)
-preserves those outputs without rescoring. Forced canonical-number likelihood improves by +0.945 nats
-[0.258,1.591]. The large correct-versus-corrupted gap shows sensitivity and
-vulnerability to wrong intermediates; it alone does not establish improvement
-over silence. Local4B notes score29/32 and include final answers in the fixed
-first-four panel despite an omission instruction. This is external assistance,
-distinct from useful self-generated computation. All320 answer attempts and
-320 finite likelihood cells are retained and independently checked, with a
-verified EBS archive. Official final tests remain unused.
-
-The next exploratory probe uses the unchanged B0 writer with a separate
-three-shot calculation prompt, four samples per question, and no answer-based
-selection. A64-token note plus192-token reader is compared with the existing
-256-token ordinary-calculation baseline. Four notes estimate a single sampled-note
-policy by averaging within each question; they are not a deployed ensemble.
-Equal token caps do not establish equal computation or latency.
-
-Both old C seeds finished256 updates. R1234 stopped cleanly after update63;
-R5678 was not launched. The original primary R/C comparison is incomplete.
-
-The key baseline finding is a large **interface penalty**: on fixed DEV512,
-raw K1 log likelihood averages−1.118 nats, empty thought format−7.361, and an
-own sampled thought−11.203. Own versus unrelated thought is−.284 nats with a
-95% conditional interval spanning zero. This motivates testing the interface
-before spending more training compute. The [full B0 audit](validation/local_dev_B0_20261017.json)
-includes all controls, horizons and strata. It has **one candidate per item**;
-K16 means16 future tokens, not a best-of16 thought oracle.
-
-Current work measures reader interfaces, candidate availability on TRAIN/DEV,
-and actual pipeline stage costs.
-Oracle gains will be reported separately from ordinary one-sample utility.
-Official final tests remain on hold. See [current queue](NEXT_STEPS.md).
-
-The first **DEV32 reader pilot** is complete (eight fixed documents per B0
-surprisal quartile, original one-sample notes, FP32; no training):
-
-| Reader interface | Empty−raw, nats | Own−empty, nats | Own−other, nats |
-|---|---:|---:|---:|
-| Original |−6.425 |−3.469 |−0.043 |
-| No header |−6.652 |−3.765 |−0.382 |
-| Repeat last32 prefix tokens after close |−1.080 |−1.906 |−0.432 |
-| Repeat last64 |−1.412 |−2.271 |−0.624 |
-| No header + repeat64 |−1.331 |−2.264 |−0.609 |
-
-Re-anchoring reduces the interface penalty, but own thoughts still hurt on
-average. With repeat32, own−empty has a95% paired document interval
-[−2.679,−1.193]; own−other spans zero. Own also trails raw repeated-prefix
-control by1.627 nats. These are exploratory reader interventions, not useful
-thoughts or a deployed-policy improvement. The [complete pilot report](validation/interface_tax_dev32_20261017.json)
-includes K16, all matched controls and quartiles. [Plot](validation/figures/interface_tax_dev32_20261017.svg).
-All896 scores succeeded; original-format token likelihoods reproduce B0 to
-0.0000382 nats. Original outputs, selected inputs and fixed first4 examples
-are saved in a verified2MB EBS archive. The subsequent G16 search and replay
-profiler are complete; [current diagnostic state](validation/new_direction_diagnostics_20261017.json).
-
-A second [DEV32 reader probe](validation/prompt_interface_dev32_20261017.json)
-found published RLP instruction wording still carries a6.223-nat empty-format
-penalty. Plain newline boundaries plus repeat32 reduce it to1.085, but own
-thoughts still trail same-format empty by1.175 nats. A [weight inspection](validation/B0_marker_embeddings_20261017.json)
-found exactly identical input rows for the released think/end-think/chat boundary
-tokens; correcting the published delimiter therefore produces identical reader
-scores. This identifies an initialization detail, not a complete explanation.
-A separate [DEV8 support check](validation/reader_support_dev8_20261017.json)
-rules out undefined output probability as the measured tax's main source:
-renormalization changes the original empty penalty by only0.000549 nats.
-
-The [frozen TRAIN scan](validation/anchors_train1024_20261017.json) found237
-high-surprisal anchors among1024 prospectively ordered real FineMath documents;
-the first128 fed the completed2048-candidate TRAIN search. Future-based
-training-label selection is reported explicitly.
-No new training improvement has been established.
-
-The [note-before-prefix probe](validation/prepend_reader_dev32_20261017.json)
-provides a cleaner boundary: empty−raw is+.009 nats atK1 and+.032 atK16.
-Original G1 content still hurts over16 future tokens: own−empty−1.783,
-95% paired interval[−3.041,−.740]. This repairs format cost without establishing
-useful thoughts. The [completed TRAIN rescore](validation/candidate_prepend_train128_20261017.json)
-reuses all2048 saved candidates. Across128 documents, prepend K16 mean16−empty
-is−1.072, while future-selected best16−empty is+1.026 [+.841,+1.226].
-Max16-own beats max16-unrelated by+.535 [+.325,+.749] and max16-shuffled
-by+.273 [+.088,+.466]. This is conditional TRAIN oracle evidence, not fresh
-one-sample utility. A strict nonempty winner rule, also requiring a raw-text
-win and all three same-index content-control wins, retains77 training labels.
-
-The [genuine DEV32/G16 oracle](validation/candidate_oracle_dev32_cap256_20261017.json)
-is complete. At cap256/reanchor32, ordinary mean16−empty is−1.612 K1;
-future-selected best16 is+.330 [+.051,+.684]. K16 best16 is+.395
-[−.418,+1.289]. All max-own versus max-unrelated/shuffled intervals span zero.
-Oracle selection sees the continuation and does not establish deployed utility.
-The [original TRAIN corpus](validation/candidate_corpus_train128_20261017.json)
-and [fresh DEV64/G1 baseline](validation/warmstart_dev64_B0_20261017.json)
-also remain negative on average. The completed64-update FP32 writer-only run
-started from B0 on those77 labels. It supervised note+canonical close,
-with no true continuation in the writer input or loss. The raw control uses
-the same selected documents/order and16 continuation targets. The primary
-development check used fresh G1 notes on DEV64 with the unchanged B0 prepend
-reader and failed to establish useful notes; the completed comparison leads
-this page. Training-label gains do not qualify that check.
-
-The [full-gradient padding profile](validation/replay_padding_20261017.json)
-preserves reader/signed-loss gradients while reducing isolated real-note warm
-replay from~4.24s to~.46s. This is not measured end-to-end training throughput.
-The [fresh prepend DEV64 baseline](validation/warmstart_prepend_dev64_B0_20261017.json)
-confirms near-zero empty tax, while ordinary G1 notes still hurt: K16 own−empty
-−1.101 [−1.728,−.567]. No fresh student improvement has been established.
-
-The local Qwen3-4B [teacher pilot](validation/teacher_prepend_train16_20261017.json)
-closed32 notes/176 B0-reader contexts with passing native/device and replay
-checks. Prefix-only notes remain negative (K16 own−empty−.698); hindsight
-notes gain+2.858 [+.730,+5.309]. Hindsight sees the target, so this is label
-information, not deployed reasoning. [Paired-control figure](validation/figures/teacher_prepend_train16_20261017.svg).
-A [source/quality audit](validation/teacher_anchor_quality_20261018.json)
-also finds a concrete reward mismatch: a correct note classifies finite3.1416
-as rational and loses likelihood; an incorrect, target-congruent note calls it
-irrational and gains likelihood. Exact-copy controls cannot establish truth.
-All original notes, source records, controls, failures and fixed examples remain
-in verified local EBS archives. Current learning labels/runs are unchanged.
-
-Fixed128-question GSM8K **TRAIN development** results:
-
-| Mode | B0 /128 | C1234@64 /128 | C1234@256 /128 | C256−B0 pp,95% conditional interval |
-|---|---:|---:|---:|---:|
-| Direct |113 |111 |109 |−3.13 [−8.59,+1.58] |
-| Empty format |107 |108 |109 |+1.56 [−3.13,+6.25] |
-| One thought |63 |60 |91 |+21.88 [+11.72,+32.03] |
-
-The thought-mode gain has substantial format and resource qualifications.
-C256 thought still trails its direct/empty modes by18 answers and B0 direct by22.
-Of B0's33 thought-mode format-error cases,26 become correct under C256. Every
-C256 thought reaches the1024-action cap, versus4 caps for B0; mean item wall is91
-versus23 seconds. Answer truncations are14 in both. All failures remain counted.
-These are actual cold/cache/shared-host costs, not a causal throughput comparison.
-
-The [complete terminal-C comparison](validation/held_dev_C_seed1234_step256_20261017.json)
-retains all9 conditions, paired intervals, original failures and token/latency
-costs. Intervals use5000 paired document draws, conditional on the checkpoints;
-they are not training-seed uncertainty. Both64 and256 were fixed prospectively;
-terminal256 remains primary. The [C64 report](validation/held_dev_C_seed1234_step64_20261017.json)
-and every original output remain. [Verified backup and next release](validation/held_dev_C_seed1234_step256_backup_20261017.json)
-records the54-file EBS archive. The later C5678@64 held evaluation and local
-C1234@64 evaluation were interrupted on owner stop; their partial outputs remain.
-
-The unchanged B0 **local DEV512** audit is complete: all512 sampled notes and
-9216 likelihood rows, no execution failures. Mean K1 log likelihood was−1.118
-for the raw prefix,−7.361 for empty format and−11.203 with its own note. Own−raw
-is−10.085 nats (95% conditional interval[−10.517,−9.682]); own−empty is−3.842.
-The [full local audit](validation/local_dev_B0_20261017.json) retains all6 absolute
-conditions, K1/K4/K16, content contrasts and prospective token/surprisal strata.
-One B0-derived membership map is frozen for all later readers. [Execution costs](validation/local_dev_B0_execution_20261017.json)
-and the [verified backup/next release](validation/local_dev_B0_backup_20261017.json)
-retain all outputs and fixed-order examples. This is the starting local baseline;
-the old R/C comparison is incomplete, and official test outcomes remain uninspected.
-
-- Both C runs consumed32,768 unique TRAIN records /16.81M source tokens and exited
-  normally. All254 steps3–256 average10.056s (seed1234) and10.030s (seed5678).
-  Verified EBS128/256 and all original NVMe64/128/256 states remain. Execution and
-  backup reports: [C1234](validation/science_C_seed1234_execution_20261017.json),
-  [C1234 backup](validation/science_C_seed1234_backup_20261017.json),
-  [C5678](validation/science_C_seed5678_execution_20261017.json),
-  [C5678 backup](validation/science_C_seed5678_backup_20261017.json).
-- R1234 independently started from B0 and stopped after63 updates. Its
-  [stop/execution record](validation/science_R_seed1234_stopped_20261017.json)
-  retains all63 metrics and the verified recoverable step63 checkpoint. The
-  [first32-update record](validation/science_R_seed1234_first32_20261017.json) and
-  [execution plot](validation/figures/science_R_seed1234_first32_20261017.svg)
-  retain every elapsed observation and changing generation workload. TRAIN
-  likelihoods and numerical checks do not establish useful deployed thoughts.
-- Actual released Qwen3-1.7B-Base assets, audited FineMath329535 TRAIN/18360 DEV/
-  18239 TEST records, the [fixed256 specification](validation/science_256_frozen_20261017.json),
-  [qualification](validation/science_256_qualification_20261017.json) and
-  [resource projection](validation/science_256_resources_20261017.json) are pinned.
-  FP32 signed gradients, full-cap replay and checkpoint recovery pass their
-  declared criteria. The original coordinate v1 FAIL and separately prospective
-  held-seed v2 derivative PASS remain preserved. R
-  [execution](validation/r_fp32_ram_execution_20261017.json) and
-  [recovery](validation/r_fp32_ram_resume_20261017.json) evidence is separate from
-  scientific capability. Training is serial; no two-R speed multiplier is claimed.
-
-See [STATUS.md](STATUS.md) for exact live ownership/commands and
-[DECISIONS.md](DECISIONS.md) for material choices. Official final performance
-scores remain uncomputed; earlier overlap screening used benchmark questions.
+All official final tests remain unused. Failures stay in denominators, controls
+are reported alongside raw performance, and oracle results remain separate from
+ordinary generated-note utility. Historical implementation and results remain
+available in Git and the linked reports.
 
 ## Code and plan
 

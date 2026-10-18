@@ -155,6 +155,38 @@
       },
       "teacher_note": "25 * 20 = 500  \n500 * 0.90 = 450",
       "verified_note": "The repeat-customer discount is 25 * 10 / 100 = 2.50 dollars per guest, so the discounted price is 22.50 dollars per guest."
+    },
+    {
+      "canonical_worked_solution": "She wants to send a dozen carnations that cost $4/dz to each of her 5 teachers, so 4*5 = $<<4*5=20>>20\nShe has 14 friends and she knows a dozen carnations is cheaper than buying 12 single carnations. So 14-12 = <<14-12=2>>2 single carnations are needed\nA single carnation cost $0.50 so 2*.50 = $<<2*.50=1.00>>1.00\nAll total she will spend 20+4+1 = $<<20+4+1=25.00>>25.00 on carnations\n#### 25",
+      "gold_number": "25",
+      "interpretation": "The manual note verifies14*0.50=7 but assumes all14 friends flowers are bought at the single-item rate. The canonical solution buys another dozen for4 plus two singles for1, for25 overall. The note misses the available purchasing optimization; arithmetic verification did not certify this semantic assumption. All four original modes answer27 and retain strictscore0.",
+      "item_id": "gsm8k:train:06736",
+      "question": "One of the clubs at Georgia's school was selling carnations for a fundraising event. A carnation costs $0.50.  They also had a special where you could buy one dozen carnations for $4.00.  If Georgia sent a dozen carnations to each of her 5 teachers and bought one carnation for each of her 14 friends, how much money would she spend?",
+      "reader_modes": {
+        "empty": {
+          "generated_text": "Let's think step by step\nGeorgia bought one dozen carnations for each of her 5 teachers, so she bought 5 * 12 = 60 carnations for her teachers.\nShe also bought one carnation for each of her 14 friends, so she bought 14 * 1 = 14 carnations for her friends.\nIn total, Georgia bought 60 + 14 = 74 carnations.\nThe cost of one dozen carnations is $4.00, so the cost of 60 carnations is 60 / 12 * $4.00 = $20.00.\nThe cost of 14 carnations is 14 * $0.50 = $7.00.\nTherefore, Georgia would spend $20.00 + $7.00 = $27.00 on carnations.\n#### 27",
+          "parsed_number": "27",
+          "status": "ok",
+          "strict_score": 0.0,
+          "tokens": 196
+        },
+        "generated": {
+          "generated_text": "#### 27",
+          "parsed_number": "27",
+          "status": "ok",
+          "strict_score": 0.0,
+          "tokens": 5
+        },
+        "verified": {
+          "generated_text": "In total, Georgia would spend 20 + 7 = 27 dollars.\n#### 27",
+          "parsed_number": "27",
+          "status": "ok",
+          "strict_score": 0.0,
+          "tokens": 23
+        }
+      },
+      "teacher_note": "Cost of one dozen carnations: $4.00  \nCost of one carnation: $0.50  \n\nTotal cost for 5 dozen carnations: 5 \u00d7 $4.00 = $20.00  \nTotal cost for 14 carnations: 14 \u00d7 $0.50 = $7.00  \n\nTotal amount spent: $20.00 + $7.00 = $27.00",
+      "verified_note": "The five teacher dozens cost 5 * 4 = 20 dollars. The fourteen single carnations cost 14 * 0.50 = 7 dollars."
     }
   ],
   "findings": {
@@ -168,10 +200,23 @@
   "limitations": [
     "Posthoc explanatory analysis of existing retained outputs; no new generation, relaxed parsing, recovered-number scoring or change to original results.",
     "A mathematically correct calculation or number in unscored prose does not change strict accuracy; all original failures remain.",
-    "Teacher includes final answers in these examples and its assisted correction is not evidence of student-discovered intermediate reasoning."
+    "Teacher includes final answers in these examples and its assisted correction is not evidence of student-discovered intermediate reasoning.",
+    "The carnations case demonstrates that correct equations can implement an incomplete purchase strategy. Do not equate arithmetic verification with semantic correctness of a note or of the canonical annotation."
   ],
-  "schema": "gsm8k-calculation-train32-posthoc-mechanism-v1",
-  "selection": "Posthoc exhaustive discordance panel: verified correctness differs from empty, OR teacher-assisted correctness differs from verified. Exactly5/32 items, selection after outcomes; not the fixed-first4 panel.",
+  "prior_version": {
+    "archive_sha256": "04c0112e9eec173d81c737cc94860eb87dae0cf11cde376a9dcf8e8e197e8509",
+    "preserved_in_git_commit": "0c2c5e2",
+    "sha256": "62d1f9f5af6e1d372bcde5d46da150031f8bb10debb8dc2083707a254bdb6ce9",
+    "verified_EBS_archive": "local/backups/diagnostics/gsm8k-calculation-train32-mechanism-annex-v1/ARCHIVE.json"
+  },
+  "schema": "gsm8k-calculation-train32-posthoc-mechanism-v2",
+  "selection": "Posthoc exhaustive union: verified correctness differs from empty, OR teacher-assisted correctness differs from verified, OR verified is incorrect. Exactly6/32 items. Revised after inspecting both shared verified/empty failures; not a fixed-before-outcomes panel.",
+  "semantic_qualification": {
+    "correction": "Interpretation and reporting qualification only. Original notes, generated outputs, strict scores, summary, primaryreport and active self-note experiment remain unchanged.",
+    "item_id": "gsm8k:train:06736",
+    "manual_note_flaw": "Missed purchasing optimization from the available dozen discount;14 individual flowers for friends need not be14 separate single-rate purchases.",
+    "scope": "Mode name verified is retained as historical identity; these notes were arithmetic-verified and manually reviewed, not certified correct interpretations. One manual note has a known purchasing-assumption flaw."
+  },
   "source_hashes": {
     "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/answers/shard-0/predictions.jsonl": "e6cb2b33898c302769a8cb4e4e05fc8c31868a4c2fef77fd518f8aacf273320d",
     "local/nvme/diagnostics/gsm8k-calculation-reader-train32-v1/answers/shard-1/predictions.jsonl": "b3253ce28ec0a154c404ca6280793421dea7eaeac190d3c2b87f1a5254824f84",
@@ -185,5 +230,6 @@
   "source_report": {
     "path": "validation/gsm8k_calculation_train32_20261018.json",
     "sha256": "25ee92684dad4b592353bb47021a7ad790733c43df7969fd5c2197ab9b805c06"
-  }
+  },
+  "updated_utc": "2026-10-18T02:34:36+00:00"
 }

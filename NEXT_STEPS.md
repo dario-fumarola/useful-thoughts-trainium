@@ -2,29 +2,29 @@
 
 The owner stopped the original R study and authorized adapting the experiment.
 
-1. DONE, NEGATIVE: cloned notes, raw future16 CE control and all reader crosses.
-   Both training arms completed 64; full terminal states and raw evidence are
-   verified on EBS. Fresh DEV64 notes remain harmful. BC-minus-control own−empty
-   change +0.307 nats has CI [−0.209,+0.908]. Do not restart the old long RL study.
-2. DONE, NEGATIVE: all nine GSM8K TRAIN128 cells. Thoughts score below their
-   same-model empty wrapper in every arm. Strong prompt/format effects make
-   direct-score differences insufficient to establish arithmetic improvement.
-   Keep the frozen parser, all errors, examples and actual costs.
-3. DONE:32-question calculation pilot. Verified partial notes improve forced
-   numeric LL over empty by+.945 nats CI[.258,1.591]; accuracy30 versus27/32,
-   CI[0,7] correct. Corrupted notes5/32 show vulnerability, not the magnitude of
-   benefit. External4B notes29/32 include final answers in the fixedfirst4.
-   All answers/LL closed, independently checked and EBS archived.
-4. ACTIVE: implement/review/qualify a bounded unchanged-B0 self-note probe before
-   more training. Separate plain3shot calculation prompt; G4/T.7/cap64; all notes
-   frozen before reader scoring. Reader192 versus exact reused direct256, plus
-   empty/discard, shuffled and unrelated controls. Average all4 paths within each
-   question; no oracle deployment. Same32 TRAIN questions are exploratory reuse,
-   not blinded confirmation. Actual costs and all failures remain required.
-5. Inspect fresh self-notes and question-level results before choosing expansion
-   or learning. Curated QA with in-context examples does not repair FineMath
-   initialization or establish spontaneous self-discovery. Preserve negatives.
+1. DONE, NEGATIVE: matched77-document writer cloning/raw future16 control,
+   reader crosses and all9 GSM8K TRAIN128 conditions. Both terminal64 checkpoints
+   and all outputs preserved. Do not restart the old long RL study.
+2. DONE: external TRAIN32 calculation pilot. Numeric LL improved, but all3 added
+   strict successes were format/cap repairs. One arithmetic-verified manual note
+   missed a purchasing discount. Frozen notes/scores unchanged; correction public.
+3. DONE, NEGATIVE: unchanged-B0 short self-notes. Mean sampled-policy accuracy
+   67.2% versus direct75% and discard75%; LL also slightly worse. Four samples
+   per question estimate a single-note policy, without oracle selection.
+   All notes/failures/costs retained, independently checked and EBS archived.
+4. ACTIVE: implement and review a conservative real-FineMath arithmetic-boundary
+   preparer. One prefix-only hash-selected boundary per TRAIN/DEV document,
+   exact source RHS quality checks after selection, proper-subexpression notes,
+   no already-visible answer, matched numeric corruption. Preserve all rejections.
+   Source/fixture work only until reviewed; official TEST remains unused.
+5. Seal prospective TRAIN256/DEV64 pools before B0 scores. Test raw, empty,
+   correct partial, corrupted, shuffled and unrelated notes on actual source
+   numeric spans and natural16 continuations. Qualify new contexts against CPU.
+6. Choose learning only after examining real examples and reader feasibility.
+   A new warmstart must use diverse real data, fresh generated-note evaluation,
+   full-source ordinary CE on the same accepted chunks as its raw control, and
+   downstream correctness checks. No claim of spontaneous discovery from external
+   arithmetic labels or improvement merely over degraded controls.
 
-Exact live jobs, commands and remaining risks are in STATUS.md. Keep healthy
-runs going, allow cold compilation, and avoid automatic retry loops. Official
-final tests remain unused.
+Exact work ownership, evidence paths and next command are in STATUS.md. Keep
+healthy runs going and allow cold compilation; avoid automatic retry loops.

@@ -1,0 +1,554 @@
+{
+  "schema": "gsm8k-self-note-train32-g4-result-v1",
+  "status": "completed_exploratory_no_benefit_established",
+  "created_utc": "2026-10-18T02:41:09.846490+00:00",
+  "design": {
+    "reviewed_commit": "0c2c5e20740899ec988878fa5a50d1b93935c87d",
+    "training": false,
+    "model": "Released unchanged Qwen3-1.7B-Base for both writer and reader",
+    "model_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "model_signature": {
+      "parameters": 1720574976,
+      "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+      "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+    },
+    "compute": "fp32",
+    "questions": 32,
+    "split": "TRAIN",
+    "samples_per_question": 4,
+    "writer_prompt": "Separate plain few-shot calculation prompt using fixed TRAIN0\u20132 question-only demonstrations and handcrafted partial calculations; no current answer/teacher/manual-current-note access.",
+    "writer_sampling": "four independently seeded sequential B1 Gumbel-max paths/question; no top-k/top-p",
+    "writer_temperature": 0.7,
+    "writer_cap": 64,
+    "writer_stopping": "First decoded newline, EOS151643, or64 actions; no resampling or utility filtering",
+    "reader_format_transform": "Decode all non-EOS actions; exact substring before first U+000A; encode(add_special_tokens=False)",
+    "reader_interface": "Locked4shotQA+[198]+note+[198]; empty192 preserves both separators; direct256 is unwrapped QA",
+    "reader_cap": 192,
+    "baseline": "Exactly32 pinned direct256 paths/likelihoods reused from the prior pilot; byte-identical question contexts and same model signature.",
+    "controls": "Per-note deterministic token shuffle and cyclic next-question/same-sample donor repeated/trimmed to recipient length; empty192 retains both separators and discards note content.",
+    "reader_generation": "One greedy continuation per fresh cell; no oracle choice, vote, retry or selection.",
+    "primary": "own_minus_direct256",
+    "aggregation": "Average all4 sampled paths inside each question, then mean over32 questions; Monte Carlo estimate of one sampled-note policy, not best-of4 or ensemble.",
+    "bootstrap": {
+      "repeats": 5000,
+      "seed": 17,
+      "unit": "question_after_averaging_all4_samples"
+    },
+    "uncertainty": "Conditional on these32 known exploratory TRAIN questions, fixed models/prompts and sampled paths; not blinded replication, population coverage or training-seed uncertainty. No multiplicity correction.",
+    "answer_prefill_width": 896,
+    "score_width": 1024,
+    "target_width": 16,
+    "likelihood": "Canonical numeric answer only after explicit newline/hash4 marker, with no latent CoT; separate from free-running strict accuracy."
+  },
+  "cells": {
+    "own": {
+      "paths": 128,
+      "questions": 32,
+      "correct_paths": 86,
+      "mean_question_accuracy": 0.671875,
+      "mean_question_numeric_log_likelihood": -2.9775553142040962,
+      "answer_statuses": {
+        "format_error": 7,
+        "ok": 121
+      },
+      "answer_tokens": 3439,
+      "answer_row_wall_seconds_sum": 252.63255294405099,
+      "reused_historical_baseline": false
+    },
+    "shuffled": {
+      "paths": 128,
+      "questions": 32,
+      "correct_paths": 28,
+      "mean_question_accuracy": 0.21875,
+      "mean_question_numeric_log_likelihood": -3.3835940074841346,
+      "answer_statuses": {
+        "format_error": 5,
+        "ok": 114,
+        "truncated": 9
+      },
+      "answer_tokens": 4479,
+      "answer_row_wall_seconds_sum": 323.9283391549543,
+      "reused_historical_baseline": false
+    },
+    "other": {
+      "paths": 128,
+      "questions": 32,
+      "correct_paths": 2,
+      "mean_question_accuracy": 0.015625,
+      "mean_question_numeric_log_likelihood": -6.676066706888378,
+      "answer_statuses": {
+        "format_error": 18,
+        "ok": 77,
+        "truncated": 33
+      },
+      "answer_tokens": 9073,
+      "answer_row_wall_seconds_sum": 640.0886821141321,
+      "reused_historical_baseline": false
+    },
+    "empty192": {
+      "paths": 32,
+      "questions": 32,
+      "correct_paths": 24,
+      "mean_question_accuracy": 0.75,
+      "mean_question_numeric_log_likelihood": -2.8189484627509955,
+      "answer_statuses": {
+        "format_error": 1,
+        "ok": 24,
+        "truncated": 7
+      },
+      "answer_tokens": 4163,
+      "answer_row_wall_seconds_sum": 928.7473441959737,
+      "reused_historical_baseline": false
+    },
+    "direct256": {
+      "paths": 32,
+      "questions": 32,
+      "correct_paths": 24,
+      "mean_question_accuracy": 0.75,
+      "mean_question_numeric_log_likelihood": -2.739349237506758,
+      "answer_statuses": {
+        "format_error": 1,
+        "ok": 31
+      },
+      "answer_tokens": 3531,
+      "answer_row_wall_seconds_sum": 800.5559346259397,
+      "reused_historical_baseline": true
+    }
+  },
+  "paired_contrasts": {
+    "empty192_minus_direct256": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.125,
+          0.125
+        ],
+        "difference_b_minus_a": 0.0,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.19456770151186903,
+          0.030580178582886194
+        ],
+        "difference_b_minus_a": -0.07959922524423746,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "own_minus_direct256": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.1875,
+          0.0234375
+        ],
+        "difference_b_minus_a": -0.078125,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.9974496080080769,
+          0.48708297588563015
+        ],
+        "difference_b_minus_a": -0.23820607669733818,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "own_minus_empty192": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.203125,
+          0.0546875
+        ],
+        "difference_b_minus_a": -0.078125,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.9031658257410072,
+          0.5597102279444751
+        ],
+        "difference_b_minus_a": -0.15860685145310072,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "own_minus_other": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.53125,
+          0.7734375
+        ],
+        "difference_b_minus_a": 0.65625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          2.638177390125074,
+          4.769663649292709
+        ],
+        "difference_b_minus_a": 3.6985113926842814,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "own_minus_shuffled": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.34375,
+          0.5625
+        ],
+        "difference_b_minus_a": 0.453125,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.34533975441028986,
+          1.095254908614986
+        ],
+        "difference_b_minus_a": 0.4060386932800384,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    }
+  },
+  "interpretation": [
+    "Own mean accuracy is86/128 paths (67.1875%) versus direct24/32 and empty19224/32 (75%). Both point differences are\u22127.8125 percentage points, with paired question intervals crossing zero.",
+    "Own numeric LL is\u22122.977555 versus direct\u22122.739349 and empty192\u22122.818948; both own contrasts have intervals crossing zero. No benefit over direct or empty was established.",
+    "Unrelated notes and token shuffling degrade performance. A margin above these degraded controls does not establish improvement above silence.",
+    "All4 paths and every cap,wrong note,format failure and truncation remain in the averages. No selected-note deployment policy is evaluated.",
+    "Manual content audit finds50 complete-final-quantity claims,7 notes with wrong arithmetic,24 with wrong question-quantity use and28 apparently unfinished caps. These are overlapping posthoc nonblinded fixed-sample annotations, not filters or population rates.",
+    "Earlier arithmetic-verified partial manual notes have one known purchasing-assumption flaw. Their frozen scores/notes remain unchanged; they are not current writer labels or a semantically complete oracle."
+  ],
+  "writer": {
+    "notes": 128,
+    "stops": {
+      "newline": 71,
+      "token:151643": 27,
+      "length_cap": 30
+    },
+    "empty_first_lines": 0,
+    "caps": 30,
+    "action_lengths": {
+      "n": 128,
+      "total": 5409,
+      "minimum": 12,
+      "median": 41.0,
+      "maximum": 64
+    },
+    "reader_content_lengths": {
+      "n": 128,
+      "total": 5382,
+      "minimum": 12,
+      "median": 41.0,
+      "maximum": 64
+    },
+    "all_notes_retained": true,
+    "forward_checks": [
+      {
+        "atol": 0.002,
+        "logps_sha256": "21a4de2706104a004448681bd8cf25cb19000e3224a75aef2a4e9aa998420a35",
+        "max_error": 3.814697265625e-05,
+        "native_reference_sha256": "cbdc400ba60e2effccbc9c1d0afe603180a4b6fe03ddaa42a7dfb1857746f149",
+        "prompt_sha256": "63dbe7b2729605cbc038dffebb5ebdfce8c5013ecdc00a8820b74b058dd9c932",
+        "wall_seconds": 43.40347558198846
+      },
+      {
+        "atol": 0.002,
+        "logps_sha256": "f9e7ef66c6ce265eae17aae4bc5e2736d80f12b197e1848d02999ef1de9c1453",
+        "max_error": 5.91278076171875e-05,
+        "native_reference_sha256": "cbdc400ba60e2effccbc9c1d0afe603180a4b6fe03ddaa42a7dfb1857746f149",
+        "prompt_sha256": "22c2aabe64b35cefb931311d38735ed1c835cf1c28273f84f5730620ea840d06",
+        "wall_seconds": 46.572544420996564
+      },
+      {
+        "atol": 0.002,
+        "logps_sha256": "3f866deddd83a5da992f085867718e913dd131b48257df3c19fac5854ae325e8",
+        "max_error": 3.4332275390625e-05,
+        "native_reference_sha256": "cbdc400ba60e2effccbc9c1d0afe603180a4b6fe03ddaa42a7dfb1857746f149",
+        "prompt_sha256": "b7fa0f3d59a6b434217225cdc48c8ebc2f66c6a644b554e643dd9ffc00b7d47b",
+        "wall_seconds": 46.60282066400396
+      },
+      {
+        "atol": 0.002,
+        "logps_sha256": "6d824929464cc6d0097805b465241a4bdc90d7c12445fdba75d4a0d1caed0f30",
+        "max_error": 3.814697265625e-05,
+        "native_reference_sha256": "cbdc400ba60e2effccbc9c1d0afe603180a4b6fe03ddaa42a7dfb1857746f149",
+        "prompt_sha256": "89219e97ad0cfa60cfcc4f1664b78039c3317540122cc48e9ab332542d4c32c6",
+        "wall_seconds": 46.59921185999701
+      }
+    ],
+    "first_sample_all_action_replay_checks": [
+      {
+        "actions": 18,
+        "atol": 0.001,
+        "max_error": 7.033348083496094e-06,
+        "question_id": "gsm8k:train:00028",
+        "sample_index": 0,
+        "wall_seconds": 41.2662931609957
+      },
+      {
+        "actions": 14,
+        "atol": 0.001,
+        "max_error": 1.2218952178955078e-06,
+        "question_id": "gsm8k:train:02913",
+        "sample_index": 0,
+        "wall_seconds": 38.121535856000264
+      },
+      {
+        "actions": 18,
+        "atol": 0.001,
+        "max_error": 8.106231689453125e-06,
+        "question_id": "gsm8k:train:03496",
+        "sample_index": 0,
+        "wall_seconds": 41.29261898899858
+      },
+      {
+        "actions": 64,
+        "atol": 0.001,
+        "max_error": 4.947185516357422e-06,
+        "question_id": "gsm8k:train:02906",
+        "sample_index": 0,
+        "wall_seconds": 31.114734798000427
+      }
+    ]
+  },
+  "content_audit": {
+    "counts": {
+      "claim_scope": {
+        "complete_final_answer_claim": 50,
+        "incomplete_cap": 27,
+        "partial_only": 51
+      },
+      "exact_equations": {
+        "equal": 217,
+        "evaluated": 224,
+        "not_verified": 23,
+        "unequal": 7
+      },
+      "flagged_claims": 51,
+      "flags": {
+        "ambiguity": 14,
+        "complete_final_answer_claim": 50,
+        "incomplete_cap": 28,
+        "incorrect_question_quantity": 24,
+        "partial_only": 51,
+        "uncertain": 38,
+        "wrong_arithmetic": 7
+      },
+      "notes": 128,
+      "questions": 32,
+      "stops": {
+        "length_cap": 30,
+        "newline": 71,
+        "token:151643": 27
+      }
+    },
+    "method": {
+      "blinding": "Not blinded: prior TRAIN32 gold/pilot outcomes were already known; new reader outcomes not inspected.",
+      "caps": "30 actual caps;28 appear unfinished. One complete partial and one completed final numeric claim at cap remain distinct.",
+      "classes": "Subjective posthoc manual classes relative to requested question quantity, not presence of equals signs.",
+      "exact_arithmetic": "Fraction from decimal text; percentages=/100; only +,-,*,/ and parentheses. Unit-bearing/complex/unbalanced/cap-terminal uncertain equalities are unverified. Two manual unit-label removals explicitly marked.",
+      "false_arithmetic_vs_quantity": "True numeric equality can refer to wrong entity/time/count/unit; separated flags.",
+      "inputs_read": "Frozen writer protocol/inputs, all128 notes and writer closure only. No new reader answers/scores or gold.",
+      "selection": "All32 frozen questions, all4 paths each; fixed order and no inclusion filter."
+    },
+    "limitations": [
+      "Manual nonblinded fixed-sample classifications are not population frequencies or exhaustive truth certificates.",
+      "An unflagged partial/exact equality proves neither the full solution nor factual/dimensional correctness or downstream utility.",
+      "Arithmetic scan covers explicit parseable equalities, not all prose; uncertain cases are not approximated or blessed.",
+      "Semantic final answers can appear without#### markers.",
+      "No prompts/notes/seeds/caps/controls/parsers/models/reader inputs changed; all128 remain retained."
+    ]
+  },
+  "execution": {
+    "writer_all4_exit0": true,
+    "answers_all4_exit0": true,
+    "likelihood_all4_exit0": true,
+    "all_original_owned_PID_start_identities_groups_and_sessions_closed": true,
+    "fresh_answer_cells": 416,
+    "fresh_finite_likelihood_cells": 416,
+    "reused_direct_cells_per_phase": 32,
+    "all_answer_statuses_retained": {
+      "ok": 336,
+      "truncated": 49,
+      "format_error": 31
+    },
+    "gold_absent_at_answer_cleanup": true,
+    "answer_cleanup_barrier_utc": "2026-10-18T02:35:47.206330+00:00",
+    "late_gold_created_utc": "2026-10-18T02:35:49+00:00",
+    "last_device_process_exit_utc": "2026-10-18T02:37:01.868421+00:00",
+    "no_runtime_or_numerical_retry": true,
+    "no_official_test_access": true
+  },
+  "costs": {
+    "writer_cpu_reference": 2.0725432129984256,
+    "writer_native_forward_seconds": [
+      0.48963051100145094,
+      0.4938537669950165,
+      0.5374368449993199,
+      0.5385304500086932
+    ],
+    "writer_padded_device_forward_seconds": [
+      43.40347558198846,
+      46.572544420996564,
+      46.60282066400396,
+      46.59921185999701
+    ],
+    "writer_first_note_all_action_replay_seconds": [
+      41.2662931609957,
+      38.121535856000264,
+      41.29261898899858,
+      31.114734798000427
+    ],
+    "writer_sampled_actions": 5409,
+    "writer_reader_content_tokens": 5382,
+    "writer_actual_note_generation_wall_seconds_sum": 1398.8535062409937,
+    "writer_shard_process_wall_seconds": [
+      438.0,
+      441.0,
+      459.0,
+      452.0
+    ],
+    "writer_issued_to_last_exit_seconds": 464.186311,
+    "reader_fresh_answer_tokens": 21154,
+    "reader_fresh_answer_wall_seconds_sum": 2145.396918409111,
+    "reader_fresh_answer_shard_process_wall_seconds": [
+      483.0,
+      610.0,
+      560.0,
+      550.0
+    ],
+    "reader_answer_issued_to_last_exit_seconds": 612.972148,
+    "reader_fresh_likelihood_wall_seconds_sum": 61.97514307088568,
+    "reader_fresh_likelihood_shard_process_wall_seconds": [
+      30.0,
+      30.0,
+      29.0,
+      29.0
+    ],
+    "reader_likelihood_issued_to_last_exit_seconds": 33.048266,
+    "whole_pipeline_released_to_last_device_exit_seconds": 1341.538618,
+    "qualification": "All actual cold/setup/cache/replay costs retained. Row wall sums include shape/startup ordering. Reused direct256 counts/costs are historical and not new work; G4/4 wall is not measured G1 latency. Equal maximum64+192 versus256 tokens is not equal FLOPs or latency."
+  },
+  "independent_reviews": {
+    "provenance": "Direct independent-agent audit messages; no separate auditor files created.",
+    "summary_sha256": "047ca3837a8d5ac85752be4086c068d55cc1bfbe08cc6e210174317d75165b18",
+    "writer": {
+      "reviewer": "/root/data",
+      "status": "PASS",
+      "scope": "All128 notes,16 receipt bindings,prefix-only prompts,seeds/support/raw-to-firstline transform,original12 identity/group cleanup."
+    },
+    "accuracy": {
+      "reviewer": "/root/data",
+      "status": "PASS",
+      "scope": "All448 per-cell scores/statuses,160 mode-question means and5 paired accuracy CIs match exact independent NumPy5000/17 question resampling; no helper reducer/scorer/bootstrap."
+    },
+    "numeric_ll": {
+      "reviewer": "/root/review",
+      "status": "PASS",
+      "scope": "All416 fresh plus32 exact historical direct rows, native target tokens,finite sums,context/signature/source pins,late-gold order and5 independent NumPy CIs; max disagreement0."
+    }
+  },
+  "bindings": {
+    "writer_protocol_sha256": "dd258a79ae3cae50f9470f9288d037ec41e27ae0916ff866e63e55a5059898ec",
+    "reader_protocol_sha256": "c594ab0244c22ae97fdb514f76d0fbf451d280cb15e7be7e24790960ea0337c1",
+    "writer_inputs_sha256": "0f320c43f35f59078bfaa551c8ad81231ea6b5396110ed4db6fe784b9a06dc47",
+    "reader_inputs_sha256": "89f84f3a13b2967168f50d31d1b6eff724aa8077bff5bb20230fa77f7a5baf53",
+    "summary_sha256": "047ca3837a8d5ac85752be4086c068d55cc1bfbe08cc6e210174317d75165b18",
+    "native_cpu_reference_sha256": "cbdc400ba60e2effccbc9c1d0afe603180a4b6fe03ddaa42a7dfb1857746f149",
+    "native_cpu_next_logps_sha256": "067e7ec01f4410ccc55b7bc62499f6eb0b47ab9e9fbba853c2a128ec68d88383",
+    "writer_closure_sha256": "1d97085b24d6ea0650bd1005be584f1df5f0f262dbcc203327ae245fa8372022",
+    "answer_closure_sha256": "dc13ca9ef7581490dd1d883bf774025f97d0c4b352d131947eec9d66548d6931",
+    "likelihood_closure_sha256": "dfbe44ab59ff56bd99cebc78fcb44943c358aa7920767a3706444fd17c5ec2ba",
+    "late_gold_sha256": "027e9034aa2f6029c89956a9acfc783096415eda848a872609d794271ca09d4c",
+    "reused_direct_protocol_sha256": "2a85462169f4904470bf97398602bff3c31fe00221a6cbfbe047fbb18c5b5ca1",
+    "reused_direct_summary_sha256": "efab1a67fb8119e10553dadeb18c834d1d1ec558e41f5e113ac3124b40f25f63",
+    "content_audit_sha256": "79fc8d55f2c8b86aed71fa1169574b13e734fe350685dd9be482eb548667cd84",
+    "fixed_first4_all4_writer_panel_sha256": "7db1ddf8a508a9547d2f905d1edbe8f0728dd3732ebea11cb44068469ca4779f",
+    "fixed_first4_all_cells_sha256": "5c0bc2870783c78938cf34a74dff92384ab2167a3361c8b059811212f7bb251a",
+    "prior_manual_mechanism_annex": "validation/gsm8k_calculation_train32_mechanism_20261018.json",
+    "prior_manual_mechanism_annex_sha256": "59ee01b3a0e46cbedf6522da8b02d94bb61e551baf1f6774737c1c08ec40664c",
+    "source_files": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/calculation_self_notes.py": "3cedd5f9868a255b5bd5691647a8008d4ec0637928130eea97812a4258bf831d",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "train/self_note_pilot.py": "9c7342ceeea83895cc21aadc481f0f0b56de079eec76a94c86ef930618eb1bc5",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "aggregate_sha256": "e41e29da636ed9b429f61b487a9461988d43ec718680a3bef04cf358248f7e54",
+    "independent_reviews_sha256": "fd2c4eb65137ce73a00ffdd893242aff1bddd79cc3c97282a82a06a47a5e80f6"
+  },
+  "limitations": [
+    "Exploratory reuse of32 TRAIN questions after the previous calculation pilot, not blinded confirmation or official TEST.",
+    "Unchanged released B0; public TRAIN questions may be present in pretraining.",
+    "64 writer plus192 reader is an equal maximum generated-token budget to direct256, not equal measured FLOPs or latency.",
+    "empty192 is the generate-then-discard-note control: generation cost is charged although one identical greedy reader path per question is deduplicated.",
+    "No oracle selection, voting or best-of4: G4 is a Monte Carlo estimate of a single-note policy; intervals are conditional on these fixed sampled notes.",
+    "direct256 reuses the exact32 closed B0 raw paths/scores from the preceding pilot; no repeated baseline decoding.",
+    "Separate few-shot writer prompt changes context; final-answer/empty/capped notes remain and need content inspection.",
+    "Cyclic unrelated donors repeated/trimmed to recipient length and token shuffling are imperfect linguistic controls.",
+    "Forced canonical numeric likelihood measures a different task from free-running calculation and answer accuracy.",
+    "Manual nonblinded fixed-sample classifications are not population frequencies or exhaustive truth certificates.",
+    "An unflagged partial/exact equality proves neither the full solution nor factual/dimensional correctness or downstream utility.",
+    "Arithmetic scan covers explicit parseable equalities, not all prose; uncertain cases are not approximated or blessed.",
+    "Semantic final answers can appear without#### markers.",
+    "No prompts/notes/seeds/caps/controls/parsers/models/reader inputs changed; all128 remain retained."
+  ],
+  "archive": {
+    "archive": "/home/ubuntu/dario/local/backups/diagnostics/gsm8k-self-note-train32-g4-v1/ARCHIVE.json",
+    "archive_sha256": "eed804d9b2f1316c270df04976760425951ebc369a62d64875001240b061e876",
+    "files": 210,
+    "payload_bytes": 21525145,
+    "all_readback_verified": true,
+    "all_originals_preserved": true
+  }
+}

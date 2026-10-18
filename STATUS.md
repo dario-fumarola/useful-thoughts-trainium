@@ -1,80 +1,78 @@
-# Status — 2026-10-18 02:14 UTC
+# Status — 2026-10-18 02:49 UTC
 
-The owner stopped the original R study and authorized a new direction. Old
+The owner stopped the original R study and authorized the new direction. Old
 launch orders, including CODEX_NEXT_DAY.md, are superseded. Do not resume them.
 
-## Closed evidence
+## Closed results
 
-- The matched77-document warmstart study is negative. Fresh DEV64/B0 reader
-  own−empty K16: B0−1.101, rawCE64−.956, writerBC64−.649 nats. BC−raw change
-  +.307 CI[−.209,+.908]. All1152 rows/330 means/100 CIs independently checked.
-  Both64-update terminal states (27.53GB each) fully verified on EBS. Same512
-  document occurrences/order, unequal labels/compute. Raw’s only allocator
-  repair was NEURON_RT_CONTIGUOUS_SCRATCHPAD=0, with both failures preserved.
-- Reader adaptation also failed; raw K16 drift−3.887 nats. All9 GSM8K TRAIN128
-  direct/empty/thought cells closed: B0 113/107/63, BC 92/92/61, raw 56/112/76.
-  Raw direct59 format errors (57 without hash4) prevent an isolated arithmetic
-  interpretation. Frozen parser, all failures/examples/costs preserved.
-  These reports are public at commit849e443.
-- Calculation TRAIN32 pilot is closed: all32 local4B notes,320 answer attempts
-  and320 finite numeric-LL cells. Correct/32: raw24, empty27, generated29,
-  verified30, corrupted5; filler9/shuffle1/other0/vshuffle9/vother1. Verified−empty
-  accuracy+3/32 CI[0,7]/32; numericLL+.945[.258,1.591] nats. Corruption shows
-  vulnerability, distinct from improvement. Teacher final-answer inclusion in
-  fixedfirst4 prevents an intermediate-only interpretation. Independent audits
-  match every count/row and11 paired CIs exactly.
-  Public report: validation/gsm8k_calculation_train32_20261018.json
-  SHA25ee92684dad4b592353bb47021a7ad790733c43df7969fd5c2197ab9b805c06.
-  EBS: local/backups/diagnostics/gsm8k-calculation-train32-v1/ARCHIVE.json
-  SHA647c55ac91963a0a5af57034130484f2a649e534975ab953d28ae3ed8784cdbf,
-  206 files/9,879,515B, all readback verified. Private sources/notes/examples kept.
-  All teacher/answer/LL jobs exit0 and original identities/groups/sessions gone.
+- Latest unchanged-B0 self-note probe is negative: own86/128 paths=67.19%,
+  direct24/32=75%, empty19224/32=75%. Own−direct−7.81pp CI[−18.75,+2.34];
+  numericLL−.238 CI[−.997,+.487]. Four paths are averaged within each question
+  to estimate a single sampled-note policy, never best-of4. Same known TRAIN32
+  is exploratory reuse. Equal token caps are not equal FLOPs/latency.
+  All128 notes,416 fresh answers+416 finite LL,32 exact reused direct cells,
+  original failures and fixed examples retained. Accuracy/LL/source/closure
+  independently checked, including final public projection.
+  Report: validation/gsm8k_self_note_train32_20261018.json
+  SHA c13574ea9720d63442bf7d7a91ac36d3da66c515687cbd2d07c5cabec70d43ee.
+  Summary: local/nvme/diagnostics/gsm8k-self-note-reader-train32-g4-v1/summary.json
+  SHA047ca3837a8d5ac85752be4086c068d55cc1bfbe08cc6e210174317d75165b18.
+  EBS: local/backups/diagnostics/gsm8k-self-note-train32-g4-v1/ARCHIVE.json
+  SHAeed804d9b2f1316c270df04976760425951ebc369a62d64875001240b061e876,
+  210 files/21,525,145B, all source/copy SHA readbacks verified.
+- Previous TRAIN32 external calculation pilot remains unchanged. All3 strict
+  verified-over-empty wins are format/cap repairs, not wrong-number corrections.
+  Manual carnations note6736 missed an available bulk discount despite correct
+  equations. Accepted mechanism annexv2 preserves this and all6 cases:
+  validation/gsm8k_calculation_train32_mechanism_20261018.json
+  SHA59ee01b3a0e46cbedf6522da8b02d94bb61e551baf1f6774737c1c08ec40664c.
+  Original report SHA25ee9268…5c06 and frozen notes/scores remain unchanged.
+  EBS annexv2 ARCHIVE SHAdd58e690…3b3; v1 retained in Git/EBS.
+- Earlier matched77-document warmstart and all9 GSM8K TRAIN128 cells are
+  negative, published at849e443. Both64-update terminal checkpoints are fully
+  verified on EBS. Reader adaptation also failed. See README linked reports.
+  Original R1234 stopped63/backed up; R5678 never launched; old C seeds finished.
+  Original primary R/C comparison remains incomplete. No official TEST read.
 
-## Active work — reviewed self-note probe released for qualification
+## Runtime and checks
 
-Implement/review the bounded unchanged-B0 self-note experiment before training.
-Data agent owns train/calculation_self_notes.py and focused tests: same32 known
-TRAIN questions; separate plain3shot partial-calculation prompt (demoIDs0/1/2),
-G4/T.7/cap64; first decoded newline/EOS/cap ends generation. Retain all sampled
-actions/raw bytes; reader content is declared first-line substring re-encoding.
-All128 paths required. Native CPU/device next-LP ≤.002 and cached replay≤.001.
+No live accelerator jobs. Self-note writer/answers/LL all4 shards each exit0;
+all original PID/start identities, groups and sessions closed, devices clear.
+Last device exit02:37:01UTC. Used cores28/32/36/40, devices7–10. Recheck topology,
+processes and ports before a new allocation; no automatic relaunch.
+Writer protocoldd258a79…8ec / source3cedd5f9…831d; reader protocolc594ab02…3c1 /
+source9c7342ce…bc5. Native/device LP errors≤5.913e−5, all-action replay≤8.107e−6.
+Latest required492 tests + toy_smoke + compileall PASS local/checks/tests.mXGFmo.
+No model/runtime source has changed since that check. New data code will need
+focused review and required checks before use.
+Root EBS111GiB free, NVMe736GiB last measured02:43. Reserve35GiB for checkpoint
+backup. No new cloud resources, paid APIs, stack upgrades or official TEST.
 
-Root owns train/self_note_pilot.py/tests. 416 fresh reader cells per phase
-(own/shuffle/other×128 + empty192×32) plus32 reused exact direct256 cells.
-Locked4shotQA+[198]+note+[198], strict existing parser, readercap192. Average
-all4 paths within each question before bootstrap: Monte Carlo estimate of a
-single sampled-note policy, not an ensemble/oracle. Primary own−direct256.
-Known TRAIN32 reuse is exploratory, not blinded confirmation. Equal tokencaps
-are not equal FLOPs/latency. Prior gold is hash-bound to all4 original LL receipts
-and parsed only after fresh answer closure. No official TEST.
+## Active work and exact next action
 
-Distributed owns runtime/closure/summary/archive. Both exact sources were
-independently reviewed;492 tests + toy smoke PASS local/checks/tests.mXGFmo.
-Root releases prepare/nativeCPUreference/qualified finite generation, then the
-reader pipeline after strict128-note closure. Hardware checks are not yet run.
-Runtime plan:
-local/diagnostics/gsm8k-self-note-train32-g4-v1/RUNTIME_PLAN.json.
-Proposed cores28/32/36/40 (devices7–10), deadline06:00UTC. Reserved valid port
-blocks65031–38 writer /65041–48 answers /65051–58 LL; rebind-check at release.
-Writer output: local/nvme/diagnostics/gsm8k-calculation-self-notes-train32-g4-v1.
-Reader output: local/nvme/diagnostics/gsm8k-self-note-reader-train32-g4-v1.
-No shared runtime/training helpers changed. Exact worker identities and actual
-protocol hashes must be recorded after launch. No automatic retry.
+Data agent implements NEW train/calculation_boundaries.py and focused tests;
+source/fixture work only until root/review accept it. No full corpus prep yet.
+Source: local/data/finemath/production-500000.audit-v2.records.jsonl,
+SHAbd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff.
+TRAIN/DEV only. Existing prefix512 + future16 chunks. Safe exact-Fraction AST,
+2–6 numeric operations including multiplication/division/power; enough preceding
+context; complete causal token cut after '='; reject already-visible whole
+answer; select one boundary/document by fixed hash BEFORE RHS checks, no fallback.
+Then verify immediate source RHS and preserve every rejection. Correct note
+computes a proper subexpression from past only, not the whole answer. Freeze a
+same-token-length numeric corruption before scores. Keep original source chunk,
+natural continuation and numeric span. Hash-order TRAIN256/DEV64 feasibility
+pools before any model score. This is explicit external arithmetic supervision.
 
-## Next actions
+Review agent checks source/schema/causality and fixtures when supplied. Distributed
+proposed a lean new reader wrapper using unchanged setup_model/score_continuations:
+raw/empty/correct/corrupt/shuffle/unrelated under prepend_plain, width1024/future16,
+scalar LL derived from the same natural16 LPs when exact leading-span alignment
+is proved. No implementation/release until data schema arrives; no hardware yet.
+Later raw learning control must use FULL ordinary source CE on accepted chunks,
+not the old future16-only control. Do not train merely because labels exist.
 
-1. Run prepared writer/nativeCPUreference and bounded device qualification;
-   first4 CPU/device≤.002 and all-action cache/replay≤.001 required. Close all128
-   notes and workers before reader preparation.
-2. Preserve source hashes: writer3cedd5f9868a255b5bd5691647a8008d4ec0637928130eea97812a4258bf831d;
-   reader9c7342ceeea83895cc21aadc481f0f0b56de079eec76a94c86ef930618eb1bc5.
-3. Close all416 answers/groups before late gold, then all416 finite LL. Review
-   fixed examples and actual content/accuracy/cost before any larger training.
-4. Publish reviewed new sources and the posthoc mechanism annex. All3 earlier
-   verified−empty wins are2 format repairs +1 avoided cap, no wrong parsed
-   numeric answer corrected. Original report/scores unchanged. Separate EBS
-   mechanism annex ARCHIVE SHA04c0112e…8509 is verified.
-   Latest full492+toy_smoke PASS local/checks/tests.mXGFmo; native checks separate.
-
-Original R1234 stopped at63/backed up; R5678 never launched; old C256 both
-finished. Original primary R/C comparison incomplete. Preserve all old evidence.
+NEXT: inspect data agent's new source/fixture results, obtain independent review,
+fix real defects, then run `source scripts/env.sh && bash scripts/run_checks.sh`.
+Only after acceptance seal a new prospective data protocol and run full CPU prep.
+Inspect fixed examples/quality before B0 reader qualification/scoring. No long RL.
