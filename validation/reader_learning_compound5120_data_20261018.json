@@ -1,0 +1,270 @@
+{
+  "schema": "reader-learning-compound5120-data-report-v1",
+  "created_utc": "2026-10-18T07:07:23.648501+00:00",
+  "status": "COMPLETE_CPU_INVENTORY_NOT_ACCELERATOR_QUALIFICATION",
+  "selection": {
+    "experiment_id": "postorder-reader-learning-compound5120-v1",
+    "items": 5120,
+    "unique_documents": 5120,
+    "unique_source_cuts": 5120,
+    "selection": "First5120 eligible compound REPRESENTATIVE documents in the original postorder-note-candidates-v2 publication order. Require5120 unique TRAIN documents; fail on shortfall, do not use duplicate cuts/verbalizations.",
+    "selection_uses_likelihood": false,
+    "selection_informed_by_closed_TRAIN_diagnostics": true,
+    "teacher_note_kind": "exact-postorder-v1",
+    "interface": "I3",
+    "old_filter": {
+      "attempted": 14669,
+      "experiment": "postorder-note-frozen-filter-v1",
+      "positive": 3147,
+      "requested": 5120,
+      "shortfall": 1973,
+      "summary_sha256": "8fb6bd8661ec88e7b5ac1e961dbf32a309bc914ab139b273ce1db9f818a6ac1f"
+    }
+  },
+  "selected_ops": {
+    "2": 2817,
+    "3": 1406,
+    "4": 448,
+    "5": 348,
+    "6": 101
+  },
+  "packing": {
+    "augmented": {
+      "target_slots": 704,
+      "width": 704
+    },
+    "reader": {
+      "target_slots": 16,
+      "width": 704
+    },
+    "source": {
+      "target_slots": 544,
+      "width": 544
+    },
+    "writer": {
+      "target_slots": 128,
+      "width": 640
+    }
+  },
+  "component_counts": {
+    "augmented": {
+      "active_labels": 3009904,
+      "examples": 5120,
+      "non_note_labels": 3009904,
+      "note_close_labels": 0
+    },
+    "reader": {
+      "active_labels": 81920,
+      "examples": 5120,
+      "non_note_labels": 81920,
+      "note_close_labels": 0
+    },
+    "source": {
+      "active_labels": 2698240,
+      "examples": 5120,
+      "non_note_labels": 2698240,
+      "note_close_labels": 0
+    },
+    "writer": {
+      "active_labels": 234891,
+      "examples": 5120,
+      "non_note_labels": 0,
+      "note_close_labels": 234891
+    }
+  },
+  "teacher_lengths": {
+    "max": 124,
+    "min": 25,
+    "total": 229771
+  },
+  "native_stop_ids": [
+    151668,
+    151643
+  ],
+  "independent_readback": {
+    "audit_source_sha256": "4e9927cc97bfb9c358b08826ba8b4650c92ce4af98462c98b5fba5a0080f5a6f",
+    "binary_ops": {
+      "2": 2817,
+      "3": 1406,
+      "4": 448,
+      "5": 348,
+      "6": 101
+    },
+    "byte_identical_original_publication_lines": true,
+    "component_counts": {
+      "augmented": {
+        "active_labels": 3009904,
+        "examples": 5120,
+        "non_note_labels": 3009904,
+        "note_close_labels": 0
+      },
+      "reader": {
+        "active_labels": 81920,
+        "examples": 5120,
+        "non_note_labels": 81920,
+        "note_close_labels": 0
+      },
+      "source": {
+        "active_labels": 2698240,
+        "examples": 5120,
+        "non_note_labels": 2698240,
+        "note_close_labels": 0
+      },
+      "writer": {
+        "active_labels": 234891,
+        "examples": 5120,
+        "non_note_labels": 0,
+        "note_close_labels": 234891
+      }
+    },
+    "component_packs_checked": 20480,
+    "eligible_compound_representatives": 5438,
+    "finished_utc": "2026-10-18T06:57:23+00:00",
+    "first4": [
+      {
+        "absolute_source_cut": 303,
+        "binary_ops": 2,
+        "document_id": "cf57186e37e2a98405a470b88f41f8939a72a888490947f76cfad024ad73d512",
+        "item_id": "cf57186e37e2a98405a470b88f41f8939a72a888490947f76cfad024ad73d512:compound-priority-v1:303",
+        "note_tokens": 29
+      },
+      {
+        "absolute_source_cut": 3766,
+        "binary_ops": 2,
+        "document_id": "5d6f28a3921964774269b44ee9de9021d1576a116c2f37b53f576890d7527612",
+        "item_id": "5d6f28a3921964774269b44ee9de9021d1576a116c2f37b53f576890d7527612:compound-priority-v1:3766",
+        "note_tokens": 31
+      },
+      {
+        "absolute_source_cut": 6839,
+        "binary_ops": 3,
+        "document_id": "99f638686c275a1d5139976e513c41e1a5c9e17685dde30a16ec11e6a5a5a7e2",
+        "item_id": "99f638686c275a1d5139976e513c41e1a5c9e17685dde30a16ec11e6a5a5a7e2:compound-priority-v1:6839",
+        "note_tokens": 44
+      },
+      {
+        "absolute_source_cut": 1504,
+        "binary_ops": 3,
+        "document_id": "2da063786f4a62db05d4ed1db5649c114ab174eedd95f5dd404fea162354b4b1",
+        "item_id": "2da063786f4a62db05d4ed1db5649c114ab174eedd95f5dd404fea162354b4b1:compound-priority-v1:1504",
+        "note_tokens": 49
+      }
+    ],
+    "fresh_held_DEV_document_overlap": 0,
+    "items": 5120,
+    "limitations": [
+      "No likelihood selection; original failed filter unchanged.",
+      "Exact supervised labels are not generated writer utility.",
+      "Shared frozen packer called; expected serialized component tokens/positions/masks constructed independently."
+    ],
+    "manifest_sha256": "c6b671211c8941c0c00d4f78d4f52223c4c8d8cdfe71911da7e24d4a42391cf0",
+    "math_proofs_checked": 5120,
+    "natural16_source528_and_native_notes_checked": 5120,
+    "note_lengths": {
+      "max": 124,
+      "min": 25,
+      "total": 229771
+    },
+    "status": "PASS_independent_CPU_readback_NOT_hardware_or_training",
+    "training_sha256": "bab4b19f20200f019266de5e58c9c45334d1e4ca70a87bd5b6b19757e1c3c759",
+    "unique_cuts": 5120,
+    "unique_documents": 5120
+  },
+  "examples": [
+    {
+      "item_id": "cf57186e37e2a98405a470b88f41f8939a72a888490947f76cfad024ad73d512:compound-priority-v1:303",
+      "document_id": "cf57186e37e2a98405a470b88f41f8939a72a888490947f76cfad024ad73d512",
+      "teacher_note_text": "Compute: 3 + 8 = 11. 11 + 4 = 15. Result: 15.",
+      "numeric_surface_text": "15",
+      "reanchor_text": "3 + 8 + 4 =",
+      "operations": 2,
+      "selection": "First selected training row for each operation count, no gain selection"
+    },
+    {
+      "item_id": "99f638686c275a1d5139976e513c41e1a5c9e17685dde30a16ec11e6a5a5a7e2:compound-priority-v1:6839",
+      "document_id": "99f638686c275a1d5139976e513c41e1a5c9e17685dde30a16ec11e6a5a5a7e2",
+      "teacher_note_text": "Compute: 20 + 17 = 37. 37 + 21 = 58. 58 + 19 = 77. Result: 77.",
+      "numeric_surface_text": "77",
+      "reanchor_text": "20+17+21+19=",
+      "operations": 3,
+      "selection": "First selected training row for each operation count, no gain selection"
+    },
+    {
+      "item_id": "fbb2d3d48d1e4843411be6ce2158c1d7e047d0da4e7f3d9aa91804a1968551cf:compound-priority-v1:1131",
+      "document_id": "fbb2d3d48d1e4843411be6ce2158c1d7e047d0da4e7f3d9aa91804a1968551cf",
+      "teacher_note_text": "Compute: 5 + 2 = 7. 5 + 2 = 7. 7 + 1 = 8. 8 + 2 = 10. 7 / 10 = 0.7. Result: 0.7.",
+      "numeric_surface_text": "0.7",
+      "reanchor_text": "(5+2)/(5+2+1+2)=",
+      "operations": 5,
+      "selection": "First selected training row for each operation count, no gain selection"
+    },
+    {
+      "item_id": "e3dcc70922e52ef823f196722a3d72e80be8bbad6fd2db80a4a3d0098566d673:compound-priority-v1:716",
+      "document_id": "e3dcc70922e52ef823f196722a3d72e80be8bbad6fd2db80a4a3d0098566d673",
+      "teacher_note_text": "Compute: 10 * 9 = 90. 90 * 8 = 720. 3 * 2 = 6. 720 / 6 = 120. Result: 720/6.",
+      "numeric_surface_text": "720/6",
+      "reanchor_text": "(10*9*8)/(3*2) =",
+      "operations": 4,
+      "selection": "First selected training row for each operation count, no gain selection"
+    },
+    {
+      "item_id": "4d9e82ac4ec97b9e5d08a8ecb6eb45119a335d7585cfd4401d70bd8d5709dad7:compound-priority-v1:825",
+      "document_id": "4d9e82ac4ec97b9e5d08a8ecb6eb45119a335d7585cfd4401d70bd8d5709dad7",
+      "teacher_note_text": "Compute: 75 + 90 = 165. 165 + 96 = 261. 261 + 105 = 366. 366 + 90 = 456. 456 + 105 = 561. 561 + 115 = 676. Result: 676.",
+      "numeric_surface_text": "676",
+      "reanchor_text": "75 + 90 + 96 + 105 + 90 + 105 + 115 =",
+      "operations": 6,
+      "selection": "First selected training row for each operation count, no gain selection"
+    }
+  ],
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/filter_symbolic_notes.py": "576b0e56c7b20d7a059498d99f822e112748a3cea7d4f6db10a1f9e1cfe6d6b8",
+    "train/interface_oracle_probe.py": "f4131becd05134eb22bac0ca19c6ec1b308fbd6c835071cf951b73e195172859",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/prepare_reader_learning_data.py": "45671312d69e838f5cec78e9b1aadacca2e621c42a88c87ac905e8b273e2a455",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "input_hashes": {
+    "/home/ubuntu/dario/configs/rlp_published_prompt.json": "b56c55e5093ba7ea2cdd921f620fba660a6b13fb37ac8e38e6b0a60ca281184a",
+    "/home/ubuntu/dario/local/diagnostics/finemath-computable-equations-raw-v3/postsft-held256.ids.json": "dbca1a7f42cf87f665652b1b5915478177fc0f3787c4db25ce186c382fdaa13a",
+    "/home/ubuntu/dario/local/diagnostics/postorder-reader-learning-compound5120-v1/declaration.json": "d7a1c4ddda07ae622d72903dc3219ce0308896d1589799926fc3f07e77ed4b6f",
+    "/home/ubuntu/dario/local/nvme/data/compound-priority-equation-candidates-v1/candidates.jsonl": "f5e76183f3cdc023ec48870087321f7cde9b2529d540eabb9c4025884501e42c",
+    "/home/ubuntu/dario/local/nvme/data/compound-priority-equation-candidates-v1/manifest.json": "7455ad97c8fc988087131bbc7dc98bfaa1b06b3811f2bc76ad10ea939ed06b03",
+    "/home/ubuntu/dario/local/nvme/data/postorder-note-candidates-v2/candidates.jsonl": "1ba627c007a429712c130698f5b3b6290ab80c2b8a2e83120fd6172bda16e7d2",
+    "/home/ubuntu/dario/local/nvme/data/postorder-note-candidates-v2/manifest.json": "306aa9d753912bd610cb18f2e06cdf71c557e6127ae40c3c06207b27b364145a",
+    "/home/ubuntu/dario/local/nvme/diagnostics/postorder-note-frozen-filter-v1/summary.json": "8fb6bd8661ec88e7b5ac1e961dbf32a309bc914ab139b273ce1db9f818a6ac1f",
+    "/home/ubuntu/dario/local/resolved_format.json": "e02d296b238df6606d8436ea771062005039ce836e2acf7597a967a686461c50"
+  },
+  "artifacts": {
+    "local/nvme/data/postorder-reader-learning-compound5120-v1/manifest.json": "c6b671211c8941c0c00d4f78d4f52223c4c8d8cdfe71911da7e24d4a42391cf0",
+    "local/nvme/data/postorder-reader-learning-compound5120-v1/training.jsonl": "bab4b19f20200f019266de5e58c9c45334d1e4ca70a87bd5b6b19757e1c3c759",
+    "local/diagnostics/postorder-reader-learning-compound5120-v1/independent-readback.json": "84d3a64515fca3b569b0844a1a1feeba1ca00368568dafe157ac96c6bd301a85",
+    "local/diagnostics/postorder-reader-learning-compound5120-v1/closure.json": "9ddc20f2800f77b49243d15eeda4b34c0749e87a3770f6b01990eb3aaa2f5142"
+  },
+  "limits": [
+    "Exact external arithmetic supervision and future-derived original answer surface; not generated-policy evidence.",
+    "No likelihood-based filter/ranking and no claim that the original frozen-reader positive-gain gate passed.",
+    "Same source occurrences and updates do not match supervised tokens, objective weights or FLOPs.",
+    "No model trained; new hardware precision/layout still needs qualification."
+  ]
+}

@@ -50,17 +50,17 @@ def trained_identity(checkpoint, expected_sha, complete_sha, training_protocol):
     if checkpoint.name!='model.pt' or sha256_file(checkpoint)!=expected_sha or sha256_file(complete)!=complete_sha:
         raise ValueError('Exact terminal model/COMPLETE hashes required')
     c,r,end,p=(read(v) for v in (complete,run_dir/'run.json',run_dir/'completion.json',training_protocol))
-    from train.useful_note_sft_driver import validate_protocol
+    from train.useful_note_sft_driver import validate_protocol, SCHEMA as TRAINING_SCHEMA, WEIGHTS
     validate_protocol(p)
     spec=canonical_hash(p);step=p['steps'];world=p['world_size']
-    if (p['schema']!='useful-note-sft-v1' or p['purpose']!='science' or r['arm'] not in ('W','C','T')
+    if (p['schema']!=TRAINING_SCHEMA or p['purpose']!='science' or r['arm'] not in WEIGHTS
             or r['qualification'] or r['purpose']!='science' or r['spec_hash']!=spec
             or r['protocol_sha256']!=sha256_file(training_protocol) or r['scientific_steps']!=step
             or end['status']!='complete' or end['actual_steps']!=step or end['planned_steps']!=step
             or end['protocol_sha256']!=r['protocol_sha256'] or c['schema']!='neuron-v1'
             or (c['run_id'],c['step'],c['spec_hash'],c['world_size'])!=(run_dir.name,step,spec,world)
             or c['metadata']['arm']!=r['arm'] or c['metadata']['qualification']
-            or c['metadata']['parameter_dtype']!='fp32' or p['optimizer_dtype']!='fp32'
+            or c['metadata']['parameter_dtype']!=p['parameter_dtype'] or p['optimizer_dtype']!='fp32'
             or c['metadata']['order_hash']!=r['order_hash']
             or c['metadata']['counters']!=end['counters']
             or end['counters']['source_records']!=step*p['global_batch']):

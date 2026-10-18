@@ -876,3 +876,19 @@ the old3147/14669shortfall and every score unchanged; this is an informed design
 adaptation, not a prospective success under the original gate. HeldDEV and GSM
 controls remain required; own−raw/other must establish utility after supervision.
 Prepare a separate manifest/source identity; active hardware programs stay frozen.
+
+### 2026-10-18 — Hardware memory repair preserves FP32 optimizer masters
+World8/accum4 with FP32 model/gradient storage fails W before update1 and C after
+update1; T completes2updates and all full-state checks. Every group/device is
+closed, source snapshots retained; this is an engineering failure, not a learning
+result. W's24GiB bank contains13.620GiB tensors,3GiB scratch and6.589GiB spill rings.
+The released310parameter tensors are already BF16. A new parameter-only CPU cast
+can preserve exact initial values while retaining FP32 RoPE buffers; whole-module
+dtype conversion would round those buffers. Use supported ZeRO FP32 masters/moments,
+not private manual master seeding. BF16 gradients/collectives must be reported.
+Prefer world32/accum1 for the new qualification; do not claim fit from arithmetic.
+Measure actual FP32 master updates, since early BF16 copies can round unchanged.
+Saved model compute copies widen for FP32 evaluation; FP32 masters remain necessary
+for recovery and must not be silently substituted as a different evaluation model.
+New CPU BF16-parameter reference and native distribution checks are prospective;
+the old FP32<=.002 gate is not BF16 arithmetic equivalence. No scientific run released.

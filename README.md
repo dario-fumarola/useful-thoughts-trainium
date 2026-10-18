@@ -27,6 +27,13 @@ No note here was produced by a prefix-only writer. DEV was reused for interface
 development, so this is exploratory qualification rather than a fresh confirmation.
 [Complete mixer fit, all controls/cells, audit and archives](validation/interface_scalar_mixer_dev256x2_20261018.json).
 
+On a separately sealed 256-document arithmetic DEV panel, **fresh B0 notes still
+hurt**: own−raw is −7.490 [−8.173,−6.840] nats with re-anchoring and
+−.673 [−.837,−.508] with fixed mixing. Own−unrelated intervals cross zero in
+both paths; 242 of 256 notes hit the 128-action cap. Empty controls, absolute
+likelihoods, all 3,072 cells and examples are retained in the
+[complete generated-note baseline](validation/postorder_held256_B0_20261018.json).
+
 Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
 correct note, while a wrong note also improves by0.112 [0.030,0.217]. We retain
@@ -44,15 +51,17 @@ evaluation control. Of 14,669 exact symbolic substep labels from real source equ
 span, despite a +.160-nat number-only gain. The closing-certificate token accounts
 for most of the loss. The failed filter and its threshold remain unchanged.
 [Complete TRAIN filter and token decomposition](validation/postorder_symbolic_frozen_reader_filter_20261018.json).
-The separately declared reader-learning experiment will use 5,120 verified compound
+The separately declared reader-learning experiment has 5,120 verified compound
 equations from distinct TRAIN documents, selected in the existing frozen order
 without likelihood filtering. This teaches the reader as well as the writer;
 it does not claim the old filter passed. C′ also matches W's continuation-loss
 weighting to avoid confusing anchor emphasis with note utility.
 [Declared experiment](validation/reader_learning_compound5120_design_20261018.json) ·
+[Verified data inventory](validation/reader_learning_compound5120_data_20261018.json) ·
 [Native label recipe and examples](validation/postorder_symbolic_candidate_inventory_20261018.json).
-A fresh 256-document DEV baseline is running, alongside separate two-update BF16 hardware checks
-for W/C/T. Scientific SFT awaits the final native data inventory and hardware evidence;
+Two-update BF16-compute hardware checks passed for T; W and C ran out of memory
+with FP32 model storage. A new BF16-storage path will retain FP32 optimizer masters
+and preserve FP32 positional buffers. Scientific SFT awaits that qualification;
 official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 

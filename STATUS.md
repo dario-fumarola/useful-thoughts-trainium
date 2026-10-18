@@ -1,4 +1,4 @@
-# Status — 2026-10-18 06:53 UTC
+# Status — 2026-10-18 07:09 UTC
 
 ## Closed: batched reader interface qualification
 Question: can unchanged B0 use a supplied full-target-copy note?
@@ -68,46 +68,47 @@ Allscores and decisions preserved; verified complete EBS archive, originals reta
 Independent44007cell readback passes; closing-token tax offsets numerical gains.
 Decision: preserve failed quota; separate explicit reader-learning dataset, no original gate pass.
 
-## Active: actual BF16 supervised qualification
+## Closed: BF16-compute qualification — W/C fail, T passes
 ID:postorder-note-bf16-qualification-v1; three parallel W/C/T jobs, launched06:22:38UTC.
 Purpose:two updates each on declared64TRAINitems, not a scientific arm or5000 quota.
 Eight ranks/accum4 per arm; Wcores0–7/devices0–1, C8–15/2–3, T16–23/4–5.
-Actual24workers/launcher-timeout groups/envs and disjoint physical mapping captured06:23:31.
-Drivers:W2527169(timeout2527167),C2527174(2527172),T2527165(2527163).
-NativeFP32 initialization precedes BF16 forward/head hooks; FP32masters/moments/gradients.
-Must pass real updates/replica samples/fullfinite state/counters, then exact physical closure.
-All24nativeFP32gates pass; Tstep1 has BF16outputs/realFP32changes/equalreplicas; W/C compiling.
-Allsource review,34focused/1258fullCPUtests+smoke/compile and64×4actualCPU packs pass.
-RuntimeTMPDIR ordering repaired before allocation; original staging/test preserved, no retry.
+All24initialFP32native gates pass; actual q_proj/head BF16, FP32 model/grad/master storage.
+Wfails before first update: model reload/dma-spill allocation at23.845GiB of24GiB.
+Ccompletes1update then fails allocating48MiB during next backward; Tcompletes2/exit0.
+Tpasses actual updates/replica equality/all8FP32master+moment finite scans/Adamstep2.
+Cold compile times are not warmed throughput; two updates do not qualify exact resumption.
+All original identities/groups/sessions and devices0–5 physically closed, no retries.
 Controls:local/diagnostics/postorder-note-bf16-qualification-v1; individual NVMe W/C/T outputs.
-Common deadline12:22:16UTC; distributed owns health/closure/EBS batch archive. No science yet.
-Reader training is ordinaryI3 fallback; fixedI6 remains evaluation only. No exact-resume claim.
+Oldsource snapshot retained; distributed finishes one complete verified EBS batch archive.
+Decision: qualify BF16 parameter storage with FP32 masters under a new precision identity.
 
-## CPU preparation: compound reader-learning data
+## Closed CPU preparation: compound reader-learning data
 Question: can verified compound supervision teach the reader interface and prefix-only writer?
 ID:postorder-reader-learning-compound5120-v1; explicit adaptation informed by closed TRAINfilter.
 Select first5120compound REPRESENTATIVE documents in existing frozen candidate order.
 Require5120uniqueTRAINdocs, >=2exact bounded operations and <=128native note tokens.
 No likelihood filtering/ranking, repeated cuts or duplicate verbalizations; original filter stays failed.
 Independent eligibility inventory:5438uniquecompound representatives,318unused after quota.
-New separate preparer/manifest; source528/natural16 and all4nativepack counts verified before release.
+All5120uniqueTRAINdocs, exact math/native sources/notes and20480component packs verified.
+Independent heldDEV overlap0; selected operations2/3/4/5/6=2817/1406/448/348/101.
 Plan W/C′/T, twoepochs/global32/LR1e−5, two seeds; scientific training not released.
 C′=rawnatural16mean+.5source mean; exact one-pass helper has11CPUloss/gradient tests.
-Full1293CPUchecks+smoke/compile pass; current frozen hardware source remains unchanged.
-Data agent owns separate CPU implementation/readback; no new raw-corpus pass or model.
+Full1323CPUchecks+smoke/compile pass including new preparer and GSMwrapper; no model.
+Public inventory:validation/reader_learning_compound5120_data_20261018.json.
 
-## Active: fresh held reader baseline
+## Closed: fresh held reader baseline — negative
 Question: how do fresh prefix-only notes compare with raw/empty/intact unrelated notes?
 ID:postorder-held256-B0-v1; sealed fresh256realDEV documents, no TEST.
 Greedy cap128actions; all256attempts close before controls or future scoring.
 Raw/empty/own/other/symbolic teacher/target copy, I3 and fixedI6w=.375;3072cells.
 Natural16primary, fullscalar+boundary and numeric-only secondary; document intervals.
 Allfailures retained in256denominators; no per-document length-matched synthetic donors.
-Workers2563205/2563209/2563218/2563214→cores44/48/52/56→devices11–14; live verified.
-Launched06:42:45UTC; all4nativeFP32gates pass; generation progressing after cold compile.
+All256notes/3072finite cells/zeroerrors; all8native gates pass; all owned processes/devices closed.
+I3 own−raw−7.490[−8.173,−6.840]; I6−.673[−.837,−.508]; own−other CIs cross0.
+242notes capped/2empty; mean123.42content tokens. Allabsolute/control scores retained.
 Output:local/nvme/diagnostics/postorder-held256-B0-v1; controls same basename offNVMe.
-Reviewer owns generation→closure→controls→scoring→closure→summary/archive; deadline10:30UTC.
-No checkpoint training or self-reader duplication; no automatic retries or partial outcome review.
+Verified EBS archive; independent3072cell/36CI audit exactly matches allsummary values.
+Public complete cells:validation/postorder_held256_B0_20261018.json; no trained outcome.
 
 ## Closed incomplete: fixed empty-pipeline cost
 Question: how much work survives immediate EOS; how do cap and precision affect it?
@@ -129,10 +130,10 @@ README links full results, controls, parser limits and verified checkpoint archi
 All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
-Root: scientific controls/data decision, training release and public findings.
-Data: separate compound reader-learning preparer and complete native CPU inventory/readback.
-Distributed: actual three-arm BF16 qualification health/closure; frozen source unchanged.
-Review: complete four-core fresh held B0 baseline health/closure/summary/archive.
+Root: science/data/precision decisions, training release, current public findings.
+Data: settled GSM512batched wrapper; CPU widths/review complete, no models launched.
+Distributed: failed-qualification archive, then separately reviewed BF16-storage driver repair.
+Review: precision/master/RoPE API evidence and new source acceptance; oldbaseline archived.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.
