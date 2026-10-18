@@ -1,9 +1,10 @@
-"""TRAIN128 complete-answer baseline for the partial-state diagnostic.
+"""TRAIN128 complete answers with an explicitly frozen partial-state reader.
 
 Reuse the existing released-model loader and causal decoder. Generation reads
 only projected questions and prefix-computable controls. Gold scoring is a
-separate command after all four shards close. Trained models require a later
-explicit checkpoint binding; this initial driver accepts unchanged B0 only.
+separate command after all four shards close. A trained reader requires a closed
+full terminal128 publication and its own CPU native reference. The original B0
+v1 baseline remains isolated on its immutable worktree.
 """
 import argparse
 from dataclasses import asdict
@@ -19,7 +20,7 @@ from weekend_thinking.runtime_policy import require_runtime_policy, runtime_poli
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-TRAIN128-B0-complete-answers-v1'
+SCHEMA = 'partial-state-TRAIN128-complete-answers-v2'
 TRAIN_SHA = '020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb'
 MODES = ('direct', 'cot', 'empty', 'teacher', 'corrupt', 'other_teacher', 'restatement')
 
@@ -36,12 +37,13 @@ def sources():
     from train.evaluation_integrity import evaluation_dependencies
     names = ('train/partial_state_answer_driver.py', 'train/partial_state_answers.py',
              'train/partial_state_evaluation.py', 'train/partial_state_data.py',
+             'train/partial_state_checkpoint.py', 'train/partial_state_driver.py',
              'train/useful_note_precision.py', 'train/runtime_compat.py',
              'weekend_thinking/runtime_policy.py')
     return {**evaluation_dependencies(), **{n: sha256_file(ROOT/n) for n in names}}
 
 
-def prepare(output, data_file, model_dir, base_protocol):
+def prepare(output, data_file, model_dir, base_protocol, reader_binding=None):
     from transformers import AutoTokenizer
     from train.evaluate import asset_provenance
     if sha256_file(data_file) != TRAIN_SHA:
@@ -55,11 +57,37 @@ def prepare(output, data_file, model_dir, base_protocol):
     if assets['model_id'] != 'Qwen/Qwen3-1.7B-Base' or assets['manifest_sha256'] != base['model_manifest_sha256']:
         raise ValueError('Actual released B0 assets and canonical reference required')
     controls = teacher_controls(questions, tok)
+    reader = dict(id='B0', checkpoint=None)
+    if reader_binding is not None:
+        from train.partial_state_checkpoint import verify
+        reader = verify(read(reader_binding))
     if max(len(prompt_tokens(q, tok, cot=True)) for q in questions) > 32:
         raise ValueError('Declared prefill width is too small')
     if any(len(reader_tokens(q, c['notes'][mode], tok)) > 128 for q,c in zip(questions,controls) for mode in MODES[2:]):
         raise ValueError('Declared reader prefill width is too small')
     output.mkdir(parents=True, exist_ok=False)
+    from train.useful_note_sft_driver import load_native_reference
+    refs, native = load_native_reference(base, assets)
+    signature = base['base_signature']
+    if reader['checkpoint'] is not None:
+        import torch
+        from train.evaluate_local import setup_model
+        backend, _, loaded, signature, _ = setup_model(SimpleNamespace(
+            model_dir=model_dir, checkpoint=Path(reader['checkpoint']), device='cpu'))
+        if any(loaded.get(k) != reader[k] for k in ('step','run_id','spec_hash')):
+            raise ValueError('Actual CPU reference model differs from frozen reader')
+        values = []
+        with torch.no_grad():
+            for ref in refs:
+                x=torch.full((1,1024),151643,dtype=torch.long)
+                x[0,:len(ref['context_ids'])]=torch.tensor(ref['context_ids'])
+                hidden=backend.hidden(x)
+                values.append(backend.model.lm_head(hidden[:,len(ref['context_ids'])-1]).float().log_softmax(-1))
+        native=torch.cat(values).cpu()
+        del backend,hidden,values,x
+    import torch
+    torch.save(native,output/'native-reference.pt')
+    atomic_json(output/'native-contexts.json',dict(refs=refs,width=1024,model_signature=signature,reader=reader))
     for name, values in [('questions', questions), ('controls', controls),
                          ('gold', [dict(item_id=r['item_id'], answer=r['answer']) for r in data])]:
         with (output/f'{name}.jsonl').open('x') as stream:
@@ -69,8 +97,9 @@ def prepare(output, data_file, model_dir, base_protocol):
         model_dir=str(model_dir.resolve()), assets=assets, base_signature=base['base_signature'],
         base_protocol=str(base_protocol.resolve()), base_protocol_sha256=sha256_file(base_protocol),
         data_sha256=TRAIN_SHA, source_files=sources(), items=128, shards=4, modes=list(MODES),
-        files={name: sha256_file(output/name) for name in ('questions.jsonl','controls.jsonl','gold.jsonl')},
-        ordered_item_ids=[r['item_id'] for r in questions], model_identity='unchanged_B0',
+        files={name: sha256_file(output/name) for name in ('questions.jsonl','controls.jsonl','gold.jsonl','native-contexts.json','native-reference.pt')},
+        ordered_item_ids=[r['item_id'] for r in questions], model_identity=reader['id'],
+        reader=reader, evaluation_signature=signature,
         compute='fp32', selection='single_greedy_tokenizer_defined_support',
         writer_or_cot_prefill=32, reader_prefill=128, direct_and_cot_cap=80, reader_answer_cap=16,
         future_split='Generation never opens gold.jsonl or original supervised TRAIN rows. Supplied notes are computed only from prefix expressions.',
@@ -79,7 +108,7 @@ def prepare(output, data_file, model_dir, base_protocol):
         other_teacher_unmatched_lengths=sum(not c['other_teacher_length_matched'] for c in controls),
         runtime_policy=runtime_policy(), cache_prefill_max_logp_error=1e-3,
         limits=['TRAIN-only diagnostic, not generalization or final TEST.',
-                'No learning qualification or trained-model release.',
+                'Trained readers, if present, are explicitly TRAIN128 overfit diagnostics, not scientific warm starts.',
                 'Direct prompt asks for the answer; compact CoT starts at Work. Equal80 action caps do not equal measured FLOPs.',
                 'Supplied-state reading is achievable-reader evidence, not student utility.',
                 'Reader conditions use16 answer actions; direct/CoT80. Report actual actions and latency separately.'])
@@ -89,10 +118,10 @@ def prepare(output, data_file, model_dir, base_protocol):
 
 def load(output):
     p = read(output/'protocol.json')
-    if p['schema'] != SCHEMA or p['source_files'] != sources() or p['model_identity'] != 'unchanged_B0':
+    if p['schema'] != SCHEMA or p['source_files'] != sources() or p['model_identity'] != p['reader']['id']:
         raise ValueError('Frozen baseline source/identity changed')
     # Intentionally do not open or hash gold here: generation uses no gold.
-    for name in ('questions.jsonl', 'controls.jsonl'):
+    for name in ('questions.jsonl', 'controls.jsonl', 'native-contexts.json', 'native-reference.pt'):
         if sha256_file(output/name) != p['files'][name]:
             raise ValueError('Frozen question/control bytes changed')
     qs, cs = rows(output/'questions.jsonl'), rows(output/'controls.jsonl')
@@ -120,7 +149,6 @@ def generate(output, shard, until):
     import torch
     from train.evaluate import GenerationFailure, asset_provenance
     from train.evaluate_local import setup_model
-    from train.useful_note_sft_driver import load_native_reference
     from train.useful_note_precision import compare_distributions
     from weekend_thinking.pretrained import sampled_fingerprint
     deadline = require_utc_deadline(until)
@@ -138,10 +166,19 @@ def generate(output, shard, until):
                   protocol_sha256=sha256_file(output/'protocol.json'), model_identity=p['model_identity'])
     atomic_json(d/'run.json',report); started=time.monotonic()
     try:
-        backend, tok, checkpoint, signature, _ = setup_model(SimpleNamespace(model_dir=Path(p['model_dir']), checkpoint=None, device='xla'))
-        if checkpoint is not None or signature != p['base_signature'] or sampled_fingerprint(backend.model) != signature:
-            raise ValueError('Actual unchanged B0 required')
-        refs, native = load_native_reference(read(p['base_protocol']), p['assets'])
+        reader=p['reader'];path=reader['checkpoint']
+        if path is not None:
+            from train.partial_state_checkpoint import verify
+            verify(reader)
+        backend, tok, checkpoint, signature, _ = setup_model(SimpleNamespace(model_dir=Path(p['model_dir']), checkpoint=Path(path) if path else None, device='xla'))
+        if signature != p['evaluation_signature'] or sampled_fingerprint(backend.model) != signature:
+            raise ValueError('Actual transferred model differs from its CPU reference')
+        if path is None:
+            if checkpoint is not None or signature != p['base_signature']:
+                raise ValueError('Actual unchanged B0 required')
+        elif any(checkpoint.get(k)!=reader[k] for k in ('step','run_id','spec_hash')):
+            raise ValueError('Actual loaded terminal reader identity differs')
+        refs=read(output/'native-contexts.json')['refs'];native=torch.load(output/'native-reference.pt',map_location='cpu',weights_only=True)
         context=refs[shard]['context_ids']; x=torch.full((1,1024),151643,dtype=torch.long);x[0,:len(context)]=torch.tensor(context)
         with torch.no_grad():
             hidden=backend.hidden(x.to(backend.device)); lp=backend.model.lm_head(hidden[:,len(context)-1]).float().log_softmax(-1);backend.sync(); actual=lp.cpu()
@@ -226,10 +263,10 @@ def score(output):
 def main():
     a=argparse.ArgumentParser(description=__doc__);a.add_argument('command',choices=('prepare','generate','score'))
     a.add_argument('--output',type=Path,required=True);a.add_argument('--data-file',type=Path);a.add_argument('--model-dir',type=Path);a.add_argument('--base-protocol',type=Path)
-    a.add_argument('--shard',type=int);a.add_argument('--deadline-utc')
+    a.add_argument('--shard',type=int);a.add_argument('--deadline-utc');a.add_argument('--reader-binding',type=Path)
     v=a.parse_args()
     if v.command=='prepare':
-        result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol)
+        result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol,v.reader_binding)
     elif v.command=='generate':
         result=generate(v.output,v.shard,v.deadline_utc)
     else:

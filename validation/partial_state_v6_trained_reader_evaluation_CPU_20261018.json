@@ -1,0 +1,26 @@
+{
+  "schema": "partial-state-TRAIN128-trained-reader-evaluation-CPU-v2",
+  "status": "CPU_READY_TRAINED_DEVICE_PARITY_PENDING",
+  "utc": "2026-10-18T18:32:36.278335+00:00",
+  "scope": "Closed full terminal128 TRAIN-overfit readers only. Reject qualification, development64, incomplete or model-only publications. Not a scientific warm start.",
+  "checks": {
+    "tests": 1584,
+    "seconds": 60.24,
+    "smoke": "PASS",
+    "compile": "PASS",
+    "log_sha256": "65af694100f77038796d1440af30ed7471bc7f82c332457dae0a9358faf40e3d"
+  },
+  "actual_binding": "Reader128 actual five-file terminal/full-state publication, counters and closure were independently hash-bound by the new constructor.",
+  "reference": "Each trained reader gets its own CPU FP32 full-head native reference. Never compare updated weights against the B0 distribution as a parity gate.",
+  "generation": "Same128questions, seven controls, caps, parser, preserved failures and cached stopping as the isolated original B0v1 baseline; model binding/native reference differ.",
+  "source_files": {
+    "train/partial_state_checkpoint.py": "a51a34e4df8d0568208d54b1d97201fc4956b10422c57a0bc6e0bbacd92c6c5d",
+    "train/partial_state_answer_driver.py": "28d7f1967ab42d5ae2d97ed95c89559995938206c001ae3a4bfb8b51932210a8",
+    "tests/test_partial_state_checkpoint.py": "d800c6d164748c9eb365c633d3bea23f7f19a350ddd08f6f184786146b5b234d"
+  },
+  "limits": [
+    "No trained reader free-answer score yet.",
+    "Actual native/cached-prefill checks remain required per shard.",
+    "The original B0v1 job stays on immutable71609ee; new code is isolated separately before hardware."
+  ]
+}
