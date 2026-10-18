@@ -1,0 +1,518 @@
+{
+  "actual_status": "COMPLETE_FIXED5120_NATIVE_LABELS_NOT_TRAINING_RELEASE",
+  "archive": {
+    "originals_retained": true,
+    "sha256": "bfdd6f4e2649ee52a4ddf3e423ac54f331fc53daa7f6d847f6853a85daeee864",
+    "whole_verified": true
+  },
+  "costs": {
+    "mean_actions_per_attempt": 56.393961588541664,
+    "mean_content_tokens_per_attempt": 22.038533528645832,
+    "note_generation_seconds_mean": 4.4459405296694205,
+    "note_generation_seconds_sum": 109263.43445715567,
+    "raw_full_logits_seconds_sum": 3896.94783023966,
+    "scope": "Observed action/content and note latency include all saved attempts, including errors/partials. Score cell times count shared I3/I6 work once and include actual raw forward/softmax/transfer costs. Model setup/native gate/process-stage times are separate; no warm or end-to-end throughput claim.",
+    "scoring_cell_seconds_sum": 15534.428066781053,
+    "scoring_shared_timing_groups": 98304,
+    "total_content_tokens": 541619,
+    "total_generated_actions": 1385938
+  },
+  "counts": {
+    "eligible_positive": 8964,
+    "raw_documents": 131072,
+    "reader_attempts": 196608,
+    "requested": 5120,
+    "score_errors": 0,
+    "selected": 5120,
+    "strict_I3_empty_positive": 9140,
+    "teacher_attempts": 24576,
+    "teacher_errors": 0
+  },
+  "created_utc": "2026-10-18T11:26:46.505772+00:00",
+  "decisions_sha256": "8d04ef29c952bf7cb1c83b4fa534063a2decb5e092dc921e423b70cde990bb6f",
+  "design": {
+    "bootstrap": "5000 paired unique DOCUMENT draws seed17, conditional on this checkpoint/pool; not independent post-filter utility or training-seed uncertainty",
+    "comparison": ">=",
+    "controls": "raw/empty/teacher/intact globally cyclic other; all24576 candidates included in full-pool estimates",
+    "raw_K1_threshold": 1.7,
+    "raw_documents": 131072,
+    "reader": "B0 FP32/full released head, natural16 sum; I3 and fixed full-logit I6=.375",
+    "schema": "general-hindsight-filtered-train5120-v1",
+    "selection": "First5120 in fixed teacher order with plain/nonempty/native-supported/non-special/no-full16-literal-copy note AND strict I3 teacher-minus-empty>0. No ranking, I6 fallback or teacher>raw/other extra gate.",
+    "teacher_candidates": 24576,
+    "writer": "B0 greedy cap64; truefuture16 is visible to this hindsight teacher; token-only first-completed-line extraction"
+  },
+  "diagnostics": {
+    "I3": {
+      "all_three": 4337,
+      "teacher_gt_empty": 9140,
+      "teacher_gt_other": 14328,
+      "teacher_gt_raw": 5164
+    },
+    "I6w0.375": {
+      "all_three": 9783,
+      "teacher_gt_empty": 14388,
+      "teacher_gt_other": 16059,
+      "teacher_gt_raw": 13141
+    },
+    "demo_contained": 1404,
+    "demo_exact": 1378,
+    "rejection_reasons": {
+      "complete_future16_token_copy": 154,
+      "complete_future16_whitespace_only_character_copy": 175,
+      "empty_stripped_text": 529,
+      "native_length_not1to64": 526
+    }
+  },
+  "full_pool_groups": {
+    "I3": {
+      "absolute": {
+        "empty": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -35.04738141655883
+        },
+        "other": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -36.64996307071127
+        },
+        "raw": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -32.153843662068184
+        },
+        "teacher": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -34.993668463364706
+        }
+      },
+      "acceptance": "Per-document STRICT teacher-minus-empty>0; no ranking/margin/replacement",
+      "contrasts": {
+        "empty_minus_raw": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -2.9351661691841016,
+            -2.8522777638283707
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": -2.893537754490644,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 3400,
+          "unavailable_documents": 0
+        },
+        "teacher_minus_empty": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.018652618031478187,
+            0.13010913776771668
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": 0.05371295319412154,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 9140,
+          "unavailable_documents": 0
+        },
+        "teacher_minus_other": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            1.5831574176767729,
+            1.73229411149433
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": 1.6562946073465656,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 14328,
+          "unavailable_documents": 0
+        },
+        "teacher_minus_raw": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -2.921146298824843,
+            -2.7546457580448416
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": -2.839824801296522,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 5164,
+          "unavailable_documents": 0
+        }
+      }
+    },
+    "I6w0.375": {
+      "absolute": {
+        "empty": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -32.331140107837435
+        },
+        "other": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -32.46935358141848
+        },
+        "raw": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -32.153843662068184
+        },
+        "teacher": {
+          "errors": 0,
+          "items": 24576,
+          "mean": -31.32255673214941
+        }
+      },
+      "acceptance": "Per-document STRICT teacher-minus-empty>0; no ranking/margin/replacement",
+      "contrasts": {
+        "empty_minus_raw": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            -0.1886503519684949,
+            -0.16621540109702188
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": -0.17729644576924897,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 9994,
+          "unavailable_documents": 0
+        },
+        "teacher_minus_empty": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            0.9666260948494145,
+            1.0528982042177135
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": 1.0085833756880254,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 14388,
+          "unavailable_documents": 0
+        },
+        "teacher_minus_other": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            1.104905072337305,
+            1.1904448050263843
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": 1.1467968492690745,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 16059,
+          "unavailable_documents": 0
+        },
+        "teacher_minus_raw": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 17,
+          "ci95": [
+            0.7884982539687011,
+            0.8766591489844492
+          ],
+          "denominator": 24576,
+          "difference_b_minus_a": 0.8312869299187763,
+          "documents": 24576,
+          "items": 24576,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+          "strict_positive_documents": 13141,
+          "unavailable_documents": 0
+        }
+      }
+    }
+  },
+  "independent_audit": {
+    "coverage": {
+      "decisions": 24576,
+      "raw": 131072,
+      "reader": 196608,
+      "selected": 5120,
+      "teacher": 24576
+    },
+    "sha256": "f0b6f21030be6f8eb2f2353a44d66d30213d9c584eff6038edbc7b393f83b722",
+    "status": "PASS_COMPLETE_FIXED5120"
+  },
+  "limitations": [
+    "Explicit future-aware TRAIN label curation informed by closed pilot; no deployed prefix-only utility claim.",
+    "16 independent workers read only native own-shard projections.",
+    "Plain-text/copy gates do not certify semantic utility or exclude paraphrased target hints.",
+    "Only I3 teacher-minus-empty>0 selects labels; teacher-minus-raw/other/demo matches are descriptive and never extra semantic gates.",
+    "All24576 notes/196608 attempts and negative/error decisions remain; quota failure emits no training rows.",
+    "Full16 verbatim exclusion does not exclude shorter copying or paraphrased target hints.",
+    "Costs include all raw64 actions; shorter extracted notes are not measured generation-latency savings.",
+    "Teacher has future access. Label feasibility is not prefix-only deployed writer utility.",
+    "Selected I3 teacher-minus-empty positivity is true by construction; full-pool estimates retain failures and negatives.",
+    "Plain/native/copy gates do not prove semantic correctness or exclude shorter copying, paraphrased target hints or demo imitation.",
+    "Every raw64 action and unsuccessful attempt is charged before extraction; shared I3/I6 score computation is counted once.",
+    "A full label quota is not a training release or hardware qualification. All raw text/actions/labels remain in the original immutable NVMe+EBS publications."
+  ],
+  "metric_matrix": {
+    "file": "general_hindsight_filtered_TRAIN24576_20261018/reader-matrix.manifest.json",
+    "sha256": "ec6b4922ebe9fd2e5b565e448849d04420f2db02196e9ebdb60ea75ad7036860"
+  },
+  "note_counts": {
+    "caps": 19759,
+    "empty": 526,
+    "eos": 4817,
+    "errors": 0,
+    "extraction_reasons": {
+      "completed_content_line": 19332,
+      "original_end": 5244
+    }
+  },
+  "protocol_sha256": "ecbf9a50d5d499d405aefe54407a454218438bddca256606f3c9ed0e4144430b",
+  "question": "Can the fixed future-aware B0 teacher and frozen I3 filter supply5120 native GENERAL TRAIN labels?",
+  "schema": "general-hindsight-filtered-train5120-public-v1",
+  "sources": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/filter_symbolic_notes.py": "576b0e56c7b20d7a059498d99f822e112748a3cea7d4f6db10a1f9e1cfe6d6b8",
+    "train/firstline_note_probe.py": "30874089f3256de2d098efd8e9c100ffcf55a6fde5867b19d15c0280bebc4f57",
+    "train/general_hindsight_filtered_batch.py": "ea0c1b7473b8dfc73225ed2130349bc22869253f1e84985a31b9170d13ea5559",
+    "train/general_hindsight_filtered_data.py": "fa8143f579110619e3e3e1d07183ff6f6a7904879f6c7c53ba781d26eac33ffa",
+    "train/general_hindsight_notes.py": "8367ec81abda8fb525125592c102ca7de42671c02bc898e8d5405eb8a2d58935",
+    "train/interface_mixer_probe.py": "d86edd1fcdba3ee5ac824c04acd3cd9304d2420c85fc95fc6252b72ed214a02d",
+    "train/interface_oracle_probe.py": "f4131becd05134eb22bac0ca19c6ec1b308fbd6c835071cf951b73e195172859",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/teacher_prepend_probe.py": "5bf158f2f1af8ecef26d7d1e9b1a40de125abaadd8020b7a0e8134566fa83d84",
+    "train/useful_note_evaluation.py": "7bade797bc11d8a26e25d296d20e86d7a3bde6de50532318c82993778cf5cfc4",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/warmstart_evaluate.py": "fadd9c469a46c0f9402b01bfb951bd23d26ab18444230163f727a26888eac5f1",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "stage_costs": {
+    "raw": {
+      "first_start": "2026-10-18T08:39:20+00:00",
+      "last_finish": "2026-10-18T09:01:05+00:00",
+      "summed_model_setup_seconds": 403.79146690899506,
+      "summed_native_gate_seconds": 21.652046602015616,
+      "summed_process_stage_seconds": 20709.05731454902
+    },
+    "reader": {
+      "first_start": "2026-10-18T11:02:45+00:00",
+      "last_finish": "2026-10-18T11:19:43+00:00",
+      "summed_model_setup_seconds": 475.78486646697274,
+      "summed_native_gate_seconds": 23.003748810035177,
+      "summed_process_stage_seconds": 16076.12304912004
+    },
+    "teacher": {
+      "first_start": "2026-10-18T09:04:39+00:00",
+      "last_finish": "2026-10-18T11:00:05+00:00",
+      "summed_model_setup_seconds": 425.4229847060342,
+      "summed_native_gate_seconds": 21.140507863019593,
+      "summed_process_stage_seconds": 109757.37170188199
+    }
+  },
+  "status": "COMPLETE_FIXED_QUOTA_NOT_DEPLOYED_UTILITY",
+  "summary_sha256": "a68d64be035998d8a358fb1786ff9e27ca598307c6fcdd9d6af2f0b7303afbef",
+  "training_sha256": "b574c876c52ec35961791bb0417ac64b2c7a0252d983e79783612f0de1e700d0",
+  "selected_label_diagnostics": {
+    "I3": {
+      "teacher_gt_raw": 2501,
+      "teacher_gt_empty": 5120,
+      "teacher_gt_other": 4548,
+      "all_three": 2414
+    },
+    "I6w0.375": {
+      "teacher_gt_raw": 4164,
+      "teacher_gt_empty": 4945,
+      "teacher_gt_other": 4592,
+      "all_three": 3869
+    },
+    "items": 5120,
+    "demo_exact": 166,
+    "demo_contained": 174,
+    "scope": "Descriptive selected training labels, not independent utility or a changed filter."
+  },
+  "examples_selection": "First6 fixed teacher-order candidates and first6 selected labels; overlap permitted. Hindsight teacher sees future16; no outcome hand-picking.",
+  "examples": {
+    "first6_candidates": [
+      {
+        "teacher_index": 0,
+        "item_id": "15f05edf7b38760a159fec44cab66c09588ca3046f04ad28da5a391942788707:1214",
+        "document_id": "15f05edf7b38760a159fec44cab66c09588ca3046f04ad28da5a391942788707",
+        "prefix_tail96": " or love. how about instead of taking Algebra or Geometry or trigonometry , u enrolled on CHESSEBRA, CHESSMETRY or CHESSNOMETRY?\n\n• 5 years ago · Quote · #85\n\nThere would be no need to memorize 95% of all those as they are blunders or poor moves easily countered by good tactics. :)\n\n• 5 years ago · Quote · #86\n\nMy contribution to this might be minimal",
+        "future16": " for all the- from weird fact, looking to impress- type of people but",
+        "raw_teacher_note": " The observed continuation is a humorous and sarcastic remark about the perceived pretentiousness of certain types of people.\n\n• 5 years ago · Quote · #87\n\nI think the best way to crack chess is to make it a game of strategy and tactics. The best way to do that is to make it a",
+        "extracted_note": " The observed continuation is a humorous and sarcastic remark about the perceived pretentiousness of certain types of people.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 1,
+        "item_id": "1e4c16a19768c87baad67da88f7a4239a51d92de9ebad0e557e8d84185e82885:545",
+        "document_id": "1e4c16a19768c87baad67da88f7a4239a51d92de9ebad0e557e8d84185e82885",
+        "prefix_tail96": "73 = -0.9 while the equation for females would be : -0.73 - 0.46X2 = -1.19.\n– Marc\nCommented Mar 23, 2019 at 16:31\n\nFrom your equations in the comments and since for males $$X_3=1$$ , we have that: $$Decision_{Males} = - 0.73 - ",
+        "future16": "1.47 + 0.86 X_1 + (1",
+        "raw_teacher_note": " The interaction term $$X_2X_3$$ represents the combined effect of $$X_2$$ and $$X_3$$ on the decision variable, capturing how the effect of $$X_2$$ changes depending on the value of $$X_3$$.\n\nPassage:\nThe report compares how quickly two search",
+        "extracted_note": " The interaction term $$X_2X_3$$ represents the combined effect of $$X_2$$ and $$X_3$$ on the decision variable, capturing how the effect of $$X_2$$ changes depending on the value of $$X_3$$.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 2,
+        "item_id": "de35c933f541ab629e1e76893e3138c9535f445b2759d5aefc4d60b71a8c9369:1143",
+        "document_id": "de35c933f541ab629e1e76893e3138c9535f445b2759d5aefc4d60b71a8c9369",
+        "prefix_tail96": " the audio signal voltage across the collector is 3V. The resistance of collector is 3 kΩ. If current gain is 100 and the base resistance is 2 kΩ, the voltage and power gain of the amplifier is :-\n\nDetailed Solution for Test: NEET 2017 Past Year Paper - Question 8\n\nTest: NEET 2017 Past Year Paper - Question 9\n\nThermodynamic processes are indicated in the",
+        "future16": " following diagram :\n\nDetailed Solution for Test: NEET 2017 Past",
+        "raw_teacher_note": " The processes are shown in the diagram.\n\nTest: NEET 2017 Past Year Paper - Question 10\n\nA particle of mass m is moving in a horizontal circle of radius r under the action of a tangential force F. The force of friction between the particle and the circle is :-\n\nDetailed",
+        "extracted_note": " The processes are shown in the diagram.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 3,
+        "item_id": "bed1862fd400296a81ea38d83607c3ad64dc5e66e13fe5ece51fd04b819a22c2:778",
+        "document_id": "bed1862fd400296a81ea38d83607c3ad64dc5e66e13fe5ece51fd04b819a22c2",
+        "prefix_tail96": "12 at 22:03\nWell assuming you did have solutions, you would be able to put all those solutions in a set. Then, you would want to know properties of that set. Such as $\\left(x,y\\right) \\in S^2 \\implies x + y \\in S$. I checked if $(S, +)$, $(S, \\times)$ or $(S, \\circ)$ was a group. And none of these",
+        "future16": " 3 is since it would have to contain the neutral element for the operation.",
+        "raw_teacher_note": " The neutral element for addition is 0, and for multiplication is 1.",
+        "extracted_note": " The neutral element for addition is 0, and for multiplication is 1.",
+        "stop": "token:151643",
+        "actions": 17
+      },
+      {
+        "teacher_index": 4,
+        "item_id": "bc3a002392aefdcad44da35b7f5840fd8fdd8e13766ef4766db3e648160a8065:1651",
+        "document_id": "bc3a002392aefdcad44da35b7f5840fd8fdd8e13766ef4766db3e648160a8065",
+        "prefix_tail96": "\nThis answer has been confirmed as correct and helpful.\nRichard took a loan of \\$10,000 at a simple interest rate of 4%. If he paid \\$1,600 in interest, how many years did it take him to pay back the loan?\nWeegy: If it is 4% per annum then the total of what he has to pay would be \\$10,400. If he pays \\$1600",
+        "future16": " per year that would take him 6.5 years to pay. (More",
+        "raw_teacher_note": " Simple interest is calculated by multiplying the principal by the annual interest rate and the time the money is borrowed for. [ In this case, the principal is \\$10,000, the annual interest rate is 4%, and the time is 6.5 years. ]\n\nAdded 253 days ago",
+        "extracted_note": " Simple interest is calculated by multiplying the principal by the annual interest rate and the time the money is borrowed for. [ In this case, the principal is \\$10,000, the annual interest rate is 4%, and the time is 6.5 years. ]\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 5,
+        "item_id": "78eaeea92d18b5326742e78765f3b6097c079964a158db4605954370836806df:1620",
+        "document_id": "78eaeea92d18b5326742e78765f3b6097c079964a158db4605954370836806df",
+        "prefix_tail96": " and each takes O(1) time, the total time for constant-time push() and pop() operations is O(N).\n\nConsider a non-constant-time push() operation. Let's say it causes the array to grow to some size 2T. The time spent for the operation is O(T). Preceeding this push(), there must have been at least T/2 constant-time push() operations since the last time the table was resized. (This is because the previous",
+        "future16": " resizing must have been a grow, and it must have grown the table to size",
+        "raw_teacher_note": " The time for a non-constant-time push() operation is proportional to the size of the table after the operation, and the time for constant-time push() operations is proportional to the number of constant-time push() operations before the non-constant-time operation.\n\nPassage:\nThe report compares how quickly two search procedures examine a",
+        "extracted_note": " The time for a non-constant-time push() operation is proportional to the size of the table after the operation, and the time for constant-time push() operations is proportional to the number of constant-time push() operations before the non-constant-time operation.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      }
+    ],
+    "first6_selected": [
+      {
+        "teacher_index": 0,
+        "item_id": "15f05edf7b38760a159fec44cab66c09588ca3046f04ad28da5a391942788707:1214",
+        "document_id": "15f05edf7b38760a159fec44cab66c09588ca3046f04ad28da5a391942788707",
+        "prefix_tail96": " or love. how about instead of taking Algebra or Geometry or trigonometry , u enrolled on CHESSEBRA, CHESSMETRY or CHESSNOMETRY?\n\n• 5 years ago · Quote · #85\n\nThere would be no need to memorize 95% of all those as they are blunders or poor moves easily countered by good tactics. :)\n\n• 5 years ago · Quote · #86\n\nMy contribution to this might be minimal",
+        "future16": " for all the- from weird fact, looking to impress- type of people but",
+        "raw_teacher_note": " The observed continuation is a humorous and sarcastic remark about the perceived pretentiousness of certain types of people.\n\n• 5 years ago · Quote · #87\n\nI think the best way to crack chess is to make it a game of strategy and tactics. The best way to do that is to make it a",
+        "extracted_note": " The observed continuation is a humorous and sarcastic remark about the perceived pretentiousness of certain types of people.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 3,
+        "item_id": "bed1862fd400296a81ea38d83607c3ad64dc5e66e13fe5ece51fd04b819a22c2:778",
+        "document_id": "bed1862fd400296a81ea38d83607c3ad64dc5e66e13fe5ece51fd04b819a22c2",
+        "prefix_tail96": "12 at 22:03\nWell assuming you did have solutions, you would be able to put all those solutions in a set. Then, you would want to know properties of that set. Such as $\\left(x,y\\right) \\in S^2 \\implies x + y \\in S$. I checked if $(S, +)$, $(S, \\times)$ or $(S, \\circ)$ was a group. And none of these",
+        "future16": " 3 is since it would have to contain the neutral element for the operation.",
+        "raw_teacher_note": " The neutral element for addition is 0, and for multiplication is 1.",
+        "extracted_note": " The neutral element for addition is 0, and for multiplication is 1.",
+        "stop": "token:151643",
+        "actions": 17
+      },
+      {
+        "teacher_index": 6,
+        "item_id": "b51b7f5afda1bd89d9b7fbc5140ae59068cde03a37f9d8a3ee005e4de88f5e3f:556",
+        "document_id": "b51b7f5afda1bd89d9b7fbc5140ae59068cde03a37f9d8a3ee005e4de88f5e3f",
+        "prefix_tail96": " 67\n\n» Pair of Linear Equations in Two Variables\n\nMCQ▾\n\n### Question\n\nThe value of k for which the system of equations, has infinite number of solutions, is ________\n\n### Choices\n\nChoice (4) Response\n\na.\n\n10\n\nb.\n\n9\n\nc.\n\n4\n\nd.\n\n3\n\n## Question number: 68\n\n» Pair of Linear Equations in Two Variables\n\nMCQ▾\n\n### Question\n\nThe value of k",
+        "future16": ", for which the system of equations represent parallel lines is ________\n\n### Choices\n\n",
+        "raw_teacher_note": " Parallel lines have the same slope but different y-intercepts.\n\n## Question number: 69\n\n» Pair of Linear Equations in Two Variables\n\nMCQ▾\n\n### Question\n\nThe value of k for which the system of equations, has no solution, is ________\n\n### Choices\n\nChoice (4) Response\n\n",
+        "extracted_note": " Parallel lines have the same slope but different y-intercepts.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 8,
+        "item_id": "ec6bdaf905f36b96c74dae298166f5efc967162ecc3116e05583a6fd5a987368:748",
+        "document_id": "ec6bdaf905f36b96c74dae298166f5efc967162ecc3116e05583a6fd5a987368",
+        "prefix_tail96": " of diet pop, and 2 cups of regular pop, and she'll write the order which she believes the pop to be in. How many ways can record D(for Diet) and R(for Regular) if order matters?\nThe D's can be placed in 3 positions out of 5, and the R's in the remaining positions. So the number of possible arrangements is $\\displaystyle \\binom53 = 10$.\n\nC)There are 8",
+        "future16": " non-fiction books, and 7 fiction books. You are to recieve two",
+        "raw_teacher_note": " The number of ways to choose 2 books from 15 is $\\displaystyle \\binom{15}2 = 105$.\n\nD)There are 10\nObserved continuation:\n non-fiction books, and 7 fiction books. You are to recieve two\nHelper note:",
+        "extracted_note": " The number of ways to choose 2 books from 15 is $\\displaystyle \\binom{15}2 = 105$.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 9,
+        "item_id": "fc04c9e44f04ad06dc324367ef379221efe7d096c5894d82bc026720ddcc850b:820",
+        "document_id": "fc04c9e44f04ad06dc324367ef379221efe7d096c5894d82bc026720ddcc850b",
+        "prefix_tail96": " N I F G J= H 445 N K 36. The single rope should be directed along the dashed line in the text drawing. 2900 N 2900 N 1000 N Scale: Resultant a.1° north of west b.\n\nSolving for B gives B = A tan θ = (6.00 u) tan 60.Chapter1 Problems 3 43.",
+        "future16": "4 u b. The symbol u denotes the units of the vectors.0 u",
+        "raw_teacher_note": " The magnitude of a vector is the length of the vector.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan",
+        "extracted_note": " The magnitude of a vector is the length of the vector.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan 60.0 u) tan",
+        "stop": "length_cap",
+        "actions": 64
+      },
+      {
+        "teacher_index": 15,
+        "item_id": "944c37d9f5f25ff82740a3c7b5658ad71d9aa737646e9528c41533b20ec5d997:2741",
+        "document_id": "944c37d9f5f25ff82740a3c7b5658ad71d9aa737646e9528c41533b20ec5d997",
+        "prefix_tail96": "949 is divisible by\na) 2 b) 3 c) 4 d) None of these\n\n44) Fill in the missing multiple. 90, 105, ______, 135, 150\na) 120 b) 15 c) 125 d) 130\n\n45) HCF of 90, 96 and 10",
+        "future16": " is\na) 2 b) 6 c) 10 d",
+        "raw_teacher_note": " The highest common factor (HCF) of 90, 96, and 10 is 2.\n\nPassage:\nThe town council posted the revised rules in the community hall. Some residents had not seen the announcement.\nObserved continuation:\n A second notice was sent to every household.\nHelper note:",
+        "extracted_note": " The highest common factor (HCF) of 90, 96, and 10 is 2.\n\n",
+        "stop": "length_cap",
+        "actions": 64
+      }
+    ]
+  },
+  "native_tensor_readback": {
+    "status": "PASS_ALL48_NATIVE_TENSOR_READBACKS",
+    "checks": 48,
+    "max_error": 0.00016021728515625,
+    "atol": 0.002,
+    "sha256": "6c746a3cc1b7d454b6dd25d86c27361d153b6978594587fa801f5b02825f2acd"
+  },
+  "projection": {
+    "status": "ALL196608_METRIC_ROWS_EXACT",
+    "gzip_bytes": 30203058,
+    "shards": 16,
+    "draft_verification_sha256": "3a7730268b114955a5c30730b8ed53270274be6a2f29629484eddcdab43ff541",
+    "exporter_sha256": "3b9f0ab533fc57d2967a6c3a98521514cbc9c8880a3d7527f302cc7378627c0d"
+  },
+  "decision": "Use the original first5120 strictI3-positive eligible native labels for a separately reviewed writer+reader warm-start. Ordinary-I3 full-pool teacher−raw remains negative; future-aware hints and a passing quota do not establish prefix-only deployment or release hardware training."
+}

@@ -14,11 +14,13 @@
    `local/diagnostics/postorder-reader-learning-compound5120-sft-v4r2`.
    Distributed may CPU-prepare Cprime seed1 upper32 runtime while W continues;
    model release waits for the complete upper-partition data/probes and archive.
-3. Finish the original released general-label pipeline on logical32–43/60–63,
-   deadline14:36:32UTC. Raw131072 closed;32176 qualify, first24576 selected.
-   Data owns all teacher attempts→physical closure→global intact donors→all196608
-   reader cells→closure→first5120 eligible I3positive labels, with full archive.
-   No cutoff changes, gain ranking, shortened quota, source edits or automatic retry.
+3. General-label pipeline is closed/archived/independently verified: all131072raw,
+   24576teacher attempts and196608reader cells complete with zeroerrors. StrictI3
+   positives9140, eligible8964, original first5120selected. Fullpool fixedI6
+   teacher−raw+.831nats; ordinaryI3 remains−2.840. Future-aware label feasibility
+   does not establish a deployed prefix-only writer. Native general CPU inventory,
+   all20480causal packs, exact first64qualification subset and two seed drafts are
+   ready under `local/diagnostics/general-sft-v5-preparation`; no hardware release.
 4. Prefix-helper and GSM16 equivalence are closed/independently verified/archived.
    Helper soleprimary fails; all eight own−raw intervals negative. GSM16 matches
    all96fixedfirst32 native paths exactly; full512 accuracy loader unchanged.
@@ -47,8 +49,9 @@
    SFT identity/adapter; never disguise general labels as symbolic equations.
    Isolated public branch general-sft-v5 has reviewed native dispatch/provenance and
    exact5120-parent guards;1557CPUchecks/smoke/compile pass. Keep it isolated while
-   main jobs run. Actual CPU inventory waits for the full quota/closure/archive;
-   neither this code readiness nor a partial quota releases a hardware job.
+   main jobs run. Actual complete CPU inventory is ready; neither code/data
+   readiness nor a full quota releases a hardware job. Use matching isolated v5
+   sources for later training/evaluation; no main merge during active jobs.
 
 All official TEST remains forbidden. R1234 stopped63: never resume old launchers.
 The old symbolic filter remains failed3147/14669; compound5120 is an explicit

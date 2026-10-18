@@ -955,3 +955,20 @@ margin over the pilot's32% acceptance estimate, without guaranteeing availabilit
 CPU availability, exact eligibility and timing/storage still need declaration;
 consider16independent inference workers on four unshared physical devices to
 use the existing node better. No new model launch or main-training change yet.
+
+### 2026-10-18 — General label quota passes; keep reader and writer claims separate
+The fixed larger batch supplies8,964eligible strictI3-positive notes; retain its
+original first5,120 without ranking or changing the copy/plain-text filter.
+Independent all-cell, note, selection, interval and native tensor checks pass.
+The whole-pool ordinary reader still loses2.840nats against raw; fixed mixing
+improves by.831. Future-aware labels establish training feasibility, not useful
+prefix-only thoughts. Retain166selected exact demo imitations as observed label
+noise under the prospective filter, rather than silently cleaning after scores.
+The isolated native-v5 adapter and actual all5120causal packs are CPU ready;
+hardware qualification/training need a fresh resource-specific release.
+
+An optional read-only inventory found only78unexposed compound DEV documents
+among existing accepted publications, below256. Count the entire2,048-document
+general raw-scoring pool as exposed, not only its selected256. Do not promote
+this shortfall to a fresh cohort or substitute TRAIN. Existing real held panels
+and the frozen synthetic mechanism panel remain the terminal comparisons.

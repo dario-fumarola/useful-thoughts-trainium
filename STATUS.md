@@ -1,4 +1,4 @@
-# Status — 2026-10-18 10:40 UTC
+# Status — 2026-10-18 11:37 UTC
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -29,30 +29,33 @@ Independent complete metric/hash/order readback passes; no trained-thought resul
 Public: validation/general_high_surprisal_DEV256_sealed_20261018.json plus all raw vectors.
 Decision: evaluate B0 and every later terminal arm on this panel and arithmetic held256.
 
-## Released: filtered general hindsight labels
-Question: can strict frozen-reader filtering supply 5,120 general TRAIN labels?
-ID: general-hindsight-filtered-train5120-v1; separate from compound supervision.
-329,535 approved unique TRAIN anchors are available; zero overlap with sealed DEV.
-Freeze 131,072 hash-ordered anchors; select first 24,576 with B0 K1 surprisal >=1.7.
-One unchanged future-aware teacher attempt each, then intact unrelated-note controls.
-Keep first 5,120 eligible notes with I3 full16 teacher−empty >0; shortfall stays failed.
-Reject empty/special-token notes and complete literal future16 copies; retain all attempts.
-All131072 native projections independently match;1399 CPU tests/smoke/compile pass.
-Sixteen FP32 workers on logical32–43/60–63, physical8/9/10/15; deadline14:36:32UTC.
-All131072raw rows/16gates/exits0 closed;32176qualify, first24576selected in frozen order.
-Teacher launched09:04UTC; all16native gates/48actual PID-start-session-mappings pass.
-Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
+## Closed: filtered general hindsight labels — quota pass
+Question: can the unchanged future-aware B0 teacher supply5,120 strictly filtered general TRAIN labels?
+ID:general-hindsight-filtered-train5120-v1; separate from compound supervision.
+131072raw documents; first24576 with B0 K1surprisal>=1.7, one teacher attempt each.
+Fixed greedy64/first-line labels; global intact unrelated donors, raw/empty controls, natural16.
+Keep first5120eligible STRICTI3teacher−empty>0; no ranking, threshold or quota change.
+All131072raw/24576notes/196608cells complete, zeroerrors; all48native checks pass.
+9140strict positives/8964eligible; original first5120selected. Shorter future copies remain possible.
+FullpoolI3 teacher−raw−2.840[−2.921,−2.755], −empty+.054[−.019,+.130] nats.
+FullpoolI6 teacher−raw+.831[.788,.877], −empty+1.009[.967,1.053], −other+1.147[1.105,1.190].
+All generation/score identities/groups/sessions/devices closed11:20UTC; complete EBS archive verified.
+Independent full vector/label/selection/eight-CI and native-tensor audits reproduce exactly.
+Public validation/general_hindsight_filtered_TRAIN24576_20261018.json plus all196608vectors/examples.
+Decision: label quota passes; ordinary-reader tax remains. Future-aware labels do not establish prefix-only utility.
 
-## Ready on isolated branch: native general SFT adapter
+## CPU ready on isolated branch: native general SFT adapter
 Question: can the original filtered native labels enter honest causal W/C′/T packing?
 ID:general-sft-v5; isolated public branch, unchanged active main sources.
 Separate future-aware teacher schema, exact original first5120 acceptance order/provenance.
 Native512-token window cut is explicit; no fabricated absolute source offset.
-Qualification requires actual complete5120 unique-document parent, including all parent rows.
+Qualification requires actual complete5120unique-document parent, including all parent rows.
 Writer note+stop, natural16 reader, rawsource and augmented objectives remain unchanged.
-Both source reviews pass;1557CPUtests/smoke/compile pass. No hardware or compiler-reuse claim.
+Both source reviews and1557CPUtests/smoke/compile pass; no hardware/compiler-reuse claim.
+Actual5120inventory/all20480causal packs pass; exact first64qualification subset and two seed drafts ready.
 Public branch general-sft-v5, validation/general_native_SFT_v5_CPU_readiness_20261018.json.
-Decision: await original full pipeline closure/quota/archive; no actual inventory or training release.
+Actual CPU receipts:local/diagnostics/general-sft-v5-preparation; no model or training release.
+Decision: keep source isolated; qualify actual general packing on hardware when resources free.
 
 ## Closed: full-state recovery implementation
 Question: can original science recover FP32 master/Adam state without losing evidence?
@@ -113,7 +116,7 @@ I3teacher−empty−.646[−1.179,−.077], teacher−raw−3.633; strict positi
 I6teacher−raw+.495[.209,.815], −empty+.660[.400,.953], −other+.794[.541,1.074].
 No extracted full16copy;10extracted8gram overlaps; allnotes/actions/copying retained.
 Independent all2048vectors/8CIs/copying/costs match; validation/general_hindsight_TRAIN256_20261018.json.
-No5000quota or deployed prefix-only utility; compound recipe unchanged, larger batch active.
+Pilot alone establishes neither quota nor deployed prefix-only utility; larger batch now closed separately.
 
 ## Closed failed: BF16-storage qualification
 Question: can BF16 model/gradient storage fit W/C′/T while preserving FP32 masters?

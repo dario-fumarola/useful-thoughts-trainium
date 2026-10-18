@@ -74,7 +74,19 @@ text. A completed concise-helper prompt probe also fails: the prospective
 fewshot/first-line mixed-reader result is own−raw −.439 [−.596,−.281] and
 own−unrelated −.056 [−.150,+.031] nats. All512 notes and12,288 cells are retained
 in the [complete helper result](validation/general_prefix_helper_20261018.json).
-The broader filtered TRAIN batch is generating teacher notes.
+The larger TRAIN batch is now complete: 24,576 future-aware teacher attempts,
+196,608 reader comparisons and zero errors. The strict ordinary-reader filter
+found 8,964 eligible positives; the first 5,120 in the frozen order form the
+warm-start dataset. Across the full candidate pool, fixed mixing gives
+teacher−raw +.831 [.788,.877], teacher−empty +1.009 [.967,1.053] and
+teacher−unrelated +1.147 [1.105,1.190] nats. Ordinary re-anchoring still loses
+2.840 [2.755,2.921] nats against raw. These are future-aware TRAIN labels;
+selected positivity is true by construction and does not establish prefix-only
+utility. The selected set includes 166 exact demonstration imitations, retained
+under the original filter. All attempts, extraction decisions and original labels
+are archived; [complete results, fixed examples and all196,608 score vectors](validation/general_hindsight_filtered_TRAIN24576_20261018.json)
+are public. Native causal packing for all5,120 labels passes on the isolated
+`general-sft-v5` branch; its hardware qualification and training remain pending.
 
 The original real-document arithmetic panel has little numeric headroom:
 its raw number-only NLL is0.648 nat.
