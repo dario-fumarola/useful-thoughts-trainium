@@ -69,8 +69,9 @@ overfit check is mechanical. The short batched driver completed actual updates1�
 full save, fresh-process full restore and updates4–6. Independent model/master/
 moment byte checks pass; this does not establish long-run memory stability.
 All three TRAIN128 fitting runs now finish, with independent terminal model,
-master and moment audits passing. The prefix-only writer's CPU reference emits
-128/128 exact partial states with natural stops. This is fitting evidence;
+master and moment audits passing. The prefix-only writer emits identical native
+actions on CPU and Trainium:128/128 exact partial states with natural stops.
+This is fitting evidence;
 fresh generalization remains unmeasured. The frozen reader answers128/128 with
 correct partial states, versus120/128direct and119/128empty; corrupted states
 yield4/128. Actual CPU-writer own/other contexts exactly match the executed
@@ -79,10 +80,12 @@ own128/128, unrelated1/128. **Ordinary compact CoT also gets128/128 using one
 training run; the two-model split has not earned its complexity.** All2,688
 original B0/reader/CoT answers were independently re-parsed, with unsupported
 outputs retained. B0 fails the terse prompt format, so its zeros are not a
-broad capability baseline. Paired Trainium writer generation remains active.
+broad capability baseline. All fitting jobs are closed; the four fixed fresh
+DEV panels are running.
 [Short-pack hardware evidence](validation/partial_state_v6_training_hardware_20261018.json) ·
 [Complete fitting audit](validation/partial_state_v6_TRAIN128_training_20261018.json) ·
-[Actual writer outputs](validation/partial_state_v6_TRAIN128_writer_CPU_20261018.json) ·
+[CPU writer outputs](validation/partial_state_v6_TRAIN128_writer_CPU_20261018.json) ·
+[Completed Trainium writer and channel](validation/partial_state_v6_TRAIN128_writer_XLA_20261018.json) ·
 [Complete fitting answers and exact response reuse](validation/partial_state_v6_TRAIN128_answers_20261018.json) ·
 [Intermediate-only design](validation/partial_state_v6_design_20261018.json) ·
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).

@@ -30,14 +30,18 @@
    AllCPU own/other prompts match executed teacher/other controls, including
    cap16,prefill128,decoder/stopping and frozen identity: explicit response reuse
    gives128/1, not new calls or extra samples. Full records public and onEBS.
-   Only paired Trainium writer generation remains active onphysical7:
-   local/diagnostics/partial-state-v6-TRAIN128-writer128-GPU-notes-v1;
-   source partial-state-channel-v6/a73c347, bound23:00UTC/3hours,512GiB floor.
-   Its compiler is active; never edit the snapshot or rush a healthy compilation.
-   Main v4 extends the fixed complete-answer protocol to four DEV512 panels,
-   permits predeclared condition subsets and reuses the same model's sealed
-   CPU native reference. No training-core source changes; original bindings stay
-   valid. Finish checks/snapshot then prepare/launch held diagnostics, no TEST.
+   Paired Trainium writer closed19:55UTC:128exact/natural stops, all native
+   actions matchCPU. Its complete output/proof/control archive is EBS-verified;
+   validation/partial_state_v6_TRAIN128_writer_XLA_20261018.json. Every fitting
+   job is now closed. No fresh generalization or matched latency claim yet.
+   Main v4 is CPU-checked and frozen at partial-state-held-v6/3301d22.
+   Active four-stage writer/CoT DEV jobs: local/diagnostics/
+   partial-state-v6-fixed-DEV512-{writer,cot}128-v1; physical8/9 logical32–39.
+   Both actual live placements captured; bound01:30UTC Oct19,3hours per child.
+   Monitor stage-*/shard-*/run.log and native/cache JSON; do not edit snapshot.
+   After each notes-bundle closes, prepare R/B0 all8content controls with those
+   exact native note IDs, then run the finite same-reader answer matrices.
+   No TEST. Finish all panels and compare natural CoT, retaining every failure.
    Full-trace CoT, including root operation, is a stronger future baseline;
    data-only census showsTRAIN fits64label slots. Do not relabel old compactCoT.
 5. Separate512-item interpolation, structure, range and composition DEV panels
@@ -52,3 +56,10 @@ both64model-only states are verified on EBS under
 local/backups/science/interrupted/host-oom-20261018. Model-only states cannot resume.
 Keep35GiB EBS reserve; existing EBS backup is same-instance. Root owns live work;
 subagents are unavailable due account usage limits. Preserve negatives and controls.
+
+Future study source is isolated in local/worktrees/partial-state-study-v7.
+It adds root-inclusive ordinary CoT, fixed5120scope, full64/160/terminal saves.
+CPU audit:25,600 existing component packs bitwise match qualified v6; no forward
+or learning claim. Proposed A320/B640/R320/W320 per seed explicitly counts two
+split models/runs; B320 is the data-matched development milestone. No learning
+release yet. Review fresh128-model DEV results, bounded memory and disk first.

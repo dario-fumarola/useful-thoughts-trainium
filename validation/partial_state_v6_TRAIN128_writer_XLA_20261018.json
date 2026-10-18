@@ -1,0 +1,184 @@
+{
+  "schema": "partial-state-TRAIN128-XLA-writer-and-frozen-reader-v1",
+  "status": "TRAIN_FIT_CHANNEL_MECHANICS_PASS_NO_GENERALIZATION_OR_COT_ADVANTAGE",
+  "finished_utc": "2026-10-18T19:56:57.154135+00:00",
+  "execution_device": "xla",
+  "writer": {
+    "arm": "writer",
+    "checkpoint": "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/model.pt",
+    "checkpoint_files": {
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/model.pt": "58553db64f9b7cfbf1a3389c53c3eb0f72150fd2524fb281b68fa2756a392355",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/rank-00000.pt": "be37078bb84344f9593e05cc521d0a81d994f7449a072b7e2beaaa18c9953b5b",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/rank-00001.pt": "7120775e3bc2256313b7d5df534647c9e2286ef6e3a6a48c2e276f3ef985e2ab",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/rank-00002.pt": "78ac57329d3a559dbcee8720d89bdd2adaa2c4567203e49588486d7765534804",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/rank-00003.pt": "3e815f5161159d7886154230dc3db3599c708b8a4b9fa55f6f45301c50c7c4da"
+    },
+    "checkpoint_scope": "partial-state-TRAIN128-terminal128",
+    "checkpoint_sha256": "58553db64f9b7cfbf1a3389c53c3eb0f72150fd2524fb281b68fa2756a392355",
+    "closure_file": "/home/ubuntu/dario/local/diagnostics/partial-state-v6-writer-TRAIN128-overfit-v1/closure.json",
+    "developmental_only": true,
+    "id": "writer-TRAIN128-step128",
+    "provenance": {
+      "/home/ubuntu/dario/local/diagnostics/partial-state-v6-writer-TRAIN128-overfit-v1/closure.json": "78736cec9e411deab7ef145c949f2a4579da5934c2b09cfaa168758efe4cc6ab",
+      "/home/ubuntu/dario/local/diagnostics/partial-state-v6-writer-TRAIN128-overfit-v1/protocol.json": "9bf4000b6b6802e39fecf3ce5174473e763ef20054f399b8ac13459ce296c72f",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/completion.json": "1dc43ac06617c9157b719027c974a41f8a5efd7da2ca711c47bdb5ae5a4c6932",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/metrics.jsonl": "36e9618bbf5e3686445ef2f4439c4dc51a796d85d0bf245dc156f7ce281ad3b1",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/run.json": "9ed4eb25d45eedce444b6d72975ccf7b0921c0adb7fc542a55f2d5bad06ff4e3",
+      "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/COMPLETE.json": "3d9afee7ecb81054b4ae37d059615a9b101149df1ebfe1643b1e2ad77417dada"
+    },
+    "run_id": "partial-state-v6-writer-TRAIN128-overfit-v1",
+    "spec_hash": "03d00094e85a337d0a6d4610d15860db0ff52c29973b9887305515adf5a09d4e",
+    "step": 128,
+    "training_protocol": "/home/ubuntu/dario/local/diagnostics/partial-state-v6-writer-TRAIN128-overfit-v1/protocol.json"
+  },
+  "items": 128,
+  "canonical_nonroot_exact": 128,
+  "canonical_and_natural_stop": 128,
+  "all128_native_actions_equal_CPU_reference": true,
+  "errors": 0,
+  "caps": 0,
+  "empty": 0,
+  "root_operation_transmitted": 0,
+  "native_and_cache_checks": [
+    {
+      "shard": 0,
+      "native": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 1.2126166098999416e-10,
+        "max_bidirectional_kl_nats": 1.2126166098999416e-10,
+        "max_logp_error": 0.0001249218686787401,
+        "passed": true,
+        "reference_to_device_kl_nats": 1.2126008765486877e-10,
+        "relative_l2_logp_error": 9.17287225912784e-07,
+        "rms_logp_error": 2.6938537807292178e-05
+      },
+      "cache": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 1.9365185605685356e-16,
+        "max_bidirectional_kl_nats": 1.9365185605685356e-16,
+        "max_logp_error": 1.52587890625e-05,
+        "passed": true,
+        "reference_to_device_kl_nats": 0.0,
+        "relative_l2_logp_error": 1.1884116765943052e-07,
+        "rms_logp_error": 5.94459162043357e-06
+      }
+    },
+    {
+      "shard": 1,
+      "native": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 1.851582641855152e-10,
+        "max_bidirectional_kl_nats": 1.851582641855152e-10,
+        "max_logp_error": 0.00011626047177415444,
+        "passed": true,
+        "reference_to_device_kl_nats": 1.8515692487904186e-10,
+        "relative_l2_logp_error": 1.5464379737749584e-06,
+        "rms_logp_error": 3.032298942539366e-05
+      },
+      "cache": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 0.0,
+        "max_bidirectional_kl_nats": 2.5218444385837655e-16,
+        "max_logp_error": 2.2888183586644573e-05,
+        "passed": true,
+        "reference_to_device_kl_nats": 2.5218444385837655e-16,
+        "relative_l2_logp_error": 1.9246293402793797e-07,
+        "rms_logp_error": 9.185671486340031e-06
+      }
+    },
+    {
+      "shard": 2,
+      "native": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 1.5518414086796776e-14,
+        "max_bidirectional_kl_nats": 1.5881589545436544e-14,
+        "max_logp_error": 3.493060759751643e-05,
+        "passed": true,
+        "reference_to_device_kl_nats": 1.5881589545436544e-14,
+        "relative_l2_logp_error": 2.0324941514447496e-07,
+        "rms_logp_error": 6.187173545136729e-06
+      },
+      "cache": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 1.4089607651000705e-16,
+        "max_bidirectional_kl_nats": 1.4089607651000705e-16,
+        "max_logp_error": 2.2888183508484872e-05,
+        "passed": true,
+        "reference_to_device_kl_nats": 0.0,
+        "relative_l2_logp_error": 2.0805702788533984e-07,
+        "rms_logp_error": 9.750473929032979e-06
+      }
+    },
+    {
+      "shard": 3,
+      "native": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 9.147659409399694e-12,
+        "max_bidirectional_kl_nats": 9.147659409399694e-12,
+        "max_logp_error": 5.856065400777766e-05,
+        "passed": true,
+        "reference_to_device_kl_nats": 9.146752804956132e-12,
+        "relative_l2_logp_error": 5.901836743392141e-07,
+        "rms_logp_error": 1.1999043271534879e-05
+      },
+      "cache": {
+        "argmax_equal": true,
+        "device_to_reference_kl_nats": 0.0,
+        "max_bidirectional_kl_nats": 5.068340553009446e-18,
+        "max_logp_error": 1.525878903407829e-05,
+        "passed": true,
+        "reference_to_device_kl_nats": 5.068340553009446e-18,
+        "relative_l2_logp_error": 6.48438731120975e-08,
+        "rms_logp_error": 3.148426895646487e-06
+      }
+    }
+  ],
+  "all_original_sessions_and_assigned_physical_device_closed": true,
+  "actual_first_live_sha256": "69e47896f1723cc214e61e0cf5cf6dd9d1cf697b4dd36891e5f0bcfc565ad493",
+  "response_reuse": {
+    "own": {
+      "items": 128,
+      "correct": 128,
+      "unsupported": 0,
+      "writer_actions": 3215,
+      "reader_actions": 667
+    },
+    "other": {
+      "items": 128,
+      "correct": 1,
+      "unsupported": 0,
+      "writer_actions": 3215,
+      "reader_actions": 662
+    }
+  },
+  "writer_decode_wall": {
+    "sum_seconds": 1095.7436869719531,
+    "median_seconds": 1.7399270880123368,
+    "p95_seconds": 2.1573607641039416,
+    "includes_all_first_call_costs": true
+  },
+  "ordinary_compact_CoT": {
+    "correct": 128,
+    "items": 128,
+    "unsupported": 0,
+    "one_model_128_updates": true
+  },
+  "split_training": {
+    "reader_updates": 128,
+    "writer_updates": 128,
+    "full_models": 2
+  },
+  "EBS_archive_receipt_sha256": "ff915d09e11cf06d8ffd17e941d5189136a89f61de0e73bb66933884ca760f82",
+  "payload": {
+    "path": "validation/partial_state_v6_TRAIN128_writer_XLA_20261018/all128-original-Trainium-notes.jsonl.gz",
+    "rows": 128,
+    "sha256": "f0a87aa5828f670157a39d7f5cb729517b44e1ada7ac6759f1ab761703c8d965"
+  },
+  "limits": [
+    "Same128TRAIN examples fitted32passes, one seed. Not fresh generalization.",
+    "Trainium writer is actually executed and fully closed. Reader responses are explicitly reused identical executions, not an independently sampled own condition.",
+    "Ordinary compactCoT matches128/128 with one training model/run; the split has not earned its complexity.",
+    "Separate decoder jobs include cold compilation and different stages. Their sums are not an end-to-end matched latency benchmark.",
+    "Fresh four512DEV panels remain in progress. Official TEST unused."
+  ]
+}
