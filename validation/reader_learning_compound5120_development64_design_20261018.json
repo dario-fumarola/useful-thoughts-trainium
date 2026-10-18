@@ -1,0 +1,67 @@
+{
+  "schema": "matched-development64-design-v1",
+  "question": "Do the surviving matched step64 W/Cprime models produce useful prefix-only notes, conditional on this developmental milestone?",
+  "decision_before_any_trained_evaluation": true,
+  "checkpoint_scope": "development_model_only_step64",
+  "terminal320_comparison": "incomplete; not replaced by this development comparison",
+  "models": [
+    "W",
+    "Cprime"
+  ],
+  "training_seed": 20261018,
+  "updates_each": 64,
+  "same_ordered_TRAIN_occurrences_each": 2048,
+  "panels": {
+    "real_math_DEV": 256,
+    "real_general_DEV": 256,
+    "GSM8K_TRAIN": 512,
+    "secondary_controlled_synthetic": 256
+  },
+  "primary": "Real-document I3 natural16 full-span likelihood: own-minus-raw AND own-minus-intact-other positive paired lower95% bounds, with matching empty and supplied oracles. Both B0 and self readers use the same fresh notes. Fixed I6=.375 remains secondary.",
+  "GSM": "All512 questions x direct/empty/one-thought, qualified16 shards, strict parser/unsupported retained in512, no gold before physical closure.",
+  "secondary": "Same frozen synthetic256, all four grammar families, every raw/empty/partial-correct/wrong/full-copy/own/other control; same-model reader only.",
+  "cross_arm": "Own-minus-empty and own-minus-other per arm, absolute raw/empty/own/other likelihood; direct GSM W-minus-Cprime. Conditional document bootstrap5000draws seed17. One training seed does not establish training-seed robustness.",
+  "retain": "All attempted notes/caps/errors/empty/unsupported and timing/tokens, no selection or early exit based on sign.",
+  "hardware": "W physical0\u20133, Cprime4\u20137 for separate4-core panels or sixteen contiguous logical cores per model for GSM. Memory guard required before model jobs; finite deadline01:30UTC next day, no auto retry.",
+  "limits": [
+    "Future supervision was used during SFT; all deployed notes see prefix only.",
+    "No optimizer state exists for these models; no resumption or full320 claim.",
+    "No RL or long learning release follows from this developmental result.",
+    "Official TEST remains unused."
+  ],
+  "CPU_checks": {
+    "passed": 1546,
+    "seconds": 59.36,
+    "smoke_compile": true,
+    "log_sha256": "04ee9a4d8d77409816269f9c7eb879c5dcbae0a69c1f8b2e6d8487e1e6396120"
+  },
+  "actual_models": {
+    "W": {
+      "checkpoint_sha256": "5d764fc84cdb2ace2a4979ee9c2ea03093c2dea4c0c9497bcb444154dc56ce5e",
+      "step": 64,
+      "run_id": "postorder-reader-learning-compound5120-W-seed20261018-v4r2",
+      "order_hash": "a97f0c00a9c2a5ace1d17f957c1e6021b02429c296ddb391fbd3eca40703ae66",
+      "checkpoint_scope": "development_model_only_step64",
+      "resumable": false
+    },
+    "Cprime": {
+      "checkpoint_sha256": "0d483f038ba99c0c03e0cb38b9b51c65ad702557799968f9dbcc5b97595d9753",
+      "step": 64,
+      "run_id": "postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3",
+      "order_hash": "a97f0c00a9c2a5ace1d17f957c1e6021b02429c296ddb391fbd3eca40703ae66",
+      "checkpoint_scope": "development_model_only_step64",
+      "resumable": false
+    }
+  },
+  "generation_parser_code_unchanged": true,
+  "GSM_changed_functions": [
+    "prepare",
+    "load"
+  ],
+  "source_files": {
+    "train/development_checkpoint.py": "3e195b840763ed50ddbb95d69599900201116bf1eea0a1af2eeff5ba0c25ccae",
+    "train/useful_note_gsm8k.py": "c7bf44727a28f5119555bf6fa1350211c1af1ae740bce4bd30e5c97cec2dc775",
+    "tests/test_development_checkpoint.py": "c0181f50bb25c7f5a97700ebb79b752c5a74a1cee0cc89a66f3f4ca2deb77b23"
+  },
+  "status": "CPU_PREPARED_DEVELOPMENTAL64_NOT_TERMINAL_OR_HARDWARE_RELEASE"
+}

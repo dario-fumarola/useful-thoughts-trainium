@@ -101,7 +101,8 @@ def measure_widths(questions, prompt, fmt, tokenizer):
         reader_suffix_lengths=dict(min=min(suffixes), max=max(suffixes), total=sum(suffixes)))
 
 
-def prepare(output, panel, model_dir, native_reference, until, model_id, *, shards=SHARDS, **checkpoint_args):
+def prepare(output, panel, model_dir, native_reference, until, model_id, *, shards=SHARDS,
+            development_identity=None, **checkpoint_args):
     from transformers import AutoTokenizer
     from train.interface_oracle_probe import load as load_native, reference
     shared.check(until); shards=validate_shards(shards); output = Path(output); panel = Path(panel); model_dir = Path(model_dir)
@@ -134,7 +135,16 @@ def prepare(output, panel, model_dir, native_reference, until, model_id, *, shar
     old, native = load_native(Path(native_reference)); ref, _ = reference(Path(native_reference), old, native)
     if old['assets'] != assets or len(native['qualification_refs']) != NATIVE_REFERENCES:
         raise ValueError('Actual released B0 native FP32 reference required')
-    identity = resolve_identity(model_id, **checkpoint_args)
+    if development_identity is None:
+        identity = resolve_identity(model_id, **checkpoint_args)
+    else:
+        from train.development_checkpoint import verify
+        if checkpoint_args or model_id == 'B0':
+            raise ValueError('Developmental identity is separate from terminal checkpoint arguments')
+        identity = verify(development_identity)
+        if identity['id'] != model_id:
+            raise ValueError('Actual developmental checkpoint arm differs from requested model ID')
+        validate_identity(identity)
     shared.check(until); output.mkdir(parents=True, exist_ok=False)
     # All three projections stay exact. Generation never opens gold.jsonl.
     for name in ('questions.jsonl','prompt.json','format.json'):
@@ -158,12 +168,22 @@ def prepare(output, panel, model_dir, native_reference, until, model_id, *, shar
             'Strict parser retains execution errors, truncations and format failures in every512 denominator.',
             'Conditional document-bootstrap intervals are not training-seed uncertainty.',
             'Complete module receipts are separate from external owned-process/physical closure evidence.'])
+    if development_identity is not None:
+        protocol['purpose'] = 'Saved step64 MODEL-ONLY developmental comparison; terminal320 incomplete; official TEST unused'
+        protocol['source_files']['train/development_checkpoint.py'] = sha256_file(ROOT/'train/development_checkpoint.py')
+        protocol['checkpoint_scope'] = identity['checkpoint_scope']
+        protocol['limitations'].append('This is a nonresumable development64 model, never a terminal320 result.')
     atomic_json(output/'protocol.json', protocol); return protocol
 
 
 def load(output):
     output = Path(output); p = shared.read(output/'protocol.json')
-    if (p['schema'] != SCHEMA or p['source_files'] != sources() or p['items'] != N or type(p['shards']) is not int or p['shards'] not in (4,16)
+    expected_sources = sources()
+    if p.get('checkpoint_scope') == 'development_model_only_step64':
+        expected_sources['train/development_checkpoint.py'] = sha256_file(ROOT/'train/development_checkpoint.py')
+        if p['model'].get('checkpoint_scope') != p['checkpoint_scope'] or p['model'].get('developmental_only') is not True:
+            raise ValueError('Explicit saved development64 model identity required')
+    if (p['schema'] != SCHEMA or p['source_files'] != expected_sources or p['items'] != N or type(p['shards']) is not int or p['shards'] not in (4,16)
             or p['native_reference_indices'] != [i%NATIVE_REFERENCES for i in range(p['shards'])]
             or p['modes'] != list(MODES) or p['thought_cap'] != THOUGHT_CAP or p['max_answer_tokens'] != ANSWER_CAP
             or p['compute'] != 'fp32' or p['head_precision'] != 'fp32' or p['parser'] != 'strict_final_hash4_number_v1'):
