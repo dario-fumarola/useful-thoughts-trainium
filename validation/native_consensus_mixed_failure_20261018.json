@@ -1,0 +1,274 @@
+{
+  "actual_result": {
+    "GSM_four_original_workers_unchanged": true,
+    "actual_XLA_all_gather_and_Neuron_rendezvous": true,
+    "actual_launcher_exit_code": 1,
+    "all4_expected_refusals": true,
+    "all4_global_receipts": true,
+    "all4_local_receipts": true,
+    "all7_recorded_PID_start_identities_absent": true,
+    "all_global_failed_ranks": [
+      0,
+      3
+    ],
+    "closed_utc": "2026-10-18T07:43:04.415831+00:00",
+    "driver_result_sha256": "080594d7161c893ffa8c76ce0ecc297a5e572d941ee041cf497a9a961b15b109",
+    "exit_sha256": "23cd0a2dff55347ef958d6cd43e192004873ddcc4997c32accdff5cd3ebe7d01",
+    "expected_launcher_exit_code": 1,
+    "fake_optimizer_markers": [],
+    "first_live_sha256": "91e4b34f9df46a2cb4c7fe248e8d68443678d8da389ff24e414d0fe4c057046a",
+    "launcher_sha256": "6125ddc938866fa9499e1fa9f874c66791feb860223ad5d8a9bd7e58fe59af73",
+    "limitations": [
+      "Synthetic tiny vectors only: this tests collective failure propagation and clean process exit; it does not qualify the model, native KL distribution, gradient, memory fit, or optimizer.",
+      "Initial host capture assumed an unremapped visible-core range; installed rank remapping was then correctly verified32/33/34/35 before capture-go. Same single job, no source mutation or relaunch."
+    ],
+    "logical_cores": [
+      32,
+      33,
+      34,
+      35
+    ],
+    "optimizer_or_model_constructed": false,
+    "original_identities": [
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=14) --multiprocessing-fork ",
+        "device": "xla:0",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65481",
+          "MKL_NUM_THREADS": "1",
+          "NEURONCORE_NUM_DEVICES": "4",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65482",
+          "NEURON_RT_VISIBLE_CORES": "32",
+          "OMP_NUM_THREADS": "1",
+          "PJRT_DEVICE": "NEURON",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "TMPDIR": "/dev/shm/dario/native-consensus-four-rank-001",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2"
+        },
+        "pgid": 2653897,
+        "pid": 2653914,
+        "ppid": 2653898,
+        "rank": 0,
+        "session": 2653832,
+        "start_ticks": 14398381,
+        "utc": "2026-10-18T07:41:53.418702+00:00",
+        "world": 4
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=18) --multiprocessing-fork ",
+        "device": "xla:0",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65481",
+          "MKL_NUM_THREADS": "1",
+          "NEURONCORE_NUM_DEVICES": "4",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65482",
+          "NEURON_RT_VISIBLE_CORES": "33",
+          "OMP_NUM_THREADS": "1",
+          "PJRT_DEVICE": "NEURON",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "TMPDIR": "/dev/shm/dario/native-consensus-four-rank-001",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2"
+        },
+        "pgid": 2653897,
+        "pid": 2653916,
+        "ppid": 2653898,
+        "rank": 1,
+        "session": 2653832,
+        "start_ticks": 14398381,
+        "utc": "2026-10-18T07:41:52.922373+00:00",
+        "world": 4
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=12) --multiprocessing-fork ",
+        "device": "xla:0",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65481",
+          "MKL_NUM_THREADS": "1",
+          "NEURONCORE_NUM_DEVICES": "4",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65482",
+          "NEURON_RT_VISIBLE_CORES": "34",
+          "OMP_NUM_THREADS": "1",
+          "PJRT_DEVICE": "NEURON",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "TMPDIR": "/dev/shm/dario/native-consensus-four-rank-001",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2"
+        },
+        "pgid": 2653897,
+        "pid": 2653911,
+        "ppid": 2653898,
+        "rank": 2,
+        "session": 2653832,
+        "start_ticks": 14398381,
+        "utc": "2026-10-18T07:41:53.417406+00:00",
+        "world": 4
+      },
+      {
+        "argv": "/home/ubuntu/ema-trainium/.venv/bin/python -B -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=8, pipe_handle=16) --multiprocessing-fork ",
+        "device": "xla:0",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65481",
+          "MKL_NUM_THREADS": "1",
+          "NEURONCORE_NUM_DEVICES": "4",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65482",
+          "NEURON_RT_VISIBLE_CORES": "35",
+          "OMP_NUM_THREADS": "1",
+          "PJRT_DEVICE": "NEURON",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "TMPDIR": "/dev/shm/dario/native-consensus-four-rank-001",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2"
+        },
+        "pgid": 2653897,
+        "pid": 2653915,
+        "ppid": 2653898,
+        "rank": 3,
+        "session": 2653832,
+        "start_ticks": 14398381,
+        "utc": "2026-10-18T07:41:53.178643+00:00",
+        "world": 4
+      },
+      {
+        "argv": "python -u /home/ubuntu/dario/local/qualification/native-consensus-four-rank-001/probe.py ",
+        "environment": {
+          "MASTER_ADDR": "127.0.0.1",
+          "MASTER_PORT": "65481",
+          "MKL_NUM_THREADS": "1",
+          "NEURONCORE_NUM_DEVICES": "4",
+          "NEURON_CC_FLAGS": "--model-type=transformer",
+          "NEURON_COMPILE_CACHE_URL": "/home/ubuntu/dario/local/neuron-cache-driver",
+          "NEURON_LOGICAL_NC_CONFIG": "2",
+          "NEURON_RT_CONTIGUOUS_SCRATCHPAD": "0",
+          "NEURON_RT_ROOT_COMM_ID": "127.0.0.1:65482",
+          "NEURON_RT_VISIBLE_CORES": "32-35",
+          "OMP_NUM_THREADS": "1",
+          "PJRT_DEVICE": "NEURON",
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "TMPDIR": "/dev/shm/dario/native-consensus-four-rank-001",
+          "USE_TORCH_XLA": "0",
+          "XLA_COMPILATION_CACHE_SIZE": "2"
+        },
+        "pgid": 2653897,
+        "pid": 2653898,
+        "ppid": 2653897,
+        "scope": "SYNTHETIC_MODEL_FREE_CONSENSUS_ONLY",
+        "session": 2653832,
+        "start_ticks": 14398000,
+        "tempfile": "/dev/shm/dario/native-consensus-four-rank-001",
+        "tempfile_mode": "0o700",
+        "tempfile_st_dev": 26
+      },
+      {
+        "argv": "bash local/qualification/native-consensus-four-rank-001/launch.sh ",
+        "pgid": 2653832,
+        "pid": 2653832,
+        "ppid": 9393,
+        "session": 2653832,
+        "start_ticks": 14397983
+      },
+      {
+        "argv": "timeout --signal=TERM --kill-after=30s 300s python -u /home/ubuntu/dario/local/qualification/native-consensus-four-rank-001/probe.py ",
+        "pgid": 2653897,
+        "pid": 2653897,
+        "ppid": 2653832,
+        "session": 2653832,
+        "start_ticks": 14398000
+      }
+    ],
+    "owned_group_survivors": [],
+    "physical_device": 8,
+    "physical_device8_empty": true,
+    "prepared_sha256": "89886956904d4ddef7ad7a83b9a6110d0017b2ce33ac63b990c11ccff03c4a38",
+    "private_ram_TMPDIR_retained": "/dev/shm/dario/native-consensus-four-rank-001",
+    "probe_sha256": "d5ab4edc28079ddf1b719133d170374b43c4066aa3fe807d6080c9189a1cfdc0",
+    "rank_receipts": [
+      {
+        "failed_ranks": [
+          0,
+          3
+        ],
+        "global_sha256": "948cc66e7969fba7e75a956dcf06800f162a6a1e2179792617062e2456f69168",
+        "local_sha256": "eb38913b318868cac96da5af566ec8cc461c75a91952322c3d7d571b49b3cc95",
+        "local_status": "FAILED_NATIVE_GATE",
+        "rank": 0,
+        "refusal_sha256": "f82334b01d8c405f7545c91446128ae5e7740199f5b9132f471dfa48875bc229",
+        "vector_sha256": "3f5fe86465d7decd8fb3077eb0ac03e4e017d1451bacabf7387c7782bf3aba4f"
+      },
+      {
+        "failed_ranks": [
+          0,
+          3
+        ],
+        "global_sha256": "d2503b442aadb2a9700efe80a6fde87adb7d4a65aa3ca1ce9c526f1e7d87743a",
+        "local_sha256": "ee1605cb8b9245b32edda75c6f261b4eca9fee788f252868e0de9aa120ba9d95",
+        "local_status": "PASS",
+        "rank": 1,
+        "refusal_sha256": "fd085cc79f2fa75ac245295e1b84d0244cb320ad508c5c1095f6fd9ca5286a35",
+        "vector_sha256": "71c8d33bda96ef387c1390ba63d812c036dd9e636639f2aa4c85618b6fb8ecde"
+      },
+      {
+        "failed_ranks": [
+          0,
+          3
+        ],
+        "global_sha256": "e1c15d8d5466f8f86ff8aa1b556d07309f275cd555006753ec40445bfaec3bb7",
+        "local_sha256": "d0d3348fb8733fb7b5f49388dfb313f388fff9a510ed3b7655005645e2055f87",
+        "local_status": "PASS",
+        "rank": 2,
+        "refusal_sha256": "8b94638cb357f22f6677e6bc25dee5dcdfe864a00477d8f69b5e3a128f8315e1",
+        "vector_sha256": "71c8d33bda96ef387c1390ba63d812c036dd9e636639f2aa4c85618b6fb8ecde"
+      },
+      {
+        "failed_ranks": [
+          0,
+          3
+        ],
+        "global_sha256": "4237983f27df004191429d9323f648ba55d1c8e61ddf8201a40fdc9b8e1044c2",
+        "local_sha256": "0d108adf2ffa490c995c39c28069533ad83ec9ca89c71d5524d81eb62195c621",
+        "local_status": "FAILED_NATIVE_GATE",
+        "rank": 3,
+        "refusal_sha256": "fe7c7ea32a02f8e0066a5615a5dd5e87089c9fa08a9ed925231808a0075a9ece",
+        "vector_sha256": "3f5fe86465d7decd8fb3077eb0ac03e4e017d1451bacabf7387c7782bf3aba4f"
+      }
+    ],
+    "schema": "synthetic-native-consensus-four-rank-result-v1",
+    "scope": "SYNTHETIC_MODEL_FREE_PRODUCTION_CONSENSUS_ONLY_NOT_MODEL_QUALIFICATION",
+    "source_sha256": {
+      "/home/ubuntu/dario/train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "/home/ubuntu/dario/train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "/home/ubuntu/dario/train/useful_note_sft_driver.py": "5dfd728b34055973438e346613c1e1085e326ad55d9a3021defde9a91c1e278a"
+    },
+    "status": "PASS_EXPECTED_SHARED_REFUSAL",
+    "timeout_triggered": false,
+    "topology_sha256": "a6e3d9fdc70d61699544eb0e0b8b0110fd3f89d47b4809880303ba7e67d8dd3f",
+    "total_preparation_to_launcher_exit_seconds": 59.356345,
+    "worker_ready_to_shared_refusal_within_deadline": true
+  },
+  "archive": "local/backups/qualification/native-consensus-four-rank-001/ARCHIVE.json",
+  "archive_sha256": "26a2a7109f289207f6f381cc35a90389dff12c19c7ed4cea5d9aeb1253411289",
+  "result_sha256": "5222cf5a5478f1ccea5f11cdfd3e71280264ce3749b99b53f9ede797b093a893",
+  "schema": "actual-model-free-native-consensus-failure-20261018",
+  "scope": "Synthetic model-free four-rank XLA fault test, not model/optimizer/training qualification."
+}

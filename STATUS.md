@@ -1,4 +1,31 @@
-# Status — 2026-10-18 07:34 UTC
+# Status — 2026-10-18 07:50 UTC
+
+## Active: canonical-reference BF16-storage qualification
+Question: does the memory repair complete real W/C′/T updates with FP32 masters?
+ID:postorder-note-bf16-storage-world32-qualification-v3; new reference, unchanged .01KL bound.
+Sequential W/C′/T, world32/accum1, first64unchanged science documents, three updates each.
+W launched07:44UTC, deadline13:43:43UTC; logical0–31/physical0–7, private RAM0700.
+Original launcher2658497, timeout/group2658570, driver2658572; all32actual mappings recorded.
+All32local+global native gates pass; maxKL .003104, hidden/headBF16.
+All32initial FP32 master samples exactly match released CPU shard values.
+First real update compiling; no hardware memory-fit, optimizer-moment or throughput pass yet.
+V2failed check remains failed; model-free four-rank mixed-failure consensus test passed.
+W/C′ small diagnostic slices; T will save full state on NVMe for recovery preparation.
+Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
+Sources frozen; recovery work isolated at local/worktrees/recovery-v4; science unreleased.
+
+## CPU preparation: general hindsight-note feasibility
+Question: can B0 hindsight notes improve full16 likelihood on general high-surprisal text?
+ID:general-hindsight-notes-train256-v1; real FineMath TRAIN, not equation-filtered.
+First237original qualifying anchors plus19new mixer-TRAIN anchors, fixed order, surprisal>=1.7.
+256uniqueTRAIN documents, no held overlap; exact native512+16 recovered, no TEST.
+One greedy future-aware teacher note/document, raw cap64actions; fixed first-line extraction.
+Three fixed synthetic prompt demos; all cap/empty/error/copying outcomes and costs retained.
+All256teacher attempts must physically close before intact global donor controls/scoring.
+Raw/empty/teacher/other×I3/fixedI6,2048cells; paired-document full16 CIs and strict gain>0 counts.
+Source review and20focused tests pass; full required CPU suite running, no model allocated.
+Controls:local/diagnostics/general-hindsight-notes-train256-v1; runtime preparation in progress.
+No5000quota, deployed prefix-only utility or current compound-training recipe change.
 
 ## Closed failed: BF16-storage qualification
 Question: can BF16 model/gradient storage fit W/C′/T while preserving FP32 masters?

@@ -17,7 +17,9 @@
    exceeds unchanged .01. Three-way audit shows deviceBF16 is closer to CPUFP32
    (maxKL .003103); CPU BF16 itself differs by .014382. Review a new high-precision
    reference identity and uniform all-rank failure consensus before retry. Preserve
-   original FAIL; no threshold relaxation or hardware-training/resume pass.
+   original FAIL; no threshold relaxation. V3 is now running W on lower32cores;
+   all native gates/initial master samples pass, first update compiling. Finish
+   the sequential W/C′/T three-update batch and actual optimizer/memory checks.
 3. `postorder-held256-B0-v1` is CLOSED/archived: all256notes/3072cells, negative
    own−raw in both I3 and fixedI6, own−other intervals cross0. Independent36CI
    readback matches exactly. No useful generated-content result before training.
@@ -38,7 +40,10 @@
    Separate fixed first-line truncation on cached B0 notes is CLOSED/negative:
    less damage than full notes, still worse than raw and short unrelated notes.
    It does not change the main cap128 policy or training data. Inventory genuine
-   general TRAIN high-surprisal anchors for the owner's broader hindsight branch.
+   general TRAIN high-surprisal anchors for the owner's broader hindsight branch:
+   fixed256pilot native recovery/source review complete; finish CPU/runtime review,
+   then one future-aware teacher→physicalclosure→reader batch on four disjoint cores.
+   Recovery code is isolated in local/worktrees/recovery-v4 while active source stays frozen.
 7. No RL until fresh own beats raw and other with oracle headroom. Then fullspan
    reward/G16/cap256/Wreference stabilization. Require measured<=90s completeRLsteps
    before longRL. The old empty profiler supplies no warmed or BF16 throughput pass.
