@@ -1,10 +1,13 @@
 """CPU-only packing semantics; no corpus preparation, model or training evidence."""
 import copy
+from datetime import datetime, timedelta, timezone
+import json
 
 import pytest
 import torch
 
 from train import calculation_warmstart_data as data
+from weekend_thinking.artifacts import canonical_hash, sha256_file
 
 
 class NativeFixture:
@@ -142,3 +145,123 @@ def test_missing_only_the_note_closure_is_rejected_after_valid_prompt():
     tok=MissingClosure();row=example()
     assert tok.decode(data.writer_prompt(row['prefix_text'],tok)).endswith(data.SUFFIX)
     with pytest.raises(ValueError,match='roundtrip'):data.pack_example(row,tok,'note_only')
+
+
+class ReaderFixture(NativeFixture):
+    def get_vocab(self):return {**super().get_vocab(),'double-newline':271}
+    def encode(self,text,**kwargs):
+        parts=text.split('\n\n');result=[]
+        for i,part in enumerate(parts):
+            if i:result.append(271)
+            result.extend(super().encode(part,**kwargs))
+        return result
+    def decode(self,ids,**kwargs):
+        return ''.join('\n\n' if t==271 else super(ReaderFixture,self).decode([t],**kwargs) for t in ids)
+
+
+def reader_example(tok=None,*,item='item',doc='doc'):
+    tok=tok or ReaderFixture();row=example(tok);row.update(item_id=item,document_id=doc,
+        writer_prefix_ids=list(row['prefix_ids']),writer_prefix_text=row['prefix_text'])
+    row['boundary']['expression']='(3*7)+4';row['corrupted_note_ids']=tok.encode('Compute 3*7 = 22.')
+    cut=len(row['prefix_ids']);row['natural_future16_ids']=row['ordinary_source_ids'][cut:cut+16]
+    return row
+
+
+def test_reader_exact_shared_context_and_only16_causal_targets_with_real_eos():
+    from train.calculation_boundary_probe import make_contexts
+    tok=ReaderFixture();row=reader_example(tok);cut=len(row['prefix_ids'])
+    row['ordinary_source_ids'][cut+8]=data.PAD;row['natural_future16_ids']=row['ordinary_source_ids'][cut:cut+16]
+    expected=make_contexts([row],interface='after_note_reanchor_lhs',tokenizer=tok)[row['item_id']]['values']['correct']
+    assert data.reader_context(row,tok)==expected
+    packed=data.pack_example(row,tok,'reader_only');assert_ce_metadata(packed,1024,16)
+    assert not packed['note_close_mask'].any() and packed['future_mask'].all()
+    assert packed['target_positions'].tolist()==[list(range(len(expected),len(expected)+16))]
+    assert packed['labels'].tolist()==[row['natural_future16_ids']]
+    assert packed['labels'][0,8]==data.PAD  # A real source EOS stays a target.
+    assert packed['input_ids'][0,:len(expected)].tolist()==expected
+    assert packed['input_ids'][0,len(expected):len(expected)+16].tolist()==row['natural_future16_ids']
+    assert packed['input_ids'][0,len(expected)+16:].tolist()==[data.PAD]*(1024-len(expected)-16)
+
+
+def test_reader_context_never_reads_future_rhs_or_normalized_expression():
+    tok=ReaderFixture();row=reader_example(tok);expected=data.reader_context(row,tok)
+    row.pop('natural_future16_ids');row.pop('ordinary_source_ids');row.pop('verified_numeric_rhs')
+    row['boundary']['normalized_expression']='WRONG normalized expression must not be used'
+    assert data.reader_context(row,tok)==expected
+    # Source bytes AFTER the16 target tokens cannot enter the packed reader.
+    row=reader_example(tok);before=data.pack_example(row,tok,'reader_only');cut=len(row['prefix_ids'])
+    row['ordinary_source_ids'][cut+16:]=[88]*(528-cut-16)
+    after=data.pack_example(row,tok,'reader_only')
+    assert all(torch.equal(before[k],after[k]) for k in before)
+
+
+@pytest.mark.parametrize('damage',['short16','target_mismatch','prefix_alias','note_proof','normalized_lhs','overwidth'])
+def test_reader_rejects_changed_target_context_or_overwidth_without_truncation(damage):
+    tok=ReaderFixture();row=reader_example(tok)
+    if damage=='short16':row['natural_future16_ids'].pop()
+    elif damage=='target_mismatch':row['natural_future16_ids'][0]=88
+    elif damage=='prefix_alias':row['writer_prefix_text']='Changed causal context='
+    elif damage=='note_proof':row['boundary']['note']['correct_ids']=[]
+    elif damage=='normalized_lhs':row['boundary']['expression']='(3 * 7) + 4'
+    else:
+        lhs='1+'*255+'1';past=lhs+'=';row.update(prefix_text=past,prefix_ids=tok.encode(past),writer_prefix_text=past,writer_prefix_ids=tok.encode(past))
+        row['boundary']['expression']=lhs;row['ordinary_source_ids']=row['prefix_ids']+[32]*16;row['natural_future16_ids']=[32]*16
+    with pytest.raises(ValueError):data.pack_example(row,tok,'reader_only')
+
+
+def preparation_fixture(tmp_path,monkeypatch):
+    import transformers
+    tok=ReaderFixture();directory=tmp_path/'dataset';directory.mkdir();source=tmp_path/'source';source.write_bytes(b'Frozen original CPU fixture bytes\n')
+    rows=[reader_example(tok,item='item'+str(i),doc='doc'+str(i)) for i in range(3)]
+    lines={r['item_id']:json.dumps(r,separators=(', ',': '))+'\n' for r in rows};accepted=directory/'accepted.jsonl'
+    accepted.write_text(''.join(lines.values()));curator='train/calculation_boundaries.py'
+    manifest=dict(schema='finemath-arithmetic-boundaries-train-dev-v2',accepted_sha256=sha256_file(accepted),
+        source_file=str(source),source_sha256=sha256_file(source),source_files={curator:sha256_file(data.Path(__file__).resolve().parents[1]/curator)},
+        tokenizer_vocab_sha256=canonical_hash(tok.get_vocab()),selection={'train':dict(selected_item_ids=['item1'],reserve_item_ids=['item0','item2'])})
+    original=directory/'manifest.json';original.write_text(json.dumps(manifest));ids=['item1','item0'];docs=['doc1','doc0']
+    planned=dict(status='SEALED_PROSPECTIVE_IDS_NOT_TRAINING_RELEASE',count=2,split='train',ordered_item_ids=ids,ordered_item_ids_sha256=canonical_hash(ids),
+        ordered_document_ids=docs,ordered_document_ids_sha256=canonical_hash(docs),manifest_file=str(original),manifest_sha256=sha256_file(original),
+        accepted_file=str(accepted),accepted_sha256=sha256_file(accepted),curator_source_files=manifest['source_files'],source_file=str(source),source_sha256=sha256_file(source))
+    prospective=tmp_path/'ids.json';prospective.write_text(json.dumps(planned))
+    monkeypatch.setattr(data,'TRAIN_ITEMS',2);monkeypatch.setattr(data,'PROSPECTIVE_IDS_SHA256',sha256_file(prospective))
+    monkeypatch.setattr(transformers.AutoTokenizer,'from_pretrained',lambda *a,**kw:tok)
+    monkeypatch.setattr(data,'preparation_sources',lambda:{'train/calculation_warmstart_data.py':sha256_file(data.__file__)})
+    return directory,prospective,tok,rows,lines
+
+
+def test_preparation_keeps_whole_row_bytes_and_sealed_order_with_component_totals(tmp_path,monkeypatch):
+    directory,ids,tok,rows,lines=preparation_fixture(tmp_path,monkeypatch);output=tmp_path/'prepared'
+    deadline=(datetime.now(timezone.utc)+timedelta(minutes=1)).isoformat()
+    manifest=data.prepare_training512(directory,ids,tmp_path/'fake-tokenizer',output,deadline)
+    assert (output/'examples.jsonl').read_text()==lines['item1']+lines['item0']
+    assert manifest['items']==2 and manifest['split']=='train' and manifest['no_filter_or_replacement']
+    assert manifest['component_label_totals']['source_only']==2*527
+    assert manifest['component_label_totals']['reader_only']==2*16
+    assert manifest['component_label_totals']['note_only']==sum(len(tok.encode(r['note_text']+'\n')) for r in rows[:2])
+    assert manifest['component_counts']['reader_only']==dict(examples=2,active_labels=32,note_close_labels=0,future_labels=32)
+    assert manifest['examples_sha256']==sha256_file(output/'examples.jsonl')
+
+
+@pytest.mark.parametrize('damage',['sealed_bytes','accepted_bytes','original_source_bytes','reordered_ids','missing_id'])
+def test_preparation_rejects_identity_drift_instead_of_filtering_or_replacing(tmp_path,monkeypatch,damage):
+    directory,ids,tok,rows,lines=preparation_fixture(tmp_path,monkeypatch);output=tmp_path/'prepared';planned=json.loads(ids.read_text())
+    if damage=='sealed_bytes':ids.write_text(ids.read_text()+' ')
+    elif damage=='accepted_bytes':(directory/'accepted.jsonl').write_text((directory/'accepted.jsonl').read_text()+' ')
+    elif damage=='original_source_bytes':data.Path(planned['source_file']).write_bytes(b'changed original')
+    else:
+        planned['ordered_item_ids']=['item0','item1'] if damage=='reordered_ids' else ['item1','missing']
+        planned['ordered_item_ids_sha256']=canonical_hash(planned['ordered_item_ids']);ids.write_text(json.dumps(planned));monkeypatch.setattr(data,'PROSPECTIVE_IDS_SHA256',sha256_file(ids))
+    with pytest.raises(ValueError):data.prepare_training512(directory,ids,tmp_path/'fake-tokenizer',output,(datetime.now(timezone.utc)+timedelta(minutes=1)).isoformat())
+    assert not (output/'manifest.json').exists()
+
+
+def test_preparation_packing_failure_retains_partial_and_does_not_use_reserve(tmp_path,monkeypatch):
+    directory,ids,tok,rows,lines=preparation_fixture(tmp_path,monkeypatch);output=tmp_path/'prepared'
+    # This pins an intentionally malformed synthetic accepted publication; the
+    # second sealed item fails packing even though a good reserve item exists.
+    rows[0]['note_text']='';lines['item0']=json.dumps(rows[0])+'\n';accepted=directory/'accepted.jsonl';accepted.write_text(''.join(lines.values()))
+    m=json.loads((directory/'manifest.json').read_text());m['accepted_sha256']=sha256_file(accepted);(directory/'manifest.json').write_text(json.dumps(m))
+    planned=json.loads(ids.read_text());planned.update(accepted_sha256=sha256_file(accepted),manifest_sha256=sha256_file(directory/'manifest.json'));ids.write_text(json.dumps(planned));monkeypatch.setattr(data,'PROSPECTIVE_IDS_SHA256',sha256_file(ids))
+    with pytest.raises(ValueError):data.prepare_training512(directory,ids,tmp_path/'fake-tokenizer',output,(datetime.now(timezone.utc)+timedelta(minutes=1)).isoformat())
+    assert not (output/'manifest.json').exists() and (output/'preparation.failed.json').is_file()
+    assert (output/'examples.jsonl').read_text()==lines['item1']

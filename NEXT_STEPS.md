@@ -1,44 +1,26 @@
 # Current queue
 
-The owner stopped the original R study and authorized adapting the experiment.
+1. Run one batched frozen-B0 interface question on>=256 DEV documents, all six
+   interfaces and raw/empty/correct/corrupt/shuffled/other conditions. Full numeral
+   plus closing boundary or general natural16 is primary; K1 secondary. Report
+   tax, oracle gain and sensitivity with paired document intervals. Thresholds:
+   >=−0.5, >=+2, >=+2 nats respectively. Target-copy oracle is plumbing only.
+2. If no interface passes, test scalar logit mixing. Zero weight establishes
+   zero tax, not utility. If still none passes, select the best transparently and
+   learn the reader with SFT, then repeat the complete oracle.
+3. Prepare>=5000 real TRAIN examples and>=256 held DEV. Relax arithmetic to
+   computable equations; general hindsight notes use high-surprisal anchors and
+   frozen-reader positive full-span gain filtering. Save all acceptance/rejection
+   rates. Future-aware teacher labels remain separate from prefix-only policy inputs.
+4. Qualify BF16 compute/FP32 master updates, then W versus a credible ordinary-CE
+   control, and a thinking-augmented CE arm. Use two epochs, global32, LR1e−5,
+   warmup/cosine. Lock final objectives/exposure before launch. Fresh notes, raw,
+   matched empty and unrelated controls; GSM8K TRAIN>=128, preferably512. Evaluate
+   downstream regardless of local sign.512-example draft is superseded, never launched.
+5. RL only after useful fresh generated notes, with fullspan rewards, G16/cap256,
+   W reference guardrail and stored behavior probabilities. Profile the fixed
+   overhead first; no256-step study until useful policy evidence and<=90s steps.
 
-1. DONE, NEGATIVE: matched77-document writer cloning/raw future16 control,
-   reader crosses and all9 GSM8K TRAIN128 conditions. Both terminal64 checkpoints
-   and all outputs preserved. Do not restart the old long RL study.
-2. DONE: external TRAIN32 calculation pilot. Numeric LL improved, but all3 added
-   strict successes were format/cap repairs. One arithmetic-verified manual note
-   missed a purchasing discount. Frozen notes/scores unchanged; correction public.
-3. DONE, NEGATIVE: unchanged-B0 short self-notes. Mean sampled-policy accuracy
-   67.2% versus direct75% and discard75%; LL also slightly worse. Four samples
-   per question estimate a single-note policy, without oracle selection.
-   All notes/failures/costs retained, independently checked and EBS archived.
-4. DONE: reviewed real-FineMath arithmetic-boundary preparation. First
-   eligible causal boundary after a fixed hash-start per TRAIN/DEV document,
-   exact source RHS quality checks after selection, proper-subexpression notes,
-   no already-visible answer, matched numeric corruption. Preserve all rejections.
-   V1 scan found3 visible-answer filter misses; preserve it as blocked.
-   V2 closed347895 audits/1064 accepted=996TRAIN68DEV. Exact source/token/
-   arithmetic and independent bounded copy review pass;6 scanner overcaptures
-   resolved separately, original flags preserved. Fixed examples inspected,
-   complete data EBS archived.739 required checks pass.
-   Official TEST remains unused.
-5. DONE: original prepend reader probe.1920 LL/384 completions closed, all8
-   native/device gates pass, all workers/groups/devices clear. No consistent
-   numeric LL benefit. Declared scalar counts27correct/23raw/24empty mix true
-   numeric repairs with false zeros from a restrictive parser;199unsupported.
-   Complete independent audit, public projection and EBS archive verified.
-   Repairs also occur with corrupt notes; correct partial value causality unproven.
-6. ACTIVE: legacy scores/source preserved; versioned scalar parser and placement
-   source reviewed,419 focused/1058 required checks pass. Actual320/1920 context
-   integrity check passes. Old-path new-parser audit is exploratory only. Test ONLY
-   note placement near the target plus exact prefix-derived LHS repetition, on
-   the same frozen320docs/six controls/caps. Raw unchanged; empty repeats LHS and
-   separators identically. No stronger multi-step oracle mixed into this change.
-7. Choose learning only after examining real examples and reader feasibility.
-   A new warmstart must use diverse real data, fresh generated-note evaluation,
-   full-source ordinary CE on the same accepted chunks as its raw control, and
-   downstream correctness checks. No claim of spontaneous discovery from external
-   arithmetic labels or improvement merely over degraded controls.
-
-Exact work ownership, evidence paths and next command are in STATUS.md. Keep
-healthy runs going and allow cold compilation; avoid automatic retry loops.
+Keep STATUS entries<=15 lines/experiment; hashes and archives live in JSON.
+Never read TEST. Report control performance beside every thought-mode claim.
+The owner allows adapting this queue with reasoned, explicit new experiment IDs.

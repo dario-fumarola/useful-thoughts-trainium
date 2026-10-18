@@ -800,3 +800,21 @@ reanchors and no future fields. Exact source reviews accepted;419 focused and
 1058required+toy_smoke+compileall pass. Next prepare explicitly selects both the
 interface and parser version, followed by fresh actual CPU/device qualification.
 No additional multi-step oracle, train subset filter or learning release.
+
+
+### 2026-10-18 — owner redirects to full-span interface batch and larger warmstart
+
+The512-document joint draft was superseded before any accelerator qualification
+or training. Its reviewed code and CPU data remain preserved. First batch all six
+reader interfaces with target-copy/symbolic full-result oracles and controls on
+at least256 DEV documents. Likelihood is primary; no per-condition release cycle.
+Native tokenizer inspection confirms separate digit tokens. K1 can also be only
+leading whitespace, so score the complete target plus closing boundary instead.
+Near-LHS partial notes show18 parsed corrupted-counterfactual matches, correcting
+the claim that the reader universally ignores notes; net assistance is still absent.
+Next learning data must contain>=5000 real examples, with held DEV>=256, joint
+writer/reader supervision, BF16 compute/FP32 masters and explicit extra compute.
+Zero-weight mixing guarantees zero tax only; negative thinking-augmented CE is
+not a proof that every RL approach is impossible. Both remain empirical tests.
+Published RLP prompt text is separately attributed under its CC BY-SA4.0 license;
+the two closing delimiters in its figure are preserved, not silently repaired.

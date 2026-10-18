@@ -7,32 +7,41 @@ on AWS Trainium.
 
 ## Current finding
 
-**Useful self-generated thoughts have not been established.** The latest probe
-tests supplied, exact partial calculations on real FineMath documents with an
-unchanged Qwen3-1.7B-Base reader. Fixed TRAIN256/DEV64 pools precede model scores;
-the notes compute proper subexpressions using only the past. This is external
-arithmetic assistance, not a trained writer or spontaneous discovery.
+**Useful self-generated thoughts have not been established.** Correct partial
+calculations supplied to unchanged Qwen3-1.7B-Base do not give consistent net
+assistance. Moving those same notes beside the equation makes the reader follow
+wrong values, but still fails to improve over raw text or matched empty format.
 
-Correct notes do not consistently improve numeric source likelihood. Relative
-to raw text, the mean change is −0.057 nats on TRAIN and +0.091 on DEV
-(DEV paired 95% interval [−0.084,+0.337]). Empty, corrupted, shuffled and unrelated
-notes are also reported. All 1,920 likelihood cells and 384 numeric completions
-finished without runtime errors and passed independent checks.
+The latest fixed TRAIN 256 / DEV 64 probe completed all 1,920 likelihood cells and 384
+numeric completions. Correct−raw numeric likelihood is −1.351 nats on TRAIN and
+−1.600 on DEV, with both paired intervals below zero. DEV initial-scalar scores:
 
-The declared completion parser scores correct notes 27/64, raw 23/64 and empty
-24/64, but rejects 199/384 paths, including some already complete correct numbers.
-These counts are **not arithmetic capability scores**. Manual review separates
-actual wrong-number corrections from parser effects; the key corrections also
-occur with corrupted notes, so dependence on the partial's correct value is
-unproven. Original outputs and scores remain unchanged.
-[Full result, every condition, examples and limitations](validation/finemath_arithmetic_reader_20261018.json).
+| Condition | Correct /64 | Unsupported /64 |
+|---|---:|---:|
+| Raw |31|22|
+| Empty format |31|22|
+| Correct partial |28|31|
+| Corrupted partial |10|29|
+| Shuffled |24|29|
+| Unrelated |25|25|
 
-The corrected data contains 996 TRAIN and 68 DEV examples. An earlier scan was
-blocked after three visible-answer filter misses; it is preserved and no models
-ran on it. Next, repair the numeric completion boundary rule and test note
-placement near the equation while keeping documents and calculations fixed.
-No further long RL run is active.
-[Current queue](NEXT_STEPS.md) · [Exact work state](STATUS.md).
+These are bounded parser scores, not exhaustive mathematical capability scores;
+unsupported paths include correct multi-step calculations. Eighteen corrupted
+paths match the recomputed wrong whole value (one also matches the original
+partial). The reader therefore can transmit supplied values in this format,
+but sensitivity alone is insufficient. All paths, controls and negative results
+are retained and independently checked.
+[Complete result and mechanism](validation/finemath_arithmetic_near_lhs_reader_20261018.json) ·
+[Earlier prepend probe and parser limits](validation/finemath_arithmetic_reader_20261018.json).
+
+The next phase batches six reader interfaces with full-answer/target-copy oracles
+on at least 256 DEV documents per cohort. Full numeral plus closing boundary or
+natural 16-token likelihood is primary; K1 is secondary. Native digit-token inspection
+confirms that K1 often measures only a leading space or first digit.
+A larger real-data warmstart will teach writer and reader together after this
+interface test. The unlaunched 512-example training draft was superseded; no
+training or long RL run is active. Official TEST remains unused.
+[Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here
 

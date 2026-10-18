@@ -70,7 +70,11 @@ to hide a failing invariant. Hardware checks require hardware evidence; never
 mark synthetic fixtures or old packaged outputs as a pass on this instance.
 
 Use small measured experiments to repair the initial reward landscape before
-another long training run. Profile actual stage costs. A zero mixer weight gives
+another long training run. The 2026-10-18 owner direction requires one batched
+full-span interface oracle on>=256 DEV documents, then>=5000 warmstart examples;
+the unlaunched512-example pilot is superseded. STATUS entries are<=15 lines per
+experiment; hashes/archives belong in JSON. Review once per question. Probes on
+<=4 cores do not require a serial release gate; jobs over one accelerator-hour do. Profile actual stage costs. A zero mixer weight gives
 zero interface tax but does not establish content utility or a writer gradient.
 If blocked, identify the smallest repair, continue independent safe work, and
 report the blocker. Do not spend idle time rewriting papers or inventing more

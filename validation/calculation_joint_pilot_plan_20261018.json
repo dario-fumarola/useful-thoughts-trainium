@@ -1,0 +1,111 @@
+{
+  "schema": "calculation-joint-pilot-plan-v1",
+  "created_utc": "2026-10-18T04:32:57.963851+00:00",
+  "status": "superseded_before_any_training_update",
+  "experiment": "calculation-joint-fullsource-train512-v1",
+  "hypothesis": "Joint supervised writer/reader adaptation can turn sensitivity to partial calculations into useful fresh self-generated computation.",
+  "motivation": "Unchanged B0 near-LHS reader follows many corrupted partials but correct notes lose to raw/empty overall. Writer BC alone leaves this receiver bottleneck unresolved.",
+  "model": {
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "initialization": "fresh exact released weights independently in both arms"
+  },
+  "data": {
+    "source": "Real FineMath4plus audited source chunks, corrected arithmetic-boundary v2 publication",
+    "train_documents": 512,
+    "prospective_ids_sha256": "f6005e96e8ad246ea78fd00cb282aacc0e7d4cd5be57ee46908b4ee502973f9b",
+    "selection": "Original selected256 plus first256 reserves in unchanged curator hash order, sealed before reader outcomes; no outcome filtering.",
+    "original_source_tokens_per_document": 528,
+    "ordinary_causal_labels_per_document": 527,
+    "notes": "External exact arithmetic on one proper subexpression of causal LHS; no whole answer and no true future in writer inputs.",
+    "known_exact_expression_overlap": "6/64 DEV documents overlap an exact whitespace-normalized expression in TRAIN512. Documents remain disjoint; all64 remain in primary denominator."
+  },
+  "training": {
+    "arms": {
+      "joint": [
+        "mean full-source CE",
+        "mean note-plus-newline CE",
+        "mean natural16 reader CE"
+      ],
+      "source_control": [
+        "identical mean full-source CE"
+      ]
+    },
+    "loss_weights": [
+      1,
+      1,
+      1
+    ],
+    "reduction": "Each component averaged over its labels per example, then global8 mean; sum means before one ZeRO-owned reduction/clip/update.",
+    "seed": 20261018,
+    "world_size": 8,
+    "global_batch": 8,
+    "steps": 128,
+    "epochs": 2,
+    "optimizer": "FP32 ZeRO-1 AdamW",
+    "learning_rate": 1e-05,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "precision": "FP32 initial finite pilot",
+    "order": "Same seed-specific shuffled512 order per epoch; epoch2 seed+1; same ordered1024 document occurrences in both arms.",
+    "checkpoint_rule": "Terminal128 primary;16 saved for recovery/debugging only. No best-DEV checkpoint selection.",
+    "qualification": "Actual two-step run per arm at full target shapes, native per-rank CPU/device gates, finite gradients, nonzero parameter updates and equal sampled replica slices before scientific release.",
+    "limitations": [
+      "Additional treatment labels, gradient dose and compute are explicit, not FLOPs matched.",
+      "No exact-resume path in this finite driver; partial model+optimizer+RNG states are retained but not claimed resumed.",
+      "This tests the combined supervised construction; BC and reader-loss contributions are not individually identified."
+    ]
+  },
+  "development": {
+    "population": "All64 fixed FineMath DEV documents, known from interface development; no official final tests.",
+    "writer_policy": {
+      "samples_per_item": 1,
+      "temperature": 0.7,
+      "cap": 128,
+      "stopping": "First decoded LF, native EOS151643, or cap; retain every action/error/cap/empty note.",
+      "prompt": "Exact shared train.calculation_warmstart_data.writer_prompt on causal prefix only, including fixed two partial-calculation demonstrations.",
+      "seeds": "One frozen item-derived seed shared across B0/control/joint writers; no candidate selection or resampling.",
+      "content": "Decode non-EOS actions; take exact text before first LF and re-encode with native tokenizer. Preserve original actions and text."
+    },
+    "reader": "Frozen near-LHS serialization with the same full past, generated note and exact original terminal LHS; raw unchanged, empty has identical separators/reanchor.",
+    "crosses": "All3 writers B0/control/joint crossed with all3 readers B0/control/joint, using each saved note unchanged. Raw/empty and global fixed length-matched shuffled/unrelated controls included.",
+    "primary": "Terminal joint-writer/joint-reader fresh own-note initial-scalar correctness minus same-reader raw.",
+    "required_contrasts": [
+      "own minus same-reader empty",
+      "joint own minus control own",
+      "each trained own minus B0 own",
+      "own minus shuffled/unrelated",
+      "all absolute raw/empty/own values",
+      "crossed writers/readers"
+    ],
+    "numeric_endpoint": "Frozen initial-scalar-v2; all errors/unsupported/caps without certified number remain zero. Report syntax/status coverage and inspect all scored discordances; do not call formatting-only repairs arithmetic gains.",
+    "likelihood": "Numeric nonwhitespace, scalar joint and original natural16 log likelihood, all absolute arms and paired document bootstrap5000/seed17.",
+    "success_interpretation": "Useful self-generated computation requires a fresh ordinary-note benefit over raw and empty, supported by actual numeric repairs/content controls. Oracle-only or raw-only reader improvements do not suffice.",
+    "secondary_expression_stratum": "Report overlap and nonoverlap strata without changing the complete64 primary population; exploratory, small and conditional on one training seed."
+  },
+  "downstream": {
+    "required_regardless_of_local_sign": true,
+    "population": "Same existing known GSM8K TRAIN128 development questions; official TEST remains unused.",
+    "models": [
+      "B0",
+      "source_control terminal128",
+      "joint terminal128"
+    ],
+    "modes": [
+      "direct",
+      "generate-then-discard",
+      "one fresh note"
+    ],
+    "writer_prompt": "Unchanged qualified GSM8K natural question-only short-calculation prompt with fixed TRAIN0..2 demonstrations for every model; cap128/T.7/G1. Disclose difference from arithmetic equals-boundary training prompt.",
+    "reader_prompt": "Same qualified four-shot QA prompt for every model; answer cap256 in all modes, strict final #### numeric parser, all failures retained.",
+    "interpretation": "Known TRAIN development, conditional on checkpoints; equal caps and source exposure do not establish equal latency or FLOPs."
+  },
+  "next_if_negative": "Inspect all failure types and crossed readers; do not restart long collapsed RL or choose another checkpoint from these DEV outcomes.",
+  "superseded_utc": "2026-10-18T04:36:10.260102+00:00",
+  "superseded_reason": "Owner redirected to one batched full-span reader-interface oracle and >=5000-example BF16 writer/reader warmstart. The512-example pilot was never launched."
+}
