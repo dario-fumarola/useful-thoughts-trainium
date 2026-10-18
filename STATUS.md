@@ -1,4 +1,4 @@
-# Status — 2026-10-18 08:29 UTC
+# Status — 2026-10-18 08:39 UTC
 
 ## Active: canonical-reference BF16-storage qualification
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -8,11 +8,12 @@ W launched07:44UTC, deadline13:43:43UTC; logical0–31/physical0–7, private RA
 Original launcher2658497, timeout/group2658570, driver2658572; all32actual mappings recorded.
 All32local+global native gates pass; maxKL .003104, hidden/headBF16.
 All32initial FP32 master samples exactly match released CPU shard values.
-W updates 1–2 completed: finite gradients, genuine FP32 master changes and matching replicas.
-All32 full master/moment scans and Adam step2 pass; update3 remains active.
-Elapsed1507/776s includes compilation; steady throughput is unqualified and under investigation.
+W passes all three updates, full FP32 master/moment scans, Adam counters and replica checks.
+W physically closed; C′ now active, all32 native gates and initial master samples pass.
+C′ launcher2836604, timeout/group2836693, driver2836695; first update pending.
+W step times1507/776/593s include compilation; steady throughput remains unqualified.
 V2failed check remains failed; model-free four-rank mixed-failure consensus test passed.
-W/C′ small diagnostic slices; T will save full state on NVMe for recovery preparation.
+W/C′ save diagnostic slices; T will save full state on NVMe for recovery preparation.
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
 Sources frozen; recovery work isolated at local/worktrees/recovery-v4; science unreleased.
 
@@ -29,7 +30,7 @@ Independent complete metric/hash/order readback passes; no trained-thought resul
 Public: validation/general_high_surprisal_DEV256_sealed_20261018.json plus all raw vectors.
 Decision: evaluate B0 and every later terminal arm on this panel and arithmetic held256.
 
-## CPU preparation: filtered general hindsight labels
+## Released: filtered general hindsight labels
 Question: can strict frozen-reader filtering supply 5,120 general TRAIN labels?
 ID: general-hindsight-filtered-train5120-v1; separate from compound supervision.
 329,535 approved unique TRAIN anchors are available; zero overlap with sealed DEV.
@@ -37,8 +38,9 @@ Freeze 131,072 hash-ordered anchors; select first 24,576 with B0 K1 surprisal >=
 One unchanged future-aware teacher attempt each, then intact unrelated-note controls.
 Keep first 5,120 eligible notes with I3 full16 teacher−empty >0; shortfall stays failed.
 Reject empty/special-token notes and complete literal future16 copies; retain all attempts.
-Sixteen FP32 workers on logical 32–43/60–63 are proposed, with six-hour finite release.
-Data agent owns isolated implementation/projections; no new model calls released.
+All131072 native projections independently match;1399 CPU tests/smoke/compile pass.
+Sixteen FP32 workers on logical32–43/60–63, physical8/9/10/15; deadline14:36:32UTC.
+Root released raw→teacher→reader batch once; data agent owns launch, health and closure.
 Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
 
 ## CPU complete: full-state recovery implementation

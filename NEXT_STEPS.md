@@ -18,7 +18,7 @@
    (maxKL .003103); CPU BF16 itself differs by .014382. Review a new high-precision
    reference identity and uniform all-rank failure consensus before retry. Preserve
    original FAIL; no threshold relaxation. V3 is now running W on lower32cores;
-   all native gates/initial master samples pass; W update1 is genuine and finite. Finish
+   W passes all3 realupdates/fullmaster+moment checks and is physicallyclosed. C′ is active. Finish
    the sequential W/C′/T three-update batch and actual optimizer/memory checks.
 3. `postorder-held256-B0-v1` is CLOSED/archived: all256notes/3072cells, negative
    own−raw in both I3 and fixedI6, own−other intervals cross0. Independent36CI
@@ -46,12 +46,14 @@
    Prepare a separate larger TRAIN-only branch on CPU: fixed131072raw anchors,
    first24576high-surprisal qualifiers, same one-teacher policy and strict I3filter,
    first5120eligible positives if quota passes. Keep compound5120 unchanged.
-   Proposed16independent workers on physical8/9/10/15 require source/runtime review;
-   no new model job is released yet, no cutoff shrink or quota claim.
+   Reviewed16independent FP32 workers on physical8/9/10/15 are now released once,
+   deadline14:36:32UTC. Data agent owns raw→teacher→reader→strictquota/closure/archive;
+   no cutoff shrink or quota claim. Sources/projections/tests are verified.
    New general high-surprisal DEV256 is sealed before SFT outcomes: first256 of
    535 qualifiers among2048 previously unseenDEV documents, allrawscores complete.
    Report: validation/general_high_surprisal_DEV256_sealed_20261018.json.
-   Review agent is building its separate prefix-only evaluator without active source edits.
+   Its separate prefix-only evaluator is accepted; all1418 main CPU tests/smoke/compile
+   pass. Reviewer is preparing B0 baseline on physical11–14 only after GSM closure.
    Recovery v4 is locally committed and independently accepted with 1389 CPU tests,
    smoke and compile. Keep it isolated in local/worktrees/recovery-v4 until active
    v3 closes; run the private actual T-state restore/fourth-update probe before merge.

@@ -1,0 +1,71 @@
+{
+  "CPU_manifest_sha256": "f06b208a71ce171ddfa30619ba59eca3ac5dad50026a29cfc74aca0d8ab57548",
+  "experiment_id": "general-hindsight-filtered-train5120-v1",
+  "independent_source_review_sha256": "1f1dd7f679e0b7a186ec2b836abc277d79d88f179a6b523e714c67af8b049ceb",
+  "inference": {
+    "bootstrap": "5000 paired DOCUMENT draws,seed17; all24576denominator. Errors suppress complete primary mean/CI, never imputed or dropped.",
+    "costs": "All generated64-action paths and actual shared-forward timing retained. Shorter kept notes are not measured generation-latency savings."
+  },
+  "labels": {
+    "descriptive_only": [
+      "teacher>raw",
+      "teacher>other",
+      "teacher>allthreecomparators",
+      "exact whitespace-normalized demo-note matches"
+    ],
+    "failure": "Preserve every attempt/vector/error/rejection; emit no training.jsonl if fewer5120.",
+    "literal_copy": "Reject contiguous completefuture16 native tuple OR complete decodedfuture16 substring after whitespace-only collapse/strip; no case/Unicode/punctuation normalization. Keep shorter4/8gram/longest-span diagnostics.",
+    "native_quality": "Decoded stripped text nonempty;1..64definednative IDs; no tokenizer special ID or151667/151668.",
+    "requested": 5120,
+    "rule": "First5120 STRICT I3 teacher-minus-empty>0 eligible labels in fixedteacher order, after all reader attempts/physical closure. No ranking, I6 fallback, resampling or quota shrink."
+  },
+  "model_runtime_release": null,
+  "official_test_used": false,
+  "rationale": "Prospective larger GENERAL hindsight-label branch informed by the complete TRAIN256 pilot. Compound5120 and original pilot remain unchanged. Filtering against empty-format alone can select format repairs/demo copying; this is not deployed useful-thought evidence.",
+  "raw_pool": {
+    "approved_TRAIN_available": 329535,
+    "documents": 131072,
+    "membership_sha256": "9ee1c7f5dfdad156db8ef34fea2fa62315cf00be0cf6a8bd49c454628ab28cbf",
+    "ordered_item_ids_sha256": "0992f3237d68dc9d07fc23e126c07064fbb3e9e3b033b076fa946d8b10394b74",
+    "salt": "general-hindsight-filtered-train5120-v1",
+    "selection": "First131072 unique TRAIN documents sorted by canonical_hash({salt,role:raw_pool,document_id,item_id}), then document_id,item_id; one stored native512+16 anchor/document.",
+    "source_sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff"
+  },
+  "reader": {
+    "cells": 196608,
+    "documents": 24576,
+    "interfaces": "I3 uses original512prefix+nativeopen+note+nativeclose+last24prefix tokens. I6 is fixed.375 full-logit mixing with raw, no refit.",
+    "modes": [
+      "raw",
+      "empty",
+      "teacher",
+      "other"
+    ],
+    "other": "Intact next-document cyclic donor in fixedteacher order; empty/errors and original note-length distribution retained.",
+    "paths": [
+      "I3",
+      "I6w0.375"
+    ],
+    "primary": "Original natural16 log likelihood."
+  },
+  "schema": "general-hindsight-filtered-warmstart-design-v1",
+  "source_files": {
+    "tests/test_general_hindsight_filtered_data.py": "fbb48c0575704ced2ba940b91cdc3f4c23b6b9380de8078a7ac5a6c51df76d81",
+    "train/general_hindsight_filtered_batch.py": "ea0c1b7473b8dfc73225ed2130349bc22869253f1e84985a31b9170d13ea5559",
+    "train/general_hindsight_filtered_data.py": "fa8143f579110619e3e3e1d07183ff6f6a7904879f6c7c53ba781d26eac33ffa"
+  },
+  "split": "train",
+  "status": "CPU_PREPARED_MODELS_NOT_RELEASED",
+  "supervision": "Future-aware external labels. Later student writer receives prefixonly; reader/source roles use their explicitly supervised targets. No training release or change to compound study follows.",
+  "teacher": {
+    "asset_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "extraction": "Target-independent exact native token prefix through first completed content line, entire boundarytoken retained, maximum64tokens; no target search/re-encoding/retry.",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "policy": "One unchanged pilot3-shot greedy cap64/EOS attempt/document, explicit future-aware prompt; all raw actions/costs retained.",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1"
+  },
+  "teacher_selection": {
+    "documents": 24576,
+    "rule": "First24576 with frozenB0 full-support rawK1 surprisal>=1.7nats in fixed raw order, after all131072 attempts/physical closure. Unknown earlier eligibility blocks publication; no shortfall fallback."
+  }
+}
