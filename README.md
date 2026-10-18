@@ -39,6 +39,13 @@ is −5.064 [−5.618,−4.525] nats and own−other −1.388 [−1.873,−.903]
 All 256 documents, absolute controls, fixed-mixer results and complete cells remain
 in the [truncation result](validation/postorder_firstline_note_held256_20261018.json).
 
+A separate 256-document TRAIN pilot finds useful **future-aware training labels**.
+Teacher notes improve the fixed mixed reader over raw by +.495 [.209,.815], over
+empty by +.660 [.400,.953], and over unrelated notes by +.794 [.541,1.074] nats.
+The ordinary reader still loses on average; 82/256 labels beat its empty control.
+The teacher sees the continuation. This does not establish a useful prefix-only
+writer. [All notes, controls, scores and copying diagnostics](validation/general_hindsight_TRAIN256_20261018.json).
+
 Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
 correct note, while a wrong note also improves by0.112 [0.030,0.217]. We retain

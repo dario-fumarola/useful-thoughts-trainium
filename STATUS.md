@@ -1,4 +1,4 @@
-# Status — 2026-10-18 07:50 UTC
+# Status — 2026-10-18 08:07 UTC
 
 ## Active: canonical-reference BF16-storage qualification
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -14,7 +14,7 @@ W/C′ small diagnostic slices; T will save full state on NVMe for recovery prep
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
 Sources frozen; recovery work isolated at local/worktrees/recovery-v4; science unreleased.
 
-## CPU preparation: general hindsight-note feasibility
+## Closed: general hindsight-note feasibility
 Question: can B0 hindsight notes improve full16 likelihood on general high-surprisal text?
 ID:general-hindsight-notes-train256-v1; real FineMath TRAIN, not equation-filtered.
 First237original qualifying anchors plus19new mixer-TRAIN anchors, fixed order, surprisal>=1.7.
@@ -23,9 +23,12 @@ One greedy future-aware teacher note/document, raw cap64actions; fixed first-lin
 Three fixed synthetic prompt demos; all cap/empty/error/copying outcomes and costs retained.
 All256teacher attempts must physically close before intact global donor controls/scoring.
 Raw/empty/teacher/other×I3/fixedI6,2048cells; paired-document full16 CIs and strict gain>0 counts.
-Source review and20focused tests pass; full required CPU suite running, no model allocated.
-Controls:local/diagnostics/general-hindsight-notes-train256-v1; runtime preparation in progress.
-No5000quota, deployed prefix-only utility or current compound-training recipe change.
+All256notes/2048scores, zeroerrors, groups/devices physically closed; EBS archive verified.
+I3teacher−empty−.646[−1.179,−.077], teacher−raw−3.633; strict positives82/256.
+I6teacher−raw+.495[.209,.815], −empty+.660[.400,.953], −other+.794[.541,1.074].
+No extracted full16copy;10extracted8gram overlaps; allnotes/actions/copying retained.
+Independent all2048vectors/8CIs/copying/costs match; validation/general_hindsight_TRAIN256_20261018.json.
+No5000quota or deployed prefix-only utility; compound recipe unchanged, larger branch CPU planning only.
 
 ## Closed failed: BF16-storage qualification
 Question: can BF16 model/gradient storage fit W/C′/T while preserving FP32 masters?

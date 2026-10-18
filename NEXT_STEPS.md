@@ -41,8 +41,13 @@
    less damage than full notes, still worse than raw and short unrelated notes.
    It does not change the main cap128 policy or training data. Inventory genuine
    general TRAIN high-surprisal anchors for the owner's broader hindsight branch:
-   fixed256pilot native recovery/source review complete; finish CPU/runtime review,
-   then one future-aware teacher→physicalclosure→reader batch on four disjoint cores.
+   fixed256pilot is CLOSED/archived/independently verified: I3strict positives82/256;
+   fixedI6 teacher beats raw/empty/other. All future-aware labels/copying retained.
+   Prepare a separate larger TRAIN-only branch on CPU: fixed131072raw anchors,
+   first24576high-surprisal qualifiers, same one-teacher policy and strict I3filter,
+   first5120eligible positives if quota passes. Keep compound5120 unchanged.
+   Proposed16independent workers on physical8/9/10/15 require source/runtime review;
+   no new model job is released yet, no cutoff shrink or quota claim.
    Recovery code is isolated in local/worktrees/recovery-v4 while active source stays frozen.
 7. No RL until fresh own beats raw and other with oracle headroom. Then fullspan
    reward/G16/cap256/Wreference stabilization. Require measured<=90s completeRLsteps

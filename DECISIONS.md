@@ -936,3 +936,22 @@ No main-policy change. Existing genuinely general TRAIN scores contain296unique
 anchors with B0 K1 surprisal>=1.7nats and no held overlap. Prepare a separately
 declared256-document hindsight-label pilot before expanding beyond arithmetic;
 it measures teacher-label feasibility, never prefix-only deployment utility.
+
+### 2026-10-18 — General hindsight labels show content signal; plan larger TRAIN-only pool
+The complete256-document general pilot has no errors. Under fixedI6, teacher
+notes beat raw by+.495nats, empty by+.660 and intact unrelated notes by+.794;
+all paired lower95% bounds are positive. OrdinaryI3 loses on average but82/256
+notes have strictly positive teacher−empty gain. Independent full-vector, interval,
+copying and action-cost audits match. No extracted full16copy, but10notes retain
+an8-token future overlap; paraphrased hints and future-aware supervision are explicit.
+This supports label feasibility, not a deployed prefix-only policy result.
+
+Keep compound5120 unchanged. Prospectively prepare a separate larger pool:
+131072hash-ordered distinct approvedTRAIN anchors, first24576with frozenB0 K1
+surprisal>=1.7, same one-teacher/cap64/first-line policy, full reader controls,
+and first5120eligible STRICTI3teacher−empty positives. Keep genuine quota shortfall;
+no repeated verbalizations or threshold relaxation. These pool sizes provide
+margin over the pilot's32% acceptance estimate, without guaranteeing availability.
+CPU availability, exact eligibility and timing/storage still need declaration;
+consider16independent inference workers on four unshared physical devices to
+use the existing node better. No new model launch or main-training change yet.
