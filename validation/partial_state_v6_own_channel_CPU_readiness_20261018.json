@@ -1,0 +1,32 @@
+{
+  "schema": "partial-state-TRAIN128-own-channel-CPU-readiness-v3",
+  "status": "CPU_READY_NO_NOTE_OR_ANSWER_OUTCOMES_YET",
+  "utc": "2026-10-18T18:58:54.265490+00:00",
+  "question": "Can an actual prefix-only writer supply intact notes to the same frozen reader, with all failures and global donors preserved?",
+  "design": "Separate writer rollout/physical closure then intact own/other controls. Reader compares all9modes on same128TRAIN questions, teacher/root excluded labels unchanged. Writer64+reader16 versus compactCoT80 total action cap.",
+  "checks": {
+    "tests": 1586,
+    "seconds": 67.54,
+    "smoke": "PASS",
+    "compile": "PASS",
+    "log_sha256": "da9ec43e8cbae2a1e7b82a730b4117ad24f290c7df9cd992318a372b9da11c5e"
+  },
+  "invariants": [
+    "Generation APIs accept only exact question projections; model-provenance checks may hash original training bytes without decoding future fields.",
+    "All original attempts remain; failed own/donor notes are unavailable, never replaced with empty.",
+    "Bundle inputs are re-derived from raw writer files; edited reader note content is rejected.",
+    "CPU reference rollouts explicitly recordCPU and cannot qualify Trainium deployment.",
+    "Cached and ordinary parity forwards materialize separately, with dynamic selected positions, preserving the.001FP32 criterion while avoiding a duplicate-trunk validation graph."
+  ],
+  "source_files": {
+    "train/partial_state_note_driver.py": "adb4042e4f3775080c4dcdff7596f04f193d168f33af0734a81ffdd46a0cb221",
+    "train/partial_state_answer_driver.py": "edbcc5d765b1226d08618de803e80452fc260c78b8ddd36c7da26a0f4dd10a61",
+    "tests/test_partial_state_note_driver.py": "8b1c6f187c429c802683ed0f8072936b39e9c51c88dd70e88fe7f10be21f3391"
+  },
+  "limits": [
+    "TRAIN fitting only; fresh generalization and model utility are unmeasured.",
+    "No actual writer sample or free-reader answer yet; CPU fixtures are not hardware evidence.",
+    "OriginalB0v1 and trained-reader/CoTv2 jobs stay isolated and unchanged.",
+    "Two split training runs and separate inference stages must be counted against ordinaryCoT."
+  ]
+}
