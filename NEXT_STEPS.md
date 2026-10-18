@@ -1,30 +1,28 @@
-# Current queue — owner redirection
+# Current queue
 
-1. DONE: initial R stopped63/backed up; reader repair and genuine G16 search.
-   Prepending makes empty tax~0. Same TRAIN128/G16 oracle has positive tail;
-   ordinary G1 remains harmful. All original evidence retained.
-2. DONE, NEGATIVE: writer-only BC on77 selected TRAIN labels,64updates from B0.
-   Fresh held DEV64 own−empty K16−.649, own−other−.636;63caps/64. Paired change
-   versus B0+.451 CI[−.150,+1.128]. No deployed useful-thought improvement.
-   Full64 EBS backup and notes/scores/source archives verified. No long RL restart.
-3. ACTIVE: matched raw future16 CE control64. Two default-allocator attempts
-   failed at initialized optimizer load; explicit v3 uses documented noncontiguous
-   scratchpad with same sources/NEFFs/math/FP32/LRU2. Actual first2 updates pass.
-   Monitor healthy run/checkpoints; final64 EBS copy. Exact jobs/paths in STATUS.
-4. Finish control64 fresh G1 DEV64/B0-reader matrix and predeclared paired
-   three-arm comparison. K16 primary/K1 secondary, absolute likelihoods,
-   empty/content controls, lengths/caps/errors/costs. No checkpoint selection.
-5. Adapted-reader2×2 crosses CLOSED/NEGATIVE; finish fixed GSM8K TRAIN128
-   correctness (same prompt/parser; thought/answer256; greedy FP32). Existing B0
-   direct/empty reuse validated, thought256 newly generated. Run regardless LL
-   sign; no official test use. These diagnostics inform the next recipe.
-6. Before more training, run32 hash-selected new GSM8K TRAIN questions: local4B
-   prefix-only notes, independently verified partial calculations and matched
-   corruptions. Fixed B0 reader, raw/empty/filler/shuffled/unrelated controls,
-   canonical numeric-answer LL and greedy correctness. Freeze notes before
-   gold; no B0-failure selection. Current77 labels stay unchanged. Curated QA
-   feasibility does not establish FineMath transfer or self-discovery.
+The owner stopped the original R study and authorized adapting the experiment.
 
-Preserve real data/weights, negative results, fixed examples and actual costs.
-Use measured content utility/correctness and a working short loop. Do not rush
-healthy runs, change current objectives silently, or fill hardware with blind retries.
+1. Preserve the completed negative warm-start. Cloning 77 future-selected TRAIN
+   notes did not produce useful fresh notes on DEV64; adapting the reader also
+   failed. Do not resume long RL or enlarge that label set without new evidence.
+2. Finish the healthy matched raw control at 64 updates. The documented allocator
+   repair changes the runtime setting alone; preserve its separate protocol and
+   actual costs. Verify terminal64 and copy to EBS with a 35 GiB reserve.
+3. Generate the control's fresh G1 notes on the original DEV64 selection, score
+   with unchanged B0, and run the predeclared three-arm paired comparison. Keep
+   all absolute likelihoods, content controls, caps, errors and costs.
+4. Finish GSM8K TRAIN128 correctness regardless of the likelihood result. Keep
+   prompts and parser fixed, and add the raw control's three modes after terminal64.
+   Official final tests remain unused.
+5. Run the new 32-question calculation pilot before more training. Questions are
+   hash-selected and disjoint from prior development/demo questions. Compare one
+   prefix-only local4B note with verified partial calculations and matched numeric
+   corruptions. Fixed B0 prepend reader, raw/empty/filler/shuffle/unrelated controls.
+   Freeze notes and every generated answer before opening canonical gold; report
+   free-running accuracy separately from forced numeric-answer likelihood.
+6. Choose the next training recipe from content utility and correctness. Curated
+   QA feasibility with external help does not establish FineMath transfer or
+   self-discovery. Preserve current labels and all negative results.
+
+Exact live jobs, commands and remaining risks are in STATUS.md. Keep healthy
+runs going; use small measured experiments and avoid automatic retry loops.
