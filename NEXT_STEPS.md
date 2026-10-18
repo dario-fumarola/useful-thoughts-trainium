@@ -1,17 +1,14 @@
 # Current queue
 
-1. Finish I6 scalar logit mixing on the same full DEV256+256 panel. I0–I5
-   are complete; no interface passes all thresholds. I3 general oracle gain is
-   +15.364 nats but empty tax−3.007; arithmetic gain+.190 has an interval crossing0.
-   Fit one shared scalar on separate first256 unique TRAIN documents with the
-   fixed weight grid0,1/32,1/16,1/8,1/4,3/8,1/2,3/4,1. Maximize supplied-copy
-   full16 LL subject to TRAIN empty tax>=−.4; ties smaller weight. All DEV controls,
-   prior gate−.5/+2/+2 and document intervals remain unchanged. Zero is an identity,
-   not utility. Keep base weights frozen; report both cohort outcomes/headroom.
-2. After complete I6 results, select the interface explicitly. Arithmetic's raw
-   full-span headroom is only2.062 nats. If it still fails, the owner allows a
-   declared reader-learning SFT fallback under the best interface; do not quietly
-   relax thresholds or describe supplied-target copying as a generated-note result.
+1. I0–I6 are complete. I6 uses one TRAIN-fitted w=3/8 on full-vocabulary
+   I3/raw logits. GENERAL passes: tax−.154, copy gain+11.948, sensitivity+12.203.
+   ARITHMETIC fails unchanged +2 gates:−.018/+.641/+.249. Independent complete
+   audit passed; finish one EBS archive and publish the compact full result.
+   These are supplied-copy reader checks, not fresh-generated writer evidence.
+2. Use explicit arithmetic reader-learning fallback under underlying I3 for SFT;
+   I6 remains a separate fixed evaluation control, not a mislabeled mixed-reader
+   training objective. New exact postorder teacher labels and prospective compound
+   priority use only saved TRAIN equations. Preserve old pools and held256.
 3. Prepare>=5000 real TRAIN examples and>=256 held DEV. Relax arithmetic to
    computable equations; general hindsight notes use high-surprisal anchors and
    frozen-reader positive full-span gain filtering. Save all acceptance/rejection

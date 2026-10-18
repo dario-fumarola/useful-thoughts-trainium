@@ -7,34 +7,40 @@ on AWS Trainium.
 
 ## Current finding
 
-**Useful self-generated thoughts have not been established.** The latest frozen
-B0 experiment does establish that re-anchoring lets the reader copy supplied
-future text. It still carries an empty-format penalty. Even the best re-anchored interfaces
-give small, uncertain supplied-answer gains on real arithmetic boundaries.
-
-All 15,872 cells completed on 256 general and 256 arithmetic DEV documents, crossing
-six interfaces and all content controls. Full 16-token likelihood is primary for
-general text; arithmetic scores every numeral token plus its actual closing boundary.
-For the re-anchored I3 interface, paired document-bootstrap 95% intervals are:
+**Useful self-generated thoughts have not been established.** We now have a
+reader interface that can use supplied future text without a large format penalty.
+A scalar logit mixer combines the raw and re-anchored reader, with weight3/8
+fitted on256 separate TRAIN documents. Complete DEV results are:
 
 | Cohort | Empty−raw | Supplied correct−raw | Correct−corrupt |
 |---|---:|---:|---:|
-| General,256 |−3.007 [−3.438,−2.590]|+15.364 [13.540,17.264]|+20.039 [18.102,22.001]|
-| Arithmetic,256 |−0.520 [−0.648,−0.395]|+0.190 [−0.079,0.475]|+1.268 [1.076,1.476]|
+| General,256 |−0.154 [−0.241,−0.064]|+11.948 [10.707,13.230]|+12.203 [10.962,13.480]|
+| Arithmetic,256 |−0.018 [−0.061,0.028]|+0.641 [0.490,0.812]|+0.249 [0.188,0.316]|
 
-The declared gate requires these means to reach −0.5, +2, +2 nats respectively;
-none of I0–I5 passes. General controls distinguish the true future from a different
-document's future; they do not isolate numeric correctness. Arithmetic corruption
-changes a numeral while preserving surface length and closing bytes. Arithmetic's
-entire raw likelihood headroom is 2.062 nats, so the +2 threshold is particularly strict.
-The supplied note deliberately contains the complete target; this qualifies reader
-plumbing and provides no evidence about a prefix-only writer.
-[All interfaces, absolute scores, contrasts and complete cell projection](validation/interface_target_copy_dev256x2_20261018.json).
+These are full-span log-likelihood contrasts in nats, with paired document-bootstrap
+95% intervals. The unchanged gate requires the three means to reach−0.5,+2,+2.
+**General text passes; arithmetic fails.** General notes literally copy the next16
+tokens; their different-document controls do not isolate numeric correctness.
+Arithmetic notes copy the complete numeral and its actual closing boundary;
+corruption changes only the numeral while preserving surface length and closing bytes.
+No note here was produced by a prefix-only writer. DEV was reused for interface
+development, so this is exploratory qualification rather than a fresh confirmation.
+[Complete mixer fit, all controls/cells, audit and archives](validation/interface_scalar_mixer_dev256x2_20261018.json).
 
-Next is a scalar logit mixer fitted only on separate TRAIN documents, then tested
-on the same complete DEV panel. A real-data scan yielded 5,520 verified full-calculation
-TRAIN labels. Independent post-training DEV remains short; a bounded raw-document
-extension is running. No new SFT or RL is active; official TEST remains unused.
+Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
+A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the
+correct note, while a wrong note also improves by0.112 [0.030,0.217]. We retain
+this distinction between arithmetic content and boundary/formatting gains.
+Before mixing, none of six interfaces passed; re-anchoring alone enabled strong
+general copying but retained a3.007-nat empty-format tax.
+[Earlier six-interface batch:15,872 complete cells](validation/interface_target_copy_dev256x2_20261018.json).
+
+Next is supervised writer-and-reader warm-start under the underlying re-anchored
+interface, with ordinary source-CE and augmented-source controls. This is the
+declared reader-learning fallback for arithmetic; fixed mixing remains a separate
+evaluation control. Real source equations supply exact symbolic substep labels,
+and frozen-reader filtering will retain acceptance and rejection counts. A fresh
+post-training DEV256 is sealed. No new SFT or RL is active; official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here

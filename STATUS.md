@@ -1,4 +1,4 @@
-# Status — 2026-10-18 05:31 UTC
+# Status — 2026-10-18 05:56 UTC
 
 ## Closed: batched reader interface qualification
 Question: can unchanged B0 use a supplied full-target-copy note?
@@ -12,6 +12,19 @@ All absolute modes, document intervals and balanced arithmetic examples saved pu
 validation/interface_target_copy_dev256x2_20261018.json; complete EBS archive verified.
 Decision: fit one I3 scalar logit mixer on separate TRAIN256, test same complete DEV panel.
 Independent complete-matrix/180-CI review passed. No generated-writer claim.
+
+## Closed: scalar reader mixing
+Question: can one TRAIN-fitted scalar retain copy utility while removing the tax?
+ID: phase1-interface-mixer-v1; TRAIN256, fixed reused DEV256 general+256 arithmetic.
+Fit w=3/8 on TRAIN only; full-vocabulary logit mixing, unchanged B0, no training.
+All768 TRAIN/3072 DEV cells, native gates, exact w0 identities and physical closure pass.
+GENERAL PASS: empty−raw−.154, correct−raw+11.948, correct−corrupt+12.203 nats.
+ARITHMETIC FAIL:−.018/+.641/+.249; no threshold relaxation or generated-note claim.
+Descriptive arithmetic numeric-only gain+.262; raw numeric headroom.648 nats.
+Independent full-cell/30-CI audit passed; complete EBS archive verified.
+TRAIN live mapping was missed; launch identities and final closure retained honestly.
+Decision: keep I6 as evaluation control; arithmetic SFT learns reader under underlying I3.
+Next: exact postorder symbolic labels, prospective compound priority, frozen-reader filter.
 
 ## Closed: nearby partial-note reader probe
 ID: finemath-calculation-boundary-near-lhs-v3; same fixed320 documents/six modes.
@@ -32,29 +45,28 @@ Draft protocol/plan and CPU outputs retained; do not launch old draft.
 CPU preparation/audit complete; relaxed computable-equation curation now running.
 
 ## Active: real supervised calculation data
-Question: can the real corpus supply>=5000 labels and independent held DEV?
-Causal first-cut scan closed:4221TRAIN/252DEV; both requested quotas short.
-Supervised all-equation scan closed:5520TRAIN/320DEV, one hash-chosen equation/document.
-Full Phase1 math256 and training5120 available; fresh postSFT held51/256, short205.
-Original scans/pools unchanged. Separate bounded raw-document extension in implementation.
-Symbolic-note-candidates-v1 CPU preparation closed:5520 full-calculation notes, zero rejects.
-Writer future-separation/stop/mask tests pass; token/label widths measured on all candidates.
-These are future-aware supervised labels, not prefix-generated thoughts or final training data.
-Next: frozen-B0 positive full-scalar gain filtering after interface selection; retain all attempts.
-No SFT launched. New runner in preparation; BF16 update path still needs actual qualification.
+Question: can real source equations supply>=5000 labels and independent held DEV?
+Old causal scan4221TRAIN/252DEV; old supervised scan5520TRAIN/320DEV; both retained.
+Raw-v3 scan closed:12688TRAIN/713DEV; new held256 sealed with198 untouched reserves.
+Closed v2/v3 rows supply5448 compound TRAIN documents /5833 distinct>=2-op equations.
+New compound and compound-priority all-op inventories are CPU-only, in preparation.
+Teacher labels now include exact postorder substeps; future-aware labels, prefix-only writer.
+Old5520 full-calculation label preparation retained; it is not final filtered training data.
+Next: label inventory/native lengths, frozen-B0 I3 full-scalar positive filter; retain all attempts.
+No SFT launched. New driver CPU qualification pending; actual BF16 updates not yet qualified.
+Root packer/filter/labels; data candidate selection; distributed driver; review after final freeze.
 
-## Active: fixed empty-pipeline cost
+## Closed incomplete: fixed empty-pipeline cost
 Question: how much work survives immediate EOS; how do cap and precision affect it?
-IDs: empty-pipeline-profile-v1 failed on missing torch.xla checkpoint registration;
-v1 source/error retained, all owned processes and device15 closed. Explicit repair v2 running.
-V2 one core60/device15, worker 2487742 in tmux dario-empty-profile-v2.
-Same real TRAIN prefix, forced one-action notes, caps1024/256/32, FP32/BF16, three repeats.
-Unchanged old sampler/reader/replay; completed and failed stage costs saved immediately.
-Native initial FP32 gate; finite full gradients; unchanged sampled weight signature.
-No optimizer or parameter updates; not complete RL-step throughput qualification.
+IDs: empty-pipeline-profile-v1 failed missing torch.xla registration; v2 repaired it.
+V2 timed out3200s/exit124 during cold replay compilation; all owned identities/groups
+and device15 are closed. No complete timing cases, BF16 or finite-gradient checks.
+Completed forced-decode4.97s/clean16 15.14s/reader16 20.60s and two cold backwards.
+The950/1235s backwards include compilation; they are not steady-state step timings.
+Shorter-prefix graph shapes also differ from old fixed512-prefix R; attribution unresolved.
 Output local/nvme/diagnostics/empty-pipeline-profile-v2; controls same basename offNVMe.
-Timeout3200s/deadline05:57UTC; next inspect stages.jsonl and exact process/device closure.
-1136 CPU tests plus toy smoke/compileall pass; Neuron backward repair still qualifying.
+Decision: preserve incomplete probe, no auto retry. Prioritize supervised qualification.
+The<=90s complete RL-step engineering gate remains unqualified and required before RL.
 
 ## Earlier completed evidence
 Original R1234 stopped63; no R5678. Never resume old launchers.

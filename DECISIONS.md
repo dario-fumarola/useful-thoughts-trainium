@@ -828,3 +828,23 @@ complete180-CI independent review passes; all cells and verified EBS evidence re
 Next fit one scalar I3 logit-mixture weight on separate first256uniqueTRAIN records,
 fixed nine-weight grid and TRAIN empty-tax constraint−.4; evaluate once on the same
 complete DEV panel. This is supplied-target plumbing, not a useful writer result.
+
+### 2026-10-18 — Scalar mixing qualifies general copying; arithmetic reader-learning fallback
+I6 w=3/8 is selected on separate TRAIN256 by the frozen nine-point constrained fit.
+GENERAL meets all three unchanged gates; ARITHMETIC fails +2 gain/sensitivity.
+All3840TRAIN/DEV rows, eight native gates, w0 identities and30 document CIs are
+independently verified and archived. Report numeric-only headroom/gains separately;
+a wrong note can also improve relative to raw. DEV is reused exploratory evidence.
+Use underlying I3 for ordinary differentiable supervised reader training, explicitly
+as the permitted reader-learning fallback; do not label that objective I6 training.
+Fixed I6 is an additional evaluation control. No fresh-generated utility yet.
+New TRAIN-only candidate identities prioritize real compound equations, then true
+one-op reserves; exact postorder Fraction substeps replace full-answer-only labels
+under a new label identity. Repeated real TRAIN documents may contribute distinct
+source cuts: the user's quota is5000examples, not5000unique documents. No repeated
+verbalizations. C sees the same source occurrences; document count/exposure reported.
+The frozen-reader teacher>empty filter and5120 quota remain unchanged; no shortfall
+shrink. Qualification uses a separately declared first64 subset, never a science arm.
+The fixed empty profiler timed out during cold compilation with zero complete cases;
+no warmed or BF16 throughput claim and no automatic retry. Prioritize supervised
+qualification;<=90s complete-step performance remains mandatory before long RL.
