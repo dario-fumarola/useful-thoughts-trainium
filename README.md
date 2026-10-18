@@ -71,12 +71,19 @@ moment byte checks pass; this does not establish long-run memory stability.
 All three TRAIN128 fitting runs now finish, with independent terminal model,
 master and moment audits passing. The prefix-only writer's CPU reference emits
 128/128 exact partial states with natural stops. This is fitting evidence;
-fresh generalization and useful reader effects remain unmeasured. B0, frozen-reader
-and compact-CoT free-answer matrices, plus paired Trainium writer generation,
-are running on isolated source snapshots.
+fresh generalization remains unmeasured. The frozen reader answers128/128 with
+correct partial states, versus120/128direct and119/128empty; corrupted states
+yield4/128. Actual CPU-writer own/other contexts exactly match the executed
+teacher/unrelated controls, allowing explicitly documented response reuse:
+own128/128, unrelated1/128. **Ordinary compact CoT also gets128/128 using one
+training run; the two-model split has not earned its complexity.** All2,688
+original B0/reader/CoT answers were independently re-parsed, with unsupported
+outputs retained. B0 fails the terse prompt format, so its zeros are not a
+broad capability baseline. Paired Trainium writer generation remains active.
 [Short-pack hardware evidence](validation/partial_state_v6_training_hardware_20261018.json) ·
 [Complete fitting audit](validation/partial_state_v6_TRAIN128_training_20261018.json) ·
 [Actual writer outputs](validation/partial_state_v6_TRAIN128_writer_CPU_20261018.json) ·
+[Complete fitting answers and exact response reuse](validation/partial_state_v6_TRAIN128_answers_20261018.json) ·
 [Intermediate-only design](validation/partial_state_v6_design_20261018.json) ·
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
@@ -91,7 +98,8 @@ A four-core cache-capacity comparison cuts warm W updates43.466s→1.925s,
 with exactly equal losses/norms and94graph reloads replaced by94cache hits. Both
 small-topology memory tails are bounded, so this is a speed gain rather than a
 repair of the original32-rank failure. The new short reader completed128updates
-with full checkpoints in about five minutes; free-answer utility remains pending.
+with full checkpoints in about five minutes; the128TRAIN fitting answers above
+now establish mechanics only.
 [Backward probe](validation/host_memory_backward_probe_20261018.json) ·
 [Full-loop attribution and raw traces](validation/host_memory_full_loop_attribution_20261018.json) ·
 [Cache-capacity comparison](validation/host_memory_cache_capacity_20261018.json).

@@ -17,7 +17,8 @@ from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_
 from weekend_thinking.runtime_policy import require_runtime_policy, runtime_policy
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-TRAIN128-prefix-only-writer-rollouts-v1'
+SCHEMA = 'partial-state-prefix-only-writer-rollouts-v2'
+LEGACY_SCHEMA = 'partial-state-TRAIN128-prefix-only-writer-rollouts-v1'
 EOS, CAP, WIDTH = 151643, 64, 32
 
 
@@ -41,9 +42,9 @@ def prepare(output, model_preparation, model_source_root, execution_device='xla'
         raise ValueError('Explicit CPU reference or XLA device required')
     model_preparation, model_source_root = Path(model_preparation).resolve(), Path(model_source_root).resolve()
     p = read(model_preparation/'protocol.json')
-    if (p['schema'] != 'partial-state-TRAIN128-complete-answers-v2'
-            or p['reader'].get('arm') != 'writer' or p['items'] != 128):
-        raise ValueError('Own frozen TRAIN128 writer/native preparation required')
+    if (p['schema'] not in ('partial-state-TRAIN128-complete-answers-v2','partial-state-complete-answers-v4')
+            or p['reader'].get('arm') != 'writer' or p['items'] not in (128,512)):
+        raise ValueError('Own frozen writer/native preparation on a fixed cohort required')
     verify(p['reader'])
     if any(sha256_file(model_source_root/k) != v for k,v in p['source_files'].items()):
         raise ValueError('Original frozen-model preparation source changed')
@@ -53,18 +54,20 @@ def prepare(output, model_preparation, model_source_root, execution_device='xla'
             raise ValueError('Original questions or own-model native reference changed')
     questions = rows(model_preparation/'questions.jsonl')
     if [q['item_id'] for q in questions] != p['ordered_item_ids']:
-        raise ValueError('Complete ordered128 questions required')
+        raise ValueError('Complete ordered questions required')
     for q in questions:
         tree_from_question(q)
     output.mkdir(parents=True, exist_ok=False)
-    protocol = dict(schema=SCHEMA, created_utc=utc_now(), items=128, shards=4,
+    if len(questions)!=p['items'] or len({q['panel'] for q in questions})!=1:
+        raise ValueError('One entire fixed cohort required')
+    protocol = dict(schema=SCHEMA, created_utc=utc_now(), items=p['items'], panel=questions[0]['panel'], shards=4,
         writer=p['reader'], model_preparation=str(model_preparation),
         model_source_root=str(model_source_root), input_pins={str(f):sha256_file(f) for f in inputs},
         source_files=sources(), runtime_policy=p['runtime_policy'],
         execution_device=execution_device,
         max_actions=CAP, prefill_width=WIDTH, selection='single_greedy_EOS_only',
         writer_inputs='Question projection only; neither controls nor gold is opened.',
-        limits=['TRAIN128 fitting diagnostic; not generalization.',
+        limits=['TRAIN is fitting only; each DEV panel is a separate computation diagnostic, never official TEST.',
                 'Capped notes remain intact. Failed notes and failed donors remain unavailable, never replaced.',
                 'No utility filtering, target-aware repair or best-of selection.'])
     atomic_json(output/'protocol.json',protocol)
@@ -133,7 +136,7 @@ def generate(output, shard, until):
         if audit['max_logp_error']>1e-3:
             raise RuntimeError('Actual cached writer prefill disagrees with ordinary forward')
         with (d/'notes.jsonl').open('x') as stream:
-            for index in range(shard,128,4):
+            for index in range(shard,len(questions),4):
                 check();q=questions[index];prompt=prompt_tokens(q,tok,cot=True);before=time.monotonic()
                 value=dict(item_id=q['item_id'],panel=q['panel'],status='error',prompt_ids=prompt,
                     prompt_sha256=canonical_hash(prompt),actions=[],content_ids=[],text='',raw_text='',stop_type='error')
@@ -176,10 +179,10 @@ def collect(output):
     wanted={q['item_id']:q for q in questions};defined=set(tok.get_vocab().values())
     for shard in range(4):
         d=output/'notes'/f'shard-{shard}';r=read(d/'run.json');file=d/'notes.jsonl'
-        if r['status']!='complete_all_attempts' or r['rows']!=32 or sha256_file(file)!=r['notes_sha256']:
+        if r['status']!='complete_all_attempts' or r['rows']!=len(range(shard,p['items'],4)) or sha256_file(file)!=r['notes_sha256']:
             raise ValueError('All four complete original writer shards required')
         pins.update({str(file):sha256_file(file),str(d/'run.json'):sha256_file(d/'run.json')})
-        expected=[questions[i]['item_id'] for i in range(shard,128,4)];values=rows(file)
+        expected=[questions[i]['item_id'] for i in range(shard,len(questions),4)];values=rows(file)
         if [v['item_id'] for v in values]!=expected:
             raise ValueError('Original writer order changed')
         for v in values:
@@ -204,7 +207,7 @@ def collect(output):
         writer=p['writer'],source_pins=pins,ordered_item_ids=[q['item_id'] for q in questions],
         execution_device=p['execution_device'],
         controls=controls,state_diagnostics=states,
-        limits=['Canonical-state diagnostics are TRAIN-only; different valid strategies may not match.',
+        limits=['Canonical-state diagnostics are task-specific; different valid strategies may not match.',
                 'Failed own/other notes remain failures; no imputation or filtering.'])
     atomic_json(output/'notes-bundle.json',bundle)
     return bundle
@@ -212,7 +215,7 @@ def collect(output):
 
 def load_bundle(path, ordered_ids):
     value=read(path)
-    if (value['schema']!=SCHEMA or value['status']!='complete_all_attempts'
+    if (value['schema'] not in (SCHEMA,LEGACY_SCHEMA) or value['status']!='complete_all_attempts'
             or value['ordered_item_ids']!=ordered_ids):
         raise ValueError('Complete same-cohort prefix-only writer bundle required')
     for name,digest in value['source_pins'].items():
@@ -222,7 +225,7 @@ def load_bundle(path, ordered_ids):
     if value['controls']!=expected:
         raise ValueError('Reader controls differ from actual original writer outputs')
     protocols=[read(name) for name in value['source_pins'] if Path(name).name=='protocol.json']
-    if len(protocols)!=1 or protocols[0]['schema']!=SCHEMA or protocols[0]['writer']!=value['writer']:
+    if len(protocols)!=1 or protocols[0]['schema']!=value['schema'] or protocols[0]['writer']!=value['writer']:
         raise ValueError('Actual producer writer identity differs')
     return value
 

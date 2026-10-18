@@ -1,4 +1,4 @@
-"""TRAIN128 complete answers with an explicitly frozen partial-state reader.
+"""Complete answers on fixed TRAIN/DEV panels with a frozen partial-state reader.
 
 Reuse the existing released-model loader and causal decoder. Generation reads
 only projected questions and prefix-computable controls. Gold scoring is a
@@ -20,9 +20,16 @@ from weekend_thinking.runtime_policy import require_runtime_policy, runtime_poli
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-TRAIN128-complete-answers-v3'
+SCHEMA = 'partial-state-complete-answers-v4'
 TRAIN_SHA = '020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb'
 MODES = ('direct', 'cot', 'empty', 'teacher', 'corrupt', 'other_teacher', 'restatement')
+COHORTS = {
+    'TRAIN': (TRAIN_SHA, 128),
+    'DEV_interpolation': ('ef5af497e8a2a45c0ceede5e3a164f446c39a5cfc49d7d4f20347094cc63f018', 512),
+    'DEV_structure': ('015528413c842defa168365cea4368f0c9f0a08f712fea02021d90cbc5a90662', 512),
+    'DEV_range': ('b79c962fe3b6c0c3787363e5d5debb8a3f00dfdcdd2868a7481af4a1c9a74189', 512),
+    'DEV_composition': ('cbe5d61ee280e12fd5152c0637f39f72e0394456df45d217a987e5db21132983', 512),
+}
 
 
 def read(path):
@@ -44,14 +51,18 @@ def sources():
     return {**evaluation_dependencies(), **{n: sha256_file(ROOT/n) for n in names}}
 
 
-def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, notes_bundle=None):
+def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, notes_bundle=None,
+            panel='TRAIN', requested_modes=None, native_from=None):
     from transformers import AutoTokenizer
     from train.evaluate import asset_provenance
-    if sha256_file(data_file) != TRAIN_SHA:
-        raise ValueError('Only the exact first128 partial-state TRAIN questions are released')
-    data = rows(data_file)[:128]
-    if len(data) != 128 or any(r['panel'] != 'TRAIN' for r in data):
-        raise ValueError('Explicit TRAIN-only mechanics cohort required')
+    if panel not in COHORTS:
+        raise ValueError('Only declared TRAIN/DEV panels; never TEST')
+    data_sha, items = COHORTS[panel]
+    if sha256_file(data_file) != data_sha:
+        raise ValueError('Exact fixed panel bytes required')
+    data = rows(data_file)[:items]
+    if len(data) != items or any(r['panel'] != panel for r in data):
+        raise ValueError('Complete declared panel required')
     questions = [question_projection(r) for r in data]
     tok = AutoTokenizer.from_pretrained(model_dir, local_files_only=True, trust_remote_code=False)
     assets = asset_provenance(model_dir); base = read(base_protocol)
@@ -73,19 +84,38 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
                 c['note_generation'][mode] = {k:note[k] for k in
                     ('item_id','status','stop_type','n_actions','wall_seconds')}
         modes += ['own', 'other']
+    if requested_modes is not None:
+        if not requested_modes or len(set(requested_modes))!=len(requested_modes) or any(m not in modes for m in requested_modes):
+            raise ValueError('Unique declared conditions only; own/other require original note bundle')
+        modes = list(requested_modes)
     reader = dict(id='B0', checkpoint=None)
     if reader_binding is not None:
         from train.partial_state_checkpoint import verify
         reader = verify(read(reader_binding))
     if max(len(prompt_tokens(q, tok, cot=True)) for q in questions) > 32:
         raise ValueError('Declared prefill width is too small')
-    if any(len(reader_tokens(q, c['notes'][mode], tok)) > 128 for q,c in zip(questions,controls) for mode in modes[2:]):
+    if any(len(reader_tokens(q, c['notes'][mode], tok)) > 128 for q,c in zip(questions,controls) for mode in modes if mode not in ('direct','cot')):
         raise ValueError('Declared reader prefill width is too small')
     output.mkdir(parents=True, exist_ok=False)
     from train.useful_note_sft_driver import load_native_reference
     refs, native = load_native_reference(base, assets)
     signature = base['base_signature']
-    if reader['checkpoint'] is not None:
+    native_origin = None
+    if native_from is not None:
+        import torch
+        native_from=Path(native_from);prior=read(native_from/'protocol.json');meta=read(native_from/'native-contexts.json')
+        if (prior['reader']!=reader or prior['assets']!=assets or meta['reader']!=reader
+                or meta['model_signature']!=prior['evaluation_signature']):
+            raise ValueError('Native reference belongs to a different frozen model')
+        for name in ('native-reference.pt','native-contexts.json'):
+            if sha256_file(native_from/name)!=prior['files'][name]:
+                raise ValueError('Original own-model native reference changed')
+        native=torch.load(native_from/'native-reference.pt',map_location='cpu',weights_only=True)
+        if native.shape!=(4,151936) or native.dtype!=torch.float32 or not torch.isfinite(native).all():
+            raise ValueError('Four full-head own-model native vectors required')
+        refs,signature=meta['refs'],meta['model_signature']
+        native_origin={str(native_from/n):sha256_file(native_from/n) for n in ('protocol.json','native-reference.pt','native-contexts.json')}
+    elif reader['checkpoint'] is not None:
         import torch
         from train.evaluate_local import setup_model
         backend, _, loaded, signature, _ = setup_model(SimpleNamespace(
@@ -109,13 +139,15 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
         with (output/f'{name}.jsonl').open('x') as stream:
             for value in values:
                 stream.write(json.dumps(value, separators=(',', ':'))+'\n')
-    protocol = dict(schema=SCHEMA, created_utc=utc_now(), purpose='TRAIN128 mechanics baseline; no held-out or general capability claim',
+    protocol = dict(schema=SCHEMA, created_utc=utc_now(), panel=panel,
+        purpose='TRAIN fitting' if panel=='TRAIN' else 'Prospectively fixed DEV computation diagnostic, not official TEST',
         model_dir=str(model_dir.resolve()), assets=assets, base_signature=base['base_signature'],
         base_protocol=str(base_protocol.resolve()), base_protocol_sha256=sha256_file(base_protocol),
-        data_sha256=TRAIN_SHA, source_files=sources(), items=128, shards=4, modes=modes,
+        data_sha256=data_sha, source_files=sources(), items=items, shards=4, modes=modes,
         files={name: sha256_file(output/name) for name in ('questions.jsonl','controls.jsonl','gold.jsonl','native-contexts.json','native-reference.pt')},
         ordered_item_ids=[r['item_id'] for r in questions], model_identity=reader['id'],
         reader=reader, evaluation_signature=signature,
+        native_origin=native_origin,
         writer=None if bundle is None else bundle['writer'],
         writer_execution_device=None if bundle is None else bundle['execution_device'],
         notes_bundle=None if bundle is None else str(Path(notes_bundle).resolve()),
@@ -123,11 +155,11 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
         compute='fp32', selection='single_greedy_tokenizer_defined_support',
         writer_or_cot_prefill=32, reader_prefill=128, direct_and_cot_cap=80, reader_answer_cap=16,
         future_split='Generation never opens gold.jsonl or original supervised TRAIN rows. Supplied notes are computed only from prefix expressions.',
-        endpoint='Complete numeric-answer accuracy; all unsupported/errors/caps retained. Correct-partial minus same-reader empty and direct are primary reader diagnostics.',
+        endpoint='Complete numeric-answer accuracy; all unsupported/errors/caps retained. Own-minus-same-reader empty/direct/other, and ordinary compact-CoT at same80 total action cap.',
         controls='Intact global derangement, native-length matched when peers exist; no repeat, trim, repair or utility selection.',
         other_teacher_unmatched_lengths=sum(not c['other_teacher_length_matched'] for c in controls),
         runtime_policy=runtime_policy(), cache_prefill_max_logp_error=1e-3,
-        limits=['TRAIN-only diagnostic, not generalization or final TEST.',
+        limits=['TRAIN is fitting only. Separate512-item DEV panels test interpolation, unseen structures, range and composition; never pool them or call them official TEST.',
                 'Trained readers, if present, are explicitly TRAIN128 overfit diagnostics, not scientific warm starts.',
                 'Direct prompt asks for the answer; compact CoT starts at Work. Equal80 action caps do not equal measured FLOPs.',
                 'Supplied-state reading is achievable-reader evidence, not student utility.',
@@ -150,7 +182,10 @@ def load(output):
             raise ValueError('Frozen writer bundle changed')
         load_bundle(p['notes_bundle'], p['ordered_item_ids'])
     qs, cs = rows(output/'questions.jsonl'), rows(output/'controls.jsonl')
-    if [q['item_id'] for q in qs] != p['ordered_item_ids'] or [c['item_id'] for c in cs] != p['ordered_item_ids']:
+    if (p.get('panel') not in COHORTS or (p['data_sha256'],p['items'])!=COHORTS[p['panel']]
+            or len(qs)!=p['items'] or any(q['panel']!=p['panel'] for q in qs)
+            or len(set(p['ordered_item_ids']))!=p['items']
+            or [q['item_id'] for q in qs] != p['ordered_item_ids'] or [c['item_id'] for c in cs] != p['ordered_item_ids']):
         raise ValueError('Complete ordered cohort required')
     return p, qs, cs
 
@@ -250,7 +285,7 @@ def generate(output, shard, until):
                     value.update(wall_seconds=time.monotonic()-before,n_actions=len(value['actions']))
                     stream.write(json.dumps(value,allow_nan=False)+'\n');stream.flush();report['rows']+=1
                     print(json.dumps(dict(shard=shard,mode=mode,items=(index-shard)//4+1,rows=report['rows'],utc=utc_now())),flush=True)
-        if report['rows'] != 32*len(p['modes']):
+        if report['rows'] != len(range(shard,p['items'],4))*len(p['modes']):
             raise RuntimeError('All attempts must be retained')
         report.update(status='complete_all_attempts',answers_sha256=sha256_file(d/'answers.jsonl'))
     except BaseException as error:
@@ -277,24 +312,27 @@ def score(output):
         if key in cells or value['item_id'] not in gold or value['mode'] not in p['modes']:
             raise ValueError('Unique complete declared cells required')
         cells[key]={**value,**score_answer(value,gold[value['item_id']],cot=value['mode']=='cot')}
-    if len(cells)!=128*len(p['modes']):
+    n=p['items']
+    if len(cells)!=n*len(p['modes']):
         raise ValueError('Keep every answer attempt in its denominator')
     result={}
     for mode in p['modes']:
         values=[cells[q['item_id'],mode] for q in questions]
-        result[mode]=dict(items=128,correct=sum(v['score'] for v in values),status_counts=dict(Counter(v['status'] for v in values)),unsupported=sum(v['status']!='ok' for v in values),generated_actions=sum(v['n_actions'] for v in values),writer_actions=sum(v['n_writer_actions'] for v in values),decode_wall_seconds=sum(v['wall_seconds'] for v in values),writer_wall_seconds=sum(0 if v['source_note'] is None else v['source_note']['wall_seconds'] for v in values))
+        result[mode]=dict(items=n,correct=sum(v['score'] for v in values),status_counts=dict(Counter(v['status'] for v in values)),unsupported=sum(v['status']!='ok' for v in values),generated_actions=sum(v['n_actions'] for v in values),writer_actions=sum(v['n_writer_actions'] for v in values),decode_wall_seconds=sum(v['wall_seconds'] for v in values),writer_wall_seconds=sum(0 if v['source_note'] is None else v['source_note']['wall_seconds'] for v in values))
     contrasts={}
     pairs=[('teacher','empty'),('teacher','direct'),('teacher','corrupt'),('teacher','other_teacher'),('cot','direct')]
     if 'own' in p['modes']:
         pairs += [('own','empty'),('own','direct'),('own','other'),('teacher','own')]
     for b,a in pairs:
+        if b not in p['modes'] or a not in p['modes']:
+            continue
         # Paired item bootstrap is computed below, rather than resampling tokens.
         import numpy as np
         delta=np.array([cells[q['item_id'],b]['score']-cells[q['item_id'],a]['score'] for q in questions],dtype=float)
-        picks=np.random.default_rng(17).integers(0,128,size=(5000,128));ci=np.quantile(delta[picks].mean(1),[.025,.975])
-        contrasts[b+'_minus_'+a]=dict(difference=float(delta.mean()),ci95=ci.tolist(),unit='accuracy_fraction',bootstrap_items=128,repeats=5000,seed=17)
+        picks=np.random.default_rng(17).integers(0,n,size=(5000,n));ci=np.quantile(delta[picks].mean(1),[.025,.975])
+        contrasts[b+'_minus_'+a]=dict(difference=float(delta.mean()),ci95=ci.tolist(),unit='accuracy_fraction',bootstrap_items=n,repeats=5000,seed=17)
     atomic_json(output/'summary.json',dict(schema=SCHEMA,status='complete_all_attempts',finished_utc=utc_now(),
-        protocol_sha256=sha256_file(output/'protocol.json'),reader=p['reader'],reader_execution_device='xla',
+        protocol_sha256=sha256_file(output/'protocol.json'),panel=p['panel'],reader=p['reader'],reader_execution_device='xla',
         writer=p['writer'],writer_execution_device=p['writer_execution_device'],
         results=result,contrasts=contrasts,limits=p['limits']))
     return result
@@ -304,9 +342,10 @@ def main():
     a=argparse.ArgumentParser(description=__doc__);a.add_argument('command',choices=('prepare','generate','score'))
     a.add_argument('--output',type=Path,required=True);a.add_argument('--data-file',type=Path);a.add_argument('--model-dir',type=Path);a.add_argument('--base-protocol',type=Path)
     a.add_argument('--shard',type=int);a.add_argument('--deadline-utc');a.add_argument('--reader-binding',type=Path);a.add_argument('--notes-bundle',type=Path)
+    a.add_argument('--panel',choices=tuple(COHORTS),default='TRAIN');a.add_argument('--modes',nargs='+');a.add_argument('--native-from',type=Path)
     v=a.parse_args()
     if v.command=='prepare':
-        result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol,v.reader_binding,v.notes_bundle)
+        result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol,v.reader_binding,v.notes_bundle,v.panel,v.modes,v.native_from)
     elif v.command=='generate':
         result=generate(v.output,v.shard,v.deadline_utc)
     else:

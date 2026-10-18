@@ -13,9 +13,9 @@
    No steady-memory/throughput or uninterrupted/RNG-readback claim. Qualified
    training and complete-answer code merged to main; active baseline still uses
    immutable partial-state-v6 worktree71609ee. Do not edit its pinned sources.
-   B0 TRAIN128 all7answer controls are active on physical3/logical12–15:
-   local/diagnostics/partial-state-v6-TRAIN128-B0-answers-v1, deadline21:00UTC.
-   All4actual mappings captured; score gold only after entire physical closure.
+   B0 TRAIN128 all7answer controls are closed, independently scored and EBS
+   archived along with reader/CoT. Its terse untrained prompts fail formatting;
+   retain unsupported counts rather than treating zeros as broad capability.
 3. Cache-capacity comparison is independently complete: same losses/norms,
    LRU2 tail43.466s versus2561.925s;94new handles versus94cache hits/zero new.
    Both world4/global4 tails bounded, so no originalworld32 OOM repair claim.
@@ -25,19 +25,19 @@
    have verified EBS copies; full states32/64/96/128 remainNVMe. CPU writer
    generation is128/128exact partial states with naturalEOS, no caps/errors.
    Public training/CPU reports preserve complete outputs and all metrics.
-   Active answer controls: B0v1 onphysical3, reader128v2 on5, compactCoT128v2
-   on6, plus paired GPU writer notes on7. Every direct/CoT prefill check passes;
-   long-reader prefill and first generation graphs are still compiling. Retain
-   patience; all jobs have finite original timeouts and512GiB floor/no retries.
-   Controls/output folders share the partial-state-v6-TRAIN128-* IDs. B0 stops
-   by21:00UTC, others23:00UTC with3-hour per-process caps. CPU writer completed.
-   Source snapshots: partial-state-v6/71609ee, partial-state-eval-v6/ddb40b0,
-   partial-state-channel-v6/a73c347. NEVER edit these while their jobs are active.
-   CPU-generated own/other note IDs exactly match existing teacher/other_teacher
-   inputs on all128fit cases. After reader stages close, verify actual prompt
-   IDs/model/stop/cap/prefill hashes before explicitly composing those responses;
-   do not claim extra independent inference. Mismatches require actual new calls.
-   Main v3 supports complete own-note evaluation on later nonidentical cohorts.
+   All2,688 B0/reader/CoT complete answers are closed and independently re-parsed.
+   Reader direct120/empty119/teacher128/corrupt4/unrelated1 of128; CoT native128.
+   AllCPU own/other prompts match executed teacher/other controls, including
+   cap16,prefill128,decoder/stopping and frozen identity: explicit response reuse
+   gives128/1, not new calls or extra samples. Full records public and onEBS.
+   Only paired Trainium writer generation remains active onphysical7:
+   local/diagnostics/partial-state-v6-TRAIN128-writer128-GPU-notes-v1;
+   source partial-state-channel-v6/a73c347, bound23:00UTC/3hours,512GiB floor.
+   Its compiler is active; never edit the snapshot or rush a healthy compilation.
+   Main v4 extends the fixed complete-answer protocol to four DEV512 panels,
+   permits predeclared condition subsets and reuses the same model's sealed
+   CPU native reference. No training-core source changes; original bindings stay
+   valid. Finish checks/snapshot then prepare/launch held diagnostics, no TEST.
    Full-trace CoT, including root operation, is a stronger future baseline;
    data-only census showsTRAIN fits64label slots. Do not relabel old compactCoT.
 5. Separate512-item interpolation, structure, range and composition DEV panels
