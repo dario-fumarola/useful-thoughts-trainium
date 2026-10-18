@@ -1,0 +1,149 @@
+{
+  "artifact_pins": {
+    "local/analysis/postorder-note-candidates-v2.inventory-audit.json": "9508022cccc81367a39df31e0850b3bd90ba81d1e448acb946b98e6b650e91ea",
+    "local/analysis/postorder-sft-pipeline-fix-acceptance-20261018.json": "a0b5b1956324ea46395c8b48c04c0c4d01015d86dbad96b140290a7a2080e4a8",
+    "local/diagnostics/finemath-compound-anchor-candidates-v1/materialization-audit.json": "ff8f0b2f45104a277606b72fbdea965432c16aeebb355587fe910ad3b4038d08",
+    "local/nvme/data/postorder-note-candidates-v2/manifest.json": "306aa9d753912bd610cb18f2e06cdf71c557e6127ae40c3c06207b27b364145a"
+  },
+  "candidate_order": "Compound representatives, other compound cuts, one-op representatives, other one-op cuts; stable frozen hash order within groups",
+  "component_definitions": {
+    "C": "Ordinary CE on all527 labels of original528-token source.",
+    "T": "Ordinary CE on every interleaved augmented-source token; not the published TPT document-then-annotation recipe.",
+    "W": "Separately averaged writer note+first-close CE + reader natural16 CE +0.5 ordinary-source CE."
+  },
+  "counts": {
+    "attempted_items": 14680,
+    "attempted_unique_documents": 13182,
+    "op_counts": {
+      "1": 8847,
+      "2": 3176,
+      "3": 1620,
+      "4": 507,
+      "5": 397,
+      "6": 122
+    },
+    "rejected_items": 11,
+    "retained_items": 14669,
+    "retained_unique_documents": 13175
+  },
+  "cpu_checks": {
+    "compileall": true,
+    "limits": "Driver draft syntax included; new driver semantic/distributed/BF16 qualification not included.",
+    "log_directory": "local/checks/tests.KD2BDH",
+    "tests": 1224,
+    "toy_smoke": true
+  },
+  "created_utc": "2026-10-18T06:11:02+00:00",
+  "current_filter": {
+    "cells": 44007,
+    "decision": "UnderlyingI3 reader-learning fallback. FixedI6 mixing is separate evaluation only.",
+    "horizon": 16,
+    "identity": "postorder-note-frozen-filter-v1",
+    "interface": "I3",
+    "keep": "STRICTteacher-minus-empty>0 on full numeral+actual closingboundary; numeric-only/natural16diagnostics separate.",
+    "modes": [
+      "raw",
+      "empty",
+      "teacher"
+    ],
+    "protocol_sha256": "f19f2ca040c5b01bba7ff46faff0d9c3e2475ab4a0400ef3d2ee1d6fede7f2b1",
+    "selection": "First5120positive candidates in frozen order; no shortfall shrink, no sorting by gain.",
+    "status": "running"
+  },
+  "dataset": "Real FineMath TRAIN documents, native source windows from two closed curator publications.",
+  "examples": [
+    {
+      "absolute_source_cut": 303,
+      "answer_surface": "15",
+      "binary_ops": 2,
+      "document_id": "cf57186e37e2a98405a470b88f41f8939a72a888490947f76cfad024ad73d512",
+      "expression": "3 + 8 + 4",
+      "item_id": "cf57186e37e2a98405a470b88f41f8939a72a888490947f76cfad024ad73d512:compound-priority-v1:303",
+      "teacher_note": "Compute: 3 + 8 = 11. 11 + 4 = 15. Result: 15.",
+      "teacher_tokens": 29
+    },
+    {
+      "absolute_source_cut": 6839,
+      "answer_surface": "77",
+      "binary_ops": 3,
+      "document_id": "99f638686c275a1d5139976e513c41e1a5c9e17685dde30a16ec11e6a5a5a7e2",
+      "expression": "20+17+21+19",
+      "item_id": "99f638686c275a1d5139976e513c41e1a5c9e17685dde30a16ec11e6a5a5a7e2:compound-priority-v1:6839",
+      "teacher_note": "Compute: 20 + 17 = 37. 37 + 21 = 58. 58 + 19 = 77. Result: 77.",
+      "teacher_tokens": 44
+    },
+    {
+      "absolute_source_cut": 716,
+      "answer_surface": "720/6",
+      "binary_ops": 4,
+      "document_id": "e3dcc70922e52ef823f196722a3d72e80be8bbad6fd2db80a4a3d0098566d673",
+      "expression": "(10*9*8)/(3*2)",
+      "item_id": "e3dcc70922e52ef823f196722a3d72e80be8bbad6fd2db80a4a3d0098566d673:compound-priority-v1:716",
+      "teacher_note": "Compute: 10 * 9 = 90. 90 * 8 = 720. 3 * 2 = 6. 720 / 6 = 120. Result: 720/6.",
+      "teacher_tokens": 56
+    },
+    {
+      "absolute_source_cut": 825,
+      "answer_surface": "676",
+      "binary_ops": 6,
+      "document_id": "4d9e82ac4ec97b9e5d08a8ecb6eb45119a335d7585cfd4401d70bd8d5709dad7",
+      "expression": "75 + 90 + 96 + 105 + 90 + 105 + 115",
+      "item_id": "4d9e82ac4ec97b9e5d08a8ecb6eb45119a335d7585cfd4401d70bd8d5709dad7:compound-priority-v1:825",
+      "teacher_note": "Compute: 75 + 90 = 165. 165 + 96 = 261. 261 + 105 = 366. 366 + 90 = 456. 456 + 105 = 561. 561 + 115 = 676. Result: 676.",
+      "teacher_tokens": 95
+    }
+  ],
+  "examples_rule": "First retained prospective-order example for each binary-op count2,3,4,6, before any likelihood outcomes.",
+  "fresh_DEV": "256 raw-v3 documents sealed with198 reserves; disjoint knownB0/Phase1/earlierprobe documents. Not read for this TRAIN preparation.",
+  "global_I3_shapes": {
+    "augmented": {
+      "target_slots": 704,
+      "width": 704
+    },
+    "reader": {
+      "target_slots": 16,
+      "width": 704
+    },
+    "source": {
+      "target_slots": 544,
+      "width": 544
+    },
+    "writer": {
+      "target_slots": 128,
+      "width": 640
+    }
+  },
+  "global_shape_scope": "Measured on all14669labels, used for declared first64hardware qualifier; final science shapes remeasured on selected5120.",
+  "identity": "postorder-note-candidates-v2",
+  "limitations": [
+    "Teacher notes are external labels, not generated thoughts or proven frozen-reader assistance.",
+    "Repeated real TRAIN documents may supply different source cuts; source-occurrence exposure and unique documents are reported separately.",
+    "Operator count selects compound equations, not measured numerical difficulty.",
+    "Scalar-boundary teacher positivity may reflect format repair; it cannot replace own-minus-raw/other generated-note endpoints.",
+    "Original preparation manifest unique_documents field counts attempted docs; verified annex gives13175retained vs13182attempted.",
+    "No SFT/RL has launched. Official TEST payloads remain unused."
+  ],
+  "mask_semantics": "Kernel future_mask is legacy name for non-note labels. Source/T include all declared ordinary tokens; reader only natural16.",
+  "mechanical_rejections": "11 traces exceed native128-token note cap; all attempts/reasons saved, no truncation or replacement.",
+  "native_teacher_contract": {
+    "base_eos": 151643,
+    "first_reader_close": 151668,
+    "max_note_tokens": 128,
+    "native_stop_contract": "Same native stop/close for W and T; no EOS-padding inferred masks.",
+    "writer_loss": "Note tokens plus first native close token; remaining reader close and reanchor fixed."
+  },
+  "schema": "postorder-symbolic-candidate-inventory-v1",
+  "source_candidate_identity": "compound-priority-equation-candidates-v1",
+  "source_files": {
+    "tests/test_compound_anchor_candidates.py": "9fe46469a4401bd4a361c4855b6a9108cc4e6347edb25c242cf80aca0837f91b",
+    "tests/test_filter_symbolic_notes.py": "a66e2fea0e60778423bbb25a8e898904f2e43ea6463fb95f07303de5a7be5734",
+    "tests/test_symbolic_note_labels.py": "4db48c2b20bb94865027fc609bb0bbe1488bddd2c9312ce1a2ac36ffa5f4b979",
+    "tests/test_useful_note_sft_data.py": "be1a79da5f9765625f0b16b5beebd851c75a6d833016e39ab6bdbffaf9303b3a",
+    "train/compound_anchor_candidates.py": "e8e727b5d9104e7cedc3eaf12d9c7d0f3a105bce0edfd41a45ad5eb8d4dddaee",
+    "train/filter_symbolic_notes.py": "576b0e56c7b20d7a059498d99f822e112748a3cea7d4f6db10a1f9e1cfe6d6b8",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb"
+  },
+  "status": "complete_CPU_labels_and_packing_NOT_Neuron_training_or_useful_notes",
+  "supervision": "Future-aware exact bounded Fraction arithmetic in AST postorder; answer surface matches source continuation. Writer receives prefix-only context and previous teacher note tokens."
+}

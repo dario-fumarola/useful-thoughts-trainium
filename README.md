@@ -38,8 +38,9 @@ general copying but retained a3.007-nat empty-format tax.
 Next is supervised writer-and-reader warm-start under the underlying re-anchored
 interface, with ordinary source-CE and augmented-source controls. This is the
 declared reader-learning fallback for arithmetic; fixed mixing remains a separate
-evaluation control. Real source equations supply exact symbolic substep labels,
-and frozen-reader filtering will retain acceptance and rejection counts. A fresh
+evaluation control. Real source equations supplied14,669 exact symbolic substep labels; the complete
+frozen-reader acceptance filter is running. The native label recipe and balanced
+[calculation examples are saved](validation/postorder_symbolic_candidate_inventory_20261018.json). A fresh
 post-training DEV256 is sealed. No new SFT or RL is active; official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 

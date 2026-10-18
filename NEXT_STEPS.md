@@ -1,27 +1,31 @@
 # Current queue
 
-1. I0–I6 are complete. I6 uses one TRAIN-fitted w=3/8 on full-vocabulary
-   I3/raw logits. GENERAL passes: tax−.154, copy gain+11.948, sensitivity+12.203.
-   ARITHMETIC fails unchanged +2 gates:−.018/+.641/+.249. Independent complete
-   audit passed; finish one EBS archive and publish the compact full result.
-   These are supplied-copy reader checks, not fresh-generated writer evidence.
-2. Use explicit arithmetic reader-learning fallback under underlying I3 for SFT;
-   I6 remains a separate fixed evaluation control, not a mislabeled mixed-reader
-   training objective. New exact postorder teacher labels and prospective compound
-   priority use only saved TRAIN equations. Preserve old pools and held256.
-3. Prepare>=5000 real TRAIN examples and>=256 held DEV. Relax arithmetic to
-   computable equations; general hindsight notes use high-surprisal anchors and
-   frozen-reader positive full-span gain filtering. Save all acceptance/rejection
-   rates. Future-aware teacher labels remain separate from prefix-only policy inputs.
-4. Qualify BF16 compute/FP32 master updates, then W versus a credible ordinary-CE
-   control, and a thinking-augmented CE arm. Use two epochs, global32, LR1e−5,
-   warmup/cosine. Lock final objectives/exposure before launch. Fresh notes, raw,
-   matched empty and unrelated controls; GSM8K TRAIN>=128, preferably512. Evaluate
-   downstream regardless of local sign.512-example draft is superseded, never launched.
-5. RL only after useful fresh generated notes, with fullspan rewards, G16/cap256,
-   W reference guardrail and stored behavior probabilities. Profile the fixed
-   overhead first; no256-step study until useful policy evidence and<=90s steps.
+1. Monitor the released four-core `postorder-note-frozen-filter-v1` to complete
+   all44007raw/empty/teacher cells, native checks and physical closure by09:00UTC.
+   Only then reduce acceptance/numeric/natural16 diagnostics. Keep first5120
+   strictly positive scalar+boundary gains in frozen compound-priority order,
+   or report shortfall. No smaller quota, gain ranking, resampling or auto retry.
+2. Finish the ordinary-I3 W/C/T driver CPU fixtures and one batch review; qualify
+   actual BF16 compute, FP32 parameters/masters/moments, soleZeRO reduction and
+   real replicated updates on separately declared first64TRAINexamples.
+   The `postorder-note-qualification64-v2` CPU inventory/shapes are ready.
+   This hardware subset is not a scientific arm or the>=5000-example quota.
+3. If the complete filter supplies5120positives, freeze final native masks/shapes
+   and run W/C/T from freshB0, same occurrences/order/updates, twoepochs/global32,
+   LR1e−5/20warmup/cosine, two explicit seeds. W=writer+reader+.5source means;
+   C=full-source527CE; T=all-token interleaved augmentedCE, not exact publishedTPT.
+   Report extra supervision/tokens/latency rather than pretending compute matching.
+4. Evaluate fresh heldDEV256 under B0 and self reader, fullnatural16 plus scalar
+   and numeric-only diagnostics:raw/empty/freshown/other/oracle. FixedI6w=.375
+   is a separate evaluation control. Run GSM8KTRAIN>=128, preferably512, all
+   direct/empty/one-thought arms regardless of local sign; unsupported in denominator.
+5. No RL until fresh generated own beats raw and other with oracle headroom.
+   Then fullspan reward/G16/cap256/Wreference stabilization; profile real fullsteps
+   and require<=90s before any longRL. The empty profiler timed out during cold
+   compilation and supplies no warmed/BF16throughput qualification.
 
-Keep STATUS entries<=15 lines/experiment; hashes and archives live in JSON.
-Never read TEST. Report control performance beside every thought-mode claim.
-The owner allows adapting this queue with reasoned, explicit new experiment IDs.
+I0–I6 are complete and public. TRAIN-fitted scalar mixing qualifies GENERAL
+supplied copying; ARITHMETIC fails unchanged+2gates. UnderlyingI3 SFT is the
+explicitly allowed reader-learning fallback, not mixed-reader training.
+Exact postorder labels are future-aware supervision; policy inputs remain prefix-only.
+Keep STATUS entries<=15lines/question and hashes/receipts in JSON. Never readTEST.

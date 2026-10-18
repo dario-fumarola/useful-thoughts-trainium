@@ -1,4 +1,4 @@
-# Status — 2026-10-18 05:56 UTC
+# Status — 2026-10-18 06:11 UTC
 
 ## Closed: batched reader interface qualification
 Question: can unchanged B0 use a supplied full-target-copy note?
@@ -44,17 +44,36 @@ Owner replaced this with >=5000 examples, larger held DEV and BF16 training.
 Draft protocol/plan and CPU outputs retained; do not launch old draft.
 CPU preparation/audit complete; relaxed computable-equation curation now running.
 
-## Active: real supervised calculation data
+## Closed: real supervised calculation data
 Question: can real source equations supply>=5000 labels and independent held DEV?
-Old causal scan4221TRAIN/252DEV; old supervised scan5520TRAIN/320DEV; both retained.
-Raw-v3 scan closed:12688TRAIN/713DEV; new held256 sealed with198 untouched reserves.
-Closed v2/v3 rows supply5448 compound TRAIN documents /5833 distinct>=2-op equations.
-New compound and compound-priority all-op inventories are CPU-only, in preparation.
-Teacher labels now include exact postorder substeps; future-aware labels, prefix-only writer.
-Old5520 full-calculation label preparation retained; it is not final filtered training data.
-Next: label inventory/native lengths, frozen-B0 I3 full-scalar positive filter; retain all attempts.
-No SFT launched. New driver CPU qualification pending; actual BF16 updates not yet qualified.
-Root packer/filter/labels; data candidate selection; distributed driver; review after final freeze.
+Old causal4221TRAIN/252DEV and supervised5520TRAIN/320DEV pools retained.
+Raw-v3 closed:12688TRAIN/713DEV; held256 sealed with198 unused reserves.
+Saved-row union:5833compound cuts/5448docs; all-op14680cuts/13182docs.
+Exact postorder Fraction labels:14669retained/11over128-token rejections,13175docs.
+Native writer first-close labels, source527/reader16/T-all exposure measured on every label.
+Counts/selection/provenance/packing and1224CPUtests+smoke/compile pass; no model-training claim.
+Public recipe/examples:validation/postorder_symbolic_candidate_inventory_20261018.json.
+Old manifest attempted-document count clarified in independently read-back inventory annex.
+
+## Active: frozen-reader teacher filtering
+Question: do supplied symbolic substeps beat empty-format on enough real TRAIN anchors?
+ID:postorder-note-frozen-filter-v1;14669items×raw/empty/teacher=44007cells.
+I3/fullnumeral+actualboundary primary; numeric-only and natural16 reported separately.
+STRICTteacher−empty>0; first5120positives in fixed compound-priority order, no shrink/ranking.
+All4 native gates pass; workers2520727/2520745/2520742/2520739 map to devices7/8/9/10.
+Logicalcores28/32/36/40, launched06:09:24, deadline09:00UTC; all12 live identities captured.
+Output:local/nvme/diagnostics/postorder-note-frozen-filter-v1; controls same basename offNVMe.
+Data agent owns monitoring/complete physical closure/summary/EBS archive; no retries.
+No partial gains inspected. Root source closure frozen; unrelated driver work may continue.
+Next: complete44007cells and closure before reducer/selection; then final5120CPUinventory.
+
+## Pending: actual BF16 supervised qualification
+ID:postorder-note-qualification64-v2; CPU64items/64docs, no model job yet.
+Global-pool shapes:source544/544,writer640/128,reader704/16,augmented704/704.
+UnderlyingI3 reader-learning fallback; fixedI6mix is an evaluation control only.
+Driver draft unqualified: distributed adding CPU gradient/state fixtures, then one batch review.
+Next: actual two-update BF16/FP32master/ZeRO checks on separate hardware; no science launch yet.
+All first-v1 CPU qualification files retained as stale-source preparation, never run on hardware.
 
 ## Closed incomplete: fixed empty-pipeline cost
 Question: how much work survives immediate EOS; how do cap and precision affect it?
@@ -76,10 +95,10 @@ README links full results, controls, parser limits and verified checkpoint archi
 All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
-Root: batched probe source/interfaces and current public findings.
-Data: >=5K TRAIN arithmetic / >=256 DEV feasibility, preserve original real corpus.
-Distributed: batched interface implementation/preparation; completed v3 EBS archive; old training draft superseded.
-Review: one review per question, endpoint/design caveats and final result checks.
+Root: frozen data/labels/filter source, training release and public findings.
+Data: active four-core teacher filter, monitoring/closure/archive; original corpus preserved.
+Distributed: supervised driver CPU qualification; old512-example draft superseded.
+Review: accepted frozen filter source; evaluator reconnaissance, then final driver review.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.
