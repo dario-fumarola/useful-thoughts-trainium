@@ -67,7 +67,11 @@ paths, despite supplied-copy gains of +25.572/+18.520 nats. Of256 notes,
 227 hit the cap. The [complete baseline](validation/general_note_held256_B0_20261018.json)
 retains every note/control/vector, costs and the first6 fixed examples. This
 panel conditions on high B0 surprisal; that does not guarantee reasoning-worthy
-text. The broader filtered TRAIN batch is generating teacher notes.
+text. A completed concise-helper prompt probe also fails: the prospective
+fewshot/first-line mixed-reader result is own−raw −.439 [−.596,−.281] and
+own−unrelated −.056 [−.150,+.031] nats. All512 notes and12,288 cells are retained
+in the [complete helper result](validation/general_prefix_helper_20261018.json).
+The broader filtered TRAIN batch is generating teacher notes.
 
 Arithmetic has little numeric headroom: its raw number-only NLL is0.648 nat.
 A descriptive number-only contrast improves by0.262 [0.147,0.401] nat with the

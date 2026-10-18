@@ -1,4 +1,4 @@
-# Status — 2026-10-18 09:49 UTC
+# Status — 2026-10-18 10:03 UTC
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -146,20 +146,29 @@ Verified218file EBS archive; independent all3072vectors/14CIs/context/cost check
 Public validation/general_note_held256_B0_20261018.json plus complete cells/notes/fixedfirst6examples.
 Decision: retain negative B0 baseline; prospective helper probe and supervised warm-start next.
 
-## Released: prefix-only helper prompting
+## Closed negative: prefix-only helper prompting
 Question: does a concise fewshot helper prompt improve held general full16 likelihood?
-ID:general-prefix-helper-held256-v1; same256DEV, plain/fewshot ×full/firstline.
-Two genuine prefix-only cap64attempts/document; actual query has no continuation field.
-Reuse three fixed synthetic demonstrations; all512attempts close before controls/future scoring.
-Intact global donors per policy/extraction; raw/empty/own/other/copy/corrupt×I3/I6,12288cells.
-Sole primary: fewshot/firstline I6 own−raw AND own−other paired lower95%>0.
-Allother variants are secondary; no SFT gate change, rank selection or discarded generation cost.
-20focused/1438combinedCPUchecks, smoke/compile and root source/runtime review pass.
-Plain/fewshot prompt514/739tokens; prefill544/768; maximumreader604+16<1024.
-Released logical44/48/52/56, physical11–14; ports65521–28, deadline13:30UTC.
-Root verifies emptydevices/ports/pins and binds completed generalbaseline archive; reviewer owns stages.
-Public prospective design: validation/general_prefix_helper_design_20261018.json; no outcome yet.
-Reviewer supervises completion, physical closure, one summary and verified EBS archive.
+ID:general-prefix-helper-held256-v1; same256DEV, plain/fewshot ×full/firstline, cap64total.
+All512 genuine prefix-only attempts/12288 cells complete, zeroerrors; all8native gates pass.
+Sole primary fewshot/firstline fixedI6 own−raw AND own−other paired lower95%>0 fails.
+Own−raw−.439[−.596,−.281]; own−empty−.225[−.316,−.139]; own−other−.056[−.150,+.031].
+All eight variant/path own−raw intervals negative; no secondary variant rescues utility.
+Fewshot180caps/76EOS/0empty; plain239caps/17EOS/2empty; all whole costs retained.
+All10exit0/all30actualPID-start/SID/groups/tmux absent, devices11–14empty by09:57UTC.
+Verified231file EBS archive; root independent512native notes/12288contexts/vectors/56CIs/costs exact.
+Public validation/general_prefix_helper_20261018.json plus complete cells/notes/fixedfirst6examples.
+Decision: preserve negative prompt result; continue supervised warm-start, no RL.
+
+## Active: sixteen-worker GSM8K equivalence
+Question: can16concurrent workers preserve the original four-worker native evaluation paths?
+ID:gsm8k-first32-native96-equivalence-v2; fixedfirst32 of512, all96 direct/empty/thought paths.
+Exact same all512 common widths/caps/policy; original B0 archive references, no gold or accuracy read.
+Reviewed35focused/1494combined checks pass; root verifies helper closure/archive, idle devices and pins.
+Launched10:00UTC, deadline13:30UTC; logical44–59/physical11–14, new privateRAM/32freeports.
+All48actualPID-start/SID/env/mappings captured; all16native gates pass, no runtime errors.
+Output:local/nvme/diagnostics/gsm8k-first32-native96-equivalence-v2; controls local/diagnostics/same name.
+Review owns whole96 generation→physical closure→native field comparison→closure/archive.
+A qualifying96-path comparison cannot pass the full1536-path accuracy loader; no full512 job released.
 
 ## Closed negative: fixed first-line note ablation
 Question: does target-independent truncation remove damage from sprawling B0 notes?

@@ -19,14 +19,16 @@
    Data owns all teacher attempts→physical closure→global intact donors→all196608
    reader cells→closure→first5120 eligible I3positive labels, with full archive.
    No cutoff changes, gain ranking, shortened quota, source edits or automatic retry.
-4. Finish the active prefix-helper probe on44/48/52/56, deadline13:30UTC.
-   Review owns all512 whole notes, closure, allfour policy/extraction variants,
-   all12288 reader cells, closure and archive. Fewshot/firstline fixedI6 is the
-   sole primary; no SFT gate change. In parallel, Review is CPU-preparing the reviewed, tested
-   GSM512 {4,16}-worker extension and separate fixedfirst32/native96-path
-   equivalence qualifier on logical44–59 after helper closure/archive. No model
-   release until actual idle topology/ports and runtime review;
-   it may never masquerade as a full512 accuracy result.
+4. Prefix-helper is closed negative and independently verified/archived:512whole
+   notes/12288cells, every own−raw interval negative; soleprimary fails. Finish
+   active GSM96 exact-native equivalence on logical44–59/physical11–14,
+   deadline13:30UTC. Review owns all16jobs/48actual identities/native gates,
+   whole96path generation/physical closure, fixedreference compare and archive.
+   No gold, accuracy, full512 generation or retry. All16native gates currently pass.
+   A separate secondary synthetic compound-arithmetic256 diagnostic is CPU-only
+   in preparation; it separates low arithmetic headroom from reader insensitivity
+   and never replaces or gates the real-document study. No synthetic allocation
+   until GSM96 closure/archive and reviewed source/CPU checks.
 5. Once all upper-partition data/probes close and archive, prepare a separate
    matched C′ seed1 release on logical32–63 while W uses0–31. Same world32/global32
    recipe and ordered documents; new actual topology/port evidence required.
