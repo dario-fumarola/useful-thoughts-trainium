@@ -6,25 +6,27 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 21:40UTC handoff: all v6 jobs are closed. The complete fresh comparison
-passes independent18432answer/2048note/state/interval/vector checks and full762-file
-EBS readback. Public result:validation/partial_state_v6_DEV512_frozen128_20261018.json.
-Student285/238/140/151 versus compactCoT287/235/118/48 of512; same-reader controls
-lose on all panels, all notes stop. Positive restricted mechanism, one seed; split
-had two models/twice the updates. Preserve all old negatives and source3301d22.
+October18 22:38UTC handoff: v6 fresh comparison is complete and positive in the
+restricted synthetic setting. Public18432answers/2048notes and independent audits:
+validation/partial_state_v6_DEV512_frozen128_20261018.json. Split had two models/
+twice the updates; preserve that caveat and frozen source3301d22.
 
-Next exact task: merge reviewed partial-state-study-v7/2e22fa2 and run full checks,
-resolve disk/recovery space, then release only fresh-B0 reader5120 seed2026101806
-on logical12–15/physical3 through full64 and an actual fresh-process restore.
-No learning launched yet. New prospective design includes A640/Bcompact640/Bfull640
-and R320+W320, two seeds; all panels/terminal checkpoints reported, no TEST.
-Protocol drafts created before fresh outcome review:
-local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review.
-See NEXT_STEPS.md and validation/partial_state_v7_matched_design_20261018.json.
-No8B launch: metadata/bank sizing only; current full replicated layout cannot fit.
-Keep35GiB EBS reserve. Old inactive qualification duplicates are fully read-back
-verified;690GiB old qualification storage offers lossless archival space. Preserve
-unique science and a recent full resumable checkpoint. No automatic retries.
+Current question:matched-cost/two-seed study at fresh B0,5120expressions, source
+57d3220 in immutable local/worktrees/partial-state-science-v7. All1601checks pass.
+Design includes A640/Bcompact640/Bfull640 versus R320+W320,96total inference actions.
+First-seed reader320 independently passes full64/160/320, actual fresh64 restore
+and ordered65–320, protected full terminal and frozen binding. First writer320
+physically closes22:29UTC; its independent audit/EBS copy runs in tool session33884:
+local/analysis/partial-state-v7-writer320-terminal-audit-20261018.log.
+Controls/output:local/{diagnostics,nvme/runs}/partial-state-v7-writer-TRAIN5120-seed2026101806-v1.
+Next:finish writer audit/binding, then launch direct640 and both CoT640 controls,
+then seed2. No new DEV answers inspected. Check NEXT_STEPS.md before action.
+
+Keep35GiB EBS reserve. Three inactive engineering EBS duplicates retired only
+after fresh full readback on both sides; complete original NVMe copies remain.
+Four NVMe alias pairs already shared inodes, so re-verification freed0bytes.
+Further states need verified lossless archival/retention before disk exhaustion.
+No8B launched; full replicated weights+grads exceed24GiB/logical bank. No RL.
 
 ## Your job
 

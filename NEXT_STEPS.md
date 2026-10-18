@@ -8,22 +8,26 @@
    raw/empty/unrelated contrasts are positive on all four panels. All notes stop
    naturally. This is one-seed synthetic evidence; split used two models and
    twice the training updates. No matched-cost or real-text pretraining claim.
-2. Integrate reviewed `partial-state-study-v7` source from2e22fa2 and run the full
-   repository checks. The next design is fixed before new learning:
+2. Source57d3220 is integrated and immutable in
+   `local/worktrees/partial-state-science-v7`; full checks1601passed.
+   The design was fixed before new learning:
    `validation/partial_state_v7_matched_design_20261018.json`.
    Each seed compares answer-only640, compact-CoT640, full-trace-CoT640, and
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. Resolve actual disk reserve and a protected full optimizer-state destination.
-   First start only reader seed2026101806, halt64/full save, physically close,
-   independently verify, then fresh-process exact restore and ordered continuation.
-   Use logical12–15/physical3, unique ports and private short TMPDIR. Run one
-   training arm at a time, monitor memory, retain a recent full resumable state;
-   no automatic retry. Source changes need explicit new protocol hashes.
-   Candidate320/640 protocols and aligned orders were validated before fresh
-   outcomes in `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
-   These are not a launch receipt. Verify final source and bind the actual release.
+3. First-seed reader320 is complete, independently audited, full terminal protected
+   on EBS, and frozen. Actual full64 fresh restore and ordered65–320 pass.
+   Writer320 is physically closed; finish its independent full-state audit,
+   EBS terminal readback and frozen binding before evaluating it.
+   Audit: `local/analysis/partial-state-v7-writer320-terminal-audit-20261018.log`.
+   Controls: `local/diagnostics/partial-state-v7-writer-TRAIN5120-seed2026101806-v1`.
+   Next launch direct640, then both CoT640 controls, then seed2. Use logical12–15/
+   physical3, unique ports/private TMPDIR. One training arm at a time; monitor
+   memory and disks, keep a protected recent full state, no automatic retry.
+   Fixed320/640 protocols live in
+   `local/diagnostics/partial-state-v7-unreleased-protocols-before-DEV-review`.
+   Verify all17source hashes and actual per-job release; no source mutation.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -55,9 +59,11 @@ proving the originalworld32 OOM fixed or qualifying the old RL loop.
 
 Keep35GiB EBS reserve; EBS is same-instance storage. Full fitting states remain
 on NVMe, frozen models/output/numerical evidence on read-back verified EBS.
-Four inactive qualification duplicates totaling102.6GiB have complete readback
-matches at `local/analysis/inactive-qualification-archive-readback-20261018.json`;
-nothing has been removed. Broader storage inventory shows690GiB of old qualification
-files on NVMe. Preserve unique science; use verified duplicate retirement or fully
-read-back verified lossless archives when needed, with explicit relocation receipts.
-Root owns the work; subagents remain unavailable due account usage limits.
+Three inactive EBS qualification duplicates were retired after fresh complete
+readbacks of both copies; original full NVMe states and all EBS metadata remain.
+Receipts: `local/analysis/retire-{one,second,third}-inactive-EBS-duplicate-20261018.json`.
+Four older NVMe alias pairs already shared inodes: fresh readback reclaimed0bytes,
+not102GiB. Storage needs explicit planning before remaining640-step arms: use
+verified duplicate retirement or lossless archives with decompressed byte hashes;
+keep unique science/model outputs and a recent full optimizer state. EBS is
+same-instance. Root owns work; subagents unavailable due account usage limits.

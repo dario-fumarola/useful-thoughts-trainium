@@ -1,4 +1,20 @@
-# Status — 2026-10-18 21:36 UTC
+# Status — 2026-10-18 22:38 UTC
+
+
+## Active: matched-cost partial-computation study
+Question: does the fresh useful channel beat competitive one-model solvers at matched updates?
+ID:partial-state-v7-matched5120; prospective design fixed21:38UTC, two seeds, terminal primary.
+Immutable source57d3220; repository integration checks1601pass. Every model starts fresh B0.
+First reader320 closes22:05UTC; all320orders/counters, full64/160/320 states independently pass.
+Actual fresh64 restore matches all4active/optimizer bytes and continues65–320; terminal full state EBS verified.
+First writer320 closes22:29UTC; controller verifies full64/160/320 and physical closure; independent audit active.
+Reader binding frozen; no new DEV answers inspected. A640, compact-CoT640, full-CoT640 and seed2 pending.
+Public reader training:validation/partial_state_v7_reader_seed2026101806_training_20261018.json.
+Next:finish writer audit/protected terminal/binding, then fresh direct640 with the fixed640 protocol.
+Controls:local/diagnostics/partial-state-v7-{reader,writer}-TRAIN5120-seed2026101806-v1.
+No live training; writer audit log:local/analysis/partial-state-v7-writer320-terminal-audit-20261018.log.
+Keep35GiB reserve; three inactive EBS qualification duplicates retired only after both full readbacks.
+NVMe aliases already shared inodes; re-verification reclaimed0bytes. Preserve unique states by lossless archival.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?

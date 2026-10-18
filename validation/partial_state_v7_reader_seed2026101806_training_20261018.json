@@ -1,0 +1,229 @@
+{
+  "schema": "partial-state-v7-reader320-full-state-training-v1",
+  "status": "PASS_ACTUAL_READER320_FULL_CHECKPOINTS_FRESH64_RESTORE_AND_PROTECTED_TERMINAL",
+  "finished_utc": "2026-10-18T22:14:09.749484+00:00",
+  "run_id": "partial-state-v7-reader-TRAIN5120-seed2026101806-v1",
+  "step": 320,
+  "planned_terminal": 320,
+  "checkpoints": {
+    "64": {
+      "COMPLETE_sha256": "38a31a1507c317049ec1a9783a133af8962b2deab0f0c8ba4b9487f5659d3bf3",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "e4478b5df80eedb3be18fa16abe9edf8a9a464f0ccf7518baf4b89c657e2cb2a"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "15fc24fb975f36806bdda715a4980805b7be6e3fa35513f680aeb32ffa8246af"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "6d93f6a19b4063d559dcc62d2f7e3a979f89e0c6101d4d9b79890a128f9421c3"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "fce66f46da4f799b28103eab2771b08ef542ea1411bef0c859501534c02aee17"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "142ff8babcd342bf6ee2d83c122e4f3e3a60ac0adac72293b27088fc1063f434"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 64,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "160": {
+      "COMPLETE_sha256": "c3a39521e342a3afd62fbf0a04554140b1e1a05ef56ab573a70eab772f736a38",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "4c5fb5b28c4d1b51a224de92f0afab95502b85f8d5696a44526f279652ac301a"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "1edf8b20320da1e71faca6190de124bed112b7aba2784e0bd2a9d39b0a3cffd4"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "caf90b641a3d7e91a68817e23a22b43be5f7b9c9cdff222686afcab27b0e51e5"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "53057b18d0726c9514b440f0059f2d4e226e5eb7ffd8e341f7fa42463509c73c"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "c4978c83080aa678ff4e82d7cd8cdd57c7c7412ff828850e911623216bd4bf1e"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 160,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "320": {
+      "COMPLETE_sha256": "b0ec35f64674da8313fe39217191168d75d5a976f8fdd640b69c85898b664d36",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "1519069d6dbd92a770512ed45682ebdc3bd96b166311100909b6d6b4b99efc01"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "18a47fa037e1b30589162462d6ff3613622851bebacb4cd2c122377468592ebf"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "b63bab543dad8190a124ce346fca098fe9492d222d7ebef34089aecd63703e5b"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "f5cbc1e841ffcd8e8c7ed24e6ca0f532bbe99b8cc82f4dc84ee4c0a6cbe37f98"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "f538d916a7e6dcb02af0e1a9f55e81f6a3dd3a3ba5a421264c4a510de2f28f7b"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 320,
+      "exported_model_equals_reassembled_cast_masters": true
+    }
+  },
+  "actual_fresh64_restore": {
+    "status": "ALL4_FULL64_SAVED_OPTIMIZER_DIGESTS_MATCH_ACTUAL_FRESH_PROCESS_RESTORE_AND_ORDERED_UPDATE65",
+    "ranks": 4,
+    "first_resumed_update": 65,
+    "actual_steps_at_audit": 160,
+    "all4_actual_full_active_model_and_optimizer_equality_reports": true,
+    "uninterrupted_trajectory_parity_claim": false
+  },
+  "expressions": 10240,
+  "supervised_tokens": 61684,
+  "actual_native_checks": [
+    {
+      "reference_to_device_kl_nats": 0.003038018943671619,
+      "device_to_reference_kl_nats": 0.0031035199827923296,
+      "max_bidirectional_kl_nats": 0.0031035199827923296,
+      "passed": true,
+      "max_logp_error": 0.4776469232392877,
+      "rms_logp_error": 0.11136195315202933,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0030697297315727835,
+      "device_to_reference_kl_nats": 0.003041836099938893,
+      "max_bidirectional_kl_nats": 0.0030697297315727835,
+      "passed": true,
+      "max_logp_error": 0.3318406019216269,
+      "rms_logp_error": 0.06558423713648606,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 2.110202660403744e-05,
+      "device_to_reference_kl_nats": 2.157230339493209e-05,
+      "max_bidirectional_kl_nats": 2.157230339493209e-05,
+      "passed": true,
+      "max_logp_error": 0.19990114601651499,
+      "rms_logp_error": 0.04093075259376543,
+      "relative_l2_logp_error": 0.0014795616361593922,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0003244116031699334,
+      "device_to_reference_kl_nats": 0.000325946147481554,
+      "max_bidirectional_kl_nats": 0.000325946147481554,
+      "passed": true,
+      "max_logp_error": 0.2453446255999836,
+      "rms_logp_error": 0.04909559206530713,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.003038018943671619,
+      "device_to_reference_kl_nats": 0.0031035199827923296,
+      "max_bidirectional_kl_nats": 0.0031035199827923296,
+      "passed": true,
+      "max_logp_error": 0.4776469232392877,
+      "rms_logp_error": 0.11136195315202933,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0030697297315727835,
+      "device_to_reference_kl_nats": 0.003041836099938893,
+      "max_bidirectional_kl_nats": 0.0030697297315727835,
+      "passed": true,
+      "max_logp_error": 0.3318406019216269,
+      "rms_logp_error": 0.06558423713648606,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 2.110202660403744e-05,
+      "device_to_reference_kl_nats": 2.157230339493209e-05,
+      "max_bidirectional_kl_nats": 2.157230339493209e-05,
+      "passed": true,
+      "max_logp_error": 0.19990114601651499,
+      "rms_logp_error": 0.04093075259376543,
+      "relative_l2_logp_error": 0.0014795616361593922,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0003244116031699334,
+      "device_to_reference_kl_nats": 0.000325946147481554,
+      "max_bidirectional_kl_nats": 0.000325946147481554,
+      "passed": true,
+      "max_logp_error": 0.2453446255999836,
+      "rms_logp_error": 0.04909559206530713,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "argmax_equal": true
+    }
+  ],
+  "all1240_FP32_master_and_moment_shards_finite": true,
+  "all_adam_steps": 320,
+  "exported_BF16_model_bytes_equal_all_reassembled_cast_masters": true,
+  "all_original_sessions_and_device_physically_closed": true,
+  "checkpoint_manifest_sha256": "b0ec35f64674da8313fe39217191168d75d5a976f8fdd640b69c85898b664d36",
+  "complete_checkpoint_bytes": 24089821871,
+  "EBS_archive_receipt_sha256": "e881628cc632a9205db6deee89b38482fcf27b163f58a70b9aeb24b96834b835",
+  "warm_update_median_seconds": 0.7110798659996362,
+  "observed_peak_node_process_PSS_GiB": 77.95911121368408,
+  "limits": [
+    "No held DEV evaluated or capability inference from training loss.",
+    "First model of a two-seed matched-cost study; writer and all competitors remain pending. No trained DEV answers evaluated.",
+    "Actual model/master/moment bytes match at fresh64 restore followed by ordered65\u2013320; no uninterrupted-trajectory or new independent device-RNG readback claim.",
+    "Bounded target-topology observation, not a general multi-hour or oldworld32 memory guarantee.",
+    "Full64 also protected in its earlier verified EBS archive; full160 payload remains on NVMe, with manifest/digests on EBS."
+  ],
+  "public_metrics": {
+    "validation/partial_state_v7_reader_seed2026101806_training_20261018/all320-update-metrics.jsonl.gz": {
+      "bytes": 409215,
+      "sha256": "88e864cd3722ea90222fcf013beeba3a78c6d615d36e0e6083705422b30e7046"
+    }
+  },
+  "audit_script_sha256": "32f714be512a308d4f46f749d2320f41b48958fcee89606a618ad49093c62790",
+  "protocol_sha256": "20ab8021431e696917237f31d7ef9980e1ccd9f33edd835874d6ba225ea68219",
+  "source_files": {
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "b4bb9756d89f5071521efd0ab2abcb2b8389f24f78915b4f212452a095344b09",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  }
+}

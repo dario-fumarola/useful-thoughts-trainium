@@ -1093,3 +1093,13 @@ Full-root CoT is an additional strong baseline, not a relabeling or replacement
 of compact CoT. Terminal primary; all four existing DEV panels stay separate and
 explicitly developmental. Preserve old negatives. Release first reader only after
 source/checks/disk review; full64 save/restart precedes longer continuation.
+
+2026-10-18 22:38UTC — Matched5120 study source57d3220 passes1601checks and is frozen
+in a detached worktree. First reader320 completes and independently passes full
+64/160/320 state readback, fresh64 restore with all4active/optimizer byte equality,
+and genuine ordered65–320; full terminal protected on EBS. Writer320 closes22:29,
+independent audit running. No fresh trained DEV outcomes inspected. Three old
+engineering EBS duplicate payload sets retired after both copies freshly hash
+match; complete originals stay on NVMe, all receipts preserved. Four NVMe alias
+pairs already share inodes, so the duplicate check freed0bytes. Do not budget
+imaginary102GiB reclamation; preserve unique science with verified lossless archives.
