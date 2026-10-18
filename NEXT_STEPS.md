@@ -18,7 +18,7 @@
    (maxKL .003103); CPU BF16 itself differs by .014382. Review a new high-precision
    reference identity and uniform all-rank failure consensus before retry. Preserve
    original FAIL; no threshold relaxation. V3 is now running W on lower32cores;
-   all native gates/initial master samples pass, first update compiling. Finish
+   all native gates/initial master samples pass; W update1 is genuine and finite. Finish
    the sequential W/C′/T three-update batch and actual optimizer/memory checks.
 3. `postorder-held256-B0-v1` is CLOSED/archived: all256notes/3072cells, negative
    own−raw in both I3 and fixedI6, own−other intervals cross0. Independent36CI
@@ -48,7 +48,9 @@
    first5120eligible positives if quota passes. Keep compound5120 unchanged.
    Proposed16independent workers on physical8/9/10/15 require source/runtime review;
    no new model job is released yet, no cutoff shrink or quota claim.
-   Recovery code is isolated in local/worktrees/recovery-v4 while active source stays frozen.
+   Recovery v4 is locally committed and independently accepted with 1389 CPU tests,
+   smoke and compile. Keep it isolated in local/worktrees/recovery-v4 until active
+   v3 closes; run the private actual T-state restore/fourth-update probe before merge.
 7. No RL until fresh own beats raw and other with oracle headroom. Then fullspan
    reward/G16/cap256/Wreference stabilization. Require measured<=90s completeRLsteps
    before longRL. The old empty profiler supplies no warmed or BF16 throughput pass.

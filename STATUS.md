@@ -1,4 +1,4 @@
-# Status — 2026-10-18 08:07 UTC
+# Status — 2026-10-18 08:20 UTC
 
 ## Active: canonical-reference BF16-storage qualification
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -8,11 +8,33 @@ W launched07:44UTC, deadline13:43:43UTC; logical0–31/physical0–7, private RA
 Original launcher2658497, timeout/group2658570, driver2658572; all32actual mappings recorded.
 All32local+global native gates pass; maxKL .003104, hidden/headBF16.
 All32initial FP32 master samples exactly match released CPU shard values.
-First real update compiling; no hardware memory-fit, optimizer-moment or throughput pass yet.
+W update 1 completed: finite gradient, genuine FP32 master changes and matching replicas.
+Updates 2–3 still pending; cold elapsed 1507 s does not establish steady throughput.
 V2failed check remains failed; model-free four-rank mixed-failure consensus test passed.
 W/C′ small diagnostic slices; T will save full state on NVMe for recovery preparation.
 Controls:local/diagnostics/postorder-note-bf16-storage-world32-qualification-v3.
 Sources frozen; recovery work isolated at local/worktrees/recovery-v4; science unreleased.
+
+## CPU preparation: filtered general hindsight labels
+Question: can strict frozen-reader filtering supply 5,120 general TRAIN labels?
+ID: general-hindsight-filtered-train5120-v1; separate from compound supervision.
+329,535 approved unique TRAIN anchors are available; zero overlap with sealed DEV.
+Freeze 131,072 hash-ordered anchors; select first 24,576 with B0 K1 surprisal >=1.7.
+One unchanged future-aware teacher attempt each, then intact unrelated-note controls.
+Keep first 5,120 eligible notes with I3 full16 teacher−empty >0; shortfall stays failed.
+Reject empty/special-token notes and complete literal future16 copies; retain all attempts.
+Sixteen FP32 workers on logical 32–43/60–63 are proposed, with six-hour finite release.
+Data agent owns isolated implementation/projections; no new model calls released.
+Design/inventory: local/diagnostics/general-hindsight-filtered-train5120-v1.
+
+## CPU complete: full-state recovery implementation
+Question: can original science runs recover FP32 master/Adam state without losing evidence?
+ID: useful-note-recovery-v4; isolated branch in local/worktrees/recovery-v4.
+Strict original identity, complete-file hashes, full state byte audit and RNG reset last.
+Abandoned metric/checkpoint tails are preserved; later complete states cannot be skipped.
+Independent review and 1,389 CPU tests plus smoke/compile pass; locally committed.
+No hardware recovery claim. Reviewer staged a private restore plus actual fourth update.
+Wait for v3 T full step-3 state and physical closure; keep active main source unchanged.
 
 ## Closed: general hindsight-note feasibility
 Question: can B0 hindsight notes improve full16 likelihood on general high-surprisal text?
@@ -204,8 +226,8 @@ All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
 Root: science/data/precision decisions, training release, current public findings.
-Data: fixed first-line ablation implementation/CPU preparation; no model launch yet.
-Distributed: new BF16-storage CPU references, then root-reviewed sequential qualification.
+Data: larger filtered general hindsight batch, native-label adapter and CPU projections.
+Distributed: active sequential W/C′/T BF16-storage qualification and physical closure.
 Review: active GSM512 supervision and precision/master/RoPE source acceptance.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
