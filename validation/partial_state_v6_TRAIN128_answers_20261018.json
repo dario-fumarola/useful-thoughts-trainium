@@ -1,0 +1,1009 @@
+{
+  "schema": "partial-state-TRAIN128-closed-complete-answers-v1",
+  "status": "TRAIN_FIT_MECHANICS_PASS_NO_GENERALIZATION_OR_ARCHITECTURE_ADVANTAGE",
+  "finished_utc": "2026-10-18T19:40:34.091183+00:00",
+  "items": 128,
+  "arms": {
+    "B0": {
+      "results": {
+        "direct": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 128,
+          "status_counts": {
+            "truncated": 128
+          },
+          "generated_actions": 10240,
+          "decode_wall_seconds": 1076.795651642984
+        },
+        "cot": {
+          "items": 128,
+          "correct": 41,
+          "unsupported": 71,
+          "status_counts": {
+            "ok": 57,
+            "format_error": 71
+          },
+          "generated_actions": 6662,
+          "decode_wall_seconds": 469.13795351979206
+        },
+        "empty": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 128,
+          "status_counts": {
+            "truncated": 128
+          },
+          "generated_actions": 2048,
+          "decode_wall_seconds": 163.29742340784287
+        },
+        "teacher": {
+          "items": 128,
+          "correct": 3,
+          "unsupported": 114,
+          "status_counts": {
+            "truncated": 110,
+            "format_error": 4,
+            "ok": 14
+          },
+          "generated_actions": 1891,
+          "decode_wall_seconds": 133.52304222193197
+        },
+        "corrupt": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 112,
+          "status_counts": {
+            "truncated": 108,
+            "ok": 16,
+            "format_error": 4
+          },
+          "generated_actions": 1866,
+          "decode_wall_seconds": 129.30732655202155
+        },
+        "other_teacher": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 12,
+          "status_counts": {
+            "ok": 116,
+            "truncated": 12
+          },
+          "generated_actions": 694,
+          "decode_wall_seconds": 49.05650692374911
+        },
+        "restatement": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 127,
+          "status_counts": {
+            "truncated": 127,
+            "ok": 1
+          },
+          "generated_actions": 2038,
+          "decode_wall_seconds": 142.25405470910482
+        }
+      },
+      "contrasts": {
+        "cot_minus_direct": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.2421875,
+            0.3984375
+          ],
+          "difference": 0.3203125,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_corrupt": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.0,
+            0.0546875
+          ],
+          "difference": 0.0234375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_direct": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.0,
+            0.0546875
+          ],
+          "difference": 0.0234375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_empty": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.0,
+            0.0546875
+          ],
+          "difference": 0.0234375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_other_teacher": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.0,
+            0.0546875
+          ],
+          "difference": 0.0234375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        }
+      },
+      "checks": [
+        {
+          "shard": 0,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 1.4692668651848734e-10,
+            "max_bidirectional_kl_nats": 1.4692795197512263e-10,
+            "max_logp_error": 9.453952545968036e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 1.4692795197512263e-10,
+            "relative_l2_logp_error": 7.387969172324379e-07,
+            "rms_logp_error": 2.1328650162485423e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 8.271295229534858e-13,
+              "max_bidirectional_kl_nats": 8.271295229534858e-13,
+              "max_logp_error": 1.3303400656639042e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 8.269665609149524e-13,
+              "relative_l2_logp_error": 1.2131723264995424e-07,
+              "rms_logp_error": 2.7984316972946445e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 3.884494508006265e-12,
+              "max_bidirectional_kl_nats": 3.884494508006265e-12,
+              "max_logp_error": 1.9110021753476758e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 3.884473741749484e-12,
+              "relative_l2_logp_error": 2.4989837729668263e-07,
+              "rms_logp_error": 5.683234027439679e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 1,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 1.3987463427756023e-10,
+            "max_bidirectional_kl_nats": 1.3987463427756023e-10,
+            "max_logp_error": 9.650757509049868e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 1.3987374344369224e-10,
+            "relative_l2_logp_error": 1.0840139266305839e-06,
+            "rms_logp_error": 2.0617055200889045e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 4.699514694619605e-12,
+              "max_bidirectional_kl_nats": 4.699514694619605e-12,
+              "max_logp_error": 2.2840625526043823e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 4.698808918921745e-12,
+              "relative_l2_logp_error": 2.183961679901744e-07,
+              "rms_logp_error": 5.097426746201354e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.0800282613867999e-11,
+              "max_bidirectional_kl_nats": 1.0800282613867999e-11,
+              "max_logp_error": 1.8985060549425725e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.0799326416505642e-11,
+              "relative_l2_logp_error": 2.5684145030614834e-07,
+              "rms_logp_error": 5.958355538758697e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 2,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 6.423890328523697e-13,
+            "max_bidirectional_kl_nats": 6.423890328523697e-13,
+            "max_logp_error": 3.148594827351303e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 6.415759410988878e-13,
+            "relative_l2_logp_error": 2.4159932458576905e-07,
+            "rms_logp_error": 6.683629758816178e-06
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.2016107353621056e-12,
+              "max_bidirectional_kl_nats": 2.2016107353621056e-12,
+              "max_logp_error": 2.4733702662871337e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.2014842809399073e-12,
+              "relative_l2_logp_error": 2.4791147617010365e-07,
+              "rms_logp_error": 5.71299845729402e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.6526522477071875e-12,
+              "max_bidirectional_kl_nats": 2.6531425520504176e-12,
+              "max_logp_error": 1.3203876772394096e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.6531425520504176e-12,
+              "relative_l2_logp_error": 1.5133340963618347e-07,
+              "rms_logp_error": 3.2346988484687897e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 3,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.630815872395082e-10,
+            "max_bidirectional_kl_nats": 2.630815872395082e-10,
+            "max_logp_error": 0.00013939253258499207,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.630795178663908e-10,
+            "relative_l2_logp_error": 1.461336738747975e-06,
+            "rms_logp_error": 2.6973291840396576e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.6951570275149422e-12,
+              "max_bidirectional_kl_nats": 1.6960231657270732e-12,
+              "max_logp_error": 1.7246104579982102e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.6960231657270732e-12,
+              "relative_l2_logp_error": 1.6432220448598122e-07,
+              "rms_logp_error": 3.827320272083665e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.2568123148115983e-12,
+              "max_bidirectional_kl_nats": 2.2570907326024494e-12,
+              "max_logp_error": 1.5429434963465383e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.2570907326024494e-12,
+              "relative_l2_logp_error": 1.8612429640663116e-07,
+              "rms_logp_error": 4.424691370071008e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        }
+      ],
+      "model_identity": "unchanged_B0",
+      "protocol_sha256": "a18c7e386a0397b665c5fe35e68640c11d69aa0be6b85e91eb450f915c7008a2",
+      "payload": {
+        "path": "validation/partial_state_v6_TRAIN128_answers_20261018/B0-all896-answers.jsonl.gz",
+        "sha256": "dc386cc19a9db35184152ca1f889418fe9aea8eda6ad3a429d2366bffbf4b723",
+        "rows": 896
+      }
+    },
+    "reader": {
+      "results": {
+        "direct": {
+          "items": 128,
+          "correct": 120,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 667,
+          "decode_wall_seconds": 364.43562269504764
+        },
+        "cot": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 128,
+          "status_counts": {
+            "format_error": 128
+          },
+          "generated_actions": 2666,
+          "decode_wall_seconds": 190.56147287713247
+        },
+        "empty": {
+          "items": 128,
+          "correct": 119,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 667,
+          "decode_wall_seconds": 995.8980865489866
+        },
+        "teacher": {
+          "items": 128,
+          "correct": 128,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 667,
+          "decode_wall_seconds": 48.77578793189605
+        },
+        "corrupt": {
+          "items": 128,
+          "correct": 4,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 667,
+          "decode_wall_seconds": 48.46013380904333
+        },
+        "other_teacher": {
+          "items": 128,
+          "correct": 1,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 662,
+          "decode_wall_seconds": 48.15734807008994
+        },
+        "restatement": {
+          "items": 128,
+          "correct": 113,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 664,
+          "decode_wall_seconds": 48.315711281989934
+        }
+      },
+      "contrasts": {
+        "cot_minus_direct": {
+          "bootstrap_items": 128,
+          "ci95": [
+            -0.9765625,
+            -0.890625
+          ],
+          "difference": -0.9375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_corrupt": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.9375,
+            0.9921875
+          ],
+          "difference": 0.96875,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_direct": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.0234375,
+            0.109375
+          ],
+          "difference": 0.0625,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_empty": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.03125,
+            0.1171875
+          ],
+          "difference": 0.0703125,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_other_teacher": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.9765625,
+            1.0
+          ],
+          "difference": 0.9921875,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        }
+      },
+      "checks": [
+        {
+          "shard": 0,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 3.172796031401284e-10,
+            "max_bidirectional_kl_nats": 3.172796031401284e-10,
+            "max_logp_error": 0.0001271070546593478,
+            "passed": true,
+            "reference_to_device_kl_nats": 3.172758915870991e-10,
+            "relative_l2_logp_error": 1.2001724244081493e-06,
+            "rms_logp_error": 3.363221391680761e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 4.9002674819321845e-15,
+              "max_bidirectional_kl_nats": 4.9002674819321845e-15,
+              "max_logp_error": 1.9075102120069687e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 4.7674094101252956e-15,
+              "relative_l2_logp_error": 1.3683727939136758e-07,
+              "rms_logp_error": 4.7191197113840925e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.0548602811497427e-13,
+              "max_bidirectional_kl_nats": 2.0688388868328333e-13,
+              "max_logp_error": 7.765577166196636e-06,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.0688388868328333e-13,
+              "relative_l2_logp_error": 7.273660097646763e-08,
+              "rms_logp_error": 1.8697680535949974e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 1,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 4.1362211824632706e-11,
+            "max_bidirectional_kl_nats": 4.1362211824632706e-11,
+            "max_logp_error": 7.683046279893802e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 4.136196652622052e-11,
+            "relative_l2_logp_error": 1.0708461479061692e-06,
+            "rms_logp_error": 2.051289612039121e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.2150556474740915e-14,
+              "max_bidirectional_kl_nats": 1.2150556474740915e-14,
+              "max_logp_error": 1.5257275620683686e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.1858207279992421e-14,
+              "relative_l2_logp_error": 1.3328118452368243e-07,
+              "rms_logp_error": 3.782819164619615e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.5362776199982531e-12,
+              "max_bidirectional_kl_nats": 1.5363491555834783e-12,
+              "max_logp_error": 1.5093345552941173e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.5363491555834783e-12,
+              "relative_l2_logp_error": 1.3814481084526794e-07,
+              "rms_logp_error": 3.4291044844943603e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 2,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 1.0570566983354974e-13,
+            "max_bidirectional_kl_nats": 1.0570566983354974e-13,
+            "max_logp_error": 4.167183385561657e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 1.0513321609877831e-13,
+            "relative_l2_logp_error": 5.315589080052472e-07,
+            "rms_logp_error": 1.7388408504224124e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.253173509359583e-14,
+              "max_bidirectional_kl_nats": 1.3525123844700362e-14,
+              "max_logp_error": 1.5254950142207235e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.3525123844700362e-14,
+              "relative_l2_logp_error": 1.1550357843462964e-07,
+              "rms_logp_error": 3.4874768844693317e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.7446300376128126e-12,
+              "max_bidirectional_kl_nats": 2.7446300376128126e-12,
+              "max_logp_error": 1.5266730965635134e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.7434162687477653e-12,
+              "relative_l2_logp_error": 2.6856347225298684e-07,
+              "rms_logp_error": 6.975207496307254e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 3,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 3.133979861592951e-11,
+            "max_bidirectional_kl_nats": 3.133979861592951e-11,
+            "max_logp_error": 4.157797905790517e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 3.133902790875055e-11,
+            "relative_l2_logp_error": 4.4530195250850335e-07,
+            "rms_logp_error": 8.849777741896599e-06
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.8987021045819337e-16,
+              "max_bidirectional_kl_nats": 2.8987021045819337e-16,
+              "max_logp_error": 1.1444103090951785e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 8.66022919676289e-08,
+              "rms_logp_error": 3.5190496520024795e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.75064439509998e-12,
+              "max_bidirectional_kl_nats": 1.7514575366774453e-12,
+              "max_logp_error": 9.564429571895516e-06,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.7514575366774453e-12,
+              "relative_l2_logp_error": 1.3397712928522898e-07,
+              "rms_logp_error": 3.2990101692242626e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        }
+      ],
+      "model_identity": "reader-TRAIN128-step128",
+      "protocol_sha256": "222e358764608cf0ca996b0de742d0a1cfced51c2caadea1520fbc68d263fbfb",
+      "payload": {
+        "path": "validation/partial_state_v6_TRAIN128_answers_20261018/reader-all896-answers.jsonl.gz",
+        "sha256": "615da734456243ddc86e27508626a4f7a78c053db7763c3c4f5688ece118cd47",
+        "rows": 896
+      }
+    },
+    "cot": {
+      "results": {
+        "direct": {
+          "items": 128,
+          "correct": 2,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 585,
+          "decode_wall_seconds": 360.67484994383994
+        },
+        "cot": {
+          "items": 128,
+          "correct": 128,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 4010,
+          "decode_wall_seconds": 283.9485893122037
+        },
+        "empty": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 3,
+          "status_counts": {
+            "ok": 125,
+            "truncated": 3
+          },
+          "generated_actions": 616,
+          "decode_wall_seconds": 913.4324687310727
+        },
+        "teacher": {
+          "items": 128,
+          "correct": 128,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 667,
+          "decode_wall_seconds": 48.7721343570156
+        },
+        "corrupt": {
+          "items": 128,
+          "correct": 7,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 667,
+          "decode_wall_seconds": 48.23698557901662
+        },
+        "other_teacher": {
+          "items": 128,
+          "correct": 0,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 660,
+          "decode_wall_seconds": 48.293074181943666
+        },
+        "restatement": {
+          "items": 128,
+          "correct": 1,
+          "unsupported": 0,
+          "status_counts": {
+            "ok": 128
+          },
+          "generated_actions": 594,
+          "decode_wall_seconds": 42.863663260795875
+        }
+      },
+      "contrasts": {
+        "cot_minus_direct": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.9609375,
+            1.0
+          ],
+          "difference": 0.984375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_corrupt": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.90625,
+            0.984375
+          ],
+          "difference": 0.9453125,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_direct": {
+          "bootstrap_items": 128,
+          "ci95": [
+            0.9609375,
+            1.0
+          ],
+          "difference": 0.984375,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_empty": {
+          "bootstrap_items": 128,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "difference": 1.0,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        },
+        "teacher_minus_other_teacher": {
+          "bootstrap_items": 128,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "difference": 1.0,
+          "repeats": 5000,
+          "seed": 17,
+          "unit": "accuracy_fraction"
+        }
+      },
+      "checks": [
+        {
+          "shard": 0,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 1.1414588723775582e-10,
+            "max_bidirectional_kl_nats": 1.1414588723775582e-10,
+            "max_logp_error": 0.00011916972017012029,
+            "passed": true,
+            "reference_to_device_kl_nats": 1.1414511233019797e-10,
+            "relative_l2_logp_error": 8.795227155903869e-07,
+            "rms_logp_error": 2.5687951695138606e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.6982045161411696e-13,
+              "max_bidirectional_kl_nats": 2.6982045161411696e-13,
+              "max_logp_error": 1.5195208696638929e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.6839748020726766e-13,
+              "relative_l2_logp_error": 1.7483353255826736e-07,
+              "rms_logp_error": 5.933397796870864e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 1.5717366795898755e-16,
+              "max_logp_error": 1.1444090809220597e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.5717366795898755e-16,
+              "relative_l2_logp_error": 6.500709297231364e-08,
+              "rms_logp_error": 2.843039417860119e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 1,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.608372692018366e-10,
+            "max_bidirectional_kl_nats": 2.608372692018366e-10,
+            "max_logp_error": 0.0001599723894614158,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.608336404254462e-10,
+            "relative_l2_logp_error": 2.456919576262678e-06,
+            "rms_logp_error": 4.83515235963328e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 8.74479783984879e-13,
+              "max_bidirectional_kl_nats": 8.751631563546946e-13,
+              "max_logp_error": 9.498604605084893e-06,
+              "passed": true,
+              "reference_to_device_kl_nats": 8.751631563546946e-13,
+              "relative_l2_logp_error": 8.221434927012808e-08,
+              "rms_logp_error": 2.366302176756505e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 5.497536585854383e-16,
+              "max_bidirectional_kl_nats": 5.497536585854383e-16,
+              "max_logp_error": 1.9073484448739464e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 1.4232466102698198e-07,
+              "rms_logp_error": 6.035479324033119e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 2,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.270571318502375e-12,
+            "max_bidirectional_kl_nats": 2.2706493599534747e-12,
+            "max_logp_error": 5.648837144889285e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.2706493599534747e-12,
+            "relative_l2_logp_error": 3.906812578841506e-07,
+            "rms_logp_error": 1.2113183875016039e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 2.0850254542231305e-15,
+              "max_bidirectional_kl_nats": 2.5665102397932608e-15,
+              "max_logp_error": 1.5257204147189896e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 2.5665102397932608e-15,
+              "relative_l2_logp_error": 1.8695676300245262e-07,
+              "rms_logp_error": 6.128721002513072e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 1.664316028354938e-17,
+              "max_logp_error": 1.5258787080085767e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.664316028354938e-17,
+              "relative_l2_logp_error": 7.867682450666131e-08,
+              "rms_logp_error": 3.3061702913578313e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        },
+        {
+          "shard": 3,
+          "native": {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 1.5320861502458946e-10,
+            "max_bidirectional_kl_nats": 1.5321289548165973e-10,
+            "max_logp_error": 9.062268818693653e-05,
+            "passed": true,
+            "reference_to_device_kl_nats": 1.5321289548165973e-10,
+            "relative_l2_logp_error": 7.84774862309235e-07,
+            "rms_logp_error": 1.6364226665230023e-05
+          },
+          "cache": {
+            "direct": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 1.465788349077231e-13,
+              "max_bidirectional_kl_nats": 1.4821201425651135e-13,
+              "max_logp_error": 2.4754308629582056e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.4821201425651135e-13,
+              "relative_l2_logp_error": 1.8228999867996961e-07,
+              "rms_logp_error": 5.996301494635512e-06
+            },
+            "cot": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 1.3616720418433006e-16,
+              "max_logp_error": 1.90734864062847e-05,
+              "passed": true,
+              "reference_to_device_kl_nats": 1.3616720418433006e-16,
+              "relative_l2_logp_error": 1.1067160409202356e-07,
+              "rms_logp_error": 4.876407065758231e-06
+            },
+            "teacher": {
+              "argmax_equal": true,
+              "device_to_reference_kl_nats": 0.0,
+              "max_bidirectional_kl_nats": 0.0,
+              "max_logp_error": 0.0,
+              "passed": true,
+              "reference_to_device_kl_nats": 0.0,
+              "relative_l2_logp_error": 0.0,
+              "rms_logp_error": 0.0
+            }
+          }
+        }
+      ],
+      "model_identity": "cot-TRAIN128-step128",
+      "protocol_sha256": "08b816db6e2f9859397dd010b45084fd64635d3e7392c28ca19292ac90b6f0de",
+      "payload": {
+        "path": "validation/partial_state_v6_TRAIN128_answers_20261018/cot-all896-answers.jsonl.gz",
+        "sha256": "f366b70894321e7ebcc83cf6421c261164e1050886a11574e2285e7bdd52d896",
+        "rows": 896
+      }
+    }
+  },
+  "CPU_writer_response_composition": {
+    "own": {
+      "items": 128,
+      "correct": 128,
+      "unsupported": 0,
+      "writer_actions": 3215,
+      "reader_actions": 667
+    },
+    "other": {
+      "items": 128,
+      "correct": 1,
+      "unsupported": 0,
+      "writer_actions": 3215,
+      "reader_actions": 662
+    }
+  },
+  "all2688_original_answers_independently_reparsed": true,
+  "all_original_answer_sessions_devices_closed": true,
+  "all_reported_paired_intervals_recomputed": true,
+  "verified_EBS_receipts": {
+    "B0": "a90fcb97d3470d020450f81c2ce9d534331f8aa36d424c8c40bb7b05e034d6ad",
+    "reader": "2de0a48de1fb2438bcc912ebb020c0e60b9b8270b22b116619e255c4dab6618b",
+    "cot": "308786234448f13cea0ab01fb8b927c4c3112c000646f8e1d0af1ca30923242a"
+  },
+  "limitations": [
+    "Same128TRAIN examples fitted32passes, one seed. No fresh computation/generalization result.",
+    "Ordinary compact CoT gets128/128 using one model and128updates; split requires reader128plus writer128updates and two full1.7B models. It has not earned its complexity.",
+    "Actual CPUwriter own/other reader results reuse exactly identical executed responses, explicitly proved for all128items and both modes. No extra independent sample or newly executed reader own condition.",
+    "Paired Trainium writer generation remains active; CPU writer is not hardware evidence.",
+    "B0 raw terse prompts fail format; its zeros are not a broad capability comparison. Reader cot and CoT direct are not their trained native paths.",
+    "Answer parser rejects unsupported/truncated outputs, all retained. No official TEST read.",
+    "B0 usesLRU2/OMP1 and trained evaluatorsLRU256/OMP2; cold compilation/staging costs differ, so timings are not directly comparable."
+  ]
+}

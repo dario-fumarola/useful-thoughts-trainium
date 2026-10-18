@@ -1,4 +1,4 @@
-# Status — 2026-10-18 19:21 UTC
+# Status — 2026-10-18 19:42 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -29,18 +29,19 @@ Full3 remains onNVMe with manifest/digests onEBS; no uninterrupted-parity or new
 Cold graph costs dominate; last update14.5s alone does not establish steady throughput/memory.
 Decision: mechanics pass; qualification model excluded from scientific training or warm starts.
 
-## Active: complete-answer B0 characterization for partial states
-Question: do supplied intermediate-only states improve complete answers of unchanged B0?
-ID:partial-state-v6-TRAIN128-B0-answers-v1; fixed first128TRAIN questions, all896attempts.
-Direct/compactCoT/empty/teacher/one-corrupt-state/intact-other/restatement in one four-shard job.
-All128other teacher notes match native token length; generation never opens gold or supervised rows.
-Endpoint: complete numeric-answer accuracy, paired item bootstrap5000/seed17; failures retained.
-Four single-core shards logical12–15/physical3, FP32, canonical/native and actual cache-prefill checks.
-Bound21:00UTC/3hours per shard, external512GiB floor, no retries; all4actual placements captured.
-Separate gold scorer runs only after complete generation/session/device closure; no DEV or TEST.
-Controls:local/diagnostics/partial-state-v6-TRAIN128-B0-answers-v1; source commit71609ee now merged.
-Output:local/nvme/evaluation/partial-state-v6-TRAIN128-B0-answers-v1;1582CPUtests/smoke/compile pass.
-Decision: pending; untrained-reader failure would not block reader SFT.
+## Closed: complete-answer TRAIN fitting comparison
+Question: do verified partial states and the actual prefix-only writer support free answers?
+IDs:partial-state-v6-TRAIN128-{B0-v1,reader128-v2,cot128-v2}-answers;128items×7conditions each.
+All2,688attempts close physically before gold scoring; independently re-parsed, allCIs reproduced.
+Reader direct120/128,empty119,teacher128,corrupt4,unrelated1,restatement113; all supported.
+Teacher−direct+6.25pp [2.34,10.94]; teacher−empty+7.03pp [3.13,11.72].
+Actual CPUwriter produces128canonical/naturally stopped notes; exact prompt/cap/prefill checks
+permit explicitly composed own128/128 andother1/128 from executed identical reader controls.
+No new reader inference or extra independent observations claimed by that response reuse.
+Ordinary compactCoT gets128/128 in its native path using one model/run; split uses two.
+B0 nativeCoT41/128,71unsupported; terse direct/empty fail format, not broad capability baselines.
+Public:validation/partial_state_v6_TRAIN128_answers_20261018.json; all rawoutputs/verifiedEBS copies.
+Decision: fitting mechanics work; no generalization or architectural advantage. FixedDEV512 panels next.
 
 ## Closed: bounded backward-path host-memory probe
 Question: does original real-data BF16 W backward retain hostRAM before optimizer/update stages?

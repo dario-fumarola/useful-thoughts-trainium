@@ -1045,3 +1045,12 @@ already scheduled teacher/other_teacher controls: verify executed prompt binding
 and label any response reuse explicitly, without extra independent samples.
 Trainium prefix and complete-answer matrices remain active. Next-study ordinary
 CoT may include the full root calculation; account for two split models/runs.
+
+2026-10-18 19:42UTC — All2,688 TRAIN128 fitting answers close and independently
+re-parse. Reader teacher128 exceeds direct120/empty119; actual CPU writer notes
+match every executed teacher/unrelated context, so response composition is
+explicit reuse, not new inference or extra samples. Ordinary compactCoT128 also
+gets128/128 with one training model/run; split has no demonstrated advantage.
+Evaluate the fixed four512DEV panels before scaling training, with no outcome
+filtering and separate interpolation/structure/range/composition claims. Preserve
+all old128fit models and source snapshots. Official TEST remains unused.
