@@ -1,4 +1,4 @@
-# Status — 2026-10-18 11:43 UTC
+# Status — 2026-10-18 15:29 UTC
 
 ## Closed: canonical-reference BF16-storage qualification — pass
 Question: does the memory repair complete real W/C′/T updates with FP32 masters?
@@ -88,19 +88,19 @@ Restored optimizer compiled a distinct alias-input family; no model recompute or
 Public validation/useful_note_state_recovery_002_20261018.json; no uninterrupted-trajectory parity.
 Decision: merged reviewed recovery source and passed combined checks; W science released.
 
-## Active: compound5120 writer-and-reader training
+## Interrupted: compound5120 writer-and-reader training
 Question: can supervised prefix-only notes and reader adaptation create useful self-generated content?
 ID:postorder-reader-learning-compound5120-W-seed20261018-v4r2; fresh B0, no resume/qualification.
 5,120 distinct real TRAIN documents, two epochs/320updates, seed20261018, world/global32.
 W noteCE+natural16readerCE+0.5rawsourceCE; BF16 storage/gradients with FP32master/moments.
 Launched09:43UTC on logical0–31/physical0–7; softdeadline21:42UTC, checkpointgrace to21:57UTC.
 Launcher3118414, timeout/group3118483, driver3118485; all32 actual worker identities/mappings captured.
-All32 native/consensus/initialmaster checks pass; through128ordered updates/master/replica checks pass.
+Reached220updates13:14UTC; global hostOOM13:16killed a worker/user session. Terminal320 absent.
 Output:local/nvme/runs/postorder-reader-learning-compound5120-W-seed20261018-v4r2.
-Controls:local/science/control/same basename; Distributed supervises progress/checkpoints/closure.
+Controls:local/science/control/same basename; root now owns interruption and next diagnosis.
 Terminal320 primary; step64 development only. Every terminal evaluated regardless of local sign.
-Cprime seed1 now active separately; T pending. Same documents/updates do not match tokens or FLOPs.
-Public validation/reader_learning_compound5120_W_seed20261018_launch.json; no trained utility claim yet.
+Only nonresumable model-only64 survives; full run/control/log/source and model backed up on EBS.
+Incident:validation/reader_learning_compound5120_host_OOM_20261018.json; no trained utility result.
 
 ## Closed failed: C′ startup socket path
 Question: can the matched source control start on the free upper partition?
@@ -112,20 +112,20 @@ Full failed controls/log/closure archived on EBS; originals retained; zero updat
 Decision: preserve failure; new r3 runtime changes only short TMPDIR and adds actual socket-bind guard.
 Public:validation/reader_learning_compound5120_Cprime_seed20261018_launch.json.
 
-## Active: matched compound5120 source control
+## Interrupted: matched compound5120 source control
 Question: does W outperform matched ordinary continuation/source training?
 ID:postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3; fresh B0, seed20261018.
 Same5120documents/order/twoepochs/320updates/world32 as W; mean continuationCE+.5sourceCE.
 Launched11:34UTC on logical32–63/physical8–15; soft23:31UTC, checkpoint grace23:46UTC.
 Launcher3469829, timeout/group3469987, driver3469989; all32actual identities/mappings captured.
 Short private0700RAM and real Unix bind guard pass; original W lower partition unchanged.
-All32native/consensus/initialmaster checks pass; first3updates52.261/53.562/50.851s.
+Reached119updates13:15UTC; same global host/session failure. Terminal320 and resumable states absent.
 Independent32full-head vectors/32master sample pairs/64finite-scan receipts/3updates pass.
 Installed empty optimizer placeholder remains for the terminal raw-payload audit.
 Output:local/nvme/runs/postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3.
-Controls:local/science/control/same basename; Distributed owns health/checkpoint/closure.
-Terminal320 primary; every terminal gets the same mandatory held/GSM comparisons.
-Public:validation/reader_learning_compound5120_Cprime_seed20261018_launch.json; no utility claim.
+Controls:local/science/control/same basename; root owns interruption and next diagnosis.
+Model-only64 survives; complete run/control/log/source/model EBS archive verified. All original groups/devices closed.
+Incident:validation/reader_learning_compound5120_host_OOM_20261018.json. No manual signals or automatic restart.
 
 ## Closed: general hindsight-note feasibility
 Question: can B0 hindsight notes improve full16 likelihood on general high-surprisal text?

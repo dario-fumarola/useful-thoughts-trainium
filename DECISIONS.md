@@ -982,3 +982,14 @@ nested Unix socket-bind guard before heavy imports. Data, order, learner sources
 precision, optimizer and objectives are unchanged. Native32/master and three
 actual update checks pass; root full-vector/master-sample readback agrees. Keep
 r2 failed and r3 active under distinct runtime identities; no automatic retries.
+
+### 2026-10-18 — Preserve global host-OOM interruption; evaluate saved development64 honestly
+Kernel logs confirm global host OOM13:16UTC, direct W-worker and user-session
+kills; W stops after220updates, C′119. Neither has a full terminal/resumable state.
+All original groups/devices are empty. Both exact step64 model-only snapshots,
+run/control/source/log evidence are now EBS-backed with source/readback hashes.
+The original320-step comparison stays incomplete. A NEW explicit developmental64
+identity may evaluate these matched saved models; do not relax the old terminal
+identity or invent missing optimizer state. Profile bounded host-memory growth
+before restarting long learning. Periodic full checkpoints and a memory-triggered
+cooperative STOP are necessary for the next operational recipe. No auto-relaunch.

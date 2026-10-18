@@ -10,8 +10,8 @@ on AWS Trainium.
 **Useful self-generated thoughts have not been established on real-document DEV
 or GSM8K.** Supplied intermediate work helps on controlled arithmetic. A larger
 future-aware teacher batch also supplies enough real training labels. The first
-matched supervised writer/reader and source-only control runs are now active;
-their terminal evaluations will test whether useful notes can be learned.
+matched supervised writer/reader and source-only runs were interrupted by host
+RAM exhaustion before their terminal checkpoints; no trained comparison is available yet.
 
 Fresh B0 notes give these likelihood changes with the fixed mixed reader:
 
@@ -71,17 +71,20 @@ Actual native packing passes on isolated `general-sft-v5`; hardware qualificatio
 and training remain pending. The earlier [256-document pilot](validation/general_hindsight_TRAIN256_20261018.json)
 and negative [prefix-helper probe](validation/general_prefix_helper_20261018.json) remain available.
 
-**Training in progress:** W learns note tokens, the natural continuation and raw
-source text; C′ learns the same continuation and raw source without notes. Both
-start from fresh B0, share 5,120 distinct real TRAIN documents and seed order,
-and run two epochs / 320 updates. C′ matches W's continuation-loss weighting.
-An augmented-CE T arm is planned. Documents and updates match; tokens, gradient
-dose and compute differ. BF16 parameters/gradients use FP32 optimizer masters.
-[W launch](validation/reader_learning_compound5120_W_seed20261018_launch.json) ·
-[C′ launch and preserved startup failure](validation/reader_learning_compound5120_Cprime_seed20261018_launch.json).
-Every terminal arm receives the real held likelihood panels and GSM8K TRAIN512
-comparison regardless of training losses. Terminal checkpoints are primary;
-step64 is developmental. [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
+**Training interrupted by host OOM:** W reached 220/320 updates and C′ 119/320
+before Linux exhausted host RAM around13:16UTC. Both step64 model-only snapshots
+survived and are hash-verified on EBS; no resumable optimizer checkpoint survived.
+[Incident, preserved models and complete run archives](validation/reader_learning_compound5120_host_OOM_20261018.json).
+These attempts started from fresh B0, shared5,120real TRAIN documents and seed
+order, and were planned for twoepochs/320updates. W learns note tokens, natural
+continuation and raw source; C′ matches continuation weighting without notes.
+Documents/updates match; tokens, gradient dose and compute differ.
+[Original W launch](validation/reader_learning_compound5120_W_seed20261018_launch.json) ·
+[Original C′ launch](validation/reader_learning_compound5120_Cprime_seed20261018_launch.json).
+The320-step comparison remains incomplete. The preserved matched step64 models
+will be evaluated explicitly as developmental checkpoints while host-memory growth
+is investigated. They do not replace the terminal endpoint or permit resumption
+without optimizer state. [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here
 

@@ -1,0 +1,66 @@
+{
+  "status": "INTERRUPTED_GLOBAL_HOST_OOM_NOT_TERMINAL",
+  "observed_utc": "2026-10-18T15:22:40.618306+00:00",
+  "cause": "Kernel global host OOM at13:15:37\u201313:16:06UTC, direct kill of W worker3118518 and user systemd6815; both training groups vanished. No per-launch exit receipts survived.",
+  "no_signals_sent_by_this_inspection": true,
+  "arms": {
+    "W": {
+      "run_id": "postorder-reader-learning-compound5120-W-seed20261018-v4r2",
+      "actual_updates": 220,
+      "last_update_utc": "2026-10-18T13:14:53+00:00",
+      "planned_updates": 320,
+      "terminal_checkpoint_available": false,
+      "resumable_checkpoint_available": false,
+      "all_original_identities_groups_sessions_absent": true,
+      "saved_development_step": 64,
+      "model_sha256": "5d764fc84cdb2ace2a4979ee9c2ea03093c2dea4c0c9497bcb444154dc56ce5e",
+      "complete_sha256": "f70de4bc61776a18b1be32c5621d4384645a03ab531211148b6ab101bd9b4ccf",
+      "archive_sha256": "6131f862d761e03fefa74b5199bdceed51df8319fee189db59961af591b3acc3",
+      "archive": "local/backups/science/interrupted/host-oom-20261018/W/ARCHIVE.json",
+      "archived_files": 426,
+      "archived_bytes": 3502561437,
+      "kernel_first_OOM_worker_RSS_bytes": {
+        "sum": 1317695225856,
+        "min": 8631119872,
+        "max": 73708765184,
+        "median": 41168447488.0
+      }
+    },
+    "Cprime": {
+      "run_id": "postorder-reader-learning-compound5120-Cprime-seed20261018-v4r3",
+      "actual_updates": 119,
+      "last_update_utc": "2026-10-18T13:15:13+00:00",
+      "planned_updates": 320,
+      "terminal_checkpoint_available": false,
+      "resumable_checkpoint_available": false,
+      "all_original_identities_groups_sessions_absent": true,
+      "saved_development_step": 64,
+      "model_sha256": "0d483f038ba99c0c03e0cb38b9b51c65ad702557799968f9dbcc5b97595d9753",
+      "complete_sha256": "c4c2674c13cf9232a160063700884c9d3f096d02ef95287a1d329c7de33471b0",
+      "archive_sha256": "04facdf46b5bb293db2cec62d4fd4a05b7423b09a6bc7499b6071a262445483e",
+      "archive": "local/backups/science/interrupted/host-oom-20261018/Cprime/ARCHIVE.json",
+      "archived_files": 334,
+      "archived_bytes": 3483487854,
+      "kernel_first_OOM_worker_RSS_bytes": {
+        "sum": 791441784832,
+        "min": 6579331072,
+        "max": 42620653568,
+        "median": 24508796928.0
+      }
+    }
+  },
+  "host-oom-kernel-20261018-1316.log_sha256": "17e7a2622d6dd7b331e7e1d1e0a4f835f51aa320234fe1cd5780046715b8c22a",
+  "node-health-20261018-1519.json_sha256": "924515b60221bb051cf0fb3f031ab4ebf05176a821f2434ef3523f57eb7e2146",
+  "all16_physical_devices_empty": true,
+  "schema": "compound5120-host-oom-interruption-v1",
+  "decision": "Preserve both interrupted320-update attempts. Hash-verified matched step64 MODEL-ONLY snapshots may enter a separately declared DEVELOPMENTAL evaluation; never label them terminal or resume without optimizer state. Diagnose host-memory growth and qualify a bounded repair before restarting learning.",
+  "limitations": [
+    "Only the W worker is explicitly named as the direct training OOM victim in the kernel. Both training groups and the user systemd session vanished during this global failure; per-job exit receipts are unavailable.",
+    "No terminal checkpoint or complete scientific comparison exists.",
+    "Last complete update220/119 does not imply those weights survived; only model-only64 snapshots survived.",
+    "Kernel first-OOM task RSS is a point-in-time process sum, including any shared pages counted per process; it is not unique physical memory attribution.",
+    "Same-instance EBS backup is verified; it is not off-instance protection."
+  ],
+  "original_training_groups_currently_absent": true,
+  "official_TEST_accessed": false
+}
