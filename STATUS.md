@@ -105,21 +105,19 @@ Fast external tail has only2samples; PSS slopes are null, not a steady-state pas
 All traces/metrics and EBS readback archive verified; validation/host_memory_cache_capacity_20261018.json.
 Decision: release LRU256 for extended target-loop128TRAIN mechanics; no broad study or RL release.
 
-## Active: intermediate-only TRAIN128 fitting and reader comparison
-Question: can a separately trained prefix-only writer aid a frozen reader beyond compact CoT?
+## Closed: intermediate-only TRAIN128 fitting
+Question: can the reader, writer and ordinary compact CoT fit the verified computation format?
 ID:partial-state-v6-TRAIN128-overfit-v1; all three fresh B0 arms finish128updates/32passes on same ordered data.
 Reader, compactCoT and writer are physically closed; terminal losses.0161/.0081/2.53e−7.
 Independent12native/master witnesses and all3terminal model/FP32master/moment/cast audits pass.
 All32/64/96/128 complete states verified; warm updates~.73s, observed nodePSS peaks75.5GiB including saves.
 Frozen models plus all nonweight/numerical evidence EBS readback verified; full optimizer states onNVMe.
 CPU writer generates128/128 exact partial states and natural EOS, with no caps/errors/empty or root lines.
-This is TRAIN fitting, not generalization or reader utility; paired XLA prefix generation remains active.
-All128own and unrelated CPU-note reader inputs exactly equal teacher/other_teacher controls; reuse must be explicit.
-B0/reader/CoT answer matrices each have896scheduled attempts; all direct/CoT cache checks pass, longer checks compiling.
-Active:physical3 B0,5 reader,6 CoT,7 writer; old/adapted sources frozen at71609ee/ddb40b0/a73c347.
-Controls:local/diagnostics/partial-state-v6-TRAIN128-{B0,reader128,cot128}-answers-v{1,2} and writer128-GPU-notes-v1.
-Public:validation/partial_state_v6_TRAIN128_{training,writer_CPU}_20261018.json; no DEV or RL release.
-Decision: finish actual free answers, paired hardware notes and same-reader controls; split training costs two runs.
+Paired actual Trainium writer and all2,688 answer controls are now closed; see completed entries above.
+Actual prefix writer and supplied teacher give the same128/128 reader answers; compactCoT also128/128.
+This is fitting evidence; two-model training costs two runs and no architecture advantage is established.
+Public:validation/partial_state_v6_TRAIN128_{training,writer_CPU,writer_XLA,answers}_20261018.json.
+Decision: mechanics complete; finish the separately frozen fresh DEV question above before larger learning.
 
 ## CPU ready: intermediate-only state diagnostic
 Question: can a supervised prefix-only writer aid a trained frozen reader beyond compact CoT?
@@ -186,7 +184,7 @@ Both source reviews and1557CPUtests/smoke/compile pass; no hardware/compiler-reu
 Actual5120inventory/all20480causal packs pass; exact first64qualification subset and two seed drafts ready.
 Public branch general-sft-v5, validation/general_native_SFT_v5_CPU_readiness_20261018.json.
 Actual CPU receipts:local/diagnostics/general-sft-v5-preparation; no model or training release.
-Decision: keep source isolated; qualify actual general packing on hardware when resources free.
+Decision: keep source isolated and hardware training held until the current partial-state question is resolved.
 
 ## Closed: full-state recovery implementation
 Question: can original science recover FP32 master/Adam state without losing evidence?
@@ -231,7 +229,7 @@ Output:local/nvme/runs/postorder-reader-learning-compound5120-W-seed20261018-v4r
 Controls:local/science/control/same basename; root now owns interruption and next diagnosis.
 Terminal320 primary; step64 development only. Every terminal evaluated regardless of local sign.
 Only nonresumable model-only64 survives; full run/control/log/source and model backed up on EBS.
-Incident:validation/reader_learning_compound5120_host_OOM_20261018.json; no trained utility result.
+Incident:validation/reader_learning_compound5120_host_OOM_20261018.json; development64 evaluated above, no terminal result.
 
 ## Closed failed: C′ startup socket path
 Question: can the matched source control start on the free upper partition?
