@@ -60,12 +60,25 @@ includes 59 format errors; these counts do not isolate arithmetic ability.
 Adapting the reader also failed: raw K16 fell 3.887 nats and both reader-cross
 content contrasts remained negative. [Reader crosses](validation/warmstart_reader_cross_dev64_20261018.json).
 
-Before more training, a new 32-question pilot tests verified partial calculations,
-numeric corruptions and prefix-only local-teacher notes at the natural `Answer:`
-position. Its teacher sometimes includes final answers despite the omission
-instruction; those outputs are retained and distinguished from intermediate
-calculation. This tests curated-QA feasibility with external help. Official
-final tests remain unused.
+The completed [32-question calculation pilot](validation/gsm8k_calculation_train32_20261018.json)
+finds that verified partial calculations at the natural `Answer:` position score
+30/32, empty context 27/32, and same-length numeric corruptions 5/32. Accuracy
+benefit over empty remains uncertain: +9.375 percentage points, paired interval
+[0,21.875]. Forced canonical-number likelihood improves by +0.945 nats
+[0.258,1.591]. The large correct-versus-corrupted gap shows sensitivity and
+vulnerability to wrong intermediates; it alone does not establish improvement
+over silence. Local4B notes score29/32 and include final answers in the fixed
+first-four panel despite an omission instruction. This is external assistance,
+distinct from useful self-generated computation. All320 answer attempts and
+320 finite likelihood cells are retained and independently checked, with a
+verified EBS archive. Official final tests remain unused.
+
+The next exploratory probe uses the unchanged B0 writer with a separate
+three-shot calculation prompt, four samples per question, and no answer-based
+selection. A64-token note plus192-token reader is compared with the existing
+256-token ordinary-calculation baseline. Four notes estimate a single sampled-note
+policy by averaging within each question; they are not a deployed ensemble.
+Equal token caps do not establish equal computation or latency.
 
 Both old C seeds finished256 updates. R1234 stopped cleanly after update63;
 R5678 was not launched. The original primary R/C comparison is incomplete.
@@ -141,12 +154,13 @@ future-selected best16 is+.330 [+.051,+.684]. K16 best16 is+.395
 Oracle selection sees the continuation and does not establish deployed utility.
 The [original TRAIN corpus](validation/candidate_corpus_train128_20261017.json)
 and [fresh DEV64/G1 baseline](validation/warmstart_dev64_B0_20261017.json)
-also remain negative on average. A separate64-update FP32 writer-only run is
-now starting from B0 on those77 labels. It supervises note+canonical close,
+also remain negative on average. The completed64-update FP32 writer-only run
+started from B0 on those77 labels. It supervised note+canonical close,
 with no true continuation in the writer input or loss. The raw control uses
 the same selected documents/order and16 continuation targets. The primary
-development check is fresh G1 notes on DEV64 with the unchanged B0 prepend
-reader; training-label gains do not qualify this check.
+development check used fresh G1 notes on DEV64 with the unchanged B0 prepend
+reader and failed to establish useful notes; the completed comparison leads
+this page. Training-label gains do not qualify that check.
 
 The [full-gradient padding profile](validation/replay_padding_20261017.json)
 preserves reader/signed-loss gradients while reducing isolated real-note warm

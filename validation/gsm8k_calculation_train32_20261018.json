@@ -1,0 +1,883 @@
+{
+  "schema": "gsm8k-calculation-train32-result-v1",
+  "status": "completed_no_training_pilot",
+  "created_utc": "2026-10-18T02:03:00.959795+00:00",
+  "design": {
+    "task": "GSM8K",
+    "split": "TRAIN",
+    "items": 32,
+    "selection": "Question-only fixed hash-selected pool, disjoint from 139 prior development/demonstration IDs and normalized questions; no outcome selection.",
+    "student": "Released Qwen3-1.7B-Base, unchanged FP32, no training",
+    "student_signature": {
+      "parameters": 1720574976,
+      "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+      "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+    },
+    "teacher": "Released local Qwen3-4B, question-only native chat, one greedy note per item, no canonical answer access",
+    "teacher_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "teacher_signature": {
+      "parameters": 4022468096,
+      "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+      "sampled_parameter_sha256": "cc2a8c9f7c1e121aab71c7f12a3114278e02ba1a734769099e000bcff0cad40a"
+    },
+    "manual_notes": "Question-derived, verified partial calculations omitting final requested values; one same-token-length numerical corruption each.",
+    "interface": "raw=locked4shotQA; otherwise identical locked4shotQA+[198]+note+[198]; partial-CoT continuation",
+    "correctness": "One greedy calculation+answer from Answer:, cap256, existing strict hash4 parser",
+    "numeric_ll": "Forced final numeric answer: context+'\\n#### '+canonical number; no latent CoT; full released head",
+    "answer_cap": 256,
+    "answer_prefill_width": 1024,
+    "likelihood_width": 1024,
+    "target_width": 16,
+    "controls": "Seed17 token shuffle; cyclic next-item donor repeated/trimmed to recipient length; empty donor uses space filler",
+    "bootstrap": {
+      "repeats": 5000,
+      "seed": 17,
+      "unit": "question"
+    },
+    "uncertainty": "Paired question bootstrap, conditional on these 32 curated TRAIN items and fixed models; not training-seed uncertainty or uncontaminated benchmark estimation. No multiplicity correction."
+  },
+  "cells": {
+    "raw": {
+      "correct": 24,
+      "items": 32,
+      "accuracy": 0.75,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 1,
+        "ok": 31,
+        "truncated": 0
+      },
+      "mean_numeric_log_likelihood": -2.739349237506758,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 0,
+        "minimum": 0,
+        "median": 0.0,
+        "maximum": 0
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 3531,
+        "minimum": 52,
+        "median": 102.5,
+        "maximum": 232
+      },
+      "answer_stop_counts": {
+        "token:151643": 32
+      },
+      "answer_row_wall_seconds_sum": 800.5559346259397,
+      "likelihood_row_wall_seconds_sum": 7.819876477966318
+    },
+    "empty": {
+      "correct": 27,
+      "items": 32,
+      "accuracy": 0.84375,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 2,
+        "ok": 29,
+        "truncated": 1
+      },
+      "mean_numeric_log_likelihood": -2.8189484627509955,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 0,
+        "minimum": 0,
+        "median": 0.0,
+        "maximum": 0
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 4382,
+        "minimum": 65,
+        "median": 121.5,
+        "maximum": 256
+      },
+      "answer_stop_counts": {
+        "token:151643": 31,
+        "length_cap": 1
+      },
+      "answer_row_wall_seconds_sum": 308.5769535640284,
+      "likelihood_row_wall_seconds_sum": 4.5180907620087964
+    },
+    "generated": {
+      "correct": 29,
+      "items": 32,
+      "accuracy": 0.90625,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 1,
+        "ok": 31,
+        "truncated": 0
+      },
+      "mean_numeric_log_likelihood": -0.668042844736874,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 2244,
+        "minimum": 26,
+        "median": 70.5,
+        "maximum": 151
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 172,
+        "minimum": 4,
+        "median": 5.0,
+        "maximum": 13
+      },
+      "answer_stop_counts": {
+        "token:151643": 32
+      },
+      "answer_row_wall_seconds_sum": 15.802390403056052,
+      "likelihood_row_wall_seconds_sum": 4.508139359008055
+    },
+    "filler": {
+      "correct": 9,
+      "items": 32,
+      "accuracy": 0.28125,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 1,
+        "ok": 10,
+        "truncated": 21
+      },
+      "mean_numeric_log_likelihood": -2.894859515610733,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 2244,
+        "minimum": 26,
+        "median": 70.5,
+        "maximum": 151
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 6239,
+        "minimum": 47,
+        "median": 256.0,
+        "maximum": 256
+      },
+      "answer_stop_counts": {
+        "length_cap": 21,
+        "token:151643": 11
+      },
+      "answer_row_wall_seconds_sum": 437.8137468749919,
+      "likelihood_row_wall_seconds_sum": 4.505021345001296
+    },
+    "shuffled": {
+      "correct": 1,
+      "items": 32,
+      "accuracy": 0.03125,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 0,
+        "ok": 30,
+        "truncated": 2
+      },
+      "mean_numeric_log_likelihood": -3.7730867342907004,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 2244,
+        "minimum": 26,
+        "median": 70.5,
+        "maximum": 151
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 676,
+        "minimum": 4,
+        "median": 5.0,
+        "maximum": 256
+      },
+      "answer_stop_counts": {
+        "length_cap": 2,
+        "token:151643": 30
+      },
+      "answer_row_wall_seconds_sum": 50.86400374498044,
+      "likelihood_row_wall_seconds_sum": 4.502408325948636
+    },
+    "other": {
+      "correct": 0,
+      "items": 32,
+      "accuracy": 0.0,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 8,
+        "ok": 16,
+        "truncated": 8
+      },
+      "mean_numeric_log_likelihood": -6.32270447499468,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 2244,
+        "minimum": 26,
+        "median": 70.5,
+        "maximum": 151
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 2821,
+        "minimum": 4,
+        "median": 23.0,
+        "maximum": 256
+      },
+      "answer_stop_counts": {
+        "length_cap": 8,
+        "token:151643": 24
+      },
+      "answer_row_wall_seconds_sum": 200.2046606010117,
+      "likelihood_row_wall_seconds_sum": 4.503929084035917
+    },
+    "verified": {
+      "correct": 30,
+      "items": 32,
+      "accuracy": 0.9375,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 0,
+        "ok": 32,
+        "truncated": 0
+      },
+      "mean_numeric_log_likelihood": -1.8737199946654073,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 1050,
+        "minimum": 18,
+        "median": 33.5,
+        "maximum": 50
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 1060,
+        "minimum": 19,
+        "median": 29.5,
+        "maximum": 69
+      },
+      "answer_stop_counts": {
+        "token:151643": 32
+      },
+      "answer_row_wall_seconds_sum": 77.5556047269929,
+      "likelihood_row_wall_seconds_sum": 4.503090400030487
+    },
+    "corrupted": {
+      "correct": 5,
+      "items": 32,
+      "accuracy": 0.15625,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 0,
+        "ok": 32,
+        "truncated": 0
+      },
+      "mean_numeric_log_likelihood": -4.743314446946897,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 1050,
+        "minimum": 18,
+        "median": 33.5,
+        "maximum": 50
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 1119,
+        "minimum": 22,
+        "median": 30.0,
+        "maximum": 72
+      },
+      "answer_stop_counts": {
+        "token:151643": 32
+      },
+      "answer_row_wall_seconds_sum": 81.64648619201034,
+      "likelihood_row_wall_seconds_sum": 4.502905818982981
+    },
+    "verified_shuffled": {
+      "correct": 9,
+      "items": 32,
+      "accuracy": 0.28125,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 0,
+        "ok": 27,
+        "truncated": 5
+      },
+      "mean_numeric_log_likelihood": -3.309007841278799,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 1050,
+        "minimum": 18,
+        "median": 33.5,
+        "maximum": 50
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 2116,
+        "minimum": 4,
+        "median": 7.0,
+        "maximum": 256
+      },
+      "answer_stop_counts": {
+        "token:151643": 27,
+        "length_cap": 5
+      },
+      "answer_row_wall_seconds_sum": 150.99778734508436,
+      "likelihood_row_wall_seconds_sum": 4.503740184009075
+    },
+    "verified_other": {
+      "correct": 1,
+      "items": 32,
+      "accuracy": 0.03125,
+      "answer_statuses": {
+        "error": 0,
+        "format_error": 3,
+        "ok": 12,
+        "truncated": 17
+      },
+      "mean_numeric_log_likelihood": -5.942360047483817,
+      "note_content_token_counts": {
+        "n": 32,
+        "total": 1050,
+        "minimum": 18,
+        "median": 33.5,
+        "maximum": 50
+      },
+      "answer_tokens": {
+        "n": 32,
+        "total": 4700,
+        "minimum": 4,
+        "median": 256.0,
+        "maximum": 256
+      },
+      "answer_stop_counts": {
+        "length_cap": 17,
+        "token:151643": 15
+      },
+      "answer_row_wall_seconds_sum": 330.85536920200684,
+      "likelihood_row_wall_seconds_sum": 4.507620345088071
+    }
+  },
+  "paired_contrasts": {
+    "empty_minus_raw": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.03125,
+          0.25
+        ],
+        "difference_b_minus_a": 0.09375,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.19456770151186903,
+          0.030580178582886194
+        ],
+        "difference_b_minus_a": -0.07959922524423746,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "generated_minus_empty": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.0625,
+          0.1875
+        ],
+        "difference_b_minus_a": 0.0625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          1.0885886899834645,
+          3.0997883486011233
+        ],
+        "difference_b_minus_a": 2.1509056180141215,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "generated_minus_filler": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.46875,
+          0.78125
+        ],
+        "difference_b_minus_a": 0.625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          1.1260508390487587,
+          3.1931061414540167
+        ],
+        "difference_b_minus_a": 2.226816670873859,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "generated_minus_other": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.78125,
+          1.0
+        ],
+        "difference_b_minus_a": 0.90625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          4.245947705854536,
+          6.933480634358272
+        ],
+        "difference_b_minus_a": 5.654661630257806,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "generated_minus_raw": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.0,
+          0.34375
+        ],
+        "difference_b_minus_a": 0.15625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          1.0388753719357395,
+          3.005373828735503
+        ],
+        "difference_b_minus_a": 2.071306392769884,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "generated_minus_shuffled": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.75,
+          0.96875
+        ],
+        "difference_b_minus_a": 0.875,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          1.8814571505581,
+          4.160523909188338
+        ],
+        "difference_b_minus_a": 3.1050438895538264,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "verified_minus_corrupted": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.59375,
+          0.9375
+        ],
+        "difference_b_minus_a": 0.78125,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          1.888436912871316,
+          3.8526453490872634
+        ],
+        "difference_b_minus_a": 2.86959445228149,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "verified_minus_empty": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.0,
+          0.21875
+        ],
+        "difference_b_minus_a": 0.09375,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.2576626445367992,
+          1.5910729187926778
+        ],
+        "difference_b_minus_a": 0.9452284680855882,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "verified_minus_raw": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.0625,
+          0.34375
+        ],
+        "difference_b_minus_a": 0.1875,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.14763802219003994,
+          1.5388702857896532
+        ],
+        "difference_b_minus_a": 0.8656292428413508,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "verified_minus_verified_other": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.78125,
+          1.0
+        ],
+        "difference_b_minus_a": 0.90625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          2.9758330932952504,
+          5.165486046543947
+        ],
+        "difference_b_minus_a": 4.0686400528184095,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    },
+    "verified_minus_verified_shuffled": {
+      "accuracy": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.5,
+          0.8125
+        ],
+        "difference_b_minus_a": 0.65625,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      },
+      "numeric_ll": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.7129357680161093,
+          2.1255697542494087
+        ],
+        "difference_b_minus_a": 1.4352878466133916,
+        "documents": 32,
+        "items": 32,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+      }
+    }
+  },
+  "interpretation": [
+    "Verified partial calculations improve 30/32 versus raw 24/32; against the stronger empty wrapper 27/32, the +3/32 paired interval includes zero.",
+    "Verified minus same-length corrupted calculations is +25/32 accuracy and +2.86959445228149 nats numeric LL. This shows sensitivity/trust and vulnerability to a wrong intermediate. Benefit over empty is the separate +3/32 accuracy contrast with an interval including zero; verified-minus-empty numeric LL is positive.",
+    "Generated notes score 29/32 versus empty 27/32; the +2/32 accuracy interval crosses zero. The numeric-LL gain can include teacher-answer copying.",
+    "All four predetermined teacher examples inspected by the owner include final requested numbers despite the omission instruction. This is an instruction failure in the fixed panel, not a 32-item prevalence estimate; every note is unchanged.",
+    "Unrelated and shuffled notes can be strongly harmful. Gains over these degraded controls alone do not establish capability.",
+    "External assistance on curated QA does not establish self-generated useful thought, FineMath transfer, model improvement, or a reason to scale training."
+  ],
+  "teacher_execution": {
+    "notes": 32,
+    "empty": 0,
+    "caps": 0,
+    "actions": 2276,
+    "content_tokens": 2244,
+    "stop_counts": {
+      "token:151645": 32
+    },
+    "forward_checks": [
+      {
+        "atol": 0.002,
+        "max_error": 9.5367431640625e-05,
+        "wall_seconds": 108.295771531004
+      },
+      {
+        "atol": 0.002,
+        "max_error": 0.0001068115234375,
+        "wall_seconds": 105.2683271440037
+      },
+      {
+        "atol": 0.002,
+        "max_error": 0.000179290771484375,
+        "wall_seconds": 108.40513419499621
+      },
+      {
+        "atol": 0.002,
+        "max_error": 0.0001010894775390625,
+        "wall_seconds": 108.1856810600002
+      }
+    ],
+    "first_item_replay_checks": [
+      {
+        "actions": 49,
+        "atol": 0.001,
+        "item_id": "gsm8k:train:00028",
+        "max_error": 8.52346420288086e-06,
+        "wall_seconds": 113.08531945499999
+      },
+      {
+        "actions": 92,
+        "atol": 0.001,
+        "item_id": "gsm8k:train:02913",
+        "max_error": 1.683831214904785e-05,
+        "wall_seconds": 112.97279246799008
+      },
+      {
+        "actions": 36,
+        "atol": 0.001,
+        "item_id": "gsm8k:train:03496",
+        "max_error": 1.1909287422895432e-07,
+        "wall_seconds": 111.36943954600429
+      },
+      {
+        "actions": 58,
+        "atol": 0.001,
+        "item_id": "gsm8k:train:02906",
+        "max_error": 8.448958396911621e-06,
+        "wall_seconds": 112.78046678099781
+      }
+    ],
+    "native_vocab": {
+      "entries": 151669,
+      "equal": true,
+      "mapping_sha256": "c96fa22dee2dd9c98c4f0c73ea423e21907bc96abda81fa5c6b2e24a670c66bf"
+    },
+    "fixed_panel_instruction_failure": {
+      "reviewed": 4,
+      "final_answer_present": 4,
+      "scope": "Predetermined first4 only; all notes retained"
+    }
+  },
+  "execution": {
+    "teacher_all4_exit0": true,
+    "answers_all4_exit0": true,
+    "likelihood_all4_exit0": true,
+    "all_original_owned_PID_start_identities_groups_and_sessions_closed": true,
+    "answer_attempts": 320,
+    "finite_likelihood_rows": 320,
+    "teacher_generation_issued_utc": "2026-10-18T01:27:47.047564+00:00",
+    "answer_generation_issued_utc": "2026-10-18T01:45:56.523982+00:00",
+    "answer_last_exit_utc": "2026-10-18T01:57:14.128772+00:00",
+    "answer_cleanup_barrier_utc": "2026-10-18T01:57:39.913706+00:00",
+    "gold_created_utc": "2026-10-18T01:58:07+00:00",
+    "likelihood_issued_utc": "2026-10-18T01:58:47.687526+00:00",
+    "likelihood_last_exit_utc": "2026-10-18T01:59:17.065938+00:00",
+    "no_automatic_runtime_retry": true,
+    "no_official_test_access": true,
+    "no_notes_changed_or_selected": true,
+    "preparation_api_fix": "Prior prepare-only BatchEncoding container mismatch preserved; exact prompt IDs unchanged; no protocol/runtime outcome existed before correction."
+  },
+  "costs": {
+    "teacher": {
+      "cpu_reference_total_wall_seconds": 4.383674420998432,
+      "cpu_native_next_forward_seconds": [
+        0.5727015290030977,
+        0.6101180400000885,
+        0.5921307829994475,
+        0.5710298899939517
+      ],
+      "model_setup_seconds": [
+        18.065881160000572,
+        17.475995358006912,
+        19.246926678009913,
+        18.722777146002045
+      ],
+      "native_XLA_forward_seconds": [
+        108.295771531004,
+        105.2683271440037,
+        108.40513419499621,
+        108.1856810600002
+      ],
+      "first_item_replay_seconds": [
+        113.08531945499999,
+        112.97279246799008,
+        111.36943954600429,
+        112.78046678099781
+      ],
+      "all_item_generation_seconds_sum": 2696.0312840180122,
+      "shard_process_wall_seconds": [
+        915.0,
+        915.0,
+        920.0,
+        922.0
+      ],
+      "issued_to_last_exit_seconds": 931.182438,
+      "qualification": "All observed cold/startup/recorded-first-item/replay/normal-generation costs retained; these are isolated parallel inference costs, not training throughput."
+    },
+    "reader_answer_tokens": 26816,
+    "reader_answer_statuses": {
+      "format_error": 16,
+      "ok": 250,
+      "truncated": 54
+    },
+    "reader_answer_row_wall_seconds_sum": 2454.8729372801026,
+    "reader_answer_shard_process_wall_seconds": [
+      530.0,
+      674.0,
+      637.0,
+      670.0
+    ],
+    "reader_answer_issued_to_last_exit_seconds": 677.60479,
+    "reader_likelihood_row_wall_seconds_sum": 48.374822102079634,
+    "reader_likelihood_shard_process_wall_seconds": [
+      26.0,
+      26.0,
+      26.0,
+      26.0
+    ],
+    "reader_likelihood_issued_to_last_exit_seconds": 29.378412,
+    "interpretation": "Actual cold/startup/replay and cache reuse retained. Parallel row and shard wall sums are not isolated throughput measurements; no cost subtraction."
+  },
+  "bindings": {
+    "reader_protocol_sha256": "2a85462169f4904470bf97398602bff3c31fe00221a6cbfbe047fbb18c5b5ca1",
+    "reader_inputs_sha256": "93fffcd5ac21c96d51cf91b5e23c89ed34d77af5650eacc7ee75d822f68d0660",
+    "reader_summary_sha256": "efab1a67fb8119e10553dadeb18c834d1d1ec558e41f5e113ac3124b40f25f63",
+    "teacher_protocol_sha256": "ff1dc3234c674294164a0580fb46a436247d25a0a4170e8891b46d3bb8b98bd7",
+    "teacher_summary_sha256": "578d321141f99e0ffe0c29f914ae948b05ed4b2c30899f18e2ae782380963193",
+    "questions_sha256": "3e79f1ca6860b82af8955cf8bc35b5671bf14c6ca27fb435d263d3956bd5c097",
+    "selection_sha256": "c36850deb7b56b9819780107d97a362a6833f4fa5fec0a9afa9660a39036e5d2",
+    "verified_notes_sha256": "f7a7da6e992c5b1f236d5ff769ef5d436dfb88c6ead52b260384a424015ab35f",
+    "gold_sha256": "2523e552b274b9c1e4b221ebbe432a167ed715c6e380b34d4b7f88ea1cee5da3",
+    "pinned_train_source_sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+    "fixed_first4_sha256": "35822275b66e32285f227a6fe939e213c333b201a0e7440686e0aca950aee98e",
+    "teacher_fixed_first4_sha256": "59acd26d8cf2033199640e77c2d97f0a1d7b3dc63efacfd1bb28063f5d085a9d",
+    "teacher_instruction_review_sha256": "64e7a0f0b852c66e5192c34a0527979a830023369a7455f3e9e6ffc15aaf3e04",
+    "teacher_closure_sha256": "36ebafda0c40fbb2a0933f1c3a95b0049b57caf777b54e65ba3ca98f872b0a00",
+    "answer_closure_sha256": "e7537d5555a5c43335ab5f2d9fd77b0b7d29f1f8a9477e967ee53ab7c4d01d90",
+    "likelihood_closure_sha256": "6e0e1f3267a3714c5869bae64af39321a39ad5ea1f216bea9c54fd15f910d3cf",
+    "teacher_ebs_archive_sha256": "1f90540f4d2738ce4286a5b7dc1d9b66884473f406a28640e579a0d13b1d76bc",
+    "source_files": {
+      "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+      "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+      "train/calculation_pilot.py": "7bff244f48c5c129cd00e07c0eba24da71c2e48d74c9e3f40b15242b93101571",
+      "train/calculation_teacher.py": "6f905aa31e77c1f58e9cbbbb00ba6e226409dacaf827f8143ee5084290f24414",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+      "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+      "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+    },
+    "independent_reviews_sha256": "60d7288792c9a3930ad000e64d1ebb8f0fc4b7bdd37adf469d06eb8cd967c33f",
+    "aggregate_sha256": "4d52e31c41e41cdfc895245148864b64d9dd34d6b2eb3fc13fb597b50230b8a2"
+  },
+  "limitations": [
+    "Curated QA feasibility, not FineMath transfer or self-discovered reasoning.",
+    "Manual verified calculations use question only and omit final answer; external assistance.",
+    "32 unfiltered TRAIN items; broad conditional intervals and ceiling effects expected.",
+    "Released models may have encountered these public TRAIN problems before; this is not an uncontaminated capability benchmark.",
+    "Keep capped/empty teacher notes and every answer failure in the denominator.",
+    "Different note lengths and calculation quality; filler-only gains do not establish utility.",
+    "Teacher omission instruction failed in the owner-inspected fixed first4; generated-note benefit may be answer copying.",
+    "The forced canonical-number likelihood after an explicit marker is separate from free-running strict answer correctness.",
+    "Pilot includes all 54 truncations and 16 format errors in 320 answer denominators; no note or question selection after outcomes."
+  ],
+  "independent_reviews": {
+    "recorded_utc": "2026-10-18T02:03:40.485560+00:00",
+    "provenance": "Direct collaboration messages from independent agents; no separate audit files were written by them.",
+    "summary_sha256": "efab1a67fb8119e10553dadeb18c834d1d1ec558e41f5e113ac3124b40f25f63",
+    "accuracy": {
+      "reviewer": "/root/data",
+      "status": "PASS",
+      "coverage": "All ten correct counts/statuses, all320 per-item scores/statuses and all11 paired accuracy contrasts/CIs match exactly.",
+      "method": "Independent frozen-parser answer audit, no active files written or canonical gold source reopened."
+    },
+    "numeric_likelihood": {
+      "reviewer": "/root/review",
+      "status": "PASS",
+      "coverage": "All320 finite token-summed rows, ten means,11 paired CIs, source/input pins, targets across ten modes, coverage and B0 signatures match exactly.",
+      "method": "Direct NumPy seed17/5000 question resampling, independent of reducer/bootstrap helper; no active files written."
+    }
+  },
+  "archive": {
+    "archive": "/home/ubuntu/dario/local/backups/diagnostics/gsm8k-calculation-train32-v1/ARCHIVE.json",
+    "archive_sha256": "647c55ac91963a0a5af57034130484f2a649e534975ab953d28ae3ed8784cdbf",
+    "files": 206,
+    "payload_bytes": 9879515,
+    "all_readback_verified": true,
+    "all_originals_preserved": true,
+    "scope": "Private closed teacher+reader protocols, question/verified controls, all32 notes/all320 attempts/all320 LL rows, late TRAIN gold projection, fixed first4, exact source/test files, API-failure evidence and owned closures; no weights/cache/source Parquet."
+  }
+}

@@ -610,3 +610,25 @@ The new 32-question QA pilot continues. Its teacher includes final answers in
 the first four notes despite the omission instruction. Keep those outputs and
 distinguish copying assistance from verified intermediate-calculation utility
 before choosing further training.
+
+### 2026-10-18 02:07 UTC — useful external calculations justify a short self-note probe
+
+The TRAIN32 pilot closed all320 answers and320 finite numeric-LL rows; separate
+independent audits exactly reproduce every mean/status and all11 paired CIs.
+Verified partial notes score30/32 versus empty27/32, CI[0,7] additional correct;
+forced canonical-number LL improves+.945[.258,1.591] nats. Corrupted notes5/32
+show content sensitivity and vulnerability, separately from improvement over
+empty. Teacher29/32 includes final answers in the fixedfirst4; do not call that
+intermediate-only assistance. Source, outputs and closures are verified on EBS.
+
+Next, elicit notes from unchanged B0 using a separate plain3shot calculation
+prompt with disjoint TRAIN0/1/2 partial demonstrations, G4/T.7/cap64, deterministic
+first-newline/EOS/cap stopping, all original actions retained. Consume each note
+after the locked reader Answer: with cap192. Reuse the exact closed raw256
+baseline; also empty/discard192, shuffled and unrelated controls. Primary is
+mean single-sampled-note policy accuracy minus direct256; average all4 samples
+within each of32 questions before bootstrap. Same known questions are explicit
+exploratory reuse. No gold-selected sample, model update, teacher or official
+TEST. Equal maximum generated-token budgets do not establish equal compute.
+Require focused/full CPU checks and actual native/device/replay qualification
+before interpreting results; preserve every capped/empty/malformed output.
