@@ -1,5 +1,39 @@
 # Long-term proof ladder
 
+## Immediate causal chain — October 18
+
+The north star is **a model that computes from its available prefix and makes
+better fresh predictions at a worthwhile cost**. A thought can reorganize or
+derive information from that prefix; a future-aware annotation can additionally
+reveal which uncertain continuation occurred. Those are different experiments.
+The present synthetic study isolates computation before returning to real text.
+
+| Step | Evidence required | Current state and next action |
+|---|---|---|
+| 1. The reader can use computation | Correct partial states improve complete answers over the same reader's direct and empty paths; corruption and unrelated controls expose content dependence. | Pass on128 fitted examples only. Finish the four frozen512-item DEV panels; keep structure, range, composition and interpolation separate. |
+| 2. The writer can supply it | One prefix-only attempt produces valid partial computations and stops within budget on fresh expressions. |128/128 fitted examples work on CPU and Trainium. All2048 fresh attempts are saved; inspect them only with the completed paired answer question. |
+| 3. The composed channel is useful | Actual student notes improve the same frozen reader over direct, empty and unrelated notes, with paired uncertainty and every failed attempt retained. | Fresh complete-answer evaluation is running. If teachers help and students do not, improve the writer rather than invent another reader interface. If teachers also fail, repair reader learning or task headroom first. |
+| 4. The system earns its cost | Compare with answer-only training and competitive ordinary compact CoT, including both split training runs/models and actual generated tokens and latency. | Compact CoT also fits128/128. The unreleased larger proposal gives A/B640 total updates versus reader320+writer320; retain compact CoT if also testing full-root traces. Choose the simpler solver if it matches. |
+| 5. The mechanism survives real data | Learn from real mathematical documents; evaluate fresh source-matched boundaries and complete answers before claiming unrelated benchmark transfer. | Broad general SFT/RL stays held. Prefer verifiable prefix-derived calculations first. Posterior usefulness alone is insufficient evidence for deployed notes. |
+| 6. Self-improvement adds value | Refinement improves beyond its supervised starting point, without a teacher at deployment; replicate the final comparison with independent seeds. | Only after a fresh useful channel. Then test on-policy notes or alternating reader/writer blocks, followed by RL if needed. Measure whether extra inference helps separately from whether training improves the direct model. |
+
+These are necessary components, not six new probe projects. Finish the active
+question, identify the failed link, and change that link under a new identity.
+A positive within-model effect establishes a mechanism; superiority to a strong
+matched solver is a separate practical claim. Neither establishes general-text
+pretraining gains by itself.
+
+**Capacity is an intervention, not an assumed remedy.** A7–8B writer may produce
+more reliable work, while a stronger reader may already solve more without help.
+Use the completed teacher/student contrast to choose the intervention. Qwen3-8B-Base
+shares the qualified architecture family, but its BF16 weights plus gradients
+alone exceed the current24GiB-per-logical-core replicated layout. BF16 inference,
+frozen-backbone adapters, or actual parameter/gradient sharding need their own
+bounded qualification; changing only a model name is insufficient. The metadata
+and lower-bound sizing are in
+[the capacity assessment](../validation/qwen3_8b_capacity_assessment_20261018.json).
+No8B weights or training have been launched.
+
 ## Central question
 
 **What initial competence and training signal allow a language model to discover useful intermediate computation, and can that computation later be internalized or compressed?**

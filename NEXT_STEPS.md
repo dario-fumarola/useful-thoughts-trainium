@@ -82,5 +82,8 @@ all paired intervals and actual numerical tensors; archives complete batches onE
 Review all panels once, then choose the next learning experiment. No outcome peeking
 or source mutation on the frozen worktree. Inactive old qualification manifests
 identify102.6GiB of potential NVMe duplicates, excluded from active/current science;
-full readback is running as a finite read-only inventory (local/analysis/inactive-
-qualification-archive-readback-20261018.log). Nothing has been removed.
+full readback is complete: all102.6GiB match their retained EBS copies
+(local/analysis/inactive-qualification-archive-readback-20261018.json).
+Nothing has been removed. The owner's latest north-star/7–8B steering is broken
+into necessary components in docs/RESEARCH_ROADMAP.md. Size is a separate intervention;
+do not interrupt the frozen comparison or treat metadata sizing as hardware qualification.

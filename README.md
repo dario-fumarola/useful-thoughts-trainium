@@ -3,6 +3,8 @@
 Controlled experiments on whether self-generated intermediate computation improves
 language-model predictions. Actual Qwen3-1.7B-Base, real mathematical documents,
 and computation diagnostics run on AWS Trainium. Official TEST remains unused.
+The [current proof ladder](docs/RESEARCH_ROADMAP.md) separates reader use,
+prefix-only computation, actual student benefit, cost, and return to real text.
 
 ## Current finding
 

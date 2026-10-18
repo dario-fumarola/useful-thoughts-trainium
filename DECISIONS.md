@@ -1072,3 +1072,12 @@ R/W each two; actual supervised labels/chip-time/capacity remain explicit. The
 full-root CoT variant is prepared but cannot displace the compact cost baseline.
 A320in the first CPU proposal was never launched. The currently active128-model
 DEV question retains its original80-action budget/settings; no new learning.
+
+2026-10-18 20:40UTC — Owner asks for the north star, causal steps, papers and
+7–8B consideration. Finish the frozen teacher/student/CoT question first; its
+failed link chooses the next intervention. Official Qwen8B metadata independently
+counts8,190,735,360parameters: BF16 weights+gradients30.51GiB exceed actual24GiB
+logical banks. Replicated full SFT cannot reuse the present layout unchanged;
+inference/adapters/sharding remain unqualified alternatives. No weights downloaded
+or larger run launched. Proof ladder and primary-paper corrections updated;
+capacity metadata/lower bounds preserved, with no forward or efficacy claim.

@@ -1,0 +1,124 @@
+{
+  "schema": "model-capacity-metadata-assessment-v1",
+  "created_utc": "2026-10-18T20:40:28.204488+00:00",
+  "status": "METADATA_AND_STATIC_LOWER_BOUNDS_ONLY_NO_WEIGHTS_NO_FORWARD_NO_LEARNING_RELEASE",
+  "question": "What must change to test a Qwen3 7\u20138B computation channel on the existing instance?",
+  "model": {
+    "id": "Qwen/Qwen3-8B-Base",
+    "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+    "config_url": "https://huggingface.co/Qwen/Qwen3-8B-Base/raw/49e3418fbbbca6ecbdf9608b4d22e5a407081db4/config.json",
+    "metadata_url": "https://huggingface.co/api/models/Qwen/Qwen3-8B-Base",
+    "config": {
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "attention_bias": false,
+      "attention_dropout": 0.0,
+      "bos_token_id": 151643,
+      "eos_token_id": 151643,
+      "head_dim": 128,
+      "hidden_act": "silu",
+      "hidden_size": 4096,
+      "initializer_range": 0.02,
+      "intermediate_size": 12288,
+      "max_position_embeddings": 32768,
+      "max_window_layers": 36,
+      "model_type": "qwen3",
+      "num_attention_heads": 32,
+      "num_hidden_layers": 36,
+      "num_key_value_heads": 8,
+      "rms_norm_eps": 1e-06,
+      "rope_scaling": null,
+      "rope_theta": 1000000,
+      "sliding_window": null,
+      "tie_word_embeddings": false,
+      "torch_dtype": "bfloat16",
+      "transformers_version": "4.51.0",
+      "use_cache": true,
+      "use_sliding_window": false,
+      "vocab_size": 151936
+    },
+    "parameters": 8190735360,
+    "published_safetensors": {
+      "parameters": {
+        "BF16": 8190735360
+      },
+      "total": 8190735360
+    },
+    "independent_architecture_parameter_count": 8190735360
+  },
+  "hardware": {
+    "source": "Filtered actual neuron-ls -j; no instance identifiers or process fields retained",
+    "chips": 16,
+    "logical_cores_per_chip": 4,
+    "LNC": 2,
+    "bytes_per_chip": 103079215104,
+    "bytes_per_logical_hbm_bank": 25769803776,
+    "logical_hbm_GiB": 24.0
+  },
+  "current_full_training_lower_bounds": {
+    "BF16_weights_GiB": 15.256433486938477,
+    "BF16_weights_and_gradients_GiB": 30.512866973876953,
+    "FP32_master_and_two_moments_global_GiB": 91.53860092163086,
+    "replicated_weights_and_gradients_fit": false,
+    "reason": "ZeRO-1 shards optimizer state, while this driver retains complete BF16 parameters and gradients per rank. Their 30.51GiB alone exceeds24GiB, before optimizer, activations and compiler scratch."
+  },
+  "inference_lower_bound": {
+    "BF16_weights_GiB": 15.256433486938477,
+    "remaining_bank_after_weights_GiB": 8.743566513061523,
+    "fit_established": false,
+    "required_checks": [
+      "Exact released-weight loading with untied head and native tokenizer",
+      "CPU/BF16 device forward and cached-generation checks on declared shapes",
+      "Measured device memory including executable scratch, cache and activations",
+      "Measured first-compile and warm inference cost"
+    ]
+  },
+  "adapter_candidate": {
+    "implemented": false,
+    "rank": 16,
+    "targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "trainable_parameters": 43646976,
+    "BF16_adapter_weights_and_gradients_GiB": 0.16259765625,
+    "FP32_adapter_master_and_moments_global_GiB": 0.48779296875,
+    "assumptions": "All base weights, including embeddings, head, and norms, are frozen. No embedding/head adapters in this count. Activation, scratch, padding and all communication allocations excluded.",
+    "required_changes": [
+      "Actual frozen-base adapter forward and gradient verification",
+      "Current reentrant trunk checkpointing must receive a gradient-bearing input after frozen embeddings; simply freezing the backbone can suppress adapter gradients",
+      "FP32 adapter-master update and true fresh-process full restore",
+      "Measured device/host memory and useful target-shape throughput"
+    ]
+  },
+  "sharded_full_training_candidate": {
+    "implemented": false,
+    "requires": "Parameter/gradient sharding or tensor parallelism, not more ZeRO-1 ranks alone"
+  },
+  "installed_versions": {
+    "torch": "2.9.1",
+    "torch-xla": "2.9.0",
+    "torch-neuronx": "2.9.0.2.15.32035+de43f57c",
+    "neuronx-cc": "2.27.5334.0+f702b353",
+    "transformers": "5.15.1",
+    "neuronx-distributed": null,
+    "neuronx-distributed-inference": null,
+    "optimum-neuron": null,
+    "peft": null
+  },
+  "official_tutorial": "https://huggingface.co/docs/optimum-neuron/training_tutorials/finetune_qwen3",
+  "tutorial_limit": "The official example uses a different installed training stack and tensor parallelism; public support is not a qualification of this environment.",
+  "decision": "Complete the already frozen teacher/student/compact-CoT comparison first. Choose a writer or reader capacity intervention from the failed causal link. No 8B asset download or run started.",
+  "source_sha256": {
+    "train/partial_state_driver.py": "a479b6e65315eb5f9948421259c26bd5b9e2054a25eec49535f41263610d1339",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+  }
+}

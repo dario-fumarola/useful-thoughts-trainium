@@ -87,3 +87,31 @@ For our current experiment, exact prefix-computable partial states eliminate
 that information mismatch, while separately held structure/range/composition
 panels test transfer. Correct teacher reading, actual student benefit and a gain
 over ordinary compact CoT remain three different claims.
+
+## Capacity and objective corrections — checked 2026-10-18
+
+[RLP v2, sections2.4 and10](https://arxiv.org/html/2510.01265v2) explicitly uses
+thought-policy updates without ordinary NTP, sibling-relative advantages and a
+sample-length-normalized clipped surrogate. Its main model is Qwen3-1.7B-Base;
+reported gains therefore do not establish7B as a prerequisite. Its introduction
+mentions interleaved likelihood training, in tension with those explicit method
+statements. Treat the equations and experimental settings as the recipe, and do
+not present our stopped small study as a clean replication or rejection.
+Its EMA ablation cannot be explained by varying only the shared scalar baseline
+in the written sibling-centered update: that term cancels. This discrepancy
+needs implementation detail; it does not justify adding an EMA as a remedy.
+
+[RPT, section3.3](https://arxiv.org/html/2506.08007v1) starts from an already
+reasoning-distilled14B model and filters low-entropy positions with a separate
+small proxy. It is not evidence that the same bootstrap works on an unadapted
+small base. [Quiet-STaR's appendixA](https://arxiv.org/html/2403.09629v2) uses
+Mistral7B, learned boundaries and a learned mixing network; its capacity and
+initialization differ together from our old experiment.
+
+Our algebra/engineering implications: subtracting an empty-format or EMA constant
+still cancels inside per-context LOO advantages; a real no-note choice or another
+update rule is required to change that behavior. Saved behavior log-probabilities
+remove recomputation of the old-policy denominator, but training still needs
+differentiable new-policy log-probabilities. A zero thought-mixing weight also
+zeros content-dependent reward until the prediction/mixing path learns to use it.
+These observations guide the next design; they are not new training results.
