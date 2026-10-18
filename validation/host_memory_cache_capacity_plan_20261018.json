@@ -1,0 +1,48 @@
+{
+  "schema": "host-memory-cache-capacity-v1",
+  "created_utc": "2026-10-18T17:46:51.653955+00:00",
+  "question": "Does retaining reusable compiled graphs prevent the repeated compile-handle creation and host-allocation growth seen with LRU2?",
+  "original_protocol": "/home/ubuntu/dario/local/diagnostics/postorder-reader-learning-compound5120-sft-v4r2/protocol.seed-20261018.json",
+  "original_protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+  "conditions": {
+    "cache2": {
+      "cache_capacity": 2
+    },
+    "cache256": {
+      "cache_capacity": 256
+    }
+  },
+  "iterations": 16,
+  "world_size": 4,
+  "global_batch": 4,
+  "arm": "W",
+  "deadline_utc": "2026-10-18T19:30:00+00:00",
+  "hardware": "Sequential fresh B0s logical16-19/physical4 only; <=2700s per condition, external512GiB floor, no retries.",
+  "data": "Same first64 original ordered real TRAIN occurrences per condition. Reduced topology/global4 is engineering only; original world32 conclusions remain separate.",
+  "unchanged": "Same BF16 weights/gradients, FP32 Adam/masters, constantLR1e-5, one ZeRO reducer, native reference and initial-master gates, reduced sampled diagnostics retaining first3/last.",
+  "measurement": "Stage glibc live allocation and RSS, external whole-session PSS/private bytes, XLA metrics every update; grad-norm CPU observation separately marked.",
+  "endpoint": "Tail9-16 max rank glibc live-allocation slope and process-tree PSS slope, repeated CreateCompileHandles, elapsed update times.",
+  "candidate_pass": "After warm-up, max rank live-allocation slope <=64MiB/update and no continuing repeated large-graph loads. Still requires extended target-loop qualification before science.",
+  "helper_files": {
+    "run_profile.py": "6c7cd19d505284dd3d8fcefdb1ec21d129b9f8d602f7ffbdf65b2d570e5630b3",
+    "profile_worker.py": "3c8426e598527f6588573e0a60a91597e27539f708ef525315a0bd8f40ae270a",
+    "supervise.py": "2627f85ff6ed24a6da19cf2e59923574f05dd4cf1fddb838cfe2856a17879fe2"
+  },
+  "limits": [
+    "World4/global4 cannot certify world32/global32.",
+    "No checkpoints or science models emitted.",
+    "Sixteen updates cannot establish long-term steady state.",
+    "Cold compilation/cache history and concurrent restart job affect timing.",
+    "The only between-condition change is compilation-cache capacity."
+  ],
+  "status": "RELEASED_BOUNDED_ENGINEERING_NOT_SCIENCE",
+  "plan_sha256": "034dcf41b52c8ea94e8ad42dab969122f45017706762b52ee77d1fb04ec37165",
+  "release": {
+    "status": "RELEASED_BOUNDED_ENGINEERING_NOT_SCIENCE",
+    "utc": "2026-10-18T17:47:13.545823+00:00",
+    "plan_sha256": "034dcf41b52c8ea94e8ad42dab969122f45017706762b52ee77d1fb04ec37165",
+    "source_review_sha256": "3783d26f45f59261f13b53928a8f6b9ab951804435ef30f2bde3d0096f5e5ea2",
+    "bound": "Two sequential4-core conditions <=2700s each, total<=6 accelerator-core-hours, same existing node,19:30UTC outer deadline, available512GiB floor. No long learning or science model release.",
+    "reason": "Causal cache-capacity test is the smallest direct follow-up to flat live tensor counts but growing compile handles and paired-rank live allocation."
+  }
+}

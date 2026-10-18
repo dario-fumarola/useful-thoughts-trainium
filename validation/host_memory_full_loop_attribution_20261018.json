@@ -1,0 +1,1435 @@
+{
+  "schema": "host-memory-full-loop-attribution-v1",
+  "status": "COMPLETE_GROWTH_REPRODUCED_NO_REPAIR",
+  "finished_utc": "2026-10-18T17:49:05.573134+00:00",
+  "question": "Does sustained original W-loop host-memory growth arise during backward, optimizer or diagnostics, and depend on constant/scheduledLR or full/reduced sampled observations?",
+  "design": {
+    "schema": "host-memory-full-loop-attribution-v1",
+    "created_utc": "2026-10-18T16:21:21.436858+00:00",
+    "question": "Does sustained original W-loop host-memory growth arise during backward, optimizer or diagnostics, and depend on constant/scheduledLR or full/reduced sampled observations?",
+    "original_protocol": "/home/ubuntu/dario/local/diagnostics/postorder-reader-learning-compound5120-sft-v4r2/protocol.seed-20261018.json",
+    "original_protocol_sha256": "584ed0f9177d81a7c10ef3891b87b1ad7777169404cdb8b44b81b9897d6d2b62",
+    "conditions": {
+      "scheduled_full": {
+        "lr": "scheduled",
+        "diagnostics": "full"
+      },
+      "constant_full": {
+        "lr": "constant",
+        "diagnostics": "full"
+      },
+      "scheduled_reduced": {
+        "lr": "scheduled",
+        "diagnostics": "reduced"
+      },
+      "constant_reduced": {
+        "lr": "constant",
+        "diagnostics": "reduced"
+      }
+    },
+    "iterations": 16,
+    "world_size": 32,
+    "global_batch": 32,
+    "arm": "W",
+    "data": "Same original first512 ordered realTRAIN occurrences per fresh B0 condition; no DEV/TEST read.",
+    "deadline_utc": "2026-10-18T18:30:00+00:00",
+    "hardware": "Sequential logical32\u201363/physical8\u201315, each at most2400s, OMP/MKL2 as original. Wait for complete backward-only batch closure first.",
+    "precision": "Unchanged BF16 parameters/gradients and FP32 master/Adam; same native full-head gate, initial exact masters, one ZeRO reducer, finite gradients/norm each update.",
+    "reduced": "Skip sampled master/model/replica observations after first3 through15; perform them again at16. Omitted values are null. First3/full state finite scans preserved.",
+    "measurement": "Per-rank RSS/glibc counters before backward, after backward, after optimizer, after sampled diagnostics and complete update. External process-tree PSS/availableRAM every10s. XLA metrics1/3/8/16. Individual process PSS is primary; do not treat summed RSS as private memory.",
+    "endpoint": "Tail9\u201316 complete-update PSS/RSS slope and stage deltas, complete-step and component/optimizer times, module/compilation/cache changes. Candidate bounded tail<=64MiB/rank/update;16 updates cannot establish long-run steady state.",
+    "stop": "External512GiB available floor, finite timeouts, exact-owned TERM then35s surviving-group KILL, no retries, no scientific use of these models.",
+    "helper_files": {
+      "run_profile.py": "89c66d06a6c15704af8cd1d53816db124af857e02a8bbc60dea8815589f94aeb",
+      "profile_worker.py": "f90eb229df3d238668e6f39174f2449d7174cd3383079eeac8d35eed647de532",
+      "supervise.py": "6ee5f4a5aaebc069928970b2eea66e2f7f466fc34f7336d9a202ca99784c5085"
+    },
+    "limits": [
+      "No causal attribution from a single graph/cache log; this is an explicit2x2 probe.",
+      "Sequential order may affect cold caches; cold/setup costs separate from tail timings.",
+      "Per-step memory instrumentation itself is extra, shared across all conditions.",
+      "No checkpoints emitted: short disposable engineering profiles do not qualify long training or resumption."
+    ]
+  },
+  "results": {
+    "scheduled_full": {
+      "updates": 16,
+      "tail": "updates9-16; all scheduled updates remain inside20-update warmup",
+      "rank_statistics": [
+        {
+          "rank": 0,
+          "tail_glibc_live_MiB_per_update": 278.46495146978486,
+          "tail_RSS_MiB_per_update": 145.66085379464312,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 1,
+          "tail_glibc_live_MiB_per_update": 0.34795252482094763,
+          "tail_RSS_MiB_per_update": -174.70419456845218,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 2,
+          "tail_glibc_live_MiB_per_update": 278.44548979259685,
+          "tail_RSS_MiB_per_update": 201.86658296130992,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 3,
+          "tail_glibc_live_MiB_per_update": 0.3471532549177534,
+          "tail_RSS_MiB_per_update": -83.5859374999997,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 4,
+          "tail_glibc_live_MiB_per_update": 0.34602228800463997,
+          "tail_RSS_MiB_per_update": -83.00520833333292,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 5,
+          "tail_glibc_live_MiB_per_update": 278.4484781537738,
+          "tail_RSS_MiB_per_update": 181.61049107142875,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 6,
+          "tail_glibc_live_MiB_per_update": 278.431454249791,
+          "tail_RSS_MiB_per_update": 161.0052083333334,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 7,
+          "tail_glibc_live_MiB_per_update": 0.3491029285249789,
+          "tail_RSS_MiB_per_update": -68.0188337053567,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 8,
+          "tail_glibc_live_MiB_per_update": 0.34864480154859323,
+          "tail_RSS_MiB_per_update": -214.3249627976187,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 9,
+          "tail_glibc_live_MiB_per_update": 278.4300206502278,
+          "tail_RSS_MiB_per_update": 337.75558035714306,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 10,
+          "tail_glibc_live_MiB_per_update": 278.44667616344634,
+          "tail_RSS_MiB_per_update": 206.8361700148809,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 11,
+          "tail_glibc_live_MiB_per_update": 0.3476923987979211,
+          "tail_RSS_MiB_per_update": -80.48516555059491,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 12,
+          "tail_glibc_live_MiB_per_update": 0.3481606983003929,
+          "tail_RSS_MiB_per_update": -95.56426711309489,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 13,
+          "tail_glibc_live_MiB_per_update": 278.4475588117327,
+          "tail_RSS_MiB_per_update": 207.0084635416667,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 14,
+          "tail_glibc_live_MiB_per_update": 0.346482231503507,
+          "tail_RSS_MiB_per_update": -71.75032552083323,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 15,
+          "tail_glibc_live_MiB_per_update": 278.4568988255092,
+          "tail_RSS_MiB_per_update": 203.92257254464295,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 16,
+          "tail_glibc_live_MiB_per_update": 0.3475056602841726,
+          "tail_RSS_MiB_per_update": -92.93991815476186,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 17,
+          "tail_glibc_live_MiB_per_update": 278.44769795735687,
+          "tail_RSS_MiB_per_update": 191.45331101190484,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 18,
+          "tail_glibc_live_MiB_per_update": 0.3478655133928854,
+          "tail_RSS_MiB_per_update": 148.65866815476204,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 19,
+          "tail_glibc_live_MiB_per_update": 278.4573776608423,
+          "tail_RSS_MiB_per_update": 203.76929873511943,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 20,
+          "tail_glibc_live_MiB_per_update": 0.35030946277443437,
+          "tail_RSS_MiB_per_update": 221.2113560267859,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 21,
+          "tail_glibc_live_MiB_per_update": 278.4355334327335,
+          "tail_RSS_MiB_per_update": 34.65257626488146,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 22,
+          "tail_glibc_live_MiB_per_update": 278.4462463742211,
+          "tail_RSS_MiB_per_update": 225.9445684523814,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 23,
+          "tail_glibc_live_MiB_per_update": 0.348175957089447,
+          "tail_RSS_MiB_per_update": -74.33714657738068,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 24,
+          "tail_glibc_live_MiB_per_update": 0.3472553434826401,
+          "tail_RSS_MiB_per_update": 158.68833705357164,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 25,
+          "tail_glibc_live_MiB_per_update": 278.44789741152806,
+          "tail_RSS_MiB_per_update": 202.65685453869085,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 26,
+          "tail_glibc_live_MiB_per_update": 278.4414552961078,
+          "tail_RSS_MiB_per_update": 184.94391741071473,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 27,
+          "tail_glibc_live_MiB_per_update": 0.3492589678083252,
+          "tail_RSS_MiB_per_update": -89.52701822916642,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 28,
+          "tail_glibc_live_MiB_per_update": 278.46178127470483,
+          "tail_RSS_MiB_per_update": 435.02762276785757,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 29,
+          "tail_glibc_live_MiB_per_update": 0.3477917625791399,
+          "tail_RSS_MiB_per_update": -87.11160714285677,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 30,
+          "tail_glibc_live_MiB_per_update": 278.445639110747,
+          "tail_RSS_MiB_per_update": 202.44759114583377,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 31,
+          "tail_glibc_live_MiB_per_update": 0.3476404462542035,
+          "tail_RSS_MiB_per_update": -90.41369047619021,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        }
+      ],
+      "glibc_live_definition": "mallinfo2.uordblks + mallinfo2.hblkhd; allocator accounting, not a C++ root-cause attribution",
+      "median_rank_live_MiB_per_update": 139.3901650565011,
+      "median_rank_RSS_MiB_per_update": 153.67350260416686,
+      "external_session_PSS_GiB_per_update": 5.7752447634222435,
+      "external_session_private_GiB_per_update": 5.764162214906581,
+      "external_tail_samples": 27,
+      "ranks_live_allocation_growth_above200MiB_per_update": [
+        0,
+        2,
+        5,
+        6,
+        9,
+        10,
+        13,
+        15,
+        17,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28,
+        30
+      ],
+      "one_fast_growing_rank_per_adjacent_pair": true,
+      "tail_step_median_seconds": 58.51051128748804,
+      "tail_optimizer_rank_mean_median_seconds": 6.0118021965026855
+    },
+    "constant_full": {
+      "updates": 16,
+      "tail": "updates9-16; all scheduled updates remain inside20-update warmup",
+      "rank_statistics": [
+        {
+          "rank": 0,
+          "tail_glibc_live_MiB_per_update": 278.4615222385953,
+          "tail_RSS_MiB_per_update": 202.68243117559555,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 1,
+          "tail_glibc_live_MiB_per_update": 0.3446884155273871,
+          "tail_RSS_MiB_per_update": -77.64215959821391,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 2,
+          "tail_glibc_live_MiB_per_update": 278.44295410882887,
+          "tail_RSS_MiB_per_update": 202.87234933035768,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 3,
+          "tail_glibc_live_MiB_per_update": 0.34474727085658863,
+          "tail_RSS_MiB_per_update": -28.32635788690464,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 4,
+          "tail_glibc_live_MiB_per_update": 0.344122205461843,
+          "tail_RSS_MiB_per_update": -70.56835937499962,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 5,
+          "tail_glibc_live_MiB_per_update": 278.44547998337515,
+          "tail_RSS_MiB_per_update": 302.0915643601197,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 6,
+          "tail_glibc_live_MiB_per_update": 278.4237436567034,
+          "tail_RSS_MiB_per_update": 216.1775483630956,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 7,
+          "tail_glibc_live_MiB_per_update": 0.3464379083543586,
+          "tail_RSS_MiB_per_update": -65.85309709821405,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 8,
+          "tail_glibc_live_MiB_per_update": 0.3455238342285916,
+          "tail_RSS_MiB_per_update": -81.51357886904736,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 9,
+          "tail_glibc_live_MiB_per_update": 278.4314161028181,
+          "tail_RSS_MiB_per_update": 387.4425688244048,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 10,
+          "tail_glibc_live_MiB_per_update": 278.4429777236213,
+          "tail_RSS_MiB_per_update": 251.1883370535716,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 11,
+          "tail_glibc_live_MiB_per_update": 0.3456266494024296,
+          "tail_RSS_MiB_per_update": -66.23139880952375,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 12,
+          "tail_glibc_live_MiB_per_update": 0.34350204467775713,
+          "tail_RSS_MiB_per_update": -56.732700892856876,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 13,
+          "tail_glibc_live_MiB_per_update": 278.43556358700715,
+          "tail_RSS_MiB_per_update": 228.25176711309578,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 14,
+          "tail_glibc_live_MiB_per_update": 0.34426898048044297,
+          "tail_RSS_MiB_per_update": -83.23986235119015,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 15,
+          "tail_glibc_live_MiB_per_update": 278.4552735828219,
+          "tail_RSS_MiB_per_update": 375.2949218750004,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 16,
+          "tail_glibc_live_MiB_per_update": 0.34478450956805,
+          "tail_RSS_MiB_per_update": -66.07826450892821,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 17,
+          "tail_glibc_live_MiB_per_update": 278.4429061526344,
+          "tail_RSS_MiB_per_update": 424.7419084821434,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 18,
+          "tail_glibc_live_MiB_per_update": 0.34485172090081795,
+          "tail_RSS_MiB_per_update": 99.17261904761918,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 19,
+          "tail_glibc_live_MiB_per_update": 278.4547471545992,
+          "tail_RSS_MiB_per_update": 229.1026785714291,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 20,
+          "tail_glibc_live_MiB_per_update": 0.3477973937988578,
+          "tail_RSS_MiB_per_update": 37.62741815476235,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 21,
+          "tail_glibc_live_MiB_per_update": 278.417395637149,
+          "tail_RSS_MiB_per_update": 203.02013578869096,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 22,
+          "tail_glibc_live_MiB_per_update": 278.4487059456962,
+          "tail_RSS_MiB_per_update": 195.05106026785785,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 23,
+          "tail_glibc_live_MiB_per_update": 0.3436208452497972,
+          "tail_RSS_MiB_per_update": -84.90039062499955,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 24,
+          "tail_glibc_live_MiB_per_update": 0.34419232323064874,
+          "tail_RSS_MiB_per_update": -186.47642299107108,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 25,
+          "tail_glibc_live_MiB_per_update": 278.44335774012984,
+          "tail_RSS_MiB_per_update": 214.24037388392856,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 26,
+          "tail_glibc_live_MiB_per_update": 278.4269932338169,
+          "tail_RSS_MiB_per_update": 211.16206287202414,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 27,
+          "tail_glibc_live_MiB_per_update": 0.3466310046968327,
+          "tail_RSS_MiB_per_update": -71.51720610119028,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 28,
+          "tail_glibc_live_MiB_per_update": 278.4612484886533,
+          "tail_RSS_MiB_per_update": 389.4492652529762,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 29,
+          "tail_glibc_live_MiB_per_update": 0.3436273847308018,
+          "tail_RSS_MiB_per_update": -69.90527343749956,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 30,
+          "tail_glibc_live_MiB_per_update": 278.4431946164088,
+          "tail_RSS_MiB_per_update": 218.0772414434527,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 31,
+          "tail_glibc_live_MiB_per_update": 0.34440285818922534,
+          "tail_RSS_MiB_per_update": -80.78138950892809,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 136,
+          "cached_compile_step8_to16": 0
+        }
+      ],
+      "glibc_live_definition": "mallinfo2.uordblks + mallinfo2.hblkhd; allocator accounting, not a C++ root-cause attribution",
+      "median_rank_live_MiB_per_update": 139.38259651547395,
+      "median_rank_RSS_MiB_per_update": 147.11183965773853,
+      "external_session_PSS_GiB_per_update": 5.1505645669918145,
+      "external_session_private_GiB_per_update": 5.1551118161524805,
+      "external_tail_samples": 25,
+      "ranks_live_allocation_growth_above200MiB_per_update": [
+        0,
+        2,
+        5,
+        6,
+        9,
+        10,
+        13,
+        15,
+        17,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28,
+        30
+      ],
+      "one_fast_growing_rank_per_adjacent_pair": true,
+      "tail_step_median_seconds": 54.999994266501744,
+      "tail_optimizer_rank_mean_median_seconds": 5.683492422103882
+    },
+    "scheduled_reduced": {
+      "updates": 16,
+      "tail": "updates9-16; all scheduled updates remain inside20-update warmup",
+      "rank_statistics": [
+        {
+          "rank": 0,
+          "tail_glibc_live_MiB_per_update": 278.61399223690955,
+          "tail_RSS_MiB_per_update": 292.71833147321473,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 1,
+          "tail_glibc_live_MiB_per_update": 0.49673734392444524,
+          "tail_RSS_MiB_per_update": 11.633138020833655,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 2,
+          "tail_glibc_live_MiB_per_update": 278.5853887285506,
+          "tail_RSS_MiB_per_update": 280.6825706845241,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 3,
+          "tail_glibc_live_MiB_per_update": 0.49532863071990635,
+          "tail_RSS_MiB_per_update": 108.69228980654815,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 4,
+          "tail_glibc_live_MiB_per_update": 0.4964686802455827,
+          "tail_RSS_MiB_per_update": 98.61128162202414,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 5,
+          "tail_glibc_live_MiB_per_update": 278.59692855108386,
+          "tail_RSS_MiB_per_update": 266.8872302827386,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 6,
+          "tail_glibc_live_MiB_per_update": 278.5497136797224,
+          "tail_RSS_MiB_per_update": 271.8076171875003,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 7,
+          "tail_glibc_live_MiB_per_update": 0.49754624139699244,
+          "tail_RSS_MiB_per_update": 3.3227771577385057,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 8,
+          "tail_glibc_live_MiB_per_update": 0.49913242885049214,
+          "tail_RSS_MiB_per_update": -9.781203497023466,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 9,
+          "tail_glibc_live_MiB_per_update": 278.58635693504715,
+          "tail_RSS_MiB_per_update": 294.72823660714346,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 10,
+          "tail_glibc_live_MiB_per_update": 278.59443264915836,
+          "tail_RSS_MiB_per_update": 473.89634486607196,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 11,
+          "tail_glibc_live_MiB_per_update": 0.49582254318965846,
+          "tail_RSS_MiB_per_update": 94.49925595238132,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 12,
+          "tail_glibc_live_MiB_per_update": 0.49622435796833486,
+          "tail_RSS_MiB_per_update": -2.1101655505950885,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 13,
+          "tail_glibc_live_MiB_per_update": 278.58305740356445,
+          "tail_RSS_MiB_per_update": 480.4198288690477,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 14,
+          "tail_glibc_live_MiB_per_update": 0.4967051914760329,
+          "tail_RSS_MiB_per_update": -5.879278273809393,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 15,
+          "tail_glibc_live_MiB_per_update": 278.60738281976626,
+          "tail_RSS_MiB_per_update": 270.8536551339288,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 16,
+          "tail_glibc_live_MiB_per_update": 0.49545833042695375,
+          "tail_RSS_MiB_per_update": -0.7070312499997533,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 17,
+          "tail_glibc_live_MiB_per_update": 278.5964528038388,
+          "tail_RSS_MiB_per_update": 291.0303199404766,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 18,
+          "tail_glibc_live_MiB_per_update": 0.4971197219122829,
+          "tail_RSS_MiB_per_update": 3.251767113095615,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 19,
+          "tail_glibc_live_MiB_per_update": 278.584300813221,
+          "tail_RSS_MiB_per_update": 292.51674107142907,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 20,
+          "tail_glibc_live_MiB_per_update": 0.4986052740188353,
+          "tail_RSS_MiB_per_update": -83.73646763392823,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 21,
+          "tail_glibc_live_MiB_per_update": 278.58913512457,
+          "tail_RSS_MiB_per_update": 291.3820219494055,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 22,
+          "tail_glibc_live_MiB_per_update": 278.59434400285994,
+          "tail_RSS_MiB_per_update": 294.1649460565476,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 23,
+          "tail_glibc_live_MiB_per_update": 0.4966868445986986,
+          "tail_RSS_MiB_per_update": 21.755301339286138,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 24,
+          "tail_glibc_live_MiB_per_update": 0.49624415806364297,
+          "tail_RSS_MiB_per_update": 3.763857886905152,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 25,
+          "tail_glibc_live_MiB_per_update": 278.59861573718854,
+          "tail_RSS_MiB_per_update": 293.0910993303577,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 26,
+          "tail_glibc_live_MiB_per_update": 278.58049156552283,
+          "tail_RSS_MiB_per_update": 102.86183965773856,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 27,
+          "tail_glibc_live_MiB_per_update": 0.4993496849423585,
+          "tail_RSS_MiB_per_update": 27.079985119047947,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 28,
+          "tail_glibc_live_MiB_per_update": 278.601199377151,
+          "tail_RSS_MiB_per_update": 678.3663504464286,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 29,
+          "tail_glibc_live_MiB_per_update": 0.4957475208100851,
+          "tail_RSS_MiB_per_update": 7.94847470238131,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 30,
+          "tail_glibc_live_MiB_per_update": 278.59547278994614,
+          "tail_RSS_MiB_per_update": 282.7618582589292,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 31,
+          "tail_glibc_live_MiB_per_update": 0.4954565139044765,
+          "tail_RSS_MiB_per_update": -2.905226934523562,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        }
+      ],
+      "glibc_live_definition": "mallinfo2.uordblks + mallinfo2.hblkhd; allocator accounting, not a C++ root-cause attribution",
+      "median_rank_live_MiB_per_update": 139.52453168233237,
+      "median_rank_RSS_MiB_per_update": 105.77706473214334,
+      "external_session_PSS_GiB_per_update": 6.097634509383992,
+      "external_session_private_GiB_per_update": 6.096659420413947,
+      "external_tail_samples": 25,
+      "ranks_live_allocation_growth_above200MiB_per_update": [
+        0,
+        2,
+        5,
+        6,
+        9,
+        10,
+        13,
+        15,
+        17,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28,
+        30
+      ],
+      "one_fast_growing_rank_per_adjacent_pair": true,
+      "tail_step_median_seconds": 56.27591948649206,
+      "tail_optimizer_rank_mean_median_seconds": 5.808461666107178
+    },
+    "constant_reduced": {
+      "updates": 16,
+      "tail": "updates9-16; all scheduled updates remain inside20-update warmup",
+      "rank_statistics": [
+        {
+          "rank": 0,
+          "tail_glibc_live_MiB_per_update": 278.6003083728609,
+          "tail_RSS_MiB_per_update": 312.315987723215,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 1,
+          "tail_glibc_live_MiB_per_update": 0.49259167625794453,
+          "tail_RSS_MiB_per_update": 10.491629464286099,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 2,
+          "tail_glibc_live_MiB_per_update": 278.5920255751837,
+          "tail_RSS_MiB_per_update": 227.04933965773833,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 3,
+          "tail_glibc_live_MiB_per_update": 0.4927397228423291,
+          "tail_RSS_MiB_per_update": 0.34398251488121334,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 4,
+          "tail_glibc_live_MiB_per_update": 0.4924432663690643,
+          "tail_RSS_MiB_per_update": -0.19173177083322962,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 5,
+          "tail_glibc_live_MiB_per_update": 278.59373001825253,
+          "tail_RSS_MiB_per_update": 456.55761718750045,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 6,
+          "tail_glibc_live_MiB_per_update": 278.58630788893936,
+          "tail_RSS_MiB_per_update": 197.82231212797672,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 7,
+          "tail_glibc_live_MiB_per_update": 0.4951645987375092,
+          "tail_RSS_MiB_per_update": -27.322219122023565,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 8,
+          "tail_glibc_live_MiB_per_update": 0.495748065766859,
+          "tail_RSS_MiB_per_update": -16.66443452380917,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 9,
+          "tail_glibc_live_MiB_per_update": 278.57711283365904,
+          "tail_RSS_MiB_per_update": 286.8466796875003,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 10,
+          "tail_glibc_live_MiB_per_update": 278.59189533052,
+          "tail_RSS_MiB_per_update": 381.2093098958337,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 11,
+          "tail_glibc_live_MiB_per_update": 0.4930817740304762,
+          "tail_RSS_MiB_per_update": 34.12899925595261,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 12,
+          "tail_glibc_live_MiB_per_update": 0.49300493512836485,
+          "tail_RSS_MiB_per_update": 7.502743675595609,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 13,
+          "tail_glibc_live_MiB_per_update": 278.5927625383652,
+          "tail_RSS_MiB_per_update": 285.3999255952388,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 14,
+          "tail_glibc_live_MiB_per_update": 0.49362691243491746,
+          "tail_RSS_MiB_per_update": -1.8524460565474195,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 15,
+          "tail_glibc_live_MiB_per_update": 278.59214037940615,
+          "tail_RSS_MiB_per_update": 269.22349330357196,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 16,
+          "tail_glibc_live_MiB_per_update": 0.4922361828032642,
+          "tail_RSS_MiB_per_update": -1.9021577380951131,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 17,
+          "tail_glibc_live_MiB_per_update": 278.5934330168224,
+          "tail_RSS_MiB_per_update": 447.5045572916669,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 18,
+          "tail_glibc_live_MiB_per_update": 0.4929362705775667,
+          "tail_RSS_MiB_per_update": 235.53473772321436,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 19,
+          "tail_glibc_live_MiB_per_update": 278.5843420482818,
+          "tail_RSS_MiB_per_update": 283.25069754464346,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 20,
+          "tail_glibc_live_MiB_per_update": 0.49734696887795987,
+          "tail_RSS_MiB_per_update": -14.005301339285316,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 21,
+          "tail_glibc_live_MiB_per_update": 278.5848661150251,
+          "tail_RSS_MiB_per_update": 285.9682384672621,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 22,
+          "tail_glibc_live_MiB_per_update": 278.58664194742846,
+          "tail_RSS_MiB_per_update": 141.74121093750006,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 23,
+          "tail_glibc_live_MiB_per_update": 0.4928768702916239,
+          "tail_RSS_MiB_per_update": 115.46981956845258,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 24,
+          "tail_glibc_live_MiB_per_update": 0.49267650785907463,
+          "tail_RSS_MiB_per_update": 4.092819940476485,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 25,
+          "tail_glibc_live_MiB_per_update": 278.59594690232075,
+          "tail_RSS_MiB_per_update": 273.76357886904776,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 26,
+          "tail_glibc_live_MiB_per_update": 278.5875038873583,
+          "tail_RSS_MiB_per_update": 378.52832031250006,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 27,
+          "tail_glibc_live_MiB_per_update": 0.49500002179832425,
+          "tail_RSS_MiB_per_update": -51.871651785713894,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 28,
+          "tail_glibc_live_MiB_per_update": 278.610307239351,
+          "tail_RSS_MiB_per_update": 290.4083426339291,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 29,
+          "tail_glibc_live_MiB_per_update": 0.4936726888021666,
+          "tail_RSS_MiB_per_update": -6.5935174851189124,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 30,
+          "tail_glibc_live_MiB_per_update": 278.59231040591305,
+          "tail_RSS_MiB_per_update": 479.5774739583336,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        },
+        {
+          "rank": 31,
+          "tail_glibc_live_MiB_per_update": 0.4924343654088308,
+          "tail_RSS_MiB_per_update": 16.987816220238408,
+          "live_XLA_tensors_step8": 2175,
+          "live_XLA_tensors_step16": 2175,
+          "compile_handles_created_step8_to16": 94,
+          "cached_compile_step8_to16": 0
+        }
+      ],
+      "glibc_live_definition": "mallinfo2.uordblks + mallinfo2.hblkhd; allocator accounting, not a C++ root-cause attribution",
+      "median_rank_live_MiB_per_update": 139.5372299012685,
+      "median_rank_RSS_MiB_per_update": 169.7817615327384,
+      "external_session_PSS_GiB_per_update": 4.847099307402194,
+      "external_session_private_GiB_per_update": 4.843455792880199,
+      "external_tail_samples": 24,
+      "ranks_live_allocation_growth_above200MiB_per_update": [
+        0,
+        2,
+        5,
+        6,
+        9,
+        10,
+        13,
+        15,
+        17,
+        19,
+        21,
+        22,
+        25,
+        26,
+        28,
+        30
+      ],
+      "one_fast_growing_rank_per_adjacent_pair": true,
+      "tail_step_median_seconds": 55.555504978008685,
+      "tail_optimizer_rank_mean_median_seconds": 5.820289134979248
+    }
+  },
+  "independent_audit": {
+    "native_full_head_and_initial_masters": 128,
+    "max_native_bidirectional_KL": 0.0031035199827929003,
+    "max_native_recompute_error": 5.728924279413405e-16,
+    "native_numeric_readback_tolerance": 1e-12,
+    "all128_initial_masters_bitwise_equal": true,
+    "all256_full_optimizer_finite_reports_pass": true,
+    "all64_updates_and_same512_ordered_items": true,
+    "all_original_sessions_and_devices_physically_closed": true,
+    "archive_receipt_sha256": "eac61fcc964c18efe82b1aa542c4893642f8a8f710bb94b9af782a99a4f55c31"
+  },
+  "public_payloads": {
+    "validation/host_memory_full_loop_20261018/scheduled_full-all32-stage-memory-traces.jsonl.gz": {
+      "rows": 3072,
+      "bytes": 122558,
+      "sha256": "80a572213305c3688b9ccfb1609b439ff8e653ed7aa063805119bf13a9984ce5"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_full-all16-update-metrics.jsonl.gz": {
+      "rows": 16,
+      "bytes": 26624,
+      "sha256": "dd830cb784dfa14e2ebaf2878759c390111e6682047cf1f9f19da5b334585b58"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_full-XLA-rank-00000-step-16.txt": {
+      "bytes": 6596,
+      "sha256": "28c6a756b87edbef3270aafa33621794f1f42389f18f4d512a4fedee5c5798bb"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_full-XLA-rank-00001-step-16.txt": {
+      "bytes": 6598,
+      "sha256": "12cb464eda034b526a47942ce70a9acc549e33b214e3283b3cb012418583effd"
+    },
+    "validation/host_memory_full_loop_20261018/constant_full-all32-stage-memory-traces.jsonl.gz": {
+      "rows": 3072,
+      "bytes": 123098,
+      "sha256": "784f375c2063c4bdce0da485c25800a134098f6b7cdd04de91f3f3a74f8d6e6a"
+    },
+    "validation/host_memory_full_loop_20261018/constant_full-all16-update-metrics.jsonl.gz": {
+      "rows": 16,
+      "bytes": 26453,
+      "sha256": "6759a98dd4e6b1057cbbff7190de603a02500c89d5ee8d8b407848613991a814"
+    },
+    "validation/host_memory_full_loop_20261018/constant_full-XLA-rank-00000-step-16.txt": {
+      "bytes": 6604,
+      "sha256": "45b0d54d6f6197332dba844b6ce0b76adae07e75752c7e9e45d3ebcf26cf1a47"
+    },
+    "validation/host_memory_full_loop_20261018/constant_full-XLA-rank-00001-step-16.txt": {
+      "bytes": 6599,
+      "sha256": "e4c51db84108becc95ba95041b21fdd2b3150b64782c9470c8e0bd36f6b865d5"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_reduced-all32-stage-memory-traces.jsonl.gz": {
+      "rows": 3072,
+      "bytes": 121203,
+      "sha256": "9552d3bc587b94373ae25edb01869e85a1e81a8f8750da008f17b7fa1ff60b9b"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_reduced-all16-update-metrics.jsonl.gz": {
+      "rows": 16,
+      "bytes": 26142,
+      "sha256": "bb1ac273fa79f22f284b4105ea0188157cb9385d6ee225673bd4cea49cc7d2fe"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_reduced-XLA-rank-00000-step-16.txt": {
+      "bytes": 6596,
+      "sha256": "f8e1ef0a6dfa66e4cb2385e425514f4a9a80b3ebaae8826335ffa94b5d69551e"
+    },
+    "validation/host_memory_full_loop_20261018/scheduled_reduced-XLA-rank-00001-step-16.txt": {
+      "bytes": 6594,
+      "sha256": "4ba5695f4ac69046bc75ac11b0561cbac1f42a576d6b7532a49359dc1c5706a0"
+    },
+    "validation/host_memory_full_loop_20261018/constant_reduced-all32-stage-memory-traces.jsonl.gz": {
+      "rows": 3072,
+      "bytes": 121362,
+      "sha256": "26000f686178ccf31848f4358604fa86cbea927f8501bf0ae79448ca6d856b86"
+    },
+    "validation/host_memory_full_loop_20261018/constant_reduced-all16-update-metrics.jsonl.gz": {
+      "rows": 16,
+      "bytes": 26065,
+      "sha256": "3814d267d2cd6b3812c169afab6892ba1d4180e6938df2f714fc0e7a2940966a"
+    },
+    "validation/host_memory_full_loop_20261018/constant_reduced-XLA-rank-00000-step-16.txt": {
+      "bytes": 6596,
+      "sha256": "6f371a08e3b3bf8bcaf1d8e812c2e117f41486c0ab2284eccd71a6c16763c52b"
+    },
+    "validation/host_memory_full_loop_20261018/constant_reduced-XLA-rank-00001-step-16.txt": {
+      "bytes": 6598,
+      "sha256": "7f9d3967fb750dacbfc6a865a3b178ccceb82d820bb382e54f0c50e9ce39cc64"
+    }
+  },
+  "conclusion": "All four conditions retain substantial private host memory. Constant LR and reduced sampled diagnostics do not remove the live-allocation growth. Flat live tensor counts coexist with repeatedly created compile handles; cache-capacity is the next causal test, not an established cause.",
+  "limits": [
+    "All16 scheduled updates in v1 are inside the original20-update warmup. This batch cannot assess later cosine transitions or the original step64 model export.",
+    "Saved-model evaluation and CPU checks overlapped conditions. Step times are descriptive under that load, not a clean causal speed comparison.",
+    "No checkpoints were emitted; this is not a recovery or long-memory qualification.",
+    "mallinfo2 growth can include retained runtime/cache allocations; these counters cannot identify ownership.",
+    "One rapidly growing rank per adjacent pair is an observation, not proof of collective/runtime causation.",
+    "Sequential order/cold cache differences and overlapping work prevent causal timing comparisons.",
+    "The smaller static-weight world1 backward-only probe did not reproduce this full-loop growth."
+  ]
+}

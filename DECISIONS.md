@@ -1013,3 +1013,10 @@ cooperative STOP are necessary for the next operational recipe. No auto-relaunch
 - Before long learning, isolate host memory, qualify a bounded complete update
   loop, and add periodic resumable states with an actual restart. Four-condition
   backward-only allocator probe is bounded and makes no full-loop qualification.
+
+2026-10-18 17:52UTC — The closed original-loop2×2 reproduces live host-allocation
+growth with both constant/scheduledLR and full/reduced sampled diagnostics;
+these are not sufficient fixes. Exactly one rank per adjacent pair grows rapidly.
+Flat live tensor counts but repeated compile handles under LRU2 motivate one
+explicit world4/global4 cache2/cache256 causal probe, with native/finite gates
+and no science model reuse. No runtime/stack change or long learning release.

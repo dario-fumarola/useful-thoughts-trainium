@@ -1,4 +1,4 @@
-# Status — 2026-10-18 17:26 UTC
+# Status — 2026-10-18 17:52 UTC
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
@@ -23,7 +23,8 @@ Three updates/full save/physical closure, then fresh full restore and ordered up
 Endpoint: all4native KL<=.01, exact initial masters, genuine updates/replicas/cast-master, full byte restore.
 Released after W evaluation closure, logical12–15/physical3; own external512GiB floor and19:00UTC bound.
 Supervisor4025222; initial timeout/group/session4025278; all4actual physical3 workers captured.
-One actual update complete; subsequent new graphs compiling. No steady throughput or recovery PASS yet.
+Fresh3 exited0 with verified24.09GB full state and physical closure; actual full restore then update4 complete.
+Resume timeout/group/session4171129; restored4-rank worker group active. No recovery PASS until full6 readback.
 Controls:local/diagnostics/partial-state-v6-world4-micro8-qualification-v1.
 Output:local/nvme/diagnostics/partial-state-v6-world4-micro8-qualification-v1/writer.
 Source:isolated partial-state-v6 commit7623864;1561CPUtests/smoke/compile pass; live source frozen.
@@ -37,15 +38,30 @@ Default tailRSS slope6.47MiB/iteration; all four short tails below64MiB. Trim lo
 Complete EBS archive read-back verified; validation/host_memory_backward_probe_20261018.json.
 Decision: backward-only does not reproduce runaway growth in16; full optimizer/diagnostics attribution follows.
 
-## Active: original full-loop host-memory attribution
+## Closed: original full-loop host-memory attribution
 Question: does full-loop growth depend on LR scheduling or repeated sampled diagnostics?
-ID:host-memory-full-loop-attribution-v1; one sequential2×2 batch,16updates per fresh B0 condition.
-Same original W realTRAIN order/global32/world32/OMP2/BF16+FP32masters, physical8–15.
-Constant/scheduledLR × full/reduced diagnostics; reduced keeps first3/last proofs, missing metrics null.
-Record stage RSS/glibc and external process PSS; tail9–16 slopes, step costs and compilation counters.
-Bound512GiB available, each<=2400s, batch18:30UTC; exact-owned stop, no retries or science-model reuse.
-Controls:local/diagnostics/host-memory-full-loop-attribution-v1; first scheduled/full condition active.
-Decision: pending; short attribution cannot qualify long-run steady memory or resumption.
+ID:host-memory-full-loop-attribution-v1; scheduled/constantLR × full/reduced sampled diagnostics.
+All four fresh B0s complete16 real W updates, same512 TRAIN occurrences/world32/global32/OMP2.
+All128 native/master witnesses,256 full-state finite reports and64 actual updates independently checked.
+All four sessions/devices physically closed; complete EBS readback archive verified.
+Tail9–16 private hostRAM grows4.0–6.5GiB/node/update; median live allocation139MiB/rank/update.
+Exactly one rank of each adjacent pair grows~279MiB/update; other partner is nearly flat.
+Live XLA tensor counts stay flat while compile handles continue increasing under LRU2.
+All16 scheduled steps are inside warmup; no later cosine/export or long steady-state claim.
+Public:validation/host_memory_full_loop_attribution_20261018.json plus all stage traces/update metrics.
+Decision: constantLR/reduced diagnostics are not repairs; cache-capacity is a hypothesis to test.
+
+## Active: compilation-cache capacity attribution
+Question: does retaining reusable compiled graphs remove repeated loading and host-allocation growth?
+ID:host-memory-cache-capacity-v1; one sequential LRU2/LRU256 batch,16 fresh-B0 W updates each.
+Logical16–19/physical4 only, world4/global4, same64 original ordered TRAIN occurrences and constantLR.
+This smaller engineering topology is explicit; it cannot certify original world32 or long-run stability.
+Endpoint: tail9–16 max-rank live allocation<=64MiB/update, process PSS and compile-handle growth.
+Original native/master/finite-update gates retained; no checkpoints/scientific models or retries.
+Bound2700s/condition,19:30UTC deadline, external512GiB floor; source/release reviewed before launch.
+Controls:local/diagnostics/host-memory-cache-capacity-v1; cache2 active, actual4-core mapping captured.
+Output:local/nvme/diagnostics/host-memory-cache-capacity-v1; keep production/live restart sources frozen.
+Decision: pending; a positive short test still needs extended target-loop memory qualification.
 
 ## CPU ready: intermediate-only state diagnostic
 Question: can a supervised prefix-only writer aid a trained frozen reader beyond compact CoT?

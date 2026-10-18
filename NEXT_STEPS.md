@@ -10,18 +10,19 @@
 2. Active short-pack mechanics on isolated partial-state-v6 commit7623864:
    local/diagnostics/partial-state-v6-world4-micro8-qualification-v1.
    Its finite supervisor4025222 owns fresh3→full-save/closure→actual-restart3.
-   Physical3/logical12–15; first actual update complete, later graphs compiling.
+   Physical3/logical12–15; fresh3/full24.09GB/closure done, actual restart update4 complete.
    Source immutable through both stages. All4native and initial master checks
    precede updates. Deadline19:00UTC; own external512GiB available floor and
   60-minute stage caps; no retries. Independently audit full checkpoint3/6,
    exact restored model/master/moment bytes and actual Adam counters before PASS.
-3. Finish the active sequential2×2 full-loop RAM attribution batch on physical8–15:
-   local/diagnostics/host-memory-full-loop-attribution-v1, deadline18:30UTC.
-   Original W math/data/ZeRO; scheduled/full,constant/full,scheduled/reduced,
-   constant/reduced,16updates each. Report process PSS/stage RSS/glibc and limits.
-   All16 scheduled steps stay INSIDE20-step warmup; this does not assess later
-   cosine or step64 export. Background evaluation affected timing. Never infer
-   long-run steady state from it. Backward-only16×4 was bounded, not an OOM repair.
+3. Full-loop2×2 is closed and archived; all four conditions grow4–6.5GiB/node
+   private RAM per update. ConstantLR/reduced sampled diagnostics do not fix it.
+   validation/host_memory_full_loop_attribution_20261018.json preserves all
+   traces. Live tensor counts are flat but compile handles keep accumulating.
+   Active smaller causal cache-capacity probe LRU2/LRU256 on physical4 only:
+   local/diagnostics/host-memory-cache-capacity-v1, deadline19:30UTC, no retries.
+   World4/global4 is explicitly engineering, not a world32 stability pass.
+   Review after both conditions close; target-loop extended memory still needed.
 4. After mechanics/restart, run a separately frozen128TRAIN overfit check:
    reader first with correct partial/empty/raw paths, freeze checkpoint; then a
    separate prefix-only writer trained on exact non-root operations and stop.
