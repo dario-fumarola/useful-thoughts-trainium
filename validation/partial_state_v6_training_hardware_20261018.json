@@ -1,0 +1,151 @@
+{
+  "schema": "partial-state-v6-short-SFT-restart-hardware-v1",
+  "status": "PASS_ACTUAL_UPDATES_FULL_RESTORE_AND_CONTINUATION",
+  "finished_utc": "2026-10-18T17:59:41.231867+00:00",
+  "question": "Do short batched real-B0 SFT, full save, actual fresh-process restore and next updates work?",
+  "protocol_sha256": "3cdd20ab7278175de5423a896620e885f38e4d645b67c88fe57d1d573ba72f79",
+  "source_files": {
+    "train/partial_state_driver.py": "a479b6e65315eb5f9948421259c26bd5b9e2054a25eec49535f41263610d1339",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "42f59f50a7741ebaa356ca00c0a451b7de286c21ff8381efb0baae2b42b41e9b",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031"
+  },
+  "actual_topology": "4ranks\u00d78examples, logical12-15/physical3, global32",
+  "precision": "BF16 model/gradients; FP32 masters/Adam; one ZeRO reduction owner",
+  "native_checks": 8,
+  "initial_exact_released_master_checks": 8,
+  "max_native_bidirectional_KL": 0.0031035199827929003,
+  "actual_updates": 6,
+  "expressions": 192,
+  "supervised_tokens": 4826,
+  "checkpoints": {
+    "3": {
+      "COMPLETE_sha256": "26098c58e604109f01c12468952eb21073367d0dd43921cbde2553949a22fdfe",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "42b7226424bfd36a4a5290d2b8d47d635315168b2f8242b6fbafe127bd73b3f5"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "1c82cdfe43a1ef60b2ac251e69d8389cf84ef077d6ea22fdcdc7cbc5eb8ac5bc"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "033abdfb91882f14213e75bad87d5000d8c12e1064e93e4a59c2f5c189806990"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "539b04ad3686f94382d41e951259b725285c5acb59f59f03e54d4b4b13acafc2"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "2f114e891e2e36cb7afea1ceeff268343bacfb40d648e8f5faa2a2160e38047e"
+        }
+      },
+      "total_bytes": 24089821871,
+      "all1240_FP32_parameter_shards_and_moments_finite": true,
+      "all_adam_steps": 3,
+      "all_active_BF16_bytes_equal_reassembled_cast_masters": true,
+      "all_CPU_RNG_states_well_formed": true
+    },
+    "6": {
+      "COMPLETE_sha256": "3aa04f9e942089257e0051f2889e3657a554b78c4c22d8b55bbd96b5a1632933",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "a9a8ea3afd589628e52f0d1df62cec4a1f6d678b19dc7b2922c65f17abad44fa"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "5e938e6d57c0baf15aad4374f170eb99d8ad221756461729af10da8f608e9705"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "109a0d55318758c664e356b0359a827ecfd793d39f6b666629ac70d023d55eb4"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "a47e98c5da8201b2bd50567b8d6f0c0e9f533318e355e3974a34ad7a9d47aafd"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "68194d779e548664c7f790238fbaef595747901887d12725740f624a35691f8b"
+        }
+      },
+      "total_bytes": 24089821871,
+      "all1240_FP32_parameter_shards_and_moments_finite": true,
+      "all_adam_steps": 6,
+      "all_active_BF16_bytes_equal_reassembled_cast_masters": true,
+      "all_CPU_RNG_states_well_formed": true
+    }
+  },
+  "actual_restored_bytes": [
+    {
+      "rank": 0,
+      "all_saved_FP32_master_moment_step_digests_match_actual_restore": true,
+      "evidence_sha256": "def4b28b2b77596ebb331fd8dd0f3897610e48e0081faaf50bcffdd50ef4e3cb"
+    },
+    {
+      "rank": 1,
+      "all_saved_FP32_master_moment_step_digests_match_actual_restore": true,
+      "evidence_sha256": "4a79fa687f4e3f90ef09b5ef984f30b4c4915e20001b52b09a700ba696e4ca7e"
+    },
+    {
+      "rank": 2,
+      "all_saved_FP32_master_moment_step_digests_match_actual_restore": true,
+      "evidence_sha256": "2a3ff22b7010a99ca1e15f97ff0d683a8635b9dcdda7138ecd3ef31f7a07c5e3"
+    },
+    {
+      "rank": 3,
+      "all_saved_FP32_master_moment_step_digests_match_actual_restore": true,
+      "evidence_sha256": "8d9d198ebe9423aaef502d832f9b19f099178d27a1a8f01ff249315157c7e7cc"
+    }
+  ],
+  "all_fresh_and_restore_sessions_devices_physically_closed": true,
+  "update_seconds": [
+    753.819004754012,
+    804.2395318930212,
+    237.64399079300347,
+    484.15445092800655,
+    560.5107630540151,
+    14.511874163988978
+  ],
+  "loss": [
+    0.8938407897949219,
+    0.7028887271881104,
+    0.3865308165550232,
+    0.29535382986068726,
+    0.12894970178604126,
+    0.07300455123186111
+  ],
+  "archive_receipt_sha256": "accfc7e5166bbda51fee1f24969d3e21a45a6eb8f5ff30909c838baddc534db7",
+  "public_metrics": {
+    "validation/partial_state_v6_qualification_20261018/all6-update-metrics.jsonl.gz": {
+      "bytes": 5762,
+      "sha256": "a4c9aa23e00675c06df0ebbdc8e06210bc04932e168085fc21c1a38be8eb54b1"
+    }
+  },
+  "limits": [
+    "TRAIN128 writer mechanics only; qualification models are discarded from scientific comparisons.",
+    "Six updates do not establish long-run memory stability or steady throughput.",
+    "Multiple cold/alias graphs compiled; only last update reached14.5seconds; no general performance claim.",
+    "Full actual model/optimizer bytes match at restore, followed by genuine updates4-6; no uninterrupted-parity claim.",
+    "Saved CPU RNG syntax independently validated; actual RNG reset uses the existing qualified helper, not a new independent RNG readback test.",
+    "Checkpoint3 full payload remains only on NVMe; latest6 and all nonweight evidence have verified same-instance EBS copies.",
+    "No reader, student utility or generalization result follows."
+  ]
+}

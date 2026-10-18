@@ -1,0 +1,62 @@
+{
+  "schema": "partial-state-short-SFT-hardware-qualification-v1",
+  "created_utc": "2026-10-18T16:51:35.291243+00:00",
+  "status": "CPU_CANDIDATE_NOT_HARDWARE_QUALIFIED",
+  "question": "Does actual B0 train correctly with global32 as4ranks\u00d78 short causal examples, save every3, then restore exact full state and continue?",
+  "data": "First128 verified TRAIN expressions only; no DEV outcomes.",
+  "arm": "writer",
+  "stages": [
+    "fresh B0 updates1\u20133 and full checkpoint3, explicit complete-update halt",
+    "physical closure and full checkpoint integrity, model/optimizer/RNG publication",
+    "fresh process restore full checkpoint3; exact active/master/moment bytes and genuine ordered updates4\u20136",
+    "physical closure and complete checkpoint6 raw-state audit"
+  ],
+  "pass_criteria": [
+    "All4 canonical native BF16 full-head gates maxbidirectionalKL<=.01 unchanged.",
+    "All4 exact released FP32 initial master witnesses.",
+    "Six real finite CE optimizer updates, FP32 master changes and replicated BF16/cast-master agreement on first3/terminal6 audits.",
+    "Complete5-file full checkpoint3 and6; no model-only recovery.",
+    "All4 full restored model/optimizer byte digests match checkpoint3, with actual Adamstep3 then6; RNG reset last.",
+    "All actual original identities/groups/sessions and assigned device physically close per stage."
+  ],
+  "resources": "Logical12\u201315/physical3 only, after W development64 evaluation entirely closes. Finite19:00UTC; one60-minute cap per stage and512GiB host-available floor. No auto retries or other jobs stopped.",
+  "timing": "Cold/setup/checkpoint/restored-alias timing separate. This is SFT; no RL<=90s claim. Three/six updates do not establish long-run steady memory.",
+  "source_files": {
+    "train/partial_state_driver.py": "a479b6e65315eb5f9948421259c26bd5b9e2054a25eec49535f41263610d1339",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "42f59f50a7741ebaa356ca00c0a451b7de286c21ff8381efb0baae2b42b41e9b",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031"
+  },
+  "protocol_sha256": "3cdd20ab7278175de5423a896620e885f38e4d645b67c88fe57d1d573ba72f79",
+  "CPU_actual_all4arms_6steps_4ranks_batch8_labels": {
+    "writer": 4826,
+    "reader": 1190,
+    "direct": 1190,
+    "cot": 6208
+  },
+  "checks": {
+    "tests": 1561,
+    "seconds": 65.68,
+    "smoke": "PASS",
+    "compile": "PASS",
+    "log_sha256": "314afc995b623e25195d9c0a9201f93a1734892dbcb93e610d9cf89f7b958c06"
+  },
+  "limits": [
+    "Engineering only: discard these qualification models from scientific comparisons.",
+    "Reader-first128TRAIN overfit follows only after mechanics; no full study release.",
+    "No reduction of original interface/reward gates or TEST access."
+  ]
+}

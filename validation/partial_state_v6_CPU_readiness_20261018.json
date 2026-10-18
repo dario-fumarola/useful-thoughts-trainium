@@ -1,0 +1,563 @@
+{
+  "status": "CPU_COMPLETE5120_NATIVE_PACKING_NO_HARDWARE",
+  "data_manifest_sha256": "3d30242d30830c9560d1f826e8aef0eb4688ff5c2060c503ee35887bbd0897db",
+  "counts": {
+    "direct": {
+      "examples": 5120,
+      "labels": 30842,
+      "max_labels": 10
+    },
+    "cot": {
+      "examples": 5120,
+      "labels": 163520,
+      "max_labels": 42
+    },
+    "writer": {
+      "examples": 5120,
+      "labels": 127558,
+      "max_labels": 31
+    },
+    "reader_teacher": {
+      "examples": 5120,
+      "labels": 30842,
+      "max_labels": 10
+    },
+    "reader_empty": {
+      "examples": 5120,
+      "labels": 30842,
+      "max_labels": 10
+    }
+  },
+  "batch8_shapes": {
+    "labels": [
+      8,
+      64
+    ],
+    "note_close_mask": [
+      8,
+      64
+    ],
+    "input_ids": [
+      8,
+      128
+    ],
+    "future_mask": [
+      8,
+      64
+    ],
+    "target_positions": [
+      8,
+      64
+    ]
+  },
+  "source_files": {
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "42f59f50a7741ebaa356ca00c0a451b7de286c21ff8381efb0baae2b42b41e9b"
+  },
+  "native_data_audit": {
+    "status": "CPU_DATA_AUDIT_ONLY",
+    "tokenizer_eos": 151643,
+    "known_old_parseable_real_rows": 13401,
+    "panels": {
+      "DEV_composition": {
+        "rows": 512,
+        "max_partial_tokens": 47,
+        "max_prompt_tokens": 26,
+        "max_CoT_completion_tokens": 60,
+        "exact_context_boundary_concatenation_errors": 0,
+        "prior_known_expression_collisions": []
+      },
+      "DEV_interpolation": {
+        "rows": 512,
+        "max_partial_tokens": 30,
+        "max_prompt_tokens": 22,
+        "max_CoT_completion_tokens": 41,
+        "exact_context_boundary_concatenation_errors": 0,
+        "prior_known_expression_collisions": []
+      },
+      "DEV_range": {
+        "rows": 512,
+        "max_partial_tokens": 36,
+        "max_prompt_tokens": 26,
+        "max_CoT_completion_tokens": 48,
+        "exact_context_boundary_concatenation_errors": 0,
+        "prior_known_expression_collisions": []
+      },
+      "DEV_structure": {
+        "rows": 512,
+        "max_partial_tokens": 30,
+        "max_prompt_tokens": 21,
+        "max_CoT_completion_tokens": 41,
+        "exact_context_boundary_concatenation_errors": 0,
+        "prior_known_expression_collisions": []
+      },
+      "TRAIN": {
+        "rows": 5120,
+        "max_partial_tokens": 30,
+        "max_prompt_tokens": 22,
+        "max_CoT_completion_tokens": 41,
+        "exact_context_boundary_concatenation_errors": 0,
+        "prior_known_expression_collisions": []
+      }
+    }
+  },
+  "checks": {
+    "tests": 1552,
+    "full_suite_seconds": 62.86,
+    "smoke": "PASS",
+    "compile": "PASS",
+    "log_sha256": "29a1ff305d146684e542589df2dd1e04223dfd0badba98a2c01d260b8515a0c5"
+  },
+  "fixed_first_examples": {
+    "DEV_range": [
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_range",
+        "item_id": "19ada72f109d53b410c53964caca0b747546aa3a58eb9af4238c2ec0884e6685",
+        "expression_tree": [
+          "*",
+          [
+            "-",
+            107,
+            144
+          ],
+          [
+            "+",
+            102,
+            180
+          ]
+        ],
+        "expression": "((107 - 144) * (102 + 180))",
+        "partial_note": "107 - 144 = -37\n102 + 180 = 282\n",
+        "partial_steps": [
+          [
+            107,
+            "-",
+            144,
+            -37
+          ],
+          [
+            102,
+            "+",
+            180,
+            282
+          ]
+        ],
+        "answer": "-10434",
+        "root_step": [
+          -37,
+          "*",
+          282,
+          -10434
+        ],
+        "answer_is_intermediate_value": false
+      },
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_range",
+        "item_id": "4ab43134b61da351fc554a4814b17942e915def01e39e49b661c56e281150ee5",
+        "expression_tree": [
+          "-",
+          [
+            "+",
+            [
+              "*",
+              128,
+              134
+            ],
+            194
+          ],
+          116
+        ],
+        "expression": "(((128 * 134) + 194) - 116)",
+        "partial_note": "128 * 134 = 17152\n17152 + 194 = 17346\n",
+        "partial_steps": [
+          [
+            128,
+            "*",
+            134,
+            17152
+          ],
+          [
+            17152,
+            "+",
+            194,
+            17346
+          ]
+        ],
+        "answer": "17230",
+        "root_step": [
+          17346,
+          "-",
+          116,
+          17230
+        ],
+        "answer_is_intermediate_value": false
+      }
+    ],
+    "DEV_interpolation": [
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_interpolation",
+        "item_id": "af984d8244878042097e9e1deb51a3261546b264bf88c8f7548ad97b7d563a0b",
+        "expression_tree": [
+          "-",
+          [
+            "*",
+            8,
+            24
+          ],
+          [
+            "*",
+            84,
+            2
+          ]
+        ],
+        "expression": "((8 * 24) - (84 * 2))",
+        "partial_note": "8 * 24 = 192\n84 * 2 = 168\n",
+        "partial_steps": [
+          [
+            8,
+            "*",
+            24,
+            192
+          ],
+          [
+            84,
+            "*",
+            2,
+            168
+          ]
+        ],
+        "answer": "24",
+        "root_step": [
+          192,
+          "-",
+          168,
+          24
+        ],
+        "answer_is_intermediate_value": false
+      },
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_interpolation",
+        "item_id": "3fc565cb922158467b8e7cb61636629bfda6115d6d140525254449cce2a19c09",
+        "expression_tree": [
+          "-",
+          [
+            "*",
+            [
+              "+",
+              97,
+              63
+            ],
+            39
+          ],
+          77
+        ],
+        "expression": "(((97 + 63) * 39) - 77)",
+        "partial_note": "97 + 63 = 160\n160 * 39 = 6240\n",
+        "partial_steps": [
+          [
+            97,
+            "+",
+            63,
+            160
+          ],
+          [
+            160,
+            "*",
+            39,
+            6240
+          ]
+        ],
+        "answer": "6163",
+        "root_step": [
+          6240,
+          "-",
+          77,
+          6163
+        ],
+        "answer_is_intermediate_value": false
+      }
+    ],
+    "DEV_structure": [
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_structure",
+        "item_id": "2dce9727ba4e64442f5758b921bdc7f4875f58d9ce515a716cdf1d8923cb904e",
+        "expression_tree": [
+          "+",
+          [
+            "-",
+            63,
+            [
+              "+",
+              7,
+              38
+            ]
+          ],
+          60
+        ],
+        "expression": "((63 - (7 + 38)) + 60)",
+        "partial_note": "7 + 38 = 45\n63 - 45 = 18\n",
+        "partial_steps": [
+          [
+            7,
+            "+",
+            38,
+            45
+          ],
+          [
+            63,
+            "-",
+            45,
+            18
+          ]
+        ],
+        "answer": "78",
+        "root_step": [
+          18,
+          "+",
+          60,
+          78
+        ],
+        "answer_is_intermediate_value": false
+      },
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_structure",
+        "item_id": "b476a474db295da6eb1299fbd6571ad892089ede3276fd63c9725d7a5672d1c2",
+        "expression_tree": [
+          "-",
+          32,
+          [
+            "-",
+            [
+              "-",
+              72,
+              48
+            ],
+            54
+          ]
+        ],
+        "expression": "(32 - ((72 - 48) - 54))",
+        "partial_note": "72 - 48 = 24\n24 - 54 = -30\n",
+        "partial_steps": [
+          [
+            72,
+            "-",
+            48,
+            24
+          ],
+          [
+            24,
+            "-",
+            54,
+            -30
+          ]
+        ],
+        "answer": "62",
+        "root_step": [
+          32,
+          "-",
+          -30,
+          62
+        ],
+        "answer_is_intermediate_value": false
+      }
+    ],
+    "TRAIN": [
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "TRAIN",
+        "item_id": "1851509f9ba998ad9c7ea5690162ebd5c9dd668eb9c859fa3149a25129ccdada",
+        "expression_tree": [
+          "-",
+          [
+            "+",
+            36,
+            19
+          ],
+          [
+            "-",
+            90,
+            26
+          ]
+        ],
+        "expression": "((36 + 19) - (90 - 26))",
+        "partial_note": "36 + 19 = 55\n90 - 26 = 64\n",
+        "partial_steps": [
+          [
+            36,
+            "+",
+            19,
+            55
+          ],
+          [
+            90,
+            "-",
+            26,
+            64
+          ]
+        ],
+        "answer": "-9",
+        "root_step": [
+          55,
+          "-",
+          64,
+          -9
+        ],
+        "answer_is_intermediate_value": false
+      },
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "TRAIN",
+        "item_id": "3ef59640fa0665d0436b5b747adc9cbd2002886b2f601f213e7465020103762c",
+        "expression_tree": [
+          "*",
+          [
+            "*",
+            [
+              "+",
+              78,
+              67
+            ],
+            57
+          ],
+          84
+        ],
+        "expression": "(((78 + 67) * 57) * 84)",
+        "partial_note": "78 + 67 = 145\n145 * 57 = 8265\n",
+        "partial_steps": [
+          [
+            78,
+            "+",
+            67,
+            145
+          ],
+          [
+            145,
+            "*",
+            57,
+            8265
+          ]
+        ],
+        "answer": "694260",
+        "root_step": [
+          8265,
+          "*",
+          84,
+          694260
+        ],
+        "answer_is_intermediate_value": false
+      }
+    ],
+    "DEV_composition": [
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_composition",
+        "item_id": "fac466ea461015abb1b8c34e39948be0810c248416c71580b013f216b7fb4e9d",
+        "expression_tree": [
+          "-",
+          [
+            "-",
+            2,
+            81
+          ],
+          [
+            "-",
+            55,
+            [
+              "*",
+              84,
+              25
+            ]
+          ]
+        ],
+        "expression": "((2 - 81) - (55 - (84 * 25)))",
+        "partial_note": "2 - 81 = -79\n84 * 25 = 2100\n55 - 2100 = -2045\n",
+        "partial_steps": [
+          [
+            2,
+            "-",
+            81,
+            -79
+          ],
+          [
+            84,
+            "*",
+            25,
+            2100
+          ],
+          [
+            55,
+            "-",
+            2100,
+            -2045
+          ]
+        ],
+        "answer": "1966",
+        "root_step": [
+          -79,
+          "-",
+          -2045,
+          1966
+        ],
+        "answer_is_intermediate_value": false
+      },
+      {
+        "schema": "partial-state-arithmetic-v6",
+        "panel": "DEV_composition",
+        "item_id": "e7d6824b0e091ac3638262aea1c378386264c3965e0f3b86dddd3e72dcf7f4c6",
+        "expression_tree": [
+          "-",
+          [
+            "+",
+            [
+              "*",
+              77,
+              76
+            ],
+            [
+              "+",
+              63,
+              51
+            ]
+          ],
+          65
+        ],
+        "expression": "(((77 * 76) + (63 + 51)) - 65)",
+        "partial_note": "77 * 76 = 5852\n63 + 51 = 114\n5852 + 114 = 5966\n",
+        "partial_steps": [
+          [
+            77,
+            "*",
+            76,
+            5852
+          ],
+          [
+            63,
+            "+",
+            51,
+            114
+          ],
+          [
+            5852,
+            "+",
+            114,
+            5966
+          ]
+        ],
+        "answer": "5901",
+        "root_step": [
+          5966,
+          "-",
+          65,
+          5901
+        ],
+        "answer_is_intermediate_value": false
+      }
+    ]
+  }
+}
