@@ -848,3 +848,31 @@ shrink. Qualification uses a separately declared first64 subset, never a science
 The fixed empty profiler timed out during cold compilation with zero complete cases;
 no warmed or BF16 throughput claim and no automatic retry. Prioritize supervised
 qualification;<=90s complete-step performance remains mandatory before long RL.
+
+### 2026-10-18 — Frozen-reader filter shortfall and stronger plain control
+The complete14669-candidate filter yields3147strictly positive full-scalar+boundary
+notes (21.45%),1973short of5120. All44007scores/native checks and physical closure
+pass; complete EBS archive is verified. No training IDs/dataset were emitted.
+Preserve this result while auditing extra true source cuts and token-level effects;
+do not lower the threshold or manufacture examples through repeated verbalizations.
+Current W/C/T two-update jobs remain unchanged hardware qualifications. Before
+science, use C′=raw-next16mean+.5source mean as the main plain control: source-only
+C gives far less weight to the anchor than W and confounds the comparison. The
+new objective is exactly one source pass with explicit token weights, checked
+against dense loss/gradients; integration/hardware qualification remains future work.
+W still adds writer supervision and compute; within-reader own−raw/empty/other and
+crossed readers remain necessary. No scientific SFT or RL release follows this change.
+
+### 2026-10-18 — Explicit reader-learning pool, without frozen-reader filtering
+The closed filter's teacher−empty mean−1.277nat decomposes exactly into numerical
++.380, closing-certificate−1.645 and other−.012. Teacher−raw number-only gain is
++.160, but joint fullspan−1.809 and natural16−4.306: no net assistance claim.
+Certificates can contain words as well as punctuation; do not rename that loss.
+Requiring the untrained reader to benefit already impedes the permitted reader-
+learning fallback. Therefore declare a NEW experiment: first5120 compound
+representative TRAIN documents, original frozen order, exact>=2-op proofs and
+native notes<=128tokens, WITHOUT likelihood selection.5438are eligible. Preserve
+the old3147/14669shortfall and every score unchanged; this is an informed design
+adaptation, not a prospective success under the original gate. HeldDEV and GSM
+controls remain required; own−raw/other must establish utility after supervision.
+Prepare a separate manifest/source identity; active hardware programs stay frozen.

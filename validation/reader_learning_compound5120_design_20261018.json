@@ -1,0 +1,107 @@
+{
+  "schema": "postorder-reader-learning-dataset-declaration-v1",
+  "experiment_id": "postorder-reader-learning-compound5120-v1",
+  "declared_utc": "2026-10-18T06:48:52.028583+00:00",
+  "status": "CPU_preparation_authorized_NOT_training",
+  "adaptation": "Explicit reader-learning fallback after closed frozen-B0 full-span filter shortfall. The old positive-gain criterion/outcome is retained unchanged; this new supervision pool does not claim to pass it.",
+  "scientific_question": "Can exact compound calculation supervision teach a prefix-only writer and an I3 reader to produce and use notes on independent real DEV documents?",
+  "eligibility": [
+    "TRAIN only",
+    "At least2 bounded exact binary arithmetic operations",
+    "One representative cut per document from the existing frozen candidate publication",
+    "Native original528token source and actual continuation16 unchanged",
+    "Verified exact-postorder-v1 note of at most128 content tokens",
+    "No likelihood-based acceptance, rejection, ranking or balancing"
+  ],
+  "selection": "First5120 eligible compound REPRESENTATIVE documents in the original postorder-note-candidates-v2 publication order. Require5120 unique TRAIN documents; fail on shortfall, do not use duplicate cuts/verbalizations.",
+  "items": 5120,
+  "unique_documents": 5120,
+  "selection_uses_likelihood": false,
+  "interface": "I3",
+  "teacher_note_kind": "exact-postorder-v1",
+  "teacher_supervision": "Future labels choose exact original number surface; symbolic computation uses bounded past expression. Writer inputs end at prefix+native open. Teacher notes are not prefix-generated model outputs.",
+  "future_protocol": {
+    "arms": [
+      "W",
+      "Cprime",
+      "T"
+    ],
+    "losses": {
+      "W": "writer mean + note-conditioned natural16 mean +0.5 source mean",
+      "Cprime": "raw natural16 mean +0.5 source mean",
+      "T": "all-token CE on interleaved augmented source"
+    },
+    "matched": "same source occurrences, seed-specific order and updates; NOT equal labels/FLOPs",
+    "epochs": 2,
+    "global_batch": 32,
+    "steps": 320,
+    "lr": 1e-05,
+    "warmup": 20,
+    "schedule": "cosine after warmup",
+    "compute": "BF16, FP32 parameters/masters/moments",
+    "seeds": [
+      20261018,
+      20261019
+    ]
+  },
+  "endpoints": {
+    "primary": "Terminal heldDEV256 natural16 own-minus-raw and own-minus-intact-other under B0 and self readers; paired document intervals",
+    "controls": [
+      "raw",
+      "empty",
+      "own",
+      "other",
+      "symbolic_teacher",
+      "target_copy"
+    ],
+    "secondary": [
+      "full numeral+actual closing boundary",
+      "numeric-only likelihood",
+      "GSM8K TRAIN512 direct/empty/one-thought, unsupported retained",
+      "actions/tokens/latency"
+    ],
+    "fixed_mixer": ".375 extra evaluation control; not mixed-reader training",
+    "all_arms_evaluated_regardless_local_sign": true,
+    "official_TEST": "forbidden"
+  },
+  "old_filter": {
+    "experiment": "postorder-note-frozen-filter-v1",
+    "positive": 3147,
+    "attempted": 14669,
+    "requested": 5120,
+    "shortfall": 1973,
+    "summary_sha256": "8fb6bd8661ec88e7b5ac1e961dbf32a309bc914ab139b273ce1db9f818a6ac1f"
+  },
+  "basis": {
+    "analysis_file": "local/analysis/postorder-filter-decomposition-and-anchor-recovery-20261018.json",
+    "analysis_sha256": "5ffb33be7e946e76f4f9467067ce0dbc127ba97f4e4af4bb72c6c98f73a408cc",
+    "note": "Closed TRAIN diagnostics informed this new design; no claim of prospective selection relative to the old experiment."
+  },
+  "input_pins": {
+    "local/nvme/data/postorder-note-candidates-v2/manifest.json": "306aa9d753912bd610cb18f2e06cdf71c557e6127ae40c3c06207b27b364145a",
+    "local/nvme/data/postorder-note-candidates-v2/candidates.jsonl": "1ba627c007a429712c130698f5b3b6290ab80c2b8a2e83120fd6172bda16e7d2",
+    "local/diagnostics/finemath-computable-equations-raw-v3/postsft-held256.ids.json": "dbca1a7f42cf87f665652b1b5915478177fc0f3787c4db25ce186c382fdaa13a"
+  },
+  "runtime_boundary": "CPU-only dataset preparation now. No edits to active frozen driver/packer/evaluator dependencies. Scientific training requires completed hardware qualification, reviewed final native inventory/objectives and separate concrete release.",
+  "research_context": [
+    {
+      "source": "https://arxiv.org/html/2503.18866v2",
+      "paper": "Reasoning to Learn from Latent Thoughts (BoLT)",
+      "relevant_fact": "Trains a shared model on thought-augmented text, with latent placement before or after observed chunks, and warmstarts before importance-resampled EM.",
+      "local_inference": "Supports learning a reader jointly with a generator; this exact-symbolic arithmetic experiment does not implement its posterior sampler or EM."
+    },
+    {
+      "source": "https://arxiv.org/html/2403.09629v2#A9",
+      "paper": "Quiet-STaR",
+      "relevant_fact": "Appendix I describes coupling between thought quality and reader/mixer learning, including zero-weight absence of signal and ignoring thoughts when mixing is removed.",
+      "local_inference": "A zero-tax oracle is insufficient; fresh own-minus-other under both readers remains necessary. Ordinary I3 SFT can still learn to ignore notes, so this fallback is an empirical test."
+    },
+    {
+      "source": "https://arxiv.org/html/2509.20186v1",
+      "paper": "Thinking Augmented Pre-training",
+      "relevant_fact": "Concatenates each raw document with its generated thinking trajectory and trains ordinary next-token CE.",
+      "local_inference": "Our interleaved calculation-note T arm is a related no-RL comparison, not an exact TPT reproduction; its supervised token budget is much smaller."
+    }
+  ],
+  "publication_note": "Design declared before new dataset preparation or scientific training. Closed TRAIN diagnostics informed it; the original filter failure is retained."
+}

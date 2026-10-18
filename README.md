@@ -38,10 +38,22 @@ general copying but retained a3.007-nat empty-format tax.
 Next is supervised writer-and-reader warm-start under the underlying re-anchored
 interface, with ordinary source-CE and augmented-source controls. This is the
 declared reader-learning fallback for arithmetic; fixed mixing remains a separate
-evaluation control. Real source equations supplied14,669 exact symbolic substep labels; the complete
-frozen-reader acceptance filter is running. The native label recipe and balanced
-[calculation examples are saved](validation/postorder_symbolic_candidate_inventory_20261018.json). A fresh
-post-training DEV256 is sealed. No new SFT or RL is active; official TEST is unused.
+evaluation control. Of 14,669 exact symbolic substep labels from real source equations,
+3,147 beat the empty-format reader on the full numeral plus closing boundary
+(21.45%): short of the planned 5,120. Mean teacher−raw is −1.809 nats on that full
+span, despite a +.160-nat number-only gain. The closing-certificate token accounts
+for most of the loss. The failed filter and its threshold remain unchanged.
+[Complete TRAIN filter and token decomposition](validation/postorder_symbolic_frozen_reader_filter_20261018.json).
+The separately declared reader-learning experiment will use 5,120 verified compound
+equations from distinct TRAIN documents, selected in the existing frozen order
+without likelihood filtering. This teaches the reader as well as the writer;
+it does not claim the old filter passed. C′ also matches W's continuation-loss
+weighting to avoid confusing anchor emphasis with note utility.
+[Declared experiment](validation/reader_learning_compound5120_design_20261018.json) ·
+[Native label recipe and examples](validation/postorder_symbolic_candidate_inventory_20261018.json).
+A fresh 256-document DEV baseline is running, alongside separate two-update BF16 hardware checks
+for W/C/T. Scientific SFT awaits the final native data inventory and hardware evidence;
+official TEST is unused.
 [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
 ## What led here

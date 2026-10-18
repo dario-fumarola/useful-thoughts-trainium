@@ -1,4 +1,4 @@
-# Status — 2026-10-18 06:11 UTC
+# Status — 2026-10-18 06:53 UTC
 
 ## Closed: batched reader interface qualification
 Question: can unchanged B0 use a supplied full-target-copy note?
@@ -55,25 +55,59 @@ Counts/selection/provenance/packing and1224CPUtests+smoke/compile pass; no model
 Public recipe/examples:validation/postorder_symbolic_candidate_inventory_20261018.json.
 Old manifest attempted-document count clarified in independently read-back inventory annex.
 
-## Active: frozen-reader teacher filtering
+## Closed: frozen-reader teacher filtering — shortfall
 Question: do supplied symbolic substeps beat empty-format on enough real TRAIN anchors?
 ID:postorder-note-frozen-filter-v1;14669items×raw/empty/teacher=44007cells.
 I3/fullnumeral+actualboundary primary; numeric-only and natural16 reported separately.
 STRICTteacher−empty>0; first5120positives in fixed compound-priority order, no shrink/ranking.
-All4 native gates pass; workers2520727/2520745/2520742/2520739 map to devices7/8/9/10.
-Logicalcores28/32/36/40, launched06:09:24, deadline09:00UTC; all12 live identities captured.
+All44007cells/native gates pass; four exits0 and owned groups/devices7–10 physically closed.
+3147/14669positive(21.45%); shortfall1973, no selected IDs or training.jsonl emitted.
+Natural16positive1778; raw numeric headroom.590nat; numeric teacher−raw mean+.160.
 Output:local/nvme/diagnostics/postorder-note-frozen-filter-v1; controls same basename offNVMe.
-Data agent owns monitoring/complete physical closure/summary/EBS archive; no retries.
-No partial gains inspected. Root source closure frozen; unrelated driver work may continue.
-Next: complete44007cells and closure before reducer/selection; then final5120CPUinventory.
+Allscores and decisions preserved; verified complete EBS archive, originals retained.
+Independent44007cell readback passes; closing-token tax offsets numerical gains.
+Decision: preserve failed quota; separate explicit reader-learning dataset, no original gate pass.
 
-## Pending: actual BF16 supervised qualification
-ID:postorder-note-qualification64-v2; CPU64items/64docs, no model job yet.
-Global-pool shapes:source544/544,writer640/128,reader704/16,augmented704/704.
-UnderlyingI3 reader-learning fallback; fixedI6mix is an evaluation control only.
-Driver draft unqualified: distributed adding CPU gradient/state fixtures, then one batch review.
-Next: actual two-update BF16/FP32master/ZeRO checks on separate hardware; no science launch yet.
-All first-v1 CPU qualification files retained as stale-source preparation, never run on hardware.
+## Active: actual BF16 supervised qualification
+ID:postorder-note-bf16-qualification-v1; three parallel W/C/T jobs, launched06:22:38UTC.
+Purpose:two updates each on declared64TRAINitems, not a scientific arm or5000 quota.
+Eight ranks/accum4 per arm; Wcores0–7/devices0–1, C8–15/2–3, T16–23/4–5.
+Actual24workers/launcher-timeout groups/envs and disjoint physical mapping captured06:23:31.
+Drivers:W2527169(timeout2527167),C2527174(2527172),T2527165(2527163).
+NativeFP32 initialization precedes BF16 forward/head hooks; FP32masters/moments/gradients.
+Must pass real updates/replica samples/fullfinite state/counters, then exact physical closure.
+All24nativeFP32gates pass; Tstep1 has BF16outputs/realFP32changes/equalreplicas; W/C compiling.
+Allsource review,34focused/1258fullCPUtests+smoke/compile and64×4actualCPU packs pass.
+RuntimeTMPDIR ordering repaired before allocation; original staging/test preserved, no retry.
+Controls:local/diagnostics/postorder-note-bf16-qualification-v1; individual NVMe W/C/T outputs.
+Common deadline12:22:16UTC; distributed owns health/closure/EBS batch archive. No science yet.
+Reader training is ordinaryI3 fallback; fixedI6 remains evaluation only. No exact-resume claim.
+
+## CPU preparation: compound reader-learning data
+Question: can verified compound supervision teach the reader interface and prefix-only writer?
+ID:postorder-reader-learning-compound5120-v1; explicit adaptation informed by closed TRAINfilter.
+Select first5120compound REPRESENTATIVE documents in existing frozen candidate order.
+Require5120uniqueTRAINdocs, >=2exact bounded operations and <=128native note tokens.
+No likelihood filtering/ranking, repeated cuts or duplicate verbalizations; original filter stays failed.
+Independent eligibility inventory:5438uniquecompound representatives,318unused after quota.
+New separate preparer/manifest; source528/natural16 and all4nativepack counts verified before release.
+Plan W/C′/T, twoepochs/global32/LR1e−5, two seeds; scientific training not released.
+C′=rawnatural16mean+.5source mean; exact one-pass helper has11CPUloss/gradient tests.
+Full1293CPUchecks+smoke/compile pass; current frozen hardware source remains unchanged.
+Data agent owns separate CPU implementation/readback; no new raw-corpus pass or model.
+
+## Active: fresh held reader baseline
+Question: how do fresh prefix-only notes compare with raw/empty/intact unrelated notes?
+ID:postorder-held256-B0-v1; sealed fresh256realDEV documents, no TEST.
+Greedy cap128actions; all256attempts close before controls or future scoring.
+Raw/empty/own/other/symbolic teacher/target copy, I3 and fixedI6w=.375;3072cells.
+Natural16primary, fullscalar+boundary and numeric-only secondary; document intervals.
+Allfailures retained in256denominators; no per-document length-matched synthetic donors.
+Workers2563205/2563209/2563218/2563214→cores44/48/52/56→devices11–14; live verified.
+Launched06:42:45UTC; all4nativeFP32gates pass; generation progressing after cold compile.
+Output:local/nvme/diagnostics/postorder-held256-B0-v1; controls same basename offNVMe.
+Reviewer owns generation→closure→controls→scoring→closure→summary/archive; deadline10:30UTC.
+No checkpoint training or self-reader duplication; no automatic retries or partial outcome review.
 
 ## Closed incomplete: fixed empty-pipeline cost
 Question: how much work survives immediate EOS; how do cap and precision affect it?
@@ -95,10 +129,10 @@ README links full results, controls, parser limits and verified checkpoint archi
 All official TEST sets remain unused, including corpus TEST token arrays.
 
 ## Work ownership and boundaries
-Root: frozen data/labels/filter source, training release and public findings.
-Data: active four-core teacher filter, monitoring/closure/archive; original corpus preserved.
-Distributed: supervised driver CPU qualification; old512-example draft superseded.
-Review: accepted frozen filter source; evaluator reconnaissance, then final driver review.
+Root: scientific controls/data decision, training release and public findings.
+Data: separate compound reader-learning preparer and complete native CPU inventory/readback.
+Distributed: actual three-arm BF16 qualification health/closure; frozen source unchanged.
+Review: complete four-core fresh held B0 baseline health/closure/summary/archive.
 Probes on<=4 cores run without a serial release gate; >1 accelerator-hour jobs need one review.
 No new instances, paid services, stack upgrades, IAM/network changes or unapproved uploads.
 Use scripts/env.sh; CPU USE_TORCH_XLA=0. Keep35GiB EBS checkpoint-backup reserve.
