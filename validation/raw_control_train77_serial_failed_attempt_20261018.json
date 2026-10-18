@@ -1,0 +1,130 @@
+{
+  "archive": {
+    "all_regular_files_SHA256_readback_verified": true,
+    "files": 66,
+    "off_instance": false,
+    "originals_retained": true,
+    "path": "local/backups/diagnostics/raw-control-prepend-train77-64-v2/ARCHIVE.json",
+    "payload_bytes": 3514020,
+    "sha256": "a5e0e6dd6c880049df1efc2a56a32ba5ec10907ea9bce252810e328a278c4880"
+  },
+  "arm": "raw_control",
+  "attempt": "fresh_B0_serial_v2",
+  "base_model_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+  "checkpoint_present": false,
+  "closure": {
+    "identified_owned_pids_absent": 10,
+    "no_matching_driver_parents_recorded": true,
+    "root_receipt_sha256": "e68907b167ce2c3544b0c51c64e15a9756f78974438177f2217ba64d52fbb2bd",
+    "root_verified_utc": "2026-10-18T00:53:23.629624+00:00",
+    "saved_allocated_devices_empty": true,
+    "scope": "Eight error-log worker PIDs plus launcher/timeout; not a complete historical process-tree capture.",
+    "topology_sha256": "924515b60221bb051cf0fb3f031ab4ebf05176a821f2434ef3523f57eb7e2146"
+  },
+  "completed_successfully": false,
+  "compute": "fp32",
+  "data_sha256": "ee2b384dc6fc6b032745a1340603f78eda06beb08d88ae0a461c1c9e70b9ffe7",
+  "dataset_sha256": "a19149a3cb63a5fbb09fe151b062a1e20ace213b72b290599607daa70052906b",
+  "driver_sha256": "d0b8ed4e105d2b1249e1169014a1acd9b9963522a5ed866e26db117e1cb3f585",
+  "exit_code": 1,
+  "exit_utc": "2026-10-18T00:51:36.850580+00:00",
+  "experiment_id": "raw-control-prepend-train77-64-v2",
+  "first_published_update": {
+    "counters": {
+      "future_labels": 128,
+      "note_close_labels": 0,
+      "sampled_actions": 0,
+      "source_records": 8,
+      "source_tokens": 4224
+    },
+    "elapsed_seconds": 36.41058250099013,
+    "future_loss": 2.3077521324157715,
+    "gradient_norm": 27.202129364013672,
+    "loss": 2.3077521324157715,
+    "note_close_loss": 0.0,
+    "sampled_changed_fraction": 0.9986895322799683,
+    "sampled_replicas_bitwise_equal": true,
+    "sampled_update_l2": 0.001027862192131579,
+    "step": 1,
+    "time_utc": "2026-10-18T00:51:01+00:00"
+  },
+  "first_update_matches_v1": {
+    "gradient_norm": true,
+    "limitation": "Sampled parameter checks use first 32 entries per unique tensor, not a full-state comparison.",
+    "loss": true,
+    "ordered_ids": true,
+    "replica_check": true,
+    "sampled_update": true
+  },
+  "global_batch": 8,
+  "limitations": [
+    "One completed update and a failed second update are not a matched 64-step control result.",
+    "First-update elapsed time includes cache/load state; no steady-state or causal speed comparison.",
+    "The active writer evaluation and complete writer checkpoint are separate; neither is changed by this archive.",
+    "Runtime repair proposals in archived diagnostic notes remain owner decisions, not demonstrated fixes."
+  ],
+  "objective": "raw_future16_ce",
+  "observed_failure": {
+    "bytes_per_request": 67108864,
+    "diagnosis_sha256": "d202de6898d45554e13b67408c44d018c3d4737fcfd1c8a87be8263024431580",
+    "kernel_requests": 8,
+    "kernel_window_sha256": "6d4bf3dc59fb03fbcbaf2308fdff71f4657e2af955d29addee4f5376eef8683a",
+    "raw_bytes_not_normalized_text": true,
+    "runtime_log_raw_bytes_sha256": "861d65ac00a18bd650bb0d5d8f2e07e944e4fcb6776bf68cc412f57c195033a1",
+    "stage": "Initialized optimizer loading during second update",
+    "status": "confirmed_contiguous_HBM_scratchpad_allocation_failure"
+  },
+  "observer": {
+    "elapsed_seconds": 120.32242964601028,
+    "end_reason": "training_exit_receipt_observed",
+    "finished_utc": "2026-10-18T00:51:39.049292+00:00",
+    "interval_seconds": 5.0,
+    "measurement_scope": "Current memory categories use only total, never peak/present. Pair sums are sequential host reads, not atomic peaks. Model-load counters are device-wide; log key mentions are not proof of successful runtime loading.",
+    "model_load_counters": "All exposed totals remained zero despite actual work; not useful as program-residency evidence on this stack.",
+    "observations_sha256": "429c015a40f42a98024ff14be8cf5768e753bb1dbf0c0f5f9c8af3ab97996dcb",
+    "read_errors": 0,
+    "samples": 25,
+    "script_sha256": "767c86407d78ce652815484e4e9fbbfa2210a6308ef53b9acbeef55ef318acf4",
+    "started_utc": "2026-10-18T00:49:38.726871+00:00"
+  },
+  "order_hash": "149303c8c7d73f3eef50663e314e02965a4c13daa11aea06a10b87206578f243",
+  "planned_steps": 64,
+  "previous_attempt_report": {
+    "path": "validation/raw_control_train77_failed_attempt_20261018.json",
+    "sha256": "73f5fbb246f358ec64ff0bf39cb4a9b4c0e536f604d5b11fb316aa6949f71f9d",
+    "unchanged": true
+  },
+  "protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+  "published_complete_updates": 1,
+  "reported_utc": "2026-10-18T00:57:00.787596+00:00",
+  "resume_from_failed_partial_state": false,
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": "2",
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "schema": "raw-control-TRAIN77-serial-partial-execution-v1",
+  "serial_condition": {
+    "interpretation": "The same failure also occurred in serial; another active accelerator workload is not necessary for this observed failure. This does not identify the allocation mechanism.",
+    "prelaunch_all_devices_empty": true,
+    "root_records_no_other_accelerator_workload": true,
+    "same_released_writer_partition": true
+  },
+  "source_closure_sha256": "cb874d15bbe8f24b7408ffeaa93ed7180d3b6e0483f991f66fb1ffd45be31247",
+  "spec_hash": "9efb85c3ea05bb7fc605b7785f40771877ecabe601a674262ae075acd21e115f",
+  "status": "failed_incomplete",
+  "unresolved": [
+    "Exact allocator address map, fragmentation or fixed-region placement.",
+    "Instantaneous total HBM at failure.",
+    "Successful repair; no policy change or additional attempt is certified here."
+  ],
+  "world_size": 8
+}

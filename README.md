@@ -29,9 +29,26 @@ denominators and report training and inference costs.
 
 ## Current status
 
-**The initial R study has been stopped. A short writer-only warmstart now tests
-whether useful selected candidates can become useful fresh notes.** Both C seeds
-finished256 updates. R1234 stopped cleanly after update63 and saved its state;
+**The initial R study is stopped. A completed writer-only warm-start still
+produces harmful held-out notes.** On the same64 development documents, using
+an unchanged B0 reader and fresh one-sample notes:
+
+| Writer | K16 own−empty, nats | K16 own−unrelated, nats | Cap256 |
+|---|---:|---:|---:|
+| B0 |−1.101 |−1.023 |45/64 |
+| Writer BC64 |−.649 |−.636 |63/64 |
+
+The paired own−empty change is+.451 nats,95% interval[−.150,+1.128]. The trained
+writer still loses to silence and unrelated content; selected TRAIN oracle gains
+have not become useful deployed notes. [Full held-out result](validation/warmstart_prepend_dev64_writerBC64_20261018.json),
+[training execution and verified checkpoint backup](validation/writer_bc_train77_64_20261018.json).
+The adapted reader also hurts: raw K16 falls3.887 nats, and both reader-cross
+content contrasts remain negative. [Reader-cross results](validation/warmstart_reader_cross_dev64_20261018.json).
+The raw control and separate answer-correctness checks continue. A small curated
+math diagnostic will distinguish missing useful calculations from reader failure
+before further training.
+
+Both old C seeds finished256 updates. R1234 stopped cleanly after update63;
 R5678 was not launched. The original primary R/C comparison is incomplete.
 
 The key baseline finding is a large **interface penalty**: on fixed DEV512,

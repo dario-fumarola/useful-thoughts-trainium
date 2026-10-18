@@ -1,0 +1,1335 @@
+{
+  "schema": 1,
+  "experiment_id": "warmstart-prepend-dev64-reader-cross-v1",
+  "reported_utc": "2026-10-18T01:10:50.092860+00:00",
+  "status": "complete_secondary_crossed_reader_diagnostic",
+  "split": "dev",
+  "documents": 64,
+  "new_cells": 2,
+  "new_score_rows": 768,
+  "failures": 0,
+  "primary_horizon": 16,
+  "secondary_horizon": 1,
+  "primary_result_unchanged": "The fixed unchanged-B0 reader remains the primary. writerBC64 G1 own-minus-empty and own-minus-other are negative; adapted-reader cells do not replace this result.",
+  "interface": "note content + native double-newline token271 + full original512 prefix; raw=original512 prefix",
+  "generation_policy": {
+    "fresh_student_sampling": false,
+    "original_distinct_prefix_batch_size": 4,
+    "groups_per_prefix": 1,
+    "cap": 256,
+    "temperature": 0.7,
+    "all_original_notes_and_global_controls_reused": true
+  },
+  "reader_model": {
+    "base": "Qwen/Qwen3-1.7B-Base",
+    "compute": "fp32",
+    "adapted_checkpoint_step": 64,
+    "adapted_checkpoint_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+    "actual_checkpoint_strict_loading_and_tie_via_unchanged_loader": true
+  },
+  "cells": {
+    "B0_writer_B0_reader": {
+      "writer": "B0",
+      "reader": "B0",
+      "writer_checkpoint_sha256": null,
+      "reader_checkpoint_sha256": null,
+      "protocol_sha256": "e0a862fea81f4465df8b2736367e9db98b4f0d2df85d4dcfa9c92efde52bfa0d",
+      "summary_sha256": "965c6567033348c2a962531f9f464cf16879d8e1a0c9991d204f80b824585ae0",
+      "documents": 64,
+      "rows": 384,
+      "failures": 0,
+      "fixed_B0_reader_primary": true,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -0.94506236151328,
+              "mean_log_likelihood_per_target_token": -0.94506236151328
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -1.3105824292773853,
+              "mean_log_likelihood_per_target_token": -1.3105824292773853
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9454011580301098,
+              "mean_log_likelihood_per_target_token": -0.9454011580301098
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -1.249788430838501,
+              "mean_log_likelihood_per_target_token": -1.249788430838501
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9506122276832623,
+              "mean_log_likelihood_per_target_token": -0.9506122276832623
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9431826436386546,
+              "mean_log_likelihood_per_target_token": -0.9431826436386546
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.00846437132751241,
+                0.024825672189589552
+              ],
+              "difference_b_minus_a": 0.005549866169982209,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.1921144960069796e-07,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6258834594879987,
+                -0.04708866952706559
+              ],
+              "difference_b_minus_a": -0.30472606932522095,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00024241791106760502,
+              "positive_documents": 24,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.3198568319408997,
+                0.44045667346326023
+              ],
+              "difference_b_minus_a": 0.060793998438884334,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 0.001785385305993259,
+              "positive_documents": 37,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6281667495693538,
+                -0.03726118342235755
+              ],
+              "difference_b_minus_a": -0.3043872728083912,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.5497431178346233e-06,
+              "positive_documents": 30,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6225936983180449,
+                -0.04064614065980567
+              ],
+              "difference_b_minus_a": -0.29917620315523874,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -2.6822424388228683e-06,
+              "positive_documents": 30,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6168288855962327,
+                -0.05714018310563373
+              ],
+              "difference_b_minus_a": -0.30660578719984644,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -5.960546616279316e-07,
+              "positive_documents": 30,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -18.64585319487734,
+              "mean_log_likelihood_per_target_token": -1.1653658246798337
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -22.85626028486289,
+              "mean_log_likelihood_per_target_token": -1.4285162678039307
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -18.723611390090383,
+              "mean_log_likelihood_per_target_token": -1.170225711880649
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -19.746398951882266,
+              "mean_log_likelihood_per_target_token": -1.2341499344926417
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -18.675722380082366,
+              "mean_log_likelihood_per_target_token": -1.1672326487551479
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -18.868010098840298,
+              "mean_log_likelihood_per_target_token": -1.1792506311775186
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.001987952086744843,
+                0.06547792480589922
+              ],
+              "difference_b_minus_a": 0.029869185205024573,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 0.004882548460500402,
+              "positive_documents": 39,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.7281137551772763,
+                -0.566534816226985
+              ],
+              "difference_b_minus_a": -1.100545757004927,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.19932638572754513,
+              "positive_documents": 27,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                1.5757997786215965,
+                4.871634352087071
+              ],
+              "difference_b_minus_a": 3.1098613329806226,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 1.4372422287488007,
+              "positive_documents": 46,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.6754557385894737,
+                -0.4648628457819319
+              ],
+              "difference_b_minus_a": -1.0227875617918847,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.12320806559796438,
+              "positive_documents": 25,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.691865594752684,
+                -0.5389903934889024
+              ],
+              "difference_b_minus_a": -1.0706765717999025,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.2272786734414467,
+              "positive_documents": 25,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.4990632205566987,
+                -0.34086799713217864
+              ],
+              "difference_b_minus_a": -0.878388853041969,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.05780704470137721,
+              "positive_documents": 28,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        }
+      },
+      "note_context": {
+        "actions_total": 13145,
+        "caps": 45,
+        "content_length_counts": {
+          "0": 1,
+          "11": 1,
+          "117": 1,
+          "133": 1,
+          "15": 1,
+          "162": 1,
+          "164": 1,
+          "2": 1,
+          "214": 1,
+          "22": 1,
+          "227": 1,
+          "25": 1,
+          "253": 1,
+          "256": 45,
+          "37": 1,
+          "43": 1,
+          "5": 1,
+          "8": 1,
+          "81": 1,
+          "87": 1
+        },
+        "content_tokens_mean": 205.09375,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 13126,
+        "empty": 1,
+        "stop_counts": {
+          "length_cap": 45,
+          "token:151643": 19
+        }
+      },
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 57.710249268930056,
+        "new_score_process_seconds": 114.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 208.41046234099485,
+        "reused_sampling_batch_seconds_counted_once": 328.3284764189739,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 29.0
+      }
+    },
+    "writerBC64_B0_reader": {
+      "writer": "writerBC64",
+      "reader": "B0",
+      "writer_checkpoint_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+      "reader_checkpoint_sha256": null,
+      "protocol_sha256": "78daa62c5d4a22e043b0934b1a38644d1564bad64d148b3d4d20c075a087412f",
+      "summary_sha256": "fea1c619422b14ce66c4819dbec22aec44a7e4f6eab127495819a0a6e95206f3",
+      "documents": 64,
+      "rows": 384,
+      "failures": 0,
+      "fixed_B0_reader_primary": true,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -0.94506236151328,
+              "mean_log_likelihood_per_target_token": -0.94506236151328
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -1.270298845522177,
+              "mean_log_likelihood_per_target_token": -1.270298845522177
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9471211801160315,
+              "mean_log_likelihood_per_target_token": -0.9471211801160315
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -1.1422250394668139,
+              "mean_log_likelihood_per_target_token": -1.1422250394668139
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9506122276832623,
+              "mean_log_likelihood_per_target_token": -0.9506122276832623
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -0.9301268397412521,
+              "mean_log_likelihood_per_target_token": -0.9301268397412521
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.00846437132751241,
+                0.024825672189589552
+              ],
+              "difference_b_minus_a": 0.005549866169982209,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.1921144960069796e-07,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.43759360532040975,
+                -0.004524073847266727
+              ],
+              "difference_b_minus_a": -0.19716267795353382,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00014649158645596572,
+              "positive_documents": 28,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.16330306161218733,
+                0.42050361242221274
+              ],
+              "difference_b_minus_a": 0.12807380605536323,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 0.042830612510442734,
+              "positive_documents": 46,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.44106078083675965,
+                0.0003984223216072172
+              ],
+              "difference_b_minus_a": -0.19510385935078234,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -3.7551317291217856e-06,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.4361918491068497,
+                0.003486656635966932
+              ],
+              "difference_b_minus_a": -0.1916128117835516,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00011157132394146174,
+              "positive_documents": 28,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.4501076563864539,
+                -0.02235129712838005
+              ],
+              "difference_b_minus_a": -0.21209819972556176,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -4.646524189411139e-06,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -18.64585319487734,
+              "mean_log_likelihood_per_target_token": -1.1653658246798337
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -23.147537111322933,
+              "mean_log_likelihood_per_target_token": -1.4467210694576833
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -18.658900801449633,
+              "mean_log_likelihood_per_target_token": -1.166181300090602
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -19.295015491848854,
+              "mean_log_likelihood_per_target_token": -1.2059384682405534
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -18.675722380082366,
+              "mean_log_likelihood_per_target_token": -1.1672326487551479
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -18.91239353777375,
+              "mean_log_likelihood_per_target_token": -1.1820245961108593
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.001987952086744843,
+                0.06547792480589922
+              ],
+              "difference_b_minus_a": 0.029869185205024573,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 0.004882548460500402,
+              "positive_documents": 39,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.1168745390775499,
+                -0.1764923347686771
+              ],
+              "difference_b_minus_a": -0.6491622969715136,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.19392421300671714,
+              "positive_documents": 27,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                2.422532050450391,
+                5.51611140558706
+              ],
+              "difference_b_minus_a": 3.8525216194740777,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 2.0556162646334997,
+              "positive_documents": 54,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.1289628172428956,
+                -0.13627007494046825
+              ],
+              "difference_b_minus_a": -0.6361146903992196,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.2803371548652649,
+              "positive_documents": 25,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.0844617162920671,
+                -0.15525825437037336
+              ],
+              "difference_b_minus_a": -0.619293111766489,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.21810157784182138,
+              "positive_documents": 24,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.8842607822323245,
+                0.11937294324419105
+              ],
+              "difference_b_minus_a": -0.38262195407510546,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.014821583965215268,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        }
+      },
+      "note_context": {
+        "actions_total": 16165,
+        "caps": 63,
+        "content_length_counts": {
+          "256": 63,
+          "36": 1
+        },
+        "content_tokens_mean": 252.5625,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 16164,
+        "empty": 0,
+        "stop_counts": {
+          "length_cap": 63,
+          "token:151643": 1
+        }
+      },
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 58.837357038108166,
+        "new_score_process_seconds": 114.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 7.2975285200082,
+        "reused_sampling_batch_seconds_counted_once": 210.3831112950429,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 29.0
+      }
+    },
+    "B0_writer_readerBC64": {
+      "writer": "B0",
+      "reader": "writerBC64",
+      "writer_checkpoint_sha256": null,
+      "reader_checkpoint_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+      "protocol_sha256": "ee8e7583d93c7a44327df7bacde65430a99beb96250208fdee40101990a94ecb",
+      "summary_sha256": "5f2786e5d0b8a7bd21f921a16df0861fa1423d05f8460ec63a091170e9602a78",
+      "documents": 64,
+      "rows": 384,
+      "failures": 0,
+      "fixed_B0_reader_primary": false,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -1.1023319939430174,
+              "mean_log_likelihood_per_target_token": -1.1023319939430174
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -1.5408173517637795,
+              "mean_log_likelihood_per_target_token": -1.5408173517637795
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -1.118297635303618,
+              "mean_log_likelihood_per_target_token": -1.118297635303618
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -1.7199060280180458,
+              "mean_log_likelihood_per_target_token": -1.7199060280180458
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -1.0947113894887592,
+              "mean_log_likelihood_per_target_token": -1.0947113894887592
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -1.1490748222234706,
+              "mean_log_likelihood_per_target_token": -1.1490748222234706
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.02922339520774697,
+                0.012042864219731886
+              ],
+              "difference_b_minus_a": -0.007620604454258162,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.1921161302552719e-07,
+              "positive_documents": 29,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.15722205322506,
+                -0.17932044505159458
+              ],
+              "difference_b_minus_a": -0.6175740340750284,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.7161655705422163e-05,
+              "positive_documents": 26,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.8222328419825845,
+                0.4657144396501632
+              ],
+              "difference_b_minus_a": -0.17908867625426628,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 7.3908332467453874e-06,
+              "positive_documents": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.1616598955820001,
+                -0.12054461535123737
+              ],
+              "difference_b_minus_a": -0.6016083927144278,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -3.993371478827612e-06,
+              "positive_documents": 28,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.1666706268822715,
+                -0.1798897597368635
+              ],
+              "difference_b_minus_a": -0.6251946385292866,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.6151865565916523e-05,
+              "positive_documents": 27,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -1.1071273824401686,
+                -0.10781358145183347
+              ],
+              "difference_b_minus_a": -0.5708312057945752,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 1.787935048014333e-06,
+              "positive_documents": 33,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -22.543276764384572,
+              "mean_log_likelihood_per_target_token": -1.4089547977740358
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -27.826294301139242,
+              "mean_log_likelihood_per_target_token": -1.7391433938212026
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -23.09055823310717,
+              "mean_log_likelihood_per_target_token": -1.4431598895691982
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -25.045354419954336,
+              "mean_log_likelihood_per_target_token": -1.565334651247146
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -22.562330307842927,
+              "mean_log_likelihood_per_target_token": -1.410145644240183
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -23.4535475622605,
+              "mean_log_likelihood_per_target_token": -1.4658467226412812
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.05047432798180378,
+                0.0947210414796377
+              ],
+              "difference_b_minus_a": 0.019053543458356526,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.000514491022656216,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.640249159923769,
+                -1.5467717155818808
+              ],
+              "difference_b_minus_a": -2.5020776555697632,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.014659647198414,
+              "positive_documents": 17,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                0.9396655477215073,
+                4.816397330264785
+              ],
+              "difference_b_minus_a": 2.7809398811849064,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 1.7416936708150388,
+              "positive_documents": 40,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.020015804332849,
+                -1.029394642395021
+              ],
+              "difference_b_minus_a": -1.9547961868471657,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.4269165081132087,
+              "positive_documents": 19,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.604502467193738,
+                -1.53383571786334
+              ],
+              "difference_b_minus_a": -2.4830241121114067,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.9207031478470071,
+              "positive_documents": 20,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -2.65131378766607,
+                -0.6804247409390723
+              ],
+              "difference_b_minus_a": -1.5918068576938358,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.12257870001787552,
+              "positive_documents": 27,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        }
+      },
+      "note_context": {
+        "actions_total": 13145,
+        "caps": 45,
+        "content_length_counts": {
+          "0": 1,
+          "11": 1,
+          "117": 1,
+          "133": 1,
+          "15": 1,
+          "162": 1,
+          "164": 1,
+          "2": 1,
+          "214": 1,
+          "22": 1,
+          "227": 1,
+          "25": 1,
+          "253": 1,
+          "256": 45,
+          "37": 1,
+          "43": 1,
+          "5": 1,
+          "8": 1,
+          "81": 1,
+          "87": 1
+        },
+        "content_tokens_mean": 205.09375,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 13126,
+        "empty": 1,
+        "stop_counts": {
+          "length_cap": 45,
+          "token:151643": 19
+        }
+      },
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 62.07042772897694,
+        "new_score_process_seconds": 200.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 208.41046234099485,
+        "reused_sampling_batch_seconds_counted_once": 328.3284764189739,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 54.0
+      },
+      "execution": {
+        "all_four_exit0": true,
+        "all_owned_PIDs_absent": true,
+        "release_sha256": "5152e01b3f21ab5ffb4277f3ac0984da4b0d5cec2ddf0277125add79636a5d19",
+        "cleanup_sha256": "e96831253ff8a89a408cdabee0998d5e55237df63eb6c51b0a22d75faf96b132",
+        "issued_utc": "2026-10-18T01:05:17.129422+00:00",
+        "last_exit_utc": "2026-10-18T01:06:16.054729+00:00",
+        "issued_to_last_exit_seconds": 58.925307,
+        "adapted_reader_not_gated_to_B0_raw_parity": true
+      }
+    },
+    "writerBC64_readerBC64": {
+      "writer": "writerBC64",
+      "reader": "writerBC64",
+      "writer_checkpoint_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+      "reader_checkpoint_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+      "protocol_sha256": "24d8eb7cf612bb2dfaa913bafb8b6593abb09dd093572b36f85b9708ce0f5688",
+      "summary_sha256": "e5bd145feefd4b038b4873c564030ab2a9f7a3a57999ef26884b82cdc4ba713c",
+      "documents": 64,
+      "rows": 384,
+      "failures": 0,
+      "fixed_B0_reader_primary": false,
+      "horizons": {
+        "K1": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -1.1023319939430174,
+              "mean_log_likelihood_per_target_token": -1.1023319939430174
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -1.4492801858719702,
+              "mean_log_likelihood_per_target_token": -1.4492801858719702
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -1.142104165691528,
+              "mean_log_likelihood_per_target_token": -1.142104165691528
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -1.59310599232286,
+              "mean_log_likelihood_per_target_token": -1.59310599232286
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -1.0947113894887592,
+              "mean_log_likelihood_per_target_token": -1.0947113894887592
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -1.0805523345966288,
+              "mean_log_likelihood_per_target_token": -1.0805523345966288
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.02922339520774697,
+                0.012042864219731886
+              ],
+              "difference_b_minus_a": -0.007620604454258162,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.1921161302552719e-07,
+              "positive_documents": 29,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.9079721167126408,
+                -0.15986542738689036
+              ],
+              "difference_b_minus_a": -0.4907739983798427,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00027163312188349664,
+              "positive_documents": 23,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.6636749896114585,
+                0.36342328624121073
+              ],
+              "difference_b_minus_a": -0.14382580645088994,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 1.2695620739577862e-05,
+              "positive_documents": 32,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.879771049652883,
+                -0.0733252080310698
+              ],
+              "difference_b_minus_a": -0.45100182663133204,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00014991425268817693,
+              "positive_documents": 25,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.9175086658980152,
+                -0.16171600767929592
+              ],
+              "difference_b_minus_a": -0.49839460283410086,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00019605930356192403,
+              "positive_documents": 23,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.8983051405761417,
+                -0.19628715265683302
+              ],
+              "difference_b_minus_a": -0.5125536577262313,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.00021870627824682742,
+              "positive_documents": 27,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        },
+        "K16": {
+          "absolute_likelihoods": {
+            "empty": {
+              "documents": 64,
+              "mean_log_likelihood": -22.543276764384572,
+              "mean_log_likelihood_per_target_token": -1.4089547977740358
+            },
+            "filler": {
+              "documents": 64,
+              "mean_log_likelihood": -28.10147539952794,
+              "mean_log_likelihood_per_target_token": -1.7563422124704962
+            },
+            "other": {
+              "documents": 64,
+              "mean_log_likelihood": -23.16363553587503,
+              "mean_log_likelihood_per_target_token": -1.4477272209921894
+            },
+            "own": {
+              "documents": 64,
+              "mean_log_likelihood": -25.796098055436897,
+              "mean_log_likelihood_per_target_token": -1.612256128464806
+            },
+            "raw": {
+              "documents": 64,
+              "mean_log_likelihood": -22.562330307842927,
+              "mean_log_likelihood_per_target_token": -1.410145644240183
+            },
+            "shuffled": {
+              "documents": 64,
+              "mean_log_likelihood": -23.66295984881063,
+              "mean_log_likelihood_per_target_token": -1.4789349905506644
+            }
+          },
+          "contrasts": {
+            "empty_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -0.05047432798180378,
+                0.0947210414796377
+              ],
+              "difference_b_minus_a": 0.019053543458356526,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.000514491022656216,
+              "positive_documents": 31,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_empty": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.685463589847276,
+                -1.9773341616664986
+              ],
+              "difference_b_minus_a": -3.2528212910523258,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.9010987807196216,
+              "positive_documents": 21,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_filler": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                0.31688410858907323,
+                4.423159634093264
+              ],
+              "difference_b_minus_a": 2.305377344091041,
+              "documents": 64,
+              "items": 64,
+              "median_nats": 2.146276799432215,
+              "positive_documents": 42,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_other": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.001342882893369,
+                -1.388222868404726
+              ],
+              "difference_b_minus_a": -2.632462519561865,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.9712222122601588,
+              "positive_documents": 21,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_raw": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -4.671634255940173,
+                -1.9575748550538061
+              ],
+              "difference_b_minus_a": -3.2337677475939692,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -1.1640036982716992,
+              "positive_documents": 20,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            },
+            "own_minus_shuffled": {
+              "bootstrap_draws": 5000,
+              "bootstrap_seed": 17,
+              "ci95": [
+                -3.405309041381437,
+                -0.9320954521331848
+              ],
+              "difference_b_minus_a": -2.133138206626267,
+              "documents": 64,
+              "items": 64,
+              "median_nats": -0.3970440219471243,
+              "positive_documents": 26,
+              "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+            }
+          }
+        }
+      },
+      "note_context": {
+        "actions_total": 16165,
+        "caps": 63,
+        "content_length_counts": {
+          "256": 63,
+          "36": 1
+        },
+        "content_tokens_mean": 252.5625,
+        "content_tokens_median": 256.0,
+        "content_tokens_total": 16164,
+        "empty": 0,
+        "stop_counts": {
+          "length_cap": 63,
+          "token:151643": 1
+        }
+      },
+      "cost": {
+        "new_sampling_seconds": 0,
+        "new_score_context_seconds": 61.773243362942594,
+        "new_score_process_seconds": 190.0,
+        "qualification": "Batch generation counted once; isolated reader/parallel process walls are not training throughput",
+        "reused_replay_audit_batch_seconds_counted_once": 7.2975285200082,
+        "reused_sampling_batch_seconds_counted_once": 210.3831112950429,
+        "reused_sampling_batches": 16,
+        "stage_span_seconds": 55.0
+      },
+      "execution": {
+        "all_four_exit0": true,
+        "all_owned_PIDs_absent": true,
+        "release_sha256": "8badb3d9b16c9f0b47c773e355ce3c21b7f77c177749afe397ece985caccc01e",
+        "cleanup_sha256": "9def7c7f9edc66532dd4081d772c0bb9b6ada5b779f68e0ed942deba08e2e808",
+        "issued_utc": "2026-10-18T01:05:17.129422+00:00",
+        "last_exit_utc": "2026-10-18T01:06:17.224920+00:00",
+        "issued_to_last_exit_seconds": 60.095498,
+        "adapted_reader_not_gated_to_B0_raw_parity": true
+      }
+    }
+  },
+  "reader_raw_drift_adapted_minus_B0": {
+    "K16": {
+      "difference_b_minus_a": -3.8866079277605627,
+      "ci95": [
+        -5.234614858367238,
+        -2.5460672222720144
+      ],
+      "items": 64,
+      "documents": 64,
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "K1": {
+      "difference_b_minus_a": -0.14409916180549698,
+      "ci95": [
+        -0.3492261229976307,
+        0.029965382455252355
+      ],
+      "items": 64,
+      "documents": 64,
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    }
+  },
+  "repeated_reader_raw_observations": {
+    "K16": {
+      "adapted_reader_max_raw_difference_between_writer_cells": 0.0,
+      "B0_reader_max_raw_difference_between_writer_cells": 0.0
+    },
+    "K1": {
+      "adapted_reader_max_raw_difference_between_writer_cells": 0.0,
+      "B0_reader_max_raw_difference_between_writer_cells": 0.0
+    }
+  },
+  "uncertainty": {
+    "unit": "document",
+    "documents": 64,
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 17,
+    "qualification": "Conditional on these checkpoints and fixed development documents; not training-seed uncertainty."
+  },
+  "training_cost": {
+    "public_receipt_sha256": "cce01393ad06eb14d9f2f6ce0fc8cb05e5e33c11762d04be5acd7002fdf4ce76",
+    "updates": 64,
+    "objective": "writer_note_close_ce",
+    "exposure": {
+      "complete_ordered_passes": 6,
+      "distinct_TRAIN_documents": 77,
+      "input_policy": "Header+prefix+open+note+synthetic close; no true future in writer CE. Labels were selected using observed TRAIN futures.",
+      "next_pass_records": 50,
+      "note_close_labels": 104606,
+      "note_content_labels": 103582,
+      "occurrence_count_histogram": {
+        "6": 27,
+        "7": 50
+      },
+      "prefix_tokens": 262144,
+      "processed_records": 512,
+      "sampled_RL_actions": 0,
+      "synthetic_canonical_close_labels": 1024,
+      "true_future_labels": 0
+    },
+    "all64_update_elapsed_sum_seconds": 3157.040183981022,
+    "first_two_update_elapsed_seconds": [
+      994.8665109760041,
+      567.6176353689953
+    ],
+    "checkpoint_publication_intervals_seconds": [
+      96.852693,
+      46.255894
+    ],
+    "release_to_exit_seconds": 3364.45441,
+    "qualification": "Actual SFT supervision/cold/checkpoint costs remain included; not an end-to-end speed comparison."
+  },
+  "new_reader_cost": {
+    "score_context_seconds": 123.84367109191953,
+    "score_process_seconds": 390.0,
+    "new_sampling_seconds": 0,
+    "reused_sampling_seconds_unique_writer_bundles_counted_once": 538.7115877140168,
+    "qualification": "Eight score processes run concurrently on a shared host; do not sum reused note generation over reader cells or infer training speed."
+  },
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/interface_probe.py": "433e59be3b08e467ad7c60222ffe21e74c0faae49fc010d26c312f58bb012e60",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/warmstart_evaluate.py": "fadd9c469a46c0f9402b01bfb951bd23d26ab18444230163f727a26888eac5f1",
+    "train/warmstart_prepend_evaluate.py": "f7f83030b848249827e9bb3e722ed4195c5b676841036f5844913df8c6761ba0",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "panel_result_sha256": "96533b21b0d65443afe54b7e932b0e72e74209ea070f188e8a8d5ec05a059d52",
+  "fixed_first4_examples_sha256": "0a04e90dfb5bf18305c89d512d7f8cb2191ae0f556dbc55b3d261ba5a0e7ce68",
+  "archive": {
+    "path": "local/backups/diagnostics/warmstart-reader-cross-dev64-20261018-v1/ARCHIVE.json",
+    "sha256": "9c9ed479cc6e6250b3d8e5b5ed23f29843b5c6b377da103942b57c8cfdaf95e8",
+    "files": 273,
+    "payload_bytes": 6158107,
+    "all_regular_files_SHA256_readback_verified": true,
+    "originals_retained": true,
+    "assets_or_tensor_checkpoints_or_cache_binaries_copied": false,
+    "off_instance": false
+  },
+  "interpretation": "Both adapted-reader cells are harmful versus empty/other/shuffled controls. Adapted raw likelihood also declines. Positive filler contrasts alone do not establish useful content or reader-writer coadaptation.",
+  "limitations": [
+    "Secondary development diagnostic, not replacement of the fixed-B0 negative primary or an official final test.",
+    "One trained writer checkpoint/seed; conditional document intervals do not quantify training-seed variation.",
+    "Full quartile diagnostics and all raw score rows are retained in the private verified archive.",
+    "All notes retained, including63 writer caps versus45 B0 caps; no resampling, failure dropping or best-checkpoint selection.",
+    "Reader adaptation raw drift is reported, not required to equal B0.",
+    "Shared-host parallel score walls and reused cache state do not establish throughput improvement.",
+    "The jobs closed before a complete all-eight-live PID/start/environment capture; original wrapper/log PIDs and runtime-empty assigned devices were checked after exit.",
+    "Runtime/environment/topology details and original note text remain private; no weight files copied."
+  ]
+}

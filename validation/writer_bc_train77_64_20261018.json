@@ -1,0 +1,243 @@
+{
+  "artifact_sha256": {
+    "independent_audit": "0f68f37831b0e3c211e5f2063f0bf6afaae5dc12ab2fb04c0cc27fc2a13d9827",
+    "metrics": "ec2422b6935367e3e27a2ebe65c26121a0b7a986354846f0b4b7ab4f84ab129d",
+    "protocol": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+    "release": "4e8131aed26ec5a9c5b7169974fbc2a4bcf475162ac8ebf1d426186bc6d5c5a0",
+    "run": "695a34be159f517cba1068b6bf4d3a733a8071cf4e518a6d900206e3cedace57",
+    "train_log": "ec553425f5d77f5b2cac9e19836495a6548c726a03d77e96c12d8de95ea84ee8"
+  },
+  "backup_completion_annex": {
+    "bytes": 13669,
+    "files": 4,
+    "path": "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2-nonweight-backup-annex/VERIFIED.json",
+    "sha256": "5fc9dd3e1b693386692727879ce4fd14fc8eb790739f26de3200217879ad599e"
+  },
+  "checkpoints": [
+    {
+      "COMPLETE_file_mtime_utc": "2026-10-18T00:26:52.623952+00:00",
+      "counters": {
+        "future_labels": 0,
+        "note_close_labels": 26570,
+        "sampled_actions": 0,
+        "source_records": 128,
+        "source_tokens": 65536
+      },
+      "directory_birth_to_COMPLETE_file_mtime_seconds": 96.852693,
+      "directory_birth_utc": "2026-10-18T00:25:15.771259+00:00",
+      "manifest_sha256": "1de521817c6ec28ce97bb471ed0d6da83caa49c71fc09cbf41b90042a104885d",
+      "model_sha256": "b8f1bc16afde1162a58e176b0bfef2be1fe2264fcb8ed4349d9421f20adfbf9e",
+      "payload_bytes": 27532633863,
+      "payload_files": 9,
+      "step": 16
+    },
+    {
+      "COMPLETE_file_mtime_utc": "2026-10-18T00:48:13.536047+00:00",
+      "counters": {
+        "future_labels": 0,
+        "note_close_labels": 104606,
+        "sampled_actions": 0,
+        "source_records": 512,
+        "source_tokens": 262144
+      },
+      "directory_birth_to_COMPLETE_file_mtime_seconds": 46.255894,
+      "directory_birth_utc": "2026-10-18T00:47:27.280153+00:00",
+      "manifest_sha256": "9900a0fb99d1460912c535b1922039c235a8bf3147311c997984684e759189fb",
+      "model_sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882",
+      "payload_bytes": 27532633863,
+      "payload_files": 9,
+      "step": 64
+    }
+  ],
+  "closure": {
+    "closure_sha256": "8ca027470f9adbd1eb7fd820fd4ffe82a4cd7b8fd4fec1d4d6b1c2a804ba628a",
+    "exit_code": 0,
+    "observed_owned_identities": 12,
+    "root_observed_devices_free": true,
+    "still_present": 0
+  },
+  "created_utc": "2026-10-18T00:54:02+00:00",
+  "data_sha256": "ee2b384dc6fc6b032745a1340603f78eda06beb08d88ae0a461c1c9e70b9ffe7",
+  "dataset_sha256": "a19149a3cb63a5fbb09fe151b062a1e20ace213b72b290599607daa70052906b",
+  "essential_source_sha256": {
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/warmstart_data.py": "d8d3de30c5c65b5248133bdb2be4fcc75fafd10171d4d21ccbc82058562cdcb5",
+    "train/warmstart_driver.py": "d0b8ed4e105d2b1249e1169014a1acd9b9963522a5ed866e26db117e1cb3f585"
+  },
+  "execution": {
+    "accumulation": 1,
+    "arm": "warmstart",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "clip": 1.0,
+    "compute": "fp32",
+    "eps": 1e-08,
+    "global_batch": 8,
+    "lr": 1e-05,
+    "objective": "writer_note_close_ce",
+    "runtime_policy": {
+      "environment": {
+        "MKL_NUM_THREADS": "2",
+        "NEURON_CC_FLAGS": "--model-type=transformer",
+        "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+        "OMP_NUM_THREADS": "2",
+        "PJRT_DEVICE": "NEURON",
+        "XLA_COMPILATION_CACHE_SIZE": "2",
+        "XLA_DOWNCAST_BF16": null,
+        "XLA_USE_BF16": null
+      },
+      "schema": 1
+    },
+    "seed": 20261018,
+    "training_layout": "writer_only",
+    "updates": 64,
+    "weight_decay": 0.1,
+    "world_size": 8
+  },
+  "exposure": {
+    "complete_ordered_passes": 6,
+    "distinct_TRAIN_documents": 77,
+    "input_policy": "Header+prefix+open+note+synthetic close; no true future in writer CE. Labels were selected using observed TRAIN futures.",
+    "next_pass_records": 50,
+    "note_close_labels": 104606,
+    "note_content_labels": 103582,
+    "occurrence_count_histogram": {
+      "6": 27,
+      "7": 50
+    },
+    "prefix_tokens": 262144,
+    "processed_records": 512,
+    "sampled_RL_actions": 0,
+    "synthetic_canonical_close_labels": 1024,
+    "true_future_labels": 0
+  },
+  "full_checkpoint_EBS_backup": {
+    "completed_utc": "2026-10-18T00:53:41+00:00",
+    "destination_device": 66305,
+    "distinct_filesystems": true,
+    "external_backup": false,
+    "initial_snapshot": "The unchanged87-file nonweight archive records pending root callback; this annex supplies the completed callback evidence.",
+    "manifest_sha256": "9900a0fb99d1460912c535b1922039c235a8bf3147311c997984684e759189fb",
+    "owner": "/root",
+    "payload_bytes": 27532633863,
+    "payload_files": 9,
+    "qualified_helper_source_copy_and_readback_verified": true,
+    "receipt_path": "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/BACKUP.json",
+    "receipt_sha256": "933b79bd40b4d80f5b36f6c5ed8a21d61eae4d40e1dcea0e73f286a9db6f51ad",
+    "source_device": 66310,
+    "status": "VERIFIED",
+    "verification_scope": "Root qualified helper verified all9 checkpoint files during source copy and destination readback, exit0. This audit copied only the small receipts/log; no additional checkpoint tensor readback."
+  },
+  "limitations": [
+    "Execution/training fit only; no fresh-note or downstream utility claim yet.",
+    "No old RL/global128 throughput claim: this is global8 masked-CE with repeated77 labels.",
+    "Sampled replica agreement is not full-model equality; successful source guards are not a gradient numerical oracle or resume proof.",
+    "Nonweight artifacts are EBS-verified on this instance; checkpoint backup is separate and off-instance backup remains unresolved.",
+    "Private label text/topology/failure inspection logs are excluded from the public receipt."
+  ],
+  "model": {
+    "base_asset_files_sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+    "base_manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1"
+  },
+  "nonweight_EBS_archive": {
+    "bytes": 8033957,
+    "files": 87,
+    "path": "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2-nonweight/VERIFIED.json",
+    "sha256": "16d976e265b0671cc1ae2cb8b64d9b0d7c3d389e274fa0993ce6c7dd99c57807"
+  },
+  "observed_checks": {
+    "all64_finite_loss_positive_norm_and_sampled_change": true,
+    "all64_metric_steps_and_exact_order_and_counters_reproduced": true,
+    "all64_sampled_replica_slices_bitwise_equal": true,
+    "full_model_bitwise_agreement_established": false,
+    "gradient_guard_scope": "Source scans every element of every present gradient tensor on all8ranks before optimizer.step and globally reduces failure flags;64 subsequent metrics show no guard exception. No full-gradient numerical-reference comparison here.",
+    "gradient_norm_range": [
+      1.7107908725738525,
+      18.82982635498047
+    ],
+    "numerical_resume_qualification_established": false,
+    "replica_guard_scope": "First up to32 values per unique model Parameter after each update; exact replica equality and nonzero change for this slice. Not full-model bitwise equality or numerical resume qualification.",
+    "sampled_changed_fraction_range": [
+      0.9932459592819214,
+      0.9997983574867249
+    ]
+  },
+  "order_hash": "149303c8c7d73f3eef50663e314e02965a4c13daa11aea06a10b87206578f243",
+  "prior_attempt": {
+    "logs_private": true,
+    "status": "Preserved separate v1 sparse collective setup failure before updates; v2 changes placement only, same pair/source/data."
+  },
+  "protocol_sha256": "e5c7e9e983efc8a2f97167afc059d503ae38855577b5561a55fb9706c2879bd4",
+  "run_id": "writer-bc-prepend-train77-64-v2",
+  "schema": "writer-bc-train77-execution-report-v1",
+  "source_map_sha256": "cb874d15bbe8f24b7408ffeaa93ed7180d3b6e0483f991f66fb1ffd45be31247",
+  "spec_hash": "9efb85c3ea05bb7fc605b7785f40771877ecabe601a674262ae075acd21e115f",
+  "status": "COMPLETE64_EXIT0_EXECUTION_ONLY",
+  "timing": {
+    "all64_monotonic_update_elapsed_sum_seconds": 3157.040183981022,
+    "all64_update_elapsed_seconds": {
+      "count": 64,
+      "maximum": 994.8665109760041,
+      "mean": 49.32875287470347,
+      "median": 25.65780596249533,
+      "minimum": 24.780787111987593,
+      "p90": 26.6363160964087,
+      "sum": 3157.040183981022
+    },
+    "checkpoint_publication_intervals_seconds": [
+      96.852693,
+      46.255894
+    ],
+    "compiler_FAIL_log_lines": 0,
+    "compiler_PASS_log_lines": 104,
+    "exit_utc": "2026-10-18T00:48:16.892721+00:00",
+    "first_two_update_elapsed_seconds": [
+      994.8665109760041,
+      567.6176353689953
+    ],
+    "last_metric_utc": "2026-10-18T00:47:27+00:00",
+    "limits": [
+      "First2 versus3\u201364 is a retrospective descriptive cold/steady split, not a new acceptance rule.",
+      "Initial update and initialized-Adam update compiled distinct programs; elapsed includes compilation/loading/execution, not pure compiler CPU or device time.",
+      "Metric elapsed ends before synchronized stop/checkpoint work; inter-metric wall includes step16 export wait and UTC rounding.",
+      "Directory birth\u2192COMPLETE mtime includes device-to-host export, serialization, barriers and SHA production; it is not pure disk bandwidth.",
+      "Compiler PASS lines are not unique graph counts. Warm interval is global8/accumulation1 writer CE, not old RL/global128 throughput."
+    ],
+    "release_to_exit_seconds": 3364.45441,
+    "release_to_run_metadata_seconds": 42.561689,
+    "release_utc": "2026-10-17T23:52:12.438311+00:00",
+    "remaining_updates_3_to_64_elapsed_seconds": {
+      "count": 62,
+      "maximum": 27.190926800001762,
+      "mean": 25.718645768322947,
+      "median": 25.651780085005157,
+      "minimum": 24.780787111987593,
+      "p90": 26.514299448099337,
+      "sum": 1594.5560376360227
+    },
+    "remaining_updates_3_to_64_inter_metric_gap_seconds": {
+      "count": 62,
+      "maximum": 124.0,
+      "mean": 27.387096774193548,
+      "median": 26.0,
+      "minimum": 25.0,
+      "p90": 27.0,
+      "sum": 1698.0
+    },
+    "run_metadata_to_exit_seconds": 3321.892721,
+    "run_started_utc": "2026-10-17T23:52:55+00:00",
+    "wall_outside_metric_elapsed_seconds": 164.85253701897818
+  },
+  "training_fit": {
+    "first_batch_loss": 1.2185461521148682,
+    "last_batch_loss": 0.21250373125076294,
+    "qualification": "Different minibatches with repeated TRAIN examples; training fit is not held-out or downstream utility."
+  },
+  "updated_utc": "2026-10-18T00:55:19+00:00"
+}

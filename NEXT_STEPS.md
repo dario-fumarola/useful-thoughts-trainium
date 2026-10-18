@@ -1,40 +1,30 @@
-# Current queue — owner redirection, 2026-10-17
+# Current queue — owner redirection
 
-1. DONE: original R stopped63/state backed up; old run/final order cancelled.
-2. DONE: reader-tax pilots, genuine DEV32 G16 oracle, separate high-surprisal
-   TRAIN128/G16 corpus, fresh DEV64 G1 baseline and actual padding profiler.
-   Prepending preserves the clean continuation boundary (empty tax~0), but
-   original G1 content still hurts. All original outputs/controls retained.
-3. DONE: same2048 TRAIN candidates rescored under prepend,8704 finite rows.
-   K16 mean16−empty−1.072; future-selected best16+1.026, with positive paired
-   max-own/max-unrelated and max-own/max-shuffled intervals. Strict raw/empty/
-   matched-control selection retains77 nonempty labels; preserve all128 decisions.
-4. ACTIVE: writer-bc-prepend-train77-64-v2,64updates/global8/LR1e-5/FP32,
-   writer-only note+canonical-close CE; no true future input/loss. Update16
-   passed; full27.53GB checkpoint16 SHA-readback verified. Cold updates1/2~995/568s, then25-27s.
-   Finite gradients, real sampled changes and sampled-slice replica agreement
-   pass. Finish healthy64; no DEV checkpoint selection. Keep16/64 and verify
-   final64 on EBS. V1 sparse rendezvous failure remains separate/preserved.
-   Parallel raw-control-v1 failed after one update: eight64MiB contiguous HBM
-   scratchpad allocation failures during initialized optimizer loading. Cause
-   of region unavailability unresolved; no failure-time HBM snapshot. All owned
-   PIDs closed/no checkpoint. Preserve failure. After writer64 and group closure,
-   start fresh-B0 raw-control-v2 serially on exact writer8-15 cores, same source/
-   protocol/data/order/LRU2, new identity/deadline/ports. No automatic retry.
-   Unequal CE-label counts and actual costs stay explicit.
-5. DONE B0 prepend DEV64 baseline,384 finite rows; ordinary G1 own−empty K16
-   remains−1.101 despite near-zero tax. After both completed64 checkpoints,
-   generate fresh student G1 under the same fixed batches/seeds/cap256. Primary:
-   unchanged B0 reader, own−empty/controls/raw. Adapted-reader diagonals/crosses
-   are secondary. Keep lengths, caps, failures, absolute LL and actual costs.
-6. DONE: local Qwen3-4B first16 TRAIN comparison,32 notes/176 finite B0 prepend
-   scores. Prefix-only own−empty K16−.698; hindsight+2.858, positive versus all
-   matched content controls. Hindsight uses target information and includes
-   copying/target-derived hints and wrong mathematical claims. It establishes
-   usable target-dependent content, not prefix-only reasoning. Audit real anchor
-   quality before choosing broader teacher supervision. No DEV labels/B0 switch.
-   No long RL from the old init.
+1. DONE: initial R stopped63/backed up; reader repair and genuine G16 search.
+   Prepending makes empty tax~0. Same TRAIN128/G16 oracle has positive tail;
+   ordinary G1 remains harmful. All original evidence retained.
+2. DONE, NEGATIVE: writer-only BC on77 selected TRAIN labels,64updates from B0.
+   Fresh held DEV64 own−empty K16−.649, own−other−.636;63caps/64. Paired change
+   versus B0+.451 CI[−.150,+1.128]. No deployed useful-thought improvement.
+   Full64 EBS backup and notes/scores/source archives verified. No long RL restart.
+3. ACTIVE: matched raw future16 CE control64. Two default-allocator attempts
+   failed at initialized optimizer load; explicit v3 uses documented noncontiguous
+   scratchpad with same sources/NEFFs/math/FP32/LRU2. Actual first2 updates pass.
+   Monitor healthy run/checkpoints; final64 EBS copy. Exact jobs/paths in STATUS.
+4. Finish control64 fresh G1 DEV64/B0-reader matrix and predeclared paired
+   three-arm comparison. K16 primary/K1 secondary, absolute likelihoods,
+   empty/content controls, lengths/caps/errors/costs. No checkpoint selection.
+5. Adapted-reader2×2 crosses CLOSED/NEGATIVE; finish fixed GSM8K TRAIN128
+   correctness (same prompt/parser; thought/answer256; greedy FP32). Existing B0
+   direct/empty reuse validated, thought256 newly generated. Run regardless LL
+   sign; no official test use. These diagnostics inform the next recipe.
+6. Before more training, run32 hash-selected new GSM8K TRAIN questions: local4B
+   prefix-only notes, independently verified partial calculations and matched
+   corruptions. Fixed B0 reader, raw/empty/filler/shuffled/unrelated controls,
+   canonical numeric-answer LL and greedy correctness. Freeze notes before
+   gold; no B0-failure selection. Current77 labels stay unchanged. Curated QA
+   feasibility does not establish FineMath transfer or self-discovery.
 
-Use measured useful content and a working short loop before a larger study.
-Keep official final outcomes out of development. Preserve real data/weights,
-negative results, selected examples and actual costs; do not rush healthy runs.
+Preserve real data/weights, negative results, fixed examples and actual costs.
+Use measured content utility/correctness and a working short loop. Do not rush
+healthy runs, change current objectives silently, or fill hardware with blind retries.

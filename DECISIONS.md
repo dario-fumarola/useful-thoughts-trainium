@@ -543,3 +543,37 @@ After writer64/exit0/group closure, restart raw_control from actual B0 on exact
 writer cores8-15, same immutable source/data/order/settings and a new attempt ID.
 This is a serial placement test, not a silent numerical or allocator-policy fix.
 Keep actual shared-host/cold/export costs separate from warm step timing.
+
+### 2026-10-18 01:08 UTC — first learned writer remains harmful; repair control allocation only
+
+Writer64 completed/exit0/full27.53GB EBS verified. Fresh G1 DEV64/B0-reader
+own−empty−.649 CI[−1.117,−.176], own−other−.636 CI[−1.129,−.136];63/64cap.
+Paired change versus B0+.451 CI[−.150,+1.128]. This does not pass useful-content
+criterion. Preserve all notes/controls/absolute LL/examples and finish raw64,
+reader-cross2×2 and unchanged-parser GSM8K TRAIN128 correctness diagnostics.
+Do not equate lower cloning loss or future-selected oracle utility with success.
+
+Serial raw-v2 reproduced contiguous scratchpad growth failure without another
+accelerator job, after exactly the same first update as v1. Current5s samples
+last showed9.60GiB/24GiB perbank; exact instantaneous layout remains unknown.
+Official Neuron memory guidance recommends NEURON_RT_CONTIGUOUS_SCRATCHPAD=0
+for failed contiguous growth despite available HBM. Release v3 from B0 with
+ONLY this allocator switch, same sources/NEFFs/FP32/LRU2/math, explicit parent
+protocol and new canonical spec. Old runtime_policy excludes extra key; root
+launcher and actual parent+8worker environment attest it. First2 updates now
+pass; step1 matches prior numerics. Sampled max23.326GiB includes3.478GiB
+private scratchpad, so long-run/transient headroom is not declared proven.
+No blind retry or compiler/page-size change. Final64 and backup remain required.
+
+### 2026-10-18 01:18 UTC — test useful calculation before more writer training
+
+Both adapted-reader crosses are negative; raw K16 drift−3.887 nats. The fixed
+first8 selected TRAIN labels contain forum fragments, repetition and document
+continuations, not convincing worked calculations. This panel is posthoc and
+not a population-frequency estimate. Do not enlarge the same cloning recipe.
+Use32 hash-selected new GSM8K TRAIN questions, disjoint from earlier dev/demos,
+without B0-failure selection. Compare native local4B prefix-only notes with
+independently verified partial calculations and matched numeric corruptions;
+fixed B0 prepend reader, silence/content controls, answer LL and correctness.
+Freeze all notes before gold. No training, official test, paid teacher, or
+FineMath-transfer/self-discovery claim. Preserve all32, including weak notes.
