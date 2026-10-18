@@ -2,9 +2,9 @@
 
 1. Complete the explicit matched developmental64 evaluation already running:
    local/science/control/{W,Cprime}-seed20261018-development64-evaluation-v1.
-   Arithmetic256 generations and B0 scores have completed; close/summarize B0,
-   score the same notes with self, then general256, GSMTRAIN512 and the secondary
-   synthetic256. Actual per-stage commands are runtime.py start PANEL STAGE and
+   Arithmetic256 is fully complete, independently audited and EBS archived;
+   general256 note generation is active. Finish general B0/self, GSMTRAIN512 and
+   secondary synthetic256. Actual per-stage commands are runtime.py start PANEL STAGE and
    observe.py capture/close PANEL STAGE. Do not overwrite existing receipts.
    Guard:local/science/control/matched-development64-memory-guard-v1, independent
   10s samples,512GiB host-available floor, finite01:30UTC deadline. Capture actual

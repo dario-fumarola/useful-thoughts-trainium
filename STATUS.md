@@ -1,18 +1,20 @@
-# Status — 2026-10-18 15:59 UTC
+# Status — 2026-10-18 16:08 UTC
 
 ## Active: matched developmental step64 evaluation
 Question: what did the interrupted matched W/C′ runs learn by their common64 milestone?
 ID:matched-development64-20261018; explicit nonresumable64 identity, terminal320 remains incomplete.
 Both models saw identical2,048 ordered TRAIN occurrences; same arithmetic256/general256/GSMTRAIN512.
 Real panels: same fresh notes scored by frozenB0 and self, raw/empty/own/unrelated/oracles, I3/I6.
-All256 arithmetic generations per arm physically closed; B0 scores complete, summaries pending.
+Arithmetic256 complete/archived; all12,288 token vectors and144 paired contrasts independently exact.
 Primary natural16 own−raw and own−other paired document CIs; empty controls beside each contrast.
 GSM direct/empty/thought and all unsupported retained; secondary synthetic four-family panel follows.
 Controls:local/science/control/{W,Cprime}-seed20261018-development64-evaluation-v1.
 Independent finite external guard samples hostRAM every10s; stops owned jobs below512GiB available.
 Deadline01:30UTC next day; no outcome-dependent stopping, no automatic learning restart.
-Source validation:1546 CPU tests/smoke/compile pass; actual64 identities and causal loaders verified.
-Decision: complete this developmental comparison; broad general SFT and RL remain on hold.
+Wself I3 own−raw−.616/−empty+.749/−other+3.865; fixedI6 own−raw+.132 [.015,.256].
+Wmixed own−B0raw−.175 [−.395,.065]; no absolute improvement. Two self-score live captures missed/preserved.
+General note generation active; full arithmetic result:validation/reader_learning_compound_DEV256_step64_20261018.json.
+Decision: complete remaining panels; broad general SFT/RL hold; original I3 gate failed.
 
 ## Active: bounded backward-path host-memory probe
 Question: does original real-data BF16 W backward retain hostRAM before optimizer/update stages?

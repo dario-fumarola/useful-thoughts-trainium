@@ -7,11 +7,30 @@ on AWS Trainium.
 
 ## Current finding
 
-**Useful self-generated thoughts have not been established on real-document DEV
-or GSM8K.** Supplied intermediate work helps on controlled arithmetic. A larger
-future-aware teacher batch also supplies enough real training labels. The first
-matched supervised writer/reader and source-only runs were interrupted by host
-RAM exhaustion before their terminal checkpoints; no trained comparison is available yet.
+**No overall capability improvement is established.** The preserved matched
+step64 models now show learned note use on real arithmetic, with a remaining
+interface cost and lower raw prediction quality. Their planned320-step training
+comparison was interrupted by host RAM exhaustion; step64 is developmental only.
+
+On256 real arithmetic DEV documents, using each model as its own reader:
+
+| Development64 path | Own−raw | Own−empty | Own−unrelated |
+|---|---:|---:|---:|
+| W ordinary re-anchor |−.616 [−.972,−.274]|+.749 [.414,1.095]|+3.865 [3.374,4.353]|
+| W fixed mixer |+.132 [.015,.256]|+.289 [.188,.397]|+.305 [.200,.419]|
+| C′ ordinary re-anchor |−6.470 [−7.134,−5.810]|−5.602 [−6.207,−5.005]|+.990 [.193,1.760]|
+| C′ fixed mixer |−.582 [−.744,−.419]|−.566 [−.715,−.413]|−.010 [−.160,.146]|
+
+These are natural16 likelihood gains in nats, with paired-document95% intervals.
+W notes cap in7/256 attempts, versus253/256 for C′. The original ordinary-interface
+primary gate fails. W's mixed thought path is still−.175 [−.395,.065] versus
+untouched B0 raw prediction; its own raw path loses−.307 [−.499,−.092]. Thus the
+small within-model gain does not establish improvement above the starting model.
+W supervision includes complete answers, so this does not isolate intermediate
+computation. General DEV and GSMTRAIN512 evaluation are pending.
+[Complete developmental arithmetic result, all vectors and notes](validation/reader_learning_compound_DEV256_step64_20261018.json).
+The next study isolates exact partial states, freezes the trained reader, and
+compares a supervised writer with ordinary compact CoT.
 
 Fresh B0 notes give these likelihood changes with the fixed mixed reader:
 
@@ -82,7 +101,7 @@ Documents/updates match; tokens, gradient dose and compute differ.
 [Original W launch](validation/reader_learning_compound5120_W_seed20261018_launch.json) ·
 [Original C′ launch](validation/reader_learning_compound5120_Cprime_seed20261018_launch.json).
 The320-step comparison remains incomplete. The preserved matched step64 models
-will be evaluated explicitly as developmental checkpoints while host-memory growth
+are being evaluated explicitly as developmental checkpoints while host-memory growth
 is investigated. They do not replace the terminal endpoint or permit resumption
 without optimizer state. [Current queue](NEXT_STEPS.md) · [Experiment summaries](STATUS.md).
 
