@@ -6,25 +6,24 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 02:04 UTC handoff: continue until user stops. COMPLETE two-seed study
-passes full audit,51,200answers/4096notes/all20payloads. New main conclusion:
-full CoT higher accuracy on all four panels in both seeds. Student counts
-386/347/172/20 and372/212/118/19, fullCoT402/377/247/273 and399/381/232/234.
-Split-full CIs negative excluding0 in7cells, one ends0. Own-vs-same-reader
-raw/empty/unrelated positive all8, but composition only3.7–3.9%. AllWnaturalEOS,
-zero caps. Post hoc TRAIN always TWO intermediate equations; composition needs
-THREE. Wstill2in501/512 and508/512, mostly correct required subsets. This is
-fixed-depth behavior, not empty collapse. Prefer simpler full CoT main path.
+October19 02:22 UTC handoff: current owner steering asks one small variable-depth
+writer intervention before a broader dataset/architecture pivot. The complete
+v7 result is published in a0ae5ec,review ZIP saved and linked to owner. FullCoT
+beats split all panels/both seeds; two-line stopping is a curriculum hypothesis.
+New source5af3431 at local/worktrees/variable-depth-writer-v11,1614CPUchecks pass.
+Public prospective design validation/variable_depth_writer_v11_design_20261019.json.
+Disposable four-core qualification now active via
+local/diagnostics/variable-depth-writer-v11-v1/qualify.py (tmux variable-depth-v11-qual).
+Fresh1–6/fullsave/close/fullrestore6/updates7–8; inspect supervisor/stage logs.
+No pilot model released yet. Then fixed640 versus varied640(one–five steps),
+160updates/eight passes each, frozen v7 reader/fullCoT references and B0. New
+DEVdepth2/6 n256 plus targeted existing composition512. Strict gates in JSON.
+Both writers128actions+reader32 versus single160; all failures retained.
 
-Current uncommitted publication: READMErewritten with bothseeds/controls and
-caveats, new `scripts/analyze_partial_state_study.py` (actual data execution
-passes), full primaryreport/20gz payloads, descriptive JSON and forest SVG/PNG/CSV.
-All1610CPUchecks PASS60.76s in
-local/analysis/partial-state-v7-complete-readout-CPU-checks-20261019.log.
-NEXT:finish reviewed Git commit/push of these artifacts+docs, save optional
-once-per-day reviewzip (Git-tracked source/results only), then implement next
-real-document single-model training reference. Do not leave stale positive
-precursor as headline. No TEST/R1234/RL;8B remains unqualified option.
+Real-data CPU implementation remains in worktree real-trace-cpt-v10 (1621tests),
+its hardware plan HELD before any accelerator launch. Do not accidentally use
+it as release. Keep real-document usefulness separate from synthetic mechanics;
+owner wants both bounded questions,math repair first. Follow NEXT_STEPS.md.
 
 Main report:validation/partial_state_v7_matched5120_complete_20261018.json.
 Posthoc:validation/partial_state_v7_matched5120_descriptive_20261019.json.
@@ -80,7 +79,7 @@ latent marginal/ELBO includes prior compatibility; exact hindsight-note matching
 isn't universal necessity for a latent training objective. TPT trains doc then
 thinking. Keep training value and deployed extra-computation value separate; do
 not make the current channel result a verdict against every training scaffold.
-Paper notes and real-data readiness are committed in4337765; readout publication pending now.
+Paper notes and real-data readiness are committed in4337765; readout publication complete in a0ae5ec.
 Root owns work, subagents quota-unavailable. Keep <=60s meaningful updates,
 bounded waits, and avoid long internal speculation while jobs await handling.
 

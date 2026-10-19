@@ -1,5 +1,21 @@
-# Status — 2026-10-19 02:04 UTC
+# Status — 2026-10-19 02:22 UTC
 
+
+## Active: bounded variable-depth writer repair
+Question: does changing depth coverage repair incomplete stopping and help the frozen reader?
+Experiment: variable-depth-writer-v11-v1; one diagnostic seed, fresh fixed and variable writers.
+Fixed640 all two steps; variable640 balanced one to five; both160updates/eight passes, root omitted.
+Existing composition512 is targeted DEV; fresh depth2/6 panels256each exclude all prior7168expressions.
+Gate: composition canonical/natural >=70% and positive paired variable-minus-fixed interval;
+reader gain >=10pp with positive interval and >=40% absolute accuracy. FullCoT/B0 remain competitors.
+Both writers have128-action cap, reader32, single-model160; count all failures/tokens/costs.
+Source5af3431 at local/worktrees/variable-depth-writer-v11;1614CPUchecks pass.
+Disposable qualification active: local/diagnostics/variable-depth-writer-v11-v1/qualify.py.
+Actual four workers on physical8, fresh1-6 then fresh-process full restore6/update7-8.
+Follow its qualification-supervisor.log; no pilot release until complete state/native/recovery audit.
+No existing reader updates, RL, TEST, 8B or real-data accelerator launch. Real packing remains held.
+Public design: validation/variable_depth_writer_v11_design_20261019.json; complete new data EBS verified.
+Decision: bounded causal-curriculum diagnostic first; real-document usefulness remains a separate question.
 
 ## Closed: two-seed matched partial-computation study
 Question: does a separate writer–reader earn its cost over competitive single-model solvers?

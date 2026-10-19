@@ -1209,3 +1209,15 @@ subsets, allnotes naturally stop. No emptycollapse/numerics excuse; incomplete
 compositional execution. Preserve original primary results and clearly marked
 posthoc diagnostics. Choose simpler full-trace single-model approach for real
 documents; training-value hypothesis stays separate.1610CPUchecks pass. No RLrelease.
+
+
+2026-10-19 02:22 UTC — Follow owner steering with one bounded curriculum intervention.
+Do not equate two-line behavior with proven EOS causality or abandon all thinking.
+Hold the unlaunched real-trace wide-context hardware plan; preserve its CPU work.
+Freeze fixed640 versus variable640(depths1..5),same160updates,root omitted,frozen
+reader,strict complete-answer gate,and untouched B0/fullCoT references. New
+expression-disjoint depth6 tests extrapolation; originalcomposition512 is exposed
+DEV. Prospective JSON committed5af3431 before learning;1614checks pass. Start only
+disposable save/restart mechanics now; scientific pilots await actual audit.
+Real-document usefulness stays the second bounded question,not a synthetic-math
+claim or justification for another large writer–reader program.
