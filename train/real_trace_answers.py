@@ -15,6 +15,7 @@ import time
 from types import SimpleNamespace
 
 from train.real_trace_contexts import reader_context
+from train.real_trace_scope import panel_scope,protocol_items
 from train.real_trace_notes import read, rows, sources as note_sources
 from weekend_thinking.artifacts import atomic_json, sha256_file, utc_now, require_utc_deadline
 
@@ -35,9 +36,9 @@ def prepare(output, origin, inputs, gold):
     prior = read(origin/'protocol.json')
     bundle = read(origin/'notes-bundle.json')
     panel = prior['panel']
+    schema, items = panel_scope(panel,'scalar')
     manifest = read(inputs/'manifest.json')
-    if (panel not in ('DEV_AST256', 'DEV_legacy256')
-            or bundle['status'] != 'COMPLETE_REAL_PREFIX_ONLY_NOTE_BUNDLE'
+    if (bundle['status'] != 'COMPLETE_REAL_PREFIX_ONLY_NOTE_BUNDLE'
             or bundle['model_id'] != prior['model']['id'] or prior['source_files'] != note_sources()):
         raise ValueError('Complete fixed-model arithmetic notes required')
     for name, digest in bundle['source_pins'].items():
@@ -50,12 +51,12 @@ def prepare(output, origin, inputs, gold):
             raise ValueError('Fixed question/oracle inputs changed')
     qs, cs = rows(questions), rows(oracle)
     ids = [q['item_id'] for q in qs]
-    if (len(qs) != 256 or len(set(ids)) != 256
-            or len({q['document_id'] for q in qs}) != 256
+    if (len(qs) != items or len(set(ids)) != items
+            or len({q['document_id'] for q in qs}) != items
             or ids != prior['ordered_item_ids'] or ids != bundle['ordered_item_ids']
             or [c['item_id'] for c in cs] != ids
             or [c['item_id'] for c in bundle['controls']] != ids):
-        raise ValueError('All original ordered256 documents required')
+        raise ValueError('All original ordered documents required')
     originals = {v['item_id']: v for name in bundle['source_pins']
                  if Path(name).name == 'notes.jsonl' for v in rows(name)}
     if set(originals) != set(ids):
@@ -82,7 +83,7 @@ def prepare(output, origin, inputs, gold):
         if sha256_file(origin/name) != digest:
             raise ValueError('Actual own-model CPU native reference changed')
         shutil.copyfile(origin/name, output/name)
-    p = dict(schema=SCHEMA, created_utc=utc_now(), items=256, shards=4, panel=panel,
+    p = dict(schema=schema, created_utc=utc_now(), items=items, shards=4, panel=panel,
              model=prior['model'], model_dir=prior['model_dir'], assets=prior['assets'],
              signature=prior['signature'], runtime_policy=prior['runtime_policy'],
              source_files=sources(), modes=list(MODES), max_actions=32, prefill_width=672,
@@ -100,7 +101,8 @@ def prepare(output, origin, inputs, gold):
 
 def load(output):
     p = read(output/'protocol.json')
-    if (p['schema'] != SCHEMA or p['items'] != 256 or p['shards'] != 4
+    items = protocol_items(p,'scalar')
+    if (p['shards'] != 4
             or p['modes'] != list(MODES) or p['max_actions'] != 32 or p['prefill_width'] != 672
             or p['stop_ids'] != [151643] or p['source_files'] != sources()
             or set(p['files']) != {'contexts.jsonl', 'native-contexts.json', 'native-reference.pt'}):
@@ -115,9 +117,9 @@ def load(output):
             or read(origin/'protocol.json')['model'] != p['model']):
         raise ValueError('Exact original note/model binding changed')
     values = rows(output/'contexts.jsonl')
-    if (len(values) != 256 or [v['item_id'] for v in values] != p['ordered_item_ids']
-            or len({v['item_id'] for v in values}) != 256
-            or len({v['document_id'] for v in values}) != 256
+    if (len(values) != items or [v['item_id'] for v in values] != p['ordered_item_ids']
+            or len({v['item_id'] for v in values}) != items
+            or len({v['document_id'] for v in values}) != items
             or any(set(v['contexts']) != set(MODES) or set(v['note_status']) != {'own', 'other'}
                    or any(not ctx or len(ctx) > 672 or any(type(t) is not int or t < 0 or t == 151643 for t in ctx)
                           for ctx in v['contexts'].values()) for v in values)):
@@ -184,7 +186,7 @@ def generate(output, shard, until):
         if audit['max_logp_error'] > 1e-3:
             raise RuntimeError('Actual cached scalar shape differs from causal forward')
         with (d/'answers.jsonl').open('x') as stream:
-            for i in range(shard, 256, 4):
+            for i in range(shard, p['items'], 4):
                 q = contexts[i]
                 for mode in MODES:
                     check()
@@ -245,7 +247,8 @@ def score(output, gold):
         run = read(d/'run.json')
         values = rows(d/'answers.jsonl')
         order = [(q['item_id'], mode) for q in contexts[shard::4] for mode in MODES]
-        if (run['status'] != 'complete_all_attempts' or run['rows'] != 320 or len(values) != 320
+        expected_rows = p['items']//4 * len(MODES)
+        if (run['status'] != 'complete_all_attempts' or run['rows'] != expected_rows or len(values) != expected_rows
                 or run['protocol_sha256'] != sha256_file(output/'protocol.json')
                 or sha256_file(d/'answers.jsonl') != run['answers_sha256']
                 or [(v['item_id'], v['mode']) for v in values] != order
@@ -275,8 +278,8 @@ def score(output, gold):
     modes = {}
     for mode in MODES:
         selected = [v for v in observed if v['mode'] == mode]
-        assert len(selected) == len({v['document_id'] for v in selected}) == 256
-        modes[mode] = dict(documents=256, correct=sum(v['correct'] for v in selected),
+        assert len(selected) == len({v['document_id'] for v in selected}) == p['items']
+        modes[mode] = dict(documents=p['items'], correct=sum(v['correct'] for v in selected),
                            categories=dict(Counter(v['category'] for v in selected)),
                            capped=sum(v['stop_type'] == 'length_cap' for v in selected),
                            generated_actions=sum(v['n_actions'] for v in selected),
@@ -284,7 +287,7 @@ def score(output, gold):
     summary = dict(status='COMPLETE_ALL_FIXED_SCALAR_CONTINUATIONS', model_id=p['model']['id'], panel=p['panel'],
                    rows=len(observed), modes=modes, scored_sha256=sha256_file(output/'scored.jsonl'),
                    protocol_sha256=sha256_file(output/'protocol.json'),
-                   limits=p['limits'] + ['All failures remain in256 denominators. Likelihood gates unchanged.'])
+                   limits=p['limits'] + [f"All failures remain in{p['items']} denominators. No gate substitution."])
     atomic_json(output/'summary.json', summary)
     return summary
 

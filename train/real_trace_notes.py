@@ -5,6 +5,7 @@ from types import SimpleNamespace
 from dataclasses import asdict
 from datetime import datetime,timezone
 from train.real_trace_contexts import writer_prompt,boundary_stop_ids
+from train.real_trace_scope import panel_scope,protocol_items,binding_statuses
 from weekend_thinking.artifacts import atomic_json,sha256_file,utc_now,require_utc_deadline
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,7 +16,7 @@ def sources():
     from train.partial_state_driver import source_files
     return {**evaluation_dependencies(),**source_files(),**{n:sha256_file(ROOT/n) for n in (
         'train/real_trace_notes.py','train/real_trace_contexts.py','train/partial_state_answer_driver.py',
-        'train/partial_state_evaluation.py')}}
+        'train/partial_state_evaluation.py','train/real_trace_scope.py')}}
 
 
 def prepare(output,inputs,panel,model_dir,base_protocol,binding=None):
@@ -25,16 +26,17 @@ def prepare(output,inputs,panel,model_dir,base_protocol,binding=None):
     from train.useful_note_sft_driver import load_native_reference
     torch.set_num_threads(16)
     manifest=read(inputs/'manifest.json')
-    if panel not in ('DEV_AST256','DEV_legacy256') or not manifest['panels'][panel]['arithmetic']:
+    schema,items=panel_scope(panel,'notes')
+    if not manifest['panels'][panel]['arithmetic']:
         raise ValueError('Declared arithmetic DEV panel required;neverTEST')
     questions=inputs/f'{panel}-questions.jsonl'
     if sha256_file(questions)!=manifest['files'][questions.name]['sha256']:
         raise ValueError('Original fixed prefix questions changed')
     qs=rows(questions)
-    if len(qs)!=256 or len({q['item_id'] for q in qs})!=256:
-        raise ValueError('All256unique prefix questions required')
+    if len(qs)!=items or len({q['item_id'] for q in qs})!=items:
+        raise ValueError('All declared unique prefix questions required')
     model=read(binding) if binding else dict(id='B0',checkpoint=None)
-    if binding and (model['status']!='FROZEN_AUDITED_REAL_TRACE_TERMINAL320' or model['step']!=320
+    if binding and (model['status'] not in binding_statuses(panel) or model['step']!=320
             or sha256_file(model['checkpoint'])!=model['checkpoint_sha256']
             or sha256_file(model['audit_file'])!=model['audit_sha256']):
         raise ValueError('Original independently audited terminal320 required')
@@ -60,7 +62,7 @@ def prepare(output,inputs,panel,model_dir,base_protocol,binding=None):
     runtime=dict(schema=1,environment=dict(MKL_NUM_THREADS='2',OMP_NUM_THREADS='2',PJRT_DEVICE='NEURON',
        NEURON_CC_FLAGS='--model-type=transformer',NEURON_NUM_RECENT_MODELS_TO_KEEP=None,
        XLA_COMPILATION_CACHE_SIZE='256',XLA_DOWNCAST_BF16=None,XLA_USE_BF16=None))
-    p=dict(schema='real-trace-prefix-only-notes-v10',created_utc=utc_now(),items=256,shards=4,
+    p=dict(schema=schema,created_utc=utc_now(),items=items,shards=4,
       panel=panel,model=model,model_dir=str(model_dir),assets=assets,signature=signature,
       questions=str(questions),questions_sha256=sha256_file(questions),ordered_item_ids=[q['item_id'] for q in qs],
       native_files={n:sha256_file(output/n) for n in ('native-reference.pt','native-contexts.json')},
@@ -72,8 +74,9 @@ def prepare(output,inputs,panel,model_dir,base_protocol,binding=None):
 
 def load(output):
     p=read(output/'protocol.json')
-    if p.get('schema')!='real-trace-prefix-only-notes-v10' or p.get('items')!=256 or p.get('shards')!=4:
-        raise ValueError('Require the fixed native real-document256generation schema')
+    protocol_items(p,'notes')
+    if p.get('shards')!=4:
+        raise ValueError('Require the fixed native four-shard generation schema')
     if p['source_files']!=sources():raise ValueError('Frozen generation implementation changed')
     if sha256_file(p['questions'])!=p['questions_sha256']:raise ValueError('Frozen prefix projection changed')
     for n,v in p['native_files'].items():
@@ -120,7 +123,7 @@ def generate(output,shard,until):
         torch.save(vectors,d/'cache-prefill-logps.pt');atomic_json(d/'cache-prefill.json',audit)
         if audit['max_logp_error']>1e-3:raise RuntimeError('Actual cached shape differs from ordinary causal forward')
         with (d/'notes.jsonl').open('x') as stream:
-            for index in range(shard,256,4):
+            for index in range(shard,p['items'],4):
                 check();q=qs[index];prompt=writer_prompt(q,tok);before=time.monotonic()
                 value=dict(item_id=q['item_id'],document_id=q['document_id'],status='error',actions=[],content_ids=[],text='',raw_text='',stop_type='error',prompt_ids=prompt)
                 try:
@@ -152,7 +155,7 @@ def collect(output):
     originals={};pins={str(closure):sha256_file(closure),str(output/'protocol.json'):sha256_file(output/'protocol.json')}
     for shard in range(4):
         d=output/'notes'/f'shard-{shard}';run=read(d/'run.json');values=rows(d/'notes.jsonl')
-        if run['status']!='complete_all_attempts' or run['rows']!=64 or run['protocol_sha256']!=sha256_file(output/'protocol.json') or sha256_file(d/'notes.jsonl')!=run['notes_sha256']:
+        if run['status']!='complete_all_attempts' or run['rows']!=p['items']//4 or run['protocol_sha256']!=sha256_file(output/'protocol.json') or sha256_file(d/'notes.jsonl')!=run['notes_sha256']:
             raise ValueError('Every original note attempt required')
         if [v['item_id'] for v in values]!=[q['item_id'] for q in qs[shard::4]]:
             raise ValueError('Original question order changed')
