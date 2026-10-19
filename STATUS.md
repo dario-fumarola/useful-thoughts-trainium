@@ -1,20 +1,21 @@
-# Status — 2026-10-19 13:05 UTC
+# Status — 2026-10-19 13:28 UTC
 
 ## Active: single-model document QA qualification
-Question: can a source-matched QA reference train on complete evidence-clean real documents?
-Experiment: document-QA-v21; source snapshot049f53e; CPU preparation complete, no science release.
-Frozen2,048 TRAIN/512 held questions, full inputs<=3,072 tokens; no passage truncation.
-Held questions share no supporting text/page or original seed ID; none occurs in train-visible evidence.
-V16/V20 component strings sometimes denote generic relations; true dataset:seed IDs correct that interpretation.
-All6,144 native views and independent raw/evidence/count check pass;1,711 CPU checks pass.
-Three one-model treatments: direct, prior reasoning, post-answer reasoning; augmented arms also train plain answers.
-Objective:0.5 mean source256 sampled labels +0.5 mean task; not full-document CE.
-Report:validation/document_QA_v21_CPU_readiness_20261019.json; data/source readback EBS protected.
-Actual qualification started13:04UTC:logical48–55,world8×micro1×accum4,width3328,target512.
-Control:local/diagnostics/document-QA-v21-world8-width3328-qualification-v1;tmux document-QA-v21-qualification.
-Endpoint:14 disposable TRAIN updates,seven full saves,fresh restore,memory/timing;no automatic retry.
-Next command:inspect supervisor/stage logs and owned metrics;review complete mechanics before any science release.
-No held model forward,capability result,new size or RL release.
+Question: do prior/post-answer supervised computations improve fresh complete document answers?
+Experiment:document-QA-v21; training049f53e/evaluationdbd1c10; no scientific release.
+Frozen2,048TRAIN/512held;complete inputs<=3072;held support/page/originalseed IDs disjoint.
+All6,144 native views/independent data audit pass;1,735 evaluator CPU checks plus smoke/compile pass.
+Separate prospective gates:post.direct−direct.direct;prior.prior−prior.empty and matched direct;strong B0CoT reference.
+Design:validation/document_QA_v21_design_20261019.json;ordinary256 fresh pages frozen;no held forwards.
+Training control:local/diagnostics/document-QA-v21-world8-width3328-qualification-v1.
+Tmux document-QA-v21-qualification;logical48–55,world8×micro1×accum4,width3328,target512.
+At13:24UTC first finite update/master/replica audit completes;~1157s includes initial compilation.
+Further graphs compiling;warm step time and recovery/memory gates remain pending.
+Decode control:local/diagnostics/document-QA-v21-FP32-decode-qualification-v2;tmux document-QA-v21-decode-qualification.
+Core56/physical14;two TRAIN prompts×three modes;full CPU long-context reference saved;no capability gate.
+Independent training audit watcher waits for all14 updates/seven saves/physical closures;no automatic retries.
+Next command:inspect both owned controls/metrics,then independent audits before any scientific release.
+Data/source/design/ordinary panel protected on EBS;no new size,RL or split rescue.
 
 ## Closed: source-balanced computation and source quality
 Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?

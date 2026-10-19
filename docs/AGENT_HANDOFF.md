@@ -1,3 +1,43 @@
+# Live addition — 2026-10-19 13:28UTC
+
+Two independent qualifications active; no scientific/held-forward release.
+Training049f53e immutable:control document-QA-v21-world8-width3328-qualification-v1;
+tmux document-QA-v21-qualification. First finite update at13:24,1157s including
+initial compile. New graphs still compile;no warm throughput conclusion. Audit
+watcher tmux document-QA-v21-qualification-audit waits for three stages and runs
+local/analysis/audit_document_QA_v21_qualification_20261019.py once;no retries.
+Decode snapshotdbd1c10 immutable:control document-QA-v21-FP32-decode-qualification-v2;
+tmux document-QA-v21-decode-qualification,logical56/physical14. Actual2TRAIN×3modes,
+3584prefill,256cap. Long direct CPUF32 reference saved/control;afterphysicalclosure
+compare cache-prefill-logps.pt ordinary/cached against long-context-CPU-logps.pt,
+maxlogperror<=.001. CanonicalnativeKL andcacheordinary gates also required.
+No decoder independent-audit watcher yet;root must complete/protect it.
+V1decoder config prepared relativemodelpath,unused;code hardened toresolve paths,
+V2 first hardwarelaunch. Allsourcepath repairs happened prelaunch;oldoutputs kept.
+
+Final evaluator CPU suite1735+smoke/compilePASS. Main now merges evaluationdbd1c10;
+latest docs/QA prospective report publication may be pending git status.
+Plan local/diagnostics/document-QA-v21-study-v1/prospective-design.json,
+SHA45c202cee9b281a984fdbe94131bc7ad8dae0f948d479644bacdebb3e936412c.
+Publicvalidation/document_QA_v21_design_20261019.json isPROSPECTIVE,pendinghardware.
+Six candidates3arms×2seeds1921/1922,freshB0,2048×4passes=256updates;not released.
+Source labels2,097,152each;taskdirect42,832/prior251,440/post259,694perseed.
+WholecanonicalEMprimary;aliases separately attributed. Postdirectvsdirect tests
+training;priorfullvsprioremptyandmatcheddirect testsinference;each>=3pppluspositive
+paired95%lowerineachseed. B0fixedtwoexampleCoTadditionalpracticalbar. Neverclaim
+broadpretraininggainfromlocalQA. Ordinary256pages frozen at
+local/nvme-cpt/data/document-QA-v21-ordinary256-v2, SHA7997354318482f4637ff4601f5ff71ecb8cbe2f052fecb5744f4ae13eba58c32.
+Initialordinarysamplefailedpageuniqueness;repairedselectorfirstperpage/retainedsource/log.
+Allordinary/metriccode/design/sources readback/fsync EBSprotected
+local/backups/data/document-QA-v21-preparation-annex-v1. Author metriccodeprivate;
+publicownmetricimplementation matches519syntheticpairs,pinnedofficialSHA10368f619b4d5ef5d83748c05a96c0afd332a14ab5c010740c98d58dfaefe974.
+AdditionalinactiveCseed5678step128optimizerduplicateretirement isrunning:log
+local/analysis/document-QA-v21-backup-budget-v2-20261019.log,completionunder
+local/diagnostics/document-QA-v21-backup-budget-v2. Oldandlatestfullfreshbothside
+hashes precede deletion;alloriginals/models/latestfull retained. Countspace only
+aftercompletion. Rootbefore~64.6GiB;projectedafter~83.8,thenrecalculatesixterminal
+full-FIRSTprotectionwith35GiBfloor before science. No cloudchanges or newzipneeded.
+
 # Current handoff — 2026-10-19 13:06UTC
 
 Active: bounded document-QA-v21 hardware qualification,not science.

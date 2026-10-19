@@ -1,0 +1,12 @@
+{
+  "status": "PROSPECTIVE_CPU_ORDINARY_PANEL_ONLY",
+  "utc": "2026-10-19T13:15:40.842052+00:00",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "QA_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "items": 256,
+  "prefix_tokens": 256,
+  "target_tokens": 32,
+  "selection": "Unique normalizedparagraphtext;exclude EVERY QAtrain/held visible paragraph text AND page title. Rank remaining complete paragraph sequences with>=288native tokens by salted normalizedtext hash;first256 distinct page titles,one paragraph perpage. No model outcomes. Prefix first256tokens,target next32;ordinary quality excerpt only,not QA context truncation.",
+  "pass_threshold": "256 distinct text/title-disjoint paragraphs,exact32native targets;no support/answer labels needed.",
+  "limits": "MuSiQue authorTRAIN source paragraphs,not officialDEV/TEST. Exactdisjointness doesnotestablishpretrainingorsemanticnovelty."
+}

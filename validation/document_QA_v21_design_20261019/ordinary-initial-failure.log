@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/dario/local/analysis/prepare_document_QA_v21_ordinary_20261019.py", line 31, in <module>
+    assert len({norm(r['title']) for r in selected})==256
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

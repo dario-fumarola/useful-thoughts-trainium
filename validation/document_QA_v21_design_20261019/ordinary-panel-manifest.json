@@ -1,0 +1,18 @@
+{
+  "status": "FROZEN_CPU_ORDINARY256_DISJOINT_QA_VISIBLE_PAGES_AND_TEXT",
+  "utc": "2026-10-19T13:16:04.619330+00:00",
+  "plan_sha256": "ce41fa6abfc154258eeeb5d98a918f35cd4090cf9aebe1d19bc99913812bc6b6",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "QA_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "script_sha256": "7c9de6c57feae2a1d2f3d101d808361eda832c4cc88e18118a2dcca3b94d97ba",
+  "eligible_unique_paragraphs": 1012,
+  "items": 256,
+  "unique_pages": 256,
+  "data_file": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-ordinary256-v2/ordinary256.jsonl",
+  "bytes": 794249,
+  "data_sha256": "7997354318482f4637ff4601f5ff71ecb8cbe2f052fecb5744f4ae13eba58c32",
+  "prefix_tokens": 256,
+  "target_tokens": 32,
+  "total_target_tokens": 8192,
+  "limits": "MuSiQue authorTRAIN source paragraphs,not officialDEV/TEST. Exactdisjointness doesnotestablishpretrainingorsemanticnovelty."
+}

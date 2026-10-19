@@ -111,7 +111,8 @@ original seed-question IDs. All passages remain; all6,144 native supervised view
 fit. Actual longer-context backward/save/restart qualification is active;
 no document science model or held-model evaluation is released. No RL or8B launch
 follows from V17.
-See the short [current queue](NEXT_STEPS.md) and [proof ladder](docs/RESEARCH_ROADMAP.md).
+See the [prospective QA comparison](validation/document_QA_v21_design_20261019.json),
+short [current queue](NEXT_STEPS.md) and [proof ladder](docs/RESEARCH_ROADMAP.md).
 
 Earlier results remain available:
 
@@ -138,7 +139,7 @@ Production V17 snapshots remain frozen at training
 [37028a1](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/37028a1)
 and evaluation
 [c9b399b](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/c9b399b).
-`main` integrates their code with the document-QA preparation;1,711 CPU tests plus smoke and
+`main` integrates their code with the document-QA preparation;1,735 CPU tests plus smoke and
 compile checks pass. Use each report's exact source hashes and protocols for
 reproduction. A combined source snapshot needs separate hardware qualification.
 

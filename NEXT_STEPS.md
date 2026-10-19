@@ -8,18 +8,36 @@
    Disposable first128 TRAIN only: prior1–6, fresh restore6→8, post1–6.
    Audit all14 updates, source/task counts, seven full states, restoration,
    grouped PSS, actual compile/warm/save time and physical process closure.
+   First finite update/master/replica audit completes13:24UTC;initial compilation
+   accounts for most of1157s. Further graphs still compile;warm timing is unknown.
+   Separate decode qualification:local/diagnostics/document-QA-v21-FP32-decode-qualification-v2,
+   tmux document-QA-v21-decode-qualification,core56/physical14. Two TRAIN prompts
+   in three modes;3584prefill;actualCPU/cached/full-forward parity must pass.
    Qualification has a17:00UTC engineering deadline, not an instance shutdown.
    No automatic retry or scientific release follows a completion marker alone.
 
-2. Freeze the single-model QA scientific comparison after actual qualification.
+2. Release the single-model QA comparison only after both actual qualifications.
+   Prospective design:validation/document_QA_v21_design_20261019.json.
+   Local master:local/diagnostics/document-QA-v21-study-v1/prospective-design.json.
+   Source:training049f53e,evaluationdbd1c10. All1,735 CPU checks pass.
+   Six fresh B0 models,three arms/two order seeds,four passes/256updates are proposed.
+   Post.direct versus direct.direct tests training benefit. Prior.prior versus
+   prior.empty and matched direct tests inference benefit. Each requires>=3pp
+   plus positive paired lower95%CI separately in both seeds. Strong unchanged
+   B0 conventional CoT is an additional practical comparison,allowed to win.
+   Primary canonical whole-answer EM;canonical F1/attributed-alias metrics separate.
+   Parser closes a designated answer field by newline or sampled terminator;
+   incomplete caps/errors stay in512. Metric matches pinned author code on519pairs.
+   Ordinary panel:256 fresh Wikipedia pages;all QA-visible pages/text excluded.
+   No inherited FineMath NLL threshold. Report measured costs/tradeoffs honestly.
    North star: compute from available documents and improve fresh complete answers
    at worthwhile cost. Separate training benefit from extra inference benefit.
    Prepared arms: direct answers; complete reasoning before answers; reasoning
    after a supervised answer EOS. Augmented arms alternate plain/augmented passes.
    Same source sample and ordered documents; source/task means receive0.5 each.
    Count source labels, task labels, exposures and actual accelerator cost separately.
-   Declare complete-answer EM/F1/parser, strong B0 direct/CoT references,
-   evidence-removal/question-only controls and practical thresholds before forwards.
+   Finalize the serialized evaluator release,question/evidence/replay controls and
+   actual recovery/throughput/protection receipts before held model forwards.
    No official DEV/TEST, broad RL, model-size jump or split rescue is released.
 
 Data and CPU evidence:

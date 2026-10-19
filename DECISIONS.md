@@ -1355,3 +1355,15 @@ clusters, complete context and trace lengths; actual long-context training must 
   before its scaffold. Source CE samples256 fixed positions per example, explicitly
   separate from full-document CE. Launch only bounded long-context mechanics at
   source049f53e;held forwards/science await actual recovery,memory and timing.
+
+2026-10-19 13:28UTC — Freeze the proposed single-model QA comparison before any
+held forwards. Canonical complete-answer EM separates post-answer parameter
+training from generated-CoT inference;both use prospective3pp/paired-CI criteria
+per seed,with unchanged-base conventional CoT as an additional practical bar.
+All1,735 CPU checks pass;norm/EM/F1 matches pinned author code on519syntheticpairs.
+Freeze256 ordinaryWikipedia pages disjoint from allQAvisible pages/text. The
+initial ordinary sample failed its unique-page check;fixed hash selection now
+explicitly takes one paragraph perpage before any model outcome. Preserve both
+attempts. Train snapshot049f53e and evaluationdbd1c10 remain immutable. First
+long-context update passes finite/master/replica checks;warm/recovery/memory and
+long-prefill decoding checks remain active. No science release from these alone.
