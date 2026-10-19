@@ -1,4 +1,4 @@
-# Status — 2026-10-19 05:38 UTC
+# Status — 2026-10-19 06:16 UTC
 
 ## Active: single-model real-document evaluation
 Question: does augmented training improve ordinary prediction, and separately inference with calculations?
@@ -10,8 +10,8 @@ All 1,920 updates, 12 full states and 48 native checks pass independent audit; a
 Latest full320 is real_raw seed1914; all original160/320 states remain on local SSD.
 Report:validation/real_trace_cpt_v10_terminal_training_20261019.json; capability results still pending.
 Control:local/diagnostics/real-trace-cpt-v10-study-v1; frozen training3d8666b, evaluation29c8b24.
-Six-model generation/CPU-likelihood watcher is releasing fixed evaluations; no checkpoint selection or extension.
-B0 notes complete; its CPU likelihood scoring continues. Both256 arithmetic panels remain separate.
+All six original-note evaluations are complete; fixed CPU-likelihood scoring continues without extensions.
+B0 notes and all CPU likelihood panels are complete. Both256 arithmetic panels remain separate.
 Decision: finish all seven models and three panels before reviewing primary outcomes; publish complete outputs.
 
 ## Active: declared scalar-continuation secondary
@@ -21,8 +21,8 @@ Design: exact original notes/contexts; greedy32, nativeEOS only; existing initia
 Endpoint: exact rational accuracy over all 256, with unsupported/format/incomplete/error/cap counts; no new gate.
 Prospective design:validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json; primary LL gates unchanged.
 Source4297c1d: full 1,657 CPU checks pass, plus latest 11 affected checks after stronger binding validation.
-B0 actual four-core native/cache672 checks pass; its generation continues on physical12.
-Other six wait for complete original notes, then each executes its own model/cache checks on physical6–11.
+All seven scalar jobs released; B0 and both post arms finished. Prior/raw jobs continue on physical6–9.
+Every trained model passed its own native/cache checks. All original notes and all attempted answers remain intact.
 Control:local/diagnostics/real-trace-v10-scalar-secondary-study-v1; tmux cpt-v10-scalar-release/readout.
 Decision: preserve all 17,920 prospective attempts; no parser adaptation, model selection, retries or training.
 Limit: scalar continuation on selected FineMath boundaries, not general problem QA or a latency benchmark.

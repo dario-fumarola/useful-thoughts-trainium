@@ -5,6 +5,18 @@ Read STATUS.md and NEXT_STEPS.md. Agents are quota-unavailable; do not retry.
 Keep commentary meaningful and no more than60 seconds apart. Avoid long internal
 planning while runs progress. No active goal; do not infer/create a goal.
 
+## Latest live snapshot — 06:16 UTC
+
+All original real-note jobs are complete. B0 CPU likelihood is fully complete;
+six trained-model CPU scorers continue. All seven scalar jobs are released;
+B0 and both post arms have fully closed, while prior/raw jobs continue on
+physical6–9. Release watchers exited normally. Final-readout watchers remain live.
+No numeric real-model capability result has been reviewed. Use the mechanical
+health helper below; do not relaunch producers that have already finished.
+Primary analysis now includes all within-model tax/oracle/content contrasts,
+separate CPU scoring/call/worker costs and observed numerical diagnostics. Gates
+and models are unchanged. Checker/renderer scripts remain prepared, unexecuted.
+
 ## Exact next actions
 
 1. Monitor the existing evaluation jobs; do not duplicate launchers.
