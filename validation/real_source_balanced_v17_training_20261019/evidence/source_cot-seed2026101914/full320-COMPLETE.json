@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-19T11:22:12+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248339,
+      "sha256": "5fe921fb2edd8ec81ebd847d0c8ef2e05caad3bfe4c909b341ccfabd156a535d"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "81e4aeded3a10855755b6fa965eba36c1d1ef80ac81bd73aacb830d69e2d0fdc"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278407,
+      "sha256": "b415bfeb3a70d22cd111446ddeaa2756c61a42a2a08297354669915bf1b065d7"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278471,
+      "sha256": "cd607dac5cb7b8634d1c27bb217d1884aa074d894fa3b1ff37179c2ef2497642"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278407,
+      "sha256": "1d774a7ca9f391cd9db68b9ad6df11e949d5e2ee5d9d8753bd7b3f9d644d5bf8"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "71998ed79df741d47c794e48bbf995b46a359bb514e4fc598f45b3ec0507135b"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278407,
+      "sha256": "868525d45bc511e110b0a8b9981f8857680be9c7821ae8b5355b4494a2ea49df"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278471,
+      "sha256": "0710ed96c4bbb3123c433417f10e892266dae822ebd32e1390ff741a8d5362ba"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278407,
+      "sha256": "5974f64d3d167ea4b297a2e3fb99ca716716787d6959780e54faeb9a3f10ec32"
+    }
+  },
+  "metadata": {
+    "arm": "source_cot",
+    "counters": {
+      "expressions": 10240,
+      "supervised_tokens": 5002746
+    },
+    "data_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "order_hash": "784922b3b7faef22161ff67108aa1544a98996a8bb8c7b14bbe0d567f5bbdd59",
+    "pipeline_schema": "real-source-balanced-v17",
+    "protocol_sha256": "463b8dcf4c95a8aedc02e0e909375b05a48f2a3c842e7f3b1aba08d4d0f469b5",
+    "seed": 2026101914,
+    "spec_hash": "207ee28571c63161c17c4099c4b5322e224d9aa7612506f2bf7da2b8abf731ed"
+  },
+  "run_id": "real-source-balanced-v17-source_cot-TRAIN5120-seed2026101914-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "207ee28571c63161c17c4099c4b5322e224d9aa7612506f2bf7da2b8abf731ed",
+  "step": 320,
+  "world_size": 8
+}

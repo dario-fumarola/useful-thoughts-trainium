@@ -1,49 +1,44 @@
-# Local checkpoint backup
+# Checkpoint protection
 
-Large intermediates live on the instance SSD mounted at `local/nvme`. Copy each
-scientific terminal checkpoint and the daily latest complete checkpoint to EBS
-under `local/backups`. Keep the source until the copy is verified. This is local
-redundancy; both locations are still tied to this instance.
+The current studies retain every original full checkpoint on NVMe. EBS under
+`local/backups/science/` protects every scientific terminal model and the latest
+complete optimizer checkpoint across the studies. Evaluation originals, reports,
+examples and analysis sources have separate readback-protected archives.
+Both storage locations belong to the same instance; this is not an off-instance
+backup. Git contains source and small evidence, not full model/optimizer payloads.
 
-```bash
-python scripts/backup_checkpoint.py \
-  local/nvme/runs/<run>/step-0000256 \
-  --destination local/backups/<run>/step-0000256
-```
+The current EBS full recovery state is V17 source-direct seed1913 at update320:
+`local/backups/science/real-source-balanced-v17-study-v1/TERMINALS/latest-full320`.
+All four V17 terminal models and this full optimizer state passed independent
+audit and protection; [completed training evidence](../validation/real_source_balanced_v17_training_20261019.json)
+contains the receipts.
+See [live status](../STATUS.md) for the current handoff.
 
-The command requires a `neuron-v1` COMPLETE manifest and another filesystem by
-default. It verifies file names, sizes, and hashes, copies in bounded chunks,
-flushes files, reads the copied data back, and publishes the complete destination
-last. It refuses changed source files and preserves existing backups. The
-default free-space reserve is 20 GiB. Nothing is uploaded.
+Protection follows this order:
 
-An interrupted attempt leaves `.<step>.incomplete` beside the destination. Repeat
-the same command to reuse verified whole files; partial files are copied again.
-Existing complete destinations are verified and left intact. Hash verification
-establishes byte integrity, not numerical optimizer-resume correctness; that is a
-separate hardware qualification.
+1. Independently inspect the original complete scientific states, including
+   payload hashes, optimizer tensors, counters, lineage and active/master casts.
+2. Copy the newest full terminal state to EBS first. Read back every payload,
+   verify its size/hash, and flush files and directory metadata.
+3. Only after that succeeds, freshly verify the older full state on both NVMe
+   and EBS. Retire only its inactive EBS optimizer duplicates, with a recorded
+   intent and completion receipt. Keep its model and every original file.
+4. Protect the remaining terminal models. A model shared with the latest full
+   state may use a hard link within EBS; it is not a second independent copy.
 
-For a multi-day run, `scripts/watch_checkpoint_backups.py` supervises this copy
-process. Give it the exact source/run, destination, frozen spec hash, terminal
-step, deadline, and the same stop-file used by the training driver. Record the
-supervisor PID and arguments in the launch receipt and keep its log monitored.
-The driver saves complete states every 12 hours at update boundaries and at its
-milestones; the supervisor polls every 30 seconds.
+Keep at least 35 GiB free on each filesystem throughout the procedure. An error
+leaves the originals and last verified protection intact; failed attempts retain
+all evidence and are reviewed before any separately identified repair.
 
-The supervisor keeps the newest two verified EBS copies available for each run,
-including its terminal state. It backfills both if started late. Before deleting
-a redundant EBS copy, it verifies both survivors and the redundant copy's original
-source files. It removes only its own marked directories and rejects unknown
-files. All source checkpoints remain on scratch. On copy/verification failure,
-deadline expiry, or a termination signal, it requests the driver's stop-file and
-exits; it does not automatically retry a failed operation. A restart re-verifies
-the retained copies. Both storage locations remain instance-local.
+An older EBS directory whose optimizer duplicates were retired contains
+`OPTIMIZER_DUPLICATES_RETIRED.json`. Its original `COMPLETE.json` and archive
+receipt describe the historical full copy. The sidecar identifies the unchanged
+NVMe recovery source and the newer protected full state. Do not treat that older
+EBS directory as a currently complete optimizer backup.
 
-For the four science runs, use the reviewed
-[shared host supervisor](../validation/orchestration/README.md) to queue these
-existing per-run cycles under one leader. Bind its helper/launcher hashes in the
-frozen site and its fixed roster hash in the subsequent launch receipt. Reserve
-space for two unseen checkpoint payloads plus 20 GiB: a restarted cycle may copy
-both new survivors before pruning old copies. Count incomplete staging files in
-actual disk use. Six small host fixtures and an independent TERM check pass;
-the science supervisor has not launched.
+The V17 procedure is preserved with its
+[hardware and release evidence](../validation/real_source_balanced_v17_hardware_20261019.json).
+Hash verification establishes byte integrity. Actual optimizer restoration is a
+separate hardware check; the qualified V17 save/restart evidence is linked there.
+The original 256-step copy/watch scripts remain historical tools and do not define
+the active study's checkpoint schedule or retention policy.

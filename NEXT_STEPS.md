@@ -15,11 +15,12 @@
 2. Complete the released source-balanced V17 study and fixed11-model evaluation.
    Source37028a1:1656CPUchecks;all10240actualnativepacks;actualqualificationPASS.
    Elevenupdates/sixfullstates/fullrestore/components/native/master/casts independently verified.
-   Control:local/diagnostics/real-source-balanced-v17-study-v1;fourfreshB0jobs active.
+   AllfourfreshB0runs complete320;independent1280update/8fullstateauditPASS.
+   Allterminalmodels/latestfull320readback-protected;fournewmodels bound for evaluation.
    SameTRAIN5120/twopasses/320updates;world8×micro4,width640,target640,LR1e-5.
    Objective0.5meanCE(sourceprefix)+0.5meanCE(task),sameprefixlabels,botharms.
    Frozennewconfirmation512+ordinary256;designpublishedbeforeheldforwards/scientificrelease.
-   Sevenoldreferencesreleased;fournewmodels queueafterterminalstateaudit/protection/binding.
+   Allsevenoldreferencesclosed;fournewmodels now being prepared/released afterprotection.
    Mastereval:local/diagnostics/real-source-eval-v17-study-v1;sourcec9b399b,1668CPUchecks.
    Runmechanicalhealth:source scripts/env.sh;python local/analysis/live_real_source_v17_health_20261019.py.
    No partialcapabilityreview;all11models/panelsmustphysicallyclosebeforeonecompletereadout.
@@ -27,8 +28,9 @@
    ANDordinaryNLLupper95%CI<=+0.03nat/tokenversusB0. Bothseedsrequired.
    Full160/320originalsstayNVMe. ProtectnewfullFIRST,verify,retireolderV15optimizerduplicates,
    thenprotectremainingmodels. Readback/fsync;35GiBfloor. Allmodels/originalsretained.
-   Currentlatestprotectedfull=V15;olderV10optimizerEBSduplicatesretiredafterfreshbothsidehashes.
-   Reports:validation/real_source_balanced_v17_{design,confirmation,hardware}_20261019.json.
+   Currentlatestprotectedfull=V17source_directseed1913;olderV10/V15EBSoptimizerduplicates
+   retiredonlyafterfreshbothsidehashes/newerprotection. Allmodels/originalsremain.
+   Reports:validation/real_source_balanced_v17_{design,confirmation,hardware,training}_20261019.json.
    No broadRL,sizejump,expanded splitrescue,officialTEST orautomaticfollowuprelease.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:

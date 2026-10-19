@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-19T11:22:16+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248339,
+      "sha256": "13bc1ceb891fa8de84c40c0f19b767ef1d82ec407f3e5873b00358d5932ec785"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278407,
+      "sha256": "e69760b1de2c7b9ea81408374100827e3e070f649a20cd2745bbb6d0c735d54f"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "47f28a45ba9e3df595fbd31ab6ba990dc9b950592cb7bba008b9a7208f204218"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "33edcc486245094d1e8993b14e0e0af5922447af82bee4b4e560894a1ef16819"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "d243cf30a6f394a29cc6783ab0e478e3afbfff0c6551a2263f4703a874519b88"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278407,
+      "sha256": "aa52e672872207798db49849a93864b506edb09b4064acd930d9ccdbf8074665"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "71687489c387235f942bb9bda9d9556ae8a6d681d99f8eb1ebd030a92ea78d1b"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "9f5be69d2fed392b04b1e59294062c975158665cda92083a46078cf81f6c0759"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "8ce5005a04ffd12a5ee431e58f29c4f8a536fc7b61ab738b7b300e0d012c6e7f"
+    }
+  },
+  "metadata": {
+    "arm": "source_direct",
+    "counters": {
+      "expressions": 10240,
+      "supervised_tokens": 4653686
+    },
+    "data_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "order_hash": "37cf96087526085c40be8310b1750c62d4d6ac2458a17e95a3b8248990d73cf3",
+    "pipeline_schema": "real-source-balanced-v17",
+    "protocol_sha256": "52ebdf608077a0f7756aef58e447780edfd9973b53345ff7c02b681b3fb03c2d",
+    "seed": 2026101913,
+    "spec_hash": "c3c4606177fcb362f75f8b539c0ed8cac0080a3d2d2a63c24b62a034323adb2d"
+  },
+  "run_id": "real-source-balanced-v17-source_direct-TRAIN5120-seed2026101913-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "c3c4606177fcb362f75f8b539c0ed8cac0080a3d2d2a63c24b62a034323adb2d",
+  "step": 320,
+  "world_size": 8
+}

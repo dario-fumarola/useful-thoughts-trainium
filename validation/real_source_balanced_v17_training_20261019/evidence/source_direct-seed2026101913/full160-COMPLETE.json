@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-19T11:05:35+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248339,
+      "sha256": "9525efbba84a44e9430a295ddbe01c0b2bb6c1f833578395ddaf3ee58b15fa32"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278407,
+      "sha256": "506be1a191feee7287cbe1777e05d30b4640169c3f9fd5e476fc3c5fa1e3b58b"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "5acb6e3e3bea6fe170b0504860f877f9d4221ab924da45216f89298e3983ab9f"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "9d8d75e2236905e353b0d81232d0fc8dd58b113202b5f19379d8aa8f64d4fd1d"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "d70bf1dbf9f5aad151b9af70c0cfcf4400a453df66ea3a0ecbcc87cc7a28f49a"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278407,
+      "sha256": "6ab5378fde943399b8af8b1d1fcaad9f3d4afd9f4cf118c3486de58d64f50619"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "7f8be0aeef28e2b58cc4e3e3451d50fcd6610e25ea59ab27c8f6b3a180802056"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "b46c5b1bcfde48c261903b71de709eb6d2fddf7cfc5a3763576bdb9637665301"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "bcb34ff384a1baebbc81a66ff7403c8367bbcc17b870e2a57011cd04a2696f0e"
+    }
+  },
+  "metadata": {
+    "arm": "source_direct",
+    "counters": {
+      "expressions": 5120,
+      "supervised_tokens": 2326843
+    },
+    "data_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "order_hash": "37cf96087526085c40be8310b1750c62d4d6ac2458a17e95a3b8248990d73cf3",
+    "pipeline_schema": "real-source-balanced-v17",
+    "protocol_sha256": "52ebdf608077a0f7756aef58e447780edfd9973b53345ff7c02b681b3fb03c2d",
+    "seed": 2026101913,
+    "spec_hash": "c3c4606177fcb362f75f8b539c0ed8cac0080a3d2d2a63c24b62a034323adb2d"
+  },
+  "run_id": "real-source-balanced-v17-source_direct-TRAIN5120-seed2026101913-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "c3c4606177fcb362f75f8b539c0ed8cac0080a3d2d2a63c24b62a034323adb2d",
+  "step": 160,
+  "world_size": 8
+}

@@ -1,4 +1,4 @@
-# Handoff — 2026-10-19 10:50 UTC
+# Handoff — 2026-10-19 11:39 UTC
 
 ## Active task
 
@@ -33,7 +33,8 @@ Public `validation/real_source_balanced_v17_hardware_20261019.json`.
 
 Science control: `local/diagnostics/real-source-balanced-v17-study-v1`.
 Four tmux sessions `source-train-v17-{arm}-seed{seed}`,physical0/1,2/3,4/5,6/7.
-All32 ranks captured;allfourfull160statescomplete andtrainingresumed beyond160 asof11:07;no failures.
+Allfour320runsphysicallyclosed;independent1280update/8fullstate/32nativeauditPASS.
+Allterminalmodels/latestfull320EBSprotectedandfrozen;no failures. Trainingtmuxsessionsended.
 Outputs `local/nvme-cpt/runs/real-source-balanced-v17-{arm}-TRAIN5120-seed{seed}-v1`.
 Finite deadline18:00UTC;no retry/extensions/model selection.
 Health: `source scripts/env.sh` then
@@ -45,7 +46,10 @@ Terminal pipeline scripts in `local/analysis/`:
 `protect_real_source_four_terminals_v17_20261019.py`,
 `bind_real_source_four_terminals_v17_20261019.py`.
 All parsed; independent two-pass order/label counts tested against actual protocols.
-Tmux `source-v17-terminal-pipeline` waits all four closures, then audit/protect/bind.
+Terminalpipelineaudit/protect/bindfinished11:36:58;allthreestagesexit0.
+Latestfull320source_directseed1913COMPLETE=5aeaf0e1863f584149490114c7047481b0410e62547aa1d756d4e56996bd6ad4.
+AuditSHAa23cc41e92217f7958d3fef4df15cc46a9cdf6d464b3273866056eb21ecd2e78.
+EBSarchivesha de1352de0f774d850e1b2826586de0943ea2e99bde5a07f28c53b019f189912b.
 Its shell launches from training worktree with correct PYTHONPATH;do not duplicate.
 
 ## Frozen evaluation
@@ -65,14 +69,16 @@ Prefix-only writer inputs item_id/document_id/prefix_ids. All512 scalar partitio
 Master `local/diagnostics/real-source-eval-v17-study-v1/plan.json`,deadline20:00UTC.
 Eleven fixed models: B0;two each old target_direct,target_cot,real_prior;four new.
 Slots0..6 released tmux `source-eval-v17-slot{slot}` onphysical8,9,10,11,14,15,13.
-No numerical/operational failures seen asof10:48. Own notes512 complete for three
-old models;other baseline notes progressing. No capability values inspected.
-New terminal slots7..10 onphysical0,1,2,3 wait audit/protection/bindings.
+Allsevenoldreferencescompleteallnotes/answers/bothLLpanels;noexecutionfailures.
+Allnewmodelsevaluationpending;firsttwo registriescreated/launchedasof11:38.
+No capability values inspected.
+New terminal slots7..10 onphysical0,1,2,3 arebeingprepared/releasedbyexistingwatcher.
+Do notduplicateprep/launch. allfourbindingsnowexist.
 Watcher tmux `source-v17-new-evaluations`;source
 `watch_real_source_new_evaluations_v17_20261019.py`. Do not duplicate preparation.
 Per-model registries `local/diagnostics/real-source-v17-{id}-evaluation-v1/evaluation-binding.json`.
 Four-slot native LL queue tmux `source-v17-score-queue`,cores48..51 physical12.
-Three models' two panels finished;queue nofailures. All models get same-model
+Sevenoldmodels' two panels finished;queue nofailures. All models get same-model
 first4 CPU references/mode at unchanged0.001 parity guards. Master plan immutable;
 scoring topology in separate score-queue-plan.json.
 Final totals28,160 scalar attempts/5,632 notes/30,976 likelihood rows.
@@ -99,9 +105,13 @@ EBSpreparation `local/backups/engineering/real-source-v17-prepared-readout`.
 V15exampleworkerorderbugfix retained:IDreindexbefore unchanged donorpermutation.
 Finalready must include `final-publication-ready.json`;visuallyinspect3PNGfigures,
 reviewcompletequestiononce,updatefrontpage/status/queue,commit/pushallactualevidence.
-As of11:07 allfourfull160statescomplete andtrainingresumed,warm~6s. Alloldnotes
-andallsevenoldLLjobscomplete;answersprogressing;noexecutionfailures.
-Root59.3GiB,NVMe-cpt914GiB,host1430GiBavailable aftercheckpointcleanup.
+As of11:38 alltrainingandsevenoldreferencescomplete. Newmodelsfirsttwoprepared,
+otherspreparing. Root46.46GiB,NVMe-cpt824GiB,host1917GiBavailable.
+Completedtrainingreportpublished:validation/real_source_balanced_v17_training_20261019.json
+with43files/four320-steptraces. Publishernowidempotentlyverifiesexistingcomplete
+publication;partialdirsrefused. Actualre-readverificationpassed;finalwatcher
+willverifyitagainratherthanrewrite. Originalpreparedpublisherpreserved,change
+receiptinmastertraining-publication-idempotence-change.json. Noendpoint/gatechanges.
 
 ## Storage and backups — important order
 
@@ -113,10 +123,12 @@ latest global fulloptimizer. V10 oldEBS optimizerduplicates were retired after
 fresh allpayload hashes on both sides and verified newerV15full protection:
 `local/diagnostics/v17-scientific-backup-budget-v1/completion.json`.
 No originals/modelweights deleted;oldEBS sidecar discloses retired duplicate state.
-Current latestfull EBS:
-`local/backups/science/real-target-sft-v15-study-v1/TERMINALS/latest-full320`.
+CurrentlatestfullEBS:
+`local/backups/science/real-source-balanced-v17-study-v1/TERMINALS/latest-full320`.
+V15optimizerEBSduplicatesretiredonlyafternewfullprotected/freshbothsideverification;
+V15models/originalsunchanged. AllfournewmodelsEBSprotected;backupordercompleted.
 
-New V17 protection MUST copy new full320 FIRST (~22.4GiB),readback/fsyncverify;
+CompletedV17protectioncopiesnewfull320FIRST (~22.4GiB),readback/fsyncverify;
 then freshcheck oldV15original+EBS andnewfull;retireONLYoldV15EBS8optimizerduplicates;
 then copy remaining3terminalmodels,hardlink latestmodel withinEBS. Keeps35GiBfloor.
 `protect_real_source_four_terminals_v17_20261019.py` implements this order.
@@ -162,4 +174,10 @@ PYTHONPATH with desired immutable worktree first plus local/analysis/test-deps.
 CPU USE_TORCH_XLA=0. tmux PATH must explicitly include actual interpreter's bin;
 verify libneuronpjrt-path. No dependency upgrades. pytest via python -m pytest.
 No `rg`;use targeted Python/grep. Avoid broad process argument/environment dumps.
+Mainintegration1f03fca nowmergesversionedrealtraining/evaluationwhilepreservingdepth
+diagnostics;1699CPUchecks+smoke/compilePASS. LiveWunchangedat37028a1/c9b399b.
+No mainintegrationhardwarequalificationclaim.
+OfficialMuSiQueTRAINaliasacquisitionattemptv19 returnedpublicconfirmationHTML,
+noarchiveacquired/noDEVTESTmemberread. Preservelocal/nvme-study/data/musique-official-TRAIN-v19
+andlocal/analysis/official-musique-TRAIN-v19-acquisition-20261019.log;do notautoproberetry.
 Git public owner-authorized repository dario-fumarola/useful-thoughts-trainium.

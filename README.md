@@ -13,7 +13,8 @@ extra inference tokens and worse ordinary-text prediction; it does not establish
 thought-augmented pretraining benefit.
 
 The [source-balanced follow-up](validation/real_source_balanced_v17_design_20261019.json)
-is now running after [actual hardware qualification](validation/real_source_balanced_v17_hardware_20261019.json).
+has completed all four training runs after [actual hardware qualification](validation/real_source_balanced_v17_hardware_20261019.json).
+[All training states and terminal models are audited and protected](validation/real_source_balanced_v17_training_20261019.json).
 It must retain an arithmetic gain and keep the upper confidence bound on ordinary
 NLL regression within 0.03 nat/token of B0 in both seeds. Its new 512-document
 confirmation panel was frozen before evaluation; capability results are pending.

@@ -1,17 +1,17 @@
-# Status — 2026-10-19 11:07 UTC
+# Status — 2026-10-19 11:39 UTC
 
 ## Active: preserve source prediction with useful computation
-Question: can arithmetic gains survive a separately normalized source-prefix loss?
-Experiment: real-source-balanced-v17; source_direct/source_cot, fresh B0, two seeds320 each.
-Source37028a1:1,656 CPUchecks andall10,240 native TRAINviews pass;bothcomponents weighted0.5.
-ActualhardwarePASS:11 updates/6 fullstates/fullrestore;independent masks/loss/master/native audit passes.
-All four full160 checkpoints complete;training resumed past160;all32 ranks captured, no failures.
-Control:local/diagnostics/real-source-balanced-v17-study-v1;tmux source-train-v17-*.
-Fresh512 arithmetic plus256 ordinary documents/design frozen before held forwards ornewtraining.
-Seven frozen references evaluate concurrently;fournew models waitterminal audit/protection/binding.
-Primary:own−direct>=3pp withpositiveCI/controls;ordinaryNLL upperCI<=+0.03 versusB0,bothseeds.
-Report:validation/real_source_balanced_v17_hardware_20261019.json;no capability readout yet.
-Next:monitor mechanicalhealth;complete-only readout afterall11models/panels close;noRL/8Brelease.
+Question: can arithmetic gains survive while ordinary prediction stays close to B0?
+Experiment: real-source-balanced-v17; two arms, two seeds, fresh B0, terminal320.
+Design: same TRAIN5120/two passes; separately averaged source/task losses, each weighted0.5.
+Gate per seed: own−direct >=3pp with positive paired CI and empty/B0 controls;
+ordinary NLL upper95% CI versus B0 <=+0.03 nat/token. Both seeds must pass both gates.
+Training complete: 1,280 updates, eight full states and32 native checks independently pass.
+All terminal weights/latest full optimizer state are protected; every original remains.
+All seven frozen references have closed; four new models are entering evaluation.
+Report: validation/real_source_balanced_v17_training_20261019.json; capability results pending.
+Control: local/diagnostics/real-source-eval-v17-study-v1; tmux source-eval-v17-slot7..10.
+Next: monitor execution; review once after all11 models/panels close. No RL/8B release.
 
 ## Closed: stronger supervised real-document reference
 Question: does full-trace CoT SFT beat direct-answer SFT on fresh real computations?

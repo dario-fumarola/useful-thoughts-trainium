@@ -1323,3 +1323,13 @@ variable-depth path. Resolve schema conflicts by preserving both guarded identit
 All1,699 CPU checks plus smoke/compile pass. Live training/evaluation worktrees
 remain clean at37028a1/c9b399b; their qualified source identity is unchanged.
 The combined main snapshot has CPU integration evidence, not a new hardware pass.
+
+2026-10-19 11:39 UTC — Close and protect all V17 scientific training.
+All four terminal320 runs physically close. Independent audit verifies1,280
+updates,32 native checks and all eight model/master/optimizer states, source/task
+label counts, ordering and weighted losses. Protect the new full recovery state
+first, verify both older copies, retire only their EBS optimizer duplicates,
+then protect all terminal models. All originals remain. Publish training-only
+receipts and traces; all capability outcomes remain unread until the complete
+11-model evaluation. The final exporter verifies this completed publication
+without rewriting it. No model, endpoint, gate or training budget changes.
