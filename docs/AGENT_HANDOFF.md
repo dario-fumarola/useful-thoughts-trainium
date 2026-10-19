@@ -1,4 +1,4 @@
-# Current handoff — 2026-10-19 23:26 UTC
+# Current handoff — 2026-10-19 23:32 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
@@ -21,9 +21,12 @@ ONE freshB0 evidence_direct-format1-seed2026101923, TRAIN2048×4/256updates.
 Source/answer.5/.5, empty-field auxiliary1.0, order1923, numeric worker unchanged.
 Output local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
 Physical2/3 logical8–15; soft deadline2026-10-20T00:51:47.360316+00:00; no automatic retry.
-Next launch frozen C26/supervise-job.py evidence_direct-format1-seed2026101923 fromW26,
-then root/local/analysis/run_document_evidence_format_weight_v26_first_protection_20261019.py
-and watch_document_evidence_format_weight_v26_terminal_20261019.py with existing env.
+Training exec34070 is active, owned timeout/session PID1517924, start_ticks28721656,
+launcher PID1517862. Actual8 worker allocation on physical2/3 captured.
+First128-protection wrapper exec8409 and terminal pipeline watcher97028 are active.
+Latest observation: update8 at23:32:19UTC, warm update13.43s, finite loss/gradient.
+Do not launch duplicates; monitor C26/evidence_direct-format1-seed2026101923/run.log
+and output/metrics.jsonl. All jobs are bounded to original plan/deadline, no retries.
 CPU jobs use USE_TORCH_XLA=0 and PYTHONPATH W26:root/local/test-deps:root/local/analysis.
 All source files bound in C26/release.json are now frozen; never edit them silently.
 
@@ -40,6 +43,11 @@ Current-model CPU references/native/cache/ordinary calibrations are mandatory.
 Primary selector1 direct minus new format1 direct; extra-ID value stays separate.
 Held255 was inspected before intervention; one order seed, developmental only.
 Any advantage needs a separate fresh powered confirmation. North star updated in existing roadmap.
+Postprocessing sources are frozen in C26/postprocessing-sources.json (six helpers).
+All17 release pipeline hashes and6 postprocessing hashes verified unchanged.
+Prepared plot3SVG/CSV, same original8 examples, cost, aggregate, protect and publish helpers.
+Final publisher names its complete report with the actual UTC publication date and records
+its exact path in C26/publication-protection.json. No new output readout has run.
 No larger model/newdata/RL/official DEV/TEST access. Preserve all old primary reports/gates.
 
 ## V25 is complete

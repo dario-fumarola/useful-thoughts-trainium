@@ -5,8 +5,8 @@
    Source29606b0, freshB0 evidence_direct, same TRAIN2048/order1923/fourpasses/256updates,
    source/final0.5/0.5, auxiliary1.0 empty Evidence field. Numerical functions/data unchanged.
    C=local/diagnostics/document-evidence-format-weight-v26-control-v1.
-   Launch its frozen supervise-job.py evidence_direct-format1-seed2026101923 from W26;
-   launch run_*_first_protection and watch_*_terminal wrappers as well. No automatic retry.
+   Training exec34070, first128-protection8409 and terminal-watcher97028 are active.
+   Monitor C/evidence_direct-format1-seed2026101923 and its output metrics. No automatic retry.
    Actual full128 must be independently audited/protected before previous V25 EBS optimizer
    duplicates retire; full256 protects before128 duplicates retire. Keep originals/model weights.
    Science release: validation/document_evidence_format_weight_v26_science_release_20261019.json.

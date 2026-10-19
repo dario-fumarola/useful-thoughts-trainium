@@ -259,3 +259,22 @@ written-trace removal and identical post-training are distinct interventions.
 Reported post-training gains do not by themselves establish direct-answer
 internalization or discovery of when to think without guidance. More capacity
 alone is not a demonstrated repair for our current task.
+
+
+## Trained pause control — primary-source check, October 19
+
+[Think before you speak, v2](https://arxiv.org/html/2310.02226v2#S3)
+trains a dedicated pause embedding and masks loss on predicting the inserted
+pauses. Its strongest reported benefits require pause exposure during both
+pretraining and downstream training. Adding filler punctuation only at inference
+is a weaker comparison; dropping pauses after pause-pretraining gives limited
+transfer in their reported tasks. These are author results, not measurements here.
+
+For a future control, train the delayed pathway rather than merely inserting
+unfamiliar padding at evaluation. Fixed known pause inputs can be processed in a
+causal prefill; generated reasoning requires sequential token decisions. Equal
+numbers of extra positions therefore do not imply equal latency or equivalent
+computational graphs. Report source exposure, actual work and latency separately.
+A learned pause channel could contain useful hidden computation despite constant
+visible token identities. It is a substantive competitor, not meaningless text.
+This note changes no active V26 source, endpoint or release.

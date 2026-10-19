@@ -1,0 +1,15 @@
+{
+  "status": "FIXED_V26_POSTPROCESSING_BEFORE_ANY_NEW_ANSWER_READOUT",
+  "utc": "2026-10-19T23:31:33.474307+00:00",
+  "files": {
+    "local/analysis/cost_document_evidence_format_weight_v26_20261019.py": "e4e62823e856cd86b9f7c4c8c84811c17f50ec0c9f860e619171050a9ab50a3b",
+    "local/analysis/examples_document_evidence_format_weight_v26_20261019.py": "99d7ddf7a6987d878475f3e7174a7ddfa04afb8fe38b56097eecb33f5ebeffef",
+    "local/analysis/plot_document_evidence_format_weight_v26_20261019.py": "f2eb512bf7d90ebc40e299f52429af86e2360c74786f7d6a1a01cac56d59480f",
+    "local/analysis/aggregate_document_evidence_format_weight_v26_20261019.py": "52e8ef914e6a530f92759f18e013f8ad42c2554e4a1022b6d71cbe44ccd2fb2e",
+    "local/analysis/protect_document_evidence_format_weight_v26_readout_20261019.py": "bdfa295890a47869bfc1afae024771c3dc34858a57089b8ce6fa2941e5354de6",
+    "local/analysis/publish_document_evidence_format_weight_v26_20261019.py": "49cdb2dd215231e66de50ece12f089a084216599860b2b042f3237b309e563ea"
+  },
+  "no_new_endpoints": "Only declared control aggregation, three figures, the same original eight question identities, cost accounting and protection/publication. No outcome-based example choice.",
+  "training": "Fresh control running; no held or checkpoint-answer generation has run.",
+  "limits": "Developmental cohort, single order seed; no new claim or learning/evaluation release."
+}

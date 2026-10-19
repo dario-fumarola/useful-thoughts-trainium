@@ -1,4 +1,4 @@
-# Status — 2026-10-19 23:29 UTC
+# Status — 2026-10-19 23:32 UTC
 
 ## Active: coefficient-matched format control
 Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
@@ -12,7 +12,8 @@ O=local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed
 Physical2/3, logical8–15; training deadline00:51:47UTC; no retry/checkpoint selection.
 Science release/source/actual qualification:31 files readback/fsync protected; original4 mechanics states retained NVMe.
 Report: validation/document_evidence_format_weight_v26_science_release_20261019.json.
-Next: launch C/supervise-job.py evidence_direct-format1-seed2026101923 and prepared protection/watch wrappers.
+Active: training exec34070, owned session/PID1517924/start28721656; first128 protection8409; terminal watcher97028.
+Next: monitor O/metrics.jsonl; independently protect full128, then audit/protect/bind terminal256 before readout.
 No held evaluation released: fixed direct/canonical-empty255 and ordinary256 follow terminal audit/protection.
 
 ## Closed: selector-loss allocation ablation
