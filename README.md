@@ -8,6 +8,16 @@ This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documen
 and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
+**Active follow-up:** one fresh model changes only the selection-loss weight
+from0.1 to1.0, with the same documents, order, exposures and source/answer
+coefficients. Eight actual qualification updates and full-state restoration passed;
+the256-update treatment is running. Results are pending. The fixed readout measures
+TRAIN fitting, developmental held answers and ordinary-text cost; it does not
+release model scaling or another broad campaign.
+[Design](validation/document_evidence_weight_v25_design_20261019.json) ·
+[Readout refinement](validation/document_evidence_weight_v25_readout_addendum_20261019.json) ·
+[Actual release](validation/document_evidence_weight_v25_science_release_20261019.json).
+
 ## Latest completed passage-selection pilot
 
 Two fresh Qwen3-1.7B-Base models, one data-order seed, the same TRAIN2048 questions
