@@ -1,4 +1,31 @@
-# Handoff — 2026-10-19 17:20 UTC
+# Handoff — 2026-10-19 17:38 UTC
+
+## Current evidence-plan-v23 preparation
+
+Source worktree local/worktrees/document-evidence-v23,branch qa-evidence-v23.
+CPU readiness validation/document_evidence_plan_v23_CPU_readiness_20261019.json.
+All1,763 CPU tests/smoke/compile PASS;new driver/CE regression suite complete.
+Source code adds separately normalized named components through the existing CE
+core,retains two-component API and existing production driver. No new runtime.
+All6,144 native views fit;source and final labels identical in every new view.
+Four-pass inventories both arms:source2,097,152,final67,408;selection8,192/39,930.
+Data local/nvme-cpt/data/document-evidence-plan-v23-TRAIN2048-held255-v2;
+manifest bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e.
+Independent source/label check PASS.255 fresh=205two/46three/4four.
+V1 strict fixed metadata selector reached255/256 and failed;V2 explicitly uses
+same255,unchanged rank/exclusions/accuracy gate.OriginalV1 plan/failure preserved
+local/diagnostics/document-evidence-plan-v23-CPU-v1 and public readiness annex.
+No model evaluated on new panel. No new GPU job/science release yet.
+Next:protect CPU data/evidence and commit source,prepare bounded TRAIN128 actual
+hardware qualification,pointer fresh1–4/restore4→8 plus direct control1–3;
+then audit update/masks/full-state recovery and actual memory. Existing qualified
+runtime/environment/topology supervisors can be reused;do not execute old jobs.
+Science requires new source/shape/objective qualification and reviewed run budget.
+Measured V21 final-token coefficient ratio:prior augmented mean.0928555,
+four-pass.5464277;post.0895638/.5447819. This excludes extra root-answer trace
+labels and is not total gradient/causal attribution. Evidence in readiness annex.
+
+Earlier next-action notes below describe the completed V22 audit/design step.
 
 User saysworkautonomously untilstopped;weeksavailable. Do not final atmilestones.
 Noactivegoal;do notcreateone. Agentquota unavailableuntilOct24,do notretryagents.

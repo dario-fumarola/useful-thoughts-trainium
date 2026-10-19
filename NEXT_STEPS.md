@@ -1,5 +1,14 @@
 # Current queue
 
+0. Qualify the prepared evidence-plan-v23 V2 objective on hardware before science.
+   CPU readiness:validation/document_evidence_plan_v23_CPU_readiness_20261019.json.
+   All1,763 tests/smoke/compile and6,144 native target views PASS. Fresh255 independent
+   source/label check PASS;205/46/4 hop counts. V1 failed255/256;V2 keeps the same255.
+   Both arms match source/final labels and coefficients;selection CE is separately weighted0.1.
+   Use frozen source in local/worktrees/document-evidence-v23,existing1.7B production driver.
+   Next concrete action:prepare and review bounded TRAIN128 hardware protocol,run actual
+   updates/full save/fresh-process restore,then inspect/protect evidence. No science release yet.
+
 1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,
    SHA75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9.
@@ -22,7 +31,7 @@
    6 ambiguous,1 contradictory. Four examples conflate cross-state entities;source annotations match.
    Single-agent exploratory labels are not corpus error rates;literal presence is not entailment.
    Blind reference substitution cannot repair those labels. Source-family filters are not semantic proof.
-   Prepare v23:single-model passage selection before answering versus a direct control with the
+   Prepared v23:single-model passage selection before answering versus a direct control with the
    SAME answer serialization. No supervised intermediate factual claims or last-claim answer copying.
    Freeze one CPU protocol and fresh evidence-disjoint panel first;inspect TRAIN data only during development.
    Use existing 1.7B runtime;all new targets/masks/parsers need CPU checks before bounded hardware qualification.

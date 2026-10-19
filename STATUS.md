@@ -1,4 +1,19 @@
-# Status — 2026-10-19 17:18 UTC
+# Status — 2026-10-19 17:38 UTC
+
+## Active: passage-selection pilot preparation
+Question: does selecting visible passage IDs improve complete answers over format-matched direct training?
+ID:document-evidence-plan-v23,V2;two single-model arms,one pilot seed;no science training released.
+CPU checks:1,763 tests plus smoke/compile PASS;all6,144 native target views fit without truncation.
+Same TRAIN2048/order;four passes;both arms2,097,152 source and67,408 final-field labels.
+Separate per-example means:source0.5,final-field0.5,selection0.1;longer plans cannot dilute final labels.
+Interleaved direct/selection modes in every epoch;control learns the same Final answer field.
+Fresh255:205 two/46 three/4 four-hop;independent raw-source exclusions and identity checks PASS.
+V1 metadata selection reached255/256 and failed;V2 uses the same255,without filter/rank/gate changes.
+Old V21 designated-final coefficients average9.3% of direct on prior examples,54.6% across four passes.
+These are explicit coefficients,not total gradients or proof of V21's causal failure.
+New targets contain passage IDs,no intermediate answer claims;support annotations remain imperfect.
+Report:validation/document_evidence_plan_v23_CPU_readiness_20261019.json;no capability outcome yet.
+Next:bounded new-objective TRAIN128 update/full-restore qualification;no active GPU job yet.
 
 ## Closed: TRAIN relation audit and fresh-evidence availability
 Question: can existing reasoning annotations support a simple reference-substitution repair?

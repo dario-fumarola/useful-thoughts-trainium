@@ -25,8 +25,16 @@ class MaskedCausalCE:
     future_per_example: torch.Tensor
 
 
-def masked_causal_ce(backend, input_ids, target_positions, labels,
-                     note_close_mask, future_mask, *, note_weight=1., future_weight=1.):
+@dataclass
+class ComponentCausalCE:
+    loss: torch.Tensor
+    losses: dict[str, torch.Tensor]
+    counts: dict[str, torch.Tensor]
+    per_example: dict[str, torch.Tensor]
+
+
+def masked_component_causal_ce(backend, input_ids, target_positions, labels,
+                               component_masks, component_weights):
     """Average each component per example, then over the fixed batch.
 
     An absent component contributes zero, including to the batch denominator.
@@ -34,7 +42,14 @@ def masked_causal_ce(backend, input_ids, target_positions, labels,
     stopped through note or future CE. Returns differentiable losses and FP32
     per-example counts; no temperature transform or vocabulary mask is applied.
     """
-    metadata = (target_positions, labels, note_close_mask, future_mask)
+    if (not isinstance(component_masks, dict) or not component_masks
+            or not isinstance(component_weights, dict)
+            or component_masks.keys() != component_weights.keys()
+            or any(not isinstance(name, str) or not name for name in component_masks)):
+        raise ValueError('Explicit named component masks and matching weights required')
+    names = tuple(component_masks)
+    host_masks = tuple(component_masks.values())
+    metadata = (target_positions, labels, *host_masks)
     if (input_ids.ndim != 2 or input_ids.shape[0] < 1 or input_ids.shape[1] < 2
             or input_ids.dtype != torch.long):
         raise ValueError('Packed input_ids must be nonempty int64 [B,S], S>=2')
@@ -42,14 +57,16 @@ def masked_causal_ce(backend, input_ids, target_positions, labels,
             or target_positions.ndim != 2 or target_positions.shape[0] != input_ids.shape[0]
             or any(x.shape != target_positions.shape for x in metadata)
             or target_positions.dtype != torch.long or labels.dtype != torch.long
-            or note_close_mask.dtype != torch.bool or future_mask.dtype != torch.bool):
+            or any(mask.dtype != torch.bool for mask in host_masks)):
         raise ValueError('Positions/labels and bool component masks require aligned CPU [B,T] metadata')
     if any(isinstance(w, bool) or not isinstance(w, (int, float))
-           or not math.isfinite(w) or w < 0 for w in (note_weight, future_weight)):
+           or not math.isfinite(w) or w < 0 for w in component_weights.values()):
         raise ValueError('Component weights must be finite nonnegative numbers')
-    active = note_close_mask | future_mask
-    if (note_close_mask & future_mask).any():
-        raise ValueError('Note-close and future target masks overlap')
+    active = torch.zeros_like(target_positions, dtype=torch.bool)
+    for mask in host_masks:
+        if (active & mask).any():
+            raise ValueError('Component target masks overlap')
+        active |= mask
     if ((target_positions[active] < 1).any()
             or (target_positions[active] >= input_ids.shape[1]).any()
             or (labels[active] < 0).any()
@@ -62,7 +79,7 @@ def masked_causal_ce(backend, input_ids, target_positions, labels,
     # Validate small host metadata before any device work; no XLA scalar reads.
     positions = torch.where(active, target_positions - 1, 0).to(backend.device)
     labels = torch.where(active, labels, 0).to(backend.device)
-    masks = torch.stack((note_close_mask, future_mask), -1).to(backend.device).float()
+    masks = torch.stack(host_masks, -1).to(backend.device).float()
     hidden = backend.hidden(input_ids.to(backend.device)[:, :-1])
     selected = hidden.gather(1, positions[:, :, None].expand(-1, -1, hidden.shape[-1]))
 
@@ -78,9 +95,9 @@ def masked_causal_ce(backend, input_ids, target_positions, labels,
     if target_positions.shape[1] == 0:
         zero = hidden.float().sum((1, 2)) * 0.
         zero = zero + backend.model.lm_head.weight.reshape(-1)[0].float() * 0.
-        sums = torch.stack((zero, zero), -1)
+        sums = torch.stack([zero] * len(names), -1)
     else:
-        sums = torch.zeros((input_ids.shape[0], 2), device=backend.device)
+        sums = torch.zeros((input_ids.shape[0], len(names)), device=backend.device)
         for start in range(0, target_positions.shape[1], backend.head_chunk):
             sl = slice(start, start + backend.head_chunk)
             sums = sums + checkpoint(part, selected[:, sl], labels[:, sl], masks[:, sl],
@@ -88,6 +105,19 @@ def masked_causal_ce(backend, input_ids, target_positions, labels,
     # This stack's implicit S64 clamp bound is broken; FP32 counts are exact.
     counts = masks.sum(1)
     means = sums / counts.clamp_min(1.)
-    note, future = means.mean(0).unbind()
-    return MaskedCausalCE(note_weight * note + future_weight * future, note, future,
-                          counts[:, 0], counts[:, 1], means[:, 0], means[:, 1])
+    losses = dict(zip(names, means.mean(0).unbind()))
+    loss = sum(component_weights[name] * losses[name] for name in names)
+    return ComponentCausalCE(loss, losses,
+        {name: counts[:, index] for index, name in enumerate(names)},
+        {name: means[:, index] for index, name in enumerate(names)})
+
+
+def masked_causal_ce(backend, input_ids, target_positions, labels,
+                     note_close_mask, future_mask, *, note_weight=1., future_weight=1.):
+    """Original two-component API, using the same independently normalized core."""
+    result = masked_component_causal_ce(backend, input_ids, target_positions, labels,
+        dict(note_close=note_close_mask, future=future_mask),
+        dict(note_close=note_weight, future=future_weight))
+    return MaskedCausalCE(result.loss, result.losses['note_close'], result.losses['future'],
+        result.counts['note_close'], result.counts['future'],
+        result.per_example['note_close'], result.per_example['future'])

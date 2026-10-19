@@ -17,7 +17,7 @@ import time
 
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 from train.partial_state_packing import batch_packs, training_pack
-from train import real_trace_packing, real_target_packing, real_source_balanced_packing, document_qa_packing
+from train import real_trace_packing, real_target_packing, real_source_balanced_packing, document_qa_packing, document_evidence_plan_packing
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'partial-state-sft-v7'
@@ -27,6 +27,7 @@ REAL_SCHEMA = 'real-trace-cpt-v10'
 TARGET_SCHEMA = 'real-target-sft-v15'
 BALANCED_SCHEMA = 'real-source-balanced-v17'
 DOCUMENT_SCHEMA = 'document-qa-v21'
+EVIDENCE_SCHEMA = 'document-evidence-plan-v23'
 
 
 def source_files():
@@ -42,7 +43,8 @@ def source_files():
              'train/calculation_boundaries.py', 'train/symbolic_note_labels.py',
              'train/scalar_completion.py', 'train/real_target_packing.py',
              'train/real_source_balanced_packing.py', 'train/document_evidence_data.py',
-             'train/document_qa_data.py', 'train/document_qa_packing.py')
+             'train/document_qa_data.py', 'train/document_qa_packing.py',
+             'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
@@ -52,6 +54,7 @@ def validate(p):
     target = p.get('schema') == TARGET_SCHEMA
     balanced = p.get('schema') == BALANCED_SCHEMA
     document = p.get('schema') == DOCUMENT_SCHEMA
+    evidence = p.get('schema') == EVIDENCE_SCHEMA
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
@@ -67,8 +70,8 @@ def validate(p):
     if balanced:
         fixed.update(schema=BALANCED_SCHEMA, world_size=8, micro_batch=4,
                      width=640, target_slots=640)
-    if document:
-        fixed.update(schema=DOCUMENT_SCHEMA, world_size=8, micro_batch=1,
+    if document or evidence:
+        fixed.update(schema=EVIDENCE_SCHEMA if evidence else DOCUMENT_SCHEMA, world_size=8, micro_batch=1,
                      accumulation=4, width=3328, target_slots=512)
     if any(p.get(k) != v or isinstance(p.get(k), bool) for k, v in fixed.items()):
         raise ValueError('Require the explicit versioned shape/topology identity')
@@ -79,6 +82,7 @@ def validate(p):
     target_science = target and p.get('purpose') == 'real_target_sft_study'
     balanced_science = balanced and p.get('purpose') == 'real_source_balanced_study'
     document_science = document and p.get('purpose') == 'document_qa_study'
+    evidence_science = evidence and p.get('purpose') == 'document_evidence_plan_pilot'
     if depth:
         hashes = {'fixed': '3f829b7e9fdb493a72f7cf740952130b29eb2dd5ded0c88d69b9a5730031a3ad',
                   'variable': '1b8a328479cd05718753b89e2f99e0f696e2cbb62079d505cc372fbb927111d3'}
@@ -91,6 +95,25 @@ def validate(p):
                 or p.get('save_every') != (2 if qualification else 80)
                 or p.get('lr') != 1e-5 or p.get('seed') != 2026101911):
             raise ValueError('Require the declared bounded variable-depth intervention')
+    elif evidence:
+        qualification = p.get('purpose') == 'document_evidence_plan_qualification'
+        if (not (qualification or evidence_science)
+                or p.get('items') != (128 if qualification else 2048)
+                or p.get('steps') != (8 if qualification else 256)
+                or p.get('save_every') != (2 if qualification else 128)
+                or p.get('seed') not in (2026101923, 2026101924)
+                or p.get('lr') != 1e-5
+                or p.get('view_schedule') != 'interleaved_fixed_item_plus_epoch_parity'
+                or p.get('loss') != 'separate_mean_source_answer_selection_per_example'
+                or p.get('source_sample_labels') != 256
+                or any(type(p.get(key)) not in (int, float) or p[key] != value for key, value in
+                       [('source_loss_weight', .5), ('answer_loss_weight', .5), ('selection_loss_weight', .1)])
+                or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))
+                or not re.fullmatch('[a-f0-9]{64}', p.get('data_manifest_sha256', ''))):
+            raise ValueError('Require explicit pointer/final-answer components and interleaved exposure')
+        if evidence_science and (not isinstance(p.get('hardware_qualification_file'), str)
+                or not re.fullmatch('[a-f0-9]{64}', p.get('hardware_qualification_sha256', ''))):
+            raise ValueError('Evidence pilot needs actual new-objective long-context qualification')
     elif document:
         qualification = p.get('purpose') == 'document_qa_qualification'
         if (not (qualification or document_science)
@@ -169,9 +192,9 @@ def validate(p):
             raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
     elif p.get('purpose') not in ('qualification', 'TRAIN_overfit_only') or p.get('items')!=128:
         raise ValueError('Explicit fitting or fixed TRAIN5120 study required')
-    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 320 if real_science or target_science or balanced_science else 256 if document_science else 160 if depth else 128)
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 320 if real_science or target_science or balanced_science else 256 if document_science or evidence_science else 160 if depth else 128)
             or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
-            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science or real_science or target_science or balanced_science else 128 if document_science else 80 if depth else 32)
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science or real_science or target_science or balanced_science else 128 if document_science or evidence_science else 80 if depth else 32)
             or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
@@ -209,11 +232,15 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
     if (not 0 <= step < p['steps'] or not 0 <= rank < p['world_size']
             or not 0 <= micro < p['accumulation']):
         raise ValueError('Actual bounded step/rank required')
-    if p['schema'] == DOCUMENT_SCHEMA:
+    if p['schema'] in (DOCUMENT_SCHEMA, EVIDENCE_SCHEMA):
         start = (step*p['global_batch'] + micro*p['world_size']*p['micro_batch']
                  + rank*p['micro_batch'])
-        return batch_packs([document_qa_packing.training_pack(rows[order[pos]], tokenizer,
-            document_qa_packing.view_for(arm, pos//p['items']),
+        packer = document_evidence_plan_packing if p['schema'] == EVIDENCE_SCHEMA else document_qa_packing
+        def view(position):
+            if p['schema'] == EVIDENCE_SCHEMA:
+                return packer.view_for(arm, position//p['items'], order[position])
+            return packer.view_for(arm, position//p['items'])
+        return batch_packs([packer.training_pack(rows[order[pos]], tokenizer, view(pos),
             width=p['width'], target_slots=p['target_slots'])
             for pos in range(start, start+p['micro_batch'])])
     start = step * p['global_batch'] + rank * p['micro_batch']
@@ -266,7 +293,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     import torch_xla.distributed.xla_backend  # noqa: F401
     from torch_xla.amp.syncfree import AdamW
     from torch_xla.distributed.zero_redundancy_optimizer import ZeroRedundancyOptimizer
-    from train.masked_causal_ce import masked_causal_ce
+    from train.masked_causal_ce import masked_causal_ce, masked_component_causal_ce
     from train.neuron_backend import NeuronCausalBackend
     from train.neuron_driver import restore_rng_after_sync, save_checkpoint
     from train.runtime_compat import configure_runtime
@@ -356,15 +383,29 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         audited = step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
         before = master_samples(optimizer, expected) if audited else None
         component_objective = p['schema'] in (BALANCED_SCHEMA, DOCUMENT_SCHEMA)
+        pointer_objective = p['schema'] == EVIDENCE_SCHEMA
         weights = (dict(note_weight=p['source_loss_weight'], future_weight=p['task_loss_weight'])
                    if component_objective else {})
-        loss = 0.; labels = 0; component_values = [0., 0., 0., 0.]
+        loss = 0.; labels = 0; component_values = [0.] * (6 if pointer_objective else 4)
         for micro in range(p['accumulation']):
             batch = batch_at(rows, tok, p, order, args.arm, step, rank, micro)
-            ce = masked_causal_ce(backend, **batch, **weights)
+            if pointer_objective:
+                names = document_evidence_plan_packing.COMPONENTS
+                masks = {name: batch[name+'_mask'] for name in names}
+                ce = masked_component_causal_ce(backend, batch['input_ids'],
+                    batch['target_positions'], batch['labels'], masks,
+                    {name: p[name+'_loss_weight'] for name in names})
+            else:
+                ce = masked_causal_ce(backend, **batch, **weights)
             (ce.loss/p['accumulation']).backward(); sync()
             loss += float(ce.loss.detach().cpu())/p['accumulation']
-            labels += int((batch['note_close_mask'] | batch['future_mask']).sum())
+            if pointer_objective:
+                labels += sum(int(mask.sum()) for mask in masks.values())
+                for index, name in enumerate(names):
+                    component_values[index] += float(ce.losses[name].detach().cpu())/p['accumulation']
+                    component_values[index+3] += int(masks[name].sum())
+            else:
+                labels += int((batch['note_close_mask'] | batch['future_mask']).sum())
             if component_objective:
                 component_values[0] += float(ce.note_close_loss.detach().cpu())/p['accumulation']
                 component_values[1] += float(ce.future_loss.detach().cpu())/p['accumulation']
@@ -393,7 +434,15 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             atomic_json(evidence/f'optimizer-after3-rank-{rank:05d}.json', inspection)
         total_loss, total_labels = xm.all_reduce(xm.REDUCE_SUM, torch.tensor([loss, float(labels)], device=device)).cpu().tolist()
         components = None
-        if component_objective:
+        if pointer_objective:
+            values = xm.all_reduce(xm.REDUCE_SUM,
+                torch.tensor(component_values, device=device)).cpu().tolist()
+            components = {}
+            for index, name in enumerate(document_evidence_plan_packing.COMPONENTS):
+                components[name+'_mean_loss'] = values[index]/world
+                components[name+'_labels'] = int(values[index+3])
+                components[name+'_weight'] = p[name+'_loss_weight']
+        elif component_objective:
             source_loss, task_loss, source_labels, task_labels = xm.all_reduce(
                 xm.REDUCE_SUM, torch.tensor(component_values, device=device)).cpu().tolist()
             components = dict(source_mean_loss=source_loss/world, task_mean_loss=task_loss/world,
@@ -410,7 +459,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                 metric['loss_components'] = components
             with (args.output/'metrics.jsonl').open('a') as f:
                 f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
-        if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
+        if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
             saving = time.monotonic()
             # Full state is approximately14 bytes/parameter; reserve16 plus
             # the existing35GiB floor before any rank starts writing.
@@ -435,16 +484,17 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
     if p['schema'] == DEPTH_SCHEMA and args.arm != 'writer':
         raise ValueError('This intervention trains the writer only; the reader remains frozen')
-    if p.get('purpose') in ('real_trace_cpt_study', 'real_target_sft_study', 'real_source_balanced_study', 'document_qa_study'):
+    if p.get('purpose') in ('real_trace_cpt_study', 'real_target_sft_study', 'real_source_balanced_study', 'document_qa_study', 'document_evidence_plan_pilot'):
         qualification_file = Path(p['hardware_qualification_file'])
         qualification = json.loads(qualification_file.read_text())
         shape = {k:p[k] for k in ('world_size','micro_batch','global_batch','width','target_slots','head_chunk','accumulation')}
-        expected_status = ('PASS_ACTUAL_DOCUMENT_QA_FULL_RESTORE' if p['schema'] == DOCUMENT_SCHEMA else
+        expected_status = ('PASS_ACTUAL_DOCUMENT_EVIDENCE_PLAN_FULL_RESTORE' if p['schema'] == EVIDENCE_SCHEMA else
+                           'PASS_ACTUAL_DOCUMENT_QA_FULL_RESTORE' if p['schema'] == DOCUMENT_SCHEMA else
                            'PASS_ACTUAL_REAL_SOURCE_BALANCED_FULL_RESTORE' if p['schema'] == BALANCED_SCHEMA else
                            'PASS_ACTUAL_REAL_TARGET_SFT_FULL_RESTORE' if p['schema'] == TARGET_SCHEMA
                            else 'PASS_ACTUAL_REAL_TRACE_SFT_FULL_RESTORE')
@@ -453,7 +503,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = (document_qa_packing.ARMS if p['schema'] == DOCUMENT_SCHEMA else
+    allowed_arms = (document_evidence_plan_packing.ARMS if p['schema'] == EVIDENCE_SCHEMA else
+                    document_qa_packing.ARMS if p['schema'] == DOCUMENT_SCHEMA else
                     real_source_balanced_packing.ARMS if p['schema'] == BALANCED_SCHEMA else
                     real_target_packing.ARMS if p['schema'] == TARGET_SCHEMA else
                     real_trace_packing.ARMS if p['schema'] == REAL_SCHEMA else ARMS)
@@ -491,8 +542,18 @@ def main():
                     or manifest.get('items') != 2048 or manifest.get('held') != 512
                     or any(sha256_file(ROOT/name) != value for name,value in manifest['source_files'].items())):
                 raise ValueError('Pinned complete native/evidence-clean QA data preparation required')
+        if p['schema'] == EVIDENCE_SCHEMA:
+            manifest_file = Path(p['data_manifest_file'])
+            manifest = json.loads(manifest_file.read_text())
+            if (sha256_file(manifest_file) != p['data_manifest_sha256']
+                    or manifest.get('status') != 'PASS_ALL_6144_NATIVE_POINTER_VIEWS_AND_FRESH255_CPU_ONLY'
+                    or manifest['files']['training']['sha256'] != p['data_sha256']
+                    or manifest.get('items') != 2048 or manifest.get('held') != 255
+                    or any(sha256_file(ROOT/name) != value for name, value in manifest['source_files'].items())
+                    or any(set(row) != {'item_id', 'split', 'question', 'answer', 'support_indices'} for row in rows)):
+                raise ValueError('Pinned pointer-only labels and fresh evidence-clean panel required')
         if (len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items']
-                or any((r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
+                or any((r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
             raise ValueError('Complete declared distinct TRAIN expressions required')
         assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
         if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']

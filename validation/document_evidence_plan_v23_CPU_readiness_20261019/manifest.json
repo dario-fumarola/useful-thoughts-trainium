@@ -1,0 +1,88 @@
+{
+  "candidates": 622,
+  "design_revision": 2,
+  "design_sha256": "6e3a87c5c10ed638eda2ffb32c6c478967d5a4072d0f2327d152b673b8329e80",
+  "experiment_id": "document-evidence-plan-v23",
+  "files": {
+    "held_gold": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-evidence-plan-v23-TRAIN2048-held255-v2/held255-gold-only.jsonl",
+      "rows": 255,
+      "sha256": "5f3d7cab3ac7a9ca70abb58cd6f7358d39a387f89f35f44ab2e65fc3a3c61dee"
+    },
+    "held_questions": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-evidence-plan-v23-TRAIN2048-held255-v2/held255-questions-only.jsonl",
+      "rows": 255,
+      "sha256": "9935f9c5d0c5f67c98e350edf209240748044593ea53d8c138e3e47dc27a17c1"
+    },
+    "training": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-evidence-plan-v23-TRAIN2048-held255-v2/TRAIN2048.jsonl",
+      "rows": 2048,
+      "sha256": "fa286db22d4d0ffaafe08215d05ffeebff39a45124eb5f1295763ce8f7249e90"
+    }
+  },
+  "four_pass_inventory": {
+    "evidence_direct": {
+      "answer": 67408,
+      "selection": 8192,
+      "source": 2097152
+    },
+    "evidence_select": {
+      "answer": 67408,
+      "selection": 39930,
+      "source": 2097152
+    }
+  },
+  "held": 255,
+  "items": 2048,
+  "limits": "CPU data/packing checks only, not hardware qualification or learning. Author support labels are not semantically certified. All old outcomes unchanged; V1 metadata failure retained. No model forward pass or official DEV/TEST opened.",
+  "maxima": {
+    "active_labels": 291,
+    "direct_answer_labels": 20,
+    "empty_answer_labels": 20,
+    "held_prompt_tokens": 3114,
+    "last_target_position": 3134,
+    "selected_answer_labels": 20
+  },
+  "native_view_counts": {
+    "direct": {
+      "answer": 16852,
+      "selection": 0,
+      "source": 524288
+    },
+    "empty": {
+      "answer": 16852,
+      "selection": 4096,
+      "source": 524288
+    },
+    "selected": {
+      "answer": 16852,
+      "selection": 19965,
+      "source": 524288
+    }
+  },
+  "preparation_plan_sha256": "cabdbe8fb7653da802f8684a66d3f5e4f492874a2a621c0957c73eeca60492c2",
+  "previous_data": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1",
+  "same_final_labels_and_coefficients_in_all_views": true,
+  "selected_hops": {
+    "2": 205,
+    "3": 46,
+    "4": 4
+  },
+  "source_files": {
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/prepare_document_evidence_plan.py": "c47d7b4b3b742e03936ecf5578ca4b9c5f3d1ee3e995004237c23d2b382390e4",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d"
+  },
+  "status": "PASS_ALL_6144_NATIVE_POINTER_VIEWS_AND_FRESH255_CPU_ONLY",
+  "tokenizer_files": {
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+  },
+  "tokenizer_vocab_sha256": "c96fa22dee2dd9c98c4f0c73ea423e21907bc96abda81fa5c6b2e24a670c66bf",
+  "utc": "2026-10-19T17:31:34+00:00"
+}

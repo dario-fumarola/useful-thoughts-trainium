@@ -1,0 +1,78 @@
+{
+  "experiment_id": "document-evidence-plan-v23",
+  "status": "PROSPECTIVE_CPU_DESIGN_ONLY_NOT_TRAINING_RELEASE",
+  "question": "Does selecting visible passage IDs before answering improve complete answers over format-matched direct supervision?",
+  "rationale": "V22 found unsupported cited relations and cross-step entity collisions. Pointer targets avoid supervising intermediate factual assertions or repeating a last-step answer claim. Author support annotations remain imperfect; this tests a new recipe, not a causal explanation of V21.",
+  "model_id": "Qwen/Qwen3-1.7B-Base",
+  "arms": ["evidence_direct", "evidence_select"],
+  "pilot_seed": 2026101923,
+  "conditional_replication_seed": 2026101924,
+  "replication_rule": "Only if the frozen pilot primary gate and plan-integrity gate pass; repeat the SAME frozen protocol and terminal evaluation. No prompt/data/loss changes between seeds. No two-seed success claim before replication.",
+  "training": {
+    "source": "The unchanged ordered V21 TRAIN2048 question cohort, projected into new targets without canonical decomposition text",
+    "items": 2048,
+    "passes": 4,
+    "steps": 256,
+    "world_size": 8,
+    "micro_batch": 1,
+    "accumulation": 4,
+    "global_batch": 32,
+    "width": 3328,
+    "target_slots": 512,
+    "lr": 0.00001,
+    "schedule": "constant",
+    "optimizer": "AdamW betas(.9,.95),eps1e-8,weight_decay.1,global_clip1,ONE ZeRO reducer",
+    "precision": "BF16 active parameters/gradients; FP32 masters and Adam states",
+    "save_every": 128,
+    "terminal_is_primary": true,
+    "view_schedule": "For BOTH arms, direct if (fixed_item_index + epoch) is even, selection otherwise. Every item has two of each view; both views appear within each epoch.",
+    "loss": "0.5 mean source CE + 0.5 mean final-answer-field CE + 0.1 mean selection-field CE; each component normalized separately per example, then averaged over examples. Absent selection field contributes zero.",
+    "source_loss_weight": 0.5,
+    "answer_loss_weight": 0.5,
+    "selection_loss_weight": 0.1,
+    "source_sample_labels": 256,
+    "answer_coefficient_contract": "For each question, the final field, answer and sampled EOS have exactly the same native labels and per-token loss coefficient in every view and arm. Selection length cannot dilute them.",
+    "matching_limits": "Same questions, order, views, updates, packed shape and source/final-answer coefficients. Selection targets and useful supervised-token counts differ. This is not exact FLOP/gradient equivalence or a loss-only ablation of V21."
+  },
+  "serialization": {
+    "input": "Only authored question and every visible title/text paragraph; mode instruction is fixed and contains no support, answer, hop-count or decomposition metadata.",
+    "direct_target": "Final answer:\n<canonical answer><EOS>",
+    "control_selection_target": "Evidence:\nFinal answer:\n<canonical answer><EOS>",
+    "selection_target": "Evidence: [i] [j] ...\nFinal answer:\n<canonical answer><EOS>",
+    "indices": "Unique one-based visible paragraph IDs, ascending document order, from author support annotations; no subquestions or intermediate answer strings.",
+    "parser": "The existing anchored Final answer field parser in prior mode for EVERY response, including direct responses. No first-line fallback or gold-dependent recovery.",
+    "generation": "One native greedy causal response, max128 new actions for both arms; terminate at a complete answer line or sampled EOS. All caps, unsupported plans/answers and errors retained.",
+    "plan_diagnostics": "Check syntax, unique in-range IDs, annotated support precision/recall, actual actions and source overlap. Correct IDs do not establish semantic entailment or connected reasoning."
+  },
+  "fresh_panel": {
+    "source": "Previously acquired author MuSiQue TRAIN only; official DEV/TEST remain unopened",
+    "count": 256,
+    "max_original_input_tokens": 3072,
+    "exclude": "Old TRAIN/held question IDs and normalized questions; candidate support paragraph/title must be absent from ALL old TRAIN-visible AND old held-visible paragraphs/titles; original single-hop IDs absent from both cohorts.",
+    "within_panel": "Support paragraph/title, original single-hop IDs and normalized questions are pairwise disjoint. Repeated answers allowed; not the official S5 split and not evidence of pretraining novelty.",
+    "selection": "Build candidate conflict degrees using only these metadata. Fixed hash salt document-evidence-plan-v23-fresh-held-v1. First greedily select32 candidates with >=3 hops in (-hops, conflict-degree, hash) order; then fill to256 in (conflict-degree, hash) order without conflicts. If either quota fails, publish failure and do not release training; do not silently relax filters or retune the cohort.",
+    "depth_limit": "Only seven four-hop candidates survive these exclusions before independence filtering. Depth-specific outcomes are descriptive; no four-hop generalization claim.",
+    "old_held512": "Development/history only; cannot rescue a failed fresh-panel result. No model-output inspection on the new panel before protocol, masks, parser and endpoints are frozen."
+  },
+  "evaluation": {
+    "primary": "Canonical complete-answer EM on all256 fresh questions: evidence_select native selection minus evidence_direct direct response.",
+    "pilot_primary_gate": "Point gain >=3 percentage points AND 95% paired question-bootstrap lower bound >0; 20000 resamples, seed2026101923, conditional on the terminal checkpoints.",
+    "plan_integrity_gate": "At least95% of evidence_select selection outputs contain a single valid Evidence field with unique in-range IDs. This is a serialization/mechanism condition, not a semantic correctness certificate.",
+    "required_controls": [
+      "evidence_direct under the selection instruction, trained to emit an empty Evidence field",
+      "evidence_select under its ordinary direct-answer instruction",
+      "evidence_select with a supplied empty Evidence field",
+      "evidence_select with annotated support IDs, privileged selection oracle without new answer text"
+    ],
+    "secondary": "Canonical F1, separately attributed mirror-alias EM/F1, unsupported counts, support selection precision/recall, full gold-answer span LL with EOS separate, existing ordinary-source NLL panel, generated tokens, measured latency and accelerator time. Report all arms and controls together.",
+    "cost": "Record reserved chip-hours, target-label counts and native generated actions separately. Serving latency requires sequential, warmed, same-shape timing; concurrent wall times are not a controlled latency comparison.",
+    "interpretation": "No post-answer/internalization, general pretraining, capacity-scaling or ordinary-CoT superiority claim is tested. A positive pointer effect is evidence-selection assistance under this recipe. A negative result closes this pilot, not all possible reasoning supervision."
+  },
+  "release_requirements": [
+    "Exact source and fresh-panel hashes, independently checked directed exclusions and no truncation",
+    "All TRAIN native target views fit the fixed packing; exact source/final-label and coefficient equality",
+    "Dense CPU loss/gradient parity for three separately normalized components; no future labels enter policy prompts",
+    "Actual same-source/same-shape new-objective update and full-state restore qualification with finite memory and preserved failures",
+    "Concrete serial review of the two-arm run binding and resource budget before jobs exceeding one accelerator-hour; no user permission needed within existing authorization"
+  ]
+}

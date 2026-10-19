@@ -120,7 +120,9 @@ All 72 citations match the original source annotations. This is an exploratory
 single-agent review, not independent adjudication or a population error estimate;
 insufficient citations do not establish that the answers themselves are false.
 
-The next bounded design tests passage selection before answering, with the same
-answer format in the direct control. Selecting annotated evidence will not itself
-prove connected reasoning or correct attribution. No new training is released yet;
-there is no new RL or model-size jump from this result alone.
+The next [bounded design](configs/document_evidence_v23_pilot.json) tests passage
+selection before answering, with the same answer format and explicit final-answer
+coefficient in both arms. Its [CPU preparation](validation/document_evidence_plan_v23_CPU_readiness_20261019.json)
+passes data, native packing and gradient checks. Hardware qualification remains.
+Selecting annotated evidence will not itself prove connected reasoning or correct
+attribution. No new science training, RL or model-size jump is released yet.

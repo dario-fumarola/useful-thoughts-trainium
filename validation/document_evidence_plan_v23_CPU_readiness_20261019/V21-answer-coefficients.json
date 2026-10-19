@@ -1,0 +1,42 @@
+{
+  "status": "TRAIN_NATIVE_COEFFICIENT_INVENTORY_COMPLETE_NO_MODEL_FORWARD",
+  "training_questions": 2048,
+  "four_pass_task_label_counts": {
+    "qa_direct": 42832,
+    "qa_prior": 251440,
+    "qa_post": 259694
+  },
+  "augmented_final_token_coefficient_ratio_to_direct": {
+    "prior": {
+      "mean": 0.09285548455247201,
+      "median": 0.08928571428571429,
+      "minimum": 0.028169014084507043,
+      "maximum": 0.2318840579710145
+    },
+    "post": {
+      "mean": 0.08956384363963821,
+      "median": 0.08620689655172414,
+      "minimum": 0.0273972602739726,
+      "maximum": 0.22535211267605634
+    }
+  },
+  "four_pass_average_final_token_coefficient_ratio_to_direct": {
+    "prior": {
+      "mean": 0.546427742276236,
+      "median": 0.5446428571428571,
+      "minimum": 0.5140845070422535,
+      "maximum": 0.6159420289855072
+    },
+    "post": {
+      "mean": 0.5447819218198191,
+      "median": 0.5431034482758621,
+      "minimum": 0.5136986301369864,
+      "maximum": 0.6126760563380281
+    }
+  },
+  "limits": "Explicit CE coefficients on designated final answer+EOS only; NOT gradient magnitudes, all answer-bearing trace tokens, causal attribution of V21 failure or population generalization. Trace root answers add other answer-bearing supervision. Counts reproduce the published complete training inventories. Whole-pass scheduling puts augmented examples in the last64 updates.",
+  "training_sha256": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9",
+  "packing_sha256": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+  "per_question_sha256": "8aaa8a782c2b1197f7c53d8802219a423f32e04c2bb0848952cf97f7e6987326",
+  "source_sha256": "cc39cdba5d83bc5d3388b7fe5e08d9596a8fdcd1712e4f51a7f6ba8c512a7271"
+}

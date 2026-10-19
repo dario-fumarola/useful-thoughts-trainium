@@ -1,0 +1,14 @@
+{
+  "status": "PASS_INDEPENDENT_SOURCE_SPLIT_AND_LABEL_IDENTITY_CPU_ONLY",
+  "training": 2048,
+  "held": 255,
+  "held_hops": {
+    "4": 4,
+    "3": 46,
+    "2": 205
+  },
+  "checks": "Raw normalized strings and tuple seed IDs, exact question projections, directed and within-held exclusions, unchanged ordered training questions/answers, pointer labels, source bindings and V21 primary hash.",
+  "limits": "Does not independently certify semantic support, repeat native packing or qualify hardware/learning.",
+  "manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "source_sha256": "0354d1d3d2cf2c4b4a1db609d3b3fa07ab64f344227363b4161f415e57a7428a"
+}

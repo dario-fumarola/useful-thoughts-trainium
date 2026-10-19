@@ -1419,3 +1419,16 @@ no intermediate answer claims, no old-score changes, no training released yet.
 Fresh evidence is mostly two-hop under existing exclusions; do not promise a
 fresh four-hop study. Source-family filters were inventoried, not validated as
 semantic curation. Keep V21's failed gates and original report hash unchanged.
+
+2026-10-19 17:38 UTC — Prepare evidence-plan-v23 as a bounded new recipe, not an
+explanation of V21. All1,763 CPU tests, smoke/compile and6,144 native views pass.
+Both arms preserve source and final-answer labels and their explicit coefficients;
+selection has its own0.1 mean CE. This addresses measured V21 answer dilution:
+prior-example mean coefficient9.3% of direct,54.6% across the four-pass schedule,
+excluding other answer-bearing trace labels and shared-parameter gradient effects.
+Use within-epoch mode interleaving and a common generated Final answer field.
+The fixed fresh selector exhausted at255/256;preserve V1 failure,declare V2 with
+those same255 and unchanged exclusions/ranking/gate. No model outcomes inspected.
+CPU readiness does not release science:actual new-objective update/save/restore
+and bounded resource review remain. No semantic certificate for support IDs or
+claim of connected reasoning follows from the new representation.

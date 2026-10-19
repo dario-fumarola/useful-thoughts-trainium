@@ -1,0 +1,69 @@
+{
+  "status": "PASS_CPU_DATA_AND_GRADIENT_READINESS_NOT_HARDWARE_OR_LEARNING",
+  "experiment_id": "document-evidence-plan-v23",
+  "design_revision": 2,
+  "source_branch": "qa-evidence-v23",
+  "CPU_tests": 1763,
+  "CPU_smoke_and_compile": "PASS",
+  "native_training_views": 6144,
+  "new_training_questions": 2048,
+  "fresh_held_questions": 255,
+  "held_hops": {
+    "2": 205,
+    "3": 46,
+    "4": 4
+  },
+  "loss_weights": {
+    "source": 0.5,
+    "answer": 0.5,
+    "selection": 0.1
+  },
+  "four_pass_label_counts": {
+    "evidence_direct": {
+      "answer": 67408,
+      "selection": 8192,
+      "source": 2097152
+    },
+    "evidence_select": {
+      "answer": 67408,
+      "selection": 39930,
+      "source": 2097152
+    }
+  },
+  "V21_answer_coefficient_observation": {
+    "prior_augmented_mean_ratio_to_direct": 0.09285548455247201,
+    "prior_four_pass_mean_ratio_to_direct": 0.546427742276236,
+    "post_augmented_mean_ratio_to_direct": 0.08956384363963821,
+    "post_four_pass_mean_ratio_to_direct": 0.5447819218198191,
+    "interpretation": "Explicit designated final-answer+EOS CE coefficients only; not total gradients or all repeated answer-bearing trace labels. This does not prove the cause of V21 failure."
+  },
+  "fresh_panel_revision": "V1 fixed metadata algorithm found255/256 and failed. V2 uses the SAME255 questions; exclusions, rank and accuracy gate unchanged. Original plan/failure preserved; no model evaluated on the new panel.",
+  "implementation": "Existing causal production driver; shared CE core supports independently normalized named components; original two-component API retains all regression checks. Source, final-answer labels and their coefficients match across all new views. Interleaved modes within each epoch, two of each per question. No separate writer/reader.",
+  "limits": [
+    "No actual new-objective hardware update/restore qualification or science run yet.",
+    "Annotation IDs are not verified semantic support. A valid selected plan does not establish connected reasoning.",
+    "This is a new recipe including serialization, supervision, normalization and mode scheduling changes; it is not a causal ablation of V21.",
+    "Two arms/one pilot seed; conditional same-protocol replication only after the declared pilot gates. No robust two-seed claim before both.",
+    "Small supervised sample and predominantly two-hop held panel; pretraining novelty and broad generalization remain unproven.",
+    "Prior gold-answer LL reduction is a likelihood/commitment diagnostic, not a calibrated-probability measurement; empty-mode deficits also contain interface effects."
+  ],
+  "data_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "design_sha256": "6e3a87c5c10ed638eda2ffb32c6c478967d5a4072d0f2327d152b673b8329e80",
+  "primary_V21_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "files_sha256": {
+    "CPU-checks/tests.txt": "fea6caa74732ae28095243c3eda6242afb19d802728fa422722141b09556d310",
+    "CPU-checks/toy_smoke.json": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3",
+    "CPU-checks/toy_smoke.txt": "ede351a31f9baec9ce0706210c9521b2515d87c6642d2de321f929267dbfcb30",
+    "V21-answer-coefficients-per-question.jsonl.gz": "c34cf5081624a9a27745a72c1cbe6693ba00e2351ba73561bc2249ae1396c182",
+    "V21-answer-coefficients.json": "248ad7c3d3923a9276de764c41f49aaef02fca1bad98c22ee19c947ffe1af0f0",
+    "analysis-source/check_document_evidence_v23_data_20261019.py": "0354d1d3d2cf2c4b4a1db609d3b3fa07ab64f344227363b4161f415e57a7428a",
+    "analysis-source/measure_document_QA_v21_answer_coefficients_20261019.py": "cc39cdba5d83bc5d3388b7fe5e08d9596a8fdcd1712e4f51a7f6ba8c512a7271",
+    "independent-source-check.json": "18082d97c2f47565e2c208a8594fbbcf0ff3b25eee9354717094f5bb224533d2",
+    "manifest.json": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+    "original-fresh256-failure/fresh-selection-failure-detail.json": "fe79b2785fc4ea6b494635ed9ef2457754daf9cdda655941ec68866122968da4",
+    "original-fresh256-failure/fresh-selection-result.json": "55fb5edfd8f35fdc92354505ddb95017e52350822dd65952726653876d0d5b46",
+    "original-fresh256-failure/prospective-design.json": "abb251d711c7cc651116e9445dfa5770093a588d7a6e252e0b1457aa03e79880",
+    "preparation-plan.json": "cabdbe8fb7653da802f8684a66d3f5e4f492874a2a621c0957c73eeca60492c2",
+    "prospective-design.json": "6e3a87c5c10ed638eda2ffb32c6c478967d5a4072d0f2327d152b673b8329e80"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "design_sha256": "6e3a87c5c10ed638eda2ffb32c6c478967d5a4072d0f2327d152b673b8329e80",
+  "inputs": {
+    "aliases": {
+      "path": "/home/ubuntu/dario/local/nvme-study/data/musique-TRAIN-mirror-v19/answer-aliases-by-author-raw-id.jsonl",
+      "sha256": "411de9932f03ee4aee92e75a427fee252f9959b88f830882d90ca01c73d6f434"
+    },
+    "native_lengths": {
+      "path": "/home/ubuntu/dario/local/nvme-study/data/musique-TRAIN-source-v12/input-inventory-v2.jsonl",
+      "sha256": "b3d5e03e49fba6685c4b98914a265574933a00d84ba59ae0da4f7e90af462dfd"
+    },
+    "old_held_gold": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-gold-only.jsonl",
+      "sha256": "7143f61398c9a25d60b92462a94c6a0df5e445e97e9570d23512dde1f02253d7"
+    },
+    "old_held_questions": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-questions-only.jsonl",
+      "sha256": "7a8ff7129829960a876e8cd39d35f23d9033f2789b2b495023efd9862882c39d"
+    },
+    "old_training": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/TRAIN2048.jsonl",
+      "sha256": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9"
+    },
+    "raw": {
+      "path": "/home/ubuntu/dario/local/nvme-study/data/musique-TRAIN-source-v12/musique_ans_train.raw.jsonl",
+      "sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345"
+    }
+  },
+  "status": "CPU_ONLY_NOT_TRAINING_RELEASE",
+  "utc": "2026-10-19T17:29:42+00:00"
+}
