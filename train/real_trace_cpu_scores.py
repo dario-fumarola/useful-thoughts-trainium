@@ -34,7 +34,7 @@ def score(output,inputs,panel,model_dir,binding=None,notes=None,threads=16):
         raise ValueError('All256unique ordered documents and true targets required')
     from train.evaluation_integrity import evaluation_dependencies
     root=Path(__file__).resolve().parents[1]
-    source_files={**evaluation_dependencies(root),**{name:sha256_file(root/name) for name in ('train/real_trace_cpu_scores.py','train/real_trace_evaluation.py','train/real_trace_contexts.py','train/real_trace_packing.py')}}
+    source_files={**evaluation_dependencies(root),**{name:sha256_file(root/name) for name in ('train/real_trace_cpu_scores.py','train/real_trace_evaluation.py','train/real_trace_contexts.py','train/real_trace_packing.py','train/partial_state_evaluation.py')}}
     model=read(binding) if binding else dict(id='B0',checkpoint=None)
     if binding:
         if model['status']!='FROZEN_AUDITED_REAL_TRACE_TERMINAL320' or model['step']!=320:
@@ -58,6 +58,16 @@ def score(output,inputs,panel,model_dir,binding=None,notes=None,threads=16):
             if sha256_file(name)!=digest:raise ValueError('Original generation evidence changed')
         if len(bundle['controls'])!=256 or [c['item_id'] for c in bundle['controls']]!=ids:
             raise ValueError('Complete ordered own/other note inventory required')
+        from train.partial_state_evaluation import donor_permutation
+        originals={v['item_id']:v for name in bundle['source_pins'] if Path(name).name=='notes.jsonl' for v in rows(name)}
+        if set(originals)!=set(ids):raise ValueError('Every intact original writer attempt required')
+        donors=donor_permutation([len(originals[k]['content_ids']) for k in ids],ids)
+        for k,j,c in zip(ids,donors,bundle['controls']):
+            if c['own']!=originals[k] or c['other']!=originals[ids[j]] or c['other_item_id']!=ids[j]:
+                raise ValueError('Reader note differs from original attempt or declared intact donor')
+        producer=[read(name) for name in bundle['source_pins'] if Path(name).name=='protocol.json']
+        if len(producer)!=1 or producer[0]['model']!=model:
+            raise ValueError('Actual note generator differs from scoring model')
         modes+=['own','other']
     output.mkdir(parents=True,exist_ok=False);torch.set_num_threads(threads)
     started=time.monotonic()
