@@ -95,7 +95,10 @@ def identity(checkpoint, protocol_file, closure_file, producer_source_root=None)
         raise ValueError('All original complete updates and counters required')
     provenance = {str(p):sha256_file(p) for p in
         (protocol_file, closure_file, root/'run.json', root/'completion.json', metrics_file, checkpoint.parent/'COMPLETE.json')}
-    value = dict(id=f"{run['arm']}-TRAIN{protocol['items']}-step{steps}", arm=run['arm'], checkpoint=str(checkpoint),
+    label = f"{run['arm']}-TRAIN{protocol['items']}-step{steps}"
+    if protocol['schema']=='variable-depth-writer-v11':
+        label = f"{run['arm']}-{protocol['curriculum']}-TRAIN{protocol['items']}-step{steps}-seed{protocol['seed']}"
+    value = dict(id=label, arm=run['arm'], checkpoint=str(checkpoint),
         checkpoint_sha256=manifest['files']['model.pt']['sha256'],
         checkpoint_scope=SCOPE, developmental_only=fitting, step=steps, run_id=root.name,
         spec_hash=canonical_hash(protocol), training_protocol=str(protocol_file),
