@@ -1,4 +1,4 @@
-# Status — 2026-10-19 01:24 UTC
+# Status — 2026-10-19 01:45 UTC
 
 
 ## Active: matched-cost partial-computation study
@@ -7,8 +7,8 @@ Experiment: partial-state-v7-matched5120; two seeds, 5,120 TRAIN expressions, fr
 Design: direct / compact CoT / full CoT at 640 updates each; reader 320 + writer 320.
 Endpoint: complete answers on four separate DEV panels of 512; terminal checkpoints, all failures retained.
 All ten training runs pass independent state, ordered-update, native-numerics and backup audits.
-All ten primary evaluation controllers are closed; only the shared untouched B0 final panel remains.
-No new accuracy or writer-state outcomes have been opened. Official TEST remains unused.
+All eleven evaluation controllers close at 01:38 UTC; independent whole-question audit is active.
+No new accuracy readout yet; audit has completed first-seed panels and the B0 reference. Official TEST unused.
 Finite completion pipeline: tmux dario-ps7-whole-question-audit; wait deadline 03:30 UTC.
 Control: local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1; it archives then audits once.
 Registry: local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
@@ -16,17 +16,19 @@ The audit requires all eleven controllers closed before accessing 51,200 answers
 All original full states remain intact; EBS retains every terminal model and latest full scientific recovery.
 Next: interpret both seeds and all panels against both CoT baselines, same-reader controls and unchanged B0.
 
-## Active: real raw-document compound-prefix inventory
-Question: can existing raw FineMath supply enough verified intermediate-only computation examples?
-Experiment: real-raw-compound-prefix-v9-v1; isolated branch 9d57df7, 1,617 CPU checks pass.
-Prior inventory: 5,448 TRAIN / 325 DEV compound documents; complete raw proof only 4,872 / 200.
-Re-curate the same 347,895 audited TRAIN/DEV raw documents, requiring two prefix operations before RHS validation.
-All raw-byte, native-offset, exact-numeric and original split checks remain; TEST/unlisted lines stay opaque.
-CPU-only pass, sixteen workers; no model or training release, no change to sealed scientific evaluation.
-Control: local/diagnostics/real-raw-compound-prefix-v9-v1; tmux dario-real-raw-compound-prefix-v9.
-Output: local/nvme-study/data/finemath-raw-compound-prefix-v9; finite deadline 02:30 UTC, no retries.
-Endpoint after curation: at least 5,120 TRAIN / 256 DEV documents with prefix-derived nonroot labels fitting 64 actions.
-No result yet. Preserve all exclusions and doc/expression overlap; correct teachers do not establish student utility.
+## Closed: verified real-document partial-state data preparation
+Question: can existing raw FineMath supply enough prefix-computable intermediate supervision?
+Experiment: real-raw-compound-prefix-v9; curator 9d57df7, 1,617 CPU checks, no model/learning release.
+All 347,895 audited TRAIN/DEV raw documents processed; TEST/unlisted bytes stay opaque.
+Compound source verification yields 5,885 TRAIN / 334 DEV documents; no relaxed numeric/source checks.
+Prefix-only exact re-execution omits the root operation; 5,807 / 329 fit 64 label-plus-stop actions.
+Fixed document-hash selection produces 5,120 TRAIN / 256 DEV; no document overlap, 83 long labels excluded.
+44 selected DEV expressions occur in TRAIN; 212 are novel, with 276 novel eligible DEV examples available overall.
+Targets are native 16-token continuations; full traces remain separate baseline labels; writer input has prefix only.
+Every selected row, all exclusions, provenance, source code and exact file hashes are EBS-readback protected.
+Public: validation/real_prefix_partial_data_v9_20261019.json and four fixed computed examples.
+Decision: reusable data ready; choose method/interface only after complete matched-study readout.
+No generated-note utility, general-language gain, new hardware qualification or training release follows.
 
 ## Closed: bounded export-memory repair and restart attribution
 Question: can export memory growth be removed without changing the matched training/recovery path?

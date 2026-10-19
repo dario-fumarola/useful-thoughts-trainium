@@ -115,3 +115,28 @@ remove recomputation of the old-policy denominator, but training still needs
 differentiable new-policy log-probabilities. A zero thought-mixing weight also
 zeros content-dependent reward until the prediction/mixing path learns to use it.
 These observations guide the next design; they are not new training results.
+
+## Training value and deployed thought value — checked 2026-10-19
+
+BoLT models a latent marginal at prediction time. Its Appendix B.1 reports an
+improving bound even while conditional reconstruction worsens slightly: better
+prior/posterior agreement contributes to the gain.
+[BoLT v2, sections 3.3 and B.1](https://arxiv.org/html/2503.18866v2).
+For prefix X, continuation Y and thought Z, the conditional variational identity is
+
+$$
+\log p(Y\mid X)\ge
+\mathbb E_{q(Z\mid X,Y)}[\log p(Y\mid X,Z)]
+-D_{KL}(q(Z\mid X,Y)\Vert p(Z\mid X)).
+$$
+
+Our inference: maximizing hindsight utility alone omits prior compatibility.
+Conversely, copying each hindsight thought exactly is not necessary for a useful
+latent marginal. Single-greedy-note utility and thought-augmented training value
+are separate endpoints. The current partial-state experiment isolates the former;
+it does not settle every latent-training hypothesis.
+
+TPT trains on document followed by generated thinking using ordinary causal CE.
+Its training benefit should not be gated by our inserted-note inference test.
+[TPT section 2](https://arxiv.org/html/2509.20186v1).
+Keep both hypotheses explicit without changing the current fixed comparison.

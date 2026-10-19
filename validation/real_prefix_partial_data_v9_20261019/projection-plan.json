@@ -1,0 +1,20 @@
+{
+  "schema": "real-prefix-partial-labels-v9-data-projection-plan-v1",
+  "created_utc": "2026-10-19T01:36:06.101623+00:00",
+  "source_manifest": "/home/ubuntu/dario/local/nvme-study/data/finemath-raw-compound-prefix-v9/manifest.json",
+  "output": "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9",
+  "source_curator_commit": "9d57df721e81fa88b3f87ab2766184b9b38ae819",
+  "script_sha256": "87f32e3ddcbbb718afb67c419e4eb85a65e332743e096104c989f8e100ed87d2",
+  "label_source_files": {
+    "/home/ubuntu/dario/train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "/home/ubuntu/dario/train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122"
+  },
+  "selection_salt": "real-prefix-partial-labels-v9-fixed-document-order",
+  "train_documents": 5120,
+  "dev_documents": 256,
+  "partial_max_actions_including_stop": 64,
+  "writer_input_projection_poisoned_future_test_pass": true,
+  "selection": "Uniform fixed hash per document after declared64action partial-label fit; one accepted source row/document. No model/likelihood filter. Full trace supplied separately for baselines.",
+  "gate": "If either source pool falls short, publish insufficient-pool inventory and no cohorts; no fallback or recycled examples.",
+  "scope": "CPU preparation only,format-neutral,native real prefix+continuation. Exact partial labels derive from prefix alone; root operation removed. No interface/hardware/model/learning release."
+}

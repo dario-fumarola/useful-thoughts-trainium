@@ -16,18 +16,15 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. All ten training runs are complete, audited, protected and frozen. All ten
-   primary evaluation controllers close; only unchanged B0 (physical 4) finishes
-   its final panel. No new outcomes reviewed.
-   The finite pipeline `dario-ps7-whole-question-audit` backs up newly closed jobs
-   and executes the whole-question audit once all eleven close. Control:
-   `local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1`;
-   wait deadline 03:30 UTC, audit timeout one hour, no retries. Monitor its
-   `supervisor.log`, then `audit.log`; do not duplicate its command or outputs.
-   Registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
-   Planned 51,200 answers and 4,096 notes, with one shared B0 reference.
-   All source and endpoints remain fixed; every original full state stays intact.
-   A/compact first-seed receipt corrections remain explicit preserved annexes.
+3. All training and all eleven evaluation controllers close. Independent audit
+   is ACTIVE in `dario-ps7-whole-question-audit`:
+   `local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1/audit.log`.
+   At 01:45 UTC, twelve of twenty public gzip payloads are written (B0 and first
+   seed complete); second seed is being verified. Do not read partial results,
+   duplicate the command or change any source. Final report:
+   `validation/partial_state_v7_matched5120_complete_20261018.json`.
+   Wait for controller completion and final report, then interpret both seeds,
+   all four panels, both CoT controls, unchanged B0 and actual costs. No TEST/RL/8B.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -98,18 +95,17 @@ all 28 update metrics are public, exact originals and recovery protected.
 No more memory probes are queued. This qualifies bounded short world-4 mechanics,
 not original world-32 OOM or indefinite continual training.
 
-Real-document preparation is active while unchanged B0 finishes. Read-only
-inventory found 5,448 TRAIN / 325 DEV compound documents, but complete raw proof
-only for 4,872 / 200. A new minimum-two-operations prefix curriculum re-curates the
-same audited raw documents without relaxing source validation. Isolated source
-9d57df7, 1,617 CPU checks; sixteen CPU workers, no accelerator/model/learning.
-Control: `local/diagnostics/real-raw-compound-prefix-v9-v1`, tmux
-`dario-real-raw-compound-prefix-v9`, output
-`local/nvme-study/data/finemath-raw-compound-prefix-v9`, deadline 02:30 UTC, no retry.
-Check run.log counts and final completion/readback. Then derive nonroot labels
-from decoded causal prefix only; require at least 5,120 TRAIN and 256 DEV unique
-raw documents fitting64 label+stop actions. Existing full-answer oracle note
-fields in curator outputs are NOT the new writer targets. Keep inherited
-future-aware equation acceptance explicit, while teacher label generation sees
-prefix only. Report length exclusions and shared expressions (57 DEV docs in
-initial inventory). No learning/interface sweep before matched-question readout.
+Real-document preparation is COMPLETE, not a learning release. Source-verified
+raw compound anchors: 5,885 TRAIN / 334 DEV. Prefix-only nonroot labels fitting64
+actions: 5,807 / 329. Fixed hash selects5,120/256, all source/data/code EBS readback.
+Public readiness: `validation/real_prefix_partial_data_v9_20261019.json`.
+Output: `local/nvme-study/data/real-prefix-partial-labels-v9`. All83length exclusions
+and the full candidate inventory remain; 44selected DEVexpressions appear inTRAIN.
+276expression-novel DEVrows are available before any learning; freeze a novel
+cohort under the next actual protocol if useful, preserve current data identity.
+Do not rerun either closed data pipeline. Writer projection receives prefix IDs
+only; teacher labels derive from prefix and omit root, full traces separate.
+After matched-question readout, choose the next model/method and declare training,
+interface, cost and held endpoints before hardware qualification/learning.
+Thinking can improve learning and/or inference; keep the two hypotheses separate
+as clarified in `docs/REFERENCE_NOTES.md`. Current fixed comparison is unchanged.

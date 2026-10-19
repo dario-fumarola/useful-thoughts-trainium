@@ -1,0 +1,101 @@
+{
+  "schema": "real-prefix-partial-data-v9-readiness-v1",
+  "status": "VERIFIED_REAL_DATA_READY_NOT_MODEL_OR_TRAINING_RELEASE",
+  "utc": "2026-10-19T01:42:19.578942+00:00",
+  "source": "Same347895auditedrawFineMathTRAIN/DEVdocuments; all TEST/unlisted lines stay opaque.",
+  "raw_accepted_documents": {
+    "train": 5885,
+    "dev": 334
+  },
+  "available_within64actions": {
+    "train": 5807,
+    "dev": 329
+  },
+  "selected": {
+    "TRAIN.jsonl": {
+      "rows": 5120,
+      "sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+      "bytes": 24466622
+    },
+    "DEV.jsonl": {
+      "rows": 256,
+      "sha256": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79",
+      "bytes": 1201661
+    }
+  },
+  "source_curator_commit": "9d57df721e81fa88b3f87ab2766184b9b38ae819",
+  "label_derivation": "Decode native causal prefix,extract maximal LHS,interpret exactly,drop final root operation. The label function receives no continuation or target. Full traces supplied separately for competitive baselines.",
+  "selection_salt": "real-prefix-partial-labels-v9-fixed-document-order",
+  "exclusions": {
+    "declared64action_partial_budget": 83
+  },
+  "selected_document_overlap": 0,
+  "selected_DEV_expression_seen_in_TRAIN": 44,
+  "selected_DEV_expression_novel": 212,
+  "all_available_DEV_expression_novel": 276,
+  "writer_projection_fields": [
+    "item_id",
+    "document_id",
+    "prefix_ids"
+  ],
+  "projection_source_sha256": "87f32e3ddcbbb718afb67c419e4eb85a65e332743e096104c989f8e100ed87d2",
+  "source_manifest_sha256": "6011f80e7da62ef51df47f2ed8f94f28c4c69211503f962ce25a71227dfaef39",
+  "data_manifest_sha256": "9809b625dd453b6e8a71724b638b18a2deba42a3c7bdcb4e6d4e1567d737406d",
+  "EBS_completion": {
+    "status": "COMPLETE_FORMAT_NEUTRAL_DATA_NOT_TRAINING_RELEASE",
+    "manifest_sha256": "9809b625dd453b6e8a71724b638b18a2deba42a3c7bdcb4e6d4e1567d737406d",
+    "EBS_archive_receipt_sha256": "ddf9db38f2c28f51e1d8cd01349e350aca900c3c46b7ecf82e87278130242afe"
+  },
+  "examples_fixed_first_two_per_split": [
+    {
+      "split": "TRAIN",
+      "item_id": "5ceed9cca504eba4d8773861d480285e4965882fe170b3101caa65e2077d65e1:raw-equation-v3:943",
+      "expression": "200 *42 /100",
+      "prefix_derived_nonroot_calculation": "200 * 42 = 8400\n",
+      "partial_actions": 15,
+      "source_url": "https://www.jagranjosh.com/articles/sbi-po-exam-data-interpretation-quiz-1523880125-1",
+      "raw_line_sha256": "19c0aac97fc111b5bd34eaa974ac083552bb5dab91920b099722568ec644cd95",
+      "raw_text_sha256": "2e30265c4913d8d6835e262cd5f09623259d40bb3ee03be302f65d0ebae54ec8"
+    },
+    {
+      "split": "TRAIN",
+      "item_id": "dab85946a6556913d988cfb43cd9fa03e54fa6686657babb3308a2fa731dc98d:raw-equation-v3:1176",
+      "expression": "(2 + 4)*2",
+      "prefix_derived_nonroot_calculation": "2 + 4 = 6\n",
+      "partial_actions": 9,
+      "source_url": "https://pokemon.fandom.com/wiki/Effort_Value",
+      "raw_line_sha256": "00edcbb13ec07463001c7046a2a0bc33b8474f687c0687287564211e7b31c1d6",
+      "raw_text_sha256": "c390598519136166ce2d5f2c160e8738c49c2b010c6c2f199e9a2993aa71b3d6"
+    },
+    {
+      "split": "DEV",
+      "item_id": "3151cf6d6dee2735a483ceb1efb7e0e67b39a2fc2934320e9c8230208b5073a8:raw-equation-v3:549",
+      "expression": "1 + 4 + 8",
+      "prefix_derived_nonroot_calculation": "1 + 4 = 5\n",
+      "partial_actions": 9,
+      "source_url": "https://gradeoffice.com/the-ultimate-decimal-to-binary-convertor-tool/",
+      "raw_line_sha256": "beb67bb3b30bc0cef721cf41bd2db6bf70dc3a2100d0e48acf4495fa63f4c9fa",
+      "raw_text_sha256": "a7811b06bd8c8326f7aca3ee312cf9075d72ad343590be42598e89c3df2282e3"
+    },
+    {
+      "split": "DEV",
+      "item_id": "71f958231d783fe43811a643366bd353ec13183cc1556379894bd75679c0bfed:raw-equation-v3:2730",
+      "expression": "441 + 21 + 22",
+      "prefix_derived_nonroot_calculation": "441 + 21 = 462\n",
+      "partial_actions": 14,
+      "source_url": "https://artofmemory.com/forums/square-roots-perfect-irrational-estimating",
+      "raw_line_sha256": "ae3f35a955b045a0c5b1f29bae38e2fcbdb065da254e9f636a37d154f1851986",
+      "raw_text_sha256": "20ce0bfc68aa67a6c102e5a73eeb6884c79dcaa5f61617ea7c33b7636ffeae46"
+    }
+  ],
+  "limitations": [
+    "No model/interface/learning release or capability claim.",
+    "Real FineMath document-disjoint TRAIN/DEV; developmental, not official TEST.",
+    "Source equation acceptance uses observed RHS truth; label derivation itself receives no future.",
+    "Incidental equality of an intermediate and final value is logged and not filtered.",
+    "Existing full-answer oracle note fields are not copied into writer targets.",
+    "44of256selectedDEVexpressionsoccurinTRAIN;reportnovel-expressionresultsseparately or freeze a new expression-disjoint cohort before learning.",
+    "Dataset contains verified teacher labels,not self-generated thoughts or evidence of model improvement.",
+    "Full source text/native payloads remain in local/EBS data archives;publicexamplescontainonlycomputedexpressions/statesandprovenance."
+  ]
+}

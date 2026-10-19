@@ -6,47 +6,56 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 01:24 UTC handoff: continue until user stops. All ten matched training
-runs and all ten primary evaluation controllers are complete/audited/protected.
-Only shared B0's final panel remains; all current outcomes remain sealed.
-Whole-question pipeline tmux `dario-ps7-whole-question-audit`, control
-`local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1` waits then
-archives B0 and audits all51,200answers/4096notes once. Wait deadline03:30UTC,
-audit timeout1h,no retries. Monitor supervisor.log/audit.log; do not duplicate.
-Source17/35 remains immutable57d3220; **do not merge candidate code into main
-before this audit**, since imported checkpoint validation also checks its source.
-Both seeds/panels separate; same-reader/strong compact+full CoT/one shared B0
-controls. No official TEST,R1234restart,RL or8B. Prefer simpler solver if it matches.
+October19 01:45 UTC handoff: continue until user stops. All ten matched training
+runs and all eleven evaluation controllers are closed/protected. Whole-question
+independent audit ACTIVE, tmux `dario-ps7-whole-question-audit`, control
+`local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1`.
+Read audit.log/supervisor.log for failures; twelve of twenty gzip payloads are
+written (B0 and first seed verified); second seed underway. No new accuracy
+readout yet. Wait for completion + final
+`validation/partial_state_v7_matched5120_complete_20261018.json`. Do not duplicate
+or overwrite partial files. All51,200answers/4096notes required. Source17/35 stays
+immutable57; **do not merge candidate code until final math audit is complete**.
+No TEST/R1234restart/RL/8B. Both seeds/panels separate, compare strong compact/full
+CoT, direct and one shared untouched B0; include same-reader controls, actual
+costs and two-model/loss-weight caveats. Prefer simpler model if it matches.
 
-Engineering export question CLOSED, no active jobs remain. Candidate branch
-fb72065,1601CPUchecks. Actual14update control memory49–139GiB versus21–22cleanup.
-All14full checkpoints pass state/native checks. Saved12 model/optimizer/RNG/cursor
-bytes match. Original strict uninterrupted gate FAIL is public (step14 loss drift
-0.000014). Separate unchanged-exporter restart reproduces exactly the same drift;
-both resumed model/optimizer/RNG/metrics are byte-identical. Candidate preserves
-matched recovery; no claim of world32OOM fix or indefinite memory. Public
-checkpoint_export_SFT_recovery_v8_20261019.json and
-checkpoint_export_restart_attribution_v8_20261019.json; all evidence/code/metrics
-saved/EBS readback. Main production source unchanged. No more memory probes.
+Engineering export question CLOSED, no active jobs. Candidate fb72065,
+1601CPUchecks. Actual14update memory49–139GiB control versus21–22cleanup;
+all14full states/native gates/cursors pass. Saved12 all bytes identical.
+Original strict uninterrupted gate FAIL is preserved (step14 loss drift0.000014).
+Separate unchanged-exporter restart reproduces exact drift; both resumed model,
+optimizer,RNG,loss/norm trajectories byte-identical. Cleanup preserves matched
+recovery; no originalworld32OOM/indefinite guarantee. Public reports and sources,
+all original states plus EBS terminal/control evidence saved. No more probes.
 
-Real-data CPU preparation ACTIVE, source branch9d57df7,1617CPUchecks:
-`local/diagnostics/real-raw-compound-prefix-v9-v1`,tmux dario-real-raw-compound-prefix-v9,
-output `local/nvme-study/data/finemath-raw-compound-prefix-v9`,deadline02:30UTC.
-Sixteen CPU workers, no accelerator; same347895auditedTRAIN/DEVdocuments, minimum2
-causal-LHS operations before unchanged full raw RHS verification. TEST remains
-opaque. Controller `local/analysis/run_raw_compound_prefix_v9_20261019.py`;
-finite no-retry; completion includes full EBS data/control readback.
-Prior read-only inventory local/analysis/real-prefix-partial-label-inventory-20261019.json:
-5448TRAIN/325DEV compounds; only4872/200full-raw proof, so below5120/256 target.
-Raw curator may retain more compound anchors if it stops choosing simple equations
-in those documents. After completion, derive actual partial labels from DECODED
-PREFIX ALONE, drop final root operation, log64-action fit/exclusions/incidental
-root-value coincidences and document/expression overlap. Existing correct_note
-fields are full-answer oracles, NOT writer targets. No model/learning release
-until matched-question readout. CPU inventory is preparation, no capability claim.
+Real raw/partial DATA preparation is COMPLETE. Both pipelines closed and EBS
+readback: `real-raw-compound-prefix-v9-v1` and `real-prefix-partial-labels-v9-v1`
+under local/diagnostics. No model/training/interface/hardware release.
+Source curator branch9d57df7 (1617CPUchecks), same347895auditedTRAIN/DEVrawdocs,
+minimum2prefixoperations, unchanged source/numeric validation, TEST never decoded.
+5885TRAIN/334DEVraw compounds; after prefix-only exact nonroot derivation and
+64action budget5807/329eligible. Fixed document-hash selection5120TRAIN/256DEV,
+no document overlap,83long labels excluded and retained,44DEVexpressions seen
+inTRAIN. There are276eligible novel-expressionDEVrows overall, allowing a future
+new256novel cohort before learning. Current data identity stays preserved.
+Data: `local/nvme-study/data/real-prefix-partial-labels-v9`; exactTRAINsha
+437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915,
+DEVsha8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79.
+Public readiness/four fixed computed examples:
+`validation/real_prefix_partial_data_v9_20261019.json`. Native prefixes/16future
+labels + nonroot partials + separate full traces/provenance are local+EBS.
+Projection code public beside report; writer input excludes future/notes, poison
+check passes. No data pipeline should be rerun. Pick next method after readout.
 
-Root owns work; subagents quota-unavailable, do not retry. Keep meaningful
-updates<=60seconds and bounded waits. User last asked status; answered and resumed.
+Re-read BoLT v2 sections3.3/B.1 and TPT section2. New reference-note clarification:
+latent marginal/ELBO includes prior compatibility; exact hindsight-note matching
+isn't universal necessity for a latent training objective. TPT trains doc then
+thinking. Keep training value and deployed extra-computation value separate; do
+not make the current channel result a verdict against every training scaffold.
+These notes and data readiness are pending Git commit; main currently a47d295.
+Root owns work, subagents quota-unavailable. Keep <=60s meaningful updates,
+bounded waits, and avoid long internal speculation while jobs await handling.
 
 All original full checkpoints stay on local SSDs. EBS all terminal models plus
 latest full optimizer state; older EBS optimizer duplicates retire only after full

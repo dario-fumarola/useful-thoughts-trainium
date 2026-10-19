@@ -1190,3 +1190,12 @@ safeguards. Reprocess same347895auditedrawTRAIN/DEVdocuments on16CPUworkers,
 deadline02:30,no retry; all TEST/unlisted bytes remain opaque. Later partial labels
 must receive decoded prefix only and omit root, not reuse full-answer oracle fields.
 No new learning/current-source changes; matched study waits only on shared B0.
+
+2026-10-19 01:45 UTC — All11math generation controllers close; independent full
+question audit underway, no partial accuracy readout. CPU real-data preparation
+closes:5885TRAIN/334DEVfull-raw compound sources,5807/329nonroot labels fit64actions;
+fixed5120/256 selected,0doc overlap,83long labels retained as exclusions.44DEV
+expressions seen inTRAIN;276noveleligibleDEVavailable for future protocol choice.
+TeacherlabelAPIsees decodedprefixonly, root operation omitted;full traces separate.
+All code/data/provenance EBS-readback, no model/learning release. Keep training
+value distinct from deployed note value per re-readBoLT/TPT; current study unchanged.
