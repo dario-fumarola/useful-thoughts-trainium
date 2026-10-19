@@ -1,35 +1,34 @@
-# Status — 2026-10-19 02:51 UTC
-
+# Status — 2026-10-19 03:27 UTC
 
 ## Active: single-model real-document mainline
 Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
-Experiment: real-trace-cpt-v10; source3d8666b,1,622CPUchecks; prospective design public before learning.
-Raw/prior-trace/post-trace arms: one fresh1.7Bmodel each,matched5120documents/two passes/320updates,two seeds.
-Independent training/inference likelihood gates: >=0.25nat/span and paired95%lower>0 in each seed.
-Ordinary-text regression bound and B0/empty/content controls remain; no general-language claim.
-Held panels frozen:256novel expressions+256ordinary DEV documents;all document/expression exclusions pass.
-Full packing readback15360views passes,max627tokens; trainshape640,world8×micro4,FP32masters/BF16active.
-TRAINfull traces span2–6operations (2914/1395/429/308/74 examples),not one fixed trace depth.
-Actual8rank qualification active on physical12/13,logical48–55; source and full plan EBS readback.
+Experiment: real-trace-cpt-v10; immutable training source3d8666b,1,622CPUchecks; original design public.
+Raw/prior/post: fresh1.7B per arm/seed,5120documents/two passes/320updates,two seeds; no learning release yet.
+Independent training/inference gates remain>=0.25nat/span and paired95%lower>0 in each seed,plus ordinary-text bound.
+Prelearning correction: string novelty missed10TRAIN-equivalent ASTs; V2novel256 has zero ordered-AST overlap.
+TRAIN,oldDEV,V1andallobservations remain;246identical rows reused and10new rows selected without trained outcomes.
+Amendment:validation/real_trace_cpt_v10_AST_amendment_20261019.json;all data EBS readback verified.
+B0CPUreference complete:novel256 mean16-tokenLL−16.4662,ordinary256−19.9007;no augmentation result.
+Reference:validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json;all512docs and native vectors protected.
+Evaluation sourcec01deab passes1,640CPUchecks; full causal span shift/padding and exact AST aliases tested.
+Actual8rank width640 qualification still running on physical12/13,logical48–55;cold graphs completed progressively.
 Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
-Fresh1–6/fullsave/close/actual fullrestore6/update7–8;deadline05:00UTC,no automatic retry.
-No320update learning release yet; exact same-source/same-shape actual PASS receipt is required by loader.
-Raw/prior/post benefit gates are independent; bounded split repair does not gate this main path.
+Fresh6/close/fullrestore6/update8;05:00deadline,no automatic retry;exactsource/shape PASS receipt required for science.
+Decision: finish actual recovery audit,then finite mainline release; bounded split diagnostic does not gate it.
 
 ## Active: bounded variable-depth writer diagnostic
-Question: does changing depth coverage repair incomplete stopping and help the frozen reader?
-Experiment: variable-depth-writer-v11-v1;source5af3431,1,614CPUchecks,one diagnostic seed.
-Fixed640 all two steps;variable640 balanced one–five;both160updates/eight passes,root omitted.
-Targeted composition512 plus fresh depth2/6 panels256each;all new expressions exclude prior7168.
-Gates in public design:canonical/natural>=70%;reader>=40% and >=10pp over fixed with positive paired interval.
-Width192 SFT/save/restart audit PASS:all8updates,8native vectors,all4full states and restored6bytes verified.
-Late grouped post-export growth0.470GiB/save versus declared2GiB bound;no uninterrupted-parity claim.
-Both small writer runs released from fresh B0,serial on physical8;fixed control reached64at02:50UTC.
-Control:local/diagnostics/variable-depth-writer-v11-v1;tmux variable-depth-v11-pilot;deadline04:30UTC.
-All original states retained;full qualification8 and source/recovery/numerical evidence EBS readback.
-After both terminal160 close,independently audit once,then frozen-reader/B0/fullCoT evaluation,all failures kept.
-Evaluation source dd95d6c plus final label clarification in progress;own128+reader32 versus single160actions.
-No reader retraining or extension;split repair remains a diagnostic,not the main architecture.
+Question: does varied depth repair incomplete stopping and improve the same frozen reader?
+Experiment:variable-depth-writer-v11-v1;training5af3431,one seed;fixed640two steps versusvariable640balanced1–5.
+Both fresh writers finished160updates/eightpasses;all320orderedupdates and six full64/80/160states independently pass.
+Actual native checks,finite FP32masters/moments,BF16casts,cursors and source/data pins verified;training loss is not utility.
+Both terminal models and latest variable160fulloptimizer state protected with readback;all originals remain on NVMe.
+Report:validation/variable_depth_writer_v11_terminal_training_20261019.json;no held-out outcomes yet.
+Frozen evaluation source11512db passes1,617CPUchecks;actual old reader/fullCoT producer identities independently verified.
+Preparing native references and whole-panel jobs for composition512,newdepth2/depth6 each256;no target-aware repair.
+Budget128writer+32reader versus160single;frozen reader320,fullCoT640seed1806 and unchangedB0;all failures retained.
+Control:local/diagnostics/variable-depth-writer-v11-v1;preparation log:local/analysis/variable-depth-v11-evaluation-preparations-20261019.log.
+Declared canonical/natural>=70%;reader>=40% and>=10pp over fixed with positive paired interval;depth6 separate stress.
+Decision:no reader retraining or extension;terminal160primary;split remains bounded diagnostic.
 
 ## Closed: two-seed matched partial-computation study
 Question: does a separate writer–reader earn its cost over competitive single-model solvers?

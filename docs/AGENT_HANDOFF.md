@@ -6,42 +6,35 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 02:51UTC:MAINLINE is single-model real-document raw/prior/post CPT,
-source3d8666b at local/worktrees/real-trace-cpt-v10,1622CPUchecks. Prospective plan
-validation/real_trace_cpt_v10_design_20261019.json;two seeds,320updates,novel256and
-ordinary256panels frozen before learning. Fullpacking15360views passes,max627;
-shape640/world8micro4. Qualifier active on physical12/13 logical48–55,
-local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2 (tmux real-trace-v10-qual).
-Fresh6/close/fullrestore6/update8;05:00deadline. Independent8rank auditor prepared,
-not started;review adaptation and source/data/disk checks before use. No science release.
+October19 03:27UTC: mainline single-model real-document raw/prior/post remains
+source3d8666b immutable,1,622CPUchecks. Actualwidth640world8 qualification still
+running on physical12/13 logical48–55;cold compile progressing;05:00parentdeadline.
+Control local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2.
+Independent8rank auditor prepared with TRAINbyte/source pins;no scientific320run yet.
+V2PRIMARYnovel256corrects10ASTaliases missed byV1surfacecheck,zeroTRAINorderedASToverlap.
+TRAIN/oldDEV/V1preserved. Amendment and completeB0CPUreference public in validation.
+B0meanfull16LL novel−16.4662,ordinary−19.9007;noaugmentationresult. Explicit246reuse,
+10new and256ordinaryreuse,calibrationexact;allsmallpayloads/nativevectors EBSverified.
+Evaluationc01deab has1,640CPUchecks. NewscienceMUSTpinheldV2,notV1.
 
-Bounded mathdiagnostic continues in parallel. Source5af3431,FRESH fixed640 and
-variable640(one–fivesteps),each160updates on physical8. Width192qual independently
-PASSES all8updates/native8/full4states/actualsaved6restore;late PSSgrowth.470GiB/save.
-Fullqualification8 EBS protected. Two pilots now active via pilot.py under
-local/diagnostics/variable-depth-writer-v11-v1,tmux variable-depth-v11-pilot.
-Fixed reached64at02:50. Both terminal160primary;never extend after outcomes.
-After bothclose,independently audit64/80/160 and protect latest variable full160
-FIRST before fixed model backup. Rotation of older EBS optimizer DUPLICATES is
-authorized only after fresh both-side hashes/newer protected recovery. All original
-NVMe states/models/metadata stay. Oldv8EBSrank duplicates retired19.23GiB under
-public engineering-retention receipt;rootfree~60GiB. Coordinate realqual backup.
+Both bounded math writers COMPLETE160;independent audit of320updates/sixfullstates
+passes;bothmodels/latestvariable160full EBS protected. Training5af3431immutable.
+Evaluation11512db has1,617CPUchecks;oldfrozenproducerbinding reproduced exactly.
+Preparing3panelnative+note/control jobs via
+local/analysis/prepare_variable_depth_evaluation_v11_20261019.py;log in NEXT_STEPS.
+Nextprepare/launch4corewholepanel jobs fromthepreparedprotocols;128writer+32reader
+versus160single. No reader retraining/extension. All gold helduntilshardsphysicallyclose.
+Mathdiagnostic does not delay mainline. See NEXT_STEPS exactremainingactions.
 
-Evaluation source dd95d6c at local/worktrees/variable-depth-eval-v11 plus uncommitted
-unique-curriculum model-label fix;finalchecks log in NEXT_STEPS. It adds256panels,
-128writer+32reader versus160single,uses original frozen validator for oldmodels.
-ActualoldRbinding reproduced through immutable57source,stored in mathcontrol.
-Newv11pilotbindings should include producer_source_root=immutable EVALworktree
-(which has identical training closure plus newterminal validator). Frozen reader
-andfullCoT seed1806,untouchedB0 remain. No reader retraining or newbest checkpoint.
-
-MuSiQueTRAINcandidate is CPUonly,source raw19938rowstraining/train_patch. NoDEV/TEST.
-Initial projection wrongly used raw question_text(template);caught before modelrun.
-Correct composed_question_text is natural language;code/test corrected, V1inventory
-preserved, V2inventory and fullCPUchecks running. Source at document-evidence-v12
-uncommitted. No cohort/modelrelease. Mainroot userlastmessage reiterates the
-single-model mainline,with bounded split repair as diagnostic. Keep<=60supdates,
-short analysis and concrete tools;avoid speculative monologues while runs await.
+NEW local/nvme-cpt ext4 UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67 initialized safely,
+fsync/readback passed;already mounted,NEVERformatagain. Use for6realrunoutputs.
+Latestvariable160fullscienceEBSprotected;freshboth-sidehashcheck running before
+retiringoldCoT1807full640EBSoptimizerduplicates,alloriginals/modelspreserved.
+Realqual8backupneeds~22GiB plus35GiBfloor;coordinate archives. No external backup claim.
+MuSiQueTRAINV2projection/inventory complete:composed_question_text actualquestion,
+19,938rows,306fullinputs<=1536/4149<=2048,1,618CPUchecks;no model/cohortrelease.
+Initialwrongtemplateinventorypreserved;archivecorrectedV2andcommit CPUsource.
+Keep<=60secondmeaningfulupdates,shortanalysis/concretetools,no busy polling.
 
 Main report:validation/partial_state_v7_matched5120_complete_20261018.json.
 Posthoc:validation/partial_state_v7_matched5120_descriptive_20261019.json.

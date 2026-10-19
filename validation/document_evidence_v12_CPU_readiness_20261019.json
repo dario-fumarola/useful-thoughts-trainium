@@ -1,0 +1,48 @@
+{
+  "status": "CPU_DATA_PREPARATION_ONLY_NO_COHORT_MODEL_OR_EVALUATION_RELEASE",
+  "utc": "2026-10-19T02:47:28.290471+00:00",
+  "rows": 19938,
+  "inventory_script_sha256": "93867db35b8ae0efdac016b19997b2d81ae750c3590f15e21ce0342d5b6cf106",
+  "projection_source_sha256": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+  "available_within_native_context_budgets": {
+    "1536": 306,
+    "2048": 4149,
+    "3072": 17299,
+    "4096": 19773
+  },
+  "gold_hops": {
+    "2": 14376,
+    "3": 4387,
+    "4": 1175
+  },
+  "input_token_quantiles": {
+    "0": 1025,
+    "0.25": 2110,
+    "0.5": 2435,
+    "0.75": 2807,
+    "0.95": 3426,
+    "1": 7247
+  },
+  "projection_fields": [
+    "id",
+    "composed_question_text",
+    "contexts[].wikipedia_title",
+    "contexts[].paragraph_text"
+  ],
+  "no_context_truncation": true,
+  "no_gold_based_input_selection": true,
+  "TEST_requested": false,
+  "DEV_requested": false,
+  "correction": "Rawquestion_textisacompositionprogram;usecomposed_question_text. WrongV1inventorypreservedandneverusedformodelruns.",
+  "source": "Authors MuSiQue answerable TRAIN raw file,19938rows including694authortrain_patch;noDEV/TESTdownloaded.",
+  "EBS_archive_receipt_sha256": "84eccf8540a76080732ccf91275c8363e8190e133e088d346ca278e447507059",
+  "CPU_checks": {
+    "passed": 1618,
+    "seconds": 195.93
+  },
+  "limits": [
+    "All provided paragraphs preserved;no gold-based passage selection for model inputs.",
+    "Gold-selected support is an offline oracle,not deployed prefix-only extraction.",
+    "Public TRAIN may have pretraining exposure. Data readiness does not establish note utility."
+  ]
+}

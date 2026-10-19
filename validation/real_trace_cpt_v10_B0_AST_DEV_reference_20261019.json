@@ -1,0 +1,145 @@
+{
+  "status": "COMPLETE_UNCHANGED_B0_CPU_AST_NOVEL_REFERENCE_WITH_EXPLICIT_REUSE",
+  "utc": "2026-10-19T03:18:57.745329+00:00",
+  "results": {
+    "DEV_novel_expression256": {
+      "documents": 256,
+      "mean_span16_logprob": -16.46620363080089,
+      "mean_token_NLL": 1.0291377269250557,
+      "absolute_gain_headroom_nats": 16.46620363080089,
+      "absolute_logprob_mean_ci95": [
+        -18.068624739143154,
+        -14.897434954577568
+      ]
+    },
+    "DEV_ordinary256": {
+      "documents": 256,
+      "mean_span16_logprob": -19.900745546550507,
+      "mean_token_NLL": 1.2437965966594067,
+      "absolute_gain_headroom_nats": 19.900745546550507,
+      "absolute_logprob_mean_ci95": [
+        -21.85598442820768,
+        -18.018530629314288
+      ]
+    }
+  },
+  "model_signature": {
+    "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb",
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s."
+  },
+  "assets": {
+    "directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "files": {
+      "config.json": {
+        "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+        "bytes": 727
+      },
+      "generation_config.json": {
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "bytes": 138
+      },
+      "merges.txt": {
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "bytes": 1671853
+      },
+      "model.safetensors": {
+        "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "bytes": 3441185608
+      },
+      "tokenizer.json": {
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "bytes": 7031645
+      },
+      "tokenizer_config.json": {
+        "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+        "bytes": 9678
+      },
+      "vocab.json": {
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "bytes": 2776833
+      }
+    },
+    "sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38",
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1"
+  },
+  "actual_new_documents": 10,
+  "reused_AST_panel_documents": 246,
+  "reused_ordinary_panel_documents": 256,
+  "calibration_documents_not_added_to_denominators": 2,
+  "calibration_max_abs_logp_errors": [
+    0.0,
+    0.0
+  ],
+  "per_panel_documents": 256,
+  "original_reference_summary_sha256": "261016cbace2cec83b5bceb7ee318937c54a06e9df7b78f53294b859f10db2a6",
+  "original_AST_panel_source_file_sha256": "5627fa91d9c1cc1f0d2db3cd4946895cace446b935d457e709ab24ea579057f5",
+  "held_v2_manifest_sha256": "22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24",
+  "curation_correction_sha256": "a3aac1011464bf3583bb7209b17d467b43011b17cce14dfc8a682b57b3a84122",
+  "script_sha256": "48cee4abc6fe199ab95cae753dff65b7cee0ec8c6dd256c05d01f226c56056a1",
+  "limits": [
+    "One unchanged CPUFP32reference;not a new independent sample for reused documents.",
+    "All512distinct panel documents retained,no thought/training result.",
+    "AST novelty relative to the fine-tuningTRAINset,not guaranteed pretraining novelty.",
+    "CPUtiming is not Trainium inference latency."
+  ],
+  "EBS_archive_receipt_sha256": "5b9bf153e65b1b62b2a975c30f2f99fae242e4b63d61a07e9062c94085b48ac9",
+  "payloads": {
+    "v2/DEV_novel_expression256-raw-logps.jsonl": {
+      "bytes": 167773,
+      "sha256": "0fc5927e0335d2d1704240cecf43bb11b6f50a1b896cd673855cd6d8c9ef8105"
+    },
+    "v2/summary.json": {
+      "bytes": 3532,
+      "sha256": "30bd46321caaa5afade694503d98b1a369e29a51682578456bb4fafd2bd95f99"
+    },
+    "v2/DEV_ordinary256-raw-logps.jsonl": {
+      "bytes": 153864,
+      "sha256": "6394ae1e4224f481a20c94eda56be3f6fa04c9be6bc78b1cc41a3d0eab7cbbd1"
+    },
+    "v1/native-2.pt": {
+      "bytes": 609328,
+      "sha256": "199298ffc94cfe92da22fe69e45c0a5abb0298d2d1af9cbdfc229d85c5501b65"
+    },
+    "v1/native-1.pt": {
+      "bytes": 609328,
+      "sha256": "4b41bf0f2238032e062f616dd4025c366de6ce6892e10f7456aebe83d9bf77e9"
+    },
+    "v1/DEV_novel_expression256-raw-logps.jsonl": {
+      "bytes": 155476,
+      "sha256": "5627fa91d9c1cc1f0d2db3cd4946895cace446b935d457e709ab24ea579057f5"
+    },
+    "v1/summary.json": {
+      "bytes": 4039,
+      "sha256": "261016cbace2cec83b5bceb7ee318937c54a06e9df7b78f53294b859f10db2a6"
+    },
+    "v1/native-0.pt": {
+      "bytes": 609328,
+      "sha256": "ab816d6678db62e78cedc6716b44062a7f98364539c14fc056d679ae6868ee1e"
+    },
+    "v1/DEV_ordinary256-raw-logps.jsonl": {
+      "bytes": 153864,
+      "sha256": "6394ae1e4224f481a20c94eda56be3f6fa04c9be6bc78b1cc41a3d0eab7cbbd1"
+    },
+    "v1/native-3.pt": {
+      "bytes": 609328,
+      "sha256": "bdcab976e23f0b0172803d8c2736dda624eac79b190cb0330565471d0462af4a"
+    }
+  },
+  "public_complete_per_document_logps": {
+    "DEV_novel_expression256-raw-logps.jsonl.gz": {
+      "bytes": 59813,
+      "sha256": "0a06cfc75aeb4260a23baad86f3e75a543fae9f414815156002f1a35747497ac",
+      "documents": 256,
+      "source_sha256": "0fc5927e0335d2d1704240cecf43bb11b6f50a1b896cd673855cd6d8c9ef8105"
+    },
+    "DEV_ordinary256-raw-logps.jsonl.gz": {
+      "bytes": 57332,
+      "sha256": "ffa5db8d15d5069cc571f065bcde1b5212a1bbf361f8b7d63ec4250ba110ec1e",
+      "documents": 256,
+      "source_sha256": "6394ae1e4224f481a20c94eda56be3f6fa04c9be6bc78b1cc41a3d0eab7cbbd1"
+    }
+  }
+}

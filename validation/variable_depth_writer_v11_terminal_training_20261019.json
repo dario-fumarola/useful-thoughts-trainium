@@ -1,0 +1,322 @@
+{
+  "status": "PASS_BOTH_DECLARED_TERMINALS_PENDING_PROTECTED_LATEST_AND_EVALUATION",
+  "utc": "2026-10-19T03:08:26.215081+00:00",
+  "models": {
+    "fixed": {
+      "status": "PASS_ACTUAL_TERMINAL160_ALL_STATES_NATIVE_MASTERS_AND_CURSORS",
+      "out": "/home/ubuntu/dario/local/nvme-study/runs/variable-depth-writer-v11-fixed-TRAIN640-seed2026101911-v1",
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-writer-v11-v1/pilot-fixed",
+      "protocol_sha256": "de92da9e3fd55e2973353b06b3e732817a38e69f12beb9d8a8aeaa6a86a2c96d",
+      "closure_sha256": "1fbdd1bc4ccd808941bbefa4267705e68734434250ad14fd99af9ce78415aa0d",
+      "actual_updates": 160,
+      "document_occurrences": 5120,
+      "supervised_tokens": 127408,
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.003038018943671619,
+          "device_to_reference_kl_nats": 0.0031035199827923296,
+          "max_bidirectional_kl_nats": 0.0031035199827923296,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202933,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0030697297315727835,
+          "device_to_reference_kl_nats": 0.003041836099938893,
+          "max_bidirectional_kl_nats": 0.0030697297315727835,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.110202660403744e-05,
+          "device_to_reference_kl_nats": 2.157230339493209e-05,
+          "max_bidirectional_kl_nats": 2.157230339493209e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593922,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0003244116031699334,
+          "device_to_reference_kl_nats": 0.000325946147481554,
+          "max_bidirectional_kl_nats": 0.000325946147481554,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "checkpoints": {
+        "64": {
+          "COMPLETE_sha256": "83e4eea3e00f4e73d5d9d62df2717baeb1e4142d3c3f75b197fa3351dc2c22c1",
+          "full_files": {
+            "model.pt": {
+              "bytes": 3441248275,
+              "sha256": "cee74342dfa1ae1437ba4e25110e1fda12849a276eac05325406fe5d8f3b0072"
+            },
+            "rank-00000.pt": {
+              "bytes": 5162143399,
+              "sha256": "6082142f712bdad3869f873d6b5e6f63b7d34ee2a575722c3771fefe4f9050ff"
+            },
+            "rank-00001.pt": {
+              "bytes": 5162143399,
+              "sha256": "5c19e011b9a05d7609d6e8c4baa29c9920127a85a68e1febbac27684b39aa2fe"
+            },
+            "rank-00002.pt": {
+              "bytes": 5162143399,
+              "sha256": "98d47a928fed48e5970a86476f0dc0ffaaa6f29a7229bb76440cff9df2f0c764"
+            },
+            "rank-00003.pt": {
+              "bytes": 5162143463,
+              "sha256": "2cac5c050d69fdfb504c49eaa41f599b99fbfd7f816687199c08f36a54010a90"
+            }
+          },
+          "all_actual_model_master_moment_shapes_finite_steps_and_cast_bytes": true
+        },
+        "80": {
+          "COMPLETE_sha256": "7b6a69bb717cf88c6a62c4fe348bcda66b167a49ee57b147465e4070898f10e5",
+          "full_files": {
+            "model.pt": {
+              "bytes": 3441248275,
+              "sha256": "2f6594b130dce273f22830055a71b0888614e033fcfe2d7a429cec9a0e84eba3"
+            },
+            "rank-00000.pt": {
+              "bytes": 5162143399,
+              "sha256": "3aae6beaaedc65a397b71f8f2313d21ab1e07ca94b2b1de51a7f51b141d57494"
+            },
+            "rank-00001.pt": {
+              "bytes": 5162143399,
+              "sha256": "e315d75a4f0ac1bcf8e0bb2a1cf741c1e418a68554c8783d8e5fc58f1eb6965e"
+            },
+            "rank-00002.pt": {
+              "bytes": 5162143399,
+              "sha256": "e1194b6591594050e65088961f364032e56738644ca674a384e9d066245497ce"
+            },
+            "rank-00003.pt": {
+              "bytes": 5162143463,
+              "sha256": "ff7ac2db00173e32f1355254c5e85d509b3dd1de75678e01b281208ce8677621"
+            }
+          },
+          "all_actual_model_master_moment_shapes_finite_steps_and_cast_bytes": true
+        },
+        "160": {
+          "COMPLETE_sha256": "28c5b75de1de7e0183d0a2423058ea3f011fcdb614eb180652fc1ee73891375c",
+          "full_files": {
+            "model.pt": {
+              "bytes": 3441248275,
+              "sha256": "7de4a728eb134af28bea1b08da8985156381075409ccce7f64a6dda83b66a9bc"
+            },
+            "rank-00000.pt": {
+              "bytes": 5162143399,
+              "sha256": "8dad2525ae1eadb9c374689c1c9b9840823fe451b8f22127a3e6505bb74c6de9"
+            },
+            "rank-00001.pt": {
+              "bytes": 5162143399,
+              "sha256": "0f772bcc78c63883bab126d63327d98344441d145888ef67972ffded98d4b9c1"
+            },
+            "rank-00002.pt": {
+              "bytes": 5162143399,
+              "sha256": "1857511cee02879c3bd9a7ad39f7b18661dbe73469dca73e4cd911677648a317"
+            },
+            "rank-00003.pt": {
+              "bytes": 5162143463,
+              "sha256": "af17600dafbcad2b311a58c2217c7e36652e718309e3e61b037fb041911516a0"
+            }
+          },
+          "all_actual_model_master_moment_shapes_finite_steps_and_cast_bytes": true
+        }
+      },
+      "grouped_post_save_PSS_bytes": {
+        "64": 28755329024,
+        "80": 29027909632,
+        "160": 29017647104
+      }
+    },
+    "variable": {
+      "status": "PASS_ACTUAL_TERMINAL160_ALL_STATES_NATIVE_MASTERS_AND_CURSORS",
+      "out": "/home/ubuntu/dario/local/nvme-study/runs/variable-depth-writer-v11-variable-TRAIN640-seed2026101911-v1",
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-writer-v11-v1/pilot-variable",
+      "protocol_sha256": "5ce713550ae3c0023d763fc5ed151da059ce3cfdd760e77fadfdec648d51e3ac",
+      "closure_sha256": "45f0e134bdfdab06276422bf1648a732cb01f633cf0df62e435b401de66f960a",
+      "actual_updates": 160,
+      "document_occurrences": 5120,
+      "supervised_tokens": 201128,
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.003038018943671619,
+          "device_to_reference_kl_nats": 0.0031035199827923296,
+          "max_bidirectional_kl_nats": 0.0031035199827923296,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202933,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0030697297315727835,
+          "device_to_reference_kl_nats": 0.003041836099938893,
+          "max_bidirectional_kl_nats": 0.0030697297315727835,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.110202660403744e-05,
+          "device_to_reference_kl_nats": 2.157230339493209e-05,
+          "max_bidirectional_kl_nats": 2.157230339493209e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593922,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0003244116031699334,
+          "device_to_reference_kl_nats": 0.000325946147481554,
+          "max_bidirectional_kl_nats": 0.000325946147481554,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "checkpoints": {
+        "64": {
+          "COMPLETE_sha256": "d729a209ff7dca3833dfa085a914a611dcba6bd53611fd1cc86c97596175f225",
+          "full_files": {
+            "model.pt": {
+              "bytes": 3441248275,
+              "sha256": "8d38635e1dfddd3e2a33b0f54cf37ebd82452b7d3ba11bd2b2bd83e22a88afca"
+            },
+            "rank-00000.pt": {
+              "bytes": 5162143399,
+              "sha256": "4ad0be0c30562b82282db4e0fb1f44f121d69d1c32c6de1fe9d91c78bb3ee5df"
+            },
+            "rank-00001.pt": {
+              "bytes": 5162143399,
+              "sha256": "ca4774ebf7899939aa708e2234ad2ce8d851433feb269c9b9336e403b2190c18"
+            },
+            "rank-00002.pt": {
+              "bytes": 5162143399,
+              "sha256": "0874f4905a91ccf24451bc0d9dd601d78a19b34ecc5ab0c1cc01d0563d2919a4"
+            },
+            "rank-00003.pt": {
+              "bytes": 5162143463,
+              "sha256": "d3eb8c4c0abac8035f364658c89a056546e3cb43d5a46150856282465b0d4532"
+            }
+          },
+          "all_actual_model_master_moment_shapes_finite_steps_and_cast_bytes": true
+        },
+        "80": {
+          "COMPLETE_sha256": "1ea26b449f86ee2759b72f654a8b00676eefd007f191b3bb6b6b40200940b19a",
+          "full_files": {
+            "model.pt": {
+              "bytes": 3441248275,
+              "sha256": "5370a603e97d5f55d726f6a3dd7bd116f5e0d50c7076787410a0fb35a30f5ae6"
+            },
+            "rank-00000.pt": {
+              "bytes": 5162143399,
+              "sha256": "7477f4fa5455c64bdd82f9bf721b5823225f7eeb4f87f7ea5d89f8d45418dcb9"
+            },
+            "rank-00001.pt": {
+              "bytes": 5162143399,
+              "sha256": "2507c99196b2dbeb2217a737484967df06298a15b5d39428b3243939ef7b8ba1"
+            },
+            "rank-00002.pt": {
+              "bytes": 5162143399,
+              "sha256": "3e495c05817f4b91af5b494c5fb5ca497021f078ce42537e9db7ce8ea169d74b"
+            },
+            "rank-00003.pt": {
+              "bytes": 5162143463,
+              "sha256": "ebfa7d9aa84ec2874d9c5c3f333d75e83e90901add580955dac1684e3796c0c4"
+            }
+          },
+          "all_actual_model_master_moment_shapes_finite_steps_and_cast_bytes": true
+        },
+        "160": {
+          "COMPLETE_sha256": "818b21c2b805fc356f090de752d4070ca05cce7e99504405d80eb2dc5c48053c",
+          "full_files": {
+            "model.pt": {
+              "bytes": 3441248275,
+              "sha256": "19ff7ea2df1f036ed55f3052579c36031aeaa6fd82ba51964e29f8a5541f0bce"
+            },
+            "rank-00000.pt": {
+              "bytes": 5162143399,
+              "sha256": "19002009b62c5966f95e1e906eb9f3f1276da35af91826a80579b073af4c0e91"
+            },
+            "rank-00001.pt": {
+              "bytes": 5162143399,
+              "sha256": "21d6e38b0655d9264a7d155eacc5c5c1c08cb514ecd6e65f2e930a246278daa9"
+            },
+            "rank-00002.pt": {
+              "bytes": 5162143399,
+              "sha256": "8ded7797d97219efd2613c497a03f81e2252ed40f9319298bf32c7d214d9951f"
+            },
+            "rank-00003.pt": {
+              "bytes": 5162143463,
+              "sha256": "32b50b8b722645db5d3474d71b95e7421d88ad459980cd132b7d14e4b77011fa"
+            }
+          },
+          "all_actual_model_master_moment_shapes_finite_steps_and_cast_bytes": true
+        }
+      },
+      "grouped_post_save_PSS_bytes": {
+        "64": 28819807232,
+        "80": 29087833088,
+        "160": 29161023488
+      }
+    }
+  },
+  "source_files": {
+    "train/partial_state_driver.py": "b06e6e42ccd81eaa663bb18dc9ff0b735deb47603c37b6ac278523bbc8375302",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2"
+  },
+  "audit_source_sha256": "136a097f278fb841d6160d26e7e2bfb16361236881cbdcb10f73614e0bfc3a5d",
+  "limits": [
+    "Training-state evidence only;no development result,model selectionor architecture gain.",
+    "One bounded seed,curriculum changes depth/structure coverage,not a pureEOSablation.",
+    "Every original full checkpoint retained on localSSD;latest variable full160 and both terminal models must be readback protected before evaluation release."
+  ],
+  "protection": {
+    "status": "PASS_BOTH_PILOT_TERMINALS_AND_PROTECTED_LATEST_READY_FOR_EVALUATION_PREPARATION",
+    "utc": "2026-10-19T03:14:16.986816+00:00",
+    "training_audit_sha256": "17188b72cb0f6d3e9072308650286a78dc53bcea574fd291373fae698a65cbd9",
+    "archive": "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1",
+    "EBS_archive_receipt_sha256": "48f5ee7ce2f9c5ac22ff5b29497dd2a0d84dd9a18d44efdd81e52433a6743352",
+    "latest_scientific_full": "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160",
+    "both_terminal_models": true,
+    "all_original_full_states_retained": true,
+    "root_free_bytes": 56726515712,
+    "limits": [
+      "No development result or model selection.",
+      "EBS is same-instance storage.",
+      "Qualification optimizer duplicates replaced after full fresh readbacks;models/metadata/originals retained."
+    ]
+  }
+}

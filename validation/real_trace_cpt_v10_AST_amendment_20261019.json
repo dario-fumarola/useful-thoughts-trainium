@@ -1,0 +1,62 @@
+{
+  "schema": "real-trace-cpt-v10-prelearning-AST-amendment-v2",
+  "status": "FROZEN_BEFORE_MAINLINE_LEARNING",
+  "utc": "2026-10-19T03:14:44.435949+00:00",
+  "original_prospective_design": "real_trace_cpt_v10_design_20261019.json",
+  "reason": "Surface-string novelty missed10TRAIN-equivalent ordered arithmetic ASTs in the256itemV1panel.",
+  "held_data": {
+    "schema": "real-trace-cpt-v10-held-panels-v2",
+    "status": "FROZEN_PRELEARNING_ORDERED_AST_NOVEL_AND_ORDINARY_DEV",
+    "utc": "2026-10-19T03:14:44.435949+00:00",
+    "files": {
+      "DEV_ordinary256.jsonl": {
+        "bytes": 726627,
+        "sha256": "59e0307d842ed93815c1bc4e4cc48d0c42b0aa4e06cdfa8106dd73b2841b2b75"
+      },
+      "correction.json": {
+        "bytes": 24245,
+        "sha256": "a3aac1011464bf3583bb7209b17d467b43011b17cce14dfc8a682b57b3a84122"
+      },
+      "DEV_novel_expression256.jsonl": {
+        "bytes": 1205779,
+        "sha256": "41d4aa6e6d217cdd57296953c669a95005ae1eb17b29ba5dc8565627b0c78fba"
+      }
+    },
+    "novel_items": 256,
+    "ordinary_items": 256,
+    "TRAIN_novel_AST_overlap": 0,
+    "TRAIN_DEV_document_overlap": 0,
+    "between_DEV_panel_document_overlap": 0,
+    "expression_identity": "Ordered operator AST with exact rational constants;ignore formatting,Unicode operator aliases and redundant parentheses. Not algebraic equivalence or equal-answer exclusion.",
+    "expression_identity_source_sha256": "4e1d61b61727bd902f7e08d2869435404b619822c5f23a1636fe8bdc26cba6f4",
+    "curation_source_sha256": "38bb5087799fb9ee00cc4815d82d234b567051625f1330baddf704b318722b08",
+    "TRAIN_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "source_accepted_sha256": "42760224bae4515b5d790e91c96bfc0d561501aa4509d37d91601cc972504d15",
+    "TEST_raw_lines_decoded": 0,
+    "source_files": {
+      "/home/ubuntu/dario/local/worktrees/real-trace-eval-v10/train/expression_identity.py": "4e1d61b61727bd902f7e08d2869435404b619822c5f23a1636fe8bdc26cba6f4"
+    },
+    "limits": [
+      "Both panels remain development,not officialTEST.",
+      "Prior surface-novelV1andallB0reference observations remain with their original identities.",
+      "No320update learning launched before this correction."
+    ]
+  },
+  "reused_identical_items": 246,
+  "new_items": 10,
+  "eligible_AST_novel_items": 265,
+  "preserved": "OriginalTRAIN,allpreviousDEVcohorts,V1andallB0observationsremainunchanged.",
+  "selection": "Prospective deterministic data exclusion before any320update scientific model;not selected on trained outcomes.",
+  "unchanged": "Arms,seeds,training source,shapes,320updates,andbothindependentdeclaredbenefitgatesremainunchanged.",
+  "EBS_data_archive": "local/backups/data/real-trace-cpt-v10-held-panels-v2",
+  "evaluation_source_commit": "c01deab",
+  "CPU_checks": {
+    "passed": 1640,
+    "seconds": 60.63
+  },
+  "limits": [
+    "Both panels remain development,not officialTEST.",
+    "Prior surface-novelV1andallB0reference observations remain with their original identities.",
+    "No320update learning launched before this correction."
+  ]
+}

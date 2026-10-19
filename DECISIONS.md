@@ -1232,3 +1232,14 @@ training/inference gates remain independent and no320update science is released.
 Source data has2–6operations,not a constant trace depth. MuSiQueCPUcandidate
 initially projected the wrong raw field;pre-model inspection caught templates.
 Use composed_question_text,reject placeholders,and preserve superseded V1inventory.
+
+2026-10-19: Before mainline320update learning, ordered exact-value AST matching found
+10TRAINaliases missed by V1surface-string novelty. Freeze V2from265eligible AST-novel
+rows,retain256,zeroTRAINAST/document overlap. TRAIN,all previous panels and raw B0
+observations remain. Reuse246identical AST-panel and256ordinary B0 observations,
+execute10new and2calibration items (calibration excluded fromn). Both original gates
+unchanged. Publish complete per-document likelihoods and the correction amendment.
+Both bounded math writers completed160;all320updates/sixfullstates independently
+verified and terminal models/latestfull state protected. Evaluation V1failed its
+runtime-policy preflight before any accelerator worker;retain it and prepare V2
+with identical CPU-native vectors plus the actual intended runtime declaration.

@@ -6,6 +6,15 @@ and computation diagnostics run on AWS Trainium. Official TEST remains unused.
 The [current proof ladder](docs/RESEARCH_ROADMAP.md) separates reader use,
 prefix-only computation, actual student benefit, cost, and return to real text.
 
+The mainline now tests **single-model real-document training**, with raw, prior-calculation
+and post-document-calculation arms. Training benefit and extra-inference benefit have
+separate declared gates. The [pre-learning split correction](validation/real_trace_cpt_v10_AST_amendment_20261019.json)
+removes ten arithmetic AST aliases missed by string matching; the corrected 256-document
+panel and [unchanged-base reference](validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json)
+are frozen. Actual longer-context save/restart qualification is still in progress;
+no new trained capability result is available. A bounded variable-depth writer repair
+runs separately as a diagnostic. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
+
 ## Current result
 
 **Full-trace CoT is the stronger practical baseline.** In the completed two-seed

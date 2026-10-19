@@ -14,45 +14,32 @@
    Review its8rank adaptation,source/data hashes,and disk space before use.
    Actual PASS receipt must contain source_files and qualified_training_shape
    exactly matching the subsequent320update protocol;loader enforces this.
-2. In parallel,finish the bounded variable-depth diagnostic;do not postpone
-   mainline to rescue it. Source5af3431 remains frozen in its own worktree.
-   Actual width192 qualification independently PASSES,full8protected on EBS.
-   Two fresh writers are now running serially via
-   `local/diagnostics/variable-depth-writer-v11-v1/pilot.py` (tmux variable-depth-v11-pilot).
-   Fixed640(two steps) and variable640(balanced1–5),each160updates/eightpasses.
-   Frozen protocols/criteria are already public. Terminal160 primary,no extensions.
-   At02:50UTC fixed reached64;all original checkpoint paths stay on local SSD.
-   Finish BOTH and independently audit full64/80/160states,master casts/cursors,
-   then protect variable full160 FIRST and fixed terminal model as disk allows.
-   Public qualifier: `validation/variable_depth_writer_v11_training_qualification_20261019.json`.
-3. Depth-repair evaluation source is isolated at
-   `local/worktrees/variable-depth-eval-v11`,committed dd95d6c plus final unique
-   curriculum-label change awaiting checks/commit. CPU1617passed before label tweak.
-   Final check log:local/analysis/variable-depth-v11-evaluation-final-CPU-checks-20261019.log.
-   It supports new256panels,budget128writer+32reader versus160single,and explicit
-   delegation to the original frozen producer validator. Actual old reader binding
-   was independently reproduced (20.49s) in
-   local/diagnostics/variable-depth-writer-v11-v1/frozen-reader-producer-verified.json.
-   New pilot identities should pass producer_source_root=the immutable EVALtree,
-   which contains the exact training source closure plus the v11terminal validator.
-   Frozen v7 reader1806 terminal320,fullCoT1806 terminal640,and untouched B0 remain.
-   Prepare native references after terminal audit;all attempts/unsupported retained.
-4. Real held data: `local/nvme-study/data/real-trace-cpt-v10-held-panels-v1`.
-   New novel256 excludes allTRAINexpressions/documents;ordinary256 is a distinct
-   auditedDEVsource panel outside selected arithmetic anchors. Existing DEV256
-   with44seen expressions is preserved and reported separately. Both EBS verified.
-   Full15360packing readback passes,max627native tokens;TRAINtrace depths2–6,
-   native full-trace actions17–94. Inspect primary proof/labels before learning.
-   All320update jobs still need explicit finite release and enough disk capacity.
-5. Broader document reasoning is CPU preparation only. Author MuSiQue TRAIN raw
-   file is local+EBS,19938questions,including694author train_patch rows. NoDEV/TEST
-   requested. Source at local/worktrees/document-evidence-v12 remains uncommitted.
-   IMPORTANT correction: raw question_text is a composition template;the actual
-   natural-language question is composed_question_text. Initial length inventory
-   is retained as superseded V1;corrected V2 is running with source hashes.
-   A poison-input test and template rejection guard are added;final CPUchecks
-   local/analysis/document-evidence-v12r2-CPU-checks-20261019.log.
-   No cohort/model/evaluation release yet. Do not turn data readiness into utility.
+2. Both bounded math writers have finished160updates and independent full audit.
+   Fixed640two steps versusvariable640balanced1–5;training5af3431 remains immutable.
+   Report:validation/variable_depth_writer_v11_terminal_training_20261019.json.
+   Latestvariable160full and both terminal models EBS protected,all original states intact.
+   Evaluation source11512db at local/worktrees/variable-depth-eval-v11;1,617CPUchecks.
+   Actual frozen bindings in local/diagnostics/variable-depth-writer-v11-v1.
+   Preparation running:local/analysis/prepare_variable_depth_evaluation_v11_20261019.py;
+   log:local/analysis/variable-depth-v11-evaluation-preparations-20261019.log.
+   Finish prepared3panels per writer and frozenreader/B0/fullCoT,then launch on free
+   four-core partitions. Existing reusable supervisor adapted for256/512counts:
+   local/analysis/supervise_variable_depth_evaluation_v11_20261019.py.
+   Use whole-panel jobs and preserve every unsupported/cap/error. No reader retraining.
+3. Real held PRIMARY data is now local/nvme-study/data/real-trace-cpt-v10-held-panels-v2.
+   V1string check missed10TRAIN-equivalent orderedASTs; correction frozen before science.
+   V2novel256zeroTRAINASToverlap;ordinary256unchanged;TRAINandpreviouscohorts unchanged.
+   Public amendment:validation/real_trace_cpt_v10_AST_amendment_20261019.json.
+   All main science protocols MUST pinV2manifest22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24.
+   B0CPUreference COMPLETE with explicit246rowreuse/10new,ordinary256reusedidentically.
+   All outputs/nativechecks EBS readback;validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json.
+   Evaluationc01deab:1,640CPUchecks. Mainline gates remainunchanged and have ample16tokenheadroom.
+   Real320jobs need actual hardware PASS and finite release;outputs on local/nvme-cpt/runs.
+4. Broader document reasoning remains CPU preparation only. Correct MuSiQue projection
+   uses composed_question_text;initialtemplate-question inventory retained as superseded.
+   CorrectV2inventory COMPLETE:19,938TRAINquestions;306fullinputs<=1536tokens,4149<=2048.
+   Source local/worktrees/document-evidence-v12,1,618CPUchecks;no cohort/model release.
+   Archive V2inventory and publish corrected readiness;do not launch third large program.
 
 Completed v7 study is public:a0ae5ec,all51200answers/4096notes,fullCoT wins all8cells.
 Original source57d3220 remains immutable. Two-line stopping motivates a curriculum
@@ -60,17 +47,15 @@ intervention,not a proven EOS-only cause or a rejection of every thought objecti
 Review ZIP saved and linked to owner:local/review/useful-thoughts-20261019-a0ae5ec.zip.
 No R1234 resume,broad RL,unqualified8B,or officialTEST. Papers in docs/REFERENCE_NOTES.md.
 
-Storage:all original full checkpoints stay on NVMe. EBS all terminal models plus
-latest full resumable state;older inactive EBS optimizer duplicates can retire
-only after fresh both-side hashes and protection of newer recovery. Mathqual8
-now EBS protected;oldv8engineering14EBSrank duplicates were retired (19.23GiB)
-after full both-side and latest8 verification. Model14/metadata/ALLoriginal
-full states remain. Receipt:validation/checkpoint_retention_engineering_20261019.json.
-Root free about60GiB. Real qualifier full8needs~22GiB backup;coordinate archives.
-For pilot science,protect latest variable160full FIRST,then rotate superseded
-mathqual8EBSoptimizer copies only after fresh readbacks,before fixed model copy.
-Latest older scientific full640 remains protected until a newer scientific full
-is actually verified. Keep35GiB per-disk and512GiB host floors.
-Six real320runs will need more local output capacity;reverify an unused local SSD
-before initialization. NEVER reformat local/nvme-study or oldcheckpoint volumes.
-No cloud/IAM/network/paidteacher/bucket changes. Root owns work;agentsquota-unavailable.
+Storage: all original full checkpoints remain on NVMe;EBS all terminal models and
+latest full resumable scientific state (variable160). Older inactive EBS optimizer
+duplicates retire only after fresh original+EBS full hashes and newer full protection.
+The newer variable160full is protected;oldv7CoT1807full640EBSoptimizerduplicates retired after fresh full readbacks;
+latestvariable160full remains protected. Rootfree~72GiB,enough for realqual8archive.
+Receipt:validation/checkpoint_retention_latest_science_20261019.json. Preserve models/metadata.
+Keep35GiB per filesystem and512GiB host availability. EBS is same-instance backup.
+NEW local/nvme-cpt is ext4 UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67,already formatted
+and fsync/readback tested. NEVER rerun mkfs;remount UUID ifneeded. No fstab change.
+Receipt:local/analysis/CPT-local-store-initialization-20261019.json.
+Old local/nvme-study UUID63bee3f4-6b43-4290-a0f8-1c8946b7a509 remains intact.
+No cloud/IAM/network/paidteacher/bucket changes. Root owns work;agents quota-unavailable.
