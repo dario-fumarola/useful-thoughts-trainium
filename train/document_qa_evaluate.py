@@ -192,7 +192,7 @@ def prepare_replays(original,output):
     atomic_json(output/'protocol.json',updated);return updated
 
 
-def generate(output,shard,until):
+def generate(output,shard,until,*,schema=SCHEMA,expected_sources=None):
     import torch
     from train.document_qa_decoder import QADecoder
     from train.evaluate import GenerationFailure,asset_provenance
@@ -205,8 +205,10 @@ def generate(output,shard,until):
     def check():
         if datetime.now(timezone.utc)>=deadline:raise TimeoutError('Finite evaluation deadline;no retry')
     check()
-    if p['schema']!=SCHEMA or p['source_files']!=sources() or not 0<=shard<p['shards']:
+    if p['schema']!=schema or p['source_files']!=(sources() if expected_sources is None else expected_sources) or not 0<=shard<p['shards']:
         raise ValueError('Frozen generation source/shard required')
+    if type(p.get('max_actions')) is not int or p['max_actions'] not in (128,256):
+        raise ValueError('Prospectively fixed128/256-action bound required')
     for name,digest in p['files'].items():
         if sha256_file(output/name)!=digest:raise ValueError('Generation prompt or reference changed')
     if p['release_file'] is not None and sha256_file(p['release_file'])!=p['release_sha256']:
@@ -231,7 +233,7 @@ def generate(output,shard,until):
         del h,lp,x,actual
         decoder=QADecoder(backend.model,tok,sync=backend.sync,banned_ids=backend.banned_ids)
         first=rows(output/f'prompts-{p["modes"][0]}.jsonl')[shard]
-        audit,vectors=cache_prefill_check(backend,decoder,first['prompt_ids'],width=3584,cap=256)
+        audit,vectors=cache_prefill_check(backend,decoder,first['prompt_ids'],width=3584,cap=p['max_actions'])
         torch.save(vectors,d/'cache-prefill-logps.pt');atomic_json(d/'cache-prefill.json',audit)
         if audit['max_logp_error']>1e-3:raise RuntimeError('Long cached prefill differs from ordinary causal forward')
         with (d/'attempts.jsonl').open('x') as f:
@@ -241,7 +243,7 @@ def generate(output,shard,until):
                 for index in range(shard,p['items'],p['shards']):
                     check();q=prompts[index];before=time.monotonic()
                     value=dict(item_id=q['item_id'],mode=mode,parser_mode=q['parser_mode'],status='error',actions=[],content_ids=[],text='',raw_text='',stop_type='error',prompt_tokens=len(q['prompt_ids']))
-                    try:value.update(asdict(decoder.decode(q['prompt_ids'],mode=q['parser_mode'],max_new_tokens=256,prefill_width=3584)),status='ok')
+                    try:value.update(asdict(decoder.decode(q['prompt_ids'],mode=q['parser_mode'],max_new_tokens=p['max_actions'],prefill_width=3584)),status='ok')
                     except Exception as error:
                         if isinstance(error,GenerationFailure):value.update(asdict(error.partial))
                         value['error']=f'{type(error).__name__}: {error}'
