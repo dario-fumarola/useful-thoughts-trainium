@@ -16,30 +16,27 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. All5first-seed models independently pass full updates/states and are frozen.
-   Second reader320 also passes full audit/EBS backup and is frozen. Second writer
-   runs in tmux `dario-ps7-writer2`, timeout PID233263/start20113193,
-   physical3/logical12–15, deadline Oct19 06:30UTC; last197,full64/160.
-   Controls/output basename `partial-state-v7-writer-TRAIN5120-seed2026101807-v1`
-   under diagnostics and `local/nvme-study/runs`. After320closure: generic full
-   audit, freeze actual writer2 with checkpoint.identity, preserve binding onEBS.
-   Then release seed2 direct640,compact640,full640 sequentially, one training arm.
-   All controllers/protocols prepared; verify hashes and actual release. Fresh
-   short TMPDIRs are p7s2r/w/a/c/f; old ps7r2 belonged to prior recovery and stays intact.
-   Source remains immutable57d3220. No automatic training retry or outcome selection.
-   A/compactS1receipts copied320digest after verifying all5states: preserved originals
-   plus explicit640correction annexes pass strict identity. Every other640template fixed.
-   First-seed Wnotes and Aanswers complete/EBS readback; compact3/full-CoT1panels closed.
-   Reader/device9 and B0/device4 wait on active longer cache compilation; node memory safe.
-   Compact/device6 and full-CoT/device7 evaluations advance. No new outcome review.
-   After W2freeze execute `local/analysis/prepare_partial_state_v7_seed1807_evaluation_20261018.py`,
-   then `prepare_v7_second_seed_eval_controllers_20261018.py` with frozen57PYTHONPATH.
-   Launch W2/R2 evalcontrollers on physical10/11 (ports64801/64821,shortw7b/r7b).
-   Single-model evalprep utility accepts seed2026101807; use physical0/1/2,ports64901/64921/64941.
+3. All5first-seed training/evaluation jobs close and full evidence is EBS-readback
+   protected; no outcomes reviewed. Seed2R320/W320/A640 independently audited,
+   protected and frozen; their W/R/A evals are active (physical10/11/0).
+   Compact2 closes00:11UTC; full audit session62267/log
+   `local/analysis/partial-state-v7-cot2-terminal-audit-20261019.log` active.
+   When complete, freeze actual cot2 via checkpoint.identity, preserve binding,
+   run generic single-model evalprep seed2026101807 physical1/port64921/shortc7b,
+   then launch generated controller. This is the next manual task.
+   Final full-CoT2 active tmux `dario-ps7-fullcot2`,PID305789/start20340285,
+   physical3/logical12–15,deadline06:30UTC,last160/full64/160. Its closure -> full
+   audit/freeze/prep/eval physical2/port64941/shortf7b. Do not duplicate launch.
+   Finite queue owns remaining training:
+   `local/diagnostics/partial-state-v7-seed2-remaining-training-queue`;
+   parent deadline03:30UTC, no retries; STOP prevents another launch.
+   Source remains immutable57d3220. Every original full state remains intact.
+   A/compactS1receipts have explicit640correction annexes; other640templates fixed.
+   Main independent audit requires all11controllers closed before any outcomes.
    Registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
-   Public independent audit requires all11controllers closed (10primary+1shared B0)
-   before any gold/accuracy/state review. B0direct/cot/empty is one shared auxiliary,
-   not two seed replicas; primary training comparisons remain fixed.
+   Includes10primary jobs plus one shared unchanged-B0direct/cot/empty reference,
+   not two B0replicas. Planned51200answers/4096notes, all errors/caps retained.
+   Keep early closed-output EBS readback backups. No TEST/RL/8B launch.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -88,3 +85,11 @@ of latest full recovery; preserve all metadata/receipts. Current index:
 `validation/partial_state_v7_checkpoint_retention_20261018.json`. EBS is same-instance;
 keep35GiB floors. Do not change frozen checkpoint paths or live source.
 Root owns work; subagents unavailable due account usage limits.
+
+Completed-run memory inspection is read-only: within-update bins are flat,
+then later full-save boundaries retain about20GiB across four workers. See
+`validation/partial_state_v7_checkpoint_host_memory_observation_20261019.json`.
+Cause remains unresolved; separate inspection/transfer/serialization/allocator
+factors before a much longer loop. Current bounded640jobs stay below measured
+node limits. Candidate official XLA serialization needs actual byte/recovery/
+memory qualification; no fix has been applied to frozen science source.

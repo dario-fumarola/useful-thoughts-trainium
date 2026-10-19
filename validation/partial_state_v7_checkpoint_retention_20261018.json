@@ -49,9 +49,25 @@
       "retention_receipt": "local/backups/science/partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1/terminal640/OPTIMIZER_DUPLICATE_RETIRED.json",
       "retention_receipt_sha256": "c77f8d5e8a6c3bbaf9fd5bb1c3d76101607a7614d01b2e176f14da1f322a7f60",
       "retired_duplicate_bytes": 20648573596
+    },
+    {
+      "original_full_checkpoint": "/home/ubuntu/dario/local/nvme-study/runs/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/step-0000320",
+      "EBS_model": "/home/ubuntu/dario/local/backups/science/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/terminal320/output/step-0000320/model.pt",
+      "optimizer_source_complete": true,
+      "retention_receipt": "local/backups/science/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/terminal320/OPTIMIZER_DUPLICATE_RETIRED.json",
+      "retention_receipt_sha256": "2a9d23a8ed1af4f82d8c45a83b0fd907e52b608da48af81b9cb9b0db8101aa8a",
+      "retired_duplicate_bytes": 20648573596
+    },
+    {
+      "original_full_checkpoint": "/home/ubuntu/dario/local/nvme-study/runs/partial-state-v7-writer-TRAIN5120-seed2026101807-v1/step-0000320",
+      "EBS_model": "/home/ubuntu/dario/local/backups/science/partial-state-v7-writer-TRAIN5120-seed2026101807-v1/terminal320/output/step-0000320/model.pt",
+      "optimizer_source_complete": true,
+      "retention_receipt": "local/backups/science/partial-state-v7-writer-TRAIN5120-seed2026101807-v1/terminal320/OPTIMIZER_DUPLICATE_RETIRED.json",
+      "retention_receipt_sha256": "1b16951bdd916085b586fa6c7863433a8b4aef0dc2cd735cb31442833cca1640",
+      "retired_duplicate_bytes": 20648573596
     }
   ],
-  "as_of_utc": "2026-10-18T23:34:18.761965+00:00",
-  "latest_full_EBS": "/home/ubuntu/dario/local/backups/science/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/terminal320",
-  "latest_full_checkpoint_manifest_sha256": "76c8414cd3b3313fe0910543aa4490e2081b71ec9005955f282078a7206441f4"
+  "as_of_utc": "2026-10-19T00:06:07.312683+00:00",
+  "latest_full_EBS": "/home/ubuntu/dario/local/backups/science/partial-state-v7-direct-TRAIN5120-seed2026101807-v1/terminal640",
+  "latest_full_checkpoint_manifest_sha256": "ab0282b6967d85801d43785fb9e137177a7762b319a44fe4236d0366d9472c01"
 }

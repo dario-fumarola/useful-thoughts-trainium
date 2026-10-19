@@ -1,0 +1,187 @@
+{
+  "schema": "partial-state-v7-terminal-full-state-training-v1",
+  "status": "PASS_ACTUAL_TERMINAL_FULL_CHECKPOINTS_AND_PROTECTED_STATE",
+  "finished_utc": "2026-10-18T23:45:25.868109+00:00",
+  "run_id": "partial-state-v7-writer-TRAIN5120-seed2026101807-v1",
+  "arm": "writer",
+  "seed": 2026101807,
+  "step": 320,
+  "planned_terminal": 320,
+  "checkpoints": {
+    "64": {
+      "COMPLETE_sha256": "ad18d8ed7bb80d7782632ea4e556ca94f404174331f1b1c18e1af171420bfa3f",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "168cd3ebfba6e02b19fd325d1a29df9df6cd0fd3f3e7dc90ad17db1b1b24be72"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "d8a3c31db7ff2452c9c7da810cf261e8edd1ffba0416009806aba9f67d17e50a"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "e03ff55c1769ffff240489feda9bb16dfca5fcbb4504f3a37ad5678ae993fc1d"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "3119db8465b023474d3d3e25a420ea06cfe84f6a30288fe15d47dc6acd97e799"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "d52e8af3738b8d8021023e5cd4440d59604518bac715bcd4463fa249763092f5"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 64,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "160": {
+      "COMPLETE_sha256": "206acca6235be557e7e16aaaf6caab18f7189f3d4af18f05831e2e3208d6664e",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "10a2bab98a0c52e43212004b828b8c249a2b7b5e7a45067d37b7851c1f30b6ce"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "4da5caaee53a1ac33a2bc6f458d96dbbd923d0bdc25d389429741c4a921e08cc"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "d0920f1c27b2598f1846b9dfc4433b50a6f342d0592fd0cc7d5e0e0fceac751d"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "0079ff64cd2b6de37339b21d8df54532a71474f625c3e564347f0f4d76ccc2dd"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "312019743f8c5b175d3ee8e1fe5b2cf5e4196ef92b859819722dc4a881370f43"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 160,
+      "exported_model_equals_reassembled_cast_masters": true
+    },
+    "320": {
+      "COMPLETE_sha256": "28bd534bf805d3821e715d73659054d9c04b13f47fe0e4254bdf33c21f0af3a8",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "97a2f249970ed272a9c56ada0f24e4b2594e31c9c9cf76bc09d4d8ca0eefb348"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "23d8a238ff063711cb9598362766d98df8a5bbbfaeae83acd2ff1480b03fe62b"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "98866cf6bd840e0cdb96567dce421de1772c1646440eeb1b07e40cf5155a5d8b"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "954c92657dfc26e9f20cf6b6992327ccb4f4929c6edcc940ed2661cf56dec3de"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "2f6912ad203a4009d125eea6cfdcf76a3cfe2cde909b54704f7bb91d5986c901"
+        }
+      },
+      "all1240_FP32_master_and_moment_shards_finite": true,
+      "all_adam_steps": 320,
+      "exported_model_equals_reassembled_cast_masters": true
+    }
+  },
+  "expressions": 10240,
+  "supervised_tokens": 255116,
+  "actual_native_checks": [
+    {
+      "reference_to_device_kl_nats": 0.003038018943671619,
+      "device_to_reference_kl_nats": 0.0031035199827923296,
+      "max_bidirectional_kl_nats": 0.0031035199827923296,
+      "passed": true,
+      "max_logp_error": 0.4776469232392877,
+      "rms_logp_error": 0.11136195315202933,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0030697297315727835,
+      "device_to_reference_kl_nats": 0.003041836099938893,
+      "max_bidirectional_kl_nats": 0.0030697297315727835,
+      "passed": true,
+      "max_logp_error": 0.3318406019216269,
+      "rms_logp_error": 0.06558423713648606,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 2.110202660403744e-05,
+      "device_to_reference_kl_nats": 2.157230339493209e-05,
+      "max_bidirectional_kl_nats": 2.157230339493209e-05,
+      "passed": true,
+      "max_logp_error": 0.19990114601651499,
+      "rms_logp_error": 0.04093075259376543,
+      "relative_l2_logp_error": 0.0014795616361593922,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0003244116031699334,
+      "device_to_reference_kl_nats": 0.000325946147481554,
+      "max_bidirectional_kl_nats": 0.000325946147481554,
+      "passed": true,
+      "max_logp_error": 0.2453446255999836,
+      "rms_logp_error": 0.04909559206530713,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "argmax_equal": true
+    }
+  ],
+  "all1240_FP32_master_and_moment_shards_finite": true,
+  "all_adam_steps": 320,
+  "exported_BF16_model_bytes_equal_all_reassembled_cast_masters": true,
+  "all_original_sessions_and_device_physically_closed": true,
+  "checkpoint_manifest_sha256": "28bd534bf805d3821e715d73659054d9c04b13f47fe0e4254bdf33c21f0af3a8",
+  "original_closure_sha256": "19dffb0f2d3de1c2d03c979eef753964e4307425d8e872fbe72ce69c1dc4a5e3",
+  "terminal_identity_closure_file": "/home/ubuntu/dario/local/diagnostics/partial-state-v7-writer-TRAIN5120-seed2026101807-v1/closure.json",
+  "terminal_identity_closure_sha256": "19dffb0f2d3de1c2d03c979eef753964e4307425d8e872fbe72ce69c1dc4a5e3",
+  "original_terminal_digest_was_correct": true,
+  "complete_checkpoint_bytes": 24089821871,
+  "EBS_archive_receipt_sha256": "0fedde6e111f0a72489546530835c44698bbfe681f65d9eaf306b95729e35ca4",
+  "warm_update_median_seconds": 0.7349618739972357,
+  "observed_peak_node_process_PSS_GiB": 82.74507904052734,
+  "limits": [
+    "No held DEV evaluated or capability inference from training loss.",
+    "Part of the prospective two-seed matched-cost study; no capability conclusion follows from training metrics.",
+    "One uninterrupted fresh-B0 run; actual restart qualification belongs to the separately reported first reader and mechanics models.",
+    "Bounded target-topology observation, not a general multi-hour or oldworld32 memory guarantee.",
+    "All declared full checkpoints remain at the original output; terminal full state and all nonweight metadata also have a readback-verified EBS copy. EBS is same-instance storage."
+  ],
+  "public_metrics": {
+    "validation/partial_state_v7_writer_seed2026101807_training_20261018/all320-update-metrics.jsonl.gz": {
+      "bytes": 409358,
+      "sha256": "d578d6f8810a1e97a802741df1b280ea6c04141de48234dc1b28d7b16c26d213"
+    }
+  },
+  "audit_script_sha256": "da831528ec871a329231d463dc6be32e679f3605a1d93dc962205ed6b4602546",
+  "protocol_sha256": "d3392c02108a7501d4377f7a72840be56f946c9e91ce81724377a3e13c5bb323",
+  "source_files": {
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "0d190ca8376f3b6a9bc157cf494c8916d8e39f7c95f53944a2eda0142dba1eeb",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "b4bb9756d89f5071521efd0ab2abcb2b8389f24f78915b4f212452a095344b09",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  }
+}

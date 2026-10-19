@@ -1143,3 +1143,11 @@ endpoints fixed, no new accuracy/state review. W1notes/A1answers fully archived;
 compact/full evaluations advance while longer note-cache compile actively runs.
 First-seed temporary path ps7r2 belongs to prior recovery; use fresh p7s2r/w/a/c/f
 for second seed, repaired before any scientific launch. No actual attempt retried.
+
+2026-10-19 00:17 UTC — S1allmodel generation questions close; all output/control/numerical
+evidence EBS readback passes, no outcome review. S2W320/A640 full audits/frozen
+bindings pass and evals launch; compact640closes, final full-CoT640runs under
+finite no-retry queue. Read-only host logs show flat update intervals and~20GiB
+retained at later full-save boundaries. Boundary includes inspection/transfers/
+serialization/allocator activity; no causal attribution or fix. Public observation
+preserved; qualify exporter before much longer loops. Frozen science unchanged.

@@ -51,20 +51,23 @@ outputs and the fixed first two examples per panel are public and EBS-archived:
 
 Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
 compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
-Both compact and full-trace baselines remain competitors. All five first-seed
-training runs independently pass their declared updates and full-state audits.
-The second reader320 is also audited/frozen; its writer320 is training. No new
-DEV accuracy is reported yet.
-[Reader training](validation/partial_state_v7_reader_seed2026101806_training_20261018.json) ·
-[writer](validation/partial_state_v7_writer_seed2026101806_training_20261018.json) ·
-[direct control and explicit receipt correction](validation/partial_state_v7_direct_seed2026101806_training_20261018.json) ·
-[compact CoT](validation/partial_state_v7_cot_seed2026101806_training_20261018.json) ·
-[full-trace CoT](validation/partial_state_v7_cot_full_seed2026101806_training_20261018.json) ·
+Both compact and full-trace baselines remain competitors. All first-seed training
+runs and all first-seed generated outputs are complete. Second-seed reader320,
+writer320 and direct640 are audited/frozen; compact640 is closed with its audit
+underway, and full-trace640 is the final active training run. Evaluations continue.
+No new DEV accuracy is reported yet.
+[First-seed training](validation/partial_state_v7_cot_full_seed2026101806_training_20261018.json) ·
 [second reader](validation/partial_state_v7_reader_seed2026101807_training_20261018.json) ·
-[current queue](NEXT_STEPS.md). More capacity remains an option; the useful signal
-already exists at1.7B. All original full states remain on local SSDs; EBS keeps
-all terminal models and the latest full resumable state under the
+[second writer](validation/partial_state_v7_writer_seed2026101807_training_20261018.json) ·
+[second direct control](validation/partial_state_v7_direct_seed2026101807_training_20261018.json) ·
+[current queue](NEXT_STEPS.md).
+
+All original full states remain on local SSDs; EBS keeps all terminal models and
+the latest full resumable state under the
 [recorded retention policy](validation/partial_state_v7_checkpoint_retention_20261018.json).
+Host PSS is flat between saves but rises around full exports; longer continual
+training needs an export-path qualification. This is an
+[observed association, with cause unresolved](validation/partial_state_v7_checkpoint_host_memory_observation_20261019.json).
 
 An auxiliary untouched-B0 reference uses the same direct, empty and CoT prompts.
 It was added before new outcome review; the four-system primary remains fixed.

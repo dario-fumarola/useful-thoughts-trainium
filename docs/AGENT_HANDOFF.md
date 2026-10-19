@@ -6,48 +6,49 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October18 23:39UTC handoff: continue until user stops. Active matched5120/two-seed
-question uses immutable science source57d3220; current main analysis1610checks pass.
-All5first-seed training models independently audited/full state preserved/frozen.
-Second reader320 closes23:28UTC and independently passes all3full states/native4/
-ordered10,240expressions/61,684labels and EBS full320 readback; frozen-reader.json.
-Second writer320 active tmux dario-ps7-writer2,PID233263/start20113193,physical3/
-logical12–15,deadline06:30UTC. Controls/output basename
-partial-state-v7-writer-TRAIN5120-seed2026101807-v1 under diagnostics/nvme-study/runs.
-Last197/full64/160. Exact next:finish320; generic CPU full audit, freeze writer2,
-then launch all three seed2single-model640 controls in order. Source/recipes fixed.
-Controller/protocols prepared/unreleased; fresh short tmpdirs p7s2w/a/c/f (R2 used
-p7s2r). Old ps7r2 is prior reader64 recovery; prelaunch conflict repaired before
-any attempt, no data change. All actual launches require fresh short paths.
+October19 00:17UTC handoff: continue until user stops. Matched5120/two-seed
+study, immutable science57d3220, current analysis1610CPUchecks pass. All5S1models
+and all5S1four-panel generation questions close/EBS backed up; no outcome review.
+S2reader320/writer320/direct640 fully audited/frozen and their evals active
+(physical10/11/0). Compact2 closes00:11; CPU full audit session62267/log
+local/analysis/partial-state-v7-cot2-terminal-audit-20261019.log active.
+NEXT:when audit completes, freeze cot2, retain binding, generic evalprep seed1807
+physical1/port64921/shortc7b then launch its generated controller.
+Final full-CoT2 training active,PID305789/start20340285,parent305733,tmux
+ dario-ps7-fullcot2,physical3/logical12–15,last160/full64/160,deadline06:30UTC.
+Basename partial-state-v7-cot_full-TRAIN5120-seed2026101807-v1 under diagnostics/
+nvme-study/runs. Closure -> generic audit/freeze/prep/eval physical2/64941/shortf7b.
+Finite queue owns launch:local/diagnostics/partial-state-v7-seed2-remaining-training-queue,
+parentdeadline03:30, no retries; STOP prevents another launch. Never duplicate it.
 
-First-seed Wnotes and direct answers are fully closed/EBS backed up. Compact3of4
-panels and full-CoT1of4 closed; no outcome review. Reader/device9 and B0/device4
-wait on active long note-cache compilation (one new graph passed, longer one active,
-not OOM; MemAvailable~1.7TiB). Compact/device6/full/device7 advance independently.
-After W2freeze run prepared seed1807CPU/native script then second-seed W/Rcontroller
-prep script in local/analysis, PYTHONPATH=frozen57 first. Eval W2/R2 physical10/11,
-ports64801/64821,shortw7b/r7b. Single-model eval utility supports seed2:physical0/1/2,
-ports64901/64921/64941. Registry names all10primary four-panel jobs plus shared
-untouchedB0 direct/cot/empty (prospective amendment). Public audit requires all11
-closed before any new accuracy/state review;51200answers/4096notes planned total.
-Single B0 reference is not two independent seed replications. Primary unchanged.
+All11four-panel controllers must close before gold/accuracy/state review. Registry
+local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
+Primary4systems/two seeds unchanged, plus one shared untouchedB0direct/cot/empty
+reference declared before new outcomes.51200answers/4096notes planned. B0 is one
+reference, not two independent seed replicas. Original v6positive has twice-update
+caveat; preserve it and all old negatives. Official TEST unopened. No RL/8B.
+R1/B01long cache compiled and passed; evaluations now advance. Native/cache vectors
+and every attempt retained. Public analysis never selects/repairs/drops failures.
 
-A/compactS1private templates copied320digest into640closure. Strict identity gate
-caught it; originals preserved and explicit closure-terminal640-correction-v1.json
-annexes pass true640binding. Every unstarted640template fixed; full-CoT original
-receipt is correct. Never edit a live source or quietly rewrite an old receipt.
-Extra verified local store local/nvme-study holds future outputs; old paths fixed.
-All original full states remain onlocalSSDs; EBS all terminal models/metadata and
-latest full resumable state. Older EBS optimizer duplicates retired only after
-fresh source/EBS full hashes and latest full recovery check; current retention
-index is public. Latest verifiedfull R2currently; originals intact. Keep35GiB floors.
-No cloud changes/RL/8B/officialTEST; never auto-retry a failed scientific attempt.
+Memory read-only finding:per-step PSS flat between exports; later full saves retain
+~20GiB across four workers. Public observation JSON is associative, not causal.
+Inspected current cpu_state's reshape/slice/chunk transfers and installed XLA
+xm.save batched CPU path; official docs warn about views. No exporter change,
+no new hardware probe yet. Before multi-hour loops:bounded reproducer, exact tensor
+bytes, actual recovery/memory checks. Current640short runs are safe under guards.
 
-Interpretation after results: two-model split also changes relative note/answer
-loss weighting (separate per-example means versus ordinary all-completion CoT).
-If it wins, do not attribute uniquely to architecture/extra parameters; a shared
-model with balanced objectives is a cheap possible next ablation before scaling.
-If ordinary CoT matches, prefer it. Decide only after the complete fixed question.
+All original full checkpoints stay on local SSDs. EBS all terminal models plus
+latest full optimizer state; older EBS optimizer duplicates retire only after full
+both-side hashes and latest recovery verification. Current retention JSON public.
+Extra local/nvme-study verified mountedSSD; old paths fixed. Keep35GiB floors.
+A/compactS1closure320digest typos fixed only by preserved explicit640annexes;
+all unstarted640templates corrected. S2temp paths p7s2r/w/a/c/f; oldps7r2recovery intact.
+Root owns work; subagents unavailable due quota, do not retry spawning.
+
+Interpretation later:split changes loss weighting and has two full models. A
+positive result does not isolate architecture. Shared/balanced single-model CoT
+is a cheap possible next ablation if it wins; if CoT matches, prefer it. Real-text
+transfer follows; use the failed link to choose scale/data/objective after review.
 
 ## Your job
 

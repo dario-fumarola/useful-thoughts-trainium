@@ -1,21 +1,21 @@
-# Status — 2026-10-18 23:39 UTC
+# Status — 2026-10-19 00:17 UTC
 
 
 ## Active: matched-cost partial-computation study
-Question: does the useful fresh channel beat competitive one-model solvers at matched updates?
+Question: does useful fresh computation beat competitive solvers at matched updates and starting B0?
 ID:partial-state-v7-matched5120; two seeds, terminal primary, immutable source57d3220,1610CPUchecks pass.
-All5first-seed models independently pass every declared update/full checkpoint/native gate and are frozen.
-Second reader320 closes23:28UTC, independently passes/fullEBS backup, and is frozen; no new DEV review.
-Second writer320 active:PID233263/start20113193,tmux dario-ps7-writer2,physical3/logical12–15,deadline06:30UTC.
-Controls/output basename partial-state-v7-writer-TRAIN5120-seed2026101807-v1 under diagnostics/nvme-study/runs.
-Last observed197/full64/160. Next full320audit/freeze, then A640/compact640/full640 sequentially, all fresh B0.
-First-seed Wnotes and Aanswers complete/EBS-readback; compact eval3panels/fullCoT1panel closed.
-Reader/physical9 and B0/physical4 wait on active long note-cache compile;512GiB memory floor respected.
-Compact/full-CoT evals physical6/7 active. New outcomes stay unopened until all11four-panel controllers close.
-After W2freeze run prepared seed1807CPU/native and W/Rcontroller scripts; use physical10/11,ports64801/64821.
-Single-model seed2eval uses physical0/1/2,ports64901/64921/64941. Registry names every fixed endpoint.
-A/compactS1receipt320digest errors have explicit preserved640annexes; all unstartedtemplates fixed.
-EBS retains all terminal models/latest full state; original full states intact;35GiB floors; no TEST/RL/8B.
+All5first-seed models/audits/generated panels complete and EBS-readback; outcomes remain unopened.
+Seed2R320/W320/A640 audited/frozen; compact640 closes00:11UTC, its independent full audit active.
+Final full-CoT640 active:PID305789/start20340285,tmux dario-ps7-fullcot2,physical3/logical12–15.
+Controls/output basename partial-state-v7-cot_full-TRAIN5120-seed2026101807-v1 under diagnostics/nvme-study/runs.
+Last160/full64/160;deadline06:30UTC. Finite queue owns this launch; no manual duplicate/retry.
+Queue:local/diagnostics/partial-state-v7-seed2-remaining-training-queue;STOP prevents future launches.
+Seed2W/R eval physical10/11 active; A2eval physical0 active; B0reference physical4 active.
+COT2audit log:local/analysis/partial-state-v7-cot2-terminal-audit-20261019.log; next freeze/prep/eval physical1.
+Final640closure -> audit/freeze/prep/eval physical2. Primary registry names all11four-panel controllers.
+No new outcome review until all11close; single shared B0reference,51200answers/4096notes planned.
+Original full states intact; EBS all terminal models/latest full recovery;35GiB floors.
+Host PSS jumps~20GiB at later full-save boundaries; cause unresolved, future long-loop gate. No TEST/RL/8B.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?

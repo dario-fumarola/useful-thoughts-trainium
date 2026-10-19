@@ -1,0 +1,281 @@
+{
+  "status": "OBSERVED_EXPORT_ALIGNED_HOST_GROWTH_CAUSE_UNRESOLVED",
+  "results": {
+    "partial-state-v7-writer-TRAIN5120-seed2026101806-v1": {
+      "inputs": {
+        "local/nvme/runs/partial-state-v7-writer-TRAIN5120-seed2026101806-v1/metrics.jsonl": "7cd54c347d20f563162fdb5f4785264b6bd694b6d579fc5b9787bb20b960f335",
+        "local/diagnostics/partial-state-v7-writer-TRAIN5120-seed2026101806-v1/host-samples.jsonl": "7fe0fae16417304e2e1e57e2df487dda9de9ee749126cca35ac4ccff521f8c71"
+      },
+      "bins_by_last_committed_step": {
+        "initialization": {
+          "samples": 7,
+          "median_PSS_GiB": 18.654833793640137,
+          "max_PSS_GiB": 31.100655555725098,
+          "last_sample_PSS_GiB": 31.100655555725098
+        },
+        "4-63": {
+          "samples": 3,
+          "median_PSS_GiB": 31.37702465057373,
+          "max_PSS_GiB": 31.38184642791748,
+          "last_sample_PSS_GiB": 31.38184642791748
+        },
+        "64-159": {
+          "samples": 10,
+          "median_PSS_GiB": 39.26207637786865,
+          "max_PSS_GiB": 51.70421123504639,
+          "last_sample_PSS_GiB": 39.26997661590576
+        },
+        "160-319": {
+          "samples": 13,
+          "median_PSS_GiB": 58.40099334716797,
+          "max_PSS_GiB": 58.43131637573242,
+          "last_sample_PSS_GiB": 58.43131637573242
+        },
+        "320-479": {
+          "samples": 3,
+          "median_PSS_GiB": 78.33286666870117,
+          "max_PSS_GiB": 78.33286666870117,
+          "last_sample_PSS_GiB": 78.33286666870117
+        }
+      }
+    },
+    "partial-state-v7-direct-TRAIN5120-seed2026101806-v1": {
+      "inputs": {
+        "local/nvme/runs/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/metrics.jsonl": "493d408ec42da49776746a0d9ecad3d7b3e6ef435f443b383419400e24d5b7b3",
+        "local/diagnostics/partial-state-v7-direct-TRAIN5120-seed2026101806-v1/host-samples.jsonl": "3b32f54e42e09d9d8c23e8a86ee1d82993971837700837c296dddc31c3abc7d6"
+      },
+      "bins_by_last_committed_step": {
+        "initialization": {
+          "samples": 7,
+          "median_PSS_GiB": 3.7525367736816406,
+          "max_PSS_GiB": 27.097094535827637,
+          "last_sample_PSS_GiB": 27.097094535827637
+        },
+        "4-63": {
+          "samples": 4,
+          "median_PSS_GiB": 29.336416721343994,
+          "max_PSS_GiB": 29.343348503112793,
+          "last_sample_PSS_GiB": 29.343348503112793
+        },
+        "64-159": {
+          "samples": 10,
+          "median_PSS_GiB": 37.52427005767822,
+          "max_PSS_GiB": 51.27975273132324,
+          "last_sample_PSS_GiB": 37.532044410705566
+        },
+        "160-319": {
+          "samples": 13,
+          "median_PSS_GiB": 57.94647026062012,
+          "max_PSS_GiB": 57.9773006439209,
+          "last_sample_PSS_GiB": 57.91301727294922
+        },
+        "320-479": {
+          "samples": 14,
+          "median_PSS_GiB": 77.64748191833496,
+          "max_PSS_GiB": 78.06676292419434,
+          "last_sample_PSS_GiB": 77.67562770843506
+        },
+        "480-639": {
+          "samples": 14,
+          "median_PSS_GiB": 97.3540391921997,
+          "max_PSS_GiB": 97.62204837799072,
+          "last_sample_PSS_GiB": 97.62204837799072
+        },
+        "640+closure": {
+          "samples": 3,
+          "median_PSS_GiB": 116.04848003387451,
+          "max_PSS_GiB": 116.78825092315674,
+          "last_sample_PSS_GiB": 111.28658390045166
+        }
+      }
+    },
+    "partial-state-v7-cot-TRAIN5120-seed2026101806-v1": {
+      "inputs": {
+        "local/nvme-study/runs/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/metrics.jsonl": "09013b584bc3fc4f698d5db90611851643039996f4a4cf5e67dfb26e503414ac",
+        "local/diagnostics/partial-state-v7-cot-TRAIN5120-seed2026101806-v1/host-samples.jsonl": "df9c723ba5d94e694fc13582e81ffb50206400b7f5da92799ada17fe502b4066"
+      },
+      "bins_by_last_committed_step": {
+        "initialization": {
+          "samples": 7,
+          "median_PSS_GiB": 22.46437358856201,
+          "max_PSS_GiB": 30.56684970855713,
+          "last_sample_PSS_GiB": 30.56684970855713
+        },
+        "4-63": {
+          "samples": 4,
+          "median_PSS_GiB": 30.758925437927246,
+          "max_PSS_GiB": 30.765751838684082,
+          "last_sample_PSS_GiB": 30.765751838684082
+        },
+        "64-159": {
+          "samples": 9,
+          "median_PSS_GiB": 50.99157238006592,
+          "max_PSS_GiB": 51.006497383117676,
+          "last_sample_PSS_GiB": 50.979960441589355
+        },
+        "160-319": {
+          "samples": 14,
+          "median_PSS_GiB": 72.05073261260986,
+          "max_PSS_GiB": 72.07583618164062,
+          "last_sample_PSS_GiB": 72.07583618164062
+        },
+        "320-479": {
+          "samples": 14,
+          "median_PSS_GiB": 91.91308784484863,
+          "max_PSS_GiB": 91.94913482666016,
+          "last_sample_PSS_GiB": 91.94913482666016
+        },
+        "480-639": {
+          "samples": 13,
+          "median_PSS_GiB": 111.63513660430908,
+          "max_PSS_GiB": 111.6607027053833,
+          "last_sample_PSS_GiB": 111.6607027053833
+        },
+        "640+closure": {
+          "samples": 3,
+          "median_PSS_GiB": 130.96569538116455,
+          "max_PSS_GiB": 130.96569919586182,
+          "last_sample_PSS_GiB": 130.96569538116455
+        }
+      }
+    },
+    "partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1": {
+      "inputs": {
+        "local/nvme-study/runs/partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1/metrics.jsonl": "231dfa8897c109739e3142108df09047a0cd8ace4e46b3fe43c3cfe3c2e66848",
+        "local/diagnostics/partial-state-v7-cot_full-TRAIN5120-seed2026101806-v1/host-samples.jsonl": "56f27f180f9bd017d2c1bc87bf8833e5db0564f9978c9ac127d197632d9acb8f"
+      },
+      "bins_by_last_committed_step": {
+        "initialization": {
+          "samples": 7,
+          "median_PSS_GiB": 22.228071212768555,
+          "max_PSS_GiB": 30.264838218688965,
+          "last_sample_PSS_GiB": 30.264838218688965
+        },
+        "4-63": {
+          "samples": 4,
+          "median_PSS_GiB": 30.5695219039917,
+          "max_PSS_GiB": 30.576422691345215,
+          "last_sample_PSS_GiB": 30.576422691345215
+        },
+        "64-159": {
+          "samples": 9,
+          "median_PSS_GiB": 42.936015129089355,
+          "max_PSS_GiB": 51.28476619720459,
+          "last_sample_PSS_GiB": 42.940794944763184
+        },
+        "160-319": {
+          "samples": 14,
+          "median_PSS_GiB": 62.75984859466553,
+          "max_PSS_GiB": 64.07700443267822,
+          "last_sample_PSS_GiB": 62.77351093292236
+        },
+        "320-479": {
+          "samples": 14,
+          "median_PSS_GiB": 82.70360565185547,
+          "max_PSS_GiB": 82.73656845092773,
+          "last_sample_PSS_GiB": 82.73656845092773
+        },
+        "480-639": {
+          "samples": 13,
+          "median_PSS_GiB": 102.31134510040283,
+          "max_PSS_GiB": 102.3374490737915,
+          "last_sample_PSS_GiB": 102.32926177978516
+        },
+        "640+closure": {
+          "samples": 4,
+          "median_PSS_GiB": 115.0370192527771,
+          "max_PSS_GiB": 121.64319038391113,
+          "last_sample_PSS_GiB": 0.612828254699707
+        }
+      }
+    },
+    "partial-state-v7-reader-TRAIN5120-seed2026101807-v1": {
+      "inputs": {
+        "local/nvme-study/runs/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/metrics.jsonl": "be667dc70215028c71d2b9ffbb026132b87253c28888b25809227bebcfd834ee",
+        "local/diagnostics/partial-state-v7-reader-TRAIN5120-seed2026101807-v1/host-samples.jsonl": "ddd6a64e9c873a744d5702e01eebc40ac1f5437ee908ee326d737afa5d8beee3"
+      },
+      "bins_by_last_committed_step": {
+        "initialization": {
+          "samples": 7,
+          "median_PSS_GiB": 3.410019874572754,
+          "max_PSS_GiB": 26.23321533203125,
+          "last_sample_PSS_GiB": 26.23321533203125
+        },
+        "4-63": {
+          "samples": 4,
+          "median_PSS_GiB": 28.801252365112305,
+          "max_PSS_GiB": 28.807985305786133,
+          "last_sample_PSS_GiB": 28.807985305786133
+        },
+        "64-159": {
+          "samples": 10,
+          "median_PSS_GiB": 51.220895767211914,
+          "max_PSS_GiB": 51.23689270019531,
+          "last_sample_PSS_GiB": 51.23689270019531
+        },
+        "160-319": {
+          "samples": 14,
+          "median_PSS_GiB": 72.28345727920532,
+          "max_PSS_GiB": 72.31949806213379,
+          "last_sample_PSS_GiB": 72.31949806213379
+        },
+        "320-479": {
+          "samples": 3,
+          "median_PSS_GiB": 92.18637752532959,
+          "max_PSS_GiB": 92.24246597290039,
+          "last_sample_PSS_GiB": 92.18637752532959
+        }
+      }
+    },
+    "partial-state-v7-writer-TRAIN5120-seed2026101807-v1": {
+      "inputs": {
+        "local/nvme-study/runs/partial-state-v7-writer-TRAIN5120-seed2026101807-v1/metrics.jsonl": "85c5553f1f9b3284b523c9ae5d1cb376b77c4cf4312a9c002ebc7775c56c5386",
+        "local/diagnostics/partial-state-v7-writer-TRAIN5120-seed2026101807-v1/host-samples.jsonl": "956350160530f08e82fa50c50cc26906b2bcb73354b57c1f047e79998619e748"
+      },
+      "bins_by_last_committed_step": {
+        "initialization": {
+          "samples": 8,
+          "median_PSS_GiB": 10.429486274719238,
+          "max_PSS_GiB": 31.178322792053223,
+          "last_sample_PSS_GiB": 31.178322792053223
+        },
+        "4-63": {
+          "samples": 4,
+          "median_PSS_GiB": 31.23716115951538,
+          "max_PSS_GiB": 31.243884086608887,
+          "last_sample_PSS_GiB": 31.243884086608887
+        },
+        "64-159": {
+          "samples": 9,
+          "median_PSS_GiB": 42.90590000152588,
+          "max_PSS_GiB": 51.26759624481201,
+          "last_sample_PSS_GiB": 42.91073799133301
+        },
+        "160-319": {
+          "samples": 14,
+          "median_PSS_GiB": 62.75241661071777,
+          "max_PSS_GiB": 62.81108570098877,
+          "last_sample_PSS_GiB": 62.81108570098877
+        },
+        "320-479": {
+          "samples": 4,
+          "median_PSS_GiB": 77.45047760009766,
+          "max_PSS_GiB": 82.74507904052734,
+          "last_sample_PSS_GiB": 0.6215486526489258
+        }
+      }
+    }
+  },
+  "limits": [
+    "Bins use last completed step timestamps; checkpoint export runs after that step and may dominate a bin.",
+    "Association only, not allocator/leak attribution. PSS apportions shared mappings and concurrent jobs can affect it.",
+    "Bounded640update short-pack observation; does not qualify oldworld32 or a multi-hour continual loop."
+  ],
+  "schema": "partial-state-v7-completed-run-host-memory-observation-v1",
+  "created_utc": "2026-10-19T00:17:07.320307+00:00",
+  "question": "Does completed short-pack training show update-wise or checkpoint-boundary host growth?",
+  "observation": "Within-step-range PSS is nearly flat. Later full-save boundaries retain approximately20GiB per four-worker group; first/terminal exports have different transients.",
+  "interpretation": "Several boundary actions coincide: finite-state inspection, device transfers, serialization and allocator activity. These logs do not identify the causal allocation owner or validate a fix.",
+  "source_analysis_sha256": "2707b865e042a967239762666cb2b48fb5e5678c77dcfa374109c92d029e3f12",
+  "next_gate": "Before multi-hour continual training, isolate export retention with a bounded reproducer and verify full tensor bytes, real recovery and memory behavior. Do not change the frozen v7 science source."
+}
