@@ -28,6 +28,9 @@ TARGET_SCHEMA = 'real-target-sft-v15'
 BALANCED_SCHEMA = 'real-source-balanced-v17'
 DOCUMENT_SCHEMA = 'document-qa-v21'
 EVIDENCE_SCHEMA = 'document-evidence-plan-v23'
+EVIDENCE_WEIGHT_ID = 'document-evidence-weight-v25'
+EVIDENCE_WEIGHT_PURPOSES = ('document_evidence_weight_qualification',
+                          'document_evidence_weight_ablation')
 
 
 def source_files():
@@ -82,7 +85,9 @@ def validate(p):
     target_science = target and p.get('purpose') == 'real_target_sft_study'
     balanced_science = balanced and p.get('purpose') == 'real_source_balanced_study'
     document_science = document and p.get('purpose') == 'document_qa_study'
-    evidence_science = evidence and p.get('purpose') == 'document_evidence_plan_pilot'
+    evidence_weight = evidence and p.get('purpose') in EVIDENCE_WEIGHT_PURPOSES
+    evidence_science = evidence and p.get('purpose') in (
+        'document_evidence_plan_pilot', 'document_evidence_weight_ablation')
     if depth:
         hashes = {'fixed': '3f829b7e9fdb493a72f7cf740952130b29eb2dd5ded0c88d69b9a5730031a3ad',
                   'variable': '1b8a328479cd05718753b89e2f99e0f696e2cbb62079d505cc372fbb927111d3'}
@@ -96,7 +101,12 @@ def validate(p):
                 or p.get('lr') != 1e-5 or p.get('seed') != 2026101911):
             raise ValueError('Require the declared bounded variable-depth intervention')
     elif evidence:
-        qualification = p.get('purpose') == 'document_evidence_plan_qualification'
+        qualification = p.get('purpose') in (
+            'document_evidence_plan_qualification', 'document_evidence_weight_qualification')
+        if evidence_weight and (p.get('experiment_id') != EVIDENCE_WEIGHT_ID
+                or not isinstance(p.get('control_protocol_file'), str)
+                or not re.fullmatch('[a-f0-9]{64}', p.get('control_protocol_sha256', ''))):
+            raise ValueError('New coefficient ablation needs its own identity and frozen control')
         if (not (qualification or evidence_science)
                 or p.get('items') != (128 if qualification else 2048)
                 or p.get('steps') != (8 if qualification else 256)
@@ -107,7 +117,8 @@ def validate(p):
                 or p.get('loss') != 'separate_mean_source_answer_selection_per_example'
                 or p.get('source_sample_labels') != 256
                 or any(type(p.get(key)) not in (int, float) or p[key] != value for key, value in
-                       [('source_loss_weight', .5), ('answer_loss_weight', .5), ('selection_loss_weight', .1)])
+                       [('source_loss_weight', .5), ('answer_loss_weight', .5),
+                        ('selection_loss_weight', 1. if evidence_weight else .1)])
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_manifest_sha256', ''))):
             raise ValueError('Require explicit pointer/final-answer components and interleaved exposure')
@@ -203,6 +214,40 @@ def validate(p):
     observe = p.get('checkpoint_memory_diagnostic', False)
     if type(cleanup) is not bool or type(observe) is not bool or science and (cleanup or observe):
         raise ValueError('CPU export cleanup remains a separately qualified engineering option')
+
+
+def validate_evidence_weight_control(p, control):
+    """The new trial changes one loss coefficient, using an existing control.
+
+    Qualification uses a shorter prefix, but the full study must preserve the
+    original data, exposures, order and numerical path. Device allocation and
+    new execution/qualification receipts belong to the new attempt.
+    """
+    if p.get('purpose') not in EVIDENCE_WEIGHT_PURPOSES:
+        raise ValueError('Explicit coefficient-ablation identity required')
+    if (control.get('schema') != EVIDENCE_SCHEMA
+            or control.get('purpose') != 'document_evidence_plan_pilot'
+            or control.get('selection_loss_weight') != .1):
+        raise ValueError('Original completed 0.1-selection protocol required')
+    fields = ('model_id', 'model_dir', 'base_protocol', 'base_protocol_sha256',
+              'base_signature', 'data_file', 'data_sha256', 'data_manifest_file',
+              'data_manifest_sha256', 'seed', 'lr', 'world_size', 'micro_batch',
+              'global_batch', 'accumulation', 'width', 'target_slots', 'head_chunk',
+              'schedule', 'parameter_dtype', 'optimizer_dtype', 'view_schedule',
+              'loss', 'source_sample_labels', 'source_loss_weight',
+              'answer_loss_weight', 'runtime_policy', 'precision_contract',
+              'checkpoint_export_cleanup', 'checkpoint_memory_diagnostic')
+    if p['purpose'] == 'document_evidence_weight_ablation':
+        fields += ('items', 'steps', 'save_every')
+    if any(p.get(key) != control.get(key) for key in fields):
+        raise ValueError('Coefficient comparison changed data, exposure or another training setting')
+    # The executable change is confined to this driver's versioned validation.
+    # Existing packing, loss kernels and optimizer implementation stay identical.
+    expected = {k: v for k, v in control['source_files'].items()
+                if k != 'train/partial_state_driver.py'}
+    if expected != {k: v for k, v in p['source_files'].items()
+                    if k != 'train/partial_state_driver.py'}:
+        raise ValueError('Coefficient comparison changed an existing numerical/packing source')
 
 
 def order_for(p):
@@ -487,13 +532,21 @@ def main():
     a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
+    if p.get('purpose') in EVIDENCE_WEIGHT_PURPOSES:
+        if args.arm != 'evidence_select':
+            raise ValueError('Only the new selection-weight treatment is authorized')
+        control_file = Path(p['control_protocol_file'])
+        if sha256_file(control_file) != p['control_protocol_sha256']:
+            raise ValueError('Frozen comparison control changed')
+        validate_evidence_weight_control(p, json.loads(control_file.read_text()))
     if p['schema'] == DEPTH_SCHEMA and args.arm != 'writer':
         raise ValueError('This intervention trains the writer only; the reader remains frozen')
-    if p.get('purpose') in ('real_trace_cpt_study', 'real_target_sft_study', 'real_source_balanced_study', 'document_qa_study', 'document_evidence_plan_pilot'):
+    if p.get('purpose') in ('real_trace_cpt_study', 'real_target_sft_study', 'real_source_balanced_study', 'document_qa_study', 'document_evidence_plan_pilot', 'document_evidence_weight_ablation'):
         qualification_file = Path(p['hardware_qualification_file'])
         qualification = json.loads(qualification_file.read_text())
         shape = {k:p[k] for k in ('world_size','micro_batch','global_batch','width','target_slots','head_chunk','accumulation')}
-        expected_status = ('PASS_ACTUAL_DOCUMENT_EVIDENCE_PLAN_FULL_RESTORE' if p['schema'] == EVIDENCE_SCHEMA else
+        expected_status = ('PASS_ACTUAL_DOCUMENT_EVIDENCE_WEIGHT_FULL_RESTORE' if p.get('purpose') == 'document_evidence_weight_ablation' else
+                           'PASS_ACTUAL_DOCUMENT_EVIDENCE_PLAN_FULL_RESTORE' if p['schema'] == EVIDENCE_SCHEMA else
                            'PASS_ACTUAL_DOCUMENT_QA_FULL_RESTORE' if p['schema'] == DOCUMENT_SCHEMA else
                            'PASS_ACTUAL_REAL_SOURCE_BALANCED_FULL_RESTORE' if p['schema'] == BALANCED_SCHEMA else
                            'PASS_ACTUAL_REAL_TARGET_SFT_FULL_RESTORE' if p['schema'] == TARGET_SCHEMA
