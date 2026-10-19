@@ -28,6 +28,18 @@ Independent numeric parser/native-stop/count/all paired-bootstrap checks PASS.
 Report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json;all14payloads/CSV/figures preserved.
 Decision:narrow arithmetic-answer gain with extra computation;primary LL gates remain failed.
 
+## Closed: descriptive score-token partition
+Question: where do the scalar and full-continuation findings differ?
+Experiment:real-trace-v10-token-partition;post-hoc accounting of completed scores only.
+Frozen numeral/curator-boundary annotations partition every native16 into four additive parts.
+All256 documents retained;each seed/panel separate;no new model forwards or gate.
+AST prior.own−rawCPT numeral:+0.307[0.137,0.480]/+0.049[−0.183,0.274]nats.
+Following-tail component:−0.210[−0.340,−0.084]/−0.213[−0.358,−0.075].
+Leading whitespace and curator-boundary components complete the unchanged total endpoint.
+Every per-document sum matches;all5,120 descriptive contrast rows protected with source.
+Report:validation/real_trace_v10_token_partition_20261019.json;unadjusted checkpoint-conditional intervals.
+Decision:tail damage contributes;no claim that both seeds establish improved numeral likelihood.
+
 ## Closed: forward-only likelihood throughput qualification
 Question: can an existing Trainium core reproduce canonical CPU span scores faster?
 Experiment:real-span-XLA-B0-v14-v2;unchanged B0,256documents/five modes,all1,280rows.

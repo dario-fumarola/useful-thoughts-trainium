@@ -57,6 +57,13 @@ prediction of the full original continuation. Intervals are paired document
 bootstraps conditional on each checkpoint; they do not quantify training-seed
 uncertainty. The two seeds and the legacy panel are never pooled.
 
+A [post-hoc partition of the same saved scores](validation/real_trace_v10_token_partition_20261019.json)
+helps explain the discrepancy. Against raw CPT, generated calculations add
++0.307 and +0.049 nats on numeral tokens, while the following tail loses 0.210
+and 0.213 nats. Only the first seed's numeral interval excludes zero; both tail
+intervals are negative. All 256 documents remain, parts sum to the unchanged
+16-token endpoint, and this descriptive analysis does not alter either gate.
+
 ![Complete scalar continuation diagnostic](validation/real_trace_cpt_v10_scalar_secondary_20261019/primary-scalar-accuracy.svg)
 
 The calculation path uses the same model twice, up to 128 generated calculation

@@ -1,0 +1,672 @@
+{
+  "status": "POSTHOC_ADDITIVE_TOKEN_ACCOUNTING_ALL_FIXED_DOCUMENTS",
+  "utc": "2026-10-19T07:17:49.253426+00:00",
+  "source_report_sha256": "eb5f6b07aa4b39da6f708a7941fc2bc3bbaf1580b5bc3942979730acab2e1bf4",
+  "tokenizer_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+  "source_sha256": "dd61205235fd29e8fb54a539f5d3941adb527794febf2bff888307d67699df58",
+  "observations_reused": 5120,
+  "results": {
+    "DEV_AST256": {
+      "2026101913": {
+        "post_raw_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": -0.002070227296842475,
+            "ci95": [
+              -0.004560834282472515,
+              4.2944416196631955e-05
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.029750715457929733,
+            "ci95": [
+              -0.010629159234048557,
+              0.07179555900833996
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.004676071148834726,
+            "ci95": [
+              -0.01718851594823718,
+              0.007544849065601951
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.011005989215596729,
+            "ci95": [
+              -0.04014653457487923,
+              0.019101826697212717
+            ]
+          },
+          "total16_mean": 0.011998427796655803
+        },
+        "prior_own_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.00021251454690940363,
+            "ci95": [
+              -0.01996601148570889,
+              0.018141254721007617
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.3072139282150057,
+            "ci95": [
+              0.13747830548132664,
+              0.4803889595572628
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.0010485872062848678,
+            "ci95": [
+              -0.05774422547790873,
+              0.05526548870250063
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.20968957464511823,
+            "ci95": [
+              -0.3403896767841814,
+              -0.08374784958477127
+            ]
+          },
+          "total16_mean": 0.09668828091051201
+        },
+        "prior_own_minus_prior_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.006868552166000796,
+            "ci95": [
+              -0.01385361579399591,
+              0.02558744219250773
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.30049363201683654,
+            "ci95": [
+              0.1288252923545697,
+              0.47511169102760403
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.009326825722441257,
+            "ci95": [
+              -0.04350799831346981,
+              0.0615435150361179
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.224384743511345,
+            "ci95": [
+              -0.352877566214468,
+              -0.1024952672712738
+            ]
+          },
+          "total16_mean": 0.0923042663939336
+        },
+        "prior_own_minus_prior_empty": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.5311110170853226,
+            "ci95": [
+              0.4546519953886133,
+              0.6116412512745398
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.7767455143651523,
+            "ci95": [
+              0.5508935466968632,
+              1.0109799421732224
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.24266821100725622,
+            "ci95": [
+              0.13075658455493128,
+              0.3723198971493225
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": 0.09635847350130722,
+            "ci95": [
+              -0.002224754322079847,
+              0.19748548228263588
+            ]
+          },
+          "total16_mean": 1.6468832159590383
+        },
+        "prior_own_minus_B0raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.014041416984269972,
+            "ci95": [
+              -0.010772785416170194,
+              0.036680290676554955
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.3095036091234644,
+            "ci95": [
+              0.12159891586050366,
+              0.49746068348539396
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.0102209250149361,
+            "ci95": [
+              -0.058271633833971846,
+              0.07659444038676944
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.5494478324094325,
+            "ci95": [
+              -0.7522476443568996,
+              -0.35393154843373203
+            ]
+          },
+          "total16_mean": -0.21568188128676202
+        }
+      },
+      "2026101914": {
+        "post_raw_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.0015995192519362433,
+            "ci95": [
+              -0.00019605170803487225,
+              0.0035607358528208614
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.0011565397247911557,
+            "ci95": [
+              -0.03705860603850971,
+              0.03947086374078887
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.012730140469602969,
+            "ci95": [
+              7.764534730391186e-05,
+              0.026204766123447597
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.009298772702934444,
+            "ci95": [
+              -0.046377968997583244,
+              0.02821281336967966
+            ]
+          },
+          "total16_mean": 0.006187426743395924
+        },
+        "prior_own_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.023972058016095588,
+            "ci95": [
+              0.0028743397745351735,
+              0.042769413842091354
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.04929875617812038,
+            "ci95": [
+              -0.18270341649710067,
+              0.27385540514866136
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 2.7548396928533947e-05,
+            "ci95": [
+              -0.052874554712929456,
+              0.05453959963764374
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.21250786713536313,
+            "ci95": [
+              -0.35767625371024103,
+              -0.07496705556670089
+            ]
+          },
+          "total16_mean": -0.13920950454421863
+        },
+        "prior_own_minus_prior_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.027886361189382924,
+            "ci95": [
+              0.006363107151647319,
+              0.046871520516787495
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.09067611968709219,
+            "ci95": [
+              -0.14409360249353537,
+              0.31889753682460104
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.016823135361898167,
+            "ci95": [
+              -0.0649928643956514,
+              0.029897793658620282
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.21763338604499388,
+            "ci95": [
+              -0.3620732964837377,
+              -0.08061149193720171
+            ]
+          },
+          "total16_mean": -0.11589404053041694
+        },
+        "prior_own_minus_prior_empty": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.14313212056288194,
+            "ci95": [
+              0.10667824110300828,
+              0.1876515338594799
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.682932647198677,
+            "ci95": [
+              0.3973493804153111,
+              0.9775955775920583
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.19279282605248227,
+            "ci95": [
+              0.09963755426193757,
+              0.3017227415609568
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": 0.0761302400784647,
+            "ci95": [
+              -0.021024953137640755,
+              0.17447948312749184
+            ]
+          },
+          "total16_mean": 1.0949878338925059
+        },
+        "prior_own_minus_B0raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.04410057022190017,
+            "ci95": [
+              0.01993094404757585,
+              0.06737654562340718
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.12139241305514978,
+            "ci95": [
+              -0.11314685756504395,
+              0.3525395336431764
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.01770234298149198,
+            "ci95": [
+              -0.0852496717009256,
+              0.0454480664680652
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.5993318105821942,
+            "ci95": [
+              -0.8237992554626181,
+              -0.3847289129079276
+            ]
+          },
+          "total16_mean": -0.4515411702866362
+        }
+      }
+    },
+    "DEV_legacy256": {
+      "2026101913": {
+        "post_raw_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": -0.0018269213840831355,
+            "ci95": [
+              -0.00434196875886117,
+              0.00027812766019719154
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.02196936051330936,
+            "ci95": [
+              -0.01722014454033367,
+              0.06031911368822872
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.005162039758871972,
+            "ci95": [
+              -0.007788060498474444,
+              0.018694921382993474
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.01264524686885668,
+            "ci95": [
+              -0.04275928270164611,
+              0.01690317584239252
+            ]
+          },
+          "total16_mean": 0.012659232019241518
+        },
+        "prior_own_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.001978846771199194,
+            "ci95": [
+              -0.01693874386220906,
+              0.018063525292038515
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.2763343841704893,
+            "ci95": [
+              0.12158189931076524,
+              0.43172153816928993
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.02845145659431858,
+            "ci95": [
+              -0.0864181563570318,
+              0.028739961828175474
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.20047169294353262,
+            "ci95": [
+              -0.3284865972034876,
+              -0.08004608572585811
+            ]
+          },
+          "total16_mean": 0.04939008140383727
+        },
+        "prior_own_minus_prior_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.007807941400221452,
+            "ci95": [
+              -0.01154558001545949,
+              0.02456402816980409
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.29992600517856716,
+            "ci95": [
+              0.14103342485104506,
+              0.45890098701571014
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.004934655918055447,
+            "ci95": [
+              -0.05568957810863031,
+              0.04678441369349198
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.18969925121621128,
+            "ci95": [
+              -0.31245624351993684,
+              -0.07497267600907469
+            ]
+          },
+          "total16_mean": 0.11310003944452188
+        },
+        "prior_own_minus_prior_empty": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.5189241955075179,
+            "ci95": [
+              0.4419525682984485,
+              0.5995443094000277
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.7589638599147923,
+            "ci95": [
+              0.5461092404285685,
+              0.9769877591057796
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.15259966978092798,
+            "ci95": [
+              0.07581333705150697,
+              0.23945016262624993
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": 0.0979132459604572,
+            "ci95": [
+              0.012321592502800516,
+              0.18660443825132011
+            ]
+          },
+          "total16_mean": 1.5284009711636952
+        },
+        "prior_own_minus_B0raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.012545030329230045,
+            "ci95": [
+              -0.011504989107007944,
+              0.03340656471143999
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.35120074180154925,
+            "ci95": [
+              0.17771292594912974,
+              0.5217382342925072
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.057260139216245065,
+            "ci95": [
+              -0.00948190640163551,
+              0.1250225131686177
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": 0.16703131621823228,
+            "ci95": [
+              -0.24908252450483653,
+              0.6287974877232327
+            ]
+          },
+          "total16_mean": 0.5880372275652566
+        }
+      },
+      "2026101914": {
+        "post_raw_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.001875220081544171,
+            "ci95": [
+              0.00025508075415805467,
+              0.0036713037303980093
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": -0.01448825948292709,
+            "ci95": [
+              -0.04833031292766241,
+              0.01795206666091497
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.017885124659005935,
+            "ci95": [
+              0.0016896821905236336,
+              0.037409529137275556
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.025296932054373805,
+            "ci95": [
+              -0.06561155892405168,
+              0.014340795444079103
+            ]
+          },
+          "total16_mean": -0.02002484679675079
+        },
+        "prior_own_minus_raw_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.02277490665396087,
+            "ci95": [
+              0.0019964289526610115,
+              0.04102448764897926
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.012986073191866454,
+            "ci95": [
+              -0.19156669047996217,
+              0.20379295377586432
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.0022761635494081833,
+            "ci95": [
+              -0.04934403215685853,
+              0.057114087619710596
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.15818382950739912,
+            "ci95": [
+              -0.290581149948451,
+              -0.03178429935147959
+            ]
+          },
+          "total16_mean": -0.12014668611216361
+        },
+        "prior_own_minus_prior_raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.025444329164237445,
+            "ci95": [
+              0.00440220645285514,
+              0.04343695379719818
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.10712586932142493,
+            "ci95": [
+              -0.10843096726837997,
+              0.31526322041713
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": -0.014257070173899877,
+            "ci95": [
+              -0.0595485755757784,
+              0.031500610608099465
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": -0.1724668419347141,
+            "ci95": [
+              -0.30565658668763396,
+              -0.04487063103138001
+            ]
+          },
+          "total16_mean": -0.0541537136229516
+        },
+        "prior_own_minus_prior_empty": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.13324912100745934,
+            "ci95": [
+              0.09683849855318569,
+              0.1766834510964332
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.6994606472247185,
+            "ci95": [
+              0.42503368551681703,
+              0.979789206794049
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.1412681407438079,
+            "ci95": [
+              0.06664735595609504,
+              0.22715443922631853
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": 0.0764615919509812,
+            "ci95": [
+              -0.005402720210804462,
+              0.1587141998827258
+            ]
+          },
+          "total16_mean": 1.050439500926967
+        },
+        "prior_own_minus_B0raw": {
+          "leading_whitespace": {
+            "mean_nats_per_document": 0.038081317314755836,
+            "ci95": [
+              0.014404379310280291,
+              0.06034617950471092
+            ]
+          },
+          "numeral": {
+            "mean_nats_per_document": 0.1573636832967746,
+            "ci95": [
+              -0.05977711445448667,
+              0.36812586325711805
+            ]
+          },
+          "curator_boundary_with_gap": {
+            "mean_nats_per_document": 0.05700391580538877,
+            "ci95": [
+              -0.00949169470723188,
+              0.12633879350471408
+            ]
+          },
+          "remaining_tail": {
+            "mean_nats_per_document": 0.1584484766210935,
+            "ci95": [
+              -0.26002288637164184,
+              0.6311744538472708
+            ]
+          },
+          "total16_mean": 0.41089739303801276
+        }
+      }
+    }
+  },
+  "parts": [
+    "leading_whitespace",
+    "numeral",
+    "curator_boundary_with_gap",
+    "remaining_tail"
+  ],
+  "bootstrap": {
+    "draws": 20000,
+    "seed": 2026101915,
+    "unit": "document"
+  },
+  "limits": [
+    "Post-hoc descriptive partition; neither primary gate nor scalar parser is changed.",
+    "All256 documents remain in every contrast; each seed and panel separate. CIs are unadjusted and checkpoint-conditional.",
+    "Numeral includes any whitespace merged into its native token; fully separate preceding whitespace is its own component.",
+    "Boundary means the frozen curator closing token(s), plus intervening whitespace; it can be a word or mathematical relation, not necessarily sentence punctuation.",
+    "All annotated numeral/curator-boundary tokens fit in16 here; this does not certify initial-scalar-v2 support or full semantic completion.",
+    "Component intervals need not add to total intervals. Components add exactly per document and their means sum to the unchanged original endpoint.",
+    "No model forward, additional generation, model selection, or new independent observation."
+  ],
+  "files": {
+    "validation/real_trace_v10_token_partition_20261019/all-document-component-differences.jsonl.gz": {
+      "sha256": "3135c14f28505f92f6bd630359cf923a1531382bdffcc81308dcde29c9cf4621",
+      "bytes": 546137
+    },
+    "validation/real_trace_v10_token_partition_20261019/fixed-token-partitions.json": {
+      "sha256": "3d6f2b3b864a6f4441e4a7972c54f37cee9d2c010a5b0f23af0cc72409e41429",
+      "bytes": 307832
+    }
+  }
+}

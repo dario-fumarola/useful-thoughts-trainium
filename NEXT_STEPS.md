@@ -19,8 +19,9 @@
    A strong missing reference is ordinary answer-focused SFT versus full-trace
    CoT SFT on the SAME verified real documents,with prefix unscored. Current CPT
    allocates about3.5% of normalizedCE coefficient mass to added trace tokens.
-   First decompose the completed16-token score into number/boundary/tail to
-   understand the positive scalar/uncertain likelihood discrepancy,no new gates.
+   Completed post-hoc partition finds tail damage in both seeds and a clear
+   numeral likelihood gain only in seed1913;primary gates remain failed.
+   Report:validation/real_trace_v10_token_partition_20261019.json.
    Newobjective needs newidentity,prospective design andactual workload qualification.
    Do not silently tune closed studies or startRL/8B from the scalar gain.
 
