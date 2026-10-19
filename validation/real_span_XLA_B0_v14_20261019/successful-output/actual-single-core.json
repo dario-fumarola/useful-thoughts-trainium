@@ -1,0 +1,35 @@
+{
+  "topology": [
+    {
+      "bdf": "0000:cc:00.0",
+      "connected_to": [
+        12,
+        3,
+        4,
+        1
+      ],
+      "cpu_affinity": "48-95,144-191",
+      "instance_id": "i-093530c991697e3c2",
+      "instance_type": "trn2.48xlarge",
+      "logical_neuroncore_config": 2,
+      "memory_size": 103079215104,
+      "nc_count": 4,
+      "neuron_device": 0,
+      "neuron_processes": [
+        {
+          "command": "/home/ubuntu/ema-trainium/.venv/bin/python -u /home/ubuntu/dario/local/diagnostics/real-span-XLA-B0-v14-v2/span_probe.py",
+          "neuron_runtime_version": "2.34.10",
+          "pid": 795489
+        }
+      ],
+      "neuroncore_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "numa_node": "1"
+    }
+  ],
+  "utc": "2026-10-19T06:46:15+00:00"
+}

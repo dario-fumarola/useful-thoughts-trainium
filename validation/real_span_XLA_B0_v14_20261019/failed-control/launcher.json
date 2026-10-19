@@ -1,0 +1,15 @@
+{
+  "timeout_pid": 795246,
+  "session": 795246,
+  "pgid": 795246,
+  "started_utc": "2026-10-19T06:39:32.681755+00:00",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=30s",
+    "3600s",
+    "/home/ubuntu/ema-trainium/.venv/bin/python",
+    "-u",
+    "/home/ubuntu/dario/local/diagnostics/real-span-XLA-B0-v14-v1/profile.py"
+  ]
+}

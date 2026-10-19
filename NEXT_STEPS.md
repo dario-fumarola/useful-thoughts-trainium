@@ -1,7 +1,7 @@
 # Current queue
 
 1. Both fixed real-document readouts are complete and independently checked.
-   Publish the primary and prospective scalar secondary together, with all outputs,
+   Published primary and prospective scalar secondary together, with all outputs,
    failures, controls, figures and disclosed examples. No parser or gate change.
    Primary report:validation/real_trace_cpt_v10_complete_20261019.json.
    Scalar report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
@@ -11,16 +11,18 @@
    Controls:local/diagnostics/real-trace-cpt-v10-study-v1 and
    local/diagnostics/real-trace-v10-scalar-secondary-study-v1. Producers are closed.
 
-2. Close the forward-only fast-scoring engineering profile separately.
-   B0v14-v2 completes all1,280 rows on one configured logical core:parity and
-   declared>=4x warm throughput pass. Archive original outputs/source/closure.
-   This does not qualify trained weights,RL steps,BF16 sampling,gradients or sync.
-   Then choose one bounded scientific follow-up. A strong missing reference is
-   ordinary answer-focused SFT versus full-trace CoT SFT on the SAME verified
-   real documents,with prefix unscored. Current CPT allocates about3.5% of its
-   normalized CE coefficient mass to added trace tokens. New objective requires
-   a new identity,prospective fixed design and actual workload qualification.
-   Do not silently tune the closed studies or start RL/8B from the scalar gain.
+2. Select one bounded scientific follow-up after the complete mixed readout.
+   Forward-only B0 scoring qualification is complete and protected:
+   validation/real_span_XLA_B0_v14_20261019.json. All1,280 rows pass parity;
+   estimated warm speedup15.72x onone configured core versus16CPUthreads.
+   Only B0/currentshape qualified;noRLstep,BF16sampling,gradients orsync claim.
+   A strong missing reference is ordinary answer-focused SFT versus full-trace
+   CoT SFT on the SAME verified real documents,with prefix unscored. Current CPT
+   allocates about3.5% of normalizedCE coefficient mass to added trace tokens.
+   First decompose the completed16-token score into number/boundary/tail to
+   understand the positive scalar/uncertain likelihood discrepancy,no new gates.
+   Newobjective needs newidentity,prospective design andactual workload qualification.
+   Do not silently tune closed studies or startRL/8B from the scalar gain.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

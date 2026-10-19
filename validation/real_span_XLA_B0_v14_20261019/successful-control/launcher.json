@@ -1,0 +1,15 @@
+{
+  "timeout_pid": 795488,
+  "session": 795488,
+  "pgid": 795488,
+  "started_utc": "2026-10-19T06:45:13.690056+00:00",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=30s",
+    "3600s",
+    "/home/ubuntu/ema-trainium/.venv/bin/python",
+    "-u",
+    "/home/ubuntu/dario/local/diagnostics/real-span-XLA-B0-v14-v2/span_probe.py"
+  ]
+}

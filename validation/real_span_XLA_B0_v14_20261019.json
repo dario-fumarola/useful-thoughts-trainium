@@ -1,0 +1,111 @@
+{
+  "status": "PASS_B0_FORWARD_ONLY_ALL1280_PARITY_AND_WARM_THROUGHPUT",
+  "utc": "2026-10-19T07:14:30.827902+00:00",
+  "source_commit": "29c8b24",
+  "model": "released Qwen3-1.7B-Base FP32,unchanged B0",
+  "documents": 256,
+  "modes": 5,
+  "target_tokens_per_row": 16,
+  "padded_width": 672,
+  "batch": 4,
+  "configured_logical_cores": 1,
+  "numerical": {
+    "max_token_error": 0.00024569034576416016,
+    "absolute_mean_span_drift": 0.00021812920124701375,
+    "declared_limits": 0.001
+  },
+  "performance": {
+    "canonical_CPU16thread_panel_seconds": 1611.715420063003,
+    "first_batch_seconds": 40.42057158701937,
+    "warm_median_batch4_seconds": 0.32111784000881016,
+    "estimated_warm_panel_seconds": 102.50733010961343,
+    "estimated_warm_speedup_vs_CPU": 15.722928480719952,
+    "total_wall_seconds": 161.79877035701065
+  },
+  "independent_check": "All row identities,token deltas,mean drift,batch timings,warm estimate,throughput and literal gates independently recomputed from paired outputs. Timeout owner/process exited;physical device0 empty.",
+  "helper_provenance": {
+    "path": "train/real_trace_evaluation.py",
+    "sha256": "4a289e2f0228c00ce48c397519a63a91cbb3faee14854b73bde383f20c06d7b8",
+    "CPU_reference_helper_match": true,
+    "note": "Original run source map omits this helper;the frozen commit and CPU reference include its identity."
+  },
+  "failed_attempt": "V1 scored zero rows:launcher profile.py shadowed stdlib profile during cProfile import. V2 renamed launcher;model,data,workload and thresholds unchanged. Original failure outputs retained.",
+  "limits": [
+    "CPU reference is unchanged and authoritative for the live scientific study.",
+    "One logical Trainium core versus16 CPU threads; not equal resource cost or service latency.",
+    "Warm estimate excludes first compilation batch; first-batch and total wall are separately retained.",
+    "Actual frozen B0 weights and all256documents\u00d75modes; no new independent scientific observations.",
+    "This does not qualify an RL step, BF16 sampling, weight synchronization or gradients.",
+    "Only B0 is qualified;trained checkpoint and changed shape parity must be checked before future adoption. No current scientific score was replaced. Warm speedup is estimated from mean of319 warm batches times320,not a repeated warmed-panel benchmark."
+  ],
+  "files": {
+    "validation/real_span_XLA_B0_v14_20261019/failed-control/exit.json": {
+      "bytes": 74,
+      "sha256": "b4c6963f058b9c6b1d3b68eb944e72440fae681315abc00164e30b23d4bcd108"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/failed-control/launch.json": {
+      "bytes": 231,
+      "sha256": "91ed94312ad5db2b2d0e2d154ac5ccc3c8dc3f3c2229387a317d4812aa64bdd2"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/failed-control/launcher.json": {
+      "bytes": 350,
+      "sha256": "a3e086107eae652ecfd16802938b986f4072cf93566788b28018b9bfb5c35b02"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/failed-control/original-profile.py": {
+      "bytes": 8071,
+      "sha256": "8334f8345a606124631a536ff958111b90bd0e628e1fcf7d300729eab4b23809"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/failed-control/plan.json": {
+      "bytes": 3193,
+      "sha256": "9b4bb150fa64c0e7dbec52425fc6c1050f2baa5d6715dbb3ba3b6407024b68ab"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/failed-control/run.log": {
+      "bytes": 4162,
+      "sha256": "7ae8f35995bf0ef7e121c2dc665e62f1851205544d9009b9878e4e1da68242dd"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/failed-output/run.json": {
+      "bytes": 4281,
+      "sha256": "1a400efd106b39be8c2d18177695d40891d718cd91d9f7ef91401f8c5f44ac9c"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/exit.json": {
+      "bytes": 74,
+      "sha256": "8077e2d8842167f6d5df5d73de06416944565fa44890b287c98b0e434a177e93"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/import-preflight.json": {
+      "bytes": 94,
+      "sha256": "0cbb3478fdc6cb173fc56082ef366d77962acbe097822d0d7c7033de42135611"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/launch.json": {
+      "bytes": 231,
+      "sha256": "9c38c9838a20121250e7b5862927be59d66f5af90c80b864554179a943c3dfd7"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/launcher.json": {
+      "bytes": 353,
+      "sha256": "50262e99a3dcf0b7b9a4efc0a8564e3ee832a1bd8e8c6ae3f6b39ce8589f187d"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/plan.json": {
+      "bytes": 3420,
+      "sha256": "66ba2e4cca3ebcca2283b71b3caa6e057a49f445e6b29ced83873b778464415e"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/run.log": {
+      "bytes": 5498,
+      "sha256": "5046773e61157b83b3579640bb074eb914cac0d5614baf49d9d0971347b7ebfd"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-control/span_probe.py": {
+      "bytes": 8071,
+      "sha256": "c38a7982df61ad41c18b0ab9597a8e34308c86f2ed8ceef3184152a6a798450a"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-output/actual-single-core.json": {
+      "bytes": 797,
+      "sha256": "3e058f131229348d85d9ae89f824b69b4011b5b2d9e5b8f2bf00d6f0a6acc448"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-output/run.json": {
+      "bytes": 5207,
+      "sha256": "560662ea032e46c682877854b3210a1514fabec28631a97984123b0b0d58f052"
+    },
+    "validation/real_span_XLA_B0_v14_20261019/successful-output/scores.jsonl.gz": {
+      "bytes": 467548,
+      "sha256": "dcc693e3584b6666f924db2a2de7bc14985ddf118b8ec6c543a31b3aac02384d"
+    }
+  }
+}

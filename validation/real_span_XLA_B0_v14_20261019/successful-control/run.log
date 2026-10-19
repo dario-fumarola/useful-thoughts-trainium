@@ -1,0 +1,58 @@
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights:   0%|          | 1/310 [00:00<01:56,  2.64it/s]Loading weights:  79%|███████▉  | 245/310 [00:00<00:00, 657.22it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 529.77it/s]
+2026-10-19 06:45:32.000018:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_9984664294427331540+c4b1d492/model.neff
+2026-10-19 06:45:32.000170:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_7761646869768135256+c4b1d492/model.neff
+2026-10-19 06:45:32.000183:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_3314201227882727036+c4b1d492/model.neff
+2026-10-19 06:45:32.000194:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_4692911843641812798+c4b1d492/model.neff
+2026-10-19 06:45:32.000205:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_13229098011976347106+c4b1d492/model.neff
+2026-10-19 06:45:32.000216:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_17092305539383364416+c4b1d492/model.neff
+2026-10-19 06:45:32.000225:  795489  [INFO]: Using a cached neff at /home/ubuntu/dario/local/neuron-cache-driver/neuronxcc-2.27.5334.0+f702b353/MODULE_6486074295646267703+c4b1d492/model.neff
+..
+Compiler status PASS
+2026-10-19 06:46:13.000952:  795489  [INFO]: Compilation Successfully Completed for model.MODULE_16451373522105746073+c4b1d492.hlo_module.pb
+{"utc": "2026-10-19T06:46:15+00:00", "mode": "raw", "rows": 4, "last_batch_seconds": 40.42057158701937}
+{"utc": "2026-10-19T06:46:20+00:00", "mode": "raw", "rows": 68, "last_batch_seconds": 0.3248389429936651}
+{"utc": "2026-10-19T06:46:26+00:00", "mode": "raw", "rows": 132, "last_batch_seconds": 0.3300883579941001}
+{"utc": "2026-10-19T06:46:31+00:00", "mode": "raw", "rows": 196, "last_batch_seconds": 0.32021840699599124}
+{"utc": "2026-10-19T06:46:36+00:00", "mode": "empty", "rows": 260, "last_batch_seconds": 0.31990045701968484}
+{"utc": "2026-10-19T06:46:41+00:00", "mode": "empty", "rows": 324, "last_batch_seconds": 0.3056991180055775}
+{"utc": "2026-10-19T06:46:46+00:00", "mode": "empty", "rows": 388, "last_batch_seconds": 0.30522800199105404}
+{"utc": "2026-10-19T06:46:51+00:00", "mode": "empty", "rows": 452, "last_batch_seconds": 0.31808038597228006}
+{"utc": "2026-10-19T06:46:56+00:00", "mode": "oracle", "rows": 516, "last_batch_seconds": 0.32320040999911726}
+{"utc": "2026-10-19T06:47:02+00:00", "mode": "oracle", "rows": 580, "last_batch_seconds": 0.32837526401272044}
+{"utc": "2026-10-19T06:47:07+00:00", "mode": "oracle", "rows": 644, "last_batch_seconds": 0.3251690400065854}
+{"utc": "2026-10-19T06:47:12+00:00", "mode": "oracle", "rows": 708, "last_batch_seconds": 0.30641804900369607}
+{"utc": "2026-10-19T06:47:17+00:00", "mode": "own", "rows": 772, "last_batch_seconds": 0.3402545219869353}
+{"utc": "2026-10-19T06:47:22+00:00", "mode": "own", "rows": 836, "last_batch_seconds": 0.33003478799946606}
+{"utc": "2026-10-19T06:47:27+00:00", "mode": "own", "rows": 900, "last_batch_seconds": 0.3190934830054175}
+{"utc": "2026-10-19T06:47:33+00:00", "mode": "own", "rows": 964, "last_batch_seconds": 0.32518367600278}
+{"utc": "2026-10-19T06:47:38+00:00", "mode": "other", "rows": 1028, "last_batch_seconds": 0.31162418599706143}
+{"utc": "2026-10-19T06:47:43+00:00", "mode": "other", "rows": 1092, "last_batch_seconds": 0.3104216140054632}
+{"utc": "2026-10-19T06:47:48+00:00", "mode": "other", "rows": 1156, "last_batch_seconds": 0.3132721559959464}
+{"utc": "2026-10-19T06:47:53+00:00", "mode": "other", "rows": 1220, "last_batch_seconds": 0.322386682004435}
+{
+  "status": "COMPLETE_FIXED_REFERENCE_PARITY_AND_THROUGHPUT_PROFILE",
+  "started_utc": "2026-10-19T06:45:17+00:00",
+  "scope": "Frozen B0 DEV_AST256,all5modes,one logical core,FP32,no training",
+  "rows": 1280,
+  "profile_sha256": "c38a7982df61ad41c18b0ab9597a8e34308c86f2ed8ceef3184152a6a798450a",
+  "CPU_reference_run_sha256": "9c5b087ff0cba752e146e7d78155d68a720378c9b28f9947db3e2c369e5f2d71",
+  "max_token_error": 0.00024569034576416016,
+  "absolute_mean_span_drift": 0.00021812920124701375,
+  "numerical_gate_pass": true,
+  "first_batch_seconds": 40.42057158701937,
+  "warm_median_batch4_seconds": 0.32111784000881016,
+  "estimated_warm_panel_seconds": 102.50733010961343,
+  "canonical_CPU16thread_panel_seconds": 1611.715420063003,
+  "estimated_warm_speedup_vs_CPU": 15.722928480719952,
+  "declared_performance_gate_pass": true,
+  "scores_sha256": "f10598f45a0511d9f63153746795aeda22dedf6988d6a6308baa82e86f300fe8",
+  "limits": [
+    "CPU reference is unchanged and authoritative for the live scientific study.",
+    "One logical Trainium core versus16 CPU threads; not equal resource cost or service latency.",
+    "Warm estimate excludes first compilation batch; first-batch and total wall are separately retained.",
+    "Actual frozen B0 weights and all256documents\u00d75modes; no new independent scientific observations.",
+    "This does not qualify an RL step, BF16 sampling, weight synchronization or gradients."
+  ],
+  "finished_utc": "2026-10-19T06:47:58+00:00",
+  "total_wall_seconds": 161.79877035701065
+}

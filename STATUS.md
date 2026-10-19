@@ -28,6 +28,18 @@ Independent numeric parser/native-stop/count/all paired-bootstrap checks PASS.
 Report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json;all14payloads/CSV/figures preserved.
 Decision:narrow arithmetic-answer gain with extra computation;primary LL gates remain failed.
 
+## Closed: forward-only likelihood throughput qualification
+Question: can an existing Trainium core reproduce canonical CPU span scores faster?
+Experiment:real-span-XLA-B0-v14-v2;unchanged B0,256documents/five modes,all1,280rows.
+FP32,width672,batch4,one configured logicalcore;no sampling,backward oroptimizer.
+Declared max-token and absmean-span error<=0.001:PASS,observed0.000246/0.000218.
+Declared warm-speedup>=4x:PASS,estimated15.72x versus16-threadCPU;warmbatch0.321sec.
+Firstbatch40.42sec,total161.80sec;warm estimate excludes compile and uses319warm batches.
+All rows/timings/means independently recomputed;owner/worker closed,device0 empty.
+V1zero-row launcher-name collision preserved;V2changes filename,not workload or gates.
+Report:validation/real_span_XLA_B0_v14_20261019.json;paired raw scores/source/logs protected.
+Decision:future scoring candidate only;trained weights/new shapes need parity;no RL speed claim.
+
 ## Closed: bounded variable-depth writer repair
 Question: does varied-depth training repair incomplete notes and improve the same frozen reader?
 Experiment:variable-depth-writer-v11-v1;one seed,twofresh640examplewriters,160updates/eightpasses.

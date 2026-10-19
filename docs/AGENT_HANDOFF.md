@@ -25,9 +25,10 @@ Original raw reports MUST stay immutable;their SHA bindings are checked.
 Posthoc error-transition-source.py independently reproduces every descriptive
 partition;gain includes numerical corrections and improved format coverage.
 
-Next:finish presentation-annex EBS readback protection;review and commit/push
-complete mixed result/README/STATUS/NEXT. Then close the forward-only scoring
-engineering result below and select a bounded next scientific intervention.
+Both public presentation annexes are EBS readback protected. Complete mixed result
+is published in main c6bf246/c60fb3d. Forward-only engineering result is now closed
+and protected:validation/real_span_XLA_B0_v14_20261019.json. Select the next bounded
+scientific intervention;first decompose number/boundary/tail in completed scores.
 No new model is running. All six terminal models/latest full320 are protected.
 Immutable training3d8666b,likelihood29c8b24,scalar4297c1d;do not edit old identities.
 No training extension or checkpoint selection follows from either readout.

@@ -1,0 +1,40 @@
+{
+  "schema": "real-span-XLA-B0-v14-v1",
+  "created_utc": "2026-10-19T06:38:46.463400+00:00",
+  "question": "Can one existing Trainium logical core reproduce all frozen B0 full16 scores faster than CPU?",
+  "purpose": "Forward-only engineering, no learning or replacement of current CPU scientific scoring.",
+  "profile_sha256": "8334f8345a606124631a536ff958111b90bd0e628e1fcf7d300729eab4b23809",
+  "source_root": "/home/ubuntu/dario/local/worktrees/real-trace-eval-v10",
+  "source_commit": "29c8b24",
+  "model_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": "256",
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "fixed_files": {
+    "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2/DEV_AST256-questions.jsonl": "77647b482584ef7cb99ecb8912822674efb72d5053f6fbd98a7344b80b250902",
+    "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2/DEV_AST256-targets.jsonl": "3bb0996c6c6eb01483f030630de341a26e0e716b12b1acdbf24e3daab7c8b8b9",
+    "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2/DEV_AST256-controls.jsonl": "380750955c14ea842d239a6aad8d2591eef18c5d7723fe2bbbce4f8ce2a1327c",
+    "/home/ubuntu/dario/local/nvme-cpt/evaluation/real-trace-v10-DEV_AST256-B0-notes-v1/notes-bundle.json": "531b9fff3703b792039fc5ba5860cfa7d5f81c7f8ade45deaa6d97274136b5a6",
+    "/home/ubuntu/dario/local/nvme-cpt/evaluation/real-trace-v10-B0-CPU-scores-v1/DEV_AST256/run.json": "9c5b087ff0cba752e146e7d78155d68a720378c9b28f9947db3e2c369e5f2d71",
+    "/home/ubuntu/dario/local/nvme-cpt/evaluation/real-trace-v10-B0-CPU-scores-v1/DEV_AST256/logps.jsonl": "21ded4a648fe26464c35f5cc2755ea92ee694068176dab6cbd85399f7e5dedda"
+  },
+  "numerical_gate": "All1280 actual rows, max native target-token LP error<=0.001,absolute mean span drift<=0.001.",
+  "performance_gate": "Estimated warm fixed-panel throughput>=4times the completed16-thread CPU reference; cold first batch/total wall separately reported.",
+  "resources": "One idle logical core0;3600second timeout;512GiB host availability floor;no gradients, optimizer, note generation or source changes.",
+  "questions": "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2/DEV_AST256-questions.jsonl",
+  "targets": "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2/DEV_AST256-targets.jsonl",
+  "oracle_controls": "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2/DEV_AST256-controls.jsonl",
+  "notes_bundle": "/home/ubuntu/dario/local/nvme-cpt/evaluation/real-trace-v10-DEV_AST256-B0-notes-v1/notes-bundle.json",
+  "CPU_reference_run": "/home/ubuntu/dario/local/nvme-cpt/evaluation/real-trace-v10-B0-CPU-scores-v1/DEV_AST256/run.json",
+  "CPU_reference_scores": "/home/ubuntu/dario/local/nvme-cpt/evaluation/real-trace-v10-B0-CPU-scores-v1/DEV_AST256/logps.jsonl"
+}
