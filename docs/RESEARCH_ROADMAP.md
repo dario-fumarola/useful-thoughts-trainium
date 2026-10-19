@@ -1,23 +1,30 @@
 # Long-term proof ladder
 
-## Immediate causal chain — October 18
+## Current causal chain — October 19
 
 The north star is **a model that computes from its available prefix and makes
 better fresh predictions at a worthwhile cost**. A thought can reorganize or
 derive information from that prefix; a future-aware annotation can additionally
 reveal which uncertain continuation occurred. Those are different experiments.
-The present synthetic study isolates computation before returning to real text.
+The synthetic study isolates the computation channel. The current mainline tests
+training and inference effects separately on verified real mathematical documents.
 
 | Step | Evidence required | Current state and next action |
 |---|---|---|
 | 1. The reader can use computation | Correct states improve the same reader's answers with content controls. | Pass in the two-seed study: teacher accuracy48–83%, with substantial remaining calculation errors. |
-| 2. The writer can supply it | Prefix-only computation is correct, relevant, complete and naturally stopped. | Incomplete generalization. All4096notes stop naturally, but composition needs three equations while501/512 and508/512notes contain two. Training always required two. |
-| 3. The composed channel is useful | Student notes beat direct, empty and unrelated notes on the same reader. | Pass in all eight seed/panel cells; composition absolute accuracy remains3.7–3.9%. A positive local channel is insufficient for a good solver. |
-| 4. The system earns its cost | Compare strong direct, compact and full CoT with all models, updates and tokens accounted for. | No split advantage. Full CoT scores higher on all panels/both seeds; seven paired intervals exclude zero and one ends at zero. Prefer the simpler single-model reference. |
-| 5. The mechanism survives real data | Source-matched real-document endpoints, with genuine prefix-derived or explicitly posterior labels. | Verified5120TRAIN/256DEVdata ready. Native prefixes/targets, nonroot/full traces and raw provenance retained. No real-data model trained in the new scope yet. |
+| 2. The writer can supply it | Prefix-only computation is correct, relevant, complete and naturally stopped. | The bounded varied-depth repair reaches409/512 correct, complete, naturally stopped composition states versus91/512 for its fixed-depth control. At unseen depth6 only24/256 states qualify; length extrapolation remains weak. |
+| 3. The composed channel is useful | Student notes beat direct, empty and unrelated notes on the same reader. | The repaired writer gives the same frozen reader306/512 composition answers versus124/512 with the fixed writer,empty7,and unrelated1. The declared repair gate passes. Longer-depth answers remain10/256. |
+| 4. The system earns its cost | Compare strong direct, compact and full CoT with all models, updates and tokens accounted for. | No matched split advantage in the completed two-seed study. The new one-seed curriculum diagnostic exceeds frozen fullCoT on composition, but curricula/target supervision differ and it loses at familiar depth. Keep single-model methods as the mainline. |
+| 5. The mechanism survives real data | Source-matched real-document endpoints, with genuine prefix-derived or explicitly posterior labels. | Single-model raw/prior/post study is running: all three first seeds completed320updates; second seeds are active. AST-disjoint256 and ordinary256 panels are frozen. Held predictive gains remain pending. |
 | 6. Self-improvement adds value | Improve beyond the supervised reference without an external teacher at deployment. | Held. First complete the real-document single-model reference; distinguish training-scaffold value from extra-inference value. |
 
-The completed comparison is
+The [bounded repair](../validation/variable_depth_writer_v11_complete_20261019.json)
+is a positive curriculum intervention, not a reason to reopen an unlimited split
+rescue. It supports useful prefix-computable states within the covered depth range;
+it does not establish robust longer execution or a matched architecture advantage.
+All9,216answers/2,048notes, including unsupported outputs, are published.
+
+The completed fixed-depth comparison is
 [fully public](../validation/partial_state_v7_matched5120_complete_20261018.json).
 Its [post-hoc trace analysis](../validation/partial_state_v7_matched5120_descriptive_20261019.json)
 finds a fixed-depth behavior consistent with learned stopping shortcuts. Larger
@@ -25,12 +32,13 @@ training exposure on the same trace depth did not establish compositional
 execution. This is a measured boundary, not evidence that all intermediate
 computation or thought-augmented pretraining fails.
 
-Next use one model and verified real text. A full-trace CoT-style arm tests
+The mainline uses one model and verified real text. A full-trace CoT-style arm tests
 computation before prediction; a post-document explanatory arm tests training
 value. Both need a strong ordinary continuation control, explicit label/update
 costs and source-matched held endpoints. Exact posterior-note recovery is not a
 universal requirement for latent training; see [paper notes](REFERENCE_NOTES.md).
-No learning protocol is released by this roadmap alone.
+The concrete [released study](../validation/real_trace_cpt_v10_science_launch_20261019.json)
+and [live status](../STATUS.md) define the budget; this roadmap adds no new launches.
 
 **Capacity is an intervention, not an assumed remedy.** A7–8B writer may produce
 more reliable work, while a stronger reader may already solve more without help.
