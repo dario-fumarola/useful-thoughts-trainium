@@ -143,3 +143,14 @@ Secondary renderer prepared:local/analysis/render_real_trace_scalar_secondary_v1
 Run only after complete secondary report. Its all-mode CSV preserves every parser
 category; bars display raw/own plus oracle/empty/other reference points. Review
 figures visually before publication. Do not alter either live worktree.
+
+Mechanical progress helper (no score/answer parsing):
+python3 local/analysis/live_real_trace_v10_health_20261019.py
+It prints all row counts, completion/failure flags, storage and host availability.
+B0 likelihood is fully complete; both raw-control secondary jobs are still waiting
+for their original legacy notes. Four augmentation-model secondary jobs run.
+Posthoc completed-v11 error decomposition is prepared/public-source reproducible:
+variable_depth_writer_v11_error_decomposition_20261019.json. On composition,104/206
+variable-system errors have exact teacher inputs; all409 matching-input native
+answer sequences agree across independent jobs.71 errors have changed inputs where
+the teacher succeeds;31 are changed inputs where both fail. No new observations.

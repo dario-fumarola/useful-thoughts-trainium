@@ -157,3 +157,14 @@ reasoning study should test whether connected evidence is actually used, rather
 than treating fluent fact extraction or benchmark accuracy alone as proof.
 The current corpus inventory releases no learning or evaluation job.
 [MuSiQue sections4 and7.2](https://arxiv.org/html/2108.00573v3).
+
+## Trained extra-compute controls — rechecked 2026-10-19
+
+The pause-token paper omits loss on supplied pause tokens. Its strongest gains
+use delays during both pretraining and finetuning; adding them only at finetuning
+has mixed effects, and removing delays at inference can break performance.
+Our inference: untrained filler is insufficient for the stronger content-versus-
+computation claim, and plain-path retention needs measurement. A later comparison
+must match our causal attention: the paper uses bidirectional prefix attention
+in downstream tasks. No pause arm is added to the current fixed study.
+[Pause tokens, sections3–5](https://arxiv.org/html/2310.02226v3).

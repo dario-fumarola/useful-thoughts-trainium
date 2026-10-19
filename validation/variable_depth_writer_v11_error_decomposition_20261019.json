@@ -1,0 +1,259 @@
+{
+  "status": "POSTHOC_NATIVE_INPUT_ERROR_DECOMPOSITION_NO_NEW_GENERATION",
+  "utc": "2026-10-19T06:07:11.737969+00:00",
+  "panels": {
+    "DEV_composition": {
+      "fixed": {
+        "counts": {
+          "items": 512,
+          "correct": 124,
+          "teacher_correct": 377,
+          "exact_teacher_input": 91,
+          "same_input_different_actions": 0,
+          "wrong_with_changed_input_and_wrong_teacher_reference": 104,
+          "wrong_with_changed_input_and_correct_teacher_reference": 258,
+          "wrong_despite_exact_teacher_input": 26
+        },
+        "contingency": [
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 104
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": true,
+            "items": 258
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": true,
+            "teacher_correct": false,
+            "items": 5
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 54
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 26
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 65
+          }
+        ]
+      },
+      "variable": {
+        "counts": {
+          "items": 512,
+          "correct": 306,
+          "teacher_correct": 377,
+          "exact_teacher_input": 409,
+          "same_input_different_actions": 0,
+          "wrong_despite_exact_teacher_input": 104,
+          "wrong_with_changed_input_and_wrong_teacher_reference": 31,
+          "wrong_with_changed_input_and_correct_teacher_reference": 71
+        },
+        "contingency": [
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 31
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": true,
+            "items": 71
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 1
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 104
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 305
+          }
+        ]
+      }
+    },
+    "DEV_depth2": {
+      "fixed": {
+        "counts": {
+          "items": 256,
+          "correct": 180,
+          "teacher_correct": 213,
+          "exact_teacher_input": 215,
+          "same_input_different_actions": 0,
+          "wrong_with_changed_input_and_correct_teacher_reference": 33,
+          "wrong_despite_exact_teacher_input": 35,
+          "wrong_with_changed_input_and_wrong_teacher_reference": 8
+        },
+        "contingency": [
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 8
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": true,
+            "items": 33
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 35
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 180
+          }
+        ]
+      },
+      "variable": {
+        "counts": {
+          "items": 256,
+          "correct": 182,
+          "teacher_correct": 213,
+          "exact_teacher_input": 216,
+          "same_input_different_actions": 0,
+          "wrong_with_changed_input_and_correct_teacher_reference": 31,
+          "wrong_despite_exact_teacher_input": 34,
+          "wrong_with_changed_input_and_wrong_teacher_reference": 9
+        },
+        "contingency": [
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 9
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": true,
+            "items": 31
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 34
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 182
+          }
+        ]
+      }
+    },
+    "DEV_depth6": {
+      "fixed": {
+        "counts": {
+          "items": 256,
+          "correct": 0,
+          "teacher_correct": 78,
+          "exact_teacher_input": 0,
+          "same_input_different_actions": 0,
+          "wrong_with_changed_input_and_correct_teacher_reference": 78,
+          "wrong_with_changed_input_and_wrong_teacher_reference": 178
+        },
+        "contingency": [
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 178
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": true,
+            "items": 78
+          }
+        ]
+      },
+      "variable": {
+        "counts": {
+          "items": 256,
+          "correct": 10,
+          "teacher_correct": 78,
+          "exact_teacher_input": 24,
+          "same_input_different_actions": 0,
+          "wrong_with_changed_input_and_correct_teacher_reference": 68,
+          "wrong_with_changed_input_and_wrong_teacher_reference": 163,
+          "wrong_despite_exact_teacher_input": 15
+        },
+        "contingency": [
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 163
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": false,
+            "teacher_correct": true,
+            "items": 68
+          },
+          {
+            "same_teacher_input": false,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 1
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": false,
+            "teacher_correct": false,
+            "items": 15
+          },
+          {
+            "same_teacher_input": true,
+            "own_correct": true,
+            "teacher_correct": true,
+            "items": 9
+          }
+        ]
+      }
+    }
+  },
+  "audit_source_sha256": "6743451697e97f08ae1f06ac04e3142a218531f1217120c0670f861027f8d970",
+  "original_report_sha256": "1c80d258a3cd9eb15666e3871440df049bb2104f1b98dfc32d8c68cab22b989f",
+  "limits": [
+    "All original observations reused; no new evaluation, uncertainty estimate or success gate.",
+    "Exact equality compares original native reader prompt IDs, not decoded-text similarity.",
+    "Changed input plus a correct teacher response identifies a communication gap; it does not alone prove the generated calculation was wrong.",
+    "Teacher-conditioned performance references this frozen reader/representation, not every possible computation or a pure model-capacity effect."
+  ]
+}

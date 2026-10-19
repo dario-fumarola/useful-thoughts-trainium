@@ -45,6 +45,13 @@ the CoT competitors were frozen rather than retrained on variable-depth data.
 It does not establish a matched architecture advantage or broad extrapolation.
 The single-model real-document study remains the mainline.
 
+A [post-hoc input comparison](validation/variable_depth_writer_v11_error_decomposition_20261019.json)
+locates a remaining boundary: 104 of the variable system's 206 composition errors
+occur with exactly the verified teacher input. All 409 matching-input cases
+produce identical answer actions across the independent reader runs. Better
+imitation of these labels cannot fix those errors with this frozen reader and
+representation; this does not isolate model capacity from its training distribution.
+
 ![Completed variable-depth diagnostic](validation/variable_depth_writer_v11_complete_20261019/complete-answer-accuracy.svg)
 
 All **9,216 answers and2,048 notes** were independently audited and preserved,
