@@ -11,22 +11,21 @@
    Controls:local/diagnostics/real-trace-cpt-v10-study-v1 and
    local/diagnostics/real-trace-v10-scalar-secondary-study-v1. Producers are closed.
 
-2. Monitor the four released V15 target-SFT models;no extensions orselection.
-   Source829d9a2 atlocal/worktrees/real-target-sft-v15;1,647CPUchecks andactual
-   both-mask/fulloptimizerrestore qualificationPASS. Science released08:00UTC.
-   Control:local/diagnostics/real-target-sft-v15-study-v1;four8rank partitionsphysical0–7.
-   Exactly320updates/two passes/freshB0 perarm/seed;savefull160/320,terminalprimary.
-   Independent qualification:validation/real_target_sft_v15_hardware_20261019.json.
-   Models:target_direct/target_cot,seeds2026101913/14. No stochasticRL/8B release.
+2. Complete V15 nine-model evaluation and independently checked readout.
+   Allfour target-SFT runs completed320updates;1,280ordered updates/eightfullstates
+   independently audited. Allterminalmodels/latestfull320 EBSprotected;originalsNVMe.
+   Training report:validation/real_target_sft_v15_training_20261019.json andfour320-rowtraces.
+   Source829d9a2/evaluation41a5bfd stayfrozen;noextensions,selection orpartialoutcomes.
+   Allnine tmux target-eval-v15-slot0–8 released;mastercontrol:
+   local/diagnostics/real-target-eval-v15-study-v1. Allfirst5referenceLLpanelscomplete;
+   new4models continue native/cache checks,notes,scalar andfixedreference full16scoring.
+   Monitor:python3 local/analysis/live_real_target_v15_health_20261019.py.
+   Finite finalwatcher target-v15-final-readout runs analyzer,independentcheck,
+   figures/CSV anddisclosedexamples onlyafterallnine generation/scoreclosures.
    Fresh384 excludes actualTRAINandbotholdevalpanels bydocument/exactAST.
-   Design:validation/real_target_sft_v15_design_20261019.json;docs/REAL_TARGET_SFT_V15.md.
-   Evaluation source41a5bfd atlocal/worktrees/real-target-eval-v15;1,664CPUchecks.
-   Inputs:local/nvme-cpt/data/real-target-sft-v15-evaluation-inputs-v1;gold separate.
-   Prepare B0andfrozenV10raw/prior references onidledevices,then allfour terminal
-   models afterindependent state/protection audits. No partial capability review.
-   Actualnative/cache checks permodel;nativefull16 needs fixed4-per-mode CPUparity.
    Primary>=3pp CoT-own−directSFT-raw andpositivepairedlower ineachseed,plus empty/B0.
-   Keep allfailures andmatchactual costs;source/eval areseparatefrozenbranches.
+   Include ordinary256NLL,full16components,allfailures andtraining/inferencecosts.
+   Interpret/publish thecompletecomparison before choosing anynewlearningintervention.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

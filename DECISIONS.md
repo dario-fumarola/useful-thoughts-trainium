@@ -1290,3 +1290,10 @@ Quietcompiledcache movedbyte-for-byte toexistingNVMe,originalruntimepath retaine
 no model/checkpoint/data removed. Diskreserve andfuturebackupbudget verified.
 Evaluation41a5bfd/1,664CPUchecks ready;permodel actualnative/cache andfullspan
 reference checks still required. MainlineV10mixed result remainsclosedunchanged.
+
+2026-10-19 08:50UTC — Allfour target-SFT runs complete320updates and physically
+close. Independent audit passes1,280orderedupdates/eightfullstates/32nativechecks.
+Protectallfour terminalmodels/latestfull320;retainoriginal160/320. Allnine fixed
+models now released forfresh384 scalar/full16 andordinary256 evaluation. No
+partialcapabilityreview,automaticextension,selection orretry. Publishalltraining
+traces andmeasuredcosts now;finalreadout waitsallnine controllers/scorejobs.

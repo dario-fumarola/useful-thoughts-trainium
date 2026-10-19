@@ -1,0 +1,63 @@
+{
+  "status": "PREPARED_FOUR_DECLARED_MODELS_PENDING_SERIAL_RELEASE",
+  "utc": "2026-10-19T07:59:02.815057+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/real-target-sft-v15",
+  "source_commit": "829d9a2",
+  "jobs": [
+    {
+      "arm": "target_direct",
+      "seed": 2026101913,
+      "key": "target_direct-seed2026101913",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/real-target-sft-v15-study-v1/protocol-target_direct-seed2026101913.json",
+      "protocol_sha256": "e498823c4d6c79eb3cae417f26699f4318eac3f934e51a5194e60c2889d8620d",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1",
+      "physical_devices": [
+        0,
+        1
+      ]
+    },
+    {
+      "arm": "target_direct",
+      "seed": 2026101914,
+      "key": "target_direct-seed2026101914",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/real-target-sft-v15-study-v1/protocol-target_direct-seed2026101914.json",
+      "protocol_sha256": "ae7aca6e1dfab984bb490ae841bf0cf1296e7a9848f5a4a68bf1bad6668baf18",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101914-v1",
+      "physical_devices": [
+        2,
+        3
+      ]
+    },
+    {
+      "arm": "target_cot",
+      "seed": 2026101913,
+      "key": "target_cot-seed2026101913",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/real-target-sft-v15-study-v1/protocol-target_cot-seed2026101913.json",
+      "protocol_sha256": "fc83431aec4c9d5db812609a4b24fb155896e77ee5093c55c9e40609ac550e6d",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_cot-TRAIN5120-seed2026101913-v1",
+      "physical_devices": [
+        4,
+        5
+      ]
+    },
+    {
+      "arm": "target_cot",
+      "seed": 2026101914,
+      "key": "target_cot-seed2026101914",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/real-target-sft-v15-study-v1/protocol-target_cot-seed2026101914.json",
+      "protocol_sha256": "a3bb92f535699f7e832f129c3289febafee5c06ad47bbb9c3e3103548843111e",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_cot-TRAIN5120-seed2026101914-v1",
+      "physical_devices": [
+        6,
+        7
+      ]
+    }
+  ],
+  "deadline_utc": "2026-10-19T18:00:00+00:00",
+  "qualification_sha256": "cda65072d557253aaf35c52bd88c4af2eae9e9032946536396776d9371b86da8",
+  "prospective_design_sha256": "c9b6bdbf5e2f0c5c8c54f25d97e51772c4a2a8f9890cec817a16989096f1ba85",
+  "held_primary_manifest_sha256": "7c57b62f3cf295338183569dd9b6f02538c6f7e3f07f4eac862e12747182d1cd",
+  "execution": "Four disjoint eight-rank jobs may run concurrently;all freshB0. No retries,extensions or checkpoint selection.",
+  "checkpoint_policy": "Full160/320;terminal primary. All original states stayNVMe;EBS protects all terminal weights and latest full optimizer with readback.",
+  "scope": "Practical supervised reference;different active labels and inference compute;no automatic RL/8B or broader-data release."
+}

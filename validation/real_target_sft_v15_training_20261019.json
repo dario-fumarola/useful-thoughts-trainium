@@ -1,0 +1,301 @@
+{
+  "status": "ALL_FOUR_TERMINAL320_TRAINING_STATES_AUDITED_PROTECTED_AND_FROZEN",
+  "utc": "2026-10-19T08:49:20.186145+00:00",
+  "training_commit": "829d9a2",
+  "evaluation_commit": "41a5bfd",
+  "models": {
+    "target_direct-seed2026101913": {
+      "arm": "target_direct",
+      "seed": 2026101913,
+      "updates": 320,
+      "unique_documents": 5120,
+      "document_occurrences": 10240,
+      "supervised_target_tokens": 163840,
+      "warm_last60_median_update_seconds": 5.630485913497978,
+      "summed_update_wall_seconds": 1845.2732031797932,
+      "loop_including_saves_seconds": 1931.885019725014,
+      "assigned_logical_workers": 8,
+      "assigned_physical_devices": 2,
+      "logical_worker_hours_during_loop": 4.293077821611142,
+      "physical_device_hours_during_loop": 1.0732694554027855,
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 44.47472898897831,
+          "step": 160
+        },
+        {
+          "rank0_wall_seconds": 41.074940153979696,
+          "step": 320
+        }
+      ],
+      "terminal_model_sha256": "5528cdd8e1e4b21bbd7d5ebc5ab4f6861d120f2256d2f0e3b4668166d6d12693"
+    },
+    "target_direct-seed2026101914": {
+      "arm": "target_direct",
+      "seed": 2026101914,
+      "updates": 320,
+      "unique_documents": 5120,
+      "document_occurrences": 10240,
+      "supervised_target_tokens": 163840,
+      "warm_last60_median_update_seconds": 5.569372894518892,
+      "summed_update_wall_seconds": 1826.211031126033,
+      "loop_including_saves_seconds": 1923.932675766002,
+      "assigned_logical_workers": 8,
+      "assigned_physical_devices": 2,
+      "logical_worker_hours_during_loop": 4.275405946146671,
+      "physical_device_hours_during_loop": 1.0688514865366678,
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 49.81296128901886,
+          "step": 160
+        },
+        {
+          "rank0_wall_seconds": 46.89843786100391,
+          "step": 320
+        }
+      ],
+      "terminal_model_sha256": "6e1cd957625400c34401d2f0ccc85fffb2f5d2ff7891920916da280c7f9dbfdf"
+    },
+    "target_cot-seed2026101913": {
+      "arm": "target_cot",
+      "seed": 2026101913,
+      "updates": 320,
+      "unique_documents": 5120,
+      "document_occurrences": 10240,
+      "supervised_target_tokens": 512900,
+      "warm_last60_median_update_seconds": 5.572194883498014,
+      "summed_update_wall_seconds": 1829.0747565578786,
+      "loop_including_saves_seconds": 1931.7485318710096,
+      "assigned_logical_workers": 8,
+      "assigned_physical_devices": 2,
+      "logical_worker_hours_during_loop": 4.29277451526891,
+      "physical_device_hours_during_loop": 1.0731936288172275,
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 53.28896200002055,
+          "step": 160
+        },
+        {
+          "rank0_wall_seconds": 48.26256854500389,
+          "step": 320
+        }
+      ],
+      "terminal_model_sha256": "133d542af04caf9369956c21569630effd34bc74d714a63be5aeb91bf3dff512"
+    },
+    "target_cot-seed2026101914": {
+      "arm": "target_cot",
+      "seed": 2026101914,
+      "updates": 320,
+      "unique_documents": 5120,
+      "document_occurrences": 10240,
+      "supervised_target_tokens": 512900,
+      "warm_last60_median_update_seconds": 5.570400815005996,
+      "summed_update_wall_seconds": 1831.4668687380617,
+      "loop_including_saves_seconds": 1930.2481681240024,
+      "assigned_logical_workers": 8,
+      "assigned_physical_devices": 2,
+      "logical_worker_hours_during_loop": 4.289440373608894,
+      "physical_device_hours_during_loop": 1.0723600934022235,
+      "checkpoint_walls": [
+        {
+          "rank0_wall_seconds": 49.64311601899681,
+          "step": 160
+        },
+        {
+          "rank0_wall_seconds": 48.017877367994515,
+          "step": 320
+        }
+      ],
+      "terminal_model_sha256": "20e6f9cfdf543352f5771a2894a2be540e332dc15f1bcc685806ccf9c43de6b8"
+    }
+  },
+  "updates": 1280,
+  "full_scientific_checkpoints": 8,
+  "native_forward_checks": 32,
+  "source_audit_sha256": "9986b8c456806d99adad7533ac922e5581d06d30d25b14c93d2f29076911a15f",
+  "files": {
+    "validation/real_target_sft_v15_training_20261019/evidence/plan.json": {
+      "bytes": 3034,
+      "sha256": "902e007b4ff76831131e8c62838edf85341c0341166476f8d317787798661229"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/release.json": {
+      "bytes": 1661,
+      "sha256": "32e747422e50c26a213667629648dc2d7d5c3f1f7b111862fec60cc210d9ebab"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/terminal-independent-audit.json": {
+      "bytes": 24065,
+      "sha256": "9986b8c456806d99adad7533ac922e5581d06d30d25b14c93d2f29076911a15f"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/terminal-protection.json": {
+      "bytes": 6722,
+      "sha256": "670b7a7acd29d8d9ce4286542b71e92382fd2957371e7e169821aecba53b1f40"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/terminal-pipeline-completion.json": {
+      "bytes": 107,
+      "sha256": "0acf9496a0e824f5b409308e7b2ac748c14f234715c60c8a62efe5a05f6c1834"
+    },
+    "validation/real_target_sft_v15_training_20261019/target_direct-seed2026101913-all320-training-metrics.jsonl.gz": {
+      "rows": 320,
+      "bytes": 451024,
+      "sha256": "46ccc7ec7cc92a53642bfe33a7f1899659d27d134f51eee77b6df45595f72315"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101913/protocol.json": {
+      "bytes": 5512,
+      "sha256": "e498823c4d6c79eb3cae417f26699f4318eac3f934e51a5194e60c2889d8620d"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101913/frozen-terminal-binding.json": {
+      "bytes": 1202,
+      "sha256": "85e55332cc9166eebae5730c1f9e755ecfdafeea172a28ab91d21135639f3ab0"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101913/physical-closure.json": {
+      "bytes": 483,
+      "sha256": "e21040a0a3a663161eb65100b43a49ae077ba683f4a5c8cb0ae1de9dc2f79e66"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101913/completion.json": {
+      "bytes": 397,
+      "sha256": "86c26def775a6252b85a0dd593d1cb9701b2be5aecc6b7898e6677e851f4a088"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101913/full160-COMPLETE.json": {
+      "bytes": 2092,
+      "sha256": "7f9c440c0f7bae52906cdabf43505fab55b401432e7f866d5cd8849de68737e7"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101913/full320-COMPLETE.json": {
+      "bytes": 2094,
+      "sha256": "c648a05d6f78654f07b9d83b57ec715a4516d9bdb46dad617f11d559a472bc28"
+    },
+    "validation/real_target_sft_v15_training_20261019/target_direct-seed2026101914-all320-training-metrics.jsonl.gz": {
+      "rows": 320,
+      "bytes": 451014,
+      "sha256": "e2607ef35d56e4cc8809aa7aaabc89c5dd98cd33cf4fbe179bedeecf3b47019e"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101914/protocol.json": {
+      "bytes": 5513,
+      "sha256": "ae7aca6e1dfab984bb490ae841bf0cf1296e7a9848f5a4a68bf1bad6668baf18"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101914/frozen-terminal-binding.json": {
+      "bytes": 1202,
+      "sha256": "4f67591e1ade43d4e71c003dd95099f4f1171ff4955cff10398100ff64c514ed"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101914/physical-closure.json": {
+      "bytes": 483,
+      "sha256": "1c190ce88c28913c7183d010d6aae194335ea9d88a3a5e9bb191bbf306855876"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101914/completion.json": {
+      "bytes": 396,
+      "sha256": "5a032166332d8356bd4ef0d0c24263961ff0d326d3e90bd9ce3d2f3e2e3406ad"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101914/full160-COMPLETE.json": {
+      "bytes": 2092,
+      "sha256": "4e2f7cb3e8d424e0309b33b35ca9fff551811462421f9ce28c4140772a69cc21"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_direct-seed2026101914/full320-COMPLETE.json": {
+      "bytes": 2094,
+      "sha256": "48de3c22cc7b3843c224c2bd55975c6e30417c215c42ff41c32ac218e00bc543"
+    },
+    "validation/real_target_sft_v15_training_20261019/target_cot-seed2026101913-all320-training-metrics.jsonl.gz": {
+      "rows": 320,
+      "bytes": 451086,
+      "sha256": "d14bdc6cef3ab2bf106c8c1e62b20d64bdc608dde6871ad21b1dfd0852d6dbbe"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101913/protocol.json": {
+      "bytes": 5514,
+      "sha256": "fc83431aec4c9d5db812609a4b24fb155896e77ee5093c55c9e40609ac550e6d"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101913/frozen-terminal-binding.json": {
+      "bytes": 1187,
+      "sha256": "c073f5bc65cb2dfa4b0908300a8827224117d5ad2e779e5c821d2d23fd1cefaa"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101913/physical-closure.json": {
+      "bytes": 483,
+      "sha256": "1ef9d0d8a8954769c25561886bab35c7d2a0926ede9520684ce93e76822ad92e"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101913/completion.json": {
+      "bytes": 397,
+      "sha256": "59882f3199628e18aa90d60432af01fa471c67c3e34fd7638f978b671928c48c"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101913/full160-COMPLETE.json": {
+      "bytes": 2087,
+      "sha256": "2e622fb86badbe1ac512e3a3b4bf2832534f01c7cb98180e2a39138395cf0152"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101913/full320-COMPLETE.json": {
+      "bytes": 2088,
+      "sha256": "f334a3b4a4bdc1363bf90a8aa59661c820b4517894dacddfbfa779cbf17d1d33"
+    },
+    "validation/real_target_sft_v15_training_20261019/target_cot-seed2026101914-all320-training-metrics.jsonl.gz": {
+      "rows": 320,
+      "bytes": 451168,
+      "sha256": "d69dd58f91ad435544d2279f9f4ef06ac59217cfc97870ae4f914ce9f63057c6"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101914/protocol.json": {
+      "bytes": 5514,
+      "sha256": "a3bb92f535699f7e832f129c3289febafee5c06ad47bbb9c3e3103548843111e"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101914/frozen-terminal-binding.json": {
+      "bytes": 1187,
+      "sha256": "66c4083ac7890d3125677bce9ebfde6017e6a7488d715dd1fee48588683b24c4"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101914/physical-closure.json": {
+      "bytes": 483,
+      "sha256": "2af3a881c3126b690453a47294950102975d66c5c1c529027e51a5c83cf4cc79"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101914/completion.json": {
+      "bytes": 398,
+      "sha256": "22fe5df33d508a7a093e14464083a462014ea20aeed8d37d3374d804d2ee3c98"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101914/full160-COMPLETE.json": {
+      "bytes": 2087,
+      "sha256": "61a7e9c2f7cbb33734d2cbdc905b4fe91e2f9ab3944522c0548bae18e5eb1490"
+    },
+    "validation/real_target_sft_v15_training_20261019/evidence/target_cot-seed2026101914/full320-COMPLETE.json": {
+      "bytes": 2088,
+      "sha256": "8e552b8b242157004ac2560252c3740f6143c6cdc37221926d2e6c76301f7cd4"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/publish_real_target_training_v15_20261019.py": {
+      "bytes": 5504,
+      "sha256": "6126c8809d8ddb9bf46f0822e28f57208e5eaf53a1239394cfee4a89dfbf9f98"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/real_target_state_audit_v15_20261019.py": {
+      "bytes": 3916,
+      "sha256": "ccce2b39f7ce719b44bce1ee7144578c94752de8f247b70f887865bd16721df3"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/audit_real_target_four_terminals_v15_20261019.py": {
+      "bytes": 4935,
+      "sha256": "d538cabefc71af319074c47b23036fd971dce1892a2d828e832e6b60b205ddc4"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/protect_real_target_four_terminals_v15_20261019.py": {
+      "bytes": 3702,
+      "sha256": "ca9592687e801635f1881dd357ae8d3d982605868d6a18249b491dfca9b8fdf0"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/bind_real_target_four_terminals_v15_20261019.py": {
+      "bytes": 1872,
+      "sha256": "9747bc454d1bba333c3eec94989af9960d8364e603f3d376710a4dc0c245d440"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/analyze_real_target_v15_20261019.py": {
+      "bytes": 14988,
+      "sha256": "f895f4898bf14e56c4b819e375e138fe3778c85fd0bbf220a1610eddb836996b"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/check_real_target_readout_v15_20261019.py": {
+      "bytes": 10741,
+      "sha256": "8f0255a1554dc1f9524e1e75fbbce97dedcf76d47942dcbd1472fedca9f24214"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/render_real_target_v15_20261019.py": {
+      "bytes": 6034,
+      "sha256": "0b76e74a486c66a2bfe7cf6f23b7d93bc3466cb711da913f94a9a176bbd8d2f8"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/save_real_target_examples_v15_20261019.py": {
+      "bytes": 4571,
+      "sha256": "b710bc04d8d974c371e6a1b53c428f2bedb4f45c2c27ab971b4c49b34424a603"
+    },
+    "validation/real_target_sft_v15_training_20261019/analysis-source/watch_real_target_final_readout_v15_20261019.py": {
+      "bytes": 2249,
+      "sha256": "7c2ba542beb132dd5612c1de3e3ef4551d207c7d757fdd3a53a9ba8e736fb787"
+    }
+  },
+  "limits": [
+    "No capability outcomes inspected for this training completion report.",
+    "Eight logical-worker checks per model repeat four distinct canonical contexts;not 32 independent scientific documents.",
+    "All original full160/320 states retained onNVMe. EBS protects allfour terminalmodels and latestfull320;notoff-instancebackup.",
+    "Different active-target counts are explicit;matched documents,updates andpackedwidth are not equal FLOPs orsupervision.",
+    "Measured concurrent loop cost includes saves but excludes preparation,initialization/nativechecks andsubsequent evaluations."
+  ]
+}

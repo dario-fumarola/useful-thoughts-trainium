@@ -1,0 +1,144 @@
+{
+  "status": "PASS_ALL_FOUR_TERMINAL_MODELS_AND_LATEST_FULL320_PROTECTED",
+  "utc": "2026-10-19T08:46:51.768749+00:00",
+  "models": {
+    "target_direct-seed2026101913": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+      "EBS": "/home/ubuntu/dario/local/backups/science/real-target-sft-v15-study-v1/TERMINALS/models/target_direct-seed2026101913/model.pt",
+      "sha256": "5528cdd8e1e4b21bbd7d5ebc5ab4f6861d120f2256d2f0e3b4668166d6d12693"
+    },
+    "target_direct-seed2026101914": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+      "EBS": "/home/ubuntu/dario/local/backups/science/real-target-sft-v15-study-v1/TERMINALS/models/target_direct-seed2026101914/model.pt",
+      "sha256": "6e1cd957625400c34401d2f0ccc85fffb2f5d2ff7891920916da280c7f9dbfdf"
+    },
+    "target_cot-seed2026101913": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_cot-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+      "EBS": "/home/ubuntu/dario/local/backups/science/real-target-sft-v15-study-v1/TERMINALS/models/target_cot-seed2026101913/model.pt",
+      "sha256": "133d542af04caf9369956c21569630effd34bc74d714a63be5aeb91bf3dff512"
+    },
+    "target_cot-seed2026101914": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_cot-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+      "EBS": "/home/ubuntu/dario/local/backups/science/real-target-sft-v15-study-v1/TERMINALS/models/target_cot-seed2026101914/model.pt",
+      "sha256": "20e6f9cfdf543352f5771a2894a2be540e332dc15f1bcc685806ccf9c43de6b8"
+    }
+  },
+  "latest_full": {
+    "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1/step-0000320",
+    "EBS": "/home/ubuntu/dario/local/backups/science/real-target-sft-v15-study-v1/TERMINALS/latest-full320",
+    "COMPLETE_sha256": "c648a05d6f78654f07b9d83b57ec715a4516d9bdb46dad617f11d559a472bc28"
+  },
+  "audit_sha256": "9986b8c456806d99adad7533ac922e5581d06d30d25b14c93d2f29076911a15f",
+  "files": {
+    "models/target_direct-seed2026101913/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "5528cdd8e1e4b21bbd7d5ebc5ab4f6861d120f2256d2f0e3b4668166d6d12693"
+    },
+    "models/target_direct-seed2026101913/COMPLETE.json": {
+      "bytes": 2094,
+      "sha256": "c648a05d6f78654f07b9d83b57ec715a4516d9bdb46dad617f11d559a472bc28"
+    },
+    "models/target_direct-seed2026101913/protocol.json": {
+      "bytes": 5512,
+      "sha256": "e498823c4d6c79eb3cae417f26699f4318eac3f934e51a5194e60c2889d8620d"
+    },
+    "models/target_direct-seed2026101914/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "6e1cd957625400c34401d2f0ccc85fffb2f5d2ff7891920916da280c7f9dbfdf"
+    },
+    "models/target_direct-seed2026101914/COMPLETE.json": {
+      "bytes": 2094,
+      "sha256": "48de3c22cc7b3843c224c2bd55975c6e30417c215c42ff41c32ac218e00bc543"
+    },
+    "models/target_direct-seed2026101914/protocol.json": {
+      "bytes": 5513,
+      "sha256": "ae7aca6e1dfab984bb490ae841bf0cf1296e7a9848f5a4a68bf1bad6668baf18"
+    },
+    "models/target_cot-seed2026101913/model.pt": {
+      "bytes": 3441248275,
+      "sha256": "133d542af04caf9369956c21569630effd34bc74d714a63be5aeb91bf3dff512"
+    },
+    "models/target_cot-seed2026101913/COMPLETE.json": {
+      "bytes": 2088,
+      "sha256": "f334a3b4a4bdc1363bf90a8aa59661c820b4517894dacddfbfa779cbf17d1d33"
+    },
+    "models/target_cot-seed2026101913/protocol.json": {
+      "bytes": 5514,
+      "sha256": "fc83431aec4c9d5db812609a4b24fb155896e77ee5093c55c9e40609ac550e6d"
+    },
+    "models/target_cot-seed2026101914/model.pt": {
+      "bytes": 3441248275,
+      "sha256": "20e6f9cfdf543352f5771a2894a2be540e332dc15f1bcc685806ccf9c43de6b8"
+    },
+    "models/target_cot-seed2026101914/COMPLETE.json": {
+      "bytes": 2088,
+      "sha256": "8e552b8b242157004ac2560252c3740f6143c6cdc37221926d2e6c76301f7cd4"
+    },
+    "models/target_cot-seed2026101914/protocol.json": {
+      "bytes": 5514,
+      "sha256": "a3bb92f535699f7e832f129c3289febafee5c06ad47bbb9c3e3103548843111e"
+    },
+    "latest-full320/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "5528cdd8e1e4b21bbd7d5ebc5ab4f6861d120f2256d2f0e3b4668166d6d12693",
+      "hardlink_of": "models/target_direct-seed2026101913/model.pt"
+    },
+    "latest-full320/rank-00000.pt": {
+      "bytes": 2581278407,
+      "sha256": "97941f85a7a2f3d1ec0cc030aae6d44231f58e4a6bf7412dcf8319dd31af6522"
+    },
+    "latest-full320/rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "4b62967da10b707c83b57cda6ab1f9f3600ceab71e23e328698ff158d07aa11e"
+    },
+    "latest-full320/rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "39a264efdd001f65a61dc7ec1c45d1b4e3ab0699e17fb497a269792c92c02fa5"
+    },
+    "latest-full320/rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "d2eee8bb8d6ca4896e38ef5e5d1c6a6c51522bc2c7e871d3c9504554230a47aa"
+    },
+    "latest-full320/rank-00004.pt": {
+      "bytes": 2581278407,
+      "sha256": "83c23e8b7737eb7e3acfb5af630daf4206fb92b40d0c03ab655c70dca5f830bc"
+    },
+    "latest-full320/rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "51e2512c3b475ebbc694aec63159a668f5a598b15ed8f751e64129595ab5dc70"
+    },
+    "latest-full320/rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "ff0d3f80865172973cfd7a92406ba8e273a2eaa3611295d527ab1dbdb1644c0a"
+    },
+    "latest-full320/rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "60f7e3a3bb5572e1e1ca9056d5c0e1a266b2ee7d2d93860453ef829bf011a2fa"
+    },
+    "latest-full320/COMPLETE.json": {
+      "bytes": 2094,
+      "sha256": "c648a05d6f78654f07b9d83b57ec715a4516d9bdb46dad617f11d559a472bc28"
+    },
+    "terminal-independent-audit.json": {
+      "bytes": 24065,
+      "sha256": "9986b8c456806d99adad7533ac922e5581d06d30d25b14c93d2f29076911a15f"
+    },
+    "plan.json": {
+      "bytes": 3034,
+      "sha256": "902e007b4ff76831131e8c62838edf85341c0341166476f8d317787798661229"
+    },
+    "release.json": {
+      "bytes": 1661,
+      "sha256": "32e747422e50c26a213667629648dc2d7d5c3f1f7b111862fec60cc210d9ebab"
+    },
+    "protect-source.py": {
+      "bytes": 3702,
+      "sha256": "ca9592687e801635f1881dd357ae8d3d982605868d6a18249b491dfca9b8fdf0"
+    }
+  },
+  "limits": [
+    "Alloriginalfull160/320statesremain. EBSretainsallterminalmodelsandlatestfulloptimizer;modelhardlinkiswithinonepersistentfilesystem.",
+    "Same-instancebackup;notanoff-instancearchive."
+  ],
+  "EBS_archive_sha256": "beae1b759d8e78563eef8f824ae8e76f804d88d387eb89a1f99d8569c30b298a"
+}

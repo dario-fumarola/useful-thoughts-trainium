@@ -1,0 +1,22 @@
+{
+  "status": "RELEASED_FOUR_DECLARED_FRESH_REAL_TARGET_MODELS",
+  "utc": "2026-10-19T08:00:18.160066+00:00",
+  "plan_sha256": "902e007b4ff76831131e8c62838edf85341c0341166476f8d317787798661229",
+  "supervisor_sha256": "1424a865dc546cdc3fd22409934b0258e85993f21cc17263c8b60d18a8423c0d",
+  "helper_sha256": "5aa80e33da9a11752adb711f07ab4f3b2c2d6bda0b105dde7dd369575eb456b8",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "cda65072d557253aaf35c52bd88c4af2eae9e9032946536396776d9371b86da8",
+  "scope": "Exactlytwo target-SFT recipes/two fixed seeds,320updates/two passes each,terminal primary;noextensions,retries orcheckpoint selection.",
+  "hardware": "Four disjoint8rank jobs physical0/1,2/3,4/5,6/7;allfreshB0. No qualification checkpoint reused.",
+  "review": "Root reviewed1647CPUchecks,allactualTRAINpacks,frozenfresh384/nooutcome selection,11actualmechanicsupdates,9changed-master/castwitnesses,6fullstates/fulloptimizerrestore,CPU-RNGannex,actualidledevices,sourceclosure,ports,storagebudget andfiniteownedcontrollers.",
+  "resources": {
+    "root_free_bytes": 80113049600,
+    "projected_models_and_latest_full_bytes": 37856468951,
+    "root_reserve_bytes": 37580963840
+  },
+  "limits": [
+    "Exact immediate device-RNG readback/uninterrupted-trajectory parity not established;no stochasticRL qualification.",
+    "Primarycomplete-scalar contrast and all failures/controls predeclared;no capability result yet.",
+    "Different active labels/inference actions;not equal supervised tokens,FLOPs orservice latency."
+  ]
+}

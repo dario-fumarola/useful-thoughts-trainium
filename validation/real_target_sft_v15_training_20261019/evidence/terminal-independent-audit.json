@@ -1,0 +1,502 @@
+{
+  "status": "PASS_ALL_FOUR_TERMINAL320_TRAINING_STATES_NATIVE32_ORDER_AND_COUNTERS",
+  "utc": "2026-10-19T08:40:45.139866+00:00",
+  "models": [
+    {
+      "arm": "target_direct",
+      "seed": 2026101913,
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1",
+      "checkpoints": {
+        "160": {
+          "step": 160,
+          "COMPLETE_sha256": "7f9c440c0f7bae52906cdabf43505fab55b401432e7f866d5cd8849de68737e7",
+          "model_sha256": "d55b386625194e1fe516641b3a60e44c7cceff9bcdc2922aa8f67efa6c8a5beb",
+          "run_id": "real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1",
+          "spec_hash": "65c90b6d1bcc91a63e3114b55e03e2f8197d135e3f69dc7dd9ca7ba576f697c4",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        },
+        "320": {
+          "step": 320,
+          "COMPLETE_sha256": "c648a05d6f78654f07b9d83b57ec715a4516d9bdb46dad617f11d559a472bc28",
+          "model_sha256": "5528cdd8e1e4b21bbd7d5ebc5ab4f6861d120f2256d2f0e3b4668166d6d12693",
+          "run_id": "real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1",
+          "spec_hash": "65c90b6d1bcc91a63e3114b55e03e2f8197d135e3f69dc7dd9ca7ba576f697c4",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        }
+      },
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "actual_initial_master_witnesses": 8,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 163840
+      },
+      "warm_last60_median_update_seconds": 5.630485913497978,
+      "completion_sha256": "86c26def775a6252b85a0dd593d1cb9701b2be5aecc6b7898e6677e851f4a088",
+      "closure_sha256": "e21040a0a3a663161eb65100b43a49ae077ba683f4a5c8cb0ae1de9dc2f79e66",
+      "metrics_sha256": "56e8df68293f834d0b9297b6ec8679ba996e2fee35d46bdd99f0b575bb03ec66",
+      "protocol_sha256": "e498823c4d6c79eb3cae417f26699f4318eac3f934e51a5194e60c2889d8620d"
+    },
+    {
+      "arm": "target_direct",
+      "seed": 2026101914,
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101914-v1",
+      "checkpoints": {
+        "160": {
+          "step": 160,
+          "COMPLETE_sha256": "4e2f7cb3e8d424e0309b33b35ca9fff551811462421f9ce28c4140772a69cc21",
+          "model_sha256": "af561cd08a2435714d0935a92a1a000c5f85743d4daff92a637ee408e15f46ec",
+          "run_id": "real-target-sft-v15-target_direct-TRAIN5120-seed2026101914-v1",
+          "spec_hash": "a3b45aa9c1880cc38fccfbc9c4ad66cd9a7bec9ce2a44d0de13e46fd1b04df24",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        },
+        "320": {
+          "step": 320,
+          "COMPLETE_sha256": "48de3c22cc7b3843c224c2bd55975c6e30417c215c42ff41c32ac218e00bc543",
+          "model_sha256": "6e1cd957625400c34401d2f0ccc85fffb2f5d2ff7891920916da280c7f9dbfdf",
+          "run_id": "real-target-sft-v15-target_direct-TRAIN5120-seed2026101914-v1",
+          "spec_hash": "a3b45aa9c1880cc38fccfbc9c4ad66cd9a7bec9ce2a44d0de13e46fd1b04df24",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        }
+      },
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "actual_initial_master_witnesses": 8,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 163840
+      },
+      "warm_last60_median_update_seconds": 5.569372894518892,
+      "completion_sha256": "5a032166332d8356bd4ef0d0c24263961ff0d326d3e90bd9ce3d2f3e2e3406ad",
+      "closure_sha256": "1c190ce88c28913c7183d010d6aae194335ea9d88a3a5e9bb191bbf306855876",
+      "metrics_sha256": "2084d95af353501e693fb4ed305a640f067fd7a61930ee1788fe23348fd79aae",
+      "protocol_sha256": "ae7aca6e1dfab984bb490ae841bf0cf1296e7a9848f5a4a68bf1bad6668baf18"
+    },
+    {
+      "arm": "target_cot",
+      "seed": 2026101913,
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_cot-TRAIN5120-seed2026101913-v1",
+      "checkpoints": {
+        "160": {
+          "step": 160,
+          "COMPLETE_sha256": "2e622fb86badbe1ac512e3a3b4bf2832534f01c7cb98180e2a39138395cf0152",
+          "model_sha256": "ba255d930c88a1b9339da18ff3ee0fa0388497908194de5bf398df9274c0de9c",
+          "run_id": "real-target-sft-v15-target_cot-TRAIN5120-seed2026101913-v1",
+          "spec_hash": "728fdb5aee5d4277b96ad569e19afde4781ebd0a989917e8671bfd2893cb1511",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        },
+        "320": {
+          "step": 320,
+          "COMPLETE_sha256": "f334a3b4a4bdc1363bf90a8aa59661c820b4517894dacddfbfa779cbf17d1d33",
+          "model_sha256": "133d542af04caf9369956c21569630effd34bc74d714a63be5aeb91bf3dff512",
+          "run_id": "real-target-sft-v15-target_cot-TRAIN5120-seed2026101913-v1",
+          "spec_hash": "728fdb5aee5d4277b96ad569e19afde4781ebd0a989917e8671bfd2893cb1511",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        }
+      },
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "actual_initial_master_witnesses": 8,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 512900
+      },
+      "warm_last60_median_update_seconds": 5.572194883498014,
+      "completion_sha256": "59882f3199628e18aa90d60432af01fa471c67c3e34fd7638f978b671928c48c",
+      "closure_sha256": "1ef9d0d8a8954769c25561886bab35c7d2a0926ede9520684ce93e76822ad92e",
+      "metrics_sha256": "2017890509c174d40f6e5e7c7ee59b433feb54e6ab6482ae12ce84d8a60d4260",
+      "protocol_sha256": "fc83431aec4c9d5db812609a4b24fb155896e77ee5093c55c9e40609ac550e6d"
+    },
+    {
+      "arm": "target_cot",
+      "seed": 2026101914,
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_cot-TRAIN5120-seed2026101914-v1",
+      "checkpoints": {
+        "160": {
+          "step": 160,
+          "COMPLETE_sha256": "61a7e9c2f7cbb33734d2cbdc905b4fe91e2f9ab3944522c0548bae18e5eb1490",
+          "model_sha256": "8771aaaf029a9c1def7dff7c5efe8e525384f6001841d936302eadf38382a9c6",
+          "run_id": "real-target-sft-v15-target_cot-TRAIN5120-seed2026101914-v1",
+          "spec_hash": "9dba61ebcc7a2e92f91549a1fae58f4aacdc9b7f11fd634128489cc4086fde7f",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        },
+        "320": {
+          "step": 320,
+          "COMPLETE_sha256": "8e552b8b242157004ac2560252c3740f6143c6cdc37221926d2e6c76301f7cd4",
+          "model_sha256": "20e6f9cfdf543352f5771a2894a2be540e332dc15f1bcc685806ccf9c43de6b8",
+          "run_id": "real-target-sft-v15-target_cot-TRAIN5120-seed2026101914-v1",
+          "spec_hash": "9dba61ebcc7a2e92f91549a1fae58f4aacdc9b7f11fd634128489cc4086fde7f",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        }
+      },
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003038018943671797,
+          "device_to_reference_kl_nats": 0.0031035199827921453,
+          "max_bidirectional_kl_nats": 0.0031035199827921453,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572775,
+          "device_to_reference_kl_nats": 0.003041836099938914,
+          "max_bidirectional_kl_nats": 0.003069729731572775,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026603817703e-05,
+          "device_to_reference_kl_nats": 2.157230339515165e-05,
+          "max_bidirectional_kl_nats": 2.157230339515165e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376543,
+          "relative_l2_logp_error": 0.0014795616361593924,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.00032441160316988116,
+          "device_to_reference_kl_nats": 0.0003259461474816056,
+          "max_bidirectional_kl_nats": 0.0003259461474816056,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "actual_initial_master_witnesses": 8,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 512900
+      },
+      "warm_last60_median_update_seconds": 5.570400815005996,
+      "completion_sha256": "22fe5df33d508a7a093e14464083a462014ea20aeed8d37d3374d804d2ee3c98",
+      "closure_sha256": "2af3a881c3126b690453a47294950102975d66c5c1c529027e51a5c83cf4cc79",
+      "metrics_sha256": "d16c34490eb931e1b434cf43eb5a15a4030eb4e582ea6ecc476f6f809e290eba",
+      "protocol_sha256": "a3bb92f535699f7e832f129c3289febafee5c06ad47bbb9c3e3103548843111e"
+    }
+  ],
+  "source_files": {
+    "train/partial_state_driver.py": "319e5529651f44a5403ca935916c623b92e5f23cd187951345b12413f0863ee3",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c"
+  },
+  "plan_sha256": "902e007b4ff76831131e8c62838edf85341c0341166476f8d317787798661229",
+  "audit_source_sha256": "d538cabefc71af319074c47b23036fd971dce1892a2d828e832e6b60b205ddc4",
+  "state_audit_source_sha256": "ccce2b39f7ce719b44bce1ee7144578c94752de8f247b70f887865bd16721df3",
+  "limits": [
+    "Trainingmechanicsandcompleteartifactintegrity,notheldoutcapability.",
+    "Evaluationbindingsrequireseparateprotectionofallterminalmodelsandlatestfullstate.",
+    "Noadditionalindependentobservationsfromrecheckingtheearlierprotectioncheckpoint."
+  ]
+}

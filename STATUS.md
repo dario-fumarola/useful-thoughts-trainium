@@ -1,19 +1,19 @@
-# Status — 2026-10-19 07:15 UTC
+# Status — 2026-10-19 08:50 UTC
 
 ## Active: stronger single-model supervised reference
 Question:does full-trace CoT SFT beat direct-answer SFT on fresh real-document computations?
 Experiment:real-target-sft-v15;four freshB0 models/two seeds,TRAIN5120,320updates/two passes each.
+All four terminal runs complete:1,280 ordered updates,eight full states,32 native checks audited.
+Terminal models and latest full320 protected with EBS readback;all original160/320 states retained.
+Training report:validation/real_target_sft_v15_training_20261019.json;all four320-row traces public.
 Frozen fresh384 documents/exact ordered ASTs excludeTRAINandbothold arithmetic panels.
 Primary:CoT own−direct raw>=3pp andpaired95% lower>0 inBOTHseeds,plus empty/B0controls;all failures retained.
-Source829d9a2:1,647CPUchecks andall10,240nativeTRAINpacks pass;width640,target128,prefix unscored.
-Actual8rank qualification PASS:11finiteupdates,9master/cast witnesses,6fullstates,optimizerrestore6→8.
-SavedCPU RNG states equal6→8;immediate deviceRNGreadback/trajectory parity unverified;no stochasticRLclaim.
-Full report:validation/real_target_sft_v15_hardware_20261019.json;all originals/qualification models protected.
-Four science jobs released08:00UTC onphysical0–7;all actual8-worker allocations confirmed,firstupdates complete.
-Control:local/diagnostics/real-target-sft-v15-study-v1;tmux sft-v15-{target_direct|target_cot}-seed2026101913/14.
-All originalfull160/320 retainedNVMe;allterminalweights/latestfull getEBSreadback;no extensions/retries/model selection.
-Evaluation41a5bfd passes1,664CPUchecks;fresh384/gold separate,frozen/backedup;actual inference checks still required.
-Next:monitor fixed runs and prepare nine-model evaluation without inspecting partial capability outcomes.
+All nine fixed evaluations released:tmux target-eval-v15-slot0 through8;no partial capability inspection.
+Control:local/diagnostics/real-target-eval-v15-study-v1;native full16 queue onlogical48–51.
+Five reference models have finished both likelihood panels;all actual fixed4-per-mode CPUparity checks pass.
+Training829d9a2/evaluation41a5bfd stay frozen;no extensions,retries,model selection or officialTEST.
+Final readout watcher:tmux target-v15-final-readout;requires allnine scalar/likelihood closures.
+Next:monitor mechanical progress,then complete readout,independent check,figures/examples and interpretation.
 
 ## Closed: single-model real-document likelihood study
 Question: do augmented data improve ordinary prediction, and separately generated-calculation inference?
