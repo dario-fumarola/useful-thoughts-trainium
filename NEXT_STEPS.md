@@ -9,7 +9,10 @@
    keeping TRAIN2048, order1923, four passes,256 updates, source/final0.5/0.5 and numerical worker fixed.
    Write the prospective question/endpoint/decision rule, inspect storage and freeze sources first.
    Reuse qualified numerical kernels; any new purpose/validation needs CPU checks and actual bounded qualification.
-   No new learning job is released yet. No coefficient sweep, larger model, new data, RL or official DEV/TEST access.
+   V26 source29606b0 passes1823 CPU checks. Only bounded8-update save/restore qualification is released.
+   Frozen supervisor: local/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1/qualify.py.
+   Independent actual-state audit must pass before a fresh256 learning/evaluation release.
+   No coefficient sweep, larger model, new data, RL or official DEV/TEST access.
    If this control removes the apparent advantage, close the content claim; otherwise design fresh powered confirmation.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.

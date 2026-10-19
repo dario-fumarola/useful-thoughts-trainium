@@ -1,4 +1,16 @@
-# Status — 2026-10-19 22:53 UTC
+# Status — 2026-10-19 23:17 UTC
+
+## Active: coefficient-matched format control qualification
+Question: does selector1.0 improve answering beyond empty-format auxiliary1.0?
+ID: document-evidence-format-weight-v26; source29606b0, unchanged numeric functions/data/order.
+Prospective primary: selector1 direct minus fresh format1 direct; >=3pp/positive paired lower95.
+Held255 already inspected: diagnostic only; source/final coefficients remain0.5/0.5.
+All1823 CPU tests plus smoke/compile pass; source and release protected/readback verified.
+Only disposable8-update/full2/4/6/8 save/restore qualification released on physical12/13.
+Release deadline00:31:35UTC; no automatic retry; science256 and evaluation remain unreleased.
+One CPU preflight Path-reader failure preceded any accelerator call; preserved, repaired without recipe changes.
+Design: validation/document_evidence_format_weight_v26_design_20261019.json.
+Next: run frozen local qualification supervisor, then independent actual-state audit after physical closure.
 
 ## Closed: selector-loss allocation ablation
 Question: does stronger selector supervision repair fitting and help answering?

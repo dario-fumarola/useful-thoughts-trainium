@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE_ONLY_TWO_INACTIVE_EBS_DUPLICATES_RELOCATED_ALL_ORIGINALS_RETAINED",
+  "utc": "2026-10-19T23:04:36.550313+00:00",
+  "entries": [
+    {
+      "name": "checkpoint-export-SFT-recovery-v8-v2",
+      "original": "/home/ubuntu/dario/local/nvme-study/diagnostics/checkpoint-export-SFT-recovery-v8-v2/control/step-0000014/model.pt",
+      "old_backup": "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/control/step-0000014/model.pt",
+      "new_backup": "/home/ubuntu/dario/local/nvme-cpt/backups/inactive-engineering-model-duplicates-v26-prep/checkpoint-export-SFT-recovery-v8-v2.model.pt",
+      "bytes": 3441248275,
+      "sha256": "92dd20343ec98ba7f47a281685c9a013a92b2e8004ffe99063d417f6d838af7d"
+    },
+    {
+      "name": "checkpoint-export-restart-attribution-v8-v1",
+      "original": "/home/ubuntu/dario/local/nvme-study/diagnostics/checkpoint-export-restart-attribution-v8-v1/control/step-0000014/model.pt",
+      "old_backup": "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-restart-attribution-v8-v1/output/control/step-0000014/model.pt",
+      "new_backup": "/home/ubuntu/dario/local/nvme-cpt/backups/inactive-engineering-model-duplicates-v26-prep/checkpoint-export-restart-attribution-v8-v1.model.pt",
+      "bytes": 3441248275,
+      "sha256": "bd0323a8d55cb2ff2b8f2e1db4a304d6444fe457918c4ae0cea048c063110749"
+    }
+  ],
+  "scope": "Only inactive engineering EBS model backups. Original full states and all scientific terminal/latest-full protections retained.",
+  "root_free_bytes": 69529563136,
+  "nvme_cpt_free_bytes": 129046351872
+}

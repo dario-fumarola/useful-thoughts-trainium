@@ -1,0 +1,133 @@
+{
+  "experiment_id": "document-evidence-format-weight-v26",
+  "status": "PROSPECTIVE_BOUNDED_FORMAT_CONTROL_QUALIFICATION_PREPARED",
+  "created_utc": "2026-10-19T23:07:06.341815+00:00",
+  "question": "Does the better V25 recipe survive an empty-format control with the same auxiliary loss coefficient?",
+  "motivation": "V25 selector1.0 native143/255 beat historical direct0.1 at127, but its own direct138 and clean empty139 explain most of the point gain. The historical direct auxiliary coefficient differs.",
+  "treatment": {
+    "arm": "evidence_direct",
+    "fresh_released_B0": true,
+    "model": "Qwen3-1.7B-Base",
+    "source_loss_weight": 0.5,
+    "answer_loss_weight": 0.5,
+    "selection_loss_weight": 1.0,
+    "auxiliary_target": "Empty Evidence field only; no support IDs or factual notes.",
+    "questions": 2048,
+    "passes": 4,
+    "steps": 256,
+    "seed": 2026101923,
+    "terminal_primary": true,
+    "learning_rate": 1e-05
+  },
+  "comparisons": {
+    "selector1": "Completed original V25 terminal256, same auxiliary1.0.",
+    "direct0_1": "Completed original V23 direct terminal256; isolates the format-weight change.",
+    "old_report_hashes_unchanged": true
+  },
+  "fixed": [
+    "Same source documents, order, exposures, view schedule, final-answer serialization, source/final weights, optimizer, LR, precision, topology and loss normalization.",
+    "No new packing, forward, backward, batching, ordering or checkpoint function. Only validation/identity/recovery-release guards change.",
+    "Auxiliary label counts differ by design: empty-format8192 versus selected-field39930 labels over four passes. Equal coefficients are not equal gradient magnitudes or information."
+  ],
+  "source": {
+    "worktree": "/home/ubuntu/dario/local/worktrees/document-evidence-format-weight-v26",
+    "commit": "29606b0",
+    "CPU_checks": "1823 passed in62.90s; smoke and compile pass.",
+    "CPU_log": "/home/ubuntu/dario/local/worktrees/document-evidence-format-weight-v26/local/checks/tests.kIGiyp",
+    "numerical_equivalence": {
+      "status": "PASS_UNCHANGED_NUMERICAL_DRIVER_FUNCTIONS",
+      "functions": {
+        "worker": "0884f4f0e2f59aa37c8d9f76edd6761ec18825ad28c1823874cc19b09b5a0bbe",
+        "batch_at": "395a8883c028f87d20633398323bca102abc074b0c76eedf3ae6222cb4006889",
+        "order_for": "8b0b37b988733dccef6d88c6c469d3a956450e05e42e878635669d28125f057a",
+        "checkpoint_identity": "7f95ad009c86b7a4c75d3f0c69bf49e25cba8c9a700eeb90cd68ba5e4fc1a020"
+      },
+      "prior": "/home/ubuntu/dario/local/worktrees/document-evidence-weight-v25/train/partial_state_driver.py",
+      "candidate": "/home/ubuntu/dario/local/worktrees/document-evidence-format-weight-v26/train/partial_state_driver.py",
+      "source_sha256": "5202696e3c4483d181d9e8088f86b1c79465a0d5b195b0bb88f8f85a6e6e8ef7",
+      "limit": "Only new validation/identity/qualification guards change. New control still needs actual hardware qualification."
+    }
+  },
+  "primary": {
+    "endpoint": "Completed selector1.0 direct-answer canonical EM minus new format1.0 direct-answer EM on unchanged held255.",
+    "criterion": "At least3 percentage points and positive paired95% lower bound identifies promising conditional developmental evidence, not confirmation.",
+    "uncertainty": "20000 paired question bootstrap draws, lexicographic item IDs, seed2026101926+contrast_index; no pooling repeated modes or tokens.",
+    "interpretation": "The cohort motivated these changes and is already inspected. Report point/interval even if the criterion fails; a failed criterion is not proof of zero effect."
+  },
+  "secondary": [
+    "Selector1.0 native own minus format1.0 direct: practical recipe comparison.",
+    "Selector1.0 canonical-empty minus format1.0 canonical-empty, identical closed-field/answer-prefill interface.",
+    "New format1.0 direct minus historical format0.1 direct.",
+    "Same ordinary256 NLL cost versus B0/selector1.0/historical controls; paired pages,20000 draws, seed2026101926+100+index.",
+    "Canonical token F1/attributed aliases, unsupported/caps/errors, any regenerated ID/header diagnostics, actual actions and reserved chip-time."
+  ],
+  "evaluation": {
+    "native_modes": [
+      "direct",
+      "canonical_empty"
+    ],
+    "items": 255,
+    "max_actions": 128,
+    "parser": "Existing anchored Final parser for native direct; bare first-answer-line parser after canonical answer prefill.",
+    "ordinary_items": 256,
+    "ordinary_targets": 32,
+    "unchanged_data": true,
+    "retain_all_failures": true,
+    "no_new_oracle": "Existing V25 own/empty/oracle readouts remain unchanged. No new teacher or support filter.",
+    "numerical_kernel": "Reuse W2 decoder and W4 ordinary scorer; current-model CPU references and own-model native/cache/calibration checks are still mandatory."
+  },
+  "decision": [
+    "If coefficient matching removes the apparent advantage, do not promote a content-specific claim or tune more coefficients.",
+    "If an advantage persists, any capability/internalization claim needs a separately frozen, larger fresh confirmation; no automatic campaign.",
+    "This control cannot change the existing inconclusive V25 same-model extra-ID contrasts or failed V25 fitting gate."
+  ],
+  "qualification": {
+    "actual_steps": 8,
+    "stages": [
+      "Fresh1-4 with full2/4",
+      "Fresh-process restore4 then updates5-8 with full6/8"
+    ],
+    "arm": "evidence_direct",
+    "physical_devices": [
+      12,
+      13
+    ],
+    "logical_cores": "48-55",
+    "output": "/home/ubuntu/dario/local/nvme/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1",
+    "audit": "All four actual full states2/4/6/8; masks/counts/order/master/moment/cast bytes and restored4 optimizer digests;16 native checks repeat4 canonical contexts.",
+    "maximum_reserved_chip_hours": 3.0,
+    "no_automatic_retry": true,
+    "not_capability_evidence": true
+  },
+  "candidate_budgets_not_released": {
+    "training_reserved_chip_hours": 3.0,
+    "evaluation_reserved_chip_hours": 0.3,
+    "evaluation_stage_caps": {
+      "generation": 0.2,
+      "ordinary": 0.1
+    }
+  },
+  "storage": {
+    "full_state_GiB": 22.44,
+    "qualification_full_states": 4,
+    "science_full_states": 2,
+    "qualification_on_existing_spare_NVMe": true,
+    "root_floor_GiB": 35,
+    "per_filesystem_floor_GiB": 35,
+    "host_available_floor_GiB": 512,
+    "latest_full_and_all_science_models_retained": true,
+    "relocation": "Two inactive engineering EBS model duplicates get cross-volume verified replacement copies; original full states retained. Receipt must complete before release."
+  },
+  "authorization": "This design is preparation, not a learning-run release. Separate bounded qualification release requires source/storage review; science requires its actual passing audit.",
+  "limits": [
+    "Single order seed,TRAIN2048,previously inspected held255; no general-reasoning,pretraining-novelty or calibration claim.",
+    "Imperfect support annotations remain unchanged; every model sees all20 passages.",
+    "No dataset/model-size/RL/stack/cloud changes or official DEV/TEST access."
+  ],
+  "source_annex": {
+    "qualify.py": "fdf0f38f3f6758079a78cd138284793967240770e5eddef65d09639d34491480",
+    "independent-audit.py": "62a06f31e87598a176d79f31f1b6125161d8a131ed5668a55e409fac766fdb37",
+    "numerical-source-equivalence.json": "80565e71094a343acb5da4e31f858ec43692a78380162d7a0c1257bc9a1accee",
+    "protocol.json": "cb707eb04862af590c435719b655a916dee63602b64a0bbbd6622db77bcf189a"
+  }
+}

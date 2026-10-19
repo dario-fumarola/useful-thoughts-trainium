@@ -1,0 +1,40 @@
+{
+  "status": "RELEASED_BOUNDED_FORMAT_WEIGHT_MECHANICS_ONLY",
+  "utc": "2026-10-19T23:11:35.283728+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/document-evidence-format-weight-v26",
+  "source_commit": "29606b0",
+  "protocol_sha256": "cb707eb04862af590c435719b655a916dee63602b64a0bbbd6622db77bcf189a",
+  "supervisor_sha256": "fdf0f38f3f6758079a78cd138284793967240770e5eddef65d09639d34491480",
+  "audit_sha256": "62a06f31e87598a176d79f31f1b6125161d8a131ed5668a55e409fac766fdb37",
+  "watcher_sha256": "5354e931db310266f72b7d755d317515ef16a7b51b6bbf4119dce725097fe279",
+  "release_source_sha256": "57c15859d4e0545cfd1c23e72c7840b1036945b047f79f45750502188b5e6864",
+  "prospective_design_file": "/home/ubuntu/dario/validation/document_evidence_format_weight_v26_design_20261019.json",
+  "prospective_design_sha256": "bfc68b312a3688b23871c87cd4b06d01dcbcb74268b04ee5ac0a7e4f12fb886c",
+  "CPU_checks": "1823 pass; smoke/compile pass",
+  "numerical_equivalence_sha256": "80565e71094a343acb5da4e31f858ec43692a78380162d7a0c1257bc9a1accee",
+  "inactive_backup_relocation_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-CPU-v1/inactive-backup-relocation.json",
+  "inactive_backup_relocation_sha256": "1bf8e0a3912380b7d3c8ba01cb286f92530786ad9db431a938c1ceae041ed34f",
+  "physical_devices": [
+    12,
+    13
+  ],
+  "logical_cores": "48-55",
+  "deadline_utc": "2026-10-20T00:31:35.283728+00:00",
+  "maximum_reserved_chip_hours": 3.0,
+  "output": "/home/ubuntu/dario/local/nvme/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1",
+  "original_full_states": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "decision": "Only actual8-update/fresh-process restore mechanics are released. Fresh B0 full256 study/evaluation not released.",
+  "no_automatic_retry": true,
+  "not_capability_evidence": true,
+  "storage_free_bytes": {
+    "/home/ubuntu/dario": 69528989696,
+    "/home/ubuntu/dario/local/nvme": 150277455872,
+    "/home/ubuntu/dario/local/nvme-cpt": 129046351872,
+    "/home/ubuntu/dario/local/nvme-study": 106190544896
+  }
+}
