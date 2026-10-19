@@ -20,6 +20,7 @@ from train.partial_state_packing import batch_packs, training_pack
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'partial-state-sft-v7'
+DEPTH_SCHEMA = 'variable-depth-writer-v11'
 ARMS = ('direct', 'cot', 'cot_full', 'writer', 'reader')
 
 
@@ -32,21 +33,36 @@ def source_files():
              'train/useful_note_sft_driver.py', 'weekend_thinking/pretrained.py',
              'weekend_thinking/checkpoints.py', 'weekend_thinking/core.py',
              'weekend_thinking/runtime_policy.py', 'weekend_thinking/artifacts.py',
-             'train/evaluate.py')
+             'train/evaluate.py', 'train/variable_depth_data.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
 def validate(p):
+    depth = p.get('schema') == DEPTH_SCHEMA
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
                  parameter_dtype='bf16', optimizer_dtype='fp32', head_chunk=32)
+    if depth:
+        fixed.update(schema=DEPTH_SCHEMA, width=192, target_slots=128)
     if any(p.get(k) != v or isinstance(p.get(k), bool) for k, v in fixed.items()):
         raise ValueError('Require explicit short-pack world4/micro8 qualification identity')
     if type(p.get('items')) is not int:
         raise ValueError('Explicit integer cohort size required')
     science=p.get('purpose')=='TRAIN5120_partial_state_study'
-    if science:
+    if depth:
+        hashes = {'fixed': '3f829b7e9fdb493a72f7cf740952130b29eb2dd5ded0c88d69b9a5730031a3ad',
+                  'variable': '1b8a328479cd05718753b89e2f99e0f696e2cbb62079d505cc372fbb927111d3'}
+        qualification = p.get('purpose') == 'variable_depth_qualification'
+        pilot = p.get('purpose') == 'variable_depth_pilot'
+        if (not (qualification or pilot) or p.get('curriculum') not in hashes
+                or p.get('data_sha256') != hashes[p['curriculum']]
+                or p.get('items') != (128 if qualification else 640)
+                or p.get('steps') != (8 if qualification else 160)
+                or p.get('save_every') != (2 if qualification else 80)
+                or p.get('lr') != 1e-5 or p.get('seed') != 2026101911):
+            raise ValueError('Require the declared bounded variable-depth intervention')
+    elif science:
         if (p.get('items')!=5120 or p.get('steps') not in (320,640)
                 or p.get('save_every')!=160 or p.get('lr')!=1e-5
                 or p.get('reader_view_schedule')!='one_teacher_one_plain_per_two_passes'
@@ -55,9 +71,9 @@ def validate(p):
             raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
     elif p.get('purpose') not in ('qualification', 'TRAIN_overfit_only') or p.get('items')!=128:
         raise ValueError('Explicit fitting or fixed TRAIN5120 study required')
-    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 128)
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 160 if depth else 128)
             or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
-            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science else 32)
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science else 80 if depth else 32)
             or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
@@ -106,7 +122,7 @@ def checkpoint_identity(manifest, weights, saved, p, arm, run_id, rank, order_ha
     step = manifest['step']
     expected = dict(spec_hash=canonical_hash(p), arm=arm, seed=p['seed'],
                     order_hash=order_hash, protocol_sha256=protocol_sha,
-                    pipeline_schema=SCHEMA, data_sha256=p['data_sha256'])
+                    pipeline_schema=p['schema'], data_sha256=p['data_sha256'])
     if (manifest['run_id'] != run_id or manifest['world_size'] != p['world_size']
             or not 1 <= step <= p['steps'] or manifest['spec_hash'] != expected['spec_hash']
             or any(manifest['metadata'].get(k) != v or saved.get(k) != v for k, v in expected.items())
@@ -178,7 +194,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     atomic_json(evidence/f'initial-master-rank-{rank:05d}.json', dict(rank=rank, exact_released_FP32_samples=True))
     torch.save(dict(expected_cpu=expected['values'], actual_fp32_masters=initial), evidence/f'initial-master-rank-{rank:05d}.pt')
     found_inf = torch.zeros((), device=device); order_hash = canonical_hash(order)
-    state = dict(pipeline_schema=SCHEMA, spec_hash=canonical_hash(p), arm=args.arm, seed=p['seed'],
+    state = dict(pipeline_schema=p['schema'], spec_hash=canonical_hash(p), arm=args.arm, seed=p['seed'],
                  order_hash=order_hash, protocol_sha256=protocol_sha, data_sha256=p['data_sha256'])
     deadline = require_utc_deadline(args.deadline_utc)
     def stopped():
@@ -278,6 +294,8 @@ def main():
     a.add_argument('--arm', choices=ARMS, required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
+    if p['schema'] == DEPTH_SCHEMA and args.arm != 'writer':
+        raise ValueError('This intervention trains the writer only; the reader remains frozen')
     if args.halt_after is not None and not 1 <= args.halt_after < p['steps']:
         raise ValueError('Explicit unfinished complete-update boundary required')
     if (args.resume is None) != (args.attempt_id is None) or args.resume is None and args.output.exists():
