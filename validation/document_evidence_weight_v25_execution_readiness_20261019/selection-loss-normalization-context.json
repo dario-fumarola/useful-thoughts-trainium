@@ -1,0 +1,40 @@
+{
+  "status": "DERIVED_STORED_LOSS_NORMALIZATION_CONTEXT_NO_NEW_MODEL_CALLS",
+  "metrics_sha256": "186fd7befccaf7ca98da15b6f0d499281b3fac724db5dec6de4e13bc1a254ab7",
+  "quarters": [
+    {
+      "epoch": 0,
+      "all_occurrences": 2048,
+      "selected_occurrences": 1024,
+      "reported_batch_mean_selector_CE": 0.1965005734236911,
+      "conditional_selected_example_mean_selector_CE": 0.3930011468473822
+    },
+    {
+      "epoch": 1,
+      "all_occurrences": 2048,
+      "selected_occurrences": 1024,
+      "reported_batch_mean_selector_CE": 0.08851607370888814,
+      "conditional_selected_example_mean_selector_CE": 0.1770321474177763
+    },
+    {
+      "epoch": 2,
+      "all_occurrences": 2048,
+      "selected_occurrences": 1024,
+      "reported_batch_mean_selector_CE": 0.05811835535860155,
+      "conditional_selected_example_mean_selector_CE": 0.1162367107172031
+    },
+    {
+      "epoch": 3,
+      "all_occurrences": 2048,
+      "selected_occurrences": 1024,
+      "reported_batch_mean_selector_CE": 0.03421989055641461,
+      "conditional_selected_example_mean_selector_CE": 0.06843978111282922
+    }
+  ],
+  "explanation": "The per-example component is zero when absent, then averaged over all32 batch examples. Exactly half are selection views each pass. Reported field CE also includes formatting tokens.",
+  "limits": [
+    "The conditional scalar is a per-example mean over full fields, not ID-only or sequence CE.",
+    "Neither0.1 nor this scalar measures a fraction of the actual gradient.",
+    "This does not establish the cause of incomplete selection or modify any result."
+  ]
+}

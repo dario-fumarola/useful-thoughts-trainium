@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE_REVERIFIED_COPY_ORIGINAL_RETAINED_BEFORE_BACKUP_UNLINK",
+  "utc": "2026-10-19T20:47:43.351351+00:00",
+  "old_EBS_duplicate": "/home/ubuntu/dario/local/backups/engineering/variable-depth-writer-v11-qualification-v1/output/step-0000008/model.pt",
+  "retained_original": "/home/ubuntu/dario/local/nvme-study/diagnostics/variable-depth-writer-v11-qualification-v1/step-0000008/model.pt",
+  "new_backup_duplicate": "/home/ubuntu/dario/local/nvme-study/backups/inactive-qualification-model-duplicates-v25-prep/v11-qualification8.model.pt",
+  "sha256": "b480ce26d68c2ba70dea51515e0f0cf5635f6fe37e271910cf97541cafe1991c",
+  "bytes": 3441248275,
+  "purpose": "Room for two successive protected full states while retaining superseded model backup weights.",
+  "preparation_note": "Initial copy/readback succeeded; an int-call typo stopped receipt construction before any unlink. Existing copy and both original sides were reread before this completion."
+}

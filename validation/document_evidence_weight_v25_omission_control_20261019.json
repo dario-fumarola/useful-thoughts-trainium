@@ -1,0 +1,37 @@
+{
+  "status": "PROSPECTIVE_MATCHED_ANSWER_REPLAY_CONTROL_BEFORE_TREATMENT_TRAINING",
+  "experiment_id": "document-evidence-weight-v25",
+  "utc": "2026-10-19T20:51:46.733832+00:00",
+  "rationale": "The V23 supplied-empty native prompt regenerated IDs. Use the existing canonical pointer context builder, which already closes Evidence and prefills Final answer, and the existing direct answer-line parser.",
+  "unchanged": "All V23 observations, gates and primary-report hash stay unchanged. This is a new evaluation condition, not a replacement score.",
+  "native_modes": [
+    "direct",
+    "selection"
+  ],
+  "answer_replay_modes": [
+    "empty",
+    "selected_id_replay",
+    "oracle"
+  ],
+  "replay_interface": "Original selection prompt + Evidence: [IDs] newline + Final answer: newline. Generate only the answer continuation, parser_mode=direct, cap128. Empty/own/oracle use the identical answer-continuation interface.",
+  "note_sources": {
+    "empty": "No IDs.",
+    "selected_id_replay": "Valid generated IDs only, original order; no generated answer text. Invalid/missing/error note falls back to empty with explicit flag; retain every question.",
+    "oracle": "Original author support IDs only, privileged annotation; no answer text."
+  },
+  "model": "New protected terminal256 treatment only. Old models retain their existing native-control scores.",
+  "builder": {
+    "path": "local/analysis/document_evidence_v23_likelihood_contexts.py",
+    "sha256": "fbd8605b07d14af1b5b9ef836b6b798baf4206988fc31b431122f01f3f7e832a"
+  },
+  "scoring": "Existing designated first-answer-line parser, whole canonical answer EM, F1/aliases separate. Save raw tokens and repeated-header/bracket-line diagnostics. Prefilling is not a hard lexical ban on ID tokens.",
+  "comparisons": [
+    "New native generated selection versus same-model native direct and original matched direct.",
+    "Canonical own-ID replay versus canonical empty-ID replay and oracle-ID replay."
+  ],
+  "interpretation": "Fixed-pointer answer regeneration isolates content more cleanly than the refilling prompt; it is distinct from native thought generation, with any canonicalization disclosed. Held255 reuse is developmental.",
+  "budget": "Same overall0.6 reserved chip-hour evaluation bound; optional likelihood diagnostics run only if the remaining bound permits. No prompt/parser rescue based on outputs.",
+  "qualification": "No new numerical kernel or sampler: same frozen decoder, max128 and tested direct/anchored answer parsers. CPU projection/closure checks precede calls. Each actual worker still passes its own current-model and cached-prefill checks.",
+  "amends_earlier_readout_sha256": "2ad51589fb1c8ad44cbbea461fb2e0687938e61e0e85e7ce17380702a1b0a1b1",
+  "supersedes": "Oracle is evaluated through the matched answer-replay interface instead of a separate native oracle-generation mode. Native modes are direct/selection. This prospective clarification changes no old observation or fitting rule."
+}

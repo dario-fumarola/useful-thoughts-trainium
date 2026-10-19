@@ -11,7 +11,9 @@
    One fresh treatment may be reviewed after qualification; full training is not released.
    Freeze terminal256, unchanged TRAIN2048/order, fitting endpoints and resource budget.
    V24 fitting target failed: exact sets117/128,59/96,12/32 vs TRAIN answers255/256.
-   Held255 reuse is developmental, already inspected; no official DEV/TEST release.
+   Held255 reuse is developmental, already inspected; readout runs regardless of fit outcome.
+   Closed Evidence + supplied Final answer share one bare-answer parser for empty/own/oracle replays.
+   No official DEV/TEST release; original V23 empty-control observation remains unchanged.
    No replication, larger model, RL or six-model campaign follows automatically.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.

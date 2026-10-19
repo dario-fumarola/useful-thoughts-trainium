@@ -1,0 +1,42 @@
+{
+  "status": "CPU_EXECUTION_PREPARATION_ONLY_WAITING_ACTUAL_QUALIFICATION",
+  "utc": "2026-10-19T21:07:07.291092+00:00",
+  "frozen_training_source": "5414f8d",
+  "CPU_tests": 1809,
+  "CPU_closed_field_contexts": 765,
+  "qualification_observed": {
+    "completed_updates": 1,
+    "initial_component_CE_differences": {
+      "source_mean_loss": 0.0,
+      "answer_mean_loss": 0.0,
+      "selection_mean_loss": 0.0
+    }
+  },
+  "source_artifacts": {
+    "protect_document_evidence_weight_v25_terminals_20261019.py": "fcb725fa0e515a6c03517ea738248c0fe6e47ca77c6baa975681010cdb9890bf",
+    "protect_document_evidence_weight_v25_first_full128_20261019.py": "4120b2e03a7a4bb02e15cc9f971142dc5e56756b4f3c1855796a1b920551fa7f",
+    "selection-loss-normalization-context.json": "fdf745010efc301b8d1ae9f1aa7a6ed8a8e54301f45b906b206d7f9776bda10a",
+    "prepare_document_evidence_weight_v25_treatment_20261019.py": "d62d2c7062767eaba8d996f58bbdfdaf877b0550af36c426e97f8c90e7ad0ae8",
+    "fourth-inactive-backup-relocation.json": "4702b66bf42ba77ae442ed459c52d185a951a772b7be30191ccaaba4c9a31999",
+    "paired-gate-planning-simulation.json": "8eb1338d34ccc03e90e1e27833f3a94657a94dac27613fa458fd4628bcee1c51",
+    "analyze_document_evidence_weight_v25_held_20261019.py": "9cf23f5f62d9336f190b06de4632dbc428bbd281a8f9aad0b07d246e180dd9de",
+    "supervise_document_evidence_weight_v25_held_20261019.py": "f4d61ffb95ebd2a7c72a4ec093abacf236c2dfd2f5b1e41a4e77f8e159873ce0",
+    "closed-field-context-check.json": "96202a92dde7fdbbbfc49c2a993cb899996c904435ef17649b0bae8242e1c1cb",
+    "release_document_evidence_weight_v25_treatment_20261019.py": "2f9ea5d93061703a4490cd1c67d33d55b5b7fe96d1213006bb8e959b4abbfa42",
+    "supervise-job.py": "0af8ed43113c273e0ac31f9d6bb747bdeaf5a8efcfd1b121bb8e662665ad5866",
+    "supervise_document_evidence_weight_v25_TRAIN_fit_20261019.py": "d304c6181defab8f09749471d33fe247e40da0dfb097dc0f86bdfb18cad6fd08",
+    "document_evidence_weight_v25_TRAIN_fit_20261019.py": "7a198af0b597fe492af0af1916c5c086c2baa5745ed2bac2f7b90df9eaf73cfa",
+    "initial-coefficient-context.json": "4435f3d0a4c3c4ffbfb7bd90927c96f983a52c88e332a010ddaf8274e5cc7337",
+    "audit_document_evidence_weight_v25_terminals_20261019.py": "9971b2be21c7661c32bce3401b610fc0ccefaacd16549f9b5851d9d954e87a58",
+    "bind_document_evidence_weight_v25_terminal_20261019.py": "76bec7615ff5a942cb9eb8938314b23ce90e9aeac72d34555be062d0c9b310c7",
+    "document_evidence_weight_v25_held_20261019.py": "378ea2b18af99e800b614928eca4109d990f10c0d906bded72e0a5a997f558f5",
+    "document_evidence_weight_v25_state_audit_20261019.py": "6793617e4b84c0034b55a13a3bc34bfc2a9c6d9cbcbc26a68cb99b51e9dfe94d",
+    "check_document_evidence_weight_v25_TRAIN_fit_20261019.py": "b52629002c4be7f6c6d492e292627fc06b9c1a029838a3a38a37ecdbb4d59f2c"
+  },
+  "readout_addendum_sha256": "2ad51589fb1c8ad44cbbea461fb2e0687938e61e0e85e7ce17380702a1b0a1b1",
+  "omission_control_sha256": "0b82a618ebeb3ed870cf49d7827390d14b4cda5647ad7d4bf1d39ec898285349",
+  "scope": "One coefficient treatment is proposed. No full treatment or model evaluation launched. Exact TRAIN fitting and actual answer quality will be reported separately; oldheld reuse is developmental.",
+  "source_copy_note": "These are snapshots of recorded local/analysis scripts and the inactive science supervisor. Execute from their recorded paths with the frozen worktree environment; snapshots are review artifacts.",
+  "root_free_GiB": 64.01827239990234,
+  "limit": "CPU checks and the first actual optimizer audit do not establish learned selection, reasoning or generalization."
+}

@@ -1520,3 +1520,15 @@ science full backup untouched. Three inactive engineering model backup duplicate
 were copied, fsynced and reread against originals before old duplicates were
 unlinked; receipts published. Full treatment requires actual audit and root review.
 The already-inspected held255 can only be reused as developmental evidence.
+
+2026-10-19 21:07 UTC — Prospectively separate fitting from answer quality
+Before any treatment training, refine V25 readout: held255 is developmental and
+will be reported regardless of imperfect-annotation TRAIN fit. Preserve the fitting
+rule and all original V23 scores/gates. Matched closed-Evidence + prefilled-Final
+empty/own/oracle answer replays use the existing context builder/direct parser;
+all765 real contexts pass CPU closure/tokenization checks. Native direct/selection
+prompts stay byte-identical. Planning simulation confirms limited small-effect
+resolution; it changes no old gate. One actual qualification update passes; initial
+component CE matches old exactly, gradient norm44.4→59.1, not a10× gradient share.
+Full treatment remains unreleased. A fourth inactive model backup duplicate was
+verified/copied/fsynced before old EBS duplicate unlink; original full state retained.

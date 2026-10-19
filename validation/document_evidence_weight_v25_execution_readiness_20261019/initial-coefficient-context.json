@@ -1,0 +1,16 @@
+{
+  "scope": "Initial disposable qualification update only; not science or capability.",
+  "old_file_sha256": "4a23eab743f265baae5ab31d55bf1b2d64ea4d8a8a34d14ccb77931fc8861537",
+  "new_first_metric_sha256": "8b080971b0bd12a83b1bccb634e1181960f7f4b151b2e746c96f55f20b87eeb4",
+  "old_coefficient": 0.1,
+  "new_coefficient": 1.0,
+  "initial_component_CE_differences": {
+    "source_mean_loss": 0.0,
+    "answer_mean_loss": 0.0,
+    "selection_mean_loss": 0.0
+  },
+  "old_gradient_norm": 44.426700592041016,
+  "new_gradient_norm": 59.11066436767578,
+  "new_actual_parameter_and_master_audit": true,
+  "limit": "A tenfold selector-loss coefficient does not imply a tenfold gradient contribution. Later trajectories intentionally diverge."
+}

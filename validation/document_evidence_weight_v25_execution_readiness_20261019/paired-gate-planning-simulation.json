@@ -1,0 +1,141 @@
+{
+  "status": "PLANNING_SIMULATION_NOT_EXPERIMENTAL_EVIDENCE",
+  "observed_V23_discordance": 0.19607843137254902,
+  "simulations_per_cell": 100000,
+  "method": "Assumed paired multinomial improved/regressed/same; plug-in Gaussian95% interval, not the actual percentile-bootstrap gate. No parameter/model/data calls.",
+  "point_gate_minimum": 0.03,
+  "assumed_true_gains": [
+    0,
+    0.03,
+    0.05,
+    0.08
+  ],
+  "rows": [
+    {
+      "assumed_discordance": 0.1,
+      "questions": 255,
+      "approx_gate_passing_probability": {
+        "0.0": 0.02578,
+        "0.03": 0.33904,
+        "0.05": 0.75113,
+        "0.08": 0.99523
+      }
+    },
+    {
+      "assumed_discordance": 0.1,
+      "questions": 512,
+      "approx_gate_passing_probability": {
+        "0.0": 0.01536,
+        "0.03": 0.49111,
+        "0.05": 0.92466,
+        "0.08": 0.9999
+      }
+    },
+    {
+      "assumed_discordance": 0.1,
+      "questions": 1024,
+      "approx_gate_passing_probability": {
+        "0.0": 0.00139,
+        "0.03": 0.50527,
+        "0.05": 0.98167,
+        "0.08": 1.0
+      }
+    },
+    {
+      "assumed_discordance": 0.1,
+      "questions": 2048,
+      "approx_gate_passing_probability": {
+        "0.0": 2e-05,
+        "0.03": 0.49485,
+        "0.05": 0.9981,
+        "0.08": 1.0
+      }
+    },
+    {
+      "assumed_discordance": 0.19607843137254902,
+      "questions": 255,
+      "approx_gate_passing_probability": {
+        "0.0": 0.02445,
+        "0.03": 0.1895,
+        "0.05": 0.44115,
+        "0.08": 0.83753
+      }
+    },
+    {
+      "assumed_discordance": 0.19607843137254902,
+      "questions": 512,
+      "approx_gate_passing_probability": {
+        "0.0": 0.02543,
+        "0.03": 0.33654,
+        "0.05": 0.7307,
+        "0.08": 0.98736
+      }
+    },
+    {
+      "assumed_discordance": 0.19607843137254902,
+      "questions": 1024,
+      "approx_gate_passing_probability": {
+        "0.0": 0.01603,
+        "0.03": 0.50539,
+        "0.05": 0.93095,
+        "0.08": 0.99989
+      }
+    },
+    {
+      "assumed_discordance": 0.19607843137254902,
+      "questions": 2048,
+      "approx_gate_passing_probability": {
+        "0.0": 0.00097,
+        "0.03": 0.49713,
+        "0.05": 0.98075,
+        "0.08": 1.0
+      }
+    },
+    {
+      "assumed_discordance": 0.3,
+      "questions": 255,
+      "approx_gate_passing_probability": {
+        "0.0": 0.02506,
+        "0.03": 0.13961,
+        "0.05": 0.31056,
+        "0.08": 0.65468
+      }
+    },
+    {
+      "assumed_discordance": 0.3,
+      "questions": 512,
+      "approx_gate_passing_probability": {
+        "0.0": 0.02549,
+        "0.03": 0.2364,
+        "0.05": 0.54502,
+        "0.08": 0.91707
+      }
+    },
+    {
+      "assumed_discordance": 0.3,
+      "questions": 1024,
+      "approx_gate_passing_probability": {
+        "0.0": 0.02437,
+        "0.03": 0.41686,
+        "0.05": 0.83316,
+        "0.08": 0.99724
+      }
+    },
+    {
+      "assumed_discordance": 0.3,
+      "questions": 2048,
+      "approx_gate_passing_probability": {
+        "0.0": 0.00675,
+        "0.03": 0.49933,
+        "0.05": 0.95271,
+        "0.08": 0.99997
+      }
+    }
+  ],
+  "interpretation": [
+    "At a true effect equal to the point-estimate minimum, passing probability approaches about50% as n grows; design power for an effect above that minimum.",
+    "Current255 paired questions have weak resolution for modest effects. Around8pp can correspond to80% passing probability under assumed discordance, but is not a structural minimum true effect.",
+    "These probabilities condition on checkpoints and assumed discordance; training-seed and evidence-family uncertainty are not included.",
+    "Do not change old thresholds, duplicate related questions as independent evidence or claim an effect is zero from a failed gate."
+  ]
+}

@@ -223,3 +223,22 @@ the stronger LFQA gains occur in the prompted Gemini variants. Exact copying
 prevents fabricated quotations but does not certify that a selected span supports
 the requested relation. These results motivate measurement, not an assumption
 that selection-first training must beat direct answers.
+
+
+## October19: context use and dataset construction
+
+[Lost in the Middle](https://arxiv.org/html/2307.03172v3) tests evidence position
+by reordering documents. Position affects the evaluated models; duplicating the
+query before and after context helps synthetic key lookup much more than real
+multi-document QA. This suggests checking routing/position separately from
+computational depth. It does not establish a positional failure in our Qwen run,
+and it does not justify changing the V25 prompt during the coefficient ablation.
+
+[MuSiQue](https://arxiv.org/html/2108.00573v3), sections S5/S6 and8.2, documents
+its overlap exclusions and hard distractor construction from other valid support
+paragraphs. Easier distractor sources substantially raise shortcut performance.
+Its models also benefit from annotated decompositions while remaining below
+human performance. We should preserve the distinction between answer-location
+hints, evidence selection and valid composition. Changing to an easier dataset
+could raise scores without establishing the intended mechanism; annotation
+errors in our local sample remain a separate, exploratory finding.

@@ -1,0 +1,47 @@
+{
+  "experiment_id": "document-evidence-weight-v25",
+  "status": "PROSPECTIVE_READOUT_REFINEMENT_BEFORE_ANY_TREATMENT_TRAINING",
+  "utc": "2026-10-19T20:47:19.678813+00:00",
+  "original_design_sha256": "3ea504f65892d22058cf2a554eace772aff708ef9e8c938849240d05eccb56c2",
+  "reason": "Exact support-annotation fit is imperfect semantic supervision and is not a necessary condition for useful answering. Report both endpoints rather than condition answer-quality observation on fitting success.",
+  "unchanged_primary": "TRAIN256 exact sets by128/96/32 strata; >=90% two/three and positive paired95% lower bound in three-support versus old0.1 control. Terminal256 only.",
+  "refinement": "After terminal protection and root review, measure fixed held255 direct/generated-selection/annotated-ID-oracle regardless of the TRAIN fitting result. The original if-fit-passes evaluation restriction is superseded only here.",
+  "seed_detail": {
+    "paired_bootstrap_draws": 20000,
+    "seed_base": 2026101925,
+    "TRAIN_stratum_seed": "seed_base+support_count",
+    "question_order": "lexicographic item_id within each stratum",
+    "CI": "percentile [.025,.975], paired questions, conditional on checkpoints"
+  },
+  "held_readout": {
+    "panel": "Unchanged V23 held255. Already inspected; developmental only.",
+    "modes": [
+      "direct",
+      "selection",
+      "oracle"
+    ],
+    "comparisons": [
+      "New generated minus old generated selection",
+      "New generated minus old matched direct training",
+      "New generated minus same-model direct",
+      "New annotated-ID oracle minus new generated"
+    ],
+    "metrics": [
+      "Canonical whole-answer EM",
+      "Canonical token F1",
+      "Separately attributed aliases",
+      "Selection syntax/count/annotation precision/recall/F1",
+      "Errors/caps/unsupported retained",
+      "Generated actions and observed latency"
+    ],
+    "ordinary_guardrail": "Same fixed ordinary256 likelihood panel; report versus B0 and old0.1 control with paired page intervals.",
+    "fixed_context_likelihood": "If run within bound: canonical answer+EOS under direct/strict-empty/generated-ID/donor-ID/oracle; retain original questions and note fallback flags. Not native-generation probability or calibration."
+  },
+  "decision": "A failed fitting target remains failed. Held measurements may still show a local tradeoff. Any broader success claim needs separately designed confirmation; oldV23 gates/scores stay unchanged.",
+  "controls": [
+    "No native supplied-empty condition that can regenerate IDs. Same parser and response format for all modes.",
+    "No test-set access, checkpoint/prompt selection, retries or threshold changes.",
+    "No new training model or scientific qualification outcome was inspected to make this refinement. Disposable qualification is still compiling its first update."
+  ],
+  "maximum_evaluation_chip_hours": 0.6
+}
