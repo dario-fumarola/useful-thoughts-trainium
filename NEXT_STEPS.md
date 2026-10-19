@@ -46,6 +46,9 @@
    or decomposition enter model inputs. Corrected inventory:19,938 questions,
    306 complete inputs<=1536 tokens and4,149<=2048. No model/cohort release.
    Source7c5c264 and corrected readiness are public; official DEV/TEST untouched.
+   CPU split audit finds99% of hypothetical held questions reuse a training-visible
+   support paragraph. Distinguish question/evidence novelty and include question-only
+   controls; validation/document_evidence_v12_split_risks_20261019.json.
    Choose the next scientific intervention after the complete mainline readout.
 
 Fixed mainline data: TRAIN5120 unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.

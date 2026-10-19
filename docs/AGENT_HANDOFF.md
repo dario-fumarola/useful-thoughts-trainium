@@ -89,6 +89,13 @@ Old two-seed v7 is public negative;a0ae5ec. R1234 stays stopped at63.
 MuSiQue broader-document work is CPU preparation only:7c5c264,correct composed
 question field,all visible paragraphs,no gold support flags in input. No cohort,
 model, official DEV/TEST or broader-learning release. Decide after mainline readout.
+Read-only TRAIN split audit is public:document_evidence_v12_split_risks_20261019.json.
+A hypothetical question hash split reuses training-visible support for3846/3878held
+questions. Exact visible-paragraph graph is connected; do not claim evidence novelty
+from a naive question split. This released no cohort or model.
+Actual CE coefficient allocation:real_trace_cpt_v10_loss_allocation_20261019.json;
+added trace targets receive about3.5% of per-example token-loss weight, not a
+measured gradient fraction. Fixed objective and success gates remain unchanged.
 
 ## Storage and runtime invariants
 

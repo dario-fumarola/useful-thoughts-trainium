@@ -1,0 +1,66 @@
+{
+  "status": "AUDITED_ACTUAL_LABEL_TOTALS_AND_LITERAL_CE_ALLOCATION_NO_OUTCOME_SELECTION",
+  "utc": "2026-10-19T05:45:15.162443+00:00",
+  "arms": {
+    "real_raw": {
+      "document_occurrences": 10240,
+      "active_token_counts": {
+        "prefix": 4489846,
+        "future16": 163840,
+        "trace": 0,
+        "closing_or_eos": 0
+      },
+      "total_active_tokens": 4653686,
+      "mean_per_example_CE_coefficient_mass": {
+        "prefix": 0.9606120368727576,
+        "future16": 0.03938796312735978,
+        "trace": 0.0,
+        "closing_or_eos": 0.0
+      },
+      "padded_causal_tokens": 6553600
+    },
+    "real_prior": {
+      "document_occurrences": 10240,
+      "active_token_counts": {
+        "prefix": 4489846,
+        "future16": 163840,
+        "trace": 164290,
+        "closing_or_eos": 10240
+      },
+      "total_active_tokens": 4828216,
+      "mean_per_example_CE_coefficient_mass": {
+        "prefix": 0.9247689161849412,
+        "future16": 0.037674952034436805,
+        "trace": 0.035308510471824706,
+        "closing_or_eos": 0.002247621308844589
+      },
+      "padded_causal_tokens": 6553600
+    },
+    "real_post": {
+      "document_occurrences": 10240,
+      "active_token_counts": {
+        "prefix": 4489846,
+        "future16": 163840,
+        "trace": 164290,
+        "closing_or_eos": 5120
+      },
+      "total_active_tokens": 4823096,
+      "mean_per_example_CE_coefficient_mass": {
+        "prefix": 0.9257537750646692,
+        "future16": 0.03772162762872477,
+        "trace": 0.035397869427583106,
+        "closing_or_eos": 0.0011267278790652764
+      },
+      "padded_causal_tokens": 6553600
+    }
+  },
+  "source_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+  "limits": [
+    "One mean over active token losses per example, followed by the batch mean. These coefficient fractions are not measured gradient-norm fractions or loss-value fractions.",
+    "Both seeds use the same aggregate one-plain/one-augmented exposure. The actual terminal counters match these counts in all six models.",
+    "All arms use fixed width640,global32,320updates. Equal updates/shape do not replace measured compute accounting; active token totals are not a FLOP estimate.",
+    "This describes the fixed objective before capability review; no weight/objective or success gate was changed."
+  ],
+  "coefficient_formula": "For each document let P=len(prefix_ids)-1,T=len(full_calculation_ids). Raw view counts(P,16,0,0); prior augmented(P,16,T,2); post augmented(P,16,T,1). Divide each category by that view total, then average over10240 occurrences. Each augmented arm sees one raw and one augmented view per document.",
+  "source_commit": "3d8666b"
+}

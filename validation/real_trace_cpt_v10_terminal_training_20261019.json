@@ -1027,7 +1027,7 @@
   "limits": [
     "All six terminal320 models fixed before evaluation. No checkpoint selection or extensions.",
     "48 native checks reuse four canonical contexts per model; not48independent scientific documents.",
-    "Each arm has10240document occurrences but different supervised-token totals and loss allocation; not equal training FLOPs.",
+    "Each arm has10240document occurrences but different supervised-token totals and loss allocation; active counts are not a FLOP measurement; training uses the same padded shapes.",
     "All original full160/320 states remain on local SSD. EBS protects all terminal weights and latest full320; same-instance, not off-instance protection.",
     "Earlier numerical uninterrupted/resumed parity limitation remains. These complete runs did not require a restart."
   ]

@@ -1,0 +1,153 @@
+{
+  "status": "READ_ONLY_TRAIN_SPLIT_RISK_AUDIT_NO_COHORT_OR_MODEL_RELEASE",
+  "utc": "2026-10-19T05:42:12.422875+00:00",
+  "rows": 19938,
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "setnames": {
+    "train": 19244,
+    "train_patch": 694
+  },
+  "context_counts": {
+    "20": 19917,
+    "18": 8,
+    "17": 2,
+    "16": 1,
+    "19": 10
+  },
+  "supporting_position_counts": {
+    "6": 2336,
+    "10": 2276,
+    "7": 2318,
+    "11": 2380,
+    "1": 2305,
+    "18": 2294,
+    "13": 2286,
+    "4": 2328,
+    "12": 2170,
+    "15": 2350,
+    "9": 2302,
+    "5": 2308,
+    "3": 2297,
+    "17": 2348,
+    "14": 2410,
+    "16": 2379,
+    "19": 2397,
+    "8": 2445,
+    "2": 2325,
+    "20": 2359
+  },
+  "most_common_support_position_patterns": [
+    {
+      "positions": [
+        17,
+        18
+      ],
+      "questions": 101
+    },
+    {
+      "positions": [
+        5,
+        16
+      ],
+      "questions": 97
+    },
+    {
+      "positions": [
+        9,
+        14
+      ],
+      "questions": 97
+    },
+    {
+      "positions": [
+        15,
+        19
+      ],
+      "questions": 96
+    },
+    {
+      "positions": [
+        6,
+        8
+      ],
+      "questions": 96
+    },
+    {
+      "positions": [
+        2,
+        6
+      ],
+      "questions": 94
+    },
+    {
+      "positions": [
+        16,
+        18
+      ],
+      "questions": 93
+    },
+    {
+      "positions": [
+        9,
+        11
+      ],
+      "questions": 93
+    },
+    {
+      "positions": [
+        2,
+        15
+      ],
+      "questions": 93
+    },
+    {
+      "positions": [
+        16,
+        20
+      ],
+      "questions": 93
+    }
+  ],
+  "exact_question_text_duplicate_excess": 42,
+  "support_sharing_components": {
+    "components": 896,
+    "singleton_questions": 279,
+    "largest_question_components": [
+      4500,
+      486,
+      407,
+      394,
+      259,
+      254,
+      234,
+      202,
+      196,
+      196
+    ],
+    "unique_exact_paragraph_texts": 13672
+  },
+  "any_visible_sharing_components": {
+    "components": 1,
+    "singleton_questions": 0,
+    "largest_question_components": [
+      19938
+    ],
+    "unique_exact_paragraph_texts": 84555
+  },
+  "hypothetical_question_hash_split": {
+    "training_questions": 16060,
+    "held_questions": 3878,
+    "held_with_any_support_seen_in_training_visible": 3846,
+    "held_with_all_support_seen_in_training_visible": 2612,
+    "held_with_any_support_seen_as_training_support": 3814,
+    "held_with_all_support_seen_as_training_support": 2325
+  },
+  "limits": [
+    "Only authors TRAIN inspected; no official DEV/TEST downloaded or read.",
+    "Hypothetical80/20 question hash is an audit, not an adopted split or released cohort.",
+    "Exact paragraph overlap is not the same as answer leakage or semantic duplication. All facts remain visible at inference.",
+    "Gold support flags are offline audit labels only; never policy inputs. No model results inspected."
+  ],
+  "audit_source_sha256": "51d7ebfd856be1692ef2c304160b1bcd74ed77d0227b29ac05c15933daa67afe",
+  "interpretation": "Supporting positions show no obvious fixed-first-k shortcut. A naive question split mostly reuses evidence; distinguish question novelty from evidence novelty and include question-only controls. This releases no cohort/model."
+}
