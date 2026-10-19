@@ -1,0 +1,90 @@
+{
+  "status": "CPU_EMPTY_NOTE_PADDING_WORK_CONFIRMED_AND_SINGLE_CASE_LOSS_GRADIENT_INVARIANT",
+  "utc": "2026-10-19T05:56:04.005240+00:00",
+  "cases": {
+    "1024": {
+      "active_actions_per_note": 1,
+      "reader_tensor_width": 1032,
+      "actual_reader_lengths": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "target_positions": [
+        [
+          6
+        ],
+        [
+          6
+        ],
+        [
+          6
+        ],
+        [
+          6
+        ]
+      ],
+      "replay_head_forward_calls": 32,
+      "replay_head_forward_rows": 1024,
+      "replay_head_rows_including_checkpoint_recompute": 2048,
+      "loss": 0.22079797089099884,
+      "reader_logprobs": [
+        [
+          -3.6046717166900635,
+          -3.6046717166900635,
+          -3.6046717166900635,
+          -3.6046717166900635
+        ]
+      ]
+    },
+    "8": {
+      "active_actions_per_note": 1,
+      "reader_tensor_width": 16,
+      "actual_reader_lengths": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "target_positions": [
+        [
+          6
+        ],
+        [
+          6
+        ],
+        [
+          6
+        ],
+        [
+          6
+        ]
+      ],
+      "replay_head_forward_calls": 1,
+      "replay_head_forward_rows": 8,
+      "replay_head_rows_including_checkpoint_recompute": 16,
+      "loss": 0.22079797089099884,
+      "reader_logprobs": [
+        [
+          -3.6046717166900635,
+          -3.6046717166900635,
+          -3.6046717166900635,
+          -3.6046717166900635
+        ]
+      ]
+    }
+  },
+  "maximum_parameter_gradient_difference": 1.4901161193847656e-08,
+  "inspected_source_sha256": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+  "fixture": "Random tiny two-layer Qwen3 CPU; vocabulary37,hidden24. No released weights or scientific data.",
+  "hardware_profile_status": "NOT_RUN",
+  "production_change": "NONE",
+  "limits": [
+    "Head work counts establish dense padded replay despite one active action; no timing or Trainium speedup inferred.",
+    "Reader and replay are causal, so removing post-stop padding can preserve this objective. One empty fixture is not full bucket-boundary/mixed-cap qualification.",
+    "No RL restart, new reward, length-normalization change or actual optimization deployed.",
+    "A future implementation must preserve all active actions, stops, behavior logprobs and original decode-work accounting; qualify mixed/capped cases and actual hardware."
+  ],
+  "audit_source_sha256": "95e2675d70591e3b897718d639b8039f4ed9102881dabab4f2b903761bcea126"
+}

@@ -1,4 +1,4 @@
-# Current research handoff — 2026-10-19 05:39 UTC
+# Current research handoff — 2026-10-19 05:58 UTC
 
 Continue autonomous work until the owner stops it. Do not finish at a milestone.
 Read STATUS.md and NEXT_STEPS.md. Agents are quota-unavailable; do not retry.
@@ -118,3 +118,28 @@ Absolute analysis scripts otherwise import main instead of the selected worktree
 No rg installed; use targeted Python/grep/find. No cloud/IAM/network/paid teacher/
 new bucket changes. Do not inspect broad process environments: unrelated daemon
 arguments can contain secrets. Read only owned PIDs/selected fields.
+
+## Latest prepared readout additions
+
+All four augmentation models have finished both original-note panels; their
+scalar jobs are now released on physical8–11. Raw control notes are still
+finishing, so their scalar jobs remain pending. No numerical capability outcomes
+reviewed. Main CPU likelihood scoring continues; some primary panels have
+several hundred rows but none of the six full model/panel sets is complete.
+
+All306 top-level training evidence files (native vectors, initial master witnesses,
+metrics and completion/qualification JSON) are EBS-readback/fsync protected under
+TERMINALS/TRAINING_EVIDENCE. Public training report now links all six original
+320-row compressed training traces; no new observations.
+
+Static old-R padding finding:validation/retired_R_empty_padding_CPU_20261019.json.
+Tiny random CPU Qwen confirms a single empty note still projects1024 replay head
+rows (2048 with checkpoint recompute), while a cropped8-slot view preserves loss,
+reader likelihood and parameter gradients (maxdiff1.49e-8) in this one fixture.
+No production optimization, real-model hardware profile, speedup or RL restart.
+Do not treat this as full mixed/capped/bucket-boundary qualification.
+
+Secondary renderer prepared:local/analysis/render_real_trace_scalar_secondary_v10_20261019.py.
+Run only after complete secondary report. Its all-mode CSV preserves every parser
+category; bars display raw/own plus oracle/empty/other reference points. Review
+figures visually before publication. Do not alter either live worktree.

@@ -1030,5 +1030,43 @@
     "Each arm has10240document occurrences but different supervised-token totals and loss allocation; active counts are not a FLOP measurement; training uses the same padded shapes.",
     "All original full160/320 states remain on local SSD. EBS protects all terminal weights and latest full320; same-instance, not off-instance protection.",
     "Earlier numerical uninterrupted/resumed parity limitation remains. These complete runs did not require a restart."
-  ]
+  ],
+  "additional_training_evidence": {
+    "status": "ALL_SIX_TRAINING_TRACES_AND_ACTUAL_NATIVE_MASTER_WITNESSES_PROTECTED",
+    "archive_sha256": "85b41ba9aed0ba088e59855cb0c2552f931ff40e0491c0d24936f789ccf9654a",
+    "files": 306,
+    "bytes": 40887939
+  },
+  "all_training_trace_payloads": {
+    "validation/real_trace_cpt_v10_training_traces_20261019/real_raw-seed2026101913-all320-updates.jsonl.gz": {
+      "rows": 320,
+      "sha256": "871b1fce738a60f79a7d71966e32af6d3cf85d067187cb17d904699186c9df51",
+      "original_sha256": "31345365792ba3c35f65c642046783236faa6aa43e66f715201956d1b8803540"
+    },
+    "validation/real_trace_cpt_v10_training_traces_20261019/real_raw-seed2026101914-all320-updates.jsonl.gz": {
+      "rows": 320,
+      "sha256": "e8ad715a2049e1adb2004d31415264b1a56c664395d98763246730607c2e03dd",
+      "original_sha256": "8ca7f59ed4c2282dbd70943161c8d0d8c2b49405389db2e14d8ba8c257dc7e44"
+    },
+    "validation/real_trace_cpt_v10_training_traces_20261019/real_prior-seed2026101913-all320-updates.jsonl.gz": {
+      "rows": 320,
+      "sha256": "fc130d80c310c9f777ba45cc6035941c9e0950cd8dde8f66a01e491a0257107d",
+      "original_sha256": "5d7a5777533d07866c730f8d83549c8f36cbee4ceb02afd509ad3cae804bd1cf"
+    },
+    "validation/real_trace_cpt_v10_training_traces_20261019/real_prior-seed2026101914-all320-updates.jsonl.gz": {
+      "rows": 320,
+      "sha256": "60e7d52919cb6020f57cd9fee224ac244e3c2b26786d45c615bed8b073226d7d",
+      "original_sha256": "50b75c2edaf5636d4a6bc71a1b114573d4760cbb38037ad5f016f44f3c8dc355"
+    },
+    "validation/real_trace_cpt_v10_training_traces_20261019/real_post-seed2026101913-all320-updates.jsonl.gz": {
+      "rows": 320,
+      "sha256": "441727155a616f561673087ee148301deca933d2b62c5cf0938d700a9c6bbe25",
+      "original_sha256": "714e38a24c086f120f2980aabf7cdfcf8288de9cefaf3bd7e610227ee9420901"
+    },
+    "validation/real_trace_cpt_v10_training_traces_20261019/real_post-seed2026101914-all320-updates.jsonl.gz": {
+      "rows": 320,
+      "sha256": "59c1aa77d2dba6a4334e6012f0c4bb265341064b17deabbe893b430b3b788229",
+      "original_sha256": "cda547bfaf6854651a00879060b1b638d05847f71740a6e2c82c5f949c6a4996"
+    }
+  }
 }

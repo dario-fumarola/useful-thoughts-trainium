@@ -30,6 +30,7 @@
    Control:local/diagnostics/real-trace-v10-scalar-secondary-study-v1.
    Tmux cpt-v10-scalar-readout archives/rechecks all17,920 attempts once complete.
    Scalar accuracy is secondary and does not change either likelihood gate.
+   Prepared figure/CSV renderer:render_real_trace_scalar_secondary_v10_20261019.py.
    No broad QA, equal-compute or controlled service-latency claim follows.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
@@ -67,3 +68,9 @@ local/nvme-cpt is already formatted/mounted, UUID5119e7ab-0ca6-4295-b8f0-e856d87
 NEVER mkfs again; remount UUID only. EBS is same-instance, not off-instance backup.
 No cloud/IAM/network/paid-teacher/bucket changes. R1234 stays stopped at63.
 No unqualified8B or officialTEST. Agents remain quota-unavailable; do not retry.
+
+Future RL engineering only, no launch:retired replay still computes all1024slots
+for empty notes. A single tiny CPU fixture confirms8-slot cropping preserves
+loss/reader scores/gradients; no Trainium timing or complete bucket qualification.
+Public:validation/retired_R_empty_padding_CPU_20261019.json. Profile actual phases
+and qualify all masks/stops/behavior-logp cases only if a future RL study is justified.
