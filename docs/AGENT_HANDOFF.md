@@ -33,7 +33,7 @@ Public `validation/real_source_balanced_v17_hardware_20261019.json`.
 
 Science control: `local/diagnostics/real-source-balanced-v17-study-v1`.
 Four tmux sessions `source-train-v17-{arm}-seed{seed}`,physical0/1,2/3,4/5,6/7.
-All32 ranks captured;first finite update complete asof10:48;no failures.
+All32 ranks captured;allfourfull160statescomplete andtrainingresumed beyond160 asof11:07;no failures.
 Outputs `local/nvme-cpt/runs/real-source-balanced-v17-{arm}-TRAIN5120-seed{seed}-v1`.
 Finite deadline18:00UTC;no retry/extensions/model selection.
 Health: `source scripts/env.sh` then
@@ -99,8 +99,9 @@ EBSpreparation `local/backups/engineering/real-source-v17-prepared-readout`.
 V15exampleworkerorderbugfix retained:IDreindexbefore unchanged donorpermutation.
 Finalready must include `final-publication-ready.json`;visuallyinspect3PNGfigures,
 reviewcompletequestiononce,updatefrontpage/status/queue,commit/pushallactualevidence.
-As of10:56 alltraining75/76updates,warm~6s;alloldnotesnearly/fullycomplete,
-answersprogressing;noexecutionfailures;root59.3GiB,host1204GiBavailable.
+As of11:07 allfourfull160statescomplete andtrainingresumed,warm~6s. Alloldnotes
+andallsevenoldLLjobscomplete;answersprogressing;noexecutionfailures.
+Root59.3GiB,NVMe-cpt914GiB,host1430GiBavailable aftercheckpointcleanup.
 
 ## Storage and backups — important order
 

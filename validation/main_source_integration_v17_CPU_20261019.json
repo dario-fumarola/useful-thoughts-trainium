@@ -1,0 +1,35 @@
+{
+  "status": "CPU_INTEGRATION_PASS_WITH_IMMUTABLE_PRODUCTION_SOURCES_UNCHANGED",
+  "utc": "2026-10-19T11:12:38.411134+00:00",
+  "CPU_checks": 1699,
+  "smoke_and_compile": "PASS",
+  "production_snapshots": {
+    "training": {
+      "branch": "real-source-balanced-v17",
+      "commit": "37028a1",
+      "tracked_source_unchanged": true
+    },
+    "evaluation": {
+      "branch": "real-source-eval-v17",
+      "commit": "c9b399b",
+      "tracked_source_unchanged": true
+    }
+  },
+  "integrated_source_files": {
+    "train/partial_state_driver.py": "1636299019bf568eafaf779e42bbc547723e4d3b3f44eadd4e2b8e4d0ce799c7",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/real_trace_notes.py": "f4d4ad7aa3410e3ae6ecff8d4539b69984bb56329d43ef99e4edf24d00c04b05",
+    "train/real_trace_answers.py": "e590b4a1f507433c66542354b984cf45f87b5dc67d15e0c615ec45105fe891a1",
+    "train/real_trace_cpu_scores.py": "3b4befd674be4657a96bd884acdc827b127eb1b1e0364ff8b7345baa3158c00f",
+    "train/real_trace_scope.py": "b69d131684b1d760c456ccc6a768807d0242b266cb8c3d95558ef706f5bf2622",
+    "train/real_trace_results.py": "cf6b7ca8d5f72b8ea78142a8eeaa66f8c58900e281b0f8094f063e3138ec9c61"
+  },
+  "check_log_sha256": "a0a2c0ae9e0d060ad8dc93317309b9fa1d90ecd3d4ed0b67088b639577151451",
+  "limits": [
+    "Themainintegrationretainsboundedvariabledepthandversionedreal-dataobjectives;noactiveworktreewaschanged.",
+    "CPUintegrationdoesnotqualifyanewcombinedsourceidentityonhardware. LiveV17sourcesremain37028a1/c9b399b.",
+    "NoV17capabilityoutcomeshavebeenreviewed."
+  ]
+}

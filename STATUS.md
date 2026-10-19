@@ -1,11 +1,11 @@
-# Status — 2026-10-19 10:49 UTC
+# Status — 2026-10-19 11:07 UTC
 
 ## Active: preserve source prediction with useful computation
 Question: can arithmetic gains survive a separately normalized source-prefix loss?
 Experiment: real-source-balanced-v17; source_direct/source_cot, fresh B0, two seeds320 each.
 Source37028a1:1,656 CPUchecks andall10,240 native TRAINviews pass;bothcomponents weighted0.5.
 ActualhardwarePASS:11 updates/6 fullstates/fullrestore;independent masks/loss/master/native audit passes.
-Four science controllers released;all32 ranks captured;first finite updates complete, no failures.
+All four full160 checkpoints complete;training resumed past160;all32 ranks captured, no failures.
 Control:local/diagnostics/real-source-balanced-v17-study-v1;tmux source-train-v17-*.
 Fresh512 arithmetic plus256 ordinary documents/design frozen before held forwards ornewtraining.
 Seven frozen references evaluate concurrently;fournew models waitterminal audit/protection/binding.

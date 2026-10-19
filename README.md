@@ -508,22 +508,25 @@ available in Git and the linked reports.
 
 | Path | Purpose |
 |---|---|
-| [configs/weekend.json](configs/weekend.json) | Original stopped experiment configuration |
-| [docs/WEEKEND_PLAN.md](docs/WEEKEND_PLAN.md) | Original scientific design and interpretation |
-| [train/computable_equations_supervised.py](train/computable_equations_supervised.py) | Verified real equations for supervised labels; future-aware curation |
-| [train/interface_oracle_probe.py](train/interface_oracle_probe.py) | Complete six-interface full-span target-copy probe |
-| [train/calculation_boundaries.py](train/calculation_boundaries.py) | Bounded exact-arithmetic parser and original stricter curator |
-| [train/calculation_boundary_probe.py](train/calculation_boundary_probe.py) | Controlled reader feasibility and exact LHS reanchoring |
-| [train/scalar_completion.py](train/scalar_completion.py) | Versioned initial-scalar boundaries; legacy scores remain preserved |
-| [train/neuron_driver.py](train/neuron_driver.py) | Historical C/R qualification and driver |
-| [train/neuron_backend.py](train/neuron_backend.py) | Causal cache, generation, scoring, and policy replay |
-| [train/evaluate.py](train/evaluate.py) | Question-only, sharded math evaluation |
-| [train/evaluate_likelihood.py](train/evaluate_likelihood.py) | ARC and full-target LAMBADA likelihood |
-| [train/evaluate_local.py](train/evaluate_local.py) | Saved prefix-only notes, content controls, and crossed readers |
-| [weekend_thinking/](weekend_thinking/) | Objective, data, checkpoint, and analysis primitives |
-| [tests/](tests/) | CPU correctness checks; these do not certify hardware |
-| [context/](context/) | Research context and evidence limits |
-| [legacy/](legacy/) | Preserved historical source and results; not active launch instructions |
+| [train/partial_state_driver.py](train/partial_state_driver.py) | One causal training engine with explicit experiment identities |
+| [train/real_source_balanced_packing.py](train/real_source_balanced_packing.py) | Separately normalized source-prefix and task losses |
+| [train/real_target_packing.py](train/real_target_packing.py) | Direct-answer and full-trace supervision |
+| [train/real_trace_notes.py](train/real_trace_notes.py) | Prefix-only generated calculations and fixed content controls |
+| [train/real_trace_answers.py](train/real_trace_answers.py) | Native scalar continuations with scoring-only gold |
+| [train/real_trace_cpu_scores.py](train/real_trace_cpu_scores.py) | Full-span CPU/native likelihood and model-specific parity checks |
+| [train/real_trace_scope.py](train/real_trace_scope.py) | Frozen panel and checkpoint-binding guards |
+| [tests/](tests/) | CPU correctness checks; hardware evidence is separate |
+| [context/](context/), [legacy/](legacy/) | Research context and preserved history |
+
+V17 production uses immutable training snapshot
+[37028a1](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/37028a1)
+and evaluation snapshot
+[c9b399b](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/c9b399b).
+`main` integrates their code with other diagnostics. Reproduction should use the
+exact source hashes and protocols in each experiment report; integration alone
+does not qualify a changed source snapshot on hardware.
+The [stopped original configuration](configs/weekend.json) and
+[original design](docs/WEEKEND_PLAN.md) remain historical records.
 
 ## Running checks
 

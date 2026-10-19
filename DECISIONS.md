@@ -1316,3 +1316,10 @@ both-seed accuracy/source-quality gates were published before evaluation/trainin
 No partial capability review. Retire only older EBS optimizer duplicates after
 fresh both-side hashes and newer full protection; all originals/models remain.
 The new full checkpoint must be protected before retiring V15 optimizer copies.
+
+2026-10-19 11:13 UTC — Integrate versioned production code into main.
+Merge the real-data training/evaluation histories while retaining the bounded
+variable-depth path. Resolve schema conflicts by preserving both guarded identities.
+All1,699 CPU checks plus smoke/compile pass. Live training/evaluation worktrees
+remain clean at37028a1/c9b399b; their qualified source identity is unchanged.
+The combined main snapshot has CPU integration evidence, not a new hardware pass.
