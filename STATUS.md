@@ -1,21 +1,35 @@
-# Status — 2026-10-19 02:22 UTC
+# Status — 2026-10-19 02:51 UTC
 
 
-## Active: bounded variable-depth writer repair
+## Active: single-model real-document mainline
+Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
+Experiment: real-trace-cpt-v10; source3d8666b,1,622CPUchecks; prospective design public before learning.
+Raw/prior-trace/post-trace arms: one fresh1.7Bmodel each,matched5120documents/two passes/320updates,two seeds.
+Independent training/inference likelihood gates: >=0.25nat/span and paired95%lower>0 in each seed.
+Ordinary-text regression bound and B0/empty/content controls remain; no general-language claim.
+Held panels frozen:256novel expressions+256ordinary DEV documents;all document/expression exclusions pass.
+Full packing readback15360views passes,max627tokens; trainshape640,world8×micro4,FP32masters/BF16active.
+TRAINfull traces span2–6operations (2914/1395/429/308/74 examples),not one fixed trace depth.
+Actual8rank qualification active on physical12/13,logical48–55; source and full plan EBS readback.
+Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
+Fresh1–6/fullsave/close/actual fullrestore6/update7–8;deadline05:00UTC,no automatic retry.
+No320update learning release yet; exact same-source/same-shape actual PASS receipt is required by loader.
+Raw/prior/post benefit gates are independent; bounded split repair does not gate this main path.
+
+## Active: bounded variable-depth writer diagnostic
 Question: does changing depth coverage repair incomplete stopping and help the frozen reader?
-Experiment: variable-depth-writer-v11-v1; one diagnostic seed, fresh fixed and variable writers.
-Fixed640 all two steps; variable640 balanced one to five; both160updates/eight passes, root omitted.
-Existing composition512 is targeted DEV; fresh depth2/6 panels256each exclude all prior7168expressions.
-Gate: composition canonical/natural >=70% and positive paired variable-minus-fixed interval;
-reader gain >=10pp with positive interval and >=40% absolute accuracy. FullCoT/B0 remain competitors.
-Both writers have128-action cap, reader32, single-model160; count all failures/tokens/costs.
-Source5af3431 at local/worktrees/variable-depth-writer-v11;1614CPUchecks pass.
-Disposable qualification active: local/diagnostics/variable-depth-writer-v11-v1/qualify.py.
-Actual four workers on physical8, fresh1-6 then fresh-process full restore6/update7-8.
-Follow its qualification-supervisor.log; no pilot release until complete state/native/recovery audit.
-No existing reader updates, RL, TEST, 8B or real-data accelerator launch. Real packing remains held.
-Public design: validation/variable_depth_writer_v11_design_20261019.json; complete new data EBS verified.
-Decision: bounded causal-curriculum diagnostic first; real-document usefulness remains a separate question.
+Experiment: variable-depth-writer-v11-v1;source5af3431,1,614CPUchecks,one diagnostic seed.
+Fixed640 all two steps;variable640 balanced one–five;both160updates/eight passes,root omitted.
+Targeted composition512 plus fresh depth2/6 panels256each;all new expressions exclude prior7168.
+Gates in public design:canonical/natural>=70%;reader>=40% and >=10pp over fixed with positive paired interval.
+Width192 SFT/save/restart audit PASS:all8updates,8native vectors,all4full states and restored6bytes verified.
+Late grouped post-export growth0.470GiB/save versus declared2GiB bound;no uninterrupted-parity claim.
+Both small writer runs released from fresh B0,serial on physical8;fixed control reached64at02:50UTC.
+Control:local/diagnostics/variable-depth-writer-v11-v1;tmux variable-depth-v11-pilot;deadline04:30UTC.
+All original states retained;full qualification8 and source/recovery/numerical evidence EBS readback.
+After both terminal160 close,independently audit once,then frozen-reader/B0/fullCoT evaluation,all failures kept.
+Evaluation source dd95d6c plus final label clarification in progress;own128+reader32 versus single160actions.
+No reader retraining or extension;split repair remains a diagnostic,not the main architecture.
 
 ## Closed: two-seed matched partial-computation study
 Question: does a separate writer–reader earn its cost over competitive single-model solvers?

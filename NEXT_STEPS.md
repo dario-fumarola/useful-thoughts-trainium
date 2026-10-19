@@ -1,61 +1,76 @@
 # Current queue
 
-1. Finish the bounded variable-depth intervention requested by the owner.
-   Public prospective design: `validation/variable_depth_writer_v11_design_20261019.json`.
-   Source5af3431 is immutable in `local/worktrees/variable-depth-writer-v11`.
-   Fixed640 two-step examples versus variable640 balanced one–five; both fresh
-   B0,160updates/eight passes,writer-only CE,root omitted,one diagnostic seed.
-   Four-core disposable qualification is active under
-   `local/diagnostics/variable-depth-writer-v11-v1/qualify.py`:
-   fresh1–6/full checkpoints2/4/6/physical closure/fresh full restore6/update7–8.
-   Follow `qualification-supervisor.log`, bounded deadline03:30UTC. Check native
-   vectors, actual masters/casts, every full manifest, full restored optimizer
-   bytes, ordered counters, physical closure and grouped post-save memory.
-   No pilot learning is released until this audit passes. No automatic retry.
-2. After qualification, explicitly release the two small160update writers from
-   fresh B0 using their frozen protocol files. The frozen reader is v7 seed1806
-   terminal320, fullCoT reference v7 seed1806 terminal640, untouched B0 retained.
-   Terminal160 primary; save64/80/160. No learning-rate or training extension
-   based on development outcomes. Qualification models are never warm starts.
-3. Evaluate both notes against the SAME frozen reader, with teacher, direct,
-   empty and intact unrelated controls. Existing composition512 is exposed DEV;
-   fresh depth2/6 panels256each are expression-disjoint. Report separately.
-   Writer128+reader32 versus single160; include actual tokens and latency.
-   Declare all caps/errors/unsupported answers in denominators. Writer canonical
-   accuracy alone is insufficient; fixed-reader complete-answer benefit is key.
-   If curriculum repair still loses substantially to fullCoT, do not keep
-   expanding the split architecture. One seed is a diagnostic,not confirmation.
-4. Keep real-document usefulness as the second small question. Existing verified
-   FineMath5120TRAIN data and new raw/prior/post packing are ready on
-   `local/worktrees/real-trace-cpt-v10`;1621CPUchecks pass, full packing audit pending.
-   Its proposed wider hardware qualification was HELD before any accelerator
-   launch when the owner requested the focused math repair first. Do not use
-   its unlaunched plan as a learning release. Real texts remain mathematical;
-   they are a bridge,not evidence of general document reasoning. For document
-   reasoning, teacher facts and generated notes must be supported by the
-   question/context actually available to the writer. Compare no-note/generated
-   note/fullCoT at matched budgets and preserve oracle/content controls.
+1. Main path: complete the actual real-document width640 SFT qualification.
+   Source3d8666b at `local/worktrees/real-trace-cpt-v10`;1622CPUchecks pass.
+   Public prospective plan: `validation/real_trace_cpt_v10_design_20261019.json`.
+   Raw/prior/post single-model arms,5120documents,two passes/320updates,two seeds.
+   Training and inference benefit gates are independent; no bigger split study.
+   Actual qualifier: `local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2`.
+   Eight workers on physical12/13,logical48–55;fresh1–6/fullsave/close/fresh full
+   restore6/update7–8. Deadline05:00UTC. Inspect stage logs and supervisor;
+   do not interrupt legitimate cold compilation. No retry or scientific model yet.
+   Independent auditor is PREPARED but NOT launched:
+   `local/analysis/audit_real_trace_qualification_v10r2_20261019.py`.
+   Review its8rank adaptation,source/data hashes,and disk space before use.
+   Actual PASS receipt must contain source_files and qualified_training_shape
+   exactly matching the subsequent320update protocol;loader enforces this.
+2. In parallel,finish the bounded variable-depth diagnostic;do not postpone
+   mainline to rescue it. Source5af3431 remains frozen in its own worktree.
+   Actual width192 qualification independently PASSES,full8protected on EBS.
+   Two fresh writers are now running serially via
+   `local/diagnostics/variable-depth-writer-v11-v1/pilot.py` (tmux variable-depth-v11-pilot).
+   Fixed640(two steps) and variable640(balanced1–5),each160updates/eightpasses.
+   Frozen protocols/criteria are already public. Terminal160 primary,no extensions.
+   At02:50UTC fixed reached64;all original checkpoint paths stay on local SSD.
+   Finish BOTH and independently audit full64/80/160states,master casts/cursors,
+   then protect variable full160 FIRST and fixed terminal model as disk allows.
+   Public qualifier: `validation/variable_depth_writer_v11_training_qualification_20261019.json`.
+3. Depth-repair evaluation source is isolated at
+   `local/worktrees/variable-depth-eval-v11`,committed dd95d6c plus final unique
+   curriculum-label change awaiting checks/commit. CPU1617passed before label tweak.
+   Final check log:local/analysis/variable-depth-v11-evaluation-final-CPU-checks-20261019.log.
+   It supports new256panels,budget128writer+32reader versus160single,and explicit
+   delegation to the original frozen producer validator. Actual old reader binding
+   was independently reproduced (20.49s) in
+   local/diagnostics/variable-depth-writer-v11-v1/frozen-reader-producer-verified.json.
+   New pilot identities should pass producer_source_root=the immutable EVALtree,
+   which contains the exact training source closure plus the v11terminal validator.
+   Frozen v7 reader1806 terminal320,fullCoT1806 terminal640,and untouched B0 remain.
+   Prepare native references after terminal audit;all attempts/unsupported retained.
+4. Real held data: `local/nvme-study/data/real-trace-cpt-v10-held-panels-v1`.
+   New novel256 excludes allTRAINexpressions/documents;ordinary256 is a distinct
+   auditedDEVsource panel outside selected arithmetic anchors. Existing DEV256
+   with44seen expressions is preserved and reported separately. Both EBS verified.
+   Full15360packing readback passes,max627native tokens;TRAINtrace depths2–6,
+   native full-trace actions17–94. Inspect primary proof/labels before learning.
+   All320update jobs still need explicit finite release and enough disk capacity.
+5. Broader document reasoning is CPU preparation only. Author MuSiQue TRAIN raw
+   file is local+EBS,19938questions,including694author train_patch rows. NoDEV/TEST
+   requested. Source at local/worktrees/document-evidence-v12 remains uncommitted.
+   IMPORTANT correction: raw question_text is a composition template;the actual
+   natural-language question is composed_question_text. Initial length inventory
+   is retained as superseded V1;corrected V2 is running with source hashes.
+   A poison-input test and template rejection guard are added;final CPUchecks
+   local/analysis/document-evidence-v12r2-CPU-checks-20261019.log.
+   No cohort/model/evaluation release yet. Do not turn data readiness into utility.
 
-The complete two-seed v7 study is closed and public in commit a0ae5ec.
-`validation/partial_state_v7_matched5120_complete_20261018.json` retains all51200
-answers/4096notes. FullCoT wins all four panels/both seeds. Post hoc TRAIN traces
-all have two nonroot lines; longer composition needs three, but writers emit two
-in501/512 and508/512. This motivates a curriculum intervention,not an EOS-only
-causal finding or rejection of every useful-thought training objective.
-Review ZIP: `local/review/useful-thoughts-20261019-a0ae5ec.zip`.
-Original v7 source57d3220 remains immutable in `local/worktrees/partial-state-science-v7`.
-No R1234 resume; no broad RL or unqualified8B. Papers/objective corrections are
-in `docs/REFERENCE_NOTES.md`; overall aim in `docs/RESEARCH_ROADMAP.md`.
+Completed v7 study is public:a0ae5ec,all51200answers/4096notes,fullCoT wins all8cells.
+Original source57d3220 remains immutable. Two-line stopping motivates a curriculum
+intervention,not a proven EOS-only cause or a rejection of every thought objective.
+Review ZIP saved and linked to owner:local/review/useful-thoughts-20261019-a0ae5ec.zip.
+No R1234 resume,broad RL,unqualified8B,or officialTEST. Papers in docs/REFERENCE_NOTES.md.
 
-Export cleanup fb72065 is included ONLY for newly declared paths. Actual short
-world4 recovery is verified; uninterrupted/resumed numerical parity is not.
-Original strict failure and subsequent attribution remain public. Wider paths
-and indefinite-memory stability are not qualified by that result.
-
-Keep every original full checkpoint on local SSDs and all science outputs.
-EBS keeps all terminal models plus latest full resumable state; older EBS
-optimizer duplicates retire only after fresh both-side hashes and latest recovery
-verification. Retention policy: `validation/partial_state_v7_checkpoint_retention_20261018.json`.
-Extra store `local/nvme-study` is mounted/verified; never reformat it. Keep35GiB
-floors on each disk and512GiB host availability. EBS is same-instance storage.
-Root owns the work; subagents are quota-unavailable,do not retry.
+Storage:all original full checkpoints stay on NVMe. EBS all terminal models plus
+latest full resumable state;older inactive EBS optimizer duplicates can retire
+only after fresh both-side hashes and protection of newer recovery. Mathqual8
+now EBS protected;oldv8engineering14EBSrank duplicates were retired (19.23GiB)
+after full both-side and latest8 verification. Model14/metadata/ALLoriginal
+full states remain. Receipt:validation/checkpoint_retention_engineering_20261019.json.
+Root free about60GiB. Real qualifier full8needs~22GiB backup;coordinate archives.
+For pilot science,protect latest variable160full FIRST,then rotate superseded
+mathqual8EBSoptimizer copies only after fresh readbacks,before fixed model copy.
+Latest older scientific full640 remains protected until a newer scientific full
+is actually verified. Keep35GiB per-disk and512GiB host floors.
+Six real320runs will need more local output capacity;reverify an unused local SSD
+before initialization. NEVER reformat local/nvme-study or oldcheckpoint volumes.
+No cloud/IAM/network/paidteacher/bucket changes. Root owns work;agentsquota-unavailable.

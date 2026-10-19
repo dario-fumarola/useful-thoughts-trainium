@@ -1,0 +1,70 @@
+{
+  "status": "COMPLETE_ONLY_FOUR_SUPERSEDED_EBS_OPTIMIZER_DUPLICATES_RETIRED",
+  "utc": "2026-10-19T02:49:38.068547+00:00",
+  "verified": {
+    "superseded_engineering14": {
+      "source": "/home/ubuntu/dario/local/nvme-study/diagnostics/checkpoint-export-SFT-recovery-v8-v2/candidate/step-0000014",
+      "EBS_copy": "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014",
+      "COMPLETE_sha256": "ac1185abe86d8bdacb8e8f09959fab64d8291a6c897103495bc271c61dbd3b4c",
+      "all_payloads": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "b5f556c314e06fc8399a5a3adc94740df7d3977d6722531735ea18249e06a205"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143463,
+          "sha256": "4f1456ffeac687d367862a340438eca08c6486c21cb2ee5aeb1c9ec0eafad13d"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "ab1b82a90f645f5e6bf4d066b7b4a31128b9da3dfe3752ecaf16e1247657df6e"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "c7dc4e3e074cbb554857b1ee43142c849b3940cc78d7ac98c3f8a95d8a429cf7"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143399,
+          "sha256": "3f7c9598e21fe4a9c9eb0dccfdca3a5655ce31a5f8ecdb7a702862a16ec226c3"
+        }
+      }
+    },
+    "protected_engineering8": {
+      "source": "/home/ubuntu/dario/local/nvme-study/diagnostics/variable-depth-writer-v11-qualification-v1/step-0000008",
+      "EBS_copy": "/home/ubuntu/dario/local/backups/engineering/variable-depth-writer-v11-qualification-v1/output/step-0000008",
+      "COMPLETE_sha256": "03e943c1fd9f6a6de9c9db8d0124b28d82daf3ba33fac87a1d629abbe40e5210",
+      "all_payloads": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "b480ce26d68c2ba70dea51515e0f0cf5635f6fe37e271910cf97541cafe1991c"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "6b1027abb4b45daf789b0f4bc0fa5a3b1207160ec312b670d28d6e189f067804"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "8160c7a90139d067e0ee757c1351c2451e13172d4a72c4bace0bf914ee44b366"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "571580adbac326913c927ed982a0042f6c02b09753a7521518c5497bb80fe3eb"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143463,
+          "sha256": "bcfe587240cdb3a883c34df46faeb74636442497d6b889cb32570bf641247554"
+        }
+      }
+    }
+  },
+  "retire_only": [
+    "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014/rank-00000.pt",
+    "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014/rank-00001.pt",
+    "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014/rank-00002.pt",
+    "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014/rank-00003.pt"
+  ],
+  "bytes_saved": 20648573660,
+  "policy": "Only superseded inactive EBS optimizer duplicates. All original full NVMe states,all EBS models and all metadata/receipts retained. New full8 engineering recovery and latest scientific full state remain protected. EBS is same-instance storage.",
+  "finished_utc": "2026-10-19T02:49:39.290153+00:00",
+  "root_free_bytes": 64507494400
+}

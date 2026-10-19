@@ -16,6 +16,13 @@ Do not resume old training/evaluation launchers. Read NEXT_STEPS.md first.
 4. Relevant code/tests only. Search historical material on demand; do not read
    a multi-megabyte journal before doing the first useful implementation task.
 
+October19 owner steering: the main path is now a source-matched,single-model
+real-document comparison separating training benefit from extra inference benefit.
+A single bounded variable-depth writer repair remains a parallel diagnostic;it
+does not authorize another large split rescue or gate the mainline. Follow the
+prospective v10/v11designs and actual hardware/recovery evidence in NEXT_STEPS.
+No8B/broadRL/officialTEST release follows from these preparations.
+
 ## Source precedence
 Current user instructions and this active plan govern the new work. The files in
 `legacy/`, historical manuscripts, and the Italian transcript are reference

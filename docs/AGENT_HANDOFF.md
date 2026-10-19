@@ -6,24 +6,42 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 02:22 UTC handoff: current owner steering asks one small variable-depth
-writer intervention before a broader dataset/architecture pivot. The complete
-v7 result is published in a0ae5ec,review ZIP saved and linked to owner. FullCoT
-beats split all panels/both seeds; two-line stopping is a curriculum hypothesis.
-New source5af3431 at local/worktrees/variable-depth-writer-v11,1614CPUchecks pass.
-Public prospective design validation/variable_depth_writer_v11_design_20261019.json.
-Disposable four-core qualification now active via
-local/diagnostics/variable-depth-writer-v11-v1/qualify.py (tmux variable-depth-v11-qual).
-Fresh1–6/fullsave/close/fullrestore6/updates7–8; inspect supervisor/stage logs.
-No pilot model released yet. Then fixed640 versus varied640(one–five steps),
-160updates/eight passes each, frozen v7 reader/fullCoT references and B0. New
-DEVdepth2/6 n256 plus targeted existing composition512. Strict gates in JSON.
-Both writers128actions+reader32 versus single160; all failures retained.
+October19 02:51UTC:MAINLINE is single-model real-document raw/prior/post CPT,
+source3d8666b at local/worktrees/real-trace-cpt-v10,1622CPUchecks. Prospective plan
+validation/real_trace_cpt_v10_design_20261019.json;two seeds,320updates,novel256and
+ordinary256panels frozen before learning. Fullpacking15360views passes,max627;
+shape640/world8micro4. Qualifier active on physical12/13 logical48–55,
+local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2 (tmux real-trace-v10-qual).
+Fresh6/close/fullrestore6/update8;05:00deadline. Independent8rank auditor prepared,
+not started;review adaptation and source/data/disk checks before use. No science release.
 
-Real-data CPU implementation remains in worktree real-trace-cpt-v10 (1621tests),
-its hardware plan HELD before any accelerator launch. Do not accidentally use
-it as release. Keep real-document usefulness separate from synthetic mechanics;
-owner wants both bounded questions,math repair first. Follow NEXT_STEPS.md.
+Bounded mathdiagnostic continues in parallel. Source5af3431,FRESH fixed640 and
+variable640(one–fivesteps),each160updates on physical8. Width192qual independently
+PASSES all8updates/native8/full4states/actualsaved6restore;late PSSgrowth.470GiB/save.
+Fullqualification8 EBS protected. Two pilots now active via pilot.py under
+local/diagnostics/variable-depth-writer-v11-v1,tmux variable-depth-v11-pilot.
+Fixed reached64at02:50. Both terminal160primary;never extend after outcomes.
+After bothclose,independently audit64/80/160 and protect latest variable full160
+FIRST before fixed model backup. Rotation of older EBS optimizer DUPLICATES is
+authorized only after fresh both-side hashes/newer protected recovery. All original
+NVMe states/models/metadata stay. Oldv8EBSrank duplicates retired19.23GiB under
+public engineering-retention receipt;rootfree~60GiB. Coordinate realqual backup.
+
+Evaluation source dd95d6c at local/worktrees/variable-depth-eval-v11 plus uncommitted
+unique-curriculum model-label fix;finalchecks log in NEXT_STEPS. It adds256panels,
+128writer+32reader versus160single,uses original frozen validator for oldmodels.
+ActualoldRbinding reproduced through immutable57source,stored in mathcontrol.
+Newv11pilotbindings should include producer_source_root=immutable EVALworktree
+(which has identical training closure plus newterminal validator). Frozen reader
+andfullCoT seed1806,untouchedB0 remain. No reader retraining or newbest checkpoint.
+
+MuSiQueTRAINcandidate is CPUonly,source raw19938rowstraining/train_patch. NoDEV/TEST.
+Initial projection wrongly used raw question_text(template);caught before modelrun.
+Correct composed_question_text is natural language;code/test corrected, V1inventory
+preserved, V2inventory and fullCPUchecks running. Source at document-evidence-v12
+uncommitted. No cohort/modelrelease. Mainroot userlastmessage reiterates the
+single-model mainline,with bounded split repair as diagnostic. Keep<=60supdates,
+short analysis and concrete tools;avoid speculative monologues while runs await.
 
 Main report:validation/partial_state_v7_matched5120_complete_20261018.json.
 Posthoc:validation/partial_state_v7_matched5120_descriptive_20261019.json.

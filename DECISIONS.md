@@ -1221,3 +1221,14 @@ DEV. Prospective JSON committed5af3431 before learning;1614checks pass. Start on
 disposable save/restart mechanics now; scientific pilots await actual audit.
 Real-document usefulness stays the second bounded question,not a synthetic-math
 claim or justification for another large writer–reader program.
+
+
+2026-10-19 02:51UTC — Prioritize single-model training benefit as owner reiterates.
+Keep the already-declared variable-depth repair bounded and parallel. Actual
+width192/full recovery audit passes;release only its two160update fresh writers.
+Real-data source3d8666b passes1622CPUchecks,all15360pack views,held novel/ordinary256
+are frozen,EBS verified. Start separate8rank width640 qualification on physical12/13;
+training/inference gates remain independent and no320update science is released.
+Source data has2–6operations,not a constant trace depth. MuSiQueCPUcandidate
+initially projected the wrong raw field;pre-model inspection caught templates.
+Use composed_question_text,reject placeholders,and preserve superseded V1inventory.
