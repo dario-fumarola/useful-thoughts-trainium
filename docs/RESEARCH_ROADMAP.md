@@ -1,13 +1,63 @@
 # Long-term proof ladder
 
-## Current causal chain — October 19
+## Current priority — October 19, after V25
+
+The north star is **learning reusable computation during pretraining: when it
+becomes attainable, whether it improves fresh predictions efficiently, and
+whether its benefit survives removing the written intermediate state**.
+A fixed model sampling a thought only from its available prefix adds computation,
+not observations of an uncertain future. Future-aware teachers and supplied
+support annotations are privileged supervision; their utility alone cannot
+establish autonomous deployment utility.
+
+Keep three claims separate:
+
+| Claim | Required comparison | Present evidence |
+|---|---|---|
+| Extra computation helps now | Generated state versus strong same-model and matched-budget alternatives | Strong arithmetic evidence; document-QA incremental benefits remain uncertain. |
+| Intermediate supervision improves learning | Same direct prediction path after content supervision versus source/format controls | V25 is promising development evidence; coefficient-matched V26 control is pending. |
+| Useful computation is discovered autonomously | Self-training improves beyond the supervised warm start after the teacher is removed | Unanswered here. |
+
+Work in this order; this roadmap releases no jobs:
+
+1. **Finish V26.** Match auxiliary coefficient1.0 with an empty-format control.
+   Direct-answer transfer is primary; writing-ID assistance stays separate.
+   Positive development evidence needs a fresh, powered confirmation with new
+   training seeds. A missed interval is not proof of zero effect.
+2. **Resolve the computation mechanism.** Reuse the arithmetic lessons and test
+   variable-depth executable tasks with teacher, student, corrupt, unrelated,
+   strong single-stream CoT and trained pause controls. Hold out procedures and
+   compositions. Score complete predictions, state correctness, actual work and
+   latency separately; visible explanations need not faithfully expose all
+   internal computation.
+3. **Return to source-matched pretraining.** Ordinary prefix-to-continuation CPT,
+   format/compute control and prefix-computable thought supervision precede
+   autonomous optimization. Measure ordinary loss, assisted prediction, direct
+   downstream capability and outcomes after identical post-training. Match source
+   exposure; report supervised tokens, FLOPs and generation costs separately.
+4. **Study onset and internalization.** Compare checkpoint ages from one architecture
+   and training trajectory, reduce verified guidance, remove the teacher, then
+   test improvement beyond warm start and distillation into shorter/direct
+   computation. Model size alone is not a pretraining-age experiment.
+
+Before RL, verify that sampled candidates have usable variation in correctness
+and downstream utility; fixed-reader checks can distinguish writer improvement
+from reward drift. Canonical continuation likelihood and complete-answer accuracy
+are different objectives in our document-QA results. An empty subtraction that
+cancels in group centering does not force updates to beat silence.
+
+Social belief-state interventions and context-sensitive safety targets remain
+later transfer tests. They are not immediate reasons to scale the model or
+replace the unfinished control.
+
+## Computation-channel evidence — October 19
 
 The north star is **a model that computes from its available prefix and makes
 better fresh predictions at a worthwhile cost**. A thought can reorganize or
 derive information from that prefix; a future-aware annotation can additionally
 reveal which uncertain continuation occurred. Those are different experiments.
-The synthetic study isolates the computation channel. The current mainline tests
-training and inference effects separately on verified real mathematical documents.
+The synthetic study isolates the computation channel. The current document-QA
+mainline separates training benefit from the added selection stage at inference.
 
 | Step | Evidence required | Current state and next action |
 |---|---|---|
@@ -16,7 +66,7 @@ training and inference effects separately on verified real mathematical document
 | 3. The composed channel is useful | Student notes beat direct, empty and unrelated notes on the same reader. | The repaired writer gives the same frozen reader306/512 composition answers versus124/512 with the fixed writer,empty7,and unrelated1. The declared repair gate passes. Longer-depth answers remain10/256. |
 | 4. The system earns its cost | Compare strong direct, compact and full CoT with all models, updates and tokens accounted for. | No matched split advantage in the completed two-seed study. The new one-seed curriculum diagnostic exceeds frozen fullCoT on composition, but curricula/target supervision differ and it loses at familiar depth. Keep single-model methods as the mainline. |
 | 5. The mechanism survives real data | Source-matched real-document endpoints, with genuine prefix-derived or explicitly posterior labels. | The completed two-seed raw/prior/post study fails both declared full16 likelihood gates. Its prospective scalar secondary improves by9.0/6.6pp over raw CPT with positive paired intervals. Training-only improvement remains unestablished. The completed fresh384 reference gives CoT342/335 versus direct-SFT275/285 and empty261/263; both declared gates pass. Ordinary NLL regresses0.128/0.147 nats/token versus B0. |
-| 6. Self-improvement adds value | Improve beyond the supervised reference without an external teacher at deployment. | Held. The supervised reference is complete; first test source-quality retention in V17, then freeze a separate self-improvement question. Training and inference value remain distinct. |
+| 6. Self-improvement adds value | Improve beyond the supervised reference without an external teacher at deployment. | Held. V17 gains arithmetic answers with ordinary-text cost; V21 training/inference gates fail; V25 motivates the coefficient-matched V26 control. No autonomous optimization is released. |
 
 The [bounded repair](../validation/variable_depth_writer_v11_complete_20261019.json)
 is a positive curriculum intervention, not a reason to reopen an unlimited split
@@ -48,12 +98,15 @@ mechanism, not thought-augmented pretraining benefit. Preserving source predicti
 while retaining computation is the next bounded question.
 The [live status](../STATUS.md) defines the next action; this roadmap adds no launches.
 
-Broader document reasoning remains a data-only preparation. A
-[TRAIN-only split audit](../validation/document_evidence_v16_directed_split_20261019.json)
-shows that held supporting evidence can be excluded from every training-visible
-paragraph while retaining a candidate learning set. It supplies neither model
-results nor longer-context hardware readiness. Finish the current complete
-comparison before releasing that separate question.
+Document QA has now completed V21 and V23 with failed practical gates. V25's
+stronger selection loss gives143/255 generated-selection answers and138/255 direct
+answers, against the historical direct127/255. These are one-seed, inspected-panel
+results; the direct contrast and extra-ID contrast remain individually inconclusive.
+The [V26 design](../validation/document_evidence_format_weight_v26_design_20261019.json)
+asks whether semantic-content supervision helps beyond matched empty-format loss.
+The original [evidence split audit](../validation/document_evidence_v16_directed_split_20261019.json)
+establishes source separation, not novelty relative to base pretraining or semantic
+correctness of author support labels.
 
 **Capacity is an intervention, not an assumed remedy.** A7–8B writer may produce
 more reliable work, while a stronger reader may already solve more without help.

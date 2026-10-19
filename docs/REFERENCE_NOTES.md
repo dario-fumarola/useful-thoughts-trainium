@@ -242,3 +242,20 @@ human performance. We should preserve the distinction between answer-location
 hints, evidence selection and valid composition. Changing to an easier dataset
 could raise scores without establishing the intended mechanism; annotation
 errors in our local sample remain a separate, exploratory finding.
+
+
+## Thinking Mid-training — primary-source check, October 19
+
+The [v3 technical report, chapter2](https://arxiv.org/html/2601.21343v3#S2)
+uses teacher-inserted thoughts for SFT, then policy-generated thoughts and suffixes
+with an external judge; teacher-provided insertion positions remain in its RL
+setup. It evaluates checkpoints both before and after downstream RL post-training.
+Its Qwen3-8B ablation reports that SFT mid-training reduces performance before RL
+recovers some of the loss. These are author-reported findings, not our replication.
+The original v1 lacks this chapter; cite v3 rather than the older version.
+
+Implication for our design: teacher withdrawal, selection of insertion positions,
+written-trace removal and identical post-training are distinct interventions.
+Reported post-training gains do not by themselves establish direct-answer
+internalization or discovery of when to think without guidance. More capacity
+alone is not a demonstrated repair for our current task.
