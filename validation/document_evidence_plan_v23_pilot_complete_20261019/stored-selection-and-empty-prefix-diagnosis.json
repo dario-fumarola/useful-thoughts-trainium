@@ -1,0 +1,129 @@
+{
+  "status": "POSTHOC_STORED_SELECTION_AND_EMPTY_PREFIX_DIAGNOSIS_NO_SCORE_CHANGE",
+  "utc": "2026-10-19T20:15:55.001415+00:00",
+  "primary_report_sha256": "ca7cc615495d0cdade77ef70cce0f19055e3456b1c79c460a7f84008dec809b3",
+  "source_sha256": "69e9e2ebd98d93c5fadc6ed17b1dcb58ed77ab0d07c2093e5e051f9afaf222ec",
+  "generated_prefix_summary": {
+    "evidence_direct": {
+      "direct": {
+        "items": 255,
+        "nonempty_generated_prefixes": 0,
+        "generated_bracket_ID_lists": 0,
+        "ID_count_distribution": {
+          "0": 255
+        }
+      },
+      "selection": {
+        "items": 255,
+        "nonempty_generated_prefixes": 255,
+        "generated_bracket_ID_lists": 0,
+        "ID_count_distribution": {
+          "0": 255
+        }
+      }
+    },
+    "evidence_select": {
+      "direct": {
+        "items": 255,
+        "nonempty_generated_prefixes": 0,
+        "generated_bracket_ID_lists": 0,
+        "ID_count_distribution": {
+          "0": 255
+        }
+      },
+      "selection": {
+        "items": 255,
+        "nonempty_generated_prefixes": 255,
+        "generated_bracket_ID_lists": 255,
+        "ID_count_distribution": {
+          "3": 42,
+          "2": 213
+        }
+      },
+      "empty": {
+        "items": 255,
+        "nonempty_generated_prefixes": 255,
+        "generated_bracket_ID_lists": 255,
+        "ID_count_distribution": {
+          "3": 41,
+          "2": 214
+        }
+      },
+      "oracle": {
+        "items": 255,
+        "nonempty_generated_prefixes": 0,
+        "generated_bracket_ID_lists": 0,
+        "ID_count_distribution": {
+          "0": 255
+        }
+      }
+    }
+  },
+  "exact_annotation_set_subgroup": {
+    "items": 132,
+    "own_correct": 87,
+    "same_direct_correct": 73,
+    "oracle_correct": 87,
+    "own_oracle_correctness_disagreements": 0,
+    "own_oracle_normalized_answer_disagreements": 0
+  },
+  "nonexact_annotation_set_subgroup": {
+    "items": 123,
+    "own_correct": 42,
+    "same_direct_correct": 54,
+    "oracle_correct": 68,
+    "own_oracle_correctness_disagreements": 30,
+    "own_oracle_normalized_answer_disagreements": 55
+  },
+  "transitions_own_minus_same_direct": {
+    "improved": 23,
+    "regressed": 21,
+    "both_correct": 106,
+    "both_incorrect": 105
+  },
+  "transitions_own_minus_matched_direct": {
+    "improved": 26,
+    "regressed": 24,
+    "both_correct": 103,
+    "both_incorrect": 102
+  },
+  "support_selection_by_depth_descriptive": {
+    "2": {
+      "items": 205,
+      "exact_annotated_support_sets": 121,
+      "generated_ID_counts": {
+        "2": 194,
+        "3": 11
+      },
+      "teacher_ID_counts": {
+        "2": 205
+      }
+    },
+    "3": {
+      "items": 46,
+      "exact_annotated_support_sets": 11,
+      "generated_ID_counts": {
+        "2": 19,
+        "3": 27
+      },
+      "teacher_ID_counts": {
+        "3": 46
+      }
+    },
+    "4": {
+      "items": 4,
+      "exact_annotated_support_sets": 0,
+      "generated_ID_counts": {
+        "3": 4
+      },
+      "teacher_ID_counts": {
+        "4": 4
+      }
+    }
+  },
+  "interpretation": [
+    "SuppliedemptyEvidencefield isnot guaranteed noteomission when modelgenerates anIDline afterward. Reportthis controlas operationally contaminated,retainitsoriginal score. Same-modeldirect andmatched-direct contrasts areunchanged.",
+    "Annotationagreement andsubgroups aredescriptive,not semanticgold orcausalestimates. Exactsetconditioning isposthoc andcorrelated withquestiondifficulty.",
+    "Alloriginalgates/data/predictions unchanged. No new model calls. Four-hop subgroupn4 cannotestablishdepthgeneralization."
+  ]
+}

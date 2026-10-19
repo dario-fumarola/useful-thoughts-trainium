@@ -1478,3 +1478,17 @@ Exactsameinputs/CPUreferences/models/native1530answers;scoringkernel/bounds/gate
 unchanged. Newoutputdirectories/registry/readoutroutingv2,originalsuntouched.
 All16actualTRAINpanelchecks passinV2 beforeheldscores. Failedcalibrationcompute
 accountedseparately. No heldanswer/likelihoodoutcome inspected tochoosethisrepair.
+
+2026-10-19 20:17 UTC — Close v23pilot withnegative allocationdecision. All1530GEN/
+3062LLrows andindependentreadout/render/protection complete;primary129/255vs127,
++0.8pp[-4.7,+6.3]. Same-modeldirect127;allfieldscomplete,all255plansvalid,zero caps/
+executionerrors. No replication/largelearning/model-size/RLrelease fromfailedgate.
+Readeroracle155(+10.2pp[6.3,14.5]vsown) addsIDs only. Exactannotatedsets132/255;
+posthoc exactsubgroup+14answers vsdirect,other−12,not a causal estimate.
+Suppliedemptyfield regeneratesIDs255/255:qualifycontrol,retain126score andoriginal
+figure. Genuine directpaths containzeroIDs;theirnull contrasts/gates unchanged.
+CanonicalIDreplayown−empty−.731nats,own−donor+.845;not calibration. Ownactions2.35×
+control,sourceNLL+.135vsB0. Oneorderseed/fresh255mostlytwohop;no broadclaims.
+PrimaryreportSHAca7cc615495d0cdade77ef70cce0f19055e3456b1c79c460a7f84008dec809b3
+unchangedafterstored-outputdiagnosis. Nextboundedquestion:does frozenwriter fit its
+ownTRAINlabels bysupport-count,stratified/hash-selected? No new training yet.

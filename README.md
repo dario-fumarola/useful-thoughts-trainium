@@ -1,14 +1,74 @@
 # Useful Thoughts on Trainium
 
-**The document-QA study is complete: generated reasoning helps the same trained
-model, but its advantage over matched direct training does not pass the declared
-two-seed gate. Post-answer reasoning supervision shows no direct-accuracy improvement here.**
+**The passage-selection pilot is complete and misses its gate: generated selection
+answers 129/255 correctly versus 127/255 for matched direct training. Supplied
+support IDs help the reader, but self-generated selection has no established net benefit.**
 
 This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documents,
 and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
-## Completed document-QA comparison
+## Latest completed passage-selection pilot
+
+Two fresh Qwen3-1.7B-Base models, one data-order seed, the same TRAIN2048 questions
+and four passes. Source, final-answer labels and their explicit loss coefficients
+match; pointer supervision has its own loss. Terminal256 is primary. The fresh
+255-question panel is mostly two-hop; official DEV/TEST remain unopened.
+
+| Model / path | Correct /255 |
+|---|---:|
+| Matched direct training, direct answer |127|
+| Matched direct training, empty-field response |126|
+| Selection training, direct answer |127|
+| Selection training, generated IDs |129|
+| Selection training, supplied-empty prompt† |126|
+| Selection training, annotated support IDs |155|
+
+The primary gain is **+0.8pp [−4.7,+6.3]**, below the declared three-point/positive
+lower-bound gate. Selection versus the same model's direct path is also
++0.8pp [−4.3,+5.9]. All answer fields are complete, all255 generated selections
+are syntactically valid, and no generation is capped. Replication is not released.
+A failed gate does not establish that the true effect is zero.
+
+†The supplied-empty prompt generates a new ID list on **255/255** questions.
+It does not isolate selection omission. Its original score is preserved; both
+models' direct paths genuinely generate no IDs. This caveat does not change
+the failed primary or same-model direct comparison.
+
+![Pilot contrasts with operational control caveat](validation/document_evidence_plan_v23_pilot_complete_20261019/primary-contrasts-with-control-caveat.svg)
+
+The reader can use supplied selections: annotated IDs improve it by
+**10.2pp [6.3,14.5]** over its own generated IDs, without adding answer text.
+Generated sets exactly match the annotation on132/255 questions; mean support
+recall is77.0%. In a posthoc split, exact-set selections gain14 answers relative
+to direct answering, while other selections lose12. These groups are descriptive,
+not causal estimates or semantic verification of the annotations.
+
+Canonical pointer replay is more useful than donor IDs in likelihood
+(+0.845 nats [0.326,1.373]) but worse than a genuinely empty replay
+(−0.731 [−1.192,−0.299]). These are fixed-context likelihood diagnostics,
+not native-generation likelihood or calibration. Generated selection uses
+17.4 actions/question versus7.41 for direct training, about2.35×. Ordinary-text
+NLL is still worse than untouched B0 by0.135 nats/token, despite a small advantage
+over the matched control. No broad pretraining or ordinary-CoT superiority is shown.
+
+All1,530 native attempts and3,062 likelihood rows are complete, independently
+checked and protected. The original pre-held calibration-file failure and its
+narrow IO repair are preserved; models, observations and gates are unchanged.
+Successful training/evaluation used4.723 reserved chip-hours, plus0.062 for that
+failed calibration attempt; hardware qualification is separate. Concurrent timings
+are not a controlled serving-latency comparison.
+
+- [Complete primary report](validation/document_evidence_plan_v23_pilot_complete_20261019.json)
+- [Stored-output and empty-control diagnosis](validation/document_evidence_plan_v23_pilot_complete_20261019/stored-selection-and-empty-prefix-diagnosis.json)
+- [Fixed examples](validation/document_evidence_plan_v23_pilot_complete_20261019/fixed-hash-eight-examples.json)
+- [Independent check](validation/document_evidence_plan_v23_pilot_complete_20261019/independent-readout-check.json)
+
+## Earlier document-QA comparison
+
+**The document-QA study is complete: generated reasoning helps the same trained
+model, but its advantage over matched direct training does not pass the declared
+two-seed gate. Post-answer reasoning supervision shows no direct-accuracy improvement here.**
 
 Six fresh models, two data-order seeds, the same 2,048 training questions and four
 passes (256 updates). Every example combines 0.5 mean source CE over 256 fixed
@@ -120,20 +180,9 @@ All 72 citations match the original source annotations. This is an exploratory
 single-agent review, not independent adjudication or a population error estimate;
 insufficient citations do not establish that the answers themselves are false.
 
-The active [bounded pilot](validation/document_evidence_plan_v23_pilot_release_20261019.json) tests passage
-selection before answering, with the same answer format and explicit final-answer
-coefficient in both arms. Its [CPU preparation](validation/document_evidence_plan_v23_CPU_readiness_20261019.json)
-passes data, native packing and gradient checks. The [TRAIN-only decoder check](validation/document_evidence_plan_v23_decode_qualification_20261019.json)
-passes native/cache/CPU comparisons; the [training and restore check](validation/document_evidence_plan_v23_training_hardware_20261019.json)
-passes 11 actual updates, six complete state audits and a fresh-process restore.
-Both fresh models have [completed training](validation/document_evidence_plan_v23_training_20261019.json)
-for one pilot seed. All four periodic full states are audited; terminal models and
-the latest full recovery state are protected. All native answer attempts are complete;
-secondary likelihood scoring is running after a documented [calibration-record fix](validation/document_evidence_plan_v23_likelihood_io_repair_20261019.json).
-The original failure had no held scoring rows; inputs and scientific gates are unchanged.
-There is no new capability result yet.
-The primary contrast is selection versus matched direct training on 255 fresh questions.
-An inference-assistance claim also requires gains over the selection model's own direct
-and empty-selection paths, as [declared before training](configs/document_evidence_v23_readout.json).
-Selecting annotated evidence will not itself prove connected reasoning or correct
-attribution. Replication is conditional; no RL or model-size jump is released.
+The completed passage-selection pilot above repaired final-answer weighting and
+answer serialization, and removed supervised intermediate factual claims.
+Its [training/state qualification](validation/document_evidence_plan_v23_training_20261019.json)
+and [decoder qualification](validation/document_evidence_plan_v23_decode_qualification_20261019.json)
+are execution evidence. Its failed capability gate remains the allocation decision;
+no replication, RL escalation or model-size jump follows from the engineering passes.

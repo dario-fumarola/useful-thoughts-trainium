@@ -1,0 +1,33 @@
+{
+  "status": "PASS_POSTHOC_ANNEX_READBACK_PRIMARY_REPORT_AND_SCORES_UNCHANGED",
+  "utc": "2026-10-19T20:17:30.738280+00:00",
+  "primary_report_sha256": "ca7cc615495d0cdade77ef70cce0f19055e3456b1c79c460a7f84008dec809b3",
+  "files": {
+    "stored-selection-and-empty-prefix-diagnosis.json": {
+      "bytes": 3600,
+      "sha256": "3f1b5c289227484dc4bd043ea3ab0a18f3c7ed2bcd73ade9607578ce34b2f180"
+    },
+    "primary-contrasts-with-control-caveat.svg": {
+      "bytes": 74705,
+      "sha256": "94daff44b5e3d610a0428a007a4c79316f7b3c1d63295a56b0bc5accf55461bf"
+    },
+    "primary-contrasts-with-control-caveat.png": {
+      "bytes": 95388,
+      "sha256": "3400525b1a27997625146cd77356154b7503b495aa2f356b0a4f557112fef440"
+    },
+    "primary-contrasts-with-control-caveat.csv": {
+      "bytes": 317,
+      "sha256": "b570cd1fa814fb8844e81bfd7e5d07ed2f35bb21b997618d0feba7fa03142eac"
+    },
+    "diagnose_document_evidence_v23_stored_outputs_20261019.py": {
+      "bytes": 4597,
+      "sha256": "69e9e2ebd98d93c5fadc6ed17b1dcb58ed77ab0d07c2093e5e051f9afaf222ec"
+    },
+    "render_document_evidence_v23_control_caveat_20261019.py": {
+      "bytes": 2865,
+      "sha256": "937ceea17ac32a9de01ae1b6cd69b837e9dc2f507a74a10cd3e8fb960340acb9"
+    }
+  },
+  "interpretation": "Suppliedemptyfield regeneratesIDs on255/255;qualifythatcontrol,retainoriginalscore/plot. Actualdirect paths containzeroIDs. Primaryandsame-modeldirect gatesfail unchanged. Storedsubgroupdiagnosis isposthoc,not causal/semanticgold.",
+  "plot_review": "Originalandcontrol-qualifiedPNG visuallyinspected;data/intervals identical,only operationalcontrol label/caption differs."
+}

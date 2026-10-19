@@ -1,21 +1,20 @@
-# Status — 2026-10-19 20:00 UTC
+# Status — 2026-10-19 20:17 UTC
 
-## Active: passage-selection fixed evaluation
-Question: does selecting visible passage IDs help complete answers beyond format-matched direct training?
-ID: document-evidence-plan-v23 V2; two fresh arms, pilot seed2026101923,terminal256 primary.
-CPU: 1,797 checks plus smoke/compile pass,including frozen scoring/calibration persistence;all6,144 native views fit.
-Both arms: same TRAIN2048/order, 2,097,152 source and 67,408 final-field labels over four passes.
-Loss: separate source/final/selection means weighted 0.5/0.5/0.1; final coefficients match exactly.
-Every epoch interleaves modes; the direct control also learns the generated Final answer field.
-Fresh255: 205 two-hop, 46 three-hop, four four-hop; independent source exclusions pass.
-V1 found255/256 and failed; V2 keeps the same255 without changing filters/ranking/accuracy gate.
-LLV1 failedbeforeheldrows oncalibration-filecreation;preserved. ExplicitIOV2 passesall16TRAINpanelchecks;bounds unchanged.
-New pointer targets avoid intermediate factual claims; author support annotations remain imperfect.
-Decoder: four TRAIN attempts close; independent native/cache/long-CPU audit passes; zero execution errors.
-Training qualification:11 actual updates/all6 full states/fresh restore pass;bounded post-save PSS83–97GiB.
-Training:both256updates complete/physicallyclosed;all4states audited,terminalmodels/latestfull256 EBSprotected.
-C=local/diagnostics/document-evidence-plan-v23-pilot-v1;all1530nativeGENclosed;LLIOV2 scoring,thenindependentreadout.
-Next:`cat local/analysis/CURRENT_V23_SESSION.json`;monitor C/LL-IO-V2-* andreadout-pipeline-io-v2;no outcomes inspected.
+## Closed: passage-selection pilot
+Question: do generated passage IDs improve complete answers over matched direct training?
+ID:document-evidence-plan-v23 V2;twofresh1.7B models,TRAIN2048×4passes,onepilotseed,terminal256.
+All4fullstates audited;terminalmodels/latestfull256 EBSprotected;originalstates retained.
+All1530nativeattempts/3062LLrows close;independentreadout/render/protection pass,zeroexecutionerrors/caps.
+Directcontrol127/255;selectiontraineddirect127;generatedIDs129;annotatedoracle155.
+Primary+0.8pp[-4.7,+6.3],same-modeldirect+0.8[-4.3,+5.9];net/inferencegates FAIL,no replicationrelease.
+All255nativeplans valid;exactannotatedset132/255,recall77.0%;oracleminusown+10.2pp[6.3,14.5].
+Suppliedemptyfield regeneratesIDs255/255;retain126/255score,qualifycontaminatedcontrol. Directpaths generatezeroIDs.
+CanonicalIDreplay:own−empty−.731nats[-1.192,-.299],own−donor+.845[.326,1.373];notcalibration.
+Own17.4actions/question vscontrol7.41;sourceNLL+.135vsB0,−.018vscontrol;no established overallcapability/pretraininggain.
+OriginalcalibrationIOfailure hadzeroheldrows;preserved,explicitIO-onlyrepair passes1797CPUchecks/all16TRAINpanels.
+Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json;primarySHAunchangedafterposthoccontrolinspection.
+Decision:closefailedpilot;do notlaunchsame-protocolreplication,RL orlargermodel fromthisresult.
+Next:boundedTRAIN-onlyselector-fitdiagnostic toseparatetrainingfit fromheldgeneralization;no new learning run.
 
 ## Closed: TRAIN relation audit and fresh-evidence availability
 Question: can existing reasoning annotations support a simple reference-substitution repair?
