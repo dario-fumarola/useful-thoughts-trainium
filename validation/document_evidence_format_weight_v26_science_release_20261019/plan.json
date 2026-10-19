@@ -1,0 +1,41 @@
+{
+  "status": "PREPARED_SINGLE_FORMAT_CONTROL_PENDING_ROOT_RELEASE",
+  "utc": "2026-10-19T23:27:47.360316+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/document-evidence-format-weight-v26",
+  "source_commit": "29606b002eea8cc16c1fcd75c1d7158397e5d59c",
+  "jobs": [
+    {
+      "arm": "evidence_direct",
+      "seed": 2026101923,
+      "key": "evidence_direct-format1-seed2026101923",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-control-v1/protocol-evidence_direct-format1-seed2026101923.json",
+      "protocol_sha256": "0b58c8f9de65a82b18bc57dfe0243e032ead022244119c7b54bf24e2d4578d6b",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1",
+      "physical_devices": [
+        2,
+        3
+      ]
+    }
+  ],
+  "deadline_utc": "2026-10-20T00:51:47.360316+00:00",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "5e49fd1548c45109ce91334962326163bd43e115db1dcfd0f2d95d46f97708c0",
+  "prospective_design_sha256": "bfc68b312a3688b23871c87cd4b06d01dcbcb74268b04ee5ac0a7e4f12fb886c",
+  "held_primary_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "original_control_protocol_sha256": "0eefb9b6afa928447f589ea7b9f8bca5792a078b2f1db902c93c45eedc20ad3c",
+  "completed_selector_protocol_sha256": "db4883d36f1bb39e815673490ac2fdf4128a28e449bc6128e7e2d6fed7ab6c16",
+  "budget": {
+    "max_reserved_chips": 2,
+    "hard_training_chip_hour_bound_including_termination_grace": 3.0,
+    "soft_wall_minutes": 84,
+    "termination_grace_minutes": 5,
+    "evaluation_chip_hour_bound_separate": 0.3,
+    "measured_full_state_bytes": 24091475979,
+    "root_free_bytes": 69508870144,
+    "NVMe_free_bytes": 129046351872
+  },
+  "checkpoint_policy": "Full128/256 retained on NVMe. Independently audit/protect128 before retiring ONLY previous V25 EBS optimizer duplicates. Protect256 before retiring128 optimizer backup duplicates. Keep all original states and model weights.",
+  "evaluation": "Terminal256 only: native direct and canonical closed-empty answer paths on inspected held255; ordinary256. Reuse completed selector1 and historical controls. Fresh confirmation remains separate.",
+  "no_automatic_retry": true,
+  "no_checkpoint_selection": true
+}

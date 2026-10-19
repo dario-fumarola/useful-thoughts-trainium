@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights:  40%|████      | 124/310 [00:00<00:00, 1191.28it/s]Loading weights:  93%|█████████▎| 289/310 [00:00<00:00, 1434.29it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 1456.04it/s]
+All16 actual native/master witnesses pass;four canonical contexts repeated.
+Verified all state bytes/shapes/counters evidence_direct 2
+Verified all state bytes/shapes/counters evidence_direct 4
+Verified all state bytes/shapes/counters evidence_direct 6
+Verified all state bytes/shapes/counters evidence_direct 8
+{
+  "status": "PASS_ACTUAL_DOCUMENT_EVIDENCE_FORMAT_WEIGHT_FULL_RESTORE",
+  "utc": "2026-10-19T23:27:36.065699+00:00",
+  "actual_updates": {
+    "evidence_direct": 8
+  },
+  "qualified_arms": [
+    "evidence_direct"
+  ],
+  "qualified_training_shape": {
+    "world_size": 8,
+    "micro_batch": 1,
+    "global_batch": 32,
+    "width": 3328,
+    "target_slots": 512,
+    "head_chunk": 32,
+    "accumulation": 4
+  },
+  "all8_saved4_optimizer_digests_recomputed": true,
+  "grouped_post_save_PSS_bytes": {
+    "evidence_direct": {
+      "2": 103811514368,
+      "4": 103158340608,
+      "6": 88405088256,
+      "8": 88412958720
+    }
+  },
+  "grouped_late_growth_GiB_per_save": {
+    "format_fresh": -0.6083154678344727,
+    "format_resumed": 0.0073299407958984375
+  },
+  "protocol_sha256": "cb707eb04862af590c435719b655a916dee63602b64a0bbbd6622db77bcf189a",
+  "audit_source_sha256": "62a06f31e87598a176d79f31f1b6125161d8a131ed5668a55e409fac766fdb37",
+  "EBS_archive_receipt_sha256": "734e936fd5d285c05be190904c0152a76186b7596bc653c4de7b465ebcc4b1a8",
+  "limits": [
+    "Eight bounded real updates,not capability evidence or indefinite-memory guarantee.",
+    "No uninterrupted/resumed bitwise-parity claim.16native checks repeat4 canonical contexts.",
+    "Disposable qualification model excluded from science;the coefficient treatment must start fresh B0.",
+    "Original four full states/models remain NVMe;EBS holds small engineering evidence and all scientific terminal models/latest full science state separately.",
+    "RNG restoration runs in the verified driver;no independent immediate device-RNG readback or stochastic-RL qualification."
+  ]
+}

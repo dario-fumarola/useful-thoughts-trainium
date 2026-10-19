@@ -1,7 +1,46 @@
-# Current handoff — 2026-10-19 22:53 UTC
+# Current handoff — 2026-10-19 23:26 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
+
+## Active V26 released single control
+
+W26=local/worktrees/document-evidence-format-weight-v26 @29606b0, clean/frozen.
+Q26=local/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1.
+Both actual stages/audit close0; full2/4/6/8 retained in local/nvme/diagnostics/Q26name.
+Qualification audit status PASS_ACTUAL_DOCUMENT_EVIDENCE_FORMAT_WEIGHT_FULL_RESTORE,
+SHA5e49fd1548c45109ce91334962326163bd43e115db1dcfd0f2d95d46f97708c0.
+Actual8/native16/full-state/master/moment/restore4 optimizer digests all pass.
+Post-save grouped PSS82–97GiB; short bounded evidence, not indefinite-memory qualification.
+Qualification exec49216 and watcher86588 both finished0. Do not rerun original producers.
+
+C26=local/diagnostics/document-evidence-format-weight-v26-control-v1.
+Concrete plan/release and31 public source/evidence files EBS readback/fsync protected.
+Public report validation/document_evidence_format_weight_v26_science_release_20261019.json.
+ONE freshB0 evidence_direct-format1-seed2026101923, TRAIN2048×4/256updates.
+Source/answer.5/.5, empty-field auxiliary1.0, order1923, numeric worker unchanged.
+Output local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
+Physical2/3 logical8–15; soft deadline2026-10-20T00:51:47.360316+00:00; no automatic retry.
+Next launch frozen C26/supervise-job.py evidence_direct-format1-seed2026101923 fromW26,
+then root/local/analysis/run_document_evidence_format_weight_v26_first_protection_20261019.py
+and watch_document_evidence_format_weight_v26_terminal_20261019.py with existing env.
+CPU jobs use USE_TORCH_XLA=0 and PYTHONPATH W26:root/local/test-deps:root/local/analysis.
+All source files bound in C26/release.json are now frozen; never edit them silently.
+
+First128 backup must independently audit/copy/readback/fsync full state before retiring
+ONLY previous V25 EBS optimizer duplicates; terminal256 then retires ONLY V26 EBS128
+optimizer duplicates. All original states and all model weights remain.
+Storage root~65GiB, CPT~120GiB, spareNVMe~50GiB;35GiB floors. No cache/original deletion.
+Two inactive engineering EBS model duplicates relocated with verified cross-volume copies;
+originals remain studyNVMe, receipts local/diagnostics/document-evidence-format-weight-v26-CPU-v1.
+
+Evaluation is NOT released. After terminal audit/protection/binding, use prepared fixed
+V26 held adapter (510 answers:direct/canonical_empty) and ordinary256 adapter; no TRAIN fit/oracle.
+Current-model CPU references/native/cache/ordinary calibrations are mandatory.
+Primary selector1 direct minus new format1 direct; extra-ID value stays separate.
+Held255 was inspected before intervention; one order seed, developmental only.
+Any advantage needs a separate fresh powered confirmation. North star updated in existing roadmap.
+No larger model/newdata/RL/official DEV/TEST access. Preserve all old primary reports/gates.
 
 ## V25 is complete
 

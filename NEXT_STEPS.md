@@ -1,19 +1,20 @@
 # Current queue
 
-0. Prepare one coefficient-matched format-only control, under a new explicit identity.
-   V25 is closed and protected: validation/document_evidence_weight_v25_complete_20261019.json.
-   Its primary TRAIN fitting target failed; new native143/255 versus old matched direct127
-   is a developmental recipe difference, with source/final weights matched but auxiliary weights different.
-   New direct138 and clean empty139 leave no established benefit from emitting IDs.
-   Compare fresh B0 format-only auxiliary1.0 against the completed selector1.0 model,
-   keeping TRAIN2048, order1923, four passes,256 updates, source/final0.5/0.5 and numerical worker fixed.
-   Write the prospective question/endpoint/decision rule, inspect storage and freeze sources first.
-   Reuse qualified numerical kernels; any new purpose/validation needs CPU checks and actual bounded qualification.
-   V26 source29606b0 passes1823 CPU checks. Only bounded8-update save/restore qualification is released.
-   Frozen supervisor: local/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1/qualify.py.
-   Independent actual-state audit must pass before a fresh256 learning/evaluation release.
-   No coefficient sweep, larger model, new data, RL or official DEV/TEST access.
-   If this control removes the apparent advantage, close the content claim; otherwise design fresh powered confirmation.
+0. Complete the ONE released coefficient-matched format-only control, V26.
+   Actual8-update/full2/4/6/8 and fresh-process restore4 independently pass; CPU1823 pass.
+   Source29606b0, freshB0 evidence_direct, same TRAIN2048/order1923/fourpasses/256updates,
+   source/final0.5/0.5, auxiliary1.0 empty Evidence field. Numerical functions/data unchanged.
+   C=local/diagnostics/document-evidence-format-weight-v26-control-v1.
+   Launch its frozen supervise-job.py evidence_direct-format1-seed2026101923 from W26;
+   launch run_*_first_protection and watch_*_terminal wrappers as well. No automatic retry.
+   Actual full128 must be independently audited/protected before previous V25 EBS optimizer
+   duplicates retire; full256 protects before128 duplicates retire. Keep originals/model weights.
+   Science release: validation/document_evidence_format_weight_v26_science_release_20261019.json.
+   After terminal audit/protection/binding: separately release direct/canonical-empty held255
+   and ordinary256 only. Primary is selector1 direct minus format1 direct; report ID inference separately.
+   Held255 is already inspected, single order seed. No fresh confirmation or broad LM claim.
+   If a content advantage persists, design a fresh powered confirmation; otherwise report the
+   limitation without another coefficient sweep. No larger model/new data/RL/official DEV/TEST launch.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
    Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.

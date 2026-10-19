@@ -1,16 +1,19 @@
-# Status — 2026-10-19 23:17 UTC
+# Status — 2026-10-19 23:29 UTC
 
-## Active: coefficient-matched format control qualification
-Question: does selector1.0 improve answering beyond empty-format auxiliary1.0?
-ID: document-evidence-format-weight-v26; source29606b0, unchanged numeric functions/data/order.
-Prospective primary: selector1 direct minus fresh format1 direct; >=3pp/positive paired lower95.
-Held255 already inspected: diagnostic only; source/final coefficients remain0.5/0.5.
-All1823 CPU tests plus smoke/compile pass; source and release protected/readback verified.
-Only disposable8-update/full2/4/6/8 save/restore qualification released on physical12/13.
-Release deadline00:31:35UTC; no automatic retry; science256 and evaluation remain unreleased.
-One CPU preflight Path-reader failure preceded any accelerator call; preserved, repaired without recipe changes.
-Design: validation/document_evidence_format_weight_v26_design_20261019.json.
-Next: run frozen local qualification supervisor, then independent actual-state audit after physical closure.
+## Active: coefficient-matched format control
+Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
+ID: document-evidence-format-weight-v26; fresh1.7B, TRAIN2048×4/order1923/source.5/answer.5.
+Primary: selector1 direct minus format1 direct; >=3pp/positive paired lower95 is developmental only.
+All1823 CPU tests pass;510 exact prompt matches and1020 independent parser reconstructions pass.
+Actual8-update/full2/4/6/8 qualification and fresh-process restore4 pass independent full-state/native16 audit.
+Only one fresh evidence_direct-format1 terminal256 job is released; full128/256 plus early128 EBS protection.
+C=local/diagnostics/document-evidence-format-weight-v26-control-v1; W=frozen document-evidence-format-weight-v26 @29606b0.
+O=local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
+Physical2/3, logical8–15; training deadline00:51:47UTC; no retry/checkpoint selection.
+Science release/source/actual qualification:31 files readback/fsync protected; original4 mechanics states retained NVMe.
+Report: validation/document_evidence_format_weight_v26_science_release_20261019.json.
+Next: launch C/supervise-job.py evidence_direct-format1-seed2026101923 and prepared protection/watch wrappers.
+No held evaluation released: fixed direct/canonical-empty255 and ordinary256 follow terminal audit/protection.
 
 ## Closed: selector-loss allocation ablation
 Question: does stronger selector supervision repair fitting and help answering?

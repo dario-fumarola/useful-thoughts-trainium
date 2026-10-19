@@ -1,0 +1,193 @@
+{
+  "experiment_id": "document-evidence-format-weight-v26",
+  "status": "RELEASED_DOCUMENT_EVIDENCE_FORMAT_WEIGHT_V26_TREATMENT_ONLY",
+  "utc": "2026-10-19T23:28:07.071703+00:00",
+  "question": "Does selector1.0 direct answering improve beyond matched format-only auxiliary1.0?",
+  "source_commit": "29606b002eea8cc16c1fcd75c1d7158397e5d59c",
+  "qualification": {
+    "status": "PASS_ACTUAL_DOCUMENT_EVIDENCE_FORMAT_WEIGHT_FULL_RESTORE",
+    "actual_updates": {
+      "evidence_direct": 8
+    },
+    "actual_native_checks": 16,
+    "full_states": [
+      "evidence_direct"
+    ],
+    "limits": [
+      "Eight bounded real updates,not capability evidence or indefinite-memory guarantee.",
+      "No uninterrupted/resumed bitwise-parity claim.16native checks repeat4 canonical contexts.",
+      "Disposable qualification model excluded from science;the coefficient treatment must start fresh B0.",
+      "Original four full states/models remain NVMe;EBS holds small engineering evidence and all scientific terminal models/latest full science state separately.",
+      "RNG restoration runs in the verified driver;no independent immediate device-RNG readback or stochastic-RL qualification."
+    ]
+  },
+  "training": {
+    "status": "PREPARED_SINGLE_FORMAT_CONTROL_PENDING_ROOT_RELEASE",
+    "utc": "2026-10-19T23:27:47.360316+00:00",
+    "source_root": "/home/ubuntu/dario/local/worktrees/document-evidence-format-weight-v26",
+    "source_commit": "29606b002eea8cc16c1fcd75c1d7158397e5d59c",
+    "jobs": [
+      {
+        "arm": "evidence_direct",
+        "seed": 2026101923,
+        "key": "evidence_direct-format1-seed2026101923",
+        "protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-control-v1/protocol-evidence_direct-format1-seed2026101923.json",
+        "protocol_sha256": "0b58c8f9de65a82b18bc57dfe0243e032ead022244119c7b54bf24e2d4578d6b",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1",
+        "physical_devices": [
+          2,
+          3
+        ]
+      }
+    ],
+    "deadline_utc": "2026-10-20T00:51:47.360316+00:00",
+    "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1/qualification-independent-audit.json",
+    "qualification_sha256": "5e49fd1548c45109ce91334962326163bd43e115db1dcfd0f2d95d46f97708c0",
+    "prospective_design_sha256": "bfc68b312a3688b23871c87cd4b06d01dcbcb74268b04ee5ac0a7e4f12fb886c",
+    "held_primary_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+    "original_control_protocol_sha256": "0eefb9b6afa928447f589ea7b9f8bca5792a078b2f1db902c93c45eedc20ad3c",
+    "completed_selector_protocol_sha256": "db4883d36f1bb39e815673490ac2fdf4128a28e449bc6128e7e2d6fed7ab6c16",
+    "budget": {
+      "max_reserved_chips": 2,
+      "hard_training_chip_hour_bound_including_termination_grace": 3.0,
+      "soft_wall_minutes": 84,
+      "termination_grace_minutes": 5,
+      "evaluation_chip_hour_bound_separate": 0.3,
+      "measured_full_state_bytes": 24091475979,
+      "root_free_bytes": 69508870144,
+      "NVMe_free_bytes": 129046351872
+    },
+    "checkpoint_policy": "Full128/256 retained on NVMe. Independently audit/protect128 before retiring ONLY previous V25 EBS optimizer duplicates. Protect256 before retiring128 optimizer backup duplicates. Keep all original states and model weights.",
+    "evaluation": "Terminal256 only: native direct and canonical closed-empty answer paths on inspected held255; ordinary256. Reuse completed selector1 and historical controls. Fresh confirmation remains separate.",
+    "no_automatic_retry": true,
+    "no_checkpoint_selection": true
+  },
+  "release_sha256": "904024ab8c8e73e4f194d9f46b15f8686c63e746c95b03438d6c0d1cb4b28a6d",
+  "files": {
+    "plan.json": {
+      "bytes": 2450,
+      "sha256": "a3dec9731e0fa35341eca1312204da53ca84c7b2e2a5cba1e802c395a6a1b4a9"
+    },
+    "release.json": {
+      "bytes": 5330,
+      "sha256": "904024ab8c8e73e4f194d9f46b15f8686c63e746c95b03438d6c0d1cb4b28a6d"
+    },
+    "protocol.json": {
+      "bytes": 7455,
+      "sha256": "0b58c8f9de65a82b18bc57dfe0243e032ead022244119c7b54bf24e2d4578d6b"
+    },
+    "supervise-job.py": {
+      "bytes": 7086,
+      "sha256": "239a336bab63c8d9d1b5aac8531d05b96736f1e2a97ce7eb93e979c49901ec83"
+    },
+    "CPU-helper-readiness.json": {
+      "bytes": 3614,
+      "sha256": "ad9be69a8b248dbe63cd1e8f9ec221da5aa1e6aa5f7112bac2d10780c445ed7e"
+    },
+    "CPU-helper-final-review.json": {
+      "bytes": 578,
+      "sha256": "f62d2909ff2d1ada79b2f59d9f31f835a6f61288dc2a38a4f5a3743eb88c05a0"
+    },
+    "qualification-independent-audit.json": {
+      "bytes": 27202,
+      "sha256": "5e49fd1548c45109ce91334962326163bd43e115db1dcfd0f2d95d46f97708c0"
+    },
+    "qualification-audit-exit.json": {
+      "bytes": 151,
+      "sha256": "3d03b7d4fafbe81af73d39256cba3891f100d443014704e451518180044b9190"
+    },
+    "qualification-audit.log": {
+      "bytes": 2272,
+      "sha256": "20231e6074a8a71a12f0776fcb42971de64eca5ddc61d7df2c38604c3f986e43"
+    },
+    "qualification-completion.json": {
+      "bytes": 139,
+      "sha256": "0c581011efa0509aa480a63a16b614a788b19b98eae1c27cc4a30e350e42a59b"
+    },
+    "document_evidence_format_weight_v26_state_audit_20261019.py": {
+      "bytes": 3360,
+      "sha256": "0cd217acb80177762b29808263d7627722f199fd9933dd3f0a5ea7a7bf745730"
+    },
+    "audit_document_evidence_format_weight_v26_terminals_20261019.py": {
+      "bytes": 5351,
+      "sha256": "da33c54a120d2fa035e806ad62d30d02ed349351c5c06e2ccf0ad3d5ee5e0733"
+    },
+    "protect_document_evidence_format_weight_v26_first_full128_20261019.py": {
+      "bytes": 5757,
+      "sha256": "b4232c73757d39840ce90dc3bdb3931d74aca4b9216cf1d7f0ceb43adac85629"
+    },
+    "protect_document_evidence_format_weight_v26_terminals_20261019.py": {
+      "bytes": 6644,
+      "sha256": "44594253d02432499427abe42ef97af00675c92dfb79704d01c4591f073ef27d"
+    },
+    "bind_document_evidence_format_weight_v26_terminal_20261019.py": {
+      "bytes": 2436,
+      "sha256": "8b60440b7cd8fbfabf52b6b7c96b846ce63b2418557e9646835385be5f2d39bb"
+    },
+    "watch_document_evidence_format_weight_v26_terminal_20261019.py": {
+      "bytes": 3173,
+      "sha256": "c5f9f7fca73184fca908a2aa86ff3bbd60d0ef848fd0d0a2041854485ffcd813"
+    },
+    "run_document_evidence_format_weight_v26_first_protection_20261019.py": {
+      "bytes": 1490,
+      "sha256": "cc6ce9d63fbee987bd1b68af372aed9582b4a9d411fe6ab491466d08fcf43f0a"
+    },
+    "document_evidence_format_weight_v26_held_20261019.py": {
+      "bytes": 6453,
+      "sha256": "080690360a3de3d3f3144e76e57ad5bda69e2b5fdff9cb3d34d2ac5d42b377d3"
+    },
+    "analyze_document_evidence_format_weight_v26_held_20261019.py": {
+      "bytes": 6683,
+      "sha256": "b6d4f50d75ab42c95ad7404b838ee03de8908210a294960a99a1284fc220e15c"
+    },
+    "check_document_evidence_format_weight_v26_held_20261019.py": {
+      "bytes": 8205,
+      "sha256": "bafab7e0e82964b353d163defc44bf83b8d04e09912fa391fe08d55fec077367"
+    },
+    "supervise_document_evidence_format_weight_v26_held_20261019.py": {
+      "bytes": 5815,
+      "sha256": "46dba3ff1c958ba70a81e515ff9d1e18dbd3a59225d4c37b01dace3b1348eac8"
+    },
+    "document_evidence_format_weight_v26_ordinary_20261019.py": {
+      "bytes": 9223,
+      "sha256": "90b76177ab949e063b6f52a6db4ad9850cdaa5017d3975e1b57b9ec46865b563"
+    },
+    "check_document_evidence_format_weight_v26_ordinary_20261019.py": {
+      "bytes": 3683,
+      "sha256": "5b0074730fd48bcb51e561ef4fd0aaef74367cd822a58fe3fb4bb3b92f358593"
+    },
+    "supervise_document_evidence_format_weight_v26_ordinary_20261019.py": {
+      "bytes": 6690,
+      "sha256": "ed16d356819862beee67baf97fa6d3763a58f2d40fd494d4f255adf3dee5a45f"
+    },
+    "release_document_evidence_format_weight_v26_evaluation_20261019.py": {
+      "bytes": 2822,
+      "sha256": "c2a2efb5adaca02b5bcafcc139967bada43177f895c7d40f1681959334f0e0f6"
+    },
+    "document_evidence_v23_likelihood_contexts.py": {
+      "bytes": 2681,
+      "sha256": "fbd8605b07d14af1b5b9ef836b6b798baf4206988fc31b431122f01f3f7e832a"
+    },
+    "real_source_state_audit_v17_20261019.py": {
+      "bytes": 3941,
+      "sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054"
+    },
+    "prepare_document_evidence_format_weight_v26_control_20261019.py": {
+      "bytes": 5627,
+      "sha256": "02c91ce53e0ac4d14507f516cca6bcdbedcb8b0302b8d8efb43dbf9ec8ecca16"
+    },
+    "release_document_evidence_format_weight_v26_control_20261019.py": {
+      "bytes": 5108,
+      "sha256": "69fd4e7500bc0f83ad2bfaef8d0aa0287d3c3231374e0de6c4f4510179d1bfe3"
+    },
+    "publish_document_evidence_format_weight_v26_release_20261019.py": {
+      "bytes": 4404,
+      "sha256": "cd45e6658c33b1fa5e199d732a90553feae6ebf011f6d074d9f5a43ca89b0c13"
+    }
+  },
+  "qualification_cost": "Separate engineering allocation; actual reserved-device cost computed from recorded launch/closure times, not training-update durations.",
+  "evaluation": "Separate release after original terminal256 is independently audited, protected and bound. Direct/canonical-empty held255 plus ordinary256 only.",
+  "primary": "Completed selector1.0 direct minus new format1.0 direct; >=3pp and positive paired95 lower bound is developmental evidence only.",
+  "prior_reports_unchanged": true,
+  "not_fresh_confirmation": true
+}

@@ -1,0 +1,32 @@
+{
+  "status": "PASS_CPU_HELPER_SYNTAX_AND_FIXED_INPUT_CONTRACTS",
+  "checks": [
+    "All current V26 lifecycle and analysis helpers parse.",
+    "All510 planned question-only prompts reproduce existing direct/canonical-empty token IDs exactly.",
+    "Closed empty field ends Evidence newline plus prefilled Final answer newline.",
+    "Independent answer-parser functions reconstruct1020 existing native/direct/empty/historical observations.",
+    "Proposed control preserves full256 order and both comparison settings; actual qualification binding is still required for full validation.",
+    "Ordinary256 input hashes match all reused controls; no new model forwards."
+  ],
+  "files": {
+    "local/analysis/analyze_document_evidence_format_weight_v26_held_20261019.py": "54a3e04b7538b27b46079135af1ea1d6dd8908c2589d7a97faebf2c3a8f2beb0",
+    "local/analysis/audit_document_evidence_format_weight_v26_terminals_20261019.py": "da33c54a120d2fa035e806ad62d30d02ed349351c5c06e2ccf0ad3d5ee5e0733",
+    "local/analysis/bind_document_evidence_format_weight_v26_terminal_20261019.py": "8b60440b7cd8fbfabf52b6b7c96b846ce63b2418557e9646835385be5f2d39bb",
+    "local/analysis/check_document_evidence_format_weight_v26_held_20261019.py": "eeb4bbcee61f2f51c0a48cef24518eff4594d3f9c07a668f9305b4460aa4c1b0",
+    "local/analysis/check_document_evidence_format_weight_v26_ordinary_20261019.py": "5b0074730fd48bcb51e561ef4fd0aaef74367cd822a58fe3fb4bb3b92f358593",
+    "local/analysis/document_evidence_format_weight_v26_held_20261019.py": "080690360a3de3d3f3144e76e57ad5bda69e2b5fdff9cb3d34d2ac5d42b377d3",
+    "local/analysis/document_evidence_format_weight_v26_ordinary_20261019.py": "90b76177ab949e063b6f52a6db4ad9850cdaa5017d3975e1b57b9ec46865b563",
+    "local/analysis/document_evidence_format_weight_v26_state_audit_20261019.py": "0cd217acb80177762b29808263d7627722f199fd9933dd3f0a5ea7a7bf745730",
+    "local/analysis/prepare_document_evidence_format_weight_v26_control_20261019.py": "02c91ce53e0ac4d14507f516cca6bcdbedcb8b0302b8d8efb43dbf9ec8ecca16",
+    "local/analysis/protect_document_evidence_format_weight_v26_first_full128_20261019.py": "b4232c73757d39840ce90dc3bdb3931d74aca4b9216cf1d7f0ceb43adac85629",
+    "local/analysis/protect_document_evidence_format_weight_v26_terminals_20261019.py": "44594253d02432499427abe42ef97af00675c92dfb79704d01c4591f073ef27d",
+    "local/analysis/release_document_evidence_format_weight_v26_control_20261019.py": "69fd4e7500bc0f83ad2bfaef8d0aa0287d3c3231374e0de6c4f4510179d1bfe3",
+    "local/analysis/release_document_evidence_format_weight_v26_evaluation_20261019.py": "c2a2efb5adaca02b5bcafcc139967bada43177f895c7d40f1681959334f0e0f6",
+    "local/analysis/run_document_evidence_format_weight_v26_first_protection_20261019.py": "cc6ce9d63fbee987bd1b68af372aed9582b4a9d411fe6ab491466d08fcf43f0a",
+    "local/analysis/supervise_document_evidence_format_weight_v26_held_20261019.py": "46dba3ff1c958ba70a81e515ff9d1e18dbd3a59225d4c37b01dace3b1348eac8",
+    "local/analysis/supervise_document_evidence_format_weight_v26_ordinary_20261019.py": "ed16d356819862beee67baf97fa6d3763a58f2d40fd494d4f255adf3dee5a45f",
+    "local/analysis/watch_document_evidence_format_weight_v26_terminal_20261019.py": "c5f9f7fca73184fca908a2aa86ff3bbd60d0ef848fd0d0a2041854485ffcd813",
+    "local/diagnostics/document-evidence-format-weight-v26-control-v1/supervise-job.py": "4227e3f7c893488eefa366a09ea51d1747c43b108888de37041674b04d8ae91b"
+  },
+  "limitations": "CPU input/adapter checks only. No learning release or capability evidence; current-model references and actual hardware checks are mandatory."
+}
