@@ -1,0 +1,23 @@
+{
+  "status": "ALL_CANONICAL_TRAIN_FIELDS_EXCEPT_ALIAS_ANNOTATIONS_MATCH_AUTHOR_CONVERTER",
+  "utc": "2026-10-19T11:56:42.701915+00:00",
+  "rows": 19938,
+  "differing_rows": 0,
+  "differences": [],
+  "author_commit": "922ac98f19a201998dbdae6d7f2887a5258dbdeb",
+  "author_converter_sha256": "8c2dbb07efbf2c71a739a29406d5e5cae1c53a6609df5d411140cc82925c66aa",
+  "author_common_sha256": "9fb027594a0288354c5a2c83b8b850e9141b741764091441606636bede552c88",
+  "author_constants_sha256": "828e4d706c3b2b84d39da219f18ae2ff12a6e379b985c1fd65f8931bd12a719c",
+  "pure_functions": [
+    "filter_answers_in_context",
+    "raw_instance_to_official_format",
+    "step_placeholder",
+    "translate_id"
+  ],
+  "script_sha256": "cd654adf3b64a023c81bb28911df8cab0050d058ad6fc5c48eb6e21f4b34cd5f",
+  "limits": [
+    "Twoearlypure-functionloadersstoppedbeforedatawhileconstantslocationwasunresolved. Finalpassreadspinnedutils.constantswithoutchangingannotations;originalscripts/logspreserved.",
+    "NoofficialDEV/TEST/globalaliasesread. Emptyaliasmapisintentional;onlyallcanonicalfieldsincludingdecompositionquestions/paragraphindicesarechecked.",
+    "Thischecksannotationtransformation,notsemanticcorrectnessorlearnedcapability. Mirroredaliasprovenanceisunchanged. No cohort/model release."
+  ]
+}

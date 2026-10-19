@@ -1,0 +1,6 @@
+PinnedTRAINfilehashverified 241046755
+Traceback (most recent call last):
+  File "/home/ubuntu/dario/local/analysis/acquire_musique_TRAIN_mirror_v19_20261019.py", line 25, in <module>
+    row=json.loads(line);key=row['id'];assert key in raw and key not in seen;seen.add(key);base=raw[key]
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

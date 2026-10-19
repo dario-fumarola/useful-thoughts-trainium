@@ -55,6 +55,12 @@
    excluding every held-visible paragraph leaves182/1,221. Both hypothetical
    cohorts hold512questions;no model or cohort released. Source/report protected:
    validation/document_evidence_v16_directed_split_20261019.json.
+   Alias-ready TRAIN mirror now reconciles all19,938 canonical records with the
+   pinned author converter, including complete decomposition text/indices. Separate
+   mirror alias provenance:8,872 visible strings/5,067 rows;official ZIP unavailable.
+   Data, gold-only alias crosswalk and receipts are protected;no new cohort/model.
+   validation/document_aliases_v19_TRAIN_readiness_20261019.json.
+   Do not reuse the128-token math cap for copied support notes (median279).
    Choose the next scientific intervention after the complete mainline readout.
 
 Fixed mainline data: TRAIN5120 unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.

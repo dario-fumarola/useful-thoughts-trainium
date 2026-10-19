@@ -28,6 +28,16 @@ Report: validation/real_target_sft_v15_complete_20261019.json; all originals/rea
 Decision: supervised inference reference established; preserve source quality before autonomous refinement.
 Next: publish complete result, then prepare one bounded source-balanced objective; no RL/8B release.
 
+## Closed: TRAIN alias provenance and canonical format (CPU only)
+Question: can formatted TRAIN annotations be reconciled without opening held-out files?
+Experiment: document-aliases-v19; pinned TRAIN-only mirror plus author raw TRAIN.
+All19,938 records match the pinned author converter on every canonical field.
+This includes questions, answers, passages, support flags and full decompositions.
+Mirror aliases:8,872 strings across5,067 records; all occur in visible text; no empty aliases.
+Alias authenticity is not independently verified against the unavailable official ZIP.
+Report: validation/document_aliases_v19_TRAIN_readiness_20261019.json; data and evidence protected.
+Decision: retain canonical/alias provenance separately. No document cohort or model released.
+
 ## Closed: document annotation grounding (CPU only)
 Question: are supplied intermediate answers present in the policy-visible documents?
 Experiment:document-grounding-v18;all19,938 authorTRAIN rows;no cohort/model release.

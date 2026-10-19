@@ -1,0 +1,99 @@
+{
+  "status": "CPU_TRAIN_CANONICAL_RECONCILIATION_AND_MIRROR_ALIAS_READINESS_NO_MODEL_RELEASE",
+  "utc": "2026-10-19T11:48:38.538874+00:00",
+  "repo": "bdsaglam/musique",
+  "revision": "22873a405dd809893b22ada0b499299fb612d2df",
+  "TRAIN_file": "musique_ans_v1.0_train.jsonl",
+  "TRAIN_sha256": "83a75b1e11e4e9bb8f8308e72ac40ca617ae4431b3a0d955b61cab259248490a",
+  "TRAIN_bytes": 241046755,
+  "author_raw_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "rows": 19938,
+  "matching_fields": {
+    "question": 19938,
+    "canonical_answer": 19938,
+    "answerable": 19938,
+    "all_visible_paragraphs_order_and_support_flags": 19938,
+    "hop_ids_answers_and_count": 19938
+  },
+  "hops": {
+    "2": 14376,
+    "3": 4387,
+    "4": 1175
+  },
+  "alias_counts": {
+    "rows_with_aliases": 5067,
+    "alias_strings": 8872,
+    "empty_alias_strings": 0
+  },
+  "aliases_outside_literal_visible_text": 0,
+  "aliases_by_raw_id_sha256": "411de9932f03ee4aee92e75a427fee252f9959b88f830882d90ca01c73d6f434",
+  "author_ID_translation": {
+    "commit": "922ac98f19a201998dbdae6d7f2887a5258dbdeb",
+    "source_sha256": "9fb027594a0288354c5a2c83b8b850e9141b741764091441606636bede552c88",
+    "mapping": {
+      "double": "2hop",
+      "triple_ii": "3hop1",
+      "triple_io": "3hop2",
+      "quadruple_iii": "4hop1",
+      "quadruple_iot": "4hop2",
+      "quadruple_ioh1": "4hop3",
+      "quadruple_ioh2": "4hop4"
+    }
+  },
+  "script_sha256": "374f6c871d45e0af35b68812cacbf4b3b718c46728da6a73ea64d1d14183b16c",
+  "limits": [
+    "OnlyTRAINfileopened;officialDEV/TEST/globalaliasesunread. No model/cohort/budgetreleased.",
+    "ThefirstreconciliationassertedunchangedIDsandstopped;originalscript/logretained. Authorsdocumenttheexactshape-prefixrename;thispassappliesonlythatbijectiveIDmap. No redownloadorcanonicaldataedit.",
+    "Authoredquestions,canonicalanswers,visibleparagraphorder/text/titles/supportflags,andhopIDs/answersmatchtheauthorrawrecords. Aseparatepinnedauthor-converterchecknowvalidatesallcanonicalfieldsincludingdecompositionquestionstrings/paragraphindices.",
+    "Aliasstringsarefromapinnedmirror;originalofficialZIPbytescouldnotbeacquired. Canonicalfieldsareindependentlycrosschecked;aliasannotationauthenticityisnotindependentlyproven.",
+    "AnyfutureQAmetricmuststatecanonical/aliasprovenance;stringagreementisnotsemanticentailmentorpretrainingnovelty. Aliaslabelsremainofflinegold,neverpolicyinputs.",
+    "UpstreamMuSiQuedataareCCBY4.0;mirrorcarddoesnotdeclareaseparatelicense. Onlysmallprovenance/codearepublishedhere;rawdata/offlinealiasesremainignoredassets."
+  ],
+  "publication_utc": "2026-10-19T11:57:55.792523+00:00",
+  "public_evidence": {
+    "acquire_musique_TRAIN_mirror_v19_20261019.py": {
+      "bytes": 4501,
+      "sha256": "f19039a531eacdb4b073ca22af51f54d72da099d178512170e3e8983bc859ad8"
+    },
+    "reconcile_musique_TRAIN_mirror_v19_20261019.py": {
+      "bytes": 5010,
+      "sha256": "374f6c871d45e0af35b68812cacbf4b3b718c46728da6a73ea64d1d14183b16c"
+    },
+    "plan.json": {
+      "bytes": 520,
+      "sha256": "4c3172e5c06e421087fa2d4f562446f7d5c501ad6aa6f1c82cbcf56f2a055383"
+    },
+    "musique-TRAIN-mirror-v19-acquisition-20261019.log": {
+      "bytes": 380,
+      "sha256": "5882dfe09a8666a6ee4d04690c363a57185fffdcc33f3ca99a3f2bd1c024acf5"
+    },
+    "author-translate-id.py": {
+      "bytes": 623,
+      "sha256": "9ad1e4c0040eac3e57392a60c93f1d1c7afd310b3a07b0a55269058d4cce6a2c"
+    },
+    "canonical-format-crosscheck.json": {
+      "bytes": 1278,
+      "sha256": "aa05f1e435d795057dc0a7f3b6cf7cdf9b341ffd8845023f3bc32933e3f8e674"
+    },
+    "crosscheck_musique_canonical_format_v19_20261019.py": {
+      "bytes": 3523,
+      "sha256": "cd654adf3b64a023c81bb28911df8cab0050d058ad6fc5c48eb6e21f4b34cd5f"
+    },
+    "author-utils-constants.py": {
+      "bytes": 425,
+      "sha256": "828e4d706c3b2b84d39da219f18ae2ff12a6e379b985c1fd65f8931bd12a719c"
+    }
+  },
+  "protected_data_receipt_sha256": "c162838bfb1bd02d310a1a58a3332a9afc96dda602217c8c4f7b2bf4b2e404d5",
+  "references": [
+    "https://github.com/StonyBrookNLP/musique",
+    "https://huggingface.co/datasets/bdsaglam/musique/tree/22873a405dd809893b22ada0b499299fb612d2df"
+  ],
+  "canonical_formatter_crosscheck": {
+    "status": "ALL_CANONICAL_TRAIN_FIELDS_EXCEPT_ALIAS_ANNOTATIONS_MATCH_AUTHOR_CONVERTER",
+    "rows": 19938,
+    "differing_rows": 0,
+    "report_sha256": "aa05f1e435d795057dc0a7f3b6cf7cdf9b341ffd8845023f3bc32933e3f8e674",
+    "protected_receipt_sha256": "5fe7aefe043ebfbdfbcc1db5c386f8205889cedabcad9ddb4b52108ceb316ab6"
+  }
+}

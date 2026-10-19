@@ -1,4 +1,4 @@
-# Handoff — 2026-10-19 11:39 UTC
+# Handoff — 2026-10-19 12:00 UTC
 
 ## Active task
 
@@ -70,7 +70,9 @@ Master `local/diagnostics/real-source-eval-v17-study-v1/plan.json`,deadline20:00
 Eleven fixed models: B0;two each old target_direct,target_cot,real_prior;four new.
 Slots0..6 released tmux `source-eval-v17-slot{slot}` onphysical8,9,10,11,14,15,13.
 Allsevenoldreferencescompleteallnotes/answers/bothLLpanels;noexecutionfailures.
-Allnewmodelsevaluationpending;firsttwo registriescreated/launchedasof11:38.
+Allfournewevaluationsreleased. As of11:56 source_direct notes426/416 of512;
+source_cot notes512/512, answers888/842 of2560;allstopsabsent. All9readyLLjobs
+(7old+2source_cot)complete;2source_directLLjobswaittheirnotes. No failures.
 No capability values inspected.
 New terminal slots7..10 onphysical0,1,2,3 arebeingprepared/releasedbyexistingwatcher.
 Do notduplicateprep/launch. allfourbindingsnowexist.
@@ -154,6 +156,36 @@ arithmeticpositive. VariabledepthV11composition124→306/512,one bounded diagnos
 no expanded split rescue. MuSiQue TRAIN CPU-only:directed evidence-exclusion
 leaves502/2983train at2048/3072 for512held;no model/cohort/longcontextrelease.
 OldR1234staysstopped63. Sources/papers in docs/REFERENCE_NOTES.md.
+
+## TRAIN alias/teacher provenance (closed CPU preparation)
+
+Source `local/nvme-study/data/musique-TRAIN-mirror-v19` holds exactly
+musique_ans_v1.0_train.jsonl (241,046,755bytes),HFbdsaglam/musique revision
+22873a405dd809893b22ada0b499299fb612d2df,LFS/SHA
+83a75b1e11e4e9bb8f8308e72ac40ca617ae4431b3a0d955b61cab259248490a.
+All19,938 canonical records,includingquestion_decompositiontext/paragraphindices,
+matchauthorrawTRAINthroughpinnedofficialformatter922ac98f19a201998dbdae6d7f2887a5258dbdeb.
+RawIDs use double/triple/quadruple;officialIDs2hop/3hop/4hop. Explicitauthorbijection
+resolvesIDs;originalfailedassertionpreserved. Pureconverterloaderfirst2attempts
+stoppedbeforedataonimportedconstants;finalusespinnedutils.constantsandpassesallrows.
+Aliases8872/5067rows,allvisible,empty0;mirroraliasauthenticitynotindependently
+verifiedagainstofficialZIP. Keepcanonical/aliasprovenanceexplicit. Goldcrosswalk
+answer-aliases-by-author-raw-id.jsonl isOFFLINEgoldonly;no policyinputs.
+MainCPUreadinessreport validation/document_aliases_v19_TRAIN_readiness_20261019.json.
+FullTRAIN/offlinegold andallcode/failedattempts/canonicalcheckreadback-protected
+local/backups/data/musique-TRAIN-mirror-v19 (plusCANONICAL-FORMAT-CHECKannex).
+Originalraw331MBalreadyprotectedatlocal/backups/data/musique-TRAIN-source-v12.
+OfficialDEV/TEST/globalaliasesfilesnotopened;nonewcohort/model/longcontextrelease.
+ChooseactualnextquestionaftercompleteV17. Do notretryblockedGoogleDrivepath.
+
+## Additional data interpretation check (closed)
+
+Private`local/diagnostics/real-source-v17-prefix-visibility-data-audit-v1/report.json`:
+TRAIN5120/V15fresh384/V17confirm512allreturnnot_detected underexistingwhole_value_visible.
+Thecuratoralreadyenforceswhole-numbervisibilityexclusion. Exactnative digit-substrings
+occur365/26/35times,butcanbeinlargernumerals(3in13);notanswercopying. Nooutcome
+subgroupanalysisorpanelexclusionwarranted. No modeloutcomesread;allmetadata/source
+readback-protectedatlocal/backups/data/samebasename. Primaryreadoutunchanged.
 
 ## Additional closed CPU inspection
 
