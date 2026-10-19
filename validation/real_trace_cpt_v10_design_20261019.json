@@ -1,0 +1,108 @@
+{
+  "schema": "real-trace-cpt-v10-prospective-study-v1",
+  "status": "PROSPECTIVE_DESIGN_NO_LEARNING_RELEASE",
+  "created_utc": "2026-10-19T02:39:07.262284+00:00",
+  "question": "Does verified computation augmentation improve ordinary real-document prediction beyond matched raw CPT,and separately does self-generated computation improve prediction at inference?",
+  "models": "One fresh released Qwen3-1.7B-Base per arm per seed;one shared causal model generates and consumes its computation. No separate trained writer-reader pair.",
+  "arms": {
+    "real_raw": "Native prefix+actual future16;ordinary token CE,source fragment has no artificial EOS.",
+    "real_prior": "One raw and one augmented occurrence per document across2passes. Augmented:prefix+GIVEN Calculation opening+verified full trace including root+Answer marker+actual future16. Opening marker is unscored;all other declared targets share one CE mean.",
+    "real_post": "One raw and one augmented occurrence per document across2passes. Augmented:prefix+actual future16+GIVEN Calculation opening+verified full trace+native EOS. Trace is an offline training scaffold,not a prefix-only policy claim."
+  },
+  "training": {
+    "items": 5120,
+    "epochs": 2,
+    "updates": 320,
+    "global_batch": 32,
+    "world_size": 8,
+    "micro_batch": 4,
+    "width": 640,
+    "target_slots": 640,
+    "head_chunk": 32,
+    "seeds": [
+      2026101913,
+      2026101914
+    ],
+    "lr": 1e-05,
+    "schedule": "constant",
+    "parameter_and_gradient_dtype": "bf16",
+    "master_and_optimizer_dtype": "fp32",
+    "reduction": "One ZeRO owner",
+    "checkpoints": "Full state at160and320 or explicit STOP; terminal320 is primary. No outcome-based checkpoint choice or training extension.",
+    "source_order": "Same seed-specific document permutation per arm;eachdocument exactlyoneplainandoneaugmentedview in augmentationarms;rawcontroltwoordinaryviews"
+  },
+  "held_data": {
+    "novel_expression256": {
+      "bytes": 1204415,
+      "sha256": "cd7c0f68d61f7e2e4cbd8f2fa71587a05b4eb22125b2a1f63ff0bcf09ad2f7a7"
+    },
+    "ordinary_DEV256": {
+      "bytes": 726627,
+      "sha256": "59e0307d842ed93815c1bc4e4cc48d0c42b0aa4e06cdfa8106dd73b2841b2b75"
+    },
+    "prior_DEV256_preserved_sha256": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79",
+    "TRAIN_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915"
+  },
+  "primary_training": {
+    "contrast": "real_post.raw minus real_raw.raw,full native16-token summed log likelihood on novel-expression256,paired over documents.",
+    "pass": "Gain>=0.25nat/span and95%paired bootstrap lower>0 in eachseed. Ordinary-DEV256 mean tokenNLL increase<=0.02nat and95%upper<=0.05nat relative to raw-control. Report every arm and B0 absolute paths;do not call an improvement over degraded CPT a new best base model."
+  },
+  "primary_inference": {
+    "contrast": "real_prior.generated minus real_raw.raw,full native16-token summed log likelihood on the same novel256.",
+    "pass": "Gain>=0.25nat/span and95%lower>0 in eachseed;own-minus-same-model raw and own-minus-empty also have positive95%lower. This gate is independent of the training-benefit gate.",
+    "policy": "Prefix-only generation from nativeprefix+Calculation opening,cap128. Stop at first generated Answer boundary or nativeEOS;retain all actual content up to cap. Fixed Answer boundary closes the reader context as needed. Score actual future16 only afterwards. No target-dependent note selection,repair or replacement;include caps/errors and forced closure in reports and cost.",
+    "controls": "B0,eachtrainedrawpath,emptyformat,generatedown,intactunrelated,andverifiedsuppliedfulltrace. Full CoT is the single-model prior/full-trace reference. Supplied trace may include root answer and is not deployed-policy evidence."
+  },
+  "secondary_endpoints": [
+    "Numeric-span,closing-boundary and remaining-continuation likelihood components.",
+    "Complete scalar accuracy only with declared parser and allunsupported counts;likelihood remains primary.",
+    "Genuine generated tokens,cap/empty/stop/forcedclose counts;native128tracebudget plus32continuation versus160single-stream allowance.",
+    "Actual supervised labels,unique documents,repeated exposures,chip-time and measured latency separately;equalupdatesarenotequalFLOPs.",
+    "Existingdocument-disjointbutpartlyexpression-seenDEV256reportedseparately;neverpooledwithnovelpanel."
+  ],
+  "statistics": "20,000 paired document bootstrap draws,seed2026101915,95% percentile intervals. Report the two training seeds separately. These unadjusted intervals condition on checkpoints and do not measure training-seed uncertainty.",
+  "launch_gates": "CPU/source packing and actual8rank width640 native/BF16/master/finiteupdate/fullcheckpoint/fresh-process recovery/memory qualification first. Main science loader requires the exact pinned same-source/same-shape PASS receipt. Separate finite resource release before any320update job;qualification weights excluded.",
+  "limitations": [
+    "Selected verified FineMath arithmetic documents are a bridge,not general-language or officialTEST evidence.",
+    "Source equation acceptance uses observed truth,but calculation labels are interpreted from the causal prefix alone.",
+    "Root calculation and answer are included for competitive single-model supervision;this is not intermediate-only assistance proof.",
+    "OrdinaryCE and one raw/oneaugmented view are a specified adaptation,not an exact TPT or BoLT reproduction.",
+    "Opening markers are supplied conditions;they are excluded from ordinary next-token labels.",
+    "Raw/prior/post have different supervised-token counts and effective per-token weights despite matching documents/updates.",
+    "A failed inference gate does not erase an independent training benefit,and vice versa.",
+    "No8B or broadRL launch;splitcurriculumrepair remains bounded diagnostic,not mainline."
+  ],
+  "packing_readback": {
+    "rows": 5120,
+    "views": {
+      "raw": {
+        "min_tokens": 144,
+        "max_tokens": 528,
+        "mean_tokens": 455.4615234375,
+        "max_labels": 527,
+        "total_labels": 2326843
+      },
+      "prior": {
+        "min_tokens": 166,
+        "max_tokens": 627,
+        "mean_tokens": 493.5494140625,
+        "max_labels": 622,
+        "total_labels": 2501373
+      },
+      "post": {
+        "min_tokens": 165,
+        "max_tokens": 626,
+        "mean_tokens": 492.5494140625,
+        "max_labels": 621,
+        "total_labels": 2496253
+      }
+    },
+    "seconds": 332.5432153590082
+  },
+  "held_panel_manifest_sha256": "6ae42ecf733c67281255766c408f26b6a2c25dcf0dffd7467f11dfbd78b47085",
+  "CPU_checks": {
+    "passed": 1622,
+    "seconds": 60.35,
+    "log_sha256": "2505695860d9ae8f539e4df15db969e7931bece00891cb29b9e47bcac97a2eeb"
+  }
+}
