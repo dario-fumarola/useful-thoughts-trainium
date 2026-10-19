@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ubuntu/dario/local/worktrees/document-evidence-span-v23/train/document_evidence_plan_likelihood.py", line 342, in <module>
+    main()
+  File "/home/ubuntu/dario/local/worktrees/document-evidence-span-v23/train/document_evidence_plan_likelihood.py", line 338, in main
+    run(args.output, args.shard, args.device)
+  File "/home/ubuntu/dario/local/worktrees/document-evidence-span-v23/train/document_evidence_plan_likelihood.py", line 269, in run
+    atomic_json(directory/'own-model-TRAIN-calibration.json', checks)
+  File "/home/ubuntu/dario/local/worktrees/document-evidence-span-v23/weekend_thinking/artifacts.py", line 51, in atomic_json
+    atomic_bytes(path, (json.dumps(value, indent=2, sort_keys=True,
+  File "/home/ubuntu/dario/local/worktrees/document-evidence-span-v23/weekend_thinking/artifacts.py", line 44, in atomic_bytes
+    os.link(tmp_path, path)
+FileExistsError: [Errno 17] File exists: '/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-v1/scores/shard-2/.own-model-TRAIN-calibration.json.92kjdvq5' -> '/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-v1/scores/shard-2/own-model-TRAIN-calibration.json'

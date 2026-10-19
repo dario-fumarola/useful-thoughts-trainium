@@ -2,7 +2,7 @@
 
 0. Monitor the released evidence-plan-v23 V2 two-arm pilot;finish before interpretation.
    CPU readiness:validation/document_evidence_plan_v23_CPU_readiness_20261019.json.
-   Initial1,763 checks and6,144 native target views PASS;latest readout checks total1,795.
+   Initial1,763 checks and6,144 native target views PASS;latest checks total1,797.
    Fresh255 independent
    source/label check PASS;205/46/4 hop counts. V1 failed255/256;V2 keeps the same255.
    Both arms match source/final labels and coefficients;selection CE is separately weighted0.1.
@@ -15,7 +15,9 @@
    C=local/diagnostics/document-evidence-plan-v23-pilot-v1;monitor both C/*/run.log.
    Training sessions1396508/1396658 closed;GEN usesphysical4/5,LL6/7;outputs inC/plan.json.
    Both256-update runs close;all4fullstates audited,allterminalmodels/latestfull256 EBSprotected/bound.
-   GEN1530/LL3062/readout watchers active. Monitor phase markers;no capability outcome inspected.
+   All1530nativeGENclose. OriginalLLattempt failedoncalibrationJSONcreation beforeheldrows;preserved.
+   ExplicitIO-onlyV2 passesbothTRAINpanels/all8workers,unchangedbounds/inputs/gates;LL3062thenreadout.
+   Use likelihood-registry-v2.json/readout-pipeline-io-v2;originalfailedregistries/logsremainunchanged.
 
 1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,

@@ -1,0 +1,213 @@
+{
+  "status": "EXPLICIT_IO_ONLY_REPAIR_1797_CPU_CHECKS_ALL16_ACTUAL_TRAIN_CALIBRATIONS_PASS",
+  "utc": "2026-10-19T19:59:36.594295+00:00",
+  "responsibility": "Agentintroduced calibrationpersistencebug:secondpanel cumulativeatomic_json attemptednoclobbercreation again. FileExistsError stoppedbeforeheldscoring.",
+  "original_failure": {
+    "preserved": {
+      "status": "PRESERVED_ORIGINAL_CALIBRATION_WRITE_FAILURE_ZERO_HELD_ROWS_PHYSICALLY_CLOSED",
+      "archive": "/home/ubuntu/dario/local/backups/evaluation/document-evidence-plan-v23-likelihood-v1-failure",
+      "archive_sha256": "7fc89c523e21e5512a838be95fae47031b96481603467a6151dc1000c7e3b718",
+      "cause": "FileExistsError when second TRAIN panel republishes cumulative calibration JSON with no-clobber atomic_json. QA passes;ordinary result unrecorded;source stops before anyheld loop."
+    },
+    "held_rows": 0,
+    "QA_checks_passed": 8,
+    "ordinary_results_unrecorded": true,
+    "original_workers_physically_closed": true
+  },
+  "change": "Immutableonefileperpanel;atomicreplacementofcurrentattemptcumulativesummary. Twofilesystemregressions cover bothpanels andfailedsecondpanel. Numericalkernel/loaders unchanged.",
+  "source_commit": "bf288fe439427844cabc1c2310af96ae59daab08",
+  "actual_repair_TRAIN_calibration": {
+    "evidence_direct-seed2026101923": {
+      "0": {
+        "QA": {
+          "absolute_mean_span_error": 2.624576698195824e-07,
+          "max_token_error": 4.7606681619072333e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.0001161874586674827,
+          "max_token_error": 2.86102294921875e-05,
+          "passed": true
+        }
+      },
+      "1": {
+        "QA": {
+          "absolute_mean_span_error": 2.624576698195824e-07,
+          "max_token_error": 4.7606681619072333e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.0001161874586674827,
+          "max_token_error": 2.86102294921875e-05,
+          "passed": true
+        }
+      },
+      "2": {
+        "QA": {
+          "absolute_mean_span_error": 2.624576698195824e-07,
+          "max_token_error": 4.7606681619072333e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.0001161874586674827,
+          "max_token_error": 2.86102294921875e-05,
+          "passed": true
+        }
+      },
+      "3": {
+        "QA": {
+          "absolute_mean_span_error": 2.624576698195824e-07,
+          "max_token_error": 4.7606681619072333e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.0001161874586674827,
+          "max_token_error": 2.86102294921875e-05,
+          "passed": true
+        }
+      }
+    },
+    "evidence_select-seed2026101923": {
+      "0": {
+        "QA": {
+          "absolute_mean_span_error": 1.4358069932995932e-07,
+          "max_token_error": 3.5704943002201617e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.00011897835035235005,
+          "max_token_error": 2.3365020751953125e-05,
+          "passed": true
+        }
+      },
+      "1": {
+        "QA": {
+          "absolute_mean_span_error": 1.4358069932995932e-07,
+          "max_token_error": 3.5704943002201617e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.00011897835035235005,
+          "max_token_error": 2.3365020751953125e-05,
+          "passed": true
+        }
+      },
+      "2": {
+        "QA": {
+          "absolute_mean_span_error": 1.4358069932995932e-07,
+          "max_token_error": 3.5704943002201617e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.00011897835035235005,
+          "max_token_error": 2.3365020751953125e-05,
+          "passed": true
+        }
+      },
+      "3": {
+        "QA": {
+          "absolute_mean_span_error": 1.4358069932995932e-07,
+          "max_token_error": 3.5704943002201617e-07,
+          "passed": true
+        },
+        "ordinary": {
+          "absolute_mean_span_error": 0.00011897835035235005,
+          "max_token_error": 2.3365020751953125e-05,
+          "passed": true
+        }
+      }
+    }
+  },
+  "unchanged": [
+    "Bothtrainedterminalmodels",
+    "All1530nativeanswerobservations",
+    "Allscoringcontexts/targets/CPUreferences bytehashes",
+    "Scoringkernel,FP32,batch4,width3584/672,target32",
+    ".001max-token/absolute-mean-spanbounds",
+    "Allscientificendpoints/thresholds/parsers/bootstrap/decisionhelpers"
+  ],
+  "routing": "Newscoringoutputdirectories/registry andreadoutpipeline;originalfailedones retained. Rootexplicitlyreviewed/released,notanautomaticretry. Failedcalibrationcompute reportedseparately.",
+  "evidence_files": {
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/prepare_document_evidence_v23_likelihood_io_v2_20261019.py": {
+      "bytes": 4701,
+      "sha256": "a66eb4950f8b09875d036eba714a1f73f499ef4d75cba34d9688747ab1a80429"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/readout-routing.diff": {
+      "bytes": 10264,
+      "sha256": "57aa1902737936e6837952084bf845a0e90d1346ae8c7dec7bc25f83f415a4ef"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/protect_document_evidence_v23_readout_io_v2_20261019.py": {
+      "bytes": 2782,
+      "sha256": "35b88ff4a68512195e1a2a190019fc2b93f8e4eee10ac6f7b66030309f9d4867"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/supervise_document_evidence_v23_likelihood_io_v2_20261019.py": {
+      "bytes": 6691,
+      "sha256": "5d38886a807044c9d521dcd2c36f31d587435525c57748442ee15a59e53198bf"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/calibration-persistence-only.diff": {
+      "bytes": 3811,
+      "sha256": "e74feafec197601c669c30a47368a204462cb137c650e6d246df02139f3932af"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/readout-execution-plan-v2.json": {
+      "bytes": 5598,
+      "sha256": "84a1eab3a3e327ed019f07a5f390367230c645e20bf952920c86c5be6eec8398"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/check_document_evidence_v23_readout_io_v2_20261019.py": {
+      "bytes": 9943,
+      "sha256": "b18ed2192d3a4b741f2a57727c1d76ec118ea7e035e4d4fb09bc9915518ad335"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/toy_smoke.json": {
+      "bytes": 5383,
+      "sha256": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/watch_document_evidence_v23_readout_io_v2_20261019.py": {
+      "bytes": 2469,
+      "sha256": "8f388486356b0f62715c358f10a43e8b642891d1ee866e9ac4655439c652830d"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/analyze_document_evidence_v23_io_v2_20261019.py": {
+      "bytes": 16402,
+      "sha256": "6c92b7568c9cbef556412b2fe57c58313ad0e6db2940dcb34a248686a058e6bd"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/evidence_direct-original-shard-2-traceback.txt": {
+      "bytes": 1406,
+      "sha256": "46d21f4b5118fab00160bdade2f32e0f5e20d033ff5ce70414d927a2c8cfaac3"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/original-failure-preservation.json": {
+      "bytes": 486,
+      "sha256": "a8e35d12c1eff5ceda187ce301203d163f6b06669fa33468084a10d5eed7e127"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/repair-release.json": {
+      "bytes": 1631,
+      "sha256": "efcf793c5a58151b6024221491bc3a7c96704209567a898993f035064e9fd6fd"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/collect_document_evidence_v23_likelihood_io_v2_20261019.py": {
+      "bytes": 1606,
+      "sha256": "ac8e731db3152b4d47f2e3c35410311a17c61803912b23eb02d92e988de0a36c"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/repair-plan.json": {
+      "bytes": 3375,
+      "sha256": "aa904176c2f37da33c6d479141119990e2866387bd5da083089b43750ab2b6b9"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/original-failed-registry.json": {
+      "bytes": 1308,
+      "sha256": "06fafc5d4d193997638fbc356850ea292c126b1d0f48c53d4047b996c94e9caf"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/tests.txt": {
+      "bytes": 2032,
+      "sha256": "d6497c6e192df304bccde372f5043349425bd08b14e43002933099e608a34b3e"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/repair-registry.json": {
+      "bytes": 1845,
+      "sha256": "feeb0d55ff1242ce9ec9693a5a5495d25db07feac7ca9e68490c6a3b4b54a287"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/evidence_select-original-shard-3-traceback.txt": {
+      "bytes": 1406,
+      "sha256": "dabe4f4379305104ecda0fb4f8d825c022fcf0c133391682eee9a080c6ba1583"
+    },
+    "validation/document_evidence_plan_v23_likelihood_io_repair_20261019/preserve_document_evidence_v23_likelihood_failure_20261019.py": {
+      "bytes": 3611,
+      "sha256": "2f06b25146c287b3300dfd7dd92e98e27e2ec3ec14d60fdcc814cedc65f9bbae"
+    }
+  },
+  "limits": "No heldanswer/likelihoodoutcome inspected atrepair. Hardwarecalibration pass isnot scientificvalidation. Scientificreadout still waits forcomplete3062rows."
+}

@@ -1466,3 +1466,15 @@ afternewfull256verified. Allsmalltrainingwitnesses/metrics andpublicationprotect
 Begin the fixed1530nativeattempts,then3062originalLLrows;noearlyscoreinspection,
 checkpointselection orconditionalreplication beforethe declaredpilot readout.
 This is completedtraining/recovery evidence,not a newcapability result.
+
+2026-10-19 20:00 UTC — OriginalLLexecution stoppedbeforeanyheldscore loop:
+secondTRAINpanel triedtocreate the cumulativecalibrationJSON again(FileExistsError).
+This was an agentintroduced IO bug,not an observednumerical/scientificfailure.
+All8QAchecks passed;ordinaryresults wereunrecorded. Preserveallv1artifacts/source,
+verifyownedprocesses absent/physical6-7empty,archive/readback beforeexplicitrepair.
+Workerbf288fe writesimmutablepanelwitnesses andatomicallyupdates onlythisattempt's
+summary;twofilesystemregressions includedin1797passingCPUchecks/smoke/compile.
+Exactsameinputs/CPUreferences/models/native1530answers;scoringkernel/bounds/gates
+unchanged. Newoutputdirectories/registry/readoutroutingv2,originalsuntouched.
+All16actualTRAINpanelchecks passinV2 beforeheldscores. Failedcalibrationcompute
+accountedseparately. No heldanswer/likelihoodoutcome inspected tochoosethisrepair.

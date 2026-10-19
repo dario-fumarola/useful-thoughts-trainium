@@ -128,8 +128,10 @@ passes native/cache/CPU comparisons; the [training and restore check](validation
 passes 11 actual updates, six complete state audits and a fresh-process restore.
 Both fresh models have [completed training](validation/document_evidence_plan_v23_training_20261019.json)
 for one pilot seed. All four periodic full states are audited; terminal models and
-the latest full recovery state are protected. Fixed evaluation is being prepared;
-there is no new capability result.
+the latest full recovery state are protected. All native answer attempts are complete;
+secondary likelihood scoring is running after a documented [calibration-record fix](validation/document_evidence_plan_v23_likelihood_io_repair_20261019.json).
+The original failure had no held scoring rows; inputs and scientific gates are unchanged.
+There is no new capability result yet.
 The primary contrast is selection versus matched direct training on 255 fresh questions.
 An inference-assistance claim also requires gains over the selection model's own direct
 and empty-selection paths, as [declared before training](configs/document_evidence_v23_readout.json).

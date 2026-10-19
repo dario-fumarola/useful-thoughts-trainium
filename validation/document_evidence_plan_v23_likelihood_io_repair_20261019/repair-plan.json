@@ -1,0 +1,44 @@
+{
+  "status": "PREPARED_IO_ONLY_SCORING_REPAIR_V2_PENDING_ROOT_SERIAL_REVIEW",
+  "utc": "2026-10-19T19:56:08.192302+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/document-evidence-span-v23-io-v2",
+  "source_commit": "bf288fe439427844cabc1c2310af96ae59daab08",
+  "original_failure_receipt_sha256": "a8e35d12c1eff5ceda187ce301203d163f6b06669fa33468084a10d5eed7e127",
+  "original_registry_sha256": "06fafc5d4d193997638fbc356850ea292c126b1d0f48c53d4047b996c94e9caf",
+  "new_registry_sha256": "feeb0d55ff1242ce9ec9693a5a5495d25db07feac7ca9e68490c6a3b4b54a287",
+  "controller_sha256": "5d38886a807044c9d521dcd2c36f31d587435525c57748442ee15a59e53198bf",
+  "protocols": {
+    "evidence_direct-seed2026101923": "0acb87105dd8885f6a2ae36d1be35d1cdb9c82d38e2a2d4430ce30ccff7fa7b5",
+    "evidence_select-seed2026101923": "89b6696e46d7e1a96faa40c76ceb651d7ed2c62541dbb65c95b55131098e436b"
+  },
+  "groups": [
+    {
+      "model": "evidence_direct-seed2026101923",
+      "arm": "evidence_direct",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-io-v2",
+      "control": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/LL-IO-V2-evidence_direct-seed2026101923",
+      "physical": 6,
+      "original": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-held255-v1",
+      "protocol_sha256": "0acb87105dd8885f6a2ae36d1be35d1cdb9c82d38e2a2d4430ce30ccff7fa7b5",
+      "parent_failed_output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-v1",
+      "parent_failed_protocol_sha256": "52c93fac8128b1c525f230a8b4af6103ae126a5fce0890bffb06608b7cf0d44f"
+    },
+    {
+      "model": "evidence_select-seed2026101923",
+      "arm": "evidence_select",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-likelihood-io-v2",
+      "control": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/LL-IO-V2-evidence_select-seed2026101923",
+      "physical": 7,
+      "original": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-held255-v1",
+      "protocol_sha256": "89b6696e46d7e1a96faa40c76ceb651d7ed2c62541dbb65c95b55131098e436b",
+      "parent_failed_output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-likelihood-v1",
+      "parent_failed_protocol_sha256": "d3251955d8d1f0b1a92542f39c9d4eb9e52d4e53efe123d72410c9698eb339ce"
+    }
+  ],
+  "only_changed_numerical_source_file": "NONE;scoringkernel/loaders unchanged. WorkerIOonly.",
+  "preservation": "Allv1failed outputs/logs/source retained andEBSreadbackverified;all8originalsessions absent,physical6/7 empty. Noheldscorefile created.",
+  "reuse": "Identical hardlinkednativecontext/targetfiles andown-modelCPUreferencefiles,bytehash equality. Both modelcheckpoints andall1530nativegenerationobservations unchanged.",
+  "bounds": "Original.001max-token andabsmeanspanTRAINcalibration;all255perQAcondition/ordinary256,FP32batch4,width3584/672,target32,fourshards,samehardware6/7. No scores/gates/threshold/data/prompt changes.",
+  "deadline_utc": "2026-10-20T06:00:00+00:00",
+  "no_automatic_retry": true
+}

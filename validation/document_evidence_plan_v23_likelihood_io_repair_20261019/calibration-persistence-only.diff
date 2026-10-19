@@ -1,0 +1,72 @@
+diff --git a/tests/test_document_evidence_plan_likelihood.py b/tests/test_document_evidence_plan_likelihood.py
+index b357d6a..818ebb7 100644
+--- a/tests/test_document_evidence_plan_likelihood.py
++++ b/tests/test_document_evidence_plan_likelihood.py
+@@ -3,7 +3,7 @@ import math
+ import pytest
+ 
+ from train.document_evidence_plan_likelihood import (
+-    calibration_check, context_text, physical_batch, score_original_batch,
++    calibration_check, context_text, physical_batch, persist_calibration, score_original_batch,
+     scoring_example, selected_ids,
+ )
+ from train.useful_note_sft_data import EOS
+@@ -88,3 +88,29 @@ def test_calibration_requires_both_token_and_mean_span_tolerances():
+ def test_complete_native_answer_span_cannot_be_shortened_to_fit():
+     with pytest.raises(ValueError):
+         scoring_example(question(), 'x'*32, 'direct', CharacterTokenizer())
++
++
++def test_two_calibration_panels_persist_without_clobbering_original_witnesses(tmp_path):
++    import json
++
++    checks = dict(QA=dict(passed=True, max_token_error=.00001))
++    persist_calibration(tmp_path, 'QA', checks)
++    original = (tmp_path/'own-model-TRAIN-calibration-QA.json').read_bytes()
++    checks['ordinary'] = dict(passed=True, absolute_mean_span_error=.00002)
++    persist_calibration(tmp_path, 'ordinary', checks)
++    assert json.loads((tmp_path/'own-model-TRAIN-calibration.json').read_text()) == checks
++    assert (tmp_path/'own-model-TRAIN-calibration-QA.json').read_bytes() == original
++    assert json.loads((tmp_path/'own-model-TRAIN-calibration-ordinary.json').read_text()) == checks['ordinary']
++    with pytest.raises(FileExistsError):
++        persist_calibration(tmp_path, 'QA', checks)
++
++
++def test_failed_second_panel_is_saved_before_the_caller_can_raise(tmp_path):
++    import json
++
++    checks = dict(QA=dict(passed=True))
++    persist_calibration(tmp_path, 'QA', checks)
++    checks['ordinary'] = dict(passed=False, reason='parity_bound_failed')
++    persist_calibration(tmp_path, 'ordinary', checks)
++    assert json.loads((tmp_path/'own-model-TRAIN-calibration.json').read_text()) == checks
++    assert json.loads((tmp_path/'own-model-TRAIN-calibration-ordinary.json').read_text()) == checks['ordinary']
+diff --git a/train/document_evidence_plan_likelihood.py b/train/document_evidence_plan_likelihood.py
+index 42593b4..a86dc8d 100644
+--- a/train/document_evidence_plan_likelihood.py
++++ b/train/document_evidence_plan_likelihood.py
+@@ -233,6 +233,15 @@ def score_original_batch(backend, batch, width, scorer):
+     return values[:originals], 4-originals
+ 
+ 
++def persist_calibration(directory, panel, checks):
++    """Keep immutable panel witnesses and update this attempt's partial summary."""
++    if panel not in ('QA', 'ordinary') or panel not in checks:
++        raise ValueError('A completed declared calibration panel is required')
++    directory = Path(directory)
++    atomic_json(directory/f'own-model-TRAIN-calibration-{panel}.json', checks[panel])
++    atomic_json(directory/'own-model-TRAIN-calibration.json', checks, overwrite=True)
++
++
+ def run(output, shard, device):
+     from train.document_qa_span_scores import score_spans
+     from train.evaluate_local import setup_model
+@@ -266,7 +275,7 @@ def run(output, shard, device):
+         except Exception as error:
+             checks[panel] = dict(passed=False, error=f'{type(error).__name__}: {error}')
+         # Persist the original failed witness before raising; never retry silently.
+-        atomic_json(directory/'own-model-TRAIN-calibration.json', checks)
++        persist_calibration(directory, panel, checks)
+         if not checks[panel]['passed']:
+             raise RuntimeError('Own-model TRAIN calibration failed before held scoring; preserve this attempt')
+     count, errors, padding, expected = 0, 0, 0, 0

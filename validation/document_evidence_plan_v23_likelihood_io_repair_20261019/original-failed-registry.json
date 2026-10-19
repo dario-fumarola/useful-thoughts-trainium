@@ -1,0 +1,23 @@
+{
+  "status": "BOTH_FROZEN_POINTER_REPLAY_PANELS_PREPARED_BEFORE_HELD_SCORING",
+  "groups": [
+    {
+      "model": "evidence_direct-seed2026101923",
+      "arm": "evidence_direct",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-v1",
+      "control": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/LL-evidence_direct-seed2026101923",
+      "physical": 6,
+      "original": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-held255-v1",
+      "protocol_sha256": "52c93fac8128b1c525f230a8b4af6103ae126a5fce0890bffb06608b7cf0d44f"
+    },
+    {
+      "model": "evidence_select-seed2026101923",
+      "arm": "evidence_select",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-likelihood-v1",
+      "control": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/LL-evidence_select-seed2026101923",
+      "physical": 7,
+      "original": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-held255-v1",
+      "protocol_sha256": "d3251955d8d1f0b1a92542f39c9d4eb9e52d4e53efe123d72410c9698eb339ce"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "EXPLICIT_IO_ONLY_REPAIR_EXACT_ORIGINAL_INPUTS_NO_HELD_ROWS_REVIEWED",
+  "groups": [
+    {
+      "model": "evidence_direct-seed2026101923",
+      "arm": "evidence_direct",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-io-v2",
+      "control": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/LL-IO-V2-evidence_direct-seed2026101923",
+      "physical": 6,
+      "original": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-held255-v1",
+      "protocol_sha256": "0acb87105dd8885f6a2ae36d1be35d1cdb9c82d38e2a2d4430ce30ccff7fa7b5",
+      "parent_failed_output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_direct-seed2026101923-likelihood-v1",
+      "parent_failed_protocol_sha256": "52c93fac8128b1c525f230a8b4af6103ae126a5fce0890bffb06608b7cf0d44f"
+    },
+    {
+      "model": "evidence_select-seed2026101923",
+      "arm": "evidence_select",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-likelihood-io-v2",
+      "control": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/LL-IO-V2-evidence_select-seed2026101923",
+      "physical": 7,
+      "original": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-held255-v1",
+      "protocol_sha256": "89b6696e46d7e1a96faa40c76ceb651d7ed2c62541dbb65c95b55131098e436b",
+      "parent_failed_output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-evidence-plan-v23-evidence_select-seed2026101923-likelihood-v1",
+      "parent_failed_protocol_sha256": "d3251955d8d1f0b1a92542f39c9d4eb9e52d4e53efe123d72410c9698eb339ce"
+    }
+  ]
+}

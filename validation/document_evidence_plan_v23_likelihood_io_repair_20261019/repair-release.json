@@ -1,0 +1,17 @@
+{
+  "status": "RELEASED_EXPLICIT_IO_ONLY_LIKELIHOOD_REPAIR_V2",
+  "utc": "2026-10-19T19:56:55.656294+00:00",
+  "plan_sha256": "aa904176c2f37da33c6d479141119990e2866387bd5da083089b43750ab2b6b9",
+  "controller_sha256": "5d38886a807044c9d521dcd2c36f31d587435525c57748442ee15a59e53198bf",
+  "protocols": {
+    "evidence_direct-seed2026101923": "0acb87105dd8885f6a2ae36d1be35d1cdb9c82d38e2a2d4430ce30ccff7fa7b5",
+    "evidence_select-seed2026101923": "89b6696e46d7e1a96faa40c76ceb651d7ed2c62541dbb65c95b55131098e436b"
+  },
+  "source_commit": "bf288fe439427844cabc1c2310af96ae59daab08",
+  "original_failure_receipt_sha256": "a8e35d12c1eff5ceda187ce301203d163f6b06669fa33468084a10d5eed7e127",
+  "CPU_checks": 1797,
+  "CPU_checks_sha256": "d6497c6e192df304bccde372f5043349425bd08b14e43002933099e608a34b3e",
+  "root_review": "PASS_IO_ONLY_REPAIR. Alloldfailedoutputs preserved;zeroheldrows/noheldforwardloop reached,allownedworkers physicallyclosed. Onecumulativefile write aftersecondTRAINpanel raisedFileExistsError. Newimmutablepanelwitnesses andatomic summaryreplace fixonlyIO. Exactsameinputs/CPUreferences/nativeattempts/modelcheckpoints,unchangedscoringkernel/shapes/thresholds. No regeneration,sciencegatechange,outcomeinspection orautomaticretry.",
+  "resources": "Samephysical6/7,fourshardspermodel,FP32batch4. Original06:00deadline and35GiBdisk/512GiBhost floors unchanged. Expected<1reservedchip-hour;no new training orphase budgetextension.",
+  "limits": "QAonlyrecordedpassing inv1;ordinary outcomeunknown becausewritefailed. BothTRAINpanels mustpassagain beforeheldscores. No nativeaccuracyreadoutuntilallfixedLLrowsclose."
+}

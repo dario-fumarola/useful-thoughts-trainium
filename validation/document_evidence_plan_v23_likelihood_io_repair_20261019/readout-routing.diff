@@ -1,0 +1,104 @@
+--- analyze_document_evidence_v23_20261019.py
++++ analyze_document_evidence_v23_io_v2_20261019.py
+@@ -16,7 +16,7 @@
+  assert read(C/'ALL_GENERATION_CLOSED_NO_READOUT.json')['status']=='ALL1530_FROZEN_NATIVE_ATTEMPTS_CLOSED_NO_READOUT'
+  assert read(C/'ALL_LIKELIHOOD_CLOSED_NO_READOUT.json')['status']=='ALL3062_ORIGINAL_POINTER_REPLAY_AND_ORDINARY_ROWS_CLOSED_NO_READOUT'
+  assert read(C/'terminal-pipeline-completion.json')['status']=='BOTH_PILOT_TERMINALS_AUDITED_PROTECTED_BOUND_NO_HELD_READOUT'
+- execution=read(C/'readout-execution-plan.json')
++ execution=read(C/'readout-execution-plan-v2.json')
+  assert execution['source_files'][str(Path(__file__).relative_to(R))]==sha(__file__)
+  assert all(sha(R/name)==value for name,value in execution['scoring_source_files'].items())
+  release=read(C/'release.json');assert execution['pilot_release_sha256']==sha(C/'release.json')
+@@ -92,7 +92,7 @@
+   keys=[key for key in ids if gold[key]['hops']==hop]
+   hop_strata[str(hop)]=dict(items=len(keys),conditions={arm:{mode:dict(correct=sum(values[key]['canonical_em'] for key in keys),unsupported=sum(values[key]['parsed']['status']!='complete' for key in keys)) for mode,values in modes.items()} for arm,modes in observed.items()},interpretation='Descriptive only;four-hop cell hasfourquestions,no depthgeneralizationclaim.')
+  likelihood={};absolute={};ordinary={};ll_total=0
+- for group in read(C/'likelihood-registry.json')['groups']:
++ for group in read(C/'likelihood-registry-v2.json')['groups']:
+   O=Path(group['output']);p=read(O/'protocol.json');arm=p['model']['arm']
+   assert sha(O/'protocol.json')==group['protocol_sha256'] and p['release_sha256']==sha(C/'release.json')
+   assert read(Path(group['control'])/'closure.json')['assigned_physical_device_empty']
+@@ -132,7 +132,7 @@
+  # Reuse only the already-completed B0 ordinary256 reference,not old QA outcomes.
+  old=Path(execution['B0_ordinary_reference']['output']);oldp=read(old/'protocol.json')
+  assert oldp['model']['id']=='B0' and oldp['model']['checkpoint'] is None
+- assert sha(old/'ordinary-raw.jsonl')==sha(Path(read(C/'likelihood-registry.json')['groups'][0]['output'])/'ordinary-raw.jsonl')
++ assert sha(old/'ordinary-raw.jsonl')==sha(Path(read(C/'likelihood-registry-v2.json')['groups'][0]['output'])/'ordinary-raw.jsonl')
+  for name,value in execution['B0_ordinary_reference']['file_sha256'].items():assert sha(old/name)==value
+  base_ordinary={}
+  for shard in range(4):
+@@ -161,12 +161,17 @@
+   folder=C/job['key'];start=read(folder/'launch.json')['utc'];end=read(folder/'closure.json')['utc']
+   reserved['train-'+job['key']]=2*(datetime.fromisoformat(end)-datetime.fromisoformat(start)).total_seconds()/3600
+  for phase in ['generation','likelihood']:
+-  for group in read(C/(phase+'-registry.json'))['groups']:
++  for group in read(C/(phase+'-registry-v2.json' if phase=='likelihood' else phase+'-registry.json'))['groups']:
+    folder=Path(group['control']);start=read(folder/'plan.json')['utc'];end=read(folder/'closure.json')['utc']
+    reserved[phase+'-'+group['model']]=(datetime.fromisoformat(end)-datetime.fromisoformat(start)).total_seconds()/3600
++ failed_reserved={}
++ for group in read(C/'likelihood-registry.json')['groups']:
++  folder=Path(group['control']);start=read(folder/'plan.json')['utc']
++  end=max(read(folder/f'shard-{i}/exit.json')['utc'] for i in range(4))
++  failed_reserved[group['model']]=(datetime.fromisoformat(end)-datetime.fromisoformat(start)).total_seconds()/3600
+  report=dict(status='COMPLETE_ONE_SEED_PASSAGE_SELECTION_PILOT_NOT_REPLICATION',utc=datetime.now(timezone.utc).isoformat(),
+   release_sha256=sha(C/'release.json'),analyzer_sha256=sha(__file__),native_attempts=native_total,likelihood_original_rows=ll_total,
+-  tables=tables,training_models=training_audit['models'],reserved_chip_hours=reserved,total_science_reserved_chip_hours=sum(reserved.values()),cost_scope='Controlreservationstart tophysicalclosure,including preparation/compilation/checks within each job. Qualification/oldB0reference excluded;concurrentwalltime isnot servinglatency.',canonical_EM_contrasts=contrasts,canonical_F1_secondary_contrasts={name:comp(*pair,metric='canonical_f1') for name,pair in pairs.items()},
++  execution_repair=dict(original_failure_receipt_sha256=sha(C/'likelihood-v1-failure-preserved.json'),repair_release_sha256=sha(C/'likelihood-io-repair-v2/release.json'),failed_calibration_reserved_chip_hours=failed_reserved,total_failed_calibration_reserved_chip_hours=sum(failed_reserved.values()),limits='OriginalIO-onlyfailurehadzeroheldrows;inputs/models/nativeanswers/gatesunchanged. Failedattemptcost is reportedseparately,not hidden.'),tables=tables,training_models=training_audit['models'],reserved_chip_hours=reserved,total_science_reserved_chip_hours=sum(reserved.values()),cost_scope='Controlreservationstart tophysicalclosure,including preparation/compilation/checks within each job. Qualification/oldB0reference excluded;concurrentwalltime isnot servinglatency.',canonical_EM_contrasts=contrasts,canonical_F1_secondary_contrasts={name:comp(*pair,metric='canonical_f1') for name,pair in pairs.items()},
+   decisions=decisions,hop_strata_descriptive=hop_strata,absolute_likelihood=absolute,secondary_pointer_replay_likelihood_contrasts=llcontrasts,
+   ordinary_NLL_selection_minus_direct=paired_contrast(ordinary['evidence_direct'],ordinary['evidence_select']),ordinary_NLL_minus_reused_B0={arm:paired_contrast(base_ordinary,values) for arm,values in ordinary.items()},
+   payloads=payloads,limits=['One data-order seed;no replication,pretraining novelty,broadreasoning orordinaryCoT superiority established.',
+--- check_document_evidence_v23_readout_20261019.py
++++ check_document_evidence_v23_readout_io_v2_20261019.py
+@@ -109,7 +109,7 @@
+   for part,contrasts in r['secondary_pointer_replay_likelihood_contrasts'][arm].items():
+    for name,a,b in [('selected_minus_empty','empty','selected_id_replay'),('selected_minus_other','other_id_replay','selected_id_replay'),('oracle_minus_direct','direct','oracle')]:verify({k:v[part] for k,v in LL[arm][a].items()},{k:v[part] for k,v in LL[arm][b].items()},contrasts[name])
+  verify(ordinary['evidence_direct'],ordinary['evidence_select'],r['ordinary_NLL_selection_minus_direct'])
+- old=Path(read(C/'readout-execution-plan.json')['B0_ordinary_reference']['output']);base={}
++ old=Path(read(C/'readout-execution-plan-v2.json')['B0_ordinary_reference']['output']);base={}
+  for shard in range(4):
+   for v in map(json.loads,(old/'scores'/f'shard-{shard}/scores.jsonl').read_text().splitlines()):
+    if v['panel']=='ordinary':base[v['item_id']]=-v['full_logp']/32
+--- protect_document_evidence_v23_readout_20261019.py
++++ protect_document_evidence_v23_readout_io_v2_20261019.py
+@@ -19,13 +19,13 @@
+ for path in P.iterdir():
+  if path.is_file():copy(path,Path('public')/path.name)
+ for label in ['generation','likelihood']:
+- for group in read(C/(label+'-registry.json'))['groups']:
++ for group in read(C/(label+'-registry-v2.json' if label=='likelihood' else label+'-registry.json'))['groups']:
+   output=Path(group['output'])
+   for path in output.rglob('*'):
+    if path.is_file():copy(path,Path(label)/group['model']/path.relative_to(output))
+-for name in ['plan.json','release.json','prospective-design.json','readout-addendum.json','readout-execution-plan.json','fixed-example-selection.json','generation-execution-plan.json','likelihood-execution-plan.json','terminal-independent-audit.json','terminal-protection.json']:
++for name in ['plan.json','release.json','prospective-design.json','readout-addendum.json','readout-execution-plan.json','readout-execution-plan-v2.json','likelihood-registry-v2.json','likelihood-v1-failure-preserved.json','fixed-example-selection.json','generation-execution-plan.json','likelihood-execution-plan.json','terminal-independent-audit.json','terminal-protection.json']:
+  copy(C/name,Path('control')/name)
+-for name in read(C/'readout-execution-plan.json')['source_files']:
++for name in read(C/'readout-execution-plan-v2.json')['source_files']:
+  copy(R/name,Path('sources')/Path(name).name)
+ for directory in [p for p in B.rglob('*') if p.is_dir()]+[B]:
+  fd=os.open(directory,os.O_DIRECTORY);os.fsync(fd);os.close(fd)
+--- watch_document_evidence_v23_readout_20261019.py
++++ watch_document_evidence_v23_readout_io_v2_20261019.py
+@@ -9,18 +9,18 @@
+ R=Path('/home/ubuntu/dario');C=R/'local/diagnostics/document-evidence-plan-v23-pilot-v1'
+ read=lambda p:json.loads(Path(p).read_text())
+ sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+-p=read(C/'readout-execution-plan.json')
++p=read(C/'readout-execution-plan-v2.json')
+ assert p['source_files'][str(Path(__file__).relative_to(R))]==sha(__file__)
+-D=C/'readout-pipeline';D.mkdir(exist_ok=False)
++D=C/'readout-pipeline-io-v2';D.mkdir(exist_ok=False)
+ end=datetime.fromisoformat(p['deadline_utc'])
+ while not all((C/name).exists() for name in ['ALL_GENERATION_CLOSED_NO_READOUT.json','ALL_LIKELIHOOD_CLOSED_NO_READOUT.json']):
+  if datetime.now(timezone.utc)>=end:raise TimeoutError('Complete readout unavailable;no automaticretry')
+- for folder in ['generation-pipeline','likelihood-pipeline']:
++ for folder in ['generation-pipeline','likelihood-io-repair-v2']:
+   for child in (C/folder).glob('*-exit.json'):
+    if read(child)['exit_code']:raise RuntimeError('Fixed evaluation failed;no complete readout fabricated')
+  time.sleep(10)
+ env=os.environ.copy();env.update(PYTHONPATH=str(R)+':'+str(R/'local/test-deps'),USE_TORCH_XLA='0',OMP_NUM_THREADS='2',MKL_NUM_THREADS='2')
+-for label,name in [('analyze','analyze_document_evidence_v23_20261019.py'),('check','check_document_evidence_v23_readout_20261019.py'),('render','render_document_evidence_v23_20261019.py'),('protect','protect_document_evidence_v23_readout_20261019.py')]:
++for label,name in [('analyze','analyze_document_evidence_v23_io_v2_20261019.py'),('check','check_document_evidence_v23_readout_io_v2_20261019.py'),('render','render_document_evidence_v23_20261019.py'),('protect','protect_document_evidence_v23_readout_io_v2_20261019.py')]:
+  source=R/'local/analysis'/name
+  assert p['source_files'][str(source.relative_to(R))]==sha(source)
+  assert all(sha(R/name)==value for name,value in p['scoring_source_files'].items())
