@@ -6,20 +6,16 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 00:17UTC handoff: continue until user stops. Matched5120/two-seed
-study, immutable science57d3220, current analysis1610CPUchecks pass. All5S1models
-and all5S1four-panel generation questions close/EBS backed up; no outcome review.
-S2reader320/writer320/direct640 fully audited/frozen and their evals active
-(physical10/11/0). Compact2 closes00:11; CPU full audit session62267/log
-local/analysis/partial-state-v7-cot2-terminal-audit-20261019.log active.
-NEXT:when audit completes, freeze cot2, retain binding, generic evalprep seed1807
-physical1/port64921/shortc7b then launch its generated controller.
-Final full-CoT2 training active,PID305789/start20340285,parent305733,tmux
- dario-ps7-fullcot2,physical3/logical12–15,last160/full64/160,deadline06:30UTC.
-Basename partial-state-v7-cot_full-TRAIN5120-seed2026101807-v1 under diagnostics/
-nvme-study/runs. Closure -> generic audit/freeze/prep/eval physical2/64941/shortf7b.
-Finite queue owns launch:local/diagnostics/partial-state-v7-seed2-remaining-training-queue,
-parentdeadline03:30, no retries; STOP prevents another launch. Never duplicate it.
+October19 00:32UTC handoff: continue until user stops. All10training runs of the
+matched5120/two-seed study complete/audited/protected/frozen. Immutable science57d3220;
+1610CPUchecks pass. All5S1evals plus S2writer/direct closed/EBS backed; no outcomes.
+S2reader3/4panels,compact1/4,B0reference1/4active (physical11/1/4).
+Final full-CoT2evaluation launched00:33UTC:tmux dario-ps7-dev-fullcot2,physical2,
+logical8–11,ports64941–48. All11registered evaluation jobs now launched.
+NEXT:monitor remaining fixed panels,then independently audit whole question.
+All training queue tasks finished; never duplicate launch.
+Archive newly closed R2/compact2/full2/B0 before outcome review with private helper.
+Latest full EBS recovery is full-CoT2terminal640, all other models/original states kept.
 
 All11four-panel controllers must close before gold/accuracy/state review. Registry
 local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
@@ -32,10 +28,11 @@ and every attempt retained. Public analysis never selects/repairs/drops failures
 
 Memory read-only finding:per-step PSS flat between exports; later full saves retain
 ~20GiB across four workers. Public observation JSON is associative, not causal.
-Inspected current cpu_state's reshape/slice/chunk transfers and installed XLA
-xm.save batched CPU path; official docs warn about views. No exporter change,
-no new hardware probe yet. Before multi-hour loops:bounded reproducer, exact tensor
-bytes, actual recovery/memory checks. Current640short runs are safe under guards.
+Bounded export-only diagnostic active physical8/logical32–35,tmux dario-export-memory-v8,
+control local/diagnostics/checkpoint-export-memory-v8-v1,deadline02:15UTC. Four methods,
+six exports each, all actual-shape F32 tensor bytes checked AFTER memory observations.
+Baseline must reproduce growth before candidate interpretation. No actual model/optimizer
+steps, not resumable; actual recovery/RNG qualification still required. Science unchanged.
 
 All original full checkpoints stay on local SSDs. EBS all terminal models plus
 latest full optimizer state; older EBS optimizer duplicates retire only after full

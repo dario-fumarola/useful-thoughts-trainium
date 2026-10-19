@@ -1151,3 +1151,12 @@ finite no-retry queue. Read-only host logs show flat update intervals and~20GiB
 retained at later full-save boundaries. Boundary includes inspection/transfers/
 serialization/allocator activity; no causal attribution or fix. Public observation
 preserved; qualify exporter before much longer loops. Frozen science unchanged.
+
+2026-10-19 00:32 UTC — Allten matched training runs complete; terminal states/ordered
+updates/native witnesses/full optimizer masters audited, protected and frozen.
+No new math outcomes reviewed. Final full-CoT2eval preparation active; finish all11
+controllers before independent whole-question review. Separate four-core export
+question released with fixed source/conditions/thresholds:actual state shapes,
+six sign versions, exact byte readback after memory points, no training steps.
+Baseline must reproduce growth; a candidate is not a training/restart qualification.
+No science-source or current evaluation changes. Full-CoT2latest EBS recovery protected.

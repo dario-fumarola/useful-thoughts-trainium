@@ -51,11 +51,10 @@ outputs and the fixed first two examples per panel are public and EBS-archived:
 
 Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
 compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
-Both compact and full-trace baselines remain competitors. All first-seed training
-runs and all first-seed generated outputs are complete. Second-seed reader320,
-writer320 and direct640 are audited/frozen; compact640 is closed with its audit
-underway, and full-trace640 is the final active training run. Evaluations continue.
-No new DEV accuracy is reported yet.
+Both compact and full-trace baselines remain competitors. All ten training runs
+are complete, independently audited, protected and frozen. First-seed evaluations
+are complete; second-seed and unchanged-base evaluations continue. No new DEV
+accuracy is reported until the entire fixed question closes.
 [First-seed training](validation/partial_state_v7_cot_full_seed2026101806_training_20261018.json) ·
 [second reader](validation/partial_state_v7_reader_seed2026101807_training_20261018.json) ·
 [second writer](validation/partial_state_v7_writer_seed2026101807_training_20261018.json) ·

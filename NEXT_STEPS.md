@@ -16,27 +16,24 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. All5first-seed training/evaluation jobs close and full evidence is EBS-readback
-   protected; no outcomes reviewed. Seed2R320/W320/A640 independently audited,
-   protected and frozen; their W/R/A evals are active (physical10/11/0).
-   Compact2 closes00:11UTC; full audit session62267/log
-   `local/analysis/partial-state-v7-cot2-terminal-audit-20261019.log` active.
-   When complete, freeze actual cot2 via checkpoint.identity, preserve binding,
-   run generic single-model evalprep seed2026101807 physical1/port64921/shortc7b,
-   then launch generated controller. This is the next manual task.
-   Final full-CoT2 active tmux `dario-ps7-fullcot2`,PID305789/start20340285,
-   physical3/logical12–15,deadline06:30UTC,last160/full64/160. Its closure -> full
-   audit/freeze/prep/eval physical2/port64941/shortf7b. Do not duplicate launch.
-   Finite queue owns remaining training:
-   `local/diagnostics/partial-state-v7-seed2-remaining-training-queue`;
-   parent deadline03:30UTC, no retries; STOP prevents another launch.
+3. All10training runs are complete, independently audited, protected and frozen.
+   All5first-seed evaluation controllers close and are EBS readback backed up;
+   seed2writer/direct also close, reader finishes its last panel, compact active
+   physical1. Final full-CoT2 passes640/full-state audit and fixed eval is launched:
+   tmux `dario-ps7-dev-fullcot2`,physical2/port64941/shortf7b.
+   NEXT:monitor remaining fixed evals; archive closed ones,then whole audit.
+   B0reference physical4 active. Training queue closed; no more training released.
    Source remains immutable57d3220. Every original full state remains intact.
    A/compactS1receipts have explicit640correction annexes; other640templates fixed.
    Main independent audit requires all11controllers closed before any outcomes.
    Registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
    Includes10primary jobs plus one shared unchanged-B0direct/cot/empty reference,
    not two B0replicas. Planned51200answers/4096notes, all errors/caps retained.
-   Keep early closed-output EBS readback backups. No TEST/RL/8B launch.
+   Archive newly closed R2/compact2/full2/B0 outputs before outcome review.
+   Script: `local/analysis/archive_closed_v7_evaluation_20261019.py`.
+   Whole audit:source env;USE_TORCH_XLA=0 OMP/MKL2 python
+   `scripts/audit_partial_state_study.py --root /home/ubuntu/dario --registry`
+   followed by the absolute registry path above. No TEST/RL/8B launch.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -93,3 +90,12 @@ Cause remains unresolved; separate inspection/transfer/serialization/allocator
 factors before a much longer loop. Current bounded640jobs stay below measured
 node limits. Candidate official XLA serialization needs actual byte/recovery/
 memory qualification; no fix has been applied to frozen science source.
+
+One separate engineering question is active on spare physical8/logical32–35:
+`local/diagnostics/checkpoint-export-memory-v8-v1`,tmux dario-export-memory-v8.
+Four paths:current sliced export,direct .cpu(),official xm.save,sliced+gc/trim;
+six exports of actual optimizer-shaped F32 tensors, exact sign-version readback.
+No model/optimizer updates; not resumable. Deadline02:15UTC, no retry; baseline
+must reproduce>1GiB/export before a lower-growth candidate is meaningful. Even
+an exact candidate needs actual full training/restart/RNG qualification. Current
+science source is unchanged. All controls/results remain separate from math study.

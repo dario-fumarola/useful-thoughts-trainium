@@ -1,21 +1,28 @@
-# Status — 2026-10-19 00:17 UTC
+# Status — 2026-10-19 00:33 UTC
 
 
 ## Active: matched-cost partial-computation study
 Question: does useful fresh computation beat competitive solvers at matched updates and starting B0?
-ID:partial-state-v7-matched5120; two seeds, terminal primary, immutable source57d3220,1610CPUchecks pass.
-All5first-seed models/audits/generated panels complete and EBS-readback; outcomes remain unopened.
-Seed2R320/W320/A640 audited/frozen; compact640 closes00:11UTC, its independent full audit active.
-Final full-CoT640 active:PID305789/start20340285,tmux dario-ps7-fullcot2,physical3/logical12–15.
-Controls/output basename partial-state-v7-cot_full-TRAIN5120-seed2026101807-v1 under diagnostics/nvme-study/runs.
-Last160/full64/160;deadline06:30UTC. Finite queue owns this launch; no manual duplicate/retry.
-Queue:local/diagnostics/partial-state-v7-seed2-remaining-training-queue;STOP prevents future launches.
-Seed2W/R eval physical10/11 active; A2eval physical0 active; B0reference physical4 active.
-COT2audit log:local/analysis/partial-state-v7-cot2-terminal-audit-20261019.log; next freeze/prep/eval physical1.
-Final640closure -> audit/freeze/prep/eval physical2. Primary registry names all11four-panel controllers.
-No new outcome review until all11close; single shared B0reference,51200answers/4096notes planned.
-Original full states intact; EBS all terminal models/latest full recovery;35GiB floors.
-Host PSS jumps~20GiB at later full-save boundaries; cause unresolved, future long-loop gate. No TEST/RL/8B.
+ID:partial-state-v7-matched5120;two seeds,terminal primary,immutable57d3220,1610CPUchecks pass.
+All10training runs complete,independently audited,full-state protected and frozen.
+All5S1four-panel evals and S2writer/direct close; outputs EBS readback,no outcomes reviewed.
+S2reader3/4panels,compact1/4panels,B0reference1/4panels;physical11/1/4 respectively.
+Final full-CoT2eval launched:tmux dario-ps7-dev-fullcot2,physical2/logical8–11,port64941.
+NEXT:finish all fixed panels and EBS readbacks,then run whole-question independent audit.
+Registry:local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
+All11controllers must close before whole-question independent outcome audit;51200answers/4096notes.
+Primary4systems/two seeds unchanged;B0one shared reference,not two replicas;all caps/errors retained.
+Alloriginal full states intact;EBS all terminal models and latest full recovery (full-CoT2).
+Training queue closed,no retries/new training. No TEST/RL/8B;current cost advantage unresolved.
+
+## Active: bounded checkpoint-export memory diagnosis
+Question: can the export-associated PSS growth be reproduced and avoided with exact tensor bytes?
+ID:checkpoint-export-memory-v8-v1;one batched four-condition question on physical8/logical32–35.
+Six actual-shape F32 state exports/condition,sign-versioned;no model/optimizer updates,not resumable.
+Current sliced,direct,official xm.save,sliced+gc/trim; full byte verification follows all memory points.
+Baseline must reproduce>1GiB/export;candidate<0.5GiB/export plus all bytes/source/live-state checks.
+Control:local/diagnostics/checkpoint-export-memory-v8-v1;tmux dario-export-memory-v8,deadline02:15UTC.
+No result yet;source57 unchanged. Candidate still needs actual full training/restart/RNG qualification.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?
