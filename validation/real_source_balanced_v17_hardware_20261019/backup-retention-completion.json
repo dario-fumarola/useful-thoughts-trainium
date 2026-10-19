@@ -1,0 +1,106 @@
+{
+  "status": "ONLY_OLD_EBS_OPTIMIZER_DUPLICATES_RETIRED_ORIGINALS_AND_ALL_MODELS_RETAINED",
+  "utc": "2026-10-19T10:43:41.539440+00:00",
+  "authorization": "Existing NEXT_STEPS/AGENTS latest-full retention:older inactive optimizer duplicates retire only after fresh both-side full hashes and verified newer protection.",
+  "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320",
+  "old_backup": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320",
+  "old_files": {
+    "model.pt": {
+      "bytes": 3441248275,
+      "sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "4069aaf26770dc8f779a2f01a98dc8e30f1ed88f837d584a3b87163fac068662"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278407,
+      "sha256": "61b1d56c41e2965e5729c3fb76276bd1c85cb1abda6a4b5ccdc876e9bd31b9ea"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278471,
+      "sha256": "c5849b1fab11f1370ae1be9abefc8316f2c9e656c0f1dc11771428ce4f935527"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278407,
+      "sha256": "6a183d78082d10d140239c8aca2d6126efb4fd4442806ae303d1accba59c6ddc"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "d4f6c334a2b50c92d93139cdece8049e79d1a9727bc5a410d7d13b946a3e1ff4"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278407,
+      "sha256": "4dbf4a3e460f35f99a1c4ef949437eb10c5c88f1ac8bb05e44be3aa6d6956854"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278471,
+      "sha256": "3a22e172b13db04afa6e52ae25b9312b156f4b5303e2bf9ada36af15f55135b7"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278407,
+      "sha256": "6157a132a71a5e3fa6c7e2f9c603eceddd672b1ed3abae3a2fba4956c081c541"
+    }
+  },
+  "newer_original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-target-sft-v15-target_direct-TRAIN5120-seed2026101913-v1/step-0000320",
+  "newer_full_backup": "/home/ubuntu/dario/local/backups/science/real-target-sft-v15-study-v1/TERMINALS/latest-full320",
+  "newer_files": {
+    "model.pt": {
+      "bytes": 3441248339,
+      "sha256": "5528cdd8e1e4b21bbd7d5ebc5ab4f6861d120f2256d2f0e3b4668166d6d12693"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278407,
+      "sha256": "97941f85a7a2f3d1ec0cc030aae6d44231f58e4a6bf7412dcf8319dd31af6522"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "4b62967da10b707c83b57cda6ab1f9f3600ceab71e23e328698ff158d07aa11e"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "39a264efdd001f65a61dc7ec1c45d1b4e3ab0699e17fb497a269792c92c02fa5"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "d2eee8bb8d6ca4896e38ef5e5d1c6a6c51522bc2c7e871d3c9504554230a47aa"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278407,
+      "sha256": "83c23e8b7737eb7e3acfb5af630daf4206fb92b40d0c03ab655c70dca5f830bc"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "51e2512c3b475ebbc694aec63159a668f5a598b15ed8f751e64129595ab5dc70"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "ff0d3f80865172973cfd7a92406ba8e273a2eaa3611295d527ab1dbdb1644c0a"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "60f7e3a3bb5572e1e1ca9056d5c0e1a266b2ee7d2d93860453ef829bf011a2fa"
+    }
+  },
+  "older_protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+  "newer_protection_sha256": "670b7a7acd29d8d9ce4286542b71e92382fd2957371e7e169821aecba53b1f40",
+  "only_delete": [
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00000.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00001.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00002.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00003.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00004.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00005.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00006.pt",
+    "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320/rank-00007.pt"
+  ],
+  "root_free_before": 43027881984,
+  "duplicate_bytes": 20650227512,
+  "planned_new_full_bytes": 24091475915,
+  "projected_floor_after_new_full_before_retiring_V15": 38512891757,
+  "next_backup_order": "Protect new scientific full320 FIRST,verify it,then retire V15 optimizer duplicates before copying remaining three newmodel files. No original ormodel deletion.",
+  "root_free_after": 63678128128,
+  "retained_original_full_manifest_sha256": "24769e545f70efa7d7d729f02f9d48603fc0888f7ee2d2722c298186248233f4",
+  "newer_full_manifest_sha256": "c648a05d6f78654f07b9d83b57ec715a4516d9bdb46dad617f11d559a472bc28",
+  "limits": "The older EBS directory is now model/receipt-only. Its immutable historical COMPLETE/ARCHIVE receipts describe the former full copy;restore the original onNVMe if needed. The newer EBS full state remains complete. Same-instance protection,not off-instancebackup."
+}

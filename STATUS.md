@@ -1,17 +1,17 @@
-# Status — 2026-10-19 10:31 UTC
+# Status — 2026-10-19 10:49 UTC
 
 ## Active: preserve source prediction with useful computation
-Question: can the arithmetic gain survive a separately normalized source-prefix loss?
-Experiment: real-source-balanced-v17; source_direct/source_cot, fresh B0, proposed two-seed320 study.
-Source37028a1: 1,656 CPU checks plus smoke/compile pass; all10,240 native TRAIN views verified.
-Both arms retain4,489,846 source labels and all V15 task labels; each component gets0.5 mean weight.
-Qualification V2: CoT1–6/fullrestore6→8 closed;direct1–3 and independent audit remain.
-Control: local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2.
-V1 launch PATH failure stopped before NRT allocation/update; original attempt retained, V2 helper checked.
-Fresh TRAIN confirmation512 plusordinary256 frozen fromshards63/62;all512 native partitions exact.
-No new scientific model, held forward, RL or8B is released. CPU readiness is not hardware success.
-Report: validation/real_source_balanced_v17_CPU_readiness_20261019.json.
-Next: monitor qualification;independently audit all states/components;finish/freeze confirmation and design.
+Question: can arithmetic gains survive a separately normalized source-prefix loss?
+Experiment: real-source-balanced-v17; source_direct/source_cot, fresh B0, two seeds320 each.
+Source37028a1:1,656 CPUchecks andall10,240 native TRAINviews pass;bothcomponents weighted0.5.
+ActualhardwarePASS:11 updates/6 fullstates/fullrestore;independent masks/loss/master/native audit passes.
+Four science controllers released;all32 ranks captured;first finite updates complete, no failures.
+Control:local/diagnostics/real-source-balanced-v17-study-v1;tmux source-train-v17-*.
+Fresh512 arithmetic plus256 ordinary documents/design frozen before held forwards ornewtraining.
+Seven frozen references evaluate concurrently;fournew models waitterminal audit/protection/binding.
+Primary:own−direct>=3pp withpositiveCI/controls;ordinaryNLL upperCI<=+0.03 versusB0,bothseeds.
+Report:validation/real_source_balanced_v17_hardware_20261019.json;no capability readout yet.
+Next:monitor mechanicalhealth;complete-only readout afterall11models/panels close;noRL/8Brelease.
 
 ## Closed: stronger supervised real-document reference
 Question: does full-trace CoT SFT beat direct-answer SFT on fresh real computations?

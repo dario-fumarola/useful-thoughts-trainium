@@ -1,0 +1,23 @@
+{
+  "status": "RELEASED_FOUR_DECLARED_FRESH_REAL_SOURCE_BALANCED_MODELS",
+  "utc": "2026-10-19T10:46:26.909778+00:00",
+  "plan_sha256": "0f83b6db9210385c63f26d18c1bdfe8be42107aae78384f78a8c6c25e0f6fa0a",
+  "supervisor_sha256": "7a60adf1b28335f62e7760143a763fafb4fdfbfa521705d1177f7d2a225ff251",
+  "helper_sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualification-independent-audit.json",
+  "qualification_sha256": "b96414528f7e3f27b20ce50eb10c4e578aa41429d6e7fd73d09fce7641541dd8",
+  "scope": "Exactlysource_direct/source_cot,twofixedseeds,320updates/twopasses,terminalprimary;noextensions/retries/checkpointselection.",
+  "hardware": "Four8rankjobsphysical0..7,allfreshB0.",
+  "review": "Rootreviewed1656CPUchecks/all10240actualnativepacks;11actualqualifiedupdates/fullrestore/all6fullstates/memoryaudit;frozendesign/new512+256;sourceclosure/idledevices/ports/storage.",
+  "resources": {
+    "root_free_bytes": 63672143872,
+    "new_full_payload_bytes": 24091475915,
+    "root_reserve_bytes": 37580963840,
+    "backup_order": "Full160/320;alloriginalsNVMe. Protectnewfull320FIRST;freshverify;thenretireolderV15EBSoptimizerduplicates;protectremainingterminalmodels. Keep35GiBfloor."
+  },
+  "limits": [
+    "Nouninterruptedtrajectoryparity/deviceRNGreadback/stochasticRLqualification.",
+    "NoV17capabilityoutcomesreviewed.",
+    "Tasklabelsandinferencebudgetsunequal;notFLOPmatching."
+  ]
+}

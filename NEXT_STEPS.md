@@ -12,27 +12,24 @@
    Terminal states and all original outputs/readouts are readback protected.
    Source829d9a2/evaluation41a5bfd remain frozen; producers are physically closed.
 
-2. Finish source-balanced V17 qualification and fresh confirmation preparation.
-   Frozen branch37028a1: 1,656 CPU checks and10,240 real native packs pass.
-   Reuse existing two-component CE:0.5 source-prefix mean +0.5 task mean perexample.
-   Same TRAIN5120/two passes/320updates;source_direct/source_cot,world8×micro4,
-   width640,target640. No new scientific training release yet.
-   Hardware control:local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2.
-   Tmux source-balanced-v17-qualification-v2;actual8workers onphysical12/13.
-   CoT1–6/fullrestore6→8 physically closed;direct1–3 still active;independent audit pending.
-   V1 PATH-only failure before allocation is retained. Small evidence backedup;
-   original qualification full states/models remainNVMe;scientific EBS reserve protected.
-   Independent auditor prepared:local/analysis/audit_real_source_balanced_qualification_v17_20261019.py.
-   It must verify independent source/task label formulas andweighted loss,allstate bytes,
-   restored optimizer digests,memory andphysicalclosure before declaring hardwarePASS.
-   Confirmation: pinned HF FineMath4+ TRAIN shards63/62 now complete;1,838 verified source computations.
-   Pipeline session useslocal/analysis/*real_source_confirmation_shard_v17_20261019.py.
-   Current private source/curation dirs endfresh-source-shard62-v1/fresh-curation-shard62-v1.
-   Frozen512 unique fitting expressions plus256 ordinary new documents byfixedhash,
-   excluding oldTRAIN/DEV ASTs/pages;keepoldTEST/unlistedtext opaque. No model-outcome selection.
-   Design/datahashes published;prepare protected baseline evaluations,confirmstoragebudget,
-   releaseonlyqualifiedfourfreshmodels afteractualauditPASS.
-   No broadRL,sizejump orsplitrescue. V15 positive inference/negativeNLL result staysunchanged.
+2. Complete the released source-balanced V17 study and fixed11-model evaluation.
+   Source37028a1:1656CPUchecks;all10240actualnativepacks;actualqualificationPASS.
+   Elevenupdates/sixfullstates/fullrestore/components/native/master/casts independently verified.
+   Control:local/diagnostics/real-source-balanced-v17-study-v1;fourfreshB0jobs active.
+   SameTRAIN5120/twopasses/320updates;world8×micro4,width640,target640,LR1e-5.
+   Objective0.5meanCE(sourceprefix)+0.5meanCE(task),sameprefixlabels,botharms.
+   Frozennewconfirmation512+ordinary256;designpublishedbeforeheldforwards/scientificrelease.
+   Sevenoldreferencesreleased;fournewmodels queueafterterminalstateaudit/protection/binding.
+   Mastereval:local/diagnostics/real-source-eval-v17-study-v1;sourcec9b399b,1668CPUchecks.
+   Runmechanicalhealth:source scripts/env.sh;python local/analysis/live_real_source_v17_health_20261019.py.
+   No partialcapabilityreview;all11models/panelsmustphysicallyclosebeforeonecompletereadout.
+   Perseed:own−directraw>=3pp/positivepairedlower,own−empty/B0lowerpositive,zeroerrors;
+   ANDordinaryNLLupper95%CI<=+0.03nat/tokenversusB0. Bothseedsrequired.
+   Full160/320originalsstayNVMe. ProtectnewfullFIRST,verify,retireolderV15optimizerduplicates,
+   thenprotectremainingmodels. Readback/fsync;35GiBfloor. Allmodels/originalsretained.
+   Currentlatestprotectedfull=V15;olderV10optimizerEBSduplicatesretiredafterfreshbothsidehashes.
+   Reports:validation/real_source_balanced_v17_{design,confirmation,hardware}_20261019.json.
+   No broadRL,sizejump,expanded splitrescue,officialTEST orautomaticfollowuprelease.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

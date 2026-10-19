@@ -1306,3 +1306,13 @@ Preserve the cost: ordinary NLL +0.128/+0.147 nats/token versusB0, full16 belowB
 This is a useful supervised arithmetic reference, not broad pretraining benefit.
 Next bounded question is source-quality retention with separately normalized
 source/task objectives. No broadRL,8B or expanded split rescue is released.
+
+2026-10-19 10:50 UTC — Release source-balanced V17 after actual qualification.
+The existing two-component CE engine passes eleven real updates, six full-state
+readbacks and a fresh-process optimizer restore at the exact declared shape.
+Source/task counts and weighted loss are independently verified; four fresh B0
+models now run for the frozen320 updates. Fresh confirmation512/ordinary256 and
+both-seed accuracy/source-quality gates were published before evaluation/training.
+No partial capability review. Retire only older EBS optimizer duplicates after
+fresh both-side hashes and newer full protection; all originals/models remain.
+The new full checkpoint must be protected before retiring V15 optimizer copies.

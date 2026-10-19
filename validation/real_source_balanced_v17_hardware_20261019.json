@@ -1,0 +1,114 @@
+{
+  "status": "PASS_ACTUAL_BOTH_COMPONENT_TRAINING_AND_FULL_RESTORE_FOUR_FIXED_MODELS_RELEASED",
+  "utc": "2026-10-19T10:48:26.234719+00:00",
+  "question": "Doesactualsource-balancedcausaltraining/update/save/restoreworkatthedeclaredshape?",
+  "experiment": "real-source-balanced-v17",
+  "source_commit": "37028a1",
+  "CPU_checks": 1656,
+  "actual_native_TRAIN_views_checked": 10240,
+  "shape": {
+    "world_size": 8,
+    "micro_batch": 4,
+    "global_batch": 32,
+    "width": 640,
+    "target_slots": 640,
+    "head_chunk": 32,
+    "accumulation": 1
+  },
+  "actual_updates": {
+    "source_cot": 8,
+    "source_direct": 3
+  },
+  "full_checkpoints": 6,
+  "native_checks": 24,
+  "distinct_native_contexts": 4,
+  "changed_master_cast_replica_witness_updates": 9,
+  "post_save4_to6_PSS_growth_GiB": 1.8777284622192383,
+  "qualification_audit_sha256": "b96414528f7e3f27b20ce50eb10c4e578aa41429d6e7fd73d09fce7641541dd8",
+  "release": {
+    "status": "RELEASED_FOUR_DECLARED_FRESH_REAL_SOURCE_BALANCED_MODELS",
+    "utc": "2026-10-19T10:46:26.909778+00:00",
+    "plan_sha256": "0f83b6db9210385c63f26d18c1bdfe8be42107aae78384f78a8c6c25e0f6fa0a",
+    "supervisor_sha256": "7a60adf1b28335f62e7760143a763fafb4fdfbfa521705d1177f7d2a225ff251",
+    "helper_sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f",
+    "qualification_file": "/home/ubuntu/dario/local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualification-independent-audit.json",
+    "qualification_sha256": "b96414528f7e3f27b20ce50eb10c4e578aa41429d6e7fd73d09fce7641541dd8",
+    "scope": "Exactlysource_direct/source_cot,twofixedseeds,320updates/twopasses,terminalprimary;noextensions/retries/checkpointselection.",
+    "hardware": "Four8rankjobsphysical0..7,allfreshB0.",
+    "review": "Rootreviewed1656CPUchecks/all10240actualnativepacks;11actualqualifiedupdates/fullrestore/all6fullstates/memoryaudit;frozendesign/new512+256;sourceclosure/idledevices/ports/storage.",
+    "resources": {
+      "root_free_bytes": 63672143872,
+      "new_full_payload_bytes": 24091475915,
+      "root_reserve_bytes": 37580963840,
+      "backup_order": "Full160/320;alloriginalsNVMe. Protectnewfull320FIRST;freshverify;thenretireolderV15EBSoptimizerduplicates;protectremainingterminalmodels. Keep35GiBfloor."
+    },
+    "limits": [
+      "Nouninterruptedtrajectoryparity/deviceRNGreadback/stochasticRLqualification.",
+      "NoV17capabilityoutcomesreviewed.",
+      "Tasklabelsandinferencebudgetsunequal;notFLOPmatching."
+    ]
+  },
+  "files": {
+    "qualification-qualification-independent-audit.json": {
+      "bytes": 56545,
+      "sha256": "b96414528f7e3f27b20ce50eb10c4e578aa41429d6e7fd73d09fce7641541dd8"
+    },
+    "qualification-protocol.json": {
+      "bytes": 5136,
+      "sha256": "d3a040c3a25123b16278015416c4fb6a80538117bfd4eca9a2693968ca420aec"
+    },
+    "qualification-plan.json": {
+      "bytes": 4728,
+      "sha256": "4faf226cf02183da95ce2398bd717e470522a2e1f3ae59f958fc213fd9120817"
+    },
+    "qualification-qualification-release.json": {
+      "bytes": 669,
+      "sha256": "df2ca1feed9ec4f1db13f9f823b2d00f2448fece35a2c57d551e5a0c401e4870"
+    },
+    "qualification-qualify.py": {
+      "bytes": 8081,
+      "sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f"
+    },
+    "study-plan.json": {
+      "bytes": 3170,
+      "sha256": "0f83b6db9210385c63f26d18c1bdfe8be42107aae78384f78a8c6c25e0f6fa0a"
+    },
+    "study-release.json": {
+      "bytes": 1545,
+      "sha256": "1bc328a7ed035ebc89bd74904f368f56a585126e511b4ea0d7ebdcde49123f8f"
+    },
+    "study-supervise-job.py": {
+      "bytes": 7023,
+      "sha256": "7a60adf1b28335f62e7760143a763fafb4fdfbfa521705d1177f7d2a225ff251"
+    },
+    "audit_real_source_balanced_qualification_v17_20261019.py": {
+      "bytes": 12222,
+      "sha256": "dd0906b674ec2d50eb814339a1ec27febad2477d27f31d81f3e16077ef602b51"
+    },
+    "real-source-balanced-v17-native-pack-audit-20261019.json": {
+      "bytes": 3842,
+      "sha256": "82506a606995a4a1106ebccf65a129a353075e68521f5b89809375f90f3d860f"
+    },
+    "release_real_source_study_v17_20261019.py": {
+      "bytes": 4902,
+      "sha256": "0129a2f36c137d6aab7a4d5e23f581a2e45ca5de5cefa7cedcd5a486f8e858b8"
+    },
+    "protect_real_source_four_terminals_v17_20261019.py": {
+      "bytes": 6518,
+      "sha256": "df60d73dcb624b544547bdeaf7535bfceeb503ffb8305085a8327a4ad3e1f8f4"
+    },
+    "backup-retention-completion.json": {
+      "bytes": 5399,
+      "sha256": "62da087954a5480ba639fd098a5a2bd9fc77b0db465e68d4e49f6e5d4402a920"
+    }
+  },
+  "limits": [
+    "Eleven bounded real updates,not capability evidence or indefinite-memory guarantee.",
+    "No uninterrupted/resumed bitwise-parity claim.24native checks repeat4 canonical contexts.",
+    "Both qualification models excluded from science;all four study models must start fresh B0.",
+    "Original six full states/models remain NVMe;EBS holds small engineering evidence and all scientific terminal models/latestfull320 separately.",
+    "RNG restoration runs in the verified driver;no independent immediate device-RNG readback or stochastic-RL qualification.",
+    "NoV17capabilityoutcomehasbeenreviewed;all11models/panelsmustclosebeforeonecompletereadout.",
+    "TheolderV10EBSoptimizerduplicateisretiredafterfreshbothsidehashes/newerfullstateverification;alloriginalcheckpointsandallmodelsremain."
+  ]
+}
