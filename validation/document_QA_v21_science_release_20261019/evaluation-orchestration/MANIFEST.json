@@ -1,0 +1,216 @@
+{
+  "status": "FROZEN_EVALUATION_EXECUTION_AND_READOUT_SOURCES_NO_CAPABILITY_REVIEW",
+  "utc": "2026-10-19T14:46:43.211020+00:00",
+  "files": {
+    "supervise_document_QA_v21_generation_group_v3_20261019.py": "693368f6d4d22ec2601d377666e5a2e4880ce06b91bb8040ba878b5ff9767173",
+    "watch_document_QA_v21_trained_generation_20261019.py": "2fb65f981c6f714478986fa900967b12c472e63a34a14bc254cbc67fe0cf4c0b",
+    "document_QA_v21_likelihood_job_20261019.py": "9c10ba9371a1d1300de22ff9a27bd64c853d889b2af3ebadbb7cbb89d5ab961c",
+    "supervise_document_QA_v21_likelihood_group_20261019.py": "3900a348b1601c406f67459e054358899d31c140fa49d232e8544f195dd17f94",
+    "watch_document_QA_v21_likelihood_20261019.py": "6b95f04b0a69b40bdf0da17ef67af21e1acd47e103a063a2777cd0abf25464c1",
+    "analyze_document_QA_v21_20261019.py": "e72ff4d67c0ea12638196aa5f4cff41a48acbd717c5e6d96748778c32c4789de",
+    "check_document_QA_v21_readout_20261019.py": "0fdd7bde9720623abd0fef37967d827c34ad088a59c0c1454f169f9af20f9b9a",
+    "render_document_QA_v21_20261019.py": "e5b4f048a51e7d740c277afabd8b16c96f6976d285906013f124c6cbe4e4bfaa",
+    "protect_document_QA_v21_readout_20261019.py": "0b7937799d8eec1aca0b9f40ed5f50f1943eb60352c5163e45d4db0c22055332",
+    "watch_document_QA_v21_readout_20261019.py": "768595570e8efd03b762c0b2b25110fcc8bcaa27c67703ee1efb69ecfb2fe00c"
+  },
+  "parent_release_sha256": "5847fc816b7b469f9c236a0acbf8abb2b1a64fb7229ea8940a592a40f12abd1c",
+  "execution_plan": {
+    "status": "FROZEN_ORCHESTRATION_ONLY_SAME_CONDITIONS_MODELS_AND_METRICS",
+    "utc": "2026-10-19T14:26:28.972386+00:00",
+    "parent_release_sha256": "5847fc816b7b469f9c236a0acbf8abb2b1a64fb7229ea8940a592a40f12abd1c",
+    "initial_groups": [
+      {
+        "model": "qa_direct-seed2026101921",
+        "label": "all",
+        "modes": [
+          "direct",
+          "prior",
+          "reference_cot",
+          "question_only_direct"
+        ],
+        "physical": 0,
+        "logical_cores": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "model": "qa_direct-seed2026101922",
+        "label": "all",
+        "modes": [
+          "direct",
+          "prior",
+          "reference_cot",
+          "question_only_direct"
+        ],
+        "physical": 1,
+        "logical_cores": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101921",
+        "label": "prior",
+        "modes": [
+          "prior"
+        ],
+        "physical": 4,
+        "logical_cores": [
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101921",
+        "label": "short",
+        "modes": [
+          "direct",
+          "empty",
+          "oracle"
+        ],
+        "physical": 5,
+        "logical_cores": [
+          20,
+          21,
+          22,
+          23
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101921",
+        "label": "reference",
+        "modes": [
+          "reference_cot"
+        ],
+        "physical": 6,
+        "logical_cores": [
+          24,
+          25,
+          26,
+          27
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101921",
+        "label": "evidence",
+        "modes": [
+          "question_only_prior",
+          "bridge_removed_prior"
+        ],
+        "physical": 7,
+        "logical_cores": [
+          28,
+          29,
+          30,
+          31
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101922",
+        "label": "prior",
+        "modes": [
+          "prior"
+        ],
+        "physical": 8,
+        "logical_cores": [
+          32,
+          33,
+          34,
+          35
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101922",
+        "label": "short",
+        "modes": [
+          "direct",
+          "empty",
+          "oracle"
+        ],
+        "physical": 9,
+        "logical_cores": [
+          36,
+          37,
+          38,
+          39
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101922",
+        "label": "reference",
+        "modes": [
+          "reference_cot"
+        ],
+        "physical": 10,
+        "logical_cores": [
+          40,
+          41,
+          42,
+          43
+        ]
+      },
+      {
+        "model": "qa_prior-seed2026101922",
+        "label": "evidence",
+        "modes": [
+          "question_only_prior",
+          "bridge_removed_prior"
+        ],
+        "physical": 11,
+        "logical_cores": [
+          44,
+          45,
+          46,
+          47
+        ]
+      },
+      {
+        "model": "qa_post-seed2026101921",
+        "label": "all",
+        "modes": [
+          "direct",
+          "prior",
+          "reference_cot",
+          "question_only_direct"
+        ],
+        "physical": 2,
+        "logical_cores": [
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "model": "qa_post-seed2026101922",
+        "label": "all",
+        "modes": [
+          "direct",
+          "prior",
+          "reference_cot",
+          "question_only_direct"
+        ],
+        "physical": 3,
+        "logical_cores": [
+          12,
+          13,
+          14,
+          15
+        ]
+      }
+    ],
+    "replays": "qa_prior seed1921 after prior group closes,reuse its physical4;seed1922 reusephysical8. Same frozen prepare_replays,all512 native prior outputs,cyclic donor rule. No result inspection.",
+    "baseline": "Alreadyrunning4shards onphysical12 with all7 B0 modes.",
+    "likelihood": "Four fixed batch4 scoring shards permodel,5 QA modes\u00d7512 plusordinary256. CPU calibration first;start onphysical14/15 onlywhile generation active. After all initial/replay/B0 groups close,remaining physical0\u201311 may serve scoring groups. Source/data/targeting unchanged by partitioning.",
+    "readout": "Exactly20,992 generated answer attempts and19,712 LL rows across7models. One finalreadout after all globalclosures;no prompts/checkpoints selected.",
+    "scope": "Grouping only exploits idle hardware. Each model/mode/question executes once. Same perquery greedy source,precision,cap,untruncatedcontext,and all error denominators."
+  },
+  "semantics": "Scheduling of the alreadyreleased20,992generation attempts and19,712LLrows only;no extra observations,prompt selection or changes to endpoints/data/checkpoint. Controllers preserve originals and stop on failures,no automaticretry. Analyzer guarded by both global closures;independentchecker recomputes native/text/metrics/bootstrap. Sources are ready/AST checked;this is not evidence that future held execution has completed."
+}

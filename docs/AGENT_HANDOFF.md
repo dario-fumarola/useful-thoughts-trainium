@@ -1,4 +1,4 @@
-# Handoff — 2026-10-19 14:29 UTC
+# Handoff — 2026-10-19 14:47 UTC
 
 Read STATUS.md and NEXT_STEPS.md first. User says work autonomously until stopped;
 weeks available. Continue to relevant results,not a final acknowledgement at a
@@ -61,9 +61,9 @@ output local/nvme-cpt/evaluation/document-QA-v21-B0-held512-v1.
 Controller tmux document-QA-v21-B0-generation;C/B0-generation,rootlog
 C/B0-generation-supervisor.log. Actual4process allocation captured. Do not read
 answers/accuracy;monitor rowcounts and errors only until full study closes.
-Active v1 generation-group controller remains immutable. Future use v2:
-local/analysis/supervise_document_QA_v21_generation_group_v2_20261019.py.
-It changes TMPDIR identity to protocolhash to avoid sequential replay collisions.
+Active v1 generation-group controller remains immutable. Future use v3:
+local/analysis/supervise_document_QA_v21_generation_group_v3_20261019.py.
+It uses protocolhash TMPDIR and replay-specificports to avoid sequential collisions.
 
 Frozen C/evaluation-execution-plan.json:12 initial trained generation groups.
 Direct/post all4modes per model onphysical0/1/2/3. Prior seed1921 groups:
@@ -71,8 +71,8 @@ prior-only→4,short(direct/empty/oracle)→5,reference→6,evidence(questiononl
 Prior seed1922 analogousphysical8/9/10/11. After prior-only groups close,
 prepare_replays and reuse their freedphysical4/8. B0 staysphysical12 untilclosed.
 This groups the same frozen conditions for speed;no extra observations/selections.
-Still implement the post-binding model preparation/subset protocol/controller runner
-and replay watchers. Preserve total20,992 generation attempts across7models.
+Post-binding preparation,12 groups and replay watchers are ACTIVE in tmux
+document-QA-v21-trained-generation-pipeline. Source local/analysis/watch_document_QA_v21_trained_generation_20261019.py. Preserve total20,992 generation attempts across7models.
 Full model prepare may create all initial prompt projections/native references;
 subgroups copy those same bytes/native refs and subset modes. Do not modify DBdcode.
 prepare_replays consumes only the completed prior-only group and all512 failures.
@@ -88,9 +88,17 @@ signature/lineage,allcontext bounds and everyinput hash. Four shards,batch4;
 Source spanworktree0d1a5b4. CandidateXLA onlyafter permodelTRAINcalib max-token/
 absolute mean-span errors<=.001;otherwise rootreview/CPUfallback per frozenrelease.
 No silent dropped/shortened context ormissingLLestimates. Exceptions retained.
-Need implement its group controller/closure and overall queue. Reservephysical14/15
+LL group/controller and queue are ACTIVE:tmux document-QA-v21-likelihood-pipeline,
+local/analysis/watch_document_QA_v21_likelihood_20261019.py. Registry C/likelihood-registry.json. Reservephysical14/15
 forLL whileGENactive;after all GEN/Replays/B0close,free0–11 mayserve remainingLL.
-Need independent allraw-attempt/native/parser/count/CI readout and protected publication.
+Readout watcher ACTIVE:tmux document-QA-v21-readout-pipeline;after both global closures
+runs analyze_document_QA_v21→check_document_QA_v21_readout→render→protect once.
+Analysis sources and stagelogs local/analysis and C/readout-pipeline. No autoretry.
+Independent designatedfield/cap/error synthetic cases and bootstrap endpoints checked;
+AST passes. These checks do not assert held execution completed.
+Span qualification independent recomputation/archive nowPASS;public validation/document_QA_v21_span_hardware_20261019.json includes nativearrays.
+First128 independent full protection/oldduplicate retirement nowPASS;latest QA EBS full
+local/backups/science/document-QA-v21-study-v1/FIRST_FULL128. Alloriginalstates retained.
 Do not inspect capability until all7model conditions and LLpanels close.
 
 Primary canonical whole-answerEM,512denominator,allerrors/caps retained;

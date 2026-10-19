@@ -1367,3 +1367,13 @@ explicitly takes one paragraph perpage before any model outcome. Preserve both
 attempts. Train snapshot049f53e and evaluationdbd1c10 remain immutable. First
 long-context update passes finite/master/replica checks;warm/recovery/memory and
 long-prefill decoding checks remain active. No science release from these alone.
+
+2026-10-19 14:47UTC — Complete the alreadyfrozen QA evaluation orchestration,not a
+new study. Group v3 isolates protocolTMPDIR and sequential replayports. Seven
+full-span panels each use four batch4 shards after own-model TRAIN calibration;
+physical14/15 reserved while generation runs. One readout waits ALL20,992 answers
+and19,712 LL rows;independent native/text/metric/bootstrap verification precedes
+render/protection. Canonicalanswers primary,mirroraliases separately attributed.
+Span nativearrays independently recomputed/readbackprotected;first128 fullmodel+
+optimizer protected before only older EBS optimizerduplicates retire. No capability
+outcomes inspected,no prompt/checkpoint/metric changes,no broader launch release.

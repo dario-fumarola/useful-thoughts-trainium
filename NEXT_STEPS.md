@@ -21,12 +21,13 @@
    Prepare six audited terminal bindings,then model-native CPU references/prompts.
    Use twelve initial trained-generation groups as planned;replay controls wait
    for each prior-only group to close and reuse its freed physical4/8.
-   Use generation-group v2 controller for future groups(protocol-hash TMPDIR);
+   Use generation-group v3 controller for future groups(protocol-hash TMPDIR + phaseports);
    leave the active B0 v1 controller/source untouched.
    Likelihood producer prepared:local/analysis/document_QA_v21_likelihood_job_20261019.py.
    It waits for complete original prior attempts;full native answer+EOS and
    ordinary32 targets;four batch4 shards permodel,own-model TRAIN calibration first.
-   Still implement its group orchestration/closure audit and final readout.
+   LL group/watcher and once-only analysis→independentcheck→render→protection now ready.
+   Active tmux:document-QA-v21-likelihood-pipeline;readout waits both globalclosures.
    Reserve physical14/15 for LL while generation runs;expand after all GEN closes.
    Expected total:20,992 generation attempts and19,712 likelihood rows across7models.
    Review once after all fixed model/mode data close;no checkpoint/prompt selection.
@@ -51,7 +52,7 @@ Evidence/protection:
   validation/document_QA_v21_decoding_hardware_20261019.json.
 - Span B4QA3584/ordinary672:CPU/device parity passes;max token errors
   0.0000799/0.0000584. Warm9.00/0.710s versus single CPU reference69.10/7.14s;
-  not a sustained benchmark. Independent publication/closure audit still to finish.
+  not a sustained benchmark. Independent recomputation/physicalclosure/readback PASS;public span report includes arrays.
 - Cohorts:2,048 distinct train/512 held,allcomplete inputs<=3072;no held supporting
   text/page/actualseedID in training-visible evidence. Distractors/templates recur;
   semantic/pretraining novelty not established. All gold step answers in cited text.
@@ -59,8 +60,8 @@ Evidence/protection:
   Canonical author annotations match pinned converter;mirror aliases remain attributed,
   not independently authenticated against official ZIP. OfficialDEV/TEST unopened.
 - Keep35GiB/filesystem and512GiB hostavailable. All original full states remainNVMe.
-  Latest EBS full is V17 source_direct1913/320 UNTIL first128 watcher records
-  new-full readback and older-optimizer retirement. Then use its explicit receipt.
+  Latest EBS full is QA FIRST_FULL128;complete independent state audit,copy/readback
+  and older optimizer-duplicate retirement PASS. See C/first-full128-protection.json.
   Root~83GiB pre-first128;all-state/model protection budget verified before release.
   EBS is same-instance,not off-instance. No cloud/IAM/network/paid-teacher changes.
 
