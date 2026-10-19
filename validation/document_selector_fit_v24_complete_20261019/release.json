@@ -1,0 +1,82 @@
+{
+  "cohort_labels_sha256": "b1581f19f08bc5f65fdf87f58d3ff8eabeb56f08b2220ac6d596957fe50e70cb",
+  "cohort_questions_sha256": "694f566db888752bb46815b42a835d240b52e6ad5905b033bd27b7ee0a430e6d",
+  "decision": "Below target: inspect optimization/supervision before scaling. Above: investigate generalization; no automatic training release.",
+  "fit_target": "At least 90% exact annotation sets in BOTH 2- and 3-support strata; 4-support n32 descriptive.",
+  "items": 256,
+  "limits": [
+    "Imperfect author annotations are not semantic gold.",
+    "Oversampled TRAIN strata cannot be pooled against the differently mixed held panel.",
+    "No parameter updates, new held evaluation, retries or new calibration kernel."
+  ],
+  "model": {
+    "arm": "evidence_select",
+    "audit_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/terminal-independent-audit.json",
+    "audit_sha256": "e179da025fa2084c983080d36d3add60feff9c01bb23097388ccd9423a950db5",
+    "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-plan-v23-evidence_select-TRAIN2048-seed2026101923-v1/step-0000256/model.pt",
+    "checkpoint_sha256": "f2d3dc17934b40b1550a016c44ea1d3fe5d632ac22dd0c1a1d100989823f579e",
+    "id": "evidence_select-seed2026101923",
+    "protection_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/terminal-protection.json",
+    "protection_sha256": "3e1e5d0959c0539e7d17ef000e8598e603e73b9b461a9509f074ff6b4645579a",
+    "run_id": "document-evidence-plan-v23-evidence_select-TRAIN2048-seed2026101923-v1",
+    "seed": 2026101923,
+    "spec_hash": "764b9fb2031f16f6570cac378785f907a24604849bbfbf022ac9f11f456446b3",
+    "status": "AUDITED_EVIDENCE_PLAN_V23_TERMINAL256",
+    "step": 256,
+    "training_protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/protocol-evidence_select-seed2026101923.json",
+    "training_protocol_sha256": "0db880be26dfbe54a4c150eef6bbdcffd44cf239444d76c00129c1ebe0b127e1"
+  },
+  "model_modes": {
+    "evidence_select": [
+      "selection"
+    ]
+  },
+  "original_generation_protocol_sha256": "f13508805cf2341208eccab787eebb9b9f569cd8e3fb5b278db080814e889c1e",
+  "primary": "Exact annotation-set agreement, separately for 2, 3 and 4 support paragraphs.",
+  "question": "Does the frozen terminal selector reproduce its own TRAIN support annotations?",
+  "salt": "document-selector-fit-v24-TRAIN-v1:",
+  "secondary": [
+    "Annotation precision/recall/F1, emitted-ID count, termination, unsupported/error counts.",
+    "Canonical answer accuracy is TRAIN fitting only, never a capability endpoint."
+  ],
+  "source_files": {
+    "local/analysis/document_selector_fit_v24_20261019.py": "e0b65440600267f7414e932f953bc7c15ce97504b07f2cdda01ba2a46442f52e",
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_answers.py": "6a880ed2b1704e834c122d7d54c9d2b45ed1c77dd751b912d387a0d976caa985",
+    "train/document_evidence_plan_evaluate.py": "0c05a44804129d3883e7a0646e7c150af39ed4e576b522497fbe56c7c2d7ba3a",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_answers.py": "38845803d12b2f57f259cafce4f98397ad522967332fb0413b6892b2906c5c00",
+    "train/document_qa_contexts.py": "26b2e33bc6adc4fa5af7f2da45a1fa308c3c2d8fc2a66b36a681e89f5fc96291",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_decoder.py": "31069caa0426e36bab81445a08521e6ff1cf0d68cf0745814d0aabc8783c77d9",
+    "train/document_qa_evaluate.py": "e73f033ff8e1804b624f18ae89f1b40d60d61e467406613d6b997927b296fb47",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "RELEASED_FROZEN_TRAIN_SELECTOR_FIT_ONLY_V24",
+  "strata": {
+    "2": 128,
+    "3": 96,
+    "4": 32
+  },
+  "training_file_sha256": "fa286db22d4d0ffaafe08215d05ffeebff39a45124eb5f1295763ce8f7249e90",
+  "utc": "2026-10-19T20:25:24+00:00"
+}

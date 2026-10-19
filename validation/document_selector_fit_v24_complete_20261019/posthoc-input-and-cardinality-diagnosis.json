@@ -1,0 +1,44 @@
+{
+  "scope": "POSTHOC_TRAIN_STORED_OUTPUTS_ONLY_NO_MODEL_CALLS_OR_PRIMARY_CHANGE",
+  "input_definition": "Complete question and ordered visible title/text contexts; item identity is never rendered.",
+  "TRAIN2048_exact_rendered_input_duplicate_groups": 0,
+  "TRAIN2048_conflicting_support_labels_for_identical_inputs": 0,
+  "strata": {
+    "2": {
+      "items": 128,
+      "error_types": {
+        "exact": 117,
+        "same_count_wrong_set": 10,
+        "too_many": 1
+      },
+      "nonempty_strict_target_subsets": 0,
+      "nonexact_but_exact_duplicate_paragraph_equivalent": 0
+    },
+    "3": {
+      "items": 96,
+      "error_types": {
+        "exact": 59,
+        "too_few": 20,
+        "same_count_wrong_set": 15,
+        "too_many": 2
+      },
+      "nonempty_strict_target_subsets": 20,
+      "nonexact_but_exact_duplicate_paragraph_equivalent": 0
+    },
+    "4": {
+      "items": 32,
+      "error_types": {
+        "too_few": 14,
+        "exact": 12,
+        "invalid": 1,
+        "same_count_wrong_set": 5
+      },
+      "nonempty_strict_target_subsets": 12,
+      "nonexact_but_exact_duplicate_paragraph_equivalent": 0
+    }
+  },
+  "limits": [
+    "Literal paragraph equality is not semantic equivalence or entailment.",
+    "These diagnoses do not change canonical scores or the declared fitting target."
+  ]
+}

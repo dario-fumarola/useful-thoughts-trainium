@@ -64,6 +64,30 @@ are not a controlled serving-latency comparison.
 - [Fixed examples](validation/document_evidence_plan_v23_pilot_complete_20261019/fixed-hash-eight-examples.json)
 - [Independent check](validation/document_evidence_plan_v23_pilot_complete_20261019/independent-readout-check.json)
 
+## Selector fitting follow-up
+
+A frozen-model check on a fixed hash sample of the original training questions
+finds incomplete support-set fitting, especially beyond two passages:
+
+| Annotated support count | Exact selected sets | Correct TRAIN answers |
+|---|---:|---:|
+| Two |117/128 (91.4%)|127/128|
+| Three |59/96 (61.5%)|96/96|
+| Four |12/32 (37.5%)|32/32|
+
+The predeclared fitting target fails on three-support questions. All256 answer
+fields complete without errors or caps; one selection has duplicate IDs.
+There are no identical rendered TRAIN inputs with conflicting support labels.
+Twenty of the three-support outputs omit a required ID while choosing only
+annotated supports. These are annotation-agreement diagnostics, not semantic
+verification. Near-perfect TRAIN answers do not establish evidence selection or
+generalization; the oversampled TRAIN panel cannot be pooled with held questions.
+
+The check used the unchanged terminal model and prompt, no parameter updates,
+and0.048 reserved chip-hours. Raw outputs, fixed examples and independent checks
+are saved in the [complete fitting report](validation/document_selector_fit_v24_complete_20261019.json).
+This narrows the next question to supervision/optimization before model scaling.
+
 ## Earlier document-QA comparison
 
 **The document-QA study is complete: generated reasoning helps the same trained

@@ -1,14 +1,15 @@
 # Current queue
 
-0. Prepare one bounded TRAIN-only selector-fit diagnostic;no new training.
-   V23 is closed:generated129/255 vsmatched-direct127,same-modeldirect127;
-   primary andinference gates fail. No replication,RL ormodel-size release.
-   Readeroracle155/255 shows usable selection headroom;policyexactset132/255.
-   Next question:does the frozen selector reproduce its own TRAIN annotations,
-   stratified by2/3/4support documents? Use fixedhash cohorts,unchangedprompt/model,
-   explicitquestion-onlyprojection andseparatescoringlabels. ReportTRAINfit only.
-   This decides whether optimization/label allocation should be inspected before
-   data orcapacity scaling. Do notconflate TRAINfitting withcapability/generalization.
+0. Prepare one bounded selector-loss allocation ablation; no training launch yet.
+   V24 TRAIN fit is complete: exact sets117/128 (two supports),59/96 (three),
+   12/32 (four); final answers255/256. The >=90% two/three fitting target fails.
+   Stored CE was low, but free generation does not reliably fit support sets.
+   No identical rendered inputs have conflicting labels. TRAIN annotation fit
+   does not establish semantic reasoning or explain the held gap by itself.
+   Inspect the loss allocation with one changed coefficient, unchanged data,
+   source/final-answer weights, order and topology. Freeze identity/budget and
+   qualify any changed source before a run. Do not launch a six-model campaign.
+   V23 primary/inference gates remain failed; no replication, RL or size release.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
    Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.

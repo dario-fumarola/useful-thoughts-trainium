@@ -1,0 +1,179 @@
+{
+  "limits": [
+    "Imperfect author annotations are not semantic gold.",
+    "Oversampled TRAIN strata cannot be pooled against the differently mixed held panel.",
+    "No parameter updates, new held evaluation, retries or new calibration kernel."
+  ],
+  "operational_TRAIN_fit_target_pass": false,
+  "protocol_sha256": "5a312ac9d2f450fe02d0c18e157566b559d1e552c693c3f00f20ee940053b652",
+  "release_sha256": "4b643d8380efa5a85d9d9658160c3df7d1e92658061a0c6deef7ad4bf85ec0a8",
+  "scored_sha256": "919bd1a8f4b2c3223b9621042b8c43c02f5e8a21c697c1f2c6856ed38b78785b",
+  "status": "COMPLETE_FROZEN_TRAIN_SELECTOR_FIT_V24",
+  "strata": {
+    "2": {
+      "answer_status": {
+        "complete": 128
+      },
+      "canonical_TRAIN_correct": 127,
+      "exact": 117,
+      "execution_errors": 0,
+      "f1": 0.9515625,
+      "items": 128,
+      "output_ID_counts": {
+        "2": 127,
+        "3": 1
+      },
+      "precision": 0.9505208333333334,
+      "recall": 0.953125,
+      "selection_status": {
+        "complete": 128
+      },
+      "stop_types": {
+        "token:151643": 128
+      }
+    },
+    "3": {
+      "answer_status": {
+        "complete": 96
+      },
+      "canonical_TRAIN_correct": 96,
+      "exact": 59,
+      "execution_errors": 0,
+      "f1": 0.8903769841269842,
+      "items": 96,
+      "output_ID_counts": {
+        "2": 20,
+        "3": 74,
+        "4": 2
+      },
+      "precision": 0.9305555555555555,
+      "recall": 0.8645833333333334,
+      "selection_status": {
+        "complete": 96
+      },
+      "stop_types": {
+        "token:151643": 96
+      }
+    },
+    "4": {
+      "answer_status": {
+        "complete": 32
+      },
+      "canonical_TRAIN_correct": 32,
+      "exact": 12,
+      "execution_errors": 0,
+      "f1": 0.8355654761904762,
+      "items": 32,
+      "output_ID_counts": {
+        "2": 1,
+        "3": 14,
+        "4": 17
+      },
+      "precision": 0.9010416666666666,
+      "recall": 0.7890625,
+      "selection_status": {
+        "complete": 31,
+        "unsupported": 1
+      },
+      "stop_types": {
+        "token:151643": 32
+      }
+    }
+  },
+  "utc": "2026-10-19T20:30:03+00:00",
+  "independent_check": {
+    "status": "PASS_INDEPENDENT_RAW_TOKEN_COHORT_COUNTS_OVERLAP_AND_FIT_CHECK",
+    "report_sha256": "77211006677b4ed3098968a7ea59191e13c45d6e5400ec82dc9e8dbdbe27ac27",
+    "checker_sha256": "80f0dd245983f3d2173a7616eed8edda5463a598c640ea6195872e3725488963",
+    "actual_attempts": 256,
+    "native_checks": 4,
+    "cached_prefill_checks": 4,
+    "limit": "This verifies stored measurements, not semantic annotations, generalization or capability."
+  },
+  "cost": {
+    "reserved_chip_hours": 0.04833333333333333,
+    "measurement": "One physical chip reserved from first shard start through last shard finish; includes loading/checks/generation, not controlled serving latency.",
+    "generated_actions": 4924,
+    "parameter_updates": 0
+  },
+  "design": "validation/document_selector_fit_v24_design_20261019.json",
+  "posthoc_diagnosis": {
+    "scope": "POSTHOC_TRAIN_STORED_OUTPUTS_ONLY_NO_MODEL_CALLS_OR_PRIMARY_CHANGE",
+    "input_definition": "Complete question and ordered visible title/text contexts; item identity is never rendered.",
+    "TRAIN2048_exact_rendered_input_duplicate_groups": 0,
+    "TRAIN2048_conflicting_support_labels_for_identical_inputs": 0,
+    "strata": {
+      "2": {
+        "items": 128,
+        "error_types": {
+          "exact": 117,
+          "same_count_wrong_set": 10,
+          "too_many": 1
+        },
+        "nonempty_strict_target_subsets": 0,
+        "nonexact_but_exact_duplicate_paragraph_equivalent": 0
+      },
+      "3": {
+        "items": 96,
+        "error_types": {
+          "exact": 59,
+          "too_few": 20,
+          "same_count_wrong_set": 15,
+          "too_many": 2
+        },
+        "nonempty_strict_target_subsets": 20,
+        "nonexact_but_exact_duplicate_paragraph_equivalent": 0
+      },
+      "4": {
+        "items": 32,
+        "error_types": {
+          "too_few": 14,
+          "exact": 12,
+          "invalid": 1,
+          "same_count_wrong_set": 5
+        },
+        "nonempty_strict_target_subsets": 12,
+        "nonexact_but_exact_duplicate_paragraph_equivalent": 0
+      }
+    },
+    "limits": [
+      "Literal paragraph equality is not semantic equivalence or entailment.",
+      "These diagnoses do not change canonical scores or the declared fitting target."
+    ]
+  },
+  "protection": {
+    "archive": "/home/ubuntu/dario/local/backups/evaluation/document-selector-fit-v24-TRAIN256-v1",
+    "manifest_sha256": "167f247f345e17a7485e39308d5e739ebcd837e7cff4898076602129503d8285",
+    "same_instance_not_offsite": true
+  },
+  "conclusion": "The two-support TRAIN fitting target passes, but the three-support target fails; four-support fitting is also incomplete. Final answers fit almost perfectly while selected support annotations do not. This does not identify the cause or establish semantic reasoning/generalization.",
+  "decision": "Close V24. Inspect selector supervision allocation and hard-example fitting before more data/model-size scaling. No long training, replication or RL released.",
+  "public_artifacts": {
+    "physical-closure.json": "dc6d1bad125aff3f5446b021a88cd6b21881dde40b969b923c95b9d33201504a",
+    "independent-checker.py": "80f0dd245983f3d2173a7616eed8edda5463a598c640ea6195872e3725488963",
+    "posthoc-input-and-cardinality-diagnosis.json": "76927075edcbecae61d6b56154490974f63cf66f8703de46c614b2948c975cca",
+    "TRAIN256-questions-only.jsonl.gz": "ec8619a94fbc5c60e794aa417866d796526754695b22e90fd957ff8d06e7d866",
+    "stored-training-loss-context.json": "744daa9ea6ceff69f21778e4d8d47eda12413a8399a45b07a2bf55dc0b0289d8",
+    "fixed-hash-six-TRAIN-examples.json": "6e49892aba7ad26a0d70003d66c1e364f0437f6f43483477ce1129351b28928c",
+    "generation-protocol.json": "5a312ac9d2f450fe02d0c18e157566b559d1e552c693c3f00f20ee940053b652",
+    "independent-check.json": "b64036d8c28354d8a5d3cfb244d50b72f411215859fc50d4fd4bd4b936fcc628",
+    "preparation.json": "b32d72226d4cb399d188f56b7153c48641bb2f22d5bcf711a51289a8518e142f",
+    "release.json": "4b643d8380efa5a85d9d9658160c3df7d1e92658061a0c6deef7ad4bf85ec0a8",
+    "result.json": "77211006677b4ed3098968a7ea59191e13c45d6e5400ec82dc9e8dbdbe27ac27",
+    "native-and-scored.jsonl.gz": "05505b4e2740ebb8df45c96bc0d07185e29a9dbd0018de14209733f3b479d5b3",
+    "independent-checker-frozen.json": "0ef0cc202967f0e4b94c1ecef5ce945baaee44c6892570b57db7fc2d9bcaf522",
+    "TRAIN256-labels.jsonl.gz": "5e46291923da003838fd966b7adbfd77d6573d9ac488b0e4b9bf88d44c37446c",
+    "shard-1/cache-prefill.json": "8619a8eceb770f8c441b71c44917203bcc87337b2b0fbc5bfc467b9116023053",
+    "shard-1/native.json": "97df04423468820e3ff698151ee72556baffbee54c6493a3c2a5b103264321b7",
+    "shard-1/run.json": "b12631833ca63f0474b4f5c666d03e71c132ea783b93f7bb2b6ef0ce325fd5d0",
+    "shard-2/cache-prefill.json": "3d0716491472eee5910b4c93ac6823b65db214291cc0f04b9fcf8e0977f691ae",
+    "shard-2/native.json": "1763e0623a3a3b8cc7581b816fa88685357d718f2ffec1cbe0946dd266d7381b",
+    "shard-2/run.json": "b1247827ee455790c67e2aeac77899ac0f988d6ca736bc42a81a1993be173dc2",
+    "shard-0/cache-prefill.json": "02c6e65e3dbe24bbba0e15aa80eb2b8b6af96bcf265aad75f398f302658ba0ff",
+    "shard-0/native.json": "afbbba387cfe4a60d50939b702bf712ca5ac3b3371e5e7292d0efbb988d172ff",
+    "shard-0/run.json": "cc228de4af70e754c967cd32b76b712a7586ea03d6ef69e8c3b42f232189874c",
+    "shard-3/cache-prefill.json": "3fefa79155881cef77ff2d3be559cdb5b74912f16d3d000c546cfcc2756d431f",
+    "shard-3/native.json": "bc75493d13da1c7b68771e6b05ae530ebf52e850b5cd6885863ccd3bf2291f1b",
+    "shard-3/run.json": "107c305b4bd54e21e32652d75aa74c377a82e13d0481c3a7ea31765efd8ed9e9"
+  }
+}

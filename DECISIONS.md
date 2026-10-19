@@ -1500,3 +1500,12 @@ prompt/decoder, with actual own-model checks: one chip, deadline21:00, no update
 or retries. Annotation agreement measures fitting, not semantic correctness or
 generalization. Freeze >=90% two/three-support fitting target before generation;
 four-support n32 is descriptive. All1797 CPU checks and projected-file audit pass.
+
+2026-10-19 20:33 UTC — V24 closes: multi-support TRAIN fitting is incomplete
+Independent raw-token/cohort/checks pass. Exact sets117/128,59/96,12/32 while TRAIN
+answers255/256. Twenty three-support outputs omit annotated IDs with no extra IDs;
+identical-input label conflicts and literal duplicate-paragraph replacements do
+not explain the gap. Keep semantic-label and sampling limits explicit. Do not
+attribute the held failure solely to generalization or capacity. Prepare one
+coefficient-only selector-supervision ablation, keeping source/final-answer weights
+and data fixed; no new learning is released by this diagnosis alone.

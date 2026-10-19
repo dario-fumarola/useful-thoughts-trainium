@@ -1,0 +1,84 @@
+{
+  "limits": [
+    "Imperfect author annotations are not semantic gold.",
+    "Oversampled TRAIN strata cannot be pooled against the differently mixed held panel.",
+    "No parameter updates, new held evaluation, retries or new calibration kernel."
+  ],
+  "operational_TRAIN_fit_target_pass": false,
+  "protocol_sha256": "5a312ac9d2f450fe02d0c18e157566b559d1e552c693c3f00f20ee940053b652",
+  "release_sha256": "4b643d8380efa5a85d9d9658160c3df7d1e92658061a0c6deef7ad4bf85ec0a8",
+  "scored_sha256": "919bd1a8f4b2c3223b9621042b8c43c02f5e8a21c697c1f2c6856ed38b78785b",
+  "status": "COMPLETE_FROZEN_TRAIN_SELECTOR_FIT_V24",
+  "strata": {
+    "2": {
+      "answer_status": {
+        "complete": 128
+      },
+      "canonical_TRAIN_correct": 127,
+      "exact": 117,
+      "execution_errors": 0,
+      "f1": 0.9515625,
+      "items": 128,
+      "output_ID_counts": {
+        "2": 127,
+        "3": 1
+      },
+      "precision": 0.9505208333333334,
+      "recall": 0.953125,
+      "selection_status": {
+        "complete": 128
+      },
+      "stop_types": {
+        "token:151643": 128
+      }
+    },
+    "3": {
+      "answer_status": {
+        "complete": 96
+      },
+      "canonical_TRAIN_correct": 96,
+      "exact": 59,
+      "execution_errors": 0,
+      "f1": 0.8903769841269842,
+      "items": 96,
+      "output_ID_counts": {
+        "2": 20,
+        "3": 74,
+        "4": 2
+      },
+      "precision": 0.9305555555555555,
+      "recall": 0.8645833333333334,
+      "selection_status": {
+        "complete": 96
+      },
+      "stop_types": {
+        "token:151643": 96
+      }
+    },
+    "4": {
+      "answer_status": {
+        "complete": 32
+      },
+      "canonical_TRAIN_correct": 32,
+      "exact": 12,
+      "execution_errors": 0,
+      "f1": 0.8355654761904762,
+      "items": 32,
+      "output_ID_counts": {
+        "2": 1,
+        "3": 14,
+        "4": 17
+      },
+      "precision": 0.9010416666666666,
+      "recall": 0.7890625,
+      "selection_status": {
+        "complete": 31,
+        "unsupported": 1
+      },
+      "stop_types": {
+        "token:151643": 32
+      }
+    }
+  },
+  "utc": "2026-10-19T20:30:03+00:00"
+}

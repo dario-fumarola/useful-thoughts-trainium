@@ -1,0 +1,29 @@
+{
+  "scope": "Existing training losses only, before TRAIN greedy fit results. These are mixed direct/selection views and do not establish generation fit.",
+  "quarters": [
+    {
+      "first_step": 1,
+      "last_step": 64,
+      "mean_selection_teacher_forced_CE": 0.1965005734236911,
+      "mean_answer_teacher_forced_CE": 0.23481989663559943
+    },
+    {
+      "first_step": 65,
+      "last_step": 128,
+      "mean_selection_teacher_forced_CE": 0.08851607370888814,
+      "mean_answer_teacher_forced_CE": 0.02657892085335334
+    },
+    {
+      "first_step": 129,
+      "last_step": 192,
+      "mean_selection_teacher_forced_CE": 0.05811835535860155,
+      "mean_answer_teacher_forced_CE": 0.005243689255848949
+    },
+    {
+      "first_step": 193,
+      "last_step": 256,
+      "mean_selection_teacher_forced_CE": 0.03421989055641461,
+      "mean_answer_teacher_forced_CE": 0.0006692248866499995
+    }
+  ]
+}
