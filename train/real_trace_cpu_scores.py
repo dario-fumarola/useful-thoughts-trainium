@@ -11,7 +11,7 @@ import json,time,os,gc,re
 
 from train.real_trace_evaluation import span_logprobs
 from train.real_trace_contexts import reader_context
-from train.real_trace_scope import FRESH_PANEL,binding_statuses
+from train.real_trace_scope import FRESH_PANEL,CONFIRM_PANEL,binding_statuses,scoring_items
 from weekend_thinking.artifacts import atomic_json,sha256_file,utc_now
 
 
@@ -46,10 +46,10 @@ def score(output,inputs,panel,model_dir,binding=None,notes=None,threads=16,devic
         if sha256_file(inputs/name)!=value['sha256']:raise ValueError('Fixed evaluation bytes changed')
     qs,ys=rows(inputs/f'{panel}-questions.jsonl'),rows(inputs/f'{panel}-targets.jsonl')
     ids=[q['item_id'] for q in qs]
-    items = 384 if panel == FRESH_PANEL else 256
+    items = scoring_items(panel)
     if len(ids)!=items or len(set(ids))!=items or [v['item_id'] for v in ys]!=ids:
         raise ValueError('All declared unique ordered documents and true targets required')
-    if device == 'xla' and (panel not in (FRESH_PANEL,'DEV_ordinary256')
+    if device == 'xla' and (panel not in (FRESH_PANEL,CONFIRM_PANEL,'DEV_ordinary256')
             or os.environ.get('NEURONCORE_NUM_DEVICES') != '1'
             or not re.fullmatch('[0-9]+',os.environ.get('NEURON_RT_VISIBLE_CORES',''))):
         raise ValueError('New study scoring requires one explicitly isolated logical core')
@@ -58,7 +58,7 @@ def score(output,inputs,panel,model_dir,binding=None,notes=None,threads=16,devic
     source_files={**evaluation_dependencies(root),**{name:sha256_file(root/name) for name in ('train/real_trace_cpu_scores.py','train/real_trace_evaluation.py','train/real_trace_contexts.py','train/real_trace_packing.py','train/partial_state_evaluation.py','train/real_trace_scope.py')}}
     model=read(binding) if binding else dict(id='B0',checkpoint=None)
     if binding:
-        if model['status'] not in binding_statuses(FRESH_PANEL if panel == 'DEV_ordinary256' else panel) or model['step']!=320:
+        if model['status'] not in binding_statuses(panel) or model['step']!=320:
             raise ValueError('Explicit independently audited terminal320 required')
         if sha256_file(model['checkpoint'])!=model['checkpoint_sha256']:
             raise ValueError('Actual terminal model changed')
