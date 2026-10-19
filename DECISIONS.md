@@ -1509,3 +1509,14 @@ not explain the gap. Keep semantic-label and sampling limits explicit. Do not
 attribute the held failure solely to generalization or capacity. Prepare one
 coefficient-only selector-supervision ablation, keeping source/final-answer weights
 and data fixed; no new learning is released by this diagnosis alone.
+
+2026-10-19 20:40 UTC — V25 coefficient-only source and qualification released
+One treatment changes selection weight0.1→1.0, retaining data/order/exposures and
+source/final-answer weights. Existing completed0.1 run is the bound control. New
+identity/source5414f8d preserves numerical worker/order/batching functions;1809 CPU
+checks pass. Only eight-update/full-restore qualification released, two chips,
+deadline22:00 UTC, <=3 chip-hours, no retry. Four full states fit NVMe-study; latest
+science full backup untouched. Three inactive engineering model backup duplicates
+were copied, fsynced and reread against originals before old duplicates were
+unlinked; receipts published. Full treatment requires actual audit and root review.
+The already-inspected held255 can only be reused as developmental evidence.

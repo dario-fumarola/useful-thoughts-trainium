@@ -1,0 +1,29 @@
+{
+  "status": "COPIED_READBACK_FSYNCED_MATCHES_RETAINED_ORIGINALS_BEFORE_UNLINK",
+  "utc": "2026-10-19T20:37:36.900149+00:00",
+  "files": [
+    {
+      "old_EBS_duplicate": "/home/ubuntu/dario/local/backups/engineering/real-target-sft-v15-world8-target128-qualification-v1/POST_RUN/cot/step-0000008/model.pt",
+      "retained_original": "/home/ubuntu/dario/local/nvme-cpt/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/step-0000008/model.pt",
+      "new_backup_duplicate": "/home/ubuntu/dario/local/nvme-study/backups/inactive-qualification-model-duplicates-v25-prep/v15-cot8.model.pt",
+      "sha256": "86bff1470905512475242f5b63311ef72241a0f65c5272d8575f648a04dc710a",
+      "bytes": 3441248275
+    },
+    {
+      "old_EBS_duplicate": "/home/ubuntu/dario/local/backups/engineering/real-target-sft-v15-world8-target128-qualification-v1/POST_RUN/direct/step-0000003/model.pt",
+      "retained_original": "/home/ubuntu/dario/local/nvme-cpt/diagnostics/real-target-sft-v15-world8-target128-qualification-v1-direct/step-0000003/model.pt",
+      "new_backup_duplicate": "/home/ubuntu/dario/local/nvme-study/backups/inactive-qualification-model-duplicates-v25-prep/v15-direct3.model.pt",
+      "sha256": "ef898d5efafaacdc1cd8e30daaa9ccb4e5ec0bad37ab16eec9bf8bbd90ce7cef",
+      "bytes": 3441248275
+    },
+    {
+      "old_EBS_duplicate": "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/model.pt",
+      "retained_original": "/home/ubuntu/dario/local/nvme-study/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2/step-0000008/model.pt",
+      "new_backup_duplicate": "/home/ubuntu/dario/local/nvme-study/backups/inactive-qualification-model-duplicates-v25-prep/v10-qualification8.model.pt",
+      "sha256": "7868389374bf176398700bec0715cda2797a14a6df0df59e6cea39a1e883ca5c",
+      "bytes": 3441248275
+    }
+  ],
+  "scope": "Only three inactive engineering model backup duplicates; no original states, active models or latest science full backup touched.",
+  "same_instance": true
+}

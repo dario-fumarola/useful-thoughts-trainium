@@ -1,0 +1,118 @@
+{
+  "experiment_id": "document-evidence-weight-v25",
+  "status": "PROSPECTIVE_COEFFICIENT_ABLATION_QUALIFICATION_ONLY_RELEASED",
+  "created_utc": "2026-10-19T20:39:09.599564+00:00",
+  "question": "Does stronger selector supervision repair the observed multi-support TRAIN fitting gap without changing data or explicit answer/source loss weights?",
+  "motivation": "V24 observed exact TRAIN support-set fits117/128,59/96,12/32 while TRAIN answers255/256. Low mixed-field teacher-forced CE was not reliable evidence of set fitting.",
+  "treatment": {
+    "selection_loss_weight": 1.0,
+    "source_loss_weight": 0.5,
+    "answer_loss_weight": 0.5,
+    "fresh_released_B0": true,
+    "items": 2048,
+    "passes": 4,
+    "steps": 256,
+    "seed": 2026101923,
+    "terminal_checkpoint_primary": true
+  },
+  "control": {
+    "selection_loss_weight": 0.1,
+    "completed_protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/protocol-evidence_select-seed2026101923.json",
+    "completed_protocol_sha256": "0db880be26dfbe54a4c150eef6bbdcffd44cf239444d76c00129c1ebe0b127e1",
+    "reuse_existing_completed_B": true
+  },
+  "source": {
+    "frozen_worktree": "/home/ubuntu/dario/local/worktrees/document-evidence-weight-v25",
+    "commit": "5414f8d",
+    "CPU_checks": "1809 passed; smoke/compile pass, local/checks/tests.7ZAVkt",
+    "numerical_equivalence": {
+      "status": "PASS_UNCHANGED_NUMERICAL_DRIVER_FUNCTIONS",
+      "functions": {
+        "worker": "0884f4f0e2f59aa37c8d9f76edd6761ec18825ad28c1823874cc19b09b5a0bbe",
+        "batch_at": "395a8883c028f87d20633398323bca102abc074b0c76eedf3ae6222cb4006889",
+        "order_for": "8b0b37b988733dccef6d88c6c469d3a956450e05e42e878635669d28125f057a",
+        "checkpoint_identity": "7f95ad009c86b7a4c75d3f0c69bf49e25cba8c9a700eeb90cd68ba5e4fc1a020"
+      },
+      "prior": "/home/ubuntu/dario/local/worktrees/document-evidence-v23/train/partial_state_driver.py",
+      "candidate": "/home/ubuntu/dario/local/worktrees/document-evidence-weight-v25/train/partial_state_driver.py",
+      "source_sha256": "7e4164621ce3b09bf9caa6c380f0e8963be3ea5c75809a33030aca76712ab45d",
+      "limit": "The intended loss coefficient still changes via protocol; this is source equivalence, not hardware qualification."
+    }
+  },
+  "controls": [
+    "Identical documents, native targets, order, schedule, LR, optimizer, topology, precision, source sampling, view allocation and source/final-answer coefficients.",
+    "Existing computational worker, batching, order and checkpoint functions are AST-identical; all non-driver numerical/packing sources match.",
+    "Only one new treatment model. Original V23 control/results remain unchanged. No new CoT baseline or architecture claim."
+  ],
+  "primary_fitting": {
+    "cohort": "Unchanged V24 fixed hash TRAIN256 with128/96/32 support-count strata.",
+    "endpoint": "Exact annotation-set agreement, separately by support count.",
+    "pass_rule": "At least90% exact in both two- and three-support strata, AND positive paired95% lower bound versus completed0.1 control in three-support stratum.",
+    "CI": "20000 paired question bootstrap draws, seed2026101925, conditional on checkpoints; no pooled strata.",
+    "four_support": "n32 descriptive",
+    "checkpoint": "Terminal256 only; step128 is resumable backup, not outcome-selected."
+  },
+  "secondary": [
+    "Answer fitting, selection precision/recall/F1, ID counts, duplicates, EOS/caps/errors, observed memory and compute.",
+    "If fitting target passes: fixed V23 held255 direct/selection/oracle plus ordinary256 prediction may be evaluated as developmental follow-up only.",
+    "Report net generated-answer change versus old matched direct and same-model direct with token costs; do not use the contaminated supplied-empty native condition."
+  ],
+  "held_interpretation": "V23 held255 has already been inspected and motivated this ablation. Reuse is explicitly developmental, not untouched confirmatory evidence. No official DEV/TEST release.",
+  "allocation": "No same-protocol replication, larger model, RL or broader campaign. A failed fitting ablation closes this coefficient hypothesis. A positive one requires separate generalization evaluation.",
+  "qualification": {
+    "actual_steps": 8,
+    "stages": [
+      "Fresh1-4 with full saves2/4",
+      "Fresh-process full restore4 then updates5-8 with full saves6/8"
+    ],
+    "expected_native_checks": 16,
+    "independent_audit": "All4 original full states, masks/counts, masters/moments/casts and restore4 bytes.",
+    "physical_devices": [
+      12,
+      13
+    ],
+    "deadline_utc": "2026-10-19T22:00:00+00:00",
+    "maximum_reserved_chip_hours": 3.0,
+    "no_retry": true,
+    "not_capability_evidence": true
+  },
+  "candidate_budget_not_released": {
+    "training_maximum_reserved_chip_hours": 3.0,
+    "evaluation_maximum_reserved_chip_hours": 0.6,
+    "qualification_separate": true,
+    "checkpoint_GiB_each": 22.45,
+    "science_checkpoints": [
+      128,
+      256
+    ]
+  },
+  "storage": {
+    "root_free_GiB": 61.45018005371094,
+    "nvme_cpt_free_GiB": 171.79138565063477,
+    "nvme_study_free_GiB": 191.8626594543457,
+    "qualification_full_states_destination": "local/nvme-study/diagnostics/document-evidence-weight-v25-world8-qualification-v1",
+    "science_full_states_destination": "local/nvme-cpt/runs/new unique v25 run",
+    "minimum_filesystem_free_GiB": 35,
+    "minimum_host_available_GiB": 512,
+    "backup_relocation_receipt": {
+      "status": "COMPLETE_ORIGINALS_RETAINED_BACKUP_DUPLICATES_RELOCATED",
+      "receipt_sha256": "831fb5913d3f563391ec26d37585f60b9d0a23246e4c7bb5cd987ce1317576b2",
+      "root_free_bytes": 65981808640,
+      "nvme_study_free_bytes": 206010961920
+    },
+    "latest_science_full_backup_untouched": true
+  },
+  "source_annex": {
+    "qualify.py": "d9801fb76e20b1ad1b38e4bcdc11a9c3a1c00aa2346074e22a2a11b6e7224eaa",
+    "inactive-backup-relocation-complete.json": "da9739a112f094c65f76f3dfb21062b777d304dc3a0d5e0e027698cd8b8ce531",
+    "independent-audit.py": "3ccb603af517fd7646cda87407734a5bec2ac7b61ed0dbf91305d8037d07ef09",
+    "inactive-backup-relocation.json": "831fb5913d3f563391ec26d37585f60b9d0a23246e4c7bb5cd987ce1317576b2",
+    "numerical-source-equivalence.json": "9fd505e05488cf5fdecf4b3b641fa26f6143d6d250f3b82c6a50b3700a3af5e4",
+    "protocol.json": "0dfd2bd845a3f888eb443836911682da15f680b3e60a8c285d162acf43c3848a"
+  },
+  "limits": [
+    "Support annotations are imperfect, and exact annotation agreement is not semantic entailment.",
+    "One data-order seed cannot establish robustness. TRAIN fitting is not capability or generalization.",
+    "The explicit loss coefficient changes while clipping/optimizer dynamics can change as a consequence; do not call this matched gradient magnitude."
+  ]
+}

@@ -1,15 +1,18 @@
 # Current queue
 
-0. Prepare one bounded selector-loss allocation ablation; no training launch yet.
-   V24 TRAIN fit is complete: exact sets117/128 (two supports),59/96 (three),
-   12/32 (four); final answers255/256. The >=90% two/three fitting target fails.
-   Stored CE was low, but free generation does not reliably fit support sets.
-   No identical rendered inputs have conflicting labels. TRAIN annotation fit
-   does not establish semantic reasoning or explain the held gap by itself.
-   Inspect the loss allocation with one changed coefficient, unchanged data,
-   source/final-answer weights, order and topology. Freeze identity/budget and
-   qualify any changed source before a run. Do not launch a six-model campaign.
-   V23 primary/inference gates remain failed; no replication, RL or size release.
+0. Let V25 coefficient-only qualification finish; do not rush the compiler.
+   Frozen source5414f8d, worktree local/worktrees/document-evidence-weight-v25.
+   Supervisor1447965/exec72247; physical12–13; deadline22:00 UTC, no automatic retry.
+   C=local/diagnostics/document-evidence-weight-v25-world8-qualification-v1.
+   Watcher exec63653 runs the independent CPU audit after both physical closures.
+   Qualification uses8 updates, full restore4, and4 original full states on NVMe-study.
+   All1809 CPU checks pass; original numerical worker/order/batching unchanged.
+   Proposed treatment changes selection weight0.1→1.0 only, with source/answer0.5/0.5.
+   One fresh treatment may be reviewed after qualification; full training is not released.
+   Freeze terminal256, unchanged TRAIN2048/order, fitting endpoints and resource budget.
+   V24 fitting target failed: exact sets117/128,59/96,12/32 vs TRAIN answers255/256.
+   Held255 reuse is developmental, already inspected; no official DEV/TEST release.
+   No replication, larger model, RL or six-model campaign follows automatically.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
    Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.

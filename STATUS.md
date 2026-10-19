@@ -1,4 +1,17 @@
-# Status — 2026-10-19 20:33 UTC
+# Status — 2026-10-19 20:40 UTC
+
+## Active: selector-loss allocation qualification
+Question: does stronger selector supervision repair multi-support TRAIN fitting?
+ID: document-evidence-weight-v25; coefficient1.0 vs completed0.1 control; same data and source/answer weights.
+One fresh treatment is proposed; all1809 CPU checks pass; numerical worker/order/batching AST unchanged.
+Source frozen5414f8d at local/worktrees/document-evidence-weight-v25; do not edit while active.
+Only disposable eight-update save/restore qualification is released; no full treatment launch yet.
+Supervisor1447965/exec72247; physical12–13/logical48–55; hard deadline22:00 UTC, no retry.
+Control: local/diagnostics/document-evidence-weight-v25-world8-qualification-v1; first native stage active.
+Full qualification states go to NVMe-study; original states/latest science EBS full backup retained.
+Audit watcher exec63653 waits for both physical closures, then runs the frozen CPU audit once.
+Next: inspect actual qualification audit, protect evidence, then review the candidate full-run budget.
+Design: validation/document_evidence_weight_v25_design_20261019.json; held reuse is developmental only.
 
 ## Closed: frozen selector TRAIN fit
 Question: does the completed selector reproduce its own TRAIN support annotations?
