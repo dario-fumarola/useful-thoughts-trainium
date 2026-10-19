@@ -1,20 +1,17 @@
 # Current queue
 
-0. Monitor the single V25 coefficient treatment; do not edit frozen sources or pipeline files.
-   Actual qualification PASSED:8 updates, restore4, all4 original full states audited/protected.
-   Science exec7042, physical2–3, C=local/diagnostics/document-evidence-weight-v25-ablation-v1.
-   One fresh B0 treatment changes selection0.1→1.0; same TRAIN2048/order/source-answer0.5/0.5.
-   Source W25@5414f8d; full128/256 saves; terminal256 only; deadline22:45:23 UTC, no retry.
-   Original full128 is written and updates resumed; PSS146→99GiB after cleanup.
-   First128 protection exec50248 exited0; independent state audit and full EBS readback/fsync pass.
-   Terminal watcher exec61432 waits physical closure, then audits/protects/binds once.
-   All source/pipeline hashes are frozen in C/release.json. Do not modify bound local helpers.
-   Six fixed TRAIN under-selection cases expose2 clear annotation entity collisions,2 concerns;
-   canonical fit does not establish semantic grounding. Keep the bounded coefficient interpretation.
-   After original terminal protection: release fixed TRAIN/held readout, existing .6 chip-hour bound.
-   Report held255 regardless of fitting result; it is developmental and already inspected.
-   Native direct/selection remain unchanged; closed-field empty/own/oracle answer replay is separate.
-   No official DEV/TEST, larger model, RL, parameter sweep or multi-model campaign release.
+0. Complete the fixed V25 readout; no new training or source changes.
+   All256 updates and independent trajectory/full128/256 audit PASS; terminal protected and bound.
+   Training exec7042 and terminal watcher61432 finished0, assigned devices empty.
+   C=local/diagnostics/document-evidence-weight-v25-ablation-v1; sources remain frozen.
+   Explicit evaluation release and CPU refs complete. Active TRAIN42442/physical12,
+   held-native62437/physical13, ordinary78272/physical14; do not rerun producers.
+   Then TRAIN256 generation .12 chip-hours, held255 native .18, closed-field replay .20,
+   ordinary256 likelihood .10, including termination headroom. Total .6, no optional QA LL.
+   Prospective contracts/independent checkers are in validation/document_evidence_weight_v25_*.
+   Held readout runs regardless of fitting result and remains developmental, not confirmation.
+   No prompt/parser/checkpoint selection, retries, larger model, RL or broader campaign release.
+   Original public V23/V24 primary report hashes and all scores/gates remain unchanged.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
    Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.
@@ -44,9 +41,9 @@ Protected state/source:
 - C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
   SuccessfulLLregistry likelihood-registry-v2.json;readout-pipeline-io-v2 passes.
   Alloriginalfailedv1registries/logs/source remain;failureEBSarchive recorded inC.
-- Current full EBS: local/backups/science/document-evidence-weight-v25-ablation-v1/FIRST_FULL128.
-  Older V23 EBS optimizer duplicates retired after new128 verification; all original states/models retained.
-  V23 and V21 terminal model protections remain; next full replacement is new256 after terminal audit.
+- Current full EBS: local/backups/science/document-evidence-weight-v25-ablation-v1/TERMINALS/latest-full256.
+  New256 readback/fsync PASS; only older128 EBS optimizer duplicates retired afterward.
+  All original full states and model weights remain; V23/V21 terminal protections remain.
   Older EBSoptimizerduplicates retireonlyafternewfullreadback. Same-instance,notoff-instance.
 - V23train frozen7328141:local/worktrees/document-evidence-v23;
   decoder625fb0f:document-evidence-eval-v23;originalspan e0607fd:document-evidence-span-v23;

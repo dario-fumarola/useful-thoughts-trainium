@@ -1,20 +1,20 @@
-# Status — 2026-10-19 21:59 UTC
+# Status — 2026-10-19 22:32 UTC
 
-## Active: selector-loss allocation ablation
+## Active: fixed readout of selector-loss allocation ablation
 Question: does stronger selector supervision repair canonical fitting and help answering?
-ID: document-evidence-weight-v25; one fresh1.7B treatment1.0 vs completed0.1 control, TRAIN2048×4.
-Same order/data/exposures/source-answer0.5/0.5; source frozen5414f8d; all1809 CPU checks pass.
-Actual qualification: eight updates, full restore4, all4 states/native16/order/counts audit PASS; protected.
-One full treatment released/launched: exec7042, physical2–3/logical8–15; terminal256 primary.
-Original full128 written; updates resumed, grouped PSS146→99GiB after export cleanup.
-Independent128 audit/EBS protection PASS; full256 terminal; deadline22:45:23 UTC, <=3 chip-hours/no retry.
-First128 protection exec50248 exited0; full copy readback/fsync protected; terminal watcher exec61432 active.
-C: local/diagnostics/document-evidence-weight-v25-ablation-v1; source/pipeline files frozen by release.
-Six fixed TRAIN under-selection cases contain2 entity collisions; label fitting is not semantic verification.
-After terminal protection: unchanged TRAIN256 and fixed developmental held255; report answers regardless of fit.
-Closed Evidence/prefilled Final empty/own/oracle replays share one parser;765 CPU contexts pass, eval<=0.6h.
-Reports: validation/document_evidence_weight_v25_science_release_20261019.json and training_hardware report.
-Next: monitor actual updates/resources; preserve128, then terminal audit/protection. No broader campaign released.
+ID: document-evidence-weight-v25; one fresh1.7B treatment1.0 vs completed0.1, TRAIN2048×4.
+All256 updates complete; independent trajectory/full128/256 audit PASS; source frozen5414f8d.
+All original states remain; terminal model/latest full256 EBS readback/fsync protected and bound.
+Training physical closure22:23:31 UTC; warm last60 median13.40s; no execution/resource stop.
+Actual disposable8-update/restore4 qualification remains separate from scientific results.
+Current-model CPU refs ready; fixed TRAIN42442/held-native62437/ordinary78272 stages active.
+Primary unchanged: TRAIN256 exact sets>=90% two/three supports and positive paired interval in three.
+Held255 is already inspected/developmental; answers evaluated regardless of fitting outcome.
+Closed Evidence/prefilled Final empty/own/oracle replays are separate from native generation.
+Four fixed stages <=0.6 reserved chip-hours; no optional QA likelihood, retries or new learning.
+Annotation collisions limit semantic interpretation; no old V23/V24 score or gate changes.
+C: local/diagnostics/document-evidence-weight-v25-ablation-v1; final outcomes pending.
+Next: finish CPU references, run bounded fixed stages, independently check and preserve all outputs.
 
 ## Closed: frozen selector TRAIN fit
 Question: does the completed selector reproduce its own TRAIN support annotations?

@@ -9,9 +9,10 @@ and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
 **Active follow-up:** one fresh model changes only the selection-loss weight
-from0.1 to1.0, with the same documents, order, exposures and source/answer
-coefficients. Eight actual qualification updates and full-state restoration passed;
-the256-update treatment is running. Results are pending. The fixed readout measures
+from 0.1 to 1.0, with the same documents, order, exposures and source/answer
+coefficients. All 256 treatment updates and the full-state audit are complete;
+the terminal checkpoint is protected. The fixed readout is running and
+results are pending. It measures
 TRAIN fitting, developmental held answers and ordinary-text cost; it does not
 release model scaling or another broad campaign.
 [Design](validation/document_evidence_weight_v25_design_20261019.json) ·
