@@ -109,7 +109,9 @@ def score(output,inputs,panel,model_dir,binding=None,notes=None,threads=16):
         assert len(observed)==256*len(modes)
         result.update(status='COMPLETE_ALL_FIXED_DOCUMENT_LIKELIHOODS',modes=modes,documents=256,
           logps_sha256=sha256_file(output/'logps.jsonl'),
-          primary_eligible_no_generation_errors=all(v['note_execution_status']=='ok' for v in observed),
+          raw_likelihood_complete=True,
+          mode_execution_eligible={m:all(v['note_execution_status']=='ok' for v in observed if v['mode']==m) for m in modes},
+          inference_eligible_no_generation_errors=(all(v['note_execution_status']=='ok' for v in observed) if bundle is not None else None),
           limits=['CPUtimingisnottargethardwareinferenceservicelatency.','Allcapsandemptyvalidnotesremain;generationerrorsareflaggedandmakebenefitgateineligible.','Oracleincludesrootanswer;itisnotdeployedprefix-onlygeneration.'])
     except BaseException as error:
         result.update(status='FAILED_INCOMPLETE_PANEL_NO_SCIENTIFIC_PASS',error=f'{type(error).__name__}: {error}')
