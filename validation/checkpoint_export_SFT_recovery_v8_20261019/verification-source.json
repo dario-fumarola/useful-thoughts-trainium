@@ -1,0 +1,10 @@
+{
+  "scope": "Exact verification source used for the original strict qualification and separate restart attribution. These are read-only instance-bound reconstruction scripts, not training entrypoints.",
+  "files_sha256": {
+    "independent-state-audit.py": "7c52008b5bd282579ccd236a60f0ea90713014863a35c79503427f1c605f4f19",
+    "independent-restart-attribution.py": "270988e8b8bdda9d707e00c58a4dec9321d2305be43c8b6016e891edea370c79"
+  },
+  "original_strict_result": "FAIL_ACTUAL_SFT_QUALIFICATION_GATE",
+  "followup_result": "Resumed cleanup/control trajectories are byte-identical; both differ from uninterrupted control by the same small step14 loss/norm change. No gate rewritten.",
+  "candidate_scope": "Future separately declared short world4 training; immutable current science untouched. Original world32 OOM and indefinite memory are unqualified."
+}

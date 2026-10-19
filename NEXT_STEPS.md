@@ -16,23 +16,18 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. All10training runs are complete, independently audited, protected and frozen.
-   All5first-seed evaluation controllers close and are EBS readback backed up;
-   seed2writer/reader/direct also close and EBS-readback; compact active physical1. Final full-CoT2 passes640/full-state audit and fixed eval is launched:
-   tmux `dario-ps7-dev-fullcot2`,physical2/port64941/shortf7b.
-   NEXT:monitor remaining fixed evals; archive closed ones,then whole audit.
-   B0reference physical4 active. Training queue closed; no more training released.
-   Source remains immutable57d3220. Every original full state remains intact.
-   A/compactS1receipts have explicit640correction annexes; other640templates fixed.
-   Main independent audit requires all11controllers closed before any outcomes.
+3. All ten training runs are complete, audited, protected and frozen. All ten
+   primary evaluation controllers close; only unchanged B0 (physical 4) finishes
+   its final panel. No new outcomes reviewed.
+   The finite pipeline `dario-ps7-whole-question-audit` backs up newly closed jobs
+   and executes the whole-question audit once all eleven close. Control:
+   `local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1`;
+   wait deadline 03:30 UTC, audit timeout one hour, no retries. Monitor its
+   `supervisor.log`, then `audit.log`; do not duplicate its command or outputs.
    Registry: `local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json`.
-   Includes10primary jobs plus one shared unchanged-B0direct/cot/empty reference,
-   not two B0replicas. Planned51200answers/4096notes, all errors/caps retained.
-   Archive newly closed R2/compact2/full2/B0 outputs before outcome review.
-   Script: `local/analysis/archive_closed_v7_evaluation_20261019.py`.
-   Whole audit:source env;USE_TORCH_XLA=0 OMP/MKL2 python
-   `scripts/audit_partial_state_study.py --root /home/ubuntu/dario --registry`
-   followed by the absolute registry path above. No TEST/RL/8B launch.
+   Planned 51,200 answers and 4,096 notes, with one shared B0 reference.
+   All source and endpoints remain fixed; every original full state stays intact.
+   A/compact first-seed receipt corrections remain explicit preserved annexes.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -90,17 +85,23 @@ factors before a much longer loop. Current bounded640jobs stay below measured
 node limits. Candidate official XLA serialization needs actual byte/recovery/
 memory qualification; no fix has been applied to frozen science source.
 
-Separate engineering question: tensor-only v8followup completes, all six saved
-state bytes/metadata/source/live values exact. Current sliced export grows4.809
-GiB/export; same exporter+gc/trim0.0018. v1official xm.save changed tuple metadata
-to lists, failing exact gate; interrupted partial outputs preserved and read back.
-Public:validation/checkpoint_export_memory_v8_tensor_results_20261019.json.
-Actual SFT qualification active:control14 versus candidate12/physical close/full
-restore12/updates13–14;every2full saves. Candidate branch fb72065 is isolated,
-1601CPUchecks pass, scientific source57 unchanged. Control:
-`local/diagnostics/checkpoint-export-SFT-recovery-v8-v2`,tmux dario-export-SFT-recovery-v8-v2,
-physical8/logical32–35,deadline03:00UTC,no retry. Gate:control memory reproduces,
-candidate bounded plus exact per-update loss/norm and all terminal model/master/
-moment/cursor/saved RNG; actual restored12digests. Review all stages once closed.
-Prior v1preflight detected wrong-source preparation before any worker/allocation;
-all files preserved. This does not yet fix original world32 OOM or qualify long loops.
+Export-memory question closed. Tensor followup and actual SFT show bounded cleanup
+memory with exact matched saved/recovered state. Original uninterrupted-parity
+gate fails by a 0.000014 loss difference after resume; retain it. Separate control
+restart without cleanup reproduces the same drift, and both resumed model,
+optimizer, RNG and loss/norm trajectories are byte-identical. Do not demand FP32
+replay to hide an existing numerical restart limit. Candidate fb72065 remains
+isolated until the frozen math audit closes; no scientific source changes.
+Public reports: checkpoint_export_SFT_recovery_v8_20261019.json and
+checkpoint_export_restart_attribution_v8_20261019.json; verification source and
+all 28 update metrics are public, exact originals and recovery protected.
+No more memory probes are queued. This qualifies bounded short world-4 mechanics,
+not original world-32 OOM or indefinite continual training.
+
+While the final unchanged-base panel runs, inspect existing real FineMath source
+inventory only. Compound TRAIN has 5,438 eligible representative documents; prior
+5,120-row labels included the final result and are not intermediate-only. Derive
+new candidate partial labels from prefix expression alone, omit the root operation,
+report raw-document/target provenance, label lengths and doc/expression overlap.
+No learning or new interface sweep before the matched-question readout. Do not
+claim general-language gains from the completed synthetic mechanism study.

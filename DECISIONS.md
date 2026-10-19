@@ -1170,3 +1170,14 @@ candidate12/close/restore/13-14 now released on isolated fb72065,1601CPUchecks.
 First SFTpreflight bound main instead of candidate via cwd shadowing PYTHONPATH;
 guard rejected before any worker/allocation. New v2asserts actual imported root,
 preserves failed config. Immutable57science and all endpoints remain unchanged.
+
+2026-10-19 01:18 UTC — Close export-memory question without rewriting its strict
+failure. All14full checkpoints pass independent tensor/cursor/native checks;
+post-export grouped PSS49–139GiB control versus21–22candidate. Saved12 states
+match fully. Candidate12/restart/14 differs slightly from uninterrupted14;
+one explicit unchanged-exporter restart gives the exact same resumed14 model,
+all optimizer bytes, RNG and loss/norm. Cleanup preserves matched recovery;
+resumption execution has a separate numerical limit. Both reports and all update
+metrics/source are public; originals and terminal recovery/EBS evidence preserved.
+No further memory probes. Candidate remains outside immutable scientific source.
+All10primary evaluations close; only shared B0 final panel remains. No new outcomes opened.

@@ -68,8 +68,13 @@ Host PSS is flat between saves but rises around full exports; longer continual
 training needs an export-path qualification. This is an
 [observed association, with cause unresolved](validation/partial_state_v7_checkpoint_host_memory_observation_20261019.json). A separate
 [tensor-only followup](validation/checkpoint_export_memory_v8_tensor_results_20261019.json)
-reproduces the growth and finds byte-exact allocator cleanup; actual SFT/restart
-qualification is underway in an isolated branch. Scientific source stays frozen.
+reproduces the growth. In a separate short SFT check, cleanup keeps post-save
+memory near21–22GiB versus49–139GiB. The
+[original strict restart gate](validation/checkpoint_export_SFT_recovery_v8_20261019.json)
+fails a small uninterrupted-versus-resumed difference; a
+[matched restart control](validation/checkpoint_export_restart_attribution_v8_20261019.json)
+reproduces that difference without cleanup, with identical resumed model and
+optimizer bytes. The candidate remains isolated; scientific source stays frozen.
 
 An auxiliary untouched-B0 reference uses the same direct, empty and CoT prompts.
 It was added before new outcome review; the four-system primary remains fixed.

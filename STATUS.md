@@ -1,33 +1,35 @@
-# Status — 2026-10-19 00:43 UTC
+# Status — 2026-10-19 01:18 UTC
 
 
 ## Active: matched-cost partial-computation study
-Question: does useful fresh computation beat competitive solvers at matched updates and starting B0?
-ID:partial-state-v7-matched5120;two seeds,terminal primary,immutable57d3220,1610CPUchecks pass.
-All10training runs complete,independently audited,full-state protected and frozen.
-All5S1four-panel evals plus S2writer/reader/direct close; EBS readback,no outcomes reviewed.
-S2compact2/4panels,fullCoT0/4,B0reference2/4;physical1/2/4 respectively.
-Final full-CoT2eval launched:tmux dario-ps7-dev-fullcot2,physical2/logical8–11,port64941.
-NEXT:finish all fixed panels and EBS readbacks,then run whole-question independent audit.
-Registry:local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
-All11controllers must close before whole-question independent outcome audit;51200answers/4096notes.
-Primary4systems/two seeds unchanged;B0one shared reference,not two replicas;all caps/errors retained.
-Alloriginal full states intact;EBS all terminal models and latest full recovery (full-CoT2).
-Training queue closed,no retries/new training. No TEST/RL/8B;current cost advantage unresolved.
+Question: do generated partial computations beat competitive solvers at comparable cost?
+Experiment: partial-state-v7-matched5120; two seeds, 5,120 TRAIN expressions, frozen source 57d3220.
+Design: direct / compact CoT / full CoT at 640 updates each; reader 320 + writer 320.
+Endpoint: complete answers on four separate DEV panels of 512; terminal checkpoints, all failures retained.
+All ten training runs pass independent state, ordered-update, native-numerics and backup audits.
+All ten primary evaluation controllers are closed; only the shared untouched B0 final panel remains.
+No new accuracy or writer-state outcomes have been opened. Official TEST remains unused.
+Finite completion pipeline: tmux dario-ps7-whole-question-audit; wait deadline 03:30 UTC.
+Control: local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1; it archives then audits once.
+Registry: local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
+The audit requires all eleven controllers closed before accessing 51,200 answers and 4,096 notes.
+All original full states remain intact; EBS retains every terminal model and latest full scientific recovery.
+Next: interpret both seeds and all panels against both CoT baselines, same-reader controls and unchanged B0.
 
-## Active: checkpoint-export memory and actual recovery qualification
-Question: can export-associated host growth be removed without changing SFT or recoverable state?
-ID:checkpoint-export-memory-v8;v1interrupted on xm.save tuple->list metadata failure;original evidence kept.
-Explicit two-condition tensor followup complete:current4.809GiB/export versus gc/trim0.0018GiB/export.
-All six saved tensors/metadata/source/final device values exact; no optimizer updates in this probe.
-Public:validation/checkpoint_export_memory_v8_tensor_results_20261019.json;small evidence EBS readback.
-Actual SFT14control versus candidate12/close/restore12/updates13-14 now released,world4,full saves every2.
-Code isolated branch checkpoint-memory-v8 at fb72065;1601CPUchecks pass;immutable science57 unchanged.
-Control:local/diagnostics/checkpoint-export-SFT-recovery-v8-v2;tmux dario-export-SFT-recovery-v8-v2.
-Physical8/logical32–35,deadline03:00UTC,no retries;both arms fresh B0/128TRAIN,not capability evidence.
-Require repeated-save memory reduction plus exact losses/gradients/model/optimizer/cursor/saved RNG.
-Prior actual-SFTv1preflight rejected wrong source hashes before any worker/allocation;preserved,no scientific retry.
-No actual-SFT result yet; no claim that original world32 OOM or indefinite training is fixed.
+## Closed: bounded export-memory repair and restart attribution
+Question: can export memory growth be removed without changing the matched training/recovery path?
+Experiment: checkpoint-export-memory-v8; isolated code fb72065, 1,601 CPU checks, no scientific source changes.
+Tensor followup: six exact saved versions, current 4.809 GiB/export versus cleanup 0.0018 GiB/export.
+Actual 14-update SFT: control post-save memory 49–139 GiB; candidate 21–22 GiB across four workers.
+All fourteen full checkpoints, twelve native vectors, casts, finite masters/moments and cursors independently pass.
+Saved step 12 is byte-identical between paths, including active model, optimizer and CPU/device RNG.
+Original strict uninterrupted gate fails: resumed step-14 loss differs by 0.000014; failure remains published.
+A separate unchanged-exporter restart reproduces the same drift; both resumed trajectories are fully byte-identical.
+Thus cleanup preserves matched recovery; uninterrupted versus resumed numerical execution remains distinct.
+Results: validation/checkpoint_export_SFT_recovery_v8_20261019.json and checkpoint_export_restart_attribution_v8_20261019.json.
+All original states retained; terminal recovery/models, reports, code and numerical evidence EBS-readback protected.
+Decision: candidate available for separately declared future training; current immutable study untouched.
+Limit: short world-4 mechanics; no capability result, original world-32 OOM fix or indefinite-memory guarantee.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?

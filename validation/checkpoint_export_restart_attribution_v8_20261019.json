@@ -1,0 +1,146 @@
+{
+  "status": "COMPLETE_CONTROL_RESTART_ATTRIBUTION",
+  "comparisons": {
+    "resumed_control_vs_resumed_candidate": {
+      "full_terminal_active_model_bytes_equal": true,
+      "losses_and_norms": [
+        {
+          "step": 13,
+          "loss_equal": true,
+          "gradient_norm_equal": true,
+          "loss_difference": 0.0,
+          "gradient_norm_difference": 0.0
+        },
+        {
+          "step": 14,
+          "loss_equal": true,
+          "gradient_norm_equal": true,
+          "loss_difference": 0.0,
+          "gradient_norm_difference": 0.0
+        }
+      ],
+      "rank_states": [
+        {
+          "rank": 0,
+          "full_optimizer_bytes_equal": true,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        },
+        {
+          "rank": 1,
+          "full_optimizer_bytes_equal": true,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        },
+        {
+          "rank": 2,
+          "full_optimizer_bytes_equal": true,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        },
+        {
+          "rank": 3,
+          "full_optimizer_bytes_equal": true,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        }
+      ]
+    },
+    "resumed_control_vs_uninterrupted_control": {
+      "full_terminal_active_model_bytes_equal": false,
+      "losses_and_norms": [
+        {
+          "step": 13,
+          "loss_equal": true,
+          "gradient_norm_equal": true,
+          "loss_difference": 0.0,
+          "gradient_norm_difference": 0.0
+        },
+        {
+          "step": 14,
+          "loss_equal": false,
+          "gradient_norm_equal": false,
+          "loss_difference": 1.4092773199081421e-05,
+          "gradient_norm_difference": -0.0006308555603027344
+        }
+      ],
+      "rank_states": [
+        {
+          "rank": 0,
+          "full_optimizer_bytes_equal": false,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        },
+        {
+          "rank": 1,
+          "full_optimizer_bytes_equal": false,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        },
+        {
+          "rank": 2,
+          "full_optimizer_bytes_equal": false,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        },
+        {
+          "rank": 3,
+          "full_optimizer_bytes_equal": false,
+          "full_saved_CPU_device_RNG_equal": true,
+          "counters_equal": true
+        }
+      ]
+    }
+  },
+  "two_resumed_trajectories_fully_identical": true,
+  "actual_control12_restored_digests_recomputed": true,
+  "actual_native_checks": [
+    {
+      "reference_to_device_kl_nats": 0.003038018943671619,
+      "device_to_reference_kl_nats": 0.0031035199827923296,
+      "max_bidirectional_kl_nats": 0.0031035199827923296,
+      "passed": true,
+      "max_logp_error": 0.4776469232392877,
+      "rms_logp_error": 0.11136195315202933,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0030697297315727835,
+      "device_to_reference_kl_nats": 0.003041836099938893,
+      "max_bidirectional_kl_nats": 0.0030697297315727835,
+      "passed": true,
+      "max_logp_error": 0.3318406019216269,
+      "rms_logp_error": 0.06558423713648606,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 2.110202660403744e-05,
+      "device_to_reference_kl_nats": 2.157230339493209e-05,
+      "max_bidirectional_kl_nats": 2.157230339493209e-05,
+      "passed": true,
+      "max_logp_error": 0.19990114601651499,
+      "rms_logp_error": 0.04093075259376543,
+      "relative_l2_logp_error": 0.0014795616361593922,
+      "argmax_equal": true
+    },
+    {
+      "reference_to_device_kl_nats": 0.0003244116031699334,
+      "device_to_reference_kl_nats": 0.000325946147481554,
+      "max_bidirectional_kl_nats": 0.000325946147481554,
+      "passed": true,
+      "max_logp_error": 0.2453446255999836,
+      "rms_logp_error": 0.04909559206530713,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "argmax_equal": true
+    }
+  ],
+  "source_fork_lineage_sha256": "1cf97f0ad648f5fb1e2809e3e1a06193ae5c1efef60e3b57a18bec7648ad1994",
+  "plan_sha256": "359fe40892d2f099fa846744f02077ecb615849f548656a4c56fc722891876e0",
+  "audit_script_sha256": "270988e8b8bdda9d707e00c58a4dec9321d2305be43c8b6016e891edea370c79",
+  "original_strict_uninterrupted_gate_relaxed": false,
+  "limitation": "Engineering attribution only. Original source run completed14; control12was copied as explicit readback-verified fork. Original strict14gate remains a failure if any endpoint differs.",
+  "EBS_archive_receipt_sha256": "5e27960645565872d861f1f6f2c4c7f80bbfce4526f110279e5589b24d1024c8",
+  "finished_utc": "2026-10-19T01:13:49.689484+00:00"
+}
