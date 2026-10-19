@@ -112,6 +112,15 @@ outputs, metrics, intervals and the primary report hash remain unchanged.
 - [Earlier results, including V17's unchanged failed quality gate](docs/EXPERIMENT_HISTORY_20261019.md)
 - [Current queue](NEXT_STEPS.md)
 
-The next work is to inspect supervision grounding and preserve the reasoning
-format in a stronger control before another bounded study. There is no new RL,
-model-size jump, or larger training release from this result alone.
+The follow-up [TRAIN-only audit](validation/document_QA_v22_TRAIN_audit_20261019.json)
+examines 24 questions and 72 cited relations: 57 are locally supported, eight have
+insufficient citations, six are ambiguous, and one has a temporal contradiction.
+Four questions switch between different counties or cities sharing a name.
+All 72 citations match the original source annotations. This is an exploratory
+single-agent review, not independent adjudication or a population error estimate;
+insufficient citations do not establish that the answers themselves are false.
+
+The next bounded design tests passage selection before answering, with the same
+answer format in the direct control. Selecting annotated evidence will not itself
+prove connected reasoning or correct attribution. No new training is released yet;
+there is no new RL or model-size jump from this result alone.

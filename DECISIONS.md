@@ -1405,3 +1405,17 @@ OwnLL−7.34/−7.75;hardwrittenwrongclaims andaliases stronglypenalized. Direct
 strict1/1 is formatfailure:posthocgold-independentfirstline rule recovers191/182,
 not revisedprimary. Storedtraces/teacherrelations needgroundinginspection. Preserve
 allprimaryscores/decisions andsources;publishreviewpackage beforeanothertraining.
+
+2026-10-19 17:18 UTC — Complete a bounded TRAIN-only grounding audit before
+another learning release. In 24 fixed-rank, hop-stratified questions, 57 of 72
+cited relations are locally supported; eight citations are insufficient, six
+relations ambiguous, and one temporally contradictory. Four examples conflate
+different counties/cities with the same name. All citations match author-raw
+step evidence: these examples are not introduced by our packing. This is one
+agent's exploratory annotation, not independent gold or a corpus error rate.
+Blind #n expansion does not repair entity identity or unsupported relations.
+Prepare a small passage-selection versus format-matched direct comparison;
+no intermediate answer claims, no old-score changes, no training released yet.
+Fresh evidence is mostly two-hop under existing exclusions; do not promise a
+fresh four-hop study. Source-family filters were inventoried, not validated as
+semantic curation. Keep V21's failed gates and original report hash unchanged.

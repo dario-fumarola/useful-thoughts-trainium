@@ -1,11 +1,48 @@
-# Handoff — 2026-10-19 16:58 UTC
+# Handoff — 2026-10-19 17:20 UTC
 
 User saysworkautonomously untilstopped;weeksavailable. Do not final atmilestones.
 Noactivegoal;do notcreateone. Agentquota unavailableuntilOct24,do notretryagents.
 Shortreasoning/tool/actioncycles;commentary atleastevery60s. Currentphasepublication
 andscientificinspection,not moreruns. NoGPUjobs active;allv21producers CLOSED.
 
-## Complete QA-v21 result;publish next
+## Current next action: evidence-selection CPU design
+
+V22 TRAIN audit COMPLETE and readback-protected. Public report
+validation/document_QA_v22_TRAIN_audit_20261019.json SHA
+4c0c4443305bcda5f1d1d5da9062680ed0c195374cd39c0366e17be9205202f3.
+24 fixed-rank TRAIN questions/eight per hop;72 cited relations:57 E,8 I,6 A,1 C.
+E=locally supported;I=citation insufficient;A=ambiguous;C=contradiction. One agent,
+exploratory subset selected after viewing cited traces;not independent gold/error-rate estimate.
+Four questions conflate cross-state entities;all72 passages/answers verified against
+their own author-raw step contexts and frozen pack. Not our citation-index bug.
+All24 manual judgments,72 passages,source scripts and24 availability conditions public.
+EBS local/backups/evaluation/document-QA-v22-TRAIN-audit/READBACK.json PASS (10 files).
+Raw and allV21 data/primary report unchanged.
+
+At3072:9382 candidates exclude existing TRAIN but not old held evidence. Adding old
+held support exclusion leaves658 (531 two/119 three/8 four);all-old-visible exclusion
+leaves622 (496/119/7). Page/seed/paragraph independent hash-greedy finds253 for latter,
+not an optimal bound. No new cohort frozen. Repeated answers allowed,not official S5.
+Source filter inventory:all17299;noTReX5330;noTReX+exact original bridge4625;
+NQ/SQuAD-only+exactbridge1833 at3072. No semantic guarantee or selected source filter.
+Do NOT do blind #n expansion and call it repaired reasoning.
+
+Next:finish publication of this CPU audit;then freeze one v23 pilot protocol and
+implement CPU-only passage-selection targets versus format-matched direct answers.
+Proposed mechanism:small list of cited passage IDs before the answer,no intermediate
+factual claims. It tests evidence selection,not verified connected reasoning.
+Reuse single-model1.7B runtime,source objective and full-answer field parser for ALL
+paths. Two fresh models in a bounded pilot;not another6-model same-label campaign.
+Need fresh256 held evidence if constructible with deterministic low-conflict greedy
+selection from622 candidates;do not relax exclusions silently. Prior512 now development.
+No model job released. No other CPU job active. Agentquota unavailableuntilOct24.
+
+Primary papers read:Chain-of-Note2311.09210v2 (GPT-4 labels10K,LLaMA2-7B,hybrid),
+Attribute First then Generate2403.17104v3 (source-span selection,not citations-as-proof).
+REFERENCE_NOTES updated. HotpotQA human sentence labels considered as an alternative;
+official TRAIN HEAD timed out,no dataset downloaded or chosen,no DEV/TEST opened.
+
+## Complete QA-v21 result; already published
 
 Repo/home/ubuntu/dario,publicgithub.com/dario-fumarola/useful-thoughts-trainium.
 MasterC=local/diagnostics/document-QA-v21-study-v1. Final-readout-completion.json PASS.
@@ -61,12 +98,18 @@ Posthocderivedscripts alreadyEXECUTED,no modelexecutions,gatesunchanged:
 Allsources copiedP/analysis-source;fixedhash8fullcontexts/outputs saved.
 All1,742CPUtests+smoke/compilePASS;logsP/CPU-checks,original local/checks/tests.kPykH6.
 
-## Finish concrete publication thencontinue
+## Completed publication and protected review package
 
 README rewrittencompleteQAwithfailedgates/costs/limits;V17oldfrontpage appended
 docs/EXPERIMENT_HISTORY_20261019.md (preserve itsquality+combinedFAIL).
-STATUS/NEXT_STEPS/DECISIONS/REFERENCE_NOTES updated;workingtree uncommitted.
-Lastpublicmain9c4d6c5 has completedtrainingproof;QAcomplete NOT pushedyet.
+STATUS/NEXT_STEPS/DECISIONS/REFERENCE_NOTES updated with completed publication.
+QAcomplete PUSHED atdfa74b017d52965c4e1da416152da60ae667b73b.
+Finalpublicfiles readbackprotected underlocal/backups/evaluation/document-QA-v21-complete/FINAL-PUBLICATION.
+ReviewZIPdone/CRC+SHAverified:local/review/document-QA-v21-dfa74b0-20261019.zip,
+22,042,673bytes SHA307ab27a500b0fd12aea69b1f51fc687cec9b9d7c943a8b70228b02f9f13f162.
+Useralreadygivenpubliccommit/ziplinks;do notremake/reannounce zip.
+CPU availability and bounded grounding audit is now complete;see current next action above.
+The following publication steps1–3 areDONE;step4 produced V22.
 1. Verifycurrentdiff/readmelinks/primarySHA;copyALLcurrentresult/docs/source
    supplements to fresh EBS REVIEW-ANNEX withhash/readback/fsync (corearchiveunchanged).
 2. Commit/push reviewedQAcomplete data/plots/source/docs;smallP~7.4MiB. Do not add

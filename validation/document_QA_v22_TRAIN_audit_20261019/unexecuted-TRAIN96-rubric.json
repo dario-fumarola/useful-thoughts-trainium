@@ -1,0 +1,12 @@
+{
+  "status": "UNANNOTATED_MANUAL_REVIEW_TEMPLATE_NOT_A_SEMANTIC_PASS",
+  "labels": [
+    "entailed_in_cited_paragraph",
+    "supported_elsewhere_visible_but_citation_insufficient",
+    "insufficient_or_ambiguous_from_visible_context",
+    "contradicted_by_visible_context"
+  ],
+  "instructions": "Judge relation between resolvedquestion andanswer,not merely literalpresence. Use citedparagraph first;inspectallvisiblecontext ifinsufficient. Do not useoutsideworldknowledge. Recordtextbasis/ambiguity. Oneagentreview isnot independenthumanannotation. Stratifiedsample cannotyieldunweightedcorpuserrorrate. Do not alterV21labels/scores.",
+  "samples": 96,
+  "per_hops": 32
+}

@@ -1,0 +1,353 @@
+{
+  "status": "CPU_TRAIN_AUDIT_COMPLETE_NO_NEW_COHORT_MODEL_OR_SCORE_RELEASE",
+  "utc": "2026-10-19T17:11:38.223118+00:00",
+  "question": "Are the existing reasoning labels grounded well enough to justify simply resolving references or repeating training?",
+  "manual_review": {
+    "examples": 24,
+    "cited_steps": 72,
+    "examples_per_hop": {
+      "2": 8,
+      "3": 8,
+      "4": 8
+    },
+    "selection": "First eight fixed-hash-ranked TRAIN examples per hop stratum from the existing 96-row template: indices 0..7,32..39,64..71. Selection uses no model outputs. The subset and rubric were finalized after viewing these 24 cited traces, so this is exploratory, not preregistered validation. All 72 cited paragraphs were read. Other visible paragraphs are not exhaustively adjudicated. No source label, old score, or old cohort is changed.",
+    "cited_relation_counts": {
+      "I": 8,
+      "A": 6,
+      "E": 57,
+      "C": 1
+    },
+    "cited_relation_counts_by_original_source": {
+      "natural_questions": {
+        "I": 1,
+        "A": 2,
+        "E": 8,
+        "C": 1
+      },
+      "zerore": {
+        "A": 2,
+        "E": 7
+      },
+      "trex": {
+        "I": 7,
+        "E": 33,
+        "A": 1
+      },
+      "mlqaen": {
+        "A": 1,
+        "E": 1
+      },
+      "squad2": {
+        "E": 8
+      }
+    },
+    "confirmed_cross_state_entity_conflation_examples": [
+      "triple_io__360318_136753_807056",
+      "triple_ii__835614_424025_58046",
+      "quadruple_ioh1__566317_578030_86203_41384",
+      "quadruple_ioh1__566317_578030_464129_41384"
+    ],
+    "raw_provenance": "All 72 cited passages and answers match their own author-raw single-hop annotations and frozen visible citation indices. Observed examples are not introduced by a shuffled paragraph index in our pack.",
+    "limits": "One coding agent, no independent semantic adjudication. Exploratory stratified convenience subset within a fixed-hash sample; no corpus error-rate estimate. A marks ambiguity, I citation insufficiency, not necessarily false answers. Other visible passages not exhaustively adjudicated. Whole-chain identity can fail even when every individual cited relation is locally supported."
+  },
+  "availability": {
+    "source_rows": 19938,
+    "at_qualified_3072_window": [
+      {
+        "window": 3072,
+        "policy": "current_train_exclusions",
+        "within_held": "support_text_page_seed",
+        "eligible_rows": 9382,
+        "eligible_hops": {
+          "2": 7173,
+          "3": 1778,
+          "4": 431
+        },
+        "greedy_independent_rows": 767,
+        "greedy_hops": {
+          "2": 588,
+          "3": 160,
+          "4": 19
+        },
+        "balanced_greedy_rows": 429,
+        "balanced_greedy_hops": {
+          "4": 45,
+          "3": 128,
+          "2": 256
+        },
+        "greedy_ids_sha256": "200db3225b3c5b75a5a2389275bb8a837f6524833895ce5788c27753374926ad"
+      },
+      {
+        "window": 3072,
+        "policy": "current_train_exclusions",
+        "within_held": "support_text_seed",
+        "eligible_rows": 9382,
+        "eligible_hops": {
+          "2": 7173,
+          "3": 1778,
+          "4": 431
+        },
+        "greedy_independent_rows": 1030,
+        "greedy_hops": {
+          "2": 799,
+          "3": 203,
+          "4": 28
+        },
+        "balanced_greedy_rows": 432,
+        "balanced_greedy_hops": {
+          "4": 48,
+          "3": 128,
+          "2": 256
+        },
+        "greedy_ids_sha256": "c6727607806d78b7ac855f0bc6c271a9459ea843b51215bc1b750e8b870d8249"
+      },
+      {
+        "window": 3072,
+        "policy": "plus_old_held_support",
+        "within_held": "support_text_page_seed",
+        "eligible_rows": 658,
+        "eligible_hops": {
+          "3": 119,
+          "2": 531,
+          "4": 8
+        },
+        "greedy_independent_rows": 266,
+        "greedy_hops": {
+          "3": 49,
+          "2": 215,
+          "4": 2
+        },
+        "balanced_greedy_rows": 265,
+        "balanced_greedy_hops": {
+          "4": 4,
+          "3": 48,
+          "2": 213
+        },
+        "greedy_ids_sha256": "7eba3c9827c0a296b1a2484cf44c051bc1f674232542e19897c40478472e3b43"
+      },
+      {
+        "window": 3072,
+        "policy": "plus_old_held_support",
+        "within_held": "support_text_seed",
+        "eligible_rows": 658,
+        "eligible_hops": {
+          "3": 119,
+          "2": 531,
+          "4": 8
+        },
+        "greedy_independent_rows": 270,
+        "greedy_hops": {
+          "3": 49,
+          "2": 219,
+          "4": 2
+        },
+        "balanced_greedy_rows": 269,
+        "balanced_greedy_hops": {
+          "4": 4,
+          "3": 48,
+          "2": 217
+        },
+        "greedy_ids_sha256": "76df2eceef7440c876cff220c5c2a0387460fbbe9e0a988e66f81d514ef69afa"
+      },
+      {
+        "window": 3072,
+        "policy": "plus_all_old_held_visible",
+        "within_held": "support_text_page_seed",
+        "eligible_rows": 622,
+        "eligible_hops": {
+          "3": 119,
+          "2": 496,
+          "4": 7
+        },
+        "greedy_independent_rows": 253,
+        "greedy_hops": {
+          "3": 49,
+          "2": 202,
+          "4": 2
+        },
+        "balanced_greedy_rows": 252,
+        "balanced_greedy_hops": {
+          "4": 4,
+          "3": 48,
+          "2": 200
+        },
+        "greedy_ids_sha256": "09bd8898060827f97e47bab9fe5c713a74ea6662a08fdb50387bc4c9db5e8c21"
+      },
+      {
+        "window": 3072,
+        "policy": "plus_all_old_held_visible",
+        "within_held": "support_text_seed",
+        "eligible_rows": 622,
+        "eligible_hops": {
+          "3": 119,
+          "2": 496,
+          "4": 7
+        },
+        "greedy_independent_rows": 256,
+        "greedy_hops": {
+          "3": 49,
+          "2": 205,
+          "4": 2
+        },
+        "balanced_greedy_rows": 255,
+        "balanced_greedy_hops": {
+          "4": 4,
+          "3": 48,
+          "2": 203
+        },
+        "greedy_ids_sha256": "468213192121377c969c839bbdae441473106e936fa9923a6920099a889c25b9"
+      },
+      {
+        "window": 3072,
+        "policy": "paragraph_only_plus_old_held_support",
+        "within_held": "support_text_page_seed",
+        "eligible_rows": 3143,
+        "eligible_hops": {
+          "3": 613,
+          "2": 2368,
+          "4": 162
+        },
+        "greedy_independent_rows": 421,
+        "greedy_hops": {
+          "3": 84,
+          "2": 329,
+          "4": 8
+        },
+        "balanced_greedy_rows": 370,
+        "balanced_greedy_hops": {
+          "4": 16,
+          "3": 98,
+          "2": 256
+        },
+        "greedy_ids_sha256": "b07727dce51ce7f472826a085226fd12c70f4a5fc722f1fcb2bcc84d03d44f21"
+      },
+      {
+        "window": 3072,
+        "policy": "paragraph_only_plus_old_held_support",
+        "within_held": "support_text_seed",
+        "eligible_rows": 3143,
+        "eligible_hops": {
+          "3": 613,
+          "2": 2368,
+          "4": 162
+        },
+        "greedy_independent_rows": 615,
+        "greedy_hops": {
+          "3": 117,
+          "2": 489,
+          "4": 9
+        },
+        "balanced_greedy_rows": 397,
+        "balanced_greedy_hops": {
+          "4": 16,
+          "3": 125,
+          "2": 256
+        },
+        "greedy_ids_sha256": "5344fdc563592a14270acdae2fd87d1cf0ffa60a3705048fa8b96ecfa1f54060"
+      }
+    ],
+    "limits": "Eligible counts precede within-cohort exclusions. Greedy counts are constructive lower bounds, not optima or proofs of infeasibility. No candidates selected into a new frozen cohort. Repeated answers allowed; not the official MuSiQue split. 4096-token inventory is sizing only and exceeds the qualified width."
+  },
+  "decision": "Do not launch another run using the same canonical traces with blind answer substitution. First design a bounded grounded-evidence supervision/control comparison. Preserve V21 as a negative result; a changed label or parser needs a new identity and fresh held evidence.",
+  "next_constraints": [
+    "Separate literal citation presence, local relation entailment and cross-step entity identity.",
+    "Use one prospective answer serialization/parser for all competing paths; report unsupported counts.",
+    "Do not present answer-resolved questions as verified reasoning, or copying source text as proof of connected reasoning.",
+    "A fresh cohort under the previous evidence exclusions is predominantly two-hop; it cannot support a strong four-hop generalization claim.",
+    "No new training, RL, capacity change or official DEV/TEST file opened by this audit."
+  ],
+  "source_data": {
+    "dataset": "MuSiQue author TRAIN only, with train_patch already included",
+    "authors_repository": "https://github.com/stonybrooknlp/musique",
+    "paper": "https://arxiv.org/abs/2108.00573",
+    "raw_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+    "frozen_data_sha256": {
+      "TRAIN2048.jsonl": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9",
+      "held512-questions-only.jsonl": "7a8ff7129829960a876e8cd39d35f23d9033f2789b2b495023efd9862882c39d",
+      "held512-gold-only.jsonl": "7143f61398c9a25d60b92462a94c6a0df5e445e97e9570d23512dde1f02253d7"
+    }
+  },
+  "unchanged_v21_primary_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "files_sha256": {
+    "TRAIN24-cited-relations-and-chains.json": "8020f326b2fdcf631c700f555b26a5ed6ab1e1ed1db772f5254431894a1d5851",
+    "analysis-source/audit_document_QA_v22_data_availability_20261019.py": "1e98f25c00508faf4921211388aaf01b36b47624d6844fd1299e830748665a91",
+    "analysis-source/document_QA_v22_TRAIN24_manual_notes_20261019.json": "29670c5f61126a0ffda498310141c40f3c70e055d78508ee790c6fd452974a79",
+    "analysis-source/inventory_document_QA_v22_source_filters_20261019.py": "36c943b3e27f1d5882bee8f2d6d928c97dbeec4b40afb2fbfd7766fb2d0f6f1e",
+    "analysis-source/summarize_document_QA_v22_TRAIN_audit_20261019.py": "dbb52caa4d65455aaaa0622e4f7fedab182c812aff83a81bfdf951a576168cbf",
+    "availability-plan.json": "cf127d00728a2ae5a7aedbb19dfc890870b6e2bb0910a5051192ff3d970f56dc",
+    "availability.json": "92356cd9ce92d484b64874f3fc30de53f957c37160894e16df1269ac4c05efc6",
+    "source-policy-inventory.json": "04bf8e4847ce720a8e6f817d4d609afc66b0a1b9b3dc6a48fe9117658df95569",
+    "unexecuted-TRAIN96-rubric.json": "42dc1f23277e7c7e10e6fb2a1135339a8fac1d34c02d075d123aed83872a2c98"
+  },
+  "exploratory_source_policy_inventory": {
+    "conditions": [
+      {
+        "source_policy": "all",
+        "exact_original_bridge_text": false,
+        "rows_at_3072": 17299,
+        "hops": {
+          "2": 12721,
+          "3": 3685,
+          "4": 893
+        },
+        "in_old_train": 2048
+      },
+      {
+        "source_policy": "all",
+        "exact_original_bridge_text": true,
+        "rows_at_3072": 15364,
+        "hops": {
+          "2": 11855,
+          "3": 2979,
+          "4": 530
+        },
+        "in_old_train": 1924
+      },
+      {
+        "source_policy": "no_trex",
+        "exact_original_bridge_text": false,
+        "rows_at_3072": 5330,
+        "hops": {
+          "2": 4307,
+          "3": 882,
+          "4": 141
+        },
+        "in_old_train": 453
+      },
+      {
+        "source_policy": "no_trex",
+        "exact_original_bridge_text": true,
+        "rows_at_3072": 4625,
+        "hops": {
+          "2": 4020,
+          "3": 572,
+          "4": 33
+        },
+        "in_old_train": 409
+      },
+      {
+        "source_policy": "nq_squad_only",
+        "exact_original_bridge_text": false,
+        "rows_at_3072": 2250,
+        "hops": {
+          "2": 1826,
+          "3": 349,
+          "4": 75
+        },
+        "in_old_train": 156
+      },
+      {
+        "source_policy": "nq_squad_only",
+        "exact_original_bridge_text": true,
+        "rows_at_3072": 1833,
+        "hops": {
+          "2": 1639,
+          "3": 180,
+          "4": 14
+        },
+        "in_old_train": 133
+      }
+    ],
+    "limits": "Exploratory metadata counts only. Exact bridge-string equality does not establish shared entity identity or entailment. Excluding TReX does not make remaining annotations semantically verified. No source filter selected into a new cohort."
+  }
+}

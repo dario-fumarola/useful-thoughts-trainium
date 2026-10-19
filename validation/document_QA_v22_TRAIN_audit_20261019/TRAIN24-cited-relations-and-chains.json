@@ -1,0 +1,1261 @@
+{
+  "status": "POSTHOC_SINGLE_AGENT_CITED_RELATION_AND_CHAIN_AUDIT_NOT_INDEPENDENT_GOLD",
+  "scope": "First eight fixed-hash-ranked TRAIN examples per hop stratum from the existing 96-row template: indices 0..7,32..39,64..71. Selection uses no model outputs. The subset and rubric were finalized after viewing these 24 cited traces, so this is exploratory, not preregistered validation. All 72 cited paragraphs were read. Other visible paragraphs are not exhaustively adjudicated. No source label, old score, or old cohort is changed.",
+  "labels": {
+    "E": "Cited paragraph supports the requested relation under an ordinary contextual reading; this is not proof of uniqueness, external truth, or whole-chain validity.",
+    "A": "Relation or referent is materially ambiguous/underspecified in the cited paragraph.",
+    "I": "Cited paragraph does not establish the requested relation; does not assert that no other visible paragraph supports it.",
+    "C": "Cited paragraph conflicts with the proposed relation/temporal interpretation."
+  },
+  "examples": [
+    {
+      "item_id": "double__93350_56335",
+      "hops": 2,
+      "question": "where was the initial german offensive during the war just before toilets became common in London?",
+      "final_answer": "First Battle of the Marne",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "when did indoor toilets become common in america",
+          "question_resolved": "when did indoor toilets become common in america",
+          "canonical_answer": "After World War I",
+          "citation": 18,
+          "title": "Toilet (room)",
+          "paragraph": "Indoor toilets were at first a luxury of the rich and only gradually spread to the lower classes. As late as the 1890s, building regulations in London did not require working - class housing to have indoor toilets; into the early 20th century, some English homes were built with an upstairs toilet for use by the owners and an outhouse for use by the servants. In some cases, there was a transitional stage where toilets were built into the house but accessible only from the outside. After World War I, all new housing in London and its suburbs had indoor toilets.",
+          "manual_entailment_label": "I",
+          "manual_note": "Question asks America; cited paragraph's after-WWI statement concerns new housing in London and its suburbs.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 93350
+        },
+        {
+          "step": 2,
+          "question_original": "where was the initial german offensive on #1 i western front stopped in september 1914",
+          "question_resolved": "where was the initial german offensive on After World War I i western front stopped in september 1914",
+          "canonical_answer": "First Battle of the Marne",
+          "citation": 10,
+          "title": "Western Front (World War I)",
+          "paragraph": "The German Army came within 70 km (43 mi) of Paris but at the First Battle of the Marne (6 -- 12 September), French and British troops were able to force a German retreat by exploiting a gap which appeared between the 1st and 2nd Armies, ending the German advance into France. The German Army retreated north of the Aisne River and dug in there, establishing the beginnings of a static western front that was to last for the next three years. Following this German retirement, the opposing forces made reciprocal outflanking manoeuvres, known as the Race for the Sea and quickly extended their trench systems from the Swiss frontier to the North Sea. The territory occupied by Germany held 64 percent of French pig - iron production, 24 percent of its steel manufacturing and 40 percent of the coal industry -- dealing a serious blow to French industry.",
+          "manual_entailment_label": "A",
+          "manual_note": "Paragraph supports stopping the German advance at the Marne. Substitution produces 'on After World War I i western front ... September 1914', which does not identify a coherent war/time relation.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 56335
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 0,
+      "chain_flags": [
+        "decomposition_geography_mismatch",
+        "malformed_answer_substitution"
+      ]
+    },
+    {
+      "item_id": "double__157343_486194",
+      "hops": 2,
+      "question": "Who is the father of Lady Xu Xinyue's spouse?",
+      "final_answer": "Qian Liu",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "What is Lady Xu Xinyue's spouse's name?",
+          "question_resolved": "What is Lady Xu Xinyue's spouse's name?",
+          "canonical_answer": "Qian Yuanguan",
+          "citation": 9,
+          "title": "Xu Xinyue",
+          "paragraph": "Xu Xinyue (; 902?-August 1, 946), formally the Lady Renhui of Wuyue (吳越國仁惠夫人), was a concubine, possibly later a wife, of Qian Yuanguan (King Wenmu) (né Qian Chuanguan, name changed to Qian Yuanguan upon his succession to the throne), the second king of the Chinese state Wuyue of the Five Dynasties and Ten Kingdoms period, and the mother to his son and successor Qian Hongzuo (King Wenxian).",
+          "manual_entailment_label": "A",
+          "manual_note": "Paragraph says concubine, possibly later wife. Qian Yuanguan is supported as partner; spouse status is explicitly uncertain.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 157343
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> father",
+          "question_resolved": "Qian Yuanguan >> father",
+          "canonical_answer": "Qian Liu",
+          "citation": 6,
+          "title": "Lady Chen (Wusu)",
+          "paragraph": "Qian Liu died in 932, and Qian Chuanguan took over administration of the state (and changed his name to Qian Yuanguan), although for some time did not use the title of King of Wuyue but instead referred to himself by the military governor title (and, in succession, the Later Tang-bestowed titles of Prince of Wu and Prince of Yue) when reporting to Later Tang, to whom Wuyue was a vassal. (He would assume the king title only years after Lady Chen's death, in 937.) It was said that Qian Yuanguan was respectful and filially pious toward his mother. He also treated her family well, presenting them with many gifts, but never gave them offices on account of her. She died in the early \"Qingtai\" era (934-936) of the Later Tang emperor Li Congke and was posthumously created the Lady Dowager of Jin, with the posthumous name of \"Zhaoyi\" (\"accomplished and benevolent\").",
+          "manual_entailment_label": "I",
+          "manual_note": "Succession after Qian Liu and filial conduct toward Lady Chen do not state that Qian Liu was Qian Yuanguan's father.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 486194
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 1,
+      "chain_flags": [
+        "uncertain_spouse_relation",
+        "father_relation_not_established_by_citation"
+      ]
+    },
+    {
+      "item_id": "double__65704_86951",
+      "hops": 2,
+      "question": "When did the highest paid player in the NBA get his first ring?",
+      "final_answer": "2015",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "who is the most paid player in the nba",
+          "question_resolved": "who is the most paid player in the nba",
+          "canonical_answer": "Stephen Curry",
+          "citation": 1,
+          "title": "Highest-paid NBA players by season",
+          "paragraph": "Player Salary Team Stephen Curry $34,682,550 Golden State Warriors LeBron James $33,285,709 Cleveland Cavaliers Paul Millsap $31,269,231 Denver Nuggets Gordon Hayward $29,727,900 Boston Celtics Blake Griffin $29,512,900 Los Angeles Clippers Kyle Lowry $28,703,704 Toronto Raptors Russell Westbrook $28,530,608 Oklahoma City Thunder Mike Conley, Jr. $28,530,608 Memphis Grizzlies James Harden $28,299,399 Houston Rockets DeMar DeRozan $27,739,975 Toronto Raptors",
+          "manual_entailment_label": "E",
+          "manual_note": "Stephen Curry heads the quoted salary table and has its largest listed salary; interpretation is confined to this historical table.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 65704
+        },
+        {
+          "step": 2,
+          "question_original": "when did #1 get his first ring",
+          "question_resolved": "when did Stephen Curry get his first ring",
+          "canonical_answer": "2015",
+          "citation": 2,
+          "title": "Stephen Curry",
+          "paragraph": "Stephen Curry Curry in 2016 No. 30 -- Golden State Warriors Position Point guard League NBA (1988 - 03 - 14) March 14, 1988 (age 29) Akron, Ohio Nationality American Listed height 6 ft 3 in (1.91 m) Listed weight 190 lb (86 kg) Career information High school Charlotte Christian (Charlotte, North Carolina) College Davidson (2006 -- 2009) NBA draft 2009 / Round: 1 / Pick: 7th overall Selected by the Golden State Warriors Playing career 2009 -- present Career history 2009 -- present Golden State Warriors Career highlights and awards 2 × NBA champion (2015, 2017) 2 × NBA Most Valuable Player (2015, 2016) 4 × NBA All - Star (2014 -- 2017) 2 × All - NBA First Team (2015, 2016) 2 × All - NBA Second Team (2014, 2017) NBA scoring champion (2016) NBA steals leader (2016) 50 -- 40 -- 90 club (2016) NBA Three - Point Contest champion (2015) NBA Sportsmanship Award (2011) NBA All - Rookie First Team (2010) AP Athlete of the Year (2015) Consensus first - team All - American (2009) Consensus second - team All - American (2008) NCAA Division I scoring leader (2009) 2 × SoCon Player of the Year (2008, 2009) Stats at NBA.com Stats at Basketball-Reference.com Medals (hide) Men's basketball Representing United States FIBA World Cup 2010 Turkey Team 2014 Spain Team",
+          "manual_entailment_label": "E",
+          "manual_note": "Career highlights list NBA titles in 2015 and 2017; the first listed championship is 2015.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 86951
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 2,
+      "chain_flags": []
+    },
+    {
+      "item_id": "double__95614_716227",
+      "hops": 2,
+      "question": "Where was the person who featured in the film Green Snake born?",
+      "final_answer": "Hong Kong",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Who featured in the film Green Snake?",
+          "question_resolved": "Who featured in the film Green Snake?",
+          "canonical_answer": "Maggie Cheung",
+          "citation": 11,
+          "title": "Green Snake",
+          "paragraph": "A storm takes place while Fat-hoi goes into the forest and he attacks two Snake spirits. But after he noticed that they were only preventing rain from hitting a woman giving birth, he also releases them. Again, he is haunted by sins of the human mind, primarily the female body. The two snakes, White Snake (Joey Wong) and Green Snake (Maggie Cheung), are later seen on the rooftop of a festival where Green Snake participates while White Snake eyes a local scholar Hsui Xien (Wu Hsing-Kuo). The two have been training for many centuries to take human form and experience the love, freedom and wisdom that is supposedly only available to humans. White Snake is the more experienced one and proceeds to get engaged to Hsui Xien, with whom she plans to have a child which would complete her passage into the mortal realm; Green Snake is the younger and more impulsive of the two sisters but she is not yet quite convinced of the benefits of the human world. They both move into their magically created house and start a successful medical practice in the town. Other than Hsui Xien's visit, the two gets another visit unexpectedly from a buffoonish Taoist whom Green Snake leaves the household to take care of. Because of White Snake's beautiful charms, Hsui Xien, once known as the toughest and most dedicated scholar of the village, is starting to lose his reputation.",
+          "manual_entailment_label": "E",
+          "manual_note": "Maggie Cheung is explicitly named as Green Snake, among multiple featured actors.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 95614
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> place of birth",
+          "question_resolved": "Maggie Cheung >> place of birth",
+          "canonical_answer": "Hong Kong",
+          "citation": 12,
+          "title": "Comrades: Almost a Love Story",
+          "paragraph": "Comrades: Almost a Love Story () is a 1996 Hong Kong film starring Maggie Cheung, Leon Lai, Eric Tsang, and Kristy Yang. It was directed by Peter Chan. The title refers to \"Tian Mi Mi\", a song by Teresa Teng whose songs are featured in the film. It was filmed on location in Hong Kong and New York City. Leon Lai later commented in 1997 that the story of Li Xiao Jun is somewhat a description of his own life.",
+          "manual_entailment_label": "I",
+          "manual_note": "A different film starring Maggie Cheung was filmed in Hong Kong/New York. This does not establish her birthplace.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 716227
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 3,
+      "chain_flags": [
+        "nonunique_first_entity",
+        "birthplace_relation_not_established_by_citation"
+      ]
+    },
+    {
+      "item_id": "double__159068_55877",
+      "hops": 2,
+      "question": "When did the country where Prison Break premiered first come to Latin America?",
+      "final_answer": "16th to 20th centuries",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "What country did the series premiere?",
+          "question_resolved": "What country did the series premiere?",
+          "canonical_answer": "France",
+          "citation": 10,
+          "title": "Prison Break",
+          "paragraph": "In Canada, Prison Break was broadcast on Global one hour before it aired on Fox, except in the Maritimes where it aired two hours before Fox's airing. Prison Break was the only new television series to be positioned in the top twenty television shows of 2005–2006 in Canada, achieving an average of 876,000 viewers in the key demographic of 18–49 and 1.4 million viewers nationally for its first season. Prison Break premiered on Australian television network Seven on February 1, 2006, to an average audience of 1.94 million. The first season attracted an overall average of 1.353 million viewers. After decreasing ratings throughout the second season, Seven decided to fast-track the airing of the third-season episodes. The fifth season revival moved to Network Ten and debuted on May 15, 2017.The first and second seasons premiered in the UK on Five, with the first season being replayed on UKTV Gold before the second season debuted on Five. Prior to the start of the third season, Sky One acquired the rights to broadcast Prison Break, paying £500,000 per episode. The series premiered in France on August 31, 2006, with an average of 5.5 million viewers. The second season premiered on September 13, 2007, to 5.3 million viewers. The first season's broadcast in Hong Kong on TVB Pearl received the largest audience in the country for a foreign drama. The series premiere obtained an average of 260,000 viewers while the first-season finale obtained an average of 470,000 viewers. The second season's premiere received an average of 270,000 viewers.",
+          "manual_entailment_label": "A",
+          "manual_note": "The passage gives broadcasts/premieres in Canada, Australia, the UK, France and Hong Kong. France is a premiere location but the question does not select it uniquely.",
+          "source_dataset": "mlqaen",
+          "source_single_hop_id": 159068
+        },
+        {
+          "step": 2,
+          "question_original": "when did #1 first come to latin america",
+          "question_resolved": "when did France first come to latin america",
+          "canonical_answer": "16th to 20th centuries",
+          "citation": 11,
+          "title": "French people",
+          "paragraph": "Elsewhere in the Americas, French settlement took place in the 16th to 20th centuries. They can be found in Haiti, Cuba (refugees from the Haitian Revolution) and Uruguay. The Betancourt political families who influenced Peru, Colombia, Venezuela, Ecuador, Puerto Rico, Bolivia and Panama have some French ancestry.",
+          "manual_entailment_label": "A",
+          "manual_note": "French settlement in the Americas is dated to the sixteenth through twentieth centuries; this supports a settlement interval, not a precise first arrival of a country in Latin America.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 55877
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 4,
+      "chain_flags": [
+        "nonunique_premiere_country",
+        "question_and_answer_temporal_granularity_mismatch"
+      ]
+    },
+    {
+      "item_id": "double__455598_662562",
+      "hops": 2,
+      "question": "In what war was the city containing Quba Mosque besieged?",
+      "final_answer": "World War I",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Quba Mosque >> located in the administrative territorial entity",
+          "question_resolved": "Quba Mosque >> located in the administrative territorial entity",
+          "canonical_answer": "Medina",
+          "citation": 5,
+          "title": "Quba Mosque",
+          "paragraph": "The Quba Mosque () is a mosque in the outlying environs of Medina, Saudi Arabia.Quba mosque was built six kilometer off Medina in village of Quba, which is currently part of Medina. Depending on whether the Mosque of the Companions in the Eritrean city of Massawa is older or not, it may be the first mosque in the world that dates to the lifetime of the Islamic \"Nabi\" (Prophet) Muhammad in the 7th century CE. According to legend, its first stones were positioned by Muhammad as soon as he arrived on his emigration from the city of Mecca to Medina, and the mosque was completed by his companions. Muhammad spent 14 days in this mosque praying \"qaṣr\" (, a short prayer) while waiting for Ali to arrive in Medina, after the latter stayed behind in Mecca to carry out a couple of tasks entrusted to him by the Prophet.",
+          "manual_entailment_label": "E",
+          "manual_note": "Quba Mosque is explicitly in the environs of Medina and currently part of Medina.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 455598
+        },
+        {
+          "step": 2,
+          "question_original": "Siege of #1 >> part of",
+          "question_resolved": "Siege of Medina >> part of",
+          "canonical_answer": "World War I",
+          "citation": 6,
+          "title": "Siege of Medina",
+          "paragraph": "Medina, an Islamic holy city in Arabia, underwent a long siege during World War I. Medina was at the time part of the Ottoman Empire. In the war, the Ottoman Empire sided with the Central Powers. Sharif Hussain of Mecca revolted against the caliph and the Ottoman Empire which, under the leadership of the nationalistic Young Turks, had ignored the wishes of the Caliph and sided with the Central Powers. Hussain instead sided with the British Empire. T. E. Lawrence was instrumental in this revolt. Hussain occupied Mecca and besieged Medina. It was one of the longest sieges in history that lasted till even after the end of war. Fahreddin Pasha was the defender of Medina. Some celebrated him as \"\"the Lion of the Desert\"\" despite the suffering of those who remained in Medina. The siege lasted two years and seven months.",
+          "manual_entailment_label": "E",
+          "manual_note": "The cited Siege of Medina paragraph explicitly places the siege during World War I.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 662562
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 5,
+      "chain_flags": []
+    },
+    {
+      "item_id": "double__853662_646483",
+      "hops": 2,
+      "question": "What river is the city where Karl-Heinz Metzner died located on?",
+      "final_answer": "Fulda",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Karl-Heinz Metzner >> place of death",
+          "question_resolved": "Karl-Heinz Metzner >> place of death",
+          "canonical_answer": "Kassel",
+          "citation": 18,
+          "title": "Karl-Heinz Metzner",
+          "paragraph": "He was part of the West German team that won the 1954 FIFA World Cup. In total he earned two caps for West Germany. During his club career he played for Hessen Kassel.",
+          "manual_entailment_label": "I",
+          "manual_note": "Playing for Hessen Kassel does not establish where Karl-Heinz Metzner died.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 853662
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> located in or next to body of water",
+          "question_resolved": "Kassel >> located in or next to body of water",
+          "canonical_answer": "Fulda",
+          "citation": 14,
+          "title": "Kassel",
+          "paragraph": "Kassel (; spelled Cassel until 1928) is a city located on the Fulda River in northern Hesse, Germany. It is the administrative seat of the Regierungsbezirk Kassel and the district of the same name and had 200,507 inhabitants in December 2015. The former capital of the state of Hesse-Kassel has many palaces and parks, including the Bergpark Wilhelmshöhe, which is a UNESCO World Heritage Site. Kassel is also known for the \"documenta\" exhibitions of contemporary art. Kassel has a public university with 25,000 students (2018) and a multicultural population (39% of the citizens in 2017 had a migration background).",
+          "manual_entailment_label": "E",
+          "manual_note": "Kassel is explicitly located on the Fulda River.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 646483
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 6,
+      "chain_flags": [
+        "deathplace_relation_not_established_by_citation"
+      ]
+    },
+    {
+      "item_id": "double__96774_94210",
+      "hops": 2,
+      "question": "Who designed the place where the Portrait of Bia de' Medici can be found?",
+      "final_answer": "Giorgio Vasari",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "What is the name of the place where Portrait of Bia de' Medici can be found?",
+          "question_resolved": "What is the name of the place where Portrait of Bia de' Medici can be found?",
+          "canonical_answer": "Uffizi",
+          "citation": 13,
+          "title": "Portrait of Bia de' Medici",
+          "paragraph": "The Portrait of Bia de' Medici is an oil-tempera on wood painting by Agnolo Bronzino, dating to around 1542 and now in the Uffizi in Florence. For a long time it was displayed in the Tribuna at the heart of the museum, but since 2012 it has been moved to the 'sale rosse' of the Nuovi Uffizi. A second portrait, by Pontormo, has also been argued to show Bia de' Medici, but this identification is disputed.",
+          "manual_entailment_label": "E",
+          "manual_note": "The portrait is explicitly now in the Uffizi in Florence.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 96774
+        },
+        {
+          "step": 2,
+          "question_original": "Who was #1 designed by?",
+          "question_resolved": "Who was Uffizi designed by?",
+          "canonical_answer": "Giorgio Vasari",
+          "citation": 2,
+          "title": "Uffizi",
+          "paragraph": "The building of Uffizi complex was begun by Giorgio Vasari in 1560 for Cosimo I de' Medici so as to accommodate the offices of the Florentine magistrates, hence the name , \"offices\". The construction was later continued by Alfonso Parigi and Bernardo Buontalenti; it was completed in 1581. The top floor was made into a gallery for the family and their guests and included their collection of Roman sculptures.",
+          "manual_entailment_label": "E",
+          "manual_note": "Construction of the Uffizi complex was begun by Giorgio Vasari, with later continuation by other architects. Supports the conventional attribution, though 'designed' is not the paragraph's literal verb.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 94210
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 7,
+      "chain_flags": []
+    },
+    {
+      "item_id": "triple_ii__565867_104020_78265",
+      "hops": 3,
+      "question": "How much of the country the I Love America performer belongs to is covered by the Alps?",
+      "final_answer": "65%",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "I Love America >> performer",
+          "question_resolved": "I Love America >> performer",
+          "canonical_answer": "Patrick Juvet",
+          "citation": 7,
+          "title": "I Love America (Patrick Juvet song)",
+          "paragraph": "\"I Love America\" is 1978 disco hit by Swiss-born performer Patrick Juvet. Along with the tracks, \"Where Is My Woman\" and \"Got A Feeling\", it peaked at number five on the disco chart in the United States. It was included in the compilation album, \"A Night at Studio 54\", in 1979.",
+          "manual_entailment_label": "E",
+          "manual_note": "I Love America is explicitly a hit by Patrick Juvet.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 565867
+        },
+        {
+          "step": 2,
+          "question_original": "Which country does #1 belong to?",
+          "question_resolved": "Which country does Patrick Juvet belong to?",
+          "canonical_answer": "Switzerland",
+          "citation": 1,
+          "title": "Patrick Juvet",
+          "paragraph": "Patrick Juvet (born 21 August 1950, in Montreux, Switzerland) is a former model turned singer-songwriter, who had a string of hit records in France. While his early career was focused on making pop records, he found international success as a disco music performer in the latter half of the 1970s.",
+          "manual_entailment_label": "A",
+          "manual_note": "Birth in Montreux, Switzerland is explicit; 'belongs to' does not distinguish birthplace, citizenship, or residence. The previous citation also calls him Swiss-born.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 104020
+        },
+        {
+          "step": 3,
+          "question_original": "how much of #2 is covered by the alps",
+          "question_resolved": "how much of Switzerland is covered by the alps",
+          "canonical_answer": "65%",
+          "citation": 13,
+          "title": "Swiss Alps",
+          "paragraph": "The Alps cover 65% of Switzerland's total 41,285 square kilometres (15,940 sq mi) surface area, making it one of the most alpine countries. Despite the fact that Switzerland covers only 14% of the Alps total 192,753 square kilometres (74,422 sq mi) area, 48 out of 82 alpine four - thousanders are located in the Swiss Alps and practically all of the remaining 34 are within 20 kilometres (12 mi) of the country's border.",
+          "manual_entailment_label": "E",
+          "manual_note": "The passage explicitly gives 65 percent of Switzerland covered by the Alps.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 78265
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 32,
+      "chain_flags": [
+        "underspecified_country_relation"
+      ]
+    },
+    {
+      "item_id": "triple_ii__376819_226789_844905",
+      "hops": 3,
+      "question": "In what country is the administrative territorial entity that is found in the city where Schloss Favorite is located?",
+      "final_answer": "Germany",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Schloss Favorite >> located in the administrative territorial entity",
+          "question_resolved": "Schloss Favorite >> located in the administrative territorial entity",
+          "canonical_answer": "Ludwigsburg",
+          "citation": 12,
+          "title": "Schloss Favorite, Ludwigsburg",
+          "paragraph": "Schloss Favorite is a Baroque \"maison de plaisance\" and hunting lodge in Ludwigsburg, Germany and was used as summer residence. It is located on a rise, directly north of Ludwigsburg Palace and connected via an avenue to it.",
+          "manual_entailment_label": "E",
+          "manual_note": "Schloss Favorite is explicitly in Ludwigsburg, Germany.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 376819
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> contains administrative territorial entity",
+          "question_resolved": "Ludwigsburg >> contains administrative territorial entity",
+          "canonical_answer": "Kornwestheim",
+          "citation": 5,
+          "title": "Kornwestheim station",
+          "paragraph": "Kornwestheim station is located in the Ludwigsburg district of Kornwestheim in the German state of Baden-Württemberg. It is located on the Franconia Railway () and is a station on the network of the Stuttgart S-Bahn. It is near the junction of the Untertürkheim–Kornwestheim line (\"Schusterbahn\") freight bypass. Kornwestheim passenger station was the site of a Deutsche Bahn car train loading facility until December 2007.",
+          "manual_entailment_label": "A",
+          "manual_note": "The sentence about a Ludwigsburg district of Kornwestheim is awkward and does not clearly connect the CITY of Ludwigsburg from step 1 to containment of Kornwestheim. A district and its namesake city need not be interchangeable.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 226789
+        },
+        {
+          "step": 3,
+          "question_original": "#2 >> country",
+          "question_resolved": "Kornwestheim >> country",
+          "canonical_answer": "Germany",
+          "citation": 8,
+          "title": "Mesrob II Mutafyan of Constantinople",
+          "paragraph": "Mesrob Mutafyan born Minas Mutafian graduated from the American High School in Kornwestheim near Stuttgart, Germany. From 1974 to 1979, he studied philosophy and sociology in Memphis, Tennessee, United States.",
+          "manual_entailment_label": "E",
+          "manual_note": "Kornwestheim near Stuttgart, Germany is explicit.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 844905
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 33,
+      "chain_flags": [
+        "possible_city_district_entity_conflation"
+      ]
+    },
+    {
+      "item_id": "triple_ii__780207_631365_53191",
+      "hops": 3,
+      "question": "Who is the Minister for Defense in the country where the author of The Dark Lady of the Sonnets has citizenship?",
+      "final_answer": "Leo Varadkar, TD",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "The Dark Lady of the Sonnets >> author",
+          "question_resolved": "The Dark Lady of the Sonnets >> author",
+          "canonical_answer": "George Bernard Shaw",
+          "citation": 18,
+          "title": "The Dark Lady of the Sonnets",
+          "paragraph": "The Dark Lady of the Sonnets is a 1910 short comedy by George Bernard Shaw in which William Shakespeare, intending to meet the \"Dark Lady\", accidentally encounters Queen Elizabeth I and attempts to persuade her to create a national theatre. The play was written as part of a campaign to create a \"Shakespeare National Theatre\" by 1916.",
+          "manual_entailment_label": "E",
+          "manual_note": "The Dark Lady of the Sonnets is explicitly a comedy by George Bernard Shaw.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 780207
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> country of citizenship",
+          "question_resolved": "George Bernard Shaw >> country of citizenship",
+          "canonical_answer": "Ireland",
+          "citation": 6,
+          "title": "John Bull's Other Island",
+          "paragraph": "John Bull's Other Island is a comedy about Ireland, written by George Bernard Shaw in 1904. Shaw himself was born in Dublin, yet this is one of only two plays of his where he thematically returned to his homeland, the other being \"O'Flaherty V.C.\" The play was highly successful in its day, but is rarely revived, probably because so much of the dialogue is specific to the politics of the day.",
+          "manual_entailment_label": "I",
+          "manual_note": "Birth in Dublin and Ireland as homeland do not explicitly establish country of citizenship. This audit does not substitute external biographical knowledge.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 631365
+        },
+        {
+          "step": 3,
+          "question_original": "who is the minister for defence in #2",
+          "question_resolved": "who is the minister for defence in Ireland",
+          "canonical_answer": "Leo Varadkar, TD",
+          "citation": 15,
+          "title": "Minister for Defence (Ireland)",
+          "paragraph": "The Minister for Defence (Irish: An tAire Cosanta) is the senior minister at the Department of Defence in the Government of Ireland. The current Minister for Defence is Leo Varadkar, TD.",
+          "manual_entailment_label": "E",
+          "manual_note": "The source explicitly names Leo Varadkar, TD as current minister; judged relative to the historical passage, not today's officeholder.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 53191
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 34,
+      "chain_flags": [
+        "citizenship_relation_not_established_by_citation"
+      ]
+    },
+    {
+      "item_id": "triple_io__75408_8509_19700",
+      "hops": 3,
+      "question": "What is the population of the people who started the great migration of the Slavs in the country who won the 2002 FIFA World Cup?",
+      "final_answer": "5 million",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "who won the 2002 world cup in japan",
+          "question_resolved": "who won the 2002 world cup in japan",
+          "canonical_answer": "Brazil (",
+          "citation": 18,
+          "title": "2002 FIFA World Cup",
+          "paragraph": "2002 FIFA World Cup 2002 FIFA 월드컵한국 / 일본 2002 FIFA Woldeu Keob Hanguk / Ilbon 2002 FIFA ワールドカップ韓国 / 日本 2002 FIFA Waarudo Kappu Kankoku / Nihon 2002 FIFA World Cup official logo Tournament details Host countries South Korea Japan Dates 31 May -- 30 June Teams 32 (from 5 confederations) Venue (s) 20 (in 20 host cities) Final positions Champions Brazil (5th title) Runners - up Germany Third place Turkey Fourth place South Korea Tournament statistics Matches played 64 Goals scored 161 (2.52 per match) Attendance 2,705,197 (42,269 per match) Top scorer (s) Ronaldo (8 goals) Best player Oliver Kahn Best young player Landon Donovan Best goalkeeper Oliver Kahn Fair play award Belgium ← 1998 2006 →",
+          "manual_entailment_label": "E",
+          "manual_note": "Brazil is explicitly champion. Canonical answer 'Brazil (' retains a dangling parenthesis, which is a surface-label defect.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 75408
+        },
+        {
+          "step": 2,
+          "question_original": "Who started the great migration of the Slavs?",
+          "question_resolved": "Who started the great migration of the Slavs?",
+          "canonical_answer": "Germans",
+          "citation": 3,
+          "title": "Slavs",
+          "paragraph": "According to eastern homeland theory, prior to becoming known to the Roman world, Slavic-speaking tribes were part of the many multi-ethnic confederacies of Eurasia – such as the Sarmatian, Hun and Gothic empires. The Slavs emerged from obscurity when the westward movement of Germans in the 5th and 6th centuries CE (thought to be in conjunction with the movement of peoples from Siberia and Eastern Europe: Huns, and later Avars and Bulgars) started the great migration of the Slavs, who settled the lands abandoned by Germanic tribes fleeing the Huns and their allies: westward into the country between the Oder and the Elbe-Saale line; southward into Bohemia, Moravia, much of present-day Austria, the Pannonian plain and the Balkans; and northward along the upper Dnieper river. Perhaps some Slavs migrated with the movement of the Vandals to Iberia and north Africa.",
+          "manual_entailment_label": "E",
+          "manual_note": "Westward movement of Germans is explicitly said to have started the Slavic migration.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 8509
+        },
+        {
+          "step": 3,
+          "question_original": "How many #2 live in #1 ?",
+          "question_resolved": "How many Germans live in Brazil ( ?",
+          "canonical_answer": "5 million",
+          "citation": 10,
+          "title": "Germans",
+          "paragraph": "People of German origin are found in various places around the globe. United States is home to approximately 50 million German Americans or one third of the German diaspora, making it the largest centre of German-descended people outside Germany. Brazil is the second largest with 5 million people claiming German ancestry. Other significant centres are Canada, Argentina, South Africa and France each accounting for at least 1 million. While the exact number of German-descended people is difficult to calculate, the available data makes it safe to claim the number is exceeding 100 million people.",
+          "manual_entailment_label": "E",
+          "manual_note": "Five million people of German ancestry in Brazil is explicit. Reading is ancestry rather than German nationality.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 19700
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 35,
+      "chain_flags": [
+        "malformed_answer_surface",
+        "ancestry_not_citizenship_scope"
+      ]
+    },
+    {
+      "item_id": "triple_ii__104574_387516_145746",
+      "hops": 3,
+      "question": "In what country did Nicholas I, Lord of the birthplace of Albert, King of the country where the Sibille Attar was located, die?",
+      "final_answer": "Wittendörp",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Which country was Sibille Attar in?",
+          "question_resolved": "Which country was Sibille Attar in?",
+          "canonical_answer": "Sweden",
+          "citation": 13,
+          "title": "Sibille Attar",
+          "paragraph": "Sibille Attar (born 27 November 1981 in Örebro, Sweden) is a Swedish singer and songwriter and producer of French origin. She released her self produced EP \"The Flower's Bed\" on Stranded record label in 2012 which earned her a Grammy nomination for \"Best Newcomer\" the same year. It was followed by her self produced debut album \"Sleepyhead\" in 2013 also on Stranded label. \"Come Night\" cowritten by Attar, Mark Ephraim and Björn Yttling is the first single from the album, the rest is written and produced by Sibille herself.",
+          "manual_entailment_label": "E",
+          "manual_note": "Sweden is supported by Sibille Attar's stated birthplace and Swedish description; the question's 'in' is broad.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 104574
+        },
+        {
+          "step": 2,
+          "question_original": "Albert, King of #1 >> place of birth",
+          "question_resolved": "Albert, King of Sweden >> place of birth",
+          "canonical_answer": "Mecklenburg",
+          "citation": 14,
+          "title": "Albert, King of Sweden",
+          "paragraph": "Albert ( , ; c. 1338 – 1 April 1412) was King of Sweden from 1364 to 1389 and Duke of Mecklenburg-Schwerin from 1384 to 1412 as Albert III.",
+          "manual_entailment_label": "I",
+          "manual_note": "Kingship of Sweden and dukedom of Mecklenburg-Schwerin do not state Albert's birthplace.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 387516
+        },
+        {
+          "step": 3,
+          "question_original": "In what city did Nicholas I, Lord of #2 die?",
+          "question_resolved": "In what city did Nicholas I, Lord of Mecklenburg die?",
+          "canonical_answer": "Wittendörp",
+          "citation": 18,
+          "title": "Nicholas I, Lord of Mecklenburg",
+          "paragraph": "Nicholas I, Lord of Mecklenburg (also known as \"Niklot I\"; before 1164 – 25 May 1200, near Waschow, now part of Wittendörp), was the ruling Lord of Mecklenburg from 1178 until his death. He was the son of Wertislaw, Lord of Rostock and Prince of the Obotrites.",
+          "manual_entailment_label": "E",
+          "manual_note": "Death near Waschow, now part of Wittendorp, is explicit; the answer uses a modern containing municipality.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 145746
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 36,
+      "chain_flags": [
+        "birthplace_relation_not_established_by_citation",
+        "composed_question_asks_country_but_step_and_answer_are_place"
+      ]
+    },
+    {
+      "item_id": "triple_ii__275359_810457_285920",
+      "hops": 3,
+      "question": "What county shares a border with another county, where the birthplace of Cyrus David Foss is found?",
+      "final_answer": "Greene County",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Cyrus David Foss >> place of birth",
+          "question_resolved": "Cyrus David Foss >> place of birth",
+          "canonical_answer": "Kingston",
+          "citation": 2,
+          "title": "Cyrus David Foss",
+          "paragraph": "Foss was born in Kingston, New York on January 17, 1834. He attended Wesleyan University, graduating in 1854. He began his career teaching, and then entered the ministry. Foss was \"pastor of the most prominent Methodist churches in this city [New York] and Brooklyn.\"",
+          "manual_entailment_label": "E",
+          "manual_note": "Foss's birth in Kingston, New York is explicit, without specifying town versus city.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 275359
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> located in the administrative territorial entity",
+          "question_resolved": "Kingston >> located in the administrative territorial entity",
+          "canonical_answer": "Ulster County",
+          "citation": 5,
+          "title": "Kingston (town), New York",
+          "paragraph": "Kingston is a town in Ulster County, New York, United States. The Town of Kingston is in the northeast part of Ulster County, north of the City of Kingston. Kingston is inside the Catskill Park. The population was 889 at the 2010 census.",
+          "manual_entailment_label": "E",
+          "manual_note": "The cited Kingston TOWN is explicitly in Ulster County; the paragraph itself distinguishes the City of Kingston.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 810457
+        },
+        {
+          "step": 3,
+          "question_original": "#2 >> shares border with",
+          "question_resolved": "Ulster County >> shares border with",
+          "canonical_answer": "Greene County",
+          "citation": 17,
+          "title": "Chichester, New York",
+          "paragraph": "The hamlet of Chichester, New York, formerly referred to as Chichesterville, is one of the northernmost communities in the town of Shandaken, New York, being right next to the borderline between Ulster County and Greene County.",
+          "manual_entailment_label": "E",
+          "manual_note": "The border between Ulster County and Greene County is explicit.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 285920
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 37,
+      "chain_flags": [
+        "possible_Kingston_city_town_entity_conflation"
+      ]
+    },
+    {
+      "item_id": "triple_io__360318_136753_807056",
+      "hops": 3,
+      "question": "In which country is Walnut Corner in the county where Whitewater is located in the state where Shotgun Stories takes place?",
+      "final_answer": "U.S.",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Whitewater >> located in the administrative territorial entity",
+          "question_resolved": "Whitewater >> located in the administrative territorial entity",
+          "canonical_answer": "Phillips County",
+          "citation": 6,
+          "title": "Whitewater, Montana",
+          "paragraph": "Whitewater is a census-designated place and unincorporated community in Phillips County, Montana, United States. Its population was 64 as of the 2010 census. Whitewater has a post office with ZIP code 59544.",
+          "manual_entailment_label": "E",
+          "manual_note": "Whitewater is explicitly in Phillips County, MONTANA.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 360318
+        },
+        {
+          "step": 2,
+          "question_original": "Which place is Shotgun Stories in?",
+          "question_resolved": "Which place is Shotgun Stories in?",
+          "canonical_answer": "Arkansas",
+          "citation": 20,
+          "title": "Shotgun Stories",
+          "paragraph": "Shotgun Stories is a 2007 drama film about a feud between two sets of half-brothers following the death of their father in rural Arkansas. The film was written and directed by Jeff Nichols, and stars Michael Shannon, Barlow Jacobs, Michael Abbott Jr. and Glenda Pannell.",
+          "manual_entailment_label": "E",
+          "manual_note": "The film is explicitly set in rural Arkansas.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 136753
+        },
+        {
+          "step": 3,
+          "question_original": "Walnut Corner, #1 , #2 >> country",
+          "question_resolved": "Walnut Corner, Phillips County , Arkansas >> country",
+          "canonical_answer": "U.S.",
+          "citation": 10,
+          "title": "Walnut Corner, Phillips County, Arkansas",
+          "paragraph": "Walnut Corner is an unincorporated community in Phillips County, Arkansas, United States. Walnut Corner is located at the junction of U.S. Route 49, Arkansas Highway 1, and Arkansas Highway 85, south-southwest of Lexa.",
+          "manual_entailment_label": "E",
+          "manual_note": "Walnut Corner is explicitly in Phillips County, ARKANSAS, United States.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 807056
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 38,
+      "chain_flags": [
+        "confirmed_cross_state_Phillips_County_entity_conflation"
+      ]
+    },
+    {
+      "item_id": "triple_ii__835614_424025_58046",
+      "hops": 3,
+      "question": "When was the Parthenon in Nashville of the US state having the county containing Smoke Rise built?",
+      "final_answer": "1897",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Smoke Rise >> located in the administrative territorial entity",
+          "question_resolved": "Smoke Rise >> located in the administrative territorial entity",
+          "canonical_answer": "Blount County",
+          "citation": 10,
+          "title": "Smoke Rise, Alabama",
+          "paragraph": "Smoke Rise is a census-designated place (CDP) in Blount County, Alabama, United States. At the 2010 census the population was 1,825.",
+          "manual_entailment_label": "E",
+          "manual_note": "Smoke Rise is explicitly in Blount County, ALABAMA.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 835614
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> located in the administrative territorial entity",
+          "question_resolved": "Blount County >> located in the administrative territorial entity",
+          "canonical_answer": "Tennessee",
+          "citation": 16,
+          "title": "Joe McCord",
+          "paragraph": "Joe McCord, born in Knoxville, Tennessee, is a Tennessee politician and formerly served in the Tennessee House of Representatives representing the 8th district, which is a part of Blount County and Sevier County. He was first elected to the 101st General Assembly and served as a member of the Republican Party. He was vice chair of the Wildlife Subcommittee and a member of the Commerce Committee, the Conservation and Environment Committee, the Ethics Committee, the Environment Subcommittee, and the Industrial Impact Subcommittee. During the 103rd General Assembly, he was a member of the Utilities and Banking Subcommittee. He also served as the Minority Caucus Vice-Chairman. In 2011, at the beginning of the 107th General Assembly, Speaker Beth Harwell appointed him Chief Clerk of the House of Representatives. He was reappointed to this post for the 108th General Assembly, which began in January 2013. He graduated from Maryville High School, received a B.A. from the University of Tennessee in 1991, and worked as a businessman.",
+          "manual_entailment_label": "E",
+          "manual_note": "The Tennessee legislator's district includes Blount County and Sevier County, supporting a TENNESSEE Blount County in local context, not the Alabama county from step 1.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 424025
+        },
+        {
+          "step": 3,
+          "question_original": "when was the parthenon in nashville #2 built",
+          "question_resolved": "when was the parthenon in nashville Tennessee built",
+          "canonical_answer": "1897",
+          "citation": 2,
+          "title": "Parthenon (Nashville)",
+          "paragraph": "The Parthenon in Centennial Park, Nashville, Tennessee is a full - scale replica of the original Parthenon in Athens. It was designed by Confederate veteran William Crawford Smith and built in 1897 as part of the Tennessee Centennial Exposition.",
+          "manual_entailment_label": "E",
+          "manual_note": "The Nashville Parthenon is explicitly built in 1897.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 58046
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 39,
+      "chain_flags": [
+        "confirmed_cross_state_Blount_County_entity_conflation"
+      ]
+    },
+    {
+      "item_id": "quadruple_iii__451599_805015_475503_32631",
+      "hops": 4,
+      "question": "What did Goring believe the operator of battleships from the country where Princess Sophie Antoinette of Brunswick-Wolfenbüttel died would gain with further support?",
+      "final_answer": "control of more Luftwaffe units",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Princess Sophie Antoinette of Brunswick-Wolfenbüttel >> place of death",
+          "question_resolved": "Princess Sophie Antoinette of Brunswick-Wolfenbüttel >> place of death",
+          "canonical_answer": "Coburg",
+          "citation": 3,
+          "title": "Princess Sophie Antoinette of Brunswick-Wolfenbüttel",
+          "paragraph": "Sophie Antoinette of Brunswick-Wolfenbüttel (13/23 January 1724, Wolfenbüttel – 17 May 1802, Coburg) was the tenth of 17 children of Ferdinand Albert II, Duke of Brunswick-Lüneburg.",
+          "manual_entailment_label": "E",
+          "manual_note": "The biographical parenthesis explicitly locates Sophie Antoinette's death at Coburg.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 451599
+        },
+        {
+          "step": 2,
+          "question_original": "Railway stations in #1 >> country",
+          "question_resolved": "Railway stations in Coburg >> country",
+          "canonical_answer": "Germany",
+          "citation": 1,
+          "title": "Railway stations in Coburg",
+          "paragraph": "There are six railway stations in the town of Coburg in Bavaria, southern Germany. These include: two passenger stations, three halts and one goods station.",
+          "manual_entailment_label": "E",
+          "manual_note": "Coburg's stations are explicitly in southern Germany.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 805015
+        },
+        {
+          "step": 3,
+          "question_original": "list of battleships of #2 >> operator",
+          "question_resolved": "list of battleships of Germany >> operator",
+          "canonical_answer": "Kriegsmarine",
+          "citation": 20,
+          "title": "List of battleships of Germany",
+          "paragraph": "The German navies—specifically the Kaiserliche Marine and Kriegsmarine of Imperial and Nazi Germany, respectively—built a series of battleships between the 1890s and 1940s. To defend its North and Baltic Sea coasts in wartime, Germany had previously built a series of smaller ironclad warships, including coastal defense ships, and armored frigates. With the accession to the throne of Kaiser Wilhelm II in 1888, the Kaiserliche Marine began a program of naval expansion befitting a Great Power. The navy immediately pushed for the construction of the four s, after which soon followed five ships. The appointment of Admiral Alfred von Tirpitz to the post of State Secretary of the Navy in 1897 accelerated naval construction. Tirpitz's \"risk theory\" planned a fleet that would be sufficiently powerful so that Great Britain, then the world's preeminent naval power, would avoid risking war with Germany in order to preserve its superiority.",
+          "manual_entailment_label": "E",
+          "manual_note": "Kriegsmarine is explicitly one of two German navies that built the battleships; this is not a unique operator claim.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 475503
+        },
+        {
+          "step": 4,
+          "question_original": "What did Goring believe the #3 would gain with further support?",
+          "question_resolved": "What did Goring believe the Kriegsmarine would gain with further support?",
+          "canonical_answer": "control of more Luftwaffe units",
+          "citation": 17,
+          "title": "The Blitz",
+          "paragraph": "Directive 23 was the only concession made by Göring to the Kriegsmarine over the strategic bombing strategy of the Luftwaffe against Britain. Thereafter, he would refuse to make available any air units to destroy British dockyards, ports, port facilities, or shipping in dock or at sea, lest Kriegsmarine gain control of more Luftwaffe units. Raeder's successor—Karl Dönitz—would—on the intervention of Hitler—gain control of one unit (KG 40), but Göring would soon regain it. Göring's lack of cooperation was detrimental to the one air strategy with potentially decisive strategic effect on Britain. Instead, he wasted aircraft of Fliegerführer Atlantik (Flying Command Atlantic) on bombing mainland Britain instead of attacks against convoys. For Göring, his prestige had been damaged by the defeat in the Battle of Britain, and he wanted to regain it by subduing Britain by air power alone. He was always reluctant to cooperate with Raeder.",
+          "manual_entailment_label": "E",
+          "manual_note": "Goring is explicitly described as withholding air units lest the Kriegsmarine gain control of more Luftwaffe units.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 32631
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 64,
+      "chain_flags": [
+        "multiple_valid_operator_candidates"
+      ]
+    },
+    {
+      "item_id": "quadruple_iii__162275_10079_503957_720028",
+      "hops": 4,
+      "question": "What government controls the city that is part of the province that is considered the largest base for shooting films in the country where guānjīnyuán was a currency?",
+      "final_answer": "PRC",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "What is the name of the country where guānjīnyuán was a currency?",
+          "question_resolved": "What is the name of the country where guānjīnyuán was a currency?",
+          "canonical_answer": "China",
+          "citation": 6,
+          "title": "History of Chinese currency",
+          "paragraph": "Customs gold units (關金圓, pinyin: guānjīnyuán) were issued by the Central Bank of China to facilitate payment of duties on imported goods. Unlike the national currency which suffered from hyperinflation, the CGUs were pegged to the U.S. dollar at 1 CGU = US$0.40.",
+          "manual_entailment_label": "E",
+          "manual_note": "Customs gold units are explicitly issued by the Central Bank of China.",
+          "source_dataset": "mlqaen",
+          "source_single_hop_id": 162275
+        },
+        {
+          "step": 2,
+          "question_original": "What is the largest base of shooting films and TV dramas in #1 ?",
+          "question_resolved": "What is the largest base of shooting films and TV dramas in China ?",
+          "canonical_answer": "Jinhua",
+          "citation": 1,
+          "title": "Zhejiang",
+          "paragraph": "The eleven prefecture-level divisions of Zhejiang are subdivided into 90 county-level divisions (36 districts, 20 county-level cities, 33 counties, and one autonomous county). Those are in turn divided into 1,570 township-level divisions (761 towns, 505 townships, 14 ethnic townships, and 290 subdistricts). Hengdian belongs to Jinhua, which is the largest base of shooting films and TV dramas in China. Hengdian is called \"China's Hollywood\".",
+          "manual_entailment_label": "E",
+          "manual_note": "The paragraph calls Jinhua the largest film/TV base; audit follows the passage's assertion rather than correcting it from outside knowledge.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 10079
+        },
+        {
+          "step": 3,
+          "question_original": "#2 >> contains administrative territorial entity",
+          "question_resolved": "Jinhua >> contains administrative territorial entity",
+          "canonical_answer": "Dongyang",
+          "citation": 7,
+          "title": "Hengdian World Studios",
+          "paragraph": "Hengdian World Studios () is a film studio located in Hengdian, a Chinese town in the city of Dongyang, Jinhua, Zhejiang Province. It is the largest film studio in the world. The movie studio is operated by the privately owned Hengdian Group founded by Xu Wenrong. Sometimes called \"Chinawood\", Xu turned acres of farmland in central Zhejiang into one of the largest movie studios in Asia. Construction began in the mid-1990s and has been ongoing ever since with the possible recent addition of the replica of the Old Summer Palace. A film about extras working at the studio, \"I Am Somebody\", was released in China in 2015.",
+          "manual_entailment_label": "E",
+          "manual_note": "Dongyang is explicitly within Jinhua in the nested location.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 503957
+        },
+        {
+          "step": 4,
+          "question_original": "#3 >> country",
+          "question_resolved": "Dongyang >> country",
+          "canonical_answer": "PRC",
+          "citation": 10,
+          "title": "The Shouters",
+          "paragraph": "The Shouters, or more properly the Shouters sect (呼喊派), is a label attached by the People's Republic of China (PRC) to an amorphous group within China that was targeted by the government first as counterrevolutionaries and subsequently as a criminal cult after incidents in Dongyang and Yiwu counties in Zhejiang province in February 1982. \"The Shouters sect\" became the object of waves of arrests in 1983 and again in 1995. Several 1983 publications with ties to the Three-Self Patriotic Movement (TSPM) accused the late expatriate Chinese Christian teacher Witness Lee (Li Changshou) of being the leader of \"the Shouters sect\" and of instigating the disorders. In practice, however, the appellation \"the Shouters sect\" has been applied far more broadly to many groups that pray openly and audibly and/or do not register or otherwise cooperate with the TSPM. There is considerable reason to doubt the veracity of the reports which led to the condemnation of \"the Shouters sect\" and the association of them with Witness Lee or the local churches, and the local churches distance themselves from the Shouters.",
+          "manual_entailment_label": "E",
+          "manual_note": "The passage situates Dongyang in Zhejiang within China and describes PRC government actions there; PRC is supported in that historical context.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 720028
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 65,
+      "chain_flags": []
+    },
+    {
+      "item_id": "quadruple_iii__293974_423084_449353_82365",
+      "hops": 4,
+      "question": "When did daylight saving start in the country having the gallery displaying the painting The Woman Taken in the main subject in milkman joke?",
+      "final_answer": "Since 22 October 1995",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "milkman joke >> main subject",
+          "question_resolved": "milkman joke >> main subject",
+          "canonical_answer": "adultery",
+          "citation": 20,
+          "title": "Milkman joke",
+          "paragraph": "In English-speaking culture, a milkman joke is a class of joke exploiting fear of adultery and mistaken paternity. This class of jokes has its roots in the early part of the 20th century, prior to the regular availability of milk in supermarkets. At that time, milk in glass bottles was delivered directly to customers' houses by milkmen, generally in the morning (at which time empty bottles were also collected). Men were commonly the main financial supporters of their families, and a man's wife tended to remain at home to care for their children and home. As the milkman would visit the home at a time when the husband would be away at work, this created an opportune situation for adultery.",
+          "manual_entailment_label": "E",
+          "manual_note": "Milkman jokes explicitly exploit fear of adultery.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 293974
+        },
+        {
+          "step": 2,
+          "question_original": "The Woman Taken in #1 >> location",
+          "question_resolved": "The Woman Taken in adultery >> location",
+          "canonical_answer": "National Gallery",
+          "citation": 15,
+          "title": "The Woman Taken in Adultery (Rembrandt)",
+          "paragraph": "The Woman Taken in Adultery is a painting of 1644 by Rembrandt, bought by the National Gallery, London in 1824, as one of their foundation batch of paintings. It is in oil on oak, and 83.8 x 65.4 cm.",
+          "manual_entailment_label": "E",
+          "manual_note": "The named painting was bought by the National Gallery, London as a foundation painting.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 423084
+        },
+        {
+          "step": 3,
+          "question_original": "#2 >> country",
+          "question_resolved": "National Gallery >> country",
+          "canonical_answer": "UK",
+          "citation": 7,
+          "title": "Micro gallery",
+          "paragraph": "A micro gallery was a computer-based guide to archives and museum collections, first developed for the collections at the National Gallery in London, UK It took three years to develop by the company Cognitive Applications, and opened in July 1991 as part of the facilities in the Sainsbury Wing. Visitors could use the system to determine which pictures they would like to see in the gallery. It was possible to print out personalised information for use during the visit. The Micro Gallery ran for 14 years and a CD-ROM with similar facilities was produced.",
+          "manual_entailment_label": "E",
+          "manual_note": "The National Gallery is explicitly in London, UK.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 449353
+        },
+        {
+          "step": 4,
+          "question_original": "when did daylight saving start in the #3",
+          "question_resolved": "when did daylight saving start in the UK",
+          "canonical_answer": "Since 22 October 1995",
+          "citation": 19,
+          "title": "British Summer Time",
+          "paragraph": "BST begins at 01: 00 GMT on the last Sunday of March and ends at 01: 00 GMT (02: 00 BST) on the last Sunday of October. Since 22 October 1995, the starting and finishing times of daylight saving time across the European Union have been aligned -- for instance Central European Summer Time begins and ends on the same Sundays at exactly the same time (that is, 02: 00 CET, which is 01: 00 GMT). Between 1972 and 1995, BST began and ended at 02: 00 GMT on the third Sunday in March (or second Sunday when Easter fell on the third) and fourth Sunday in October.",
+          "manual_entailment_label": "C",
+          "manual_note": "22 October 1995 is the alignment of EU daylight-saving schedules, not the beginning of UK daylight saving. The same paragraph describes BST between 1972 and 1995, conflicting with a first-start interpretation.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 82365
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 66,
+      "chain_flags": [
+        "schedule_alignment_confused_with_first_introduction"
+      ]
+    },
+    {
+      "item_id": "quadruple_ioh1__566317_578030_86203_41384",
+      "hops": 4,
+      "question": "Based on population alone, what is the ranking of the city having the Courthouse of the birthplace of James Glisson in the country winning the rugby 7 in Las Vegas?",
+      "final_answer": "12th",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "James Glisson >> place of birth",
+          "question_resolved": "James Glisson >> place of birth",
+          "canonical_answer": "Jackson County",
+          "citation": 10,
+          "title": "James Glisson",
+          "paragraph": "Glisson was born in Jackson County, Florida. He attended Palmer College and earned a degree in chiropractic studies He served in the Florida House of Representatives for the 33rd district from 1968 to 1972, as a Republican. He was elected to the State Senate in 1973 and served the 11th district until 1978. In 1976, he changed his party affiliation from Republican to Democratic.",
+          "manual_entailment_label": "E",
+          "manual_note": "James Glisson was explicitly born in Jackson County, FLORIDA.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 566317
+        },
+        {
+          "step": 2,
+          "question_original": "#1 Courthouse >> located in the administrative territorial entity",
+          "question_resolved": "Jackson County Courthouse >> located in the administrative territorial entity",
+          "canonical_answer": "Jacksonville",
+          "citation": 8,
+          "title": "Jackson County Courthouse (Jacksonville, Oregon)",
+          "paragraph": "The Jackson County Courthouse is a former county courthouse in Jacksonville, Oregon, United States, built in 1883. The courthouse is a contributing property of the Jacksonville Historic District, which is listed on the National Register of Historic Places (NRHP). It was formerly the Jacksonville Museum owned by Jackson County and operated by the Southern Oregon Historical Society (SOHS), which also managed several other historic properties in Jacksonville. The museum in the courthouse closed in 2006 because of lack of funding. Ownership of the historic courthouse was transferred to the City of Jacksonville in 2012. The SOHS still operates Hanley Farm in Central Point and a research library in Medford.",
+          "manual_entailment_label": "E",
+          "manual_note": "The cited Jackson County courthouse is explicitly in Jacksonville, OREGON; it does not identify the Florida county from step 1.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 578030
+        },
+        {
+          "step": 3,
+          "question_original": "who won the rugby 7 in las vegas",
+          "question_resolved": "who won the rugby 7 in las vegas",
+          "canonical_answer": "the United States",
+          "citation": 4,
+          "title": "2018 USA Sevens",
+          "paragraph": "The tournament was won by the United States who beat Argentina 28 -- 0 in the final. This was the first time that the United States won its home tournament. USA's Perry Baker led the tournament with 8 tries and 11 breaks.",
+          "manual_entailment_label": "E",
+          "manual_note": "The United States explicitly won the cited 2018 USA Sevens tournament.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 86203
+        },
+        {
+          "step": 4,
+          "question_original": "Based on population alone, what is #2 's ranking in #3 ?",
+          "question_resolved": "Based on population alone, what is Jacksonville 's ranking in the United States ?",
+          "canonical_answer": "12th",
+          "citation": 5,
+          "title": "Jacksonville, Florida",
+          "paragraph": "Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.",
+          "manual_entailment_label": "E",
+          "manual_note": "Twelfth most populous describes Jacksonville, FLORIDA, not the Oregon city of step 2.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 41384
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 67,
+      "chain_flags": [
+        "confirmed_cross_state_Jackson_County_entity_conflation",
+        "confirmed_cross_state_Jacksonville_entity_conflation"
+      ]
+    },
+    {
+      "item_id": "quadruple_iii__104531_10079_503957_720028",
+      "hops": 4,
+      "question": "What country is the largest shooting base of shooting films and TV Dramas in the country Liang Ji is in located?",
+      "final_answer": "PRC",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Which country was Liang Ji in?",
+          "question_resolved": "Which country was Liang Ji in?",
+          "canonical_answer": "China",
+          "citation": 11,
+          "title": "Liang Ji",
+          "paragraph": "Liang Ji (梁冀) (died 159), courtesy name Bozhuo (伯卓), was a politician and military commander of Han Dynasty China. As a powerful consort kin, he dominated government in the 150s together with his sister, Empress Liang Na. After his sister's death, Liang Ji was overthrown in a coup d'etat by Emperor Huan, with the support of the eunuch faction, in 159. The Liang clan and the clan of his wife, Sun Shou (孫壽), were slaughtered.",
+          "manual_entailment_label": "E",
+          "manual_note": "Liang Ji is explicitly a politician and commander of Han Dynasty China.",
+          "source_dataset": "zerore",
+          "source_single_hop_id": 104531
+        },
+        {
+          "step": 2,
+          "question_original": "What is the largest base of shooting films and TV dramas in #1 ?",
+          "question_resolved": "What is the largest base of shooting films and TV dramas in China ?",
+          "canonical_answer": "Jinhua",
+          "citation": 13,
+          "title": "Zhejiang",
+          "paragraph": "The eleven prefecture-level divisions of Zhejiang are subdivided into 90 county-level divisions (36 districts, 20 county-level cities, 33 counties, and one autonomous county). Those are in turn divided into 1,570 township-level divisions (761 towns, 505 townships, 14 ethnic townships, and 290 subdistricts). Hengdian belongs to Jinhua, which is the largest base of shooting films and TV dramas in China. Hengdian is called \"China's Hollywood\".",
+          "manual_entailment_label": "E",
+          "manual_note": "The paragraph calls Jinhua the largest film/TV base; judged as supplied text, not independently verified world fact.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 10079
+        },
+        {
+          "step": 3,
+          "question_original": "#2 >> contains administrative territorial entity",
+          "question_resolved": "Jinhua >> contains administrative territorial entity",
+          "canonical_answer": "Dongyang",
+          "citation": 8,
+          "title": "Hengdian World Studios",
+          "paragraph": "Hengdian World Studios () is a film studio located in Hengdian, a Chinese town in the city of Dongyang, Jinhua, Zhejiang Province. It is the largest film studio in the world. The movie studio is operated by the privately owned Hengdian Group founded by Xu Wenrong. Sometimes called \"Chinawood\", Xu turned acres of farmland in central Zhejiang into one of the largest movie studios in Asia. Construction began in the mid-1990s and has been ongoing ever since with the possible recent addition of the replica of the Old Summer Palace. A film about extras working at the studio, \"I Am Somebody\", was released in China in 2015.",
+          "manual_entailment_label": "E",
+          "manual_note": "Dongyang is explicitly within Jinhua.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 503957
+        },
+        {
+          "step": 4,
+          "question_original": "#3 >> country",
+          "question_resolved": "Dongyang >> country",
+          "canonical_answer": "PRC",
+          "citation": 14,
+          "title": "The Shouters",
+          "paragraph": "The Shouters, or more properly the Shouters sect (呼喊派), is a label attached by the People's Republic of China (PRC) to an amorphous group within China that was targeted by the government first as counterrevolutionaries and subsequently as a criminal cult after incidents in Dongyang and Yiwu counties in Zhejiang province in February 1982. \"The Shouters sect\" became the object of waves of arrests in 1983 and again in 1995. Several 1983 publications with ties to the Three-Self Patriotic Movement (TSPM) accused the late expatriate Chinese Christian teacher Witness Lee (Li Changshou) of being the leader of \"the Shouters sect\" and of instigating the disorders. In practice, however, the appellation \"the Shouters sect\" has been applied far more broadly to many groups that pray openly and audibly and/or do not register or otherwise cooperate with the TSPM. There is considerable reason to doubt the veracity of the reports which led to the condemnation of \"the Shouters sect\" and the association of them with Witness Lee or the local churches, and the local churches distance themselves from the Shouters.",
+          "manual_entailment_label": "E",
+          "manual_note": "The paragraph places Dongyang in Zhejiang within China and describes PRC actions there; answer follows the modern country context.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 720028
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 68,
+      "chain_flags": [
+        "historical_to_modern_country_scope"
+      ]
+    },
+    {
+      "item_id": "quadruple_iii__348803_805015_475503_32631",
+      "hops": 4,
+      "question": "What did Goring believe the operator of the list of battleships of the country having Railway stations in the death town of Ernest Frederick would gain with further support?",
+      "final_answer": "control of more Luftwaffe units",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Ernest Frederick >> place of death",
+          "question_resolved": "Ernest Frederick >> place of death",
+          "canonical_answer": "Coburg",
+          "citation": 14,
+          "title": "Ernest Frederick, Duke of Saxe-Coburg-Saalfeld",
+          "paragraph": "Ernest Frederick succeeded his father in the Duchy of Saxe-Coburg-Saalfeld when he died in 1764 and established his definitive residence shifted in Coburg. Because of the high indebtedness of the duchy he was compelled by Emperor Joseph II in 1773 to work with a \"Debit commission\"—an obligatory administration of debts assigned by the emperor—for over thirty years.",
+          "manual_entailment_label": "I",
+          "manual_note": "Ernest Frederick's definitive residence at Coburg is stated; his place of death is not.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 348803
+        },
+        {
+          "step": 2,
+          "question_original": "Railway stations in #1 >> country",
+          "question_resolved": "Railway stations in Coburg >> country",
+          "canonical_answer": "Germany",
+          "citation": 13,
+          "title": "Railway stations in Coburg",
+          "paragraph": "There are six railway stations in the town of Coburg in Bavaria, southern Germany. These include: two passenger stations, three halts and one goods station.",
+          "manual_entailment_label": "E",
+          "manual_note": "Coburg's stations are explicitly in southern Germany.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 805015
+        },
+        {
+          "step": 3,
+          "question_original": "list of battleships of #2 >> operator",
+          "question_resolved": "list of battleships of Germany >> operator",
+          "canonical_answer": "Kriegsmarine",
+          "citation": 19,
+          "title": "List of battleships of Germany",
+          "paragraph": "The German navies—specifically the Kaiserliche Marine and Kriegsmarine of Imperial and Nazi Germany, respectively—built a series of battleships between the 1890s and 1940s. To defend its North and Baltic Sea coasts in wartime, Germany had previously built a series of smaller ironclad warships, including coastal defense ships, and armored frigates. With the accession to the throne of Kaiser Wilhelm II in 1888, the Kaiserliche Marine began a program of naval expansion befitting a Great Power. The navy immediately pushed for the construction of the four s, after which soon followed five ships. The appointment of Admiral Alfred von Tirpitz to the post of State Secretary of the Navy in 1897 accelerated naval construction. Tirpitz's \"risk theory\" planned a fleet that would be sufficiently powerful so that Great Britain, then the world's preeminent naval power, would avoid risking war with Germany in order to preserve its superiority.",
+          "manual_entailment_label": "E",
+          "manual_note": "Kriegsmarine is explicitly one of the two navies, so the operator relation is supported but not unique.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 475503
+        },
+        {
+          "step": 4,
+          "question_original": "What did Goring believe the #3 would gain with further support?",
+          "question_resolved": "What did Goring believe the Kriegsmarine would gain with further support?",
+          "canonical_answer": "control of more Luftwaffe units",
+          "citation": 9,
+          "title": "The Blitz",
+          "paragraph": "Directive 23 was the only concession made by Göring to the Kriegsmarine over the strategic bombing strategy of the Luftwaffe against Britain. Thereafter, he would refuse to make available any air units to destroy British dockyards, ports, port facilities, or shipping in dock or at sea, lest Kriegsmarine gain control of more Luftwaffe units. Raeder's successor—Karl Dönitz—would—on the intervention of Hitler—gain control of one unit (KG 40), but Göring would soon regain it. Göring's lack of cooperation was detrimental to the one air strategy with potentially decisive strategic effect on Britain. Instead, he wasted aircraft of Fliegerführer Atlantik (Flying Command Atlantic) on bombing mainland Britain instead of attacks against convoys. For Göring, his prestige had been damaged by the defeat in the Battle of Britain, and he wanted to regain it by subduing Britain by air power alone. He was always reluctant to cooperate with Raeder.",
+          "manual_entailment_label": "E",
+          "manual_note": "Goring's concern about the Kriegsmarine gaining control of more Luftwaffe units is explicit.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 32631
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 69,
+      "chain_flags": [
+        "deathplace_relation_not_established_by_citation",
+        "multiple_valid_operator_candidates"
+      ]
+    },
+    {
+      "item_id": "quadruple_ioh1__566317_578030_464129_41384",
+      "hops": 4,
+      "question": "What is the population ranking of the city that has a courthouse in James Glisson's birthplace in the country that passed the Judiciary Act of 1869?",
+      "final_answer": "12th",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "James Glisson >> place of birth",
+          "question_resolved": "James Glisson >> place of birth",
+          "canonical_answer": "Jackson County",
+          "citation": 20,
+          "title": "James Glisson",
+          "paragraph": "Glisson was born in Jackson County, Florida. He attended Palmer College and earned a degree in chiropractic studies He served in the Florida House of Representatives for the 33rd district from 1968 to 1972, as a Republican. He was elected to the State Senate in 1973 and served the 11th district until 1978. In 1976, he changed his party affiliation from Republican to Democratic.",
+          "manual_entailment_label": "E",
+          "manual_note": "James Glisson's birthplace is explicitly Jackson County, FLORIDA.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 566317
+        },
+        {
+          "step": 2,
+          "question_original": "#1 Courthouse >> located in the administrative territorial entity",
+          "question_resolved": "Jackson County Courthouse >> located in the administrative territorial entity",
+          "canonical_answer": "Jacksonville",
+          "citation": 14,
+          "title": "Jackson County Courthouse (Jacksonville, Oregon)",
+          "paragraph": "The Jackson County Courthouse is a former county courthouse in Jacksonville, Oregon, United States, built in 1883. The courthouse is a contributing property of the Jacksonville Historic District, which is listed on the National Register of Historic Places (NRHP). It was formerly the Jacksonville Museum owned by Jackson County and operated by the Southern Oregon Historical Society (SOHS), which also managed several other historic properties in Jacksonville. The museum in the courthouse closed in 2006 because of lack of funding. Ownership of the historic courthouse was transferred to the City of Jacksonville in 2012. The SOHS still operates Hanley Farm in Central Point and a research library in Medford.",
+          "manual_entailment_label": "E",
+          "manual_note": "The courthouse is in Jacksonville, OREGON; its county is not the Florida birthplace county.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 578030
+        },
+        {
+          "step": 3,
+          "question_original": "Judiciary Act of 1869 >> country",
+          "question_resolved": "Judiciary Act of 1869 >> country",
+          "canonical_answer": "the United States",
+          "citation": 11,
+          "title": "Judiciary Act of 1869",
+          "paragraph": "In addition, it stipulated that each of the nine circuit courts of the United States would have a circuit judge appointed who would reside in that locale and have the same power and jurisdiction as the Supreme Court justice assigned to the circuit. It was stipulated that the chief justice and each of the associate justices had the duty to sit at least one term in the circuit every two years. The circuit court could be held by the circuit judge, the Supreme Court justice, or the two could hold the court together, in which case the Supreme Court justice would preside. Up until this time, circuit courts were normally only staffed by district judges and Supreme Court justices \"riding circuit.\"",
+          "manual_entailment_label": "E",
+          "manual_note": "The Judiciary Act paragraph explicitly concerns United States federal circuit courts.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 464129
+        },
+        {
+          "step": 4,
+          "question_original": "Based on population alone, what is #2 's ranking in #3 ?",
+          "question_resolved": "Based on population alone, what is Jacksonville 's ranking in the United States ?",
+          "canonical_answer": "12th",
+          "citation": 13,
+          "title": "Jacksonville, Florida",
+          "paragraph": "Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.",
+          "manual_entailment_label": "E",
+          "manual_note": "The population ranking is for Jacksonville, FLORIDA, not the Oregon city from step 2.",
+          "source_dataset": "squad2",
+          "source_single_hop_id": 41384
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 70,
+      "chain_flags": [
+        "confirmed_cross_state_Jackson_County_entity_conflation",
+        "confirmed_cross_state_Jacksonville_entity_conflation"
+      ]
+    },
+    {
+      "item_id": "quadruple_ioh1__383601_620110_61746_261712",
+      "hops": 4,
+      "question": "Tuolumne, with Springfield in a neighboring county, in the state where Finding Dory takes place, is in what country?",
+      "final_answer": "United States",
+      "steps": [
+        {
+          "step": 1,
+          "question_original": "Springfield >> located in the administrative territorial entity",
+          "question_resolved": "Springfield >> located in the administrative territorial entity",
+          "canonical_answer": "Tuolumne County",
+          "citation": 20,
+          "title": "Springfield, California",
+          "paragraph": "Springfield is an unincorporated community located in Tuolumne County, California. It is a former California Gold Rush boomtown in the foothills of the Sierra Nevada, and is now designated as a California Historical Landmark. Springfield is located 1.1 mi SW of Columbia another gold rush boomtown.",
+          "manual_entailment_label": "E",
+          "manual_note": "Springfield is explicitly located in Tuolumne County, California.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 383601
+        },
+        {
+          "step": 2,
+          "question_original": "#1 >> shares border with",
+          "question_resolved": "Tuolumne County >> shares border with",
+          "canonical_answer": "Stanislaus County",
+          "citation": 1,
+          "title": "Tuolumne City, Stanislaus County, California",
+          "paragraph": "The site has been in Stanislaus County, California since 1854 when it was formed from the western part of the old Tuolumne County.",
+          "manual_entailment_label": "I",
+          "manual_note": "Stanislaus County formed from part of old Tuolumne County does not itself establish that their present boundaries touch.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 620110
+        },
+        {
+          "step": 3,
+          "question_original": "where is finding dory supposed to take place",
+          "question_resolved": "where is finding dory supposed to take place",
+          "canonical_answer": "in California",
+          "citation": 9,
+          "title": "Finding Dory",
+          "paragraph": "One year later, Dory is living with Marlin and Nemo on their reef. One day, Dory has a flashback and remembers that she has parents. She decides to look for them, but her memory problem is an obstacle. She eventually remembers that they lived at the Jewel of Morro Bay across the ocean in California, thanks to Nemo mentioning its name.",
+          "manual_entailment_label": "E",
+          "manual_note": "Dory's parents' location is explicitly in California; supports the question's broad setting reference, not a claim every scene is there.",
+          "source_dataset": "natural_questions",
+          "source_single_hop_id": 61746
+        },
+        {
+          "step": 4,
+          "question_original": "Tuolumne, #2 , #3 >> country",
+          "question_resolved": "Tuolumne, Stanislaus County , in California >> country",
+          "canonical_answer": "United States",
+          "citation": 17,
+          "title": "Tuolumne, Stanislaus County, California",
+          "paragraph": "Tuolumne is a small unincorporated town in Stanislaus County, California, United States. Near the town is the historic site of, (now defunct), Tuolumne City.",
+          "manual_entailment_label": "E",
+          "manual_note": "The named Tuolumne settlement in Stanislaus County is explicitly in California, United States.",
+          "source_dataset": "trex",
+          "source_single_hop_id": 261712
+        }
+      ],
+      "source": "EXISTING_TRAIN_ONLY",
+      "template_index": 71,
+      "chain_flags": [
+        "border_relation_not_established_by_citation"
+      ]
+    }
+  ]
+}

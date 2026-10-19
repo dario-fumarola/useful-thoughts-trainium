@@ -1,0 +1,29 @@
+{
+  "status": "CPU_ONLY_UNRELEASED_DATA_AVAILABILITY_AND_GROUNDING_INSPECTION",
+  "utc": "2026-10-19T17:04:49.511796+00:00",
+  "question": "Can unchanged TRAIN-only sources support fresh evidence-clean higher-hop confirmation at existing contextwidth,and what traininglabels need semanticgrounding review?",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "old_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "windows": [
+    2048,
+    3072,
+    4096
+  ],
+  "filters": [
+    "current_train_exclusions",
+    "plus_old_held_support",
+    "plus_all_old_held_visible",
+    "paragraph_only_plus_old_held_support"
+  ],
+  "within_held": [
+    "support_text_page_seed",
+    "support_text_seed"
+  ],
+  "balanced_greedy_quotas": {
+    "2": 256,
+    "3": 128,
+    "4": 128
+  },
+  "grounding_sample": "First32 fixedhash TRAIN examples per2/3/4hops;96examples. Stratified,not representativeunweighted.",
+  "limits": "No newtrain/heldmodeljob,semanticpass,checkpointchoice oroldcohortmutation.4096 is sizingonly andexceeds currentqualifiedwidth. Repeatedanswers remainallowed andnot officialS5. No modeloutputs areopened."
+}

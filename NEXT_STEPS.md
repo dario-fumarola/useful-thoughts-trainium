@@ -1,6 +1,6 @@
 # Current queue
 
-1. Publish the completed document-QA-v21 result and concrete review package.
+1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,
    SHA75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9.
    All20,992GEN/19,712LL rows close,zeroexecutionerrors;all6trainingruns/12states audited.
@@ -10,7 +10,7 @@
    Focusedprimaryplot visuallychecked. All1,742CPUchecks+smoke/compilePASS.
    Keep oldV17/history andalloriginaloutputs;no rewritten gates or omittedfailures.
 
-2. Inspect supervision and control design before another training release.
+2. Complete the bounded supervision/control repair before another training release.
    The two-seed primarytraining/inference/practical gates FAIL.
    Local own−empty accuracy+5.3/+11.3pp is positive inbothseeds,allpairscomplete.
    Netown−matcheddirect+3.1/+6.3pp hasfirstCIcrossingzero. Postdirect200/186vs201/195.
@@ -18,11 +18,15 @@
    Own gold-answerLL−7.34/−7.75nats;postgold-answerLL+.38/+.93,secondarypredictivebenefit.
    Prior sourceNLL+.097/.110 vsB0;higher-hop gains inconsistent,not broadreasoning.
    Fixedexamples show wrongfact/citationchoices andatleastone goldsupportrelationissue.
-   Need bounded TRAIN-only grounding inspection andCPUinventory ofpotentialfreshhelddata.
-   Inspect literal#n supervision versus answer-resolved questions;do not assumethiscausedfailure.
-   Assess a controltrained toretainFinalanswer formatting withoutthoughtcontent.
-   Freeze one falsifiable nextdesign onfreshheld questions after thisreview;no prompt-sweep
-   rescue or retrospectiveprimaryparserchanges. No newlearningjob yet.
+   TRAIN audit v22 is complete:24 questions/72 cited steps;57 locally supported,8 insufficient,
+   6 ambiguous,1 contradictory. Four examples conflate cross-state entities;source annotations match.
+   Single-agent exploratory labels are not corpus error rates;literal presence is not entailment.
+   Blind reference substitution cannot repair those labels. Source-family filters are not semantic proof.
+   Prepare v23:single-model passage selection before answering versus a direct control with the
+   SAME answer serialization. No supervised intermediate factual claims or last-claim answer copying.
+   Freeze one CPU protocol and fresh evidence-disjoint panel first;inspect TRAIN data only during development.
+   Use existing 1.7B runtime;all new targets/masks/parsers need CPU checks before bounded hardware qualification.
+   A new cohort is mostly two-hop;do not claim four-hop generalization. No new learning job yet.
 
 3. Keep the research boundaries explicit.
    CanonicalEMprimary;canonicalF1 andattributedmirroraliases separate.

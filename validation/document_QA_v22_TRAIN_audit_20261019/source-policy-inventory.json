@@ -1,0 +1,68 @@
+[
+  {
+    "source_policy": "all",
+    "exact_original_bridge_text": false,
+    "rows_at_3072": 17299,
+    "hops": {
+      "2": 12721,
+      "3": 3685,
+      "4": 893
+    },
+    "in_old_train": 2048
+  },
+  {
+    "source_policy": "all",
+    "exact_original_bridge_text": true,
+    "rows_at_3072": 15364,
+    "hops": {
+      "2": 11855,
+      "3": 2979,
+      "4": 530
+    },
+    "in_old_train": 1924
+  },
+  {
+    "source_policy": "no_trex",
+    "exact_original_bridge_text": false,
+    "rows_at_3072": 5330,
+    "hops": {
+      "2": 4307,
+      "3": 882,
+      "4": 141
+    },
+    "in_old_train": 453
+  },
+  {
+    "source_policy": "no_trex",
+    "exact_original_bridge_text": true,
+    "rows_at_3072": 4625,
+    "hops": {
+      "2": 4020,
+      "3": 572,
+      "4": 33
+    },
+    "in_old_train": 409
+  },
+  {
+    "source_policy": "nq_squad_only",
+    "exact_original_bridge_text": false,
+    "rows_at_3072": 2250,
+    "hops": {
+      "2": 1826,
+      "3": 349,
+      "4": 75
+    },
+    "in_old_train": 156
+  },
+  {
+    "source_policy": "nq_squad_only",
+    "exact_original_bridge_text": true,
+    "rows_at_3072": 1833,
+    "hops": {
+      "2": 1639,
+      "3": 180,
+      "4": 14
+    },
+    "in_old_train": 133
+  }
+]

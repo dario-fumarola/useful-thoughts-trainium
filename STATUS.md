@@ -1,4 +1,18 @@
-# Status — 2026-10-19 16:58 UTC
+# Status — 2026-10-19 17:18 UTC
+
+## Closed: TRAIN relation audit and fresh-evidence availability
+Question: can existing reasoning annotations support a simple reference-substitution repair?
+ID:document-QA-v22-TRAIN-audit;CPU only,24 TRAIN questions/eight per hop,72 cited steps.
+Single-agent exploratory review:57 locally supported,8 insufficient citations,6 ambiguities,1 contradiction.
+Four examples switch cross-state entities;all72 citations/answers match their author-raw annotations.
+These are not independent semantic labels or a corpus error-rate estimate;other passages not fully adjudicated.
+At3072 tokens,658 eligible questions exclude old TRAIN and old held support;only8 are four-hop.
+Excluding all old held visible evidence leaves622 eligible;greedy page-independent selection finds253.
+Greedy counts are lower bounds,not optima;no new held cohort or model released.
+Source-family/reference-text filters were inventoried,not certified as semantic validation.
+Report:validation/document_QA_v22_TRAIN_audit_20261019.json;V21 primary hash and all scores unchanged.
+Decision:blind #n substitution is insufficient;prepare one passage-selection versus format-matched direct pilot.
+Next:freeze the v23 CPU protocol,build/check fresh evidence-disjoint data and serialization;no GPU jobs active.
 
 ## Closed: source-matched single-model document QA
 Question: do reasoning before/after answers improve fresh complete real-document answers?
@@ -14,7 +28,7 @@ Prior ordinaryNLL+.097/.110 versusB0;57.4/56.3actions versusdirect5.37;no broadp
 Posthoc:higher-hop gains inconsistent;literalcitations/teacherrelations needgrounding review.
 Derivedchecker repaired2e-12 FP64summary mismatch only;primaryreportSHA/gates/scores unchanged,failedattempt retained.
 Report:validation/document_QA_v21_complete_20261019.json;allrawoutputs/examples/sources protected.
-Next:publish complete result/reviewpackage;inspect data grounding/formatcontrol before any newtraining release.
+Publication:dfa74b0 public;review ZIP protected and linked to owner;TRAIN audit follows above.
 
 ## Closed: source-balanced computation and source quality
 Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?

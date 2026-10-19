@@ -196,3 +196,19 @@ training. Its reported mid-training uses100B tokens followed by350k-example SFT.
 Our2,048-question post-answer supervision is a much smaller,different experiment;
 its failed accuracy gate does not refute TPT.
 [TPT sections2 and3.3](https://arxiv.org/html/2509.20186v1).
+# Grounded generation references — October 19 follow-up
+
+[Chain-of-Note, final EMNLP version](https://arxiv.org/html/2311.09210v2)
+trains LLaMA-2 7B on 10,000 GPT-4-generated NQ reading-note examples, including
+relevant, indirect and unhelpful documents. Its hybrid condition mixes direct and
+note-conditioned training. This is relevant supervision design, not evidence that
+our literal MuSiQue decompositions should work. Teacher quality, model scale and
+retrieval setting differ. We have not acquired those labels or called a teacher.
+
+[Attribute First, then Generate](https://arxiv.org/html/2403.17104v3)
+selects source spans before planning and generation, with exact-copy constraints
+in its fine-tuned components. It distinguishes attributable source content from
+post-hoc paragraph citations. Its multi-component pipeline has latency and error
+propagation costs; attribution gains do not automatically imply better short-answer
+accuracy. The useful design principle here is to test evidence selection separately
+from unsupported factual claims, while keeping a competitive direct control.
