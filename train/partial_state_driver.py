@@ -17,13 +17,14 @@ import time
 
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 from train.partial_state_packing import batch_packs, training_pack
-from train import real_trace_packing, real_target_packing
+from train import real_trace_packing, real_target_packing, real_source_balanced_packing
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'partial-state-sft-v7'
 ARMS = ('direct', 'cot', 'cot_full', 'writer', 'reader')
 REAL_SCHEMA = 'real-trace-cpt-v10'
 TARGET_SCHEMA = 'real-target-sft-v15'
+BALANCED_SCHEMA = 'real-source-balanced-v17'
 
 
 def source_files():
@@ -37,13 +38,15 @@ def source_files():
              'weekend_thinking/runtime_policy.py', 'weekend_thinking/artifacts.py',
              'train/evaluate.py', 'train/real_trace_packing.py',
              'train/calculation_boundaries.py', 'train/symbolic_note_labels.py',
-             'train/scalar_completion.py', 'train/real_target_packing.py')
+             'train/scalar_completion.py', 'train/real_target_packing.py',
+             'train/real_source_balanced_packing.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
 def validate(p):
     real = p.get('schema') == REAL_SCHEMA
     target = p.get('schema') == TARGET_SCHEMA
+    balanced = p.get('schema') == BALANCED_SCHEMA
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
@@ -54,6 +57,9 @@ def validate(p):
     if target:
         fixed.update(schema=TARGET_SCHEMA, world_size=8, micro_batch=4,
                      width=640, target_slots=128)
+    if balanced:
+        fixed.update(schema=BALANCED_SCHEMA, world_size=8, micro_batch=4,
+                     width=640, target_slots=640)
     if any(p.get(k) != v or isinstance(p.get(k), bool) for k, v in fixed.items()):
         raise ValueError('Require the explicit versioned shape/topology identity')
     if type(p.get('items')) is not int:
@@ -61,7 +67,27 @@ def validate(p):
     science=p.get('purpose')=='TRAIN5120_partial_state_study'
     real_science = real and p.get('purpose') == 'real_trace_cpt_study'
     target_science = target and p.get('purpose') == 'real_target_sft_study'
-    if target:
+    balanced_science = balanced and p.get('purpose') == 'real_source_balanced_study'
+    if balanced:
+        qualification = p.get('purpose') == 'real_source_balanced_qualification'
+        if (not (qualification or balanced_science)
+                or p.get('items') != (128 if qualification else 5120)
+                or p.get('steps') != (8 if qualification else 320)
+                or p.get('save_every') != (2 if qualification else 160)
+                or p.get('lr') != 1e-5
+                or p.get('data_sha256') != '437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915'
+                or p.get('view_schedule') != 'same_two_component_view_every_occurrence'
+                or p.get('loss') != 'half_mean_source_prefix_plus_half_mean_task_per_example'
+                or p.get('source_loss_weight') != 0.5
+                or p.get('task_loss_weight') != 0.5
+                or isinstance(p.get('source_loss_weight'), bool)
+                or isinstance(p.get('task_loss_weight'), bool)):
+            raise ValueError('Require declared separately normalized source/task objective')
+        if balanced_science and (p.get('seed') not in (2026101913, 2026101914)
+                or not isinstance(p.get('hardware_qualification_file'), str)
+                or not re.fullmatch('[a-f0-9]{64}', p.get('hardware_qualification_sha256', ''))):
+            raise ValueError('Source-balanced science needs actual same-source shape qualification')
+    elif target:
         qualification = p.get('purpose') == 'real_target_sft_qualification'
         if (not (qualification or target_science)
                 or p.get('items') != (128 if qualification else 5120)
@@ -100,9 +126,9 @@ def validate(p):
             raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
     elif p.get('purpose') not in ('qualification', 'TRAIN_overfit_only') or p.get('items')!=128:
         raise ValueError('Explicit fitting or fixed TRAIN5120 study required')
-    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 320 if real_science or target_science else 128)
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 320 if real_science or target_science or balanced_science else 128)
             or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
-            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science or real_science or target_science else 32)
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science or real_science or target_science or balanced_science else 32)
             or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
@@ -140,6 +166,11 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank):
     if not 0 <= step < p['steps'] or not 0 <= rank < p['world_size']:
         raise ValueError('Actual bounded step/rank required')
     start = step * p['global_batch'] + rank * p['micro_batch']
+    if p['schema'] == BALANCED_SCHEMA:
+        packs = [real_source_balanced_packing.training_pack(rows[order[pos]], tokenizer, arm,
+                     width=p['width'], target_slots=p['target_slots'])
+                 for pos in range(start, start + p['micro_batch'])]
+        return batch_packs(packs)
     if p['schema'] == TARGET_SCHEMA:
         packs = [real_target_packing.training_pack(rows[order[pos]], tokenizer, arm,
                      width=p['width'], target_slots=p['target_slots'])
@@ -274,7 +305,9 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         audited = step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
         before = master_samples(optimizer, expected) if audited else None
         batch = batch_at(rows, tok, p, order, args.arm, step, rank)
-        ce = masked_causal_ce(backend, **batch); ce.loss.backward(); sync()
+        weights = (dict(note_weight=p['source_loss_weight'], future_weight=p['task_loss_weight'])
+                   if p['schema'] == BALANCED_SCHEMA else {})
+        ce = masked_causal_ce(backend, **batch, **weights); ce.loss.backward(); sync()
         loss = float(ce.loss.detach().cpu())
         if not math.isfinite(loss) or any(t.grad is not None and t.grad.dtype != torch.bfloat16 for t in model.parameters()):
             raise RuntimeError('Nonfinite loss or wrong gradient storage')
@@ -298,6 +331,17 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             atomic_json(evidence/f'optimizer-after3-rank-{rank:05d}.json', inspection)
         labels = int((batch['note_close_mask'] | batch['future_mask']).sum())
         total_loss, total_labels = xm.all_reduce(xm.REDUCE_SUM, torch.tensor([loss, float(labels)], device=device)).cpu().tolist()
+        components = None
+        if p['schema'] == BALANCED_SCHEMA:
+            source_count = int(batch['note_close_mask'].sum())
+            task_count = int(batch['future_mask'].sum())
+            values = [float(ce.note_close_loss.detach().cpu()),
+                      float(ce.future_loss.detach().cpu()), float(source_count), float(task_count)]
+            source_loss, task_loss, source_labels, task_labels = xm.all_reduce(
+                xm.REDUCE_SUM, torch.tensor(values, device=device)).cpu().tolist()
+            components = dict(source_mean_loss=source_loss/world, task_mean_loss=task_loss/world,
+                              source_labels=int(source_labels), task_labels=int(task_labels),
+                              source_weight=p['source_loss_weight'], task_weight=p['task_loss_weight'])
         counters['expressions'] += p['global_batch']; counters['supervised_tokens'] += int(total_labels); last = step+1
         stop = stopped()
         halt = args.halt_after is not None and last == args.halt_after
@@ -305,9 +349,11 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             metric = dict(step=last, time_utc=utc_now(), elapsed_seconds=time.monotonic()-started,
                           loss=total_loss/world, gradient_norm=norm, actual_master_and_replica_audit=audited,
                           counters=dict(counters), ordered_item_ids=[rows[k]['item_id'] for k in order[step*32:(step+1)*32]])
+            if components is not None:
+                metric['loss_components'] = components
             with (args.output/'metrics.jsonl').open('a') as f:
                 f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
-        if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
+        if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
             saving = time.monotonic()
             # Full state is approximately14 bytes/parameter; reserve16 plus
             # the existing35GiB floor before any rank starts writing.
@@ -333,21 +379,23 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
-    if p.get('purpose') in ('real_trace_cpt_study', 'real_target_sft_study'):
+    if p.get('purpose') in ('real_trace_cpt_study', 'real_target_sft_study', 'real_source_balanced_study'):
         qualification_file = Path(p['hardware_qualification_file'])
         qualification = json.loads(qualification_file.read_text())
         shape = {k:p[k] for k in ('world_size','micro_batch','global_batch','width','target_slots','head_chunk','accumulation')}
-        expected_status = ('PASS_ACTUAL_REAL_TARGET_SFT_FULL_RESTORE' if p['schema'] == TARGET_SCHEMA
+        expected_status = ('PASS_ACTUAL_REAL_SOURCE_BALANCED_FULL_RESTORE' if p['schema'] == BALANCED_SCHEMA else
+                           'PASS_ACTUAL_REAL_TARGET_SFT_FULL_RESTORE' if p['schema'] == TARGET_SCHEMA
                            else 'PASS_ACTUAL_REAL_TRACE_SFT_FULL_RESTORE')
         if (sha256_file(qualification_file) != p['hardware_qualification_sha256']
                 or qualification.get('status') != expected_status
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = (real_target_packing.ARMS if p['schema'] == TARGET_SCHEMA else
+    allowed_arms = (real_source_balanced_packing.ARMS if p['schema'] == BALANCED_SCHEMA else
+                    real_target_packing.ARMS if p['schema'] == TARGET_SCHEMA else
                     real_trace_packing.ARMS if p['schema'] == REAL_SCHEMA else ARMS)
     if args.arm not in allowed_arms:
         raise ValueError('Arm does not belong to the declared experiment schema')
@@ -375,7 +423,7 @@ def main():
             raise ValueError('Frozen data or native base protocol changed')
         rows = [json.loads(x) for x in Path(p['data_file']).read_text().splitlines()][:p['items']]
         if (len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items']
-                or any((r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
+                or any((r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
             raise ValueError('Complete declared distinct TRAIN expressions required')
         assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
         if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']
