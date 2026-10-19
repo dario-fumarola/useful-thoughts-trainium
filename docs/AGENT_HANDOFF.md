@@ -50,6 +50,31 @@ Final publisher names its complete report with the actual UTC publication date a
 its exact path in C26/publication-protection.json. No new output readout has run.
 No larger model/newdata/RL/official DEV/TEST access. Preserve all old primary reports/gates.
 
+## Parallel CPU-only TRAIN diagnostic
+
+Completed-selector error diagnosis is now running, without changing V26.
+C=local/diagnostics/selector-TRAIN-decisions-CPU-v1; source selector_train_decisions_cpu_20261019.py.
+CPU exec48441, child PID1526142;16 CPU threads, explicit devicecpu, zero accelerator calls.
+Frozen design/input hashes in C/design.json, source publicly committed f7b7e0e before forwards.
+Original fixed TRAIN256 only:128two/96three/32four. No new held/final data or updates.
+Current-model CPU native check passes. Last observation28/256 at23:55UTC;7–10seconds/item.
+Hard original CPU deadline2026-10-20T00:30:29.193304+00:00; no automatic retry.
+All raw observations append to C/observations.jsonl, stdout C/run.log, exit C/exit.json.
+
+Question: classify native early closing of a canonical ID prefix versus earlier wrong-ID/omission,
+and compare first-divergent canonical continuation/closure token likelihood under correct TRAIN IDs.
+Token pairs ALL416 are standalone ] versus combined ]+newline: these are local serialization
+scores, NOT total field-termination probabilities or proof of native decoding causation.
+Annotations are not semantic gold; CPU FP32 versus native BF16 can change near ties.
+
+After CPU exit0/result, run check_selector_train_decisions_cpu_20261019.py from W2 with USE_TORCH_XLA=0.
+Its C/check-contract.json fixes4 source-hash-selected TRAIN forward spots and1e-4 logp tolerance.
+Installed HF Qwen3 forward supports logits_to_keep, checked. Checker reparses all256 native fields,
+verifies all token-prefix/count/margin identities, then direct-HF forward spots (not hidden/head wrapper).
+Checker source/contract copied public and EBS before final readout; do not edit frozen CPU producer.
+No result aggregation has been reviewed yet. Preserve raw/source/readback evidence and publish
+this as a descriptive optimization diagnostic, separately from V26's primary answer comparison.
+
 ## V25 is complete
 
 Report: validation/document_evidence_weight_v25_complete_20261019.json.
