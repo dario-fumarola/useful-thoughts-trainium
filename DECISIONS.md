@@ -1279,3 +1279,14 @@ Keep both findings:supervised calculation helps this exact-number path using
 extra computation,but training-only/full-continuation improvement is unestablished.
 Publish all outputs and controls together;no gate relabeling,RL release or8B jump.
 Answer-focused direct/full-trace SFT is a missing practical reference,not yet a run.
+
+2026-10-19 08:00UTC — Release exactlyfourfreshB0 target-SFT models after actual
+both-mask qualificationPASS:11finiteupdates,9changed-master/cast witnesses,
+6fullstates,andfulloptimizerrestore6→8. SavedCPU RNG6/8 matchesall8ranks;
+no independentimmediate deviceRNGreadback ortrajectoryparity claim. Source829d9a2,
+320updates/two passes/two seeds,fresh384 prospectively frozen. Prefixunscored;
+directfuture16 versusfulltrace+Answer+future16;noCPT/emergenceclaim fromsuccess.
+Quietcompiledcache movedbyte-for-byte toexistingNVMe,originalruntimepath retained;
+no model/checkpoint/data removed. Diskreserve andfuturebackupbudget verified.
+Evaluation41a5bfd/1,664CPUchecks ready;permodel actualnative/cache andfullspan
+reference checks still required. MainlineV10mixed result remainsclosedunchanged.

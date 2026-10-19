@@ -1,18 +1,19 @@
 # Status — 2026-10-19 07:15 UTC
 
-## Active: stronger single-model supervised reference preparation
-Question: does full-trace CoT SFT beat direct-answer SFT on fresh real-document computations?
-Experiment:real-target-sft-v15;freshB0,two arms/two seeds,TRAIN5120 unchanged;science unreleased.
-Frozen fresh384 documents/ordered exact-value ASTs disjoint from TRAIN and both old arithmetic panels.
-Declared primary:CoT own−direct raw>=3pp and paired95% lower>0 in BOTH seeds;required empty/B0 controls.
-Prefix/opening unscored;direct future16 versusCoT fulltrace+boundary+future16;320updates/two passes.
-Source829d9a2,branchreal-target-sft-v15;all1,647CPUchecks,smoke andcompile pass.
-All10,240 actual TRAIN packs pass;width640/target128. Data/design EBSreadback protected.
-Bounded actual hardware qualification launched physical12/13,visible48-55;no held model evaluation.
-DisposableCoT fresh1-6/fullrestore6/ordered7-8,then direct1-3;all states/casts/native/RNG audited after closure.
-Control:local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1;tmux target-sft-v15-qualification.
-Prospective design:validation/real_target_sft_v15_design_20261019.json;source docs/REAL_TARGET_SFT_V15.md.
-Next:finish all3 mechanics stages and independent full-state audit;no science until actual qualification PASS.
+## Active: stronger single-model supervised reference
+Question:does full-trace CoT SFT beat direct-answer SFT on fresh real-document computations?
+Experiment:real-target-sft-v15;four freshB0 models/two seeds,TRAIN5120,320updates/two passes each.
+Frozen fresh384 documents/exact ordered ASTs excludeTRAINandbothold arithmetic panels.
+Primary:CoT own−direct raw>=3pp andpaired95% lower>0 inBOTHseeds,plus empty/B0controls;all failures retained.
+Source829d9a2:1,647CPUchecks andall10,240nativeTRAINpacks pass;width640,target128,prefix unscored.
+Actual8rank qualification PASS:11finiteupdates,9master/cast witnesses,6fullstates,optimizerrestore6→8.
+SavedCPU RNG states equal6→8;immediate deviceRNGreadback/trajectory parity unverified;no stochasticRLclaim.
+Full report:validation/real_target_sft_v15_hardware_20261019.json;all originals/qualification models protected.
+Four science jobs released08:00UTC onphysical0–7;all actual8-worker allocations confirmed,firstupdates complete.
+Control:local/diagnostics/real-target-sft-v15-study-v1;tmux sft-v15-{target_direct|target_cot}-seed2026101913/14.
+All originalfull160/320 retainedNVMe;allterminalweights/latestfull getEBSreadback;no extensions/retries/model selection.
+Evaluation41a5bfd passes1,664CPUchecks;fresh384/gold separate,frozen/backedup;actual inference checks still required.
+Next:monitor fixed runs and prepare nine-model evaluation without inspecting partial capability outcomes.
 
 ## Closed: single-model real-document likelihood study
 Question: do augmented data improve ordinary prediction, and separately generated-calculation inference?

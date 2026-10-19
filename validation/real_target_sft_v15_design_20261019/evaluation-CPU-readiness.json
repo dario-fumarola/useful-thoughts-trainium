@@ -1,0 +1,13 @@
+{
+  "status": "CPU_READY_NOT_HARDWARE_INFERENCE_QUALIFICATION",
+  "source_commit": "41a5bfd",
+  "source_branch": "real-target-eval-v15",
+  "CPU_checks": 1664,
+  "check_log_sha256": "61d239c8679f907983cc46f5eeb44463770723cad4a0cd27181910c206f85f60",
+  "fixed_evaluation_manifest_sha256": "548e14e6ce9d62b774ad7e356db1ccf4d5cb2ebd8159ec427841f8c3268317de",
+  "new_native_target_partitions": {
+    "documents": 384,
+    "unsupported": 0
+  },
+  "limits": "The scalar parser and legacy denominators are unchanged. Every model still needs actual native/cache checks and optional native fullspan parity before its panel."
+}

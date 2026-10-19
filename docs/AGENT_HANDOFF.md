@@ -1,177 +1,134 @@
-# Current research handoff — 2026-10-19 07:18 UTC
+# Current research handoff — 2026-10-19 08:16 UTC
 
-Continue authorized autonomous work; do not stop at a milestone. Read STATUS.md
-and NEXT_STEPS.md. Agents remain quota-unavailable;do not retry. Updates<=60sec.
-No active goal;do not create one. No8B/broadRL/officialTEST/cloud changes.
+Continue autonomous work until the owner stops it. Do not end at a milestone.
+Use tools promptly; avoid minutes of speculative internal planning. Give useful
+commentary within60 seconds. No active goal; do not infer/create one. Agents are
+quota-unavailable until October24; do not retry. Read STATUS and NEXT_STEPS.
 
-## Active next job — 07:33 UTC
+## Active study
 
-real-target-sft-v15 prepares the missing strong direct-answer/fulltraceCoT SFT
-comparison. Worktree local/worktrees/real-target-sft-v15 at829d9a2;branch public.
-All1,647 CPU checks+smoke/compile pass. Both target-only packs preserve native
-prefix/future,unscore prefix/opening;direct has16targets,CoTtrace+Answer+future16.
-SameTRAIN5120,two320update seeds1913/14,two passes;science NOT released yet.
-Newfresh384,dataSHA8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c,
-source local/nvme-study/data/real-target-sft-v15-held-v1. Document/orderedAST
-novel versusTRAINandbotholdevalpanels;operationpatterns mayrecur. OfficialTESTunopened.
-All10,240 actual native trainingpacks pass;163840direct/512900CoTlabels perseed.
-Publicdesign validation/real_target_sft_v15_design_20261019.json and
- docs/REAL_TARGET_SFT_V15.md. PrimaryCoT own−directSFTraw>=3pp andpairedlower>0
-inEACHseed,empty/B0control lowers>0,zeroexecutionerrors;bootstrap20kseed1917.
-No changedprimarygate forV10. This is a supervisedreference,notCPT/emergence.
+`real-target-sft-v15` closes a missing strong supervised reference. Four models:
+`target_direct`, `target_cot`, seeds2026101913/14. Every model starts fresh B0,
+320updates/global32/two passes on the SAME verified real TRAIN5120. Prefix and
+supplied opening unscored. Direct future16; CoT full trace+Answer+future16.
+Source829d9a2 at `local/worktrees/real-target-sft-v15`, immutable while live.
+All1,647 CPUchecks+smoke/compile pass. All10,240 actual TRAIN packs validated.
+Target counts per seed163,840 direct /512,900 CoT; paddedwidth640,target128.
+Actual world8/micro4 BF16-active/F32-master qualification PASS:11finite updates,
+9 explicit changed-master/cast/replica witnesses,6full states,actual full6 restore
+and ordered7–8. All48 saved CPU RNG payloads are settable; saved6/resumed8 CPU
+states match onall8ranks. Immediate device-RNG readback and uninterrupted parity
+remain unverified. This is not a stochastic-RL qualification.
+Public:validation/real_target_sft_v15_hardware_20261019.json.
 
-Tmux target-sft-v15-qualification currently runs bounded8rank mechanics only.
-Control local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1.
-Output local/nvme-cpt/diagnostics/real-target-sft-v15-world8-target128-qualification-v1,
-and samewith -direct suffix. Physical12/13,logical48-55,width640/target128.
-Stages:freshCoT1-6,physicalclose,fullrestore6/ordered7-8,thenfreshdirect1-3.
-Deadline10:30UTC,max3600sec eachstage,no retries. Check control stage/run.log,
-metrics andactual owned processclosure. Source/protocol/control/TRAIN EBSprelaunch
-readback verified. Source immutable;do not duplicate or edit it while job lives.
-Next:implement independent audit reusing prior realv10 full-state audit,including
-all6 actual checkpoints,both masks,counters/casts/native/RNG,then publish actual
-qualification. Only afterward serialize release for the four320update models.
-Qualification models excludedfromcapability. Keep alloriginalstates NVMe;EBS
-models/evidence protected,latestscientificfull320 remainsprotected.35GiBdiskfloor.
+Four science jobs released08:00UTC on physical0/1,2/3,4/5,6/7. At08:16 they reach
+154–156/320,~5.5sec/update,no failures. Full160/320,terminal primary,no extensions.
+Control:`local/diagnostics/real-target-sft-v15-study-v1`. Tmux names:
+`sft-v15-target_direct-seed2026101913/14` and `sft-v15-target_cot-seed2026101913/14`.
+Finite owned supervisors monitor host/disk and preserve complete-boundary STOP.
 
-## Latest completed evidence and exact next actions
+Exact next command (mechanical counts only):
+`python3 /home/ubuntu/dario/local/analysis/live_real_target_v15_health_20261019.py`
+Do not inspect partial held answers or numeric likelihood outcomes.
 
-Both fixed real-data readouts are complete. All producers/watchers closed normally.
-Main report:validation/real_trace_cpt_v10_complete_20261019.json.
-Primary report SHAeb5f6b07aa4b39da6f708a7941fc2bc3bbaf1580b5bc3942979730acab2e1bf4.
-Independent checker PASS19,712likelihood rows/3,584notes/all20kbootstrap intervals.
-Both primary gates FAIL:post.raw−raw.raw+0.012/+0.006nat;prior.own−raw.raw+0.097/−0.139.
-Ordinary FineMath regression bounds pass. Own−empty/other positive in both seeds,
-but not sufficient to rescue either primary gate. B0raw remains a strong LL control.
-Scalar report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
-SHA c25b6a06f855684622084a9e4744b2c55ef8f7290f31ee108e0aca8537e1855f.
-Independent check PASS17,920answers,native stops,exact numbers,all paired intervals.
-AST256priorown216/213 versusrawCPT193/196 andsamepriorempty175/172.
-Paired+9.0/+6.6pp versusrawCPT,positive intervals;unsupported25/24 retained.
-No execution errors. This is a prospective secondary,not primary success or generalQA.
-All35+14raw payloads,CSV,plots and28 disclosed examples are ready for publication.
-Sources/checkers/renderers copied into each result directory/analysis-source.
-Original raw reports MUST stay immutable;their SHA bindings are checked.
-Posthoc error-transition-source.py independently reproduces every descriptive
-partition;gain includes numerical corrections and improved format coverage.
+Tmux `target-sft-v15-terminal-pipeline` waits allfour physical closures,then runs
+independent audit/protection/binding once. Helpers in local/analysis:
+`real_target_state_audit_v15_20261019.py`,
+`audit_real_target_four_terminals_v15_20261019.py`,
+`protect_real_target_four_terminals_v15_20261019.py`,
+`bind_real_target_four_terminals_v15_20261019.py`,
+`watch_real_target_terminal_pipeline_v15_20261019.py`.
+It verifies all1,280 ordered metrics,32native vectors/eight full states,then
+protects allfour terminal models and latest full320. The independent label formula
+is16 per direct example,trace_tokens+2+16 per CoT example. All original states stay
+NVMe. Latest-full model is hardlinked inside the EBS archive. Do not duplicate it.
+Expected completion:control/terminal-pipeline-completion.json with
+`ALL_FOUR_MODELS_AUDITED_PROTECTED_AND_FROZEN`;bindings incontrol/frozen-models.
 
-Both public presentation annexes are EBS readback protected. Complete mixed result
-is published in main c6bf246/c60fb3d. Forward-only engineering result is now closed
-and protected:validation/real_span_XLA_B0_v14_20261019.json. Select the next bounded
-scientific intervention;first decompose number/boundary/tail in completed scores.
-No new model is running. All six terminal models/latest full320 are protected.
-Immutable training3d8666b,likelihood29c8b24,scalar4297c1d;do not edit old identities.
-No training extension or checkpoint selection follows from either readout.
+## Fixed evaluation
 
-Forward-only engineering:local/diagnostics/real-span-XLA-B0-v14-v2/span_probe.py,
-outputs local/nvme-cpt/diagnostics/real-span-XLA-B0-v14-v2. Exit0,all1280rows,
-configuredone logicalcore,FP32,width672,batch4. Max tokenerror0.00024569,
-absmean span drift0.00021813;declared<=.001 parity passes. Estimated warm
-speedup15.72x versus16-threadCPU,warmbatch~.33sec;firstbatch40.4sec,total161.8sec.
-No gradients/sampling/weight-sync/trained-model qualification orRLstepclaim.
-V1failed before scoring because profile.py shadowed stdlibprofile;preserved.
-Protect allV2originals andV1failure,then publish separate engineering report.
+Prospective design:validation/real_target_sft_v15_design_20261019.json;
+source protocol:docs/REAL_TARGET_SFT_V15.md. Fresh384 is drawn from unused source
+TRAIN documents,disjoint from actualTRAIN5120 and both earlier arithmetic panels
+by document and ordered exact-value AST. Operator patterns/equal answers can recur.
+Source data:`local/nvme-study/data/real-target-sft-v15-held-v1`.
+Held SHA8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c.
+No officialTEST. Cohort/design/native inputs and separate gold are EBS readback protected.
 
-Missing practical reference:answer-focused direct SFT versusfulltraceCoTSFT
-on the SAME prefix-computable real data,unscoredprefix. Existing CPT givesadded
-trace~3.5% ofnormalizedCEcoefficientmass,not gradientmass. Newobjective needsnew
-identity/fixedprospectivecomparison/workloadqualification. Finish publication first.
-The bounded split repair stays closed;broader MuSiQue remainsCPUonly preparation.
+Primary:CoT-own minus direct-SFT-raw complete-scalar exact rational accuracy.
+Require>=3pp and paired95% lower>0 in EACH seed,plus own-empty and own-B0raw positive
+lowers in each seed,zeroexecutionerrors.20k document bootstrap,seed2026101917.
+All unsupported/error outputs remain in384. Likelihood/full16 components and ordinary
+FineMath256 raw NLL are secondary. No pooled seeds or post-hoc primary substitution.
+Passing establishes a supervised real-arithmetic reference,not CPT benefit/emergence.
 
-## Fixed data and decisions
+Eval source41a5bfd at `local/worktrees/real-target-eval-v15`,immutable once jobs live.
+All1,664 CPUchecks+smoke/compile pass. Legacy256 scopes unchanged;fresh384 has new IDs.
+Notes cap128/prefill544;scalar cap32/prefill672,EOS only. Fixed Answer closure2tokens.
+Unchanged initial-scalar-v2 scoring after physical closure;whole donor controls intact.
+Optional one-core FP32 span scorer compares first4 frozen docs in EVERY mode to CPU
+(max tokenerror<=.001,absmean span drift<=.001) before scoring. Preserve failures;
+if needed run a separately identified canonicalCPU fallback,never change the models.
+`--device cpu` remains the canonical score path. B0all1280 parity profile is separate.
 
-TRAIN5120 unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.
-Primary held V2:local/nvme-study/data/real-trace-cpt-v10-held-panels-v2,
-manifest22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24.
-All256 ordered exact-value ASTs are distinct and absent from TRAIN. Ten aliases
-were corrected before learning; preserve V1, old panels and all observations.
-Evaluation questions/targets separate under
-local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2.
-Scalar scoring-only values under local/nvme-cpt/data/real-trace-v10-scalar-secondary-v1.
+Global evaluation registry:`local/diagnostics/real-target-eval-v15-study-v1/plan.json`.
+Exactly9 models:B0,oldV10raw/prior eachseed,and the four new terminal models.
+Five baseline controllers are active on physical8,9,10,11,14. Their native/cache
+checks pass and notes are progressing. Each copied controller runs notes→scalar,
+reuses original notes and keeps all attempts. Tmux `target-eval-v15-slot0` through4.
+Per-model registry path is in the master plan. Controller completion status:
+`COMPLETE_FIXED_V15_MODEL_NOTES_AND_SCALAR`. No held capability review until all9finish.
 
-Training gate:post.raw−raw.raw full16 LL>=0.25nat and paired95% lower>0 in both
-seeds; ordinary-text token NLL regression mean<=0.02,95% upper<=0.05.
-Inference gate:prior.own−raw.raw>=0.25nat and positive lower in both seeds;
-own−same-model raw and empty must also have positive lower; no execution errors.
-Independent gates. Also report prior.own−raw.own, own−other, B0 absolute paths,
-ordinary regressions, all caps/errors and actual token costs. Never turn beating
-an impaired control into a new-best-base claim. Bootstrap20k documents,seed1915;
-intervals condition on checkpoints, not training-seed uncertainty. All panels DEV.
+Preparation factory (run from eval worktree with correct PYTHONPATH):
+`local/analysis/prepare_real_target_model_evaluation_v15_20261019.py`
+requires --model-id,--physical,--slot,[--binding]. Baseline5 already prepared/released;
+do not repeat. Future four use slots5–8,physical0–3,only AFTER allfour terminal
+bindings/protection exist. Factory writes protected control/CPU references and
+launch-evaluation.sh but does NOT launch. Root then launches each once.
 
-## Completed diagnostic and broader scope
+The four-slot one-core score queue is now live onlogical48–51 after note bundles
+complete:tmux target-v15-score-queue. Helpers run_real_target_scores_v15_20261019.py
+and watch_real_target_score_queue_v15_20261019.py;statecontrol/score-queue-state.json.
+STILL TO BUILD:finite watcher to prepare/release fournewmodels afterterminalbinding;
+final all-nine archive/readout/independent check/plots/examples. Do not let this
+engineering become a reason to inspect/select partial outcomes. Full source/gold
+separation and all original artifacts must remain. The5baseline CPU prep commands
+finished successfully;their source/controls were EBS verified before release.
 
-Variable-depth repair is complete/public:a7835c7,
-validation/variable_depth_writer_v11_complete_20261019.json.
-Composition512:fixed124→variable306, paired+35.5pp[31.3,40.0]; canonical/natural91→409.
-FrozenfullCoT273, but curricula/target tokens differ and only one diagnostic seed.
-Freshdepth2 variable182/256 versusCoT193; unseen depth6 variable10/256 versusoracle78.
-All9,216 answers/2,048 notes are audited/public. Do not launch a larger split rescue.
-Old two-seed v7 is public negative;a0ae5ec. R1234 stays stopped at63.
-MuSiQue broader-document work is CPU preparation only:7c5c264,correct composed
-question field,all visible paragraphs,no gold support flags in input. No cohort,
-model, official DEV/TEST or broader-learning release. Decide after mainline readout.
-Read-only TRAIN split audit is public:document_evidence_v12_split_risks_20261019.json.
-A hypothetical question hash split reuses training-visible support for3846/3878held
-questions. Exact visible-paragraph graph is connected; do not claim evidence novelty
-from a naive question split. This released no cohort or model.
-Actual CE coefficient allocation:real_trace_cpt_v10_loss_allocation_20261019.json;
-added trace targets receive about3.5% of per-example token-loss weight, not a
-measured gradient fraction. Fixed objective and success gates remain unchanged.
+## Completed findings that stay unchanged
 
-## Storage and runtime invariants
+MainV10:both predeclared full16 likelihood gates FAIL. Post raw gains~0.01nat;
+prior-own versusrawCPT+0.097/−0.139nat,intervals crosszero. The prospectively declared
+scalar secondary is positive:216/213 of256 versusrawCPT193/196,+9.0/+6.6pp with
+positive intervals;unsupported25/24 retained. Same-prior empty175/172. This is a
+narrow extra-computation arithmetic-answer gain,not ordinary training benefit.
+All19,712 LP rows/3,584notes/17,920scalar attempts,figures,28disclosed examples and
+independent bootstrap checks are public in main c6bf246/c60fb3d and follow-ups.
+Posthoc partition331ce2e:tail damage~−.21nat inbothseeds;numeral gainclear onlyseed13.
+V10models/latest full320 protected;alloriginal160/320 states remain. Never alter raw
+reports SHAeb5f6b07aa4b39da6f708a7941fc2bc3bbaf1580b5bc3942979730acab2e1bf4
+and c25b6a06f855684622084a9e4744b2c55ef8f7290f31ee108e0aca8537e1855f.
+Bounded variable-depth repair is closed and positive only inits narrow scope;
+no expanded split rescue. OldR1234 stays stopped63. No broadRL orunqualified8B.
+MuSiQue is CPU-only preparation;19,938TRAIN questions,the visible-evidence split
+risk is documented. It is not a third released learning program.
 
-Keep35 GiB free per filesystem and512 GiB host availability. All original full
-checkpoints stay on NVMe. EBS retains every terminal model and latest full320.
-Superseded EBS first160 optimizer duplicates were retired only after fresh full
-hashes on BOTH old original/copy and newer original/copy. Eight duplicates only;
-all originals/model weights remain. Receipt:
-validation/checkpoint_retention_after_real_CPT320_20261019.json. Root now about64 GiB free.
-Current EBS latest:local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320.
-Historical FIRST_FULL160 has an explicit retirement annex; do not load its removed
-rank copies. Original full160 remains intact on local/nvme-cpt/runs.
-Backups are same-instance, not off-instance.
+## Runtime/storage discipline
 
-local/nvme-cpt already formatted/mounted UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67;
-NEVER mkfs again. local/nvme-study UUID63bee3f4-6b43-4290-a0f8-1c8946b7a509 intact.
-Use existing venv and source scripts/env.sh, then ALWAYS override PYTHONPATH:
-export PYTHONPATH="$PWD:/home/ubuntu/dario/local/analysis:/home/ubuntu/dario/local/test-deps".
-Absolute analysis scripts otherwise import main instead of the selected worktree.
-No rg installed; use targeted Python/grep/find. No cloud/IAM/network/paid teacher/
-new bucket changes. Do not inspect broad process environments: unrelated daemon
-arguments can contain secrets. Read only owned PIDs/selected fields.
+Source scripts/env.sh,then explicitly set PYTHONPATH to the DESIRED WORKTREE plus
+local/analysis and local/test-deps. Python heredocs run from main otherwise import
+main before PYTHONPATH;every preparer must assert ROOT. Use correctcwd. No stack
+upgrades,cloud/IAM/network changes,paid teacher services or unapproved bucket.
+Do not print broad process args or environment;unrelated services may hold secrets.
 
-## Latest prepared readout additions
-
-All four augmentation models have finished both original-note panels; their
-scalar jobs are now released on physical8–11. Raw control notes are still
-finishing, so their scalar jobs remain pending. No numerical capability outcomes
-reviewed. Main CPU likelihood scoring continues; some primary panels have
-several hundred rows but none of the six full model/panel sets is complete.
-
-All306 top-level training evidence files (native vectors, initial master witnesses,
-metrics and completion/qualification JSON) are EBS-readback/fsync protected under
-TERMINALS/TRAINING_EVIDENCE. Public training report now links all six original
-320-row compressed training traces; no new observations.
-
-Static old-R padding finding:validation/retired_R_empty_padding_CPU_20261019.json.
-Tiny random CPU Qwen confirms a single empty note still projects1024 replay head
-rows (2048 with checkpoint recompute), while a cropped8-slot view preserves loss,
-reader likelihood and parameter gradients (maxdiff1.49e-8) in this one fixture.
-No production optimization, real-model hardware profile, speedup or RL restart.
-Do not treat this as full mixed/capped/bucket-boundary qualification.
-
-Secondary renderer prepared:local/analysis/render_real_trace_scalar_secondary_v10_20261019.py.
-Run only after complete secondary report. Its all-mode CSV preserves every parser
-category; bars display raw/own plus oracle/empty/other reference points. Review
-figures visually before publication. Do not alter either live worktree.
-
-Mechanical progress helper (no score/answer parsing):
-python3 local/analysis/live_real_trace_v10_health_20261019.py
-It prints all row counts, completion/failure flags, storage and host availability.
-B0 likelihood is fully complete; both raw-control secondary jobs are still waiting
-for their original legacy notes. Four augmentation-model secondary jobs run.
-Posthoc completed-v11 error decomposition is prepared/public-source reproducible:
-variable_depth_writer_v11_error_decomposition_20261019.json. On composition,104/206
-variable-system errors have exact teacher inputs; all409 matching-input native
-answer sequences agree across independent jobs.71 errors have changed inputs where
-the teacher succeeds;31 are changed inputs where both fail. No new observations.
+Compile cache nowbyte-verified on existingNVMe:
+`local/neuron-cache-driver` is a symlink to
+`local/nvme-cpt/caches/neuron-cache-driver-20261019`. Original runtimepath unchanged,
+all10,908entries/18,495,161,350bytes verified. No model/checkpoint/data removed.
+Report:validation/neuron_compile_cache_NVMe_move_20261019.json.
+Rootfree~74.6GiB after qualification backups;projected newmodels+latestfull~35.3GiB,
+35GiB reserve retained. NVMe has ample room for original states. Keep512GiB host
+availability and35GiB perfilesystem. EBS is same-instance,not off-instance backup.
+NVMe-cpt UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67 is ALREADY formatted/mounted;
+NEVER mkfs. No new reviewZIP today;one was already shared. Main publication of
+V15hardware/active status/cache move is included in the next reviewed commit.

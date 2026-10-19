@@ -12,6 +12,12 @@ The result is mixed: **generated calculations improve complete-number accuracy;
 neither predeclared 16-token likelihood gate passes.** Training benefit without
 extra thinking remains unestablished.
 
+A [bounded follow-up](validation/real_target_sft_v15_design_20261019.json) now
+compares direct-answer SFT with full-trace CoT SFT on the same training documents
+and a fresh 384-document panel. Its [hardware recovery qualification](validation/real_target_sft_v15_hardware_20261019.json)
+passes; four fixed runs are active. This closes a supervised-baseline gap and
+has no capability result yet. The completed findings below remain unchanged.
+
 ## Latest completed study: single-model real-document computation
 
 These are the terminal step-320 checkpoints, not selected intermediate models. The

@@ -1,0 +1,18 @@
+{
+  "status": "PASS_QUIET_COMPILE_CACHE_MOVED_WITH_EXACT_READBACK_ORIGINAL_PATH_PRESERVED",
+  "utc": "2026-10-19T07:55:08.498977+00:00",
+  "original_path": "/home/ubuntu/dario/local/neuron-cache-driver",
+  "current_target": "/home/ubuntu/dario/local/nvme-cpt/caches/neuron-cache-driver-20261019",
+  "entries": 10908,
+  "bytes": 18495161350,
+  "root_free_before_bytes": 68503363584,
+  "root_free_after_bytes": 87020040192,
+  "tree_manifest_sha256": "c214dacdb4addc6da27bb97f673be7b5f528247a8c01a6e25c11c3e51663ccbb",
+  "source_sha256": "1663f8e7663f093e04e1a4d3cddc24a83f81ca4d7fbac0a26385ceca187a1a9a",
+  "limits": [
+    "Compiled cache only;no original model,checkpoint or dataset was deleted or changed.",
+    "Existing runtime environment/cache path and stack versions unchanged;all device processes absent during swap.",
+    "Cache is now on existing ephemeral NVMe and is reconstructible from preserved sources/assets.",
+    "All future jobs still run their actual native/update checks;this is not new numerical qualification."
+  ]
+}

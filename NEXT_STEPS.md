@@ -11,23 +11,22 @@
    Controls:local/diagnostics/real-trace-cpt-v10-study-v1 and
    local/diagnostics/real-trace-v10-scalar-secondary-study-v1. Producers are closed.
 
-2. Complete the bounded V15 hardware qualification,then audit once after all stages.
-   Question:full-trace CoT SFT versus direct-answer SFT on the SAME verified data.
-   Source829d9a2 atlocal/worktrees/real-target-sft-v15;1,647CPUchecks pass.
-   Fresh384 is frozen from unused sourceTRAIN,disjoint bydocument/exactAST from
-   TRAIN5120 andboth old arithmetic panels. No model outcomes select the cohort.
+2. Monitor the four released V15 target-SFT models;no extensions orselection.
+   Source829d9a2 atlocal/worktrees/real-target-sft-v15;1,647CPUchecks andactual
+   both-mask/fulloptimizerrestore qualificationPASS. Science released08:00UTC.
+   Control:local/diagnostics/real-target-sft-v15-study-v1;four8rank partitionsphysical0–7.
+   Exactly320updates/two passes/freshB0 perarm/seed;savefull160/320,terminalprimary.
+   Independent qualification:validation/real_target_sft_v15_hardware_20261019.json.
+   Models:target_direct/target_cot,seeds2026101913/14. No stochasticRL/8B release.
+   Fresh384 excludes actualTRAINandbotholdevalpanels bydocument/exactAST.
    Design:validation/real_target_sft_v15_design_20261019.json;docs/REAL_TARGET_SFT_V15.md.
-   Control:local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1.
-   Tmux target-sft-v15-qualification runs CoT fresh1-6/fullrestore6/7-8,then direct1-3
-   onphysical12/13. Target-only width640/target128;one ordinary qualified engine.
-   Do not edit source or duplicate launchers. Actual full-state and both-mask audit
-   required before any320update science. Deadline10:30UTC,finite stages,no auto-retry.
-   Primary>=3pp CoT-own versusdirect-SFT-raw with positive paired lower ineach seed,
-   plus empty/B0 controls. No new training-benefit or emergence claim follows.
-   Existing V10 gates remainfailed;its frozen raw/prior models are references.
-   Forward-only B0 qualification is separately closed,not a training qualification:
-   validation/real_span_XLA_B0_v14_20261019.json. Tokenpartition separatelyclosed:
-   validation/real_trace_v10_token_partition_20261019.json.
+   Evaluation source41a5bfd atlocal/worktrees/real-target-eval-v15;1,664CPUchecks.
+   Inputs:local/nvme-cpt/data/real-target-sft-v15-evaluation-inputs-v1;gold separate.
+   Prepare B0andfrozenV10raw/prior references onidledevices,then allfour terminal
+   models afterindependent state/protection audits. No partial capability review.
+   Actualnative/cache checks permodel;nativefull16 needs fixed4-per-mode CPUparity.
+   Primary>=3pp CoT-own−directSFT-raw andpositivepairedlower ineachseed,plus empty/B0.
+   Keep allfailures andmatchactual costs;source/eval areseparatefrozenbranches.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

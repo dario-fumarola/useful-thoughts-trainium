@@ -1,0 +1,530 @@
+{
+  "status": "PASS_ACTUAL_REAL_TARGET_SFT_FULL_RESTORE",
+  "utc": "2026-10-19T08:03:54.680604+00:00",
+  "source_commit": "829d9a2",
+  "CPU_checks": 1647,
+  "actual_updates": {
+    "target_cot": 8,
+    "target_direct": 3
+  },
+  "qualified_training_shape": {
+    "world_size": 8,
+    "micro_batch": 4,
+    "global_batch": 32,
+    "width": 640,
+    "target_slots": 128,
+    "head_chunk": 32,
+    "accumulation": 1
+  },
+  "full_checkpoint_count": 6,
+  "rank_state_count": 48,
+  "native_checks": 24,
+  "distinct_canonical_native_contexts": 4,
+  "explicit_changed_master_cast_replica_witness_updates": {
+    "target_cot": 6,
+    "target_direct": 3
+  },
+  "saved6_all_optimizer_digests_reread": true,
+  "grouped_late_growth_GiB_per_save": 1.4435510635375977,
+  "original_audit_sha256": "cda65072d557253aaf35c52bd88c4af2eae9e9032946536396776d9371b86da8",
+  "RNG_scope": {
+    "status": "RNG_PAYLOAD_AND_POSTRESUME_CPU_STATE_SCOPE_RECORDED",
+    "utc": "2026-10-19T07:58:17.408498+00:00",
+    "rank_states": 48,
+    "CPU_saved6_equals_resumed8": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "all_CPU_states_equal": true,
+    "checks": [
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 0,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 1,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 2,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 3,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 4,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 5,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 6,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 2,
+        "rank": 7,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 0,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 1,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 2,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 3,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 4,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 5,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 6,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 4,
+        "rank": 7,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 0,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 1,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 2,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 3,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 4,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 5,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 6,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 6,
+        "rank": 7,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 0,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 1,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 2,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 3,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 4,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 5,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 6,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_cot",
+        "step": 8,
+        "rank": 7,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true,
+        "CPU_rng_saved6_equals_after_resumed8": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 0,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 1,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 2,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 3,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 4,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 5,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 6,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 2,
+        "rank": 7,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 0,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 1,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 2,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 3,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 4,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 5,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 6,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      },
+      {
+        "arm": "target_direct",
+        "step": 3,
+        "rank": 7,
+        "cpu_payload_settable": true,
+        "device_seed_integer_valid": true
+      }
+    ],
+    "limits": [
+      "All48saved CPU payloads are settable on independent local RNG objects;device seeds are structurally valid.",
+      "The executed driver restores saved CPU/device RNG after synchronization. No independent immediate device-RNG readback or uninterrupted-trajectory parity is established by this audit.",
+      "This deterministic causal SFT qualification does not qualify future stochastic rollout/replay execution."
+    ]
+  },
+  "science_release": {
+    "status": "RELEASED_FOUR_DECLARED_FRESH_REAL_TARGET_MODELS",
+    "utc": "2026-10-19T08:00:18.160066+00:00",
+    "plan_sha256": "902e007b4ff76831131e8c62838edf85341c0341166476f8d317787798661229",
+    "supervisor_sha256": "1424a865dc546cdc3fd22409934b0258e85993f21cc17263c8b60d18a8423c0d",
+    "helper_sha256": "5aa80e33da9a11752adb711f07ab4f3b2c2d6bda0b105dde7dd369575eb456b8",
+    "qualification_file": "/home/ubuntu/dario/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/qualification-independent-audit.json",
+    "qualification_sha256": "cda65072d557253aaf35c52bd88c4af2eae9e9032946536396776d9371b86da8",
+    "scope": "Exactlytwo target-SFT recipes/two fixed seeds,320updates/two passes each,terminal primary;noextensions,retries orcheckpoint selection.",
+    "hardware": "Four disjoint8rank jobs physical0/1,2/3,4/5,6/7;allfreshB0. No qualification checkpoint reused.",
+    "review": "Root reviewed1647CPUchecks,allactualTRAINpacks,frozenfresh384/nooutcome selection,11actualmechanicsupdates,9changed-master/castwitnesses,6fullstates/fulloptimizerrestore,CPU-RNGannex,actualidledevices,sourceclosure,ports,storagebudget andfiniteownedcontrollers.",
+    "resources": {
+      "root_free_bytes": 80113049600,
+      "projected_models_and_latest_full_bytes": 37856468951,
+      "root_reserve_bytes": 37580963840
+    },
+    "limits": [
+      "Exact immediate device-RNG readback/uninterrupted-trajectory parity not established;no stochasticRL qualification.",
+      "Primarycomplete-scalar contrast and all failures/controls predeclared;no capability result yet.",
+      "Different active labels/inference actions;not equal supervised tokens,FLOPs orservice latency."
+    ]
+  },
+  "limits": [
+    "Eleven bounded real updates,not capability evidence or indefinite-memory guarantee.",
+    "No uninterrupted/resumed bitwise-parity claim.24native checks repeat4 canonical contexts.",
+    "Both qualification models excluded from science;all four study models must start fresh B0.",
+    "Original6 full states remain NVMe;EBS holds both qualification models/evidence and latest scientific full320 separately.",
+    "Changed-master/cast witnesses cover9 of11 updates;every update has finite loss/norm and ordered counters,all6 saved full states have full moment/model verification.",
+    "Saved RNG payloads are structurally validated and CPU state matches saved6/resumed8 onall8ranks;no independent immediate device-RNG readback.",
+    "Post-save memory growth1.44GiB at this bounded qualification passes declared<2GiB;not an indefinite-memory guarantee."
+  ],
+  "files": {
+    "validation/real_target_sft_v15_hardware_20261019/target_cot/original-metrics.jsonl.gz": {
+      "bytes": 6631,
+      "sha256": "191a121308821acf20ad5e5d6e6605e8a4addba720b60fa75501154f0d22f0a7"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_direct/original-metrics.jsonl.gz": {
+      "bytes": 4496,
+      "sha256": "3c696a513ddedb910e75ee1c98c7512199b7e02ac2fdf7cfa432cc72cbb1530b"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_cot/step-0000002/COMPLETE.json": {
+      "bytes": 2076,
+      "sha256": "89aa41ff2c000b37026b1bcd04b4c45350dd0774810fc37cf882fbd2dc9f332c"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_cot/step-0000008/COMPLETE.json": {
+      "bytes": 2078,
+      "sha256": "4a8222bbff4ea51bc96eb2e1541dc54cff43cdec477d863c2325bbb3d9732561"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_cot/step-0000004/COMPLETE.json": {
+      "bytes": 2077,
+      "sha256": "96dff799cc30a35e71c20a38c79a666f0a376cc6df6af0cc0fddcb2a9673f482"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_cot/step-0000006/COMPLETE.json": {
+      "bytes": 2077,
+      "sha256": "84853c3cff91b3d250eaa7600c00238abc733bd27c429ef7c557673113b9d7c5"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_direct/step-0000003/COMPLETE.json": {
+      "bytes": 2086,
+      "sha256": "77d89a807a8172a0a5bd92275d477ed5bd5a7774b26458c484a4b076b0da14ff"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/target_direct/step-0000002/COMPLETE.json": {
+      "bytes": 2086,
+      "sha256": "02f657edf354a0314927084be691f030c3c3871be58a656bcd00ce37066cd01e"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/analysis/audit_real_target_qualification_v15_20261019.py": {
+      "bytes": 11113,
+      "sha256": "f50fec92e9aabf96884d95e2a9559bc4c3825aeb728458b552001712d6156fe9"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/qualify.py": {
+      "bytes": 7870,
+      "sha256": "5aa80e33da9a11752adb711f07ab4f3b2c2d6bda0b105dde7dd369575eb456b8"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/qualification-release.json": {
+      "bytes": 726,
+      "sha256": "ec7de75095978914d37efafec1ea0bf26a219f9e8ca941ee49a6a9c92376dc2a"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/plan.json": {
+      "bytes": 4355,
+      "sha256": "b860345c149028df6aff362ceb088625d94332a2a77908653bbb41061e55b24e"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/qualification-completion.json": {
+      "bytes": 151,
+      "sha256": "92bfd24ef75837119c152cf0edce5056639fadacd8ef0d3b1f680641461b1ba5"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/qualification-independent-audit.json": {
+      "bytes": 53347,
+      "sha256": "cda65072d557253aaf35c52bd88c4af2eae9e9032946536396776d9371b86da8"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/protocol.json": {
+      "bytes": 4936,
+      "sha256": "a6ef7bbaaea02b32b0e50136fcc2834cb89a1e9751d1ef1dadf60e38d0eab938"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-rng-scope/scope.json": {
+      "bytes": 8401,
+      "sha256": "2211c0f585dce56b9dfabd298c4f2ad3f6c8e21189181c1e74b520ada0520bae"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/fresh6/launch.json": {
+      "bytes": 9628,
+      "sha256": "46755fd8f7e6d201e21d8916fa73a07101c1139048bbafdb5a18b81c52f0d1d3"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/fresh6/closure.json": {
+      "bytes": 574,
+      "sha256": "5d4664d439b0d34b89fd8fcabd80583dda764d4113cdfa41f97ada77206b5667"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/fresh6/exit.json": {
+      "bytes": 90,
+      "sha256": "64e177541db6bc73fb70c63b114dd5b60099e6e5e7b97ce30071cc2aae0332de"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/direct3/launch.json": {
+      "bytes": 9639,
+      "sha256": "a9d8f8aeabe498abdc3cbef6460d1f37518643ad9bf9956676ec766016eb8041"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/direct3/closure.json": {
+      "bytes": 497,
+      "sha256": "4df578d32be8e880fce28d6ab0220e9f57217953049a9d37a613942d38d37dfd"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/direct3/exit.json": {
+      "bytes": 90,
+      "sha256": "da4bed4c926a881349b7c84922b185f50bf2e7403cd64eecc177f040ce2cfffa"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/resume8/launch.json": {
+      "bytes": 9782,
+      "sha256": "3866d30db8ee24597d67843591c8bf4aa3ee77fae138b18bbafef63ef138856c"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/resume8/closure.json": {
+      "bytes": 651,
+      "sha256": "8389c0532ab1b0ca4376b1af63509bc2d90815684e1603118a88a71f4701cdcc"
+    },
+    "validation/real_target_sft_v15_hardware_20261019/evidence/local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1/resume8/exit.json": {
+      "bytes": 90,
+      "sha256": "893aa4aae0d5be900f396482fc7c877f9d83dfeafdc13465767d35f7c115de80"
+    }
+  }
+}

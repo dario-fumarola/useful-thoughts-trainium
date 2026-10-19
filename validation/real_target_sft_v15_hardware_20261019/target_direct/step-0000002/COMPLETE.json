@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-19T07:49:57+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248275,
+      "sha256": "a64fe05ab8a0c42b8fdf6b8315dcd18b4dec7eda72dd63ab2a38d673e5af20a0"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "cfc7978d98363ea9a8b96731c5c809963d137851959f0bd08441d496176258da"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278407,
+      "sha256": "e3e5b77c51d46f4077a57d7bc6ecbf2d4395c1b7776110c59b05b9d15f76ecfe"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278471,
+      "sha256": "d5175e2e84751578623dcf6b24d4d5ae156fa23304f230fff0b2b0011322cbc9"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278407,
+      "sha256": "63ac6de0f9c42f1f33c0136ed85a0d1f68dcd9a7f1c50db88c2daa0e0fc14431"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "d24a362859d895e3e82cfe3e7923dae81055870afb234dd82a3d23608839d6b5"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278407,
+      "sha256": "89e86c925d5bb365eb958bd96ad2d49c70ef4d886aff3951f6e3230f3ee77b8f"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278471,
+      "sha256": "fbfc28bc4db03a5862db76fd9dc6f0a87c8c7f125150da7100c0049bd4daa31c"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "5dc4eb1db7e85668fa9a7ab636be96da87b641ca753f626c7d08ae0bf5bcabfe"
+    }
+  },
+  "metadata": {
+    "arm": "target_direct",
+    "counters": {
+      "expressions": 64,
+      "supervised_tokens": 1024
+    },
+    "data_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "order_hash": "c8bac67d6a0ce9b355a524238cfc875583627e0ac849c8bb96512e5aa2c1e3cc",
+    "pipeline_schema": "real-target-sft-v15",
+    "protocol_sha256": "a6ef7bbaaea02b32b0e50136fcc2834cb89a1e9751d1ef1dadf60e38d0eab938",
+    "seed": 2026101916,
+    "spec_hash": "c2496740b5b8bb7f013d0829456af52b3630b4feb0c30533b11005b4b079ef0e"
+  },
+  "run_id": "real-target-sft-v15-world8-target128-qualification-v1-direct",
+  "schema": "neuron-v1",
+  "spec_hash": "c2496740b5b8bb7f013d0829456af52b3630b4feb0c30533b11005b4b079ef0e",
+  "step": 2,
+  "world_size": 8
+}
