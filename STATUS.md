@@ -1,31 +1,32 @@
-# Status — 2026-10-19 06:16 UTC
+# Status — 2026-10-19 07:15 UTC
 
-## Active: single-model real-document evaluation
-Question: does augmented training improve ordinary prediction, and separately inference with calculations?
-Experiment: real-trace-cpt-v10; three arms, two seeds, all six terminal320 runs complete and physically closed.
-Design: same 5,120 documents/two passes; raw, calculation-before-continuation, calculation-after-document.
-Primary: fixed AST-novel 256, full16-token LL; gain>=0.25nat and positive paired95% lower in each seed.
-Training gate also bounds ordinary-text regression; inference gate also requires same-model raw/empty gains.
-All 1,920 updates, 12 full states and 48 native checks pass independent audit; all terminal models protected.
-Latest full320 is real_raw seed1914; all original160/320 states remain on local SSD.
-Report:validation/real_trace_cpt_v10_terminal_training_20261019.json; capability results still pending.
-Control:local/diagnostics/real-trace-cpt-v10-study-v1; frozen training3d8666b, evaluation29c8b24.
-All six original-note evaluations are complete; fixed CPU-likelihood scoring continues without extensions.
-B0 notes and all CPU likelihood panels are complete. Both256 arithmetic panels remain separate.
-Decision: finish all seven models and three panels before reviewing primary outcomes; publish complete outputs.
+## Closed: single-model real-document likelihood study
+Question: do augmented data improve ordinary prediction, and separately generated-calculation inference?
+Experiment:real-trace-cpt-v10;raw/prior/post,TRAIN5120,two seeds,terminal320 primary.
+All six runs close;1,920updates/12fullstates/48native checks independently pass;terminal models protected.
+Fixed AST-novel256,ordinary256 and legacy256 complete;19,712 likelihood rows/3,584 notes preserved.
+Primary post.raw−raw.raw:+0.012[−0.039,0.064]/+0.006[−0.051,0.065]nat/span.
+Primary prior.own−raw.raw:+0.097[−0.135,0.329]/−0.139[−0.425,0.140].
+Declared gain>=0.25 and positive lower bound in both seeds:training FAIL,inference FAIL.
+Post ordinary-token regression:−0.00121/−0.00066;both guardrails pass but primary training gains do not.
+Prior own−empty:+1.647/+1.095;own−other:+2.646/+2.520,all intervals positive.
+Independent counts/signs/all20k-bootstrap intervals/literal gates PASS;no pooled seeds/panels.
+Report:validation/real_trace_cpt_v10_complete_20261019.json;all35 raw payloads,figures,CSV,examples.
+Decision:publish mixed result;no demonstrated training-only or full-continuation gain;no RL/8B release.
 
-## Active: declared scalar-continuation secondary
-Question: do the same fixed models emit the complete computed scalar at the real-document boundary?
-Experiment: real-trace-v10-scalar-secondary-v1; all seven models, both separate arithmetic panels, five modes.
-Design: exact original notes/contexts; greedy32, nativeEOS only; existing initial-scalar-v2 parser unchanged.
-Endpoint: exact rational accuracy over all 256, with unsupported/format/incomplete/error/cap counts; no new gate.
-Prospective design:validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json; primary LL gates unchanged.
-Source4297c1d: full 1,657 CPU checks pass, plus latest 11 affected checks after stronger binding validation.
-All seven scalar jobs released; B0 and both post arms finished. Prior/raw jobs continue on physical6–9.
-Every trained model passed its own native/cache checks. All original notes and all attempted answers remain intact.
-Control:local/diagnostics/real-trace-v10-scalar-secondary-study-v1; tmux cpt-v10-scalar-release/readout.
-Decision: preserve all 17,920 prospective attempts; no parser adaptation, model selection, retries or training.
-Limit: scalar continuation on selected FineMath boundaries, not general problem QA or a latency benchmark.
+## Closed: prospective scalar-continuation secondary
+Question: do the same frozen models emit the complete computed scalar at the document boundary?
+Experiment:real-trace-v10-scalar-secondary-v1;all7models,two separate256panels,five modes,greedy32.
+All17,920 original attempts preserved;unchanged initial-scalar-v2;zero execution errors.
+AST256 prior.own216/213 versus raw-control.raw193/196,same-prior.raw194/191,empty175/172.
+Paired own−raw-control gains:+8.98pp[4.30,14.06]/+6.64pp[1.95,11.72];no new gate.
+UnchangedB0raw187;prior.other97/96;supplied prior.oracle226/230.
+Prior.own unsupported25/24;raw-control32/34 plus1format error in seed1913;all retained in256.
+Post.raw198/197 versus raw-control193/196:intervals include zero.
+Prior note actions33.6/33.9 average;caps0/1,empty0/0;raw32 versus own<=128+32 generation budget.
+Independent numeric parser/native-stop/count/all paired-bootstrap checks PASS.
+Report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json;all14payloads/CSV/figures preserved.
+Decision:narrow arithmetic-answer gain with extra computation;primary LL gates remain failed.
 
 ## Closed: bounded variable-depth writer repair
 Question: does varied-depth training repair incomplete notes and improve the same frozen reader?

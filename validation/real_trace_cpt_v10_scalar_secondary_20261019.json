@@ -1,0 +1,1798 @@
+{
+  "status": "COMPLETE_ALL_SEVEN_MODELS_BOTH_FIXED_SCALAR_PANELS",
+  "utc": "2026-10-19T06:46:58.242821+00:00",
+  "scalar_continuations": 17920,
+  "tables": {
+    "B0": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 187,
+          "categories": {
+            "valid": 214,
+            "unsupported": 39,
+            "format_error": 2,
+            "incomplete": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 1538.5650500598422
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 9,
+          "categories": {
+            "valid": 36,
+            "format_error": 147,
+            "unsupported": 73
+          },
+          "capped": 243,
+          "generated_actions": 8011,
+          "wall_seconds_sum": 817.5799791947356
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 111,
+          "categories": {
+            "valid": 123,
+            "format_error": 59,
+            "unsupported": 74
+          },
+          "capped": 244,
+          "generated_actions": 7983,
+          "wall_seconds_sum": 816.4475938060496
+        },
+        "own": {
+          "documents": 256,
+          "correct": 6,
+          "categories": {
+            "valid": 31,
+            "format_error": 146,
+            "unsupported": 75,
+            "incomplete": 4
+          },
+          "capped": 242,
+          "generated_actions": 7964,
+          "wall_seconds_sum": 815.7156124312314
+        },
+        "other": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "valid": 31,
+            "format_error": 150,
+            "unsupported": 73,
+            "incomplete": 2
+          },
+          "capped": 248,
+          "generated_actions": 8032,
+          "wall_seconds_sum": 822.3242893661081
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 192,
+          "categories": {
+            "valid": 218,
+            "unsupported": 36,
+            "format_error": 1,
+            "incomplete": 1
+          },
+          "capped": 255,
+          "generated_actions": 8190,
+          "wall_seconds_sum": 961.1308391210914
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 10,
+          "categories": {
+            "valid": 40,
+            "format_error": 138,
+            "unsupported": 78
+          },
+          "capped": 245,
+          "generated_actions": 8063,
+          "wall_seconds_sum": 878.5087885446846
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 110,
+          "categories": {
+            "valid": 127,
+            "format_error": 53,
+            "unsupported": 76
+          },
+          "capped": 246,
+          "generated_actions": 8031,
+          "wall_seconds_sum": 876.68943412503
+        },
+        "own": {
+          "documents": 256,
+          "correct": 3,
+          "categories": {
+            "valid": 23,
+            "format_error": 148,
+            "unsupported": 81,
+            "incomplete": 4
+          },
+          "capped": 247,
+          "generated_actions": 8067,
+          "wall_seconds_sum": 878.8782926980348
+        },
+        "other": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "valid": 30,
+            "format_error": 144,
+            "unsupported": 78,
+            "incomplete": 4
+          },
+          "capped": 250,
+          "generated_actions": 8076,
+          "wall_seconds_sum": 877.2372311180516
+        }
+      }
+    },
+    "real_prior-seed2026101913": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 194,
+          "categories": {
+            "valid": 222,
+            "unsupported": 32,
+            "format_error": 2
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 898.4247202099359
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 175,
+          "categories": {
+            "unsupported": 46,
+            "valid": 210
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 848.9202865218977
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 226,
+          "categories": {
+            "valid": 232,
+            "unsupported": 24
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 850.3595291027741
+        },
+        "own": {
+          "documents": 256,
+          "correct": 216,
+          "categories": {
+            "valid": 231,
+            "unsupported": 25
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 846.5082407528826
+        },
+        "other": {
+          "documents": 256,
+          "correct": 97,
+          "categories": {
+            "valid": 227,
+            "unsupported": 29
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 846.9226838851173
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 205,
+          "categories": {
+            "valid": 229,
+            "unsupported": 26,
+            "format_error": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 885.4843822969415
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 183,
+          "categories": {
+            "unsupported": 43,
+            "valid": 213
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 817.9288100630511
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 231,
+          "categories": {
+            "valid": 235,
+            "unsupported": 21
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 815.9278578776575
+        },
+        "own": {
+          "documents": 256,
+          "correct": 226,
+          "categories": {
+            "valid": 235,
+            "unsupported": 21
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 820.2467672769271
+        },
+        "other": {
+          "documents": 256,
+          "correct": 116,
+          "categories": {
+            "valid": 235,
+            "unsupported": 21
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 817.2741287411191
+        }
+      }
+    },
+    "real_prior-seed2026101914": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 191,
+          "categories": {
+            "valid": 220,
+            "unsupported": 35,
+            "format_error": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 918.5619012271054
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 172,
+          "categories": {
+            "unsupported": 55,
+            "valid": 201
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 871.2707634335675
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 230,
+          "categories": {
+            "valid": 233,
+            "unsupported": 23
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 862.9398064691632
+        },
+        "own": {
+          "documents": 256,
+          "correct": 213,
+          "categories": {
+            "valid": 232,
+            "unsupported": 24
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 865.0870183148945
+        },
+        "other": {
+          "documents": 256,
+          "correct": 96,
+          "categories": {
+            "valid": 225,
+            "unsupported": 31
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 866.486386994191
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 201,
+          "categories": {
+            "valid": 224,
+            "unsupported": 32
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 877.7882096242392
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 178,
+          "categories": {
+            "unsupported": 52,
+            "valid": 204
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 815.553249381861
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 233,
+          "categories": {
+            "valid": 235,
+            "unsupported": 21
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 817.2123364661238
+        },
+        "own": {
+          "documents": 256,
+          "correct": 220,
+          "categories": {
+            "valid": 234,
+            "unsupported": 22
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 814.315175875905
+        },
+        "other": {
+          "documents": 256,
+          "correct": 109,
+          "categories": {
+            "valid": 232,
+            "unsupported": 24
+          },
+          "capped": 255,
+          "generated_actions": 8187,
+          "wall_seconds_sum": 809.982135133032
+        }
+      }
+    },
+    "real_post-seed2026101913": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 198,
+          "categories": {
+            "valid": 224,
+            "unsupported": 31,
+            "format_error": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 901.3693008939154
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 8,
+          "categories": {
+            "unsupported": 200,
+            "valid": 55,
+            "format_error": 1
+          },
+          "capped": 103,
+          "generated_actions": 6589,
+          "wall_seconds_sum": 689.5244639498123
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 210,
+          "categories": {
+            "valid": 218,
+            "unsupported": 20,
+            "format_error": 18
+          },
+          "capped": 47,
+          "generated_actions": 2740,
+          "wall_seconds_sum": 297.85451177301
+        },
+        "own": {
+          "documents": 256,
+          "correct": 155,
+          "categories": {
+            "valid": 219,
+            "unsupported": 21,
+            "format_error": 16
+          },
+          "capped": 41,
+          "generated_actions": 2703,
+          "wall_seconds_sum": 294.0163186384598
+        },
+        "other": {
+          "documents": 256,
+          "correct": 4,
+          "categories": {
+            "valid": 211,
+            "unsupported": 40,
+            "format_error": 5
+          },
+          "capped": 43,
+          "generated_actions": 3282,
+          "wall_seconds_sum": 353.4403704000579
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 210,
+          "categories": {
+            "valid": 232,
+            "unsupported": 24
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 923.9181070032355
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 7,
+          "categories": {
+            "unsupported": 199,
+            "valid": 56,
+            "format_error": 1
+          },
+          "capped": 104,
+          "generated_actions": 6550,
+          "wall_seconds_sum": 687.293901832978
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 214,
+          "categories": {
+            "valid": 221,
+            "unsupported": 19,
+            "format_error": 16
+          },
+          "capped": 47,
+          "generated_actions": 2725,
+          "wall_seconds_sum": 298.12527353086625
+        },
+        "own": {
+          "documents": 256,
+          "correct": 157,
+          "categories": {
+            "valid": 220,
+            "unsupported": 22,
+            "format_error": 14
+          },
+          "capped": 45,
+          "generated_actions": 2759,
+          "wall_seconds_sum": 301.9145157800813
+        },
+        "other": {
+          "documents": 256,
+          "correct": 3,
+          "categories": {
+            "valid": 205,
+            "unsupported": 49,
+            "format_error": 2
+          },
+          "capped": 44,
+          "generated_actions": 3305,
+          "wall_seconds_sum": 357.3249642032897
+        }
+      }
+    },
+    "real_post-seed2026101914": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 197,
+          "categories": {
+            "valid": 223,
+            "unsupported": 33
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 919.9296891829581
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 26,
+          "categories": {
+            "unsupported": 166,
+            "valid": 88,
+            "format_error": 2
+          },
+          "capped": 91,
+          "generated_actions": 5929,
+          "wall_seconds_sum": 627.1278559078928
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 229,
+          "categories": {
+            "valid": 235,
+            "unsupported": 19,
+            "format_error": 2
+          },
+          "capped": 55,
+          "generated_actions": 2913,
+          "wall_seconds_sum": 317.129200252326
+        },
+        "own": {
+          "documents": 256,
+          "correct": 170,
+          "categories": {
+            "valid": 233,
+            "unsupported": 20,
+            "format_error": 3
+          },
+          "capped": 55,
+          "generated_actions": 2954,
+          "wall_seconds_sum": 320.7742823273875
+        },
+        "other": {
+          "documents": 256,
+          "correct": 2,
+          "categories": {
+            "valid": 226,
+            "unsupported": 27,
+            "format_error": 3
+          },
+          "capped": 35,
+          "generated_actions": 2866,
+          "wall_seconds_sum": 311.2531729489274
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 209,
+          "categories": {
+            "valid": 228,
+            "unsupported": 28
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 922.7397899966745
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 26,
+          "categories": {
+            "unsupported": 166,
+            "valid": 88,
+            "format_error": 2
+          },
+          "capped": 90,
+          "generated_actions": 5881,
+          "wall_seconds_sum": 626.2281306811201
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 232,
+          "categories": {
+            "valid": 236,
+            "unsupported": 19,
+            "format_error": 1
+          },
+          "capped": 58,
+          "generated_actions": 2959,
+          "wall_seconds_sum": 321.92974959671847
+        },
+        "own": {
+          "documents": 256,
+          "correct": 170,
+          "categories": {
+            "valid": 233,
+            "unsupported": 21,
+            "format_error": 2
+          },
+          "capped": 58,
+          "generated_actions": 2993,
+          "wall_seconds_sum": 324.51454414674663
+        },
+        "other": {
+          "documents": 256,
+          "correct": 6,
+          "categories": {
+            "valid": 221,
+            "unsupported": 34,
+            "format_error": 1
+          },
+          "capped": 34,
+          "generated_actions": 2891,
+          "wall_seconds_sum": 312.2626825660118
+        }
+      }
+    },
+    "real_raw-seed2026101913": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 193,
+          "categories": {
+            "valid": 223,
+            "unsupported": 32,
+            "format_error": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 879.6769753420085
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 14,
+          "categories": {
+            "valid": 39,
+            "format_error": 143,
+            "unsupported": 73,
+            "incomplete": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 817.4455779159907
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 95,
+          "categories": {
+            "valid": 112,
+            "format_error": 75,
+            "unsupported": 69
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 818.7977649139939
+        },
+        "own": {
+          "documents": 256,
+          "correct": 2,
+          "categories": {
+            "unsupported": 79,
+            "format_error": 151,
+            "incomplete": 1,
+            "valid": 25
+          },
+          "capped": 255,
+          "generated_actions": 8191,
+          "wall_seconds_sum": 818.4354026473011
+        },
+        "other": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "valid": 32,
+            "format_error": 159,
+            "unsupported": 64,
+            "incomplete": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 818.1030333750532
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 205,
+          "categories": {
+            "valid": 229,
+            "unsupported": 27
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 924.7345114790369
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 15,
+          "categories": {
+            "valid": 41,
+            "format_error": 141,
+            "unsupported": 74
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 869.2719028917782
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 100,
+          "categories": {
+            "valid": 118,
+            "format_error": 69,
+            "unsupported": 69
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 871.1293470509991
+        },
+        "own": {
+          "documents": 256,
+          "correct": 2,
+          "categories": {
+            "unsupported": 81,
+            "format_error": 157,
+            "incomplete": 2,
+            "valid": 16
+          },
+          "capped": 255,
+          "generated_actions": 8191,
+          "wall_seconds_sum": 870.5908725671761
+        },
+        "other": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "valid": 24,
+            "format_error": 173,
+            "unsupported": 58,
+            "incomplete": 1
+          },
+          "capped": 255,
+          "generated_actions": 8172,
+          "wall_seconds_sum": 868.7287152089411
+        }
+      }
+    },
+    "real_raw-seed2026101914": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "correct": 196,
+          "categories": {
+            "valid": 222,
+            "unsupported": 34
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 877.856435224996
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 14,
+          "categories": {
+            "valid": 38,
+            "format_error": 142,
+            "unsupported": 76
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 821.2603597623529
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 102,
+          "categories": {
+            "valid": 120,
+            "format_error": 70,
+            "unsupported": 66
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 819.8662674186635
+        },
+        "own": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "unsupported": 72,
+            "format_error": 160,
+            "valid": 23,
+            "incomplete": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 813.8231598240382
+        },
+        "other": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "format_error": 152,
+            "incomplete": 3,
+            "unsupported": 74,
+            "valid": 27
+          },
+          "capped": 255,
+          "generated_actions": 8173,
+          "wall_seconds_sum": 813.2582147448265
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "correct": 208,
+          "categories": {
+            "valid": 227,
+            "unsupported": 29
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 899.5672133022163
+        },
+        "empty": {
+          "documents": 256,
+          "correct": 11,
+          "categories": {
+            "valid": 38,
+            "format_error": 142,
+            "unsupported": 75,
+            "incomplete": 1
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 841.2662329490704
+        },
+        "oracle": {
+          "documents": 256,
+          "correct": 106,
+          "categories": {
+            "valid": 125,
+            "format_error": 63,
+            "unsupported": 68
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 844.1725956494338
+        },
+        "own": {
+          "documents": 256,
+          "correct": 1,
+          "categories": {
+            "unsupported": 73,
+            "format_error": 158,
+            "valid": 23,
+            "incomplete": 2
+          },
+          "capped": 256,
+          "generated_actions": 8192,
+          "wall_seconds_sum": 842.0860089120979
+        },
+        "other": {
+          "documents": 256,
+          "correct": 0,
+          "categories": {
+            "format_error": 159,
+            "unsupported": 73,
+            "valid": 22,
+            "incomplete": 2
+          },
+          "capped": 255,
+          "generated_actions": 8173,
+          "wall_seconds_sum": 839.5181479867024
+        }
+      }
+    }
+  },
+  "contrasts": {
+    "2026101913": {
+      "DEV_AST256": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.01953125,
+          "ci95": [
+            -0.00390625,
+            0.046875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": 0.08984375,
+          "ci95": [
+            0.04296875,
+            0.140625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_raw": {
+          "difference_b_minus_a": 0.0859375,
+          "ci95": [
+            0.0390625,
+            0.13671875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_empty": {
+          "difference_b_minus_a": 0.16015625,
+          "ci95": [
+            0.1015625,
+            0.22265625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_other": {
+          "difference_b_minus_a": 0.46484375,
+          "ci95": [
+            0.40234375,
+            0.52734375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_own": {
+          "difference_b_minus_a": 0.8359375,
+          "ci95": [
+            0.7890625,
+            0.87890625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.04296875,
+          "ci95": [
+            0.00390625,
+            0.08203125
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "raw_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.0234375,
+          "ci95": [
+            -0.01953125,
+            0.06640625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0raw": {
+          "difference_b_minus_a": 0.11328125,
+          "ci95": [
+            0.05859375,
+            0.16796875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0own": {
+          "difference_b_minus_a": 0.8203125,
+          "ci95": [
+            0.7734375,
+            0.8671875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.01953125,
+          "ci95": [
+            -0.00390625,
+            0.04296875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": 0.08203125,
+          "ci95": [
+            0.03515625,
+            0.12890625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_raw": {
+          "difference_b_minus_a": 0.08203125,
+          "ci95": [
+            0.0390625,
+            0.12890625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_empty": {
+          "difference_b_minus_a": 0.16796875,
+          "ci95": [
+            0.11328125,
+            0.22265625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_other": {
+          "difference_b_minus_a": 0.4296875,
+          "ci95": [
+            0.3671875,
+            0.4921875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_own": {
+          "difference_b_minus_a": 0.875,
+          "ci95": [
+            0.83203125,
+            0.9140625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.0703125,
+          "ci95": [
+            0.03125,
+            0.109375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "raw_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.05078125,
+          "ci95": [
+            0.01171875,
+            0.08984375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0raw": {
+          "difference_b_minus_a": 0.1328125,
+          "ci95": [
+            0.08203125,
+            0.18359375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0own": {
+          "difference_b_minus_a": 0.87109375,
+          "ci95": [
+            0.828125,
+            0.91015625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "2026101914": {
+      "DEV_AST256": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.00390625,
+          "ci95": [
+            -0.01953125,
+            0.02734375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": 0.06640625,
+          "ci95": [
+            0.01953125,
+            0.1171875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_raw": {
+          "difference_b_minus_a": 0.0859375,
+          "ci95": [
+            0.03515625,
+            0.13671875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_empty": {
+          "difference_b_minus_a": 0.16015625,
+          "ci95": [
+            0.09765625,
+            0.22265625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_other": {
+          "difference_b_minus_a": 0.45703125,
+          "ci95": [
+            0.39453125,
+            0.51953125
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_own": {
+          "difference_b_minus_a": 0.83203125,
+          "ci95": [
+            0.78515625,
+            0.875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.0390625,
+          "ci95": [
+            -0.00390625,
+            0.08203125
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "raw_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.03515625,
+          "ci95": [
+            -0.01171875,
+            0.08203125
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0raw": {
+          "difference_b_minus_a": 0.1015625,
+          "ci95": [
+            0.046875,
+            0.15625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0own": {
+          "difference_b_minus_a": 0.80859375,
+          "ci95": [
+            0.7578125,
+            0.85546875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.00390625,
+          "ci95": [
+            -0.01953125,
+            0.02734375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": 0.046875,
+          "ci95": [
+            0.00390625,
+            0.08984375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_raw": {
+          "difference_b_minus_a": 0.07421875,
+          "ci95": [
+            0.0234375,
+            0.125
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_empty": {
+          "difference_b_minus_a": 0.1640625,
+          "ci95": [
+            0.10546875,
+            0.22265625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_other": {
+          "difference_b_minus_a": 0.43359375,
+          "ci95": [
+            0.3671875,
+            0.5
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_own": {
+          "difference_b_minus_a": 0.85546875,
+          "ci95": [
+            0.8125,
+            0.8984375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.06640625,
+          "ci95": [
+            0.0234375,
+            0.109375
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "raw_raw_minus_B0raw": {
+          "difference_b_minus_a": 0.0625,
+          "ci95": [
+            0.01953125,
+            0.10546875
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0raw": {
+          "difference_b_minus_a": 0.109375,
+          "ci95": [
+            0.0546875,
+            0.1640625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0own": {
+          "difference_b_minus_a": 0.84765625,
+          "ci95": [
+            0.80078125,
+            0.890625
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    }
+  },
+  "payloads": {
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/B0-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "0c9e5b5e60f1ca78fb7b378761cd4b8b8d20ed12004a7c4102ca431cfe8693b6"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/B0-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "5f724b27804b0f14be555c582d6036a8209384204b5b32815aa1988d0340ddc0"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_prior-seed2026101913-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "4b341e9a2ca70fc3c00cda9dd2e4a06c63a97a78efc2ea3fc50a2f95d55c1915"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_prior-seed2026101913-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "563c8955cd66695f4ae4b1b88a4c071040de498e798685c89e9eb230d1853ef6"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_prior-seed2026101914-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "2e0147febdb892473f255e7298d00c698264c670ee537c2858a122bc89ded3ec"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_prior-seed2026101914-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "84cfd48b64d2a46e83fbbe0934f1c0c02728b49141ec05fdb19b5ea8f5d521d5"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_post-seed2026101913-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "160d64856105a5224626d8ea189b51b66e3694cbc27016564c9b490c35c56331"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_post-seed2026101913-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "cb68e763a9bebcb8d73a4da1adcf643c1e579f2bd6650e9381694ff8562830f6"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_post-seed2026101914-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "775f958c055be956f6de90c64dc31bcea0900afeda1d9dcc80326a5ed92ab8dc"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_post-seed2026101914-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "cbc649dc0a1c3b00dd6dbfd693f929dbbb4ae7b4e70e8a324521ceaed1c8c7da"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_raw-seed2026101913-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "c735baa882c0c8d6257e2582b770fd4d70d0c6970f32c8851ff758f2315239ea"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_raw-seed2026101913-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "829bc4aa8d7ffe822fde733d3c3d6fc20811100de2ff31653e241c35869af8a6"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_raw-seed2026101914-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "d8466b283fe02df8448fc159629e27fb3337594bedf0504b8aa280e112b15d09"
+    },
+    "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_raw-seed2026101914-DEV_legacy256-all1280-scalar-continuations.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "d84e2ee507166c1284633e35e700201a9e6b447471a00975693fab93b49c092b"
+    }
+  },
+  "source_receipts": {
+    "B0/DEV_AST256": {
+      "model_binding": {
+        "checkpoint": null,
+        "id": "B0"
+      },
+      "protocol_sha256": "44d775c36209828062619dadfbf1f252a72509495cb10fee4a1ba8ebef7fd7bc",
+      "summary_sha256": "c65e31fa746708ca17e840dc1908c51e0f4ff9f7a5e08fe7bc91653a498a96a7",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "79c6583d7479e2d425b7eec4d3b53f60ac630fbd4a859b69fd6d554e5fef007a"
+    },
+    "B0/DEV_legacy256": {
+      "model_binding": {
+        "checkpoint": null,
+        "id": "B0"
+      },
+      "protocol_sha256": "1cea2e747d4d25f2b1af382bbb11f6469d43153217f55c741df9212979497648",
+      "summary_sha256": "4ceeda152c6bbb104a608237e8713b5f3891262ced46d71cb0789cd204aef66d",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "293739821129e9c125eded2ff7aac4a169c2f8edff8206e733b35b94193790c0"
+    },
+    "real_prior-seed2026101913/DEV_AST256": {
+      "model_binding": {
+        "arm": "real_prior",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "b52f26079fac2d5f71fc67fa358f3944d2c332435d0236c7e54d93745f4b8805",
+        "id": "real_prior-seed2026101913-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+        "seed": 2026101913,
+        "spec_hash": "8c8860185597024884291f9181a61e3473f515fe5bf08f4e38f8636010c5d158",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101913.json",
+        "training_protocol_sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1"
+      },
+      "protocol_sha256": "8027bd047a1937f010b20a96969b32b21b1aee80cd08512b6f0a16f7b6b1bf77",
+      "summary_sha256": "2af8c406a69f63b52abc7f072791325a7fe3387947e07ef4d34bfb3059b3ee66",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "2e133e91a554e6aa168b4154d20517068104b32ff6de097b58f1b56d4ca3a4ce"
+    },
+    "real_prior-seed2026101913/DEV_legacy256": {
+      "model_binding": {
+        "arm": "real_prior",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "b52f26079fac2d5f71fc67fa358f3944d2c332435d0236c7e54d93745f4b8805",
+        "id": "real_prior-seed2026101913-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+        "seed": 2026101913,
+        "spec_hash": "8c8860185597024884291f9181a61e3473f515fe5bf08f4e38f8636010c5d158",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101913.json",
+        "training_protocol_sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1"
+      },
+      "protocol_sha256": "314e14cd33570ebf5a70bf2f3746412a9c3db68cd9a85e7dd64f5c080623ff0c",
+      "summary_sha256": "c84aba1737612718e5a38cb92881920dede38ae9796d024d3aab213d28eeca8e",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "b4931e11733bfbf6814553cfd2862f3583c0047c5422bcacd5c3f2c0c1afba46"
+    },
+    "real_prior-seed2026101914/DEV_AST256": {
+      "model_binding": {
+        "arm": "real_prior",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "2c27073ecc3d7784a4a4db7fc37298c59b5cebaf44a05643a8eac7e92869495d",
+        "id": "real_prior-seed2026101914-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+        "seed": 2026101914,
+        "spec_hash": "7062b7073497bb0a2c773601eb37692c584d7fe5ecd10f7d3104b8768950a54a",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101914.json",
+        "training_protocol_sha256": "fe748b59c93052e2930aec9d53000b7234d85fa620d06ff02e85b6f063011cc7"
+      },
+      "protocol_sha256": "bcc2be21f81b89ac1d049465ee23d92aeb2cb2426a6442d8cb34e7d559afa768",
+      "summary_sha256": "4ec75081af5342261f33d235e3320fef924c2a13aadf169250d60122dc231cb8",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "e83a01d6961eaef09737c925009e0f782ad06bed59b7c040080e6cd005ac3324"
+    },
+    "real_prior-seed2026101914/DEV_legacy256": {
+      "model_binding": {
+        "arm": "real_prior",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "2c27073ecc3d7784a4a4db7fc37298c59b5cebaf44a05643a8eac7e92869495d",
+        "id": "real_prior-seed2026101914-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+        "seed": 2026101914,
+        "spec_hash": "7062b7073497bb0a2c773601eb37692c584d7fe5ecd10f7d3104b8768950a54a",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101914.json",
+        "training_protocol_sha256": "fe748b59c93052e2930aec9d53000b7234d85fa620d06ff02e85b6f063011cc7"
+      },
+      "protocol_sha256": "4ee6333ebbe9b8d14d29ca1c319e390ee36c1169a430361467f906db133f63c7",
+      "summary_sha256": "87c2c46ef025a83c0d51b6133050958628410338b36a39a363b5902f09653386",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "5818b6ba0bc5206379ee0eba6ec2f8ef10a518ba0ff023e80f5b769152c98f69"
+    },
+    "real_post-seed2026101913/DEV_AST256": {
+      "model_binding": {
+        "arm": "real_post",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "d0e1a75856ce45600c0983fd8fc8dcb52abe9dbdf02049bd52e8f9e8bccf3a38",
+        "id": "real_post-seed2026101913-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+        "seed": 2026101913,
+        "spec_hash": "06a80b4ff93c3dda12e5a617f319da3086f2bdf129b881cc176b0a8418fdc9e5",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101913.json",
+        "training_protocol_sha256": "fba0d1760a173d2d2f8764224a17bbb2aac609a5effd67c28889a15716066a2e"
+      },
+      "protocol_sha256": "f2b9b6e39f398918ac30cfb9962365b116f0919c204998b268b29be0ac3cb00b",
+      "summary_sha256": "e893e2003f55cbf34f41d93f83bb7fdca2a3d23058b31e84679753a8513d49ba",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "b27ea2cc9401e05ee1cd24cee9d61d672bc407102c8211fbb9d55f67dfa90bc1"
+    },
+    "real_post-seed2026101913/DEV_legacy256": {
+      "model_binding": {
+        "arm": "real_post",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "d0e1a75856ce45600c0983fd8fc8dcb52abe9dbdf02049bd52e8f9e8bccf3a38",
+        "id": "real_post-seed2026101913-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+        "seed": 2026101913,
+        "spec_hash": "06a80b4ff93c3dda12e5a617f319da3086f2bdf129b881cc176b0a8418fdc9e5",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101913.json",
+        "training_protocol_sha256": "fba0d1760a173d2d2f8764224a17bbb2aac609a5effd67c28889a15716066a2e"
+      },
+      "protocol_sha256": "5a89fab6f37dc05f6c6f69d5a79c6d86fa4957e6f0397dad2b5c41015b8bf37d",
+      "summary_sha256": "7f9fd445fa8ea003b30cbba2983cbe63831164e49067bb8a6983094b53070f2c",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "994d153f93562a6e0d84d84b403ccc81c3f931da8def32715fbd3ddce785d3b1"
+    },
+    "real_post-seed2026101914/DEV_AST256": {
+      "model_binding": {
+        "arm": "real_post",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "6e56848d3a666d15aba6786e6d9b5a003baf7ddffe25f79c4e56a6da821b7319",
+        "id": "real_post-seed2026101914-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+        "seed": 2026101914,
+        "spec_hash": "c5fe9f472a8e09c4abeac7af59f84998990e81f8e00bfc05a3c8d9930575d47f",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101914.json",
+        "training_protocol_sha256": "e0ae3928f9c20f1d396e3f8195163bbf492999588aa21b4984a9a695d8807e4b"
+      },
+      "protocol_sha256": "344ae6a4874046f2e2c24276127f9e7622a662d771dd8ea3c429ab36b9e34fc5",
+      "summary_sha256": "14bf2d03c9e80dd5d891d05e69eb27df7da174c3a7ee704e6cf666f82ee6ee29",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "003cf1d944abd57d24a17ebaa3369df5c178a06a09b0b1d61ff14c95d7bc537f"
+    },
+    "real_post-seed2026101914/DEV_legacy256": {
+      "model_binding": {
+        "arm": "real_post",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "6e56848d3a666d15aba6786e6d9b5a003baf7ddffe25f79c4e56a6da821b7319",
+        "id": "real_post-seed2026101914-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+        "seed": 2026101914,
+        "spec_hash": "c5fe9f472a8e09c4abeac7af59f84998990e81f8e00bfc05a3c8d9930575d47f",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101914.json",
+        "training_protocol_sha256": "e0ae3928f9c20f1d396e3f8195163bbf492999588aa21b4984a9a695d8807e4b"
+      },
+      "protocol_sha256": "599e97df6f0e51b1704e22491b939617199dade193728c4c558c8e187a2d33aa",
+      "summary_sha256": "0b852c1a18b555e465f788567fbf7f8dfd95776d177ec8ac2ef978191319949d",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "e8ba505951e03b7f0c3ab00af2556ee5f0c3d769826c524eaf407bb8e9db8667"
+    },
+    "real_raw-seed2026101913/DEV_AST256": {
+      "model_binding": {
+        "arm": "real_raw",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "a087e9d7589b49c09d1a6801a1252e0dc1e7238290b832c5f408b73deb745db4",
+        "id": "real_raw-seed2026101913-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+        "seed": 2026101913,
+        "spec_hash": "ac9f08575266f12f9994a7a19c116dc251c466afe4139555924f4e617463856b",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101913.json",
+        "training_protocol_sha256": "0721bc40a7cb155e662d6b664dd1e3c2532a95df14fe9b01fe0536767de69818"
+      },
+      "protocol_sha256": "84c5c479c345f3e93587467cbb5ad99a36596235d13db0513f4924745c32dcf7",
+      "summary_sha256": "4e8cc28f2bbdd962ed85dc38aaf39bb32f06042e2ea53661039ae3f4e15b0758",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "014802a611f5a6bf854c7089bac96063d90e9bde2bba5e151a1c43856e543937"
+    },
+    "real_raw-seed2026101913/DEV_legacy256": {
+      "model_binding": {
+        "arm": "real_raw",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "a087e9d7589b49c09d1a6801a1252e0dc1e7238290b832c5f408b73deb745db4",
+        "id": "real_raw-seed2026101913-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+        "seed": 2026101913,
+        "spec_hash": "ac9f08575266f12f9994a7a19c116dc251c466afe4139555924f4e617463856b",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101913.json",
+        "training_protocol_sha256": "0721bc40a7cb155e662d6b664dd1e3c2532a95df14fe9b01fe0536767de69818"
+      },
+      "protocol_sha256": "c3a13bed417b8884c73760bf3af8970276e10e5ec68bbad344a77db494f88838",
+      "summary_sha256": "3de55b7076b4212727c938c16218e1e1fb4e6e515a7655d8840df03ecb4fd834",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "a13be3e243168533df541172cb6cd8e2771f4f8ac3aab0dda1f771ea3f2439ca"
+    },
+    "real_raw-seed2026101914/DEV_AST256": {
+      "model_binding": {
+        "arm": "real_raw",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2",
+        "id": "real_raw-seed2026101914-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+        "seed": 2026101914,
+        "spec_hash": "8f729e989771521b898b8fc94f386d7976599a002ee56757b7d66787bdf658ff",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101914.json",
+        "training_protocol_sha256": "382f7e2d0a055fb4c693d4b0516bfcb0c5149c7b24cfc007985ef4b57abfa335"
+      },
+      "protocol_sha256": "6ad11e6be0690fe72b2e5e304cc0a5a277be11404cef5daf5af3d3381657d528",
+      "summary_sha256": "7f50257372b7c413852efb8ecd71d34875cccd1533cb5c7b231084f03835a043",
+      "gold_sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+      "original_scored_sha256": "9fee72e3b5717f4e290b5b454ddc67336adc82271e844d548ecd341f7aef2b66"
+    },
+    "real_raw-seed2026101914/DEV_legacy256": {
+      "model_binding": {
+        "arm": "real_raw",
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+        "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+        "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "checkpoint_sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2",
+        "id": "real_raw-seed2026101914-step320",
+        "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+        "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb",
+        "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+        "seed": 2026101914,
+        "spec_hash": "8f729e989771521b898b8fc94f386d7976599a002ee56757b7d66787bdf658ff",
+        "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+        "step": 320,
+        "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101914.json",
+        "training_protocol_sha256": "382f7e2d0a055fb4c693d4b0516bfcb0c5149c7b24cfc007985ef4b57abfa335"
+      },
+      "protocol_sha256": "cf1117df6108a9f3176ac4326baffd252b23c2c4797b9634825d7d826fac0e36",
+      "summary_sha256": "1036b667937ad2653f20d48ee9346f6e9056799de9bf9b83a00c6efd59fe7aae",
+      "gold_sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+      "original_scored_sha256": "1ec499ff6a838ced6f7e778f07d8f0cf2bf8881b96c3187dc5796c7933771ff3"
+    }
+  },
+  "scoring_gold_manifest": {
+    "status": "FIXED_SCORING_ONLY_NUMERIC_VALUES_SAME_COHORTS",
+    "files": {
+      "DEV_AST256": {
+        "path": "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-v10-scalar-secondary-v1/DEV_AST256-gold.jsonl",
+        "sha256": "445e5284d7e2f57a40e293c7d47b91a9a1497c7f049d0d903ddb44e3b23d232b",
+        "source_sha256": "41d4aa6e6d217cdd57296953c669a95005ae1eb17b29ba5dc8565627b0c78fba",
+        "documents": 256
+      },
+      "DEV_legacy256": {
+        "path": "/home/ubuntu/dario/local/nvme-cpt/data/real-trace-v10-scalar-secondary-v1/DEV_legacy256-gold.jsonl",
+        "sha256": "ccdeb80442ebc5bda138a707fdf5b11d2c3db585e1b8fc602618102b9dcc13dc",
+        "source_sha256": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79",
+        "documents": 256
+      }
+    }
+  },
+  "design_sha256": "193e375665b61cd01da434542e01034b39eb8469ed015b4c73f44d11c195e8ca",
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66",
+    "train/partial_state_driver.py": "a65c7f43a6972d99c41e562b644831e9d1397d28643800b8468599369bd4c970",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/real_trace_notes.py": "f2c93de79a7bf9b51ab21769051ab9941b8e04b2d5c9b70fa8f560eb389ed3b8",
+    "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/partial_state_evaluation.py": "e8820c6ac8887461c266c380bfe37c14563840f4f194b504b48fba02d9552de2",
+    "train/real_trace_answers.py": "11b94f8eccac5b799ca7cad5923d0202aa9b13db47315999e81d0ed0609c92c6"
+  },
+  "archive_sha256": "49b84b87ec235dc0efb56632bd0adcf0e03262aa5bfdcf1b9ca434097b97dcbd",
+  "limits": [
+    "Secondary initial-scalar accuracy at curated real-document boundaries, not general QA.",
+    "All256 documents and all errors/unsupported outputs remain in every denominator.",
+    "Existing initial-scalar-v2 unchanged; no searching, answer repair, arithmetic evaluation or gold-dependent stopping.",
+    "Each seed/panel is separate; paired document intervals condition on checkpoints, not training-seed uncertainty. B0 is shared once.",
+    "Original notes and references reused exactly, not new independent observations. Supplied full traces include the result.",
+    "Own/other use prior generated notes plus32 continuation actions. Raw/empty/oracle use32 continuation actions. Not equal inference compute or controlled service latency.",
+    "The primary full16 likelihood gates are unchanged. Same-instance EBS protection is not off-instance backup."
+  ]
+}

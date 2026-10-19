@@ -1269,3 +1269,13 @@ using exact original notes and unchanged initial-scalar-v2. All unsupported and
 failed outputs remain in256 denominators; no new gate or parser adaptation.
 The prospective secondary design precedes trained capability review. Its actual
 B0 four-core native/cache672 checks pass; each trained model checks itself again.
+
+2026-10-19 07:15UTC — Both fixed real-document readouts close and independently
+reproduce all counts/signs/bootstrap intervals. Neither primary likelihood gate
+passes:post raw gain~0.01nat;prior generated gain+0.097/−0.139nat versusrawCPT.
+The prospectively declared scalar secondary is positive:216/213 of256 versus
+193/196,paired+9.0/+6.6pp with positive intervals;all unsupported outputs retained.
+Keep both findings:supervised calculation helps this exact-number path using
+extra computation,but training-only/full-continuation improvement is unestablished.
+Publish all outputs and controls together;no gate relabeling,RL release or8B jump.
+Answer-focused direct/full-trace SFT is a missing practical reference,not yet a run.

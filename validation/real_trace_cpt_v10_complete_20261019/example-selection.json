@@ -1,0 +1,15 @@
+{
+  "status": "ILLUSTRATIONS_REUSE_FIXED_COMPLETE_OUTPUTS_NO_NEW_OBSERVATIONS",
+  "examples": 28,
+  "file_sha256": "f5dd53950ca96c5c31162e64ddadab4cf32d74fa5c520179a36c108c75b25972",
+  "source_sha256": "ab36cef115da6b9aa4cd50200bedb6b07947bd8cb6921f112a90ad5df6fc2d35",
+  "primary_report_sha256": "eb5f6b07aa4b39da6f708a7941fc2bc3bbaf1580b5bc3942979730acab2e1bf4",
+  "scalar_report_sha256": "c25b6a06f855684622084a9e4744b2c55ef8f7290f31ee108e0aca8537e1855f",
+  "selection": "Per seed/panel: first3 frozen documents, largest/smallest observed post.raw\u2212raw.raw and prior.own\u2212raw.raw, and first scalar disagreement for each contrast when present. Ties follow frozen order; duplicate selections merge.",
+  "limits": [
+    "Illustrative extremes are explicitly selected; no conclusion is based on their frequency.",
+    "Every numerical endpoint uses all256 documents; these are not new independent samples.",
+    "Teacher annotations are shown for inspection and were not supplied to the deployed own-note generator.",
+    "Complete native prefixes remain in the fixed protected inputs; examples show the full arithmetic expression and actual future16."
+  ]
+}

@@ -6,22 +6,80 @@ and computation diagnostics run on AWS Trainium. Official TEST remains unused.
 The [current proof ladder](docs/RESEARCH_ROADMAP.md) separates reader use,
 prefix-only computation, actual student benefit, cost, and return to real text.
 
-The mainline now tests **single-model real-document training**, with raw, prior-calculation
-and post-document-calculation arms. Training benefit and extra-inference benefit have
-separate declared gates. The [pre-learning split correction](validation/real_trace_cpt_v10_AST_amendment_20261019.json)
-removes ten arithmetic AST aliases missed by string matching; the corrected 256-document
-panel and [unchanged-base reference](validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json)
-are frozen. The [real-context save/restart qualification](validation/real_trace_cpt_v10_training_qualification_20261019.json)
-passes, and all six fixed runs have completed their 320 updates. The
-[terminal-state audit and protection](validation/real_trace_cpt_v10_terminal_training_20261019.json)
-pass for both seeds and all three arms. The terminal models are frozen and
-likelihood evaluation is underway; no capability result is available yet.
-A [separately declared scalar-answer diagnostic](validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json)
-uses the same notes and unchanged parser, with all unsupported outputs retained.
-Frozen [training code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/3d8666b)
-and [evaluation code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/29c8b24)
-are kept on separate branches. The bounded variable-depth writer repair below
-is complete. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
+The completed mainline tests **single-model real-document training** on 5,120
+FineMath documents, starting from the same base in three arms and two seeds.
+The result is mixed: **generated calculations improve complete-number accuracy;
+neither predeclared 16-token likelihood gate passes.** Training benefit without
+extra thinking remains unestablished.
+
+## Latest completed study: single-model real-document computation
+
+These are the terminal step-320 checkpoints, not selected intermediate models. The
+primary panel contains 256 documents with ordered, exact-value arithmetic ASTs
+absent from our training set; operation patterns can recur. Every number below
+uses all 256 documents, including unsupported and failed outputs.
+
+| Model / inference path | Seed1913 correct | Seed1914 correct |
+|---|---:|---:|
+| Unchanged B0, raw (shared reference) |187|187|
+| Ordinary continuation training, raw |193|196|
+| Prior-calculation training, raw |194|191|
+| Prior-calculation training, empty |175|172|
+| **Prior-calculation training, generated calculation** |**216**|**213**|
+| Prior-calculation training, unrelated calculation |97|96|
+| Prior-calculation training, supplied exact trace |226|230|
+| Post-document calculation training, raw |198|197|
+
+Generated calculations beat ordinary continuation training by **9.0 percentage
+points [4.3,14.1]** and **6.6 [2.0,11.7]**, and beat their own empty controls by
+16.0 points in each seed. There are 25/24 unsupported generated-path outputs,
+versus 32/34 for the ordinary raw control (plus one format error in seed1913).
+All failures remain in denominators; there are no execution errors. The
+[complete category counts](validation/real_trace_cpt_v10_scalar_secondary_20261019/all-modes-accuracy-and-failures.csv)
+include every model and control. This scalar endpoint was
+[declared before trained capability review](validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json)
+and remains secondary.
+
+| Primary full 16-token likelihood contrast (nats/span) | Seed1913 mean [95% CI] | Seed1914 mean [95% CI] |
+|---|---:|---:|
+| Post raw − ordinary-control raw |+0.012 [−0.039,+0.064]|+0.006 [−0.051,+0.065]|
+| Prior generated − ordinary-control raw |+0.097 [−0.135,+0.329]|−0.139 [−0.425,+0.140]|
+| Prior generated − same-model empty |+1.647 [+1.362,+1.939]|+1.095 [+0.770,+1.429]|
+| Prior generated − unrelated |+2.646 [+2.246,+3.061]|+2.520 [+2.076,+2.974]|
+
+Both declared gates require at least 0.25 nat gain and a positive interval lower
+bound in each seed, with their additional controls. **Both fail.** The post arm
+passes its ordinary-FineMath regression bound, but provides no clear training-only
+gain. Raw CPT and post raw are each about 0.30 nat/span below unchanged B0 on the
+arithmetic panel. Prior-generated versus B0 raw is −0.216 [−0.509,+0.076] and
+−0.452 [−0.799,−0.113]. Thus the scalar improvement does not establish better
+prediction of the full original continuation. Intervals are paired document
+bootstraps conditional on each checkpoint; they do not quantify training-seed
+uncertainty. The two seeds and the legacy panel are never pooled.
+
+![Complete scalar continuation diagnostic](validation/real_trace_cpt_v10_scalar_secondary_20261019/primary-scalar-accuracy.svg)
+
+The calculation path uses the same model twice, up to 128 generated calculation
+actions followed by 32 continuation actions, with a fixed `Answer:` boundary.
+Prior notes average 33.6/33.9 actions, with 0/1 capped and no empty notes. The raw
+path uses 32 actions. Supplied traces include the root result; generated traces
+are prefix-only. This is supervised computation on curated arithmetic boundaries,
+not general QA, spontaneous emergence, equal inference compute, or a demonstrated
+advantage over answer-focused CoT SFT. Ordinary continuation training is the
+source-matched control; a competitive answer-focused SFT comparison remains open.
+
+The [primary report](validation/real_trace_cpt_v10_complete_20261019.json),
+[scalar report](validation/real_trace_cpt_v10_scalar_secondary_20261019.json),
+[likelihood figure and CSV](validation/real_trace_cpt_v10_complete_20261019/declared-contrasts.svg),
+and [disclosed example selection](validation/real_trace_cpt_v10_complete_20261019/example-selection.json)
+preserve all 19,712 likelihood rows, 3,584 original notes and 17,920 attempted scalar
+continuations. Independent checks reproduce counts, signs, all bootstrap intervals
+and the literal gates. All six terminal models and the latest full optimizer state
+are protected; all original checkpoints remain on local SSD. Frozen
+[training](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/3d8666b),
+[likelihood evaluation](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/29c8b24)
+and [scalar evaluation](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/4297c1d)
+sources remain separate. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
 
 ## Latest completed diagnostic: variable-depth repair
 

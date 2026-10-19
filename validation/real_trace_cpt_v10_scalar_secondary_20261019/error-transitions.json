@@ -1,0 +1,168 @@
+{
+  "status": "POSTHOC_ERROR_TRANSITIONS_REUSE_COMPLETED_SCALAR_OUTPUTS",
+  "utc": "2026-10-19T07:03:07.830331+00:00",
+  "contrasts": {
+    "2026101913": {
+      "DEV_AST256": {
+        "raw_control": {
+          "documents": 256,
+          "both_valid": 217,
+          "wrong_to_correct_with_both_valid": 22,
+          "correct_to_wrong_with_both_valid": 6,
+          "correct_gain_when_reference_not_valid": 11,
+          "correct_loss_when_treatment_not_valid": 4,
+          "total_correct_gain_all256": 23
+        },
+        "same_model_raw": {
+          "documents": 256,
+          "both_valid": 217,
+          "wrong_to_correct_with_both_valid": 21,
+          "correct_to_wrong_with_both_valid": 6,
+          "correct_gain_when_reference_not_valid": 11,
+          "correct_loss_when_treatment_not_valid": 4,
+          "total_correct_gain_all256": 22
+        },
+        "same_model_empty": {
+          "documents": 256,
+          "correct_gain_when_reference_not_valid": 26,
+          "correct_loss_when_treatment_not_valid": 8,
+          "both_valid": 202,
+          "wrong_to_correct_with_both_valid": 29,
+          "correct_to_wrong_with_both_valid": 6,
+          "total_correct_gain_all256": 41
+        },
+        "B0raw": {
+          "documents": 256,
+          "both_valid": 208,
+          "wrong_to_correct_with_both_valid": 21,
+          "correct_to_wrong_with_both_valid": 8,
+          "correct_gain_when_reference_not_valid": 20,
+          "correct_loss_when_treatment_not_valid": 4,
+          "total_correct_gain_all256": 29
+        }
+      },
+      "DEV_legacy256": {
+        "raw_control": {
+          "documents": 256,
+          "both_valid": 225,
+          "wrong_to_correct_with_both_valid": 20,
+          "correct_to_wrong_with_both_valid": 4,
+          "correct_gain_when_reference_not_valid": 9,
+          "correct_loss_when_treatment_not_valid": 4,
+          "total_correct_gain_all256": 21
+        },
+        "same_model_raw": {
+          "documents": 256,
+          "both_valid": 225,
+          "wrong_to_correct_with_both_valid": 20,
+          "correct_to_wrong_with_both_valid": 4,
+          "correct_gain_when_reference_not_valid": 9,
+          "correct_loss_when_treatment_not_valid": 4,
+          "total_correct_gain_all256": 21
+        },
+        "same_model_empty": {
+          "documents": 256,
+          "correct_gain_when_reference_not_valid": 27,
+          "correct_loss_when_treatment_not_valid": 6,
+          "both_valid": 207,
+          "wrong_to_correct_with_both_valid": 25,
+          "correct_to_wrong_with_both_valid": 3,
+          "total_correct_gain_all256": 43
+        },
+        "B0raw": {
+          "documents": 256,
+          "both_valid": 213,
+          "wrong_to_correct_with_both_valid": 21,
+          "correct_to_wrong_with_both_valid": 5,
+          "correct_gain_when_reference_not_valid": 21,
+          "correct_loss_when_treatment_not_valid": 3,
+          "total_correct_gain_all256": 34
+        }
+      }
+    },
+    "2026101914": {
+      "DEV_AST256": {
+        "raw_control": {
+          "documents": 256,
+          "both_valid": 219,
+          "wrong_to_correct_with_both_valid": 19,
+          "correct_to_wrong_with_both_valid": 9,
+          "correct_gain_when_reference_not_valid": 10,
+          "correct_loss_when_treatment_not_valid": 3,
+          "total_correct_gain_all256": 17
+        },
+        "same_model_raw": {
+          "documents": 256,
+          "both_valid": 218,
+          "wrong_to_correct_with_both_valid": 23,
+          "correct_to_wrong_with_both_valid": 10,
+          "correct_gain_when_reference_not_valid": 11,
+          "correct_loss_when_treatment_not_valid": 2,
+          "total_correct_gain_all256": 22
+        },
+        "same_model_empty": {
+          "documents": 256,
+          "correct_gain_when_reference_not_valid": 33,
+          "correct_loss_when_treatment_not_valid": 8,
+          "both_valid": 193,
+          "wrong_to_correct_with_both_valid": 23,
+          "correct_to_wrong_with_both_valid": 7,
+          "total_correct_gain_all256": 41
+        },
+        "B0raw": {
+          "documents": 256,
+          "both_valid": 210,
+          "wrong_to_correct_with_both_valid": 21,
+          "correct_to_wrong_with_both_valid": 11,
+          "correct_gain_when_reference_not_valid": 18,
+          "correct_loss_when_treatment_not_valid": 2,
+          "total_correct_gain_all256": 26
+        }
+      },
+      "DEV_legacy256": {
+        "raw_control": {
+          "documents": 256,
+          "both_valid": 224,
+          "wrong_to_correct_with_both_valid": 15,
+          "correct_to_wrong_with_both_valid": 8,
+          "correct_gain_when_reference_not_valid": 8,
+          "correct_loss_when_treatment_not_valid": 3,
+          "total_correct_gain_all256": 12
+        },
+        "same_model_raw": {
+          "documents": 256,
+          "both_valid": 221,
+          "wrong_to_correct_with_both_valid": 19,
+          "correct_to_wrong_with_both_valid": 9,
+          "correct_gain_when_reference_not_valid": 12,
+          "correct_loss_when_treatment_not_valid": 3,
+          "total_correct_gain_all256": 19
+        },
+        "same_model_empty": {
+          "documents": 256,
+          "correct_gain_when_reference_not_valid": 31,
+          "correct_loss_when_treatment_not_valid": 6,
+          "both_valid": 198,
+          "wrong_to_correct_with_both_valid": 22,
+          "correct_to_wrong_with_both_valid": 5,
+          "total_correct_gain_all256": 42
+        },
+        "B0raw": {
+          "documents": 256,
+          "both_valid": 213,
+          "wrong_to_correct_with_both_valid": 21,
+          "correct_to_wrong_with_both_valid": 9,
+          "correct_gain_when_reference_not_valid": 19,
+          "correct_loss_when_treatment_not_valid": 3,
+          "total_correct_gain_all256": 28
+        }
+      }
+    }
+  },
+  "original_report_sha256": "c25b6a06f855684622084a9e4744b2c55ef8f7290f31ee108e0aca8537e1855f",
+  "limits": [
+    "All256 retained; no conditional-accuracy denominator or new gate.",
+    "Transitions separate observed number corrections from support/format changes; no causal effect is estimated on a post-treatment selected subset.",
+    "No new model calls, parser changes or independent observations."
+  ]
+}

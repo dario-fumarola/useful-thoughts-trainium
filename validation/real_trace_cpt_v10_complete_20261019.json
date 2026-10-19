@@ -1,0 +1,3240 @@
+{
+  "status": "COMPLETE_TWO_SEED_REAL_DOCUMENT_STUDY_ALL_FIXED_PANELS",
+  "utc": "2026-10-19T07:06:40.936721+00:00",
+  "decisions": {
+    "training_benefit_pass_both_seeds": false,
+    "inference_benefit_pass_both_seeds": false
+  },
+  "seeds": {
+    "2026101913": {
+      "primary_AST": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.011998427796655803,
+          "ci95": [
+            -0.03887153158893527,
+            0.064056317951338
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": 0.09668828091051201,
+          "ci95": [
+            -0.13464330407565794,
+            0.3289903565342845
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_raw": {
+          "difference_b_minus_a": 0.0923042663939336,
+          "ci95": [
+            -0.13549962707622956,
+            0.3194984807229025
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_empty": {
+          "difference_b_minus_a": 1.6468832159590383,
+          "ci95": [
+            1.3620546930515791,
+            1.9391914630334963
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_other": {
+          "difference_b_minus_a": 2.646389092380005,
+          "ci95": [
+            2.2460871420924757,
+            3.060584726366427
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_own": {
+          "difference_b_minus_a": 23.664924843537108,
+          "ci95": [
+            22.696146120927395,
+            24.666022668039037
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post_raw_minus_B0raw": {
+          "difference_b_minus_a": -0.30037173440061826,
+          "ci95": [
+            -0.5119619810252201,
+            -0.09067431223169303
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "raw_raw_minus_B0raw": {
+          "difference_b_minus_a": -0.31237016219727404,
+          "ci95": [
+            -0.5233599525829885,
+            -0.10574454512676472
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0own": {
+          "difference_b_minus_a": 22.28637100196974,
+          "ci95": [
+            21.157534230074734,
+            23.449845204255286
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0raw": {
+          "difference_b_minus_a": -0.21568188128676202,
+          "ci95": [
+            -0.5090423908647702,
+            0.07599180178768239
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "ordinary_token_NLL_regression": {
+        "prior": {
+          "difference_b_minus_a": -0.000167853628335074,
+          "ci95": [
+            -0.003140390582845641,
+            0.0028279249542834018
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post": {
+          "difference_b_minus_a": -0.001209053749804687,
+          "ci95": [
+            -0.004226510835000631,
+            0.0018257854763550564
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "legacy_secondary": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.012659232019241518,
+          "ci95": [
+            -0.03849986941370559,
+            0.06268694945748993
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": 0.04939008140383727,
+          "ci95": [
+            -0.16638279390120558,
+            0.26363424533278773
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "declared_decisions": {
+        "training_benefit_pass": false,
+        "inference_benefit_pass": false,
+        "limits": "Conditionalonthisseed/checkpoint;reportbothseedsseparately,andB0absolutepaths,costsandallregressions."
+      }
+    },
+    "2026101914": {
+      "primary_AST": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": 0.006187426743395924,
+          "ci95": [
+            -0.05144385845073079,
+            0.06465880574888858
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": -0.13920950454421863,
+          "ci95": [
+            -0.42464475941108026,
+            0.14005683610813968
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_raw": {
+          "difference_b_minus_a": -0.11589404053041694,
+          "ci95": [
+            -0.3962198790273039,
+            0.1570462384177457
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_empty": {
+          "difference_b_minus_a": 1.0949878338925059,
+          "ci95": [
+            0.7695217749069628,
+            1.4288250221705405
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_prior_other": {
+          "difference_b_minus_a": 2.51983371171647,
+          "ci95": [
+            2.076043469469773,
+            2.9744799048157256
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_own": {
+          "difference_b_minus_a": 23.455361324031394,
+          "ci95": [
+            22.49397584430647,
+            24.418449803076175
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post_raw_minus_B0raw": {
+          "difference_b_minus_a": -0.30614423899902166,
+          "ci95": [
+            -0.520803340958181,
+            -0.09717187823706629
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "raw_raw_minus_B0raw": {
+          "difference_b_minus_a": -0.3123316657424176,
+          "ci95": [
+            -0.5348603547133193,
+            -0.09725221817677067
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0own": {
+          "difference_b_minus_a": 22.05051171296987,
+          "ci95": [
+            20.916541172073657,
+            23.222625268053584
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_B0raw": {
+          "difference_b_minus_a": -0.4515411702866362,
+          "ci95": [
+            -0.7993069010255687,
+            -0.11333927689174787
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "ordinary_token_NLL_regression": {
+        "prior": {
+          "difference_b_minus_a": -0.001734215933923611,
+          "ci95": [
+            -0.0038763317097388283,
+            0.00037012184091635185
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "post": {
+          "difference_b_minus_a": -0.0006552428697245809,
+          "ci95": [
+            -0.003148396584161042,
+            0.0017579852464920597
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "legacy_secondary": {
+        "post_raw_minus_raw_raw": {
+          "difference_b_minus_a": -0.02002484679675079,
+          "ci95": [
+            -0.07675246210140176,
+            0.03755317201389166
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "prior_own_minus_raw_raw": {
+          "difference_b_minus_a": -0.12014668611216361,
+          "ci95": [
+            -0.3836987010350828,
+            0.13095508891398716
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "declared_decisions": {
+        "training_benefit_pass": false,
+        "inference_benefit_pass": false,
+        "limits": "Conditionalonthisseed/checkpoint;reportbothseedsseparately,andB0absolutepaths,costsandallregressions."
+      }
+    }
+  },
+  "within_model_contrasts": {
+    "B0": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -14.716333954132256,
+          "ci95": [
+            -15.412506598744159,
+            -14.042536640135602
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -11.541334662004662,
+          "ci95": [
+            -12.22408266618631,
+            -10.870498891108403
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -22.502052883256503,
+          "ci95": [
+            -23.626212216937173,
+            -21.406883006012876
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -7.785718929124247,
+          "ci95": [
+            -8.835939955059857,
+            -6.780694248649577
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 4.481681900686075,
+          "ci95": [
+            3.292936017772925,
+            5.6293536923009775
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -14.978348375700591,
+          "ci95": [
+            -15.671018674017223,
+            -14.305301518133545
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -11.798795950090163,
+          "ci95": [
+            -12.487330708115586,
+            -11.111827711140926
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -22.60941311933919,
+          "ci95": [
+            -23.695606988166336,
+            -21.561473074195668
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -7.6310647436386,
+          "ci95": [
+            -8.621630755359899,
+            -6.6879693141528165
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 4.282238180346874,
+          "ci95": [
+            3.0748596831319523,
+            5.460911952883677
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "real_raw-seed2026101913": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -15.169186270443284,
+          "ci95": [
+            -15.972742944747907,
+            -14.389691856176908
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -12.05096532474804,
+          "ci95": [
+            -12.799314788556686,
+            -11.303671859065851
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -23.568236562626595,
+          "ci95": [
+            -24.573415941987843,
+            -22.595420988243163
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -8.399050292183311,
+          "ci95": [
+            -9.320046569515618,
+            -7.476336788677886
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 4.523557364168739,
+          "ci95": [
+            3.446964228105879,
+            5.57280590779823
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -15.493417151740843,
+          "ci95": [
+            -16.3021857321851,
+            -14.698407205710087
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -12.628439647539548,
+          "ci95": [
+            -13.437191951606932,
+            -11.820511665241392
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -23.936713518504558,
+          "ci95": [
+            -24.941176913072923,
+            -22.977138267924847
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -8.443296366763715,
+          "ci95": [
+            -9.346711004008526,
+            -7.5403026456814555
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 4.402246719175128,
+          "ci95": [
+            3.249373271053946,
+            5.551269557671951
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "real_raw-seed2026101914": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -15.527697880583595,
+          "ci95": [
+            -16.315841564225245,
+            -14.756972741244345
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -12.183829166548158,
+          "ci95": [
+            -12.914536313233379,
+            -11.45891718700878
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -23.594570828575613,
+          "ci95": [
+            -24.54425405920654,
+            -22.657379989477775
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -8.066872947992016,
+          "ci95": [
+            -8.955702068625598,
+            -7.173164362211216
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 4.673160607325819,
+          "ci95": [
+            3.5958211554734865,
+            5.763582348767996
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -15.992963557510928,
+          "ci95": [
+            -16.802937830346313,
+            -15.192175797422383
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -12.838982200806896,
+          "ci95": [
+            -13.651770966827105,
+            -12.036185925973054
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -23.84266309040474,
+          "ci95": [
+            -24.801135478928042,
+            -22.889056031327947
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -7.849699532893814,
+          "ci95": [
+            -8.714503815389454,
+            -6.9923608173789225
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 4.688851264465925,
+          "ci95": [
+            3.590387337249421,
+            5.800944768265784
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "real_prior-seed2026101913": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -1.5545789495651046,
+          "ci95": [
+            -1.802566116094496,
+            -1.3100281174189516
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": 0.36481588314031,
+          "ci95": [
+            0.12776042094487391,
+            0.609985397579639
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": 0.0923042663939336,
+          "ci95": [
+            -0.13549962707622956,
+            0.3194984807229025
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": 1.6468832159590383,
+          "ci95": [
+            1.3620546930515791,
+            1.9391914630334963
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 2.646389092380005,
+          "ci95": [
+            2.2460871420924757,
+            3.060584726366427
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -1.4153009317191734,
+          "ci95": [
+            -1.6588613110856236,
+            -1.18287510389487
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": 0.300457341885805,
+          "ci95": [
+            0.08182473453638602,
+            0.5299023798298226
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": 0.11310003944452188,
+          "ci95": [
+            -0.10087409884138558,
+            0.32443095699419167
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": 1.5284009711636952,
+          "ci95": [
+            1.2815304177197306,
+            1.7834273019204432
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 2.4558491947217176,
+          "ci95": [
+            2.065376935586522,
+            2.8618388059231705
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "real_prior-seed2026101914": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -1.2108818744229228,
+          "ci95": [
+            -1.4704219447402551,
+            -0.9618174594749198
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": 0.3896354999342907,
+          "ci95": [
+            0.15685840227964948,
+            0.6302116876845378
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -0.11589404053041694,
+          "ci95": [
+            -0.3962198790273039,
+            0.1570462384177457
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": 1.0949878338925059,
+          "ci95": [
+            0.7695217749069628,
+            1.4288250221705405
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 2.51983371171647,
+          "ci95": [
+            2.076043469469773,
+            2.9744799048157256
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -1.1045932145499184,
+          "ci95": [
+            -1.3667523966682034,
+            -0.8576413946523739
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": 0.350196472258792,
+          "ci95": [
+            0.13234240662754623,
+            0.5747372213203635
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -0.0541537136229516,
+          "ci95": [
+            -0.32194010382304106,
+            0.20077965142365659
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": 1.050439500926967,
+          "ci95": [
+            0.746754735222857,
+            1.359358905545747
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 2.2802209019698,
+          "ci95": [
+            1.839356393103279,
+            2.729643906640399
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "real_post-seed2026101913": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -21.69118233378396,
+          "ci95": [
+            -22.524243713987115,
+            -20.870102502870125
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -20.131295734083178,
+          "ci95": [
+            -21.06385287214224,
+            -19.196018520832855
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -21.895859042202176,
+          "ci95": [
+            -22.873585968030614,
+            -20.926035116115138
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -0.2046767084182174,
+          "ci95": [
+            -0.901898856372322,
+            0.4956570127429476
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 3.2684051387945967,
+          "ci95": [
+            2.594995129781594,
+            3.9316721127429273
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -22.265511307557574,
+          "ci95": [
+            -23.147174577259115,
+            -21.40930679654651
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -21.005685267127184,
+          "ci95": [
+            -21.985853385265195,
+            -20.036441486939708
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -22.606035851118218,
+          "ci95": [
+            -23.59740443729713,
+            -21.613288945097235
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": -0.3405245435606411,
+          "ci95": [
+            -0.9921734657411702,
+            0.30863771813924307
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 3.113203866837022,
+          "ci95": [
+            2.4844531034566883,
+            3.7432034919207173
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    },
+    "real_post-seed2026101914": {
+      "DEV_AST256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -22.303169809741433,
+          "ci95": [
+            -23.135597134166805,
+            -21.493524398757522
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -20.53085019724832,
+          "ci95": [
+            -21.513207630663096,
+            -19.55459229677651
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -22.046349180984365,
+          "ci95": [
+            -23.036548187806392,
+            -21.05059899948075
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": 0.25682062875706757,
+          "ci95": [
+            -0.4139966151869933,
+            0.9319188587878814
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 3.99954255498585,
+          "ci95": [
+            3.2546051137356438,
+            4.7391185645346505
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      },
+      "DEV_legacy256": {
+        "empty_minus_raw": {
+          "difference_b_minus_a": -22.90346225725029,
+          "ci95": [
+            -23.773433948638022,
+            -22.052896929059457
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "oracle_minus_raw": {
+          "difference_b_minus_a": -21.356121356043563,
+          "ci95": [
+            -22.364312970098393,
+            -20.359100149246842
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_raw": {
+          "difference_b_minus_a": -22.85799077560688,
+          "ci95": [
+            -23.850092678518415,
+            -21.86052357480891
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_empty": {
+          "difference_b_minus_a": 0.04547148164341558,
+          "ci95": [
+            -0.5978135763871081,
+            0.6836880737177768
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        },
+        "own_minus_other": {
+          "difference_b_minus_a": 3.5059755113976867,
+          "ci95": [
+            2.8137087976467043,
+            4.209863529099089
+          ],
+          "items": 256,
+          "documents": 256,
+          "bootstrap_draws": 20000,
+          "bootstrap_seed": 2026101915,
+          "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+        }
+      }
+    }
+  },
+  "absolute_likelihood": {
+    "B0": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.466204000734223,
+          "mean_token_NLL": 1.029137750045889,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.09265575246011012,
+            "numeric": -0.935234767992052,
+            "closing": -1.1631352417719945,
+            "remainder": -14.41721695433801
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -31.182537954866483,
+          "mean_token_NLL": 1.9489086221791552,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -5.633805662874253,
+            "numeric": -5.79360574795658,
+            "closing": -3.060322136347813,
+            "remainder": -16.86561217734598
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -28.007538662738888,
+          "mean_token_NLL": 1.7504711664211805,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.339809780159304,
+            "numeric": -1.7416624267609164,
+            "closing": -3.145528390883438,
+            "remainder": -16.772865483165283
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -38.96825688399073,
+          "mean_token_NLL": 2.435516055249421,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -5.859038886283675,
+            "numeric": -7.996126926745825,
+            "closing": -4.0119323137614336,
+            "remainder": -21.35335729934796
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -43.4499387846768,
+          "mean_token_NLL": 2.7156211740423,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -5.626360851910807,
+            "numeric": -10.212221795783169,
+            "closing": -5.1612969124990125,
+            "remainder": -22.599587090386237
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -19.900745546550503,
+          "mean_token_NLL": 1.2437965966594067,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.385866047373554,
+          "mean_token_NLL": 1.0241166279608471,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.07960258463331646,
+            "numeric": -0.7947195834801214,
+            "closing": -1.2136142649092307,
+            "remainder": -14.3045631528841
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -31.36421442307415,
+          "mean_token_NLL": 1.9602634014421343,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -5.563105818284935,
+            "numeric": -5.664300309669456,
+            "closing": -3.300315894038079,
+            "remainder": -16.861931771061997
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -28.18466199746372,
+          "mean_token_NLL": 1.7615413748414825,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.208351569346697,
+            "numeric": -1.7112997689269194,
+            "closing": -3.440047596792776,
+            "remainder": -16.75666970070729
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -38.99527916671275,
+          "mean_token_NLL": 2.437204947919547,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -5.880826240991691,
+            "numeric": -7.777727422495076,
+            "closing": -4.161853190277707,
+            "remainder": -21.26224238004218
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -43.27751734705962,
+          "mean_token_NLL": 2.704844834191227,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -5.581603958312259,
+            "numeric": -9.869016840050286,
+            "closing": -5.199687915375508,
+            "remainder": -22.62026694944032
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    },
+    "real_raw-seed2026101913": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.7785741629315,
+          "mean_token_NLL": 1.0486608851832186,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.07894810666569414,
+            "numeric": -0.9444036979083169,
+            "closing": -1.1524175102858858,
+            "remainder": -14.772925075493694
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -31.947760433374782,
+          "mean_token_NLL": 1.9967350270859239,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.327050134539604,
+            "numeric": -5.637341326414542,
+            "closing": -3.163561613869763,
+            "remainder": -17.063496809469758
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -28.82953948767954,
+          "mean_token_NLL": 1.8018462179799712,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -7.040656154194186,
+            "numeric": -1.8542867191218912,
+            "closing": -3.145601303587037,
+            "remainder": -16.791219811763177
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -40.34681072555809,
+          "mean_token_NLL": 2.521675670347381,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.757049575928719,
+            "numeric": -7.90759189137797,
+            "closing": -4.172036594470903,
+            "remainder": -21.732832375613132
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -44.87036808972683,
+          "mean_token_NLL": 2.804398005607927,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.472427210019481,
+            "numeric": -10.47959600206917,
+            "closing": -5.395816349214123,
+            "remainder": -22.532022710754703
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -20.401726437239667,
+          "mean_token_NLL": 1.2751079023274794,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -15.847218901212138,
+          "mean_token_NLL": 0.9904511813257586,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.06938803921874627,
+            "numeric": -0.7334038493635445,
+            "closing": -1.1275846153780147,
+            "remainder": -13.928444415531638
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -31.34063605295298,
+          "mean_token_NLL": 1.9587897533095613,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.2287450192934015,
+            "numeric": -5.52087414209973,
+            "closing": -3.3014284950862844,
+            "remainder": -16.352915316789556
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -28.47565854875168,
+          "mean_token_NLL": 1.77972865929698,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.9832972938795965,
+            "numeric": -1.8948656696727604,
+            "closing": -3.4459396897559147,
+            "remainder": -16.064395805472042
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -39.78393241971669,
+          "mean_token_NLL": 2.4864957762322937,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.755562870625956,
+            "numeric": -7.79493361341466,
+            "closing": -4.297969815295294,
+            "remainder": -21.00823126549632
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -44.18617913889182,
+          "mean_token_NLL": 2.761636196180739,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.5801686713420064,
+            "numeric": -10.011062261669812,
+            "closing": -5.355401888964661,
+            "remainder": -22.17914152646007
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    },
+    "real_raw-seed2026101914": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.778535666476643,
+          "mean_token_NLL": 1.0486584791547902,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.07266989651805768,
+            "numeric": -0.8780042554820837,
+            "closing": -1.1819471236970365,
+            "remainder": -14.820412983114089
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -32.30623354706023,
+          "mean_token_NLL": 2.0191395966912644,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.412505001791062,
+            "numeric": -5.764057861367614,
+            "closing": -3.2384470714135998,
+            "remainder": -17.13619308374632
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -28.9623648330248,
+          "mean_token_NLL": 1.81014780206405,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -7.059035460795125,
+            "numeric": -1.870275719069703,
+            "closing": -3.1720966073353924,
+            "remainder": -16.85496217422139
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -40.373106495052255,
+          "mean_token_NLL": 2.523319155940766,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.710016626984842,
+            "numeric": -8.046921294537652,
+            "closing": -4.153450377105225,
+            "remainder": -21.731363134177432
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -45.046267102378074,
+          "mean_token_NLL": 2.8153916938986296,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.779979525073882,
+            "numeric": -10.624678829457656,
+            "closing": -5.298786709265363,
+            "remainder": -22.457487927975723
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -20.407412724686935,
+          "mean_token_NLL": 1.2754632952929337,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -15.85482196822338,
+          "mean_token_NLL": 0.9909263730139612,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.06477318770908004,
+            "numeric": -0.6642746737276506,
+            "closing": -1.1586133255561186,
+            "remainder": -13.97827964594413
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -31.847785525734306,
+          "mean_token_NLL": 1.9904865953583941,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.335030236567159,
+            "numeric": -5.663282990495283,
+            "closing": -3.3924785929609578,
+            "remainder": -16.51887518352131
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -28.69380416903028,
+          "mean_token_NLL": 1.7933627605643925,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.9823985194779965,
+            "numeric": -1.8719410582670972,
+            "closing": -3.5172196660799333,
+            "remainder": -16.229328640045168
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -39.69748505862812,
+          "mean_token_NLL": 2.4810928161642574,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.711159145214643,
+            "numeric": -7.872012337658367,
+            "closing": -4.28850690468374,
+            "remainder": -20.9162833603681
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -44.38633632309404,
+          "mean_token_NLL": 2.7741460201933776,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.843435368214945,
+            "numeric": -10.081843950091843,
+            "closing": -5.2181441013912755,
+            "remainder": -22.150487140790062
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    },
+    "real_prior-seed2026101913": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.77419014841492,
+          "mean_token_NLL": 1.0483868842759325,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.08518339647097888,
+            "numeric": -0.9383195290874268,
+            "closing": -1.1634080403563138,
+            "remainder": -14.755558900561693
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -18.32876909798002,
+          "mean_token_NLL": 1.1455480686237514,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.610682895247479,
+            "numeric": -1.344622933609219,
+            "closing": -1.388886884232277,
+            "remainder": -15.071274370366956
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -16.40937426527461,
+          "mean_token_NLL": 1.0255858915796632,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.07725708540730862,
+            "numeric": -0.35765796252935855,
+            "closing": -1.1612233921073605,
+            "remainder": -14.962504534644658
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -16.681885882020985,
+          "mean_token_NLL": 1.0426178676263116,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.07893881238241222,
+            "numeric": -0.6418722432815547,
+            "closing": -1.1484455463556484,
+            "remainder": -14.969936511342556
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -19.32827497440099,
+          "mean_token_NLL": 1.208017185900062,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.08962866138702544,
+            "numeric": -3.1529860379853987,
+            "closing": -1.3364944546210316,
+            "remainder": -14.975989096831013
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -20.399040779186308,
+          "mean_token_NLL": 1.2749400486991442,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -15.910928859252824,
+          "mean_token_NLL": 0.9944330537033015,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.0747081024395217,
+            "numeric": -0.7560276506725327,
+            "closing": -1.151306365751579,
+            "remainder": -13.937253880830099
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -17.326229790971993,
+          "mean_token_NLL": 1.0828893619357496,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.5833906261714182,
+            "numeric": -1.1759160883534967,
+            "closing": -1.2990064892153288,
+            "remainder": -14.218431056493761
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -15.610471517367017,
+          "mean_token_NLL": 0.9756544698354386,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.06555260768811197,
+            "numeric": -0.2859331781684943,
+            "closing": -1.1593332337238424,
+            "remainder": -14.101482296815448
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -15.7978288198083,
+          "mean_token_NLL": 0.9873643012380188,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.06758777569324324,
+            "numeric": -0.4632020096646783,
+            "closing": -1.1538496648394325,
+            "remainder": -14.117866514577639
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -18.253678014530017,
+          "mean_token_NLL": 1.140854875908126,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.0766626751356831,
+            "numeric": -2.759767310979476,
+            "closing": -1.3067359275458355,
+            "remainder": -14.139540247312356
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    },
+    "real_prior-seed2026101914": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.80185113049044,
+          "mean_token_NLL": 1.0501156956556528,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.07636205686324157,
+            "numeric": -0.9223834947075701,
+            "closing": -1.165474075079005,
+            "remainder": -14.815669564169614
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -18.01273300491337,
+          "mean_token_NLL": 1.1257958128070853,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.18691321005932085,
+            "numeric": -1.4590188934838506,
+            "closing": -1.3653795146270684,
+            "remainder": -15.101936532933552
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -16.412215630556155,
+          "mean_token_NLL": 1.0257634769097597,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.043215585112633445,
+            "numeric": -0.34367205011979024,
+            "closing": -1.1704592601637425,
+            "remainder": -15.01418774318157
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -16.91774517102086,
+          "mean_token_NLL": 1.0573590731888038,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.04843276038457501,
+            "numeric": -0.8412071898009548,
+            "closing": -1.1779611549690374,
+            "remainder": -15.025889269624834
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -19.43757888273733,
+          "mean_token_NLL": 1.2148486801710832,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.05622542795625181,
+            "numeric": -3.266402632834599,
+            "closing": -1.3504695906110775,
+            "remainder": -14.98698261308112
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -20.379665269744162,
+          "mean_token_NLL": 1.27372907935901,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -15.920814940712592,
+          "mean_token_NLL": 0.995050933794537,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.06715434185727022,
+            "numeric": -0.7619983927586812,
+            "closing": -1.1415716637864592,
+            "remainder": -13.963774121534351
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -17.02540815526251,
+          "mean_token_NLL": 1.064088009703907,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.16905204711604374,
+            "numeric": -1.3280418352016388,
+            "closing": -1.2876906780002173,
+            "remainder": -14.203367568164289
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -15.5706184684538,
+          "mean_token_NLL": 0.9731636542783626,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.03664298552345475,
+            "numeric": -0.2785472931387871,
+            "closing": -1.1511474238510215,
+            "remainder": -14.114082089225906
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -15.974968654335544,
+          "mean_token_NLL": 0.9984355408959716,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.042047972282906056,
+            "numeric": -0.6656888161287796,
+            "closing": -1.1543769053957234,
+            "remainder": -14.130284457021379
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -18.255189556305343,
+          "mean_token_NLL": 1.1409493472690841,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.052072389173398806,
+            "numeric": -2.8415528516721023,
+            "closing": -1.2752527967183245,
+            "remainder": -14.111311428262729
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    },
+    "real_post-seed2026101913": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.766575735134843,
+          "mean_token_NLL": 1.0479109834459277,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.08092782036473248,
+            "numeric": -0.9091946256187604,
+            "closing": -1.1574305284333908,
+            "remainder": -14.783070304376832
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -38.45775806891881,
+          "mean_token_NLL": 2.4036098793074254,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -5.456560978966374,
+            "numeric": -5.722235737155232,
+            "closing": -6.015314503794446,
+            "remainder": -21.324489160233036
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -36.89787146921802,
+          "mean_token_NLL": 2.306116966826126,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -8.92026266551787,
+            "numeric": -1.018068242476356,
+            "closing": -7.011398248201717,
+            "remainder": -19.95151726114205
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -38.66243477733702,
+          "mean_token_NLL": 2.4164021735835637,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -8.829508700678426,
+            "numeric": -3.4925229265884097,
+            "closing": -6.643952791736791,
+            "remainder": -19.74915738596077
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -41.93083991613162,
+          "mean_token_NLL": 2.620677494758226,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -7.657808175010066,
+            "numeric": -9.103653550178992,
+            "closing": -5.683123554399748,
+            "remainder": -19.586027033778652
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -20.382381577242796,
+          "mean_token_NLL": 1.2738988485776748,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -15.834559669192895,
+          "mean_token_NLL": 0.989659979324556,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.07109772207160725,
+            "numeric": -0.7121174158644795,
+            "closing": -1.1224286363485427,
+            "remainder": -13.939827453983645
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -38.10007097675047,
+          "mean_token_NLL": 2.3812544360469046,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -5.379443444103834,
+            "numeric": -5.721782488467017,
+            "closing": -6.278424460051277,
+            "remainder": -20.629338840609094
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -36.840244936320076,
+          "mean_token_NLL": 2.3025153085200047,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -8.955648773694893,
+            "numeric": -0.911964835769778,
+            "closing": -7.587902262280009,
+            "remainder": -19.278451599581558
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -38.44059552031112,
+          "mean_token_NLL": 2.402537220019445,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -8.881876535149685,
+            "numeric": -3.229107150228897,
+            "closing": -7.1796624574780585,
+            "remainder": -19.07597045204615
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -41.55379938714813,
+          "mean_token_NLL": 2.5971124616967582,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -7.637642579249651,
+            "numeric": -8.908310964285207,
+            "closing": -5.909681090150043,
+            "remainder": -19.034086818285367
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    },
+    "real_post-seed2026101914": {
+      "DEV_AST256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -16.772348239733248,
+          "mean_token_NLL": 1.048271764983328,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -0.07099639540138014,
+            "numeric": -0.8779330384314421,
+            "closing": -1.1694233139529029,
+            "remainder": -14.82809556874919
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -39.07551804947468,
+          "mean_token_NLL": 2.4422198780921676,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -6.250722312158154,
+            "numeric": -4.595196803964808,
+            "closing": -6.640887415166118,
+            "remainder": -21.64664074751785
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -37.30319843698157,
+          "mean_token_NLL": 2.331449902311348,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -8.78904991572903,
+            "numeric": -0.9223685588421371,
+            "closing": -7.113129492573095,
+            "remainder": -20.4900176939819
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -38.81869742071761,
+          "mean_token_NLL": 2.4261685887948508,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -8.683069288730621,
+            "numeric": -3.2418250080645152,
+            "closing": -6.741451631551759,
+            "remainder": -20.183324527391964
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -42.81823997570346,
+          "mean_token_NLL": 2.6761399984814664,
+          "generation_error_rows": 0,
+          "component_supported": 248,
+          "component_descriptive_means": {
+            "leading": -7.617321485473264,
+            "numeric": -9.578648653043333,
+            "closing": -5.948677735478287,
+            "remainder": -19.79048094297607
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_ordinary256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -20.396928838771345,
+          "mean_token_NLL": 1.274808052423209,
+          "generation_error_rows": 0,
+          "component_supported": 0,
+          "component_descriptive_means": null,
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      },
+      "DEV_legacy256": {
+        "raw": {
+          "documents": 256,
+          "mean_span16_logprob": -15.874846815020131,
+          "mean_token_NLL": 0.9921779259387582,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -0.06283963305758157,
+            "numeric": -0.6801891598833957,
+            "closing": -1.140220997361119,
+            "remainder": -14.002741921988488
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "empty": {
+          "documents": 256,
+          "mean_span16_logprob": -38.778309072270424,
+          "mean_token_NLL": 2.4236443170169015,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -6.191474226841414,
+            "numeric": -4.5888562250233464,
+            "closing": -6.962916746099231,
+            "remainder": -20.939359356822198
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "oracle": {
+          "documents": 256,
+          "mean_span16_logprob": -37.230968171063694,
+          "mean_token_NLL": 2.326935510691481,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -8.853133429569077,
+            "numeric": -0.7925753613808537,
+            "closing": -7.676885625826143,
+            "remainder": -19.809641150308547
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "own": {
+          "documents": 256,
+          "mean_span16_logprob": -38.73283759062701,
+          "mean_token_NLL": 2.420802349414188,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -8.787408000444511,
+            "numeric": -3.0390179698517814,
+            "closing": -7.301970905602067,
+            "remainder": -19.508486047738007
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        },
+        "other": {
+          "documents": 256,
+          "mean_span16_logprob": -42.23881310202469,
+          "mean_token_NLL": 2.6399258188765438,
+          "generation_error_rows": 0,
+          "component_supported": 251,
+          "component_descriptive_means": {
+            "leading": -7.643538231868668,
+            "numeric": -9.107246357418848,
+            "closing": -6.239820366825508,
+            "remainder": -19.189031680335138
+          },
+          "component_uncertainty": "No componentCI:primaryfull16usesall256;unsupportedcomponentboundariesareexplicit."
+        }
+      }
+    }
+  },
+  "training_costs": [
+    {
+      "arm": "real_raw",
+      "seed": 2026101913,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 4653686
+      },
+      "warm_last60_median_update_seconds": 5.984623302501859
+    },
+    {
+      "arm": "real_raw",
+      "seed": 2026101914,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 4653686
+      },
+      "warm_last60_median_update_seconds": 6.018134700512746
+    },
+    {
+      "arm": "real_prior",
+      "seed": 2026101913,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 4828216
+      },
+      "warm_last60_median_update_seconds": 5.910982785499073
+    },
+    {
+      "arm": "real_prior",
+      "seed": 2026101914,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 4828216
+      },
+      "warm_last60_median_update_seconds": 5.922091682514292
+    },
+    {
+      "arm": "real_post",
+      "seed": 2026101913,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 4823096
+      },
+      "warm_last60_median_update_seconds": 5.940783508500317
+    },
+    {
+      "arm": "real_post",
+      "seed": 2026101914,
+      "actual_updates": 320,
+      "terminal_counters": {
+        "expressions": 10240,
+        "supervised_tokens": 4823096
+      },
+      "warm_last60_median_update_seconds": 5.931467320493539
+    }
+  ],
+  "loss_allocation": {
+    "status": "AUDITED_ACTUAL_LABEL_TOTALS_AND_LITERAL_CE_ALLOCATION_NO_OUTCOME_SELECTION",
+    "utc": "2026-10-19T05:45:15.162443+00:00",
+    "arms": {
+      "real_raw": {
+        "document_occurrences": 10240,
+        "active_token_counts": {
+          "prefix": 4489846,
+          "future16": 163840,
+          "trace": 0,
+          "closing_or_eos": 0
+        },
+        "total_active_tokens": 4653686,
+        "mean_per_example_CE_coefficient_mass": {
+          "prefix": 0.9606120368727576,
+          "future16": 0.03938796312735978,
+          "trace": 0.0,
+          "closing_or_eos": 0.0
+        },
+        "padded_causal_tokens": 6553600
+      },
+      "real_prior": {
+        "document_occurrences": 10240,
+        "active_token_counts": {
+          "prefix": 4489846,
+          "future16": 163840,
+          "trace": 164290,
+          "closing_or_eos": 10240
+        },
+        "total_active_tokens": 4828216,
+        "mean_per_example_CE_coefficient_mass": {
+          "prefix": 0.9247689161849412,
+          "future16": 0.037674952034436805,
+          "trace": 0.035308510471824706,
+          "closing_or_eos": 0.002247621308844589
+        },
+        "padded_causal_tokens": 6553600
+      },
+      "real_post": {
+        "document_occurrences": 10240,
+        "active_token_counts": {
+          "prefix": 4489846,
+          "future16": 163840,
+          "trace": 164290,
+          "closing_or_eos": 5120
+        },
+        "total_active_tokens": 4823096,
+        "mean_per_example_CE_coefficient_mass": {
+          "prefix": 0.9257537750646692,
+          "future16": 0.03772162762872477,
+          "trace": 0.035397869427583106,
+          "closing_or_eos": 0.0011267278790652764
+        },
+        "padded_causal_tokens": 6553600
+      }
+    },
+    "source_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "limits": [
+      "One mean over active token losses per example, followed by the batch mean. These coefficient fractions are not measured gradient-norm fractions or loss-value fractions.",
+      "Both seeds use the same aggregate one-plain/one-augmented exposure. The actual terminal counters match these counts in all six models.",
+      "All arms use fixed width640,global32,320updates. Equal updates/shape do not replace measured compute accounting; active token totals are not a FLOP estimate.",
+      "This describes the fixed objective before capability review; no weight/objective or success gate was changed."
+    ],
+    "coefficient_formula": "For each document let P=len(prefix_ids)-1,T=len(full_calculation_ids). Raw view counts(P,16,0,0); prior augmented(P,16,T,2); post augmented(P,16,T,1). Divide each category by that view total, then average over10240 occurrences. Each augmented arm sees one raw and one augmented view per document.",
+    "source_commit": "3d8666b"
+  },
+  "note_costs_and_failures": {
+    "B0": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 32107,
+        "mean_actions": 125.41796875,
+        "capped": 241,
+        "empty": 1,
+        "errors": 0,
+        "stop_types": {
+          "length_cap": 241,
+          "token:151643": 12,
+          "token:16141": 3
+        },
+        "generation_wall_seconds_sum": 2639.824858756183,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 3106.908312111016,
+        "native_max_bidirectional_KL": 2.630818671917323e-10,
+        "native_max_logp_error": 0.00013939253258499207,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 2.0192883811276374e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 31864,
+        "mean_actions": 124.46875,
+        "capped": 241,
+        "empty": 1,
+        "errors": 0,
+        "stop_types": {
+          "length_cap": 241,
+          "token:151643": 11,
+          "token:16141": 4
+        },
+        "generation_wall_seconds_sum": 2693.498411219043,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 2868.151712530991,
+        "native_max_bidirectional_KL": 2.630818671917323e-10,
+        "native_max_logp_error": 0.00013939253258499207,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 2.0192883811276374e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    },
+    "real_raw-seed2026101913": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 32675,
+        "mean_actions": 127.63671875,
+        "capped": 255,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "length_cap": 255,
+          "token:16141": 1
+        },
+        "generation_wall_seconds_sum": 3350.8060718482593,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 3551.594611573004,
+        "native_max_bidirectional_KL": 6.479512769742957e-10,
+        "native_max_logp_error": 0.00023525828320458686,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.9391256298462167e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 32444,
+        "mean_actions": 126.734375,
+        "capped": 253,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "length_cap": 253,
+          "token:16141": 3
+        },
+        "generation_wall_seconds_sum": 3401.8792915539525,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 3638.7997438779857,
+        "native_max_bidirectional_KL": 6.479512769742957e-10,
+        "native_max_logp_error": 0.00023525828320458686,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.9391256298462167e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    },
+    "real_raw-seed2026101914": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 32680,
+        "mean_actions": 127.65625,
+        "capped": 254,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "length_cap": 254,
+          "token:16141": 2
+        },
+        "generation_wall_seconds_sum": 3319.18968645102,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 3534.1672591770184,
+        "native_max_bidirectional_KL": 2.0597381233803104e-10,
+        "native_max_logp_error": 0.0001935936267472016,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.3646579780868251e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 32564,
+        "mean_actions": 127.203125,
+        "capped": 253,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "length_cap": 253,
+          "token:16141": 3
+        },
+        "generation_wall_seconds_sum": 3416.6763136301015,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 3659.864712351002,
+        "native_max_bidirectional_KL": 2.0597381233803104e-10,
+        "native_max_logp_error": 0.0001935936267472016,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.3646579780868251e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    },
+    "real_prior-seed2026101913": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 8594,
+        "mean_actions": 33.5703125,
+        "capped": 0,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:16141": 256
+        },
+        "generation_wall_seconds_sum": 990.2653080728778,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1224.8024098559981,
+        "native_max_bidirectional_KL": 1.8703292338236355e-10,
+        "native_max_logp_error": 0.0001816537828993603,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 2.2868728777325487e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 8359,
+        "mean_actions": 32.65234375,
+        "capped": 0,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:16141": 256
+        },
+        "generation_wall_seconds_sum": 898.5691877639329,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1128.0103998229897,
+        "native_max_bidirectional_KL": 1.8703292338236355e-10,
+        "native_max_logp_error": 0.0001816537828993603,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 2.2868728777325487e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    },
+    "real_prior-seed2026101914": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 8691,
+        "mean_actions": 33.94921875,
+        "capped": 1,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:16141": 255,
+          "length_cap": 1
+        },
+        "generation_wall_seconds_sum": 1010.0109175843536,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1251.0870744929707,
+        "native_max_bidirectional_KL": 5.376483338827803e-11,
+        "native_max_logp_error": 0.00012562338759991576,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.9073365720601032e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 8404,
+        "mean_actions": 32.828125,
+        "capped": 1,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:16141": 255,
+          "length_cap": 1
+        },
+        "generation_wall_seconds_sum": 880.757139900641,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1104.7651638009702,
+        "native_max_bidirectional_KL": 5.376483338827803e-11,
+        "native_max_logp_error": 0.00012562338759991576,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.9073365720601032e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    },
+    "real_post-seed2026101913": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 9267,
+        "mean_actions": 36.19921875,
+        "capped": 0,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:151643": 256
+        },
+        "generation_wall_seconds_sum": 1037.0962215378531,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1280.7282127140206,
+        "native_max_bidirectional_KL": 3.224113078150584e-10,
+        "native_max_logp_error": 0.00018296860487865274,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 2.2888065991821804e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 9044,
+        "mean_actions": 35.328125,
+        "capped": 1,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:151643": 255,
+          "length_cap": 1
+        },
+        "generation_wall_seconds_sum": 943.1849077543302,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1171.2981031709642,
+        "native_max_bidirectional_KL": 3.224113078150584e-10,
+        "native_max_logp_error": 0.00018296860487865274,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 2.2888065991821804e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    },
+    "real_post-seed2026101914": {
+      "DEV_AST256": {
+        "documents": 256,
+        "generated_actions": 9251,
+        "mean_actions": 36.13671875,
+        "capped": 0,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:151643": 256
+        },
+        "generation_wall_seconds_sum": 1018.2094464719412,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1278.3796007259807,
+        "native_max_bidirectional_KL": 2.700378101493909e-10,
+        "native_max_logp_error": 0.00013361200337591583,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.907340379858624e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      },
+      "DEV_legacy256": {
+        "documents": 256,
+        "generated_actions": 9040,
+        "mean_actions": 35.3125,
+        "capped": 2,
+        "empty": 0,
+        "errors": 0,
+        "stop_types": {
+          "token:151643": 254,
+          "length_cap": 2
+        },
+        "generation_wall_seconds_sum": 927.6329907308391,
+        "fixed_reader_closing_boundary": {
+          "text": "Answer:\n",
+          "native_tokens_per_document": 2,
+          "total_for_panel": 512
+        },
+        "worker_wall_seconds_sum": 1159.624882441014,
+        "native_max_bidirectional_KL": 2.700378101493909e-10,
+        "native_max_logp_error": 0.00013361200337591583,
+        "native_all_argmax_equal": true,
+        "cache_max_logp_error": 1.907340379858624e-05,
+        "limits": "GenerationtimingisTrainiumFP32;likelihoodtimingisCPUFP32,notacontrolledend-to-endservicelatency."
+      }
+    }
+  },
+  "payloads": {
+    "validation/real_trace_cpt_v10_complete_20261019/B0-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "68b218e7566b1b1ce13f995468c1f655cc4233391f89a9cc159a33270542f293"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/B0-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "1d1721ca9a39ff9078e73a7c2ccf675821087ee2938f2a08b6e9b96caa6cf651"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/B0-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "9bf37b1d4b45dab3b657d3e0de004b3a0ba413aa5c47f069cace138d9eff91b4"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101913-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "0e812dd7ce781995f0b900c046b4431d467cd2cd67de4b12039c4d5afef859b6"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101913-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "5f1ed9d2a599cd6e4b90e623dfb0f91743f6f9fc11b323fcf9e63785ece0363e"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101913-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "67647d0852819ff11dda81a7e6b43e1c4bf31e0009384b87f73b69e7e71f8680"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101914-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "a1fc8a0a53ddf9499a035d3e521c7d6d2683fd8ed0f6fb31d03d96811ff552d9"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101914-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "4895371c306574b965c58ca0fb43a8f2331c1b02128a1ed000b8ba9a322573d6"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101914-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "60a9158b295cdb5da4586832448e923d7279d13b8c482e640b198b1a84a58fc7"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101913-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "31870893172517cfaaee11934be504749f9d5a59fdcb205d0e6e0bbcf8d55fcd"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101913-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "7fc7788514284693bdfba90a8de2a09aef15bdab9c667997f9e884d84da015b2"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101913-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "65e63ad1efdcebee050b3caf19268a282de44fdddf805f99f17b874979211505"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101914-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "9b4e9e3a5bb20b28f3920a3a7f699c8db81d94e75d087578bc3e953c1d6bc0c1"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101914-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "7ae82ca145ca4b37294d3c5549ccb833f78c4b31098b2e8bcdd286997dda579d"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101914-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "bdb7c02685020236e0ec3c22657e66b63e18458df9cb3351e80bcd657817a428"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101913-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "0f3b63183bf5bd1e594d001e57f6b65ffa064cd6b720b30702ada2ebede612a6"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101913-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "c11c829f277166c1a6164e2856bb96dcf70aa076702a6f2c6b8b389b500f5f31"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101913-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "bb249dc1ba206c0e65bbe7c8858c5890fa0d1d3d768d13f5ba3f335c7e7e3075"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101914-DEV_AST256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "8406ebe6a805d5ea86bac99fc9c87da106ece9b8d682fefbe48cf81962f425d7"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101914-DEV_ordinary256-all256-logps.jsonl.gz": {
+      "rows": 256,
+      "sha256": "f348d70c13e25cd2466bc4beeb2ff4ec41347e8531453cf62e75fdd078864625"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101914-DEV_legacy256-all1280-logps.jsonl.gz": {
+      "rows": 1280,
+      "sha256": "a33b029e39e7b72116689a903fef09530282d2dd502c5b36541f749cf73e131f"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/B0-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "41a36024407a0946641392de500415d746e22de19134e547cbf9071100fa7bd1"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/B0-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "6a69c162f32aa61fa07c1e1e28a6348673d1247f3b76b6b880f6b4b035b115c9"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101913-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "6938d1b01813d43197e22aa1ad589baba02ddce31e14017ae6ca55f4fafd8a1b"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101913-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "3d4d88708ef8babf26a01658b23a505669bed4c53b2b995576f01fbb81fe556f"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101914-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "a3974b1c7a69b848b9c2ec4ace65f2febe25770271ae1ae9b1fffd78b1500d33"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_raw-seed2026101914-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "f4402e7bd8504306451d36e5a63fc4ebcb4877ac1b8a64503dee1d5913389acd"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101913-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "e8b80bcb90d862aa2f67df1b334d44a554e90b032684495feb6a6176cb9a1085"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101913-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "0a34e7d763b3466b237ab42774b55a4e4889875dc459daa1c5979165e8030ba2"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101914-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "a5764571dc4a214dbc4e541a97ab3f82e9c036c80e1d5cecddbe5a09b0ef1657"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_prior-seed2026101914-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "bd5abbb982e9a963b2a9ab15406fb3637299e08f2bd0ba5791077d084bd297b3"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101913-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "4ad72930bd41f2fd77cebb84f28df5a88e515dda0e9a54662661fc153fe5d141"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101913-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "e81faea48762d58a422047553f756f8a6d030accaf8118a3b184601476beff77"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101914-DEV_AST256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "9736024abd1d0ed87abcd61f5680dce979e5bf6b9ce69628fc68b659f6c158c8"
+    },
+    "validation/real_trace_cpt_v10_complete_20261019/real_post-seed2026101914-DEV_legacy256-all256-generated-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "71170dbff65441d4a09b08b31131e4b5ff5bb348be31fbed6d08e92877e35b99"
+    }
+  },
+  "source_receipts": {
+    "B0/DEV_AST256": {
+      "run_sha256": "9c5b087ff0cba752e146e7d78155d68a720378c9b28f9947db3e2c369e5f2d71",
+      "original_logps_sha256": "21ded4a648fe26464c35f5cc2755ea92ee694068176dab6cbd85399f7e5dedda",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      },
+      "CPU_panel_wall_seconds": 1611.715420063003,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "B0/DEV_ordinary256": {
+      "run_sha256": "7f8c7870272f258b7406cfeb8eda3723ad184e48a989a429a6818ff9a1918621",
+      "original_logps_sha256": "c0f386423fd81e62d7ca5f2c5892a7b679c04b4ec948e7d5119a9b037aba756b",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      },
+      "CPU_panel_wall_seconds": 325.5221974120068,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": true
+    },
+    "B0/DEV_legacy256": {
+      "run_sha256": "176b53f37637bcd94366acec80c5c5f05a3b30139be8055ece6c6adc8f1baeb6",
+      "original_logps_sha256": "072c10caa881c8255a0334b9e83399b8cae2bbccf5d22a9c9df076241c03a466",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+      },
+      "CPU_panel_wall_seconds": 1840.6646248720062,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_raw-seed2026101913/DEV_AST256": {
+      "run_sha256": "0c447afb8c9bb1ec9504ffd63301891fd802575e84c5abc84cbe61b3aa3d85bc",
+      "original_logps_sha256": "f16a7c57ff49792df237653c9d819c8494ea09a8b59da2d4447ec5fe4f5266c6",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "ad9c505023a64df6bba1a8c657b212bca3583e12648b967547c00faf516408c5"
+      },
+      "CPU_panel_wall_seconds": 2583.342929167993,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_raw-seed2026101913/DEV_ordinary256": {
+      "run_sha256": "7454e87cfcd64a641e5fee9ff62c39f9ef1c2ea4ce892aa34d904c3cf1cf7b4b",
+      "original_logps_sha256": "d01750eb7a595c586d0ec1ca29e17826b96cce09673225b662534d9a509bd569",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "ad9c505023a64df6bba1a8c657b212bca3583e12648b967547c00faf516408c5"
+      },
+      "CPU_panel_wall_seconds": 447.35500067897374,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_raw-seed2026101913/DEV_legacy256": {
+      "run_sha256": "9f27ff437617b08653ace78eb8a36c09dda4b64c91560d024f080a5e73ce557b",
+      "original_logps_sha256": "94a9a7c27cf539f19fdb7ef74c47b078f47646bc38a7bf98dde1813e747f574c",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "ad9c505023a64df6bba1a8c657b212bca3583e12648b967547c00faf516408c5"
+      },
+      "CPU_panel_wall_seconds": 1859.7893755219993,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_raw-seed2026101914/DEV_AST256": {
+      "run_sha256": "f5c690f01cc49946cc7fa10a30da63ec6b272cbccf85028f17c1a9d1c1711ac5",
+      "original_logps_sha256": "66fa151588f386737ca92ed856358941397ddcc18f59ea3db8301e808bc13461",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "36d38238b0a8010ba91990a2b9c18078ad4b6a8c44ca526eacb5878ffc7b3783"
+      },
+      "CPU_panel_wall_seconds": 2182.619893191004,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_raw-seed2026101914/DEV_ordinary256": {
+      "run_sha256": "803bbe8e6f1930d104c44d4d98988d61af2a45fc9f2a0281a0818871fda3d78c",
+      "original_logps_sha256": "e8340b5cf91fc1204ef5d4af76eddd4439b60ae94011753c19041e1c5339a3e8",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "36d38238b0a8010ba91990a2b9c18078ad4b6a8c44ca526eacb5878ffc7b3783"
+      },
+      "CPU_panel_wall_seconds": 531.3376674639876,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_raw-seed2026101914/DEV_legacy256": {
+      "run_sha256": "53bcd51ecaf683efbd0dcf490a66e4ed5aed88618380b646570cf0722c386cd9",
+      "original_logps_sha256": "b6fecc99511f9aead9131e2c7e405a76a4bc3b9deda65766f99ac3c948722b27",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "36d38238b0a8010ba91990a2b9c18078ad4b6a8c44ca526eacb5878ffc7b3783"
+      },
+      "CPU_panel_wall_seconds": 1959.7451042199973,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_prior-seed2026101913/DEV_AST256": {
+      "run_sha256": "14ae61902d2dff03d7a092e62fc753ce64a36c20b30398aa1262e1043d93b3a6",
+      "original_logps_sha256": "6b37c474451fe58e3ab8c255d8320bd77f3c7a288e083c2a88da48b07d447652",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "5e7b96680ebf309da3d8da0292313ba4142f4e7789062baa967083d3e0a665eb"
+      },
+      "CPU_panel_wall_seconds": 1959.0377161589859,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_prior-seed2026101913/DEV_ordinary256": {
+      "run_sha256": "39694a71009d822c4f57dd43763e5c5df35cc6b5be5720c3f43e7422cf4a91f5",
+      "original_logps_sha256": "21219ec277e7b0195514fb75425e766eed4069f9505e77e08d9c8c38fb91a369",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "5e7b96680ebf309da3d8da0292313ba4142f4e7789062baa967083d3e0a665eb"
+      },
+      "CPU_panel_wall_seconds": 466.90283714799443,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_prior-seed2026101913/DEV_legacy256": {
+      "run_sha256": "b88ec1ce22cc2b278460d3b8132f2e717c0cb91c8e4e481eb57a7a4a7baff8c4",
+      "original_logps_sha256": "700ba7f9c0301c1ff89c363a42cf7a325346681c88854bb133af2407b0ff309c",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "5e7b96680ebf309da3d8da0292313ba4142f4e7789062baa967083d3e0a665eb"
+      },
+      "CPU_panel_wall_seconds": 1920.6703940880252,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_prior-seed2026101914/DEV_AST256": {
+      "run_sha256": "d80e79d9f50e60c9ec25e69b8f92fce8728179a473e360986d0f9b4ba80921fd",
+      "original_logps_sha256": "e7392f472653e9ecd89d57d7f3f23cbbc9580a33c67c10819379321823deb809",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "1f5e19166f2177106aff1455c12bdf9dbac77d2ef912dbf56214ad4c753d777a"
+      },
+      "CPU_panel_wall_seconds": 2354.922310533002,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_prior-seed2026101914/DEV_ordinary256": {
+      "run_sha256": "b02adc2d7decc60f482dc5c13417fdfc2b43f3e963b5dbe77fbdc93618a453b8",
+      "original_logps_sha256": "8e564f3164e38b054d372c8af1b374d5008329d295d71e22fcbf2bab3bd90854",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "1f5e19166f2177106aff1455c12bdf9dbac77d2ef912dbf56214ad4c753d777a"
+      },
+      "CPU_panel_wall_seconds": 561.1475707280042,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_prior-seed2026101914/DEV_legacy256": {
+      "run_sha256": "e6946f3141f3285db0d507007b197fda5b6dfa4cf241ff233b64debc0ca9ead8",
+      "original_logps_sha256": "1624282f95300ccbad5c12c97bea3ad454577f62214951cfcf5c97fc3d35baa1",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "1f5e19166f2177106aff1455c12bdf9dbac77d2ef912dbf56214ad4c753d777a"
+      },
+      "CPU_panel_wall_seconds": 1813.4429297870083,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_post-seed2026101913/DEV_AST256": {
+      "run_sha256": "c71b9ba3e870918e87fc42eccfcb45865c99c5f0221afb865498a33a62afc0a7",
+      "original_logps_sha256": "d40a601a86d07af70c9ca0069f3a9c85427c102d5e8cb7858453f263f64a6057",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "1d581f4f93736f584fed090193b516b0d795724fad9118f79c42422a1a691718"
+      },
+      "CPU_panel_wall_seconds": 2326.1190903990064,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_post-seed2026101913/DEV_ordinary256": {
+      "run_sha256": "5218510243cba8a0840b68d8dadc68257e63de4346cb270400ee415693a5eb2f",
+      "original_logps_sha256": "d57fee021e2f80f917e29b362ccd70bb0f8f24c22387b4c11046f5a49ccd80f1",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "1d581f4f93736f584fed090193b516b0d795724fad9118f79c42422a1a691718"
+      },
+      "CPU_panel_wall_seconds": 569.2640744380187,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_post-seed2026101913/DEV_legacy256": {
+      "run_sha256": "cc4a905e3f6b9113a8159a7c73685815954bc9a9c7411ef2c9a11fbc922e2714",
+      "original_logps_sha256": "5af2fa8c568e549b451f16ea4adbaba7bb3ebe0fd045393d1a96c55392fee1f0",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "1d581f4f93736f584fed090193b516b0d795724fad9118f79c42422a1a691718"
+      },
+      "CPU_panel_wall_seconds": 1844.5113458280102,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_post-seed2026101914/DEV_AST256": {
+      "run_sha256": "12a12a7d1a6a94167e3d97d0dba70ea710a4fa4136f3c0f5d67764da9fd55a59",
+      "original_logps_sha256": "5040953f5488d471dc7802c27d750a4c11584605a8737887b0ea0662407a44e4",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "0078dc2b44dc2049339d197c271d28e85501df7060ef28557669e61dc3a0575e"
+      },
+      "CPU_panel_wall_seconds": 2285.523854817002,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_post-seed2026101914/DEV_ordinary256": {
+      "run_sha256": "00213a9758efc7c5df964e5de7177104c11090deb594c45ec347ed09e72d8fc8",
+      "original_logps_sha256": "c37af58d902b25125c0fca7bf5bc4adce02b7aa84531a6aea77ccf619c4d166c",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "0078dc2b44dc2049339d197c271d28e85501df7060ef28557669e61dc3a0575e"
+      },
+      "CPU_panel_wall_seconds": 549.3326167660125,
+      "CPU_panel_scored_rows": 256,
+      "reused_B0_ordinary_reference": false
+    },
+    "real_post-seed2026101914/DEV_legacy256": {
+      "run_sha256": "2f3ae1a1649e56a2db6dd469bdeb2e4303db68d9921701322daccfd74406b26d",
+      "original_logps_sha256": "6215b052291c619d22fd91e939cce3ef8d7ac10945d852c5493f3fb963de1fbc",
+      "model_signature": {
+        "parameters": 1720574976,
+        "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+        "sampled_parameter_sha256": "0078dc2b44dc2049339d197c271d28e85501df7060ef28557669e61dc3a0575e"
+      },
+      "CPU_panel_wall_seconds": 1771.5228001719806,
+      "CPU_panel_scored_rows": 1280,
+      "reused_B0_ordinary_reference": false
+    }
+  },
+  "limits": [
+    "SelectedFineMathDEVheldfromourfinetuning,notguaranteedpretrainingnoveltyorofficialTEST.",
+    "Each256documentpanelandsource/checkpointisseparate;20kpairedbootstrapwithseed2026101915conditiononcheckpoints,nottrainingseeduncertainty.",
+    "Ordinaryregressionreportedforall;predeclaredtraininggateappliespostguard. Equal-modepriorown/rawowncomparisonseparatesdataaugmentationfromaddinginferencecompute.",
+    "Likelihood primary; no free-answer accuracy or end-to-end service latency claim. All arms use 320 updates and 10,240 document occurrences, with different supervised-token totals and loss allocation; active token totals are not a FLOP measurement; padded training shapes match.",
+    "All128actioncapsandgenerationerrorsretained;anexecutionerrorprecludesinferencegatebutnotindependentrawtrainingbenefit.",
+    "Oracleincludesrootanswerandisprefix-computable,notdeployedgenerationevidence.",
+    "Neitherbeatingadegradedcontrolnorpositiveown-emptyaloneestablishesimprovementoverB0orcontent-sensitivecomputation."
+  ]
+}

@@ -1,37 +1,26 @@
 # Current queue
 
-1. Finish the fixed single-model real-document evaluation. All six raw/prior/post
-   training runs completed320 updates and physically closed. Independent checks
-   pass all12 full160/320 states,48 native vectors and1,920 ordered updates.
-   All six terminal weights and the latest full320 state are EBS-protected.
-   Latest full: real_raw seed2026101914. No additional training or model selection.
-   Public training report:validation/real_trace_cpt_v10_terminal_training_20261019.json.
+1. Both fixed real-document readouts are complete and independently checked.
+   Publish the primary and prospective scalar secondary together, with all outputs,
+   failures, controls, figures and disclosed examples. No parser or gate change.
+   Primary report:validation/real_trace_cpt_v10_complete_20261019.json.
+   Scalar report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
+   Both likelihood gates FAIL. Scalar prior-own beats raw CPT by9.0/6.6pp,
+   with positive paired intervals;this does not establish training-only benefit.
+   All six terminal models/latest full320 are protected;original states retained.
+   Controls:local/diagnostics/real-trace-cpt-v10-study-v1 and
+   local/diagnostics/real-trace-v10-scalar-secondary-study-v1. Producers are closed.
 
-   Control:local/diagnostics/real-trace-cpt-v10-study-v1.
-   Immutable training3d8666b; evaluation29c8b24,1,646 CPU checks.
-   The release watcher completed all six fixed launches;
-   cpt-eval-* generates its original notes, cpt-score-* scores full native16 spans.
-   B0 scoring: cpt-v10-B0-CPU-scoring; its ordinary reference is explicitly reused.
-   Final archive/readout: cpt-v10-final-readout. Do not duplicate these jobs.
-   Prepared readout checker/renderer in local/analysis:
-   check_real_trace_readout_v10_20261019.py and render_real_trace_readout_v10_20261019.py.
-   After all complete, independently check signs/counts/gates, inspect figures,
-   save deterministic examples, then publish complete results and interpretation.
-
-2. Finish the already-declared scalar-continuation secondary. Same seven models,
-   same original notes and two separate arithmetic panels; five modes,greedy32.
-   Existing initial-scalar-v2 remains unchanged; every error/unsupported/cap stays.
-   Public design:validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json.
-   Source:local/worktrees/real-trace-answers-v10 at4297c1d;1,657 full CPU checks,
-   latest11 affected checks after tighter original-binding validation.
-   B0 runs on physical12; actual four-core native/cache672 checks pass.
-   Tmux cpt-v10-scalar-release waits for each model's complete original notes,
-   then releases its two panels on physical6–11. Each model checks itself again.
-   Control:local/diagnostics/real-trace-v10-scalar-secondary-study-v1.
-   Tmux cpt-v10-scalar-readout archives/rechecks all17,920 attempts once complete.
-   Scalar accuracy is secondary and does not change either likelihood gate.
-   Prepared figure/CSV renderer:render_real_trace_scalar_secondary_v10_20261019.py.
-   No broad QA, equal-compute or controlled service-latency claim follows.
+2. Close the forward-only fast-scoring engineering profile separately.
+   B0v14-v2 completes all1,280 rows on one configured logical core:parity and
+   declared>=4x warm throughput pass. Archive original outputs/source/closure.
+   This does not qualify trained weights,RL steps,BF16 sampling,gradients or sync.
+   Then choose one bounded scientific follow-up. A strong missing reference is
+   ordinary answer-focused SFT versus full-trace CoT SFT on the SAME verified
+   real documents,with prefix unscored. Current CPT allocates about3.5% of its
+   normalized CE coefficient mass to added trace tokens. New objective requires
+   a new identity,prospective fixed design and actual workload qualification.
+   Do not silently tune the closed studies or start RL/8B from the scalar gain.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

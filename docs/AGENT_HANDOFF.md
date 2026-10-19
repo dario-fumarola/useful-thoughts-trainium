@@ -1,73 +1,51 @@
-# Current research handoff — 2026-10-19 05:58 UTC
+# Current research handoff — 2026-10-19 07:18 UTC
 
-Continue autonomous work until the owner stops it. Do not finish at a milestone.
-Read STATUS.md and NEXT_STEPS.md. Agents are quota-unavailable; do not retry.
-Keep commentary meaningful and no more than60 seconds apart. Avoid long internal
-planning while runs progress. No active goal; do not infer/create a goal.
+Continue authorized autonomous work; do not stop at a milestone. Read STATUS.md
+and NEXT_STEPS.md. Agents remain quota-unavailable;do not retry. Updates<=60sec.
+No active goal;do not create one. No8B/broadRL/officialTEST/cloud changes.
 
-## Latest live snapshot — 06:16 UTC
+## Latest completed evidence and exact next actions
 
-All original real-note jobs are complete. B0 CPU likelihood is fully complete;
-six trained-model CPU scorers continue. All seven scalar jobs are released;
-B0 and both post arms have fully closed, while prior/raw jobs continue on
-physical6–9. Release watchers exited normally. Final-readout watchers remain live.
-No numeric real-model capability result has been reviewed. Use the mechanical
-health helper below; do not relaunch producers that have already finished.
-Primary analysis now includes all within-model tax/oracle/content contrasts,
-separate CPU scoring/call/worker costs and observed numerical diagnostics. Gates
-and models are unchanged. Checker/renderer scripts remain prepared, unexecuted.
+Both fixed real-data readouts are complete. All producers/watchers closed normally.
+Main report:validation/real_trace_cpt_v10_complete_20261019.json.
+Primary report SHAeb5f6b07aa4b39da6f708a7941fc2bc3bbaf1580b5bc3942979730acab2e1bf4.
+Independent checker PASS19,712likelihood rows/3,584notes/all20kbootstrap intervals.
+Both primary gates FAIL:post.raw−raw.raw+0.012/+0.006nat;prior.own−raw.raw+0.097/−0.139.
+Ordinary FineMath regression bounds pass. Own−empty/other positive in both seeds,
+but not sufficient to rescue either primary gate. B0raw remains a strong LL control.
+Scalar report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
+SHA c25b6a06f855684622084a9e4744b2c55ef8f7290f31ee108e0aca8537e1855f.
+Independent check PASS17,920answers,native stops,exact numbers,all paired intervals.
+AST256priorown216/213 versusrawCPT193/196 andsamepriorempty175/172.
+Paired+9.0/+6.6pp versusrawCPT,positive intervals;unsupported25/24 retained.
+No execution errors. This is a prospective secondary,not primary success or generalQA.
+All35+14raw payloads,CSV,plots and28 disclosed examples are ready for publication.
+Sources/checkers/renderers copied into each result directory/analysis-source.
+Original raw reports MUST stay immutable;their SHA bindings are checked.
+Posthoc error-transition-source.py independently reproduces every descriptive
+partition;gain includes numerical corrections and improved format coverage.
 
-## Exact next actions
+Next:finish presentation-annex EBS readback protection;review and commit/push
+complete mixed result/README/STATUS/NEXT. Then close the forward-only scoring
+engineering result below and select a bounded next scientific intervention.
+No new model is running. All six terminal models/latest full320 are protected.
+Immutable training3d8666b,likelihood29c8b24,scalar4297c1d;do not edit old identities.
+No training extension or checkpoint selection follows from either readout.
 
-1. Monitor the existing evaluation jobs; do not duplicate launchers.
-   Main control:local/diagnostics/real-trace-cpt-v10-study-v1.
-   All six raw/prior/post models, seeds2026101913/14, completed320 updates and
-   physically closed. All12 full160/320 states and48 native checks independently
-   pass. All six terminal weights and latest complete optimizer are EBS-protected.
-   Latest full320:real_raw seed1914. Terminal bindings in control/frozen-models.
-   Immutable training3d8666b,worktree local/worktrees/real-trace-cpt-v10.
-   Public:validation/real_trace_cpt_v10_terminal_training_20261019.json.
+Forward-only engineering:local/diagnostics/real-span-XLA-B0-v14-v2/span_probe.py,
+outputs local/nvme-cpt/diagnostics/real-span-XLA-B0-v14-v2. Exit0,all1280rows,
+configuredone logicalcore,FP32,width672,batch4. Max tokenerror0.00024569,
+absmean span drift0.00021813;declared<=.001 parity passes. Estimated warm
+speedup15.72x versus16-threadCPU,warmbatch~.33sec;firstbatch40.4sec,total161.8sec.
+No gradients/sampling/weight-sync/trained-model qualification orRLstepclaim.
+V1failed before scoring because profile.py shadowed stdlibprofile;preserved.
+Protect allV2originals andV1failure,then publish separate engineering report.
 
-2. Main likelihood evaluation: source29c8b24 at
-   local/worktrees/real-trace-eval-v10,1,646 CPU checks. NEVER edit this source
-   while its generation/scoring jobs live: they verify every dependency hash.
-   The release watcher launched all six fixed models. Each has cpt-eval-{arm}-seed{seed}
-   and cpt-score-{arm}-seed{seed}. Full registry:control/evaluation-registry.json
-   confirms ALL_SIX_FROZEN_TERMINAL_EVALUATIONS_LAUNCHED. B0 notes are complete; cpt-v10-B0-CPU-scoring
-   continues its two arithmetic panels and explicitly reuses ordinary-reference
-   observations. Do not inspect numeric trained outcomes before all models/panels finish.
-
-   Tmux cpt-v10-final-readout waits for all seven CPU completions, then runs archive
-   and analysis once. Source:local/analysis/watch_real_trace_final_readout_v10_20261019.py.
-   Result:validation/real_trace_cpt_v10_complete_20261019.json and matching directory.
-   It saves all35 payloads:19,712 native16 likelihood rows and3,584 original notes.
-   Afterward run check_real_trace_readout_v10_20261019.py and
-   render_real_trace_readout_v10_20261019.py from the evaluation worktree with
-   explicit PYTHONPATH; inspect the figures and independently assess all claims.
-   Complete examples/interpretation/publication remain to do. No automatic Git push.
-
-3. The already-declared scalar secondary is now implemented, not a new training
-   study. Public prospective design:a9c4334 on main. Source4297c1d at
-   local/worktrees/real-trace-answers-v10; full1,657 CPU checks plus latest11 affected
-   checks after tighter binding validation. NEVER change its source while jobs live.
-   Gold/contexts are separate. Existing initial-scalar-v2 unchanged. Greedy32,
-   EOS-only; all256 documents per mode, errors/unsupported/caps retained.
-   Seven fixed models, AST256 and legacy256 separately, five modes:17,920 attempts.
-
-   B0 tmux cpt-scalar-B0, physical12, is generating first-panel answers.
-   All four actual native and cache672/cap32 checks pass. Qualification:
-   local/diagnostics/real-trace-v10-scalar-secondary-study-v1/B0-shape-qualification.json.
-   Tmux cpt-v10-scalar-release waits for each model's complete original note bundles,
-   prepares/protects exact contexts, then launches it on physical6–11. Every trained
-   model checks itself again. No retry or source/notes/model selection.
-   Registry appears after all seven releases. Existing finite watcher is
-   local/analysis/watch_real_trace_scalar_secondary_v10_20261019.py.
-   Tmux cpt-v10-scalar-readout waits for all completions, then archives/rechecks
-   and publishes local JSON/payloads using analyze_real_trace_scalar_secondary_v10_20261019.py.
-   Secondary result path:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
-   Figures, direct independent checks and interpretation still need completion.
-   This measures the initial computed scalar at a curated document boundary;
-   do not call it general problem QA or change the primary likelihood gates.
+Missing practical reference:answer-focused direct SFT versusfulltraceCoTSFT
+on the SAME prefix-computable real data,unscoredprefix. Existing CPT givesadded
+trace~3.5% ofnormalizedCEcoefficientmass,not gradientmass. Newobjective needsnew
+identity/fixedprospectivecomparison/workloadqualification. Finish publication first.
+The bounded split repair stays closed;broader MuSiQue remainsCPUonly preparation.
 
 ## Fixed data and decisions
 
