@@ -1,17 +1,20 @@
-# Status — 2026-10-19 11:39 UTC
+# Status — 2026-10-19 12:36 UTC
 
-## Active: preserve source prediction with useful computation
-Question: can arithmetic gains survive while ordinary prediction stays close to B0?
-Experiment: real-source-balanced-v17; two arms, two seeds, fresh B0, terminal320.
-Design: same TRAIN5120/two passes; separately averaged source/task losses, each weighted0.5.
-Gate per seed: own−direct >=3pp with positive paired CI and empty/B0 controls;
-ordinary NLL upper95% CI versus B0 <=+0.03 nat/token. Both seeds must pass both gates.
-Training complete: 1,280 updates, eight full states and32 native checks independently pass.
-All terminal weights/latest full optimizer state are protected; every original remains.
-All seven frozen references have closed; four new models are entering evaluation.
-Report: validation/real_source_balanced_v17_training_20261019.json; capability results pending.
-Control: local/diagnostics/real-source-eval-v17-study-v1; tmux source-eval-v17-slot7..10.
-Next: monitor execution; review once after all11 models/panels close. No RL/8B release.
+## Closed: source-balanced computation and source quality
+Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?
+Experiment: real-source-balanced-v17; two arms/two seeds, fresh B0, TRAIN5120, terminal320.
+All11 models close:28,160 answers /5,632 notes /30,976 likelihood rows; zero execution errors.
+CoT own434/439 of512 versus direct raw351/357, same-CoT empty341/326, B0raw352.
+Own−direct:+16.2pp[12.1,20.3] /+16.0pp[11.9,20.1]; arithmetic gates PASS both.
+Ordinary NLL:+0.0380[0.0277,0.0486] /+0.0429[0.0310,0.0554] versus B0.
+Upper CI bound<=+0.03 FAILS both; combined gate FAILS both. Threshold unchanged.
+Versus old target-only models on this same panel, NLL-regression point estimates fall75.6%.
+Own notes34.1/34.5 actions, capped0/2, empty0; all source-CoT answers cap32:leading-scalar only.
+Full16 improves over direct but remains below B0; no clear raw arithmetic gain over direct.
+Independent native/text/value/count/CI/gate checks PASS; three figures checked; all artifacts protected.
+Report: validation/real_source_balanced_v17_complete_20261019.json;14 disclosed examples/all failures.
+Decision: retain supervised inference benefit with remaining source cost; no RL/8B release.
+Next: publish complete readout; then specify one bounded document-QA reference with grounded labels.
 
 ## Closed: stronger supervised real-document reference
 Question: does full-trace CoT SFT beat direct-answer SFT on fresh real computations?

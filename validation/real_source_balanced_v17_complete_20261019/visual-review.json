@@ -1,0 +1,17 @@
+{
+  "status": "VISUAL_REVIEW_PASS_AND_COMBINED_GATE_FAILURE_RETAINED",
+  "utc": "2026-10-19T12:38:56.671277+00:00",
+  "report_sha256": "73ee00f3c2d7a6051c6ccf3fab5f0db14270d3a5bc4b346dc502c0bc3b76221e",
+  "figures": {
+    "all-models-scalar-accuracy.png": "ea418fba7875bb04144b40547492cb12786be009468248ad3386957d5de5ec48",
+    "declared-accuracy-contrasts.png": "b6b94dcb61aa942df993358be5cb9864329b23f61016aeb799bae0928720dff5",
+    "ordinary-quality-guard.png": "9d29388b7956723255ca8d36be2f5430f8bcb93db986d7158256970fe8b2e3a2"
+  },
+  "observations": [
+    "Allthreefiguresviewed;labels/counts/CIaxes/unitsanddeclaredthresholdslegible.",
+    "434/439ownversus351/357directandmatching341/326empty;all512retained.",
+    "Accuracygatespassboth;ordinaryupperCI0.0485915/0.0554037exceeds0.03both. Combinedfailureunchanged.",
+    "75.6%costreductionusesoldtarget-onlymodelsrescoredonthesamefreshordinarypanel;no cross-panelcomparison.",
+    "Leadingcompletescalarendpoint;sourceCoTanswersallcap32;notcompleteQA."
+  ]
+}

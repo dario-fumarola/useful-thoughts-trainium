@@ -1,215 +1,132 @@
-# Handoff — 2026-10-19 12:00 UTC
+# Handoff — 2026-10-19 12:40 UTC
 
-## Active task
+## Immediate state
 
-Complete source-balanced V17, then review all eleven models once. Do not inspect
-partial V17 accuracy or likelihood contrasts. Monitor execution, row counts,
-numerical guards, memory, checkpoints and physical closure only. Keep working;
-user authorizes existing-node training, public Git pushes, research and adaptation.
-Agents are quota-unavailable until October24; do not retry. No cloud/IAM/network,
-paid teacher, bucket, official TEST, broad RL, size jump or expanded split rescue.
-Send meaningful commentary at least every60s. Avoid long speculative analysis.
+V17 is COMPLETE and fully reviewed. No accelerator process remains: actual
+neuron-ls reports zero NRT processes. All11 model/panel closures and final stages
+pass. The owner says keep working until stopped; do not end at this milestone.
+Full autonomy covers existing-node research/training and public Git pushes.
+No active goal;do not create one. Agents quota-unavailable until Oct24;do not retry.
+Send useful commentary at least every60s;avoid giant speculative analysis.
 
-## New training
+Next:finish publication commit/push if still pending,then the CPU document-QA
+cohort/representation question in NEXT_STEPS.md. Do not rerun old producers/analyzers.
+Check git status/log and the private publication receipt before duplicating work.
+Main HEAD before this publication was1ed6421. Only owned readout/docs changes remain.
 
-Immutable source `37028a1`, branch/worktree `real-source-balanced-v17` under
-`local/worktrees/`. All1,656 CPU checks plus smoke/compile pass. All10,240 native
-TRAIN views independently checked. Existing causal engine, one ZeRO reducer,
-BF16 active/gradients, FP32 masters/Adam. Same TRAIN5120/two passes/320 updates,
-world8×micro4,width640,target640,constantLR1e-5. Arms source_direct/source_cot;
-seeds2026101913/14. Objective perexample0.5meanCE(source prefix)+0.5meanCE(task).
-Prefix labels4,489,846/seed botharms;task163,840/512,900;not equal target information.
-Full160/320;terminal primary;fresh B0 each. Never edit immutable running source.
+## Completed V17 result
 
-Actual qualification completed: control
-`local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2`.
-Status PASS_ACTUAL_REAL_SOURCE_BALANCED_FULL_RESTORE in independent audit.
-11 actual updates,9 changed-master/cast/replica checks,24 native checks repeating
-four contexts,6 full states, fresh optimizer restore6→8. Post-save4→6 PSS growth
-1.877728GiB passes<2. All source/task masks/counts/weighted losses/state bytes
-checked. No uninterrupted trajectory/device-RNG readback/stochasticRL claim.
-V1 PATH failure before allocation preserved;V2 explicitly prepends actual venvbin.
-Public `validation/real_source_balanced_v17_hardware_20261019.json`.
+Report:validation/real_source_balanced_v17_complete_20261019.json
+SHA73ee00f3c2d7a6051c6ccf3fab5f0db14270d3a5bc4b346dc502c0bc3b76221e.
+Status COMPLETE_ELEVEN_MODEL_TWO_SEED_SOURCE_BALANCED_REFERENCE.
+28,160 scalar attempts/5,632 notes/30,976LLrows,45gzip original payloads.
+Three PNG/SVG figures visually checked;14 disclosed examples,all-mode CSVs,
+error transitions,actualCPU/XLAarrays(22panels/264repeatedrows/4224tokenpairs),sources.
+Independent native decode/exactAST/Fraction/count/all20kCI/literal gate checker PASS.
+All original/derived artifacts readback/fsync EBS protected;visual-review annex separate.
+Final marker local/diagnostics/real-source-eval-v17-study-v1/final-publication-ready.json.
 
-Science control: `local/diagnostics/real-source-balanced-v17-study-v1`.
-Four tmux sessions `source-train-v17-{arm}-seed{seed}`,physical0/1,2/3,4/5,6/7.
-Allfour320runsphysicallyclosed;independent1280update/8fullstate/32nativeauditPASS.
-Allterminalmodels/latestfull320EBSprotectedandfrozen;no failures. Trainingtmuxsessionsended.
-Outputs `local/nvme-cpt/runs/real-source-balanced-v17-{arm}-TRAIN5120-seed{seed}-v1`.
-Finite deadline18:00UTC;no retry/extensions/model selection.
-Health: `source scripts/env.sh` then
-`python local/analysis/live_real_source_v17_health_20261019.py`.
+Two seeds1913/1914,correct out of512:
+- Shared B0raw352.
+- source_direct.raw351/357.
+- source_cot.raw350/349;empty341/326;own434/439;other158/156;oracle455/465.
+- Older target_cot.own442/433;older real_prior.own418/408.
+Primary own−direct+16.21pp[12.11,20.31]/+16.02[11.91,20.12].
+Own−empty andown−B0 lower bounds positive;arithmetic gates PASS both.
+Ordinary NLL versusB0:+0.038029[0.027746,0.048592]/+0.042890[0.031030,0.055404].
+UpperCI mustbe<=0.03. Quality FAILS both;COMBINED FAILS both. Never change this gate.
+Same-new-panel old target-only regression0.155826/0.175549;pointcostreduction75.6%.
+SourceCoTrawordinaryNLL beats matched sourceDirect by0.01158/0.01338,bothCIspositive
+in the improvement direction,butboth remainworseB0. No clear raw arithmetic gain.
+Full16 own−direct+0.728/+0.704nat,butown−B0−0.470/−0.604nat,negativeCIs.
+80/77 of net83/82 extra correct answers occur where both outputs parse validly;
+this is descriptive accounting,not a replacement conditional denominator.
+Own unsupported46/40 plusformat0/1;direct rawunsupported46/43. Zeroexecutionerrors.
+Note actions34.08/34.49,capped0/2,empty0. AllsourceCoT answerscap32:completeleading
+scalar endpoint,NOTcompleteQA. No optimized/fewshotbaseCoT comparison or emergenceclaim.
 
-Terminal pipeline scripts in `local/analysis/`:
-`real_source_state_audit_v17_20261019.py`,
-`audit_real_source_four_terminals_v17_20261019.py`,
-`protect_real_source_four_terminals_v17_20261019.py`,
-`bind_real_source_four_terminals_v17_20261019.py`.
-All parsed; independent two-pass order/label counts tested against actual protocols.
-Terminalpipelineaudit/protect/bindfinished11:36:58;allthreestagesexit0.
-Latestfull320source_directseed1913COMPLETE=5aeaf0e1863f584149490114c7047481b0410e62547aa1d756d4e56996bd6ad4.
-AuditSHAa23cc41e92217f7958d3fef4df15cc46a9cdf6d464b3273866056eb21ecd2e78.
-EBSarchivesha de1352de0f774d850e1b2826586de0943ea2e99bde5a07f28c53b019f189912b.
-Its shell launches from training worktree with correct PYTHONPATH;do not duplicate.
+## Sources and engineering
 
-## Frozen evaluation
+Immutable production training37028a1 atlocal/worktrees/real-source-balanced-v17;
+evaluationc9b399b atlocal/worktrees/real-source-eval-v17. Both remainunchanged.
+Actualqualification:11updates/6fullstates/fullrestore/components/master/native auditPASS.
+Science:4freshB0runs×320updates,all8full160/320states independentlyverified;
+32native checks repeat4canonical contexts. No uninterrupted-trajectory/deviceRNG claim.
+Train5120 SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.
+Same2passes/order perseed/global32/world8×micro4,width640,target640,LR1e-5.
+BF16active/grads,FP32masters/Adam,oneZeRO reducer. Perexample0.5source-prefixmean
+plus0.5taskmean. Source labels4,489,846/seed both;task163,840direct/512,900CoT.
+Warm~6s/update;fourloops4.657physicaldevicehours includesaves,excludeprep/eval.
+Model science control local/diagnostics/real-source-balanced-v17-study-v1.
+Training report validation/real_source_balanced_v17_training_20261019.json.
+Publisher is idempotent:verifies completed report/alllistedfilehashes;partialdirsrefused.
+Main nowintegrates training/eval histories andpreserves boundeddepth diagnostics;
+1,699CPUchecks+smoke/compilePASS. Combinedmain source hasNOnewhardwarequalification.
+Use exact frozen experiment snapshots/protocols for reproduction.
 
-Source c9b399b, branch/worktree `real-source-eval-v17`;1,668 CPU checks pass.
-New confirmation512 arithmetic plus ordinary256 from pinned FineMath TRAIN
-shards63/62; excludes prior retained pages/content and ordered arithmeticASTs.
-No model-based selection. Earlier TEST/unlisted raw text stayed opaque.
-Manifest `local/nvme-study/data/real-source-balanced-v17-confirmation-v1/manifest.json`
+## Data and archives
+
+V17 sourceTRAIN-derived confirmation512 andordinary256 were frozen before model
+forwards/newtraining. Original public prospective design is unchanged.
+local/nvme-study/data/real-source-balanced-v17-confirmation-v1/manifest.json
 SHA15d4e0d4c85f07d9cdb09d545203e8c770f05c2ca80a3acd2118c5da0f55c0e6.
-Data/design/source published before held forwards/new training.
-`validation/real_source_balanced_v17_design_20261019.json`
-SHA3f902839f1b0c9cd3db4a14e2123f9d4a424153b56db9a746e8bcbcf014c812a.
-Inputs/gold separately frozen and EBS-protected under local/nvme-cpt/data/.
-Prefix-only writer inputs item_id/document_id/prefix_ids. All512 scalar partitions exact.
+Source FineMath4+ revisione92b25a616738fe95dc186b64dfb19f9c8525594,shards63/62.
+Input/gold projections separate,all512 numeral partitions exact. Page/content/AST
+exclusions include prior retained panels;oldTEST/unlisted text stayedopaque.
+Semanticduplicates/pretrainingexposure notruledout. No officialTEST evaluation.
+Private data-only visibility audit confirms existing whole-number exclusion across
+TRAIN5120/V15fresh384/V17confirm512. Native digit-substrings are not wholeanswers;
+no additional outcome contrast/filter warranted. Evidence inlocal/backups/data/
+real-source-v17-prefix-visibility-data-audit-v1.
 
-Master `local/diagnostics/real-source-eval-v17-study-v1/plan.json`,deadline20:00UTC.
-Eleven fixed models: B0;two each old target_direct,target_cot,real_prior;four new.
-Slots0..6 released tmux `source-eval-v17-slot{slot}` onphysical8,9,10,11,14,15,13.
-Allsevenoldreferencescompleteallnotes/answers/bothLLpanels;noexecutionfailures.
-Allfournewevaluationsreleased. As of11:56 source_direct notes426/416 of512;
-source_cot notes512/512, answers888/842 of2560;allstopsabsent. All9readyLLjobs
-(7old+2source_cot)complete;2source_directLLjobswaittheirnotes. No failures.
-No capability values inspected.
-New terminal slots7..10 onphysical0,1,2,3 arebeingprepared/releasedbyexistingwatcher.
-Do notduplicateprep/launch. allfourbindingsnowexist.
-Watcher tmux `source-v17-new-evaluations`;source
-`watch_real_source_new_evaluations_v17_20261019.py`. Do not duplicate preparation.
-Per-model registries `local/diagnostics/real-source-v17-{id}-evaluation-v1/evaluation-binding.json`.
-Four-slot native LL queue tmux `source-v17-score-queue`,cores48..51 physical12.
-Sevenoldmodels' two panels finished;queue nofailures. All models get same-model
-first4 CPU references/mode at unchanged0.001 parity guards. Master plan immutable;
-scoring topology in separate score-queue-plan.json.
-Final totals28,160 scalar attempts/5,632 notes/30,976 likelihood rows.
+Raw/derived readout archive:
+local/backups/evaluation/real-source-balanced-v17-complete
+withPUBLIC-READOUT andREVIEW-ANNEX. Alloldraw outputsremainNVMe.
+Alloriginalscientificfull160/320statesremainlocal/nvme-cpt/runs/.
+Allterminalmodels/latestfull EBS:
+local/backups/science/real-source-balanced-v17-study-v1/TERMINALS.
+Latestfull=source_directseed2026101913step320;
+COMPLETE SHA5aeaf0e1863f584149490114c7047481b0410e62547aa1d756d4e56996bd6ad4.
+TerminalauditSHAa23cc41e92217f7958d3fef4df15cc46a9cdf6d464b3273866056eb21ecd2e78.
+EBSarchiveshade1352de0f774d850e1b2826586de0943ea2e99bde5a07f28c53b019f189912b.
+OlderV10/V15EBSoptimizerduplicatesretiredonlyafterfreshbothsidehashes/newerfull;
+allmodels/originalsunchanged. Sidecars disclose retiredoptimizerbackups.
 
-Primary eachseed: source_cot.own−source_direct.raw>=3pp andpositivepaired95%lower;
-own−sameCoTempty andown−B0raw lowerpositive;zero executionerrors.
-AND ordinary raw NLL upper95%CI versusB0<=+0.03nat/token. Bothseedsrequired.
-20k document bootstraps seed2026101917;no pooledseeds. Same initial-scalar-v2,
-leading complete scalar endpoint,notcompleteQA;note128actions/answer32,allfailures.
-Secondary training-only effects remain separately reportable,notredefinedmain gate.
+## Next question: document QA preparation only
 
-Complete-only V17 analyzer/checker/figures/CSV/examples now prepared andsource-protected.
-Watcher tmux `source-v17-final-readout` waits all11models/panels;then exports training,
-analyzes, independently decodes/checks allcounts/CI/gates, renders3figures/CSVs,
-savesdisclosedexamples/errortransitions, protects actualCPU/XLAarrays/allpublicfiles.
-Scripts `local/analysis/{analyze_real_source_v17,check_real_source_readout_v17,
-render_real_source_v17,save_real_source_examples_v17,publish_real_source_training_v17,
-account_real_source_scalar_errors_v17,protect_real_source_readout_v17,
-watch_real_source_final_readout_v17}_20261019.py`.
-Allsources parse,stagepaths/counts/identities checked. Literal3pp/strictCI/zeroerror/
-0.03inclusiveupper-bound edgecases pass viaCPU fixtures;no partialoutcome opened.
-Receipts master `prepared-readout-sources.json`, `readout-CPU-checks.json`.
-EBSpreparation `local/backups/engineering/real-source-v17-prepared-readout`.
-V15exampleworkerorderbugfix retained:IDreindexbefore unchanged donorpermutation.
-Finalready must include `final-publication-ready.json`;visuallyinspect3PNGfigures,
-reviewcompletequestiononce,updatefrontpage/status/queue,commit/pushallactualevidence.
-As of11:38 alltrainingandsevenoldreferencescomplete. Newmodelsfirsttwoprepared,
-otherspreparing. Root46.46GiB,NVMe-cpt824GiB,host1917GiBavailable.
-Completedtrainingreportpublished:validation/real_source_balanced_v17_training_20261019.json
-with43files/four320-steptraces. Publishernowidempotentlyverifiesexistingcomplete
-publication;partialdirsrefused. Actualre-readverificationpassed;finalwatcher
-willverifyitagainratherthanrewrite. Originalpreparedpublisherpreserved,change
-receiptinmastertraining-publication-idempotence-change.json. Noendpoint/gatechanges.
+NoQAcohort/model/longcontexttraining isreleased. Read NEXT_STEPS.md first.
+MuSiQueauthorTRAINraw19,938 rows/sourceSHAa85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345.
+Source directory local/nvme-study/data/musique-TRAIN-source-v12;EBSbackupmatchingname.
+Policy projection train/document_evidence_data.py exposes only composed_question_text
+andallvisibleparagraphs/titles. Goldanswers/support/decomposition/retrieval neverinputs.
+V16directed held512 exclusion leaves2983train at3072tokens/502at2048. Inspect
+within-held shared-evidence clusters/bootstrap units before choosing actualcohort.
+Fullsupportnotesmedian279tokens:neverblindlyreuse128-actionmathcap.
 
-## Storage and backups — important order
+CanonicalformattedTRAINmirror local/nvme-study/data/musique-TRAIN-mirror-v19:
+HFbdsaglam/musique revision22873a405dd809893b22ada0b499299fb612d2df,
+filemusique_ans_v1.0_train.jsonl,241046755bytes,
+SHA83a75b1e11e4e9bb8f8308e72ac40ca617ae4431b3a0d955b61cab259248490a.
+Everycanonicalfield matchespinnedauthorconverter922ac98f19a201998dbdae6d7f2887a5258dbdeb,
+includingfullquestion_decompositiontext/paragraphindices. AuthorIDbijection resolves
+rawdouble/triple/quadruple names toofficial2hop/3hop/4hop. Failedpre-data attemptskept.
+Aliases8872/5067rows,allvisible,empty0;mirroraliasauthenticitynotindependentlyverified
+againstofficialZIP. Goldcrosswalk answer-aliases-by-author-raw-id.jsonl isOFFLINEonly.
+FullTRAIN/gold/code/evidence protectedlocal/backups/data/musique-TRAIN-mirror-v19,
+includingCANONICAL-FORMAT-CHECK. Public readinessreportdocument_aliases_v19_TRAIN_readiness.
+OfficialZIPattemptreturnedHTML;noarchive/DEV/TEST/globalaliasesfilesopened. Noautoproberetry.
 
-Keep35GiB free/filesystem and512GiB hostavailable. Root~59.3GiB,NVMe-cpt~1004GiB,
-NVMe-study~205GiB at10:48. Never mkfs;mounts already prepared. Compilation cache
-symlink points NVMe-cpt;do not move while actorslive. EBS same-instance only.
-All original160/320 checkpoints stay NVMe. EBS retains all terminal models and
-latest global fulloptimizer. V10 oldEBS optimizerduplicates were retired after
-fresh allpayload hashes on both sides and verified newerV15full protection:
-`local/diagnostics/v17-scientific-backup-budget-v1/completion.json`.
-No originals/modelweights deleted;oldEBS sidecar discloses retired duplicate state.
-CurrentlatestfullEBS:
-`local/backups/science/real-source-balanced-v17-study-v1/TERMINALS/latest-full320`.
-V15optimizerEBSduplicatesretiredonlyafternewfullprotected/freshbothsideverification;
-V15models/originalsunchanged. AllfournewmodelsEBSprotected;backupordercompleted.
+## Environment and bounds
 
-CompletedV17protectioncopiesnewfull320FIRST (~22.4GiB),readback/fsyncverify;
-then freshcheck oldV15original+EBS andnewfull;retireONLYoldV15EBS8optimizerduplicates;
-then copy remaining3terminalmodels,hardlink latestmodel withinEBS. Keeps35GiBfloor.
-`protect_real_source_four_terminals_v17_20261019.py` implements this order.
-Never blindly reuse older models-first protection script. All originalstates remain.
-
-## Latest completed science — V15 positive inference, substantial ordinary cost
-
-Public report `validation/real_target_sft_v15_complete_20261019.json`
-SHAf8bc04e2c759cbad2a9438754aee828d5f99c6b4747dc41198fa1e4d3a43e033.
-All9models close:17,280 scalar/3,456notes/19,584LL,37 gzrawpayloads.
-Fresh384:CoT own342/335,directraw275/285,CoTempty261/263,B0raw257.
-Own−direct+17.45pp[13.28,21.61]/+13.02[8.85,17.19];allpredeclaredgatesPASSboth.
-Zeroexecutionerrors;ownunsupported24/26;noempty/cappednotes,naturalAnswerboundary.
-Most answerscap32;leading-scalar endpointonly. Full16versusdirect+.603/+.446nat,
-but versusB0−1.979/−2.119. OrdinaryNLLregresses+.128/+.147nat/token vsB0.
-IndependentnativeID/text/value/gold/count/all20kCI/literalgates PASS. Figures checked;
-15 disclosedexamples andparsertransitionaudit public. Mechanism is supervised
-arithmetic inference,not spontaneous emergence,broadQA ortraining-only benefit.
-Alloriginaloutputs/readout/modelsprotected;latestfull320=target_direct seed1913.
-
-Other closed:V10 full-spanprimarytraining/inferencegatesFAILbothseeds;secondary
-arithmeticpositive. VariabledepthV11composition124→306/512,one bounded diagnostic;
-no expanded split rescue. MuSiQue TRAIN CPU-only:directed evidence-exclusion
-leaves502/2983train at2048/3072 for512held;no model/cohort/longcontextrelease.
-OldR1234staysstopped63. Sources/papers in docs/REFERENCE_NOTES.md.
-
-## TRAIN alias/teacher provenance (closed CPU preparation)
-
-Source `local/nvme-study/data/musique-TRAIN-mirror-v19` holds exactly
-musique_ans_v1.0_train.jsonl (241,046,755bytes),HFbdsaglam/musique revision
-22873a405dd809893b22ada0b499299fb612d2df,LFS/SHA
-83a75b1e11e4e9bb8f8308e72ac40ca617ae4431b3a0d955b61cab259248490a.
-All19,938 canonical records,includingquestion_decompositiontext/paragraphindices,
-matchauthorrawTRAINthroughpinnedofficialformatter922ac98f19a201998dbdae6d7f2887a5258dbdeb.
-RawIDs use double/triple/quadruple;officialIDs2hop/3hop/4hop. Explicitauthorbijection
-resolvesIDs;originalfailedassertionpreserved. Pureconverterloaderfirst2attempts
-stoppedbeforedataonimportedconstants;finalusespinnedutils.constantsandpassesallrows.
-Aliases8872/5067rows,allvisible,empty0;mirroraliasauthenticitynotindependently
-verifiedagainstofficialZIP. Keepcanonical/aliasprovenanceexplicit. Goldcrosswalk
-answer-aliases-by-author-raw-id.jsonl isOFFLINEgoldonly;no policyinputs.
-MainCPUreadinessreport validation/document_aliases_v19_TRAIN_readiness_20261019.json.
-FullTRAIN/offlinegold andallcode/failedattempts/canonicalcheckreadback-protected
-local/backups/data/musique-TRAIN-mirror-v19 (plusCANONICAL-FORMAT-CHECKannex).
-Originalraw331MBalreadyprotectedatlocal/backups/data/musique-TRAIN-source-v12.
-OfficialDEV/TEST/globalaliasesfilesnotopened;nonewcohort/model/longcontextrelease.
-ChooseactualnextquestionaftercompleteV17. Do notretryblockedGoogleDrivepath.
-
-## Additional data interpretation check (closed)
-
-Private`local/diagnostics/real-source-v17-prefix-visibility-data-audit-v1/report.json`:
-TRAIN5120/V15fresh384/V17confirm512allreturnnot_detected underexistingwhole_value_visible.
-Thecuratoralreadyenforceswhole-numbervisibilityexclusion. Exactnative digit-substrings
-occur365/26/35times,butcanbeinlargernumerals(3in13);notanswercopying. Nooutcome
-subgroupanalysisorpanelexclusionwarranted. No modeloutcomesread;allmetadata/source
-readback-protectedatlocal/backups/data/samebasename. Primaryreadoutunchanged.
-
-## Additional closed CPU inspection
-
-`validation/document_grounding_v18_CPU_20261019.json`:all19,938 authorTRAINrows,
-no newcohort/model. Canonicalfinalanswers occurinvisiblepassages19,767;
-allhopanswers visible19,738;presenceisnotentailment. Verbatimfullsupportnotes
-median279tokens,95th610;only916/17,299 <=3072inputrows fit128notes. Futureprotocol
-mustchoosecompactgroundedrepresentation/properlengthbudget,notreuse128blindly.
-V1assertionstopped on694officialtrain_patchrows;originalscript/logretained.
-Membershipreceiptconfirms19,244train+694train_patch;V2explicitlyacceptsboth.
-No officialDEV/TEST/globalaliasesread;rawTRAINlacksperitemofficialaliases.
-AllCPUevidence readback/fsync EBS protected. ChooseactualnextstudyafterV17readout.
-
-## Environment
-
-Venv /home/ubuntu/ema-trainium/.venv;always source scripts/env.sh then override
-PYTHONPATH with desired immutable worktree first plus local/analysis/test-deps.
-CPU USE_TORCH_XLA=0. tmux PATH must explicitly include actual interpreter's bin;
-verify libneuronpjrt-path. No dependency upgrades. pytest via python -m pytest.
-No `rg`;use targeted Python/grep. Avoid broad process argument/environment dumps.
-Mainintegration1f03fca nowmergesversionedrealtraining/evaluationwhilepreservingdepth
-diagnostics;1699CPUchecks+smoke/compilePASS. LiveWunchangedat37028a1/c9b399b.
-No mainintegrationhardwarequalificationclaim.
-OfficialMuSiQueTRAINaliasacquisitionattemptv19 returnedpublicconfirmationHTML,
-noarchiveacquired/noDEVTESTmemberread. Preservelocal/nvme-study/data/musique-official-TRAIN-v19
-andlocal/analysis/official-musique-TRAIN-v19-acquisition-20261019.log;do notautoproberetry.
-Git public owner-authorized repository dario-fumarola/useful-thoughts-trainium.
+Venv/home/ubuntu/ema-trainium/.venv. source scripts/env.sh thenoverridePYTHONPATH:
+desiredimmutableworktree:first,local/analysis,local/test-deps. CPUUSE_TORCH_XLA=0.
+Tmux mustincludeactualinterpreterbin inPATH;checklibneuronpjrt-path. No upgrades.
+No rg;usetargetedPython/grep. No broad processargument/envdumps. 16Trn2chips,
+64logicalLNC2cores,24GiBbank/logical,2TiBhost. Keep35GiBfree/filesystem/512GiBhost.
+Root~45.6GiB,NVMe-cpt824GiB,NVMe-study205GiB. Beforeanynextscience release,recover
+budgetforthecopy-new-full-FIRST policy(need~58GiBrootfree). Onlyolderinactive
+optimizerbackupduplicateswithfreshbothsideproof/newerprotection mayretire.
+Neverdeleteoriginal/modelweights ormkfs. CompilecachealreadyNVMe;do notmovelivecache.
+Existing-nodework authorized;no cloud/IAM/network/paidteacher/bucketchanges.
+OldR1234staysstopped63. V10fullspanprimaryFAIL;V11boundeddepthrepairclosed;noexpanded
+splitrescue. V15positiveinferencewithNLLcostremainsasreported. Paper notes inREFERENCE_NOTES.

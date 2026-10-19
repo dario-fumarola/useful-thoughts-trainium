@@ -1,87 +1,67 @@
 # Current queue
 
-1. V15 is published at e5cdc19; preserve its completed findings and costs.
-   All nine models and both endpoints are complete; independent checks pass.
-   CoT own342/335 of384 beats direct-SFT raw275/285 and same-CoT empty261/263.
-   Paired gains +17.4pp[13.3,21.6] / +13.0pp[8.9,17.2]; declared gates pass both seeds.
-   Full16 improves over direct SFT but remains below B0. Ordinary NLL regresses
-   0.128/0.147 nats/token; this is not a broad prediction or pretraining improvement.
-   Report: validation/real_target_sft_v15_complete_20261019.json; raw payloads,
-   checked figures, 15 disclosed examples, all error categories and costs saved.
-   Independent readout SHA f8bc04e2c759cbad2a9438754aee828d5f99c6b4747dc41198fa1e4d3a43e033.
-   Terminal states and all original outputs/readouts are readback protected.
-   Source829d9a2/evaluation41a5bfd remain frozen; producers are physically closed.
+1. Finish publication of the complete V17 result, then specify one broader question.
+   Report: validation/real_source_balanced_v17_complete_20261019.json.
+   All11 models closed; independent checks and readback protection pass.
+   The3 PNG figures have been visually inspected. All45 raw payloads remain.
+   Arithmetic:434/439 of512 versus351/357 direct and341/326 empty;
+   gains+16.2pp[12.1,20.3]/+16.0pp[11.9,20.1]. Arithmetic gates pass both seeds.
+   Ordinary NLL:+0.0380/+0.0429; upper CIs0.0486/0.0554 exceed0.03.
+   Combined gate FAILS both. Preserve that conclusion and the original threshold.
+   Regression falls75.6% versus old target-only CoT on this same new panel.
+   Full16 remains below B0; raw arithmetic does not clearly beat matched direct.
+   All28,160 answers/5,632notes/30,976LL rows, failures, costs and14 examples saved.
+   No broad RL, model-size jump, split rescue or automatic follow-up release.
 
-2. Complete the released source-balanced V17 study and fixed11-model evaluation.
-   Source37028a1:1656CPUchecks;all10240actualnativepacks;actualqualificationPASS.
-   Elevenupdates/sixfullstates/fullrestore/components/native/master/casts independently verified.
-   AllfourfreshB0runs complete320;independent1280update/8fullstateauditPASS.
-   Allterminalmodels/latestfull320readback-protected;fournewmodels bound for evaluation.
-   SameTRAIN5120/twopasses/320updates;world8×micro4,width640,target640,LR1e-5.
-   Objective0.5meanCE(sourceprefix)+0.5meanCE(task),sameprefixlabels,botharms.
-   Frozennewconfirmation512+ordinary256;designpublishedbeforeheldforwards/scientificrelease.
-   Allsevenoldreferencesclosed;fournewmodels now being prepared/released afterprotection.
-   Mastereval:local/diagnostics/real-source-eval-v17-study-v1;sourcec9b399b,1668CPUchecks.
-   Runmechanicalhealth:source scripts/env.sh;python local/analysis/live_real_source_v17_health_20261019.py.
-   No partialcapabilityreview;all11models/panelsmustphysicallyclosebeforeonecompletereadout.
-   Perseed:own−directraw>=3pp/positivepairedlower,own−empty/B0lowerpositive,zeroerrors;
-   ANDordinaryNLLupper95%CI<=+0.03nat/tokenversusB0. Bothseedsrequired.
-   Full160/320originalsstayNVMe. ProtectnewfullFIRST,verify,retireolderV15optimizerduplicates,
-   thenprotectremainingmodels. Readback/fsync;35GiBfloor. Allmodels/originalsretained.
-   Currentlatestprotectedfull=V17source_directseed1913;olderV10/V15EBSoptimizerduplicates
-   retiredonlyafterfreshbothsidehashes/newerprotection. Allmodels/originalsremain.
-   Reports:validation/real_source_balanced_v17_{design,confirmation,hardware,training}_20261019.json.
-   No broadRL,sizejump,expanded splitrescue,officialTEST orautomaticfollowuprelease.
+2. Specify one single-model document-QA reference.
+   North star: compute from the available documents and improve fresh answers
+   at worthwhile cost. Keep training benefit and extra inference as separate endpoints.
+   First inspect shared-evidence clusters/bootstrap units and compact trace lengths.
+   Then freeze an evidence-clean TRAIN/DEV cohort, strong direct/CoT controls,
+   complete-answer parser/metrics, data exposures and practical thresholds.
+   Select the scientific intervention after reviewing V17; no document model is released.
+   Before training: actual long-context backward, memory, periodic full save/restart,
+   gradient reduction and timing must qualify under a new experiment identity.
+   Preserve the working1.7B stack. Keep full passages; never silently truncate context.
+   Do not reuse the128-token math cap for copied support notes(median279 tokens).
 
-3. Keep the bounded variable-depth diagnostic closed. Published report:
-   validation/variable_depth_writer_v11_complete_20261019.json.
-   Composition512: fixed124→variable306, paired+35.5pp[31.3,40.0]; gate passes.
-   Canonical/naturally stopped states91→409. Frozen fullCoT273, but different
-   curricula/supervision and one diagnostic seed prevent an architecture claim.
-   Freshdepth2: variable182/256 versusCoT193; unseen depth6: only10/256.
-   All9,216 answers/2,048 notes, controls, figures and examples are preserved.
-   Do not launch a larger split rescue or broad RL.
+Data ready, with limits:
 
-4. Broader document reasoning stays at CPU preparation. MuSiQue TRAIN inventory
-   uses composed_question_text and all visible paragraphs; no gold support flags
-   or decomposition enter model inputs. Corrected inventory:19,938 questions,
-   306 complete inputs<=1536 tokens and4,149<=2048. No model/cohort release.
-   Source7c5c264 and corrected readiness are public; official DEV/TEST untouched.
-   CPU split audit finds99% of hypothetical held questions reuse a training-visible
-   support paragraph. Distinguish question/evidence novelty and include question-only
-   controls; validation/document_evidence_v12_split_risks_20261019.json.
-   Directed held-support exclusion is feasible:at2048/3072 complete-input tokens,
-   excluding held support text/title/componentquestions leaves502/2,983trainrows;
-   excluding every held-visible paragraph leaves182/1,221. Both hypothetical
-   cohorts hold512questions;no model or cohort released. Source/report protected:
-   validation/document_evidence_v16_directed_split_20261019.json.
-   Alias-ready TRAIN mirror now reconciles all19,938 canonical records with the
-   pinned author converter, including complete decomposition text/indices. Separate
-   mirror alias provenance:8,872 visible strings/5,067 rows;official ZIP unavailable.
-   Data, gold-only alias crosswalk and receipts are protected;no new cohort/model.
-   validation/document_aliases_v19_TRAIN_readiness_20261019.json.
-   Do not reuse the128-token math cap for copied support notes (median279).
-   Choose the next scientific intervention after the complete mainline readout.
+- Author MuSiQue TRAIN has19,938 questions. Policy projection contains only the
+  authored question and all visible paragraph titles/texts, excluding gold fields.
+- V16's fixed held512 and support-text/title/component-question exclusion leave
+  2,983 training questions at3072 complete-input tokens, or502 at2048.
+  These are feasibility cohorts; shared evidence within held questions still needs
+  a suitable uncertainty unit. No final cohort or long-context model is released.
+- V19's pinned TRAIN-only mirror matches every canonical field of all19,938
+  author raw records through the pinned official converter, including decompositions.
+  It supplies8,872 aliases across5,067 questions, all visible in the passages.
+  Alias authenticity is not independently verified against the unavailable official ZIP.
+  Keep canonical/alias provenance separate; alias labels are offline gold only.
+- Read validation/document_evidence_v16_directed_split_20261019.json and
+  validation/document_aliases_v19_TRAIN_readiness_20261019.json before cohort work.
+  Official DEV/TEST and the global aliases file were not opened.
 
-Fixed mainline data: TRAIN5120 unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.
-Primary held V2 manifest22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24:
-local/nvme-study/data/real-trace-cpt-v10-held-panels-v2.
-All256 ordered ASTs are unique and absent from TRAIN. The ten-alias correction
-was frozen before learning. Ordinary256 and legacy256 remain separate.
-Training and inference gates are independent; report both seeds and absolute B0,
-equal-mode controls, ordinary-text regressions and actual token costs.
+Preserve completed boundaries:
 
-Storage: keep35 GiB free per filesystem and512 GiB host availability. All original
-full checkpoints remain on NVMe. EBS keeps all terminal models and latest full320;
-older inactive optimizer duplicates retire only after fresh both-side full hashes
-and verified newer protection. Never remove an original or model weight.
-local/nvme-cpt is already formatted/mounted, UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67.
-NEVER mkfs again; remount UUID only. EBS is same-instance, not off-instance backup.
-No cloud/IAM/network/paid-teacher/bucket changes. R1234 stays stopped at63.
-No unqualified8B or officialTEST. Agents remain quota-unavailable; do not retry.
+- V15 establishes supervised arithmetic benefit with substantial ordinary-NLL cost.
+- V10 fails both primary full-span gates; its prospective scalar secondary helps.
+- V11's bounded variable-depth repair is closed. No expanded split rescue.
+- The original R1234 stays stopped at63. Never resume its old launchers.
+- Historical tables and interpretation limits live in docs/EXPERIMENT_HISTORY_20261019.md.
 
-Future RL engineering only, no launch:retired replay still computes all1024slots
-for empty notes. A single tiny CPU fixture confirms8-slot cropping preserves
-loss/reader scores/gradients; no Trainium timing or complete bucket qualification.
-Public:validation/retired_R_empty_padding_CPU_20261019.json. Profile actual phases
-and qualify all masks/stops/behavior-logp cases only if a future RL study is justified.
+Resources and protection:
+
+Keep35 GiB free per filesystem and512 GiB host availability. All original full
+checkpoints remain on NVMe. EBS retains all terminal models and the latest global
+full optimizer state: V17 source_direct seed1913 at320. Same-instance protection,
+not an off-instance backup. See docs/CHECKPOINT_BACKUP.md.
+
+At publication, root free space is about45.6 GiB. Recalculate the next checkpoint
+budget before another scientific release; it cannot yet accommodate a new full
+copy while keeping35 GiB free. Older inactive optimizer backup duplicates may
+retire only after fresh both-side full hashes and verified newer protection.
+Never remove an original or a model weight. Do not format any mounted NVMe volume.
+The compile cache already lives on NVMe; no stack upgrades or serving migration.
+No cloud/IAM/network/paid-teacher/bucket changes. Agents remain quota-unavailable
+until October24; do not retry. Existing-node work and public repo pushes remain authorized.

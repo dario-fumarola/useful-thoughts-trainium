@@ -1333,3 +1333,15 @@ then protect all terminal models. All originals remain. Publish training-only
 receipts and traces; all capability outcomes remain unread until the complete
 11-model evaluation. The final exporter verifies this completed publication
 without rewriting it. No model, endpoint, gate or training budget changes.
+
+2026-10-19 12:40 UTC — Close V17 as arithmetic-positive, quality-bound-negative.
+Wait for all eleven models/panels, then review once. Independent checks reproduce
+all native decodes, exact values, counts, bootstrap intervals and literal gates.
+Generated calculations score434/439 of512 versus351/357 direct and341/326 empty.
+The arithmetic gates pass both seeds; ordinary-NLL upper intervals0.0486/0.0554
+exceed the frozen0.03 bound, so the combined gate fails both. Preserve that failure.
+Against old target-only models rescored on this same panel, the point estimate of
+NLL regression falls75.6%; there is no cross-panel comparison or equivalence claim.
+Retain the supervised inference reference and all costs. No RL/8B/split release.
+Next specify a bounded single-model document-QA comparison, beginning with evidence
+clusters, complete context and trace lengths; actual long-context training must qualify.
