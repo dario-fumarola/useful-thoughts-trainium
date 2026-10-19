@@ -1,20 +1,20 @@
-# Status — 2026-10-19 01:45 UTC
+# Status — 2026-10-19 02:04 UTC
 
 
-## Active: matched-cost partial-computation study
-Question: do generated partial computations beat competitive solvers at comparable cost?
-Experiment: partial-state-v7-matched5120; two seeds, 5,120 TRAIN expressions, frozen source 57d3220.
-Design: direct / compact CoT / full CoT at 640 updates each; reader 320 + writer 320.
-Endpoint: complete answers on four separate DEV panels of 512; terminal checkpoints, all failures retained.
-All ten training runs pass independent state, ordered-update, native-numerics and backup audits.
-All eleven evaluation controllers close at 01:38 UTC; independent whole-question audit is active.
-No new accuracy readout yet; audit has completed first-seed panels and the B0 reference. Official TEST unused.
-Finite completion pipeline: tmux dario-ps7-whole-question-audit; wait deadline 03:30 UTC.
-Control: local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1; it archives then audits once.
-Registry: local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
-The audit requires all eleven controllers closed before accessing 51,200 answers and 4,096 notes.
-All original full states remain intact; EBS retains every terminal model and latest full scientific recovery.
-Next: interpret both seeds and all panels against both CoT baselines, same-reader controls and unchanged B0.
+## Closed: two-seed matched partial-computation study
+Question: does a separate writer–reader earn its cost over competitive single-model solvers?
+Experiment: partial-state-v7-matched5120; all systems 640 total updates, two seeds, terminal primary.
+All eleven generation controllers and full independent audit pass: 51,200 answers / 4,096 notes retained.
+Student answers by panel: seed1806 386/347/172/20; seed1807 372/212/118/19, each of512.
+Full CoT: 402/377/247/273 and 399/381/232/234; higher on every panel in both seeds.
+Split-minus-full paired95% intervals exclude zero in seven cells; remaining interval ends at zero.
+Same-reader own-minus-direct/empty/other stays positive in all eight cells, but composition accuracy is only3.7–3.9%.
+All4,096notes stop naturally; zero caps. Post hoc: TRAIN always two equations; composition needs three.
+Writers emit two equations501/512 and508/512 times, mostly correct but incomplete required subsets.
+Main report: validation/partial_state_v7_matched5120_complete_20261018.json; all20payloads public.
+Post-hoc costs/errors: validation/partial_state_v7_matched5120_descriptive_20261019.json;1610CPUchecks pass.
+FP32 generation, BF16 training; two-model/loss-weight differences and development exposure remain explicit.
+Decision: full-trace single-model CoT is main practical reference; no split-system advantage or broad RL release.
 
 ## Closed: verified real-document partial-state data preparation
 Question: can existing raw FineMath supply enough prefix-computable intermediate supervision?

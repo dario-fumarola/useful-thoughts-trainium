@@ -1199,3 +1199,13 @@ expressions seen inTRAIN;276noveleligibleDEVavailable for future protocol choice
 TeacherlabelAPIsees decodedprefixonly, root operation omitted;full traces separate.
 All code/data/provenance EBS-readback, no model/learning release. Keep training
 value distinct from deployed note value per re-readBoLT/TPT; current study unchanged.
+
+2026-10-19 02:04 UTC — Complete independent matched study:51,200answers/4096notes,
+all20payloads and fullEBSreadback. FullCoT higher on all8seed/panelcells; split
+advantage over compact baseline does not survive stronger control. Same-reader
+content benefit remains real. Posthoc:all5120TRAINwriter targets have2equations;
+composition needs3but Woutputs2in501/512 and508/512. Most failures are correct
+subsets, allnotes naturally stop. No emptycollapse/numerics excuse; incomplete
+compositional execution. Preserve original primary results and clearly marked
+posthoc diagnostics. Choose simpler full-trace single-model approach for real
+documents; training-value hypothesis stays separate.1610CPUchecks pass. No RLrelease.

@@ -6,19 +6,46 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 01:45 UTC handoff: continue until user stops. All ten matched training
-runs and all eleven evaluation controllers are closed/protected. Whole-question
-independent audit ACTIVE, tmux `dario-ps7-whole-question-audit`, control
-`local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1`.
-Read audit.log/supervisor.log for failures; twelve of twenty gzip payloads are
-written (B0 and first seed verified); second seed underway. No new accuracy
-readout yet. Wait for completion + final
-`validation/partial_state_v7_matched5120_complete_20261018.json`. Do not duplicate
-or overwrite partial files. All51,200answers/4096notes required. Source17/35 stays
-immutable57; **do not merge candidate code until final math audit is complete**.
-No TEST/R1234restart/RL/8B. Both seeds/panels separate, compare strong compact/full
-CoT, direct and one shared untouched B0; include same-reader controls, actual
-costs and two-model/loss-weight caveats. Prefer simpler model if it matches.
+October19 02:04 UTC handoff: continue until user stops. COMPLETE two-seed study
+passes full audit,51,200answers/4096notes/all20payloads. New main conclusion:
+full CoT higher accuracy on all four panels in both seeds. Student counts
+386/347/172/20 and372/212/118/19, fullCoT402/377/247/273 and399/381/232/234.
+Split-full CIs negative excluding0 in7cells, one ends0. Own-vs-same-reader
+raw/empty/unrelated positive all8, but composition only3.7–3.9%. AllWnaturalEOS,
+zero caps. Post hoc TRAIN always TWO intermediate equations; composition needs
+THREE. Wstill2in501/512 and508/512, mostly correct required subsets. This is
+fixed-depth behavior, not empty collapse. Prefer simpler full CoT main path.
+
+Current uncommitted publication: READMErewritten with bothseeds/controls and
+caveats, new `scripts/analyze_partial_state_study.py` (actual data execution
+passes), full primaryreport/20gz payloads, descriptive JSON and forest SVG/PNG/CSV.
+All1610CPUchecks PASS60.76s in
+local/analysis/partial-state-v7-complete-readout-CPU-checks-20261019.log.
+NEXT:finish reviewed Git commit/push of these artifacts+docs, save optional
+once-per-day reviewzip (Git-tracked source/results only), then implement next
+real-document single-model training reference. Do not leave stale positive
+precursor as headline. No TEST/R1234/RL;8B remains unqualified option.
+
+Main report:validation/partial_state_v7_matched5120_complete_20261018.json.
+Posthoc:validation/partial_state_v7_matched5120_descriptive_20261019.json.
+Figures+CSV beside descriptive. Original implementation immutable57d3220 source
+worktree stays intact. Audit completed; candidate new training source may now
+change only under NEW identity. Main generation wasFP32, trainingBF16; note this
+for cost/precision. Never turn B0direct/emptyzero into lack of math:all512outputs
+unsupported eachpanel; B0CoT188/273/91/259with263/157/315/159unsupported. FullCoT
+gains overB0CoT on first3panels; composition contrast inconclusive bothseeds.
+Recorded decode times are separate concurrent calls, not end-to-end service.
+
+Next phase is real single-model data augmentation, not another split run. Strong
+raw continuation/full-trace reference, optional post-document explanatory arm
+keep training and deployment hypotheses separate. First inspect existing masked
+CE/packing API, then adapt one current SFTengine (constantLR,BF16params/grads,
+FP32masters,one reducer, full checkpoints) to native prefixes up to512 plus
+traces. Considerwidth768,targetslots768,world8×micro4global32; only bounded
+mechanics/native/save/actual-restart/memory qualification before learning.
+Choose objective/heldnovel256/2seedbudget explicitly before science; do not launch
+an undefined plan. Realdata5120/256ready,276noveleligibleDEVavailable. Rootuser
+has full autonomy and weeks. Subagents quota-unavailable; avoid retrying.
 
 Engineering export question CLOSED, no active jobs. Candidate fb72065,
 1601CPUchecks. Actual14update memory49–139GiB control versus21–22cleanup;
@@ -53,7 +80,7 @@ latent marginal/ELBO includes prior compatibility; exact hindsight-note matching
 isn't universal necessity for a latent training objective. TPT trains doc then
 thinking. Keep training value and deployed extra-computation value separate; do
 not make the current channel result a verdict against every training scaffold.
-These notes and data readiness are pending Git commit; main currently a47d295.
+Paper notes and real-data readiness are committed in4337765; readout publication pending now.
 Root owns work, subagents quota-unavailable. Keep <=60s meaningful updates,
 bounded waits, and avoid long internal speculation while jobs await handling.
 

@@ -6,79 +6,105 @@ and computation diagnostics run on AWS Trainium. Official TEST remains unused.
 The [current proof ladder](docs/RESEARCH_ROADMAP.md) separates reader use,
 prefix-only computation, actual student benefit, cost, and return to real text.
 
-## Current finding
+## Current result
 
-**Self-generated partial computation helps on fresh synthetic problems.** The
-trained128-example writer produces useful work beyond its fitting set, and the
-same frozen reader benefits on all four512-item panels. This establishes the
-restricted computation channel. A matched-cost advantage and real-text
-pretraining gains remain unestablished.
+**Full-trace CoT is the stronger practical baseline.** In the completed two-seed
+study, it answers more questions correctly than the separate writer–reader system
+on all four panels in both seeds. Generated partial states still help the same
+frozen reader, establishing a restricted computation channel. The split system
+has not earned its additional model or stage.
 
-| Fresh panel,512 items each | Reader direct | Empty | Correct supplied state | Student state | Ordinary compact CoT |
-|---|---:|---:|---:|---:|---:|
-| Interpolation |21|21|343|285|287|
-| Unseen structure |18|19|315|238|235|
-| Larger operands |8|8|257|140|118|
-| Longer composition |2|0|296|151|48|
+| Seed | Panel, 512 questions | Reader empty | Correct supplied state | Student state | Direct control | Compact CoT | Full CoT |
+|---|---|---:|---:|---:|---:|---:|---:|
+|1806|Interpolation|70|427|386|101|387|402|
+|1806|Unseen structure|83|402|347|108|284|377|
+|1806|Larger operands|21|285|172|9|168|247|
+|1806|Longer composition|7|377|20|3|19|273|
+|1807|Interpolation|71|419|372|99|401|399|
+|1807|Unseen structure|77|402|212|97|345|381|
+|1807|Larger operands|7|245|118|11|186|232|
+|1807|Longer composition|4|353|19|7|25|234|
 
-Entries are complete correct answers, not likelihood scores. Student minus compact
-CoT is−0.39percentage points [−4.49,3.52],+0.59 [−3.52,4.69],+4.30 [0.98,7.62],
-and+20.12 [15.82,24.41], respectively; intervals pair questions within each panel.
-Student beats the same reader's direct, empty and unrelated-note paths on every
-panel. Unrelated generated notes yield3/0/0/1correct; expression restatements
-yield34/31/9/2. Unsupported student answers are0/1/0/0; compact CoT1/3/1/2.
+Entries are complete correct answers. Seeds are2026101806/07. Every system uses
+640 total training updates from the same released B0 and the same5,120expressions:
+640 for each direct/CoT model, or320reader+320writer. Generation caps are96 total
+actions: writer64+reader32 versus single-model96. These are matched updates and
+caps, with different supervision, loss weighting and two-model capacity.
+Training uses BF16 parameters/gradients with FP32 masters; generation uses FP32.
 
-All2,048 writer attempts stop naturally, with no caps or generation errors.
-Exact canonical intermediate states number416/311/288/227 of512. Supplied correct
-states still yield only50–67% answer accuracy, so both writer reliability and the
-reader's remaining calculation limit performance. The reader's weak direct path
-also makes this a mechanism result rather than a comparison with a strong direct
-solver.
+Student minus full CoT ranges from−3.12 to−49.41percentage points in seed1806,
+and−5.27 to−41.99 in seed1807. Seven of eight paired95% intervals exclude zero;
+the remaining interval ends at zero. Compact CoT is weaker, especially on longer
+composition. Comparing only with that baseline would obscure the result.
 
-**The split uses two models and256total training updates; compact CoT uses one
-model and128.** Each model makes32passes over128expressions. Inference caps are80total
-actions (writer64+reader16 versus CoT80). Actual mean actions are30.2/31.8/36.3/37.8
-for the split versus31.2/31.8/37.4/32.9 for CoT. Separate-job timings are not a
-matched end-to-end latency benchmark. This is one training seed, synthetic DEV,
-and development evidence; official TEST remains unopened.
+![Paired contrasts against both CoT baselines](validation/partial_state_v7_matched5120_descriptive_20261019/split-versus-cot.svg)
 
-All18,432 answers,2,048 notes, controls, numerical vectors and paired intervals
-passed the independent audit. Identical reader inputs produce identical actual
-answers; repeated conditions do not add independent observations. Complete
-outputs and the fixed first two examples per panel are public and EBS-archived:
-[full result and payloads](validation/partial_state_v6_DEV512_frozen128_20261018.json) ·
-[descriptive state-error decomposition](validation/partial_state_v6_DEV512_state_error_analysis_20261018.json).
+The computation channel is real but brittle. Student notes beat the same reader's
+direct, empty and unrelated-note conditions on all eight panels, while absolute
+composition accuracy is only3.7–3.9%. All4,096notes stop naturally; none hits the
+cap. The post-hoc trace analysis finds **fixed-depth stopping**: every training
+target has two intermediate equations, while composition requires three. The
+writers nevertheless emit two equations in501/512 and508/512cases. Correct but
+incomplete subsets account for445 and441cases. This is not empty-note collapse.
 
-Next: fresh-B0 training on5,120 verified examples, comparing answer-only,
-compact CoT, full-trace CoT and the split at matched total updates, with two seeds.
-Both compact and full-trace baselines remain competitors. All ten training runs
-are complete, independently audited, protected and frozen. First-seed evaluations
-are complete; second-seed and unchanged-base evaluations continue. No new DEV
-accuracy is reported until the entire fixed question closes.
-[First-seed training](validation/partial_state_v7_cot_full_seed2026101806_training_20261018.json) ·
-[second reader](validation/partial_state_v7_reader_seed2026101807_training_20261018.json) ·
-[second writer](validation/partial_state_v7_writer_seed2026101807_training_20261018.json) ·
-[second direct control](validation/partial_state_v7_direct_seed2026101807_training_20261018.json) ·
-[current queue](NEXT_STEPS.md).
+The untouched base's CoT scores are188/273/91/259 of512 across the four panels,
+with263/157/315/159unsupported outputs. Its direct and empty paths have512/512
+unsupported answers on every panel, so their zero scores do not establish a lack
+of arithmetic ability. Full CoT training improves the first three panels over
+base CoT; its composition difference is inconclusive in both seeds. These extra
+baseline contrasts and trace categories are explicitly post hoc.
 
-All original full states remain on local SSDs; EBS keeps all terminal models and
-the latest full resumable state under the
+The split uses about29–37 generated actions per question versus45–54 for full
+CoT. Its short composition notes omit required work. Recorded call times come
+from separate concurrent jobs and are not an end-to-end service benchmark.
+All errors and unsupported answers remain in denominators. Student answers have
+one unsupported case across4,096questions; compact CoT has two and full CoT one.
+Intervals bootstrap questions within each panel/seed, are unadjusted for multiple
+comparisons, and do not estimate training-seed uncertainty from two replicas.
+All panels are development-exposed; official TEST remains unopened.
+
+All51,200answers,4,096notes, numerical vectors, lineage, source hashes, parser
+results and paired intervals pass the independent audit. Complete original
+payloads and fixed examples are public; full controls/results are EBS-readback
+protected. Terminal checkpoints are primary, with no best-checkpoint selection.
+[Complete study and all20payloads](validation/partial_state_v7_matched5120_complete_20261018.json) ·
+[Post-hoc trace, cost and baseline analysis](validation/partial_state_v7_matched5120_descriptive_20261019.json) ·
+[Prospective design](validation/partial_state_v7_matched_design_20261018.json).
+
+**Decision:** use the simpler single-model approach as the main reference for
+real-document work. Broad RL stays held. A future size change should target a
+measured bottleneck; a larger model remains an untested capacity intervention for this
+fixed-depth behavior. Thought-augmented training value and deployed thought
+utility remain separate hypotheses, as discussed in
+[the paper notes](docs/REFERENCE_NOTES.md).
+
+## Prepared real data
+
+A verified real FineMath corpus is ready:5,120TRAIN and256DEV documents, native
+prefixes/continuations, exact prefix-derived partial calculations, and separate
+full traces for strong baselines. No model or learning run is implied by this
+preparation. There is no document overlap;44selected DEVexpressions also occur
+inTRAIN. The eligible pool contains276expression-novel DEVexamples for a future
+protocol fixed before learning. All83long-label exclusions and raw provenance are
+retained. [Readiness and four fixed computed examples](validation/real_prefix_partial_data_v9_20261019.json).
+
+All original full checkpoints remain on local SSDs. EBS retains every terminal
+model and the latest full scientific recovery under the
 [recorded retention policy](validation/partial_state_v7_checkpoint_retention_20261018.json).
-Host PSS is flat between saves but rises around full exports; longer continual
-training needs an export-path qualification. This is an
-[observed association, with cause unresolved](validation/partial_state_v7_checkpoint_host_memory_observation_20261019.json). A separate
-[tensor-only followup](validation/checkpoint_export_memory_v8_tensor_results_20261019.json)
-reproduces the growth. In a separate short SFT check, cleanup keeps post-save
-memory near21–22GiB versus49–139GiB. The
-[original strict restart gate](validation/checkpoint_export_SFT_recovery_v8_20261019.json)
-fails a small uninterrupted-versus-resumed difference; a
-[matched restart control](validation/checkpoint_export_restart_attribution_v8_20261019.json)
-reproduces that difference without cleanup, with identical resumed model and
-optimizer bytes. The candidate remains isolated; scientific source stays frozen.
+A separate bounded exporter test reduces post-save host memory from49–139GiB to
+21–22GiB. Its original strict uninterrupted-restart gate remains a failure;
+[matched restart attribution](validation/checkpoint_export_restart_attribution_v8_20261019.json)
+shows identical resumed model/optimizer/RNG states with or without cleanup.
+The candidate remains isolated; neither the original world32OOM nor indefinite
+training is qualified by this short test.
 
-An auxiliary untouched-B0 reference uses the same direct, empty and CoT prompts.
-It was added before new outcome review; the four-system primary remains fixed.
-[Prospective reference amendment](validation/partial_state_v7_untouched_reference_amendment_20261018.json).
+## Earlier partial-state precursor
+
+The one-seed128-example study established fresh reader benefit and reported a
+composition advantage over compact CoT. It used two models and twice the training
+updates, and did not include the stronger full-trace comparator. Its complete
+[original evidence](validation/partial_state_v6_DEV512_frozen128_20261018.json)
+is preserved. The larger matched study above governs the practical conclusion.
 
 ## Earlier matched developmental64 comparison
 

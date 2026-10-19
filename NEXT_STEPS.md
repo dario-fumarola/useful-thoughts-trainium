@@ -16,15 +16,15 @@
    reader320+writer320 from fresh B0 on the same5120expressions. Both CoT baselines
    stay. Seeds2026101806/07; constant1e-5, BF16 storage/FP32 masters, world4×micro8.
    Reader gets one teacher and one plain view per expression over two passes.
-3. All training and all eleven evaluation controllers close. Independent audit
-   is ACTIVE in `dario-ps7-whole-question-audit`:
-   `local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1/audit.log`.
-   At 01:45 UTC, twelve of twenty public gzip payloads are written (B0 and first
-   seed complete); second seed is being verified. Do not read partial results,
-   duplicate the command or change any source. Final report:
-   `validation/partial_state_v7_matched5120_complete_20261018.json`.
-   Wait for controller completion and final report, then interpret both seeds,
-   all four panels, both CoT controls, unchanged B0 and actual costs. No TEST/RL/8B.
+3. Complete matched study is independently audited, not pending. Full CoT wins
+   accuracy in all four panels/both seeds; split has no demonstrated practical
+   advantage. Preserve complete report/payloads and post-hoc trace/cost analysis.
+   TRAINwriter always had two intermediate equations; longer composition needs
+   three, but two-line output persists in501/512 and508/512cases. All notes stop
+   naturally. Prefer the simpler single-model solver for real data.
+   Main report: `validation/partial_state_v7_matched5120_complete_20261018.json`.
+   Original source remains57d3220 in its immutable worktree; old reproduction
+   must use it if main training code later changes. Official TEST stays unopened.
 4. Terminal320/640 is primary. Save64/160/terminal (plus320/480 for640); no best
    checkpoint selection. Evaluate all four512-item panels separately, retaining
    every error, cap and unsupported answer. New inference budget96: writer64+
@@ -109,3 +109,15 @@ After matched-question readout, choose the next model/method and declare trainin
 interface, cost and held endpoints before hardware qualification/learning.
 Thinking can improve learning and/or inference; keep the two hypotheses separate
 as clarified in `docs/REFERENCE_NOTES.md`. Current fixed comparison is unchanged.
+
+Next implementation: a bounded single-model real-document training reference,
+with ordinary raw continuation training and full-trace augmentation as serious
+comparators. Distinguish prior scratch computation from post-document explanatory
+training; choose objectives/packing explicitly before any learning release.
+First implement format-neutral packing and qualify a wider native-context SFT
+run with periodic full state/restart and memory observations. Reuse the existing
+one-reducer training engine; keep its constant LR/BF16-active/F32-master contract.
+Consider world8×micro4/global32 for width768, with smaller mechanics qualification
+before science. No second split-model study, broad RL or unqualified8B launch.
+Qualified export cleanup may be integrated for the NEW scope now that old audit
+is complete; preserve frozen57 source and old strict restart-limit report.

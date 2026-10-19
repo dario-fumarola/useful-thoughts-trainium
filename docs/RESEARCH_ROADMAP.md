@@ -10,18 +10,27 @@ The present synthetic study isolates computation before returning to real text.
 
 | Step | Evidence required | Current state and next action |
 |---|---|---|
-| 1. The reader can use computation | Correct partial states improve complete answers over the same reader's direct and empty paths; corruption and unrelated controls expose content dependence. | Pass on all four512-item fresh panels. Correct states yield50–67% answers, leaving a substantial reader calculation limit. |
-| 2. The writer can supply it | One prefix-only attempt produces valid partial computations and stops within budget on fresh expressions. | All2048fresh attempts stop naturally. Exact states81.25/60.74/56.25/44.34% across interpolation/structure/range/composition: usable computation generalizes, reliability remains limited. |
-| 3. The composed channel is useful | Actual student notes improve the same frozen reader over direct, empty and unrelated notes, with paired uncertainty and every failed attempt retained. | Pass on all four fresh panels, complete answers and every attempt retained. Actual matching teacher/student inputs reproduce the same answers. The mechanism is restricted to this synthetic task and one training seed. |
-| 4. The system earns its cost | Compare with answer-only training and competitive ordinary compact CoT, including both split training runs/models and actual generated tokens and latency. | Split ties compact CoT on interpolation/structure, gains4.30pp on range and20.12pp on composition, but used two models and twice the updates. Next: A/Bpartial/Bfull640 each versus reader320+writer320, two seeds. Choose the simpler solver if it matches. |
-| 5. The mechanism survives real data | Learn from real mathematical documents; evaluate fresh source-matched boundaries and complete answers before claiming unrelated benchmark transfer. | Broad general SFT/RL stays held. Prefer verifiable prefix-derived calculations first. Posterior usefulness alone is insufficient evidence for deployed notes. |
-| 6. Self-improvement adds value | Refinement improves beyond its supervised starting point, without a teacher at deployment; replicate the final comparison with independent seeds. | Only after a fresh useful channel. Then test on-policy notes or alternating reader/writer blocks, followed by RL if needed. Measure whether extra inference helps separately from whether training improves the direct model. |
+| 1. The reader can use computation | Correct states improve the same reader's answers with content controls. | Pass in the two-seed study: teacher accuracy48–83%, with substantial remaining calculation errors. |
+| 2. The writer can supply it | Prefix-only computation is correct, relevant, complete and naturally stopped. | Incomplete generalization. All4096notes stop naturally, but composition needs three equations while501/512 and508/512notes contain two. Training always required two. |
+| 3. The composed channel is useful | Student notes beat direct, empty and unrelated notes on the same reader. | Pass in all eight seed/panel cells; composition absolute accuracy remains3.7–3.9%. A positive local channel is insufficient for a good solver. |
+| 4. The system earns its cost | Compare strong direct, compact and full CoT with all models, updates and tokens accounted for. | No split advantage. Full CoT scores higher on all panels/both seeds; seven paired intervals exclude zero and one ends at zero. Prefer the simpler single-model reference. |
+| 5. The mechanism survives real data | Source-matched real-document endpoints, with genuine prefix-derived or explicitly posterior labels. | Verified5120TRAIN/256DEVdata ready. Native prefixes/targets, nonroot/full traces and raw provenance retained. No real-data model trained in the new scope yet. |
+| 6. Self-improvement adds value | Improve beyond the supervised reference without an external teacher at deployment. | Held. First complete the real-document single-model reference; distinguish training-scaffold value from extra-inference value. |
 
-These are necessary components, not six new probe projects. The first three now
-have fresh evidence; finish the matched-cost comparison before expanding the scope.
-A positive within-model effect establishes a mechanism; superiority to a strong
-matched solver is a separate practical claim. Neither establishes general-text
-pretraining gains by itself.
+The completed comparison is
+[fully public](../validation/partial_state_v7_matched5120_complete_20261018.json).
+Its [post-hoc trace analysis](../validation/partial_state_v7_matched5120_descriptive_20261019.json)
+finds a fixed-depth behavior consistent with learned stopping shortcuts. Larger
+training exposure on the same trace depth did not establish compositional
+execution. This is a measured boundary, not evidence that all intermediate
+computation or thought-augmented pretraining fails.
+
+Next use one model and verified real text. A full-trace CoT-style arm tests
+computation before prediction; a post-document explanatory arm tests training
+value. Both need a strong ordinary continuation control, explicit label/update
+costs and source-matched held endpoints. Exact posterior-note recovery is not a
+universal requirement for latent training; see [paper notes](REFERENCE_NOTES.md).
+No learning protocol is released by this roadmap alone.
 
 **Capacity is an intervention, not an assumed remedy.** A7–8B writer may produce
 more reliable work, while a stronger reader may already solve more without help.
