@@ -1456,3 +1456,13 @@ BACKUP duplicate was copied/readback/fsynced tosecondNVMe before its oldEBS copy
 was unlinked;latestfull andsixterminalEBSmodels were untouched. Receipt inrelease.
 All1788CPUchecks/smoke/compile pass,including pointerreplay/padding diagnostics.
 Noheld model forward ornewcapability outcome at release;V21gates remainunchanged.
+
+2026-10-19 19:39 UTC — Both fresh v23models complete256updates andphysicallyclose.
+Independent terminalaudit passesall4original128/256states,16initial nativechecks,
+orderedquestion exposure andseparate source/final/selection labelcounts.
+Bothterminalmodels/latestfull256 are readback/fsyncprotected andboundforevaluation;
+alloriginalstates retained. The earlier128fullEBSoptimizerduplicate retiredonly
+afternewfull256verified. Allsmalltrainingwitnesses/metrics andpublicationprotected.
+Begin the fixed1530nativeattempts,then3062originalLLrows;noearlyscoreinspection,
+checkpointselection orconditionalreplication beforethe declaredpilot readout.
+This is completedtraining/recovery evidence,not a newcapability result.

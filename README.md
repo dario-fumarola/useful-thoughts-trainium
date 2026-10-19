@@ -126,7 +126,10 @@ coefficient in both arms. Its [CPU preparation](validation/document_evidence_pla
 passes data, native packing and gradient checks. The [TRAIN-only decoder check](validation/document_evidence_plan_v23_decode_qualification_20261019.json)
 passes native/cache/CPU comparisons; the [training and restore check](validation/document_evidence_plan_v23_training_hardware_20261019.json)
 passes 11 actual updates, six complete state audits and a fresh-process restore.
-Two fresh models are training for one pilot seed; there is no new capability result.
+Both fresh models have [completed training](validation/document_evidence_plan_v23_training_20261019.json)
+for one pilot seed. All four periodic full states are audited; terminal models and
+the latest full recovery state are protected. Fixed evaluation is being prepared;
+there is no new capability result.
 The primary contrast is selection versus matched direct training on 255 fresh questions.
 An inference-assistance claim also requires gains over the selection model's own direct
 and empty-selection paths, as [declared before training](configs/document_evidence_v23_readout.json).

@@ -13,9 +13,9 @@
    Readout addendum configs/document_evidence_v23_readout.json separates net recipe gain
    from same-model inference assistance. Pilot seed2026101923 released,replication conditional.
    C=local/diagnostics/document-evidence-plan-v23-pilot-v1;monitor both C/*/run.log.
-   Owned sessions1396508/1396658,logical0–7/8–15;outputs/checkpoints inC/plan.json.
-   Both full128 states complete;one independently audited/readback-protected onEBS.
-   Terminal audit/protect/bind,GEN/LL/readout watchers wait. No held model forward yet.
+   Training sessions1396508/1396658 closed;GEN usesphysical4/5,LL6/7;outputs inC/plan.json.
+   Both256-update runs close;all4fullstates audited,allterminalmodels/latestfull256 EBSprotected/bound.
+   GEN1530/LL3062/readout watchers active. Monitor phase markers;no capability outcome inspected.
 
 1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,
@@ -56,9 +56,9 @@ Protected state/source:
 
 - C=local/diagnostics/document-QA-v21-study-v1;final-readout-completion.json PASS.
 - Raw/corepublic readout local/backups/evaluation/document-QA-v21-complete;originals retained.
-- LatestfullEBS local/backups/science/document-evidence-plan-v23-pilot-v1/FIRST_FULL128,
-  evidence_direct1923/128. V21'ssixterminalmodels stayprotected;all12originalfullstates remainNVMe.
-  OldV21 EBSoptimizerduplicates retired onlyafternewfull128readback;originalstates unchanged.
+- LatestfullEBS local/backups/science/document-evidence-plan-v23-pilot-v1/TERMINALS/latest-full256,
+  evidence_select1923/256. Bothnew/V21'ssixterminalmodels stayprotected;alloriginalfullstates remainNVMe.
+  Older EBSoptimizerduplicates retired onlyaftereachnewfullreadback;originalstates unchanged.
   EBS same-instance,not off-instance. Keep35GiB/filesystem and512GiBhostavailable.
 - Frozen train049f53e:local/worktrees/document-qa-v21;decoderdbd1c10:document-qa-eval-v21;
   spancore0d1a5b4:document-qa-span-v21. Do not mutate or rerun closedproducers.

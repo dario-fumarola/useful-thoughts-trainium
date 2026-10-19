@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-19T18:58:55+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248339,
+      "sha256": "d311912b261ae1006c9e4cb32132010e4ec8d85a16163a78c534c9cdd58c7187"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "62bc8bd6993baf1e43822b1a4be4398554091aec3f53c6659dd3a9c94118278d"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "d5300b3e7de6dfb83c97d0e36c128bf32f5082e1f6528b378df22141429899cc"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "daac1acdaf4ffb8cedcf5e158c4b893d133c009edcbb4365b949376e606dd62c"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "9df6b6e662827e2483ecca38f4820db60d3d1a410ccb41b902819fdb9bfbac2e"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "6e6aa4983441649c30a512d6d7a357ee6a3fc519c96888ce941d6c4e3670f8ff"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "5aa7755e347687f211ac99ef2bf21d37e99e9345c68378fe751d18547952cbde"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "d4b1e88aabc50a806da2d59d1eddea9c98d19a967064695f8c44f10d8eaf5ed3"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "314f34c7487bf4e53f90b8a04145dc5aeab8cd1fe4a8875de36b765e8a43f193"
+    }
+  },
+  "metadata": {
+    "arm": "evidence_direct",
+    "counters": {
+      "expressions": 4096,
+      "supervised_tokens": 1086376
+    },
+    "data_sha256": "fa286db22d4d0ffaafe08215d05ffeebff39a45124eb5f1295763ce8f7249e90",
+    "order_hash": "756bba524a43d7487fe0967efd973632c5bc419a74ff03a03cc3280eed02c7b9",
+    "pipeline_schema": "document-evidence-plan-v23",
+    "protocol_sha256": "0eefb9b6afa928447f589ea7b9f8bca5792a078b2f1db902c93c45eedc20ad3c",
+    "seed": 2026101923,
+    "spec_hash": "ff814c93fd23505cfb9fb22c0a41e3b5a0a8d299b6ecd4fda1e18c401d82bb6c"
+  },
+  "run_id": "document-evidence-plan-v23-evidence_direct-TRAIN2048-seed2026101923-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "ff814c93fd23505cfb9fb22c0a41e3b5a0a8d299b6ecd4fda1e18c401d82bb6c",
+  "step": 128,
+  "world_size": 8
+}

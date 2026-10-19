@@ -1,6 +1,6 @@
-# Status — 2026-10-19 19:05 UTC
+# Status — 2026-10-19 19:39 UTC
 
-## Active: passage-selection pilot training
+## Active: passage-selection fixed evaluation
 Question: does selecting visible passage IDs help complete answers beyond format-matched direct training?
 ID: document-evidence-plan-v23 V2; two fresh arms, pilot seed2026101923,terminal256 primary.
 CPU: 1,795 checks plus smoke/compile pass,including frozen answer/decision scoring;all6,144 native views fit.
@@ -13,9 +13,9 @@ V21 prior-final coefficients averaged9.3% on augmented examples,54.6% across fou
 New pointer targets avoid intermediate factual claims; author support annotations remain imperfect.
 Decoder: four TRAIN attempts close; independent native/cache/long-CPU audit passes; zero execution errors.
 Training qualification:11 actual updates/all6 full states/fresh restore pass;bounded post-save PSS83–97GiB.
-Pilot:both full128 states complete;one independently audited/readback-protected onEBS;training continues.
-Active owned sessions1396508/1396658,logical0–7/8–15;C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
-Next:`cat local/analysis/CURRENT_V23_SESSION.json`;monitor C/*/run.log andplan outputs;terminal/eval watchers wait,no held forward yet.
+Training:both256updates complete/physicallyclosed;all4states audited,terminalmodels/latestfull256 EBSprotected.
+C=local/diagnostics/document-evidence-plan-v23-pilot-v1;bothterminalmodels bound,fixedGEN/LL/readout watchers active.
+Next:`cat local/analysis/CURRENT_V23_SESSION.json`;monitor C/generation-pipeline andphase markers;no capability outcome inspected.
 
 ## Closed: TRAIN relation audit and fresh-evidence availability
 Question: can existing reasoning annotations support a simple reference-substitution repair?
