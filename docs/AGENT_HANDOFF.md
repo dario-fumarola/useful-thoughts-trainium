@@ -1,123 +1,113 @@
-# Current research handoff — 2026-10-19 05:00 UTC
+# Current research handoff — 2026-10-19 05:39 UTC
 
-Read NEXT_STEPS.md and STATUS.md first. The owner authorizes autonomous research,
-maintaining the public repository, and existing-node training. Continue until
-stopped. Agents are quota-unavailable; do not retry spawning them.
+Continue autonomous work until the owner stops it. Do not finish at a milestone.
+Read STATUS.md and NEXT_STEPS.md. Agents are quota-unavailable; do not retry.
+Keep commentary meaningful and no more than60 seconds apart. Avoid long internal
+planning while runs progress. No active goal; do not infer/create a goal.
 
-The main question is whether a single model trained with verified computations
-improves fresh real-document predictions over source-matched raw CPT. Training
-benefit and extra-inference benefit are independent endpoints. Keep the separate
-writer–reader system as one bounded diagnostic, not the main architecture.
+## Exact next actions
 
-## Exact next action
+1. Monitor the existing evaluation jobs; do not duplicate launchers.
+   Main control:local/diagnostics/real-trace-cpt-v10-study-v1.
+   All six raw/prior/post models, seeds2026101913/14, completed320 updates and
+   physically closed. All12 full160/320 states and48 native checks independently
+   pass. All six terminal weights and latest complete optimizer are EBS-protected.
+   Latest full320:real_raw seed1914. Terminal bindings in control/frozen-models.
+   Immutable training3d8666b,worktree local/worktrees/real-trace-cpt-v10.
+   Public:validation/real_trace_cpt_v10_terminal_training_20261019.json.
 
-Mainline training is LIVE. Control: local/diagnostics/real-trace-cpt-v10-study-v1.
-All three seed2026101913 models reached320,savedterminalandphysicallyclosed.
-Fresh8rank seed2026101914 runs use physical0/1 raw,2/3 prior,4/5 post;alllive. Tmux: cpt-v10-real_raw,cpt-v10-real_prior,
-cpt-v10-real_post. Secondseedrunsare past115updates;firstseedcheckpointsremainunchanged. Immutable training source3d8666b,local/worktrees/real-trace-cpt-v10.
-All six fresh B0;320 updates,full160/320,terminal primary. Monitor active logs,
-metrics,memory and device ownership. No automatic retry or outcome-based extension.
+2. Main likelihood evaluation: source29c8b24 at
+   local/worktrees/real-trace-eval-v10,1,646 CPU checks. NEVER edit this source
+   while its generation/scoring jobs live: they verify every dependency hash.
+   The release watcher launched all six fixed models. Each has cpt-eval-{arm}-seed{seed}
+   and cpt-score-{arm}-seed{seed}. Full registry:control/evaluation-registry.json
+   confirms ALL_SIX_FROZEN_TERMINAL_EVALUATIONS_LAUNCHED. B0 notes are complete; cpt-v10-B0-CPU-scoring
+   continues its two arithmetic panels and explicitly reuses ordinary-reference
+   observations. Do not inspect numeric trained outcomes before all models/panels finish.
 
-The real-context eight-rank qualification independently PASSES:all4fullstates,
-native16,actualsaved6restored8optimizerdigests,finiteFP32masters/moments,BF16casts,
-counters and memory bound. Late groupedPSSgrowth1.467GiB/save<2. Latestfull8 EBS
-readback verified. Public qualifier and launch reports in validation. The complete
-sciencePRE_LAUNCHsource/protocol/release archive was EBS-readback verified before
-launch. No terminal scientific result yet. Protect first newsciencefull160 when
-available;onlythenrotateolderEBSoptimizerduplicates with fresh readback.
+   Tmux cpt-v10-final-readout waits for all seven CPU completions, then runs archive
+   and analysis once. Source:local/analysis/watch_real_trace_final_readout_v10_20261019.py.
+   Result:validation/real_trace_cpt_v10_complete_20261019.json and matching directory.
+   It saves all35 payloads:19,712 native16 likelihood rows and3,584 original notes.
+   Afterward run check_real_trace_readout_v10_20261019.py and
+   render_real_trace_readout_v10_20261019.py from the evaluation worktree with
+   explicit PYTHONPATH; inspect the figures and independently assess all claims.
+   Complete examples/interpretation/publication remain to do. No automatic Git push.
 
-Training shape: world8 × micro4, global32, width640, target640, head chunk32;
-BF16 active parameters/gradients, FP32 masters/Adam, one ZeRO reduction owner.
-Warm fresh updates measured about six seconds; cold compilation took much longer.
-Do not interpret compilation time as sustained throughput or finite loss as capability.
+3. The already-declared scalar secondary is now implemented, not a new training
+   study. Public prospective design:a9c4334 on main. Source4297c1d at
+   local/worktrees/real-trace-answers-v10; full1,657 CPU checks plus latest11 affected
+   checks after tighter binding validation. NEVER change its source while jobs live.
+   Gold/contexts are separate. Existing initial-scalar-v2 unchanged. Greedy32,
+   EOS-only; all256 documents per mode, errors/unsupported/caps retained.
+   Seven fixed models, AST256 and legacy256 separately, five modes:17,920 attempts.
 
-The first science160 is fully independently audited,readback verified and fsynced:
-real_prior seed1913. Full optimizer/model on EBS at
-local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160.
-Older variable160 and qualification8 EBS optimizer duplicates were retired only
-after fresh full original/backup hashes and newer protection. All originals and
-all EBS model weights remain. Receipt:checkpoint_retention_after_real_CPT160_20261019.json.
+   B0 tmux cpt-scalar-B0, physical12, is generating first-panel answers.
+   All four actual native and cache672/cap32 checks pass. Qualification:
+   local/diagnostics/real-trace-v10-scalar-secondary-study-v1/B0-shape-qualification.json.
+   Tmux cpt-v10-scalar-release waits for each model's complete original note bundles,
+   prepares/protects exact contexts, then launches it on physical6–11. Every trained
+   model checks itself again. No retry or source/notes/model selection.
+   Registry appears after all seven releases. Existing finite watcher is
+   local/analysis/watch_real_trace_scalar_secondary_v10_20261019.py.
+   Tmux cpt-v10-scalar-readout waits for all completions, then archives/rechecks
+   and publishes local JSON/payloads using analyze_real_trace_scalar_secondary_v10_20261019.py.
+   Secondary result path:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
+   Figures, direct independent checks and interpretation still need completion.
+   This measures the initial computed scalar at a curated document boundary;
+   do not call it general problem QA or change the primary likelihood gates.
 
-Automatic terminal watcher is LIVE:tmux cpt-v10-terminal-pipeline. After all6
-closures it runs independent all-state/native/counter audit,protectsall6models
-and one latestfull320,then freezes evaluation bindings. No retries.
-Automatic evaluation watcher is LIVE:tmux cpt-v10-six-evaluations. Afterbindings
-it prepares6canonicalCPUreferences,reuses each forlegacy,andlaunches6four-core
-notejobs(physical0–5)and6CPUscorers(16threadseach). Code in local/analysis:
-watch_real_trace_terminal_pipeline_v10_20261019.py,
-watch_real_trace_six_evaluations_v10_20261019.py.
-Inspect these finite watcher logs and receipts;do not duplicate their work.
+## Fixed data and decisions
 
-## Frozen data and endpoints
+TRAIN5120 unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.
+Primary held V2:local/nvme-study/data/real-trace-cpt-v10-held-panels-v2,
+manifest22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24.
+All256 ordered exact-value ASTs are distinct and absent from TRAIN. Ten aliases
+were corrected before learning; preserve V1, old panels and all observations.
+Evaluation questions/targets separate under
+local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2.
+Scalar scoring-only values under local/nvme-cpt/data/real-trace-v10-scalar-secondary-v1.
 
-TRAIN5120 is unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.
-Primary held data is local/nvme-study/data/real-trace-cpt-v10-held-panels-v2.
-Manifest SHA22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24.
-V1 string novelty missed 10 TRAIN-equivalent ASTs. V2 was frozen before learning;
-256 documents contain 256 distinct ordered exact-value ASTs, all absent from TRAIN.
-TRAIN has 5,120 documents and 4,299 distinct ASTs. Preserve V1 and all old observations.
-The ordinary256 panel is unchanged. Legacy256 remains separate, with expression overlap.
+Training gate:post.raw−raw.raw full16 LL>=0.25nat and paired95% lower>0 in both
+seeds; ordinary-text token NLL regression mean<=0.02,95% upper<=0.05.
+Inference gate:prior.own−raw.raw>=0.25nat and positive lower in both seeds;
+own−same-model raw and empty must also have positive lower; no execution errors.
+Independent gates. Also report prior.own−raw.own, own−other, B0 absolute paths,
+ordinary regressions, all caps/errors and actual token costs. Never turn beating
+an impaired control into a new-best-base claim. Bootstrap20k documents,seed1915;
+intervals condition on checkpoints, not training-seed uncertainty. All panels DEV.
 
-Primary training: post.raw − raw.raw full16 LL >=0.25 nat and positive paired CI in
-both seeds, with ordinary mean NLL regression <=0.02 and CI upper <=0.05 nat/token.
-Primary inference: prior.own − raw.raw >=0.25 nat and positive CI in both seeds;
-own minus same-model raw/empty must also have positive CIs. Report all ordinary
-regressions and unchanged-B0 absolute paths. Do not add gates after outcomes.
-20,000 paired document bootstrap draws, seed2026101915. Checkpoint-conditional
-uncertainty is not training-seed uncertainty. Preserve all failed/capped attempts.
+## Completed diagnostic and broader scope
 
-## Active evaluations
+Variable-depth repair is complete/public:a7835c7,
+validation/variable_depth_writer_v11_complete_20261019.json.
+Composition512:fixed124→variable306, paired+35.5pp[31.3,40.0]; canonical/natural91→409.
+FrozenfullCoT273, but curricula/target tokens differ and only one diagnostic seed.
+Freshdepth2 variable182/256 versusCoT193; unseen depth6 variable10/256 versusoracle78.
+All9,216 answers/2,048 notes are audited/public. Do not launch a larger split rescue.
+Old two-seed v7 is public negative;a0ae5ec. R1234 stays stopped at63.
+MuSiQue broader-document work is CPU preparation only:7c5c264,correct composed
+question field,all visible paragraphs,no gold support flags in input. No cohort,
+model, official DEV/TEST or broader-learning release. Decide after mainline readout.
 
-Math diagnostic COMPLETE and published:main a7835c7.
-All7controllers/3panels,9,216answers/2,048notes independently audited.
-Composition512:fixed124,variable306(+35.5pp[31.3,40.0]),teacher377,fullCoT273,B0262.
-Canonical/natural91→409;predeclaredrepairgatePASS. Freshdepth2variable182vsCoT193;
-unseendepth6variable10/256vsoracle78. One seed,differentcurricula/targettokens,
-frozencompetitors:positiveboundedcurriculumrepair,notmatchedarchitectureadvantage.
-Publicreport:validation/variable_depth_writer_v11_complete_20261019.json.
-Allpayloads,figures,CSV,deterministicexamples,auditsourceandEBSarchive preserved.
-Do notlaunchanotherlargersplitrescue. Training5af3431/evaluation11512db immutable.
+## Storage and runtime invariants
 
-B0realnotegeneration COMPLETE for bothAST256andlegacy256. Primarycontrol:
-local/diagnostics/real-trace-v10-B0-DEV_AST256-notes-v1;legacyanalogous.
-CPUlikelihoodscoringLIVE:tmux cpt-v10-B0-CPU-scoring,control
-local/diagnostics/real-trace-v10-B0-CPU-scores-v1. Ordinaryreference reused explicitly,
-not newindependentobservations. No trainedreal-model capability result yet.
+Keep35 GiB free per filesystem and512 GiB host availability. All original full
+checkpoints stay on NVMe. EBS retains every terminal model and latest full320.
+Superseded EBS first160 optimizer duplicates were retired only after fresh full
+hashes on BOTH old original/copy and newer original/copy. Eight duplicates only;
+all originals/model weights remain. Receipt:
+validation/checkpoint_retention_after_real_CPT320_20261019.json. Root now about64 GiB free.
+Current EBS latest:local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320.
+Historical FIRST_FULL160 has an explicit retirement annex; do not load its removed
+rank copies. Original full160 remains intact on local/nvme-cpt/runs.
+Backups are same-instance, not off-instance.
 
-Real evaluation source local/worktrees/real-trace-eval-v10,29c8b24,1,646CPUchecks.
-CPUscorer reproduces all256ordinary reference vectors exactly. Fixedprojections:
-local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2,EBSprotected.
-V1preparationomittedleadingwhitespaceinsecondarycomponentcheck;heldbeforemodelrun.
-V2retainsallprimary16targets;componentsunsupported8AST/5legacy,neverdropprimaryrows.
-Rawtrainingeligibilityisindependentofnotegenerationerrors. Othernotesarenative,
-intactandgloballyderanged;no trim,repair,utilityfilterorbest-ofselection.
-
-## Storage and operational invariants
-
-Keep35 GiB free per filesystem and512 GiB host availability. Root free about83 GiB
-after verified duplicate rotation. All original full checkpoints stay on NVMe.
-EBS retains all terminal models and latest complete resumable scientific state,
-currently real_prior seed1913 step160. Older inactive duplicate optimizer payloads retire only
-after fresh original/EBS full hashes and newer full recovery protection. Model
-files, metadata, receipts, and original states remain. This is same-instance backup.
-
-NEW local/nvme-cpt is already formatted, fsync/readback tested and mounted:
-UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67. NEVER rerun mkfs; remount UUID if needed.
-Original local/nvme-study UUID63bee3f4-6b43-4290-a0f8-1c8946b7a509 is intact.
-Use local/nvme-cpt/runs for the six real runs. No fstab/cloud/IAM/network changes.
-No paid teacher service or unapproved bucket upload. Never print broad process
-arguments or environment values; unrelated processes can contain credentials.
-
-MuSiQue TRAIN preparation is complete and CPU-only: 19,938 authored questions,
-correct composed_question_text, all paragraphs retained. V2 inventory and source
-are protected; no cohort/model/evaluation release. Do not start a third large study.
-
-The completed two-seed v7 study remains a negative architecture comparison:
-full CoT wins all eight cells; generated composition answers20/19 of512 versus
-fullCoT273/234. Original source57d3220 is immutable. Main result a0ae5ec and linked
-reports preserve all51,200 answers/4,096 notes. Never resume R1234, stopped63.
-No broad RL, unqualified8B, or official TEST. Existing review ZIP was linked today;
-do not send another unless needed. Papers are in docs/REFERENCE_NOTES.md.
-
-Keep analysis short and act on the next concrete task. Send meaningful updates
-within60 seconds, wait at most45 seconds at a time, and let legitimate compiles finish.
+local/nvme-cpt already formatted/mounted UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67;
+NEVER mkfs again. local/nvme-study UUID63bee3f4-6b43-4290-a0f8-1c8946b7a509 intact.
+Use existing venv and source scripts/env.sh, then ALWAYS override PYTHONPATH:
+export PYTHONPATH="$PWD:/home/ubuntu/dario/local/analysis:/home/ubuntu/dario/local/test-deps".
+Absolute analysis scripts otherwise import main instead of the selected worktree.
+No rg installed; use targeted Python/grep/find. No cloud/IAM/network/paid teacher/
+new bucket changes. Do not inspect broad process environments: unrelated daemon
+arguments can contain secrets. Read only owned PIDs/selected fields.

@@ -1,0 +1,1034 @@
+{
+  "status": "COMPLETE_SIX_FIXED_REAL_MODELS_AUDITED_PROTECTED_AND_FROZEN",
+  "utc": "2026-10-19T05:36:23.498443+00:00",
+  "purpose": "Actual completed training, integrity and recovery evidence; no held-out capability result.",
+  "immutable_training_commit": "3d8666b",
+  "actual_updates": 1920,
+  "full_checkpoints_audited": 12,
+  "native_model_checks": 48,
+  "unique_source_documents": 5120,
+  "total_document_occurrences": 61440,
+  "total_supervised_tokens": 28609996,
+  "audit": {
+    "status": "PASS_ALL_SIX_TERMINAL320_TRAINING_STATES_NATIVE48_ORDER_AND_COUNTERS",
+    "utc": "2026-10-19T05:27:45.401253+00:00",
+    "models": [
+      {
+        "arm": "real_raw",
+        "seed": 2026101913,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+        "checkpoints": {
+          "160": {
+            "step": 160,
+            "COMPLETE_sha256": "9070c554f03cf2c6fa92ac960b12fbfe0d2bbea9a71f96d4c198a511635d81af",
+            "model_sha256": "369ecde0515ea383bc1e04546f66d07ee21b72863586a9e3b30f0b85ac17406d",
+            "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+            "spec_hash": "ac9f08575266f12f9994a7a19c116dc251c466afe4139555924f4e617463856b",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "320": {
+            "step": 320,
+            "COMPLETE_sha256": "2409dec11ae7bd2d9f1cdc55ae6d74d1a029af886d1297dbf625ef4289d1980c",
+            "model_sha256": "a087e9d7589b49c09d1a6801a1252e0dc1e7238290b832c5f408b73deb745db4",
+            "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+            "spec_hash": "ac9f08575266f12f9994a7a19c116dc251c466afe4139555924f4e617463856b",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_initial_master_witnesses": 8,
+        "actual_updates": 320,
+        "terminal_counters": {
+          "expressions": 10240,
+          "supervised_tokens": 4653686
+        },
+        "warm_last60_median_update_seconds": 5.984623302501859,
+        "completion_sha256": "6879a1b390e231dbbb9efbd1bc4af8b574efe6c89cd2faf27c889554d943bc7a",
+        "closure_sha256": "e00012f2e3b708f603abcd33cee0ba52d35ab6e06ab26d4ffab93d4b4126ce2e",
+        "metrics_sha256": "31345365792ba3c35f65c642046783236faa6aa43e66f715201956d1b8803540",
+        "protocol_sha256": "0721bc40a7cb155e662d6b664dd1e3c2532a95df14fe9b01fe0536767de69818"
+      },
+      {
+        "arm": "real_raw",
+        "seed": 2026101914,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+        "checkpoints": {
+          "160": {
+            "step": 160,
+            "COMPLETE_sha256": "d128e4d4932918095956fd7aee5030c20ce0d5a6713446e4f2e004d2349897ab",
+            "model_sha256": "8180a1eeed92f6175e070ee44f121dfae1c294f70d991437c5e5ea5e2de457ed",
+            "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+            "spec_hash": "8f729e989771521b898b8fc94f386d7976599a002ee56757b7d66787bdf658ff",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "320": {
+            "step": 320,
+            "COMPLETE_sha256": "24769e545f70efa7d7d729f02f9d48603fc0888f7ee2d2722c298186248233f4",
+            "model_sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2",
+            "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+            "spec_hash": "8f729e989771521b898b8fc94f386d7976599a002ee56757b7d66787bdf658ff",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_initial_master_witnesses": 8,
+        "actual_updates": 320,
+        "terminal_counters": {
+          "expressions": 10240,
+          "supervised_tokens": 4653686
+        },
+        "warm_last60_median_update_seconds": 6.018134700512746,
+        "completion_sha256": "cb09543864edbac1d555da8525f04f221d11c2bc0488914e23d06e08439850b0",
+        "closure_sha256": "ea0a5fc2396bc79da49822d55c0a5c4fd8c4162cb82ca9fd0e3463f7edaf3cf4",
+        "metrics_sha256": "8ca7f59ed4c2282dbd70943161c8d0d8c2b49405389db2e14d8ba8c257dc7e44",
+        "protocol_sha256": "382f7e2d0a055fb4c693d4b0516bfcb0c5149c7b24cfc007985ef4b57abfa335"
+      },
+      {
+        "arm": "real_prior",
+        "seed": 2026101913,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+        "checkpoints": {
+          "160": {
+            "step": 160,
+            "COMPLETE_sha256": "deeb26162ac9ce481913e4d41492b2040418a16c706f9bf3abf13f1be6259e7a",
+            "model_sha256": "204af60058865e8eda5ccdc7f7ed3c1d31c139c7cb707330b971fd5adf7eef31",
+            "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+            "spec_hash": "8c8860185597024884291f9181a61e3473f515fe5bf08f4e38f8636010c5d158",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "320": {
+            "step": 320,
+            "COMPLETE_sha256": "aae1e7a21c73a48be5d435b8dd922c0279d16c240e5558c9dbb09a0c79017e32",
+            "model_sha256": "b52f26079fac2d5f71fc67fa358f3944d2c332435d0236c7e54d93745f4b8805",
+            "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+            "spec_hash": "8c8860185597024884291f9181a61e3473f515fe5bf08f4e38f8636010c5d158",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_initial_master_witnesses": 8,
+        "actual_updates": 320,
+        "terminal_counters": {
+          "expressions": 10240,
+          "supervised_tokens": 4828216
+        },
+        "warm_last60_median_update_seconds": 5.910982785499073,
+        "completion_sha256": "e140e193a70ae371415f70acc3f5fc01840a432de9dba6f536263503494a5af4",
+        "closure_sha256": "eeaa76437804811cb2e6c0808d7c9d57f8afcdaecc76bfa37be30de0f7dc0121",
+        "metrics_sha256": "5d7a5777533d07866c730f8d83549c8f36cbee4ceb02afd509ad3cae804bd1cf",
+        "protocol_sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1"
+      },
+      {
+        "arm": "real_prior",
+        "seed": 2026101914,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+        "checkpoints": {
+          "160": {
+            "step": 160,
+            "COMPLETE_sha256": "d5216b4e330a380dbe9c32523f2346f474287d7ef4881d8506373772bc258462",
+            "model_sha256": "d625c34c3ac542f27d57b594df9ecbe2994461fdfa96ee0da673b565a6977e3f",
+            "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+            "spec_hash": "7062b7073497bb0a2c773601eb37692c584d7fe5ecd10f7d3104b8768950a54a",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "320": {
+            "step": 320,
+            "COMPLETE_sha256": "4fd05f8c90fdd9df32405809d181a3e6661bd15185a745c5ac7295daed5cf277",
+            "model_sha256": "2c27073ecc3d7784a4a4db7fc37298c59b5cebaf44a05643a8eac7e92869495d",
+            "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+            "spec_hash": "7062b7073497bb0a2c773601eb37692c584d7fe5ecd10f7d3104b8768950a54a",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_initial_master_witnesses": 8,
+        "actual_updates": 320,
+        "terminal_counters": {
+          "expressions": 10240,
+          "supervised_tokens": 4828216
+        },
+        "warm_last60_median_update_seconds": 5.922091682514292,
+        "completion_sha256": "8c72364504d707ae6c4bb482f9f9265b26468a733277836e66a44a432a1305f7",
+        "closure_sha256": "5da61cfd54072d389e18f73a80ec2a05687e9856d663982125f70344138496da",
+        "metrics_sha256": "50b75c2edaf5636d4a6bc71a1b114573d4760cbb38037ad5f016f44f3c8dc355",
+        "protocol_sha256": "fe748b59c93052e2930aec9d53000b7234d85fa620d06ff02e85b6f063011cc7"
+      },
+      {
+        "arm": "real_post",
+        "seed": 2026101913,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+        "checkpoints": {
+          "160": {
+            "step": 160,
+            "COMPLETE_sha256": "ccaab0420260aa27324036139e11dbcac7fe3991135d253e10280688a592c1c5",
+            "model_sha256": "b1bfb20f5612fabbff928f282c8a1b46674b7052c61907df2433571c1e0a5084",
+            "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+            "spec_hash": "06a80b4ff93c3dda12e5a617f319da3086f2bdf129b881cc176b0a8418fdc9e5",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "320": {
+            "step": 320,
+            "COMPLETE_sha256": "c32f13c05775166f64e09dd85f48ba6ac1602ad47bf55da07bc195f1154299d2",
+            "model_sha256": "d0e1a75856ce45600c0983fd8fc8dcb52abe9dbdf02049bd52e8f9e8bccf3a38",
+            "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+            "spec_hash": "06a80b4ff93c3dda12e5a617f319da3086f2bdf129b881cc176b0a8418fdc9e5",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_initial_master_witnesses": 8,
+        "actual_updates": 320,
+        "terminal_counters": {
+          "expressions": 10240,
+          "supervised_tokens": 4823096
+        },
+        "warm_last60_median_update_seconds": 5.940783508500317,
+        "completion_sha256": "b60cdad5ec5b300bbd18a8d1056ff993ca11d2244ba43b5afaf6e69140ca948d",
+        "closure_sha256": "c97451e9caddc7d9ab8664f04a836f2e6f2382b65c8b52738d2a20b470cac129",
+        "metrics_sha256": "714e38a24c086f120f2980aabf7cdfcf8288de9cefaf3bd7e610227ee9420901",
+        "protocol_sha256": "fba0d1760a173d2d2f8764224a17bbb2aac609a5effd67c28889a15716066a2e"
+      },
+      {
+        "arm": "real_post",
+        "seed": 2026101914,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+        "checkpoints": {
+          "160": {
+            "step": 160,
+            "COMPLETE_sha256": "8834a7cca7fb5b297411b2445720df14f02ea086fd013498604e1a3902154c09",
+            "model_sha256": "43ba8228610296ddd34873921244ffbbd9736eff18945f584b02d7209a2d6938",
+            "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+            "spec_hash": "c5fe9f472a8e09c4abeac7af59f84998990e81f8e00bfc05a3c8d9930575d47f",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "320": {
+            "step": 320,
+            "COMPLETE_sha256": "dad12f8f7c4ba5d0e260415e3821b55353670bbce8904eeaed4e9d04680e9a08",
+            "model_sha256": "6e56848d3a666d15aba6786e6d9b5a003baf7ddffe25f79c4e56a6da821b7319",
+            "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+            "spec_hash": "c5fe9f472a8e09c4abeac7af59f84998990e81f8e00bfc05a3c8d9930575d47f",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_initial_master_witnesses": 8,
+        "actual_updates": 320,
+        "terminal_counters": {
+          "expressions": 10240,
+          "supervised_tokens": 4823096
+        },
+        "warm_last60_median_update_seconds": 5.931467320493539,
+        "completion_sha256": "c65d4ed118d49777da029a52465482bdf0e1323a6713f4e15e2bd192e5bac60b",
+        "closure_sha256": "3ca187ead072f03c15bbdc4d89b561f7750419d5416817ec14401bd8b2de2bb3",
+        "metrics_sha256": "cda547bfaf6854651a00879060b1b638d05847f71740a6e2c82c5f949c6a4996",
+        "protocol_sha256": "e0ae3928f9c20f1d396e3f8195163bbf492999588aa21b4984a9a695d8807e4b"
+      }
+    ],
+    "source_files": {
+      "train/partial_state_driver.py": "a65c7f43a6972d99c41e562b644831e9d1397d28643800b8468599369bd4c970",
+      "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+      "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+      "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+      "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+      "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+      "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+      "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+      "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31"
+    },
+    "plan_sha256": "6bd31906a5e7fd6b0f545bec7dc9a59f2809e1cb7bf95550801e70a40593ad16",
+    "audit_source_sha256": "a09047a42d375bac85b099f937bf03bca9fdac5e9f7f1879060594cde52ab833",
+    "state_audit_source_sha256": "aeaf0a87a99052d7ef927c3fac233371bd78c64a6d52ba19daafa04c6dff5f71",
+    "limits": [
+      "Trainingmechanicsandcompleteartifactintegrity,notheldoutcapability.",
+      "Evaluationbindingsrequireseparateprotectionofallterminalmodelsandlatestfullstate.",
+      "Noadditionalindependentobservationsfromrecheckingtheearlierprotectioncheckpoint."
+    ]
+  },
+  "protection": {
+    "status": "PASS_ALL_SIX_TERMINAL_MODELS_AND_LATEST_FULL320_PROTECTED",
+    "utc": "2026-10-19T05:35:10.756409+00:00",
+    "models": {
+      "real_raw-seed2026101913": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/models/real_raw-seed2026101913/model.pt",
+        "sha256": "a087e9d7589b49c09d1a6801a1252e0dc1e7238290b832c5f408b73deb745db4"
+      },
+      "real_raw-seed2026101914": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/models/real_raw-seed2026101914/model.pt",
+        "sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2"
+      },
+      "real_prior-seed2026101913": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/models/real_prior-seed2026101913/model.pt",
+        "sha256": "b52f26079fac2d5f71fc67fa358f3944d2c332435d0236c7e54d93745f4b8805"
+      },
+      "real_prior-seed2026101914": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/models/real_prior-seed2026101914/model.pt",
+        "sha256": "2c27073ecc3d7784a4a4db7fc37298c59b5cebaf44a05643a8eac7e92869495d"
+      },
+      "real_post-seed2026101913": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/models/real_post-seed2026101913/model.pt",
+        "sha256": "d0e1a75856ce45600c0983fd8fc8dcb52abe9dbdf02049bd52e8f9e8bccf3a38"
+      },
+      "real_post-seed2026101914": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/models/real_post-seed2026101914/model.pt",
+        "sha256": "6e56848d3a666d15aba6786e6d9b5a003baf7ddffe25f79c4e56a6da821b7319"
+      }
+    },
+    "latest_full": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320",
+      "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320",
+      "COMPLETE_sha256": "24769e545f70efa7d7d729f02f9d48603fc0888f7ee2d2722c298186248233f4"
+    },
+    "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+    "files": {
+      "models/real_raw-seed2026101913/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "a087e9d7589b49c09d1a6801a1252e0dc1e7238290b832c5f408b73deb745db4"
+      },
+      "models/real_raw-seed2026101913/COMPLETE.json": {
+        "bytes": 2083,
+        "sha256": "2409dec11ae7bd2d9f1cdc55ae6d74d1a029af886d1297dbf625ef4289d1980c"
+      },
+      "models/real_raw-seed2026101913/protocol.json": {
+        "bytes": 5517,
+        "sha256": "0721bc40a7cb155e662d6b664dd1e3c2532a95df14fe9b01fe0536767de69818"
+      },
+      "models/real_raw-seed2026101914/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2"
+      },
+      "models/real_raw-seed2026101914/COMPLETE.json": {
+        "bytes": 2083,
+        "sha256": "24769e545f70efa7d7d729f02f9d48603fc0888f7ee2d2722c298186248233f4"
+      },
+      "models/real_raw-seed2026101914/protocol.json": {
+        "bytes": 5517,
+        "sha256": "382f7e2d0a055fb4c693d4b0516bfcb0c5149c7b24cfc007985ef4b57abfa335"
+      },
+      "models/real_prior-seed2026101913/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "b52f26079fac2d5f71fc67fa358f3944d2c332435d0236c7e54d93745f4b8805"
+      },
+      "models/real_prior-seed2026101913/COMPLETE.json": {
+        "bytes": 2087,
+        "sha256": "aae1e7a21c73a48be5d435b8dd922c0279d16c240e5558c9dbb09a0c79017e32"
+      },
+      "models/real_prior-seed2026101913/protocol.json": {
+        "bytes": 5518,
+        "sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1"
+      },
+      "models/real_prior-seed2026101914/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "2c27073ecc3d7784a4a4db7fc37298c59b5cebaf44a05643a8eac7e92869495d"
+      },
+      "models/real_prior-seed2026101914/COMPLETE.json": {
+        "bytes": 2087,
+        "sha256": "4fd05f8c90fdd9df32405809d181a3e6661bd15185a745c5ac7295daed5cf277"
+      },
+      "models/real_prior-seed2026101914/protocol.json": {
+        "bytes": 5518,
+        "sha256": "fe748b59c93052e2930aec9d53000b7234d85fa620d06ff02e85b6f063011cc7"
+      },
+      "models/real_post-seed2026101913/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "d0e1a75856ce45600c0983fd8fc8dcb52abe9dbdf02049bd52e8f9e8bccf3a38"
+      },
+      "models/real_post-seed2026101913/COMPLETE.json": {
+        "bytes": 2085,
+        "sha256": "c32f13c05775166f64e09dd85f48ba6ac1602ad47bf55da07bc195f1154299d2"
+      },
+      "models/real_post-seed2026101913/protocol.json": {
+        "bytes": 5519,
+        "sha256": "fba0d1760a173d2d2f8764224a17bbb2aac609a5effd67c28889a15716066a2e"
+      },
+      "models/real_post-seed2026101914/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "6e56848d3a666d15aba6786e6d9b5a003baf7ddffe25f79c4e56a6da821b7319"
+      },
+      "models/real_post-seed2026101914/COMPLETE.json": {
+        "bytes": 2085,
+        "sha256": "dad12f8f7c4ba5d0e260415e3821b55353670bbce8904eeaed4e9d04680e9a08"
+      },
+      "models/real_post-seed2026101914/protocol.json": {
+        "bytes": 5519,
+        "sha256": "e0ae3928f9c20f1d396e3f8195163bbf492999588aa21b4984a9a695d8807e4b"
+      },
+      "latest-full320/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2",
+        "hardlink_of": "models/real_raw-seed2026101914/model.pt"
+      },
+      "latest-full320/rank-00000.pt": {
+        "bytes": 2581278471,
+        "sha256": "4069aaf26770dc8f779a2f01a98dc8e30f1ed88f837d584a3b87163fac068662"
+      },
+      "latest-full320/rank-00001.pt": {
+        "bytes": 2581278407,
+        "sha256": "61b1d56c41e2965e5729c3fb76276bd1c85cb1abda6a4b5ccdc876e9bd31b9ea"
+      },
+      "latest-full320/rank-00002.pt": {
+        "bytes": 2581278471,
+        "sha256": "c5849b1fab11f1370ae1be9abefc8316f2c9e656c0f1dc11771428ce4f935527"
+      },
+      "latest-full320/rank-00003.pt": {
+        "bytes": 2581278407,
+        "sha256": "6a183d78082d10d140239c8aca2d6126efb4fd4442806ae303d1accba59c6ddc"
+      },
+      "latest-full320/rank-00004.pt": {
+        "bytes": 2581278471,
+        "sha256": "d4f6c334a2b50c92d93139cdece8049e79d1a9727bc5a410d7d13b946a3e1ff4"
+      },
+      "latest-full320/rank-00005.pt": {
+        "bytes": 2581278407,
+        "sha256": "4dbf4a3e460f35f99a1c4ef949437eb10c5c88f1ac8bb05e44be3aa6d6956854"
+      },
+      "latest-full320/rank-00006.pt": {
+        "bytes": 2581278471,
+        "sha256": "3a22e172b13db04afa6e52ae25b9312b156f4b5303e2bf9ada36af15f55135b7"
+      },
+      "latest-full320/rank-00007.pt": {
+        "bytes": 2581278407,
+        "sha256": "6157a132a71a5e3fa6c7e2f9c603eceddd672b1ed3abae3a2fba4956c081c541"
+      },
+      "latest-full320/COMPLETE.json": {
+        "bytes": 2083,
+        "sha256": "24769e545f70efa7d7d729f02f9d48603fc0888f7ee2d2722c298186248233f4"
+      },
+      "terminal-independent-audit.json": {
+        "bytes": 34398,
+        "sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2"
+      },
+      "plan.json": {
+        "bytes": 3507,
+        "sha256": "6bd31906a5e7fd6b0f545bec7dc9a59f2809e1cb7bf95550801e70a40593ad16"
+      },
+      "release.json": {
+        "bytes": 1247,
+        "sha256": "6bb9f42c93799f4981904a32db9a1b0473669d85a685d423a89a828a37047073"
+      },
+      "protect-source.py": {
+        "bytes": 3697,
+        "sha256": "e029f1f59212b5c0b31ac6524f523c6c9880eba90c3e8565cafba30857dc5e72"
+      }
+    },
+    "limits": [
+      "Alloriginalfull160/320statesremain. EBSretainsallterminalmodelsandlatestfulloptimizer;modelhardlinkiswithinonepersistentfilesystem.",
+      "Same-instancebackup;notanoff-instancearchive."
+    ],
+    "EBS_archive_sha256": "d0184544842b72d049e80a2329412d972b6e9334fd6cb3a961a111a1d7ac07ae"
+  },
+  "frozen_models": [
+    {
+      "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+      "id": "real_post-seed2026101913-step320",
+      "arm": "real_post",
+      "seed": 2026101913,
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+      "checkpoint_sha256": "d0e1a75856ce45600c0983fd8fc8dcb52abe9dbdf02049bd52e8f9e8bccf3a38",
+      "step": 320,
+      "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+      "spec_hash": "06a80b4ff93c3dda12e5a617f319da3086f2bdf129b881cc176b0a8418fdc9e5",
+      "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101913.json",
+      "training_protocol_sha256": "fba0d1760a173d2d2f8764224a17bbb2aac609a5effd67c28889a15716066a2e",
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+      "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+      "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+      "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb"
+    },
+    {
+      "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+      "id": "real_post-seed2026101914-step320",
+      "arm": "real_post",
+      "seed": 2026101914,
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+      "checkpoint_sha256": "6e56848d3a666d15aba6786e6d9b5a003baf7ddffe25f79c4e56a6da821b7319",
+      "step": 320,
+      "run_id": "real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+      "spec_hash": "c5fe9f472a8e09c4abeac7af59f84998990e81f8e00bfc05a3c8d9930575d47f",
+      "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101914.json",
+      "training_protocol_sha256": "e0ae3928f9c20f1d396e3f8195163bbf492999588aa21b4984a9a695d8807e4b",
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+      "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+      "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+      "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb"
+    },
+    {
+      "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+      "id": "real_prior-seed2026101913-step320",
+      "arm": "real_prior",
+      "seed": 2026101913,
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+      "checkpoint_sha256": "b52f26079fac2d5f71fc67fa358f3944d2c332435d0236c7e54d93745f4b8805",
+      "step": 320,
+      "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+      "spec_hash": "8c8860185597024884291f9181a61e3473f515fe5bf08f4e38f8636010c5d158",
+      "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101913.json",
+      "training_protocol_sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1",
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+      "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+      "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+      "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb"
+    },
+    {
+      "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+      "id": "real_prior-seed2026101914-step320",
+      "arm": "real_prior",
+      "seed": 2026101914,
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+      "checkpoint_sha256": "2c27073ecc3d7784a4a4db7fc37298c59b5cebaf44a05643a8eac7e92869495d",
+      "step": 320,
+      "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+      "spec_hash": "7062b7073497bb0a2c773601eb37692c584d7fe5ecd10f7d3104b8768950a54a",
+      "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101914.json",
+      "training_protocol_sha256": "fe748b59c93052e2930aec9d53000b7234d85fa620d06ff02e85b6f063011cc7",
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+      "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+      "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+      "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb"
+    },
+    {
+      "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+      "id": "real_raw-seed2026101913-step320",
+      "arm": "real_raw",
+      "seed": 2026101913,
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+      "checkpoint_sha256": "a087e9d7589b49c09d1a6801a1252e0dc1e7238290b832c5f408b73deb745db4",
+      "step": 320,
+      "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+      "spec_hash": "ac9f08575266f12f9994a7a19c116dc251c466afe4139555924f4e617463856b",
+      "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101913.json",
+      "training_protocol_sha256": "0721bc40a7cb155e662d6b664dd1e3c2532a95df14fe9b01fe0536767de69818",
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+      "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+      "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+      "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb"
+    },
+    {
+      "status": "FROZEN_AUDITED_REAL_TRACE_TERMINAL320",
+      "id": "real_raw-seed2026101914-step320",
+      "arm": "real_raw",
+      "seed": 2026101914,
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320/model.pt",
+      "checkpoint_sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2",
+      "step": 320,
+      "run_id": "real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+      "spec_hash": "8f729e989771521b898b8fc94f386d7976599a002ee56757b7d66787bdf658ff",
+      "training_protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101914.json",
+      "training_protocol_sha256": "382f7e2d0a055fb4c693d4b0516bfcb0c5149c7b24cfc007985ef4b57abfa335",
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-independent-audit.json",
+      "audit_sha256": "ccb78550eafc8de48d8a584110167bc0e657ae5f4ff4576e6ca32b3c0279b4f2",
+      "protection_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/terminal-protection.json",
+      "protection_sha256": "204e6b5cf52531d38b73b39cbc6d908ea5574d8a86206df7cffdb298ba6599fb"
+    }
+  ],
+  "limits": [
+    "All six terminal320 models fixed before evaluation. No checkpoint selection or extensions.",
+    "48 native checks reuse four canonical contexts per model; not48independent scientific documents.",
+    "Each arm has10240document occurrences but different supervised-token totals and loss allocation; not equal training FLOPs.",
+    "All original full160/320 states remain on local SSD. EBS protects all terminal weights and latest full320; same-instance, not off-instance protection.",
+    "Earlier numerical uninterrupted/resumed parity limitation remains. These complete runs did not require a restart."
+  ]
+}

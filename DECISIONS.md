@@ -1259,3 +1259,13 @@ It exceeds frozenfullCoT273 on this panel but not freshdepth2(182versus193),and
 unseendepth6 remains10/256(teacher78). One seed and different curricula/target
 supervision prevent a matched architecture claim. Keep real-data single-model
 mainline;do not expand a split rescue from this narrow positive mechanism.
+
+2026-10-19: All six fixed real-data models completed320 updates without restart.
+Independent audit passes12 full states,48 native checks and1,920 ordered updates;
+all terminal weights/latest full320 are protected and evaluation bindings frozen.
+Finish both predeclared likelihood endpoints independently, without extensions.
+Execute the already-planned32-action scalar secondary on all seven fixed models,
+using exact original notes and unchanged initial-scalar-v2. All unsupported and
+failed outputs remain in256 denominators; no new gate or parser adaptation.
+The prospective secondary design precedes trained capability review. Its actual
+B0 four-core native/cache672 checks pass; each trained model checks itself again.

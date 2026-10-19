@@ -1,0 +1,142 @@
+{
+  "status": "COMPLETE_ONLY_EIGHT_SUPERSEDED_REAL160_EBS_OPTIMIZER_DUPLICATES_RETIRED",
+  "utc": "2026-10-19T05:38:52.647969+00:00",
+  "verified": {
+    "old160": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000160",
+      "backup": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint",
+      "COMPLETE_sha256": "deeb26162ac9ce481913e4d41492b2040418a16c706f9bf3abf13f1be6259e7a",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "204af60058865e8eda5ccdc7f7ed3c1d31c139c7cb707330b971fd5adf7eef31"
+        },
+        "rank-00000.pt": {
+          "bytes": 2581278407,
+          "sha256": "e61d189f7d11d871aa42c1b688cf4b24126fcc9f9a0d2ad8533feb9b1c9f131f"
+        },
+        "rank-00001.pt": {
+          "bytes": 2581278471,
+          "sha256": "c8f04176979e4c6ee11106adba5ff4ac590aa34ff22f78fb969c47c6736c7434"
+        },
+        "rank-00002.pt": {
+          "bytes": 2581278407,
+          "sha256": "6acb1e79e568164ec5499e963a2a4e8d4fa3ce3eaca75cfffecd43ceaa11b4c8"
+        },
+        "rank-00003.pt": {
+          "bytes": 2581278471,
+          "sha256": "3ae8459d6c4a3fec8e7a1f6f9de456cdfeea42ca8f9fe2b54f0b6ee388f2ec4c"
+        },
+        "rank-00004.pt": {
+          "bytes": 2581278407,
+          "sha256": "b56eee2b9b526e83dc21c44e11a362a870d46423dc3ee8d8e74b9def7e3dfdd7"
+        },
+        "rank-00005.pt": {
+          "bytes": 2581278471,
+          "sha256": "9ff0eb10ba18cd3ab157b0929da90340172ade9b5635ec48634a6dded61ee262"
+        },
+        "rank-00006.pt": {
+          "bytes": 2581278407,
+          "sha256": "08f7dd3da769aa8c54a1b2b73311869e5776684398c8539ea2847be5ee76e90a"
+        },
+        "rank-00007.pt": {
+          "bytes": 2581278471,
+          "sha256": "919a73e26cc8021b3935b3ed36561a2819bb2a99464e6d18dc35ae2035360176"
+        }
+      }
+    },
+    "latest320": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1/step-0000320",
+      "backup": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/TERMINALS/latest-full320",
+      "COMPLETE_sha256": "24769e545f70efa7d7d729f02f9d48603fc0888f7ee2d2722c298186248233f4",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "04260cd0e6597c528e4c19c528ec3fccd4a9a49a8a289ee78dccdeb8afc1c7c2"
+        },
+        "rank-00000.pt": {
+          "bytes": 2581278471,
+          "sha256": "4069aaf26770dc8f779a2f01a98dc8e30f1ed88f837d584a3b87163fac068662"
+        },
+        "rank-00001.pt": {
+          "bytes": 2581278407,
+          "sha256": "61b1d56c41e2965e5729c3fb76276bd1c85cb1abda6a4b5ccdc876e9bd31b9ea"
+        },
+        "rank-00002.pt": {
+          "bytes": 2581278471,
+          "sha256": "c5849b1fab11f1370ae1be9abefc8316f2c9e656c0f1dc11771428ce4f935527"
+        },
+        "rank-00003.pt": {
+          "bytes": 2581278407,
+          "sha256": "6a183d78082d10d140239c8aca2d6126efb4fd4442806ae303d1accba59c6ddc"
+        },
+        "rank-00004.pt": {
+          "bytes": 2581278471,
+          "sha256": "d4f6c334a2b50c92d93139cdece8049e79d1a9727bc5a410d7d13b946a3e1ff4"
+        },
+        "rank-00005.pt": {
+          "bytes": 2581278407,
+          "sha256": "4dbf4a3e460f35f99a1c4ef949437eb10c5c88f1ac8bb05e44be3aa6d6956854"
+        },
+        "rank-00006.pt": {
+          "bytes": 2581278471,
+          "sha256": "3a22e172b13db04afa6e52ae25b9312b156f4b5303e2bf9ada36af15f55135b7"
+        },
+        "rank-00007.pt": {
+          "bytes": 2581278407,
+          "sha256": "6157a132a71a5e3fa6c7e2f9c603eceddd672b1ed3abae3a2fba4956c081c541"
+        }
+      }
+    }
+  },
+  "removed": [
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00000.pt",
+      "bytes": 2581278407,
+      "sha256": "e61d189f7d11d871aa42c1b688cf4b24126fcc9f9a0d2ad8533feb9b1c9f131f"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00001.pt",
+      "bytes": 2581278471,
+      "sha256": "c8f04176979e4c6ee11106adba5ff4ac590aa34ff22f78fb969c47c6736c7434"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00002.pt",
+      "bytes": 2581278407,
+      "sha256": "6acb1e79e568164ec5499e963a2a4e8d4fa3ce3eaca75cfffecd43ceaa11b4c8"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00003.pt",
+      "bytes": 2581278471,
+      "sha256": "3ae8459d6c4a3fec8e7a1f6f9de456cdfeea42ca8f9fe2b54f0b6ee388f2ec4c"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00004.pt",
+      "bytes": 2581278407,
+      "sha256": "b56eee2b9b526e83dc21c44e11a362a870d46423dc3ee8d8e74b9def7e3dfdd7"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00005.pt",
+      "bytes": 2581278471,
+      "sha256": "9ff0eb10ba18cd3ab157b0929da90340172ade9b5635ec48634a6dded61ee262"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00006.pt",
+      "bytes": 2581278407,
+      "sha256": "08f7dd3da769aa8c54a1b2b73311869e5776684398c8539ea2847be5ee76e90a"
+    },
+    {
+      "file": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint/rank-00007.pt",
+      "bytes": 2581278471,
+      "sha256": "919a73e26cc8021b3935b3ed36561a2819bb2a99464e6d18dc35ae2035360176"
+    }
+  ],
+  "filesystem_free_before_bytes": 48334426112,
+  "filesystem_free_after_bytes": 68984053760,
+  "limits": [
+    "All original full160/320 checkpoints remain on NVMe; no original or model weight removed.",
+    "EBS retains all six terminal models, the old160 model, and the fully verified latest320 optimizer state.",
+    "The old160 ARCHIVE and COMPLETE manifests remain historical receipts. This annex explicitly records that their duplicate rank payloads were later retired.",
+    "Same-instance storage, not an off-instance archive."
+  ]
+}

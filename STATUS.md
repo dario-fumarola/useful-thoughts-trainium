@@ -1,20 +1,31 @@
-# Status — 2026-10-19 04:59 UTC
+# Status — 2026-10-19 05:38 UTC
 
-## Active: single-model real-document mainline
-Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
-Experiment: real-trace-cpt-v10; immutable training source3d8666b,1,622CPUchecks; original design public.
-Raw/prior/post:all3seed1913terminals320closed;freshseed1914live8ranksperarm,physical0–5.
-Independent training/inference gates remain>=0.25nat/span and paired95%lower>0 in each seed,plus ordinary-text bound.
-Prelearning correction: string novelty missed10TRAIN-equivalent ASTs; V2novel256 has zero ordered-AST overlap.
-TRAIN,oldDEV,V1andallobservations remain;246identical rows reused and10new rows selected without trained outcomes.
-Amendment:validation/real_trace_cpt_v10_AST_amendment_20261019.json;all data EBS readback verified.
-B0CPUreference complete:novel256 mean16-tokenLL−16.4662,ordinary256−19.9007;no augmentation result.
-Reference:validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json;all512docs and native vectors protected.
-CPUscorer reproduces all256ordinary reference vectors exactly;real evaluation now passes1,646CPUchecks.
-Actual8rank qualification PASS:all4fullstates/native16/actualfull6restore/cursors/casts and memorybound verified.
-Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
-Firstscience160independentlyaudited/EBSreadback/fsynced;alloriginalsretained;terminal320primary.
-B0bothrealnote256panelscomplete;CPUlikelihoodscoringunderway;noreal-modelcapabilityresultyet.
+## Active: single-model real-document evaluation
+Question: does augmented training improve ordinary prediction, and separately inference with calculations?
+Experiment: real-trace-cpt-v10; three arms, two seeds, all six terminal320 runs complete and physically closed.
+Design: same 5,120 documents/two passes; raw, calculation-before-continuation, calculation-after-document.
+Primary: fixed AST-novel 256, full16-token LL; gain>=0.25nat and positive paired95% lower in each seed.
+Training gate also bounds ordinary-text regression; inference gate also requires same-model raw/empty gains.
+All 1,920 updates, 12 full states and 48 native checks pass independent audit; all terminal models protected.
+Latest full320 is real_raw seed1914; all original160/320 states remain on local SSD.
+Report:validation/real_trace_cpt_v10_terminal_training_20261019.json; capability results still pending.
+Control:local/diagnostics/real-trace-cpt-v10-study-v1; frozen training3d8666b, evaluation29c8b24.
+Six-model generation/CPU-likelihood watcher is releasing fixed evaluations; no checkpoint selection or extension.
+B0 notes complete; its CPU likelihood scoring continues. Both256 arithmetic panels remain separate.
+Decision: finish all seven models and three panels before reviewing primary outcomes; publish complete outputs.
+
+## Active: declared scalar-continuation secondary
+Question: do the same fixed models emit the complete computed scalar at the real-document boundary?
+Experiment: real-trace-v10-scalar-secondary-v1; all seven models, both separate arithmetic panels, five modes.
+Design: exact original notes/contexts; greedy32, nativeEOS only; existing initial-scalar-v2 parser unchanged.
+Endpoint: exact rational accuracy over all 256, with unsupported/format/incomplete/error/cap counts; no new gate.
+Prospective design:validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json; primary LL gates unchanged.
+Source4297c1d: full 1,657 CPU checks pass, plus latest 11 affected checks after stronger binding validation.
+B0 actual four-core native/cache672 checks pass; its generation continues on physical12.
+Other six wait for complete original notes, then each executes its own model/cache checks on physical6–11.
+Control:local/diagnostics/real-trace-v10-scalar-secondary-study-v1; tmux cpt-v10-scalar-release/readout.
+Decision: preserve all 17,920 prospective attempts; no parser adaptation, model selection, retries or training.
+Limit: scalar continuation on selected FineMath boundaries, not general problem QA or a latency benchmark.
 
 ## Closed: bounded variable-depth writer repair
 Question: does varied-depth training repair incomplete notes and improve the same frozen reader?
@@ -376,7 +387,7 @@ Decision: retain negative B0 reference and evaluate every terminal trained arm i
 
 ## Closed: B0 general held256 baseline — negative
 Question: do prefix-only B0 notes help the separate high-surprisal general DEV panel?
-ID:general-note-held256-B0-v1; all256 prefix-only cap128 attempts before future controls.
+ID:general-note-held256-B0-v1; all 256 prefix-only cap128 attempts before future controls.
 Raw/empty/own/intact other/target copy/corrupt copy ×I3/fixedI6;3072cells, full16primary.
 Paired-document intervals; prospective own−raw and own−other lower95%>0 required.
 All256notes/3072finite cells, zeroerrors; all8native gates and10stage exits0.
@@ -432,7 +443,7 @@ ID:postorder-firstline-note-held256-v1; reused exploratory DEV, no new writer ge
 Keep exact cached token prefix through first completed content line, at most64tokens.
 Policy sees only original note IDs/tokenizer; no number search, future or retokenization.
 Batch raw/empty/full-own/full-other/short-own/short-other in I3 and fixedI6w=.375.
-Original global intact-note donor permutation retained; all256documents and3072cells.
+Original global intact-note donor permutation retained; all 256documents and3072cells.
 Pass only if short-own beats raw AND short-other with both paired lower95% bounds>0.
 Original128-action generation costs retained; fewer kept tokens are not latency savings.
 All3072finite cells/zeroerrors, four exits0; groups/devices physically closed, EBS archive verified.
@@ -541,7 +552,7 @@ Public inventory:validation/reader_learning_compound5120_data_20261018.json.
 ## Closed: fresh held reader baseline — negative
 Question: how do fresh prefix-only notes compare with raw/empty/intact unrelated notes?
 ID:postorder-held256-B0-v1; sealed fresh256realDEV documents, no TEST.
-Greedy cap128actions; all256attempts close before controls or future scoring.
+Greedy cap128actions; all 256attempts close before controls or future scoring.
 Raw/empty/own/other/symbolic teacher/target copy, I3 and fixedI6w=.375;3072cells.
 Natural16primary, fullscalar+boundary and numeric-only secondary; document intervals.
 Allfailures retained in256denominators; no per-document length-matched synthetic donors.

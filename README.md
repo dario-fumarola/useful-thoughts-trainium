@@ -12,12 +12,16 @@ separate declared gates. The [pre-learning split correction](validation/real_tra
 removes ten arithmetic AST aliases missed by string matching; the corrected 256-document
 panel and [unchanged-base reference](validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json)
 are frozen. The [real-context save/restart qualification](validation/real_trace_cpt_v10_training_qualification_20261019.json)
-passes, and the [six-model training budget is released](validation/real_trace_cpt_v10_science_launch_20261019.json):
-all three first seeds have finished, and the second seeds are running.
-No terminal capability result is available yet. Frozen [training code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/3d8666b)
+passes, and all six fixed runs have completed their 320 updates. The
+[terminal-state audit and protection](validation/real_trace_cpt_v10_terminal_training_20261019.json)
+pass for both seeds and all three arms. The terminal models are frozen and
+likelihood evaluation is underway; no capability result is available yet.
+A [separately declared scalar-answer diagnostic](validation/real_trace_cpt_v10_scalar_secondary_design_20261019.json)
+uses the same notes and unchanged parser, with all unsupported outputs retained.
+Frozen [training code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/3d8666b)
 and [evaluation code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/29c8b24)
-are kept on separate branches. A bounded variable-depth writer repair runs separately
-as a diagnostic. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
+are kept on separate branches. The bounded variable-depth writer repair below
+is complete. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
 
 ## Latest completed diagnostic: variable-depth repair
 
@@ -123,17 +127,18 @@ utility remain separate hypotheses, as discussed in
 
 ## Prepared real data
 
-A verified real FineMath corpus is ready:5,120TRAIN and256DEV documents, native
-prefixes/continuations, exact prefix-derived partial calculations, and separate
-full traces for strong baselines. No model or learning run is implied by this
-preparation. There is no document overlap;44selected DEVexpressions also occur
-inTRAIN. The eligible pool contains276expression-novel DEVexamples for a future
-protocol fixed before learning. All83long-label exclusions and raw provenance are
-retained. [Readiness and four fixed computed examples](validation/real_prefix_partial_data_v9_20261019.json).
+The original verified FineMath preparation contains 5,120 TRAIN and 256 legacy
+DEV documents, native prefixes/continuations, prefix-derived partial calculations
+and full traces. It is document-disjoint, but 44 legacy DEV expressions also
+occur in TRAIN. That cohort remains a separate secondary panel. Before the
+current learning runs, the primary cohort was replaced with 256 distinct
+ordered arithmetic ASTs absent from TRAIN. All exclusions and old cohorts remain
+preserved. [Original preparation](validation/real_prefix_partial_data_v9_20261019.json) ·
+[Pre-learning primary-cohort correction](validation/real_trace_cpt_v10_AST_amendment_20261019.json).
 
 All original full checkpoints remain on local SSDs. EBS retains every terminal
 model and the latest full scientific recovery under the
-[recorded retention policy](validation/partial_state_v7_checkpoint_retention_20261018.json).
+[recorded retention policy](validation/checkpoint_retention_after_real_CPT320_20261019.json).
 A separate bounded exporter test reduces post-save host memory from49–139GiB to
 21–22GiB. Its original strict uninterrupted-restart gate remains a failure;
 [matched restart attribution](validation/checkpoint_export_restart_attribution_v8_20261019.json)
