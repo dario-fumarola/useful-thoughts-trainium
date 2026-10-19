@@ -1,20 +1,20 @@
-# Status — 2026-10-19 22:32 UTC
+# Status — 2026-10-19 22:53 UTC
 
-## Active: fixed readout of selector-loss allocation ablation
-Question: does stronger selector supervision repair canonical fitting and help answering?
-ID: document-evidence-weight-v25; one fresh1.7B treatment1.0 vs completed0.1, TRAIN2048×4.
-All256 updates complete; independent trajectory/full128/256 audit PASS; source frozen5414f8d.
-All original states remain; terminal model/latest full256 EBS readback/fsync protected and bound.
-Training physical closure22:23:31 UTC; warm last60 median13.40s; no execution/resource stop.
-Actual disposable8-update/restore4 qualification remains separate from scientific results.
-Current-model CPU refs ready; fixed TRAIN42442/held-native62437/ordinary78272 stages active.
-Primary unchanged: TRAIN256 exact sets>=90% two/three supports and positive paired interval in three.
-Held255 is already inspected/developmental; answers evaluated regardless of fitting outcome.
-Closed Evidence/prefilled Final empty/own/oracle replays are separate from native generation.
-Four fixed stages <=0.6 reserved chip-hours; no optional QA likelihood, retries or new learning.
-Annotation collisions limit semantic interpretation; no old V23/V24 score or gate changes.
-C: local/diagnostics/document-evidence-weight-v25-ablation-v1; final outcomes pending.
-Next: finish CPU references, run bounded fixed stages, independently check and preserve all outputs.
+## Closed: selector-loss allocation ablation
+Question: does stronger selector supervision repair fitting and help answering?
+ID: document-evidence-weight-v25; one fresh1.7B, selection1.0 vs completed0.1; same TRAIN2048×4/order.
+All256 updates/full128/256 states audited; terminal/latest full EBS protected; warm median13.40s.
+All1531GEN/256LL rows close; independent token/count/bootstrap/control checks PASS; zero answer errors/caps.
+Primary TRAIN exact sets124/128,64/96,15/32; three-support>=90%/positive-interval gate FAILS.
+Held native own143/255, earlier matched direct127, new direct138; clean empty139/own143/oracle149.
+Own−earlier direct+6.3pp[1.6,11.4], own−same direct+2.0[-1.6,5.5], replay own−empty+1.6[-1.6,4.7].
+Held255 reused/developmental, one order seed; historical direct auxiliary0.1 differs from new1.0.
+OrdinaryNLL+.067vsB0,−.069vsold selector; smaller regression, not broad pretraining gain.
+Own17.16actions vsdirect7.64; science2.232chip-hours plusqualification1.272 separate.
+One unsupported held selection has declared empty fallback; all765 replay responses stay in answer field.
+All original states/outputs retained;445 raw/source files and88 public artifacts protected/readback verified.
+Report: validation/document_evidence_weight_v25_complete_20261019.json; all older primary hashes unchanged.
+Decision: close failed coefficient-only fit repair; no reliable extra-ID benefit; prepare matched1.0 format control.
 
 ## Closed: frozen selector TRAIN fit
 Question: does the completed selector reproduce its own TRAIN support annotations?

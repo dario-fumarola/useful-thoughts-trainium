@@ -1,17 +1,16 @@
 # Current queue
 
-0. Complete the fixed V25 readout; no new training or source changes.
-   All256 updates and independent trajectory/full128/256 audit PASS; terminal protected and bound.
-   Training exec7042 and terminal watcher61432 finished0, assigned devices empty.
-   C=local/diagnostics/document-evidence-weight-v25-ablation-v1; sources remain frozen.
-   Explicit evaluation release and CPU refs complete. Active TRAIN42442/physical12,
-   held-native62437/physical13, ordinary78272/physical14; do not rerun producers.
-   Then TRAIN256 generation .12 chip-hours, held255 native .18, closed-field replay .20,
-   ordinary256 likelihood .10, including termination headroom. Total .6, no optional QA LL.
-   Prospective contracts/independent checkers are in validation/document_evidence_weight_v25_*.
-   Held readout runs regardless of fitting result and remains developmental, not confirmation.
-   No prompt/parser/checkpoint selection, retries, larger model, RL or broader campaign release.
-   Original public V23/V24 primary report hashes and all scores/gates remain unchanged.
+0. Prepare one coefficient-matched format-only control, under a new explicit identity.
+   V25 is closed and protected: validation/document_evidence_weight_v25_complete_20261019.json.
+   Its primary TRAIN fitting target failed; new native143/255 versus old matched direct127
+   is a developmental recipe difference, with source/final weights matched but auxiliary weights different.
+   New direct138 and clean empty139 leave no established benefit from emitting IDs.
+   Compare fresh B0 format-only auxiliary1.0 against the completed selector1.0 model,
+   keeping TRAIN2048, order1923, four passes,256 updates, source/final0.5/0.5 and numerical worker fixed.
+   Write the prospective question/endpoint/decision rule, inspect storage and freeze sources first.
+   Reuse qualified numerical kernels; any new purpose/validation needs CPU checks and actual bounded qualification.
+   No new learning job is released yet. No coefficient sweep, larger model, new data, RL or official DEV/TEST access.
+   If this control removes the apparent advantage, close the content claim; otherwise design fresh powered confirmation.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
    Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.

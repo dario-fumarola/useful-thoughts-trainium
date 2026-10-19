@@ -1,0 +1,62 @@
+{
+  "status": "COMPLETE_ACTUAL_RESERVED_CHIP_TIME_ALL_STAGES",
+  "training": {
+    "physical_chips": 2,
+    "launch_utc": "2026-10-19T21:22:37.176723+00:00",
+    "confirmed_closure_utc": "2026-10-19T22:23:31.374307+00:00",
+    "reserved_chip_hours": 2.030109768888889,
+    "interpretation": "Conservative ownership interval through confirmed physical closure; includes initialization and post-process checks."
+  },
+  "qualification_separate": {
+    "select-fresh4": {
+      "physical_chips": 2,
+      "launch_utc": "2026-10-19T20:39:20.564034+00:00",
+      "confirmed_closure_utc": "2026-10-19T21:11:51.059184+00:00",
+      "reserved_chip_hours": 1.0836084166666666,
+      "interpretation": "Conservative ownership interval through confirmed physical closure; includes initialization and post-process checks."
+    },
+    "select-resume8": {
+      "physical_chips": 2,
+      "launch_utc": "2026-10-19T21:11:51.132727+00:00",
+      "confirmed_closure_utc": "2026-10-19T21:17:29.565451+00:00",
+      "reserved_chip_hours": 0.18801818,
+      "interpretation": "Conservative ownership interval through confirmed physical closure; includes initialization and post-process checks."
+    }
+  },
+  "evaluation": {
+    "TRAIN256_generation": {
+      "physical_chips": 1,
+      "start_utc": "2026-10-19T22:32:30.157142+00:00",
+      "confirmed_closure_utc": "2026-10-19T22:35:34.964939+00:00",
+      "reserved_chip_hours": 0.051335499166666666,
+      "maximum_allocated_chip_hours": 0.12
+    },
+    "held255_native_generation": {
+      "physical_chips": 1,
+      "start_utc": "2026-10-19T22:33:06.340714+00:00",
+      "confirmed_closure_utc": "2026-10-19T22:37:15.825154+00:00",
+      "reserved_chip_hours": 0.06930123333333334,
+      "maximum_allocated_chip_hours": 0.18
+    },
+    "held255_closed_field_answer_replay": {
+      "physical_chips": 1,
+      "start_utc": "2026-10-19T22:38:25.185472+00:00",
+      "confirmed_closure_utc": "2026-10-19T22:42:13.877675+00:00",
+      "reserved_chip_hours": 0.06352561194444445,
+      "maximum_allocated_chip_hours": 0.2
+    },
+    "ordinary256_likelihood": {
+      "physical_chips": 1,
+      "start_utc": "2026-10-19T22:32:36.865393+00:00",
+      "confirmed_closure_utc": "2026-10-19T22:33:41.468908+00:00",
+      "reserved_chip_hours": 0.017945420833333333,
+      "maximum_allocated_chip_hours": 0.1
+    }
+  },
+  "qualification_reserved_chip_hours": 1.2716265966666667,
+  "science_training_and_evaluation_reserved_chip_hours": 2.232217534166667,
+  "total_new_work_reserved_chip_hours": 3.5038441308333335,
+  "controls": "Completed V23 control reused; its original historical cost remains in its report and is not charged as new work.",
+  "execution_error_accounting": "Check readout reports separately; completed ownership intervals do not establish scientific success.",
+  "accounting": "Reserved physical-chip time, not dollar cost or theoretical FLOPs. CPU-only preparation/audits and backup IO off-device are not accelerator execution; conservative closure intervals may include some such overhead."
+}

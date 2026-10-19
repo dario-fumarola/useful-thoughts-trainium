@@ -1,84 +1,77 @@
-# Current handoff — 2026-10-19 22:32 UTC
+# Current handoff — 2026-10-19 22:53 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
 
-## Active fixed readout
+## V25 is complete
 
+Report: validation/document_evidence_weight_v25_complete_20261019.json.
+SHA256 ae7d3eacd701acb20eb969721dea531782c18f73d87bd79dd5bfacc8d6d86837.
 C=local/diagnostics/document-evidence-weight-v25-ablation-v1.
 O=local/nvme-cpt/runs/document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1.
-Training exec7042 exited0; all256 updates audited, physical2–3/logical8–15 are empty.
-Terminal watcher61432 finished0: full256 EBS protection and original terminal binding PASS.
-Evaluation release/CPU references complete. Active TRAIN42442/physical12, native62437/physical13,
-ordinary78272/physical14. Replay pending native physical closure; planned physical15.
-Source local/worktrees/document-evidence-weight-v25 @5414f8d is frozen.
-ALL C/release.json pipeline_sources and C/supervise-job.py are also FROZEN.
-Do not edit these live sources. The old execution-readiness snapshots were drafts;
-science-release annex and C/release.json contain final source versions.
-One fresh B0 model, selector1.0 vs completed0.1 control, TRAIN2048×4/256updates.
-Same data/order/LR/source-final coefficients0.5/0.5, precision/topology/worker unchanged.
-Soft deadline2026-10-19T22:45:23.876622+00:00; includes5-minute termination grace within3chip-hours.
-No retry/extension/checkpoint selection. Full128/256 original states retained.
-Original full128 is written and updates resumed; PSS146→99GiB after cleanup.
-First128 independent audit/protection exec50248 exited0; full readback/fsync PASS.
+All V25 training, protection, generation and analysis processes finished0.
+Do not rerun any original producer or immutable analyzer.
+Source W25=local/worktrees/document-evidence-weight-v25 @5414f8d remains frozen.
+All C/release.json pipeline sources and postprocessing-sources.json remain frozen.
+All256 updates/full128/256 states audited; terminal bound/protected. All original states remain.
+Terminal model SHA1d918a183a8bd171d72f7afea84894ad87735c77e99ca89b838403d7bd11ef87.
 Current full EBS local/backups/science/document-evidence-weight-v25-ablation-v1/TERMINALS/latest-full256.
-Old V23 EBS optimizer duplicates alone retired after new verification; all originals/models remain.
-Terminal audit/protect/bind watcher exec61432 finished0. Do not rerun producers.
-C/supervise-job.py uses C/job['key']; key=evidence_select-weight1-seed2026101923.
-Keep35GiB per filesystem/512GiB host available. Rootfree about64GiB before training.
+Earlier EBS optimizer duplicates alone retired after newer full verification; all models/originals retained.
 
-## Qualification and interpretation
+All1531 generation attempts/256 new ordinary likelihood rows completed, zero answer
+errors/caps/unsupported. One held duplicate-ID selection used declared empty fallback.
+All765 canonical answer replays stay in the answer field; no ID/header regeneration.
+Native own and canonical own answers agree255/255; fallback action sequence equals empty.
+Current-model native/cache and independent raw-token/count/bootstrap checks all PASS.
+Originals/source:445 files66MB EBS readback/fsync protected under COMPLETE_READOUT.
+Final public artifacts:88 files protected under PUBLICATION; see C/publication-protection.json.
+Figures were inspected through PNG exports with identical numeric CSV bytes.
 
-Actual8-update/save4/fresh-process restore/update8 qualification PASSED and protected.
-CQ=local/diagnostics/document-evidence-weight-v25-world8-qualification-v1.
-QO=local/nvme-study/diagnostics/document-evidence-weight-v25-world8-qualification-v1.
-All4 full original states2/4/6/8 audited; native16 repeat4 canonical contexts.
-Warmsteps13–14s; post-save groupedPSS~83–97GiB; not indefinite-memory/capability proof.
-Report validation/document_evidence_weight_v25_training_hardware_20261019.json.
-Original source/answer/selection initial CE match old qualification exactly;
-gradient norm44.4→59.1, so10× coefficient is not10× gradient fraction.
+## Result and interpretation
 
-Six fixedhash TRAIN cases from20 three-support subset outputs were manually reviewed:
-two annotated entity collisions (FoxTV/person; MercerCountyNJ/Ohio), two root concerns,
-two locally coherent chains. This is single-agent exploratory, not semantic gold or
-corpus prevalence. Reader retains all20 paragraphs, so unlisted does not mean unread.
-Keep the single bounded coefficient test, interpret its primary as annotation fitting.
-Do not silently change labels or remove bad cases. Reports/inputs in CPU-v1 and
-science-release annex. Old V23/V24 primary reports unchanged.
+Only selector coefficient changes0.1→1.0, one fresh1.7B B0, same TRAIN2048/order1923,
+four passes/256 updates, source/final0.5/0.5, worker/optimizer/topology/precision unchanged.
+Primary TRAIN exact sets124/128,64/96,15/32 versus117/128,59/96,12/32. Gate FAILS.
+All256 TRAIN answers correct; annotation fitting is not semantic validity/generalization.
+Held native direct138, own143; old matched direct127/old selector own129.
+New own−old direct+6.3pp[1.6,11.4]; new direct−old direct+4.3[-0.4,9.4].
+New own−same direct+2.0[-1.6,5.5]; canonical empty139/own143/oracle149.
+Canonical own−empty+1.6[-1.6,4.7]; no established incremental inference benefit.
+Held sets169/255 versus132, mainly two-support160/205; three9/46, four0/4 descriptive.
+Reader still sees all20 passages; three-support own/oracle both31/46 despite imperfect sets.
+OrdinaryNLL+0.0666vsB0,−0.0687vsold selector: smaller regression, not broad LM gain.
+Own17.16 versus direct7.64 actions; science2.232chip-hours, qualification1.272 separate.
+Single data-order seed and previously inspected held255: developmental, not confirmation.
+Historical direct control has auxiliary0.1 versus new selector1.0; this is a recipe
+comparison, not a coefficient-matched test of semantic support supervision.
+No old V23/V24 report, score, parser or gate changed. Official DEV/TEST unopened.
 
-## After terminal audit/protection
+## Next concrete question
 
-Prepared training/native helpers are in local/analysis and bound by C/release.json.
-Additional fixed ordinary/readout contracts are public in validation/document_evidence_weight_v25_ordinary_readiness_20261019.json
-and document_evidence_weight_v25_readout_execution_20261019.json.
-Four evaluation allocations: TRAIN .12, native .18, replay .20, ordinary .10 reserved chip-hours.
-Use explicit soft deadlines with termination headroom inside each allocation.
-Post-readout checker/plot/example/cost/aggregate/protection helpers are listed in local/analysis/CURRENT_V25_SESSION.json.
-No optional QA likelihood work is allocated.
-Binding path C/frozen-models/evidence_select-weight1-seed2026101923.json.
-Release already executed once: release_document_evidence_weight_v25_evaluation_20261019.py from frozen W2
-(local/worktrees/document-evidence-eval-v23 @625fb0f), PYTHONPATH W2:test-deps:analysis,
-USE_TORCH_XLA=0. It requires actual terminal audit/protection/binding.
-Then document_evidence_weight_v25_TRAIN_fit_20261019.py prepare recomputes CURRENT
-model CPU references and reuses unchanged V24 cohort/prompts. Launch its four-shard
-controller once with explicit deadline/budget; analyze/check/protect originals.
-Primaryfit>=90% two/three plus positive paired CI on three vs old0.1, four n32 descriptive.
-Held255 is measured regardless of fit outcome per readout addendum, DEVELOPMENTAL only.
-Prepared held adapter: document_evidence_weight_v25_held_20261019.py prepare-native,
-then native physical closure, then prepare-replay. Native direct/selection prompt
-hashes must match originalV23. Replay modes empty/selected_id_replay/oracle close
-Evidence and prefill Final answer; parser_mode=direct, no generated answer pasted in.
-Existing likelihood context_text() is reused;765 actual CPU contexts pass.
-An analyzer includes direct-transfer as well as inference contrasts, aliases/F1,
-unsupported/errors/caps, and generated-ID-prefix diagnostics. All metrics preserved.
-Evaltotal<=0.6 reserved chip-hours, including ordinary prediction cost; optional full
-span likelihood only if budget remains. No officialDEV/TEST or broad success claim.
+Prepare ONE format-only auxiliary1.0 control under a new explicit experiment ID.
+Fresh B0 evidence_direct, same TRAIN2048/data-order1923/four passes/256 updates,
+source/final0.5/0.5 and numeric worker as V25. Compare with the completed selector1.0.
+This tests whether the recipe advantage survives matching the auxiliary coefficient.
+No coefficient sweep, new dataset, larger model, RL or official-final-data access.
+Write a prospective bounded design and decision rule, inspect storage, then freeze.
+Any driver change should be validation/identity only; preserve numerical-function ASTs
+and all old-purpose guards. Run required CPU checks and actual bounded qualification
+before a substantive learning release. No new learning job is released yet.
 
-## Prior closed evidence
+## Storage and engineering constraints
 
-V24: exactTRAINsets117/128,59/96,12/32 vs answers255/256; no conflicting identical inputs.
-V23: own129/255 vs matched/same direct127, oracle155; primary/inference gates FAIL.
-Supplied-empty regenerates IDs255/255; genuine old direct paths containzeroIDs.
-All1530native/3062LL rows protected; originalprimarySHAca7cc615495d0cdade77ef70cce0f19055e3456b1c79c460a7f84008dec809b3.
-V21 six-run/two-seed negative preserved; oldR1234 remains stopped63.
-No model-size, broadRL, split-rescue or new multi-model campaign released.
+Keep35GiB on each filesystem and512GiB host available. About58GiB root,127GiB
+NVMe-cpt,99GiB NVMe-study remain after V25. New full states are22.44GiB each.
+Account for qualification, two science states and successive full EBS backups.
+If inactive engineering BACKUP duplicates must relocate, retain original files,
+verify original/old/new hashes and fsync/readback before unlinking only the old duplicate.
+Never delete original states, active caches or science terminal weights as a shortcut.
+Consider whether a bounded new qualification can use full4/8 plus fresh restore4,
+rather than blindly copying the old four-full-state2/4/6/8 storage budget.
+Inspect actual validator/driver support before choosing that protocol.
+
+No package/stack upgrade, instance/IAM/network/bucket/paid-teacher changes.
+Use source scripts/env.sh and the existing venv; CPU uses USE_TORCH_XLA=0.
+For stdin Python, cwdroot overrides PYTHONPATH; run from the intended frozen worktree.
+Local/analysis/CURRENT_V25_SESSION.json lists completed IDs and helper paths.
+Future work must use new output/control/source identities; never mutate V25.

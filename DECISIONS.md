@@ -1543,3 +1543,14 @@ A fixed six-case TRAIN review finds2 entity collisions and2 root-sufficiency con
 this is exploratory, not prevalence or gold. The ablation tests canonical label
 fitting and developmental answering, not a semantic-grounding fix. No label filtering,
 original-score changes, newsize/RL or campaign expansion.
+
+
+2026-10-19 22:53 UTC — Close V25 without promoting its failed fitting gate.
+The sole coefficient change0.1→1.0 gives TRAIN exact124/128,64/96,15/32;
+three-support fitting is still below90% and its paired interval crosses zero.
+Developmental own143 versus old direct127 improves the recipe, but own versus
+new direct138/clean empty139 remains inconclusive. Ordinary regression halves
+to+.067vsB0; it remains a cost. All outputs/checks/backups close cleanly.
+The old direct control retains auxiliary0.1, so a bounded format-only1.0 control
+is the next causal comparison before scaling or fresh confirmation. No new
+learning/official-final-data release follows from this readout. All older scores/gates remain.

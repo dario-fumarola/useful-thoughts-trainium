@@ -1,0 +1,21 @@
+{
+  "status": "PASS_CLOSED_FIELD_OMISSION_AND_DECLARED_EMPTY_FALLBACK_CHECK",
+  "utc": "2026-10-19T22:49:34.936323+00:00",
+  "replay_attempts": 765,
+  "repeated_evidence_headers": 0,
+  "repeated_final_headers": 0,
+  "leading_bracket_ID_lines": 0,
+  "fallback_items": [
+    {
+      "fallback": true,
+      "indices": [],
+      "item_id": "double__758696_789970",
+      "parser_reason": "duplicate_ids",
+      "reason": "plan_unsupported"
+    }
+  ],
+  "fallback_identical_to_empty_actions": 1,
+  "native_own_and_canonical_own_answers_identical": 255,
+  "held_result_sha256": "2795f75c4e2da13adfbc5b7950e21914bc31f327004f3c9b785b633bfb345941",
+  "limit": "Operational answer-continuation control, not semantic verification or a hard token ban."
+}

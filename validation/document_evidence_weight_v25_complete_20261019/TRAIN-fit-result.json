@@ -1,0 +1,106 @@
+{
+  "bootstrap": {
+    "conditional_on_checkpoints": true,
+    "draws": 20000,
+    "seed_base": 2026101925,
+    "stratum_seed": "base+support_count",
+    "unit": "paired TRAIN question"
+  },
+  "fitting_target_pass": false,
+  "limits": [
+    "Exact author annotation agreement is not semantic entailment.",
+    "TRAIN fitting is not generalization or useful reasoning.",
+    "Oversampled strata are separate; four-support n32 descriptive."
+  ],
+  "protocol_sha256": "e0b7d69e90b13e75ad11bf82307f6a03c2ffee71cf51b353276488780349ed4d",
+  "scored_sha256": "4274a547a9c7531805aa27a576fd0e69f804f3c0cc5f48a38b58c6a3d7f4d893",
+  "status": "COMPLETE_WEIGHT_V25_FIXED_TRAIN_FIT",
+  "strata": {
+    "2": {
+      "answer_status": {
+        "complete": 128
+      },
+      "canonical_TRAIN_correct": 128,
+      "control_exact": 117,
+      "exact": 124,
+      "execution_errors": 0,
+      "f1": 0.98046875,
+      "items": 128,
+      "output_ID_counts": {
+        "2": 128
+      },
+      "paired_CI95": [
+        0.0,
+        0.109375
+      ],
+      "paired_gain": 0.0546875,
+      "precision": 0.98046875,
+      "recall": 0.98046875,
+      "selection_status": {
+        "complete": 127,
+        "unsupported": 1
+      },
+      "stop_types": {
+        "token:151643": 128
+      }
+    },
+    "3": {
+      "answer_status": {
+        "complete": 96
+      },
+      "canonical_TRAIN_correct": 96,
+      "control_exact": 59,
+      "exact": 64,
+      "execution_errors": 0,
+      "f1": 0.9118055555555555,
+      "items": 96,
+      "output_ID_counts": {
+        "2": 22,
+        "3": 74
+      },
+      "paired_CI95": [
+        -0.07291666666666667,
+        0.17708333333333334
+      ],
+      "paired_gain": 0.052083333333333336,
+      "precision": 0.9565972222222222,
+      "recall": 0.8819444444444445,
+      "selection_status": {
+        "complete": 96
+      },
+      "stop_types": {
+        "token:151643": 96
+      }
+    },
+    "4": {
+      "answer_status": {
+        "complete": 32
+      },
+      "canonical_TRAIN_correct": 32,
+      "control_exact": 12,
+      "exact": 15,
+      "execution_errors": 0,
+      "f1": 0.8891369047619048,
+      "items": 32,
+      "output_ID_counts": {
+        "2": 1,
+        "3": 15,
+        "4": 16
+      },
+      "paired_CI95": [
+        -0.09375,
+        0.28125
+      ],
+      "paired_gain": 0.09375,
+      "precision": 0.9635416666666666,
+      "recall": 0.8359375,
+      "selection_status": {
+        "complete": 32
+      },
+      "stop_types": {
+        "token:151643": 32
+      }
+    }
+  },
+  "utc": "2026-10-19T22:37:22+00:00"
+}

@@ -1,25 +1,83 @@
 # Useful Thoughts on Trainium
 
-**The passage-selection pilot is complete and misses its gate: generated selection
-answers 129/255 correctly versus 127/255 for matched direct training. Supplied
-support IDs help the reader, but self-generated selection has no established net benefit.**
+**V25 is complete: increasing selection supervision improves the developmental
+recipe, but does not repair deeper selection or establish a reliable benefit
+from generating passage IDs.**
 
 This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documents,
 and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
-**Active follow-up:** one fresh model changes only the selection-loss weight
-from 0.1 to 1.0, with the same documents, order, exposures and source/answer
-coefficients. All 256 treatment updates and the full-state audit are complete;
-the terminal checkpoint is protected. The fixed readout is running and
-results are pending. It measures
-TRAIN fitting, developmental held answers and ordinary-text cost; it does not
-release model scaling or another broad campaign.
-[Design](validation/document_evidence_weight_v25_design_20261019.json) ·
-[Readout refinement](validation/document_evidence_weight_v25_readout_addendum_20261019.json) ·
-[Actual release](validation/document_evidence_weight_v25_science_release_20261019.json).
+## Latest coefficient ablation (V25)
 
-## Latest completed passage-selection pilot
+One fresh model changes the selection-loss weight from **0.1 to 1.0**. Documents,
+data order, four passes over TRAIN2048, 256 updates, source/final-answer weights
+0.5/0.5, optimizer and numerical worker stay fixed. The completed 0.1 model is
+reused as control. Terminal checkpoints are primary.
+
+| TRAIN support count | Exact sets, weight 0.1 | Exact sets, weight 1.0 |
+|---|---:|---:|
+| Two |117/128|124/128|
+| Three |59/96|64/96|
+| Four, descriptive |12/32|15/32|
+
+The primary fitting gate **fails**: three-support agreement is 66.7%, below 90%,
+and its paired improvement interval crosses zero. All 256 TRAIN answers are
+correct, which does not establish correct support selection or generalization.
+Support annotations contain known entity/relation problems; exact matching is
+not semantic verification. Every reader still sees all 20 passages.
+
+On the **same previously inspected held255 panel**, canonical whole-answer scores are:
+
+| Model / path | Correct /255 |
+|---|---:|
+| Earlier direct training (auxiliary weight 0.1), native direct |127|
+| Earlier selection training (weight 0.1), native selection |129|
+| New selection training (weight 1.0), native direct |138|
+| New selection training, native generated IDs |143|
+| New model, closed empty field and prefilled answer header |139|
+| New model, own-ID answer replay |143|
+| New model, annotated-ID answer replay |149|
+
+New native selection beats the earlier direct recipe by **6.3pp [1.6,11.4]**.
+However, generating IDs adds only **2.0pp [−1.6,5.5]** over the new model's direct
+answers. Matched own-ID versus empty-ID answer replay adds **1.6pp [−1.6,4.7]**.
+The direct-only training contrast is +4.3pp [−0.4,9.4]. These are conditional,
+unadjusted paired intervals from one data-order seed and a reused development
+panel, not fresh confirmation. The historical direct control retains auxiliary
+weight 0.1; a format-only control at 1.0 has not yet been tested.
+
+![Developmental answer contrasts](validation/document_evidence_weight_v25_complete_20261019/held-answer-contrasts.svg)
+
+Held exact-set agreement improves to 169/255 from 132/255, concentrated in
+two-support questions. Three-support sets are still only 9/46, and all four
+four-support questions remain incomplete. Annotation agreement is not the goal
+by itself: the three-support reader answers 31/46 with either own or annotated IDs.
+
+Ordinary256 NLL remains **+0.067 nats/token worse than B0**, but is 0.069 better
+than the earlier selector. This is a smaller specialization cost, not broad LM
+improvement. Native selection uses 17.16 actions/question versus 7.64 for direct
+answers, about 2.25×. Timing is not a controlled serving benchmark.
+
+All 1,531 generation attempts and 256 likelihood rows are complete, independently
+checked and protected. Answer fields have no errors, caps or unsupported outputs;
+one unsupported held selection uses the declared empty replay fallback.
+The repaired empty control regenerates no IDs. Science used 2.232 reserved
+chip-hours; disposable hardware qualification used 1.272 separately.
+All original full checkpoints remain; the terminal model/latest full state and
+445 original readout/source files have verified same-instance backups.
+
+- [Complete readout and limits](validation/document_evidence_weight_v25_complete_20261019.json)
+- [Independent held check](validation/document_evidence_weight_v25_complete_20261019/held-independent-check.json)
+- [Same eight fixed examples](validation/document_evidence_weight_v25_complete_20261019/fixed-eight-examples.json)
+- [Selection breakdown](validation/document_evidence_weight_v25_complete_20261019/held-selection-descriptive.json)
+- [Ordinary prediction cost](validation/document_evidence_weight_v25_complete_20261019/ordinary-NLL-cost.svg)
+
+The coefficient-only fitting repair is closed. The next bounded question is
+whether the recipe advantage survives a format-only control with the same
+auxiliary coefficient, before any larger model or fresh confirmation campaign.
+
+## Earlier passage-selection pilot (V23)
 
 Two fresh Qwen3-1.7B-Base models, one data-order seed, the same TRAIN2048 questions
 and four passes. Source, final-answer labels and their explicit loss coefficients
@@ -75,7 +133,7 @@ are not a controlled serving-latency comparison.
 - [Fixed examples](validation/document_evidence_plan_v23_pilot_complete_20261019/fixed-hash-eight-examples.json)
 - [Independent check](validation/document_evidence_plan_v23_pilot_complete_20261019/independent-readout-check.json)
 
-## Selector fitting follow-up
+## Earlier frozen selector fitting (V24)
 
 A frozen-model check on a fixed hash sample of the original training questions
 finds incomplete support-set fitting, especially beyond two passages:
@@ -97,7 +155,7 @@ generalization; the oversampled TRAIN panel cannot be pooled with held questions
 The check used the unchanged terminal model and prompt, no parameter updates,
 and0.048 reserved chip-hours. Raw outputs, fixed examples and independent checks
 are saved in the [complete fitting report](validation/document_selector_fit_v24_complete_20261019.json).
-This narrows the next question to supervision/optimization before model scaling.
+V25 above tests one supervision-allocation repair of this gap.
 
 ## Earlier document-QA comparison
 

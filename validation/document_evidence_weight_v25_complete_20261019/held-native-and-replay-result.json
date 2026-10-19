@@ -1,0 +1,207 @@
+{
+  "contrasts": [
+    {
+      "CI95": [
+        -0.00392156862745098,
+        0.09411764705882353
+      ],
+      "control": "old-matched-direct",
+      "corrected": 26,
+      "paired_gain": 0.043137254901960784,
+      "regressed": 15,
+      "treatment": "native:direct"
+    },
+    {
+      "CI95": [
+        -0.00392156862745098,
+        0.09411764705882353
+      ],
+      "control": "old-selection-direct",
+      "corrected": 26,
+      "paired_gain": 0.043137254901960784,
+      "regressed": 15,
+      "treatment": "native:direct"
+    },
+    {
+      "CI95": [
+        0.01568627450980392,
+        0.11372549019607843
+      ],
+      "control": "old-matched-direct",
+      "corrected": 29,
+      "paired_gain": 0.06274509803921569,
+      "regressed": 13,
+      "treatment": "native:selection"
+    },
+    {
+      "CI95": [
+        0.00392156862745098,
+        0.10588235294117647
+      ],
+      "control": "old-selection-native",
+      "corrected": 31,
+      "paired_gain": 0.054901960784313725,
+      "regressed": 17,
+      "treatment": "native:selection"
+    },
+    {
+      "CI95": [
+        -0.01568627450980392,
+        0.054901960784313725
+      ],
+      "control": "native:direct",
+      "corrected": 13,
+      "paired_gain": 0.0196078431372549,
+      "regressed": 8,
+      "treatment": "native:selection"
+    },
+    {
+      "CI95": [
+        -0.01568627450980392,
+        0.047058823529411764
+      ],
+      "control": "answer-replay:empty",
+      "corrected": 11,
+      "paired_gain": 0.01568627450980392,
+      "regressed": 7,
+      "treatment": "answer-replay:selected_id_replay"
+    },
+    {
+      "CI95": [
+        0.00392156862745098,
+        0.047058823529411764
+      ],
+      "control": "answer-replay:selected_id_replay",
+      "corrected": 7,
+      "paired_gain": 0.023529411764705882,
+      "regressed": 1,
+      "treatment": "answer-replay:oracle"
+    },
+    {
+      "CI95": [
+        0.0,
+        0.0
+      ],
+      "control": "answer-replay:selected_id_replay",
+      "corrected": 0,
+      "paired_gain": 0.0,
+      "regressed": 0,
+      "treatment": "native:selection"
+    },
+    {
+      "CI95": [
+        -0.0196078431372549,
+        0.00784313725490196
+      ],
+      "control": "answer-replay:empty",
+      "corrected": 1,
+      "paired_gain": -0.00392156862745098,
+      "regressed": 2,
+      "treatment": "native:direct"
+    }
+  ],
+  "inputs": {
+    "answer-replay_protocol_sha256": "24b4bf59d0d69b338403d90e303f4cf485b841ff92db6b829f4af3d0364f1047",
+    "native_protocol_sha256": "e6f81b4110fd8ec02c6c1b3dc3764c2bfd396b4cd5fdffed01e3d6461ee41bd7",
+    "old-matched-direct_sha256": "1a8db23e36fc392f3be1a328ff91c4784e51347c3eb8772d70a1641e4be958df",
+    "old-selection-direct_sha256": "ff08e0d84e2f688487fc71e8e7414024e79b7d1dc1f413804c67713c132c499c",
+    "old-selection-native_sha256": "ad995a9f9c98dd6cd42e6777365db17bc946026d732dd7111c074d1669e0a81e"
+  },
+  "limitations": [
+    "Held255 was inspected before the coefficient choice; this is developmental, not untouched confirmation.",
+    "Native and canonical-pointer replay are different inference interfaces.",
+    "Any direct path generating IDs is operationally contaminated and must be qualified as such.",
+    "Oracle annotations can be insufficient or ambiguous. No semantic-gold or calibration claim.",
+    "All original V23 scores/gates remain unchanged; unadjusted paired question intervals condition on checkpoints."
+  ],
+  "source_sha256": "9d6df8dc544b1bcbf010e73c0e2899a956baad86a05fa48e0f8dce04de361d18",
+  "status": "COMPLETE_DEVELOPMENTAL_WEIGHT_V25_NATIVE_AND_CLOSED_FIELD_ANSWERS",
+  "tables": {
+    "answer-replay:empty": {
+      "alias_correct": 147,
+      "canonical_correct": 139,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1171,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6154051796157058,
+      "parsed_status": {
+        "complete": 255
+      },
+      "repeated_evidence_headers": 0,
+      "repeated_final_headers": 0,
+      "unsupported": 0
+    },
+    "answer-replay:oracle": {
+      "alias_correct": 157,
+      "canonical_correct": 149,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1167,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6747484724884105,
+      "parsed_status": {
+        "complete": 255
+      },
+      "repeated_evidence_headers": 0,
+      "repeated_final_headers": 0,
+      "unsupported": 0
+    },
+    "answer-replay:selected_id_replay": {
+      "alias_correct": 150,
+      "canonical_correct": 143,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1158,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6415614198895933,
+      "parsed_status": {
+        "complete": 255
+      },
+      "repeated_evidence_headers": 0,
+      "repeated_final_headers": 0,
+      "unsupported": 0
+    },
+    "native:direct": {
+      "alias_correct": 146,
+      "canonical_correct": 138,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1948,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6100830507641652,
+      "parsed_status": {
+        "complete": 255
+      },
+      "repeated_evidence_headers": 0,
+      "repeated_final_headers": 0,
+      "unsupported": 0
+    },
+    "native:selection": {
+      "alias_correct": 150,
+      "canonical_correct": 143,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 4375,
+      "generated_prefix_ID_rows": 255,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6415614198895933,
+      "parsed_status": {
+        "complete": 255
+      },
+      "repeated_evidence_headers": 0,
+      "repeated_final_headers": 0,
+      "unsupported": 0
+    }
+  },
+  "utc": "2026-10-19T22:43:02+00:00"
+}

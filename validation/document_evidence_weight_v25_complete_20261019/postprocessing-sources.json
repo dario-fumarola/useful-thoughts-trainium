@@ -1,0 +1,18 @@
+{
+  "status": "FIXED_POSTPROCESSING_SOURCES_BEFORE_ANY_V25_NATIVE_READOUT",
+  "utc": "2026-10-19T22:03:32.875350+00:00",
+  "files": {
+    "local/analysis/plot_document_evidence_weight_v25_20261019.py": "8b4cc9c662d03941a7ba34ab696284d9eb9c6ad5cfb9fd8b9881a8f0a57519e9",
+    "local/analysis/examples_document_evidence_weight_v25_20261019.py": "3c2d2230458ce400c050bcf410d08d4e575020f9d426b52dc1b01199da09d4f1",
+    "local/analysis/cost_document_evidence_weight_v25_20261019.py": "0a295762ffd473e5754c2b86b6a786e3debfde40bc93a3ae924c4a2934528061",
+    "local/analysis/aggregate_document_evidence_weight_v25_20261019.py": "673655e6ad9ebeb8ca715afee8dfe18bd696b49798ff7430930b7174c331e62b",
+    "local/analysis/protect_document_evidence_weight_v25_readout_20261019.py": "e507b3138fd84cac4422b38ce01b30e37807a7089899819b92d0e40571dda0ba",
+    "local/analysis/diagnose_document_evidence_weight_v25_held_20261019.py": "463ab4939a76a35d56689e55b6830af82c40f1e82e4d20eb522452ed4bb8760f",
+    "local/analysis/check_document_evidence_weight_v25_held_20261019.py": "10034a07a7bcc88288593ccf9c68c67eb808ff325dd1a153b910dcc00d161a27",
+    "local/analysis/check_document_evidence_weight_v25_ordinary_20261019.py": "1ac8e933602f90374fc76f9f88dd0304b97d02c7fa89d768ba7307dc839b5e80"
+  },
+  "no_new_endpoints": "Only aggregation, independent checking, figures, same original eight examples, archival and cost accounting of previously fixed endpoints.",
+  "descriptive": "Support-count and annotation-agreement subgroups are descriptive, not causal estimates or new gates.",
+  "training": "Actual treatment still running. First128 recovery audit/protection passed; no checkpoint generation was performed.",
+  "allocations": "The four public stage allocations sum to .6 chip-hours; no optional QA likelihood added."
+}

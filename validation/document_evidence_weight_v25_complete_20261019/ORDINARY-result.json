@@ -1,0 +1,57 @@
+{
+  "note": "No synthetic rows or pooled tokens as independent items; ordinary pages are the paired units.",
+  "paired": {
+    "B0": {
+      "CI95": [
+        0.04843011921417611,
+        0.08443318366855251
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": 0.06663681790682902,
+      "seed": 2026102025
+    },
+    "evidence_direct": {
+      "CI95": [
+        -0.1003643311288522,
+        -0.07326651203639023
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": -0.08655665492972284,
+      "seed": 2026102026
+    },
+    "evidence_select": {
+      "CI95": [
+        -0.08092218073732159,
+        -0.05688907882556056
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": -0.06868188096151637,
+      "seed": 2026102027
+    }
+  },
+  "protocol_sha256": "8f96228d3227cc095f38a2b40b68cf0402b3c3f2b4f805f214a408b62749b922",
+  "status": "COMPLETE_FIXED_ORDINARY256_COST",
+  "tables": {
+    "B0": {
+      "items": 256,
+      "mean_nll_per_token": 1.944532452429805,
+      "tokens": 8192
+    },
+    "evidence_direct": {
+      "items": 256,
+      "mean_nll_per_token": 2.0977259252663574,
+      "tokens": 8192
+    },
+    "evidence_select": {
+      "items": 256,
+      "mean_nll_per_token": 2.0798511512981506,
+      "tokens": 8192
+    },
+    "weight1": {
+      "items": 256,
+      "mean_nll_per_token": 2.011169270336634,
+      "tokens": 8192
+    }
+  },
+  "utc": "2026-10-19T22:37:28+00:00"
+}

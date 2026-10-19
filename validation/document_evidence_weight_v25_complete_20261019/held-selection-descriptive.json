@@ -1,0 +1,109 @@
+{
+  "status": "COMPLETE_DESCRIPTIVE_V25_SELECTION_AND_ANSWER_BREAKDOWN",
+  "items": 255,
+  "strata": {
+    "2": {
+      "items": 205,
+      "exact_sets": 160,
+      "selection_status": {
+        "complete": 204,
+        "unsupported": 1
+      },
+      "output_ID_counts": {
+        "2": 203,
+        "3": 2
+      },
+      "precision": 0.8804878048780488,
+      "recall": 0.8829268292682927,
+      "f1": 0.8814634146341462,
+      "canonical_answers": {
+        "native:direct": 108,
+        "native:selection": 112,
+        "answer-replay:empty": 109,
+        "answer-replay:selected_id_replay": 112,
+        "answer-replay:oracle": 118,
+        "old-matched-direct": 102,
+        "old-selection-native": 102,
+        "old-selection-direct": 104
+      }
+    },
+    "3": {
+      "items": 46,
+      "exact_sets": 9,
+      "selection_status": {
+        "complete": 46
+      },
+      "output_ID_counts": {
+        "2": 26,
+        "3": 19,
+        "4": 1
+      },
+      "precision": 0.8478260869565217,
+      "recall": 0.6811594202898551,
+      "f1": 0.7472049689440994,
+      "canonical_answers": {
+        "native:direct": 30,
+        "native:selection": 31,
+        "answer-replay:empty": 30,
+        "answer-replay:selected_id_replay": 31,
+        "answer-replay:oracle": 31,
+        "old-matched-direct": 25,
+        "old-selection-native": 26,
+        "old-selection-direct": 21
+      }
+    },
+    "4": {
+      "items": 4,
+      "exact_sets": 0,
+      "selection_status": {
+        "complete": 4
+      },
+      "output_ID_counts": {
+        "3": 4
+      },
+      "precision": 0.9166666666666666,
+      "recall": 0.6875,
+      "f1": 0.7857142857142857,
+      "canonical_answers": {
+        "native:direct": 0,
+        "native:selection": 0,
+        "answer-replay:empty": 0,
+        "answer-replay:selected_id_replay": 0,
+        "answer-replay:oracle": 0,
+        "old-matched-direct": 0,
+        "old-selection-native": 1,
+        "old-selection-direct": 2
+      }
+    }
+  },
+  "exact_sets": 169,
+  "mean_annotation_overlap": {
+    "precision": 0.8751633986928105,
+    "recall": 0.8434640522875817,
+    "f1": 0.8557422969187676
+  },
+  "exact_set_groups_posthoc": {
+    "False": {
+      "items": 86,
+      "same_model_direct_correct": 40,
+      "own_correct": 37,
+      "oracle_replay_correct": 43,
+      "corrected": 2,
+      "regressed": 5
+    },
+    "True": {
+      "items": 169,
+      "same_model_direct_correct": 98,
+      "own_correct": 106,
+      "oracle_replay_correct": 106,
+      "corrected": 11,
+      "regressed": 3
+    }
+  },
+  "limits": [
+    "Support counts and annotation exactness are descriptive, not new scientific gates.",
+    "Subgroups condition on generated selections and question difficulty; not causal comparisons.",
+    "Four-support n4 cannot support a depth-generalization claim.",
+    "All20 passages remain visible. Imperfect support annotations are not semantic gold."
+  ]
+}

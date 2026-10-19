@@ -1,0 +1,95 @@
+{
+  "status": "PASS_SINGLE_TERMINAL_MODEL_AND_LATEST_FULL256_PROTECTED",
+  "utc": "2026-10-19T22:30:37.891745+00:00",
+  "models": {
+    "evidence_select-seed2026101923": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1/step-0000256/model.pt",
+      "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-weight-v25-ablation-v1/TERMINALS/models/evidence_select-seed2026101923/model.pt",
+      "sha256": "1d918a183a8bd171d72f7afea84894ad87735c77e99ca89b838403d7bd11ef87"
+    }
+  },
+  "latest_full": {
+    "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1/step-0000256",
+    "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-weight-v25-ablation-v1/TERMINALS/latest-full256",
+    "COMPLETE_sha256": "ced87cb4286536e38fd556e7c07744c9b7b269b26a2202e2d192171dc7a47b0b"
+  },
+  "audit_sha256": "8500dfa3ffae82909d1ee065f0f2a14a8aafcb258a5b1f37b0764be5dd3635de",
+  "files": {
+    "latest-full256/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "1d918a183a8bd171d72f7afea84894ad87735c77e99ca89b838403d7bd11ef87"
+    },
+    "latest-full256/rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "a3d6962ba10b7e52cbb2e0d79fabe8b29cb165c169c5cc025d950a3603362896"
+    },
+    "latest-full256/rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "b895508f273d38777c24a436f98eec79299b3ac4c4edbb37e17793b3d0a23725"
+    },
+    "latest-full256/rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "a1e701c938da6912e430d32225488b6de364d5d25021fb0add2d92adf074eda1"
+    },
+    "latest-full256/rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "de4cd96f8aa94644319077e9fe2fc81557f7890309bea26bc563d1719fb7f42b"
+    },
+    "latest-full256/rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "61d5e5903a216f967c3ebf4ee5e3d8993ede8943dd7039f4fabffa4fc971d4d4"
+    },
+    "latest-full256/rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "f0b57d9efabb94ca6b030d98f3f9a6ab5d171da4270dee0b482e4c079e50fb01"
+    },
+    "latest-full256/rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "97e5c555b69d801e3e1385682a9a844f8230f0331c1c6d1bad0ac521a95c70ef"
+    },
+    "latest-full256/rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "72c6b308287b19ce9f5c123faed99f2b6fe470d2508ff872195d511e93731b37"
+    },
+    "latest-full256/COMPLETE.json": {
+      "bytes": 2109,
+      "sha256": "ced87cb4286536e38fd556e7c07744c9b7b269b26a2202e2d192171dc7a47b0b"
+    },
+    "models/evidence_select-seed2026101923/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "1d918a183a8bd171d72f7afea84894ad87735c77e99ca89b838403d7bd11ef87",
+      "hardlink_of": "latest-full256/model.pt"
+    },
+    "models/evidence_select-seed2026101923/COMPLETE.json": {
+      "bytes": 2109,
+      "sha256": "ced87cb4286536e38fd556e7c07744c9b7b269b26a2202e2d192171dc7a47b0b"
+    },
+    "models/evidence_select-seed2026101923/protocol.json": {
+      "bytes": 7175,
+      "sha256": "db4883d36f1bb39e815673490ac2fdf4128a28e449bc6128e7e2d6fed7ab6c16"
+    },
+    "terminal-independent-audit.json": {
+      "bytes": 9331,
+      "sha256": "8500dfa3ffae82909d1ee065f0f2a14a8aafcb258a5b1f37b0764be5dd3635de"
+    },
+    "plan.json": {
+      "bytes": 2507,
+      "sha256": "9ccf10005602268a53607aa5f5472826e784eeace9b4912ee1f82e49a4cf5796"
+    },
+    "release.json": {
+      "bytes": 5034,
+      "sha256": "b433ad8d42ce31447f9146798988f7cde564ecc1e145f0525c08039ca462c007"
+    },
+    "protect-source.py": {
+      "bytes": 6619,
+      "sha256": "fcb725fa0e515a6c03517ea738248c0fe6e47ca77c6baa975681010cdb9890bf"
+    }
+  },
+  "old_optimizer_retirement_sha256": "f921a84b7d94007cf65d5c09110c9d344369195d90360be2038d9a087e615413",
+  "root_free_bytes": 62176870400,
+  "limits": [
+    "Alloriginalfull128/256statesremainNVMe. EBSretainsallterminalmodels/latestglobalfulloptimizer;the earlier protected128modelweight also remains.",
+    "Same-instanceprotection;notanoff-instancearchive."
+  ],
+  "EBS_archive_sha256": "582dc000a283419f9f54d5855d258b4698505de498cb51a2a67d28c110a2648b"
+}
