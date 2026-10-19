@@ -1,0 +1,28 @@
+{
+  "status": "CPU_PROSPECTIVE_FEASIBILITY_ONLY",
+  "utc": "2026-10-19T12:54:49.254054+00:00",
+  "question": "Do true original seed-question IDs permit evidence-clean document QA cohorts without conflating generic relation templates with repeated facts?",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "inventory_sha256": "b3d5e03e49fba6685c4b98914a265574933a00d84ba59ae0da4f7e90af462dfd",
+  "script_sha256": "6b42e3689f6a42fdef58e9d077906c13d7b2a3caa16045bf0d53b0f0beca0a23",
+  "conditions": {
+    "input_token_budgets": [
+      2048,
+      3072
+    ],
+    "held_questions": [
+      256,
+      384,
+      512
+    ],
+    "selection": [
+      "V16fixedhash",
+      "greedy_support_title_and_seed_id_disjoint"
+    ]
+  },
+  "selection_salt": "document-evidence-v16-audit-only:",
+  "pass_if_any": "Atleastone exactrequestedcohort:held>=256,strictretainedTRAIN>=2048,andheldcombinedsupporttext/title/originalseedIDclusters>=256. Prefer512held;allconditionsreportedbeforechoosinganyscientificcohort.",
+  "correction": "V16/V20 raw component_question_texts sometimes contain generic relation programs, not original question identities. V21 uses dataset:id from decomposed_instances; old feasibility artifacts remain unchanged.",
+  "trace_inventory": "Provisionalexplicitseed-question/answer/citationtraceincludingroot;completeanswerEOS;no truncation. Lengthsareinventory,notafrozenpromptorhardwarequalification.",
+  "limits": "No model outcomes,weights,evaluationorfinalcohort release. OfficialDEV/TEST/globalaliasesunopened."
+}

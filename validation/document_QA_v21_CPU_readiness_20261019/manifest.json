@@ -1,0 +1,77 @@
+{
+  "status": "PASS_ALL_6144_NATIVE_QA_VIEWS_AND_EVIDENCE_CLEAN_COHORTS_CPU_ONLY",
+  "utc": "2026-10-19T13:00:18.591525+00:00",
+  "plan_sha256": "7769aca2ef0892ac13c47e0cd38de0beeadd90214d6b3edffc3c1cf91fc6e7cd",
+  "script_sha256": "466c2df13efa9c8df3a176f49c575d5c2ee11c3777651610f73512658fd11533",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "files": {
+    "training": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/TRAIN2048.jsonl",
+      "bytes": 19746313,
+      "sha256": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9",
+      "rows": 2048
+    },
+    "held_questions": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-questions-only.jsonl",
+      "bytes": 5131768,
+      "sha256": "7a8ff7129829960a876e8cd39d35f23d9033f2789b2b495023efd9862882c39d",
+      "rows": 512
+    },
+    "held_gold": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-gold-only.jsonl",
+      "bytes": 198830,
+      "sha256": "7143f61398c9a25d60b92462a94c6a0df5e445e97e9570d23512dde1f02253d7",
+      "rows": 512
+    },
+    "grounding_exceptions": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/literal-grounding-exceptions.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0
+    }
+  },
+  "source_files": {
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb"
+  },
+  "items": 2048,
+  "held": 512,
+  "distinct_training_questions": 2048,
+  "independent_held_groups": {
+    "support_text": 512,
+    "support_page": 512,
+    "original_seed_id": 512
+  },
+  "directed_overlap": {
+    "held_support_text_in_train_visible": 0,
+    "held_support_titles_in_train_visible": 0,
+    "original_seed_id": 0
+  },
+  "held_ids_sha256": "61fc4dab4bb6ee29283c3a6955ec86d1cea7d2a7514d79d5796d0ecefdab0953",
+  "counts": {
+    "direct_source_labels": 524288,
+    "direct_task_labels": 10708,
+    "prior_source_labels": 524288,
+    "prior_task_labels": 115012,
+    "post_source_labels": 524288,
+    "post_task_labels": 119139,
+    "train_hop4": 40,
+    "train_hop2": 1717,
+    "train_hop3": 291,
+    "held_hop2": 385,
+    "held_hop4": 23,
+    "held_hop3": 104
+  },
+  "maxima": {
+    "direct_active_slots": 273,
+    "direct_sequence_tokens": 3081,
+    "prior_active_slots": 374,
+    "prior_sequence_tokens": 3163,
+    "post_active_slots": 376,
+    "post_sequence_tokens": 3164
+  },
+  "literal_grounding_exceptions": 0,
+  "limits": "Authors TRAIN only,not official benchmarkDEV/TEST. Directed evidence split does not remove pretraining or semantic duplicates. Mirror aliases not authenticated against official ZIP. No training or model evaluation released. Literal-grounding exceptions retained,not selected away;presence is not semantic entailment. No full-context backward/save/restore/timing qualification yet."
+}

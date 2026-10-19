@@ -1345,3 +1345,13 @@ NLL regression falls75.6%; there is no cross-panel comparison or equivalence cla
 Retain the supervised inference reference and all costs. No RL/8B/split release.
 Next specify a bounded single-model document-QA comparison, beginning with evidence
 clusters, complete context and trace lengths; actual long-context training must qualify.
+
+- 2026-10-19 13:05UTC — V21 corrects a CPU split-identity interpretation before
+  any model outcome: raw component strings can be generic relation programs.
+  Use original dataset:seed IDs with held-support text/page exclusions. Freeze
+ 2,048TRAIN/512 independently supported held questions. All6,144 native views
+  and independent raw/count checks pass;1,711 CPU checks pass. Single-model
+  direct/prior/post targets retain plain-answer training; post teaches answerEOS
+  before its scaffold. Source CE samples256 fixed positions per example, explicitly
+  separate from full-document CE. Launch only bounded long-context mechanics at
+  source049f53e;held forwards/science await actual recovery,memory and timing.

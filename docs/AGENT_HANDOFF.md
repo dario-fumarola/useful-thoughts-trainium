@@ -1,3 +1,50 @@
+# Current handoff — 2026-10-19 13:06UTC
+
+Active: bounded document-QA-v21 hardware qualification,not science.
+Read STATUS.md and NEXT_STEPS.md first. CPU1711 checks and independent data audit pass.
+Frozen production source049f53e atlocal/worktrees/document-qa-v21;DO NOT EDIT.
+Tmux document-QA-v21-qualification;control
+local/diagnostics/document-QA-v21-world8-width3328-qualification-v1.
+Supervisor stages:prior-fresh6,prior-resume8,post-fresh6;logical48–55 onphysical12/13.
+Protocol c5440ee539eb19e846e07fda717e75439d6b9f5449b8879fd4b79ade61d7037c.
+First8 actual workers allocated correctly. Initialization cached native checks active.
+Monitor owned stage logs/metrics/memory;no automatic retries. Hard engineering
+17:00UTC deadline is not instance shutdown. All14 updates/seven full states and
+actual restore,memory/timing/closure need independent audit before science release.
+
+Data:local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1.
+TRAIN SHAa0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9.
+2,048train/512held;allinput<=3072,all6144viewsfit3328/512,no truncation.
+Within-held supporttext/title/originalseedIDs aredisjoint;heldsupportneverintrainvisible.
+V16/V20 rawcomponentstringssometimesgenericrelationprograms;V21correctsidentity
+usingdecomposed_instances dataset:id. Oldtablesunchanged,no modeloutcomesread.
+Allintermediateanswersincitedpassages. Fullroottracesareprivilegedsupervision;
+policyonlyseesauthoredquestion+ALLvisibleparagraphs. Mirroraliaslimitsremain.
+Readback/fsyncdata/source/evidenceprotected
+local/backups/data/document-QA-v21-TRAIN2048-held512-v1;all68filesfreshsourcecompared.
+CPUreportvalidation/document_QA_v21_CPU_readiness_20261019.json.
+
+CurrentQAcode:oneengineworld8×micro1×accum4,global32,width3328,target512;
+oneZeROreducer,constant1e-5,BF16active/F32masters. qa_direct/prior/post arms;
+augmentedarmsplaininevenfullpasses,augmentedinodd. Sourcefixed256samplemean0.5,
+taskmean0.5. PostsupervisesanswerEOSbeforepostreasoningEOS. Notfull-sourceCE.
+Sciencecandidate256updates/fourpasses/twoseeds1921/1922isunreleased.
+Nextfreezescientificcomplete-answermetrics,B0direct/CoTandquestion/evidencecontrols,
+primarytrainingandinferencecontrastsandpracticalthresholdsbeforeheldforwards.
+NoofficialDEV/TEST/newsize/RL/splitrescue. AgentsquotaunavailableuntilOct24;donotretry.
+
+Mainintegrates049f53eunchangedsource;newdocs/CPUreportpublicationpendingcurrentgitstatus.
+V17resultalreadypublice1bbff9andalloutcomesprotected;combinedgateFAILunchanged.
+AnoldinactiveCseed1234step128EBSoptimizerduplicateretiredafterallold/newbothside
+hashes;alloriginalstates/modelweightsandV17latestfullremain. Root~64.6GiBfree.
+Receiptlocal/diagnostics/document-QA-v21-backup-budget-v1/completion.json.
+EnoughfornewfullFIRSTwith35GiBfloor,butrecalculateallsixterminalmodelbackupsbefore
+newscience. NVMequalificationstatesneednotbeEBSfullbackups;retainalloriginals.
+
+Previous detailed V17/data environment record follows;olderpublication/queuephrases
+are historical. User says keep working until stopped;do not final at a milestone.
+Use concise tool/action cycles and commentary at least every60s.
+
 # Handoff — 2026-10-19 12:40 UTC
 
 ## Immediate state

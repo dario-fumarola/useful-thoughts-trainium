@@ -1,0 +1,21 @@
+{
+  "status": "CPU_DATA_FREEZE_NO_MODEL_OR_SCIENCE_RELEASE",
+  "utc": "2026-10-19T12:58:44.547604+00:00",
+  "question": "Can complete, native single-model QA targets be trained on evidence-clean real documents?",
+  "cohort": "At most3072 complete rendered input tokens;greedy salted hash chooses512 distinct questions with disjoint supporting paragraph text,page title and actual original dataset:seedID. Exclude held support from ALL train-visible passages/titles and held original seedIDs;deduplicate normalized composed questions;first2048 remaining by same hash.",
+  "qualification": "Separate first128 ordered TRAIN rows only;no held model outputs before protocol release.",
+  "native_contract": {
+    "width": 3328,
+    "target_slots": 512,
+    "source_labels": 256
+  },
+  "labels": "Canonical author-converter-compatible complete decomposition including root/citations/#earlier-step references;canonical answer and attributed mirror aliases gold only.",
+  "views": "direct answerEOS;prior complete trace+Final answer+answerEOS;post answerEOS+Post-answer reasoning+complete traceEOS. Every augmented arm uses plain direct on even passes,augmentation on odd passes.",
+  "loss": "Half per-example meanCE over256 fixed uniformly sampled source target positions plus half per-example meanCE over complete task targets. Source positions identical across arms;not full-source CE.",
+  "references": [
+    "https://arxiv.org/html/2108.00573v3#S5",
+    "https://arxiv.org/html/2509.20186v1"
+  ],
+  "pass_threshold": "512 evidence/seed-disjoint held,2048 distinct evidence-clean train,all6144 native views fit3328/512 without truncation;prefix/masks/causal targets/source-sampling exact.",
+  "limits": "Authors TRAIN only,not official benchmarkDEV/TEST. Directed evidence split does not remove pretraining or semantic duplicates. Mirror aliases not authenticated against official ZIP. No training or model evaluation released."
+}

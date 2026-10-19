@@ -1,0 +1,27 @@
+{
+  "status": "CPU_PROSPECTIVE_FEASIBILITY_ONLY",
+  "utc": "2026-10-19T12:51:29.291398+00:00",
+  "question": "CancompleteinputQAcohortsretainadequatetrainingdataandheldevidenceclusters?",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "inventory_sha256": "b3d5e03e49fba6685c4b98914a265574933a00d84ba59ae0da4f7e90af462dfd",
+  "script_sha256": "ab84982f5471eb6fb52c1f2d0f3ded04d8726f6dcbc2b9ab7262fee30111551d",
+  "conditions": {
+    "input_token_budgets": [
+      2048,
+      3072
+    ],
+    "held_questions": [
+      256,
+      384,
+      512
+    ],
+    "selection": [
+      "V16fixedhash",
+      "greedy_shared_support_and_title_disjoint"
+    ]
+  },
+  "selection_salt": "document-evidence-v16-audit-only:",
+  "pass_if_any": "Atleastone exactrequestedcohort:held>=256,strictretainedTRAIN>=2048,andheldcombinedsupporttext/titleclusters>=256. Prefer512held;allconditionsreportedbeforechoosinganyscientificcohort.",
+  "trace_inventory": "Provisionalexplicitseed-question/answer/citationtraceincludingroot;completeanswerEOS;no truncation. Lengthsareinventory,notafrozenpromptorhardwarequalification.",
+  "limits": "No model outcomes,weights,evaluationorfinalcohort release. OfficialDEV/TEST/globalaliasesunopened."
+}

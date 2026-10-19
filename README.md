@@ -105,9 +105,12 @@ optimizer state. See [checkpoint protection](docs/CHECKPOINT_BACKUP.md).
 
 The next question is broader document reasoning, with the same distinction
 between training benefit and extra-inference benefit. TRAIN-only MuSiQue data,
-evidence-overlap audits, canonical annotations and alias provenance are prepared;
-no document cohort or model has been released. Complete context lengths and
-training memory need their own qualification. No RL or 8B launch follows from V17.
+[V21 CPU preparation](validation/document_QA_v21_CPU_readiness_20261019.json) now freezes
+2,048 training and512 held questions with disjoint supporting text/pages and
+original seed-question IDs. All passages remain; all6,144 native supervised views
+fit. Actual longer-context backward/save/restart qualification is active;
+no document science model or held-model evaluation is released. No RL or8B launch
+follows from V17.
 See the short [current queue](NEXT_STEPS.md) and [proof ladder](docs/RESEARCH_ROADMAP.md).
 
 Earlier results remain available:
@@ -135,7 +138,7 @@ Production V17 snapshots remain frozen at training
 [37028a1](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/37028a1)
 and evaluation
 [c9b399b](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/c9b399b).
-`main` integrates their code with other diagnostics; 1,699 CPU tests plus smoke and
+`main` integrates their code with the document-QA preparation;1,711 CPU tests plus smoke and
 compile checks pass. Use each report's exact source hashes and protocols for
 reproduction. A combined source snapshot needs separate hardware qualification.
 

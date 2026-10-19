@@ -1,0 +1,192 @@
+{
+  "status": "CPU_DOCUMENT_QA_DATA_READY_NO_SCIENCE_OR_HARDWARE_RELEASE",
+  "utc": "2026-10-19T13:04:16.559578+00:00",
+  "source_commit": "049f53ef30466f138a8a165efd1906a491d0b6e7",
+  "CPU_checks": 1711,
+  "question": "Prepare a source-matched single-model real-document QA comparison separating training benefit from extra inference.",
+  "correction": "V16/V20 component_question_texts include generic relation programs;they are not original seed-question identities. V21 uses decomposed_instances dataset:id. Historical tables remain unchanged. This was corrected before model evaluation or training.",
+  "cohort": {
+    "training": 2048,
+    "held": 512,
+    "complete_input_budget": 3072,
+    "independent_support_text_page_and_seed_groups": 512,
+    "directed_held_support_in_all_training_visible_overlap": 0,
+    "question_duplicates": 0,
+    "retained_candidate_training_before_unique2048_selection": 2542,
+    "held_hops": {
+      "2": 385,
+      "3": 104,
+      "4": 23
+    }
+  },
+  "native": {
+    "views_audited": 6144,
+    "width": 3328,
+    "target_slots": 512,
+    "source_labels_per_occurrence": 256,
+    "maxima": {
+      "direct_active_slots": 273,
+      "direct_sequence_tokens": 3081,
+      "prior_active_slots": 374,
+      "prior_sequence_tokens": 3163,
+      "post_active_slots": 376,
+      "post_sequence_tokens": 3164
+    },
+    "label_inventories_per_view": {
+      "direct_source_labels": 524288,
+      "direct_task_labels": 10708,
+      "prior_source_labels": 524288,
+      "prior_task_labels": 115012,
+      "post_source_labels": 524288,
+      "post_task_labels": 119139,
+      "train_hop4": 40,
+      "train_hop2": 1717,
+      "train_hop3": 291,
+      "held_hop2": 385,
+      "held_hop4": 23,
+      "held_hop3": 104
+    },
+    "literal_grounding_exceptions": 0
+  },
+  "training_preparation": "Three one-model arms:direct;prior full trace;post answerEOS then full traceEOS. Augmented arms alternate plain and augmented full passes. Half meanCE on256 fixed source positions,half meanCE on task. Not full-document CE or an exact TPT reproduction.",
+  "independent_check": {
+    "status": "PASS_INDEPENDENT_RAW_IDENTITIES_EVIDENCE_DISJOINTNESS_AND_ALL_NATIVE_TARGET_INVENTORIES",
+    "utc": "2026-10-19T13:02:57.886469+00:00",
+    "manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+    "script_sha256": "c7a2e949e654c5f8cfc16ee20317684436c719a3b00da8d513ca876d1772c070",
+    "training": 2048,
+    "held": 512,
+    "within_held_support_and_seed_overlap": 0,
+    "held_support_in_training_visible_overlap": 0,
+    "all_task_counts": {
+      "direct_task_labels": 10708,
+      "direct_source_labels": 524288,
+      "prior_task_labels": 115012,
+      "prior_source_labels": 524288,
+      "post_task_labels": 119139,
+      "post_source_labels": 524288
+    },
+    "maxima": {
+      "direct_active_slots": 273,
+      "direct_sequence_tokens": 3081,
+      "prior_active_slots": 374,
+      "prior_sequence_tokens": 3163,
+      "post_active_slots": 376,
+      "post_sequence_tokens": 3164
+    },
+    "limits": "No model results or hardware execution;semantic/pretraining independence not established."
+  },
+  "data_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "data_files": {
+    "training": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/TRAIN2048.jsonl",
+      "bytes": 19746313,
+      "sha256": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9",
+      "rows": 2048
+    },
+    "held_questions": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-questions-only.jsonl",
+      "bytes": 5131768,
+      "sha256": "7a8ff7129829960a876e8cd39d35f23d9033f2789b2b495023efd9862882c39d",
+      "rows": 512
+    },
+    "held_gold": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-gold-only.jsonl",
+      "bytes": 198830,
+      "sha256": "7143f61398c9a25d60b92462a94c6a0df5e445e97e9570d23512dde1f02253d7",
+      "rows": 512
+    },
+    "grounding_exceptions": {
+      "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/literal-grounding-exceptions.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0
+    }
+  },
+  "actual_hardware": "None for this snapshot/workload. Must qualify width3328 backward,accumulation,full saves/restart,memory,timing before science.",
+  "protection": {
+    "status": "READBACK_AND_FSYNC_PROTECTED_COMPLETE_CPU_DATA_AND_SOURCE_EVIDENCE",
+    "manifest_sha256": "5cf9688ff18ecf9e429b2b9722ff2cf8ae27a0bed7c5c103c50bf6e94c7dd538",
+    "path": "/home/ubuntu/dario/local/backups/data/document-QA-v21-TRAIN2048-held512-v1",
+    "files": 68,
+    "source_comparison_receipt_sha256": "ccd866fb123b8fba7cd5b7c9e986c8de85e9afe55790edaf640be7112931c92d"
+  },
+  "references": [
+    "https://arxiv.org/html/2108.00573v3",
+    "https://raw.githubusercontent.com/stonybrooknlp/musique/922ac98f19a201998dbdae6d7f2887a5258dbdeb/raw_data_to_official_format.py",
+    "https://arxiv.org/html/2509.20186v1"
+  ],
+  "limits": [
+    "Author TRAIN-derived development cohorts,not officialDEV/TEST scores. No policy/model outcomes read.",
+    "Exact evidence/title/seed-ID disjointness does not establish semantic or pretrained-model novelty. Distractors and generic relation templates may recur.",
+    "Full root-answer traces are privileged supervision derived from input-visible facts;the deployed generator receives question and all visible paragraphs only.",
+    "Mirror aliases are attributed gold and not independently authenticated against official ZIP. No held answers enter generation inputs.",
+    "First CPU prep attempt was a Python reserved-keyword syntax failure before any data/output was created;source/log preserved. No data exclusion or gate changed."
+  ],
+  "evidence_files": {
+    "validation/document_QA_v21_CPU_readiness_20261019/audit_document_QA_cohorts_v20_20261019.py": {
+      "bytes": 10054,
+      "sha256": "ab84982f5471eb6fb52c1f2d0f3ded04d8726f6dcbc2b9ab7262fee30111551d"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/audit_document_QA_cohorts_v21_20261019.py": {
+      "bytes": 10825,
+      "sha256": "6b42e3689f6a42fdef58e9d077906c13d7b2a3caa16045bf0d53b0f0beca0a23"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/check_document_QA_v21_data_independent_20261019.py": {
+      "bytes": 4072,
+      "sha256": "c7a2e949e654c5f8cfc16ee20317684436c719a3b00da8d513ca876d1772c070"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/document-QA-v21-CPU-checks-20261019.log": {
+      "bytes": 2067,
+      "sha256": "f15a6b76ce73a61193462cc4c1fd4e79436cd12b3ae81c9a5360f133f8e913e8"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/document-QA-v21-data-20261019.log": {
+      "bytes": 3363,
+      "sha256": "1137bf0331f195613c4bda4d3981c5fc9fdf7bac55b4e9f44c4a16067862ec4e"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/document-QA-v21-data-v1-20261019.log": {
+      "bytes": 312,
+      "sha256": "ce67cf4ca393d58d23167e9ea3cafa2ecca7962ca200019d063a1012d2ab25a5"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/document-QA-v21-independent-data-20261019.log": {
+      "bytes": 1007,
+      "sha256": "d5befad8b15ffcc155e16ff99949ca71d3ca0daa4c1361d0caccae172eca7488"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/independent-check.json": {
+      "bytes": 1006,
+      "sha256": "95a78761746da625573043efa60564df8b05e6bd6abb86a9eb21d6fd845ca7f2"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/manifest.json": {
+      "bytes": 3362,
+      "sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/plan.json": {
+      "bytes": 1925,
+      "sha256": "7769aca2ef0892ac13c47e0cd38de0beeadd90214d6b3edffc3c1cf91fc6e7cd"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/prepare_document_QA_v21_data_20261019.py": {
+      "bytes": 7798,
+      "sha256": "466c2df13efa9c8df3a176f49c575d5c2ee11c3777651610f73512658fd11533"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/prepare_document_QA_v21_data_v1_20261019.py": {
+      "bytes": 7788,
+      "sha256": "d918b8c9b7bb2be4d873c2f9d570b2684284f1f4597eba66f0ef5f06a69d9fdb"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/v20-plan.json": {
+      "bytes": 1254,
+      "sha256": "6e186b2f8f345e123e6650bcd7785b6dcaad9a883ef332ee8810ca63d7752f0d"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/v20-report.json": {
+      "bytes": 45771,
+      "sha256": "994672f3b1cc31a35fe15245d9afdf04c15daa7af6a2289e82e5496a921a9547"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/v21-plan.json": {
+      "bytes": 1564,
+      "sha256": "632b24c8108bc2de43611744fb100cc724b0dad271bf6b0f1feefa67e76f9417"
+    },
+    "validation/document_QA_v21_CPU_readiness_20261019/v21-report.json": {
+      "bytes": 48294,
+      "sha256": "646f2f088ad6378fa7e87fe74d4a9c68c9f3de0ad064a8413722e438f5d6414f"
+    }
+  }
+}

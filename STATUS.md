@@ -1,4 +1,20 @@
-# Status — 2026-10-19 12:36 UTC
+# Status — 2026-10-19 13:05 UTC
+
+## Active: single-model document QA qualification
+Question: can a source-matched QA reference train on complete evidence-clean real documents?
+Experiment: document-QA-v21; source snapshot049f53e; CPU preparation complete, no science release.
+Frozen2,048 TRAIN/512 held questions, full inputs<=3,072 tokens; no passage truncation.
+Held questions share no supporting text/page or original seed ID; none occurs in train-visible evidence.
+V16/V20 component strings sometimes denote generic relations; true dataset:seed IDs correct that interpretation.
+All6,144 native views and independent raw/evidence/count check pass;1,711 CPU checks pass.
+Three one-model treatments: direct, prior reasoning, post-answer reasoning; augmented arms also train plain answers.
+Objective:0.5 mean source256 sampled labels +0.5 mean task; not full-document CE.
+Report:validation/document_QA_v21_CPU_readiness_20261019.json; data/source readback EBS protected.
+Actual qualification started13:04UTC:logical48–55,world8×micro1×accum4,width3328,target512.
+Control:local/diagnostics/document-QA-v21-world8-width3328-qualification-v1;tmux document-QA-v21-qualification.
+Endpoint:14 disposable TRAIN updates,seven full saves,fresh restore,memory/timing;no automatic retry.
+Next command:inspect supervisor/stage logs and owned metrics;review complete mechanics before any science release.
+No held model forward,capability result,new size or RL release.
 
 ## Closed: source-balanced computation and source quality
 Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?
@@ -14,7 +30,7 @@ Full16 improves over direct but remains below B0; no clear raw arithmetic gain o
 Independent native/text/value/count/CI/gate checks PASS; three figures checked; all artifacts protected.
 Report: validation/real_source_balanced_v17_complete_20261019.json;14 disclosed examples/all failures.
 Decision: retain supervised inference benefit with remaining source cost; no RL/8B release.
-Next: publish complete readout; then specify one bounded document-QA reference with grounded labels.
+Decision follow-through: complete result public at e1bbff9; document-QA preparation follows above.
 
 ## Closed: stronger supervised real-document reference
 Question: does full-trace CoT SFT beat direct-answer SFT on fresh real computations?

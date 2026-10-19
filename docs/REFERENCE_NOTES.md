@@ -168,3 +168,14 @@ computation claim, and plain-path retention needs measurement. A later compariso
 must match our causal attention: the paper uses bidirectional prefix attention
 in downstream tasks. No pause arm is added to the current fixed study.
 [Pause tokens, sections3–5](https://arxiv.org/html/2310.02226v3).
+
+## Original question identities — checked 2026-10-19
+
+[MuSiQue section5, S5](https://arxiv.org/html/2108.00573v3#S5) separates original
+single-hop questions, answers and associated paragraphs to reduce memorization.
+Our raw TRAIN component_question_texts sometimes contain a generic relation
+program such as a location relation. Those strings are not original question
+identities. V21 uses dataset plus original hop ID from decomposed_instances,
+alongside supporting passage/page exclusions. Historical V16/V20 counts remain
+as originally computed. Our held split permits repeated answers and distractors;
+it is a TRAIN-derived development study, not the official benchmark split.

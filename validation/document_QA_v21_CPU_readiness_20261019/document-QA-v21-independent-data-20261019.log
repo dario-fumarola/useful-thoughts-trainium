@@ -1,0 +1,27 @@
+{
+  "status": "PASS_INDEPENDENT_RAW_IDENTITIES_EVIDENCE_DISJOINTNESS_AND_ALL_NATIVE_TARGET_INVENTORIES",
+  "utc": "2026-10-19T13:02:57.886469+00:00",
+  "manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "script_sha256": "c7a2e949e654c5f8cfc16ee20317684436c719a3b00da8d513ca876d1772c070",
+  "training": 2048,
+  "held": 512,
+  "within_held_support_and_seed_overlap": 0,
+  "held_support_in_training_visible_overlap": 0,
+  "all_task_counts": {
+    "direct_task_labels": 10708,
+    "direct_source_labels": 524288,
+    "prior_task_labels": 115012,
+    "prior_source_labels": 524288,
+    "post_task_labels": 119139,
+    "post_source_labels": 524288
+  },
+  "maxima": {
+    "direct_active_slots": 273,
+    "direct_sequence_tokens": 3081,
+    "prior_active_slots": 374,
+    "prior_sequence_tokens": 3163,
+    "post_active_slots": 376,
+    "post_sequence_tokens": 3164
+  },
+  "limits": "No model results or hardware execution;semantic/pretraining independence not established."
+}
