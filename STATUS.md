@@ -3,7 +3,7 @@
 ## Active: passage-selection pilot training
 Question: does selecting visible passage IDs help complete answers beyond format-matched direct training?
 ID: document-evidence-plan-v23 V2; two fresh arms, pilot seed2026101923,terminal256 primary.
-CPU: 1,788 checks plus smoke/compile pass; all 6,144 native training views fit.
+CPU: 1,795 checks plus smoke/compile pass,including frozen answer/decision scoring;all6,144 native views fit.
 Both arms: same TRAIN2048/order, 2,097,152 source and 67,408 final-field labels over four passes.
 Loss: separate source/final/selection means weighted 0.5/0.5/0.1; final coefficients match exactly.
 Every epoch interleaves modes; the direct control also learns the generated Final answer field.

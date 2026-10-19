@@ -1,0 +1,37 @@
+{
+  "status": "PASS1795_CPU_CHECKS_FIXED_READOUT_AND_EXECUTION_BEFORE_HELD_OUTPUTS",
+  "utc": "2026-10-19T18:33:03.887567+00:00",
+  "pilot_release_sha256": "eb0e6253be2e6de08b4673d07e12e9966be30e743bca6d221008b4a49747f15c",
+  "readout_addendum_sha256": "5e7626ecc6958fac9b442f440dd2d710b85b5c0b02fbd6086fb8cc1dc5cba9a2",
+  "sources": {
+    "train/document_evidence_plan_readout.py": "1d7dc48928366e0fb7b8d4ca5c972b9008e6e5f5509fde85e262e8abef6ba5e9",
+    "tests/test_document_evidence_plan_readout.py": "f011530c4cc38e653f0b737e16069bb92cb021eca39f1da0a4d0a84f3a287fd0"
+  },
+  "evidence_files": {
+    "validation/document_evidence_plan_v23_readout_preparation_20261019/toy_smoke.json": {
+      "bytes": 5383,
+      "sha256": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3"
+    },
+    "validation/document_evidence_plan_v23_readout_preparation_20261019/generation-execution-plan.json": {
+      "bytes": 1482,
+      "sha256": "736223c4ad39ea9d640a697190f063aa6c10107fcebf035861c46066aa47de4b"
+    },
+    "validation/document_evidence_plan_v23_readout_preparation_20261019/watch_document_evidence_v23_generation_20261019.py": {
+      "bytes": 4597,
+      "sha256": "cff1106d64e8ca778e88316c5d6cf5bd839282fd54563f5baeae8c66b7154ee8"
+    },
+    "validation/document_evidence_plan_v23_readout_preparation_20261019/supervise_document_evidence_v23_generation_group_20261019.py": {
+      "bytes": 5784,
+      "sha256": "906e15ff74dda865bdd8d3f208d99fcd2effe33b035b944f8c405bde199f7d6f"
+    },
+    "validation/document_evidence_plan_v23_readout_preparation_20261019/tests.txt": {
+      "bytes": 2032,
+      "sha256": "7384eb84cad731013652c05e100fc2d6986148647024cf01bad6cc3689a4dd9d"
+    }
+  },
+  "scoring": "OneanchoredFinalanswerparser acrossallconditions. Errors/caps retained. Complete255 originalattempts required. CanonicalEMprimary;aliases/F1 secondary. Nonemptypointervalidity independent ofanswercredit.",
+  "bootstrap": "20000pairedoriginal-questiondraws,seed2026101923;checkpointconditional,unadjusted95%,no seeds pooled.",
+  "decisions": "Netrecipe>=3pp/positive95%lower and>=95%validnonemptyselection permit unchanged replication. Inferenceassistance additionally requirespositive lowerbounds againstsame-modeldirect ANDempty. Two-seedsuccesscannotfollowfrompilot.",
+  "execution": "Two closed/protected terminalmodels first. DecoderA direct/selection,B direct/selection/empty/oracle,1530nativeattempts. Fourshards64/64/64/63;no synthetic generation rows.",
+  "limits": "No fresh heldmodel forward/output at preparation. No primarygate,cohort,prompt,parser,trainingprotocol orV21result changed."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "RELEASED_V23_FIXED_GENERATION_EXECUTION",
+  "pilot_release_sha256": "eb0e6253be2e6de08b4673d07e12e9966be30e743bca6d221008b4a49747f15c",
+  "source_files": {
+    "local/analysis/watch_document_evidence_v23_generation_20261019.py": "cff1106d64e8ca778e88316c5d6cf5bd839282fd54563f5baeae8c66b7154ee8",
+    "local/analysis/supervise_document_evidence_v23_generation_group_20261019.py": "906e15ff74dda865bdd8d3f208d99fcd2effe33b035b944f8c405bde199f7d6f"
+  },
+  "deadline_utc": "2026-10-20T06:00:00+00:00",
+  "physical_by_arm": {
+    "evidence_direct": 4,
+    "evidence_select": 5
+  },
+  "model_modes": {
+    "evidence_direct": [
+      "direct",
+      "selection"
+    ],
+    "evidence_select": [
+      "direct",
+      "selection",
+      "empty",
+      "oracle"
+    ]
+  },
+  "attempts": 1530,
+  "max_actions": 128,
+  "expected_reserved_chip_hours": 1.5,
+  "hard_reserved_chip_hour_upper_bound": 24,
+  "reviewer_decision": "PASS_FIXED_EVALUATION_EXECUTION. Qualified FP32decoder,source625fb0f,unchanged native parser/max128;allquestioncounts255,shards64/64/64/63. Actual terminal auditing/protection/binding mustfinish first. No new modes,cohort,scoringthreshold oroutcomeinspection. Four decoder ranks/chip,twochips,max8ranks;physical4/5 currentlyfree anddisjoint fromtraining0-3.",
+  "limits": "Native complete-answer observations only. No scoreinspection orautomaticretry;parent/owned supervisors retain every error/cap and verifyphysicalclosure. No new learning release."
+}
