@@ -1,3 +1,20 @@
+# Current handoff — 2026-10-19 20:27 UTC
+
+V23 is CLOSED and published on main2c4711d. All1530GEN/3062LL checked/protected;
+primary/same-reader-direct gates FAIL. Supplied-empty control regenerates IDs;
+original scores/report unchanged and caveat prominent. No replication/training release.
+V24 bounded TRAIN-fit generation active,exec65150,physical12/logical48–51;
+C=local/diagnostics/document-selector-fit-v24-TRAIN256-v1, O=matching evaluation path.
+Frozen local adapter local/analysis/document_selector_fit_v24_20261019.py;
+wait C/GEN/closure.json,then source scripts/env.sh and run adapter analyze with
+PYTHONPATH=local/worktrees/document-evidence-eval-v23:local/test-deps (absolute paths).
+No output-content review until physical closure. Native/cache own-model checks still required.
+Deadline21:00UTC,no retry. Main1797CPUchecks/smoke/compile pass tests.DKuZIN.
+Exact current paths/session are in local/analysis/CURRENT_V23_SESSION.json.
+No parameter updates or new held cohort. Protect/readback outputs and publish diagnosis.
+
+---
+
 # Handoff — 2026-10-19 18:11 UTC
 
 ## Latest state at18:11 — continue,do not final

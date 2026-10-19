@@ -1,4 +1,15 @@
-# Status — 2026-10-19 20:17 UTC
+# Status — 2026-10-19 20:27 UTC
+
+## Active: frozen selector TRAIN fit
+Question: does the completed selector reproduce its own TRAIN support annotations?
+ID: document-selector-fit-v24; unchanged B256, greedy cap128, one chip/four workers, no updates.
+Fixed hash TRAIN256: 128 two-, 96 three-, 32 four-support questions; labels excluded from inputs.
+Endpoint: exact annotation sets by stratum; fitting target >=90% on two/three; four descriptive.
+All1797 CPU checks, smoke and compile pass; independent cohort/projection/file audit passes.
+Generation: exec65150, physical12/logical48–51; deadline21:00 UTC, no automatic retry.
+Control: local/diagnostics/document-selector-fit-v24-TRAIN256-v1; matching evaluation output.
+Next: wait GEN/closure.json; run frozen adapter analyze once, independently check and preserve.
+No result contents inspected yet. TRAIN fitting is not generalization; no learning run released.
 
 ## Closed: passage-selection pilot
 Question: do generated passage IDs improve complete answers over matched direct training?

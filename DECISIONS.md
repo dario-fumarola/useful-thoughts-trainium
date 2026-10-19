@@ -1492,3 +1492,11 @@ control,sourceNLL+.135vsB0. Oneorderseed/fresh255mostlytwohop;no broadclaims.
 PrimaryreportSHAca7cc615495d0cdade77ef70cce0f19055e3456b1c79c460a7f84008dec809b3
 unchangedafterstored-outputdiagnosis. Nextboundedquestion:does frozenwriter fit its
 ownTRAINlabels bysupport-count,stratified/hash-selected? No new training yet.
+
+2026-10-19 20:27 UTC — V24 frozen TRAIN selector fit diagnostic
+V23 failed its net and inference gates; do not replicate it. A fixed hash TRAIN256
+cohort oversamples support-count strata128/96/32. Reuse B256 and the unchanged
+prompt/decoder, with actual own-model checks: one chip, deadline21:00, no updates
+or retries. Annotation agreement measures fitting, not semantic correctness or
+generalization. Freeze >=90% two/three-support fitting target before generation;
+four-support n32 is descriptive. All1797 CPU checks and projected-file audit pass.
