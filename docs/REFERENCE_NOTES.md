@@ -140,3 +140,20 @@ TPT trains on document followed by generated thinking using ordinary causal CE.
 Its training benefit should not be gated by our inserted-note inference test.
 [TPT section 2](https://arxiv.org/html/2509.20186v1).
 Keep both hypotheses explicit without changing the current fixed comparison.
+
+## Scale and document reasoning — rechecked 2026-10-19
+
+TPT's mid-training comparison uses 100 billion tokens followed by 350,000-example SFT.
+Its smaller 1.5B thought-generator ablation outperforms its 7B generator.
+Neither result makes 7B a prerequisite for our experiment. Our roughly 4.8 million
+supervised-token treatment tests a small, verified arithmetic augmentation;
+it cannot reproduce or refute that larger training recipe.
+[TPT sections3.3 and5](https://arxiv.org/html/2509.20186v1).
+
+MuSiQue explicitly studies shortcuts through question-only, context-only and
+single-paragraph controls. Its gold decomposition is training supervision, not
+input available to a deployed generator. Our inference: a future document
+reasoning study should test whether connected evidence is actually used, rather
+than treating fluent fact extraction or benchmark accuracy alone as proof.
+The current corpus inventory releases no learning or evaluation job.
+[MuSiQue sections4 and7.2](https://arxiv.org/html/2108.00573v3).

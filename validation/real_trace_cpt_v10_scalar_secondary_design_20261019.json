@@ -1,0 +1,16 @@
+{
+  "schema": "real-trace-v10-scalar-secondary-v1",
+  "status": "PROSPECTIVE_SECONDARY_BEFORE_TRAINED_CAPABILITY_REVIEW",
+  "question": "Do the fixed models generate the complete computed scalar at the selected real-document boundary?",
+  "scope": "Execution of the already-declared 32-action free-continuation secondary endpoint. The primary likelihood design, gates, cohorts and checkpoints remain unchanged.",
+  "models": "Unchanged B0 and all six audited terminal320 raw/prior/post models; no outcome-based selection.",
+  "panels": "The fixed AST-novel256 primary cohort and legacy256 separately. Never official TEST; no pooling.",
+  "modes": ["raw", "empty", "oracle", "own", "other"],
+  "generation": "Reuse the exact original native notes and same reader contexts as the likelihood evaluation. Greedy continuation, 32 actual actions, native EOS only. Do not stop by matching the gold value or parser success. Fixed prefill672, FP32 Trainium, four shards, actual own-model native and cache/causal checks required.",
+  "parser": "Existing initial-scalar-v2, unchanged. Parse only the beginning of actual generated text; exact rational comparison. No searching later text, arithmetic evaluation of the model's answer, format repair, retries or best-of selection.",
+  "denominator": "All256 documents per model/panel/mode, including generation errors, source-note errors, caps, incomplete and unsupported answers. A source-note or continuation execution error cannot count as end-to-end correct. Report unsupported, format_error, incomplete, execution_error and cap counts separately.",
+  "statistics": "Descriptive accuracy and fixed paired document-bootstrap contrasts,20000 draws,seed2026101915,each training seed separately. No new confirmatory gate or model ranking by an adapted parser.",
+  "cost": "Own/other reuse up to128 prior note actions plus32 continuation actions and the explicit fixed closing boundary. Other modes use32 continuation actions. Report actual actions and timings; these are not equal compute paths or a controlled service latency benchmark.",
+  "limits": "This measures the initial computed scalar at a curated document continuation boundary, not complete general-problem QA or broad reasoning capability. Supplied full traces include the computed result and are oracle controls. Likelihood remains primary.",
+  "release": "CPU/source checks and fixed source/model bindings first; bounded generation on otherwise idle devices. No training, automatic retries, extensions or checkpoint changes. Each run must preserve all attempts and physically close before scoring."
+}
