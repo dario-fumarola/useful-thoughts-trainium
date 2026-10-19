@@ -1,0 +1,107 @@
+{
+  "status": "CPU_TRAIN_ANNOTATION_GROUNDING_AUDIT_NO_COHORT_MODEL_OR_EVALUATION_RELEASE",
+  "utc": "2026-10-19T10:56:03.657296+00:00",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "membership_receipt_sha256": "1362e4fab7ed2c8c4eaa1f38755d85bc1449eed97e725f3b4284d3f2b70a9323",
+  "inventory_sha256": "b3d5e03e49fba6685c4b98914a265574933a00d84ba59ae0da4f7e90af462dfd",
+  "script_sha256": "2700b865e05441d65c862199455ca144ced21f5b28fd5742baabcd6e68f99bf8",
+  "rows": {
+    "rows": 19938,
+    "final_answer_in_visible": 19767,
+    "final_answer_in_support": 19723,
+    "all_hop_answers_in_visible": 19738,
+    "all_hop_answers_in_support": 19675,
+    "final_matches_a_hop_answer": 19938,
+    "hop_answers": 46613,
+    "hop_answers_in_visible": 46413,
+    "hop_answers_in_support": 46350
+  },
+  "by_complete_input_budget": {
+    "2048": {
+      "rows": 4149,
+      "final_answer_in_visible": 4103,
+      "final_answer_in_support": 4099,
+      "all_hop_answers_in_visible": 4096,
+      "all_hop_answers_in_support": 4091,
+      "final_matches_a_hop_answer": 4149,
+      "hop_answers": 9315,
+      "hop_answers_in_visible": 9262,
+      "hop_answers_in_support": 9257,
+      "verbatim_support_note_within_128": 511,
+      "verbatim_support_note_within_256": 2844,
+      "verbatim_support_note_within_512": 4086,
+      "verbatim_support_note_within_1024": 4149
+    },
+    "3072": {
+      "rows": 17299,
+      "final_answer_in_visible": 17138,
+      "final_answer_in_support": 17102,
+      "all_hop_answers_in_visible": 17112,
+      "all_hop_answers_in_support": 17059,
+      "final_matches_a_hop_answer": 17299,
+      "hop_answers": 40069,
+      "hop_answers_in_visible": 39882,
+      "hop_answers_in_support": 39829,
+      "verbatim_support_note_within_128": 916,
+      "verbatim_support_note_within_256": 8143,
+      "verbatim_support_note_within_512": 16056,
+      "verbatim_support_note_within_1024": 17295
+    }
+  },
+  "hops": {
+    "2": 14376,
+    "3": 4387,
+    "4": 1175
+  },
+  "support_paragraph_counts": {
+    "2": 14376,
+    "3": 4387,
+    "4": 1175
+  },
+  "verbatim_support_note_native_token_quantiles": {
+    "0": 73,
+    "0.25": 205,
+    "0.5": 279,
+    "0.75": 387,
+    "0.95": 610,
+    "1": 2096
+  },
+  "exception_ids_rows": 263,
+  "exception_ids_sha256": "e4da9ebacd7f8935aca09a59678d28488f29ac61d4f3abb4498bb90aef5d7046",
+  "normalization": "NFKC+casefold+Unicodewordtokens;exactcontiguouswordsequencewithinonevisibleparagraphincludingitstitle;neveracrossparagraphs.",
+  "limits": [
+    "V1schemaassertionstoppedonTRAINtrain_patchrowsbeforereport/outputcreation;originalscript/logpreserved. Membershipauditconfirms19244train+694train_patch;V2acceptsexactlythesetwoTRAINlabels.",
+    "AuthorsTRAINonly;officialDEV/TESTunopened. Globalansweraliasesfilenotdownloadedorread.",
+    "Answer-stringpresenceisnotsemanticentailment,correctevidenceselectionorlearnedreasoning. Titlesarevisibleandcancontainanswers.",
+    "RawTRAINlacksperitemofficialansweraliases;thesearecanonicalannotationcoveragecounts,notofficialEM/F1.",
+    "Verbatimfullsupportnotesareanofflineoracle,lengthinventoryonly. Noprompt,cohort,supervisedtarget,budgetorlongcontextmodelreleased.",
+    "TheexistingV17study/frozencomparisonsareunchanged;nextscientificdirectionchosenafteritscompletereadout."
+  ],
+  "public_evidence": {
+    "audit_document_grounding_v18_20261019.py": {
+      "bytes": 5321,
+      "sha256": "2700b865e05441d65c862199455ca144ced21f5b28fd5742baabcd6e68f99bf8"
+    },
+    "audit_document_grounding_v18_v1_20261019.py": {
+      "bytes": 5042,
+      "sha256": "7282fd2ddd926dee23b85e5fb86985edbb57db73a37ad0c6e2f34313ee625cfc"
+    },
+    "document-grounding-v18-CPU-20261019.log": {
+      "bytes": 318,
+      "sha256": "682b8b276714a547a5129daca58d4ee438ae94d45e310854c63fae5a99c9b45b"
+    },
+    "TRAIN-membership-check.json": {
+      "bytes": 351,
+      "sha256": "1362e4fab7ed2c8c4eaa1f38755d85bc1449eed97e725f3b4284d3f2b70a9323"
+    },
+    "annotation-exception-ids.jsonl": {
+      "bytes": 50171,
+      "sha256": "e4da9ebacd7f8935aca09a59678d28488f29ac61d4f3abb4498bb90aef5d7046"
+    }
+  },
+  "references": [
+    "https://arxiv.org/html/2108.00573v2",
+    "https://github.com/StonyBrookNLP/musique/blob/main/evaluate_v1.0.py",
+    "https://github.com/StonyBrookNLP/musique/blob/main/README.md"
+  ]
+}

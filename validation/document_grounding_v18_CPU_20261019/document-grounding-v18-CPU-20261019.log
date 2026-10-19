@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/dario/local/analysis/audit_document_grounding_v18_20261019.py", line 28, in <module>
+    assert row['setname']=='train' and row['answerable'] and len(hop) in (2,3,4)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,13 @@
+{
+  "status": "ALL_AUTHOR_DISTRIBUTED_TRAIN_OR_TRAIN_PATCH_AND_ANSWERABLE",
+  "sets": {
+    "train": 19244,
+    "train_patch": 694
+  },
+  "input_checks": {
+    "nonempty_authored_question": 19938,
+    "contains_template_marker": 0,
+    "answerable": 19938
+  },
+  "scope": "Authors raw TRAIN distribution;not official held-out benchmark evaluation."
+}

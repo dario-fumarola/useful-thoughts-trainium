@@ -28,6 +28,17 @@ Report: validation/real_target_sft_v15_complete_20261019.json; all originals/rea
 Decision: supervised inference reference established; preserve source quality before autonomous refinement.
 Next: publish complete result, then prepare one bounded source-balanced objective; no RL/8B release.
 
+## Closed: document annotation grounding (CPU only)
+Question: are supplied intermediate answers present in the policy-visible documents?
+Experiment:document-grounding-v18;all19,938 authorTRAIN rows;no cohort/model release.
+Canonical final answers occur in visible passages19,767;all hop answers19,738.
+Exact normalized string presence is not semantic entailment or learned evidence use.
+Full support-note lengths:median279 native tokens,95th610;128 is a poor inherited cap.
+Source TRAIN includes694 officialtrain_patch rows;V1assertionfailure andV2repair retained.
+Raw TRAIN lacks official peritemaliases;no global aliases/officialDEV/TEST read.
+Report:validation/document_grounding_v18_CPU_20261019.json;allCPUevidence protected.
+Decision:future document protocol needs grounded labels/appropriate budgets/complete-answer metric.
+
 ## Closed: document-reasoning split feasibility (CPU only)
 Question: can held supporting evidence be absent from all training-visible paragraphs?
 Experiment:document-evidence-v16; authors MuSiQue TRAIN only, no model or cohort release.

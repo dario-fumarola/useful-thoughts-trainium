@@ -84,11 +84,23 @@ AND ordinary raw NLL upper95%CI versusB0<=+0.03nat/token. Bothseedsrequired.
 leading complete scalar endpoint,notcompleteQA;note128actions/answer32,allfailures.
 Secondary training-only effects remain separately reportable,notredefinedmain gate.
 
-Still implement complete-only V17 analyzer/checker/figures/CSV/examples and watcher.
-Reuse V15 sources explicitly adjusted to11×512 andnew quality gate. All original
-attempts/numerical fallback lineage retained. V15 example exporter required ID
-reindexing to frozen order before unchanged donor permutation;retain that fix.
-Publish actual training report after allstates audited,with costs/label components.
+Complete-only V17 analyzer/checker/figures/CSV/examples now prepared andsource-protected.
+Watcher tmux `source-v17-final-readout` waits all11models/panels;then exports training,
+analyzes, independently decodes/checks allcounts/CI/gates, renders3figures/CSVs,
+savesdisclosedexamples/errortransitions, protects actualCPU/XLAarrays/allpublicfiles.
+Scripts `local/analysis/{analyze_real_source_v17,check_real_source_readout_v17,
+render_real_source_v17,save_real_source_examples_v17,publish_real_source_training_v17,
+account_real_source_scalar_errors_v17,protect_real_source_readout_v17,
+watch_real_source_final_readout_v17}_20261019.py`.
+Allsources parse,stagepaths/counts/identities checked. Literal3pp/strictCI/zeroerror/
+0.03inclusiveupper-bound edgecases pass viaCPU fixtures;no partialoutcome opened.
+Receipts master `prepared-readout-sources.json`, `readout-CPU-checks.json`.
+EBSpreparation `local/backups/engineering/real-source-v17-prepared-readout`.
+V15exampleworkerorderbugfix retained:IDreindexbefore unchanged donorpermutation.
+Finalready must include `final-publication-ready.json`;visuallyinspect3PNGfigures,
+reviewcompletequestiononce,updatefrontpage/status/queue,commit/pushallactualevidence.
+As of10:56 alltraining75/76updates,warm~6s;alloldnotesnearly/fullycomplete,
+answersprogressing;noexecutionfailures;root59.3GiB,host1204GiBavailable.
 
 ## Storage and backups — important order
 
@@ -129,6 +141,18 @@ arithmeticpositive. VariabledepthV11composition124→306/512,one bounded diagnos
 no expanded split rescue. MuSiQue TRAIN CPU-only:directed evidence-exclusion
 leaves502/2983train at2048/3072 for512held;no model/cohort/longcontextrelease.
 OldR1234staysstopped63. Sources/papers in docs/REFERENCE_NOTES.md.
+
+## Additional closed CPU inspection
+
+`validation/document_grounding_v18_CPU_20261019.json`:all19,938 authorTRAINrows,
+no newcohort/model. Canonicalfinalanswers occurinvisiblepassages19,767;
+allhopanswers visible19,738;presenceisnotentailment. Verbatimfullsupportnotes
+median279tokens,95th610;only916/17,299 <=3072inputrows fit128notes. Futureprotocol
+mustchoosecompactgroundedrepresentation/properlengthbudget,notreuse128blindly.
+V1assertionstopped on694officialtrain_patchrows;originalscript/logretained.
+Membershipreceiptconfirms19,244train+694train_patch;V2explicitlyacceptsboth.
+No officialDEV/TEST/globalaliasesread;rawTRAINlacksperitemofficialaliases.
+AllCPUevidence readback/fsync EBS protected. ChooseactualnextstudyafterV17readout.
 
 ## Environment
 
