@@ -1,4 +1,4 @@
-# Current handoff — 2026-10-19 21:24 UTC
+# Current handoff — 2026-10-19 21:59 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
@@ -7,7 +7,7 @@ unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
 
 C=local/diagnostics/document-evidence-weight-v25-ablation-v1.
 O=local/nvme-cpt/runs/document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1.
-Training exec7042, supervisor PID [], physical2–3/logical8–15.
+Training exec7042, supervisor PID1467762 (timeout child1467824), physical2–3/logical8–15.
 Source local/worktrees/document-evidence-weight-v25 @5414f8d is frozen.
 ALL C/release.json pipeline_sources and C/supervise-job.py are also FROZEN.
 Do not edit these live sources. The old execution-readiness snapshots were drafts;
@@ -16,7 +16,10 @@ One fresh B0 model, selector1.0 vs completed0.1 control, TRAIN2048×4/256updates
 Same data/order/LR/source-final coefficients0.5/0.5, precision/topology/worker unchanged.
 Soft deadline2026-10-19T22:45:23.876622+00:00; includes5-minute termination grace within3chip-hours.
 No retry/extension/checkpoint selection. Full128/256 original states retained.
-First128 independent protection exec50248; log C/first-full128-protection.log.
+Original full128 is written and updates resumed; PSS146→99GiB after cleanup.
+First128 independent audit/protection exec50248 exited0; full readback/fsync PASS.
+Current full EBS local/backups/science/document-evidence-weight-v25-ablation-v1/FIRST_FULL128.
+Old V23 EBS optimizer duplicates alone retired after new verification; all originals/models remain.
 Terminal audit/protect/bind watcher exec61432; waits original job physical closure.
 C/supervise-job.py uses C/job['key']; key=evidence_select-weight1-seed2026101923.
 Keep35GiB per filesystem/512GiB host available. Rootfree about64GiB before training.
@@ -42,7 +45,13 @@ science-release annex. Old V23/V24 primary reports unchanged.
 
 ## After terminal audit/protection
 
-Prepared scripts are in local/analysis and bound by C/release.json.
+Prepared training/native helpers are in local/analysis and bound by C/release.json.
+Additional fixed ordinary/readout contracts are public in validation/document_evidence_weight_v25_ordinary_readiness_20261019.json
+and document_evidence_weight_v25_readout_execution_20261019.json.
+Four evaluation allocations: TRAIN .12, native .18, replay .20, ordinary .10 reserved chip-hours.
+Use explicit soft deadlines with termination headroom inside each allocation.
+Post-readout checker/plot/example/cost/aggregate/protection helpers are listed in local/analysis/CURRENT_V25_SESSION.json.
+No optional QA likelihood work is allocated.
 Binding path C/frozen-models/evidence_select-weight1-seed2026101923.json.
 Run release_document_evidence_weight_v25_evaluation_20261019.py from frozen W2
 (local/worktrees/document-evidence-eval-v23 @625fb0f), PYTHONPATH W2:test-deps:analysis,

@@ -5,7 +5,8 @@
    Science exec7042, physical2–3, C=local/diagnostics/document-evidence-weight-v25-ablation-v1.
    One fresh B0 treatment changes selection0.1→1.0; same TRAIN2048/order/source-answer0.5/0.5.
    Source W25@5414f8d; full128/256 saves; terminal256 only; deadline22:45:23 UTC, no retry.
-   First128 protection exec50248 waits for the original complete checkpoint and audits before EBS copy.
+   Original full128 is written and updates resumed; PSS146→99GiB after cleanup.
+   First128 protection exec50248 exited0; independent state audit and full EBS readback/fsync pass.
    Terminal watcher exec61432 waits physical closure, then audits/protects/binds once.
    All source/pipeline hashes are frozen in C/release.json. Do not modify bound local helpers.
    Six fixed TRAIN under-selection cases expose2 clear annotation entity collisions,2 concerns;
@@ -43,8 +44,9 @@ Protected state/source:
 - C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
   SuccessfulLLregistry likelihood-registry-v2.json;readout-pipeline-io-v2 passes.
   Alloriginalfailedv1registries/logs/source remain;failureEBSarchive recorded inC.
-- LatestfullEBS local/backups/science/document-evidence-plan-v23-pilot-v1/TERMINALS/latest-full256,
-  evidence_select1923/256. Bothnew/V21sixterminalmodels protected;alloriginalfullstates remainNVMe.
+- Current full EBS: local/backups/science/document-evidence-weight-v25-ablation-v1/FIRST_FULL128.
+  Older V23 EBS optimizer duplicates retired after new128 verification; all original states/models retained.
+  V23 and V21 terminal model protections remain; next full replacement is new256 after terminal audit.
   Older EBSoptimizerduplicates retireonlyafternewfullreadback. Same-instance,notoff-instance.
 - V23train frozen7328141:local/worktrees/document-evidence-v23;
   decoder625fb0f:document-evidence-eval-v23;originalspan e0607fd:document-evidence-span-v23;

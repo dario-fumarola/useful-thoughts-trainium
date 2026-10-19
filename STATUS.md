@@ -1,4 +1,4 @@
-# Status — 2026-10-19 21:24 UTC
+# Status — 2026-10-19 21:59 UTC
 
 ## Active: selector-loss allocation ablation
 Question: does stronger selector supervision repair canonical fitting and help answering?
@@ -6,8 +6,9 @@ ID: document-evidence-weight-v25; one fresh1.7B treatment1.0 vs completed0.1 con
 Same order/data/exposures/source-answer0.5/0.5; source frozen5414f8d; all1809 CPU checks pass.
 Actual qualification: eight updates, full restore4, all4 states/native16/order/counts audit PASS; protected.
 One full treatment released/launched: exec7042, physical2–3/logical8–15; terminal256 primary.
-Full128/256 saves; soft deadline22:45:23 UTC; <=3 chip-hours including grace, no automatic retry.
-First128 protection exec50248; post-closure audit/protect/bind watcher exec61432.
+Original full128 written; updates resumed, grouped PSS146→99GiB after export cleanup.
+Independent128 audit/EBS protection PASS; full256 terminal; deadline22:45:23 UTC, <=3 chip-hours/no retry.
+First128 protection exec50248 exited0; full copy readback/fsync protected; terminal watcher exec61432 active.
 C: local/diagnostics/document-evidence-weight-v25-ablation-v1; source/pipeline files frozen by release.
 Six fixed TRAIN under-selection cases contain2 entity collisions; label fitting is not semantic verification.
 After terminal protection: unchanged TRAIN256 and fixed developmental held255; report answers regardless of fit.
