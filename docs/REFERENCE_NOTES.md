@@ -278,3 +278,20 @@ computational graphs. Report source exposure, actual work and latency separately
 A learned pause channel could contain useful hidden computation despite constant
 visible token identities. It is a substantive competitor, not meaningless text.
 This note changes no active V26 source, endpoint or release.
+
+
+## Direct-answer distillation is prior work — October 19
+
+[Distilling System2 into System1, v3](https://arxiv.org/html/2407.06023v3#S3)
+uses the same underlying model to generate higher-compute answers, filters them
+by consistency, discards intermediate traces, then fine-tunes direct answers.
+It reports successful transfer for several procedures and poor GSM8K transfer;
+its GSM8K pseudo-labels are only56.81% correct. That negative is not proof that
+verified arithmetic supervision cannot be internalized.
+
+Our contribution therefore cannot merely be removing written reasoning after
+training. The useful questions are the conditions for transferable computation,
+minimum verified guidance and pretraining-age dependence, with clean supervision
+and a strong answer-only control. Comparing annotation supervision with matched
+format loss is one prerequisite, not evidence that a latent algorithm was learned.
+This reading releases no new task or distillation run.

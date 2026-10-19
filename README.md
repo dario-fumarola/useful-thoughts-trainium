@@ -8,6 +8,21 @@ This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documen
 and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
+## Active control (V26)
+
+The coefficient-matched **empty-format1.0 control is training** from fresh B0,
+with the same documents, order, exposures, source/answer coefficients and numerical
+worker as V25. Actual save/restart qualification passed; full checkpoints128/256
+and independent protection are enabled. No control answer result is available yet.
+Its primary contrast is selection1.0 **direct answers** minus format1.0 direct
+answers. The benefit of emitting IDs remains a separate question. The fixed255
+panel is developmental; any positive result needs fresh, powered confirmation.
+[Released protocol and actual qualification](validation/document_evidence_format_weight_v26_science_release_20261019.json).
+
+The [research goal](docs/RESEARCH_ROADMAP.md) is to learn reusable computation,
+then establish when it becomes autonomous and whether it can be internalized.
+This small supervised reference is one step toward that goal.
+
 ## Latest coefficient ablation (V25)
 
 One fresh model changes the selection-loss weight from **0.1 to 1.0**. Documents,
@@ -73,9 +88,9 @@ All original full checkpoints remain; the terminal model/latest full state and
 - [Selection breakdown](validation/document_evidence_weight_v25_complete_20261019/held-selection-descriptive.json)
 - [Ordinary prediction cost](validation/document_evidence_weight_v25_complete_20261019/ordinary-NLL-cost.svg)
 
-The coefficient-only fitting repair is closed. The next bounded question is
-whether the recipe advantage survives a format-only control with the same
-auxiliary coefficient, before any larger model or fresh confirmation campaign.
+The coefficient-only fitting repair is closed. V26 now tests whether the recipe
+advantage survives a format-only control with the same auxiliary coefficient,
+before a larger model or fresh confirmation campaign.
 
 ## Earlier passage-selection pilot (V23)
 
