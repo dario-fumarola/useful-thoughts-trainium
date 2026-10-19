@@ -1,0 +1,271 @@
+{
+  "status": "SIX_FRESH_MODELS_ACTIVE_FIXED_PROTOCOL_NOT_CAPABILITY_RESULT",
+  "utc": "2026-10-19T14:28:56.673936+00:00",
+  "release": {
+    "status": "RELEASED_DOCUMENT_QA_V21_SCIENCE_AND_FIXED_EVALUATION",
+    "utc": "2026-10-19T14:01:02.846096+00:00",
+    "plan_sha256": "55f23b1ed9a5cb5e9f711ba63af027c4918f2c1552545aa978611277f21f0828",
+    "supervisor_sha256": "5426e5eee4c0c342ab5977112ea751ba309da03f57522b34b7ca3bb69eefdf90",
+    "helper_sha256": "96cd9078d129af082ef30a9f26e1d30cc17b357200f30d83ec7296c9b2f5992b",
+    "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-world8-width3328-qualification-v1/qualification-independent-audit.json",
+    "qualification_sha256": "5068067512aaad857939a233119a9663bc259ccd75e7c883575f9dec0368359f",
+    "decoding_qualification_file": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-FP32-decode-qualification-v2/independent-audit.json",
+    "decoding_qualification_sha256": "c21b6c0e30d3b208b244fd18bc4f736db46ab975aeb3499dad4f4c790c92327a",
+    "QA_data_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+    "ordinary_manifest_sha256": "7f7aab85d28cf2a0aafd75e6653c7440a6e995da885c9937fda497b7cefe42ad",
+    "prospective_design_sha256": "80f8a7f633566289fb74a2631a816819129d199320e4dc0690a2a1f57c1c7da0",
+    "training_snapshot": "049f53ef30466f138a8a165efd1906a491d0b6e7",
+    "evaluation_snapshot": "dbd1c103dd8fa42538ad4de4bfe5e578563e3d40",
+    "span_snapshot": "0d1a5b4cdcd9445cf3b458f3fb849b1c0e364c43",
+    "model_modes": {
+      "B0": [
+        "direct",
+        "prior",
+        "empty",
+        "reference_cot",
+        "question_only_direct",
+        "question_only_prior",
+        "bridge_removed_prior"
+      ],
+      "qa_direct-seed2026101921": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "question_only_direct"
+      ],
+      "qa_direct-seed2026101922": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "question_only_direct"
+      ],
+      "qa_prior-seed2026101921": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "empty",
+        "own_replay",
+        "other_replay",
+        "oracle",
+        "question_only_prior",
+        "bridge_removed_prior"
+      ],
+      "qa_prior-seed2026101922": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "empty",
+        "own_replay",
+        "other_replay",
+        "oracle",
+        "question_only_prior",
+        "bridge_removed_prior"
+      ],
+      "qa_post-seed2026101921": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "question_only_direct"
+      ],
+      "qa_post-seed2026101922": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "question_only_direct"
+      ]
+    },
+    "scientific_models": [
+      {
+        "id": "qa_direct-seed2026101921",
+        "arm": "qa_direct",
+        "seed": 2026101921,
+        "terminal": 256,
+        "protocol_sha256": "969ab0eaeb54639adda2f1a4ce25c59a8061fd50d3f720c5885744caf7e0038f",
+        "fresh_released_B0": true
+      },
+      {
+        "id": "qa_direct-seed2026101922",
+        "arm": "qa_direct",
+        "seed": 2026101922,
+        "terminal": 256,
+        "protocol_sha256": "d42c8b509ccf95687aad22ff443c9875f1e8cc824c285994cfb4f737935a99ae",
+        "fresh_released_B0": true
+      },
+      {
+        "id": "qa_prior-seed2026101921",
+        "arm": "qa_prior",
+        "seed": 2026101921,
+        "terminal": 256,
+        "protocol_sha256": "dc6a7d299f8fc9e70b0c40aa21dc0b52962b63e09c33d739a2c6bcb76af5cefe",
+        "fresh_released_B0": true
+      },
+      {
+        "id": "qa_prior-seed2026101922",
+        "arm": "qa_prior",
+        "seed": 2026101922,
+        "terminal": 256,
+        "protocol_sha256": "f0a699c03a7a52c8d77f8766227c3273bb8600a6c80319e74b6d2a7eb3d7248c",
+        "fresh_released_B0": true
+      },
+      {
+        "id": "qa_post-seed2026101921",
+        "arm": "qa_post",
+        "seed": 2026101921,
+        "terminal": 256,
+        "protocol_sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d",
+        "fresh_released_B0": true
+      },
+      {
+        "id": "qa_post-seed2026101922",
+        "arm": "qa_post",
+        "seed": 2026101922,
+        "terminal": 256,
+        "protocol_sha256": "71b1a747511432599eedb5220edc06b997e17acfad07174d48a90feb6c6dda12",
+        "fresh_released_B0": true
+      }
+    ],
+    "metrics": "WholecanonicalanswerEM primary;all unsupported,caps/errors retained;paired20kquestionbootstrap perseed. CanonicalF1 and attributedaliases separate. Terminal256 primary;no checkpoint/prompt selection.",
+    "practical_control": "Augmented nativeCoT must beat BOTH matched ordinary-training nativeCoT and fixed-demo conventionalCoT,plus unchanged B0fixed-demoCoT,for practical superiority. Simpler controls allowed towin.",
+    "likelihood_execution_policy": "Exact full native canonicalanswer+EOS through fixed context;report content andEOS separately;ordinaryWikipedia256prefix/32target. CPUFP32 reference. Candidate XLA FP32 onlyafter same-source/shapes finite and CPU max-token/mean-span error<=.001,and own-model fixedTRAIN calibration before held scoreforwards;otherwise CPU. Backend chosen without capability outcomes.",
+    "reviewer_decision": "Root reviewed actual14updates/7fullstates/restore8digests/native24/memorygrowth<2GiB/warm13\u201314sec. Decoder actual6attempts/CPUlong error<.000066 passes. CPU1742checks,cohort/order/ports/sourceclosure/protectionspace verified. Existing-node sixfresh source-matched QA runs and fixed evaluation are authorized within this frozen scope.",
+    "execution": "Six disjoint eight-rank jobs onphysical0\u201311 mayrun concurrently;no automatic retries. Decoding/LL engineering onphysical14 isolated. Healthmetrics only until all model/mode data close;one finalreadout.",
+    "protection": "Full128/256 originals retainedNVMe;independently inspect and protect a complete128 full onEBS whenavailable. Copy newfullFIRST/readback before retiring olderEBSoptimizer duplicates;keepalloriginals/modelweights,35GiBfloor. Allterminalmodels/latestfull readback before binding trained evaluation.",
+    "limits": "TRAIN-derived development study,not officialTEST,newmodelsize,RL,splitrescue,fromscratch thinkingemergence orTPT/RLP reproduction. NLLcostsreported separately;V17combinedfailureunchanged."
+  },
+  "common_initial_epoch_health": {
+    "2026101921": {
+      "shared_initial_updates": 64,
+      "same_order": true,
+      "max_loss_difference": 0.0,
+      "max_gradient_norm_difference": 0.0,
+      "meaning": "Expected common direct-answer first epoch,not independent capability evidence. Treatments diverge prospectively after64."
+    },
+    "2026101922": {
+      "shared_initial_updates": 64,
+      "same_order": true,
+      "max_loss_difference": 0.0,
+      "max_gradient_norm_difference": 0.0,
+      "meaning": "Expected common direct-answer first epoch,not independent capability evidence. Treatments diverge prospectively after64."
+    }
+  },
+  "training_qualification_file": "validation/document_QA_v21_training_hardware_20261019.json",
+  "decoding_qualification_file": "validation/document_QA_v21_decoding_hardware_20261019.json",
+  "hardware": "Six science partitions physical0\u201311,48 logical cores;B0generation4shards physical12. Fixed scoring path separately qualified onphysical14.",
+  "checkpoints": "Full128/256;first complete128 full independent audit and EBS protection watcher active;terminal audit/protection/binding watcher active. All original/modelweights retained.",
+  "evidence_files": {
+    "validation/document_QA_v21_science_release_20261019/audit_document_QA_v21_terminals_20261019.py": {
+      "bytes": 6589,
+      "sha256": "99098178ef1347a831593b2beb662b71d105ecd65e79e604f9f332af0f09a6f2"
+    },
+    "validation/document_QA_v21_science_release_20261019/bind_document_QA_v21_terminals_20261019.py": {
+      "bytes": 1857,
+      "sha256": "e03af69a3d2579c71d30d5f485817f1ecb603c4cb286063dc9cb6889372ce24f"
+    },
+    "validation/document_QA_v21_science_release_20261019/common-prefix-health.json": {
+      "bytes": 586,
+      "sha256": "d16395014d6f2b880c6caf6f68c379e0fc5931ffb5c411fb8d59618d7afc26fa"
+    },
+    "validation/document_QA_v21_science_release_20261019/evaluation-execution-plan.json": {
+      "bytes": 4319,
+      "sha256": "642dbef61a4d838d7300bfa49462afa18ee8c8ff9981f7e9b3982517f314338b"
+    },
+    "validation/document_QA_v21_science_release_20261019/plan.json": {
+      "bytes": 4991,
+      "sha256": "55f23b1ed9a5cb5e9f711ba63af027c4918f2c1552545aa978611277f21f0828"
+    },
+    "validation/document_QA_v21_science_release_20261019/prospective-design-initial.json": {
+      "bytes": 9714,
+      "sha256": "45c202cee9b281a984fdbe94131bc7ad8dae0f948d479644bacdebb3e936412c"
+    },
+    "validation/document_QA_v21_science_release_20261019/prospective-design-v2.json": {
+      "bytes": 10762,
+      "sha256": "d60301a13d2f81596cc09e15956ef133fa47c22690216f1a736d5bc4095cfb76"
+    },
+    "validation/document_QA_v21_science_release_20261019/prospective-design.json": {
+      "bytes": 11212,
+      "sha256": "80f8a7f633566289fb74a2631a816819129d199320e4dc0690a2a1f57c1c7da0"
+    },
+    "validation/document_QA_v21_science_release_20261019/protect_document_QA_v21_first_full128_20261019.py": {
+      "bytes": 5916,
+      "sha256": "fba5309b7af624d7968163b24580f872885afce78b69fcc70481a111a376816d"
+    },
+    "validation/document_QA_v21_science_release_20261019/protect_document_QA_v21_terminals_20261019.py": {
+      "bytes": 6556,
+      "sha256": "d25738eb98ceb13c5d81164ef7a15e2dc7a2c0c3cf6443d3bbda484fc47e0eb6"
+    },
+    "validation/document_QA_v21_science_release_20261019/protocol-qa_direct-seed2026101921.json": {
+      "bytes": 6459,
+      "sha256": "969ab0eaeb54639adda2f1a4ce25c59a8061fd50d3f720c5885744caf7e0038f"
+    },
+    "validation/document_QA_v21_science_release_20261019/protocol-qa_direct-seed2026101922.json": {
+      "bytes": 6460,
+      "sha256": "d42c8b509ccf95687aad22ff443c9875f1e8cc824c285994cfb4f737935a99ae"
+    },
+    "validation/document_QA_v21_science_release_20261019/protocol-qa_post-seed2026101921.json": {
+      "bytes": 6461,
+      "sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d"
+    },
+    "validation/document_QA_v21_science_release_20261019/protocol-qa_post-seed2026101922.json": {
+      "bytes": 6461,
+      "sha256": "71b1a747511432599eedb5220edc06b997e17acfad07174d48a90feb6c6dda12"
+    },
+    "validation/document_QA_v21_science_release_20261019/protocol-qa_prior-seed2026101921.json": {
+      "bytes": 6461,
+      "sha256": "dc6a7d299f8fc9e70b0c40aa21dc0b52962b63e09c33d739a2c6bcb76af5cefe"
+    },
+    "validation/document_QA_v21_science_release_20261019/protocol-qa_prior-seed2026101922.json": {
+      "bytes": 6461,
+      "sha256": "f0a699c03a7a52c8d77f8766227c3273bb8600a6c80319e74b6d2a7eb3d7248c"
+    },
+    "validation/document_QA_v21_science_release_20261019/qa_direct-seed2026101921-common64.jsonl.gz": {
+      "bytes": 20562,
+      "sha256": "e99dd5c555a919f7e7b37e5bb3c3e8b1bf63ccdfcf13beb4ccd4cc55d68a59c4"
+    },
+    "validation/document_QA_v21_science_release_20261019/qa_direct-seed2026101922-common64.jsonl.gz": {
+      "bytes": 20717,
+      "sha256": "5d388fc356bb6faa7fa1449168b66f0b4d22e7e6f31d195580e6289c9adc53a6"
+    },
+    "validation/document_QA_v21_science_release_20261019/qa_post-seed2026101921-common64.jsonl.gz": {
+      "bytes": 20546,
+      "sha256": "e099fe89cfd5e7980659a9a6e02bb3ad8d2849b92c067c035e96e65e90766185"
+    },
+    "validation/document_QA_v21_science_release_20261019/qa_post-seed2026101922-common64.jsonl.gz": {
+      "bytes": 20703,
+      "sha256": "5b6fee290e655240029e93c3bf530dd11725591d6841061321608d128513f692"
+    },
+    "validation/document_QA_v21_science_release_20261019/qa_prior-seed2026101921-common64.jsonl.gz": {
+      "bytes": 20563,
+      "sha256": "44077eb6b148b384a817f11ba5fb1f383f4b61d45bd3e6c294984d5cf8da86b6"
+    },
+    "validation/document_QA_v21_science_release_20261019/qa_prior-seed2026101922-common64.jsonl.gz": {
+      "bytes": 20701,
+      "sha256": "ba68b3df7530fcdb83e67df185426c3e393a0ff7887f47256a89d388bd6d364c"
+    },
+    "validation/document_QA_v21_science_release_20261019/release.json": {
+      "bytes": 5981,
+      "sha256": "5847fc816b7b469f9c236a0acbf8abb2b1a64fb7229ea8940a592a40f12abd1c"
+    },
+    "validation/document_QA_v21_science_release_20261019/supervise-job.py": {
+      "bytes": 6988,
+      "sha256": "5426e5eee4c0c342ab5977112ea751ba309da03f57522b34b7ca3bb69eefdf90"
+    },
+    "validation/document_QA_v21_science_release_20261019/supervise_document_QA_v21_generation_group_20261019.py": {
+      "bytes": 5616,
+      "sha256": "108f440fad4d9626ca0bd45a2746ad85fbf7b778dd30ac7f834a79b045362ef5"
+    },
+    "validation/document_QA_v21_science_release_20261019/supervise_document_QA_v21_generation_group_v2_20261019.py": {
+      "bytes": 5624,
+      "sha256": "3418ed2133f9b82c13b966623bc9f00f81e115d4906723e982f7833df67bb1c2"
+    },
+    "validation/document_QA_v21_science_release_20261019/watch_document_QA_v21_terminals_20261019.py": {
+      "bytes": 1965,
+      "sha256": "1d87e58f3ea5936483166194141ad38f03e22c6a88240ae32e2a805e2d880717"
+    }
+  },
+  "EBS_release": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/RELEASE",
+  "limits": [
+    "No held capability results reviewed orreported.",
+    "Source-matched training and inference benefits have separate prospective gates. Strong fixed-demo ordinary-training control and base reference can win.",
+    "Same initial trajectories show mechanical matching only. Training loss is not a capability endpoint."
+  ]
+}

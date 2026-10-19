@@ -1,0 +1,188 @@
+{
+  "schema": "document-QA-v21-prospective-design",
+  "status": "PROSPECTIVE_DESIGN_PENDING_HARDWARE_EVALUATOR_AND_SCIENCE_RELEASE",
+  "utc": "2026-10-19T13:14:07.128329+00:00",
+  "north_star": "Learn computations from available documents that improve fresh complete answers at worthwhile training and inference cost. Separate parameter-training benefit from generating reasoning at deployment.",
+  "question": "Does single-model supervised reasoning before or after an answer improve evidence-clean real-document QA over source-matched direct-answer training?",
+  "scope": "A mature-model supervised reference,not novel CoT architecture,emergence,from-scratch pretraining,RL,or a benchmarkTEST score. Prior is conventional full-trace CoT with plain-answer replay.",
+  "data": {
+    "source": "MuSiQue author TRAIN only",
+    "training": 2048,
+    "held": 512,
+    "data_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+    "files": {
+      "training": {
+        "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/TRAIN2048.jsonl",
+        "bytes": 19746313,
+        "sha256": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9",
+        "rows": 2048
+      },
+      "held_questions": {
+        "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-questions-only.jsonl",
+        "bytes": 5131768,
+        "sha256": "7a8ff7129829960a876e8cd39d35f23d9033f2789b2b495023efd9862882c39d",
+        "rows": 512
+      },
+      "held_gold": {
+        "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/held512-gold-only.jsonl",
+        "bytes": 198830,
+        "sha256": "7143f61398c9a25d60b92462a94c6a0df5e445e97e9570d23512dde1f02253d7",
+        "rows": 512
+      },
+      "grounding_exceptions": {
+        "path": "/home/ubuntu/dario/local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/literal-grounding-exceptions.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rows": 0
+      }
+    },
+    "split": "Fixed salted hash,complete input<=3072;held supporttext/title/originaldataset:seedIDs disjoint withinheld;held support absent from alltrainvisible evidence;exact composed questions unique. No selection on model outcomes.",
+    "evidence": "All visible source paragraphs and titles supplied,including distractors;gold support/decomposition/answers/aliases are offline only.",
+    "trace": "Complete canonical2\u20134-hop question/answer/citationtrace including root;all intermediate canonical answers occur in cited visible source paragraphs. Literalpresence is notsemanticentailment."
+  },
+  "arms": {
+    "qa_direct": "Every pass:direct answerEOS",
+    "qa_prior": "Even pass:direct answerEOS;odd pass:full trace,Final answer,answerEOS",
+    "qa_post": "Even pass:direct answerEOS;odd pass:answerEOS,Post-answer reasoning,full traceEOS"
+  },
+  "training": {
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "fresh_identical_B0_per_arm": true,
+    "seeds": [
+      2026101921,
+      2026101922
+    ],
+    "updates": 256,
+    "passes": 4,
+    "global_batch": 32,
+    "world": 8,
+    "micro": 1,
+    "accumulation": 4,
+    "width": 3328,
+    "target_slots": 512,
+    "lr": 1e-05,
+    "schedule": "constant",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "epsilon": 1e-08,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "active_and_grads": "BF16",
+    "masters_and_Adam": "FP32",
+    "reducer": "Single XLA ZeRO1 optimizer step;no extra reduction",
+    "save_full_every": 128,
+    "loss": "Perexample0.5 meanCE over256 fixed uniformly sampled original source positions plus0.5 meanCE over complete supervised task. Mean over all32examples once;not union-token or full-source CE.",
+    "ordered_data": "Four full seed-specific shuffled passes;same exact order and source positions in every arm within seed.",
+    "supervised_labels_per_seed": {
+      "source_all_arms": 2097152,
+      "direct_task": 42832,
+      "prior_task": 251440,
+      "post_task": 259694
+    },
+    "primary_checkpoint": "Terminal256;no held checkpoint selection.128 fullcheckpoint is recovery/development only."
+  },
+  "endpoints": {
+    "primary_metric": "Canonical-answer normalized exact match over all512questions;MuSiQue/SQuAD normalization. Whole designated answer field,not numeric substring or correct word anywhere.",
+    "secondary_metrics": [
+      "Canonical tokenF1",
+      "Attributed mirror-alias EM/F1,clearly separate from canonical",
+      "Gold-answer teacher-forced loglikelihood",
+      "Ordinary heldWikipedia continuationNLL",
+      "Unsupported,capped,format/error counts",
+      "Generated tokens,prefill/decode/training timing and physical-device-hours"
+    ],
+    "training_benefit": {
+      "contrast": "qa_post.direct minus qa_direct.direct",
+      "gate": "Pointgain>=0.03 and paired95%CI lower>0 in EACH seed separately."
+    },
+    "extra_inference_benefit": {
+      "contrast": "qa_prior.prior minus qa_prior.empty",
+      "gate": "Pointgain>=0.03 and paired95%CI lower>0 in EACH seed;also qa_prior.prior minus matched qa_direct.direct>=0.03 and lower>0 each."
+    },
+    "practical_gain_over_base": {
+      "contrast": "qa_prior.prior minus unchanged B0.reference_cot",
+      "gate": "To claim stronger solver than pretrained reference:pointgain>=0.03 and paired95%CI lower>0 EACH seed. Otherwise report supervised mode adaptation/local inference benefit only."
+    },
+    "source_quality": "Report ordinary WikipediaNLL cost relative toB0 andmatched direct;do not inherit the0.03FineMath threshold or silently relabel V17. A new QA gain with a measured NLL cost remains a tradeoff,not broad pretraining improvement.",
+    "uncertainty": "20,000 paired bootstrap draws over the512 evidence-disjoint held questions,seed2026101921;each data-order seed separately,checkpoint-conditional unadjusted95% intervals. No pooled seed CI. Support/seed disjointness does not prove semantic independence.",
+    "practical_increment_over_ordinary_training": {
+      "contrasts": [
+        "qa_prior.prior minus matched qa_direct.prior",
+        "qa_prior.prior minus matched qa_direct.reference_cot"
+      ],
+      "gate": "For a practical gain from reasoning supervision,pointgain>=0.03 and paired95%CI lower>0 for BOTH controls in EACH seed,alongside the existing unchanged B0.reference_cot comparison. If simpler control+conventional CoT matches or wins,choose it. qa_prior.reference_cot is reported as a separate secondary path;no held-out checkpoint/prompt selection."
+    }
+  },
+  "inference": {
+    "policy": "Single greedy,tokenizer-defined native support;no answer-aware selection or repairs",
+    "precision": "Qualified existing FP32 evaluator;BF16 training weights loaded exactly,own native references/cache checks per model",
+    "prefill_width": 3584,
+    "action_cap": 256,
+    "parser": "Direct:first nonempty outputline after suppliedAnswer. Prior:anchoredFinal answerfield caseinsensitive,answer on same/next nonempty line. Newline or sampled terminator closes answer;unterminated lengthcap unsupported. No gold matching during parsing. Every failure retained.",
+    "baseline": "Unchanged B0 in same direct/prior/empty modes plus fixed two-example conventional CoT reference using invented facts;no held examples or outcome-selected prompt.",
+    "all_model_modes": {
+      "B0": [
+        "direct",
+        "prior",
+        "empty",
+        "reference_cot",
+        "question_only_direct",
+        "question_only_prior",
+        "bridge_removed_prior"
+      ],
+      "qa_direct": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "question_only_direct"
+      ],
+      "qa_prior": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "empty",
+        "own_replay",
+        "other_replay",
+        "oracle",
+        "question_only_prior",
+        "bridge_removed_prior"
+      ],
+      "qa_post": [
+        "direct",
+        "prior",
+        "reference_cot",
+        "question_only_direct"
+      ]
+    },
+    "controls": "Replay controls serialize complete generated trace text under the same recipient prompt/Final answer boundary;compare own_replay with cyclic next-item other_replay. No donor trimming,length matching or utility selection. Original single-stream prior is primary and separate from replay. Oracle includes root answer. Question-only removes all documents;bridge-removal replaces the annotated first-hop support text while preserving indices/titles. These controls diagnose evidence dependence,not perfect semantic causal isolation.",
+    "cost": "Equal caps are not equal FLOPs/latency. Count actual actions,full context tokens,extra forwards,all six training runs,teacher-label resources and checkpoint work."
+  },
+  "release": {
+    "required": [
+      "Actual same-source world8\u00d7micro1\u00d7accum4,width3328 backward/full-restart/memory/timing qualification",
+      "CPU masks/loss/accumulation/native data and parser checks",
+      "Actual long-prefill FP32 cached/ordinary parity on disposable TRAIN",
+      "Frozen source/objective/order/metrics/controls before held model forwards",
+      "Verified latest-full protection and enough copy-new-full-FIRST space for all terminal models"
+    ],
+    "automatic": false
+  },
+  "stop_policy": "Stop on nonfinite/wrongtargets/leakage/reducerfailure/corruptstate/unboundedmemory or explicitownerstop. Do not rush stable runs or select checkpoints by held scores. No automatic retry.",
+  "decision": "Continue a method only if its declared endpoint succeeds against the source-matched control. If only CoT helps,retain ordinary CoT as reference. If only post helps,training scaffold value is separate. If neitherhelps,record negative and reconsider objective/data;do not relaunch the stopped RL recipe. A same-mode qa_direct.prior control is mandatory in the practical decision. Local prior-versus-empty benefit alone does not establish value from reasoning supervision or a stronger solver.",
+  "limits": [
+    "Two data-order seeds do not estimate general training-seed uncertainty.",
+    "AuthorsTRAIN-derived research development,officialDEV/TEST unopened. Pretraining and semantic duplicates not ruled out.",
+    "Repeated answers,distractors and relation templates permitted.",
+    "Mirror-alias authenticity not independently verified against official ZIP;canonicalprimary avoids depending on that annotation.",
+    "No new serving stack,paidteacher,cloudcapacity,newmodelsize or splitrescue."
+  ],
+  "prospective_revision": {
+    "version": 3,
+    "utc": "2026-10-19T14:00:04.622376+00:00",
+    "initial_sha256": "45c202cee9b281a984fdbe94131bc7ad8dae0f948d479644bacdebb3e936412c",
+    "previous_sha256": "d60301a13d2f81596cc09e15956ef133fa47c22690216f1a736d5bc4095cfb76",
+    "reason": "Give every trained arm the fixed conventional CoT demonstrations as well as its native mode. Require the augmented solver to beat the source-trained control with those demonstrations,so a missing learned output format cannot create an artificially weak baseline. Before any scientific training/held forwards;all existing primary endpoints/data/objectives unchanged."
+  }
+}

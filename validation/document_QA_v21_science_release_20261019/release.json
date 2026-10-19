@@ -1,0 +1,131 @@
+{
+  "status": "RELEASED_DOCUMENT_QA_V21_SCIENCE_AND_FIXED_EVALUATION",
+  "utc": "2026-10-19T14:01:02.846096+00:00",
+  "plan_sha256": "55f23b1ed9a5cb5e9f711ba63af027c4918f2c1552545aa978611277f21f0828",
+  "supervisor_sha256": "5426e5eee4c0c342ab5977112ea751ba309da03f57522b34b7ca3bb69eefdf90",
+  "helper_sha256": "96cd9078d129af082ef30a9f26e1d30cc17b357200f30d83ec7296c9b2f5992b",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-world8-width3328-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "5068067512aaad857939a233119a9663bc259ccd75e7c883575f9dec0368359f",
+  "decoding_qualification_file": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-FP32-decode-qualification-v2/independent-audit.json",
+  "decoding_qualification_sha256": "c21b6c0e30d3b208b244fd18bc4f736db46ab975aeb3499dad4f4c790c92327a",
+  "QA_data_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "ordinary_manifest_sha256": "7f7aab85d28cf2a0aafd75e6653c7440a6e995da885c9937fda497b7cefe42ad",
+  "prospective_design_sha256": "80f8a7f633566289fb74a2631a816819129d199320e4dc0690a2a1f57c1c7da0",
+  "training_snapshot": "049f53ef30466f138a8a165efd1906a491d0b6e7",
+  "evaluation_snapshot": "dbd1c103dd8fa42538ad4de4bfe5e578563e3d40",
+  "span_snapshot": "0d1a5b4cdcd9445cf3b458f3fb849b1c0e364c43",
+  "model_modes": {
+    "B0": [
+      "direct",
+      "prior",
+      "empty",
+      "reference_cot",
+      "question_only_direct",
+      "question_only_prior",
+      "bridge_removed_prior"
+    ],
+    "qa_direct-seed2026101921": [
+      "direct",
+      "prior",
+      "reference_cot",
+      "question_only_direct"
+    ],
+    "qa_direct-seed2026101922": [
+      "direct",
+      "prior",
+      "reference_cot",
+      "question_only_direct"
+    ],
+    "qa_prior-seed2026101921": [
+      "direct",
+      "prior",
+      "reference_cot",
+      "empty",
+      "own_replay",
+      "other_replay",
+      "oracle",
+      "question_only_prior",
+      "bridge_removed_prior"
+    ],
+    "qa_prior-seed2026101922": [
+      "direct",
+      "prior",
+      "reference_cot",
+      "empty",
+      "own_replay",
+      "other_replay",
+      "oracle",
+      "question_only_prior",
+      "bridge_removed_prior"
+    ],
+    "qa_post-seed2026101921": [
+      "direct",
+      "prior",
+      "reference_cot",
+      "question_only_direct"
+    ],
+    "qa_post-seed2026101922": [
+      "direct",
+      "prior",
+      "reference_cot",
+      "question_only_direct"
+    ]
+  },
+  "scientific_models": [
+    {
+      "id": "qa_direct-seed2026101921",
+      "arm": "qa_direct",
+      "seed": 2026101921,
+      "terminal": 256,
+      "protocol_sha256": "969ab0eaeb54639adda2f1a4ce25c59a8061fd50d3f720c5885744caf7e0038f",
+      "fresh_released_B0": true
+    },
+    {
+      "id": "qa_direct-seed2026101922",
+      "arm": "qa_direct",
+      "seed": 2026101922,
+      "terminal": 256,
+      "protocol_sha256": "d42c8b509ccf95687aad22ff443c9875f1e8cc824c285994cfb4f737935a99ae",
+      "fresh_released_B0": true
+    },
+    {
+      "id": "qa_prior-seed2026101921",
+      "arm": "qa_prior",
+      "seed": 2026101921,
+      "terminal": 256,
+      "protocol_sha256": "dc6a7d299f8fc9e70b0c40aa21dc0b52962b63e09c33d739a2c6bcb76af5cefe",
+      "fresh_released_B0": true
+    },
+    {
+      "id": "qa_prior-seed2026101922",
+      "arm": "qa_prior",
+      "seed": 2026101922,
+      "terminal": 256,
+      "protocol_sha256": "f0a699c03a7a52c8d77f8766227c3273bb8600a6c80319e74b6d2a7eb3d7248c",
+      "fresh_released_B0": true
+    },
+    {
+      "id": "qa_post-seed2026101921",
+      "arm": "qa_post",
+      "seed": 2026101921,
+      "terminal": 256,
+      "protocol_sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d",
+      "fresh_released_B0": true
+    },
+    {
+      "id": "qa_post-seed2026101922",
+      "arm": "qa_post",
+      "seed": 2026101922,
+      "terminal": 256,
+      "protocol_sha256": "71b1a747511432599eedb5220edc06b997e17acfad07174d48a90feb6c6dda12",
+      "fresh_released_B0": true
+    }
+  ],
+  "metrics": "WholecanonicalanswerEM primary;all unsupported,caps/errors retained;paired20kquestionbootstrap perseed. CanonicalF1 and attributedaliases separate. Terminal256 primary;no checkpoint/prompt selection.",
+  "practical_control": "Augmented nativeCoT must beat BOTH matched ordinary-training nativeCoT and fixed-demo conventionalCoT,plus unchanged B0fixed-demoCoT,for practical superiority. Simpler controls allowed towin.",
+  "likelihood_execution_policy": "Exact full native canonicalanswer+EOS through fixed context;report content andEOS separately;ordinaryWikipedia256prefix/32target. CPUFP32 reference. Candidate XLA FP32 onlyafter same-source/shapes finite and CPU max-token/mean-span error<=.001,and own-model fixedTRAIN calibration before held scoreforwards;otherwise CPU. Backend chosen without capability outcomes.",
+  "reviewer_decision": "Root reviewed actual14updates/7fullstates/restore8digests/native24/memorygrowth<2GiB/warm13\u201314sec. Decoder actual6attempts/CPUlong error<.000066 passes. CPU1742checks,cohort/order/ports/sourceclosure/protectionspace verified. Existing-node sixfresh source-matched QA runs and fixed evaluation are authorized within this frozen scope.",
+  "execution": "Six disjoint eight-rank jobs onphysical0\u201311 mayrun concurrently;no automatic retries. Decoding/LL engineering onphysical14 isolated. Healthmetrics only until all model/mode data close;one finalreadout.",
+  "protection": "Full128/256 originals retainedNVMe;independently inspect and protect a complete128 full onEBS whenavailable. Copy newfullFIRST/readback before retiring olderEBSoptimizer duplicates;keepalloriginals/modelweights,35GiBfloor. Allterminalmodels/latestfull readback before binding trained evaluation.",
+  "limits": "TRAIN-derived development study,not officialTEST,newmodelsize,RL,splitrescue,fromscratch thinkingemergence orTPT/RLP reproduction. NLLcostsreported separately;V17combinedfailureunchanged."
+}

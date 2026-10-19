@@ -1,0 +1,99 @@
+{
+  "status": "PREPARED_SIX_FRESH_DOCUMENT_QA_MODELS_PENDING_SERIAL_RELEASE",
+  "utc": "2026-10-19T13:53:40.056218+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/document-qa-v21",
+  "source_commit": "049f53ef30466f138a8a165efd1906a491d0b6e7",
+  "evaluation_source_commit": "dbd1c103dd8fa42538ad4de4bfe5e578563e3d40",
+  "jobs": [
+    {
+      "arm": "qa_direct",
+      "seed": 2026101921,
+      "key": "qa_direct-seed2026101921",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-study-v1/protocol-qa_direct-seed2026101921.json",
+      "protocol_sha256": "969ab0eaeb54639adda2f1a4ce25c59a8061fd50d3f720c5885744caf7e0038f",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_direct-TRAIN2048-seed2026101921-v1",
+      "physical_devices": [
+        0,
+        1
+      ]
+    },
+    {
+      "arm": "qa_direct",
+      "seed": 2026101922,
+      "key": "qa_direct-seed2026101922",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-study-v1/protocol-qa_direct-seed2026101922.json",
+      "protocol_sha256": "d42c8b509ccf95687aad22ff443c9875f1e8cc824c285994cfb4f737935a99ae",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_direct-TRAIN2048-seed2026101922-v1",
+      "physical_devices": [
+        2,
+        3
+      ]
+    },
+    {
+      "arm": "qa_prior",
+      "seed": 2026101921,
+      "key": "qa_prior-seed2026101921",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-study-v1/protocol-qa_prior-seed2026101921.json",
+      "protocol_sha256": "dc6a7d299f8fc9e70b0c40aa21dc0b52962b63e09c33d739a2c6bcb76af5cefe",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101921-v1",
+      "physical_devices": [
+        4,
+        5
+      ]
+    },
+    {
+      "arm": "qa_prior",
+      "seed": 2026101922,
+      "key": "qa_prior-seed2026101922",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-study-v1/protocol-qa_prior-seed2026101922.json",
+      "protocol_sha256": "f0a699c03a7a52c8d77f8766227c3273bb8600a6c80319e74b6d2a7eb3d7248c",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1",
+      "physical_devices": [
+        6,
+        7
+      ]
+    },
+    {
+      "arm": "qa_post",
+      "seed": 2026101921,
+      "key": "qa_post-seed2026101921",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-study-v1/protocol-qa_post-seed2026101921.json",
+      "protocol_sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101921-v1",
+      "physical_devices": [
+        8,
+        9
+      ]
+    },
+    {
+      "arm": "qa_post",
+      "seed": 2026101922,
+      "key": "qa_post-seed2026101922",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-study-v1/protocol-qa_post-seed2026101922.json",
+      "protocol_sha256": "71b1a747511432599eedb5220edc06b997e17acfad07174d48a90feb6c6dda12",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101922-v1",
+      "physical_devices": [
+        10,
+        11
+      ]
+    }
+  ],
+  "deadline_utc": "2026-10-20T13:00:00+00:00",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-QA-v21-world8-width3328-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "5068067512aaad857939a233119a9663bc259ccd75e7c883575f9dec0368359f",
+  "decoding_qualification_sha256": "c21b6c0e30d3b208b244fd18bc4f736db46ab975aeb3499dad4f4c790c92327a",
+  "prospective_design_sha256": "80f8a7f633566289fb74a2631a816819129d199320e4dc0690a2a1f57c1c7da0",
+  "held_primary_manifest_sha256": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+  "ordinary_manifest_sha256": "7f7aab85d28cf2a0aafd75e6653c7440a6e995da885c9937fda497b7cefe42ad",
+  "execution": "Six disjoint world8\u00d7micro1\u00d7accum4 jobs may run concurrently;allfreshB0. Same ordered seed-specific documents per arm. No retries,extensions,early-outcome review or checkpoint selection.",
+  "checkpoint_policy": "Full128/256;alloriginalsNVMe. Independently inspect/protect a complete128 full recovery state onEBS as soon as available. New full copy/readback precedes any older EBS optimizer-duplicate retirement. Atterminal256 copy new fullFIRST,thenallterminalmodels. Retain originals/all model weights and35GiBfloor.",
+  "budget": {
+    "root_free_bytes": 89021792256,
+    "NVMe_free_bytes": 715771191296,
+    "conservative_full_bytes": 27529199616,
+    "protection_remaining_five_model_bytes": 17206241695,
+    "old_full_both_sides_freshly_reverified": true,
+    "backup_receipt_sha256": "10e5711a6d1e971670fb53b44e671ed107e54141dfa5969cc975da4d1d706ae7"
+  },
+  "scope": "Source-matched supervised mature-model document-QA reference;no RL,newsize,splitrescue,officialDEV/TEST or TPT-reproductionclaim."
+}

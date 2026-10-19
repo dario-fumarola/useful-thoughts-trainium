@@ -1,5 +1,12 @@
 # Useful Thoughts on Trainium
 
+The [document-QA study](validation/document_QA_v21_science_release_20261019.json)
+is running: six fresh1.7B models compare direct answers,reasoning before answers,
+and reasoning after a supervised answer stop. Two data-order seeds share2,048
+training documents;512 evidence-disjoint questions and256 ordinary pages are fixed.
+Strong conventional-CoT controls can win. **No QA capability result is available yet.**
+
+
 Controlled experiments on whether self-generated intermediate computation improves
 language-model predictions. Actual Qwen3-1.7B-Base, verified real mathematical
 documents, and AWS Trainium. Official TEST remains unused.
@@ -109,8 +116,8 @@ between training benefit and extra-inference benefit. TRAIN-only MuSiQue data,
 2,048 training and512 held questions with disjoint supporting text/pages and
 original seed-question IDs. All passages remain; all6,144 native supervised views
 fit. Actual longer-context backward/save/restart qualification is active;
-no document science model or held-model evaluation is released. No RL or8B launch
-follows from V17.
+the document science study and its fixed evaluation are now released after actual
+qualification. No RL or8B launch follows from V17.
 See the [prospective QA comparison](validation/document_QA_v21_design_20261019.json),
 short [current queue](NEXT_STEPS.md) and [proof ladder](docs/RESEARCH_ROADMAP.md).
 
@@ -139,7 +146,7 @@ Production V17 snapshots remain frozen at training
 [37028a1](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/37028a1)
 and evaluation
 [c9b399b](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/c9b399b).
-`main` integrates their code with the document-QA preparation;1,735 CPU tests plus smoke and
+`main` integrates their code with the document-QA preparation;1,742 CPU tests plus smoke and
 compile checks pass. Use each report's exact source hashes and protocols for
 reproduction. A combined source snapshot needs separate hardware qualification.
 

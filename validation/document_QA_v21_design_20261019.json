@@ -238,7 +238,23 @@
     "validation/document_QA_v21_design_20261019/prospective-design.json": {
       "bytes": 9714,
       "sha256": "45c202cee9b281a984fdbe94131bc7ad8dae0f948d479644bacdebb3e936412c"
+    },
+    "validation/document_QA_v21_design_20261019/prospective-design-v2-before-launch.json": {
+      "bytes": 10762,
+      "sha256": "d60301a13d2f81596cc09e15956ef133fa47c22690216f1a736d5bc4095cfb76"
+    },
+    "validation/document_QA_v21_design_20261019/prospective-design-v3-strong-CoT-before-launch.json": {
+      "bytes": 11212,
+      "sha256": "80f8a7f633566289fb74a2631a816819129d199320e4dc0690a2a1f57c1c7da0"
     }
   },
-  "active_qualifications": "Training world8/3328 and FP32 decoding core56/3584 are active. Completion markers alone do not release scientific learning or held evaluation."
+  "active_qualifications": "Training world8/3328 and FP32 decoding core56/3584 are active. Completion markers alone do not release scientific learning or held evaluation.",
+  "latest_prospective_design": {
+    "version": 3,
+    "path": "validation/document_QA_v21_design_20261019/prospective-design-v3-strong-CoT-before-launch.json",
+    "sha256": "80f8a7f633566289fb74a2631a816819129d199320e4dc0690a2a1f57c1c7da0",
+    "initial_sha256": "45c202cee9b281a984fdbe94131bc7ad8dae0f948d479644bacdebb3e936412c",
+    "previous_sha256": "d60301a13d2f81596cc09e15956ef133fa47c22690216f1a736d5bc4095cfb76",
+    "reason": "Give every trained arm the fixed conventional CoT demonstrations as well as its native mode. Require the augmented solver to beat the source-trained control with those demonstrations,so a missing learned output format cannot create an artificially weak baseline. Before any scientific training/held forwards;all existing primary endpoints/data/objectives unchanged."
+  }
 }

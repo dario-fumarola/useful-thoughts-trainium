@@ -1,82 +1,69 @@
 # Current queue
 
-1. Finish the bounded document-QA-v21 long-context qualification.
-   Frozen source049f53e: local/worktrees/document-qa-v21. Do not mutate it.
-   Control: local/diagnostics/document-QA-v21-world8-width3328-qualification-v1.
-   Tmux: document-QA-v21-qualification; supervisor.log and stage logs track it.
-   World8×micro1×accum4, global32, width3328, target512, fresh released1.7B.
-   Disposable first128 TRAIN only: prior1–6, fresh restore6→8, post1–6.
-   Audit all14 updates, source/task counts, seven full states, restoration,
-   grouped PSS, actual compile/warm/save time and physical process closure.
-   First finite update/master/replica audit completes13:24UTC;initial compilation
-   accounts for most of1157s. Further graphs still compile;warm timing is unknown.
-   Separate decode qualification:local/diagnostics/document-QA-v21-FP32-decode-qualification-v2,
-   tmux document-QA-v21-decode-qualification,core56/physical14. Two TRAIN prompts
-   in three modes;3584prefill;actualCPU/cached/full-forward parity must pass.
-   Qualification has a17:00UTC engineering deadline, not an instance shutdown.
-   No automatic retry or scientific release follows a completion marker alone.
+1. Complete the active document-QA-v21 study;monitor health,not capability.
+   Master:local/diagnostics/document-QA-v21-study-v1.
+   Six tmux science sessions:document-QA-v21-<qa_direct|qa_prior|qa_post>-seed2026101921/1922.
+   Physical0–11,world8×micro1×accum4,global32,width3328,target512,constant1e-5.
+   Fresh released1.7B per arm;2,048 examples,four passes,256 terminal updates.
+   Shared first64 updates match order/loss/norm exactly within seed;do not infer capability.
+   After64 objectives differ prospectively;keep terminal checkpoint primary.
+   Watchers:document-QA-v21-first128-protection and document-QA-v21-terminal-pipeline.
+   They independently inspect full states,copy/read back new full recovery first,
+   then retire only older EBS optimizer duplicates;keep originals/all model weights.
 
-2. Release the single-model QA comparison only after both actual qualifications.
-   Prospective design:validation/document_QA_v21_design_20261019.json.
-   Local master:local/diagnostics/document-QA-v21-study-v1/prospective-design.json.
-   Source:training049f53e,evaluationdbd1c10. All1,735 CPU checks pass.
-   Six fresh B0 models,three arms/two order seeds,four passes/256updates are proposed.
-   Post.direct versus direct.direct tests training benefit. Prior.prior versus
-   prior.empty and matched direct tests inference benefit. Each requires>=3pp
-   plus positive paired lower95%CI separately in both seeds. Strong unchanged
-   B0 conventional CoT is an additional practical comparison,allowed to win.
-   Primary canonical whole-answer EM;canonical F1/attributed-alias metrics separate.
-   Parser closes a designated answer field by newline or sampled terminator;
-   incomplete caps/errors stay in512. Metric matches pinned author code on519pairs.
-   Ordinary panel:256 fresh Wikipedia pages;all QA-visible pages/text excluded.
-   No inherited FineMath NLL threshold. Report measured costs/tradeoffs honestly.
-   North star: compute from available documents and improve fresh complete answers
-   at worthwhile cost. Separate training benefit from extra inference benefit.
-   Prepared arms: direct answers; complete reasoning before answers; reasoning
-   after a supervised answer EOS. Augmented arms alternate plain/augmented passes.
-   Same source sample and ordered documents; source/task means receive0.5 each.
-   Count source labels, task labels, exposures and actual accelerator cost separately.
-   Finalize the serialized evaluator release,question/evidence/replay controls and
-   actual recovery/throughput/protection receipts before held model forwards.
-   No official DEV/TEST, broad RL, model-size jump or split rescue is released.
+2. Complete the fixed evaluation orchestration while training runs.
+   B0 generation is already active:tmux document-QA-v21-B0-generation,physical12,
+   output local/nvme-cpt/evaluation/document-QA-v21-B0-held512-v1.
+   Training snapshot049f53e,decoder dbd1c10,span scorer0d1a5b4 are immutable.
+   Frozen release,protocols and stronger conventional-CoT controls:
+   validation/document_QA_v21_science_release_20261019.json.
+   Execution grouping:C/evaluation-execution-plan.json(C is the master above).
+   Prepare six audited terminal bindings,then model-native CPU references/prompts.
+   Use twelve initial trained-generation groups as planned;replay controls wait
+   for each prior-only group to close and reuse its freed physical4/8.
+   Use generation-group v2 controller for future groups(protocol-hash TMPDIR);
+   leave the active B0 v1 controller/source untouched.
+   Likelihood producer prepared:local/analysis/document_QA_v21_likelihood_job_20261019.py.
+   It waits for complete original prior attempts;full native answer+EOS and
+   ordinary32 targets;four batch4 shards permodel,own-model TRAIN calibration first.
+   Still implement its group orchestration/closure audit and final readout.
+   Reserve physical14/15 for LL while generation runs;expand after all GEN closes.
+   Expected total:20,992 generation attempts and19,712 likelihood rows across7models.
+   Review once after all fixed model/mode data close;no checkpoint/prompt selection.
 
-Data and CPU evidence:
+3. Interpret separate endpoints;allow simpler controls to win.
+   Primary canonical complete-answer EM,all512 questions,failures retained.
+   Training:post.direct−direct.direct. Inference:prior.prior−prior.empty and
+   matched direct.direct. Each>=3pp plus positive paired95%lower in both seeds.
+   Practical augmentation value additionally needs gains over matched direct.prior,
+   matched direct.reference_cot and unchanged B0.reference_cot;all allowed to win.
+   CanonicalF1 and attributed mirror-alias scores are separate secondary measures.
+   Likelihood separates answer content from EOS;ordinary-page NLL is a measured
+   tradeoff,not the inherited FineMath0.03 bound. V17's own gate stays FAIL.
 
-- validation/document_QA_v21_CPU_readiness_20261019.json:2,048 unique TRAIN and
-  512 held questions, complete inputs<=3,072 tokens. All6,144 native views fit
-  width3328/target512 without truncation.1,711 CPU checks and independent audit pass.
-- Held supporting text/page and actual original seed IDs are disjoint within held
-  and absent from all training-visible evidence. Distractors/templates may recur;
-  semantic and pretraining novelty are not established.
-- V16/V20 raw component_question_texts include generic relation programs. Their
-  old tables remain unchanged; V21 uses actual decomposed_instances dataset:IDs.
-- Gold traces include the root answer, citing visible passages. All intermediate
-  answers in the frozen cohorts occur in their cited passages. This is supervision,
-  not deployed evidence selection or semantic entailment.
-- MuSiQue author TRAIN and pinned mirror canonical fields agree on all19,938 rows.
-  Mirror aliases are attributed gold; not independently authenticated against the
-  unavailable official ZIP. Official DEV/TEST/global alias files remain unopened.
-- Data/source/evidence protected at local/backups/data/document-QA-v21-TRAIN2048-held512-v1.
+Evidence/protection:
 
-Completed scientific boundaries:
+- Actual training/recovery qualification PASS:14 updates,seven full states,
+  fresh restore8rank digests,late save PSS growth1.46/1.53GiB<2.
+  validation/document_QA_v21_training_hardware_20261019.json.
+- FP32 decoder PASS:six TRAIN attempts,zero execution errors,CPU-long maxLP
+  error0.0000651<0.001. Two parser-unsupported outputs retained;not accuracy evidence.
+  validation/document_QA_v21_decoding_hardware_20261019.json.
+- Span B4QA3584/ordinary672:CPU/device parity passes;max token errors
+  0.0000799/0.0000584. Warm9.00/0.710s versus single CPU reference69.10/7.14s;
+  not a sustained benchmark. Independent publication/closure audit still to finish.
+- Cohorts:2,048 distinct train/512 held,allcomplete inputs<=3072;no held supporting
+  text/page/actualseedID in training-visible evidence. Distractors/templates recur;
+  semantic/pretraining novelty not established. All gold step answers in cited text.
+- Raw component strings sometimes generic relations;V21 uses true dataset:seed IDs.
+  Canonical author annotations match pinned converter;mirror aliases remain attributed,
+  not independently authenticated against official ZIP. OfficialDEV/TEST unopened.
+- Keep35GiB/filesystem and512GiB hostavailable. All original full states remainNVMe.
+  Latest EBS full is V17 source_direct1913/320 UNTIL first128 watcher records
+  new-full readback and older-optimizer retirement. Then use its explicit receipt.
+  Root~83GiB pre-first128;all-state/model protection budget verified before release.
+  EBS is same-instance,not off-instance. No cloud/IAM/network/paid-teacher changes.
 
-- V17 public e1bbff9: arithmetic inference gates PASS both seeds; ordinary-quality
-  guard and combined gate FAIL both. Source-CoT434/439 of512 vs direct351/357.
-  Ordinary NLL+0.0380/+0.0429 versus B0; thresholds remain unchanged.
-- V15 supervised arithmetic gain has substantial ordinary-NLL cost. V10 fails both
-  primary full-span gates; its prospective scalar secondary helps. V11 bounded
-  variable-depth repair is closed. Original R1234 stays stopped at63.
-- Full results, controls and limits:README and docs/EXPERIMENT_HISTORY_20261019.md.
-
-Resources and protection:
-
-Keep35GiB/filesystem and512GiB host availability. Never remove an original state
-or model weight. Current complete EBS optimizer recovery is V17 source_direct
-seed1913 at320;all scientific terminal models remain protected. Same-instance,
-not off-instance. Before another science release, verify full-copy-FIRST space.
-Fresh both-side checks verified the original C seed1234 step128 and latest V17
-full states before retiring only inactive C128 EBS optimizer duplicates. All
-originals and models remain. Root now~64.6GiB free:enough for one new full copy
-with35GiB reserve; recalculate remaining terminal-model protection before science.
-Receipt:local/diagnostics/document-QA-v21-backup-budget-v1/completion.json.
-No cloud/IAM/network/paid-teacher/bucket changes, stack upgrades or live cache moves.
+Closed boundaries:V17 arithmetic gatePASS/quality+combinedFAIL;V15 inference gain
+with NLLcost;V10 both primary full-span gatesFAIL;V11 bounded repair closed;
+old R1234 remains stopped63. Details in README/EXPERIMENT_HISTORY;no new RL/8B release.

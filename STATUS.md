@@ -1,21 +1,21 @@
-# Status — 2026-10-19 13:28 UTC
+# Status — 2026-10-19 14:29 UTC
 
-## Active: single-model document QA qualification
-Question: do prior/post-answer supervised computations improve fresh complete document answers?
-Experiment:document-QA-v21; training049f53e/evaluationdbd1c10; no scientific release.
-Frozen2,048TRAIN/512held;complete inputs<=3072;held support/page/originalseed IDs disjoint.
-All6,144 native views/independent data audit pass;1,735 evaluator CPU checks plus smoke/compile pass.
-Separate prospective gates:post.direct−direct.direct;prior.prior−prior.empty and matched direct;strong B0CoT reference.
-Design:validation/document_QA_v21_design_20261019.json;ordinary256 fresh pages frozen;no held forwards.
-Training control:local/diagnostics/document-QA-v21-world8-width3328-qualification-v1.
-Tmux document-QA-v21-qualification;logical48–55,world8×micro1×accum4,width3328,target512.
-At13:24UTC first finite update/master/replica audit completes;~1157s includes initial compilation.
-Further graphs compiling;warm step time and recovery/memory gates remain pending.
-Decode control:local/diagnostics/document-QA-v21-FP32-decode-qualification-v2;tmux document-QA-v21-decode-qualification.
-Core56/physical14;two TRAIN prompts×three modes;full CPU long-context reference saved;no capability gate.
-Independent training audit watcher waits for all14 updates/seven saves/physical closures;no automatic retries.
-Next command:inspect both owned controls/metrics,then independent audits before any scientific release.
-Data/source/design/ordinary panel protected on EBS;no new size,RL or split rescue.
+## Active: source-matched single-model document QA
+Question: do computations before/after answers improve fresh complete real-document answers?
+Experiment:document-QA-v21; six fresh1.7B models,two data-order seeds,TRAIN2048×four passes,terminal256.
+All six science jobs active onphysical0–11;warm updates~13.5s;health only,no capability readout.
+Common first64 updates match exact order/loss/norm within each seed;later treatments intentionally differ.
+Arms:direct;prior full CoT with plain replay;answerEOS then post-answer reasoning with plain replay.
+Frozen held512 support/page/originalseed-disjoint;ordinary256 pages separate;no context truncation.
+Strong fixed-demo CoT is included for the source control and base;20,992 answers/19,712 LL rows fixed.
+Release:validation/document_QA_v21_science_release_20261019.json;latest designV3 precedes all science forwards.
+Actual14-update/seven-state/full-restore training qualification PASS;late PSS growth1.46/1.53GiB<2.
+Actual FP32 decoding and span-scoring CPU parity PASS;LL content/EOS separated;own-model calibration required.
+B0 four-shard generation runs onphysical12;all capability results remain unread until complete comparison.
+Control:local/diagnostics/document-QA-v21-study-v1;frozen train049f53e,decode dbd1c10,span0d1a5b4.
+First128 full-state protection and terminal audit/protection/binding watchers active;all originals/models retained.
+Next:finish trained-generation/LL orchestration and independent final readout;monitor all jobs without early selection.
+No officialTEST,new size,RL or split rescue;earlier V17 combined failure remains unchanged.
 
 ## Closed: source-balanced computation and source quality
 Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?
