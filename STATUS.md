@@ -1,20 +1,20 @@
-# Status — 2026-10-19 15:22 UTC
+# Status — 2026-10-19 16:58 UTC
 
-## Active: source-matched single-model document QA
-Question: do computations before/after answers improve fresh complete real-document answers?
-ID:document-QA-v21;six fresh1.7B models,two seeds,TRAIN2048×four passes,terminal256 primary.
-All1,536 updates/sixruns complete and physicallyclosed;terminal audit PASS all12 fullstates/order/labels.
-Arms:direct;prior full CoT with plain replay;answerEOS then post-answer reasoning with plain replay.
-Held512 support/page/true-seed disjoint;ordinary256 separate;all complete contexts untruncated.
-Frozen endpoint:canonical complete-answer EM;training/inference contrasts separately>=3pp +positiveCI bothseeds.
-Practical decision additionally compares ordinary-trained and unchanged-base conventional CoT.
-Release:validation/document_QA_v21_science_release_20261019.json;20,992 attempts/19,712 LLrows fixed.
-Actual training/restore,FP32 decoder and span parity PASS;public span arrays independently checked/protected.
-Allsix terminalmodels+latestfull256 protected/readbackverified onEBS;all12originalfullstates retained.
-B0 generation onphysical12;trainedmodel nativeCPUreferences preparing;GEN/LL/readout watchers active,capability unread.
-Control:local/diagnostics/document-QA-v21-study-v1;frozen train049f53e,decode dbd1c10,span0d1a5b4.
-Trainingreport:validation/document_QA_v21_training_20261019.json;all six bindings complete.
-Next:complete all fixed trainedGEN/LL panels,then one independentreadout;noearlyscoreinspection.
+## Closed: source-matched single-model document QA
+Question: do reasoning before/after answers improve fresh complete real-document answers?
+ID:document-QA-v21;six fresh1.7B models/two seeds/TRAIN2048×4passes/terminal256;all states audited.
+All20,992GENattempts/19,712LLrows close with zeroexecutionerrors;independentchecks andprotection PASS.
+Direct201/195;prior-generated217/227;prior-empty190/169;post-direct200/186 of512.
+Own−empty+5.3pp[1.2,9.4]/+11.3[7.4,15.2];all512 pairs complete,not formatrecovery.
+Own−matched-direct+3.1pp[-1.0,7.2]/+6.3[2.3,10.4];declared two-seed inference/practical gates FAIL.
+Post-direct−direct−.2pp[-3.5,3.1]/−1.8[-5.1,1.6];primarytraininggate FAIL.
+DirectCoTstrict1/1(510unsupported/seed);posthocfirst-line191/182,not a revisedprimaryscore.
+Own gold-answerLL−7.34/−7.75nats versus empty;postdirectLL+.38/+.93 versusdirect,secondary only.
+Prior ordinaryNLL+.097/.110 versusB0;57.4/56.3actions versusdirect5.37;no broadpretrainingclaim.
+Posthoc:higher-hop gains inconsistent;literalcitations/teacherrelations needgrounding review.
+Derivedchecker repaired2e-12 FP64summary mismatch only;primaryreportSHA/gates/scores unchanged,failedattempt retained.
+Report:validation/document_QA_v21_complete_20261019.json;allrawoutputs/examples/sources protected.
+Next:publish complete result/reviewpackage;inspect data grounding/formatcontrol before any newtraining release.
 
 ## Closed: source-balanced computation and source quality
 Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?

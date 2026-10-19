@@ -1,0 +1,130 @@
+{
+  "status": "POSTHOC_STORED_TRACE_STRUCTURE_CANONICAL_FIDELITY_LITERAL_CITATION_AND_CONFIDENCE_DIAGNOSIS",
+  "utc": "2026-10-19T16:46:31.988259+00:00",
+  "report_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "source_sha256": "f01dc75cdcd37059e45da7da9c63f353315387356253faf54556c6b72140c4cc",
+  "results": {
+    "2026101921": {
+      "items": 512,
+      "by_gold_hops": {
+        "2": {
+          "items": 385,
+          "generated_step_counts": {
+            "2": 367,
+            "3": 16,
+            "4": 2
+          },
+          "sequential_complete": 367,
+          "canonical_correct": 181
+        },
+        "3": {
+          "items": 104,
+          "generated_step_counts": {
+            "3": 72,
+            "2": 24,
+            "4": 8
+          },
+          "sequential_complete": 72,
+          "canonical_correct": 29
+        },
+        "4": {
+          "items": 23,
+          "generated_step_counts": {
+            "3": 10,
+            "2": 5,
+            "4": 7,
+            "8": 1
+          },
+          "sequential_complete": 7,
+          "canonical_correct": 7
+        }
+      },
+      "sequential_complete_trace": 446,
+      "all_canonical_intermediates_match": 364,
+      "all_canonical_step_answers_match": 179,
+      "all_claims_literal_in_own_citations": 335,
+      "literal_claims": 949,
+      "total_claims": 1162,
+      "final_copies_last_claim": 507,
+      "canonical_correct_with_noncanonical_intermediate": 37,
+      "likelihood_by_answer_match_group": {
+        "canonical_correct": {
+          "items": 217,
+          "mean_gold_answer_span_gain_own_minus_empty": 1.21093338638064
+        },
+        "alias_only": {
+          "items": 21,
+          "mean_gold_answer_span_gain_own_minus_empty": -9.251164164218673
+        },
+        "neither_canonical_nor_attributed_alias": {
+          "items": 274,
+          "mean_gold_answer_span_gain_own_minus_empty": -13.959492557830021
+        }
+      }
+    },
+    "2026101922": {
+      "items": 512,
+      "by_gold_hops": {
+        "2": {
+          "items": 385,
+          "generated_step_counts": {
+            "2": 379,
+            "3": 6
+          },
+          "sequential_complete": 379,
+          "canonical_correct": 189
+        },
+        "3": {
+          "items": 104,
+          "generated_step_counts": {
+            "3": 67,
+            "2": 32,
+            "4": 5
+          },
+          "sequential_complete": 67,
+          "canonical_correct": 31
+        },
+        "4": {
+          "items": 23,
+          "generated_step_counts": {
+            "3": 13,
+            "2": 5,
+            "4": 4,
+            "6": 1
+          },
+          "sequential_complete": 4,
+          "canonical_correct": 7
+        }
+      },
+      "sequential_complete_trace": 450,
+      "all_canonical_intermediates_match": 369,
+      "all_canonical_step_answers_match": 185,
+      "all_claims_literal_in_own_citations": 367,
+      "literal_claims": 976,
+      "total_claims": 1132,
+      "final_copies_last_claim": 509,
+      "canonical_correct_with_noncanonical_intermediate": 41,
+      "likelihood_by_answer_match_group": {
+        "canonical_correct": {
+          "items": 227,
+          "mean_gold_answer_span_gain_own_minus_empty": 1.3144070446609228
+        },
+        "alias_only": {
+          "items": 20,
+          "mean_gold_answer_span_gain_own_minus_empty": -9.286884905124703
+        },
+        "neither_canonical_nor_attributed_alias": {
+          "items": 265,
+          "mean_gold_answer_span_gain_own_minus_empty": -15.388484498288724
+        }
+      }
+    }
+  },
+  "limits": [
+    "All1024 originalprior generations retained;no newmodelforwards,primaryscores or gateschanged.",
+    "Canonicalintermediate fidelity rejectsparaphrases/alternativevaliddecompositions;not semanticcorrectness.",
+    "Literalanswerpresence incitedparagraph doesnotestablish therelation,entailment,citationfaithfulness orreasoning.",
+    "Correctfinals withnoncanonicalintermediate are diagnosticcandidates,not automaticallyfalsechains.",
+    "Likelihoodgrouping conditionson generatedanswer matches;descriptive,not causal or a calibration theorem."
+  ]
+}

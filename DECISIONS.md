@@ -1386,3 +1386,22 @@ capabilityremainsunread. Publishactualtrainingtraces/nativemapping separately
 fromscientificresults. Ownerreview reinforces smallTRAIN2048/formatlearning risk,
 canonicalEM+F1/attributedaliases,unknownpretrainingnovelty andexecution-only meaning
 ofnumericalchecks. No outcome/gate/data/prompt changes ornewexperiment launch.
+
+2026-10-19 16:40UTC — All20,992GEN/19,712LL executions close. Initialindependent
+readoutchecker passes answer/native-decoding/metric/bootstrap checks but stops on
+exactPythonfloat equality foroneof60recomputednative summarydicts. Same saved
+vectors/source produce<=1.979e-12 scalar differences;both originalgates PASS.
+Preserveoriginalchecker/failedlog/diagnostic. ExplicitV2 derivedchecker compares
+FP64summaries withinabsolute1e-10;bools,argmax andoriginal.01nativeKL/.001prefill
+gates stayliteral. No rawmodeloutput,score,metric,CI,scientificthreshold orbackend
+changes;no modelexecutionsrerun. Newrepairsource/attempt thenrender/protect,with
+unchangedprimaryreportSHA enforced. This is auditnumericsrepair,not a scientificpass.
+
+2026-10-19 16:58UTC — Close QA-v21 without promoting a failedgate. Own217/227
+versusempty190/169 andmatcheddirect201/195;all512pairscomplete. Localgainpositive
+bothseeds,butnetfirstseedCIcrosseszero;overalltraining/inference/practicalgatesFAIL.
+Post200/186 showsno directaccuracygain,despite+.38/+.93goldLLsecondarybenefit.
+OwnLL−7.34/−7.75;hardwrittenwrongclaims andaliases stronglypenalized. DirectCoT's
+strict1/1 is formatfailure:posthocgold-independentfirstline rule recovers191/182,
+not revisedprimary. Storedtraces/teacherrelations needgroundinginspection. Preserve
+allprimaryscores/decisions andsources;publishreviewpackage beforeanothertraining.

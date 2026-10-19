@@ -1,0 +1,86 @@
+{
+  "status": "PASS_NATIVE_ACTIONS_FIELDS_CANONICAL_ALIAS_METRICS_VECTORS_BOOTSTRAPS_AND_GATES",
+  "utc": "2026-10-19T16:40:48.635871+00:00",
+  "generation_rows": 20992,
+  "likelihood_rows": 19712,
+  "report_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "checker_sha256": "0611a8be2c4c3cb576d623d0d2b33753ec326131a65f2c96ff1c35b9de2c0426",
+  "summary_recomputation_absolute_tolerance": 1e-10,
+  "reduction_differences": [
+    {
+      "where": {
+        "model": "qa_prior-seed2026101922",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-qa_prior-seed2026101922-short-v1",
+        "shard": 1,
+        "kind": "native"
+      },
+      "field": "reference_to_device_kl_nats",
+      "recomputed": 8.951600889457457e-10,
+      "stored": 8.97137387614511e-10,
+      "absolute_difference": 1.9772986687652955e-12
+    },
+    {
+      "where": {
+        "model": "qa_prior-seed2026101922",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-qa_prior-seed2026101922-short-v1",
+        "shard": 1,
+        "kind": "native"
+      },
+      "field": "device_to_reference_kl_nats",
+      "recomputed": 8.951677798439705e-10,
+      "stored": 8.931904811777463e-10,
+      "absolute_difference": 1.9772986662241966e-12
+    },
+    {
+      "where": {
+        "model": "qa_prior-seed2026101922",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-qa_prior-seed2026101922-short-v1",
+        "shard": 1,
+        "kind": "native"
+      },
+      "field": "max_bidirectional_kl_nats",
+      "recomputed": 8.951677798439705e-10,
+      "stored": 8.97137387614511e-10,
+      "absolute_difference": 1.9696077705404864e-12
+    },
+    {
+      "where": {
+        "model": "qa_prior-seed2026101922",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-qa_prior-seed2026101922-short-v1",
+        "shard": 1,
+        "kind": "native"
+      },
+      "field": "max_logp_error",
+      "recomputed": 0.00021049270879913706,
+      "stored": 0.00021049270682027554,
+      "absolute_difference": 1.978861519091879e-12
+    },
+    {
+      "where": {
+        "model": "qa_prior-seed2026101922",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-qa_prior-seed2026101922-short-v1",
+        "shard": 1,
+        "kind": "native"
+      },
+      "field": "rms_logp_error",
+      "recomputed": 5.360517953904951e-05,
+      "stored": 5.360517802200431e-05,
+      "absolute_difference": 1.5170451971458637e-12
+    },
+    {
+      "where": {
+        "model": "qa_prior-seed2026101922",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-qa_prior-seed2026101922-short-v1",
+        "shard": 1,
+        "kind": "native"
+      },
+      "field": "relative_l2_logp_error",
+      "recomputed": 2.9067695288788283e-06,
+      "stored": 2.90676944661586e-06,
+      "absolute_difference": 8.226296824043492e-14
+    }
+  ],
+  "original_failed_checker_sha256": "0fdd7bde9720623abd0fef37967d827c34ad088a59c0c1454f169f9af20f9b9a",
+  "original_failed_log_sha256": "afd6ee7a0690aafe8cac4d9b061ce5292ef37d96c029517ae0394f646d48393c",
+  "limits": "Independent parsing,normalization/F1,native decode and distribution recomputation/vectorizedresampling;no fresh model executions. No selection or error exclusions. V2 changes only exact Pythonfloat summary equality to absolute1e-10 comparison;all original nativeKL andprefill gates andall science scores/thresholds unchanged."
+}

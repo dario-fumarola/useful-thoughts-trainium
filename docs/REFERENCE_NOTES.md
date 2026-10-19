@@ -179,3 +179,20 @@ identities. V21 uses dataset plus original hop ID from decomposed_instances,
 alongside supporting passage/page exclusions. Historical V16/V20 counts remain
 as originally computed. Our held split permits repeated answers and distractors;
 it is a TRAIN-derived development study, not the official benchmark split.
+
+## QA-v21 interpretation — checked 2026-10-19
+
+MuSiQue's step-execution model substitutes intermediate answers while executing
+the decomposition. V21 instead supervised a single textual trace containing
+literal `#n` placeholders. Explicit binding is a possible new treatment, not a
+retroactive explanation established by our results. The paper's split excludes
+shared original questions, answers and paragraphs; our within-TRAIN resplit
+allows repeated answers and adds page/visible-context exclusions. These are
+different protocols, not a replication of its official split.
+[MuSiQue sections5 and7.2](https://arxiv.org/html/2108.00573v3).
+
+TPT concatenates a raw document and generated thinking for ordinary next-token
+training. Its reported mid-training uses100B tokens followed by350k-example SFT.
+Our2,048-question post-answer supervision is a much smaller,different experiment;
+its failed accuracy gate does not refute TPT.
+[TPT sections2 and3.3](https://arxiv.org/html/2509.20186v1).

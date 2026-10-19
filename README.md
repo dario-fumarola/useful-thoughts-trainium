@@ -1,166 +1,117 @@
 # Useful Thoughts on Trainium
 
-The [document-QA study](validation/document_QA_v21_science_release_20261019.json)
-has completed all six training runs; evaluation is running. Fresh 1.7B models
-compare direct answers, reasoning before answers, and reasoning after a supervised
-answer stop. Two data-order seeds share 2,048 training questions; 512 questions
-with disjoint supporting evidence and 256 ordinary pages are fixed. Conventional
-CoT controls can win. **No QA capability result is available yet.**
+**The document-QA study is complete: generated reasoning helps the same trained
+model, but its advantage over matched direct training does not pass the declared
+two-seed gate. Post-answer reasoning supervision shows no direct-accuracy improvement here.**
 
-[All 1,536 updates and terminal-state checks are complete](validation/document_QA_v21_training_20261019.json).
-This small supervised reference may teach format or dataset patterns. Disjoint
-supporting evidence does not establish novelty relative to pretraining, and
-numerical parity does not establish learning.
+This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documents,
+and Trainium. It does not establish broad reasoning, pretraining benefit, or
+novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
-Controlled experiments on whether self-generated intermediate computation improves
-language-model predictions. Actual Qwen3-1.7B-Base, real mathematical documents
-and document QA, and AWS Trainium. Official TEST remains unused.
+## Completed document-QA comparison
 
-**Latest result: a large arithmetic gain survives source-text regularization,
-but the declared ordinary-prediction bound still fails.** Generated calculations
-score **434/512 and 439/512**, versus **351/512 and 357/512** for matched direct
-training. Ordinary NLL remains **0.038/0.043 nat per token worse than B0**.
-The source loss removes about 76% of the target-only models' regression on this
-same panel. This is useful progress with a remaining cost, not a combined pass.
+Six fresh models, two data-order seeds, the same 2,048 training questions and four
+passes (256 updates). Every example combines 0.5 mean source CE over 256 fixed
+source positions and 0.5 mean task CE. Direct training predicts the answer;
+prior training mixes direct answers with full-trace CoT; post training mixes direct
+answers with reasoning after an answer stop. Task-label counts differ by arm.
+Terminal checkpoints are primary; the held panel has 512 questions with disjoint
+supporting evidence, pages and original question identities relative to training.
 
-## Completed source-balanced study
-
-Four fresh models trained on the same 5,120 FineMath documents, with two seeds,
-320 updates and two passes each. Each example combines 0.5 mean source-prefix CE
-and 0.5 mean task CE. The task is either direct continuation or verified full
-calculation followed by continuation. Terminal checkpoints are primary.
-
-The new 512-document arithmetic panel excludes training and prior-panel documents
-and exact ordered arithmetic ASTs. The ordinary 256-document panel is separate.
-All models below were evaluated on these same new panels.
-
-| Model / inference path | Seed1913 correct /512 | Seed1914 correct /512 |
+| Model / path | Seed1921 correct /512 | Seed1922 correct /512 |
 |---|---:|---:|
-| Unchanged B0, raw (shared) |352|352|
-| Source-balanced direct, raw |351|357|
-| Source-balanced CoT, raw |350|349|
-| Source-balanced CoT, empty format |341|326|
-| **Source-balanced CoT, generated calculation** |**434**|**439**|
-| Source-balanced CoT, unrelated calculation |158|156|
-| Source-balanced CoT, supplied exact trace |455|465|
-| Earlier target-only CoT, generated calculation |442|433|
-| Earlier prior-calculation CPT, generated calculation |418|408|
+| Unchanged B0, fixed-demo conventional CoT (shared) |92|92|
+| Matched direct training, direct answer |201|195|
+| Prior training, direct answer |201|180|
+| Prior training, empty reasoning format |190|169|
+| **Prior training, generated reasoning** |**217**|**227**|
+| Prior training, fixed-demo conventional CoT (secondary) |224|222|
+| Post-answer training, direct answer |200|186|
 
-Generated computation beats matched direct training by **16.2 percentage points
-[12.1,20.3]** and **16.0 [11.9,20.1]**. Matching empty-format and B0 contrasts
-also have positive intervals. Both declared arithmetic gates pass.
+Canonical whole-answer EM is primary; all failures remain in denominators.
+Canonical token F1 and separately attributed answer-alias metrics are also saved.
+Generated reasoning's F1 is 0.509/0.533 versus 0.490/0.470 for matched direct training.
+Its attributed-alias EM is 238/512 and 247/512; these do not replace canonical scores.
 
-The declared quality gate requires the upper 95% interval on ordinary NLL
-regression versus B0 to be at most **+0.03 nat/token**, separately in each seed:
-
-| Ordinary NLL increase versus shared B0 | Seed1913 | Seed1914 |
+| Predeclared contrast | Seed1921 gain, pp [95% CI] | Seed1922 gain, pp [95% CI] |
 |---|---:|---:|
-| Earlier target-only CoT, rescored here |+0.1558|+0.1755|
-| Source-balanced CoT |+0.0380 [0.0277,0.0486]|+0.0429 [0.0310,0.0554]|
-| Source-balanced direct |+0.0496|+0.0563|
+| Post direct − matched direct |−0.2 [−3.5,3.1]|−1.8 [−5.1,1.6]|
+| Generated reasoning − same-model empty |+5.3 [1.2,9.4]|+11.3 [7.4,15.2]|
+| Generated reasoning − matched direct |+3.1 [−1.0,7.2]|+6.3 [2.3,10.4]|
 
-**The quality gate fails in both seeds, so the combined gate fails.** Arithmetic
-accuracy relative to the earlier target-only CoT varies by seed; its paired
-intervals include zero. The point estimate of ordinary-NLL regression is reduced
-by 75.6% in both seeds. That reduction is measured against the old models on the
-same new panel, not by comparing different development sets.
+The gate requires a point gain of at least 3pp and a positive paired lower bound
+in **each** seed. The overall inference and practical-value gates therefore fail;
+the post-answer training gate also fails. The local reasoning-versus-empty gain
+is positive in both seeds, entirely among pairs with complete answer fields.
+Intervals use 20,000 paired question bootstrap draws, conditional on each checkpoint,
+without pooling seeds or adjusting intervals for multiple comparisons.
 
-![Arithmetic contrasts and controls](validation/real_source_balanced_v17_complete_20261019/declared-accuracy-contrasts.svg)
+![Primary contrasts](validation/document_QA_v21_complete_20261019/primary-contrasts-focused.svg)
 
-![Ordinary prediction cost](validation/real_source_balanced_v17_complete_20261019/ordinary-quality-guard.svg)
+## What the controls and outputs show
 
-## What this establishes and costs
+The ordinary-trained model's fixed-demo CoT path scores only **1/512 in each seed**,
+with 510 unsupported outputs each. It usually fails the required answer format.
+Large gains over that degraded path are not evidence of a strong CoT baseline win.
+A labelled posthoc rule—use the anchored final field, otherwise the first complete
+line—recovers191/182 on those same outputs, below native direct201/195. It changes
+no primary score or gate; a future parser must be fixed before fresh evaluation.
+All paths and format counts remain in the [complete tables](validation/document_QA_v21_complete_20261019/all-answer-failures-costs.csv).
 
-The benefit is largely numerical: 80/77 of the net 83/82 extra correct answers
-occur where both outputs already pass the parser. This descriptive accounting
-retains the original 512-item denominator. CoT-own has 46/40 unsupported outputs
-and 0/1 format errors; direct-raw has 46/43 unsupported outputs. Every failure stays.
-There are zero execution errors across all 28,160 fixed answer attempts.
+Prior-model accuracy falls to 11/23 without documents and 148/144 when one annotated
+bridge paragraph is removed. Own-note replay scores 217/227 versus 11/33 with an
+unrelated note. These are evidence/content diagnostics, not perfect causal isolation.
+Supplied oracle traces score 507/512 and 512/512, but contain the root answer.
 
-CoT notes average 34.1/34.5 sampled actions, with 0/2 capped and no empty notes.
-Answers have a 32-action cap; **all source-CoT answers reach it**. The frozen
-endpoint certifies the complete leading scalar, not a complete QA response.
-Given reader-closing tokens are counted separately from generated actions.
+The additional gain is concentrated in two-hop questions. Three- and four-hop
+cells show no consistent advantage; there are only 104/23 such questions. Stored
+traces also contain wrong intermediate facts and citations. Some correct final
+answers follow visibly incorrect intermediate claims. Literal presence of an
+answer in a cited paragraph does not establish that the stated relation is supported.
+One fixed example’s gold citation contains “Ohio” in a military unit name without
+stating the asked place-of-death relation. Teacher grounding also needs inspection.
 
-Full16-token likelihood improves over matched direct training by 0.728/0.704 nats,
-but remains 0.470/0.604 nats below B0. Raw arithmetic accuracy does not improve
-clearly over the matched direct control. Raw ordinary NLL improves over that
-control by 0.012/0.013 nat/token, while both remain worse than B0.
-These are distinct training and inference endpoints.
+Post-answer training does improve gold-answer log likelihood over matched direct
+training by 0.38/0.93 nats, with positive paired intervals, despite no direct-accuracy
+gain. This secondary predictive result does not pass the declared accuracy gate.
 
-Both arms see 4,489,846 source labels per seed; task labels differ:
-163,840 direct versus512,900 CoT. Loss weights are not gradient-norm shares.
-Training uses BF16 parameters/gradients with FP32 masters and Adam, one ZeRO
-reduction owner, batch 32 and width 640. Four measured loops use 4.657 physical
-device-hours including saves, excluding qualification, preparation and evaluation.
-Inference timings come from concurrent FP32 jobs, not a controlled serving test.
+Accuracy and likelihood disagree: own notes reduce gold-answer span likelihood
+versus empty by **7.34/7.75 nats**, mostly in answer content rather than EOS.
+Correct canonical answers have positive average gains, while other written claims
+can make the gold surface much less likely. This does not justify restarting the
+old likelihood-reward RL recipe. Exact-match and exact-surface likelihood also
+penalize valid alternative phrasing; alias and F1 diagnostics remain separate.
 
-This is a supervised arithmetic reference. Pattern overlap and pretraining
-exposure remain possible. The study uses one frozen inference format; optimizing
-the base CoT prompt remains untested. It does not establish spontaneous thought
-emergence, broad reasoning improvement or unconditional pretraining benefit.
+## Cost, limits and reproducibility
 
-## Evidence and current direction
+Generated reasoning uses 57.4/56.3 actions per question versus 5.37/5.37 for matched
+direct training. Observed median execution times are about 4.96/4.92 versus 1.03/1.03
+seconds under concurrent jobs; this is not a controlled serving-latency benchmark.
+Prior training's ordinary-page NLL is 0.097/0.110 nat/token worse than B0, although
+it is better than matched direct training by 0.036/0.020. This is specialization
+with a measured cost, not broad language-model improvement.
 
-The [complete report](validation/real_source_balanced_v17_complete_20261019.json)
-links 45 compressed original payloads: **28,160 answers / 5,632 notes / 30,976 likelihood rows**.
-It includes all modes, numerical components, costs, 20,000 paired document
-bootstrap draws per contrast, and the unchanged literal gates. Seeds are separate;
-intervals are checkpoint-conditional and unadjusted.
+All **20,992 generation attempts and 19,712 likelihood rows** completed with zero
+execution errors. Raw outputs, unsupported cases, native targets, examples and
+analysis sources are preserved and read back on EBS. All six terminal model files
+and a complete optimizer recovery state are protected; EBS is same-instance.
+Numerical parity establishes execution integrity, not learning. A derived checker
+repair replaced exact FP64 summary equality with a 1e-10 comparison after an
+observed 2e-12 reduction difference; original scientific and numerical gates,
+outputs, metrics, intervals and the primary report hash remain unchanged.
 
-The [artifact directory](validation/real_source_balanced_v17_complete_20261019/)
-contains three checked figures, all-mode CSVs, 14 disclosed examples, exact
-CPU/native parity arrays and the independent readout check. Original outputs and
-current derived artifacts passed EBS readback protection. All original full
-checkpoints remain on NVMe; EBS retains every terminal model and the latest full
-optimizer state. See [checkpoint protection](docs/CHECKPOINT_BACKUP.md).
+- [Complete result and literal gates](validation/document_QA_v21_complete_20261019.json)
+- [Frozen design and release](validation/document_QA_v21_science_release_20261019.json)
+- [Actual training and checkpoint evidence](validation/document_QA_v21_training_20261019.json)
+- [Independent readout check](validation/document_QA_v21_complete_20261019/independent-readout-check.json)
+- [Fixed-hash examples](validation/document_QA_v21_complete_20261019/fixed-hash-eight-examples.json)
+- [Format, alias and hop diagnostics](validation/document_QA_v21_complete_20261019/format-alias-hop-inspection.json)
+- [Posthoc serialization diagnostic](validation/document_QA_v21_complete_20261019/posthoc-serialization-diagnostic.json)
+- [Stored-trace diagnosis](validation/document_QA_v21_complete_20261019/stored-trace-content-diagnosis.json)
+- [Resource accounting](validation/document_QA_v21_complete_20261019/resource-accounting.json)
+- [Earlier results, including V17's unchanged failed quality gate](docs/EXPERIMENT_HISTORY_20261019.md)
+- [Current queue](NEXT_STEPS.md)
 
-The next question is broader document reasoning, with the same distinction
-between training benefit and extra-inference benefit. TRAIN-only MuSiQue data,
-[V21 CPU preparation](validation/document_QA_v21_CPU_readiness_20261019.json) now freezes
-2,048 training and512 held questions with disjoint supporting text/pages and
-original seed-question IDs. All passages remain; all6,144 native supervised views
-fit. Actual longer-context backward/save/restart qualification is active;
-the document science study and its fixed evaluation are now released after actual
-qualification. No RL or8B launch follows from V17.
-See the [prospective QA comparison](validation/document_QA_v21_design_20261019.json),
-short [current queue](NEXT_STEPS.md) and [proof ladder](docs/RESEARCH_ROADMAP.md).
-
-Earlier results remain available:
-
-- [V15 target-only SFT](validation/real_target_sft_v15_complete_20261019.json):
-  positive arithmetic reference, with substantial ordinary-NLL regression.
-- [V10 source-matched raw/prior/post CPT](validation/real_trace_cpt_v10_complete_20261019.json):
-  both primary full-span gates fail; its separately frozen scalar secondary helps.
-- [Bounded variable-depth repair](validation/variable_depth_writer_v11_complete_20261019.json):
-  fixes much of the measured stopping shortcut; broader split rescue remains closed.
-- [Two-seed split comparison](validation/partial_state_v7_matched5120_complete_20261018.json):
-  full CoT wins the practical comparison.
-- [Archived experiment record](docs/EXPERIMENT_HISTORY_20261019.md):
-  earlier tables, negative results, controls and interpretation limits.
-
-## Code and reproduction
-
-One [causal training engine](train/partial_state_driver.py) serves explicit
-experiment identities. [Source-balanced packing](train/real_source_balanced_packing.py),
-[prefix-only generation](train/real_trace_notes.py),
-[scalar evaluation](train/real_trace_answers.py), and
-[full-span scoring](train/real_trace_cpu_scores.py) expose their masks and provenance.
-
-Production V17 snapshots remain frozen at training
-[37028a1](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/37028a1)
-and evaluation
-[c9b399b](https://github.com/dario-fumarola/useful-thoughts-trainium/commit/c9b399b).
-`main` integrates their code with the document-QA preparation;1,742 CPU tests plus smoke and
-compile checks pass. Use each report's exact source hashes and protocols for
-reproduction. A combined source snapshot needs separate hardware qualification.
-
-```bash
-bash scripts/run_checks.sh
-```
-
-Use a compatible installed environment and adapt local paths in scripts/env.sh.
-Weights, raw corpora, credentials, caches and full checkpoints remain outside Git.
-[START_HERE.md](START_HERE.md) and the [handoff](docs/AGENT_HANDOFF.md) describe the
-working environment. Original authorship and third-party notices remain in
-[NOTICE.md](NOTICE.md); public availability assigns no new license to historical material.
+The next work is to inspect supervision grounding and preserve the reasoning
+format in a stronger control before another bounded study. There is no new RL,
+model-size jump, or larger training release from this result alone.

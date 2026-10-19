@@ -1,0 +1,10 @@
+{
+  "status": "EXPLICIT_DERIVED_CHECK_REPAIR_ORIGINAL_FAILED_ATTEMPT_RETAINED",
+  "utc": "2026-10-19T16:40:43.560460+00:00",
+  "report_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "reason": "One of60 native summary comparisons differs at<=2e-12;both original gates pass. Exact Pythonfloat equality was inappropriate for recomputed FP64 reductions. V2 uses1e-10 summarycomparison only;all original scientific/native/prefill thresholds unchanged.",
+  "scope": "No model forwards,recomputed science scores,prompt/data/backend changes or skipped rows. Re-run derived independent checks,then previouslyunexecuted render/protection.",
+  "original_failed_checker_sha256": "0fdd7bde9720623abd0fef37967d827c34ad088a59c0c1454f169f9af20f9b9a",
+  "original_failed_log_sha256": "afd6ee7a0690aafe8cac4d9b061ce5292ef37d96c029517ae0394f646d48393c",
+  "diagnostic_sha256": "9a976a11451a5bd442f8eceba9bd1be3b4f54d2ca0d73f3491f94c601bd8d0ec"
+}

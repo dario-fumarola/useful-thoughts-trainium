@@ -1,0 +1,42 @@
+{
+  "torch_threads": 2,
+  "differences": [
+    {
+      "model": "qa_prior-seed2026101922",
+      "group": "short",
+      "shard": 1,
+      "differences": {
+        "reference_to_device_kl_nats": {
+          "actual": 8.951600889457457e-10,
+          "stored": 8.97137387614511e-10,
+          "delta": -1.9772986687652955e-12
+        },
+        "device_to_reference_kl_nats": {
+          "actual": 8.951677798439705e-10,
+          "stored": 8.931904811777463e-10,
+          "delta": 1.9772986662241966e-12
+        },
+        "max_bidirectional_kl_nats": {
+          "actual": 8.951677798439705e-10,
+          "stored": 8.97137387614511e-10,
+          "delta": -1.9696077705404864e-12
+        },
+        "max_logp_error": {
+          "actual": 0.00021049270879913706,
+          "stored": 0.00021049270682027554,
+          "delta": 1.978861519091879e-12
+        },
+        "rms_logp_error": {
+          "actual": 5.360517953904951e-05,
+          "stored": 5.360517802200431e-05,
+          "delta": 1.5170451971458637e-12
+        },
+        "relative_l2_logp_error": {
+          "actual": 2.9067695288788283e-06,
+          "stored": 2.90676944661586e-06,
+          "delta": 8.226296824043492e-14
+        }
+      }
+    }
+  ]
+}

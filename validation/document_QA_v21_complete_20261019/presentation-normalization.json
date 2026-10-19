@@ -1,0 +1,45 @@
+{
+  "status": "PRESENTATION_WHITESPACE_ONLY_CONTENT_EQUIVALENCE_PASS",
+  "utc": "2026-10-19T17:00:41.808055+00:00",
+  "primary_report_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "source_sha256": "438a8026afbe7b57d3cd588f28cadd2642ccdae739cb54aabd751420850a3494",
+  "changes": [
+    {
+      "path": "validation/document_QA_v21_complete_20261019/absolute-answers.csv",
+      "original_sha256": "3bc794792a7cdc10862e550207c96e6a27813739074ec4319aad3cf81c08b2df",
+      "presentation_sha256": "c0c2558f9a7e4fc39f324e7cc45bbfe0d3757b9cc725eaf364ec5af48a315d22",
+      "content_equivalence": "ParsedCSVcells identical"
+    },
+    {
+      "path": "validation/document_QA_v21_complete_20261019/all-generation-token-latency-costs.csv",
+      "original_sha256": "003f87058d06bc14272aaa955c76d56c068fda10fecd55ad09f992dc183cb2bb",
+      "presentation_sha256": "96613095666afa638682455fb8a2904a675c9663c25a9acc539197c434c44c07",
+      "content_equivalence": "ParsedCSVcells identical"
+    },
+    {
+      "path": "validation/document_QA_v21_complete_20261019/complete-answer-comparison.svg",
+      "original_sha256": "d839eb67db116cddec54b4975e2b059c3cc963640aa42f00d16e8749a63b1840",
+      "presentation_sha256": "68af8df1265ea64f24cb9e4c66cd0b5a60126bce889bfb7420a1daef1362dc29",
+      "content_equivalence": "XMLtree equal after insignificant whitespace normalization"
+    },
+    {
+      "path": "validation/document_QA_v21_complete_20261019/declared-contrasts.svg",
+      "original_sha256": "c532cd0a1c52dfbcd8b9427f8f4c7a4754d8dc1d0193f5f91075273e11e9b161",
+      "presentation_sha256": "3b237c195bdeedfb4c0e8d7d971f0a8a4b3c26042e99894ed2b7cd38cc936b39",
+      "content_equivalence": "XMLtree equal after insignificant whitespace normalization"
+    },
+    {
+      "path": "validation/document_QA_v21_complete_20261019/hop-strata-descriptive.csv",
+      "original_sha256": "1e0f73662b358f06648bd0ad9d49ec485aabd68416cf588d4e7382fc9260eb08",
+      "presentation_sha256": "793673215187b472690d6b82cecaf61c0202936a3dee478db41caf18517a93d9",
+      "content_equivalence": "ParsedCSVcells identical"
+    },
+    {
+      "path": "validation/document_QA_v21_complete_20261019/primary-contrasts-focused.svg",
+      "original_sha256": "09f0d07e70a934112f5df031efd71625b8e97d93384282c868f9d9fbf1dde3bd",
+      "presentation_sha256": "83b7b68cc4ed1027045a5df2f5135aa2460f16e41eeaf514022ec97a1b15b0c6",
+      "content_equivalence": "XMLtree equal after insignificant whitespace normalization"
+    }
+  ],
+  "limits": "Originalexports remainin core/firstreviewEBSarchives. No rawoutputs,metrics,bootstrapintervals orscientificgates changed."
+}

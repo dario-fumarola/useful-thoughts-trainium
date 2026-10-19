@@ -1,0 +1,422 @@
+{
+  "status": "POSTHOC_GOLD_INDEPENDENT_ALTERNATIVE_SERIALIZATION_DIAGNOSTIC_PRIMARY_UNCHANGED",
+  "utc": "2026-10-19T16:57:17.604017+00:00",
+  "original_primary_report_sha256": "75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9",
+  "source_sha256": "7ae58a3aef9e2ff3de67b92d5288246c571082041922f71a2fa5890fdd4cff11",
+  "rule": "Posthoc serialization diagnostic on unchanged outputs;not a new primary metric.\n\nGold-independent rule for every model/mode:one anchored Final answer field when\npresent;otherwise first complete nonempty outputline. Multiple Finalfields still\nunsupported. Errors/caps retained. No modelcalls orprimaryreport edits.\n",
+  "tables": {
+    "B0": {
+      "direct": {
+        "items": 512,
+        "correct": 31,
+        "attributed_alias_correct": 38,
+        "canonical_F1": 0.14677239356118207,
+        "complete": 511,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 0,
+        "attributed_alias_correct": 0,
+        "canonical_F1": 0.02714813310545371,
+        "complete": 505,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "empty": {
+        "items": 512,
+        "correct": 7,
+        "attributed_alias_correct": 8,
+        "canonical_F1": 0.10639778331224481,
+        "complete": 509,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 92,
+        "attributed_alias_correct": 106,
+        "canonical_F1": 0.2618192372212208,
+        "complete": 507,
+        "first_line_fallbacks": 12,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "question_only_direct": {
+        "items": 512,
+        "correct": 3,
+        "attributed_alias_correct": 5,
+        "canonical_F1": 0.033849375067260344,
+        "complete": 506,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "question_only_prior": {
+        "items": 512,
+        "correct": 0,
+        "attributed_alias_correct": 0,
+        "canonical_F1": 0.01718022266451586,
+        "complete": 476,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "bridge_removed_prior": {
+        "items": 512,
+        "correct": 0,
+        "attributed_alias_correct": 0,
+        "canonical_F1": 0.02910837590711485,
+        "complete": 508,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      }
+    },
+    "qa_direct-seed2026101921": {
+      "direct": {
+        "items": 512,
+        "correct": 201,
+        "attributed_alias_correct": 217,
+        "canonical_F1": 0.4900457803572524,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 200,
+        "attributed_alias_correct": 214,
+        "canonical_F1": 0.48381102186400415,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 200
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 191,
+        "attributed_alias_correct": 205,
+        "canonical_F1": 0.4631756778035561,
+        "complete": 512,
+        "first_line_fallbacks": 510,
+        "net_extra_correct_vs_frozen": 190
+      },
+      "question_only_direct": {
+        "items": 512,
+        "correct": 19,
+        "attributed_alias_correct": 30,
+        "canonical_F1": 0.11325406906461594,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      }
+    },
+    "qa_direct-seed2026101922": {
+      "direct": {
+        "items": 512,
+        "correct": 195,
+        "attributed_alias_correct": 209,
+        "canonical_F1": 0.4694704926150239,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 189,
+        "attributed_alias_correct": 200,
+        "canonical_F1": 0.4618773285148696,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 189
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 182,
+        "attributed_alias_correct": 192,
+        "canonical_F1": 0.4533029493350217,
+        "complete": 512,
+        "first_line_fallbacks": 510,
+        "net_extra_correct_vs_frozen": 181
+      },
+      "question_only_direct": {
+        "items": 512,
+        "correct": 15,
+        "attributed_alias_correct": 24,
+        "canonical_F1": 0.10433886389941077,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      }
+    },
+    "qa_prior-seed2026101921": {
+      "direct": {
+        "items": 512,
+        "correct": 201,
+        "attributed_alias_correct": 217,
+        "canonical_F1": 0.48213396560950017,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 217,
+        "attributed_alias_correct": 238,
+        "canonical_F1": 0.508894144050394,
+        "complete": 512,
+        "first_line_fallbacks": 0,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 224,
+        "attributed_alias_correct": 244,
+        "canonical_F1": 0.5241913685273061,
+        "complete": 512,
+        "first_line_fallbacks": 0,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "empty": {
+        "items": 512,
+        "correct": 190,
+        "attributed_alias_correct": 209,
+        "canonical_F1": 0.45804367302105786,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "own_replay": {
+        "items": 512,
+        "correct": 217,
+        "attributed_alias_correct": 238,
+        "canonical_F1": 0.508894144050394,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "other_replay": {
+        "items": 512,
+        "correct": 11,
+        "attributed_alias_correct": 14,
+        "canonical_F1": 0.0320701433982684,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "oracle": {
+        "items": 512,
+        "correct": 507,
+        "attributed_alias_correct": 507,
+        "canonical_F1": 0.9951171875,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "question_only_prior": {
+        "items": 512,
+        "correct": 11,
+        "attributed_alias_correct": 24,
+        "canonical_F1": 0.09886462279040403,
+        "complete": 512,
+        "first_line_fallbacks": 1,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "bridge_removed_prior": {
+        "items": 512,
+        "correct": 148,
+        "attributed_alias_correct": 166,
+        "canonical_F1": 0.37361187879431157,
+        "complete": 512,
+        "first_line_fallbacks": 0,
+        "net_extra_correct_vs_frozen": 0
+      }
+    },
+    "qa_prior-seed2026101922": {
+      "direct": {
+        "items": 512,
+        "correct": 180,
+        "attributed_alias_correct": 199,
+        "canonical_F1": 0.439796327918244,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 227,
+        "attributed_alias_correct": 247,
+        "canonical_F1": 0.5332005074603758,
+        "complete": 512,
+        "first_line_fallbacks": 0,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 222,
+        "attributed_alias_correct": 240,
+        "canonical_F1": 0.5239455696898131,
+        "complete": 512,
+        "first_line_fallbacks": 1,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "empty": {
+        "items": 512,
+        "correct": 169,
+        "attributed_alias_correct": 189,
+        "canonical_F1": 0.43117529172216673,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "own_replay": {
+        "items": 512,
+        "correct": 227,
+        "attributed_alias_correct": 247,
+        "canonical_F1": 0.5332005074603758,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "other_replay": {
+        "items": 512,
+        "correct": 33,
+        "attributed_alias_correct": 37,
+        "canonical_F1": 0.0915644793574481,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "oracle": {
+        "items": 512,
+        "correct": 512,
+        "attributed_alias_correct": 512,
+        "canonical_F1": 1.0,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "question_only_prior": {
+        "items": 512,
+        "correct": 23,
+        "attributed_alias_correct": 35,
+        "canonical_F1": 0.11616461880133755,
+        "complete": 512,
+        "first_line_fallbacks": 0,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "bridge_removed_prior": {
+        "items": 512,
+        "correct": 144,
+        "attributed_alias_correct": 162,
+        "canonical_F1": 0.3653027801876486,
+        "complete": 511,
+        "first_line_fallbacks": 1,
+        "net_extra_correct_vs_frozen": 0
+      }
+    },
+    "qa_post-seed2026101921": {
+      "direct": {
+        "items": 512,
+        "correct": 200,
+        "attributed_alias_correct": 215,
+        "canonical_F1": 0.47720238745629373,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 0,
+        "attributed_alias_correct": 0,
+        "canonical_F1": 0.009376145198755494,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 8,
+        "attributed_alias_correct": 9,
+        "canonical_F1": 0.05438586892286631,
+        "complete": 512,
+        "first_line_fallbacks": 492,
+        "net_extra_correct_vs_frozen": 1
+      },
+      "question_only_direct": {
+        "items": 512,
+        "correct": 20,
+        "attributed_alias_correct": 27,
+        "canonical_F1": 0.10261569485202297,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      }
+    },
+    "qa_post-seed2026101922": {
+      "direct": {
+        "items": 512,
+        "correct": 186,
+        "attributed_alias_correct": 205,
+        "canonical_F1": 0.45817804956374036,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "prior": {
+        "items": 512,
+        "correct": 0,
+        "attributed_alias_correct": 0,
+        "canonical_F1": 0.007260973382746481,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      },
+      "reference_cot": {
+        "items": 512,
+        "correct": 98,
+        "attributed_alias_correct": 110,
+        "canonical_F1": 0.2714416405806856,
+        "complete": 512,
+        "first_line_fallbacks": 409,
+        "net_extra_correct_vs_frozen": 62
+      },
+      "question_only_direct": {
+        "items": 512,
+        "correct": 20,
+        "attributed_alias_correct": 28,
+        "canonical_F1": 0.10410121020472583,
+        "complete": 512,
+        "first_line_fallbacks": 512,
+        "net_extra_correct_vs_frozen": 0
+      }
+    }
+  },
+  "posthoc_prior_generated_minus_direct_reference_contrasts": {
+    "2026101921": {
+      "items": 512,
+      "difference_b_minus_a": 0.05078125,
+      "ci95": [
+        0.0078125,
+        0.09375
+      ],
+      "bootstrap_draws": 20000,
+      "bootstrap_seed": 2026101921,
+      "unit": "paired questions/documents;conditional on checkpoint,unadjusted95%"
+    },
+    "2026101922": {
+      "items": 512,
+      "difference_b_minus_a": 0.087890625,
+      "ci95": [
+        0.046875,
+        0.12890625
+      ],
+      "bootstrap_draws": 20000,
+      "bootstrap_seed": 2026101921,
+      "unit": "paired questions/documents;conditional on checkpoint,unadjusted95%"
+    }
+  },
+  "limits": [
+    "Thisserializationrule waswritten afterinspectingformatfailures;notpreregistered,not a repairedprimaryscore ornewpass.",
+    "Firstlinefallback doesnot establish that a lineis a semantically validanswer;wholelineEM scored,no goldwordsearch.",
+    "Bareanswers underCoTdemonstrations are not evidence thecontrol generatedreasoning.",
+    "Alloriginaloutputs/caps/errors retained,no modelexecutionsrerun,no gatechanges. Freshconfirmation needed."
+  ]
+}

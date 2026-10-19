@@ -1,70 +1,44 @@
 # Current queue
 
-1. Complete the active document-QA-v21 evaluation;monitor health,not capability.
-   Master:local/diagnostics/document-QA-v21-study-v1.
-   Allsix training sessions CLOSED after256updates;independent all12fullstate audit PASS.
-   Physical0–11,world8×micro1×accum4,global32,width3328,target512,constant1e-5.
-   Fresh released1.7B per arm;2,048 examples,four passes,256 terminal updates.
-   Shared first64 updates match order/loss/norm exactly within seed;do not infer capability.
-   All1,536updates complete;terminal256 remains primary.
-   Terminal audit→protection→binding pipeline CLOSED PASS;all six exactbindings ready.
-   Latestfull256 EBS protected before olderoptimizerduplicates retired;all12originals retained.
-   Publicactualtraining:validation/document_QA_v21_training_20261019.json.
+1. Publish the completed document-QA-v21 result and concrete review package.
+   Primaryreport validation/document_QA_v21_complete_20261019.json,
+   SHA75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9.
+   All20,992GEN/19,712LL rows close,zeroexecutionerrors;all6trainingruns/12states audited.
+   Independentchecks/render/fullreadbackprotection PASS. Originalfailedcheck preserved:
+   oneFP64summary differed2e-12;V2compares summarieswithin1e-10 only,allgates/scores unchanged.
+   Posthoc format/hop/alias/native-target/trace/cost diagnostics complete;protect REVIEW-ANNEX.
+   Focusedprimaryplot visuallychecked. All1,742CPUchecks+smoke/compilePASS.
+   Keep oldV17/history andalloriginaloutputs;no rewritten gates or omittedfailures.
 
-2. Complete the fixed evaluation orchestration while training runs.
-   B0 generation is already active:tmux document-QA-v21-B0-generation,physical12,
-   output local/nvme-cpt/evaluation/document-QA-v21-B0-held512-v1.
-   Training snapshot049f53e,decoder dbd1c10,span scorer0d1a5b4 are immutable.
-   Frozen release,protocols and stronger conventional-CoT controls:
-   validation/document_QA_v21_science_release_20261019.json.
-   Execution grouping:C/evaluation-execution-plan.json(C is the master above).
-   Six audited bindings ready;model-native CPU references/prompts nowpreparing.
-   Use twelve initial trained-generation groups as planned;replay controls wait
-   for each prior-only group to close and reuse its freed physical4/8.
-   Use generation-group v3 controller for future groups(protocol-hash TMPDIR + phaseports);
-   leave the active B0 v1 controller/source untouched.
-   Likelihood producer prepared:local/analysis/document_QA_v21_likelihood_job_20261019.py.
-   It waits for complete original prior attempts;full native answer+EOS and
-   ordinary32 targets;four batch4 shards permodel,own-model TRAIN calibration first.
-   LL group/watcher and once-only analysis→independentcheck→render→protection now ready.
-   Active tmux:document-QA-v21-likelihood-pipeline;readout waits both globalclosures.
-   Reserve physical14/15 for LL while generation runs;expand after all GEN closes.
-   Expected total:20,992 generation attempts and19,712 likelihood rows across7models.
-   Review once after all fixed model/mode data close;no checkpoint/prompt selection.
+2. Inspect supervision and control design before another training release.
+   The two-seed primarytraining/inference/practical gates FAIL.
+   Local own−empty accuracy+5.3/+11.3pp is positive inbothseeds,allpairscomplete.
+   Netown−matcheddirect+3.1/+6.3pp hasfirstCIcrossingzero. Postdirect200/186vs201/195.
+   Direct-trained CoT510unsupported/seed is a weakformatcontrol,not a serious solverwin.
+   Own gold-answerLL−7.34/−7.75nats;postgold-answerLL+.38/+.93,secondarypredictivebenefit.
+   Prior sourceNLL+.097/.110 vsB0;higher-hop gains inconsistent,not broadreasoning.
+   Fixedexamples show wrongfact/citationchoices andatleastone goldsupportrelationissue.
+   Need bounded TRAIN-only grounding inspection andCPUinventory ofpotentialfreshhelddata.
+   Inspect literal#n supervision versus answer-resolved questions;do not assumethiscausedfailure.
+   Assess a controltrained toretainFinalanswer formatting withoutthoughtcontent.
+   Freeze one falsifiable nextdesign onfreshheld questions after thisreview;no prompt-sweep
+   rescue or retrospectiveprimaryparserchanges. No newlearningjob yet.
 
-3. Interpret separate endpoints;allow simpler controls to win.
-   Primary canonical complete-answer EM,all512 questions,failures retained.
-   Training:post.direct−direct.direct. Inference:prior.prior−prior.empty and
-   matched direct.direct. Each>=3pp plus positive paired95%lower in both seeds.
-   Practical augmentation value additionally needs gains over matched direct.prior,
-   matched direct.reference_cot and unchanged B0.reference_cot;all allowed to win.
-   CanonicalF1 and attributed mirror-alias scores are separate secondary measures.
-   Likelihood separates answer content from EOS;ordinary-page NLL is a measured
-   tradeoff,not the inherited FineMath0.03 bound. V17's own gate stays FAIL.
+3. Keep the research boundaries explicit.
+   CanonicalEMprimary;canonicalF1 andattributedmirroraliases separate.
+   TRAIN2048mayteachformat/datasetpatterns;support/page/seeddisjointness doesnot
+   establishpretrainingnovelty orsemanticindependence. Four-contextparity is executiononly.
+   OfficialDEV/TEST datafiles unopened;papers/aggregatepublishedtables are referencesonly.
+   No broadRL,8B,splitrescue,cloudcapacity/IAM/network/bucket/paidteacher/stack changes.
 
-Evidence/protection:
+Protected state/source:
 
-- Actual training/recovery qualification PASS:14 updates,seven full states,
-  fresh restore8rank digests,late save PSS growth1.46/1.53GiB<2.
-  validation/document_QA_v21_training_hardware_20261019.json.
-- FP32 decoder PASS:six TRAIN attempts,zero execution errors,CPU-long maxLP
-  error0.0000651<0.001. Two parser-unsupported outputs retained;not accuracy evidence.
-  validation/document_QA_v21_decoding_hardware_20261019.json.
-- Span B4QA3584/ordinary672:CPU/device parity passes;max token errors
-  0.0000799/0.0000584. Warm9.00/0.710s versus single CPU reference69.10/7.14s;
-  not a sustained benchmark. Independent recomputation/physicalclosure/readback PASS;public span report includes arrays.
-- Cohorts:2,048 distinct train/512 held,allcomplete inputs<=3072;no held supporting
-  text/page/actualseedID in training-visible evidence. Distractors/templates recur;
-  semantic/pretraining novelty not established. All gold step answers in cited text.
-- Raw component strings sometimes generic relations;V21 uses true dataset:seed IDs.
-  Canonical author annotations match pinned converter;mirror aliases remain attributed,
-  not independently authenticated against official ZIP. OfficialDEV/TEST unopened.
-- Keep35GiB/filesystem and512GiB hostavailable. All original full states remainNVMe.
-  Latest EBS full is QA TERMINALS/latest-full256,qa_prior1922/256;allterminalmodels protected.
-  See C/terminal-protection.json;all original128/256states retain full optimizers.
-  Root~83GiB pre-first128;all-state/model protection budget verified before release.
-  EBS is same-instance,not off-instance. No cloud/IAM/network/paid-teacher changes.
-
-Closed boundaries:V17 arithmetic gatePASS/quality+combinedFAIL;V15 inference gain
-with NLLcost;V10 both primary full-span gatesFAIL;V11 bounded repair closed;
-old R1234 remains stopped63. Details in README/EXPERIMENT_HISTORY;no new RL/8B release.
+- C=local/diagnostics/document-QA-v21-study-v1;final-readout-completion.json PASS.
+- Raw/corepublic readout local/backups/evaluation/document-QA-v21-complete;originals retained.
+- LatestfullEBS local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256,
+  qa_prior1922/256. Allsixterminalmodels protected;all12originalfullstates remainNVMe.
+  EBS same-instance,not off-instance. Keep35GiB/filesystem and512GiBhostavailable.
+- Frozen train049f53e:local/worktrees/document-qa-v21;decoderdbd1c10:document-qa-eval-v21;
+  spancore0d1a5b4:document-qa-span-v21. Do not mutate or rerun closedproducers.
+- Closedhistory:V17 arithmeticPASS/quality+combinedFAIL;V15 inferencegainwithNLLcost;
+  V10bothprimaryfull16FAIL;V11boundedrepairclosed;V7splitloses. OldR1234 stays stopped63.
