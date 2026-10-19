@@ -2,7 +2,8 @@
 
 0. Monitor the released evidence-plan-v23 V2 two-arm pilot;finish before interpretation.
    CPU readiness:validation/document_evidence_plan_v23_CPU_readiness_20261019.json.
-   All1,763 tests/smoke/compile and6,144 native target views PASS. Fresh255 independent
+   Initial1,763 checks and6,144 native target views PASS;latest readout checks total1,795.
+   Fresh255 independent
    source/label check PASS;205/46/4 hop counts. V1 failed255/256;V2 keeps the same255.
    Both arms match source/final labels and coefficients;selection CE is separately weighted0.1.
    Use frozen source in local/worktrees/document-evidence-v23,existing1.7B production driver.
@@ -13,7 +14,8 @@
    from same-model inference assistance. Pilot seed2026101923 released,replication conditional.
    C=local/diagnostics/document-evidence-plan-v23-pilot-v1;monitor both C/*/run.log.
    Owned sessions1396508/1396658,logical0–7/8–15;outputs/checkpoints inC/plan.json.
-   Full128 protection andterminal audit/protect/bind watchers active. No held model forward yet.
+   Both full128 states complete;one independently audited/readback-protected onEBS.
+   Terminal audit/protect/bind,GEN/LL/readout watchers wait. No held model forward yet.
 
 1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,
@@ -25,7 +27,7 @@
    Focusedprimaryplot visuallychecked. All1,742CPUchecks+smoke/compilePASS.
    Keep oldV17/history andalloriginaloutputs;no rewritten gates or omittedfailures.
 
-2. Complete the bounded supervision/control repair before another training release.
+2. Completed: bounded supervision/control repair leading to the pilot above.
    The two-seed primarytraining/inference/practical gates FAIL.
    Local own−empty accuracy+5.3/+11.3pp is positive inbothseeds,allpairscomplete.
    Netown−matcheddirect+3.1/+6.3pp hasfirstCIcrossingzero. Postdirect200/186vs201/195.
@@ -37,11 +39,11 @@
    6 ambiguous,1 contradictory. Four examples conflate cross-state entities;source annotations match.
    Single-agent exploratory labels are not corpus error rates;literal presence is not entailment.
    Blind reference substitution cannot repair those labels. Source-family filters are not semantic proof.
-   Prepared v23:single-model passage selection before answering versus a direct control with the
+   Released v23:single-model passage selection before answering versus a direct control with the
    SAME answer serialization. No supervised intermediate factual claims or last-claim answer copying.
-   Freeze one CPU protocol and fresh evidence-disjoint panel first;inspect TRAIN data only during development.
-   Use existing 1.7B runtime;all new targets/masks/parsers need CPU checks before bounded hardware qualification.
-   A new cohort is mostly two-hop;do not claim four-hop generalization. No new learning job yet.
+   The new CPU protocol,fresh evidence-disjoint panel andparser were frozen before pilot training.
+   Actual new-objective update/restore anddecoder qualifications pass;execution is now initem0.
+   The fresh cohort is mostly two-hop;do not claim four-hop generalization orsemanticgold labels.
 
 3. Keep the research boundaries explicit.
    CanonicalEMprimary;canonicalF1 andattributedmirroraliases separate.
@@ -54,8 +56,9 @@ Protected state/source:
 
 - C=local/diagnostics/document-QA-v21-study-v1;final-readout-completion.json PASS.
 - Raw/corepublic readout local/backups/evaluation/document-QA-v21-complete;originals retained.
-- LatestfullEBS local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256,
-  qa_prior1922/256. Allsixterminalmodels protected;all12originalfullstates remainNVMe.
+- LatestfullEBS local/backups/science/document-evidence-plan-v23-pilot-v1/FIRST_FULL128,
+  evidence_direct1923/128. V21'ssixterminalmodels stayprotected;all12originalfullstates remainNVMe.
+  OldV21 EBSoptimizerduplicates retired onlyafternewfull128readback;originalstates unchanged.
   EBS same-instance,not off-instance. Keep35GiB/filesystem and512GiBhostavailable.
 - Frozen train049f53e:local/worktrees/document-qa-v21;decoderdbd1c10:document-qa-eval-v21;
   spancore0d1a5b4:document-qa-span-v21. Do not mutate or rerun closedproducers.

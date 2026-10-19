@@ -1,0 +1,56 @@
+{
+  "status": "ONLY_OLD_V21_EBS_OPTIMIZER_DUPLICATES_RETIRED_ALL_ORIGINALS_AND_MODELS_RETAINED",
+  "utc": "2026-10-19T19:04:27.225592+00:00",
+  "new_full_receipt_sha256": "5397e6cb77c2d68836c38a942f4e343d22585c3597b36dda9deb9404e49eb741",
+  "old_original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1/step-0000256",
+  "old_backup": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256",
+  "old_files": {
+    "model.pt": {
+      "bytes": 3441248275,
+      "sha256": "98d36343b7fe01c9a082e20a7c7b767057abd164637071ad9ba6770b2d3b8344"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "ebcee44715816326ceaa3214f20f46b88cf1c7e5e33408f7ed2bc73b7d5c04d0"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "b50a04fca5246f44c333ef46fc01142a52efb263feb58a9571968a8bc4e060e9"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278471,
+      "sha256": "f6058b6ff0752f30296302cb9102d8d145c907a62272dfdc60bb347aaa10c186"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278407,
+      "sha256": "b250401a5db4c84797c2f94a1bed7df57b1d7c56aceaf42d59095ef2a4956da8"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "cfa9814383067a1a920664d04b657f0c43a29e907b6330b608c6b2673c560777"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "784bc2ec8209c4411b9448cbe98e89989b538df5eec7de5c9ef3643009934de8"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278471,
+      "sha256": "b17cc21511ad4a7be1eecece87d341bcd5d5f75b305415aebe4933f91d6d8ff6"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278407,
+      "sha256": "f1769c8957acbb9f5848c2635dcab3260061379eeef52503bde7a00502017913"
+    }
+  },
+  "only_delete": [
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00000.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00001.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00002.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00003.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00004.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00005.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00006.pt",
+    "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256/rank-00007.pt"
+  ],
+  "root_free_bytes": 63138738176
+}

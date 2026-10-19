@@ -1,0 +1,54 @@
+{
+  "status": "PASS_FIRST128_INDEPENDENT_FULL_STATE_PROTECTED_PREVIOUS_DUPLICATES_RETIRED",
+  "utc": "2026-10-19T19:03:49.289926+00:00",
+  "model": "evidence_direct-seed2026101923",
+  "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-plan-v23-evidence_direct-TRAIN2048-seed2026101923-v1/step-0000128",
+  "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-plan-v23-pilot-v1/FIRST_FULL128",
+  "COMPLETE_sha256": "6be0ab60b21da42520db327c6b04acece797152d464d0830b5cec5d85b89b31c",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248339,
+      "sha256": "d311912b261ae1006c9e4cb32132010e4ec8d85a16163a78c534c9cdd58c7187"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "62bc8bd6993baf1e43822b1a4be4398554091aec3f53c6659dd3a9c94118278d"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "d5300b3e7de6dfb83c97d0e36c128bf32f5082e1f6528b378df22141429899cc"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "daac1acdaf4ffb8cedcf5e158c4b893d133c009edcbb4365b949376e606dd62c"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "9df6b6e662827e2483ecca38f4820db60d3d1a410ccb41b902819fdb9bfbac2e"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "6e6aa4983441649c30a512d6d7a357ee6a3fc519c96888ce941d6c4e3670f8ff"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "5aa7755e347687f211ac99ef2bf21d37e99e9345c68378fe751d18547952cbde"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "d4b1e88aabc50a806da2d59d1eddea9c98d19a967064695f8c44f10d8eaf5ed3"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "314f34c7487bf4e53f90b8a04145dc5aeab8cd1fe4a8875de36b765e8a43f193"
+    },
+    "COMPLETE.json": {
+      "bytes": 2112,
+      "sha256": "6be0ab60b21da42520db327c6b04acece797152d464d0830b5cec5d85b89b31c"
+    }
+  },
+  "audit_sha256": "5ebc61b574f95912937c3b7199dd648babf047723d2d51069936ff91aa359f90",
+  "root_free_bytes": 63138729984,
+  "limits": "Same-instance,not off-instance. All original/modelweights retained.",
+  "old_optimizer_retirement_sha256": "24b8790b95eef163815993687196ffa22077b5fc3297cfaee4beab5e810e4538"
+}

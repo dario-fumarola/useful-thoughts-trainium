@@ -1,4 +1,4 @@
-# Status — 2026-10-19 18:29 UTC
+# Status — 2026-10-19 19:05 UTC
 
 ## Active: passage-selection pilot training
 Question: does selecting visible passage IDs help complete answers beyond format-matched direct training?
@@ -13,8 +13,9 @@ V21 prior-final coefficients averaged9.3% on augmented examples,54.6% across fou
 New pointer targets avoid intermediate factual claims; author support annotations remain imperfect.
 Decoder: four TRAIN attempts close; independent native/cache/long-CPU audit passes; zero execution errors.
 Training qualification:11 actual updates/all6 full states/fresh restore pass;bounded post-save PSS83–97GiB.
+Pilot:both full128 states complete;one independently audited/readback-protected onEBS;training continues.
 Active owned sessions1396508/1396658,logical0–7/8–15;C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
-Next:monitor C/*/run.log andNVMe outputs named inC/plan.json;first128protection/terminal watchers active,no held forward yet.
+Next:`cat local/analysis/CURRENT_V23_SESSION.json`;monitor C/*/run.log andplan outputs;terminal/eval watchers wait,no held forward yet.
 
 ## Closed: TRAIN relation audit and fresh-evidence availability
 Question: can existing reasoning annotations support a simple reference-substitution repair?
@@ -28,7 +29,7 @@ Greedy counts are lower bounds,not optima;no new held cohort or model released.
 Source-family/reference-text filters were inventoried,not certified as semantic validation.
 Report:validation/document_QA_v22_TRAIN_audit_20261019.json;V21 primary hash and all scores unchanged.
 Decision:blind #n substitution is insufficient;prepare one passage-selection versus format-matched direct pilot.
-Next:freeze the v23 CPU protocol,build/check fresh evidence-disjoint data and serialization;no GPU jobs active.
+Follow-up:v23 protocol/data/serialization qualified andpilot released above;this entry records the closed audit.
 
 ## Closed: source-matched single-model document QA
 Question: do reasoning before/after answers improve fresh complete real-document answers?

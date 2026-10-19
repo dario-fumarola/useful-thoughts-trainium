@@ -204,6 +204,11 @@ relevant, indirect and unhelpful documents. Its hybrid condition mixes direct an
 note-conditioned training. This is relevant supervision design, not evidence that
 our literal MuSiQue decompositions should work. Teacher quality, model scale and
 retrieval setting differ. We have not acquired those labels or called a teacher.
+Recheck of sections2.3.3/3.5: the hybrid uses a 50/50 direct/note mixture and
+answers directly at inference. Table2 reports a modest average full-set EM gain
+of1.97 points; larger noise-robustness gains concern a different setting. The
+hybrid's separate latency result does not establish our training-benefit claim.
+Keep training-only transfer distinct from explicitly generating notes.
 
 [Attribute First, then Generate](https://arxiv.org/html/2403.17104v3)
 selects source spans before planning and generation, with exact-copy constraints
@@ -212,3 +217,9 @@ post-hoc paragraph citations. Its multi-component pipeline has latency and error
 propagation costs; attribution gains do not automatically imply better short-answer
 accuracy. The useful design principle here is to test evidence selection separately
 from unsupported factual claims, while keeping a competitive direct control.
+Recheck of tables1/2: the fine-tuned variants have lower task-quality metrics
+than the end-to-end Primera baseline, despite their attribution benefits;
+the stronger LFQA gains occur in the prompted Gemini variants. Exact copying
+prevents fabricated quotations but does not certify that a selected span supports
+the requested relation. These results motivate measurement, not an assumption
+that selection-first training must beat direct answers.
