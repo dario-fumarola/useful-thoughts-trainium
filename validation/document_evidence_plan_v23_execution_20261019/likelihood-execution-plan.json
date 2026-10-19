@@ -1,0 +1,28 @@
+{
+  "status": "RELEASED_V23_SECONDARY_POINTER_REPLAY_EXECUTION",
+  "utc": "2026-10-19T18:34:30.547894+00:00",
+  "pilot_release_sha256": "eb0e6253be2e6de08b4673d07e12e9966be30e743bca6d221008b4a49747f15c",
+  "source_files": {
+    "local/analysis/watch_document_evidence_v23_likelihood_20261019.py": "e5b9b895c3faee8bb83a6be1a7774c5ae1c1f23d0cd6f9830ec500394f4ce7d3",
+    "local/analysis/supervise_document_evidence_v23_likelihood_group_20261019.py": "b89b06931eda946d69290b5a94d522d0108598c2f1b3edac27073d79774c6262"
+  },
+  "worker_snapshot": "e0607fd",
+  "worker_source_sha256": "c78f7fbb8b0726fb7940f4278ac056988cae8e08c9b971e1add7940c1b771d21",
+  "deadline_utc": "2026-10-20T06:00:00+00:00",
+  "physical_by_arm": {
+    "evidence_direct": 6,
+    "evidence_select": 7
+  },
+  "original_rows": 3062,
+  "synthetic_execution_rows": 10,
+  "batch": 4,
+  "shards_per_model": 4,
+  "QA_width": 3584,
+  "ordinary_width": 672,
+  "target_slots": 32,
+  "expected_reserved_chip_hours": 1.5,
+  "hard_reserved_chip_hour_upper_bound": 24,
+  "reviewer_decision": "PASS_UNCHANGED_QUALIFIED_SPAN_KERNEL_AND_SHAPES. OwnmodelTRAIN4QA/4ordinary CPUreferences required beforeeachshardheldforward;unchanged.001max-token/absmeanspanbounds. Shapes/sourcekernel identicalto actualqualifiedV21. Three shards384originalrows,last379;five syntheticpaddingrows/model loggedbutdiscarded onlyfromobservations. No changes togeneration/primaryscoring.",
+  "interpretation": "Secondarycanonicalpointer-IDreplay,not native-generation likelihood orcalibration. Invalidplans explicitlyempty. Goldcanonicalanswer+EOS,EOSseparate. Original255 retainedinall5QAconditions,ordinary256 unchanged.",
+  "failure_policy": "Any failedpreparation/calibration/controller preservesoriginalattempts andhalts,without automaticretry/backendfallback/tolerancechange. Rootreview requiredbeforeanexplicitCPUfallback;noheldscoreinspection toselectbackend."
+}

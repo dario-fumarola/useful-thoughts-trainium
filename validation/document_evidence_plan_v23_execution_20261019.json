@@ -1,0 +1,54 @@
+{
+  "status": "FIXED_EXECUTION_AND_COMPLETE_READOUT_PREPARED_BEFORE_HELD_OUTPUTS",
+  "utc": "2026-10-19T18:42:30.028403+00:00",
+  "pilot_release_sha256": "eb0e6253be2e6de08b4673d07e12e9966be30e743bca6d221008b4a49747f15c",
+  "generation_execution_plan_file": "validation/document_evidence_plan_v23_readout_preparation_20261019/generation-execution-plan.json",
+  "native_attempts": 1530,
+  "secondary_original_likelihood_rows": 3062,
+  "synthetic_likelihood_execution_rows": 10,
+  "evidence_files": {
+    "validation/document_evidence_plan_v23_execution_20261019/readout-execution-plan.json": {
+      "bytes": 4264,
+      "sha256": "1c8a3e0758273afdfe9e4701569b7511bb2e7dc5d83bad2d46dd47221e7f319b"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/supervise_document_evidence_v23_likelihood_group_20261019.py": {
+      "bytes": 6384,
+      "sha256": "b89b06931eda946d69290b5a94d522d0108598c2f1b3edac27073d79774c6262"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/protect_document_evidence_v23_readout_20261019.py": {
+      "bytes": 2623,
+      "sha256": "1a27df8b5c40c37ace567e3ecd5569976310a5f51803a982500809a6bfe0a73c"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/check_document_evidence_v23_readout_20261019.py": {
+      "bytes": 9940,
+      "sha256": "07579ff25b67cc1f1b37b75be0ae435c599f1ea12878924fd9e8c87b383ed0f8"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/fixed-example-selection.json": {
+      "bytes": 552,
+      "sha256": "bde2f9ac776d3479c2e892e19632c2ff92e8dbf0f8c1625857b6871365c637cf"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/likelihood-execution-plan.json": {
+      "bytes": 1896,
+      "sha256": "ff090ed7e7016e6474932cb0b89835faf44d97bb533da1bf1ee547fb3dba21dd"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/watch_document_evidence_v23_readout_20261019.py": {
+      "bytes": 2438,
+      "sha256": "7609ab128e66175cdf37a5c8744e2b16a81e61b42e9468ea0ba87c09cf9d68b6"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/render_document_evidence_v23_20261019.py": {
+      "bytes": 2580,
+      "sha256": "5d6631993e05621d32b8b117fcbb4d5afd549c67502f34c2a7cf48e71ba17ba0"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/watch_document_evidence_v23_likelihood_20261019.py": {
+      "bytes": 4478,
+      "sha256": "e5b9b895c3faee8bb83a6be1a7774c5ae1c1f23d0cd6f9830ec500394f4ce7d3"
+    },
+    "validation/document_evidence_plan_v23_execution_20261019/analyze_document_evidence_v23_20261019.py": {
+      "bytes": 15560,
+      "sha256": "a2e0a30328289ae73002a1c9bf331506de5fb876fbfba81731ac3736f444e990"
+    }
+  },
+  "execution": "Terminals mustbe audited/protected/bound first. NativeGENA direct/selection,B direct/selection/empty/oracle. LLfullanswer/EOS fivecanonicalpointer-IDcontexts plusordinary256,eachmodelTRAINCPUcalibration first. Everyoriginal255 retained,no scoreselection.",
+  "readout": "Separate independentparser/metrics/pointergrammar/vectorizedbootstrap,derivedFP64abs1e-10 fixedbeforeoutcomes. Native/sciencegates unchanged. Allclosures beforecompleteanalysis. Fixed8examples chosenbyhashbeforeoutcomes;allrawoutputs retained.",
+  "limits": "Onepilotseed,not two-seed confirmation. Newrecipe,not causalV21ablation. Mostlytwohop;no semanticgold,pretrainingnovelty,calibration orCoTsuperiority claim. Rootreview requiredbeforeconditional replication/publication."
+}

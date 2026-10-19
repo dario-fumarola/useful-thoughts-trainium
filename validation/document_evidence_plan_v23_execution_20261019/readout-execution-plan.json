@@ -1,0 +1,43 @@
+{
+  "status": "FROZEN_ONE_COMPLETE_PILOT_READOUT_BEFORE_HELD_MODEL_OUTPUTS",
+  "utc": "2026-10-19T18:42:05.646048+00:00",
+  "pilot_release_sha256": "eb0e6253be2e6de08b4673d07e12e9966be30e743bca6d221008b4a49747f15c",
+  "deadline_utc": "2026-10-20T08:00:00+00:00",
+  "source_files": {
+    "local/analysis/analyze_document_evidence_v23_20261019.py": "a2e0a30328289ae73002a1c9bf331506de5fb876fbfba81731ac3736f444e990",
+    "local/analysis/check_document_evidence_v23_readout_20261019.py": "07579ff25b67cc1f1b37b75be0ae435c599f1ea12878924fd9e8c87b383ed0f8",
+    "local/analysis/render_document_evidence_v23_20261019.py": "5d6631993e05621d32b8b117fcbb4d5afd549c67502f34c2a7cf48e71ba17ba0",
+    "local/analysis/protect_document_evidence_v23_readout_20261019.py": "1a27df8b5c40c37ace567e3ecd5569976310a5f51803a982500809a6bfe0a73c",
+    "local/analysis/watch_document_evidence_v23_readout_20261019.py": "7609ab128e66175cdf37a5c8744e2b16a81e61b42e9468ea0ba87c09cf9d68b6"
+  },
+  "scoring_source_files": {
+    "train/document_evidence_plan_readout.py": "1d7dc48928366e0fb7b8d4ca5c972b9008e6e5f5509fde85e262e8abef6ba5e9",
+    "train/document_evidence_plan_answers.py": "6a880ed2b1704e834c122d7d54c9d2b45ed1c77dd751b912d387a0d976caa985",
+    "train/document_qa_answers.py": "38845803d12b2f57f259cafce4f98397ad522967332fb0413b6892b2906c5c00"
+  },
+  "B0_ordinary_reference": {
+    "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/document-QA-v21-B0-likelihood-v1",
+    "file_sha256": {
+      "protocol.json": "ad8d29840bba90c2888fbd8e6372f0f266beee5be39b74fdebea8163af51153d",
+      "ordinary-raw.jsonl": "7580d34ad27c90627e63863e72386680aa5d5069c14e52bff7a592fd14c72dbd",
+      "scores/shard-0/completion.json": "f033f3ba066c36b17f51b5a5408765992ecc4fb4d644a6772b28c0cb701ba116",
+      "scores/shard-0/scores.jsonl": "aa2fcb9be38d31ec2e2e81ce75fd4aa4be81f1d5d0823ea3baa019ed119bec07",
+      "scores/shard-0/own-model-TRAIN-calibration.json": "8d8dd246b37b8edd1e885170490c3c40bd3f384618b7e5ba60cd0704d4781cd5",
+      "scores/shard-1/completion.json": "09d79f3ee15fc3fa7d7f28265459ac11a497de6674df10ca8d59dfa2afc750b8",
+      "scores/shard-1/scores.jsonl": "e51315a2b7cc69b3af33285c646af7e9debbdf04be3688380be90da9d71ce212",
+      "scores/shard-1/own-model-TRAIN-calibration.json": "8d8dd246b37b8edd1e885170490c3c40bd3f384618b7e5ba60cd0704d4781cd5",
+      "scores/shard-2/completion.json": "38756804b132f3227824caeab7c5a2f6bdad176063b315f523c54347d5a7ade4",
+      "scores/shard-2/scores.jsonl": "0f01b86b22f54430e3e80a3314503943bce1ba76ae0ad4510c6eeb878b9b549f",
+      "scores/shard-2/own-model-TRAIN-calibration.json": "8d8dd246b37b8edd1e885170490c3c40bd3f384618b7e5ba60cd0704d4781cd5",
+      "scores/shard-3/completion.json": "da6c58a451a64a63fceccaff9ece70bb99cf7331ae51cd8a2b86b14aa60ecf7f",
+      "scores/shard-3/scores.jsonl": "c8ba87a85af1ef7187fe16adde6e0b263e37bdeab6f290736578fb7121e279dc",
+      "scores/shard-3/own-model-TRAIN-calibration.json": "8d8dd246b37b8edd1e885170490c3c40bd3f384618b7e5ba60cd0704d4781cd5"
+    },
+    "interpretation": "Reuse only already-completed B0 ordinary256 with identicaltargets/kernel;not oldQA ornewacceleratorwork."
+  },
+  "fixed_example_selection_sha256": "bde2f9ac776d3479c2e892e19632c2ff92e8dbf0f8c1625857b6871365c637cf",
+  "criteria": "Unchanged3pp/positive95%primary;>=95%nonemptyvalidpointers. Localassistance additionallypositive lowerbounds againstsame-modeldirect andempty. Singlepilotcannotestablishtwo-seedsuccess. All1530native and3062originalLLrows mustclose beforecomplete readout.",
+  "independent_check": "Separate designatedfield parser,normalization/F1,pointergrammar andvectorizedpairedbootstrap. DerivedFP64summariesabs1e-10,drawseed2026101923/n20000 unchanged;no change tonativeexecution/sciencegates.",
+  "costs": "Actual reservedchip-hours fromdeclaredstart tophysicalclosure;qualification/reusedB0reference excluded. Concurrentwalltimes are not servinglatency;no costdominancegate tested.",
+  "limits": "Newrecipe,not causal V21ablation. Pointerannotationagreement doesnotprove semantics. Same-model paths donotfullyisolate pointercontent fromgenericextra actions. Terminal256 primary,fresh255 mostlytwohop,officialDEV/TEST unopened. Rootreviewsfigure/result beforepublication orconditionalreplication."
+}
