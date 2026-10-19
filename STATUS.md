@@ -1,19 +1,20 @@
-# Status — 2026-10-19 14:46 UTC
+# Status — 2026-10-19 15:22 UTC
 
 ## Active: source-matched single-model document QA
 Question: do computations before/after answers improve fresh complete real-document answers?
 ID:document-QA-v21;six fresh1.7B models,two seeds,TRAIN2048×four passes,terminal256 primary.
-Training healthy past177/256;physical0–11,world8/global32,width3328,~13.5s/update.
+All1,536 updates/sixruns complete and physicallyclosed;terminal audit PASS all12 fullstates/order/labels.
 Arms:direct;prior full CoT with plain replay;answerEOS then post-answer reasoning with plain replay.
 Held512 support/page/true-seed disjoint;ordinary256 separate;all complete contexts untruncated.
 Frozen endpoint:canonical complete-answer EM;training/inference contrasts separately>=3pp +positiveCI bothseeds.
 Practical decision additionally compares ordinary-trained and unchanged-base conventional CoT.
 Release:validation/document_QA_v21_science_release_20261019.json;20,992 attempts/19,712 LLrows fixed.
 Actual training/restore,FP32 decoder and span parity PASS;public span arrays independently checked/protected.
-Full128 checkpoint independently audited/copied/read back onEBS;older optimizerduplicates retired,alloriginals retained.
-B0 generation onphysical12;trainedGEN,LL and final-readout watchers active;capability unread.
+Allsix terminalmodels+latestfull256 protected/readbackverified onEBS;all12originalfullstates retained.
+B0 generation onphysical12;trainedmodel nativeCPUreferences preparing;GEN/LL/readout watchers active,capability unread.
 Control:local/diagnostics/document-QA-v21-study-v1;frozen train049f53e,decode dbd1c10,span0d1a5b4.
-Next:monitor terminal256 audit→protection→bindings;let all fixed GEN/LL panels close,then one independentreadout.
+Trainingreport:validation/document_QA_v21_training_20261019.json;all six bindings complete.
+Next:complete all fixed trainedGEN/LL panels,then one independentreadout;noearlyscoreinspection.
 
 ## Closed: source-balanced computation and source quality
 Question: can arithmetic gains survive while ordinary prediction stays within the declared bound?

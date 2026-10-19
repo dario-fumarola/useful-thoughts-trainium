@@ -1,15 +1,20 @@
 # Useful Thoughts on Trainium
 
 The [document-QA study](validation/document_QA_v21_science_release_20261019.json)
-is running: six fresh1.7B models compare direct answers,reasoning before answers,
-and reasoning after a supervised answer stop. Two data-order seeds share2,048
-training documents;512 evidence-disjoint questions and256 ordinary pages are fixed.
-Strong conventional-CoT controls can win. **No QA capability result is available yet.**
+has completed all six training runs; evaluation is running. Fresh 1.7B models
+compare direct answers, reasoning before answers, and reasoning after a supervised
+answer stop. Two data-order seeds share 2,048 training questions; 512 questions
+with disjoint supporting evidence and 256 ordinary pages are fixed. Conventional
+CoT controls can win. **No QA capability result is available yet.**
 
+[All 1,536 updates and terminal-state checks are complete](validation/document_QA_v21_training_20261019.json).
+This small supervised reference may teach format or dataset patterns. Disjoint
+supporting evidence does not establish novelty relative to pretraining, and
+numerical parity does not establish learning.
 
 Controlled experiments on whether self-generated intermediate computation improves
-language-model predictions. Actual Qwen3-1.7B-Base, verified real mathematical
-documents, and AWS Trainium. Official TEST remains unused.
+language-model predictions. Actual Qwen3-1.7B-Base, real mathematical documents
+and document QA, and AWS Trainium. Official TEST remains unused.
 
 **Latest result: a large arithmetic gain survives source-text regularization,
 but the declared ordinary-prediction bound still fails.** Generated calculations

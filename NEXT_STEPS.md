@@ -1,15 +1,15 @@
 # Current queue
 
-1. Complete the active document-QA-v21 study;monitor health,not capability.
+1. Complete the active document-QA-v21 evaluation;monitor health,not capability.
    Master:local/diagnostics/document-QA-v21-study-v1.
-   Six tmux science sessions:document-QA-v21-<qa_direct|qa_prior|qa_post>-seed2026101921/1922.
+   Allsix training sessions CLOSED after256updates;independent all12fullstate audit PASS.
    Physical0–11,world8×micro1×accum4,global32,width3328,target512,constant1e-5.
    Fresh released1.7B per arm;2,048 examples,four passes,256 terminal updates.
    Shared first64 updates match order/loss/norm exactly within seed;do not infer capability.
-   After64 objectives differ prospectively;keep terminal checkpoint primary.
-   Watchers:document-QA-v21-first128-protection and document-QA-v21-terminal-pipeline.
-   They independently inspect full states,copy/read back new full recovery first,
-   then retire only older EBS optimizer duplicates;keep originals/all model weights.
+   All1,536updates complete;terminal256 remains primary.
+   Terminal audit→protection→binding pipeline CLOSED PASS;all six exactbindings ready.
+   Latestfull256 EBS protected before olderoptimizerduplicates retired;all12originals retained.
+   Publicactualtraining:validation/document_QA_v21_training_20261019.json.
 
 2. Complete the fixed evaluation orchestration while training runs.
    B0 generation is already active:tmux document-QA-v21-B0-generation,physical12,
@@ -18,7 +18,7 @@
    Frozen release,protocols and stronger conventional-CoT controls:
    validation/document_QA_v21_science_release_20261019.json.
    Execution grouping:C/evaluation-execution-plan.json(C is the master above).
-   Prepare six audited terminal bindings,then model-native CPU references/prompts.
+   Six audited bindings ready;model-native CPU references/prompts nowpreparing.
    Use twelve initial trained-generation groups as planned;replay controls wait
    for each prior-only group to close and reuse its freed physical4/8.
    Use generation-group v3 controller for future groups(protocol-hash TMPDIR + phaseports);
@@ -60,8 +60,8 @@ Evidence/protection:
   Canonical author annotations match pinned converter;mirror aliases remain attributed,
   not independently authenticated against official ZIP. OfficialDEV/TEST unopened.
 - Keep35GiB/filesystem and512GiB hostavailable. All original full states remainNVMe.
-  Latest EBS full is QA FIRST_FULL128;complete independent state audit,copy/readback
-  and older optimizer-duplicate retirement PASS. See C/first-full128-protection.json.
+  Latest EBS full is QA TERMINALS/latest-full256,qa_prior1922/256;allterminalmodels protected.
+  See C/terminal-protection.json;all original128/256states retain full optimizers.
   Root~83GiB pre-first128;all-state/model protection budget verified before release.
   EBS is same-instance,not off-instance. No cloud/IAM/network/paid-teacher changes.
 

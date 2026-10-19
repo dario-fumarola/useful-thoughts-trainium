@@ -1377,3 +1377,12 @@ render/protection. Canonicalanswers primary,mirroraliases separately attributed.
 Span nativearrays independently recomputed/readbackprotected;first128 fullmodel+
 optimizer protected before only older EBS optimizerduplicates retire. No capability
 outcomes inspected,no prompt/checkpoint/metric changes,no broader launch release.
+
+2026-10-19 15:23UTC — Allsix QA science runs reachterminal256 and physicallyclose.
+Independent all12fullstate/order/label/native auditPASS;copy-new-full-first EBS
+protectionPASS,allterminalmodels protected and exactbindings ready. Alloriginal
+fullstates retained. Prepare nativeCPUreferences and fixedgeneration groups;
+capabilityremainsunread. Publishactualtrainingtraces/nativemapping separately
+fromscientificresults. Ownerreview reinforces smallTRAIN2048/formatlearning risk,
+canonicalEM+F1/attributedaliases,unknownpretrainingnovelty andexecution-only meaning
+ofnumericalchecks. No outcome/gate/data/prompt changes ornewexperiment launch.

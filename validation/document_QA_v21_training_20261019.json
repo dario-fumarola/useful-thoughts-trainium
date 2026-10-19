@@ -1,0 +1,991 @@
+{
+  "status": "ALL_SIX_TERMINAL256_TRAINING_STATES_AUDITED_PROTECTED_AND_BOUND",
+  "utc": "2026-10-19T15:21:23.208640+00:00",
+  "actual_updates": 1536,
+  "models": 6,
+  "seeds": 2,
+  "release_sha256": "5847fc816b7b469f9c236a0acbf8abb2b1a64fb7229ea8940a592a40f12abd1c",
+  "independent_audit": {
+    "status": "PASS_ALL_SIX_TERMINAL256_QA_TRAINING_STATES_NATIVE48_ORDER_COUNTERS_AND_LABELS",
+    "utc": "2026-10-19T15:11:34.134164+00:00",
+    "models": [
+      {
+        "arm": "qa_direct",
+        "seed": 2026101921,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_direct-TRAIN2048-seed2026101921-v1",
+        "checkpoints": {
+          "128": {
+            "step": 128,
+            "COMPLETE_sha256": "48f6e44e60c06718b3be9c91ac82b4a680759fb5fb44ae6a67be6ab76986b8cd",
+            "model_sha256": "fa9d4cedcb9512747358e52100571d4325eebf00de78d47f0a93c4813f6b9cbb",
+            "run_id": "document-QA-v21-qa_direct-TRAIN2048-seed2026101921-v1",
+            "spec_hash": "4fa001f7b13854ac7c88dca350bd08e307c56f0b7f1c1223d7aca1bba84b7a01",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "256": {
+            "step": 256,
+            "COMPLETE_sha256": "90dde0c8b72c0daf2d933afa9fef0184bd9864a6fed8dd953fb9c522040135fb",
+            "model_sha256": "45c2cafad93f45bc897fa2c7f0bf48c807885095d9095468ca0049e41809187b",
+            "run_id": "document-QA-v21-qa_direct-TRAIN2048-seed2026101921-v1",
+            "spec_hash": "4fa001f7b13854ac7c88dca350bd08e307c56f0b7f1c1223d7aca1bba84b7a01",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_updates": 256,
+        "actual_initial_master_witnesses": 8,
+        "terminal_counters": {
+          "expressions": 8192,
+          "supervised_tokens": 2139984
+        },
+        "source_labels": 2097152,
+        "task_labels": 42832,
+        "warm_last60_median_update_seconds": 13.485119787990698,
+        "completion_sha256": "145e19d6bb029c2872114caebe4960f818ab6676f8563424adc665289fe2d1b1",
+        "closure_sha256": "1cb37fa2158922e866acecc4f3357ac00aa4a2c61a9263ccbb46f74d2bd273ea",
+        "metrics_sha256": "e790d2aec93cc48d48ab82609bfe0d11ea21a9ff0f2064b8a81b5893eab839b3",
+        "protocol_sha256": "969ab0eaeb54639adda2f1a4ce25c59a8061fd50d3f720c5885744caf7e0038f"
+      },
+      {
+        "arm": "qa_direct",
+        "seed": 2026101922,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_direct-TRAIN2048-seed2026101922-v1",
+        "checkpoints": {
+          "128": {
+            "step": 128,
+            "COMPLETE_sha256": "691fa864f40944ec7a6f11b3a652e5ede9ec37ea576ef3113f4192e4ad56a155",
+            "model_sha256": "204ed441ffd989678da6bad3369ae71256b2a3fa110a9b275f9920d38804efac",
+            "run_id": "document-QA-v21-qa_direct-TRAIN2048-seed2026101922-v1",
+            "spec_hash": "d49ad0f49fa656b84a167e589b80952e0a760acf118f6d5f6d1a9dc4cdb8126c",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "256": {
+            "step": 256,
+            "COMPLETE_sha256": "7b1e4da61e4435f3945a543692a849042c8c700467b7f7c7f2850da091df0eba",
+            "model_sha256": "89a78cee8cd46a1fb99451b7e595431f86c4ca59647bbe2df234537ef3a2657f",
+            "run_id": "document-QA-v21-qa_direct-TRAIN2048-seed2026101922-v1",
+            "spec_hash": "d49ad0f49fa656b84a167e589b80952e0a760acf118f6d5f6d1a9dc4cdb8126c",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_updates": 256,
+        "actual_initial_master_witnesses": 8,
+        "terminal_counters": {
+          "expressions": 8192,
+          "supervised_tokens": 2139984
+        },
+        "source_labels": 2097152,
+        "task_labels": 42832,
+        "warm_last60_median_update_seconds": 13.488730814497103,
+        "completion_sha256": "95dd89c8a43ecbdf92a2a16d434b37d02cc296aa59a9da19033376ec343230e7",
+        "closure_sha256": "4e5bb2c499162ec423df88ae8967d3f630e3a351225233d33a039b5679c4a2aa",
+        "metrics_sha256": "1d75de9b9a6e2823d27b2aaed78e18f375cc9cfa4c7b1e88da72a64c51035546",
+        "protocol_sha256": "d42c8b509ccf95687aad22ff443c9875f1e8cc824c285994cfb4f737935a99ae"
+      },
+      {
+        "arm": "qa_prior",
+        "seed": 2026101921,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101921-v1",
+        "checkpoints": {
+          "128": {
+            "step": 128,
+            "COMPLETE_sha256": "d4c2baa3273ec1b202b8efd723fc9f5e31fd49289dc41482eb1102a585756750",
+            "model_sha256": "0b0c3e44ede5f3b39876111814c9ed83e98ed51a78d7934575550be6b15fc977",
+            "run_id": "document-QA-v21-qa_prior-TRAIN2048-seed2026101921-v1",
+            "spec_hash": "44cc0ca4ca02f6eda70487fe7bb3154b94b1b728553ed938e1402a8c115c6c0e",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "256": {
+            "step": 256,
+            "COMPLETE_sha256": "756b8d87e18c780064aa88690be8e0eff58e26be37b526caf1facc90183760ad",
+            "model_sha256": "781110c303bde68f87afdd49edc7127c27cc6c3c5e0ea26dd1a95619c83d537e",
+            "run_id": "document-QA-v21-qa_prior-TRAIN2048-seed2026101921-v1",
+            "spec_hash": "44cc0ca4ca02f6eda70487fe7bb3154b94b1b728553ed938e1402a8c115c6c0e",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_updates": 256,
+        "actual_initial_master_witnesses": 8,
+        "terminal_counters": {
+          "expressions": 8192,
+          "supervised_tokens": 2348592
+        },
+        "source_labels": 2097152,
+        "task_labels": 251440,
+        "warm_last60_median_update_seconds": 13.491016218002187,
+        "completion_sha256": "d809955dcaf8731d5f140a790fc05982bc26b56d161fd2b0f8444540e25aa310",
+        "closure_sha256": "17e0efc2afc5ec7bbb3dfc1d0143e6ab95e541f018e0a32e0bcdf3ed3a9cdbfa",
+        "metrics_sha256": "d2a9ef27610fdd08bc3a1dc87f1cae718f0165011c8a7cb4f50a85fe8cf0de6a",
+        "protocol_sha256": "dc6a7d299f8fc9e70b0c40aa21dc0b52962b63e09c33d739a2c6bcb76af5cefe"
+      },
+      {
+        "arm": "qa_prior",
+        "seed": 2026101922,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1",
+        "checkpoints": {
+          "128": {
+            "step": 128,
+            "COMPLETE_sha256": "ab913fe83799a04dae3a2e9d4452061691fb6c4acd78fa736563b275f23b5c81",
+            "model_sha256": "19e72bb5ee80b04d930eebca54ece1f0524c25b3f6fa9b08550a57ad72b5f6a8",
+            "run_id": "document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1",
+            "spec_hash": "5e7cf04721b4aee5d7efe0df3cc5c7d06b86b04abb1520acc1ee83e556d06eff",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "256": {
+            "step": 256,
+            "COMPLETE_sha256": "cb861c51561ae48a8c49f14c53dfbf5c58bb83c81e95162fd53c81db6224bd61",
+            "model_sha256": "98d36343b7fe01c9a082e20a7c7b767057abd164637071ad9ba6770b2d3b8344",
+            "run_id": "document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1",
+            "spec_hash": "5e7cf04721b4aee5d7efe0df3cc5c7d06b86b04abb1520acc1ee83e556d06eff",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_updates": 256,
+        "actual_initial_master_witnesses": 8,
+        "terminal_counters": {
+          "expressions": 8192,
+          "supervised_tokens": 2348592
+        },
+        "source_labels": 2097152,
+        "task_labels": 251440,
+        "warm_last60_median_update_seconds": 13.50438764100545,
+        "completion_sha256": "b8100d742715cb4e3a7c84f9f74b6e04bb6a1d9c4eba4f7ebdf94c463463b1a9",
+        "closure_sha256": "49aef6a9186dea73e69aa336328a7a6a9c6973ddbcecb630b3dbd2fca51279c5",
+        "metrics_sha256": "a9cc39a98f73cb692d1dea07402839951a8ba5142c14b01102f64fb797bfd8b3",
+        "protocol_sha256": "f0a699c03a7a52c8d77f8766227c3273bb8600a6c80319e74b6d2a7eb3d7248c"
+      },
+      {
+        "arm": "qa_post",
+        "seed": 2026101921,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101921-v1",
+        "checkpoints": {
+          "128": {
+            "step": 128,
+            "COMPLETE_sha256": "74d668728ec654a475ccd57345602397ff200f740cc60c37e3226d01079e0e50",
+            "model_sha256": "ce3eac967e5f7d89b9cffae1a70391f9f3836e276f2274469c9863bbc8dbfc81",
+            "run_id": "document-QA-v21-qa_post-TRAIN2048-seed2026101921-v1",
+            "spec_hash": "c5914c23d2a0fa4e697f7d6b800272a0fee9c28fbb8df623d7e305d2f880fc9a",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "256": {
+            "step": 256,
+            "COMPLETE_sha256": "b621d8b4ad183306513c656ce1c9895d1d73294838cc8b04fc6fd9d806396f34",
+            "model_sha256": "957b4b25187239cb3fc7714c49a29c0e4a1643fffc0ee444f8afa24bab2c2394",
+            "run_id": "document-QA-v21-qa_post-TRAIN2048-seed2026101921-v1",
+            "spec_hash": "c5914c23d2a0fa4e697f7d6b800272a0fee9c28fbb8df623d7e305d2f880fc9a",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_updates": 256,
+        "actual_initial_master_witnesses": 8,
+        "terminal_counters": {
+          "expressions": 8192,
+          "supervised_tokens": 2356846
+        },
+        "source_labels": 2097152,
+        "task_labels": 259694,
+        "warm_last60_median_update_seconds": 13.487945314511308,
+        "completion_sha256": "014ba4c5e40cb7f0452436be3de073aecbf635154bd5537be35d71b83376d7e2",
+        "closure_sha256": "510907b399da664a92800dff2a8a76709932703b66219c496d133fa14a82e9ee",
+        "metrics_sha256": "2a94b48d75d93c2db58cf4b8735eff25916e575c8d83914a119c020bf068a574",
+        "protocol_sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d"
+      },
+      {
+        "arm": "qa_post",
+        "seed": 2026101922,
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101922-v1",
+        "checkpoints": {
+          "128": {
+            "step": 128,
+            "COMPLETE_sha256": "81a231a4dc0c6b3aeb2b31f65f707c64c052854b375ac668b54590ac0ef284f8",
+            "model_sha256": "c40adb08a273c43201122e634e10713aba84e2848500a3035694dd4ca06c5893",
+            "run_id": "document-QA-v21-qa_post-TRAIN2048-seed2026101922-v1",
+            "spec_hash": "a0aab073444b4a3776fbc0d20cfdfe1cd807f80fb4ff6793caad88161737ed9e",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          },
+          "256": {
+            "step": 256,
+            "COMPLETE_sha256": "6f6c3408a17eb9398e63fbb258cebbd3ae14004be5d241e3ae6232fc22c41125",
+            "model_sha256": "3a1777b00ef26671a7bf499f5efb27aacd1419d7b7ede98dfd795db26fb27464",
+            "run_id": "document-QA-v21-qa_post-TRAIN2048-seed2026101922-v1",
+            "spec_hash": "a0aab073444b4a3776fbc0d20cfdfe1cd807f80fb4ff6793caad88161737ed9e",
+            "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+          }
+        },
+        "native_checks": [
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.003038018943671619,
+            "device_to_reference_kl_nats": 0.0031035199827923296,
+            "max_bidirectional_kl_nats": 0.0031035199827923296,
+            "passed": true,
+            "max_logp_error": 0.4776469232392877,
+            "rms_logp_error": 0.11136195315202933,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0030697297315727835,
+            "device_to_reference_kl_nats": 0.003041836099938893,
+            "max_bidirectional_kl_nats": 0.0030697297315727835,
+            "passed": true,
+            "max_logp_error": 0.3318406019216269,
+            "rms_logp_error": 0.06558423713648606,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 2.110202660403744e-05,
+            "device_to_reference_kl_nats": 2.157230339493209e-05,
+            "max_bidirectional_kl_nats": 2.157230339493209e-05,
+            "passed": true,
+            "max_logp_error": 0.19990114601651499,
+            "rms_logp_error": 0.04093075259376543,
+            "relative_l2_logp_error": 0.0014795616361593922,
+            "argmax_equal": true
+          },
+          {
+            "reference_to_device_kl_nats": 0.0003244116031699334,
+            "device_to_reference_kl_nats": 0.000325946147481554,
+            "max_bidirectional_kl_nats": 0.000325946147481554,
+            "passed": true,
+            "max_logp_error": 0.2453446255999836,
+            "rms_logp_error": 0.04909559206530713,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "argmax_equal": true
+          }
+        ],
+        "actual_updates": 256,
+        "actual_initial_master_witnesses": 8,
+        "terminal_counters": {
+          "expressions": 8192,
+          "supervised_tokens": 2356846
+        },
+        "source_labels": 2097152,
+        "task_labels": 259694,
+        "warm_last60_median_update_seconds": 13.505781326501165,
+        "completion_sha256": "47a8b647fab57371894d1be88d7e6ce67e9a8fd9f57fe78014ad3a77c910caef",
+        "closure_sha256": "89de45dd1d8a776c96059bbacaac641b94445a02e82b7be3696f78c3119fef24",
+        "metrics_sha256": "c3de98b03b1f083cf51fb40c03b4c4a1e72e6b1c442bc2194f0f128d7f5e171a",
+        "protocol_sha256": "71b1a747511432599eedb5220edc06b997e17acfad07174d48a90feb6c6dda12"
+      }
+    ],
+    "source_files": {
+      "train/partial_state_driver.py": "70769a585de264286d43326a358f9e20e5997420e2e472fc5b31884daf012060",
+      "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+      "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+      "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+      "train/masked_causal_ce.py": "820f8ec3aad8216e35b9b7be594e2a67fb4fb688c12b47ad50d75d227a8035b9",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+      "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+      "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+      "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+      "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+      "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+      "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+      "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+      "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+      "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+      "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+      "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+      "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+      "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+      "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+      "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a"
+    },
+    "plan_sha256": "55f23b1ed9a5cb5e9f711ba63af027c4918f2c1552545aa978611277f21f0828",
+    "audit_source_sha256": "99098178ef1347a831593b2beb662b71d105ecd65e79e604f9f332af0f09a6f2",
+    "generic_state_audit_source_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+    "limits": [
+      "Training/state integrity,not held capability. Native48 checks repeat four canonical contexts.",
+      "All12 original full states retained;allterminalmodels/latestfull need separate EBS readback before binding evaluation.",
+      "No uninterrupted/resumed bitwise parity orstochasticRL claim."
+    ]
+  },
+  "protection": {
+    "status": "PASS_ALL_SIX_TERMINAL_MODELS_AND_LATEST_FULL256_PROTECTED",
+    "utc": "2026-10-19T15:20:20.003476+00:00",
+    "models": {
+      "qa_direct-seed2026101921": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_direct-TRAIN2048-seed2026101921-v1/step-0000256/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/models/qa_direct-seed2026101921/model.pt",
+        "sha256": "45c2cafad93f45bc897fa2c7f0bf48c807885095d9095468ca0049e41809187b"
+      },
+      "qa_direct-seed2026101922": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_direct-TRAIN2048-seed2026101922-v1/step-0000256/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/models/qa_direct-seed2026101922/model.pt",
+        "sha256": "89a78cee8cd46a1fb99451b7e595431f86c4ca59647bbe2df234537ef3a2657f"
+      },
+      "qa_prior-seed2026101921": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101921-v1/step-0000256/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/models/qa_prior-seed2026101921/model.pt",
+        "sha256": "781110c303bde68f87afdd49edc7127c27cc6c3c5e0ea26dd1a95619c83d537e"
+      },
+      "qa_prior-seed2026101922": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1/step-0000256/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/models/qa_prior-seed2026101922/model.pt",
+        "sha256": "98d36343b7fe01c9a082e20a7c7b767057abd164637071ad9ba6770b2d3b8344"
+      },
+      "qa_post-seed2026101921": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101921-v1/step-0000256/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/models/qa_post-seed2026101921/model.pt",
+        "sha256": "957b4b25187239cb3fc7714c49a29c0e4a1643fffc0ee444f8afa24bab2c2394"
+      },
+      "qa_post-seed2026101922": {
+        "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101922-v1/step-0000256/model.pt",
+        "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/models/qa_post-seed2026101922/model.pt",
+        "sha256": "3a1777b00ef26671a7bf499f5efb27aacd1419d7b7ede98dfd795db26fb27464"
+      }
+    },
+    "latest_full": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_prior-TRAIN2048-seed2026101922-v1/step-0000256",
+      "EBS": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256",
+      "COMPLETE_sha256": "cb861c51561ae48a8c49f14c53dfbf5c58bb83c81e95162fd53c81db6224bd61"
+    },
+    "audit_sha256": "38eca4348a42ce78fce75c868fbb878d5d6f458102a8349893e4759d3f488eb9",
+    "files": {
+      "latest-full256/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "98d36343b7fe01c9a082e20a7c7b767057abd164637071ad9ba6770b2d3b8344"
+      },
+      "latest-full256/rank-00000.pt": {
+        "bytes": 2581278471,
+        "sha256": "ebcee44715816326ceaa3214f20f46b88cf1c7e5e33408f7ed2bc73b7d5c04d0"
+      },
+      "latest-full256/rank-00001.pt": {
+        "bytes": 2581278471,
+        "sha256": "b50a04fca5246f44c333ef46fc01142a52efb263feb58a9571968a8bc4e060e9"
+      },
+      "latest-full256/rank-00002.pt": {
+        "bytes": 2581278471,
+        "sha256": "f6058b6ff0752f30296302cb9102d8d145c907a62272dfdc60bb347aaa10c186"
+      },
+      "latest-full256/rank-00003.pt": {
+        "bytes": 2581278407,
+        "sha256": "b250401a5db4c84797c2f94a1bed7df57b1d7c56aceaf42d59095ef2a4956da8"
+      },
+      "latest-full256/rank-00004.pt": {
+        "bytes": 2581278471,
+        "sha256": "cfa9814383067a1a920664d04b657f0c43a29e907b6330b608c6b2673c560777"
+      },
+      "latest-full256/rank-00005.pt": {
+        "bytes": 2581278471,
+        "sha256": "784bc2ec8209c4411b9448cbe98e89989b538df5eec7de5c9ef3643009934de8"
+      },
+      "latest-full256/rank-00006.pt": {
+        "bytes": 2581278471,
+        "sha256": "b17cc21511ad4a7be1eecece87d341bcd5d5f75b305415aebe4933f91d6d8ff6"
+      },
+      "latest-full256/rank-00007.pt": {
+        "bytes": 2581278407,
+        "sha256": "f1769c8957acbb9f5848c2635dcab3260061379eeef52503bde7a00502017913"
+      },
+      "latest-full256/COMPLETE.json": {
+        "bytes": 2076,
+        "sha256": "cb861c51561ae48a8c49f14c53dfbf5c58bb83c81e95162fd53c81db6224bd61"
+      },
+      "models/qa_direct-seed2026101921/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "45c2cafad93f45bc897fa2c7f0bf48c807885095d9095468ca0049e41809187b"
+      },
+      "models/qa_direct-seed2026101921/COMPLETE.json": {
+        "bytes": 2078,
+        "sha256": "90dde0c8b72c0daf2d933afa9fef0184bd9864a6fed8dd953fb9c522040135fb"
+      },
+      "models/qa_direct-seed2026101921/protocol.json": {
+        "bytes": 6459,
+        "sha256": "969ab0eaeb54639adda2f1a4ce25c59a8061fd50d3f720c5885744caf7e0038f"
+      },
+      "models/qa_direct-seed2026101922/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "89a78cee8cd46a1fb99451b7e595431f86c4ca59647bbe2df234537ef3a2657f"
+      },
+      "models/qa_direct-seed2026101922/COMPLETE.json": {
+        "bytes": 2078,
+        "sha256": "7b1e4da61e4435f3945a543692a849042c8c700467b7f7c7f2850da091df0eba"
+      },
+      "models/qa_direct-seed2026101922/protocol.json": {
+        "bytes": 6460,
+        "sha256": "d42c8b509ccf95687aad22ff443c9875f1e8cc824c285994cfb4f737935a99ae"
+      },
+      "models/qa_prior-seed2026101921/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "781110c303bde68f87afdd49edc7127c27cc6c3c5e0ea26dd1a95619c83d537e"
+      },
+      "models/qa_prior-seed2026101921/COMPLETE.json": {
+        "bytes": 2076,
+        "sha256": "756b8d87e18c780064aa88690be8e0eff58e26be37b526caf1facc90183760ad"
+      },
+      "models/qa_prior-seed2026101921/protocol.json": {
+        "bytes": 6461,
+        "sha256": "dc6a7d299f8fc9e70b0c40aa21dc0b52962b63e09c33d739a2c6bcb76af5cefe"
+      },
+      "models/qa_prior-seed2026101922/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "98d36343b7fe01c9a082e20a7c7b767057abd164637071ad9ba6770b2d3b8344",
+        "hardlink_of": "latest-full256/model.pt"
+      },
+      "models/qa_prior-seed2026101922/COMPLETE.json": {
+        "bytes": 2076,
+        "sha256": "cb861c51561ae48a8c49f14c53dfbf5c58bb83c81e95162fd53c81db6224bd61"
+      },
+      "models/qa_prior-seed2026101922/protocol.json": {
+        "bytes": 6461,
+        "sha256": "f0a699c03a7a52c8d77f8766227c3273bb8600a6c80319e74b6d2a7eb3d7248c"
+      },
+      "models/qa_post-seed2026101921/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "957b4b25187239cb3fc7714c49a29c0e4a1643fffc0ee444f8afa24bab2c2394"
+      },
+      "models/qa_post-seed2026101921/COMPLETE.json": {
+        "bytes": 2074,
+        "sha256": "b621d8b4ad183306513c656ce1c9895d1d73294838cc8b04fc6fd9d806396f34"
+      },
+      "models/qa_post-seed2026101921/protocol.json": {
+        "bytes": 6461,
+        "sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d"
+      },
+      "models/qa_post-seed2026101922/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "3a1777b00ef26671a7bf499f5efb27aacd1419d7b7ede98dfd795db26fb27464"
+      },
+      "models/qa_post-seed2026101922/COMPLETE.json": {
+        "bytes": 2074,
+        "sha256": "6f6c3408a17eb9398e63fbb258cebbd3ae14004be5d241e3ae6232fc22c41125"
+      },
+      "models/qa_post-seed2026101922/protocol.json": {
+        "bytes": 6461,
+        "sha256": "71b1a747511432599eedb5220edc06b997e17acfad07174d48a90feb6c6dda12"
+      },
+      "terminal-independent-audit.json": {
+        "bytes": 35378,
+        "sha256": "38eca4348a42ce78fce75c868fbb878d5d6f458102a8349893e4759d3f488eb9"
+      },
+      "plan.json": {
+        "bytes": 4991,
+        "sha256": "55f23b1ed9a5cb5e9f711ba63af027c4918f2c1552545aa978611277f21f0828"
+      },
+      "release.json": {
+        "bytes": 5981,
+        "sha256": "5847fc816b7b469f9c236a0acbf8abb2b1a64fb7229ea8940a592a40f12abd1c"
+      },
+      "protect-source.py": {
+        "bytes": 6556,
+        "sha256": "d25738eb98ceb13c5d81164ef7a15e2dc7a2c0c3cf6443d3bbda484fc47e0eb6"
+      }
+    },
+    "old_optimizer_retirement_sha256": "abfd59afc2c3e089de68480a6f3732516227b46d4200cb79134fb66af6483e64",
+    "root_free_bytes": 64945840128,
+    "limits": [
+      "Alloriginalfull128/256statesremainNVMe. EBSretainsallterminalmodels/latestglobalfulloptimizer;the earlier protected128modelweight also remains.",
+      "Same-instanceprotection;notanoff-instancearchive."
+    ],
+    "EBS_archive_sha256": "f798bf1825c6e06e123912f589ab70853bb48d6c67ecc447cf7e771830240947"
+  },
+  "payloads": {
+    "validation/document_QA_v21_training_20261019/qa_direct-seed2026101921-all256-updates.jsonl.gz": {
+      "rows": 256,
+      "bytes": 77374,
+      "sha256": "e54c877c06e0047d2fffe3cac60912f17f10688b1970f2326a5ab90a772a35b4",
+      "original_sha256": "e790d2aec93cc48d48ab82609bfe0d11ea21a9ff0f2064b8a81b5893eab839b3"
+    },
+    "validation/document_QA_v21_training_20261019/qa_direct-seed2026101922-all256-updates.jsonl.gz": {
+      "rows": 256,
+      "bytes": 77380,
+      "sha256": "460f40f8be295e6d7d36085b13be43e43ae08fde65dba13636eee7f0b215c266",
+      "original_sha256": "1d75de9b9a6e2823d27b2aaed78e18f375cc9cfa4c7b1e88da72a64c51035546"
+    },
+    "validation/document_QA_v21_training_20261019/qa_prior-seed2026101921-all256-updates.jsonl.gz": {
+      "rows": 256,
+      "bytes": 77313,
+      "sha256": "8a6ded9cd3356af7eb8779d2a02b8cbc12ea029fcb18de79b2351f3c4c9e43b9",
+      "original_sha256": "d2a9ef27610fdd08bc3a1dc87f1cae718f0165011c8a7cb4f50a85fe8cf0de6a"
+    },
+    "validation/document_QA_v21_training_20261019/qa_prior-seed2026101922-all256-updates.jsonl.gz": {
+      "rows": 256,
+      "bytes": 77443,
+      "sha256": "469d627d05ee0d3e2508a4f51b21ab21f4c3ef8a7e65a4c9459ef1eeccaca46b",
+      "original_sha256": "a9cc39a98f73cb692d1dea07402839951a8ba5142c14b01102f64fb797bfd8b3"
+    },
+    "validation/document_QA_v21_training_20261019/qa_post-seed2026101921-all256-updates.jsonl.gz": {
+      "rows": 256,
+      "bytes": 77362,
+      "sha256": "d3b09955943fe2c4936d2d58b772872f635e11621c1c65963dd10a1b31868f92",
+      "original_sha256": "2a94b48d75d93c2db58cf4b8735eff25916e575c8d83914a119c020bf068a574"
+    },
+    "validation/document_QA_v21_training_20261019/qa_post-seed2026101922-all256-updates.jsonl.gz": {
+      "rows": 256,
+      "bytes": 77450,
+      "sha256": "9dc0773dcd292fcaa32f273fab63727ca77bfb4ec0c75004db405ad1f308ee15",
+      "original_sha256": "c3de98b03b1f083cf51fb40c03b4c4a1e72e6b1c442bc2194f0f128d7f5e171a"
+    }
+  },
+  "native_arrays": {
+    "path": "validation/document_QA_v21_training_20261019/actual-initial-native-arrays.npz",
+    "sha256": "0b34fa27713316fed2f381cb0c13d460be021c4a2538b567687cd828ac784fed",
+    "observations": 48,
+    "unique_actual_arrays": 4,
+    "canonical_contexts": 4
+  },
+  "publisher_sha256": "993ff702166efeea675a4e4291dd635c0fc184303a20863e1e1435e9efcbfcf7",
+  "limits": [
+    "Actual training,state,order,counter and protection evidence only. No held capability readout.",
+    "Allruns start from released1.7B;2,048 examples/fourpasses. Moretasktargetlabels in augmentedarms;equalupdates not equal usefulsupervision.",
+    "Two data-order seeds,not broadtrainingseedvariance. Same-instance EBS protection,not off-instance.",
+    "Numericalparity and successfulupdates do not establish reasoning ornovelty relative topretraining."
+  ]
+}

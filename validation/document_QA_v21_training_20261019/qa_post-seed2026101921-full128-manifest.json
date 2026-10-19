@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-10-19T14:33:04+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248275,
+      "sha256": "ce3eac967e5f7d89b9cffae1a70391f9f3836e276f2274469c9863bbc8dbfc81"
+    },
+    "rank-00000.pt": {
+      "bytes": 2581278407,
+      "sha256": "ac6b90bfe5b576fef0020621febd2f3199a33ddc495c3c0feb3959c93efb7b11"
+    },
+    "rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "c98232a76f8df743563f766e653b1bba4ebff11f6575fe25441a130b93a0f4b7"
+    },
+    "rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "c05daa487d569367d1c03c9f46f360e0292fc96b12d042a2501857d825dce26a"
+    },
+    "rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "7681fcf38c88c5d089b167238d235cbcf6f9e4c15048ac677d1f372959cb583c"
+    },
+    "rank-00004.pt": {
+      "bytes": 2581278407,
+      "sha256": "5f373087b202e15d44178340a84c54d093ed72178fb45000319f9665962a9ba4"
+    },
+    "rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "3995f0c611c99ce6193296e3d4fa9935552be6e3ccd415620aa7be849a06c712"
+    },
+    "rank-00006.pt": {
+      "bytes": 2581278471,
+      "sha256": "e3ba82b9f05713bffac014b389209898e18c7d8b408784a3d63afd6b4041f25c"
+    },
+    "rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "346333315c1f6a5dd4ad1eb93aa1cb3ab0d905bd62ae303b3940cdb7d7c20878"
+    }
+  },
+  "metadata": {
+    "arm": "qa_post",
+    "counters": {
+      "expressions": 4096,
+      "supervised_tokens": 1178423
+    },
+    "data_sha256": "a0a99d866b55c16d7e6f498ee881d87556dfa5eabcab3340feccbf11313476e9",
+    "order_hash": "402787a27d2fc8b0f6f1cd292c8382ac08882ec1fdf5ae3d849bbc9921cbd051",
+    "pipeline_schema": "document-qa-v21",
+    "protocol_sha256": "32ccbe9c67318b13ec44acd156ec5c74535b2c7fb8c0d07811b622b08e36e98d",
+    "seed": 2026101921,
+    "spec_hash": "c5914c23d2a0fa4e697f7d6b800272a0fee9c28fbb8df623d7e305d2f880fc9a"
+  },
+  "run_id": "document-QA-v21-qa_post-TRAIN2048-seed2026101921-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "c5914c23d2a0fa4e697f7d6b800272a0fee9c28fbb8df623d7e305d2f880fc9a",
+  "step": 128,
+  "world_size": 8
+}
