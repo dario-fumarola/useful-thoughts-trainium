@@ -62,6 +62,10 @@ def validate(p):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
         raise ValueError('Frozen short-pack implementation changed')
+    cleanup = p.get('checkpoint_export_cleanup', False)
+    observe = p.get('checkpoint_memory_diagnostic', False)
+    if type(cleanup) is not bool or type(observe) is not bool or science and (cleanup or observe):
+        raise ValueError('CPU export cleanup remains a separately qualified engineering option')
 
 
 def order_for(p):
@@ -253,7 +257,9 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             if bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(scarce, device=device)).cpu()):
                 raise RuntimeError('Insufficient space for full state plus35GiB reserve; retain prior checkpoints')
             inspect_optimizer(optimizer, last, len(list(model.parameters())))
-            save_checkpoint(args.output, model, optimizer, last, dict(state, counters=dict(counters)), rank, world, xm, device)
+            save_checkpoint(args.output, model, optimizer, last, dict(state, counters=dict(counters)), rank, world, xm, device,
+                            release_cpu_staging=p.get('checkpoint_export_cleanup', False),
+                            observe_cpu_staging=p.get('checkpoint_memory_diagnostic', False))
             checkpoint_walls.append(dict(step=last, rank0_wall_seconds=time.monotonic()-saving))
         del ce, batch
         if stop or halt:
