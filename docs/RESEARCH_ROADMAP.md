@@ -35,6 +35,8 @@ Work in this order; this roadmap releases no jobs:
    autonomous optimization. Measure ordinary loss, assisted prediction, direct
    downstream capability and outcomes after identical post-training. Match source
    exposure; report supervised tokens, FLOPs and generation costs separately.
+   Supervised thought augmentation still uses next-token CE: identify the changed
+   targets, supervision and computation rather than claiming a different loss by name.
 4. **Study onset and internalization.** Compare checkpoint ages from one architecture
    and training trajectory, reduce verified guidance, remove the teacher, then
    test improvement beyond warm start and distillation into shorter/direct

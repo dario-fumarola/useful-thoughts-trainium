@@ -16,6 +16,17 @@ Active: training exec34070, owned session/PID1517924/start28721656; first128 pro
 Next: monitor O/metrics.jsonl; independently protect full128, then audit/protect/bind terminal256 before readout.
 No held evaluation released: fixed direct/canonical-empty255 and ordinary256 follow terminal audit/protection.
 
+## Active: frozen TRAIN pointer-decision diagnostic
+Question: does premature closure persist with correct preceding annotated IDs?
+ID: selector-TRAIN-decisions-CPU-v1; frozen completed V25 selector, original TRAIN256 (128/96/32 strata).
+Native subset/prefix/wrong-ID categories fixed before new forwards; teacher-forced required-continuation vs closure token contrasts.
+CPU only,16 threads,40-minute bound; no updates, new held questions or V26 source/score changes.
+Descriptive optimization endpoints only; annotation agreement is not semantic correctness or causal explanation.
+Teacher-forced labels are privileged TRAIN diagnostic inputs, not deployed self-generated computation.
+Source/design/inputs frozen and EBS readback protected before model forwards.
+Design: validation/selector_TRAIN_decisions_CPU_design_20261019/design.json.
+Next: execute once, preserve raw observations, then independently check counts/token-prefix identities and publish limits.
+
 ## Closed: selector-loss allocation ablation
 Question: does stronger selector supervision repair fitting and help answering?
 ID: document-evidence-weight-v25; one fresh1.7B, selection1.0 vs completed0.1; same TRAIN2048×4/order.
