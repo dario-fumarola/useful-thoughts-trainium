@@ -18,8 +18,7 @@
    Reader gets one teacher and one plain view per expression over two passes.
 3. All10training runs are complete, independently audited, protected and frozen.
    All5first-seed evaluation controllers close and are EBS readback backed up;
-   seed2writer/direct also close, reader finishes its last panel, compact active
-   physical1. Final full-CoT2 passes640/full-state audit and fixed eval is launched:
+   seed2writer/reader/direct also close and EBS-readback; compact active physical1. Final full-CoT2 passes640/full-state audit and fixed eval is launched:
    tmux `dario-ps7-dev-fullcot2`,physical2/port64941/shortf7b.
    NEXT:monitor remaining fixed evals; archive closed ones,then whole audit.
    B0reference physical4 active. Training queue closed; no more training released.
@@ -91,11 +90,17 @@ factors before a much longer loop. Current bounded640jobs stay below measured
 node limits. Candidate official XLA serialization needs actual byte/recovery/
 memory qualification; no fix has been applied to frozen science source.
 
-One separate engineering question is active on spare physical8/logical32–35:
-`local/diagnostics/checkpoint-export-memory-v8-v1`,tmux dario-export-memory-v8.
-Four paths:current sliced export,direct .cpu(),official xm.save,sliced+gc/trim;
-six exports of actual optimizer-shaped F32 tensors, exact sign-version readback.
-No model/optimizer updates; not resumable. Deadline02:15UTC, no retry; baseline
-must reproduce>1GiB/export before a lower-growth candidate is meaningful. Even
-an exact candidate needs actual full training/restart/RNG qualification. Current
-science source is unchanged. All controls/results remain separate from math study.
+Separate engineering question: tensor-only v8followup completes, all six saved
+state bytes/metadata/source/live values exact. Current sliced export grows4.809
+GiB/export; same exporter+gc/trim0.0018. v1official xm.save changed tuple metadata
+to lists, failing exact gate; interrupted partial outputs preserved and read back.
+Public:validation/checkpoint_export_memory_v8_tensor_results_20261019.json.
+Actual SFT qualification active:control14 versus candidate12/physical close/full
+restore12/updates13–14;every2full saves. Candidate branch fb72065 is isolated,
+1601CPUchecks pass, scientific source57 unchanged. Control:
+`local/diagnostics/checkpoint-export-SFT-recovery-v8-v2`,tmux dario-export-SFT-recovery-v8-v2,
+physical8/logical32–35,deadline03:00UTC,no retry. Gate:control memory reproduces,
+candidate bounded plus exact per-update loss/norm and all terminal model/master/
+moment/cursor/saved RNG; actual restored12digests. Review all stages once closed.
+Prior v1preflight detected wrong-source preparation before any worker/allocation;
+all files preserved. This does not yet fix original world32 OOM or qualify long loops.

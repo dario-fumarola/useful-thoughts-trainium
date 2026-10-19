@@ -1,12 +1,12 @@
-# Status — 2026-10-19 00:33 UTC
+# Status — 2026-10-19 00:43 UTC
 
 
 ## Active: matched-cost partial-computation study
 Question: does useful fresh computation beat competitive solvers at matched updates and starting B0?
 ID:partial-state-v7-matched5120;two seeds,terminal primary,immutable57d3220,1610CPUchecks pass.
 All10training runs complete,independently audited,full-state protected and frozen.
-All5S1four-panel evals and S2writer/direct close; outputs EBS readback,no outcomes reviewed.
-S2reader3/4panels,compact1/4panels,B0reference1/4panels;physical11/1/4 respectively.
+All5S1four-panel evals plus S2writer/reader/direct close; EBS readback,no outcomes reviewed.
+S2compact2/4panels,fullCoT0/4,B0reference2/4;physical1/2/4 respectively.
 Final full-CoT2eval launched:tmux dario-ps7-dev-fullcot2,physical2/logical8–11,port64941.
 NEXT:finish all fixed panels and EBS readbacks,then run whole-question independent audit.
 Registry:local/diagnostics/partial-state-v7-matched5120-evaluation-registry-20261018.json.
@@ -15,14 +15,19 @@ Primary4systems/two seeds unchanged;B0one shared reference,not two replicas;all 
 Alloriginal full states intact;EBS all terminal models and latest full recovery (full-CoT2).
 Training queue closed,no retries/new training. No TEST/RL/8B;current cost advantage unresolved.
 
-## Active: bounded checkpoint-export memory diagnosis
-Question: can the export-associated PSS growth be reproduced and avoided with exact tensor bytes?
-ID:checkpoint-export-memory-v8-v1;one batched four-condition question on physical8/logical32–35.
-Six actual-shape F32 state exports/condition,sign-versioned;no model/optimizer updates,not resumable.
-Current sliced,direct,official xm.save,sliced+gc/trim; full byte verification follows all memory points.
-Baseline must reproduce>1GiB/export;candidate<0.5GiB/export plus all bytes/source/live-state checks.
-Control:local/diagnostics/checkpoint-export-memory-v8-v1;tmux dario-export-memory-v8,deadline02:15UTC.
-No result yet;source57 unchanged. Candidate still needs actual full training/restart/RNG qualification.
+## Active: checkpoint-export memory and actual recovery qualification
+Question: can export-associated host growth be removed without changing SFT or recoverable state?
+ID:checkpoint-export-memory-v8;v1interrupted on xm.save tuple->list metadata failure;original evidence kept.
+Explicit two-condition tensor followup complete:current4.809GiB/export versus gc/trim0.0018GiB/export.
+All six saved tensors/metadata/source/final device values exact; no optimizer updates in this probe.
+Public:validation/checkpoint_export_memory_v8_tensor_results_20261019.json;small evidence EBS readback.
+Actual SFT14control versus candidate12/close/restore12/updates13-14 now released,world4,full saves every2.
+Code isolated branch checkpoint-memory-v8 at fb72065;1601CPUchecks pass;immutable science57 unchanged.
+Control:local/diagnostics/checkpoint-export-SFT-recovery-v8-v2;tmux dario-export-SFT-recovery-v8-v2.
+Physical8/logical32–35,deadline03:00UTC,no retries;both arms fresh B0/128TRAIN,not capability evidence.
+Require repeated-save memory reduction plus exact losses/gradients/model/optimizer/cursor/saved RNG.
+Prior actual-SFTv1preflight rejected wrong source hashes before any worker/allocation;preserved,no scientific retry.
+No actual-SFT result yet; no claim that original world32 OOM or indefinite training is fixed.
 
 ## Closed: matched developmental step64 comparison
 Question: what did surviving matched W/C′64 models learn before terminal320 was interrupted?

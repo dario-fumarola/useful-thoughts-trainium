@@ -1160,3 +1160,13 @@ question released with fixed source/conditions/thresholds:actual state shapes,
 six sign versions, exact byte readback after memory points, no training steps.
 Baseline must reproduce growth; a candidate is not a training/restart qualification.
 No science-source or current evaluation changes. Full-CoT2latest EBS recovery protected.
+
+2026-10-19 00:43 UTC — Tensor-only export followup passes all six exact versions,
+source and final live-state checks:current4.809GiB/export versus gc/trim0.0018.
+Initial four-condition probe failed xm.save metadata type gate (tuple->list),
+parent interrupted peers; preserve all partial files and readback, no pass claimed.
+Selected two-condition followup has separate plan. Actual SFT control14 versus
+candidate12/close/restore/13-14 now released on isolated fb72065,1601CPUchecks.
+First SFTpreflight bound main instead of candidate via cwd shadowing PYTHONPATH;
+guard rejected before any worker/allocation. New v2asserts actual imported root,
+preserves failed config. Immutable57science and all endpoints remain unchanged.

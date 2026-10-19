@@ -1,0 +1,214 @@
+{
+  "schema": "checkpoint-export-memory-v8-tensor-results-v1",
+  "status": "COMPLETE_TWO_CONDITION_TENSOR_FOLLOWUP_ACTUAL_TRAINING_NOT_YET_QUALIFIED",
+  "finished_utc": "2026-10-19T00:41:50.179074+00:00",
+  "question": "Does current sliced optimizer-shaped tensor export retain host memory, and can explicit GC/allocator trimming avoid it without changing bytes?",
+  "design": "Actual rank0 optimizer tensor shapes/dtypes from closed R2step320; normalize abs+1 then six exact sign versions,5.16GBstate. Memory endpoints collected before any readback. Independent single Trainium core per condition.",
+  "source_commit": "57d3220",
+  "results": {
+    "chunked": {
+      "initial_PSS_GiB": 7.441296577453613,
+      "late_PSS_growth_GiB_per_export": 4.809075355529785,
+      "tensor_bytes": 5161726168,
+      "nonempty_tensors": 1240,
+      "observations": [
+        {
+          "iteration": 1,
+          "PSS_before_export_bytes": 8073682944,
+          "PSS_after_export_bytes": 12184487936,
+          "export_seconds": 10.622758163022809,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 2,
+          "PSS_before_export_bytes": 12224231424,
+          "PSS_after_export_bytes": 17178079232,
+          "export_seconds": 11.051464388001477,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 3,
+          "PSS_before_export_bytes": 17178083328,
+          "PSS_after_export_bytes": 22340529152,
+          "export_seconds": 11.081137264991412,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 4,
+          "PSS_before_export_bytes": 22341613568,
+          "PSS_after_export_bytes": 27505310720,
+          "export_seconds": 11.102495882019866,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 5,
+          "PSS_before_export_bytes": 27505310720,
+          "PSS_after_export_bytes": 32669306880,
+          "export_seconds": 10.83041686200886,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 6,
+          "PSS_before_export_bytes": 32669331456,
+          "PSS_after_export_bytes": 37832900608,
+          "export_seconds": 11.23318425900652,
+          "file_bytes": 5162128273
+        }
+      ],
+      "all_six_files": {
+        "snapshot-01.pt": {
+          "bytes": 5162128273,
+          "sha256": "a7cc0826dea0f471bcdeb3a1c283afeb24f70687a9c83a325533ef03530fa7c1",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-02.pt": {
+          "bytes": 5162128273,
+          "sha256": "63a818840f51dad7f4cb12ea3fd98a438d6c399097f82f4006e07aa305437555",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-03.pt": {
+          "bytes": 5162128273,
+          "sha256": "efba98713eb781056187e78433173e20d6e86de25d431dc82b5e4062418d0daf",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-04.pt": {
+          "bytes": 5162128273,
+          "sha256": "27290c51aa5d47011bdb2ab32d78b1564c03b5e3a3b5169cae690ae7b8d97fa8",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-05.pt": {
+          "bytes": 5162128273,
+          "sha256": "1fae5477adb39598de398004f10541bb0ced188c3971f99e33eaf00a06409814",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-06.pt": {
+          "bytes": 5162128273,
+          "sha256": "e62cd7f644ee3e14b58028ad280e13e81c9f79a33774c00f0a5befa6848e2307",
+          "all_tensor_bytes_equal": true
+        }
+      },
+      "final_live_device_state_bytes_equal": true,
+      "source_file_unchanged": true
+    },
+    "chunked_gc_trim": {
+      "initial_PSS_GiB": 7.464719772338867,
+      "late_PSS_growth_GiB_per_export": 0.0017964839935302734,
+      "tensor_bytes": 5161726168,
+      "nonempty_tensors": 1240,
+      "observations": [
+        {
+          "iteration": 1,
+          "PSS_before_export_bytes": 8098941952,
+          "PSS_after_export_bytes": 5935139840,
+          "export_seconds": 10.440548311016755,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 2,
+          "PSS_before_export_bytes": 6095322112,
+          "PSS_after_export_bytes": 6015757312,
+          "export_seconds": 11.09229015200981,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 3,
+          "PSS_before_export_bytes": 6018296832,
+          "PSS_after_export_bytes": 6017318912,
+          "export_seconds": 11.15247458399972,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 4,
+          "PSS_before_export_bytes": 6019760128,
+          "PSS_after_export_bytes": 6020953088,
+          "export_seconds": 11.232402563007781,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 5,
+          "PSS_before_export_bytes": 6023406592,
+          "PSS_after_export_bytes": 6020920320,
+          "export_seconds": 11.623379372991621,
+          "file_bytes": 5162128273
+        },
+        {
+          "iteration": 6,
+          "PSS_before_export_bytes": 6023603200,
+          "PSS_after_export_bytes": 6023473152,
+          "export_seconds": 11.164708758005872,
+          "file_bytes": 5162128273
+        }
+      ],
+      "all_six_files": {
+        "snapshot-01.pt": {
+          "bytes": 5162128273,
+          "sha256": "a7cc0826dea0f471bcdeb3a1c283afeb24f70687a9c83a325533ef03530fa7c1",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-02.pt": {
+          "bytes": 5162128273,
+          "sha256": "63a818840f51dad7f4cb12ea3fd98a438d6c399097f82f4006e07aa305437555",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-03.pt": {
+          "bytes": 5162128273,
+          "sha256": "efba98713eb781056187e78433173e20d6e86de25d431dc82b5e4062418d0daf",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-04.pt": {
+          "bytes": 5162128273,
+          "sha256": "27290c51aa5d47011bdb2ab32d78b1564c03b5e3a3b5169cae690ae7b8d97fa8",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-05.pt": {
+          "bytes": 5162128273,
+          "sha256": "1fae5477adb39598de398004f10541bb0ced188c3971f99e33eaf00a06409814",
+          "all_tensor_bytes_equal": true
+        },
+        "snapshot-06.pt": {
+          "bytes": 5162128273,
+          "sha256": "e62cd7f644ee3e14b58028ad280e13e81c9f79a33774c00f0a5befa6848e2307",
+          "all_tensor_bytes_equal": true
+        }
+      },
+      "final_live_device_state_bytes_equal": true,
+      "source_file_unchanged": true
+    }
+  },
+  "gate": {
+    "baseline_min_GiB_per_export": 1,
+    "candidate_max_GiB_per_export": 0.5,
+    "baseline_growth_reproduced": true,
+    "all_six_tensor_bytes_metadata_and_final_live_values_exact": true
+  },
+  "interrupted_v1": {
+    "status": "INTERRUPTED_FOUR_CONDITION_QUESTION_PARTIAL_OUTPUTS_VERIFIED",
+    "reason": "Official xm.save converts tuples to lists in optimizer betas and shape_info; strict metadata gate failed. Parent stopped three peers after five exports. All outputs retained; no six-export pass attributed.",
+    "completed_file_counts": {
+      "chunked": 5,
+      "direct": 5,
+      "xm_save": 6,
+      "chunked_gc_trim": 5
+    },
+    "fully_exact_file_counts": {
+      "chunked": 5,
+      "direct": 5,
+      "xm_save": 0,
+      "chunked_gc_trim": 5
+    },
+    "partial_readback_sha256": "5c7753fe180bd5192b9c9f523fd107467f919f21e3351c20d36bd60f14bcb4fe"
+  },
+  "selection": "Two-condition followup selected after partial v1 observations; new explicit plan fixed before its launch. No automatic failed-condition retry.",
+  "tensor_followup_plan_sha256": "76ac637f41c1f479a77563ec9f975c683e78bfceaf87826543e73b6ccda79f4c",
+  "tensor_followup_result_sha256": "1ebd580957b391724b50ce9228ba6adae4056538e4332c6551736cdc5cc74ea3",
+  "EBS_archive_receipt_sha256": "1e36b758c18d1654782b3c83a41ab09c954440ad128c6c9b8cfac987ff4ee3d1",
+  "candidate_branch": "checkpoint-memory-v8",
+  "candidate_commit": "fb72065",
+  "next_gate": "Actual SFT control14 versus candidate12/full-close/fresh-restore/updates13-14; repeated full checkpoint memory, losses, all terminal model/optimizer bytes and saved RNG. Frozen scientific study unchanged.",
+  "limitations": [
+    "Tensor-only probe performs no model or optimizer updates and is not a resumable checkpoint.",
+    "GC and allocator trim were combined; their individual causal contributions are not separated.",
+    "This does not establish that the original world32 OOM is fixed or qualify indefinite continual training.",
+    "Diagnostic payloads remain on original local SSD; small controls/results/code are EBS-readback verified."
+  ]
+}

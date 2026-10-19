@@ -66,7 +66,10 @@ the latest full resumable state under the
 [recorded retention policy](validation/partial_state_v7_checkpoint_retention_20261018.json).
 Host PSS is flat between saves but rises around full exports; longer continual
 training needs an export-path qualification. This is an
-[observed association, with cause unresolved](validation/partial_state_v7_checkpoint_host_memory_observation_20261019.json).
+[observed association, with cause unresolved](validation/partial_state_v7_checkpoint_host_memory_observation_20261019.json). A separate
+[tensor-only followup](validation/checkpoint_export_memory_v8_tensor_results_20261019.json)
+reproduces the growth and finds byte-exact allocator cleanup; actual SFT/restart
+qualification is underway in an isolated branch. Scientific source stays frozen.
 
 An auxiliary untouched-B0 reference uses the same direct, empty and CoT prompts.
 It was added before new outcome review; the four-system primary remains fixed.

@@ -8,8 +8,8 @@ they do not authorize restarting the retired study or override the active plan.
 
 October19 00:32UTC handoff: continue until user stops. All10training runs of the
 matched5120/two-seed study complete/audited/protected/frozen. Immutable science57d3220;
-1610CPUchecks pass. All5S1evals plus S2writer/direct closed/EBS backed; no outcomes.
-S2reader3/4panels,compact1/4,B0reference1/4active (physical11/1/4).
+1610CPUchecks pass. All5S1evals plus S2writer/reader/direct closed/EBS backed; no outcomes.
+S2compact2/4,fullCoT0/4,B0reference2/4active (physical1/2/4).
 Final full-CoT2evaluation launched00:33UTC:tmux dario-ps7-dev-fullcot2,physical2,
 logical8–11,ports64941–48. All11registered evaluation jobs now launched.
 NEXT:monitor remaining fixed panels,then independently audit whole question.
@@ -28,11 +28,18 @@ and every attempt retained. Public analysis never selects/repairs/drops failures
 
 Memory read-only finding:per-step PSS flat between exports; later full saves retain
 ~20GiB across four workers. Public observation JSON is associative, not causal.
-Bounded export-only diagnostic active physical8/logical32–35,tmux dario-export-memory-v8,
-control local/diagnostics/checkpoint-export-memory-v8-v1,deadline02:15UTC. Four methods,
-six exports each, all actual-shape F32 tensor bytes checked AFTER memory observations.
-Baseline must reproduce growth before candidate interpretation. No actual model/optimizer
-steps, not resumable; actual recovery/RNG qualification still required. Science unchanged.
+Tensor-only v8followup complete:all six files/source/live tensor bytes and metadata
+exact. Current exporter4.809GiB/save versus gc/trim0.0018GiB/save. Public result
+validation/checkpoint_export_memory_v8_tensor_results_20261019.json. V1official
+xm.save tuple->list metadata gate failure preserved, all partial files read back.
+Actual SFT/recovery v2now released physical8/logical32–35,tmux
+ dario-export-SFT-recovery-v8-v2,control local/diagnostics/checkpoint-export-SFT-recovery-v8-v2.
+Control14uninterrupted versus candidate12/close/full restore12/updates13–14,
+full saves every2,deadline03:00UTC,no retry. Isolated candidate branch fb72065,
+1601CPUchecks pass,source57 unchanged. Require actual memory/stepwise loss/norm/
+terminal model/master/moment/cursor/saved RNG parity; all restored12digests.
+Prior actual-SFTv1source-root preflight failed before any worker/allocation;
+preserved explicit error receipt. No claim of world32OOM fix or indefinite safety.
 
 All original full checkpoints stay on local SSDs. EBS all terminal models plus
 latest full optimizer state; older EBS optimizer duplicates retire only after full
