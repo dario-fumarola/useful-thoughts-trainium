@@ -17,7 +17,10 @@ def terminal_scope(protocol, run, completion):
     steps=protocol['steps']
     fitting=protocol['purpose']=='TRAIN_overfit_only' and protocol['items']==128 and steps==128
     science=protocol['purpose']=='TRAIN5120_partial_state_study' and protocol['items']==5120 and steps in (320,640)
-    if (not (fitting or science)
+    pilot=(protocol['schema']=='variable-depth-writer-v11'
+           and protocol['purpose']=='variable_depth_pilot'
+           and protocol['items']==640 and steps==160 and run.get('arm')=='writer')
+    if (not (fitting or science or pilot)
             or run.get('purpose') != protocol['purpose'] or run.get('arm') not in ARMS
             or run.get('pipeline_schema') != protocol['schema']
             or run.get('spec_hash') != canonical_hash(protocol)
@@ -28,8 +31,31 @@ def terminal_scope(protocol, run, completion):
         raise ValueError('Declared full terminal model required; qualification is excluded')
 
 
-def identity(checkpoint, protocol_file, closure_file):
+def identity(checkpoint, protocol_file, closure_file, producer_source_root=None):
     """Hash the full publication and check every shard's original lineage."""
+    # Older studies retain their exact validator in an immutable source tree.
+    # Execute it there rather than weakening its source-closure check to fit
+    # current code. This is an explicit identity field, not a guessed fallback.
+    if producer_source_root is not None:
+        import os
+        import subprocess
+        import sys
+        root = Path(producer_source_root).resolve()
+        current = Path(__file__).resolve().parents[1]
+        if root != current:
+            if not (root/'train/partial_state_checkpoint.py').is_file():
+                raise ValueError('Original producer validator source required')
+            env = os.environ.copy()
+            env['PYTHONPATH'] = str(root) + os.pathsep + env.get('PYTHONPATH', '')
+            command = [sys.executable, '-c',
+                'import json,sys; from train.partial_state_checkpoint import identity; '
+                'print(json.dumps(identity(*sys.argv[1:])))',
+                str(checkpoint), str(protocol_file), str(closure_file)]
+            result = subprocess.run(command, cwd=root, env=env, text=True,
+                                    capture_output=True, check=True, timeout=600)
+            value = json.loads(result.stdout)
+            value['producer_source_root'] = str(root)
+            return value
     import torch
     from train.neuron_driver import verify_checkpoint
     paths = [Path(p) for p in (checkpoint, protocol_file, closure_file)]
@@ -69,18 +95,22 @@ def identity(checkpoint, protocol_file, closure_file):
         raise ValueError('All original complete updates and counters required')
     provenance = {str(p):sha256_file(p) for p in
         (protocol_file, closure_file, root/'run.json', root/'completion.json', metrics_file, checkpoint.parent/'COMPLETE.json')}
-    return dict(id=f"{run['arm']}-TRAIN{protocol['items']}-step{steps}", arm=run['arm'], checkpoint=str(checkpoint),
+    value = dict(id=f"{run['arm']}-TRAIN{protocol['items']}-step{steps}", arm=run['arm'], checkpoint=str(checkpoint),
         checkpoint_sha256=manifest['files']['model.pt']['sha256'],
         checkpoint_scope=SCOPE, developmental_only=fitting, step=steps, run_id=root.name,
         spec_hash=canonical_hash(protocol), training_protocol=str(protocol_file),
         closure_file=str(closure_file), provenance=provenance,
         checkpoint_files={str(checkpoint.parent/k):v['sha256'] for k,v in manifest['files'].items()})
+    if producer_source_root is not None:
+        value['producer_source_root'] = str(Path(producer_source_root).resolve())
+    return value
 
 
 def verify(value):
     if value.get('checkpoint_scope') != SCOPE or type(value.get('developmental_only')) is not bool:
         raise ValueError('Explicit v7 terminal scope required')
-    actual = identity(value['checkpoint'], value['training_protocol'], value['closure_file'])
+    actual = identity(value['checkpoint'], value['training_protocol'], value['closure_file'],
+                      value.get('producer_source_root'))
     if actual != value:
         raise ValueError('Frozen TRAIN128 reader identity changed')
     return actual

@@ -20,7 +20,7 @@ from weekend_thinking.runtime_policy import require_runtime_policy, runtime_poli
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-complete-answers-v5'
+SCHEMA = 'partial-state-complete-answers-v6'
 TRAIN_SHA = '020fdf19892217492866b38f48a9a2655c30310fa792207b188477f28a2c93cb'
 MODES = ('direct', 'cot', 'empty', 'teacher', 'corrupt', 'other_teacher', 'restatement')
 COHORTS = {
@@ -29,6 +29,8 @@ COHORTS = {
     'DEV_structure': ('015528413c842defa168365cea4368f0c9f0a08f712fea02021d90cbc5a90662', 512),
     'DEV_range': ('b79c962fe3b6c0c3787363e5d5debb8a3f00dfdcdd2868a7481af4a1c9a74189', 512),
     'DEV_composition': ('cbe5d61ee280e12fd5152c0637f39f72e0394456df45d217a987e5db21132983', 512),
+    'DEV_depth2': ('a57efc3cafb6ca0d3ccee585609125a6883bf6e28f2e0d34373d509c93487406',256),
+    'DEV_depth6': ('793eb0ed1a349b3754d757487992fe9dcce7d13b437f437f5c577d35719ea4a2',256),
 }
 
 
@@ -57,8 +59,10 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
     from train.evaluate import asset_provenance
     if panel not in COHORTS:
         raise ValueError('Only declared TRAIN/DEV panels; never TEST')
-    if type(action_budget)is not int or action_budget not in (80,96):
-        raise ValueError('Declared prototype80 or full-trace study96 action budget required')
+    if type(action_budget)is not int or action_budget not in (80,96,160):
+        raise ValueError('Declared prototype80,full-trace96,or depth-repair160 budget required')
+    writer_cap = 128 if action_budget == 160 else 64
+    plain_width, reader_width = (64,256) if action_budget == 160 else (32,128)
     data_sha, items = COHORTS[panel]
     if sha256_file(data_file) != data_sha:
         raise ValueError('Exact fixed panel bytes required')
@@ -94,9 +98,9 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
     if reader_binding is not None:
         from train.partial_state_checkpoint import verify
         reader = verify(read(reader_binding))
-    if max(len(prompt_tokens(q, tok, cot=True)) for q in questions) > 32:
+    if max(len(prompt_tokens(q, tok, cot=True)) for q in questions) > plain_width:
         raise ValueError('Declared prefill width is too small')
-    if any(len(reader_tokens(q, c['notes'][mode], tok)) > 128 for q,c in zip(questions,controls) for mode in modes if mode not in ('direct','cot')):
+    if any(len(reader_tokens(q, c['notes'][mode], tok)) > reader_width for q,c in zip(questions,controls) for mode in modes if mode not in ('direct','cot')):
         raise ValueError('Declared reader prefill width is too small')
     output.mkdir(parents=True, exist_ok=False)
     from train.useful_note_sft_driver import load_native_reference
@@ -106,7 +110,9 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
     if native_from is not None:
         import torch
         native_from=Path(native_from);prior=read(native_from/'protocol.json');meta=read(native_from/'native-contexts.json')
-        if (prior['reader']!=reader or prior['assets']!=assets or meta['reader']!=reader
+        model_fields = lambda value: {k:v for k,v in value.items() if k!='producer_source_root'}
+        if (model_fields(prior['reader'])!=model_fields(reader) or prior['assets']!=assets
+                or model_fields(meta['reader'])!=model_fields(reader)
                 or meta['model_signature']!=prior['evaluation_signature']):
             raise ValueError('Native reference belongs to a different frozen model')
         for name in ('native-reference.pt','native-contexts.json'):
@@ -155,7 +161,10 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
         notes_bundle=None if bundle is None else str(Path(notes_bundle).resolve()),
         notes_bundle_sha256=None if bundle is None else sha256_file(notes_bundle),
         compute='fp32', selection='single_greedy_tokenizer_defined_support',
-        writer_or_cot_prefill=32, reader_prefill=128, direct_and_cot_cap=action_budget, reader_answer_cap=action_budget-64,
+        writer_or_cot_prefill=plain_width, reader_prefill=reader_width, direct_and_cot_cap=action_budget,
+        writer_action_cap=writer_cap, reader_answer_cap=action_budget-writer_cap,
+        bootstrap_repeats=20000 if action_budget==160 else 5000,
+        bootstrap_seed=2026101912 if action_budget==160 else 17,
         future_split='Generation never opens gold.jsonl or original supervised TRAIN rows. Supplied notes are computed only from prefix expressions.',
         endpoint=f'Complete numeric-answer accuracy; all unsupported/errors/caps retained. Own-minus-same-reader empty/direct/other, and ordinary CoT at same{action_budget} total action cap.',
         controls='Intact global derangement, native-length matched when peers exist; no repeat, trim, repair or utility selection.',
@@ -165,7 +174,7 @@ def prepare(output, data_file, model_dir, base_protocol, reader_binding=None, no
                 ('Explicit TRAIN128 fitting model; not a scientific warm start.' if reader.get('developmental_only') else 'Frozen model training provenance is explicit; B0, if used, remains unchanged.'),
                 f'Direct prompt asks for the answer; CoT starts at Work. Equal{action_budget} action caps do not equal measured FLOPs.',
                 'Supplied-state reading is achievable-reader evidence, not student utility.',
-                f'Reader conditions use{action_budget-64} answer actions plus64writer; direct/CoT{action_budget}. Report actual actions and latency separately.'])
+                f'Reader conditions use{action_budget-writer_cap} answer actions plus{writer_cap}writer; direct/CoT{action_budget}. Report actual actions and latency separately.'])
     atomic_json(output/'protocol.json', protocol)
     return protocol
 
@@ -340,8 +349,9 @@ def score(output):
         # Paired item bootstrap is computed below, rather than resampling tokens.
         import numpy as np
         delta=np.array([cells[q['item_id'],b]['score']-cells[q['item_id'],a]['score'] for q in questions],dtype=float)
-        picks=np.random.default_rng(17).integers(0,n,size=(5000,n));ci=np.quantile(delta[picks].mean(1),[.025,.975])
-        contrasts[b+'_minus_'+a]=dict(difference=float(delta.mean()),ci95=ci.tolist(),unit='accuracy_fraction',bootstrap_items=n,repeats=5000,seed=17)
+        repeats=p.get('bootstrap_repeats',5000);seed=p.get('bootstrap_seed',17)
+        picks=np.random.default_rng(seed).integers(0,n,size=(repeats,n));ci=np.quantile(delta[picks].mean(1),[.025,.975])
+        contrasts[b+'_minus_'+a]=dict(difference=float(delta.mean()),ci95=ci.tolist(),unit='accuracy_fraction',bootstrap_items=n,repeats=repeats,seed=seed)
     atomic_json(output/'summary.json',dict(schema=SCHEMA,status='complete_all_attempts',finished_utc=utc_now(),
         protocol_sha256=sha256_file(output/'protocol.json'),panel=p['panel'],reader=p['reader'],reader_execution_device='xla',
         writer=p['writer'],writer_execution_device=p['writer_execution_device'],
@@ -354,7 +364,7 @@ def main():
     a.add_argument('--output',type=Path,required=True);a.add_argument('--data-file',type=Path);a.add_argument('--model-dir',type=Path);a.add_argument('--base-protocol',type=Path)
     a.add_argument('--shard',type=int);a.add_argument('--deadline-utc');a.add_argument('--reader-binding',type=Path);a.add_argument('--notes-bundle',type=Path)
     a.add_argument('--panel',choices=tuple(COHORTS),default='TRAIN');a.add_argument('--modes',nargs='+');a.add_argument('--native-from',type=Path)
-    a.add_argument('--action-budget',type=int,choices=(80,96),default=80)
+    a.add_argument('--action-budget',type=int,choices=(80,96,160),default=80)
     v=a.parse_args()
     if v.command=='prepare':
         result=prepare(v.output,v.data_file,v.model_dir,v.base_protocol,v.reader_binding,v.notes_bundle,v.panel,v.modes,v.native_from,v.action_budget)

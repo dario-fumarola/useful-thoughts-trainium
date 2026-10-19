@@ -17,7 +17,7 @@ from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_
 from weekend_thinking.runtime_policy import require_runtime_policy, runtime_policy
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = 'partial-state-prefix-only-writer-rollouts-v2'
+SCHEMA = 'partial-state-prefix-only-writer-rollouts-v3'
 LEGACY_SCHEMA = 'partial-state-TRAIN128-prefix-only-writer-rollouts-v1'
 EOS, CAP, WIDTH = 151643, 64, 32
 
@@ -42,8 +42,8 @@ def prepare(output, model_preparation, model_source_root, execution_device='xla'
         raise ValueError('Explicit CPU reference or XLA device required')
     model_preparation, model_source_root = Path(model_preparation).resolve(), Path(model_source_root).resolve()
     p = read(model_preparation/'protocol.json')
-    if (p['schema'] not in ('partial-state-TRAIN128-complete-answers-v2','partial-state-complete-answers-v4','partial-state-complete-answers-v5')
-            or p['reader'].get('arm') != 'writer' or p['items'] not in (128,512)):
+    if (p['schema'] not in ('partial-state-TRAIN128-complete-answers-v2','partial-state-complete-answers-v4','partial-state-complete-answers-v5','partial-state-complete-answers-v6')
+            or p['reader'].get('arm') != 'writer' or p['items'] not in (128,256,512)):
         raise ValueError('Own frozen writer/native preparation on a fixed cohort required')
     verify(p['reader'])
     if any(sha256_file(model_source_root/k) != v for k,v in p['source_files'].items()):
@@ -65,7 +65,7 @@ def prepare(output, model_preparation, model_source_root, execution_device='xla'
         model_source_root=str(model_source_root), input_pins={str(f):sha256_file(f) for f in inputs},
         source_files=sources(), runtime_policy=p['runtime_policy'],
         execution_device=execution_device,
-        max_actions=CAP, prefill_width=WIDTH, selection='single_greedy_EOS_only',
+        max_actions=p.get('writer_action_cap',CAP), prefill_width=p['writer_or_cot_prefill'], selection='single_greedy_EOS_only',
         writer_inputs='Question projection only; neither controls nor gold is opened.',
         limits=['TRAIN is fitting only; each DEV panel is a separate computation diagnostic, never official TEST.',
                 'Capped notes remain intact. Failed notes and failed donors remain unavailable, never replaced.',
@@ -131,7 +131,7 @@ def generate(output, shard, until):
         del hidden,lp,x,actual
         decoder=GreedyDecoder(backend.model,tok,sync=backend.sync,banned_ids=backend.banned_ids)
         prompt=prompt_tokens(questions[shard],tok,cot=True)
-        audit,vectors=cache_prefill_check(backend,decoder,prompt,width=WIDTH,cap=CAP)
+        audit,vectors=cache_prefill_check(backend,decoder,prompt,width=p['prefill_width'],cap=p['max_actions'])
         torch.save(vectors,d/'cache-prefill-logps.pt');atomic_json(d/'cache-prefill.json',audit)
         if audit['max_logp_error']>1e-3:
             raise RuntimeError('Actual cached writer prefill disagrees with ordinary forward')
@@ -141,7 +141,7 @@ def generate(output, shard, until):
                 value=dict(item_id=q['item_id'],panel=q['panel'],status='error',prompt_ids=prompt,
                     prompt_sha256=canonical_hash(prompt),actions=[],content_ids=[],text='',raw_text='',stop_type='error')
                 try:
-                    value.update(asdict(decoder.decode(prompt,max_new_tokens=CAP,prefill_width=WIDTH,
+                    value.update(asdict(decoder.decode(prompt,max_new_tokens=p['max_actions'],prefill_width=p['prefill_width'],
                         pad_id=EOS,stop_ids=(EOS,),answer_line_stop=False)),status='ok')
                 except Exception as error:
                     if isinstance(error,GenerationFailure):value.update(asdict(error.partial))
@@ -189,12 +189,12 @@ def collect(output):
             q=wanted[v['item_id']];prompt=prompt_tokens(q,tok,cot=True);a=v['actions']
             if v['item_id'] in notes or v['prompt_ids']!=prompt or v['prompt_sha256']!=canonical_hash(prompt):
                 raise ValueError('Writer input was not the exact prefix projection')
-            if (len(a)>CAP or EOS in a[:-1] or any(type(x)is not int or x not in defined for x in a)
+            if (len(a)>p['max_actions'] or EOS in a[:-1] or any(type(x)is not int or x not in defined for x in a)
                     or v['content_ids']!=(a[:-1] if a and a[-1]==EOS else a)):
                 raise ValueError('Native content/actions/stop inventory changed')
             if v['status']=='ok':
                 if (v['stop_type'] not in ('token:151643','length_cap')
-                        or (v['stop_type']=='length_cap' and len(a)!=CAP)
+                        or (v['stop_type']=='length_cap' and len(a)!=p['max_actions'])
                         or (v['stop_type']=='token:151643' and (not a or a[-1]!=EOS))
                         or v['text']!=tok.decode(v['content_ids'],skip_special_tokens=False,clean_up_tokenization_spaces=False)):
                     raise ValueError('Successful native writer trace is inconsistent')
@@ -215,7 +215,7 @@ def collect(output):
 
 def load_bundle(path, ordered_ids):
     value=read(path)
-    if (value['schema'] not in (SCHEMA,LEGACY_SCHEMA) or value['status']!='complete_all_attempts'
+    if (value['schema'] not in (SCHEMA,LEGACY_SCHEMA,'partial-state-prefix-only-writer-rollouts-v2') or value['status']!='complete_all_attempts'
             or value['ordered_item_ids']!=ordered_ids):
         raise ValueError('Complete same-cohort prefix-only writer bundle required')
     for name,digest in value['source_pins'].items():
