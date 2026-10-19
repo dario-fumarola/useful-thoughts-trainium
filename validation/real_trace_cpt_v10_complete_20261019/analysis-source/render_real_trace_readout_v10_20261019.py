@@ -28,7 +28,7 @@ contrasts = [
     ('Prior ordinary-text regression', 'ordinary_token_NLL_regression', 'prior', 'nats/token'),
 ]
 with (out / 'declared-contrasts.csv').open('w', newline='') as stream:
-    writer = csv.writer(stream)
+    writer = csv.writer(stream, lineterminator="\n")
     writer.writerow(['contrast', 'training_seed', 'unit', 'treatment_minus_reference', 'ci95_low', 'ci95_high'])
     for label, group, key, unit in contrasts + [
         ('Equal mode (format diagnostic): prior own − control own', 'primary_AST', 'prior_own_minus_raw_own', 'nats/span')]:
@@ -77,10 +77,15 @@ for suffix in ('svg', 'png'):
 plt.close(fig)
 
 with (out / 'absolute-primary-likelihood.csv').open('w', newline='') as stream:
-    writer = csv.writer(stream)
+    writer = csv.writer(stream, lineterminator="\n")
     writer.writerow(['model', 'mode', 'documents', 'mean_span16_logprob', 'mean_token_NLL', 'generation_error_rows'])
     for model, panels in report['absolute_likelihood'].items():
         for mode, cell in panels['DEV_AST256'].items():
             writer.writerow([model, mode, cell['documents'], cell['mean_span16_logprob'],
                              cell['mean_token_NLL'], cell['generation_error_rows']])
 print('Rendered declared contrasts and absolute primary likelihood, without pooling seeds.')
+
+# Keep generated text artifacts clean without changing data or SVG geometry.
+for text_artifact in out.glob("*"):
+    if text_artifact.suffix in (".csv", ".svg"):
+        text_artifact.write_text("\n".join(line.rstrip() for line in text_artifact.read_text().splitlines()) + "\n")

@@ -13,7 +13,7 @@ report = json.loads((R/'validation/real_trace_cpt_v10_scalar_secondary_20261019.
 assert report['status'] == 'COMPLETE_ALL_SEVEN_MODELS_BOTH_FIXED_SCALAR_PANELS'
 out = R/'validation/real_trace_cpt_v10_scalar_secondary_20261019'
 with (out/'all-modes-accuracy-and-failures.csv').open('w', newline='') as stream:
-    writer = csv.writer(stream)
+    writer = csv.writer(stream, lineterminator="\n")
     writer.writerow(['model', 'panel', 'mode', 'documents', 'correct', 'valid', 'unsupported',
                      'format_error', 'incomplete', 'execution_error', 'capped', 'generated_actions'])
     for model, panels in report['tables'].items():
@@ -62,3 +62,8 @@ for suffix in ('png', 'svg'):
     fig.savefig(out/f'primary-scalar-accuracy.{suffix}', dpi=180, bbox_inches='tight')
 plt.close(fig)
 print('Rendered fixed scalar modes and complete failure-count CSV.')
+
+# Keep generated text artifacts clean without changing data or SVG geometry.
+for text_artifact in out.glob("*"):
+    if text_artifact.suffix in (".csv", ".svg"):
+        text_artifact.write_text("\n".join(line.rstrip() for line in text_artifact.read_text().splitlines()) + "\n")

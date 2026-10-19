@@ -1,6 +1,6 @@
 {
   "status": "COMPLETE_DERIVED_PRESENTATION_FIXED_RAW_REPORT",
-  "utc": "2026-10-19T07:12:49.763384+00:00",
+  "utc": "2026-10-19T07:13:38.727744+00:00",
   "raw_report_sha256": "c25b6a06f855684622084a9e4744b2c55ef8f7290f31ee108e0aca8537e1855f",
   "files": {
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/B0-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
@@ -12,8 +12,8 @@
       "sha256": "5f724b27804b0f14be555c582d6036a8209384204b5b32815aa1988d0340ddc0"
     },
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/all-modes-accuracy-and-failures.csv": {
-      "bytes": 5038,
-      "sha256": "ba12468890eb6a952530422b93aa97d42bfaec49ad9cdd224c0eef0e1c2d5885"
+      "bytes": 4967,
+      "sha256": "f7380172195f8410bd3897c171d4f7f8c5d49d5ae208f8fb394456409da9465a"
     },
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/analysis-source/analyze_real_trace_scalar_secondary_v10_20261019.py": {
       "bytes": 9168,
@@ -24,8 +24,8 @@
       "sha256": "b801e9c8f9134a0b062bb1fb51b15d5c533f7d1a6a0e47de973ae1b1f8a5b073"
     },
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/analysis-source/render_real_trace_scalar_secondary_v10_20261019.py": {
-      "bytes": 4041,
-      "sha256": "ee97f70e610d7c8d736c1927bab87dadcbceb43870ccb9a574b55f90b57171c7"
+      "bytes": 4342,
+      "sha256": "88d9a7e0bb1319ea606627d1f1dd6b250856e33337f0b50f9d20e07c2757a98b"
     },
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/error-transition-source.py": {
       "bytes": 3272,
@@ -44,8 +44,8 @@
       "sha256": "5b9b412651ffa4a1379678ee66c07d5f8d2addc36be7e924d17e61fb55c089b7"
     },
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/primary-scalar-accuracy.svg": {
-      "bytes": 101862,
-      "sha256": "6829b770ea697e5eae9b38cd899a60c43723b7ba622a6f9a7805c97e17f56470"
+      "bytes": 100707,
+      "sha256": "936e47831865054be97c1f65985f3ac154b93d15ddb8cc88a58dc9f5bdebc977"
     },
     "validation/real_trace_cpt_v10_scalar_secondary_20261019/real_post-seed2026101913-DEV_AST256-all1280-scalar-continuations.jsonl.gz": {
       "bytes": 104233,
@@ -96,5 +96,6 @@
       "sha256": "d84e2ee507166c1284633e35e700201a9e6b447471a00975693fab93b49c092b"
     }
   },
-  "limits": "Derived figures,disclosed examples,independent checks and descriptive partitions reuse the completed fixed observations;raw reports and gates unchanged."
+  "limits": "Derived figures,disclosed examples,independent checks and descriptive partitions reuse the completed fixed observations;raw reports and gates unchanged.",
+  "presentation_revision": "LF/trailing-whitespace normalization only;raw reports and all payloads unchanged"
 }

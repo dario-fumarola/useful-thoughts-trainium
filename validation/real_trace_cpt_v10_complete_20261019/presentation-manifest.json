@@ -1,6 +1,6 @@
 {
   "status": "COMPLETE_DERIVED_PRESENTATION_FIXED_RAW_REPORT",
-  "utc": "2026-10-19T07:12:49.486620+00:00",
+  "utc": "2026-10-19T07:13:38.461676+00:00",
   "raw_report_sha256": "eb5f6b07aa4b39da6f708a7941fc2bc3bbaf1580b5bc3942979730acab2e1bf4",
   "files": {
     "validation/real_trace_cpt_v10_complete_20261019/B0-DEV_AST256-all1280-logps.jsonl.gz": {
@@ -24,8 +24,8 @@
       "sha256": "1d1721ca9a39ff9078e73a7c2ccf675821087ee2938f2a08b6e9b96caa6cf651"
     },
     "validation/real_trace_cpt_v10_complete_20261019/absolute-primary-likelihood.csv": {
-      "bytes": 2601,
-      "sha256": "62e35ba95e177f8ceade43877bc0e6668bea7434a653add8e7bbbd28bf78e810"
+      "bytes": 2565,
+      "sha256": "539b5be448c192d39e634b1739fb6f253e9e2a4da196577d6b4e04a73d7e0a1c"
     },
     "validation/real_trace_cpt_v10_complete_20261019/analysis-source/analyze_real_trace_study_v10_20261019.py": {
       "bytes": 9628,
@@ -36,24 +36,24 @@
       "sha256": "5b607e6fdb81a3580a383220cf1d5506c5961a3fa0cd041c6ab39770afc25f16"
     },
     "validation/real_trace_cpt_v10_complete_20261019/analysis-source/render_real_trace_readout_v10_20261019.py": {
-      "bytes": 4949,
-      "sha256": "2690f1f7f649deaf8465daf9d2f4c5e172d3b787bc424781b46b0426b6eab5ae"
+      "bytes": 5271,
+      "sha256": "f9f815b7eaa6855d954441367e2719c811519e87e4f8987a370e2abf489ac3cc"
     },
     "validation/real_trace_cpt_v10_complete_20261019/analysis-source/save_real_trace_examples_v10_20261019.py": {
       "bytes": 6883,
       "sha256": "ab36cef115da6b9aa4cd50200bedb6b07947bd8cb6921f112a90ad5df6fc2d35"
     },
     "validation/real_trace_cpt_v10_complete_20261019/declared-contrasts.csv": {
-      "bytes": 1990,
-      "sha256": "eec806fefd5470a886ad7ab527b5fdb29cbb5402b4bdb71d1d99217ddb7062a9"
+      "bytes": 1973,
+      "sha256": "935300dc251cab1fabb1478a920077d449c16ef38e0f3f6701439efe545c0861"
     },
     "validation/real_trace_cpt_v10_complete_20261019/declared-contrasts.png": {
       "bytes": 175224,
       "sha256": "16c086f9eddb6250639ea68bb07c0c3c2925edf448cd70d32301210bb24b8f5c"
     },
     "validation/real_trace_cpt_v10_complete_20261019/declared-contrasts.svg": {
-      "bytes": 108444,
-      "sha256": "ffe937846da0bd5cb320a381c93465c253e843c94c09030067edc44ad8490a88"
+      "bytes": 107409,
+      "sha256": "bbfc371992225af52dc021db8428edf5df956c76ca237dec6a695ba7ae531f93"
     },
     "validation/real_trace_cpt_v10_complete_20261019/example-selection.json": {
       "bytes": 1165,
@@ -188,5 +188,6 @@
       "sha256": "4895371c306574b965c58ca0fb43a8f2331c1b02128a1ed000b8ba9a322573d6"
     }
   },
-  "limits": "Derived figures,disclosed examples,independent checks and descriptive partitions reuse the completed fixed observations;raw reports and gates unchanged."
+  "limits": "Derived figures,disclosed examples,independent checks and descriptive partitions reuse the completed fixed observations;raw reports and gates unchanged.",
+  "presentation_revision": "LF/trailing-whitespace normalization only;raw reports and all payloads unchanged"
 }
