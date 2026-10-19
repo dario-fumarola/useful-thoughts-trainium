@@ -4,6 +4,36 @@ Continue authorized autonomous work; do not stop at a milestone. Read STATUS.md
 and NEXT_STEPS.md. Agents remain quota-unavailable;do not retry. Updates<=60sec.
 No active goal;do not create one. No8B/broadRL/officialTEST/cloud changes.
 
+## Active next job — 07:33 UTC
+
+real-target-sft-v15 prepares the missing strong direct-answer/fulltraceCoT SFT
+comparison. Worktree local/worktrees/real-target-sft-v15 at829d9a2;branch public.
+All1,647 CPU checks+smoke/compile pass. Both target-only packs preserve native
+prefix/future,unscore prefix/opening;direct has16targets,CoTtrace+Answer+future16.
+SameTRAIN5120,two320update seeds1913/14,two passes;science NOT released yet.
+Newfresh384,dataSHA8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c,
+source local/nvme-study/data/real-target-sft-v15-held-v1. Document/orderedAST
+novel versusTRAINandbotholdevalpanels;operationpatterns mayrecur. OfficialTESTunopened.
+All10,240 actual native trainingpacks pass;163840direct/512900CoTlabels perseed.
+Publicdesign validation/real_target_sft_v15_design_20261019.json and
+ docs/REAL_TARGET_SFT_V15.md. PrimaryCoT own−directSFTraw>=3pp andpairedlower>0
+inEACHseed,empty/B0control lowers>0,zeroexecutionerrors;bootstrap20kseed1917.
+No changedprimarygate forV10. This is a supervisedreference,notCPT/emergence.
+
+Tmux target-sft-v15-qualification currently runs bounded8rank mechanics only.
+Control local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1.
+Output local/nvme-cpt/diagnostics/real-target-sft-v15-world8-target128-qualification-v1,
+and samewith -direct suffix. Physical12/13,logical48-55,width640/target128.
+Stages:freshCoT1-6,physicalclose,fullrestore6/ordered7-8,thenfreshdirect1-3.
+Deadline10:30UTC,max3600sec eachstage,no retries. Check control stage/run.log,
+metrics andactual owned processclosure. Source/protocol/control/TRAIN EBSprelaunch
+readback verified. Source immutable;do not duplicate or edit it while job lives.
+Next:implement independent audit reusing prior realv10 full-state audit,including
+all6 actual checkpoints,both masks,counters/casts/native/RNG,then publish actual
+qualification. Only afterward serialize release for the four320update models.
+Qualification models excludedfromcapability. Keep alloriginalstates NVMe;EBS
+models/evidence protected,latestscientificfull320 remainsprotected.35GiBdiskfloor.
+
 ## Latest completed evidence and exact next actions
 
 Both fixed real-data readouts are complete. All producers/watchers closed normally.

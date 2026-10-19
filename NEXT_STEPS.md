@@ -11,19 +11,23 @@
    Controls:local/diagnostics/real-trace-cpt-v10-study-v1 and
    local/diagnostics/real-trace-v10-scalar-secondary-study-v1. Producers are closed.
 
-2. Select one bounded scientific follow-up after the complete mixed readout.
-   Forward-only B0 scoring qualification is complete and protected:
-   validation/real_span_XLA_B0_v14_20261019.json. All1,280 rows pass parity;
-   estimated warm speedup15.72x onone configured core versus16CPUthreads.
-   Only B0/currentshape qualified;noRLstep,BF16sampling,gradients orsync claim.
-   A strong missing reference is ordinary answer-focused SFT versus full-trace
-   CoT SFT on the SAME verified real documents,with prefix unscored. Current CPT
-   allocates about3.5% of normalizedCE coefficient mass to added trace tokens.
-   Completed post-hoc partition finds tail damage in both seeds and a clear
-   numeral likelihood gain only in seed1913;primary gates remain failed.
-   Report:validation/real_trace_v10_token_partition_20261019.json.
-   Newobjective needs newidentity,prospective design andactual workload qualification.
-   Do not silently tune closed studies or startRL/8B from the scalar gain.
+2. Complete the bounded V15 hardware qualification,then audit once after all stages.
+   Question:full-trace CoT SFT versus direct-answer SFT on the SAME verified data.
+   Source829d9a2 atlocal/worktrees/real-target-sft-v15;1,647CPUchecks pass.
+   Fresh384 is frozen from unused sourceTRAIN,disjoint bydocument/exactAST from
+   TRAIN5120 andboth old arithmetic panels. No model outcomes select the cohort.
+   Design:validation/real_target_sft_v15_design_20261019.json;docs/REAL_TARGET_SFT_V15.md.
+   Control:local/diagnostics/real-target-sft-v15-world8-target128-qualification-v1.
+   Tmux target-sft-v15-qualification runs CoT fresh1-6/fullrestore6/7-8,then direct1-3
+   onphysical12/13. Target-only width640/target128;one ordinary qualified engine.
+   Do not edit source or duplicate launchers. Actual full-state and both-mask audit
+   required before any320update science. Deadline10:30UTC,finite stages,no auto-retry.
+   Primary>=3pp CoT-own versusdirect-SFT-raw with positive paired lower ineach seed,
+   plus empty/B0 controls. No new training-benefit or emergence claim follows.
+   Existing V10 gates remainfailed;its frozen raw/prior models are references.
+   Forward-only B0 qualification is separately closed,not a training qualification:
+   validation/real_span_XLA_B0_v14_20261019.json. Tokenpartition separatelyclosed:
+   validation/real_trace_v10_token_partition_20261019.json.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

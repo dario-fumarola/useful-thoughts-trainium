@@ -1,0 +1,103 @@
+{
+  "status": "FROZEN_PROSPECTIVE_DESIGN_DATA_AND_CPU_CHECKS_SCIENCE_UNRELEASED",
+  "utc": "2026-10-19T07:32:05.891159+00:00",
+  "experiment": "real-target-sft-v15",
+  "source_commit": "829d9a2",
+  "design_file": "docs/REAL_TARGET_SFT_V15.md",
+  "design_sha256": "803a913782fb33a8eaae21f450f06477897e1cfbab2c727af7f003071a1a1695",
+  "source_branch": "real-target-sft-v15",
+  "training": {
+    "documents": 5120,
+    "passes": 2,
+    "updates": 320,
+    "global_batch": 32,
+    "seeds": [
+      2026101913,
+      2026101914
+    ],
+    "arms": [
+      "target_direct",
+      "target_cot"
+    ],
+    "base": "fresh released Qwen3-1.7B-Base",
+    "shape": {
+      "world_size": 8,
+      "micro_batch": 4,
+      "width": 640,
+      "target_slots": 128,
+      "head_chunk": 32
+    },
+    "loss": "One per-example target-token CE mean;prefix/opening unscored",
+    "lr": 1e-05,
+    "schedule": "constant",
+    "terminal_checkpoint_primary": true,
+    "full_saves": [
+      160,
+      320
+    ],
+    "active_label_tokens_per_seed": {
+      "target_direct": 163840,
+      "target_cot": 512900
+    }
+  },
+  "evaluation": {
+    "primary_documents": 384,
+    "held_manifest_sha256": "7c57b62f3cf295338183569dd9b6f02538c6f7e3f07f4eac862e12747182d1cd",
+    "held_file_sha256": "8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c",
+    "models": [
+      "B0",
+      "target_direct/target_cot both seeds",
+      "frozen v10 raw/prior both seeds"
+    ],
+    "modes": [
+      "raw",
+      "empty",
+      "own",
+      "other",
+      "oracle"
+    ],
+    "note_cap": 128,
+    "continuation_cap": 32,
+    "parser": "initial-scalar-v2 unchanged",
+    "primary_contrast": "target_cot.own - target_direct.raw complete-leading-scalar exact rational accuracy",
+    "gate": ">=3pp and paired95% lower>0 in EACH seed;also own-empty and own-B0raw lower>0 in each seed;zero execution errors",
+    "bootstrap": {
+      "draws": 20000,
+      "seed": 2026101917,
+      "unit": "document"
+    },
+    "secondary": [
+      "Full16 likelihood and predeclared numeral/curator-boundary/tail partition",
+      "Raw ordinary FineMath DEV256 token NLL;report all regressions",
+      "Each recipe versus the fixed v10 raw/prior paths;actual training/inference costs"
+    ]
+  },
+  "cpu_checks": 1647,
+  "qualification": "Prepared actual world8/width640/target128 save-restart and both-mask qualification;science awaits full actual audit",
+  "limits": [
+    "New prospective development from unused source TRAIN documents,not official TEST.",
+    "Disjoint from actual TRAIN5120 and both previous arithmetic panels by document and ordered exact-value AST.",
+    "Operator patterns and equal answers may recur;no algebraic-equivalence or pretraining-novelty claim.",
+    "No model output,likelihood,answer correctness or difficulty score selects these384.",
+    "Source curator verifies observed RHS;supervised traces are rederived from the prefix alone.",
+    "Earlier investigations may have inventoried source documents;no claim of universally unseen source text.",
+    "CoT gets full-trace targets on both passes;v10 used one augmented/one plain occurrence. This does not isolate prefix-mask effects.",
+    "Different active target totals and inference actions;do not claim equal FLOPs or inference cost.",
+    "Passing establishes a supervised real-arithmetic reference,not thought-augmented pretraining benefit,spontaneous emergence or broad reasoning.",
+    "No official TEST,8B,broad RL or split rescue release."
+  ],
+  "files": {
+    "validation/real_target_sft_v15_design_20261019/held-identities.jsonl": {
+      "bytes": 93191,
+      "sha256": "f2768fd6d70b7d7ecb59f107e7f4b259cdf1aee493dbf248a482600ca43245ce"
+    },
+    "validation/real_target_sft_v15_design_20261019/held-data-manifest.json": {
+      "bytes": 2330,
+      "sha256": "7c57b62f3cf295338183569dd9b6f02538c6f7e3f07f4eac862e12747182d1cd"
+    },
+    "validation/real_target_sft_v15_design_20261019/CPU-checks.txt": {
+      "bytes": 1872,
+      "sha256": "04d6a64e0d846e512eb063ef802bf3c860e749a79c1f62ee4ef0d100fddee3f0"
+    }
+  }
+}

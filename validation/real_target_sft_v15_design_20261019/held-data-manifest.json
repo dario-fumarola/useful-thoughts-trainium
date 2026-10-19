@@ -1,0 +1,53 @@
+{
+  "status": "FROZEN_NEW_DOCUMENT_AND_EXACT_AST_DISJOINT_DEVELOPMENT_NO_MODEL_RUN",
+  "schema": "real-target-sft-v15-held-v1",
+  "utc": "2026-10-19T07:30:34.211186+00:00",
+  "source_script_sha256": "f0cff4d1b72a3b5f9b49e8b6cdb43fc8d4d99b995d71765c23698696a8178009",
+  "source_manifest_sha256": "6011f80e7da62ef51df47f2ed8f94f28c4c69211503f962ce25a71227dfaef39",
+  "inventory_sha256": "3b765f0cc0bbeb4931ec449fbff6ab25295a93ad79fc66504bf1e9f218e4969b",
+  "training_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+  "previous_panels": {
+    "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9/DEV.jsonl": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79",
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v2/DEV_novel_expression256.jsonl": "41d4aa6e6d217cdd57296953c669a95005ae1eb17b29ba5dc8565627b0c78fba"
+  },
+  "unused_train_documents": 687,
+  "eligible_novel_documents": 505,
+  "unique_novel_expressions": 499,
+  "selected": 384,
+  "selection_salt": "real-target-sft-v15-fresh-real-boundaries-384-v1",
+  "per_training_pass": {
+    "target_direct": {
+      "documents": 5120,
+      "active_labels": 81920
+    },
+    "target_cot": {
+      "documents": 5120,
+      "active_labels": 256450
+    }
+  },
+  "trace_operations": {
+    "2": 205,
+    "3": 120,
+    "4": 29,
+    "6": 5,
+    "5": 25
+  },
+  "files": {
+    "DEV_fresh384.jsonl": {
+      "bytes": 1835375,
+      "sha256": "8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c"
+    },
+    "DEV_fresh384-questions.jsonl": {
+      "bytes": 773203,
+      "sha256": "9d3e9648dc4005744c6000cec07167ef9ead3b171c3a94552c84e185a61990b4"
+    }
+  },
+  "limits": [
+    "New prospective development from unused source TRAIN documents,not official TEST.",
+    "Disjoint from actual TRAIN5120 and both previous arithmetic panels by document and ordered exact-value AST.",
+    "Operator patterns and equal answers may recur;no algebraic-equivalence or pretraining-novelty claim.",
+    "No model output,likelihood,answer correctness or difficulty score selects these384.",
+    "Source curator verifies observed RHS;supervised traces are rederived from the prefix alone.",
+    "Earlier investigations may have inventoried source documents;no claim of universally unseen source text."
+  ]
+}
