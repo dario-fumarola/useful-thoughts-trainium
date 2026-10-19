@@ -6,21 +6,79 @@ and computation diagnostics run on AWS Trainium. Official TEST remains unused.
 The [current proof ladder](docs/RESEARCH_ROADMAP.md) separates reader use,
 prefix-only computation, actual student benefit, cost, and return to real text.
 
-The completed mainline tests **single-model real-document training** on 5,120
-FineMath documents, starting from the same base in three arms and two seeds.
-The result is mixed: **generated calculations improve complete-number accuracy;
-neither predeclared 16-token likelihood gate passes.** Training benefit without
-extra thinking remains unestablished.
+The latest supervised reference shows a clear arithmetic benefit from generated
+computation: **342/384 and 335/384 correct**, versus **275/384 and 285/384** for
+matched direct-answer SFT. Both declared per-seed gates pass. This comes with
+extra inference tokens and worse ordinary-text prediction; it does not establish
+thought-augmented pretraining benefit.
 
-A [bounded follow-up](validation/real_target_sft_v15_design_20261019.json) now
-compares direct-answer SFT with full-trace CoT SFT on the same training documents
-and a fresh 384-document panel. Its [hardware recovery qualification](validation/real_target_sft_v15_hardware_20261019.json)
-passes. All four fixed runs have completed 320 updates, and their
-[training traces and terminal-state audit](validation/real_target_sft_v15_training_20261019.json)
-are saved. The nine-model evaluation is active; capability results are pending.
-This closes a supervised-baseline gap. The completed findings below remain unchanged.
+## Latest completed study: direct-answer versus full-trace SFT
 
-## Latest completed study: single-model real-document computation
+Four fresh Qwen3-1.7B-Base models trained on the same 5,120 real FineMath documents,
+with two seeds, 320 updates and two passes each. Terminal checkpoints are primary.
+The fresh 384-document development panel excludes training documents and exact
+ordered arithmetic ASTs, as well as both earlier arithmetic panels. Operation
+patterns can recur; official TEST remains unused.
+
+| Model / inference path | Seed1913 correct | Seed1914 correct |
+|---|---:|---:|
+| Unchanged B0, raw (shared) |257|257|
+| Direct-answer SFT, raw |275|285|
+| Full-trace CoT SFT, raw |279|264|
+| Full-trace CoT SFT, empty format |261|263|
+| **Full-trace CoT SFT, generated calculation** |**342**|**335**|
+| Full-trace CoT SFT, unrelated calculation |120|106|
+| Full-trace CoT SFT, supplied exact trace |355|346|
+| Earlier prior-calculation CPT, generated calculation |322|316|
+
+Every entry retains all 384 attempts. Generated CoT beats direct-answer SFT by
+**17.4 percentage points [13.3,21.6]** and **13.0 [8.9,17.2]**. Its matching
+empty-format gains are 21.1 and 18.8 points, with positive intervals; both B0
+contrasts also have positive intervals. The predeclared requirement of at least
+3pp plus positive paired lower bounds in both seeds therefore passes. There are
+zero execution errors across all 17,280 fixed scalar attempts.
+
+CoT-own has 24/26 unsupported outputs; direct-SFT raw has 31/26 unsupported and
+2/1 format errors. All remain in denominators. A
+[descriptive transition audit](validation/real_target_sft_v15_complete_20261019/descriptive-scalar-error-transitions.json)
+finds that 59/45 of the net 67/50 extra correct answers occur where both outputs
+already pass the parser. The gain is therefore mostly numerical correction.
+This accounting does not replace the primary endpoint.
+
+![Supervised real-document arithmetic reference](validation/real_target_sft_v15_complete_20261019/all-models-scalar-accuracy.svg)
+
+The cost matters. CoT notes average 34.1/34.4 sampled actions, with no empty notes
+or note caps; all stop at the learned `Answer` marker. Answers then use up to
+32 actions, versus 32 for raw prediction. Most answer continuations reach that
+cap: the endpoint checks a completed **leading scalar**, not a complete QA reply.
+The reader receives the same two-token closing boundary in own and empty modes.
+Training matches documents, updates and packed width, but CoT receives 512,900
+active target tokens per seed versus 163,840 for direct SFT. This is not equal
+supervision, equal FLOPs, controlled serving latency or an optimized base-CoT contest.
+
+Full 16-token likelihood improves over direct SFT by +0.603 [+0.257,+0.948]
+and +0.446 [+0.096,+0.787] nats/span; numeral-token gains are positive in both
+seeds. However, it remains **1.98/2.12 nats/span below unchanged B0**. Ordinary-text
+NLL rises by **0.128/0.147 nats/token** versus B0; direct SFT also regresses by
+0.149/0.148. The result establishes a useful supervised computation reference,
+with substantial specialization costs. Preserving ordinary prediction is the
+next question; broad reasoning, emergence and pretraining benefit remain open.
+
+The [complete report](validation/real_target_sft_v15_complete_20261019.json),
+[all-mode failures and costs](validation/real_target_sft_v15_complete_20261019/all-modes-accuracy-failures-and-costs.csv),
+[paired contrasts](validation/real_target_sft_v15_complete_20261019/all-paired-contrasts.csv),
+[disclosed examples](validation/real_target_sft_v15_complete_20261019/example-selection.json),
+and [independent check](validation/real_target_sft_v15_complete_20261019/independent-readout-check.json)
+preserve all 17,280 answers, 3,456 notes and 19,584 likelihood rows. Actual CPU/XLA
+reference arrays, figures and analysis sources are saved. Intervals are 20,000
+paired document bootstraps conditional on each checkpoint; seeds are never pooled.
+All four terminal models and the latest full optimizer state are protected;
+all original checkpoints remain on local SSD. The
+[training traces and audit](validation/real_target_sft_v15_training_20261019.json)
+and [prospective design](validation/real_target_sft_v15_design_20261019.json)
+retain the exact experiment identity.
+
+## Earlier study: single-model real-document computation and likelihood
 
 These are the terminal step-320 checkpoints, not selected intermediate models. The
 primary panel contains 256 documents with ordered, exact-value arithmetic ASTs
@@ -81,7 +139,7 @@ path uses 32 actions. Supplied traces include the root result; generated traces
 are prefix-only. This is supervised computation on curated arithmetic boundaries,
 not general QA, spontaneous emergence, equal inference compute, or a demonstrated
 advantage over answer-focused CoT SFT. Ordinary continuation training is the
-source-matched control; a competitive answer-focused SFT comparison remains open.
+source-matched control; the stronger answer-focused SFT comparison is reported above.
 
 The [primary report](validation/real_trace_cpt_v10_complete_20261019.json),
 [scalar report](validation/real_trace_cpt_v10_scalar_secondary_20261019.json),

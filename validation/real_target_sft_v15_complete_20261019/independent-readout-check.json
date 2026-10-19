@@ -1,0 +1,10 @@
+{
+  "status": "PASS_ALL_PUBLIC_NATIVE_TEXT_VALUES_AST_GOLD_COUNTS_CIS_AND_LITERAL_GATES",
+  "utc": "2026-10-19T09:29:19.847254+00:00",
+  "scalar_rows": 17280,
+  "note_rows": 3456,
+  "likelihood_rows": 19584,
+  "report_sha256": "f8bc04e2c759cbad2a9438754aee828d5f99c6b4747dc41198fa1e4d3a43e033",
+  "checker_sha256": "8f0255a1554dc1f9524e1e75fbbce97dedcf76d47942dcbd1472fedca9f24214",
+  "limits": "Native decode/stop and exact leading literal/value/AST checks plus independent vectorized resampling. Unsupported syntax statuses remain the frozen parser judgment;no model forwards rerun."
+}

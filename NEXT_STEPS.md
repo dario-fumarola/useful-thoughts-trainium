@@ -1,31 +1,28 @@
 # Current queue
 
-1. Both fixed real-document readouts are complete and independently checked.
-   Published primary and prospective scalar secondary together, with all outputs,
-   failures, controls, figures and disclosed examples. No parser or gate change.
-   Primary report:validation/real_trace_cpt_v10_complete_20261019.json.
-   Scalar report:validation/real_trace_cpt_v10_scalar_secondary_20261019.json.
-   Both likelihood gates FAIL. Scalar prior-own beats raw CPT by9.0/6.6pp,
-   with positive paired intervals;this does not establish training-only benefit.
-   All six terminal models/latest full320 are protected;original states retained.
-   Controls:local/diagnostics/real-trace-cpt-v10-study-v1 and
-   local/diagnostics/real-trace-v10-scalar-secondary-study-v1. Producers are closed.
+1. Publish the completed V15 supervised reference and preserve its costs.
+   All nine models and both endpoints are complete; independent checks pass.
+   CoT own342/335 of384 beats direct-SFT raw275/285 and same-CoT empty261/263.
+   Paired gains +17.4pp[13.3,21.6] / +13.0pp[8.9,17.2]; declared gates pass both seeds.
+   Full16 improves over direct SFT but remains below B0. Ordinary NLL regresses
+   0.128/0.147 nats/token; this is not a broad prediction or pretraining improvement.
+   Report: validation/real_target_sft_v15_complete_20261019.json; raw payloads,
+   checked figures, 15 disclosed examples, all error categories and costs saved.
+   Independent readout SHA f8bc04e2c759cbad2a9438754aee828d5f99c6b4747dc41198fa1e4d3a43e033.
+   Terminal states and all original outputs/readouts are readback protected.
+   Source829d9a2/evaluation41a5bfd remain frozen; producers are physically closed.
 
-2. Complete V15 nine-model evaluation and independently checked readout.
-   Allfour target-SFT runs completed320updates;1,280ordered updates/eightfullstates
-   independently audited. Allterminalmodels/latestfull320 EBSprotected;originalsNVMe.
-   Training report:validation/real_target_sft_v15_training_20261019.json andfour320-rowtraces.
-   Source829d9a2/evaluation41a5bfd stayfrozen;noextensions,selection orpartialoutcomes.
-   Allnine tmux target-eval-v15-slot0–8 released;mastercontrol:
-   local/diagnostics/real-target-eval-v15-study-v1. Allfirst5referenceLLpanelscomplete;
-   new4models continue native/cache checks,notes,scalar andfixedreference full16scoring.
-   Monitor:python3 local/analysis/live_real_target_v15_health_20261019.py.
-   Finite finalwatcher target-v15-final-readout runs analyzer,independentcheck,
-   figures/CSV anddisclosedexamples onlyafterallnine generation/scoreclosures.
-   Fresh384 excludes actualTRAINandbotholdevalpanels bydocument/exactAST.
-   Primary>=3pp CoT-own−directSFT-raw andpositivepairedlower ineachseed,plus empty/B0.
-   Include ordinary256NLL,full16components,allfailures andtraining/inferencecosts.
-   Interpret/publish thecompletecomparison before choosing anynewlearningintervention.
+2. Prepare one bounded source-balanced objective after publishing the result.
+   Question: can ordinary prediction be preserved while retaining useful generated
+   computation? Both target-only arms regress ordinary NLL, so retain a real
+   source-text loss and give target computation an explicitly normalized weight.
+   Compare source+direct with source+CoT from fresh B0, matched data/order/updates.
+   Inspect existing driver packing/normalization first; choose the simplest correct
+   ordinary-causal schedule. New identity, prospective endpoints and actual
+   mask/update/resume/memory qualification are required before any learning release.
+   Keep existing384 as development; seek a new source-TRAIN-derived confirmation
+   cohort without opening official TEST. Account for prior development exposure.
+   No broad RL, model-size jump or expanded split rescue follows from this result.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

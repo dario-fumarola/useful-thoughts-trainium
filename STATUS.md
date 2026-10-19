@@ -1,19 +1,19 @@
-# Status — 2026-10-19 08:50 UTC
+# Status — 2026-10-19 09:33 UTC
 
-## Active: stronger single-model supervised reference
-Question:does full-trace CoT SFT beat direct-answer SFT on fresh real-document computations?
-Experiment:real-target-sft-v15;four freshB0 models/two seeds,TRAIN5120,320updates/two passes each.
-All four terminal runs complete:1,280 ordered updates,eight full states,32 native checks audited.
-Terminal models and latest full320 protected with EBS readback;all original160/320 states retained.
-Training report:validation/real_target_sft_v15_training_20261019.json;all four320-row traces public.
-Frozen fresh384 documents/exact ordered ASTs excludeTRAINandbothold arithmetic panels.
-Primary:CoT own−direct raw>=3pp andpaired95% lower>0 inBOTHseeds,plus empty/B0controls;all failures retained.
-All nine fixed evaluations released:tmux target-eval-v15-slot0 through8;no partial capability inspection.
-Control:local/diagnostics/real-target-eval-v15-study-v1;native full16 queue onlogical48–51.
-Five reference models have finished both likelihood panels;all actual fixed4-per-mode CPUparity checks pass.
-Training829d9a2/evaluation41a5bfd stay frozen;no extensions,retries,model selection or officialTEST.
-Final readout watcher:tmux target-v15-final-readout;requires allnine scalar/likelihood closures.
-Next:monitor mechanical progress,then complete readout,independent check,figures/examples and interpretation.
+## Closed: stronger supervised real-document reference
+Question: does full-trace CoT SFT beat direct-answer SFT on fresh real computations?
+Experiment: real-target-sft-v15; four fresh B0 models, two seeds, TRAIN5120, terminal320.
+All nine fixed models close: 17,280 answers / 3,456 notes / 19,584 likelihood rows retained.
+Fresh384 primary: CoT own342/335 versus direct raw275/285, same-CoT empty261/263.
+Gains +17.4pp[13.3,21.6] / +13.0pp[8.9,17.2]; declared >=3pp plus controls PASS both seeds.
+CoT own unsupported24/26; direct raw unsupported31/26 plus format2/1; zero execution errors.
+CoT note actions34.1/34.4, no empty/capped notes; answer caps retained, leading-scalar endpoint only.
+Full16 versus direct +0.603/+0.446 nats, but versus B0 −1.979/−2.119; no broad prediction gain.
+Ordinary NLL regresses +0.128/+0.147 nats/token versus B0; direct also regresses +0.149/+0.148.
+Independent native decode, exact values, counts, all CIs and literal gates PASS; figures checked.
+Report: validation/real_target_sft_v15_complete_20261019.json; all originals/readout EBS protected.
+Decision: supervised inference reference established; preserve source quality before autonomous refinement.
+Next: publish complete result, then prepare one bounded source-balanced objective; no RL/8B release.
 
 ## Closed: document-reasoning split feasibility (CPU only)
 Question: can held supporting evidence be absent from all training-visible paragraphs?

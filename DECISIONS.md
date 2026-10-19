@@ -1297,3 +1297,12 @@ Protectallfour terminalmodels/latestfull320;retainoriginal160/320. Allnine fixed
 models now released forfresh384 scalar/full16 andordinary256 evaluation. No
 partialcapabilityreview,automaticextension,selection orretry. Publishalltraining
 traces andmeasuredcosts now;finalreadout waitsallnine controllers/scorejobs.
+
+2026-10-19 09:33UTC — V15 complete and independently checked: CoT342/335 of384
+versus direct275/285, same-CoTempty261/263. Declared >=3pp/positivepaired
+interval/control gate passes both seeds; zero execution errors, all failures kept.
+Most net corrections are between parser-valid numeric outputs (59/45 of67/50).
+Preserve the cost: ordinary NLL +0.128/+0.147 nats/token versusB0, full16 belowB0.
+This is a useful supervised arithmetic reference, not broad pretraining benefit.
+Next bounded question is source-quality retention with separately normalized
+source/task objectives. No broadRL,8B or expanded split rescue is released.

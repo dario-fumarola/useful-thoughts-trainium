@@ -1,0 +1,401 @@
+{
+  "status": "POST_HOC_FIXED_SCALAR_ERROR_TRANSITIONS_NO_NEW_GATE",
+  "source_report_sha256": "f8bc04e2c759cbad2a9438754aee828d5f99c6b4747dc41198fa1e4d3a43e033",
+  "source_sha256": "0af845e6af487ce81828bee44d606376a5912e8c501ef6fa586b35afe506f7e3",
+  "seeds": {
+    "2026101913": {
+      "cot_own_vs_direct_raw": {
+        "reference_model": "target_direct-seed2026101913-step320",
+        "reference_mode": "raw",
+        "treatment_model": "target_cot-seed2026101913-step320",
+        "treatment_mode": "own",
+        "documents": 384,
+        "transitions": [
+          {
+            "reference": "correct",
+            "treatment": "correct",
+            "documents": 268
+          },
+          {
+            "reference": "correct",
+            "treatment": "unsupported",
+            "documents": 2
+          },
+          {
+            "reference": "correct",
+            "treatment": "valid_wrong",
+            "documents": 5
+          },
+          {
+            "reference": "format_error",
+            "treatment": "correct",
+            "documents": 2
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "correct",
+            "documents": 8
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "unsupported",
+            "documents": 20
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "valid_wrong",
+            "documents": 3
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "correct",
+            "documents": 64
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "unsupported",
+            "documents": 2
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "valid_wrong",
+            "documents": 10
+          }
+        ],
+        "both_parser_valid_documents": 347,
+        "net_correct_gain_on_both_valid": 59,
+        "remaining_net_correct_gain": 8,
+        "total_net_correct_gain": 67,
+        "limits": "Fixed 384-item denominator is unchanged. Valid-pair accounting describes transitions;it is not a replacement conditional-accuracy endpoint."
+      },
+      "cot_own_vs_cot_empty": {
+        "reference_model": "target_cot-seed2026101913-step320",
+        "reference_mode": "empty",
+        "treatment_model": "target_cot-seed2026101913-step320",
+        "treatment_mode": "own",
+        "documents": 384,
+        "transitions": [
+          {
+            "reference": "correct",
+            "treatment": "correct",
+            "documents": 258
+          },
+          {
+            "reference": "correct",
+            "treatment": "unsupported",
+            "documents": 1
+          },
+          {
+            "reference": "correct",
+            "treatment": "valid_wrong",
+            "documents": 2
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "correct",
+            "documents": 29
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "unsupported",
+            "documents": 23
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "valid_wrong",
+            "documents": 4
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "correct",
+            "documents": 55
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "valid_wrong",
+            "documents": 12
+          }
+        ],
+        "both_parser_valid_documents": 327,
+        "net_correct_gain_on_both_valid": 53,
+        "remaining_net_correct_gain": 28,
+        "total_net_correct_gain": 81,
+        "limits": "Fixed 384-item denominator is unchanged. Valid-pair accounting describes transitions;it is not a replacement conditional-accuracy endpoint."
+      },
+      "cot_own_vs_B0raw": {
+        "reference_model": "B0",
+        "reference_mode": "raw",
+        "treatment_model": "target_cot-seed2026101913-step320",
+        "treatment_mode": "own",
+        "documents": 384,
+        "transitions": [
+          {
+            "reference": "correct",
+            "treatment": "correct",
+            "documents": 253
+          },
+          {
+            "reference": "correct",
+            "treatment": "unsupported",
+            "documents": 3
+          },
+          {
+            "reference": "correct",
+            "treatment": "valid_wrong",
+            "documents": 1
+          },
+          {
+            "reference": "format_error",
+            "treatment": "correct",
+            "documents": 2
+          },
+          {
+            "reference": "incomplete",
+            "treatment": "correct",
+            "documents": 1
+          },
+          {
+            "reference": "incomplete",
+            "treatment": "valid_wrong",
+            "documents": 1
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "correct",
+            "documents": 44
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "unsupported",
+            "documents": 20
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "valid_wrong",
+            "documents": 4
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "correct",
+            "documents": 42
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "unsupported",
+            "documents": 1
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "valid_wrong",
+            "documents": 12
+          }
+        ],
+        "both_parser_valid_documents": 308,
+        "net_correct_gain_on_both_valid": 41,
+        "remaining_net_correct_gain": 44,
+        "total_net_correct_gain": 85,
+        "limits": "Fixed 384-item denominator is unchanged. Valid-pair accounting describes transitions;it is not a replacement conditional-accuracy endpoint."
+      }
+    },
+    "2026101914": {
+      "cot_own_vs_direct_raw": {
+        "reference_model": "target_direct-seed2026101914-step320",
+        "reference_mode": "raw",
+        "treatment_model": "target_cot-seed2026101914-step320",
+        "treatment_mode": "own",
+        "documents": 384,
+        "transitions": [
+          {
+            "reference": "correct",
+            "treatment": "correct",
+            "documents": 271
+          },
+          {
+            "reference": "correct",
+            "treatment": "unsupported",
+            "documents": 4
+          },
+          {
+            "reference": "correct",
+            "treatment": "valid_wrong",
+            "documents": 10
+          },
+          {
+            "reference": "format_error",
+            "treatment": "correct",
+            "documents": 1
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "correct",
+            "documents": 8
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "unsupported",
+            "documents": 17
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "valid_wrong",
+            "documents": 1
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "correct",
+            "documents": 55
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "unsupported",
+            "documents": 5
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "valid_wrong",
+            "documents": 12
+          }
+        ],
+        "both_parser_valid_documents": 348,
+        "net_correct_gain_on_both_valid": 45,
+        "remaining_net_correct_gain": 5,
+        "total_net_correct_gain": 50,
+        "limits": "Fixed 384-item denominator is unchanged. Valid-pair accounting describes transitions;it is not a replacement conditional-accuracy endpoint."
+      },
+      "cot_own_vs_cot_empty": {
+        "reference_model": "target_cot-seed2026101914-step320",
+        "reference_mode": "empty",
+        "treatment_model": "target_cot-seed2026101914-step320",
+        "treatment_mode": "own",
+        "documents": 384,
+        "transitions": [
+          {
+            "reference": "correct",
+            "treatment": "correct",
+            "documents": 255
+          },
+          {
+            "reference": "correct",
+            "treatment": "unsupported",
+            "documents": 4
+          },
+          {
+            "reference": "correct",
+            "treatment": "valid_wrong",
+            "documents": 4
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "correct",
+            "documents": 27
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "unsupported",
+            "documents": 17
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "valid_wrong",
+            "documents": 6
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "correct",
+            "documents": 53
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "unsupported",
+            "documents": 5
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "valid_wrong",
+            "documents": 13
+          }
+        ],
+        "both_parser_valid_documents": 325,
+        "net_correct_gain_on_both_valid": 49,
+        "remaining_net_correct_gain": 23,
+        "total_net_correct_gain": 72,
+        "limits": "Fixed 384-item denominator is unchanged. Valid-pair accounting describes transitions;it is not a replacement conditional-accuracy endpoint."
+      },
+      "cot_own_vs_B0raw": {
+        "reference_model": "B0",
+        "reference_mode": "raw",
+        "treatment_model": "target_cot-seed2026101914-step320",
+        "treatment_mode": "own",
+        "documents": 384,
+        "transitions": [
+          {
+            "reference": "correct",
+            "treatment": "correct",
+            "documents": 250
+          },
+          {
+            "reference": "correct",
+            "treatment": "unsupported",
+            "documents": 3
+          },
+          {
+            "reference": "correct",
+            "treatment": "valid_wrong",
+            "documents": 4
+          },
+          {
+            "reference": "format_error",
+            "treatment": "correct",
+            "documents": 2
+          },
+          {
+            "reference": "incomplete",
+            "treatment": "correct",
+            "documents": 1
+          },
+          {
+            "reference": "incomplete",
+            "treatment": "valid_wrong",
+            "documents": 1
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "correct",
+            "documents": 44
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "unsupported",
+            "documents": 20
+          },
+          {
+            "reference": "unsupported",
+            "treatment": "valid_wrong",
+            "documents": 4
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "correct",
+            "documents": 38
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "unsupported",
+            "documents": 3
+          },
+          {
+            "reference": "valid_wrong",
+            "treatment": "valid_wrong",
+            "documents": 14
+          }
+        ],
+        "both_parser_valid_documents": 306,
+        "net_correct_gain_on_both_valid": 34,
+        "remaining_net_correct_gain": 44,
+        "total_net_correct_gain": 78,
+        "limits": "Fixed 384-item denominator is unchanged. Valid-pair accounting describes transitions;it is not a replacement conditional-accuracy endpoint."
+      }
+    }
+  },
+  "limits": "All inputs are original independently checked attempts. No new forwards, filtering, parser adjustment or endpoint change."
+}

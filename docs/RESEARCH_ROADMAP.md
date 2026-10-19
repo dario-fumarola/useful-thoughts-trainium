@@ -15,7 +15,7 @@ training and inference effects separately on verified real mathematical document
 | 2. The writer can supply it | Prefix-only computation is correct, relevant, complete and naturally stopped. | The bounded varied-depth repair reaches409/512 correct, complete, naturally stopped composition states versus91/512 for its fixed-depth control. At unseen depth6 only24/256 states qualify; length extrapolation remains weak. |
 | 3. The composed channel is useful | Student notes beat direct, empty and unrelated notes on the same reader. | The repaired writer gives the same frozen reader306/512 composition answers versus124/512 with the fixed writer,empty7,and unrelated1. The declared repair gate passes. Longer-depth answers remain10/256. |
 | 4. The system earns its cost | Compare strong direct, compact and full CoT with all models, updates and tokens accounted for. | No matched split advantage in the completed two-seed study. The new one-seed curriculum diagnostic exceeds frozen fullCoT on composition, but curricula/target supervision differ and it loses at familiar depth. Keep single-model methods as the mainline. |
-| 5. The mechanism survives real data | Source-matched real-document endpoints, with genuine prefix-derived or explicitly posterior labels. | Single-model raw/prior/post study is running: all three first seeds completed320updates; second seeds are active. AST-disjoint256 and ordinary256 panels are frozen. Held predictive gains remain pending. |
+| 5. The mechanism survives real data | Source-matched real-document endpoints, with genuine prefix-derived or explicitly posterior labels. | The completed two-seed raw/prior/post study fails both declared full16 likelihood gates. Its prospective scalar secondary improves by9.0/6.6pp over raw CPT with positive paired intervals. Training-only improvement remains unestablished. The completed fresh384 reference gives CoT342/335 versus direct-SFT275/285 and empty261/263; both declared gates pass. Ordinary NLL regresses0.128/0.147 nats/token versus B0. |
 | 6. Self-improvement adds value | Improve beyond the supervised reference without an external teacher at deployment. | Held. First complete the real-document single-model reference; distinguish training-scaffold value from extra-inference value. |
 
 The [bounded repair](../validation/variable_depth_writer_v11_complete_20261019.json)
@@ -37,8 +37,23 @@ computation before prediction; a post-document explanatory arm tests training
 value. Both need a strong ordinary continuation control, explicit label/update
 costs and source-matched held endpoints. Exact posterior-note recovery is not a
 universal requirement for latent training; see [paper notes](REFERENCE_NOTES.md).
-The concrete [released study](../validation/real_trace_cpt_v10_science_launch_20261019.json)
-and [live status](../STATUS.md) define the budget; this roadmap adds no new launches.
+The completed [likelihood study](../validation/real_trace_cpt_v10_complete_20261019.json)
+and [prospective scalar secondary](../validation/real_trace_cpt_v10_scalar_secondary_20261019.json)
+retain their separate endpoints. A stronger
+[direct-SFT versus full-CoT-SFT reference](../validation/real_target_sft_v15_design_20261019.json)
+now completes all nine models on fresh384 documents. Its
+[declared gate passes in both seeds](../validation/real_target_sft_v15_complete_20261019.json),
+with a material ordinary-text regression. This establishes a supervised inference
+mechanism, not thought-augmented pretraining benefit. Preserving source prediction
+while retaining computation is the next bounded question.
+The [live status](../STATUS.md) defines the next action; this roadmap adds no launches.
+
+Broader document reasoning remains a data-only preparation. A
+[TRAIN-only split audit](../validation/document_evidence_v16_directed_split_20261019.json)
+shows that held supporting evidence can be excluded from every training-visible
+paragraph while retaining a candidate learning set. It supplies neither model
+results nor longer-context hardware readiness. Finish the current complete
+comparison before releasing that separate question.
 
 **Capacity is an intervention, not an assumed remedy.** A7–8B writer may produce
 more reliable work, while a stronger reader may already solve more without help.
@@ -61,7 +76,7 @@ Published work already shows benefits from thought-related objectives in mature 
 
 Establish a correctly initialized, synchronized, end-to-end procedure on a mature base. Publish or preserve the exact data, prompts, update, labels, sampled actions, masks and evaluation. Reproduce at least one capability outcome over independent training seeds. A negative local likelihood curve does not cancel a separately measured downstream gain.
 
-This weekend addresses this step. It may finish as a feasibility pilot if the actual exposure is small. Infrastructure correctness is necessary, not itself proof of scientific efficacy.
+This stage addresses the reference condition. A small exposure remains a feasibility study. Infrastructure correctness is necessary, not itself proof of scientific efficacy.
 
 ## Step 2: distinguish the source of the gain
 

@@ -1,37 +1,49 @@
-# Handoff — 2026-10-19 08:50 UTC
+# Handoff — 2026-10-19 09:33 UTC
 
-## Exact active task
+## Exact next task
 
-Allfour V15science training runs complete320updates. Independent fullstateaudit
-passes1,280ordered updates/eightfullstates/32nativechecks. Terminalpipeline closed
-08:47UTC;allfourterminalweights/latestfull320 EBSreadbackprotected,originals retained.
-Public trainingreport:validation/real_target_sft_v15_training_20261019.json withfour
-complete320-rowtraces,models/optimizer receipts andmeasuredconcurrenttrainingcosts.
-Training829d9a2 andeval41a5bfd remainfrozen. No capability outcomes inspected.
+Publish the completed V15 result currently prepared onmain, then implement one
+bounded source-balanced reference. Current main remote64c0926; local results/docs
+are pending reviewed commit. No training or model evaluation remains active.
 
-Allnine evaluation jobs released. Fivebaseline models onphysical8,9,10,11,14;
-fournewtargetmodels onphysical0–3. Tmux target-eval-v15-slot0 through8.
-Mastercontrol:local/diagnostics/real-target-eval-v15-study-v1.
-Mechanicalhealth:python3 local/analysis/live_real_target_v15_health_20261019.py.
-All5baseline models completed both nativeLLpanels withactualfirst4CPUpermodeparity.
-Four-slot scorequeue target-v15-score-queue waitsfornewnotes;logical48–51 onphysical12.
-Per-model registries/paths/frozenbindings are inmasterplan;do not prepare/releaseagain.
+V15 allnine fixedmodels complete:17,280scalar attempts,3,456notes,19,584LLrows.
+PrimaryCoT342/335 versusdirect275/285 andsame-CoTempty261/263 of384. GatePASSboth.
+Accuracy gain17.4pp[13.3,21.6]/13.0pp[8.9,17.2]. Allfailures retained;zeroexecerrors.
+Both-parse-valid numeric netcorrections59/45 oftotal67/50,posthocdescriptiveonly.
+CoTnotes34.1/34.4actions,noempty/caps,allAnswerstops;answercontinuations mostlycap32.
+Scalar endpoint iscompletedleadingnumber,notwholeQAreply. Target-onlySFT
+ordinaryNLLregresses0.128/0.147nats/tokenversusB0;direct0.149/0.148. Full16CoTown
+versusdirect+.603/+.446nat,butversusB0−1.979/−2.119. No broadpretraininggain.
 
-Final once-only watcher target-v15-final-readout islive;deadline21:00UTC.
-It waitsallnine fixedscalar/controllers ANDnativeLLclosure beforeopeningoutcomes.
-Then scripts inlocal/analysis run:analyze_real_target_v15_20261019.py,
-check_real_target_readout_v15_20261019.py,render_real_target_v15_20261019.py,
-save_real_target_examples_v15_20261019.py. Sources ASTparse;realdatareadout pending.
-Logs final-{analyze|independent|render|examples}.log andexitreceipts inmastercontrol.
-Anyfailure:preserverawattempt,diagnosesmallrepair,noautomaticretry/modelselection.
-Do not inspect partialcorrectness/LL;finishandinterpretallninebeforeanotherlearningrun.
+Mainreport:validation/real_target_sft_v15_complete_20261019.json
+SHAf8bc04e2c759cbad2a9438754aee828d5f99c6b4747dc41198fa1e4d3a43e033.
+Independent native decode/AST/exactnumeric/count/all20kCIs/literalgatesPASS.
+All37originalpayloads,2figuresPNG/SVG,CSV,15examples andsourcepublicready.
+Twofigures visually inspected;legends/footer areclear. Descriptive errortransition
+annex doesnotalterendpoint. Model-source829d9a2/eval41a5bfd stayfrozen.
 
-Finalreport target:validation/real_target_sft_v15_complete_20261019.json plus37raw
-payloads,independentvectorizedbootstrap/parser/nativecheck,figures,CSV,examples.
-Analyzerprotects originals tolocal/backups/evaluation/real-target-sft-v15-complete.
-Afterallcomplete:inspectfigures,saveactualsourceannex/readbacks,updateREADME/STATUS,
-commit/pushreviewedoutputs. Need verifyfilestracked;publicevidencepaths containing
-local/areignoredunlessexplicitlyforce-added. Neveraddmodelweights/assets/secrets.
+Originalexampleexportassumedfrozenroworder,butpayloads preserveworkershardorder.
+Its failedattempt/exit1 ispreserved;fixedonlypresentationreindexbyimmutableID,
+thenexistingdonorpermutation. final-examples-v2 passes;no forwards/scores changed.
+Finalcompletionreceipt explicitlyincludesrepair. A prematureprotectionlauncher
+usedrelativecwdandfailedbeforewriting;successfulv2readbacklog ispreserved.
+
+Control:local/diagnostics/real-target-eval-v15-study-v1;all9controllers/scorequeue
+closed. Alloriginalrawoutputsprotectedatlocal/backups/evaluation/real-target-sft-v15-complete.
+PUBLIC-READOUT hascurrentanalysis sources,completepublicfiles,andactual18CPU/XLA
+referencepanels(216repeatedrows/3,456tokenpairs),independentlyrecomputedparityPASS.
+DESCRIPTIVE-ANNEX protects newerrortransitionJSON/source andclosedreadoutcontrols.
+Allfourterminalmodels/latestfull320 EBSprotected,alloriginal160/320 remainNVMe.
+Trainingreportvalidation/real_target_sft_v15_training_20261019.json:1,280updates,
+8fullstates,32initialnativechecks,allfour320-rowtraces. Eightnativeworkerspermodel
+repeatfourcanonicalcontexts;notindependentscientificdocuments.
+
+Nextscientificstep:retainordinarysourceNTPwithseparatelynormalizedtaskloss,
+source+direct versus source+CoT. DonotblindlyreuseV10prefix-dominatedlossorV15
+source-unscoredloss. Inspectdriverfirst,declareoneboundednewexperimentidentity,
+prepareCPUdata/masks,thenactualmask/update/resume/memoryqualificationbeforerelease.
+Freshsource-TRAIN confirmationispreferable;existing384alreadydevelopment-exposed.
+NoRL/8B/splitexpansion. Thecompletedreferencesarenotemergenceorpretrainingclaims.
 
 ## Completed findings that stay unchanged
 
