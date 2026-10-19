@@ -1,0 +1,14 @@
+{
+  "status": "PASS_INACTIVE_INTERMEDIATE_DUPLICATE_RELOCATED_ORIGINAL_AND_TERMINALS_UNCHANGED",
+  "utc": "2026-10-19T18:24:36.926206+00:00",
+  "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-QA-v21-qa_post-TRAIN2048-seed2026101922-v1/step-0000128/model.pt",
+  "former_backup": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/FIRST_FULL128/model.pt",
+  "relocated_backup": "/home/ubuntu/dario/local/nvme-study/backups/document-QA-v21-inactive128-model-duplicate-v1/model.pt",
+  "bytes": 3441248275,
+  "sha256": "c40adb08a273c43201122e634e10713aba84e2848500a3035694dd4ca06c5893",
+  "latest_full_EBS_untouched": "/home/ubuntu/dario/local/backups/science/document-QA-v21-study-v1/TERMINALS/latest-full256",
+  "six_EBS_terminal_models_untouched": true,
+  "scope": "One inactive V21 step128 model backup duplicate only. Original full state remains on NVMe-cpt;second model copy is on NVMe-study. Same-instance storage,not off-instance.",
+  "root_free_before_bytes": 63365873664,
+  "root_free_after_bytes": 66807123968
+}

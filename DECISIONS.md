@@ -1443,3 +1443,16 @@ compilation before save/restore; no longer training or held forwards released.
 Freeze likelihood diagnostics as canonical pointer-ID replays with invalid-plan
 empty fallback explicitly flagged, separate from native-generation observations.
 All255 canonical targets fit32tokens includingEOS(max13); no truncation needed.
+
+2026-10-19 18:29 UTC — New-objective qualification passes11 actual updates,
+all6full-state audits andfreshprocessrestore. Post-save groupedPSS83–97GiB;
+24native witnesses repeat4contexts,not learning evidence orindefinite-memory proof.
+Release one two-arm pilot fromfreshB0,seed2026101923,terminal256 primary.
+No secondseed until primary/integrity gates;inferenceassistance separately requires
+same-model direct andempty gains. Fourchips,expected6chip-hours,hard24upperbound.
+Protect firstfull128 andterminal256 before retiring older EBSoptimizerduplicates;
+alloriginalstates/allterminalmodels remain. One inactive V21intermediate-model
+BACKUP duplicate was copied/readback/fsynced tosecondNVMe before its oldEBS copy
+was unlinked;latestfull andsixterminalEBSmodels were untouched. Receipt inrelease.
+All1788CPUchecks/smoke/compile pass,including pointerreplay/padding diagnostics.
+Noheld model forward ornewcapability outcome at release;V21gates remainunchanged.

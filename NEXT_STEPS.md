@@ -1,16 +1,19 @@
 # Current queue
 
-0. Qualify the prepared evidence-plan-v23 V2 objective on hardware before science.
+0. Monitor the released evidence-plan-v23 V2 two-arm pilot;finish before interpretation.
    CPU readiness:validation/document_evidence_plan_v23_CPU_readiness_20261019.json.
    All1,763 tests/smoke/compile and6,144 native target views PASS. Fresh255 independent
    source/label check PASS;205/46/4 hop counts. V1 failed255/256;V2 keeps the same255.
    Both arms match source/final labels and coefficients;selection CE is separately weighted0.1.
    Use frozen source in local/worktrees/document-evidence-v23,existing1.7B production driver.
-   TRAIN128 hardware qualification is active onlogical48–55,source7328141;onefinite update,
-   further graphs compile. Monitor local/analysis/evidence-plan-v23-hardware-supervisor.log.
+   TRAIN128 hardware qualification passes11updates,all6fullstates andfreshprocessrestore;
+   post-save groupedPSS83–97GiB,warmupdates~14s. This is execution,not capability evidence.
    Decoder TRAIN-only audit passes4attempts,zeroexecutionerrors;native/cache/longCPU error<.000115.
    Readout addendum configs/document_evidence_v23_readout.json separates net recipe gain
-   from same-model inference assistance. No pilot/held forward orreplication released yet.
+   from same-model inference assistance. Pilot seed2026101923 released,replication conditional.
+   C=local/diagnostics/document-evidence-plan-v23-pilot-v1;monitor both C/*/run.log.
+   Owned sessions1396508/1396658,logical0–7/8–15;outputs/checkpoints inC/plan.json.
+   Full128 protection andterminal audit/protect/bind watchers active. No held model forward yet.
 
 1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,

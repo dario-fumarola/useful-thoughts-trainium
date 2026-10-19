@@ -1,0 +1,95 @@
+{
+  "status": "RELEASED_DOCUMENT_EVIDENCE_V23_PILOT_AND_FIXED_EVALUATION",
+  "utc": "2026-10-19T18:27:40.060324+00:00",
+  "plan_sha256": "1e7f45a3588a00b4fe5171a5548c8fc7edcdbf6034abcc0911ec4b5858fc5adc",
+  "supervisor_sha256": "1ae3cc8ada6a44b3f00b8645f5475ffd0038ed3689e5da3bbe83e482b99433e1",
+  "helper_sha256": "0ca1db85134c740221a835e07067a91c3b042ea3fc3fa0f3d0d26d66dd1ce0d7",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-world8-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "6b59f60ca4343b00942e3472d991d95573647e581369a1d74649eb08a0e91ede",
+  "decoding_qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-decode-qualification-v1/independent-audit.json",
+  "decoding_qualification_sha256": "600e539fc1eda678e166763ab1291e25a01a84aaf5225235f9b4b7548986136c",
+  "data_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "ordinary_manifest_sha256": "7f7aab85d28cf2a0aafd75e6653c7440a6e995da885c9937fda497b7cefe42ad",
+  "evaluation_source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66",
+    "train/document_qa_evaluate.py": "e73f033ff8e1804b624f18ae89f1b40d60d61e467406613d6b997927b296fb47",
+    "train/document_qa_contexts.py": "26b2e33bc6adc4fa5af7f2da45a1fa308c3c2d8fc2a66b36a681e89f5fc96291",
+    "train/document_qa_decoder.py": "31069caa0426e36bab81445a08521e6ff1cf0d68cf0745814d0aabc8783c77d9",
+    "train/document_qa_answers.py": "38845803d12b2f57f259cafce4f98397ad522967332fb0413b6892b2906c5c00",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/document_evidence_plan_evaluate.py": "0c05a44804129d3883e7a0646e7c150af39ed4e576b522497fbe56c7c2d7ba3a",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_evidence_plan_answers.py": "6a880ed2b1704e834c122d7d54c9d2b45ed1c77dd751b912d387a0d976caa985"
+  },
+  "model_specs": {
+    "evidence_direct-seed2026101923": {
+      "arm": "evidence_direct",
+      "seed": 2026101923,
+      "step": 256,
+      "run_id": "document-evidence-plan-v23-evidence_direct-TRAIN2048-seed2026101923-v1",
+      "training_protocol_sha256": "0eefb9b6afa928447f589ea7b9f8bca5792a078b2f1db902c93c45eedc20ad3c"
+    },
+    "evidence_select-seed2026101923": {
+      "arm": "evidence_select",
+      "seed": 2026101923,
+      "step": 256,
+      "run_id": "document-evidence-plan-v23-evidence_select-TRAIN2048-seed2026101923-v1",
+      "training_protocol_sha256": "0db880be26dfbe54a4c150eef6bbdcffd44cf239444d76c00129c1ebe0b127e1"
+    }
+  },
+  "model_modes": {
+    "evidence_direct": [
+      "direct",
+      "selection"
+    ],
+    "evidence_select": [
+      "direct",
+      "selection",
+      "empty",
+      "oracle"
+    ]
+  },
+  "pipeline_sources": {
+    "local/analysis/document_evidence_v23_state_audit_20261019.py": "ccc4eb3b71bb6c108ffb6d9d631e9fe87979612bbb289c12bc1d1c0b56e375e8",
+    "local/analysis/protect_document_evidence_v23_first_full128_20261019.py": "d95167b51c24830e39270bb57565eb02590cda7f24a971a66133009766f4f5ed",
+    "local/analysis/audit_document_evidence_v23_terminals_20261019.py": "04c32031a89771f9dc428912d771dbedaa0f614201ff270b67dfc94bb1c87785",
+    "local/analysis/protect_document_evidence_v23_terminals_20261019.py": "3eebc66758dbe58c1f75d79682e5cfbe3186981461e8e169bc1f1654957b4214",
+    "local/analysis/bind_document_evidence_v23_terminals_20261019.py": "db24857966f7ca9f9c649f95728ae601c7682b5a2dd57f298e901c47a1b8e7bd",
+    "local/analysis/watch_document_evidence_v23_terminals_20261019.py": "d5a691aca95dd7bc7b71e5819d4b5badfd6b1166a8850a8c7a55c0af8d16a692",
+    "local/analysis/real_source_state_audit_v17_20261019.py": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054"
+  },
+  "training_snapshot": "73281416f9f5c8ab953e279f8940479ab6bbe384",
+  "evaluation_snapshot": "625fb0f6d6c28c11a02d60a9c578d6a5f1cad603",
+  "span_snapshot": "e0607fd",
+  "primary": "Bselected-Adirect complete canonicalEM>=3pp andpaired95%lower>0 onall255. Nonemptyvalidselection>=95%. No second seedbeforethese declaredpilotgates.",
+  "inference_claim": "Requires positive paired95%lower bounds versus SAME B direct AND B empty,as frozen readoutaddendum. Net recipe gain is distinct.",
+  "reviewer_decision": "PASS_BOUNDED_PILOT_RELEASE. Actual11updates,all6fullstates andfreshprocessrestore pass;warmupdates about14s,post-save groupedPSS83-97GiB. Same source/finalcoefficients independently reconstructed. Existing4chips,expected6chip-hours,hard24chip-hours until00:00UTC. Original128/256states retained;firstfullEBSprotection watcher andterminal audit/protection/binding prepared. No heldout model outcome inspected.",
+  "protection": "Protect new128full before retiring older EBSoptimizerduplicate;old original andnewbackup reread. New256full protects before older128EBSoptimizerduplicate retires. Originalstates/allterminalmodels retained;35GiBfilesystem and512GiBhostavailable floors. One historical intermediate model BACKUP duplicate relocated with3-copyhash/fsync tosecondexistingNVMe;latestfull/allV21terminalmodels untouched untilnewfullprotected. Same-instance,not off-instance.",
+  "limits": [
+    "New supervision/loss/schedule recipe,not a controlledV21rootcause ablation.",
+    "Fresh255 mostlytwohop;not officialS5,nopretrainingnovelty,semanticgold oradequatepowerclaim.",
+    "SupportIDs are imperfect author annotations,not entailment certificates.",
+    "No RL,8B,splitrescue,broadpretraining,postanswerinternalization orordinaryCoTsuperiorityclaim.",
+    "Terminal256 only;no result-driven extensions,retries,prompt/parser changes orcheckpointselection."
+  ]
+}

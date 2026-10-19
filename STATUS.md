@@ -1,9 +1,9 @@
-# Status — 2026-10-19 18:11 UTC
+# Status — 2026-10-19 18:29 UTC
 
-## Active: passage-selection pilot preparation
+## Active: passage-selection pilot training
 Question: does selecting visible passage IDs help complete answers beyond format-matched direct training?
-ID: document-evidence-plan-v23 V2; two arms, one pilot seed; no science release yet.
-CPU: 1,779 checks plus smoke/compile pass; all 6,144 native training views fit.
+ID: document-evidence-plan-v23 V2; two fresh arms, pilot seed2026101923,terminal256 primary.
+CPU: 1,788 checks plus smoke/compile pass; all 6,144 native training views fit.
 Both arms: same TRAIN2048/order, 2,097,152 source and 67,408 final-field labels over four passes.
 Loss: separate source/final/selection means weighted 0.5/0.5/0.1; final coefficients match exactly.
 Every epoch interleaves modes; the direct control also learns the generated Final answer field.
@@ -12,9 +12,9 @@ V1 found255/256 and failed; V2 keeps the same255 without changing filters/rankin
 V21 prior-final coefficients averaged9.3% on augmented examples,54.6% across four passes;not total gradients.
 New pointer targets avoid intermediate factual claims; author support annotations remain imperfect.
 Decoder: four TRAIN attempts close; independent native/cache/long-CPU audit passes; zero execution errors.
-Training qualification: one finite update completed; source W7328141 frozen, restore/control stages pending.
-Active supervisor1358970,logical48–55;C=local/diagnostics/document-evidence-plan-v23-world8-qualification-v1.
-Next: monitor C/select-fresh4/run.log andfull-state audit;no fresh held model call or longer pilot released.
+Training qualification:11 actual updates/all6 full states/fresh restore pass;bounded post-save PSS83–97GiB.
+Active owned sessions1396508/1396658,logical0–7/8–15;C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
+Next:monitor C/*/run.log andNVMe outputs named inC/plan.json;first128protection/terminal watchers active,no held forward yet.
 
 ## Closed: TRAIN relation audit and fresh-evidence availability
 Question: can existing reasoning annotations support a simple reference-substitution repair?

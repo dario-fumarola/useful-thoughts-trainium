@@ -120,10 +120,15 @@ All 72 citations match the original source annotations. This is an exploratory
 single-agent review, not independent adjudication or a population error estimate;
 insufficient citations do not establish that the answers themselves are false.
 
-The next [bounded design](configs/document_evidence_v23_pilot.json) tests passage
+The active [bounded pilot](validation/document_evidence_plan_v23_pilot_release_20261019.json) tests passage
 selection before answering, with the same answer format and explicit final-answer
 coefficient in both arms. Its [CPU preparation](validation/document_evidence_plan_v23_CPU_readiness_20261019.json)
 passes data, native packing and gradient checks. The [TRAIN-only decoder check](validation/document_evidence_plan_v23_decode_qualification_20261019.json)
-passes native/cache/CPU comparisons; training update-and-restore qualification remains.
+passes native/cache/CPU comparisons; the [training and restore check](validation/document_evidence_plan_v23_training_hardware_20261019.json)
+passes 11 actual updates, six complete state audits and a fresh-process restore.
+Two fresh models are training for one pilot seed; there is no new capability result.
+The primary contrast is selection versus matched direct training on 255 fresh questions.
+An inference-assistance claim also requires gains over the selection model's own direct
+and empty-selection paths, as [declared before training](configs/document_evidence_v23_readout.json).
 Selecting annotated evidence will not itself prove connected reasoning or correct
-attribution. No new science training, RL or model-size jump is released yet.
+attribution. Replication is conditional; no RL or model-size jump is released.

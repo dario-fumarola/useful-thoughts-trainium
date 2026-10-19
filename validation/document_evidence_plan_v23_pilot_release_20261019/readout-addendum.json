@@ -1,0 +1,13 @@
+{
+  "status": "PROSPECTIVE_INTERPRETATION_ADDENDUM_BEFORE_PILOT_OR_HELD_FORWARD",
+  "experiment_id": "document-evidence-plan-v23",
+  "primary_unchanged": "Canonical complete-answer EM, evidence_select native selection minus evidence_direct direct, all255 questions. Point gain>=3pp and paired95% lower bound>0. No primary threshold or cohort change.",
+  "selection_integrity": "At least95% of native evidence_select selection responses have one NONEMPTY Evidence field containing unique in-range IDs, without factual prose before the single Final answer field. Order need not match the teacher. Empty/unsupported plans remain separate;answer accuracy is still scored independently.",
+  "inference_claim": "A generated-selection assistance claim additionally requires positive paired95% lower bounds for evidence_select selection minus its SAME model's direct path AND minus its supplied-empty-selection path. A net recipe gain alone does not prove that producing pointers helps inference.",
+  "training_claim": "evidence_select direct minus evidence_direct direct is secondary here. A positive result may motivate a separately frozen training-benefit confirmation;do not relabel it as the pilot primary or as post-answer internalization.",
+  "replication": "The original necessary pilot gates and conditional same-protocol second seed remain unchanged. Report recipe,selection integrity and local inference contrasts separately;no two-seed success before replication.",
+  "scoring": "One anchored Final answer parser for all conditions. Native execution errors andunsupported answers score0;allcaps/errors remain in denominators. Plan validity never repairs or suppresses the native answer observation. Canonical F1 andattributed aliases are secondary,without substituting gold answers or changing the primary gate.",
+  "uncertainty": "20000 paired question-bootstrap draws,seed2026101923,checkpoint-conditional unadjusted95% intervals. Do not pool data-order seeds or count padded scoring rows as independent observations. N255 andtwo/four-hop imbalance do not establish adequate power or broad generalization.",
+  "likelihood": "Secondary canonical pointer-ID replay only,as specified separately. Invalid plans use an explicitly flagged empty replay. This is distinct from native-generation likelihood andnot a calibration measurement. Fullcanonical answer+EOS,EOS separate;all255 original rows retained.",
+  "limits": "This addendum formalizes nonempty-plan validity andseparates net recipe benefit from inference assistance before any pilot/held outcome. Data V2,source coefficients andgeneration protocol remain unchanged. V21 scores/gates are untouched."
+}

@@ -1,0 +1,55 @@
+{
+  "status": "PREPARED_TWO_FRESH_EVIDENCE_MODELS_PENDING_SERIAL_RELEASE",
+  "utc": "2026-10-19T18:26:20.287702+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/document-evidence-v23",
+  "source_commit": "73281416f9f5c8ab953e279f8940479ab6bbe384",
+  "evaluation_source_commit": "625fb0f6d6c28c11a02d60a9c578d6a5f1cad603",
+  "jobs": [
+    {
+      "arm": "evidence_direct",
+      "seed": 2026101923,
+      "key": "evidence_direct-seed2026101923",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/protocol-evidence_direct-seed2026101923.json",
+      "protocol_sha256": "0eefb9b6afa928447f589ea7b9f8bca5792a078b2f1db902c93c45eedc20ad3c",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-plan-v23-evidence_direct-TRAIN2048-seed2026101923-v1",
+      "physical_devices": [
+        0,
+        1
+      ]
+    },
+    {
+      "arm": "evidence_select",
+      "seed": 2026101923,
+      "key": "evidence_select-seed2026101923",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-pilot-v1/protocol-evidence_select-seed2026101923.json",
+      "protocol_sha256": "0db880be26dfbe54a4c150eef6bbdcffd44cf239444d76c00129c1ebe0b127e1",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-plan-v23-evidence_select-TRAIN2048-seed2026101923-v1",
+      "physical_devices": [
+        2,
+        3
+      ]
+    }
+  ],
+  "deadline_utc": "2026-10-20T00:00:00+00:00",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-world8-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "6b59f60ca4343b00942e3472d991d95573647e581369a1d74649eb08a0e91ede",
+  "decoding_qualification_sha256": "600e539fc1eda678e166763ab1291e25a01a84aaf5225235f9b4b7548986136c",
+  "prospective_design_sha256": "6e3a87c5c10ed638eda2ffb32c6c478967d5a4072d0f2327d152b673b8329e80",
+  "readout_addendum_sha256": "5e7626ecc6958fac9b442f440dd2d710b85b5c0b02fbd6086fb8cc1dc5cba9a2",
+  "held_primary_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "ordinary_manifest_sha256": "7f7aab85d28cf2a0aafd75e6653c7440a6e995da885c9937fda497b7cefe42ad",
+  "execution": "Two disjoint world8 partitions may run concurrently. FreshB0,identical question order,terminal256 primary. No automatic retry,early outcome review or checkpoint selection. No second seed released.",
+  "checkpoint_policy": "Four original full128/256 states remain NVMe. Protect first complete128 full onEBS and readback before retiring ANY oldEBSduplicate. Reverify oldoriginal and its separateEBSmodel first. Retain all original scientific states andall terminalmodels. Newfull256 protects FIRST before retiring superseded128backup;35GiBfloor always.",
+  "storage_preparation_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-plan-v23-storage-preparation-v1/completion.json",
+  "storage_preparation_sha256": "54991f04ab6c018fec47e063ff52faf06821848efcb980ec1ddc533b93792ca3",
+  "budget": {
+    "root_free_bytes": 66776932352,
+    "NVMe_free_bytes": 280927989760,
+    "measured_qualification_full_bytes": 24091475979,
+    "extra_per_state_reserve_bytes": 536870912,
+    "max_reserved_chips": 4,
+    "expected_training_chip_hours": 6,
+    "hard_reserved_chip_hour_upper_bound": 24
+  },
+  "scope": "New passage-selection recipe pilot,not a V21causalablation. Fresh255 mostlytwohop;no broadpretraining,RL,newsize,postanswerinternalization orCoTsuperiorityclaim."
+}
