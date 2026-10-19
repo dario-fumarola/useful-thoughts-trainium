@@ -1,0 +1,38 @@
+{
+  "CPU_reference_rule": "Recompute four original ordinary calibration contexts using actual current protected terminal256. Never reuse old CPU logits.",
+  "accounting": "One chip4shards, no new generation; remaining overall .6 reserved chip-hour budget governs explicit deadline.",
+  "controller_sha256": "75a6fa5df98614f304ff4199621bf5c121b72079af33e12849665d9fb89e53cf",
+  "items": 256,
+  "kernel": "Unchanged frozen W4 score_spans, batch4, width672,32targetslots; only ordinary inventory submitted.",
+  "limit": "Already inspected ordinary panel; cost diagnostic only. No model/output exists yet and no accelerator call made.",
+  "no_change_to_active_training_pipeline": true,
+  "result_rule": "Mean NLL/token and paired20000 page bootstrap, seed2026101925+100+index in sorted baseline order; positive worse.",
+  "scope": "Implements the ordinary256 diagnostic already declared in the readout addendum; no new scientific comparison or allocation.",
+  "source_annex": {
+    "document_evidence_weight_v25_ordinary_20261019.py": "0de8d5660b5fda136128c365dc332f4339aa1a0cc2be850429470082629c047c",
+    "supervise_document_evidence_weight_v25_ordinary_20261019.py": "75a6fa5df98614f304ff4199621bf5c121b72079af33e12849665d9fb89e53cf"
+  },
+  "source_digests": {
+    "B0": "7580d34ad27c90627e63863e72386680aa5d5069c14e52bff7a592fd14c72dbd",
+    "evidence_direct": "7580d34ad27c90627e63863e72386680aa5d5069c14e52bff7a592fd14c72dbd",
+    "evidence_select": "7580d34ad27c90627e63863e72386680aa5d5069c14e52bff7a592fd14c72dbd"
+  },
+  "sources": {
+    "local/analysis/document_evidence_weight_v25_ordinary_20261019.py": "0de8d5660b5fda136128c365dc332f4339aa1a0cc2be850429470082629c047c",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_answers.py": "6a880ed2b1704e834c122d7d54c9d2b45ed1c77dd751b912d387a0d976caa985",
+    "train/document_evidence_plan_likelihood.py": "11b31b51cae030b416254f156fed93bd4a11f7fbfac758cc3fe3c2156f1cad3d",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_qa_span_scores.py": "b2ac2255c731e62f7eeb1df5e20b573621d921b27f3d96ac7379aaf77ac7b3a9",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+  },
+  "status": "PASS_CPU_FIXED_ORDINARY256_INPUTS_AND_REUSED_BASELINE_IDENTITIES",
+  "target_tokens": 8192,
+  "utc": "2026-10-19T21:30:06+00:00"
+}
