@@ -1,0 +1,34 @@
+{
+  "status": "PROSPECTIVE_FIXED_READOUT_RESOURCE_SPLIT_AND_INDEPENDENT_CHECKERS",
+  "utc": "2026-10-19T21:32:29.256161+00:00",
+  "experiment_id": "document-evidence-weight-v25",
+  "total_reserved_chip_hours": 0.6,
+  "stage_maximum_reserved_chip_hours": {
+    "TRAIN256_generation": 0.12,
+    "held255_native_generation": 0.18,
+    "held255_closed_field_answer_replay": 0.2,
+    "ordinary256_likelihood": 0.1
+  },
+  "budget": "One physical chip/four logical cores per stage. Each soft deadline reserves30s inside its allocation for termination grace. Unused time remains unspent; no automatic extension or retry.",
+  "execution": "After original terminal audit/protection/binding and explicit evaluation release, prepare current-model CPU references. TRAIN fitting and held native may run on distinct chips without sharing outputs; closed-field replay waits native physical closure. Ordinary only after its independent current-model CPU calibration references are prepared.",
+  "accounting": "Record controller/child identities and observed physical closure. Report successful and failed work separately and sum actual reserved chip-time; CPU preparation not counted as chip work.",
+  "optional_likelihood": "No additional QA likelihood stage allocated in this bounded readout. Ordinary256 cost remains included.",
+  "independent_checkers": {
+    "local/analysis/check_document_evidence_weight_v25_held_20261019.py": "10034a07a7bcc88288593ccf9c68c67eb808ff325dd1a153b910dcc00d161a27",
+    "local/analysis/check_document_evidence_weight_v25_ordinary_20261019.py": "1ac8e933602f90374fc76f9f88dd0304b97d02c7fa89d768ba7307dc839b5e80"
+  },
+  "source_annex": {
+    "check_document_evidence_weight_v25_ordinary_20261019.py": "1ac8e933602f90374fc76f9f88dd0304b97d02c7fa89d768ba7307dc839b5e80",
+    "check_document_evidence_weight_v25_held_20261019.py": "10034a07a7bcc88288593ccf9c68c67eb808ff325dd1a153b910dcc00d161a27"
+  },
+  "CPU_parser_check": {
+    "previous_native_outputs_agree": 1530,
+    "boundary_cases_agree": 36,
+    "new_model_outputs_inspected": 0
+  },
+  "limits": [
+    "All held255 questions were previously inspected; developmental only.",
+    "No change to training, primary fitting rule, parsers, old scores or gates.",
+    "Checker agreement verifies measurement, not semantic reasoning."
+  ]
+}
