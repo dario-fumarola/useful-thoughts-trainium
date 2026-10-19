@@ -233,6 +233,15 @@ def score_original_batch(backend, batch, width, scorer):
     return values[:originals], 4-originals
 
 
+def persist_calibration(directory, panel, checks):
+    """Keep immutable panel witnesses and update this attempt's partial summary."""
+    if panel not in ('QA', 'ordinary') or panel not in checks:
+        raise ValueError('A completed declared calibration panel is required')
+    directory = Path(directory)
+    atomic_json(directory/f'own-model-TRAIN-calibration-{panel}.json', checks[panel])
+    atomic_json(directory/'own-model-TRAIN-calibration.json', checks, overwrite=True)
+
+
 def run(output, shard, device):
     from train.document_qa_span_scores import score_spans
     from train.evaluate_local import setup_model
@@ -266,7 +275,7 @@ def run(output, shard, device):
         except Exception as error:
             checks[panel] = dict(passed=False, error=f'{type(error).__name__}: {error}')
         # Persist the original failed witness before raising; never retry silently.
-        atomic_json(directory/'own-model-TRAIN-calibration.json', checks)
+        persist_calibration(directory, panel, checks)
         if not checks[panel]['passed']:
             raise RuntimeError('Own-model TRAIN calibration failed before held scoring; preserve this attempt')
     count, errors, padding, expected = 0, 0, 0, 0

@@ -3,7 +3,7 @@ import math
 import pytest
 
 from train.document_evidence_plan_likelihood import (
-    calibration_check, context_text, physical_batch, score_original_batch,
+    calibration_check, context_text, physical_batch, persist_calibration, score_original_batch,
     scoring_example, selected_ids,
 )
 from train.useful_note_sft_data import EOS
@@ -88,3 +88,29 @@ def test_calibration_requires_both_token_and_mean_span_tolerances():
 def test_complete_native_answer_span_cannot_be_shortened_to_fit():
     with pytest.raises(ValueError):
         scoring_example(question(), 'x'*32, 'direct', CharacterTokenizer())
+
+
+def test_two_calibration_panels_persist_without_clobbering_original_witnesses(tmp_path):
+    import json
+
+    checks = dict(QA=dict(passed=True, max_token_error=.00001))
+    persist_calibration(tmp_path, 'QA', checks)
+    original = (tmp_path/'own-model-TRAIN-calibration-QA.json').read_bytes()
+    checks['ordinary'] = dict(passed=True, absolute_mean_span_error=.00002)
+    persist_calibration(tmp_path, 'ordinary', checks)
+    assert json.loads((tmp_path/'own-model-TRAIN-calibration.json').read_text()) == checks
+    assert (tmp_path/'own-model-TRAIN-calibration-QA.json').read_bytes() == original
+    assert json.loads((tmp_path/'own-model-TRAIN-calibration-ordinary.json').read_text()) == checks['ordinary']
+    with pytest.raises(FileExistsError):
+        persist_calibration(tmp_path, 'QA', checks)
+
+
+def test_failed_second_panel_is_saved_before_the_caller_can_raise(tmp_path):
+    import json
+
+    checks = dict(QA=dict(passed=True))
+    persist_calibration(tmp_path, 'QA', checks)
+    checks['ordinary'] = dict(passed=False, reason='parity_bound_failed')
+    persist_calibration(tmp_path, 'ordinary', checks)
+    assert json.loads((tmp_path/'own-model-TRAIN-calibration.json').read_text()) == checks
+    assert json.loads((tmp_path/'own-model-TRAIN-calibration-ordinary.json').read_text()) == checks['ordinary']
