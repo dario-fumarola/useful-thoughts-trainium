@@ -1,4 +1,4 @@
-# Status — 2026-10-19 04:56 UTC
+# Status — 2026-10-19 04:59 UTC
 
 ## Active: single-model real-document mainline
 Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
@@ -13,8 +13,8 @@ Reference:validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json;all51
 CPUscorer reproduces all256ordinary reference vectors exactly;real evaluation now passes1,646CPUchecks.
 Actual8rank qualification PASS:all4fullstates/native16/actualfull6restore/cursors/casts and memorybound verified.
 Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
-Full8EBSreadbackverified;trainingcontrol:local/diagnostics/real-trace-cpt-v10-study-v1;terminal320primary.
-B0prefix-only notes256 live on physical15,4nativechecksPASS;no deployed-note or capability result yet.
+Firstscience160independentlyaudited/EBSreadback/fsynced;alloriginalsretained;terminal320primary.
+B0bothrealnote256panelscomplete;CPUlikelihoodscoringunderway;noreal-modelcapabilityresultyet.
 
 ## Closed: bounded variable-depth writer repair
 Question: does varied-depth training repair incomplete notes and improve the same frozen reader?

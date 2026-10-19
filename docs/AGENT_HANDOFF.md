@@ -1,4 +1,4 @@
-# Current research handoff — 2026-10-19 04:04 UTC
+# Current research handoff — 2026-10-19 05:00 UTC
 
 Read NEXT_STEPS.md and STATUS.md first. The owner authorizes autonomous research,
 maintaining the public repository, and existing-node training. Continue until
@@ -12,10 +12,9 @@ writer–reader system as one bounded diagnostic, not the main architecture.
 ## Exact next action
 
 Mainline training is LIVE. Control: local/diagnostics/real-trace-cpt-v10-study-v1.
-Three8rank seed2026101913 runs use physical0/1 raw,2/3 prior,4/5 post. All three
-actual eight-worker captures passed. Tmux: cpt-v10-real_raw,cpt-v10-real_prior,
-cpt-v10-real_post. Seed2026101914 runs serially within each arm after its first
-terminal closes. Immutable training source3d8666b,local/worktrees/real-trace-cpt-v10.
+All three seed2026101913 models reached320,savedterminalandphysicallyclosed.
+Fresh8rank seed2026101914 runs use physical0/1 raw,2/3 prior,4/5 post;alllive. Tmux: cpt-v10-real_raw,cpt-v10-real_prior,
+cpt-v10-real_post. Secondseedrunsare past115updates;firstseedcheckpointsremainunchanged. Immutable training source3d8666b,local/worktrees/real-trace-cpt-v10.
 All six fresh B0;320 updates,full160/320,terminal primary. Monitor active logs,
 metrics,memory and device ownership. No automatic retry or outcome-based extension.
 
@@ -32,16 +31,22 @@ BF16 active parameters/gradients, FP32 masters/Adam, one ZeRO reduction owner.
 Warm fresh updates measured about six seconds; cold compilation took much longer.
 Do not interpret compilation time as sustained throughput or finite loss as capability.
 
-The first160protection watcher is live in tmux cpt-v10-first160-protection;
-wait deadline06:00, one invocation, no retry. It deep-audits then EBS-protects the
-first complete160 snapshot. After its PASS receipt, review/run
-local/analysis/rotate_superseded_EBS_after_CPT160_20261019.py: fresh full readbacks
-before retiring only older variable160 and qualification8 EBS optimizer copies.
-All originals/models remain. Final all-six terminal audit is prepared at
-local/analysis/audit_real_trace_six_terminals_v10_20261019.py, not yet running.
-The shared state auditor passed actualqual8; independent label accounting also
-matches first60updates of all three active arms. At04:24 all are past130 and
-recent groupedPSS is stable,about139–146GiB/arm;hostavailabilityabout1.37TiB.
+The first science160 is fully independently audited,readback verified and fsynced:
+real_prior seed1913. Full optimizer/model on EBS at
+local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160.
+Older variable160 and qualification8 EBS optimizer duplicates were retired only
+after fresh full original/backup hashes and newer protection. All originals and
+all EBS model weights remain. Receipt:checkpoint_retention_after_real_CPT160_20261019.json.
+
+Automatic terminal watcher is LIVE:tmux cpt-v10-terminal-pipeline. After all6
+closures it runs independent all-state/native/counter audit,protectsall6models
+and one latestfull320,then freezes evaluation bindings. No retries.
+Automatic evaluation watcher is LIVE:tmux cpt-v10-six-evaluations. Afterbindings
+it prepares6canonicalCPUreferences,reuses each forlegacy,andlaunches6four-core
+notejobs(physical0–5)and6CPUscorers(16threadseach). Code in local/analysis:
+watch_real_trace_terminal_pipeline_v10_20261019.py,
+watch_real_trace_six_evaluations_v10_20261019.py.
+Inspect these finite watcher logs and receipts;do not duplicate their work.
 
 ## Frozen data and endpoints
 
@@ -63,33 +68,36 @@ uncertainty is not training-seed uncertainty. Preserve all failed/capped attempt
 
 ## Active evaluations
 
-Math diagnostic: both fresh fixed/variable writers finished160 and passed the
-full independent six-checkpoint audit. Both models and latest variable160 full
-optimizer are EBS protected. Training source5af3431, evaluation source11512db,
-immutable worktrees variable-depth-writer-v11 and variable-depth-eval-v11.
-Registry: local/diagnostics/variable-depth-writer-v11-v1/evaluation-jobs.json.
-Five V3 four-shard jobs use physical8/9/10/11/14. Reader own/other controllers wait
-on6/7 for original notes. All20 native checks pass; new cache shapes still compiling.
-V1/V2 preparation runtime mismatches stopped before any accelerator worker;
-retain holds and identical reused CPU references. No held-out accuracy result yet.
+Math diagnostic COMPLETE and published:main a7835c7.
+All7controllers/3panels,9,216answers/2,048notes independently audited.
+Composition512:fixed124,variable306(+35.5pp[31.3,40.0]),teacher377,fullCoT273,B0262.
+Canonical/natural91→409;predeclaredrepairgatePASS. Freshdepth2variable182vsCoT193;
+unseendepth6variable10/256vsoracle78. One seed,differentcurricula/targettokens,
+frozencompetitors:positiveboundedcurriculumrepair,notmatchedarchitectureadvantage.
+Publicreport:validation/variable_depth_writer_v11_complete_20261019.json.
+Allpayloads,figures,CSV,deterministicexamples,auditsourceandEBSarchive preserved.
+Do notlaunchanotherlargersplitrescue. Training5af3431/evaluation11512db immutable.
 
-Real baseline: local/diagnostics/real-trace-v10-B0-DEV_AST256-notes-v1,
-tmux real-trace-B0-notes-v10, physical15/logical60–63. All4 native checks pass;
-new544 prefill compiles. No raw continuation targets enter generation.
-Real evaluation source is local/worktrees/real-trace-eval-v10, latest29c8b24,
-1,646 CPU checks. New CPU scorer reproduces all256 ordinary reference vectors
-exactly. Frozen projections are local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2,
-EBS protected. V1 preparation omitted leading whitespace in a secondary component
-check and was held before model execution. V2 retains all primary16-token targets;
-secondary components are unsupported on8 AST/5 legacy items, explicitly reported.
-Raw-training eligibility remains independent of note-generation errors.
+B0realnotegeneration COMPLETE for bothAST256andlegacy256. Primarycontrol:
+local/diagnostics/real-trace-v10-B0-DEV_AST256-notes-v1;legacyanalogous.
+CPUlikelihoodscoringLIVE:tmux cpt-v10-B0-CPU-scoring,control
+local/diagnostics/real-trace-v10-B0-CPU-scores-v1. Ordinaryreference reused explicitly,
+not newindependentobservations. No trainedreal-model capability result yet.
+
+Real evaluation source local/worktrees/real-trace-eval-v10,29c8b24,1,646CPUchecks.
+CPUscorer reproduces all256ordinary reference vectors exactly. Fixedprojections:
+local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2,EBSprotected.
+V1preparationomittedleadingwhitespaceinsecondarycomponentcheck;heldbeforemodelrun.
+V2retainsallprimary16targets;componentsunsupported8AST/5legacy,neverdropprimaryrows.
+Rawtrainingeligibilityisindependentofnotegenerationerrors. Othernotesarenative,
+intactandgloballyderanged;no trim,repair,utilityfilterorbest-ofselection.
 
 ## Storage and operational invariants
 
-Keep35 GiB free per filesystem and512 GiB host availability. Root free about67 GiB
-after the real qualification archive. All original full checkpoints stay on NVMe.
+Keep35 GiB free per filesystem and512 GiB host availability. Root free about83 GiB
+after verified duplicate rotation. All original full checkpoints stay on NVMe.
 EBS retains all terminal models and latest complete resumable scientific state,
-currently variable160. Older inactive duplicate optimizer payloads retire only
+currently real_prior seed1913 step160. Older inactive duplicate optimizer payloads retire only
 after fresh original/EBS full hashes and newer full recovery protection. Model
 files, metadata, receipts, and original states remain. This is same-instance backup.
 

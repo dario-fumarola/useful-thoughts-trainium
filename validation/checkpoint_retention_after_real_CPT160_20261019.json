@@ -1,0 +1,137 @@
+{
+  "status": "COMPLETE_ONLY_12_SUPERSEDED_EBS_OPTIMIZER_DUPLICATES_RETIRED",
+  "utc": "2026-10-19T04:33:13.012764+00:00",
+  "old": [
+    {
+      "original": "/home/ubuntu/dario/local/nvme-study/runs/variable-depth-writer-v11-variable-TRAIN640-seed2026101911-v1/step-0000160",
+      "EBS": "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160",
+      "COMPLETE_sha256": "818b21c2b805fc356f090de752d4070ca05cce7e99504405d80eb2dc5c48053c",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "19ff7ea2df1f036ed55f3052579c36031aeaa6fd82ba51964e29f8a5541f0bce"
+        },
+        "rank-00000.pt": {
+          "bytes": 5162143399,
+          "sha256": "19002009b62c5966f95e1e906eb9f3f1276da35af91826a80579b073af4c0e91"
+        },
+        "rank-00001.pt": {
+          "bytes": 5162143399,
+          "sha256": "21d6e38b0655d9264a7d155eacc5c5c1c08cb514ecd6e65f2e930a246278daa9"
+        },
+        "rank-00002.pt": {
+          "bytes": 5162143399,
+          "sha256": "8ded7797d97219efd2613c497a03f81e2252ed40f9319298bf32c7d214d9951f"
+        },
+        "rank-00003.pt": {
+          "bytes": 5162143463,
+          "sha256": "32b50b8b722645db5d3474d71b95e7421d88ad459980cd132b7d14e4b77011fa"
+        }
+      }
+    },
+    {
+      "original": "/home/ubuntu/dario/local/nvme-study/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2/step-0000008",
+      "EBS": "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008",
+      "COMPLETE_sha256": "4f137c6d050ffd5c2887bb6de013a58fb65b7920866fb083d4aacaec62fe3522",
+      "files": {
+        "model.pt": {
+          "bytes": 3441248275,
+          "sha256": "7868389374bf176398700bec0715cda2797a14a6df0df59e6cea39a1e883ca5c"
+        },
+        "rank-00000.pt": {
+          "bytes": 2581278471,
+          "sha256": "fcc4fb736efafbaf8f780f463dcb20f281327adaaf58e4f758f493aac4559e5c"
+        },
+        "rank-00001.pt": {
+          "bytes": 2581278471,
+          "sha256": "110c4329d802ccf16c58c7d2644d1844067f31d0b22820bee80c4be0f474c002"
+        },
+        "rank-00002.pt": {
+          "bytes": 2581278471,
+          "sha256": "46acaf838ef7e21f4381432f43172e22c4d09e15dc735ea8a5e79241383e3c77"
+        },
+        "rank-00003.pt": {
+          "bytes": 2581278407,
+          "sha256": "049aa6bd65a07d2e1380e4fa95a4340b25064975c9e9cd1c21bb7db4a5c991b5"
+        },
+        "rank-00004.pt": {
+          "bytes": 2581278471,
+          "sha256": "417ad26eedfe1f283cc3cda07cb998aa684bcefad1a31f89208d71b317805a6d"
+        },
+        "rank-00005.pt": {
+          "bytes": 2581278407,
+          "sha256": "23d88e1f390283cd28081718558e147cc2515cbf287b46ede1dd584b55bfd62d"
+        },
+        "rank-00006.pt": {
+          "bytes": 2581278471,
+          "sha256": "819c7d1b05ba1f4189667130bfd93cbd49f9115d47641e0ca6e640009ac28c39"
+        },
+        "rank-00007.pt": {
+          "bytes": 2581278407,
+          "sha256": "488b0162e4d667ffe7e28197ba3cd8cffffef139866b4efb7a3042b08727b8ff"
+        }
+      }
+    }
+  ],
+  "new_protected_full160": {
+    "original": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000160",
+    "EBS": "/home/ubuntu/dario/local/backups/science/real-trace-cpt-v10-study-v1/FIRST_FULL160/checkpoint",
+    "COMPLETE_sha256": "deeb26162ac9ce481913e4d41492b2040418a16c706f9bf3abf13f1be6259e7a",
+    "files": {
+      "model.pt": {
+        "bytes": 3441248275,
+        "sha256": "204af60058865e8eda5ccdc7f7ed3c1d31c139c7cb707330b971fd5adf7eef31"
+      },
+      "rank-00000.pt": {
+        "bytes": 2581278407,
+        "sha256": "e61d189f7d11d871aa42c1b688cf4b24126fcc9f9a0d2ad8533feb9b1c9f131f"
+      },
+      "rank-00001.pt": {
+        "bytes": 2581278471,
+        "sha256": "c8f04176979e4c6ee11106adba5ff4ac590aa34ff22f78fb969c47c6736c7434"
+      },
+      "rank-00002.pt": {
+        "bytes": 2581278407,
+        "sha256": "6acb1e79e568164ec5499e963a2a4e8d4fa3ce3eaca75cfffecd43ceaa11b4c8"
+      },
+      "rank-00003.pt": {
+        "bytes": 2581278471,
+        "sha256": "3ae8459d6c4a3fec8e7a1f6f9de456cdfeea42ca8f9fe2b54f0b6ee388f2ec4c"
+      },
+      "rank-00004.pt": {
+        "bytes": 2581278407,
+        "sha256": "b56eee2b9b526e83dc21c44e11a362a870d46423dc3ee8d8e74b9def7e3dfdd7"
+      },
+      "rank-00005.pt": {
+        "bytes": 2581278471,
+        "sha256": "9ff0eb10ba18cd3ab157b0929da90340172ade9b5635ec48634a6dded61ee262"
+      },
+      "rank-00006.pt": {
+        "bytes": 2581278407,
+        "sha256": "08f7dd3da769aa8c54a1b2b73311869e5776684398c8539ea2847be5ee76e90a"
+      },
+      "rank-00007.pt": {
+        "bytes": 2581278471,
+        "sha256": "919a73e26cc8021b3935b3ed36561a2819bb2a99464e6d18dc35ae2035360176"
+      }
+    }
+  },
+  "retire": [
+    "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160/rank-00000.pt",
+    "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160/rank-00001.pt",
+    "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160/rank-00002.pt",
+    "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160/rank-00003.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00000.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00001.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00002.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00003.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00004.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00005.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00006.pt",
+    "/home/ubuntu/dario/local/backups/engineering/real-trace-cpt-v10-world8-width640-qualification-v2/POST_RUN/output/step-0000008/rank-00007.pt"
+  ],
+  "bytes": 41298801236,
+  "policy": "All original full states,all EBS model files,metadata and receipts remain. New science160 is independently audited and full readback protected. Same-instance backup only.",
+  "finished_utc": "2026-10-19T04:33:15.347409+00:00",
+  "root_free_bytes": 89361367040
+}

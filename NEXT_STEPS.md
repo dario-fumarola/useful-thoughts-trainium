@@ -16,30 +16,30 @@
    thenfreeze evaluatedmodels and execute the declared CPU16tokenlikelihood comparisons.
    Protectfirstscientificfull160asavailable,thenrotateolderEBSoptimizerduplicatesonly
    afterfreshboth-side hashes. All original checkpoints stay on local/nvme-cpt/runs.
-   First160protectionwatcher LIVE:tmux cpt-v10-first160-protection,waits only until06:00.
+   First160protection FINISHED:real_prior-seed1913full160deep-audited/EBSreadback/fsynced.
    Program:local/analysis/watch_first_real_trace_full160_v10_20261019.py.
    It invokes protect_first_real_trace_full160_v10_20261019.py ONCE after a COMPLETE
    snapshot;requires independent state helper already tested on actualqual8.
-   Afterfirst-full160-protection.json PASS,reviewthenrun
-   local/analysis/rotate_superseded_EBS_after_CPT160_20261019.py to retire onlyold
-   variable160/world4 andrealqual8/world8 EBS optimizerduplicates afterfreshfullreadbacks.
+   Supersededvariable160/world4andrealqual8/world8EBSoptimizerduplicatesretired
+   afternewfull160protectionandfreshall-sidefullhashes;alloriginals/modelsremain.
+   Receipt:validation/checkpoint_retention_after_real_CPT160_20261019.json.
    That preserves originals/models and gives room for all6terminalmodels/newfull320.
+   Terminal pipeline watcher LIVE:tmux cpt-v10-terminal-pipeline;afterall6close,
+   runsstateaudit,all-models/latestfull320protection,andimmutablebindingonce.
+   Source:local/analysis/watch_real_trace_terminal_pipeline_v10_20261019.py.
    Final six-terminal audit PREPARED,notrunning:
    local/analysis/audit_real_trace_six_terminals_v10_20261019.py. Review beforeuse.
    Independent native label formula matches first60updates of all3activearms.
 
-2. Both bounded math writers have finished160updates and independent full audit.
-   Fixed640two steps versusvariable640balanced1–5;training5af3431 remains immutable.
-   Report:validation/variable_depth_writer_v11_terminal_training_20261019.json.
-   Latestvariable160full and both terminal models EBS protected,all original states intact.
-   Evaluation source11512db at local/worktrees/variable-depth-eval-v11;1,617CPUchecks.
-   Actual frozen bindings in local/diagnostics/variable-depth-writer-v11-v1.
-   Seven jobs sealed in local/diagnostics/variable-depth-writer-v11-v1/evaluation-jobs.json.
-   V3actual4shards on physical8fixed/9variable/10readercontrols/11fullCoT/14B0;
-   waiting own/other reader jobs use6/7once original note bundles physicallyclose.
-   Actualnative gates20/20PASS;newshape cache-prefill compilation in progress.
-   V1/V2runtime preflight holds remain,no accelerator workers in those attempts.
-   Use whole-panel jobs and preserve every unsupported/cap/error. No reader retraining.
+2. Bounded variable-depth diagnostic COMPLETE,PASS;mainlinecontinues.
+   Public:validation/variable_depth_writer_v11_complete_20261019.json.
+   All9,216answers/2,048notes independentlyreparsed andarchived;all21publicpayloads,
+   figure,CSV,deterministicexamplesandauditsourceinmatchingreportdirectory.
+   Composition512fixed124→variable306(+35.5pp[31.3,40.0]);canonical/natural91→409.
+   FrozenfullCoT273;variablebeatsitthere,butfreshdepth2variable182vsCoT193;
+   unseendepth6variable10/256,teacher78/256. One seed/differentcurricula;noarchitectureclaim.
+   Do notlaunchlargersplitrescue. Alloriginalmodels/trainingstatesremain.
+
 3. Real held PRIMARY data is now local/nvme-study/data/real-trace-cpt-v10-held-panels-v2.
    V1string check missed10TRAIN-equivalent orderedASTs; correction frozen before science.
    V2novel256zeroTRAINASToverlap;ordinary256unchanged;TRAINandpreviouscohorts unchanged.
@@ -56,8 +56,14 @@
    Evaluation worktree real-trace-eval-v10 now1,646CPUchecks;rawCPUscorer matches
    all256ordinary native16vectors exactly. Resultshelper keeps two gates independent.
    Newnotes runtime policy explicit rather than inherited CPU defaults.
-   B0realnotejob live:local/diagnostics/real-trace-v10-B0-DEV_AST256-notes-v1,physical15,
-   tmux real-trace-B0-notes-v10;4nativegatesPASS;new544prefillshape compiling.
+   B0bothrealnotepanels256COMPLETE;controlsreal-trace-v10-B0-DEV_AST256-notes-v1
+   andreal-trace-v10-B0-DEV_legacy256-notes-v1. CPUscoringwatcherLIVE:
+   tmux cpt-v10-B0-CPU-scoring;controlreal-trace-v10-B0-CPU-scores-v1.
+   Six-model evaluationwatcher LIVE:tmux cpt-v10-six-evaluations;waits foraudited
+   protectedbindings,thenpreparescanonicalCPUrefs,reusesforlegacy,andlaunches
+   6four-coregenerationjobs(physical0–5)plus6CPUscoringjobs.
+   Source:local/analysis/watch_real_trace_six_evaluations_v10_20261019.py.
+   Reviewall7models/3separatepanelswhencomplete;no partialcapabilitypeeking.
    Fixedreal evaluation projections:
    local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2,all EBS readback.
    Prefixquestions separatefromtargets;primaryfull16alwayscomplete;componentunsupported8AST/5legacy,
@@ -75,10 +81,10 @@ Review ZIP saved and linked to owner:local/review/useful-thoughts-20261019-a0ae5
 No R1234 resume,broad RL,unqualified8B,or officialTEST. Papers in docs/REFERENCE_NOTES.md.
 
 Storage: all original full checkpoints remain on NVMe;EBS all terminal models and
-latest full resumable scientific state (variable160). Older inactive EBS optimizer
+latest full resumable scientific state (real_prior seed1913 step160). Older inactive EBS optimizer
 duplicates retire only after fresh original+EBS full hashes and newer full protection.
-The newer variable160full is protected;oldv7CoT1807full640EBSoptimizerduplicates retired after fresh full readbacks;
-latestvariable160full remains protected. Rootfree~89GiBafter oldv6qual6duplicate rotation,enough for realqual8archive.
+NewestrealPrior160full is audited/readback/fsynced. OlderinactiveEBSoptimizerduplicates
+retiredwithreceipts;alloriginalNVMe statesandEBSmodelsremain. Rootfreeabout83GiB.
 Receipt:validation/checkpoint_retention_latest_science_20261019.json. Preserve models/metadata.
 Keep35GiB per filesystem and512GiB host availability. EBS is same-instance backup.
 NEW local/nvme-cpt is ext4 UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67,already formatted

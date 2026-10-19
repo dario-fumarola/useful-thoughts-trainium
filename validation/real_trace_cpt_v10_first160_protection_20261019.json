@@ -1,0 +1,95 @@
+{
+  "status": "PASS_INDEPENDENT_FIRST_FULL160_AND_PROTECTED_READBACK",
+  "utc": "2026-10-19T04:28:47.383041+00:00",
+  "job": {
+    "arm": "real_prior",
+    "seed": 2026101913,
+    "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101913.json",
+    "protocol_sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1",
+    "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+    "physical_devices": [
+      2,
+      3
+    ]
+  },
+  "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1/step-0000160",
+  "state_audit": {
+    "step": 160,
+    "COMPLETE_sha256": "deeb26162ac9ce481913e4d41492b2040418a16c706f9bf3abf13f1be6259e7a",
+    "model_sha256": "204af60058865e8eda5ccdc7f7ed3c1d31c139c7cb707330b971fd5adf7eef31",
+    "run_id": "real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+    "spec_hash": "8c8860185597024884291f9181a61e3473f515fe5bf08f4e38f8636010c5d158",
+    "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+  },
+  "files": {
+    "checkpoint/COMPLETE.json": {
+      "bytes": 2086,
+      "sha256": "deeb26162ac9ce481913e4d41492b2040418a16c706f9bf3abf13f1be6259e7a"
+    },
+    "checkpoint/model.pt": {
+      "bytes": 3441248275,
+      "sha256": "204af60058865e8eda5ccdc7f7ed3c1d31c139c7cb707330b971fd5adf7eef31"
+    },
+    "checkpoint/rank-00000.pt": {
+      "bytes": 2581278407,
+      "sha256": "e61d189f7d11d871aa42c1b688cf4b24126fcc9f9a0d2ad8533feb9b1c9f131f"
+    },
+    "checkpoint/rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "c8f04176979e4c6ee11106adba5ff4ac590aa34ff22f78fb969c47c6736c7434"
+    },
+    "checkpoint/rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "6acb1e79e568164ec5499e963a2a4e8d4fa3ce3eaca75cfffecd43ceaa11b4c8"
+    },
+    "checkpoint/rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "3ae8459d6c4a3fec8e7a1f6f9de456cdfeea42ca8f9fe2b54f0b6ee388f2ec4c"
+    },
+    "checkpoint/rank-00004.pt": {
+      "bytes": 2581278407,
+      "sha256": "b56eee2b9b526e83dc21c44e11a362a870d46423dc3ee8d8e74b9def7e3dfdd7"
+    },
+    "checkpoint/rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "9ff0eb10ba18cd3ab157b0929da90340172ade9b5635ec48634a6dded61ee262"
+    },
+    "checkpoint/rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "08f7dd3da769aa8c54a1b2b73311869e5776684398c8539ea2847be5ee76e90a"
+    },
+    "checkpoint/rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "919a73e26cc8021b3935b3ed36561a2819bb2a99464e6d18dc35ae2035360176"
+    },
+    "protocol.json": {
+      "bytes": 5519,
+      "sha256": "87217b6b5c90d166fd2c4f43ff27e817489b731e86064c5e3272cd0ec23a1baf"
+    },
+    "job.json": {
+      "bytes": 413,
+      "sha256": "cc9af342d32cc94e6d1094249843aecd82360551f2880f74627f0b762a615d64"
+    },
+    "metrics-first160.json": {
+      "bytes": 538916,
+      "sha256": "33ce937bd8487181582d69d2452d02d175a16c394f21b54108521fdfccdb562d"
+    },
+    "state-audit.json": {
+      "bytes": 436,
+      "sha256": "9af9d3b1579badd1359309227d1e5c69e5ac000ef9a8ca074c0214611b7d5d66"
+    },
+    "protect-source.py": {
+      "bytes": 3805,
+      "sha256": "8e2f8ebe82cec9258e0d46945efbe152eb4a6b63c2212a806a30f363ed2c9b81"
+    },
+    "state-audit-source.py": {
+      "bytes": 3954,
+      "sha256": "aeaf0a87a99052d7ef927c3fac233371bd78c64a6d52ba19daafa04c6dff5f71"
+    }
+  },
+  "limits": [
+    "Recoveryprotectiononly;noheldoutcapabilityresultornumericaluninterrupted-parityclaim.",
+    "Alloriginalstatesandallmodelsretained;futureoptimizerduplicaterotationrequiresfreshbothsidereadbacks."
+  ],
+  "EBS_archive_sha256": "0acf1c260e181ec54e2e7b8cac0f56f880a1fb6c32ecc2e58194bec679c7a307"
+}
