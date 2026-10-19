@@ -1,4 +1,4 @@
-# Status — 2026-10-19 03:33 UTC
+# Status — 2026-10-19 04:06 UTC
 
 ## Active: single-model real-document mainline
 Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
@@ -10,11 +10,11 @@ TRAIN,oldDEV,V1andallobservations remain;246identical rows reused and10new rows 
 Amendment:validation/real_trace_cpt_v10_AST_amendment_20261019.json;all data EBS readback verified.
 B0CPUreference complete:novel256 mean16-tokenLL−16.4662,ordinary256−19.9007;no augmentation result.
 Reference:validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json;all512docs and native vectors protected.
-Evaluation sourcec01deab passes1,640CPUchecks; full causal span shift/padding and exact AST aliases tested.
-Actual8rank width640 qualification on physical12/13,logical48–55;updates1/2finite after long cold graph compiles.
+CPUscorer reproduces all256ordinary reference vectors exactly;real evaluation now passes1,646CPUchecks.
+Actual8rank qualification completes8updates andbothphysicalclosures;independentall4fullstates/native16PASS.
 Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
-Fresh6/close/fullrestore6/update8;05:00deadline,no automatic retry;exactsource/shape PASS receipt required for science.
-Decision: finish actual recovery audit,then finite mainline release; bounded split diagnostic does not gate it.
+Latestfull8EBSreadbackongoing;awaitfinalPASSreceiptbefore320science,noautomaticretry.
+B0prefix-only notes256 live on physical15,4nativechecksPASS;no deployed-note or capability result yet.
 
 ## Active: bounded variable-depth writer diagnostic
 Question: does varied depth repair incomplete stopping and improve the same frozen reader?

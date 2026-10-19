@@ -1,0 +1,68 @@
+{
+  "status": "COMPLETE_ONLY_FOUR_SUPERSEDED_EBS_OPTIMIZER_DUPLICATES_RETIRED",
+  "utc": "2026-10-19T03:52:08.961306+00:00",
+  "old": {
+    "original": "/home/ubuntu/dario/local/nvme/diagnostics/partial-state-v6-world4-micro8-qualification-v1/writer/step-0000006",
+    "EBS": "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006",
+    "COMPLETE_sha256": "3aa04f9e942089257e0051f2889e3657a554b78c4c22d8b55bbd96b5a1632933",
+    "files": {
+      "model.pt": {
+        "bytes": 3441248275,
+        "sha256": "a9a8ea3afd589628e52f0d1df62cec4a1f6d678b19dc7b2922c65f17abad44fa"
+      },
+      "rank-00000.pt": {
+        "bytes": 5162143399,
+        "sha256": "5e938e6d57c0baf15aad4374f170eb99d8ad221756461729af10da8f608e9705"
+      },
+      "rank-00001.pt": {
+        "bytes": 5162143399,
+        "sha256": "109a0d55318758c664e356b0359a827ecfd793d39f6b666629ac70d023d55eb4"
+      },
+      "rank-00002.pt": {
+        "bytes": 5162143399,
+        "sha256": "a47e98c5da8201b2bd50567b8d6f0c0e9f533318e355e3974a34ad7a9d47aafd"
+      },
+      "rank-00003.pt": {
+        "bytes": 5162143399,
+        "sha256": "68194d779e548664c7f790238fbaef595747901887d12725740f624a35691f8b"
+      }
+    }
+  },
+  "new": {
+    "original": "/home/ubuntu/dario/local/nvme-study/runs/variable-depth-writer-v11-variable-TRAIN640-seed2026101911-v1/step-0000160",
+    "EBS": "/home/ubuntu/dario/local/backups/science/variable-depth-writer-v11-v1/output/variable/step-0000160",
+    "COMPLETE_sha256": "818b21c2b805fc356f090de752d4070ca05cce7e99504405d80eb2dc5c48053c",
+    "files": {
+      "model.pt": {
+        "bytes": 3441248275,
+        "sha256": "19ff7ea2df1f036ed55f3052579c36031aeaa6fd82ba51964e29f8a5541f0bce"
+      },
+      "rank-00000.pt": {
+        "bytes": 5162143399,
+        "sha256": "19002009b62c5966f95e1e906eb9f3f1276da35af91826a80579b073af4c0e91"
+      },
+      "rank-00001.pt": {
+        "bytes": 5162143399,
+        "sha256": "21d6e38b0655d9264a7d155eacc5c5c1c08cb514ecd6e65f2e930a246278daa9"
+      },
+      "rank-00002.pt": {
+        "bytes": 5162143399,
+        "sha256": "8ded7797d97219efd2613c497a03f81e2252ed40f9319298bf32c7d214d9951f"
+      },
+      "rank-00003.pt": {
+        "bytes": 5162143463,
+        "sha256": "32b50b8b722645db5d3474d71b95e7421d88ad459980cd132b7d14e4b77011fa"
+      }
+    }
+  },
+  "retire": [
+    "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006/rank-00000.pt",
+    "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006/rank-00001.pt",
+    "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006/rank-00002.pt",
+    "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006/rank-00003.pt"
+  ],
+  "bytes": 20648573596,
+  "policy": "All original full states remain. All EBS models and metadata remain. Newest scientific full optimizer is independently protected. Same-instance backup only.",
+  "finished_utc": "2026-10-19T03:52:09.069392+00:00",
+  "root_free_bytes": 96438509568
+}

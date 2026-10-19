@@ -8,10 +8,13 @@
    Actual qualifier: `local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2`.
    Eight workers on physical12/13,logical48–55;fresh1–6/fullsave/close/fresh full
    restore6/update7–8. Deadline05:00UTC. Inspect stage logs and supervisor;
-   do not interrupt legitimate cold compilation. No retry or scientific model yet.
-   Independent auditor is PREPARED but NOT launched:
+   All8updates finished by04:00;bothstagesphysicallyclosedandfull8saved.
+   Independent audit verifiedall4fullstatesand16nativechecks;latestfull8EBSreadbackongoing.
+   No320scienceyet. AwaitactualPASSreceipt,thenprepare/release/launchthe6frozenmodels.
+   Independent auditor RUNNING from04:03UTC:
    `local/analysis/audit_real_trace_qualification_v10r2_20261019.py`.
-   Review its8rank adaptation,source/data hashes,and disk space before use.
+   Actual8rank adaptation and TRAIN/source pins reviewed;~89GiB rootfree beforearchive.
+   Log:local/analysis/real-trace-v10-qualification-independent-audit-20261019.log.
    Prepared future launch scripts (notexecuted):local/analysis/prepare_real_trace_study_v10_20261019.py
    and run_real_trace_study_partition_v10_20261019.py. Builder requires actual audit PASS,
    pins heldV2,and sixfresh models on local/nvme-cpt. Review+finite release after audit.
@@ -38,6 +41,19 @@
    All outputs/nativechecks EBS readback;validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json.
    Evaluationc01deab:1,640CPUchecks. Mainline gates remainunchanged and have ample16tokenheadroom.
    Real320jobs need actual hardware PASS and finite release;outputs on local/nvme-cpt/runs.
+   Prepared release script:local/analysis/release_real_trace_study_v10_20261019.py.
+   AfterPASS runbuilder,review6protocols,runrelease(whichEBS-readbacksPRE_LAUNCH),
+   thenlaunchC/supervise-partition.py real_raw/real_prior/real_post in3tmuxsessions.
+   Samearmseedsserial;physical0/1,2/3,4/5;freshB0all6,terminal320,noextensions.
+   Evaluation worktree real-trace-eval-v10 now1,646CPUchecks;rawCPUscorer matches
+   all256ordinary native16vectors exactly. Resultshelper keeps two gates independent.
+   Newnotes runtime policy explicit rather than inherited CPU defaults.
+   B0realnotejob live:local/diagnostics/real-trace-v10-B0-DEV_AST256-notes-v1,physical15,
+   tmux real-trace-B0-notes-v10;4nativegatesPASS;new544prefillshape compiling.
+   Fixedreal evaluation projections:
+   local/nvme-cpt/data/real-trace-cpt-v10-evaluation-inputs-v2,all EBS readback.
+   Prefixquestions separatefromtargets;primaryfull16alwayscomplete;componentunsupported8AST/5legacy,
+   retainall256forprimary. V1preparationwronglyomittedleadingwhitespace;no modelrunfromV1.
 4. Broader document reasoning remains CPU preparation only. Correct MuSiQue projection
    uses composed_question_text;initialtemplate-question inventory retained as superseded.
    CorrectV2inventory COMPLETE:19,938TRAINquestions;306fullinputs<=1536tokens,4149<=2048.
@@ -54,7 +70,7 @@ Storage: all original full checkpoints remain on NVMe;EBS all terminal models an
 latest full resumable scientific state (variable160). Older inactive EBS optimizer
 duplicates retire only after fresh original+EBS full hashes and newer full protection.
 The newer variable160full is protected;oldv7CoT1807full640EBSoptimizerduplicates retired after fresh full readbacks;
-latestvariable160full remains protected. Rootfree~72GiB,enough for realqual8archive.
+latestvariable160full remains protected. Rootfree~89GiBafter oldv6qual6duplicate rotation,enough for realqual8archive.
 Receipt:validation/checkpoint_retention_latest_science_20261019.json. Preserve models/metadata.
 Keep35GiB per filesystem and512GiB host availability. EBS is same-instance backup.
 NEW local/nvme-cpt is ext4 UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67,already formatted

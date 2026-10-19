@@ -1,0 +1,12 @@
+{
+  "status": "PASS_ALL256_NATIVE_DOCUMENT_SCORES_MATCH_PRIOR_REFERENCE",
+  "documents": 256,
+  "maximum_absolute_token_logp_error": 0.0,
+  "source_sha256": "6394ae1e4224f481a20c94eda56be3f6fa04c9be6bc78b1cc41a3d0eab7cbbd1",
+  "rerun_sha256": "c0f386423fd81e62d7ca5f2c5892a7b679c04b4ec948e7d5119a9b037aba756b",
+  "limits": [
+    "Same256deterministicdocuments;notadditionalindependentobservations.",
+    "ThisvalidatesrawCPUscoring;conditionalnotesandactualTrainiumgenerationremainseparate."
+  ],
+  "source_commit": "d2f39d3"
+}
