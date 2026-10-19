@@ -11,23 +11,21 @@ writer–reader system as one bounded diagnostic, not the main architecture.
 
 ## Exact next action
 
-The real-context eight-rank qualification has completed all eight updates and both
-processes are physically closed. The independent audit is RUNNING:
+Mainline training is LIVE. Control: local/diagnostics/real-trace-cpt-v10-study-v1.
+Three8rank seed2026101913 runs use physical0/1 raw,2/3 prior,4/5 post. All three
+actual eight-worker captures passed. Tmux: cpt-v10-real_raw,cpt-v10-real_prior,
+cpt-v10-real_post. Seed2026101914 runs serially within each arm after its first
+terminal closes. Immutable training source3d8666b,local/worktrees/real-trace-cpt-v10.
+All six fresh B0;320 updates,full160/320,terminal primary. Monitor active logs,
+metrics,memory and device ownership. No automatic retry or outcome-based extension.
 
-- Control: local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2
-- Audit log: local/analysis/real-trace-v10-qualification-independent-audit-20261019.log
-- Audit program: local/analysis/audit_real_trace_qualification_v10r2_20261019.py
-- It has already independently passed all 16 native vectors and master witnesses.
-- Require actual PASS_ACTUAL_REAL_TRACE_SFT_FULL_RESTORE, including protected full8.
-
-After PASS, use immutable training worktree local/worktrees/real-trace-cpt-v10,
-commit 3d8666b. Prepare with local/analysis/prepare_real_trace_study_v10_20261019.py,
-review all six protocols, then local/analysis/release_real_trace_study_v10_20261019.py.
-The release program protects source/protocols/evidence on EBS before launch.
-Launch three tmux controllers, each C/supervise-partition.py with argument
-real_raw, real_prior, or real_post. Physical partitions are 0/1, 2/3, and 4/5.
-Two seeds run serially per arm. All six start fresh B0; 320 updates, terminal primary.
-No automatic retry, outcome-based extension, or qualification-model warm start.
+The real-context eight-rank qualification independently PASSES:all4fullstates,
+native16,actualsaved6restored8optimizerdigests,finiteFP32masters/moments,BF16casts,
+counters and memory bound. Late groupedPSSgrowth1.467GiB/save<2. Latestfull8 EBS
+readback verified. Public qualifier and launch reports in validation. The complete
+sciencePRE_LAUNCHsource/protocol/release archive was EBS-readback verified before
+launch. No terminal scientific result yet. Protect first newsciencefull160 when
+available;onlythenrotateolderEBSoptimizerduplicates with fresh readback.
 
 Training shape: world8 × micro4, global32, width640, target640, head chunk32;
 BF16 active parameters/gradients, FP32 masters/Adam, one ZeRO reduction owner.
@@ -77,8 +75,8 @@ Raw-training eligibility remains independent of note-generation errors.
 
 ## Storage and operational invariants
 
-Keep35 GiB free per filesystem and512 GiB host availability. Root free about89 GiB
-before the real qualification archive. All original full checkpoints stay on NVMe.
+Keep35 GiB free per filesystem and512 GiB host availability. Root free about67 GiB
+after the real qualification archive. All original full checkpoints stay on NVMe.
 EBS retains all terminal models and latest complete resumable scientific state,
 currently variable160. Older inactive duplicate optimizer payloads retire only
 after fresh original/EBS full hashes and newer full recovery protection. Model

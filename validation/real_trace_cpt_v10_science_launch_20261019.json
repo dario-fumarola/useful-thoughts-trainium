@@ -1,0 +1,135 @@
+{
+  "status": "RELEASED_SIX_FRESH_MODELS_THREE_SEED1913_RUNS_ACTUALLY_LIVE",
+  "plan": {
+    "status": "PREPARED_SIX_DECLARED_FRESH_MODELS_PENDING_FINITE_RELEASE",
+    "utc": "2026-10-19T04:07:49.867246+00:00",
+    "source_root": "/home/ubuntu/dario/local/worktrees/real-trace-cpt-v10",
+    "jobs": [
+      {
+        "arm": "real_raw",
+        "seed": 2026101913,
+        "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101913.json",
+        "protocol_sha256": "0721bc40a7cb155e662d6b664dd1e3c2532a95df14fe9b01fe0536767de69818",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101913-v1",
+        "physical_devices": [
+          0,
+          1
+        ]
+      },
+      {
+        "arm": "real_raw",
+        "seed": 2026101914,
+        "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_raw-seed2026101914.json",
+        "protocol_sha256": "382f7e2d0a055fb4c693d4b0516bfcb0c5149c7b24cfc007985ef4b57abfa335",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_raw-TRAIN5120-seed2026101914-v1",
+        "physical_devices": [
+          0,
+          1
+        ]
+      },
+      {
+        "arm": "real_prior",
+        "seed": 2026101913,
+        "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101913.json",
+        "protocol_sha256": "6138f83f0a7a79b4e5b1bd05026aedd34f13e265445b023971b5082a51adead1",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101913-v1",
+        "physical_devices": [
+          2,
+          3
+        ]
+      },
+      {
+        "arm": "real_prior",
+        "seed": 2026101914,
+        "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_prior-seed2026101914.json",
+        "protocol_sha256": "fe748b59c93052e2930aec9d53000b7234d85fa620d06ff02e85b6f063011cc7",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_prior-TRAIN5120-seed2026101914-v1",
+        "physical_devices": [
+          2,
+          3
+        ]
+      },
+      {
+        "arm": "real_post",
+        "seed": 2026101913,
+        "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101913.json",
+        "protocol_sha256": "fba0d1760a173d2d2f8764224a17bbb2aac609a5effd67c28889a15716066a2e",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101913-v1",
+        "physical_devices": [
+          4,
+          5
+        ]
+      },
+      {
+        "arm": "real_post",
+        "seed": 2026101914,
+        "protocol": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-study-v1/protocol-real_post-seed2026101914.json",
+        "protocol_sha256": "e0ae3928f9c20f1d396e3f8195163bbf492999588aa21b4984a9a695d8807e4b",
+        "output": "/home/ubuntu/dario/local/nvme-cpt/runs/real-trace-cpt-v10-real_post-TRAIN5120-seed2026101914-v1",
+        "physical_devices": [
+          4,
+          5
+        ]
+      }
+    ],
+    "deadline_utc": "2026-10-20T12:00:00+00:00",
+    "qualification_sha256": "72098b502965a54bca0a667f6f6feea4b27aab44de86f8db39f507cdf2779464",
+    "held_primary_manifest_sha256": "22bd05cb3ad07e08a17e30578bebe07629216c9ad3910e9270bf0794b34dff24",
+    "execution": "One eight-rank partition per arm,seed1913then1914serially;three arms may run concurrently. No automatic retry or extensions.",
+    "checkpoint_policy": "Full160/320;terminal320primary. Preserve all original states;protect each model plus latest complete optimizer with readback and retain every observation."
+  },
+  "release": {
+    "status": "RELEASED_SIX_DECLARED_FRESH_REAL_TRACE_MODELS",
+    "utc": "2026-10-19T04:08:01.942543+00:00",
+    "plan_sha256": "6bd31906a5e7fd6b0f545bec7dc9a59f2809e1cb7bf95550801e70a40593ad16",
+    "supervisor_sha256": "f23546e2ba4f4a70125b5b39a646acccd3188083dc05200fa265e429c51850f8",
+    "helper_sha256": "e26d26238a2180762d050b21be857adc0bceb072defd8dd3a71cac38fedc7e8b",
+    "qualification_file": "/home/ubuntu/dario/local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2/qualification-independent-audit.json",
+    "qualification_sha256": "72098b502965a54bca0a667f6f6feea4b27aab44de86f8db39f507cdf2779464",
+    "scope": "Exactlythreecausal-modelarms,twofixedseeds,320updateseach,terminalprimary;noextensions,newmodelsorautomaticretry.",
+    "hardware": "Three8rankpartitionsphysical0/1,2/3,4/5;twoseedsserialwithinarm;all6startfromreleasedB0.",
+    "gates": "Independentpredeclaredtrainingandinferencebenefitgatesandordinarytextregressionbound;B0absoluteresultsandallfailuresretained.",
+    "storage": "Alloriginalfull160/320statesstaylocalNVMe;EBSallterminalmodelsandlatestfullresumablestatewithfreshreadback.",
+    "limits": "SelectedFineMathDEV,notofficialTESTorgeneral-languagegain;matcheddocuments/updates,notequalFLOPsorsupervisedtokens."
+  },
+  "actual_live_partitions": {
+    "real_raw": {
+      "first_live_sha256": "ccd0212d334390555416db7666943119e71284c23c1eae771e8d7e0029aa8012",
+      "owned_launch": {
+        "pid": 543267,
+        "start_ticks": 21758311,
+        "ppid": 543152,
+        "pgid": 543267,
+        "session": 543267
+      },
+      "actual_workers": 8
+    },
+    "real_prior": {
+      "first_live_sha256": "519ea655b8f2e1236d4015b724e9482dcca860839d2de7b918a31211cef50a41",
+      "owned_launch": {
+        "pid": 543442,
+        "start_ticks": 21758333,
+        "ppid": 543384,
+        "pgid": 543442,
+        "session": 543442
+      },
+      "actual_workers": 8
+    },
+    "real_post": {
+      "first_live_sha256": "c2a2dfbfb0d4493f61255fd62e3b03349b7e32c640802ea6c59e5b5d138219af",
+      "owned_launch": {
+        "pid": 543269,
+        "start_ticks": 21758312,
+        "ppid": 543155,
+        "pgid": 543269,
+        "session": 543269
+      },
+      "actual_workers": 8
+    }
+  },
+  "PRE_LAUNCH_archive_receipt_sha256": "f9104546aa95f07c5a805f649aa04bede2bcf9c64f94996ec06e1d20cad884da",
+  "limits": [
+    "No terminal checkpoint or capability result yet.",
+    "Seed1914startsseriallyonlyafterthematching1913terminalcloses."
+  ]
+}

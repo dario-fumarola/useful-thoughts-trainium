@@ -1,9 +1,9 @@
-# Status — 2026-10-19 04:06 UTC
+# Status — 2026-10-19 04:09 UTC
 
 ## Active: single-model real-document mainline
 Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
 Experiment: real-trace-cpt-v10; immutable training source3d8666b,1,622CPUchecks; original design public.
-Raw/prior/post: fresh1.7B per arm/seed,5120documents/two passes/320updates,two seeds; no learning release yet.
+Raw/prior/post:6fresh1.7Bmodelsreleased;seed1913live8ranksperarm,physical0–5;seed1914serialperarm.
 Independent training/inference gates remain>=0.25nat/span and paired95%lower>0 in each seed,plus ordinary-text bound.
 Prelearning correction: string novelty missed10TRAIN-equivalent ASTs; V2novel256 has zero ordered-AST overlap.
 TRAIN,oldDEV,V1andallobservations remain;246identical rows reused and10new rows selected without trained outcomes.
@@ -11,9 +11,9 @@ Amendment:validation/real_trace_cpt_v10_AST_amendment_20261019.json;all data EBS
 B0CPUreference complete:novel256 mean16-tokenLL−16.4662,ordinary256−19.9007;no augmentation result.
 Reference:validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json;all512docs and native vectors protected.
 CPUscorer reproduces all256ordinary reference vectors exactly;real evaluation now passes1,646CPUchecks.
-Actual8rank qualification completes8updates andbothphysicalclosures;independentall4fullstates/native16PASS.
+Actual8rank qualification PASS:all4fullstates/native16/actualfull6restore/cursors/casts and memorybound verified.
 Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
-Latestfull8EBSreadbackongoing;awaitfinalPASSreceiptbefore320science,noautomaticretry.
+Full8EBSreadbackverified;trainingcontrol:local/diagnostics/real-trace-cpt-v10-study-v1;terminal320primary.
 B0prefix-only notes256 live on physical15,4nativechecksPASS;no deployed-note or capability result yet.
 
 ## Active: bounded variable-depth writer diagnostic

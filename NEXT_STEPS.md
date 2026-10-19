@@ -1,25 +1,22 @@
 # Current queue
 
-1. Main path: complete the actual real-document width640 SFT qualification.
-   Source3d8666b at `local/worktrees/real-trace-cpt-v10`;1622CPUchecks pass.
-   Public prospective plan: `validation/real_trace_cpt_v10_design_20261019.json`.
-   Raw/prior/post single-model arms,5120documents,two passes/320updates,two seeds.
-   Training and inference benefit gates are independent; no bigger split study.
-   Actual qualifier: `local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2`.
-   Eight workers on physical12/13,logical48–55;fresh1–6/fullsave/close/fresh full
-   restore6/update7–8. Deadline05:00UTC. Inspect stage logs and supervisor;
-   All8updates finished by04:00;bothstagesphysicallyclosedandfull8saved.
-   Independent audit verifiedall4fullstatesand16nativechecks;latestfull8EBSreadbackongoing.
-   No320scienceyet. AwaitactualPASSreceipt,thenprepare/release/launchthe6frozenmodels.
-   Independent auditor RUNNING from04:03UTC:
-   `local/analysis/audit_real_trace_qualification_v10r2_20261019.py`.
-   Actual8rank adaptation and TRAIN/source pins reviewed;~89GiB rootfree beforearchive.
-   Log:local/analysis/real-trace-v10-qualification-independent-audit-20261019.log.
-   Prepared future launch scripts (notexecuted):local/analysis/prepare_real_trace_study_v10_20261019.py
-   and run_real_trace_study_partition_v10_20261019.py. Builder requires actual audit PASS,
-   pins heldV2,and sixfresh models on local/nvme-cpt. Review+finite release after audit.
-   Actual PASS receipt must contain source_files and qualified_training_shape
-   exactly matching the subsequent320update protocol;loader enforces this.
+1. Mainline REAL TRAINING LIVE. Three8rank runs seed2026101913 use physical0/1,
+   2/3,4/5 for raw/prior/post;seed2026101914serialperarm afterfirstterminalcloses.
+   Control:local/diagnostics/real-trace-cpt-v10-study-v1;tmux cpt-v10-real_raw,
+   cpt-v10-real_prior,cpt-v10-real_post. Actual8worker captures each verified.
+   Immutable training source3d8666b at local/worktrees/real-trace-cpt-v10.
+   5120documents,2passes,320updates/global32,width640,full160/320;noextension.
+   Public actual qualifier:validation/real_trace_cpt_v10_training_qualification_20261019.json.
+   Native16/all4fullstates/actualsaved6optimizerdigests/finitecasts/counters PASS;
+   late groupedPSSgrowth1.467GiB/save<2;no uninterrupted-parityorindefinitestabilityclaim.
+   Fullqualification8 EBSverified. Sixscienceprotocols/source/releaseEBSreadbackbeforelaunch.
+   Public launch:validation/real_trace_cpt_v10_science_launch_20261019.json.
+   Next:monitor loss/norm/memory and actualcheckpointclosures;do notinspectheldoutmodels
+   tochooseextensions. Afterterminalall6 independentlyaudit actualstates/cursors once,
+   thenfreeze evaluatedmodels and execute the declared CPU16tokenlikelihood comparisons.
+   Protectfirstscientificfull160asavailable,thenrotateolderEBSoptimizerduplicatesonly
+   afterfreshboth-side hashes. All original checkpoints stay on local/nvme-cpt/runs.
+
 2. Both bounded math writers have finished160updates and independent full audit.
    Fixed640two steps versusvariable640balanced1–5;training5af3431 remains immutable.
    Report:validation/variable_depth_writer_v11_terminal_training_20261019.json.
