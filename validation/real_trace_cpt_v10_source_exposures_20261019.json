@@ -1,0 +1,27 @@
+{
+  "status": "FIXED_SOURCE_EXPOSURE_AND_SUPERVISION_INVENTORY",
+  "unique_documents_per_model": 5120,
+  "passes": 2,
+  "document_occurrences_per_model": 10240,
+  "true_continuation_targets_per_model": 163840,
+  "arms": {
+    "real_raw": {
+      "supervised_native_tokens": 4653686,
+      "full_trace_occurrences": 0
+    },
+    "real_prior": {
+      "supervised_native_tokens": 4828216,
+      "full_trace_occurrences": 5120
+    },
+    "real_post": {
+      "supervised_native_tokens": 4823096,
+      "full_trace_occurrences": 5120
+    }
+  },
+  "verified": "The first 60 actual updates in each active seed-1913 arm match an independent permutation and native label-count formula.",
+  "interpretation": "Documents, order per seed and updates match. Added annotations change supervised token totals and per-token weights; do not describe this as exact FLOP or target-token matching.",
+  "limits": [
+    "This is data accounting, not a learning result.",
+    "Augmentation labels are calculated from the causal prefix; prior and post views condition on different information at training time."
+  ]
+}

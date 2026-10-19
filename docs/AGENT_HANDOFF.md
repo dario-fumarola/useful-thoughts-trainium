@@ -32,6 +32,17 @@ BF16 active parameters/gradients, FP32 masters/Adam, one ZeRO reduction owner.
 Warm fresh updates measured about six seconds; cold compilation took much longer.
 Do not interpret compilation time as sustained throughput or finite loss as capability.
 
+The first160protection watcher is live in tmux cpt-v10-first160-protection;
+wait deadline06:00, one invocation, no retry. It deep-audits then EBS-protects the
+first complete160 snapshot. After its PASS receipt, review/run
+local/analysis/rotate_superseded_EBS_after_CPT160_20261019.py: fresh full readbacks
+before retiring only older variable160 and qualification8 EBS optimizer copies.
+All originals/models remain. Final all-six terminal audit is prepared at
+local/analysis/audit_real_trace_six_terminals_v10_20261019.py, not yet running.
+The shared state auditor passed actualqual8; independent label accounting also
+matches first60updates of all three active arms. At04:24 all are past130 and
+recent groupedPSS is stable,about139–146GiB/arm;hostavailabilityabout1.37TiB.
+
 ## Frozen data and endpoints
 
 TRAIN5120 is unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.

@@ -11,9 +11,13 @@ and post-document-calculation arms. Training benefit and extra-inference benefit
 separate declared gates. The [pre-learning split correction](validation/real_trace_cpt_v10_AST_amendment_20261019.json)
 removes ten arithmetic AST aliases missed by string matching; the corrected 256-document
 panel and [unchanged-base reference](validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json)
-are frozen. Actual longer-context save/restart qualification is still in progress;
-no new trained capability result is available. A bounded variable-depth writer repair
-runs separately as a diagnostic. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
+are frozen. The [real-context save/restart qualification](validation/real_trace_cpt_v10_training_qualification_20261019.json)
+passes, and the [six-model training budget is released](validation/real_trace_cpt_v10_science_launch_20261019.json):
+three seed-1 arms are running, with seed 2 scheduled serially within each arm.
+No terminal capability result is available yet. Frozen [training code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/3d8666b)
+and [evaluation code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/29c8b24)
+are kept on separate branches. A bounded variable-depth writer repair runs separately
+as a diagnostic. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
 
 ## Current result
 

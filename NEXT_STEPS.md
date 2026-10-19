@@ -16,6 +16,17 @@
    thenfreeze evaluatedmodels and execute the declared CPU16tokenlikelihood comparisons.
    Protectfirstscientificfull160asavailable,thenrotateolderEBSoptimizerduplicatesonly
    afterfreshboth-side hashes. All original checkpoints stay on local/nvme-cpt/runs.
+   First160protectionwatcher LIVE:tmux cpt-v10-first160-protection,waits only until06:00.
+   Program:local/analysis/watch_first_real_trace_full160_v10_20261019.py.
+   It invokes protect_first_real_trace_full160_v10_20261019.py ONCE after a COMPLETE
+   snapshot;requires independent state helper already tested on actualqual8.
+   Afterfirst-full160-protection.json PASS,reviewthenrun
+   local/analysis/rotate_superseded_EBS_after_CPT160_20261019.py to retire onlyold
+   variable160/world4 andrealqual8/world8 EBS optimizerduplicates afterfreshfullreadbacks.
+   That preserves originals/models and gives room for all6terminalmodels/newfull320.
+   Final six-terminal audit PREPARED,notrunning:
+   local/analysis/audit_real_trace_six_terminals_v10_20261019.py. Review beforeuse.
+   Independent native label formula matches first60updates of all3activearms.
 
 2. Both bounded math writers have finished160updates and independent full audit.
    Fixed640two steps versusvariable640balanced1–5;training5af3431 remains immutable.
