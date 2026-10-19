@@ -1,10 +1,63 @@
-# Handoff — 2026-10-19 09:33 UTC
+# Handoff — 2026-10-19 10:02 UTC
 
-## Exact next task
+## Exact active task
 
-Publish the completed V15 result currently prepared onmain, then implement one
-bounded source-balanced reference. Current main remote64c0926; local results/docs
-are pending reviewed commit. No training or model evaluation remains active.
+Main remote e5cdc19 publishes complete positive V15 arithmetic reference with NLLcost.
+New source-balanced V17 preparation is active;no scientific training release yet.
+Frozen branch/worktree37028a1 atlocal/worktrees/real-source-balanced-v17.
+1,656CPUchecks+smoke/compile PASS;45targetedchecks;all10,240actualnativeTRAINviewsPASS.
+Newpack usesexisting note_close mask as source-prefix component andfuture mask as task;
+each perexample mean receives0.5. Same5120docs/two passes/320updates asV15. No schedulechange.
+Counts/seed:source4,489,846 botharms;taskdirect163,840/COT512,900;max622active slotsfits640.
+Newsource readonly/committed;do noteditwhilehardwarequalificationruns.
+
+HardwarequalV1failedbeforeNRT allocation because tmux PATH lackedvenvbin/libneuronpjrt-path.
+Originalcontrolretained. V2explicitprepend actualinterpreterbin+helpercheck;protocol/gatesunchanged.
+Active:tmux source-balanced-v17-qualification-v2;control
+local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2.
+Outputs:local/nvme-cpt/diagnostics/samebasename andsamebasename-direct.
+World8logical48–55,physical12/13;allactual8allocated. First weighted full640graph
+stillcompiling asof10:01UTC;0updatesyet,no failure;ownedwalrus compiler CPU active,
+groupedPSS~62GiB,hostavailable~1904GiB. Be patient;deadline13:30,3600s max/stage.
+Stages:CoTfresh1–6,saves2/4/6;physicalclose;fullrestore6→updates7–8/save8;
+freshdirect1–3/save2/3. No automaticretry;alloriginal6statesremainNVMe.
+Small evidence/EBS only fordisposablequalification;allscienceweights/latestfull320 separatelyprotected.
+Preparedindependentauditor:local/analysis/audit_real_source_balanced_qualification_v17_20261019.py.
+Runonlyafterall3closures fromV17worktree withcorrectCPUenv/PYTHONPATH. It usesindependent
+length formulas forsource/taskcounts andweightedloss,allmaster/moment/cast bytes/fullrestore
+andpostsavePSSgrowth<2GiB. Need watch/log/readback publicauditwhenactualPASS;no prematureclaim.
+
+Freshconfirmation CPU preparation parallel:
+PinnedHF FineMath4+ revisione92b25a616738fe95dc186b64dfb19f9c8525594.
+Downloadedshard63 SHAca21ff1b4127b1da10243f7e675f752c5c6cb9b6f7e57448ba01bb1a1824dfee.
+First104,679rows→61,308afterprior retainedpageexclusion→598sourceverifiedcompounds.
+Upperbound565uniqueASTs,447novelversusactualTRAINandall3oldarithpanels;cannotfill512.
+Fixeddescendingextension rule63,62,61,60,writtentodata/real-source-balanced-v17-confirmation-extension-rule.json.
+Nowshard62download/filter/curation active inexecsession7469;logs
+local/analysis/real-source-v17-shard62-{download|filter|curation}-20261019.log.
+Dirs local/nvme-study/data/real-source-balanced-v17-fresh-source-shard62-v1 and
+real-source-balanced-v17-fresh-curation-shard62-v1. Firstsource dirsomit-shard63.
+Curationreuses immutable9d57df7atlocal/worktrees/real-prefix-partial-v9,minimumops2,
+samebounds/eligibility;workerRAW_SHA reboundONLYforprovenance totheactualnewrawSHA.
+No frozen source edited. Firsthelperlaunchsyntaxfailurepreserved;v2scriptASTchecked/runningfinished.
+Source filtering reads ONLYprior*.documents.jsonl metadata;old TEST/unlisted rawtextneveropened.
+Knownprior URLsarefiltered inArrowBEFOREtext.to_pylist;contenthashesthenexcludepriordocs.
+Coverageisretainedauditedmetadata,noteveryrejectedrawline;no globalnoveltyclaim.
+
+Stilltobuild:prefix-derivedfull/partiallabelsandcanonicalorderedexact-valueAST pool across
+completefreshsources;excludeactualTRAINandalloldDEVASTs,fitpartial<=64/full<=127,
+onecanonicalpage/expressionperitem;select512byfixedhash. Ordinary256newsource docs
+mustbedisjointfromarithpanelandpriormetadata. Freeze beforeanynewscience/heldforward.
+Ifeligiblepoolstill<512,followdeclarednextshard61,notcurationrelaxation.
+Canonicalkeymustcollapseconstantdecimal/rationalunarysignaliases,parentheses naturally,
+preserveorderedoperators;noalgebraic/pretrainingnoveltyclaim. Upperboundinlinecodeused
+astConstant→Fraction,Unaryplusremoved,Unaryminusconstantfolded,Add/Sub/Mult/Div/Powtuples.
+Current training sourcehasnoevalsupportfornewmodelbinding;latercreateversionedevalbranch
+from41a5bfd,extendexplicitconfirm512/statusguards,keepold256/384identitiesunchanged.
+Prospectivedesign/science/backupbudget release stillpending;no automatic4runlaunch.
+PublicCPUreadinessreportnewfilespreparedonmainnotyetcommitted;updateREADME/status+push.
+
+## Completed V15 evidence
 
 V15 allnine fixedmodels complete:17,280scalar attempts,3,456notes,19,584LLrows.
 PrimaryCoT342/335 versusdirect275/285 andsame-CoTempty261/263 of384. GatePASSboth.

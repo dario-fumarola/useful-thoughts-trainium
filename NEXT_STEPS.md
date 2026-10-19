@@ -12,17 +12,27 @@
    Terminal states and all original outputs/readouts are readback protected.
    Source829d9a2/evaluation41a5bfd remain frozen; producers are physically closed.
 
-2. Prepare one bounded source-balanced objective after publishing the result.
-   Question: can ordinary prediction be preserved while retaining useful generated
-   computation? Both target-only arms regress ordinary NLL, so retain a real
-   source-text loss and give target computation an explicitly normalized weight.
-   Compare source+direct with source+CoT from fresh B0, matched data/order/updates.
-   Inspect existing driver packing/normalization first; choose the simplest correct
-   ordinary-causal schedule. New identity, prospective endpoints and actual
-   mask/update/resume/memory qualification are required before any learning release.
-   Keep existing384 as development; seek a new source-TRAIN-derived confirmation
-   cohort without opening official TEST. Account for prior development exposure.
-   No broad RL, model-size jump or expanded split rescue follows from this result.
+2. Finish source-balanced V17 qualification and fresh confirmation preparation.
+   Frozen branch37028a1: 1,656 CPU checks and10,240 real native packs pass.
+   Reuse existing two-component CE:0.5 source-prefix mean +0.5 task mean perexample.
+   Same TRAIN5120/two passes/320updates;source_direct/source_cot,world8×micro4,
+   width640,target640. No new scientific training release yet.
+   Hardware control:local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2.
+   Tmux source-balanced-v17-qualification-v2;actual8workers onphysical12/13.
+   First graph compiling. Disposable CoT1–6,fullrestore6→8,direct1–3;noautomaticretry.
+   V1 PATH-only failure before allocation is retained. Small evidence backedup;
+   original qualification full states/models remainNVMe;scientific EBS reserve protected.
+   Independent auditor prepared:local/analysis/audit_real_source_balanced_qualification_v17_20261019.py.
+   It must verify independent source/task label formulas andweighted loss,allstate bytes,
+   restored optimizer digests,memory andphysicalclosure before declaring hardwarePASS.
+   Confirmation:one pinned HF FineMath4+ TRAIN shard63,prior retained metadata pages/content excluded;
+   598 accepted computations but<=447 novelASTs. Fixed extension to62 isactive.
+   Pipeline session useslocal/analysis/*real_source_confirmation_shard_v17_20261019.py.
+   Current private source/curation dirs endfresh-source-shard62-v1/fresh-curation-shard62-v1.
+   Freeze512 unique fitting expressions plus256 ordinary new documents byfixedhash,
+   excluding oldTRAIN/DEV ASTs/pages;keepoldTEST/unlistedtext opaque. No model-outcome selection.
+   Then publishprospectivedesign/datahashes,confirmstoragebudget,releaseonlyqualifiedfourfreshmodels.
+   No broadRL,sizejump orsplitrescue. V15 positive inference/negativeNLL result staysunchanged.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:
    validation/variable_depth_writer_v11_complete_20261019.json.

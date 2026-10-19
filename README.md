@@ -78,6 +78,11 @@ all original checkpoints remain on local SSD. The
 and [prospective design](validation/real_target_sft_v15_design_20261019.json)
 retain the exact experiment identity.
 
+The next bounded [source-balanced preparation](validation/real_source_balanced_v17_CPU_readiness_20261019.json)
+adds a shared source-prefix loss, normalized separately from task targets. Its
+CPU and real-data packing checks pass; accelerator/recovery qualification and
+fresh confirmation curation are active. No new scientific training is released.
+
 ## Earlier study: single-model real-document computation and likelihood
 
 These are the terminal step-320 checkpoints, not selected intermediate models. The
