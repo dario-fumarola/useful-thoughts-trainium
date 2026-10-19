@@ -85,8 +85,35 @@ def stream_save(path, value):
     os.replace(temp, path)
 
 
+def cpu_export_staging_observation(*, release=False):
+    """Release unreachable CPU export buffers on this qualified Linux runtime.
+
+    Opt-in engineering candidate: this performs no tensor/device operation and
+    does not change the checkpoint format. Hardware memory/recovery evidence is
+    required before enabling it in scientific training.
+    """
+    import ctypes
+    import gc
+    def pss():
+        return int(next(line.split()[1] for line in Path('/proc/self/smaps_rollup').read_text().splitlines()
+                        if line.startswith('Pss:')))*1024
+    before = pss()
+    collected, trimmed = None, None
+    if release:
+        collected = gc.collect()
+        libc = ctypes.CDLL(None)
+        trim = libc.malloc_trim
+        trim.argtypes = [ctypes.c_size_t]
+        trim.restype = ctypes.c_int
+        trimmed = trim(0)
+    return dict(PSS_before_bytes=before, PSS_after_bytes=pss(),
+                collected_objects=collected, malloc_trim_return=trimmed,
+                cleanup_enabled=release)
+
+
 def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, device,
-                    *, checkpoint_root=None):
+                    *, checkpoint_root=None, release_cpu_staging=False,
+                    observe_cpu_staging=False):
     # Call only at a settled update/load boundary, with no pending random IR.
     # Checkpoint observation (including the qualification readback) must not
     # change the next draw, even if an export or runtime barrier advances RNG.
@@ -113,6 +140,9 @@ def save_checkpoint(output, model, optimizer, step, state, rank, world, xm, devi
             run_id=output.name, world_size=world, spec_hash=state['spec_hash'],
             files=files, created_utc=utc_now(), metadata=state))
     xm.rendezvous(f'checkpoint-{step}-complete')
+    if release_cpu_staging or observe_cpu_staging:
+        report = cpu_export_staging_observation(release=release_cpu_staging)
+        atomic_json(directory/f'cpu-export-release-rank-{rank:05d}.json', report)
     restore_cpu_rng(rng['cpu'])
     xm.set_rng_state(rng['device'], device)
     return directory

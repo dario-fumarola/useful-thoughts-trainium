@@ -1,0 +1,127 @@
+{
+  "schema": "variable-depth-writer-v11-v1",
+  "created_utc": "2026-10-19T02:19:47.474531+00:00",
+  "question": "Does variable-depth prefix-only supervision repair incomplete stopping and improve the same frozen reader, compared with a fresh fixed-depth writer control?",
+  "scope": "One bounded diagnostic seed,not a final architecture claim. No new reader training,no RL,no real-data hardware run,no model-size change.",
+  "train_design": "Fresh B0 fixed640(depth2) versus variable640(128each depths1..5). Same seed2026101911,160updates/8passes/global32,constant1e-5,writer-only ordinary completion CE,root operation structurally excluded,nativeEOS after complete nonroot trace. Both width192,target128,world4xmicro8,BF16active/F32masters,one ZeRO reducer,export cleanup. All TRAIN1280/newDEV512 expressions exclude previous7168.",
+  "protocols": {
+    "qualification": {
+      "file": "/home/ubuntu/dario/local/diagnostics/variable-depth-writer-v11-v1/protocol-qualification.json",
+      "sha256": "d10d7ecba76addef93095d81a110a56770e5bc06e519bbf3ad744856abb10c04",
+      "order_sha256": "978249077880db6467bddf4b5e0c29a26493d2ad28d9c6d1feb10d56fcb1ddb4"
+    },
+    "fixed": {
+      "file": "/home/ubuntu/dario/local/diagnostics/variable-depth-writer-v11-v1/protocol-fixed.json",
+      "sha256": "de92da9e3fd55e2973353b06b3e732817a38e69f12beb9d8a8aeaa6a86a2c96d",
+      "order_sha256": "4f01226dbf4aa84fd459a79d2250ac7a6639e17c08eb3a4a7e3f9065ee48c092"
+    },
+    "variable": {
+      "file": "/home/ubuntu/dario/local/diagnostics/variable-depth-writer-v11-v1/protocol-variable.json",
+      "sha256": "5ce713550ae3c0023d763fc5ed151da059ce3cfdd760e77fadfdec648d51e3ac",
+      "order_sha256": "4f01226dbf4aa84fd459a79d2250ac7a6639e17c08eb3a4a7e3f9065ee48c092"
+    }
+  },
+  "data_manifest_sha256": "d775db7ee5e158a333406687f871dedc427843d1e63b10cbee0e255e57f28325",
+  "held_panels": {
+    "existing_composition512": {
+      "file": "/home/ubuntu/dario/local/nvme/data/partial-state-arithmetic-v6/DEV_composition.jsonl",
+      "sha256": "cbe5d61ee280e12fd5152c0637f39f72e0394456df45d217a987e5db21132983",
+      "n": 512,
+      "needed_steps": 3,
+      "exposure": "Previously inspected developmental panel,primary targeted repair,not fresh TEST"
+    },
+    "fresh_depth2_256": {
+      "file": "/home/ubuntu/dario/local/nvme-study/data/variable-depth-writer-v11/DEV_depth2.jsonl",
+      "sha256": "a57efc3cafb6ca0d3ccee585609125a6883bf6e28f2e0d34373d509c93487406",
+      "n": 256,
+      "needed_steps": 2,
+      "exposure": "New expression-disjoint interpolation"
+    },
+    "fresh_depth6_256": {
+      "file": "/home/ubuntu/dario/local/nvme-study/data/variable-depth-writer-v11/DEV_depth6.jsonl",
+      "sha256": "793eb0ed1a349b3754d757487992fe9dcce7d13b437f437f5c577d35719ea4a2",
+      "n": 256,
+      "needed_steps": 6,
+      "exposure": "New expression-disjoint unseen depth;train maximum5"
+    }
+  },
+  "evaluation": "Both terminal160writers on all3panels; exact canonical partial-state accuracy,correct step-count,arithmetic validity,root transmission,naturalEOS/caps/errors. Same frozen v7 reader seed2026101806 step320 with actual variable/fixed notes,teacher,empty and direct; intact unrelated-note control retained. Untouched B0CoT and frozen full-CoT seed2026101806 step640 on same questions. Greedy native generation,FP32 as existing qualified evaluation; writer128+reader32 versus single160 actions. No note repair,selection or answer leakage. Every unsupported/error/cap stays in denominator.",
+  "primary_gate": {
+    "writer": "On existingcomposition512,variable canonical+natural>=70%,and paired document bootstrap95%CI for variable-minus-fixed excludes0 positively.",
+    "reader": "Variable-note answer accuracy minus fixed-note accuracy >=10percentage points and its paired95%CI excludes0 positively; variable-note accuracy >=40%. Teacher ceiling and direct/empty/unrelated contrasts reported beside it.",
+    "architecture": "FullCoT and B0 are allowed to win. No claim split is preferable unless its complete-answer gain justifies actual tokens,latency and training/two-model cost. Otherwise stop expanding this architecture.",
+    "unseen_depth": "Depth6 is a separate stress endpoint,not pooled or retrospectively selected; report exact step-count/natural-stopping and answers even if failure."
+  },
+  "statistics": "Paired item bootstrap,20000 draws,seed2026101912,95%percentile intervals;one training seed,unadjusted intervals,developmental claim only. Terminal160 primary,no best checkpoint choice.",
+  "engineering": "Before either pilot: disposable variable first128 qualification,fresh1-6/fullsave2,4,6/physical closure/fresh full restore6/ordered7-8/fullsave8. Native gates,all state hashes/optimizer bytes,cursors,finite real masters/casts and bounded memory must pass. No uninterrupted-bitwise claim.",
+  "resource_bound": "Qualification one4core job at a time,<=1h subprocess each,03:30UTC qualification deadline. Pilot two4core writers<=1h each,after explicit qualified release only. Evaluation separately bounded after terminals. 512GiB host floor,35GiB each disk reserve,no automatic retry.",
+  "limitations": [
+    "Curriculum changes both depth/structure coverage and stopping supervision;not a clean EOS-only causal ablation.",
+    "Fixed/variable use matched example counts and updates,not matched supervised token counts;report exact trace/action counts.",
+    "Reader/fullCoT frozen from larger earlier synthetic study;new pilot not a fully matched architecture comparison.",
+    "Root operation is omitted structurally;incidental numerical equality is recorded,not selected away.",
+    "Synthetic arithmetic is a diagnostic laboratory,not the overall general-language objective."
+  ],
+  "status": "PROSPECTIVE_DESIGN_NO_PILOT_LEARNING_RELEASE",
+  "CPU_checks": {
+    "passed": 1614,
+    "seconds": 60.84,
+    "log_sha256": "037c4546acb70b27b30b8fe8961ffdaecd3efe836e6993671217c5540dcc515d"
+  },
+  "prepared_data": {
+    "schema": "variable-depth-writer-v11",
+    "seed": 2026101911,
+    "excluded_previous_expressions": 7168,
+    "source_sha256": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "files": {
+      "TRAIN_fixed": {
+        "rows": 640,
+        "sha256": "3f829b7e9fdb493a72f7cf740952130b29eb2dd5ded0c88d69b9a5730031a3ad",
+        "bytes": 257473,
+        "depths": {
+          "2": 640
+        },
+        "max_prefix": 22,
+        "max_actions": 31,
+        "max_total": 53
+      },
+      "TRAIN_variable": {
+        "rows": 640,
+        "sha256": "1b8a328479cd05718753b89e2f99e0f696e2cbb62079d505cc372fbb927111d3",
+        "bytes": 292060,
+        "depths": {
+          "1": 128,
+          "2": 128,
+          "3": 128,
+          "4": 128,
+          "5": 128
+        },
+        "max_prefix": 38,
+        "max_actions": 101,
+        "max_total": 139
+      },
+      "DEV_depth2": {
+        "rows": 256,
+        "sha256": "a57efc3cafb6ca0d3ccee585609125a6883bf6e28f2e0d34373d509c93487406",
+        "bytes": 104395,
+        "depths": {
+          "2": 256
+        },
+        "max_prefix": 22,
+        "max_actions": 31,
+        "max_total": 53
+      },
+      "DEV_depth6": {
+        "rows": 256,
+        "sha256": "793eb0ed1a349b3754d757487992fe9dcce7d13b437f437f5c577d35719ea4a2",
+        "bytes": 159049,
+        "depths": {
+          "6": 256
+        },
+        "max_prefix": 42,
+        "max_actions": 122,
+        "max_total": 161
+      }
+    }
+  }
+}
