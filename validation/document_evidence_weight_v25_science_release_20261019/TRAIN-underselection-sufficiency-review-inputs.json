@@ -1,0 +1,624 @@
+{
+  "scope": "Exploratory single-agent TRAIN review inputs, not independent semantic gold or corpus error-rate sample.",
+  "selection": "Fixedhash six of20 TRAIN three-support strict-subset plans from frozen0.1 model; not selected by new treatment outcomes.",
+  "cases": [
+    {
+      "item_id": "triple_ii__134695_707133_63634",
+      "question": "Which organ of the employer of Alexander Aris's mother has suspended its operations since 1994?",
+      "answer": "United Nations Trusteeship Council",
+      "chosen": [
+        15,
+        20
+      ],
+      "annotated": [
+        8,
+        15,
+        20
+      ],
+      "omitted": [
+        8
+      ],
+      "support_paragraphs": [
+        {
+          "index": 8,
+          "title": "United Nations Trusteeship Council",
+          "text": "United Nations Trusteeship Council The chamber of the UN Trusteeship Council, United Nations headquarters / UN headquarters, New York Formation 1945 Type Principal Organ Legal status Inactive (As of 1994) Head President Alexis Lamek France Vice-President Peter Wilson United Kingdom Website www.un.org/en/mainbodies/trusteeship"
+        },
+        {
+          "index": 15,
+          "title": "Alexander Aris",
+          "text": "Alexander Aris Myint San Aung (, ; born 12 April 1973) is an English civil rights activist. Alexander Aris is the elder son of Aung San Suu Kyi and Michael Aris. He is also a grandson of Aung San, who achieved the Independence Of Myanmar (although he was assassinated in 1947, one year before the Independence)"
+        },
+        {
+          "index": 20,
+          "title": "Than E",
+          "text": "She married an Austrian documentary filmmaker, Warner Fend, and had a great influence on Aung San Suu Kyi. Than E, a family friend, persuaded Suu Kyi to relocate to New York City and work for the United Nations. Than E was born to a Baptist family and attended Rangoon University, before joining the Teacher's Training College."
+        }
+      ],
+      "raw_decomposition": [
+        {
+          "id": 134695,
+          "dataset": "zerore",
+          "answerable": true,
+          "question_text": "Who is the mother of Alexander Aris?",
+          "answer_text": "Aung San Suu Kyi",
+          "is_tail": false,
+          "question_reverse_replacement": {},
+          "contexts": [
+            {
+              "wikipedia_id": 22844343,
+              "wikipedia_title": "Alexander Aris",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "Alexander Aris Myint San Aung (, ; born 12 April 1973) is an English civil rights activist. Alexander Aris is the elder son of Aung San Suu Kyi and Michael Aris. He is also a grandson of Aung San, who achieved the Independence Of Myanmar (although he was assassinated in 1947, one year before the Independence)",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "Who is the mother of Alexander Aris?"
+        },
+        {
+          "id": 707133,
+          "dataset": "trex",
+          "answerable": true,
+          "question_text": "[[RQS]] 0 [[RQE]]  [SEP] employer",
+          "answer_text": "United Nations",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 0 [[RQE]]": "Aung San Suu Kyi"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 35587488,
+              "wikipedia_title": "Than E",
+              "paragraph_indices": [
+                2
+              ],
+              "paragraph_text": "She married an Austrian documentary filmmaker, Warner Fend, and had a great influence on Aung San Suu Kyi. Than E, a family friend, persuaded Suu Kyi to relocate to New York City and work for the United Nations. Than E was born to a Baptist family and attended Rangoon University, before joining the Teacher's Training College.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "employer"
+        },
+        {
+          "id": 63634,
+          "dataset": "natural_questions",
+          "answerable": true,
+          "question_text": "which organ of [[RQS]] 1 [[RQE]]  has suspended its operations since 1994",
+          "answer_text": "United Nations Trusteeship Council",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 1 [[RQE]]": "the united nations"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 31959,
+              "wikipedia_title": "United Nations Trusteeship Council",
+              "paragraph_indices": [
+                4
+              ],
+              "paragraph_text": "United Nations Trusteeship Council The chamber of the UN Trusteeship Council, United Nations headquarters / UN headquarters, New York Formation 1945 Type Principal Organ Legal status Inactive (As of 1994) Head President Alexis Lamek France Vice-President Peter Wilson United Kingdom Website www.un.org/en/mainbodies/trusteeship",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "which organ of has suspended its operations since 1994"
+        }
+      ]
+    },
+    {
+      "item_id": "triple_ii__153511_701863_22000",
+      "question": "How long ago were Burke's speeches that were quoted on the network that is the original broadcaster of the series that includes Knight Fall?",
+      "answer": "fourteen and fifteen years",
+      "chosen": [
+        8,
+        20
+      ],
+      "annotated": [
+        8,
+        12,
+        20
+      ],
+      "omitted": [
+        12
+      ],
+      "support_paragraphs": [
+        {
+          "index": 8,
+          "title": "List of House episodes",
+          "text": "\"House\", also known as \"House, M.D.\", is an American medical drama series which premiered on Fox on November 16, 2004. \"House\" was created by David Shore. The show follows Dr. Gregory House (Hugh Laurie), an irascible, maverick medical genius who heads a team of diagnosticians at the fictional Princeton-Plainsboro Teaching Hospital (PPTH) in New Jersey. In a typical episode, the team is presented with an unusual case; the storyline follows the diagnosis of the patient's illness, a process often complicated by the internal competition and personal foibles of the diagnostic team. The team leader, House, frequently clashes with his boss (Dr. Lisa Cuddy (Lisa Edelstein) in seasons 1 through 7, and Dr. Eric Foreman in season 8), and his only friend, Dr. James Wilson (Robert Sean Leonard)."
+        },
+        {
+          "index": 12,
+          "title": "Edmund Burke",
+          "text": "These events and the disagreements that arose from them within the Whig Party, led to its break-up and to the rupture of Burke's friendship with Fox. In debate in Parliament on Britain's relations with Russia, Fox praised the principles of the revolution, although Burke was not able to reply at this time as he was \"overpowered by continued cries of question from his own side of the House\". When Parliament was debating the Quebec Bill for a constitution for Canada, Fox praised the revolution and criticised some of Burke's arguments, such as hereditary power. On 6 May 1791, during another debate in Parliament on the Quebec Bill, Burke used the opportunity to answer Fox, and to condemn the new French Constitution and \"the horrible consequences flowing from the French idea of the Rights of Man\". Burke asserted that those ideas were the antithesis of both the British and the American constitutions. Burke was interrupted, and Fox intervened, saying that Burke should be allowed to carry on with his speech. A vote of censure was moved against Burke, however, for noticing the affairs of France, which was moved by Lord Sheffield and seconded by Fox. Pitt made a speech praising Burke, and Fox made a speech\u2014both rebuking and complimenting Burke. He questioned the sincerity of Burke, who seemed to have forgotten the lessons he had learned from him, quoting from Burke's own speeches of fourteen and fifteen years before."
+        },
+        {
+          "index": 20,
+          "title": "Knight Fall",
+          "text": "\"Knight Fall\" is the eighteenth episode of the sixth season of the American medical drama \"House\" and it is the 127th episode overall. It aired on April 19, 2010 and was directed by Juan J. Campanella."
+        }
+      ],
+      "raw_decomposition": [
+        {
+          "id": 153511,
+          "dataset": "zerore",
+          "answerable": true,
+          "question_text": "What series is Knight Fall a part of?",
+          "answer_text": "House",
+          "is_tail": false,
+          "question_reverse_replacement": {},
+          "contexts": [
+            {
+              "wikipedia_id": 26372457,
+              "wikipedia_title": "Knight Fall",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "\"Knight Fall\" is the eighteenth episode of the sixth season of the American medical drama \"House\" and it is the 127th episode overall. It aired on April 19, 2010 and was directed by Juan J. Campanella.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "What series is Knight Fall a part of?"
+        },
+        {
+          "id": 701863,
+          "dataset": "trex",
+          "answerable": true,
+          "question_text": "[[RQS]] 0 [[RQE]]  [SEP] original broadcaster",
+          "answer_text": "Fox",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 0 [[RQE]]": "House"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 1809036,
+              "wikipedia_title": "List of House episodes",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "\"House\", also known as \"House, M.D.\", is an American medical drama series which premiered on Fox on November 16, 2004. \"House\" was created by David Shore. The show follows Dr. Gregory House (Hugh Laurie), an irascible, maverick medical genius who heads a team of diagnosticians at the fictional Princeton-Plainsboro Teaching Hospital (PPTH) in New Jersey. In a typical episode, the team is presented with an unusual case; the storyline follows the diagnosis of the patient's illness, a process often complicated by the internal competition and personal foibles of the diagnostic team. The team leader, House, frequently clashes with his boss (Dr. Lisa Cuddy (Lisa Edelstein) in seasons 1 through 7, and Dr. Eric Foreman in season 8), and his only friend, Dr. James Wilson (Robert Sean Leonard).",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "original broadcaster"
+        },
+        {
+          "id": 22000,
+          "dataset": "squad2",
+          "answerable": true,
+          "question_text": "[[RQS]] 1 [[RQE]]  quoted Burke's speeches from how long ago?",
+          "answer_text": "fourteen and fifteen years",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 1 [[RQE]]": "Fox"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 10030,
+              "wikipedia_title": "Edmund Burke",
+              "paragraph_indices": [
+                86
+              ],
+              "paragraph_text": "These events and the disagreements that arose from them within the Whig Party, led to its break-up and to the rupture of Burke's friendship with Fox. In debate in Parliament on Britain's relations with Russia, Fox praised the principles of the revolution, although Burke was not able to reply at this time as he was \"overpowered by continued cries of question from his own side of the House\". When Parliament was debating the Quebec Bill for a constitution for Canada, Fox praised the revolution and criticised some of Burke's arguments, such as hereditary power. On 6 May 1791, during another debate in Parliament on the Quebec Bill, Burke used the opportunity to answer Fox, and to condemn the new French Constitution and \"the horrible consequences flowing from the French idea of the Rights of Man\". Burke asserted that those ideas were the antithesis of both the British and the American constitutions. Burke was interrupted, and Fox intervened, saying that Burke should be allowed to carry on with his speech. A vote of censure was moved against Burke, however, for noticing the affairs of France, which was moved by Lord Sheffield and seconded by Fox. Pitt made a speech praising Burke, and Fox made a speech\u2014both rebuking and complimenting Burke. He questioned the sincerity of Burke, who seemed to have forgotten the lessons he had learned from him, quoting from Burke's own speeches of fourteen and fifteen years before.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "quoted Burke's speeches from how long ago?"
+        }
+      ]
+    },
+    {
+      "item_id": "triple_ii__763800_785091_774027",
+      "question": "What is the capital of the county where Daniel Agnew was born?",
+      "answer": "Celina",
+      "chosen": [
+        13,
+        14
+      ],
+      "annotated": [
+        4,
+        13,
+        14
+      ],
+      "omitted": [
+        4
+      ],
+      "support_paragraphs": [
+        {
+          "index": 4,
+          "title": "15th Legislative District (New Jersey)",
+          "text": "New Jersey's 15th Legislative District is one of 40 in the New Jersey Legislature, covering the Hunterdon County municipalities of East Amwell Township, Lambertville City and West Amwell Township; and the Mercer County municipalities of Ewing Township, Hopewell Borough, Hopewell Township, Lawrence Township, Pennington Borough, Trenton City and West Windsor Township."
+        },
+        {
+          "index": 13,
+          "title": "Daniel Agnew",
+          "text": "Agnew was born at Trenton, New Jersey on January 5, 1809, and was of Irish/Welsh heritage. His father was a Princeton-educated doctor; his mother was part of the Howell family that was prominent in New Jersey affairs of that era. The family moved to Pittsburgh, when Agnew was about four years old. Agnew grew up there, attended the Western University of Pennsylvania (now the University of Pittsburgh), and then studied law with two experienced attorneys. He was admitted to the bar in 1829, at age 20 and began practicing law."
+        },
+        {
+          "index": 14,
+          "title": "Celina City School District",
+          "text": "The Celina City School District is a public school district in Mercer County, Ohio, United States, based in Celina, Ohio."
+        }
+      ],
+      "raw_decomposition": [
+        {
+          "id": 763800,
+          "dataset": "trex",
+          "answerable": true,
+          "question_text": "Daniel Agnew [SEP] place of birth",
+          "answer_text": "Trenton",
+          "is_tail": false,
+          "question_reverse_replacement": {},
+          "contexts": [
+            {
+              "wikipedia_id": 44824910,
+              "wikipedia_title": "Daniel Agnew",
+              "paragraph_indices": [
+                2
+              ],
+              "paragraph_text": "Agnew was born at Trenton, New Jersey on January 5, 1809, and was of Irish/Welsh heritage. His father was a Princeton-educated doctor; his mother was part of the Howell family that was prominent in New Jersey affairs of that era. The family moved to Pittsburgh, when Agnew was about four years old. Agnew grew up there, attended the Western University of Pennsylvania (now the University of Pittsburgh), and then studied law with two experienced attorneys. He was admitted to the bar in 1829, at age 20 and began practicing law.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "Daniel Agnew place of birth"
+        },
+        {
+          "id": 785091,
+          "dataset": "trex",
+          "answerable": true,
+          "question_text": "[[RQS]] 0 [[RQE]]  [SEP] located in the administrative territorial entity",
+          "answer_text": "Mercer County",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 0 [[RQE]]": "Trenton"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 27834856,
+              "wikipedia_title": "15th Legislative District (New Jersey)",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "New Jersey's 15th Legislative District is one of 40 in the New Jersey Legislature, covering the Hunterdon County municipalities of East Amwell Township, Lambertville City and West Amwell Township; and the Mercer County municipalities of Ewing Township, Hopewell Borough, Hopewell Township, Lawrence Township, Pennington Borough, Trenton City and West Windsor Township.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "located in the administrative territorial entity"
+        },
+        {
+          "id": 774027,
+          "dataset": "trex",
+          "answerable": true,
+          "question_text": "[[RQS]] 1 [[RQE]]  [SEP] capital",
+          "answer_text": "Celina",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 1 [[RQE]]": "Mercer County"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 36633364,
+              "wikipedia_title": "Celina City School District",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "The Celina City School District is a public school district in Mercer County, Ohio, United States, based in Celina, Ohio.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "capital"
+        }
+      ]
+    },
+    {
+      "item_id": "triple_ii__446791_100761_43712",
+      "question": "When do purple martins migrate to the continent where S\u00e3o Louren\u00e7o River is located?",
+      "answer": "winter",
+      "chosen": [
+        3,
+        13
+      ],
+      "annotated": [
+        3,
+        13,
+        18
+      ],
+      "omitted": [
+        18
+      ],
+      "support_paragraphs": [
+        {
+          "index": 3,
+          "title": "S\u00e3o Louren\u00e7o River (Mato Grosso)",
+          "text": "The S\u00e3o Louren\u00e7o River is a tributary of the Paraguay River within the Pantanal, an alluvial plain that spans portions of Brazil, Bolivia and Paraguay."
+        },
+        {
+          "index": 13,
+          "title": "Purple martin",
+          "text": "The purple martin migrates to the Amazon basin in winter. Its winter range extends into Ecuador but does not seem to ascend far up the Andean foothills."
+        },
+        {
+          "index": 18,
+          "title": "Paraguay River",
+          "text": "The Paraguay River (R\u00edo Paraguay in Spanish, Rio Paraguai in Portuguese, Ysyry Paragu\u00e1i in Guarani) is a major river in south-central South America, running through Brazil, Bolivia, Paraguay and Argentina. It flows about from its headwaters in the Brazilian state of Mato Grosso to its confluence with the Paran\u00e1 River north of Corrientes and Resistencia."
+        }
+      ],
+      "raw_decomposition": [
+        {
+          "id": 446791,
+          "dataset": "trex",
+          "answerable": true,
+          "question_text": "S\u00e3o Louren\u00e7o River [SEP] mouth of the watercourse",
+          "answer_text": "Paraguay River",
+          "is_tail": false,
+          "question_reverse_replacement": {},
+          "contexts": [
+            {
+              "wikipedia_id": 23610479,
+              "wikipedia_title": "S\u00e3o Louren\u00e7o River (Mato Grosso)",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "The S\u00e3o Louren\u00e7o River is a tributary of the Paraguay River within the Pantanal, an alluvial plain that spans portions of Brazil, Bolivia and Paraguay.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "S\u00e3o Louren\u00e7o River mouth of the watercourse"
+        },
+        {
+          "id": 100761,
+          "dataset": "zerore",
+          "answerable": true,
+          "question_text": "Which continent is [[RQS]] 0 [[RQE]]  on?",
+          "answer_text": "South America",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 0 [[RQE]]": "Paraguay River"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 1032278,
+              "wikipedia_title": "Paraguay River",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "The Paraguay River (R\u00edo Paraguay in Spanish, Rio Paraguai in Portuguese, Ysyry Paragu\u00e1i in Guarani) is a major river in south-central South America, running through Brazil, Bolivia, Paraguay and Argentina. It flows about from its headwaters in the Brazilian state of Mato Grosso to its confluence with the Paran\u00e1 River north of Corrientes and Resistencia.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "Which continent is on?"
+        },
+        {
+          "id": 43712,
+          "dataset": "natural_questions",
+          "answerable": true,
+          "question_text": "when do purple martins migrate to [[RQS]] 1 [[RQE]] ",
+          "answer_text": "winter",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 1 [[RQE]]": "south america"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 18952673,
+              "wikipedia_title": "Purple martin",
+              "paragraph_indices": [
+                12
+              ],
+              "paragraph_text": "The purple martin migrates to the Amazon basin in winter. Its winter range extends into Ecuador but does not seem to ascend far up the Andean foothills.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "when do purple martins migrate to"
+        }
+      ]
+    },
+    {
+      "item_id": "triple_ii__94551_65225_37150",
+      "question": "The film Ever After is based on an old story with many versions. How many species of fungi are found in the country with the oldest version?",
+      "answer": "627",
+      "chosen": [
+        15,
+        16
+      ],
+      "annotated": [
+        6,
+        15,
+        16
+      ],
+      "omitted": [
+        6
+      ],
+      "support_paragraphs": [
+        {
+          "index": 6,
+          "title": "Ever After",
+          "text": "Ever After (known in promotional material as Ever After: A Cinderella Story) is a 1998 American romantic drama film inspired by the fairy tale \"Cinderella\". It was directed by Andy Tennant and stars Drew Barrymore, Anjelica Huston, Dougray Scott, and Jeanne Moreau. The screenplay is written by Tennant, Susannah Grant, and Rick Parks. The original music score is composed by George Fenton. The film's closing theme song \"Put Your Arms Around Me\" is performed by the rock band Texas."
+        },
+        {
+          "index": 15,
+          "title": "Cinderella",
+          "text": "The oldest known version of the Cinderella story is the ancient Greek story of Rhodopis, a Greek courtesan living in the colony of Naucratis in Egypt, whose name means ``Rosy - Cheeks ''. The story is first recorded by the Greek geographer Strabo in his Geographica (book 17, 33), probably written around 7 BC or thereabouts:"
+        },
+        {
+          "index": 16,
+          "title": "Egypt",
+          "text": "The plan stated that the following numbers of species of different groups had been recorded from Egypt: algae (1483 species), animals (about 15,000 species of which more than 10,000 were insects), fungi (more than 627 species), monera (319 species), plants (2426 species), protozoans (371 species). For some major groups, for example lichen-forming fungi and nematode worms, the number was not known. Apart from small and well-studied groups like amphibians, birds, fish, mammals and reptiles, the many of those numbers are likely to increase as further species are recorded from Egypt. For the fungi, including lichen-forming species, for example, subsequent work has shown that over 2200 species have been recorded from Egypt, and the final figure of all fungi actually occurring in the country is expected to be much higher."
+        }
+      ],
+      "raw_decomposition": [
+        {
+          "id": 94551,
+          "dataset": "zerore",
+          "answerable": true,
+          "question_text": "Which is the basis of Ever After?",
+          "answer_text": "Cinderella",
+          "is_tail": false,
+          "question_reverse_replacement": {},
+          "contexts": [
+            {
+              "wikipedia_id": 816862,
+              "wikipedia_title": "Ever After",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "Ever After (known in promotional material as Ever After: A Cinderella Story) is a 1998 American romantic drama film inspired by the fairy tale \"Cinderella\". It was directed by Andy Tennant and stars Drew Barrymore, Anjelica Huston, Dougray Scott, and Jeanne Moreau. The screenplay is written by Tennant, Susannah Grant, and Rick Parks. The original music score is composed by George Fenton. The film's closing theme song \"Put Your Arms Around Me\" is performed by the rock band Texas.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "Which is the basis of Ever After?"
+        },
+        {
+          "id": 65225,
+          "dataset": "natural_questions",
+          "answerable": true,
+          "question_text": "when does the story of [[RQS]] 0 [[RQE]]  take place",
+          "answer_text": "Egypt",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 0 [[RQE]]": "cinderella"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 73453,
+              "wikipedia_title": "Cinderella",
+              "paragraph_indices": [
+                6
+              ],
+              "paragraph_text": "The oldest known version of the Cinderella story is the ancient Greek story of Rhodopis, a Greek courtesan living in the colony of Naucratis in Egypt, whose name means ``Rosy - Cheeks ''. The story is first recorded by the Greek geographer Strabo in his Geographica (book 17, 33), probably written around 7 BC or thereabouts:",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "when does the story of take place"
+        },
+        {
+          "id": 37150,
+          "dataset": "squad2",
+          "answerable": true,
+          "question_text": "How many species of fungi were recorded in [[RQS]] 1 [[RQE]] ?",
+          "answer_text": "627",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 1 [[RQE]]": "Egypt"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 8087628,
+              "wikipedia_title": "Egypt",
+              "paragraph_indices": [
+                101
+              ],
+              "paragraph_text": "The plan stated that the following numbers of species of different groups had been recorded from Egypt: algae (1483 species), animals (about 15,000 species of which more than 10,000 were insects), fungi (more than 627 species), monera (319 species), plants (2426 species), protozoans (371 species). For some major groups, for example lichen-forming fungi and nematode worms, the number was not known. Apart from small and well-studied groups like amphibians, birds, fish, mammals and reptiles, the many of those numbers are likely to increase as further species are recorded from Egypt. For the fungi, including lichen-forming species, for example, subsequent work has shown that over 2200 species have been recorded from Egypt, and the final figure of all fungi actually occurring in the country is expected to be much higher.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "How many species of fungi were recorded in ?"
+        }
+      ]
+    },
+    {
+      "item_id": "triple_ii__136299_84467_89676",
+      "question": "When did the state where A City Decides takes place become an open carry state?",
+      "answer": "October 11, 2014",
+      "chosen": [
+        9,
+        17
+      ],
+      "annotated": [
+        9,
+        17,
+        20
+      ],
+      "omitted": [
+        20
+      ],
+      "support_paragraphs": [
+        {
+          "index": 9,
+          "title": "St. Louis",
+          "text": "St. Louis (/ se\u026ant \u02c8lu\u02d0\u026as /) is an independent city and major U.S. port in the state of Missouri, built along the western bank of the Mississippi River, on the border with Illinois. The city had an estimated 2016 population of 311,404, and is the cultural and economic center of the Greater St. Louis area (home to 2,916,447 people), making it the largest metropolitan area in Missouri and the 19th - largest in the United States."
+        },
+        {
+          "index": 17,
+          "title": "A City Decides",
+          "text": "A City Decides is a 1956 American short documentary film directed by Charles Guggenheim about the racial integration of St. Louis Public Schools. It was nominated for an Academy Award for Best Documentary Short."
+        },
+        {
+          "index": 20,
+          "title": "Gun laws in Missouri",
+          "text": "Subject / Law Long Guns Handguns Relevant Statutes Notes Permit to purchase required? No No Firearm registration? No No Owner license required? No No Carry permits required? No No Missouri is a ``shall issue ''state for concealed carry. Permitless carry took effect on January 1, 2017. Open carry permitted? Yes Yes Open carry is permitted. As of October 11, 2014, a valid CCW overrides local laws against Open Carry, state wide. State preemption of local restrictions? Yes Yes Local governments are allowed to regulate open carry and the discharge of firearms (except in self defense); however, ccw permit holders are exempt from ordinances banning open carry. Assault weapon law? No No Magazine Capacity Restriction? No No NFA weapons restricted? No No Peaceable journey law? Yes Yes Background checks required for private sales? No No"
+        }
+      ],
+      "raw_decomposition": [
+        {
+          "id": 136299,
+          "dataset": "zerore",
+          "answerable": true,
+          "question_text": "Which place is A City Decides in?",
+          "answer_text": "St. Louis",
+          "is_tail": false,
+          "question_reverse_replacement": {},
+          "contexts": [
+            {
+              "wikipedia_id": 20414226,
+              "wikipedia_title": "A City Decides",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "A City Decides is a 1956 American short documentary film directed by Charles Guggenheim about the racial integration of St. Louis Public Schools. It was nominated for an Academy Award for Best Documentary Short.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "Which place is A City Decides in?"
+        },
+        {
+          "id": 84467,
+          "dataset": "natural_questions",
+          "answerable": true,
+          "question_text": "where is [[RQS]] 0 [[RQE]]  located on the map",
+          "answer_text": "Missouri",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 0 [[RQE]]": "st. louis"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 27687,
+              "wikipedia_title": "St. Louis",
+              "paragraph_indices": [
+                1
+              ],
+              "paragraph_text": "St. Louis (/ se\u026ant \u02c8lu\u02d0\u026as /) is an independent city and major U.S. port in the state of Missouri, built along the western bank of the Mississippi River, on the border with Illinois. The city had an estimated 2016 population of 311,404, and is the cultural and economic center of the Greater St. Louis area (home to 2,916,447 people), making it the largest metropolitan area in Missouri and the 19th - largest in the United States.",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "where is located on the map"
+        },
+        {
+          "id": 89676,
+          "dataset": "natural_questions",
+          "answerable": true,
+          "question_text": "when did [[RQS]] 1 [[RQE]]  become an open carry state",
+          "answer_text": "October 11, 2014",
+          "is_tail": true,
+          "question_reverse_replacement": {
+            "[[RQS]] 1 [[RQE]]": "missouri"
+          },
+          "contexts": [
+            {
+              "wikipedia_id": 34036980,
+              "wikipedia_title": "Gun laws in Missouri",
+              "paragraph_indices": [
+                11
+              ],
+              "paragraph_text": "Subject / Law Long Guns Handguns Relevant Statutes Notes Permit to purchase required? No No Firearm registration? No No Owner license required? No No Carry permits required? No No Missouri is a ``shall issue ''state for concealed carry. Permitless carry took effect on January 1, 2017. Open carry permitted? Yes Yes Open carry is permitted. As of October 11, 2014, a valid CCW overrides local laws against Open Carry, state wide. State preemption of local restrictions? Yes Yes Local governments are allowed to regulate open carry and the discharge of firearms (except in self defense); however, ccw permit holders are exempt from ordinances banning open carry. Assault weapon law? No No Magazine Capacity Restriction? No No NFA weapons restricted? No No Peaceable journey law? Yes Yes Background checks required for private sales? No No",
+              "is_supporting": true
+            }
+          ],
+          "query_text": "when did become an open carry state"
+        }
+      ]
+    }
+  ]
+}

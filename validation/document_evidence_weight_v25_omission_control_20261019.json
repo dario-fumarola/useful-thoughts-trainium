@@ -33,5 +33,6 @@
   "budget": "Same overall0.6 reserved chip-hour evaluation bound; optional likelihood diagnostics run only if the remaining bound permits. No prompt/parser rescue based on outputs.",
   "qualification": "No new numerical kernel or sampler: same frozen decoder, max128 and tested direct/anchored answer parsers. CPU projection/closure checks precede calls. Each actual worker still passes its own current-model and cached-prefill checks.",
   "amends_earlier_readout_sha256": "2ad51589fb1c8ad44cbbea461fb2e0687938e61e0e85e7ce17380702a1b0a1b1",
-  "supersedes": "Oracle is evaluated through the matched answer-replay interface instead of a separate native oracle-generation mode. Native modes are direct/selection. This prospective clarification changes no old observation or fitting rule."
+  "supersedes": "Oracle is evaluated through the matched answer-replay interface instead of a separate native oracle-generation mode. Native modes are direct/selection. This prospective clarification changes no old observation or fitting rule.",
+  "secondary_training_transfer": "Report new native direct minus old matched-direct and old0.1 native-direct, with generated-prefix-ID counts. These are developmental training-transfer endpoints, not broad pretraining claims."
 }

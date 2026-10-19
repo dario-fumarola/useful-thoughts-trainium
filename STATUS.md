@@ -1,18 +1,19 @@
-# Status — 2026-10-19 21:07 UTC
+# Status — 2026-10-19 21:24 UTC
 
-## Active: selector-loss allocation qualification
-Question: does stronger selector supervision repair multi-support TRAIN fitting?
-ID: document-evidence-weight-v25; coefficient1.0 vs completed0.1 control; same data and source/answer weights.
-One fresh treatment is proposed; all1809 CPU checks pass; numerical worker/order/batching AST unchanged.
-Source frozen5414f8d at local/worktrees/document-evidence-weight-v25; do not edit while active.
-Only disposable eight-update save/restore qualification is released; no full treatment launch yet.
-Supervisor1447965/exec72247; physical12–13/logical48–55; hard deadline22:00 UTC, no retry.
-First update passes actual parameter/master audit; initial component CE exactly matches old qualification.
-Control: local/diagnostics/document-evidence-weight-v25-world8-qualification-v1; second graph compiling.
-Full qualification states go to NVMe-study; original states/latest science EBS full backup retained.
-Audit watcher exec63653 waits for both physical closures, then runs the frozen CPU audit once.
-Next: inspect actual qualification audit, protect evidence, then review the candidate full-run budget.
-Design/readout/omission addenda frozen; held reuse stays developmental and runs regardless of fit outcome.
+## Active: selector-loss allocation ablation
+Question: does stronger selector supervision repair canonical fitting and help answering?
+ID: document-evidence-weight-v25; one fresh1.7B treatment1.0 vs completed0.1 control, TRAIN2048×4.
+Same order/data/exposures/source-answer0.5/0.5; source frozen5414f8d; all1809 CPU checks pass.
+Actual qualification: eight updates, full restore4, all4 states/native16/order/counts audit PASS; protected.
+One full treatment released/launched: exec7042, physical2–3/logical8–15; terminal256 primary.
+Full128/256 saves; soft deadline22:45:23 UTC; <=3 chip-hours including grace, no automatic retry.
+First128 protection exec50248; post-closure audit/protect/bind watcher exec61432.
+C: local/diagnostics/document-evidence-weight-v25-ablation-v1; source/pipeline files frozen by release.
+Six fixed TRAIN under-selection cases contain2 entity collisions; label fitting is not semantic verification.
+After terminal protection: unchanged TRAIN256 and fixed developmental held255; report answers regardless of fit.
+Closed Evidence/prefilled Final empty/own/oracle replays share one parser;765 CPU contexts pass, eval<=0.6h.
+Reports: validation/document_evidence_weight_v25_science_release_20261019.json and training_hardware report.
+Next: monitor actual updates/resources; preserve128, then terminal audit/protection. No broader campaign released.
 
 ## Closed: frozen selector TRAIN fit
 Question: does the completed selector reproduce its own TRAIN support annotations?

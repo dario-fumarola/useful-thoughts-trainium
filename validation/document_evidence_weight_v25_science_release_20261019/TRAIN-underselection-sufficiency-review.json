@@ -1,0 +1,45 @@
+{
+  "status": "EXPLORATORY_SINGLE_AGENT_TRAIN_UNDERSELECTION_REVIEW",
+  "utc": "2026-10-19T21:17:56.127086+00:00",
+  "input_sha256": "f4541a30ddbbc057305b5c705c2e69e7810cb0dc266655bf7c99b33ff65279a2",
+  "sample": "Fixedhash six of20 three-support TRAIN strict-subset outputs from the completed0.1 model; selected before any treatment training.",
+  "cases": [
+    {
+      "item_id": "triple_ii__134695_707133_63634",
+      "assessment": "locally_coherent_annotated_chain",
+      "note": "Mother/employer links are visible in15/20; omitted8 supplies the named UN organ and inactive1994 property. The supplied three-paragraph chain is locally coherent. Reader still has all20 paragraphs, so omitted IDs do not remove the evidence."
+    },
+    {
+      "item_id": "triple_ii__153511_701863_22000",
+      "assessment": "annotated_chain_entity_collision",
+      "note": "House original broadcaster is Fox the network; the cited Burke paragraph describes Fox participating in Parliamentary debates. The annotation joins distinct entities through the same surface form. The omitted root paragraph does not establish a TV-network quotation relation."
+    },
+    {
+      "item_id": "triple_ii__763800_785091_774027",
+      "assessment": "annotated_chain_entity_collision",
+      "note": "Trenton is explicitly New Jersey; the county bridge is Mercer County in New Jersey. The next support describes a school district in Mercer County, Ohio. The state identity changes, and the school-district passage does not establish the requested capital/county-seat relation."
+    },
+    {
+      "item_id": "triple_ii__446791_100761_43712",
+      "assessment": "locally_coherent_annotated_chain",
+      "note": "The tributary paragraph plus Paraguay River paragraph supplies the continent link; Purple martin gives winter. The selected subset omits the explicit South America bridge, though background geographic knowledge could make it unnecessary."
+    },
+    {
+      "item_id": "triple_ii__94551_65225_37150",
+      "assessment": "root_answer_ambiguity",
+      "note": "Film/story links are coherent. The fungi passage gives morethan627 in an earlier plan and over2200 in subsequent work; the question supplies no date. Bare627 is not an unambiguous complete factual answer. The missing film paragraph is visible elsewhere in the full prefix."
+    },
+    {
+      "item_id": "triple_ii__136299_84467_89676",
+      "assessment": "root_relation_sufficiency_concern",
+      "note": "Film-to-city and city-to-Missouri links are visible. The cited date concerns a validCCW overriding local restrictions; it does not by itself establish the stronger unqualified statement about when the state became open-carry. This is text-sufficiency analysis, not a current-law finding."
+    }
+  ],
+  "limits": [
+    "Single-agent exploratory judgments, not independent semantic gold or a corpus error rate.",
+    "Selection targets and all20 input documents remain unchanged; other17 passages were not fully adjudicated.",
+    "The reader retains all20 documents, so unlisted support does not establish that it was unread or inaccessible.",
+    "This does not prove the model recognized annotation errors or that stronger loss weighting cannot help."
+  ],
+  "implication": "Keep the coefficient-only ablation bounded and interpret its primary outcome as annotation fitting. Report actual answering regardless of fitting result. No semantic-grounding or capacity conclusion from fitting alone."
+}

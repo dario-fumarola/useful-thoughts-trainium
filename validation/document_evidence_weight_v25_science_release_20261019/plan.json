@@ -1,0 +1,42 @@
+{
+  "status": "PREPARED_SINGLE_WEIGHT_TREATMENT_PENDING_ROOT_RELEASE",
+  "utc": "2026-10-19T21:21:23.876622+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/document-evidence-weight-v25",
+  "source_commit": "5414f8d0e951312a52efc3585e9dfa33f61d53cf",
+  "jobs": [
+    {
+      "arm": "evidence_select",
+      "seed": 2026101923,
+      "key": "evidence_select-weight1-seed2026101923",
+      "protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-weight-v25-ablation-v1/protocol-evidence_select-weight1-seed2026101923.json",
+      "protocol_sha256": "db4883d36f1bb39e815673490ac2fdf4128a28e449bc6128e7e2d6fed7ab6c16",
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1",
+      "physical_devices": [
+        2,
+        3
+      ]
+    }
+  ],
+  "deadline_utc": "2026-10-19T22:45:23.876622+00:00",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-weight-v25-world8-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "f25329c03ca04ecca571ac1ce6a5f331bbb0561365ecafe531944c402b830ddd",
+  "prospective_design_sha256": "3ea504f65892d22058cf2a554eace772aff708ef9e8c938849240d05eccb56c2",
+  "readout_addendum_sha256": "2ad51589fb1c8ad44cbbea461fb2e0687938e61e0e85e7ce17380702a1b0a1b1",
+  "held_primary_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "original_control_protocol_sha256": "0db880be26dfbe54a4c150eef6bbdcffd44cf239444d76c00129c1ebe0b127e1",
+  "prior_TRAIN_fit_report_sha256": "b98ca968835f5f93232ed018e336dfb42f338146cef34fc05de450177212bcb7",
+  "budget": {
+    "max_reserved_chips": 2,
+    "hard_training_chip_hour_bound_including_termination_grace": 3.0,
+    "soft_wall_minutes": 84,
+    "termination_grace_minutes": 5,
+    "evaluation_chip_hour_bound_separate": 0.6,
+    "measured_full_state_bytes": 24091475979,
+    "root_free_bytes": 69066276864,
+    "NVMe_free_bytes": 184161054720
+  },
+  "checkpoint_policy": "Full128/256 retained on NVMe. Independently audit/protect128 before retiring ONLY previous EBS optimizer duplicates. Protect256 before retiring128 optimizer backup duplicates. Keep all original states and terminal models.",
+  "evaluation": "First unchanged TRAIN256 selector-fit panel, terminal256 only. Fixed held255 readout after protection/root review regardless of fit outcome; developmental, not untouched confirmation.",
+  "no_automatic_retry": true,
+  "no_checkpoint_selection": true
+}

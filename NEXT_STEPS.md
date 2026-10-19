@@ -1,20 +1,19 @@
 # Current queue
 
-0. Let V25 coefficient-only qualification finish; do not rush the compiler.
-   Frozen source5414f8d, worktree local/worktrees/document-evidence-weight-v25.
-   Supervisor1447965/exec72247; physical12–13; deadline22:00 UTC, no automatic retry.
-   C=local/diagnostics/document-evidence-weight-v25-world8-qualification-v1.
-   Watcher exec63653 runs the independent CPU audit after both physical closures.
-   Qualification uses8 updates, full restore4, and4 original full states on NVMe-study.
-   All1809 CPU checks pass; original numerical worker/order/batching unchanged.
-   Proposed treatment changes selection weight0.1→1.0 only, with source/answer0.5/0.5.
-   One fresh treatment may be reviewed after qualification; full training is not released.
-   Freeze terminal256, unchanged TRAIN2048/order, fitting endpoints and resource budget.
-   V24 fitting target failed: exact sets117/128,59/96,12/32 vs TRAIN answers255/256.
-   Held255 reuse is developmental, already inspected; readout runs regardless of fit outcome.
-   Closed Evidence + supplied Final answer share one bare-answer parser for empty/own/oracle replays.
-   No official DEV/TEST release; original V23 empty-control observation remains unchanged.
-   No replication, larger model, RL or six-model campaign follows automatically.
+0. Monitor the single V25 coefficient treatment; do not edit frozen sources or pipeline files.
+   Actual qualification PASSED:8 updates, restore4, all4 original full states audited/protected.
+   Science exec7042, physical2–3, C=local/diagnostics/document-evidence-weight-v25-ablation-v1.
+   One fresh B0 treatment changes selection0.1→1.0; same TRAIN2048/order/source-answer0.5/0.5.
+   Source W25@5414f8d; full128/256 saves; terminal256 only; deadline22:45:23 UTC, no retry.
+   First128 protection exec50248 waits for the original complete checkpoint and audits before EBS copy.
+   Terminal watcher exec61432 waits physical closure, then audits/protects/binds once.
+   All source/pipeline hashes are frozen in C/release.json. Do not modify bound local helpers.
+   Six fixed TRAIN under-selection cases expose2 clear annotation entity collisions,2 concerns;
+   canonical fit does not establish semantic grounding. Keep the bounded coefficient interpretation.
+   After original terminal protection: release fixed TRAIN/held readout, existing .6 chip-hour bound.
+   Report held255 regardless of fitting result; it is developmental and already inspected.
+   Native direct/selection remain unchanged; closed-field empty/own/oracle answer replay is separate.
+   No official DEV/TEST, larger model, RL, parameter sweep or multi-model campaign release.
 
 1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
    Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.

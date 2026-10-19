@@ -1,0 +1,60 @@
+{
+  "status": "RELEASED_DOCUMENT_EVIDENCE_WEIGHT_V25_TREATMENT_ONLY",
+  "utc": "2026-10-19T21:22:28.976501+00:00",
+  "plan_sha256": "9ccf10005602268a53607aa5f5472826e784eeace9b4912ee1f82e49a4cf5796",
+  "supervisor_sha256": "8b15a95bcc23b8f41fb393cf301739b779f2ac979cd96424ec2fdd72f3b29487",
+  "helper_sha256": "d9801fb76e20b1ad1b38e4bcdc11a9c3a1c00aa2346074e22a2a11b6e7224eaa",
+  "qualification_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-weight-v25-world8-qualification-v1/qualification-independent-audit.json",
+  "qualification_sha256": "f25329c03ca04ecca571ac1ce6a5f331bbb0561365ecafe531944c402b830ddd",
+  "source_commit": "5414f8d0e951312a52efc3585e9dfa33f61d53cf",
+  "control_binding_sha256": "f9e33f00be2a0ce99346dab896ef81e6f395f6ef75b83ae4f984f4f0dad4a8e9",
+  "prospective_design_sha256": "3ea504f65892d22058cf2a554eace772aff708ef9e8c938849240d05eccb56c2",
+  "readout_addendum_sha256": "2ad51589fb1c8ad44cbbea461fb2e0687938e61e0e85e7ce17380702a1b0a1b1",
+  "omission_control_contract_sha256": "762d4709376d8efe8f214ed62905db4a8011c75ac8ec62c5c4a19e6222177640",
+  "pipeline_sources": {
+    "local/analysis/document_evidence_weight_v25_state_audit_20261019.py": "0cd217acb80177762b29808263d7627722f199fd9933dd3f0a5ea7a7bf745730",
+    "local/analysis/audit_document_evidence_weight_v25_terminals_20261019.py": "9971b2be21c7661c32bce3401b610fc0ccefaacd16549f9b5851d9d954e87a58",
+    "local/analysis/protect_document_evidence_weight_v25_first_full128_20261019.py": "4120b2e03a7a4bb02e15cc9f971142dc5e56756b4f3c1855796a1b920551fa7f",
+    "local/analysis/protect_document_evidence_weight_v25_terminals_20261019.py": "fcb725fa0e515a6c03517ea738248c0fe6e47ca77c6baa975681010cdb9890bf",
+    "local/analysis/document_evidence_weight_v25_TRAIN_fit_20261019.py": "6d2822a54e57f4df56616f959f9bdae5438f846a613541fb20e4a9e75375c116",
+    "local/analysis/check_document_evidence_weight_v25_TRAIN_fit_20261019.py": "b52629002c4be7f6c6d492e292627fc06b9c1a029838a3a38a37ecdbb4d59f2c",
+    "local/analysis/supervise_document_evidence_weight_v25_TRAIN_fit_20261019.py": "d304c6181defab8f09749471d33fe247e40da0dfb097dc0f86bdfb18cad6fd08",
+    "local/analysis/document_evidence_weight_v25_held_20261019.py": "378ea2b18af99e800b614928eca4109d990f10c0d906bded72e0a5a997f558f5",
+    "local/analysis/analyze_document_evidence_weight_v25_held_20261019.py": "9d6df8dc544b1bcbf010e73c0e2899a956baad86a05fa48e0f8dce04de361d18",
+    "local/analysis/bind_document_evidence_weight_v25_terminal_20261019.py": "76bec7615ff5a942cb9eb8938314b23ce90e9aeac72d34555be062d0c9b310c7",
+    "local/analysis/watch_document_evidence_weight_v25_terminal_20261019.py": "3ad0a70f19f691f08de44b814ff8e866ac94d2ad4ce96ab9316371e665fdbb95",
+    "local/analysis/run_document_evidence_weight_v25_first_protection_20261019.py": "6928548ef1b60e66a4d0f207ef8686d7ef73f3be8f650b75053c58a5931b19fe",
+    "local/analysis/release_document_evidence_weight_v25_evaluation_20261019.py": "558f716555bec6ed664d475d14a682862939dee2a52d25141503f68c31805bfe",
+    "local/analysis/supervise_document_evidence_weight_v25_held_20261019.py": "f4d61ffb95ebd2a7c72a4ec093abacf236c2dfd2f5b1e41a4e77f8e159873ce0",
+    "local/analysis/document_evidence_v23_likelihood_contexts.py": "fbd8605b07d14af1b5b9ef836b6b798baf4206988fc31b431122f01f3f7e832a",
+    "local/analysis/real_source_state_audit_v17_20261019.py": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054"
+  },
+  "data_manifest_sha256": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e",
+  "model_spec": {
+    "id": "evidence_select-weight1-seed2026101923",
+    "arm": "evidence_select",
+    "seed": 2026101923,
+    "step": 256,
+    "run_id": "document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1",
+    "training_protocol_sha256": "db4883d36f1bb39e815673490ac2fdf4128a28e449bc6128e7e2d6fed7ab6c16"
+  },
+  "decision": "Qualified actual8 updates/full restore4; same computational path and unchanged data/order/source-answer coefficients. Release one fresh treatment, terminal256 only. No second seed, model-size change, RL or parameter sweep.",
+  "budget": {
+    "max_reserved_chips": 2,
+    "hard_training_chip_hour_bound_including_termination_grace": 3.0,
+    "soft_wall_minutes": 84,
+    "termination_grace_minutes": 5,
+    "evaluation_chip_hour_bound_separate": 0.6,
+    "measured_full_state_bytes": 24091475979,
+    "root_free_bytes": 69066276864,
+    "NVMe_free_bytes": 184161054720
+  },
+  "deadline_utc": "2026-10-19T22:45:23.876622+00:00",
+  "evaluation": "After actual terminal audit/protection and root review: fixed TRAIN fit and fixed held255 native/closed-field replay. Held panel is developmental regardless of fit outcome, never untouched confirmation.",
+  "limitations": [
+    "Author support labels can be insufficient or ambiguous.",
+    "A scalar coefficient is not a measured gradient fraction.",
+    "Changing the coefficient also changes clipping/optimizer dynamics.",
+    "All old primary reports/scores/gates remain unchanged; no prompt or parser rescue."
+  ]
+}

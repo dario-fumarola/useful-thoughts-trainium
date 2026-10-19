@@ -1532,3 +1532,14 @@ resolution; it changes no old gate. One actual qualification update passes; init
 component CE matches old exactly, gradient norm44.4→59.1, not a10× gradient share.
 Full treatment remains unreleased. A fourth inactive model backup duplicate was
 verified/copied/fsynced before old EBS duplicate unlink; original full state retained.
+
+2026-10-19 21:24 UTC — Qualified single treatment released and launched
+Actual eight-update/full-restore audit passes all4 states/native16/label counts;
+closed evidence and final report protected. Release one fresh B0 selector1.0 model
+against the completed0.1 control, identical data/order/source-final weights. Source
+5414f8d and all release pipeline hashes frozen. Exec7042/physical2–3, terminal256,
+full128/256 protected by prepared watchers, soft deadline22:45:23 and3chip-hour bound.
+A fixed six-case TRAIN review finds2 entity collisions and2 root-sufficiency concerns;
+this is exploratory, not prevalence or gold. The ablation tests canonical label
+fitting and developmental answering, not a semantic-grounding fix. No label filtering,
+original-score changes, newsize/RL or campaign expansion.
