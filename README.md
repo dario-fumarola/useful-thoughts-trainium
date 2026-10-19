@@ -13,13 +13,43 @@ removes ten arithmetic AST aliases missed by string matching; the corrected 256-
 panel and [unchanged-base reference](validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json)
 are frozen. The [real-context save/restart qualification](validation/real_trace_cpt_v10_training_qualification_20261019.json)
 passes, and the [six-model training budget is released](validation/real_trace_cpt_v10_science_launch_20261019.json):
-three seed-1 arms are running, with seed 2 scheduled serially within each arm.
+all three first seeds have finished, and the second seeds are running.
 No terminal capability result is available yet. Frozen [training code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/3d8666b)
 and [evaluation code](https://github.com/dario-fumarola/useful-thoughts-trainium/tree/29c8b24)
 are kept on separate branches. A bounded variable-depth writer repair runs separately
 as a diagnostic. See [status](STATUS.md) and [next steps](NEXT_STEPS.md).
 
-## Current result
+## Latest completed diagnostic: variable-depth repair
+
+Teaching variable-depth partial work repairs much of the targeted composition
+failure: the same frozen reader answers **306/512** correctly with variable-writer
+notes versus **124/512** with a newly trained fixed-depth control. The paired gain
+is **35.5 percentage points [31.3, 40.0]**. Correct complete states with natural
+stopping rise from91/512 to409/512. The predeclared repair gate passes.
+
+| Separate panel | Fixed writer → reader | Variable writer → reader | Correct supplied state | Frozen full CoT | Unchanged base CoT |
+|---|---:|---:|---:|---:|---:|
+|Composition,512|124|306|377|273|262 (153 unsupported)|
+|Fresh depth2,256|180 (1 unsupported)|182|213|193|95 (133 unsupported)|
+|Unseen depth6,256|0|10|78|0|13 (229 unsupported)|
+
+All other displayed conditions have zero unsupported outputs. Variable beats the
+frozen full-CoT comparator on composition by6.4 points [1.6,11.3], but loses on the
+familiar-depth panel and remains only3.9% accurate at the unseen longer depth.
+This is **one diagnostic seed with different curricula and training costs**;
+the CoT competitors were frozen rather than retrained on variable-depth data.
+It does not establish a matched architecture advantage or broad extrapolation.
+The single-model real-document study remains the mainline.
+
+![Completed variable-depth diagnostic](validation/variable_depth_writer_v11_complete_20261019/complete-answer-accuracy.svg)
+
+All **9,216 answers and2,048 notes** were independently audited and preserved,
+including failures. The [complete report](validation/variable_depth_writer_v11_complete_20261019.json)
+links every original public payload; [rates and unsupported counts](validation/variable_depth_writer_v11_complete_20261019/complete-answer-accuracy.csv)
+and [explicitly selected examples](validation/variable_depth_writer_v11_complete_20261019/fixed-and-diagnostic-examples.jsonl)
+are saved alongside it.
+
+## Completed matched two-seed comparison
 
 **Full-trace CoT is the stronger practical baseline.** In the completed two-seed
 study, it answers more questions correctly than the separate writer–reader system

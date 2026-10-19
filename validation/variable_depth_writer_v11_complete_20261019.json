@@ -1,0 +1,2905 @@
+{
+  "status": "COMPLETE_DECLARED_VARIABLE_DEPTH_DIAGNOSTIC_ALL_ATTEMPTS_AUDITED",
+  "utc": "2026-10-19T04:53:34.084852+00:00",
+  "panels": {
+    "DEV_composition": {
+      "items": 512,
+      "answers": {
+        "reader": {
+          "direct": {
+            "items": 512,
+            "correct": 8,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 2585,
+            "writer_actions": 0,
+            "decode_wall_seconds": 796.7576532679086,
+            "writer_wall_seconds": 0
+          },
+          "empty": {
+            "items": 512,
+            "correct": 7,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 2587,
+            "writer_actions": 0,
+            "decode_wall_seconds": 902.1364979780046,
+            "writer_wall_seconds": 0
+          },
+          "teacher": {
+            "items": 512,
+            "correct": 377,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 2724,
+            "writer_actions": 0,
+            "decode_wall_seconds": 214.10816488575074,
+            "writer_wall_seconds": 0
+          }
+        },
+        "full_cot": {
+          "cot": {
+            "items": 512,
+            "correct": 273,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 27811,
+            "writer_actions": 0,
+            "decode_wall_seconds": 3105.491254788736,
+            "writer_wall_seconds": 0
+          }
+        },
+        "B0": {
+          "cot": {
+            "items": 512,
+            "correct": 262,
+            "unsupported": 153,
+            "status_counts": {
+              "format_error": 145,
+              "ok": 359,
+              "truncated": 8
+            },
+            "generated_actions": 37454,
+            "writer_actions": 0,
+            "decode_wall_seconds": 3767.181347359845,
+            "writer_wall_seconds": 0
+          }
+        },
+        "fixed-student-answers": {
+          "own": {
+            "items": 512,
+            "correct": 124,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 2669,
+            "writer_actions": 15654,
+            "decode_wall_seconds": 432.682392493909,
+            "writer_wall_seconds": 1169.8920125508448
+          },
+          "other": {
+            "items": 512,
+            "correct": 1,
+            "unsupported": 1,
+            "status_counts": {
+              "ok": 511,
+              "format_error": 1
+            },
+            "generated_actions": 2623,
+            "writer_actions": 15654,
+            "decode_wall_seconds": 203.4000903199776,
+            "writer_wall_seconds": 1169.8920125508448
+          }
+        },
+        "variable-student-answers": {
+          "own": {
+            "items": 512,
+            "correct": 306,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 2713,
+            "writer_actions": 19025,
+            "decode_wall_seconds": 227.33128931035753,
+            "writer_wall_seconds": 1412.341536252381
+          },
+          "other": {
+            "items": 512,
+            "correct": 1,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 512
+            },
+            "generated_actions": 2691,
+            "writer_actions": 19025,
+            "decode_wall_seconds": 207.18621428418555,
+            "writer_wall_seconds": 1412.341536252381
+          }
+        }
+      },
+      "writer_canonical_natural": {
+        "fixed": 91,
+        "variable": 409
+      },
+      "variable_minus_fixed_answer": {
+        "difference": 0.35546875,
+        "ci95": [
+          0.3125,
+          0.400390625
+        ],
+        "items": 512,
+        "repeats": 20000,
+        "seed": 2026101912,
+        "unit": "accuracy_fraction"
+      },
+      "variable_minus_fixed_canonical": {
+        "difference": 0.62109375,
+        "ci95": [
+          0.578125,
+          0.6640625
+        ],
+        "items": 512,
+        "repeats": 20000,
+        "seed": 2026101912,
+        "unit": "accuracy_fraction"
+      },
+      "variable_student_minus_baselines": {
+        "full_cot": {
+          "difference": 0.064453125,
+          "ci95": [
+            0.015625,
+            0.11328125
+          ],
+          "items": 512,
+          "repeats": 20000,
+          "seed": 2026101912,
+          "unit": "accuracy_fraction"
+        },
+        "B0": {
+          "difference": 0.0859375,
+          "ci95": [
+            0.03515625,
+            0.13671875
+          ],
+          "items": 512,
+          "repeats": 20000,
+          "seed": 2026101912,
+          "unit": "accuracy_fraction"
+        }
+      },
+      "numerical_checks": {
+        "fixed": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.2862059490482858e-10,
+              "device_to_reference_kl_nats": 2.2862282523704272e-10,
+              "max_bidirectional_kl_nats": 2.2862282523704272e-10,
+              "passed": true,
+              "max_logp_error": 0.00017804516121344705,
+              "rms_logp_error": 4.5621225835741515e-05,
+              "relative_l2_logp_error": 1.5710676472023686e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.0103557480910794e-10,
+              "device_to_reference_kl_nats": 1.0103441554541677e-10,
+              "max_bidirectional_kl_nats": 1.0103557480910794e-10,
+              "passed": true,
+              "max_logp_error": 8.076606917484241e-05,
+              "rms_logp_error": 2.243991605754245e-05,
+              "relative_l2_logp_error": 1.1478231861695505e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 9.492756591763613e-14,
+              "device_to_reference_kl_nats": 9.463143443901975e-14,
+              "max_bidirectional_kl_nats": 9.492756591763613e-14,
+              "passed": true,
+              "max_logp_error": 3.013817838137811e-05,
+              "rms_logp_error": 1.2217544131012898e-05,
+              "relative_l2_logp_error": 4.1013715364098037e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 3.995880435709691e-11,
+              "device_to_reference_kl_nats": 3.995902891844848e-11,
+              "max_bidirectional_kl_nats": 3.995902891844848e-11,
+              "passed": true,
+              "max_logp_error": 9.824325042018245e-05,
+              "rms_logp_error": 2.1267093502125623e-05,
+              "relative_l2_logp_error": 1.0305558261732527e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "variable": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.0931381046576326e-10,
+              "device_to_reference_kl_nats": 2.0931624672196378e-10,
+              "max_bidirectional_kl_nats": 2.0931624672196378e-10,
+              "passed": true,
+              "max_logp_error": 0.00015052499468737324,
+              "rms_logp_error": 3.4797869767131865e-05,
+              "relative_l2_logp_error": 1.2081298634159613e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 9.81992583811926e-11,
+              "device_to_reference_kl_nats": 9.819992760265422e-11,
+              "max_bidirectional_kl_nats": 9.819992760265422e-11,
+              "passed": true,
+              "max_logp_error": 8.474793569490657e-05,
+              "rms_logp_error": 2.1206415313774467e-05,
+              "relative_l2_logp_error": 1.0974376767243489e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 5.366986795346368e-14,
+              "device_to_reference_kl_nats": 5.440934266294997e-14,
+              "max_bidirectional_kl_nats": 5.440934266294997e-14,
+              "passed": true,
+              "max_logp_error": 3.507766772514742e-05,
+              "rms_logp_error": 1.2407705430260642e-05,
+              "relative_l2_logp_error": 4.0269947211715336e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 4.075925617213753e-11,
+              "device_to_reference_kl_nats": 4.0758984288961024e-11,
+              "max_bidirectional_kl_nats": 4.075925617213753e-11,
+              "passed": true,
+              "max_logp_error": 7.341416132788936e-05,
+              "rms_logp_error": 1.3071947554563405e-05,
+              "relative_l2_logp_error": 6.499294469237282e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "reader": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 2.538342443510501e-13,
+                "device_to_reference_kl_nats": 2.538274330977376e-13,
+                "max_bidirectional_kl_nats": 2.538342443510501e-13,
+                "passed": true,
+                "max_logp_error": 7.60735107974142e-06,
+                "rms_logp_error": 1.8125412728560124e-06,
+                "relative_l2_logp_error": 6.558037540381354e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 3.6874240825834917e-13,
+                "device_to_reference_kl_nats": 3.680047436896196e-13,
+                "max_bidirectional_kl_nats": 3.6874240825834917e-13,
+                "passed": true,
+                "max_logp_error": 7.60353589157603e-06,
+                "rms_logp_error": 1.5578291575503037e-06,
+                "relative_l2_logp_error": 5.5455107261783116e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 1.731174991080542e-12,
+                "device_to_reference_kl_nats": 1.731679945027073e-12,
+                "max_bidirectional_kl_nats": 1.731679945027073e-12,
+                "passed": true,
+                "max_logp_error": 7.5700011450408056e-06,
+                "rms_logp_error": 2.213055972973513e-06,
+                "relative_l2_logp_error": 8.406486218933851e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 6.380273950933938e-13,
+                "device_to_reference_kl_nats": 6.390941396182587e-13,
+                "max_bidirectional_kl_nats": 6.390941396182587e-13,
+                "passed": true,
+                "max_logp_error": 9.53428207850493e-06,
+                "rms_logp_error": 2.743442456921189e-06,
+                "relative_l2_logp_error": 9.502334345806814e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "full_cot": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 3.2548829605588347e-10,
+              "device_to_reference_kl_nats": 3.254902306436589e-10,
+              "max_bidirectional_kl_nats": 3.254902306436589e-10,
+              "passed": true,
+              "max_logp_error": 0.00027438649424027517,
+              "rms_logp_error": 0.00012154422778244448,
+              "relative_l2_logp_error": 4.315157113879686e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.1928044726321356e-11,
+              "device_to_reference_kl_nats": 1.192781757866056e-11,
+              "max_bidirectional_kl_nats": 1.1928044726321356e-11,
+              "passed": true,
+              "max_logp_error": 5.4234741899250594e-05,
+              "rms_logp_error": 1.1867569341859321e-05,
+              "relative_l2_logp_error": 6.143537939772342e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 4.456988607196639e-15,
+              "device_to_reference_kl_nats": 3.34831740847099e-15,
+              "max_bidirectional_kl_nats": 4.456988607196639e-15,
+              "passed": true,
+              "max_logp_error": 2.2293942080864326e-05,
+              "rms_logp_error": 4.908305197332587e-06,
+              "relative_l2_logp_error": 1.5848631861120208e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.9720109896619847e-11,
+              "device_to_reference_kl_nats": 2.9719145704669366e-11,
+              "max_bidirectional_kl_nats": 2.9720109896619847e-11,
+              "passed": true,
+              "max_logp_error": 6.291207578712488e-05,
+              "rms_logp_error": 1.3140916178521403e-05,
+              "relative_l2_logp_error": 6.265276638162802e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "B0": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.469277100467369e-10,
+              "device_to_reference_kl_nats": 1.469269284490436e-10,
+              "max_bidirectional_kl_nats": 1.469277100467369e-10,
+              "passed": true,
+              "max_logp_error": 9.453952545968036e-05,
+              "rms_logp_error": 2.1328650162485427e-05,
+              "relative_l2_logp_error": 7.38796917232438e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.398737240224973e-10,
+              "device_to_reference_kl_nats": 1.398746536960023e-10,
+              "max_bidirectional_kl_nats": 1.398746536960023e-10,
+              "passed": true,
+              "max_logp_error": 9.650757509049868e-05,
+              "rms_logp_error": 2.0617055200889045e-05,
+              "relative_l2_logp_error": 1.0840139266305839e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 6.415759411184429e-13,
+              "device_to_reference_kl_nats": 6.423890328674334e-13,
+              "max_bidirectional_kl_nats": 6.423890328674334e-13,
+              "passed": true,
+              "max_logp_error": 3.148594827351303e-05,
+              "rms_logp_error": 6.683629758816178e-06,
+              "relative_l2_logp_error": 2.4159932458576905e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.6307923791718425e-10,
+              "device_to_reference_kl_nats": 2.630818671917323e-10,
+              "max_bidirectional_kl_nats": 2.630818671917323e-10,
+              "passed": true,
+              "max_logp_error": 0.00013939253258499207,
+              "rms_logp_error": 2.6973291840397552e-05,
+              "relative_l2_logp_error": 1.4613367387480283e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "fixed-student-answers": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 3.8839275425303565e-14,
+                "device_to_reference_kl_nats": 4.0492862810060654e-14,
+                "max_bidirectional_kl_nats": 4.0492862810060654e-14,
+                "passed": true,
+                "max_logp_error": 1.1369375990000208e-05,
+                "rms_logp_error": 4.102593775004114e-06,
+                "relative_l2_logp_error": 1.445879789239743e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 6.828405627828157e-14,
+                "device_to_reference_kl_nats": 6.479157904714621e-14,
+                "max_bidirectional_kl_nats": 6.828405627828157e-14,
+                "passed": true,
+                "max_logp_error": 1.1539842756036478e-05,
+                "rms_logp_error": 6.947208716813228e-06,
+                "relative_l2_logp_error": 2.3589457237894522e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 7.368159711230531e-13,
+                "device_to_reference_kl_nats": 7.36369472271391e-13,
+                "max_bidirectional_kl_nats": 7.368159711230531e-13,
+                "passed": true,
+                "max_logp_error": 1.337038811044522e-05,
+                "rms_logp_error": 4.134995827089638e-06,
+                "relative_l2_logp_error": 1.4853526378605166e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 2.654202850710058e-11,
+                "device_to_reference_kl_nats": 2.654091037407914e-11,
+                "max_bidirectional_kl_nats": 2.654202850710058e-11,
+                "passed": true,
+                "max_logp_error": 1.3352896857554697e-05,
+                "rms_logp_error": 3.190475725200168e-06,
+                "relative_l2_logp_error": 1.103091367825933e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "variable-student-answers": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.4408696126758077e-13,
+                "device_to_reference_kl_nats": 1.4374722389762965e-13,
+                "max_bidirectional_kl_nats": 1.4408696126758077e-13,
+                "passed": true,
+                "max_logp_error": 7.671469298031752e-06,
+                "rms_logp_error": 1.912453507479721e-06,
+                "relative_l2_logp_error": 6.664332344335273e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 5.345925884519743e-16,
+                "max_bidirectional_kl_nats": 5.345925884519743e-16,
+                "passed": true,
+                "max_logp_error": 5.722239233563187e-06,
+                "rms_logp_error": 1.4580140791516282e-06,
+                "relative_l2_logp_error": 4.956071408019125e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.757145169613595e-13,
+                "device_to_reference_kl_nats": 1.7383396089363357e-13,
+                "max_bidirectional_kl_nats": 1.757145169613595e-13,
+                "passed": true,
+                "max_logp_error": 9.519282578196453e-06,
+                "rms_logp_error": 3.7977465819533796e-06,
+                "relative_l2_logp_error": 1.2986929069545066e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 4.5363235503653685e-15,
+                "device_to_reference_kl_nats": 4.937019368629188e-15,
+                "max_bidirectional_kl_nats": 4.937019368629188e-15,
+                "passed": true,
+                "max_logp_error": 7.626657144044202e-06,
+                "rms_logp_error": 2.717190217729899e-06,
+                "relative_l2_logp_error": 9.061883914084348e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ]
+      },
+      "primary_gate": true
+    },
+    "DEV_depth2": {
+      "items": 256,
+      "answers": {
+        "reader": {
+          "direct": {
+            "items": 256,
+            "correct": 57,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1285,
+            "writer_actions": 0,
+            "decode_wall_seconds": 112.06625077899662,
+            "writer_wall_seconds": 0
+          },
+          "empty": {
+            "items": 256,
+            "correct": 56,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1288,
+            "writer_actions": 0,
+            "decode_wall_seconds": 111.78336782584665,
+            "writer_wall_seconds": 0
+          },
+          "teacher": {
+            "items": 256,
+            "correct": 213,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1283,
+            "writer_actions": 0,
+            "decode_wall_seconds": 98.76335854595527,
+            "writer_wall_seconds": 0
+          }
+        },
+        "full_cot": {
+          "cot": {
+            "items": 256,
+            "correct": 193,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 11560,
+            "writer_actions": 0,
+            "decode_wall_seconds": 858.6535377590626,
+            "writer_wall_seconds": 0
+          }
+        },
+        "B0": {
+          "cot": {
+            "items": 256,
+            "correct": 95,
+            "unsupported": 133,
+            "status_counts": {
+              "format_error": 128,
+              "truncated": 5,
+              "ok": 123
+            },
+            "generated_actions": 13857,
+            "writer_actions": 0,
+            "decode_wall_seconds": 1020.9780161136587,
+            "writer_wall_seconds": 0
+          }
+        },
+        "fixed-student-answers": {
+          "own": {
+            "items": 256,
+            "correct": 180,
+            "unsupported": 1,
+            "status_counts": {
+              "ok": 255,
+              "format_error": 1
+            },
+            "generated_actions": 1284,
+            "writer_actions": 6406,
+            "decode_wall_seconds": 112.60430321304011,
+            "writer_wall_seconds": 502.2904415183002
+          },
+          "other": {
+            "items": 256,
+            "correct": 1,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1269,
+            "writer_actions": 6406,
+            "decode_wall_seconds": 97.94233379125944,
+            "writer_wall_seconds": 502.2904415183002
+          }
+        },
+        "variable-student-answers": {
+          "own": {
+            "items": 256,
+            "correct": 182,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1282,
+            "writer_actions": 6406,
+            "decode_wall_seconds": 112.35355326501303,
+            "writer_wall_seconds": 500.6814442005707
+          },
+          "other": {
+            "items": 256,
+            "correct": 1,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1267,
+            "writer_actions": 6406,
+            "decode_wall_seconds": 96.79056290118024,
+            "writer_wall_seconds": 500.6814442005707
+          }
+        }
+      },
+      "writer_canonical_natural": {
+        "fixed": 215,
+        "variable": 216
+      },
+      "variable_minus_fixed_answer": {
+        "difference": 0.0078125,
+        "ci95": [
+          -0.0234375,
+          0.04296875
+        ],
+        "items": 256,
+        "repeats": 20000,
+        "seed": 2026101912,
+        "unit": "accuracy_fraction"
+      },
+      "variable_minus_fixed_canonical": {
+        "difference": 0.00390625,
+        "ci95": [
+          -0.03125,
+          0.04296875
+        ],
+        "items": 256,
+        "repeats": 20000,
+        "seed": 2026101912,
+        "unit": "accuracy_fraction"
+      },
+      "variable_student_minus_baselines": {
+        "full_cot": {
+          "difference": -0.04296875,
+          "ci95": [
+            -0.0859375,
+            0.0
+          ],
+          "items": 256,
+          "repeats": 20000,
+          "seed": 2026101912,
+          "unit": "accuracy_fraction"
+        },
+        "B0": {
+          "difference": 0.33984375,
+          "ci95": [
+            0.26953125,
+            0.41015625
+          ],
+          "items": 256,
+          "repeats": 20000,
+          "seed": 2026101912,
+          "unit": "accuracy_fraction"
+        }
+      },
+      "numerical_checks": {
+        "fixed": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.2862059490482858e-10,
+              "device_to_reference_kl_nats": 2.2862282523704272e-10,
+              "max_bidirectional_kl_nats": 2.2862282523704272e-10,
+              "passed": true,
+              "max_logp_error": 0.00017804516121344705,
+              "rms_logp_error": 4.5621225835741515e-05,
+              "relative_l2_logp_error": 1.5710676472023686e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.0103557480910794e-10,
+              "device_to_reference_kl_nats": 1.0103441554541677e-10,
+              "max_bidirectional_kl_nats": 1.0103557480910794e-10,
+              "passed": true,
+              "max_logp_error": 8.076606917484241e-05,
+              "rms_logp_error": 2.243991605754245e-05,
+              "relative_l2_logp_error": 1.1478231861695505e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 9.492756591763613e-14,
+              "device_to_reference_kl_nats": 9.463143443901975e-14,
+              "max_bidirectional_kl_nats": 9.492756591763613e-14,
+              "passed": true,
+              "max_logp_error": 3.013817838137811e-05,
+              "rms_logp_error": 1.2217544131012898e-05,
+              "relative_l2_logp_error": 4.1013715364098037e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 3.995880435709691e-11,
+              "device_to_reference_kl_nats": 3.995902891844848e-11,
+              "max_bidirectional_kl_nats": 3.995902891844848e-11,
+              "passed": true,
+              "max_logp_error": 9.824325042018245e-05,
+              "rms_logp_error": 2.1267093502125623e-05,
+              "relative_l2_logp_error": 1.0305558261732527e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "variable": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.0931381046576326e-10,
+              "device_to_reference_kl_nats": 2.0931624672196378e-10,
+              "max_bidirectional_kl_nats": 2.0931624672196378e-10,
+              "passed": true,
+              "max_logp_error": 0.00015052499468737324,
+              "rms_logp_error": 3.4797869767131865e-05,
+              "relative_l2_logp_error": 1.2081298634159613e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 9.81992583811926e-11,
+              "device_to_reference_kl_nats": 9.819992760265422e-11,
+              "max_bidirectional_kl_nats": 9.819992760265422e-11,
+              "passed": true,
+              "max_logp_error": 8.474793569490657e-05,
+              "rms_logp_error": 2.1206415313774467e-05,
+              "relative_l2_logp_error": 1.0974376767243489e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 5.366986795346368e-14,
+              "device_to_reference_kl_nats": 5.440934266294997e-14,
+              "max_bidirectional_kl_nats": 5.440934266294997e-14,
+              "passed": true,
+              "max_logp_error": 3.507766772514742e-05,
+              "rms_logp_error": 1.2407705430260642e-05,
+              "relative_l2_logp_error": 4.0269947211715336e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 4.075925617213753e-11,
+              "device_to_reference_kl_nats": 4.0758984288961024e-11,
+              "max_bidirectional_kl_nats": 4.075925617213753e-11,
+              "passed": true,
+              "max_logp_error": 7.341416132788936e-05,
+              "rms_logp_error": 1.3071947554563405e-05,
+              "relative_l2_logp_error": 6.499294469237282e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "reader": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 4.436787172212812e-14,
+                "device_to_reference_kl_nats": 4.290992083859593e-14,
+                "max_bidirectional_kl_nats": 4.436787172212812e-14,
+                "passed": true,
+                "max_logp_error": 1.1419893866104758e-05,
+                "rms_logp_error": 2.32296928475329e-06,
+                "relative_l2_logp_error": 8.55896872367285e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 2.9198724079514186e-12,
+                "device_to_reference_kl_nats": 2.9171605843780855e-12,
+                "max_bidirectional_kl_nats": 2.9198724079514186e-12,
+                "passed": true,
+                "max_logp_error": 9.55708186722859e-06,
+                "rms_logp_error": 1.984583542821671e-06,
+                "relative_l2_logp_error": 7.104456543215658e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 2.9057006091737658e-15,
+                "device_to_reference_kl_nats": 5.817332398894441e-15,
+                "max_bidirectional_kl_nats": 5.817332398894441e-15,
+                "passed": true,
+                "max_logp_error": 7.632804411628058e-06,
+                "rms_logp_error": 1.9296972897793425e-06,
+                "relative_l2_logp_error": 6.374715382585267e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 6.821502089582432e-13,
+                "device_to_reference_kl_nats": 6.816799008441103e-13,
+                "max_bidirectional_kl_nats": 6.821502089582432e-13,
+                "passed": true,
+                "max_logp_error": 1.517204369960723e-05,
+                "rms_logp_error": 4.2525835573089825e-06,
+                "relative_l2_logp_error": 1.6142641878994045e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "full_cot": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 3.2548829605588347e-10,
+              "device_to_reference_kl_nats": 3.254902306436589e-10,
+              "max_bidirectional_kl_nats": 3.254902306436589e-10,
+              "passed": true,
+              "max_logp_error": 0.00027438649424027517,
+              "rms_logp_error": 0.00012154422778244448,
+              "relative_l2_logp_error": 4.315157113879686e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.1928044726321356e-11,
+              "device_to_reference_kl_nats": 1.192781757866056e-11,
+              "max_bidirectional_kl_nats": 1.1928044726321356e-11,
+              "passed": true,
+              "max_logp_error": 5.4234741899250594e-05,
+              "rms_logp_error": 1.1867569341859321e-05,
+              "relative_l2_logp_error": 6.143537939772342e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 4.456988607196639e-15,
+              "device_to_reference_kl_nats": 3.34831740847099e-15,
+              "max_bidirectional_kl_nats": 4.456988607196639e-15,
+              "passed": true,
+              "max_logp_error": 2.2293942080864326e-05,
+              "rms_logp_error": 4.908305197332587e-06,
+              "relative_l2_logp_error": 1.5848631861120208e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.9720109896619847e-11,
+              "device_to_reference_kl_nats": 2.9719145704669366e-11,
+              "max_bidirectional_kl_nats": 2.9720109896619847e-11,
+              "passed": true,
+              "max_logp_error": 6.291207578712488e-05,
+              "rms_logp_error": 1.3140916178521403e-05,
+              "relative_l2_logp_error": 6.265276638162802e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "B0": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.469277100467369e-10,
+              "device_to_reference_kl_nats": 1.469269284490436e-10,
+              "max_bidirectional_kl_nats": 1.469277100467369e-10,
+              "passed": true,
+              "max_logp_error": 9.453952545968036e-05,
+              "rms_logp_error": 2.1328650162485427e-05,
+              "relative_l2_logp_error": 7.38796917232438e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.398737240224973e-10,
+              "device_to_reference_kl_nats": 1.398746536960023e-10,
+              "max_bidirectional_kl_nats": 1.398746536960023e-10,
+              "passed": true,
+              "max_logp_error": 9.650757509049868e-05,
+              "rms_logp_error": 2.0617055200889045e-05,
+              "relative_l2_logp_error": 1.0840139266305839e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 6.415759411184429e-13,
+              "device_to_reference_kl_nats": 6.423890328674334e-13,
+              "max_bidirectional_kl_nats": 6.423890328674334e-13,
+              "passed": true,
+              "max_logp_error": 3.148594827351303e-05,
+              "rms_logp_error": 6.683629758816178e-06,
+              "relative_l2_logp_error": 2.4159932458576905e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.6307923791718425e-10,
+              "device_to_reference_kl_nats": 2.630818671917323e-10,
+              "max_bidirectional_kl_nats": 2.630818671917323e-10,
+              "passed": true,
+              "max_logp_error": 0.00013939253258499207,
+              "rms_logp_error": 2.6973291840397552e-05,
+              "relative_l2_logp_error": 1.4613367387480283e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "fixed-student-answers": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.3951231751094252e-15,
+                "device_to_reference_kl_nats": 5.147658268237788e-16,
+                "max_bidirectional_kl_nats": 1.3951231751094252e-15,
+                "passed": true,
+                "max_logp_error": 1.5258519376004642e-05,
+                "rms_logp_error": 3.819971569913473e-06,
+                "relative_l2_logp_error": 1.1132292372114058e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 3.154468717859587e-14,
+                "device_to_reference_kl_nats": 3.250110174950148e-14,
+                "max_bidirectional_kl_nats": 3.250110174950148e-14,
+                "passed": true,
+                "max_logp_error": 1.525108108069162e-05,
+                "rms_logp_error": 7.97142557623482e-06,
+                "relative_l2_logp_error": 2.608330507565982e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 8.13999173013717e-14,
+                "device_to_reference_kl_nats": 7.972390396213909e-14,
+                "max_bidirectional_kl_nats": 8.13999173013717e-14,
+                "passed": true,
+                "max_logp_error": 7.705294294169107e-06,
+                "rms_logp_error": 3.119578541040032e-06,
+                "relative_l2_logp_error": 9.514458073065511e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 2.929491459207889e-15,
+                "device_to_reference_kl_nats": 2.478246300765103e-15,
+                "max_bidirectional_kl_nats": 2.929491459207889e-15,
+                "passed": true,
+                "max_logp_error": 1.1445912832641625e-05,
+                "rms_logp_error": 3.543659369660173e-06,
+                "relative_l2_logp_error": 1.1753080563020692e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "variable-student-answers": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.3951231751094252e-15,
+                "device_to_reference_kl_nats": 5.147658268237788e-16,
+                "max_bidirectional_kl_nats": 1.3951231751094252e-15,
+                "passed": true,
+                "max_logp_error": 1.5258519376004642e-05,
+                "rms_logp_error": 3.819971569913473e-06,
+                "relative_l2_logp_error": 1.1132292372114058e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.2818532319471528e-15,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 1.2818532319471528e-15,
+                "passed": true,
+                "max_logp_error": 7.629846827228448e-06,
+                "rms_logp_error": 1.9960923619570803e-06,
+                "relative_l2_logp_error": 6.482400583899463e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 2.5316112212571766e-14,
+                "device_to_reference_kl_nats": 2.462346782542269e-14,
+                "max_bidirectional_kl_nats": 2.5316112212571766e-14,
+                "passed": true,
+                "max_logp_error": 1.143099884970411e-05,
+                "rms_logp_error": 4.484476150200578e-06,
+                "relative_l2_logp_error": 1.3230070352691627e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 2.929491459207889e-15,
+                "device_to_reference_kl_nats": 2.478246300765103e-15,
+                "max_bidirectional_kl_nats": 2.929491459207889e-15,
+                "passed": true,
+                "max_logp_error": 1.1445912832641625e-05,
+                "rms_logp_error": 3.543659369660173e-06,
+                "relative_l2_logp_error": 1.1753080563020692e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ]
+      },
+      "primary_gate": null
+    },
+    "DEV_depth6": {
+      "items": 256,
+      "answers": {
+        "reader": {
+          "direct": {
+            "items": 256,
+            "correct": 0,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1444,
+            "writer_actions": 0,
+            "decode_wall_seconds": 120.90638547900016,
+            "writer_wall_seconds": 0
+          },
+          "empty": {
+            "items": 256,
+            "correct": 0,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1440,
+            "writer_actions": 0,
+            "decode_wall_seconds": 122.00995619778405,
+            "writer_wall_seconds": 0
+          },
+          "teacher": {
+            "items": 256,
+            "correct": 78,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1716,
+            "writer_actions": 0,
+            "decode_wall_seconds": 131.39738165191375,
+            "writer_wall_seconds": 0
+          }
+        },
+        "full_cot": {
+          "cot": {
+            "items": 256,
+            "correct": 0,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 16810,
+            "writer_actions": 0,
+            "decode_wall_seconds": 1217.0380196512851,
+            "writer_wall_seconds": 0
+          }
+        },
+        "B0": {
+          "cot": {
+            "items": 256,
+            "correct": 13,
+            "unsupported": 229,
+            "status_counts": {
+              "truncated": 167,
+              "format_error": 62,
+              "ok": 27
+            },
+            "generated_actions": 37694,
+            "writer_actions": 0,
+            "decode_wall_seconds": 2764.3444392533565,
+            "writer_wall_seconds": 0
+          }
+        },
+        "fixed-student-answers": {
+          "own": {
+            "items": 256,
+            "correct": 0,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1458,
+            "writer_actions": 10860,
+            "decode_wall_seconds": 121.18680192693137,
+            "writer_wall_seconds": 843.371509244258
+          },
+          "other": {
+            "items": 256,
+            "correct": 0,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1436,
+            "writer_actions": 10860,
+            "decode_wall_seconds": 109.21519683484803,
+            "writer_wall_seconds": 843.371509244258
+          }
+        },
+        "variable-student-answers": {
+          "own": {
+            "items": 256,
+            "correct": 10,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1599,
+            "writer_actions": 17390,
+            "decode_wall_seconds": 130.27306560587022,
+            "writer_wall_seconds": 1328.7476131278963
+          },
+          "other": {
+            "items": 256,
+            "correct": 0,
+            "unsupported": 0,
+            "status_counts": {
+              "ok": 256
+            },
+            "generated_actions": 1574,
+            "writer_actions": 17390,
+            "decode_wall_seconds": 116.48922771282378,
+            "writer_wall_seconds": 1328.7476131278963
+          }
+        }
+      },
+      "writer_canonical_natural": {
+        "fixed": 0,
+        "variable": 24
+      },
+      "variable_minus_fixed_answer": {
+        "difference": 0.0390625,
+        "ci95": [
+          0.015625,
+          0.06640625
+        ],
+        "items": 256,
+        "repeats": 20000,
+        "seed": 2026101912,
+        "unit": "accuracy_fraction"
+      },
+      "variable_minus_fixed_canonical": {
+        "difference": 0.09375,
+        "ci95": [
+          0.05859375,
+          0.1328125
+        ],
+        "items": 256,
+        "repeats": 20000,
+        "seed": 2026101912,
+        "unit": "accuracy_fraction"
+      },
+      "variable_student_minus_baselines": {
+        "full_cot": {
+          "difference": 0.0390625,
+          "ci95": [
+            0.015625,
+            0.06640625
+          ],
+          "items": 256,
+          "repeats": 20000,
+          "seed": 2026101912,
+          "unit": "accuracy_fraction"
+        },
+        "B0": {
+          "difference": -0.01171875,
+          "ci95": [
+            -0.04296875,
+            0.01953125
+          ],
+          "items": 256,
+          "repeats": 20000,
+          "seed": 2026101912,
+          "unit": "accuracy_fraction"
+        }
+      },
+      "numerical_checks": {
+        "fixed": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.2862059490482858e-10,
+              "device_to_reference_kl_nats": 2.2862282523704272e-10,
+              "max_bidirectional_kl_nats": 2.2862282523704272e-10,
+              "passed": true,
+              "max_logp_error": 0.00017804516121344705,
+              "rms_logp_error": 4.5621225835741515e-05,
+              "relative_l2_logp_error": 1.5710676472023686e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.0103557480910794e-10,
+              "device_to_reference_kl_nats": 1.0103441554541677e-10,
+              "max_bidirectional_kl_nats": 1.0103557480910794e-10,
+              "passed": true,
+              "max_logp_error": 8.076606917484241e-05,
+              "rms_logp_error": 2.243991605754245e-05,
+              "relative_l2_logp_error": 1.1478231861695505e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 9.492756591763613e-14,
+              "device_to_reference_kl_nats": 9.463143443901975e-14,
+              "max_bidirectional_kl_nats": 9.492756591763613e-14,
+              "passed": true,
+              "max_logp_error": 3.013817838137811e-05,
+              "rms_logp_error": 1.2217544131012898e-05,
+              "relative_l2_logp_error": 4.1013715364098037e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 3.995880435709691e-11,
+              "device_to_reference_kl_nats": 3.995902891844848e-11,
+              "max_bidirectional_kl_nats": 3.995902891844848e-11,
+              "passed": true,
+              "max_logp_error": 9.824325042018245e-05,
+              "rms_logp_error": 2.1267093502125623e-05,
+              "relative_l2_logp_error": 1.0305558261732527e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "variable": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.0931381046576326e-10,
+              "device_to_reference_kl_nats": 2.0931624672196378e-10,
+              "max_bidirectional_kl_nats": 2.0931624672196378e-10,
+              "passed": true,
+              "max_logp_error": 0.00015052499468737324,
+              "rms_logp_error": 3.4797869767131865e-05,
+              "relative_l2_logp_error": 1.2081298634159613e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 9.81992583811926e-11,
+              "device_to_reference_kl_nats": 9.819992760265422e-11,
+              "max_bidirectional_kl_nats": 9.819992760265422e-11,
+              "passed": true,
+              "max_logp_error": 8.474793569490657e-05,
+              "rms_logp_error": 2.1206415313774467e-05,
+              "relative_l2_logp_error": 1.0974376767243489e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 5.366986795346368e-14,
+              "device_to_reference_kl_nats": 5.440934266294997e-14,
+              "max_bidirectional_kl_nats": 5.440934266294997e-14,
+              "passed": true,
+              "max_logp_error": 3.507766772514742e-05,
+              "rms_logp_error": 1.2407705430260642e-05,
+              "relative_l2_logp_error": 4.0269947211715336e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 4.075925617213753e-11,
+              "device_to_reference_kl_nats": 4.0758984288961024e-11,
+              "max_bidirectional_kl_nats": 4.075925617213753e-11,
+              "passed": true,
+              "max_logp_error": 7.341416132788936e-05,
+              "rms_logp_error": 1.3071947554563405e-05,
+              "relative_l2_logp_error": 6.499294469237282e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "prefill": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "reader": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 3.502253745003588e-12,
+                "device_to_reference_kl_nats": 3.502516531585122e-12,
+                "max_bidirectional_kl_nats": 3.502516531585122e-12,
+                "passed": true,
+                "max_logp_error": 1.1484125039373794e-05,
+                "rms_logp_error": 4.717250423329333e-06,
+                "relative_l2_logp_error": 1.705225871754685e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 2.697246422751314e-12,
+                "device_to_reference_kl_nats": 2.697700655114477e-12,
+                "max_bidirectional_kl_nats": 2.697700655114477e-12,
+                "passed": true,
+                "max_logp_error": 7.6244723388185776e-06,
+                "rms_logp_error": 1.8032299368278791e-06,
+                "relative_l2_logp_error": 6.720578376841e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 3.0830577591981304e-13,
+                "device_to_reference_kl_nats": 3.083502617780488e-13,
+                "max_bidirectional_kl_nats": 3.083502617780488e-13,
+                "passed": true,
+                "max_logp_error": 1.1573222359118063e-05,
+                "rms_logp_error": 5.281537663529776e-06,
+                "relative_l2_logp_error": 1.8763124862201297e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "direct": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              },
+              "empty": {
+                "reference_to_device_kl_nats": 2.774506534261211e-12,
+                "device_to_reference_kl_nats": 2.7726193452243684e-12,
+                "max_bidirectional_kl_nats": 2.774506534261211e-12,
+                "passed": true,
+                "max_logp_error": 1.123696227267601e-05,
+                "rms_logp_error": 4.607372153866094e-06,
+                "relative_l2_logp_error": 1.6291147010457226e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "full_cot": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 3.2548829605588347e-10,
+              "device_to_reference_kl_nats": 3.254902306436589e-10,
+              "max_bidirectional_kl_nats": 3.254902306436589e-10,
+              "passed": true,
+              "max_logp_error": 0.00027438649424027517,
+              "rms_logp_error": 0.00012154422778244448,
+              "relative_l2_logp_error": 4.315157113879686e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.1928044726321356e-11,
+              "device_to_reference_kl_nats": 1.192781757866056e-11,
+              "max_bidirectional_kl_nats": 1.1928044726321356e-11,
+              "passed": true,
+              "max_logp_error": 5.4234741899250594e-05,
+              "rms_logp_error": 1.1867569341859321e-05,
+              "relative_l2_logp_error": 6.143537939772342e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 4.456988607196639e-15,
+              "device_to_reference_kl_nats": 3.34831740847099e-15,
+              "max_bidirectional_kl_nats": 4.456988607196639e-15,
+              "passed": true,
+              "max_logp_error": 2.2293942080864326e-05,
+              "rms_logp_error": 4.908305197332587e-06,
+              "relative_l2_logp_error": 1.5848631861120208e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.9720109896619847e-11,
+              "device_to_reference_kl_nats": 2.9719145704669366e-11,
+              "max_bidirectional_kl_nats": 2.9720109896619847e-11,
+              "passed": true,
+              "max_logp_error": 6.291207578712488e-05,
+              "rms_logp_error": 1.3140916178521403e-05,
+              "relative_l2_logp_error": 6.265276638162802e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "B0": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.469277100467369e-10,
+              "device_to_reference_kl_nats": 1.469269284490436e-10,
+              "max_bidirectional_kl_nats": 1.469277100467369e-10,
+              "passed": true,
+              "max_logp_error": 9.453952545968036e-05,
+              "rms_logp_error": 2.1328650162485427e-05,
+              "relative_l2_logp_error": 7.38796917232438e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.398737240224973e-10,
+              "device_to_reference_kl_nats": 1.398746536960023e-10,
+              "max_bidirectional_kl_nats": 1.398746536960023e-10,
+              "passed": true,
+              "max_logp_error": 9.650757509049868e-05,
+              "rms_logp_error": 2.0617055200889045e-05,
+              "relative_l2_logp_error": 1.0840139266305839e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 6.415759411184429e-13,
+              "device_to_reference_kl_nats": 6.423890328674334e-13,
+              "max_bidirectional_kl_nats": 6.423890328674334e-13,
+              "passed": true,
+              "max_logp_error": 3.148594827351303e-05,
+              "rms_logp_error": 6.683629758816178e-06,
+              "relative_l2_logp_error": 2.4159932458576905e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.6307923791718425e-10,
+              "device_to_reference_kl_nats": 2.630818671917323e-10,
+              "max_bidirectional_kl_nats": 2.630818671917323e-10,
+              "passed": true,
+              "max_logp_error": 0.00013939253258499207,
+              "rms_logp_error": 2.6973291840397552e-05,
+              "relative_l2_logp_error": 1.4613367387480283e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "cot": {
+                "reference_to_device_kl_nats": 0.0,
+                "device_to_reference_kl_nats": 0.0,
+                "max_bidirectional_kl_nats": 0.0,
+                "passed": true,
+                "max_logp_error": 0.0,
+                "rms_logp_error": 0.0,
+                "relative_l2_logp_error": 0.0,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "fixed-student-answers": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.2210155774807654e-14,
+                "device_to_reference_kl_nats": 1.2173071387024623e-14,
+                "max_bidirectional_kl_nats": 1.2210155774807654e-14,
+                "passed": true,
+                "max_logp_error": 1.1437295533767156e-05,
+                "rms_logp_error": 3.6312413329983766e-06,
+                "relative_l2_logp_error": 1.2108453923571542e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 1.2980850867512147e-13,
+                "device_to_reference_kl_nats": 1.2978562123376498e-13,
+                "max_bidirectional_kl_nats": 1.2980850867512147e-13,
+                "passed": true,
+                "max_logp_error": 7.671360435779206e-06,
+                "rms_logp_error": 1.5922394655895058e-06,
+                "relative_l2_logp_error": 5.414956498009531e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 3.3098873523694513e-15,
+                "device_to_reference_kl_nats": 3.733235200903528e-15,
+                "max_bidirectional_kl_nats": 3.733235200903528e-15,
+                "passed": true,
+                "max_logp_error": 1.1442849427112378e-05,
+                "rms_logp_error": 3.62534894472496e-06,
+                "relative_l2_logp_error": 1.1742119026423045e-07,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 5.6757250590330495e-15,
+                "device_to_reference_kl_nats": 5.6243667267189635e-15,
+                "max_bidirectional_kl_nats": 5.6757250590330495e-15,
+                "passed": true,
+                "max_logp_error": 7.633116183569655e-06,
+                "rms_logp_error": 1.8781978024099419e-06,
+                "relative_l2_logp_error": 5.927099471027085e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ],
+        "variable-student-answers": [
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.1230750327338456e-10,
+              "device_to_reference_kl_nats": 2.1230665369121886e-10,
+              "max_bidirectional_kl_nats": 2.1230750327338456e-10,
+              "passed": true,
+              "max_logp_error": 0.00024283555705295612,
+              "rms_logp_error": 8.721595027729621e-05,
+              "relative_l2_logp_error": 3.2979495950595284e-06,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 4.371377631534408e-14,
+                "device_to_reference_kl_nats": 4.4016142437526465e-14,
+                "max_bidirectional_kl_nats": 4.4016142437526465e-14,
+                "passed": true,
+                "max_logp_error": 9.51361353074276e-06,
+                "rms_logp_error": 2.4945256562489988e-06,
+                "relative_l2_logp_error": 7.055739397485711e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.5384020742679276e-11,
+              "device_to_reference_kl_nats": 1.5383272303625928e-11,
+              "max_bidirectional_kl_nats": 1.5384020742679276e-11,
+              "passed": true,
+              "max_logp_error": 7.953862420428948e-05,
+              "rms_logp_error": 1.890229760303141e-05,
+              "relative_l2_logp_error": 9.837504956761962e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 2.04523523868751e-12,
+                "device_to_reference_kl_nats": 2.043965087260202e-12,
+                "max_bidirectional_kl_nats": 2.04523523868751e-12,
+                "passed": true,
+                "max_logp_error": 1.1414052401903518e-05,
+                "rms_logp_error": 2.533561063580438e-06,
+                "relative_l2_logp_error": 8.86879187939607e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 2.833231252481439e-13,
+              "device_to_reference_kl_nats": 2.8526055933835117e-13,
+              "max_bidirectional_kl_nats": 2.8526055933835117e-13,
+              "passed": true,
+              "max_logp_error": 2.6546196764343222e-05,
+              "rms_logp_error": 6.739666577968519e-06,
+              "relative_l2_logp_error": 2.2663262419377853e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 2.6285983438775926e-16,
+                "device_to_reference_kl_nats": 6.492073338925598e-16,
+                "max_bidirectional_kl_nats": 6.492073338925598e-16,
+                "passed": true,
+                "max_logp_error": 7.629561501687476e-06,
+                "rms_logp_error": 2.094583383856405e-06,
+                "relative_l2_logp_error": 6.479371848498716e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          },
+          {
+            "native": {
+              "reference_to_device_kl_nats": 1.4987822362950168e-11,
+              "device_to_reference_kl_nats": 1.4988102521532692e-11,
+              "max_bidirectional_kl_nats": 1.4988102521532692e-11,
+              "passed": true,
+              "max_logp_error": 3.9133204655428244e-05,
+              "rms_logp_error": 9.772422338845476e-06,
+              "relative_l2_logp_error": 4.95386127502425e-07,
+              "argmax_equal": true
+            },
+            "cache": {
+              "own": {
+                "reference_to_device_kl_nats": 5.377110912809811e-16,
+                "device_to_reference_kl_nats": 7.624292096370208e-16,
+                "max_bidirectional_kl_nats": 7.624292096370208e-16,
+                "passed": true,
+                "max_logp_error": 7.629740835568555e-06,
+                "rms_logp_error": 2.1461683873426245e-06,
+                "relative_l2_logp_error": 6.520169604035262e-08,
+                "argmax_equal": true
+              }
+            },
+            "actual_vectors_recomputed": true
+          }
+        ]
+      },
+      "primary_gate": null
+    }
+  },
+  "answer_attempts": 9216,
+  "note_attempts": 2048,
+  "payloads": {
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-fixed-all512-notes.jsonl.gz": {
+      "rows": 512,
+      "sha256": "b5db25d724d039ba6576d2a694c988b1cb630bf994b23bb5bef35c5cc22dba3b"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-variable-all512-notes.jsonl.gz": {
+      "rows": 512,
+      "sha256": "2fb852395dcd58023581843136520240819b4471dc7a864a808c05e23185f46f"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-reader-all1536-answers.jsonl.gz": {
+      "rows": 1536,
+      "sha256": "606d3d8fe19fe64a9e184fb7e0228e79b2e1c7d71745993d881cc14fcfbc399c"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-full_cot-all512-answers.jsonl.gz": {
+      "rows": 512,
+      "sha256": "253ff67097c176195a54624de8a10d67aaa0e7dca2440202b00d334167345b1a"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-B0-all512-answers.jsonl.gz": {
+      "rows": 512,
+      "sha256": "860e8fdaa2c7cb329a1ad120c081af017aeb0c3e999440360a9af2afde5fb20b"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-fixed-student-answers-all1024-answers.jsonl.gz": {
+      "rows": 1024,
+      "sha256": "141f3c28e95291faeb154f57568c0453cd8eb881ba66166ce97bd5fffd08c2ee"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_composition-variable-student-answers-all1024-answers.jsonl.gz": {
+      "rows": 1024,
+      "sha256": "92395d6f910c0e769994bb5f865a8a405527b9756e277241815aafd148f05f1a"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-fixed-all256-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "70539c19541ce9ebf25ff8815e51953174cfb70529904d7a2db618e92249be95"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-variable-all256-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "eb0145a24531ddb0b80ede0e3338e446f635012a0c9e9e665b52fa0bb29f49de"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-reader-all768-answers.jsonl.gz": {
+      "rows": 768,
+      "sha256": "61f4a8458b22a49904f64e6ad83b5e43d931a700bce3e828bbac0c7b9d4d41c3"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-full_cot-all256-answers.jsonl.gz": {
+      "rows": 256,
+      "sha256": "7bd653ce9e0ebfb9c4dad8d50ac06b1a410108d188902f6ec31778d2bd04e669"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-B0-all256-answers.jsonl.gz": {
+      "rows": 256,
+      "sha256": "48b6d2089bf30c4c2ac4bea58466f918dd5ff71024835b175efe713d1f0cdf51"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-fixed-student-answers-all512-answers.jsonl.gz": {
+      "rows": 512,
+      "sha256": "3f4dfe0b64a040f63bb08917aa88976ebdbf27e6c06ef1fb6a156f5d72bc1beb"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth2-variable-student-answers-all512-answers.jsonl.gz": {
+      "rows": 512,
+      "sha256": "3c821f1ebc168c2e5d3e4a5669ceebfe2fd6412390b0add57e8f39de00f7b379"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-fixed-all256-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "1d17a54ebb7f530a7c5d09ea3e2f8c7cb362e5b02a40224bf2becc36982010d9"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-variable-all256-notes.jsonl.gz": {
+      "rows": 256,
+      "sha256": "c14487c22a0512eb750f4331666eb511246bd1cfa31b9e36bba3a731428c70c0"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-reader-all768-answers.jsonl.gz": {
+      "rows": 768,
+      "sha256": "ad1284f12bac3ce04534a2a133a2dc2158ce2e014f43df1990f3d6be5cd2c0ae"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-full_cot-all256-answers.jsonl.gz": {
+      "rows": 256,
+      "sha256": "534c54d30842324c741563866ee12d6b3a970d850a40d57f9e35cb7c37bbd460"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-B0-all256-answers.jsonl.gz": {
+      "rows": 256,
+      "sha256": "4f4a15c15bf249bdf271aaf8db493344ae99633ae595dc8fa9b9937f000fe483"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-fixed-student-answers-all512-answers.jsonl.gz": {
+      "rows": 512,
+      "sha256": "a1925ca524f3449a7b3ba284e868010948238ad9266737d2c7bf4e43e2a79a33"
+    },
+    "validation/variable_depth_writer_v11_complete_20261019/DEV_depth6-variable-student-answers-all512-answers.jsonl.gz": {
+      "rows": 512,
+      "sha256": "7a20a24a72dbe6af2decdbeeb9dbf11b77925a257e7ce93694bbe0ca71030eb2"
+    }
+  },
+  "limits": [
+    "One diagnostic training seed,three separate panels;neverpool.",
+    "Curricula differ in depth,examples and supervised-token totals;not a pureEOS-only causal isolation.",
+    "Two-model system must justify cost against both single-model baselines. This diagnostic does not gate real-data mainline."
+  ],
+  "EBS_archive_audit_sha256": "4dbf535d6c9b363089c77a444bb8e7d4367b937bf75c324703dfb38e768393dd",
+  "presentation": {
+    "figure": "validation/variable_depth_writer_v11_complete_20261019/complete-answer-accuracy.svg",
+    "table": "validation/variable_depth_writer_v11_complete_20261019/complete-answer-accuracy.csv",
+    "examples": "validation/variable_depth_writer_v11_complete_20261019/fixed-and-diagnostic-examples.jsonl",
+    "example_selection": "Firstthreefrozen-orderquestionsperpanel,plusfirstprimaryvariablefailureandfirstfixed-wrong/variable-correctcaseifnotalreadyselected. Descriptiveexamplesnotadditionalobservations.",
+    "audit_source_sha256": "132c9441720d7baf701a0f8be69542164a2087eb3a33d02128b36fbfd3cac65a"
+  }
+}

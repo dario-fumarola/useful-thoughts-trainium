@@ -1,0 +1,19 @@
+panel,condition,items,correct,accuracy,unsupported,generated_actions,writer_actions
+DEV_composition,Empty reader,512,7,0.013671875,0,2587,0
+DEV_composition,Supplied state,512,377,0.736328125,0,2724,0
+DEV_composition,Fixed writer,512,124,0.2421875,0,2669,15654
+DEV_composition,Variable writer,512,306,0.59765625,0,2713,19025
+DEV_composition,Full CoT,512,273,0.533203125,0,27811,0
+DEV_composition,Base CoT,512,262,0.51171875,153,37454,0
+DEV_depth2,Empty reader,256,56,0.21875,0,1288,0
+DEV_depth2,Supplied state,256,213,0.83203125,0,1283,0
+DEV_depth2,Fixed writer,256,180,0.703125,1,1284,6406
+DEV_depth2,Variable writer,256,182,0.7109375,0,1282,6406
+DEV_depth2,Full CoT,256,193,0.75390625,0,11560,0
+DEV_depth2,Base CoT,256,95,0.37109375,133,13857,0
+DEV_depth6,Empty reader,256,0,0.0,0,1440,0
+DEV_depth6,Supplied state,256,78,0.3046875,0,1716,0
+DEV_depth6,Fixed writer,256,0,0.0,0,1458,10860
+DEV_depth6,Variable writer,256,10,0.0390625,0,1599,17390
+DEV_depth6,Full CoT,256,0,0.0,0,16810,0
+DEV_depth6,Base CoT,256,13,0.05078125,229,37694,0

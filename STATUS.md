@@ -1,9 +1,9 @@
-# Status — 2026-10-19 04:09 UTC
+# Status — 2026-10-19 04:56 UTC
 
 ## Active: single-model real-document mainline
 Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
 Experiment: real-trace-cpt-v10; immutable training source3d8666b,1,622CPUchecks; original design public.
-Raw/prior/post:6fresh1.7Bmodelsreleased;seed1913live8ranksperarm,physical0–5;seed1914serialperarm.
+Raw/prior/post:all3seed1913terminals320closed;freshseed1914live8ranksperarm,physical0–5.
 Independent training/inference gates remain>=0.25nat/span and paired95%lower>0 in each seed,plus ordinary-text bound.
 Prelearning correction: string novelty missed10TRAIN-equivalent ASTs; V2novel256 has zero ordered-AST overlap.
 TRAIN,oldDEV,V1andallobservations remain;246identical rows reused and10new rows selected without trained outcomes.
@@ -16,19 +16,20 @@ Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tm
 Full8EBSreadbackverified;trainingcontrol:local/diagnostics/real-trace-cpt-v10-study-v1;terminal320primary.
 B0prefix-only notes256 live on physical15,4nativechecksPASS;no deployed-note or capability result yet.
 
-## Active: bounded variable-depth writer diagnostic
-Question: does varied depth repair incomplete stopping and improve the same frozen reader?
-Experiment:variable-depth-writer-v11-v1;training5af3431,one seed;fixed640two steps versusvariable640balanced1–5.
-Both fresh writers finished160updates/eightpasses;all320orderedupdates and six full64/80/160states independently pass.
-Actual native checks,finite FP32masters/moments,BF16casts,cursors and source/data pins verified;training loss is not utility.
-Both terminal models and latest variable160fulloptimizer state protected with readback;all originals remain on NVMe.
-Report:validation/variable_depth_writer_v11_terminal_training_20261019.json;no held-out outcomes yet.
-Frozen evaluation source11512db passes1,617CPUchecks;actual old reader/fullCoT producer identities independently verified.
-Seven whole-panel jobs sealed:five actual4-shard partitions live;two reader jobs wait for the original note bundles.
-Budget128writer+32reader versus160single;frozen reader320,fullCoT640seed1806 and unchangedB0;all failures retained.
-Control:local/diagnostics/variable-depth-writer-v11-v1/evaluation-jobs.json;V3jobs,physical8/9/10/11/14;readers wait6/7.
-Declared canonical/natural>=70%;reader>=40% and>=10pp over fixed with positive paired interval;depth6 separate stress.
-Decision:no reader retraining or extension;terminal160primary;split remains bounded diagnostic.
+## Closed: bounded variable-depth writer repair
+Question: does varied-depth training repair incomplete notes and improve the same frozen reader?
+Experiment:variable-depth-writer-v11-v1;one seed,twofresh640examplewriters,160updates/eightpasses.
+All7controllers/3panels close;independent reparse/native/caches/control audit passes9,216answers/2,048notes.
+Primarycomposition512:fixed124correct,variable306;gain+35.5pp[31.3,40.0];canonical/natural91→409.
+Frozenreaderempty7/512,correctsupplied377;variableother1/512. PredeclaredrepairgatePASS.
+FrozenfullCoT273/512,unchangedB0CoT262(153unsupported);variable−fullCoT+6.4pp[1.6,11.3].
+Freshdepth2:fixed180/256(1unsupported),variable182,fullCoT193,B095(133unsupported).
+Unseendepth6:fixed0/256,variable10,teacher78,fullCoT0,B013(229unsupported);no robust length extrapolation.
+All displayedtrainedconditionsotherwise0unsupported;failuresremainindenominators.
+Public:validation/variable_depth_writer_v11_complete_20261019.json;allpayloads,figure,CSV,examplesandauditsource.
+All original outputs/control archives EBS readback;training states/models preserved under current retention policy.
+Limit:curricula/examples/targettokensdiffer,frozenCoTbaselines,one diagnosticseed;not matchedarchitecture evidence.
+Decision:curriculum diagnosis supported;keep split repair bounded and single-model real-data study as mainline.
 
 ## Closed: two-seed matched partial-computation study
 Question: does a separate writer–reader earn its cost over competitive single-model solvers?

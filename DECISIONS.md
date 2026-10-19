@@ -1251,3 +1251,11 @@ checks pass;newshapes are compiling. V2also missed explicitPJRT in the preparati
 runtime,again caught before any hardware worker;V3compares the entire runtime map
 against the intended execution map before preparing protocols. Native vectors
 and all projected inputs remain byte-identical;no repeated scientific observations.
+
+2026-10-19: Complete bounded depth-repair audit passes all9,216 answers/2,048notes.
+Variable640 writer gives frozenR306/512 composition answers versusfixed640124;
+paired+35.5pp[31.3,40.0],canonical/natural91→409. Declaredrepairgatepasses.
+It exceeds frozenfullCoT273 on this panel but not freshdepth2(182versus193),and
+unseendepth6 remains10/256(teacher78). One seed and different curricula/target
+supervision prevent a matched architecture claim. Keep real-data single-model
+mainline;do not expand a split rescue from this narrow positive mechanism.
