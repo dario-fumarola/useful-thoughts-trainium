@@ -1,14 +1,14 @@
-# Status — 2026-10-19 10:02 UTC
+# Status — 2026-10-19 10:31 UTC
 
 ## Active: preserve source prediction with useful computation
 Question: can the arithmetic gain survive a separately normalized source-prefix loss?
 Experiment: real-source-balanced-v17; source_direct/source_cot, fresh B0, proposed two-seed320 study.
 Source37028a1: 1,656 CPU checks plus smoke/compile pass; all10,240 native TRAIN views verified.
 Both arms retain4,489,846 source labels and all V15 task labels; each component gets0.5 mean weight.
-Actual bounded hardware qualification V2 active onphysical12/13,logical48–55;first graph compiling.
+Qualification V2: CoT1–6/fullrestore6→8 closed;direct1–3 and independent audit remain.
 Control: local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2.
 V1 launch PATH failure stopped before NRT allocation/update; original attempt retained, V2 helper checked.
-Fresh source-TRAIN confirmation target512;shard63 supplies<=447 novel ASTs, declared extension to62 active.
+Fresh TRAIN confirmation512 plusordinary256 frozen fromshards63/62;all512 native partitions exact.
 No new scientific model, held forward, RL or8B is released. CPU readiness is not hardware success.
 Report: validation/real_source_balanced_v17_CPU_readiness_20261019.json.
 Next: monitor qualification;independently audit all states/components;finish/freeze confirmation and design.

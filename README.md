@@ -80,8 +80,11 @@ retain the exact experiment identity.
 
 The next bounded [source-balanced preparation](validation/real_source_balanced_v17_CPU_readiness_20261019.json)
 adds a shared source-prefix loss, normalized separately from task targets. Its
-CPU and real-data packing checks pass; accelerator/recovery qualification and
-fresh confirmation curation are active. No new scientific training is released.
+CPU and real-data packing checks pass. A
+[fresh 512-question confirmation and 256-document quality panel](validation/real_source_balanced_v17_confirmation_20261019.json)
+are frozen. The [prospective design](validation/real_source_balanced_v17_design_20261019.json)
+requires an arithmetic gain and an ordinary-NLL cost bounded at 0.03 nats/token.
+Accelerator/recovery qualification is active; no new scientific training is released.
 
 ## Earlier study: single-model real-document computation and likelihood
 

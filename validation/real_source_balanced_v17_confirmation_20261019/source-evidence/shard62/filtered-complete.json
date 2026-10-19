@@ -1,0 +1,20 @@
+{
+  "status": "FRESH_PUBLIC_TRAIN_SOURCE_FILTERED_NO_COHORT_OR_MODEL_RELEASE",
+  "utc": "2026-10-19T10:00:11.025828+00:00",
+  "counts": {
+    "source_rows": 104679,
+    "prior_page_excluded": 10236,
+    "novel_rows": 94443
+  },
+  "raw_file": "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-source-shard62-v1/novel-TRAIN-source.jsonl",
+  "raw_sha256": "1d49346bda6f00e087b8b02d2896899c63d49051491d28ac3fd2713f105b5d19",
+  "membership_file": "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-source-shard62-v1/novel-membership.jsonl",
+  "membership_sha256": "52a255e725b213794aa0b6aaa43794cbe23762c4b5017041e83b7b30bbfe610e",
+  "exclusion_plan_sha256": "c99b725d9c6e8091eefa3d4f89921a8c574fce67f67eb1a7ae62c15ff7c1c5dc",
+  "script_sha256": "de383828982adeb7f1154a560fd97d482808fbed785e339cf6809ad75bb2092a",
+  "limits": [
+    "No source/model outcome selection. One deterministic public TRAIN shard;no officialTEST or old quarantined text opened.",
+    "Prior retained page/content overlap is excluded;unknown semantic near duplicates and pretraining exposure remain possible.",
+    "All candidate rows are source-TRAIN-derived development;arithmetic eligibility and fixed held selection still pending."
+  ]
+}

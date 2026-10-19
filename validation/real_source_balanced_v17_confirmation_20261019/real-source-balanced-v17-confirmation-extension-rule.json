@@ -1,0 +1,16 @@
+{
+  "status": "FIXED_DATA_AVAILABILITY_EXTENSION_RULE_BEFORE_NEW_MODEL_LEARNING",
+  "utc": "2026-10-19T09:58:05.334385+00:00",
+  "source_revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+  "config": "finemath-4plus",
+  "shard_order": [
+    63,
+    62,
+    61,
+    60
+  ],
+  "arithmetic_confirmation_documents": 512,
+  "ordinary_confirmation_documents": 256,
+  "extension": "Process complete shards in descending order. Extend only if there are fewer than512 fitting,novel ordered-AST candidates after prior-data/page/content exclusion. Select by fixed salted hash after eligibility;no model outcomes.",
+  "limits": "Old source text in TEST/unlisted lines remains opaque. Existing development panels stay separate. Source/model learning release remains pending."
+}

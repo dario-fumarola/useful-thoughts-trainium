@@ -1,0 +1,70 @@
+{
+  "status": "FROZEN_FRESH_SOURCE_TRAIN_CONFIRMATION_NO_MODEL_FORWARD",
+  "utc": "2026-10-19T10:10:25.516687+00:00",
+  "schema": "real-source-balanced-v17-confirmation-v1",
+  "script_sha256": "69be69a5d2c6413dd58dbcb669fb0fc2db7f3d17c60ce84542496dfc709fdd6d",
+  "selection_salt": "real-source-balanced-v17-confirmation-fixed-hash-v1",
+  "completed_shards": [
+    63,
+    62
+  ],
+  "source_accepted_files": {
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-curation-v1/accepted.jsonl": "6f6958e229d344f2976a241418d06169a2b15256647440ce908b9b4c3c154db5",
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-curation-shard62-v1/accepted.jsonl": "99b26935acf45fa9b52ba31c3cbd4370f7146852beb858c8aeec84093a5eb90b"
+  },
+  "prior_files": {
+    "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9/TRAIN.jsonl": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9/DEV.jsonl": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79",
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v2/DEV_novel_expression256.jsonl": "41d4aa6e6d217cdd57296953c669a95005ae1eb17b29ba5dc8565627b0c78fba",
+    "/home/ubuntu/dario/local/nvme-study/data/real-target-sft-v15-held-v1/DEV_fresh384.jsonl": "8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c"
+  },
+  "curator_source_files": {
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+    "train/computable_equations_raw.py": "b863cb6e94cbac3489bdc0939a56177436985c5a809895cae410212ec63ac208"
+  },
+  "arithmetic_documents": 512,
+  "ordinary_documents": 256,
+  "arithmetic_exclusions": {
+    "prior_ordered_AST": 463,
+    "same_partial64_fit_rule": 25
+  },
+  "ordinary_exclusions": {
+    "too_short_for512plus16": 135,
+    "not_exact_native_UTF8_window": 2
+  },
+  "trace_operations": {
+    "2": 280,
+    "3": 149,
+    "4": 43,
+    "5": 30,
+    "6": 10
+  },
+  "files": {
+    "DEV_confirm512.jsonl": {
+      "rows": 512,
+      "bytes": 2539012,
+      "sha256": "6b801912351e73676fa691404358a1daaf1a540fc36f805afc92d7c3a9433d30"
+    },
+    "DEV_ordinary256.jsonl": {
+      "rows": 256,
+      "bytes": 770198,
+      "sha256": "1d490d8f37790154b23ea1f34201c22c84429e55eb4742dbf6b6bf24d986592f"
+    },
+    "DEV_confirm512-questions.jsonl": {
+      "rows": 512,
+      "bytes": 1042831,
+      "sha256": "dd4174bfb289c6dea21dfa7aa7a7786cb22feca6d9e7355d6b859b2946fce857"
+    }
+  },
+  "limits": [
+    "New public source TRAIN-derived confirmation,not officialTEST. No model outputs or scores select documents.",
+    "Ordered exact-value ASTs and canonical pages exclude prior retained data;one page/expression per arithmetic item. Operator patterns/equal answers can recur.",
+    "Old TEST/unlisted raw text remains opaque;prior identifiers used only for exclusion. Unknown semantic duplicates and pretraining exposure are not ruled out.",
+    "Source RHS verification is supervised curation;teacher traces receive only the causal prefix. Writer projection contains only identifiers/prefix IDs.",
+    "Ordinary documents use one deterministic complete512+16 native window from bounded source text;all panel denominators fixed before new learning."
+  ]
+}

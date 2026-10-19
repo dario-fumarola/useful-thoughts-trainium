@@ -1,6 +1,6 @@
 # Current queue
 
-1. Publish the completed V15 supervised reference and preserve its costs.
+1. V15 is published at e5cdc19; preserve its completed findings and costs.
    All nine models and both endpoints are complete; independent checks pass.
    CoT own342/335 of384 beats direct-SFT raw275/285 and same-CoT empty261/263.
    Paired gains +17.4pp[13.3,21.6] / +13.0pp[8.9,17.2]; declared gates pass both seeds.
@@ -19,19 +19,19 @@
    width640,target640. No new scientific training release yet.
    Hardware control:local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2.
    Tmux source-balanced-v17-qualification-v2;actual8workers onphysical12/13.
-   First graph compiling. Disposable CoT1–6,fullrestore6→8,direct1–3;noautomaticretry.
+   CoT1–6/fullrestore6→8 physically closed;direct1–3 still active;independent audit pending.
    V1 PATH-only failure before allocation is retained. Small evidence backedup;
    original qualification full states/models remainNVMe;scientific EBS reserve protected.
    Independent auditor prepared:local/analysis/audit_real_source_balanced_qualification_v17_20261019.py.
    It must verify independent source/task label formulas andweighted loss,allstate bytes,
    restored optimizer digests,memory andphysicalclosure before declaring hardwarePASS.
-   Confirmation:one pinned HF FineMath4+ TRAIN shard63,prior retained metadata pages/content excluded;
-   598 accepted computations but<=447 novelASTs. Fixed extension to62 isactive.
+   Confirmation: pinned HF FineMath4+ TRAIN shards63/62 now complete;1,838 verified source computations.
    Pipeline session useslocal/analysis/*real_source_confirmation_shard_v17_20261019.py.
    Current private source/curation dirs endfresh-source-shard62-v1/fresh-curation-shard62-v1.
-   Freeze512 unique fitting expressions plus256 ordinary new documents byfixedhash,
+   Frozen512 unique fitting expressions plus256 ordinary new documents byfixedhash,
    excluding oldTRAIN/DEV ASTs/pages;keepoldTEST/unlistedtext opaque. No model-outcome selection.
-   Then publishprospectivedesign/datahashes,confirmstoragebudget,releaseonlyqualifiedfourfreshmodels.
+   Design/datahashes published;prepare protected baseline evaluations,confirmstoragebudget,
+   releaseonlyqualifiedfourfreshmodels afteractualauditPASS.
    No broadRL,sizejump orsplitrescue. V15 positive inference/negativeNLL result staysunchanged.
 
 3. Keep the bounded variable-depth diagnostic closed. Published report:

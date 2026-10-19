@@ -1,0 +1,17 @@
+{
+  "status": "FROZEN_METADATA_EXCLUSION_PLAN_NO_MODEL_OUTCOMES",
+  "utc": "2026-10-19T09:50:39.732717+00:00",
+  "source_sha256": "ca21ff1b4127b1da10243f7e675f752c5c6cb9b6f7e57448ba01bb1a1824dfee",
+  "source_file": "finemath-4plus/train-00063-of-00064.parquet",
+  "metadata_files": {
+    "/home/ubuntu/dario/local/data/finemath/pilot-5000.audited.records.documents.jsonl": "08c4573efc79f1dfd0d945fb0f5578d04d299efdf011d688172a4ef7df6e8dbf",
+    "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.documents.jsonl": "9ee1c7f5dfdad156db8ef34fea2fa62315cf00be0cf6a8bd49c454628ab28cbf",
+    "/home/ubuntu/dario/local/data/finemath/production-500000.audited.records.documents.jsonl": "f340a2d6c82ab83c7b1fcac14a0d658e56f4ef3df4d01d938e0c3f712f2e3b10"
+  },
+  "metadata_rows": 705305,
+  "prior_page_keys": 335502,
+  "prior_content_keys": 754239,
+  "page_normalization": "Ignore scheme,www,query,fragment,trailing slash;casefold host/path and URL-decode path. Conservative exclusion.",
+  "content_normalization": "SHA256 of UTF8 text after whitespace collapse,matching upstream document identity.",
+  "limits": "Prior identifiers from metadata only,including reserved-split identifiers solely for exclusion. Old TEST/unlisted raw text and labels are not opened. Metadata coverage is retained audited documents,not every rejected raw line."
+}

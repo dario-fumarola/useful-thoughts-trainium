@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE_FRESH_COMPOUND_CURATION_NO_COHORT_OR_MODEL_RELEASE",
+  "utc": "2026-10-19T09:58:35.413600+00:00",
+  "documents": 61308,
+  "accepted": 598,
+  "counts": {
+    "no_valid_bounded_raw_equation": 60710,
+    "accepted": 598
+  },
+  "candidate_counts": {
+    "accepted": 967,
+    "unsupported_source_label": 1728,
+    "source_numeric_mismatch": 279
+  },
+  "accepted_sha256": "6f6958e229d344f2976a241418d06169a2b15256647440ce908b9b4c3c154db5",
+  "audit_sha256": "b8823ef19c89c4ff705c87a8cc1e4929944efef4e5f5eddfc002e67b94b7744d",
+  "plan_sha256": "c0f139776949d970123ed93820de5e79fd25013b032c21308ab09f02601ba3e0",
+  "elapsed_seconds": 295.0418782699853,
+  "limits": "Same exact source-equation filter and prefix-computable interpretation asv9;future-aware RHS eligibility is declared. No heldmodel execution."
+}

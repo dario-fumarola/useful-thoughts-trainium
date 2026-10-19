@@ -1,0 +1,25 @@
+{
+  "status": "FROZEN_FRESH_SOURCE_CURATION_NO_MODEL_RELEASE",
+  "utc": "2026-10-19T09:53:40.484438+00:00",
+  "raw_sha256": "faa90351712a16d41558a4d26e0cdc8ca4c5d5dae7f893b3de1748f315f99475",
+  "membership_sha256": "21f528fa91b0016dfc4f0c982c4fc0f56314d49de29610bcb7ee8f8b870bdaca",
+  "source_files": {
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/computable_equations_supervised.py": "d5e55d2b7273be01f713266e44a678aa87a49c2352c362d54caa5de2a57deaad",
+    "train/computable_equations_raw.py": "b863cb6e94cbac3489bdc0939a56177436985c5a809895cae410212ec63ac208"
+  },
+  "source_script_sha256": "d5526bfa0541b9c6d14f3cec2251b1c852f0bdaea8d84a552ac2705afcb1e009",
+  "minimum_binary_ops": 2,
+  "workers": 4,
+  "deadline_utc": "2026-10-19T12:30:00+00:00",
+  "bounds": {
+    "raw_characters": 65536,
+    "native_tokens": 8208,
+    "candidate_cut": 8192
+  },
+  "provenance_binding": "Per-worker RAW_SHA is rebound to this actual new raw file solely for emitted source provenance. Eligibility/selection source bytes are unchanged.",
+  "limits": "Source TRAIN-derived confirmation preparation;no old TEST/unlisted text or model outcomes used. Fixed held selection is a later step."
+}

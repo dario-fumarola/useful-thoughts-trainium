@@ -1,0 +1,156 @@
+{
+  "status": "FROZEN_FRESH_CONFIRMATION_AND_NATIVE_INPUTS_BEFORE_NEW_SCIENCE_OR_HELD_MODEL_FORWARD",
+  "utc": "2026-10-19T10:29:33.370275+00:00",
+  "question": "Can the source-balanced follow-up be assessed on fresh source-TRAIN documents and computations?",
+  "source": "Pinned HuggingFaceTB/FineMath4+ TRAIN shards63/62;revision e92b25a616738fe95dc186b64dfb19f9c8525594.",
+  "source_card": "https://huggingface.co/datasets/HuggingFaceTB/finemath/blob/e92b25a616738fe95dc186b64dfb19f9c8525594/README.md",
+  "arithmetic_documents": 512,
+  "ordinary_documents": 256,
+  "all_arithmetic_native_partitions_exact": true,
+  "source_accepted_documents": {
+    "shard63": 598,
+    "shard62": 1240
+  },
+  "prior_data": "Previous retained pages/content and actualTRAIN/previousarithmeticASTs excluded;onepage/expression perarithmeticitem;ordinarypages/documents disjoint.",
+  "selection_salt": "real-source-balanced-v17-confirmation-fixed-hash-v1",
+  "files_selected": {
+    "DEV_confirm512.jsonl": {
+      "rows": 512,
+      "bytes": 2539012,
+      "sha256": "6b801912351e73676fa691404358a1daaf1a540fc36f805afc92d7c3a9433d30"
+    },
+    "DEV_ordinary256.jsonl": {
+      "rows": 256,
+      "bytes": 770198,
+      "sha256": "1d490d8f37790154b23ea1f34201c22c84429e55eb4742dbf6b6bf24d986592f"
+    },
+    "DEV_confirm512-questions.jsonl": {
+      "rows": 512,
+      "bytes": 1042831,
+      "sha256": "dd4174bfb289c6dea21dfa7aa7a7786cb22feca6d9e7355d6b859b2946fce857"
+    }
+  },
+  "manifest_sha256": "15d4e0d4c85f07d9cdb09d545203e8c770f05c2ca80a3acd2118c5da0f55c0e6",
+  "design_sha256": "3f902839f1b0c9cd3db4a14e2123f9d4a424153b56db9a746e8bcbcf014c812a",
+  "evaluation_source_commit": "c9b399b",
+  "evaluation_CPU_checks": 1668,
+  "training_source_commit": "37028a1",
+  "scientific_release": false,
+  "files": {
+    "validation/real_source_balanced_v17_confirmation_20261019/manifest.json": {
+      "bytes": 3769,
+      "sha256": "15d4e0d4c85f07d9cdb09d545203e8c770f05c2ca80a3acd2118c5da0f55c0e6"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard63/download-plan.json": {
+      "bytes": 647,
+      "sha256": "39b3d0dcb69bf6179e47a98a94fdba6fc20320feecce2f66b2e3b264479974b4"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard63/download-complete.json": {
+      "bytes": 649,
+      "sha256": "78a6d93296d4db5685785f0ddee598523cbf6f4b03a56219bbfbc90cd2ed1b99"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard63/public-file-metadata.json": {
+      "bytes": 373,
+      "sha256": "fadb136b1c364f2a5bee79bbc537f52734dac2fe43ccf3d743710a8399c36386"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard63/exclusion-plan.json": {
+      "bytes": 1356,
+      "sha256": "29fadc4407ff219bf3316668e286f77fb616f3fe7e10cd56ca4861266a0f2a27"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard63/filtered-complete.json": {
+      "bytes": 1239,
+      "sha256": "fffd8d21727050816f112c6d18d1eccb26887f87fee27b2dbc7321bfd7ee842a"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/curation-evidence/shard63/plan.json": {
+      "bytes": 1558,
+      "sha256": "c0f139776949d970123ed93820de5e79fd25013b032c21308ab09f02601ba3e0"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/curation-evidence/shard63/completion.json": {
+      "bytes": 826,
+      "sha256": "10e21035667684cbfe05be37bfc3672f094b127d693b626a6cdceff1d75502db"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard62/download-plan.json": {
+      "bytes": 632,
+      "sha256": "1904f6c927cd502ca4179cb500dc2b4c18bf192ec465cbde33bf29935384233f"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard62/download-complete.json": {
+      "bytes": 657,
+      "sha256": "bde477906fee952c221189b9b8466abf89a9749a64cb3a77c58bb6d2c8758b8d"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard62/public-file-metadata.json": {
+      "bytes": 373,
+      "sha256": "e019b9d4888a33abdee355f43d3accfa2afaab19b0c4666af237909940690e06"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard62/exclusion-plan.json": {
+      "bytes": 1356,
+      "sha256": "c99b725d9c6e8091eefa3d4f89921a8c574fce67f67eb1a7ae62c15ff7c1c5dc"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/source-evidence/shard62/filtered-complete.json": {
+      "bytes": 1255,
+      "sha256": "f76de7c73cf0ba6e65d1784d5058d455d00de87f41015e0ad6ce376e08f2710e"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/curation-evidence/shard62/plan.json": {
+      "bytes": 1558,
+      "sha256": "6e969559b29cee070aeb25744d6ede45e081b84bddd1edc1c4dc4eeca4762d7a"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/curation-evidence/shard62/completion.json": {
+      "bytes": 829,
+      "sha256": "f5b41b2abd7feae1f2e56af3629dc85347f7cacbfa918841c7e001c50beae837"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/real-source-balanced-v17-confirmation-extension-rule.json": {
+      "bytes": 768,
+      "sha256": "86ddfc864604aca2030d4067efcdd59b52c4b47975f53fbecbb669906deb4836"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/real-source-balanced-v17-confirmation-upper-bound-first-shard.json": {
+      "bytes": 189,
+      "sha256": "95bd134b9d751f4a7174fc48335902307f7705aab6a9770975c504ecf4cf7add"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/fetch_real_source_confirmation_v17_20261019.py": {
+      "bytes": 2703,
+      "sha256": "bf0a6c00bb647acf9c173963e081a9b6721062214ae233769d82a660f4b38e60"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/filter_real_source_confirmation_v17_20261019.py": {
+      "bytes": 4809,
+      "sha256": "4c19d5ff344efb2d07590e2dd8354b364d57f9fcdc1cfa8295508cd416883245"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/curate_real_source_confirmation_v17_20261019.py": {
+      "bytes": 4891,
+      "sha256": "d5526bfa0541b9c6d14f3cec2251b1c852f0bdaea8d84a552ac2705afcb1e009"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/fetch_real_source_confirmation_shard_v17_20261019.py": {
+      "bytes": 2870,
+      "sha256": "2c969db4de4ac79f7eeee66a8b175c4c8977dfa58f3ee7876c885d10490707de"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/filter_real_source_confirmation_shard_v17_20261019.py": {
+      "bytes": 4979,
+      "sha256": "de383828982adeb7f1154a560fd97d482808fbed785e339cf6809ad75bb2092a"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/curate_real_source_confirmation_shard_v17_20261019.py": {
+      "bytes": 5240,
+      "sha256": "724ea7e41a857195e77274a0872f36a8dcd9d69994fb53320cbe5992ded290a7"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/freeze_real_source_confirmation_v17_20261019.py": {
+      "bytes": 12832,
+      "sha256": "69be69a5d2c6413dd58dbcb669fb0fc2db7f3d17c60ce84542496dfc709fdd6d"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/analysis-source/prepare_real_source_evaluation_inputs_v17_20261019.py": {
+      "bytes": 7447,
+      "sha256": "a8bfb4ebe6824ada284a281fbe4880f223094c6b9a4535cd3b5e303fa8ff36e2"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/native-evaluation-input-manifest.json": {
+      "bytes": 3047,
+      "sha256": "f2d2de99e1d58115aaa5330f285c65a508693456312d401a622edf40e6449b1b"
+    },
+    "validation/real_source_balanced_v17_confirmation_20261019/evaluation-CPU-checks.log": {
+      "bytes": 2067,
+      "sha256": "17edd13d4876d69ab8dd59dae636d342a52b5c16d7d5ea75740295b0d156503c"
+    }
+  },
+  "limits": [
+    "No model likelihood,generated note,answer correctness or difficulty score selected the cohort.",
+    "Prefix-only questions are separate fromtargets andscoring gold. Oracle traces include root answers bydesign;teacherlabels are computed fromprefix only.",
+    "Reserved old TEST/unlisted source text remains unopened. Prior metadata IDs areused onlyforexclusion;metadata coverage is retained auditeddocuments,notall rejectedrawlines.",
+    "Source TRAIN-derived confirmation is not officialTEST,semantic-independence,pretraining-novelty or broad-domain evidence.",
+    "Hardware/recovery qualification remains active;CPU/input readiness doesnotrelease newlearning."
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "prospective-real-source-balanced-v17-v1",
+  "status": "PROSPECTIVE_DESIGN_FROZEN_NOT_SCIENTIFIC_RELEASE",
+  "utc": "2026-10-19T10:13:29.650292+00:00",
+  "question": "Can separately normalized source-prefix training preserve ordinary prediction while retaining useful generated arithmetic computation?",
+  "motivation": "V15 passes supervised arithmetic reference gates but regresses ordinary FineMath NLL by0.128/0.147nats/token. V10 andV15 results stay unchanged.",
+  "training": {
+    "source_branch": "real-source-balanced-v17",
+    "source_commit": "37028a1",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "initialization": "Fresh released B0 for each arm/seed;never a qualification orprevious-science checkpoint.",
+    "arms": [
+      "source_direct",
+      "source_cot"
+    ],
+    "seeds": [
+      2026101913,
+      2026101914
+    ],
+    "unique_documents": 5120,
+    "passes": 2,
+    "updates": 320,
+    "global_batch": 32,
+    "world_size": 8,
+    "micro_batch": 4,
+    "width": 640,
+    "target_slots": 640,
+    "head_chunk": 32,
+    "lr": 1e-05,
+    "schedule": "constant",
+    "AdamW": {
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0.1,
+      "global_norm_clip": 1
+    },
+    "compute": "BF16 parameters/gradients;FP32 master weights andAdam;one ZeRO reduction owner.",
+    "data_sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915",
+    "objective": "Per example:0.5*meanCE(source-prefix tokens1..len(prefix)-1)+0.5*meanCE(task tokens);then fixed-batch mean.",
+    "source": "Identical unaugmented causal-prefix transitions inbotharms. This is not asecond clean forward pass at the held continuation boundary.",
+    "task_direct": "Original next16 native source tokens;prefix isinput and separately supervised bysourcecomponent.",
+    "task_cot": "Verified prefix-computable fulltrace+learned Answer boundary+same16native tokens;supplied Calculation opening hasno loss.",
+    "source_labels_per_seed": 4489846,
+    "task_labels_per_seed": {
+      "source_direct": 163840,
+      "source_cot": 512900
+    },
+    "checkpoints": "Full160/320;terminal320primary. No extensions,retries,checkpointselection orweight search.",
+    "limits": "Loss coefficients are not gradient-norm fractions. Different target information,active-token totals andinference budgets remain costs."
+  },
+  "evaluation": {
+    "held_manifest": "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-confirmation-v1/manifest.json",
+    "held_manifest_sha256": "15d4e0d4c85f07d9cdb09d545203e8c770f05c2ca80a3acd2118c5da0f55c0e6",
+    "arithmetic_documents": 512,
+    "ordinary_documents": 256,
+    "data_files": {
+      "DEV_confirm512.jsonl": {
+        "rows": 512,
+        "bytes": 2539012,
+        "sha256": "6b801912351e73676fa691404358a1daaf1a540fc36f805afc92d7c3a9433d30"
+      },
+      "DEV_ordinary256.jsonl": {
+        "rows": 256,
+        "bytes": 770198,
+        "sha256": "1d490d8f37790154b23ea1f34201c22c84429e55eb4742dbf6b6bf24d986592f"
+      },
+      "DEV_confirm512-questions.jsonl": {
+        "rows": 512,
+        "bytes": 1042831,
+        "sha256": "dd4174bfb289c6dea21dfa7aa7a7786cb22feca6d9e7355d6b859b2946fce857"
+      }
+    },
+    "modes": [
+      "raw",
+      "empty",
+      "oracle",
+      "own",
+      "other"
+    ],
+    "notes": {
+      "greedy": true,
+      "max_actions": 128,
+      "stops": [
+        151643,
+        16141
+      ],
+      "prefill_width": 544
+    },
+    "answers": {
+      "greedy": true,
+      "max_actions": 32,
+      "stops": [
+        151643
+      ],
+      "prefill_width": 672,
+      "parser": "initial-scalar-v2"
+    },
+    "scoring": "Full16native loglikelihood;same-model first4 CPUreferences per mode for native scorer withunchanged0.001token/mean-span parity gates. Preservefailedattempt;separately identified canonicalCPU fallback only.",
+    "fixed_models": [
+      "B0",
+      "source_direct-seed2026101913-step320",
+      "source_direct-seed2026101914-step320",
+      "source_cot-seed2026101913-step320",
+      "source_cot-seed2026101914-step320",
+      "target_direct-seed2026101913-step320",
+      "target_direct-seed2026101914-step320",
+      "target_cot-seed2026101913-step320",
+      "target_cot-seed2026101914-step320",
+      "real_prior-seed2026101913-step320",
+      "real_prior-seed2026101914-step320"
+    ],
+    "baseline_status": "Earlier terminal models remainfrozen;no new teacher,best-ofselection oroptimizedprompt search.",
+    "primary_accuracy": "source_cot.own minus source_direct.raw;all512 attempts andallunsupported/failedoutputs retained.",
+    "primary_gate_each_seed": {
+      "minimum_accuracy_gain": 0.03,
+      "paired_ci95_lower_strictly_positive": true,
+      "additional_positive_lower_bounds": [
+        "source_cot.own minus source_cot.empty",
+        "source_cot.own minus B0.raw"
+      ],
+      "execution_error_rows_all_fixed_attempts": 0
+    },
+    "ordinary_quality_gate_each_seed": "Upper95% paired CI for source_cot.raw minus B0.raw mean-token NLL onthefresh ordinary256 mustbe<=+0.03nats/token.",
+    "overall_gate": "Both accuracy/control gates AND ordinary-quality guard mustpass separately inbothtrainingseeds. A passed arithmetic gate alone doesnotpass thecombinedquestion.",
+    "bootstrap": {
+      "draws": 20000,
+      "seed": 2026101917,
+      "unit": "document",
+      "interval": "unadjusted95% checkpoint-conditional;nottraining-seed uncertainty",
+      "pool_seeds": false
+    },
+    "secondary": [
+      "Same-reader own/raw/empty/other/oracle controls",
+      "Source_cot own versus frozen target-only CoT andprior-CPT own",
+      "Source_direct raw versus frozen direct-SFT raw",
+      "Full16 andleading/numeral/boundary/remainder LL",
+      "Raw-mode arithmetic andordinary quality contrasts",
+      "Unsupported/format/incomplete/error transitions withoutconditional denominator replacement",
+      "Actualnote/answer tokens,cap/stopcounts,training/exposure andconcurrent wallcosts"
+    ],
+    "review": "One complete readout afterall11models andallpanels physically close;no partialcapability review ornewmodel selection."
+  },
+  "engineering_gate": "Actual both-mask/native/master/cast/fulloptimizer-restore/memory qualification atsame source/shape mustpass. Frozen data/design andprotectedcheckpoint budget required beforefour-modelrelease.",
+  "next_action": "Complete qualification andversioned512evaluation readiness;scientificrelease remains separate.",
+  "scope": [
+    "Supervised arithmetic andsource-quality retention,notspontaneous emergence orRLP/TPT replication.",
+    "SourceTRAIN-derived confirmation excludes priorretained pages/content andordered arithmeticASTs. No officialTEST,pretraining-novelty orsemantic-independence claim.",
+    "Leading-scalar correctness doesnotrequire completeQAreply;answer caps retained. Oracle traces include theanswer;ownwriter hasprefixonly.",
+    "No broadRL,8B/serving-stack change,expanded split rescue orautomatic follow-up release."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "status": "FIXED_PREFIX_ONLY_QUESTIONS_AND_SEPARATE_SCORING_TARGETS",
+  "schema": "real-source-balanced-v17-evaluation-inputs-v1",
+  "source_script_sha256": "a8bfb4ebe6824ada284a281fbe4880f223094c6b9a4535cd3b5e303fa8ff36e2",
+  "source_held_manifest_sha256": "15d4e0d4c85f07d9cdb09d545203e8c770f05c2ca80a3acd2118c5da0f55c0e6",
+  "panels": {
+    "DEV_confirm512": {
+      "documents": 512,
+      "source_sha256": "6b801912351e73676fa691404358a1daaf1a540fc36f805afc92d7c3a9433d30",
+      "arithmetic": true,
+      "component_unsupported": 0,
+      "unsupported_item_ids": []
+    },
+    "DEV_ordinary256": {
+      "documents": 256,
+      "source_sha256": "1d490d8f37790154b23ea1f34201c22c84429e55eb4742dbf6b6bf24d986592f",
+      "arithmetic": false,
+      "fresh_source_confirmation": true
+    }
+  },
+  "files": {
+    "DEV_confirm512-questions.jsonl": {
+      "bytes": 1042831,
+      "sha256": "dd4174bfb289c6dea21dfa7aa7a7786cb22feca6d9e7355d6b859b2946fce857"
+    },
+    "DEV_confirm512-targets.jsonl": {
+      "bytes": 198837,
+      "sha256": "54c27d4ce55cbf6cfc86fb4bd1fdcb0f88cb6749dc1a07b99ed2d16aadc98bcd"
+    },
+    "DEV_confirm512-controls.jsonl": {
+      "bytes": 116451,
+      "sha256": "77f613d0f27329d190e017d663b00ef7b2490b4463e6415e5122b00c5180ff86"
+    },
+    "DEV_ordinary256-questions.jsonl": {
+      "bytes": 613168,
+      "sha256": "66ab43c934a1b429aa0b01d6c301a8f835b6d3056407fedbcd9a638e4f0901e2"
+    },
+    "DEV_ordinary256-targets.jsonl": {
+      "bytes": 75772,
+      "sha256": "30b904437c490fcb65415bacf47a40abe95fe4da9b02cc07876e37b396671ac6"
+    },
+    "DEV_ordinary256-controls.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "opening_ids": [
+    198,
+    47168,
+    2914,
+    510
+  ],
+  "closing_ids": [
+    16141,
+    510
+  ],
+  "stop_ids": [
+    151643,
+    16141
+  ],
+  "max_writer_prefill": 544,
+  "max_writer_actions": 128,
+  "likelihood_width": 672,
+  "source_files": {
+    "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/real_trace_evaluation.py": "4a289e2f0228c00ce48c397519a63a91cbb3faee14854b73bde383f20c06d7b8",
+    "train/real_trace_scope.py": "b69d131684b1d760c456ccc6a768807d0242b266cb8c3d95558ef706f5bf2622"
+  },
+  "limits": [
+    "Generation question files contain onlyid/document/nativeprefix.",
+    "Every512 document is retained even if static component alignment is unsupported.",
+    "Numeral tokens include any merged leading whitespace;boundary includes intervening whitespace before the frozen curator cue.",
+    "Scalar initial-scalar-v2 parser is unchanged;this prospective token accounting is a different secondary diagnostic.",
+    "Ordinary256 is a new source-TRAIN-derived FineMath panel;not a broad-domain or officialTEST result.",
+    "Oracle annotations are prefix-computable full traces including root,not deployed policy observations."
+  ]
+}
