@@ -1,4 +1,4 @@
-# Status — 2026-10-19 01:18 UTC
+# Status — 2026-10-19 01:24 UTC
 
 
 ## Active: matched-cost partial-computation study
@@ -15,6 +15,18 @@ Registry: local/diagnostics/partial-state-v7-matched5120-evaluation-registry-202
 The audit requires all eleven controllers closed before accessing 51,200 answers and 4,096 notes.
 All original full states remain intact; EBS retains every terminal model and latest full scientific recovery.
 Next: interpret both seeds and all panels against both CoT baselines, same-reader controls and unchanged B0.
+
+## Active: real raw-document compound-prefix inventory
+Question: can existing raw FineMath supply enough verified intermediate-only computation examples?
+Experiment: real-raw-compound-prefix-v9-v1; isolated branch 9d57df7, 1,617 CPU checks pass.
+Prior inventory: 5,448 TRAIN / 325 DEV compound documents; complete raw proof only 4,872 / 200.
+Re-curate the same 347,895 audited TRAIN/DEV raw documents, requiring two prefix operations before RHS validation.
+All raw-byte, native-offset, exact-numeric and original split checks remain; TEST/unlisted lines stay opaque.
+CPU-only pass, sixteen workers; no model or training release, no change to sealed scientific evaluation.
+Control: local/diagnostics/real-raw-compound-prefix-v9-v1; tmux dario-real-raw-compound-prefix-v9.
+Output: local/nvme-study/data/finemath-raw-compound-prefix-v9; finite deadline 02:30 UTC, no retries.
+Endpoint after curation: at least 5,120 TRAIN / 256 DEV documents with prefix-derived nonroot labels fitting 64 actions.
+No result yet. Preserve all exclusions and doc/expression overlap; correct teachers do not establish student utility.
 
 ## Closed: bounded export-memory repair and restart attribution
 Question: can export memory growth be removed without changing the matched training/recovery path?

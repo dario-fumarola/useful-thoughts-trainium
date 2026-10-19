@@ -1181,3 +1181,12 @@ resumption execution has a separate numerical limit. Both reports and all update
 metrics/source are public; originals and terminal recovery/EBS evidence preserved.
 No further memory probes. Candidate remains outside immutable scientific source.
 All10primary evaluations close; only shared B0 final panel remains. No new outcomes opened.
+
+2026-10-19 01:24 UTC — Begin bounded CPU real-data preparation, not a model run.
+Prefix-only re-execution finds5448TRAIN/325DEV compound documents, but raw-proof
+subset4872/200 misses5120/256. Isolated9d57df7curator adds minimum2prefix operations
+before unchanged RHS validation;1617CPUchecks pass, including wrong-answer/TEST
+safeguards. Reprocess same347895auditedrawTRAIN/DEVdocuments on16CPUworkers,
+deadline02:30,no retry; all TEST/unlisted bytes remain opaque. Later partial labels
+must receive decoded prefix only and omit root, not reuse full-answer oracle fields.
+No new learning/current-source changes; matched study waits only on shared B0.

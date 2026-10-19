@@ -98,10 +98,18 @@ all 28 update metrics are public, exact originals and recovery protected.
 No more memory probes are queued. This qualifies bounded short world-4 mechanics,
 not original world-32 OOM or indefinite continual training.
 
-While the final unchanged-base panel runs, inspect existing real FineMath source
-inventory only. Compound TRAIN has 5,438 eligible representative documents; prior
-5,120-row labels included the final result and are not intermediate-only. Derive
-new candidate partial labels from prefix expression alone, omit the root operation,
-report raw-document/target provenance, label lengths and doc/expression overlap.
-No learning or new interface sweep before the matched-question readout. Do not
-claim general-language gains from the completed synthetic mechanism study.
+Real-document preparation is active while unchanged B0 finishes. Read-only
+inventory found 5,448 TRAIN / 325 DEV compound documents, but complete raw proof
+only for 4,872 / 200. A new minimum-two-operations prefix curriculum re-curates the
+same audited raw documents without relaxing source validation. Isolated source
+9d57df7, 1,617 CPU checks; sixteen CPU workers, no accelerator/model/learning.
+Control: `local/diagnostics/real-raw-compound-prefix-v9-v1`, tmux
+`dario-real-raw-compound-prefix-v9`, output
+`local/nvme-study/data/finemath-raw-compound-prefix-v9`, deadline 02:30 UTC, no retry.
+Check run.log counts and final completion/readback. Then derive nonroot labels
+from decoded causal prefix only; require at least 5,120 TRAIN and 256 DEV unique
+raw documents fitting64 label+stop actions. Existing full-answer oracle note
+fields in curator outputs are NOT the new writer targets. Keep inherited
+future-aware equation acceptance explicit, while teacher label generation sees
+prefix only. Report length exclusions and shared expressions (57 DEV docs in
+initial inventory). No learning/interface sweep before matched-question readout.

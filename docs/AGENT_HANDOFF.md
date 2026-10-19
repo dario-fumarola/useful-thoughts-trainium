@@ -6,38 +6,47 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 01:11 UTC handoff: continue until user stops. All ten matched training
-runs are audited/protected/frozen, science source 57d3220 immutable. Nine of eleven
-evaluation controllers close; second full CoT and shared B0 finish last panels.
-No new outcome review. Whole-question finite pipeline is running:
-`local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1`, tmux
-`dario-ps7-whole-question-audit`. It archives new closures then audits all 51,200
-answers/4,096 notes once. Wait deadline 03:30 UTC; no retries. Monitor
-supervisor.log/audit.log, do not duplicate. Registry remains fixed. Official TEST
-unopened; no RL/8B. Interpret both seeds/panels separately; compare both CoT arms,
-same-reader controls, and one shared unchanged B0. Split capacity/loss-weight
-confounds remain. Prefer simpler solver if it matches; real-data transfer follows.
+October19 01:24 UTC handoff: continue until user stops. All ten matched training
+runs and all ten primary evaluation controllers are complete/audited/protected.
+Only shared B0's final panel remains; all current outcomes remain sealed.
+Whole-question pipeline tmux `dario-ps7-whole-question-audit`, control
+`local/diagnostics/partial-state-v7-whole-question-close-and-audit-v1` waits then
+archives B0 and audits all51,200answers/4096notes once. Wait deadline03:30UTC,
+audit timeout1h,no retries. Monitor supervisor.log/audit.log; do not duplicate.
+Source17/35 remains immutable57d3220; **do not merge candidate code into main
+before this audit**, since imported checkpoint validation also checks its source.
+Both seeds/panels separate; same-reader/strong compact+full CoT/one shared B0
+controls. No official TEST,R1234restart,RL or8B. Prefer simpler solver if it matches.
 
-Engineering v8 tensor followup passes all six exact states; sliced export grows
-4.809 GiB/save versus gc/trim 0.0018. Public report and plotted CSV/SVG/PNG exist.
-Actual SFT control14 and candidate12/close/full restore/13–14 have all closed.
-Grouped post-export memory 49–139 GiB control, 21–22 candidate. Saved12 model,
-optimizer, CPU/device RNG and counters are all byte-identical. Loss/norm match
-through13; step14 loss differs 0.000014, strict parity fails. Candidate isolated.
-Independent all14-full-checkpoint audit session67612 active, log
-local/analysis/checkpoint-export-SFT-v8-independent-audit-20261019.log.
-One unchanged-exporter restart attribution is active physical8/logical32–35,
-tmux dario-export-restart-attribution-v8, control
-local/diagnostics/checkpoint-export-restart-attribution-v8-v1, deadline03:00UTC.
-It uses an explicit readback-verified fork of closed original control12; original
-control completed14 and was NOT stopped12. New fork keeps loader run basename
-control but separate parent path; exact fork receipt records it. Compare restarted
-control14 with resumed candidate14 and uninterrupted control14 after closure.
-Do not relax the previous gate or falsely attribute generic restart drift to GC.
-Candidate fb72065, 1601CPU checks; immutable science57 unchanged. Actual-SFTv1
-preflight wrong-source config was rejected before any worker and remains intact.
-Root owns work; subagents remain quota-unavailable. No further allocation needed
-until these questions close. Keep60-second meaningful updates and bounded waits.
+Engineering export question CLOSED, no active jobs remain. Candidate branch
+fb72065,1601CPUchecks. Actual14update control memory49–139GiB versus21–22cleanup.
+All14full checkpoints pass state/native checks. Saved12 model/optimizer/RNG/cursor
+bytes match. Original strict uninterrupted gate FAIL is public (step14 loss drift
+0.000014). Separate unchanged-exporter restart reproduces exactly the same drift;
+both resumed model/optimizer/RNG/metrics are byte-identical. Candidate preserves
+matched recovery; no claim of world32OOM fix or indefinite memory. Public
+checkpoint_export_SFT_recovery_v8_20261019.json and
+checkpoint_export_restart_attribution_v8_20261019.json; all evidence/code/metrics
+saved/EBS readback. Main production source unchanged. No more memory probes.
+
+Real-data CPU preparation ACTIVE, source branch9d57df7,1617CPUchecks:
+`local/diagnostics/real-raw-compound-prefix-v9-v1`,tmux dario-real-raw-compound-prefix-v9,
+output `local/nvme-study/data/finemath-raw-compound-prefix-v9`,deadline02:30UTC.
+Sixteen CPU workers, no accelerator; same347895auditedTRAIN/DEVdocuments, minimum2
+causal-LHS operations before unchanged full raw RHS verification. TEST remains
+opaque. Controller `local/analysis/run_raw_compound_prefix_v9_20261019.py`;
+finite no-retry; completion includes full EBS data/control readback.
+Prior read-only inventory local/analysis/real-prefix-partial-label-inventory-20261019.json:
+5448TRAIN/325DEV compounds; only4872/200full-raw proof, so below5120/256 target.
+Raw curator may retain more compound anchors if it stops choosing simple equations
+in those documents. After completion, derive actual partial labels from DECODED
+PREFIX ALONE, drop final root operation, log64-action fit/exclusions/incidental
+root-value coincidences and document/expression overlap. Existing correct_note
+fields are full-answer oracles, NOT writer targets. No model/learning release
+until matched-question readout. CPU inventory is preparation, no capability claim.
+
+Root owns work; subagents quota-unavailable, do not retry. Keep meaningful
+updates<=60seconds and bounded waits. User last asked status; answered and resumed.
 
 All original full checkpoints stay on local SSDs. EBS all terminal models plus
 latest full optimizer state; older EBS optimizer duplicates retire only after full
