@@ -15,6 +15,17 @@ Training829d9a2/evaluation41a5bfd stay frozen;no extensions,retries,model select
 Final readout watcher:tmux target-v15-final-readout;requires allnine scalar/likelihood closures.
 Next:monitor mechanical progress,then complete readout,independent check,figures/examples and interpretation.
 
+## Closed: document-reasoning split feasibility (CPU only)
+Question: can held supporting evidence be absent from all training-visible paragraphs?
+Experiment:document-evidence-v16; authors MuSiQue TRAIN only, no model or cohort release.
+For complete inputs<=2048/3072 tokens, fixed hash selects512 distinct held questions each.
+Excluding held support text/title/component questions leaves502/2,983 training rows.
+Stricter exclusion of every held-visible paragraph leaves182/1,221 training rows.
+All retained candidates have zero held-support text overlap; unrelated distractors may recur.
+Report:validation/document_evidence_v16_directed_split_20261019.json;source and receipts saved.
+Decision:cleaner document experiments are feasible; choose protocol only after complete V15 readout.
+Limit:does not establish semantic independence, pretraining novelty, note utility or longer-context hardware readiness.
+
 ## Closed: single-model real-document likelihood study
 Question: do augmented data improve ordinary prediction, and separately generated-calculation inference?
 Experiment:real-trace-cpt-v10;raw/prior/post,TRAIN5120,two seeds,terminal320 primary.

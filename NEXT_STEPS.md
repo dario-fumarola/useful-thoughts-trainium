@@ -44,6 +44,11 @@
    CPU split audit finds99% of hypothetical held questions reuse a training-visible
    support paragraph. Distinguish question/evidence novelty and include question-only
    controls; validation/document_evidence_v12_split_risks_20261019.json.
+   Directed held-support exclusion is feasible:at2048/3072 complete-input tokens,
+   excluding held support text/title/componentquestions leaves502/2,983trainrows;
+   excluding every held-visible paragraph leaves182/1,221. Both hypothetical
+   cohorts hold512questions;no model or cohort released. Source/report protected:
+   validation/document_evidence_v16_directed_split_20261019.json.
    Choose the next scientific intervention after the complete mainline readout.
 
 Fixed mainline data: TRAIN5120 unchanged, SHA437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915.

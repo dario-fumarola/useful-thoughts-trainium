@@ -1,0 +1,144 @@
+{
+  "status": "CPU_DIRECTED_SPLIT_FEASIBILITY_NO_COHORT_MODEL_OR_EVALUATION_RELEASE",
+  "utc": "2026-10-19T08:53:09.914535+00:00",
+  "source_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "rows": 19938,
+  "selection": "For each declared complete-input budget,first512distinct normalizedquestions by fixed salted ID hash;no model outcomes or answers. All passages retained.",
+  "complete_input_token_budgets": {
+    "2048": {
+      "eligible": 4149,
+      "held_questions": 512,
+      "held_hops": {
+        "2": 410,
+        "3": 85,
+        "4": 17
+      },
+      "held_ids_sha256": "431562bd88403ab84d4aca40eac3e889950cc5b83879873f58743d106828bc12",
+      "candidate_training_questions_after_exact_question_exclusion": 3636,
+      "policies": {
+        "exclude_held_support_text": {
+          "training_questions": 1260,
+          "unique_question_texts": 1260,
+          "train_hops": {
+            "2": 946,
+            "3": 285,
+            "4": 29
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 491,
+          "training_ids_sha256": "44dc7519a0fbfd5aef58ccc2e91c80f765da80e04a615b489e2303b01415fe8e"
+        },
+        "also_exclude_held_support_title": {
+          "training_questions": 946,
+          "unique_question_texts": 946,
+          "train_hops": {
+            "2": 724,
+            "3": 207,
+            "4": 15
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 479,
+          "training_ids_sha256": "331ca8edd0b4027490269a010f9bbe7e2dab4a8cf5f1525e791d37a24d1ea509"
+        },
+        "also_exclude_held_component_question": {
+          "training_questions": 502,
+          "unique_question_texts": 502,
+          "train_hops": {
+            "2": 410,
+            "3": 84,
+            "4": 8
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 441,
+          "training_ids_sha256": "70edc249291678fc96b4f513d1282da5a61afb1c4b2d91c829467294941e76c0"
+        },
+        "exclude_all_held_visible_text": {
+          "training_questions": 182,
+          "unique_question_texts": 182,
+          "train_hops": {
+            "2": 139,
+            "3": 36,
+            "4": 7
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 0,
+          "training_ids_sha256": "6c489fd073e86179233c0b7892329e33fafd78ba08a16235f513d6efa07d2615"
+        }
+      }
+    },
+    "3072": {
+      "eligible": 17299,
+      "held_questions": 512,
+      "held_hops": {
+        "2": 372,
+        "4": 33,
+        "3": 107
+      },
+      "held_ids_sha256": "a236e295cdf69a10a81c172067127a7f09756d089a663b3bb3307cc0eac5cdde",
+      "candidate_training_questions_after_exact_question_exclusion": 16787,
+      "policies": {
+        "exclude_held_support_text": {
+          "training_questions": 8643,
+          "unique_question_texts": 8630,
+          "train_hops": {
+            "2": 6663,
+            "3": 1650,
+            "4": 330
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 512,
+          "training_ids_sha256": "89ebf05411512a322cdf6dabba900ab1b81c4aa74904017cc03f6e026a96f17e"
+        },
+        "also_exclude_held_support_title": {
+          "training_questions": 4125,
+          "unique_question_texts": 4120,
+          "train_hops": {
+            "2": 3422,
+            "3": 586,
+            "4": 117
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 506,
+          "training_ids_sha256": "a6b8485e5d3e3ad8dd9f2395394f650bc1554620f4ec7c5806595fad802b056a"
+        },
+        "also_exclude_held_component_question": {
+          "training_questions": 2983,
+          "unique_question_texts": 2979,
+          "train_hops": {
+            "2": 2623,
+            "3": 313,
+            "4": 47
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 501,
+          "training_ids_sha256": "2eec24f69077f8b2f19309417d98c743414a59f65fe382dd829284e11bfde1c7"
+        },
+        "exclude_all_held_visible_text": {
+          "training_questions": 1221,
+          "unique_question_texts": 1218,
+          "train_hops": {
+            "2": 1039,
+            "3": 154,
+            "4": 28
+          },
+          "held_questions_with_support_seen_in_train_visible": 0,
+          "held_questions_with_any_distractor_seen_in_train_visible": 0,
+          "training_ids_sha256": "1f619d7ea10b528a8544acb2ffb1c8a6e46fbb39601b964debfa45884e7809d4"
+        }
+      }
+    }
+  },
+  "source_sha256_script": "ac1372f7c8ba50feabb60694546fb1cb389ae581ef8226db43670877a6522bd1",
+  "projection_source_sha256": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+  "references": [
+    "https://arxiv.org/html/2108.00573v2#S5.SS5",
+    "https://github.com/StonyBrookNLP/musique"
+  ],
+  "limits": [
+    "AuthorsTRAINonly;officialDEV/TESTunopened. The two length budgets are separate feasibility tables,not aselectedcohort.",
+    "Offline supporting flags andcomponentquestion labels areused onlytosplit/audit;never policyinputs. Answersarenotread.",
+    "Directed exclusion guarantees heldsupport textabsence fromtraining-visibleparagraphs;itdoesnotmakeall visibleparagraphsdisjoint.",
+    "Titleexclusionisconservative,butdoesnotprove semantic/evidence independence orpretrainingnovelty. Normalizationcasefolds/collapseswhitespace.",
+    "No proposed method,training budget,hardwarequalification ormodelrun isreleased. Choose scientificdirection onlyaftercompleteV15readout."
+  ]
+}
