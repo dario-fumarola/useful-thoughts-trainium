@@ -1,0 +1,9 @@
+{
+  "status": "PASS_CPU_POINTER_REPLAY_BOUNDARIES_NO_MODEL_FORWARD",
+  "questions": 255,
+  "native_spans": 765,
+  "max_target_plus_EOS_tokens": 13,
+  "checks": "All canonical native targets match acrossdirect/empty/oracle;invalid plans equal flagged empty replay;generated ID order preserved;gold answer changes only target IDs;invalid pointer values rejected.",
+  "helper_sha256": "fbd8605b07d14af1b5b9ef836b6b798baf4206988fc31b431122f01f3f7e832a",
+  "limits": "Replay diagnostics are distinct from native generated-answer observations. No real model or accelerator called."
+}

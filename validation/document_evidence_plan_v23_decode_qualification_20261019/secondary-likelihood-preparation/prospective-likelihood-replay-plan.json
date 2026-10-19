@@ -1,0 +1,20 @@
+{
+  "status": "PROSPECTIVE_SECONDARY_DIAGNOSTICS_NO_MODEL_FORWARD",
+  "primary_unchanged": "Canonical native generated-answer EM on fresh255;no replay score changes that observation.",
+  "QA_conditions": [
+    "direct",
+    "empty",
+    "selected_id_replay",
+    "other_id_replay",
+    "oracle"
+  ],
+  "construction": "Use the generated nonempty,unique,in-range pointer IDs in their generated order;render them in the fixed Evidence field andappend the common Finalanswer header. Never paste a generated final answer or factual prose into the scoring context.",
+  "invalid_plan_rule": "An invalid/missing/error selection uses an explicitly flagged empty replay. Its replay context equals the empty control. Record all255 rows andfallback counts;do not call this full native-policy likelihood.",
+  "other_rule": "Fixed next-question cyclic donor in frozen255 order,no gold/utility/length selection;preserve complete ID list. If recipient range differs,fallback empty with explicit reason,no clipping. IDs may coincidentally overlap recipient support;report that as annotation overlap,not semantic unrelatedness.",
+  "oracle_rule": "Author support IDs only,no new answer text;annotations remain imperfect andselection privileged.",
+  "targets": "Exact native canonical answer+EOS,content/EOS separate;allfresh targets fit32 (max13). No aliases replace canonical targets.",
+  "backend": "Reuse unchanged qualified score_spans:FP32,batch4,QAwidth3584,ordinarywidth672,target_slots32;own-model TRAIN CPU calibration first,original.001 max-token/absolute-mean-span bounds unchanged. If backend qualification fails,root review may select the explicit CPU path before inspecting held scores.",
+  "padding": "Four shards,physical batch4. Duplicate the last actual row only to fill a short physical batch;discard ONLY synthetic padded outputs andlog their count. Never count padding as independent questions oromit an original question.",
+  "ordinary": "Same fixed ordinary256 panel asV21,not a new general-language benchmark. UnchangedB0 scores may be explicitly reused only with exact native targets,assets andsource bindings.",
+  "source_sha256": "fbd8605b07d14af1b5b9ef836b6b798baf4206988fc31b431122f01f3f7e832a"
+}

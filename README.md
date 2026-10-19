@@ -123,6 +123,7 @@ insufficient citations do not establish that the answers themselves are false.
 The next [bounded design](configs/document_evidence_v23_pilot.json) tests passage
 selection before answering, with the same answer format and explicit final-answer
 coefficient in both arms. Its [CPU preparation](validation/document_evidence_plan_v23_CPU_readiness_20261019.json)
-passes data, native packing and gradient checks. Hardware qualification remains.
+passes data, native packing and gradient checks. The [TRAIN-only decoder check](validation/document_evidence_plan_v23_decode_qualification_20261019.json)
+passes native/cache/CPU comparisons; training update-and-restore qualification remains.
 Selecting annotated evidence will not itself prove connected reasoning or correct
 attribution. No new science training, RL or model-size jump is released yet.

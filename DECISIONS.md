@@ -1432,3 +1432,14 @@ those same255 and unchanged exclusions/ranking/gate. No model outcomes inspected
 CPU readiness does not release science:actual new-objective update/save/restore
 and bounded resource review remain. No semantic certificate for support IDs or
 claim of connected reasoning follows from the new representation.
+
+2026-10-19 18:11 UTC — Decoder qualification passes on two TRAIN questions/four
+attempts with zero execution errors and physical closure. CPU/ordinary/cached
+max log-probability difference stays below0.000115 against the unchanged0.001
+bound. Three untrained B0 outputs lack the final field; retain them and do not
+tune the frozen prompt/parser from these outputs. This is execution evidence.
+The actual three-component training check has one finite update and continues
+compilation before save/restore; no longer training or held forwards released.
+Freeze likelihood diagnostics as canonical pointer-ID replays with invalid-plan
+empty fallback explicitly flagged, separate from native-generation observations.
+All255 canonical targets fit32tokens includingEOS(max13); no truncation needed.

@@ -6,8 +6,11 @@
    source/label check PASS;205/46/4 hop counts. V1 failed255/256;V2 keeps the same255.
    Both arms match source/final labels and coefficients;selection CE is separately weighted0.1.
    Use frozen source in local/worktrees/document-evidence-v23,existing1.7B production driver.
-   Next concrete action:prepare and review bounded TRAIN128 hardware protocol,run actual
-   updates/full save/fresh-process restore,then inspect/protect evidence. No science release yet.
+   TRAIN128 hardware qualification is active onlogical48–55,source7328141;onefinite update,
+   further graphs compile. Monitor local/analysis/evidence-plan-v23-hardware-supervisor.log.
+   Decoder TRAIN-only audit passes4attempts,zeroexecutionerrors;native/cache/longCPU error<.000115.
+   Readout addendum configs/document_evidence_v23_readout.json separates net recipe gain
+   from same-model inference assistance. No pilot/held forward orreplication released yet.
 
 1. Completed: publish document-QA-v21 and its review package.
    Primaryreport validation/document_QA_v21_complete_20261019.json,

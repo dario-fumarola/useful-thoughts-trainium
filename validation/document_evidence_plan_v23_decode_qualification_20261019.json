@@ -1,0 +1,101 @@
+{
+  "status": "PASS_ACTUAL_TRAIN_ONLY_EVIDENCE_PLAN_FP32_DECODING",
+  "utc": "2026-10-19T18:00:17.721469+00:00",
+  "source_commit": "625fb0f6d6c28c11a02d60a9c578d6a5f1cad603",
+  "protocol_sha256": "c82ae9c63d581b5c9ee290245890b83bce536065afc6333830de2761d65d636f",
+  "canonical_native": {
+    "reference_to_device_kl_nats": 1.4692777183527578e-10,
+    "device_to_reference_kl_nats": 1.4692686666080912e-10,
+    "max_bidirectional_kl_nats": 1.4692777183527578e-10,
+    "passed": true,
+    "max_logp_error": 9.453952545968036e-05,
+    "rms_logp_error": 2.1328650162485427e-05,
+    "relative_l2_logp_error": 7.38796917232438e-07,
+    "argmax_equal": true
+  },
+  "actual_cache_ordinary": {
+    "reference_to_device_kl_nats": 2.955560109601875e-12,
+    "device_to_reference_kl_nats": 2.9551798480934422e-12,
+    "max_bidirectional_kl_nats": 2.955560109601875e-12,
+    "passed": true,
+    "max_logp_error": 9.602455435242518e-06,
+    "rms_logp_error": 2.3639486531008873e-06,
+    "relative_l2_logp_error": 1.087151481912931e-07,
+    "argmax_equal": true
+  },
+  "long_CPU_checks": {
+    "ordinary": {
+      "reference_to_device_kl_nats": 1.333722898762455e-10,
+      "device_to_reference_kl_nats": 1.3337220551215438e-10,
+      "max_bidirectional_kl_nats": 1.333722898762455e-10,
+      "passed": true,
+      "max_logp_error": 0.00011109615282478558,
+      "rms_logp_error": 2.6162862074338203e-05,
+      "relative_l2_logp_error": 1.2031995246767695e-06,
+      "argmax_equal": true
+    },
+    "cached": {
+      "reference_to_device_kl_nats": 1.4183635232194114e-10,
+      "device_to_reference_kl_nats": 1.4183592372054344e-10,
+      "max_bidirectional_kl_nats": 1.4183635232194114e-10,
+      "passed": true,
+      "max_logp_error": 0.00011484513781923056,
+      "rms_logp_error": 2.54228224834728e-05,
+      "relative_l2_logp_error": 1.1691659666720738e-06,
+      "argmax_equal": true
+    }
+  },
+  "attempts": 4,
+  "execution_errors": 0,
+  "parser_status_counts": {
+    "unsupported": 3,
+    "complete": 1
+  },
+  "caps_by_mode": {
+    "direct": 0,
+    "selection": 0
+  },
+  "logical_core": 56,
+  "physical_device": 14,
+  "EBS_archive": "/home/ubuntu/dario/local/backups/engineering/document-evidence-plan-v23-decode-qualification-v1",
+  "EBS_archive_sha256": "9a4294307c40c1204a16d47f08a3943f8859e8e1d830744464d0be036a4cbf49",
+  "audit_source_sha256": "bcceac93d8defce5a37642de33bf2b84384c2a7c8e75466195d3d64de5e1ee55",
+  "limits": [
+    "Two disposable TRAIN questions,four attempts,not an accuracy/capability sample. Parser failures/caps recorded but not a mechanics veto.",
+    "One actual long-context CPU reference;canonical native check repeats one preexisting reference. No all-255 CPU agreement claim.",
+    "FP32 prefill3584/cache3712 only;new shapes/weights need their own native and cached checks.",
+    "Training qualification and scientific release remain separate."
+  ],
+  "public_files_sha256": {
+    "CPU-long-reference.py": "3cd9d9959a87e2332afc6ae97f42126bbb16037650e5adbf552085da283a91d1",
+    "cache-prefill.json": "aea472d6ead2701c936cc63865093deec6e1643221ddd6042235171daa7365de",
+    "launch.json": "e05553d254018ffe63034c4b2b33200faece3ed39d26f24abbfff847a3fdc89d",
+    "toy_smoke.json": "cab409c66edb08fc8837eb0b12e332be5ab2b1b550324d4f7155e6c70115c0d3",
+    "independent-audit.py": "bcceac93d8defce5a37642de33bf2b84384c2a7c8e75466195d3d64de5e1ee55",
+    "toy_smoke.txt": "3ca6c3741f72147db04c08ddc2336a8db4a135d2d8dbfb8c831b79f7acda5a54",
+    "release.json": "d6331ea6d68f15d9f2f1a19ece99e29e00ac3c2322260d347348341d5b423ba2",
+    "native.json": "d4ecb0ed8a4fd7efcd01e302e2bad28328ad56119618236385d683e0834c656d",
+    "independent-audit.json": "600e539fc1eda678e166763ab1291e25a01a84aaf5225235f9b4b7548986136c",
+    "tests.txt": "db8df6a46f695b5b40b08bdcdf519a681de7233d0a5e46a06777b48180883841",
+    "closure.json": "72f996a8fcf20ed78419f01abe1eb2d38a369d8368f8f1f5f6bfeae9c49524da",
+    "supervise.py": "877d72eaf21232b425741ff2d40713e078c26002cb4b03b825e74ab922bc2e08",
+    "protocol.json": "c82ae9c63d581b5c9ee290245890b83bce536065afc6333830de2761d65d636f",
+    "exit.json": "12a74623ef163d0b6256863d318f41c7f9730dc82d18c7e60fee69d7ca62e951",
+    "attempts.jsonl": "18a75dadc584dc5e824b760c4897a0181a049b05f4fbbb1b7d512b332fe34d61",
+    "long-context-CPU-reference.json": "9d2c3ec22a4180d55e21343ea17b16de4609c0632dd5550692b4c2080a5bea2c",
+    "run.json": "98e54bc5432ecc87c09e23531e8e9e8cedac20cf290e67d9432501307eccf1e6",
+    "secondary-likelihood-preparation/prospective-likelihood-replay-plan.json": "ef13d4dab9c0faa0c105d6fadc5ae206fe71fc09118f6f8e8a55c876c8cfdbc2",
+    "secondary-likelihood-preparation/check_document_evidence_v23_likelihood_contexts_20261019.py": "d572fce766694197476608166859f35d0a1b24834ae370baff733ccfcc8b7f40",
+    "secondary-likelihood-preparation/document_evidence_v23_likelihood_contexts.py": "fbd8605b07d14af1b5b9ef836b6b798baf4206988fc31b431122f01f3f7e832a",
+    "secondary-likelihood-preparation/prospective-readout-interpretation.json": "5e7626ecc6958fac9b442f440dd2d710b85b5c0b02fbd6086fb8cc1dc5cba9a2",
+    "secondary-likelihood-preparation/fresh255-target-span-inventory.json": "f6de1bf212952946895f39a89a9ec3680c56e7d3b90c6da1c2ca2e2f40a31aa9",
+    "secondary-likelihood-preparation/likelihood-context-check.json": "48d30e5d34ca58cda3d55607402a1a95c22bef0dc7bd1bd3d9d1f58788f2f67e",
+    "source/document_evidence_plan_evaluate.py": "0c05a44804129d3883e7a0646e7c150af39ed4e576b522497fbe56c7c2d7ba3a",
+    "source/document_qa_evaluate.py": "e73f033ff8e1804b624f18ae89f1b40d60d61e467406613d6b997927b296fb47",
+    "source/document_evidence_plan_answers.py": "6a880ed2b1704e834c122d7d54c9d2b45ed1c77dd751b912d387a0d976caa985"
+  },
+  "CPU_tests": 1779,
+  "science_release": false,
+  "interpretation": "Execution/native/cache qualification only. Three of four untrained B0 responses lack the required final field;all four are retained. No prompt/parser change or held model call follows from these outputs.",
+  "secondary_replay_preparation": "765native CPU spans pass;no model forward. Canonical pointer-ID replays differ from native generation. No inference-assistance claim from a net recipe contrast alone."
+}
