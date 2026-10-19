@@ -6,7 +6,7 @@ writer and a compact CoT baseline. Read [the current queue](../NEXT_STEPS.md) an
 [status](../STATUS.md). The original driver instructions below are historical;
 they do not authorize restarting the retired study or override the active plan.
 
-October19 03:27UTC: mainline single-model real-document raw/prior/post remains
+October19 03:33UTC: mainline single-model real-document raw/prior/post remains
 source3d8666b immutable,1,622CPUchecks. Actualwidth640world8 qualification still
 running on physical12/13 logical48–55;cold compile progressing;05:00parentdeadline.
 Control local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2.
@@ -20,10 +20,13 @@ Evaluationc01deab has1,640CPUchecks. NewscienceMUSTpinheldV2,notV1.
 Both bounded math writers COMPLETE160;independent audit of320updates/sixfullstates
 passes;bothmodels/latestvariable160full EBS protected. Training5af3431immutable.
 Evaluation11512db has1,617CPUchecks;oldfrozenproducerbinding reproduced exactly.
-Preparing3panelnative+note/control jobs via
-local/analysis/prepare_variable_depth_evaluation_v11_20261019.py;log in NEXT_STEPS.
-Nextprepare/launch4corewholepanel jobs fromthepreparedprotocols;128writer+32reader
-versus160single. No reader retraining/extension. All gold helduntilshardsphysicallyclose.
+Seven V3wholepanel jobs sealed;five actual4rank partitions physical8/9/10/11/14,
+20nativegatesPASS,new64/256prefillshapes compiling. Fixed/variablestudent-readerjobs
+waiton6/7for originalnote bundles. Registry:mathcontrol/evaluation-jobs.json.
+V1/V2failedruntimepreflight BEFORE ANYacceleratorworker;retained,referencebytes
+reusedexactlywithnewV3actualruntimepinned. Primaryscalar allattempts/unsupported kept.
+Mainlinefinitebuilderandsupervisorprepared (NEXT_STEPS),notreleaseduntil actualaudit.
+
 Mathdiagnostic does not delay mainline. See NEXT_STEPS exactremainingactions.
 
 NEW local/nvme-cpt ext4 UUID5119e7ab-0ca6-4295-b8f0-e856d87b4b67 initialized safely,

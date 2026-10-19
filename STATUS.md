@@ -1,4 +1,4 @@
-# Status — 2026-10-19 03:27 UTC
+# Status — 2026-10-19 03:33 UTC
 
 ## Active: single-model real-document mainline
 Question: does computation-augmented CPT improve ordinary prediction,and separately inference with thoughts?
@@ -11,7 +11,7 @@ Amendment:validation/real_trace_cpt_v10_AST_amendment_20261019.json;all data EBS
 B0CPUreference complete:novel256 mean16-tokenLL−16.4662,ordinary256−19.9007;no augmentation result.
 Reference:validation/real_trace_cpt_v10_B0_AST_DEV_reference_20261019.json;all512docs and native vectors protected.
 Evaluation sourcec01deab passes1,640CPUchecks; full causal span shift/padding and exact AST aliases tested.
-Actual8rank width640 qualification still running on physical12/13,logical48–55;cold graphs completed progressively.
+Actual8rank width640 qualification on physical12/13,logical48–55;updates1/2finite after long cold graph compiles.
 Control:local/diagnostics/real-trace-cpt-v10-world8-width640-qualification-v2;tmux real-trace-v10-qual.
 Fresh6/close/fullrestore6/update8;05:00deadline,no automatic retry;exactsource/shape PASS receipt required for science.
 Decision: finish actual recovery audit,then finite mainline release; bounded split diagnostic does not gate it.
@@ -24,9 +24,9 @@ Actual native checks,finite FP32masters/moments,BF16casts,cursors and source/dat
 Both terminal models and latest variable160fulloptimizer state protected with readback;all originals remain on NVMe.
 Report:validation/variable_depth_writer_v11_terminal_training_20261019.json;no held-out outcomes yet.
 Frozen evaluation source11512db passes1,617CPUchecks;actual old reader/fullCoT producer identities independently verified.
-Preparing native references and whole-panel jobs for composition512,newdepth2/depth6 each256;no target-aware repair.
+Seven whole-panel jobs sealed:five actual4-shard partitions live;two reader jobs wait for the original note bundles.
 Budget128writer+32reader versus160single;frozen reader320,fullCoT640seed1806 and unchangedB0;all failures retained.
-Control:local/diagnostics/variable-depth-writer-v11-v1;preparation log:local/analysis/variable-depth-v11-evaluation-preparations-20261019.log.
+Control:local/diagnostics/variable-depth-writer-v11-v1/evaluation-jobs.json;V3jobs,physical8/9/10/11/14;readers wait6/7.
 Declared canonical/natural>=70%;reader>=40% and>=10pp over fixed with positive paired interval;depth6 separate stress.
 Decision:no reader retraining or extension;terminal160primary;split remains bounded diagnostic.
 

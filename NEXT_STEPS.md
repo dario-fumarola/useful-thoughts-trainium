@@ -12,6 +12,9 @@
    Independent auditor is PREPARED but NOT launched:
    `local/analysis/audit_real_trace_qualification_v10r2_20261019.py`.
    Review its8rank adaptation,source/data hashes,and disk space before use.
+   Prepared future launch scripts (notexecuted):local/analysis/prepare_real_trace_study_v10_20261019.py
+   and run_real_trace_study_partition_v10_20261019.py. Builder requires actual audit PASS,
+   pins heldV2,and sixfresh models on local/nvme-cpt. Review+finite release after audit.
    Actual PASS receipt must contain source_files and qualified_training_shape
    exactly matching the subsequent320update protocol;loader enforces this.
 2. Both bounded math writers have finished160updates and independent full audit.
@@ -20,11 +23,11 @@
    Latestvariable160full and both terminal models EBS protected,all original states intact.
    Evaluation source11512db at local/worktrees/variable-depth-eval-v11;1,617CPUchecks.
    Actual frozen bindings in local/diagnostics/variable-depth-writer-v11-v1.
-   Preparation running:local/analysis/prepare_variable_depth_evaluation_v11_20261019.py;
-   log:local/analysis/variable-depth-v11-evaluation-preparations-20261019.log.
-   Finish prepared3panels per writer and frozenreader/B0/fullCoT,then launch on free
-   four-core partitions. Existing reusable supervisor adapted for256/512counts:
-   local/analysis/supervise_variable_depth_evaluation_v11_20261019.py.
+   Seven jobs sealed in local/diagnostics/variable-depth-writer-v11-v1/evaluation-jobs.json.
+   V3actual4shards on physical8fixed/9variable/10readercontrols/11fullCoT/14B0;
+   waiting own/other reader jobs use6/7once original note bundles physicallyclose.
+   Actualnative gates20/20PASS;newshape cache-prefill compilation in progress.
+   V1/V2runtime preflight holds remain,no accelerator workers in those attempts.
    Use whole-panel jobs and preserve every unsupported/cap/error. No reader retraining.
 3. Real held PRIMARY data is now local/nvme-study/data/real-trace-cpt-v10-held-panels-v2.
    V1string check missed10TRAIN-equivalent orderedASTs; correction frozen before science.

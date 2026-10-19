@@ -1,0 +1,68 @@
+{
+  "utc": "2026-10-19T03:32:37.060151+00:00",
+  "jobs": {
+    "fixed": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-fixed-v3",
+      "plan_sha256": "4b04789adeca843e062d635ab5c085bf7aa0fdf5ab949e30b8c1a65afe63552a",
+      "physical_device": 8,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "launched_actual_four_shards"
+    },
+    "variable": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-variable-v3",
+      "plan_sha256": "25b1438157b88eb47ad5a39457c79079fdd8ac0fe1b916923ffdaec86ef067ac",
+      "physical_device": 9,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "launched_actual_four_shards"
+    },
+    "reader": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-reader-v3",
+      "plan_sha256": "f63b1f3ee39be819d0a152c0c2e6933644423bbdb50abbb7329ec27fabe11551",
+      "physical_device": 10,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "launched_actual_four_shards"
+    },
+    "full_cot": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-full_cot-v3",
+      "plan_sha256": "b49ac7f795548ad9c5ec812dfdb046668207cc93b8ba883f054256cd890931eb",
+      "physical_device": 11,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "launched_actual_four_shards"
+    },
+    "B0": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-B0-v3",
+      "plan_sha256": "789bca3e263510b01a913264aec269c03338e298cf20ff1c01400965b52cc42f",
+      "physical_device": 14,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "launched_actual_four_shards"
+    },
+    "fixed-student-answers": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-fixed-student-answers-v3",
+      "plan_sha256": "ef5c23e733807e89c01fc12b228c2cb718f318d3d088275bca182d0e64abf712",
+      "physical_device": 6,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "waiting_for_original_notes"
+    },
+    "variable-student-answers": {
+      "control": "/home/ubuntu/dario/local/diagnostics/variable-depth-v11-eval-variable-student-answers-v3",
+      "plan_sha256": "d81d44b2de3d2f4b73e857921c29f04962e5ae17ce8ad28712dd6eedfffce816",
+      "physical_device": 7,
+      "deadline_utc": "2026-10-19T09:00:00+00:00",
+      "status": "waiting_for_original_notes"
+    }
+  },
+  "preflight_holds": [
+    "fixed-v1(runtime defaults)",
+    "fixed-v2(PJRTmissing)"
+  ],
+  "all_preflight_holds_before_accelerator_worker": true,
+  "observations_reuse": "V3referencespreserveidenticalCPUvectorsandinputbytes;notnewobservations.",
+  "actual_native_checks": {
+    "passed": 20,
+    "total": 20
+  },
+  "limits": [
+    "Heldout generation still pending;nativeparityisnotcomputationaccuracy.",
+    "V1andV2runtimeholdsoccurredbeforeanyacceleratorworker;noobservationslost."
+  ]
+}

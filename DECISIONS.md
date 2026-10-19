@@ -1243,3 +1243,11 @@ Both bounded math writers completed160;all320updates/sixfullstates independently
 verified and terminal models/latestfull state protected. Evaluation V1failed its
 runtime-policy preflight before any accelerator worker;retain it and prepare V2
 with identical CPU-native vectors plus the actual intended runtime declaration.
+
+2026-10-19: V3depth-repair evaluation now runs five separate four-shard jobs
+(fixed/variable notes,frozen-reader controls,fullCoT,B0) with two dependent
+same-reader own/other jobs waiting on intact note bundles. All20actual native
+checks pass;newshapes are compiling. V2also missed explicitPJRT in the preparation
+runtime,again caught before any hardware worker;V3compares the entire runtime map
+against the intended execution map before preparing protocols. Native vectors
+and all projected inputs remain byte-identical;no repeated scientific observations.
