@@ -159,3 +159,31 @@ def test_expired_raw_pass_reads_no_source_or_membership(tmp_path,monkeypatch):
     monkeypatch.setattr(probe,'sha256_file',lambda *a:pytest.fail('Expired source read'))
     with pytest.raises(TimeoutError):probe.prepare(tmp_path/'raw',tmp_path/'members',tmp_path/'out',tmp_path/'tok','2000-01-01T00:00:00Z')
     assert not (tmp_path/'out').exists()
+
+
+def test_compound_minimum_rejects_one_operation_before_rhs_validation(monkeypatch):
+    meta,line,_=fixture()
+    monkeypatch.setattr(probe.base,'curate',lambda *a:pytest.fail('One-op RHS must not be inspected'))
+    row,audit,_=probe.curate_document(meta,line,Characters(),'raw',minimum_binary_ops=2)
+    assert row is None
+    assert any(v.get('reason')=='below_declared_prefix_operation_minimum' for v in audit['candidate_audit'])
+
+
+def test_compound_minimum_keeps_exact_later_computation_and_raw_source():
+    meta,line,text=fixture(' Context: 6*4=24; Later context: (6*4)+1=25; ')
+    row,_,counts=probe.curate_document(meta,line,Characters(),'raw',minimum_binary_ops=2)
+    assert row['boundary']['binary_ops']==2 and row['numeric_value']=='25'
+    assert counts['accepted']==1
+    assert row['original_source_text']==text[:528] and row['raw_rhs_validation']['value']=='25'
+
+
+def test_compound_minimum_preserves_rejection_of_wrong_source_answer():
+    meta,line,_=fixture(' Context: (6*4)+1=26; ')
+    row,_,counts=probe.curate_document(meta,line,Characters(),'raw',minimum_binary_ops=2)
+    assert row is None and counts['source_numeric_mismatch']==1
+
+
+@pytest.mark.parametrize('minimum',[0,7,True,1.5])
+def test_invalid_operation_minimum_rejected_before_raw_decode(minimum):
+    with pytest.raises(ValueError,match='minimum binary operation'):
+        probe.curate_document(dict(split='train'),b'not JSON',Characters(),'raw',minimum_binary_ops=minimum)
