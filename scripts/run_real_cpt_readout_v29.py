@@ -43,7 +43,8 @@ def main():
     spec=importlib.util.spec_from_file_location('owned_process_utilities_only',helper)
     h=importlib.util.module_from_spec(spec);spec.loader.exec_module(h)
     root=Path(release['repository_root']);source=Path(release['source_root'])
-    device=release['physical_slots'][args.model];base=4*device
+    placement=release.get('phase_physical_slots',{}).get(args.panel,release['physical_slots'])
+    device=placement[args.model];base=4*device
     count=4 if args.panel=='scalar' else 1
     core_ids=list(range(base,base+count))
     assert all(not row['neuron_processes'] and row['logical_neuroncore_config']==2
