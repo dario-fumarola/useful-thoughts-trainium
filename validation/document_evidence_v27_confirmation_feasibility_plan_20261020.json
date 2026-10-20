@@ -1,0 +1,58 @@
+{
+  "status": "RELEASED_CPU_ONLY_OFFICIAL_DEV_METADATA_FEASIBILITY_NOT_MODEL_EVALUATION",
+  "utc": "2026-10-20T00:50:04.636586+00:00",
+  "experiment_id": "document-evidence-v27-confirmation-feasibility",
+  "purpose": "Resolve fresh source availability and dependence before freezing a powered confirmation of the V26 training-content signal.",
+  "before_acquisition": {
+    "remaining_TRAIN_eligible": 0,
+    "V26_report_sha256": "9800ba9798031d4c47a7e9ea0a9ec73447a9f2231473392c0952e70b526cb8fc",
+    "metadata_local_sha256": "74f5b5a6a47a5a4331509011d60dca866059ff01c4d0af09762db66654b5f43e"
+  },
+  "allowed_downloads": [
+    "https://raw.githubusercontent.com/stonybrooknlp/musique/main/.all_data_information.json",
+    "ONLY mapped raw_data/musique_ans_dev.jsonl"
+  ],
+  "forbidden": [
+    "TEST files",
+    "combined train/dev/test archives",
+    "author predictions",
+    "external model scores",
+    "gold-driven prompt/parser/label/recipe tuning",
+    "any model inference or training"
+  ],
+  "data_checks": [
+    "Author raw schema, source bytes/digest/license; bounded<=100MiB download.",
+    "Existing qualified native_input_tokens<=3072; exact old prompt/parser identities. Count only; no new selected cohort.",
+    "Candidate ID/normalized question/component question disjoint from TRAIN2048 and both inspected held cohorts.",
+    "Candidate supporting paragraph/page not anywhere visible in TRAIN2048 or the inspected held512/255.",
+    "Within candidates: report connected components of shared support text/page/component ID, largest component, and deterministic greedy support-independent count. No treatment outcomes."
+  ],
+  "desired_confirmation": {
+    "model": "Qwen3-1.7B-Base",
+    "training_data": "unchanged TRAIN2048",
+    "arms": [
+      "support-ID auxiliary1.0",
+      "empty-format auxiliary1.0",
+      "empty-format auxiliary0.1"
+    ],
+    "source_and_answer_weights": [
+      0.5,
+      0.5
+    ],
+    "passes": 4,
+    "updates": 256,
+    "primary": "Direct-answer canonical complete EM; selector minus EACH direct control, each seed reported separately.",
+    "decision": "point>=.03 and paired95 lower>0 against both direct controls in two data-order seeds; fresh, fixed outcomes required.",
+    "desired_independent_items": 1024,
+    "power": "Planning at true5pp/discordance.15 gives approx95% marginal and>=80% joint four-contrast lower bound. Larger discordance/smaller effects are explicitly not guaranteed.",
+    "threshold_caveat": "At true gain exactly.03, the point>=.03 requirement caps asymptotic marginal pass probability at.5. Do not claim80% power at the decision threshold.",
+    "fallback": "Insufficient clean independent questions does NOT release a smaller underpowered study or weaken source exclusions. Reconsider source/protocol transparently before any outcomes."
+  },
+  "no_jobs_released": true,
+  "limits": [
+    "This is metadata-only access to authors DEV, not official TEST or a benchmark score.",
+    "Human inspection of new question/answer examples is deferred; only aggregate metadata printed.",
+    "No annotation quality or pretraining-novelty certification.",
+    "Fresh models/recovery/storage and actual evaluation need a separate concrete frozen release."
+  ]
+}
