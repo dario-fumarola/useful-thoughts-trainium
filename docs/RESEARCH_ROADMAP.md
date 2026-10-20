@@ -1,5 +1,28 @@
 # Long-term proof ladder
 
+## V29 boundary — October20
+
+The [completed real-continuation study](../validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md)
+preserves identical clean LM supervision in all arms. Generated work gives643/768
+and652/768 correct initial numerical completions versus500/502 for matched raw
+training and510/510 for B0. This is a declared secondary,not a full-span CPT win.
+Direct continuation gains over trained controls reproduce in only one order;
+both computation models trail B0. Full16 own-minus-raw intervals span zero.
+Numeral-token gains coexist with worse surrounding-prose prediction.
+
+Full527 ordinary FineMath retention meets its declared+.03 target with costs
+approximately+.021; the separate suffix16 cost is approximately+.041. All trained
+arms remain worse than B0. These are different endpoints and not broad-language
+quality. The overall CPT criterion fails. Do not redefine it around scalar gains.
+
+This supplies a source-balanced supervised numerical-computation reference,not
+internalization or autonomous discovery. Before any policy optimization,inspect
+whether actual sampled candidates provide useful correctness/utility variation
+under a fixed reader. A bounded TRAIN-only diagnostic must have its own identity
+and frozen sampling/reward comparisons. No RL or bigger-model run follows from
+V29 execution success. The onset,minimum-guidance and identical-post-training
+questions below remain open; do not substitute another annotation task for them.
+
 ## V28 boundary — October20
 
 The controlled computation reference now passes its inference gate: generated

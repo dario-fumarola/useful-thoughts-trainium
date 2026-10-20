@@ -1,58 +1,61 @@
-<!-- Current handoff 2026-10-20 23:24 UTC. Only this first block is active; older snapshots below are historical. -->
-Owner: continue autonomously and patiently until told to stop. No active goal; do not create one. No agent retries untilOct24.
-R=/home/ubuntu/dario; public dario-fumarola/useful-thoughts-trainium; pushes/public evidence authorized. Mainfabe609 before this update.
-All training AND held evaluation producers are now CLOSED0. Do not relaunch workers,watchers,observers or old launchers.
-Training numerical W=local/worktrees/real-cpt-scaffold-v29 at73d9c91,enginec9d2c0c.
-Evaluation Weval=local/worktrees/real-cpt-scaffold-v29-eval at2c30aa1,worker85c55db,results7be1b07. Both stay frozen.
-E=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1. C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1.
-O=R/local/science-runs/real-cpt-scaffold-v29 -> privateRAM; all18 original full64/640/1280 states retained.
-B=R/local/backups/science/real-cpt-scaffold-v29/INDEX.json; latest weights all6 plus ONE latest fullraw2030/1280 EBS archive verified.
-Same-instance protection only; other optimizer histories are RAM,not EBS/offinstance. Never delete original states or caches.
-Training all6models1280updates/40960exposures,all actualsource/master/moment/native/cast/restore8 audits PASS;28.4274855470983reserved chip-hours.
-All28 evaluation phasegroups/49workers close0;49 actual-model native gates PASS; total reserved approximately9.401chip-hours.
-Last baseline scalar sessions27235/28376/76136 and passive observer17085 all polled CLOSED0. All earlier25 phases already polled0.
-E/manual-launch-sessions.json records all28. E/supervision/<alias>/<panel>/closure.json binds every physical closure and exact charges.
-No scientific outcome has yet been interpreted; primary decisions await independent validation.
+<!-- Current handoff 2026-10-20 23:36 UTC. Only this first block is active. -->
+Keep working autonomously/patiently until told to stop. No active goal; do not create one. No agent retries beforeOct24.
+R=/home/ubuntu/dario public dario-fumarola/useful-thoughts-trainium; pushes/releases authorized. Main848f928 before current result commit.
+ALL V29 training,held workers,observers,analysis/checker,renderer,bundler,replay,CPUtest sessions CLOSED0. No accelerator work remains.
+Never relaunch producers,observers,checkers,oldtraining or V28 launchers. All original E/summary/readout.json bytes immutable.
+W=R/local/worktrees/real-cpt-scaffold-v29 at73d9c91/enginec9d2c0c; Weval=...-eval at2c30aa1/worker85c55db/results7be1b07 frozen.
+E=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1.
+Original primary SHA15539574968b5a03e5aaf10f054018e2feea0430ae1e7a912149ca17414b57e0.
+All6 models1280 updates/40960source exposures; allsource/native/master/moment/cast/actualrestore8 audits PASS;28.4274855470983training reserved chip-hours.
+All28 held groups/49workers physically close0;49actual-model TRAINnative gates;9.401385181651696evaluation reserved chip-hours.
+All60,928likelihood rows/15,626,240tokenLPs/21,504gen attempts retained,zero genexecution errors.
+Independent checker97855 CLOSED0;54paired likelihood reconstructions/all prefix-only writer/reader/donor contexts/98standardHF forwards PASS(max token error9.82285e-5).
+Source checker SHAe5bc573b25ac07f4a3ae23e8fbbb0ab98f070ae39698ddd224e20778c2110c28; copied verbatim to public report/host-sources.
+Declared scalar16pairs output E/scalar-secondary,allcounts/errors/caps retained; no new gates.
+Public-tools tests1935+smoke/compile PASS (local/checks/v29-publication-complete-20261020.log). All19 numerical sourcefiles still match release SHA.
 
-CURRENT ACTIVE CPU SESSION97855 (no accelerator use):
-Guard observed all28 physical closures,then ran frozen primary train.real_cpt_readout_results.
-E/summary/readout.json exists; NEVER mutate it. Same session now runs R/local/analysis/check_real_cpt_scaffold_v29_readout_v2_20261020.py.
-Independent v2 SHAe5bc573b25ac07f4a3ae23e8fbbb0ab98f070ae39698ddd224e20778c2110c28.
-It reconstructs ALL prefix-only writer inputs/reader contexts/donors,paired statistics/decisions/scalars,then98 fixed standardHF CPU forwards.
-Expected final E/independent/independent-check.json statusPASS_ALL_PAIRED_DOCUMENT_CONTRASTS_DECISIONS_AND_FIXED_HF_SPOTS.
-Poll97855; do not duplicate checker or primary analysis. Fixed CPU HF spots preserve partial rows before any assertion failure.
-Source scripts/env.sh THEN correct PYTHONPATH,USE_TORCH_XLA=0,OMP/MKL2. Current session uses Weval cwd/PYTHONPATH.
+VERIFIED SCIENCE:
+Primary trainingrecipe passes only order2026102029:Traw−raw+.367[.238,.499],Traw−format+.320[.200,.441].
+Order2030 only+.081[-.056,.218]/+.084[-.033,.201]. Both Traw trailB0−.867/−.991. Overall CPT criterion FAILS.
+Own−raw full16−.131/+.111,bothCIspan0; inference likelihood gate FAILS. Numeral contribution improves+.331/+.576 while surroundingprose declines−.424/−.431.
+Scalar secondary Town643/652 vsRraw500/502,B0raw510/510 of768; gainsvsraw+18.6/+19.5pp withpositive paired95intervals.
+Trawscalar502/493,empty491/484. AllT ownscalarreaders cap32; these are certified INITIAL VALUES,not naturally terminated answers or QA accuracy.
+Work naturally stops768/768 and767/768 atcap128,mean36.84/36.77actions. Zero errors,unsupported retained.
+Ordinary full527T−B0 NLL+.02110/+.02087,upperCIs.02225/.02204 meet declared+.03target. B0mean1.418465.
+Declared ordinary suffix16 costs+.04159/+.04045; larger,not covered byfull527gate. B0suffixmean1.238160. Alltrainedarmsregress; FineMath-only,not broadLMquality.
+Suffix endpoint report computed from extractedPUBLICscores via scripts/real_cpt_ordinary_suffix_v29.py; exact second-run bytes SHA8bdc9ee64c9d69ca815de3edbc4fa272d03a8ba0e45c8fb96e2037b6741b1844.
+Otherworkcontrast+3.720/+2.992;oracle−corrupt+3.184/+2.811;oracle−raw+.558/+.731. Oracle fullprefixcomputed rootincludesanswer,notwriterattainability.
+No internalization/autonomous discovery/generalpretraining claim. Raw is weightedNTP; T changeslabels AND contexts,notpureauxgradientcausality/equalFLOPs.
 
-NEXT AFTER INDEPENDENT PASS:
-From main R run python -m train.real_cpt_scalar_results --index E/index.json --readout E/summary/readout.json --independent-check E/independent/independent-check.json --output E/scalar-secondary.
-Declared scalar analysis source1e7fd74/frozen E/scalar-secondary-plan.json;16 pairs,no new gates or seed pooling.
-Public tools commitfabe609: scripts/report_real_cpt_v29.py, scripts/bundle_real_cpt_v29.py, scripts/replay_real_cpt_v29_public.py.
-All1935CPU tests+smoke/compile PASS(loglocal/checks/v29-publication-tools-20261020.log); actual end-to-end archive/replay still pending.
-Render --index/--readout/--independent-check/--scalar(E/scalar-secondary/scalar-paired.json)/--output(validation/real_cpt_scaffold_v29_complete_20261020).
-Bundle same args with --output(local/releases/v29-real-continuation-cpt-20261020); never overwrite original outputs.
-Bundle retains every generated action/text/error/cap and all token LPs but projects source-bearing prompt/context/target arrays to length+canonicalSHA.
-Original complete raw source windows/contexts/actions/scores remain locally on EBS. Public FineMath locators,math facts,data/model/source bindings and native arrays retained.
-No full model/optimizer weights in Git/release. Attribution FineMath/SmolLM2 authors,pinned e92b25a616738fe95dc186b64dfb19f9c8525594; no arbitrary repo relicensing.
-After bundle full member readback/fsync,EXTRACT archives and run public replay --evidence(extracted/v29-evidence) --manifest(bundle/manifest.json) --output(newreceipt).
-Only claim portable statistics replay after actual PASS. Full omitted source-context/HF checks remain separate local verification,not external replication.
-Publish concise honest REPORT/README/STATUS/roadmap plus all controls,tables,figures,fixed8 examples,bundle receipts/public release.
-Then choose the next falsifiable research step from complete evidence; no blind V28 extension,size jump or broad RL.
+CURRENT PUBLICATION:
+P=R/validation/real_cpt_scaffold_v29_complete_20261020 has REPORT.md,allCSV/JSON,3SVGs,fixed8hash examples,original readout/independent/scalar/suffix/publicreplay receipts.
+Wrapper validation/real_cpt_scaffold_v29_complete_20261020.json binds every report artifact. README/STATUS/queue/roadmap now reflect all results honestly.
+S=R/local/releases/v29-real-continuation-cpt-20261020.
+Three archives built/fullmemberSHAreadback/fsync verified: numerical162193738bytes,native319475634bytes,metadata606358bytes.
+S/manifest.json and SHA256SUMS bind them. S/extracted-readback/v29-evidence holds actual extraction.
+Actual scripts/replay_real_cpt_v29_public.py verifies388files/54LL/16scalar pairs/parser from EXTRACTED data: S/public-replay.json PASS.
+It requires NumPy+frozen scalar parser,not modelweights/source text/accelerator. Original prompt/context/target arrays are projected to length+canonicalSHA; allscore/genarrays preserved.
+Source windows remain local; publiclocators/mathfacts and attribution,pinned FineMath revisione92b25a616738fe95dc186b64dfb19f9c8525594 included. No arbitrary source-code/webtext relicensing.
 
-FROZEN ENDPOINTS:
-Data R/local/data/real-cpt-scaffold-v29-cpu-v2,manifest77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f.
-TRAIN20480=5120calculation+15360ordinary;two passes/global32world8+aux8. All arms cleanLM1;calculation auxfuture.5/work1,separate per-document means/fixed fractions.
-Raw is weightedNTP,not uniformvanillaCPT. T adds worklabels AND conditioned answer contexts;not a pure gradient mechanism/equal information/FLOPs.
-Fresh projectDEV768calc/4096ordinary comes from sourceTRAIN,not officialTEST or a pretraining/semantic novelty proof.
-Math6modes raw/empty/own/other/oracle/corrupt score16originalsource IDs. Oracle prefix-computed fulltrace includes answer; plumbing only.
-Writer prefix-only3key projection,128greedy actions inclAnswer16141/EOS151643; no gold/future access. Intact content/donor notes,all errors retained.
-Scalar raw/empty/own32actions,EOS-only,frozen initial-scalar-v2; secondary,no threshold rescue. Ordinary all527native transitions,no artificialEOS.
-Primary Traw−raw/Fraw >=.25nat/full16 and positive95lower EACHorder; separate same B0 contrast. Retention full527 NLL cost upper95<=+.03/token bothorders.
-Overall requires allthree; inference own−raw/empty/rawcontrol same gates secondary. Bootstrap10000documents/seed2026102029,orders separate.
-FineMath retention is not broad-language quality;curated supervised computation is not autonomous discovery/internalization.
-Keep35GiBfilesystem/512GiBhost floors. Latest~62GiBroot/55GiBcache free;~507GiBRAM free. Original states/cache preserved.
-No cloud/IAM/newcapacity/paidteachers/stack upgrades/officialTEST. Unmountednvme4 is nonzero,NEVER format. OldR1234stopped63,neverresume.
-V28 fixed positive control c47a823/publicrelease v28-controlled-computation-20261020; no work remains there. V26 developmentalQA gain stays unconfirmed.
-One V28 reviewZIP already provided today; no new ZIP unless needed. Continue work; do not final at this milestone.
+NEXT EXACT WORK:
+Commit/push reviewed result/docs/new suffixscript. Build a fourth smallpublication/source archive with public tables/REPORT,allfour publicationtools and frozen train/scalar_completion.py+train/__init__.py for standalone replay.
+Keep three originalarchives/manifest unchanged; make separate publication-manifest.json withallfourarchives,fullreadback/fsync,SHAledger.
+Actuallyextract fourth alongsidefirstthree and run STANDALONE publicreplay fromcopiedscripts/PYTHONPATH withpublication-manifest; record resultbeforeclaimingportability.
+Then gh release create v29-real-continuation-cpt-20261020 --target(currentresultcommit) --notes-file(exactlocalbody),allarchives/manifests/checksums/report/receipts.
+Read existingtag first; no automaticreplace/clobber. gh available/usr/bin/gh; authorization persists. No live V29release yet.
+Verify PUBLIC asset sizes and full downloaded SHAs,recordreceipt. Then addREADMErelease link/receipt and keepremote updated.
+No need another reviewZIP today(V28onealreadyprovided).
+Afterpublication,inspect CPU feasibility and freeze ONE bounded TRAIN-only candidate/reward-alignment diagnostic with fixed reader; no newlearning/RL released.
+Do not tune existingheld prompts/checkpoints/windows/thresholds torescue primary. Preserve original resultsand negative evidence.
+
+STORAGE/CONSTRAINTS:
+O=R/local/science-runs/real-cpt-scaffold-v29 ->privateRAM; all18originalfull64/640/1280states retained(~404GiB).
+B=R/local/backups/science/real-cpt-scaffold-v29/INDEX.json protects latestweightsall6 plusONE latestfullraw2030/1280 verified EBSarchive.
+Other optimizer historiesvolatileRAM; no offinstance weight/fullhistory claim. Never delete originals/cache. Filesystemfloor35GiB,hostavailable512GiB.
+Recentfree~60GiBroot/55GiBcache,~507GiBRAM. Unmountednvme4 is nonzero,NEVERformat. Existingstackonly; no cloud/IAM/newcapacity/paidteachers/TEST.
+V28 c47a823/publicrelease remains fixedpositive control/no workremaining. V26QA developmentalresult stillunconfirmed. OldR1234stopped63,neverresume.
+Source scripts/env.sh THEN override correct PYTHONPATH andUSE_TORCH_XLA=0. Existing/home/ubuntu/ema-trainium/.venv/bin/python; systemusespython3.
+Do not final at this milestone; continue the authorizedresearch carefully.
 
 # Historical handoffs (reference only; do not execute their superseded next steps)
 

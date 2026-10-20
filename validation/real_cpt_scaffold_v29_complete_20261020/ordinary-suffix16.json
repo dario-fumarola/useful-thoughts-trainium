@@ -1,0 +1,209 @@
+{
+  "absolute": [
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.238159707425246,
+      "model": "B0",
+      "tokens_per_document": 16
+    },
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.2797501432617244,
+      "model": "computation-seed2026102029",
+      "tokens_per_document": 16
+    },
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.278614486346802,
+      "model": "computation-seed2026102030",
+      "tokens_per_document": 16
+    },
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.2779097526437226,
+      "model": "format-seed2026102029",
+      "tokens_per_document": 16
+    },
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.2781086650723874,
+      "model": "format-seed2026102030",
+      "tokens_per_document": 16
+    },
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.2805593158511883,
+      "model": "raw-seed2026102029",
+      "tokens_per_document": 16
+    },
+    {
+      "documents": 4096,
+      "mean_suffix16_NLL": 1.2785955784848784,
+      "model": "raw-seed2026102030",
+      "tokens_per_document": 16
+    }
+  ],
+  "contrasts": [
+    {
+      "NLL_cost": 0.04159043583647856,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.03829090810775994,
+        0.04490518898261031
+      ],
+      "documents": 4096,
+      "reference_model": "B0",
+      "treatment_model": "computation-seed2026102029"
+    },
+    {
+      "NLL_cost": 0.0404547789215562,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.037181270297104815,
+        0.043825016561256445
+      ],
+      "documents": 4096,
+      "reference_model": "B0",
+      "treatment_model": "computation-seed2026102030"
+    },
+    {
+      "NLL_cost": 0.03975004521847682,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.03647490600782126,
+        0.04298816660478169
+      ],
+      "documents": 4096,
+      "reference_model": "B0",
+      "treatment_model": "format-seed2026102029"
+    },
+    {
+      "NLL_cost": 0.03994895764714146,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.03660866187220418,
+        0.04337624726872053
+      ],
+      "documents": 4096,
+      "reference_model": "B0",
+      "treatment_model": "format-seed2026102030"
+    },
+    {
+      "NLL_cost": 0.042399608425942384,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.03894420913632454,
+        0.0458492160653468
+      ],
+      "documents": 4096,
+      "reference_model": "B0",
+      "treatment_model": "raw-seed2026102029"
+    },
+    {
+      "NLL_cost": 0.04043587105963245,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.03699203308566342,
+        0.04393758960347675
+      ],
+      "documents": 4096,
+      "reference_model": "B0",
+      "treatment_model": "raw-seed2026102030"
+    },
+    {
+      "NLL_cost": -0.0008091725894638206,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        -0.002341584816940349,
+        0.0007465624560878265
+      ],
+      "documents": 4096,
+      "reference_model": "raw-seed2026102029",
+      "treatment_model": "computation-seed2026102029"
+    },
+    {
+      "NLL_cost": 0.0018403906180017443,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        0.00033865233576086144,
+        0.003361246993325914
+      ],
+      "documents": 4096,
+      "reference_model": "format-seed2026102029",
+      "treatment_model": "computation-seed2026102029"
+    },
+    {
+      "NLL_cost": 1.8907861923751204e-05,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        -0.0016424984846918254,
+        0.0016292752354937943
+      ],
+      "documents": 4096,
+      "reference_model": "raw-seed2026102030",
+      "treatment_model": "computation-seed2026102030"
+    },
+    {
+      "NLL_cost": 0.0005058212744147479,
+      "bootstrap_repeats": 10000,
+      "bootstrap_seed": 2026102029,
+      "ci95": [
+        -0.0010688465978868711,
+        0.0020237171543499807
+      ],
+      "documents": 4096,
+      "reference_model": "format-seed2026102030",
+      "treatment_model": "computation-seed2026102030"
+    }
+  ],
+  "limits": [
+    "Declared continuation16 secondary; the retention threshold applies to full527, not this slice.",
+    "Paired document intervals conditional on fixed checkpoints; no training-order pooling.",
+    "Same source slice across all seven models; no comparison with earlier experiments using other cohorts."
+  ],
+  "primary_decisions_unchanged": {
+    "absolute_base_pass_both_orders": false,
+    "by_order": {
+      "2026102029": {
+        "absolute_base_pass": false,
+        "inference_gate_pass": false,
+        "overall_CPT_criterion": false,
+        "retention_target_met": true,
+        "training_recipe_pass": true
+      },
+      "2026102030": {
+        "absolute_base_pass": false,
+        "inference_gate_pass": false,
+        "overall_CPT_criterion": false,
+        "retention_target_met": true,
+        "training_recipe_pass": false
+      }
+    },
+    "inference_gate_pass_both_orders": false,
+    "limits": "Covered FineMath calculation-targeted CPT; not general LM improvement, autonomous discovery, or training-seed population inference.",
+    "overall_CPT_criterion": false,
+    "retention_target_met_both_orders": true,
+    "training_recipe_pass_both_orders": false
+  },
+  "primary_readout_sha256": "15539574968b5a03e5aaf10f054018e2feea0430ae1e7a912149ca17414b57e0",
+  "public_score_files": {
+    "models/B0/ordinary/logps.jsonl": "f8c45926593b0ba2967c7a759fb2570b8201491fda124396b95669d4169405f5",
+    "models/computation-seed2026102029/ordinary/logps.jsonl": "5d4bce1a9eb186a79c1bfd22c2697d862d34ee1a6126b952bb461c1e968ccb62",
+    "models/computation-seed2026102030/ordinary/logps.jsonl": "49a4884891d03f96cb1c563cedc2cf051f6339377679b489fbfff4da5ac7c661",
+    "models/format-seed2026102029/ordinary/logps.jsonl": "c6e1274b6d77821d0b0a6413a98d2ed16ae60da60db7c49a6481cec5c88afe46",
+    "models/format-seed2026102030/ordinary/logps.jsonl": "a814ed256123cd8a57d828d7d7a7094ceaaee77b78b6d2650e272a0c5deb4c00",
+    "models/raw-seed2026102029/ordinary/logps.jsonl": "2e71d95d2f594af1a1702a5902c29e1158793302aa672e161b55f0632cc21162",
+    "models/raw-seed2026102030/ordinary/logps.jsonl": "fa6eaaf2b8854d9bc3ed0555e9df169536d75c915fcaa6c9703de3e7fff06851"
+  },
+  "source_sha256": "05c7ec52b5756749ecf2479ecf4a909e22e3002ff157406cce2cdb8b6e46b768",
+  "status": "COMPLETE_DECLARED_ORDINARY_SUFFIX16_SECONDARY_NO_NEW_GATES"
+}

@@ -1,20 +1,20 @@
-# Status — 2026-10-20 23:24 UTC
+# Status — 2026-10-20 23:35 UTC
 
-## Active: complete real continuation CPT verification
+## Complete: real continuation CPT; publication active
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?
-ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; all held execution COMPLETE.
-All6 fresh models finish1280 updates/40960 source exposures each across two data orders; physical closures0.
-All source/native/full master/moment/cast/actualrestore8 audits PASS; training28.427reserved chip-hours.
-All6 latest model archives and one latest full1280 optimizer archive pass EBS readback;18 original full states remain RAM.
-All28 evaluation phasegroups/49workers physically close0;49 actual-model native gates PASS; evaluation9.401reserved chip-hours.
-All768questions×6 likelihood modes/model,4096ordinary documents×527 transitions and raw/empty/own scalar attempts complete.
-Primary original readout exists; scientific interpretation waits for independent all-context/statistical/98HF checks.
-ACTIVE CPU analysis/checker exec97855; E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
-All training/evaluation sessions and observer17085 CLOSED0; DO NOT RELAUNCH. No accelerator work remains.
-Next: independent PASS,declared scalar secondary,complete tables/examples/evidence publication,then interpret the boundary.
-Publication tools fabe609;1935CPU tests+smoke/compile PASS; actual full archive/replay verification remains.
-Same-instance EBS protects latest weights and one rotating full optimizer state,not all histories/offinstance backup.
-Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,TEST,V28 extension or new long run released.
+ID:real-cpt-scaffold-v29; six fresh1.7B models; TRAIN20480×2; DEV768calculation/4096ordinary; all endpoints complete.
+All1280updates/source/native/full-state/restore audits and28held phasegroups/49workers physically close0.
+Primary CPT criterion FAILS: Traw−Rraw+.367/+.081,Traw−Fraw+.320/+.084nats; trained-control gate passes only order1.
+Traw−B0raw−.867/−.991nats; absolute-base criterion FAILS both. Inference full16 gate also FAILS.
+Declared scalar secondary: Town643/652 vsRraw500/502 andB0raw510/510 of768; gain versus raw+18.6/+19.5pp,positive paired intervals.
+Tscalar all768/768 readers capped32 eachorder; work naturally stops768/767 of768. All errors/unsupported/caps retained.
+Ordinary full527 NLL cost+.02110/+.02087 meets+.03 upper-bound retention target; suffix16 cost+.04159/+.04045 is separately reported.
+Independent all-context/statistical/98HF verification PASS(max token error.000099); public extracted388file/54LL/16scalar replay PASS.
+Declared ordinary suffix analysis reproduces byte-for-byte from extracted public scores;1935CPU tests+smoke/compile PASS.
+Science28.427training+9.401evaluation reserved chip-hours; full original states/outputs retained; no active accelerator work.
+Report:validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md; all controls/tables/figures/fixed8examples present.
+Next: finish public release/upload readback,then design a bounded TRAIN-only reward/candidate diagnostic before considering autonomous learning.
+No new long training,RL,size jump,V28 extension or officialTEST release. Same-instance backups remain limited to latestweights/onefullstate.
 
 ## Closed: integrated real-CPT readout mechanics
 Question: do the fixed readout entrypoints preserve native/cache distributions and complete target alignment?

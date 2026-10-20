@@ -1,6 +1,6 @@
 # V29: computation supervision with an identical clean prediction objective
 
-This is CPU preparation, **not a training release**. V28 stays closed. All
+This prospective plan is preserved. [V29 has now completed](../validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md): the primary CPT criterion fails, numerical assistance is positive, and the full-window retention target passes. V28 stays closed. All
 science models would start from unchanged Qwen3-1.7B-Base, not its specialized
 permutation checkpoints. No RL or model-size change is proposed.
 

@@ -1,0 +1,103 @@
+{
+  "CPU_checks": {
+    "compile": "PASS",
+    "log_sha256": "920593445cec4c912fb7d7f50c474a99c69fa239f6b139644c2e23d378ed38ab",
+    "smoke": "PASS",
+    "tests": 1935
+  },
+  "artifacts": {
+    "CPU-checks.txt": "920593445cec4c912fb7d7f50c474a99c69fa239f6b139644c2e23d378ed38ab",
+    "REPORT.md": "fd57e10c7ba4d0f5038b9cf6bb291ca3af235d546e21e0a89d157d5352150720",
+    "absolute-likelihood.csv": "21cb0c4e3747633592d044fb4f65a56c0c299755b2d8ab9f0ab5074a02c426f3",
+    "all-paired-likelihood-contrasts.csv": "dc49d7172c7330a01289934d2b492a4507378c12d7657e6d7b426dcf309e6d69",
+    "all-paired-scalar-contrasts.csv": "63c6b577acd610517ffe5eb073173d28851fd8cb7ca6a530d87c8fc4c481dc0b",
+    "archive-manifest.json": "704acc6fc04848fe20aceac36949f8d5e5c9f82616fd6a957395d3abe4313ff4",
+    "costs.json": "c8906e147310fda11458e26777fce594fd22c923cceb07a932c00fb897c58ba6",
+    "direct-prediction-contrasts.svg": "74f61e0bf37a68ec0ee407226c1b40d06210b0d030a52cf733da19fbfadd8722",
+    "evaluation-reservations.csv": "9e5c6a129ff9d8e64b510fff51ee48d10d036b6e242e21a8549d504255cc46d5",
+    "fixed-eight-examples.json": "ea838bb495e4dac1e8752a1109ec90cb8c6dd2ba91352f43640e4c8d8ac653d1",
+    "host-sources/check_real_cpt_scaffold_v29_readout_v2_20261020.py": "e5bc573b25ac07f4a3ae23e8fbbb0ab98f070ae39698ddd224e20778c2110c28",
+    "independent-check.json": "5c0d881b4b6319973b2ce2d983009c5aa8e5f543265c3d899932f120c4e09950",
+    "ordinary-NLL.csv": "ef768033cb8f0fba2956ccc69dc76449d14c8727e2f370c3ec75d196b72aaa73",
+    "ordinary-NLL.svg": "d1fd486f5efd979ce553d1fdc94b34074189164632b1542ade3f34ec3ad52091",
+    "ordinary-suffix-public-replay.json": "874f2f091cfefeaba6dc75992704aa3a9a33cb5889398e9caad445445b6ea8d6",
+    "ordinary-suffix16-absolute.csv": "2d3db949df872e4d51ea94098452cdee21236358cd19ae42536409b6f62627b7",
+    "ordinary-suffix16-paired.csv": "20cfc85d3d422dc9bfcd5db49804e02954aa1e6261c09ce07ebf02d8827fa447",
+    "ordinary-suffix16.json": "8bdc9ee64c9d69ca815de3edbc4fa272d03a8ba0e45c8fb96e2037b6741b1844",
+    "public-replay.json": "d52a8f44d5c1e087e0514ef39ea5db709784a94cfb415f06e9eaada5ae007c2f",
+    "readout.json": "15539574968b5a03e5aaf10f054018e2feea0430ae1e7a912149ca17414b57e0",
+    "scalar-accuracy.svg": "598a58be55062fe08394615f4b4965a91eefb098851f22f8e4b48d1faa9dc166",
+    "scalar-answers-and-errors.csv": "307f23c37d77d6cf575c5afef54db55e2d96445476cf2353e747ae1c460083d3",
+    "scalar-paired.json": "bda6884ba6633101991b333e4103c8c76ddc09e334421c248558f473274ccdca",
+    "writer-actions-and-errors.csv": "964088896e786cf6405635a51ab08048f1f9a878ea1ebe89e263ebacc60388ca"
+  },
+  "costs": {
+    "actual_workers": 49,
+    "evaluation_groups": 28,
+    "evaluation_reserved_chip_hours": 9.401385181651696,
+    "limits": "Whole physical-chip reservations, not elapsed wall time or FLOPs. Scalar groups use four logical shards within one charged chip. Separate qualifications excluded.",
+    "training_reserved_chip_hours": 28.4274855470983
+  },
+  "decision": {
+    "absolute_base_pass_both_orders": false,
+    "by_order": {
+      "2026102029": {
+        "absolute_base_pass": false,
+        "inference_gate_pass": false,
+        "overall_CPT_criterion": false,
+        "retention_target_met": true,
+        "training_recipe_pass": true
+      },
+      "2026102030": {
+        "absolute_base_pass": false,
+        "inference_gate_pass": false,
+        "overall_CPT_criterion": false,
+        "retention_target_met": true,
+        "training_recipe_pass": false
+      }
+    },
+    "inference_gate_pass_both_orders": false,
+    "limits": "Covered FineMath calculation-targeted CPT; not general LM improvement, autonomous discovery, or training-seed population inference.",
+    "overall_CPT_criterion": false,
+    "retention_target_met_both_orders": true,
+    "training_recipe_pass_both_orders": false
+  },
+  "experiment_id": "real-cpt-scaffold-v29",
+  "independent_check_sha256": "5c0d881b4b6319973b2ce2d983009c5aa8e5f543265c3d899932f120c4e09950",
+  "limits": [
+    "Secondary scalar gains do not rescue failed primary likelihood gates.",
+    "Full527 retention passes; suffix16 ordinary prediction regresses more and is separately reported.",
+    "Two data-order results on a source-TRAIN-derived project DEV cohort,not official TEST or model/pretraining novelty.",
+    "Within-repository independent checks and actual public statistical replay,not external replication.",
+    "Public numerical projections omit original source-context/prompt/target arrays,which are retained locally."
+  ],
+  "original_primary_readout_sha256": "15539574968b5a03e5aaf10f054018e2feea0430ae1e7a912149ca17414b57e0",
+  "public_statistical_replay": {
+    "decisions": {
+      "2026102029": {
+        "absolute_base_pass": false,
+        "inference_gate_pass": false,
+        "overall_CPT_criterion": false,
+        "retention_target_met": true,
+        "training_recipe_pass": true
+      },
+      "2026102030": {
+        "absolute_base_pass": false,
+        "inference_gate_pass": false,
+        "overall_CPT_criterion": false,
+        "retention_target_met": true,
+        "training_recipe_pass": false
+      }
+    },
+    "files_checked": 388,
+    "likelihood_contrasts": 54,
+    "limits": "No model execution or omitted source-context verification. Those were separately checked locally before publication.",
+    "report_sha256": "15539574968b5a03e5aaf10f054018e2feea0430ae1e7a912149ca17414b57e0",
+    "scalar_contrasts": 16,
+    "source_sha256": "2ada1544de4859285b86506ca61e1707cf58c97659df90de3331951f524e9a2e",
+    "status": "PASS_PUBLIC_FILE_HASHES_ALL_PAIRED_STATISTICS_AND_SCALAR_PARSER"
+  },
+  "question": "Does verified computation improve direct real continuation prediction while retaining ordinary FineMath LM?",
+  "report": "real_cpt_scaffold_v29_complete_20261020/REPORT.md",
+  "status": "COMPLETE_VERIFIED_V29_PRIMARY_CPT_CRITERION_FAILS"
+}

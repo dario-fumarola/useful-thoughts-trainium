@@ -1,69 +1,80 @@
 # Useful Thoughts on Trainium
 
-**V28 is complete: verified generated traces solve new compositions at trained
-lengths, but direct-answer transfer and longer execution fail. Ordinary language
-prediction deteriorates severely under this task-only recipe.**
+**V29 is complete: generated computation improves numerical completions, but the
+primary direct-prediction criterion fails. Ordinary FineMath retention meets the
+declared full-window target with a measurable regression.**
 
-Six fresh Qwen3-1.7B-Base models train for 4,096 updates on 32,768 prefix-computable
-permutation questions. D uses direct supervision, T full traces, and P provided
-pause positions. Two data orders share the same initial weights and source exposure.
-The primary comparison uses 18,432 questions /9,216 counterfactual families at lengths4–6.
+Six fresh Qwen3-1.7B-Base models train on the same 20,480 real source windows over
+two passes. Raw, empty-format and verified-computation arms share identical clean
+LM supervision; two data orders share the original base initialization. Held
+panels contain 768 calculation and 4,096 ordinary documents. Official TEST is unopened.
 
-| Primary answer path | Order 2026102028, correct /18,432 | Order 2026102029, correct /18,432 |
+| Direct full 16-token likelihood contrast | Order 2026102029, nats [95% CI] | Order 2026102030, nats [95% CI] |
 |---|---:|---:|
-| Direct-trained, direct answer |11,914|1,872|
-| Direct-trained, empty format |11,812|1,871|
-| Pause-trained, provided pauses |1,576|1,733|
-| Trace-trained, direct answer |1,654|1,701|
-| Trace-trained, empty format |1,636|1,728|
-| **Trace-trained, generated computation** |**18,432**|**18,430**|
+| Computation − raw training |+0.367 [0.238,0.499]|+0.081 [−0.056,0.218]|
+| Computation − format training |+0.320 [0.200,0.441]|+0.084 [−0.033,0.201]|
+| Computation − untouched base |**−0.867 [−1.014,−0.723]**|**−0.991 [−1.147,−0.836]**|
 
-The declared **inference gate passes** in both orders. Gains over matched direct
-training are+35.4pp[34.5,36.3] and+89.8pp[89.4,90.3]. The stronger first direct control
-must remain visible. The separate **direct-inference training gate fails**.
+The trained-control criterion passes only in the first order; the absolute-base
+criterion fails in both. **Overall CPT criterion: fail.** Conditional paired
+intervals do not establish robustness across training runs.
 
-At unseen lengths7–10, trace answers fall to228/2,048 and1/2,048. The second model
-stops after exactly six transitions on all2,048 questions, despite usually computing
-those six correctly. No trained trace hits the cap. Ordinary NLL rises from1.945
-for B0 to9.116/8.454 for T; every task-trained arm regresses. This recipe contains
-no ordinary LM loss. These are sharp limits, not general pretraining improvement.
+The separately declared numerical-completion secondary is positive:
 
-![Separate inference and training conclusions](validation/permutation_program_v28_complete_20261020/primary-contrasts.svg)
+| Initial scalar correct / 768 | Order 1 | Order 2 |
+|---|---:|---:|
+| Untouched base, raw |510|510|
+| Raw-trained, raw |500|502|
+| Format-trained, raw |466|482|
+| Computation-trained, raw |502|493|
+| Computation-trained, empty |491|484|
+| **Computation-trained, generated work** |**643**|**652**|
 
-T receives3.10× as many supervised positions as D/P and generates35 actions versus2
-for direct answers. Supplied pauses run in parallel prefill; this is not an equal
-autoregressive-compute comparison. All378,880 attempts close, and independent
-token/interpreter/bootstrap/native checks pass. Checkpoint identities preceded
-evaluation; no checkpoint or prompt was selected by held performance.
+Generated work versus matched raw training gives+18.6pp[15.2,22.1] and
++19.5pp[16.1,23.0]. These are initial source-number completions under a fixed,
+conservative parser, not QA scores or complete-document accuracy. All 1,536
+computation own-path readers hit their 32-action cap; valid initial values can
+precede that cap. Work itself stops naturally in 768/768 and 767/768 attempts.
+Unsupported outputs and every original attempt remain in the denominator.
 
-- [Complete result and limits](validation/permutation_program_v28_complete_20261020/REPORT.md)
-- [Machine-readable readout](validation/permutation_program_v28_complete_20261020.json)
-- [All original fixed examples](validation/permutation_program_v28_complete_20261020/fixed-examples.json)
-- [Depth boundary](validation/permutation_program_v28_complete_20261020/depth-profiles.svg)
-- [Ordinary-text regression](validation/permutation_program_v28_complete_20261020/ordinary-NLL.svg)
-- [Full synthetic evidence and portable offline replay](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v28-controlled-computation-20261020)
+The same-model own-minus-raw full 16 likelihood is−0.131 / +0.111 nats, with both
+intervals crossing zero. Numeral gains are offset by worse surrounding-text
+prediction. The separate inference-likelihood gate fails; scalar gains do not
+replace it. Correct supplied traces contain the answer and are plumbing controls.
 
-The next mainline question returns to real prefix-to-continuation training with
-ordinary LM supervision. This supervised mechanism study does not establish
-autonomous discovery or internalization. Official TEST remains unopened. The
-earlier V26 document-QA result below remains developmental and unconfirmed.
+Ordinary full 527 NLL costs versus B0 are+0.02110[0.01997,0.02225] and
++0.02087[0.01973,0.02204], meeting the declared +0.03 upper-bound target.
+The final 16-token slice regresses more: +0.04159 / +0.04045. All trained arms remain
+worse than B0. This is FineMath retention, not broad-language improvement.
 
-[V29 preparation](docs/REAL_CPT_V29_PLAN.md) fixes20,480 real training windows
-and fresh768 arithmetic/4,096 ordinary DEV documents. All arms share complete clean
-LM supervision, with separate continuation/work losses. The exact-source update
-and restore checks pass. [Full-window scoring](validation/real_cpt_full_window_scoring_v29_20261020.json)
-now checks all527 ordinary transitions against independent HF references. A
-[metadata count correction](validation/real_cpt_full_window_scoring_v29_count_addendum_20261020.json)
-preserves every original score and gate.
+![Direct continuation comparisons](validation/real_cpt_scaffold_v29_complete_20261020/direct-prediction-contrasts.svg)
 
-All six models have [finished1,280 updates and passed full audits and backup verification](validation/real_cpt_scaffold_v29_training_complete_20261020.json).
-Training uses28.427reserved chip-hours across both data orders. All seven model
-identities and independent TRAIN numerical references are fixed before held execution.
-The held readout is now released; **no scientific result is available yet**.
-[Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
-passes TRAIN-only native/cache/full-target checks; those are not learning results.
-[Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
-remains a4.88× warmed microbenchmark result, separate from learning efficacy.
+- [Complete result, costs and limitations](validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md)
+- [Original primary readout](validation/real_cpt_scaffold_v29_complete_20261020/readout.json)
+- [All scalar pairs and error counts](validation/real_cpt_scaffold_v29_complete_20261020/scalar-paired.json)
+- [Ordinary continuation-slice analysis](validation/real_cpt_scaffold_v29_complete_20261020/ordinary-suffix16.json)
+- [Eight outcome-independent examples](validation/real_cpt_scaffold_v29_complete_20261020/fixed-eight-examples.json)
+- [Independent context/statistical/98HF checks](validation/real_cpt_scaffold_v29_complete_20261020/independent-check.json)
+- [Actual extracted-archive statistical replay](validation/real_cpt_scaffold_v29_complete_20261020/public-replay.json)
+
+All 28 evaluation groups / 49 workers close successfully: 60,928 likelihood rows,
+15,626,240 token scores and 21,504 generation attempts. Science reservations are
+28.427 training + 9.401 evaluation chip-hours, excluding qualifications and CPU work.
+Full token scores/generated outputs are preserved; public source arrays are
+projected to hashes while full original source rows remain local. No model or
+optimizer weights are in Git. This is supervised, curated computation—not
+internalization, autonomous discovery or a general pretraining win.
+
+## Fixed positive control: V28
+
+The [completed permutation study](validation/permutation_program_v28_complete_20261020/REPORT.md)
+solves 18,432/18,432 and 18,430/18,432 fresh compositions at covered lengths by
+generating verified states. Direct-answer transfer and longer execution fail;
+its task-only recipe severely degrades ordinary prediction. Supplied pauses run
+in parallel prefill and are not matched autoregressive compute. It remains a
+fixed positive control, not a checkpoint to extend or initialize from.
+[Full synthetic evidence and portable replay](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v28-controlled-computation-20261020)
+are public. Earlier document-QA training-side evidence below stays developmental.
 
 ## Latest matched control (V26)
 
