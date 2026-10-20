@@ -1,17 +1,17 @@
-# Status — 2026-10-20 21:37 UTC
+# Status — 2026-10-20 21:50 UTC
 
 ## Active: matched real continuation CPT readout
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?
-ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; no held model outcomes yet.
+ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; held readout active,scientific verdict pending.
 All6 fresh models finish1280 updates/40960 source exposures each across two data orders; physical closures0.
 All source/native/full master/moment/cast/actualrestore8 audits PASS; training28.427reserved chip-hours.
 All6 latest model archives and one latest full1280 optimizer archive pass complete EBS readback;18 original full states remain RAM.
 All7 actual-model TRAIN-only independent HF references prepared; unchanged qualified numerical worker and all endpoints/gates fixed.
 One root review releases E/release.json with all7 identities and six terminal closures,64evalchip-hour bound.
-Next:start7writer and7ordinary phases on disjoint physical0–6/7–13; math follows own notes; max3scalar groups concurrently.
+All7 ordinary phases physically close0:28672 full527-transition document scores. Five writers and two math phases remain active.
 All768questions×6 likelihood modes/model,4096ordinary documents×527 transitions,and raw/empty/own scalar attempts remain mandatory.
 Report:validation/real_cpt_scaffold_v29_training_complete_20261020.json; scientific verdict PENDING complete readout.
-E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; numerical source85c55db,supervisor2c30aa1.
+Format2029/2030 math exec41946/13755 ACTIVE; all16 native gates PASS. Next:math after remaining writers,then max3scalar groups. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
 No partial quality interpretation or outcome-based checkpoint/prompt selection; independent98HF checks follow full primary readout.
 Same-instance EBS protects latest weights and one rotating full optimizer state,not all histories/offinstance backup.
 Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,TEST or V28 extension.

@@ -1,7 +1,7 @@
-<!-- Current handoff 2026-10-20 21:37 UTC; historical entries below -->
+<!-- Current handoff 2026-10-20 21:50 UTC; historical entries below -->
 Owner: continue autonomously/patiently until told to stop; do not final at milestones. No active goal. Agent quota unavailable untilOct24:do not retry agents.
 Repo public dario-fumarola/useful-thoughts-trainium. R=/home/ubuntu/dario; W=R/local/worktrees/real-cpt-scaffold-v29; Weval=R/local/worktrees/real-cpt-scaffold-v29-eval.
-W remains73d9c91 with numerical engine c9d2c0c frozen; main408d7dd and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
+W remains73d9c91 with numerical engine c9d2c0c frozen; mainabe44ef and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
 
 V29 ALL SIX TRAINING RUNS CLOSED/PASS; HELD READOUT RELEASED:
 C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1; O=R/local/science-runs/real-cpt-scaffold-v29 privateRAM symlink.
@@ -17,7 +17,15 @@ E/review.json and E/release.json explicitly release all7 fixed identities; relea
 E/index.json enumerates all28future phasegroups/49workers. Scientific verdict PENDING,not inferred from TRAIN checks.
 Root preflight initially compared different model weight fingerprints,then assumed absent jobs directory existed; both corrected before held,all seven refs/source/runtime/assets/architecture and device availability PASS. No model/reference/numerical gate changed.
 Public training proof validation/real_cpt_scaffold_v29_training_complete_20261020.json.
-NEXT:launch7writers physical0–6 and7ordinary physical7–13 using frozen supervisor,then each math after own notes,and at most3scalar groups after own math.
+All7 ordinary phases physically CLOSED0 by21:49UTC:28672 documents×527 targets; no scores interpreted.
+Five writers remain ACTIVE on physical0/1/3/4/6. Format2029/2030 writers CLOSED0 and own math phases ACTIVE on physical2/5.
+Next:launch each math phase only after writer supervision/complete.json (own notes bundle sealed),then scalar after own math; max3scalar groups concurrently.
+E/manual-launch-sessions.json stores all14 execution session IDs. B0 writer76671/ordinary27754;raw2029 78726/33030;format2029 88602/66714;T2029 54222/15466;raw2030 98220/66992;format2030 46918/82375;T2030 90875/24891.
+Actual owned sessions in E/supervision/<alias>/<panel>/shard-0-launch.json; all14 native owners observed or starting at first snapshot.
+Passive finite readout observer exec17085 prints native/completion/budget counts and READY_MATH/READY_SCALAR45s; no model outcomes or job launches. Poll it with write_stdin. It exits only at all28phasegroups complete (or guard failure).
+Do NOT relaunch existing phases. Format2029 math41946 and format2030 math13755 started21:43,actual native gates PASS. No scalar phases started at21:50.
+All16 launched workers native gates PASS. All7ordinary exec27754/33030/66714/15466/66992/82375/24891 polled CLOSED0. Format writer88602/46918 CLOSED0.
+E/manual-launch-sessions.json now stores16 single-attempt launches. Source math phases continue full6mode inventories,not raw-only rows. Scientific verdict PENDING ALL controls/full independent readout.
 Root must enforce max3scalar groups manually; supervisor enforces ownership/resources/single-attempt phases but has no cross-model scalar semaphore.
 At21:36 root62.6GiB/cache54.6GiBfree,hostavailable~1478GiB. No source changes, package updates,old launchers or checkpoint selection.
 
