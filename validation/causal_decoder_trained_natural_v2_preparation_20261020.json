@@ -1,0 +1,31 @@
+{
+  "candidate_commit": "b25560a9618970a43afab349edc785d772a02604",
+  "checkpoint_sha256": "9fb43e0faa8180c8859a50b722489821225379f8dc8424115f3ccdbbee0c0439",
+  "control_directory": "/home/ubuntu/dario/local/diagnostics/causal-decoder-trained-natural-v2",
+  "experiment_id": "causal-decoder-trained-natural-v2",
+  "files": {
+    "plan.json": {
+      "bytes": 4945,
+      "sha256": "be1613e61bdc083e05b166c64309c887c8942cd5e5ccd945785fdba7bf20bc8d"
+    },
+    "probe.py": {
+      "bytes": 9761,
+      "sha256": "eb4f1e9b132afb3707c041b5a5fd0899034c02f7569b6c075908256ebaf9d985"
+    },
+    "release.json": {
+      "bytes": 586,
+      "sha256": "5c4fac134d2d271b04b87b37306dc182f53e28a6b0c1cbb625bb7e4e8209db15"
+    },
+    "supervise.py": {
+      "bytes": 5184,
+      "sha256": "4ebbeaf2df1b03e8a28f5dcde611b9db6c49b6d0e2b33a2c662a3fd0839bdb00"
+    }
+  },
+  "logical_core": 32,
+  "no_training_pipeline_changes": true,
+  "physical_device": 8,
+  "reserved_chip_hour_bound": 0.5,
+  "scope": "Eight prefix-only TRAIN inputs,trainedV17 model,natural Answer/EOS stopping,128-action cap,equal-length B1/B4/B8 comparison;no held data or learning",
+  "status": "CPU_TRAINED_REFERENCE_READY_BOUNDED_SPARE_CORE_PROBE_RELEASED_NOT_YET_HARDWARE",
+  "utc": "2026-10-20T13:52:49.118646+00:00"
+}

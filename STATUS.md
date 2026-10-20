@@ -12,7 +12,7 @@ Mechanics release:world8,halt4/fresh-process resume8; two-chip budget2.0h; no sc
 New disposable checkpoints use RAM; terminal full EBS backup is required; old states/cache stay intact.
 C=local/diagnostics/real-cpt-scaffold-v29-qualification-v1; plan/review/protocol released before hardware.
 Reports:real_cpt_scaffold_v29_CPU_readiness_20261020.json and qualification_release_20261020.json under validation/.
-Next: run the single qualification,check native loss/full restore/physical closure,protect terminal; no automatic retry.
+Active:supervisor1760374/session27854,fresh4 owned session1760438,devices0/1;new graphs compiling,no update yet.
 Freeze endpoints/power/storage before long learning; preserve B0 and both controls. V28 stays closed.
 
 ## Closed: controlled computation reference
@@ -30,6 +30,16 @@ Science training16.535/evaluation13.821reserved chip-hours; qualifications separ
 Report:validation/permutation_program_v28_complete_20261020.json; full fixed examples,figures and raw-release hashes.
 Decision: established guided computation within covered lengths; no direct transfer,length-generalization or pretraining claim.
 Next: actual source-balanced prefix-to-continuation data/objective preparation; no RL/size jump or new long run yet.
+
+## Prepared: trained-model natural-stop batching integration
+Question: does unchanged batching preserve complete native-stopped trained notes at cap128?
+ID:causal-decoder-trained-natural-v2; b25560a; frozenV17 source_cot320 model; no update or held data.
+Eight TRAIN prefixes selected by prefix-derived operation strata2/3/4/5,all native length516.
+CPU full-vocabulary vectors fixed; same B1/B4/B8/cache672/prefill544; all sources/weights SHA-bound.
+Gate:all24 native comparisons plus exact actions/content/text/stops;>=6 natural stops and>=2 lengths.
+One spare logical32/device8,budget0.5reserved-chip-hour; independent of V29 devices0/1.
+Report:validation/causal_decoder_trained_natural_v2_preparation_20261020.json. No hardware result yet.
+Decision: run bounded integration,not a quality study or automatic decoder adoption.
 
 ## Closed: separate decoder batching check
 Question: can equal-length batching preserve greedy decoding while reducing future inference cost?

@@ -16,12 +16,21 @@ That is a qualification budget deadline,not instance shutdown. No automatic retr
 Output local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1; parent is new private /dev/shm scratch.
 Both full4/8 originals remain in RAM. Required full8 EBS copy:local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1/step-0000008.
 Never delete original states/cache. RAM-qualified scratch is volatile;do not claim EBS protection before readback/fsync.
-Next exact launch:source scripts/env.sh;overridePYTHONPATH to W (see below),USE_TORCH_XLA=0;
-python -u C/supervise.py >C/supervisor.log 2>&1. No hardware launched as of this snapshot.
+ACTIVE qualification exec27854,supervisorPID1760374,fresh4 childsession1760438,workers1760501/505/506/508/509/510/511/512.
+First new graph compiles~16min;another graph is actively compiling;no metrics yet. Do not interrupt normal compilation.
+Latest MemAvailable~1.85TiB;owned PSS~60–80GiB;CPU compiler active. Deadline14:12UTC applies to this qualifier only.
 Monitor logs/metrics/PSS;first4 loss must matchCPU before resume;all8 actual full model/optimizer digests after restore.
 After physical closure,independently audit/protect terminal and publish limited mechanics result,not learning efficacy.
 No long run/RL/8B/oldR1234/officialTEST release. Do not alter old gates or infer efficacy from qualifications.
 W=/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29;PYTHONPATH=W:/home/ubuntu/dario/local/test-deps.
+Separate trained natural-stop decoder check prepared: C_B=local/diagnostics/causal-decoder-trained-natural-v2.
+CPU prepare1086 CLOSED0;unchanged candidateW_B=local/worktrees/causal-decoder-batching-v1 @b25560a.
+New scripts local/analysis/{qualify,supervise}_causal_decoder_trained_natural_v2_20261020.py.
+Source model V17source_cot1913 step320 SHA9fb43e0f... full stream roundtrip reverified;8TRAIN prefix-only rows.
+Next launch spare-core supervisor with PYTHONPATH=W_B:local/test-deps,USE_TORCH_XLA=0. No decoder device job launched yet.
+One logical32/device8,0.5chip-hour cap,native24 plus exactnaturalstop128;no held outcomes or training changes.
+Storage stream89779 CLOSED0:existing optimizer/model full SHA roundtrips pass,zstd ratios0.923/0.782.
+No compressed payload retained;feasibility only,not a backup. Do not delete source states/cache.
 All earlier CPU builders/checker closed0;do not rerun. First slowCPU attempt retained;immutable metadata cache fixed it.
 Keep35GiB filesystem/512GiB host floors. Existing compile cache and all original science models remain.
 
