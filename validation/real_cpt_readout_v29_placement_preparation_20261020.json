@@ -1,0 +1,72 @@
+{
+  "CPU_checks": 1932,
+  "CPU_log_sha256": "dd68c3f7d67572cc4ff6b2cd4f372fc81cd46bff7e395b21a148fb31f5212a72",
+  "execution": "Writer/then math/then scalar use physical0\u20136. Independent ordinary scoring may run concurrently on physical7\u201313; at most3 scalar groups run together. Fixed model order,not outcome-based scheduling.",
+  "limits": "No held execution authorized by this preparation JSON. It does not change scientific data,decoders,gates or supervision.",
+  "max_parallel_scalar_groups": 3,
+  "min_filesystem_free_GiB": 35,
+  "min_host_available_GiB": 512,
+  "model_order": [
+    "B0",
+    "raw-seed2026102029",
+    "format-seed2026102029",
+    "computation-seed2026102029",
+    "raw-seed2026102030",
+    "format-seed2026102030",
+    "computation-seed2026102030"
+  ],
+  "numerical_change": "None: same model files,reference vectors,data,FP32 kernels,decoder lengths,scorer batches,parser and gates. Per-process actualmodel TRAIN gates remain mandatory.",
+  "phase_physical_slots": {
+    "ordinary": {
+      "B0": 7,
+      "computation-seed2026102029": 10,
+      "computation-seed2026102030": 13,
+      "format-seed2026102029": 9,
+      "format-seed2026102030": 12,
+      "raw-seed2026102029": 8,
+      "raw-seed2026102030": 11
+    }
+  },
+  "phase_wall_seconds": {
+    "math": 5400,
+    "ordinary": 10800,
+    "scalar": 7200,
+    "writer": 5400
+  },
+  "phases_per_model": [
+    "writer",
+    "ordinary",
+    "math",
+    "scalar"
+  ],
+  "physical_accounting": "Each actual physical-chip phase charged once. Concurrent writer and ordinary jobs use different chips and are charged separately. Scalar4shards share one chip.",
+  "physical_slots": {
+    "B0": 0,
+    "computation-seed2026102029": 3,
+    "computation-seed2026102030": 6,
+    "format-seed2026102029": 2,
+    "format-seed2026102030": 5,
+    "raw-seed2026102029": 1,
+    "raw-seed2026102030": 4
+  },
+  "prerequisites": "All6 terminal training runs and protected audits first. No held readout launched by this preparation.",
+  "process_helper": {
+    "path": "/home/ubuntu/dario/local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualify.py",
+    "sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f"
+  },
+  "release_requirements": [
+    "All6 fixed1280 terminal models independently audited and protected,all scientific devices physically closed.",
+    "UnchangedB0 plus each actualterminal model have independent fixedTRAIN HF reference vectors; exact model/source/asset/contract hashes.",
+    "Actual fixedTRAIN native/cache/fulltarget gates inside every process before opening held rows.",
+    "One serial question review over full study; no prompt,parser,checkpoint or threshold selection from held outcomes.",
+    "Pin exact source and seven bindings,all scientific closures,and phase/resource bounds in an explicit new release."
+  ],
+  "reserved_chip_hours": 64,
+  "status": "PREPARED_READONLY_PHASE_PLACEMENT_V2_NOT_HELD_RELEASE",
+  "supersedes_placement_only": {
+    "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/execution-plan.json",
+    "sha256": "cd8a0608b0d8d1dde782bd324570ed55895dd6ba893ace15b37f7c528516612b"
+  },
+  "supervisor_source_sha256": "b509ee045ed671d520e5d8c0d9f1767a4641ca82b4712acbabec90dda193f82d",
+  "whole_chip_accounting": "Scalar four logical-core workers share one physical chip, charged once from first launch through physical closure."
+}
