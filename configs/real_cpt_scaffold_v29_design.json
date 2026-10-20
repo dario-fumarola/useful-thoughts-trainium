@@ -1,0 +1,188 @@
+{
+  "schema": "real-cpt-scaffold-v29-prospective-science-design-v1",
+  "status": "FROZEN_ENDPOINTS_NO_TRAINING_RELEASE",
+  "utc": "2026-10-20T14:52:34.216126+00:00",
+  "experiment_id": "real-cpt-scaffold-v29",
+  "base": "Qwen3-1.7B-Base unchanged released weights",
+  "arms": [
+    "raw",
+    "format",
+    "computation"
+  ],
+  "data_order_seeds": [
+    2026102029,
+    2026102030
+  ],
+  "training": {
+    "documents": 20480,
+    "calculation": 5120,
+    "ordinary": 15360,
+    "passes": 2,
+    "updates": 1280,
+    "global_source_batch": 32,
+    "global_auxiliary_batch": 8,
+    "world_size": 8,
+    "micro_batch": 4,
+    "auxiliary_micro_batch": 1,
+    "lr": 1e-05,
+    "schedule": "constant",
+    "source_weight": 1.0,
+    "auxiliary_continuation_weight": 0.5,
+    "work_weight": 1.0,
+    "loss_means": "separate components,then fixed source-example mean",
+    "terminal_checkpoint_primary": true,
+    "no_held_checkpoint_or_prompt_selection": true
+  },
+  "data_manifest_sha256": "77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f",
+  "evaluation": {
+    "arithmetic_documents": 768,
+    "ordinary_documents": 4096,
+    "cohorts": "Frozen CPUv2 files; source-TRAIN-derived DEV, not official TEST",
+    "primary_target": "sum log probability of all16 original native continuation tokens; no synthetic EOS",
+    "arithmetic_secondary": "Complete original numeral plus closing boundary, numeric-only span, and K1 separated; original numeral lies entirely inside16 on every row.",
+    "bootstrap": {
+      "unit": "source document",
+      "replicates": 10000,
+      "interval": "paired percentile95",
+      "seed": 2026102029
+    },
+    "models": "All6 terminal checkpoints and unchanged B0; separate data-order results; B0 evaluated once",
+    "held_writer_input": "Question-only projection: native prefix IDs and identity only; no future, teacher, numeric answer or evaluation outcome."
+  },
+  "training_recipe_gate": {
+    "contrasts": [
+      "computation/raw - raw/raw",
+      "computation/raw - format/raw"
+    ],
+    "every_data_order": true,
+    "minimum_mean_gain_nats_per16": 0.25,
+    "lower95_strictly_above": 0.0,
+    "interpretation": "New supervised recipe improves direct prediction over both complete trained recipes; does not alone establish improvement over B0."
+  },
+  "absolute_base_gate": {
+    "contrast": "computation/raw - B0/raw",
+    "every_data_order": true,
+    "minimum_mean_gain_nats_per16": 0.25,
+    "lower95_strictly_above": 0.0,
+    "interpretation": "Separately tests a new best starting-model prediction path."
+  },
+  "retention_target": {
+    "primary": "Ordinary mean of per-document mean NLL over all527 real transitions",
+    "contrast": "computation/raw NLL - B0/raw NLL",
+    "every_data_order": true,
+    "upper95_at_most": 0.03,
+    "secondary": [
+      "same ordinary delta versus both trained controls",
+      "original continuation16 loss"
+    ],
+    "interpretation": "Declared small-retention-cost target for this predictive study. A miss remains a measured tradeoff; it does not erase other positive capability evidence or justify terminating a healthy run."
+  },
+  "overall_CPT_criterion": "Training-recipe and absolute-base gates pass in both orders, and retention target met. Otherwise identify exactly which claim passed or failed.",
+  "inference_gate": {
+    "status": "Secondary, separately declared; not a rescue for a failed direct-prediction primary",
+    "contrasts": [
+      "computation/own - computation/raw",
+      "computation/own - computation/empty",
+      "computation/own - raw/raw"
+    ],
+    "every_data_order": true,
+    "minimum_mean_gain_nats_per16": 0.25,
+    "lower95_strictly_above": 0.0,
+    "notes": "Greedy prefix-only work, cap128 native actions including Answer/EOS; all failed/capped/unsupported generations retained. Report format control and B0 alongside."
+  },
+  "content_controls": [
+    "intact unrelated generated note from a fixed hash donor permutation with no fixed points",
+    "verified correct work from prefix",
+    "deterministic single-intermediate-value corruption"
+  ],
+  "numerical_accuracy": {
+    "endpoint": "Frozen initial-scalar-v2 complete value under raw/empty/own paths",
+    "primary": false,
+    "comparison": "same underlying prefixes/models; paired proportions with unsupported/error/cap counts",
+    "inference_budget": "actual actions and latency; scalar generation contract frozen using TRAIN only",
+    "notes": "Gold-independent parser/stop rule, original answers retained. Canonical likelihood and complete-value accuracy never substituted."
+  },
+  "failure_policy": "No missing rows silently dropped; execution failures reported and no scientific pass until required endpoints are complete. Healthy runs are not stopped based on early loss or outcome.",
+  "statistical_limits": [
+    "Conditional on fixed checkpoints; two data-order seeds do not measure full training/model uncertainty.",
+    "Four required primary comparisons form a conjunctive claim; report each unadjusted paired95 interval, do not select favorable orders or contrasts.",
+    "Normal power calculations are planning assumptions, not bootstrap guarantees.",
+    "A true effect exactly at the point threshold has approximately50% marginal passage probability.",
+    "One fresh development cohort, not general-pretraining or pretrained-data-novelty confirmation."
+  ],
+  "planning": [
+    {
+      "assumed_true_gain_nats_per16": 0.0,
+      "paired_SD": 2.5,
+      "documents": 768,
+      "SE": 0.09021097956087903,
+      "normal95_half_width": 0.17681027094940185,
+      "marginal_pass_probability": 0.0027918084031893775,
+      "four_contrasts_joint_pass_lower_bound": 0.0,
+      "method": "Normal planning approximation only; actual readout uses paired document bootstrap."
+    },
+    {
+      "assumed_true_gain_nats_per16": 0.1,
+      "paired_SD": 2.5,
+      "documents": 768,
+      "SE": 0.09021097956087903,
+      "normal95_half_width": 0.17681027094940185,
+      "marginal_pass_probability": 0.04817936461156225,
+      "four_contrasts_joint_pass_lower_bound": 0.0,
+      "method": "Normal planning approximation only; actual readout uses paired document bootstrap."
+    },
+    {
+      "assumed_true_gain_nats_per16": 0.25,
+      "paired_SD": 2.5,
+      "documents": 768,
+      "SE": 0.09021097956087903,
+      "normal95_half_width": 0.17681027094940185,
+      "marginal_pass_probability": 0.5,
+      "four_contrasts_joint_pass_lower_bound": 0.0,
+      "method": "Normal planning approximation only; actual readout uses paired document bootstrap."
+    },
+    {
+      "assumed_true_gain_nats_per16": 0.35,
+      "paired_SD": 2.5,
+      "documents": 768,
+      "SE": 0.09021097956087903,
+      "normal95_half_width": 0.17681027094940185,
+      "marginal_pass_probability": 0.8661797317616209,
+      "four_contrasts_joint_pass_lower_bound": 0.46471892704648354,
+      "method": "Normal planning approximation only; actual readout uses paired document bootstrap."
+    },
+    {
+      "assumed_true_gain_nats_per16": 0.5,
+      "paired_SD": 2.5,
+      "documents": 768,
+      "SE": 0.09021097956087903,
+      "normal95_half_width": 0.17681027094940185,
+      "marginal_pass_probability": 0.9972081915968106,
+      "four_contrasts_joint_pass_lower_bound": 0.9888327663872425,
+      "method": "Normal planning approximation only; actual readout uses paired document bootstrap."
+    },
+    {
+      "assumed_true_gain_nats_per16": 0.75,
+      "paired_SD": 2.5,
+      "documents": 768,
+      "SE": 0.09021097956087903,
+      "normal95_half_width": 0.17681027094940185,
+      "marginal_pass_probability": 0.9999999850961593,
+      "four_contrasts_joint_pass_lower_bound": 0.9999999403846371,
+      "method": "Normal planning approximation only; actual readout uses paired document bootstrap."
+    }
+  ],
+  "scope_limits": [
+    "FineMath mathematical text, enriched25% computable boundaries; not general-language corpus.",
+    "Exact interpreter supervision includes final root calculation; no autonomous discovery or teacher-withdrawal claim.",
+    "Auxiliary continuation conditioning and work supervision differ together: complete recipe comparison, not pure auxiliary-gradient mechanism.",
+    "Matching source exposure/updates is not matching FLOPs, semantic label information, supervised positions or inference work.",
+    "No RL, 7B/8B jump, official TEST or V28 extension."
+  ],
+  "remaining_release": [
+    "Guarded fixed-arm numerical implementation and same-source qualification",
+    "Bounded TRAIN-only full ordinary-window scorer and generation integration",
+    "Measured reservation and concrete safe full-checkpoint/backup placement",
+    "Review once for the complete question before scientific execution"
+  ]
+}

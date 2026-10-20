@@ -43,6 +43,7 @@ PROGRAM_DATA_SHA = '251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c
 PROGRAM_MANIFEST_SHA = '41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41'
 SCAFFOLD_SCHEMA = 'real-cpt-scaffold-v29'
 SCAFFOLD_QUALIFICATION_ARM = 'scaffold_qualification'
+SCAFFOLD_STUDY_PURPOSE = 'real_cpt_scaffold_study'
 SCAFFOLD_PARENT_SHA = 'ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509'
 SCAFFOLD_MANIFEST_SHA = '77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f'
 
@@ -63,7 +64,8 @@ def source_files():
              'train/document_qa_data.py', 'train/document_qa_packing.py',
              'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py',
              'train/permutation_program_data.py', 'train/permutation_program_packing.py',
-             'train/permutation_program_retention.py', 'train/real_cpt_scaffold.py')
+             'train/permutation_program_retention.py', 'train/real_cpt_scaffold.py',
+             'configs/real_cpt_scaffold_v29_design.json')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
@@ -77,6 +79,7 @@ def validate(p):
     program = p.get('schema') == PROGRAM_SCHEMA
     scaffold = p.get('schema') == SCAFFOLD_SCHEMA
     program_science = program and p.get('purpose') == PROGRAM_STUDY_PURPOSE
+    scaffold_science = scaffold and p.get('purpose') == SCAFFOLD_STUDY_PURPOSE
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
@@ -115,11 +118,24 @@ def validate(p):
         'document_evidence_plan_pilot', 'document_evidence_weight_ablation',
         'document_evidence_format_weight_control')
     if scaffold:
-        if (p.get('purpose') != 'real_cpt_scaffold_qualification'
-                or p.get('experiment_id') != 'real-cpt-scaffold-v29'
+        if scaffold_science:
+            if (p['items'] != 20480 or p.get('steps') != 1280
+                    or p.get('save_every') != 640
+                    or p.get('seed') not in (2026102029, 2026102030)
+                    or p.get('scaffold_arm') not in real_cpt_scaffold.ARMS
+                    or p.get('view_schedule') != 'clean_plus_fixed_arm_auxiliary'
+                    or p.get('data_sha256') != SCAFFOLD_PARENT_SHA
+                    or not isinstance(p.get('hardware_qualification_file'), str)
+                    or not re.fullmatch('[a-f0-9]{64}', p.get('hardware_qualification_sha256', ''))
+                    or not isinstance(p.get('prospective_design_file'), str)
+                    or not re.fullmatch('[a-f0-9]{64}', p.get('prospective_design_sha256', ''))):
+                raise ValueError('Frozen fixed-arm two-pass V29 study and actual source-qualified receipt required')
+        elif (p.get('purpose') != 'real_cpt_scaffold_qualification'
                 or p['items'] != 128 or p.get('steps') != 8 or p.get('save_every') != 4
-                or p.get('seed') != 2026102029 or p.get('lr') != 1e-5
-                or p.get('view_schedule') != 'clean_plus_raw_format_computation_cycle'
+                or p.get('seed') != 2026102029
+                or p.get('view_schedule') != 'clean_plus_raw_format_computation_cycle'):
+            raise ValueError('Only the bounded V29 qualification or frozen two-pass study is implemented')
+        if (p.get('experiment_id') != 'real-cpt-scaffold-v29' or p.get('lr') != 1e-5
                 or p.get('loss') != 'clean_LM_plus_fraction_weighted_auxiliary_continuation_work'
                 or type(p.get('auxiliary_micro_batch')) is not int or p['auxiliary_micro_batch'] != 1
                 or any(type(p.get(k)) not in (int, float) or p[k] != v for k, v in (
@@ -130,7 +146,7 @@ def validate(p):
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))
                 or p.get('checkpoint_export_cleanup') is not True
                 or p.get('checkpoint_memory_diagnostic') is not True):
-            raise ValueError('Only bounded TRAIN-only two-forward qualification is implemented; no science release')
+            raise ValueError('Exact V29 source/auxiliary loss, data and checkpoint policy required')
     elif program:
         if program_science:
             from train.permutation_program_retention import POLICY
@@ -276,9 +292,9 @@ def validate(p):
             raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
     elif p.get('purpose') not in ('qualification', 'TRAIN_overfit_only') or p.get('items')!=128:
         raise ValueError('Explicit fitting or fixed TRAIN5120 study required')
-    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (4096 if program_science else 640 if science else 320 if real_science or target_science or balanced_science else 256 if document_science or evidence_science else 160 if depth else 128)
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (4096 if program_science else 1280 if scaffold_science else 640 if science else 320 if real_science or target_science or balanced_science else 256 if document_science or evidence_science else 160 if depth else 128)
             or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
-            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (1024 if program_science else 160 if science or real_science or target_science or balanced_science else 128 if document_science or evidence_science else 80 if depth else 32)
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (1024 if program_science else 640 if scaffold_science else 160 if science or real_science or target_science or balanced_science else 128 if document_science or evidence_science else 80 if depth else 32)
             or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
@@ -483,11 +499,68 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
     return batch_packs(packs)
 
 
+def validate_scaffold_execution(p, args):
+    """Scope the prepared protocol to one explicitly reviewed learning stage."""
+    # ROOT can be an isolated worktree or the main repository checkout.
+    local = ROOT.parents[1] if ROOT.parent.name == 'worktrees' else ROOT/'local'
+    run_root = local/'science-runs/real-cpt-scaffold-v29'
+    if (args.execution_release is None or args.arm != p['scaffold_arm']
+            or args.output != run_root/f'cpt-{args.arm}-seed{p["seed"]}-v1'):
+        raise ValueError('Explicit scoped V29 execution release and output required')
+    release = json.loads(args.execution_release.read_text())
+    job = release.get('jobs', {}).get(args.output.name)
+    if (job is None or job.get('protocol_sha256') != sha256_file(args.protocol)
+            or release.get('source_files') != source_files()
+            or release.get('prospective_design_sha256') != p['prospective_design_sha256']):
+        raise ValueError('V29 job, sources or design differ from the execution release')
+    if release.get('status') == 'RELEASED_V29_SCIENCE_STAGE64_ONLY':
+        if args.resume is not None or args.halt_after != 64:
+            raise ValueError('Initial V29 release permits only fresh first64 updates')
+    elif release.get('status') == 'RELEASED_V29_SCIENCE_TERMINAL1280':
+        if (args.resume is None or args.halt_after is not None
+                or job.get('resume_COMPLETE_sha256') != sha256_file(args.resume/'COMPLETE.json')):
+            raise ValueError('Audited original-run full checkpoint required for continuation')
+    else:
+        raise ValueError('Prepared V29 data and CPU tests are not an execution release')
+
+
+def verify_scaffold_science_release(p):
+    """Require actual recovery qualification of these exact numerical sources.
+
+    This is an execution preflight, not an authorization inferred from a passing
+    CPU test. The outer supervisor separately owns resource/storage release.
+    """
+    if p['purpose'] != SCAFFOLD_STUDY_PURPOSE:
+        raise ValueError('Only a frozen V29 study uses this release')
+    receipt_path = Path(p['hardware_qualification_file'])
+    design_path = Path(p['prospective_design_file'])
+    if (sha256_file(receipt_path) != p['hardware_qualification_sha256']
+            or sha256_file(design_path) != p['prospective_design_sha256']
+            or design_path.resolve() != (ROOT/'configs/real_cpt_scaffold_v29_design.json').resolve()):
+        raise ValueError('Exact hardware receipt and prospective design required')
+    receipt, design = (json.loads(path.read_text()) for path in (receipt_path, design_path))
+    if (receipt.get('status') != 'PASS_BOUNDED_TRAIN_MECHANICS_RECOVERY_AND_TERMINAL_PROTECTION'
+            or receipt.get('source_files') != p['source_files']
+            or receipt.get('actual_updates') != 8 or receipt.get('actual_restore_ranks') != 8
+            or receipt.get('full_master_shards_audited') != 4960
+            or receipt.get('native_vectors_recomputed') != 16
+            or design.get('schema') != 'real-cpt-scaffold-v29-prospective-science-design-v1'
+            or design.get('experiment_id') != p['experiment_id']
+            or design.get('data_manifest_sha256') != p['data_manifest_sha256']
+            or p['scaffold_arm'] not in design['arms'] or p['seed'] not in design['data_order_seeds']):
+        raise ValueError('Actual source-qualified recovery and unchanged scientific identity required')
+
+
 def scaffold_passes_at(rows, tokenizer, p, order, arm, step, rank):
-    if (p['schema'] != SCAFFOLD_SCHEMA or p['purpose'] != 'real_cpt_scaffold_qualification'
-            or arm != SCAFFOLD_QUALIFICATION_ARM or not 0 <= step < p['steps']):
-        raise ValueError('Declared bounded V29 qualification required')
-    actual_arm = real_cpt_scaffold.ARMS[step % len(real_cpt_scaffold.ARMS)]
+    if p['schema'] != SCAFFOLD_SCHEMA or not 0 <= step < p['steps']:
+        raise ValueError('Declared complete V29 source step required')
+    if p['purpose'] == 'real_cpt_scaffold_qualification' and arm == SCAFFOLD_QUALIFICATION_ARM:
+        actual_arm = real_cpt_scaffold.ARMS[step % len(real_cpt_scaffold.ARMS)]
+    elif (p['purpose'] == SCAFFOLD_STUDY_PURPOSE and arm in real_cpt_scaffold.ARMS
+          and arm == p.get('scaffold_arm')):
+        actual_arm = arm
+    else:
+        raise ValueError('Explicit matching qualification or fixed science arm required')
     return real_cpt_scaffold.batches_at(rows, tokenizer, order, arm=actual_arm,
         step=step, rank=rank, width=p['width'], target_slots=p['target_slots'])
 
@@ -607,7 +680,8 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     for step in (range(begin, p['steps']) if run_updates else ()):
         started = time.monotonic(); optimizer.zero_grad(set_to_none=True)
         audited = (step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
-                   or p.get('purpose') == PROGRAM_STUDY_PURPOSE and step+1 == args.halt_after)
+                   or p.get('purpose') in (PROGRAM_STUDY_PURPOSE, SCAFFOLD_STUDY_PURPOSE)
+                   and step+1 == args.halt_after)
         before = master_samples(optimizer, expected) if audited else None
         component_objective = p['schema'] in (BALANCED_SCHEMA, DOCUMENT_SCHEMA)
         scaffold_objective = p['schema'] == SCAFFOLD_SCHEMA
@@ -739,10 +813,12 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + (PROGRAM_QUALIFICATION_ARM, SCAFFOLD_QUALIFICATION_ARM), required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + real_cpt_scaffold.ARMS + (PROGRAM_QUALIFICATION_ARM, SCAFFOLD_QUALIFICATION_ARM), required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--execution-release', type=Path)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
+    if p.get('purpose') == SCAFFOLD_STUDY_PURPOSE:
+        validate_scaffold_execution(p, args)
     if p.get('purpose') == PROGRAM_STUDY_PURPOSE:
         validate_program_execution(p, args)
     if p.get('purpose') in EVIDENCE_WEIGHT_PURPOSES:
@@ -780,7 +856,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = ((SCAFFOLD_QUALIFICATION_ARM,) if p['schema'] == SCAFFOLD_SCHEMA else
+    allowed_arms = ((real_cpt_scaffold.ARMS if p.get('purpose') == SCAFFOLD_STUDY_PURPOSE
+                    else (SCAFFOLD_QUALIFICATION_ARM,)) if p['schema'] == SCAFFOLD_SCHEMA else
                     (permutation_program_packing.ARMS if p.get('purpose') == PROGRAM_STUDY_PURPOSE
                      else (PROGRAM_QUALIFICATION_ARM,)) if p['schema'] == PROGRAM_SCHEMA else
                     document_evidence_plan_packing.ARMS if p['schema'] == EVIDENCE_SCHEMA else
@@ -819,9 +896,14 @@ def main():
                     or sha256_file(manifest_path) != SCAFFOLD_MANIFEST_SHA):
                 raise ValueError('Frozen full TRAIN and CPU data manifest required')
             parent = [json.loads(line) for line in parent_path.read_text().splitlines()]
-            selected = real_cpt_scaffold.grouped_order(parent, seed=p['seed'], passes=1)[:128]
-            if rows != [parent[i] for i in selected]:
-                raise ValueError('Qualification must use the fixed first128 grouped TRAIN sources')
+            if p['purpose'] == SCAFFOLD_STUDY_PURPOSE:
+                if rows != parent or sha256_file(p['data_file']) != SCAFFOLD_PARENT_SHA:
+                    raise ValueError('Science requires the entire frozen TRAIN20480 source cohort')
+                verify_scaffold_science_release(p)
+            else:
+                selected = real_cpt_scaffold.grouped_order(parent, seed=p['seed'], passes=1)[:128]
+                if rows != [parent[i] for i in selected]:
+                    raise ValueError('Qualification must use the fixed first128 grouped TRAIN sources')
         if p['schema'] == PROGRAM_SCHEMA:
             manifest_file = Path(p['data_manifest_file'])
             manifest = json.loads(manifest_file.read_text())

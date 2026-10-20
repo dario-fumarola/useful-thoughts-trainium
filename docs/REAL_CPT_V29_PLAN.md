@@ -114,11 +114,26 @@ uncertainty distinct from conditional paired intervals. Preserve all errors,
 caps and unsupported answers. Writer inputs cannot access held continuations.
 No prompt/checkpoint/weight selection on the new panel. No fresh GSM8K/TEST claim.
 
-Exact scientific success criteria and power assumptions remain to be frozen
-after data readback and before a learning release. Historical V17 paired raw-LL
-SDs1.99–2.48 nats suggest768 documents can resolve several tenths of a nat, not
-arbitrarily small effects. A true effect exactly at a point-estimate threshold
-cannot provide80% passage probability. Accuracy power requires its own analysis.
+The [prospective design](../configs/real_cpt_scaffold_v29_design.json) now fixes the
+endpoints before learning or held model outcomes. Training benefit requires at
+least+0.25nat per16-token span and a positive paired95% lower bound against **both**
+trained controls in **both** data orders. A separate identical-threshold contrast
+against B0 determines whether this is also a new best starting-model path.
+Ordinary full-window NLL has a declared+0.03nat/token upper-confidence-bound
+retention target versus B0. A miss remains a measured cost, not a reason to stop
+healthy training or erase other findings. Overall CPT success requires all three.
+
+Paired10,000-replicate document bootstraps are conditional on fixed checkpoints.
+Under a conservative historical paired SD2.5nats and a true+0.5nat gain,768 items
+have approximately99.7% marginal normal-approximation passage probability and a
+98.9% union-bound lower estimate for all four trained-control contrasts. At a true
++0.35nat gain these become86.6% and46.5%; this design cannot confidently resolve
+arbitrarily small gains. The design records the entire planning grid, including
+the approximately50% marginal passage at the point threshold itself.
+
+Inference gains use separate secondary contrasts and cannot rescue a failed
+direct-prediction claim. Native likelihood, complete numerical accuracy, unsupported
+outputs and generation costs stay separate. No new held model outcomes were used.
 
 ## Remaining release conditions
 
