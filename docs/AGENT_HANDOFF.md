@@ -1,11 +1,13 @@
-<!-- Current handoff, 2026-10-20 01:25 UTC -->
+<!-- Current handoff, 2026-10-20T01:23:30.916507+00:00 -->
 V28 CPU preparation is complete, not a learning result. Active worktree:
 `local/worktrees/controlled-computation-v28`. All1,838 tests/CPU smoke/compile,
 38,912 independent execution/token checks and131,072 native TRAIN packs pass.
 Report `validation/permutation_program_v28_CPU_readiness_20261020.json`.
-No accelerator process active. Next: prepare bounded world4/width256 eight-update
-all-view qualification, full4/new-process restore/full8, then independent all-state
-checks. No long training release. Dataset:
+One bounded world4/width256 eight-update all-view qualification is active on
+physical12, supervisorPID1542616/session1542608, exec54924. Hard deadline02:17UTC,
+<=1reserved chip-hour. Control `local/diagnostics/permutation-program-v28-world4-qualification-v1`;
+output `local/nvme-study/diagnostics/permutation-program-v28-world4-qualification-v1`.
+Next inspect physical closure then run frozen `independent-audit.py`. No long training release. Dataset:
 `local/nvme-study/data/permutation-program-v28-cpu-v1`; evidence:
 `local/diagnostics/permutation-program-v28-CPU-v1`. Preserve old frozen worktrees.
 

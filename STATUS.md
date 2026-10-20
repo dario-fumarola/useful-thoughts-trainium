@@ -1,4 +1,4 @@
-# Status — 2026-10-20 01:25 UTC
+# Status — 2026-10-20 01:23 UTC
 
 ## Active: controlled computation CPU reference
 Question: can verified state supervision help beyond direct training and trained pauses?
@@ -9,9 +9,9 @@ All131,072 TRAIN packs PASS: equal answer weights/labels; disjoint trace loss; p
 All1,838 tests plus CPU smoke/compile PASS. Data/source/evidence readback/fsync protected on same-instance EBS.
 Trace treatment changes auxiliary targets and some answer-training contexts; compare complete recipes.
 Adapter permits only eight mixed-view diagnostic updates, save4/restart then8; no learning study released.
-Current source: local/worktrees/controlled-computation-v28; no active accelerator job.
+Frozen source ea926ca: local/worktrees/controlled-computation-v28; supervisorPID1542616/session1542608, exec54924.
 Report: validation/permutation_program_v28_CPU_readiness_20261020.json.
-Next: prepare bounded world4/width256 qualification, independent full-state audit and explicit space budget before launch.
+Active: physical12/logical48–51, world4/width256 full4→fresh-process restore→full8; hard deadline02:17UTC,<=1chip-hour.
 Limits: synthetic simple paths; no cycles, natural-language pretraining, autonomous discovery or capability claim.
 
 ## Closed: fresh confirmation feasibility
