@@ -1,0 +1,45 @@
+Displaying Current Memory Utilization:
+(NOTE: the lines are LONG, and NEFF id to name mapping is printed after)
+
+              |          |  Model   |  Model   |          |  Shared  |          |          |DMA Rings |DMA Rings | DMA Rings |DMA Rings |           | Profiler |
+              |  TOTAL   |   Code   |Constants | Tensors  |Scratchpad|Scratchpad| Runtime  |    IO    |  Spill   |Collectives| Runtime  |Collectives| Buffers  |
+ND 8 HBM 2    | 22.932GB |151.548MB | 1.828MB  | 6.415GB  | 1.000GB  |  0.000B  | 3.649MB  | 64.000KB | 15.363GB |  0.000B   |126.000KB |  0.000B   |  0.000B  |
+\_NC 4        | 14.963GB | 77.045MB | 1.047MB  | 6.415GB  |512.000MB |  0.000B  | 2.105MB  | 32.000KB | 7.969GB  |  0.000B   | 70.000KB |  0.000B   |  0.000B  |
+  \_NEFF 1001 |136.195KB | 24.188KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1002 |136.195KB | 24.188KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1003 |136.195KB | 24.188KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1004 |136.508KB | 24.500KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1005 |136.195KB | 24.188KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1006 |136.195KB | 24.188KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1007 |136.195KB | 24.188KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.008KB |  0.000B  |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1008 | 2.497GB  | 25.382MB |256.000KB |   n/a    |70.914MB* |  0.000B  |272.039KB | 32.000KB | 2.472GB  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1009 | 50.820KB | 22.812KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.008KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1010 | 2.490GB  | 24.893MB |272.000KB |   n/a    |64.805MB* |  0.000B  |272.039KB |  0.000B  | 2.465GB  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1011 | 2.490GB  | 24.893MB |272.000KB |   n/a    |64.805MB* |  0.000B  |272.039KB |  0.000B  | 2.465GB  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+\_NC 5        | 7.969GB  | 74.503MB |800.000KB |  0.000B  |512.000MB |  0.000B  | 1.544MB  | 32.000KB | 7.394GB  |  0.000B   | 56.000KB |  0.000B   |  0.000B  |
+  \_NEFF 1001 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1002 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1003 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1004 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1005 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1006 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1007 | 50.250KB | 22.250KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.000KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1008 | 2.489GB  | 24.399MB |256.000KB |   n/a    |47.758MB* |  0.000B  |272.039KB | 32.000KB | 2.465GB  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1009 | 50.820KB | 22.812KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  | 26.008KB |  0.000B  |  0.000B  |  0.000B   | 2.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1010 | 2.489GB  | 24.120MB |272.000KB |   n/a    |46.758MB* |  0.000B  |272.039KB |  0.000B  | 2.465GB  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+  \_NEFF 1011 | 2.489GB  | 24.120MB |272.000KB |   n/a    |46.758MB* |  0.000B  |272.039KB |  0.000B  | 2.465GB  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+
+NEFF id to name mapping:
+1001: "/tmp/ubuntu/neuroncc_compile_workdir/31949d86-7471-4bdb-ac04-909de54d6d79/model.MODULE_9984664294427331540+c4b1d492.neff"
+1002: "/tmp/ubuntu/neuroncc_compile_workdir/5d39fc4a-b9aa-4d33-beec-22ef6fb02623/model.MODULE_7761646869768135256+c4b1d492.neff"
+1003: "/tmp/ubuntu/neuroncc_compile_workdir/1e7f5b75-8655-409b-a510-78ec8608d9ef/model.MODULE_3314201227882727036+c4b1d492.neff"
+1004: "/tmp/ubuntu/neuroncc_compile_workdir/99c2c1fd-7bde-4679-8298-4574c78defbc/model.MODULE_4692911843641812798+c4b1d492.neff"
+1005: "/tmp/ubuntu/neuroncc_compile_workdir/310316a8-8623-4220-b173-4a4a3a11c611/model.MODULE_13229098011976347106+c4b1d492.neff"
+1006: "/tmp/ubuntu/neuroncc_compile_workdir/77b2e336-c99d-4cd0-aa11-a7d8c9b16e4c/model.MODULE_17092305539383364416+c4b1d492.neff"
+1007: "/tmp/ubuntu/neuroncc_compile_workdir/15ba9330-303d-4671-8052-6580f5400eec/model.MODULE_6486074295646267703+c4b1d492.neff"
+1008: "/tmp/ubuntu/neuroncc_compile_workdir/a1618769-4f43-48ed-9c35-20aceb32336b/model.MODULE_13667353835865395742+c4b1d492.neff"
+1009: "/tmp/ubuntu/neuroncc_compile_workdir/8c97c3cd-7617-4946-82ad-4e4889e273c1/model.MODULE_12279086867128892890+c4b1d492.neff"
+1010: "/tmp/ubuntu/neuroncc_compile_workdir/03c3ca05-5c02-4269-ab0f-5f484456bfe9/model.MODULE_16760504738655573524+c4b1d492.neff"
+1011: "/tmp/ubuntu/neuroncc_compile_workdir/102ab222-6454-48d9-ba50-eb436bf22398/model.MODULE_12230549338353009778+c4b1d492.neff"
+
+(*) Per-NEFF scratchpad reservation. Total HBM scratchpad usage is the max across loaded NEFFs, rounded up to page size (512.000MB).

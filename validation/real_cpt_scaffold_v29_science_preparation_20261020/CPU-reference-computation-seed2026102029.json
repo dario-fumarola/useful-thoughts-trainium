@@ -1,0 +1,220 @@
+{
+  "arm": "computation",
+  "comparisons_fixed_before_device_calls": {
+    "max_component_mean_abs_error": 0.02,
+    "max_total_abs_error": 0.025
+  },
+  "data_sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+  "global_counts": {
+    "continuation": 128,
+    "source": 16163,
+    "work": 271
+  },
+  "global_means": {
+    "continuation": 1.767505794763565,
+    "source": 1.4676043391227722,
+    "work": 0.7726301215589046
+  },
+  "global_total_loss": 1.8817000910639763,
+  "per_rank": [
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 1727,
+        "work": 30
+      },
+      "means": {
+        "continuation": 2.107332468032837,
+        "source": 1.2542724609375,
+        "work": 0.9111737608909607
+      },
+      "ordered_item_ids": [
+        "e0a01127c26e83d7e7686abdc545512380da03419d2917d31f1ce8d8dff6af56:537",
+        "3639b83872d91fc6be9c6c2d6043187f1479f165ab7df87366b912c837503702:raw-equation-v3:131",
+        "f69c1d9831e03a01bfd5c73f471e8fc93d5ba559eaab9ae817905ed1b265ff73:831",
+        "45511492dd427a6638584f5ff8861d0c4eb34da070a2718b3f28622aa7c310bb:5765"
+      ],
+      "rank": 0,
+      "total_loss": 1.7454824447631836
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 1915,
+        "work": 26
+      },
+      "means": {
+        "continuation": 1.14437997341156,
+        "source": 1.2754685878753662,
+        "work": 0.7973102927207947
+      },
+      "ordered_item_ids": [
+        "efde6644eb9ccd10f8b82bccf171c2dfbbb69706887b39cb4623a092622e7e65:1090",
+        "07690987ffc262fc4731edd2124c42e239b704f59f7962165903a0cfd0e1a239:raw-equation-v3:319",
+        "3114afbbb6404d9744ef2213ee68ad0f215fc2b3dffed8729ba130049a56c148:562",
+        "faae718c8a645fbb5e0440d377df6d6090eed69182cf1be7c3ddb86a558815c7:909"
+      ],
+      "rank": 1,
+      "total_loss": 1.6178436577320099
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 1981,
+        "work": 39
+      },
+      "means": {
+        "continuation": 2.7041869163513184,
+        "source": 1.7840244770050049,
+        "work": 0.5262625813484192
+      },
+      "ordered_item_ids": [
+        "55205685ccbec958ca6985ff9220a51a507d287cb6627d4af099e0791aa698ae:raw-equation-v3:385",
+        "2bb957a9aef71f339027115016b5669e72eb5c8cacc3fffdd9ffb184b631753a:731",
+        "8849784397f04ba6700b19eb3371fd8d9c5176ff83ddb7f578221b47b238a735:610",
+        "8ea0eb536afa3952bc1909227af9b814ebeda6dcf6801712ee68e2b01e32961c:2217"
+      ],
+      "rank": 2,
+      "total_loss": 2.2536134719848633
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 26
+      },
+      "means": {
+        "continuation": 1.602154016494751,
+        "source": 1.6202296018600464,
+        "work": 0.9486433267593384
+      },
+      "ordered_item_ids": [
+        "aa20ad4e3f83a28d7bb05f0af7ba300050b3635a8d6d4f1732c23f0faf9e1805:677",
+        "29ab52d014291ea76cc818fbbac0580398ccfdeef473764df826b6b5b2a6ec36:663",
+        "a2a9a4bbefbd5d4a392b6b7b2c32335a5881fd9dbf30d148c23f9387b9246216:1023",
+        "1069bff2c9f00fd3d1687206bddbaf5a5dc5016965db441841c9a8c5d0321164:raw-equation-v3:998"
+      ],
+      "rank": 3,
+      "total_loss": 2.057659685611725
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 50
+      },
+      "means": {
+        "continuation": 1.4973410367965698,
+        "source": 1.465251088142395,
+        "work": 0.4067653715610504
+      },
+      "ordered_item_ids": [
+        "a40d166af2935ebdf2097f3f0bf9df7c8cc5f3fbaf81d99b15e1ff477318e24b:990",
+        "0b9479003ac9e23f3713e0d4c6fe3f477ea90b5b2da933f11d4e66a88a84b4a5:raw-equation-v3:1015",
+        "896e38d46b736f6f45390e53159266becf12951aa7bb192ad96a25be48ba36fe:1868",
+        "8839f9926cecaa80e48b4e6228653840515186c90094be1ea64df3df6f46fa03:552"
+      ],
+      "rank": 4,
+      "total_loss": 1.7541100680828094
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 18
+      },
+      "means": {
+        "continuation": 2.0620687007904053,
+        "source": 1.2285462617874146,
+        "work": 1.0466862916946411
+      },
+      "ordered_item_ids": [
+        "356d3947f42ef9a32f0fba960649aa543850672de9b3a1b70676258ef97d6e8c:942",
+        "1da933ef119d693bd9b16ad44084f0948d4e5c272afa4d9e4367c09680536abd:raw-equation-v3:1921",
+        "3ddb933d1f0df9faac13bfd70295958328da226307211f7c4a8501fc10f32b93:512",
+        "e016b7c9e09cc6f15270a37575f6f467539c8b399acaae4af546fd36420a2e95:726"
+      ],
+      "rank": 5,
+      "total_loss": 1.7479764223098755
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 38
+      },
+      "means": {
+        "continuation": 1.4885752201080322,
+        "source": 1.5526771545410156,
+        "work": 0.8300452828407288
+      },
+      "ordered_item_ids": [
+        "23334c32b5e205dea3fe57f724a790d10b227496fd5bec1b29c766d3f512d024:2222",
+        "c110ec5063cf357bf6ff4dfaa0df0199ad7ba995e07189fc6d64634f553735e7:1851",
+        "797c90663ba4d16cf9a0b52fe9959e98b905aef6482dd0966b3ac1b91c956de5:548",
+        "8121e7304c7f4b2bda782ef088adfeb1aa434b2f8ab6d23ed3eabc870269feb0:raw-equation-v3:1473"
+      ],
+      "rank": 6,
+      "total_loss": 1.946260392665863
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 44
+      },
+      "means": {
+        "continuation": 1.5340080261230469,
+        "source": 1.560365080833435,
+        "work": 0.714154064655304
+      },
+      "ordered_item_ids": [
+        "ed70e7ae628d1cfd88ed3f46b2a23d10289cdfe87bd4d1f40fd49566a202d5bb:876",
+        "a37dbbff66180d1b36f99704b0e5a271377033904b354185eb40a377aa150a61:770",
+        "d8c2a579907d5098ec100c2c3493c8c4c147251a8df46bbeb2201d0a51a916e5:raw-equation-v3:3370",
+        "4a0287d6420da89904215e8747e7387cb028067b6c893a21404395f85b7f224e:6432"
+      ],
+      "rank": 7,
+      "total_loss": 1.9306545853614807
+    }
+  ],
+  "scope": "Actual released B0 and original TRAIN20480; no updates or held forwards. Clean forward cached per identical rank/source across arms.",
+  "seed": 2026102029,
+  "source_files": {
+    "configs/real_cpt_scaffold_v29_design.json": "5269f62a1a774bd112097be5309eaf53d9dedbe08a0d64153731d3cbbbaf2b8b",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "d10f3fb4a911d6c22060b2c63dfd1bc8abed72972bc00229cc7b5017c1bf59ea",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "status": "CPU_NATIVE_BF16_TRAIN_FIRST_STEP_REFERENCE_NOT_HARDWARE_PASS"
+}

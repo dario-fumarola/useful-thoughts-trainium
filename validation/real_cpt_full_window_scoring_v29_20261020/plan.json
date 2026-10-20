@@ -1,0 +1,96 @@
+{
+  "CPU_native_sha256": "3eb84b87f14615b2471b56b86a12084e9ad5c3f818250def7199d857e29815d3",
+  "HF_reference_sha256": "73a9f081967bc9624986e8e9ec941605afa5babf6b83840a936a0fbaa1a6749e",
+  "TRAIN_sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+  "assets": {
+    "directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "files": {
+      "config.json": {
+        "bytes": 727,
+        "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+      },
+      "generation_config.json": {
+        "bytes": 138,
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+      },
+      "merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      "model.safetensors": {
+        "bytes": 3441185608,
+        "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+      },
+      "tokenizer.json": {
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      "tokenizer_config.json": {
+        "bytes": 9678,
+        "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+      },
+      "vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38"
+  },
+  "batch_sizes": [
+    1,
+    4
+  ],
+  "continuation_suffix_tokens": 16,
+  "gate": "Every full527 target logp and direct suffix16 within.001nat of independent HF; all12 full-head native vectors pass standard KL and max_logp_error<=.001; no truncated or dropped positions.",
+  "head_chunk": 32,
+  "inputs_sha256": "bb7aa6da833347ff2bae1134c94021bf128a358c13f45f2ab4599ccc9bf84786",
+  "limits": "One frozen trained model/four TRAIN ordinary documents; qualification of the existing full-span scorer, not scientific learning, calibration or quality evidence.",
+  "logical_core": 32,
+  "max_abs_logp_error": 0.001,
+  "maximum_reserved_chip_hours": 0.75,
+  "model_binding": {
+    "path": "/home/ubuntu/dario/local/nvme-cpt/runs/real-source-balanced-v17-source_cot-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+    "run_id": "real-source-balanced-v17-source_cot-TRAIN5120-seed2026101913-v1",
+    "sha256": "9fb43e0faa8180c8859a50b722489821225379f8dc8424115f3ccdbbee0c0439",
+    "spec_hash": "7893d0e196def51d0f9e564ce1924f2cf7f13a4c96702aecd9626cd64e8cbf8a",
+    "step": 320
+  },
+  "model_sha256": "9fb43e0faa8180c8859a50b722489821225379f8dc8424115f3ccdbbee0c0439",
+  "native_positions": [
+    0,
+    263,
+    526
+  ],
+  "native_vectors": 12,
+  "physical_device": 8,
+  "real_transitions": 527,
+  "signature": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "2c1a40010ac1cfbdd11837510e20da48434544b819820b9250b45db831d95e89"
+  },
+  "source_commit": "00549912ccbf355ac3aeda1962cde7189ddeb5d2",
+  "source_tokens": 528,
+  "sources": {
+    "/home/ubuntu/dario/local/analysis/qualify_real_cpt_ordinary_full_window_v29_v2_20261020.py": "84d2df8024b4b19b9e676f849fddcc35df8f270ca4c119b146ef4e0eaaeef039",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4"
+  },
+  "status": "PREPARED_EXPLICIT_SYNC_REPAIR_SAME_INPUTS_MODEL_REFERENCES_AND_GATES",
+  "target_slots": 528,
+  "width": 528,
+  "repair": "Materialize shared trunk/gather once and each head chunk explicitly; no target,precision,reference or tolerance change.",
+  "original_attempt": {
+    "plan_sha256": "c0bb3d582a9b0a749bd8965c17cc81e65eaa735f7ab895cfc5c92c0492568bc2",
+    "closure_sha256": "3a59d17d45659b4c15c9eba4d3abf178e9e8a7ca6d1d70de55251a7712f28820",
+    "status": "FAILED_NRT_RESOURCE_BEFORE_COMPLETE_WINDOW_OUTPUT",
+    "reserved_chip_hours": 0.1052292899719517,
+    "memory_report": "Eleven loaded graphs;15.363GB DMA spill-ring reservations plus6.415GB tensors. Graph IDs1001..1011 are identifiers,not a graph count."
+  }
+}

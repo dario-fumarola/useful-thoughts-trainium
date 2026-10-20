@@ -1,0 +1,10 @@
+{
+  "status": "EXACT_ORIGINAL_INDEPENDENT_HF_REFERENCES_REUSED",
+  "original_plan_sha256": "c0bb3d582a9b0a749bd8965c17cc81e65eaa735f7ab895cfc5c92c0492568bc2",
+  "files": {
+    "inputs.json": "bb7aa6da833347ff2bae1134c94021bf128a358c13f45f2ab4599ccc9bf84786",
+    "HF-reference.json": "73a9f081967bc9624986e8e9ec941605afa5babf6b83840a936a0fbaa1a6749e",
+    "CPU-native.pt": "3eb84b87f14615b2471b56b86a12084e9ad5c3f818250def7199d857e29815d3"
+  },
+  "scope": "No new CPU model calls. Original HF reference did not use the modified scoring function. Same four TRAIN windows,actual trained weights,all527 targets and.001nat gate."
+}

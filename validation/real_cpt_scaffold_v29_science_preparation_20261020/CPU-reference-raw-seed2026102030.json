@@ -1,0 +1,220 @@
+{
+  "arm": "raw",
+  "comparisons_fixed_before_device_calls": {
+    "max_component_mean_abs_error": 0.02,
+    "max_total_abs_error": 0.025
+  },
+  "data_sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+  "global_counts": {
+    "continuation": 128,
+    "source": 16765,
+    "work": 0
+  },
+  "global_means": {
+    "continuation": 1.142990255728364,
+    "source": 1.4653756320476532,
+    "work": 0.0
+  },
+  "global_total_loss": 1.6082494140136987,
+  "per_rank": [
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 2.06602144241333,
+        "source": 1.7380375862121582,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "1bfe32789ce63a163476bda499725ddebddc2288839ea509b5a52e631db7868c:704",
+        "7623ab1ce3427f75b007c43d1ad083060e8ecf7c6f8a78943ae5a159cd4c9723:518",
+        "3f17def6d7356a6a4a00409374a1a58e84d43b87e2aa58b6a7737203fa12c4fb:raw-equation-v3:4713",
+        "034d4e967a8551b6f52c8be4b5205a0a23b20f27c2121076ba483243a2e822aa:943"
+      ],
+      "rank": 0,
+      "total_loss": 1.9962902665138245
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2009,
+        "work": 0
+      },
+      "means": {
+        "continuation": 1.0581626892089844,
+        "source": 1.0417096614837646,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "2f8b389164bb0c979577113390b937fa38825c338585b4a9f5ba06b2da0bfd3d:1631",
+        "39506545d661d50bdac35dde2dd45c9150fe4fcb3353dc16d589e9492efc78c4:1178",
+        "42f2a3cbf7f32efdd6bff7f024d63b56904a60cb24ecdc55be78cdaf72dc6025:574",
+        "a253143b53cd64c9dbf0c7ceea731c9b34ff8df448e685d8c9459f32a96c3073:raw-equation-v3:413"
+      ],
+      "rank": 1,
+      "total_loss": 1.1739799976348877
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.2062668651342392,
+        "source": 1.3990391492843628,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "122534607693241622e5361840bf3c22f2c0f41a22c323a8daa8930e98fdc40a:990",
+        "4e5de7f6724c25f66b48050ac1fdb977c8af9d2fd99e895dbf16e89e04f8a762:542",
+        "3a7c944b7b70127b0dc2de2073e8531ad760b24bdcd1e5994ec56cd521ff9764:raw-equation-v3:3629",
+        "3846ad76f770dbc4fea5e69d122cb145d050b2ede1eca25518f551e0a86a4de0:716"
+      ],
+      "rank": 2,
+      "total_loss": 1.4248225074261427
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.46142932772636414,
+        "source": 1.688366174697876,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "d1689f7168783658053809692534a4955633bc5a3f9e2a364ae07c1e1481501d:raw-equation-v3:2354",
+        "86cece9991c23ec4bc286e1c8644d7c797a4a10e43ce2b1ad6efbc9ecbee0bbd:524",
+        "34a1e9ff3ed8bd528c007bf812bd22f1c17daf90406c838f48abb6ddf113c631:1183",
+        "39d54d9b93be203c84eeb8ff26bf1029a6e3da83aa5a07b663bfe529858bb913:560"
+      ],
+      "rank": 3,
+      "total_loss": 1.7460448406636715
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 1.1672313213348389,
+        "source": 1.4882127046585083,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "de2dc8111f2c19a085a43797961f30fb3f817ef1274f665c5a5c7b574d7da59e:735",
+        "2437db8f4f8685387057a987859367898347ea868d69c770b29998e7b67f8642:raw-equation-v3:756",
+        "a2a19c599e79d4c5955af74ba37963960d5f50d662bd362cfb7220c966ea6471:940",
+        "d8ab3ce5ecfcade47566ca028d38f433a0c64293616e8ba3994d1efc9e640815:4259"
+      ],
+      "rank": 4,
+      "total_loss": 1.6341166198253632
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 1.4742475748062134,
+        "source": 1.2545497417449951,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "419714f526fc48e89f9eb61f533ed48e48e55c648324c9c9996ff3c3066f15a6:750",
+        "60fa94fed5d0f471ef505def6c0809af9fc294d273767c48f972cff1f2a1272d:raw-equation-v3:3586",
+        "85d2b2ee1bda0c4e2b33a3c01fd3b867be15218bdbc2819758f40ca4d04375db:559",
+        "702a9fffe695fb99d37a08132a4ec5808441aefc8860de6e8f3eb86e85e8ec98:866"
+      ],
+      "rank": 5,
+      "total_loss": 1.4388306885957718
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 1.3949121236801147,
+        "source": 1.7362253665924072,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "f61e8f6a02df3967d0d1bcd1fd48b0cc94c3871c6df3da559478e161ea84e951:raw-equation-v3:1419",
+        "76ad343f4861b78f4f0efb5c7b1618b88e6e36107e59646ce2a0e48b0aeae25a:545",
+        "f6b66be7b69f5bacf3dcf726b7db7b1a4b60b788d58aee5468200ee6f6ba0f18:597",
+        "f53e06a1dc155350abba123e7f5ecde55efb0dd6fe7d5f55705e9e8913a5c77b:785"
+      ],
+      "rank": 6,
+      "total_loss": 1.9105893820524216
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 1.3156507015228271,
+        "source": 1.3768646717071533,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "354265b16f3f2687126ff8f42027ef630c73b0acc21018ee39c6ce108d8d4fae:512",
+        "c6891478af1dc51528a59a45b57f903d1f056c2254053f56378de27c504fafe3:raw-equation-v3:1740",
+        "aa3e1b03e658885ced62b14239ee62cbe4e5545f2247eeb73ad6016f68d20af0:889",
+        "e76cc63ef300f3c98049895a84eb0576be20def8458d37bf1405f9943c90bde6:618"
+      ],
+      "rank": 7,
+      "total_loss": 1.5413210093975067
+    }
+  ],
+  "scope": "Actual released B0 and original TRAIN20480; no updates or held forwards. Clean forward cached per identical rank/source across arms.",
+  "seed": 2026102030,
+  "source_files": {
+    "configs/real_cpt_scaffold_v29_design.json": "5269f62a1a774bd112097be5309eaf53d9dedbe08a0d64153731d3cbbbaf2b8b",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "d10f3fb4a911d6c22060b2c63dfd1bc8abed72972bc00229cc7b5017c1bf59ea",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "status": "CPU_NATIVE_BF16_TRAIN_FIRST_STEP_REFERENCE_NOT_HARDWARE_PASS"
+}

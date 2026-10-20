@@ -1,20 +1,20 @@
-# Status — 2026-10-20 15:27 UTC
+# Status — 2026-10-20 15:48 UTC
 
-## Prepared: real continuation CPT; exact-source mechanics qualified
-Question: can verified computation improve real direct prediction with complete clean LM preserved?
+## Released initial64: real continuation CPT with clean LM supervision
+Question: does verified computation improve real direct prediction while retaining ordinary language prediction?
 ID:real-cpt-scaffold-v29; TRAIN20480; fresh arithmetic DEV768/ordinary DEV4096; no held model outcomes.
-Clean1/auxfuture0.5/work1 have separate means; raw,format and computation share all clean source tokens.
-Frozen primary requires+0.25nat/full16 and positive lower95 versus both trained controls,in both orders.
-B0 comparison and ordinary full527 retention target remain separate; no degraded-control-only capability claim.
-Guarded science source c9d2c0c passes1908CPU checks and an exact-source8-update/full4 restore/update8 run.
-Independent native16/all4960master-shard/moment/restore8 audit PASS; reservation0.228chip-hours.
-Full terminal8/run envelope has complete lossless EBS archive readback; all original RAM states retained.
-Report:validation/real_cpt_scaffold_v29_fixed_source_qualified_20261020.json.
-All6 actual B0 TRAIN first-step references prepared; fixed-arm protocols validated,not executed.
-Full527 scoring v1 fails NRT_RESOURCE; eleven loaded graphs/15GB spill queues,not a thousand graphs.
-Explicit synchronization repair0054991 passes1921CPU checks; identical TRAIN/model/reference/gate hardware v2 active.
-Next: finish scorer repair,lossless backup compaction and concrete storage/reservation review before science.
-No long scientific model or new held forward launched. V28 stays closed; oldR1234 stays stopped63.
+Raw,format and computation share complete clean supervision; continuation/work means remain separate.
+Primary/full16,B0 and ordinary/full527 criteria fixed before learning; two data orders,terminal1280 primary.
+Exact-source8/save4/restore8 independently PASS,including16native vectors/all4960master shards;0.228chip-hours.
+Full terminal8 lossless EBS archive and every member readback PASS; original RAM states retained.
+Full527 scorer sync repair passes actual B1/B4 4224 token scores/native12/suffix64;max error0.000083<0.001.
+Original scorer resource failure preserved; qualification total0.248chip-hours,not a capability result.
+All6 source/hardware/design-bound protocols and actual TRAIN first-step CPU references validate.
+Initial64-only release covers three fresh models/order2026102029 on disjoint8-core groups; no terminal release.
+Full original64/640/1280 states use RAM; EBS protects every terminal model and one rotating latest full state.
+Existing41 backup-only model archives close after full restore-SHA checks; all primary NVMe states/cache retained.
+Reports:real_cpt_scaffold_v29_stage64_release_20261020.json and real_cpt_full_window_scoring_v29_20261020.json.
+Next:launch initial64,check actual ordered updates/native/master/memory and protect states before continuing.
 
 ## Closed: controlled computation reference
 Question: do verified generated states improve fresh computation,and what remains without the trace?

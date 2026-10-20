@@ -1,0 +1,90 @@
+{
+  "status": "FROZEN_BEFORE_SCIENTIFIC_TRAINING_AND_HELD_MODEL_OUTCOMES",
+  "utc": "2026-10-20T15:39:01.116129+00:00",
+  "scientific_design_sha256": "5269f62a1a774bd112097be5309eaf53d9dedbe08a0d64153731d3cbbbaf2b8b",
+  "source_files": {
+    "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+    "train/real_trace_evaluation.py": "4a289e2f0228c00ce48c397519a63a91cbb3faee14854b73bde383f20c06d7b8",
+    "train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+    "train/batched_causal_decoder.py": "1a8cc92c8232af48987f465c59dec28187da8081a3b5f6bd6a679fcedd8e6d30",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9"
+  },
+  "models": "Unchanged B0 and all6 fixed1280 terminal models; no checkpoint/prompt selection",
+  "writer": {
+    "entrypoint": "train.batched_causal_decoder.BatchedGreedyDecoder; original GreedyDecoder for residual serial rows",
+    "projection": "train.real_trace_contexts.question_projection; prefix IDs and identity only",
+    "opening": "train.real_trace_contexts.writer_prompt",
+    "max_actions": 128,
+    "prefill_width": 544,
+    "stop_ids": [
+      151643,
+      16141
+    ],
+    "support": "Tokenizer-defined rows,matching existing GreedyDecoder; likelihood uses full released vocabulary.",
+    "batches": "Equal real prompt lengths only; batches8/4 and serial residuals,no fake duplicate examples or truncation.",
+    "attempts_per_model": 768,
+    "notes": "Exactly one greedy note per question/model; raw actions,content,text,stop,error,cap and actual cost retained. No resampling or selection by quality."
+  },
+  "reader": {
+    "entrypoint": "train.real_trace_contexts.reader_context",
+    "modes": [
+      "raw",
+      "empty",
+      "own",
+      "other",
+      "oracle",
+      "corrupt"
+    ],
+    "forced_closure": "Full native Answer boundary appended after exact note content,including cap/EOS notes; original stop preserved.",
+    "donor": "Sort original item IDs by SHA256 of v29-other:+item_id,then cyclically rotate by1; whole intact same-model note, no fixed points or length/outcome selection.",
+    "oracle": "verified_work(prefix_ids,tokenizer); full trace includes root answer; plumbing control only.",
+    "corrupt": "Same verified trace,replace only last computed root value by exact rational value+1. This is a one-value error in the final computation state,not a partial-trace mechanism test.",
+    "width": 672,
+    "span_tokens": 16,
+    "scorer": "train.document_qa_span_scores.score_spans with explicit execution barriers",
+    "all_modes_on_all_models": true,
+    "math_rows": 32256,
+    "full_model_binding": "Actual terminal active BF16 checkpoint upcast to FP32 for inference; full model-file SHA and native distributions checked."
+  },
+  "ordinary": {
+    "rows": 28672,
+    "tokens_per_row": 527,
+    "scorer": "Same qualified score_spans; original528 IDs,firstID as context and all527 remaining IDs as targets.",
+    "width": 528,
+    "target_slots": 528,
+    "batch_size": 4,
+    "primary": "Per-document mean NLL over all527 transitions",
+    "suffix16": "Exact last16 scores from same full-window vector; independent suffix check passed.",
+    "all_native_scores_saved": true
+  },
+  "scalar": {
+    "models": 7,
+    "modes": [
+      "raw",
+      "empty",
+      "own"
+    ],
+    "attempts": 16128,
+    "decoder": "Original train.evaluate.GreedyDecoder,greedy32 actions,prefill672,EOS-only stop,no answer-line stopping.",
+    "parser": "Unchanged train.scalar_completion.parse_initial_scalar_v2; scoring-only,no gold-dependent generation stop.",
+    "max_actions": 32,
+    "prefill_width": 672,
+    "stop_ids": [
+      151643
+    ],
+    "secondary": true,
+    "unsupported_errors_caps_retained": true,
+    "note": "A capped source continuation may still contain a complete initial scalar under the frozen parser. Report both parser status and cap; never silently count unsupported values as valid."
+  },
+  "native_checks": "Every actual model/process binds full checkpoint/asset/source hashes and compares fixed TRAIN full-head CPU FP32 references; KL<=.01,max_logp_error<=.001. Cached first-token versus full causal vector also checked before held generation. Existing FP32 greedy128 and full527 hardware qualifications support these shapes.",
+  "failure_policy": "Retain all attempted rows and original partial generations. No result gate on a missing/incomplete required endpoint. No posthoc parser or tolerance rescue.",
+  "limits": [
+    "FineMath calculation-targeted CPT,not broad language-model improvement.",
+    "Teacher root states contain the computed answer; oracle gains are not writer attainability or autonomous discovery.",
+    "Conditional paired intervals are not variation across model families/training histories."
+  ]
+}

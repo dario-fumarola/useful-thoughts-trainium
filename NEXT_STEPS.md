@@ -11,25 +11,23 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Complete V29 execution preparation; endpoints and fixed-arm protocols are frozen.
-   Exact-source c9d2c0c mechanics8/save4/restore8 independently PASS; full8 EBS archive is read back.
-   Report validation/real_cpt_scaffold_v29_fixed_source_qualified_20261020.json; actual cost0.228chip-hours.
-   Six actual TRAIN first-step B0 references and six complete fixed-arm protocols validate on CPU.
-   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; no execution release or held model outcomes.
-   Design configs/real_cpt_scaffold_v29_design.json fixes full16 primary,paired power/gates and B0/retention.
-   Finish full527 scorer: original TRAIN-only attempt fails NRT_RESOURCE before complete scores.
-   Its runtime table has11 loaded graphs,15GB DMA spill rings; IDs1001..1011 are identifiers,not counts.
-   Explicit source0054991 materializes shared selected hidden states and each head chunk.
-   All1921CPU checks pass; identical-input/model/HF-reference/gate hardware repair runs on logical32.
-   C=local/diagnostics/real-cpt-ordinary-full-window-v29-v2; preserve original failure,no automatic retry.
-   Bulk backup-only model archival is running on the original process after a temporary writer-serialization pause.
-   Every archive has full restore-SHA readback before duplicate retirement; all primary NVMe states/cache unchanged.
-   New full source-qualified checkpoint replaces the older disposable qualification optimizer backup;
-   its original RAM4/8 and EBS model/evidence remain. Retention marker names exact removed duplicates.
-   Resolve measured placement before scientific release; keep35GiB/filesystem and512GiBhost floors.
-   Do not claim every optimizer is EBS-protected if only latest-full plus models are protected.
-   Batch candidate is staged for new evaluation only; greedy writer qualification does not certify scalar readers.
-   Closed data builders and qualifiers are not rerun. No broad RL,size jump,TEST or V28 extension.
+1. Run the explicitly released first64 updates for V29's first data order.
+   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; release-stage64.json/review-stage64.json.
+   Three fixed-arm jobs cpt-{raw,format,computation}-seed2026102029-v1; disjoint logical0–7/8–15/16–23.
+   Existing engine numerical source c9d2c0c remains unchanged; one reducer after two independent forwards.
+   All6 actual fullTRAIN first-step references/protocols bind data/source/hardware/design;1921CPU checks PASS.
+   Full527 scoring repair0054991 is CLOSED/PASS with independent readback; original failure retained.
+   Report validation/real_cpt_full_window_scoring_v29_20261020.json; no need another scorer probe.
+   Launch scripts/run_real_cpt_scaffold_v29.py --control C --release C/release-stage64.json
+   --job <one exact job name> --phase stage64. No automatic retry or terminal1280 execution yet.
+   Audit all3 actual64 native/order/components/master/moments/replicas and memory,then protect checkpoint.
+   Before continuation,verify measured backup peak headroom and explicitly release original-run restore64→1280.
+   Source originals full64/640/1280 for all6 jobs stay on new RAM; terminal model backups and latest-full on EBS.
+   Full optimizer history is not all EBS-protected; never claim it is. No original state/cache deletion.
+   Prior41-file backup-only lossless archival closes; every decompressed SHA matches untouched NVMe original.
+   Keep35GiB filesystem/512GiBhost floors; serialize large archive writers and new compiler stages.
+   No new held model outcomes; no prompt/checkpoint/weight search. Primary1280 remains fixed.
+   No broad RL,size jump,officialTEST,V28 extension or oldR1234 resume.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

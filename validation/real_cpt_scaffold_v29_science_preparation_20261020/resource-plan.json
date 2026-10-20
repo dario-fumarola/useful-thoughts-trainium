@@ -1,0 +1,44 @@
+{
+  "status": "PROSPECTIVE_PLACEMENT_BEFORE_INITIAL64_RELEASE",
+  "utc": "2026-10-20T15:39:01.116627+00:00",
+  "science_reserved_chip_hours": 80,
+  "evaluation_reserved_chip_hours": 64,
+  "science_initial_seeds": [
+    2026102029
+  ],
+  "science_second_seed": 2026102030,
+  "parallelism": "Three arms per data order; disjoint8logical-core groups0\u20137/8\u201315/16\u201323,two physical chips each. Second data order follows first terminal models.",
+  "initial64_wall_seconds": 3600,
+  "terminal_phase_wall_seconds": 21600,
+  "stop_cleanup_reserve_seconds": 180,
+  "global_budget_cleanup_headroom_chip_hours": 1,
+  "filesystem_floor_GiB": 35,
+  "host_MemAvailable_floor_GiB": 512,
+  "initial_launch_root_free_GiB": 60,
+  "source_originals": {
+    "root": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29",
+    "backing": "/dev/shm/dario-real-cpt-scaffold-v29-science-v1",
+    "full_steps": [
+      64,
+      640,
+      1280
+    ],
+    "all6_full_states_retained": true,
+    "estimated_full_checkpoint_GiB": 22.44,
+    "all18_states_GiB": 404,
+    "scope": "New private RAM originals survive process failures but are volatile across node restart. No old state or compilation cache is removed."
+  },
+  "EBS": {
+    "all_terminal_models": true,
+    "model_format": "Lossless zstd archive with complete uncompressed SHA readback",
+    "full_optimizer_retention": "One rotating latest full archive for this study; preserve prior full archive until successor member-by-member readback/fsync. All original full states remain in RAM.",
+    "intermediate_model_backups": "Latest per-run model can replace an older backup copy after new readback; all original checkpoint models remain.",
+    "scope": "Same-instance EBS protects all terminal model weights and the latest full recovery state,not every optimizer history and not an off-instance replica.",
+    "minimum_before_backup": "35GiB floor + complete uncompressed payload size + possible model staging +1GiB; writers serialized. No archive producer starts unless that fits.",
+    "before_terminal_continuation": "Finish planned backup-only lossless model archival; preserve qualified full checkpoint and source originals. Recheck measured peak space for each wave; no projected compression result is called an existing backup.",
+    "compiler_interaction": "Do not overlap large EBS archive writes with new accelerator compilation; first64 stages physically close before backup rotation."
+  },
+  "retention_transition": "After verified science64 full archive,older disposable qualification full archive may become model+evidence-only EBS backup. Its original full RAM4/8 remain. Record every backup-only retirement explicitly; never claim protocols interchangeable.",
+  "release_scope": "This plan alone launches nothing. Explicit scoped stage64 release and review still required; terminal continuation requires all3 actual64 native/order/update/full-state/host-memory audits and protected checkpoint evidence.",
+  "readout_contract_sha256": "1dcaf96b6aa880f6b42f780f1d9a39ee47a3e3fc8fff91e851c63dfa943703bc"
+}

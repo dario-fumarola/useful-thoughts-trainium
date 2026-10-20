@@ -49,16 +49,16 @@ autonomous discovery or internalization. Official TEST remains unopened. The
 earlier V26 document-QA result below remains developmental and unconfirmed.
 
 [V29 preparation](docs/REAL_CPT_V29_PLAN.md) fixes20,480 real training windows
-and fresh768 arithmetic/4,096 ordinary DEV documents. Clean LM supervision is
-identical across raw,format and computation arms; continuation/work losses are
-separate. [Eight-update mechanics and full-state recovery](validation/real_cpt_scaffold_v29_mechanics_complete_20261020/REPORT.md)
-now pass on hardware, with independent native/master audits and terminal EBS
-protection. No new held-out model outcomes or long scientific run are released.
+and fresh768 arithmetic/4,096 ordinary DEV documents. All arms share complete clean
+LM supervision, with separate continuation/work losses. The exact-source update
+and restore checks pass. [Full-window scoring](validation/real_cpt_full_window_scoring_v29_20261020.json)
+now checks all527 ordinary transitions against independent HF references.
 
-A separate [trained-model batching check](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
-preserves all eight naturally stopped notes and their token arrays; batch8 is4.88×
-faster in the warmed microbenchmark. This qualifies a greedy writer candidate,
-not the full evaluation pipeline or a capability improvement.
+The [initial64 release](validation/real_cpt_scaffold_v29_stage64_release_20261020.json)
+covers three fresh models in the first data order. Terminal1,280-update training
+requires the planned checkpoint/memory review. No new held model outcomes exist.
+[Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
+remains a4.88× warmed microbenchmark result, separate from learning efficacy.
 
 ## Latest matched control (V26)
 

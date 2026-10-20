@@ -1,0 +1,212 @@
+{
+  "actual_NATIVE_vectors": 12,
+  "actual_full_window_scores": 4224,
+  "actual_suffix_scores": 64,
+  "artifacts": {
+    "CPU-reference-reuse.json": {
+      "bytes": 628,
+      "sha256": "8c33c47ab3164e2a2352996abc9deb2302d495348df5f7c756e714f3ca8f79dd"
+    },
+    "HF-reference.json": {
+      "bytes": 57759,
+      "sha256": "73a9f081967bc9624986e8e9ec941605afa5babf6b83840a936a0fbaa1a6749e"
+    },
+    "closure.json": {
+      "bytes": 271,
+      "sha256": "0b7a07f31e592b58a5226a56a4cdd695bf371414cd3aa11c4a014a3ae7b5957a"
+    },
+    "full-window-B1.json": {
+      "bytes": 58545,
+      "sha256": "5bd6e0b4145c1e56cb990e424ac9c3efe7b63a1a31aee30670bfc9dd7c19c478"
+    },
+    "full-window-B4.json": {
+      "bytes": 58571,
+      "sha256": "490b0365048abdc208f30fd1534b6beb26a15e5ffb0ccf5f4a8208eae117ff38"
+    },
+    "independent-check.json": {
+      "bytes": 4964,
+      "sha256": "3724c32f6e95f25f83fbe960308ce42b192aa57547677c36e0b83231d124f09c"
+    },
+    "independent-check.py": {
+      "bytes": 4036,
+      "sha256": "32cb149bad27101596c055c1dae4cba6376560a9ca43835d09326954fe7f4c43"
+    },
+    "inputs.json": {
+      "bytes": 24596,
+      "sha256": "bb7aa6da833347ff2bae1134c94021bf128a358c13f45f2ab4599ccc9bf84786"
+    },
+    "native-check.json": {
+      "bytes": 4456,
+      "sha256": "5c97f59803956eb097bc1f0a4b2ac122b464ca6c15f781630c91ca15686588fe"
+    },
+    "original-closure.json": {
+      "bytes": 270,
+      "sha256": "3a59d17d45659b4c15c9eba4d3abf178e9e8a7ca6d1d70de55251a7712f28820"
+    },
+    "original-original-score-spans.py": {
+      "bytes": 2729,
+      "sha256": "b2ac2255c731e62f7eeb1df5e20b573621d921b27f3d96ac7379aaf77ac7b3a9"
+    },
+    "original-plan.json": {
+      "bytes": 4423,
+      "sha256": "c0bb3d582a9b0a749bd8965c17cc81e65eaa735f7ab895cfc5c92c0492568bc2"
+    },
+    "original-runtime-memory-table.log": {
+      "bytes": 6045,
+      "sha256": "b175509fb67c69fbc3194e10a35e3ef90e7694e858e908ada869d3cfa9c90654"
+    },
+    "plan.json": {
+      "bytes": 5060,
+      "sha256": "710f83d1cce7ff052b4be07e38d9a2429025768300bbce44d31eade615cdd0c7"
+    },
+    "release.json": {
+      "bytes": 1133,
+      "sha256": "91326b64ef95e8270c86464f3f4eec2aa26a36ca6c25b3ba9efefbb6f1016527"
+    },
+    "suffix16-B4.json": {
+      "bytes": 2345,
+      "sha256": "519e61555f3b698e09ddb4d87a902ec84622c9b49cad4fa8b37a702add1141e8"
+    },
+    "worker-result.json": {
+      "bytes": 5352,
+      "sha256": "e65bdaa425632fdcb930b65f522bf16e30828c0d5ccb341e92de7eab2ff2b3e6"
+    }
+  },
+  "independent": {
+    "failed_original_reserved_chip_hours": 0.1052292899719517,
+    "limits": "Numerical execution on four TRAIN documents under one frozen trained model; no capability, calibration or generalization result. Cold-inclusive timings do not establish warm throughput.",
+    "max_abs_suffix_error": 3.24249267578125e-05,
+    "max_abs_target_error": {
+      "1": 8.273124694824219e-05,
+      "4": 6.747245788574219e-05
+    },
+    "native_checks": [
+      {
+        "device_to_reference_kl_nats": 1.3084380853569939e-11,
+        "max_bidirectional_kl_nats": 1.3084380853569939e-11,
+        "max_logp_error": 2.7131863920004662e-05,
+        "reference_to_device_kl_nats": 1.3071920217157358e-11,
+        "relative_l2_logp_error": 4.1331881129754714e-07,
+        "rms_logp_error": 6.012056312247886e-06
+      },
+      {
+        "device_to_reference_kl_nats": 6.183476054722949e-12,
+        "max_bidirectional_kl_nats": 6.185258062264621e-12,
+        "max_logp_error": 6.174316657947543e-05,
+        "reference_to_device_kl_nats": 6.185258062264621e-12,
+        "relative_l2_logp_error": 4.2236879995099875e-07,
+        "rms_logp_error": 1.199315099380376e-05
+      },
+      {
+        "device_to_reference_kl_nats": 2.0225220910080703e-13,
+        "max_bidirectional_kl_nats": 2.0225233562438897e-13,
+        "max_logp_error": 0.00012218159205446,
+        "reference_to_device_kl_nats": 2.0225233562438897e-13,
+        "relative_l2_logp_error": 1.4218951179635318e-06,
+        "rms_logp_error": 4.5238694427754614e-05
+      },
+      {
+        "device_to_reference_kl_nats": 3.146949866154685e-11,
+        "max_bidirectional_kl_nats": 3.146949866154685e-11,
+        "max_logp_error": 4.05603490882811e-05,
+        "reference_to_device_kl_nats": 3.1467748024624664e-11,
+        "relative_l2_logp_error": 9.437651264547958e-07,
+        "rms_logp_error": 1.5555277335367903e-05
+      },
+      {
+        "device_to_reference_kl_nats": 8.465857639138268e-12,
+        "max_bidirectional_kl_nats": 8.465857639138268e-12,
+        "max_logp_error": 4.0489646373487176e-05,
+        "reference_to_device_kl_nats": 8.46432353823488e-12,
+        "relative_l2_logp_error": 3.818441225497853e-07,
+        "rms_logp_error": 1.0558140270567444e-05
+      },
+      {
+        "device_to_reference_kl_nats": 1.4355841018758556e-11,
+        "max_bidirectional_kl_nats": 1.4355841018758556e-11,
+        "max_logp_error": 2.751460924699245e-05,
+        "reference_to_device_kl_nats": 1.4355068126134509e-11,
+        "relative_l2_logp_error": 2.415205269326995e-07,
+        "rms_logp_error": 5.842901450960967e-06
+      },
+      {
+        "device_to_reference_kl_nats": 3.2822247540265404e-10,
+        "max_bidirectional_kl_nats": 3.2822247540265404e-10,
+        "max_logp_error": 0.00013737810737168843,
+        "reference_to_device_kl_nats": 3.282191655739788e-10,
+        "relative_l2_logp_error": 4.236508250143749e-06,
+        "rms_logp_error": 6.427737666033666e-05
+      },
+      {
+        "device_to_reference_kl_nats": 7.84646222416012e-12,
+        "max_bidirectional_kl_nats": 7.84646222416012e-12,
+        "max_logp_error": 3.5572601390754244e-05,
+        "reference_to_device_kl_nats": 7.844457251250427e-12,
+        "relative_l2_logp_error": 2.233361254276492e-07,
+        "rms_logp_error": 6.961285793750649e-06
+      },
+      {
+        "device_to_reference_kl_nats": 2.228182975264985e-14,
+        "max_bidirectional_kl_nats": 2.228182975264985e-14,
+        "max_logp_error": 0.0002937323321958729,
+        "reference_to_device_kl_nats": 2.2280862565295765e-14,
+        "relative_l2_logp_error": 2.3134296989697186e-06,
+        "rms_logp_error": 0.00011750633371371534
+      },
+      {
+        "device_to_reference_kl_nats": 2.0933779570696296e-11,
+        "max_bidirectional_kl_nats": 2.0937245348658864e-11,
+        "max_logp_error": 3.7115721461589146e-05,
+        "reference_to_device_kl_nats": 2.0937245348658864e-11,
+        "relative_l2_logp_error": 5.433088148961299e-07,
+        "rms_logp_error": 8.615070116625669e-06
+      },
+      {
+        "device_to_reference_kl_nats": 5.673514857171006e-12,
+        "max_bidirectional_kl_nats": 5.674015638374611e-12,
+        "max_logp_error": 2.4483108170159085e-05,
+        "reference_to_device_kl_nats": 5.674015638374611e-12,
+        "relative_l2_logp_error": 1.8465528442278478e-07,
+        "rms_logp_error": 5.104472874930983e-06
+      },
+      {
+        "device_to_reference_kl_nats": 5.840425310454929e-12,
+        "max_bidirectional_kl_nats": 5.842540695059805e-12,
+        "max_logp_error": 2.2907316605369488e-05,
+        "reference_to_device_kl_nats": 5.842540695059805e-12,
+        "relative_l2_logp_error": 1.6680380662829484e-07,
+        "rms_logp_error": 4.551717260396177e-06
+      }
+    ],
+    "plan_sha256": "710f83d1cce7ff052b4be07e38d9a2429025768300bbce44d31eade615cdd0c7",
+    "serial_batch4_max_abs_difference": 1.52587890625e-05,
+    "source_sha256": "32cb149bad27101596c055c1dae4cba6376560a9ca43835d09326954fe7f4c43",
+    "status": "PASS_INDEPENDENT_NATIVE12_FULL4224_TARGETS_SUFFIX64_AND_PHYSICAL_CLOSURE",
+    "successful_reserved_chip_hours": 0.14297202667056505,
+    "total_question_reserved_chip_hours": 0.24820131664251677
+  },
+  "model": {
+    "path": "/home/ubuntu/dario/local/nvme-cpt/runs/real-source-balanced-v17-source_cot-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+    "run_id": "real-source-balanced-v17-source_cot-TRAIN5120-seed2026101913-v1",
+    "sha256": "9fb43e0faa8180c8859a50b722489821225379f8dc8424115f3ccdbbee0c0439",
+    "spec_hash": "7893d0e196def51d0f9e564ce1924f2cf7f13a4c96702aecd9626cd64e8cbf8a",
+    "step": 320
+  },
+  "original_attempt": "NRT_RESOURCE;11 loaded graphs with15.363GB DMA spill-ring reservations. Internal NEFF IDs were initially misread as a count; that progress statement was corrected. Original logs/source/closure retained.",
+  "question": "Can the reader score every ordinary-window transition reliably,including the same native continuation16?",
+  "repair": "Explicit materialization of shared selected hidden states and each head chunk; no input,target,model,precision,reference or gate changed.",
+  "repair_source_commit": "0054991",
+  "schema": "real-cpt-full-window-scoring-v29-v1",
+  "scope": "Four actual TRAIN ordinary documents and frozen V17 trained model. Numerical scoring qualification,not scientific learning or held-model evaluation.",
+  "source_files": {
+    "/home/ubuntu/dario/local/analysis/qualify_real_cpt_ordinary_full_window_v29_v2_20261020.py": "84d2df8024b4b19b9e676f849fddcc35df8f270ca4c119b146ef4e0eaaeef039",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval/train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4"
+  },
+  "status": "PASS_TRAIN_ONLY_FP32_FULL527_EXECUTION_AND_INDEPENDENT_READBACK",
+  "utc": "2026-10-20T15:43:38.956889+00:00",
+  "vectors": "Original CPU/XLA full-vocabulary vectors remain on EBS under the diagnostic directory; source plan binds their hashes."
+}
