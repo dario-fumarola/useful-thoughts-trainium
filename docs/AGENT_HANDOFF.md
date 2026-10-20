@@ -1,40 +1,31 @@
-<!-- Current handoff 2026-10-20 15:27 UTC; historical entries below -->
-Owner: continue autonomously/patiently; no final at milestones. No active goal or agent quota retries.
-V28 COMPLETE/PUBLIC,c47a823; do not rerun any closed producer or extend its training.
-Main source ea4d204; Wstudy and Weval now0054991 (training numerical files remain c9d2c0c).
-Wstudy=local/worktrees/real-cpt-scaffold-v29; Weval=local/worktrees/real-cpt-scaffold-v29-eval.
-Actual exact-source c9 qualifier C=local/diagnostics/real-cpt-scaffold-v29-qualification-v2 is CLOSED/PASS.
-Fresh4+resume8 exec39471 closed0,cost.2282909195chip-hours; native16/full4960master/moments/actualrestore8 audits pass.
-Independent audit80282 and full EBS archive23556 closed0. Full archive21669499051bytes; complete member readback.
-Original RAM4/8 retained under local/qualification/ram-real-cpt-scaffold-v29-v2/run-v1.
-New report under validation/real_cpt_scaffold_v29_fixed_source_qualified_20261020(.json,/),currently uncommitted.
-Old q1 still has original RAM4/8 and EBS model/evidence. Only8 old backup optimizer duplicates retired after
-full original/backup SHA equality and newer full source-qualified archive pass. Marker OPTIMIZER_BACKUP_RETENTION.json.
-q1/q2 protocols are not interchangeable; do not call old EBS path a complete optimizer backup now.
-All6 actual fullTRAIN first-step CPU references complete under local/diagnostics/real-cpt-scaffold-v29-science-v1.
-Prepare reference14148 CLOSED0; protocols6262 verify all6 fixed-arm source/hardware/design/data bindings.
-No scientific model launched; no new held model outcomes. Endpoints fixed in configs/real_cpt_scaffold_v29_design.json.
-Primary+.25nat/full16 and positive lower95 versus both controls,both orders; absoluteB0/ordinary retention separate.
-Full ordinary527 scoring engineering v1 CLOSED1,physical8/logical32 empty;cost.105229chip-hour.
-C1=local/diagnostics/real-cpt-ordinary-full-window-v29-v1; all original source,logs,CPU/native references retained.
-Important correction: NEFF IDs1001..1011 are identifiers; runtime table shows11 loaded graphs,not1000.
-Resource error has15.363GB DMA spill queues plus6.415GB tensors; no complete full-window output.
-Explicit5-line synchronization repair0054991 passes1921CPU checks; arithmetic/data/model/reference/tolerance unchanged.
-C2=local/diagnostics/real-cpt-ordinary-full-window-v29-v2 ACTIVE exec21874,one logical32/device8,40min bound.
-New script local/analysis/qualify_real_cpt_ordinary_full_window_v29_v2_20261020.py; no automatic retry.
-Do not edit live Weval numerical code; inspect actual result/closure. B1/B4 full527 and suffix16 gates pending.
-CPU references are independent actual HF forwards on4TRAIN ordinary documents under frozen V17T1913terminal320.
-A canonical CPU full527 readout is a possible execution fallback before held scoring,but requires actual CPU checker qualification.
-Bulk model-backup archival exec51218/PID1784486 still original finite41-file job,not a relaunch.
-C=local/diagnostics/backup-model-lossless-archive-v1; log local/analysis/archive-backup-models-20261020.log.
-Temporarily SIGSTOPped only own Python process while full archive wrote; SIGCONT after closure/retirement; receipts saved.
-Every lossless archive is full-SHA restored before backup duplicate unlink; original NVMe files untouched.
-Root free~60GiB while new compiler temps/archives run; floors35GiB/fs and512GiBhost. Serialize future large writers.
-Unused nvme4 is unmounted but NONZERO; read-only cmp/wipefs/file checks only. DO NOT format or overwrite it.
-Next finish scorer/archival,prepare concrete resource+backup retention plan and one scientific release review.
-Candidate:3arms in parallel per seed,all original full64/640/1280 on private RAM,all terminal models EBS,
-rotating latest-full EBS archive only if explicitly planned and accurately scoped; not yet released/frozen.
-No original state/cache deletion,new capacity,paid teacher,stack upgrade,officialTEST,R1234 or8B launch.
+<!-- Current handoff 2026-10-20 16:36 UTC; historical entries below -->
+Owner: continue autonomously/patiently; no final at milestones. No active goal; agent quota unavailable, do not retry agents.
+V28 COMPLETE/PUBLIC,c47a823; preserve closed producers. Main/Wstudy/Weval share73d9c91 before this documentation update.
+Wstudy=local/worktrees/real-cpt-scaffold-v29; numerical engine c9d2c0c remains fixed for all6 V29 runs.
+Weval=local/worktrees/real-cpt-scaffold-v29-eval; develop new evaluation wrapper here without editing frozen helpers.
+C=local/diagnostics/real-cpt-scaffold-v29-science-v1; O=local/science-runs/real-cpt-scaffold-v29 (private RAM).
+First seed2026102029: all3 initial64 independent native/order/master/moment/cast/CPU-loss checks PASS, full originals retained.
+All3 continuation supervisors ACTIVE: raw exec3711 PID1843731, format81339 PID1843733, computation86113 PID1843732.
+Children timeout process groups1843919/1843921/1843917. Release C/release-terminal1280-seed2026102029.json.
+Actual8-rank restore reports pass full model/optimizer bytes and tying for each job; updates114–116 at16:34UTC.
+Logical core groups0–7/8–15/16–23; six physical chips; healthy updates~6.3s. Fixed terminal1280, no held outcomes.
+Checkpoint queue PID1865138, source local/analysis/watch_real_cpt_v29_checkpoints_20261020.py, log C/checkpoint-queue-seed2026102029.log.
+Finite8h, waitsall3 full640 then independentCPU audits+EBS protection; repeats1280 after physical closure. No training/retries.
+Do not relaunch or edit hashed watcher/audit/protect sources while active. Recover existing session by ps/log if needed.
+All3 latest step64 models losslessly EBS readback/fsync verified; one rotating latest-full state currently raw64.
+B=local/backups/science/real-cpt-scaffold-v29, INDEX.json; EBS does not preserve every optimizer history, originals stay RAM.
+Root free~66GiB; floors35GiB/filesystem and512GiBhost. More verified backup-only model compression may be needed before seed2.
+Closed41-file backup-only archive reclaimed27.51GiB; all originalNVMe weights/cache untouched. q1 optimizer/q2 full backup duplicates
+retired only after newer full verification; q1/q2 original RAM4/8 states remain and EBS model/evidence remain. Receipts explicit.
+Scorer5-line0054991 repair CLOSED/PASS: full527 B1/B4 and suffix16 exact actualCPU gates; first resource failure preserved.
+Trained natural-stop B1/B4/B8 writer CLOSED/PASS; 4.88x microbenchmark only. Both qualifications are not learning evidence.
+Readout frozen C/readout-contract.json before training: 7models, math768x6modes, ordinary4096 all527, scalarraw/empty/own32actions.
+Use existing qualified helpers; question-only writer, no future. Every actualmodel/process fixedTRAIN native parity before held rows.
+Primary Traw gains>=.25nat/full16/positive95 versus both controls and separately B0 in bothorders; retention upper95<=+.03/token.
+All6 terminal identities fixed before held outcomes. No checkpoint/prompt/weight selection, no broadLM/autonomy claim from selectedFineMath.
+Next finish firstseed1280+auds/backups, then explicitly release freshseed2026102030 originalprotocols64/1280. No secondseed released yet.
+Whole study80chip-hour reservation; perphase6h, guard512GiBavailable/35GiBfree; resources C/resource-plan.json/reservations.json.
+No7B/8B,broadRL,officialTEST,newcloud,paidteacher,stack change,oldR1234 orV28 extension.
 
 ## Historical handoff snapshots (not active instructions)
 

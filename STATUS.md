@@ -1,6 +1,6 @@
-# Status — 2026-10-20 16:26 UTC
+# Status — 2026-10-20 16:36 UTC
 
-## Released continuation: matched real continuation CPT
+## Active: matched real continuation CPT
 Question: does verified computation improve real direct prediction with complete clean LM preserved?
 ID:real-cpt-scaffold-v29; TRAIN20480; arithmetic DEV768/ordinary DEV4096; no held model outcomes.
 All3 order2026102029 models complete64 updates; full order/component/native/master/moment/cast audits PASS.
@@ -13,7 +13,8 @@ Continuation release resumes the original full64 states to the fixed1280 endpoin
 Source/data/order/loss/precision and evaluation gates stay fixed; no checkpoint/prompt selection on DEV.
 Source engine c9d2c0c; supervisor scripts/run_real_cpt_scaffold_v29.py; C=local/diagnostics/real-cpt-scaffold-v29-science-v1.
 Report:validation/real_cpt_scaffold_v29_stage64_complete_20261020.json; readout/scoring qualifications are separate.
-Next:launch the3 continuations,verify actual full restorations,monitor resources and preserve640/1280 states.
+Active:3 continuations restore all8 model/optimizer ranks byte-exactly; updates114–116 observed at16:34UTC.
+Next:monitor terminal runs and finite checkpoint audit/protection queue; implement frozen held readout.
 Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,officialTEST or V28 extension.
 
 ## Closed: controlled computation reference

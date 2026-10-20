@@ -4,8 +4,8 @@
    Report validation/permutation_program_v28_complete_20261020.json and REPORT.md.
    Inference gate PASS at covered lengths: T18432/18430 versus D11914/1872 of18432.
    Training gate FAIL; longer T228/1 of2048; ordinary NLL severely regresses.
-   All23jobs/378880attempts close; primary independent readout and ordinary28-forward
-   verification PASS. All models and original outputs remain. No active accelerator work.
+   All23 V28jobs/378880attempts close; primary independent readout and ordinary28-forward
+   verification PASS. All V28 models and original outputs remain; V29 is active below.
    Portable archive replay reproduces exact readout SHAe995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f.
    Complete result is published as c47a823; public release v28-controlled-computation-20261020
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
@@ -18,7 +18,8 @@
    Report validation/real_cpt_scaffold_v29_stage64_complete_20261020.json.
    C=local/diagnostics/real-cpt-scaffold-v29-science-v1; release-terminal1280-seed2026102029.json.
    Run the same supervisor with --job cpt-{raw,format,computation}-seed2026102029-v1 --phase terminal1280.
-   It must restore/check each actual original full64 model/optimizer before further updates; no automatic retry.
+   All24 actual rank restorations PASS byte checks; continuations are active beyond update110.
+   Supervised sessions3711/81339/86113; checkpoint queue PID1865138 waits640/1280; no automatic retry.
    Full640/1280 originals remain in RAM; protect latest per-job model and one latest full EBS state with serialized writes.
    Same-instance EBS does not contain every optimizer history. Respect62GiB preflight plus35GiB absolute floor.
    Add only verified lossless backup-only archival if further model backups need room; never delete originals/cache.
