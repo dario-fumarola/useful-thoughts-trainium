@@ -54,9 +54,10 @@ LM supervision, with separate continuation/work losses. The exact-source update
 and restore checks pass. [Full-window scoring](validation/real_cpt_full_window_scoring_v29_20261020.json)
 now checks all527 ordinary transitions against independent HF references.
 
-The [initial64 release](validation/real_cpt_scaffold_v29_stage64_release_20261020.json)
-covers three fresh models in the first data order. Terminal1,280-update training
-requires the planned checkpoint/memory review. No new held model outcomes exist.
+All three first-order models have [completed64 updates and passed full audits](validation/real_cpt_scaffold_v29_stage64_complete_20261020.json).
+Warm updates take6.3–6.4s and bounded memory is stable. The original checkpoints
+are now released to continue to the fixed1,280-update endpoints. No new held
+model outcomes exist.
 [Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
 remains a4.88× warmed microbenchmark result, separate from learning efficacy.
 

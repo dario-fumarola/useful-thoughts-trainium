@@ -1,0 +1,60 @@
+{
+  "status": "MEASURED_ALL3_FULL64_TRAINING_AND_CHECKPOINT_MEMORY",
+  "results": {
+    "raw": {
+      "actual_steps": 64,
+      "warm_last32_median_seconds": 6.40572006200091,
+      "maximum_owned_PSS_GiB": 171.64236164093018,
+      "training_lastquarter_PSS_min_GiB": 150.33010959625244,
+      "training_lastquarter_PSS_max_GiB": 150.33966541290283,
+      "minimum_host_MemAvailable_GiB": 1297.2709846496582,
+      "closure": {
+        "actual_owned8_observed": true,
+        "assigned_devices_idle": true,
+        "exit_code": 0,
+        "external_stop": false,
+        "failure": null,
+        "first_step_checked": true,
+        "owned_session_absent": true,
+        "reserved_chip_hours": 0.33523100594611605
+      }
+    },
+    "format": {
+      "actual_steps": 64,
+      "warm_last32_median_seconds": 6.338694275531452,
+      "maximum_owned_PSS_GiB": 172.32479763031006,
+      "training_lastquarter_PSS_min_GiB": 152.27720260620117,
+      "training_lastquarter_PSS_max_GiB": 152.28678131103516,
+      "minimum_host_MemAvailable_GiB": 1298.7397956848145,
+      "closure": {
+        "actual_owned8_observed": true,
+        "assigned_devices_idle": true,
+        "exit_code": 0,
+        "external_stop": false,
+        "failure": null,
+        "first_step_checked": true,
+        "owned_session_absent": true,
+        "reserved_chip_hours": 0.3305453074016582
+      }
+    },
+    "computation": {
+      "actual_steps": 64,
+      "warm_last32_median_seconds": 6.332590530480957,
+      "maximum_owned_PSS_GiB": 170.9338035583496,
+      "training_lastquarter_PSS_min_GiB": 149.56485843658447,
+      "training_lastquarter_PSS_max_GiB": 149.57336139678955,
+      "minimum_host_MemAvailable_GiB": 1299.7622718811035,
+      "closure": {
+        "actual_owned8_observed": true,
+        "assigned_devices_idle": true,
+        "exit_code": 0,
+        "external_stop": false,
+        "failure": null,
+        "first_step_checked": true,
+        "owned_session_absent": true,
+        "reserved_chip_hours": 0.32982372271611693
+      }
+    }
+  },
+  "limits": "Bounded observations; no indefinite stability or held learning claim."
+}

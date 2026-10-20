@@ -11,23 +11,21 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Run the explicitly released first64 updates for V29's first data order.
-   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; release-stage64.json/review-stage64.json.
-   Three fixed-arm jobs cpt-{raw,format,computation}-seed2026102029-v1; disjoint logical0–7/8–15/16–23.
-   Existing engine numerical source c9d2c0c remains unchanged; one reducer after two independent forwards.
-   All6 actual fullTRAIN first-step references/protocols bind data/source/hardware/design;1921CPU checks PASS.
-   Full527 scoring repair0054991 is CLOSED/PASS with independent readback; original failure retained.
-   Report validation/real_cpt_full_window_scoring_v29_20261020.json; no need another scorer probe.
-   Launch scripts/run_real_cpt_scaffold_v29.py --control C --release C/release-stage64.json
-   --job <one exact job name> --phase stage64. No automatic retry or terminal1280 execution yet.
-   Audit all3 actual64 native/order/components/master/moments/replicas and memory,then protect checkpoint.
-   Before continuation,verify measured backup peak headroom and explicitly release original-run restore64→1280.
-   Source originals full64/640/1280 for all6 jobs stay on new RAM; terminal model backups and latest-full on EBS.
-   Full optimizer history is not all EBS-protected; never claim it is. No original state/cache deletion.
-   Prior41-file backup-only lossless archival closes; every decompressed SHA matches untouched NVMe original.
-   Keep35GiB filesystem/512GiBhost floors; serialize large archive writers and new compiler stages.
-   No new held model outcomes; no prompt/checkpoint/weight search. Primary1280 remains fixed.
-   No broad RL,size jump,officialTEST,V28 extension or oldR1234 resume.
+1. Continue the original first-order V29 runs from full64 to fixed1280.
+   All3 first64 native/order/components/master/moment/cast audits and CPU loss/count checks PASS.
+   Memory last-quarter range<.01GiB per job; warm6.33–6.41s; min host available1297GiB.
+   All3 model backups plus one full EBS archive have complete restore/member SHA readback; all originals retained.
+   Report validation/real_cpt_scaffold_v29_stage64_complete_20261020.json.
+   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; release-terminal1280-seed2026102029.json.
+   Run the same supervisor with --job cpt-{raw,format,computation}-seed2026102029-v1 --phase terminal1280.
+   It must restore/check each actual original full64 model/optimizer before further updates; no automatic retry.
+   Full640/1280 originals remain in RAM; protect latest per-job model and one latest full EBS state with serialized writes.
+   Same-instance EBS does not contain every optimizer history. Respect62GiB preflight plus35GiB absolute floor.
+   Add only verified lossless backup-only archival if further model backups need room; never delete originals/cache.
+   Complete all3 terminal1280 models and independent audits before releasing the second order2026102030.
+   Implement/qualify the frozen readout contract during training,without opening held model outcomes.
+   Whole study: two fixed orders,three arms,unaltered data/loss/precision; terminal models primary.
+   No DEV checkpoint/prompt/weight selection,no broad RL,size jump,TEST,V28 extension or oldR1234 resume.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

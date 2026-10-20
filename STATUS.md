@@ -1,20 +1,20 @@
-# Status — 2026-10-20 15:48 UTC
+# Status — 2026-10-20 16:26 UTC
 
-## Released initial64: real continuation CPT with clean LM supervision
-Question: does verified computation improve real direct prediction while retaining ordinary language prediction?
-ID:real-cpt-scaffold-v29; TRAIN20480; fresh arithmetic DEV768/ordinary DEV4096; no held model outcomes.
-Raw,format and computation share complete clean supervision; continuation/work means remain separate.
-Primary/full16,B0 and ordinary/full527 criteria fixed before learning; two data orders,terminal1280 primary.
-Exact-source8/save4/restore8 independently PASS,including16native vectors/all4960master shards;0.228chip-hours.
-Full terminal8 lossless EBS archive and every member readback PASS; original RAM states retained.
-Full527 scorer sync repair passes actual B1/B4 4224 token scores/native12/suffix64;max error0.000083<0.001.
-Original scorer resource failure preserved; qualification total0.248chip-hours,not a capability result.
-All6 source/hardware/design-bound protocols and actual TRAIN first-step CPU references validate.
-Initial64-only release covers three fresh models/order2026102029 on disjoint8-core groups; no terminal release.
-Full original64/640/1280 states use RAM; EBS protects every terminal model and one rotating latest full state.
-Existing41 backup-only model archives close after full restore-SHA checks; all primary NVMe states/cache retained.
-Reports:real_cpt_scaffold_v29_stage64_release_20261020.json and real_cpt_full_window_scoring_v29_20261020.json.
-Next:launch initial64,check actual ordered updates/native/master/memory and protect states before continuing.
+## Released continuation: matched real continuation CPT
+Question: does verified computation improve real direct prediction with complete clean LM preserved?
+ID:real-cpt-scaffold-v29; TRAIN20480; arithmetic DEV768/ordinary DEV4096; no held model outcomes.
+All3 order2026102029 models complete64 updates; full order/component/native/master/moment/cast audits PASS.
+Actual initial CPU loss/count bounds pass in all3; checkpoint64 states and every original remain.
+Warm last32 medians6.41/6.34/6.33s; training last-quarter PSS ranges<.01GiB;host available>=1297GiB.
+All3 latest models and one full state have complete lossless EBS readback/fsync; originals are in RAM.
+EBS keeps one latest full optimizer state,not all optimizer histories; qualification backup retirement is explicit.
+Initial stages cost0.996reserved chip-hours. No learning/generalization conclusion from these TRAIN checks.
+Continuation release resumes the original full64 states to the fixed1280 endpoint; second seed not released yet.
+Source/data/order/loss/precision and evaluation gates stay fixed; no checkpoint/prompt selection on DEV.
+Source engine c9d2c0c; supervisor scripts/run_real_cpt_scaffold_v29.py; C=local/diagnostics/real-cpt-scaffold-v29-science-v1.
+Report:validation/real_cpt_scaffold_v29_stage64_complete_20261020.json; readout/scoring qualifications are separate.
+Next:launch the3 continuations,verify actual full restorations,monitor resources and preserve640/1280 states.
+Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,officialTEST or V28 extension.
 
 ## Closed: controlled computation reference
 Question: do verified generated states improve fresh computation,and what remains without the trace?

@@ -1,0 +1,102 @@
+{
+  "actual_updates": 64,
+  "full_checkpoint": {
+    "COMPLETE_sha256": "a81d8aec2f749540701f81ab40f0da0010ad19290160229a946434e21729be09",
+    "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+    "model_sha256": "6c752325f5f1299a6dff0de0d9067d948729ee5b5b6e264a108132c020f63f4b",
+    "run_id": "cpt-raw-seed2026102029-v1",
+    "spec_hash": "edaad8f9c5482e1ed5614f15ca23de1d8c07e81f2ba95622d7af9a02dc420b1b",
+    "step": 64
+  },
+  "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+  "job": "cpt-raw-seed2026102029-v1",
+  "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+  "native": [
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 0.0031035199827929003,
+      "max_bidirectional_kl_nats": 0.0031035199827929003,
+      "max_logp_error": 0.4776469232392877,
+      "passed": true,
+      "reference_to_device_kl_nats": 0.0030380189436710462,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "rms_logp_error": 0.11136195315202935
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 0.0030418360999388177,
+      "max_bidirectional_kl_nats": 0.003069729731572845,
+      "max_logp_error": 0.3318406019216269,
+      "passed": true,
+      "reference_to_device_kl_nats": 0.003069729731572845,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "rms_logp_error": 0.06558423713648606
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 2.1572303394931953e-05,
+      "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+      "max_logp_error": 0.19990114601651499,
+      "passed": true,
+      "reference_to_device_kl_nats": 2.1102026604037457e-05,
+      "relative_l2_logp_error": 0.0014795616361593837,
+      "rms_logp_error": 0.04093075259376518
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 0.00032594614748145167,
+      "max_bidirectional_kl_nats": 0.00032594614748145167,
+      "max_logp_error": 0.2453446255999836,
+      "passed": true,
+      "reference_to_device_kl_nats": 0.0003244116031700364,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "rms_logp_error": 0.04909559206530713
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 0.0031035199827929003,
+      "max_bidirectional_kl_nats": 0.0031035199827929003,
+      "max_logp_error": 0.4776469232392877,
+      "passed": true,
+      "reference_to_device_kl_nats": 0.0030380189436710462,
+      "relative_l2_logp_error": 0.003857434345770694,
+      "rms_logp_error": 0.11136195315202935
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 0.0030418360999388177,
+      "max_bidirectional_kl_nats": 0.003069729731572845,
+      "max_logp_error": 0.3318406019216269,
+      "passed": true,
+      "reference_to_device_kl_nats": 0.003069729731572845,
+      "relative_l2_logp_error": 0.0034483210977830953,
+      "rms_logp_error": 0.06558423713648606
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 2.1572303394931953e-05,
+      "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+      "max_logp_error": 0.19990114601651499,
+      "passed": true,
+      "reference_to_device_kl_nats": 2.1102026604037457e-05,
+      "relative_l2_logp_error": 0.0014795616361593837,
+      "rms_logp_error": 0.04093075259376518
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 0.00032594614748145167,
+      "max_bidirectional_kl_nats": 0.00032594614748145167,
+      "max_logp_error": 0.2453446255999836,
+      "passed": true,
+      "reference_to_device_kl_nats": 0.0003244116031700364,
+      "relative_l2_logp_error": 0.002659860458269853,
+      "rms_logp_error": 0.04909559206530713
+    }
+  ],
+  "protocol_sha256": "c29fb81107ecaae8df3acd5edee720c9f2d15ac1f45d05a2986b854a5073239a",
+  "source_exposures": 2048,
+  "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+  "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+  "supervised_positions": 1048780,
+  "warm_last32_median_seconds": 6.40572006200091
+}
