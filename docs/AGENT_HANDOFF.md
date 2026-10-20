@@ -1,31 +1,33 @@
-<!-- Current handoff 2026-10-20 05:15 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 05:33 UTC; older entries below are historical -->
 V28 first-seed all three terminal4096 physically close0 and independent full-state
 model/master/moment/native/order audits PASS. No held outcomes.
 Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
-First wave8.296reserved chip-hours; all original terminal models/model64 retained.
+First wave8.296reserved chip-hours; original terminal models/model64 retained.
 Report validation/permutation_program_v28_first_wave_20261020.json protected.
-Second seed fresh B0 first64 ACTIVE physical0/1/2. Exec74848/10927/47288;
-timeout PID/startticks1600198/30791393,1600196/30791392,1600200/30791396.
-C=local/diagnostics/permutation-program-v28-study-v1; stage64-release-seed2026102029.json.
-First64 deadline05:46:53UTC; whole wave09:56:53UTC (no extension).
+Second seed all three actual full64/native/order audits and all12 actual fresh-process
+optimizer restoration digests independently PASS. C/second-seed-recovery-independent-audit.json.
+Continuation64→4096 ACTIVE physical0/1/2. Exec63854/78696/79385;
+timeout PID/startticks1613798/30885703,1613800/30885704,1613796/30885702.
+C=local/diagnostics/permutation-program-v28-study-v1; terminal-release-seed2026102029.json.
+Original whole-wave deadline09:56:53UTC; no extension or performance stopping.
 Original EBS outputs local/science-runs/controlled-computation-v28/program-<arm>-seed2026102029-v1.
-First second-seed launch used a relative --release path; driver changed cwd and
-failed before model load/outputs/updates. All three failures/empty temps preserved
-as first64-relative-path-failure; actual one explicit repair uses ABSOLUTE paths.
-Report validation/permutation_program_v28_second_seed_path_repair_20261020.json protected;
-failed cost0.0017701253chip-hours. Same source/protocol/deadlines; no automatic retry loop.
-Second first64 auditor exec85868 waits physical closures, audits sequentially;
-read-only watcher exec47839 emits step/PSS/closure/audit every45s (hard first64 deadline).
-Next wait all three first64 audits PASS, then release second continuation using
-local/analysis/release_permutation_program_v28_second_continuation_20261020.py.
-Source env.sh then override PYTHONPATH to frozen W plus local/test-deps; OMP/MKL8.
-Launch original supervise-job.py --phase terminal with ABSOLUTE --release path.
-After all12 restored-rank JSONs and metrics>64, run prepared
-local/analysis/check_permutation_program_v28_second_recovery_20261020.py
-before old64 optimizer payloads rotate at1024. Do not cat large per-rank JSONs.
-Then fixed4096 completion, physical closure and same independent --phase terminal audits.
-No original first-seed producer/auditor rerun. First-seed audits precede its optimizer rotation.
-Root~86GiB free before second64; rolling saves serialize,35GiB disk/512GiBhost floors.
+First second-seed launch used a relative --release path and failed before model load,
+outputs or updates. Three failed controls/empty temps preserved; one explicit absolute
+path correction uses same original release/deadlines. Public repair report protected.
+Failed cost0.0017701253chip-hours; no numerical source/protocol change or retry loop.
+Second first64 auditor exec85868 closed0; restoration checker exec44807 closed0.
+First64 model64 copies/manifests remain; optimizer payload may rotate after1024readback.
+Second terminal auditor exec75550 waits physical exit0+closure then audits each actual
+4096 checkpoint using local/analysis/audit_permutation_program_v28_job_20261020.py.
+Read-only second continuation watcher exec95213 emits steps/PSS/readback/closure/audit
+status every45s; exits on failures/all terminal audits or original09:56deadline.
+Startup PSS~69–71GiB matches first-wave restoration phase; root76GiB free afterfull64.
+Post-save first wave was~24GiB/arm. Disk floor35GiB/host512GiB; global serialized saves.
+Next monitor actual4096 and audits. No held inference before all6terminal audits.
+After all6, use ABSOLUTE paths for evaluation release and all prepared commands.
+Source env.sh then override PYTHONPATH to the relevant frozen worktree+local/test-deps.
+No original first-seed/first64/restore producer or auditor reruns. Recovery proof saved
+before old64payload rotation. No model selection or early capability claim.
 Owner reiterated03:19UTC: keep going patiently, unsupervised~8hours, no new deadline.
 Frozen evaluation W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
 New fixed-cohort wrapper/readout and optional generic decoder/prefill hook; no kernel/parser change.

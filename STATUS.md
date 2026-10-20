@@ -1,4 +1,4 @@
-# Status — 2026-10-20 05:15 UTC
+# Status — 2026-10-20 05:33 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
@@ -6,13 +6,13 @@ ID: controlled-computation-v28; six fresh1.7B models,32,768questions×4/4,096upd
 First seed direct/trace/pause complete4096; all three independent terminal model/master/moment/order/native audits PASS.
 All first-seed periodic exports/readbacks/resumptions close; terminal models and development64 remain retained.
 First wave8.296 reserved chip-hours; this is integrity evidence, zero held model outcomes.
-Second seed fresh B0 first64 ACTIVE on physical0/1/2; frozen training ce04236 unchanged.
-Exec74848/10927/47288; timeoutPIDs1600198/1600196/1600200, starts30791393/30791392/30791396.
+Second seed all three full64/native/order audits and all12 actual restoration digest comparisons PASS; continuation64→4096 ACTIVE.
+Exec63854/78696/79385; timeoutPIDs1613798/1613800/1613796, starts30885703/30885704/30885702; physical0/1/2.
 Control local/diagnostics/permutation-program-v28-study-v1; original EBS outputs local/science-runs/controlled-computation-v28.
-Second seed first64 deadline05:46UTC/whole wave09:56UTC; same fixed recipe and terminal endpoint.
+Second-seed whole deadline09:56UTC; frozen ce04236/same fixed recipe and4096terminal endpoint.
 Initial relative release-path launch failed before model load/outputs/updates; logs preserved; absolute-path repair costs0.00177chip-hours.
 Reports: permutation_program_v28_first_wave_20261020.json and permutation_program_v28_second_seed_path_repair_20261020.json; protected.
-Next await physical64 closure and independent all-state audits, then release fresh-process restore/4096; actual restoration digests checked before1024rotation.
+Next monitor fixed4096; terminal auditor exec75550 waits physical closure and audits all state. Watcher exec95213; no held inference.
 Frozen evaluator2eb3c1c/1861tests and fixed23-job max8-chip/18chip-hour queue prepared; numerical decoder/shards unchanged.
 No held inference until all six terminals audited; no checkpoint/prompt selection, automatic retry or learned capability claim.
 

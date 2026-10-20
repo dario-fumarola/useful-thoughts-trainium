@@ -28,16 +28,14 @@
    Frozen training source ce04236/full1855checks PASS. First-seed direct/trace/pause
    physically complete4096; all three independent terminal all-state/native/order
    audits PASS. Terminal models/model64 retained; first wave8.296reserved chip-hours.
-   Second-seed fresh B0 first64 ACTIVE physical0/1/2, exec74848/10927/47288.
-   C=local/diagnostics/permutation-program-v28-study-v1; output EBS
-   local/science-runs/controlled-computation-v28. First64 deadline05:46UTC;
-   whole second-wave deadline09:56UTC, no extension or performance stopping.
-   A relative release-path launch failed before model load/outputs/updates;
-   original failed logs remain, explicit absolute-path correction uses same release.
-   Await physical64 closure and frozen independent first64 audits. Then run
-   local/analysis/release_permutation_program_v28_second_continuation_20261020.py
-   with frozen study PYTHONPATH; supervise --phase terminal with ABSOLUTE release path.
-   Check all12 actual64 restoration digests before old64 payloads rotate.
+   Second-seed all three full64/native/order audits and all12 actual restoration
+   digest comparisons PASS. Continuation64→4096 ACTIVE physical0/1/2,
+   exec63854/78696/79385; original whole-wave deadline09:56UTC unchanged.
+   C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
+   local/science-runs/controlled-computation-v28. Second-seed recovery report:
+   C/second-seed-recovery-independent-audit.json. Original path failure preserved.
+   Monitor actual4096 completion; terminal auditor exec75550 waits physical closures
+   and runs the frozen independent all-state checker. Read-only watcher exec95213.
    Frozen evaluator2eb3c1c passes1861tests/15360native input checks and full-sized
    score fixtures. Fixed23-job queue is prepared for up to8 independent chips,
    summed18chip-hour accounting/stale-monitor stop; numerical decoder/shards unchanged.
