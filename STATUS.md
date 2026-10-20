@@ -1,18 +1,18 @@
-# Status — 2026-10-20 18:53 UTC
+# Status — 2026-10-20 19:15 UTC
 
 ## Active: matched real continuation CPT
 Question: does verified computation improve direct real prediction while retaining ordinary LM?
 ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; no held model outcomes.
-First order2026102029:all3 terminal1280 models physically close0; all ordered40960exposure/native/master/moment/cast/restore audits PASS.
-All3 latest1280 weights and one full optimizer archive pass complete EBS readback; original64/640/1280 states remain RAM.
-First order uses14.233reserved chip-hours. Same-instance EBS does not keep every optimizer history/offinstance backup.
-Actual terminal-weight TRAIN CPUreferences prepared for all3; no held forwards or scientific learning conclusion.
-Second unchanged order2026102030 starts freshB0 under explicit initial64-only release; all3 native8process groups observed.
-Active raw/format/computation exec6374/79765/60569; owned sessions1884002/1884006/1884004; logical0–23.
-Source/data/loss/precision/terminal endpoints and evaluation gates remain fixed; no checkpoint/prompt selection.
-Report:validation/real_cpt_scaffold_v29_first_order_complete_20261020.json; numerical engine c9d2c0c unchanged.
-Next:actual second64 CPUloss/native/order/fullstate/memory audits+protection,then original64→1280 continuation.
-All6 terminal identities precede held readout; prepared numerical/reference/analysis/resource paths stay fixed.
+First order2026102029:all3 terminal1280/state/order/native/restore/physical closure/protection checks PASS;14.233chip-hours.
+Second order2026102030:all3 initial64 CPUloss/count/native/order/full master/moment/cast and physical closure checks PASS.
+All3 second-order latestweights and one full64 optimizer archive pass complete EBS readback; original full states remain RAM.
+Original second64→1280 continuations ACTIVE;all8 restored model/optimizer bytes and parameter ties pass per job.
+Raw/format/computation exec54878/99041/48795; supervisors1907974/1907982/1908101; owned sessions1908044/1908164/1908281.
+Logical0–23; finite checkpoint watcher1908222(exec32419) audits/protects640/1280 without retries.
+Report:validation/real_cpt_scaffold_v29_second_order_start_20261020.json; numerical engine c9d2c0c unchanged.
+Source/data/loss/precision and all endpoint/analysis contracts remain fixed; no held checkpoint or prompt selection.
+Next:finish second1280,actual terminal audits/protection and remaining TRAIN CPUreferences,then all7 fixed-model held readout.
+Same-instance EBS retains latest model weights and one rotating full optimizer state,not every history/offinstance backup.
 Keep35GiB/filesystem/512GiBhost floors and80science/64evalchip-hour bounds; no RL,size jump,TEST or V28 extension.
 
 ## Closed: integrated real-CPT readout mechanics

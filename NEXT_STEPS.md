@@ -16,11 +16,10 @@
    All3 latestweights and one full1280 EBS archive pass complete member/SHA readback; all original64/640/1280 stay RAM.
    Science14.233reserved chip-hours; TRAIN CPUreferences on actual terminal weights ready; no held outcomes.
    Report validation/real_cpt_scaffold_v29_first_order_complete_20261020.json.
-   Second order2030 fresh initial64 is ACTIVE under C/release-stage64-seed2026102030.json.
-   Raw/format/computation exec6374/79765/60569; owned sessions1884002/1884006/1884004; all3 actual8ranks observed.
-   Run independent stage64 audits and protect --seed 2026102030 --step 64 after physical closures.
-   Review actual CPUloss/count/native/order/master/moment/cast/host memory,then release original64→1280 continuations.
-   Launch finite checkpoint watcher --seed 2026102030 once; no automatic retries or checkpoint selection.
+   Second order2030 initial64 closes0 in all3; CPUloss/count/native/order/full master/moment/cast and backup checks PASS.
+   Original64→1280 continuations ACTIVE exec54878/99041/48795,owned sessions1908044/1908164/1908281.
+   All8 actual restored full-model/optimizer byte checks and parameter ties PASS per job; finite watcher1908222(exec32419).
+   Watch640/1280 independent audits/protection. Do not relaunch,change endpoints,or inspect held outcomes early.
    C=local/diagnostics/real-cpt-scaffold-v29-science-v1; W=local/worktrees/real-cpt-scaffold-v29; enginec9d2c0c fixed.
    Readout qualified1932CPU checks/TRAIN native/cache/full16/full527. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
    Use E/execution-plan-v2.json and analysis-plan-v2.json. Independent ordinary can overlap writer on distinct chips.

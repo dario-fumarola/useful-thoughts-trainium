@@ -58,7 +58,7 @@ preserves every original score and gate.
 
 All three first-order models have [finished1,280 updates and passed full audits/protection](validation/real_cpt_scaffold_v29_first_order_complete_20261020.json).
 Warm updates take6.3–6.4s; first-order science costs14.233reserved chip-hours.
-The second unchanged data order is now training from freshB0. All6 terminal identities
+The second unchanged data order has passed [initial64 and full-state restoration checks](validation/real_cpt_scaffold_v29_second_order_start_20261020.json) and continues toward1,280. All6 terminal identities
 will be fixed before held outcomes. [Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
 passes TRAIN-only native/cache/full-target checks; those are not learning results.
 [Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)

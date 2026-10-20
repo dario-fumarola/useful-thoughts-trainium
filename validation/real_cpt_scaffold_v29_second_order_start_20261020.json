@@ -1,0 +1,725 @@
+{
+  "active_continuations": {
+    "computation": {
+      "actual_native8_observed": true,
+      "full_model_optimizer_bytes_and_parameter_ties_equal": true,
+      "owned_session": 1908281,
+      "restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "supervisor_pid": 1908101
+    },
+    "format": {
+      "actual_native8_observed": true,
+      "full_model_optimizer_bytes_and_parameter_ties_equal": true,
+      "owned_session": 1908164,
+      "restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "supervisor_pid": 1907982
+    },
+    "raw": {
+      "actual_native8_observed": true,
+      "full_model_optimizer_bytes_and_parameter_ties_equal": true,
+      "owned_session": 1908044,
+      "restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "supervisor_pid": 1907974
+    }
+  },
+  "checks": {
+    "computation": {
+      "closure.json": {
+        "actual_owned8_observed": true,
+        "assigned_devices_idle": true,
+        "exit_code": 0,
+        "external_stop": false,
+        "failure": null,
+        "first_step_checked": true,
+        "owned_session_absent": true,
+        "reserved_chip_hours": 0.32032237410888126
+      },
+      "first-step-reference.json": {
+        "component_abs_error": {
+          "continuation": 0.017526820302009583,
+          "source": 0.0011970698833465576,
+          "work": 0.006140429526567459
+        },
+        "counts_exact": true,
+        "passed": true,
+        "total_abs_error": 0.0025289244949817657
+      },
+      "independent-audit.json": {
+        "actual_updates": 64,
+        "full_checkpoint": {
+          "COMPLETE_sha256": "3fd7f36b5b3fcf0e77f9d12f939365537c42a99e939507eb3b59b860897a5041",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+          "model_sha256": "7367ecd8c64c476c44fb7a17b024cb10ce4c6119ff5b2845395f3c9513eb94c1",
+          "run_id": "cpt-computation-seed2026102030-v1",
+          "spec_hash": "926ced3d4f5a97c7d80d7d3adeadf716f8871ded59632a1326b8bad2b4194e2d",
+          "step": 64
+        },
+        "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+        "job": "cpt-computation-seed2026102030-v1",
+        "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+        "native": [
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0031035199827929003,
+            "max_bidirectional_kl_nats": 0.0031035199827929003,
+            "max_logp_error": 0.4776469232392877,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0030380189436710462,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "rms_logp_error": 0.11136195315202935
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0030418360999388177,
+            "max_bidirectional_kl_nats": 0.003069729731572845,
+            "max_logp_error": 0.3318406019216269,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.003069729731572845,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "rms_logp_error": 0.06558423713648606
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.1572303394931953e-05,
+            "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+            "max_logp_error": 0.19990114601651499,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.1102026604037457e-05,
+            "relative_l2_logp_error": 0.0014795616361593837,
+            "rms_logp_error": 0.04093075259376518
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.00032594614748145167,
+            "max_bidirectional_kl_nats": 0.00032594614748145167,
+            "max_logp_error": 0.2453446255999836,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0003244116031700364,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "rms_logp_error": 0.04909559206530713
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0031035199827929003,
+            "max_bidirectional_kl_nats": 0.0031035199827929003,
+            "max_logp_error": 0.4776469232392877,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0030380189436710462,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "rms_logp_error": 0.11136195315202935
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0030418360999388177,
+            "max_bidirectional_kl_nats": 0.003069729731572845,
+            "max_logp_error": 0.3318406019216269,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.003069729731572845,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "rms_logp_error": 0.06558423713648606
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.1572303394931953e-05,
+            "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+            "max_logp_error": 0.19990114601651499,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.1102026604037457e-05,
+            "relative_l2_logp_error": 0.0014795616361593837,
+            "rms_logp_error": 0.04093075259376518
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.00032594614748145167,
+            "max_bidirectional_kl_nats": 0.00032594614748145167,
+            "max_logp_error": 0.2453446255999836,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0003244116031700364,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "rms_logp_error": 0.04909559206530713
+          }
+        ],
+        "protocol_sha256": "a2bfa6c331a73c95c4f9f7ab538da099cfcce59935f5d97911a470f1161cd2f6",
+        "source_exposures": 2048,
+        "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+        "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+        "supervised_positions": 1067258,
+        "warm_last32_median_seconds": 6.3066442150156945
+      }
+    },
+    "format": {
+      "closure.json": {
+        "actual_owned8_observed": true,
+        "assigned_devices_idle": true,
+        "exit_code": 0,
+        "external_stop": false,
+        "failure": null,
+        "first_step_checked": true,
+        "owned_session_absent": true,
+        "reserved_chip_hours": 0.3184687656377597
+      },
+      "first-step-reference.json": {
+        "component_abs_error": {
+          "continuation": 0.006634578108787537,
+          "source": 0.0011970698833465576,
+          "work": 0.0036079585552215576
+        },
+        "counts_exact": true,
+        "passed": true,
+        "total_abs_error": 0.0011244937777519226
+      },
+      "independent-audit.json": {
+        "actual_updates": 64,
+        "full_checkpoint": {
+          "COMPLETE_sha256": "8141bc0297984eb9070b013920f663f04bea5305a5357262beee94c77a5f4572",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+          "model_sha256": "660d7d6c477665ca872fb4b6fd1556540e6144c02c32a547e1e16e1b6edf3cf7",
+          "run_id": "cpt-format-seed2026102030-v1",
+          "spec_hash": "9ff7f96579357e66d0c3dd42f15eb83b269874f1d05817ba1138c5b9f1985b4d",
+          "step": 64
+        },
+        "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+        "job": "cpt-format-seed2026102030-v1",
+        "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+        "native": [
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0031035199827929003,
+            "max_bidirectional_kl_nats": 0.0031035199827929003,
+            "max_logp_error": 0.4776469232392877,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0030380189436710462,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "rms_logp_error": 0.11136195315202935
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0030418360999388177,
+            "max_bidirectional_kl_nats": 0.003069729731572845,
+            "max_logp_error": 0.3318406019216269,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.003069729731572845,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "rms_logp_error": 0.06558423713648606
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.1572303394931953e-05,
+            "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+            "max_logp_error": 0.19990114601651499,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.1102026604037457e-05,
+            "relative_l2_logp_error": 0.0014795616361593837,
+            "rms_logp_error": 0.04093075259376518
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.00032594614748145167,
+            "max_bidirectional_kl_nats": 0.00032594614748145167,
+            "max_logp_error": 0.2453446255999836,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0003244116031700364,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "rms_logp_error": 0.04909559206530713
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0031035199827929003,
+            "max_bidirectional_kl_nats": 0.0031035199827929003,
+            "max_logp_error": 0.4776469232392877,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0030380189436710462,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "rms_logp_error": 0.11136195315202935
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0030418360999388177,
+            "max_bidirectional_kl_nats": 0.003069729731572845,
+            "max_logp_error": 0.3318406019216269,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.003069729731572845,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "rms_logp_error": 0.06558423713648606
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.1572303394931953e-05,
+            "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+            "max_logp_error": 0.19990114601651499,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.1102026604037457e-05,
+            "relative_l2_logp_error": 0.0014795616361593837,
+            "rms_logp_error": 0.04093075259376518
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.00032594614748145167,
+            "max_bidirectional_kl_nats": 0.00032594614748145167,
+            "max_logp_error": 0.2453446255999836,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0003244116031700364,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "rms_logp_error": 0.04909559206530713
+          }
+        ],
+        "protocol_sha256": "8fecf8b7c081dcf4ecaf481b5f61777f60e5453ddf5b57b0aa3cc73e76fe14ec",
+        "source_exposures": 2048,
+        "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+        "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+        "supervised_positions": 1050857,
+        "warm_last32_median_seconds": 6.308509907015832
+      }
+    },
+    "raw": {
+      "closure.json": {
+        "actual_owned8_observed": true,
+        "assigned_devices_idle": true,
+        "exit_code": 0,
+        "external_stop": false,
+        "failure": null,
+        "first_step_checked": true,
+        "owned_session_absent": true,
+        "reserved_chip_hours": 0.32228269238002316
+      },
+      "first-step-reference.json": {
+        "component_abs_error": {
+          "continuation": 0.008676623925566673,
+          "source": 0.0011970698833465576,
+          "work": 0.0
+        },
+        "counts_exact": true,
+        "passed": true,
+        "total_abs_error": 0.00011240248568356037
+      },
+      "independent-audit.json": {
+        "actual_updates": 64,
+        "full_checkpoint": {
+          "COMPLETE_sha256": "7bdf03ada51e6444f831e1acac294eaed8dff1d5349ba95080feb0cae5b0bcb0",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+          "model_sha256": "c0c88dc0f4cb5157ee3c15ebd317122b0a12dec54fe09609e5fd62b21b5c66eb",
+          "run_id": "cpt-raw-seed2026102030-v1",
+          "spec_hash": "205a5f8004cbcd469e5d721bfa1702e70bbd91a8e1bd2a85945a32930a0fb02c",
+          "step": 64
+        },
+        "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+        "job": "cpt-raw-seed2026102030-v1",
+        "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+        "native": [
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0031035199827929003,
+            "max_bidirectional_kl_nats": 0.0031035199827929003,
+            "max_logp_error": 0.4776469232392877,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0030380189436710462,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "rms_logp_error": 0.11136195315202935
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0030418360999388177,
+            "max_bidirectional_kl_nats": 0.003069729731572845,
+            "max_logp_error": 0.3318406019216269,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.003069729731572845,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "rms_logp_error": 0.06558423713648606
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.1572303394931953e-05,
+            "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+            "max_logp_error": 0.19990114601651499,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.1102026604037457e-05,
+            "relative_l2_logp_error": 0.0014795616361593837,
+            "rms_logp_error": 0.04093075259376518
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.00032594614748145167,
+            "max_bidirectional_kl_nats": 0.00032594614748145167,
+            "max_logp_error": 0.2453446255999836,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0003244116031700364,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "rms_logp_error": 0.04909559206530713
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0031035199827929003,
+            "max_bidirectional_kl_nats": 0.0031035199827929003,
+            "max_logp_error": 0.4776469232392877,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0030380189436710462,
+            "relative_l2_logp_error": 0.003857434345770694,
+            "rms_logp_error": 0.11136195315202935
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.0030418360999388177,
+            "max_bidirectional_kl_nats": 0.003069729731572845,
+            "max_logp_error": 0.3318406019216269,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.003069729731572845,
+            "relative_l2_logp_error": 0.0034483210977830953,
+            "rms_logp_error": 0.06558423713648606
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 2.1572303394931953e-05,
+            "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+            "max_logp_error": 0.19990114601651499,
+            "passed": true,
+            "reference_to_device_kl_nats": 2.1102026604037457e-05,
+            "relative_l2_logp_error": 0.0014795616361593837,
+            "rms_logp_error": 0.04093075259376518
+          },
+          {
+            "argmax_equal": true,
+            "device_to_reference_kl_nats": 0.00032594614748145167,
+            "max_bidirectional_kl_nats": 0.00032594614748145167,
+            "max_logp_error": 0.2453446255999836,
+            "passed": true,
+            "reference_to_device_kl_nats": 0.0003244116031700364,
+            "relative_l2_logp_error": 0.002659860458269853,
+            "rms_logp_error": 0.04909559206530713
+          }
+        ],
+        "protocol_sha256": "966917d9cda7a9cccf090185dd1de86c557e7bdc4d10742455864167f1a7d29c",
+        "source_exposures": 2048,
+        "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+        "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+        "supervised_positions": 1049833,
+        "warm_last32_median_seconds": 6.38943269601441
+      }
+    }
+  },
+  "experiment": "real-cpt-scaffold-v29",
+  "limits": [
+    "TRAIN execution and state integrity only; held model outcomes unopened.",
+    "Numerical engine,data,source/loss/precision and fixed1280 terminal endpoints unchanged.",
+    "Same-instance EBS protects latest model weights and one rotating full optimizer state; all original full states remain in volatile RAM.",
+    "Actual restore equality is not an uninterrupted-trajectory parity claim.",
+    "Second-order memory summary excludes one process-exit null-memory observation from PSS sums; original attempt and host samples preserved."
+  ],
+  "memory": {
+    "jobs": {
+      "cpt-computation-seed2026102030-v1": {
+        "host_samples_sha256": "7411e4622eea121c3b5f69ba1f1e7444ea8f08d28be29a2ed16bf9df80e42972",
+        "incomplete_process_memory_samples": 1,
+        "metrics_sha256": "3017d998719e47dfd5acedf322895ecd01a674d69e1efb3c5427510cff8ed07b",
+        "min_MemAvailable_GiB": 1096.6410217285156,
+        "total_complete_sampled_PSS_peak_GiB": 171.2063341140747,
+        "warm_PSS_GiB_max": 151.3204526901245,
+        "warm_PSS_GiB_min": 151.3019666671753,
+        "warm_last32_median_seconds": 6.3066442150156945,
+        "warm_samples": 16
+      },
+      "cpt-format-seed2026102030-v1": {
+        "host_samples_sha256": "e84edf746e2e85e26f21fbe1472787783e6e47acf9994b0dae95b74cfef118bc",
+        "incomplete_process_memory_samples": 0,
+        "metrics_sha256": "4aeda71a77677bc70d9811b79db339f92e0963bc35323968079265c112adfacd",
+        "min_MemAvailable_GiB": 1092.90087890625,
+        "total_complete_sampled_PSS_peak_GiB": 171.9323968887329,
+        "warm_PSS_GiB_max": 152.28852462768555,
+        "warm_PSS_GiB_min": 152.27005767822266,
+        "warm_last32_median_seconds": 6.308509907015832,
+        "warm_samples": 16
+      },
+      "cpt-raw-seed2026102030-v1": {
+        "host_samples_sha256": "26c06d6b1f42520ce0630df54c1cccc53951e96c4fecb165295b129a3b904dd7",
+        "incomplete_process_memory_samples": 0,
+        "metrics_sha256": "441b34ebae75cd67f1a50326df125c773ebab8283b22b242eea3565069505c08",
+        "min_MemAvailable_GiB": 1094.3966484069824,
+        "total_complete_sampled_PSS_peak_GiB": 171.69421291351318,
+        "warm_PSS_GiB_max": 153.9858112335205,
+        "warm_PSS_GiB_min": 153.81621265411377,
+        "warm_last32_median_seconds": 6.38943269601441,
+        "warm_samples": 17
+      }
+    },
+    "scope": "PSS over actual owned sessions; warm after32 through before64,checkpoint export excluded from plateau. Null process memory samples during exit are retained in originals and excluded from PSS sums. All global available-memory samples retained. No indefinite stability claim.",
+    "status": "MEASURED_BOUNDED_SECOND_ORDER_INITIAL64_HOST_MEMORY"
+  },
+  "pins": {
+    "local/diagnostics/real-cpt-scaffold-v29-science-v1/memory-stage64-seed2026102030-original-attempt.json": "477dccea23c26e3fdeb890c23518d5043c94f5f463be1a8f54ac6e9921d2f344",
+    "local/diagnostics/real-cpt-scaffold-v29-science-v1/release-terminal1280-seed2026102030.json": "2fe84138aa01d65063167aa9462e0317834551c91c7f75c988cbbcdf48a4689a",
+    "local/diagnostics/real-cpt-scaffold-v29-science-v1/review-terminal1280-seed2026102030.json": "17291dbdd227503766ee87520d121cdb1ce84bdf88cc64f1087a7b4d69089bf2"
+  },
+  "protection": {
+    "all_original_full_states_retained_in_RAM": true,
+    "full_archive": {
+      "COMPLETE_sha256": "7bdf03ada51e6444f831e1acac294eaed8dff1d5349ba95080feb0cae5b0bcb0",
+      "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/full-cpt-raw-seed2026102030-v1-step-0000064.tar.zst",
+      "archive_bytes": 21629007503,
+      "archive_sha256": "af8fbe09aa7af4806a92d41492d6433f19b9af1912488a2b400ad4b8cfb252ad",
+      "files": {
+        "run-envelope/metrics.jsonl": {
+          "bytes": 197886,
+          "sha256": "441b34ebae75cd67f1a50326df125c773ebab8283b22b242eea3565069505c08"
+        },
+        "run-envelope/protocol.json": {
+          "bytes": 7602,
+          "sha256": "966917d9cda7a9cccf090185dd1de86c557e7bdc4d10742455864167f1a7d29c"
+        },
+        "run-envelope/run.json": {
+          "bytes": 2017,
+          "sha256": "98d47566ca23b09cd26d8be66ea668e148aa0d43a099063a5c4c6f1e26491fb8"
+        },
+        "step-0000064/COMPLETE.json": {
+          "bytes": 2049,
+          "sha256": "7bdf03ada51e6444f831e1acac294eaed8dff1d5349ba95080feb0cae5b0bcb0"
+        },
+        "step-0000064/cpu-export-release-rank-00000.json": {
+          "bytes": 155,
+          "sha256": "0b5b0b27e4460053b9bc7b31862a2e3c23a9967c9f165a650cf8aa63a1f943dd"
+        },
+        "step-0000064/cpu-export-release-rank-00001.json": {
+          "bytes": 155,
+          "sha256": "07fd3b8be55892247540500fb0d57a809781cdc9a8e75535a487a231cbe69c0c"
+        },
+        "step-0000064/cpu-export-release-rank-00002.json": {
+          "bytes": 155,
+          "sha256": "fa0d00b381a20ef2660ae6f87498200e899adf7f5e62506c81c4c0c1406f52e4"
+        },
+        "step-0000064/cpu-export-release-rank-00003.json": {
+          "bytes": 155,
+          "sha256": "41b456a2f22e87c8835443d33a0237c59a4bf9489c3b4cd47950bbd379051baa"
+        },
+        "step-0000064/cpu-export-release-rank-00004.json": {
+          "bytes": 155,
+          "sha256": "4c8c5435f1a435eedfae34f42ab0ed2c9b7d6830bc166e8c5d87046b198b78b1"
+        },
+        "step-0000064/cpu-export-release-rank-00005.json": {
+          "bytes": 155,
+          "sha256": "6f973c9c7e10e562bbe763d3145ee0b9e14a1e1c08ea6d6d4cf251fcd89e179b"
+        },
+        "step-0000064/cpu-export-release-rank-00006.json": {
+          "bytes": 155,
+          "sha256": "4e28109cd63e586dc27ee044e52edd3ae0582a5f2fe13348e6f819b18012cb28"
+        },
+        "step-0000064/cpu-export-release-rank-00007.json": {
+          "bytes": 155,
+          "sha256": "705d54fe457d0154a30ee7e58812490d614b1ae7dd4f1577bcf361c6ff0f1406"
+        },
+        "step-0000064/model.pt": {
+          "bytes": 3441248275,
+          "sha256": "c0c88dc0f4cb5157ee3c15ebd317122b0a12dec54fe09609e5fd62b21b5c66eb"
+        },
+        "step-0000064/rank-00000.pt": {
+          "bytes": 2581278407,
+          "sha256": "5b64b9be17fc9ecf78e5a2b1d5ba1baba5b26159ff9c032a0fdc1a83d7a6887e"
+        },
+        "step-0000064/rank-00001.pt": {
+          "bytes": 2581278407,
+          "sha256": "c5ee3f8f43114c47b221cb39d052c25f98415d78dba5f18bcf8e60f840548f29"
+        },
+        "step-0000064/rank-00002.pt": {
+          "bytes": 2581278407,
+          "sha256": "cb0ca9f5ec4efa62dd05b375f45d6bba68bda06b96f42c1ffddd3815fdbd0978"
+        },
+        "step-0000064/rank-00003.pt": {
+          "bytes": 2581278471,
+          "sha256": "bedbf3e27bd5164d7ebb4da2d7685269ef9b9c2f2af88461e719cca2c6f5e16c"
+        },
+        "step-0000064/rank-00004.pt": {
+          "bytes": 2581278407,
+          "sha256": "10b6985c311f56aba79008244dc1156395b43f9de6598c74587e2a43336b6044"
+        },
+        "step-0000064/rank-00005.pt": {
+          "bytes": 2581278407,
+          "sha256": "2eee3acd594b34bceb84cb8d08609df27405a69d74883ab972452215f6d6c8fe"
+        },
+        "step-0000064/rank-00006.pt": {
+          "bytes": 2581278471,
+          "sha256": "2771b0b0365df9b81e3e42158ccdb41a205c1146ecbbc08d7a310390a9f78078"
+        },
+        "step-0000064/rank-00007.pt": {
+          "bytes": 2581278407,
+          "sha256": "e33f9b9fb77c3c1ed526d10321bfd2228e13880fdb71ca48a89d997e0faa56c3"
+        }
+      },
+      "job": "cpt-raw-seed2026102030-v1",
+      "original_checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102030-v1/step-0000064",
+      "step": 64
+    },
+    "immutable_index_snapshot": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-index-seed2026102030-step64.json",
+    "index_sha256": "8178896dbfe9595327e56f508abf8edb53ccef70d8e021366742b7ac9fe9ece6",
+    "model_archives": {
+      "cpt-computation-seed2026102030-v1": {
+        "COMPLETE_sha256": "3fd7f36b5b3fcf0e77f9d12f939365537c42a99e939507eb3b59b860897a5041",
+        "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-computation-seed2026102030-v1/step-0000064-model.pt.zst",
+        "archive_bytes": 2690645325,
+        "archive_sha256": "fa8e6b2c30a472fe78bb7f022c02a45a763fbd42bfbe992400432eb09319d38c",
+        "job": "cpt-computation-seed2026102030-v1",
+        "original": {
+          "bytes": 3441248275,
+          "sha256": "7367ecd8c64c476c44fb7a17b024cb10ce4c6119ff5b2845395f3c9513eb94c1"
+        },
+        "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102030-v1/step-0000064/model.pt",
+        "step": 64
+      },
+      "cpt-format-seed2026102030-v1": {
+        "COMPLETE_sha256": "8141bc0297984eb9070b013920f663f04bea5305a5357262beee94c77a5f4572",
+        "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-format-seed2026102030-v1/step-0000064-model.pt.zst",
+        "archive_bytes": 2690632285,
+        "archive_sha256": "51f60cbe24d0f13312528dd5bc336eb6ba99493016005d11f7c4f827308e8601",
+        "job": "cpt-format-seed2026102030-v1",
+        "original": {
+          "bytes": 3441248275,
+          "sha256": "660d7d6c477665ca872fb4b6fd1556540e6144c02c32a547e1e16e1b6edf3cf7"
+        },
+        "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102030-v1/step-0000064/model.pt",
+        "step": 64
+      },
+      "cpt-raw-seed2026102030-v1": {
+        "COMPLETE_sha256": "7bdf03ada51e6444f831e1acac294eaed8dff1d5349ba95080feb0cae5b0bcb0",
+        "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-raw-seed2026102030-v1/step-0000064-model.pt.zst",
+        "archive_bytes": 2690621190,
+        "archive_sha256": "cee27e6d047de030162c2939d6129c6553493dc8b42c87f97be4259c4f3f2af8",
+        "job": "cpt-raw-seed2026102030-v1",
+        "original": {
+          "bytes": 3441248275,
+          "sha256": "c0c88dc0f4cb5157ee3c15ebd317122b0a12dec54fe09609e5fd62b21b5c66eb"
+        },
+        "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102030-v1/step-0000064/model.pt",
+        "step": 64
+      }
+    },
+    "scope": "Same-instance EBS; every listed latest model and one full optimizer state. Other full originals remain in volatile RAM,not all on EBS.",
+    "status": "PASS_ALL_THREE_LATEST_MODEL_ARCHIVES_AND_ONE_LATEST_FULL_EBS_READBACK"
+  },
+  "root_review": {
+    "MemAvailable_bytes": 1732707930112,
+    "actual_reserved_science_chip_hours": 15.194554239558897,
+    "basis": [
+      "All second-order initial64 physical closures,CPU-loss/counts,complete native8/order/master/moment/cast audits PASS.",
+      "Original full64 states retained; all latest model archives and one full optimizer archive passed complete EBS member/SHA readback.",
+      "Warm bounded PSS and actual first-order1280 experience support continuing unchanged protocols under resource monitoring.",
+      "Same actual B0 initialization,data-order/source/objective/precision/fixed terminal1280; no held model outcomes or checkpoint selection."
+    ],
+    "free_bytes": {
+      "/home/ubuntu/dario": 67292643328,
+      "/home/ubuntu/dario/local/nvme-cpt": 58646544384,
+      "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29": 688142536704
+    },
+    "limits": [
+      "Bounded memory measurements do not prove indefinite stability.",
+      "Same-instance EBS retains latest models and one rotating full optimizer state; other full originals remain in volatile RAM.",
+      "Execution qualification is not a scientific learning result."
+    ],
+    "prerequisite_pins": {
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102030-v1/stage64/closure.json": "2abf88ebcf534655ec71876ade8c061c67ac4047c4f39bc145d5b969ef55f6d0",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102030-v1/stage64/completed.json": "7489c63b7b0fbd4c0ba7cc8538cec7b5b902c963ed362bb5ed33d579a65249ad",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102030-v1/stage64/first-step-reference.json": "52e04beae6ff1ccd555171b821857e9b43aac5ffb9f7485cf54815da8b2c4b71",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102030-v1/stage64/independent-audit.json": "62b59884e59161cde64b6d6b8fa9c106eed9d59c6db73add0153e900fccf0698",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102030-v1/stage64/closure.json": "bd9290bc5a01277e1417a00828a695734b1674456b8deb83c9724bf95de0235d",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102030-v1/stage64/completed.json": "649a1d14c2c72b9b533030c2419bb1279472690dc4c43542a442a5fd728f5247",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102030-v1/stage64/first-step-reference.json": "245fdbc5875217487b8560aff9db3a82d6254df6d1b351d35e246f27b3c77a08",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102030-v1/stage64/independent-audit.json": "7adbb81f8402c7ff1b04ca08e026debc4590cff47cf4905d156962bf58a76872",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102030-v1/stage64/closure.json": "4461b7931dd394b86a11456449a1b8d6392c54f1db08ef5739db768dcc216eb2",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102030-v1/stage64/completed.json": "8e08294e331beec4e1d9cee93b1e5b50749a3b3b6eb3be44f4df2ad550a1b213",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102030-v1/stage64/first-step-reference.json": "50a8e8b666036c0c20bde6f286dacacb4663d6072f441d0239e2deea99a0ae48",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102030-v1/stage64/independent-audit.json": "478aa59e53e4dff6265c3c18ed464088bdb09823239910b64bde40531c7861ec",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/memory-stage64-seed2026102030.json": "071ce2edd6487c0f9468c50f6a7d09ab7bfa6324f3da85d299d459f4080ff454",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-seed2026102030-step64.json": "3b98f8ef4f12a0ae1a1fa14348822b0926aeab34aa32b7a3e928c31476895792"
+    },
+    "reviewer": "Root agent; not external review",
+    "stage64_checks": {
+      "cpt-computation-seed2026102030-v1": {
+        "actual_updates": 64,
+        "full_checkpoint": {
+          "COMPLETE_sha256": "3fd7f36b5b3fcf0e77f9d12f939365537c42a99e939507eb3b59b860897a5041",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+          "model_sha256": "7367ecd8c64c476c44fb7a17b024cb10ce4c6119ff5b2845395f3c9513eb94c1",
+          "run_id": "cpt-computation-seed2026102030-v1",
+          "spec_hash": "926ced3d4f5a97c7d80d7d3adeadf716f8871ded59632a1326b8bad2b4194e2d",
+          "step": 64
+        },
+        "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+        "job": "cpt-computation-seed2026102030-v1",
+        "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+        "protocol_sha256": "a2bfa6c331a73c95c4f9f7ab538da099cfcce59935f5d97911a470f1161cd2f6",
+        "source_exposures": 2048,
+        "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+        "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+        "supervised_positions": 1067258,
+        "warm_last32_median_seconds": 6.3066442150156945
+      },
+      "cpt-format-seed2026102030-v1": {
+        "actual_updates": 64,
+        "full_checkpoint": {
+          "COMPLETE_sha256": "8141bc0297984eb9070b013920f663f04bea5305a5357262beee94c77a5f4572",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+          "model_sha256": "660d7d6c477665ca872fb4b6fd1556540e6144c02c32a547e1e16e1b6edf3cf7",
+          "run_id": "cpt-format-seed2026102030-v1",
+          "spec_hash": "9ff7f96579357e66d0c3dd42f15eb83b269874f1d05817ba1138c5b9f1985b4d",
+          "step": 64
+        },
+        "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+        "job": "cpt-format-seed2026102030-v1",
+        "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+        "protocol_sha256": "8fecf8b7c081dcf4ecaf481b5f61777f60e5453ddf5b57b0aa3cc73e76fe14ec",
+        "source_exposures": 2048,
+        "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+        "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+        "supervised_positions": 1050857,
+        "warm_last32_median_seconds": 6.308509907015832
+      },
+      "cpt-raw-seed2026102030-v1": {
+        "actual_updates": 64,
+        "full_checkpoint": {
+          "COMPLETE_sha256": "7bdf03ada51e6444f831e1acac294eaed8dff1d5349ba95080feb0cae5b0bcb0",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+          "model_sha256": "c0c88dc0f4cb5157ee3c15ebd317122b0a12dec54fe09609e5fd62b21b5c66eb",
+          "run_id": "cpt-raw-seed2026102030-v1",
+          "spec_hash": "205a5f8004cbcd469e5d721bfa1702e70bbd91a8e1bd2a85945a32930a0fb02c",
+          "step": 64
+        },
+        "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+        "job": "cpt-raw-seed2026102030-v1",
+        "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+        "protocol_sha256": "966917d9cda7a9cccf090185dd1de86c557e7bdc4d10742455864167f1a7d29c",
+        "source_exposures": 2048,
+        "source_sha256": "16fdc510fa0ca65e0fd7180fc47c18c492f7f22b4b54b92cfa02e1c96ed52277",
+        "status": "PASS_ACTUAL64_ORDER_COMPONENTS_NATIVE8_FULL_MASTER_MOMENT_AND_CAST_AUDIT",
+        "supervised_positions": 1049833,
+        "warm_last32_median_seconds": 6.38943269601441
+      }
+    },
+    "status": "PASS_ROOT_OPERATIONAL_CONTINUATION_REVIEW_SAME_SCIENTIFIC_QUESTION",
+    "utc": "2026-10-20T19:12:42.872105+00:00"
+  },
+  "seed": 2026102030,
+  "status": "PASS_SECOND_ORDER_INITIAL64_AND_ACTUAL_RESTORE8_TERMINAL_CONTINUATIONS_ACTIVE",
+  "utc": "2026-10-20T19:15:28.655971+00:00"
+}
