@@ -65,10 +65,13 @@ Use ABSOLUTE paths; original relative-path launch failure was preserved before t
    relaunch blindly. Same-instance EBS only; originals remain on NVMe.
    CPU ordinary9files/4.6MB also pass EBS full readback/fsync without score inspection;
    receipt C_EVAL/ordinary-protection.json. Do NOT rerun the closed producer.
-   Offline analysis queue exec19133 waits for all23physical closures, then runs
+   Offline analysis queue exec63710 waits for all23physical closures, then runs
    exactly the scorer/independent checker/references/fixed examples/plots below.
-   Script local/analysis/finish_permutation_program_v28_fixed_readout_20261020.py;
-   log C_EVAL/offline-analysis-queue.log; output local/diagnostics/permutation-program-v28-complete-readout-v1.
+   Script local/analysis/finish_permutation_program_v28_fixed_readout_io_v2_20261020.py;
+   log C_EVAL/offline-analysis-queue-io-v2.log; output local/diagnostics/permutation-program-v28-complete-readout-io-v2.
+   Original exec19133 was explicitly stopped while idle,with zero scoring stages/model calls:
+   repeated stage-history writes also needed atomic overwrite. Original source/log retained;
+   C_EVAL/offline-analysis-IO-repair-v2.json records owner and exact IO-only source revision.
    Do NOT manually duplicate these stages while that queue is active. No automatic publication.
 4. All23must physically close before main readout:
    python -m train.permutation_program_readout --index <ABS C_EVAL/index.json> --output <newfile>

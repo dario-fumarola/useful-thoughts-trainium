@@ -13,7 +13,7 @@ Frozen training ce04236/evaluator2eb3c1c;1861CPU tests+smoke/compile pass; numer
 Fixed23-job/378880attempt comparison ACTIVE on8chips; initial32workers native/cache PASS. IOv2 inputs/protocols protected/public.
 Primarycomposition9216paired families; interpolation/longer-depth panels separate; all failures retained.
 Max8-chip queue charges actual reservations; stop29.5/maximum30chip-hours, deadline16:23:24UTC. Same fixed gates.
-Review only after all23close: offline queue19133 waits. All23started/21closed; all92native/cache PASS; scores unread.
+Review only after all23close: IOv2 CPU queue63710 waits (idle19133 stopped before scoring). All92native/cache PASS; scores unread.
 No capability, autonomous-thinking or general-pretraining claim yet; all old studies/gates unchanged.
 
 ## Closed: separate decoder batching check

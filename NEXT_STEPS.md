@@ -36,6 +36,10 @@
    and512family partial controls stay separate. All modes/caps/errors retained.
    No readout until all23physical closures. Run primary scorer, independent checker,
    same-question B0/strong-control reference, fixed examples and plots afterward.
+   These stages are already queued in exec63710 (offline-analysis-queue-io-v2.log),
+   writing local/diagnostics/permutation-program-v28-complete-readout-io-v2.
+   Original CPU queue19133 was stopped idle before any scoring; explicit IOv2 permits
+   repeated atomic stage-history updates. No model calls or scorer changes; no manual duplicate.
    Evaluate training and inference gates separately; no checkpoint/prompt selection.
    This remains a supervised mechanism study; autonomous RL/general-pretraining claims wait.
 
