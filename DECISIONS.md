@@ -1554,3 +1554,17 @@ to+.067vsB0; it remains a cost. All outputs/checks/backups close cleanly.
 The old direct control retains auxiliary0.1, so a bounded format-only1.0 control
 is the next causal comparison before scaling or fresh confirmation. No new
 learning/official-final-data release follows from this readout. All older scores/gates remain.
+
+
+2026-10-20 00:46 UTC — V26 closes with a positive developmental training contrast
+The original matched-format terminal scores120/255 direct versus completed
+selector1 direct138: +7.1pp[2.4,11.8], passing the prospective developmental
+criterion. Same closed-empty replay gives+7.8pp[2.7,12.9]; all510 new answers and
+256 ordinary rows independently check, with clean controls and no failures.
+Selection also preserves ordinary prediction better, but both regress from B0.
+The lower-weight format control remains stronger at127; its selector-direct
+contrast remains inconclusive. Do not relabel V25 incremental-ID or fitting gates.
+This is one order seed and an adaptively inspected panel. Freeze any fresh
+confirmation against both direct controls, resolve sample-size/source availability
+before launch, and retain complete outcomes. No coefficient sweep, larger model,
+RL or official DEV/TEST access is released by closing this comparison.

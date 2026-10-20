@@ -1,0 +1,95 @@
+{
+  "status": "PASS_SINGLE_TERMINAL_MODEL_AND_LATEST_FULL256_PROTECTED",
+  "utc": "2026-10-20T00:37:10.052460+00:00",
+  "models": {
+    "evidence_direct-seed2026101923": {
+      "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1/step-0000256/model.pt",
+      "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/models/evidence_direct-seed2026101923/model.pt",
+      "sha256": "b9ad0ce06114aa20f4656487c06ad26b0f3be9d767d171b5c3f1ed63c0c999c6"
+    }
+  },
+  "latest_full": {
+    "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1/step-0000256",
+    "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256",
+    "COMPLETE_sha256": "1c2eb0dc817457d75ab63986a7ffa8d04417f698c06512f1c02d3edf85280820"
+  },
+  "audit_sha256": "c48f8a33f250711460ba16f4e63cbfdce48e4841269e230c5941025763eb42e3",
+  "files": {
+    "latest-full256/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "b9ad0ce06114aa20f4656487c06ad26b0f3be9d767d171b5c3f1ed63c0c999c6"
+    },
+    "latest-full256/rank-00000.pt": {
+      "bytes": 2581278471,
+      "sha256": "69dbacf697a967a9fedc4c788a25b03766945620b4e4436885ad09c7ec55686f"
+    },
+    "latest-full256/rank-00001.pt": {
+      "bytes": 2581278471,
+      "sha256": "ea2f3f3c77c42234a25b9d33351a6b35f3222a36fb50537291df17e683c5a693"
+    },
+    "latest-full256/rank-00002.pt": {
+      "bytes": 2581278407,
+      "sha256": "4716dd0c5d0e9f5d9ecdc4e1f52d53736dc3bc883107fb49465a805b54b778f9"
+    },
+    "latest-full256/rank-00003.pt": {
+      "bytes": 2581278471,
+      "sha256": "7539666fce65745c72ab8e323c7c452839193318e60978b6a65e70986090a846"
+    },
+    "latest-full256/rank-00004.pt": {
+      "bytes": 2581278471,
+      "sha256": "74265778134a446621be5c645eb6bcff9c7bb97d531174172e7b7ec5b0ac10ad"
+    },
+    "latest-full256/rank-00005.pt": {
+      "bytes": 2581278471,
+      "sha256": "a86b09476c129af256b516dfbddc6c7c79beee122cdbbc66831a9cdaf6d89cb2"
+    },
+    "latest-full256/rank-00006.pt": {
+      "bytes": 2581278407,
+      "sha256": "ecd42cb557781ea866befc4098ec09bf697853c17644aad9569ffe57ab989d1d"
+    },
+    "latest-full256/rank-00007.pt": {
+      "bytes": 2581278471,
+      "sha256": "1fa91792255b61d246f32909c3068d3d8e64e9f29d7ba3fb4cb3529b4b8bcee3"
+    },
+    "latest-full256/COMPLETE.json": {
+      "bytes": 2113,
+      "sha256": "1c2eb0dc817457d75ab63986a7ffa8d04417f698c06512f1c02d3edf85280820"
+    },
+    "models/evidence_direct-seed2026101923/model.pt": {
+      "bytes": 3441248339,
+      "sha256": "b9ad0ce06114aa20f4656487c06ad26b0f3be9d767d171b5c3f1ed63c0c999c6",
+      "hardlink_of": "latest-full256/model.pt"
+    },
+    "models/evidence_direct-seed2026101923/COMPLETE.json": {
+      "bytes": 2113,
+      "sha256": "1c2eb0dc817457d75ab63986a7ffa8d04417f698c06512f1c02d3edf85280820"
+    },
+    "models/evidence_direct-seed2026101923/protocol.json": {
+      "bytes": 7455,
+      "sha256": "0b58c8f9de65a82b18bc57dfe0243e032ead022244119c7b54bf24e2d4578d6b"
+    },
+    "terminal-independent-audit.json": {
+      "bytes": 9349,
+      "sha256": "c48f8a33f250711460ba16f4e63cbfdce48e4841269e230c5941025763eb42e3"
+    },
+    "plan.json": {
+      "bytes": 2450,
+      "sha256": "a3dec9731e0fa35341eca1312204da53ca84c7b2e2a5cba1e802c395a6a1b4a9"
+    },
+    "release.json": {
+      "bytes": 5330,
+      "sha256": "904024ab8c8e73e4f194d9f46b15f8686c63e746c95b03438d6c0d1cb4b28a6d"
+    },
+    "protect-source.py": {
+      "bytes": 6644,
+      "sha256": "44594253d02432499427abe42ef97af00675c92dfb79704d01c4591f073ef27d"
+    }
+  },
+  "old_optimizer_retirement_sha256": "7ad58c3bea329225e4814ac61763568476ede0ecf84e7d632352f65d37cf77d0",
+  "root_free_bytes": 62601523200,
+  "limits": [
+    "Alloriginalfull128/256statesremainNVMe. EBSretainsallterminalmodels/latestglobalfulloptimizer;the earlier protected128modelweight also remains.",
+    "Same-instanceprotection;notanoff-instancearchive."
+  ],
+  "EBS_archive_sha256": "ea696861baec39f74074910400776a6e65152c7c44c6d9e78c0e72d51c4e40f6"
+}

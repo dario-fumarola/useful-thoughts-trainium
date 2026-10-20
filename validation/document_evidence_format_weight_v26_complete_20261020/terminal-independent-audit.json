@@ -1,0 +1,165 @@
+{
+  "status": "PASS_SINGLE_TERMINAL256_EVIDENCE_FORMAT_WEIGHT_TRAINING_STATES_NATIVE8_ORDER_COUNTERS_AND_LABELS",
+  "utc": "2026-10-20T00:31:31.422307+00:00",
+  "models": [
+    {
+      "arm": "evidence_direct",
+      "seed": 2026101923,
+      "output": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1",
+      "checkpoints": {
+        "128": {
+          "step": 128,
+          "COMPLETE_sha256": "d360fab78765adb077d5211cc8c65d7ab6ba1fd7eaf1be8968b20e5b67ff1c09",
+          "model_sha256": "79c91276e3d471b2a0f1fbe615e2b1ca9e21469adbf4f2665dae19e7717ab019",
+          "run_id": "document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1",
+          "spec_hash": "09bf6d44cd75c3692721d6f718c1f13ff7f21c435504da906d603cc4c4d4f18a",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        },
+        "256": {
+          "step": 256,
+          "COMPLETE_sha256": "1c2eb0dc817457d75ab63986a7ffa8d04417f698c06512f1c02d3edf85280820",
+          "model_sha256": "b9ad0ce06114aa20f4656487c06ad26b0f3be9d767d171b5c3f1ed63c0c999c6",
+          "run_id": "document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1",
+          "spec_hash": "09bf6d44cd75c3692721d6f718c1f13ff7f21c435504da906d603cc4c4d4f18a",
+          "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true
+        }
+      },
+      "native_checks": [
+        {
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376518,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "passed": true,
+          "max_logp_error": 0.4776469232392877,
+          "rms_logp_error": 0.11136195315202935,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "passed": true,
+          "max_logp_error": 0.3318406019216269,
+          "rms_logp_error": 0.06558423713648606,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "passed": true,
+          "max_logp_error": 0.19990114601651499,
+          "rms_logp_error": 0.04093075259376518,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "argmax_equal": true
+        },
+        {
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "passed": true,
+          "max_logp_error": 0.2453446255999836,
+          "rms_logp_error": 0.04909559206530713,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "argmax_equal": true
+        }
+      ],
+      "actual_updates": 256,
+      "actual_initial_master_witnesses": 8,
+      "terminal_counters": {
+        "expressions": 8192,
+        "supervised_tokens": 2172752
+      },
+      "source_labels": 2097152,
+      "answer_labels": 67408,
+      "selection_labels": 8192,
+      "warm_last60_median_update_seconds": 13.442779127013637,
+      "completion_sha256": "29a5bb734890b7d23e43850f5e2ba79a178f08f99f09565e3b9ed834f2f57fd9",
+      "closure_sha256": "a10d4692ecc936088f3c2743ea7b0a5c36d794a96cada4fcb3b2b3fb00d87e27",
+      "metrics_sha256": "67bc59064254d96674a6cfd809a3f0effbf3aae4587fbcd0e62fdabbeefbaf73",
+      "protocol_sha256": "0b58c8f9de65a82b18bc57dfe0243e032ead022244119c7b54bf24e2d4578d6b"
+    }
+  ],
+  "source_files": {
+    "train/partial_state_driver.py": "5202696e3c4483d181d9e8088f86b1c79465a0d5b195b0bb88f8f85a6e6e8ef7",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e"
+  },
+  "plan_sha256": "a3dec9731e0fa35341eca1312204da53ca84c7b2e2a5cba1e802c395a6a1b4a9",
+  "audit_source_sha256": "da33c54a120d2fa035e806ad62d30d02ed349351c5c06e2ccf0ad3d5ee5e0733",
+  "generic_state_audit_source_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+  "independent_inventory_source_sha256": "0cd217acb80177762b29808263d7627722f199fd9933dd3f0a5ea7a7bf745730",
+  "limits": [
+    "Training/state integrity,not held capability. Native8 checks repeat four canonical contexts.",
+    "All2 original full states retained;allterminalmodels/latestfull need separate EBS readback before binding evaluation.",
+    "No uninterrupted/resumed bitwise parity orstochasticRL claim."
+  ]
+}

@@ -1,28 +1,59 @@
 # Useful Thoughts on Trainium
 
-**V25 is complete: increasing selection supervision improves the developmental
-recipe, but does not repair deeper selection or establish a reliable benefit
-from generating passage IDs.**
+**V26 is complete: evidence-selection supervision improves direct answers over
+coefficient-matched format training on the inspected development panel. Fresh
+confirmation is still needed; an added benefit from generating IDs remains unestablished.**
 
 This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documents,
 and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
 
-## Active control (V26)
+## Latest matched control (V26)
 
-The coefficient-matched **empty-format1.0 control is training** from fresh B0,
-with the same documents, order, exposures, source/answer coefficients and numerical
-worker as V25. Actual save/restart qualification passed, and the full step128
-checkpoint is independently audited and protected. Training continues to256; no
-control answer result is available yet.
-Its primary contrast is selection1.0 **direct answers** minus format1.0 direct
-answers. The benefit of emitting IDs remains a separate question. The fixed255
-panel is developmental; any positive result needs fresh, powered confirmation.
-[Released protocol and actual qualification](validation/document_evidence_format_weight_v26_science_release_20261019.json).
+One fresh empty-format control uses the same auxiliary weight1.0, TRAIN2048,
+data order, four passes,256 updates, source/answer coefficients and numerical
+worker as the completed selector. Terminal checkpoints are primary.
 
-The [research goal](docs/RESEARCH_ROADMAP.md) is to learn reusable computation,
-then establish when it becomes autonomous and whether it can be internalized.
-This small supervised reference is one step toward that goal.
+| Model / native answer path | Correct /255 |
+|---|---:|
+| Earlier format training, weight0.1, direct |127|
+| Matched format training, weight1.0, direct |120|
+| Selection training, weight1.0, direct |138|
+| Selection training, weight1.0, generated IDs |143|
+
+The primary **direct-answer** gain is **+7.1pp [2.4,11.8]**, passing the declared
+developmental criterion. Closed-empty answer replay gives+7.8pp[2.7,12.9].
+Increasing format weight alone changes127→120 (−2.7pp[−7.1,1.6]); the stronger
+historical direct control therefore remains relevant. Selection1 direct versus
+that control is still the earlier+4.3pp[−0.4,9.4].
+
+This is one data-order seed on255 questions inspected before choosing the
+intervention. The intervals are conditional and unadjusted: this is promising
+training-recipe evidence, not fresh confirmation or autonomous computation.
+Generating IDs adds only the previously reported+2.0pp[−1.6,5.5] over the same
+selector's direct path. Equal scalar coefficients do not match gradient magnitudes,
+label counts or information; all20 passages remain visible.
+
+![Matched control contrasts](validation/document_evidence_format_weight_v26_complete_20261020/paired-answer-contrasts.svg)
+
+Selection training retains ordinary prediction better: NLL2.011 versus2.088 for
+the matched format model. Both remain worse than untouched B0 (1.945).
+All510 new answer attempts and256 ordinary likelihood cases close without errors,
+caps or unsupported answers; both no-ID controls remain clean. Independent token,
+parser, calibration, count and paired-bootstrap checks pass. Science uses2.111
+reserved chip-hours; disposable qualification uses0.342 separately. Original full
+checkpoints,269 raw/source files and58 public artifacts are protected on the same instance.
+
+- [Complete readout and limits](validation/document_evidence_format_weight_v26_complete_20261020.json)
+- [Fixed examples, including every comparison](validation/document_evidence_format_weight_v26_complete_20261020/fixed-eight-examples.json)
+- [Ordinary-text cost](validation/document_evidence_format_weight_v26_complete_20261020/ordinary-NLL-cost.svg)
+- [Training protocol and hardware qualification](validation/document_evidence_format_weight_v26_science_release_20261019.json)
+
+The next decision is a fresh, adequately powered confirmation against both
+coefficient-matched and stronger direct controls. No coefficient sweep, larger
+model or RL escalation follows from this developmental result.
+The [research goal](docs/RESEARCH_ROADMAP.md) remains reusable computation that
+becomes autonomous and can eventually be internalized.
 
 ## Latest coefficient ablation (V25)
 
@@ -61,7 +92,7 @@ answers. Matched own-ID versus empty-ID answer replay adds **1.6pp [−1.6,4.7]*
 The direct-only training contrast is +4.3pp [−0.4,9.4]. These are conditional,
 unadjusted paired intervals from one data-order seed and a reused development
 panel, not fresh confirmation. The historical direct control retains auxiliary
-weight 0.1; a format-only control at 1.0 has not yet been tested.
+weight0.1; V26 above supplies the completed coefficient-matched format control.
 
 ![Developmental answer contrasts](validation/document_evidence_weight_v25_complete_20261019/held-answer-contrasts.svg)
 
@@ -89,9 +120,9 @@ All original full checkpoints remain; the terminal model/latest full state and
 - [Selection breakdown](validation/document_evidence_weight_v25_complete_20261019/held-selection-descriptive.json)
 - [Ordinary prediction cost](validation/document_evidence_weight_v25_complete_20261019/ordinary-NLL-cost.svg)
 
-The coefficient-only fitting repair is closed. V26 now tests whether the recipe
-advantage survives a format-only control with the same auxiliary coefficient,
-before a larger model or fresh confirmation campaign.
+The coefficient-only fitting repair is closed. V26 above finds a developmental
+content-training advantage over matched format1.0. Its one-seed, reused-panel
+result needs fresh confirmation; it does not change this failed fitting gate.
 
 ## Earlier passage-selection pilot (V23)
 

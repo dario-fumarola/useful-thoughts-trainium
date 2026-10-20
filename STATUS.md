@@ -1,20 +1,20 @@
-# Status — 2026-10-20 00:43 UTC
+# Status — 2026-10-20 00:46 UTC
 
-## Active: coefficient-matched format control
+## Closed: coefficient-matched format control
 Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
 ID: document-evidence-format-weight-v26; fresh1.7B, TRAIN2048×4/order1923/source.5/answer.5.
-Primary: selector1 direct minus format1 direct; >=3pp/positive paired lower95 is developmental only.
-All256 updates physically close0; terminal/master/moment/native8/order/counter audit PASS.
-Full256/model readback/fsync protected and bound; all original full128/256 states/models retained.
-C=local/diagnostics/document-evidence-format-weight-v26-control-v1; W=frozen @29606b0.
-O=local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
-Warm last60median13.443s; all1823 CPU tests and actual8-update/full-state/restore qualification pass.
-Fixed readout released:510 answers (direct/canonical_empty255 each), ordinary256; current-model CPU refs complete.
-Generation exec90030 physical5/logical20–23, deadline00:50:06UTC; ordinary exec32971 physical9/logical36–39, deadline00:44:36.
-Actual worker checks remain mandatory; no retry/checkpoint/prompt/parser selection. Readout helpers frozen.
-Current full EBS: TERMINALS/latest-full256 under local/backups/science/document-evidence-format-weight-v26-control-v1.
-Next: physical closure, independent row/token/calibration/bootstrap checks, fixed plots/examples/cost and protected publication.
-Held255 reused, one order seed; no fresh confirmation, inference-ID or broad LM claim follows automatically.
+All256 updates/native8/full-state/order audits PASS; full128/256 originals retained, terminal/latest full protected.
+All510 new GEN/256 ordinary rows physically close; independent token/parser/calibration/count/bootstrap PASS.
+Direct: format0.1=127, format1=120, selector1=138; selector1 own=143 of255.
+Primary selector1 direct−format1 direct+7.1pp[2.4,11.8]; declared developmental criterion PASS.
+Closed-empty selector−format+7.8pp[2.7,12.9]; both controls generate no IDs/headers. Zero errors/caps/unsupported.
+Format1−format0.1=−2.7pp[−7.1,1.6]; prior selector direct−format0.1 remains+4.3pp[−0.4,9.4].
+One order seed/reused inspected panel; not fresh confirmation, autonomous thinking or an established extra-ID benefit.
+Ordinary NLL: selector1=2.011, format1=2.088, B0=1.945; both retain specialization cost.
+Science2.111 reserved chip-hours; disposable qualification0.342 separate.269 raw/source files and58 public files protected.
+Report: validation/document_evidence_format_weight_v26_complete_20261020.json. All old reports/gates unchanged.
+Decision: close missing-control question; prepare fresh powered training-benefit confirmation against both direct controls.
+No coefficient sweep/new learning/official DEV/TEST access is released by this readout.
 
 ## Closed: frozen TRAIN pointer-decision diagnostic
 Question: does premature closure persist with correct preceding annotated IDs?

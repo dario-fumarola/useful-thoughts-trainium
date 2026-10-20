@@ -1,6 +1,6 @@
 # Long-term proof ladder
 
-## Current priority — October 19, after V25
+## Current priority — October20, after V26
 
 The north star is **learning reusable computation during pretraining: when it
 becomes attainable, whether it improves fresh predictions efficiently, and
@@ -15,15 +15,16 @@ Keep three claims separate:
 | Claim | Required comparison | Present evidence |
 |---|---|---|
 | Extra computation helps now | Generated state versus strong same-model and matched-budget alternatives | Strong arithmetic evidence; document-QA incremental benefits remain uncertain. |
-| Intermediate supervision improves learning | Same direct prediction path after content supervision versus source/format controls | V25 is promising development evidence; coefficient-matched V26 control is pending. |
+| Intermediate supervision improves learning | Same direct prediction path after content supervision versus source/format controls | V26 shows a7.1pp direct-answer advantage over matched format1.0; one seed/reused panel, fresh confirmation pending. |
 | Useful computation is discovered autonomously | Self-training improves beyond the supervised warm start after the teacher is removed | Unanswered here. |
 
 Work in this order; this roadmap releases no jobs:
 
-1. **Finish V26.** Match auxiliary coefficient1.0 with an empty-format control.
-   Direct-answer transfer is primary; writing-ID assistance stays separate.
-   Positive development evidence needs a fresh, powered confirmation with new
-   training seeds. A missed interval is not proof of zero effect.
+1. **Confirm the V26 signal.** The completed coefficient-matched control gives
+   selector direct138 versus format1 direct120/255: +7.1pp[2.4,11.8]. The stronger
+   format0.1 direct control scores127. Resolve fresh source-separated cohort size
+   and power before confirmation with new training seeds and both direct controls.
+   Writing-ID assistance stays separate. A missed interval is not proof of zero effect.
 2. **Resolve the computation mechanism.** Reuse the arithmetic lessons and test
    variable-depth executable tasks with teacher, student, corrupt, unrelated,
    strong single-stream CoT and trained pause controls. Hold out procedures and
@@ -105,7 +106,9 @@ stronger selection loss gives143/255 generated-selection answers and138/255 dire
 answers, against the historical direct127/255. These are one-seed, inspected-panel
 results; the direct contrast and extra-ID contrast remain individually inconclusive.
 The [V26 design](../validation/document_evidence_format_weight_v26_design_20261019.json)
-asks whether semantic-content supervision helps beyond matched empty-format loss.
+finds a developmental direct-answer benefit beyond matched empty-format loss.
+The [completed control](../validation/document_evidence_format_weight_v26_complete_20261020.json)
+needs fresh confirmation and leaves incremental ID-generation benefit unestablished.
 The original [evidence split audit](../validation/document_evidence_v16_directed_split_20261019.json)
 establishes source separation, not novelty relative to base pretraining or semantic
 correctness of author support labels.

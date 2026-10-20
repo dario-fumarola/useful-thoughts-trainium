@@ -295,3 +295,20 @@ minimum verified guidance and pretraining-age dependence, with clean supervision
 and a strong answer-only control. Comparing annotation supervision with matched
 format loss is one prerequisite, not evidence that a latent algorithm was learned.
 This reading releases no new task or distillation run.
+
+
+## Verified computation and internalization — checked October20
+
+[Show Your Work, sections3/5.2 and AppendixB](https://arxiv.org/html/2112.00114)
+already compares supervised scratchpads with direct execution. Its addition study
+uses100k training examples; its low-data real-program experiment finds direct
+execution better than tracing, while executable data augmentation improves tracing.
+AppendixB reports no significant direct-addition benefit from scratchpad training
+followed by direct training. These are author findings, not our replication.
+
+Implication: verified traces, held-out execution and a data-size intervention are
+useful controls, not novelty by themselves. Internalization is an empirical
+question; successful explicit arithmetic does not guarantee it. A later matched
+post-training comparison must preserve the direct baseline and distinguish
+additional verified labels from computation learned beyond those labels.
+This reading changes no V26 source, endpoint or release.

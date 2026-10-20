@@ -1,62 +1,44 @@
-# Current handoff — 2026-10-20 00:43 UTC
+# Current handoff — 2026-10-20 00:46 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
 
-## Active V26 released single control
+## V26 CLOSED/PUBLISHED — next: fresh confirmation feasibility
 
-W26=local/worktrees/document-evidence-format-weight-v26 @29606b0, clean/frozen.
-Q26=local/diagnostics/document-evidence-format-weight-v26-world8-qualification-v1.
-Both actual stages/audit close0; full2/4/6/8 retained in local/nvme/diagnostics/Q26name.
-Qualification audit status PASS_ACTUAL_DOCUMENT_EVIDENCE_FORMAT_WEIGHT_FULL_RESTORE,
-SHA5e49fd1548c45109ce91334962326163bd43e115db1dcfd0f2d95d46f97708c0.
-Actual8/native16/full-state/master/moment/restore4 optimizer digests all pass.
-Post-save grouped PSS82–97GiB; short bounded evidence, not indefinite-memory qualification.
-Qualification exec49216 and watcher86588 both finished0. Do not rerun original producers.
-
+Report validation/document_evidence_format_weight_v26_complete_20261020.json,
+SHA9800ba9798031d4c47a7e9ea0a9ec73447a9f2231473392c0952e70b526cb8fc.
 C26=local/diagnostics/document-evidence-format-weight-v26-control-v1.
-Concrete plan/release and31 public source/evidence files EBS readback/fsync protected.
-Public report validation/document_evidence_format_weight_v26_science_release_20261019.json.
-ONE freshB0 evidence_direct-format1-seed2026101923, TRAIN2048×4/256updates.
-Source/answer.5/.5, empty-field auxiliary1.0, order1923, numeric worker unchanged.
-Output local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
-Physical2/3 logical8–15; soft deadline2026-10-20T00:51:47.360316+00:00; no automatic retry.
-Training exec34070 closes0 (all original processes absent), original timeout/session PID1517924/start28721656,
-launcher PID1517862. Actual8 worker allocation on physical2/3 captured.
-First128-protection8409 and terminal pipeline watcher97028 both close0; terminal protected/bound.
-All256 updates finish00:28:39UTC; physical closure00:29:59; terminal independent audit closes0 at00:31:32.
-Audit PASS_SINGLE_TERMINAL256_EVIDENCE_FORMAT_WEIGHT_TRAINING_STATES_NATIVE8_ORDER_COUNTERS_AND_LABELS.
-Exact terminal counters8192expressions/2172752labels; source2097152/answer67408/selection8192.
-Warm last60 median13.442779s. Watcher97028 is now protecting/binding the original terminal256.
-Post-export grouped training PSS~98.8GiB, down from142.6GiB before128.
-Do not launch duplicates; monitor C26/evidence_direct-format1-seed2026101923/run.log
-and output/metrics.jsonl. All jobs are bounded to original plan/deadline, no retries.
-CPU jobs use USE_TORCH_XLA=0 and PYTHONPATH W26:root/local/test-deps:root/local/analysis.
-All source files bound in C26/release.json are now frozen; never edit them silently.
+W26=local/worktrees/document-evidence-format-weight-v26 @29606b0, clean/frozen.
+All training/protection/binding/evaluation/analyzer/checker/publication processes close0.
+Do not rerun original immutable producers or edit bound sources.
+Fresh format1 direct120/255, clean empty119; selector1 direct138/own143/empty139.
+Primary+7.1pp[2.4,11.8] PASS_DEVELOPMENTAL_CRITERION; closed-empty+7.8pp[2.7,12.9].
+Format1−format0.1=−2.7pp[−7.1,1.6]; selector direct−old format0.1 remains+4.3pp[−0.4,9.4].
+Both no-ID controls clean; all510 new answers no errors/caps/unsupported, all1530 new+reused rows checked.
+All256 ordinary rows/current-model calibrations/token sums/paired pages independently PASS.
+NLL format1=2.0876687555, selector1=2.0111692703, B0=1.9445324524; both regress from B0.
+Science2.110760643 reserved chip-hours; qualification0.342476930 separate.
+All3 SVG/CSV plots visually inspected through PNG previews with byte-identical CSVs.
+Same8 original hash-chosen questions, all comparisons; no outcome-selected examples.
+All269 raw/source files EBS protected; archive SHA520972b61aed29edbec8fe74dd7546aec3704bdbb896a381818f43b94bdaa950.
+All58 public files readback/fsync protected. Same-instance, not off-instance.
+Original full128/256 and qualification2/4/6/8 retained. Current latest full EBS:
+local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256.
+Terminal model SHA b9ad0ce06114aa20f4656487c06ad26b0f3be9d767d171b5c3f1ed63c0c999c6.
+Binding C26/frozen-models/evidence_direct-format1-seed2026101923.json.
+No active accelerator sessions; generation90030/ordinary32971 finish0 on physical5/9, now empty.
 
-First128 independent audit/copy/readback/fsync PASS, C26/first-full128-protection.json.
-Current global full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256.
-128 COMPLETE SHA d360fab78765adb077d5211cc8c65d7ab6ba1fd7eaf1be8968b20e5b67ff1c09.
-Only previous V25 EBS optimizer duplicates retired after new full verification; all originals/models remain.
-Terminal256 must protect before retiring ONLY V26 EBS128 optimizer duplicates.
-Storage root~61.5GiB, CPT~97.7GiB, spareNVMe~50.2GiB;35GiB floors. No cache/original deletion.
-Two inactive engineering EBS model duplicates relocated with verified cross-volume copies;
-originals remain studyNVMe, receipts local/diagnostics/document-evidence-format-weight-v26-CPU-v1.
-
-Evaluation released and launched00:41:46UTC: generation exec90030 physical5 deadline00:50:06;
-ordinary exec32971 physical9 deadline00:44:36. C26/readout-execution.json records fixed caps/deadlines.
-Original terminal protected/bound; both current-model CPU preparations complete0.
-510 answers:direct/canonical_empty and ordinary256 only; no TRAIN fit/oracle.
-Current-model CPU references/native/cache/ordinary calibrations are mandatory.
-Primary selector1 direct minus new format1 direct; extra-ID value stays separate.
-Held255 was inspected before intervention; one order seed, developmental only.
-Any advantage needs a separate fresh powered confirmation. North star updated in existing roadmap.
-Postprocessing sources are frozen in C26/postprocessing-sources.json (six helpers).
-All17 release pipeline hashes and6 postprocessing hashes verified unchanged.
-Prepared plot3SVG/CSV, same original8 examples, cost, aggregate, protect and publish helpers.
-Final publisher names its complete report with the actual UTC publication date and records
-its exact path in C26/publication-protection.json. No new output readout has run.
-No larger model/newdata/RL/official DEV/TEST access. Preserve all old primary reports/gates.
+This positive is one order seed/reused inspected255, conditional/unadjusted.
+It supports content-supervision training benefit under matched coefficient,
+not autonomous computation or an established incremental benefit from writing IDs.
+The stronger historical direct control matters; all old fitting/scientific gates unchanged.
+Next: resolve fresh question availability/source clustering and statistical power;
+prepare a fixed confirmation against BOTH format1.0 and format0.1 recipes with
+new seeds. No coefficient sweep, new learning, officialDEV/TEST access or RL is released.
+North star is reusable computation during pretraining, not another selection metric.
+New paper note: Show Your Work already tests supervised program traces; AppendixB
+finds no significant direct-addition transfer after scratchpad→direct training.
+That is prior evidence, not a refutation or our own experiment.
 
 ## CPU-only TRAIN diagnostic CLOSED/PUBLISHED
 

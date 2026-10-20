@@ -1,0 +1,64 @@
+{
+  "batch": 4,
+  "created_utc": "2026-10-20T00:38:49+00:00",
+  "files": {
+    "calibration-CPU-reference.json": "ca2d1ef0fdf446cfd83af9f0b0511325c1991344af1606d23e86527ee7b49e68",
+    "calibration-inputs.json": "0f521822335b5bee5ad2df22abc74baff4f8d72570a81d5f9f7ffc779db7f46d",
+    "ordinary-raw.jsonl": "7580d34ad27c90627e63863e72386680aa5d5069c14e52bff7a592fd14c72dbd"
+  },
+  "interpretation": "Ordinary panel only; current-model CPU references, original qualified numerical kernel. No synthetic scoring observations.",
+  "inventories": {
+    "ordinary-raw.jsonl": {
+      "rows": 256,
+      "targets": 8192
+    }
+  },
+  "model": {
+    "arm": "evidence_direct",
+    "audit_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-control-v1/terminal-independent-audit.json",
+    "audit_sha256": "c48f8a33f250711460ba16f4e63cbfdce48e4841269e230c5941025763eb42e3",
+    "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1/step-0000256/model.pt",
+    "checkpoint_sha256": "b9ad0ce06114aa20f4656487c06ad26b0f3be9d767d171b5c3f1ed63c0c999c6",
+    "id": "evidence_direct-format1-seed2026101923",
+    "protection_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-control-v1/terminal-protection.json",
+    "protection_sha256": "b42c670beee8b622dc827d9f69a18a3731861d79e603e179c01e6f900de0db50",
+    "run_id": "document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1",
+    "seed": 2026101923,
+    "spec_hash": "09bf6d44cd75c3692721d6f718c1f13ff7f21c435504da906d603cc4c4d4f18a",
+    "status": "AUDITED_EVIDENCE_FORMAT_WEIGHT_V26_TERMINAL256",
+    "step": 256,
+    "training_protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-control-v1/protocol-evidence_direct-format1-seed2026101923.json",
+    "training_protocol_sha256": "0b58c8f9de65a82b18bc57dfe0243e032ead022244119c7b54bf24e2d4578d6b",
+    "utc": "2026-10-20T00:37:19.528159+00:00"
+  },
+  "model_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+  "purpose": "FIXED_V26_ORDINARY256_COST_ONLY",
+  "release_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-format-weight-v26-control-v1/ORDINARY/release.json",
+  "release_sha256": "6d512b4363057f5d934ce5e0fb27d829ca5767ce6ed38dcc9c2100ff4e872fdf",
+  "schema": "document-evidence-plan-v23-pointer-replay-likelihood",
+  "shards": 4,
+  "signature": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "ffb5e0d2582fb220002d300816b8010e8c6985a236b76ce8d24fdd7623331371"
+  },
+  "source_files": {
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_answers.py": "6a880ed2b1704e834c122d7d54c9d2b45ed1c77dd751b912d387a0d976caa985",
+    "train/document_evidence_plan_likelihood.py": "11b31b51cae030b416254f156fed93bd4a11f7fbfac758cc3fe3c2156f1cad3d",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_qa_span_scores.py": "b2ac2255c731e62f7eeb1df5e20b573621d921b27f3d96ac7379aaf77ac7b3a9",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365"
+  },
+  "target_slots": 32,
+  "widths": {
+    "QA": 3584,
+    "ordinary": 672
+  }
+}

@@ -1,57 +1,51 @@
 # Current queue
 
-0. Complete the ONE released coefficient-matched format-only control, V26.
-   Actual8-update/full2/4/6/8 and fresh-process restore4 independently pass; CPU1823 pass.
-   Source29606b0, freshB0 evidence_direct, same TRAIN2048/order1923/fourpasses/256updates,
-   source/final0.5/0.5, auxiliary1.0 empty Evidence field. Numerical functions/data unchanged.
-   C=local/diagnostics/document-evidence-format-weight-v26-control-v1.
-   Training exec34070, first128-protection8409 and terminal-watcher97028 all completed0.
-   Monitor C/evidence_direct-format1-seed2026101923 and its output metrics. No automatic retry.
-   Full128 is independently audited/protected; previous V25 EBS optimizer duplicates retired
-   only after new full readback. Full256 must protect before128 duplicates retire. Keep originals/models.
-   Science release: validation/document_evidence_format_weight_v26_science_release_20261019.json.
-   Terminal audit/protection/binding PASS; fixed direct/canonical-empty held255 and ordinary256
-   are released/running: exec90030 physical5 deadline00:50:06, exec32971 physical9 deadline00:44:36.
-   After physical closure, run the fixed independent readouts, protect/publish; no automatic retry. Primary is selector1 direct minus format1 direct; report ID inference separately.
-   Held255 is already inspected, single order seed. No fresh confirmation or broad LM claim.
-   If a content advantage persists, design a fresh powered confirmation; otherwise report the
-   limitation without another coefficient sweep. No larger model/new data/RL/official DEV/TEST launch.
+0. V26 is complete. Preserve its fixed result and close the missing-control question.
+   Report: validation/document_evidence_format_weight_v26_complete_20261020.json.
+   Selector1 direct138/255 versus coefficient-matched format1 direct120:
+   +7.1pp[2.4,11.8], passing the developmental criterion. Format0.1 direct127 is
+   still the stronger direct baseline; selector1−format0.1 remains+4.3pp[−0.4,9.4].
+   All510 new GEN/256 ordinary cases check/protect; no active accelerator jobs or retries.
+   V25's failed fitting gate and inconclusive extra-ID contrasts stay unchanged.
 
-1. Publish andpreserve the completed v23 pilot andits negative allocation decision.
-   Report:validation/document_evidence_plan_v23_pilot_complete_20261019.json.
-   All1530nativeattempts/3062originalLLrows checked/protected;allresponsefieldscomplete,
-   zeroexecutionerrors/caps. All255nativeplansvalid;own−direct+0.8pp[-4.7,+6.3].
-   Suppliedemptyfield refillsIDs255/255,soqualifythatcontrol withoutrescoring it.
-   Genuine directpaths containzeroIDs;theirnull contrasts remainunchanged.
-   Posthocexactset group gains14answers,other group loses12;not a causal estimate.
-   FixedIDreplay own−empty−.731nats,own−donor+.845;not native-genlikelihood/calibration.
-   OrdinaryNLL+.135vsB0;extraactions2.35×. No CoTsuperiority orpretrainingclaim.
-   OriginalLLFileExistsError stoppedbeforeheldrows;IO-onlyv2repair preservedallinputs/
-   models/nativeobservations/gates. Sourcebf288fe;1797CPUchecks,all16actualTRAINpanels pass.
-   Both originalandcontrol-qualifiedplots inspected;originalprimaryreport/hashunchanged.
+1. Prepare ONE fresh powered confirmation of training-side evidence-content benefit.
+   Keep Qwen3-1.7B, source/answer objectives and selected coefficient fixed. Include
+   both format1.0 and stronger historical-format0.1 recipes as direct controls.
+   Use new data-order seeds and fresh outcomes; freeze data eligibility, parser,
+   primary contrasts, practical effect size and power calculation before evaluation.
+   First resolve how many genuinely fresh questions exist under source separation.
+   The remaining within-TRAIN pool may be too small: do not claim power from a
+   nominal question count while ignoring reused evidence or clustered questions.
+   Official DEV/TEST files remain unopened; this queue releases no access or training.
+   Do not tune another coefficient or turn the old255 panel into confirmation.
+   Keep explicit-ID inference as a separate secondary question, not the headline.
 
-2. Keep historical results andlimits intact.
-   V21:validation/document_QA_v21_complete_20261019.json,originalSHA
-   75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9.
-   Allthree two-seed primarygates fail;local own−empty positive,netmatched-direct
-   firstCIcrosseszero. Olddirect-CoTformatfailure isnot a strongbaselinewin.
-   TRAIN relationaudit24questions/72steps isexploratory,not corpuserrorrate/gold.
-   Annotationoverlap doesnotprove semanticentailment;source/page exclusion doesnot
-   establishpretrainingnovelty. Fresh255 ismostlytwohop;four-hopn4 descriptive only.
-   OfficialDEV/TEST datafiles remainunopened. No paidteacher/cloud/IAM/network/stack changes.
+2. Follow the north star after that decision: verified variable-depth computation,
+   trained extra-compute controls, prefix-to-continuation pretraining, then controlled
+   guidance withdrawal/onset/internalization. docs/RESEARCH_ROADMAP.md is the plan.
+   Scratchpad/trace supervision and direct-answer distillation are prior work;
+   reusable computation, sample efficiency and withdrawal conditions need evidence.
+   No capacity/RL jump or unlimited split rescue follows from the current results.
 
-Protected state/source:
+Protected state and fixed evidence:
 
-- C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
-  SuccessfulLLregistry likelihood-registry-v2.json;readout-pipeline-io-v2 passes.
-  Alloriginalfailedv1registries/logs/source remain;failureEBSarchive recorded inC.
-- Current full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256.
-  Actual256 audit/readback/fsync PASS; older backup optimizer duplicates retired only afterward.
-  All original full states and model weights remain; V23/V21 terminal protections remain.
-  Older EBSoptimizerduplicates retireonlyafternewfullreadback. Same-instance,notoff-instance.
-- V23train frozen7328141:local/worktrees/document-evidence-v23;
-  decoder625fb0f:document-evidence-eval-v23;originalspan e0607fd:document-evidence-span-v23;
-  repairedspan bf288fe:document-evidence-span-v23-io-v2. Do notmutate/rerunclosed producers.
-- V21train049f53e/decoderdbd1c10/span0d1a5b4 remainfrozen.
-  ClosedV17 quality/combinedgates FAIL,V15NLLcost,V10primaryFAIL,V7splitloses,V11repairclosed.
-  OldR1234 stays stopped63. Keep35GiB/filesystem and512GiBhostavailable floors.
+- V26 C=local/diagnostics/document-evidence-format-weight-v26-control-v1.
+  All original processes are closed0; numerical worktree29606b0 remains frozen.
+  Original science full128/256 and four disposable qualification states remain.
+  Current full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256.
+  All model weights retained; older backup-only optimizer duplicates retired after
+  newer full readback/fsync. Same-instance EBS, not off-instance protection.
+- V26 raw readout/source archive269 files; publication58 files; all readback/fsync verified.
+  Original510 answer tokens and all five ordinary-model token scores are public.
+- CPU TRAIN pointer diagnostic closes256 within original bound; independent fixed4
+  HF checks and all-row reconstruction pass. Five correct-prefix early closures
+  versus30 subsets with earlier ID omission; local ] versus ]+newline scores do not
+  measure total termination probability. Report selector_TRAIN_decisions_CPU_complete_20261020.json.
+- V25 complete SHA ae7d3eacd701acb20eb969721dea531782c18f73d87bd79dd5bfacc8d6d86837.
+  V23 complete SHA ca7cc615495d0cdade77ef70cce0f19055e3456b1c79c460a7f84008dec809b3.
+  V21 complete SHA 75e5caf4638ab4de27b53663707b99482ed8ac84f4ab95584549f4537f2da3a9.
+  Never mutate/rerun closed producers to revise historical gates.
+- V23 frozen train7328141, decoder625fb0f, repaired span bf288fe; V25 train5414f8d.
+  All20 passages remain visible; label agreement is not semantic verification.
+  OfficialDEV/TEST unopened. OldR1234 stays stopped63. No paid teacher/cloud/stack changes.
+  Keep35GiB/filesystem and512GiBhost available floors; never delete original states/cache.

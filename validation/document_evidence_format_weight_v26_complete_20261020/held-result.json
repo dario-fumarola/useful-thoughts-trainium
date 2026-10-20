@@ -1,0 +1,172 @@
+{
+  "comparison_scored_sha256": "20c45eaf83d1ab59f11c1a68b1581416be2e85168c1e27508edb75bebcb52318",
+  "contrasts": [
+    {
+      "CI95": [
+        0.023529411764705882,
+        0.11764705882352941
+      ],
+      "control": "format1:direct",
+      "corrected": 29,
+      "paired_gain": 0.07058823529411765,
+      "regressed": 11,
+      "seed": 2026101926,
+      "treatment": "selector1:direct"
+    },
+    {
+      "CI95": [
+        0.0392156862745098,
+        0.1411764705882353
+      ],
+      "control": "format1:direct",
+      "corrected": 36,
+      "paired_gain": 0.09019607843137255,
+      "regressed": 13,
+      "seed": 2026101927,
+      "treatment": "selector1:own"
+    },
+    {
+      "CI95": [
+        0.027450980392156862,
+        0.12941176470588237
+      ],
+      "control": "format1:canonical_empty",
+      "corrected": 32,
+      "paired_gain": 0.0784313725490196,
+      "regressed": 12,
+      "seed": 2026101928,
+      "treatment": "selector1:empty"
+    },
+    {
+      "CI95": [
+        -0.07058823529411765,
+        0.01568627450980392
+      ],
+      "control": "format0.1:direct",
+      "corrected": 12,
+      "paired_gain": -0.027450980392156862,
+      "regressed": 19,
+      "seed": 2026101929,
+      "treatment": "format1:direct"
+    }
+  ],
+  "limitations": [
+    "One order seed and previously inspected held255, not fresh confirmation. Intervals conditional on checkpoints and unadjusted.",
+    "Matched coefficients do not match gradient magnitudes or label information. All20 passages remain visible.",
+    "Primary concerns direct answering after training. It cannot establish an incremental benefit from emitting IDs.",
+    "All earlier reports and failed gates remain unchanged. Failures retained in denominators."
+  ],
+  "operational_controls": {
+    "canonical_empty_stays_in_answer_field": true,
+    "native_direct_generates_no_IDs": true
+  },
+  "primary_developmental_criterion_pass": true,
+  "protocol_sha256": "6c2b4ff5b49a998e4f61c759ae704a200a51b594e1d7a45c48a7b9b1ebd59f62",
+  "source_sha256": "b6d4f50d75ab42c95ad7404b838ee03de8908210a294960a99a1284fc220e15c",
+  "status": "COMPLETE_DEVELOPMENTAL_FORMAT_WEIGHT_V26_ANSWERS",
+  "tables": {
+    "format0.1:direct": {
+      "alias_correct": 134,
+      "canonical_correct": 127,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1889,
+      "generated_evidence_headers": 0,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.5646591970121382,
+      "parsed_status": {
+        "complete": 255
+      },
+      "regenerated_final_headers": 0,
+      "unsupported": 0
+    },
+    "format1:canonical_empty": {
+      "alias_correct": 127,
+      "canonical_correct": 119,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1125,
+      "generated_evidence_headers": 0,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.5469755081519787,
+      "parsed_status": {
+        "complete": 255
+      },
+      "regenerated_final_headers": 0,
+      "unsupported": 0
+    },
+    "format1:direct": {
+      "alias_correct": 127,
+      "canonical_correct": 120,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1874,
+      "generated_evidence_headers": 0,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.5474112379994733,
+      "parsed_status": {
+        "complete": 255
+      },
+      "regenerated_final_headers": 0,
+      "unsupported": 0
+    },
+    "selector1:direct": {
+      "alias_correct": 146,
+      "canonical_correct": 138,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1948,
+      "generated_evidence_headers": 0,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6100830507641652,
+      "parsed_status": {
+        "complete": 255
+      },
+      "regenerated_final_headers": 0,
+      "unsupported": 0
+    },
+    "selector1:empty": {
+      "alias_correct": 147,
+      "canonical_correct": 139,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 1171,
+      "generated_evidence_headers": 0,
+      "generated_prefix_ID_rows": 0,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6154051796157058,
+      "parsed_status": {
+        "complete": 255
+      },
+      "regenerated_final_headers": 0,
+      "unsupported": 0
+    },
+    "selector1:own": {
+      "alias_correct": 150,
+      "canonical_correct": 143,
+      "capped": 0,
+      "execution_errors": 0,
+      "generated_actions": 4375,
+      "generated_evidence_headers": 0,
+      "generated_prefix_ID_rows": 255,
+      "items": 255,
+      "leading_bracket_ID_lines": 0,
+      "mean_canonical_F1": 0.6415614198895933,
+      "parsed_status": {
+        "complete": 255
+      },
+      "regenerated_final_headers": 0,
+      "unsupported": 0
+    }
+  },
+  "utc": "2026-10-20T00:44:53+00:00"
+}

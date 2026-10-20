@@ -1,0 +1,48 @@
+{
+  "status": "COMPLETE_ACTUAL_RESERVED_CHIP_TIME_ALL_STAGES",
+  "training": {
+    "physical_chips": 2,
+    "launch_utc": "2026-10-19T23:28:44.413158+00:00",
+    "confirmed_closure_utc": "2026-10-20T00:29:59.414349+00:00",
+    "reserved_chip_hours": 2.0416673283333333,
+    "interpretation": "Conservative ownership interval through confirmed physical closure; includes initialization and post-process checks."
+  },
+  "qualification_separate": {
+    "direct-fresh4": {
+      "physical_chips": 2,
+      "launch_utc": "2026-10-19T23:15:22.138682+00:00",
+      "confirmed_closure_utc": "2026-10-19T23:19:58.229019+00:00",
+      "reserved_chip_hours": 0.15338352055555554,
+      "interpretation": "Conservative ownership interval through confirmed physical closure; includes initialization and post-process checks."
+    },
+    "direct-resume8": {
+      "physical_chips": 2,
+      "launch_utc": "2026-10-19T23:19:58.300665+00:00",
+      "confirmed_closure_utc": "2026-10-19T23:25:38.668802+00:00",
+      "reserved_chip_hours": 0.18909340944444444,
+      "interpretation": "Conservative ownership interval through confirmed physical closure; includes initialization and post-process checks."
+    }
+  },
+  "evaluation": {
+    "generation": {
+      "physical_chips": 1,
+      "start_utc": "2026-10-20T00:41:46.572538+00:00",
+      "confirmed_closure_utc": "2026-10-20T00:44:50.325646+00:00",
+      "reserved_chip_hours": 0.05104253,
+      "maximum_allocated_chip_hours": 0.2
+    },
+    "ordinary": {
+      "physical_chips": 1,
+      "start_utc": "2026-10-20T00:41:46.559429+00:00",
+      "confirmed_closure_utc": "2026-10-20T00:42:51.542255+00:00",
+      "reserved_chip_hours": 0.018050785,
+      "maximum_allocated_chip_hours": 0.1
+    }
+  },
+  "qualification_reserved_chip_hours": 0.34247693,
+  "science_training_and_evaluation_reserved_chip_hours": 2.1107606433333332,
+  "total_new_work_reserved_chip_hours": 2.4532375733333334,
+  "controls": "Completed V25 selector and V23 controls reused; its original historical cost remains in its report and is not charged as new work.",
+  "execution_error_accounting": "Check readout reports separately; completed ownership intervals do not establish scientific success.",
+  "accounting": "Reserved physical-chip time, not dollar cost or theoretical FLOPs. CPU-only preparation/audits and backup IO off-device are not accelerator execution; conservative closure intervals may include some such overhead."
+}

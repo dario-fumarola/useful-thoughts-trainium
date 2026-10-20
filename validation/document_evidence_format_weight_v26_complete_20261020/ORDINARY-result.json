@@ -1,0 +1,71 @@
+{
+  "note": "No synthetic rows or pooled tokens as independent items; ordinary pages are the paired units.",
+  "paired": {
+    "B0": {
+      "CI95": [
+        0.12048652855683652,
+        0.16564864292464299
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": 0.14313630303347996,
+      "seed": 2026102026
+    },
+    "evidence_direct": {
+      "CI95": [
+        -0.016595322906015373,
+        -0.0030090370512009775
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": -0.010057169803071907,
+      "seed": 2026102027
+    },
+    "evidence_select": {
+      "CI95": [
+        0.0008173951638773858,
+        0.015027825811842477
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": 0.007817604165134568,
+      "seed": 2026102028
+    },
+    "selector1": {
+      "CI95": [
+        0.06411119408370507,
+        0.08919719729045653
+      ],
+      "interpretation": "Positive means worse ordinary NLL; paired pages, conditional on checkpoints.",
+      "mean_nll_change": 0.07649948512665095,
+      "seed": 2026102029
+    }
+  },
+  "protocol_sha256": "a8e545892cea6a42a6774837e79cf08c44e7674e7403166130ede5cbd417e1f7",
+  "status": "COMPLETE_FIXED_ORDINARY256_COST",
+  "tables": {
+    "B0": {
+      "items": 256,
+      "mean_nll_per_token": 1.944532452429805,
+      "tokens": 8192
+    },
+    "evidence_direct": {
+      "items": 256,
+      "mean_nll_per_token": 2.0977259252663574,
+      "tokens": 8192
+    },
+    "evidence_select": {
+      "items": 256,
+      "mean_nll_per_token": 2.0798511512981506,
+      "tokens": 8192
+    },
+    "format1": {
+      "items": 256,
+      "mean_nll_per_token": 2.0876687554632847,
+      "tokens": 8192
+    },
+    "selector1": {
+      "items": 256,
+      "mean_nll_per_token": 2.011169270336634,
+      "tokens": 8192
+    }
+  },
+  "utc": "2026-10-20T00:42:58+00:00"
+}
