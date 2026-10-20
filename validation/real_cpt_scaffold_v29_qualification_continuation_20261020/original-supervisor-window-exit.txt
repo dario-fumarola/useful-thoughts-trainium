@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-qualification-v1/supervise.py", line 47, in <module>
+    assert time.time()<deadline-180 and h.available()>768*2**30
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

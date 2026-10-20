@@ -1,0 +1,30 @@
+{
+  "already_used_chip_hours": 1.388383164589468,
+  "checkpoint4_manifest_sha256": "c20b017c5ec373dcd281e8e76b20f34a52589ba82c0f498bfa516edc67253959",
+  "continuation_worst_bound_chip_hours": 0.5833333333333334,
+  "deadline_utc": "2026-10-20T14:29:28.852775+00:00",
+  "helper_sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f",
+  "initial_loss_check_sha256": "0025c8656a319c01026bc5b2e5715cd8aa135f503ff40bc73cc23c775cf11451",
+  "original_model_exit_code": 0,
+  "original_release_sha256": "1006017bef44369b385b4e6eb227559e480e82343fbae3e89fbac054eb2d9a98",
+  "original_reserved_chip_hour_cap": 2.0,
+  "original_supervisor_exit_code": 1,
+  "output": "/home/ubuntu/dario/local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1",
+  "protocol_sha256": "41fe4bbc2f40e1e4a1024ce8544f19fdc46b327dd9e6dc5ac09004a3b25e289c",
+  "reason": "Cold compilation completed four ordered updates but exhausted the first supervisor scheduling window;stage2 never launched. Preserve original window/log. Continue the same original checkpoint and fixed protocol,without retraining/reselection.",
+  "remaining_chip_hours": 0.611616835410532,
+  "scope": "Only original-run fresh-process continuation5\u20138;no new science or automatic retry",
+  "status": "RELEASED_REMAINING_BUDGET_RESUME8_ONLY",
+  "supervisor_sha256": "43390a002a8383060519ebb92207279af652deeb84e35531cbd4315371c4396d",
+  "unchanged": [
+    "numerical source e7c2508",
+    "protocol/spec/hash",
+    "model/state4",
+    "data/order/seed",
+    "loss coefficients",
+    "precision/topology",
+    "native loss tolerances",
+    "full-state restoration and protection requirements"
+  ],
+  "utc": "2026-10-20T14:15:28.852775+00:00"
+}
