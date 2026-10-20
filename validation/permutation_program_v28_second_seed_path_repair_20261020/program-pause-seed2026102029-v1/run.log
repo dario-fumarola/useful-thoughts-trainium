@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ubuntu/dario/local/worktrees/controlled-computation-v28-study/train/partial_state_driver.py", line 833, in <module>
+    main()
+  File "/home/ubuntu/dario/local/worktrees/controlled-computation-v28-study/train/partial_state_driver.py", line 694, in main
+    validate_program_execution(p, args)
+  File "/home/ubuntu/dario/local/worktrees/controlled-computation-v28-study/train/partial_state_driver.py", line 272, in validate_program_execution
+    release = json.loads(args.execution_release.read_text())
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'local/diagnostics/permutation-program-v28-study-v1/stage64-release-seed2026102029.json'

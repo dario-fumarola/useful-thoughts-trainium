@@ -1,31 +1,32 @@
-<!-- Current handoff 2026-10-20 04:44 UTC; older entries below are historical -->
-V28 first-seed terminal continuation64→4096 ACTIVE, no held outcomes.
+<!-- Current handoff 2026-10-20 05:15 UTC; older entries below are historical -->
+V28 first-seed all three terminal4096 physically close0 and independent full-state
+model/master/moment/native/order audits PASS. No held outcomes.
 Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
-All three actual full64 model/master/moment/order/native audits and12 actual
-fresh-process optimizer restoration digests independently PASS. Initial64 jobs closed0.
-Report validation/permutation_program_v28_continuation_20261020.json is protected.
-C=local/diagnostics/permutation-program-v28-study-v1, terminal-release-seed2026102028.json.
-Direct/trace/pause exec59127/2442/51152; owned timeout PID/startticks
-1575771/29821314,1575898/29821431,1576066/29821548; physical0/1/2.
-Outputs EBS local/science-runs/controlled-computation-v28/program-<arm>-seed2026102028-v1.
-All three full1024/2048/3072 runtime readbacks/fsyncs pass and updates resume;
-at2026-10-20 04:44 UTC steps3628/3523/3421.
-Post-export group PSS~24GiB each; root86GiB free/host~1.7TiB available.
-New report validation/permutation_program_v28_periodic_recovery_20261020.json protected.
-First64/1024/2048 payloads deliberately rotated after newer readback; model64 copies/manifests remain.
-Owner reiterated at03:19UTC: keep going patiently; unsupervised for about8hours. No new deadline or permission question.
-Whole first-wave deadline06:54UTC, no automatic retry or performance stopping.
-Second-seed stage64 release helper is prepared but NOT RUN:
-local/analysis/release_permutation_program_v28_second_seed_20261020.py.
-Read-only first-seed watcher exec51219 prints metrics/PSS every45s, exits on phase failure/all closure or06:23UTC.
-Watch phase closure.json as well as exit.json; monitor closure flag alone denotes child exit.
-Next watch4096 exports/readback/rotation; do not rush serialized exports (~4–5min).
-After all three controllers physically close, independently audit each terminal:
-`USE_TORCH_XLA=0 python local/analysis/audit_permutation_program_v28_job_20261020.py --key program-<arm>-seed2026102028-v1 --phase terminal`
-Source env.sh then override PYTHONPATH to frozen W plus local/test-deps; set OMP/MKL8.
-Need terminal-full-audit.json PASS before seed2029 can retire prior terminal optimizer.
-Then release fresh second-seed stage64/audit/restore/4096, same source/data/budget.
-Do not run original first64 or continuation producers again; immutable receipts exist.
+First wave8.296reserved chip-hours; all original terminal models/model64 retained.
+Report validation/permutation_program_v28_first_wave_20261020.json protected.
+Second seed fresh B0 first64 ACTIVE physical0/1/2. Exec74848/10927/47288;
+timeout PID/startticks1600198/30791393,1600196/30791392,1600200/30791396.
+C=local/diagnostics/permutation-program-v28-study-v1; stage64-release-seed2026102029.json.
+First64 deadline05:46:53UTC; whole wave09:56:53UTC (no extension).
+Original EBS outputs local/science-runs/controlled-computation-v28/program-<arm>-seed2026102029-v1.
+First second-seed launch used a relative --release path; driver changed cwd and
+failed before model load/outputs/updates. All three failures/empty temps preserved
+as first64-relative-path-failure; actual one explicit repair uses ABSOLUTE paths.
+Report validation/permutation_program_v28_second_seed_path_repair_20261020.json protected;
+failed cost0.0017701253chip-hours. Same source/protocol/deadlines; no automatic retry loop.
+Second first64 auditor exec85868 waits physical closures, audits sequentially;
+read-only watcher exec47839 emits step/PSS/closure/audit every45s (hard first64 deadline).
+Next wait all three first64 audits PASS, then release second continuation using
+local/analysis/release_permutation_program_v28_second_continuation_20261020.py.
+Source env.sh then override PYTHONPATH to frozen W plus local/test-deps; OMP/MKL8.
+Launch original supervise-job.py --phase terminal with ABSOLUTE --release path.
+After all12 restored-rank JSONs and metrics>64, run prepared
+local/analysis/check_permutation_program_v28_second_recovery_20261020.py
+before old64 optimizer payloads rotate at1024. Do not cat large per-rank JSONs.
+Then fixed4096 completion, physical closure and same independent --phase terminal audits.
+No original first-seed producer/auditor rerun. First-seed audits precede its optimizer rotation.
+Root~86GiB free before second64; rolling saves serialize,35GiB disk/512GiBhost floors.
+Owner reiterated03:19UTC: keep going patiently, unsupervised~8hours, no new deadline.
 Frozen evaluation W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
 New fixed-cohort wrapper/readout and optional generic decoder/prefill hook; no kernel/parser change.
 All1861checks pass tests.qY1DSj,15,360actual-tokenizer inputs and full-sized

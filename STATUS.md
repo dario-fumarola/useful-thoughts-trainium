@@ -1,19 +1,20 @@
-# Status — 2026-10-20 04:44 UTC
+# Status — 2026-10-20 05:15 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
 ID: controlled-computation-v28; six fresh1.7B models,32,768questions×4/4,096updates/two data-order seeds.
-First seed direct/trace/pause continues64→4096 on physical0/1/2; frozen source ce04236, no held outcome.
-All three actual full64 model/master/moment/order audits and all12 fresh-process optimizer restoration digests PASS.
-Controllers exec59127/2442/51152; timeoutPIDs1575771/1575898/1576066, starts29821314/29821431/29821548.
-Control local/diagnostics/permutation-program-v28-study-v1; outputs local/science-runs/controlled-computation-v28.
-Whole first-wave deadline06:54UTC; fixed terminal primary. All three3072exports/readbacks complete; training resumed.
-Primarycomposition9,216paired families/18,432questions; interpolation and length extrapolation remain separate.
-Post-export process memory about24GiB/arm; root86GiB free. Observed stability/recovery is not learned capability.
-Readback/fsync rolling retention keeps terminal models/model64/latest full per arm; historical originals/cache untouched.
-Reports under validation: permutation_program_v28_continuation_20261020.json and permutation_program_v28_periodic_recovery_20261020.json; protected.
-Frozen evaluation2eb3c1c passes1,861tests/15,360native input checks and independent-claim score fixtures; zero held forwards.
-Next monitor4096; after physical terminal closure run independent --phase terminal audits before seed2.
+First seed direct/trace/pause complete4096; all three independent terminal model/master/moment/order/native audits PASS.
+All first-seed periodic exports/readbacks/resumptions close; terminal models and development64 remain retained.
+First wave8.296 reserved chip-hours; this is integrity evidence, zero held model outcomes.
+Second seed fresh B0 first64 ACTIVE on physical0/1/2; frozen training ce04236 unchanged.
+Exec74848/10927/47288; timeoutPIDs1600198/1600196/1600200, starts30791393/30791392/30791396.
+Control local/diagnostics/permutation-program-v28-study-v1; original EBS outputs local/science-runs/controlled-computation-v28.
+Second seed first64 deadline05:46UTC/whole wave09:56UTC; same fixed recipe and terminal endpoint.
+Initial relative release-path launch failed before model load/outputs/updates; logs preserved; absolute-path repair costs0.00177chip-hours.
+Reports: permutation_program_v28_first_wave_20261020.json and permutation_program_v28_second_seed_path_repair_20261020.json; protected.
+Next await physical64 closure and independent all-state audits, then release fresh-process restore/4096; actual restoration digests checked before1024rotation.
+Frozen evaluator2eb3c1c/1861tests and fixed23-job max8-chip/18chip-hour queue prepared; numerical decoder/shards unchanged.
+No held inference until all six terminals audited; no checkpoint/prompt selection, automatic retry or learned capability claim.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?

@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-20T05:06:35+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248275,
+      "sha256": "cb0aa8e506343f843f96aa6932cd4adb572c7440f5c483bac3688eb59720f4bd"
+    },
+    "rank-00000.pt": {
+      "bytes": 5162143399,
+      "sha256": "5a345e977f37baff2e55beeb2a3da794f8a7136c295cb9e8ffd02784a2bfe01f"
+    },
+    "rank-00001.pt": {
+      "bytes": 5162143463,
+      "sha256": "e242edb2bbed032e33a5891b8fa0ac0195d468f50f7126a3695b14aa71f07355"
+    },
+    "rank-00002.pt": {
+      "bytes": 5162143399,
+      "sha256": "03133bb4a5a12e48afce381311567bee920716aec33a840dd90f08057bf61c1c"
+    },
+    "rank-00003.pt": {
+      "bytes": 5162143399,
+      "sha256": "da67296280a8ee7d81edf34e840dccc57248b54cf2b175d57cecafc5833dc1e6"
+    }
+  },
+  "metadata": {
+    "arm": "trace",
+    "counters": {
+      "expressions": 131072,
+      "supervised_tokens": 2031520
+    },
+    "data_sha256": "251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128",
+    "order_hash": "ffc96eed313b632fadf68e8a73d65412ff234e55d4136968f619be06e7d80fec",
+    "pipeline_schema": "permutation-program-sft-v28",
+    "protocol_sha256": "9af9a3ff2e52667e5f0d7b2fe4ad3e6a03cbad6e31512060050622e6fa3818ca",
+    "seed": 2026102028,
+    "spec_hash": "29d32531d75de74a7cb964e451025cfdf402acedee680ff4e38f74c573f9e518"
+  },
+  "run_id": "program-trace-seed2026102028-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "29d32531d75de74a7cb964e451025cfdf402acedee680ff4e38f74c573f9e518",
+  "step": 4096,
+  "world_size": 4
+}

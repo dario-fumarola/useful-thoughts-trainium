@@ -1593,3 +1593,13 @@ not uninterrupted-trajectory parity or scientific utility. The live evaluator
 uses the qualified native decoder without a numerical/parser change, fixed cohorts,
 complete failure denominators and separate training/inference claims. Preserve
 the V26 developmental result and V27 data-bound qualification as stated by review.
+
+2026-10-20 05:15 UTC — V28 first wave closes at the fixed4096 endpoint. All three
+terminal all-state/native/order audits pass; measured reserved time8.296chip-hours.
+Release the fresh second data-order seed under the same source/data/optimizer.
+The initial second-seed launcher passed a relative release path, which failed
+before model loading/output creation/updates after the driver changed cwd.
+Preserve all three failed control directories and empty owned temporary directories;
+make one explicit absolute-path correction with the original release/deadlines.
+Cost0.0017701253chip-hours; no numerical source or science protocol changes.
+Continue first64/audit/actual restart/4096; no held inference before all6audits.

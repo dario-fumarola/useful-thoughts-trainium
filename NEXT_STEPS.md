@@ -26,20 +26,22 @@
    Expanded study data CPU checks pass; TRAIN bytes identical. Primarycomposition
    uses9,216families/18,432questions; original1,024families per secondary panel.
    Frozen training source ce04236/full1855checks PASS. First-seed direct/trace/pause
-   full64 audits and all12 actual restoration digests PASS; continuation64→4096
-   ACTIVE on physical0/1/2, exec59127/2442/51152, whole deadline06:54UTC.
-   C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
-   local/science-runs/controlled-computation-v28. Terminal release is fixed.
-   All three1024/2048/3072 exports/readbacks resume; post-save process memory~24GiB/arm.
-   Monitor4096 and bounded memory/space. After physical closure,
-   run local/analysis/audit_permutation_program_v28_job_20261020.py with frozen
-   study PYTHONPATH for each --key ... --phase terminal. All three terminal
-   audits precede fresh seed2026102029 stage64/restore/4096 under the same recipe.
+   physically complete4096; all three independent terminal all-state/native/order
+   audits PASS. Terminal models/model64 retained; first wave8.296reserved chip-hours.
+   Second-seed fresh B0 first64 ACTIVE physical0/1/2, exec74848/10927/47288.
+   C=local/diagnostics/permutation-program-v28-study-v1; output EBS
+   local/science-runs/controlled-computation-v28. First64 deadline05:46UTC;
+   whole second-wave deadline09:56UTC, no extension or performance stopping.
+   A relative release-path launch failed before model load/outputs/updates;
+   original failed logs remain, explicit absolute-path correction uses same release.
+   Await physical64 closure and frozen independent first64 audits. Then run
+   local/analysis/release_permutation_program_v28_second_continuation_20261020.py
+   with frozen study PYTHONPATH; supervise --phase terminal with ABSOLUTE release path.
+   Check all12 actual64 restoration digests before old64 payloads rotate.
    Frozen evaluator2eb3c1c passes1861tests/15360native input checks and full-sized
-   score fixtures. Fixed23-job evaluation queue is prepared for up to8 independent
-   chips with18chip-hour accounting/stale-monitor stop; numerical decoder/shards
-   unchanged. Training remains capped at3 chips. No execution before all6audits. No held model outcomes
-   until all six terminals audited. No autonomous RL/capability claim follows.
+   score fixtures. Fixed23-job queue is prepared for up to8 independent chips,
+   summed18chip-hour accounting/stale-monitor stop; numerical decoder/shards unchanged.
+   No evaluation before all6terminal audits. No autonomous RL/capability claim follows.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

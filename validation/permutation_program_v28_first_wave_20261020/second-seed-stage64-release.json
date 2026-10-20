@@ -1,0 +1,94 @@
+{
+  "status": "RELEASED_V28_SCIENCE_STAGE64_ONLY",
+  "utc": "2026-10-20T05:11:53.265486+00:00",
+  "deadline_utc": "2026-10-20T05:46:53.265486+00:00",
+  "wave_terminal_deadline_utc": "2026-10-20T09:56:53.265486+00:00",
+  "jobs": {
+    "program-direct-seed2026102029-v1": {
+      "protocol_sha256": "dcc8e088db6a285d8c2c57b40a3bf654afad5b33bd6912549498db06bf133d29"
+    },
+    "program-trace-seed2026102029-v1": {
+      "protocol_sha256": "2e3998514199157ed46ce6d338e44643c6fa2dfddbfdbef601f806a751dde8ad"
+    },
+    "program-pause-seed2026102029-v1": {
+      "protocol_sha256": "cd2cdebeac595620f206c299832e5b5546d0b73488289fa50a3de3923fa87216"
+    }
+  },
+  "source_files": {
+    "train/partial_state_driver.py": "48adb6cbf3aca5dd545aa9b35632ac008c72cb0e427eafd9699e96c7c91dd281",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b"
+  },
+  "source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "prospective_design_sha256": "d01498ec6eec98fedad28bfa5b5426059ccceff196ef7522bb44ea27d98ebba6",
+  "supervisor_sha256": "04efa13878868e8eaed87222cf1938f8f6e0263392a815fbb32fe7c129c17416",
+  "helper_sha256": "39fc4d3c23a44f60d09ef6fd55968216d913aec4331ec147359cd4a261fc5f3e",
+  "audit_sha256": "b10f824020368d805cbaafc12a4826f23a49eab2b2200ca7fe40636690c5a2e3",
+  "state_checker_sha256": "fedd7ab64ba533bd7a61b6b72d9412d2984566f655b5072783b1d0c3f23c12dd",
+  "prior_seed_terminal_audits": {
+    "program-direct-seed2026102028-v1": {
+      "path": "/home/ubuntu/dario/local/science-runs/controlled-computation-v28/program-direct-seed2026102028-v1/terminal-full-audit.json",
+      "sha256": "8a5ffde07356fc36c3b7000c8561aa2132867a4a53a1612e45ca72d73b0e1a49"
+    },
+    "program-trace-seed2026102028-v1": {
+      "path": "/home/ubuntu/dario/local/science-runs/controlled-computation-v28/program-trace-seed2026102028-v1/terminal-full-audit.json",
+      "sha256": "964e0f86e89affc9cdee1d05c14a4873190ee8dea80635bb75ec1dc94efa1907"
+    },
+    "program-pause-seed2026102028-v1": {
+      "path": "/home/ubuntu/dario/local/science-runs/controlled-computation-v28/program-pause-seed2026102028-v1/terminal-full-audit.json",
+      "sha256": "c04355c3ae845822620a5a9574102e4b92d174bddfe531391621080b83cdf0ff"
+    }
+  },
+  "maximum_stage_reserved_chip_hours_including_grace": 1.85,
+  "whole_reference_training_bound_chip_hours": 30,
+  "physical_devices": [
+    0,
+    1,
+    2
+  ],
+  "scope": "Fresh B0 first64 for second data-order seed; same fixed recipe. Actual full64 audits precede restore/4096. No held model outcomes until all six terminals.",
+  "checkpoint_policy": {
+    "policy": "v28_latest_full_per_arm_keep_terminal_models",
+    "science_output_root": "/home/ubuntu/dario/local/science-runs/controlled-computation-v28",
+    "latest_full": "One recoverable full state per arm across the two waves. Current EBS-run files are already on EBS, not a second backup or off-instance protection.",
+    "intermediate": "New V28 periodic payloads may retire only after a newer full-state readback/fsync. Preserve all metrics/manifests/retirement receipts. All historical original states/caches remain untouched.",
+    "terminals": "Every terminal model stays on EBS. Previous seed terminal optimizer may retire only after that terminal passed independent full-state audit and a new same-arm seed full passes readback.",
+    "development64": "Preserve all six model64 weights with readback/fsync on NVMe-CPT; developmental, not a primary endpoint.",
+    "exports": "Global filesystem lease serializes large saves; host phase files avoid waiting inside Neuron device barriers."
+  },
+  "no_automatic_retry": true,
+  "storage_free_bytes": {
+    "/home/ubuntu/dario": 92306022400,
+    "/home/ubuntu/dario/local/nvme-cpt": 70412210176,
+    "/home/ubuntu/dario/local/nvme-study": 57825652736
+  }
+}

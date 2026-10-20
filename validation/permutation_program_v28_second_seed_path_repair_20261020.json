@@ -1,0 +1,55 @@
+{
+  "status": "PRE_MODEL_LOAD_IO_ONLY_ABSOLUTE_PATH_CORRECTION",
+  "utc": "2026-10-20T05:13:30.829180+00:00",
+  "failures": {
+    "program-direct-seed2026102029-v1": {
+      "identity": {
+        "pid": 1599598,
+        "start_ticks": 30781636,
+        "ppid": 1599407,
+        "pgid": 1599598,
+        "session": 1599598
+      },
+      "exit_code": 1,
+      "log_sha256": "9a9c15ddfd6fa0351d87242bfb265e7e5c4f7fa3fd6d302a77807ec352e885cf",
+      "original_control": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/program-direct-seed2026102029-v1/first64",
+      "preserved_control": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/program-direct-seed2026102029-v1/first64-relative-path-failure",
+      "outputs_created": false,
+      "updates": 0
+    },
+    "program-trace-seed2026102029-v1": {
+      "identity": {
+        "pid": 1599594,
+        "start_ticks": 30781635,
+        "ppid": 1599408,
+        "pgid": 1599594,
+        "session": 1599594
+      },
+      "exit_code": 1,
+      "log_sha256": "9a9c15ddfd6fa0351d87242bfb265e7e5c4f7fa3fd6d302a77807ec352e885cf",
+      "original_control": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/program-trace-seed2026102029-v1/first64",
+      "preserved_control": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/program-trace-seed2026102029-v1/first64-relative-path-failure",
+      "outputs_created": false,
+      "updates": 0
+    },
+    "program-pause-seed2026102029-v1": {
+      "identity": {
+        "pid": 1599595,
+        "start_ticks": 30781635,
+        "ppid": 1599409,
+        "pgid": 1599595,
+        "session": 1599595
+      },
+      "exit_code": 1,
+      "log_sha256": "9a9c15ddfd6fa0351d87242bfb265e7e5c4f7fa3fd6d302a77807ec352e885cf",
+      "original_control": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/program-pause-seed2026102029-v1/first64",
+      "preserved_control": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/program-pause-seed2026102029-v1/first64-relative-path-failure",
+      "outputs_created": false,
+      "updates": 0
+    }
+  },
+  "failed_reserved_physical_chip_hours": 0.0017701252777777778,
+  "release": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-study-v1/stage64-release-seed2026102029.json",
+  "release_sha256": "f332fc139a1224beccdcbfaf4afcc59c520fc63108fd959ed262deb61ac06f55",
+  "decision": "One explicit restart with absolute --release path; original failed control directories and empty temporary directories preserved. Same numerical source/protocol/output identity and original deadlines. No model outputs or updates existed; no automatic retry loop."
+}

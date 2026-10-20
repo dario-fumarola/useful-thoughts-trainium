@@ -1,0 +1,57 @@
+{
+  "status": "PASS_ALL_THREE_FIRST_SEED_TERMINAL4096_AUDITS_SECOND_SEED_RELEASED",
+  "utc": "2026-10-20T05:12:21.710216+00:00",
+  "experiment_id": "controlled-computation-v28",
+  "source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "models": {
+    "program-direct-seed2026102028-v1": {
+      "step": 4096,
+      "model_sha256": "7156e89cdade60991646b40ae388ea9441df566927015598be774d3ebcf11746",
+      "COMPLETE_sha256": "02007d24151be786c175b346227394826e876072d316e5a804b3fdf6cf5c2813",
+      "development64_sha256": "fa87ff805bd243471f51f6b7efca38c8f611395a7c444abf65ad1b88b28c188e"
+    },
+    "program-trace-seed2026102028-v1": {
+      "step": 4096,
+      "model_sha256": "cb0aa8e506343f843f96aa6932cd4adb572c7440f5c483bac3688eb59720f4bd",
+      "COMPLETE_sha256": "444ab0cefd0f283b7d65607f5f7ec806e4fddd959cb043e74cfdc312c106dfe6",
+      "development64_sha256": "45736aaa66a749e917e4f66fbd9c77b57910011ad22c149079d4951fcd3d0c1d"
+    },
+    "program-pause-seed2026102028-v1": {
+      "step": 4096,
+      "model_sha256": "c7d4117761a1a05275f28e308448ac20c93618dedbe2d52954177a13230d762f",
+      "COMPLETE_sha256": "4a3f7a627be3f1ff66ad55b58b540fef7df415d5f5f153cbbaac75bff819f578",
+      "development64_sha256": "f54ba61f50670167484076d4966ddfca5ec3b6fa08d4833a7221810195c43f52"
+    }
+  },
+  "updates_completed": 12288,
+  "first_wave_reserved_physical_chip_hours": 8.295643355555555,
+  "second_seed_stage64_deadline_utc": "2026-10-20T05:46:53.265486+00:00",
+  "second_seed_whole_wave_deadline_utc": "2026-10-20T09:56:53.265486+00:00",
+  "held_model_outcomes": 0,
+  "files": {
+    "validation/permutation_program_v28_first_wave_20261020/second-seed-stage64-release.json": "f332fc139a1224beccdcbfaf4afcc59c520fc63108fd959ed262deb61ac06f55",
+    "validation/permutation_program_v28_first_wave_20261020/program-direct-seed2026102028-v1-terminal-full-audit.json": "8a5ffde07356fc36c3b7000c8561aa2132867a4a53a1612e45ca72d73b0e1a49",
+    "validation/permutation_program_v28_first_wave_20261020/program-direct-seed2026102028-v1-first64-closure.json": "ec3b2a1c043e90532e33a13b002d104e1d81272f782e6ef29fdf85cccb57237d",
+    "validation/permutation_program_v28_first_wave_20261020/program-direct-seed2026102028-v1-terminal-closure.json": "b1d1df7b712b46d0c5019945417f31124302860eba23d9ab23c8ebfe07a89729",
+    "validation/permutation_program_v28_first_wave_20261020/program-direct-seed2026102028-v1-terminal-COMPLETE.json": "02007d24151be786c175b346227394826e876072d316e5a804b3fdf6cf5c2813",
+    "validation/permutation_program_v28_first_wave_20261020/program-direct-seed2026102028-v1-terminal-READBACK.json": "32618831ced164f6b56a1bda15030e1b665aae5ea46172cc34ff85c2ed471768",
+    "validation/permutation_program_v28_first_wave_20261020/program-trace-seed2026102028-v1-terminal-full-audit.json": "964e0f86e89affc9cdee1d05c14a4873190ee8dea80635bb75ec1dc94efa1907",
+    "validation/permutation_program_v28_first_wave_20261020/program-trace-seed2026102028-v1-first64-closure.json": "177452474ea1dad3ab041723fac1e51b734ce2931bd5487ee4b03272f5579dc1",
+    "validation/permutation_program_v28_first_wave_20261020/program-trace-seed2026102028-v1-terminal-closure.json": "adc19269d96598fe5bed869b179563f9dc4319dc0e47f0cfd4fd43e65858f50e",
+    "validation/permutation_program_v28_first_wave_20261020/program-trace-seed2026102028-v1-terminal-COMPLETE.json": "444ab0cefd0f283b7d65607f5f7ec806e4fddd959cb043e74cfdc312c106dfe6",
+    "validation/permutation_program_v28_first_wave_20261020/program-trace-seed2026102028-v1-terminal-READBACK.json": "d17c8114cc634edf7be5b8c2ab35c9f0273c8982d4c0185556504743d161947d",
+    "validation/permutation_program_v28_first_wave_20261020/program-pause-seed2026102028-v1-terminal-full-audit.json": "c04355c3ae845822620a5a9574102e4b92d174bddfe531391621080b83cdf0ff",
+    "validation/permutation_program_v28_first_wave_20261020/program-pause-seed2026102028-v1-first64-closure.json": "15c2e6f2b14410fc9e15f678e7031e6e90891e9b6f3eaef4d31e584287941205",
+    "validation/permutation_program_v28_first_wave_20261020/program-pause-seed2026102028-v1-terminal-closure.json": "e016efa9fd3aa9a78b5c7989d285ed2ba80998d16b0c9d9d47f040cd86f629ee",
+    "validation/permutation_program_v28_first_wave_20261020/program-pause-seed2026102028-v1-terminal-COMPLETE.json": "4a3f7a627be3f1ff66ad55b58b540fef7df415d5f5f153cbbaac75bff819f578",
+    "validation/permutation_program_v28_first_wave_20261020/program-pause-seed2026102028-v1-terminal-READBACK.json": "085ce1c3e0febcfa346d87149a98d8940edad98c80389834de9a2ffeb11921e4",
+    "validation/permutation_program_v28_first_wave_20261020/publish_permutation_program_v28_first_wave_20261020.py": "29337eea491083848aab43b40ba82dbdd736e05f48c035586b7ff7a0c6c4f7d0"
+  },
+  "limits": [
+    "Run integrity and finite observed stability, not learned generalization.",
+    "Same fixed source/data/optimizer/terminal endpoint; the second data-order seed starts from fresh B0.",
+    "No held model inference before all six terminal state audits. No performance stopping or checkpoint selection.",
+    "First-seed terminal models and development64 models retained; older new-study optimizer payloads may rotate only after the declared audited replacement.",
+    "Same-instance EBS protection, not off-instance backup. Historical original checkpoints and cache untouched."
+  ]
+}
