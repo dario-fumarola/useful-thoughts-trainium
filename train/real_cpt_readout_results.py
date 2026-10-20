@@ -12,7 +12,7 @@ import json
 import math
 from pathlib import Path
 
-from train.real_cpt_readout import MATH_MODES, SCALAR_MODES
+from train.real_cpt_readout import MATH_MODES, SCALAR_MODES, numeric_masks
 from train.scalar_completion import parse_initial_scalar_v2
 from weekend_thinking.artifacts import atomic_json,sha256_file,utc_now
 from weekend_thinking.stats import paired_cluster_bootstrap
@@ -62,8 +62,20 @@ def checked_job(directory,model,panel,release,release_sha,pins,shard=None):
     if (run['status']!='COMPLETE_ALL_DECLARED_ATTEMPTS' or run['qualify_only']
             or run['model']!=model or run['panel']!=panel or run['shard']!=(shard if shard is not None else 0)
             or run['release_sha256']!=release_sha or run['source_files']!=release['source_files']
-            or closure['status']!='SESSION_AND_PHYSICAL_DEVICE_CLOSED' or closure['exit_code']!=0):
+            or closure['status']!='SESSION_AND_PHYSICAL_DEVICE_CLOSED' or closure['exit_code']!=0
+            or not closure['owned_session_absent'] or not closure['physical_device_idle']
+            or not closure['observed_expected_live_owners'] or closure['physical_chips']!=1
+            or any(code!=0 for code in closure['child_exit_codes'])):
         raise ValueError('Complete original fixed-model process and physical closure required')
+    reference=Path(run['reference']);ref=read(reference/'reference.json')
+    if (sha256_file(reference/'reference.json')!=run['reference_sha256']
+            or ref['model']!=model or ref['purpose']!='science'
+            or ref['source_files']!=release['source_files']
+            or sha256_file(reference/'TRAIN-inputs.json')!=ref['inputs_sha256']
+            or sha256_file(reference/'CPU-native.pt')!=ref['native_sha256']):
+        raise ValueError('Original actual-model TRAIN reference binding changed')
+    for name in ('reference.json','TRAIN-inputs.json','CPU-native.pt'):
+        pins[str((reference/name).resolve())]=sha256_file(reference/name)
     for name,digest in run['output_files'].items():
         if sha256_file(directory/name)!=digest:raise ValueError('Original native output bytes changed')
     for f in directory.iterdir():
@@ -92,6 +104,12 @@ def summarize(index,output):
         raise ValueError('Original all-seven-terminal readout release required')
     if set(config['models'])!=set(release['models']) or len(config['models'])!=7:
         raise ValueError('All seven models required')
+    from transformers import AutoTokenizer
+    from train.evaluate import asset_provenance
+    base_reference=read(Path(release['references']['B0'])/'reference.json')
+    if base_reference['model']!=release['models']['B0'] or asset_provenance(Path(base_reference['model_dir']))!=base_reference['assets']:
+        raise ValueError('Original released tokenizer/model assets changed')
+    tokenizer=AutoTokenizer.from_pretrained(base_reference['model_dir'],local_files_only=True)
     data=Path(config['data']);manifest=read(data/'manifest.json')
     if sha256_file(data/'manifest.json')!='77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f':
         raise ValueError('Original source cohorts required')
@@ -115,7 +133,14 @@ def summarize(index,output):
             if row['item_id'] not in math_by_id or row['mode'] not in MATH_MODES:raise ValueError('Unplanned likelihood identity')
             source=math_by_id[row['item_id']]
             if row['document_id']!=source['document_id']:raise ValueError('Source pairing changed')
-            finite_logps(row,source['continuation16_ids'])
+            lp=finite_logps(row,source['continuation16_ids']);masks=numeric_masks(source,tokenizer)
+            if row['component_masks']!=masks or set(row['component_logps'])!=set(masks):
+                raise ValueError('Original native numeral/boundary partition changed')
+            for component,mask in masks.items():
+                total=math.fsum(v for v,use in zip(lp,mask) if use)
+                if abs(total-row['component_logps'][component])>1e-7:
+                    raise ValueError('Component score differs from original token subset')
+                row['component:'+component]=total
         if len(ordinary_rows)!=4096 or {v['item_id'] for v in ordinary_rows}!=set(ordinary_by_id):
             raise ValueError('Every original ordinary source document required')
         for row in ordinary_rows:
@@ -148,6 +173,8 @@ def summarize(index,output):
             absolute.append(dict(model=key,mode=mode,documents=768,
                 mean_span16_logp=math.fsum(v['full_logp'] for v in values)/768,
                 mean_K1_logp=math.fsum(v['K1_logp'] for v in values)/768,
+                mean_component_logps={c:math.fsum(v['component_logps'][c] for v in values)/768
+                    for c in ('numeral','numeral_and_boundary','boundary_and_whitespace','surrounding')},
                 note_execution_errors=sum(v['note_execution_status']!='ok' for v in values)))
         for mode in SCALAR_MODES:
             values=[r for r in generated if r['mode']==mode]
@@ -162,8 +189,11 @@ def summarize(index,output):
                 generated_actions=sum(v['n_actions'] for v in values)))
     contrasts={};all_contrasts=[]
     def comparison(a,b,mode_a='raw',mode_b='raw',field='full_logp',panel='math',name=''):
+        metric=('mean_document_NLL_delta' if field=='mean_NLL' else
+                'mean_document_span16_logp_gain' if field=='full_logp' else
+                'mean_document_'+field.removeprefix('component:')+'_logp_gain')
         result=paired(project(inventory[a][panel],mode_a,field),project(inventory[b][panel],mode_b,field),
-            name=name,metric='mean_document_NLL_delta' if field=='mean_NLL' else 'mean_document_span16_logp_gain')
+                      name=name,metric=metric)
         result.update(reference_model=a,treatment_model=b,reference_mode=mode_a,treatment_mode=mode_b)
         all_contrasts.append(result);return result
     for seed in SEEDS:
@@ -178,6 +208,9 @@ def summarize(index,output):
             own_raw_control=comparison(r,t,mode_b='own',name=f'{seed}:own-raw-control'),
             inference_execution_complete=inventory[t]['inference_ok'])
         for a in (r,f):comparison(a,t,field='mean_NLL',panel='ordinary',name=f'{seed}:ordinary-vs-{a}')
+        for a in (r,f,'B0'):
+            for component in ('numeral','numeral_and_boundary','boundary_and_whitespace','surrounding'):
+                comparison(a,t,field='component:'+component,name=f'{seed}:secondary-{component}-vs-{a}')
         for a,b in (('other','own'),('raw','empty'),('raw','oracle'),('corrupt','oracle')):
             comparison(t,t,mode_a=a,mode_b=b,name=f'{seed}:{b}-minus-{a}')
     report=dict(status='COMPLETE_V29_ALL_FIXED_MODEL_READOUT',utc=utc_now(),
