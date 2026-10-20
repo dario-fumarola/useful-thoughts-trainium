@@ -1,4 +1,4 @@
-# Current handoff — 2026-10-20 00:07 UTC
+# Current handoff — 2026-10-20 00:35 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
@@ -21,10 +21,13 @@ ONE freshB0 evidence_direct-format1-seed2026101923, TRAIN2048×4/256updates.
 Source/answer.5/.5, empty-field auxiliary1.0, order1923, numeric worker unchanged.
 Output local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
 Physical2/3 logical8–15; soft deadline2026-10-20T00:51:47.360316+00:00; no automatic retry.
-Training exec34070 is active, owned timeout/session PID1517924, start_ticks28721656,
+Training exec34070 closes0 (all original processes absent), original timeout/session PID1517924/start28721656,
 launcher PID1517862. Actual8 worker allocation on physical2/3 captured.
 First128-protection wrapper exec8409 closes0; terminal pipeline watcher97028 remains active.
-Latest observation: update159 at00:06:52UTC, warm update13.56s, finite losses/gradients.
+All256 updates finish00:28:39UTC; physical closure00:29:59; terminal independent audit closes0 at00:31:32.
+Audit PASS_SINGLE_TERMINAL256_EVIDENCE_FORMAT_WEIGHT_TRAINING_STATES_NATIVE8_ORDER_COUNTERS_AND_LABELS.
+Exact terminal counters8192expressions/2172752labels; source2097152/answer67408/selection8192.
+Warm last60 median13.442779s. Watcher97028 is now protecting/binding the original terminal256.
 Post-export grouped training PSS~98.8GiB, down from142.6GiB before128.
 Do not launch duplicates; monitor C26/evidence_direct-format1-seed2026101923/run.log
 and output/metrics.jsonl. All jobs are bounded to original plan/deadline, no retries.
@@ -53,32 +56,22 @@ Final publisher names its complete report with the actual UTC publication date a
 its exact path in C26/publication-protection.json. No new output readout has run.
 No larger model/newdata/RL/official DEV/TEST access. Preserve all old primary reports/gates.
 
-## Parallel CPU-only TRAIN diagnostic
+## CPU-only TRAIN diagnostic CLOSED/PUBLISHED
 
-Completed-selector error diagnosis is now running, without changing V26.
-C=local/diagnostics/selector-TRAIN-decisions-CPU-v1; source selector_train_decisions_cpu_20261019.py.
-CPU exec48441, child PID1526142;16 CPU threads, explicit devicecpu, zero accelerator calls.
-Frozen design/input hashes in C/design.json, source publicly committed f7b7e0e before forwards.
-Original fixed TRAIN256 only:128two/96three/32four. No new held/final data or updates.
-Current-model CPU native check passes. Last observation105/256 at00:06UTC;7–10seconds/item.
-CPU check/protection watcher exec8719 is active; it waits producer exit0, runs the fixed checker,
-then archives/readback/fsyncs all small raw outputs/source under engineering/Cname/POST_RUN.
-Hard original CPU deadline2026-10-20T00:30:29.193304+00:00; no automatic retry.
-All raw observations append to C/observations.jsonl, stdout C/run.log, exit C/exit.json.
-
-Question: classify native early closing of a canonical ID prefix versus earlier wrong-ID/omission,
-and compare first-divergent canonical continuation/closure token likelihood under correct TRAIN IDs.
-Token pairs ALL416 are standalone ] versus combined ]+newline: these are local serialization
-scores, NOT total field-termination probabilities or proof of native decoding causation.
-Annotations are not semantic gold; CPU FP32 versus native BF16 can change near ties.
-
-After CPU exit0/result, run check_selector_train_decisions_cpu_20261019.py from W2 with USE_TORCH_XLA=0.
-Its C/check-contract.json fixes4 source-hash-selected TRAIN forward spots and1e-4 logp tolerance.
-Installed HF Qwen3 forward supports logits_to_keep, checked. Checker reparses all256 native fields,
-verifies all token-prefix/count/margin identities, then direct-HF forward spots (not hidden/head wrapper).
-Checker source/contract copied public and EBS before final readout; do not edit frozen CPU producer.
-No result aggregation has been reviewed yet. Preserve raw/source/readback evidence and publish
-this as a descriptive optimization diagnostic, separately from V26's primary answer comparison.
+Report validation/selector_TRAIN_decisions_CPU_complete_20261020.json,
+SHA8e162e822226272bc017dc710e048b12a197bd2d9e287c1b4e4d6032640c6bbd.
+C=local/diagnostics/selector-TRAIN-decisions-CPU-v1. Producer48441/watcher8719 both close0.
+All256 rows complete within original CPU bound; no retry, no model update or new held data.
+Native203 exact annotated sets;53 mismatches:5 correct canonical prefixes then early closure,
+30 subsets that omit an earlier ID,17 contain nonannotated IDs,1 unsupported duplicate.
+All30 subset lists ascend, so the earlier-omission description holds; the only2 nonascending
+lists contain nonannotated IDs. Annotation agreement is not semantic correctness.
+Correct-prefix closure token outranks required token8/416 (0/128two,6/192three,2/96four).
+ALL416 compare standalone ] with combined ]+newline, NOT full field-termination probability.
+CPU FP32 versus native BF16 and gold-prefix versus sampled-history differences limit causality.
+Independent all-row counts/token/prefix checks and4 fixed direct-HF forward spots pass with0logp error.
+Sources/input/output and16 public payloads readback/fsync protected under engineering/Cname/POST_RUN andPUBLICATION.
+Do not rerun immutable producer/checker/publisher. No stopping-only fix follows; finish V26 first.
 
 ## V25 is complete
 

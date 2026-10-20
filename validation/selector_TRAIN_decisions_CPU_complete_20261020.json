@@ -1,0 +1,208 @@
+{
+  "status": "COMPLETE_CHECKED_FROZEN_TRAIN_POINTER_DECISION_DIAGNOSTIC_CPU_ONLY",
+  "utc": "2026-10-20T00:33:40.397412+00:00",
+  "experiment_id": "selector-TRAIN-decisions-CPU-v1",
+  "question": "Is incomplete annotated selection already preferred under correct preceding IDs, or preceded by another free-running selection deviation?",
+  "model": {
+    "arm": "evidence_select",
+    "audit_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-weight-v25-ablation-v1/terminal-independent-audit.json",
+    "audit_sha256": "8500dfa3ffae82909d1ee065f0f2a14a8aafcb258a5b1f37b0764be5dd3635de",
+    "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1/step-0000256/model.pt",
+    "checkpoint_sha256": "1d918a183a8bd171d72f7afea84894ad87735c77e99ca89b838403d7bd11ef87",
+    "id": "evidence_select-weight1-seed2026101923",
+    "protection_file": "/home/ubuntu/dario/local/diagnostics/document-evidence-weight-v25-ablation-v1/terminal-protection.json",
+    "protection_sha256": "9f231361e7f32641a1616e8b4993009d8c1aa5b7053767f45786691676fe3a64",
+    "run_id": "document-evidence-weight-v25-selection1-TRAIN2048-seed2026101923-v1",
+    "seed": 2026101923,
+    "spec_hash": "49f99aeb84baff587530f07ec87adac72d3b6aa36b7c2fc2dd92e43d9e15d495",
+    "status": "AUDITED_EVIDENCE_WEIGHT_V25_TERMINAL256",
+    "step": 256,
+    "training_protocol": "/home/ubuntu/dario/local/diagnostics/document-evidence-weight-v25-ablation-v1/protocol-evidence_select-weight1-seed2026101923.json",
+    "training_protocol_sha256": "db4883d36f1bb39e815673490ac2fdf4128a28e449bc6128e7e2d6fed7ab6c16",
+    "utc": "2026-10-19T22:30:47.226567+00:00"
+  },
+  "items": 256,
+  "strata": {
+    "2": {
+      "closure_preferred_decisions": 0,
+      "items": 128,
+      "native_categories": {
+        "contains_nonannotated_ID": 3,
+        "exact_annotated_set": 124,
+        "unsupported_selection": 1
+      },
+      "questions_with_any_closure_preferred": 0,
+      "required_continuation_decisions": 128
+    },
+    "3": {
+      "closure_preferred_decisions": 6,
+      "items": 96,
+      "native_categories": {
+        "annotated_subset_with_earlier_omission": 17,
+        "canonical_prefix_then_early_closure": 4,
+        "contains_nonannotated_ID": 11,
+        "exact_annotated_set": 64
+      },
+      "questions_with_any_closure_preferred": 6,
+      "required_continuation_decisions": 192
+    },
+    "4": {
+      "closure_preferred_decisions": 2,
+      "items": 32,
+      "native_categories": {
+        "annotated_subset_with_earlier_omission": 13,
+        "canonical_prefix_then_early_closure": 1,
+        "contains_nonannotated_ID": 3,
+        "exact_annotated_set": 15
+      },
+      "questions_with_any_closure_preferred": 2,
+      "required_continuation_decisions": 96
+    }
+  },
+  "all_native_categories": {
+    "contains_nonannotated_ID": 17,
+    "exact_annotated_set": 203,
+    "unsupported_selection": 1,
+    "annotated_subset_with_earlier_omission": 30,
+    "canonical_prefix_then_early_closure": 5
+  },
+  "first_divergent_token_comparisons": {
+    "required_continuation_decisions": 416,
+    "closure_token_preferred": 8,
+    "token_pairs": [
+      {
+        "required": "]",
+        "closure": "]\n",
+        "count": 416
+      }
+    ]
+  },
+  "interpretation": [
+    "Only5 of53 annotation-set mismatches are a correct canonical ID prefix followed by early closure. Thirty omit an earlier annotated ID;17 include a nonannotated ID;one is unsupported.",
+    "This weakens a simple correct-prefix-then-stop account of most mismatches. It does not identify a unique cause or adjudicate whether the author annotations are semantically sufficient.",
+    "Under correct annotated prefixes the chosen closure serialization token outranks the required token at8/416 boundaries. All boundaries compare standalone closing bracket with bracket-plus-newline: these are not total field-termination probabilities.",
+    "CPU FP32 and native BF16 are different numerical paths; conditioning on correct history is different from the sampled policy history. No causal decoding or generalization claim follows.",
+    "No model update, new held question, revised V25 fitting gate or changed V26 comparison. This is a descriptive optimization diagnostic."
+  ],
+  "independent_checks": {
+    "status": "PASS_INDEPENDENT_TRAIN_CATEGORIES_TOKEN_BOUNDARIES_COUNTS_AND_FIXED_HF_FORWARD_SPOTS",
+    "items": 256,
+    "continuation_decisions": 416,
+    "HF_forward_spots": [
+      {
+        "item_id": "double__118355_825694",
+        "max_logp_error": 0.0
+      },
+      {
+        "item_id": "triple_ii__43379_337139_318766",
+        "max_logp_error": 0.0
+      },
+      {
+        "item_id": "quadruple_iii__87366_10079_503957_720028",
+        "max_logp_error": 0.0
+      },
+      {
+        "item_id": "double__273546_208796",
+        "max_logp_error": 0.0
+      }
+    ],
+    "result_sha256": "fdef2c04f2d013d532417b7c8e5f39a203aa48d328c88eae492c676703f025bf",
+    "source_sha256": "d32986965cb5e3c5042f96d2e93e58013625751f9b1e4abec8625f0ef77e2afa",
+    "contract_sha256": "ca941046dda34bc0d7506eb08257929d65daf21bee0b0eef1585f571b127e290",
+    "token_surface_pairs": [
+      {
+        "required": "]",
+        "closure": "]\n",
+        "count": 416
+      }
+    ],
+    "limit": "Checks original observations and four fixed numerical spots, not every forward independently. First-divergent-token scores are not total field-termination probabilities or semantic/capability validation."
+  },
+  "CPU_compute_wall_seconds": 2350.44183133397,
+  "CPU_threads": 16,
+  "accelerator_calls": 0,
+  "protected_originals": {
+    "status": "PASS_CPU_DIAGNOSTIC_ORIGINAL_OUTPUTS_AND_SOURCES_READBACK_FSYNC",
+    "utc": "2026-10-20T00:31:12.583291+00:00",
+    "EBS": "/home/ubuntu/dario/local/backups/engineering/selector-TRAIN-decisions-CPU-v1/POST_RUN",
+    "same_instance": true,
+    "accelerator_calls": 0,
+    "archive_sha256": "39a1ce008c213b9664a79d53a6c2ae868a7ebf4b661e0375638ee0c1aba8840c"
+  },
+  "payloads": {
+    "design.json": {
+      "bytes": 7047,
+      "sha256": "85d1e75487b743bd444dfb733b13901ee094fd26c742323a051daa2aa916d96a",
+      "original_sha256": "85d1e75487b743bd444dfb733b13901ee094fd26c742323a051daa2aa916d96a"
+    },
+    "result.json": {
+      "bytes": 2112,
+      "sha256": "fdef2c04f2d013d532417b7c8e5f39a203aa48d328c88eae492c676703f025bf",
+      "original_sha256": "fdef2c04f2d013d532417b7c8e5f39a203aa48d328c88eae492c676703f025bf"
+    },
+    "independent-check.json": {
+      "bytes": 1130,
+      "sha256": "3fd0a379a0e06b4e0657ca0e7f16e554a1db7138edb74eb0310af32f4d832cad",
+      "original_sha256": "3fd0a379a0e06b4e0657ca0e7f16e554a1db7138edb74eb0310af32f4d832cad"
+    },
+    "check-contract.json": {
+      "bytes": 698,
+      "sha256": "ca941046dda34bc0d7506eb08257929d65daf21bee0b0eef1585f571b127e290",
+      "original_sha256": "ca941046dda34bc0d7506eb08257929d65daf21bee0b0eef1585f571b127e290"
+    },
+    "actual-CPU-model-check.json": {
+      "bytes": 240,
+      "sha256": "ca9108fdcc9b0ab7c7d4c294ef68428fb3f29e2edf2e2acf9874fa78f92b757c",
+      "original_sha256": "ca9108fdcc9b0ab7c7d4c294ef68428fb3f29e2edf2e2acf9874fa78f92b757c"
+    },
+    "launch.json": {
+      "bytes": 166,
+      "sha256": "f6f2134196391302cc426980174a640783e78a2a03cd9280d49257013f01f46c",
+      "original_sha256": "f6f2134196391302cc426980174a640783e78a2a03cd9280d49257013f01f46c"
+    },
+    "exit.json": {
+      "bytes": 65,
+      "sha256": "296b4a20c5524b619c21330799df80c0bf7afca04cbc0441471b22cb155679b0",
+      "original_sha256": "296b4a20c5524b619c21330799df80c0bf7afca04cbc0441471b22cb155679b0"
+    },
+    "independent-check-exit.json": {
+      "bytes": 152,
+      "sha256": "739b6eac44aeaf25a44d91cb3553ae69a8bca196a0ffc2d159307ed6d4537bc6",
+      "original_sha256": "739b6eac44aeaf25a44d91cb3553ae69a8bca196a0ffc2d159307ed6d4537bc6"
+    },
+    "fixed-TRAIN256-tokenized-inputs.jsonl.gz": {
+      "bytes": 859619,
+      "sha256": "8036d2c0d369eeb0dbfc12a3cf8c26aaacd92ef1003733ff0d0a6db1779a0109",
+      "original_sha256": "4d4e232f2db97a7f11b33f91ad9a0d73d4e52831c64a82db00b891ea9dabf774"
+    },
+    "all-TRAIN256-observations.jsonl.gz": {
+      "bytes": 21923,
+      "sha256": "bd6dd1f34dba87a7576a8ee403ed35304a312688146f1772d8dfa5f697d2c053",
+      "original_sha256": "a0cd504e7a9b3b8d4f6d68456980e162a2c420ebb5d2bd2c5d4c2d735cb96e6f"
+    },
+    "selector_train_decisions_cpu_20261019.py": {
+      "bytes": 9284,
+      "sha256": "391ea57a832286d38a5f2da4c291d435132a0f047ac8812dbccd6c00c4d57f02",
+      "original_sha256": "391ea57a832286d38a5f2da4c291d435132a0f047ac8812dbccd6c00c4d57f02"
+    },
+    "check_selector_train_decisions_cpu_20261019.py": {
+      "bytes": 6811,
+      "sha256": "d32986965cb5e3c5042f96d2e93e58013625751f9b1e4abec8625f0ef77e2afa",
+      "original_sha256": "d32986965cb5e3c5042f96d2e93e58013625751f9b1e4abec8625f0ef77e2afa"
+    },
+    "watch_selector_train_decisions_cpu_20261019.py": {
+      "bytes": 2580,
+      "sha256": "d8dad215f2b4f43687955d10ba7cb60c373c1997d853aef7cb241b0b08d7651e",
+      "original_sha256": "d8dad215f2b4f43687955d10ba7cb60c373c1997d853aef7cb241b0b08d7651e"
+    },
+    "publish_selector_train_decisions_cpu_20261020.py": {
+      "bytes": 5722,
+      "sha256": "01406a9f4563f9cfef4173ebc188beeef0abeb3d712d2b00c478e3680911f6a0",
+      "original_sha256": "01406a9f4563f9cfef4173ebc188beeef0abeb3d712d2b00c478e3680911f6a0"
+    },
+    "fixed-four-TRAIN-examples.json": {
+      "bytes": 12723,
+      "sha256": "4d8d515386ff40b4e71dad8b6b7edb116b9dd34f22f416b79594cbed1b1eb730"
+    }
+  }
+}

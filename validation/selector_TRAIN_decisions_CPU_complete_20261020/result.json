@@ -1,0 +1,54 @@
+{
+  "accelerator_calls": 0,
+  "actual_CPU_reference_pass": true,
+  "design_sha256": "85d1e75487b743bd444dfb733b13901ee094fd26c742323a051daa2aa916d96a",
+  "items": 256,
+  "limits": [
+    "Teacher-forced annotation inputs are explicitly privileged TRAIN diagnostic conditions, not prospective self-generated thoughts.",
+    "Correct set means author annotation agreement, not semantic entailment. Alternate valid subsets/order are not adjudicated.",
+    "CPU FP32 versus native BF16 can change near-tied decisions. This is not a causal attribution of original native errors.",
+    "No training, new held data, prompt rescue or V26 source/score changes."
+  ],
+  "observations_sha256": "a0cd504e7a9b3b8d4f6d68456980e162a2c420ebb5d2bd2c5d4c2d735cb96e6f",
+  "source_sha256": "391ea57a832286d38a5f2da4c291d435132a0f047ac8812dbccd6c00c4d57f02",
+  "status": "COMPLETE_TRAIN_TEACHER_FORCED_CLOSURE_AND_NATIVE_ERROR_DIAGNOSTIC_CPU_ONLY",
+  "strata": {
+    "2": {
+      "closure_preferred_decisions": 0,
+      "items": 128,
+      "native_categories": {
+        "contains_nonannotated_ID": 3,
+        "exact_annotated_set": 124,
+        "unsupported_selection": 1
+      },
+      "questions_with_any_closure_preferred": 0,
+      "required_continuation_decisions": 128
+    },
+    "3": {
+      "closure_preferred_decisions": 6,
+      "items": 96,
+      "native_categories": {
+        "annotated_subset_with_earlier_omission": 17,
+        "canonical_prefix_then_early_closure": 4,
+        "contains_nonannotated_ID": 11,
+        "exact_annotated_set": 64
+      },
+      "questions_with_any_closure_preferred": 6,
+      "required_continuation_decisions": 192
+    },
+    "4": {
+      "closure_preferred_decisions": 2,
+      "items": 32,
+      "native_categories": {
+        "annotated_subset_with_earlier_omission": 13,
+        "canonical_prefix_then_early_closure": 1,
+        "contains_nonannotated_ID": 3,
+        "exact_annotated_set": 15
+      },
+      "questions_with_any_closure_preferred": 2,
+      "required_continuation_decisions": 96
+    }
+  },
+  "utc": "2026-10-20T00:30:23+00:00",
+  "wall_seconds": 2350.44183133397
+}

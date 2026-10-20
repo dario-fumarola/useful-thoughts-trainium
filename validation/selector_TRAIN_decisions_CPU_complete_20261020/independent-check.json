@@ -1,0 +1,34 @@
+{
+  "status": "PASS_INDEPENDENT_TRAIN_CATEGORIES_TOKEN_BOUNDARIES_COUNTS_AND_FIXED_HF_FORWARD_SPOTS",
+  "items": 256,
+  "continuation_decisions": 416,
+  "HF_forward_spots": [
+    {
+      "item_id": "double__118355_825694",
+      "max_logp_error": 0.0
+    },
+    {
+      "item_id": "triple_ii__43379_337139_318766",
+      "max_logp_error": 0.0
+    },
+    {
+      "item_id": "quadruple_iii__87366_10079_503957_720028",
+      "max_logp_error": 0.0
+    },
+    {
+      "item_id": "double__273546_208796",
+      "max_logp_error": 0.0
+    }
+  ],
+  "result_sha256": "fdef2c04f2d013d532417b7c8e5f39a203aa48d328c88eae492c676703f025bf",
+  "source_sha256": "d32986965cb5e3c5042f96d2e93e58013625751f9b1e4abec8625f0ef77e2afa",
+  "contract_sha256": "ca941046dda34bc0d7506eb08257929d65daf21bee0b0eef1585f571b127e290",
+  "token_surface_pairs": [
+    {
+      "required": "]",
+      "closure": "]\n",
+      "count": 416
+    }
+  ],
+  "limit": "Checks original observations and four fixed numerical spots, not every forward independently. First-divergent-token scores are not total field-termination probabilities or semantic/capability validation."
+}

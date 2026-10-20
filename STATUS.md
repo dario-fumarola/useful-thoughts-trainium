@@ -1,4 +1,4 @@
-# Status — 2026-10-20 00:07 UTC
+# Status — 2026-10-20 00:35 UTC
 
 ## Active: coefficient-matched format control
 Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
@@ -12,20 +12,22 @@ O=local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed
 Physical2/3, logical8–15; training deadline00:51:47UTC; no retry/checkpoint selection.
 Science release/source/actual qualification:31 files readback/fsync protected; original4 mechanics states retained NVMe.
 Report: validation/document_evidence_format_weight_v26_science_release_20261019.json.
-Active: training159/256, exec34070/owned PID1517924/start28721656; terminal watcher97028. First128 wrapper8409 closes0.
-Next: finish256, then independently audit/protect/bind terminal before readout. Post-save grouped PSS~99GiB; warm13.5s.
+All256 updates physically close0; full terminal/native8/order/counter audit PASS. Terminal protection/binding watcher97028 active.
+Next: finish terminal protection/binding, then fixed direct/canonical-empty255 and ordinary256. Warm last60median13.443s.
 No held evaluation released: fixed direct/canonical-empty255 and ordinary256 follow terminal audit/protection.
 
-## Active: frozen TRAIN pointer-decision diagnostic
+## Closed: frozen TRAIN pointer-decision diagnostic
 Question: does premature closure persist with correct preceding annotated IDs?
-ID: selector-TRAIN-decisions-CPU-v1; frozen completed V25 selector, original TRAIN256 (128/96/32 strata).
-Native subset/prefix/wrong-ID categories fixed before new forwards; teacher-forced required-continuation vs closure token contrasts.
-CPU only,16 threads,40-minute bound; no updates, new held questions or V26 source/score changes.
-Descriptive optimization endpoints only; annotation agreement is not semantic correctness or causal explanation.
-Teacher-forced labels are privileged TRAIN diagnostic inputs, not deployed self-generated computation.
-Source/design/inputs frozen and EBS readback protected before model forwards.
-Design: validation/selector_TRAIN_decisions_CPU_design_20261019/design.json.
-Active CPU exec48441/PID1526142;105/256 rows; check/protection watcher8719. Deadline00:30:29UTC, no automatic retry.
+ID: selector-TRAIN-decisions-CPU-v1; unchanged completed V25 selector, original TRAIN256 (128/96/32 strata).
+All256 CPU forwards complete; raw/token/category/count checks and4 fixed independent HF forward spots PASS (zero error).
+Native203 exact annotated sets;53 mismatches:5 canonical-prefix early closures,30 subsets with earlier omission,17 nonannotated-ID,1 unsupported.
+The30 omitted-subset lists are ascending; two nonascending lists fall in the nonannotated-ID category.
+Correct-prefix local closure token preferred8/416 boundaries (0/128,6/192,2/96), not total termination probability.
+All boundaries compare standalone closing bracket with bracket+newline; no native causal or semantic correctness claim.
+CPU only,16 threads,39.17minutes compute, zero accelerator calls; no update/new held data or V26 source/score change.
+Raw/source outputs and16 public payloads readback/fsync protected; same-instance, all old reports/gates unchanged.
+Report: validation/selector_TRAIN_decisions_CPU_complete_20261020.json.
+Decision: pure correct-prefix-then-stop is insufficient for most annotation mismatches; no length-only repair released.
 
 ## Closed: selector-loss allocation ablation
 Question: does stronger selector supervision repair fitting and help answering?

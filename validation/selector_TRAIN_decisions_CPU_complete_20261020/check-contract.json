@@ -1,0 +1,15 @@
+{
+  "status": "FIXED_INDEPENDENT_CHECK_BEFORE_CPU_READOUT",
+  "utc": "2026-10-19T23:55:31.773288+00:00",
+  "fixed_item_ids": [
+    "double__118355_825694",
+    "triple_ii__43379_337139_318766",
+    "quadruple_iii__87366_10079_503957_720028",
+    "double__273546_208796"
+  ],
+  "selection": "One minimum seeded SHA per2/3/4-support stratum plus the overall minimum unused SHA. No outcome selection.",
+  "absolute_logp_tolerance": 0.0001,
+  "checker_sha256": "d32986965cb5e3c5042f96d2e93e58013625751f9b1e4abec8625f0ef77e2afa",
+  "installed_HF_logits_to_keep_API_present": true,
+  "limits": "Four independent direct-HF numerical spots plus all token-boundary/category/count checks; no new endpoint."
+}

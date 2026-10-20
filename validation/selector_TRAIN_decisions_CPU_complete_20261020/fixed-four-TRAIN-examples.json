@@ -1,0 +1,486 @@
+{
+  "selection": "One minimum seeded SHA per2/3/4-support stratum plus the overall minimum unused SHA. No outcome selection.",
+  "fixed_item_ids": [
+    "double__118355_825694",
+    "triple_ii__43379_337139_318766",
+    "quadruple_iii__87366_10079_503957_720028",
+    "double__273546_208796"
+  ],
+  "examples": [
+    {
+      "item_id": "double__118355_825694",
+      "question": "Who was the spouse of the director of La muerte camina en la lluvia?",
+      "annotated_support_indices": [
+        12,
+        14
+      ],
+      "native": {
+        "native": {
+          "item_id": "double__118355_825694",
+          "mode": "selection",
+          "parser_mode": "prior",
+          "status": "ok",
+          "actions": [
+            92602,
+            25,
+            508,
+            16,
+            17,
+            60,
+            508,
+            16,
+            19,
+            921,
+            19357,
+            4226,
+            510,
+            77424,
+            3362,
+            7577,
+            71440,
+            151643
+          ],
+          "content_ids": [
+            92602,
+            25,
+            508,
+            16,
+            17,
+            60,
+            508,
+            16,
+            19,
+            921,
+            19357,
+            4226,
+            510,
+            77424,
+            3362,
+            7577,
+            71440
+          ],
+          "text": "Evidence: [12] [14]\nFinal answer:\nSusana Freyre",
+          "raw_text": "Evidence: [12] [14]\nFinal answer:\nSusana Freyre",
+          "stop_type": "token:151643",
+          "prompt_tokens": 1909,
+          "n_actions": 18,
+          "wall_seconds": 1.9818140889983624
+        },
+        "support_count": 2,
+        "selection": {
+          "status": "complete",
+          "indices": [
+            12,
+            14
+          ],
+          "reason": ""
+        },
+        "overlap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "exact_match": 1,
+          "f1": 1.0
+        },
+        "answer": {
+          "status": "complete",
+          "answer": "Susana Freyre",
+          "end": 47,
+          "reason": ""
+        },
+        "answer_score": {
+          "canonical_em": 1,
+          "canonical_f1": 1.0,
+          "attributed_alias_em": 1,
+          "attributed_alias_f1": 1.0
+        }
+      },
+      "CPU_decisions": {
+        "item_id": "double__118355_825694",
+        "support_count": 2,
+        "native_category": "exact_annotated_set",
+        "branches": [
+          {
+            "after_ID_count": 1,
+            "shared_prefix_tokens": 1914,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -2.0503786799963564e-05,
+            "closure_logp": -13.005969047546387,
+            "closure_minus_required_logp": -13.005948543759587,
+            "closure_preferred": false
+          }
+        ],
+        "wall_seconds": 5.8996491769794375
+      }
+    },
+    {
+      "item_id": "triple_ii__43379_337139_318766",
+      "question": "Who performs the album originating the live album Live in the city filming the prince and the showgirl?",
+      "annotated_support_indices": [
+        9,
+        11,
+        13
+      ],
+      "native": {
+        "native": {
+          "item_id": "triple_ii__43379_337139_318766",
+          "mode": "selection",
+          "parser_mode": "prior",
+          "status": "ok",
+          "actions": [
+            92602,
+            25,
+            508,
+            24,
+            60,
+            508,
+            16,
+            16,
+            60,
+            508,
+            16,
+            18,
+            921,
+            19357,
+            4226,
+            510,
+            30092,
+            18482,
+            151643
+          ],
+          "content_ids": [
+            92602,
+            25,
+            508,
+            24,
+            60,
+            508,
+            16,
+            16,
+            60,
+            508,
+            16,
+            18,
+            921,
+            19357,
+            4226,
+            510,
+            30092,
+            18482
+          ],
+          "text": "Evidence: [9] [11] [13]\nFinal answer:\nSun Ra",
+          "raw_text": "Evidence: [9] [11] [13]\nFinal answer:\nSun Ra",
+          "stop_type": "token:151643",
+          "prompt_tokens": 1802,
+          "n_actions": 19,
+          "wall_seconds": 2.038533670012839
+        },
+        "support_count": 3,
+        "selection": {
+          "status": "complete",
+          "indices": [
+            9,
+            11,
+            13
+          ],
+          "reason": ""
+        },
+        "overlap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "exact_match": 1,
+          "f1": 1.0
+        },
+        "answer": {
+          "status": "complete",
+          "answer": "Sun Ra",
+          "end": 44,
+          "reason": ""
+        },
+        "answer_score": {
+          "canonical_em": 1,
+          "canonical_f1": 1.0,
+          "attributed_alias_em": 1,
+          "attributed_alias_f1": 1.0
+        }
+      },
+      "CPU_decisions": {
+        "item_id": "triple_ii__43379_337139_318766",
+        "support_count": 3,
+        "native_category": "exact_annotated_set",
+        "branches": [
+          {
+            "after_ID_count": 1,
+            "shared_prefix_tokens": 1806,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -3.1470757676288486e-05,
+            "closure_logp": -14.21616268157959,
+            "closure_minus_required_logp": -14.216131210821914,
+            "closure_preferred": false
+          },
+          {
+            "after_ID_count": 2,
+            "shared_prefix_tokens": 1810,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -9.202533692587167e-05,
+            "closure_logp": -9.696311950683594,
+            "closure_minus_required_logp": -9.696219925346668,
+            "closure_preferred": false
+          }
+        ],
+        "wall_seconds": 6.666640096984338
+      }
+    },
+    {
+      "item_id": "quadruple_iii__87366_10079_503957_720028",
+      "question": "In which country is the prefecture serving as the largest base for shooting films and TV dramas in the country where the majority of apples come from?",
+      "annotated_support_indices": [
+        5,
+        8,
+        15,
+        16
+      ],
+      "native": {
+        "native": {
+          "item_id": "quadruple_iii__87366_10079_503957_720028",
+          "mode": "selection",
+          "parser_mode": "prior",
+          "status": "ok",
+          "actions": [
+            92602,
+            25,
+            508,
+            20,
+            60,
+            508,
+            23,
+            60,
+            508,
+            16,
+            21,
+            921,
+            19357,
+            4226,
+            510,
+            6480,
+            34,
+            151643
+          ],
+          "content_ids": [
+            92602,
+            25,
+            508,
+            20,
+            60,
+            508,
+            23,
+            60,
+            508,
+            16,
+            21,
+            921,
+            19357,
+            4226,
+            510,
+            6480,
+            34
+          ],
+          "text": "Evidence: [5] [8] [16]\nFinal answer:\nPRC",
+          "raw_text": "Evidence: [5] [8] [16]\nFinal answer:\nPRC",
+          "stop_type": "token:151643",
+          "prompt_tokens": 2449,
+          "n_actions": 18,
+          "wall_seconds": 1.936781291035004
+        },
+        "support_count": 4,
+        "selection": {
+          "status": "complete",
+          "indices": [
+            5,
+            8,
+            16
+          ],
+          "reason": ""
+        },
+        "overlap": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "exact_match": 0,
+          "f1": 0.8571428571428571
+        },
+        "answer": {
+          "status": "complete",
+          "answer": "PRC",
+          "end": 40,
+          "reason": ""
+        },
+        "answer_score": {
+          "canonical_em": 1,
+          "canonical_f1": 1.0,
+          "attributed_alias_em": 1,
+          "attributed_alias_f1": 1.0
+        }
+      },
+      "CPU_decisions": {
+        "item_id": "quadruple_iii__87366_10079_503957_720028",
+        "support_count": 4,
+        "native_category": "annotated_subset_with_earlier_omission",
+        "branches": [
+          {
+            "after_ID_count": 1,
+            "shared_prefix_tokens": 2453,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -6.007967749610543e-05,
+            "closure_logp": -13.690531730651855,
+            "closure_minus_required_logp": -13.69047165097436,
+            "closure_preferred": false
+          },
+          {
+            "after_ID_count": 2,
+            "shared_prefix_tokens": 2456,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -2.5987286790041253e-05,
+            "closure_logp": -12.054594993591309,
+            "closure_minus_required_logp": -12.054569006304519,
+            "closure_preferred": false
+          },
+          {
+            "after_ID_count": 3,
+            "shared_prefix_tokens": 2460,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -0.000756216119043529,
+            "closure_logp": -7.27694034576416,
+            "closure_minus_required_logp": -7.276184129645117,
+            "closure_preferred": false
+          }
+        ],
+        "wall_seconds": 10.333628150983714
+      }
+    },
+    {
+      "item_id": "double__273546_208796",
+      "question": "Who is the composer of the Rhapsody No. 1 named after the county Saxlingham is located?",
+      "annotated_support_indices": [
+        13,
+        20
+      ],
+      "native": {
+        "native": {
+          "item_id": "double__273546_208796",
+          "mode": "selection",
+          "parser_mode": "prior",
+          "status": "ok",
+          "actions": [
+            92602,
+            25,
+            508,
+            16,
+            18,
+            60,
+            508,
+            17,
+            15,
+            921,
+            19357,
+            4226,
+            510,
+            49,
+            30223,
+            95148,
+            13612,
+            151643
+          ],
+          "content_ids": [
+            92602,
+            25,
+            508,
+            16,
+            18,
+            60,
+            508,
+            17,
+            15,
+            921,
+            19357,
+            4226,
+            510,
+            49,
+            30223,
+            95148,
+            13612
+          ],
+          "text": "Evidence: [13] [20]\nFinal answer:\nRalph Vaughan Williams",
+          "raw_text": "Evidence: [13] [20]\nFinal answer:\nRalph Vaughan Williams",
+          "stop_type": "token:151643",
+          "prompt_tokens": 1916,
+          "n_actions": 18,
+          "wall_seconds": 1.9974610089557245
+        },
+        "support_count": 2,
+        "selection": {
+          "status": "complete",
+          "indices": [
+            13,
+            20
+          ],
+          "reason": ""
+        },
+        "overlap": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "exact_match": 1,
+          "f1": 1.0
+        },
+        "answer": {
+          "status": "complete",
+          "answer": "Ralph Vaughan Williams",
+          "end": 56,
+          "reason": ""
+        },
+        "answer_score": {
+          "canonical_em": 1,
+          "canonical_f1": 1.0,
+          "attributed_alias_em": 1,
+          "attributed_alias_f1": 1.0
+        }
+      },
+      "CPU_decisions": {
+        "item_id": "double__273546_208796",
+        "support_count": 2,
+        "native_category": "exact_annotated_set",
+        "branches": [
+          {
+            "after_ID_count": 1,
+            "shared_prefix_tokens": 1921,
+            "required_token": 60,
+            "closure_token": 921,
+            "required_surface": "]",
+            "closure_surface": "]\n",
+            "required_logp": -3.814689989667386e-06,
+            "closure_logp": -13.426048278808594,
+            "closure_minus_required_logp": -13.426044464118604,
+            "closure_preferred": false
+          }
+        ],
+        "wall_seconds": 6.9942110949778
+      }
+    }
+  ]
+}
