@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 08:31 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 09:27 UTC; older entries below are historical -->
 Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
 V28 all six actual4096 terminal models physically close0 and independently pass full
 model/master/moment/native/order audits. All6full64 and24actual worker restoration
@@ -53,6 +53,8 @@ Use ABSOLUTE paths; original relative-path launch failure was preserved before t
    Read-only watcher exec36214 emits attempts/counts/native/cache/budget/resources
    every45s. It NEVER reads answer text/scores. Current metadata08:28:06 shows
    19,913attempts executed,32native+cache PASS,0failures,host1873GiB/root75.5GiB.
+   Latest09:26:36: all23started,17physically closed,304867attempts,all92native/cache
+   PASS,zero failure markers,host1906GiB/root74.8GiB. Scores remain unread.
    Counts have unequal token cost; do not infer accuracy or linear ETA from them.
    Actual sum reservations stop29.5/maximum30chip-hours,8hwall. Owner/heartbeat TTL60s,
   512GiBhost/35GiBdisk floors; owned-process cleanup only. No automatic retry.
@@ -61,6 +63,13 @@ Use ABSOLUTE paths; original relative-path launch failure was preserved before t
    file readback/fsync; log C_EVAL/protection.log. It never parses answers or scores.
    Destination R/local/backups/evaluation/permutation-program-v28-fixed-v1; do NOT
    relaunch blindly. Same-instance EBS only; originals remain on NVMe.
+   CPU ordinary9files/4.6MB also pass EBS full readback/fsync without score inspection;
+   receipt C_EVAL/ordinary-protection.json. Do NOT rerun the closed producer.
+   Offline analysis queue exec19133 waits for all23physical closures, then runs
+   exactly the scorer/independent checker/references/fixed examples/plots below.
+   Script local/analysis/finish_permutation_program_v28_fixed_readout_20261020.py;
+   log C_EVAL/offline-analysis-queue.log; output local/diagnostics/permutation-program-v28-complete-readout-v1.
+   Do NOT manually duplicate these stages while that queue is active. No automatic publication.
 4. All23must physically close before main readout:
    python -m train.permutation_program_readout --index <ABS C_EVAL/index.json> --output <newfile>
    Then local/analysis/check_permutation_program_v28_readout_20261020.py --index ...
@@ -78,6 +87,18 @@ Actual task generation runs, but scientific scores and ordinary retention result
 checks, not ability evidence. Keep both training/inference gates and B0 strong reference.
 No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or oldR1234 resume.
 Same-instance EBS protection is not off-instance backup. Continue until told to stop.
+
+Independent engineering-only candidate, no V28 numerical source changes:
+W_B=local/worktrees/causal-decoder-batching-v1 @b25560a, clean/pushed.
+Equal-real-length causal batching; original cache/masks/policy, separate row stops.
+All1873CPU tests+smoke/compile PASS; full log local/causal-decoder-batching-v1-checks-20261020.log.
+Bounded B0 TRAIN8 only probe ACTIVE exec19835; physical8/logical32,spare from V28's0..7.
+Control local/diagnostics/causal-decoder-batching-v1; plan fixed before accelerator launch.
+Max0.5whole-chip reserved hours,one logical core; all native distributions and forced32
+greedy sequences must match original serial decoder; no held quality scoring/model update.
+Supervisor local/analysis/supervise_causal_decoder_batching_v1_20261020.py and local/
+analysis/qualify_causal_decoder_batching_v1_20261020.py; worker.log + outer supervisor log.
+This is only a future speed candidate,not adoption into live V28 or capability evidence.
 
 ## Historical handoff snapshots (not active instructions)
 

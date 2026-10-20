@@ -1,4 +1,4 @@
-# Status — 2026-10-20 08:31 UTC
+# Status — 2026-10-20 09:27 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
@@ -13,8 +13,18 @@ Frozen training ce04236/evaluator2eb3c1c;1861CPU tests+smoke/compile pass; numer
 Fixed23-job/378880attempt comparison ACTIVE on8chips; initial32workers native/cache PASS. IOv2 inputs/protocols protected/public.
 Primarycomposition9216paired families; interpolation/longer-depth panels separate; all failures retained.
 Max8-chip queue charges actual reservations; stop29.5/maximum30chip-hours, deadline16:23:24UTC. Same fixed gates.
-Review outcomes only after all23groups close. Ordinary7-model CPU diagnostic closes0; scores remain unread.
+Review only after all23close: offline queue19133 waits. All23started/17closed; all92native/cache PASS; scores unread.
 No capability, autonomous-thinking or general-pretraining claim yet; all old studies/gates unchanged.
+
+## Active: separate decoder batching check
+Question: can equal-length batching preserve greedy decoding while reducing future inference cost?
+ID:causal-decoder-batching-v1; separate branch b25560a, no live V28 numerical changes.
+All1873CPU tests+smoke/compile PASS, including full cached distributions and independent row stopping.
+Prepared CPU native vectors on8 question-only TRAIN inputs from unchanged B0; no held rows or labels.
+One spare physical8/logical32 probe ACTIVE exec19835; maximum0.5reserved whole-chip hours.
+Gate: all B1/B4/B8 native checks and exact forced32 greedy sequences match original serial decoder.
+Control local/diagnostics/causal-decoder-batching-v1; owned-process/deadline/memory/disk bounds active.
+Result pending. Timings are an engineering microbenchmark; no capability claim or adoption into V28.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?
