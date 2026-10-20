@@ -1,16 +1,16 @@
-# Status — 2026-10-20 16:55 UTC
+# Status — 2026-10-20 17:41 UTC
 
 ## Active: matched real continuation CPT
 Question: does verified computation improve direct real prediction while retaining ordinary LM?
 ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; no held model outcomes.
 All3 order2026102029 models pass initial64 native/order/component/master/moment/cast and CPU-loss checks.
 All24 actual model/optimizer rank restorations pass full-byte checks; original continuations are active.
-Updates290–294 observed16:53UTC; warm~6.3–6.4s; earlier bounded PSS plateau,not indefinite stability.
+All3 complete first-pass640; every ordered document/component/native/master/moment/cast audit passes.
 Fixed terminal1280; full640/1280 originals remain in RAM; no checkpoint/prompt selection on DEV.
-Finite checkpoint queue independently audits and protects640/1280; all3 step64 weights and one full state already EBS-verified.
+All3 latest640 model archives and one full640 EBS archive pass complete readback; original64/640 remain in RAM.
 Same-instance EBS keeps latest per-run models and one rotating latest full optimizer state,not every optimizer history.
-Initial stages cost0.996reserved chip-hours; science80/evaluation64chip-hour bounds stay fixed.
-Report:validation/real_cpt_scaffold_v29_stage64_complete_20261020.json; source engine c9d2c0c unchanged.
+Original continuations remain active toward1280; warm~6.3–6.4s; bounded post-save memory drops,not indefinite stability.
+Report:validation/real_cpt_scaffold_v29_first_pass_20261020.json; source engine c9d2c0c unchanged.
 Active supervisors raw/format/computation exec3711/81339/86113; checkpoint queue PID1865138.
 Next:finish first order,audit/protect terminal states,then explicitly release order2026102030; implement fixed readout.
 Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,officialTEST or V28 extension.

@@ -58,7 +58,8 @@ preserves every original score and gate.
 
 All three first-order models have [completed64 updates and passed full audits](validation/real_cpt_scaffold_v29_stage64_complete_20261020.json).
 Warm updates take6.3–6.4s and bounded memory is stable. All24 model/optimizer rank restorations pass byte checks, and the three runs are
-active beyond update320 toward fixed1,280-update endpoints. All6 terminal identities
+through a fully audited and protected640-update first pass, continuing toward
+fixed1,280-update endpoints. All6 terminal identities
 will be fixed before held outcomes. [Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
 passes TRAIN-only native/cache/full-target checks; those are not learning results.
 [Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)

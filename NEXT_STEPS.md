@@ -18,7 +18,9 @@
    Report validation/real_cpt_scaffold_v29_stage64_complete_20261020.json.
    C=local/diagnostics/real-cpt-scaffold-v29-science-v1; release-terminal1280-seed2026102029.json.
    Run the same supervisor with --job cpt-{raw,format,computation}-seed2026102029-v1 --phase terminal1280.
-   All24 actual rank restorations PASS byte checks; continuations are active beyond update110.
+   All24 actual rank restorations PASS byte checks; all3 first-pass640 full state/order/component audits pass.
+   All latest640 model archives and one full640 EBS archive pass complete readback; second pass is active.
+   Report validation/real_cpt_scaffold_v29_first_pass_20261020.json.
    Supervised sessions3711/81339/86113; checkpoint queue PID1865138 waits640/1280; no automatic retry.
    Full640/1280 originals remain in RAM; protect latest per-job model and one latest full EBS state with serialized writes.
    Same-instance EBS does not contain every optimizer history. Respect62GiB preflight plus35GiB absolute floor.
