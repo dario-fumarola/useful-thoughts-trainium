@@ -34,7 +34,7 @@
    C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
    local/science-runs/controlled-computation-v28. Second-seed recovery report:
    C/second-seed-recovery-independent-audit.json. Original path failure preserved.
-   All three2048readbacks/fsyncs and subsequent updates now observed; old1024payloads
+   All three3072readbacks/fsyncs and subsequent updates now observed; old2048payloads
    rotate by the existing policy, all manifests/terminal models/model64 remain.
    Monitor actual4096 completion; terminal auditor exec75550 waits physical closures
    and runs the frozen independent all-state checker. Read-only watcher exec95213.

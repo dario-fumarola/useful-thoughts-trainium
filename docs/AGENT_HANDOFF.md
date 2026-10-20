@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 06:52 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 07:31 UTC; older entries below are historical -->
 V28 first-seed all three terminal4096 physically close0 and independent full-state
 model/master/moment/native/order audits PASS. No held outcomes.
 Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
@@ -23,8 +23,8 @@ Read-only second continuation watcher exec95213 emits steps/PSS/readback/closure
 status every45s; exits on failures/all terminal audits or original09:56deadline.
 Startup PSS~69–71GiB matches first-wave restoration phase; root76GiB free afterfull64.
 Post-save first wave was~24GiB/arm. Disk floor35GiB/host512GiB; global serialized saves.
-All three2048runtime readbacks/fsyncs and subsequent updates now observed; latestfull2048/arm.
-Old1024payloads rotate under the declared policy; receipts/manifests/model64/terminals remain.
+All three3072runtime readbacks/fsyncs and subsequent updates now observed; latestfull3072/arm.
+Old2048payloads rotate under the declared policy; receipts/manifests/model64/terminals remain.
 Next monitor actual4096 and audits. No held inference before all6terminal audits.
 After all6, use ABSOLUTE paths for evaluation release and all prepared commands.
 Source env.sh then override PYTHONPATH to the relevant frozen worktree+local/test-deps.
