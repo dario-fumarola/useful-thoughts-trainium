@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 08:24 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 08:31 UTC; older entries below are historical -->
 Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
 V28 all six actual4096 terminal models physically close0 and independently pass full
 model/master/moment/native/order audits. All6full64 and24actual worker restoration
@@ -23,7 +23,7 @@ It changes time allowance only: max8chips/30summedchip-hours/29.5stop/8hwall.
 Original design/source/data/models/shards4/caps128/gates stay frozen. No actual8-chip
 qualification claimed from CPU checks; every original decoder worker gates own native/cache.
 
-PREPARATION COMPLETE, ACTUAL GPU QUEUE NEXT:
+PREPARATION COMPLETE, ACTUAL GPU QUEUE ACTIVE:
 All six checkpoint identities were publicly pushed as13f3f9b BEFORE held evaluation.
 Original preparation exec30816 failed1 after the first complete B0 panel: helper
 assumed a return value from core prepare(),which instead writes protocol.json.
@@ -36,19 +36,26 @@ Publication permutation_program_v28_evaluation_preparation_20261020.json
 SHA206b340360718f69dfdedaa2261402513eeb5ecd79ab8358bbf330904c550d92;
 all23original protocol bytes archived publicly. No numerical/data/model/gate change.
 C_EVAL=R/local/diagnostics/permutation-program-v28-fixed-evaluation-v1.
-O_EVAL=R/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1 now EXISTS, no answers yet.
-CPU ordinary retention exec8898 ACTIVE, log C_EVAL/ordinary-CPU.log; do NOT rerun.
+O_EVAL=R/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1 now EXISTS, actual answers are being generated.
+CPU ordinary retention exec8898 CLOSED0, all7models×256rows; log C_EVAL/ordinary-CPU.log; do NOT rerun.
 Output R/local/nvme-cpt/evaluation/permutation-program-v28-ordinary-CPU-v1.
-Its progress shows models/256case counts/seconds only; do not inspect scores before full readout.
+Its result.json exists but SCORES UNREAD. Do not inspect before the full fixed readout.
 Source env.sh, override PYTHONPATH to ABSOLUTE W_E plus R/local/test-deps for host commands.
 Use ABSOLUTE paths; original relative-path launch failure was preserved before training.
-3. Prepared registry/index verified. Actual generation NOT YET launched; run
-   python -u R/local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py
-   max8groups,4independent decoder shards each, physical0..7. Sum actual reservations;
-   fixed queue uses counts/identities only, never scores. Heartbeat TTL60s/owner identity,
-  512GiBhost/35GiBdisk floors; finite8hwall/29.5stop/30maximum. No automatic retry.
-   Initial read-only preflight chips0..2training/3..15empty and1897GiBhost; now all training closed.
-   New helper sources and CPU accounting/actual-owner-death fixtures are public/protected.
+3. Actual generation ACTIVE. DO NOT rerun queue/prepare/release.
+   Parent exec54438, PID1637467/start31941443, pgid/session1637459;
+   log C_EVAL/fixed-queue.log, state C_EVAL/EXECUTION/plan.json + budget-heartbeat.json.
+   Actual start2026-10-20T08:25:24UTC, worker deadline2026-10-20T16:23:24.116996+00:00.
+   Eight original independent groups launched on physical0..7; four workers per group.
+   All8actual ownership snapshots and all32initial own-model native/cache gates PASS.
+   Source decoder2eb3c1c/model/data/FP32/shards4/cap128 unchanged; no new learning.
+   Read-only watcher exec36214 emits attempts/counts/native/cache/budget/resources
+   every45s. It NEVER reads answer text/scores. Current metadata08:28:06 shows
+   19,913attempts executed,32native+cache PASS,0failures,host1873GiB/root75.5GiB.
+   Counts have unequal token cost; do not infer accuracy or linear ETA from them.
+   Actual sum reservations stop29.5/maximum30chip-hours,8hwall. Owner/heartbeat TTL60s,
+  512GiBhost/35GiBdisk floors; owned-process cleanup only. No automatic retry.
+   Follow parent completion.json: all23physical closures required before any readout.
 4. All23must physically close before main readout:
    python -m train.permutation_program_readout --index <ABS C_EVAL/index.json> --output <newfile>
    Then local/analysis/check_permutation_program_v28_readout_20261020.py --index ...
@@ -62,7 +69,7 @@ Use ABSOLUTE paths; original relative-path launch failure was preserved before t
    collect_permutation_program_v28_examples_20261020.py --index ... --readout ...
    --independent-check ... --output ... retains all16prospective examples/18main paths each.
    Fixed identities R/local/diagnostics/permutation-program-v28-evaluation-CPU-v1/fixed-report-example-identities.json.
-No task-generation result exists yet; ordinary retention diagnostic is running. Native tests are numerical
+Actual task generation runs, but scientific scores and ordinary retention results remain UNREAD. Native tests are numerical
 checks, not ability evidence. Keep both training/inference gates and B0 strong reference.
 No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or oldR1234 resume.
 Same-instance EBS protection is not off-instance backup. Continue until told to stop.

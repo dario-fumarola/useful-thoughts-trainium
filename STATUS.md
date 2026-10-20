@@ -1,4 +1,4 @@
-# Status — 2026-10-20 08:24 UTC
+# Status — 2026-10-20 08:31 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
@@ -7,13 +7,13 @@ All six terminal4096 models physically close0 and pass independent model/master/
 All six full64 audits and24 actual worker restoration-digest comparisons PASS; all periodic readbacks resume.
 Actual science-training16.535chip-hours including0.00177 pre-load path failure; earlier qualifications separate.
 All6terminal models/development64 retained; latest full4096 per arm, old payloads rotate prospectively.
-Report: validation/permutation_program_v28_training_complete_20261020.json; protected; zero held model outcomes.
-Control C=local/diagnostics/permutation-program-v28-fixed-evaluation-v1; original18 and explicit amended30-hour releases saved.
+All six checkpoint identities were publicly frozen before held generation; training-complete report protected.
+Control C=local/diagnostics/permutation-program-v28-fixed-evaluation-v1; parent exec54438/PID1637467/start31941443; watcher36214.
 Frozen training ce04236/evaluator2eb3c1c;1861CPU tests+smoke/compile pass; numerical source unchanged.
-All23fixed jobs/378880attempts prepared; ordinary256 CPU exec8898 active. IO-only preparation fix preserves identical first-panel inputs.
+Fixed23-job/378880attempt comparison ACTIVE on8chips; initial32workers native/cache PASS. IOv2 inputs/protocols protected/public.
 Primarycomposition9216paired families; interpolation/longer-depth panels separate; all failures retained.
-Prepared max8-chip queue charges actual group reservations, stop29.5/maximum30chip-hours and8h wall; same gates.
-Next launch fixed queue; review outcomes after all23groups close. Actual native/cache gates precede each worker's held attempts.
+Max8-chip queue charges actual reservations; stop29.5/maximum30chip-hours, deadline16:23:24UTC. Same fixed gates.
+Review outcomes only after all23groups close. Ordinary7-model CPU diagnostic closes0; scores remain unread.
 No capability, autonomous-thinking or general-pretraining claim yet; all old studies/gates unchanged.
 
 ## Closed: fresh confirmation feasibility

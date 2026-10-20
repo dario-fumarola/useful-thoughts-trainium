@@ -24,11 +24,14 @@
    One explicit IOv2 restart reads the protocol; original helper/log/partial inputs
    remain, and recreated first-panel IDs/gold/full native tensor match exactly.
    Report permutation_program_v28_evaluation_preparation_20261020.json; all23protocols protected/public.
-   Do NOT rerun either preparation. CPU ordinary retention exec8898 remains active;
-   no scores inspected, no new accelerator calls. Next launch
-   local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py with frozen
-   evaluator PYTHONPATH. Its existing all-model/source/registry guards pass;
-   fixed original numerical2eb3c1c/shards4/FP32/256prefill/128cap, max8independent chips.
+   Do NOT rerun preparation/release/training. CPU ordinary retention exec8898
+   closes0 for all7models; results remain unread. The fixed GPU queue is ACTIVE:
+   exec54438, ownerPID1637467/start31941443; control EXECUTION/plan.json and heartbeat.
+   Start08:25:24UTC, deadline16:23:24UTC;8chips/30summedchip-hours/29.5stop.
+   All32initial own-model native/cache gates PASS; watcher exec36214 records only
+   counts/resources/closure/numerical gates. No output text or scientific scores read.
+   Source2eb3c1c/shards4/FP32/256prefill/128cap unchanged. Monitor all23physical
+   closures patiently; no prompt, checkpoint, cap or outcome-based scheduling change.
    Primarycomposition9216paired families; original1024family interpolation/depth panels
    and512family partial controls stay separate. All modes/caps/errors retained.
    No readout until all23physical closures. Run primary scorer, independent checker,
