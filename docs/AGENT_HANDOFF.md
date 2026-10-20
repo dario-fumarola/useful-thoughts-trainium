@@ -1,97 +1,65 @@
-<!-- Current handoff 2026-10-20 07:31 UTC; older entries below are historical -->
-V28 first-seed all three terminal4096 physically close0 and independent full-state
-model/master/moment/native/order audits PASS. No held outcomes.
-Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
-First wave8.296reserved chip-hours; original terminal models/model64 retained.
-Report validation/permutation_program_v28_first_wave_20261020.json protected.
-Second seed all three actual full64/native/order audits and all12 actual fresh-process
-optimizer restoration digests independently PASS. C/second-seed-recovery-independent-audit.json.
-Continuation64→4096 ACTIVE physical0/1/2. Exec63854/78696/79385;
-timeout PID/startticks1613798/30885703,1613800/30885704,1613796/30885702.
-C=local/diagnostics/permutation-program-v28-study-v1; terminal-release-seed2026102029.json.
-Original whole-wave deadline09:56:53UTC; no extension or performance stopping.
-Original EBS outputs local/science-runs/controlled-computation-v28/program-<arm>-seed2026102029-v1.
-First second-seed launch used a relative --release path and failed before model load,
-outputs or updates. Three failed controls/empty temps preserved; one explicit absolute
-path correction uses same original release/deadlines. Public repair report protected.
-Failed cost0.0017701253chip-hours; no numerical source/protocol change or retry loop.
-Second first64 auditor exec85868 closed0; restoration checker exec44807 closed0.
-First64 model64 copies/manifests remain; optimizer payload may rotate after1024readback.
-Second terminal auditor exec75550 waits physical exit0+closure then audits each actual
-4096 checkpoint using local/analysis/audit_permutation_program_v28_job_20261020.py.
-Read-only second continuation watcher exec95213 emits steps/PSS/readback/closure/audit
-status every45s; exits on failures/all terminal audits or original09:56deadline.
-Startup PSS~69–71GiB matches first-wave restoration phase; root76GiB free afterfull64.
-Post-save first wave was~24GiB/arm. Disk floor35GiB/host512GiB; global serialized saves.
-All three3072runtime readbacks/fsyncs and subsequent updates now observed; latestfull3072/arm.
-Old2048payloads rotate under the declared policy; receipts/manifests/model64/terminals remain.
-Next monitor actual4096 and audits. No held inference before all6terminal audits.
-After all6, use ABSOLUTE paths for evaluation release and all prepared commands.
-Source env.sh then override PYTHONPATH to the relevant frozen worktree+local/test-deps.
-No original first-seed/first64/restore producer or auditor reruns. Recovery proof saved
-before old64payload rotation. No model selection or early capability claim.
-Owner reiterated03:19UTC: keep going patiently, unsupervised~8hours, no new deadline.
-Frozen evaluation W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
-New fixed-cohort wrapper/readout and optional generic decoder/prefill hook; no kernel/parser change.
-All1861checks pass tests.qY1DSj; repeated required full checks after the host time-only
-amendment also PASS1861+smoke/compile in63.81s, tests.d0tVf2. EBS log:
-local/diagnostics/permutation-program-v28-evaluation-time-amendment-v1/full-frozen-core-checks-after-amendment.log.
-15,360actual-tokenizer inputs and full-sized
-known-score fixtures pass; zero held model forwards. C_E=local/diagnostics/permutation-program-v28-evaluation-CPU-v1.
-CPU source report validation/permutation_program_v28_evaluation_source_20261020.json protected.
-All6audited terminals required by scripts/release_permutation_program_evaluation.py
-(via the new host time-amendment wrapper below) before held model inference.
-Primary9,216families, secondary1,024each; family bootstrap,
-training/inference gates separate. No prompt/checkpoint selection or old result rewrite.
-Prepared local helpers (NOT RUN; require all appropriate audited models/closures):
-- release_permutation_program_v28_second_continuation_20261020.py and
-  check_permutation_program_v28_second_recovery_20261020.py (under local/analysis).
-- supervise_permutation_program_v28_generation_group_20261020.py reuses qualified4 independent decoder shards/chip.
-  Updated host-only scheduler allows8 independent chip slots, same4shards per job.
-- run_permutation_program_v28_fixed_evaluation_20261020.py batches exactly23 jobs; actual sum of
- group reservation durations stops29.5chip-hours plus shutdown reserve under30;8h wall bound.
-- permutation_program_v28_eval_budget_20261020.py enforces60s heartbeat TTL/owner PID-start identity;
- stale/dead monitor or cap stops all original group workers, no automatic retry.
- Host-only accounting/real owned-process death fixture passes; NOT eight-chip hardware qualification.
- Original18-hour report/source permutation_program_v28_evaluation_schedule_CPU_20261020.json stays preserved.
- New prospective time-only amendment permutation_program_v28_evaluation_time_amendment_20261020.json
- SHA b727931360a663031eda41aff0ed085803c78444e7d87209cdca31f7f1162065 supersedes only time allowance.
- Prior TRAIN qualification warm decoder latency0.0693s/action implies18.48idealized chip-hours
- for canonical trained completions+cappedB0 references before startup/native/chip contention.
- CPU unchanged-science-field/accounting/boundary/stale/dead-owner checks PASS; no held call.
- Max8chips unchanged; finite30chip-hour sum/29.5stop/8h wall, not new capacity or numerical code.
- Numerical source2eb3c1c/data/models/caps/shards/primary gates unchanged; training still3chips max.
-- check_permutation_program_v28_readout_20261020.py independently verifies actions/nodes/native/cache/family gates;
- 770 offline parser fixture cases pass, not model observations.
-- permutation_program_v28_ordinary_CPU_20261020.py uses old fixed ordinary256 input SHA7580d34a,
- existing score_spans onCPU FP32 after all6 release; no accelerator calls or new training/gate.
-Fixed8 reporting families/16paired composition examples chosen by hash before held outputs,
-C_E/fixed-report-example-identities.json, public with periodic recovery report.
-C_EVAL=local/diagnostics/permutation-program-v28-fixed-evaluation-v1 (not created yet).
-After all6terminal audits, actual release command (no args) with frozen evaluator PYTHONPATH:
-python local/analysis/release_permutation_program_v28_fixed_evaluation_20261020.py
-It calls the unchanged core builder into C_EVAL/original-release18.json, then writes
-C_EVAL/release.json with the explicit linked operational allowance30. Do not first
-create release.json directly with the original core CLI. Both records remain.
-Prepared local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py
---release /home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json
-prepares the index. No held model calls before all6actual state/model guards.
-Index must contain23 directories (all6×3panels+B0×3+2trace partial controls). Use native_from
-same model's first prepared output for later panels to avoid repeatedCPU reference generation.
-- permutation_program_v28_secondary_reference_20261020.py preserves matched2048-question
- B0 tables and explicitly secondary strong direct/empty comparisons; primary gates unchanged.
-Prepared presentation-only helpers, not run on model outcomes:
-- plot_permutation_program_v28_20261020.py --readout ... --output <newdir> renders
- all panels/seeds separately plus separate primary training/inference forests/CSVs.
-- collect_permutation_program_v28_examples_20261020.py --index ... --readout ...
- --independent-check ... --output ... requires complete independently checked readout;
- all16prospectively fixed cases and18main conditions each, original inputs/tokens preserved.
- Both source files under local/analysis; py_compile passes, no new score rules.
-No full evaluation execution release or index exists yet; do not start before all6audits.
-Latest full per arm/development64/terminal models retained; global EBS export lease,
-35GiB root and512GiB host floors; historical originals/cache untouched.
-Recovery proof already computed before old64 payloads rotate; first64 manifests remain.
-All full protection same-instance EBS, not off-instance. No cloud/stack/8B/TEST changes.
+<!-- Current handoff 2026-10-20 08:10 UTC; older entries below are historical -->
+Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
+V28 all six actual4096 terminal models physically close0 and independently pass full
+model/master/moment/native/order audits. All6full64 and24actual worker restoration
+comparisons PASS. No training or audit process remains active. Zero held model outcomes.
+DO NOT rerun any training/first64/restore checker/terminal auditor or release builder.
+Frozen training W_S=local/worktrees/controlled-computation-v28-study @ce04236, clean.
+Frozen evaluator W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
+All1861CPU tests+smoke/compile pass (latest tests.d0tVf2,63.81s). Numeric path unchanged.
+Training control C_S=local/diagnostics/permutation-program-v28-study-v1.
+Original EBS models local/science-runs/controlled-computation-v28/program-<arm>-seed<2026102028|29>-v1.
+All6terminal models/development64 retained, latestfull4096 per arm. Old first-seed
+optimizer rotated only after terminal audit+new same-arm full readback. All receipts remain.
+Science training16.5353719chip-hours incl0.0017701preload path failure; qualifications separate.
+Public/protected report permutation_program_v28_training_complete_20261020.json
+SHA48ab48d2d5a2a0555400c03c9b760caadace9164f360d242b437d1e32c76c697.
+C_EVAL=local/diagnostics/permutation-program-v28-fixed-evaluation-v1 now EXISTS.
+The all-six host release wrapper R/local/analysis/release_permutation_program_v28_fixed_evaluation_20261020.py
+has RUN successfully. C_EVAL/original-release18.json and release.json (explicit30hours) exist.
+Amendment validation/permutation_program_v28_evaluation_time_amendment_20261020.json
+SHAb727931360a663031eda41aff0ed085803c78444e7d87209cdca31f7f1162065.
+It changes time allowance only: max8chips/30summedchip-hours/29.5stop/8hwall.
+Original design/source/data/models/shards4/caps128/gates stay frozen. No actual8-chip
+qualification claimed from CPU checks; every original decoder worker gates own native/cache.
+
+NEXT (after checkpoint identities are committed/pushed, before any held output):
+source scripts/env.sh, then override PYTHONPATH to ABSOLUTE W_E plus R/local/test-deps;
+USE_TORCH_XLA=0 and OMP/MKL8 for host commands. Use ABSOLUTE release paths.
+1. python -u R/local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py
+   --release /home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json
+   prepares exactly23dirs/378880attempts; core guard has checked all6 actual checkpoints.
+   O_EVAL=R/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1 (NOT CREATED YET).
+   Own-model CPU canonical references only; no held-task generation in prepare.
+2. Parallel CPU-only secondary retention:
+   python -u R/local/analysis/permutation_program_v28_ordinary_CPU_20261020.py
+   --release <ABS C_EVAL/release.json>
+   --output /home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-ordinary-CPU-v1
+   Fixed old256pages SHA7580d34a; seven models CPU FP32/16threads/batch4; no accelerator.
+3. After prepare closes0/registry/index23, run
+   python -u R/local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py
+   max8groups,4independent decoder shards each, physical0..7. Sum actual reservations;
+   fixed queue uses counts/identities only, never scores. Heartbeat TTL60s/owner identity,
+  512GiBhost/35GiBdisk floors; finite8hwall/29.5stop/30maximum. No automatic retry.
+   Initial read-only preflight chips0..2training/3..15empty and1897GiBhost; now all training closed.
+   New helper sources and CPU accounting/actual-owner-death fixtures are public/protected.
+4. All23must physically close before main readout:
+   python -m train.permutation_program_readout --index <ABS C_EVAL/index.json> --output <newfile>
+   Then local/analysis/check_permutation_program_v28_readout_20261020.py --index ...
+   --readout ... --output ... independently reconstructs all tokens/nodes/92native+cache vectors/gates.
+   local/analysis/permutation_program_v28_secondary_reference_20261020.py --index ...
+   --primary-readout ... --output ... preserves SAME2048questions for B0, plus strong Dempty/Pdirect.
+   Primarycomposition18432questions/9216families; other panels2048/1024; no pooling/seeds rescue.
+5. Prepared presentation-only helpers, py_compile PASS; not run on model outcomes:
+   plot_permutation_program_v28_20261020.py --readout ... --output <newdir> produces
+   all-mode accuracy, independent primary forests, depth profiles, CSV/SVG/PNG. Inspect actual PNGs.
+   collect_permutation_program_v28_examples_20261020.py --index ... --readout ...
+   --independent-check ... --output ... retains all16prospective examples/18main paths each.
+   Fixed identities R/local/diagnostics/permutation-program-v28-evaluation-CPU-v1/fixed-report-example-identities.json.
+No primary/secondary generation result exists yet. Actual native tests are numerical
+checks, not ability evidence. Keep both training/inference gates and B0 strong reference.
+No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or oldR1234 resume.
+Same-instance EBS protection is not off-instance backup. Continue until told to stop.
 
 ## Historical handoff snapshots (not active instructions)
 

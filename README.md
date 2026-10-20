@@ -10,9 +10,8 @@ novelty relative to the model's original pretraining. Official TEST remains unop
 DEV was inventoried for prospective confirmation metadata only, without model outcomes.
 
 Current work is the [V28 controlled-computation reference](validation/permutation_program_v28_study_preparation_20261020.json).
-The [first three models completed all4,096 updates and independent full-state audits](validation/permutation_program_v28_first_wave_20261020.json).
-The second data-order seed is training from fresh base weights under the same recipe,
-with the same checkpoint audit and fresh-process recovery requirements.
+All [six models completed 4,096 updates and independent full-state audits](validation/permutation_program_v28_training_complete_20261020.json).
+Their terminal checkpoint identities are frozen. The fixed held-out comparison is next.
 No V28 learned-capability result exists yet. Before any held model outcome, the
 primary panel was enlarged to9,216 independent counterfactual families; interpolation
 and length extrapolation remain separate. This is a supervised mechanism lab,

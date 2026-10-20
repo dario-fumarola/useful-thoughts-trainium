@@ -1616,3 +1616,11 @@ then writes a separately linked30-hour operational record. CPU source-preservati
 accounting, finite-bound and actual-owner-death checks pass; not8-chip validation.
 Do not shrink the powered cohort or wait for partial outcomes to extend execution.
 Second-seed three1024readbacks/fsyncs and subsequent updates observed; continue4096.
+
+2026-10-20 08:09 UTC — All six fixed4096 models close0 and pass independent full
+model/master/moment/native/order audits;24actual worker restoration comparisons pass.
+Science training16.535chip-hours including the pre-load path failure; qualifiers separate.
+Freeze and publish all six actual checkpoint identities before any held model outcome.
+The original18-hour all-six release is preserved beside the explicitly amended30-hour
+operational release. Next prepare the entire fixed23-job comparison and secondary
+ordinary-text diagnostic, then execute; no checkpoint, mode or prompt selection.

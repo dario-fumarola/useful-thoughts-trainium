@@ -8,47 +8,32 @@
    All510 new GEN/256 ordinary cases check/protect; no V26 jobs or retries remain.
    V25's failed fitting gate and inconclusive extra-ID contrasts stay unchanged.
 
-1. Prepare the north star's controlled-computation reference, V28, CPU first.
-   One model per arm: direct prediction, verified full computation and trained
-   pause/extra-compute control. Use prefix-computable permutation programs with
-   variable depth, fresh random maps, held-out compositions and unseen lengths.
-   Exact interpreter supplies supervision; corruption/counterfactual pairs test
-   content dependence. Bootstrap original map/program families, not paired variants.
-   Match source exposure and explicit final-answer weighting, account separately
-   for auxiliary targets and inference work. Keep direct transfer separate from
-   the benefit of emitting intermediate text. Strong ordinary CoT is the verified
-   computation reference, not a deliberately restricted split system.
-   CPU preparation complete:38,912 independent data/token checks,131,072 native
-   TRAIN packs,1,838 tests plus smoke/compile. Report permutation_program_v28_CPU_readiness_20261020.json.
-   Training qualification complete:8actual updates, full4/restore/full8; independent
-   all-state/native/order audit PASS. Original two full states remain on NVMe-study.
-   Decoder check complete:28attempts/0errors,7cache controls,32CPU greedy actions PASS.
-   Expanded study data CPU checks pass; TRAIN bytes identical. Primarycomposition
-   uses9,216families/18,432questions; original1,024families per secondary panel.
-   Frozen training source ce04236/full1855checks PASS. First-seed direct/trace/pause
-   physically complete4096; all three independent terminal all-state/native/order
-   audits PASS. Terminal models/model64 retained; first wave8.296reserved chip-hours.
-   Second-seed all three full64/native/order audits and all12 actual restoration
-   digest comparisons PASS. Continuation64→4096 ACTIVE physical0/1/2,
-   exec63854/78696/79385; original whole-wave deadline09:56UTC unchanged.
-   C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
-   local/science-runs/controlled-computation-v28. Second-seed recovery report:
-   C/second-seed-recovery-independent-audit.json. Original path failure preserved.
-   All three3072readbacks/fsyncs and subsequent updates now observed; old2048payloads
-   rotate by the existing policy, all manifests/terminal models/model64 remain.
-   Monitor actual4096 completion; terminal auditor exec75550 waits physical closures
-   and runs the frozen independent all-state checker. Read-only watcher exec95213.
-   Frozen evaluator2eb3c1c passes1861tests/15360native input checks and full-sized
-   score fixtures. Fixed23-job queue is prepared for up to8 independent chips,
-   summed30chip-hour accounting/stale-monitor stop; numerical decoder/shards unchanged.
-   Time-only amendment published before held outcomes: prior TRAIN decoder timing
-   gives18.48idealized chip-hours before startup; original17.5stop was too tight.
-   After all6terminal audits, use the host wrapper
-   local/analysis/release_permutation_program_v28_fixed_evaluation_20261020.py
-   (no args; frozen evaluator PYTHONPATH). It preserves original-release18.json
-   and links the explicit30-hour amended release; do not create release.json
-   directly with the original core builder. Wall bound8hours, stop29.5chip-hours.
-   No evaluation before all6terminal audits. No autonomous RL/capability claim follows.
+1. Finish the controlled-computation reference, V28.
+   All six fresh1.7B models complete4096 updates; full64/terminal all-state,
+   native/order and24 actual worker restoration comparisons PASS. No active training.
+   Report permutation_program_v28_training_complete_20261020.json; actual science
+   training16.535reserved chip-hours including the preserved pre-load path failure.
+   All terminal models/model64 retained; latestfull4096 per arm, historical originals untouched.
+   Actual all-six release is saved in
+   local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json.
+   Original-release18.json also preserved. The time-only amendment prospectively
+   raises evaluation allowance30chip-hours/8h wall, stop29.5, max8chips; same source/gates.
+   Do NOT rerun training, its auditors, restoration checker or the release wrapper.
+   Next, source env.sh and override PYTHONPATH to
+   local/worktrees/controlled-computation-v28-eval plus local/test-deps.
+   Run local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py
+   --release /home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json.
+   It prepares exactly23jobs/378880attempts with own-model CPU native references.
+   In parallel run the prepared ordinary256 CPU retention helper, all seven models,
+   as a secondary specialization diagnostic. No new training or accelerator calls there.
+   Then run local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py;
+   fixed original numerical2eb3c1c/shards4/FP32/256prefill/128cap, max8independent chips.
+   Primarycomposition9216paired families; original1024family interpolation/depth panels
+   and512family partial controls stay separate. All modes/caps/errors retained.
+   No readout until all23physical closures. Run primary scorer, independent checker,
+   same-question B0/strong-control reference, fixed examples and plots afterward.
+   Evaluate training and inference gates separately; no checkpoint/prompt selection.
+   This remains a supervised mechanism study; autonomous RL/general-pretraining claims wait.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

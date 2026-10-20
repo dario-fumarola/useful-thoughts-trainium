@@ -1,0 +1,181 @@
+{
+  "status": "ALL_SIX_FIXED_TERMINALS_AUDITED_EVALUATION_RELEASED_NO_HELD_RESULTS",
+  "utc": "2026-10-20T08:09:14.368578+00:00",
+  "experiment_id": "controlled-computation-v28",
+  "models": {
+    "program-direct-seed2026102028-v1": {
+      "step": 4096,
+      "model_sha256": "7156e89cdade60991646b40ae388ea9441df566927015598be774d3ebcf11746",
+      "terminal_audit_sha256": "8a5ffde07356fc36c3b7000c8561aa2132867a4a53a1612e45ca72d73b0e1a49",
+      "actual_final_counters": {
+        "expressions": 131072,
+        "supervised_tokens": 655360
+      },
+      "phases": {
+        "first64": {
+          "launched_utc": "2026-10-20T02:09:48.635260+00:00",
+          "physically_closed_utc": "2026-10-20T02:24:37.593471+00:00",
+          "reserved_chip_hours": 0.24693283638888888,
+          "launch_sha256": "f6f294c5eb9153e3511eea5a16f79dd423c7fd5320c106f9126c7560d44bbfb5"
+        },
+        "terminal": {
+          "launched_utc": "2026-10-20T02:32:00.992895+00:00",
+          "physically_closed_utc": "2026-10-20T05:02:57.420131+00:00",
+          "reserved_chip_hours": 2.515674232222222,
+          "launch_sha256": "de0239d8d9351c1f945c4dd66ad00b1cc67a4e2bb8807df33188c079c75185e2"
+        }
+      }
+    },
+    "program-direct-seed2026102029-v1": {
+      "step": 4096,
+      "model_sha256": "7f6a25dcad1ac30f31959dccf0ea3c18133cab10ac49fe129ba2213fb84e024e",
+      "terminal_audit_sha256": "5f9d5340fd760ef9868123b9713467597a157e3607a2cc5fb083ef633f4568d0",
+      "actual_final_counters": {
+        "expressions": 131072,
+        "supervised_tokens": 655360
+      },
+      "phases": {
+        "first64": {
+          "launched_utc": "2026-10-20T05:13:41.791171+00:00",
+          "physically_closed_utc": "2026-10-20T05:20:47.312984+00:00",
+          "reserved_chip_hours": 0.11820050361111112,
+          "launch_sha256": "796e279179b5104ab33f93a9d3e87b5759bd1847b85c4421666d2e5b85ca63f9"
+        },
+        "terminal": {
+          "launched_utc": "2026-10-20T05:29:24.886700+00:00",
+          "physically_closed_utc": "2026-10-20T07:59:11.482676+00:00",
+          "reserved_chip_hours": 2.49627666,
+          "launch_sha256": "cca4f3b6a4be3f17a9ee93b2e9d64d431fb987f3822b41bafeec0be38f02a2b8"
+        }
+      }
+    },
+    "program-pause-seed2026102028-v1": {
+      "step": 4096,
+      "model_sha256": "c7d4117761a1a05275f28e308448ac20c93618dedbe2d52954177a13230d762f",
+      "terminal_audit_sha256": "c04355c3ae845822620a5a9574102e4b92d174bddfe531391621080b83cdf0ff",
+      "actual_final_counters": {
+        "expressions": 131072,
+        "supervised_tokens": 655360
+      },
+      "phases": {
+        "first64": {
+          "launched_utc": "2026-10-20T02:09:50.981174+00:00",
+          "physically_closed_utc": "2026-10-20T02:16:59.668333+00:00",
+          "reserved_chip_hours": 0.1190797663888889,
+          "launch_sha256": "d028424393b8b7a31e23ee441911f979d6bc0f119c5ee971291d3ee55a537150"
+        },
+        "terminal": {
+          "launched_utc": "2026-10-20T02:32:03.341694+00:00",
+          "physically_closed_utc": "2026-10-20T05:10:57.438746+00:00",
+          "reserved_chip_hours": 2.648360292222222,
+          "launch_sha256": "74e62691985b3a3cd11791ffe4bd93b2b0f092388fbde30b0bec033440aad782"
+        }
+      }
+    },
+    "program-pause-seed2026102029-v1": {
+      "step": 4096,
+      "model_sha256": "34307a07856939844dd1afb3406103e60286d8b353048a9c725f8701405cffda",
+      "terminal_audit_sha256": "8396bbda89c3048f8f06581c127fb9d5ae1751873e39c4a22d64b9339af555ae",
+      "actual_final_counters": {
+        "expressions": 131072,
+        "supervised_tokens": 655360
+      },
+      "phases": {
+        "first64": {
+          "launched_utc": "2026-10-20T05:13:41.814742+00:00",
+          "physically_closed_utc": "2026-10-20T05:28:27.079747+00:00",
+          "reserved_chip_hours": 0.24590694583333333,
+          "launch_sha256": "ca68a58f6a166dbaff1346d121791377bea3ea9fc4bcd46c4e88cfb2f97ef61c"
+        },
+        "terminal": {
+          "launched_utc": "2026-10-20T05:29:24.872801+00:00",
+          "physically_closed_utc": "2026-10-20T08:07:14.754730+00:00",
+          "reserved_chip_hours": 2.6305227580555552,
+          "launch_sha256": "baff54c7c1bfc202c43f0df2444085f4038aa8836d1548b3fac9e538677e12ea"
+        }
+      }
+    },
+    "program-trace-seed2026102028-v1": {
+      "step": 4096,
+      "model_sha256": "cb0aa8e506343f843f96aa6932cd4adb572c7440f5c483bac3688eb59720f4bd",
+      "terminal_audit_sha256": "964e0f86e89affc9cdee1d05c14a4873190ee8dea80635bb75ec1dc94efa1907",
+      "actual_final_counters": {
+        "expressions": 131072,
+        "supervised_tokens": 2031520
+      },
+      "phases": {
+        "first64": {
+          "launched_utc": "2026-10-20T02:09:49.819025+00:00",
+          "physically_closed_utc": "2026-10-20T02:20:48.474352+00:00",
+          "reserved_chip_hours": 0.18295981305555556,
+          "launch_sha256": "af6b6d9608b10e8b33fcc02f15ad2097fade0716ae31abf3b4890d7f5b6467d5"
+        },
+        "terminal": {
+          "launched_utc": "2026-10-20T02:32:02.162712+00:00",
+          "physically_closed_utc": "2026-10-20T05:06:59.653807+00:00",
+          "reserved_chip_hours": 2.5826364152777774,
+          "launch_sha256": "0de1424c15804723032406c438b2eeaeba993640acd6b4a26d7f6180210ca164"
+        }
+      }
+    },
+    "program-trace-seed2026102029-v1": {
+      "step": 4096,
+      "model_sha256": "b90a9864f87663623c525d4dce4a82eb2610c9b145654a3a4e084528abd0167c",
+      "terminal_audit_sha256": "8b14ad96df49f601c301f55b5b04dcff82d070d4eb6414f8a54c3cc724b6f74a",
+      "actual_final_counters": {
+        "expressions": 131072,
+        "supervised_tokens": 2031520
+      },
+      "phases": {
+        "first64": {
+          "launched_utc": "2026-10-20T05:13:41.779103+00:00",
+          "physically_closed_utc": "2026-10-20T05:24:36.673668+00:00",
+          "reserved_chip_hours": 0.18191515694444443,
+          "launch_sha256": "4082bd17d732ebb4ce722dc95e16117a356449a50a6d870c062de23f60abf57e"
+        },
+        "terminal": {
+          "launched_utc": "2026-10-20T05:29:24.898529+00:00",
+          "physically_closed_utc": "2026-10-20T08:03:19.389602+00:00",
+          "reserved_chip_hours": 2.5651364091666666,
+          "launch_sha256": "e91ffee4d84fb3f8c54257285a7c41320e334a0259fd851f45cd8397dcdbac2f"
+        }
+      }
+    }
+  },
+  "actual_updates": 24576,
+  "held_model_outcomes": 0,
+  "actual_training_reserved_chip_hours": 16.533601789166667,
+  "preserved_preload_path_failure_chip_hours": 0.0017701252777777778,
+  "total_training_including_failed_preload_chip_hours": 16.535371914444443,
+  "numerical_training_source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "prospective_design_sha256": "d01498ec6eec98fedad28bfa5b5426059ccceff196ef7522bb44ea27d98ebba6",
+  "evaluation_time_amendment": {
+    "path": "/home/ubuntu/dario/validation/permutation_program_v28_evaluation_time_amendment_20261020.json",
+    "sha256": "b727931360a663031eda41aff0ed085803c78444e7d87209cdca31f7f1162065"
+  },
+  "files": {
+    "validation/permutation_program_v28_training_complete_20261020/evaluation-release30.json": "de1ccf3d44c43367a3238977f3a05b911864743639117f2ed3a2cf8777212afe",
+    "validation/permutation_program_v28_training_complete_20261020/original-evaluation-release18.json": "54c9df4f02f72b0275f422b3d794924fc18631dee215efff143a08cfe066e905",
+    "validation/permutation_program_v28_training_complete_20261020/second-seed-actual-restores.json": "976399ea46790a340ffb37ff7b8e26bd9c8e41e598a95593b5ef028b485ef84d",
+    "validation/permutation_program_v28_training_complete_20261020/publish_permutation_program_v28_all_terminals_20261020.py": "811e591ae5717b6a33b18d4cd40dabf78301e4ca5e56a2084edc813f1b5210f6",
+    "validation/permutation_program_v28_training_complete_20261020/program-direct-seed2026102028-v1-terminal-audit.json": "8a5ffde07356fc36c3b7000c8561aa2132867a4a53a1612e45ca72d73b0e1a49",
+    "validation/permutation_program_v28_training_complete_20261020/program-direct-seed2026102028-v1-physical-closure.json": "b1d1df7b712b46d0c5019945417f31124302860eba23d9ab23c8ebfe07a89729",
+    "validation/permutation_program_v28_training_complete_20261020/program-direct-seed2026102029-v1-terminal-audit.json": "5f9d5340fd760ef9868123b9713467597a157e3607a2cc5fb083ef633f4568d0",
+    "validation/permutation_program_v28_training_complete_20261020/program-direct-seed2026102029-v1-physical-closure.json": "7823bcad2bcdb352d1434b23249a9442ca6523ff98579ad5c44b12d9173af620",
+    "validation/permutation_program_v28_training_complete_20261020/program-pause-seed2026102028-v1-terminal-audit.json": "c04355c3ae845822620a5a9574102e4b92d174bddfe531391621080b83cdf0ff",
+    "validation/permutation_program_v28_training_complete_20261020/program-pause-seed2026102028-v1-physical-closure.json": "e016efa9fd3aa9a78b5c7989d285ed2ba80998d16b0c9d9d47f040cd86f629ee",
+    "validation/permutation_program_v28_training_complete_20261020/program-pause-seed2026102029-v1-terminal-audit.json": "8396bbda89c3048f8f06581c127fb9d5ae1751873e39c4a22d64b9339af555ae",
+    "validation/permutation_program_v28_training_complete_20261020/program-pause-seed2026102029-v1-physical-closure.json": "ae81a2bd4ff171cb8e1fc30df7f32f5f5914e7dee14c74aa4449f731f456689c",
+    "validation/permutation_program_v28_training_complete_20261020/program-trace-seed2026102028-v1-terminal-audit.json": "964e0f86e89affc9cdee1d05c14a4873190ee8dea80635bb75ec1dc94efa1907",
+    "validation/permutation_program_v28_training_complete_20261020/program-trace-seed2026102028-v1-physical-closure.json": "adc19269d96598fe5bed869b179563f9dc4319dc0e47f0cfd4fd43e65858f50e",
+    "validation/permutation_program_v28_training_complete_20261020/program-trace-seed2026102029-v1-terminal-audit.json": "8b14ad96df49f601c301f55b5b04dcff82d070d4eb6414f8a54c3cc724b6f74a",
+    "validation/permutation_program_v28_training_complete_20261020/program-trace-seed2026102029-v1-physical-closure.json": "f3cf72ce1019df68ad3b28e79d3bf052f99e5368101ae542da66c1e8771ea42d"
+  },
+  "limits": [
+    "Actual saved state/order/native/recovery evidence; no free-answer or generalization result yet.",
+    "Charge each original phase from launch through physical closure, including initialization and checkpoint time; CPU-only audits are separate.",
+    "Earlier training and decoder hardware qualifications retain their separate cost reports; they are outside this science-training total.",
+    "All six terminal models and development64 models remain. Latest complete optimizer per arm retained by the prospective rolling policy.",
+    "Same-instance EBS protection, not off-instance backup. No checkpoint, prompt, cohort or gate selection."
+  ]
+}
