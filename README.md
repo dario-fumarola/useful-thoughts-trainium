@@ -6,7 +6,8 @@ confirmation is still needed; an added benefit from generating IDs remains unest
 
 This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documents,
 and Trainium. It does not establish broad reasoning, pretraining benefit, or
-novelty relative to the model's original pretraining. Official DEV/TEST are unopened.
+novelty relative to the model's original pretraining. Official TEST remains unopened;
+DEV was inventoried for prospective confirmation metadata only, without model outcomes.
 
 ## Latest matched control (V26)
 
@@ -49,9 +50,12 @@ checkpoints,269 raw/source files and58 public artifacts are protected on the sam
 - [Ordinary-text cost](validation/document_evidence_format_weight_v26_complete_20261020/ordinary-NLL-cost.svg)
 - [Training protocol and hardware qualification](validation/document_evidence_format_weight_v26_science_release_20261019.json)
 
-The next decision is a fresh, adequately powered confirmation against both
-coefficient-matched and stronger direct controls. No coefficient sweep, larger
-model or RL escalation follows from this developmental result.
+The [fresh-source feasibility check](validation/document_evidence_v27_confirmation_feasibility_20261020.json)
+finds insufficient independent questions under the existing exclusions:875 clean
+DEV items,333 evidence groups, independent-count upper614 versus the planned1024.
+No smaller confirmation is released; V26 remains developmental. The next mechanism
+step is verified variable-depth computation with a trained extra-compute control.
+No coefficient sweep, larger model or RL escalation follows from this result.
 The [research goal](docs/RESEARCH_ROADMAP.md) remains reusable computation that
 becomes autonomous and can eventually be internalized.
 

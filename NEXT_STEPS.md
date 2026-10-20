@@ -8,24 +8,27 @@
    All510 new GEN/256 ordinary cases check/protect; no active accelerator jobs or retries.
    V25's failed fitting gate and inconclusive extra-ID contrasts stay unchanged.
 
-1. Prepare ONE fresh powered confirmation of training-side evidence-content benefit.
-   Keep Qwen3-1.7B, source/answer objectives and selected coefficient fixed. Include
-   both format1.0 and stronger historical-format0.1 recipes as direct controls.
-   Use new data-order seeds and fresh outcomes; freeze data eligibility, parser,
-   primary contrasts, practical effect size and power calculation before evaluation.
-   First resolve how many genuinely fresh questions exist under source separation.
-   The remaining within-TRAIN pool may be too small: do not claim power from a
-   nominal question count while ignoring reused evidence or clustered questions.
-   Official DEV/TEST files remain unopened; this queue releases no access or training.
-   Do not tune another coefficient or turn the old255 panel into confirmation.
-   Keep explicit-ID inference as a separate secondary question, not the headline.
+1. Prepare the north star's controlled-computation reference, V28, CPU first.
+   One model per arm: direct prediction, verified full computation and trained
+   pause/extra-compute control. Use prefix-computable permutation programs with
+   variable depth, fresh random maps, held-out compositions and unseen lengths.
+   Exact interpreter supplies supervision; corruption/counterfactual pairs test
+   content dependence. Bootstrap original map/program families, not paired variants.
+   Match source exposure and explicit final-answer weighting, account separately
+   for auxiliary targets and inference work. Keep direct transfer separate from
+   the benefit of emitting intermediate text. Strong ordinary CoT is the verified
+   computation reference, not a deliberately restricted split system.
+   First build/test deterministic generator and check token budgets; no learning,
+   autonomous RL or capability claim is released by this queue.
 
-2. Follow the north star after that decision: verified variable-depth computation,
-   trained extra-compute controls, prefix-to-continuation pretraining, then controlled
-   guidance withdrawal/onset/internalization. docs/RESEARCH_ROADMAP.md is the plan.
-   Scratchpad/trace supervision and direct-answer distillation are prior work;
-   reusable computation, sample efficiency and withdrawal conditions need evidence.
-   No capacity/RL jump or unlimited split rescue follows from the current results.
+2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
+   V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean
+   DEV questions, linked into333 groups. Independent-count upper614<planned1024.
+   Do not run a smaller underpowered confirmation or weaken exclusions. A future
+   confirmation needs another source/protocol with both direct controls and new seeds.
+   DEV metadata only was inspected; no model outcomes or manual examples. TEST untouched.
+   Roadmap then returns to prefix-to-continuation CPT, guidance withdrawal/onset,
+   and internalization. Scratchpad supervision/distillation alone are prior work.
 
 Protected state and fixed evidence:
 
@@ -47,5 +50,5 @@ Protected state and fixed evidence:
   Never mutate/rerun closed producers to revise historical gates.
 - V23 frozen train7328141, decoder625fb0f, repaired span bf288fe; V25 train5414f8d.
   All20 passages remain visible; label agreement is not semantic verification.
-  OfficialDEV/TEST unopened. OldR1234 stays stopped63. No paid teacher/cloud/stack changes.
+  OfficialTEST unopened; DEV metadata-only scope frozen before acquisition. OldR1234 stays stopped63. No paid teacher/cloud/stack changes.
   Keep35GiB/filesystem and512GiBhost available floors; never delete original states/cache.

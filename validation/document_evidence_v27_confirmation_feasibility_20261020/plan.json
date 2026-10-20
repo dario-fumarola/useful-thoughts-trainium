@@ -1,0 +1,38 @@
+{
+  "status": "CPU_ONLY_AVAILABILITY_AND_POWER_NO_CONFIRMATION_RELEASE",
+  "utc": "2026-10-20T00:48:31.756709+00:00",
+  "question": "Can the remaining already-downloaded TRAIN source support a fresh, source-separated powered confirmation?",
+  "raw_sha256": "a85aeee64718f08ab9d11472f28b424e3d933794082b6d3c5b2481cd7e733345",
+  "old_manifests": {
+    "local/nvme-cpt/data/document-QA-v21-TRAIN2048-held512-v1/manifest.json": "650f6215db114c346e3485470bbe4d8f5e1a585622d4a260f6b8501ea517f236",
+    "local/nvme-cpt/data/document-evidence-plan-v23-TRAIN2048-held255-v2/manifest.json": "bd74add7d32df6d591542defc8ab93458d21b2d12c88783f2b9047f494c6910e"
+  },
+  "exclusion": "Candidate ID/normalized question/original component question may not overlap TRAIN2048 or either inspected held512/255. Candidate supporting paragraph/page may not occur anywhere visible in those cohorts.",
+  "window": 3072,
+  "independence": "Greedy fixed hash order, no shared support paragraph/page/component ID among retained questions. Constructive lower bound only; eligible count is an upper bound.",
+  "ranking_salt": "document-evidence-v27-feasibility-only-v1:",
+  "planning": "Normal approximation for paired mean difference; practical gate point>=.03 and two-sided95% lower>0. Four required comparisons (two controls times two seeds). Union-bound planning: each marginal>=.95 gives joint>=.80 without assuming independence.",
+  "effect_grid": [
+    0.03,
+    0.04,
+    0.05,
+    0.07
+  ],
+  "discordance_grid": [
+    0.1,
+    0.15,
+    0.2,
+    0.3
+  ],
+  "sample_grid": [
+    128,
+    255,
+    512,
+    768,
+    1024,
+    1536,
+    2048,
+    4096
+  ],
+  "limits": "No model outputs or scores read. No cohort selection/release, official files, numerical jobs or old result changes. Planning approximation is not actual bootstrap power or a promise of semantic novelty."
+}

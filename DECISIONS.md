@@ -1568,3 +1568,17 @@ This is one order seed and an adaptively inspected panel. Freeze any fresh
 confirmation against both direct controls, resolve sample-size/source availability
 before launch, and retain complete outcomes. No coefficient sweep, larger model,
 RL or official DEV/TEST access is released by closing this comparison.
+
+
+2026-10-20 01:00 UTC — Fresh confirmation needs more than nominal question counts
+V27 metadata finds zero remaining clean TRAIN questions. Author raw DEV download
+returns quota HTML; two pinned mirrors agree and all19938 cached TRAIN records
+recheck against author raw. DEV has875 source-clean/length-eligible questions,
+333 connected evidence groups, greedy343 independent and upper614 from distinct
+original IDs. This cannot meet the planned1024 independent items. No smaller
+confirmation, relaxed exclusions or model evaluation is released. Original
+20-paragraph metadata assumption failed on16 shorter-context rows; a declared
+CPU-only repair retains every provided paragraph and preserves failure evidence.
+V26 remains promising developmental evidence. Continue the roadmap's controlled
+computation reference with variable-depth verified programs and a trained pause
+competitor; synthetic mechanism results will not be called general pretraining.

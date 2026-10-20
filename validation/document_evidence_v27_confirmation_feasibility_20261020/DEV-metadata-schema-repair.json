@@ -1,0 +1,20 @@
+{
+  "status": "CPU_METADATA_SCHEMA_GUARD_REPAIR_BEFORE_ELIGIBILITY_NO_MODEL_OR_DATA_CHANGE",
+  "utc": "2026-10-20T00:55:19.575259+00:00",
+  "reason": "Official DEV has16 questions with17-19 supplied paragraphs; retain ALL provided paragraphs, matching existing question_projection contract. Previous guard incorrectly assumed20.",
+  "original_source_sha256": "837241faf9373e5129b2b2c4af85cd13e65c8694fc53935f863ebf45c4ed540e",
+  "candidate_source_sha256": "fa3c3fa66cfdfc00d46ba0883a94c97c2a223875306b38149c4ab9b758da19ef",
+  "read_only_cached_DEV": true,
+  "new_downloads": 0,
+  "changed": [
+    "metadata guard permits1..20 provided paragraphs",
+    "separate input-metadata-v2 output preserves partial first inventory"
+  ],
+  "unchanged": [
+    "both pinned DEV file bytes",
+    "all19938 TRAIN source checks",
+    "exclusions/window/independence/power target",
+    "all old scientific outcomes",
+    "no model calls or manually displayed DEV examples"
+  ]
+}

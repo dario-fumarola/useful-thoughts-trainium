@@ -1,0 +1,89 @@
+{
+  "status": "PINNED_DEV_MIRROR_METADATA_COMPLETE_NO_COHORT_OR_MODEL_RELEASE",
+  "utc": "2026-10-20T00:55:42.043451+00:00",
+  "source_rows": 2417,
+  "acquisition_sha256": "e19c23336e2d10362678cd6d1765442f19bc72c327a3a164c39e0b7c7b0a2597",
+  "DEV_sha256": "15fa63794d18a94ce12411aca6e2327e65b6e83b0b1490efab3f1962e48abf3b",
+  "TRAIN_canonical_records_rechecked": 19938,
+  "context_count_histogram": {
+    "20": 2401,
+    "19": 9,
+    "18": 5,
+    "17": 2
+  },
+  "native_length_512_bins": {
+    "2048": 859,
+    "2560": 744,
+    "1536": 343,
+    "1024": 38,
+    "3584": 114,
+    "3072": 288,
+    "4096": 23,
+    "4608": 7,
+    "5120": 1
+  },
+  "raw_hops": {
+    "2": 1252,
+    "3": 760,
+    "4": 405
+  },
+  "overlaps_any_length": {
+    "support_text": 585,
+    "support_titles": 1414,
+    "seed_ids": 0
+  },
+  "first_exclusion_counts": {
+    "old_visible_paragraph": 446,
+    "old_visible_page": 664,
+    "too_long": 432
+  },
+  "strict_clean_eligible_rows": 875,
+  "eligible_hops": {
+    "2": 577,
+    "3": 207,
+    "4": 91
+  },
+  "support_overlap_components": 333,
+  "largest_component": 37,
+  "component_size_histogram": {
+    "37": 1,
+    "22": 1,
+    "21": 2,
+    "20": 1,
+    "19": 1,
+    "14": 1,
+    "12": 1,
+    "11": 2,
+    "10": 3,
+    "9": 2,
+    "8": 1,
+    "7": 4,
+    "6": 13,
+    "5": 14,
+    "4": 21,
+    "3": 35,
+    "2": 36,
+    "1": 194
+  },
+  "fixed_hash_greedy_independent_rows": 343,
+  "greedy_hops": {
+    "2": 304,
+    "3": 27,
+    "4": 12
+  },
+  "distinct_original_IDs": 1229,
+  "independent_count_upper_bound": 614,
+  "desired_independent_items": 1024,
+  "confirmed_insufficient_upper_bound": true,
+  "TRAIN_zero_filter_reproduced": true,
+  "source_sha256": "fa3c3fa66cfdfc00d46ba0883a94c97c2a223875306b38149c4ab9b758da19ef",
+  "metadata_inventory_sha256": "b281cddd75036346f2e246b112ae47486bd9dac65e84ee56687352e5e0c483b0",
+  "amendment_sha256": "43e08fed32bab7a0f813803a5790f038f194ed460181fc5c934ad0d4f2807d0a",
+  "limits": [
+    "Metadata only; no model forward, scores, manual new examples or selected cohort. TEST not requested.",
+    "Bare original-ID exclusion is conservative because official format omits dataset namespace; it can remove additional candidates.",
+    "Greedy is a lower bound; distinct original IDs/2 is an upper bound under required within-cohort original-ID disjointness.",
+    "Exact paired mirrors plus full TRAIN crosscheck support provenance, not semantic entailment or novelty relative to pretraining.",
+    "No smaller underpowered fallback, changed old score or automatic training release."
+  ]
+}

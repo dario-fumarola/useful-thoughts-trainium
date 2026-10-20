@@ -1,7 +1,29 @@
-# Current handoff — 2026-10-20 00:46 UTC
+# Current handoff — 2026-10-20 01:00 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
+
+## V27 feasibility CLOSED; next V28 controlled-computation CPU preparation
+
+Report validation/document_evidence_v27_confirmation_feasibility_20261020.json,
+SHA13f258258b4a4d34861094cf1d39b24776da0f089863e08cae87e3051ea3d7f7.
+C=local/diagnostics/document-evidence-v27-confirmation-feasibility-v1.
+TRAIN zero eligible independently reproduced. Author DEV quota response preserved,
+zero raw question rows opened there. Two pinned mirrors have identical DEV SHA
+15fa63794d18a94ce12411aca6e2327e65b6e83b0b1490efab3f1962e48abf3b.
+All19938 cached TRAIN primary fields rechecked against author raw. DEV metadata
+only; no human-read examples, model calls, scores or TEST requests.
+Source D=local/nvme-study/data/musique-DEV-mirror-metadata-v27; all raw bytes retained/protected.
+Original metadata producer incorrectly required20 passages;16 rows have17–19.
+Partial inventory/source/failure preserved; v2 retains all provided passages, no redownload.
+Exec78405 producer and85449 checker complete0. All2417 inventoried;875 strict clean,
+333 source-overlap components, largest37; greedy343, independent upper614<desired1024.
+Independent all-count/BFS/bound checks,4 fixed token-length spots and128 planning points PASS.
+No smaller underpowered confirmation or weaker exclusions released. V26 remains developmental.
+Next: CPU-only V28 deterministic permutation-program generator; direct/verified
+single-model CoT/trained-pause reference, variable depth and fresh map families.
+No training is released. Resolve generator, splits, counterfactuals and token budgets
+before packing/hardware/science. Avoid another split rescue or prompt/weight sweep.
 
 ## V26 CLOSED/PUBLISHED — next: fresh confirmation feasibility
 

@@ -1,0 +1,106 @@
+{
+  "status": "CLOSED_FRESH_SOURCE_FEASIBILITY_INSUFFICIENT_FOR_PLANNED_CONFIRMATION_NO_MODELS",
+  "utc": "2026-10-20T00:58:33.351882+00:00",
+  "question": "Can unchanged source exclusions supply the planned powered fresh confirmation of V26?",
+  "result": {
+    "TRAIN_remaining_eligible": 0,
+    "DEV_total": 2417,
+    "DEV_clean_eligible": 875,
+    "support_overlap_components": 333,
+    "largest_component": 37,
+    "fixed_greedy_independent": 343,
+    "independent_upper_bound": 614,
+    "desired_independent": 1024
+  },
+  "decision": "Do not release a smaller underpowered confirmation, change old gates, or weaken exclusions. V26 stays developmental. A future confirmation needs a new source/protocol; proceed independently with the controlled-computation mechanism step of the north star.",
+  "unchanged_V26_report_sha256": "9800ba9798031d4c47a7e9ea0a9ec73447a9f2231473392c0952e70b526cb8fc",
+  "independent_check": {
+    "status": "PASS_INDEPENDENT_FRESH_COUNTS_COMPONENTS_UPPER_BOUND_TOKEN_SPOTS_AND_POWER_ARITHMETIC",
+    "DEV_rows": 2417,
+    "clean_eligible": 875,
+    "components": 333,
+    "largest_component": 37,
+    "independent_greedy": 343,
+    "independent_upper_bound": 614,
+    "desired_independent": 1024,
+    "independent_token_length_spots": 4,
+    "power_grid_points": 128,
+    "DEV_result_sha256": "7827c34b6371ade8c5c5bfa6f30b165a0544ba135bcc1f99dc51a60fce143815",
+    "TRAIN_result_sha256": "9ba59cf990a5bead928c93ed208922a0d95c951eca3e1c0dc68a07a1829c9405",
+    "checker_sha256": "37d4944ca9cf9f36b5ad85948a50533ac0c7d3507227cff5c6d9234082323da7",
+    "limit": "No semantic review, prediction outcomes or model evaluation; planning approximation only."
+  },
+  "source_provenance": "Author raw DEV endpoint returned quota HTML before any question rows. Two pinned community DEV mirrors agree byte-for-byte; all19938 cached TRAIN records rechecked against author raw. Original namespace omission handled with conservative bare-ID exclusions.",
+  "operational_repair": "A metadata guard incorrectly required20 passages;16 rows have17-19. Original partial inventory/source/failure preserved; v2 retains every supplied paragraph without data/score changes or another download.",
+  "statistical_limits": [
+    "Question counts are not independent evidence counts. No outcomes/semantic review/manual examples/model calls occurred.",
+    "Normal-approximation power is planning only. At true3pp, point>=3pp gate has asymptotic marginal pass probability.5, not.8.",
+    "For true5pp/discordance.15, n1024 gives approximate95% marginal passage and>=80% four-contrast union-bound lower bound; smaller effects or higher discordance need more.",
+    "Greedy is not a maximum; the614 bound follows from1229 distinct original IDs and>=2 consumed per independent question.",
+    "Author annotations can be imperfect; no novelty relative to base pretraining or general capability claim. TEST unrequested."
+  ],
+  "archive_sha256": "ea6e6b7b8e376563dec198fb27368dd0c04f396627bdc0ef1059dd8fccaf758c",
+  "archive_files": 24,
+  "public_payloads": {
+    "plan.json": {
+      "bytes": 1851,
+      "sha256": "5e2665b5a5953889f7380041a14deeb801fd1dcc27c54c6179a825891300f078"
+    },
+    "result.json": {
+      "bytes": 23151,
+      "sha256": "9ba59cf990a5bead928c93ed208922a0d95c951eca3e1c0dc68a07a1829c9405"
+    },
+    "DEV-acquisition-attempt1-failure.json": {
+      "bytes": 458,
+      "sha256": "45815aadc6ce174ec65c698102b50ec596eb453eaa5e2424b1fbfd07237104d8"
+    },
+    "DEV-mirror-metadata-attempt1-failure.json": {
+      "bytes": 698,
+      "sha256": "ed503f321ffb62afee36968b44a95e92ce2dcab858b2f3dd56600eb132554412"
+    },
+    "DEV-metadata-schema-repair.json": {
+      "bytes": 961,
+      "sha256": "6a42d4f81d65f7a8906027e44991c6f1163ea21724cf9ed6ae9ad357ae235710"
+    },
+    "DEV-mirror-metadata-result.json": {
+      "bytes": 2556,
+      "sha256": "7827c34b6371ade8c5c5bfa6f30b165a0544ba135bcc1f99dc51a60fce143815"
+    },
+    "independent-check.json": {
+      "bytes": 733,
+      "sha256": "54cd34b87ab118bb6ced4f97cb6a78a34fd44e8068754bfe0a86664bbbd4755a"
+    },
+    "mirror-acquisition.json": {
+      "bytes": 1027,
+      "sha256": "e19c23336e2d10362678cd6d1765442f19bc72c327a3a164c39e0b7c7b0a2597"
+    },
+    "mirror-plan.json": {
+      "bytes": 508,
+      "sha256": "482ed5113569199d91125790d1da2175e808d6477f791c5ad2c3b2361d096284"
+    },
+    "audit_document_evidence_v27_confirmation_feasibility_20261020.py": {
+      "bytes": 5407,
+      "sha256": "ec18aebcffb79ea907a21ae63e97d1f7c3e656117c2777028297e6bc000433c3"
+    },
+    "inspect_document_evidence_v27_DEV_metadata_20261020.py": {
+      "bytes": 8468,
+      "sha256": "525d903a74ebad836cef409a72303aa2bfaa2a777d8474140e165770dfa91be5"
+    },
+    "inspect_document_evidence_v27_mirror_DEV_metadata_20261020.py": {
+      "bytes": 10064,
+      "sha256": "837241faf9373e5129b2b2c4af85cd13e65c8694fc53935f863ebf45c4ed540e"
+    },
+    "inspect_document_evidence_v27_mirror_DEV_metadata_v2_20261020.py": {
+      "bytes": 7548,
+      "sha256": "fa3c3fa66cfdfc00d46ba0883a94c97c2a223875306b38149c4ab9b758da19ef"
+    },
+    "check_document_evidence_v27_feasibility_20261020.py": {
+      "bytes": 6161,
+      "sha256": "37d4944ca9cf9f36b5ad85948a50533ac0c7d3507227cff5c6d9234082323da7"
+    },
+    "publish_document_evidence_v27_feasibility_20261020.py": {
+      "bytes": 5705,
+      "sha256": "2f8e28fe95224d1e9b9f07640c616222c5fd152feb31030b03a81c7dbcc78019"
+    }
+  }
+}

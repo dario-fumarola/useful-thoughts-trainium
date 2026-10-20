@@ -1,4 +1,18 @@
-# Status — 2026-10-20 00:46 UTC
+# Status — 2026-10-20 01:00 UTC
+
+## Closed: fresh confirmation feasibility
+Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?
+ID: document-evidence-v27-confirmation-feasibility; CPU-only, no model/score/example inspection.
+Remaining TRAIN eligible0; reproduced by the pre-existing independent fresh_candidates filter.
+Author rawDEV endpoint returns quota HTML before rows; two pinned DEV mirrors agree byte for byte.
+All19938 cached TRAIN mirror records rechecked against author raw; namespace omission handled conservatively.
+DEV2417→875 source-clean/length-eligible questions, linked into333 groups (largest37).
+Fixed greedy gives343 independent questions;1229 original IDs imply upper bound614<desired1024.
+Independent all-count/component/bound checks,4 token-length spots and128 planning points PASS.
+Original20-context guard rejected16 rows with17–19 contexts; preserved; metadata-only repair retains all supplied passages.
+No smaller underpowered confirmation/reduced exclusions released. V26 stays developmental; TEST unrequested.
+Report: validation/document_evidence_v27_confirmation_feasibility_20261020.json; raw/source and16 public files protected.
+Decision: keep confirmation unresolved pending a new source/protocol; proceed with controlled-computation mechanism work.
 
 ## Closed: coefficient-matched format control
 Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
