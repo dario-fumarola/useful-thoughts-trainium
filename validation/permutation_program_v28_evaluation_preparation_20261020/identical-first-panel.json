@@ -1,0 +1,41 @@
+{
+  "status": "PASS_IDENTICAL_FIXED_FIRST_PANEL_AFTER_IO_ONLY_WRAPPER_REPAIR",
+  "utc": "2026-10-20T08:18:25.695367+00:00",
+  "matched_protocol_fields": [
+    "schema",
+    "purpose",
+    "panel",
+    "diagnostic",
+    "model",
+    "model_dir",
+    "assets",
+    "signature",
+    "items",
+    "modes",
+    "shards",
+    "prefill_width",
+    "max_actions",
+    "compute",
+    "source_files",
+    "gold_file_sha256",
+    "data_manifest_sha256",
+    "maximum_prompt_tokens",
+    "ordered_item_ids",
+    "release_file",
+    "release_sha256",
+    "B0_fixed_TRAIN_demo_id",
+    "runtime_policy"
+  ],
+  "identical_input_file_sha256": {
+    "prompts-direct.jsonl": "55c05650e4bd951573c9d1d535e21a919d221415ae01f2148f7258dd486f94c9",
+    "prompts-trace.jsonl": "f864b5b1033b71a6168b789186931395d327a31299f9cc11fd6eba8c65b01654",
+    "native-contexts.json": "a62a7cb39afd1f86ec40591bd970c4528b71332261432cacb3ba68c26594d452",
+    "gold.jsonl": "6ddc10537152938bd4ae65b7bbc0b280f9cc38290a1f2c28db30d9cd22255290"
+  },
+  "full_CPU_native_reference_tensor_equal": true,
+  "held_task_generation_attempts": 0,
+  "model_calls_in_this_check": 0,
+  "old_protocol_sha256": "c012eaa1dc75e6810a660740a1c7df4365b40e6bb46d5c200b4a441351e19ad9",
+  "new_protocol_sha256": "187cf7a3ef91ece7daf186bc3d195caaa8e8b096717ad4d63ce2767f5b263d34",
+  "limits": "Protocol creation timestamp/native-origin filesystem location may differ; all model-visible prompt IDs, gold, model/source/data identities and numerical reference values are identical."
+}

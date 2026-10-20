@@ -19,14 +19,15 @@
    Original-release18.json also preserved. The time-only amendment prospectively
    raises evaluation allowance30chip-hours/8h wall, stop29.5, max8chips; same source/gates.
    Do NOT rerun training, its auditors, restoration checker or the release wrapper.
-   Next, source env.sh and override PYTHONPATH to
-   local/worktrees/controlled-computation-v28-eval plus local/test-deps.
-   Run local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py
-   --release /home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json.
-   It prepares exactly23jobs/378880attempts with own-model CPU native references.
-   In parallel run the prepared ordinary256 CPU retention helper, all seven models,
-   as a secondary specialization diagnostic. No new training or accelerator calls there.
-   Then run local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py;
+   All23fixed inputs/378880attempts are READY. Original preparation wrapper expected
+   a return from core prepare(),which writes its protocol. No task generation occurred.
+   One explicit IOv2 restart reads the protocol; original helper/log/partial inputs
+   remain, and recreated first-panel IDs/gold/full native tensor match exactly.
+   Report permutation_program_v28_evaluation_preparation_20261020.json; all23protocols protected/public.
+   Do NOT rerun either preparation. CPU ordinary retention exec8898 remains active;
+   no scores inspected, no new accelerator calls. Next launch
+   local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py with frozen
+   evaluator PYTHONPATH. Its existing all-model/source/registry guards pass;
    fixed original numerical2eb3c1c/shards4/FP32/256prefill/128cap, max8independent chips.
    Primarycomposition9216paired families; original1024family interpolation/depth panels
    and512family partial controls stay separate. All modes/caps/errors retained.

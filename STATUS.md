@@ -1,4 +1,4 @@
-# Status — 2026-10-20 08:10 UTC
+# Status — 2026-10-20 08:24 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
@@ -10,10 +10,10 @@ All6terminal models/development64 retained; latest full4096 per arm, old payload
 Report: validation/permutation_program_v28_training_complete_20261020.json; protected; zero held model outcomes.
 Control C=local/diagnostics/permutation-program-v28-fixed-evaluation-v1; original18 and explicit amended30-hour releases saved.
 Frozen training ce04236/evaluator2eb3c1c;1861CPU tests+smoke/compile pass; numerical source unchanged.
-Next prepare23fixed jobs/378880attempts and ordinary256 CPU retention; no new learning or model selection.
+All23fixed jobs/378880attempts prepared; ordinary256 CPU exec8898 active. IO-only preparation fix preserves identical first-panel inputs.
 Primarycomposition9216paired families; interpolation/longer-depth panels separate; all failures retained.
 Prepared max8-chip queue charges actual group reservations, stop29.5/maximum30chip-hours and8h wall; same gates.
-Review primary/secondary outcomes only after all23fixed groups close; native/cache checks precede each worker's held attempts.
+Next launch fixed queue; review outcomes after all23groups close. Actual native/cache gates precede each worker's held attempts.
 No capability, autonomous-thinking or general-pretraining claim yet; all old studies/gates unchanged.
 
 ## Closed: fresh confirmation feasibility

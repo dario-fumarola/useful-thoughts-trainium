@@ -1,0 +1,16 @@
+{
+  "status": "IO_ONLY_PREPARATION_WRAPPER_RETURN_CONTRACT_REPAIR",
+  "utc": "2026-10-20T08:15:08.577468+00:00",
+  "old_preparer": "/home/ubuntu/dario/local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py",
+  "old_preparer_sha256": "b18eb9d10d8ab6c9ea10c01bcdde3a42b0e25c48bf0cb060237bca8b4c3f3a82",
+  "new_preparer": "/home/ubuntu/dario/local/analysis/prepare_permutation_program_v28_all_evaluations_io_v2_20261020.py",
+  "new_preparer_sha256": "c61bc188f17e924c318bf6be5855a6fc21e5ffa772ab02a807aef8fd817c845d",
+  "failed_log": "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/prepare.log",
+  "failed_log_sha256": "30fcd7128b49e0cbd3f8df8b0e8db98d997189f9f371fbacec381ed0d6db4ca6",
+  "preserved_partial_preparation": "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1-preparation-io-failed-v1",
+  "preserved_protocol_sha256": "c012eaa1dc75e6810a660740a1c7df4365b40e6bb46d5c200b4a441351e19ad9",
+  "held_task_generation_attempts_before_repair": 0,
+  "accelerator_calls": 0,
+  "models_or_scientific_rules_changed": false,
+  "decision": "One explicit CPU preparation restart. Read the frozen prepare() protocol file instead of assuming a return value. Original helper/log and complete first B0 preparation preserved. Same released models/source/data/modes/caps/gates/time allowance; no automatic retry loop. Ordinary retention diagnostic is independent and remains running; no scores inspected."
+}

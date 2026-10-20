@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 08:10 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 08:24 UTC; older entries below are historical -->
 Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
 V28 all six actual4096 terminal models physically close0 and independently pass full
 model/master/moment/native/order audits. All6full64 and24actual worker restoration
@@ -23,20 +23,26 @@ It changes time allowance only: max8chips/30summedchip-hours/29.5stop/8hwall.
 Original design/source/data/models/shards4/caps128/gates stay frozen. No actual8-chip
 qualification claimed from CPU checks; every original decoder worker gates own native/cache.
 
-NEXT (after checkpoint identities are committed/pushed, before any held output):
-source scripts/env.sh, then override PYTHONPATH to ABSOLUTE W_E plus R/local/test-deps;
-USE_TORCH_XLA=0 and OMP/MKL8 for host commands. Use ABSOLUTE release paths.
-1. python -u R/local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py
-   --release /home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json
-   prepares exactly23dirs/378880attempts; core guard has checked all6 actual checkpoints.
-   O_EVAL=R/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1 (NOT CREATED YET).
-   Own-model CPU canonical references only; no held-task generation in prepare.
-2. Parallel CPU-only secondary retention:
-   python -u R/local/analysis/permutation_program_v28_ordinary_CPU_20261020.py
-   --release <ABS C_EVAL/release.json>
-   --output /home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-ordinary-CPU-v1
-   Fixed old256pages SHA7580d34a; seven models CPU FP32/16threads/batch4; no accelerator.
-3. After prepare closes0/registry/index23, run
+PREPARATION COMPLETE, ACTUAL GPU QUEUE NEXT:
+All six checkpoint identities were publicly pushed as13f3f9b BEFORE held evaluation.
+Original preparation exec30816 failed1 after the first complete B0 panel: helper
+assumed a return value from core prepare(),which instead writes protocol.json.
+No held task generation/accelerator call. Original source/log and full first-panel
+inputs preserved at O_EVAL-preparation-io-failed-v1. Do NOT rerun original preparer.
+Explicit IOv2 helper local/analysis/prepare_permutation_program_v28_all_evaluations_io_v2_20261020.py
+exec4612 now closes0; registry/index23/378880attempts exist and all source/model guards pass.
+Same first-panel prompt IDs/gold/full CPU native tensor equality independently PASS.
+Publication permutation_program_v28_evaluation_preparation_20261020.json
+SHA206b340360718f69dfdedaa2261402513eeb5ecd79ab8358bbf330904c550d92;
+all23original protocol bytes archived publicly. No numerical/data/model/gate change.
+C_EVAL=R/local/diagnostics/permutation-program-v28-fixed-evaluation-v1.
+O_EVAL=R/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1 now EXISTS, no answers yet.
+CPU ordinary retention exec8898 ACTIVE, log C_EVAL/ordinary-CPU.log; do NOT rerun.
+Output R/local/nvme-cpt/evaluation/permutation-program-v28-ordinary-CPU-v1.
+Its progress shows models/256case counts/seconds only; do not inspect scores before full readout.
+Source env.sh, override PYTHONPATH to ABSOLUTE W_E plus R/local/test-deps for host commands.
+Use ABSOLUTE paths; original relative-path launch failure was preserved before training.
+3. Prepared registry/index verified. Actual generation NOT YET launched; run
    python -u R/local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py
    max8groups,4independent decoder shards each, physical0..7. Sum actual reservations;
    fixed queue uses counts/identities only, never scores. Heartbeat TTL60s/owner identity,
@@ -56,7 +62,7 @@ USE_TORCH_XLA=0 and OMP/MKL8 for host commands. Use ABSOLUTE release paths.
    collect_permutation_program_v28_examples_20261020.py --index ... --readout ...
    --independent-check ... --output ... retains all16prospective examples/18main paths each.
    Fixed identities R/local/diagnostics/permutation-program-v28-evaluation-CPU-v1/fixed-report-example-identities.json.
-No primary/secondary generation result exists yet. Actual native tests are numerical
+No task-generation result exists yet; ordinary retention diagnostic is running. Native tests are numerical
 checks, not ability evidence. Keep both training/inference gates and B0 strong reference.
 No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or oldR1234 resume.
 Same-instance EBS protection is not off-instance backup. Continue until told to stop.

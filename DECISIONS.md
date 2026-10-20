@@ -1624,3 +1624,11 @@ Freeze and publish all six actual checkpoint identities before any held model ou
 The original18-hour all-six release is preserved beside the explicitly amended30-hour
 operational release. Next prepare the entire fixed23-job comparison and secondary
 ordinary-text diagnostic, then execute; no checkpoint, mode or prompt selection.
+
+2026-10-20 08:20 UTC — Preserve an evaluation-preparation IO failure before any task
+sample/accelerator call: the host wrapper assumed core prepare() returned its protocol,
+but the frozen function writes protocol.json and returns None. Keep original helper,
+log and complete first B0 preparation. One explicit IOv2 wrapper reads that file.
+All23fixed preparations now close; first-panel prompt/gold bytes and complete CPU
+native tensor match the preserved output. All model/source/data/gates/caps unchanged.
+Publish exact23protocol bytes and launch the same bounded queue; no automatic retry.
