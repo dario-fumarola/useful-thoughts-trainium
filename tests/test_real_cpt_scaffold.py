@@ -123,11 +123,13 @@ def test_real_two_forward_objective_matches_dense_loss_and_gradients(arm):
         pad_token_id=0, eos_token_id=0, attn_implementation='eager')).eval()
     reference = copy.deepcopy(model)
     backend = NeuronCausalBackend(model, head_chunk=32, checkpoint_trunk=True)
-    views = scaffold.training_views(example(), Tokenizer(), arm)
+    rows = [example(document=f'c{i}') for i in range(8)]
+    rows += [example('ordinary', document=f'o{i}') for i in range(24)]
+    order = scaffold.grouped_order(rows, seed=29, passes=1)
+    passes = scaffold.batches_at(rows, Tokenizer(), order, arm=arm, step=0, rank=0)
     actual, expected = [], []
-    weights = [{'source': 1.}, scaffold.auxiliary_weights(
-        calculation_examples=1, source_examples=4)]
-    for original, component_weights in zip([views.clean, views.auxiliary], weights):
+    assert [p['input_ids'].shape[0] for _,p,_ in passes] == [4, 1]
+    for _, original, component_weights in passes:
         p = copy.deepcopy(original)
         p['input_ids'] %= 19
         active = torch.stack(list(p['component_masks'].values())).any(0)
@@ -139,8 +141,12 @@ def test_real_two_forward_objective_matches_dense_loss_and_gradients(arm):
         ce = F.cross_entropy(logits.transpose(1, 2), x[:, 1:], reduction='none')
         total = ce.sum() * 0.
         for name, mask in p['component_masks'].items():
-            positions = p['target_positions'][mask] - 1
-            if positions.numel(): total = total + component_weights[name] * ce[0, positions].mean()
+            per_example = []
+            for index in range(x.shape[0]):
+                positions = p['target_positions'][index, mask[index]] - 1
+                per_example.append(ce[index, positions].mean() if positions.numel()
+                                   else ce[index].sum() * 0.)
+            total = total + component_weights[name] * torch.stack(per_example).mean()
         expected.append(total)
     loss, dense = sum(actual), sum(expected)
     assert torch.allclose(loss, dense, atol=1e-6)

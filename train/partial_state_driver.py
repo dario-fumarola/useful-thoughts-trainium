@@ -19,6 +19,7 @@ from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_
 from train.partial_state_packing import batch_packs, training_pack
 from train import real_trace_packing, real_target_packing, real_source_balanced_packing, document_qa_packing, document_evidence_plan_packing
 from train import permutation_program_packing
+from train import real_cpt_scaffold
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'partial-state-sft-v7'
@@ -40,6 +41,10 @@ PROGRAM_QUALIFICATION_ARM = 'program_qualification'
 PROGRAM_STUDY_PURPOSE = 'permutation_program_reference'
 PROGRAM_DATA_SHA = '251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128'
 PROGRAM_MANIFEST_SHA = '41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41'
+SCAFFOLD_SCHEMA = 'real-cpt-scaffold-v29'
+SCAFFOLD_QUALIFICATION_ARM = 'scaffold_qualification'
+SCAFFOLD_PARENT_SHA = 'ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509'
+SCAFFOLD_MANIFEST_SHA = '77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f'
 
 
 def source_files():
@@ -58,7 +63,7 @@ def source_files():
              'train/document_qa_data.py', 'train/document_qa_packing.py',
              'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py',
              'train/permutation_program_data.py', 'train/permutation_program_packing.py',
-             'train/permutation_program_retention.py')
+             'train/permutation_program_retention.py', 'train/real_cpt_scaffold.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
@@ -70,6 +75,7 @@ def validate(p):
     document = p.get('schema') == DOCUMENT_SCHEMA
     evidence = p.get('schema') == EVIDENCE_SCHEMA
     program = p.get('schema') == PROGRAM_SCHEMA
+    scaffold = p.get('schema') == SCAFFOLD_SCHEMA
     program_science = program and p.get('purpose') == PROGRAM_STUDY_PURPOSE
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
@@ -88,6 +94,9 @@ def validate(p):
     if balanced:
         fixed.update(schema=BALANCED_SCHEMA, world_size=8, micro_batch=4,
                      width=640, target_slots=640)
+    if scaffold:
+        fixed.update(schema=SCAFFOLD_SCHEMA, world_size=8, micro_batch=4,
+                     width=640, target_slots=640)
     if document or evidence:
         fixed.update(schema=EVIDENCE_SCHEMA if evidence else DOCUMENT_SCHEMA, world_size=8, micro_batch=1,
                      accumulation=4, width=3328, target_slots=512)
@@ -105,7 +114,24 @@ def validate(p):
     evidence_science = evidence and p.get('purpose') in (
         'document_evidence_plan_pilot', 'document_evidence_weight_ablation',
         'document_evidence_format_weight_control')
-    if program:
+    if scaffold:
+        if (p.get('purpose') != 'real_cpt_scaffold_qualification'
+                or p.get('experiment_id') != 'real-cpt-scaffold-v29'
+                or p['items'] != 128 or p.get('steps') != 8 or p.get('save_every') != 4
+                or p.get('seed') != 2026102029 or p.get('lr') != 1e-5
+                or p.get('view_schedule') != 'clean_plus_raw_format_computation_cycle'
+                or p.get('loss') != 'clean_LM_plus_fraction_weighted_auxiliary_continuation_work'
+                or type(p.get('auxiliary_micro_batch')) is not int or p['auxiliary_micro_batch'] != 1
+                or any(type(p.get(k)) not in (int, float) or p[k] != v for k, v in (
+                    ('source_loss_weight', 1.), ('continuation_loss_weight', .5),
+                    ('work_loss_weight', 1.), ('auxiliary_batch_fraction', .25)))
+                or p.get('parent_data_sha256') != SCAFFOLD_PARENT_SHA
+                or p.get('data_manifest_sha256') != SCAFFOLD_MANIFEST_SHA
+                or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))
+                or p.get('checkpoint_export_cleanup') is not True
+                or p.get('checkpoint_memory_diagnostic') is not True):
+            raise ValueError('Only bounded TRAIN-only two-forward qualification is implemented; no science release')
+    elif program:
         if program_science:
             from train.permutation_program_retention import POLICY
             if (p['items'] != 32768 or p.get('steps') != 4096
@@ -375,7 +401,14 @@ def validate_evidence_format_control(p, control, selector):
         raise ValueError('Format comparison changed an existing numerical/packing source')
 
 
-def order_for(p):
+def order_for(p, rows=None):
+    if p.get('schema') == SCAFFOLD_SCHEMA:
+        if rows is None:
+            rows = [json.loads(line) for line in Path(p['data_file']).read_text().splitlines()]
+        if len(rows) != p['items'] or p['steps'] * p['global_batch'] % p['items']:
+            raise ValueError('Complete frozen source passes required')
+        return real_cpt_scaffold.grouped_order(rows, seed=p['seed'],
+            passes=p['steps'] * p['global_batch'] // p['items'])
     order = []
     for epoch in range((p['steps'] * p['global_batch'] + p['items'] - 1) // p['items']):
         indices = list(range(p['items']))
@@ -402,6 +435,8 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
     if (not 0 <= step < p['steps'] or not 0 <= rank < p['world_size']
             or not 0 <= micro < p['accumulation']):
         raise ValueError('Actual bounded step/rank required')
+    if p['schema'] == SCAFFOLD_SCHEMA:
+        raise ValueError('V29 requires both independent forwards; use scaffold_passes_at')
     if p['schema'] == PROGRAM_SCHEMA:
         qualification = p['purpose'] == 'permutation_program_qualification'
         if (qualification and arm != PROGRAM_QUALIFICATION_ARM
@@ -446,6 +481,15 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
                            width=p['width'], target_slots=p['target_slots'])
              for pos in range(start, start + p['micro_batch'])]
     return batch_packs(packs)
+
+
+def scaffold_passes_at(rows, tokenizer, p, order, arm, step, rank):
+    if (p['schema'] != SCAFFOLD_SCHEMA or p['purpose'] != 'real_cpt_scaffold_qualification'
+            or arm != SCAFFOLD_QUALIFICATION_ARM or not 0 <= step < p['steps']):
+        raise ValueError('Declared bounded V29 qualification required')
+    actual_arm = real_cpt_scaffold.ARMS[step % len(real_cpt_scaffold.ARMS)]
+    return real_cpt_scaffold.batches_at(rows, tokenizer, order, arm=actual_arm,
+        step=step, rank=rank, width=p['width'], target_slots=p['target_slots'])
 
 
 def checkpoint_identity(manifest, weights, saved, p, arm, run_id, rank, order_hash, protocol_sha):
@@ -566,19 +610,25 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                    or p.get('purpose') == PROGRAM_STUDY_PURPOSE and step+1 == args.halt_after)
         before = master_samples(optimizer, expected) if audited else None
         component_objective = p['schema'] in (BALANCED_SCHEMA, DOCUMENT_SCHEMA)
-        pointer_objective = p['schema'] in (EVIDENCE_SCHEMA, PROGRAM_SCHEMA)
-        field_names = (('answer', 'work') if p['schema'] == PROGRAM_SCHEMA
+        scaffold_objective = p['schema'] == SCAFFOLD_SCHEMA
+        pointer_objective = p['schema'] in (EVIDENCE_SCHEMA, PROGRAM_SCHEMA) or scaffold_objective
+        field_names = (('source', 'work', 'continuation') if scaffold_objective else
+                       ('answer', 'work') if p['schema'] == PROGRAM_SCHEMA
                        else document_evidence_plan_packing.COMPONENTS)
         weights = (dict(note_weight=p['source_loss_weight'], future_weight=p['task_loss_weight'])
                    if component_objective else {})
         loss = 0.; labels = 0; component_values = [0.] * (2*len(field_names) if pointer_objective else 4)
-        for micro in range(p['accumulation']):
-            batch = batch_at(rows, tok, p, order, args.arm, step, rank, micro)
+        passes = (scaffold_passes_at(rows, tok, p, order, args.arm, step, rank)
+                  if scaffold_objective else ((None, batch_at(rows, tok, p, order,
+                      args.arm, step, rank, micro), None) for micro in range(p['accumulation'])))
+        for branch, batch, branch_weights in passes:
             if pointer_objective:
-                names = field_names
-                masks = {name: batch[name+'_mask'] for name in names}
+                names = tuple(batch['component_masks']) if scaffold_objective else field_names
+                masks = (batch['component_masks'] if scaffold_objective
+                         else {name: batch[name+'_mask'] for name in names})
                 ce = masked_component_causal_ce(backend, batch['input_ids'],
                     batch['target_positions'], batch['labels'], masks,
+                    branch_weights if scaffold_objective else
                     {name: p[name+'_loss_weight'] for name in names})
             else:
                 ce = masked_causal_ce(backend, **batch, **weights)
@@ -586,9 +636,10 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             loss += float(ce.loss.detach().cpu())/p['accumulation']
             if pointer_objective:
                 labels += sum(int(mask.sum()) for mask in masks.values())
-                for index, name in enumerate(names):
+                for name in names:
+                    index = field_names.index(name)
                     component_values[index] += float(ce.losses[name].detach().cpu())/p['accumulation']
-                    component_values[index+len(names)] += int(masks[name].sum())
+                    component_values[index+len(field_names)] += int(masks[name].sum())
             else:
                 labels += int((batch['note_close_mask'] | batch['future_mask']).sum())
             if component_objective:
@@ -627,6 +678,8 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                 components[name+'_mean_loss'] = values[index]/world
                 components[name+'_labels'] = int(values[index+len(field_names)])
                 components[name+'_weight'] = p[name+'_loss_weight']
+                if scaffold_objective:
+                    components[name+'_batch_fraction'] = 1. if name == 'source' else p['auxiliary_batch_fraction']
         elif component_objective:
             source_loss, task_loss, source_labels, task_labels = xm.all_reduce(
                 xm.REDUCE_SUM, torch.tensor(component_values, device=device)).cpu().tolist()
@@ -686,7 +739,7 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + (PROGRAM_QUALIFICATION_ARM,), required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + (PROGRAM_QUALIFICATION_ARM, SCAFFOLD_QUALIFICATION_ARM), required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--execution-release', type=Path)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
@@ -727,7 +780,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = ((permutation_program_packing.ARMS if p.get('purpose') == PROGRAM_STUDY_PURPOSE
+    allowed_arms = ((SCAFFOLD_QUALIFICATION_ARM,) if p['schema'] == SCAFFOLD_SCHEMA else
+                    (permutation_program_packing.ARMS if p.get('purpose') == PROGRAM_STUDY_PURPOSE
                      else (PROGRAM_QUALIFICATION_ARM,)) if p['schema'] == PROGRAM_SCHEMA else
                     document_evidence_plan_packing.ARMS if p['schema'] == EVIDENCE_SCHEMA else
                     document_qa_packing.ARMS if p['schema'] == DOCUMENT_SCHEMA else
@@ -759,6 +813,15 @@ def main():
         if sha256_file(p['data_file']) != p['data_sha256'] or sha256_file(p['base_protocol']) != p['base_protocol_sha256']:
             raise ValueError('Frozen data or native base protocol changed')
         rows = [json.loads(x) for x in Path(p['data_file']).read_text().splitlines()][:p['items']]
+        if p['schema'] == SCAFFOLD_SCHEMA:
+            parent_path, manifest_path = Path(p['parent_data_file']), Path(p['data_manifest_file'])
+            if (sha256_file(parent_path) != SCAFFOLD_PARENT_SHA
+                    or sha256_file(manifest_path) != SCAFFOLD_MANIFEST_SHA):
+                raise ValueError('Frozen full TRAIN and CPU data manifest required')
+            parent = [json.loads(line) for line in parent_path.read_text().splitlines()]
+            selected = real_cpt_scaffold.grouped_order(parent, seed=p['seed'], passes=1)[:128]
+            if rows != [parent[i] for i in selected]:
+                raise ValueError('Qualification must use the fixed first128 grouped TRAIN sources')
         if p['schema'] == PROGRAM_SCHEMA:
             manifest_file = Path(p['data_manifest_file'])
             manifest = json.loads(manifest_file.read_text())
@@ -791,14 +854,14 @@ def main():
                 raise ValueError('Pinned pointer-only labels and fresh evidence-clean panel required')
         if (len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items']
                 or any((r.get('split') != 'TRAIN' if p['schema'] == PROGRAM_SCHEMA else
-                        r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
+                        r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA, SCAFFOLD_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
             raise ValueError('Complete declared distinct TRAIN expressions required')
         assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
         if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']
                 or p['base_signature'] != base['base_signature'] or p['precision_contract'] != base['precision_contract']):
             raise ValueError('Pinned real released model required')
         tok = AutoTokenizer.from_pretrained(p['model_dir'], local_files_only=True, trust_remote_code=False)
-        refs, native = load_native_reference(base, assets); order = order_for(p)
+        refs, native = load_native_reference(base, assets); order = order_for(p, rows)
         if args.resume is not None:
             from train.neuron_driver import verify_checkpoint
             args.resume_manifest = verify_checkpoint(args.resume, canonical_hash(p), p['world_size'])

@@ -162,3 +162,39 @@ def auxiliary_weights(*, calculation_examples, source_examples):
     fraction = calculation_examples / source_examples
     return {'work': WORK_WEIGHT * fraction,
             'continuation': CONTINUATION_WEIGHT * fraction}
+
+
+def batches_at(rows, tokenizer, order, *, arm, step, rank, width=WIDTH,
+               target_slots=TARGET_SLOTS):
+    """Actual candidate shape: world8, clean micro4 and auxiliary micro1.
+
+    The four-item groups make this exact on every rank, without padding a fake
+    auxiliary example or conditioning ordinary documents on an invented field.
+    Return two independent forwards and their effective loss coefficients.
+    """
+    if type(step) is not int or step < 0 or type(rank) is not int or not 0 <= rank < 8:
+        raise ValueError('Bounded actual source step and world8 rank required')
+    start = step * 32 + rank * 4
+    indices = order[start:start+4]
+    if len(indices) != 4:
+        raise ValueError('A complete source microbatch is required')
+    views = [training_views(rows[i], tokenizer, arm, width=width,
+                            target_slots=target_slots) for i in indices]
+    clean = [v.clean for v in views]
+    auxiliary = [v.auxiliary for v in views if v.auxiliary is not None]
+    if len(auxiliary) != 1:
+        raise ValueError('Each rank must receive one calculation and three ordinary sources')
+
+    def collate(packs):
+        names = tuple(packs[0]['component_masks'])
+        if any(tuple(p['component_masks']) != names for p in packs):
+            raise ValueError('Matching named causal components required')
+        result = {key: torch.cat([p[key] for p in packs], dim=0)
+                  for key in ('input_ids', 'target_positions', 'labels')}
+        result['component_masks'] = {name: torch.cat([
+            p['component_masks'][name] for p in packs], dim=0) for name in names}
+        return result
+
+    return [('clean', collate(clean), {'source': 1.}),
+            ('auxiliary', collate(auxiliary), auxiliary_weights(
+                calculation_examples=len(auxiliary), source_examples=len(clean)))]
