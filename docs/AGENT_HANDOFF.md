@@ -1,7 +1,7 @@
-<!-- Current handoff 2026-10-20 19:15 UTC; historical entries below -->
+<!-- Current handoff 2026-10-20 20:28 UTC; historical entries below -->
 Owner: continue autonomously/patiently until told to stop; do not final at milestones. No active goal. Agent quota unavailable untilOct24:do not retry agents.
 Repo public dario-fumarola/useful-thoughts-trainium. R=/home/ubuntu/dario; W=R/local/worktrees/real-cpt-scaffold-v29; Weval=R/local/worktrees/real-cpt-scaffold-v29-eval.
-W remains73d9c91 with numerical engine c9d2c0c frozen; mainf3c0b92 and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
+W remains73d9c91 with numerical engine c9d2c0c frozen; main1e7fd74 and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
 
 V29 FIRST ORDER2026102029 CLOSED/PASS; SECOND ORDER2026102030 ACTIVE:
 C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1; O=R/local/science-runs/real-cpt-scaffold-v29 (private /dev/shm symlink).
@@ -20,6 +20,10 @@ Logical0–7/8–15/16–23,physical0–5. All8 actual restored fullmodel/optimi
 Fixed terminal1280 primary; source,data,loss,precision and evaluation contract unchanged. Do not stop healthy runs early or relaunch.
 Finite checkpoint watcher PID1908222,exec32419: source local/analysis/watch_real_cpt_v29_checkpoints_20261020.py --seed 2026102030.
 Log C/checkpoint-queue-seed2026102030.log; output C/checkpoint-queue-seed2026102030. Wait all3full640→CPUaudits/protect,then all3full1280+physicalclosed→audits/protect.
+Second full640 audits PASS all3:source20480 exposures/order/components/native8/master/moments/modelcast/actualrestore8.
+Second640 latest model archives and one fullraw640 optimizer archive complete EBS member/SHA/fsync readback PASS at20:28UTC; source receipt C/protection-seed2026102030-step640.json and immutable index.
+Watcher has advanced to WAIT_COMPLETE_CHECKPOINTS2030/1280. Training~740updates,~6.3s/update,hostavailable1274GiB after checkpoint cleanup. All original full64/640 remain RAM.
+Passive finite training observer exec87654 prints progress45s; poll it with write_stdin if useful; it never mutates/launches training. It exits only after all3terminals physically close and watcher1280protection completes (or a guard fails).
 Never edit hashed watcher/audit/protect sources while active. One-shot/no auto retries. Original full64/640/1280 retainedRAM.
 B=R/local/backups/science/real-cpt-scaffold-v29/INDEX.json keeps latestmodels and ONE rotatingfulloptimizerstate,not allhistories/offinstance.
 At19:12 root62.67GiB/cache54.62GiB/RAMoutput640.88GiBfree; actualscience15.19455chip-hours before continuations.

@@ -1,14 +1,14 @@
-# Status — 2026-10-20 19:15 UTC
+# Status — 2026-10-20 20:28 UTC
 
 ## Active: matched real continuation CPT
 Question: does verified computation improve direct real prediction while retaining ordinary LM?
 ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; no held model outcomes.
 First order2026102029:all3 terminal1280/state/order/native/restore/physical closure/protection checks PASS;14.233chip-hours.
-Second order2026102030:all3 initial64 CPUloss/count/native/order/full master/moment/cast and physical closure checks PASS.
-All3 second-order latestweights and one full64 optimizer archive pass complete EBS readback; original full states remain RAM.
+Second order2026102030:all3 first-pass640 source/native/full master/moment/cast/restore audits PASS; training continues.
+All3 second-order latest640 weights and one full640 optimizer archive pass complete EBS readback; original full states remain RAM.
 Original second64→1280 continuations ACTIVE;all8 restored model/optimizer bytes and parameter ties pass per job.
 Raw/format/computation exec54878/99041/48795; supervisors1907974/1907982/1908101; owned sessions1908044/1908164/1908281.
-Logical0–23; finite checkpoint watcher1908222(exec32419) audits/protects640/1280 without retries.
+Logical0–23; finite checkpoint watcher1908222(exec32419) has protected640 and now waits for closed1280 states.
 Report:validation/real_cpt_scaffold_v29_second_order_start_20261020.json; numerical engine c9d2c0c unchanged.
 Source/data/loss/precision and all endpoint/analysis contracts remain fixed; no held checkpoint or prompt selection.
 Next:finish second1280,actual terminal audits/protection and remaining TRAIN CPUreferences,then all7 fixed-model held readout.

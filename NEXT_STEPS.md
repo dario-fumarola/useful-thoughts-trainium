@@ -19,7 +19,8 @@
    Second order2030 initial64 closes0 in all3; CPUloss/count/native/order/full master/moment/cast and backup checks PASS.
    Original64→1280 continuations ACTIVE exec54878/99041/48795,owned sessions1908044/1908164/1908281.
    All8 actual restored full-model/optimizer byte checks and parameter ties PASS per job; finite watcher1908222(exec32419).
-   Watch640/1280 independent audits/protection. Do not relaunch,change endpoints,or inspect held outcomes early.
+   All3 full640 source/native/master/moment/cast/restore audits and latestweights+one full640 EBS readback PASS.
+   Watcher now waits1280 physical closures/audits/protection. Do not relaunch,change endpoints,or inspect held outcomes early.
    C=local/diagnostics/real-cpt-scaffold-v29-science-v1; W=local/worktrees/real-cpt-scaffold-v29; enginec9d2c0c fixed.
    Readout qualified1932CPU checks/TRAIN native/cache/full16/full527. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
    Use E/execution-plan-v2.json and analysis-plan-v2.json. Independent ordinary can overlap writer on distinct chips.
