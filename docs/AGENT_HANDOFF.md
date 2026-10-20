@@ -1,9 +1,9 @@
-<!-- Current handoff 2026-10-20 22:44 UTC. Only this first block is active; older snapshots below are historical. -->
+<!-- Current handoff 2026-10-20 22:59 UTC. Only this first block is active; older snapshots below are historical. -->
 Owner: keep working autonomously and patiently until told to stop; do not final at milestones. No active goal; do not create one.
 Agent quota unavailable untilOct24; do not retry agents. Repo public dario-fumarola/useful-thoughts-trainium; pushes authorized.
 R=/home/ubuntu/dario. Training W=R/local/worktrees/real-cpt-scaffold-v29 at73d9c91,numerical enginec9d2c0c.
 Weval=R/local/worktrees/real-cpt-scaffold-v29-eval at2c30aa1,numerical readout85c55db/results7be1b07; NEVER edit active numerical sources.
-Maineb18890 before this handoff commit. Source scripts/env.sh,then override PYTHONPATH to intended worktree; USE_TORCH_XLA=0.
+Maine82a738 before this handoff commit. Source scripts/env.sh,then override PYTHONPATH to intended worktree; USE_TORCH_XLA=0.
 For stdin Python,cwdroot can shadow PYTHONPATH. Use intended worktree as cwd for numerical modules. Existing venv/stack only.
 
 ALL V29 TRAINING CLOSED/PASS:
@@ -21,27 +21,22 @@ E/review.json and release.json bind exact all7 model/reference/source/closure id
 Release SHA0484f1a086e73d81b458af218b889aca77914815757905fb204511ffb64cafc0. Scientific verdict still PENDING ALL controls/independent checks.
 Initial14 phases launched21:38; all7 ordinary phases CLOSED0 with4096 documents×527 transitions permodel. No quality scores interpreted.
 Format2029/2030 and computation2029/2030 writers CLOSED0:768 notes each,0 execution errors. Their four math phases CLOSED0.
-CURRENT completed21/28 groups; active4. All7 writers CLOSED0; all ordinary and computation/format math complete. Native gates37/37 PASS. No numerical/generation/source/gate changes.
+CURRENT completed25/28 groups; active3. ALL7 writers,ALL7 ordinary,ALL7 math,and4 scalar groups CLOSED0. All49 actual-worker native gates PASS. No numerical/generation/source/gate changes.
 
-ACTIVE tool execution sessions (do not relaunch):
-- B0 math19121(physical0),raw-seed2026102030 math8578(physical4),raw-seed2026102029 math84078(physical1). All three baseline writers now CLOSED0,polled.
-- computation-seed2026102030 scalar97493(physical6),started22:28 after both format scalar groups CLOSED0.
-- computation-seed2026102029 scalar88000 CLOSED0 at22:42,all4 children/physical closure PASS; do not relaunch.
-Scalar groups are1/3 ACTIVE (only computation2030). Each group4 isolated logical shards shares one physical-chip charge.
-Format scalar11941/18342 CLOSED0,all4 children pergroup and physical closures PASS. Do not relaunch.
-All four computation/format scalar phases are launched;only computation2030 remains ACTIVE,other3 COMPLETE.
-E/manual-launch-sessions.json records all25 launched phases. Owned PIDs/session identities are in E/supervision/<alias>/<panel>/shard-*-launch.json.
-Passive finite readout observer exec17085 prints completion/native/budget counts and READY_MATH/READY_SCALAR45s; it NEVER launches jobs.
-Poll observer via write_stdin. It exits only at all28 groups complete or guard failure. Current eval reservation~7.7chip-hours of64.
+ACTIVE tool execution sessions (only these three remain; do not relaunch):
+- B0 scalar27235,physical0/logical0–3,started22:49.
+- raw-seed2026102030 scalar28376,physical4/logical16–19,started22:49.
+- raw-seed2026102029 scalar76136,physical1/logical4–7,started22:56.
+Each group4isolated logical shards shares ONE physical-chip reservation. Current scalar groups3/3.
+All other25phasegroups CLOSED0. Latest polled math84078 and T2030scalar97493 CLOSED0. No more jobs need launching.
+E/manual-launch-sessions.json records all28 launched phases. Owned PIDs/session identities are in E/supervision/<alias>/<panel>/shard-*-launch.json.
+Passive finite readout observer exec17085 prints completion/native/budget counts45s; it NEVER launches jobs.
+Poll observer via write_stdin. It exits at all28 groups complete or guard failure. Current evaluation reservation~8.4chip-hours of64.
 
-NEXT EXACT SCHEDULING:
-1. Continue active computation2030 scalar97493 without relaunch. Two scalar slots are free;max3groups globally is ROOT responsibility.
-2. B0/raw2029/raw2030 math phases are already ACTIVE. DO NOT relaunch them. Wait their supervision/math/complete.json.
-3. When their math closes,launch scalar in fixed eligible-model priority with max3 simultaneous groups. Never auto-retry or choose outcomes.
-Command: python Weval/scripts/run_real_cpt_readout_v29.py --control E --release E/release.json --model <alias> --panel math|scalar.
-Use source env,then PYTHONPATH=Weval:R/local/test-deps; USE_TORCH_XLA=0,OMP/MKL2,PJRT_DEVICE=NEURON,cache256,NEURON_CC_FLAGS=--model-type=transformer.
-Unset XLA_USE_BF16/XLA_DOWNCAST_BF16/NEURON_NUM_RECENT_MODELS_TO_KEEP. Parent shell set -euo pipefail for prerequisite checks.
-Writer/math/scalar slots0–6; ordinary7–13 already closed. Physical ownership/source/model/native/cache/full-target gates remain inside every phase.
+NEXT EXACT ACTION:
+Wait for these three scalar supervision/complete.json files and all28 phasegroups. Do not start any additional worker or inspect partial quality.
+Poll their tool sessions for actual exit0 and physical closure once complete. Then proceed to the full result/independent-check commands below.
+All numerical/helper sources remain frozen at Weval2c30aa1; use source env then correct worktree PYTHONPATH. No automatic retries.
 Resource floors35GiB/filesystem and512GiBhost;64evalreserved chip-hours. No longer scientific run or model change is released by these stages.
 
 COMPLETE READOUT/VERIFICATION/PUBLICATION:
