@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 06:15 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 06:52 UTC; older entries below are historical -->
 V28 first-seed all three terminal4096 physically close0 and independent full-state
 model/master/moment/native/order audits PASS. No held outcomes.
 Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
@@ -23,7 +23,8 @@ Read-only second continuation watcher exec95213 emits steps/PSS/readback/closure
 status every45s; exits on failures/all terminal audits or original09:56deadline.
 Startup PSS~69–71GiB matches first-wave restoration phase; root76GiB free afterfull64.
 Post-save first wave was~24GiB/arm. Disk floor35GiB/host512GiB; global serialized saves.
-All three1024runtime readbacks/fsyncs and subsequent updates now observed.
+All three2048runtime readbacks/fsyncs and subsequent updates now observed; latestfull2048/arm.
+Old1024payloads rotate under the declared policy; receipts/manifests/model64/terminals remain.
 Next monitor actual4096 and audits. No held inference before all6terminal audits.
 After all6, use ABSOLUTE paths for evaluation release and all prepared commands.
 Source env.sh then override PYTHONPATH to the relevant frozen worktree+local/test-deps.
@@ -32,7 +33,10 @@ before old64payload rotation. No model selection or early capability claim.
 Owner reiterated03:19UTC: keep going patiently, unsupervised~8hours, no new deadline.
 Frozen evaluation W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
 New fixed-cohort wrapper/readout and optional generic decoder/prefill hook; no kernel/parser change.
-All1861checks pass tests.qY1DSj,15,360actual-tokenizer inputs and full-sized
+All1861checks pass tests.qY1DSj; repeated required full checks after the host time-only
+amendment also PASS1861+smoke/compile in63.81s, tests.d0tVf2. EBS log:
+local/diagnostics/permutation-program-v28-evaluation-time-amendment-v1/full-frozen-core-checks-after-amendment.log.
+15,360actual-tokenizer inputs and full-sized
 known-score fixtures pass; zero held model forwards. C_E=local/diagnostics/permutation-program-v28-evaluation-CPU-v1.
 CPU source report validation/permutation_program_v28_evaluation_source_20261020.json protected.
 All6audited terminals required by scripts/release_permutation_program_evaluation.py
