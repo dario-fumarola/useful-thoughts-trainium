@@ -1,0 +1,67 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "CPU_REFERENCE_DESIGN_NO_TRAINING_OR_HARDWARE_RELEASE",
+  "question": "Does verified intermediate-state supervision produce useful computation beyond direct training and trained constant-token compute, and what survives on the direct path?",
+  "source": "Synthetic16-node two-permutation program execution. This laboratory is not natural-language pretraining or evidence of a novel previously unknown algorithm.",
+  "data": {
+    "seed": 2026102028,
+    "training_questions": 32768,
+    "training_families": 16384,
+    "dev_questions_per_panel": 2048,
+    "dev_families_per_panel": 1024,
+    "manifest_sha256": "b923d1fa6d440de0ac8e23392e3cfd937d1f52a9c4edeeebc4a2a2c35096f249",
+    "covered_depths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "interpolation": "New maps, covered programs/depths",
+    "composition": "New maps/depth4-6 and rsrs/srsr motifs absent from TRAIN",
+    "longer": "New maps/depth7-10; held motifs excluded to isolate length",
+    "counterfactual": "Swap two entries of one permutation, exactly one used on original path; earlier execution states fixed and final state changes. Variants share a bootstrap family.",
+    "restrictions": "Observed paths are simple, not arbitrary cyclic programs. All complete maps are distinct; elementary edges repeat."
+  },
+  "candidate_arms": {
+    "direct": "Answer-only SFT plus the same empty Work format.",
+    "trace": "Ordinary single-model full verified CoT and final answer; no separate writer/reader.",
+    "pause": "Constant existing FIM-pad inputs,6 per available program step, never predicted; trained via answer gradients."
+  },
+  "candidate_training": {
+    "initialization": "Actual fresh Qwen3-1.7B-Base for each arm/seed, unchanged embedding table; no new token resize.",
+    "views": "50% direct and50% arm-specific, interleaved within every epoch; four passes give each question two of each.",
+    "loss": "Separately mean-normalized final field/EOS and optional trace. Same final-answer weight in all arms; supplied pauses have no prediction loss.",
+    "no_claim": "All arms still use causal CE. Extra intermediate labels are privileged but exactly computable from available prefix; not autonomous discovery.",
+    "candidate_shapes": {
+      "sequence": 256,
+      "target_slots": 64
+    },
+    "not_yet_frozen": [
+      "Training steps/LR/batch/seed identities",
+      "Model-evaluation parser/decoder and checkpoint protocol",
+      "Actual memory/throughput/recovery qualification and resource budget",
+      "Retention/space plan for newly created transient optimizer states"
+    ]
+  },
+  "planned_endpoints": {
+    "primary": "Free complete answers on held composition: trace inference versus direct inference and trained-pause inference; two seeds separately, paired family bootstrap.",
+    "secondary": [
+      "Same-weight direct answers for every arm, compared with matched direct model.",
+      "Interpolation and unseen-depth accuracy separately; no pooled convenient aggregate.",
+      "Every intermediate transition correct, expected step count, natural stopping and cap/error/unsupported counts.",
+      "Both counterfactual variants correct; do not count two variants as independent observations.",
+      "Root-excluded correct/corrupt/donor partial-prefill diagnostics; no supplied final answer as a capability oracle.",
+      "Actual generated actions, supplied positions, training targets and measured latency. Equal positions do not imply equal execution graphs or FLOPs."
+    ]
+  },
+  "current_evidence": {
+    "data_and_token_audit": "PASS across38912 questions/19456 families, maximum full token length155.",
+    "CPU_checks": "1838 tests pass; CPU smoke/compile pass; all131072 native TRAIN packs pass.",
+    "model_forwards": 0,
+    "packing_audit": "Independent all32768 rows times four views: identical final-answer labels, disjoint separately normalized trace labels, supplied pauses receive no token-prediction loss."
+  },
+  "next": "Publish/protect CPU evidence, then prepare only an eight-update all-view qualification with a fresh-process full-state restore. No learning study is released.",
+  "causal_scope": "Trace treatment changes both auxiliary targets and some answer-training contexts. A positive comparison supports a complete supervised recipe, not a pure auxiliary-gradient effect, proven internalization or autonomous discovery."
+}

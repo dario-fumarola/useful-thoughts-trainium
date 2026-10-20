@@ -1,0 +1,50 @@
+{
+  "status": "PASS_ALL_NATIVE_TRAIN_PACKS_MATCHED_ANSWER_MASKS_AND_PROVIDED_PAUSES",
+  "train_rows": 32768,
+  "train_families": 16384,
+  "native_packs": 131072,
+  "per_view": {
+    "direct": {
+      "packs": 32768,
+      "answer_labels": 163840,
+      "work_labels": 0,
+      "supplied_pause_positions": 0,
+      "target_labels": 163840
+    },
+    "empty": {
+      "packs": 32768,
+      "answer_labels": 163840,
+      "work_labels": 0,
+      "supplied_pause_positions": 0,
+      "target_labels": 163840
+    },
+    "trace": {
+      "packs": 32768,
+      "answer_labels": 163840,
+      "work_labels": 688080,
+      "supplied_pause_positions": 0,
+      "target_labels": 851920
+    },
+    "pause": {
+      "packs": 32768,
+      "answer_labels": 163840,
+      "work_labels": 0,
+      "supplied_pause_positions": 688080,
+      "target_labels": 163840
+    }
+  },
+  "width": 256,
+  "target_slots": 64,
+  "provided_pause_id": 151662,
+  "provided_pause_token": "<|fim_pad|>",
+  "pause_positions_per_step": 6,
+  "producer_sha256": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+  "checker_sha256": "a56bbe17fa49c13aa672302d67c5cf1ccf36f37225c24153da5bdc7407f2f281",
+  "manifest_sha256": "b923d1fa6d440de0ac8e23392e3cfd937d1f52a9c4edeeebc4a2a2c35096f249",
+  "limits": [
+    "CPU/tokenizer proof, not an accelerator or learning result.",
+    "The pretrained FIM-pad embedding is reused and must be trained through downstream answer gradients.",
+    "Pause count is prefix length only; no pause-token prediction loss. Equal positions are not equal latency.",
+    "No future-dependent pause budget, loss dilution or dropped target rows."
+  ]
+}

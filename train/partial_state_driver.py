@@ -18,6 +18,7 @@ import time
 from weekend_thinking.artifacts import atomic_json, canonical_hash, require_utc_deadline, sha256_file, utc_now
 from train.partial_state_packing import batch_packs, training_pack
 from train import real_trace_packing, real_target_packing, real_source_balanced_packing, document_qa_packing, document_evidence_plan_packing
+from train import permutation_program_packing
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'partial-state-sft-v7'
@@ -34,6 +35,8 @@ EVIDENCE_WEIGHT_PURPOSES = ('document_evidence_weight_qualification',
 EVIDENCE_FORMAT_ID = 'document-evidence-format-weight-v26'
 EVIDENCE_FORMAT_PURPOSES = ('document_evidence_format_weight_qualification',
                           'document_evidence_format_weight_control')
+PROGRAM_SCHEMA = 'permutation-program-sft-v28'
+PROGRAM_QUALIFICATION_ARM = 'program_qualification'
 
 
 def source_files():
@@ -50,7 +53,8 @@ def source_files():
              'train/scalar_completion.py', 'train/real_target_packing.py',
              'train/real_source_balanced_packing.py', 'train/document_evidence_data.py',
              'train/document_qa_data.py', 'train/document_qa_packing.py',
-             'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py')
+             'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py',
+             'train/permutation_program_data.py', 'train/permutation_program_packing.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
@@ -61,12 +65,15 @@ def validate(p):
     balanced = p.get('schema') == BALANCED_SCHEMA
     document = p.get('schema') == DOCUMENT_SCHEMA
     evidence = p.get('schema') == EVIDENCE_SCHEMA
+    program = p.get('schema') == PROGRAM_SCHEMA
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
                  parameter_dtype='bf16', optimizer_dtype='fp32', head_chunk=32)
     if depth:
         fixed.update(schema=DEPTH_SCHEMA, width=192, target_slots=128)
+    if program:
+        fixed.update(schema=PROGRAM_SCHEMA, width=256, target_slots=64)
     if real:
         fixed.update(schema=REAL_SCHEMA, world_size=8, micro_batch=4,
                      width=640, target_slots=640)
@@ -93,7 +100,22 @@ def validate(p):
     evidence_science = evidence and p.get('purpose') in (
         'document_evidence_plan_pilot', 'document_evidence_weight_ablation',
         'document_evidence_format_weight_control')
-    if depth:
+    if program:
+        # This adapter intentionally releases no longer learning study. All four
+        # views occur in every diagnostic update, including provided pauses.
+        if (p.get('purpose') != 'permutation_program_qualification'
+                or p.get('experiment_id') != 'controlled-computation-v28'
+                or p['items'] != 128 or p.get('steps') != 8
+                or p.get('save_every') != 4 or p.get('seed') != 2026102028
+                or p.get('lr') != 1e-5
+                or p.get('view_schedule') != 'qualification_all_four_views_each_update'
+                or p.get('loss') != 'separate_mean_answer_work_per_example'
+                or any(type(p.get(k)) not in (int, float) or p[k] != 1.
+                       for k in ('answer_loss_weight', 'work_loss_weight'))
+                or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))
+                or not re.fullmatch('[a-f0-9]{64}', p.get('data_manifest_sha256', ''))):
+            raise ValueError('Only the bounded all-view program qualification is implemented')
+    elif depth:
         hashes = {'fixed': '3f829b7e9fdb493a72f7cf740952130b29eb2dd5ded0c88d69b9a5730031a3ad',
                   'variable': '1b8a328479cd05718753b89e2f99e0f696e2cbb62079d505cc372fbb927111d3'}
         qualification = p.get('purpose') == 'variable_depth_qualification'
@@ -325,6 +347,14 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
     if (not 0 <= step < p['steps'] or not 0 <= rank < p['world_size']
             or not 0 <= micro < p['accumulation']):
         raise ValueError('Actual bounded step/rank required')
+    if p['schema'] == PROGRAM_SCHEMA:
+        if arm != PROGRAM_QUALIFICATION_ARM or p['purpose'] != 'permutation_program_qualification':
+            raise ValueError('No program learning study is released by this adapter')
+        start = step*p['global_batch'] + rank*p['micro_batch']
+        return batch_packs([permutation_program_packing.training_pack(
+            rows[order[pos]], tokenizer, ('direct', 'empty', 'trace', 'pause')[pos % 4],
+            width=p['width'], target_slots=p['target_slots'])
+            for pos in range(start, start+p['micro_batch'])])
     if p['schema'] in (DOCUMENT_SCHEMA, EVIDENCE_SCHEMA):
         start = (step*p['global_batch'] + micro*p['world_size']*p['micro_batch']
                  + rank*p['micro_batch'])
@@ -476,14 +506,16 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         audited = step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
         before = master_samples(optimizer, expected) if audited else None
         component_objective = p['schema'] in (BALANCED_SCHEMA, DOCUMENT_SCHEMA)
-        pointer_objective = p['schema'] == EVIDENCE_SCHEMA
+        pointer_objective = p['schema'] in (EVIDENCE_SCHEMA, PROGRAM_SCHEMA)
+        field_names = (('answer', 'work') if p['schema'] == PROGRAM_SCHEMA
+                       else document_evidence_plan_packing.COMPONENTS)
         weights = (dict(note_weight=p['source_loss_weight'], future_weight=p['task_loss_weight'])
                    if component_objective else {})
-        loss = 0.; labels = 0; component_values = [0.] * (6 if pointer_objective else 4)
+        loss = 0.; labels = 0; component_values = [0.] * (2*len(field_names) if pointer_objective else 4)
         for micro in range(p['accumulation']):
             batch = batch_at(rows, tok, p, order, args.arm, step, rank, micro)
             if pointer_objective:
-                names = document_evidence_plan_packing.COMPONENTS
+                names = field_names
                 masks = {name: batch[name+'_mask'] for name in names}
                 ce = masked_component_causal_ce(backend, batch['input_ids'],
                     batch['target_positions'], batch['labels'], masks,
@@ -496,7 +528,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                 labels += sum(int(mask.sum()) for mask in masks.values())
                 for index, name in enumerate(names):
                     component_values[index] += float(ce.losses[name].detach().cpu())/p['accumulation']
-                    component_values[index+3] += int(masks[name].sum())
+                    component_values[index+len(names)] += int(masks[name].sum())
             else:
                 labels += int((batch['note_close_mask'] | batch['future_mask']).sum())
             if component_objective:
@@ -531,9 +563,9 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             values = xm.all_reduce(xm.REDUCE_SUM,
                 torch.tensor(component_values, device=device)).cpu().tolist()
             components = {}
-            for index, name in enumerate(document_evidence_plan_packing.COMPONENTS):
+            for index, name in enumerate(field_names):
                 components[name+'_mean_loss'] = values[index]/world
-                components[name+'_labels'] = int(values[index+3])
+                components[name+'_labels'] = int(values[index+len(field_names)])
                 components[name+'_weight'] = p[name+'_loss_weight']
         elif component_objective:
             source_loss, task_loss, source_labels, task_labels = xm.all_reduce(
@@ -577,7 +609,7 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + (PROGRAM_QUALIFICATION_ARM,), required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
     if p.get('purpose') in EVIDENCE_WEIGHT_PURPOSES:
@@ -615,7 +647,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = (document_evidence_plan_packing.ARMS if p['schema'] == EVIDENCE_SCHEMA else
+    allowed_arms = ((PROGRAM_QUALIFICATION_ARM,) if p['schema'] == PROGRAM_SCHEMA else
+                    document_evidence_plan_packing.ARMS if p['schema'] == EVIDENCE_SCHEMA else
                     document_qa_packing.ARMS if p['schema'] == DOCUMENT_SCHEMA else
                     real_source_balanced_packing.ARMS if p['schema'] == BALANCED_SCHEMA else
                     real_target_packing.ARMS if p['schema'] == TARGET_SCHEMA else
@@ -645,6 +678,17 @@ def main():
         if sha256_file(p['data_file']) != p['data_sha256'] or sha256_file(p['base_protocol']) != p['base_protocol_sha256']:
             raise ValueError('Frozen data or native base protocol changed')
         rows = [json.loads(x) for x in Path(p['data_file']).read_text().splitlines()][:p['items']]
+        if p['schema'] == PROGRAM_SCHEMA:
+            manifest_file = Path(p['data_manifest_file'])
+            manifest = json.loads(manifest_file.read_text())
+            if (sha256_file(manifest_file) != p['data_manifest_sha256']
+                    or manifest.get('schema') != 'permutation-program-v28-cpu-v1'
+                    or manifest.get('status') != 'CPU_DATA_ONLY_NO_TRAINING_OR_EVALUATION_RELEASE'
+                    or manifest['files']['TRAIN-labels.jsonl'] != p['data_sha256']
+                    or manifest['inventories']['TRAIN']['questions'] != 32768
+                    or any(row.get('schema') != manifest['schema'] or row.get('split') != 'TRAIN'
+                           for row in rows)):
+                raise ValueError('Pinned prefix-computable program TRAIN data required')
         if p['schema'] == DOCUMENT_SCHEMA:
             manifest_file = Path(p['data_manifest_file'])
             manifest = json.loads(manifest_file.read_text())
@@ -665,7 +709,8 @@ def main():
                     or any(set(row) != {'item_id', 'split', 'question', 'answer', 'support_indices'} for row in rows)):
                 raise ValueError('Pinned pointer-only labels and fresh evidence-clean panel required')
         if (len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items']
-                or any((r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
+                or any((r.get('split') != 'TRAIN' if p['schema'] == PROGRAM_SCHEMA else
+                        r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
             raise ValueError('Complete declared distinct TRAIN expressions required')
         assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
         if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']

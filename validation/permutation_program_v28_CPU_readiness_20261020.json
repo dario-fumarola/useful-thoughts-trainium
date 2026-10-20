@@ -1,0 +1,37 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "PASS_CPU_DATA_PACKING_AND_ADAPTER_ONLY_NO_HARDWARE_OR_LEARNING_RESULT",
+  "question": "Does verified intermediate-state supervision produce useful computation beyond direct training and trained constant-token compute, and what survives on the direct path?",
+  "design_file": "configs/controlled_computation_v28_CPU.json",
+  "CPU_tests": 1838,
+  "questions": 38912,
+  "independent_families": 19456,
+  "actual_native_TRAIN_packs": 131072,
+  "model_forwards": 0,
+  "source_files": {
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/partial_state_driver.py": "4b82d96ff37ef154ebfff8382d0efb7ce0b1a1d6d2914ff53be7122a420f1521",
+    "scripts/audit_permutation_program_data.py": "defc87cc110ad5bd1937c6c1dbf8851f0b92287fff008c862eadac2af770be3b",
+    "scripts/audit_permutation_program_packing.py": "a56bbe17fa49c13aa672302d67c5cf1ccf36f37225c24153da5bdc7407f2f281",
+    "tests/test_permutation_program_data.py": "a5a8319efa690bacb52862c89224eb45d82d5ef743dd26f1c037d6a97ef42987",
+    "tests/test_permutation_program_packing.py": "14a9f7ca19cdc0a4a250bb473af25dbc2b15d1dd0a9a2f25ed7ba5435fd80819",
+    "tests/test_permutation_program_protocol.py": "68aa402e57e3b8d2c9cb3aa16aeff2ff9796ab6d222b78f4309b0491ecaf1ce1",
+    "configs/controlled_computation_v28_CPU.json": "e2523b546003948287b25ecc1072e329de0456c0bee5b65d51c515bbd71b88dd"
+  },
+  "evidence_files": {
+    "validation/permutation_program_v28_CPU_readiness_20261020/manifest.json": "b923d1fa6d440de0ac8e23392e3cfd937d1f52a9c4edeeebc4a2a2c35096f249",
+    "validation/permutation_program_v28_CPU_readiness_20261020/CPU-tests.txt": "e6b99f1f718e15b1d435fdaec3a169f02144211d254cb34d7d926b4795bf7825",
+    "validation/permutation_program_v28_CPU_readiness_20261020/packing-audit-attempt1-stop.json": "cea52312501a0a272249a951bfcf11e709b5fd0ddb2d8a90e15ecf5d06f6eb78",
+    "validation/permutation_program_v28_CPU_readiness_20261020/packing-readiness-v2.json": "e8b797e02525d6b1a974ec288f5e911287ac8ceb8c46eb89a612d8121cdfef1c",
+    "validation/permutation_program_v28_CPU_readiness_20261020/readiness.json": "9c6019ad237f426292af22c67b069b43bb3eba1d761fde4722fd8090a41d6de6"
+  },
+  "limits": [
+    "Trace treatment changes both auxiliary targets and some answer-training contexts. A positive comparison supports a complete supervised recipe, not a pure auxiliary-gradient effect, proven internalization or autonomous discovery.",
+    "Observed execution paths are simple, not cyclic/arbitrary programs.",
+    "Provided pauses are causally prefetched; generated states use sequential decoding. Equal positions do not imply equal execution graphs or cost.",
+    "Family-paired bootstrap; maps, compositions and lengths tested separately.",
+    "No official TEST accessed; no new real-data confirmation claim."
+  ],
+  "next": "Publish/protect CPU evidence, then prepare only an eight-update all-view qualification with a fresh-process full-state restore. No learning study is released."
+}

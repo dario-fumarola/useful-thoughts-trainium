@@ -1,0 +1,144 @@
+{
+  "schema": "permutation-program-v28-cpu-v1",
+  "status": "CPU_DATA_ONLY_NO_TRAINING_OR_EVALUATION_RELEASE",
+  "arguments": {
+    "train_families": 16384,
+    "dev_families": 1024,
+    "seed": 2026102028
+  },
+  "files": {
+    "TRAIN-questions.jsonl": "e099948826aaf7e262c06beabdd77e78c126cce8fdeed2714fa42db7c2d2d630",
+    "TRAIN-labels.jsonl": "251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128",
+    "DEV_interpolation-questions.jsonl": "c3474b5f4ba1ef11c951fc0278b64f3de136f2692bdf7fced507a4301900ab5d",
+    "DEV_interpolation-labels.jsonl": "a154104d65812c21a1de91585aaa1db3c7275492f25b69c8de1be473e71fc8bf",
+    "DEV_composition-questions.jsonl": "2d0af47009798d633cc5cc2833b2b5479e176bcb15319936d828908c5d3afd1d",
+    "DEV_composition-labels.jsonl": "897585630b209e09af5be90f0908b8115e3211ad33afb2d83787a865d7f38725",
+    "DEV_depth-questions.jsonl": "fc554e25fa5c3b64fdd0128ca2a16c1f3aeb64e5ebdf975f7b436d14964a5070",
+    "DEV_depth-labels.jsonl": "34f4d62c41558ab30a57d5cccbbb142a40f8d1230c28a98700c0f823dcbca105"
+  },
+  "inventories": {
+    "TRAIN": {
+      "questions": 32768,
+      "families": 16384,
+      "depths": {
+        "1": 5462,
+        "2": 5462,
+        "3": 5462,
+        "4": 5462,
+        "5": 5460,
+        "6": 5460
+      },
+      "answers": {
+        "N": 2056,
+        "G": 2020,
+        "B": 1988,
+        "J": 2062,
+        "L": 2035,
+        "I": 2089,
+        "M": 2070,
+        "F": 2073,
+        "A": 2085,
+        "K": 2073,
+        "D": 2137,
+        "C": 2037,
+        "P": 1952,
+        "O": 2023,
+        "H": 2063,
+        "E": 2005
+      }
+    },
+    "DEV_interpolation": {
+      "questions": 2048,
+      "families": 1024,
+      "depths": {
+        "1": 342,
+        "2": 342,
+        "3": 342,
+        "4": 342,
+        "5": 340,
+        "6": 340
+      },
+      "answers": {
+        "A": 124,
+        "O": 129,
+        "H": 100,
+        "N": 122,
+        "E": 115,
+        "F": 126,
+        "D": 138,
+        "J": 133,
+        "L": 156,
+        "B": 152,
+        "M": 142,
+        "C": 118,
+        "K": 120,
+        "P": 135,
+        "G": 115,
+        "I": 123
+      }
+    },
+    "DEV_composition": {
+      "questions": 2048,
+      "families": 1024,
+      "depths": {
+        "4": 684,
+        "5": 682,
+        "6": 682
+      },
+      "answers": {
+        "M": 134,
+        "B": 110,
+        "P": 117,
+        "L": 122,
+        "I": 131,
+        "J": 130,
+        "N": 121,
+        "A": 133,
+        "O": 142,
+        "F": 149,
+        "D": 123,
+        "H": 133,
+        "G": 134,
+        "E": 118,
+        "K": 133,
+        "C": 118
+      }
+    },
+    "DEV_depth": {
+      "questions": 2048,
+      "families": 1024,
+      "depths": {
+        "7": 512,
+        "8": 512,
+        "9": 512,
+        "10": 512
+      },
+      "answers": {
+        "A": 123,
+        "P": 109,
+        "C": 139,
+        "D": 132,
+        "K": 136,
+        "M": 123,
+        "L": 129,
+        "O": 119,
+        "B": 136,
+        "F": 137,
+        "J": 131,
+        "N": 119,
+        "H": 121,
+        "G": 149,
+        "E": 117,
+        "I": 128
+      }
+    }
+  },
+  "source_sha256": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+  "limits": [
+    "Synthetic mechanism laboratory, not general-language pretraining.",
+    "Simple observed paths only; no claim of cycle or arbitrary program execution.",
+    "Paired variants share a family; bootstrap families rather than variants.",
+    "Full trace contains the final state; supplied-oracle controls must omit the final operation.",
+    "No model/tokenizer or hardware qualification has run."
+  ]
+}

@@ -18,14 +18,18 @@
    for auxiliary targets and inference work. Keep direct transfer separate from
    the benefit of emitting intermediate text. Strong ordinary CoT is the verified
    computation reference, not a deliberately restricted split system.
-   First build/test deterministic generator and check token budgets; no learning,
-   autonomous RL or capability claim is released by this queue.
+   CPU preparation complete:38,912 independent data/token checks,131,072 native
+   TRAIN packs,1,838 tests plus smoke/compile. Report permutation_program_v28_CPU_readiness_20261020.json.
+   Next prepare only bounded eight-update world4/width256 all-view recovery qualification.
+   No learning study, autonomous RL or capability claim is released by this queue.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean
    DEV questions, linked into333 groups. Independent-count upper614<planned1024.
    Do not run a smaller underpowered confirmation or weaken exclusions. A future
-   confirmation needs another source/protocol with both direct controls and new seeds.
+   confirmation needs a new source/protocol with both direct controls and new seeds.
+   A clustered analysis of875 eligible questions could be informative under a new
+   prospective power design; V27 rules out only the planned independent-item study.
    DEV metadata only was inspected; no model outcomes or manual examples. TEST untouched.
    Roadmap then returns to prefix-to-continuation CPT, guidance withdrawal/onset,
    and internalization. Scratchpad supervision/distillation alone are prior work.

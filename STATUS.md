@@ -1,4 +1,18 @@
-# Status — 2026-10-20 01:00 UTC
+# Status — 2026-10-20 01:25 UTC
+
+## Active: controlled computation CPU reference
+Question: can verified state supervision help beyond direct training and trained pauses?
+ID: controlled-computation-v28; single-model permutation execution, variable depth, no learning result.
+CPU data:32,768 TRAIN questions/16,384 families; three separate DEV panels each2,048/1,024.
+All38,912 independent executions/counterfactual/split/native-token checks PASS; longest full sequence155.
+All131,072 TRAIN packs PASS: equal answer weights/labels; disjoint trace loss; provided pauses have no prediction loss.
+All1,838 tests plus CPU smoke/compile PASS. Data/source/evidence readback/fsync protected on same-instance EBS.
+Trace treatment changes auxiliary targets and some answer-training contexts; compare complete recipes.
+Adapter permits only eight mixed-view diagnostic updates, save4/restart then8; no learning study released.
+Current source: local/worktrees/controlled-computation-v28; no active accelerator job.
+Report: validation/permutation_program_v28_CPU_readiness_20261020.json.
+Next: prepare bounded world4/width256 qualification, independent full-state audit and explicit space budget before launch.
+Limits: synthetic simple paths; no cycles, natural-language pretraining, autonomous discovery or capability claim.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?

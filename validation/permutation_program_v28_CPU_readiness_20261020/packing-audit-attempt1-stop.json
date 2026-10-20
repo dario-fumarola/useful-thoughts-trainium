@@ -1,0 +1,12 @@
+{
+  "status": "OWNED_CPU_AUDIT_STOPPED_BEFORE_READOUT_TO_REMOVE_VOCAB_COPY_PER_PACK",
+  "utc": "2026-10-20T01:13:36.476334+00:00",
+  "pid": 1541254,
+  "start_ticks": "29324909",
+  "token_lookup_seconds": 0.05712849490228109,
+  "direct_lookup_seconds": 6.474199471995235e-07,
+  "measured_lookup_ratio": 88240.2452216615,
+  "packing_source_sha256": "bfc75c6fd3faef801d724455f3fcabcfdd859ba1b87261cc8a8d7881b5fdd2a7",
+  "reason": "Each pause_id call materializes all151669 vocabulary entries. Replace with exact constant-time token/id conversion; retain same151662 value and support validation. Stop old reader before changing source hash.",
+  "model_calls": 0
+}

@@ -18,6 +18,12 @@ Keep three claims separate:
 | Intermediate supervision improves learning | Same direct prediction path after content supervision versus source/format controls | V26 shows a7.1pp direct-answer advantage over matched format1.0; one seed/reused panel, fresh confirmation pending. |
 | Useful computation is discovered autonomously | Self-training improves beyond the supervised warm start after the teacher is removed | Unanswered here. |
 
+V26 compares complete recipes: both the auxiliary targets and some final-answer
+training contexts differ. It does not isolate an auxiliary-gradient mechanism.
+V27 rules out the planned1,024 mutually source-disjoint confirmation from its
+eligible pool. A new clustered protocol on875 eligible questions or another
+source could still be informative, with fresh power and prospective rules.
+
 Work in this order; this roadmap releases no jobs:
 
 1. **Confirm the V26 signal.** The completed coefficient-matched control gives

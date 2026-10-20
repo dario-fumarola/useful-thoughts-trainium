@@ -1,3 +1,14 @@
+<!-- Current handoff, 2026-10-20 01:25 UTC -->
+V28 CPU preparation is complete, not a learning result. Active worktree:
+`local/worktrees/controlled-computation-v28`. All1,838 tests/CPU smoke/compile,
+38,912 independent execution/token checks and131,072 native TRAIN packs pass.
+Report `validation/permutation_program_v28_CPU_readiness_20261020.json`.
+No accelerator process active. Next: prepare bounded world4/width256 eight-update
+all-view qualification, full4/new-process restore/full8, then independent all-state
+checks. No long training release. Dataset:
+`local/nvme-study/data/permutation-program-v28-cpu-v1`; evidence:
+`local/diagnostics/permutation-program-v28-CPU-v1`. Preserve old frozen worktrees.
+
 # Current handoff — 2026-10-20 01:00 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
