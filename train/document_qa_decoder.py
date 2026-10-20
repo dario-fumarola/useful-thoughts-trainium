@@ -10,7 +10,8 @@ from weekend_thinking.core import policy_log_probs
 class QADecoder(GreedyDecoder):
     @torch.no_grad()
     def decode(self, prompt_ids, *, mode, max_new_tokens=256,
-               prefill_width=3584, pad_id=151643, stop_ids=(151643,151645)):
+               prefill_width=3584, pad_id=151643, stop_ids=(151643,151645),
+               answer_parser=None):
         if mode not in ('direct','prior') or not prompt_ids or len(prompt_ids)>prefill_width or max_new_tokens<1:
             raise ValueError('Declared complete QA prompt and decoding bounds required')
         actions, content, raw = [], [], ''
@@ -27,7 +28,7 @@ class QADecoder(GreedyDecoder):
                     return Decoded(actions,content,raw,raw,f'token:{value}')
                 content.append(value)
                 raw=self.tokenizer.decode(content,skip_special_tokens=False,clean_up_tokenization_spaces=False)
-                parsed=parse_answer(raw,mode)
+                parsed=(parse_answer if answer_parser is None else answer_parser)(raw,mode)
                 if parsed.status=='complete':
                     return Decoded(actions,content,raw,raw[:parsed.end],'qa_answer_line')
                 if step+1<max_new_tokens:

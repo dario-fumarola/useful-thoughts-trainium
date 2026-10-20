@@ -1,0 +1,30 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "PASS_CPU_EVALUATOR_CONTEXT_AND_STOPPING_ONLY_NO_MODEL_RESULT",
+  "tests": 1845,
+  "native_contexts": 43008,
+  "model_forwards_in_new_evaluation_audit": 0,
+  "source_files": {
+    "train/permutation_program_answer_driver.py": "bbdd7eb5b20c2fb2fccc2afbe0baa9f3832f85105a1caa48bab26864948ff00d",
+    "train/permutation_program_answers.py": "0bf93786ba3663e78c56593bc0eab5a4f31ef1fe4c8be0272fd2d7d8cfc68519",
+    "train/permutation_program_evaluation.py": "551c70dbe35730dc7f904292b6d95e78716734e280fbe3f00caa2832dcf98461",
+    "train/permutation_program_decoder.py": "07a8868fee965322fed9d99e6cd630314e6077a406a190bae6b7d168845c69e2",
+    "train/document_qa_decoder.py": "68c2a8f02ad2d3f6471ad408bc2297be0afd91f90342b15ea78ddee7f81a1392",
+    "scripts/audit_permutation_program_evaluation.py": "bfaf05d60505a8ce05388978d6b3be9e989a67f3c27095b92bc80556a43a133f",
+    "tests/test_permutation_program_answers.py": "2819ed790a76e2e3ca546ad013444c6bf3fd949528d5422eb4cb79d08d625e26",
+    "tests/test_permutation_program_evaluation.py": "1d4ed4440c5e928af9d060e2583aa6b31fdef5b5ce0c464c396ebd22d93409a9",
+    "tests/test_permutation_program_decoder.py": "7861f7e3803116ff728e6416019af6db0e7a5b0506df98a9b39cc9b5cd06b832"
+  },
+  "evidence_files": {
+    "validation/permutation_program_v28_CPU_evaluation_20261020/CPU-tests.txt": "789e3bca241b36f1347877fc48d10e00924d3a9a04130ca1bdbfdb0b009bd78a",
+    "validation/permutation_program_v28_CPU_evaluation_20261020/native-contexts.json": "fef0f675070e0347fea1fa742e5262920661625382c31fe7461d73027645ce25"
+  },
+  "parser": "Gold-independent one-node designated field, whitespace/case harmless; all errors/caps/unsupported retained. Execution correctness is secondary and cannot change final-answer scores.",
+  "generation_adapter": "Only4 fixed TRAIN questions/28unchanged-B0 attempts accepted. Held/checkpoint science generation absent.",
+  "limits": [
+    "Full CPU suite, synthetic scripted stopping and all held context/token checks are not hardware or scientific validation.",
+    "Correct partial controls exclude root; intact donor/corrupt states can incidentally mention its symbol.",
+    "Depth1 supplied partials are empty by construction.",
+    "No new held model outcome, autonomous-learning claim, or larger study release."
+  ]
+}
