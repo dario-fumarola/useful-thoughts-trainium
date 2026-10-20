@@ -1,0 +1,1172 @@
+{
+  "actual_updates_per_model": 1280,
+  "all7_TRAIN_references": {
+    "B0": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/B0",
+      "reference_sha256": "2902bb32b9c86f90236cb99e0dc1a50c3a94faaa7a11edc9bf5f9fe58960f2d1",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    },
+    "computation-seed2026102029": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/computation-seed2026102029",
+      "reference_sha256": "3ef7801b4afe24c43307a47657d2bbfd8d7a89b802b97929fc795a21e6ec9e55",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    },
+    "computation-seed2026102030": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/computation-seed2026102030",
+      "reference_sha256": "ffd098dce02d9376d3463cc74faf6a1b8587c978c91146c077f8ad558127e434",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    },
+    "format-seed2026102029": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/format-seed2026102029",
+      "reference_sha256": "5671191aac62d803e83aa741df96e7658a8f1556b3937a1531c80388b9d95581",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    },
+    "format-seed2026102030": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/format-seed2026102030",
+      "reference_sha256": "d58519fcefe84d54f671a6987f578b185ff42fd4f91c1e177cfe4b23fdebd84e",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    },
+    "raw-seed2026102029": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/raw-seed2026102029",
+      "reference_sha256": "7ea866713bd64939662d7fb246bb92cdb8b013f0466aa57f34a27af1eca42cea",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    },
+    "raw-seed2026102030": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/raw-seed2026102030",
+      "reference_sha256": "8c3a62e371df415bb02ea6f89b9e383dfd706e798031d80ab8e0923e26877b36",
+      "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE"
+    }
+  },
+  "checkpoint_protection": {
+    "all_original_full_states_retained_in_RAM": true,
+    "full_archive": {
+      "COMPLETE_sha256": "8692392eb13486cd17002b2239d52d8a832a04c1ece624ecefe8cd67cdda1240",
+      "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/full-cpt-raw-seed2026102030-v1-step-0001280.tar.zst",
+      "archive_bytes": 21635839255,
+      "archive_sha256": "efaede6f9ab95f5384ff364311a06bc439b258a6572623a64e9df0471b70938b",
+      "files": {
+        "run-envelope/metrics.jsonl": {
+          "bytes": 3962710,
+          "sha256": "58462f859557f8c592979ad73387d56f64859c64659a7af8b93385451d6b2fdc"
+        },
+        "run-envelope/protocol.json": {
+          "bytes": 7602,
+          "sha256": "966917d9cda7a9cccf090185dd1de86c557e7bdc4d10742455864167f1a7d29c"
+        },
+        "run-envelope/run.json": {
+          "bytes": 2017,
+          "sha256": "98d47566ca23b09cd26d8be66ea668e148aa0d43a099063a5c4c6f1e26491fb8"
+        },
+        "step-0001280/COMPLETE.json": {
+          "bytes": 2053,
+          "sha256": "8692392eb13486cd17002b2239d52d8a832a04c1ece624ecefe8cd67cdda1240"
+        },
+        "step-0001280/cpu-export-release-rank-00000.json": {
+          "bytes": 155,
+          "sha256": "953a39cff615602b3a4dd22a1f07a34184ebb32bf0177ecb9999598e8b24fd2e"
+        },
+        "step-0001280/cpu-export-release-rank-00001.json": {
+          "bytes": 155,
+          "sha256": "42058e4a4c985d52898a0be7211416173892ac0dc84669a25b69e64401dc164b"
+        },
+        "step-0001280/cpu-export-release-rank-00002.json": {
+          "bytes": 155,
+          "sha256": "077df8cd544915d08cab312ed80c3ed8b4a2e40882f22e126d48387fa5373d9c"
+        },
+        "step-0001280/cpu-export-release-rank-00003.json": {
+          "bytes": 155,
+          "sha256": "9d9ba7611b09fde2eebec78491ec3fdebf5dec4b257ff4fcfa7299a2878ee9ed"
+        },
+        "step-0001280/cpu-export-release-rank-00004.json": {
+          "bytes": 155,
+          "sha256": "292d3b3bf17f3b03bd43101529dc21dd27982411b0daad47a3d36d68c86bd7da"
+        },
+        "step-0001280/cpu-export-release-rank-00005.json": {
+          "bytes": 155,
+          "sha256": "7b9fb22f8b1e8a0eac7b478f36f2f7384f98b79c777e0cf4900e50a8ed073b9d"
+        },
+        "step-0001280/cpu-export-release-rank-00006.json": {
+          "bytes": 155,
+          "sha256": "73978e91bdf7550f4364eb6cc42f757ae10d4f823d5b693eaf48376bca51122c"
+        },
+        "step-0001280/cpu-export-release-rank-00007.json": {
+          "bytes": 155,
+          "sha256": "97d8a2bfdc2130abd35b252f2872d4b2f46818ddf188f02b20fd85fb51bbaf5e"
+        },
+        "step-0001280/model.pt": {
+          "bytes": 3441248275,
+          "sha256": "c5878a10d2b46910ee6bddbd5199aab117323bd08ffb7b340d0fe0ae399398f6"
+        },
+        "step-0001280/rank-00000.pt": {
+          "bytes": 2581278407,
+          "sha256": "070aee94d4736e1bd803ff7979f98daa271f2ed8449573fabc3cfba7e119edf1"
+        },
+        "step-0001280/rank-00001.pt": {
+          "bytes": 2581278407,
+          "sha256": "48e3074843143c4a506212354ff79fd9490bc0756679e597a2ba5bce00b77fed"
+        },
+        "step-0001280/rank-00002.pt": {
+          "bytes": 2581278407,
+          "sha256": "404e42bd86df0d1bffce8e1c11b5343f5e2d6848b5a7ab1f7202451d1bed4d18"
+        },
+        "step-0001280/rank-00003.pt": {
+          "bytes": 2581278471,
+          "sha256": "012b65b5257b01ce0f7fab8d4c71ef98847b3d4489243e8a1722838c4a329634"
+        },
+        "step-0001280/rank-00004.pt": {
+          "bytes": 2581278407,
+          "sha256": "a41df3de46b3dcdb9a681930b347cc7f1c167204ae98d89c42650e6397f00f1d"
+        },
+        "step-0001280/rank-00005.pt": {
+          "bytes": 2581278471,
+          "sha256": "34a7855c41703e961eb5d749641880734164ddd9918c3f5a5c9f004988af8378"
+        },
+        "step-0001280/rank-00006.pt": {
+          "bytes": 2581278471,
+          "sha256": "bd3933c4cb722fc3dfd5d237b3ca3b738e293e67335cb7d48c40f8a1ec55ed1b"
+        },
+        "step-0001280/rank-00007.pt": {
+          "bytes": 2581278407,
+          "sha256": "085c14367b3889d761388c2aebea35b89eb21c80a4f96e295fd60b4e18d2ab9b"
+        }
+      },
+      "job": "cpt-raw-seed2026102030-v1",
+      "original_checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102030-v1/step-0001280",
+      "step": 1280
+    },
+    "immutable_index_snapshot": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-index-seed2026102030-step1280.json",
+    "index_sha256": "16531b455aac47bab50a82ccfb587ae075d51b37c01ded221cd02be413119c79",
+    "model_archives": {
+      "cpt-computation-seed2026102030-v1": {
+        "COMPLETE_sha256": "43569856eeb188ebaaf2376594a143a6fa4ac73c15a0314b64c8588e73889c05",
+        "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-computation-seed2026102030-v1/step-0001280-model.pt.zst",
+        "archive_bytes": 2690719537,
+        "archive_sha256": "bdab97fd5b034e8805ace5bca399d312f15c75ddf284c8b09a9980489bb54210",
+        "job": "cpt-computation-seed2026102030-v1",
+        "original": {
+          "bytes": 3441248275,
+          "sha256": "b920d5a372821528b86bc673d3c45c46cc7a16138bab9a4a5a80dc1586ab327e"
+        },
+        "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102030-v1/step-0001280/model.pt",
+        "step": 1280
+      },
+      "cpt-format-seed2026102030-v1": {
+        "COMPLETE_sha256": "5c7650b570670c45c25382a1292011a9eed5a2adfc5c58b39b21762a3f7f1411",
+        "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-format-seed2026102030-v1/step-0001280-model.pt.zst",
+        "archive_bytes": 2690696203,
+        "archive_sha256": "63f72b0f6164e14d1144d97a20dc4c1d0ad8ccf380bdafd3106a908d21d3e591",
+        "job": "cpt-format-seed2026102030-v1",
+        "original": {
+          "bytes": 3441248275,
+          "sha256": "d67ee153d7ac9d7df2836c1d40595f22f9fb7248ae72008c2c3a466434d5bb50"
+        },
+        "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102030-v1/step-0001280/model.pt",
+        "step": 1280
+      },
+      "cpt-raw-seed2026102030-v1": {
+        "COMPLETE_sha256": "8692392eb13486cd17002b2239d52d8a832a04c1ece624ecefe8cd67cdda1240",
+        "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-raw-seed2026102030-v1/step-0001280-model.pt.zst",
+        "archive_bytes": 2690691026,
+        "archive_sha256": "10843a0abeac182ae5e3cd4a4f9c6c82e2497d8bec7547620fdd8f4330ebf518",
+        "job": "cpt-raw-seed2026102030-v1",
+        "original": {
+          "bytes": 3441248275,
+          "sha256": "c5878a10d2b46910ee6bddbd5199aab117323bd08ffb7b340d0fe0ae399398f6"
+        },
+        "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102030-v1/step-0001280/model.pt",
+        "step": 1280
+      }
+    },
+    "scope": "Same-instance EBS; every listed latest model and one full optimizer state. Other full originals remain in volatile RAM,not all on EBS.",
+    "status": "PASS_ALL_THREE_LATEST_MODEL_ARCHIVES_AND_ONE_LATEST_FULL_EBS_READBACK"
+  },
+  "current_backup_index_sha256": "16531b455aac47bab50a82ccfb587ae075d51b37c01ded221cd02be413119c79",
+  "experiment_id": "real-cpt-scaffold-v29",
+  "held_attempts": 0,
+  "held_release": {
+    "analysis_plan": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/analysis-plan-v2.json",
+      "sha256": "4488a6a2eae8a8eb27c4ff86860f39105433b667a4111fd6b25c168401ec56f6"
+    },
+    "cache_filesystem": "/home/ubuntu/dario/local/nvme-cpt",
+    "contract_sha256": "1dcaf96b6aa880f6b42f780f1d9a39ee47a3e3fc8fff91e851c63dfa943703bc",
+    "environment_template": "/home/ubuntu/dario/local/science/control/W-seed20261018-development64-evaluation-v1/environment.template.json",
+    "limits": [
+      "FineMath calculation-targeted supervised CPT,not general pretraining or autonomous discovery.",
+      "Source/updates/shapes matched; not equal semantic supervision or measured FLOPs.",
+      "Same-instance EBS and one rotating full optimizer archive,not off-instance or complete optimizer-history protection.",
+      "Extra preflight previews corrected cross-model fingerprint equality and prepared an empty jobs directory; no model/reference/numerical gate/source/held outcome changed."
+    ],
+    "max_parallel_scalar_groups": 3,
+    "models": {
+      "B0": {
+        "checkpoint": null,
+        "id": "B0",
+        "status": "UNCHANGED_RELEASED_QWEN3_1_7B_BASE"
+      },
+      "computation-seed2026102029": {
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102029-v1-step1280.json",
+        "audit_sha256": "1b92533cd7aec62d0a44fbfe8f3b187e4e6445f1b39d47d0c3a2c79c01a87383",
+        "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102029-v1/step-0001280/model.pt",
+        "checkpoint_sha256": "bacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4",
+        "id": "computation-seed2026102029",
+        "run_id": "cpt-computation-seed2026102029-v1",
+        "spec_hash": "6a688ea9deb0271fb998e8a52783858fcb2ea4c75c50aa73258b839680b0688e",
+        "status": "AUDITED_V29_TERMINAL1280",
+        "step": 1280
+      },
+      "computation-seed2026102030": {
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102030-v1-step1280.json",
+        "audit_sha256": "038475812bea1f02db5bd72fd48eda019160045afdf99f1e50db642570611d17",
+        "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102030-v1/step-0001280/model.pt",
+        "checkpoint_sha256": "b920d5a372821528b86bc673d3c45c46cc7a16138bab9a4a5a80dc1586ab327e",
+        "id": "computation-seed2026102030",
+        "run_id": "cpt-computation-seed2026102030-v1",
+        "spec_hash": "926ced3d4f5a97c7d80d7d3adeadf716f8871ded59632a1326b8bad2b4194e2d",
+        "status": "AUDITED_V29_TERMINAL1280",
+        "step": 1280
+      },
+      "format-seed2026102029": {
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102029-v1-step1280.json",
+        "audit_sha256": "56fae3b7939b686321c6526de0e7dbaf18c1a1430052e39a758b246e96b6edd3",
+        "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102029-v1/step-0001280/model.pt",
+        "checkpoint_sha256": "8a04640cc8b2ccb3fd769f2c3aa77197862392507c3414ec9b53449661c924b5",
+        "id": "format-seed2026102029",
+        "run_id": "cpt-format-seed2026102029-v1",
+        "spec_hash": "863aeb03c201e4a50dc235da3882a9c958707804c9d48a69ebd6373086c552ed",
+        "status": "AUDITED_V29_TERMINAL1280",
+        "step": 1280
+      },
+      "format-seed2026102030": {
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102030-v1-step1280.json",
+        "audit_sha256": "b6b68a9e988a9c4eb9bbfae416abacfca6f75a20b3d4cdd0940f5b4b3c6abd2a",
+        "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102030-v1/step-0001280/model.pt",
+        "checkpoint_sha256": "d67ee153d7ac9d7df2836c1d40595f22f9fb7248ae72008c2c3a466434d5bb50",
+        "id": "format-seed2026102030",
+        "run_id": "cpt-format-seed2026102030-v1",
+        "spec_hash": "9ff7f96579357e66d0c3dd42f15eb83b269874f1d05817ba1138c5b9f1985b4d",
+        "status": "AUDITED_V29_TERMINAL1280",
+        "step": 1280
+      },
+      "raw-seed2026102029": {
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102029-v1-step1280.json",
+        "audit_sha256": "e142db24f03d6ab80db9472c6ad8b8d8d5f3d2ec92fc6f1b3d4ef7115c0c467e",
+        "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102029-v1/step-0001280/model.pt",
+        "checkpoint_sha256": "cfcb04324919988d5196f3e1875d4c449a04c747ba130bc5302ab5b51f3927cc",
+        "id": "raw-seed2026102029",
+        "run_id": "cpt-raw-seed2026102029-v1",
+        "spec_hash": "edaad8f9c5482e1ed5614f15ca23de1d8c07e81f2ba95622d7af9a02dc420b1b",
+        "status": "AUDITED_V29_TERMINAL1280",
+        "step": 1280
+      },
+      "raw-seed2026102030": {
+        "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102030-v1-step1280.json",
+        "audit_sha256": "caeb20e2e43922cf1a18557bdf6d71a5dd1b31e7b1ae2749c7ea0fae8a0481e2",
+        "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102030-v1/step-0001280/model.pt",
+        "checkpoint_sha256": "c5878a10d2b46910ee6bddbd5199aab117323bd08ffb7b340d0fe0ae399398f6",
+        "id": "raw-seed2026102030",
+        "run_id": "cpt-raw-seed2026102030-v1",
+        "spec_hash": "205a5f8004cbcd469e5d721bfa1702e70bbd91a8e1bd2a85945a32930a0fb02c",
+        "status": "AUDITED_V29_TERMINAL1280",
+        "step": 1280
+      }
+    },
+    "phase_physical_slots": {
+      "ordinary": {
+        "B0": 7,
+        "computation-seed2026102029": 10,
+        "computation-seed2026102030": 13,
+        "format-seed2026102029": 9,
+        "format-seed2026102030": 12,
+        "raw-seed2026102029": 8,
+        "raw-seed2026102030": 11
+      }
+    },
+    "phase_wall_seconds": {
+      "math": 5400,
+      "ordinary": 10800,
+      "scalar": 7200,
+      "writer": 5400
+    },
+    "physical_slots": {
+      "B0": 0,
+      "computation-seed2026102029": 3,
+      "computation-seed2026102030": 6,
+      "format-seed2026102029": 2,
+      "format-seed2026102030": 5,
+      "raw-seed2026102029": 1,
+      "raw-seed2026102030": 4
+    },
+    "process_helper": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualify.py",
+      "sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f"
+    },
+    "references": {
+      "B0": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/B0",
+      "computation-seed2026102029": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/computation-seed2026102029",
+      "computation-seed2026102030": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/computation-seed2026102030",
+      "format-seed2026102029": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/format-seed2026102029",
+      "format-seed2026102030": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/format-seed2026102030",
+      "raw-seed2026102029": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/raw-seed2026102029",
+      "raw-seed2026102030": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/raw-seed2026102030"
+    },
+    "repository_root": "/home/ubuntu/dario",
+    "reserved_chip_hours": 64,
+    "review_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/review.json",
+    "review_sha256": "799ec7a04bd440fff40f07c65d1785d73e2c89e0df3c616e7b2f74ccf2c57f1f",
+    "science_closures": {
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102029-v1/terminal1280/closure.json": "f88292abadabc74cc0b96a97c8d2f14d0ea4acb7f76a7120e769cf8298d7b031",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102030-v1/terminal1280/closure.json": "6921c0dd9396c97cefe9c28193975654b90789be1e102647964224e026356ff5",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102029-v1/terminal1280/closure.json": "597f0e82374bf4132bd5871d58e3470d2654fc0e8c7b7c0adb431f5580176951",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102030-v1/terminal1280/closure.json": "8f673f19e871e3a58afea17430cc18b8fce44427786aad2b2d6887a41bc8b783",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102029-v1/terminal1280/closure.json": "8af5e9b7e2e498a1fdb5a5b5ea0f2144615303d9e4c33ae8215760e140372bb0",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102030-v1/terminal1280/closure.json": "af8b9f9079204d0052a9d43d341600c4d0f901e64531eda7e5f4eb6d5f434b7e"
+    },
+    "secondary_analysis_plan": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/scalar-secondary-plan.json",
+      "sha256": "f14288bb9180caafcb0d78d0c11583897003c5100859dfdff399cad250ed2784"
+    },
+    "source_files": {
+      "train/batched_causal_decoder.py": "1a8cc92c8232af48987f465c59dec28187da8081a3b5f6bd6a679fcedd8e6d30",
+      "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+      "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+      "train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+      "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+      "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+      "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+      "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+      "train/real_cpt_readout.py": "aa8284150fa86a321a056386b4bd1ba049188715cd12564456a5c066681c1a91",
+      "train/real_cpt_readout_driver.py": "a6d84713f8877e5f78d0668e33b27256a52a2536dadfb11494b8729043b2066f",
+      "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+      "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+      "train/real_trace_evaluation.py": "4a289e2f0228c00ce48c397519a63a91cbb3faee14854b73bde383f20c06d7b8",
+      "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+      "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+      "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+      "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+      "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+      "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+    },
+    "source_root": "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29-eval",
+    "status": "RELEASED_ALL_SEVEN_V29_FIXED_TERMINAL_READOUTS",
+    "supervisor_sha256": "b509ee045ed671d520e5d8c0d9f1767a4641ca82b4712acbabec90dda193f82d",
+    "utc": "2026-10-20T21:36:38.287025+00:00"
+  },
+  "held_release_sha256": "0484f1a086e73d81b458af218b889aca77914815757905fb204511ffb64cafc0",
+  "limits": [
+    "FineMath calculation-targeted supervised CPT,not general pretraining or autonomous discovery.",
+    "Source/updates/shapes matched; not equal semantic supervision or measured FLOPs.",
+    "Same-instance EBS and one rotating full optimizer archive,not off-instance or complete optimizer-history protection.",
+    "Extra preflight previews corrected cross-model fingerprint equality and prepared an empty jobs directory; no model/reference/numerical gate/source/held outcome changed."
+  ],
+  "models": {
+    "B0": {
+      "checkpoint": null,
+      "id": "B0",
+      "status": "UNCHANGED_RELEASED_QWEN3_1_7B_BASE"
+    },
+    "computation-seed2026102029": {
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102029-v1-step1280.json",
+      "audit_sha256": "1b92533cd7aec62d0a44fbfe8f3b187e4e6445f1b39d47d0c3a2c79c01a87383",
+      "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102029-v1/step-0001280/model.pt",
+      "checkpoint_sha256": "bacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4",
+      "id": "computation-seed2026102029",
+      "run_id": "cpt-computation-seed2026102029-v1",
+      "spec_hash": "6a688ea9deb0271fb998e8a52783858fcb2ea4c75c50aa73258b839680b0688e",
+      "status": "AUDITED_V29_TERMINAL1280",
+      "step": 1280
+    },
+    "computation-seed2026102030": {
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102030-v1-step1280.json",
+      "audit_sha256": "038475812bea1f02db5bd72fd48eda019160045afdf99f1e50db642570611d17",
+      "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102030-v1/step-0001280/model.pt",
+      "checkpoint_sha256": "b920d5a372821528b86bc673d3c45c46cc7a16138bab9a4a5a80dc1586ab327e",
+      "id": "computation-seed2026102030",
+      "run_id": "cpt-computation-seed2026102030-v1",
+      "spec_hash": "926ced3d4f5a97c7d80d7d3adeadf716f8871ded59632a1326b8bad2b4194e2d",
+      "status": "AUDITED_V29_TERMINAL1280",
+      "step": 1280
+    },
+    "format-seed2026102029": {
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102029-v1-step1280.json",
+      "audit_sha256": "56fae3b7939b686321c6526de0e7dbaf18c1a1430052e39a758b246e96b6edd3",
+      "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102029-v1/step-0001280/model.pt",
+      "checkpoint_sha256": "8a04640cc8b2ccb3fd769f2c3aa77197862392507c3414ec9b53449661c924b5",
+      "id": "format-seed2026102029",
+      "run_id": "cpt-format-seed2026102029-v1",
+      "spec_hash": "863aeb03c201e4a50dc235da3882a9c958707804c9d48a69ebd6373086c552ed",
+      "status": "AUDITED_V29_TERMINAL1280",
+      "step": 1280
+    },
+    "format-seed2026102030": {
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102030-v1-step1280.json",
+      "audit_sha256": "b6b68a9e988a9c4eb9bbfae416abacfca6f75a20b3d4cdd0940f5b4b3c6abd2a",
+      "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102030-v1/step-0001280/model.pt",
+      "checkpoint_sha256": "d67ee153d7ac9d7df2836c1d40595f22f9fb7248ae72008c2c3a466434d5bb50",
+      "id": "format-seed2026102030",
+      "run_id": "cpt-format-seed2026102030-v1",
+      "spec_hash": "9ff7f96579357e66d0c3dd42f15eb83b269874f1d05817ba1138c5b9f1985b4d",
+      "status": "AUDITED_V29_TERMINAL1280",
+      "step": 1280
+    },
+    "raw-seed2026102029": {
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102029-v1-step1280.json",
+      "audit_sha256": "e142db24f03d6ab80db9472c6ad8b8d8d5f3d2ec92fc6f1b3d4ef7115c0c467e",
+      "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102029-v1/step-0001280/model.pt",
+      "checkpoint_sha256": "cfcb04324919988d5196f3e1875d4c449a04c747ba130bc5302ab5b51f3927cc",
+      "id": "raw-seed2026102029",
+      "run_id": "cpt-raw-seed2026102029-v1",
+      "spec_hash": "edaad8f9c5482e1ed5614f15ca23de1d8c07e81f2ba95622d7af9a02dc420b1b",
+      "status": "AUDITED_V29_TERMINAL1280",
+      "step": 1280
+    },
+    "raw-seed2026102030": {
+      "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102030-v1-step1280.json",
+      "audit_sha256": "caeb20e2e43922cf1a18557bdf6d71a5dd1b31e7b1ae2749c7ea0fae8a0481e2",
+      "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102030-v1/step-0001280/model.pt",
+      "checkpoint_sha256": "c5878a10d2b46910ee6bddbd5199aab117323bd08ffb7b340d0fe0ae399398f6",
+      "id": "raw-seed2026102030",
+      "run_id": "cpt-raw-seed2026102030-v1",
+      "spec_hash": "205a5f8004cbcd469e5d721bfa1702e70bbd91a8e1bd2a85945a32930a0fb02c",
+      "status": "AUDITED_V29_TERMINAL1280",
+      "step": 1280
+    }
+  },
+  "review": {
+    "MemAvailable_bytes": 1588018241536,
+    "conditions": [
+      "All6 fixed1280 models,actual restore/order/component/native/full-state audits and physical closures PASS.",
+      "All7 actual-model TRAIN-only independent HF references prepared; worker-specific native/cache/full-target gates remain mandatory before held rows.",
+      "Latest model archive per run plus one latest full optimizer archive pass complete EBS readback; all original18 full states retained in RAM.",
+      "Numerical helpers,generation budgets,parsers,cohorts,source masks and scientific gates unchanged; both orders and all controls required.",
+      "Writer/math/scalar physical0\u20136; ordinary7\u201313 can overlap; root limits scalar concurrency to3 groups.",
+      "One finite attempt per phase,no automatic retry,no checkpoint or outcome-based selection."
+    ],
+    "free_bytes": {
+      "/home/ubuntu/dario": 67222241280,
+      "/home/ubuntu/dario/local/nvme-cpt": 58646544384
+    },
+    "held_outcomes_opened": false,
+    "limits": [
+      "FineMath calculation-targeted supervised CPT,not general pretraining or autonomous discovery.",
+      "Source/updates/shapes matched; not equal semantic supervision or measured FLOPs.",
+      "Same-instance EBS and one rotating full optimizer archive,not off-instance or complete optimizer-history protection.",
+      "Extra preflight previews corrected cross-model fingerprint equality and prepared an empty jobs directory; no model/reference/numerical gate/source/held outcome changed."
+    ],
+    "prerequisite_pins": {
+      "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/INDEX.json": "16531b455aac47bab50a82ccfb587ae075d51b37c01ded221cd02be413119c79",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/analysis-plan-v2.json": "4488a6a2eae8a8eb27c4ff86860f39105433b667a4111fd6b25c168401ec56f6",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/execution-plan-v2.json": "1b1c7c0c0f23b271e29ed5b245dca61bfbbb6de317d70c1786c28696ced7939c",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/preflight-all-seven.json": "f8dd1ca88d0c2f281332b079235e2dfad83cd88e6aa25d3941007397428dd9c5",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/B0/reference.json": "2902bb32b9c86f90236cb99e0dc1a50c3a94faaa7a11edc9bf5f9fe58960f2d1",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/computation-seed2026102029/reference.json": "3ef7801b4afe24c43307a47657d2bbfd8d7a89b802b97929fc795a21e6ec9e55",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/computation-seed2026102030/reference.json": "ffd098dce02d9376d3463cc74faf6a1b8587c978c91146c077f8ad558127e434",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/format-seed2026102029/reference.json": "5671191aac62d803e83aa741df96e7658a8f1556b3937a1531c80388b9d95581",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/format-seed2026102030/reference.json": "d58519fcefe84d54f671a6987f578b185ff42fd4f91c1e177cfe4b23fdebd84e",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/raw-seed2026102029/reference.json": "7ea866713bd64939662d7fb246bb92cdb8b013f0466aa57f34a27af1eca42cea",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/raw-seed2026102030/reference.json": "8c3a62e371df415bb02ea6f89b9e383dfd706e798031d80ab8e0923e26877b36",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/scalar-secondary-plan.json": "f14288bb9180caafcb0d78d0c11583897003c5100859dfdff399cad250ed2784",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102029-v1-step1280.json": "1b92533cd7aec62d0a44fbfe8f3b187e4e6445f1b39d47d0c3a2c79c01a87383",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102030-v1-step1280.json": "038475812bea1f02db5bd72fd48eda019160045afdf99f1e50db642570611d17",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102029-v1-step1280.json": "56fae3b7939b686321c6526de0e7dbaf18c1a1430052e39a758b246e96b6edd3",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102030-v1-step1280.json": "b6b68a9e988a9c4eb9bbfae416abacfca6f75a20b3d4cdd0940f5b4b3c6abd2a",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102029-v1-step1280.json": "e142db24f03d6ab80db9472c6ad8b8d8d5f3d2ec92fc6f1b3d4ef7115c0c467e",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102030-v1-step1280.json": "caeb20e2e43922cf1a18557bdf6d71a5dd1b31e7b1ae2749c7ea0fae8a0481e2",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-seed2026102029-step1280.json": "28178594b0e92a314409daf4f1f278eb66228bdd37a86dd57f05c6efa2010428",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-seed2026102030-step1280.json": "688290ea1ba4c9bb6194e3faeedc7267fb724dcbdda1e5c7bd8439027f8234ac",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/readout-contract.json": "1dcaf96b6aa880f6b42f780f1d9a39ee47a3e3fc8fff91e851c63dfa943703bc"
+    },
+    "question": "Do verified computation scaffolds improve direct real continuation prediction over both controls and B0,with retained ordinary FineMath prediction?",
+    "reviewer": "Root agent; not external review",
+    "science_closures": {
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102029-v1/terminal1280/closure.json": "f88292abadabc74cc0b96a97c8d2f14d0ea4acb7f76a7120e769cf8298d7b031",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102030-v1/terminal1280/closure.json": "6921c0dd9396c97cefe9c28193975654b90789be1e102647964224e026356ff5",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102029-v1/terminal1280/closure.json": "597f0e82374bf4132bd5871d58e3470d2654fc0e8c7b7c0adb431f5580176951",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102030-v1/terminal1280/closure.json": "8f673f19e871e3a58afea17430cc18b8fce44427786aad2b2d6887a41bc8b783",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102029-v1/terminal1280/closure.json": "8af5e9b7e2e498a1fdb5a5b5ea0f2144615303d9e4c33ae8215760e140372bb0",
+      "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102030-v1/terminal1280/closure.json": "af8b9f9079204d0052a9d43d341600c4d0f901e64531eda7e5f4eb6d5f434b7e"
+    },
+    "status": "PASS_ROOT_REVIEW_ALL_SEVEN_FIXED_TERMINAL_READOUTS",
+    "training_reserved_chip_hours": 28.4274855470983,
+    "utc": "2026-10-20T21:36:38.287025+00:00"
+  },
+  "scientific_result": "PENDING_ALL_SEVEN_MODEL_HELD_READOUT",
+  "source_exposures_per_model": 40960,
+  "status": "ALL_SIX_FIXED_TERMINALS_AUDITED_PROTECTED_BEFORE_HELD_EXECUTION",
+  "terminal_audits": {
+    "computation-seed2026102029": {
+      "actual_restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_updates": 1280,
+      "full_checkpoint": {
+        "COMPLETE_sha256": "3c4866052e03ac52c3a637a5f7efc115c90d8c7cb6e92450c2ef3aac837e8971",
+        "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+        "model_sha256": "bacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4",
+        "run_id": "cpt-computation-seed2026102029-v1",
+        "spec_hash": "6a688ea9deb0271fb998e8a52783858fcb2ea4c75c50aa73258b839680b0688e",
+        "step": 1280
+      },
+      "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+      "job": "cpt-computation-seed2026102029-v1",
+      "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+      "native": [
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        }
+      ],
+      "protocol_sha256": "ad9c0682704a2628f7d14586687fd6c4f2b05f39be80b63e9f466ebfe4a34756",
+      "source_exposures": 40960,
+      "source_sha256": "28bb74b186b07a9256fafcb3467d962e8bc9ec71d5c17251f4c4fa586f6b0e2e",
+      "status": "PASS_PERIODIC_ORDER_COMPONENTS_NATIVE8_FULL_STATE_AND_ACTUAL_RESTORE8",
+      "supervised_positions": 21356026,
+      "warm_last32_median_seconds": 6.308649370505009
+    },
+    "computation-seed2026102030": {
+      "actual_restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_updates": 1280,
+      "full_checkpoint": {
+        "COMPLETE_sha256": "43569856eeb188ebaaf2376594a143a6fa4ac73c15a0314b64c8588e73889c05",
+        "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+        "model_sha256": "b920d5a372821528b86bc673d3c45c46cc7a16138bab9a4a5a80dc1586ab327e",
+        "run_id": "cpt-computation-seed2026102030-v1",
+        "spec_hash": "926ced3d4f5a97c7d80d7d3adeadf716f8871ded59632a1326b8bad2b4194e2d",
+        "step": 1280
+      },
+      "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+      "job": "cpt-computation-seed2026102030-v1",
+      "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+      "native": [
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        }
+      ],
+      "protocol_sha256": "a2bfa6c331a73c95c4f9f7ab538da099cfcce59935f5d97911a470f1161cd2f6",
+      "source_exposures": 40960,
+      "source_sha256": "28bb74b186b07a9256fafcb3467d962e8bc9ec71d5c17251f4c4fa586f6b0e2e",
+      "status": "PASS_PERIODIC_ORDER_COMPONENTS_NATIVE8_FULL_STATE_AND_ACTUAL_RESTORE8",
+      "supervised_positions": 21356026,
+      "warm_last32_median_seconds": 6.314904664002825
+    },
+    "format-seed2026102029": {
+      "actual_restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_updates": 1280,
+      "full_checkpoint": {
+        "COMPLETE_sha256": "4fa741915cca6abe46f4aa749eb13f259d006b362ca70a9122813756c151f4d4",
+        "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+        "model_sha256": "8a04640cc8b2ccb3fd769f2c3aa77197862392507c3414ec9b53449661c924b5",
+        "run_id": "cpt-format-seed2026102029-v1",
+        "spec_hash": "863aeb03c201e4a50dc235da3882a9c958707804c9d48a69ebd6373086c552ed",
+        "step": 1280
+      },
+      "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+      "job": "cpt-format-seed2026102029-v1",
+      "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+      "native": [
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        }
+      ],
+      "protocol_sha256": "695c458bd1ab29b26857451750d58218afd6ee11be9ef46d1b9306946710f23b",
+      "source_exposures": 40960,
+      "source_sha256": "28bb74b186b07a9256fafcb3467d962e8bc9ec71d5c17251f4c4fa586f6b0e2e",
+      "status": "PASS_PERIODIC_ORDER_COMPONENTS_NATIVE8_FULL_STATE_AND_ACTUAL_RESTORE8",
+      "supervised_positions": 21027446,
+      "warm_last32_median_seconds": 6.295948848535772
+    },
+    "format-seed2026102030": {
+      "actual_restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_updates": 1280,
+      "full_checkpoint": {
+        "COMPLETE_sha256": "5c7650b570670c45c25382a1292011a9eed5a2adfc5c58b39b21762a3f7f1411",
+        "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+        "model_sha256": "d67ee153d7ac9d7df2836c1d40595f22f9fb7248ae72008c2c3a466434d5bb50",
+        "run_id": "cpt-format-seed2026102030-v1",
+        "spec_hash": "9ff7f96579357e66d0c3dd42f15eb83b269874f1d05817ba1138c5b9f1985b4d",
+        "step": 1280
+      },
+      "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+      "job": "cpt-format-seed2026102030-v1",
+      "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+      "native": [
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        }
+      ],
+      "protocol_sha256": "8fecf8b7c081dcf4ecaf481b5f61777f60e5453ddf5b57b0aa3cc73e76fe14ec",
+      "source_exposures": 40960,
+      "source_sha256": "28bb74b186b07a9256fafcb3467d962e8bc9ec71d5c17251f4c4fa586f6b0e2e",
+      "status": "PASS_PERIODIC_ORDER_COMPONENTS_NATIVE8_FULL_STATE_AND_ACTUAL_RESTORE8",
+      "supervised_positions": 21027446,
+      "warm_last32_median_seconds": 6.298246542515699
+    },
+    "raw-seed2026102029": {
+      "actual_restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_updates": 1280,
+      "full_checkpoint": {
+        "COMPLETE_sha256": "152264c15f908ed23fdb03777cab64b8975c8d0c37e521cbf50192e259e678d5",
+        "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+        "model_sha256": "cfcb04324919988d5196f3e1875d4c449a04c747ba130bc5302ab5b51f3927cc",
+        "run_id": "cpt-raw-seed2026102029-v1",
+        "spec_hash": "edaad8f9c5482e1ed5614f15ca23de1d8c07e81f2ba95622d7af9a02dc420b1b",
+        "step": 1280
+      },
+      "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+      "job": "cpt-raw-seed2026102029-v1",
+      "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+      "native": [
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        }
+      ],
+      "protocol_sha256": "c29fb81107ecaae8df3acd5edee720c9f2d15ac1f45d05a2986b854a5073239a",
+      "source_exposures": 40960,
+      "source_sha256": "28bb74b186b07a9256fafcb3467d962e8bc9ec71d5c17251f4c4fa586f6b0e2e",
+      "status": "PASS_PERIODIC_ORDER_COMPONENTS_NATIVE8_FULL_STATE_AND_ACTUAL_RESTORE8",
+      "supervised_positions": 21006966,
+      "warm_last32_median_seconds": 6.3827882620098535
+    },
+    "raw-seed2026102030": {
+      "actual_restored_ranks": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_updates": 1280,
+      "full_checkpoint": {
+        "COMPLETE_sha256": "8692392eb13486cd17002b2239d52d8a832a04c1ece624ecefe8cd67cdda1240",
+        "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+        "model_sha256": "c5878a10d2b46910ee6bddbd5199aab117323bd08ffb7b340d0fe0ae399398f6",
+        "run_id": "cpt-raw-seed2026102030-v1",
+        "spec_hash": "205a5f8004cbcd469e5d721bfa1702e70bbd91a8e1bd2a85945a32930a0fb02c",
+        "step": 1280
+      },
+      "generic_state_audit_sha256": "8ef6e3d536ede6ba7d1c56b9ef2bbe0f9193dd5624363d559e3b8683d51a8054",
+      "job": "cpt-raw-seed2026102030-v1",
+      "limits": "TRAIN execution and full-state integrity,not held-out learning or indefinite memory stability. Original64 full state is in RAM; EBS protection is separate.",
+      "native": [
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0031035199827929003,
+          "max_bidirectional_kl_nats": 0.0031035199827929003,
+          "max_logp_error": 0.4776469232392877,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0030380189436710462,
+          "relative_l2_logp_error": 0.003857434345770694,
+          "rms_logp_error": 0.11136195315202935
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.0030418360999388177,
+          "max_bidirectional_kl_nats": 0.003069729731572845,
+          "max_logp_error": 0.3318406019216269,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.003069729731572845,
+          "relative_l2_logp_error": 0.0034483210977830953,
+          "rms_logp_error": 0.06558423713648606
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 2.1572303394931953e-05,
+          "max_bidirectional_kl_nats": 2.1572303394931953e-05,
+          "max_logp_error": 0.19990114601651499,
+          "passed": true,
+          "reference_to_device_kl_nats": 2.1102026604037457e-05,
+          "relative_l2_logp_error": 0.0014795616361593837,
+          "rms_logp_error": 0.04093075259376518
+        },
+        {
+          "argmax_equal": true,
+          "device_to_reference_kl_nats": 0.00032594614748145167,
+          "max_bidirectional_kl_nats": 0.00032594614748145167,
+          "max_logp_error": 0.2453446255999836,
+          "passed": true,
+          "reference_to_device_kl_nats": 0.0003244116031700364,
+          "relative_l2_logp_error": 0.002659860458269853,
+          "rms_logp_error": 0.04909559206530713
+        }
+      ],
+      "protocol_sha256": "966917d9cda7a9cccf090185dd1de86c557e7bdc4d10742455864167f1a7d29c",
+      "source_exposures": 40960,
+      "source_sha256": "28bb74b186b07a9256fafcb3467d962e8bc9ec71d5c17251f4c4fa586f6b0e2e",
+      "status": "PASS_PERIODIC_ORDER_COMPONENTS_NATIVE8_FULL_STATE_AND_ACTUAL_RESTORE8",
+      "supervised_positions": 21006966,
+      "warm_last32_median_seconds": 6.371480446512578
+    }
+  },
+  "training_reserved_chip_hours": 28.4274855470983,
+  "utc": "2026-10-20T21:36:38.287025+00:00"
+}

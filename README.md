@@ -56,10 +56,11 @@ now checks all527 ordinary transitions against independent HF references. A
 [metadata count correction](validation/real_cpt_full_window_scoring_v29_count_addendum_20261020.json)
 preserves every original score and gate.
 
-All three first-order models have [finished1,280 updates and passed full audits/protection](validation/real_cpt_scaffold_v29_first_order_complete_20261020.json).
-Warm updates take6.3–6.4s; first-order science costs14.233reserved chip-hours.
-The second unchanged data order has passed [initial64 and full-state restoration checks](validation/real_cpt_scaffold_v29_second_order_start_20261020.json) and continues toward1,280. All6 terminal identities
-will be fixed before held outcomes. [Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
+All six models have [finished1,280 updates and passed full audits and backup verification](validation/real_cpt_scaffold_v29_training_complete_20261020.json).
+Training uses28.427reserved chip-hours across both data orders. All seven model
+identities and independent TRAIN numerical references are fixed before held execution.
+The held readout is now released; **no scientific result is available yet**.
+[Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
 passes TRAIN-only native/cache/full-target checks; those are not learning results.
 [Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
 remains a4.88× warmed microbenchmark result, separate from learning efficacy.

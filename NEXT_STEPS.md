@@ -11,21 +11,21 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Finish unchanged second-order V29 training,then all-seven-model held readout.
-   First order2026102029:all3 terminal1280/state/order/native/restore audits and physical closures PASS.
-   All3 latestweights and one full1280 EBS archive pass complete member/SHA readback; all original64/640/1280 stay RAM.
-   Science14.233reserved chip-hours; TRAIN CPUreferences on actual terminal weights ready; no held outcomes.
-   Report validation/real_cpt_scaffold_v29_first_order_complete_20261020.json.
-   Second order2030 initial64 closes0 in all3; CPUloss/count/native/order/full master/moment/cast and backup checks PASS.
-   Original64→1280 continuations ACTIVE exec54878/99041/48795,owned sessions1908044/1908164/1908281.
-   All8 actual restored full-model/optimizer byte checks and parameter ties PASS per job; finite watcher1908222(exec32419).
-   All3 full640 source/native/master/moment/cast/restore audits and latestweights+one full640 EBS readback PASS.
-   Watcher now waits1280 physical closures/audits/protection. Do not relaunch,change endpoints,or inspect held outcomes early.
-   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; W=local/worktrees/real-cpt-scaffold-v29; enginec9d2c0c fixed.
-   Readout qualified1932CPU checks/TRAIN native/cache/full16/full527. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
-   Use E/execution-plan-v2.json and analysis-plan-v2.json. Independent ordinary can overlap writer on distinct chips.
-   Max3scalar groups concurrently is root scheduling limit. All7actual model/ref bindings and six terminal closures required before held release.
-   Keep80science/64evalchip-hour bounds,35GiBfilesystem/512GiBhost floors; originals/cache untouched.
+1. Finish the released all-seven-model V29 held readout.
+   All6 models finish1280 and pass physical closure/full-state/order/native/restore audits;28.427training chip-hours.
+   Latestweights for all6 and one latest fullraw2030/1280 EBS archive pass readback; all original18 states stay RAM.
+   All7 actual terminal/B0 TRAIN CPUreferences are ready; no held model outcomes opened before E/release.json.
+   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
+   Training observers/watchers/continuations CLOSED0; do not relaunch. Report validation/real_cpt_scaffold_v29_training_complete_20261020.json.
+   E/review.json and release.json bind all7 model identities,references,sources,closure receipts,execution and analysis plans.
+   Start all7writer and7ordinary phases via Weval/scripts/run_real_cpt_readout_v29.py on physical0–6 and7–13.
+   Launch each math phase after its writer completes; launch scalar after its math,at most3scalar groups concurrently.
+   Numerical worker85c55db unchanged; Weval=local/worktrees/real-cpt-scaffold-v29-eval at2c30aa1.
+   Fixed28phase groups/49workers,all original attempts; scalar4shards share one physical-chip charge.
+   After all outputs close:primary results via train.real_cpt_readout_results,then frozen independent checker v2.
+   Add declared scalar paired secondary tables via main train.real_cpt_scalar_results only after primary independent PASS.
+   Use E/index.json,E/analysis-plan-v2.json,E/scalar-secondary-plan.json; no parser/prompt/threshold rescue or seed pooling.
+   Keep64evalchip-hour bound,35GiBfilesystem/512GiBhost floors; max3scalar groups is ROOT scheduling responsibility.
    No broad RL,size jump,officialTEST,V28 extension,or oldR1234 resume.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.

@@ -1,36 +1,27 @@
-<!-- Current handoff 2026-10-20 20:28 UTC; historical entries below -->
+<!-- Current handoff 2026-10-20 21:37 UTC; historical entries below -->
 Owner: continue autonomously/patiently until told to stop; do not final at milestones. No active goal. Agent quota unavailable untilOct24:do not retry agents.
 Repo public dario-fumarola/useful-thoughts-trainium. R=/home/ubuntu/dario; W=R/local/worktrees/real-cpt-scaffold-v29; Weval=R/local/worktrees/real-cpt-scaffold-v29-eval.
-W remains73d9c91 with numerical engine c9d2c0c frozen; main1e7fd74 and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
+W remains73d9c91 with numerical engine c9d2c0c frozen; main408d7dd and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
 
-V29 FIRST ORDER2026102029 CLOSED/PASS; SECOND ORDER2026102030 ACTIVE:
-C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1; O=R/local/science-runs/real-cpt-scaffold-v29 (private /dev/shm symlink).
-First all3 terminal1280 physically close0; full order/native/master/moment/cast/actualrestore8 audits and EBS protection PASS.
-First-order science14.233480407432232chip-hours; TRAIN CPUreferences actual all3terminal weights andB0 ready; no held model outcomes.
-Report validation/real_cpt_scaffold_v29_first_order_complete_20261020.json. First watcher1865138 CLOSED/PASS; do not relaunch.
-Second initial64 raw6374/format79765/computation60569 CLOSED0; native8/CPUloss/count/order/fullstate audits PASS.
-Second memory C/memory-stage64-seed2026102030.json: warm medians6.306–6.389s; PSS151–154GiB/job; minavailable1092GiB.
-One null process-exit memory sample excluded from PSS sums; original failed summary attempt retained; no model change.
-Second64 EBS protection76006 CLOSED0/PASS; immutable index and receipt C/protection-{index-}seed2026102030-step64.json.
-Root review/release C/review-terminal1280-seed2026102030.json and C/release-terminal1280-seed2026102030.json.
-Original second64→1280 continuations launched19:12:53UTC:
-raw exec54878/supervisor1907974/owned timeout session1908044;
-format99041/1907982/1908164; computation48795/1908101/1908281.
-Logical0–7/8–15/16–23,physical0–5. All8 actual restored fullmodel/optimizer bytes and parameter ties PASS perjob.
-Fixed terminal1280 primary; source,data,loss,precision and evaluation contract unchanged. Do not stop healthy runs early or relaunch.
-Finite checkpoint watcher PID1908222,exec32419: source local/analysis/watch_real_cpt_v29_checkpoints_20261020.py --seed 2026102030.
-Log C/checkpoint-queue-seed2026102030.log; output C/checkpoint-queue-seed2026102030. Wait all3full640→CPUaudits/protect,then all3full1280+physicalclosed→audits/protect.
-Second full640 audits PASS all3:source20480 exposures/order/components/native8/master/moments/modelcast/actualrestore8.
-Second640 latest model archives and one fullraw640 optimizer archive complete EBS member/SHA/fsync readback PASS at20:28UTC; source receipt C/protection-seed2026102030-step640.json and immutable index.
-Watcher has advanced to WAIT_COMPLETE_CHECKPOINTS2030/1280. Training~740updates,~6.3s/update,hostavailable1274GiB after checkpoint cleanup. All original full64/640 remain RAM.
-Passive finite training observer exec87654 prints progress45s; poll it with write_stdin if useful; it never mutates/launches training. It exits only after all3terminals physically close and watcher1280protection completes (or a guard fails).
-Never edit hashed watcher/audit/protect sources while active. One-shot/no auto retries. Original full64/640/1280 retainedRAM.
-B=R/local/backups/science/real-cpt-scaffold-v29/INDEX.json keeps latestmodels and ONE rotatingfulloptimizerstate,not allhistories/offinstance.
-At19:12 root62.67GiB/cache54.62GiB/RAMoutput640.88GiBfree; actualscience15.19455chip-hours before continuations.
-Report validation/real_cpt_scaffold_v29_second_order_start_20261020.json. Next finish allsecond1280/audits/protection,prepare remaining3actualTRAINCPUrefs,release all7held readout.
-Same80science/64evalreservedchip-hourbounds;eachterminalphase6h/cleanup180s;35GiBfilesystem/512GiBhostavailable floors.
+V29 ALL SIX TRAINING RUNS CLOSED/PASS; HELD READOUT RELEASED:
+C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1; O=R/local/science-runs/real-cpt-scaffold-v29 privateRAM symlink.
+All6 original1280 endpoints/ordered40960 exposures/native8/full master/moment/cast/actualrestore8 and physical closures PASS.
+Total science training28.4274855470983reserved chip-hours. Firstorder14.233480407432232; second14.1940051396661.
+All18 original full64/640/1280 states stayRAM; latest6 model weights plus ONE latest fullraw2030/1280 EBS archive member/SHA/fsync pass.
+B=R/local/backups/science/real-cpt-scaffold-v29/INDEX.json; latest second receipt C/protection-seed2026102030-step1280.json.
+All initial/terminal training supervisors/sessions and both checkpoint watchers CLOSED0. Last second raw54878/format99041/computation48795 CLOSED0.
+Second watcher32419/PID1908222 CLOSED0; passive observer87654 CLOSED0. Never relaunch them.
+All7 actual-model CPU TRAINreferences ready E/references/<alias>,model bindings E/bindings (B0 inE/B0-binding.json).
+Last3CPUreference sessions53081/54420/49598 CLOSED0. No held model outcomes before release.
+E/review.json and E/release.json explicitly release all7 fixed identities; release SHA0484f1a086e73d81b458af218b889aca77914815757905fb204511ffb64cafc0.
+E/index.json enumerates all28future phasegroups/49workers. Scientific verdict PENDING,not inferred from TRAIN checks.
+Root preflight initially compared different model weight fingerprints,then assumed absent jobs directory existed; both corrected before held,all seven refs/source/runtime/assets/architecture and device availability PASS. No model/reference/numerical gate changed.
+Public training proof validation/real_cpt_scaffold_v29_training_complete_20261020.json.
+NEXT:launch7writers physical0–6 and7ordinary physical7–13 using frozen supervisor,then each math after own notes,and at most3scalar groups after own math.
+Root must enforce max3scalar groups manually; supervisor enforces ownership/resources/single-attempt phases but has no cross-model scalar semaphore.
+At21:36 root62.6GiB/cache54.6GiBfree,hostavailable~1478GiB. No source changes, package updates,old launchers or checkpoint selection.
 
-READOUT READY; DO NOT OPEN HELD MODEL OUTCOMES BEFORE ALL6 TERMINAL IDENTITIES:
+READOUT RELEASED; ALL SIX TERMINALS AND ALL SEVEN REFERENCES FIXED:
 E=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1. Actual B0 fixedTRAIN CPUreference E/references/B0 COMPLETE; no held forward.
 Qualified driver train/real_cpt_readout_driver.py and purecontexts train/real_cpt_readout.py remain numerical85c55db; full1932CPU checks+smoke/compile PASS.
 Cq=R/local/diagnostics/real-cpt-readout-v29-qualification-v1: all4 actualTRAIN native/cache/full16/full527 paths close0; independentNumPy PASS;0.104chiphours. No scientific learning claim.
