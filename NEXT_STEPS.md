@@ -38,7 +38,14 @@
    and runs the frozen independent all-state checker. Read-only watcher exec95213.
    Frozen evaluator2eb3c1c passes1861tests/15360native input checks and full-sized
    score fixtures. Fixed23-job queue is prepared for up to8 independent chips,
-   summed18chip-hour accounting/stale-monitor stop; numerical decoder/shards unchanged.
+   summed30chip-hour accounting/stale-monitor stop; numerical decoder/shards unchanged.
+   Time-only amendment published before held outcomes: prior TRAIN decoder timing
+   gives18.48idealized chip-hours before startup; original17.5stop was too tight.
+   After all6terminal audits, use the host wrapper
+   local/analysis/release_permutation_program_v28_fixed_evaluation_20261020.py
+   (no args; frozen evaluator PYTHONPATH). It preserves original-release18.json
+   and links the explicit30-hour amended release; do not create release.json
+   directly with the original core builder. Wall bound8hours, stop29.5chip-hours.
    No evaluation before all6terminal audits. No autonomous RL/capability claim follows.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.

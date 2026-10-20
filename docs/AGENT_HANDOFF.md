@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 05:33 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 06:15 UTC; older entries below are historical -->
 V28 first-seed all three terminal4096 physically close0 and independent full-state
 model/master/moment/native/order audits PASS. No held outcomes.
 Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
@@ -23,6 +23,7 @@ Read-only second continuation watcher exec95213 emits steps/PSS/readback/closure
 status every45s; exits on failures/all terminal audits or original09:56deadline.
 Startup PSS~69–71GiB matches first-wave restoration phase; root76GiB free afterfull64.
 Post-save first wave was~24GiB/arm. Disk floor35GiB/host512GiB; global serialized saves.
+All three1024runtime readbacks/fsyncs and subsequent updates now observed.
 Next monitor actual4096 and audits. No held inference before all6terminal audits.
 After all6, use ABSOLUTE paths for evaluation release and all prepared commands.
 Source env.sh then override PYTHONPATH to the relevant frozen worktree+local/test-deps.
@@ -35,7 +36,8 @@ All1861checks pass tests.qY1DSj,15,360actual-tokenizer inputs and full-sized
 known-score fixtures pass; zero held model forwards. C_E=local/diagnostics/permutation-program-v28-evaluation-CPU-v1.
 CPU source report validation/permutation_program_v28_evaluation_source_20261020.json protected.
 All6audited terminals required by scripts/release_permutation_program_evaluation.py
-before held model inference. Primary9,216families, secondary1,024each; family bootstrap,
+(via the new host time-amendment wrapper below) before held model inference.
+Primary9,216families, secondary1,024each; family bootstrap,
 training/inference gates separate. No prompt/checkpoint selection or old result rewrite.
 Prepared local helpers (NOT RUN; require all appropriate audited models/closures):
 - release_permutation_program_v28_second_continuation_20261020.py and
@@ -43,11 +45,17 @@ Prepared local helpers (NOT RUN; require all appropriate audited models/closures
 - supervise_permutation_program_v28_generation_group_20261020.py reuses qualified4 independent decoder shards/chip.
   Updated host-only scheduler allows8 independent chip slots, same4shards per job.
 - run_permutation_program_v28_fixed_evaluation_20261020.py batches exactly23 jobs; actual sum of
- group reservation durations stops17.5chip-hours plus shutdown reserve under18.
+ group reservation durations stops29.5chip-hours plus shutdown reserve under30;8h wall bound.
 - permutation_program_v28_eval_budget_20261020.py enforces60s heartbeat TTL/owner PID-start identity;
  stale/dead monitor or cap stops all original group workers, no automatic retry.
  Host-only accounting/real owned-process death fixture passes; NOT eight-chip hardware qualification.
- Report validation/permutation_program_v28_evaluation_schedule_CPU_20261020.json and sources protected.
+ Original18-hour report/source permutation_program_v28_evaluation_schedule_CPU_20261020.json stays preserved.
+ New prospective time-only amendment permutation_program_v28_evaluation_time_amendment_20261020.json
+ SHA b727931360a663031eda41aff0ed085803c78444e7d87209cdca31f7f1162065 supersedes only time allowance.
+ Prior TRAIN qualification warm decoder latency0.0693s/action implies18.48idealized chip-hours
+ for canonical trained completions+cappedB0 references before startup/native/chip contention.
+ CPU unchanged-science-field/accounting/boundary/stale/dead-owner checks PASS; no held call.
+ Max8chips unchanged; finite30chip-hour sum/29.5stop/8h wall, not new capacity or numerical code.
  Numerical source2eb3c1c/data/models/caps/shards/primary gates unchanged; training still3chips max.
 - check_permutation_program_v28_readout_20261020.py independently verifies actions/nodes/native/cache/family gates;
  770 offline parser fixture cases pass, not model observations.
@@ -55,12 +63,26 @@ Prepared local helpers (NOT RUN; require all appropriate audited models/closures
  existing score_spans onCPU FP32 after all6 release; no accelerator calls or new training/gate.
 Fixed8 reporting families/16paired composition examples chosen by hash before held outputs,
 C_E/fixed-report-example-identities.json, public with periodic recovery report.
-All6terminal release builder scripts/release_permutation_program_evaluation.py; prepared evaluation
-local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py prepares the index.
+C_EVAL=local/diagnostics/permutation-program-v28-fixed-evaluation-v1 (not created yet).
+After all6terminal audits, actual release command (no args) with frozen evaluator PYTHONPATH:
+python local/analysis/release_permutation_program_v28_fixed_evaluation_20261020.py
+It calls the unchanged core builder into C_EVAL/original-release18.json, then writes
+C_EVAL/release.json with the explicit linked operational allowance30. Do not first
+create release.json directly with the original core CLI. Both records remain.
+Prepared local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py
+--release /home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json
+prepares the index. No held model calls before all6actual state/model guards.
 Index must contain23 directories (all6×3panels+B0×3+2trace partial controls). Use native_from
 same model's first prepared output for later panels to avoid repeatedCPU reference generation.
 - permutation_program_v28_secondary_reference_20261020.py preserves matched2048-question
  B0 tables and explicitly secondary strong direct/empty comparisons; primary gates unchanged.
+Prepared presentation-only helpers, not run on model outcomes:
+- plot_permutation_program_v28_20261020.py --readout ... --output <newdir> renders
+ all panels/seeds separately plus separate primary training/inference forests/CSVs.
+- collect_permutation_program_v28_examples_20261020.py --index ... --readout ...
+ --independent-check ... --output ... requires complete independently checked readout;
+ all16prospectively fixed cases and18main conditions each, original inputs/tokens preserved.
+ Both source files under local/analysis; py_compile passes, no new score rules.
 No full evaluation execution release or index exists yet; do not start before all6audits.
 Latest full per arm/development64/terminal models retained; global EBS export lease,
 35GiB root and512GiB host floors; historical originals/cache untouched.

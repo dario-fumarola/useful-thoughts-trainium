@@ -1,0 +1,43 @@
+{
+  "status": "PLANNING_FROM_PRIOR_TRAIN_QUALIFICATION_ONLY",
+  "qualification_attempts_sha256": "c1c7fb89ba0921d531ca656b4aabc80cf293a025c18f0ee052c1172c3723c1af",
+  "qualified_warm_rows": 16,
+  "qualified_median_seconds_per_action": 0.06927207969920346,
+  "warm_row_selection": "Exclude the original first cold/compile row; retain all later rows with>=32actions. No held outcomes or accuracy selection.",
+  "fixed_panels": {
+    "DEV_interpolation": {
+      "questions": 2048,
+      "depths": {
+        "1": 342,
+        "2": 342,
+        "3": 342,
+        "4": 342,
+        "5": 340,
+        "6": 340
+      }
+    },
+    "DEV_composition": {
+      "questions": 18432,
+      "depths": {
+        "4": 6144,
+        "5": 6144,
+        "6": 6144
+      }
+    },
+    "DEV_depth": {
+      "questions": 2048,
+      "depths": {
+        "7": 512,
+        "8": 512,
+        "9": 512,
+        "10": 512
+      }
+    }
+  },
+  "canonical_trained_actions": 2269088,
+  "canonical_completion_rule": "Direct/empty/provided-pause and supplied partial modes:2 actions. Full trace:6 per step plus5 final-field actions; verified target format, not a prediction that all models follow it.",
+  "maximum_B0_reference_actions": 1572864,
+  "idealized_four_shard_reserved_chip_hours_before_load_native_startup": 18.481944801702372,
+  "original_stop_at_chip_hours": 17.5,
+  "limits": "Planning only. Four-way perfect throughput is optimistic; B0cap is an upper assumption, not an outcome. Load/native/startup and trained caps can add cost. Actual finite30chip-hour accounting remains required."
+}

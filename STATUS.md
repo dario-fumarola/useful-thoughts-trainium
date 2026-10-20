@@ -1,4 +1,4 @@
-# Status — 2026-10-20 05:33 UTC
+# Status — 2026-10-20 06:15 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
@@ -12,8 +12,8 @@ Control local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
 Second-seed whole deadline09:56UTC; frozen ce04236/same fixed recipe and4096terminal endpoint.
 Initial relative release-path launch failed before model load/outputs/updates; logs preserved; absolute-path repair costs0.00177chip-hours.
 Reports: permutation_program_v28_first_wave_20261020.json and permutation_program_v28_second_seed_path_repair_20261020.json; protected.
-Next monitor fixed4096; terminal auditor exec75550 waits physical closure and audits all state. Watcher exec95213; no held inference.
-Frozen evaluator2eb3c1c/1861tests and fixed23-job max8-chip/18chip-hour queue prepared; numerical decoder/shards unchanged.
+All three1024 runtime readbacks and subsequent updates observed; next fixed4096. Terminal auditor exec75550; watcher exec95213.
+Frozen evaluator2eb3c1c/1861tests unchanged. Prospective time-only addendum allows fixed23jobs/max8chips/30chip-hours; same gates.
 No held inference until all six terminals audited; no checkpoint/prompt selection, automatic retry or learned capability claim.
 
 ## Closed: fresh confirmation feasibility

@@ -1603,3 +1603,16 @@ Preserve all three failed control directories and empty owned temporary director
 make one explicit absolute-path correction with the original release/deadlines.
 Cost0.0017701253chip-hours; no numerical source or science protocol changes.
 Continue first64/audit/actual restart/4096; no held inference before all6audits.
+
+2026-10-20 06:15 UTC — Extend only V28's prospective evaluation time allowance,
+from18 to30 summed reserved chip-hours (stop29.5, max8chips,8h wall). No held V28
+model outcome exists; all6terminal-audit guard remains unmet. Prior TRAIN decoder
+qualification gives~0.0693s/action: canonical trained completions plus capped B0
+references would already cost18.48idealized chip-hours before load/native checks.
+Preserve every model/cohort/mode/cap/parser/gate and frozen numerical source2eb3c1c.
+Keep original design/reports unchanged and publish the explicit operational addendum.
+The new host wrapper preserves the unchanged builder's original18-hour release,
+then writes a separately linked30-hour operational record. CPU source-preservation,
+accounting, finite-bound and actual-owner-death checks pass; not8-chip validation.
+Do not shrink the powered cohort or wait for partial outcomes to extend execution.
+Second-seed three1024readbacks/fsyncs and subsequent updates observed; continue4096.

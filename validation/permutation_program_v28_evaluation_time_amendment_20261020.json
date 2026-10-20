@@ -1,0 +1,151 @@
+{
+  "status": "PROSPECTIVE_V28_EVALUATION_TIME_ONLY_AMENDMENT",
+  "utc": "2026-10-20T06:13:49.550444+00:00",
+  "experiment_id": "controlled-computation-v28",
+  "held_model_outcomes_at_amendment": 0,
+  "original_maximum_reserved_chip_hours": 18,
+  "new_maximum_reserved_chip_hours": 30,
+  "stop_at_chip_hours": 29.5,
+  "maximum_wall_hours": 8,
+  "maximum_concurrent_chips": 8,
+  "maximum_training_reserved_chip_hours_unchanged": 30,
+  "prospective_design_sha256": "d01498ec6eec98fedad28bfa5b5426059ccceff196ef7522bb44ea27d98ebba6",
+  "evaluation_source_commit": "2eb3c1cf09d14604cc9b5dd0f97562656e95b6a5",
+  "evaluation_source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66",
+    "train/document_qa_evaluate.py": "5357a1fe9fc9bf4078732227ee9e104dae344e42eb58ace3f30d47982db1f1e1",
+    "train/document_qa_contexts.py": "26b2e33bc6adc4fa5af7f2da45a1fa308c3c2d8fc2a66b36a681e89f5fc96291",
+    "train/document_qa_decoder.py": "68c2a8f02ad2d3f6471ad408bc2297be0afd91f90342b15ea78ddee7f81a1392",
+    "train/document_qa_answers.py": "38845803d12b2f57f259cafce4f98397ad522967332fb0413b6892b2906c5c00",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "scripts/release_permutation_program_evaluation.py": "d443d8a5f3120a16dc0217821fe63d0b103005ab101fb2bba28adcb3724fb283",
+    "train/permutation_program_readout.py": "af8a9d89c3efa3310a049e8476161ada6071d9a16a1d29b57ed70a42dd00cb94",
+    "train/permutation_program_science_evaluate.py": "a0a740f89dd9084d207955cdc16d146e9958e91c9758fc18d2677898fec7e3eb",
+    "train/permutation_program_decoder.py": "07a8868fee965322fed9d99e6cd630314e6077a406a190bae6b7d168845c69e2",
+    "train/permutation_program_answers.py": "0bf93786ba3663e78c56593bc0eab5a4f31ef1fe4c8be0272fd2d7d8cfc68519",
+    "train/permutation_program_evaluation.py": "551c70dbe35730dc7f904292b6d95e78716734e280fbe3f00caa2832dcf98461",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473"
+  },
+  "host_source_files": {
+    "local/analysis/permutation_program_v28_eval_budget_20261020.py": "60982e33a668679c6d0300ef41a33eafeb0fa658d3d3fc94e68e5e338be66c2d",
+    "local/analysis/run_permutation_program_v28_fixed_evaluation_20261020.py": "cd64e31ee2e9ac28cc03ab7e8148aba35cbb0d4706ffc64ef4d4437ea035ba92",
+    "local/analysis/supervise_permutation_program_v28_generation_group_20261020.py": "24e5617eddcada07f81f3f45d8936f531d87964d811ccaad8a0f4bee8e5ad52a",
+    "local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py": "b18eb9d10d8ab6c9ea10c01bcdde3a42b0e25c48bf0cb060237bca8b4c3f3a82",
+    "local/analysis/release_permutation_program_v28_fixed_evaluation_20261020.py": "1d69bffca9a582377a21a3c68c34c31833de671dae8bb32903c7844f1618f51b",
+    "local/analysis/check_permutation_program_v28_evaluation_time_20261020.py": "bf941366c050557d4c2f9cff5cd684a67d91dbe8b27a6c87e92442a9b8fe9223"
+  },
+  "unchanged": [
+    "All six terminal4096 models and all-six independent audit prerequisite.",
+    "All23 jobs/378880attempts, panels/modes/families/order/caps and parsers.",
+    "FP32 numerical decoder,4shards,256prefill and128action cap.",
+    "All original success gates, contrasts, exclusions and conditional paired-family uncertainty.",
+    "No automatic retry, model/prompt/checkpoint selection, cloud/stack changes or paid teachers."
+  ],
+  "reason": "Recorded warm decoder timing implies about18.5idealized chip-hours for canonical trained completions plus capped B0 references, before startup/native checks. Original17.5stop risks truncating the fixed powered study. Increase only the finite operational time allowance before any held inference; do not reduce questions or change gates.",
+  "release_rule": "Use the new host release wrapper. It preserves the frozen builder original18-hour all-six release, then writes a separately linked operational record with only the new allowance and explicit amendment provenance. Frozen numerical/source/design files are not edited.",
+  "planning": {
+    "status": "PLANNING_FROM_PRIOR_TRAIN_QUALIFICATION_ONLY",
+    "qualification_attempts_sha256": "c1c7fb89ba0921d531ca656b4aabc80cf293a025c18f0ee052c1172c3723c1af",
+    "qualified_warm_rows": 16,
+    "qualified_median_seconds_per_action": 0.06927207969920346,
+    "warm_row_selection": "Exclude the original first cold/compile row; retain all later rows with>=32actions. No held outcomes or accuracy selection.",
+    "fixed_panels": {
+      "DEV_interpolation": {
+        "questions": 2048,
+        "depths": {
+          "1": 342,
+          "2": 342,
+          "3": 342,
+          "4": 342,
+          "5": 340,
+          "6": 340
+        }
+      },
+      "DEV_composition": {
+        "questions": 18432,
+        "depths": {
+          "4": 6144,
+          "5": 6144,
+          "6": 6144
+        }
+      },
+      "DEV_depth": {
+        "questions": 2048,
+        "depths": {
+          "7": 512,
+          "8": 512,
+          "9": 512,
+          "10": 512
+        }
+      }
+    },
+    "canonical_trained_actions": 2269088,
+    "canonical_completion_rule": "Direct/empty/provided-pause and supplied partial modes:2 actions. Full trace:6 per step plus5 final-field actions; verified target format, not a prediction that all models follow it.",
+    "maximum_B0_reference_actions": 1572864,
+    "idealized_four_shard_reserved_chip_hours_before_load_native_startup": 18.481944801702372,
+    "original_stop_at_chip_hours": 17.5,
+    "limits": "Planning only. Four-way perfect throughput is optimistic; B0cap is an upper assumption, not an outcome. Load/native/startup and trained caps can add cost. Actual finite30chip-hour accounting remains required."
+  },
+  "CPU_readiness": {
+    "accelerator_calls": 0,
+    "actual_owned_process_death_rejected": true,
+    "actual_terminal_releases": 0,
+    "checker_sha256": "bf941366c050557d4c2f9cff5cd684a67d91dbe8b27a6c87e92442a9b8fe9223",
+    "invalid_amendments_rejected": [
+      "held_model_outcomes_at_amendment",
+      "new_maximum_reserved_chip_hours",
+      "maximum_concurrent_chips",
+      "maximum_wall_hours",
+      "evaluation_source_files"
+    ],
+    "limits": [
+      "Host bookkeeping and one actual disposable CPU process only, not eight-chip runtime qualification.",
+      "The actual all-six checkpoint/model release remains gated on independent terminal audits."
+    ],
+    "maximum_chips": 8,
+    "maximum_reserved_chip_hours": 30.0,
+    "model_calls": 0,
+    "original_process_remains_alive": true,
+    "preserved_original_scientific_fields": true,
+    "shutdown_reserve_chip_hours": 0.5,
+    "status": "PASS_CPU_TIME_ONLY_PRESERVATION_ACCOUNTING_AND_ACTUAL_OWNER_DEATH",
+    "stop_at_chip_hours": 29.5
+  },
+  "files": {
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/permutation_program_v28_eval_budget_20261020.py": "60982e33a668679c6d0300ef41a33eafeb0fa658d3d3fc94e68e5e338be66c2d",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/run_permutation_program_v28_fixed_evaluation_20261020.py": "cd64e31ee2e9ac28cc03ab7e8148aba35cbb0d4706ffc64ef4d4437ea035ba92",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/supervise_permutation_program_v28_generation_group_20261020.py": "24e5617eddcada07f81f3f45d8936f531d87964d811ccaad8a0f4bee8e5ad52a",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/prepare_permutation_program_v28_all_evaluations_20261020.py": "b18eb9d10d8ab6c9ea10c01bcdde3a42b0e25c48bf0cb060237bca8b4c3f3a82",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/release_permutation_program_v28_fixed_evaluation_20261020.py": "1d69bffca9a582377a21a3c68c34c31833de671dae8bb32903c7844f1618f51b",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/check_permutation_program_v28_evaluation_time_20261020.py": "bf941366c050557d4c2f9cff5cd684a67d91dbe8b27a6c87e92442a9b8fe9223",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/checks.json": "b411daccfc42632659fae0e66bbfa76941fd947ea0d8ec658558b34bf4d07565",
+    "validation/permutation_program_v28_evaluation_time_amendment_20261020/timing-plan.json": "92276cfc061f24c28e8c09ecc2e56aab80f3038061649181e84c167b8cf05fbd"
+  },
+  "limits": [
+    "Prospective operational allowance, not a new scientific result or proof of eight-chip stability.",
+    "Prior TRAIN4 timing is a planning aid, not a held-throughput or completion guarantee.",
+    "Same original decoder workers/native/cache checks and bounded owner/heartbeat/resource/actual-reservation accounting remain mandatory.",
+    "Original18-hour report/source remain preserved; this addendum supersedes only that time allowance."
+  ]
+}
