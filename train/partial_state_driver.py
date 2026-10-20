@@ -37,6 +37,9 @@ EVIDENCE_FORMAT_PURPOSES = ('document_evidence_format_weight_qualification',
                           'document_evidence_format_weight_control')
 PROGRAM_SCHEMA = 'permutation-program-sft-v28'
 PROGRAM_QUALIFICATION_ARM = 'program_qualification'
+PROGRAM_STUDY_PURPOSE = 'permutation_program_reference'
+PROGRAM_DATA_SHA = '251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128'
+PROGRAM_MANIFEST_SHA = '41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41'
 
 
 def source_files():
@@ -54,7 +57,8 @@ def source_files():
              'train/real_source_balanced_packing.py', 'train/document_evidence_data.py',
              'train/document_qa_data.py', 'train/document_qa_packing.py',
              'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py',
-             'train/permutation_program_data.py', 'train/permutation_program_packing.py')
+             'train/permutation_program_data.py', 'train/permutation_program_packing.py',
+             'train/permutation_program_retention.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
@@ -66,6 +70,7 @@ def validate(p):
     document = p.get('schema') == DOCUMENT_SCHEMA
     evidence = p.get('schema') == EVIDENCE_SCHEMA
     program = p.get('schema') == PROGRAM_SCHEMA
+    program_science = program and p.get('purpose') == PROGRAM_STUDY_PURPOSE
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
                  world_size=4, micro_batch=8, global_batch=32, accumulation=1,
                  width=128, target_slots=64, schedule='constant',
@@ -101,20 +106,29 @@ def validate(p):
         'document_evidence_plan_pilot', 'document_evidence_weight_ablation',
         'document_evidence_format_weight_control')
     if program:
-        # This adapter intentionally releases no longer learning study. All four
-        # views occur in every diagnostic update, including provided pauses.
-        if (p.get('purpose') != 'permutation_program_qualification'
-                or p.get('experiment_id') != 'controlled-computation-v28'
+        if program_science:
+            from train.permutation_program_retention import POLICY
+            if (p['items'] != 32768 or p.get('steps') != 4096
+                    or p.get('save_every') != 1024 or p.get('seed') not in (2026102028,2026102029)
+                    or p.get('lr') != 1e-5 or p.get('program_arm') not in permutation_program_packing.ARMS
+                    or p.get('view_schedule') != 'interleaved_fixed_item_plus_epoch_parity'
+                    or p.get('checkpoint_retention') != POLICY
+                    or p.get('data_sha256') != PROGRAM_DATA_SHA
+                    or p.get('data_manifest_sha256') != PROGRAM_MANIFEST_SHA):
+                raise ValueError('Only the prospective two-seed program reference is implemented')
+        elif (p.get('purpose') != 'permutation_program_qualification'
                 or p['items'] != 128 or p.get('steps') != 8
                 or p.get('save_every') != 4 or p.get('seed') != 2026102028
                 or p.get('lr') != 1e-5
-                or p.get('view_schedule') != 'qualification_all_four_views_each_update'
+                or p.get('view_schedule') != 'qualification_all_four_views_each_update'):
+            raise ValueError('Only the bounded all-view program qualification is implemented')
+        if (p.get('experiment_id') != 'controlled-computation-v28'
                 or p.get('loss') != 'separate_mean_answer_work_per_example'
                 or any(type(p.get(k)) not in (int, float) or p[k] != 1.
                        for k in ('answer_loss_weight', 'work_loss_weight'))
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_manifest_sha256', ''))):
-            raise ValueError('Only the bounded all-view program qualification is implemented')
+            raise ValueError('Exact separately normalized program fields and data bindings required')
     elif depth:
         hashes = {'fixed': '3f829b7e9fdb493a72f7cf740952130b29eb2dd5ded0c88d69b9a5730031a3ad',
                   'variable': '1b8a328479cd05718753b89e2f99e0f696e2cbb62079d505cc372fbb927111d3'}
@@ -236,9 +250,9 @@ def validate(p):
             raise ValueError('Exact fixed TRAIN5120 study, two declared seeds and320/640 updates required')
     elif p.get('purpose') not in ('qualification', 'TRAIN_overfit_only') or p.get('items')!=128:
         raise ValueError('Explicit fitting or fixed TRAIN5120 study required')
-    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (640 if science else 320 if real_science or target_science or balanced_science else 256 if document_science or evidence_science else 160 if depth else 128)
+    if (type(p.get('steps')) is not int or not 3 <= p['steps'] <= (4096 if program_science else 640 if science else 320 if real_science or target_science or balanced_science else 256 if document_science or evidence_science else 160 if depth else 128)
             or type(p.get('seed')) is not int or not 0 <= p['seed'] < 2**63
-            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (160 if science or real_science or target_science or balanced_science else 128 if document_science or evidence_science else 80 if depth else 32)
+            or type(p.get('save_every')) is not int or not 1 <= p['save_every'] <= (1024 if program_science else 160 if science or real_science or target_science or balanced_science else 128 if document_science or evidence_science else 80 if depth else 32)
             or not 0 < p.get('lr', 0) <= 1e-4 or not math.isfinite(p['lr'])):
         raise ValueError('Finite mechanics steps, LR, seed and periodic full saves required')
     if p['source_files'] != source_files():
@@ -247,6 +261,47 @@ def validate(p):
     observe = p.get('checkpoint_memory_diagnostic', False)
     if type(cleanup) is not bool or type(observe) is not bool or science and (cleanup or observe):
         raise ValueError('CPU export cleanup remains a separately qualified engineering option')
+
+
+def validate_program_execution(p, args):
+    """A prepared protocol alone never launches a long learning job."""
+    from train.permutation_program_retention import RUN_ROOT
+    if (args.execution_release is None or args.arm != p['program_arm']
+            or args.output != RUN_ROOT/f'program-{args.arm}-seed{p["seed"]}-v1'):
+        raise ValueError('Explicit scoped program execution release required')
+    release = json.loads(args.execution_release.read_text())
+    job = release.get('jobs', {}).get(args.output.name)
+    if (job is None or job.get('protocol_sha256') != sha256_file(args.protocol)
+            or release.get('source_files') != source_files()
+            or release.get('prospective_design_sha256') != p['prospective_design_sha256']):
+        raise ValueError('Program job/source/design differs from its execution release')
+    if release.get('status') == 'RELEASED_V28_SCIENCE_STAGE64_ONLY':
+        if args.resume is not None or args.halt_after != 64:
+            raise ValueError('The initial release permits only fresh first64 updates')
+    elif release.get('status') == 'RELEASED_V28_SCIENCE_TERMINAL4096':
+        if (args.resume is None or args.halt_after is not None
+                or job.get('resume_COMPLETE_sha256') != sha256_file(args.resume/'COMPLETE.json')):
+            raise ValueError('Audited planned/recovery checkpoint required for continuation')
+    else:
+        raise ValueError('A prepared study is not a released learning job')
+    checks = (('hardware_qualification_file','hardware_qualification_sha256',
+               'PASS_ACTUAL_PROGRAM_ALL_VIEW_FULL_RESTORE'),
+              ('decoder_qualification_file','decoder_qualification_sha256',
+               'PASS_ACTUAL_TRAIN_PROGRAM_DECODER_NATIVE_CACHE_RAW_TOKENS_AND_CPU_GREEDY'))
+    for file_key, hash_key, status in checks:
+        path = Path(p[file_key]); evidence = json.loads(path.read_text())
+        if sha256_file(path) != p[hash_key] or evidence.get('status') != status:
+            raise ValueError('Actual independently checked program execution evidence required')
+        if file_key == 'hardware_qualification_file':
+            excluded = {'train/partial_state_driver.py','train/permutation_program_retention.py'}
+            current = {k:v for k,v in p['source_files'].items() if k not in excluded}
+            previous = {k:v for k,v in evidence['source_files'].items() if k not in excluded}
+            shape = {k:p[k] for k in ('world_size','micro_batch','global_batch','width','target_slots','head_chunk','accumulation')}
+            if current != previous or evidence['qualified_training_shape'] != shape:
+                raise ValueError('Numerical/packing source or actual qualified shape changed')
+    design = Path(p['prospective_design_file'])
+    if sha256_file(design) != p['prospective_design_sha256']:
+        raise ValueError('Frozen study design changed')
 
 
 def validate_evidence_weight_control(p, control):
@@ -348,11 +403,15 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
             or not 0 <= micro < p['accumulation']):
         raise ValueError('Actual bounded step/rank required')
     if p['schema'] == PROGRAM_SCHEMA:
-        if arm != PROGRAM_QUALIFICATION_ARM or p['purpose'] != 'permutation_program_qualification':
-            raise ValueError('No program learning study is released by this adapter')
+        qualification = p['purpose'] == 'permutation_program_qualification'
+        if (qualification and arm != PROGRAM_QUALIFICATION_ARM
+                or not qualification and (p['purpose'] != PROGRAM_STUDY_PURPOSE or arm != p['program_arm'])):
+            raise ValueError('Declared program qualification or frozen reference arm required')
         start = step*p['global_batch'] + rank*p['micro_batch']
         return batch_packs([permutation_program_packing.training_pack(
-            rows[order[pos]], tokenizer, ('direct', 'empty', 'trace', 'pause')[pos % 4],
+            rows[order[pos]], tokenizer,
+            ('direct', 'empty', 'trace', 'pause')[pos % 4] if qualification else
+                permutation_program_packing.view_for(arm, pos//p['items'], order[pos]),
             width=p['width'], target_slots=p['target_slots'])
             for pos in range(start, start+p['micro_batch'])])
     if p['schema'] in (DOCUMENT_SCHEMA, EVIDENCE_SCHEMA):
@@ -503,7 +562,8 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     last = begin; checkpoint_walls = []; loop_started = time.monotonic()
     for step in (range(begin, p['steps']) if run_updates else ()):
         started = time.monotonic(); optimizer.zero_grad(set_to_none=True)
-        audited = step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
+        audited = (step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
+                   or p.get('purpose') == PROGRAM_STUDY_PURPOSE and step+1 == args.halt_after)
         before = master_samples(optimizer, expected) if audited else None
         component_objective = p['schema'] in (BALANCED_SCHEMA, DOCUMENT_SCHEMA)
         pointer_objective = p['schema'] in (EVIDENCE_SCHEMA, PROGRAM_SCHEMA)
@@ -585,17 +645,34 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             with (args.output/'metrics.jsonl').open('a') as f:
                 f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
         if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
-            saving = time.monotonic()
-            # Full state is approximately14 bytes/parameter; reserve16 plus
-            # the existing35GiB floor before any rank starts writing.
-            scarce = float(shutil.disk_usage(args.output).free < 35*2**30 + 16*p['base_signature']['parameters'])
-            if bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(scarce, device=device)).cpu()):
-                raise RuntimeError('Insufficient space for full state plus35GiB reserve; retain prior checkpoints')
-            inspect_optimizer(optimizer, last, len(list(model.parameters())))
-            save_checkpoint(args.output, model, optimizer, last, dict(state, counters=dict(counters)), rank, world, xm, device,
-                            release_cpu_staging=p.get('checkpoint_export_cleanup', False),
-                            observe_cpu_staging=p.get('checkpoint_memory_diagnostic', False))
-            checkpoint_walls.append(dict(step=last, rank0_wall_seconds=time.monotonic()-saving))
+            program_study = p.get('purpose') == PROGRAM_STUDY_PURPOSE
+            lease = None
+            if program_study:
+                from train.permutation_program_retention import export_lease, rotate, publish_phase, await_phase
+                if rank == 0:
+                    lease = export_lease(deadline); lease.__enter__()
+                    publish_phase(evidence, 'lease-'+str(last), p)
+                else:
+                    await_phase(evidence, 'lease-'+str(last), p, deadline)
+            try:
+                saving = time.monotonic()
+                # Full state is approximately14 bytes/parameter; reserve16 plus
+                # the existing35GiB floor before any rank starts writing.
+                scarce = float(shutil.disk_usage(args.output).free < 35*2**30 + 16*p['base_signature']['parameters'])
+                if bool(xm.all_reduce(xm.REDUCE_MAX, torch.tensor(scarce, device=device)).cpu()):
+                    raise RuntimeError('Insufficient space for full state plus35GiB reserve; retain prior checkpoints')
+                inspect_optimizer(optimizer, last, len(list(model.parameters())))
+                save_checkpoint(args.output, model, optimizer, last, dict(state, counters=dict(counters)), rank, world, xm, device,
+                                release_cpu_staging=p.get('checkpoint_export_cleanup', False),
+                                observe_cpu_staging=p.get('checkpoint_memory_diagnostic', False))
+                checkpoint_walls.append(dict(step=last, rank0_wall_seconds=time.monotonic()-saving))
+                if program_study and rank == 0:
+                    rotate(args.output, args.output/f'step-{last:07d}', p)
+                    publish_phase(evidence, 'retained-'+str(last), p)
+            finally:
+                if lease is not None: lease.__exit__(None, None, None)
+            if program_study and rank != 0:
+                await_phase(evidence, 'retained-'+str(last), p, deadline)
         if stop or halt:
             break
     if rank == 0:
@@ -609,9 +686,12 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + (PROGRAM_QUALIFICATION_ARM,), required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + (PROGRAM_QUALIFICATION_ARM,), required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--execution-release', type=Path)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
+    if p.get('purpose') == PROGRAM_STUDY_PURPOSE:
+        validate_program_execution(p, args)
     if p.get('purpose') in EVIDENCE_WEIGHT_PURPOSES:
         if args.arm != 'evidence_select':
             raise ValueError('Only the new selection-weight treatment is authorized')
@@ -647,7 +727,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = ((PROGRAM_QUALIFICATION_ARM,) if p['schema'] == PROGRAM_SCHEMA else
+    allowed_arms = ((permutation_program_packing.ARMS if p.get('purpose') == PROGRAM_STUDY_PURPOSE
+                     else (PROGRAM_QUALIFICATION_ARM,)) if p['schema'] == PROGRAM_SCHEMA else
                     document_evidence_plan_packing.ARMS if p['schema'] == EVIDENCE_SCHEMA else
                     document_qa_packing.ARMS if p['schema'] == DOCUMENT_SCHEMA else
                     real_source_balanced_packing.ARMS if p['schema'] == BALANCED_SCHEMA else

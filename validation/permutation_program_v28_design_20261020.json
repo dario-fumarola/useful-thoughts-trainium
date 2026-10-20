@@ -1,0 +1,104 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "PROSPECTIVE_DESIGN_REQUIRES_SEPARATE_STAGE64_AND_TERMINAL_RELEASES",
+  "created_utc": "2026-10-20T02:00:51.488331+00:00",
+  "question": "Do verified intermediate states help inference beyond direct and trained-pause paths, and separately improve the same direct path after training?",
+  "scope": "Supervised mature-model algorithmic reference. No autonomous discovery, general-language pretraining, novel CoT expressivity or proven internalization claim.",
+  "model": "Actual released Qwen3-1.7B-Base; fresh identical B0 for all six models.",
+  "data": {
+    "path": "/home/ubuntu/dario/local/nvme-study/data/permutation-program-v28-study-v1",
+    "manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+    "TRAIN_labels_sha256": "251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128",
+    "TRAIN_questions": 32768,
+    "TRAIN_families": 16384,
+    "TRAIN_depths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "primary_panel": "DEV_composition",
+    "primary_families": 9216,
+    "primary_questions": 18432,
+    "secondary_panels": "Original first1024families/2048questions each in DEV_interpolation and DEV_depth; byte-identical original cohorts.",
+    "map_scope": "New complete maps, elementary edges may repeat. Simple paths only, not arbitrary cycles. rsrs/srsr motifs absent from TRAIN; longer7\u201310 excludes these motifs.",
+    "paired_units": "Two counterfactual variants per family, bootstrap whole families."
+  },
+  "training": {
+    "arms": {
+      "direct": "50%direct/50%empty Work field",
+      "trace": "50%direct/50%ordinary full verified CoT, including root operation",
+      "pause": "50%direct/50%provided existing FIM-pad inputs;6 per available program step; no pause prediction loss"
+    },
+    "data_order_seeds": [
+      2026102028,
+      2026102029
+    ],
+    "passes": 4,
+    "updates": 4096,
+    "global_batch": 32,
+    "world": 4,
+    "micro_batch": 8,
+    "accumulation": 1,
+    "sequence_width": 256,
+    "target_slots": 64,
+    "head_chunk": 32,
+    "lr": 1e-05,
+    "schedule": "constant",
+    "optimizer": "Existing AdamW/ZeRO1,one reducer;betas.9/.95,eps1e-8,wd.1,clip1.",
+    "parameter_compute": "BF16 with FP32 masters/moments, rotary buffers preservedFP32",
+    "loss": "Separately mean-normalized final-field/EOS weight1 and optional trace-field weight1, per example. Same final-answer labels/coefficient for every arm. No ordinary-source LM component in this laboratory.",
+    "view_schedule": "Within each epoch item-index/epoch parity; each question exactly two direct and two arm-specific exposures.",
+    "restart": "Every run first halts64, independent full-state/order/mask checks, then planned fresh-process restore64\u21924096. Terminal4096 primary;64 development milestone only.",
+    "selection": "No held model outcomes before all six terminal checkpoints. No performance early stopping, checkpoint selection, LR/weight/prompt sweep."
+  },
+  "primary_claims": {
+    "inference": "For each of two data-order seeds: trace generated answers versus matched direct model, matched trained-pause inference, and same trace model direct path. Each point gain>=3pp and paired family-bootstrap95% lower>0. Six comparisons required; report each separately.",
+    "training": "For each seed, trace-trained direct versus direct-trained direct and pause-trained direct. Same practical/interval threshold, evaluated separately; inference failure does not erase training benefit.",
+    "interpretation": "Evaluate the two claim families separately. A missed gate is not proof of zero effect. Beating provided pauses does not establish dominance over every compute alternative or equal latency."
+  },
+  "metrics": {
+    "primary": "Free complete-node answers. Gold-independent fixed parser, node case/whitespace harmless. Errors, caps and unsupported outputs stay in all denominators.",
+    "bootstrap": "Resample complete two-variant families;5000draws, fixedseed17. Checkpoint-conditional95% intervals, not broad model/seed uncertainty. Never treat paired variants as independent.",
+    "secondary": [
+      "Interpolation and longer lengths separately; per-depth and per-program tables.",
+      "Same-reader empty versus own traces; complete/correct intermediate execution and natural stops.",
+      "Both counterfactual variants correct; do not count twins as independent.",
+      "Fixed hash512composition families for exact root-excluded partial/corrupt/intact donor controls; no outcome choice.",
+      "Semantic-node/full-answer likelihood diagnostics if executed remain secondary and cannot replace complete-answer gates.",
+      "Ordinary-text retention diagnostic remains separate; this experiment is task SFT, not a general pretraining win.",
+      "Actual source exposures, labelled tokens, supplied positions, generated actions, checkpoint/startup/training and evaluation wall/chip costs."
+    ],
+    "base_reference": "Untouched B0 on the original1024-family subsets, direct and conventional CoT. Use one fixed hash-selected TRAIN depth1 worked example for task serialization, no prompt sweep. This is a stronger task-format reference, not a primary matched-training contrast.",
+    "cost_scope": "Same static training shapes/exposures do not equate information or auxiliary-target counts. Provided causal-prefill pauses and generated tokens have different execution graphs/latency."
+  },
+  "power_plan": {
+    "preparation_file": "validation/permutation_program_v28_study_preparation_20261020.json",
+    "preparation_sha256": "999beb9f2ebf9275ab98520ede2ecd27daddd0131d600da9a8a4aa3047e25d7b",
+    "normal_approximation": "Normal approximation only. At9216 independent families, true5pp and conservative family difference variance1, each comparison passage~97.3%, six-comparison union lower~83.5%. Not an observed or exact finite-sample guarantee. At a true3pp effect the point-threshold rule does not approach80% power."
+  },
+  "retention": {
+    "policy": "v28_latest_full_per_arm_keep_terminal_models",
+    "science_output_root": "/home/ubuntu/dario/local/science-runs/controlled-computation-v28",
+    "latest_full": "One recoverable full state per arm across the two waves. Current EBS-run files are already on EBS, not a second backup or off-instance protection.",
+    "intermediate": "New V28 periodic payloads may retire only after a newer full-state readback/fsync. Preserve all metrics/manifests/retirement receipts. All historical original states/caches remain untouched.",
+    "terminals": "Every terminal model stays on EBS. Previous seed terminal optimizer may retire only after that terminal passed independent full-state audit and a new same-arm seed full passes readback.",
+    "development64": "Preserve all six model64 weights with readback/fsync on NVMe-CPT; developmental, not a primary endpoint.",
+    "exports": "Global filesystem lease serializes large saves; host phase files avoid waiting inside Neuron device barriers."
+  },
+  "budget": {
+    "maximum_training_reserved_chip_hours": 30,
+    "maximum_evaluation_reserved_chip_hours": 18,
+    "max_concurrent_training_chips": 3,
+    "first64_wall_bound_minutes_per_job": 35,
+    "terminal_wall_bound_hours_per_job": 4.75,
+    "termination_grace_minutes": 2,
+    "resource_floors": "35GiB each involved filesystem,512GiB host available; prelaunch>=768GiB host.",
+    "no_automatic_retry": true,
+    "hardware_changes": "No package/compiler/cache relocation/cloud/IAM/paid teachers or model-size change."
+  },
+  "causal_limit": "Complete training recipes differ in auxiliary targets and some answer-training contexts. A positive result is not a pure auxiliary-gradient effect or proven internalization. All arms use causal CE. No autonomous learning or ordinary pretraining claim.",
+  "decision": "A controlled reference can motivate returning to prefix-to-continuation CPT and guidance withdrawal. It cannot itself confirm V26 or establish autonomous/general pretraining benefit."
+}

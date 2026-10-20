@@ -1,0 +1,16 @@
+{
+  "status": "PASS_CPU_STUDY_DISPATCH_SCOPE_RETENTION_AND_HOST_COORDINATION_ONLY",
+  "tests": 1855,
+  "source_files": {
+    "train/partial_state_driver.py": "48adb6cbf3aca5dd545aa9b35632ac008c72cb0e427eafd9699e96c7c91dd281",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "tests/test_permutation_program_protocol.py": "a453575c1ea594476da757e813592c10f0702a2727f7f363291d82351a4aaec1",
+    "tests/test_permutation_program_retention.py": "81cb639cd57d0a506b15e3c349631db4941344031e931229ef93c645da118d55",
+    "validation/permutation_program_v28_design_20261020.json": "d01498ec6eec98fedad28bfa5b5426059ccceff196ef7522bb44ea27d98ebba6"
+  },
+  "design_sha256": "d01498ec6eec98fedad28bfa5b5426059ccceff196ef7522bb44ea27d98ebba6",
+  "qualification_scope": "Prior actual all-view width256/world4 backend and independent decoder checks retained. Numerical/packing kernels unchanged; new source adds fixed study dispatch, external execution release gate and scoped checkpoint I/O.",
+  "retention_scope": "New V28 runs only. Serialize exports with filesystem lease; host phase files avoid device-barrier waits during lease/readback. Preserve terminal models,model64 milestones and latest full per arm; older new payloads retire after readback.",
+  "next": "Prepare exact protocols/controller; release only first64 updates of three first-seed models, then independently audit actual same-source pure-arm full states before terminal continuation.",
+  "limits": "CPU tests are not actual science, learned utility or a hardware pass for the new checkpoint I/O. No learning run released by this report."
+}

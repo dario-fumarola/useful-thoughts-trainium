@@ -55,3 +55,34 @@ def test_each_update_spans_same32_items_and_all_four_views(monkeypatch):
         assert all(v[2] == dict(width=256, target_slots=64) for v in current)
     with pytest.raises(ValueError):
         driver.batch_at(rows, None, p, order, 'trace', 0, 0)
+
+
+def study_protocol():
+    from train.permutation_program_retention import POLICY
+    p=protocol();p.update(purpose=driver.PROGRAM_STUDY_PURPOSE,items=32768,steps=4096,save_every=1024,
+        program_arm='trace',view_schedule='interleaved_fixed_item_plus_epoch_parity',
+        checkpoint_retention=POLICY,data_sha256=driver.PROGRAM_DATA_SHA,
+        data_manifest_sha256=driver.PROGRAM_MANIFEST_SHA)
+    return p
+
+
+def test_science_protocol_has_fixed_exposures_and_cannot_self_release(tmp_path):
+    from types import SimpleNamespace
+    p=study_protocol();driver.validate(p)
+    for key,value in [('steps',2048),('seed',3),('lr',1e-6),('program_arm','writer'),
+                      ('checkpoint_retention','keep_whatever')]:
+        with pytest.raises(ValueError):driver.validate(dict(p,**{key:value}))
+    args=SimpleNamespace(execution_release=None,arm='trace',output=tmp_path)
+    with pytest.raises(ValueError):driver.validate_program_execution(p,args)
+
+
+def test_science_views_match_all_four_question_exposures():
+    from collections import Counter
+    p=study_protocol();order=driver.order_for(p)
+    assert Counter(order)==Counter({i:4 for i in range(32768)})
+    for arm in ('direct','trace','pause'):
+        seen={i:Counter() for i in range(32768)}
+        for pos,index in enumerate(order):
+            seen[index][driver.permutation_program_packing.view_for(arm,pos//32768,index)]+=1
+        augmented='empty' if arm=='direct' else arm
+        assert all(v==Counter(direct=2,**{augmented:2}) for v in seen.values())
