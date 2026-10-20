@@ -29,6 +29,7 @@ RAW_SHA = '2cad3ec923fc71da3a0d8364a63096fbfd1c2c68c773bc5e42e3e01ae6ea8365'
 MEMBERSHIP_SHA = '9ee1c7f5dfdad156db8ef34fea2fa62315cf00be0cf6a8bd49c454628ab28cbf'
 MAX_CHARACTERS, MAX_TOKENS, MAX_CUT = 65536, 8208, 8192
 TOKENIZER = None
+MINIMUM_BINARY_OPS = 1
 
 
 def sources():
@@ -63,8 +64,10 @@ def source_window(tokens,offsets,text,absolute_cut,tok):
         char_start=char_start,char_end=char_end,past_char_end=past_end)
 
 
-def curate_document(meta,line,tok,source_file):
+def curate_document(meta,line,tok,source_file,minimum_binary_ops=1):
     if meta['split'] not in {'train','dev'}:raise ValueError('Never decode raw TEST/unlisted data')
+    if type(minimum_binary_ops) is not int or not 1<=minimum_binary_ops<=6:
+        raise ValueError('Explicit minimum binary operation count1..6 required')
     raw=json.loads(line);text=raw.get('text')
     if not isinstance(text,str) or raw.get('url','')!=meta['url'] or text_digest(text)!=meta['content_sha256']:
         raise ValueError('Raw line does not match immutable audited membership')
@@ -83,6 +86,8 @@ def curate_document(meta,line,tok,source_file):
         try:
             window=source_window(tokens,offsets,clipped,absolute_cut,tok)
             chosen=supervised.candidate_at_cut(window['ids'][:window['cut']],window['cut'],tok)
+            if chosen['binary_ops']<minimum_binary_ops:
+                raise base.safe.Unsupported('below_declared_prefix_operation_minimum')
         except base.safe.Unsupported as error:
             entry.update(status='prefix_or_serialization_ineligible',reason=str(error));audit.append(entry);continue
         record=dict(id=f"{meta['document_id']}:raw:{meta['source_line']}:window:{window['token_start']}",
@@ -146,15 +151,16 @@ def raw_tasks(path,members):
             # All other lines, including TEST, remain opaque bytes.
 
 
-def initialize(tokenizer_dir):
-    global TOKENIZER
+def initialize(tokenizer_dir,minimum_binary_ops=1):
+    global TOKENIZER,MINIMUM_BINARY_OPS
+    MINIMUM_BINARY_OPS=minimum_binary_ops
     from transformers import AutoTokenizer
     TOKENIZER=AutoTokenizer.from_pretrained(tokenizer_dir,local_files_only=True,trust_remote_code=False)
     if not TOKENIZER.is_fast:raise ValueError('Native offsets require the existing fast tokenizer')
     if TOKENIZER.truncation_side!='right':raise ValueError('First-token range requires right truncation')
 
 
-def worker(task):return curate_document(*task[:2],TOKENIZER,task[2])
+def worker(task):return curate_document(*task[:2],TOKENIZER,task[2],MINIMUM_BINARY_OPS)
 
 
 def select_pools(rows):
@@ -167,12 +173,14 @@ def select_pools(rows):
     return result
 
 
-def prepare(raw,members,output,tokenizer_dir,deadline_utc,workers=8):
+def prepare(raw,members,output,tokenizer_dir,deadline_utc,workers=8,minimum_binary_ops=1):
     raw=Path(raw).resolve();members=Path(members).resolve();output=Path(output).resolve();tokenizer_dir=Path(tokenizer_dir).resolve()
     deadline=require_utc_deadline(deadline_utc)
     def check():
         if datetime.now(timezone.utc)>=deadline:raise TimeoutError('Finite bounded raw CPU deadline; partials retained')
     check()
+    if type(minimum_binary_ops) is not int or not 1<=minimum_binary_ops<=6:
+        raise ValueError('Explicit minimum binary operation count1..6 required')
     if not 1<=workers<=16:raise ValueError('Bounded1..16 CPU workers required')
     pinned=sources()
     if sha256_file(raw)!=RAW_SHA or sha256_file(members)!=MEMBERSHIP_SHA:
@@ -183,7 +191,7 @@ def prepare(raw,members,output,tokenizer_dir,deadline_utc,workers=8):
     try:
         with ((output/'accepted.jsonl').open('x') as accepted,(output/'audit.jsonl').open('x') as audit,
               ProcessPoolExecutor(max_workers=workers,mp_context=multiprocessing.get_context('spawn'),
-                initializer=initialize,initargs=(str(tokenizer_dir),)) as pool):
+                initializer=initialize,initargs=(str(tokenizer_dir),minimum_binary_ops)) as pool):
             tasks=raw_tasks(raw,approved)
             while True:
                 check();batch=list(islice(tasks,512))
@@ -204,7 +212,7 @@ def prepare(raw,members,output,tokenizer_dir,deadline_utc,workers=8):
         atomic_json(output/'preparation.failed.json',dict(status='partial_not_ready',error=f'{type(error).__name__}: {error}',
             documents=len(seen),counts=dict(counts),candidate_counts=dict(candidates),source_files=pinned))
         raise
-    initialize(str(tokenizer_dir));pools=select_pools(rows)
+    initialize(str(tokenizer_dir),minimum_binary_ops);pools=select_pools(rows)
     manifest=dict(schema=SCHEMA,status='complete_bounded_supervised_raw_CPU_preparation_not_training_release',
         created_utc=utc_now(),deadline_utc=deadline_utc,elapsed_seconds=time.monotonic()-started,workers=workers,
         source_file=str(raw),source_sha256=RAW_SHA,membership_file=str(members),membership_sha256=MEMBERSHIP_SHA,
@@ -213,6 +221,8 @@ def prepare(raw,members,output,tokenizer_dir,deadline_utc,workers=8):
         audit_file=str(output/'audit.jsonl'),audit_sha256=sha256_file(output/'audit.jsonl'),
         documents=len(seen),counts=dict(counts),candidate_counts=dict(candidates),counts_by_split={k:dict(v) for k,v in splits.items()},
         max_raw_characters=MAX_CHARACTERS,max_native_tokens=MAX_TOKENS,max_candidate_cut=MAX_CUT,
+        minimum_binary_ops=minimum_binary_ops,
+        prefix_complexity_rule='Apply declared operation minimum to the causal LHS before validating any RHS; retain existing exact raw-source checks.',
         selection_salt=SALT,selection=pools,ready_for_requested_candidate_pools=all(p['available']>=p['requested'] for p in pools.values()),
         existing_supervised_v2_train_exposure_replaced=False,
         limitations=['Future-aware supervised equation selection, not an unconditional/RL anchor or deployed calculation policy.',
@@ -231,7 +241,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('raw','members','output','tokenizer-dir'):p.add_argument('--'+name,type=Path,required=True)
     p.add_argument('--deadline-utc',required=True);p.add_argument('--workers',type=int,default=8)
-    a=p.parse_args();prepare(a.raw,a.members,a.output,a.tokenizer_dir,a.deadline_utc,a.workers)
+    p.add_argument('--minimum-binary-ops',type=int,choices=range(1,7),default=1)
+    a=p.parse_args();prepare(a.raw,a.members,a.output,a.tokenizer_dir,a.deadline_utc,a.workers,a.minimum_binary_ops)
 
 
 if __name__=='__main__':main()
