@@ -1,0 +1,202 @@
+{
+  "arithmetic_exclusions": {
+    "duplicate_candidate_document_page_or_expression": 17,
+    "native_pack_or_prefix_work_rejection": 1,
+    "previous_document": 516,
+    "previous_expression": 477,
+    "reason:Complete auxiliary view exceeds640; never truncate": 1,
+    "source_accepted": 1838
+  },
+  "arithmetic_operations": {
+    "2": 400,
+    "3": 223,
+    "4": 56,
+    "5": 66,
+    "6": 23
+  },
+  "files": {
+    "DEV_calculation-questions.jsonl": {
+      "bytes": 1572320,
+      "rows": 768,
+      "sha256": "ebe94af9856698f607d2ee653f2b0d548b44aced2366e7b91483b65d6d3e99fa"
+    },
+    "DEV_calculation.jsonl": {
+      "bytes": 2291842,
+      "rows": 768,
+      "sha256": "a8ba61cb1d97b1929b2d90d30b270ff09537fd6f18ecb3c6458eb9af862d8e62"
+    },
+    "DEV_ordinary.jsonl": {
+      "bytes": 12042549,
+      "rows": 4096,
+      "sha256": "bf251ef92baa9ef9b3d18fe296f14328ba0f78bf9fdf57bbe8da0b7a2e0d4686"
+    },
+    "TRAIN.jsonl": {
+      "bytes": 61290112,
+      "rows": 20480,
+      "sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509"
+    }
+  },
+  "fresh_arithmetic_eligible": 827,
+  "held_previous_panel_document_overlap": 0,
+  "inputs": {
+    "/home/ubuntu/dario/local/data/finemath/fixed-local-evaluation-v1.ids.json": {
+      "bytes": 401357,
+      "sha256": "a57207e111fe16ae5154afba87bd69f49f737f9fa264e32360a2089695fb4c6b"
+    },
+    "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.documents.jsonl": {
+      "bytes": 169665237,
+      "sha256": "9ee1c7f5dfdad156db8ef34fea2fa62315cf00be0cf6a8bd49c454628ab28cbf"
+    },
+    "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.jsonl": {
+      "bytes": 910273027,
+      "sha256": "bd81972fff861f497ce61479079d6904e1baef0a335dfc848cc33e4d90d069ff"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9/DEV.jsonl": {
+      "bytes": 1201661,
+      "sha256": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9/TRAIN.jsonl": {
+      "bytes": 24466622,
+      "sha256": "437c64bc9ce4b451f4d5da07fccca9e108ee9add75b3c955bc54d2a2eca6b915"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-confirmation-v1/DEV_confirm512.jsonl": {
+      "bytes": 2539012,
+      "sha256": "6b801912351e73676fa691404358a1daaf1a540fc36f805afc92d7c3a9433d30"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-confirmation-v1/DEV_ordinary256.jsonl": {
+      "bytes": 770198,
+      "sha256": "1d490d8f37790154b23ea1f34201c22c84429e55eb4742dbf6b6bf24d986592f"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-curation-shard62-v1/accepted.jsonl": {
+      "bytes": 18033676,
+      "sha256": "99b26935acf45fa9b52ba31c3cbd4370f7146852beb858c8aeec84093a5eb90b"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-curation-v1/accepted.jsonl": {
+      "bytes": 8668325,
+      "sha256": "6f6958e229d344f2976a241418d06169a2b15256647440ce908b9b4c3c154db5"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-target-sft-v15-held-v1/DEV_fresh384.jsonl": {
+      "bytes": 1835375,
+      "sha256": "8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v1/DEV_novel_expression256.jsonl": {
+      "bytes": 1204415,
+      "sha256": "cd7c0f68d61f7e2e4cbd8f2fa71587a05b4eb22125b2a1f63ff0bcf09ad2f7a7"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v1/DEV_ordinary256.jsonl": {
+      "bytes": 726627,
+      "sha256": "59e0307d842ed93815c1bc4e4cc48d0c42b0aa4e06cdfa8106dd73b2841b2b75"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v2/DEV_novel_expression256.jsonl": {
+      "bytes": 1205779,
+      "sha256": "41d4aa6e6d217cdd57296953c669a95005ae1eb17b29ba5dc8565627b0c78fba"
+    },
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v2/DEV_ordinary256.jsonl": {
+      "bytes": 726627,
+      "sha256": "59e0307d842ed93815c1bc4e4cc48d0c42b0aa4e06cdfa8106dd73b2841b2b75"
+    }
+  },
+  "limits": [
+    "CPU data/packing only: no weight loading, model forward, accelerator work, learning result, or training release.",
+    "FineMath remains mathematical text; this is not a representative general-language pretraining corpus.",
+    "Calculation TRAIN5120 and raw ordinary TRAIN15360 form a deliberately enriched25% calculation mixture.",
+    "Arithmetic candidates were selected by source-RHS verification; pure prefix labels do not make selection autonomous.",
+    "Fresh arithmetic is unused source-TRAIN-derived DEV, not officialTEST; ordered exact-value AST and canonical-page exclusions are not semantic/pretraining novelty.",
+    "Ordinary DEV excludes documented fixed and real-document panels; earlier corpus inventory is not claimed to be universally unseen text.",
+    "Existing raw-corpus near-duplicate screening is probabilistic. Cross-source page/content exclusions do not prove absence of semantic duplicates.",
+    "Source exposures/clean LM are identical, but work labels, auxiliary lengths, gradient difficulty and actual compute differ among arms.",
+    "Extra raw continuation loss upweights selected spans in every arm; the raw control is weighted continued NTP, not uniform whole-corpus NTP."
+  ],
+  "local_tokenizer_files": {
+    "ASSET_MANIFEST.json": {
+      "bytes": 1695,
+      "sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e"
+    },
+    "DOWNLOAD_REQUEST.json": {
+      "bytes": 108,
+      "sha256": "ab1306fb7c41bae8067cc1096dbc2c03d4d6ddad85b42265be0c3cdba6195d17"
+    },
+    "config.json": {
+      "bytes": 727,
+      "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+    },
+    "generation_config.json": {
+      "bytes": 138,
+      "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+    },
+    "tokenizer.json": {
+      "bytes": 7031645,
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    "tokenizer_config.json": {
+      "bytes": 9678,
+      "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "passes_proposed": 2,
+  "per_pass": {
+    "computation": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 174530
+    },
+    "format": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 10240
+    },
+    "raw": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 0
+    }
+  },
+  "previous_expressions": 5451,
+  "previous_panel_documents": 2210,
+  "reserved_TEST_payloads_parsed": 0,
+  "schema": "real-cpt-scaffold-v29-cpu-v1",
+  "selection_salt": "real-cpt-scaffold-v29-source-freeze-v1",
+  "source_files": {
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/scripts/prepare_real_cpt_scaffold.py": {
+      "bytes": 19398,
+      "sha256": "6808910f7156a1a3501855356fd8bd7a020adb82d372ee97e12f3eb15b77fa2f"
+    },
+    "train/real_cpt_scaffold.py": {
+      "bytes": 7444,
+      "sha256": "7f5a4644628123946640cd3f610c61d48b82e002df5959ad7237c2a5e6625db5"
+    }
+  },
+  "source_scan": {
+    "headers:dev": 18360,
+    "headers:test": 18239,
+    "headers:train": 329535,
+    "payloads_parsed:dev": 4096,
+    "payloads_parsed:train": 15360,
+    "reserved_payloads_skipped": 18239
+  },
+  "status": "CPU_DATA_AND_PACKING_COMPLETE_NOT_TRAINING_RELEASE",
+  "train_held_canonical_page_overlap": 0,
+  "train_held_document_overlap": 0,
+  "training_seeds": [
+    2026102029,
+    2026102030
+  ],
+  "updates_proposed": 1280,
+  "utc": "2026-10-20T12:58:21.071538+00:00"
+}

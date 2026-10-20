@@ -1,4 +1,18 @@
-# Status — 2026-10-20 12:26 UTC
+# Status — 2026-10-20 13:05 UTC
+
+## Prepared: real continuation CPT with a clean LM objective
+Question: does verified computation improve real continuations when complete clean training is identical?
+ID:real-cpt-scaffold-v29; CPU preparation only; unchanged B0 proposed for three arms/two data orders.
+Frozen TRAIN20480=5120 calculation+15360 ordinary; fresh arithmetic DEV768 and ordinary DEV4096.
+All20,480 clean packs match across arms,including original future16; zero train/held document/page overlap.
+Every calculation has an extra raw,empty-format or verified-work view; future/work means are separate.
+Current proposed weights clean1,auxiliary future0.5,work1; native packed data unchanged by coefficient choice.
+Independent original-source/all-arm readback PASS; all1878CPU tests+smoke+compile PASS; no released-model call.
+First CPU attempt stopped for per-token vocabulary-size queries; original retained; invariant-metadata cache repairs it.
+Report:validation/real_cpt_scaffold_v29_CPU_readiness_20261020.json; design docs/REAL_CPT_V29_PLAN.md.
+Decision: data/packing ready,not a learning result or hardware/long-run release. V28 stays closed.
+Next: guarded two-forward integration in the existing causal driver,TRAIN-only qualification and actual storage/budget.
+Freeze endpoints/power before held outcomes; preserve B0 and both trained controls. No RL/size jump.
 
 ## Closed: controlled computation reference
 Question: do verified generated states improve fresh computation,and what remains without the trace?

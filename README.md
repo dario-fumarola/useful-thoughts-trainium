@@ -48,6 +48,12 @@ ordinary LM supervision. This supervised mechanism study does not establish
 autonomous discovery or internalization. Official TEST remains unopened. The
 earlier V26 document-QA result below remains developmental and unconfirmed.
 
+[V29 CPU preparation](docs/REAL_CPT_V29_PLAN.md) now fixes20,480 real-text training
+windows and fresh768 arithmetic/4,096 ordinary DEV documents. Clean LM supervision
+is identical across raw,format and computation arms; continuation/work losses are
+separate. Native-source readback and1,878CPU checks pass. This is data readiness,
+with no new model outcome or training release.
+
 ## Latest matched control (V26)
 
 One fresh empty-format control uses the same auxiliary weight1.0, TRAIN2048,

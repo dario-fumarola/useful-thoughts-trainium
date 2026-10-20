@@ -1,3 +1,31 @@
+<!-- Current handoff 2026-10-20 13:05 UTC; earlier entries below are historical -->
+Owner: continue autonomously/patiently until told to stop. No active goal. No agent retries.
+V28 is COMPLETE/PUBLIC at c47a823,release v28-controlled-computation-20261020 verified;
+all training/evaluation/readout/publisher jobs CLOSED. Do not rerun old producers.
+Next mainline is V29 real CPT CPU preparation,not RL from specialized V28 models.
+W=local/worktrees/real-cpt-scaffold-v29; source commits02b2d41(packing),e9d123d(current objective/checker).
+Data local/data/real-cpt-scaffold-v29-cpu-v2; manifest77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f.
+TRAIN20480=5120calculation+15360ordinary; fresh DEV arithmetic768/ordinary4096.
+C=local/diagnostics/real-cpt-scaffold-v29-cpu-v2. Builder36914/checker49386/checks66456 all CLOSED0.
+All1878CPU tests+smoke/compile and independent original-source/all-arm pack readback PASS.
+No released-model forward,accelerator job or learning run in V29. Do not rerun closed builders/checker.
+Original CPUv1 process1756638 closed143 before data writes; retained source/plan/log.
+Bug: len(tokenizer) inside per-token validator;2000native calls41.15s. Cache immutable metadata.
+V29 proposed weights clean1,auxfuture0.5,work1,per-doc means; auxiliary batch fraction0.25.
+Original packing snapshot had work0.1,no learning; current-code readback matches all contexts/masks/counts.
+Candidate topology world8,source micro4/global32 +auxiliary micro1/global8,two backward passes,
+ONE optimizer step/ZeRO reducer. Full-token width/targets640. Runtime NOT qualified for this objective.
+Next: guarded V29 integration in train/partial_state_driver.py; no separate stack/duplicated driver.
+Freeze scientific gates/power and measured budget/storage before any long learning release.
+Storage free approximately EBS74GiB,NVMe51/56/54GiB; preserve35GiB floors and original states/cache.
+No8B/cloud/IAM/paidteacher/officialTEST or oldR1234 resume. No new long run released.
+V17 historical direct LL beats trained direct by0.333/0.507nats but trailsB0by0.864/0.802.
+Retain this absolute reference; don't repeat a weaker-control-only claim.
+Report validation/real_cpt_scaffold_v29_CPU_readiness_20261020.json; plan docs/REAL_CPT_V29_PLAN.md.
+Keep user updated; do not send a final at this milestone. Continue engine preparation.
+
+## Historical handoff snapshots (not active instructions)
+
 <!-- Current handoff 2026-10-20 12:30 UTC; older entries below are historical -->
 Owner: keep going autonomously/patiently until told to stop. Weeks available,no hard deadline.
 No active goal. Agent quota unavailable untilOct24; do not retry agent creation.
@@ -37,8 +65,6 @@ including original IO failure. Not sampling/ragged/learned-checkpoint/full128/na
 not used in V28. Report validation/causal_decoder_batching_v1_20261020.json.
 No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or oldR1234 resume.
 Keep35GiBfilesystem/512GiBhost floors. Do not send a final at this milestone; continue work.
-
-## Historical handoff snapshots (not active instructions)
 
 <!-- Current handoff 2026-10-20 12:26 UTC; all older entries below are historical -->
 Owner: continue autonomously and patiently until told to stop. Weeks available; no shutdown deadline.

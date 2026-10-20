@@ -1644,3 +1644,18 @@ Before new training,inspect V10/V15/V17 and surviving real-data weights; V17 alr
 provides a source-balanced arithmetic-positive reference with~0.04nat ordinary cost.
 Do not blindly duplicate it. Next actual pretraining/guidance-withdrawal design must
 preserve an ordinary LM objective,source separation,strong controls and fresh endpoints.
+
+2026-10-20 — Prepare V29 on real prefix-to-continuation data,without rerunning V28.
+Inspect V10/V15/V17 before choosing the intervention. Historical V17 already gives
++0.333/+0.507nat direct-span LL versus its trained control but−0.864/−0.802 versusB0;
+retain absolute B0 and both source/format controls. V29 preserves a complete clean
+forward including the natural continuation in every arm; auxiliary future and
+work receive separate means. Add15360 ordinary windows to the known5120 verified
+calculation documents; freeze768 new expression/page-excluded arithmetic DEV and
+4096 ordinary DEV documents before any new model outcomes. Independent original
+native-token readback and1878CPU checks pass. Work1 is chosen before learning;
+placeholder0.1 in the CPU packing snapshot never trained a model or changed data.
+Preserve the interrupted CPU validator and cache invariant vocabulary metadata;
+2000 native len(tokenizer) calls took41.15s here. No source/stack change needed.
+CPU readiness releases no long training. Next same-runtime two-forward update,
+actual recovery/memory qualification,and explicit endpoint/power/storage budget.

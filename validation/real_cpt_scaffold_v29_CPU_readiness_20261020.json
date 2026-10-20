@@ -1,0 +1,273 @@
+{
+  "CPU_tests": {
+    "compileall": "PASS",
+    "native_hardware_qualification": false,
+    "passed": 1878,
+    "seconds": 62.3,
+    "smoke": "PASS"
+  },
+  "base_model_planned": "Unchanged Qwen/Qwen3-1.7B-Base; no released weights loaded or model run in this preparation",
+  "cohorts": {
+    "TRAIN": 20480,
+    "TRAIN_calculation": 5120,
+    "TRAIN_ordinary": 15360,
+    "fresh_arithmetic_DEV": 768,
+    "fresh_arithmetic_eligible": 827,
+    "ordinary_DEV": 4096
+  },
+  "data_directory": "/home/ubuntu/dario/local/data/real-cpt-scaffold-v29-cpu-v2",
+  "data_manifest_sha256": "77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f",
+  "evidence": {
+    "CPU-checks.txt": {
+      "bytes": 2307,
+      "sha256": "62e01c867fbf0440ef86110de2c11266070e6a8837da81a5272c7b986037f227"
+    },
+    "data-manifest.json": {
+      "bytes": 8406,
+      "sha256": "77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f"
+    },
+    "independent-data-check.json": {
+      "bytes": 2032,
+      "sha256": "1cf05ca2f6000bba61e4bdbf376761fdda9299468e9d99c3dfd811658eb3a27d"
+    },
+    "original-CPU-interruption.json": {
+      "bytes": 394,
+      "sha256": "86d12b1bd7ea7ae59beee1774cdb64be56a9fc9308370818d029b00069c91eb2"
+    },
+    "preparation-plan.json": {
+      "bytes": 1057,
+      "sha256": "e6a78b0d23cea1f8318f8b4fe4f38d15da15fb46c94aedb484bda7631b9257dc"
+    },
+    "tokenizer-metadata-benchmark.json": {
+      "bytes": 359,
+      "sha256": "c10fb02b54487e3cc570cee285b4ba6abc790509ef5689eb8b6aeb65675ff824"
+    }
+  },
+  "experiment_id": "real-cpt-scaffold-v29",
+  "files": {
+    "DEV_calculation-questions.jsonl": {
+      "bytes": 1572320,
+      "rows": 768,
+      "sha256": "ebe94af9856698f607d2ee653f2b0d548b44aced2366e7b91483b65d6d3e99fa"
+    },
+    "DEV_calculation.jsonl": {
+      "bytes": 2291842,
+      "rows": 768,
+      "sha256": "a8ba61cb1d97b1929b2d90d30b270ff09537fd6f18ecb3c6458eb9af862d8e62"
+    },
+    "DEV_ordinary.jsonl": {
+      "bytes": 12042549,
+      "rows": 4096,
+      "sha256": "bf251ef92baa9ef9b3d18fe296f14328ba0f78bf9fdf57bbe8da0b7a2e0d4686"
+    },
+    "TRAIN.jsonl": {
+      "bytes": 61290112,
+      "rows": 20480,
+      "sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509"
+    }
+  },
+  "independent_readback": {
+    "clean_all_arm_equal_documents": 20480,
+    "clean_pack_stream_sha256": "c9c9af94da7ffc7eaaabf9e6fee7e16e1ae06baac400fd42097aef0645e700e3",
+    "current_per_pass": {
+      "computation": {
+        "auxiliary_allocated_positions": 3276800,
+        "auxiliary_examples": 5120,
+        "continuation_targets": 81920,
+        "documents": 20480,
+        "source_allocated_positions": 13107200,
+        "source_targets": 10421563,
+        "work_targets": 174530
+      },
+      "format": {
+        "auxiliary_allocated_positions": 3276800,
+        "auxiliary_examples": 5120,
+        "continuation_targets": 81920,
+        "documents": 20480,
+        "source_allocated_positions": 13107200,
+        "source_targets": 10421563,
+        "work_targets": 10240
+      },
+      "raw": {
+        "auxiliary_allocated_positions": 3276800,
+        "auxiliary_examples": 5120,
+        "continuation_targets": 81920,
+        "documents": 20480,
+        "source_allocated_positions": 13107200,
+        "source_targets": 10421563,
+        "work_targets": 0
+      }
+    },
+    "held_writer_projections": 768,
+    "manifest_sha256": "77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f",
+    "native_calculation_rows": 5888,
+    "native_ordinary_rows": 19456,
+    "proposed_loss_weights": {
+      "auxiliary_continuation": 0.5,
+      "source": 1.0,
+      "work": 1.0
+    },
+    "reserved_TEST_payloads_parsed": 0,
+    "schema": "real-cpt-scaffold-v29-cpu-v1",
+    "scope": "CPU data only; no released-model forward, hardware qualification or scientific outcome",
+    "source_files": {
+      "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/scripts/check_real_cpt_scaffold_data.py": "41f6cad94f3dc01198f6ac12a08b2a502240c28d1bc2618f3c8127ed9ce91314",
+      "train/real_cpt_scaffold.py": "48d1689a8f4069aebde554fb1099ce758714c69542a24e1e17b73505c0b6d545"
+    },
+    "source_scan": {
+      "headers:dev": 18360,
+      "headers:test": 18239,
+      "headers:train": 329535,
+      "payloads:dev": 4096,
+      "payloads:train": 15360
+    },
+    "status": "PASS_NATIVE_SOURCE_AND_ALL_ARM_PACK_READBACK",
+    "utc": "2026-10-20T13:02:01+00:00"
+  },
+  "limitations": [
+    "CPU data/packing only: no weight loading, model forward, accelerator work, learning result, or training release.",
+    "FineMath remains mathematical text; this is not a representative general-language pretraining corpus.",
+    "Calculation TRAIN5120 and raw ordinary TRAIN15360 form a deliberately enriched25% calculation mixture.",
+    "Arithmetic candidates were selected by source-RHS verification; pure prefix labels do not make selection autonomous.",
+    "Fresh arithmetic is unused source-TRAIN-derived DEV, not officialTEST; ordered exact-value AST and canonical-page exclusions are not semantic/pretraining novelty.",
+    "Ordinary DEV excludes documented fixed and real-document panels; earlier corpus inventory is not claimed to be universally unseen text.",
+    "Existing raw-corpus near-duplicate screening is probabilistic. Cross-source page/content exclusions do not prove absence of semantic duplicates.",
+    "Source exposures/clean LM are identical, but work labels, auxiliary lengths, gradient difficulty and actual compute differ among arms.",
+    "Extra raw continuation loss upweights selected spans in every arm; the raw control is weighted continued NTP, not uniform whole-corpus NTP.",
+    "Dense-gradient tests use a tiny synthetic CPU model; they are not 1.7B/Trainium qualification.",
+    "Readback independently reconstructs native source correspondence and packed views; this is repository verification, not external replication.",
+    "The raw arm is weighted continued NTP; semantic label counts and optimization difficulty are not matched.",
+    "No general pretraining, internalization or autonomous-improvement claim is established by preparation."
+  ],
+  "objective_and_checker_commit": "e9d123d",
+  "packing_snapshot_commit": "02b2d41",
+  "per_pass": {
+    "computation": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 174530
+    },
+    "format": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 10240
+    },
+    "raw": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 0
+    }
+  },
+  "predecessor_development_only": [
+    {
+      "contrast": "source_cot.raw minus trained_direct.raw",
+      "documents": 512,
+      "mean_span16_gain": 0.3334869803202595,
+      "normal_95_halfwidth_at768": 0.16657451250351946,
+      "paired_SD": 2.355228725731534,
+      "seed": 2026101913,
+      "source_sha256": [
+        "d17b3427bd1a1ac1277c5d207dfa8d5463e8761b991bbb951bd1651227f144df",
+        "553692c38b706b1551d82668299945b9b3a3430cabe6b7765132191e1b65c7a0"
+      ]
+    },
+    {
+      "contrast": "source_cot.raw minus B0.raw",
+      "documents": 512,
+      "mean_span16_gain": -0.8641018741432455,
+      "normal_95_halfwidth_at768": 0.1750612606550568,
+      "paired_SD": 2.4752244725846277,
+      "seed": 2026101913,
+      "source_sha256": [
+        "d17b3427bd1a1ac1277c5d207dfa8d5463e8761b991bbb951bd1651227f144df",
+        "331271a802e9e47e1258b739fc9a704c4ede053557555f0d6750d27022c6dcfc"
+      ]
+    },
+    {
+      "contrast": "source_cot.raw minus trained_direct.raw",
+      "documents": 512,
+      "mean_span16_gain": 0.5066916334502546,
+      "normal_95_halfwidth_at768": 0.14082119721148162,
+      "paired_SD": 1.991097700840513,
+      "seed": 2026101914,
+      "source_sha256": [
+        "25cd912d25d057043ca050e55ed03f136c1e1fa62aff1e58bf83553c5e9aa4bb",
+        "154d8eddb0cd3b76ab81ac292afa8ff3e79fb329860989954c3bf4747bc9562f"
+      ]
+    },
+    {
+      "contrast": "source_cot.raw minus B0.raw",
+      "documents": 512,
+      "mean_span16_gain": -0.8016410377422022,
+      "normal_95_halfwidth_at768": 0.1627444001155828,
+      "paired_SD": 2.301074037938838,
+      "seed": 2026101914,
+      "source_sha256": [
+        "25cd912d25d057043ca050e55ed03f136c1e1fa62aff1e58bf83553c5e9aa4bb",
+        "331271a802e9e47e1258b739fc9a704c4ede053557555f0d6750d27022c6dcfc"
+      ]
+    }
+  ],
+  "proposed_loss": {
+    "auxiliary_batch_fraction": 0.25,
+    "calculation_auxiliary_continuation": 0.5,
+    "calculation_auxiliary_work": 1.0,
+    "change_from_CPU_packing_snapshot": "Placeholder work0.1 changed to1.0 before any learning/new model outcome. Packed rows, contexts, masks and target counts are identical; independent current-source readback passes.",
+    "normalization": "Separate per-example component means, then fixed source-batch mean; only calculation rows have auxiliary terms.",
+    "source_clean": 1.0
+  },
+  "proposed_training": {
+    "arms": [
+      "raw",
+      "format",
+      "computation"
+    ],
+    "auxiliary_micro_batch_candidate": 1,
+    "data_order_seeds": [
+      2026102029,
+      2026102030
+    ],
+    "global_auxiliary_batch": 8,
+    "global_source_batch": 32,
+    "lr": 1e-05,
+    "passes": 2,
+    "schedule": "constant",
+    "source_micro_batch_candidate": 4,
+    "status": "PROPOSAL_ONLY_NO_HARDWARE_OR_LONG_RUN_RELEASE",
+    "target_slots": 640,
+    "updates": 1280,
+    "width": 640,
+    "world_size_candidate": 8
+  },
+  "question": "Can prefix-computable supervised work improve real continuation prediction while every arm preserves identical complete clean-text training?",
+  "remaining": [
+    "Freeze scientific endpoints, thresholds and power assumptions before new held model outcomes.",
+    "Implement/qualify the two-forward full-token loss using the existing runtime, one reduction, actual master updates and restart.",
+    "Resolve actual checkpoint-storage placement and measured reservation budget while preserving filesystem floors and original states.",
+    "No new long training, broad RL, 8B change or V28 extension follows from CPU data readiness."
+  ],
+  "schema": "real-cpt-scaffold-v29-cpu-readiness-v1",
+  "scope_and_exclusions": {
+    "held_previous_panel_document_overlap": 0,
+    "labels_prefix_only": true,
+    "prior_ordered_expression_exclusion": true,
+    "reserved_TEST_payloads_parsed": 0,
+    "source_RHS_verified_selection": true,
+    "train_held_canonical_page_overlap": 0,
+    "train_held_document_overlap": 0
+  },
+  "status": "COMPLETE_CPU_DATA_PACKING_AND_NATIVE_READBACK_NOT_LEARNING_RELEASE",
+  "utc": "2026-10-20T13:04:06.845337+00:00"
+}

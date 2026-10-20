@@ -1,0 +1,58 @@
+{
+  "clean_all_arm_equal_documents": 20480,
+  "clean_pack_stream_sha256": "c9c9af94da7ffc7eaaabf9e6fee7e16e1ae06baac400fd42097aef0645e700e3",
+  "current_per_pass": {
+    "computation": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 174530
+    },
+    "format": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 10240
+    },
+    "raw": {
+      "auxiliary_allocated_positions": 3276800,
+      "auxiliary_examples": 5120,
+      "continuation_targets": 81920,
+      "documents": 20480,
+      "source_allocated_positions": 13107200,
+      "source_targets": 10421563,
+      "work_targets": 0
+    }
+  },
+  "held_writer_projections": 768,
+  "manifest_sha256": "77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f",
+  "native_calculation_rows": 5888,
+  "native_ordinary_rows": 19456,
+  "proposed_loss_weights": {
+    "auxiliary_continuation": 0.5,
+    "source": 1.0,
+    "work": 1.0
+  },
+  "reserved_TEST_payloads_parsed": 0,
+  "schema": "real-cpt-scaffold-v29-cpu-v1",
+  "scope": "CPU data only; no released-model forward, hardware qualification or scientific outcome",
+  "source_files": {
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/scripts/check_real_cpt_scaffold_data.py": "41f6cad94f3dc01198f6ac12a08b2a502240c28d1bc2618f3c8127ed9ce91314",
+    "train/real_cpt_scaffold.py": "48d1689a8f4069aebde554fb1099ce758714c69542a24e1e17b73505c0b6d545"
+  },
+  "source_scan": {
+    "headers:dev": 18360,
+    "headers:test": 18239,
+    "headers:train": 329535,
+    "payloads:dev": 4096,
+    "payloads:train": 15360
+  },
+  "status": "PASS_NATIVE_SOURCE_AND_ALL_ARM_PACK_READBACK",
+  "utc": "2026-10-20T13:02:01+00:00"
+}

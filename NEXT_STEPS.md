@@ -11,22 +11,27 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Prepare the actual pretraining reference on real data.
-   First inspect the completed real-trace CPT V10, real-target V15 and source-balanced
-   V17 code/data/results so the new comparison does not repeat their endpoint mistakes.
-   Inventory existing legitimate raw-text assets and genuinely prefix-computable labels;
-   establish training/held source separation before inspecting any new held outcomes.
-   Propose one source-balanced prefix-to-continuation comparison from unchanged B0,
-   with an ordinary LM objective, strong source/format controls, and separate training
-   benefit/inference benefit/ordinary-prediction costs. This is CPU preparation,not release.
-   Preserve final-target weighting and natural stopping. Count source exposures,labels,
-   generated work and measured reservations separately. Small CE costs are not automatic
-   kill gates; V28's+5–8nat regression is a substantial failure of retention to repair.
-   Qualify the actual full-token LM loss/packing/update/restart shape before a long run;
-   reuse the established runtime and one gradient-reduction owner. No stack replacement.
-   The separately qualified equal-length batch candidate b25560a may accelerate future
-   decoding only after its own trained-model/natural-stop/cap128 integration check.
-   No broad RL,8B or open-ended length rescue is released by this queue. Do not resume R1234.
+1. Complete V29 preparation and qualify its actual new objective.
+   CPU data/packing are CLOSED/PASS: validation/real_cpt_scaffold_v29_CPU_readiness_20261020.json.
+   Plan docs/REAL_CPT_V29_PLAN.md; source branch real-cpt-scaffold-v29.
+   Frozen data local/data/real-cpt-scaffold-v29-cpu-v2: TRAIN20480 (5120 calculation,
+   15360 ordinary),fresh arithmetic DEV768,ordinary DEV4096. No new held model outcomes.
+   All1878CPU tests+smoke/compile and independent original-native-token readback pass.
+   Do not rerun the closed builder/checker. Original slow CPU attempt is retained;
+   caching immutable tokenizer metadata repairs per-token vocabulary-size overhead.
+   Next implement the guarded TWO-forward branch in train/partial_state_driver.py,
+   using train/real_cpt_scaffold.py. Complete clean LM is identical; calculation
+   auxiliary future/work have separate means and0.25 source-batch fraction.
+   Proposed clean1/future0.5/work1; source32+auxiliary8,world8/micro4+1,width640.
+   This is a new objective needing actual update/master/memory/restart qualification;
+   dense CPU parity is not a hardware pass. One optimizer step/reduction after both passes.
+   Freeze scientific thresholds/power and measured reservation/storage placement before
+   a learning release. Local disks are near reserve; preserve original states/cache.
+   V17 already improves direct LL over its trained control but remains below B0;
+   a better degraded control is not a new best base model. Keep all absolute paths.
+   No long run, broad RL,8B or open-ended length rescue is released by CPU readiness.
+   The separate batching candidate b25560a still needs trained-model/natural-stop
+   integration before adoption; do not modify or rerun V28. OldR1234 stays stopped63.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

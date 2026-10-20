@@ -1,0 +1,18 @@
+{
+  "schema": "real-cpt-scaffold-v29-data-preparation-plan-v1",
+  "utc": "2026-10-20T12:57:18.361367+00:00",
+  "scope": "CPU data and packing only; no model weights/forwards, accelerators or learning release",
+  "arithmetic_DEV_requested": 768,
+  "ordinary_DEV_requested": 4096,
+  "calculation_TRAIN": 5120,
+  "ordinary_TRAIN": 15360,
+  "source_files": {
+    "scripts/prepare_real_cpt_scaffold.py": "6808910f7156a1a3501855356fd8bd7a020adb82d372ee97e12f3eb15b77fa2f",
+    "train/real_cpt_scaffold.py": "7f5a4644628123946640cd3f610c61d48b82e002df5959ad7237c2a5e6625db5"
+  },
+  "selection": "Frozen salted document hash, prior document/page/ordered-expression exclusions, exact native no-truncation shape checks; no model outcomes",
+  "output": "/home/ubuntu/dario/local/data/real-cpt-scaffold-v29-cpu-v2",
+  "source_commit": "02b2d41",
+  "previous_attempt": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-cpu-v1",
+  "repair": "Cache invariant native vocabulary/special IDs; identical data/labels/order/width/objective. Add CPU phase progress."
+}

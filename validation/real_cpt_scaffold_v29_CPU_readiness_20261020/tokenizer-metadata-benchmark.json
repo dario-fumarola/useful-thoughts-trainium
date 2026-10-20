@@ -1,0 +1,8 @@
+{
+  "scope": "CPU tokenizer only,no model weights or forward",
+  "iterations": 2000,
+  "len_seconds": 41.152301880007144,
+  "special_ids_seconds": 0.009636636008508503,
+  "observed_len_implementation": "return self._tokenizer.get_vocab_size(with_added_tokens=True)",
+  "result": "Caching pinned metadata is required; do not query __len__ per source token."
+}
