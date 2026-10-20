@@ -1,0 +1,32 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "PASS_ACTUAL_TRAIN_PROGRAM_DECODER_NATIVE_CACHE_RAW_TOKENS_AND_CPU_GREEDY",
+  "attempts": 28,
+  "errors": 0,
+  "stop_counts": {
+    "qa_answer_line": 9,
+    "length_cap": 16,
+    "token:151643": 3
+  },
+  "native_checks": 1,
+  "cached_prefill_modes": 7,
+  "CPU_full_prefix_greedy_actions": 32,
+  "reserved_physical_chip_hours": 0.10072295555555556,
+  "source_commit": "24ef45f",
+  "evidence_files": {
+    "validation/permutation_program_v28_decoder_hardware_20261020/independent-audit.py": "98319258b0d92542a7bf4578f43abc0bcb6160c36e7cad8583d47dc92c620979",
+    "validation/permutation_program_v28_decoder_hardware_20261020/release.json": "8ac851cade82664f6c533f441b4724ec8ef98c77c8b6cae0f8900a237190f70d",
+    "validation/permutation_program_v28_decoder_hardware_20261020/independent-audit.json": "c3b533e086bd722989a46b054d00049f30279c0cbbf600ea5f32cebb2e1d6a3f",
+    "validation/permutation_program_v28_decoder_hardware_20261020/closure.json": "23a097a77bc79635c77df244fdf4d0f65868a07ceb50661fafbf6275bd0b63b0",
+    "validation/permutation_program_v28_decoder_hardware_20261020/protocol.json": "ce9efc7006b9b317f732594272d3acb70448b8615dce2aee881a13dd69cd2823",
+    "validation/permutation_program_v28_decoder_hardware_20261020/exit.json": "579f5ef26d0be03ef9f37d70457b24578e97799722db70b1c37912ef97ffb6a7",
+    "validation/permutation_program_v28_decoder_hardware_20261020/attempts.jsonl": "c1c7fb89ba0921d531ca656b4aabc80cf293a025c18f0ee052c1172c3723c1af"
+  },
+  "limits": [
+    "UnchangedB0,4fixed TRAIN questions,not trained capability or a held result.",
+    "The native check uses one canonical context; four CPU greedy checks cover at most8actions each.",
+    "All caps and formatting failures are retained; no accuracy/cap gate for the untrained format.",
+    "Partial/donor controls are supplied offline interventions derived from available inputs."
+  ],
+  "next": "Freeze/review source and budget for the actual six-model reference; first64 updates are an engineering milestone, terminal4096 remains primary."
+}

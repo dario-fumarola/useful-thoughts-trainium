@@ -9,6 +9,13 @@ and Trainium. It does not establish broad reasoning, pretraining benefit, or
 novelty relative to the model's original pretraining. Official TEST remains unopened;
 DEV was inventoried for prospective confirmation metadata only, without model outcomes.
 
+Current work is the [V28 controlled-computation reference](validation/permutation_program_v28_study_preparation_20261020.json).
+Data/packing audits, actual updates/full-state restoration and decoder checks pass;
+no V28 learned-capability result exists yet. Before any held model outcome, the
+primary panel was enlarged to9,216 independent counterfactual families; interpolation
+and length extrapolation remain separate. This is a supervised mechanism lab,
+with a later return to actual pretraining in the roadmap.
+
 ## Latest matched control (V26)
 
 One fresh empty-format control uses the same auxiliary weight1.0, TRAIN2048,

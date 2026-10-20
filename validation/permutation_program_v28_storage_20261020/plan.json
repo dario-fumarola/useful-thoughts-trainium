@@ -1,0 +1,13 @@
+{
+  "status": "READ_ONLY_VERIFY_INACTIVE_EBS_OPTIMIZER_DUPLICATE_CANDIDATES",
+  "utc": "2026-10-20T01:37:15.391779+00:00",
+  "backups": [
+    "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063",
+    "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256",
+    "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256",
+    "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064",
+    "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064"
+  ],
+  "scope": "Retain every historical original and every model. This script only verifies. A separate reviewed action is required to retire duplicates.",
+  "audit_source_sha256": "60d5fb63403a15d48c9d703d9f605fb4d771db10542cdda778d72d1e4d5f531c"
+}

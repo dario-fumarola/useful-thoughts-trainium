@@ -1,0 +1,18 @@
+{
+  "status": "RELEASED_BOUNDED_B0_TRAIN_DECODER_MECHANICS_ONLY",
+  "utc": "2026-10-20T01:35:34.107292+00:00",
+  "source_root": "/home/ubuntu/dario/local/worktrees/controlled-computation-v28-decode",
+  "source_commit": "24ef45f",
+  "protocol_sha256": "ce9efc7006b9b317f732594272d3acb70448b8615dce2aee881a13dd69cd2823",
+  "supervisor_sha256": "d93057315e4ab11f7c7316c9cea8f708c1a934ba352588ce2cf4c64db1beefa2",
+  "helper_sha256": "39fc4d3c23a44f60d09ef6fd55968216d913aec4331ec147359cd4a261fc5f3e",
+  "output": "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-B0-TRAIN4-decode-qualification-v1",
+  "physical_devices": [
+    13
+  ],
+  "logical_cores": "52",
+  "deadline_utc": "2026-10-20T02:05:34.107292+00:00",
+  "maximum_reserved_chip_hours": 0.55,
+  "scope": "Only28unchanged-B0 attempts on4fixed TRAIN questions. Seven cache/ordinary-prefill checks including supplied pauses. No learned checkpoint, held outcome or science result.",
+  "no_automatic_retry": true
+}

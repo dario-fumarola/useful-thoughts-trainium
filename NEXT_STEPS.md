@@ -22,10 +22,11 @@
    TRAIN packs,1,838 tests plus smoke/compile. Report permutation_program_v28_CPU_readiness_20261020.json.
    Training qualification complete:8actual updates, full4/restore/full8; independent
    all-state/native/order audit PASS. Original two full states remain on NVMe-study.
-   Active unchanged-B0 TRAIN4 decoder check: exec72582, physical13/core52, deadline02:05UTC.
-   C=local/diagnostics/permutation-program-v28-TRAIN4-decode-qualification-v1.
-   Next audit all28native attempts/seven cached-prefill controls, then freeze the
-   two-seed learning/readout budget and rolling retention before long training.
+   Decoder check complete:28attempts/0errors,7cache controls,32CPU greedy actions PASS.
+   Expanded study data CPU checks pass; TRAIN bytes identical. Primarycomposition
+   uses9,216families/18,432questions; original1,024families per secondary panel.
+   Study adapter/rolling retention is under CPU review in local/worktrees/controlled-computation-v28-study.
+   Next finish full checks, freeze the six-model protocol/budget and stage64-only release.
    No learning study, autonomous RL or capability claim is released by this queue.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.

@@ -1,15 +1,44 @@
-<!-- Current handoff, 2026-10-20T01:23:30.916507+00:00 -->
-V28 CPU preparation is complete, not a learning result. Active worktree:
-`local/worktrees/controlled-computation-v28`. All1,838 tests/CPU smoke/compile,
-38,912 independent execution/token checks and131,072 native TRAIN packs pass.
-Report `validation/permutation_program_v28_CPU_readiness_20261020.json`.
-One bounded world4/width256 eight-update all-view qualification is active on
-physical12, supervisorPID1542616/session1542608, exec54924. Hard deadline02:17UTC,
-<=1reserved chip-hour. Control `local/diagnostics/permutation-program-v28-world4-qualification-v1`;
-output `local/nvme-study/diagnostics/permutation-program-v28-world4-qualification-v1`.
-Next inspect physical closure then run frozen `independent-audit.py`. No long training release. Dataset:
-`local/nvme-study/data/permutation-program-v28-cpu-v1`; evidence:
-`local/diagnostics/permutation-program-v28-CPU-v1`. Preserve old frozen worktrees.
+<!-- Current handoff: 2026-10-20T01:59:31.774293+00:00 -->
+V28 has no learned-capability result yet. Both actual training8-update/full4→restore→full8
+qualification and decoder28-attempt qualification PASS independent audits. No active
+accelerator process. Native/packing/CPU evidence is published. Primarycomposition was
+expanded before model outcomes to9,216families/18,432questions; secondary panels use
+original1,024families each. All TRAIN bytes unchanged; all88,064 data and387,072 contexts pass.
+Main latest prior to this publication b9e735a. Frozen train worktree ea926ca;
+frozen decode worktree24ef45f. Active uncommitted study source:
+`local/worktrees/controlled-computation-v28-study` on branch controlled-computation-v28-study.
+It adds4,096-update/32,768-question fixed two-seed protocols and scoped rolling retention.
+Focused12tests pass; full suite exec57621 running/log local/v28-study-checks-20261020.log
+in that worktree. Initial attempted redirection failed before full checks; do not claim it passed.
+
+Storage: read-only audit exec56386 closed0. Five old inactive EBS optimizer copies
+were then retired after both-side full readback/current V26 full256 readback. Exactly112
+rank files/103,280,927,056bytes removed; every original full state/model retained,
+current V26 EBS full retained, root now~155GiB free. Evidence:
+`local/diagnostics/permutation-program-v28-storage-v1`. All historical originals/cache untouched.
+
+Planned new-study policy: science outputs on EBS under
+`local/science-runs/controlled-computation-v28/program-<arm>-seed<2026102028|2026102029>-v1`.
+Keep latest full per arm across seeds; every terminal model on EBS, every development64
+model on NVMe-CPT. Older newly-created periodic payloads retire only after new full
+readback/fsync. Previous-seed terminal optimizer may retire only after its terminal
+all-state audit plus new-seed full readback; its terminal model stays. This policy is
+prospective for V28 only, not a permission to prune historical originals.
+Global filesystem export lease serializes writes. Host phase files keep lease/readback
+waits outside installed Neuron rendezvous device-barrier timeouts (installed wrapper inspected).
+Initial fresh64/actual full-state audit/planned restart for all six runs is proposed;
+terminal4,096 is primary. No stage64 or long science job has been released/launched.
+Remaining: finish/review source/full tests; final prospective design (two claim families
+separate, six inference comparisons,9216family power), budget and 64-only release/controller.
+Budget candidate:<=30training chip-hours,<=18evaluation chip-hours, three physical chips;
+all three fresh B0 arms per seed, two waves. Actual budget/controller not yet frozen.
+
+Decoder CPU independent audit closed0 exec60728; report in
+`local/diagnostics/permutation-program-v28-TRAIN4-decode-qualification-v1/independent-audit.json`.
+Stop counts9answer-lines/3EOS/16caps on unchanged B0 TRAIN4; no capability inference.
+Training independent audit exec20694 closed0, actual8updates0.196chip-hours,
+all weights/masters/moments/counters/native/restore digests PASS. Both original full4/8
+remain on NVMe-study. All old V26/V25/V23/V21 reports remain unchanged.
 
 # Current handoff — 2026-10-20 01:00 UTC
 

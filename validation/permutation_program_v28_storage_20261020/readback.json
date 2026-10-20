@@ -1,0 +1,645 @@
+{
+  "status": "PASS_READ_ONLY_ALL_ORIGINALS_AND_BACKUP_BYTES_AND_CURRENT_FULL_REVERIFIED",
+  "utc": "2026-10-20T01:56:17.019161+00:00",
+  "current_protected_full": {
+    "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1/step-0000256",
+    "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256",
+    "COMPLETE_sha256": "1c2eb0dc817457d75ab63986a7ffa8d04417f698c06512f1c02d3edf85280820"
+  },
+  "checkpoints": [
+    {
+      "original": "/home/ubuntu/dario/local/nvme/runs/qwen-r-seed1234-science-256-001/step-0000063",
+      "backup": "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063",
+      "COMPLETE_sha256": "7c1e61a1fd4294d26e9d9a278d141de5d76ac0b1a44efeea3c8faaf499a9c428",
+      "files": {
+        "model.pt": {
+          "bytes": 6882399951,
+          "sha256": "dd4864bcfbdbb26ca3572e836eab58a925ff8916bcbc7c91b504faad230043c2"
+        },
+        "rank-00000.pt": {
+          "bytes": 645629767,
+          "sha256": "3fa115097ffc63a7ee5479bae6c8764808ccd92ed2361b17560eed436817580e"
+        },
+        "rank-00001.pt": {
+          "bytes": 645629767,
+          "sha256": "84d72fb70452996a1d55f591e11c3d3bf20f958aa8cc6e1532839991314f9c76"
+        },
+        "rank-00002.pt": {
+          "bytes": 645629767,
+          "sha256": "2f45d5c405c92fc00145c7f98343f37a54271ebc53f6aa3c53d20cbab6ac3430"
+        },
+        "rank-00003.pt": {
+          "bytes": 645629767,
+          "sha256": "da539bd98237f4e06d47de6c7542cb0099829593273705eadd91323755fb5bc5"
+        },
+        "rank-00004.pt": {
+          "bytes": 645629767,
+          "sha256": "f91b0a937b3e2b16c51bfb684d74450d50ae100919f46ae22b5e66bb5fd966b2"
+        },
+        "rank-00005.pt": {
+          "bytes": 645629767,
+          "sha256": "d215374a097962ab5587413bc32623a448866ec55ed3fa10e166a24492f69733"
+        },
+        "rank-00006.pt": {
+          "bytes": 645629767,
+          "sha256": "e03a4c5fce9374b1e800891861b41695785f339cfc104bae9378695e893747ed"
+        },
+        "rank-00007.pt": {
+          "bytes": 645629767,
+          "sha256": "7817108d1ae8a9e719d81ee5df61322a5e4ab18e01c513490ee2fb012dff4c57"
+        },
+        "rank-00008.pt": {
+          "bytes": 645629831,
+          "sha256": "6152874fe7dc777f28e74bed5eea76762154a882df4a8af2669474bbaa1c0fcd"
+        },
+        "rank-00009.pt": {
+          "bytes": 645629767,
+          "sha256": "5099bad3edce504cfd6b2057da7d00a564f98677f7dd741bb3616a9bb87cc94b"
+        },
+        "rank-00010.pt": {
+          "bytes": 645629767,
+          "sha256": "219d504af7f92e6f4030ee97368f7d8bf6fec227958a3b35471ffc59f2d9c92e"
+        },
+        "rank-00011.pt": {
+          "bytes": 645629831,
+          "sha256": "610bd6d9a204f7b756a269220dc133e5a23fb2a5d63bb235b6943c676624b4fe"
+        },
+        "rank-00012.pt": {
+          "bytes": 645629767,
+          "sha256": "b2b97ebb154a7b591861bad47f594b6b43fc2136a7b708ce5cbac829481a205c"
+        },
+        "rank-00013.pt": {
+          "bytes": 645629831,
+          "sha256": "6a1762be20c5282f8b4040ecb29d61dba7ca07c12a94ee35fb4bc8026c73df35"
+        },
+        "rank-00014.pt": {
+          "bytes": 645629831,
+          "sha256": "0f1211e415147497492ae47ac4136579633359531d8b029432bb594c1abcad48"
+        },
+        "rank-00015.pt": {
+          "bytes": 645629767,
+          "sha256": "5afa48601b4bb2700bd8f2a09a4f9b9c2d2108342cb6d0347fadcac794b4187d"
+        },
+        "rank-00016.pt": {
+          "bytes": 645629767,
+          "sha256": "cda9b8fdff6a39542d80ea1a28903f2ef889343c5ab64b021454cfc797964855"
+        },
+        "rank-00017.pt": {
+          "bytes": 645629767,
+          "sha256": "8a7fbf272575b6fe7d64fc7215844b7fd6ebb938e5aa66363b00ca0c864427a1"
+        },
+        "rank-00018.pt": {
+          "bytes": 645629831,
+          "sha256": "0badfad977ed2c90c3ea6bbeee6b8b594368f64633c005b1de87fea09b777ac8"
+        },
+        "rank-00019.pt": {
+          "bytes": 645629831,
+          "sha256": "cce701edf1b1b831e04323f1d39cd80b8e7eaa88d466c95b2ef1632ddc953e09"
+        },
+        "rank-00020.pt": {
+          "bytes": 645629831,
+          "sha256": "3cda3375fef810ba8cebec7fbb33b4f9862088fd7c1f819908879f3950a4af8c"
+        },
+        "rank-00021.pt": {
+          "bytes": 645629767,
+          "sha256": "2139dd7f0f74140fc696c604c88aec5f5fbecafbeb391774cb798443ec45b96e"
+        },
+        "rank-00022.pt": {
+          "bytes": 645629831,
+          "sha256": "dd8f526523eaa562dbf562777b1328c69d26909c14b2534cb60829d711c9ec41"
+        },
+        "rank-00023.pt": {
+          "bytes": 645629767,
+          "sha256": "53bb1e4df2dbe2eaefb4683c19cad3e58221f24c91d7e89548e00d03d67f3d79"
+        },
+        "rank-00024.pt": {
+          "bytes": 645629767,
+          "sha256": "36e01763d5136f2ea498ceaa43f24a592349a3ee74c3d0b856947cac59401548"
+        },
+        "rank-00025.pt": {
+          "bytes": 645629831,
+          "sha256": "b21828ed535eb6782a5b6fff3830a14d1c16ddd40f9e7137b3f26ba7e3025041"
+        },
+        "rank-00026.pt": {
+          "bytes": 645629831,
+          "sha256": "be7ff3350be06b36468e2b7e0c071dc42960926d87ddf7a49ff15e4d7ba991d5"
+        },
+        "rank-00027.pt": {
+          "bytes": 645629767,
+          "sha256": "2c0b86512c4d6913155f8c30c5ef07ab83767aaa51fc3b2ca3277cafe586ef6e"
+        },
+        "rank-00028.pt": {
+          "bytes": 645629767,
+          "sha256": "1839ad119b1812c5481a0529d4a83478943a54050f86174f8b42af4f1fb5f1e0"
+        },
+        "rank-00029.pt": {
+          "bytes": 645629831,
+          "sha256": "7a2ca61da2136019dd7497306f2de4b1eb4400755fe16f6effd1177dae7c4e18"
+        },
+        "rank-00030.pt": {
+          "bytes": 645629831,
+          "sha256": "754060a7e4e42bb92bd44f8fc77ceeaba49cff0424eeee2413dff3dc8b7671f5"
+        },
+        "rank-00031.pt": {
+          "bytes": 645629767,
+          "sha256": "047737917b3cc49842a00f45f2629765a0f2f7c999c9da006ce0d8316c3efa3b"
+        }
+      },
+      "only_retirement_candidates": [
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00000.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00001.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00002.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00003.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00004.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00005.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00006.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00007.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00008.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00009.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00010.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00011.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00012.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00013.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00014.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00015.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00016.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00017.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00018.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00019.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00020.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00021.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00022.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00023.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00024.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00025.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00026.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00027.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00028.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00029.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00030.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-r-seed1234-science-256-001/step-0000063/rank-00031.pt"
+      ],
+      "candidate_bytes": 20660153312
+    },
+    {
+      "original": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed1234-science-256-001/step-0000256",
+      "backup": "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256",
+      "COMPLETE_sha256": "8c20a705bb251af3c0b916ec41a21a47558f009647df15a9a695b71032fc6706",
+      "files": {
+        "model.pt": {
+          "bytes": 6882399951,
+          "sha256": "b2b8e2ebf3dd39f53103a20040d3d9e0cc1d7f40387ca7266dac4069f31fc6a1"
+        },
+        "rank-00000.pt": {
+          "bytes": 645629767,
+          "sha256": "cccafdf8664cba69913e1769d9bc76e89b8036447bf9b6922eb0e6a30a3f3478"
+        },
+        "rank-00001.pt": {
+          "bytes": 645629767,
+          "sha256": "1dd9d65f5b8e1f80b6b9ff85a03b7eef8b7e7a55ce1a247cd6d12a10af6ea184"
+        },
+        "rank-00002.pt": {
+          "bytes": 645629767,
+          "sha256": "37d494f4aaffb5497b3c95a1292a057b411ea20586ea5dfd113ae04354023526"
+        },
+        "rank-00003.pt": {
+          "bytes": 645629767,
+          "sha256": "b601b42304826ba6fcd21fc06f7d51dd55a315e1e43bf440f45c5b8ac91a8c16"
+        },
+        "rank-00004.pt": {
+          "bytes": 645629767,
+          "sha256": "57a9eb34880cf67f45b5bfc00748ef0778b912863cde0944caedba75a1d6810c"
+        },
+        "rank-00005.pt": {
+          "bytes": 645629767,
+          "sha256": "65a4ba7bc5cbd3fc1ae9a19ba71d43a76d263d965bb54b8852e260079f88290c"
+        },
+        "rank-00006.pt": {
+          "bytes": 645629767,
+          "sha256": "9d4d651c4d027c93a3c7497a9848e1de1d71f09261f81060a87fd82fd7522ff8"
+        },
+        "rank-00007.pt": {
+          "bytes": 645629767,
+          "sha256": "7854f99fcf511d0acf1f1bbc53b54632d72d98ab53f408d1115149e188567013"
+        },
+        "rank-00008.pt": {
+          "bytes": 645629767,
+          "sha256": "34b35e5da063bf3e69a927a11f9576205a073281547adc6485abf0214b53d05f"
+        },
+        "rank-00009.pt": {
+          "bytes": 645629767,
+          "sha256": "b94d65aa2d0cf820c2104cb64f15deef0488f17c5719fe01a513570c6ddf9732"
+        },
+        "rank-00010.pt": {
+          "bytes": 645629767,
+          "sha256": "e833bf14fd3aeff00bdfbb50e22dd4cb77797711cf22011cd942452b6c2ebdfb"
+        },
+        "rank-00011.pt": {
+          "bytes": 645629831,
+          "sha256": "516668885d1d067d63fd681ecd7d7630d98d71b5b2680fbdb67a8b617d108e8e"
+        },
+        "rank-00012.pt": {
+          "bytes": 645629767,
+          "sha256": "fbb211e546224d39036c92f484888dc7ad7d438709589fb94b4d1ecd2f8d6521"
+        },
+        "rank-00013.pt": {
+          "bytes": 645629831,
+          "sha256": "c1a3a9eeda8626e66c940d32bdeb3992de689396c1e46f5fb340e35844cbb8bc"
+        },
+        "rank-00014.pt": {
+          "bytes": 645629767,
+          "sha256": "a425e4da970f9a814ef97c30c10edc1bccc4aca6fb76d1ca7d89e2c46d3028a1"
+        },
+        "rank-00015.pt": {
+          "bytes": 645629767,
+          "sha256": "e2d31e4ed4d49bdec941571faf53d4ac234e0f70718547490eea1f7f441abf80"
+        },
+        "rank-00016.pt": {
+          "bytes": 645629767,
+          "sha256": "8effd4c3d13c7c8623e7ea0e4ad1e12fa5a25442d343576e6ffbd5d1a3e65627"
+        },
+        "rank-00017.pt": {
+          "bytes": 645629767,
+          "sha256": "1dd98456d4a221b6b6dce2fa8a5eff8fae4c3ac8baf512493bc8071d85e216b8"
+        },
+        "rank-00018.pt": {
+          "bytes": 645629831,
+          "sha256": "0065653a16de51ba4c426426a3bbb24b77adb515e09d16dfb60807c43ea592cb"
+        },
+        "rank-00019.pt": {
+          "bytes": 645629831,
+          "sha256": "37ed90d7e1d7e6e4efeb52e54524a16d6acc88a94b471f066edb7692122fcf51"
+        },
+        "rank-00020.pt": {
+          "bytes": 645629767,
+          "sha256": "2b5e4046577306b1a69672aa188a2bf79e4f1de5bd42cf3bdd83942cfd5a6177"
+        },
+        "rank-00021.pt": {
+          "bytes": 645629767,
+          "sha256": "17aaabc681a7a86284a686c8f77913cfbb546f9d945857bc42552c0833982980"
+        },
+        "rank-00022.pt": {
+          "bytes": 645629831,
+          "sha256": "fe8dc0a1bb8921a37bb001bcb151d9d137b2573a1f76988372a34a2423681f7a"
+        },
+        "rank-00023.pt": {
+          "bytes": 645629767,
+          "sha256": "e8dc0bc75033a6271c05ead951aee3dfee4fc819409e474722ad1e9547664c98"
+        },
+        "rank-00024.pt": {
+          "bytes": 645629767,
+          "sha256": "116328b081c572586a808b1e6cbe25633c5c05cb00ef7db6f29e579da43df20d"
+        },
+        "rank-00025.pt": {
+          "bytes": 645629831,
+          "sha256": "c1f96a8d2b691d257fc05fe9f7d0a3af5f78afea37194d9a148f6fde24fecc9f"
+        },
+        "rank-00026.pt": {
+          "bytes": 645629767,
+          "sha256": "7a16fa85e00784cb151a6ed7573b4a49bbecd318a17cd26ca7d66c9f16f9527a"
+        },
+        "rank-00027.pt": {
+          "bytes": 645629767,
+          "sha256": "8eb125cb2eef5c465de5babfed5de85fbcfebd7992a585d38854c330199e1547"
+        },
+        "rank-00028.pt": {
+          "bytes": 645629767,
+          "sha256": "4d948e81d270af2a7b461738433aa7e148c96aa1db58788adfa4d9532cc8819d"
+        },
+        "rank-00029.pt": {
+          "bytes": 645629831,
+          "sha256": "ae623c433499cf2a484e4961dd57589ce2f5304f19f78baf5c4d775aba8d07ce"
+        },
+        "rank-00030.pt": {
+          "bytes": 645629831,
+          "sha256": "40cd4725844588b1ee75b4c8a73f5563c237033f334861d578cc38cfe2352a51"
+        },
+        "rank-00031.pt": {
+          "bytes": 645629767,
+          "sha256": "a565daefd91c901b042afc9ab9e7ac4815dcf3453d16403a1fdd5fc28ef6ad0e"
+        }
+      },
+      "only_retirement_candidates": [
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00000.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00001.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00002.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00003.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00004.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00005.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00006.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00007.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00008.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00009.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00010.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00011.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00012.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00013.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00014.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00015.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00016.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00017.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00018.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00019.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00020.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00021.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00022.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00023.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00024.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00025.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00026.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00027.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00028.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00029.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00030.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed1234-science-256-001/step-0000256/rank-00031.pt"
+      ],
+      "candidate_bytes": 20660153056
+    },
+    {
+      "original": "/home/ubuntu/dario/local/nvme/runs/qwen-c-seed5678-science-256-001/step-0000256",
+      "backup": "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256",
+      "COMPLETE_sha256": "16f22b7cf1b1a53e632b131dc23e02fc56fd8b7f16c41fc55f1c9e3492d097bb",
+      "files": {
+        "model.pt": {
+          "bytes": 6882399951,
+          "sha256": "740b4023d046c3a1ef6c1cefa49efc09bce798f281c75f427716ab5b1cedc4cc"
+        },
+        "rank-00000.pt": {
+          "bytes": 645629767,
+          "sha256": "7798e7aae81f332eccb2b08bb8f132421391f2750addba55fcea2fa864fac46d"
+        },
+        "rank-00001.pt": {
+          "bytes": 645629767,
+          "sha256": "87d2ebea2167b8a3ee0fc120ed9a5087dd7630bcf56935758586c06ca374786c"
+        },
+        "rank-00002.pt": {
+          "bytes": 645629767,
+          "sha256": "ac5502b14445c4f80ea8c8e98ebec9e0e2a1c3da1ece5e77a262bfbf69f4fde1"
+        },
+        "rank-00003.pt": {
+          "bytes": 645629767,
+          "sha256": "4b212d1ce4ddc68d91b61f68051763d4b2946186cc71dacd1c6e760e9f3f40c7"
+        },
+        "rank-00004.pt": {
+          "bytes": 645629767,
+          "sha256": "d9cfccff0190e8443490b252c1a42fcf828f6933fba8dcd74f4c5b3ee05117da"
+        },
+        "rank-00005.pt": {
+          "bytes": 645629767,
+          "sha256": "a1760fb7297322b3cd66e0e8d9de92bef9bd8a72fd7b09249ff920f7bd390a36"
+        },
+        "rank-00006.pt": {
+          "bytes": 645629831,
+          "sha256": "7c6f4d12d5b0c77855445398b89f997751ead5e1a5d22dedef4a3cf255b7d2ce"
+        },
+        "rank-00007.pt": {
+          "bytes": 645629767,
+          "sha256": "82326ada05134ed251a51c3f3d7939756bad5c964b26e10e6b5e7121d0e5196c"
+        },
+        "rank-00008.pt": {
+          "bytes": 645629767,
+          "sha256": "70e597d319945ebae7fb7e1fbcab5564aba5f6ded5898c185bd410c08a746d3b"
+        },
+        "rank-00009.pt": {
+          "bytes": 645629767,
+          "sha256": "88bb33d62a4533d24d34c51a714b3e89fd7689b64fcc7a197161fe88b92fc1fb"
+        },
+        "rank-00010.pt": {
+          "bytes": 645629767,
+          "sha256": "80565aac13cebe2b121f046e61ed270ba2a54969db5d078fb62692d5b79ef59c"
+        },
+        "rank-00011.pt": {
+          "bytes": 645629767,
+          "sha256": "7dabbee5a41c5fdbbdda59fa38529daf6d8c580a3743a5bbffec2352c31a75ff"
+        },
+        "rank-00012.pt": {
+          "bytes": 645629767,
+          "sha256": "8e90992be762718e988a7256452f8f2dc7bc3ae9bb6f02449a7a52beeb6f6d7d"
+        },
+        "rank-00013.pt": {
+          "bytes": 645629767,
+          "sha256": "8fd42845f0a02d8d710efaf4bace3f188c429dfa9891754d138cabf1c8872318"
+        },
+        "rank-00014.pt": {
+          "bytes": 645629767,
+          "sha256": "aab0e3ec33481ee49a413167ce7434548732ef68b050a905ecbb1e024f2fdaaf"
+        },
+        "rank-00015.pt": {
+          "bytes": 645629831,
+          "sha256": "211eafe6fcbf1c86e2553f4ee6fab41ed4a8dab7b789b2401d9665b8094ecdd9"
+        },
+        "rank-00016.pt": {
+          "bytes": 645629767,
+          "sha256": "cbb131120e87e6a2b9e6bf66d7fd730a7fb089e6c924e065039fc4b70e7b454d"
+        },
+        "rank-00017.pt": {
+          "bytes": 645629767,
+          "sha256": "1dcac3b7af98b15ccd07ef4796ab6b6133a179370eda249d20bde55bd383c065"
+        },
+        "rank-00018.pt": {
+          "bytes": 645629767,
+          "sha256": "12759acb301bbb1bb32c868282deb646301334392e8d8ab6039d39ab5a1a0d24"
+        },
+        "rank-00019.pt": {
+          "bytes": 645629767,
+          "sha256": "3ef553b268d959d7978219ae49746fb2706957c27711716373b29880068be812"
+        },
+        "rank-00020.pt": {
+          "bytes": 645629831,
+          "sha256": "896c439c03ada90e883f5295720dbcace1f2b023dc5423704df16e5e0478e0f8"
+        },
+        "rank-00021.pt": {
+          "bytes": 645629767,
+          "sha256": "0e53d01e3cf7e450ffcd28ed91a0c104e0db3c21b3d52b0c6c67d66ecfc8482f"
+        },
+        "rank-00022.pt": {
+          "bytes": 645629831,
+          "sha256": "2ee37fa11219cb70a6599d64b4a21f88478cb314900aea9382145e5d113a4c9e"
+        },
+        "rank-00023.pt": {
+          "bytes": 645629703,
+          "sha256": "4a2949f1046198e208ad1712bda33d35d72c3e57f4314ace8254b58a6c5888a5"
+        },
+        "rank-00024.pt": {
+          "bytes": 645629767,
+          "sha256": "06dbb0d21b1469726d2892c77bd2b29401f121501c6a67535eb3f7b48bfbf881"
+        },
+        "rank-00025.pt": {
+          "bytes": 645629767,
+          "sha256": "26ca2ae21b984102cf92035d286b93fc4d6a3869ca9c75535cc4cddfa4242469"
+        },
+        "rank-00026.pt": {
+          "bytes": 645629831,
+          "sha256": "f0bc3144ee025d321e50df703ef31b362e36f0dcbbbbb00aa3768bb5a910ac75"
+        },
+        "rank-00027.pt": {
+          "bytes": 645629831,
+          "sha256": "e333e8d80a5097264ea87bea0454a66b5456afc8c0944a86c9cbf1d6391b583d"
+        },
+        "rank-00028.pt": {
+          "bytes": 645629767,
+          "sha256": "1a22953beaaf0574fdaba574fae075c653f955a6f92999521c8b0f2e698dcec9"
+        },
+        "rank-00029.pt": {
+          "bytes": 645629767,
+          "sha256": "14a627ee7aa17ab59c8c561bf36268847f1c92fceb2f580185158bef3bd1972d"
+        },
+        "rank-00030.pt": {
+          "bytes": 645629767,
+          "sha256": "8a68f9639668a13115ddcf1590cc7df23f80cc30bf654a38c1bdb1c415940313"
+        },
+        "rank-00031.pt": {
+          "bytes": 645629767,
+          "sha256": "963d6ed618a8167542037ec8cfcce27ce7ed48b327504e26bce402ca703a8306"
+        }
+      },
+      "only_retirement_candidates": [
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00000.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00001.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00002.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00003.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00004.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00005.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00006.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00007.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00008.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00009.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00010.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00011.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00012.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00013.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00014.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00015.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00016.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00017.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00018.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00019.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00020.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00021.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00022.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00023.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00024.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00025.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00026.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00027.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00028.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00029.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00030.pt",
+        "/home/ubuntu/dario/local/backups/science/qwen-c-seed5678-science-256-001/step-0000256/rank-00031.pt"
+      ],
+      "candidate_bytes": 20660152864
+    },
+    {
+      "original": "/home/ubuntu/dario/local/nvme/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064",
+      "backup": "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064",
+      "COMPLETE_sha256": "9900a0fb99d1460912c535b1922039c235a8bf3147311c997984684e759189fb",
+      "files": {
+        "model.pt": {
+          "bytes": 6882399951,
+          "sha256": "06dcba4e323344603434bae896492c2d1027bb88ecbc72f673f5351147f0b882"
+        },
+        "rank-00000.pt": {
+          "bytes": 2581279175,
+          "sha256": "eb98b439c1128a1c5b8a5ee1281e6a10d54a18b127e8004d661dfcd6d58c035b"
+        },
+        "rank-00001.pt": {
+          "bytes": 2581279239,
+          "sha256": "8a9a239232877e02f6bf4fa6cfaf380cb7280356fb33f6599782f4f101462811"
+        },
+        "rank-00002.pt": {
+          "bytes": 2581279239,
+          "sha256": "eae4310b3bb8e089bef68a5b46e237b0886299d0c5f3619ac81d671e4205cdb1"
+        },
+        "rank-00003.pt": {
+          "bytes": 2581279239,
+          "sha256": "ed363b3035f7f6636ee3f998c7fe060e557d4af3edf1263306b275aeda7c7ad1"
+        },
+        "rank-00004.pt": {
+          "bytes": 2581279303,
+          "sha256": "a9a810a99b11bae7592f0abff6b2ad8a7d0b0e725a39255b00209a699abf4cce"
+        },
+        "rank-00005.pt": {
+          "bytes": 2581279239,
+          "sha256": "edf6de927c516e49f89a13e9a425d8550d3e2e7e2bda73a6c61ac067f8f15d2a"
+        },
+        "rank-00006.pt": {
+          "bytes": 2581279239,
+          "sha256": "be07323cda011979e46430ea3c53c858ae79bd05287d66400af55a27cdc42a13"
+        },
+        "rank-00007.pt": {
+          "bytes": 2581279239,
+          "sha256": "ea920e174b58ce31b8cac5b586e13b90052818e143d7f1bf97f5e80f33c412be"
+        }
+      },
+      "only_retirement_candidates": [
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00000.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00001.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00002.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00003.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00004.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00005.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00006.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/writer-bc-prepend-train77-64-v2/step-0000064/rank-00007.pt"
+      ],
+      "candidate_bytes": 20650233912
+    },
+    {
+      "original": "/home/ubuntu/dario/local/nvme/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064",
+      "backup": "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064",
+      "COMPLETE_sha256": "71da89249237b6716dd6791fbde59793f03a883f7023edee9b5542c1326f5f82",
+      "files": {
+        "model.pt": {
+          "bytes": 6882399951,
+          "sha256": "2dc1f12fbd28f136924f045f6521afd32c1a927b6300da44c7a1d0326ed4a233"
+        },
+        "rank-00000.pt": {
+          "bytes": 2581279175,
+          "sha256": "4feb3aa9211c45c9cf082d74a91e47ac43b54c61bb333b01783b0354ba1d8469"
+        },
+        "rank-00001.pt": {
+          "bytes": 2581279239,
+          "sha256": "6803eb952ecc7f75ab6464e8d3bbc59ce13370d9b335e18955f18db64d68eb5c"
+        },
+        "rank-00002.pt": {
+          "bytes": 2581279239,
+          "sha256": "8bed5a33fa5a0d9e9d1219ec3b8b7a11e21801ae637ab29533e5380bf0ff36e8"
+        },
+        "rank-00003.pt": {
+          "bytes": 2581279239,
+          "sha256": "26e0331e80171c7056e30b50e5d7114c26463119faea14d350cfec6d1bd77da1"
+        },
+        "rank-00004.pt": {
+          "bytes": 2581279303,
+          "sha256": "955dc0f90f1a0ed7e6cbc349235e75e438ceb24521d5136623046aa2bb88a726"
+        },
+        "rank-00005.pt": {
+          "bytes": 2581279239,
+          "sha256": "6946316ee9ad427eb0ffb22c7e5fe08dd214d0ae277f93b03380a6931dba524c"
+        },
+        "rank-00006.pt": {
+          "bytes": 2581279239,
+          "sha256": "69aa67403be58a428888aa0e8311c16593c9b627d8ec33e5387192af6e5b7276"
+        },
+        "rank-00007.pt": {
+          "bytes": 2581279239,
+          "sha256": "836ad6137eb83aafc6913154f40463a7b078b5087df7f812caf924aa238818cd"
+        }
+      },
+      "only_retirement_candidates": [
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00000.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00001.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00002.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00003.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00004.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00005.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00006.pt",
+        "/home/ubuntu/dario/local/backups/diagnostics/raw-control-prepend-train77-64-noncontiguous-v3/step-0000064/rank-00007.pt"
+      ],
+      "candidate_bytes": 20650233912
+    }
+  ],
+  "potential_free_bytes": 103280927056,
+  "root_free_bytes": 63151632384,
+  "audit_source_sha256": "60d5fb63403a15d48c9d703d9f605fb4d771db10542cdda778d72d1e4d5f531c",
+  "no_deletions_performed": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS_ONLY112_DUPLICATE_EBS_OPTIMIZER_FILES_RETIRED_ALL_ORIGINALS_MODELS_CURRENT_FULL_RETAINED",
+  "reclaimed_bytes": 103280927056,
+  "root_free_bytes": 166432980992,
+  "inactive_backup_checkpoints": 5,
+  "only_deleted_duplicate_optimizer_files": 112,
+  "all_original_states_and_all_models_retained": true,
+  "current_full_backup_retained": {
+    "original": "/home/ubuntu/dario/local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1/step-0000256",
+    "EBS": "/home/ubuntu/dario/local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256",
+    "COMPLETE_sha256": "1c2eb0dc817457d75ab63986a7ffa8d04417f698c06512f1c02d3edf85280820"
+  },
+  "evidence_files": {
+    "validation/permutation_program_v28_storage_20261020/retirement-intent.json": "2173507782a1aa7fc4b9861e5618a2995fa0866bdd8a9443102dfaaae9cdb95d",
+    "validation/permutation_program_v28_storage_20261020/readback.json": "dfcf18fc554085c534ab9a537e6ccfa0534087d8e0646c781e6fbf39ca889386",
+    "validation/permutation_program_v28_storage_20261020/plan.json": "272394c12197ea64df3da99021b5aebf5af1900945748ac65b3a0b83de4498ac",
+    "validation/permutation_program_v28_storage_20261020/retirement-complete.json": "a27d36a90ddf3cbb11131ff492e44419405899ea0725246b67c1c85d744f8dbd"
+  },
+  "scope": "Only inactive EBS rank-payload duplicates from five closed older runs; every complete original remains on NVMe and every model remains on EBS. No cache or current scientific state deleted."
+}

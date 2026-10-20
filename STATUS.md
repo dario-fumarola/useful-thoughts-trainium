@@ -1,4 +1,4 @@
-# Status — 2026-10-20 01:38 UTC
+# Status — 2026-10-20 01:59 UTC
 
 ## Active: controlled computation CPU reference
 Question: can verified state supervision help beyond direct training and trained pauses?
@@ -11,8 +11,8 @@ Trace treatment changes auxiliary targets and some answer-training contexts; com
 Adapter permits only eight mixed-view diagnostic updates, save4/restart then8; no learning study released.
 Eight actual updates/full4→new-process restore→full8 PASS independent all-model/master/moment/order audit;0.196chip-hours.
 Reports: permutation_program_v28_CPU_readiness_20261020.json; permutation_program_v28_training_hardware_20261020.json.
-Decoder TRAIN4/28 attempts active on physical13/core52, exec72582, deadline02:05UTC; no held/checkpoint outcomes.
-Limits: synthetic simple paths; no cycles, natural-language pretraining, autonomous discovery or capability claim.
+Decoder TRAIN4/28 attempts PASS:0errors,7cache checks,32independent CPU greedy actions;16caps are retained, not capability evidence.
+Extended primary composition9,216families before outcomes;88,064 data/387,072 context checks PASS; original TRAIN bytes unchanged.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?
