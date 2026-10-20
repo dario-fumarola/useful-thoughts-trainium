@@ -1,0 +1,71 @@
+{
+  "status": "PASS_KNOWN_SYNTHETIC_SCORE_FIXTURES_ONLY",
+  "model_forwards": 0,
+  "source_files": {
+    "scripts/prepare_numeric_scoring.py": "e2a1d6d865c631f4726c4f070b359f814743816c8b6b49985c48529efe0746c3",
+    "scripts/score_numeric_answers.py": "9f7698c07eb7203874ddce07e1b0471b83f3a2ca8fe1af57d9d3a0c0e127f929",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_likelihood.py": "cb547693d27877514433692b3e962467f5920d69222e77c53ed499b1e069671c",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluation_integrity.py": "7112d930a852a9dcc25e0865a8f5e22bffcd2e04e7da9c0abd78709fdc5ce531",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/evaluation.py": "8f7d8809d59355511acdd854fea9b9196776cb63ba37d9fffaa752c136202df1",
+    "weekend_thinking/numeric_projection.py": "7536a889dc49c2d14044d72d2d991ac6f80f21eea8cce27f2b5bcf4a4b7c698b",
+    "weekend_thinking/order.py": "7563732b396573204130185f4823845f908bd19bc45c1750189d9331c800ed9a",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66",
+    "train/document_qa_evaluate.py": "5357a1fe9fc9bf4078732227ee9e104dae344e42eb58ace3f30d47982db1f1e1",
+    "train/document_qa_contexts.py": "26b2e33bc6adc4fa5af7f2da45a1fa308c3c2d8fc2a66b36a681e89f5fc96291",
+    "train/document_qa_decoder.py": "68c2a8f02ad2d3f6471ad408bc2297be0afd91f90342b15ea78ddee7f81a1392",
+    "train/document_qa_answers.py": "38845803d12b2f57f259cafce4f98397ad522967332fb0413b6892b2906c5c00",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "scripts/release_permutation_program_evaluation.py": "d443d8a5f3120a16dc0217821fe63d0b103005ab101fb2bba28adcb3724fb283",
+    "train/permutation_program_readout.py": "af8a9d89c3efa3310a049e8476161ada6071d9a16a1d29b57ed70a42dd00cb94",
+    "train/permutation_program_science_evaluate.py": "a0a740f89dd9084d207955cdc16d146e9958e91c9758fc18d2677898fec7e3eb",
+    "train/permutation_program_decoder.py": "07a8868fee965322fed9d99e6cd630314e6077a406a190bae6b7d168845c69e2",
+    "train/permutation_program_answers.py": "0bf93786ba3663e78c56593bc0eab5a4f31ef1fe4c8be0272fd2d7d8cfc68519",
+    "train/permutation_program_evaluation.py": "551c70dbe35730dc7f904292b6d95e78716734e280fbe3f00caa2832dcf98461",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473"
+  },
+  "checker_sha256": "9f1f8a8daa12ce9a58b82e1b328aa562d48587a6b4ceeea9d8faddcab56e2f98",
+  "fixtures": {
+    "True": {
+      "expected_gates": {
+        "training": true,
+        "inference": false
+      },
+      "observed_gates": {
+        "inference": false,
+        "training": true
+      },
+      "primary_family_count": 9216,
+      "primary_question_count": 18432
+    },
+    "False": {
+      "expected_gates": {
+        "training": false,
+        "inference": true
+      },
+      "observed_gates": {
+        "inference": true,
+        "training": false
+      },
+      "primary_family_count": 9216,
+      "primary_question_count": 18432
+    }
+  },
+  "limits": [
+    "Artificial all-correct/all-wrong scores test gate independence and exact cohort coverage,not learning.",
+    "No held model outcome is generated or inspected."
+  ]
+}
