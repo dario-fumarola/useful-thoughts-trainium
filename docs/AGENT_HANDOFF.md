@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 09:27 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 09:42 UTC; older entries below are historical -->
 Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
 V28 all six actual4096 terminal models physically close0 and independently pass full
 model/master/moment/native/order audits. All6full64 and24actual worker restoration
@@ -53,8 +53,8 @@ Use ABSOLUTE paths; original relative-path launch failure was preserved before t
    Read-only watcher exec36214 emits attempts/counts/native/cache/budget/resources
    every45s. It NEVER reads answer text/scores. Current metadata08:28:06 shows
    19,913attempts executed,32native+cache PASS,0failures,host1873GiB/root75.5GiB.
-   Latest09:26:36: all23started,17physically closed,304867attempts,all92native/cache
-   PASS,zero failure markers,host1906GiB/root74.8GiB. Scores remain unread.
+   Latest09:41:37: all23started,21physically closed,316970attempts,all92native/cache
+   PASS,zero failure markers,host1951GiB/root74.7GiB. Scores remain unread.
    Counts have unequal token cost; do not infer accuracy or linear ETA from them.
    Actual sum reservations stop29.5/maximum30chip-hours,8hwall. Owner/heartbeat TTL60s,
   512GiBhost/35GiBdisk floors; owned-process cleanup only. No automatic retry.
@@ -92,13 +92,16 @@ Independent engineering-only candidate, no V28 numerical source changes:
 W_B=local/worktrees/causal-decoder-batching-v1 @b25560a, clean/pushed.
 Equal-real-length causal batching; original cache/masks/policy, separate row stops.
 All1873CPU tests+smoke/compile PASS; full log local/causal-decoder-batching-v1-checks-20261020.log.
-Bounded B0 TRAIN8 only probe ACTIVE exec19835; physical8/logical32,spare from V28's0..7.
-Control local/diagnostics/causal-decoder-batching-v1; plan fixed before accelerator launch.
-Max0.5whole-chip reserved hours,one logical core; all native distributions and forced32
-greedy sequences must match original serial decoder; no held quality scoring/model update.
-Supervisor local/analysis/supervise_causal_decoder_batching_v1_20261020.py and local/
-analysis/qualify_causal_decoder_batching_v1_20261020.py; worker.log + outer supervisor log.
-This is only a future speed candidate,not adoption into live V28 or capability evidence.
+Bounded B0 TRAIN8 probe is CLOSED. Original exec19835 failed1 on missing timing
+overwrite; all original native/forced greedy files retained and physical8 closed.
+Explicit IOv2 uses identical CPU inputs/vectors/candidate; exec91187 CLOSED0.
+Controls local/diagnostics/causal-decoder-batching-v1 and causal-decoder-batching-io-v2.
+All24 native vectors/8 exact forced32 sequences/medians independently check; root/device
+sessions empty. Warm256 actions:17.981serial,4.633B4,2.431B8 (7.396×). No full128/natural-stop
+hardware/sampling/ragged batching/global-equivalence or capability claim; no adoption into V28.
+Total0.174275chip-hours including original IO failure0.136314. Report public/protected
+validation/causal_decoder_batching_v1_20261020.json SHA3d8e816088fe268fbd248a674207718d9d1c93b9181578c191aa1e77040ec4ab.
+39public source/raw/native-witness files readback/fsync pass. Do NOT rerun old probe/producers/publisher.
 
 ## Historical handoff snapshots (not active instructions)
 

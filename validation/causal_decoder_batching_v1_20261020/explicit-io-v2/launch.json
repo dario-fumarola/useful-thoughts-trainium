@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-10-20T09:35:44.598985+00:00",
+  "identity": {
+    "pid": 1744808,
+    "start_ticks": 32363674,
+    "ppid": 1744753,
+    "pgid": 1744808,
+    "session": 1744808
+  },
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=30s",
+    "1620s",
+    "/home/ubuntu/ema-trainium/.venv/bin/python",
+    "-u",
+    "/home/ubuntu/dario/local/analysis/qualify_causal_decoder_batching_io_v2_20261020.py",
+    "run"
+  ],
+  "supervisor_sha256": "16b98e7a80bc715babf551e6ae06c63a08d8ba689bac3140e586f8ca78ea76b9",
+  "plan_sha256": "4a075213d90857a17401dfa2f16b5556831061f2825d1ab6de8c48abc1fe7061",
+  "physical_device": 8,
+  "logical_core": 32,
+  "maximum_reserved_chip_hours": 0.5
+}

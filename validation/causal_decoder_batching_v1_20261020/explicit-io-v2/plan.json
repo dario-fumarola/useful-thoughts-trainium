@@ -1,0 +1,78 @@
+{
+  "assets": {
+    "directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "files": {
+      "config.json": {
+        "bytes": 727,
+        "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+      },
+      "generation_config.json": {
+        "bytes": 138,
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+      },
+      "merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      "model.safetensors": {
+        "bytes": 3441185608,
+        "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+      },
+      "tokenizer.json": {
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      "tokenizer_config.json": {
+        "bytes": 9678,
+        "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+      },
+      "vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38"
+  },
+  "base_signature": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+  },
+  "batch_sizes": [
+    1,
+    4,
+    8
+  ],
+  "candidate_commit": "b25560a9618970a43afab349edc785d772a02604",
+  "cpu_native_sha256": "ca74e3a33d0abdc40e8f5a20950d51d2ebee9c35510672847849bd6914adbdee",
+  "explicit_io_repair": {
+    "change": "Versioned output path and allow atomic timing progress overwrite only. Same B0/inputs/native vectors/source/caps/checks/repeats/bounds. Original failed producer retained; no hidden retry.",
+    "original_closure_sha256": "dc93714d857f7014faaaabc2cbe6711ccd5e96a48a5d97e410c3114b6eb67abe",
+    "original_plan_sha256": "00593daee48014626490247d05f014b68a01f4c3cd58a54be21805b55e248f95",
+    "original_reserved_chip_hours": 0.13631417281778543
+  },
+  "forced_actions": 32,
+  "gate": "All actual full-vocabulary native comparisons pass standard gate and max error<=1e-3; all forced greedy sequences exactly match original serial decoder. Speed is descriptive.",
+  "inputs_sha256": "82745aad36b7e219e1ab0139137ff9b8438d4211aee2b29a33b0b496de742393",
+  "limits": "No model update, gold labels, held task data, quality score, runtime-stack change, or V28 evaluator modification. One spare logical core; reserved time charges its whole physical chip. Forced-length microbenchmark is not an end-to-end serving result.",
+  "logical_core": 32,
+  "maximum_reserved_chip_hours": 0.5,
+  "physical_device": 8,
+  "prompts": 8,
+  "sources": {
+    "/home/ubuntu/dario/local/analysis/qualify_causal_decoder_batching_io_v2_20261020.py": "80e56913844f8ff4bf8a179eb1b27b00d581775dcfeca268fa1aa92760886b42",
+    "/home/ubuntu/dario/local/analysis/qualify_causal_decoder_batching_v1_20261020.py": "f3599737da9a015bccdf46f90519f1081d83b45f9c483394a45e6ed5bf5e6616",
+    "/home/ubuntu/dario/local/worktrees/causal-decoder-batching-v1/train/batched_causal_decoder.py": "1a8cc92c8232af48987f465c59dec28187da8081a3b5f6bd6a679fcedd8e6d30",
+    "/home/ubuntu/dario/local/worktrees/causal-decoder-batching-v1/train/document_qa_decoder.py": "68c2a8f02ad2d3f6471ad408bc2297be0afd91f90342b15ea78ddee7f81a1392",
+    "/home/ubuntu/dario/local/worktrees/causal-decoder-batching-v1/train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "/home/ubuntu/dario/local/worktrees/causal-decoder-batching-v1/train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "/home/ubuntu/dario/local/worktrees/causal-decoder-batching-v1/train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "/home/ubuntu/dario/local/worktrees/causal-decoder-batching-v1/weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87"
+  },
+  "status": "PREPARED_ENGINEERING_TRAIN_ONLY_NOT_SCIENTIFIC_EVALUATION",
+  "timed_repeats": 3,
+  "train_sha256": "e099948826aaf7e262c06beabdd77e78c126cce8fdeed2714fa42db7c2d2d630"
+}
