@@ -1,19 +1,19 @@
-# Status — 2026-10-20 02:13 UTC
+# Status — 2026-10-20 02:54 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
 ID: controlled-computation-v28; six fresh1.7B models,32,768questions×4/4,096updates/two data-order seeds.
-First seed direct/trace/pause first64 active on physical0/1/2; frozen source ce04236, no held outcome.
-Exec sessions5455/57232/69601; timeoutPIDs1562247/1562374/1562543, starts29688078/29688196/29688312.
+First seed direct/trace/pause continues64→4096 on physical0/1/2; frozen source ce04236, no held outcome.
+All three actual full64 model/master/moment/order audits and all12 fresh-process optimizer restoration digests PASS.
+Controllers exec59127/2442/51152; timeoutPIDs1575771/1575898/1576066, starts29821314/29821431/29821548.
 Control local/diagnostics/permutation-program-v28-study-v1; outputs local/science-runs/controlled-computation-v28.
-Initial64 deadline02:44UTC; whole first-wave anchor06:54UTC. Terminal continuation requires independent full64 audits.
-Prior actual8-update/full4→restore→full8 and28-attempt decoder qualifications PASS; no learned-capability result.
-All1,855 tests,131,072native TRAIN packs,88,064data/387,072context checks PASS; unchanged TRAIN bytes.
-Primarycomposition9,216families/18,432questions; two secondary panels1,024families each; inference/training claims separate.
-Readback/fsync-verified rolling state keeps terminal models/model64/latest full per arm. Historical originals/cache untouched.
-Five inactive EBS optimizer duplicates retired after fresh both-side/current-full readback;96.2GiB reclaimed, all originals/models retained.
-Design validation/permutation_program_v28_design_20261020.json; first64 release validation/permutation_program_v28_stage64_release_20261020.json.
-Next monitor/checkpoint, audit actual full64/order/masks/numerics, then review first-wave terminal continuation; no automatic retry.
+Whole first-wave deadline06:54UTC; fixed terminal primary. At02:49 all three pass536updates, about1.94s/update.
+Primarycomposition9,216paired families/18,432questions; interpolation and length extrapolation remain separate.
+Prior actual8-update/restore and28-attempt decoder qualifications PASS; recovery is not learned capability.
+Readback/fsync rolling retention keeps terminal models/model64/latest full per arm; historical originals/cache untouched.
+Report: validation/permutation_program_v28_continuation_20261020.json; first64/recovery sources and receipts protected.
+Evaluation CPU source passes1,859tests and15,360actual-tokenizer input checks; zero held model forwards.
+Next monitor first1024 export; after physical terminal closure run independent --phase terminal audits before seed2.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?

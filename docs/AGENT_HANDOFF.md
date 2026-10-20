@@ -1,35 +1,35 @@
-<!-- Live update 2026-10-20T02:13:09.197471+00:00 -->
-V28 science first-seed stage64 is ACTIVE; no terminal continuation or held model outcome.
-Frozen study source/worktree ce04236: `local/worktrees/controlled-computation-v28-study`.
-All1855tests pass (tests.PaV2GN); clean source. Full design is public.
-C=`local/diagnostics/permutation-program-v28-study-v1`; plan.json,all six protocols,
-`stage64-release-seed2026102028.json` and supervise-job.py immutable.
-Direct/trace/pause controllers exec5455/57232/69601 on physical0/1/2 respectively.
-Owned timeout PIDs/startticks1562247/29688078,1562374/29688196,1562543/29688312.
-Outputs EBS `local/science-runs/controlled-computation-v28/program-<arm>-seed2026102028-v1`.
-First64 hard02:44UTC; first-wave whole anchor06:54UTC. No automatic retry.
-Next monitor progress/closure, then run for each arm (USE_TORCH_XLA=0, frozen W PYTHONPATH):
-`python local/analysis/audit_permutation_program_v28_job_20261020.py --key program-<arm>-seed2026102028-v1 --phase first64`.
-Checkerhelper `local/analysis/permutation_program_state_audit_v28_20261020.py` is frozen;
-checks independent order/counts/full model/master/moments/cast/native/model64.
-After all three pure-arm full64 pass, prepare a NEW terminal execution release
-(status RELEASED_V28_SCIENCE_TERMINAL4096) and resume64 with attempt-id planned-restart-64.
-Use same protocol/source/outputs, preserve metric64 prefix, deadlines<=06:54UTC. CLI
-requires --execution-release; release jobs include protocol_sha256,resume_file,
-resume_COMPLETE_sha256,attempt_id. No held outcomes before all six terminal models.
-Whole prospective budget30training/18eval reserved chip-hours. Two waves, seed2029 later.
-Science save root is EBS; three latest full states + one serialized staging slot fit.
-Rolling helper retains all terminal models,all model64 (NVMe-CPT),latest full per arm;
-old new-study intermediate payloads can retire after readback. Prior-seed terminal
-optimizer retirement also requires its independent terminal-full-audit.json marker.
-Global export lease uses HOST phase files (installed xm.rendezvous is a device barrier).
-No extra waiting device barriers were added outside existing saver.
+<!-- Current handoff 2026-10-20 02:54 UTC; older entries below are historical -->
+V28 first-seed terminal continuation64→4096 ACTIVE, no held outcomes.
+Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
+All three actual full64 model/master/moment/order/native audits and12 actual
+fresh-process optimizer restoration digests independently PASS. Initial64 jobs closed0.
+Report validation/permutation_program_v28_continuation_20261020.json is protected.
+C=local/diagnostics/permutation-program-v28-study-v1, terminal-release-seed2026102028.json.
+Direct/trace/pause exec59127/2442/51152; owned timeout PID/startticks
+1575771/29821314,1575898/29821431,1576066/29821548; physical0/1/2.
+Outputs EBS local/science-runs/controlled-computation-v28/program-<arm>-seed2026102028-v1.
+At02:49 updates539/536/536, ~1.94s/update, root86GiB free/host~1.7TiB available.
+Whole first-wave deadline06:54UTC, no automatic retry or performance stopping.
+Next watch first1024 export/readback/rotation; do not rush serialized exports (~207s).
+After all three controllers physically close, independently audit each terminal:
+`USE_TORCH_XLA=0 python local/analysis/audit_permutation_program_v28_job_20261020.py --key program-<arm>-seed2026102028-v1 --phase terminal`
+Source env.sh then override PYTHONPATH to frozen W plus local/test-deps; set OMP/MKL8.
+Need terminal-full-audit.json PASS before seed2029 can retire prior terminal optimizer.
+Then release fresh second-seed stage64/audit/restore/4096, same source/data/budget.
+Do not run original first64 or continuation producers again; immutable receipts exist.
+Evaluation W_E=local/worktrees/controlled-computation-v28-eval remains uncommitted:
+new fixed-cohort wrapper/readout + optional generic decoder/prefill hook; no kernel/parser change.
+All1859checks pass tests.TosKjI, CPU readiness-v2 checks15360actual-tokenizer contexts,
+zero forwards. C_E=local/diagnostics/permutation-program-v28-evaluation-CPU-v1.
+Finish readout/release preparation while training proceeds; all6audited terminals required
+before held model inference. Primary9,216families, secondary1,024each; family bootstrap,
+training/inference gates separate. No prompt/checkpoint selection or old result rewrite.
+Latest full per arm/development64/terminal models retained; global EBS export lease,
+35GiB root and512GiB host floors; historical originals/cache untouched.
+Recovery proof already computed before old64 payloads rotate; first64 manifests remain.
+All full protection same-instance EBS, not off-instance. No cloud/stack/8B/TEST changes.
 
-Storage audit56386 and separate retirement both closed0:112inactiveEBSrankduplicates,
-103,280,927,056bytes reclaimed; every historical original full/model and currentV26
-full backup preserved. Root now~155GiB free before new science. No old original/cache deletion.
-All preliminary dataset/packing/train8/decoder28/CPU/source/control evidence public/protected.
-Decoder28 has16caps in unchangedB0 TRAIN format; no learned-capability claim.
+## Historical handoff snapshots (not active instructions)
 
 <!-- Current handoff: 2026-10-20T01:59:31.774293+00:00 -->
 V28 has no learned-capability result yet. Both actual training8-update/full4→restore→full8

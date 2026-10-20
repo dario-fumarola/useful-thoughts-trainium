@@ -1,0 +1,40 @@
+{
+  "status": "PASS_FIRST_SEED_ACTUAL64_AUDITS_AND_RESTORES_CONTINUATION_ACTIVE",
+  "experiment_id": "controlled-computation-v28",
+  "published_utc": "2026-10-20T02:49:57.178636+00:00",
+  "source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "deadline_utc": "2026-10-20T06:54:21.997434+00:00",
+  "jobs": [
+    "program-direct-seed2026102028-v1",
+    "program-trace-seed2026102028-v1",
+    "program-pause-seed2026102028-v1"
+  ],
+  "first64_all_model_master_moment_and_order_audits": true,
+  "actual_fresh_process_restores": 12,
+  "all_optimizer_digests_independently_recomputed": true,
+  "planned_terminal_step": 4096,
+  "held_model_outcomes": 0,
+  "files": {
+    "validation/permutation_program_v28_continuation_20261020/program-direct-seed2026102028-v1-first64-audit.json": "75619f0c3dcf5c4237ca12226fdc434387a640c50618d70c39a0202e77fba61e",
+    "validation/permutation_program_v28_continuation_20261020/program-direct-seed2026102028-v1-recovery-audit.json": "1ee90e0a3d166c554aa9182f4f2b41b9bed1ff04fe45cb1f943b9589c4bc0239",
+    "validation/permutation_program_v28_continuation_20261020/program-direct-seed2026102028-v1-continuation-launch.json": "de0239d8d9351c1f945c4dd66ad00b1cc67a4e2bb8807df33188c079c75185e2",
+    "validation/permutation_program_v28_continuation_20261020/program-trace-seed2026102028-v1-first64-audit.json": "fc84c6809f20fd5f60e584cb7df0f63e77d745793284055509adc8ebe7b0ed7b",
+    "validation/permutation_program_v28_continuation_20261020/program-trace-seed2026102028-v1-recovery-audit.json": "080755e796f4362f284269efebc3e937c673f0a97a507027d19328a1b38218e4",
+    "validation/permutation_program_v28_continuation_20261020/program-trace-seed2026102028-v1-continuation-launch.json": "0de1424c15804723032406c438b2eeaeba993640acd6b4a26d7f6180210ca164",
+    "validation/permutation_program_v28_continuation_20261020/program-pause-seed2026102028-v1-first64-audit.json": "38ef3022ecbf5253dce1119adb6cc2774ab49d4be0f0a35e3cfa57058d8c54e9",
+    "validation/permutation_program_v28_continuation_20261020/program-pause-seed2026102028-v1-recovery-audit.json": "3f5cad74005e73e71f5543a6c0573b54c6a3d701eece31b427525b3cdd9f2b43",
+    "validation/permutation_program_v28_continuation_20261020/program-pause-seed2026102028-v1-continuation-launch.json": "74e62691985b3a3cd11791ffe4bd93b2b0f092388fbde30b0bec033440aad782",
+    "validation/permutation_program_v28_continuation_20261020/terminal-release.json": "6ab96c91e655e3967488a31450fb7dddcd47f1074b39c3dd3933f30f68005ad4",
+    "validation/permutation_program_v28_continuation_20261020/all-recoveries.json": "48e64b3bebd450c4442443e1d9fa8b03007db03db1b71a959d46962775d6a752",
+    "validation/permutation_program_v28_continuation_20261020/permutation_program_state_audit_v28_20261020.py": "fedd7ab64ba533bd7a61b6b72d9412d2984566f655b5072783b1d0c3f23c12dd",
+    "validation/permutation_program_v28_continuation_20261020/audit_permutation_program_v28_job_20261020.py": "b10f824020368d805cbaafc12a4826f23a49eab2b2200ca7fe40636690c5a2e3",
+    "validation/permutation_program_v28_continuation_20261020/check_permutation_program_v28_recovery_20261020.py": "9097b2fc2c797953619025ee0d378c1f702317bf2e4828f56a8f5e475822a5da",
+    "validation/permutation_program_v28_continuation_20261020/release_permutation_program_v28_continuation_20261020.py": "91866812bb408eeb82a5dd59426084a721f7eb830d84ea85bf235a7680e95880"
+  },
+  "limits": [
+    "Qualification and recovery are not scientific utility results.",
+    "No uninterrupted-trajectory or immediate independent device-RNG readback claim.",
+    "All six fixed terminal models are required before held model outcomes.",
+    "Full checkpoints remain same-instance EBS; development64 models are also retained on NVMe."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "PASS_INDEPENDENT_ACTUAL64_RESTORE_DIGESTS",
+  "utc": "2026-10-20T02:36:13.659930+00:00",
+  "model": "program-direct-seed2026102028-v1",
+  "original64_COMPLETE_sha256": "9cafff06c95cc6212be4d943ebd96fd20469cedbd7a99e4458b1e7558819e9c2",
+  "all4_actual_optimizer_digests_independently_recomputed": true,
+  "ranks": [
+    {
+      "rank": 0,
+      "full_digest_equal": true,
+      "restored_receipt_sha256": "0cf614b5d598c2d5ef6717becd4b83fc931e93112e60c5528b7602de9832ed79"
+    },
+    {
+      "rank": 1,
+      "full_digest_equal": true,
+      "restored_receipt_sha256": "486a9c0db2a12c192e581c8218eb53eadafa1902e03dfea9213d06f0170a1c53"
+    },
+    {
+      "rank": 2,
+      "full_digest_equal": true,
+      "restored_receipt_sha256": "8751a23000ba58d85725e7939f551f24b6283ea0a26804c1ed8b70589415c206"
+    },
+    {
+      "rank": 3,
+      "full_digest_equal": true,
+      "restored_receipt_sha256": "b50b94e2a987521c2365a54432a32e2dab92e36378357dafda8dc835fca4b3e8"
+    }
+  ],
+  "source_sha256": "9097b2fc2c797953619025ee0d378c1f702317bf2e4828f56a8f5e475822a5da",
+  "limits": "Full state before reset verified;no uninterrupted trajectory or independent immediate device-RNG readback claim."
+}

@@ -5,7 +5,7 @@
    Selector1 direct138/255 versus coefficient-matched format1 direct120:
    +7.1pp[2.4,11.8], passing the developmental criterion. Format0.1 direct127 is
    still the stronger direct baseline; selector1−format0.1 remains+4.3pp[−0.4,9.4].
-   All510 new GEN/256 ordinary cases check/protect; no active accelerator jobs or retries.
+   All510 new GEN/256 ordinary cases check/protect; no V26 jobs or retries remain.
    V25's failed fitting gate and inconclusive extra-ID contrasts stay unchanged.
 
 1. Prepare the north star's controlled-computation reference, V28, CPU first.
@@ -25,14 +25,18 @@
    Decoder check complete:28attempts/0errors,7cache controls,32CPU greedy actions PASS.
    Expanded study data CPU checks pass; TRAIN bytes identical. Primarycomposition
    uses9,216families/18,432questions; original1,024families per secondary panel.
-   Frozen study source ce04236/full1855checks PASS. First-seed direct/trace/pause
-   first64 ACTIVE on physical0/1/2; exec5455/57232/69601, deadline02:44UTC.
+   Frozen training source ce04236/full1855checks PASS. First-seed direct/trace/pause
+   full64 audits and all12 actual restoration digests PASS; continuation64→4096
+   ACTIVE on physical0/1/2, exec59127/2442/51152, whole deadline06:54UTC.
    C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
-   local/science-runs/controlled-computation-v28. No terminal continuation released yet.
-   Next inspect actual closure; run local/analysis/audit_permutation_program_v28_job_20261020.py
-   from frozen study PYTHONPATH for each --key ... --phase first64. All-state audit
-   must pass before terminal continuation under first-wave deadline06:54UTC.
-   Only released first64 runs are active. No held inference/autonomous RL/capability claim follows.
+   local/science-runs/controlled-computation-v28. Terminal release is fixed.
+   Monitor periodic1024 exports and bounded memory/space. After physical closure,
+   run local/analysis/audit_permutation_program_v28_job_20261020.py with frozen
+   study PYTHONPATH for each --key ... --phase terminal. All three terminal
+   audits precede fresh seed2026102029 stage64/restore/4096 under the same recipe.
+   Evaluation CPU source passes1859tests/15360native input checks; finish frozen
+   readout/release preparation while training proceeds. No held model outcomes
+   until all six terminals audited. No autonomous RL/capability claim follows.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

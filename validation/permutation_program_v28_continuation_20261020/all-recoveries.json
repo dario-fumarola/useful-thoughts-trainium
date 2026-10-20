@@ -1,0 +1,98 @@
+{
+  "status": "PASS_ALL_THREE_ACTUAL64_RESTORES",
+  "models": {
+    "program-direct-seed2026102028-v1": {
+      "status": "PASS_INDEPENDENT_ACTUAL64_RESTORE_DIGESTS",
+      "utc": "2026-10-20T02:36:13.659930+00:00",
+      "model": "program-direct-seed2026102028-v1",
+      "original64_COMPLETE_sha256": "9cafff06c95cc6212be4d943ebd96fd20469cedbd7a99e4458b1e7558819e9c2",
+      "all4_actual_optimizer_digests_independently_recomputed": true,
+      "ranks": [
+        {
+          "rank": 0,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "0cf614b5d598c2d5ef6717becd4b83fc931e93112e60c5528b7602de9832ed79"
+        },
+        {
+          "rank": 1,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "486a9c0db2a12c192e581c8218eb53eadafa1902e03dfea9213d06f0170a1c53"
+        },
+        {
+          "rank": 2,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "8751a23000ba58d85725e7939f551f24b6283ea0a26804c1ed8b70589415c206"
+        },
+        {
+          "rank": 3,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "b50b94e2a987521c2365a54432a32e2dab92e36378357dafda8dc835fca4b3e8"
+        }
+      ],
+      "source_sha256": "9097b2fc2c797953619025ee0d378c1f702317bf2e4828f56a8f5e475822a5da",
+      "limits": "Full state before reset verified;no uninterrupted trajectory or independent immediate device-RNG readback claim."
+    },
+    "program-trace-seed2026102028-v1": {
+      "status": "PASS_INDEPENDENT_ACTUAL64_RESTORE_DIGESTS",
+      "utc": "2026-10-20T02:36:25.978375+00:00",
+      "model": "program-trace-seed2026102028-v1",
+      "original64_COMPLETE_sha256": "12fac19ba09dfa451c2a21cfe870f7b14c136f436029f51515c48c42ae59d653",
+      "all4_actual_optimizer_digests_independently_recomputed": true,
+      "ranks": [
+        {
+          "rank": 0,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "0cc37bf81fc37a2bd4139de869aff0e5dfc7e397fefd20471c5e677348103b7d"
+        },
+        {
+          "rank": 1,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "cd88b8598a3b7d5eaf6285af1bf76a2b2001288aaba9c8b567d4c8be55b16bd7"
+        },
+        {
+          "rank": 2,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "f9bfa9f7eafdbcf0f329c7fceff313e09500e6b01add17aa4e03d9a2aa915eda"
+        },
+        {
+          "rank": 3,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "f3ecb13a975afa60eb613ce4f694da93ea319b4faedef022130e52fdd2753ab2"
+        }
+      ],
+      "source_sha256": "9097b2fc2c797953619025ee0d378c1f702317bf2e4828f56a8f5e475822a5da",
+      "limits": "Full state before reset verified;no uninterrupted trajectory or independent immediate device-RNG readback claim."
+    },
+    "program-pause-seed2026102028-v1": {
+      "status": "PASS_INDEPENDENT_ACTUAL64_RESTORE_DIGESTS",
+      "utc": "2026-10-20T02:36:38.290171+00:00",
+      "model": "program-pause-seed2026102028-v1",
+      "original64_COMPLETE_sha256": "04bb7098e25a94a59fb8a8acc452f20561884e7abf00dafdec1c837efca6c98a",
+      "all4_actual_optimizer_digests_independently_recomputed": true,
+      "ranks": [
+        {
+          "rank": 0,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "d31bab892e7e8ba2f82e2d6a5dd38d585e2bcd2ed62214d7903de4164b299ad4"
+        },
+        {
+          "rank": 1,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "2fa608d565e22117d1257ca854a11ccc71cb59fe89547a5e35026727708f6fab"
+        },
+        {
+          "rank": 2,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "bc2a1ce97fba874a6ef952a7dd78e5c6cdb4f78e893df1a9d46197817e34ad13"
+        },
+        {
+          "rank": 3,
+          "full_digest_equal": true,
+          "restored_receipt_sha256": "65203b0a77fa12b68c2f3808c183e79d729ae055512d240d63b57f145921dddd"
+        }
+      ],
+      "source_sha256": "9097b2fc2c797953619025ee0d378c1f702317bf2e4828f56a8f5e475822a5da",
+      "limits": "Full state before reset verified;no uninterrupted trajectory or independent immediate device-RNG readback claim."
+    }
+  }
+}

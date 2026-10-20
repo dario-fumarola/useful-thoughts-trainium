@@ -1582,3 +1582,14 @@ CPU-only repair retains every provided paragraph and preserves failure evidence.
 V26 remains promising developmental evidence. Continue the roadmap's controlled
 computation reference with variable-depth verified programs and a trained pause
 competitor; synthetic mechanism results will not be called general pretraining.
+
+
+2026-10-20 02:54 UTC — Continue the fixed computation study after actual recovery
+All three first-seed64 checkpoints pass independent whole model/master/moment,
+mask/count/order and native checks. All12 actual restored optimizer digests match
+freshly recomputed saved state. Continue64→4096 under the original06:54UTC wave
+deadline; all six terminal models precede held outcomes. This is recovery evidence,
+not uninterrupted-trajectory parity or scientific utility. The live evaluator
+uses the qualified native decoder without a numerical/parser change, fixed cohorts,
+complete failure denominators and separate training/inference claims. Preserve
+the V26 developmental result and V27 data-bound qualification as stated by review.
