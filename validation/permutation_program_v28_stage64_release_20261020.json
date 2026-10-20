@@ -1,0 +1,26 @@
+{
+  "status": "FIRST_SEED_STAGE64_RELEASED_NO_TERMINAL_CONTINUATION_YET",
+  "experiment_id": "controlled-computation-v28",
+  "source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "jobs": [
+    "program-direct-seed2026102028-v1",
+    "program-trace-seed2026102028-v1",
+    "program-pause-seed2026102028-v1"
+  ],
+  "physical_chips": [
+    0,
+    1,
+    2
+  ],
+  "deadline_utc": "2026-10-20T02:44:21.997434+00:00",
+  "wave_terminal_deadline_utc": "2026-10-20T06:54:21.997434+00:00",
+  "invariants": "No held outcome before all six terminal models. First64 all-state audits precede any terminal continuation. Fixed data/seeds/source, no automatic retry or performance selection.",
+  "files": {
+    "validation/permutation_program_v28_stage64_release_20261020/program-direct-seed2026102028-v1.json": "fb4e06c69592efb07f91fcee671a474aa62363fdf2be8a1ef332eea520356052",
+    "validation/permutation_program_v28_stage64_release_20261020/program-trace-seed2026102028-v1.json": "9af9a3ff2e52667e5f0d7b2fe4ad3e6a03cbad6e31512060050622e6fa3818ca",
+    "validation/permutation_program_v28_stage64_release_20261020/program-pause-seed2026102028-v1.json": "1fd8cbfd322e7d0ec017a116ba7aaf85d7bc2f7bbb544d9923d6ec238c0160b9",
+    "validation/permutation_program_v28_stage64_release_20261020/plan.json": "b5beef19694654755e328739a55c05bf9c670074c80cfe2b769f6eb25efd96ef",
+    "validation/permutation_program_v28_stage64_release_20261020/supervise-job.py": "04efa13878868e8eaed87222cf1938f8f6e0263392a815fbb32fe7c129c17416",
+    "validation/permutation_program_v28_stage64_release_20261020/stage64-release-seed2026102028.json": "bc51411dd76bcb320af55d9b2a2e3fde463028e06d4b61e2ee7131e01255163e"
+  }
+}

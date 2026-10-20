@@ -1,18 +1,19 @@
-# Status — 2026-10-20 01:59 UTC
+# Status — 2026-10-20 02:13 UTC
 
-## Active: controlled computation CPU reference
-Question: can verified state supervision help beyond direct training and trained pauses?
-ID: controlled-computation-v28; single-model permutation execution, variable depth, no learning result.
-CPU data:32,768 TRAIN questions/16,384 families; three separate DEV panels each2,048/1,024.
-All38,912 independent executions/counterfactual/split/native-token checks PASS; longest full sequence155.
-All131,072 TRAIN packs PASS: equal answer weights/labels; disjoint trace loss; provided pauses have no prediction loss.
-All1,838 tests plus CPU smoke/compile PASS. Data/source/evidence readback/fsync protected on same-instance EBS.
-Trace treatment changes auxiliary targets and some answer-training contexts; compare complete recipes.
-Adapter permits only eight mixed-view diagnostic updates, save4/restart then8; no learning study released.
-Eight actual updates/full4→new-process restore→full8 PASS independent all-model/master/moment/order audit;0.196chip-hours.
-Reports: permutation_program_v28_CPU_readiness_20261020.json; permutation_program_v28_training_hardware_20261020.json.
-Decoder TRAIN4/28 attempts PASS:0errors,7cache checks,32independent CPU greedy actions;16caps are retained, not capability evidence.
-Extended primary composition9,216families before outcomes;88,064 data/387,072 context checks PASS; original TRAIN bytes unchanged.
+## Active: controlled computation reference
+Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
+ID: controlled-computation-v28; six fresh1.7B models,32,768questions×4/4,096updates/two data-order seeds.
+First seed direct/trace/pause first64 active on physical0/1/2; frozen source ce04236, no held outcome.
+Exec sessions5455/57232/69601; timeoutPIDs1562247/1562374/1562543, starts29688078/29688196/29688312.
+Control local/diagnostics/permutation-program-v28-study-v1; outputs local/science-runs/controlled-computation-v28.
+Initial64 deadline02:44UTC; whole first-wave anchor06:54UTC. Terminal continuation requires independent full64 audits.
+Prior actual8-update/full4→restore→full8 and28-attempt decoder qualifications PASS; no learned-capability result.
+All1,855 tests,131,072native TRAIN packs,88,064data/387,072context checks PASS; unchanged TRAIN bytes.
+Primarycomposition9,216families/18,432questions; two secondary panels1,024families each; inference/training claims separate.
+Readback/fsync-verified rolling state keeps terminal models/model64/latest full per arm. Historical originals/cache untouched.
+Five inactive EBS optimizer duplicates retired after fresh both-side/current-full readback;96.2GiB reclaimed, all originals/models retained.
+Design validation/permutation_program_v28_design_20261020.json; first64 release validation/permutation_program_v28_stage64_release_20261020.json.
+Next monitor/checkpoint, audit actual full64/order/masks/numerics, then review first-wave terminal continuation; no automatic retry.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?

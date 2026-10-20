@@ -25,9 +25,14 @@
    Decoder check complete:28attempts/0errors,7cache controls,32CPU greedy actions PASS.
    Expanded study data CPU checks pass; TRAIN bytes identical. Primarycomposition
    uses9,216families/18,432questions; original1,024families per secondary panel.
-   Study adapter/rolling retention is under CPU review in local/worktrees/controlled-computation-v28-study.
-   Next finish full checks, freeze the six-model protocol/budget and stage64-only release.
-   No learning study, autonomous RL or capability claim is released by this queue.
+   Frozen study source ce04236/full1855checks PASS. First-seed direct/trace/pause
+   first64 ACTIVE on physical0/1/2; exec5455/57232/69601, deadline02:44UTC.
+   C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
+   local/science-runs/controlled-computation-v28. No terminal continuation released yet.
+   Next inspect actual closure; run local/analysis/audit_permutation_program_v28_job_20261020.py
+   from frozen study PYTHONPATH for each --key ... --phase first64. All-state audit
+   must pass before terminal continuation under first-wave deadline06:54UTC.
+   Only released first64 runs are active. No held inference/autonomous RL/capability claim follows.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

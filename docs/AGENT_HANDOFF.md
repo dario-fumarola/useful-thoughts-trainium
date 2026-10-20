@@ -1,3 +1,36 @@
+<!-- Live update 2026-10-20T02:13:09.197471+00:00 -->
+V28 science first-seed stage64 is ACTIVE; no terminal continuation or held model outcome.
+Frozen study source/worktree ce04236: `local/worktrees/controlled-computation-v28-study`.
+All1855tests pass (tests.PaV2GN); clean source. Full design is public.
+C=`local/diagnostics/permutation-program-v28-study-v1`; plan.json,all six protocols,
+`stage64-release-seed2026102028.json` and supervise-job.py immutable.
+Direct/trace/pause controllers exec5455/57232/69601 on physical0/1/2 respectively.
+Owned timeout PIDs/startticks1562247/29688078,1562374/29688196,1562543/29688312.
+Outputs EBS `local/science-runs/controlled-computation-v28/program-<arm>-seed2026102028-v1`.
+First64 hard02:44UTC; first-wave whole anchor06:54UTC. No automatic retry.
+Next monitor progress/closure, then run for each arm (USE_TORCH_XLA=0, frozen W PYTHONPATH):
+`python local/analysis/audit_permutation_program_v28_job_20261020.py --key program-<arm>-seed2026102028-v1 --phase first64`.
+Checkerhelper `local/analysis/permutation_program_state_audit_v28_20261020.py` is frozen;
+checks independent order/counts/full model/master/moments/cast/native/model64.
+After all three pure-arm full64 pass, prepare a NEW terminal execution release
+(status RELEASED_V28_SCIENCE_TERMINAL4096) and resume64 with attempt-id planned-restart-64.
+Use same protocol/source/outputs, preserve metric64 prefix, deadlines<=06:54UTC. CLI
+requires --execution-release; release jobs include protocol_sha256,resume_file,
+resume_COMPLETE_sha256,attempt_id. No held outcomes before all six terminal models.
+Whole prospective budget30training/18eval reserved chip-hours. Two waves, seed2029 later.
+Science save root is EBS; three latest full states + one serialized staging slot fit.
+Rolling helper retains all terminal models,all model64 (NVMe-CPT),latest full per arm;
+old new-study intermediate payloads can retire after readback. Prior-seed terminal
+optimizer retirement also requires its independent terminal-full-audit.json marker.
+Global export lease uses HOST phase files (installed xm.rendezvous is a device barrier).
+No extra waiting device barriers were added outside existing saver.
+
+Storage audit56386 and separate retirement both closed0:112inactiveEBSrankduplicates,
+103,280,927,056bytes reclaimed; every historical original full/model and currentV26
+full backup preserved. Root now~155GiB free before new science. No old original/cache deletion.
+All preliminary dataset/packing/train8/decoder28/CPU/source/control evidence public/protected.
+Decoder28 has16caps in unchangedB0 TRAIN format; no learned-capability claim.
+
 <!-- Current handoff: 2026-10-20T01:59:31.774293+00:00 -->
 V28 has no learned-capability result yet. Both actual training8-update/full4→restore→full8
 qualification and decoder28-attempt qualification PASS independent audits. No active
