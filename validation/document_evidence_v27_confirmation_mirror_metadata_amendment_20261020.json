@@ -1,0 +1,29 @@
+{
+  "status": "CPU_ONLY_MIRROR_PROVENANCE_CHECK_BEFORE_DEV_METADATA_NO_MODELS",
+  "utc": "2026-10-20T00:52:46.805992+00:00",
+  "original_plan_sha256": "34123ee3274beb8e3664f2115f5e6cd691c6a2a7eb19306d3ef527857d0dc022",
+  "reason": "Author single raw DEV download returned Google Drive quota HTML; zero question rows opened. Do not retry quota or download a combined archive.",
+  "mirrors": [
+    {
+      "repo": "dgslibisey/MuSiQue",
+      "revision": "c8f4f8c9465fb69d31a8eae894c3fd509c4ca321"
+    },
+    {
+      "repo": "bdsaglam/musique",
+      "revision": "22873a405dd809893b22ada0b499299fb612d2df"
+    }
+  ],
+  "files": [
+    "Both mirrors: musique_ans_v1.0_dev.jsonl only.",
+    "First mirror: musique_ans_v1.0_train.jsonl only for full source projection comparison."
+  ],
+  "download_bound_MiB": 450,
+  "provenance_gates": [
+    "Both pinned mirrors must agree on DEV file bytes, or stop.",
+    "Every official TRAIN row must match author raw TRAIN ID/question/ordered paragraphs (title/text/support)/canonical answer and original component ID sequence, or stop.",
+    "Do not inspect new examples/answers manually; use metadata aggregates only. No author predictions or TEST files.",
+    "Official format omits source dataset namespace for original component IDs; use bare IDs conservatively for overlap checks, report this difference."
+  ],
+  "fixed": "Same metadata feasibility checks, qualified context window, strict previous-visible-evidence exclusions, independence counts and desired sample size. No model evaluation/training or reduced-power fallback.",
+  "limits": "Pinned community mirrors are not an author-hosted source. Cross-mirror agreement and complete TRAIN comparison test provenance; this is explicitly a different serialization path, not author-raw bytes."
+}
