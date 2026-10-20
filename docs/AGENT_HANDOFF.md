@@ -38,6 +38,7 @@ E/execution-plan.json prepares7 disjoint physical groups,serial phases permodel 
 Carchive=local/diagnostics/backup-model-lossless-archive-v2; source local/analysis/archive_backup_model_duplicates_v2_20261020.py. All NVMe/RAM originals untouched, each archive fully SHA restored before backup duplicate retirement.
 Do not retry closed producers/agents. Keep watching3training continuations,checkpoint queue and backup archiver while completing evaluation supervisor/release preparation.
 
+Analysis preparation17:12UTC: final1932CPU checks pass; current results module has native component masks,strict original TRAIN/reference/closure pins,unchanged separate gates and explicit secondary own-versus-B0/format comparisons. Independent checker local/analysis/check_real_cpt_scaffold_v29_readout_20261020.py is pycompiled/prepared,NOT RUN; it reconstructs all contrast bootstraps,scalar denominators/decisions and later98 fixedHFheldspots. E/analysis-plan.json binds these exact sources before any held outcome. No more analysis/prompt changes are needed while training runs.
 ## Historical handoff snapshots (not active instructions)
 
 <!-- Current handoff 2026-10-20 13:05 UTC; earlier entries below are historical -->

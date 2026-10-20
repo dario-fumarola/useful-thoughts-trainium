@@ -1,0 +1,26 @@
+{
+  "CPU_checks": 1932,
+  "CPU_log_sha256": "b2a944999f83ab1d7fb950f3f683d1728e07550dcd74ce0ced3645ee0e868b39",
+  "analysis": "All7 fixed terminal/B0 models,6 math likelihood modes,full527 ordinary transitions,raw/empty/own scalar attempts; two orders kept separate.",
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 2026102029,
+  "components": "Original native numeral,complete numeral+boundary,boundary/whitespace and remaining16-token tail; masks account for merged signs and never re-encode score targets.",
+  "full_source_document_pairs": 768,
+  "independent_checker": {
+    "actual_complete_readout_execution": "PENDING",
+    "path": "/home/ubuntu/dario/local/analysis/check_real_cpt_scaffold_v29_readout_20261020.py",
+    "sha256": "bc92ab7a0dc8914086a433fffb14a8efc6b5f1f6934d1acd3df12eaab04e8b94",
+    "syntax_check": "PASS"
+  },
+  "independent_reconstruction": "All paired contrasts and decision aliases,all original scalar outcomes/counts,and98 fixed-hash independent HF score spots; partial witnesses flushed before assertions.",
+  "inference": "Separate originally declared secondary gate; actual own predictions versus B0 and format control also reported as secondary comparisons,not changed gates.",
+  "limits": "Implementation/CPU checks only. No held outcome or claim of scientific validation; no prompt,checkpoint,parser or endpoint selected by results.",
+  "ordinary_source_document_pairs": 4096,
+  "primary_gates": "Unchanged original design: Traw versus both controls and separately B0 >=.25nat/full16 with positive95lower in each order; ordinary retention upper95<=.03nat/token.",
+  "source_files": {
+    "train/real_cpt_readout_results.py": "6d4ce4703476c266e371306ec4c288b10856c7ba6f6aa13dd1bec754d73a12a3",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "FROZEN_ANALYSIS_IMPLEMENTATION_BEFORE_HELD_MODEL_OUTCOMES"
+}
