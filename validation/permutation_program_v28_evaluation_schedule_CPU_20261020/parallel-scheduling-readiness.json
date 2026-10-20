@@ -1,0 +1,23 @@
+{
+  "status": "PASS_HOST_ONLY_BUDGET_ACCOUNTING_AND_REAL_OWNER_DEATH_CHECK",
+  "model_calls": 0,
+  "accelerator_calls": 0,
+  "maximum_chips": 8,
+  "maximum_reserved_chip_hours": 18,
+  "stop_at_chip_hours": 17.5,
+  "heartbeat_TTL_seconds": 60,
+  "simultaneous_stale_monitor_shutdown_bound_chip_hours": 0.23333333333333334,
+  "sequential_dead_controller_cleanup_bound_chip_hours": 0.45,
+  "actual_owned_sleep_process_started_and_closed": true,
+  "elapsed_seconds": 0.0020348469843156636,
+  "sources": {
+    "permutation_program_v28_eval_budget_20261020.py": "f14117da1601c55454bd1d072ab7bcc806fafabc074f538602db239fed3729c0",
+    "run_permutation_program_v28_fixed_evaluation_20261020.py": "5aedbd31b8a269d3eae0af127aae211cb6d2eb2618d2d2a464c57a93fd995ea0",
+    "supervise_permutation_program_v28_generation_group_20261020.py": "24e5617eddcada07f81f3f45d8936f531d87964d811ccaad8a0f4bee8e5ad52a"
+  },
+  "limits": [
+    "CPU accounting/liveness mechanics,not an eight-chip hardware qualification or scientific result.",
+    "Frozen numerical decoder/four independent workers per chip unchanged; each future worker must pass own-model/native/cache checks.",
+    "Training remains capped at three chips. Evaluation charges actual launched groups until original process closure."
+  ]
+}

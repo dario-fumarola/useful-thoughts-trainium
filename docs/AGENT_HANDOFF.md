@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-20 03:57 UTC; older entries below are historical -->
+<!-- Current handoff 2026-10-20 04:44 UTC; older entries below are historical -->
 V28 first-seed terminal continuation64→4096 ACTIVE, no held outcomes.
 Frozen training W=local/worktrees/controlled-computation-v28-study @ce04236; DO NOT EDIT.
 All three actual full64 model/master/moment/order/native audits and12 actual
@@ -8,17 +8,18 @@ C=local/diagnostics/permutation-program-v28-study-v1, terminal-release-seed20261
 Direct/trace/pause exec59127/2442/51152; owned timeout PID/startticks
 1575771/29821314,1575898/29821431,1576066/29821548; physical0/1/2.
 Outputs EBS local/science-runs/controlled-computation-v28/program-<arm>-seed2026102028-v1.
-All three full1024 AND2048 runtime readbacks/fsyncs pass and updates resume;
-at2026-10-20 03:57 UTC steps2318/2218/2117.
+All three full1024/2048/3072 runtime readbacks/fsyncs pass and updates resume;
+at2026-10-20 04:44 UTC steps3628/3523/3421.
 Post-export group PSS~24GiB each; root86GiB free/host~1.7TiB available.
 New report validation/permutation_program_v28_periodic_recovery_20261020.json protected.
-First64 and1024 payloads deliberately rotated after newer readback; model64 copies/manifests remain.
+First64/1024/2048 payloads deliberately rotated after newer readback; model64 copies/manifests remain.
 Owner reiterated at03:19UTC: keep going patiently; unsupervised for about8hours. No new deadline or permission question.
 Whole first-wave deadline06:54UTC, no automatic retry or performance stopping.
 Second-seed stage64 release helper is prepared but NOT RUN:
 local/analysis/release_permutation_program_v28_second_seed_20261020.py.
 Read-only first-seed watcher exec51219 prints metrics/PSS every45s, exits on phase failure/all closure or06:23UTC.
-Next watch3072/4096 exports/readback/rotation; do not rush serialized exports (~4–5min).
+Watch phase closure.json as well as exit.json; monitor closure flag alone denotes child exit.
+Next watch4096 exports/readback/rotation; do not rush serialized exports (~4–5min).
 After all three controllers physically close, independently audit each terminal:
 `USE_TORCH_XLA=0 python local/analysis/audit_permutation_program_v28_job_20261020.py --key program-<arm>-seed2026102028-v1 --phase terminal`
 Source env.sh then override PYTHONPATH to frozen W plus local/test-deps; set OMP/MKL8.
@@ -37,7 +38,14 @@ Prepared local helpers (NOT RUN; require all appropriate audited models/closures
 - release_permutation_program_v28_second_continuation_20261020.py and
   check_permutation_program_v28_second_recovery_20261020.py (under local/analysis).
 - supervise_permutation_program_v28_generation_group_20261020.py reuses qualified4 independent decoder shards/chip.
-  Max3 concurrent groups under shared6hour window INCLUDING termination grace bounds18chip-hours; no automatic retry.
+  Updated host-only scheduler allows8 independent chip slots, same4shards per job.
+- run_permutation_program_v28_fixed_evaluation_20261020.py batches exactly23 jobs; actual sum of
+ group reservation durations stops17.5chip-hours plus shutdown reserve under18.
+- permutation_program_v28_eval_budget_20261020.py enforces60s heartbeat TTL/owner PID-start identity;
+ stale/dead monitor or cap stops all original group workers, no automatic retry.
+ Host-only accounting/real owned-process death fixture passes; NOT eight-chip hardware qualification.
+ Report validation/permutation_program_v28_evaluation_schedule_CPU_20261020.json and sources protected.
+ Numerical source2eb3c1c/data/models/caps/shards/primary gates unchanged; training still3chips max.
 - check_permutation_program_v28_readout_20261020.py independently verifies actions/nodes/native/cache/family gates;
  770 offline parser fixture cases pass, not model observations.
 - permutation_program_v28_ordinary_CPU_20261020.py uses old fixed ordinary256 input SHA7580d34a,
@@ -48,6 +56,8 @@ All6terminal release builder scripts/release_permutation_program_evaluation.py; 
 local/analysis/prepare_permutation_program_v28_all_evaluations_20261020.py prepares the index.
 Index must contain23 directories (all6×3panels+B0×3+2trace partial controls). Use native_from
 same model's first prepared output for later panels to avoid repeatedCPU reference generation.
+- permutation_program_v28_secondary_reference_20261020.py preserves matched2048-question
+ B0 tables and explicitly secondary strong direct/empty comparisons; primary gates unchanged.
 No full evaluation execution release or index exists yet; do not start before all6audits.
 Latest full per arm/development64/terminal models retained; global EBS export lease,
 35GiB root and512GiB host floors; historical originals/cache untouched.

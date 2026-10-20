@@ -1,0 +1,34 @@
+{
+  "status": "PREPARED_PARALLEL_FIXED_EVALUATION_HOST_ACCOUNTING_NOT_EXECUTED",
+  "utc": "2026-10-20T04:43:26.466095+00:00",
+  "numerical_evaluation_source_commit": "2eb3c1cf09d14604cc9b5dd0f97562656e95b6a5",
+  "fixed_training_source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "accelerator_calls": 0,
+  "held_model_outcomes": 0,
+  "numerical_decoder_or_dataset_changes": false,
+  "shards_per_model_panel": 4,
+  "maximum_concurrent_evaluation_chips": 8,
+  "maximum_reserved_evaluation_chip_hours": 18,
+  "stop_at_chip_hours": 17.5,
+  "execution_rule": "One fixed23-job batch. Charge each independent chip group from launch through original process closure; stop all groups on budget/monitor/peer/resource failure. No retries or outcome-based ordering.",
+  "requires": "All six independently audited terminal4096 models and exact CPU-prepared input registry before any held generation.",
+  "extra_reporting": "Exact common1024-family B0 references and explicitly secondary strong direct/empty comparisons; primary gates unchanged.",
+  "files": {
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/permutation_program_v28_eval_budget_20261020.py": "f14117da1601c55454bd1d072ab7bcc806fafabc074f538602db239fed3729c0",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/run_permutation_program_v28_fixed_evaluation_20261020.py": "5aedbd31b8a269d3eae0af127aae211cb6d2eb2618d2d2a464c57a93fd995ea0",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/supervise_permutation_program_v28_generation_group_20261020.py": "24e5617eddcada07f81f3f45d8936f531d87964d811ccaad8a0f4bee8e5ad52a",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/prepare_permutation_program_v28_all_evaluations_20261020.py": "b18eb9d10d8ab6c9ea10c01bcdde3a42b0e25c48bf0cb060237bca8b4c3f3a82",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/permutation_program_v28_secondary_reference_20261020.py": "4f2a9867fdd923a5631bd8150617f12b24488ec9e9ec9c252d666458d3858116",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/permutation_program_v28_ordinary_CPU_20261020.py": "3354f108fbe0743ee01c4691c365862f846b1795ba8748c3c2d351d13ac5e5f0",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/check_permutation_program_v28_readout_20261020.py": "a5bc4eb9598525f48ad538c4628500b7ca673fc427d11c04d197b4a182c2a755",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/parallel-scheduling-readiness.json": "d8c37994fef71ddd7514dbb98876c310f95223abca04d99fe7e020448c53cc30",
+    "validation/permutation_program_v28_evaluation_schedule_CPU_20261020/independent-parser-fixture.json": "8db2be35d5bd8a5dbce74fd0af0f2105dca51a8aac85d4600f346e9d386b7d27"
+  },
+  "limits": [
+    "Host-only accounting and actual owned-process death fixture,not eight-chip hardware qualification or learned capability.",
+    "Same qualified four independent decoder replicas per chip; every future worker must pass actual own-model/native/cache checks.",
+    "Training remains capped at three physical chips. No packages/compiler/cloud/model-size changes.",
+    "More concurrent evaluation groups shortens wall time; it does not increase the18chip-hour bound. Full evaluation may remain incomplete if that bound is exhausted.",
+    "Same-instance EBS protection,not off-instance backup."
+  ]
+}

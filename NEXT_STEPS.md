@@ -30,13 +30,15 @@
    ACTIVE on physical0/1/2, exec59127/2442/51152, whole deadline06:54UTC.
    C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
    local/science-runs/controlled-computation-v28. Terminal release is fixed.
-   All three1024 and2048 exports/readbacks resume; post-save process memory~24GiB/arm.
-   Monitor3072/4096 and bounded memory/space. After physical closure,
+   All three1024/2048/3072 exports/readbacks resume; post-save process memory~24GiB/arm.
+   Monitor4096 and bounded memory/space. After physical closure,
    run local/analysis/audit_permutation_program_v28_job_20261020.py with frozen
    study PYTHONPATH for each --key ... --phase terminal. All three terminal
    audits precede fresh seed2026102029 stage64/restore/4096 under the same recipe.
    Frozen evaluator2eb3c1c passes1861tests/15360native input checks and full-sized
-   score fixtures; prepare finite supervised execution while training proceeds. No held model outcomes
+   score fixtures. Fixed23-job evaluation queue is prepared for up to8 independent
+   chips with18chip-hour accounting/stale-monitor stop; numerical decoder/shards
+   unchanged. Training remains capped at3 chips. No execution before all6audits. No held model outcomes
    until all six terminals audited. No autonomous RL/capability claim follows.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
