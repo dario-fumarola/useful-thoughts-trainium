@@ -37,11 +37,16 @@ def score_spans(backend, contexts, targets, *, width, target_slots=32, pad_id=15
         labels[i,:len(future)]=torch.tensor(future);lengths.append(len(future))
     h=backend.hidden(x.to(backend.device)[:,:-1])
     selected=h.gather(1,positions.to(backend.device)[:,:,None].expand(-1,-1,h.shape[-1]))
+    # Materialize the shared trunk/gather once. CPU transfers alone do not
+    # terminate XLA's lazy graph: otherwise every head chunk can retain and
+    # recompile an expanding transitive graph of the same forward pass.
+    backend.sync()
     parts=[]
     for start in range(0,target_slots,backend.head_chunk):
         sl=slice(start,start+backend.head_chunk)
         with backend.head_amp():z=backend.model.lm_head(selected[:,sl]).float()
         lp=F.log_softmax(z,-1).gather(-1,labels[:,sl,None].to(backend.device))[:,:,0]
+        backend.sync()
         parts.append(lp.cpu())
     values=torch.cat(parts,1);result=[]
     for i,length in enumerate(lengths):
