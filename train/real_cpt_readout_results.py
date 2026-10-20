@@ -208,6 +208,8 @@ def summarize(index,output):
             own_raw_control=comparison(r,t,mode_b='own',name=f'{seed}:own-raw-control'),
             inference_execution_complete=inventory[t]['inference_ok'])
         for a in (r,f):comparison(a,t,field='mean_NLL',panel='ordinary',name=f'{seed}:ordinary-vs-{a}')
+        comparison('B0',t,mode_b='own',name=f'{seed}:secondary-own-absolute-base')
+        comparison(f,t,mode_b='own',name=f'{seed}:secondary-own-format-control')
         for a in (r,f,'B0'):
             for component in ('numeral','numeral_and_boundary','boundary_and_whitespace','surrounding'):
                 comparison(a,t,field='component:'+component,name=f'{seed}:secondary-{component}-vs-{a}')
