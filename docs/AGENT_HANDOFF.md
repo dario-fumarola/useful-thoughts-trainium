@@ -2,7 +2,8 @@
 Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
 V28 all six actual4096 terminal models physically close0 and independently pass full
 model/master/moment/native/order audits. All6full64 and24actual worker restoration
-comparisons PASS. No training or audit process remains active. Zero held model outcomes.
+comparisons PASS. No training or audit process remains active. Checkpoint identities
+were frozen before held generation; evaluation is active and scientific scores remain unread.
 DO NOT rerun any training/first64/restore checker/terminal auditor or release builder.
 Frozen training W_S=local/worktrees/controlled-computation-v28-study @ce04236, clean.
 Frozen evaluator W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
@@ -56,6 +57,10 @@ Use ABSOLUTE paths; original relative-path launch failure was preserved before t
    Actual sum reservations stop29.5/maximum30chip-hours,8hwall. Owner/heartbeat TTL60s,
   512GiBhost/35GiBdisk floors; owned-process cleanup only. No automatic retry.
    Follow parent completion.json: all23physical closures required before any readout.
+   Read-only EBS protector PID1672349 copies each physically closed group with full
+   file readback/fsync; log C_EVAL/protection.log. It never parses answers or scores.
+   Destination R/local/backups/evaluation/permutation-program-v28-fixed-v1; do NOT
+   relaunch blindly. Same-instance EBS only; originals remain on NVMe.
 4. All23must physically close before main readout:
    python -m train.permutation_program_readout --index <ABS C_EVAL/index.json> --output <newfile>
    Then local/analysis/check_permutation_program_v28_readout_20261020.py --index ...
