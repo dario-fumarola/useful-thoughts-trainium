@@ -312,3 +312,21 @@ question; successful explicit arithmetic does not guarantee it. A later matched
 post-training comparison must preserve the direct baseline and distinguish
 additional verified labels from computation learned beyond those labels.
 This reading changes no V26 source, endpoint or release.
+
+
+## Serial computation and length generalization — V28 preparation
+
+[Li et al., 2024](https://arxiv.org/html/2402.12875v2) already compare direct,
+partial-hint and generated-CoT learning on permutation composition and other
+serial tasks. Their experiments train small random-initialized transformers on
+fresh online batches for up to1million steps. V28 is a bounded mature-model
+reference with in-context fresh maps, not a novel demonstration of CoT expressivity
+or a reproduction of that scale. Its lengths1–10,16states and simple-path rule
+cannot establish an asymptotic complexity separation; a strong direct model may win.
+
+[Zhang et al., 2025](https://arxiv.org/html/2502.20129v2), sections5.2–5.3, distinguish
+state-tracking success from robustness to the most recent erroneous state and
+from length extrapolation. Their tested Transformer+CoT degrades sharply beyond
+trained lengths despite strong in-range tracking. This supports keeping V28's
+new-map, held-composition and longer-length panels separate. It does not predict
+our Qwen outcome or prove that architectural changes are required here.

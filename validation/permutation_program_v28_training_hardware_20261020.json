@@ -1,0 +1,88 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "PASS_ACTUAL_PROGRAM_ALL_VIEW_FULL_RESTORE",
+  "question": "Does the new all-view/shape adapter really update, save and restore actual1.7B state?",
+  "actual_updates": 8,
+  "actual_native_witnesses": 8,
+  "training_shape": {
+    "world_size": 4,
+    "micro_batch": 8,
+    "global_batch": 32,
+    "width": 256,
+    "target_slots": 64,
+    "head_chunk": 32,
+    "accumulation": 1
+  },
+  "source_commit": "ea926ca",
+  "source_files": {
+    "train/partial_state_driver.py": "4b82d96ff37ef154ebfff8382d0efb7ce0b1a1d6d2914ff53be7122a420f1521",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473"
+  },
+  "reserved_physical_chip_hours": 0.19600857555555554,
+  "all_full_states": [
+    4,
+    8
+  ],
+  "all_full_states_retained": true,
+  "post_save_grouped_PSS_bytes": {
+    "program_qualification": {
+      "4": 24603292672,
+      "8": 24491374592
+    }
+  },
+  "EBS_small_evidence_archive_sha256": "489fbe7e9451d1b47fa508539c37417072e6d799cb175c579bfafd2d7f4ae9e4",
+  "evidence_files": {
+    "validation/permutation_program_v28_training_hardware_20261020/qualify.py": "39fc4d3c23a44f60d09ef6fd55968216d913aec4331ec147359cd4a261fc5f3e",
+    "validation/permutation_program_v28_training_hardware_20261020/qualification-release.json": "1353027aa7bcfc633638e665697e7461c677d8323594dab2ca04675f5c6634d2",
+    "validation/permutation_program_v28_training_hardware_20261020/independent-audit-exit.json": "4843470cb950deef5a9edc071b3917b7dcea50355da19c98e887fb57aa013d32",
+    "validation/permutation_program_v28_training_hardware_20261020/independent-audit.py": "579d3e84e3a008a1492ba8d177623378ea32c81a2ce3783acb3e8648d5ee3eb1",
+    "validation/permutation_program_v28_training_hardware_20261020/qualification-completion.json": "fcff03e71968d0b804ce93e22617fae2fcd18d5e3f624e9045e76857b51b7794",
+    "validation/permutation_program_v28_training_hardware_20261020/qualification-independent-audit.json": "9efc3952a425b7f1b9df7f5345b31fbd7a961af6999ebed98bf8207073b03c3a",
+    "validation/permutation_program_v28_training_hardware_20261020/protocol.json": "03aa71faaefa50ef61531ae0df7d05c00122e5fd8e9d1fddd307ff1555179d25",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-fresh4/launch.json": "761dc5d8fef14715070e5fc384b3543440ec712476e63a407da9dfdabf4c5703",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-fresh4/closure.json": "cb7f1b90791cb4e65e757351d5e8bacaf8fcbcc65325074326e4f9c931c6f7ab",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-fresh4/first-live.json": "99578dcf55e00fa82923757242fe7b70947a44a5ffdc73138336923ac84cb0a3",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-fresh4/exit.json": "a6af9b2df2a2963928e09ad0302f8f611cc938bf64d0589bde541f28faf28ccb",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-resume8/launch.json": "808092c17c9488b4dd35753f157be93bb45a4b0f24115d2801724f2c8e7c6e13",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-resume8/closure.json": "ed5c76e2c0478c617c842d2c7d8ad27bc097fa07cf473715b0b3cb753453210d",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-resume8/first-live.json": "cea0a6d467e117d9f6a3eaf79d032773b617e05aba239a5bdab1b4f9ae2c7072",
+    "validation/permutation_program_v28_training_hardware_20261020/direct-resume8/exit.json": "142c36802c99a3d2a7dbed7a4f34a9c7d771ea431b870bd0bbccdcc3fa68f256"
+  },
+  "limits": [
+    "Eight bounded mixed-view updates,not capability evidence or indefinite-memory guarantee.",
+    "No uninterrupted/resumed bitwise-parity claim.8native checks repeat4 canonical contexts.",
+    "Disposable qualification model excluded from science;each learning arm must start fresh B0.",
+    "Original two full states/models remain NVMe;EBS holds small engineering evidence and all scientific terminal models/latest full science state separately.",
+    "RNG restoration runs in the verified driver;no independent immediate device-RNG readback or stochastic-RL qualification."
+  ],
+  "next": "Finish bounded unchanged-B0 TRAIN decoder/cache qualification; resolve rolling retention/resource design before any larger learning release."
+}

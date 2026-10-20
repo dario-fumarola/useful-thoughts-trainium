@@ -20,10 +20,12 @@
    computation reference, not a deliberately restricted split system.
    CPU preparation complete:38,912 independent data/token checks,131,072 native
    TRAIN packs,1,838 tests plus smoke/compile. Report permutation_program_v28_CPU_readiness_20261020.json.
-   Active bounded eight-update world4/width256 all-view recovery qualification.
-   Control local/diagnostics/permutation-program-v28-world4-qualification-v1;
-   supervisorPID1542616, exec54924, physical12, deadline02:17UTC.
-   Next inspect closure, then run frozen independent-audit.py from the ea926ca worktree.
+   Training qualification complete:8actual updates, full4/restore/full8; independent
+   all-state/native/order audit PASS. Original two full states remain on NVMe-study.
+   Active unchanged-B0 TRAIN4 decoder check: exec72582, physical13/core52, deadline02:05UTC.
+   C=local/diagnostics/permutation-program-v28-TRAIN4-decode-qualification-v1.
+   Next audit all28native attempts/seven cached-prefill controls, then freeze the
+   two-seed learning/readout budget and rolling retention before long training.
    No learning study, autonomous RL or capability claim is released by this queue.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
