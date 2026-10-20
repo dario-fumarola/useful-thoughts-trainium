@@ -1,0 +1,143 @@
+{
+  "all_original_full_states_retained_in_RAM": true,
+  "full_archive": {
+    "COMPLETE_sha256": "152264c15f908ed23fdb03777cab64b8975c8d0c37e521cbf50192e259e678d5",
+    "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/full-cpt-raw-seed2026102029-v1-step-0001280.tar.zst",
+    "archive_bytes": 21634473684,
+    "archive_sha256": "58370a2f93888b692140f75bcab7992ea2651012cd49a85d666939f22cf18a53",
+    "files": {
+      "run-envelope/metrics.jsonl": {
+        "bytes": 3962881,
+        "sha256": "9438c3c8fe882bff1ef5ac3183e797c4ef2c1b221bdc97f5dee101b8f64b8463"
+      },
+      "run-envelope/protocol.json": {
+        "bytes": 7602,
+        "sha256": "c29fb81107ecaae8df3acd5edee720c9f2d15ac1f45d05a2986b854a5073239a"
+      },
+      "run-envelope/run.json": {
+        "bytes": 2017,
+        "sha256": "6db0217ad2d574089eb089c1cb2695de49c201671a5c511a7c68c3c218c0966d"
+      },
+      "step-0001280/COMPLETE.json": {
+        "bytes": 2053,
+        "sha256": "152264c15f908ed23fdb03777cab64b8975c8d0c37e521cbf50192e259e678d5"
+      },
+      "step-0001280/cpu-export-release-rank-00000.json": {
+        "bytes": 155,
+        "sha256": "088bbf2edbf88f370ba025f33f4b27b0736455c344acb4401d987ecdfdaa8c1d"
+      },
+      "step-0001280/cpu-export-release-rank-00001.json": {
+        "bytes": 155,
+        "sha256": "7015c009153effc65722a55389d5f00e275cd9150bc26c58398bc8c6e825e0c5"
+      },
+      "step-0001280/cpu-export-release-rank-00002.json": {
+        "bytes": 155,
+        "sha256": "d7821da9263a65b5393bc0bd7d6d13c57ab01bc618d863a164071c930b9c9cf4"
+      },
+      "step-0001280/cpu-export-release-rank-00003.json": {
+        "bytes": 155,
+        "sha256": "1ad16cb623b014c9cd32db15867a0a3f197d2aed12ba0d863c26dfff8efcbd39"
+      },
+      "step-0001280/cpu-export-release-rank-00004.json": {
+        "bytes": 155,
+        "sha256": "c9416ef10e66523c8d5efc3ca297baf08161b8cde5bd36e91133ebc6579049ef"
+      },
+      "step-0001280/cpu-export-release-rank-00005.json": {
+        "bytes": 155,
+        "sha256": "feab790c484182c92b1cae05abefcc0731e5bab1d06af78ebf8bc9aad94e1a80"
+      },
+      "step-0001280/cpu-export-release-rank-00006.json": {
+        "bytes": 155,
+        "sha256": "650e26bb6f64fb6d7644ebdfc99b313847ba0c143a5ab5e8fdd5666eec8ca4c2"
+      },
+      "step-0001280/cpu-export-release-rank-00007.json": {
+        "bytes": 155,
+        "sha256": "65822ed0c65025f3fa198c0ed67738e4ba1fcd651ac17f59e27b934f8a601486"
+      },
+      "step-0001280/model.pt": {
+        "bytes": 3441248275,
+        "sha256": "cfcb04324919988d5196f3e1875d4c449a04c747ba130bc5302ab5b51f3927cc"
+      },
+      "step-0001280/rank-00000.pt": {
+        "bytes": 2581278471,
+        "sha256": "c328e7bbb061f1c4f21f4bfb5077956f5cc059a1c0d4acac7836cc68d03f6ddd"
+      },
+      "step-0001280/rank-00001.pt": {
+        "bytes": 2581278407,
+        "sha256": "a9558fed8f210b583518413bde3efa55ed462f0b51b64db73c7afda49b0e83f7"
+      },
+      "step-0001280/rank-00002.pt": {
+        "bytes": 2581278407,
+        "sha256": "00a913e4c80a416fee68962f8d243958d9283f34f7fb12f26fa59c0e231e289e"
+      },
+      "step-0001280/rank-00003.pt": {
+        "bytes": 2581278407,
+        "sha256": "c4e4880f23fbf79b229d1a332977a3296bc466c9a229a767f92fb7930dd45dbd"
+      },
+      "step-0001280/rank-00004.pt": {
+        "bytes": 2581278471,
+        "sha256": "49fdc716f7ee67d0ea349ad4c00b49a71415ef81a967f179a895198b804ffde5"
+      },
+      "step-0001280/rank-00005.pt": {
+        "bytes": 2581278407,
+        "sha256": "75bad76cc5883c716922ef0a80c4e48aa9ee879eee265fd2b1d1d7a77cd12e51"
+      },
+      "step-0001280/rank-00006.pt": {
+        "bytes": 2581278471,
+        "sha256": "13ffa1b333db413693acf6744b11cd4af998455c4e7e0740ef635568a7adc055"
+      },
+      "step-0001280/rank-00007.pt": {
+        "bytes": 2581278471,
+        "sha256": "816e10a5e5ad6708cc9bf8e4d2583d3aeec91fa06932842c2ab858818bab690f"
+      }
+    },
+    "job": "cpt-raw-seed2026102029-v1",
+    "original_checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102029-v1/step-0001280",
+    "step": 1280
+  },
+  "immutable_index_snapshot": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-index-seed2026102029-step1280.json",
+  "index_sha256": "12e8f7deb1c9ebdaa7f0f8c9fc0eb0eaf3b2b6695e65e359aa0eec1446a60ad9",
+  "model_archives": {
+    "cpt-computation-seed2026102029-v1": {
+      "COMPLETE_sha256": "3c4866052e03ac52c3a637a5f7efc115c90d8c7cb6e92450c2ef3aac837e8971",
+      "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-computation-seed2026102029-v1/step-0001280-model.pt.zst",
+      "archive_bytes": 2690679896,
+      "archive_sha256": "6f1d9365aacf1c965387a18932edb40e0bdb7b47f1624a18309643adc381e64b",
+      "job": "cpt-computation-seed2026102029-v1",
+      "original": {
+        "bytes": 3441248275,
+        "sha256": "bacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4"
+      },
+      "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-computation-seed2026102029-v1/step-0001280/model.pt",
+      "step": 1280
+    },
+    "cpt-format-seed2026102029-v1": {
+      "COMPLETE_sha256": "4fa741915cca6abe46f4aa749eb13f259d006b362ca70a9122813756c151f4d4",
+      "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-format-seed2026102029-v1/step-0001280-model.pt.zst",
+      "archive_bytes": 2690707010,
+      "archive_sha256": "94a1c62fba55829fd157cd742a7664435ad20a3e40080be788c9287319d5c856",
+      "job": "cpt-format-seed2026102029-v1",
+      "original": {
+        "bytes": 3441248275,
+        "sha256": "8a04640cc8b2ccb3fd769f2c3aa77197862392507c3414ec9b53449661c924b5"
+      },
+      "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102029-v1/step-0001280/model.pt",
+      "step": 1280
+    },
+    "cpt-raw-seed2026102029-v1": {
+      "COMPLETE_sha256": "152264c15f908ed23fdb03777cab64b8975c8d0c37e521cbf50192e259e678d5",
+      "archive": "/home/ubuntu/dario/local/backups/science/real-cpt-scaffold-v29/models/cpt-raw-seed2026102029-v1/step-0001280-model.pt.zst",
+      "archive_bytes": 2690711249,
+      "archive_sha256": "9c75eebcf115ce80e7972006a90f2c9b7d0ac5d68cffff0bf80d6f7688e9ea0d",
+      "job": "cpt-raw-seed2026102029-v1",
+      "original": {
+        "bytes": 3441248275,
+        "sha256": "cfcb04324919988d5196f3e1875d4c449a04c747ba130bc5302ab5b51f3927cc"
+      },
+      "original_model": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-raw-seed2026102029-v1/step-0001280/model.pt",
+      "step": 1280
+    }
+  },
+  "scope": "Same-instance EBS; every listed latest model and one full optimizer state. Other full originals remain in volatile RAM,not all on EBS.",
+  "status": "PASS_ALL_THREE_LATEST_MODEL_ARCHIVES_AND_ONE_LATEST_FULL_EBS_READBACK"
+}

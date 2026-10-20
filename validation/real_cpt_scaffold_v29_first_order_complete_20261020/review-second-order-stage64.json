@@ -1,0 +1,58 @@
+{
+  "MemAvailable_bytes": 1801870254080,
+  "actual_reserved_science_chip_hours": 14.233480407432232,
+  "first_order_full_terminal_audits": {
+    "cpt-computation-seed2026102029-v1": {
+      "COMPLETE_sha256": "3c4866052e03ac52c3a637a5f7efc115c90d8c7cb6e92450c2ef3aac837e8971",
+      "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+      "model_sha256": "bacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4",
+      "run_id": "cpt-computation-seed2026102029-v1",
+      "spec_hash": "6a688ea9deb0271fb998e8a52783858fcb2ea4c75c50aa73258b839680b0688e",
+      "step": 1280
+    },
+    "cpt-format-seed2026102029-v1": {
+      "COMPLETE_sha256": "4fa741915cca6abe46f4aa749eb13f259d006b362ca70a9122813756c151f4d4",
+      "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+      "model_sha256": "8a04640cc8b2ccb3fd769f2c3aa77197862392507c3414ec9b53449661c924b5",
+      "run_id": "cpt-format-seed2026102029-v1",
+      "spec_hash": "863aeb03c201e4a50dc235da3882a9c958707804c9d48a69ebd6373086c552ed",
+      "step": 1280
+    },
+    "cpt-raw-seed2026102029-v1": {
+      "COMPLETE_sha256": "152264c15f908ed23fdb03777cab64b8975c8d0c37e521cbf50192e259e678d5",
+      "all_full_payload_hashes_finite_master_moment_shapes_counters_and_cast_bytes": true,
+      "model_sha256": "cfcb04324919988d5196f3e1875d4c449a04c747ba130bc5302ab5b51f3927cc",
+      "run_id": "cpt-raw-seed2026102029-v1",
+      "spec_hash": "edaad8f9c5482e1ed5614f15ca23de1d8c07e81f2ba95622d7af9a02dc420b1b",
+      "step": 1280
+    }
+  },
+  "free_bytes": {
+    "/home/ubuntu/dario": 75361480704,
+    "/home/ubuntu/dario/local/nvme-cpt": 58646544384,
+    "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29": 760435818496
+  },
+  "prerequisite_pins": {
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-computation-seed2026102029-v1-step1280.json": "1b92533cd7aec62d0a44fbfe8f3b187e4e6445f1b39d47d0c3a2c79c01a87383",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102029-v1-step1280.json": "56fae3b7939b686321c6526de0e7dbaf18c1a1430052e39a758b246e96b6edd3",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-raw-seed2026102029-v1-step1280.json": "e142db24f03d6ab80db9472c6ad8b8d8d5f3d2ec92fc6f1b3d4ef7115c0c467e",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102029-v1/terminal1280/closure.json": "f88292abadabc74cc0b96a97c8d2f14d0ea4acb7f76a7120e769cf8298d7b031",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-computation-seed2026102029-v1/terminal1280/completed.json": "a0813518b927ec919336838dd646166956086f5cd3e6ebfc58c3a117dcf61f01",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102029-v1/terminal1280/closure.json": "597f0e82374bf4132bd5871d58e3470d2654fc0e8c7b7c0adb431f5580176951",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-format-seed2026102029-v1/terminal1280/completed.json": "27381c592646d8bb3221aee15ea8d4ad14708e6a6126c88ea829eda5424130c3",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102029-v1/terminal1280/closure.json": "8af5e9b7e2e498a1fdb5a5b5ea0f2144615303d9e4c33ae8215760e140372bb0",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/jobs/cpt-raw-seed2026102029-v1/terminal1280/completed.json": "eff623a07ad40cf35d91ff937814b7e8f946bfa0f3faa974f76eb122c14b3c18",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/protection-seed2026102029-step1280.json": "28178594b0e92a314409daf4f1f278eb66228bdd37a86dd57f05c6efa2010428"
+  },
+  "readout_model_outcomes_opened": false,
+  "review": [
+    "Allfirst1280 updates/native/master/moment/cast/cursor/actualrestore8 audits and physical closures pass.",
+    "Allfirst latestmodel archives and one full1280optimizer archive pass complete EBS readback; every original full64/640/1280 remains RAM.",
+    "Source/fullCPUinitialreferences/qualification/design/budgets unchanged; second order no initialization from first-order weights.",
+    "Measured memory/space/budget supports next wave; one-shot guarded launch,no automatic retry or held outcome selection."
+  ],
+  "reviewer": "Root agent; not external review",
+  "scope": "Unchanged second data-order protocols,three freshB0 models,first64only; source/data/loss/precision/primary1280 fixed.",
+  "status": "PASS_ROOT_REVIEW_SECOND_ORDER_FRESH_INITIAL64",
+  "utc": "2026-10-20T18:50:36.244254+00:00"
+}

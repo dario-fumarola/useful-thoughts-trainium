@@ -1,0 +1,102 @@
+{
+  "TRAIN_sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+  "assets": {
+    "directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "files": {
+      "config.json": {
+        "bytes": 727,
+        "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+      },
+      "generation_config.json": {
+        "bytes": 138,
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+      },
+      "merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      "model.safetensors": {
+        "bytes": 3441185608,
+        "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+      },
+      "tokenizer.json": {
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      "tokenizer_config.json": {
+        "bytes": 9678,
+        "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+      },
+      "vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38"
+  },
+  "contract": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/readout-contract.json",
+  "contract_sha256": "1dcaf96b6aa880f6b42f780f1d9a39ee47a3e3fc8fff91e851c63dfa943703bc",
+  "data": "/home/ubuntu/dario/local/data/real-cpt-scaffold-v29-cpu-v2",
+  "inputs_sha256": "882e2c43ffaf822b2fd8f9430d97c9f1f20d2f680fd56ff9c267f4a0e9280a9f",
+  "limits": "TRAIN-only numeric execution reference; not learning, held-out evaluation or generalization evidence.",
+  "manifest_sha256": "77c8774d3fdeb283728878c44522dab541ec61a213d3f89ece471b3dcc45fb3f",
+  "model": {
+    "audit_file": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-science-v1/independent-cpt-format-seed2026102029-v1-step1280.json",
+    "audit_sha256": "56fae3b7939b686321c6526de0e7dbaf18c1a1430052e39a758b246e96b6edd3",
+    "checkpoint": "/home/ubuntu/dario/local/science-runs/real-cpt-scaffold-v29/cpt-format-seed2026102029-v1/step-0001280/model.pt",
+    "checkpoint_sha256": "8a04640cc8b2ccb3fd769f2c3aa77197862392507c3414ec9b53449661c924b5",
+    "id": "format-seed2026102029",
+    "run_id": "cpt-format-seed2026102029-v1",
+    "spec_hash": "863aeb03c201e4a50dc235da3882a9c958707804c9d48a69ebd6373086c552ed",
+    "status": "AUDITED_V29_TERMINAL1280",
+    "step": 1280
+  },
+  "model_dir": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+  "native_sha256": "cd947bb1c9725d7de22a5679b092c0cb88b0dc0a419d0de7c00dba52e7860372",
+  "purpose": "science",
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": "256",
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "signature": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "5eeaac150e63963fb50704035bdb106dde757626edd64f1d0321141ff6b7ab19"
+  },
+  "source_files": {
+    "train/batched_causal_decoder.py": "1a8cc92c8232af48987f465c59dec28187da8081a3b5f6bd6a679fcedd8e6d30",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/real_cpt_readout.py": "aa8284150fa86a321a056386b4bd1ba049188715cd12564456a5c066681c1a91",
+    "train/real_cpt_readout_driver.py": "a6d84713f8877e5f78d0668e33b27256a52a2536dadfb11494b8729043b2066f",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+    "train/real_trace_evaluation.py": "4a289e2f0228c00ce48c397519a63a91cbb3faee14854b73bde383f20c06d7b8",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "started_utc": "2026-10-20T18:42:29+00:00",
+  "status": "PREPARED_TRAIN_ONLY_INDEPENDENT_HF_V29_REFERENCE",
+  "wall_seconds": 35.888572285010014
+}

@@ -11,26 +11,22 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Continue the original first-order V29 runs from full64 to fixed1280.
-   All3 first64 native/order/components/master/moment/cast audits and CPU loss/count checks PASS.
-   Memory last-quarter range<.01GiB per job; warm6.33–6.41s; min host available1297GiB.
-   All3 model backups plus one full EBS archive have complete restore/member SHA readback; all originals retained.
-   Report validation/real_cpt_scaffold_v29_stage64_complete_20261020.json.
-   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; release-terminal1280-seed2026102029.json.
-   Run the same supervisor with --job cpt-{raw,format,computation}-seed2026102029-v1 --phase terminal1280.
-   All24 actual rank restorations PASS byte checks; all3 first-pass640 full state/order/component audits pass.
-   All latest640 model archives and one full640 EBS archive pass complete readback; second pass is active.
-   Report validation/real_cpt_scaffold_v29_first_pass_20261020.json.
-   Supervised sessions3711/81339/86113; checkpoint queue PID1865138 waits640/1280; no automatic retry.
-   Full640/1280 originals remain in RAM; protect latest per-job model and one latest full EBS state with serialized writes.
-   Same-instance EBS does not contain every optimizer history. Respect62GiB preflight plus35GiB absolute floor.
-   Add only verified lossless backup-only archival if further model backups need room; never delete originals/cache.
-   Complete all3 terminal1280 models and independent audits before releasing the second order2026102030.
-   Frozen readout implementation and four TRAIN-only native/cache/full-span integration paths PASS.
-   Report validation/real_cpt_readout_v29_integration_20261020.json;1932CPU tests.
-   Finish the finite resource supervisor and later bind all7 actual models/references before held outcomes.
-   Whole study: two fixed orders,three arms,unaltered data/loss/precision; terminal models primary.
-   No DEV checkpoint/prompt/weight selection,no broad RL,size jump,TEST,V28 extension or oldR1234 resume.
+1. Finish unchanged second-order V29 training,then all-seven-model held readout.
+   First order2026102029:all3 terminal1280/state/order/native/restore audits and physical closures PASS.
+   All3 latestweights and one full1280 EBS archive pass complete member/SHA readback; all original64/640/1280 stay RAM.
+   Science14.233reserved chip-hours; TRAIN CPUreferences on actual terminal weights ready; no held outcomes.
+   Report validation/real_cpt_scaffold_v29_first_order_complete_20261020.json.
+   Second order2030 fresh initial64 is ACTIVE under C/release-stage64-seed2026102030.json.
+   Raw/format/computation exec6374/79765/60569; owned sessions1884002/1884006/1884004; all3 actual8ranks observed.
+   Run independent stage64 audits and protect --seed 2026102030 --step 64 after physical closures.
+   Review actual CPUloss/count/native/order/master/moment/cast/host memory,then release original64→1280 continuations.
+   Launch finite checkpoint watcher --seed 2026102030 once; no automatic retries or checkpoint selection.
+   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; W=local/worktrees/real-cpt-scaffold-v29; enginec9d2c0c fixed.
+   Readout qualified1932CPU checks/TRAIN native/cache/full16/full527. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
+   Use E/execution-plan-v2.json and analysis-plan-v2.json. Independent ordinary can overlap writer on distinct chips.
+   Max3scalar groups concurrently is root scheduling limit. All7actual model/ref bindings and six terminal closures required before held release.
+   Keep80science/64evalchip-hour bounds,35GiBfilesystem/512GiBhost floors; originals/cache untouched.
+   No broad RL,size jump,officialTEST,V28 extension,or oldR1234 resume.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

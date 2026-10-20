@@ -56,10 +56,9 @@ now checks all527 ordinary transitions against independent HF references. A
 [metadata count correction](validation/real_cpt_full_window_scoring_v29_count_addendum_20261020.json)
 preserves every original score and gate.
 
-All three first-order models have [completed64 updates and passed full audits](validation/real_cpt_scaffold_v29_stage64_complete_20261020.json).
-Warm updates take6.3–6.4s and bounded memory is stable. All24 model/optimizer rank restorations pass byte checks, and the three runs are
-through a fully audited and protected640-update first pass, continuing toward
-fixed1,280-update endpoints. All6 terminal identities
+All three first-order models have [finished1,280 updates and passed full audits/protection](validation/real_cpt_scaffold_v29_first_order_complete_20261020.json).
+Warm updates take6.3–6.4s; first-order science costs14.233reserved chip-hours.
+The second unchanged data order is now training from freshB0. All6 terminal identities
 will be fixed before held outcomes. [Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
 passes TRAIN-only native/cache/full-target checks; those are not learning results.
 [Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)

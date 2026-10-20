@@ -1,19 +1,19 @@
-# Status — 2026-10-20 17:41 UTC
+# Status — 2026-10-20 18:53 UTC
 
 ## Active: matched real continuation CPT
 Question: does verified computation improve direct real prediction while retaining ordinary LM?
 ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; no held model outcomes.
-All3 order2026102029 models pass initial64 native/order/component/master/moment/cast and CPU-loss checks.
-All24 actual model/optimizer rank restorations pass full-byte checks; original continuations are active.
-All3 complete first-pass640; every ordered document/component/native/master/moment/cast audit passes.
-Fixed terminal1280; full640/1280 originals remain in RAM; no checkpoint/prompt selection on DEV.
-All3 latest640 model archives and one full640 EBS archive pass complete readback; original64/640 remain in RAM.
-Same-instance EBS keeps latest per-run models and one rotating latest full optimizer state,not every optimizer history.
-Original continuations remain active toward1280; warm~6.3–6.4s; bounded post-save memory drops,not indefinite stability.
-Report:validation/real_cpt_scaffold_v29_first_pass_20261020.json; source engine c9d2c0c unchanged.
-Active supervisors raw/format/computation exec3711/81339/86113; checkpoint queue PID1865138.
-Next:finish first order,audit/protect terminal states,then explicitly release order2026102030; implement fixed readout.
-Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,officialTEST or V28 extension.
+First order2026102029:all3 terminal1280 models physically close0; all ordered40960exposure/native/master/moment/cast/restore audits PASS.
+All3 latest1280 weights and one full optimizer archive pass complete EBS readback; original64/640/1280 states remain RAM.
+First order uses14.233reserved chip-hours. Same-instance EBS does not keep every optimizer history/offinstance backup.
+Actual terminal-weight TRAIN CPUreferences prepared for all3; no held forwards or scientific learning conclusion.
+Second unchanged order2026102030 starts freshB0 under explicit initial64-only release; all3 native8process groups observed.
+Active raw/format/computation exec6374/79765/60569; owned sessions1884002/1884006/1884004; logical0–23.
+Source/data/loss/precision/terminal endpoints and evaluation gates remain fixed; no checkpoint/prompt selection.
+Report:validation/real_cpt_scaffold_v29_first_order_complete_20261020.json; numerical engine c9d2c0c unchanged.
+Next:actual second64 CPUloss/native/order/fullstate/memory audits+protection,then original64→1280 continuation.
+All6 terminal identities precede held readout; prepared numerical/reference/analysis/resource paths stay fixed.
+Keep35GiB/filesystem/512GiBhost floors and80science/64evalchip-hour bounds; no RL,size jump,TEST or V28 extension.
 
 ## Closed: integrated real-CPT readout mechanics
 Question: do the fixed readout entrypoints preserve native/cache distributions and complete target alignment?

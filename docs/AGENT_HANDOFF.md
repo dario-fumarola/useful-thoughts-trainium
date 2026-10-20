@@ -22,8 +22,8 @@ Read-only validate/verify_scaffold_science_release for all3 second-order protoco
 After allfirst terminals/audits/backup pass,root explicitly reviews source,state,space andbudget,then clone original release-stage64.json for seed2030 with registryjobs filtered to2030.
 Use same W/scripts/run_real_cpt_scaffold_v29.py --control C --release C/release-stage64-seed2026102030.json --job cpt-{arm}-seed2026102030-v1 --phase stage64.
 FreshB0; no resume for initial64. All3 actual first64/native/CPU-loss/count/fullstate/order checks required; run local/analysis/audit_real_cpt_v29_stage64_20261020.py --job <job> for each.
-Then local/analysis/protect_real_cpt_v29_checkpoints_20261020.py --seed2026102030 --step64. Keep flags as '--seed 2026102030 --step 64'.
-Review bounded PSS/backup and release terminal1280 from original full64 exactly as first order; launch finite checkpoint watcher --seed2026102030 once.
+Then local/analysis/protect_real_cpt_v29_checkpoints_20261020.py --seed 2026102030 --step 64.
+Review bounded PSS/backup and release terminal1280 from original full64 exactly as first order; launch finite checkpoint watcher --seed 2026102030 once.
 Same80reserved science chip-hour aggregate; each terminalphase6h/cleanup180s; floors35GiB/filesystem and512GiBhostavailable.
 
 READOUT READY; DO NOT OPEN HELD MODEL OUTCOMES BEFORE ALL6 TERMINAL IDENTITIES:
@@ -55,6 +55,8 @@ V28 COMPLETE/PUBLIC atc47a823 and release v28-controlled-computation-20261020. S
 One reviewZIP already made today local/review/controlled-computation-v28-20261020.zip; no newZIPneeded. R1234 remains stopped63; no7B/8B/broadRL/TEST release.
 Reportingcountaddendum: oldfull-window qualificationmetadata2112/4224 waswrong; actual4x527=2108/condition,4216acrossB1/B4. Original vectors/gatesunchanged. Correctnewintegrationordinary targetcount2108.
 
+Actual transition18:53UTC: FIRSTORDER2026102029 ALL3 TERMINAL1280 PHYSICALLY CLOSED0,independent full audits PASS,alllatestweights+raw1280full EBS member/SHAreadback PASS. Checkpoint watcher1 CLOSED after BOTH_PERIODIC_ENDPOINTS_AUDITED_AND_PROTECTED. Source originals64/640/1280 allremainRAM. First science14.2334804074chip-hours. E/references/{raw,format,computation}-seed2026102029 actualterminal TRAIN CPUreferences COMPLETE (exec43212/42890/20153 closed0); bindings E/bindings/*.json. No held outcomes.
+SECONDORDER2030 INITIAL64 ACTIVE: raw exec6374 supervisor1883816 owned1884002;format79765/1883815/1884006;computation60569/1883817/1884004. All3 actualnative8groups observed. Release C/release-stage64-seed2026102030.json; review C/review-stage64-seed2026102030.json. FreshB0 unchanged protocols/source/data/loss/precision; initial64 only. After allthree close,run stage64 audit perjob,protect --seed 2026102030 --step 64,review memory/CPUloss/native/fullstate,then release terminal1280 fromthese same full64 and launch watcher --seed 2026102030 once. No secondterminal release yet. Public first-order report validation/real_cpt_scaffold_v29_first_order_complete_20261020.json. Older activefirst-order notes above are superseded by this transition.
 ## Historical handoff snapshots (not active instructions)
 
 <!-- Current handoff 2026-10-20 13:05 UTC; earlier entries below are historical -->
