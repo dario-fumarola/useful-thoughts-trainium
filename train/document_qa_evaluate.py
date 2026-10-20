@@ -192,7 +192,8 @@ def prepare_replays(original,output):
     atomic_json(output/'protocol.json',updated);return updated
 
 
-def generate(output,shard,until,*,schema=SCHEMA,expected_sources=None):
+def generate(output,shard,until,*,schema=SCHEMA,expected_sources=None,
+             decoder_class=None,prefill_width=3584):
     import torch
     from train.document_qa_decoder import QADecoder
     from train.evaluate import GenerationFailure,asset_provenance
@@ -231,9 +232,9 @@ def generate(output,shard,until,*,schema=SCHEMA,expected_sources=None):
         gate=compare_distributions(reference[i:i+1],actual)[0];torch.save(actual,d/'native-logps.pt');atomic_json(d/'native.json',gate)
         if not gate['passed']:raise RuntimeError('Actual own-model native parity failed')
         del h,lp,x,actual
-        decoder=QADecoder(backend.model,tok,sync=backend.sync,banned_ids=backend.banned_ids)
+        decoder=(QADecoder if decoder_class is None else decoder_class)(backend.model,tok,sync=backend.sync,banned_ids=backend.banned_ids)
         first=rows(output/f'prompts-{p["modes"][0]}.jsonl')[shard]
-        audit,vectors=cache_prefill_check(backend,decoder,first['prompt_ids'],width=3584,cap=p['max_actions'])
+        audit,vectors=cache_prefill_check(backend,decoder,first['prompt_ids'],width=prefill_width,cap=p['max_actions'])
         torch.save(vectors,d/'cache-prefill-logps.pt');atomic_json(d/'cache-prefill.json',audit)
         if audit['max_logp_error']>1e-3:raise RuntimeError('Long cached prefill differs from ordinary causal forward')
         with (d/'attempts.jsonl').open('x') as f:
@@ -243,7 +244,7 @@ def generate(output,shard,until,*,schema=SCHEMA,expected_sources=None):
                 for index in range(shard,p['items'],p['shards']):
                     check();q=prompts[index];before=time.monotonic()
                     value=dict(item_id=q['item_id'],mode=mode,parser_mode=q['parser_mode'],status='error',actions=[],content_ids=[],text='',raw_text='',stop_type='error',prompt_tokens=len(q['prompt_ids']))
-                    try:value.update(asdict(decoder.decode(q['prompt_ids'],mode=q['parser_mode'],max_new_tokens=p['max_actions'],prefill_width=3584)),status='ok')
+                    try:value.update(asdict(decoder.decode(q['prompt_ids'],mode=q['parser_mode'],max_new_tokens=p['max_actions'],prefill_width=prefill_width)),status='ok')
                     except Exception as error:
                         if isinstance(error,GenerationFailure):value.update(asdict(error.partial))
                         value['error']=f'{type(error).__name__}: {error}'
