@@ -12,7 +12,7 @@ Primarycomposition9,216paired families/18,432questions; interpolation and length
 Prior actual8-update/restore and28-attempt decoder qualifications PASS; recovery is not learned capability.
 Readback/fsync rolling retention keeps terminal models/model64/latest full per arm; historical originals/cache untouched.
 Report: validation/permutation_program_v28_continuation_20261020.json; first64/recovery sources and receipts protected.
-Evaluation CPU source passes1,859tests and15,360actual-tokenizer input checks; zero held model forwards.
+Frozen evaluation2eb3c1c passes1,861tests/15,360native input checks and independent-claim score fixtures; zero held forwards.
 Next monitor first1024 export; after physical terminal closure run independent --phase terminal audits before seed2.
 
 ## Closed: fresh confirmation feasibility

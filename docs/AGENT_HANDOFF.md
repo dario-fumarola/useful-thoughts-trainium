@@ -10,6 +10,8 @@ Direct/trace/pause exec59127/2442/51152; owned timeout PID/startticks
 Outputs EBS local/science-runs/controlled-computation-v28/program-<arm>-seed2026102028-v1.
 At02:49 updates539/536/536, ~1.94s/update, root86GiB free/host~1.7TiB available.
 Whole first-wave deadline06:54UTC, no automatic retry or performance stopping.
+Second-seed stage64 release helper is prepared but NOT RUN:
+local/analysis/release_permutation_program_v28_second_seed_20261020.py.
 Next watch first1024 export/readback/rotation; do not rush serialized exports (~207s).
 After all three controllers physically close, independently audit each terminal:
 `USE_TORCH_XLA=0 python local/analysis/audit_permutation_program_v28_job_20261020.py --key program-<arm>-seed2026102028-v1 --phase terminal`
@@ -17,11 +19,12 @@ Source env.sh then override PYTHONPATH to frozen W plus local/test-deps; set OMP
 Need terminal-full-audit.json PASS before seed2029 can retire prior terminal optimizer.
 Then release fresh second-seed stage64/audit/restore/4096, same source/data/budget.
 Do not run original first64 or continuation producers again; immutable receipts exist.
-Evaluation W_E=local/worktrees/controlled-computation-v28-eval remains uncommitted:
-new fixed-cohort wrapper/readout + optional generic decoder/prefill hook; no kernel/parser change.
-All1859checks pass tests.TosKjI, CPU readiness-v2 checks15360actual-tokenizer contexts,
-zero forwards. C_E=local/diagnostics/permutation-program-v28-evaluation-CPU-v1.
-Finish readout/release preparation while training proceeds; all6audited terminals required
+Frozen evaluation W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c, clean.
+New fixed-cohort wrapper/readout and optional generic decoder/prefill hook; no kernel/parser change.
+All1861checks pass tests.qY1DSj,15,360actual-tokenizer inputs and full-sized
+known-score fixtures pass; zero held model forwards. C_E=local/diagnostics/permutation-program-v28-evaluation-CPU-v1.
+CPU source report validation/permutation_program_v28_evaluation_source_20261020.json protected.
+All6audited terminals required by scripts/release_permutation_program_evaluation.py
 before held model inference. Primary9,216families, secondary1,024each; family bootstrap,
 training/inference gates separate. No prompt/checkpoint selection or old result rewrite.
 Latest full per arm/development64/terminal models retained; global EBS export lease,

@@ -34,8 +34,8 @@
    run local/analysis/audit_permutation_program_v28_job_20261020.py with frozen
    study PYTHONPATH for each --key ... --phase terminal. All three terminal
    audits precede fresh seed2026102029 stage64/restore/4096 under the same recipe.
-   Evaluation CPU source passes1859tests/15360native input checks; finish frozen
-   readout/release preparation while training proceeds. No held model outcomes
+   Frozen evaluator2eb3c1c passes1861tests/15360native input checks and full-sized
+   score fixtures; prepare finite supervised execution while training proceeds. No held model outcomes
    until all six terminals audited. No autonomous RL/capability claim follows.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
