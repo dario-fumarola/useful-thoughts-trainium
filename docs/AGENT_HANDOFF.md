@@ -1,6 +1,6 @@
-<!-- Current handoff 2026-10-20 23:36 UTC. Only this first block is active. -->
+<!-- Current handoff 2026-10-20 23:41 UTC. Only this first block is active. -->
 Keep working autonomously/patiently until told to stop. No active goal; do not create one. No agent retries beforeOct24.
-R=/home/ubuntu/dario public dario-fumarola/useful-thoughts-trainium; pushes/releases authorized. Main848f928 before current result commit.
+R=/home/ubuntu/dario public dario-fumarola/useful-thoughts-trainium; pushes/releases authorized. Mainf3465e0 result; publication receipt commit follows.
 ALL V29 training,held workers,observers,analysis/checker,renderer,bundler,replay,CPUtest sessions CLOSED0. No accelerator work remains.
 Never relaunch producers,observers,checkers,oldtraining or V28 launchers. All original E/summary/readout.json bytes immutable.
 W=R/local/worktrees/real-cpt-scaffold-v29 at73d9c91/enginec9d2c0c; Weval=...-eval at2c30aa1/worker85c55db/results7be1b07 frozen.
@@ -37,16 +37,23 @@ Actual scripts/replay_real_cpt_v29_public.py verifies388files/54LL/16scalar pair
 It requires NumPy+frozen scalar parser,not modelweights/source text/accelerator. Original prompt/context/target arrays are projected to length+canonicalSHA; allscore/genarrays preserved.
 Source windows remain local; publiclocators/mathfacts and attribution,pinned FineMath revisione92b25a616738fe95dc186b64dfb19f9c8525594 included. No arbitrary source-code/webtext relicensing.
 
+PUBLICATION IS COMPLETE — DO NOT REPEAT:
+Public release https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v29-real-continuation-cpt-20261020 targets f3465e060f8d7c024d8b57d95c34cc991fce52ee.
+All12assets/482687897bytes fully downloaded UNA UTHENTICATED and size/SHA/localreadback/fsync PASS; verifier14342 CLOSED0.
+Receipt validation/real_cpt_scaffold_v29_public_release_20261020.json plus sibling folder for source/combinedmanifest/standalone proof.
+Fourth archive v29-publication-and-replay-source.tar.gz includes minimal standalone NumPy replay/frozen scalar parser+all reports/tables.
+Actual four-archive standalone replay verifies423files/54LL/16scalar contrasts; suffix output byte-identical fromcopied standalone source too.
+Source archive/rootreadout hashes unchanged; all19 numerical source files match original release.
+Release creation88632 and allpublishing/standalone sessions CLOSED0. No publication work remains after committing currentreceipt/README/queue.
+
 NEXT EXACT WORK:
-Commit/push reviewed result/docs/new suffixscript. Build a fourth smallpublication/source archive with public tables/REPORT,allfour publicationtools and frozen train/scalar_completion.py+train/__init__.py for standalone replay.
-Keep three originalarchives/manifest unchanged; make separate publication-manifest.json withallfourarchives,fullreadback/fsync,SHAledger.
-Actuallyextract fourth alongsidefirstthree and run STANDALONE publicreplay fromcopiedscripts/PYTHONPATH withpublication-manifest; record resultbeforeclaimingportability.
-Then gh release create v29-real-continuation-cpt-20261020 --target(currentresultcommit) --notes-file(exactlocalbody),allarchives/manifests/checksums/report/receipts.
-Read existingtag first; no automaticreplace/clobber. gh available/usr/bin/gh; authorization persists. No live V29release yet.
-Verify PUBLIC asset sizes and full downloaded SHAs,recordreceipt. Then addREADMErelease link/receipt and keepremote updated.
-No need another reviewZIP today(V28onealreadyprovided).
-Afterpublication,inspect CPU feasibility and freeze ONE bounded TRAIN-only candidate/reward-alignment diagnostic with fixed reader; no newlearning/RL released.
-Do not tune existingheld prompts/checkpoints/windows/thresholds torescue primary. Preserve original resultsand negative evidence.
+CPU inspect existing samplers,batched cached decoder and fixed readout scoring paths. Do not modify V29 frozen worktrees or primary artifacts.
+Design ONE bounded new TRAIN-only candidate/reward-alignment diagnostic before any model calls. Fixed V29 first-order computation reader and prefix-only writer are a possible reference,not an authorized learning run.
+Question: does stochastic candidate variation include useful/correct calculations and does full16 predictive utility rank them sensibly versus raw/empty? Include oracle and correctness controls,source masks and actual cost.
+Sampling was NOT qualified by greedy batching; determine exact existing APIs and reuse before extending. No new hardware/learning release yet.
+Keep scientific gates separate: V29's numerical secondary cannot rescue failed CPT/likelihood claims. Avoid a prompt sweep or an open-ended RL rebuild.
+After a frozen design/qualification/bounded measured diagnostic,decide next step from evidence. User authorizes sustained autonomous research,not blind scaling.
+No additionalreviewZIP today needed; public evidence/standalone sources are complete.
 
 STORAGE/CONSTRAINTS:
 O=R/local/science-runs/real-cpt-scaffold-v29 ->privateRAM; all18originalfull64/640/1280states retained(~404GiB).

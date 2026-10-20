@@ -11,18 +11,16 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Finish concrete V29 publication; all model execution and checks are CLOSED/PASS.
-   Primary CPT criterion fails: only one order beats trained controls; both Traw paths trail B0. No direct-prediction win.
-   Declared scalar secondary is strong: Town643/652 vsRraw500/502 of768,with all caps/unsupported counted.
-   Full527 retention target passes at+.021 NLL; suffix16 ordinary regression is+.041. Do not conflate endpoints.
-   Report validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md. Original E/summary/readout.json stays unchanged.
-   E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; independent all-context/54statistics/98HF checks PASS.
-   Public archives are built/readback/fsync verified; actual extracted388file/54LL/16scalar replay and suffix byte replay PASS.
-   Complete result/docs/figures/source publication,then upload/verify the public release assets. No producer/checker rerun.
-   Preserve latest weights/all18 RAMfullstates and all original evidence. Same-instance EBS is not off-instance optimizer protection.
-   After publication,inspect CPU feasibility and freeze one TRAIN-only question: do sampled prefix-only notes offer useful reward variation under a fixed reader?
-   Compare reward ranking with verified computation and plain/empty predictions; this is diagnostic preparation,not an RL release or primary-gate rescue.
-   No long training,model-size jump,RL,V28 extension or officialTEST is released by V29's secondary gain.
+1. V29 is complete and PUBLIC; do not rerun any producer,checker,bundler or publisher.
+   Result f3465e0; report validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md.
+   Release v29-real-continuation-cpt-20261020 has12assets/482687897bytes; all unauthenticated full downloads/SHA/readback/fsync PASS.
+   Receipt validation/real_cpt_scaffold_v29_public_release_20261020.json; standalone423file/54LL/16scalar replay and suffix byte replay PASS.
+   Primary CPT criterion fails; declared scalar assistance is strong; full527 retention meets its target while suffix16 regresses more.
+   Every original state/score/output remains; same-instance latestweights/onefulloptimizer protection is not off-instance model backup.
+   Next CPU investigation: freeze one TRAIN-only question about candidate/reward alignment under the fixed trained reader.
+   Inspect existing sampling/cache/scoring interfaces before designing any extension; no sampling qualification can be inferred from greedy batching.
+   Require actual candidate correctness/utility variation and bounded profiling before considering policy optimization.
+   Do not tune V29held prompts/checkpoints/windows/thresholds. No long training,model-size jump,RL,V28 extension or officialTEST is released.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

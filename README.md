@@ -56,6 +56,8 @@ worse than B0. This is FineMath retention, not broad-language improvement.
 - [Eight outcome-independent examples](validation/real_cpt_scaffold_v29_complete_20261020/fixed-eight-examples.json)
 - [Independent context/statistical/98HF checks](validation/real_cpt_scaffold_v29_complete_20261020/independent-check.json)
 - [Actual extracted-archive statistical replay](validation/real_cpt_scaffold_v29_complete_20261020/public-replay.json)
+- [Public evidence and standalone replay package](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v29-real-continuation-cpt-20261020)
+- [All 12 public assets verified by full download](validation/real_cpt_scaffold_v29_public_release_20261020.json)
 
 All 28 evaluation groups / 49 workers close successfully: 60,928 likelihood rows,
 15,626,240 token scores and 21,504 generation attempts. Science reservations are
