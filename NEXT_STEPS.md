@@ -11,22 +11,17 @@
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
    Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
-1. Finish the released all-seven-model V29 held readout.
-   All6 models finish1280 and pass physical closure/full-state/order/native/restore audits;28.427training chip-hours.
-   Latestweights for all6 and one latest fullraw2030/1280 EBS archive pass readback; all original18 states stay RAM.
-   All7 actual terminal/B0 TRAIN CPUreferences are ready; no held model outcomes opened before E/release.json.
-   C=local/diagnostics/real-cpt-scaffold-v29-science-v1; E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
-   Training observers/watchers/continuations CLOSED0; do not relaunch. Report validation/real_cpt_scaffold_v29_training_complete_20261020.json.
-   E/review.json and release.json bind all7 model identities,references,sources,closure receipts,execution and analysis plans.
-   Start all7writer and7ordinary phases via Weval/scripts/run_real_cpt_readout_v29.py on physical0–6 and7–13.
-   Launch each math phase after its writer completes; launch scalar after its math,at most3scalar groups concurrently.
-   Numerical worker85c55db unchanged; Weval=local/worktrees/real-cpt-scaffold-v29-eval at2c30aa1.
-   Fixed28phase groups/49workers,all original attempts; scalar4shards share one physical-chip charge.
-   After all outputs close:primary results via train.real_cpt_readout_results,then frozen independent checker v2.
-   Add declared scalar paired secondary tables via main train.real_cpt_scalar_results only after primary independent PASS.
-   Use E/index.json,E/analysis-plan-v2.json,E/scalar-secondary-plan.json; no parser/prompt/threshold rescue or seed pooling.
-   Keep64evalchip-hour bound,35GiBfilesystem/512GiBhost floors; max3scalar groups is ROOT scheduling responsibility.
-   No broad RL,size jump,officialTEST,V28 extension,or oldR1234 resume.
+1. Complete V29 CPU verification and publication; all model execution is CLOSED.
+   All6 fresh models1280 updates pass full-state/order/native/restore audits;28.427training chip-hours.
+   All28 held phasegroups/49workers close0 with49 actual-model native gates;9.401evaluation chip-hours.
+   E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; original primary E/summary/readout.json exists.
+   CPU analysis/checker exec97855 ACTIVE: frozen independent v2 reconstructs contexts/statistics and98HF forwards.
+   Only after independent PASS run main train.real_cpt_scalar_results for the declared paired secondary tables.
+   Then scripts/report_real_cpt_v29.py and scripts/bundle_real_cpt_v29.py; verify extracted archives with scripts/replay_real_cpt_v29_public.py.
+   Keep original readout/checker bytes unchanged; publish full controls,errors,caps,costs and fixed examples.
+   Tools fabe609 pass1935CPU tests/smoke/compile; archive readback and actual offline replay are still pending.
+   All training/evaluation observers and actual device sessions CLOSED0; do not relaunch any producer.
+   No model-size change,RL,new long learning,V28 extension or officialTEST is released by completion.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

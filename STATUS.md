@@ -1,20 +1,20 @@
-# Status — 2026-10-20 22:59 UTC
+# Status — 2026-10-20 23:24 UTC
 
-## Active: matched real continuation CPT readout
+## Active: complete real continuation CPT verification
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?
-ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; held readout active,scientific verdict pending.
+ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; all held execution COMPLETE.
 All6 fresh models finish1280 updates/40960 source exposures each across two data orders; physical closures0.
 All source/native/full master/moment/cast/actualrestore8 audits PASS; training28.427reserved chip-hours.
-All6 latest model archives and one latest full1280 optimizer archive pass complete EBS readback;18 original full states remain RAM.
-All7 actual-model TRAIN-only independent HF references prepared; unchanged qualified numerical worker and all endpoints/gates fixed.
-One root review releases E/release.json with all7 identities and six terminal closures,64evalchip-hour bound.
-All7 ordinary,7writer,7math and4scalar phases physically close0;25/28 groups complete. All49 actual-worker native gates PASS.
-All768questions×6 likelihood modes/model,4096ordinary documents×527 transitions,and raw/empty/own scalar attempts remain mandatory.
-Report:validation/real_cpt_scaffold_v29_training_complete_20261020.json; scientific verdict PENDING complete readout.
-Only baseline scalar exec27235(B0)/28376(raw2030)/76136(raw2029) remain ACTIVE;3groups. No more jobs to launch. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
-No partial quality interpretation or outcome-based checkpoint/prompt selection; independent98HF checks follow full primary readout.
+All6 latest model archives and one latest full1280 optimizer archive pass EBS readback;18 original full states remain RAM.
+All28 evaluation phasegroups/49workers physically close0;49 actual-model native gates PASS; evaluation9.401reserved chip-hours.
+All768questions×6 likelihood modes/model,4096ordinary documents×527 transitions and raw/empty/own scalar attempts complete.
+Primary original readout exists; scientific interpretation waits for independent all-context/statistical/98HF checks.
+ACTIVE CPU analysis/checker exec97855; E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
+All training/evaluation sessions and observer17085 CLOSED0; DO NOT RELAUNCH. No accelerator work remains.
+Next: independent PASS,declared scalar secondary,complete tables/examples/evidence publication,then interpret the boundary.
+Publication tools fabe609;1935CPU tests+smoke/compile PASS; actual full archive/replay verification remains.
 Same-instance EBS protects latest weights and one rotating full optimizer state,not all histories/offinstance backup.
-Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,TEST or V28 extension.
+Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,TEST,V28 extension or new long run released.
 
 ## Closed: integrated real-CPT readout mechanics
 Question: do the fixed readout entrypoints preserve native/cache distributions and complete target alignment?
