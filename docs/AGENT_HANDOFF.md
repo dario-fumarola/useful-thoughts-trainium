@@ -1,47 +1,60 @@
-<!-- Current handoff 2026-10-20 16:36 UTC; historical entries below -->
-Owner: continue autonomously/patiently; no final at milestones. No active goal; agent quota unavailable, do not retry agents.
-V28 COMPLETE/PUBLIC,c47a823; preserve closed producers. Main/Wstudy/Weval share73d9c91 before this documentation update.
-Wstudy=local/worktrees/real-cpt-scaffold-v29; numerical engine c9d2c0c remains fixed for all6 V29 runs.
-Weval=local/worktrees/real-cpt-scaffold-v29-eval; develop new evaluation wrapper here without editing frozen helpers.
-C=local/diagnostics/real-cpt-scaffold-v29-science-v1; O=local/science-runs/real-cpt-scaffold-v29 (private RAM).
-First seed2026102029: all3 initial64 independent native/order/master/moment/cast/CPU-loss checks PASS, full originals retained.
-All3 continuation supervisors ACTIVE: raw exec3711 PID1843731, format81339 PID1843733, computation86113 PID1843732.
-Children timeout process groups1843919/1843921/1843917. Release C/release-terminal1280-seed2026102029.json.
-Actual8-rank restore reports pass full model/optimizer bytes and tying for each job; updates114–116 at16:34UTC.
-Logical core groups0–7/8–15/16–23; six physical chips; healthy updates~6.3s. Fixed terminal1280, no held outcomes.
-Checkpoint queue PID1865138, source local/analysis/watch_real_cpt_v29_checkpoints_20261020.py, log C/checkpoint-queue-seed2026102029.log.
-Finite8h, waitsall3 full640 then independentCPU audits+EBS protection; repeats1280 after physical closure. No training/retries.
-Do not relaunch or edit hashed watcher/audit/protect sources while active. Recover existing session by ps/log if needed.
-All3 latest step64 models losslessly EBS readback/fsync verified; one rotating latest-full state currently raw64.
-B=local/backups/science/real-cpt-scaffold-v29, INDEX.json; EBS does not preserve every optimizer history, originals stay RAM.
-Root free~66GiB; floors35GiB/filesystem and512GiBhost. More verified backup-only model compression may be needed before seed2.
-Closed41-file backup-only archive reclaimed27.51GiB; all originalNVMe weights/cache untouched. q1 optimizer/q2 full backup duplicates
-retired only after newer full verification; q1/q2 original RAM4/8 states remain and EBS model/evidence remain. Receipts explicit.
-Scorer5-line0054991 repair CLOSED/PASS: full527 B1/B4 and suffix16 exact actualCPU gates; first resource failure preserved.
-Trained natural-stop B1/B4/B8 writer CLOSED/PASS; 4.88x microbenchmark only. Both qualifications are not learning evidence.
-Readout frozen C/readout-contract.json before training: 7models, math768x6modes, ordinary4096 all527, scalarraw/empty/own32actions.
-Use existing qualified helpers; question-only writer, no future. Every actualmodel/process fixedTRAIN native parity before held rows.
-Primary Traw gains>=.25nat/full16/positive95 versus both controls and separately B0 in bothorders; retention upper95<=+.03/token.
-All6 terminal identities fixed before held outcomes. No checkpoint/prompt/weight selection, no broadLM/autonomy claim from selectedFineMath.
-Next finish firstseed1280+auds/backups, then explicitly release freshseed2026102030 originalprotocols64/1280. No secondseed released yet.
-Whole study80chip-hour reservation; perphase6h, guard512GiBavailable/35GiBfree; resources C/resource-plan.json/reservations.json.
-No7B/8B,broadRL,officialTEST,newcloud,paidteacher,stack change,oldR1234 orV28 extension.
+<!-- Current handoff 2026-10-20 18:18 UTC; historical entries below -->
+Owner: continue autonomously/patiently until told to stop; do not final at milestones. No active goal. Agent quota unavailable untilOct24:do not retry agents.
+Repo public dario-fumarola/useful-thoughts-trainium. R=/home/ubuntu/dario; W=R/local/worktrees/real-cpt-scaffold-v29; Weval=R/local/worktrees/real-cpt-scaffold-v29-eval.
+W remains73d9c91 with numerical engine c9d2c0c frozen; main8f8ef89 and Weval2c30aa1 before this handoff update. Do not edit W numerical files.
 
-Readout progress16:55UTC: Weval85c55db worker/context code plus4204e10 results module are pushed; helpers frozen as in CPU references.
-New script scripts/run_real_cpt_readout_v29.py is committed08e94be in Weval; pycompile and full1932checksv3 PASS; exec52100 closes0.
-No held readout released. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; actual B0 TRAIN CPU reference complete.
-Integrated qualifier exec50890 physically closes all4 workers0; sparephysical8 idle. Cq=local/diagnostics/real-cpt-readout-v29-qualification-v1.
-Independent checker v2 exec76491 passes; NumPy native/cache/full64/2108target reconstruction. v1 retains an irrelevant live-stdout SHA in its evidence map; v2 excludes live stdout. No score/tolerance changed.
-Public integration report and full-window reporting-count correction committedcf9e76a and pushed;main ff08e94be before this update; original qualified4x527 arrays imply2108scores/condition,4216acrossB1/B4,not2112/4224. Originals unchanged.
-Finite six-file backup-only archival v2 exec52653/PID1868989 CLOSED0; all6 archived/restored, reclaimed4.192GiB. Root free69.58GiB at16:56. All NVMe/RAM originals unchanged.
-E/execution-plan.json prepares7 disjoint physical groups,serial phases permodel and scalar4shards billed once/chip; no held release yet.
-Carchive=local/diagnostics/backup-model-lossless-archive-v2; source local/analysis/archive_backup_model_duplicates_v2_20261020.py. All NVMe/RAM originals untouched, each archive fully SHA restored before backup duplicate retirement.
-Do not retry closed producers/agents. Keep watching3training continuations,checkpoint queue and backup archiver while completing evaluation supervisor/release preparation.
+ACTIVE V29 FIRST ORDER2026102029,THREE ORIGINAL CONTINUATIONS:
+C=R/local/diagnostics/real-cpt-scaffold-v29-science-v1; O=R/local/science-runs/real-cpt-scaffold-v29 (private /dev/shm symlink).
+Raw exec3711/supervisor1843731/owned timeout session1843919;format81339/1843733/1843921;computation86113/1843732/1843917.
+Logical0–7/8–15/16–23,physical0–5. All original full64 restorations pass8rank fullmodel/optimizer bytes and ties perjob.
+Updates1067/1082/1081 observed18:16UTC; warm~6.3–6.4s; full640 checkpoint cleanup drops each job PSS to~89GiB;hostavailable~1473GiB.
+Fixed1280 terminal primary; no held model outcomes. Do not relaunch these jobs, stop them early,or choose checkpoints by DEV.
+Watch PID1865138,source local/analysis/watch_real_cpt_v29_checkpoints_20261020.py,log C/checkpoint-queue-seed2026102029.log.
+Full640 ordered20480source/component/native/master/moment/cast+actualrestore8 audits PASS; all3 latest model archives and one fullraw640 EBS archive complete member/SHA/fsync PASS.
+Watcher now waitsall3 COMPLETE1280 AND physically closed terminal1280/completed.json,then CPUaudits/protects. Finite8h; no training or automatic retries.
+Never edit hashed watcher/audit/protect sources while active. Original full64/640 allremain RAM. EBS keeps latest models plus ONE rotating full optimizer state,not every history/offinstance.
+B=R/local/backups/science/real-cpt-scaffold-v29/INDEX.json; immutable C/protection-index-seed2026102029-step640.json.
+Public first-pass report validation/real_cpt_scaffold_v29_first_pass_20261020.json; all6 prospective1280 protocols remain unchanged.
 
-Analysis preparation17:12UTC: final1932CPU checks pass; current results module has native component masks,strict original TRAIN/reference/closure pins,unchanged separate gates and explicit secondary own-versus-B0/format comparisons. Independent checker local/analysis/check_real_cpt_scaffold_v29_readout_20261020.py is pycompiled/prepared,NOT RUN; it reconstructs all contrast bootstraps,scalar denominators/decisions and later98 fixedHFheldspots. E/analysis-plan.json binds these exact sources before any held outcome. No more analysis/prompt changes are needed while training runs.
-First-pass milestone17:41UTC: all3 full640 checkpoints COMPLETE; all3 periodic independent audits close0; source order20480 and all components/native/full master/moment/cast/restore8 checks PASS. Watcher protects all3 latest model archives and one latest raw640 full optimizer archive with complete member/SHA readback,then waits1280. Source originals64/640 stay RAM; old backup-only full64 retires after successor verification. Public report validation/real_cpt_scaffold_v29_first_pass_20261020.json. GPU continuations still ACTIVE (~730updates),do not relaunch/stop; fixed1280 primary. Next inspect terminal closure/audits/protection,then release the already-validated second seed2030 from freshB0. No held outcomes or new agents.
-Verification preparation17:59UTC: E/analysis-plan-v2.json supersedes only the independent checker version before held outcomes; main summary/scoring/generation/decoders/gates unchanged. Use local/analysis/check_real_cpt_scaffold_v29_readout_v2_20261020.py later. It additionally reconstructs all actual writer prefix-only inputs and every raw/empty/own/other/oracle/corrupt context,plus scalar contexts. Source-only supplied-work fixtures match all768x6 contexts;0model forwards/generations,no capability claim. Public source/receipt under validation/real_cpt_readout_v29_context_integrity_preparation_20261020. v1 remains immutable. Actual all7 readout/checker execution remains pending after all6 terminal models.
-Readout placement18:02UTC: E/execution-plan-v2.json allows ordinary scoring on physical7–13 concurrently with writer/math/scalar physical0–6. This changes only supervisor device selection; all numerical/helper/CPU reference hashes remain unchanged. Full1932CPU checks+smoke/compile PASS. Max3 scalar groups concurrently is a ROOT SCHEDULING LIMIT (not a worker semaphore):launch at most3 groups of4scalar processes together. This caps host memory while using spare chips for independent ordinary scoring. No held release yet; first finish all6 training models. Use latest scripts/run_real_cpt_readout_v29.py hash when issuing the later release. Prior execution plans preserved. No more readout implementation changes planned before actual execution.
+NEXT TRAINING ACTION AFTER FIRST-ORDER TERMINAL AUDITS/PROTECTION:
+All3 seed2026102030 protocols already staged under C; all6 actualTRAIN CPUinitial-loss references fixed before learning.
+Read-only validate/verify_scaffold_science_release for all3 second-order protocols passed exec5796. Second order NOT released/launched.
+After allfirst terminals/audits/backup pass,root explicitly reviews source,state,space andbudget,then clone original release-stage64.json for seed2030 with registryjobs filtered to2030.
+Use same W/scripts/run_real_cpt_scaffold_v29.py --control C --release C/release-stage64-seed2026102030.json --job cpt-{arm}-seed2026102030-v1 --phase stage64.
+FreshB0; no resume for initial64. All3 actual first64/native/CPU-loss/count/fullstate/order checks required; run local/analysis/audit_real_cpt_v29_stage64_20261020.py --job <job> for each.
+Then local/analysis/protect_real_cpt_v29_checkpoints_20261020.py --seed2026102030 --step64. Keep flags as '--seed 2026102030 --step 64'.
+Review bounded PSS/backup and release terminal1280 from original full64 exactly as first order; launch finite checkpoint watcher --seed2026102030 once.
+Same80reserved science chip-hour aggregate; each terminalphase6h/cleanup180s; floors35GiB/filesystem and512GiBhostavailable.
+
+READOUT READY; DO NOT OPEN HELD MODEL OUTCOMES BEFORE ALL6 TERMINAL IDENTITIES:
+E=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1. Actual B0 fixedTRAIN CPUreference E/references/B0 COMPLETE; no held forward.
+Qualified driver train/real_cpt_readout_driver.py and purecontexts train/real_cpt_readout.py remain numerical85c55db; full1932CPU checks+smoke/compile PASS.
+Cq=R/local/diagnostics/real-cpt-readout-v29-qualification-v1: all4 actualTRAIN native/cache/full16/full527 paths close0; independentNumPy PASS;0.104chiphours. No scientific learning claim.
+New train/real_cpt_readout_results.py fixed7be1b07: separate rawtraining/absoluteB0/retention/inference gates; native numeral,boundary,tail components and strict original references/closures.
+E/readout contract lives at C/readout-contract.json (frozen before training). 7models,768mathx6modes;4096ordinaryx527;scalar raw/empty/own32actions. No best-of or outcomefilter.
+Greedywriter128actions,prefill544,B8/B4 equal REAL lengths only+serialresidual. StopsEOS151643/Answer16141. Readerwidth672; full16 native source target.
+Every model/process must pass its own independent fixedTRAIN FP32HF native/cache/target gate before held rows. Prepare actual terminal CPUreferences while seed2trains if useful; TRAIN only.
+Sciencebinding status AUDITED_V29_TERMINAL1280,fullmodelSHA/run_id/step/spec_hash/audit_file+SHA; alias ids raw-seed2026102029 etc. B0 binding already E/B0-binding.json.
+E/execution-plan-v2.json prepares ordinary on physical7–13 concurrently with writer/math/scalar0–6; scripts/run_real_cpt_readout_v29.py2c30aa1 is resource-only placement update. No numerical/helper/reference hash changes.
+MAX3 SCALAR GROUPS CONCURRENTLY is ROOT scheduling limit,not worker semaphore. Each group4logicalshards shares one physical-chip charge; ordinary concurrent chips charged separately.
+Actual held release must bindall7models/references,source_files=readout_driver.sources(),supervisorSHA,all6 original terminalclosures,contractSHA,slots/env/helper/resources. Aggregate64evalchip-hours; perphase limits set explicitly before launch.
+Use E/analysis-plan-v2.json and local/analysis/check_real_cpt_scaffold_v29_readout_v2_20261020.py (NOTv1). v2 validatesall original writer prefix-only inputs,all6 reader contexts/donors,scalarcontexts/counts,all pairedbootstraps/decisions,and98 fixedHFheld score spots.
+Checker v2 only pycompiled/source-context fixtures checked768x6 with0model forwards; actualall7 readout reconstruction PENDING. v1/source/plans remain immutable.
+Native component masks reuse original source-token curator: merged ' -' tokens and whitespace make standalone numeral IDs invalid alignment. All768source masks/corruptctxbounds checked withoutmodeloutcomes.
+Primary Traw-minus-rawcontrol andTraw-minus-formatcontrol >=.25nat/full16/positive95lower BOTHorders; separately same versusB0. Ordinary upper95NLLregression<=.03/token. Secondary inference separate; no poolingorders/rescuefromownmode.
+Data local/data/real-cpt-scaffold-v29-cpu-v2:TRAIN20480(5120calc+15360ordinary),2passes1280/global32world8+aux8;fullcleanLM1+calcauxfuture.5+work1,separate means,fraction.25.
+Supervised source-controlled FineMath CPT,not broadLM improvement/autonomous discovery. Teacher fullroot includesanswer but computed from prefix; sourceRHS curation privileged/declared. OfficialTEST unopened.
+
+PROTECTION/ORIGINALS:
+All6planned full64/640/1280 states remain volatileRAM (18~404GiB);EBS retainslatestperrunweights+one rotatingfullstate. No approved externalbucket or offinstance weightbackup claim.
+Closed41filebackup-onlyarchivev1 reclaims27.512GiB;closed6filev2 exec52653 reclaims4.192GiB. Every archive fully decompressed/SHAverified before duplicate retirement; NVMe/RAM originals untouched.
+Q1 originalfullRAM4/8 and EBS compressedmodel/evidence remain; olderQ1backup optimizers retired. Q2 originalfullRAM4/8 and EBS model/evidence remain; oldbackupfull retired after newer sciencefull readback. Allreceipts explicit.
+Rootfree~69GiB before nextrotation; existingNVMe floors~50–55GiB. Keep35GiB/fs and512GiBhostavailable. SerializelargeEBSwriters via C/large-EBS-writer.lock.
+Unmounted nvme4 is NONZERO; do NOT format/overwrite. No oldstate/cache deletion or relocation. No newcloud/IAM/paidteacher/stack changes.
+V28 COMPLETE/PUBLIC atc47a823 and release v28-controlled-computation-20261020. Strong covered-length trace benefit;directtransfer/length/retention fail. Do not rerun/extend closedproducers or use damagedV28weights forCPT.
+One reviewZIP already made today local/review/controlled-computation-v28-20261020.zip; no newZIPneeded. R1234 remains stopped63; no7B/8B/broadRL/TEST release.
+Reportingcountaddendum: oldfull-window qualificationmetadata2112/4224 waswrong; actual4x527=2108/condition,4216acrossB1/B4. Original vectors/gatesunchanged. Correctnewintegrationordinary targetcount2108.
+
 ## Historical handoff snapshots (not active instructions)
 
 <!-- Current handoff 2026-10-20 13:05 UTC; earlier entries below are historical -->
