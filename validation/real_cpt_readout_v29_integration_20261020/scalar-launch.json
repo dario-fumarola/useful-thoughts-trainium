@@ -1,0 +1,30 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=60s",
+    "1800s",
+    "/home/ubuntu/ema-trainium/.venv/bin/python",
+    "-u",
+    "-m",
+    "train.real_cpt_readout_driver",
+    "run",
+    "--reference",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/reference",
+    "--output",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar",
+    "--panel",
+    "scalar",
+    "--qualify",
+    "--deadline-utc",
+    "2026-10-20T17:19:11.627366+00:00"
+  ],
+  "owned": {
+    "pgid": 1873475,
+    "pid": 1873475,
+    "ppid": 1866461,
+    "session": 1873475,
+    "start_ticks": 34964377
+  },
+  "utc": "2026-10-20T16:49:11.628181+00:00"
+}

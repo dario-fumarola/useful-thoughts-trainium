@@ -1,0 +1,26 @@
+{
+  "CPU_checks": 1928,
+  "helper": {
+    "path": "/home/ubuntu/dario/local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualify.py",
+    "sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f"
+  },
+  "limits": "Numerical integration qualification, not scientific validation or proof of learned useful computation.",
+  "logical_core": 32,
+  "max_bidirectional_KL": 0.01,
+  "max_native_logp_error": 0.001,
+  "max_reserved_chip_hours": 2,
+  "max_wall_seconds_per_panel": 1800,
+  "panels": [
+    "writer",
+    "math",
+    "ordinary",
+    "scalar"
+  ],
+  "physical_chip": 8,
+  "reference_sha256": "ed9f1a16f821ded1391f4b32a235c8a833cf4324de1dfd2e6bd2d02b0c72723d",
+  "scope": "Actual frozen V17 terminal weights and fixed TRAIN only; no held rows or parameter updates.",
+  "source_commit": "85c55db2f9bdb8d1543ff7214efc8dc6e7f330c8",
+  "source_sha256": "5d694eab4088c13bcb0a270d32253f260e6cc5936ae60ce8c94ca58563a6929a",
+  "status": "RELEASED_ONE_SPARE_CHIP_TRAIN_ONLY_INTEGRATION",
+  "utc": "2026-10-20T16:43:46.719582+00:00"
+}

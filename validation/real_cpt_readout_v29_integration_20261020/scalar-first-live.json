@@ -1,0 +1,16 @@
+{
+  "actual": [
+    {
+      "command": "/home/ubuntu/ema-trainium/.venv/bin/python -u -m train.real_cpt_readout_driver run --reference /home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/reference --output /home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar --panel scalar --qualify --deadline-utc 2026-10-20T17:19:11.627366+00:00",
+      "neuron_runtime_version": "2.34.10",
+      "pid": 1873476
+    }
+  ],
+  "owned": {
+    "pgid": 1873475,
+    "pid": 1873475,
+    "ppid": 1866461,
+    "session": 1873475,
+    "start_ticks": 34964377
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "conditions": {
+    "1": {
+      "actual_target_scores": 2108,
+      "documents": 4,
+      "sha256": "5bd6e0b4145c1e56cb990e424ac9c3efe7b63a1a31aee30670bfc9dd7c19c478",
+      "transitions_per_document": 527
+    },
+    "4": {
+      "actual_target_scores": 2108,
+      "documents": 4,
+      "sha256": "490b0365048abdc208f30fd1534b6beb26a15e5ffb0ccf5f4a8208eae117ff38",
+      "transitions_per_document": 527
+    }
+  },
+  "corrected_total": 4216,
+  "correction": "4 documents times527 real transitions equals2108 scores per batch-size condition,4216 across B1/B4. Previous metadata2112/4224 counted528 source IDs as transitions.",
+  "independent_crosscheck": "New integration NumPy checker independently reconstructs2108 actual ordinary target scores from4x527 arrays.",
+  "numerical_effect": "None: complete527 token arrays, original references, errors, tolerances, model, data, physical closures and all scientific gates stay unchanged.",
+  "original_metadata_total": 4224,
+  "original_report": "validation/real_cpt_full_window_scoring_v29_20261020.json",
+  "original_report_sha256": "bf6b1a36342f69605b9e904afc4f82cc98d6bde8bac7f3e0ea7d8c95d74d4a0c",
+  "status": "REPORTING_COUNT_CORRECTION_ONLY_ORIGINAL_NUMERICS_UNCHANGED"
+}

@@ -1,0 +1,44 @@
+{
+  "limits": "Numerical integration qualification, not scientific validation or proof of learned useful computation.",
+  "outcomes": {
+    "math": {
+      "device_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "observed_actual_single_process": true,
+      "owned_session_absent": true,
+      "reserved_chip_hours": 0.030977720388343895,
+      "status": "SESSION_AND_PHYSICAL_DEVICE_CLOSED"
+    },
+    "ordinary": {
+      "device_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "observed_actual_single_process": true,
+      "owned_session_absent": true,
+      "reserved_chip_hours": 0.016962106352778696,
+      "status": "SESSION_AND_PHYSICAL_DEVICE_CLOSED"
+    },
+    "scalar": {
+      "device_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "observed_actual_single_process": true,
+      "owned_session_absent": true,
+      "reserved_chip_hours": 0.014110812471109157,
+      "status": "SESSION_AND_PHYSICAL_DEVICE_CLOSED"
+    },
+    "writer": {
+      "device_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "observed_actual_single_process": true,
+      "owned_session_absent": true,
+      "reserved_chip_hours": 0.04223236064360309,
+      "status": "SESSION_AND_PHYSICAL_DEVICE_CLOSED"
+    }
+  },
+  "plan_sha256": "867ec129537b46331240f16a951ce7cbb856ee213ba182e2815282d08f628c98",
+  "reserved_chip_hours": 0.10428299985583483,
+  "status": "PASS_FOUR_ACTUAL_TRAIN_ONLY_INTEGRATED_READOUT_WORKERS"
+}

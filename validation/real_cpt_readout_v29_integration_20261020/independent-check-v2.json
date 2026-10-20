@@ -1,0 +1,105 @@
+{
+  "checks": {
+    "math": {
+      "max_bidirectional_KL": 1.378218245951329e-12,
+      "max_logp_error": 6.437025358962956e-05,
+      "vectors": 4
+    },
+    "math_targets": {
+      "max_logp_error": 1.430511474609375e-05,
+      "native_targets": 64
+    },
+    "ordinary": {
+      "max_bidirectional_KL": 3.2822121813640384e-10,
+      "max_logp_error": 0.0002937323321887675,
+      "vectors": 12
+    },
+    "ordinary_targets": {
+      "max_logp_error": 6.747245788574219e-05,
+      "native_targets": 2108
+    },
+    "scalar": {
+      "max_bidirectional_KL": 4.4786685033400364e-12,
+      "max_logp_error": 5.673720745136279e-05,
+      "vectors": 4
+    },
+    "scalar_cache": {
+      "max_bidirectional_KL": 1.504743496078178e-13,
+      "max_logp_error": 1.1485351190998472e-05,
+      "vectors": 1
+    },
+    "writer": {
+      "max_bidirectional_KL": 4.0911872467926046e-13,
+      "max_logp_error": 0.00010692979657278556,
+      "vectors": 8
+    },
+    "writer_cache": {
+      "max_bidirectional_KL": 2.0845906381448968e-16,
+      "max_logp_error": 2.288818308215923e-05,
+      "vectors": 1
+    },
+    "writer_cached_B4": {
+      "max_bidirectional_KL": 4.869937000284443e-13,
+      "max_logp_error": 8.783653811406111e-05,
+      "vectors": 4
+    },
+    "writer_cached_B8": {
+      "max_bidirectional_KL": 4.869937000284443e-13,
+      "max_logp_error": 0.00010692979662962898,
+      "vectors": 8
+    }
+  },
+  "evidence_files": {
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/CPU-reference.log": "aab54a6b6b26dc1d7e63bdbd07850bdbe91c589b008b4b6f0f3a1be714d59633",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/binding.json": "81a0f8d486666fe0ca52741ecf60589fd502d42b405b1af367685140b57291ba",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/complete.json": "778d47162a1c2667d12d1c11015235adf6c47dcc3c627849ac6eb80d1d87b5a8",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/independent-check.json": "877ca987545302cbcd3f743873a04fc257ecbf12785ee774c0e255875ea45fee",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math-closure.json": "e42dd7f0a32dff0d464955338ffefbad1b4c7610e7084f4addee95fdd6b6b230",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math-first-live.json": "76381590cda689ac0d491aaa6064b351bb651c59f3963fd5490fdd4ebd731b34",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math-launch.json": "b01702f643e607a165450a255a029d32ecc41f7b7be684b6f5d6b113180f6910",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math.log": "d5a502d76f733f7c865ae7684e1f98477d455de71a9123383929c17da9cf100e",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math/TRAIN-full-span.json": "e342248d3fd1be103c1e9d38a3222c2a33d69ea39b24b426c212a014e9013140",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math/native-check.json": "53819990dc5e2cefb6a7b5442f555e22e834ba2bdc66fe4969981a735e9fa5fb",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math/native-logps.pt": "65a6a6060c51e99ace61d8f9269b87e2b66126e637a2f2d96d4e2564fd0ba347",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/math/run.json": "d194e9f04d47eef54e6ca4ca22a235bfac1c888b53637f1287163e7b0eb7f4a8",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary-closure.json": "2fecade201d15c5276a4667f4e78414dcba76c4039077ea10242bb1901edf366",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary-first-live.json": "efbc77da565bf449260e05712d83d7fd1635c9f865f66387b7b81cbe3f99e5b6",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary-launch.json": "d1461def5db0116cd632c3ecc46354f452f9395de70b8590322a429a86a31266",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary.log": "6c7c9060b8b1106fcb97824f77f7c4809ef05948afdd70faa27c8608be67e39b",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary/TRAIN-full-span.json": "00794322c53c2d1acf2a3eee59a9c85fe6e2f32e5f3f8dc534ce37b8fb83801f",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary/native-check.json": "5c97f59803956eb097bc1f0a4b2ac122b464ca6c15f781630c91ca15686588fe",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary/native-logps.pt": "ff42c9c7402c25907b9cd1c2c5931349faac2dc2e65c3add765c42db44b4f718",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/ordinary/run.json": "4da9792368acd8248e3aabece8a2a484f11ebd54e0d6f27a1e2e8b127ea1ca93",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/plan.json": "867ec129537b46331240f16a951ce7cbb856ee213ba182e2815282d08f628c98",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/reference/CPU-native.pt": "27e255e55fdf25e39e92da4149048f24f5885d85ea8f67013faaa94e7777e949",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/reference/TRAIN-inputs.json": "4daeae7017c10f84032c5be3e8178c8da70acdfe05cade13c99d68f237c1b995",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/reference/reference.json": "ed9f1a16f821ded1391f4b32a235c8a833cf4324de1dfd2e6bd2d02b0c72723d",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar-closure.json": "2f13687908a39753276062b9a7ebe804a07981267bdddcc66365b693182ff305",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar-first-live.json": "27ed8abaf4d1e75674bfa49599f94f81139007affc8d9ac6e647ddcc8730c7e0",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar-launch.json": "faf8309b4ec5bd6769035493bf4a3dc25f1e6d51c643d90edd1623f50750b926",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar.log": "d0423a96a5806242b10f686c48ee405f4fea5c70e903c5c3d10fbd8b8644665c",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar/cache-prefill-logps.pt": "aafaf58aad24c467967e1245d9701127c928aefe06d807d857b5bb2801cd2fac",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar/cache-prefill.json": "b6c46d3aa76c42994bac8c1de55e5664d80975ebed86e2b8362d215be73cdb4c",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar/native-check.json": "3ef63d93b0c837fdeb403115e320635f15a6d301283dab934f0fdb8c4c80a6a6",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar/native-logps.pt": "65a6a6060c51e99ace61d8f9269b87e2b66126e637a2f2d96d4e2564fd0ba347",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/scalar/run.json": "ac53db02b9da88fc90a5684827a38e1322b27721baaaebc73bd59dbc479a15ee",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/supervisor.log": "839c2f0e7e8e5cf148b88e0402d84c8e262d580bebb08e106e3562d1834f0931",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer-closure.json": "38b776bc1ce0d6b5101ec336b6c57c258c83404784bdce8f602dbe3efb7f468f",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer-first-live.json": "d72b6cc31317304cfc2a7593eaee5600bf7262e7b305ee88023e8e21de62d79b",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer-launch.json": "f28899663904bd47423694bf157b9c086da9ab512da9ce96c98ae5daf63e73e0",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer.log": "40e8fdb78101eabe244f7b9d3c973ba8c6dcf14b71d7109fc1ceb96aaf0a2786",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/cache-prefill-logps.pt": "e504040422d455a5437cddcbdcda2674f8add71f3d942c29722bc19fea7e4e0d",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/cache-prefill.json": "796ca806a05c19bdbcd288322355899f07bc5b1853427ac79bcf5fc5f7938e54",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/cached-B4-native.json": "263ce63079ce346dba66207db84158e9eb8d758af4ba16a1c9812f09bc35e537",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/cached-B4-native.pt": "ba0e6cd6309f702d7fa49feaaf2aa3fc032ba969511a8c9b92e1fbedc6e70d75",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/cached-B8-native.json": "0aae2d3a5ad818ec7a2c554bcd8820d11413d81f9436b4ac4206fb03c2987e9c",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/cached-B8-native.pt": "e4714b0170a657214667edb3b936282362ae632763d5a6fe539587cc322c50c9",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/native-check.json": "efc2bef4c33ad2c4c5d55b6133c6cfeb05fba88a9300cbe12be95c5b3d4e894c",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/native-logps.pt": "bab78d4ab787be546b6672c698ef0b5eb3f4ae4ae213f3a55c0b354ce8ae572f",
+    "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/writer/run.json": "412cd3bcca8e52e7bf47596507e74733c85855bc95eb9cb38760e1334e370cb1"
+  },
+  "limits": "Independent arithmetic on the original stored witnesses, not external replication or scientific learning evidence.",
+  "reserved_chip_hours": 0.10428299985583483,
+  "source_sha256": "89718742c291f949abf39cee0315d17f2394dfc9a7cfe84bf16b60d8f54baf5f",
+  "status": "PASS_INDEPENDENT_TRAIN_NATIVE_CACHE_AND_ALL_TARGET_RECONSTRUCTION"
+}

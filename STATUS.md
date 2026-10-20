@@ -1,21 +1,29 @@
-# Status — 2026-10-20 16:36 UTC
+# Status — 2026-10-20 16:55 UTC
 
 ## Active: matched real continuation CPT
-Question: does verified computation improve real direct prediction with complete clean LM preserved?
-ID:real-cpt-scaffold-v29; TRAIN20480; arithmetic DEV768/ordinary DEV4096; no held model outcomes.
-All3 order2026102029 models complete64 updates; full order/component/native/master/moment/cast audits PASS.
-Actual initial CPU loss/count bounds pass in all3; checkpoint64 states and every original remain.
-Warm last32 medians6.41/6.34/6.33s; training last-quarter PSS ranges<.01GiB;host available>=1297GiB.
-All3 latest models and one full state have complete lossless EBS readback/fsync; originals are in RAM.
-EBS keeps one latest full optimizer state,not all optimizer histories; qualification backup retirement is explicit.
-Initial stages cost0.996reserved chip-hours. No learning/generalization conclusion from these TRAIN checks.
-Continuation release resumes the original full64 states to the fixed1280 endpoint; second seed not released yet.
-Source/data/order/loss/precision and evaluation gates stay fixed; no checkpoint/prompt selection on DEV.
-Source engine c9d2c0c; supervisor scripts/run_real_cpt_scaffold_v29.py; C=local/diagnostics/real-cpt-scaffold-v29-science-v1.
-Report:validation/real_cpt_scaffold_v29_stage64_complete_20261020.json; readout/scoring qualifications are separate.
-Active:3 continuations restore all8 model/optimizer ranks byte-exactly; updates114–116 observed at16:34UTC.
-Next:monitor terminal runs and finite checkpoint audit/protection queue; implement frozen held readout.
+Question: does verified computation improve direct real prediction while retaining ordinary LM?
+ID:real-cpt-scaffold-v29; TRAIN20480; calculation DEV768/ordinary DEV4096; no held model outcomes.
+All3 order2026102029 models pass initial64 native/order/component/master/moment/cast and CPU-loss checks.
+All24 actual model/optimizer rank restorations pass full-byte checks; original continuations are active.
+Updates290–294 observed16:53UTC; warm~6.3–6.4s; earlier bounded PSS plateau,not indefinite stability.
+Fixed terminal1280; full640/1280 originals remain in RAM; no checkpoint/prompt selection on DEV.
+Finite checkpoint queue independently audits and protects640/1280; all3 step64 weights and one full state already EBS-verified.
+Same-instance EBS keeps latest per-run models and one rotating latest full optimizer state,not every optimizer history.
+Initial stages cost0.996reserved chip-hours; science80/evaluation64chip-hour bounds stay fixed.
+Report:validation/real_cpt_scaffold_v29_stage64_complete_20261020.json; source engine c9d2c0c unchanged.
+Active supervisors raw/format/computation exec3711/81339/86113; checkpoint queue PID1865138.
+Next:finish first order,audit/protect terminal states,then explicitly release order2026102030; implement fixed readout.
 Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,officialTEST or V28 extension.
+
+## Closed: integrated real-CPT readout mechanics
+Question: do the fixed readout entrypoints preserve native/cache distributions and complete target alignment?
+ID:real-cpt-readout-v29-integration-v1; frozen V17 terminal weights,fixed8TRAIN calculation/4ordinary cases.
+All4 serial single-core workers close0:28native vectors,14cache comparisons,64math/2108ordinary target scores PASS.
+Independent NumPy full-vector/target reconstruction and physical closures PASS;0.104reserved chip-hours.
+All1932CPU tests+smoke/compile pass. No held attempts or updates; actual terminal models still need their own TRAIN gates.
+Report:validation/real_cpt_readout_v29_integration_20261020.json; full native witnesses remain on local EBS.
+Decision: exact qualified helpers support future V29 readout; no learning or generalization claim.
+Separate reporting-count addendum corrects prior full-window metadata4224→4216; original527-token arrays/gates unchanged.
 
 ## Closed: controlled computation reference
 Question: do verified generated states improve fresh computation,and what remains without the trace?

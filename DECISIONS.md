@@ -1684,3 +1684,5 @@ No learning release follows yet. Full527 scorer hits runtime spill-queue exhaust
 correct graph-ID/count interpretation,and test explicit synchronization with unchanged inputs and gates.
 Full new qualification backup is losslessly archived on EBS; original RAM states remain. Older qualification
 backup-only optimizer shards retire after full hash readback; source model/evidence and all original states stay.
+
+2026-10-20 V29 readout integration: independent fixed-TRAIN HF/native/cache gates pass for the four worker paths; no held scoring or learning claim. Source masks reconstruct original token boundaries, including merged whitespace/signs; standalone numeral tokenization cannot locate a source span. Keep all6 terminal identities fixed before held outcomes, and keep recipe, absolute-B0, retention and inference gates separate. The ordinary window has528 source IDs and527 transitions: prior reporting metadata2112/4224 was an off-by-one count, corrected by a new addendum to2108/4216 without modifying any original vector, producer, tolerance or decision.

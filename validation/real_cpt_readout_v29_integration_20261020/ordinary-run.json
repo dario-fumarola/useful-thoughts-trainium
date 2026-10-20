@@ -1,0 +1,183 @@
+{
+  "finished_utc": "2026-10-20T16:49:02+00:00",
+  "model": {
+    "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/runs/real-source-balanced-v17-source_cot-TRAIN5120-seed2026101913-v1/step-0000320/model.pt",
+    "checkpoint_sha256": "9fb43e0faa8180c8859a50b722489821225379f8dc8424115f3ccdbbee0c0439",
+    "id": "engineering-V17-source-cot-seed2026101913",
+    "run_id": "real-source-balanced-v17-source_cot-TRAIN5120-seed2026101913-v1",
+    "spec_hash": "7893d0e196def51d0f9e564ce1924f2cf7f13a4c96702aecd9626cd64e8cbf8a",
+    "status": "FROZEN_ENGINEERING_TRAIN_ONLY",
+    "step": 320
+  },
+  "native": [
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 1.3077654835807665e-11,
+      "max_bidirectional_kl_nats": 1.3078646236448262e-11,
+      "max_logp_error": 2.713186392711009e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 1.3078646236448262e-11,
+      "relative_l2_logp_error": 4.1331881158219393e-07,
+      "rms_logp_error": 6.01205631639062e-06
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 6.184194934983859e-12,
+      "max_bidirectional_kl_nats": 6.184539182196755e-12,
+      "max_logp_error": 6.174316657947543e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 6.184539182196755e-12,
+      "relative_l2_logp_error": 4.223687999509603e-07,
+      "rms_logp_error": 1.1993150993803727e-05
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 2.0207496881952922e-13,
+      "max_bidirectional_kl_nats": 2.0242957590732114e-13,
+      "max_logp_error": 0.00012218159205446,
+      "passed": true,
+      "reference_to_device_kl_nats": 2.0242957590732114e-13,
+      "relative_l2_logp_error": 1.421895117963315e-06,
+      "rms_logp_error": 4.5238694427754614e-05
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 3.146805318751391e-11,
+      "max_bidirectional_kl_nats": 3.14691934963812e-11,
+      "max_logp_error": 4.05603490882811e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 3.14691934963812e-11,
+      "relative_l2_logp_error": 9.437651264270455e-07,
+      "rms_logp_error": 1.5555277334916374e-05
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 8.46475307126294e-12,
+      "max_bidirectional_kl_nats": 8.465428105488167e-12,
+      "max_logp_error": 4.0489646373487176e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 8.465428105488167e-12,
+      "relative_l2_logp_error": 3.8184412245255875e-07,
+      "rms_logp_error": 1.0558140267877857e-05
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 1.4355626458824611e-11,
+      "max_bidirectional_kl_nats": 1.4355626458824611e-11,
+      "max_logp_error": 2.751460924699245e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 1.4355282686003106e-11,
+      "relative_l2_logp_error": 2.4152052693276365e-07,
+      "rms_logp_error": 5.8429014509608856e-06
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 3.2822161174541465e-10,
+      "max_bidirectional_kl_nats": 3.2822161174541465e-10,
+      "max_logp_error": 0.00013737810737168843,
+      "passed": true,
+      "reference_to_device_kl_nats": 3.282200292595938e-10,
+      "relative_l2_logp_error": 4.236508250144499e-06,
+      "rms_logp_error": 6.427737666033688e-05
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 7.845502192681622e-12,
+      "max_bidirectional_kl_nats": 7.845502192681622e-12,
+      "max_logp_error": 3.5572601390754244e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 7.845417281652066e-12,
+      "relative_l2_logp_error": 2.2333612537549652e-07,
+      "rms_logp_error": 6.961285792126065e-06
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 2.2477766431284615e-14,
+      "max_bidirectional_kl_nats": 2.2477766431284615e-14,
+      "max_logp_error": 0.0002937323321887675,
+      "passed": true,
+      "reference_to_device_kl_nats": 2.2084925886557184e-14,
+      "relative_l2_logp_error": 2.3134296988380655e-06,
+      "rms_logp_error": 0.00011750633370700107
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 2.093476913262027e-11,
+      "max_bidirectional_kl_nats": 2.093625578735693e-11,
+      "max_logp_error": 3.711572146514186e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 2.093625578735693e-11,
+      "relative_l2_logp_error": 5.43308814967988e-07,
+      "rms_logp_error": 8.615070117762953e-06
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 5.6735524670739695e-12,
+      "max_bidirectional_kl_nats": 5.6739780277954404e-12,
+      "max_logp_error": 2.4483108170159085e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 5.6739780277954404e-12,
+      "relative_l2_logp_error": 1.8465528443704974e-07,
+      "rms_logp_error": 5.10447287532637e-06
+    },
+    {
+      "argmax_equal": true,
+      "device_to_reference_kl_nats": 5.84120569931663e-12,
+      "max_bidirectional_kl_nats": 5.841760306314943e-12,
+      "max_logp_error": 2.2907316601816774e-05,
+      "passed": true,
+      "reference_to_device_kl_nats": 5.841760306314943e-12,
+      "relative_l2_logp_error": 1.6680380658779963e-07,
+      "rms_logp_error": 4.551717259291638e-06
+    }
+  ],
+  "output_files": {
+    "TRAIN-full-span.json": "00794322c53c2d1acf2a3eee59a9c85fe6e2f32e5f3f8dc534ce37b8fb83801f",
+    "native-check.json": "5c97f59803956eb097bc1f0a4b2ac122b464ca6c15f781630c91ca15686588fe",
+    "native-logps.pt": "ff42c9c7402c25907b9cd1c2c5931349faac2dc2e65c3add765c42db44b4f718"
+  },
+  "panel": "ordinary",
+  "qualify_only": true,
+  "reference": "/home/ubuntu/dario/local/diagnostics/real-cpt-readout-v29-qualification-v1/reference",
+  "reference_sha256": "ed9f1a16f821ded1391f4b32a235c8a833cf4324de1dfd2e6bd2d02b0c72723d",
+  "release_sha256": null,
+  "rows": 0,
+  "runtime_policy": {
+    "environment": {
+      "MKL_NUM_THREADS": "2",
+      "NEURON_CC_FLAGS": "--model-type=transformer",
+      "NEURON_NUM_RECENT_MODELS_TO_KEEP": null,
+      "OMP_NUM_THREADS": "2",
+      "PJRT_DEVICE": "NEURON",
+      "XLA_COMPILATION_CACHE_SIZE": "256",
+      "XLA_DOWNCAST_BF16": null,
+      "XLA_USE_BF16": null
+    },
+    "schema": 1
+  },
+  "shard": 0,
+  "source_files": {
+    "train/batched_causal_decoder.py": "1a8cc92c8232af48987f465c59dec28187da8081a3b5f6bd6a679fcedd8e6d30",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/computable_equations.py": "026732aca990ec7014313d40c7f3c2446716798b9abc70b4dbbac521d2efed23",
+    "train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/partial_state_answer_driver.py": "b648bc6db5c93f68482088935488f765805484a46e66df07507a0c2523018915",
+    "train/real_cpt_readout.py": "aa8284150fa86a321a056386b4bd1ba049188715cd12564456a5c066681c1a91",
+    "train/real_cpt_readout_driver.py": "a6d84713f8877e5f78d0668e33b27256a52a2536dadfb11494b8729043b2066f",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+    "train/real_trace_evaluation.py": "4a289e2f0228c00ce48c397519a63a91cbb3faee14854b73bde383f20c06d7b8",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "started_utc": "2026-10-20T16:48:12+00:00",
+  "status": "PASS_FIXED_TRAIN_NATIVE_AND_PANEL_MECHANICS",
+  "wall_seconds": 50.20412679796573
+}

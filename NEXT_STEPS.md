@@ -24,7 +24,9 @@
    Same-instance EBS does not contain every optimizer history. Respect62GiB preflight plus35GiB absolute floor.
    Add only verified lossless backup-only archival if further model backups need room; never delete originals/cache.
    Complete all3 terminal1280 models and independent audits before releasing the second order2026102030.
-   Implement/qualify the frozen readout contract during training,without opening held model outcomes.
+   Frozen readout implementation and four TRAIN-only native/cache/full-span integration paths PASS.
+   Report validation/real_cpt_readout_v29_integration_20261020.json;1932CPU tests.
+   Finish the finite resource supervisor and later bind all7 actual models/references before held outcomes.
    Whole study: two fixed orders,three arms,unaltered data/loss/precision; terminal models primary.
    No DEV checkpoint/prompt/weight selection,no broad RL,size jump,TEST,V28 extension or oldR1234 resume.
 
