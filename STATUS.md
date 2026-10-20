@@ -1,4 +1,4 @@
-# Status — 2026-10-20 22:18 UTC
+# Status — 2026-10-20 22:44 UTC
 
 ## Active: matched real continuation CPT readout
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?
@@ -8,10 +8,10 @@ All source/native/full master/moment/cast/actualrestore8 audits PASS; training28
 All6 latest model archives and one latest full1280 optimizer archive pass complete EBS readback;18 original full states remain RAM.
 All7 actual-model TRAIN-only independent HF references prepared; unchanged qualified numerical worker and all endpoints/gates fixed.
 One root review releases E/release.json with all7 identities and six terminal closures,64evalchip-hour bound.
-All7 ordinary,4writer and4math phases physically close0;15/28 groups complete. Three writers and three scalar groups ACTIVE.
+All7 ordinary,7writer,4math and3scalar phases physically close0;21/28 groups complete. Three baseline math and one scalar group ACTIVE.
 All768questions×6 likelihood modes/model,4096ordinary documents×527 transitions,and raw/empty/own scalar attempts remain mandatory.
 Report:validation/real_cpt_scaffold_v29_training_complete_20261020.json; scientific verdict PENDING complete readout.
-Active writer exec76671/78726/98220; scalar11941/18342/88000; all30 native gates PASS. T2030 scalar waits for a slot; max3groups. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
+Active math exec19121/8578/84078; scalar97493. Next:baseline scalar after own math,at most3groups. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1.
 No partial quality interpretation or outcome-based checkpoint/prompt selection; independent98HF checks follow full primary readout.
 Same-instance EBS protects latest weights and one rotating full optimizer state,not all histories/offinstance backup.
 Keep35GiB/filesystem/512GiBhost floors; no RL,size jump,TEST or V28 extension.
