@@ -41,6 +41,10 @@ Actual held release must bindall7models/references,source_files=readout_driver.s
 Use E/analysis-plan-v2.json and local/analysis/check_real_cpt_scaffold_v29_readout_v2_20261020.py (NOTv1). v2 validatesall original writer prefix-only inputs,all6 reader contexts/donors,scalarcontexts/counts,all pairedbootstraps/decisions,and98 fixedHFheld score spots.
 Checker v2 only pycompiled/source-context fixtures checked768x6 with0model forwards; actualall7 readout reconstruction PENDING. v1/source/plans remain immutable.
 Native component masks reuse original source-token curator: merged ' -' tokens and whitespace make standalone numeral IDs invalid alignment. All768source masks/corruptctxbounds checked withoutmodeloutcomes.
+Secondary scalar reporting is prepared in main train/real_cpt_scalar_results.py;1935CPU checks/smoke/compile PASS.
+E/scalar-secondary-plan.json pins source and original primary analysis-plan-v2; all held jobs/release remain absent when frozen. No numerical worker/primary endpoint/gate change.
+After complete primary readout AND independent v2 PASS,run python -m train.real_cpt_scalar_results --index E/index.json --readout E/summary/readout.json --independent-check E/independent/independent-check.json --output E/scalar-secondary (from main).
+This adds16 fixed secondary accuracy pairs,all failures retained,10kpaired document intervals/fixes/breaks,separate orders,no new pass gates. Bind this plan in eventual held release.
 Primary Traw-minus-rawcontrol andTraw-minus-formatcontrol >=.25nat/full16/positive95lower BOTHorders; separately same versusB0. Ordinary upper95NLLregression<=.03/token. Secondary inference separate; no poolingorders/rescuefromownmode.
 Data local/data/real-cpt-scaffold-v29-cpu-v2:TRAIN20480(5120calc+15360ordinary),2passes1280/global32world8+aux8;fullcleanLM1+calcauxfuture.5+work1,separate means,fraction.25.
 Supervised source-controlled FineMath CPT,not broadLM improvement/autonomous discovery. Teacher fullroot includesanswer but computed from prefix; sourceRHS curation privileged/declared. OfficialTEST unopened.

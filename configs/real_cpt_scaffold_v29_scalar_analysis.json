@@ -1,0 +1,40 @@
+{
+  "bootstrap": {
+    "interval": "Unadjusted paired percentile95,conditional on checkpoints; not training-order population uncertainty",
+    "replicates": 10000,
+    "seed": 2026102029,
+    "unit": "768 unique source documents"
+  },
+  "checks": {
+    "compile": "PASS",
+    "log_sha256": "e8d44d457876bba34d04e644071eca5200d504bdbfe533f0a700f439d73ef68c",
+    "smoke": "PASS",
+    "targeted_tests": 3,
+    "total_CPU_tests": 1935
+  },
+  "command": "python -m train.real_cpt_scalar_results --index E/index.json --readout E/summary/readout.json --independent-check E/independent/independent-check.json --output E/scalar-secondary",
+  "contrasts_per_order": [
+    "T/raw minus raw-control/raw",
+    "T/raw minus format-control/raw",
+    "T/raw minus B0/raw",
+    "T/own minus T/raw",
+    "T/own minus T/empty",
+    "T/own minus raw-control/raw",
+    "T/own minus format-control/raw",
+    "T/own minus B0/raw"
+  ],
+  "denominator": "All original 768 attempts per mode; generation errors,source-note errors and unsupported outcomes count as incorrect. Correct initial scalars at length cap retain original frozen parser semantics.",
+  "endpoints": "Paired complete-value accuracy,fixes/breaks,95% intervals in percentage points. Secondary only,with no success threshold or primary-gate substitution.",
+  "models": "All original six terminal models plus unchanged B0; separate data-order results.",
+  "prerequisite": "Complete original primary readout plus PASS of frozen independent checker v2,with exact index/report/checker hashes; all original scalar bytes must match primary source pins.",
+  "primary_analysis_plan_sha256": "4488a6a2eae8a8eb27c4ff86860f39105433b667a4111fd6b25c168401ec56f6",
+  "scope": "Complete secondary paired proportions already specified in V29 numerical_accuracy; no new gate,model execution,cohort,parser,decoder,checkpoint,or primary-analysis change.",
+  "source_files": {
+    "tests/test_real_cpt_scalar_results.py": "283a41f60602d2bbc5b3b8a6be493fd8190d6ccbf201035b70eb011bcb64765f",
+    "train/real_cpt_scalar_results.py": "16f0bcce644c1c854cef0d73ec0f73546289a14edf24876b9463d1fcb62850d1",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "weekend_thinking/stats.py": "b822e80fccfe8fc428ed6801c43d0b7a88aa6324543220927208b19b21867f66"
+  },
+  "status": "FROZEN_SECONDARY_SCALAR_PAIRED_REPORT_BEFORE_HELD_OUTCOMES",
+  "utc": "2026-10-20T19:33:20.810597+00:00"
+}
