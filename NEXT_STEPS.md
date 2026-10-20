@@ -7,9 +7,9 @@
    All23jobs/378880attempts close; primary independent readout and ordinary28-forward
    verification PASS. All models and original outputs remain. No active accelerator work.
    Portable archive replay reproduces exact readout SHAe995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f.
-   Raw evidence is staged in the GitHub release v28-controlled-computation-20261020.
-   Verify all8downloaded assets, commit/push the concrete curated result, publish the
-   release against that commit, then verify public visibility. No permission question needed.
+   Complete result is published as c47a823; public release v28-controlled-computation-20261020
+   has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
+   Receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
 
 1. Prepare the actual pretraining reference on real data.
    First inspect the completed real-trace CPT V10, real-target V15 and source-balanced

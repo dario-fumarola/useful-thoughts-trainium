@@ -1,3 +1,45 @@
+<!-- Current handoff 2026-10-20 12:30 UTC; older entries below are historical -->
+Owner: keep going autonomously/patiently until told to stop. Weeks available,no hard deadline.
+No active goal. Agent quota unavailable untilOct24; do not retry agent creation.
+V28 is COMPLETE and PUBLIC: main result commit c47a823a43f2cdc058772aac4f5b187a5aa07c31.
+Report validation/permutation_program_v28_complete_20261020.json and REPORT.md under its sibling directory.
+Public release https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v28-controlled-computation-20261020
+All8assets/253995793bytes fully downloaded,size/SHA/fsync verified; public HTTP200;
+receipt validation/permutation_program_v28_public_release_20261020.json. No publication work remains.
+All6training/23eval/CPUreadout/diagnostic/bundle/upload jobs CLOSED. Do NOT rerun producers,
+qualification,auditors,preparers,readout,old queues,bundler,publisher or release creation.
+Inference gate PASS: T18432/18430 vsD11914/1872 of18432 at trained lengths4–6.
+Training gate FAIL:Tdirect1654/1701. Longer7–10 trace228/1 of2048. Second order always6lines,
+2030/2048correct6-step prefixes;no trained caps. Correct supplied partial controls0/1024both,
+mostly copy the last supplied state; this partial-completion interface was untrained.
+Ordinary NLLB0=1.9445,T9.1155/8.4536,alltask arms7.01–9.77. No ordinary LM term in V28.
+All378880attempts/92native/cache/allprimarybootstraps check; all1792ordinary rows/28HF forwards
+check(maxlogp diff2.67e-5). All raw outputs EBS-protected; raw synthetic evidence now also on GitHub.
+Readout SHAe995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f.
+Portable archive extraction/relative index reproduces exact readout bytes. No model calls for replay.
+Actual science training16.5353719144/eval13.8207018015reserved chip-hours; qualifications separate.
+Original terminal models and latestfull4096 per arm remain on EBS; development64 retained;
+model/optimizer weights are NOT off-instance backups. Never delete original states/cache.
+C=local/diagnostics/permutation-program-v28-complete-readout-io-v2; E=local/diagnostics/permutation-program-v28-fixed-evaluation-v1.
+Frozen W_S=local/worktrees/controlled-computation-v28-study @ce04236;
+W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c,both public/clean. No numerical edits.
+
+NEXT: CPU investigation/preparation per NEXT_STEPS,not another long run yet.
+Inspect completed V10(real CPT),V15(real target),V17(source-balanced) data/code/results and
+surviving weights first. V17 already has an arithmetic inference-positive/source-balanced
+reference with a much smaller ordinary cost. Do not blindly retrain a duplicate reference.
+Choose a genuine real-text prefix-to-continuation question and ordinary LM objective,
+source separation,strong controls; then qualify only a materially changed runtime shape.
+No RL/bigger model/length rescue is released. Keep autonomy/guidance withdrawal separate.
+Separate batching candidate W_B=local/worktrees/causal-decoder-batching-v1 @b25560a,public/clean;
+1873CPU checks and B0 TRAIN8 forced32 parity PASS,7.396× warmed B8 speedup,total0.174275chip-hours
+including original IO failure. Not sampling/ragged/learned-checkpoint/full128/natural-stop-qualified;
+not used in V28. Report validation/causal_decoder_batching_v1_20261020.json.
+No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or oldR1234 resume.
+Keep35GiBfilesystem/512GiBhost floors. Do not send a final at this milestone; continue work.
+
+## Historical handoff snapshots (not active instructions)
+
 <!-- Current handoff 2026-10-20 12:26 UTC; all older entries below are historical -->
 Owner: continue autonomously and patiently until told to stop. Weeks available; no shutdown deadline.
 No active goal. No agents available until Oct24; do not retry agent creation.

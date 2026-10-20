@@ -1632,3 +1632,15 @@ log and complete first B0 preparation. One explicit IOv2 wrapper reads that file
 All23fixed preparations now close; first-panel prompt/gold bytes and complete CPU
 native tensor match the preserved output. All model/source/data/gates/caps unchanged.
 Publish exact23protocol bytes and launch the same bounded queue; no automatic retry.
+
+2026-10-20 — Close V28 after all378880attempts and independent full readout.
+Inference passes at covered lengths: T18432/18430 versus D11914/1872 of18432.
+Direct-inference training benefit fails; lengths7–10 collapse to228/1 of2048.
+The second order always writes six steps;2030/2048are correct prefixes,not full executions.
+All task arms severely damage ordinary prediction; no ordinary LM term was trained.
+Publish both the near-perfect composition result and failed transfer/retention,with
+all raw synthetic evidence in release assets and exact portable replay. No RL/size jump.
+Before new training,inspect V10/V15/V17 and surviving real-data weights; V17 already
+provides a source-balanced arithmetic-positive reference with~0.04nat ordinary cost.
+Do not blindly duplicate it. Next actual pretraining/guidance-withdrawal design must
+preserve an ordinary LM objective,source separation,strong controls and fresh endpoints.
