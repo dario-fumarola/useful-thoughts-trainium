@@ -1,4 +1,4 @@
-# Current handoff — 2026-10-20 00:35 UTC
+# Current handoff — 2026-10-20 00:43 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
@@ -23,7 +23,7 @@ Output local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048
 Physical2/3 logical8–15; soft deadline2026-10-20T00:51:47.360316+00:00; no automatic retry.
 Training exec34070 closes0 (all original processes absent), original timeout/session PID1517924/start28721656,
 launcher PID1517862. Actual8 worker allocation on physical2/3 captured.
-First128-protection wrapper exec8409 closes0; terminal pipeline watcher97028 remains active.
+First128-protection8409 and terminal pipeline watcher97028 both close0; terminal protected/bound.
 All256 updates finish00:28:39UTC; physical closure00:29:59; terminal independent audit closes0 at00:31:32.
 Audit PASS_SINGLE_TERMINAL256_EVIDENCE_FORMAT_WEIGHT_TRAINING_STATES_NATIVE8_ORDER_COUNTERS_AND_LABELS.
 Exact terminal counters8192expressions/2172752labels; source2097152/answer67408/selection8192.
@@ -35,7 +35,7 @@ CPU jobs use USE_TORCH_XLA=0 and PYTHONPATH W26:root/local/test-deps:root/local/
 All source files bound in C26/release.json are now frozen; never edit them silently.
 
 First128 independent audit/copy/readback/fsync PASS, C26/first-full128-protection.json.
-Current global full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/FIRST_FULL128.
+Current global full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256.
 128 COMPLETE SHA d360fab78765adb077d5211cc8c65d7ab6ba1fd7eaf1be8968b20e5b67ff1c09.
 Only previous V25 EBS optimizer duplicates retired after new full verification; all originals/models remain.
 Terminal256 must protect before retiring ONLY V26 EBS128 optimizer duplicates.
@@ -43,8 +43,10 @@ Storage root~61.5GiB, CPT~97.7GiB, spareNVMe~50.2GiB;35GiB floors. No cache/orig
 Two inactive engineering EBS model duplicates relocated with verified cross-volume copies;
 originals remain studyNVMe, receipts local/diagnostics/document-evidence-format-weight-v26-CPU-v1.
 
-Evaluation is NOT released. After terminal audit/protection/binding, use prepared fixed
-V26 held adapter (510 answers:direct/canonical_empty) and ordinary256 adapter; no TRAIN fit/oracle.
+Evaluation released and launched00:41:46UTC: generation exec90030 physical5 deadline00:50:06;
+ordinary exec32971 physical9 deadline00:44:36. C26/readout-execution.json records fixed caps/deadlines.
+Original terminal protected/bound; both current-model CPU preparations complete0.
+510 answers:direct/canonical_empty and ordinary256 only; no TRAIN fit/oracle.
 Current-model CPU references/native/cache/ordinary calibrations are mandatory.
 Primary selector1 direct minus new format1 direct; extra-ID value stays separate.
 Held255 was inspected before intervention; one order seed, developmental only.

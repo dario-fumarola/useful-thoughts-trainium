@@ -5,13 +5,14 @@
    Source29606b0, freshB0 evidence_direct, same TRAIN2048/order1923/fourpasses/256updates,
    source/final0.5/0.5, auxiliary1.0 empty Evidence field. Numerical functions/data unchanged.
    C=local/diagnostics/document-evidence-format-weight-v26-control-v1.
-   Training exec34070 and terminal-watcher97028 are active; first128-protection8409 completed0.
+   Training exec34070, first128-protection8409 and terminal-watcher97028 all completed0.
    Monitor C/evidence_direct-format1-seed2026101923 and its output metrics. No automatic retry.
    Full128 is independently audited/protected; previous V25 EBS optimizer duplicates retired
    only after new full readback. Full256 must protect before128 duplicates retire. Keep originals/models.
    Science release: validation/document_evidence_format_weight_v26_science_release_20261019.json.
-   After terminal audit/protection/binding: separately release direct/canonical-empty held255
-   and ordinary256 only. Primary is selector1 direct minus format1 direct; report ID inference separately.
+   Terminal audit/protection/binding PASS; fixed direct/canonical-empty held255 and ordinary256
+   are released/running: exec90030 physical5 deadline00:50:06, exec32971 physical9 deadline00:44:36.
+   After physical closure, run the fixed independent readouts, protect/publish; no automatic retry. Primary is selector1 direct minus format1 direct; report ID inference separately.
    Held255 is already inspected, single order seed. No fresh confirmation or broad LM claim.
    If a content advantage persists, design a fresh powered confirmation; otherwise report the
    limitation without another coefficient sweep. No larger model/new data/RL/official DEV/TEST launch.
@@ -44,8 +45,8 @@ Protected state/source:
 - C=local/diagnostics/document-evidence-plan-v23-pilot-v1.
   SuccessfulLLregistry likelihood-registry-v2.json;readout-pipeline-io-v2 passes.
   Alloriginalfailedv1registries/logs/source remain;failureEBSarchive recorded inC.
-- Current full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/FIRST_FULL128.
-  Actual128 audit/readback/fsync PASS; only older V25 EBS optimizer duplicates retired afterward.
+- Current full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/TERMINALS/latest-full256.
+  Actual256 audit/readback/fsync PASS; older backup optimizer duplicates retired only afterward.
   All original full states and model weights remain; V23/V21 terminal protections remain.
   Older EBSoptimizerduplicates retireonlyafternewfullreadback. Same-instance,notoff-instance.
 - V23train frozen7328141:local/worktrees/document-evidence-v23;

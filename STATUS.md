@@ -1,20 +1,20 @@
-# Status — 2026-10-20 00:35 UTC
+# Status — 2026-10-20 00:43 UTC
 
 ## Active: coefficient-matched format control
 Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
 ID: document-evidence-format-weight-v26; fresh1.7B, TRAIN2048×4/order1923/source.5/answer.5.
 Primary: selector1 direct minus format1 direct; >=3pp/positive paired lower95 is developmental only.
-All1823 CPU tests pass;510 exact prompt matches and1020 independent parser reconstructions pass.
-Actual8-update/full2/4/6/8 qualification and fresh-process restore4 pass independent full-state/native16 audit.
-Full128 independent state/label/order audit and EBS readback/fsync PASS; all original states/models retained.
-C=local/diagnostics/document-evidence-format-weight-v26-control-v1; W=frozen document-evidence-format-weight-v26 @29606b0.
+All256 updates physically close0; terminal/master/moment/native8/order/counter audit PASS.
+Full256/model readback/fsync protected and bound; all original full128/256 states/models retained.
+C=local/diagnostics/document-evidence-format-weight-v26-control-v1; W=frozen @29606b0.
 O=local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
-Physical2/3, logical8–15; training deadline00:51:47UTC; no retry/checkpoint selection.
-Science release/source/actual qualification:31 files readback/fsync protected; original4 mechanics states retained NVMe.
-Report: validation/document_evidence_format_weight_v26_science_release_20261019.json.
-All256 updates physically close0; full terminal/native8/order/counter audit PASS. Terminal protection/binding watcher97028 active.
-Next: finish terminal protection/binding, then fixed direct/canonical-empty255 and ordinary256. Warm last60median13.443s.
-No held evaluation released: fixed direct/canonical-empty255 and ordinary256 follow terminal audit/protection.
+Warm last60median13.443s; all1823 CPU tests and actual8-update/full-state/restore qualification pass.
+Fixed readout released:510 answers (direct/canonical_empty255 each), ordinary256; current-model CPU refs complete.
+Generation exec90030 physical5/logical20–23, deadline00:50:06UTC; ordinary exec32971 physical9/logical36–39, deadline00:44:36.
+Actual worker checks remain mandatory; no retry/checkpoint/prompt/parser selection. Readout helpers frozen.
+Current full EBS: TERMINALS/latest-full256 under local/backups/science/document-evidence-format-weight-v26-control-v1.
+Next: physical closure, independent row/token/calibration/bootstrap checks, fixed plots/examples/cost and protected publication.
+Held255 reused, one order seed; no fresh confirmation, inference-ID or broad LM claim follows automatically.
 
 ## Closed: frozen TRAIN pointer-decision diagnostic
 Question: does premature closure persist with correct preceding annotated IDs?
