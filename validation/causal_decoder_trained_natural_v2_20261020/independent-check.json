@@ -1,0 +1,362 @@
+{
+  "status": "PASS_INDEPENDENT_SAVED_NATIVE24_OUTPUTS8_TIMING9_AND_CLOSURE",
+  "utc": "2026-10-20T14:45:48.210279+00:00",
+  "source_sha256": "f894ccefa26a71c872d712048faf4426853dab820da8e00812b2ea3812896f0c",
+  "native_checks": [
+    {
+      "batch_size": 1,
+      "row": 0,
+      "reference_to_device_kl_nats": 9.161889678167913e-18,
+      "device_to_reference_kl_nats": 9.162448172022212e-18,
+      "max_bidirectional_kl_nats": 9.162448172022212e-18,
+      "max_logp_error": 7.62930108777482e-05,
+      "rms_logp_error": 2.0499926004305226e-05,
+      "relative_l2_logp_error": 4.386425595245409e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 1,
+      "reference_to_device_kl_nats": 1.616309988882194e-15,
+      "device_to_reference_kl_nats": 1.6163132671283347e-15,
+      "max_bidirectional_kl_nats": 1.6163132671283347e-15,
+      "max_logp_error": 6.1034418923355815e-05,
+      "rms_logp_error": 1.653108878781947e-05,
+      "relative_l2_logp_error": 4.320244885479062e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 2,
+      "reference_to_device_kl_nats": 1.2644028463807946e-15,
+      "device_to_reference_kl_nats": 1.2645402767860692e-15,
+      "max_bidirectional_kl_nats": 1.2645402767860692e-15,
+      "max_logp_error": 4.5657610549199035e-05,
+      "rms_logp_error": 1.1018850255736764e-05,
+      "relative_l2_logp_error": 3.099314963397002e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 3,
+      "reference_to_device_kl_nats": 9.70750489171333e-18,
+      "device_to_reference_kl_nats": 9.730596335372848e-18,
+      "max_bidirectional_kl_nats": 9.730596335372848e-18,
+      "max_logp_error": 6.878282229649813e-05,
+      "rms_logp_error": 2.6408330382608595e-05,
+      "relative_l2_logp_error": 5.864358434069501e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 4,
+      "reference_to_device_kl_nats": 7.128759700520796e-18,
+      "device_to_reference_kl_nats": 7.129268189560192e-18,
+      "max_bidirectional_kl_nats": 7.129268189560192e-18,
+      "max_logp_error": 4.9592053215974374e-05,
+      "rms_logp_error": 1.940528008327962e-05,
+      "relative_l2_logp_error": 4.896079939452715e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 5,
+      "reference_to_device_kl_nats": 8.794713495602445e-13,
+      "device_to_reference_kl_nats": 8.794612393184114e-13,
+      "max_bidirectional_kl_nats": 8.794713495602445e-13,
+      "max_logp_error": 5.3432805259490124e-05,
+      "rms_logp_error": 1.9401573345162687e-05,
+      "relative_l2_logp_error": 5.222689754178392e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 6,
+      "reference_to_device_kl_nats": 2.094804645339263e-16,
+      "device_to_reference_kl_nats": 2.0948696398825111e-16,
+      "max_bidirectional_kl_nats": 2.0948696398825111e-16,
+      "max_logp_error": 4.9709274442477636e-05,
+      "rms_logp_error": 1.497115066532907e-05,
+      "relative_l2_logp_error": 3.745382015760264e-07
+    },
+    {
+      "batch_size": 1,
+      "row": 7,
+      "reference_to_device_kl_nats": 2.843599700013842e-16,
+      "device_to_reference_kl_nats": 2.8438246676900367e-16,
+      "max_bidirectional_kl_nats": 2.8438246676900367e-16,
+      "max_logp_error": 4.5894808458513126e-05,
+      "rms_logp_error": 1.702183908896188e-05,
+      "relative_l2_logp_error": 4.459903654668782e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 0,
+      "reference_to_device_kl_nats": 3.425178562912731e-18,
+      "device_to_reference_kl_nats": 3.4247921950500293e-18,
+      "max_bidirectional_kl_nats": 3.425178562912731e-18,
+      "max_logp_error": 7.62930111619653e-05,
+      "rms_logp_error": 1.7001736085399432e-05,
+      "relative_l2_logp_error": 3.637908269178222e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 1,
+      "reference_to_device_kl_nats": 1.3953730012724538e-15,
+      "device_to_reference_kl_nats": 1.3953995942784934e-15,
+      "max_bidirectional_kl_nats": 1.3953995942784934e-15,
+      "max_logp_error": 5.340505601125756e-05,
+      "rms_logp_error": 1.2622733848222043e-05,
+      "relative_l2_logp_error": 3.298833007824997e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 2,
+      "reference_to_device_kl_nats": 1.3219007055368927e-15,
+      "device_to_reference_kl_nats": 1.32201951840726e-15,
+      "max_bidirectional_kl_nats": 1.32201951840726e-15,
+      "max_logp_error": 4.589598884052748e-05,
+      "rms_logp_error": 1.1688656475885883e-05,
+      "relative_l2_logp_error": 3.287713969872616e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 3,
+      "reference_to_device_kl_nats": 1.1752974899894833e-17,
+      "device_to_reference_kl_nats": 1.1777527623423814e-17,
+      "max_bidirectional_kl_nats": 1.1777527623423814e-17,
+      "max_logp_error": 7.259751953370142e-05,
+      "rms_logp_error": 3.1854713604317093e-05,
+      "relative_l2_logp_error": 7.073807987246616e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 4,
+      "reference_to_device_kl_nats": 3.563857141144431e-17,
+      "device_to_reference_kl_nats": 3.5635768552044917e-17,
+      "max_bidirectional_kl_nats": 3.563857141144431e-17,
+      "max_logp_error": 4.1962668177575324e-05,
+      "rms_logp_error": 1.5847521081106086e-05,
+      "relative_l2_logp_error": 3.998433917071506e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 5,
+      "reference_to_device_kl_nats": 8.796337338280387e-13,
+      "device_to_reference_kl_nats": 8.796267793555219e-13,
+      "max_bidirectional_kl_nats": 8.796337338280387e-13,
+      "max_logp_error": 4.9618344586832563e-05,
+      "rms_logp_error": 1.1430060908555427e-05,
+      "relative_l2_logp_error": 3.076846446148192e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 6,
+      "reference_to_device_kl_nats": 2.57603662919886e-16,
+      "device_to_reference_kl_nats": 2.5760204215168726e-16,
+      "max_bidirectional_kl_nats": 2.57603662919886e-16,
+      "max_logp_error": 5.352396800617498e-05,
+      "rms_logp_error": 2.31403558925463e-05,
+      "relative_l2_logp_error": 5.789098963444974e-07
+    },
+    {
+      "batch_size": 4,
+      "row": 7,
+      "reference_to_device_kl_nats": 5.521675137329822e-16,
+      "device_to_reference_kl_nats": 5.521641931660506e-16,
+      "max_bidirectional_kl_nats": 5.521675137329822e-16,
+      "max_logp_error": 4.970947433946549e-05,
+      "rms_logp_error": 2.3496573024112362e-05,
+      "relative_l2_logp_error": 6.156353103489538e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 0,
+      "reference_to_device_kl_nats": 3.425178562912731e-18,
+      "device_to_reference_kl_nats": 3.4247921950500293e-18,
+      "max_bidirectional_kl_nats": 3.425178562912731e-18,
+      "max_logp_error": 7.62930111619653e-05,
+      "rms_logp_error": 1.7001736085399432e-05,
+      "relative_l2_logp_error": 3.637908269178222e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 1,
+      "reference_to_device_kl_nats": 1.3953730012724538e-15,
+      "device_to_reference_kl_nats": 1.3953995942784934e-15,
+      "max_bidirectional_kl_nats": 1.3953995942784934e-15,
+      "max_logp_error": 5.340505601125756e-05,
+      "rms_logp_error": 1.2622733848222043e-05,
+      "relative_l2_logp_error": 3.298833007824997e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 2,
+      "reference_to_device_kl_nats": 1.3054640170824411e-15,
+      "device_to_reference_kl_nats": 1.3055567210563396e-15,
+      "max_bidirectional_kl_nats": 1.3055567210563396e-15,
+      "max_logp_error": 4.577678423345333e-05,
+      "rms_logp_error": 1.1788523327690358e-05,
+      "relative_l2_logp_error": 3.315803908565088e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 3,
+      "reference_to_device_kl_nats": 1.1752974899894833e-17,
+      "device_to_reference_kl_nats": 1.1777527623423814e-17,
+      "max_bidirectional_kl_nats": 1.1777527623423814e-17,
+      "max_logp_error": 7.259751953370142e-05,
+      "rms_logp_error": 3.1854713604317093e-05,
+      "relative_l2_logp_error": 7.073807987246616e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 4,
+      "reference_to_device_kl_nats": 3.563857141144431e-17,
+      "device_to_reference_kl_nats": 3.5635768552044917e-17,
+      "max_bidirectional_kl_nats": 3.563857141144431e-17,
+      "max_logp_error": 4.1962668177575324e-05,
+      "rms_logp_error": 1.5847521081106086e-05,
+      "relative_l2_logp_error": 3.998433917071506e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 5,
+      "reference_to_device_kl_nats": 8.796337338280387e-13,
+      "device_to_reference_kl_nats": 8.796267793555219e-13,
+      "max_bidirectional_kl_nats": 8.796337338280387e-13,
+      "max_logp_error": 4.9618344586832563e-05,
+      "rms_logp_error": 1.1430060908555427e-05,
+      "relative_l2_logp_error": 3.076846446148192e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 6,
+      "reference_to_device_kl_nats": 2.57603662919886e-16,
+      "device_to_reference_kl_nats": 2.5760204215168726e-16,
+      "max_bidirectional_kl_nats": 2.57603662919886e-16,
+      "max_logp_error": 5.352396800617498e-05,
+      "rms_logp_error": 2.31403558925463e-05,
+      "relative_l2_logp_error": 5.789098963444974e-07
+    },
+    {
+      "batch_size": 8,
+      "row": 7,
+      "reference_to_device_kl_nats": 5.521675137329822e-16,
+      "device_to_reference_kl_nats": 5.521641931660506e-16,
+      "max_bidirectional_kl_nats": 5.521675137329822e-16,
+      "max_logp_error": 4.970947433946549e-05,
+      "rms_logp_error": 2.3496573024112362e-05,
+      "relative_l2_logp_error": 6.156353103489538e-07
+    }
+  ],
+  "action_lengths": [
+    27,
+    22,
+    59,
+    33,
+    46,
+    34,
+    72,
+    77
+  ],
+  "natural_stops": 8,
+  "stored_output_conditions": 3,
+  "original_serial_and_batched_outputs_exact": true,
+  "median_seconds": {
+    "1": 29.254902763001155,
+    "4": 10.003210117982235,
+    "8": 6.000131618056912
+  },
+  "speedup_vs_serial": {
+    "1": 1.0,
+    "4": 2.9245514607766943,
+    "8": 4.875710171917044
+  },
+  "reserved_chip_hours": 0.1767200394350059,
+  "witness_files": {
+    "launch.json": {
+      "bytes": 708,
+      "sha256": "d97264eee407d5be703d2458bf427ac64d0a7e46170975acc57286a6ee9dca77"
+    },
+    "XLA-native-B8.pt": {
+      "bytes": 4863571,
+      "sha256": "cf557b6600542d41da5791d658c1a1ddb8227ab70eab7c6f880bd455101af07e"
+    },
+    "native-B8.json": {
+      "bytes": 2901,
+      "sha256": "9465d688e6ff58db9a9ff3f750df89eff6ca9bb25fc4a78b56bd14475a4fa07c"
+    },
+    "original-serial-attempts.json": {
+      "bytes": 9535,
+      "sha256": "2e8efd244a2ebbe0f6fc830a4bc523b27e36e28a6e4d6563c00d3dca717096d6"
+    },
+    "batched-B4-attempts.json": {
+      "bytes": 9535,
+      "sha256": "2e8efd244a2ebbe0f6fc830a4bc523b27e36e28a6e4d6563c00d3dca717096d6"
+    },
+    "native-B1.json": {
+      "bytes": 2904,
+      "sha256": "570dcf53b12668b3ca8c50cce05786e512bf66e26bfda6fccf8a985d625b6d71"
+    },
+    "batched-B8-attempts.json": {
+      "bytes": 9535,
+      "sha256": "2e8efd244a2ebbe0f6fc830a4bc523b27e36e28a6e4d6563c00d3dca717096d6"
+    },
+    "plan.json": {
+      "bytes": 4945,
+      "sha256": "be1613e61bdc083e05b166c64309c887c8942cd5e5ccd945785fdba7bf20bc8d"
+    },
+    "inputs.json": {
+      "bytes": 47249,
+      "sha256": "c4fcf570786e7e48ce0f0f52a60d9e912d5588430e33c388c12af2b807a171c5"
+    },
+    "release.json": {
+      "bytes": 586,
+      "sha256": "5c4fac134d2d271b04b87b37306dc182f53e28a6b0c1cbb625bb7e4e8209db15"
+    },
+    "host-samples.jsonl": {
+      "bytes": 69284,
+      "sha256": "ed9c4a8264c4dd5b4dda29897a4b4d55d68639bb108f4ff2caf4dd8a1dc887cd"
+    },
+    "CPU-native.pt": {
+      "bytes": 4863550,
+      "sha256": "723517378e6110072620e1fd1e9b23b8a2e9fdbdaca4f84d3d45c358b5012745"
+    },
+    "supervisor.log": {
+      "bytes": 328,
+      "sha256": "46f2a8b799ad23b1630ea8e462abff419edef9a9c0e3c8d2e43a77af4491aac8"
+    },
+    "worker-result.json": {
+      "bytes": 11005,
+      "sha256": "1d6921bcc719ad56c2dacf2668fdfd26c63b4dfd500ed5b3c067824c52b94996"
+    },
+    "XLA-native-B4.pt": {
+      "bytes": 4863571,
+      "sha256": "fd494988d50e48a5faafe88977b3781da63a52e963e4b5c7f6834f115ba33326"
+    },
+    "closure.json": {
+      "bytes": 270,
+      "sha256": "5364dcfae4ee5ba03d2467d1d275fa7252e07705c5e750424f97cdaa164b23fe"
+    },
+    "worker.log": {
+      "bytes": 3774,
+      "sha256": "fad650443640041a4bc0919f6e9113369a537cd07f2ec6c5aa8d9b2e4846a9b4"
+    },
+    "timings.json": {
+      "bytes": 254,
+      "sha256": "97513bdd2284924965a1ffcfd92a8d31f61938c721210ddd7fa746b436c6a68c"
+    },
+    "native-B4.json": {
+      "bytes": 2902,
+      "sha256": "183d9d1168e5f98ad5af59721c77cd4a5c8eb33eab1c26283cf6c5acd88ab568"
+    },
+    "first-live.json": {
+      "bytes": 300,
+      "sha256": "7a4d25716bb1e852d0c281e7806a38302e2a15336a9ba1d3e41ae64947cabe71"
+    },
+    "XLA-native-B1.pt": {
+      "bytes": 4863571,
+      "sha256": "eeffe7fb48382ffd9ad40576b8d5f3bd41c913089572513d4134dfe7588c30f8"
+    }
+  },
+  "limits": [
+    "No new model calls or capability scores.",
+    "The three timed repeats attest output parity in the frozen producer; saved complete arrays cover the original serial and two batched conditions.",
+    "Eight equal-length TRAIN prompts and one trained model; descriptive warm timing, not a serving benchmark."
+  ]
+}

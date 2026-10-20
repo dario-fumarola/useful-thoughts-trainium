@@ -1,38 +1,31 @@
-<!-- Current handoff 2026-10-20 13:28 UTC; earlier entries below are historical -->
-Owner: continue autonomously/patiently; do not final at this milestone. No active goal/agent retries.
-V28 is COMPLETE/PUBLIC; all its jobs/CPUpublishers closed. Do not rerun old producers.
-V29 data readiness is published db5fef6; numerical engine e7c2508 is public on real-cpt-scaffold-v29.
-All1890CPU engine checks+smoke/compile PASS; actual4+1 batch gradients match dense CPU all parameters.
-Frozen CPU data local/data/real-cpt-scaffold-v29-cpu-v2 (TRAIN20480;DEV768/4096); no held model outcomes.
-C=local/diagnostics/real-cpt-scaffold-v29-qualification-v1. CPU prepare60348 CLOSED0;
-protocol41fe4bbc2f40e1e4a1024ce8544f19fdc46b327dd9e6dc5ac09004a3b25e289c.
-One TRAIN128 qualifier planned8updates,halt4 then original-run fresh-process resume8;world8 cores0–7.
-C/supervise.py is the NEW supervisor. It imports only process utilities from old helper;never runs old main.
-Actual source engine admits only this qualification,not1280 science updates. No numerical edits during it.
-Native CPU BF16 reference all32sources/8aux fixed:total1.41724010965;source1.33281400055;
-auxcontinuation0.675408872863,work0;counts source16476/future128. Bounds component.02,total.025.
-C/plan.json,review.json,release.json freeze2.0reserved-chip-hour ceiling and deadline14:12:12UTC.
-That is a qualification budget deadline,not instance shutdown. No automatic retry.
-Output local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1; parent is new private /dev/shm scratch.
-Both full4/8 originals remain in RAM. Required full8 EBS copy:local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1/step-0000008.
-Never delete original states/cache. RAM-qualified scratch is volatile;do not claim EBS protection before readback/fsync.
-ACTIVE qualification exec27854,supervisorPID1760374,fresh4 childsession1760438,workers1760501/505/506/508/509/510/511/512.
-First new graph compiles~16min;another graph is actively compiling;no metrics yet. Do not interrupt normal compilation.
-Latest MemAvailable~1.85TiB;owned PSS~60–80GiB;CPU compiler active. Deadline14:12UTC applies to this qualifier only.
-Monitor logs/metrics/PSS;first4 loss must matchCPU before resume;all8 actual full model/optimizer digests after restore.
-After physical closure,independently audit/protect terminal and publish limited mechanics result,not learning efficacy.
-No long run/RL/8B/oldR1234/officialTEST release. Do not alter old gates or infer efficacy from qualifications.
-W=/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29;PYTHONPATH=W:/home/ubuntu/dario/local/test-deps.
-Separate trained natural-stop decoder check prepared: C_B=local/diagnostics/causal-decoder-trained-natural-v2.
-CPU prepare1086 CLOSED0;unchanged candidateW_B=local/worktrees/causal-decoder-batching-v1 @b25560a.
-New scripts local/analysis/{qualify,supervise}_causal_decoder_trained_natural_v2_20261020.py.
-Source model V17source_cot1913 step320 SHA9fb43e0f... full stream roundtrip reverified;8TRAIN prefix-only rows.
-Next launch spare-core supervisor with PYTHONPATH=W_B:local/test-deps,USE_TORCH_XLA=0. No decoder device job launched yet.
-One logical32/device8,0.5chip-hour cap,native24 plus exactnaturalstop128;no held outcomes or training changes.
-Storage stream89779 CLOSED0:existing optimizer/model full SHA roundtrips pass,zstd ratios0.923/0.782.
-No compressed payload retained;feasibility only,not a backup. Do not delete source states/cache.
-All earlier CPU builders/checker closed0;do not rerun. First slowCPU attempt retained;immutable metadata cache fixed it.
-Keep35GiB filesystem/512GiB host floors. Existing compile cache and all original science models remain.
+<!-- Current handoff 2026-10-20 14:50 UTC; historical entries below -->
+Owner: continue autonomously/patiently; no final at milestones. No agent quota retries or active goal.
+V28 COMPLETE/PUBLIC,c47a823; all producers closed. Keep as fixed positive control.
+V29 CPU data/readback and1890CPU checks PASS. No held model outcomes inspected.
+W=local/worktrees/real-cpt-scaffold-v29; actual numerical source e7c2508,metadata HEAD2125d27.
+C=local/diagnostics/real-cpt-scaffold-v29-qualification-v1. All accelerator processes physically CLOSED.
+Actual4 save,full fresh-process restore on8ranks,updates5–8 complete within original2chip-hour budget.
+Original supervisor window refusal preserved; explicit continuation release precedes new process.
+Independent-state-audit PASS:16 native vectors,all4960master shards/moments/fullmodel casts,8actual restorations.
+First-step CPU loss/count check PASS; warm6–12s,first restored58s; cold first graphs1511/888s.
+Cost1.505726476reserved chip-hours. No long-memory,uninterrupted-trajectory or learning claim.
+Original RAM4/8 remain local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1.
+Terminal8+run-envelope full EBS readback/fsync PASS under local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1.
+Audit exec70657 and backup41682 CLOSED,receipts retained; final directory fsync recorded separately.
+Public limited reports prepared in validation/real_cpt_scaffold_v29_mechanics_complete_20261020(.json,/).
+Trained natural-stop decoder check CLOSED0; unchanged W_B=local/worktrees/causal-decoder-batching-v1@b25560a.
+C_B=local/diagnostics/causal-decoder-trained-natural-v2; actual V17T1913terminal320SHA9fb43e0f... .
+All24 native distributions and all8 complete serial/B4/B8 outputs exactly pass;all8 native stops22–77actions.
+Independent NumPy saved-native24/output/timing/closure reconstruction43875 CLOSED0,PASS.
+Three rotating warm-repeat medians29.255/10.003/6.000s;B8=4.8757×microbenchmark,cost.17672chip-hour.
+Vectors remain EBS with hashes;all8 note/token arrays public. No quality score or scalar-reader qualification.
+Both final reports and refreshed status/queue are local ready for review/commit/push; no numerical edits.
+Next freeze V29 science endpoints/power,storage/reservation,then guarded science integration in existing driver.
+Current driver admits only8-update qualification; do not bypass guards or claim long source is already qualified.
+Root free~50.8GiB,NVMe0/3/2~50/55/54GiB;RAM~955GiB. Floors35GiB/512GiBhost.
+No source/cache deleted,moved or compressed. Storage stream feasibility only,not a backup.
+Safe lossless compression of verified backup-only model duplicates is a possible storage repair,not yet performed.
+No long run/RL/8B/officialTEST/new capacity/paid teacher/stack upgrade authorized by this mechanics result.
 
 ## Historical handoff snapshots (not active instructions)
 

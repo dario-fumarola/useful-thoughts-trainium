@@ -48,11 +48,17 @@ ordinary LM supervision. This supervised mechanism study does not establish
 autonomous discovery or internalization. Official TEST remains unopened. The
 earlier V26 document-QA result below remains developmental and unconfirmed.
 
-[V29 CPU preparation](docs/REAL_CPT_V29_PLAN.md) now fixes20,480 real-text training
-windows and fresh768 arithmetic/4,096 ordinary DEV documents. Clean LM supervision
-is identical across raw,format and computation arms; continuation/work losses are
-separate. Native-source readback and1,878CPU checks pass. This is data readiness,
-with no new model outcome or training release.
+[V29 preparation](docs/REAL_CPT_V29_PLAN.md) fixes20,480 real training windows
+and fresh768 arithmetic/4,096 ordinary DEV documents. Clean LM supervision is
+identical across raw,format and computation arms; continuation/work losses are
+separate. [Eight-update mechanics and full-state recovery](validation/real_cpt_scaffold_v29_mechanics_complete_20261020/REPORT.md)
+now pass on hardware, with independent native/master audits and terminal EBS
+protection. No new held-out model outcomes or long scientific run are released.
+
+A separate [trained-model batching check](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
+preserves all eight naturally stopped notes and their token arrays; batch8 is4.88×
+faster in the warmed microbenchmark. This qualifies a greedy writer candidate,
+not the full evaluation pipeline or a capability improvement.
 
 ## Latest matched control (V26)
 

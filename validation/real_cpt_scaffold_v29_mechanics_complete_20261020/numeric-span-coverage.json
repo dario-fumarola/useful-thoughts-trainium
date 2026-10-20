@@ -1,0 +1,28 @@
+{
+  "status": "PASS_FULL_SOURCE_NUMERAL_AND_BOUNDARY_INSIDE_NATIVE16",
+  "utc": "2026-10-20T14:08:53.575139+00:00",
+  "documents": 5888,
+  "counts": {
+    "train": 5120,
+    "followup_dev": 768
+  },
+  "full_numeric_boundary_target_lengths": {
+    "5": 1329,
+    "4": 1797,
+    "7": 564,
+    "9": 123,
+    "6": 942,
+    "8": 276,
+    "3": 639,
+    "10": 68,
+    "2": 64,
+    "11": 36,
+    "13": 10,
+    "12": 23,
+    "15": 2,
+    "14": 13,
+    "16": 2
+  },
+  "bad": [],
+  "scope": "CPU data endpoint audit only;no model outcome/held prediction/test payload/source edit"
+}

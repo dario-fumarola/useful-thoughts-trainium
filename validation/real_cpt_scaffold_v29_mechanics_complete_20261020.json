@@ -1,0 +1,123 @@
+{
+  "actual_restore_ranks": 8,
+  "actual_updates": 8,
+  "artifacts": {
+    "REPORT.md": {
+      "bytes": 1477,
+      "sha256": "d77a623f9ffbae0245da39adac2f8a0441893efa9a0d7e16427dc025f5fe9183"
+    },
+    "fresh4-closure.json": {
+      "bytes": 345,
+      "sha256": "455d40941de19fb28dc7deed27b226df11608439cc54cd7b161ef04663e33d94"
+    },
+    "hardware-closure.json": {
+      "bytes": 708,
+      "sha256": "593263e3a7302af7b848577aab6c4794d967c52a63a4ce53bc69a7cb520352d4"
+    },
+    "independent-check.json": {
+      "bytes": 12459,
+      "sha256": "c9b418ce48c2015351815231b387d23f01c583477717aebbadf1c89c5d7e8887"
+    },
+    "independent-check.py": {
+      "bytes": 6227,
+      "sha256": "5ba4fc68c344470d16b176709c94c745574fac4a044e14d144d14ea34e7bf058"
+    },
+    "initial-loss-check.json": {
+      "bytes": 3808,
+      "sha256": "0025c8656a319c01026bc5b2e5715cd8aa135f503ff40bc73cc23c775cf11451"
+    },
+    "metrics.jsonl": {
+      "bytes": 24798,
+      "sha256": "7d80d10eecc7b9625d512e9f5ca67e6f4262a0c60dffa7a8a189a2392d4f766d"
+    },
+    "numeric-span-coverage.json": {
+      "bytes": 571,
+      "sha256": "e1f1a8106b5318fde63bfa1f4c96f7be919464fa1ead54275ec4f8a328d6274d"
+    },
+    "protection-finalization.json": {
+      "bytes": 431,
+      "sha256": "d1db6b19eb7a0fd0faf8794706626da309634bc88cf7805c590c0996bce73f8c"
+    },
+    "resume8-closure.json": {
+      "bytes": 358,
+      "sha256": "e28ba4e13063836ed05134769a261f6fd24ae52fd2c95737307eaa58a1a24f42"
+    },
+    "terminal-protection.json": {
+      "bytes": 25397,
+      "sha256": "c441abc5239ecf0b27f17a4937ae86c902e6468192cfe0fe4e6aded09e68d835"
+    }
+  },
+  "continuation_release": "real_cpt_scaffold_v29_qualification_continuation_20261020.json",
+  "design": {
+    "TRAIN_documents": 128,
+    "auxiliary_microbatch": 1,
+    "checkpoint_steps": [
+      4,
+      8
+    ],
+    "global_source_batch": 32,
+    "initialization": "unchanged released Qwen3-1.7B-Base",
+    "master_and_optimizer_dtype": "FP32",
+    "parameter_gradient_dtype": "BF16",
+    "role_cycle": [
+      "raw",
+      "format",
+      "computation"
+    ],
+    "source_microbatch": 4,
+    "updates": 8,
+    "world": 8
+  },
+  "full_master_shards_audited": 4960,
+  "limits": [
+    "No learning, held-out prediction, long-run memory stability or uninterrupted-trajectory parity result.",
+    "Current driver admits only this eight-update qualification; science needs a separately frozen protocol and implementation.",
+    "Full-span arithmetic data check covers all5888 calculation rows and confirms complete source numeral plus boundary inside native future16."
+  ],
+  "native_vectors_recomputed": 16,
+  "numerical_source_commit": "e7c2508",
+  "original_window_outcome": "Fresh4 completed; supervisor preflight refused resume under the original remaining operational window. The explicitly released continuation used the same numerical protocol and remaining original 2.0 chip-hour budget.",
+  "protection": "Full terminal8 and run envelope read back and fsynced on same-instance EBS; original RAM4/RAM8 retained.",
+  "protocol_sha256": "41fe4bbc2f40e1e4a1024ce8544f19fdc46b327dd9e6dc5ac09004a3b25e289c",
+  "question": "Does the real two-forward objective execute actual updates and restore all active-model and optimizer state?",
+  "reserved_chip_hours": 1.5057264760328044,
+  "schema": "real-cpt-scaffold-v29-mechanics-complete-v1",
+  "source_exposures": 256,
+  "source_files": {
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "fe42e4342dea24a450e9887cdd9ffb330212a3ec2d855036950006cecc93a560",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "status": "PASS_BOUNDED_TRAIN_MECHANICS_RECOVERY_AND_TERMINAL_PROTECTION",
+  "utc": "2026-10-20T14:47:01.664632+00:00"
+}

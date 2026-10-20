@@ -1670,3 +1670,10 @@ bytes checked before further updates. New private RAM scratch preserves local
 disk reserves without moving caches/deleting states; protect full8 on EBS before
 reporting a pass. Two reserved chip-hour cap,finite deadline,no automatic retry.
 This is qualification only; source/held/gates for long science remain unreleased.
+
+2026-10-20 — Close V29 numerical/recovery mechanics and trained natural-stop batching.
+Actual eight-update qualification,full4/8 audits and terminal EBS protection pass;
+original supervisor window refusal and explicit same-budget continuation remain visible.
+This releases no scientific learning claim. Freeze the scientific contrasts/power,
+checkpoint placement and guarded fixed-arm implementation next. Batching passes on
+one trained writer/eight TRAIN prefixes; adopt prospectively only,never into V28.
