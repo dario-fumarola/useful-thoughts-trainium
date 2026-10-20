@@ -1,0 +1,62 @@
+{
+  "status": "PASS_ALL_HELD_PREFIX_ONLY_NATIVE_CONTEXTS_AND_PARTIAL_CONTROLS_CPU_ONLY",
+  "native_contexts": 387072,
+  "manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+  "panels": {
+    "DEV_interpolation": {
+      "questions": 18432,
+      "families": 9216,
+      "maximum_prompt_tokens": {
+        "direct": 87,
+        "empty": 89,
+        "trace": 86,
+        "pause": 125,
+        "partial": 119,
+        "corrupt": 119,
+        "donor": 119
+      },
+      "correct_partial_excludes_root_symbol": 18432,
+      "depth1_empty_partial_controls": 3072,
+      "unfiltered_donor_partial_mentions_recipient_root": 3777
+    },
+    "DEV_composition": {
+      "questions": 18432,
+      "families": 9216,
+      "maximum_prompt_tokens": {
+        "direct": 87,
+        "empty": 89,
+        "trace": 86,
+        "pause": 125,
+        "partial": 119,
+        "corrupt": 119,
+        "donor": 119
+      },
+      "correct_partial_excludes_root_symbol": 18432,
+      "depth1_empty_partial_controls": 0,
+      "unfiltered_donor_partial_mentions_recipient_root": 5692
+    },
+    "DEV_depth": {
+      "questions": 18432,
+      "families": 9216,
+      "maximum_prompt_tokens": {
+        "direct": 91,
+        "empty": 93,
+        "trace": 90,
+        "pause": 153,
+        "partial": 147,
+        "corrupt": 147,
+        "donor": 147
+      },
+      "correct_partial_excludes_root_symbol": 18432,
+      "depth1_empty_partial_controls": 0,
+      "unfiltered_donor_partial_mentions_recipient_root": 9855
+    }
+  },
+  "model_forwards": 0,
+  "checker_sha256": "bfaf05d60505a8ce05388978d6b3be9e989a67f3c27095b92bc80556a43a133f",
+  "limits": [
+    "CPU plumbing, not generated-model behavior or a learned capability result.",
+    "Exact partial controls omit root; donor/corrupt states can incidentally mention its symbol and are never utility-filtered.",
+    "Depth1 partial/corrupt/donor controls are all empty and must not be interpreted as independent oracle headroom."
+  ]
+}

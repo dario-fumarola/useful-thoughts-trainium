@@ -1,0 +1,46 @@
+{
+  "status": "PASS_BYTE_IDENTICAL_TRAIN_AND_ALL_OLD_DEV_PREFIXES",
+  "original_manifest_sha256": "b923d1fa6d440de0ac8e23392e3cfd937d1f52a9c4edeeebc4a2a2c35096f249",
+  "extended_manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+  "TRAIN_labels_sha256": "251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128",
+  "TRAIN_questions_sha256": "e099948826aaf7e262c06beabdd77e78c126cce8fdeed2714fa42db7c2d2d630",
+  "DEV_prefixes": {
+    "DEV_interpolation-labels.jsonl": {
+      "original_bytes": 1240006,
+      "old_sha256": "a154104d65812c21a1de91585aaa1db3c7275492f25b69c8de1be473e71fc8bf",
+      "new_sha256": "1bb2002623c27f20c2e957e5e7109b7f1c7fde2067cbb93d842a9afea6b73f12",
+      "old_is_exact_prefix": true
+    },
+    "DEV_interpolation-questions.jsonl": {
+      "original_bytes": 610042,
+      "old_sha256": "c3474b5f4ba1ef11c951fc0278b64f3de136f2692bdf7fced507a4301900ab5d",
+      "new_sha256": "180c15603296c9aec948d2bee020c678feef550ed063583decfc041eefa0a374",
+      "old_is_exact_prefix": true
+    },
+    "DEV_composition-labels.jsonl": {
+      "original_bytes": 1313981,
+      "old_sha256": "897585630b209e09af5be90f0908b8115e3211ad33afb2d83787a865d7f38725",
+      "new_sha256": "63833c9c8a0ea1e64ba7f477378726609858a3a9b5cdb42b35f7a6e00ad3ac2c",
+      "old_is_exact_prefix": true
+    },
+    "DEV_composition-questions.jsonl": {
+      "original_bytes": 613092,
+      "old_sha256": "2d0af47009798d633cc5cc2833b2b5479e176bcb15319936d828908c5d3afd1d",
+      "new_sha256": "4d9369b8562ce0cae666155f590979b051680e6cefa979b30d527c01f293af22",
+      "old_is_exact_prefix": true
+    },
+    "DEV_depth-labels.jsonl": {
+      "original_bytes": 1483615,
+      "old_sha256": "34f4d62c41558ab30a57d5cccbbb142a40f8d1230c28a98700c0f823dcbca105",
+      "new_sha256": "9fae0197a8fefdebb90297e0d599ca18dfb19163a35459d246591bb6b926882b",
+      "old_is_exact_prefix": true
+    },
+    "DEV_depth-questions.jsonl": {
+      "original_bytes": 620234,
+      "old_sha256": "fc554e25fa5c3b64fdd0128ca2a16c1f3aeb64e5ebdf975f7b436d14964a5070",
+      "new_sha256": "f0ec990da4b288fadcca0f68b9ead19c405a4b057b45f72c678069a13e85ada6",
+      "old_is_exact_prefix": true
+    }
+  },
+  "no_model_outcome_used": true
+}

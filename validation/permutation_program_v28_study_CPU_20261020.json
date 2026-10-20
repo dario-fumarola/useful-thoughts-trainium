@@ -1,0 +1,17 @@
+{
+  "status": "PASS_EXTENDED_CPU_DATA_CONTEXTS_AND_IDENTICAL_TRAIN_PACKING",
+  "questions": 88064,
+  "families": 44032,
+  "native_held_contexts": 387072,
+  "TRAIN_native_packs_reused": 131072,
+  "TRAIN_labels_sha256": "251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128",
+  "TRAIN_packer_sha256": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+  "manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+  "limits": "No held model outcome. Same exact TRAIN bytes/packer reuse the complete native packing proof; independent new data/context audits cover every extended question. Qualification models stay disposable.",
+  "evidence_files": {
+    "validation/permutation_program_v28_study_CPU_20261020/extension-identity.json": "12475aa6a3e1a63958926669a19780d3dc59757135b942997999ab89cd0429b4",
+    "validation/permutation_program_v28_study_CPU_20261020/manifest.json": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+    "validation/permutation_program_v28_study_CPU_20261020/evaluation-readiness.json": "0e3623895d15febfffae5fcd5ddeed345d61d251e8d2646e87d043367fc1f857",
+    "validation/permutation_program_v28_study_CPU_20261020/data-readiness.json": "57ce19246c27e758419cc9a0b207616767e1d5688a880c4099079703a207cfc6"
+  }
+}

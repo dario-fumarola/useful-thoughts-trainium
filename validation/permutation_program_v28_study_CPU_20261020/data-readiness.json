@@ -1,0 +1,343 @@
+{
+  "status": "PASS_INDEPENDENT_CPU_EXECUTION_COUNTERFACTUAL_SPLIT_AND_TOKEN_BUDGETS",
+  "inventories": {
+    "TRAIN": {
+      "questions": 32768,
+      "independent_families": 16384,
+      "depths": {
+        "1": 5462,
+        "2": 5462,
+        "3": 5462,
+        "4": 5462,
+        "5": 5460,
+        "6": 5460
+      }
+    },
+    "DEV_interpolation": {
+      "questions": 18432,
+      "independent_families": 9216,
+      "depths": {
+        "1": 3072,
+        "2": 3072,
+        "3": 3072,
+        "4": 3072,
+        "5": 3072,
+        "6": 3072
+      }
+    },
+    "DEV_composition": {
+      "questions": 18432,
+      "independent_families": 9216,
+      "depths": {
+        "4": 6144,
+        "5": 6144,
+        "6": 6144
+      }
+    },
+    "DEV_depth": {
+      "questions": 18432,
+      "independent_families": 9216,
+      "depths": {
+        "7": 4608,
+        "8": 4608,
+        "9": 4608,
+        "10": 4608
+      }
+    }
+  },
+  "unique_graphs": 88064,
+  "independent_families": 44032,
+  "token_lengths": {
+    "direct_prompt": {
+      "0": 82,
+      "0.5": 86,
+      "0.95": 91,
+      "1": 91
+    },
+    "work_prompt": {
+      "0": 81,
+      "0.5": 85,
+      "0.95": 90,
+      "1": 90
+    },
+    "full_training_including_EOS": {
+      "0": 92,
+      "0.5": 120,
+      "0.95": 155,
+      "1": 155
+    }
+  },
+  "full_trace_tokens_by_depth": {
+    "1": [
+      6
+    ],
+    "2": [
+      12
+    ],
+    "3": [
+      18
+    ],
+    "4": [
+      24
+    ],
+    "5": [
+      30
+    ],
+    "6": [
+      36
+    ],
+    "7": [
+      42
+    ],
+    "8": [
+      48
+    ],
+    "9": [
+      54
+    ],
+    "10": [
+      60
+    ]
+  },
+  "existing_FIM_pad_id": 151662,
+  "pause_status": "Candidate trained constant-token input only; no pause implementation or hardware result.",
+  "manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+  "checker_sha256": "defc87cc110ad5bd1937c6c1dbf8851f0b92287fff008c862eadac2af770be3b",
+  "fixed_TRAIN_examples": [
+    {
+      "schema": "permutation-program-v28-cpu-v1",
+      "split": "TRAIN",
+      "family_id": "836bd0d250ab4571b3b538d656f33b70db87d76dc6e6c5b5d99cd3719ac1b184",
+      "variant": "counterfactual",
+      "item_id": "836bd0d250ab4571b3b538d656f33b70db87d76dc6e6c5b5d99cd3719ac1b184:counterfactual",
+      "question": {
+        "r": [
+          6,
+          1,
+          7,
+          12,
+          3,
+          15,
+          2,
+          5,
+          4,
+          9,
+          10,
+          13,
+          0,
+          8,
+          11,
+          14
+        ],
+        "s": [
+          9,
+          2,
+          12,
+          13,
+          1,
+          10,
+          14,
+          5,
+          3,
+          6,
+          4,
+          15,
+          11,
+          7,
+          8,
+          0
+        ],
+        "start": 12,
+        "program": "rs"
+      },
+      "graph_id": "e6c32a6a83441bb71ee3d2a26f98d34fa3fdf740ff669ab424bc39326e354d69",
+      "answer": "J",
+      "full_trace": "r: M -> A\ns: A -> J\n",
+      "partial_trace": "r: M -> A\n",
+      "states": [
+        12,
+        0,
+        9
+      ]
+    },
+    {
+      "schema": "permutation-program-v28-cpu-v1",
+      "split": "TRAIN",
+      "family_id": "335e878ccb2702f1c5468f82815fbb75d956210debeefc8d980623c3598b5bf0",
+      "variant": "original",
+      "item_id": "335e878ccb2702f1c5468f82815fbb75d956210debeefc8d980623c3598b5bf0:original",
+      "question": {
+        "r": [
+          9,
+          4,
+          7,
+          2,
+          0,
+          15,
+          3,
+          14,
+          8,
+          10,
+          11,
+          12,
+          6,
+          5,
+          1,
+          13
+        ],
+        "s": [
+          12,
+          13,
+          2,
+          8,
+          15,
+          10,
+          3,
+          4,
+          5,
+          9,
+          7,
+          0,
+          1,
+          14,
+          6,
+          11
+        ],
+        "start": 10,
+        "program": "rs"
+      },
+      "graph_id": "7c143dd1ddecc13aaba49c144b938588b150b9486ecb4d36783a53151106e7bc",
+      "answer": "A",
+      "full_trace": "r: K -> L\ns: L -> A\n",
+      "partial_trace": "r: K -> L\n",
+      "states": [
+        10,
+        11,
+        0
+      ]
+    },
+    {
+      "schema": "permutation-program-v28-cpu-v1",
+      "split": "TRAIN",
+      "family_id": "0687ea0934fca1f5e8985ba5804c953e148e497edac651afe144c465b7a135b3",
+      "variant": "original",
+      "item_id": "0687ea0934fca1f5e8985ba5804c953e148e497edac651afe144c465b7a135b3:original",
+      "question": {
+        "r": [
+          6,
+          9,
+          14,
+          3,
+          11,
+          15,
+          1,
+          5,
+          4,
+          0,
+          2,
+          7,
+          10,
+          13,
+          12,
+          8
+        ],
+        "s": [
+          5,
+          3,
+          6,
+          4,
+          15,
+          9,
+          1,
+          12,
+          10,
+          2,
+          7,
+          0,
+          14,
+          8,
+          13,
+          11
+        ],
+        "start": 15,
+        "program": "ss"
+      },
+      "graph_id": "a8b2d5db8d9fa6458cb8ab68d76688a21e31f6d19f050a5eb5d5a57bc4bb4165",
+      "answer": "A",
+      "full_trace": "s: P -> L\ns: L -> A\n",
+      "partial_trace": "s: P -> L\n",
+      "states": [
+        15,
+        11,
+        0
+      ]
+    },
+    {
+      "schema": "permutation-program-v28-cpu-v1",
+      "split": "TRAIN",
+      "family_id": "127be17bb264faefc9efdd7758450292e36639091381c3a07f0df4a07635213d",
+      "variant": "counterfactual",
+      "item_id": "127be17bb264faefc9efdd7758450292e36639091381c3a07f0df4a07635213d:counterfactual",
+      "question": {
+        "r": [
+          14,
+          1,
+          2,
+          3,
+          15,
+          12,
+          4,
+          13,
+          0,
+          11,
+          7,
+          10,
+          9,
+          5,
+          8,
+          6
+        ],
+        "s": [
+          5,
+          15,
+          10,
+          12,
+          9,
+          3,
+          0,
+          13,
+          2,
+          4,
+          6,
+          8,
+          11,
+          14,
+          1,
+          7
+        ],
+        "start": 6,
+        "program": "sssssr"
+      },
+      "graph_id": "890dcc7e3626df2962f8c7704cf0362aebe5380e60b6c4d38c2d78168ea37fe6",
+      "answer": "K",
+      "full_trace": "s: G -> A\ns: A -> F\ns: F -> D\ns: D -> M\ns: M -> L\nr: L -> K\n",
+      "partial_trace": "s: G -> A\ns: A -> F\ns: F -> D\ns: D -> M\ns: M -> L\n",
+      "states": [
+        6,
+        0,
+        5,
+        3,
+        12,
+        11,
+        10
+      ]
+    }
+  ],
+  "limits": [
+    "No model forward, training, hardware qualification or learned capability result.",
+    "New full maps, not novel elementary edges or an unknown pretraining algorithm.",
+    "Observed paths are simple and lengths1..10; cycles/arbitrary execution are outside this laboratory.",
+    "Paired variants share a family; do not use them as independent bootstrap observations.",
+    "Trained pauses and generated states have different execution graphs/latency even at equal positions."
+  ]
+}

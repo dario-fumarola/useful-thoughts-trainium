@@ -1,0 +1,384 @@
+{
+  "experiment_id": "controlled-computation-v28",
+  "status": "PROSPECTIVE_STUDY_DATA_AND_POWER_PREPARATION_NO_LONG_TRAINING_RELEASE",
+  "utc": "2026-10-20T01:41:21.061297+00:00",
+  "question": "Do verified intermediate states help inference beyond direct and trained-pause paths, and separately improve the same direct path after training?",
+  "primary_families": 9216,
+  "primary_questions": 18432,
+  "primary_panel": "DEV_composition",
+  "secondary_panels": {
+    "DEV_interpolation": 1024,
+    "DEV_depth": 1024
+  },
+  "data_extension": "Generate same frozen procedure/seed with9216families per DEV panel in a new directory. TRAIN must remain byte-identical; original1024-family DEV cohorts remain unchanged prefixes. Use original1024families for the two secondary readouts. No model has evaluated any V28 held item.",
+  "why_extend": "Synthetic source supplies enough independent families. Plan enough precision for5pp effects instead of repeating255-question pilots. No training/model outcome chose this extension.",
+  "primary_inference_conjunction": "For each of two data-order seeds: trace generated answers versus matched direct model, matched trained-pause inference, and same trace model direct path. Each point gain>=3pp and paired family-bootstrap95% lower>0. Six comparisons required; report each separately.",
+  "independent_training_claim": "For each seed, trace-trained direct versus direct-trained direct and pause-trained direct. Same practical/interval threshold, evaluated separately; inference failure does not erase training benefit.",
+  "bootstrap": "Resample complete two-variant families;5000draws, fixedseed17. Checkpoint-conditional95% intervals, not broad model/seed uncertainty. Never treat paired variants as independent.",
+  "planning": "Normal approximation only. At9216 independent families, true5pp and conservative family difference variance1, each comparison passage~97.3%, six-comparison union lower~83.5%. Not an observed or exact finite-sample guarantee. At a true3pp effect the point-threshold rule does not approach80% power.",
+  "power_grid": [
+    {
+      "families": 1024,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.2734809196984087,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.03,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.1586639687753259,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.7956650116119803,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.44047279299947606,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.04,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.24826363283237957,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9507809068366109,
+      "six_comparison_joint_lower_union_bound_approx": 0.7046854410196652
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.6189703663026573,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.05,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.3594370334317384,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9999819548838162,
+      "six_comparison_joint_lower_union_bound_approx": 0.9998917293028975
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9515852802080563,
+      "six_comparison_joint_lower_union_bound_approx": 0.709511681248338
+    },
+    {
+      "families": 1024,
+      "true_gain": 0.08,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.7257588833575943,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.03,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.4840609197573528,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9507809068366109,
+      "six_comparison_joint_lower_union_bound_approx": 0.7046854410196652
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.8172929145610707,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.04,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.7257588833575943,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9995250261385962,
+      "six_comparison_joint_lower_union_bound_approx": 0.997150156831577
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9648670965067891,
+      "six_comparison_joint_lower_union_bound_approx": 0.7892025790407349
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.05,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.8925189633779205,
+      "six_comparison_joint_lower_union_bound_approx": 0.3551137802675228
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 1.0,
+      "six_comparison_joint_lower_union_bound_approx": 1.0
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9999969871194241,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999819227165445
+    },
+    {
+      "families": 4096,
+      "true_gain": 0.08,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.9992112518110605,
+      "six_comparison_joint_lower_union_bound_approx": 0.9952675108663631
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.03,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.990279097012184,
+      "six_comparison_joint_lower_union_bound_approx": 0.9416745820731038
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.8997274320455579,
+      "six_comparison_joint_lower_union_bound_approx": 0.39836459227334764
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.04,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.8172929145610707,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9999985223275816,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999911339654894
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9947663918364442,
+      "six_comparison_joint_lower_union_bound_approx": 0.9685983510186653
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.05,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.9648670965067891,
+      "six_comparison_joint_lower_union_bound_approx": 0.7892025790407349
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 1.0,
+      "six_comparison_joint_lower_union_bound_approx": 1.0
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9999999999223115,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999999995338689
+    },
+    {
+      "families": 8192,
+      "true_gain": 0.08,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.9999969871194241,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999819227165445
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.03,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.03,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.5,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9934070645742671,
+      "six_comparison_joint_lower_union_bound_approx": 0.9604423874456025
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.04,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9127118248219092,
+      "six_comparison_joint_lower_union_bound_approx": 0.47627094893145494
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.04,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.8314723925331622,
+      "six_comparison_joint_lower_union_bound_approx": 0
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 0.9999996428203739,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999978569222434
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.05,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9966891125284925,
+      "six_comparison_joint_lower_union_bound_approx": 0.9801346751709548
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.05,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.9725710502961632,
+      "six_comparison_joint_lower_union_bound_approx": 0.8354263017769792
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.15,
+      "marginal_pass_approx": 1.0,
+      "six_comparison_joint_lower_union_bound_approx": 1.0
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.08,
+      "family_difference_variance": 0.5,
+      "marginal_pass_approx": 0.9999999999943239,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999999999659432
+    },
+    {
+      "families": 9216,
+      "true_gain": 0.08,
+      "family_difference_variance": 1.0,
+      "marginal_pass_approx": 0.999999206671848,
+      "six_comparison_joint_lower_union_bound_approx": 0.9999952400310883
+    }
+  ],
+  "arms": [
+    "direct",
+    "trace",
+    "pause"
+  ],
+  "candidate_training": {
+    "items": 32768,
+    "passes": 4,
+    "updates": 4096,
+    "global_batch": 32,
+    "lr": 1e-05,
+    "seed_order": [
+      2026102028,
+      2026102029
+    ],
+    "schedule": "constant",
+    "views": "Each question sees two direct and two arm-specific views, interleaved.",
+    "loss": "Equal separately normalized final-field weight1; trace work weight1; provided pauses never predicted."
+  },
+  "causal_scope": "Complete training recipes differ in auxiliary targets and some answer-training contexts. A positive result is not a pure auxiliary-gradient effect or proven internalization. All arms use causal CE. No autonomous learning or ordinary pretraining claim.",
+  "remaining_before_release": [
+    "Bounded decoder qualification and independent audit",
+    "Exact frozen decoder/terminal bindings for science",
+    "Rolling checkpoint retention and storage plan",
+    "Actual trainable shape/memory/recovery evidence bound to the study adapter",
+    "Explicit training/evaluation accelerator budgets and physical allocations"
+  ]
+}
