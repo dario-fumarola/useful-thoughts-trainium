@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "1908CPU tests and smoke/compile pass",
+    "Exact64 rank/step packs match old qualified dispatch",
+    "All numerical/kernel/packing source hashes identical to old CPU reference; only guard/dispatch and prospective design added",
+    "New RAM output; devices0/1 expected idle;1.0chip-hour cap and finite30-minute window",
+    "No long science release; terminal protection and independent full-state check still required"
+  ],
+  "release_sha256": "7f86fb893d14ca26adbac4e4bf6b68d28d537dfa56d7c68de78311a976c0f9a7",
+  "reviewer": "root agent; not external",
+  "source_commit": "c9d2c0c",
+  "status": "PASS_ROOT_REVIEW_BOUNDED_EXACT_SOURCE_QUALIFICATION",
+  "utc": "2026-10-20T14:59:37.231532+00:00"
+}

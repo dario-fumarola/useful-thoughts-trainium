@@ -1,0 +1,16 @@
+{
+  "CPU_reference_reuse_sha256": "7dac79f0856495ed1f8d75826d7aa039a164b4f1d6e609e4f0c15f9c0b2faebd",
+  "CPU_tests": 1908,
+  "deadline_utc": "2026-10-20T15:26:37.231532+00:00",
+  "helper_sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f",
+  "maximum_reserved_chip_hours": 1.0,
+  "output": "/home/ubuntu/dario/local/qualification/ram-real-cpt-scaffold-v29-v2/run-v1",
+  "protocol_sha256": "536c978a52f3b8d1f79265f7009e12c3f88051a28cb0540fa6e0b070d177bf83",
+  "scope": "One new-source8-update TRAIN-only qualification,halt4/full fresh-process restore8; exact old numerical kernels and all64packs. No scientific learning release,automatic retry or new held outcomes.",
+  "source_commit": "c9d2c0c",
+  "status": "RELEASED_BOUNDED_TRAIN_MECHANICS_ONLY",
+  "supervisor_sha256": "bf7d1f3718cf837a0646d17e5e72074af529319136b5447104395340d5ef9850",
+  "utc": "2026-10-20T14:59:37.231532+00:00",
+  "timeout_grace_seconds": 180,
+  "window_note": "Before any hardware launch, reserve3minutes of the original30-minute/1chip-hour budget for physical timeout cleanup."
+}

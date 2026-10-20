@@ -1,31 +1,40 @@
-<!-- Current handoff 2026-10-20 14:50 UTC; historical entries below -->
-Owner: continue autonomously/patiently; no final at milestones. No agent quota retries or active goal.
-V28 COMPLETE/PUBLIC,c47a823; all producers closed. Keep as fixed positive control.
-V29 CPU data/readback and1890CPU checks PASS. No held model outcomes inspected.
-W=local/worktrees/real-cpt-scaffold-v29; actual numerical source e7c2508,metadata HEAD2125d27.
-C=local/diagnostics/real-cpt-scaffold-v29-qualification-v1. All accelerator processes physically CLOSED.
-Actual4 save,full fresh-process restore on8ranks,updates5–8 complete within original2chip-hour budget.
-Original supervisor window refusal preserved; explicit continuation release precedes new process.
-Independent-state-audit PASS:16 native vectors,all4960master shards/moments/fullmodel casts,8actual restorations.
-First-step CPU loss/count check PASS; warm6–12s,first restored58s; cold first graphs1511/888s.
-Cost1.505726476reserved chip-hours. No long-memory,uninterrupted-trajectory or learning claim.
-Original RAM4/8 remain local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1.
-Terminal8+run-envelope full EBS readback/fsync PASS under local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1.
-Audit exec70657 and backup41682 CLOSED,receipts retained; final directory fsync recorded separately.
-Public limited reports prepared in validation/real_cpt_scaffold_v29_mechanics_complete_20261020(.json,/).
-Trained natural-stop decoder check CLOSED0; unchanged W_B=local/worktrees/causal-decoder-batching-v1@b25560a.
-C_B=local/diagnostics/causal-decoder-trained-natural-v2; actual V17T1913terminal320SHA9fb43e0f... .
-All24 native distributions and all8 complete serial/B4/B8 outputs exactly pass;all8 native stops22–77actions.
-Independent NumPy saved-native24/output/timing/closure reconstruction43875 CLOSED0,PASS.
-Three rotating warm-repeat medians29.255/10.003/6.000s;B8=4.8757×microbenchmark,cost.17672chip-hour.
-Vectors remain EBS with hashes;all8 note/token arrays public. No quality score or scalar-reader qualification.
-Both final reports and refreshed status/queue are local ready for review/commit/push; no numerical edits.
-Next freeze V29 science endpoints/power,storage/reservation,then guarded science integration in existing driver.
-Current driver admits only8-update qualification; do not bypass guards or claim long source is already qualified.
-Root free~50.8GiB,NVMe0/3/2~50/55/54GiB;RAM~955GiB. Floors35GiB/512GiBhost.
-No source/cache deleted,moved or compressed. Storage stream feasibility only,not a backup.
-Safe lossless compression of verified backup-only model duplicates is a possible storage repair,not yet performed.
-No long run/RL/8B/officialTEST/new capacity/paid teacher/stack upgrade authorized by this mechanics result.
+<!-- Current handoff 2026-10-20 15:27 UTC; historical entries below -->
+Owner: continue autonomously/patiently; no final at milestones. No active goal or agent quota retries.
+V28 COMPLETE/PUBLIC,c47a823; do not rerun any closed producer or extend its training.
+Main source ea4d204; Wstudy and Weval now0054991 (training numerical files remain c9d2c0c).
+Wstudy=local/worktrees/real-cpt-scaffold-v29; Weval=local/worktrees/real-cpt-scaffold-v29-eval.
+Actual exact-source c9 qualifier C=local/diagnostics/real-cpt-scaffold-v29-qualification-v2 is CLOSED/PASS.
+Fresh4+resume8 exec39471 closed0,cost.2282909195chip-hours; native16/full4960master/moments/actualrestore8 audits pass.
+Independent audit80282 and full EBS archive23556 closed0. Full archive21669499051bytes; complete member readback.
+Original RAM4/8 retained under local/qualification/ram-real-cpt-scaffold-v29-v2/run-v1.
+New report under validation/real_cpt_scaffold_v29_fixed_source_qualified_20261020(.json,/),currently uncommitted.
+Old q1 still has original RAM4/8 and EBS model/evidence. Only8 old backup optimizer duplicates retired after
+full original/backup SHA equality and newer full source-qualified archive pass. Marker OPTIMIZER_BACKUP_RETENTION.json.
+q1/q2 protocols are not interchangeable; do not call old EBS path a complete optimizer backup now.
+All6 actual fullTRAIN first-step CPU references complete under local/diagnostics/real-cpt-scaffold-v29-science-v1.
+Prepare reference14148 CLOSED0; protocols6262 verify all6 fixed-arm source/hardware/design/data bindings.
+No scientific model launched; no new held model outcomes. Endpoints fixed in configs/real_cpt_scaffold_v29_design.json.
+Primary+.25nat/full16 and positive lower95 versus both controls,both orders; absoluteB0/ordinary retention separate.
+Full ordinary527 scoring engineering v1 CLOSED1,physical8/logical32 empty;cost.105229chip-hour.
+C1=local/diagnostics/real-cpt-ordinary-full-window-v29-v1; all original source,logs,CPU/native references retained.
+Important correction: NEFF IDs1001..1011 are identifiers; runtime table shows11 loaded graphs,not1000.
+Resource error has15.363GB DMA spill queues plus6.415GB tensors; no complete full-window output.
+Explicit5-line synchronization repair0054991 passes1921CPU checks; arithmetic/data/model/reference/tolerance unchanged.
+C2=local/diagnostics/real-cpt-ordinary-full-window-v29-v2 ACTIVE exec21874,one logical32/device8,40min bound.
+New script local/analysis/qualify_real_cpt_ordinary_full_window_v29_v2_20261020.py; no automatic retry.
+Do not edit live Weval numerical code; inspect actual result/closure. B1/B4 full527 and suffix16 gates pending.
+CPU references are independent actual HF forwards on4TRAIN ordinary documents under frozen V17T1913terminal320.
+A canonical CPU full527 readout is a possible execution fallback before held scoring,but requires actual CPU checker qualification.
+Bulk model-backup archival exec51218/PID1784486 still original finite41-file job,not a relaunch.
+C=local/diagnostics/backup-model-lossless-archive-v1; log local/analysis/archive-backup-models-20261020.log.
+Temporarily SIGSTOPped only own Python process while full archive wrote; SIGCONT after closure/retirement; receipts saved.
+Every lossless archive is full-SHA restored before backup duplicate unlink; original NVMe files untouched.
+Root free~60GiB while new compiler temps/archives run; floors35GiB/fs and512GiBhost. Serialize future large writers.
+Unused nvme4 is unmounted but NONZERO; read-only cmp/wipefs/file checks only. DO NOT format or overwrite it.
+Next finish scorer/archival,prepare concrete resource+backup retention plan and one scientific release review.
+Candidate:3arms in parallel per seed,all original full64/640/1280 on private RAM,all terminal models EBS,
+rotating latest-full EBS archive only if explicitly planned and accurately scoped; not yet released/frozen.
+No original state/cache deletion,new capacity,paid teacher,stack upgrade,officialTEST,R1234 or8B launch.
 
 ## Historical handoff snapshots (not active instructions)
 

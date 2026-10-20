@@ -1677,3 +1677,10 @@ original supervisor window refusal and explicit same-budget continuation remain 
 This releases no scientific learning claim. Freeze the scientific contrasts/power,
 checkpoint placement and guarded fixed-arm implementation next. Batching passes on
 one trained writer/eight TRAIN prefixes; adopt prospectively only,never into V28.
+
+2026-10-20 — Freeze V29 direct-prediction endpoints and qualify the actual guarded science source.
+Six protocols bind both source orders,all3arms,the exact-source recovery receipt and actual TRAIN CPU references.
+No learning release follows yet. Full527 scorer hits runtime spill-queue exhaustion; preserve failed attempt,
+correct graph-ID/count interpretation,and test explicit synchronization with unchanged inputs and gates.
+Full new qualification backup is losslessly archived on EBS; original RAM states remain. Older qualification
+backup-only optimizer shards retire after full hash readback; source model/evidence and all original states stay.

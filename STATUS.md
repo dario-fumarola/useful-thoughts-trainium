@@ -1,18 +1,20 @@
-# Status — 2026-10-20 14:50 UTC
+# Status — 2026-10-20 15:27 UTC
 
-## Qualified mechanics: real continuation CPT with clean LM supervision
-Question: does verified computation help real prediction while complete clean training stays identical?
+## Prepared: real continuation CPT; exact-source mechanics qualified
+Question: can verified computation improve real direct prediction with complete clean LM preserved?
 ID:real-cpt-scaffold-v29; TRAIN20480; fresh arithmetic DEV768/ordinary DEV4096; no held model outcomes.
-CPU all-arm/native-source readback and1890 checks pass; clean1/auxfuture0.5/work1 have separate means.
-Actual8 TRAIN-only updates cycle all three views; full4 save/fresh-process restore/update8 complete.
-Independent16 native vectors,all4960 FP32 master shards/moments,and8 actual optimizer restorations PASS.
-First-step CPU component/total bounds pass; warm observations6–12s/update after cold compilation.
-Original supervisor refuses resume near its deadline; explicit unchanged-protocol continuation completes scope.
-Total1.506reserved chip-hours within2.0; all sessions/devices close. No learning or long-memory claim.
-Full terminal8/run envelope read back and fsynced on same-instance EBS; original RAM4/8 retained.
-Report:validation/real_cpt_scaffold_v29_mechanics_complete_20261020.json.
-Next: freeze scientific endpoints/power,concrete storage and reservation; implement guarded science purpose.
-Current engine admits only this8-update qualification; no long scientific run is released. V28 stays closed.
+Clean1/auxfuture0.5/work1 have separate means; raw,format and computation share all clean source tokens.
+Frozen primary requires+0.25nat/full16 and positive lower95 versus both trained controls,in both orders.
+B0 comparison and ordinary full527 retention target remain separate; no degraded-control-only capability claim.
+Guarded science source c9d2c0c passes1908CPU checks and an exact-source8-update/full4 restore/update8 run.
+Independent native16/all4960master-shard/moment/restore8 audit PASS; reservation0.228chip-hours.
+Full terminal8/run envelope has complete lossless EBS archive readback; all original RAM states retained.
+Report:validation/real_cpt_scaffold_v29_fixed_source_qualified_20261020.json.
+All6 actual B0 TRAIN first-step references prepared; fixed-arm protocols validated,not executed.
+Full527 scoring v1 fails NRT_RESOURCE; eleven loaded graphs/15GB spill queues,not a thousand graphs.
+Explicit synchronization repair0054991 passes1921CPU checks; identical TRAIN/model/reference/gate hardware v2 active.
+Next: finish scorer repair,lossless backup compaction and concrete storage/reservation review before science.
+No long scientific model or new held forward launched. V28 stays closed; oldR1234 stays stopped63.
 
 ## Closed: controlled computation reference
 Question: do verified generated states improve fresh computation,and what remains without the trace?
