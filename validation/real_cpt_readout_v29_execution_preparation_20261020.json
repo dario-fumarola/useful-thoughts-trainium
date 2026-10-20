@@ -1,0 +1,174 @@
+{
+  "B0_TRAIN_CPU_reference": {
+    "held_rows": 0,
+    "path": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/references/B0/reference.json",
+    "sha256": "2902bb32b9c86f90236cb99e0dc1a50c3a94faaa7a11edc9bf5f9fe58960f2d1"
+  },
+  "CPU_checks": 1932,
+  "CPU_checks_log_sha256": "a4d9a66e4ce7a697311e6d022cb779e3ec1bada66937438dfd8d709889cccb55",
+  "additional_backup_only_archival": {
+    "complete": {
+      "elapsed_seconds": 353.0796568393707,
+      "files": [
+        {
+          "archive": "/home/ubuntu/dario/local/backups/models/partial-state-v6-TRAIN128-terminal/cot/model.pt.zst",
+          "archive_bytes": 2691169504,
+          "archive_sha256": "933125bd1cb61d7f52df34c2edf37e77e046abadfcd7cbe5e494612b5e1dba07",
+          "backup": "/home/ubuntu/dario/local/backups/models/partial-state-v6-TRAIN128-terminal/cot/model.pt",
+          "backup_device": 66305,
+          "bytes": 3441248275,
+          "primary": "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-cot-TRAIN128-overfit-v1/step-0000128/model.pt",
+          "primary_device": 66310,
+          "primary_untouched": true,
+          "reclaimed_bytes": 750078771,
+          "restored_bytes": 3441248275,
+          "restored_sha256": "cc55aadb677330565d244682509445c4fa209b38b32fb145d2896374531c160a",
+          "sha256": "cc55aadb677330565d244682509445c4fa209b38b32fb145d2896374531c160a",
+          "status": "PASS_LOSSLESS_ARCHIVE_AND_UNTOUCHED_PRIMARY"
+        },
+        {
+          "archive": "/home/ubuntu/dario/local/backups/models/partial-state-v6-TRAIN128-terminal/reader/model.pt.zst",
+          "archive_bytes": 2691085600,
+          "archive_sha256": "a48742a6053e566d9a1e29a9bfcfcbce25a0e455f2ca5ea0522107eaef540508",
+          "backup": "/home/ubuntu/dario/local/backups/models/partial-state-v6-TRAIN128-terminal/reader/model.pt",
+          "backup_device": 66305,
+          "bytes": 3441248275,
+          "primary": "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-reader-TRAIN128-overfit-v1/step-0000128/model.pt",
+          "primary_device": 66310,
+          "primary_untouched": true,
+          "reclaimed_bytes": 750162675,
+          "restored_bytes": 3441248275,
+          "restored_sha256": "1670181dd68100f025e19263297e757fdfe1c32c9d2304ce662f18ed839181a2",
+          "sha256": "1670181dd68100f025e19263297e757fdfe1c32c9d2304ce662f18ed839181a2",
+          "status": "PASS_LOSSLESS_ARCHIVE_AND_UNTOUCHED_PRIMARY"
+        },
+        {
+          "archive": "/home/ubuntu/dario/local/backups/models/partial-state-v6-TRAIN128-terminal/writer/model.pt.zst",
+          "archive_bytes": 2691148672,
+          "archive_sha256": "ecf517ceead593bb29639136eb018b51c600610c11722ee95cfbbeba77d6d382",
+          "backup": "/home/ubuntu/dario/local/backups/models/partial-state-v6-TRAIN128-terminal/writer/model.pt",
+          "backup_device": 66305,
+          "bytes": 3441248275,
+          "primary": "/home/ubuntu/dario/local/nvme/runs/partial-state-v6-writer-TRAIN128-overfit-v1/step-0000128/model.pt",
+          "primary_device": 66310,
+          "primary_untouched": true,
+          "reclaimed_bytes": 750099603,
+          "restored_bytes": 3441248275,
+          "restored_sha256": "58553db64f9b7cfbf1a3389c53c3eb0f72150fd2524fb281b68fa2756a392355",
+          "sha256": "58553db64f9b7cfbf1a3389c53c3eb0f72150fd2524fb281b68fa2756a392355",
+          "status": "PASS_LOSSLESS_ARCHIVE_AND_UNTOUCHED_PRIMARY"
+        },
+        {
+          "archive": "/home/ubuntu/dario/local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1/step-0000008/model.pt.zst",
+          "archive_bytes": 2690912789,
+          "archive_sha256": "454cf5261c27ddc0095a0839419ae53bb4346fe91b7fd1cb9426763c10e90441",
+          "backup": "/home/ubuntu/dario/local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1/step-0000008/model.pt",
+          "backup_device": 66305,
+          "bytes": 3441248275,
+          "primary": "/home/ubuntu/dario/local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1/step-0000008/model.pt",
+          "primary_device": 26,
+          "primary_untouched": true,
+          "reclaimed_bytes": 750335486,
+          "restored_bytes": 3441248275,
+          "restored_sha256": "603831ee663f4e08c616a4895ae48dab8e81bf9765c0b610fba0ccd97b09f8b8",
+          "sha256": "603831ee663f4e08c616a4895ae48dab8e81bf9765c0b610fba0ccd97b09f8b8",
+          "status": "PASS_LOSSLESS_ARCHIVE_AND_UNTOUCHED_PRIMARY"
+        },
+        {
+          "archive": "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014/model.pt.zst",
+          "archive_bytes": 2691067490,
+          "archive_sha256": "6b4903711d81b9c04cf76f596f24302dd7c5648716552b32f0596b4c3804fe4f",
+          "backup": "/home/ubuntu/dario/local/backups/engineering/checkpoint-export-SFT-recovery-v8-v2/output/candidate/step-0000014/model.pt",
+          "backup_device": 66305,
+          "bytes": 3441248275,
+          "primary": "/home/ubuntu/dario/local/nvme-study/diagnostics/checkpoint-export-SFT-recovery-v8-v2/candidate/step-0000014/model.pt",
+          "primary_device": 66312,
+          "primary_untouched": true,
+          "reclaimed_bytes": 750180785,
+          "restored_bytes": 3441248275,
+          "restored_sha256": "b5f556c314e06fc8399a5a3adc94740df7d3977d6722531735ea18249e06a205",
+          "sha256": "b5f556c314e06fc8399a5a3adc94740df7d3977d6722531735ea18249e06a205",
+          "status": "PASS_LOSSLESS_ARCHIVE_AND_UNTOUCHED_PRIMARY"
+        },
+        {
+          "archive": "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006/model.pt.zst",
+          "archive_bytes": 2690942053,
+          "archive_sha256": "dd9d2907baf6425f76705fac731b24f1bfaba05d8642943f246287ba91a3a0f6",
+          "backup": "/home/ubuntu/dario/local/backups/diagnostics/partial-state-v6-world4-micro8-qualification-v1/output/step-0000006/model.pt",
+          "backup_device": 66305,
+          "bytes": 3441248275,
+          "primary": "/home/ubuntu/dario/local/nvme/diagnostics/partial-state-v6-world4-micro8-qualification-v1/writer/step-0000006/model.pt",
+          "primary_device": 66310,
+          "primary_untouched": true,
+          "reclaimed_bytes": 750306222,
+          "restored_bytes": 3441248275,
+          "restored_sha256": "a9a8ea3afd589628e52f0d1df62cec4a1f6d678b19dc7b2922c65f17abad44fa",
+          "sha256": "a9a8ea3afd589628e52f0d1df62cec4a1f6d678b19dc7b2922c65f17abad44fa",
+          "status": "PASS_LOSSLESS_ARCHIVE_AND_UNTOUCHED_PRIMARY"
+        }
+      ],
+      "free_bytes": 74711629824,
+      "limits": "Same-instance EBS archives; NVMe/RAM originals remain unchanged. Not off-instance protection.",
+      "plan_sha256": "cb9aa1c31bc9d814a01ab42019c07ebf077d9836cd8d0848f88750893ae395cb",
+      "reclaimed_bytes": 4501163542,
+      "source_sha256": "9130d999dcf2e191a771ca0b67e9e9f34b2696a31976925c0ee96e66d622f7ab",
+      "status": "PASS_LOSSLESS_BACKUP_ARCHIVAL_ALL_PLANNED_FILES"
+    },
+    "receipt_sha256": "0d5814f4e555dd222a1268a4244567030f37f9390f38c45506feff60e9e943f4"
+  },
+  "execution_plan": {
+    "limits": "No held execution authorized by this preparation JSON. It does not change scientific data,decoders,gates or supervision.",
+    "min_filesystem_free_GiB": 35,
+    "min_host_available_GiB": 512,
+    "model_order": [
+      "B0",
+      "raw-seed2026102029",
+      "format-seed2026102029",
+      "computation-seed2026102029",
+      "raw-seed2026102030",
+      "format-seed2026102030",
+      "computation-seed2026102030"
+    ],
+    "phase_wall_seconds": {
+      "math": 5400,
+      "ordinary": 10800,
+      "scalar": 7200,
+      "writer": 5400
+    },
+    "phases_per_model": [
+      "writer",
+      "ordinary",
+      "math",
+      "scalar"
+    ],
+    "physical_slots": {
+      "B0": 0,
+      "computation-seed2026102029": 3,
+      "computation-seed2026102030": 6,
+      "format-seed2026102029": 2,
+      "format-seed2026102030": 5,
+      "raw-seed2026102029": 1,
+      "raw-seed2026102030": 4
+    },
+    "process_helper": {
+      "path": "/home/ubuntu/dario/local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualify.py",
+      "sha256": "57fe9fb1a760dd160574aa81f9210092249fa063e44c8a106cd65345b14b627f"
+    },
+    "release_requirements": [
+      "All6 fixed1280 terminal models independently audited and protected,all scientific devices physically closed.",
+      "UnchangedB0 plus each actualterminal model have independent fixedTRAIN HF reference vectors; exact model/source/asset/contract hashes.",
+      "Actual fixedTRAIN native/cache/fulltarget gates inside every process before opening held rows.",
+      "One serial question review over full study; no prompt,parser,checkpoint or threshold selection from held outcomes.",
+      "Pin exact source and seven bindings,all scientific closures,and phase/resource bounds in an explicit new release."
+    ],
+    "reserved_chip_hours": 64,
+    "status": "PREPARED_EXECUTION_ONLY_NOT_A_HELD_READOUT_RELEASE",
+    "supervisor_source_sha256": "1fe9d8025e8fa75f7764beca4b584e2d7c7b654814adf6b865a842049f3be277",
+    "whole_chip_accounting": "Scalar four logical-core workers share one physical chip, charged once from first launch through physical closure."
+  },
+  "limits": "Preparation and TRAIN qualification only; no new held outcome or scientific gate result.",
+  "next": "Complete first seed terminal/audits/protection,then second unchanged seed; build all7 actual terminal bindings and fixed TRAIN references before one readout release.",
+  "script": "scripts/run_real_cpt_readout_v29.py",
+  "script_sha256": "1fe9d8025e8fa75f7764beca4b584e2d7c7b654814adf6b865a842049f3be277",
+  "status": "PREPARED_FINITE_READOUT_SUPERVISION_NO_HELD_RELEASE"
+}

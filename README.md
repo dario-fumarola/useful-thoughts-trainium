@@ -52,12 +52,15 @@ earlier V26 document-QA result below remains developmental and unconfirmed.
 and fresh768 arithmetic/4,096 ordinary DEV documents. All arms share complete clean
 LM supervision, with separate continuation/work losses. The exact-source update
 and restore checks pass. [Full-window scoring](validation/real_cpt_full_window_scoring_v29_20261020.json)
-now checks all527 ordinary transitions against independent HF references.
+now checks all527 ordinary transitions against independent HF references. A
+[metadata count correction](validation/real_cpt_full_window_scoring_v29_count_addendum_20261020.json)
+preserves every original score and gate.
 
 All three first-order models have [completed64 updates and passed full audits](validation/real_cpt_scaffold_v29_stage64_complete_20261020.json).
-Warm updates take6.3–6.4s and bounded memory is stable. The original checkpoints
-are now released to continue to the fixed1,280-update endpoints. No new held
-model outcomes exist.
+Warm updates take6.3–6.4s and bounded memory is stable. All24 model/optimizer rank restorations pass byte checks, and the three runs are
+active beyond update320 toward fixed1,280-update endpoints. All6 terminal identities
+will be fixed before held outcomes. [Readout integration](validation/real_cpt_readout_v29_integration_20261020.json)
+passes TRAIN-only native/cache/full-target checks; those are not learning results.
 [Trained-model batching](validation/causal_decoder_trained_natural_v2_20261020/REPORT.md)
 remains a4.88× warmed microbenchmark result, separate from learning efficacy.
 

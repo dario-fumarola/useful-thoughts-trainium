@@ -28,12 +28,13 @@ Whole study80chip-hour reservation; perphase6h, guard512GiBavailable/35GiBfree; 
 No7B/8B,broadRL,officialTEST,newcloud,paidteacher,stack change,oldR1234 orV28 extension.
 
 Readout progress16:55UTC: Weval85c55db worker/context code plus4204e10 results module are pushed; helpers frozen as in CPU references.
-New script scripts/run_real_cpt_readout_v29.py is uncommitted in Weval; pycompile passed, full1932checksv3 running exec52100.
+New script scripts/run_real_cpt_readout_v29.py is committed08e94be in Weval; pycompile and full1932checksv3 PASS; exec52100 closes0.
 No held readout released. E=local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; actual B0 TRAIN CPU reference complete.
 Integrated qualifier exec50890 physically closes all4 workers0; sparephysical8 idle. Cq=local/diagnostics/real-cpt-readout-v29-qualification-v1.
 Independent checker v2 exec76491 passes; NumPy native/cache/full64/2108target reconstruction. v1 retains an irrelevant live-stdout SHA in its evidence map; v2 excludes live stdout. No score/tolerance changed.
-Public integration report and full-window reporting-count correction prepared under validation; original qualified4x527 arrays imply2108scores/condition,4216acrossB1/B4,not2112/4224. Originals unchanged.
-Finite six-file backup-only archival v2 exec52653 PID1868989 holds shared writer lock after qualifier closure; three ofsix done at16:53,reclaimed2.096GiB.
+Public integration report and full-window reporting-count correction committedcf9e76a and pushed;main ff08e94be before this update; original qualified4x527 arrays imply2108scores/condition,4216acrossB1/B4,not2112/4224. Originals unchanged.
+Finite six-file backup-only archival v2 exec52653/PID1868989 CLOSED0; all6 archived/restored, reclaimed4.192GiB. Root free69.58GiB at16:56. All NVMe/RAM originals unchanged.
+E/execution-plan.json prepares7 disjoint physical groups,serial phases permodel and scalar4shards billed once/chip; no held release yet.
 Carchive=local/diagnostics/backup-model-lossless-archive-v2; source local/analysis/archive_backup_model_duplicates_v2_20261020.py. All NVMe/RAM originals untouched, each archive fully SHA restored before backup duplicate retirement.
 Do not retry closed producers/agents. Keep watching3training continuations,checkpoint queue and backup archiver while completing evaluation supervisor/release preparation.
 
