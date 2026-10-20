@@ -1,4 +1,4 @@
-# Status — 2026-10-19 23:32 UTC
+# Status — 2026-10-20 00:07 UTC
 
 ## Active: coefficient-matched format control
 Question: does selector1.0 improve direct answers beyond empty-format auxiliary1.0?
@@ -6,14 +6,14 @@ ID: document-evidence-format-weight-v26; fresh1.7B, TRAIN2048×4/order1923/sourc
 Primary: selector1 direct minus format1 direct; >=3pp/positive paired lower95 is developmental only.
 All1823 CPU tests pass;510 exact prompt matches and1020 independent parser reconstructions pass.
 Actual8-update/full2/4/6/8 qualification and fresh-process restore4 pass independent full-state/native16 audit.
-Only one fresh evidence_direct-format1 terminal256 job is released; full128/256 plus early128 EBS protection.
+Full128 independent state/label/order audit and EBS readback/fsync PASS; all original states/models retained.
 C=local/diagnostics/document-evidence-format-weight-v26-control-v1; W=frozen document-evidence-format-weight-v26 @29606b0.
 O=local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048-seed2026101923-v1.
 Physical2/3, logical8–15; training deadline00:51:47UTC; no retry/checkpoint selection.
 Science release/source/actual qualification:31 files readback/fsync protected; original4 mechanics states retained NVMe.
 Report: validation/document_evidence_format_weight_v26_science_release_20261019.json.
-Active: training exec34070, owned session/PID1517924/start28721656; first128 protection8409; terminal watcher97028.
-Next: monitor O/metrics.jsonl; independently protect full128, then audit/protect/bind terminal256 before readout.
+Active: training159/256, exec34070/owned PID1517924/start28721656; terminal watcher97028. First128 wrapper8409 closes0.
+Next: finish256, then independently audit/protect/bind terminal before readout. Post-save grouped PSS~99GiB; warm13.5s.
 No held evaluation released: fixed direct/canonical-empty255 and ordinary256 follow terminal audit/protection.
 
 ## Active: frozen TRAIN pointer-decision diagnostic
@@ -25,7 +25,7 @@ Descriptive optimization endpoints only; annotation agreement is not semantic co
 Teacher-forced labels are privileged TRAIN diagnostic inputs, not deployed self-generated computation.
 Source/design/inputs frozen and EBS readback protected before model forwards.
 Design: validation/selector_TRAIN_decisions_CPU_design_20261019/design.json.
-Next: execute once, preserve raw observations, then independently check counts/token-prefix identities and publish limits.
+Active CPU exec48441/PID1526142;105/256 rows; check/protection watcher8719. Deadline00:30:29UTC, no automatic retry.
 
 ## Closed: selector-loss allocation ablation
 Question: does stronger selector supervision repair fitting and help answering?

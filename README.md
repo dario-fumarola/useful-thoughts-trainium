@@ -12,8 +12,9 @@ novelty relative to the model's original pretraining. Official DEV/TEST are unop
 
 The coefficient-matched **empty-format1.0 control is training** from fresh B0,
 with the same documents, order, exposures, source/answer coefficients and numerical
-worker as V25. Actual save/restart qualification passed; full checkpoints128/256
-and independent protection are enabled. No control answer result is available yet.
+worker as V25. Actual save/restart qualification passed, and the full step128
+checkpoint is independently audited and protected. Training continues to256; no
+control answer result is available yet.
 Its primary contrast is selection1.0 **direct answers** minus format1.0 direct
 answers. The benefit of emitting IDs remains a separate question. The fixed255
 panel is developmental; any positive result needs fresh, powered confirmation.

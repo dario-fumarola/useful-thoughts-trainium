@@ -1,4 +1,4 @@
-# Current handoff — 2026-10-19 23:32 UTC
+# Current handoff — 2026-10-20 00:07 UTC
 
 Continue autonomously; no final at a milestone, no goal creation. Agent quota
 unavailable until October24; do not retry agents. Read STATUS/NEXT_STEPS first.
@@ -23,17 +23,20 @@ Output local/nvme-cpt/runs/document-evidence-format-weight-v26-format1-TRAIN2048
 Physical2/3 logical8–15; soft deadline2026-10-20T00:51:47.360316+00:00; no automatic retry.
 Training exec34070 is active, owned timeout/session PID1517924, start_ticks28721656,
 launcher PID1517862. Actual8 worker allocation on physical2/3 captured.
-First128-protection wrapper exec8409 and terminal pipeline watcher97028 are active.
-Latest observation: update8 at23:32:19UTC, warm update13.43s, finite loss/gradient.
+First128-protection wrapper exec8409 closes0; terminal pipeline watcher97028 remains active.
+Latest observation: update159 at00:06:52UTC, warm update13.56s, finite losses/gradients.
+Post-export grouped training PSS~98.8GiB, down from142.6GiB before128.
 Do not launch duplicates; monitor C26/evidence_direct-format1-seed2026101923/run.log
 and output/metrics.jsonl. All jobs are bounded to original plan/deadline, no retries.
 CPU jobs use USE_TORCH_XLA=0 and PYTHONPATH W26:root/local/test-deps:root/local/analysis.
 All source files bound in C26/release.json are now frozen; never edit them silently.
 
-First128 backup must independently audit/copy/readback/fsync full state before retiring
-ONLY previous V25 EBS optimizer duplicates; terminal256 then retires ONLY V26 EBS128
-optimizer duplicates. All original states and all model weights remain.
-Storage root~65GiB, CPT~120GiB, spareNVMe~50GiB;35GiB floors. No cache/original deletion.
+First128 independent audit/copy/readback/fsync PASS, C26/first-full128-protection.json.
+Current global full EBS: local/backups/science/document-evidence-format-weight-v26-control-v1/FIRST_FULL128.
+128 COMPLETE SHA d360fab78765adb077d5211cc8c65d7ab6ba1fd7eaf1be8968b20e5b67ff1c09.
+Only previous V25 EBS optimizer duplicates retired after new full verification; all originals/models remain.
+Terminal256 must protect before retiring ONLY V26 EBS128 optimizer duplicates.
+Storage root~61.5GiB, CPT~97.7GiB, spareNVMe~50.2GiB;35GiB floors. No cache/original deletion.
 Two inactive engineering EBS model duplicates relocated with verified cross-volume copies;
 originals remain studyNVMe, receipts local/diagnostics/document-evidence-format-weight-v26-CPU-v1.
 
@@ -57,7 +60,9 @@ C=local/diagnostics/selector-TRAIN-decisions-CPU-v1; source selector_train_decis
 CPU exec48441, child PID1526142;16 CPU threads, explicit devicecpu, zero accelerator calls.
 Frozen design/input hashes in C/design.json, source publicly committed f7b7e0e before forwards.
 Original fixed TRAIN256 only:128two/96three/32four. No new held/final data or updates.
-Current-model CPU native check passes. Last observation28/256 at23:55UTC;7–10seconds/item.
+Current-model CPU native check passes. Last observation105/256 at00:06UTC;7–10seconds/item.
+CPU check/protection watcher exec8719 is active; it waits producer exit0, runs the fixed checker,
+then archives/readback/fsyncs all small raw outputs/source under engineering/Cname/POST_RUN.
 Hard original CPU deadline2026-10-20T00:30:29.193304+00:00; no automatic retry.
 All raw observations append to C/observations.jsonl, stdout C/run.log, exit C/exit.json.
 
@@ -87,7 +92,9 @@ Source W25=local/worktrees/document-evidence-weight-v25 @5414f8d remains frozen.
 All C/release.json pipeline sources and postprocessing-sources.json remain frozen.
 All256 updates/full128/256 states audited; terminal bound/protected. All original states remain.
 Terminal model SHA1d918a183a8bd171d72f7afea84894ad87735c77e99ca89b838403d7bd11ef87.
-Current full EBS local/backups/science/document-evidence-weight-v25-ablation-v1/TERMINALS/latest-full256.
+At V25 close the full EBS was local/backups/science/document-evidence-weight-v25-ablation-v1/TERMINALS/latest-full256.
+It is now superseded by V26 FIRST_FULL128; its optimizer BACKUP duplicates retired after new full verification.
+All original V25 full states and its terminal model weights remain.
 Earlier EBS optimizer duplicates alone retired after newer full verification; all models/originals retained.
 
 All1531 generation attempts/256 new ordinary likelihood rows completed, zero answer
