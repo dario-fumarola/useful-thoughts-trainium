@@ -1,4 +1,4 @@
-# Status — 2026-10-20 03:18 UTC
+# Status — 2026-10-20 03:57 UTC
 
 ## Active: controlled computation reference
 Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
@@ -7,13 +7,13 @@ First seed direct/trace/pause continues64→4096 on physical0/1/2; frozen source
 All three actual full64 model/master/moment/order audits and all12 fresh-process optimizer restoration digests PASS.
 Controllers exec59127/2442/51152; timeoutPIDs1575771/1575898/1576066, starts29821314/29821431/29821548.
 Control local/diagnostics/permutation-program-v28-study-v1; outputs local/science-runs/controlled-computation-v28.
-Whole first-wave deadline06:54UTC; fixed terminal primary. All three1024exports/readbacks complete; training resumed.
+Whole first-wave deadline06:54UTC; fixed terminal primary. All three2048exports/readbacks complete; training resumed.
 Primarycomposition9,216paired families/18,432questions; interpolation and length extrapolation remain separate.
 Post-export process memory about24GiB/arm; root86GiB free. Observed stability/recovery is not learned capability.
 Readback/fsync rolling retention keeps terminal models/model64/latest full per arm; historical originals/cache untouched.
-Reports: permutation_program_v28_continuation_20261020.json and periodic_recovery_20261020.json under validation; protected.
+Reports under validation: permutation_program_v28_continuation_20261020.json and permutation_program_v28_periodic_recovery_20261020.json; protected.
 Frozen evaluation2eb3c1c passes1,861tests/15,360native input checks and independent-claim score fixtures; zero held forwards.
-Next monitor2048/3072/4096; after physical terminal closure run independent --phase terminal audits before seed2.
+Next monitor3072/4096; after physical terminal closure run independent --phase terminal audits before seed2.
 
 ## Closed: fresh confirmation feasibility
 Question: can strict source exclusions support a powered fresh confirmation of the V26 signal?
