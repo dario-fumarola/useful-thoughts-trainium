@@ -1659,3 +1659,14 @@ Preserve the interrupted CPU validator and cache invariant vocabulary metadata;
 2000 native len(tokenizer) calls took41.15s here. No source/stack change needed.
 CPU readiness releases no long training. Next same-runtime two-forward update,
 actual recovery/memory qualification,and explicit endpoint/power/storage budget.
+
+2026-10-20 — Freeze the V29 eight-update TRAIN-only mechanics qualification before
+hardware. Existing causal engine e7c2508 passes1890CPU checks,including actual
+clean4+auxiliary1 dense-gradient parity and all three view/guard cases. Prepare
+an actual released-B0 BF16 CPU initial-loss reference on32sources/8auxiliary
+examples; tolerance.02/component,.025total fixed before device calls. One world8
+model halts at4 and resumes in a fresh process to8,with all actual model/optimizer
+bytes checked before further updates. New private RAM scratch preserves local
+disk reserves without moving caches/deleting states; protect full8 on EBS before
+reporting a pass. Two reserved chip-hour cap,finite deadline,no automatic retry.
+This is qualification only; source/held/gates for long science remain unreleased.

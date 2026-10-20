@@ -1,3 +1,32 @@
+<!-- Current handoff 2026-10-20 13:28 UTC; earlier entries below are historical -->
+Owner: continue autonomously/patiently; do not final at this milestone. No active goal/agent retries.
+V28 is COMPLETE/PUBLIC; all its jobs/CPUpublishers closed. Do not rerun old producers.
+V29 data readiness is published db5fef6; numerical engine e7c2508 is public on real-cpt-scaffold-v29.
+All1890CPU engine checks+smoke/compile PASS; actual4+1 batch gradients match dense CPU all parameters.
+Frozen CPU data local/data/real-cpt-scaffold-v29-cpu-v2 (TRAIN20480;DEV768/4096); no held model outcomes.
+C=local/diagnostics/real-cpt-scaffold-v29-qualification-v1. CPU prepare60348 CLOSED0;
+protocol41fe4bbc2f40e1e4a1024ce8544f19fdc46b327dd9e6dc5ac09004a3b25e289c.
+One TRAIN128 qualifier planned8updates,halt4 then original-run fresh-process resume8;world8 cores0–7.
+C/supervise.py is the NEW supervisor. It imports only process utilities from old helper;never runs old main.
+Actual source engine admits only this qualification,not1280 science updates. No numerical edits during it.
+Native CPU BF16 reference all32sources/8aux fixed:total1.41724010965;source1.33281400055;
+auxcontinuation0.675408872863,work0;counts source16476/future128. Bounds component.02,total.025.
+C/plan.json,review.json,release.json freeze2.0reserved-chip-hour ceiling and deadline14:12:12UTC.
+That is a qualification budget deadline,not instance shutdown. No automatic retry.
+Output local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1; parent is new private /dev/shm scratch.
+Both full4/8 originals remain in RAM. Required full8 EBS copy:local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1/step-0000008.
+Never delete original states/cache. RAM-qualified scratch is volatile;do not claim EBS protection before readback/fsync.
+Next exact launch:source scripts/env.sh;overridePYTHONPATH to W (see below),USE_TORCH_XLA=0;
+python -u C/supervise.py >C/supervisor.log 2>&1. No hardware launched as of this snapshot.
+Monitor logs/metrics/PSS;first4 loss must matchCPU before resume;all8 actual full model/optimizer digests after restore.
+After physical closure,independently audit/protect terminal and publish limited mechanics result,not learning efficacy.
+No long run/RL/8B/oldR1234/officialTEST release. Do not alter old gates or infer efficacy from qualifications.
+W=/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29;PYTHONPATH=W:/home/ubuntu/dario/local/test-deps.
+All earlier CPU builders/checker closed0;do not rerun. First slowCPU attempt retained;immutable metadata cache fixed it.
+Keep35GiB filesystem/512GiB host floors. Existing compile cache and all original science models remain.
+
+## Historical handoff snapshots (not active instructions)
+
 <!-- Current handoff 2026-10-20 13:05 UTC; earlier entries below are historical -->
 Owner: continue autonomously/patiently until told to stop. No active goal. No agent retries.
 V28 is COMPLETE/PUBLIC at c47a823,release v28-controlled-computation-20261020 verified;
@@ -23,8 +52,6 @@ V17 historical direct LL beats trained direct by0.333/0.507nats but trailsB0by0.
 Retain this absolute reference; don't repeat a weaker-control-only claim.
 Report validation/real_cpt_scaffold_v29_CPU_readiness_20261020.json; plan docs/REAL_CPT_V29_PLAN.md.
 Keep user updated; do not send a final at this milestone. Continue engine preparation.
-
-## Historical handoff snapshots (not active instructions)
 
 <!-- Current handoff 2026-10-20 12:30 UTC; older entries below are historical -->
 Owner: keep going autonomously/patiently until told to stop. Weeks available,no hard deadline.

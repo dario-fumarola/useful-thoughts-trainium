@@ -1,0 +1,16 @@
+{
+  "checked": [
+    "Frozen native TRAIN-only subset and exact parent/manifest bindings",
+    "Complete clean LM plus source-fraction-adjusted independent auxiliary branch,one ZeRO reducer",
+    "Dense CPU all-parameter gradient parity across all3arms and1890CPU tests/smoke/compile",
+    "Native released-B0 BF16 initial-loss reference on all32source/8auxiliary examples,predeclared tolerances",
+    "Separate source/auxiliary fixed shapes and unchanged precision/runtime/cache policy",
+    "Actual8-rank shape,checkpoint/recovery lineage and all-original-state retention",
+    "Idle assigned hardware and available RAM/EBS reserves;no other capacity purchased"
+  ],
+  "permission_basis": "Existing owner authorization for autonomous work on this node and maintaining the public repository. This releases only the concrete bounded qualification,not V29 science.",
+  "plan_sha256": "632c4db350c80fdcba0dd31706bd462c9b8b69a3faf47dedd1430ca754de2e4b",
+  "reviewer": "root agent;not an independent external review",
+  "status": "PASS_LOCAL_SELF_REVIEW_FOR_BOUNDED_TRAIN_MECHANICS",
+  "utc": "2026-10-20T13:27:12.834765+00:00"
+}

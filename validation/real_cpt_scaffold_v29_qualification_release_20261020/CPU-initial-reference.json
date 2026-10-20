@@ -1,0 +1,266 @@
+{
+  "assets": {
+    "directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "files": {
+      "config.json": {
+        "bytes": 727,
+        "sha256": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db"
+      },
+      "generation_config.json": {
+        "bytes": 138,
+        "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+      },
+      "merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      "model.safetensors": {
+        "bytes": 3441185608,
+        "sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841"
+      },
+      "tokenizer.json": {
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      "tokenizer_config.json": {
+        "bytes": 9678,
+        "sha256": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5"
+      },
+      "vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    },
+    "manifest_sha256": "d3fe5b060a3472f711aeb04588f1c28408bd0ae28787f5845e587a71b2eb991e",
+    "model_id": "Qwen/Qwen3-1.7B-Base",
+    "revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+    "sha256": "4846f19809d0c30f31cfcfe0ea1eee6ac697dc410799925aee404dfa67d2fe38"
+  },
+  "base_signature": {
+    "parameters": 1720574976,
+    "qualification": "Compare at initialization and after CPU/device transfer; also record full source-file SHA256s.",
+    "sampled_parameter_sha256": "e5914f2966db9e227ecc3f27bf6bbadcad4388d44abd8c3b51741bdf1354eecb"
+  },
+  "comparisons_fixed_before_device_calls": {
+    "max_component_mean_abs_error": 0.02,
+    "max_total_abs_error": 0.025
+  },
+  "data_sha256": "222a3e007fc1aa3e16d76a36201df036bc7fee3136d7e88733d58aa39785e9b8",
+  "floating_buffer_dtype": "fp32",
+  "global_counts": {
+    "continuation": 128,
+    "source": 16476,
+    "work": 0
+  },
+  "global_means": {
+    "continuation": 0.675408872863045,
+    "source": 1.3328140005469322,
+    "work": 0.0
+  },
+  "global_total_loss": 1.4172401096548128,
+  "logsoftmax_dtype": "fp32",
+  "parameter_dtype": "bf16",
+  "parent_data_sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+  "per_rank": [
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 1988,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.16207462549209595,
+        "source": 1.1025515794754028,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "23334c32b5e205dea3fe57f724a790d10b227496fd5bec1b29c766d3f512d024:2222",
+        "a3ffee48377f45a267c1947e30e33ce77ccd2b55eece48ca4796049057c28972:raw-equation-v3:392",
+        "dee7afe6f70a902a34fba4d4e94c986347f55fc9723eb5a0668b667f6497b192:565",
+        "43d02edf3d7ad2ebb3da2cea88dd4613e092475aae939385eef1e32e9726778e:4558"
+      ],
+      "rank": 0,
+      "total_loss": 1.1228109076619148
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2089,
+        "work": 0
+      },
+      "means": {
+        "continuation": 2.437079429626465,
+        "source": 1.286528468132019,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "797c90663ba4d16cf9a0b52fe9959e98b905aef6482dd0966b3ac1b91c956de5:548",
+        "9ddfa215bde36178f2698b9a3f2974fd9c73b335a50a643d5d27b46f5584e545:1046",
+        "cf0d298e6d874c7d36c2a12cfb506a54a6ce0862ce8bcb3418846d67cc8f44a2:raw-equation-v3:493",
+        "0d7b9798af50cb36d187c760a1a9986d8f4246336b9e7d75f108d5b4dd84834e:1050"
+      ],
+      "rank": 1,
+      "total_loss": 1.5911633968353271
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 1922,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.9133163094520569,
+        "source": 1.244384527206421,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "f7773a1845578b96adc6e65288471e31d69735ea49e1dd021edf5fb5e769fca9:raw-equation-v3:326",
+        "bff423c74c183dafca679274e936705cd3038f5f95cbc90706ad1504620a8900:788",
+        "69748fc2c180a8034f33d0f51d5f582cc41725af15ec778d2f74bfd90c40ca4e:1026",
+        "a9f2b0732f188b08893e9140029c3a13b6ea877ec74015b8a5da8c445add7af9:1087"
+      ],
+      "rank": 2,
+      "total_loss": 1.358549065887928
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.0019069842528551817,
+        "source": 1.04457426071167,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "1d6c51c6ebed566aaf444f2478580ee9ee1a913a587676efe93a55b29d0a4724:raw-equation-v3:567",
+        "3e23edf9f7f8ce15a99bf77e2ed60a1bd3f170a343f2360a4a74c1f8a5398487:549",
+        "4e262585f5f6c1a606a77bd253aeca245eb7174d4b87a7000b644cba8b7bca35:11333",
+        "faae718c8a645fbb5e0440d377df6d6090eed69182cf1be7c3ddb86a558815c7:909"
+      ],
+      "rank": 3,
+      "total_loss": 1.0448126337432768
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.08206117153167725,
+        "source": 0.902133047580719,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "5b66c19773c740c4c254b17390433251b1a981c73b198562330bab3c8e8ac06b:514",
+        "4466ececacb8ade875f75a6a99e5fffb33862159e497a0a7a2aac169634b693f:raw-equation-v3:2494",
+        "3114afbbb6404d9744ef2213ee68ad0f215fc2b3dffed8729ba130049a56c148:562",
+        "0954a271f4bbecd20c28f43fc74f41c6c2e650a475c7d4c49b37f815f7ec9f56:627"
+      ],
+      "rank": 4,
+      "total_loss": 0.9123906940221786
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.547815203666687,
+        "source": 1.5692092180252075,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "373cf41c684abdfa23e1fbc1d5d63618db77be14d129c33c74818618af5a7a7e:617",
+        "c04fc3274325a4ac175d01365ca143f96a135d30e5b6b7664dfa88b8959e93db:raw-equation-v3:1300",
+        "ed70e7ae628d1cfd88ed3f46b2a23d10289cdfe87bd4d1f40fd49566a202d5bb:876",
+        "799937ce85a9269b5141fea4f38cb8e8a00539266cc782a5570a34ff010640f1:996"
+      ],
+      "rank": 5,
+      "total_loss": 1.6376861184835434
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2108,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.498750776052475,
+        "source": 1.727952003479004,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "67c04f024cabbba0edd080c399a0f4c92d026889aa1cc76f946c467adba551d7:raw-equation-v3:3011",
+        "91bda6981ca5d09745282d6e8420b2265d88f07deb659befffdd46d8fede4c1b:937",
+        "1d9b1c56b8a7945dba3ecf51d0eaefe0a2d196c89a8e70bebf92e44b6cb05c63:1045",
+        "59075be20ba934b9f625e1d768ac3e42737de37b9e27a6922b91f0290d8cd70d:1090"
+      ],
+      "rank": 6,
+      "total_loss": 1.7902958504855633
+    },
+    {
+      "counts": {
+        "continuation": 16,
+        "source": 2045,
+        "work": 0
+      },
+      "means": {
+        "continuation": 0.7602664828300476,
+        "source": 1.7851788997650146,
+        "work": 0.0
+      },
+      "ordered_item_ids": [
+        "15c5d29f0830cfa0345d8c1fb4399785a7df38bc2d547e1a43d017c6a7bc36f6:580",
+        "a2a9a4bbefbd5d4a392b6b7b2c32335a5881fd9dbf30d148c23f9387b9246216:1023",
+        "ddf2e6eef0ebb3f200ab7f0a43b8b5aa331105641cc4c758fceb03ada7953bf7:raw-equation-v3:449",
+        "cd38df57dbdd8cd06cd274a68cac06791ba122df361e0ceeb31dd1413ed0e8ab:887"
+      ],
+      "rank": 7,
+      "total_loss": 1.8802122101187706
+    }
+  ],
+  "preparer_sha256": "1b230bf50140fede4f6c04a9fce5d2ef1ea30196d2ade7579a85f602d497102b",
+  "scope": "Initial released B0 TRAIN-only CPU forward reference; no optimization, held outcome or accelerator call",
+  "source_commit": "e7c2508",
+  "source_files": {
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "fe42e4342dea24a450e9887cdd9ffb330212a3ec2d855036950006cecc93a560",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "status": "CPU_NATIVE_BF16_INITIAL_STEP_REFERENCE_NOT_HARDWARE_PASS",
+  "utc": "2026-10-20T13:20:33+00:00"
+}

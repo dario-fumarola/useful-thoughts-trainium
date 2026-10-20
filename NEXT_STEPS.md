@@ -19,8 +19,14 @@
    All1878CPU tests+smoke/compile and independent original-native-token readback pass.
    Do not rerun the closed builder/checker. Original slow CPU attempt is retained;
    caching immutable tokenizer metadata repairs per-token vocabulary-size overhead.
-   Next implement the guarded TWO-forward branch in train/partial_state_driver.py,
-   using train/real_cpt_scaffold.py. Complete clean LM is identical; calculation
+   Guarded TWO-forward integration e7c2508 now passes1890CPU checks; it implements
+   only8 TRAIN-only qualification updates,cycling all3views. Native B0 BF16 first-step
+   CPU reference is fixed before device calls. Released control/source evidence:
+   local/diagnostics/real-cpt-scaffold-v29-qualification-v1 and validation/real_cpt_scaffold_v29_qualification_release_20261020.json.
+   Next run that one bounded halt4/resume8 qualification and its terminal protection.
+   New disposable full4/8 originals use RAM; full8 EBS readback is required for a pass.
+   Actual device/update/recovery remains pending; no scientific run is released.
+   Complete clean LM is identical; calculation
    auxiliary future/work have separate means and0.25 source-batch fraction.
    Proposed clean1/future0.5/work1; source32+auxiliary8,world8/micro4+1,width640.
    This is a new objective needing actual update/master/memory/restart qualification;

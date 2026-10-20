@@ -1,18 +1,19 @@
-# Status — 2026-10-20 13:05 UTC
+# Status — 2026-10-20 13:28 UTC
 
 ## Prepared: real continuation CPT with a clean LM objective
 Question: does verified computation improve real continuations when complete clean training is identical?
-ID:real-cpt-scaffold-v29; CPU preparation only; unchanged B0 proposed for three arms/two data orders.
-Frozen TRAIN20480=5120 calculation+15360 ordinary; fresh arithmetic DEV768 and ordinary DEV4096.
-All20,480 clean packs match across arms,including original future16; zero train/held document/page overlap.
-Every calculation has an extra raw,empty-format or verified-work view; future/work means are separate.
-Current proposed weights clean1,auxiliary future0.5,work1; native packed data unchanged by coefficient choice.
-Independent original-source/all-arm readback PASS; all1878CPU tests+smoke+compile PASS; no released-model call.
-First CPU attempt stopped for per-token vocabulary-size queries; original retained; invariant-metadata cache repairs it.
-Report:validation/real_cpt_scaffold_v29_CPU_readiness_20261020.json; design docs/REAL_CPT_V29_PLAN.md.
-Decision: data/packing ready,not a learning result or hardware/long-run release. V28 stays closed.
-Next: guarded two-forward integration in the existing causal driver,TRAIN-only qualification and actual storage/budget.
-Freeze endpoints/power before held outcomes; preserve B0 and both trained controls. No RL/size jump.
+ID:real-cpt-scaffold-v29; TRAIN20480=5120 calculation+15360 ordinary; fresh DEV arithmetic768/ordinary4096.
+All clean packs match across three arms,including original future16; zero train/held document/page overlap.
+Proposed clean1/auxfuture0.5/work1 have separate means; source32+auxiliary8 have source-batch fraction0.25.
+Independent original-source/all-arm readback and1890CPU tests+smoke/compile PASS; no new held outcomes.
+Native released-B0 BF16 first-step CPU loss reference is fixed on32 TRAIN sources/8 auxiliary examples.
+Engine e7c2508 implements only the bounded8-update TRAIN qualification,cycling all three views.
+Mechanics release:world8,halt4/fresh-process resume8; two-chip budget2.0h; no scientific learning release.
+New disposable checkpoints use RAM; terminal full EBS backup is required; old states/cache stay intact.
+C=local/diagnostics/real-cpt-scaffold-v29-qualification-v1; plan/review/protocol released before hardware.
+Reports:real_cpt_scaffold_v29_CPU_readiness_20261020.json and qualification_release_20261020.json under validation/.
+Next: run the single qualification,check native loss/full restore/physical closure,protect terminal; no automatic retry.
+Freeze endpoints/power/storage before long learning; preserve B0 and both controls. V28 stays closed.
 
 ## Closed: controlled computation reference
 Question: do verified generated states improve fresh computation,and what remains without the trace?

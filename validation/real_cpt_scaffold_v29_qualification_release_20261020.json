@@ -1,0 +1,51 @@
+{
+  "CPU_tests": 1890,
+  "budget_chip_hours": 2.0,
+  "control_directory": "/home/ubuntu/dario/local/diagnostics/real-cpt-scaffold-v29-qualification-v1",
+  "deadline_utc": "2026-10-20T14:12:12.834765+00:00",
+  "evidence": {
+    "CPU-initial-reference.json": {
+      "bytes": 11515,
+      "sha256": "9ce8ee05b43416f4dffd9ce584cc85def54e7913ede05d7c5c2b93a722728a6e"
+    },
+    "CPU-preparation-complete.json": {
+      "bytes": 517,
+      "sha256": "b42f4035468d6aafe9fda90aca969fa7631df3647376f777566857d1c7819ff7"
+    },
+    "CPU-reference-plan.json": {
+      "bytes": 5421,
+      "sha256": "5041a3b715857b1e50a21406ab73de98519904feeb7dfbe70e13e6c24774df02"
+    },
+    "plan.json": {
+      "bytes": 5731,
+      "sha256": "632c4db350c80fdcba0dd31706bd462c9b8b69a3faf47dedd1430ca754de2e4b"
+    },
+    "prepare.py": {
+      "bytes": 6778,
+      "sha256": "1b230bf50140fede4f6c04a9fce5d2ef1ea30196d2ade7579a85f602d497102b"
+    },
+    "protocol.json": {
+      "bytes": 6989,
+      "sha256": "41fe4bbc2f40e1e4a1024ce8544f19fdc46b327dd9e6dc5ac09004a3b25e289c"
+    },
+    "release.json": {
+      "bytes": 720,
+      "sha256": "1006017bef44369b385b4e6eb227559e480e82343fbae3e89fbac054eb2d9a98"
+    },
+    "review.json": {
+      "bytes": 1126,
+      "sha256": "fc7fa305d29d987e2aae6f26d5e7ecc655460607d3cdd973d4d1af2a053b8822"
+    },
+    "supervise.py": {
+      "bytes": 8510,
+      "sha256": "eb22cd6092330963d580c5c4cfef34d27025a769f793d2b74b4dc33067eb4ed6"
+    }
+  },
+  "hardware_pass": false,
+  "numerical_source_commit": "e7c2508",
+  "output": "/home/ubuntu/dario/local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1",
+  "science_released": false,
+  "scope": "One disposable TRAIN128 model,8 ordered updates,halt4 and fresh-process full-state resume8;no scientific run",
+  "status": "BOUNDED_TRAIN_MECHANICS_RELEASED_PENDING_HARDWARE",
+  "utc": "2026-10-20T13:27:12.834765+00:00"
+}

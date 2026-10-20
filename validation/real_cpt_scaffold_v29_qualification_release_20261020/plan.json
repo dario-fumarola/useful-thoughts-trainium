@@ -1,0 +1,78 @@
+{
+  "CPU_reference_sha256": "9ce8ee05b43416f4dffd9ce584cc85def54e7913ede05d7c5c2b93a722728a6e",
+  "CPU_tests": 1890,
+  "deadline_utc": "2026-10-20T14:12:12.834765+00:00",
+  "limits": [
+    "This is numerical/recovery qualification,not evidence of learning or generalization.",
+    "Eight updates do not establish indefinite memory stability or uninterrupted-trajectory equality.",
+    "Qualification checkpoints start in volatile RAM;only a verified EBS terminal copy qualifies durable local protection.",
+    "No new source/model/cap/weight/seed/checkpoint search or automatic retry."
+  ],
+  "numerical_source_commit": "e7c2508",
+  "output": "/home/ubuntu/dario/local/qualification/ram-real-cpt-scaffold-v29-v1/run-v1",
+  "pass_conditions": [
+    "All native initialization gates pass for both processes",
+    "First raw-step actual full-token component means within frozen CPU BF16 tolerances .02,and total within.025;counts exact",
+    "Eight actual ordered updates with finite BF16 gradients,positive global norms,real FP32-master updates and replicated active weights",
+    "All8 fresh-process full active-model/optimizer byte comparisons pass before resumed updates",
+    "Both full states SHA-verified,owned sessions absent,assigned devices empty,terminal full state read back/fsynced on EBS"
+  ],
+  "physical_devices": [
+    0,
+    1
+  ],
+  "protocol_sha256": "41fe4bbc2f40e1e4a1024ce8544f19fdc46b327dd9e6dc5ac09004a3b25e289c",
+  "reserved_chip_hour_budget": 2.0,
+  "schema": "real-cpt-scaffold-v29-qualification-plan-v1",
+  "scope": "One disposable TRAIN128 model,8 ordered updates,halt4 and fresh-process full-state resume8;no scientific run",
+  "source_files": {
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "fe42e4342dea24a450e9887cdd9ffb330212a3ec2d855036950006cecc93a560",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "stages": [
+    "fresh4",
+    "resume8"
+  ],
+  "storage": {
+    "cache": "Existing path unchanged",
+    "filesystem_floor_bytes": 37580963840,
+    "host_MemAvailable_floor_bytes": 549755813888,
+    "original_deletion": false,
+    "qualification_originals": "New private tmpfs output via repository-local parent;both4/8 full states retained",
+    "terminal_EBS_backup": "/home/ubuntu/dario/local/backups/diagnostics/real-cpt-scaffold-v29-qualification-v1/step-0000008"
+  },
+  "utc": "2026-10-20T13:27:12.834765+00:00",
+  "visible_logical_cores": "0-7",
+  "whole_chips_reserved": 2
+}
