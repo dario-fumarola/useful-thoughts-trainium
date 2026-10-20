@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-20T03:08:54+00:00",
+  "files": {
+    "model.pt": {
+      "bytes": 3441248275,
+      "sha256": "6979471e708f3f62cbebddb8efe037209e28a984a80db2e5cc2a471033ab3f04"
+    },
+    "rank-00000.pt": {
+      "bytes": 5162143399,
+      "sha256": "ab54e29b201a6e64728235df84e9474fb614bedf6cd2cbc597edbb40c51a4ad2"
+    },
+    "rank-00001.pt": {
+      "bytes": 5162143463,
+      "sha256": "10c52e5bc47bb5f35797f26e73bf27d1cca586ecc4a99944f9d6af843592dc0d"
+    },
+    "rank-00002.pt": {
+      "bytes": 5162143399,
+      "sha256": "0c848126a9776c8ee2c13a2f8413490854588e7c98f6bc7782ef7babedf5b3de"
+    },
+    "rank-00003.pt": {
+      "bytes": 5162143399,
+      "sha256": "72ae6f41ac415961fb50aa2414380aa201a4b10814445d4b63c683aabab66e39"
+    }
+  },
+  "metadata": {
+    "arm": "direct",
+    "counters": {
+      "expressions": 32768,
+      "supervised_tokens": 163840
+    },
+    "data_sha256": "251a4af175442ec2a113bf9e80d06b1c82fa94e14f56cf98a3234fa8b77c5128",
+    "order_hash": "ffc96eed313b632fadf68e8a73d65412ff234e55d4136968f619be06e7d80fec",
+    "pipeline_schema": "permutation-program-sft-v28",
+    "protocol_sha256": "fb4e06c69592efb07f91fcee671a474aa62363fdf2be8a1ef332eea520356052",
+    "seed": 2026102028,
+    "spec_hash": "ae1540fe16101c0c398057f8aa8b97354f7158bbc2af5e9d529e8ceee31fe77e"
+  },
+  "run_id": "program-direct-seed2026102028-v1",
+  "schema": "neuron-v1",
+  "spec_hash": "ae1540fe16101c0c398057f8aa8b97354f7158bbc2af5e9d529e8ceee31fe77e",
+  "step": 1024,
+  "world_size": 4
+}

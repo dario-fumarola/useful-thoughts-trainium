@@ -30,7 +30,8 @@
    ACTIVE on physical0/1/2, exec59127/2442/51152, whole deadline06:54UTC.
    C=local/diagnostics/permutation-program-v28-study-v1; original EBS outputs
    local/science-runs/controlled-computation-v28. Terminal release is fixed.
-   Monitor periodic1024 exports and bounded memory/space. After physical closure,
+   All three first1024 exports/readbacks resume; post-save process memory~24GiB/arm.
+   Monitor2048/3072/4096 and bounded memory/space. After physical closure,
    run local/analysis/audit_permutation_program_v28_job_20261020.py with frozen
    study PYTHONPATH for each --key ... --phase terminal. All three terminal
    audits precede fresh seed2026102029 stage64/restore/4096 under the same recipe.

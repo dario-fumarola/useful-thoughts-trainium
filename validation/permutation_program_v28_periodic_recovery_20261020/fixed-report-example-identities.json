@@ -1,0 +1,36 @@
+{
+  "status": "FIXED_EXAMPLE_IDENTITIES_BEFORE_ANY_HELD_MODEL_OUTCOME",
+  "model_forwards": 0,
+  "data_manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+  "panel": "DEV_composition",
+  "selection": "8lowest SHA256(v28-fixed-report-examples:+family_id) in original first1024-family subset; both variants retained.",
+  "family_ids": [
+    "dffaedb261663400e552bd89d9deae51688871fc5784ac11bb2ffbd801b34636",
+    "fd8c690c9dae3343fe74c39f1993e7d204f923dc347e6b02762ce3685527b267",
+    "3ac32472cc41f562edebd05749ece1868599e6018e7750ed966f983687acd25b",
+    "e1ca4d0b671a1d06cca0cd141399b01bafc04f72cd942f5e116adc8654b3a988",
+    "c8c7f48c00ac22856cc14594ca9b2185b3146d76eecf1a2a7abc0320621aab9e",
+    "a5ee8dc0110dff9ed2073f6b7567e1672562526e0052cf3462e1313383ac7859",
+    "f8a7f19543b53f36b93b022dc32bba0ef793686defceccc989503c0881296c74",
+    "e60c392580e2713311bee49b1b083fe2b192c30b697292412202a4c4ac96f91e"
+  ],
+  "ordered_item_ids": [
+    "a5ee8dc0110dff9ed2073f6b7567e1672562526e0052cf3462e1313383ac7859:original",
+    "a5ee8dc0110dff9ed2073f6b7567e1672562526e0052cf3462e1313383ac7859:counterfactual",
+    "fd8c690c9dae3343fe74c39f1993e7d204f923dc347e6b02762ce3685527b267:original",
+    "fd8c690c9dae3343fe74c39f1993e7d204f923dc347e6b02762ce3685527b267:counterfactual",
+    "c8c7f48c00ac22856cc14594ca9b2185b3146d76eecf1a2a7abc0320621aab9e:original",
+    "c8c7f48c00ac22856cc14594ca9b2185b3146d76eecf1a2a7abc0320621aab9e:counterfactual",
+    "e1ca4d0b671a1d06cca0cd141399b01bafc04f72cd942f5e116adc8654b3a988:original",
+    "e1ca4d0b671a1d06cca0cd141399b01bafc04f72cd942f5e116adc8654b3a988:counterfactual",
+    "dffaedb261663400e552bd89d9deae51688871fc5784ac11bb2ffbd801b34636:original",
+    "dffaedb261663400e552bd89d9deae51688871fc5784ac11bb2ffbd801b34636:counterfactual",
+    "e60c392580e2713311bee49b1b083fe2b192c30b697292412202a4c4ac96f91e:original",
+    "e60c392580e2713311bee49b1b083fe2b192c30b697292412202a4c4ac96f91e:counterfactual",
+    "f8a7f19543b53f36b93b022dc32bba0ef793686defceccc989503c0881296c74:original",
+    "f8a7f19543b53f36b93b022dc32bba0ef793686defceccc989503c0881296c74:counterfactual",
+    "3ac32472cc41f562edebd05749ece1868599e6018e7750ed966f983687acd25b:original",
+    "3ac32472cc41f562edebd05749ece1868599e6018e7750ed966f983687acd25b:counterfactual"
+  ],
+  "limits": "Reporting examples only; no score/utility/outcome selection and no additional generation cohort."
+}

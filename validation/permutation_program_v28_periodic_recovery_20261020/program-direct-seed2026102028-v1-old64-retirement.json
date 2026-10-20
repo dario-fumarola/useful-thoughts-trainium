@@ -1,0 +1,44 @@
+{
+  "model_retained": false,
+  "old_COMPLETE_sha256": "9cafff06c95cc6212be4d943ebd96fd20469cedbd7a99e4458b1e7558819e9c2",
+  "only_payload_names": [
+    "model.pt",
+    "rank-00000.pt",
+    "rank-00001.pt",
+    "rank-00002.pt",
+    "rank-00003.pt"
+  ],
+  "policy": "v28_latest_full_per_arm_keep_terminal_models",
+  "replacement": {
+    "COMPLETE_sha256": "9bd0bbe1665a269b4c98da4b3dc07b247d3369d1907e052a7fad7ae353a1aa63",
+    "files": {
+      "model.pt": {
+        "bytes": 3441248275,
+        "sha256": "6979471e708f3f62cbebddb8efe037209e28a984a80db2e5cc2a471033ab3f04"
+      },
+      "rank-00000.pt": {
+        "bytes": 5162143399,
+        "sha256": "ab54e29b201a6e64728235df84e9474fb614bedf6cd2cbc597edbb40c51a4ad2"
+      },
+      "rank-00001.pt": {
+        "bytes": 5162143463,
+        "sha256": "10c52e5bc47bb5f35797f26e73bf27d1cca586ecc4a99944f9d6af843592dc0d"
+      },
+      "rank-00002.pt": {
+        "bytes": 5162143399,
+        "sha256": "0c848126a9776c8ee2c13a2f8413490854588e7c98f6bc7782ef7babedf5b3de"
+      },
+      "rank-00003.pt": {
+        "bytes": 5162143399,
+        "sha256": "72ae6f41ac415961fb50aa2414380aa201a4b10814445d4b63c683aabab66e39"
+      }
+    },
+    "run_id": "program-direct-seed2026102028-v1",
+    "source_sha256": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "status": "FULL_STATE_READBACK_FSYNC",
+    "step": 1024,
+    "utc": "2026-10-20T03:09:13.619901+00:00"
+  },
+  "status": "ROLLING_PAYLOAD_RETIRED",
+  "utc": "2026-10-20T03:09:13.626204+00:00"
+}

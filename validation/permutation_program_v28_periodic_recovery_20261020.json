@@ -1,0 +1,73 @@
+{
+  "status": "ALL_FIRST_PERIODIC1024_READBACKS_AND_RESUMPTIONS_OBSERVED",
+  "utc": "2026-10-20T03:18:05.130077+00:00",
+  "experiment_id": "controlled-computation-v28",
+  "models": {
+    "program-direct-seed2026102028-v1": {
+      "latest_update": {
+        "step": 1262,
+        "time_utc": "2026-10-20T03:18:03+00:00",
+        "elapsed_seconds": 1.9224355830228887,
+        "counters": {
+          "expressions": 40384,
+          "supervised_tokens": 201920
+        }
+      },
+      "host_sample_utc": "2026-10-20T03:18:01.753886+00:00",
+      "group_PSS_bytes": 25700986880,
+      "host_available_bytes": 2042343608320
+    },
+    "program-trace-seed2026102028-v1": {
+      "latest_update": {
+        "step": 1161,
+        "time_utc": "2026-10-20T03:18:03+00:00",
+        "elapsed_seconds": 1.9272735380218364,
+        "counters": {
+          "expressions": 37152,
+          "supervised_tokens": 574680
+        }
+      },
+      "host_sample_utc": "2026-10-20T03:18:01.753891+00:00",
+      "group_PSS_bytes": 25546353664,
+      "host_available_bytes": 2042343608320
+    },
+    "program-pause-seed2026102028-v1": {
+      "latest_update": {
+        "step": 1061,
+        "time_utc": "2026-10-20T03:18:03+00:00",
+        "elapsed_seconds": 1.9199158170376904,
+        "counters": {
+          "expressions": 33952,
+          "supervised_tokens": 169760
+        }
+      },
+      "host_sample_utc": "2026-10-20T03:18:03.501586+00:00",
+      "group_PSS_bytes": 25408959488,
+      "host_available_bytes": 2042345177088
+    }
+  },
+  "source_commit": "ce04236ecd4d7eaa9dae8471821e600561748069",
+  "held_model_outcomes": 0,
+  "root_free_bytes": 92347592704,
+  "files": {
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-direct-seed2026102028-v1-COMPLETE.json": "9bd0bbe1665a269b4c98da4b3dc07b247d3369d1907e052a7fad7ae353a1aa63",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-direct-seed2026102028-v1-READBACK.json": "82bc3ef04570c2bd81fab49c687c66ed99edd92dda40b399c1599693d62a07f3",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-direct-seed2026102028-v1-old64-retirement.json": "f06580c7cd72b43d554c8383e4d14bab309e599265482ba6788beb2a21b5c78c",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-direct-seed2026102028-v1-resumed-snapshot.json": "fb591c1562d1479e517ef691b3e9f9034efc29896d81aa39edbce7167b9a3f6a",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-trace-seed2026102028-v1-COMPLETE.json": "ac02c744fc3f9c3b8eda96ff00c742755d9f2c56a01c91af084ccfcc509c378e",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-trace-seed2026102028-v1-READBACK.json": "5adc65189fdf19ba64c48746dcf7aa30da73bcf29d80f06fdb5c1f8276f67fb7",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-trace-seed2026102028-v1-old64-retirement.json": "185652c7a638808995b29656d3ea123f5b65f41f80c36bbdfe22fe679cf5db6d",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-trace-seed2026102028-v1-resumed-snapshot.json": "fb5aca0563cb4af3bded7219b5ecb0f97c183c59348c13f235fe4d5f76fb20ba",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-pause-seed2026102028-v1-COMPLETE.json": "0b52784b95a752616e8e592c0e0e9ce1fd3133726454d5f94aeb75db3e96eabc",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-pause-seed2026102028-v1-READBACK.json": "734b588ddbefeddc199a3c2fb0e217703e9437b3a9c219b8a92da2b3ea3eb2d1",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-pause-seed2026102028-v1-old64-retirement.json": "3313fe8b6cfcfe03ef2d0e165fdbe04ecc23bd575ef3d034c23910720a027b91",
+    "validation/permutation_program_v28_periodic_recovery_20261020/program-pause-seed2026102028-v1-resumed-snapshot.json": "728e43e63c5f9cca5275383bd6d9e2133fb7e678ec9f3a6afb9e50d95ed097d7",
+    "validation/permutation_program_v28_periodic_recovery_20261020/fixed-report-example-identities.json": "92cf5ebf8f98e55141d2c91ddba4e98628a1ba3fc4281a1c89c2d6cfa941b301"
+  },
+  "limits": [
+    "Runtime hashes/fsync receipts and actual resumed updates; independent whole-state tensor audits remain the first64 and terminal checks.",
+    "Observed first periodic save stability is not indefinite stability or learned capability.",
+    "Only new-study old intermediate payloads rotate; development64 models/manifests remain. Historical originals/cache untouched.",
+    "Same-instance EBS; not off-instance protection. Fixed terminal endpoints and all-six-model held guard remain unchanged."
+  ]
+}
