@@ -1,0 +1,159 @@
+{
+  "absolute_mean_token_NLL": {
+    "B0": 1.944522540528409,
+    "program-direct-seed2026102028-v1": 7.010214694773225,
+    "program-direct-seed2026102029-v1": 9.7736725439363,
+    "program-pause-seed2026102028-v1": 9.410994225800891,
+    "program-pause-seed2026102029-v1": 7.51098562224027,
+    "program-trace-seed2026102028-v1": 9.115549543821203,
+    "program-trace-seed2026102029-v1": 8.453571366013605
+  },
+  "higher_is_worse_NLL_contrasts": {
+    "program-direct-seed2026102028-v1_minus_B0_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        4.8413549038862485,
+        5.288616254306254
+      ],
+      "difference_b_minus_a": 5.065692154244816,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-direct-seed2026102029-v1_minus_B0_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        7.438135585690434,
+        8.228735640227038
+      ],
+      "difference_b_minus_a": 7.829150003407891,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-pause-seed2026102028-v1_minus_B0_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        7.054722092158263,
+        7.880794372454734
+      ],
+      "difference_b_minus_a": 7.466471685272483,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-pause-seed2026102029-v1_minus_B0_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        5.253195548100323,
+        5.886433361659853
+      ],
+      "difference_b_minus_a": 5.566463081711861,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-trace-seed2026102028-v1_minus_B0_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        6.793326369850785,
+        7.5627401288410265
+      ],
+      "difference_b_minus_a": 7.171027003292794,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-trace-seed2026102028-v1_minus_program-direct-seed2026102028-v1_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        1.8904833700813684,
+        2.3332344395875637
+      ],
+      "difference_b_minus_a": 2.1053348490479777,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-trace-seed2026102028-v1_minus_program-pause-seed2026102028-v1_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.39589850977008323,
+        -0.1957448923008643
+      ],
+      "difference_b_minus_a": -0.29544468197968854,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-trace-seed2026102029-v1_minus_B0_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        6.145863838336457,
+        6.884712899047043
+      ],
+      "difference_b_minus_a": 6.509048825485197,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-trace-seed2026102029-v1_minus_program-direct-seed2026102029-v1_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -1.4624158847907727,
+        -1.1801770507053948
+      ],
+      "difference_b_minus_a": -1.3201011779226945,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "program-trace-seed2026102029-v1_minus_program-pause-seed2026102029-v1_NLL": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.827976645174078,
+        1.0642183277961657
+      ],
+      "difference_b_minus_a": 0.9425857437733356,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    }
+  },
+  "host_seconds": {
+    "B0": 137.05059077299666,
+    "program-direct-seed2026102028-v1": 141.37470423203195,
+    "program-direct-seed2026102029-v1": 147.5663442419609,
+    "program-pause-seed2026102028-v1": 145.99360578798223,
+    "program-pause-seed2026102029-v1": 148.89505202299915,
+    "program-trace-seed2026102028-v1": 158.17487367300782,
+    "program-trace-seed2026102029-v1": 153.2719829030102
+  },
+  "limits": [
+    "This supervised task recipe has no ordinary LM training term. Report specialization cost separately.",
+    "No claim of general pretraining benefit from this inspected panel.",
+    "CPU FP32 results are separate from historical accelerator scores; all seven models use the same scorer/inputs."
+  ],
+  "model_rows": {
+    "B0": 256,
+    "program-direct-seed2026102028-v1": 256,
+    "program-direct-seed2026102029-v1": 256,
+    "program-pause-seed2026102028-v1": 256,
+    "program-pause-seed2026102029-v1": 256,
+    "program-trace-seed2026102028-v1": 256,
+    "program-trace-seed2026102029-v1": 256
+  },
+  "reserved_accelerator_chip_hours": 0,
+  "status": "COMPLETE_SECONDARY_ORDINARY256_CPU_DIAGNOSTIC",
+  "utc": "2026-10-20T08:28:47.542349+00:00"
+}

@@ -1,47 +1,32 @@
 # Current queue
 
-0. V26 is complete. Preserve its fixed result and close the missing-control question.
-   Report: validation/document_evidence_format_weight_v26_complete_20261020.json.
-   Selector1 direct138/255 versus coefficient-matched format1 direct120:
-   +7.1pp[2.4,11.8], passing the developmental criterion. Format0.1 direct127 is
-   still the stronger direct baseline; selector1−format0.1 remains+4.3pp[−0.4,9.4].
-   All510 new GEN/256 ordinary cases check/protect; no V26 jobs or retries remain.
-   V25's failed fitting gate and inconclusive extra-ID contrasts stay unchanged.
+0. V28 is complete; finish its concrete publication without rerunning producers.
+   Report validation/permutation_program_v28_complete_20261020.json and REPORT.md.
+   Inference gate PASS at covered lengths: T18432/18430 versus D11914/1872 of18432.
+   Training gate FAIL; longer T228/1 of2048; ordinary NLL severely regresses.
+   All23jobs/378880attempts close; primary independent readout and ordinary28-forward
+   verification PASS. All models and original outputs remain. No active accelerator work.
+   Portable archive replay reproduces exact readout SHAe995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f.
+   Raw evidence is staged in the GitHub release v28-controlled-computation-20261020.
+   Verify all8downloaded assets, commit/push the concrete curated result, publish the
+   release against that commit, then verify public visibility. No permission question needed.
 
-1. Finish the controlled-computation reference, V28.
-   All six fresh1.7B models complete4096 updates; full64/terminal all-state,
-   native/order and24 actual worker restoration comparisons PASS. No active training.
-   Report permutation_program_v28_training_complete_20261020.json; actual science
-   training16.535reserved chip-hours including the preserved pre-load path failure.
-   All terminal models/model64 retained; latestfull4096 per arm, historical originals untouched.
-   Actual all-six release is saved in
-   local/diagnostics/permutation-program-v28-fixed-evaluation-v1/release.json.
-   Original-release18.json also preserved. The time-only amendment prospectively
-   raises evaluation allowance30chip-hours/8h wall, stop29.5, max8chips; same source/gates.
-   Do NOT rerun training, its auditors, restoration checker or the release wrapper.
-   All23fixed inputs/378880attempts are READY. Original preparation wrapper expected
-   a return from core prepare(),which writes its protocol. No task generation occurred.
-   One explicit IOv2 restart reads the protocol; original helper/log/partial inputs
-   remain, and recreated first-panel IDs/gold/full native tensor match exactly.
-   Report permutation_program_v28_evaluation_preparation_20261020.json; all23protocols protected/public.
-   Do NOT rerun preparation/release/training. CPU ordinary retention exec8898
-   closes0 for all7models; results remain unread. The fixed GPU queue is ACTIVE:
-   exec54438, ownerPID1637467/start31941443; control EXECUTION/plan.json and heartbeat.
-   Start08:25:24UTC, deadline16:23:24UTC;8chips/30summedchip-hours/29.5stop.
-   All32initial own-model native/cache gates PASS; watcher exec36214 records only
-   counts/resources/closure/numerical gates. No output text or scientific scores read.
-   Source2eb3c1c/shards4/FP32/256prefill/128cap unchanged. Monitor all23physical
-   closures patiently; no prompt, checkpoint, cap or outcome-based scheduling change.
-   Primarycomposition9216paired families; original1024family interpolation/depth panels
-   and512family partial controls stay separate. All modes/caps/errors retained.
-   No readout until all23physical closures. Run primary scorer, independent checker,
-   same-question B0/strong-control reference, fixed examples and plots afterward.
-   These stages are already queued in exec63710 (offline-analysis-queue-io-v2.log),
-   writing local/diagnostics/permutation-program-v28-complete-readout-io-v2.
-   Original CPU queue19133 was stopped idle before any scoring; explicit IOv2 permits
-   repeated atomic stage-history updates. No model calls or scorer changes; no manual duplicate.
-   Evaluate training and inference gates separately; no checkpoint/prompt selection.
-   This remains a supervised mechanism study; autonomous RL/general-pretraining claims wait.
+1. Prepare the actual pretraining reference on real data.
+   First inspect the completed real-trace CPT V10, real-target V15 and source-balanced
+   V17 code/data/results so the new comparison does not repeat their endpoint mistakes.
+   Inventory existing legitimate raw-text assets and genuinely prefix-computable labels;
+   establish training/held source separation before inspecting any new held outcomes.
+   Propose one source-balanced prefix-to-continuation comparison from unchanged B0,
+   with an ordinary LM objective, strong source/format controls, and separate training
+   benefit/inference benefit/ordinary-prediction costs. This is CPU preparation,not release.
+   Preserve final-target weighting and natural stopping. Count source exposures,labels,
+   generated work and measured reservations separately. Small CE costs are not automatic
+   kill gates; V28's+5–8nat regression is a substantial failure of retention to repair.
+   Qualify the actual full-token LM loss/packing/update/restart shape before a long run;
+   reuse the established runtime and one gradient-reduction owner. No stack replacement.
+   The separately qualified equal-length batch candidate b25560a may accelerate future
+   decoding only after its own trained-model/natural-stop/cap128 integration check.
+   No broad RL,8B or open-ended length rescue is released by this queue. Do not resume R1234.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.
    V27 fresh-source feasibility finds no remaining TRAIN questions and875 clean

@@ -1,20 +1,20 @@
-# Status — 2026-10-20 09:42 UTC
+# Status — 2026-10-20 12:26 UTC
 
-## Active: controlled computation reference
-Question: do verified states improve fresh computation beyond direct training and trained pauses, and what survives direct inference?
-ID: controlled-computation-v28; six fresh1.7B models,32,768questions×4/4,096updates/two data-order seeds.
-All six terminal4096 models physically close0 and pass independent model/master/moment/order/native audits.
-All six full64 audits and24 actual worker restoration-digest comparisons PASS; all periodic readbacks resume.
-Actual science-training16.535chip-hours including0.00177 pre-load path failure; earlier qualifications separate.
-All6terminal models/development64 retained; latest full4096 per arm, old payloads rotate prospectively.
-All six checkpoint identities were publicly frozen before held generation; training-complete report protected.
-Control C=local/diagnostics/permutation-program-v28-fixed-evaluation-v1; parent exec54438/PID1637467/start31941443; watcher36214.
-Frozen training ce04236/evaluator2eb3c1c;1861CPU tests+smoke/compile pass; numerical source unchanged.
-Fixed23-job/378880attempt comparison ACTIVE on8chips; initial32workers native/cache PASS. IOv2 inputs/protocols protected/public.
-Primarycomposition9216paired families; interpolation/longer-depth panels separate; all failures retained.
-Max8-chip queue charges actual reservations; stop29.5/maximum30chip-hours, deadline16:23:24UTC. Same fixed gates.
-Review only after all23close: IOv2 CPU queue63710 waits (idle19133 stopped before scoring). All92native/cache PASS; scores unread.
-No capability, autonomous-thinking or general-pretraining claim yet; all old studies/gates unchanged.
+## Closed: controlled computation reference
+Question: do verified generated states improve fresh computation,and what remains without the trace?
+ID:controlled-computation-v28;six fresh1.7B,TRAIN32768×4,4096updates,two data orders,terminal endpoints.
+Primarycomposition18432questions/9216counterfactual families per order; source/modes/gates frozen before evaluation.
+T trace18432/18430 vsD direct11914/1872; gains+35.4pp[34.5,36.3]/+89.8pp[89.4,90.3]. Inference gate PASS.
+T direct1654/1701; direct-inference training gate FAIL. Do not pool orders or omit the stronger D control.
+Longer lengths7–10:T trace228/2048 and1/2048; second order always emits6transitions,2030correct prefixes; no caps.
+Ordinary NLL:B0=1.945,T=9.116/8.454,all task arms7.010–9.774; no ordinary LM training term.
+All378880original attempts/23physical jobs close;92native+92cache gates and independent primary reconstruction PASS.
+All ordinary rows/bootstraps and28independent HF forwards PASS; maximum token-logp difference0.000027.
+All raw23groups EBS-protected; archive portable replay reproduces exact readout bytes. Model weights retained locally.
+Science training16.535/evaluation13.821reserved chip-hours; qualifications separate. T has3.10× supervised positions.
+Report:validation/permutation_program_v28_complete_20261020.json; full fixed examples,figures and raw-release hashes.
+Decision: established guided computation within covered lengths; no direct transfer,length-generalization or pretraining claim.
+Next: actual source-balanced prefix-to-continuation data/objective preparation; no RL/size jump or new long run yet.
 
 ## Closed: separate decoder batching check
 Question: can equal-length batching preserve greedy decoding while reducing future inference cost?

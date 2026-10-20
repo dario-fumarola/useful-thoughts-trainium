@@ -1,0 +1,89 @@
+{
+  "checker_sha256": "a6506a53d9fb2594f02f0f107b33214d478f2e3c0fb0497159c4b00ffaa9fcf4",
+  "fixed_item_ids": [
+    "c3d1303535956a276c6410dbc4b3c0033b7499afd229f6f7419b7c325501ec58",
+    "de8949d1a20596bab9a3b88e31342231ad0a18574797718718105ac7c7fbe739",
+    "d1568129b54d5941958ffb4e37f2c081e486564d67a41c2008828019b5f8e3aa",
+    "53f3531ad426c113049e85f7a5a47aebd25e75397e50fb09c4ee4ce75d82a935"
+  ],
+  "host_seconds": 74.74120980000589,
+  "independent_CPU_forward_calls": 28,
+  "limits": "Numerical/source/count verification on existing inspected retention pages,not fresh capability confirmation. Original ordinary scores and all V28 scientific gates unchanged.",
+  "model_checks": {
+    "B0": {
+      "calls": 4,
+      "max_token_logp_error": 2.002716064453125e-05,
+      "per_page_errors": [
+        1.239776611328125e-05,
+        1.1205673217773438e-05,
+        1.1563301086425781e-05,
+        2.002716064453125e-05
+      ]
+    },
+    "program-direct-seed2026102028-v1": {
+      "calls": 4,
+      "max_token_logp_error": 1.430511474609375e-05,
+      "per_page_errors": [
+        1.430511474609375e-05,
+        1.2874603271484375e-05,
+        1.1444091796875e-05,
+        1.049041748046875e-05
+      ]
+    },
+    "program-direct-seed2026102029-v1": {
+      "calls": 4,
+      "max_token_logp_error": 2.6702880859375e-05,
+      "per_page_errors": [
+        2.6702880859375e-05,
+        1.1920928955078125e-05,
+        1.1920928955078125e-05,
+        1.8835067749023438e-05
+      ]
+    },
+    "program-pause-seed2026102028-v1": {
+      "calls": 4,
+      "max_token_logp_error": 1.049041748046875e-05,
+      "per_page_errors": [
+        1.049041748046875e-05,
+        9.5367431640625e-06,
+        9.059906005859375e-06,
+        6.318092346191406e-06
+      ]
+    },
+    "program-pause-seed2026102029-v1": {
+      "calls": 4,
+      "max_token_logp_error": 2.384185791015625e-05,
+      "per_page_errors": [
+        8.58306884765625e-06,
+        2.384185791015625e-05,
+        1.239776611328125e-05,
+        1.71661376953125e-05
+      ]
+    },
+    "program-trace-seed2026102028-v1": {
+      "calls": 4,
+      "max_token_logp_error": 1.239776611328125e-05,
+      "per_page_errors": [
+        7.62939453125e-06,
+        9.059906005859375e-06,
+        1.239776611328125e-05,
+        7.152557373046875e-06
+      ]
+    },
+    "program-trace-seed2026102029-v1": {
+      "calls": 4,
+      "max_token_logp_error": 1.621246337890625e-05,
+      "per_page_errors": [
+        1.33514404296875e-05,
+        1.239776611328125e-05,
+        1.0967254638671875e-05,
+        1.621246337890625e-05
+      ]
+    }
+  },
+  "model_pages": 1792,
+  "reserved_accelerator_chip_hours": 0,
+  "result_sha256": "1eee9f9187518205cb72b25dd5f3600ddecef0bb47fde2c17a52439de5ad15c0",
+  "status": "PASS_ALL_ORDINARY_ROWS_MEANS_BOOTSTRAPS_AND28_INDEPENDENT_HF_FORWARDS",
+  "stored_token_scores": 57344
+}

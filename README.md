@@ -1,21 +1,52 @@
 # Useful Thoughts on Trainium
 
-**V26 is complete: evidence-selection supervision improves direct answers over
-coefficient-matched format training on the inspected development panel. Fresh
-confirmation is still needed; an added benefit from generating IDs remains unestablished.**
+**V28 is complete: verified generated traces solve new compositions at trained
+lengths, but direct-answer transfer and longer execution fail. Ordinary language
+prediction deteriorates severely under this task-only recipe.**
 
-This is a small supervised reference using Qwen3-1.7B-Base, real MuSiQue documents,
-and Trainium. It does not establish broad reasoning, pretraining benefit, or
-novelty relative to the model's original pretraining. Official TEST remains unopened;
-DEV was inventoried for prospective confirmation metadata only, without model outcomes.
+Six fresh Qwen3-1.7B-Base models train for 4,096 updates on 32,768 prefix-computable
+permutation questions. D uses direct supervision, T full traces, and P provided
+pause positions. Two data orders share the same initial weights and source exposure.
+The primary comparison uses 18,432 questions /9,216 counterfactual families at lengths4–6.
 
-Current work is the [V28 controlled-computation reference](validation/permutation_program_v28_study_preparation_20261020.json).
-All [six models completed 4,096 updates and independent full-state audits](validation/permutation_program_v28_training_complete_20261020.json).
-Their terminal checkpoint identities are frozen. The fixed held-out comparison is running; scores are pending.
-No V28 learned-capability result exists yet. Before any held model outcome, the
-primary panel was enlarged to9,216 independent counterfactual families; interpolation
-and length extrapolation remain separate. This is a supervised mechanism lab,
-with a later return to actual pretraining in the roadmap.
+| Primary answer path | Order 2026102028, correct /18,432 | Order 2026102029, correct /18,432 |
+|---|---:|---:|
+| Direct-trained, direct answer |11,914|1,872|
+| Direct-trained, empty format |11,812|1,871|
+| Pause-trained, provided pauses |1,576|1,733|
+| Trace-trained, direct answer |1,654|1,701|
+| Trace-trained, empty format |1,636|1,728|
+| **Trace-trained, generated computation** |**18,432**|**18,430**|
+
+The declared **inference gate passes** in both orders. Gains over matched direct
+training are+35.4pp[34.5,36.3] and+89.8pp[89.4,90.3]. The stronger first direct control
+must remain visible. The separate **direct-inference training gate fails**.
+
+At unseen lengths7–10, trace answers fall to228/2,048 and1/2,048. The second model
+stops after exactly six transitions on all2,048 questions, despite usually computing
+those six correctly. No trained trace hits the cap. Ordinary NLL rises from1.945
+for B0 to9.116/8.454 for T; every task-trained arm regresses. This recipe contains
+no ordinary LM loss. These are sharp limits, not general pretraining improvement.
+
+![Separate inference and training conclusions](validation/permutation_program_v28_complete_20261020/primary-contrasts.svg)
+
+T receives3.10× as many supervised positions as D/P and generates35 actions versus2
+for direct answers. Supplied pauses run in parallel prefill; this is not an equal
+autoregressive-compute comparison. All378,880 attempts close, and independent
+token/interpreter/bootstrap/native checks pass. Checkpoint identities preceded
+evaluation; no checkpoint or prompt was selected by held performance.
+
+- [Complete result and limits](validation/permutation_program_v28_complete_20261020/REPORT.md)
+- [Machine-readable readout](validation/permutation_program_v28_complete_20261020.json)
+- [All original fixed examples](validation/permutation_program_v28_complete_20261020/fixed-examples.json)
+- [Depth boundary](validation/permutation_program_v28_complete_20261020/depth-profiles.svg)
+- [Ordinary-text regression](validation/permutation_program_v28_complete_20261020/ordinary-NLL.svg)
+- [Full synthetic evidence and portable offline replay](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v28-controlled-computation-20261020)
+
+The next mainline question returns to real prefix-to-continuation training with
+ordinary LM supervision. This supervised mechanism study does not establish
+autonomous discovery or internalization. Official TEST remains unopened. The
+earlier V26 document-QA result below remains developmental and unconfirmed.
 
 ## Latest matched control (V26)
 

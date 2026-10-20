@@ -1,0 +1,1392 @@
+{
+  "B0_trace_minus_B0_direct": {
+    "DEV_composition": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.0380859375,
+        -0.01416015625
+      ],
+      "control_correct": 99,
+      "difference_b_minus_a": -0.0263671875,
+      "documents": 1024,
+      "fixed": 40,
+      "harmed": 94,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 45
+    },
+    "DEV_depth": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.0458984375,
+        -0.02099609375
+      ],
+      "control_correct": 110,
+      "difference_b_minus_a": -0.03271484375,
+      "documents": 1024,
+      "fixed": 36,
+      "harmed": 103,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 43
+    },
+    "DEV_interpolation": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.02783203125,
+        0.06787109375
+      ],
+      "control_correct": 153,
+      "difference_b_minus_a": 0.0478515625,
+      "documents": 1024,
+      "fixed": 206,
+      "harmed": 108,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 251
+    }
+  },
+  "additional_same_question_control_contrasts": {
+    "DEV_composition/seed2026102028/trace_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.35009765625,
+        0.3683268229166667
+      ],
+      "control_correct": 11812,
+      "difference_b_minus_a": 0.3591579861111111,
+      "documents": 9216,
+      "fixed": 6620,
+      "harmed": 0,
+      "items": 18432,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 18432
+    },
+    "DEV_composition/seed2026102028/trace_minus_pause_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.9091796875,
+        0.9172092013888888
+      ],
+      "control_correct": 1599,
+      "difference_b_minus_a": 0.9132486979166666,
+      "documents": 9216,
+      "fixed": 16833,
+      "harmed": 0,
+      "items": 18432,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 18432
+    },
+    "DEV_composition/seed2026102028/trained_direct_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.5612535264756944,
+        -0.5411770290798611
+      ],
+      "control_correct": 11812,
+      "difference_b_minus_a": -0.5511067708333334,
+      "documents": 9216,
+      "fixed": 523,
+      "harmed": 10681,
+      "items": 18432,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1654
+    },
+    "DEV_composition/seed2026102029/trace_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.8939887152777778,
+        0.9027777777777778
+      ],
+      "control_correct": 1871,
+      "difference_b_minus_a": 0.8983832465277778,
+      "documents": 9216,
+      "fixed": 16559,
+      "harmed": 0,
+      "items": 18432,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 18430
+    },
+    "DEV_composition/seed2026102029/trace_minus_pause_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.9013671875,
+        0.9100477430555556
+      ],
+      "control_correct": 1735,
+      "difference_b_minus_a": 0.90576171875,
+      "documents": 9216,
+      "fixed": 16696,
+      "harmed": 1,
+      "items": 18432,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 18430
+    },
+    "DEV_composition/seed2026102029/trained_direct_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.014485677083333334,
+        -0.003960503472222222
+      ],
+      "control_correct": 1871,
+      "difference_b_minus_a": -0.009223090277777778,
+      "documents": 9216,
+      "fixed": 1159,
+      "harmed": 1329,
+      "items": 18432,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1701
+    },
+    "DEV_depth/seed2026102028/trace_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.017578125,
+        0.06202392578124982
+      ],
+      "control_correct": 147,
+      "difference_b_minus_a": 0.03955078125,
+      "documents": 1024,
+      "fixed": 209,
+      "harmed": 128,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 228
+    },
+    "DEV_depth/seed2026102028/trace_minus_pause_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.00048828125,
+        0.04345703125
+      ],
+      "control_correct": 185,
+      "difference_b_minus_a": 0.02099609375,
+      "documents": 1024,
+      "fixed": 203,
+      "harmed": 160,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 228
+    },
+    "DEV_depth/seed2026102028/trained_direct_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.005859375,
+        0.04052734375
+      ],
+      "control_correct": 147,
+      "difference_b_minus_a": 0.02294921875,
+      "documents": 1024,
+      "fixed": 178,
+      "harmed": 131,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 194
+    },
+    "DEV_depth/seed2026102029/trace_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.1005859375,
+        -0.07666015625
+      ],
+      "control_correct": 183,
+      "difference_b_minus_a": -0.0888671875,
+      "documents": 1024,
+      "fixed": 1,
+      "harmed": 183,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1
+    },
+    "DEV_depth/seed2026102029/trace_minus_pause_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.0986328125,
+        -0.07470703125
+      ],
+      "control_correct": 178,
+      "difference_b_minus_a": -0.08642578125,
+      "documents": 1024,
+      "fixed": 1,
+      "harmed": 178,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1
+    },
+    "DEV_depth/seed2026102029/trained_direct_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.005859375,
+        0.02734375
+      ],
+      "control_correct": 183,
+      "difference_b_minus_a": 0.0107421875,
+      "documents": 1024,
+      "fixed": 157,
+      "harmed": 135,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 205
+    },
+    "DEV_interpolation/seed2026102028/trace_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.06982421875,
+        0.10205078125
+      ],
+      "control_correct": 1873,
+      "difference_b_minus_a": 0.08544921875,
+      "documents": 1024,
+      "fixed": 175,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_interpolation/seed2026102028/trace_minus_pause_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.58447265625,
+        0.64013671875
+      ],
+      "control_correct": 794,
+      "difference_b_minus_a": 0.6123046875,
+      "documents": 1024,
+      "fixed": 1254,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_interpolation/seed2026102028/trained_direct_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.39794921875,
+        -0.3408203125
+      ],
+      "control_correct": 1873,
+      "difference_b_minus_a": -0.369140625,
+      "documents": 1024,
+      "fixed": 12,
+      "harmed": 768,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1117
+    },
+    "DEV_interpolation/seed2026102029/trace_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.4365234375,
+        0.49462890625
+      ],
+      "control_correct": 1096,
+      "difference_b_minus_a": 0.46484375,
+      "documents": 1024,
+      "fixed": 952,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_interpolation/seed2026102029/trace_minus_pause_direct": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.4306640625,
+        0.48828125
+      ],
+      "control_correct": 1107,
+      "difference_b_minus_a": 0.45947265625,
+      "documents": 1024,
+      "fixed": 941,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_interpolation/seed2026102029/trained_direct_minus_direct_empty": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.10498046875,
+        -0.060546875
+      ],
+      "control_correct": 1096,
+      "difference_b_minus_a": -0.08251953125,
+      "documents": 1024,
+      "fixed": 107,
+      "harmed": 276,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 927
+    }
+  },
+  "checkpoint_conditional_secondary_contrasts": {
+    "DEV_composition/program-direct-seed2026102028-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.56982421875,
+        0.62890625
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.59912109375,
+      "documents": 1024,
+      "fixed": 1248,
+      "harmed": 21,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1272
+    },
+    "DEV_composition/program-direct-seed2026102029-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.06494140625,
+        0.0947265625
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.07958984375,
+      "documents": 1024,
+      "fixed": 206,
+      "harmed": 43,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 208
+    },
+    "DEV_composition/program-pause-seed2026102028-v1/pause_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.0439453125,
+        0.0712890625
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.0576171875,
+      "documents": 1024,
+      "fixed": 161,
+      "harmed": 43,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 163
+    },
+    "DEV_composition/program-pause-seed2026102029-v1/pause_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.0546875,
+        0.0830078125
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.06884765625,
+      "documents": 1024,
+      "fixed": 180,
+      "harmed": 39,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 186
+    },
+    "DEV_composition/program-trace-seed2026102028-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.0458984375,
+        0.07421875
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.0595703125,
+      "documents": 1024,
+      "fixed": 163,
+      "harmed": 41,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 167
+    },
+    "DEV_composition/program-trace-seed2026102028-v1/trace_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.97117919921875,
+        0.98486328125
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.97802734375,
+      "documents": 1024,
+      "fixed": 2003,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_composition/program-trace-seed2026102029-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.052734375,
+        0.080078125
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.06640625,
+      "documents": 1024,
+      "fixed": 175,
+      "harmed": 39,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 181
+    },
+    "DEV_composition/program-trace-seed2026102029-v1/trace_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.97117919921875,
+        0.98486328125
+      ],
+      "control_correct": 45,
+      "difference_b_minus_a": 0.97802734375,
+      "documents": 1024,
+      "fixed": 2003,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_depth/program-direct-seed2026102028-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.03271484375,
+        0.06005859375
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.04638671875,
+      "documents": 1024,
+      "fixed": 135,
+      "harmed": 40,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 138
+    },
+    "DEV_depth/program-direct-seed2026102029-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.05517578125,
+        0.08251953125
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.06884765625,
+      "documents": 1024,
+      "fixed": 178,
+      "harmed": 37,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 184
+    },
+    "DEV_depth/program-pause-seed2026102028-v1/pause_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.0537109375,
+        0.08154296875
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.06787109375,
+      "documents": 1024,
+      "fixed": 180,
+      "harmed": 41,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 182
+    },
+    "DEV_depth/program-pause-seed2026102029-v1/pause_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.05419921875,
+        0.08154296875
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.06787109375,
+      "documents": 1024,
+      "fixed": 179,
+      "harmed": 40,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 182
+    },
+    "DEV_depth/program-trace-seed2026102028-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.060046386718750004,
+        0.0888671875
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.07373046875,
+      "documents": 1024,
+      "fixed": 188,
+      "harmed": 37,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 194
+    },
+    "DEV_depth/program-trace-seed2026102028-v1/trace_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.07080078125,
+        0.1103515625
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.09033203125,
+      "documents": 1024,
+      "fixed": 220,
+      "harmed": 35,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 228
+    },
+    "DEV_depth/program-trace-seed2026102029-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.06396484375,
+        0.09423828125
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": 0.0791015625,
+      "documents": 1024,
+      "fixed": 203,
+      "harmed": 41,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 205
+    },
+    "DEV_depth/program-trace-seed2026102029-v1/trace_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        -0.02783203125,
+        -0.01416015625
+      ],
+      "control_correct": 43,
+      "difference_b_minus_a": -0.0205078125,
+      "documents": 1024,
+      "fixed": 1,
+      "harmed": 43,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1
+    },
+    "DEV_interpolation/program-direct-seed2026102028-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.76953125,
+        0.81494140625
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.79248046875,
+      "documents": 1024,
+      "fixed": 1628,
+      "harmed": 5,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1874
+    },
+    "DEV_interpolation/program-direct-seed2026102029-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.38525390625,
+        0.443359375
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.4150390625,
+      "documents": 1024,
+      "fixed": 882,
+      "harmed": 32,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1101
+    },
+    "DEV_interpolation/program-pause-seed2026102028-v1/pause_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.2373046875,
+        0.2919921875
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.2646484375,
+      "documents": 1024,
+      "fixed": 588,
+      "harmed": 46,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 793
+    },
+    "DEV_interpolation/program-pause-seed2026102029-v1/pause_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.3896484375,
+        0.44775390625
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.4189453125,
+      "documents": 1024,
+      "fixed": 885,
+      "harmed": 27,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1109
+    },
+    "DEV_interpolation/program-trace-seed2026102028-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.3935546875,
+        0.45166015625
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.4228515625,
+      "documents": 1024,
+      "fixed": 895,
+      "harmed": 29,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 1117
+    },
+    "DEV_interpolation/program-trace-seed2026102028-v1/trace_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.85986328125,
+        0.89453125
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.87744140625,
+      "documents": 1024,
+      "fixed": 1797,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    },
+    "DEV_interpolation/program-trace-seed2026102029-v1/direct_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.30224609375,
+        0.3583984375
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.330078125,
+      "documents": 1024,
+      "fixed": 719,
+      "harmed": 43,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 927
+    },
+    "DEV_interpolation/program-trace-seed2026102029-v1/trace_minus_B0_trace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 17,
+      "ci95": [
+        0.85986328125,
+        0.89453125
+      ],
+      "control_correct": 251,
+      "difference_b_minus_a": 0.87744140625,
+      "documents": 1024,
+      "fixed": 1797,
+      "harmed": 0,
+      "items": 2048,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+      "treatment_correct": 2048
+    }
+  },
+  "index_sha256": "42c64d8caf40b22817ab5a41259509b98db7e414a9158039d9754ab43b0569e5",
+  "limits": [
+    "All base comparisons use the same2048 original questions/1024 paired families per panel.",
+    "No primary gate uses B0 or these secondary contrasts. No significance-based selection of comparisons.",
+    "B0 uses one fixed TRAIN depth1 demonstration; it is not an optimized pretrained-capability ceiling.",
+    "B0 and trained paths use different declared task-format contexts. This is a practical reference,not a pure training intervention.",
+    "Full primary composition results remain separately reported on9216 families; no convenient pooling of panels or seeds."
+  ],
+  "matched_absolute": [
+    {
+      "accuracy": 0.07470703125,
+      "correct": 153,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "B0",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.12255859375,
+      "correct": 251,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "B0",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "capped": 267,
+        "complete": 1781
+      }
+    },
+    {
+      "accuracy": 0.9150390625,
+      "correct": 1874,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-direct-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.91455078125,
+      "correct": 1873,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-direct-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.53759765625,
+      "correct": 1101,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-direct-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.53515625,
+      "correct": 1096,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-direct-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.3876953125,
+      "correct": 794,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.38720703125,
+      "correct": 793,
+      "families": 1024,
+      "items": 2048,
+      "mode": "pause",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.38623046875,
+      "correct": 791,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.54052734375,
+      "correct": 1107,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.54150390625,
+      "correct": 1109,
+      "families": 1024,
+      "items": 2048,
+      "mode": "pause",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.5419921875,
+      "correct": 1110,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.54541015625,
+      "correct": 1117,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 2048,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.5380859375,
+      "correct": 1102,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.45263671875,
+      "correct": 927,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 2048,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.43603515625,
+      "correct": 893,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_interpolation",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.04833984375,
+      "correct": 99,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "B0",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.02197265625,
+      "correct": 45,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "B0",
+      "panel": "DEV_composition",
+      "statuses": {
+        "capped": 881,
+        "complete": 1167
+      }
+    },
+    {
+      "accuracy": 0.62109375,
+      "correct": 1272,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-direct-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.61962890625,
+      "correct": 1269,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-direct-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.1015625,
+      "correct": 208,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-direct-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.09765625,
+      "correct": 200,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-direct-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0830078125,
+      "correct": 170,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.07958984375,
+      "correct": 163,
+      "families": 1024,
+      "items": 2048,
+      "mode": "pause",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.07861328125,
+      "correct": 161,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08935546875,
+      "correct": 183,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0908203125,
+      "correct": 186,
+      "families": 1024,
+      "items": 2048,
+      "mode": "pause",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08935546875,
+      "correct": 183,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08154296875,
+      "correct": 167,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 2048,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0849609375,
+      "correct": 174,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08837890625,
+      "correct": 181,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 2048,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.09423828125,
+      "correct": 193,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_composition",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0537109375,
+      "correct": 110,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "B0",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.02099609375,
+      "correct": 43,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "B0",
+      "panel": "DEV_depth",
+      "statuses": {
+        "capped": 875,
+        "complete": 1173
+      }
+    },
+    {
+      "accuracy": 0.0673828125,
+      "correct": 138,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-direct-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.07177734375,
+      "correct": 147,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-direct-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08984375,
+      "correct": 184,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-direct-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08935546875,
+      "correct": 183,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-direct-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.09033203125,
+      "correct": 185,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0888671875,
+      "correct": 182,
+      "families": 1024,
+      "items": 2048,
+      "mode": "pause",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08984375,
+      "correct": 184,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-pause-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0869140625,
+      "correct": 178,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0888671875,
+      "correct": 182,
+      "families": 1024,
+      "items": 2048,
+      "mode": "pause",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.09033203125,
+      "correct": 185,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-pause-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.0947265625,
+      "correct": 194,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.111328125,
+      "correct": 228,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.08544921875,
+      "correct": 175,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-trace-seed2026102028-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.10009765625,
+      "correct": 205,
+      "families": 1024,
+      "items": 2048,
+      "mode": "direct",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.00048828125,
+      "correct": 1,
+      "families": 1024,
+      "items": 2048,
+      "mode": "trace",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    },
+    {
+      "accuracy": 0.1005859375,
+      "correct": 206,
+      "families": 1024,
+      "items": 2048,
+      "mode": "empty",
+      "model": "program-trace-seed2026102029-v1",
+      "panel": "DEV_depth",
+      "statuses": {
+        "complete": 2048
+      }
+    }
+  ],
+  "primary_readout_sha256": "e995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f",
+  "source_sha256": "4f2a9867fdd923a5631bd8150617f12b24488ec9e9ec9c252d666458d3858116",
+  "status": "COMPLETE_SAME_QUESTION_SECONDARY_B0_REFERENCES"
+}

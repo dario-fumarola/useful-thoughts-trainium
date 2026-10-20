@@ -1,0 +1,656 @@
+{
+  "groups_launched": 23,
+  "pending": [],
+  "reason": null,
+  "records": [
+    {
+      "attempts": 55296,
+      "closed_monotonic": 332303.459804211,
+      "closed_utc": "2026-10-20T12:00:11+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102028-v1-DEV_composition",
+        "0",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102028-v1-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637536,
+        "pid": 1637536,
+        "ppid": 1637467,
+        "session": 1637536,
+        "start_ticks": 31941635
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102028-v1-DEV_composition",
+      "physical_chip": 0,
+      "protocol_sha256": "1e9f9f1fd102f0f8e11007da696bcc2280cb80ead32f3fcde3fe8cee41a049fe",
+      "started_monotonic": 319416.348463157,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 55296,
+      "closed_monotonic": 332373.58788822,
+      "closed_utc": "2026-10-20T12:01:21+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102029-v1-DEV_composition",
+        "1",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102029-v1-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637537,
+        "pid": 1637537,
+        "ppid": 1637467,
+        "session": 1637537,
+        "start_ticks": 31941636
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102029-v1-DEV_composition",
+      "physical_chip": 1,
+      "protocol_sha256": "8ff6d1a7e1156befd0f6270877f17f923f7b8a4b26f61bbff875445cf71154b7",
+      "started_monotonic": 319416.357859754,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 322335.958811625,
+      "closed_utc": "2026-10-20T09:14:03+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/B0-DEV_composition",
+        "2",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/B0-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637538,
+        "pid": 1637538,
+        "ppid": 1637467,
+        "session": 1637538,
+        "start_ticks": 31941637
+      },
+      "exit_code": 0,
+      "key": "B0-DEV_composition",
+      "physical_chip": 2,
+      "protocol_sha256": "d340c9e959ddd1a0e41159b91795f938bf494d671b1854b15f2ed961aafa062c",
+      "started_monotonic": 319416.366704819,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 322410.161549421,
+      "closed_utc": "2026-10-20T09:15:18+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/B0-DEV_depth",
+        "3",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/B0-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637539,
+        "pid": 1637539,
+        "ppid": 1637467,
+        "session": 1637539,
+        "start_ticks": 31941638
+      },
+      "exit_code": 0,
+      "key": "B0-DEV_depth",
+      "physical_chip": 3,
+      "protocol_sha256": "4d991f0fa5134f223b1459d02262f1f5bba7b62eb56c634c250727c015310448",
+      "started_monotonic": 319416.376053982,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 321030.54693039,
+      "closed_utc": "2026-10-20T08:52:18+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/B0-DEV_interpolation",
+        "4",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/B0-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637540,
+        "pid": 1637540,
+        "ppid": 1637467,
+        "session": 1637540,
+        "start_ticks": 31941638
+      },
+      "exit_code": 0,
+      "key": "B0-DEV_interpolation",
+      "physical_chip": 4,
+      "protocol_sha256": "187cf7a3ef91ece7daf186bc3d195caaa8e8b096717ad4d63ce2767f5b263d34",
+      "started_monotonic": 319416.385072838,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 55296,
+      "closed_monotonic": 321630.12392549,
+      "closed_utc": "2026-10-20T09:02:17+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-pause-seed2026102028-v1-DEV_composition",
+        "5",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-pause-seed2026102028-v1-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637541,
+        "pid": 1637541,
+        "ppid": 1637467,
+        "session": 1637541,
+        "start_ticks": 31941639
+      },
+      "exit_code": 0,
+      "key": "program-pause-seed2026102028-v1-DEV_composition",
+      "physical_chip": 5,
+      "protocol_sha256": "ac3d115e756df6ba6899639d1acc76cb73d197f461ef01005fe17eb0541d4459",
+      "started_monotonic": 319416.39481047,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 55296,
+      "closed_monotonic": 321624.076127287,
+      "closed_utc": "2026-10-20T09:02:11+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-pause-seed2026102029-v1-DEV_composition",
+        "6",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-pause-seed2026102029-v1-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637542,
+        "pid": 1637542,
+        "ppid": 1637467,
+        "session": 1637542,
+        "start_ticks": 31941640
+      },
+      "exit_code": 0,
+      "key": "program-pause-seed2026102029-v1-DEV_composition",
+      "physical_chip": 6,
+      "protocol_sha256": "597bdd6919f049ffbc61beb2d423e1b706f7f426f81d51f67f2c9ac0224c2322",
+      "started_monotonic": 319416.404021709,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 36864,
+      "closed_monotonic": 320918.261391917,
+      "closed_utc": "2026-10-20T08:50:26+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-direct-seed2026102028-v1-DEV_composition",
+        "7",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-direct-seed2026102028-v1-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1637543,
+        "pid": 1637543,
+        "ppid": 1637467,
+        "session": 1637543,
+        "start_ticks": 31941641
+      },
+      "exit_code": 0,
+      "key": "program-direct-seed2026102028-v1-DEV_composition",
+      "physical_chip": 7,
+      "protocol_sha256": "14c2af2e6309c162112f60bc63d796bf6b960cb573f24f56df2c978968732ff9",
+      "started_monotonic": 319416.412828342,
+      "started_utc": "2026-10-20T08:25:24+00:00"
+    },
+    {
+      "attempts": 36864,
+      "closed_monotonic": 322396.121933706,
+      "closed_utc": "2026-10-20T09:15:03+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-direct-seed2026102029-v1-DEV_composition",
+        "7",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-direct-seed2026102029-v1-DEV_composition",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1673054,
+        "pid": 1673054,
+        "ppid": 1637467,
+        "session": 1673054,
+        "start_ticks": 32091827
+      },
+      "exit_code": 0,
+      "key": "program-direct-seed2026102029-v1-DEV_composition",
+      "physical_chip": 7,
+      "protocol_sha256": "082751a89290e5fd967868d3c5fb18611c6411a8cc40363a040bcf1c960fbda0",
+      "started_monotonic": 320918.270061042,
+      "started_utc": "2026-10-20T08:50:26+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 321327.326473129,
+      "closed_utc": "2026-10-20T08:57:15+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-pause-seed2026102028-v1-DEV_depth",
+        "4",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-pause-seed2026102028-v1-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1677414,
+        "pid": 1677414,
+        "ppid": 1637467,
+        "session": 1677414,
+        "start_ticks": 32103055
+      },
+      "exit_code": 0,
+      "key": "program-pause-seed2026102028-v1-DEV_depth",
+      "physical_chip": 4,
+      "protocol_sha256": "c9e1e6961ca167ddf5d9b90473f5474317c4665c67010bb728f3c44000e5e275",
+      "started_monotonic": 321030.555450772,
+      "started_utc": "2026-10-20T08:52:18+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 321624.081261962,
+      "closed_utc": "2026-10-20T09:02:11+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-pause-seed2026102028-v1-DEV_interpolation",
+        "4",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-pause-seed2026102028-v1-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1682852,
+        "pid": 1682852,
+        "ppid": 1637467,
+        "session": 1682852,
+        "start_ticks": 32132734
+      },
+      "exit_code": 0,
+      "key": "program-pause-seed2026102028-v1-DEV_interpolation",
+      "physical_chip": 4,
+      "protocol_sha256": "670ea6f6bf7275e56d81fabcee88a143e1da3b087719a47e5c525923941ebbd2",
+      "started_monotonic": 321327.336873784,
+      "started_utc": "2026-10-20T08:57:15+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 321920.843051855,
+      "closed_utc": "2026-10-20T09:07:08+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-pause-seed2026102029-v1-DEV_depth",
+        "4",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-pause-seed2026102029-v1-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1687313,
+        "pid": 1687313,
+        "ppid": 1637467,
+        "session": 1687313,
+        "start_ticks": 32162409
+      },
+      "exit_code": 0,
+      "key": "program-pause-seed2026102029-v1-DEV_depth",
+      "physical_chip": 4,
+      "protocol_sha256": "9ed6e7c43d27264ad5df938a8f37d6ab1ca1fda126f87cdb0983f2df4f8c70e8",
+      "started_monotonic": 321624.091065198,
+      "started_utc": "2026-10-20T09:02:11+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 321920.848590171,
+      "closed_utc": "2026-10-20T09:07:08+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-pause-seed2026102029-v1-DEV_interpolation",
+        "6",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-pause-seed2026102029-v1-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1687314,
+        "pid": 1687314,
+        "ppid": 1637467,
+        "session": 1687314,
+        "start_ticks": 32162410
+      },
+      "exit_code": 0,
+      "key": "program-pause-seed2026102029-v1-DEV_interpolation",
+      "physical_chip": 6,
+      "protocol_sha256": "563e2b110c60c74259740dd3231079fee54ddf25e28b58ff48f973f1f8784c36",
+      "started_monotonic": 321624.10147769,
+      "started_utc": "2026-10-20T09:02:11+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 323803.873354697,
+      "closed_utc": "2026-10-20T09:38:31+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102028-v1-DEV_depth",
+        "5",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102028-v1-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1687627,
+        "pid": 1687627,
+        "ppid": 1637467,
+        "session": 1687627,
+        "start_ticks": 32163013
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102028-v1-DEV_depth",
+      "physical_chip": 5,
+      "protocol_sha256": "931bc99b1a5c5977b20b6c7e53a94951643b87770c455204f25c435ca3a4cb7c",
+      "started_monotonic": 321630.134152993,
+      "started_utc": "2026-10-20T09:02:17+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 323248.371955353,
+      "closed_utc": "2026-10-20T09:29:16+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102028-v1-DEV_interpolation",
+        "4",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102028-v1-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1700377,
+        "pid": 1700377,
+        "ppid": 1637467,
+        "session": 1700377,
+        "start_ticks": 32192086
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102028-v1-DEV_interpolation",
+      "physical_chip": 4,
+      "protocol_sha256": "9f75e1f64e3a4dc667372f0a356e0a5ce5adeae3580a52ce1a27f41ea7a8faf1",
+      "started_monotonic": 321920.857197896,
+      "started_utc": "2026-10-20T09:07:08+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 323709.62574061,
+      "closed_utc": "2026-10-20T09:36:57+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102029-v1-DEV_depth",
+        "6",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102029-v1-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1700378,
+        "pid": 1700378,
+        "ppid": 1637467,
+        "session": 1700378,
+        "start_ticks": 32192087
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102029-v1-DEV_depth",
+      "physical_chip": 6,
+      "protocol_sha256": "630951bec31360a4768d595041a19af5a6be29c4518bdd45c1cb1148103367ee",
+      "started_monotonic": 321920.866627916,
+      "started_utc": "2026-10-20T09:07:08+00:00"
+    },
+    {
+      "attempts": 6144,
+      "closed_monotonic": 323653.459661528,
+      "closed_utc": "2026-10-20T09:36:01+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102029-v1-DEV_interpolation",
+        "2",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102029-v1-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1709127,
+        "pid": 1709127,
+        "ppid": 1637467,
+        "session": 1709127,
+        "start_ticks": 32233597
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102029-v1-DEV_interpolation",
+      "physical_chip": 2,
+      "protocol_sha256": "99460f638c1bd278a2aee22b3fb2b9ac969696aded2d6894fcaa622df239eae6",
+      "started_monotonic": 322335.968212304,
+      "started_utc": "2026-10-20T09:14:03+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 322606.60184696,
+      "closed_utc": "2026-10-20T09:18:34+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-direct-seed2026102028-v1-DEV_depth",
+        "7",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-direct-seed2026102028-v1-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1713515,
+        "pid": 1713515,
+        "ppid": 1637467,
+        "session": 1713515,
+        "start_ticks": 32239613
+      },
+      "exit_code": 0,
+      "key": "program-direct-seed2026102028-v1-DEV_depth",
+      "physical_chip": 7,
+      "protocol_sha256": "ff798a6ded7d5f338c8a90ce07f5a1a97be50e81f48cbfc471a897b9ad8ccf94",
+      "started_monotonic": 322396.128663537,
+      "started_utc": "2026-10-20T09:15:03+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 322620.634350997,
+      "closed_utc": "2026-10-20T09:18:48+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-direct-seed2026102028-v1-DEV_interpolation",
+        "3",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-direct-seed2026102028-v1-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1713797,
+        "pid": 1713797,
+        "ppid": 1637467,
+        "session": 1713797,
+        "start_ticks": 32241017
+      },
+      "exit_code": 0,
+      "key": "program-direct-seed2026102028-v1-DEV_interpolation",
+      "physical_chip": 3,
+      "protocol_sha256": "2bb4fb77f62a49f956c3369aa9e6f0284e29d9eeccef80649f866f6df140ab6e",
+      "started_monotonic": 322410.167448914,
+      "started_utc": "2026-10-20T09:15:18+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 322817.161845956,
+      "closed_utc": "2026-10-20T09:22:05+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-direct-seed2026102029-v1-DEV_depth",
+        "7",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-direct-seed2026102029-v1-DEV_depth",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1722408,
+        "pid": 1722408,
+        "ppid": 1637467,
+        "session": 1722408,
+        "start_ticks": 32260661
+      },
+      "exit_code": 0,
+      "key": "program-direct-seed2026102029-v1-DEV_depth",
+      "physical_chip": 7,
+      "protocol_sha256": "16e9490e8f47afdba5f0e9ba80695f1e60b4a572e174c57b6306212cb3ce3b17",
+      "started_monotonic": 322606.607913189,
+      "started_utc": "2026-10-20T09:18:34+00:00"
+    },
+    {
+      "attempts": 4096,
+      "closed_monotonic": 322831.222389208,
+      "closed_utc": "2026-10-20T09:22:19+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-direct-seed2026102029-v1-DEV_interpolation",
+        "3",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-direct-seed2026102029-v1-DEV_interpolation",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1722691,
+        "pid": 1722691,
+        "ppid": 1637467,
+        "session": 1722691,
+        "start_ticks": 32262064
+      },
+      "exit_code": 0,
+      "key": "program-direct-seed2026102029-v1-DEV_interpolation",
+      "physical_chip": 3,
+      "protocol_sha256": "be72419b8624110c892d1a727a0c8d46246db6b52962b5b65a119d6945eab2cd",
+      "started_monotonic": 322620.638654838,
+      "started_utc": "2026-10-20T09:18:48+00:00"
+    },
+    {
+      "attempts": 3072,
+      "closed_monotonic": 322995.671097994,
+      "closed_utc": "2026-10-20T09:25:03+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102028-v1-DEV_composition-partial-controls",
+        "7",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102028-v1-DEV_composition-partial-controls",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1731373,
+        "pid": 1731373,
+        "ppid": 1637467,
+        "session": 1731373,
+        "start_ticks": 32281717
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102028-v1-DEV_composition-partial-controls",
+      "physical_chip": 7,
+      "protocol_sha256": "51fe1cf0d58b98727f7a1ccc071a740a18ce34073e72cef86e87834442ea3f8a",
+      "started_monotonic": 322817.17221854,
+      "started_utc": "2026-10-20T09:22:05+00:00"
+    },
+    {
+      "attempts": 3072,
+      "closed_monotonic": 322997.681464086,
+      "closed_utc": "2026-10-20T09:25:05+00:00",
+      "command": [
+        "/home/ubuntu/ema-trainium/.venv/bin/python",
+        "-u",
+        "/home/ubuntu/dario/local/analysis/supervise_permutation_program_v28_generation_group_20261020.py",
+        "/home/ubuntu/dario/local/nvme-cpt/evaluation/permutation-program-v28-fixed-v1/program-trace-seed2026102029-v1-DEV_composition-partial-controls",
+        "3",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/program-trace-seed2026102029-v1-DEV_composition-partial-controls",
+        "2026-10-20T16:23:24.116996+00:00",
+        "/home/ubuntu/dario/local/diagnostics/permutation-program-v28-fixed-evaluation-v1/EXECUTION/budget-heartbeat.json"
+      ],
+      "controller_identity": {
+        "pgid": 1731659,
+        "pid": 1731659,
+        "ppid": 1637467,
+        "session": 1731659,
+        "start_ticks": 32283123
+      },
+      "exit_code": 0,
+      "key": "program-trace-seed2026102029-v1-DEV_composition-partial-controls",
+      "physical_chip": 3,
+      "protocol_sha256": "11924897daf0178c4df69bcb740ff92cb1af97bf60b2e9d06c8d8ce84ec13a4f",
+      "started_monotonic": 322831.233127824,
+      "started_utc": "2026-10-20T09:22:19+00:00"
+    }
+  ],
+  "reserved_chip_hours": 13.820701801462532,
+  "source_sha256": "cd64e31ee2e9ac28cc03ab7e8148aba35cbb0d4706ffc64ef4d4437ea035ba92",
+  "status": "COMPLETE_ALL_FIXED23_GROUPS_PHYSICALLY_CLOSED_NO_SCORES_REVIEWED",
+  "utc": "2026-10-20T12:01:23+00:00",
+  "wall_seconds": 12959.330080584972
+}

@@ -1,3 +1,51 @@
+<!-- Current handoff 2026-10-20 12:26 UTC; all older entries below are historical -->
+Owner: continue autonomously and patiently until told to stop. Weeks available; no shutdown deadline.
+No active goal. No agents available until Oct24; do not retry agent creation.
+V28 is scientifically COMPLETE. Do NOT rerun training,auditors,preparation,evaluation,
+old CPU queues,readout,independent checker,ordinary producer or bundle builder.
+All23physical jobs/all378880attempts close0; parent54438 and watcher36214 CLOSED0.
+Actual eval13.8207018015reserved chip-hours; science training16.5353719144,qualifications separate.
+Six terminal models retained; latest full4096 per arm/EBS,development64 originals retained.
+Frozen W_S=local/worktrees/controlled-computation-v28-study @ce04236;
+W_E=local/worktrees/controlled-computation-v28-eval @2eb3c1c; both public and clean.
+C=local/diagnostics/permutation-program-v28-complete-readout-io-v2.
+CPU queue63710 completes all five stages0. Original idle19133 stopped143 before any scoring;
+explicit IOv2 fixes repeated atomic stage-history writes. Original source/log/repair receipt retained.
+Primary readout SHAe995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f.
+Independent378880attempts/actions/nodes/92native+cache/all10primary bootstraps PASS.
+Inference gate TRUE,training gate FALSE. T generated18432/18430 versus D11914/1872 of18432.
+T direct1654/1701; length7–10T228/1 of2048. No trained trace caps.
+Second T order emits exactly6transitions on every longer question;2030/2048prefixes correct.
+Ordinary NLLB0=1.9445,T9.1155/8.4536,all task models7.01–9.77; no ordinary LM loss in this study.
+All1792ordinary rows/bootstraps and28HF forwards PASS,maxlogp error2.6703e-5; check exec94083 CLOSED0.
+Stored-trace posthoc diagnostic13864 CLOSED0; original fixed examples unchanged.
+Figures reviewed; publication layoutv3 removes annotation overlap. Numeric CSV bytes match v1.
+Public curated result PREPARED under validation/permutation_program_v28_complete_20261020(.json,/).
+REPORT.md and README updated locally; STATUS/NEXT_STEPS updated. Git commit/push still required.
+Release assets:local/releases/v28-controlled-computation-20261020. Draft upload63330 CLOSED0;
+initial abbreviated Git target was rejected422 before creation,full40-character target succeeded.
+All raw704files grouped in243447426-byte archive SHA8fb008f27e2046ed5061e1eabc36d4e2886d5d595695cc61b2821344b2f38d62;
+training5.3MB,controls2MB. Full archive readback/fsync passes. Portable extraction/readout29467 CLOSED0,
+reproducing exact original readout bytes with relative paths,zero model calls.
+Draftrelease v28-controlled-computation-20261020 has8assets including RELEASE_NOTES.md.
+Remote download22947/notes27400/final verification14188 CLOSED0. All8remote assets/253995793bytes
+match local size,SHA and fsync; remote-readback-receipt.json is saved/copied to the curated result. Do not re-upload/recreate.
+Curated manifests/portable proof/remote receipt/REPORT.md/all file hashes are now complete.
+Next concrete publication steps: commit/push reviewed result/docs. Then
+`gh release edit v28-controlled-computation-20261020 --repo dario-fumarola/useful-thoughts-trainium --target <FULL_NEW_COMMIT_SHA> --draft=false`.
+Verify public release via API,save receipt. Model weights are NOT uploaded; same-instance EBS only.
+After publication,continue CPU inspection/preparation of real source-balanced prefix-to-continuation CPT
+per NEXT_STEPS. No new long training or RL is released yet. No final at this milestone.
+
+Separate engineering candidate:W_B=local/worktrees/causal-decoder-batching-v1 @b25560a,public/clean.
+1873CPU tests plus actual B0 TRAIN8 native/forced32 greedy parity PASS. Warm256actions17.981serial,
+4.633B4,2.431B8 (7.396×). Original timing-overwrite failure preserved; explicit IOv2 closes0;
+total0.174275chip-hours. Report validation/causal_decoder_batching_v1_20261020.json published8827161.
+No sampling/ragged/full128/learned-model or natural-stop hardware integration claim; not used in V28.
+No8B/stack/cache relocation/cloud/IAM/paidteacher/officialTEST or R1234 resume. Keep35GiB disk/512GiBhost floors.
+
+## Historical handoff snapshots (not active instructions)
+
 <!-- Current handoff 2026-10-20 09:42 UTC; older entries below are historical -->
 Owner: keep going patiently, unsupervised~8h from03:19UTC. No deadline/permission question.
 V28 all six actual4096 terminal models physically close0 and independently pass full

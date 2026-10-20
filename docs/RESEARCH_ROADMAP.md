@@ -1,5 +1,22 @@
 # Long-term proof ladder
 
+## V28 boundary — October20
+
+The controlled computation reference now passes its inference gate: generated
+traces solve18432/18432 and18430/18432 new compositions at trained lengths.
+Direct-inference training benefit fails; length7–10 execution scores228/2048
+and1/2048. The second model always stops after six transitions. This establishes
+a useful guided computation procedure within covered lengths,with a sharp
+generalization boundary. It does not establish internalization or autonomy.
+
+Ordinary NLL regresses from1.945 to7.010–9.774 across all task-trained models.
+The recipe has no ordinary LM term. The next mainline preparation therefore
+returns to genuine real-text prefix-to-continuation training with explicit
+ordinary LM supervision,source separation and strong controls. Do not scale RL
+from these specialized checkpoints or run an unlimited length rescue.
+The [complete result](../validation/permutation_program_v28_complete_20261020/REPORT.md)
+preserves both the near-perfect in-range execution and the failed transfer.
+
 ## Current priority — October20, after V26
 
 The north star is **learning reusable computation during pretraining: when it

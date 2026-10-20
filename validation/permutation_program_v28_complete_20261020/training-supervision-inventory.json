@@ -1,0 +1,34 @@
+{
+  "all_six_allocated_input_positions": 201326592,
+  "all_six_allocated_target_head_positions": 50331648,
+  "all_six_nonzero_supervised_positions": 6684480,
+  "answer_supervision_per_model": 655360,
+  "counterfactual_families": 16384,
+  "depth_histogram": {
+    "1": 5462,
+    "2": 5462,
+    "3": 5462,
+    "4": 5462,
+    "5": 5460,
+    "6": 5460
+  },
+  "derivation": "The qualified native packing has five final-field/EOS targets per presentation and six trace tokens per operation. The frozen driver uses original row index in view_for; each question gets two direct and two augmented views across four passes. Pauses are provided input positions without pause CE.",
+  "global_batch": 32,
+  "limits": "Derived from fixed data/packing/order,not a new hardware observation. Allocated positions are not raw corpus tokens or FLOPs. There is no ordinary source-LM objective in this supervised laboratory. Teacher labels and some answer-training contexts differ between recipes; equal updates are not equal label information.",
+  "models": 6,
+  "passes_per_model": 4,
+  "per_model_question_presentations": 131072,
+  "provided_unsupervised_pause_positions_per_pause_model": 1376160,
+  "source_files": {
+    "train/partial_state_driver.py": "48adb6cbf3aca5dd545aa9b35632ac008c72cb0e427eafd9699e96c7c91dd281",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473"
+  },
+  "source_manifest_sha256": "41ddc050ebbaf8abd3e0fb1af2b0c383875313bd6ff13d34b77d7a2040b5aa41",
+  "source_questions_sha256": "e099948826aaf7e262c06beabdd77e78c126cce8fdeed2714fa42db7c2d2d630",
+  "status": "DERIVED_FIXED_TRAIN_SUPERVISION_AND_ALLOCATED_POSITION_INVENTORY_NO_MODEL_CALLS",
+  "trace_extra_supervision_per_trace_model": 1376160,
+  "trace_to_direct_supervised_position_ratio": 3.099853515625,
+  "trace_total_supervision_per_trace_model": 2031520,
+  "unique_questions": 32768,
+  "updates_per_model": 4096
+}

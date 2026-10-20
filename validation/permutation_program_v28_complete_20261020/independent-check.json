@@ -1,0 +1,19 @@
+{
+  "status": "PASS_INDEPENDENT_NATIVE_ACTIONS_NODES_WITNESSES_FAMILY_BOOTSTRAPS_AND_GATES",
+  "utc": "2026-10-20T12:02:19.918891+00:00",
+  "model_calls": 0,
+  "attempts": 378880,
+  "native_vectors": 92,
+  "cache_vectors": 92,
+  "independent_gates": {
+    "inference": true,
+    "training": false
+  },
+  "readout_sha256": "e995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f",
+  "index_sha256": "42c64d8caf40b22817ab5a41259509b98db7e414a9158039d9754ab43b0569e5",
+  "checker_sha256": "a5bc4eb9598525f48ad538c4628500b7ca673fc427d11c04d197b4a182c2a755",
+  "limits": [
+    "Independent arithmetic/count/parser/token/vector/bootstrap reconstruction,not semantic or broad capability validation.",
+    "No fresh model calls or rescoring rule changes. All original failures remain in denominators."
+  ]
+}

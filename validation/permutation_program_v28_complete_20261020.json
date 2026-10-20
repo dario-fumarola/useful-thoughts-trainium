@@ -1,0 +1,460 @@
+{
+  "actual_evaluation_reserved_chip_hours": 13.820701801462532,
+  "actual_training_reserved_chip_hours": 16.5353719144,
+  "evaluation": {
+    "all_conditions_status_counts": {
+      "capped": 2023,
+      "complete": 376828,
+      "unsupported": 29
+    },
+    "cache_vectors": 92,
+    "execution_errors": 0,
+    "groups": 23,
+    "native_vectors": 92,
+    "original_generation_attempts": 378880,
+    "paired_family_bootstrap_draws": 5000,
+    "primary_counterfactual_families": 9216,
+    "primary_questions": 18432,
+    "secondary_questions_per_panel": 2048
+  },
+  "experiment_id": "controlled-computation-v28",
+  "files": {
+    "validation/permutation_program_v28_complete_20261020/COMPLETE.json": "a2a66fb92802adf26ec33f207c3da13430b7bcfaa826ca371f7bf1b5127af07d",
+    "validation/permutation_program_v28_complete_20261020/REPORT.md": "2153d25a39cd34de2e8e44c3f5d46c542b1ce81a5e297d20f36ba945d3e2c6f6",
+    "validation/permutation_program_v28_complete_20261020/absolute-answers-and-costs.csv": "0449a52c4a2313903dff620bdc072c82ac77c2a4736fcacc02d0640be4cc438a",
+    "validation/permutation_program_v28_complete_20261020/complete-answer-accuracy.png": "d454bb0d863987f9b9c7a5ab501f5a918e3284fcaf875d091e98cee44dc9f935",
+    "validation/permutation_program_v28_complete_20261020/complete-answer-accuracy.svg": "de2cac8d5b9597f223a298705fb9bdd71016e25cb22e8aff816d7286c75d82a3",
+    "validation/permutation_program_v28_complete_20261020/depth-profiles.png": "fe3d0e229bd188f5e52778066955fb1437be84577b925d8be88c609d75caaf2f",
+    "validation/permutation_program_v28_complete_20261020/depth-profiles.svg": "ac30021d62cd90f8bd9bc716eb351d9ad0be969ab8fbe121d26b30fd8f7dcb16",
+    "validation/permutation_program_v28_complete_20261020/execution-completion.json": "e914682ef68b3dc85216f45a94cae3b8e8d09edeee1fc6617f1aeb7c1f1a7025",
+    "validation/permutation_program_v28_complete_20261020/fixed-examples.json": "0a69907885a60da9d5a0a6c41e9bdb6afa27ce3bc222be64276fd1019f11bc44",
+    "validation/permutation_program_v28_complete_20261020/host-sources/audit_permutation_program_v28_decoder_qualification_20261020.py": "98319258b0d92542a7bf4578f43abc0bcb6160c36e7cad8583d47dc92c620979",
+    "validation/permutation_program_v28_complete_20261020/host-sources/audit_permutation_program_v28_job_20261020.py": "b10f824020368d805cbaafc12a4826f23a49eab2b2200ca7fe40636690c5a2e3",
+    "validation/permutation_program_v28_complete_20261020/host-sources/bundle_permutation_program_v28_release_20261020.py": "91d10d4da6b64edb60e9f192ec677eb8a2dca3d7a002505d72ab048673aa11c8",
+    "validation/permutation_program_v28_complete_20261020/host-sources/check_permutation_program_v28_evaluation_time_20261020.py": "bf941366c050557d4c2f9cff5cd684a67d91dbe8b27a6c87e92442a9b8fe9223",
+    "validation/permutation_program_v28_complete_20261020/host-sources/check_permutation_program_v28_ordinary_20261020.py": "a6506a53d9fb2594f02f0f107b33214d478f2e3c0fb0497159c4b00ffaa9fcf4",
+    "validation/permutation_program_v28_complete_20261020/host-sources/check_permutation_program_v28_readout_20261020.py": "a5bc4eb9598525f48ad538c4628500b7ca673fc427d11c04d197b4a182c2a755",
+    "validation/permutation_program_v28_complete_20261020/host-sources/check_permutation_program_v28_readout_structure_20261020.py": "9f1f8a8daa12ce9a58b82e1b328aa562d48587a6b4ceeea9d8faddcab56e2f98",
+    "validation/permutation_program_v28_complete_20261020/host-sources/check_permutation_program_v28_recovery_20261020.py": "9097b2fc2c797953619025ee0d378c1f702317bf2e4828f56a8f5e475822a5da",
+    "validation/permutation_program_v28_complete_20261020/host-sources/check_permutation_program_v28_second_recovery_20261020.py": "26b4c70d6e50526a56cffae176038bd96613113c54288fd50082309079b324f6",
+    "validation/permutation_program_v28_complete_20261020/host-sources/collect_permutation_program_v28_examples_20261020.py": "113b24df18548aab159400a33d718e5dd0704e05dc66273200c18bfb80b0ef43",
+    "validation/permutation_program_v28_complete_20261020/host-sources/diagnose_permutation_program_v28_stored_traces_20261020.py": "0b64a6a26706083f8ff93733de0418dd58b4b1dbdac422c67f87072ef9b6351b",
+    "validation/permutation_program_v28_complete_20261020/host-sources/finish_permutation_program_v28_fixed_readout_20261020.py": "81618137015ce7fbab9895159a7dacaf7eb470ea389cbc46f17e7dbd164dd263",
+    "validation/permutation_program_v28_complete_20261020/host-sources/finish_permutation_program_v28_fixed_readout_io_v2_20261020.py": "9f61926cd03261e5fa0a177893d91557fbe64b43bc397a5b71b253c58cf5f0e7",
+    "validation/permutation_program_v28_complete_20261020/host-sources/permutation_program_v28_eval_budget_20261020.py": "60982e33a668679c6d0300ef41a33eafeb0fa658d3d3fc94e68e5e338be66c2d",
+    "validation/permutation_program_v28_complete_20261020/host-sources/permutation_program_v28_ordinary_CPU_20261020.py": "3354f108fbe0743ee01c4691c365862f846b1795ba8748c3c2d351d13ac5e5f0",
+    "validation/permutation_program_v28_complete_20261020/host-sources/permutation_program_v28_secondary_reference_20261020.py": "4f2a9867fdd923a5631bd8150617f12b24488ec9e9ec9c252d666458d3858116",
+    "validation/permutation_program_v28_complete_20261020/host-sources/plot_permutation_program_v28_20261020.py": "6c32f6cb29dfd70fc02d5035ed752a5f72e199844c9b0ae9d08ded13544eed08",
+    "validation/permutation_program_v28_complete_20261020/host-sources/plot_permutation_program_v28_layout_v2_20261020.py": "e449f353284990e4b9b089810d57440f2946f3aa9e6dced4d5862140b657bb55",
+    "validation/permutation_program_v28_complete_20261020/host-sources/plot_permutation_program_v28_layout_v3_20261020.py": "6d97b20403076cd150a0e3e39aa835d11ad55e3131a1645b49aa53bf9c10a10e",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_all_evaluations_20261020.py": "b18eb9d10d8ab6c9ea10c01bcdde3a42b0e25c48bf0cb060237bca8b4c3f3a82",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_all_evaluations_io_v2_20261020.py": "c61bc188f17e924c318bf6be5855a6fc21e5ffa772ab02a807aef8fd817c845d",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_audit_20261020.py": "3fe55e352c13fc2d59b4ac6eb9d70d87008f25afcbba46cd5cf1ff84aec32ade",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_decoder_qualification_20261020.py": "9c095f3e436add71e762cdc7cfe25bf11d22da7da62a3460d12d82b84df3d3f1",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_qualification_20261020.py": "5b6b57c3aa39265d087a031882fd0b3754f8c1b8d1bc5488fe00cf889bbc4249",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_study_20261020.py": "5a1865823e26c3d76764e25e5355d279d0b6134e1dd646157a011552632ab481",
+    "validation/permutation_program_v28_complete_20261020/host-sources/prepare_permutation_program_v28_supervisor_20261020.py": "3d003f206de25ffc968ef264a0553d6518b12f56a4425c72664c56d32f217141",
+    "validation/permutation_program_v28_complete_20261020/host-sources/protect_permutation_program_v28_evaluations_20261020.py": "33326b963839866751f6df3c7278a8042ca93d634dbc127e8a0f963f7df75534",
+    "validation/permutation_program_v28_complete_20261020/host-sources/publish_permutation_program_v28_all_terminals_20261020.py": "811e591ae5717b6a33b18d4cd40dabf78301e4ca5e56a2084edc813f1b5210f6",
+    "validation/permutation_program_v28_complete_20261020/host-sources/publish_permutation_program_v28_continuation_20261020.py": "d6cca2115c52226b57487099e69318be034e5b96f356576b89cb248deeb276fe",
+    "validation/permutation_program_v28_complete_20261020/host-sources/publish_permutation_program_v28_first_wave_20261020.py": "29337eea491083848aab43b40ba82dbdd736e05f48c035586b7ff7a0c6c4f7d0",
+    "validation/permutation_program_v28_complete_20261020/host-sources/publish_permutation_program_v28_periodic_20261020.py": "e96a92d40fce8f8bdc6497a9a20b0f3c05668944d2665c34aedd59d8a5882829",
+    "validation/permutation_program_v28_complete_20261020/host-sources/publish_permutation_program_v28_readout_20261020.py": "a9b50da371a78db164a6cce440665818369d5629ad2b7ec364d724a76ff31a5d",
+    "validation/permutation_program_v28_complete_20261020/host-sources/release_permutation_program_v28_continuation_20261020.py": "91866812bb408eeb82a5dd59426084a721f7eb830d84ea85bf235a7680e95880",
+    "validation/permutation_program_v28_complete_20261020/host-sources/release_permutation_program_v28_first64_20261020.py": "2f61d4eebc2ddb1fd71edae21744dbf5efe160263712f8b68e2ba12b86ce5e2c",
+    "validation/permutation_program_v28_complete_20261020/host-sources/release_permutation_program_v28_fixed_evaluation_20261020.py": "1d69bffca9a582377a21a3c68c34c31833de671dae8bb32903c7844f1618f51b",
+    "validation/permutation_program_v28_complete_20261020/host-sources/release_permutation_program_v28_qualification_20261020.py": "50de6c46da209bb6bf352cb0d1870eb4b226d91f0c4506a76b9f8e7ced2b90f3",
+    "validation/permutation_program_v28_complete_20261020/host-sources/release_permutation_program_v28_second_continuation_20261020.py": "383359df8e7c30a23eb1bbd6008c4f1b515c6be06c36aa5d9b81d21924166814",
+    "validation/permutation_program_v28_complete_20261020/host-sources/release_permutation_program_v28_second_seed_20261020.py": "72f3f93f9dafd602368dbd24fd4f34669536a03d85e9d0ef48137fbfad80cc58",
+    "validation/permutation_program_v28_complete_20261020/host-sources/run_permutation_program_v28_fixed_evaluation_20261020.py": "cd64e31ee2e9ac28cc03ab7e8148aba35cbb0d4706ffc64ef4d4437ea035ba92",
+    "validation/permutation_program_v28_complete_20261020/host-sources/supervise_permutation_program_v28_generation_group_20261020.py": "24e5617eddcada07f81f3f45d8936f531d87964d811ccaad8a0f4bee8e5ad52a",
+    "validation/permutation_program_v28_complete_20261020/independent-check.json": "2ab23d11cba7e448f0e9f70c8e8c77feb699f48ac62930cbd37a82a8d011ff10",
+    "validation/permutation_program_v28_complete_20261020/offline-analysis-IO-repair-v2.json": "276ec9498a5356e5750cc3ebd7050525b5e54d1c55da04285d7fe16a36d7e152",
+    "validation/permutation_program_v28_complete_20261020/ordinary-NLL.png": "f2ae437d2174a7e1282e0b2bd58ccb39cdded2e246a110076c688f216c332e9d",
+    "validation/permutation_program_v28_complete_20261020/ordinary-NLL.svg": "ec64c0291917acd5ecb2b9aba7629a840c109d7c193bc1ae0eeebd975d9e46c2",
+    "validation/permutation_program_v28_complete_20261020/ordinary-independent-check.json": "8dc6c017a5a1a2d0ad5043623efea211bc91007500919073f0e5f00450495f17",
+    "validation/permutation_program_v28_complete_20261020/ordinary-independent-forward-plan.json": "85b7c1917319b7c546f29bf464063f3832390d43231e33afbc40d030148763fa",
+    "validation/permutation_program_v28_complete_20261020/ordinary-page-token-scores.jsonl.gz": "42e011b841077fa4901a7e63bb8538e891bababb6990397e8191e83de0424b0f",
+    "validation/permutation_program_v28_complete_20261020/ordinary-protocol.json": "cc89d1edcb90ba95a632b09f5d3c97071ef0365e9b88c6a9d1927987691bb9c4",
+    "validation/permutation_program_v28_complete_20261020/ordinary-result.json": "1eee9f9187518205cb72b25dd5f3600ddecef0bb47fde2c17a52439de5ad15c0",
+    "validation/permutation_program_v28_complete_20261020/portable-replay-check.json": "940f5b52230833b7eeed0cd5ad295771692b890f8e3b5a7549ff23a99faf8d91",
+    "validation/permutation_program_v28_complete_20261020/primary-contrasts.csv": "a56e440ef00c10aaab7db2c8cee3ab771b7569634323eaa00a39e721d3f13621",
+    "validation/permutation_program_v28_complete_20261020/primary-contrasts.png": "b85a3a0968170bdc7539379829165f6e0452f25b38a741e3e2a1c78787746a31",
+    "validation/permutation_program_v28_complete_20261020/primary-contrasts.svg": "4c095238875e77cd1f326b77be1f8a66745f567358109fa9ee7f77baba28c6eb",
+    "validation/permutation_program_v28_complete_20261020/readout.json": "e995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f",
+    "validation/permutation_program_v28_complete_20261020/release-SHA256SUMS": "1242822a116e30b37a1b3206d39504100bca36b6f98ca7fe1df858d110f0dc57",
+    "validation/permutation_program_v28_complete_20261020/release-asset-manifest.json": "f5ed11b9b65f8d17038b9ce67815101b7c9e1c7b0812169511d4eb7f4b42c1d2",
+    "validation/permutation_program_v28_complete_20261020/remote-asset-readback.json": "9b1208399fd5da5896e6ed0411901f17b417d80e4da9dc39a137594900b947a4",
+    "validation/permutation_program_v28_complete_20261020/secondary-reference.json": "ec7e0fafd399465c5ffe97ce566a6a86181efee78f9c12ba9cccfc4d22cf133c",
+    "validation/permutation_program_v28_complete_20261020/stage-history.json": "7247c8535eaec431c7560975f9c18397ad8f2a59bd31b3cbc9aee6e1a5f8f7bc",
+    "validation/permutation_program_v28_complete_20261020/stored-trace-diagnosis.json": "1adf76fde3edbca3a3ff2d7a774ab50f8a4d5cb847a93fbc06cea448dbd37d24",
+    "validation/permutation_program_v28_complete_20261020/training-supervision-inventory.json": "8a8ab03e691b1083525adba7387fae52094541b66474648bb4867dc0952bfcc6"
+  },
+  "gates": {
+    "inference": true,
+    "training": false
+  },
+  "generation_cost": {
+    "direct_actions_per_question": 2.0,
+    "limits": "Provided positions and generated actions are different execution types; no equal-FLOP claim.",
+    "primary_trace_actions_per_question": 35.0,
+    "provided_pause_positions_per_question": 30.0,
+    "trace_to_direct_generated_action_ratio": 17.5
+  },
+  "limits": [
+    "Supervised finite-state laboratory,not ordinary continued pretraining. Two data-order seeds do not provide broad training-seed uncertainty.",
+    "Trace recipes change auxiliary targets and some answer-training contexts. Equal source exposure/updates do not equal label information or measured FLOPs.",
+    "Pause positions are supplied in parallel prefill; they do not match autoregressive compute. B0 has one fixed demonstration,not an optimized ceiling.",
+    "All original failures/caps/unsupported answers remain. Composition,interpolation and length panels are separate; no pooling or checkpoint selection.",
+    "Original model/optimizer states and all raw outputs remain on same-instance EBS. Public release assets contain synthetic evidence,not model weights."
+  ],
+  "longer_trace_correct": {
+    "2026102028": 228,
+    "2026102029": 1
+  },
+  "ordinary_mean_token_NLL": {
+    "B0": 1.944522540528409,
+    "program-direct-seed2026102028-v1": 7.010214694773225,
+    "program-direct-seed2026102029-v1": 9.7736725439363,
+    "program-pause-seed2026102028-v1": 9.410994225800891,
+    "program-pause-seed2026102029-v1": 7.51098562224027,
+    "program-trace-seed2026102028-v1": 9.115549543821203,
+    "program-trace-seed2026102029-v1": 8.453571366013605
+  },
+  "primary_composition": [
+    {
+      "accuracy": 0.6463758680555556,
+      "arm": "direct",
+      "correct": 11914,
+      "items": 18432,
+      "mode": "direct",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 0.6408420138888888,
+      "arm": "direct",
+      "correct": 11812,
+      "items": 18432,
+      "mode": "empty",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 0.08675130208333333,
+      "arm": "pause",
+      "correct": 1599,
+      "items": 18432,
+      "mode": "direct",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 0.08550347222222222,
+      "arm": "pause",
+      "correct": 1576,
+      "items": 18432,
+      "mode": "pause",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 0.08973524305555555,
+      "arm": "trace",
+      "correct": 1654,
+      "items": 18432,
+      "mode": "direct",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 0.08875868055555555,
+      "arm": "trace",
+      "correct": 1636,
+      "items": 18432,
+      "mode": "empty",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 1.0,
+      "arm": "trace",
+      "correct": 18432,
+      "items": 18432,
+      "mode": "trace",
+      "seed": 2026102028
+    },
+    {
+      "accuracy": 0.1015625,
+      "arm": "direct",
+      "correct": 1872,
+      "items": 18432,
+      "mode": "direct",
+      "seed": 2026102029
+    },
+    {
+      "accuracy": 0.10150824652777778,
+      "arm": "direct",
+      "correct": 1871,
+      "items": 18432,
+      "mode": "empty",
+      "seed": 2026102029
+    },
+    {
+      "accuracy": 0.09412977430555555,
+      "arm": "pause",
+      "correct": 1735,
+      "items": 18432,
+      "mode": "direct",
+      "seed": 2026102029
+    },
+    {
+      "accuracy": 0.0940212673611111,
+      "arm": "pause",
+      "correct": 1733,
+      "items": 18432,
+      "mode": "pause",
+      "seed": 2026102029
+    },
+    {
+      "accuracy": 0.09228515625,
+      "arm": "trace",
+      "correct": 1701,
+      "items": 18432,
+      "mode": "direct",
+      "seed": 2026102029
+    },
+    {
+      "accuracy": 0.09375,
+      "arm": "trace",
+      "correct": 1728,
+      "items": 18432,
+      "mode": "empty",
+      "seed": 2026102029
+    },
+    {
+      "accuracy": 0.9998914930555556,
+      "arm": "trace",
+      "correct": 18430,
+      "items": 18432,
+      "mode": "trace",
+      "seed": 2026102029
+    }
+  ],
+  "primary_inference": {
+    "2026102028": {
+      "trace_minus_direct_model": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.34461669921875004,
+          0.3625217013888889
+        ],
+        "control_correct": 11914,
+        "difference_b_minus_a": 0.3536241319444444,
+        "documents": 9216,
+        "fixed": 6518,
+        "harmed": 0,
+        "items": 18432,
+        "meets_practical_and_interval_rule": true,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 18432
+      },
+      "trace_minus_same_direct": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.9060872395833334,
+          0.9142795138888888
+        ],
+        "control_correct": 1654,
+        "difference_b_minus_a": 0.9102647569444444,
+        "documents": 9216,
+        "fixed": 16778,
+        "harmed": 0,
+        "items": 18432,
+        "meets_practical_and_interval_rule": true,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 18432
+      },
+      "trace_minus_trained_pause": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.9104275173611112,
+          0.9184041341145833
+        ],
+        "control_correct": 1576,
+        "difference_b_minus_a": 0.9144965277777778,
+        "documents": 9216,
+        "fixed": 16856,
+        "harmed": 0,
+        "items": 18432,
+        "meets_practical_and_interval_rule": true,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 18432
+      }
+    },
+    "2026102029": {
+      "trace_minus_direct_model": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.8939344618055556,
+          0.9027235243055556
+        ],
+        "control_correct": 1872,
+        "difference_b_minus_a": 0.8983289930555556,
+        "documents": 9216,
+        "fixed": 16558,
+        "harmed": 0,
+        "items": 18432,
+        "meets_practical_and_interval_rule": true,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 18430
+      },
+      "trace_minus_same_direct": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.9033732096354167,
+          0.9119466145833334
+        ],
+        "control_correct": 1701,
+        "difference_b_minus_a": 0.9076063368055556,
+        "documents": 9216,
+        "fixed": 16729,
+        "harmed": 0,
+        "items": 18432,
+        "meets_practical_and_interval_rule": true,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 18430
+      },
+      "trace_minus_trained_pause": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          0.9014756944444444,
+          0.9101019965277778
+        ],
+        "control_correct": 1733,
+        "difference_b_minus_a": 0.9058702256944444,
+        "documents": 9216,
+        "fixed": 16698,
+        "harmed": 1,
+        "items": 18432,
+        "meets_practical_and_interval_rule": true,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 18430
+      }
+    }
+  },
+  "primary_training": {
+    "2026102028": {
+      "trained_direct_minus_direct_model": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.5667317708333334,
+          -0.54676513671875
+        ],
+        "control_correct": 11914,
+        "difference_b_minus_a": -0.556640625,
+        "documents": 9216,
+        "fixed": 522,
+        "harmed": 10782,
+        "items": 18432,
+        "meets_practical_and_interval_rule": false,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 1654
+      },
+      "trained_direct_minus_pause_direct": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.0022786458333333335,
+          0.008246527777777778
+        ],
+        "control_correct": 1599,
+        "difference_b_minus_a": 0.002983940972222222,
+        "documents": 9216,
+        "fixed": 1276,
+        "harmed": 1221,
+        "items": 18432,
+        "meets_practical_and_interval_rule": false,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 1654
+      }
+    },
+    "2026102029": {
+      "trained_direct_minus_direct_model": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.01454128689236111,
+          -0.003851996527777778
+        ],
+        "control_correct": 1872,
+        "difference_b_minus_a": -0.00927734375,
+        "documents": 9216,
+        "fixed": 1173,
+        "harmed": 1344,
+        "items": 18432,
+        "meets_practical_and_interval_rule": false,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 1701
+      },
+      "trained_direct_minus_pause_direct": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "ci95": [
+          -0.007108561197916666,
+          0.00341796875
+        ],
+        "control_correct": 1735,
+        "difference_b_minus_a": -0.0018446180555555555,
+        "documents": 9216,
+        "fixed": 1161,
+        "harmed": 1195,
+        "items": 18432,
+        "meets_practical_and_interval_rule": false,
+        "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty.",
+        "treatment_correct": 1701
+      }
+    }
+  },
+  "principal_findings": [
+    "Inference gate passes in both orders on held compositions at trained depths4\u20136; full verified trace execution matches near-perfect answer accuracy.",
+    "Direct-inference training gate fails; the strongest direct control scores11914/18432 versus1654/18432 for that trace model without traces.",
+    "Length generalization fails: trace answers228/2048 and1/2048 at depths7\u201310. Second order emits exactly6 transitions on all2048;2030 are correct six-step prefixes.",
+    "Ordinary prediction is severely degraded in every task-trained arm. Twenty-eight independent HF forwards,four pages/model, validate the stored score vectors.",
+    "Provided correct partial states yield0/1024 in each trace model; final answers mostly copy their last supplied state. This untrained partial-completion interface omits the root computation.",
+    "No evidence of autonomous discovery,internalization,general pretraining benefit or matched inference-FLOP efficiency follows."
+  ],
+  "raw_artifact_release": {
+    "local_archives_full_readback_fsync": true,
+    "portable_replay_readout_sha256": "e995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f",
+    "readback_performed_while_draft": true,
+    "remote_readback": "PASS_ALL8_REMOTE_ASSETS_FULL_DOWNLOAD_SIZE_SHA256",
+    "remote_verified_bytes": 253995793,
+    "tag": "v28-controlled-computation-20261020",
+    "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v28-controlled-computation-20261020"
+  },
+  "scientific_question": "Do verified generated states improve held computation beyond direct training and provided pauses,and what remains without the written trace?",
+  "source_commits": {
+    "evaluation": "2eb3c1cf09d14604cc9b5dd0f97562656e95b6a5",
+    "training": "ce04236ecd4d7eaa9dae8471821e600561748069"
+  },
+  "status": "COMPLETE_FIXED_TWO_ORDER_CONTROLLED_COMPUTATION_REFERENCE",
+  "training": {
+    "base": "Qwen3-1.7B-Base",
+    "families": 16384,
+    "models": 6,
+    "nonzero_targets_direct_model": 655360,
+    "nonzero_targets_trace_model": 2031520,
+    "order_seeds": [
+      2026102028,
+      2026102029
+    ],
+    "ordinary_LM_training_term": false,
+    "passes": 4,
+    "questions": 32768,
+    "same_initial_released_weights": true,
+    "trace_to_direct_target_ratio": 3.099853515625,
+    "updates_per_model": 4096
+  }
+}
