@@ -21,7 +21,7 @@ from train.useful_note_sft_data import EOS, packed
 SCHEMA = 'real-cpt-scaffold-v29-cpu-v1'
 ARMS = ('raw', 'format', 'computation')
 CONTINUATION_WEIGHT = 0.5
-WORK_WEIGHT = 0.1
+WORK_WEIGHT = 1.0
 ORDINARY_PER_CALCULATION = 3
 WIDTH = 640
 TARGET_SLOTS = 640

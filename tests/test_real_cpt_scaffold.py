@@ -109,7 +109,7 @@ def test_grouped_order_preserves_all_sources_and_exact_auxiliary_fraction():
     for start in range(0, len(a), 8):
         assert sum(rows[i]['kind']=='calculation' for i in a[start:start+8]) == 2
     assert scaffold.auxiliary_weights(calculation_examples=2, source_examples=8) == {
-        'work': .025, 'continuation': .125}
+        'work': .25, 'continuation': .125}
     rows[0]['document_id'] = rows[-1]['document_id']
     with pytest.raises(ValueError): scaffold.grouped_order(rows, seed=29, passes=2)
 
