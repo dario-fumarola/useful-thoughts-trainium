@@ -22,9 +22,14 @@ an unchanged B0 reference and a causal learned gate, with explicit learning and
 control comparisons. Its conservative pointwise-capped variant is rejected by
 a saved-score upper bound. Without that cap, the original greedy scores admit a
 2.063-nat tokenwise hindsight bound; prospective recovery is untested. The revised
-variant remains unexecuted. Bounded CPU [source/power feasibility](validation/causal_reader_feasibility_plan_20261021.json)
-is active;1,964CPU checks pass, and guarded feature/head workers are implemented.
-Final source quotas and actual-model causality/cost remain unresolved. No released-model calls, experiment-head learning, training or RL are released. The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
+variant remains unexecuted. Its bounded CPU [feasibility check](validation/causal_reader_feasibility_complete_20261021.json)
+is now **closed without model execution**: the fixed12-shard pool supplies6,095eligible
+unique calculations versus6,672required across TRAIN/DEV/qualification, short by577.
+An independent recount agrees; the sample size and exclusions remain unchanged.
+The guarded workflow passes1,964CPU tests, but no released-model feature call,
+selector fit or actual numerical/cost qualification occurred. This is a limitation
+of the fixed source pool—not a tested selector failure or a global data-impossibility result.
+The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
 confirms that V29's raw arm reweights continuations; the source review does not
 identify why fresh-document prediction regressed.
 

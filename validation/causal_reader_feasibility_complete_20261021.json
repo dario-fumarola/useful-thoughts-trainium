@@ -1,0 +1,131 @@
+{
+  "completed_utc": "2026-10-21T04:51:36+00:00",
+  "decision": "Close the fixed12-shard feasibility attempt without model qualification, feature extraction or experiment-head fitting. Preserve N4096 and all exclusions; no automatic source expansion, smaller cohort or retry.",
+  "evidence_files": {
+    "validation/causal_reader_feasibility_complete_20261021/arithmetic-availability.json": "b417cb18055dc5a260934c81bbd48272c3799dd87167ecc382c3c638e2a96fce",
+    "validation/causal_reader_feasibility_complete_20261021/availability-check-exit.json": "000167f03eb5d2c318f9980f5431d60c68cee69872fe7f8c4bdfe9ad0fedaeed",
+    "validation/causal_reader_feasibility_complete_20261021/filter.json": "a543fda4420cb71b4ed46dfe0526b5b1125b666556050bd597102d2bdec4633e",
+    "validation/causal_reader_feasibility_complete_20261021/independent-availability-check.json": "a31ef15b65fe192c7ea0276f64c2e85ae8f0e4e4088b060618dfb214761b19fd",
+    "validation/causal_reader_feasibility_complete_20261021/process-exit.json": "6ee7f4d685df65216354736e11c716ae508ba0ab4e90468a9d71a6f5f05b8f86"
+  },
+  "execution": {
+    "actual_model_qualification_run": false,
+    "experiment_head_fits": 0,
+    "feature_extractions": 0,
+    "new_accelerator_execution_reserved_chip_hours": 0.0,
+    "released_model_calls": 0,
+    "scientific_execution_released": false
+  },
+  "identity": "causal-reader-feasibility-20261021",
+  "limits": [
+    "This is a data-availability decision under the fixed12-shard/prefix/exclusion/packing rules, not a failed causal-selector experiment or a capability result.",
+    "The independent check reconstructs all saved acceptance/filter/AST counts and curation/source membership coverage, using shared exact parsing/verified-work definitions. No complete selected cohort exists to qualify.",
+    "It does not establish that all FineMath or another source cannot supply a new powered protocol. It does not justify weakening the current protocol.",
+    "Guarded implementation and1964CPU checks remain preparation; actual native numerical/causality/cost qualification and scientific efficacy are untested.",
+    "V29/V30 outcomes and the closed predictive-reward branch are unchanged. No writer RL, CPT, model-size increase or official TEST follows."
+  ],
+  "power_and_cost": {
+    "actual_new_workload_profile_run": false,
+    "normal_planning_joint_lower_under_explicit_alternative": 0.9172359953996483,
+    "old_timing_proxy_reserved_chip_hours": 7.78019408862417,
+    "plan": "validation/causal_reader_feasibility_plan_20261021.json",
+    "proposed_total_reserved_chip_hour_ceiling": 8.0,
+    "prospective_DEV_each": 4096
+  },
+  "source_preparation": {
+    "accepted_equation_documents": 13810,
+    "exit_reason": "Declared complete calculation quota unavailable after full fixed-source scan; deliberate pre-model gate, not a model execution error.",
+    "ordinary_cohort_preparation_reached": false,
+    "original_files": [
+      {
+        "bytes": 284239808,
+        "filename": "finemath-4plus/train-00060-of-00064.parquet",
+        "sha256": "d8ee743cf9f6eaa336b99c50b556c6aea1fa34a8209bbd3220716444485aa27f"
+      },
+      {
+        "bytes": 286510764,
+        "filename": "finemath-4plus/train-00059-of-00064.parquet",
+        "sha256": "db590431963f0915340b87a00ef011e0c837b088b7b15e992bc22fb7c3b85c95"
+      },
+      {
+        "bytes": 288566069,
+        "filename": "finemath-4plus/train-00058-of-00064.parquet",
+        "sha256": "2a66a63e3f1a431bc08b67cdd3a4e3bf74c21efadf5632df8a0179968bedc8cd"
+      },
+      {
+        "bytes": 285845878,
+        "filename": "finemath-4plus/train-00057-of-00064.parquet",
+        "sha256": "2c4652d889bfb0ae24464c05c9d77cd2cff4e69f8f6ade0062acc67eac35ab2f"
+      },
+      {
+        "bytes": 285402320,
+        "filename": "finemath-4plus/train-00056-of-00064.parquet",
+        "sha256": "e06d3ada6b375560cff610049221a23df5cd881cd8463d5b18841d09daf420c3"
+      },
+      {
+        "bytes": 284921841,
+        "filename": "finemath-4plus/train-00055-of-00064.parquet",
+        "sha256": "a097663e3e928e36c2713aedfa1b48c6784e6874ebd57570c1b591c9cf2a4247"
+      },
+      {
+        "bytes": 287848798,
+        "filename": "finemath-4plus/train-00054-of-00064.parquet",
+        "sha256": "fbe428def745237f8c4d7c175ed07700bfd043018b4ffb72f52f6308e737b3e9"
+      },
+      {
+        "bytes": 288438678,
+        "filename": "finemath-4plus/train-00053-of-00064.parquet",
+        "sha256": "e91ed59b94cab8cd1a763c6e768eca1fe52183c4029a9f81896836cf8df8332c"
+      },
+      {
+        "bytes": 286603913,
+        "filename": "finemath-4plus/train-00052-of-00064.parquet",
+        "sha256": "f43826fecf00f41cdf78f3c4d1b17bd80b8c816f5b53414ee2bf0fd51c55a0f0"
+      },
+      {
+        "bytes": 288516393,
+        "filename": "finemath-4plus/train-00051-of-00064.parquet",
+        "sha256": "79e67c3d2bea7331f5c0d0def3aded21a2101852e26feddcda2f87491119e6d8"
+      },
+      {
+        "bytes": 288979859,
+        "filename": "finemath-4plus/train-00050-of-00064.parquet",
+        "sha256": "493e3155e54f0b43e350cbd732f2733949d9237b6e65025f473d8aec81bb631b"
+      },
+      {
+        "bytes": 287762910,
+        "filename": "finemath-4plus/train-00049-of-00064.parquet",
+        "sha256": "844b6c543e8493b8570fc83f5f152ebaa4a324f36f86ded5c8b22158242f5976"
+      }
+    ],
+    "parquet_rows": 1256148,
+    "prior_expression_rejections": 2162,
+    "producer_exit_code": 1,
+    "required_calculations": {
+      "DEV": 4096,
+      "TRAIN": 2560,
+      "qualification": 16,
+      "total": 6672
+    },
+    "selected_complete_cohorts_created": false,
+    "short_prefix_rejections": 5072,
+    "shortfall": 577,
+    "source_clean_documents": 1058401,
+    "source_commit": "cb3a47b",
+    "source_output_bytes": 11751053415,
+    "source_output_cap_bytes": 17179869184,
+    "unique_eligible_calculations": 6095,
+    "unsupported_pack_rejections": 19,
+    "within_pool_exact_expression_duplicates": 462
+  },
+  "status": "CLOSED_NO_GO_FIXED_SOURCE_QUOTA",
+  "verification": {
+    "CPU_check_log_sha256": "4d32fe5b6c07277eef83c9302abafa2a4efd78e516c1da29aa182363d45322bb",
+    "CPU_smoke_and_compile": "PASS",
+    "CPU_tests": 1964,
+    "complete_cohort_Parquet_native_check_run": false,
+    "count_check_source_sha256": "bae2d0f38561092a2dc44b84def1b7878ebe61d052b30b44886c8b60be6db4cb",
+    "documents_in_curation_and_membership_audit": 1058401,
+    "independent_count_check": "PASS_SAVED_POOL_INSUFFICIENCY_COUNT_NOT_COHORT_QUALIFICATION"
+  }
+}

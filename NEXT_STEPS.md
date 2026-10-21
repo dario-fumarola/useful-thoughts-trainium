@@ -1,20 +1,15 @@
 # Current queue
 
-CPU source/power/runtime feasibility is active; pretrained-model and head execution remain held.
+The bounded selector feasibility attempt is CLOSED_NO_GO_FIXED_SOURCE_QUOTA. No model job is queued.
 
-- Source preparation uses frozen cb3a47b, PID2199441/session19608; log local/diagnostics/causal-reader-feasibility-v1/prepare.log; deadline2026-10-21T05:59:03.478945+00:00.
-- Fixed12 unused TRAIN shards60..49, four CPU cores,16GiB output cap, no automatic retry/filter weakening. Cohort quotas: TRAIN5120,DEV4096calculation+4096ordinary,qualification32.
-- N4096 is fixed from the explicit planning alternative before new source outcomes. Normal-approximation joint passage lower bound.917 assumes SD4, B0 gain.5, both control gains.25, ordinary gain0. See validation/causal_reader_feasibility_plan_20261021.json.
-- Guarded generation/feature/head workers and finite supervisor are implemented;1963CPU tests+smoke/compile pass. No actual model call before the source/static/cost assessment. All four TRAIN-only terminal heads freeze before DEV readout.
-
-- Read docs/CAUSAL_READER_PROPOSAL.md and validation/causal_reader_gate_design_20261021.json.
-- Actual unchanged B0 is the reference; one frozen V29 note/reader and a causal supervised head form the proposed assisted path. An off switch is exact; active retention is empirical.
-- The pointwise-capped variant is rejected: hindsight best8/token routing averages only0.137nats per16 on saved V30 candidates, below the earlier0.25 target. No model call or policy sweep produced that bound.
-- The fixed greedy-note unrestricted tokenwise hindsight bound is2.063nats/16; actual greedy use loses1.429 versus B0. This is exploratory complementary-information evidence, not a causal gate or a release. See validation/greedy_token_opportunity_20261021.json.
-- The unrestricted draft must beat B0, a TRAIN-fitted constant blend and a raw-model ensemble on fresh full16 likelihood, with an active ordinary-suffix guard. It cannot show improved base weights or internalization.
-- Record gate-closure/gradient trajectories and prevalence-weighted outcomes. A permitted ordinary cost can exceed calculation gains under a natural text mixture.
-- Fresh-source quotas/independent source audit and actual feature causality/normalization/cost remain unqualified. The fixed planning alternative and8-chip-hour ceiling are explicit; old-timing projection7.780 is not measured qualification. No model/feature/head/training/RL/scale job is queued.
-- Latest owner scope now includes resolving bounded CPU feasibility before any model release. The local raw-trajectory-v31-cpu worktree contains an UNEXECUTED draft; do not run its preparer or score checkpoints. No new trajectory cohort/protocol exists.
+- Report validation/causal_reader_feasibility_complete_20261021.json. Fixed12TRAIN shards60..49 yield6095eligible unique calculations versus6672required; shortfall577 after the declared512-prefix/expression/packing rules.
+- All1058401source-clean documents were curated. An independent read-only recount matches every exclusion and all curation/membership coverage. This is NOT a complete selected-cohort Parquet/native qualification.
+- Source producer session19608/PID2199441 CLOSED1 at04:46:33UTC(expected quota rejection); independent check53796/PID2204839 CLOSED0. All original partial/source records preserved. No active process or automatic retry.
+- Keep the prospective4096DEV-per-stratum size and exclusions. Do not expand this closed pool, weaken rules or silently substitute a smaller cohort. This does not establish a global FineMath data shortage; a later source design would be a new protocol.
+- Guarded feature/head/qualification/cost/supervisor code is implemented;1964CPU tests+smoke/compile pass. No released-model call, feature extraction, experiment-head fit, native qualification or science release occurred.
+- Read docs/CAUSAL_READER_PROPOSAL.md for the retained, UNEXECUTED candidate. Actual unchanged B0, a fixed V29 note/reader and a causal head remain a proposal, not improved pretrained weights or autonomous discovery.
+- The proposed8-chip-hour budget and conditional power analysis remain planning only. Actual runtime/numerical/cost qualification was not reached; no new model/scaling/RL/CPT follows.
+- The deferred raw-trajectory-v31-cpu draft remains UNEXECUTED. Do not run its preparer or score checkpoints. A new study needs a materially new question/source protocol and finite whole-question decision, rather than more saved-score arithmetic.
 
 V30 remains COMPLETE and its reward branch remains CLOSED:
 

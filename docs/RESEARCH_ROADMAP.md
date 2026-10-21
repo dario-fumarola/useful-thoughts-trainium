@@ -34,6 +34,13 @@ hindsight upper bound; the unrestricted variant requires empirical retention and
 remains unexecuted. A frozen-backbone gate cannot establish better pretrained
 weights. It is a bounded mechanism candidate, not the new main training program.
 
+The [fixed-source feasibility attempt](../validation/causal_reader_feasibility_complete_20261021.json)
+closed before any actual model call:6,095eligible unique calculations versus6,672
+required, independently recounted. Preserve the prospective sample size and
+exclusions. This is not a selector failure or a global lack of possible sources;
+a later source design would require a new protocol. No model qualification or
+science run is pending under this closed attempt.
+
 Keep training benefit, retained inference computation, and internalization
 separate. Removing thoughts is an additional goal, not a requirement for every
 useful computation method. It also cannot rescue V29/V30's failed full-prediction

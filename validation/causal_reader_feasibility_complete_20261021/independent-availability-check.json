@@ -1,0 +1,34 @@
+{
+  "accepted_equation_documents": 13810,
+  "artifacts": {
+    "accepted.jsonl": "82f339f744ca5851829a1897caeac69aec94e53a897278b841bc2be2affdb1b7",
+    "arithmetic-availability.json": "b417cb18055dc5a260934c81bbd48272c3799dd87167ecc382c3c638e2a96fce",
+    "curation-audit.jsonl": "dad72c53873ed067f793517a16449d900bf738c290808d2dab9bd2490fb73563",
+    "filter.json": "a543fda4420cb71b4ed46dfe0526b5b1125b666556050bd597102d2bdec4633e",
+    "fresh-TRAIN-membership.jsonl": "f30ff162b315027231ebd51aa4636aedf2fab4ac32a8c3356b124ee46f386234",
+    "plan.json": "831dd84c0bf04a9fde5baaba3c36e7860697be6a613dc279f9ceea3c29c0082c"
+  },
+  "curation_status_counts": {
+    "accepted": 13810,
+    "no_valid_bounded_raw_equation": 1044591
+  },
+  "eligibility_counts": {
+    "accepted": 13810,
+    "duplicate_expression": 462,
+    "old_expression": 2162,
+    "packable_pre_dedup": 6557,
+    "short_prefix": 5072,
+    "unsupported_pack": 19
+  },
+  "limits": "Independent control flow/count reconstruction, shared exact parsing/verified-work definitions. No Parquet/native audit of a complete selected cohort, source expansion, replacement cohort, model call, feature or head fitting. Does not prove all FineMath or other data sources insufficient.",
+  "pack_rejection_reasons": {
+    "Trace plus its first learned stop must fit128 native actions": 6,
+    "complete640pack": 13
+  },
+  "required": 6672,
+  "shortfall": 577,
+  "source_clean_documents": 1058401,
+  "source_sha256": "bae2d0f38561092a2dc44b84def1b7878ebe61d052b30b44886c8b60be6db4cb",
+  "status": "PASS_SAVED_POOL_INSUFFICIENCY_COUNT_NOT_COHORT_QUALIFICATION",
+  "unique_eligible_calculations": 6095
+}

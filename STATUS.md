@@ -1,19 +1,20 @@
-# Status — 2026-10-21 04:33 UTC
+# Status — 2026-10-21 04:52 UTC
 
-## Active: bounded selector feasibility
-Question: can a powered, source-separated selector experiment fit a finite local budget?
-ID:causal-reader-feasibility-20261021; CPU source preparation, power and guarded implementation.
-Fixed before source outcomes: TRAIN5120, DEV4096calculation+4096ordinary, qualification32; no weaker exclusions/smaller replacement cohort.
-Normal planning joint lower0.917 assumes SD4, B0gain0.5, control gains0.25 and ordinary gain0; not unknown-effect power.
-Fixed12TRAIN shards60..49; sourcecb3a47b, PID2199441/session19608; deadline05:59:03UTC; log local/diagnostics/causal-reader-feasibility-v1/prepare.log.
-Latest917504/1058401source-clean documents curated,11974candidate equations; final native/unique-expression quotas unresolved.
-CPU source/native checker, guarded model/head workers and finite supervisor are implemented; NO actual B0/T feature/head call.
-1964CPU tests+smoke/compile PASS; final log local/checks/causal-reader-precall-numerical-contract-20261021.log. Fixtures are not hardware evidence.
-All four TRAIN-only terminal800heads must freeze before DEV readout; global/raw-ensemble primary controls and position-only secondary are fixed.
-Fixed256-source note interventions are secondary; total40960reader contexts/5GiBhidden cache within proposed6GiBoutput ceiling.
-Budget remains8reservedphysical-chip-hours includingqualification<=0.5, max2existingchips; old-timing proxy7.780 is not an actual-workload measurement.
-Next: finish source job, independently reconstruct ALL13344selected Parquet/native rows under a fresh30-minute deadline; then finite whole-question review.
-No frozen model protocol or actual-model release exists. Source/power/static feasibility must resolve before bounded native qualification; no science/RL/scaling release.
+## Closed: selector feasibility; no model release
+Question: can the fixed source pool support the powered selector design within a finite budget?
+ID:causal-reader-feasibility-20261021; CLOSED_NO_GO_FIXED_SOURCE_QUOTA.
+All12pinned TRAIN shards60..49 scanned:1256148raw/1058401source-clean documents;13810accepted equations.
+Sequential exclusions:5072short prefixes,2162prior expressions,19unsupported packs,462within-pool exact-expression duplicates.
+Eligible6095<required6672(TRAIN2560+qualification16+DEV4096); shortfall577. No smaller cohort or weaker exclusion substitutes.
+Producer session19608/PID2199441 physically CLOSED1 at04:46:33UTC, deliberate quota rejection; no automatic retry/source expansion.
+Independent count check session53796/PID2204839 CLOSED0 at04:48:56UTC; all1058401curation/source membership rows and eligibility counts agree.
+No complete cohorts were built; full selected-cohort Parquet/native qualification and ordinary cohort preparation were not reached.
+1964CPU tests+smoke/compile PASS; session88520 CLOSED0. Static guarded workers remain preparation, not actual-model evidence.
+Actual released-model calls/features/experiment-head fits/accelerator execution:0. No frozen model protocol or native/science release.
+Source outputs10.944GiB remain preserved; original models/optimizer states/cache unchanged; no active job.
+Report:validation/causal_reader_feasibility_complete_20261021.json; count evidence in its companion directory.
+Decision: close this attempt, keep N4096 and8-chip-hour proposal unchanged; any later source/mechanism study needs a new prospective protocol.
+The result concerns this fixed pool/rules, not all FineMath, causal selector efficacy or the broader pretraining thesis. V29/V30 unchanged.
 
 ## Complete preparation: causal reader proposal; execution held
 Question: can selective calculation use improve full continuations while preserving an unchanged raw reference?

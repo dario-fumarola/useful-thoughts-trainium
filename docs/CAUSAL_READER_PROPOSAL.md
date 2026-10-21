@@ -5,7 +5,10 @@ helps while retaining an actual unchanged B0 prediction where it does not.
 This is a bounded inference mechanism proposal. It does not train better base
 weights, demonstrate internalization, or reopen V30's closed reward branch.
 No released-model feature extraction or experiment-head training has run.
-CPU-only source feasibility is active under a separate fixed preparation plan.
+CPU source feasibility is [closed without a model release](../validation/causal_reader_feasibility_complete_20261021.json):
+the fixed12-shard pool supplies6,095eligible calculations versus6,672required.
+The independent saved-pool recount agrees. No smaller cohort or relaxed exclusion
+replaces the frozen design; this does not establish a global source shortage.
 
 The [specified draft](../validation/causal_reader_gate_design_20261021.json)
 contains the prediction contract, proposed head settings, controls and release
@@ -148,9 +151,9 @@ reproduction of its results.
 CPU mechanics now pass independent tiny-HF, causality, normalization, exact raw
 bypass, detached-gradient and optimization fixtures. The unpredictable-coin
 control correctly recovers no causal gain from a positive hindsight bound. These
-are implementation checks, not released-model results. Fresh-source preparation
-and an explicit power/resource plan are active; actual-model qualification and
-scientific execution remain held. The [cost projection](../validation/causal_reader_cost_plan_20261021.json)
+are implementation checks, not released-model results. The fixed source preparation
+has closed below its required quota; actual-model qualification and scientific
+execution were not reached. The explicit power/resource plan stays prospective. The [cost projection](../validation/causal_reader_cost_plan_20261021.json)
 proposes an eight reserved-chip-hour hard total, including qualification. It uses
 old timings and must survive profiling of actual ordinary notes and feature
 export before any science release. Even a successful gate would
