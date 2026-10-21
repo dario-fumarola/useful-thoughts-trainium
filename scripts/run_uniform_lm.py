@@ -70,7 +70,11 @@ def main():
     for key in template['unset']+['MALLOC_ARENA_MAX']:
         env.pop(key, None)
     env.update(template['environment'])
-    env.update(p['runtime_policy']['environment'])
+    for key, value in p['runtime_policy']['environment'].items():
+        if value is None:
+            env.pop(key, None)
+        else:
+            env[key] = value
     env.update(PATH=str(Path(sys.executable).parent)+os.pathsep+os.environ['PATH'],
                PYTHONPATH=release['source_root']+':'+str(roots[0]/'local/test-deps'),
                NEURON_RT_VISIBLE_CORES='32-39', NEURONCORE_NUM_DEVICES='8',
