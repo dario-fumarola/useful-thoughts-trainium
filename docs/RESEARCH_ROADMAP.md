@@ -1,5 +1,11 @@
 # Long-term proof ladder
 
+## Fresh frozen-selector confirmation — October 21
+
+[The completed fresh test](../validation/reader_fresh_confirmation_complete_20261021/REPORT.md) improves targeted calculation prediction over B0 with all six fixed heads (+0.421–0.506 nats per 16 tokens). Five also beat all controls; order 45's position-control interval spans zero, so that conjunctive criterion fails. Every head worsens the unenriched natural panel, while a simple no-calculation constant mixture improves it. The separate natural endpoint fails in every order.
+
+This strengthens a targeted selective-inference result and establishes a limitation on its natural-distribution value. It does not update either backbone. Keep the uniform-NTP baseline requirement before another pretraining claim. The population census is now measured for its source-clean frame; it is not all useful computation or a substitute for the directly evaluated natural windows. Historical stage descriptions below record what was known then.
+
 ## Internal selector-optimization result — October 21
 
 The [paired TRAIN-cache study](../validation/selector_optimization_train_v1_complete_20261021/REPORT.md) finds useful selection with the hard gate in all six new orders, versus four with the calibrated smooth gate. The two smooth failures show that removing the intentional zero-gradient region is not a sufficient repair. Initial values and slopes were matched, but off-initialization geometry still differs.

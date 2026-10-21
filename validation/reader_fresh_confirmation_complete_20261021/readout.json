@@ -1,0 +1,1523 @@
+{
+  "absolute": {
+    "CONFIRM_calculation": {
+      "B0": -16.46460053608455,
+      "T_note": -17.457156694178508,
+      "T_note-hard-order2026102141": -15.95880667266757,
+      "T_note-hard-order2026102142": -15.996504315009437,
+      "T_note-hard-order2026102143": -16.004076515805185,
+      "T_note-hard-order2026102144": -15.972153553690354,
+      "T_note-hard-order2026102145": -16.043709445274708,
+      "T_note-hard-order2026102146": -15.990772605264759,
+      "T_note:global": -16.21696724653769,
+      "T_note:position": -16.11888230098397,
+      "T_raw": -17.36098829263002,
+      "T_raw-hard-order2026102141": -16.46460793310053,
+      "T_raw-hard-order2026102142": -16.464671166163733,
+      "T_raw-hard-order2026102143": -16.464608525690593,
+      "T_raw-hard-order2026102144": -16.46434868273103,
+      "T_raw-hard-order2026102145": -16.465679614013304,
+      "T_raw-hard-order2026102146": -16.464871850250095,
+      "T_raw:global": -16.398866753818258,
+      "T_raw:position": -16.394874281502666
+    },
+    "CONFIRM_natural": {
+      "B0": -19.624176264833324,
+      "T_note": -32.503188806436825,
+      "T_note-hard-order2026102141": -19.643705362003054,
+      "T_note-hard-order2026102142": -19.661414431076352,
+      "T_note-hard-order2026102143": -19.65554898954182,
+      "T_note-hard-order2026102144": -19.653999816339002,
+      "T_note-hard-order2026102145": -19.676114520603114,
+      "T_note-hard-order2026102146": -19.673706190938347,
+      "T_note:global": -19.749442020605784,
+      "T_note:position": -19.770135305169497,
+      "T_raw": -20.22484485528468,
+      "T_raw-hard-order2026102141": -19.627950753853288,
+      "T_raw-hard-order2026102142": -19.63232267973494,
+      "T_raw-hard-order2026102143": -19.63298354932889,
+      "T_raw-hard-order2026102144": -19.63708703725811,
+      "T_raw-hard-order2026102145": -19.632675932036292,
+      "T_raw-hard-order2026102146": -19.626194842238263,
+      "T_raw:global": -19.59975385356782,
+      "T_raw:position": -19.604321950576285
+    }
+  },
+  "calculation_confirmation_all_six": false,
+  "completed_utc": "2026-10-21T19:24:18+00:00",
+  "decisions": {
+    "2026102141": {
+      "calculation_all_controls": true,
+      "calculation_base": true,
+      "natural_all_controls": false,
+      "natural_gain": false,
+      "natural_old_retention_guard": true
+    },
+    "2026102142": {
+      "calculation_all_controls": true,
+      "calculation_base": true,
+      "natural_all_controls": false,
+      "natural_gain": false,
+      "natural_old_retention_guard": true
+    },
+    "2026102143": {
+      "calculation_all_controls": true,
+      "calculation_base": true,
+      "natural_all_controls": false,
+      "natural_gain": false,
+      "natural_old_retention_guard": true
+    },
+    "2026102144": {
+      "calculation_all_controls": true,
+      "calculation_base": true,
+      "natural_all_controls": false,
+      "natural_gain": false,
+      "natural_old_retention_guard": true
+    },
+    "2026102145": {
+      "calculation_all_controls": false,
+      "calculation_base": true,
+      "natural_all_controls": false,
+      "natural_gain": false,
+      "natural_old_retention_guard": true
+    },
+    "2026102146": {
+      "calculation_all_controls": true,
+      "calculation_base": true,
+      "natural_all_controls": false,
+      "natural_gain": false,
+      "natural_old_retention_guard": true
+    }
+  },
+  "fitted_heads_sha256": "305644176cfa164418fa46f99233881b8c0e7e1b5bafee8dfde5dca32dcf416b",
+  "generation_accounting": {
+    "CONFIRM_calculation": {
+      "capped_notes": 0,
+      "documents": 1024,
+      "generated_actions": 37378
+    },
+    "CONFIRM_natural": {
+      "capped_notes": 990,
+      "documents": 4096,
+      "generated_actions": 241307
+    }
+  },
+  "limits": "Six frozen heads over one model pair, no fitting or order selection. Fresh source/position sampling, not proven novelty relative to pretraining. Teacher-forced full16 likelihood, unadjusted source-paired intervals. Calculation and unenriched natural endpoints are separate; tolerable regression is not a net predictive gain.",
+  "natural_prediction_all_six": false,
+  "protocol_sha256": "6e4f79175a17af1981e3ff7c98ee2a04686e7b525d403e45f5b8976c27209810",
+  "reports": {
+    "CONFIRM_calculation": {
+      "2026102141:minus-B0": {
+        "CI95": [
+          0.38758877987109075,
+          0.629096911087949
+        ],
+        "mean": 0.5057938634169772,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_note:global": {
+        "CI95": [
+          0.15787353923523473,
+          0.3574263753829697
+        ],
+        "mean": 0.2581605738701145,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_note:position": {
+        "CI95": [
+          0.06407985398074699,
+          0.2545949520198977
+        ],
+        "mean": 0.160075628316394,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_raw:global": {
+        "CI95": [
+          0.32318221486797805,
+          0.5611657733799118
+        ],
+        "mean": 0.44006008115068623,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_raw:position": {
+        "CI95": [
+          0.31929769552141146,
+          0.5565817715934884
+        ],
+        "mean": 0.43606760883509194,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-matched_raw": {
+        "CI95": [
+          0.38758696904313167,
+          0.629114401224061
+        ],
+        "mean": 0.5058012604329557,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-B0": {
+        "CI95": [
+          0.34119068001250447,
+          0.5943932652090561
+        ],
+        "mean": 0.46809622107511306,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_note:global": {
+        "CI95": [
+          0.11064037773920375,
+          0.3249976612482062
+        ],
+        "mean": 0.22046293152825042,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_note:position": {
+        "CI95": [
+          0.0175466111547659,
+          0.22217156180245093
+        ],
+        "mean": 0.12237798597453062,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_raw:global": {
+        "CI95": [
+          0.27854484159207704,
+          0.5270172065271255
+        ],
+        "mean": 0.4023624388088217,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_raw:position": {
+        "CI95": [
+          0.27563891900920273,
+          0.5239807416634944
+        ],
+        "mean": 0.3983699664932279,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-matched_raw": {
+        "CI95": [
+          0.34130148110084263,
+          0.5940031992042658
+        ],
+        "mean": 0.46816685115429446,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-B0": {
+        "CI95": [
+          0.3388699450323233,
+          0.5871964388144942
+        ],
+        "mean": 0.46052402027936545,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_note:global": {
+        "CI95": [
+          0.1055379421850806,
+          0.31726337393390314
+        ],
+        "mean": 0.2128907307325017,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_note:position": {
+        "CI95": [
+          0.012275811550740097,
+          0.21475341530424358
+        ],
+        "mean": 0.11480578517878182,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_raw:global": {
+        "CI95": [
+          0.2722900345899245,
+          0.5200983671121604
+        ],
+        "mean": 0.3947902380130724,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_raw:position": {
+        "CI95": [
+          0.26802656912247036,
+          0.5168259183672599
+        ],
+        "mean": 0.39079776569747937,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-matched_raw": {
+        "CI95": [
+          0.33870762363259466,
+          0.5872384666673741
+        ],
+        "mean": 0.4605320098854098,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-B0": {
+        "CI95": [
+          0.37017056633283124,
+          0.6168659463085387
+        ],
+        "mean": 0.4924469823941963,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_note:global": {
+        "CI95": [
+          0.14141958946130434,
+          0.34527664455212365
+        ],
+        "mean": 0.2448136928473324,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_note:position": {
+        "CI95": [
+          0.047017353148053206,
+          0.24228207470033544
+        ],
+        "mean": 0.1467287472936125,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_raw:global": {
+        "CI95": [
+          0.3080711388423146,
+          0.5491911040035494
+        ],
+        "mean": 0.4267132001279043,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_raw:position": {
+        "CI95": [
+          0.30297723427136986,
+          0.544104426091448
+        ],
+        "mean": 0.42272072781231007,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-matched_raw": {
+        "CI95": [
+          0.37006867947391897,
+          0.6164135765367809
+        ],
+        "mean": 0.49219512904067597,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-B0": {
+        "CI95": [
+          0.2822017293113076,
+          0.5608766889063889
+        ],
+        "mean": 0.4208910908098428,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_note:global": {
+        "CI95": [
+          0.05226668460927366,
+          0.2904814247595086
+        ],
+        "mean": 0.1732578012629791,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_note:position": {
+        "CI95": [
+          -0.04175044193767986,
+          0.18761176260969933
+        ],
+        "mean": 0.0751728557092593,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_raw:global": {
+        "CI95": [
+          0.21815213040857545,
+          0.4920956136873714
+        ],
+        "mean": 0.3551573085435504,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_raw:position": {
+        "CI95": [
+          0.21465877955398152,
+          0.48830203507690073
+        ],
+        "mean": 0.35116483622795647,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-matched_raw": {
+        "CI95": [
+          0.2833238766385377,
+          0.5618939244625875
+        ],
+        "mean": 0.4219701687385952,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-B0": {
+        "CI95": [
+          0.3425389758842844,
+          0.6048815078674341
+        ],
+        "mean": 0.47382793081978997,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_note:global": {
+        "CI95": [
+          0.11634183020981542,
+          0.3355912684025461
+        ],
+        "mean": 0.22619464127292582,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_note:position": {
+        "CI95": [
+          0.023422480422124595,
+          0.23036950521546815
+        ],
+        "mean": 0.1281096957192061,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_raw:global": {
+        "CI95": [
+          0.2804910129810778,
+          0.5366345647222772
+        ],
+        "mean": 0.40809414855349757,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_raw:position": {
+        "CI95": [
+          0.27617318436298294,
+          0.5315705649020983
+        ],
+        "mean": 0.4041016762379035,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-matched_raw": {
+        "CI95": [
+          0.34243628143719473,
+          0.6052271688585374
+        ],
+        "mean": 0.474099244985334,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_note:global:minus-B0": {
+        "CI95": [
+          0.20817711740203698,
+          0.29088429293366064
+        ],
+        "mean": 0.24763328954686362,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_note:position:minus-B0": {
+        "CI95": [
+          0.2949112970025325,
+          0.40138648057076104
+        ],
+        "mean": 0.34571823510058336,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_raw:global:minus-B0": {
+        "CI95": [
+          0.04266394244264561,
+          0.09087873403673934
+        ],
+        "mean": 0.0657337822662921,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_raw:position:minus-B0": {
+        "CI95": [
+          0.04560721838738161,
+          0.09654334214579612
+        ],
+        "mean": 0.06972625458188597,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102151,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 1024,
+          "items": 1024,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      }
+    },
+    "CONFIRM_natural": {
+      "2026102141:minus-B0": {
+        "CI95": [
+          -0.029309486026330742,
+          -0.011095566058575758
+        ],
+        "mean": -0.019529097169730267,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_note:global": {
+        "CI95": [
+          0.09101788153127868,
+          0.1197814270306157
+        ],
+        "mean": 0.10573665860272717,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_note:position": {
+        "CI95": [
+          0.10979919704282037,
+          0.14224787251130416
+        ],
+        "mean": 0.1264299431664439,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_raw:global": {
+        "CI95": [
+          -0.056802850654752816,
+          -0.0319095152228302
+        ],
+        "mean": -0.04395150843523339,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-T_raw:position": {
+        "CI95": [
+          -0.05252623683963054,
+          -0.027104702794021926
+        ],
+        "mean": -0.03938341142676886,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102141:minus-matched_raw": {
+        "CI95": [
+          -0.02567536755156114,
+          -0.0067338298751919755
+        ],
+        "mean": -0.01575460814976785,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-B0": {
+        "CI95": [
+          -0.05204506668765948,
+          -0.02411621680805313
+        ],
+        "mean": -0.03723816624302873,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_note:global": {
+        "CI95": [
+          0.06996356187626489,
+          0.10458231780486142
+        ],
+        "mean": 0.08802758952942862,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_note:position": {
+        "CI95": [
+          0.08910088789626071,
+          0.12703875667331677
+        ],
+        "mean": 0.10872087409314533,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_raw:global": {
+        "CI95": [
+          -0.07835535372748488,
+          -0.04641341504542551
+        ],
+        "mean": -0.06166057750853186,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-T_raw:position": {
+        "CI95": [
+          -0.07401089302414463,
+          -0.041439584216339406
+        ],
+        "mean": -0.057092480500067405,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102142:minus-matched_raw": {
+        "CI95": [
+          -0.04408758982842129,
+          -0.014922626968339632
+        ],
+        "mean": -0.029091751341415742,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-B0": {
+        "CI95": [
+          -0.04536254339922653,
+          -0.019407633869630046
+        ],
+        "mean": -0.03137272470849512,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_note:global": {
+        "CI95": [
+          0.0761376065030709,
+          0.11038250604954515
+        ],
+        "mean": 0.09389303106396223,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_note:position": {
+        "CI95": [
+          0.09500513867259923,
+          0.1324548567987
+        ],
+        "mean": 0.11458631562767882,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_raw:global": {
+        "CI95": [
+          -0.07205103355673657,
+          -0.04141299865645852
+        ],
+        "mean": -0.05579513597399814,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-T_raw:position": {
+        "CI95": [
+          -0.06763243267080021,
+          -0.036441159291077524
+        ],
+        "mean": -0.05122703896553375,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102143:minus-matched_raw": {
+        "CI95": [
+          -0.0370623374281097,
+          -0.009795273760086327
+        ],
+        "mean": -0.022565440212928556,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-B0": {
+        "CI95": [
+          -0.04357448035237809,
+          -0.01772414458567028
+        ],
+        "mean": -0.029823551505679353,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_note:global": {
+        "CI95": [
+          0.07840164420708097,
+          0.11136994491806079
+        ],
+        "mean": 0.09544220426677792,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_note:position": {
+        "CI95": [
+          0.0976519364688479,
+          0.1340460296090861
+        ],
+        "mean": 0.11613548883049457,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_raw:global": {
+        "CI95": [
+          -0.06980116236418617,
+          -0.039624392016292
+        ],
+        "mean": -0.05424596277118244,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-T_raw:position": {
+        "CI95": [
+          -0.06559886842177824,
+          -0.03489144734280756
+        ],
+        "mean": -0.04967786576271799,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102144:minus-matched_raw": {
+        "CI95": [
+          -0.031805056367003835,
+          -0.0026906285317633144
+        ],
+        "mean": -0.01691277908089563,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-B0": {
+        "CI95": [
+          -0.06955080545964663,
+          -0.035762162353537304
+        ],
+        "mean": -0.05193825576978674,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_note:global": {
+        "CI95": [
+          0.05293221800627088,
+          0.09233679080836868
+        ],
+        "mean": 0.07332750000267081,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_note:position": {
+        "CI95": [
+          0.07251880257171815,
+          0.11447730998284393
+        ],
+        "mean": 0.09402078456638724,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_raw:global": {
+        "CI95": [
+          -0.09588091456977231,
+          -0.058395660197705514
+        ],
+        "mean": -0.07636066703528988,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-T_raw:position": {
+        "CI95": [
+          -0.09123289808307994,
+          -0.05345704099981163
+        ],
+        "mean": -0.07179257002682561,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102145:minus-matched_raw": {
+        "CI95": [
+          -0.06102979788596923,
+          -0.02728817863513653
+        ],
+        "mean": -0.043438588566817544,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-B0": {
+        "CI95": [
+          -0.06863496047873019,
+          -0.033386312789041354
+        ],
+        "mean": -0.04952992610502144,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_note:global": {
+        "CI95": [
+          0.05405633603442,
+          0.09497678519422886
+        ],
+        "mean": 0.0757358296674362,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_note:position": {
+        "CI95": [
+          0.07299205311426511,
+          0.11704065430631128
+        ],
+        "mean": 0.09642911423115255,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_raw:global": {
+        "CI95": [
+          -0.0946912816357968,
+          -0.05578197871203814
+        ],
+        "mean": -0.07395233737052463,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-T_raw:position": {
+        "CI95": [
+          -0.09011118563752198,
+          -0.050922387037201165
+        ],
+        "mean": -0.06938424036206013,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "2026102146:minus-matched_raw": {
+        "CI95": [
+          -0.0663835537393137,
+          -0.030977857246779216
+        ],
+        "mean": -0.04751134870008382,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_note:global:minus-B0": {
+        "CI95": [
+          -0.1365379446886557,
+          -0.11324093896818284
+        ],
+        "mean": -0.12526575577245744,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_note:position:minus-B0": {
+        "CI95": [
+          -0.15947465212678577,
+          -0.13120596839003149
+        ],
+        "mean": -0.14595904033617413,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_raw:global:minus-B0": {
+        "CI95": [
+          0.015527673406112736,
+          0.03396033386886951
+        ],
+        "mean": 0.024422411265503062,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      },
+      "T_raw:position:minus-B0": {
+        "CI95": [
+          0.010299174360847454,
+          0.029623657901897547
+        ],
+        "mean": 0.019854314257038565,
+        "resampling": {
+          "bootstrap_draws": 5000,
+          "bootstrap_seed": 2026102152,
+          "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+          "independent_clusters": 4096,
+          "items": 4096,
+          "random_source": "seeded Generator",
+          "resampling_unit": "source document"
+        }
+      }
+    }
+  },
+  "reserved_chip_hours": 1.7817652013469585,
+  "routing": {
+    "CONFIRM_calculation": {
+      "T_note-hard-order2026102141": {
+        "closed_fraction": 0.732421875,
+        "mean_gate": 0.18033146780588652,
+        "near_closed_fraction": 0.73394775390625
+      },
+      "T_note-hard-order2026102142": {
+        "closed_fraction": 0.76458740234375,
+        "mean_gate": 0.17186255967501107,
+        "near_closed_fraction": 0.7655029296875
+      },
+      "T_note-hard-order2026102143": {
+        "closed_fraction": 0.7349853515625,
+        "mean_gate": 0.19546505863130695,
+        "near_closed_fraction": 0.73663330078125
+      },
+      "T_note-hard-order2026102144": {
+        "closed_fraction": 0.73565673828125,
+        "mean_gate": 0.18147808865862525,
+        "near_closed_fraction": 0.73760986328125
+      },
+      "T_note-hard-order2026102145": {
+        "closed_fraction": 0.6866455078125,
+        "mean_gate": 0.24739603306820998,
+        "near_closed_fraction": 0.6884765625
+      },
+      "T_note-hard-order2026102146": {
+        "closed_fraction": 0.6466064453125,
+        "mean_gate": 0.23249559267664346,
+        "near_closed_fraction": 0.64898681640625
+      },
+      "T_raw-hard-order2026102141": {
+        "closed_fraction": 0.99847412109375,
+        "mean_gate": 0.0009533215465943569,
+        "near_closed_fraction": 0.99847412109375
+      },
+      "T_raw-hard-order2026102142": {
+        "closed_fraction": 0.9974365234375,
+        "mean_gate": 0.0012793298881655444,
+        "near_closed_fraction": 0.9974365234375
+      },
+      "T_raw-hard-order2026102143": {
+        "closed_fraction": 0.9974365234375,
+        "mean_gate": 0.0014755328619356664,
+        "near_closed_fraction": 0.99749755859375
+      },
+      "T_raw-hard-order2026102144": {
+        "closed_fraction": 0.99554443359375,
+        "mean_gate": 0.0032570778926767027,
+        "near_closed_fraction": 0.99560546875
+      },
+      "T_raw-hard-order2026102145": {
+        "closed_fraction": 0.9959716796875,
+        "mean_gate": 0.002368867701112232,
+        "near_closed_fraction": 0.99615478515625
+      },
+      "T_raw-hard-order2026102146": {
+        "closed_fraction": 0.99810791015625,
+        "mean_gate": 0.000983246024454687,
+        "near_closed_fraction": 0.99810791015625
+      }
+    },
+    "CONFIRM_natural": {
+      "T_note-hard-order2026102141": {
+        "closed_fraction": 0.98614501953125,
+        "mean_gate": 0.004575996581817519,
+        "near_closed_fraction": 0.9865264892578125
+      },
+      "T_note-hard-order2026102142": {
+        "closed_fraction": 0.98370361328125,
+        "mean_gate": 0.0068349124934793575,
+        "near_closed_fraction": 0.9840087890625
+      },
+      "T_note-hard-order2026102143": {
+        "closed_fraction": 0.9804534912109375,
+        "mean_gate": 0.007342648668286841,
+        "near_closed_fraction": 0.9808502197265625
+      },
+      "T_note-hard-order2026102144": {
+        "closed_fraction": 0.983001708984375,
+        "mean_gate": 0.006189639753458634,
+        "near_closed_fraction": 0.9833831787109375
+      },
+      "T_note-hard-order2026102145": {
+        "closed_fraction": 0.97607421875,
+        "mean_gate": 0.009098976451051514,
+        "near_closed_fraction": 0.9766845703125
+      },
+      "T_note-hard-order2026102146": {
+        "closed_fraction": 0.960235595703125,
+        "mean_gate": 0.011479612307145937,
+        "near_closed_fraction": 0.96136474609375
+      },
+      "T_raw-hard-order2026102141": {
+        "closed_fraction": 0.9897308349609375,
+        "mean_gate": 0.005674726860499026,
+        "near_closed_fraction": 0.9898529052734375
+      },
+      "T_raw-hard-order2026102142": {
+        "closed_fraction": 0.9692230224609375,
+        "mean_gate": 0.016165253214970685,
+        "near_closed_fraction": 0.969757080078125
+      },
+      "T_raw-hard-order2026102143": {
+        "closed_fraction": 0.973052978515625,
+        "mean_gate": 0.015597706912276249,
+        "near_closed_fraction": 0.9733123779296875
+      },
+      "T_raw-hard-order2026102144": {
+        "closed_fraction": 0.9720306396484375,
+        "mean_gate": 0.016251934717393654,
+        "near_closed_fraction": 0.9722747802734375
+      },
+      "T_raw-hard-order2026102145": {
+        "closed_fraction": 0.9710540771484375,
+        "mean_gate": 0.016494639847351028,
+        "near_closed_fraction": 0.9715118408203125
+      },
+      "T_raw-hard-order2026102146": {
+        "closed_fraction": 0.982696533203125,
+        "mean_gate": 0.008005764546945942,
+        "near_closed_fraction": 0.98284912109375
+      }
+    }
+  },
+  "runtime_sha256": "7ecbe07f254e4ec20f057392a81d81b608505361225d132a042f07ea9daaef2a",
+  "status": "COMPLETE_FROZEN_READER_FRESH_CONFIRMATION"
+}

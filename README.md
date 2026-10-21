@@ -2,13 +2,19 @@
 
 We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Current empirical work focuses on selective inference over frozen models. Improved pretrained weights and autonomous discovery remain open.
 
-## Current work: fresh confirmation and an unenriched prediction endpoint
+## Fresh confirmation: calculation gains, natural-text losses
 
-The strict verified arithmetic class occupies **0.001664% of bounded prediction positions** in the existing source-clean frame. That is not every useful reasoning event, but a balanced arithmetic panel cannot stand in for natural text. [Census and interpretation](validation/reader_population_census_20261021/REPORT.md) · [Verified public counts](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-population-census-20261021).
+All six frozen selectors improve **1,024 fresh calculation continuations by 0.421–0.506 nats per 16 tokens** over B0. Five also beat every additional control; order 45's comparison with the calculation position schedule spans zero, so the all-six calculation criterion fails.
 
-The next test uses **1,024 fresh calculation documents and 4,096 unenriched natural windows**, all independently checked against pinned sources. All six existing hard-gate heads and matched controls stay fixed. Numerical/cost qualification precedes execution, with **4.25 reserved chip-hours including qualification**. [Prospective design](configs/reader_fresh_confirmation_design.json).
+On **4,096 unenriched natural windows**, every selector loses **0.020–0.052 nats per span**, with negative intervals. A fitted constant ensemble without calculations instead gains **0.0244 [0.0155, 0.0340]**. The natural prediction criterion fails in every order. Targeted computation benefit repeats; net natural predictive value does not follow.
 
-## Latest model result: repeated internal selection, unsuccessful smooth-gate repair
+Every head, control and source selection was fixed before fresh model outcomes. Both backbones remain unchanged. Independent reconstruction and public numerical replay agree. Actual cost: **1.782 reserved chip-hours including qualification**, below 4.25. All **2,004 CPU checks**, smoke and compilation pass.
+
+[Full report and all orders](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [Public evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-fresh-confirmation-20261021) · [Prospective design](configs/reader_fresh_confirmation_design.json)
+
+The strict verified arithmetic class occupies **0.001664% of prediction positions** in the existing source-clean frame. That is not every useful reasoning event or all FineMath; the natural result above is measured directly rather than obtained by reweighting the arithmetic panel. [Census](validation/reader_population_census_20261021/REPORT.md).
+
+## Preceding development: repeated internal selection, unsuccessful smooth-gate repair
 
 A CPU-only comparison fitted 24 selectors on existing TRAIN caches: hard/smooth gates, calculation/no-calculation ensembles, six fixed document orders. The original hard gate passes the practical criteria in **6/6 orders**, gaining **0.42–0.46 nats per 16-token calculation continuation** over the unchanged base. The calibrated smooth gate passes in **4/6**, with two effectively inactive runs. Removing the cutoff did not improve reliability in this comparison.
 
@@ -21,7 +27,7 @@ This source-hash split is internal development evidence: 4,096 fitting and 1,024
 | Question | Evidence and boundary |
 |---|---|
 | Can explicit computation help? | Strong arithmetic and in-range permutation-program results. Length extrapolation and direct transfer remain limited. |
-| Can a causal selector use calculations on fresh real text? | One parent order gains **+0.457 nats per 16 tokens** [0.388, 0.526], beating the declared controls. The second order nearly closes its gate. The original joint criterion fails. |
+| Can a causal selector use calculations on fresh real text? | All six fixed heads improve on B0 in the fresh calculation confirmation; five beat all controls. Every head loses on the fresh natural panel. The earlier parent joint failure remains unchanged. |
 | Does intermediate supervision improve learning? | One developmental document-QA signal survives a coefficient-matched control. Fresh confirmation remains absent. |
 | Does it improve continued pretraining? | V29 fails its primary direct-prediction criterion. Its “raw” control reweights selected continuations, so it is not a uniform next-token baseline. |
 | Can useful computation be discovered autonomously? | Unanswered here. V30's fixed predictive-reward branch closed without RL after failing its prerequisite. |

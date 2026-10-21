@@ -1,11 +1,9 @@
-# Current work
+# Next research work
 
-1. Run the frozen confirmation's bounded numerical qualification with explicit compiler settings and prospective empirical tolerances. Historical qualification outcomes remain unchanged.
-2. If every numerical requirement and the measured 4.25-chip-hour projection pass, release exactly the fixed two-panel test: 1,024 fresh calculation sources and 4,096 unenriched natural windows.
-3. Read out every fixed order against B0, calculation/no-calculation constant and position mixtures, and the matching learned no-calculation head. Independently reconstruct the predictions and source-paired intervals.
+The fixed-head fresh confirmation is complete. Preserve the repeated calculation gain, order 45's unresolved position-control comparison, every natural-text loss, and the positive simple no-calculation ensemble. [Report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md).
 
-[Design](configs/reader_fresh_confirmation_design.json) · [Population/source proof](validation/reader_population_census_20261021/REPORT.md) · [Status](STATUS.md)
+Before another continued-pretraining study, prepare a genuine **uniform next-token baseline**: original text only, equal coefficients on eligible token losses, no second continuation branch. Pin an unenriched source distribution, separate training/development/confirmation sources, token exposure, batch accumulation, optimizer schedule, numerical checks and finite resource cost before fitting. Development may compare a small declared set of schedules; confirmation uses a fixed recipe.
 
-All heads and controls stay fixed. The natural endpoint uses its actual sampled windows; an enriched arithmetic mean times census prevalence is not its primary result. Calculation benefit and tolerable regression do not establish net prediction benefit.
+This addresses a different question from frozen selective inference. The next pretraining comparison needs a competent direct-training reference; the present result supplies a useful targeted inference mechanism and a measured natural-distribution limitation.
 
-Keep the later pretraining question separate: uniform next-token training needs its own source, schedule and compute plan. [Historical queue](docs/archive/NEXT_STEPS_through_20261021.md).
+[Status](STATUS.md) · [Roadmap](docs/RESEARCH_ROADMAP.md) · [Historical queue](docs/archive/NEXT_STEPS_through_20261021.md).

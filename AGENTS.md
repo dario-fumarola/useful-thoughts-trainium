@@ -6,7 +6,7 @@ Study when self-generated intermediate computation improves prediction, and whet
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
-Current work is one fixed-head fresh-source confirmation: 1,024 calculation documents and 4,096 unenriched natural windows. All 12 existing hard-gate treatment/control heads remain frozen. Cap 4.25 reserved chip-hours including <=0.5 qualification, at most two existing physical chips, no head/backbone fit. Numerical and actual-cost checks precede scientific execution. See the design and source proof linked from STATUS.md.
+The fixed-head fresh-source confirmation is complete: six targeted calculation gains, five all-control passes, and natural-text losses in every order. Preserve both failed endpoint decisions and all controls. Actual cost was 1.781765 reserved chip-hours of the finite 4.25 cap; all scientific processes closed. Current publication and replay records are linked from STATUS.md. Next research preparation concerns a genuine uniform next-token baseline, distinct from this frozen-inference result.
 
 ## Three red lines
 

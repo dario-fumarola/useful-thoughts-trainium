@@ -2,22 +2,23 @@
 
 Updated October 21, 2026. [History](docs/archive/STATUS_through_20261021.md).
 
-## Fresh confirmation running
+## Fresh confirmation complete
 
-The fixed test has **1,024 new calculation documents and 4,096 unenriched natural windows**. Every chosen window independently matches pinned Parquet data, with no replacements. All six existing hard-gate heads and six matching no-calculation heads stay frozen.
+Every fixed head improves the **1,024 fresh calculation spans** over B0: **+0.421 to +0.506 nats per original 16 tokens**. Five of six beat all additional controls. Order 45 versus the calculation position schedule is +0.075 [−0.042, +0.188]; the all-six calculation criterion fails.
 
-Calculation-mechanism confirmation and direct prediction on the natural panel are separate endpoints. Both face learned, constant and position-only no-calculation controls. Old retention tolerance is secondary. [Design](configs/reader_fresh_confirmation_design.json) · [Source check](validation/reader_population_census_20261021/fresh-source-check.json).
+Every head loses on **4,096 unenriched natural windows**: **−0.020 to −0.052 nats per span**, all intervals negative. The natural endpoint fails in every order. The simple no-calculation constant mixture instead improves by +0.0244 [0.0155, 0.0340]. These are separate outcomes, not a single ambiguous success/failure label.
 
-- Qualification passed its new prospective numerical contract using 0.130 chip-hours. Explicit compiler flags are recorded; the historical stricter gate remains unchanged. Actual timing projects 3.563 chip-hours total.
-- One existing-node test: two physical chips at most, **4.25 reserved chip-hours including qualification**, itself capped at 0.5. Parent actual plus the new maximum remains below 8.25. A successful numerical check and measured cost projection release scientific execution.
-- Science started at 18:34 UTC (supervisor 2440204, coordinator session 52227). All calculation paths are complete; the natural panel is running. No head or backbone fit. All **2,004 CPU checks**, smoke and compilation pass. [Freeze receipt](validation/reader_fresh_confirmation_freeze_20261021.json).
+[Complete report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [All orders](validation/reader_fresh_confirmation_complete_20261021/all-orders.csv) · [Design](configs/reader_fresh_confirmation_design.json).
 
-## New population result
+- All 12 heads and fitted controls stayed frozen; no new fitting or backbone update. All sources independently match pinned Parquet data, without replacement.
+- All 64 scientific native workers closed successfully. Actual **1.781765 reserved chip-hours including 0.130007 qualification**, below 4.25, at most two physical chips.
+- Independent NumPy reconstruction agrees on features, gates, mixtures, all 80 contrasts and both failed endpoint decisions. The source-free public replay agrees too. All **2,004 CPU tests**, smoke and compilation pass.
+- Explicit auto-cast=none and the new prospective numerical contract passed; the historical stricter failure is unchanged.
 
-The strict verified arithmetic class occupies **19,552 / 1,175,123,958 positions (0.001664%)** in the existing source-clean frame. Document presence is a different denominator. This is not all FineMath or every kind of useful reasoning. The natural panel measures prediction directly. [Census report](validation/reader_population_census_20261021/REPORT.md).
+## Interpretation and next question
 
-## Previous results stay intact
+Useful selective prediction repeats on targeted calculations; the current system does not improve its declared natural distribution. Frozen inference results do not establish better pretrained weights, internalization or autonomous discovery. The next pretraining baseline must be genuine uniform next-token training, without the V29 duplicated/upweighted continuation branch.
 
-The internal comparison found hard-gate gains in six orders and calibrated smooth-gate gains in four; two smooth runs stalled. [Report](validation/selector_optimization_train_v1_complete_20261021/REPORT.md). The parent fresh-panel experiment improved in one order and failed jointly. [Parent report](validation/causal_reader_owner_complete_20261021/REPORT.md).
+The [population census](validation/reader_population_census_20261021/REPORT.md) reports 0.001664% strict verified boundaries in its source-clean frame, not a prevalence claim for every kind of useful computation. Natural outcomes above are measured directly.
 
-V29 did not establish improved direct pretraining; V30 closed its fixed reward branch. Uniform NTP remains a separate baseline requirement. Improved weights, internalization and autonomous discovery remain open.
+Earlier records remain: [internal hard 6/6 versus smooth 4/6](validation/selector_optimization_train_v1_complete_20261021/REPORT.md), [parent positive order and failed joint gate](validation/causal_reader_owner_complete_20261021/REPORT.md), V29's failed CPT criterion, and V30's closed reward branch.

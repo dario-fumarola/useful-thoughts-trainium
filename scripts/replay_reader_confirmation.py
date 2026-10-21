@@ -20,6 +20,7 @@ def main():
         if hashlib.sha256((root/name).read_bytes()).hexdigest()!=expected:
             raise ValueError('Evidence digest: '+name)
     r=json.loads((root/'readout.json').read_text())
+    controls=json.loads((root/'controls.json').read_text())
     orders=tuple(range(2026102141,2026102147))
     baselines=('B0','T_note:global','T_note:position','T_raw:global','T_raw:position','matched_raw')
     reports={};all_ids=set()
@@ -32,8 +33,24 @@ def main():
         totals=np.load(root/(cohort+'-document-scores.npz'),allow_pickle=False)
         gates=np.load(root/(cohort+'-gates.npz'),allow_pickle=False)
         targets=np.load(root/(cohort+'-targets.npz'),allow_pickle=False)
+        logits=np.load(root/(cohort+'-gate-logits.npz'),allow_pickle=False)
+        predictors=np.load(root/(cohort+'-predictor-targets.npz'),allow_pickle=False)
+        if set(predictors.files)!={'B0','T_note','T_raw'}:
+            raise ValueError('All three fixed predictor token scores required')
+        for role in predictors.files:
+            if predictors[role].shape!=(n,16) or not np.isfinite(predictors[role]).all():
+                raise ValueError('Complete finite predictor token scores required')
+            close(predictors[role].sum(1),totals[role],role+' predictor totals')
+        def mix(role,weight):
+            with np.errstate(divide='ignore'):
+                return np.logaddexp(predictors['B0']+np.log1p(-np.asarray(weight)),
+                                    predictors[role]+np.log(weight))
+        for role in ('T_note','T_raw'):
+            for mode,weight in [('global',controls[role]['global_mixture']['weight']),
+                                ('position',controls[role]['position_schedule']['weights'])]:
+                close(mix(role,weight).sum(1),totals[role+':'+mode],role+' '+mode+' mixture')
         heads={f'{role}-hard-order{order}' for role in ('T_note','T_raw') for order in orders}
-        if set(gates.files)!=heads or set(targets.files)!=heads:
+        if set(gates.files)!=heads or set(targets.files)!=heads or set(logits.files)!=heads:
             raise ValueError('Every frozen treatment/control head must be present')
         absolute_arms=heads|{'B0','T_note','T_raw','T_note:global','T_note:position',
                             'T_raw:global','T_raw:position'}
@@ -48,6 +65,21 @@ def main():
             if not np.isfinite(gates[name]).all() or not ((gates[name]>=0)&(gates[name]<=1)).all():
                 raise ValueError('Valid gate contributions required')
             close(targets[name].sum(1),totals[name],name+' complete target sum')
+            role=name.split('-hard-order')[0]
+            # A rounded g can equal one and lose a small but consequential base
+            # contribution. Reconstruct from the original finite head logits.
+            u=logits[name]
+            if u.shape!=(n,16) or not np.isfinite(u).all():
+                raise ValueError('Complete finite pre-gate logits required')
+            active=u>np.log(.01/.99);distance=u[active]-np.log(.01/.99)
+            denominator=np.logaddexp(np.log(.99),np.log(.01)+distance)
+            log_g=np.log(.01)+distance+np.log(-np.expm1(-distance))-denominator
+            reconstructed_gate=np.zeros_like(u);reconstructed_gate[active]=np.exp(log_g)
+            close(reconstructed_gate,gates[name],name+' gate weights')
+            mixed=predictors['B0'].copy()
+            mixed[active]=np.logaddexp(predictors['B0'][active]-denominator,
+                                       predictors[role][active]+log_g)
+            close(mixed,targets[name],name+' token mixture')
             for key,value in dict(mean_gate=gates[name].mean(),closed_fraction=(gates[name]==0).mean(),
                                   near_closed_fraction=(gates[name]<=.001).mean()).items():
                 close(value,r['routing'][cohort][name][key],name+' routing')

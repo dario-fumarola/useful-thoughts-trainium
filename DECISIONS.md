@@ -13,7 +13,8 @@ Updated October 21, 2026. Entries below this summary remain append-only.
 - Active selector paths and the generic paired-row API now share explicit-cluster bootstrap arithmetic.
 - Keep independently implemented numerical verification.
 - Refactor current guidance for clarity while archiving full history.
-- The CPU study is closed; a fixed-head fresh-source confirmation is frozen with numerical qualification first.
+- Fresh confirmation is complete: all six calculation gains vs B0, five all-control passes, natural losses in every order; both endpoint criteria fail.
+- A simple no-calculation constant mixture improves natural prediction and remains a required comparator.
 
 ---
 
@@ -1809,3 +1810,11 @@ The census finds 0.001664% strict verified arithmetic incidence in its source-cl
 Freeze the six original hard-gate terminal 640 heads and six matching raw heads, with their FIT-only constant/position controls. Calculation and natural endpoints are separate. The latter requires actual positive gain, rather than tolerable regression. No row replacement or seed/checkpoint selection. [Design](configs/reader_fresh_confirmation_design.json).
 
 One existing-node test: 4.25 reserved chip-hours including <=0.5 qualification, max two physical chips. Parent actual 3.892004 plus maximum 4.25 remains below 8.25; the initial unexecuted 4.5 draft was tightened before model calls. Explicit auto-cast=none and prospective empirical numerical tolerances retain the original causal/normalization/greedy checks. No historical verdict changes or silently reused exceptions. Numerical qualification and measured cost within the cap release exactly this test. All 2,004 CPU checks/smoke/compile pass. No head/backbone training or broader campaign.
+
+## 2026-10-21 — complete the frozen fresh-source confirmation
+
+Reuse every fixed terminal-640 hard head and fitting-only control on 1,024 source/expression-separated calculations and 4,096 identity/length-selected natural windows. Sources, heads, controls, endpoints and prospective numerical tolerances were frozen before fresh outcomes. Every native process closes; actual reservation is 1.781765 chip-hours including qualification, below 4.25.
+
+All six targeted base-model gains are positive with positive intervals; five beat all controls. Order 45 versus the calculation position schedule has an interval spanning zero, preserving the failed all-six calculation criterion. Every natural base-model interval is negative; the natural endpoint fails. The no-calculation constant mixture improves natural likelihood and is retained prominently. Do not substitute the old retention tolerance for the natural endpoint or reweight enriched arithmetic into a corpus-wide result.
+
+Independent NumPy reconstruction and source-free replay preserve all 80 contrasts and both decisions. Stable pre-gate logits are exported because rounded mixture weights near one lose a small base contribution; original scientific scores and tolerances are unchanged. The next pretraining baseline requires uniform source-token loss with no duplicated continuation branch. [Complete report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md).
