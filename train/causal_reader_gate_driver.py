@@ -26,7 +26,9 @@ DEPENDENCIES=tuple(dict.fromkeys((*PREVIOUS_SOURCES,'train/causal_reader_gate.py
     'train/causal_reader_fit.py','train/causal_reader_gate_driver.py',
     'train/causal_reader_head_driver.py','scripts/check_causal_reader_qualification.py',
     'scripts/causal_reader_cost_profile.py','scripts/freeze_causal_reader_protocol.py',
-    'train/causal_reader_supervisor.py','weekend_thinking/stats.py')))
+    'train/causal_reader_supervisor.py','weekend_thinking/stats.py',
+    'scripts/check_reader_confirmation_sources.py','train/reader_confirmation.py',
+    'scripts/check_reader_confirmation.py')))
 
 
 def read(path):return json.loads(Path(path).read_text())
@@ -55,7 +57,11 @@ def owner_approval(p):
 
 def science_budget(p):
     approval=owner_approval(p)
-    return approval['maximum_total_reserved_chip_hours'] if approval else 8.
+    if approval:return approval['maximum_total_reserved_chip_hours']
+    ceiling=p.get('maximum_total_reserved_chip_hours',8.)
+    if isinstance(ceiling,bool) or not isinstance(ceiling,(int,float)) or not .5<=ceiling<=8:
+        raise ValueError('Finite prospective ceiling within existing-node limit required')
+    return float(ceiling)
 
 
 def qualification_identity(p,path,qualification):
@@ -82,14 +88,24 @@ def require_frozen(p):
             (p['cost_plan_file'],p['cost_plan_sha256']),(p['decision_file'],p['decision_sha256']),
             (p['binding_file'],p['binding_sha256'])):
         if sha256_file(filename)!=digest:raise ValueError('Frozen reviewed execution contract changed')
-    if (sha256_file(p['data_audit_file'])!=p['data_audit_sha256']
-            or read(p['data_audit_file'])['status']!='PASS_ALL_SELECTED_SOURCE_NATIVE_EXCLUSION_AND_EXACT_EQUATION_CHECKS'):
+    audit=read(p['data_audit_file'])
+    statuses={'PASS_ALL_SELECTED_SOURCE_NATIVE_EXCLUSION_AND_EXACT_EQUATION_CHECKS'}
+    if p.get('study_schema')=='frozen-reader-confirmation-v1':
+        if (audit.get('documents')!=5120 or audit.get('verified_equations')!=1024
+                or set(p['science_cohorts'])!={'CONFIRM_calculation','CONFIRM_natural'}
+                or p['data']['CONFIRM_calculation']['rows']!=1024
+                or p['data']['CONFIRM_natural']['rows']!=4096):
+            raise ValueError('Complete prospectively fixed fresh confirmation sources required')
+        statuses.add('PASS_FRESH_READER_PINNED_PARQUET_SOURCE_CHECK')
+    if (sha256_file(p['data_audit_file'])!=p['data_audit_sha256'] or audit['status'] not in statuses):
         raise ValueError('Independent complete source/native cohort audit required')
     owner_approval(p)
 
 
 def protocol(a):
     p=read(a.protocol);require_frozen(p)
+    if 'compiler_flags' in p and os.environ.get('NEURON_CC_FLAGS')!=' '.join(p['compiler_flags']):
+        raise ValueError('Actual compiler environment differs from its explicit frozen flags')
     if a.phase=='qualification':
         if p['qualification_release']['status']!='RELEASED_BOUNDED_ACTUAL_MODEL_QUALIFICATION_ONLY':
             raise ValueError('Actual-model qualification is not released')
@@ -386,7 +402,8 @@ def main():
     parser.add_argument('command',choices=('generate','features','reference','causality','interventions'))
     for name in ('protocol','output'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--phase',choices=('qualification','science'),required=True)
-    parser.add_argument('--cohort',choices=('qualification','TRAIN','DEV_calculation','DEV_ordinary'),required=True)
+    parser.add_argument('--cohort',choices=('qualification','TRAIN','DEV_calculation','DEV_ordinary',
+                                          'CONFIRM_calculation','CONFIRM_natural'),required=True)
     parser.add_argument('--role',choices=('B0_raw','T_raw','T_note'),required=True)
     parser.add_argument('--device',choices=('cpu','xla'),required=True)
     parser.add_argument('--notes',type=Path)

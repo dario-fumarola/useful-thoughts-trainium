@@ -6,7 +6,7 @@ Study when self-generated intermediate computation improves prediction, and whet
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
-The cached selector study is complete: hard gates pass in six orders, calibrated smooth gates in four. All 24 terminal heads are retained. Its four-CPU, one-hour budget is closed. Internal validation is developmental; completed DEV panels are excluded from recipe selection. Publication and focused statistical maintenance are complete. Subsequent empirical work needs a concrete source, outcome and resource plan.
+Current work is one fixed-head fresh-source confirmation: 1,024 calculation documents and 4,096 unenriched natural windows. All 12 existing hard-gate treatment/control heads remain frozen. Cap 4.25 reserved chip-hours including <=0.5 qualification, at most two existing physical chips, no head/backbone fit. Numerical and actual-cost checks precede scientific execution. See the design and source proof linked from STATUS.md.
 
 ## Three red lines
 

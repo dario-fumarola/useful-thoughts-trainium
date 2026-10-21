@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETE_READER_CONFIRMATION_SOURCE_INVENTORY",
+  "plan_sha256": "afd5ebd7063a7462d47e9a0cb175db3405521cfb951f06722672fd7698948847",
+  "script_sha256": "b1ffb623d02a458eb21b5c65ddcfdba9bee7be81b97f8d1069924b09dc4d1e02",
+  "pins": {
+    "/home/ubuntu/dario/local/data/causal-reader-source-extension-v1/qualification-questions.jsonl": "c474323259ac7d0093a912e4e7fc0fee91da392262d45394c54c861e868bca78",
+    "/home/ubuntu/dario/local/data/causal-reader-source-extension-v1/TRAIN-questions.jsonl": "12de98f3f1a520972b9c85708c6cc2a904d397bb826ecfc1f801ecfe7abdc01d",
+    "/home/ubuntu/dario/local/data/causal-reader-source-extension-v1/DEV_calculation-questions.jsonl": "7f401ce79b3d446911936e5a0cf0fd69df3194a01204c3b91357e785de8b76b6",
+    "/home/ubuntu/dario/local/data/causal-reader-source-extension-v1/DEV_ordinary-questions.jsonl": "6ad6882f3e07093b22dda75a0623e0b2ea407960cd93153990e2037c4ddaf7f7",
+    "/home/ubuntu/dario/local/data/finemath/pilot-5000.audited.records.documents.jsonl": "08c4573efc79f1dfd0d945fb0f5578d04d299efdf011d688172a4ef7df6e8dbf",
+    "/home/ubuntu/dario/local/data/finemath/production-500000.audit-v2.records.documents.jsonl": "9ee1c7f5dfdad156db8ef34fea2fa62315cf00be0cf6a8bd49c454628ab28cbf",
+    "/home/ubuntu/dario/local/data/finemath/production-500000.audited.records.documents.jsonl": "f340a2d6c82ab83c7b1fcac14a0d658e56f4ef3df4d01d938e0c3f712f2e3b10",
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-source-v1/novel-membership.jsonl": "21f528fa91b0016dfc4f0c982c4fc0f56314d49de29610bcb7ee8f8b870bdaca",
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-fresh-source-shard62-v1/novel-membership.jsonl": "52a255e725b213794aa0b6aaa43794cbe23762c4b5017041e83b7b30bbfe610e",
+    "/home/ubuntu/dario/local/data/candidate-utility-v30-curation61-v1/TRAIN-membership.jsonl": "2bade1343dedadde6ad8f6d2315681d0bbe2c57caaa8613b58a2fb3671940bc1",
+    "/home/ubuntu/dario/local/data/real-cpt-scaffold-v29-cpu-v2/TRAIN.jsonl": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+    "/home/ubuntu/dario/local/data/real-cpt-scaffold-v29-cpu-v2/DEV_calculation.jsonl": "a8ba61cb1d97b1929b2d90d30b270ff09537fd6f18ecb3c6458eb9af862d8e62",
+    "/home/ubuntu/dario/local/nvme-study/data/real-prefix-partial-labels-v9/DEV.jsonl": "8ba676b1cb7cb1f46405d259911207e2d4467ffed922ef07ab2bf9e28738ce79",
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v1/DEV_novel_expression256.jsonl": "cd7c0f68d61f7e2e4cbd8f2fa71587a05b4eb22125b2a1f63ff0bcf09ad2f7a7",
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v1/DEV_ordinary256.jsonl": "59e0307d842ed93815c1bc4e4cc48d0c42b0aa4e06cdfa8106dd73b2841b2b75",
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v2/DEV_novel_expression256.jsonl": "41d4aa6e6d217cdd57296953c669a95005ae1eb17b29ba5dc8565627b0c78fba",
+    "/home/ubuntu/dario/local/nvme-study/data/real-trace-cpt-v10-held-panels-v2/DEV_ordinary256.jsonl": "59e0307d842ed93815c1bc4e4cc48d0c42b0aa4e06cdfa8106dd73b2841b2b75",
+    "/home/ubuntu/dario/local/nvme-study/data/real-target-sft-v15-held-v1/DEV_fresh384.jsonl": "8b9bc93656eb536981c8331d04dfd120117e373364d00b0806691907e005581c",
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-confirmation-v1/DEV_confirm512.jsonl": "6b801912351e73676fa691404358a1daaf1a540fc36f805afc92d7c3a9433d30",
+    "/home/ubuntu/dario/local/nvme-study/data/real-source-balanced-v17-confirmation-v1/DEV_ordinary256.jsonl": "1d490d8f37790154b23ea1f34201c22c84429e55eb4742dbf6b6bf24d986592f",
+    "/home/ubuntu/dario/local/data/candidate-utility-v30-curation61-v1/eligible-new-TRAIN.jsonl": "27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f",
+    "/home/ubuntu/dario/local/data/causal-reader-feasibility-v1/accepted.jsonl": "82f339f744ca5851829a1897caeac69aec94e53a897278b841bc2be2affdb1b7",
+    "/home/ubuntu/dario/local/data/causal-reader-source-extension-v1/accepted.jsonl": "1631fd1f39f127fc0d65c49b23eeef52b94e6e01b8cd335fa75de893862f4ee9"
+  },
+  "used_source_documents": 13344,
+  "blocked_expression_ASTs": 13318,
+  "counts": {
+    "accepted_source_records": 17843,
+    "short_prefix": 6540,
+    "used_source": 6749,
+    "previously_used_expression": 3471,
+    "unsupported_original_packing": 24,
+    "residual_duplicate_document_page_or_expression": 11
+  },
+  "strict_eligible_reserve": 1048,
+  "reserve_sha256": "76f86d3ede5f9447687b3b40a5d50d9e05d56bd5b87aca218b3177bca06f11b0",
+  "wall_seconds": 11.089317482023034,
+  "model_calls": 0,
+  "accelerator_chip_hours": 0,
+  "limits": [
+    "Original one-hash-selected equation per source, full512 prefix, original640 packing, strict previous-expression/source exclusions.",
+    "Native source-Parquet revalidation remains required before evaluation.",
+    "This is not all unused valid boundaries: original curator chooses one equation before requiring a full512 prefix. Prevalence census separately counts every accepted boundary.",
+    "No predictor scores, feature extraction, head fit, source acquisition or model calls."
+  ]
+}

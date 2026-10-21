@@ -1,0 +1,118 @@
+{
+  "status": "FROZEN_FRESH_READER_CONFIRMATION_BEFORE_MODEL_CALLS",
+  "identity": "reader-fresh-confirmation-20261021",
+  "created_utc": "2026-10-21T18:16:14.663810+00:00",
+  "protocol_sha256": "6e4f79175a17af1981e3ff7c98ee2a04686e7b525d403e45f5b8976c27209810",
+  "source_audit_sha256": "2bd73b1c2679f3fe50d6a87ea7a359f2052c439a81bd447c1c80c24f4fa18d27",
+  "source_views": {
+    "qualification": {
+      "rows": 32,
+      "labels_sha256": "62b580cce983329fae0fc3e370d8173ea3100cc9b918d0b63281faeabe9aae4d",
+      "questions_sha256": "c474323259ac7d0093a912e4e7fc0fee91da392262d45394c54c861e868bca78"
+    },
+    "CONFIRM_natural": {
+      "rows": 4096,
+      "labels_sha256": "0c00c23f6a83176cf78ab1599ae2db5457ea174c600faaf2f43dabd34d79828a",
+      "questions_sha256": "1f4ec4026895bbd0d3031d95b354dab039a03ffdce813bd3a2a237169b57baf4"
+    },
+    "CONFIRM_calculation": {
+      "rows": 1024,
+      "labels_sha256": "69842c622882dd81f3315961cb7015c550a8520a3003ee83b07c46ea58052d28",
+      "questions_sha256": "00f33f8bb70aa70b0ca8af3b5c82d82091b202dcfea546111cf4f9df26948e60"
+    }
+  },
+  "heads": {
+    "T_note-hard-order2026102141": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102141/terminal640.pt",
+      "sha256": "15d3d839eea26736161e2276e9a4783191d206174ba44d80fed2fa283f6f4107"
+    },
+    "T_note-hard-order2026102142": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102142/terminal640.pt",
+      "sha256": "29a11527a355863b88cf44c8c90a48e480d9f06be11cb59c72ee8acb5b2cd1e5"
+    },
+    "T_note-hard-order2026102143": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102143/terminal640.pt",
+      "sha256": "6ffc121056d3b12bf90ccbf79c8963cb89d5162b91fe384ea9b16c8d033f47ab"
+    },
+    "T_note-hard-order2026102144": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102144/terminal640.pt",
+      "sha256": "c6acbfe6fa69d169f6aa6e82c3e80cb8bed8c25c5edc5a88ca5eba5688306cf8"
+    },
+    "T_note-hard-order2026102145": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102145/terminal640.pt",
+      "sha256": "dff9dbdb457ea39bbc232b26713561f5d88f35a0d196c8b3bb73089ea4c980b9"
+    },
+    "T_note-hard-order2026102146": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102146/terminal640.pt",
+      "sha256": "f43a0591affe228f3a1bc8d0fe8847614136bc78a3d5ee7ad70b92751bf2963b"
+    },
+    "T_raw-hard-order2026102141": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102141/terminal640.pt",
+      "sha256": "76ffbcab2900a60c92000878d5a34346bb3b82883bf511658207fa53bf166f74"
+    },
+    "T_raw-hard-order2026102142": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102142/terminal640.pt",
+      "sha256": "1d9fee01d21696bfd878bc8b2d03aaa85c3dc42aa73e28a205457c46f956198e"
+    },
+    "T_raw-hard-order2026102143": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102143/terminal640.pt",
+      "sha256": "587cb8e235843dcb935d27abc7478cf34f3acd8a3487a3090de6dbdca798eb49"
+    },
+    "T_raw-hard-order2026102144": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102144/terminal640.pt",
+      "sha256": "36376ff8212f96b9061b5ed6949ee94567043890b29446c884a791da9388b1eb"
+    },
+    "T_raw-hard-order2026102145": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102145/terminal640.pt",
+      "sha256": "c0faf4b2215db38ccb69d5a6718b46a8c07916f5d0563f4e83addfea78909be6"
+    },
+    "T_raw-hard-order2026102146": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102146/terminal640.pt",
+      "sha256": "6d624f481a972fa721e3519e20fe69549af873bc874c68d74f6e52153d6cfec7"
+    }
+  },
+  "sources": {
+    "train/candidate_utility_v30.py": "07ab3366165dc1b31f419ce5349e08ac3c7877ed8d0f003c589519571667f3cd",
+    "train/candidate_utility_v30_driver.py": "1464ef5b81992fef512ae3eed228b2906240c328dc70a0e2de0c40c1317d1f53",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/document_qa_span_scores.py": "4b8e7773b931765761b1d21c4ba4d171ceeabda992eddb9ada59490a3c2e603e",
+    "train/real_trace_contexts.py": "03cc992290982bd89146d056fe476e8ebb76a40f683a97e24b6e25b6c3264f9f",
+    "train/real_cpt_readout.py": "aa8284150fa86a321a056386b4bd1ba049188715cd12564456a5c066681c1a91",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/evaluate_local.py": "ef736a00ddb600728148ad0a6aa695835059e3c688f6f1dadff3d90767ee2bdc",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/real_cpt_readout_driver.py": "a6d84713f8877e5f78d0668e33b27256a52a2536dadfb11494b8729043b2066f",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/expression_identity.py": "4e1d61b61727bd902f7e08d2869435404b619822c5f23a1636fe8bdc26cba6f4",
+    "train/runtime_compat.py": "5e408928b44e24f034cc44bc42f4126086a2dbf5d4a576783ce8e38b07efefa7",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/backend_contract.py": "6624e2e0242f05038d58ce8a88ae8a34d6a34cd3dcd32e89296b0e3b14fda87b",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "train/causal_reader_gate.py": "5ce1aa52bd24332d714684bba74a1c950982512a32d3c2ab85b25bda7b11f4e9",
+    "train/causal_reader_fit.py": "a9eda9280f6a9d448360c91a8b77518404ecd64bfe4da4eeb8f846feedd072c6",
+    "train/causal_reader_gate_driver.py": "0dc8a8685701c1d5040574793c3f9cd3b2afcd9a38ad16ba7bff0df601674b64",
+    "train/causal_reader_head_driver.py": "3072603e411c62e61bc513fa8e6cdd2f061256304ce6b85c9543725cf4a2eeda",
+    "scripts/check_causal_reader_qualification.py": "916376fcc9b43711acd76a0ad7c8b4893598d0098124ef7841d82cd34675c01d",
+    "scripts/causal_reader_cost_profile.py": "2f8b1b77e8198307c276dda2d9231a0c259b96a52c5f065922babe632d781588",
+    "scripts/freeze_causal_reader_protocol.py": "e619fee66c71a3e081f96766292b5dd546c4e1b4aa708cef93112f30827c92ed",
+    "train/causal_reader_supervisor.py": "64933ec7da9d042e4b32149b739790f7c060ace9bdafa7797b28657a223db456",
+    "weekend_thinking/stats.py": "234eaac6f03630923da65048d1da60581ff4eeff1aece3a60d30f8ede99f6f32",
+    "scripts/check_reader_confirmation_sources.py": "46f7e032724ea03878f0f4ceab3a9314d0e10310f5d7d697e3fa9d7d8bea9e9b",
+    "train/reader_confirmation.py": "49ca73cfee5d0e1c02c646c45a87065bc030c3cf549136dba7e71da0a242adfe",
+    "scripts/check_reader_confirmation.py": "4204c4221bba82603c372a9600333f6f27a5c1320e7c5f25268d7405eb37053b"
+  },
+  "maximum_total_reserved_chip_hours": 4.25,
+  "CPU_checks_passed": 2004,
+  "qualification_cap": 0.5,
+  "compiler_flags": [
+    "--model-type=transformer",
+    "--auto-cast=none"
+  ],
+  "qualification_first": true,
+  "fresh_model_outcomes_observed": false,
+  "limits": "All six existing hard-gate terminal640heads and matching controls, no fitting. Historical failures unchanged. New numerical settings prospective."
+}

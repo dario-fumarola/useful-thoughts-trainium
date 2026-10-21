@@ -62,8 +62,9 @@ def main():
             if len(timings)!=2 or any(v['documents']!=4 or v['science_path_seconds']<=0 for v in timings):
                 raise ValueError('Exact production path B4 warm batches required')
             reader.append(timings[1]['science_path_seconds']/4)
-    notes_count=sum(p['data'][name]['rows'] for name in ('TRAIN','DEV_calculation','DEV_ordinary'))
-    contexts=notes_count*3+1024
+    notes_count=sum(p['data'][name]['rows'] for name in
+                    p.get('science_cohorts',('TRAIN','DEV_calculation','DEV_ordinary')))
+    contexts=notes_count*3+p.get('extra_intervention_contexts',1024)
     writer_hours=max(writer)*notes_count/4/3600
     reader_hours=2*max(reader)*contexts/4/3600
     projected=writer_hours+reader_hours+.75

@@ -1,0 +1,13 @@
+{
+  "status": "PASS_FRESH_READER_PINNED_PARQUET_SOURCE_CHECK",
+  "documents": 5120,
+  "verified_equations": 1024,
+  "source_disjoint_from_prior_documents": 13344,
+  "natural_selection": "Reconstructed independently from identity/length only; no replacements",
+  "plan_sha256": "f85d1503b9209b627b34c3bcddeb57b82ee15a8215b545537f256cf4c40b2a62",
+  "preparation_sha256": "e9c1cbb62a446fa8929a3242fb066305434be641f10c7476aa5230e7057e15fe",
+  "checker_sha256": "46f7e032724ea03878f0f4ceab3a9314d0e10310f5d7d697e3fa9d7d8bea9e9b",
+  "wall_seconds": 42.15735932003008,
+  "model_calls": 0,
+  "limits": "Shared tokenizer and arithmetic grammar; independently reads every selected pinned-Parquet row. No predictor execution or scientific outcome scoring."
+}

@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETE_FRESH_READER_SOURCE_PANELS_NOT_MODEL_RELEASE",
+  "plan_sha256": "f85d1503b9209b627b34c3bcddeb57b82ee15a8215b545537f256cf4c40b2a62",
+  "selection_sha256": "0b6dfaa045aa1b19b79c2ba9b3c7f925f5f1984afb7eb0fffd6dc0b83595f230",
+  "cohorts": {
+    "CONFIRM_natural": {
+      "rows": 4096,
+      "labels_sha256": "0c00c23f6a83176cf78ab1599ae2db5457ea174c600faaf2f43dabd34d79828a",
+      "questions_sha256": "1f4ec4026895bbd0d3031d95b354dab039a03ffdce813bd3a2a237169b57baf4"
+    },
+    "CONFIRM_calculation": {
+      "rows": 1024,
+      "labels_sha256": "69842c622882dd81f3315961cb7015c550a8520a3003ee83b07c46ea58052d28",
+      "questions_sha256": "00f33f8bb70aa70b0ca8af3b5c82d82091b202dcfea546111cf4f9df26948e60"
+    }
+  },
+  "strict_calculation_reserve_after_natural_exclusion": 1046,
+  "counts": {
+    "natural": 4096,
+    "calculation": 1024
+  },
+  "wall_seconds": 34.91436185495695,
+  "model_calls": 0,
+  "accelerator_chip_hours": 0,
+  "limits": "Fresh sources, not novelty relative to base-model pretraining. Natural source/cut selection ignores calculation labels; no label-driven row replacement. Independent pinned-Parquet validation remains required."
+}

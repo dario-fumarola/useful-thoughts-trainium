@@ -44,3 +44,9 @@ def test_changed_approval_is_not_accepted(tmp_path):
 
 def test_original_limit_without_owner_exception():
     assert science_budget({})==8.
+
+
+def test_lower_prospective_cap_does_not_reopen_or_expand_the_parent_exception():
+    assert science_budget({'maximum_total_reserved_chip_hours':4.5})==4.5
+    for cap in (0,9,float('nan'),float('inf'),True):
+        with pytest.raises(ValueError):science_budget({'maximum_total_reserved_chip_hours':cap})

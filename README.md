@@ -2,7 +2,13 @@
 
 We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Current empirical work focuses on selective inference over frozen models. Improved pretrained weights and autonomous discovery remain open.
 
-## Latest result: repeated internal selection, unsuccessful smooth-gate repair
+## Current work: fresh confirmation and an unenriched prediction endpoint
+
+The strict verified arithmetic class occupies **0.001664% of bounded prediction positions** in the existing source-clean frame. That is not every useful reasoning event, but a balanced arithmetic panel cannot stand in for natural text. [Census and interpretation](validation/reader_population_census_20261021/REPORT.md).
+
+The next test uses **1,024 fresh calculation documents and 4,096 unenriched natural windows**, all independently checked against pinned sources. All six existing hard-gate heads and matched controls stay fixed. Numerical/cost qualification precedes execution, with **4.25 reserved chip-hours including qualification**. [Prospective design](configs/reader_fresh_confirmation_design.json).
+
+## Latest model result: repeated internal selection, unsuccessful smooth-gate repair
 
 A CPU-only comparison fitted 24 selectors on existing TRAIN caches: hard/smooth gates, calculation/no-calculation ensembles, six fixed document orders. The original hard gate passes the practical criteria in **6/6 orders**, gaining **0.42–0.46 nats per 16-token calculation continuation** over the unchanged base. The calibrated smooth gate passes in **4/6**, with two effectively inactive runs. Removing the cutoff did not improve reliability in this comparison.
 

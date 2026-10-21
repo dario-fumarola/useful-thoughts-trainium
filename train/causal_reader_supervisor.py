@@ -98,6 +98,10 @@ class Runner:
                 tmp=Path('/dev/shm')/f'crg-{self.namespace}-{name}-{number}';tmp.mkdir(mode=0o700)
                 env.update(PYTHONPATH=str(W)+':'+str(R/'local/test-deps'),USE_TORCH_XLA='0',
                     OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',TMPDIR=str(tmp),XLA_COMPILATION_CACHE_SIZE='256')
+                if 'compiler_flags' in self.p:
+                    if self.p['compiler_flags']!=['--model-type=transformer','--auto-cast=none']:
+                        raise ValueError('Only the explicit frozen FP32 compiler settings are supported')
+                    env['NEURON_CC_FLAGS']=' '.join(self.p['compiler_flags'])
                 communication=None
                 if core is not None:
                     if core//4 not in devices:raise ValueError('Worker outside fixed reserved physical chips')
@@ -224,7 +228,7 @@ def main():
         status='ALL_QUALIFICATION_PROCESSES_CLOSED'
     else:
         require_science_release(p,a.protocol)
-        for cohort in ('TRAIN','DEV_calculation','DEV_ordinary'):
+        for cohort in p.get('science_cohorts',('TRAIN','DEV_calculation','DEV_ordinary')):
             runner.stage(cohort+'-generate',runner.workers_for('generate',cohort,'T_note',8),[8,9])
             notes=a.output/'notes'/cohort
             for role in ('B0_raw','T_raw','T_note'):
@@ -234,9 +238,12 @@ def main():
                 runner.stage('CPU-fit', [(['-m','train.causal_reader_head_driver','fit',
                     '--protocol',str(a.protocol),'--features',str(a.output/'features'),
                     '--output',str(output),'--deadline-utc',a.deadline_utc],output,None)])
-        runner.stage('interventions',runner.workers_for('interventions','DEV_calculation','T_note',4,
-                                                       a.output/'notes'/'DEV_calculation'),[8])
-        status='ALL_SCIENCE_FEATURE_AND_TRAIN_HEAD_PROCESSES_CLOSED'
+        if p.get('secondary_interventions',{}).get('item_ids'):
+            runner.stage('interventions',runner.workers_for('interventions','DEV_calculation','T_note',4,
+                                                           a.output/'notes'/'DEV_calculation'),[8])
+        status=('ALL_FROZEN_HEAD_CONFIRMATION_FEATURE_PROCESSES_CLOSED'
+                if p.get('study_schema')=='frozen-reader-confirmation-v1'
+                else 'ALL_SCIENCE_FEATURE_AND_TRAIN_HEAD_PROCESSES_CLOSED')
     atomic_json(a.output/'runtime.json',dict(status=status,protocol_sha256=sha256_file(a.protocol),
         workers=runner.workers,native_reservations=runner.reservations,
         prior_reserved_chip_hours=runner.initial_spent,

@@ -1,0 +1,122 @@
+{
+  "identity": "reader-fresh-confirmation-20261021",
+  "schema": "frozen-reader-confirmation-v1",
+  "created_utc": "2026-10-21T18:10:10.660156+00:00",
+  "authorization": "Owner requested continued work toward a fixed-recipe fresh-distribution test. One bounded existing-node frozen-inference test; no new capacity, paid teacher, backbone training or head fitting.",
+  "models": "Unchanged B0 and first frozen V29 computation checkpoint; same FP32 causal feature and greedy-note implementations.",
+  "orders": [
+    2026102141,
+    2026102142,
+    2026102143,
+    2026102144,
+    2026102145,
+    2026102146
+  ],
+  "frozen_heads": {
+    "T_note-hard-order2026102141": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102141/terminal640.pt",
+      "sha256": "15d3d839eea26736161e2276e9a4783191d206174ba44d80fed2fa283f6f4107"
+    },
+    "T_note-hard-order2026102142": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102142/terminal640.pt",
+      "sha256": "29a11527a355863b88cf44c8c90a48e480d9f06be11cb59c72ee8acb5b2cd1e5"
+    },
+    "T_note-hard-order2026102143": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102143/terminal640.pt",
+      "sha256": "6ffc121056d3b12bf90ccbf79c8963cb89d5162b91fe384ea9b16c8d033f47ab"
+    },
+    "T_note-hard-order2026102144": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102144/terminal640.pt",
+      "sha256": "c6acbfe6fa69d169f6aa6e82c3e80cb8bed8c25c5edc5a88ca5eba5688306cf8"
+    },
+    "T_note-hard-order2026102145": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102145/terminal640.pt",
+      "sha256": "dff9dbdb457ea39bbc232b26713561f5d88f35a0d196c8b3bb73089ea4c980b9"
+    },
+    "T_note-hard-order2026102146": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_note-hard-order2026102146/terminal640.pt",
+      "sha256": "f43a0591affe228f3a1bc8d0fe8847614136bc78a3d5ee7ad70b92751bf2963b"
+    },
+    "T_raw-hard-order2026102141": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102141/terminal640.pt",
+      "sha256": "76ffbcab2900a60c92000878d5a34346bb3b82883bf511658207fa53bf166f74"
+    },
+    "T_raw-hard-order2026102142": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102142/terminal640.pt",
+      "sha256": "1d9fee01d21696bfd878bc8b2d03aaa85c3dc42aa73e28a205457c46f956198e"
+    },
+    "T_raw-hard-order2026102143": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102143/terminal640.pt",
+      "sha256": "587cb8e235843dcb935d27abc7478cf34f3acd8a3487a3090de6dbdca798eb49"
+    },
+    "T_raw-hard-order2026102144": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102144/terminal640.pt",
+      "sha256": "36376ff8212f96b9061b5ed6949ee94567043890b29446c884a791da9388b1eb"
+    },
+    "T_raw-hard-order2026102145": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102145/terminal640.pt",
+      "sha256": "c0faf4b2215db38ccb69d5a6718b46a8c07916f5d0563f4e83addfea78909be6"
+    },
+    "T_raw-hard-order2026102146": {
+      "file": "/home/ubuntu/dario/local/science-runs/selector-optimization-train-v1/T_raw-hard-order2026102146/terminal640.pt",
+      "sha256": "6d624f481a972fa721e3519e20fe69549af873bc874c68d74f6e52153d6cfec7"
+    }
+  },
+  "fitted_heads_sha256": "305644176cfa164418fa46f99233881b8c0e7e1b5bafee8dfde5dca32dcf416b",
+  "source_preparation_sha256": "e9c1cbb62a446fa8929a3242fb066305434be641f10c7476aa5230e7057e15fe",
+  "source_audit_sha256": "2bd73b1c2679f3fe50d6a87ea7a359f2052c439a81bd447c1c80c24f4fa18d27",
+  "populations": {
+    "calculation": "1024fresh source/expression-disjoint verified arithmetic documents; targeted mechanism benchmark, not a natural prevalence sample.",
+    "natural": "4096source-identity-hash-selected unused documents with a length/identity-hash cut; no candidate-label or serialization-outcome selection or row replacement. Uniform eligible documents, not token-weighted all-FineMath traffic."
+  },
+  "controls": [
+    "unchanged B0",
+    "FIT-only calculation constant mixture",
+    "FIT-only calculation position mixture",
+    "matched frozen no-calculation head",
+    "FIT-only no-calculation constant mixture",
+    "FIT-only no-calculation position mixture"
+  ],
+  "endpoints": {
+    "calculation_confirmation": "In every fixed order, full16 gain vs B0 >=.25 nats with positive95LCB and positive95LCB against each of the five other controls.",
+    "natural_prediction": "Separately, in every order full16 gain vs B0 >=.01 nats with positive95LCB and positive95LCB against each of the five other controls. Passing old.03nats/token retention tolerance is secondary and does not establish this endpoint."
+  },
+  "statistics": {
+    "unit": "unique source document",
+    "paired_draws": 5000,
+    "seeds": [
+      2026102151,
+      2026102152
+    ],
+    "intervals": "unadjusted percentile; conditional on fixed heads/model pair, not independent backbone replication"
+  },
+  "selection": "All six original hard-gate terminal640heads and six matched raw controls fixed before any new predictor outcome. No fit, new optimizer order, successful-head selection or prompt sweep.",
+  "power": "A bounded fixed-source confirmation, not a promised80%joint-power design. All estimates and intervals remain reportable if a conjunctive endpoint fails. No optional stopping, sample expansion or seed replacement after outcomes.",
+  "resources": {
+    "maximum_reserved_chip_hours_including_qualification": 4.25,
+    "qualification_chip_hours": 0.5,
+    "maximum_physical_chips": 2,
+    "physical_devices": [
+      8,
+      9
+    ],
+    "science_wall_hours": 3,
+    "qualification_wall_minutes": 60,
+    "CPU_readout_cores": 4,
+    "minimum_root_free_GiB": 35,
+    "minimum_host_available_GiB": 512,
+    "feature_output": "New directory on existing nvme-study filesystem; no formatting or protected-state deletion.",
+    "budget_context": "Parent actual3.892004 plus this maximum4.25 remains below the previously accepted8.25 aggregate; no new capacity acquired."
+  },
+  "compiler_flags": [
+    "--model-type=transformer",
+    "--auto-cast=none"
+  ],
+  "numerical_contract": "Actual-model CPU/native qualification before fresh science, with complete distributions, normalization, causal perturbations and greedy behavior checked. Hidden abs.02/relative-L2.0005, target LP.003, first LP.004; other original causal/normalization/entropy/greedy limits unchanged. These prospective tolerances reflect earlier measured implementation discrepancies, not fresh outcome scores. No old failed qualification is reclassified and no old exception is silently reused.",
+  "limits": [
+    "Full16 teacher-forced prediction, not free-running answer accuracy or efficiency dominance.",
+    "No improved backbone weights, internalized computation, autonomous thought discovery or all-corpus gain follows.",
+    "Natural panel directly measures its declared frame; do not transport the targeted arithmetic mean using census prevalence and call that the primary result.",
+    "Every generated action, cap, context and reserved-chip phase remains counted. A closed gate does not recover generation cost."
+  ]
+}

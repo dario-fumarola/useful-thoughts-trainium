@@ -1,0 +1,14 @@
+{
+  "status": "PROSPECTIVE_BOUNDED_FROZEN_READER_COST_PLAN",
+  "notes": 5120,
+  "reader_contexts": 15360,
+  "old_qualification_writer128_seconds": 6.819657956017181,
+  "old_qualification_reader_warm_seconds": 0.18246445899421815,
+  "planning_formula": "writer_max128 *5120/4/3600 +2*reader_max *15360/4/3600 +.75; whole-chip phase cost, includes idle cores and startup.",
+  "old_timing_projection_reserved_chip_hours": 3.564024785771552,
+  "hard_ceiling": 4.25,
+  "actual_qualification_required": true,
+  "rule": "Only a successful actual numerical contract and actual timing projection <=4.25 release one complete test. No automatic retries or new fits.",
+  "parent_actual_chip_hours": 3.8920037196,
+  "combined_parent_and_new_maximum_chip_hours": 8.1420037196
+}

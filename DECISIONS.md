@@ -13,7 +13,7 @@ Updated October 21, 2026. Entries below this summary remain append-only.
 - Active selector paths and the generic paired-row API now share explicit-cluster bootstrap arithmetic.
 - Keep independently implemented numerical verification.
 - Refactor current guidance for clarity while archiving full history.
-- The bounded CPU study is closed; next work is publication and focused statistical maintenance.
+- The CPU study is closed; a fixed-head fresh-source confirmation is frozen with numerical qualification first.
 
 ---
 
@@ -1800,3 +1800,12 @@ The generic paired-row API, current selector readout/interventions and internal 
 Freeze a read-only census of the two existing source-clean TRAIN frames before computing prevalence. Count every bounded cut with 512 past and 16 future tokens; do not condition the denominator on a calculation being present or verified. Report position-weighted incidence, document-balanced expected incidence, document presence and an identity-hash-selected position. Also separate original used-source identities from untouched sources. Existing audited candidate labels define the verified class before packing/novelty restrictions; this is not every type of useful computation. Pre-label-stage incidence includes native-window checks and is not a causal trigger.
 
 The existing source-level counts and a few audit records were inspected, but no predictive outcomes or new prevalence totals determine the design. Four CPU cores, 15 minutes, 256 MiB, no model calls, data acquisition or backbone work. [Plan](configs/reader_population_census.json).
+
+
+## 2026-10-21 — fixed-head fresh calculation and unenriched prediction confirmation
+
+The census finds 0.001664% strict verified arithmetic incidence in its source-clean prediction-position frame. This does not establish a whole-corpus prediction loss: old panels and the class do not cover every possible useful effect. Measure an unenriched panel directly. The source inventory leaves 1,048 strict residual calculations; after natural-source exclusion 1,046 remain, supporting 1,024 without downloads. All 5,120 new native windows independently match pinned Parquet data.
+
+Freeze the six original hard-gate terminal 640 heads and six matching raw heads, with their FIT-only constant/position controls. Calculation and natural endpoints are separate. The latter requires actual positive gain, rather than tolerable regression. No row replacement or seed/checkpoint selection. [Design](configs/reader_fresh_confirmation_design.json).
+
+One existing-node test: 4.25 reserved chip-hours including <=0.5 qualification, max two physical chips. Parent actual 3.892004 plus maximum 4.25 remains below 8.25; the initial unexecuted 4.5 draft was tightened before model calls. Explicit auto-cast=none and prospective empirical numerical tolerances retain the original causal/normalization/greedy checks. No historical verdict changes or silently reused exceptions. Numerical qualification and measured cost within the cap release exactly this test. All 2,004 CPU checks/smoke/compile pass. No head/backbone training or broader campaign.

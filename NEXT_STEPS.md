@@ -1,12 +1,11 @@
-# Next steps
+# Current work
 
-The bounded TRAIN-only gate comparison is complete. Hard gates pass in six orders; calibrated smooth gates pass in four and stall in two. Preserve every outcome and the parent's failed joint criterion. [Report](validation/selector_optimization_train_v1_complete_20261021/REPORT.md).
+1. Run the frozen confirmation's bounded numerical qualification with explicit compiler settings and prospective empirical tolerances. Historical qualification outcomes remain unchanged.
+2. If every numerical requirement and the measured 4.25-chip-hour projection pass, release exactly the fixed two-panel test: 1,024 fresh calculation sources and 4,096 unenriched natural windows.
+3. Read out every fixed order against B0, calculation/no-calculation constant and position mixtures, and the matching learned no-calculation head. Independently reconstruct the predictions and source-paired intervals.
 
-1. Publication is complete: the evidence archive downloaded anonymously, matched its hashes and replayed successfully. [Release receipt](validation/selector_optimization_train_v1_public_release_20261021.json).
-2. Production bootstrap consolidation is implemented for the generic paired-row API and active selector paths. Cluster IDs and units are explicit; separate numerical checks and frozen results remain intact. All 120 completed-study contrasts agree within 6.2e-16. [Methods](docs/STATISTICS.md).
-3. Before fresh selective-inference confirmation, fix the recipe and budget, inventory untouched sources, and define a realistic text-mixture/prevalence target. Do not choose another seed against the completed panels. Retain constant, position and improved no-calculation controls.
-4. Before another CPT claim, qualify a uniform next-token baseline. V29's continuation-reweighted control was not uniform NTP. Specify source exposure, weighting, schedule, compiler precision, held-out loss and total compute before any backbone campaign.
+[Design](configs/reader_fresh_confirmation_design.json) · [Population/source proof](validation/reader_population_census_20261021/REPORT.md) · [Status](STATUS.md)
 
-Current workers are closed. The completed study used four CPU cores, under four minutes for fitting/readout plus verification, and no new model calls. Subsequent work should resolve these specific questions rather than launch a broad sweep under the old CPU budget.
+All heads and controls stay fixed. The natural endpoint uses its actual sampled windows; an enriched arithmetic mean times census prevalence is not its primary result. Calculation benefit and tolerable regression do not establish net prediction benefit.
 
-[Current status](STATUS.md) · [Historical queue](docs/archive/NEXT_STEPS_through_20261021.md)
+Keep the later pretraining question separate: uniform next-token training needs its own source, schedule and compute plan. [Historical queue](docs/archive/NEXT_STEPS_through_20261021.md).

@@ -1,0 +1,105 @@
+{
+  "status": "COMPLETE_BOUNDED_READER_POPULATION_CENSUS",
+  "identity": "reader-population-census-20261021",
+  "plan_sha256": "6f3ee30e8fb5ab7c74625a80f65855fce951a11486cb7082a00f36f6483ce3ef",
+  "sources": {
+    "initial_12_shards": {
+      "sha256": "dad72c53873ed067f793517a16449d900bf738c290808d2dab9bd2490fb73563",
+      "documents": 1058401
+    },
+    "additional_4_shards": {
+      "sha256": "41895023ece455469546b1cf488a49da280dab7f43b9c05b8aa6d13481cbefaf",
+      "documents": 320947
+    }
+  },
+  "by_source": {
+    "initial_12_shards": {
+      "counts": {
+        "documents": 1058401,
+        "positions": 905725372,
+        "verified_boundaries": 15121,
+        "pre_label_boundaries": 44027,
+        "eligible_documents": 770618,
+        "documents_containing_verified_boundary": 9107,
+        "chosen_verified": 18,
+        "chosen_pre_label": 42
+      },
+      "position_weighted_verified_prevalence": 1.669490605812465e-05,
+      "document_weighted_expected_verified_prevalence": 1.7022861178289278e-05,
+      "document_contains_verified_prevalence": 0.011817787801478814,
+      "fixed_hash_position_verified_prevalence": 2.3357876405689977e-05,
+      "position_weighted_pre_label_incidence": 4.860965736532332e-05,
+      "document_weighted_expected_pre_label_incidence": 5.25068760648746e-05
+    },
+    "additional_4_shards": {
+      "counts": {
+        "documents": 320947,
+        "positions": 269398586,
+        "verified_boundaries": 4431,
+        "pre_label_boundaries": 12883,
+        "eligible_documents": 227965,
+        "documents_containing_verified_boundary": 2624,
+        "chosen_verified": 3,
+        "chosen_pre_label": 11
+      },
+      "position_weighted_verified_prevalence": 1.644774779924049e-05,
+      "document_weighted_expected_verified_prevalence": 1.6823120301833404e-05,
+      "document_contains_verified_prevalence": 0.011510538898515122,
+      "fixed_hash_position_verified_prevalence": 1.3159914899216984e-05,
+      "position_weighted_pre_label_incidence": 4.7821334890005695e-05,
+      "document_weighted_expected_pre_label_incidence": 5.208525569975866e-05
+    }
+  },
+  "populations": {
+    "all": {
+      "counts": {
+        "documents": 1379348,
+        "positions": 1175123958,
+        "verified_boundaries": 19552,
+        "pre_label_boundaries": 56910,
+        "eligible_documents": 998583,
+        "documents_containing_verified_boundary": 11731,
+        "chosen_verified": 21,
+        "chosen_pre_label": 53
+      },
+      "position_weighted_verified_prevalence": 1.663824472890204e-05,
+      "document_weighted_expected_verified_prevalence": 1.6977262636254074e-05,
+      "document_contains_verified_prevalence": 0.011747646414970012,
+      "fixed_hash_position_verified_prevalence": 2.1029799225502536e-05,
+      "position_weighted_pre_label_incidence": 4.842893348618121e-05,
+      "document_weighted_expected_pre_label_incidence": 5.241062499056901e-05
+    },
+    "unused": {
+      "counts": {
+        "documents": 1366004,
+        "positions": 1149991897,
+        "verified_boundaries": 7850,
+        "pre_label_boundaries": 38081,
+        "eligible_documents": 985239,
+        "documents_containing_verified_boundary": 5038,
+        "chosen_verified": 12,
+        "chosen_pre_label": 40
+      },
+      "position_weighted_verified_prevalence": 6.826135054062907e-06,
+      "document_weighted_expected_verified_prevalence": 7.08581081436581e-06,
+      "document_contains_verified_prevalence": 0.005113480079452803,
+      "fixed_hash_position_verified_prevalence": 1.2179785818466382e-05,
+      "position_weighted_pre_label_incidence": 3.311414636863306e-05,
+      "document_weighted_expected_pre_label_incidence": 3.908075137451913e-05
+    }
+  },
+  "source_projections_used_only_for_identity": true,
+  "used_source_documents": 13344,
+  "projection_sha256": "64652fdf77e38ed7ad7d1c0b656d48b2a14ad582d3486f1195b5fa019b065096",
+  "wall_seconds": 41.05763807799667,
+  "accelerator_chip_hours": 0,
+  "model_calls": 0,
+  "limits": [
+    "Only the pinned source-clean16-shard TRAIN frame and original bounded curator definition; not all FineMath, general language, or every kind of useful computation.",
+    "Verified class uses source RHS to label correctness, never to choose a prospective random position. Auxiliary packing and expression-novelty checks are not applied, so incidence precedes those further restrictions.",
+    "Pre-label-stage incidence includes native whole-window serialization checks that can depend on future text. It is not a qualified causal invocation policy.",
+    "No confidence interval is needed for exact incidence in this finite frame. These counts alone do not establish natural-corpus predictive gains or transport the selected ordinary-panel costs.",
+    "Prior source-level curation counts and a few audit rows were inspected; no predictive scores or new population prevalence counts were consulted to set this design."
+  ],
+  "completed_utc": "2026-10-21T17:35:14.039884+00:00"
+}
