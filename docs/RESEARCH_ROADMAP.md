@@ -1,5 +1,26 @@
 # Long-term proof ladder
 
+## Completed selective-reader boundary — October 21
+
+The [owner-approved frozen-selector experiment](../validation/causal_reader_owner_complete_20261021/REPORT.md)
+is complete. One head-training order gains0.457nats per fresh16-token calculation
+span versus unchanged B0, beats TRAIN-fitted constant/position controls and the
+unassisted learned ensemble, and meets ordinary-text tolerance. The other order
+mostly closes its gate and gains essentially nothing. The original two-order
+criterion fails; all outcomes remain. Independent primary reconstruction passes.
+
+This is positive evidence for a specific prospective selective-use mechanism in
+one optimization order, with a failure of reproducible learning under this recipe.
+Its ordinary prediction still regresses slightly. Natural calculation prevalence
+is unmeasured; no overall language-model improvement follows from local gates.
+Both backbones stay frozen, so the result supplies no better pretrained weights,
+internalization or autonomous thought discovery. The raw-ensemble heads also
+mostly close; this comparison does not exhaust better ensemble procedures.
+
+Close this bounded experiment. A future optimization proposal must preserve its
+failed joint result and use a new identity; no additional fitting, RL, CPT,
+scaling or automatic campaign is released. V29/V30 below remain unchanged.
+
 ## V30 boundary — October 21
 
 The [completed candidate/reward diagnostic](../validation/candidate_utility_v30_complete_20261021/REPORT.md)
@@ -17,8 +38,8 @@ protocols match all frozen sources. Together with the exposure/loss audit, this
 removes specific implementation suspicions; it does not identify the cause of
 fresh-document regression or prove every numerical detail correct.
 
-No further model call or training run is queued. CPU-only preparation may now
-consider a materially different prediction interface that preserves an unchanged
+At V30 closure no further model call or training run was queued. CPU-only preparation then
+considered a materially different prediction interface that preserves an unchanged
 raw reference and can decline a calculation's contribution. This is a hypothesis,
 not a released experiment or a novelty claim. A real raw fallback differs from
 an empty calculation wrapper. [Quiet-STaR's mixing mechanism and instability discussion](https://arxiv.org/html/2403.09629v2)
@@ -31,7 +52,7 @@ The [CPU-only proposal](CAUSAL_READER_PROPOSAL.md) now specifies frozen B0 and
 assisted paths, a causal supervised head, a TRAIN-fitted constant blend and a raw
 ensemble control. Its pointwise-capped variant is rejected by a saved-score
 hindsight upper bound; the unrestricted variant requires empirical retention and
-remains unexecuted. A frozen-backbone gate cannot establish better pretrained
+was initially unexecuted; the later approved test is recorded above. A frozen-backbone gate cannot establish better pretrained
 weights. It is a bounded mechanism candidate, not the new main training program.
 
 The [fixed-source feasibility attempt](../validation/causal_reader_feasibility_complete_20261021.json)

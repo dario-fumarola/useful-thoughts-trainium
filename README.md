@@ -1,11 +1,29 @@
 # Useful Thoughts on Trainium
 
-**Current: the owner approved one bounded selector experiment despite the small numerical and timing deviations.**
-The original failed qualification remains recorded. Its32-source results are reused under an explicit exception;
-all other source, causality, normalization and exact-fallback checks pass. Scientific controls and success criteria are unchanged.
-The8.092chip-hour projection fits an8.25hardceiling includingall0.119qualification spend. No selector or scientific DEV outcome has been inspected before release.
-Full5,120TRAIN/4,096-per-DEV-stratum/32qualification source allocation remains independently verified.
-[Owner approval](validation/causal_reader_owner_approval_20261021.json), [execution plan](validation/causal_reader_owner_execution_plan_20261021.json).
+**Latest completed experiment: a causal selector improves fresh calculation-span prediction in one head-training order; the other mostly closes its gate. The declared two-order criterion fails.**
+Both backbones and all four terminal selectors were frozen before held-out processing. Each fresh panel has 4,096 source-separated documents.
+
+| Full16 calculation gain, nats [95% CI] | Head order 31 | Head order 32 |
+|---|---:|---:|
+| Versus unchanged B0 | **+0.457 [0.388, 0.526]** | −0.00002 [−0.00052, 0.00042] |
+| Versus TRAIN-fitted global blend | **+0.222 [0.163, 0.282]** | −0.235 [−0.254, −0.216] |
+| Versus unassisted learned ensemble | **+0.454 [0.385, 0.523]** | +0.00089 [−0.00144, 0.00335] |
+| Versus position schedule, secondary | **+0.132 [0.076, 0.188]** | −0.326 [−0.350, −0.301] |
+
+Order31 passes all four original requirements; order32 fails the three benefit requirements. Both meet the ordinary-text tolerance,
+with real NLL costs of +0.00201 / +0.000234 nats/token. The second gate closes on99.87%of calculation tokens;
+TRAIN diagnostics already showed near-total closure. These are two small-head optimization orders over the same frozen models,
+not independent backbone-training replications. A positive single-order inference mechanism is preserved alongside the failed joint result.
+This does not establish better pretrained weights, internalization, autonomous thought discovery or natural-corpus improvement.
+
+All13,312notes/40,960reader contexts and100native+1CPUworkers complete. Independent NumPy primary reconstruction passes.
+Actual3.892reservedchip-hours includingallqualification is below the owner-approved8.25ceiling. The original failed numerical qualification
+remains failed; the owner accepted its declared exceptions before any fit or scientific DEV outcome. No further job is queued.
+[Complete report](validation/causal_reader_owner_complete_20261021/REPORT.md),
+[original readout](validation/causal_reader_owner_complete_20261021/readout.json),
+[independent reconstruction](validation/causal_reader_owner_complete_20261021/independent-readout.json),
+[source-free replay package](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/causal-reader-owner-approved-20261021),
+[owner approval](validation/causal_reader_owner_approval_20261021.json).
 
 **V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN
 documents, hindsight best-of-eight calculations gain only **+0.082 nats** over the
@@ -27,13 +45,14 @@ final. The [CPU-only mechanism proposal](docs/CAUSAL_READER_PROPOSAL.md) specifi
 an unchanged B0 reference and a causal learned gate, with explicit learning and
 control comparisons. Its conservative pointwise-capped variant is rejected by
 a saved-score upper bound. Without that cap, the original greedy scores admit a
-2.063-nat tokenwise hindsight bound; prospective recovery is untested. The selector remains unfitted. The original bounded CPU [feasibility check](validation/causal_reader_feasibility_complete_20261021.json)
+2.063-nat tokenwise hindsight bound. The later bounded selective-reader test above recovers a prospective benefit in one order but fails its two-order criterion. The original bounded CPU [feasibility check](validation/causal_reader_feasibility_complete_20261021.json)
 is now **closed without model execution**: the fixed12-shard pool supplies6,095eligible
 unique calculations versus6,672required across TRAIN/DEV/qualification, short by577.
 An independent recount agrees; the sample size and exclusions remain unchanged.
 The guarded workflow passes1,964CPU tests. That closed attempt made no released-model calls or fits.
 A separately frozen four-shard extension now resolves the allocation without changing exclusions or sample sizes;
-actual qualification now closes without science under the unchanged0.5/8chip-hour limits. The numerical contract fails and the timing projection exceeds its bound.
+the original strict qualification closed without science because its numerical contract and timing projection failed.
+The owner then approved an explicit exception before fitting; the completed study above preserves that failed record and all scientific gates.
 Source availability is not evidence for or against selector efficacy.
 The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
 confirms that V29's raw arm reweights continuations; the source review does not

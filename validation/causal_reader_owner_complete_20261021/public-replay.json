@@ -1,0 +1,27 @@
+{
+  "DEV_documents": 8192,
+  "actually_extracted_and_executed": true,
+  "archive_bytes": 5807387,
+  "archive_file": "causal-reader-owner-approved-20261021-evidence.tar.gz",
+  "archive_sha256": "a02bfc85dd03836aa8dd1bdbbc3035ad5e818939eabd3a82fb18aa9fc747f323",
+  "file_hashes": 35,
+  "limits": "No model execution, hidden features, causal-head reconstruction, semantic verification, or external replication.",
+  "overall_pass": false,
+  "paired_bootstrap_draws": 5000,
+  "requirements": {
+    "2026102131": {
+      "base": true,
+      "global_control": true,
+      "ordinary_guard": true,
+      "raw_ensemble": true
+    },
+    "2026102132": {
+      "base": false,
+      "global_control": false,
+      "ordinary_guard": true,
+      "raw_ensemble": false
+    }
+  },
+  "secondary_statistics_replayed": true,
+  "status": "PASS_SOURCE_FREE_NUMERICAL_REPLAY"
+}

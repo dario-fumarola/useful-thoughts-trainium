@@ -1,13 +1,12 @@
 # Current queue
 
-Owner explicitly approved proceeding despite the small reported numerical and timing deviations. This supersedes the earlier hold.
+The owner-approved bounded selector experiment is COMPLETE. No further model job is queued.
 
-- Execute one bounded experiment under causal-reader-owner-approved-20261021-v1, control local/diagnostics/causal-reader-owner-approved-v1. New8.25reserved-chip-hour hardlimit includesall0.118952qualification spend; max2existing chips, finite5hour wall deadline.
-- Original numericalFAIL/CLOSED reports remain unchanged. The user-approved exception matches exactly the five saved deviations; all other actual checks passed. Reuse qualification, no new model qualification run.
-- Full datasets, models, writer policy, features, headrecipe, twoorders, controls, targetspans and scientific success gates unchanged. FourTRAINterminal800heads before DEV.
-- Run supervised source/feature/head stages, then original paired readout and independent NumPy reconstruction. Preserve every attempt and report actual costs, failures and qualification exceptions.
-- No writerRL,newCPT,model-sizejump,officialTEST,paidteacher,cloud/stack changes or automatic campaign.35GiBdisk/512GiBhost reserve,6GiBscienceoutputcap.
-- Prior closed qualification is an engineering record, not a failed mechanism experiment. Fresh scientific outcomes remain unobserved before this release.
+- Preserve the positive order31 result and the failed two-order gate together. Order31 gains+.457nats/full16 versus B0 and beats all predeclared controls; order32 mostly closes and gains nothing. Both have small ordinary-text costs within tolerance.
+- Report validation/causal_reader_owner_complete_20261021/REPORT.md; independent primary reconstruction passes. All100native+1CPUworkers closed0, actual3.892reservedchip-hours includingallqualification below8.25.
+- Original qualification failures, declared exceptions, unchanged scientific gates, all sources/notes/features/heads and original states remain preserved. No retraining of the convenient order or retrospective gate change.
+- A future proposal may address reproducible selector optimization, but this result releases no additional fits, writerRL, CPT, size jump, TEST, paid teacher or cloud/stack change. It is a frozen inference mechanism result, not recovered pretraining/internalization.
+- Keep35GiBdisk/512GiBhost reserves. Do not rerun closed producers, qualifiers or source scans.
 
 V30 remains COMPLETE and its reward branch remains CLOSED:
 

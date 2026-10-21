@@ -1,17 +1,18 @@
-# Status — 2026-10-21 15:07 UTC
+# Status — 2026-10-21 15:49 UTC
 
-## Running: owner-approved selector experiment
+## Complete: owner-approved selector experiment
 Question: can a causal selector exploit generated computation on fresh full16continuations?
-ID:causal-reader-owner-approved-20261021-v1; one bounded experiment explicitly approved by the owner.
-Owner approves reported numerical/cost deviations before any selector fit or scientific DEV outcome. Original failed receipts remain unchanged.
-Reuse original actual32-source qualification; all remaining source/identity/causality/normalization/exact-fallback checks pass.
-Approved numerical exceptions are the exact5previously observed failures; original tolerance values and scientific gates remain unchanged.
-Projected8.092chip-hours fits new hard8.25ceiling includingall0.118952qualification spend; max2existing chips8/9.
-Full5120TRAIN/4096DEVeach, actualB0/firstV29T frozen, head800updates/twoorders and all controls unchanged.
-1970CPU tests+smoke/compilePASS; allfourterminalTRAINheads must freeze before DEV.
-Supervisor2264960/session46723 RUNNING from frozen3482f59; deadline18:52:12UTC. Protocol89e4d335... unchanged.
-AllTRAINnotes/features/4terminal800heads and DEVcalculation notes/3features COMPLETE; ordinary generation running. Heads frozen beforeDEV; accounted2.559088chip-hours.
-Control local/diagnostics/causal-reader-owner-approved-v1; no writerRL/newCPT/scale/TEST or automatic follow-on.
+ID:causal-reader-owner-approved-20261021-v1; COMPLETE/overall two-order gate FAIL.
+All13312notes/40960reader contexts and100native+1CPUworkers close0; finaltopology0nativeprocesses.
+All4terminal800heads frozen14:37:18 before firstDEVlaunch14:37:20;5120TRAIN/4096DEVeach unchanged.
+Order31 calculation gain+.457[.388,.526] versusB0;+.222versusglobal;+.454versusrawensemble;+.132versusposition secondary; all positive intervals.
+Order32 gain−.000017[−.000519,.000419],gate99.87%closed; fails all3benefit requirements. Order31 passes all4; overallFAIL.
+OrdinaryNLL costs+.002014/+.000234per-token, bothpositive; declared+.03tolerancePASS. Naturalprevalenceunknown,no corpus-widegainclaim.
+Fixed256secondary order31 own−empty/other/corrupt=+.602/+1.640/+1.374,positiveCIs; oraclebetter; order32effectivelyzero.
+Independent native-cache NumPyhead/mixture/absolute/bootstrap/all8decision reconstructionPASS;1970prelaunchCPUtestsPASS.
+Actual3.892004reservedchip-hours includingall.118952qualification versus8.25ownerceiling; max2existingchips. Supervisorclosed15:48:07UTC.
+Exact5qualification deviations were owner-approved beforefit/DEV; originalstrictFAIL and scientificgates remain unchanged.
+Report validation/causal_reader_owner_complete_20261021/REPORT.md. No modeljob,retry,RL,CPT,scale,TEST or automaticfollow-on queued.
 
 ## Closed: actual-model qualification; no selector fit
 Question: do actual frozen features qualify numerically/causally and fit the8-chip-hour plan?

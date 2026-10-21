@@ -1,0 +1,51 @@
+{
+  "DEV_calculation": {
+    "attempts": 4096,
+    "dropped_attempts": 0,
+    "generated_actions": 146688,
+    "generation_status_counts": {
+      "ok": 4096
+    },
+    "maximum_actions": 123,
+    "mean_actions": 35.8125,
+    "median_actions": 31.0,
+    "minimum_actions": 11,
+    "stopping_counts": {
+      "token:16141": 4096
+    }
+  },
+  "DEV_ordinary": {
+    "attempts": 4096,
+    "dropped_attempts": 0,
+    "generated_actions": 241811,
+    "generation_status_counts": {
+      "ok": 4096
+    },
+    "maximum_actions": 128,
+    "mean_actions": 59.035888671875,
+    "median_actions": 39.0,
+    "minimum_actions": 5,
+    "stopping_counts": {
+      "length_cap": 990,
+      "token:151643": 5,
+      "token:16141": 3101
+    }
+  },
+  "TRAIN": {
+    "attempts": 5120,
+    "dropped_attempts": 0,
+    "generated_actions": 243861,
+    "generation_status_counts": {
+      "ok": 5120
+    },
+    "maximum_actions": 128,
+    "mean_actions": 47.6291015625,
+    "median_actions": 34.0,
+    "minimum_actions": 6,
+    "stopping_counts": {
+      "length_cap": 622,
+      "token:151643": 4,
+      "token:16141": 4494
+    }
+  }
+}

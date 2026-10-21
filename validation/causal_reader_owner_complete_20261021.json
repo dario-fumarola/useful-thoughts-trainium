@@ -1,0 +1,65 @@
+{
+  "CPU_fit_workers": 1,
+  "DEV_documents_per_stratum": 4096,
+  "TRAIN_documents": 5120,
+  "all_science_worker_exit_codes_zero": true,
+  "eight_requirements": {
+    "2026102131": {
+      "base": true,
+      "global_control": true,
+      "ordinary_guard": true,
+      "raw_ensemble": true
+    },
+    "2026102132": {
+      "base": false,
+      "global_control": false,
+      "ordinary_guard": true,
+      "raw_ensemble": false
+    }
+  },
+  "execution_source_commit": "3482f59",
+  "final_native_processes": 0,
+  "first_DEV_launch_utc": "2026-10-21T14:37:20+00:00",
+  "four_terminal_heads_frozen_utc": "2026-10-21T14:37:18+00:00",
+  "generated_note_actions": 632360,
+  "generated_notes": 13312,
+  "hard_reserved_chip_hour_ceiling": 8.25,
+  "head_orders": [
+    2026102131,
+    2026102132
+  ],
+  "identity": "causal-reader-owner-approved-20261021-v1",
+  "interpretation": "One frozen head order passes all four criteria and the secondary position control; the other mostly closes and fails benefit criteria. Overall predeclared two-order gate fails. This is a selective inference result, not better pretrained weights, internalization, autonomous discovery or a natural-corpus gain.",
+  "native_phases": 13,
+  "native_workers": 100,
+  "natural_prevalence_measured": false,
+  "order31_hypothetical_point_estimate_break_even_calculation_prevalence": 0.06584685998525237,
+  "ordinary_NLL_cost_per_token": {
+    "2026102131": {
+      "CI95": [
+        0.0013379641288718978,
+        0.0027469069221864872
+      ],
+      "mean": 0.002014420763058642
+    },
+    "2026102132": {
+      "CI95": [
+        0.00010189292287864273,
+        0.0003937305502964941
+      ],
+      "mean": 0.00023413987943345584
+    }
+  },
+  "original_failed_qualification_preserved": true,
+  "overall_pass": false,
+  "owner_exception_file": "validation/causal_reader_owner_approval_20261021.json",
+  "prior_qualification_reserved_chip_hours": 0.11895161972916363,
+  "protocol_sha256": "89e4d3350c2fa6863f4186512a74310cff8b8f7a2b916930142b6abf491268d1",
+  "reader_contexts": 40960,
+  "readout_sha256": "6ea3995d6bbfb14299f24cb9a54f08bf3a0cf940f4117b85c1e1c9e3b4a5b8a8",
+  "report": "validation/causal_reader_owner_complete_20261021/REPORT.md",
+  "reserved_chip_hours_including_all_qualification": 3.892003719629736,
+  "status": "COMPLETE_VERIFIED_FROZEN_SELECTOR_EXPERIMENT",
+  "terminal_heads_before_DEV": true,
+  "verification": "Independent NumPy reconstruction matches native-cache head predictions, all absolute arms, paired5000-document-bootstrap statistics and all eight primary decisions. Does not independently reconstruct secondary interventions or rerun backbones."
+}

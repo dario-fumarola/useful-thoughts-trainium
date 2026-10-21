@@ -1,4 +1,14 @@
-# Selective use of calculation: proposal, execution held
+# Selective use of calculation: original proposal and completed test
+
+**Execution update, October21:** the [bounded owner-approved test](../validation/causal_reader_owner_complete_20261021/REPORT.md)
+is complete. One head order passes all four scientific criteria; the second
+mostly closes and fails the benefit criteria, so the original joint criterion
+fails. Both ordinary-text costs are positive but within tolerance. All original
+qualification failures remain recorded under the prospective owner exception.
+No further execution is queued. This is selective inference, not better base weights.
+
+The text below preserves the historical pre-execution proposal and release holds;
+its statements that no model call or fitting had occurred describe that earlier stage.
 
 The next question is whether a causal predictor can use a calculation where it
 helps while retaining an actual unchanged B0 prediction where it does not.

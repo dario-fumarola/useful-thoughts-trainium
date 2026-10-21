@@ -1,0 +1,25 @@
+{
+  "documents_per_DEV_stratum": 4096,
+  "limits": "Original native arrays, separate NumPy causal-feature/gate/mixture reconstruction and paired statistics. Does not rerun backbones, establish faithfulness, externally replicate, or independently validate secondary interventions.",
+  "original_readout_sha256": "6ea3995d6bbfb14299f24cb9a54f08bf3a0cf940f4117b85c1e1c9e3b4a5b8a8",
+  "overall_pass": false,
+  "paired_bootstrap_draws": 5000,
+  "protocol_sha256": "89e4d3350c2fa6863f4186512a74310cff8b8f7a2b916930142b6abf491268d1",
+  "requirements": {
+    "2026102131": {
+      "base": true,
+      "global_control": true,
+      "ordinary_guard": true,
+      "raw_ensemble": true
+    },
+    "2026102132": {
+      "base": false,
+      "global_control": false,
+      "ordinary_guard": true,
+      "raw_ensemble": false
+    }
+  },
+  "source_sha256": "04a38ebe946e7b0b0e1d0eb77bd8799db7e8012f59ba6d5dcb8376dadb0df1c9",
+  "status": "PASS_INDEPENDENT_PRIMARY_READOUT_RECONSTRUCTION",
+  "terminal_heads": 4
+}
