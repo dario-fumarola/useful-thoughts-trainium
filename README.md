@@ -4,7 +4,7 @@ We study when intermediate computation improves prediction, whether it can impro
 
 ## Current work: fresh confirmation and an unenriched prediction endpoint
 
-The strict verified arithmetic class occupies **0.001664% of bounded prediction positions** in the existing source-clean frame. That is not every useful reasoning event, but a balanced arithmetic panel cannot stand in for natural text. [Census and interpretation](validation/reader_population_census_20261021/REPORT.md).
+The strict verified arithmetic class occupies **0.001664% of bounded prediction positions** in the existing source-clean frame. That is not every useful reasoning event, but a balanced arithmetic panel cannot stand in for natural text. [Census and interpretation](validation/reader_population_census_20261021/REPORT.md) · [Verified public counts](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-population-census-20261021).
 
 The next test uses **1,024 fresh calculation documents and 4,096 unenriched natural windows**, all independently checked against pinned sources. All six existing hard-gate heads and matched controls stay fixed. Numerical/cost qualification precedes execution, with **4.25 reserved chip-hours including qualification**. [Prospective design](configs/reader_fresh_confirmation_design.json).
 

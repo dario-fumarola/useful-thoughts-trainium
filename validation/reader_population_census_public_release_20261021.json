@@ -1,0 +1,72 @@
+{
+  "status": "PASS_PUBLIC_CENSUS_FULL_DOWNLOAD_HASH_READBACK_AND_REPLAY",
+  "release_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-population-census-20261021",
+  "target_commit": "d0bd192b068314158fc58c508a7d512a1ac91097",
+  "verified_utc": "2026-10-21T18:25:27.232854+00:00",
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-population-census-20261021/SHA256SUMS.txt",
+      "bytes": 308,
+      "sha256": "826ee5a8b7265bbad46ae94bb3b51c6e3163b6e2ff54c6eee23380b8261ed74e",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "826ee5a8b7265bbad46ae94bb3b51c6e3163b6e2ff54c6eee23380b8261ed74e"
+    },
+    {
+      "name": "reader-population-census-20261021.json",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-population-census-20261021/reader-population-census-20261021.json",
+      "bytes": 4971,
+      "sha256": "43ac26f553a7d2a9bf319fb28b0c4ce001762ae780d33322b362f63d78c57527",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "43ac26f553a7d2a9bf319fb28b0c4ce001762ae780d33322b362f63d78c57527"
+    },
+    {
+      "name": "reader-population-counts-20261021.jsonl.gz",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-population-census-20261021/reader-population-counts-20261021.jsonl.gz",
+      "bytes": 63245465,
+      "sha256": "64652fdf77e38ed7ad7d1c0b656d48b2a14ad582d3486f1195b5fa019b065096",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "64652fdf77e38ed7ad7d1c0b656d48b2a14ad582d3486f1195b5fa019b065096"
+    },
+    {
+      "name": "replay_reader_population.py",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-population-census-20261021/replay_reader_population.py",
+      "bytes": 4299,
+      "sha256": "55c6132cc7695ad3967a50996c35743dcbf5bc797f7a3188065bf52164586d8c",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "55c6132cc7695ad3967a50996c35743dcbf5bc797f7a3188065bf52164586d8c"
+    }
+  ],
+  "report": {
+    "name": "public-REPORT.md",
+    "url": "https://raw.githubusercontent.com/dario-fumarola/useful-thoughts-trainium/d0bd192b068314158fc58c508a7d512a1ac91097/validation/reader_population_census_20261021/REPORT.md",
+    "bytes": 5437,
+    "sha256": "98cd33b4d6ddbec8051755a3bc1fbe794fff4029ce3f378ce2c7a82c89591f9b",
+    "HTTP_status": 200,
+    "authenticated": false,
+    "full_body": true,
+    "fsync": true,
+    "local_readback_sha256": "98cd33b4d6ddbec8051755a3bc1fbe794fff4029ce3f378ce2c7a82c89591f9b"
+  },
+  "replay": {
+    "status": "PASS_PUBLIC_READER_POPULATION_COUNT_REPLAY",
+    "documents": 1379348,
+    "positions": 1175123958,
+    "verified_boundaries": 19552,
+    "projection_sha256": "64652fdf77e38ed7ad7d1c0b656d48b2a14ad582d3486f1195b5fa019b065096",
+    "limits": "Recounts projected source identities and candidate counts, not omitted source text, tokenization or semantic curation. No model calls."
+  },
+  "limits": "Counts and identity-only cut selection from projected metadata; no omitted source re-curation, model run or external replication."
+}
