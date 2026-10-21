@@ -669,6 +669,10 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     atomic_json(evidence/f'initial-master-rank-{rank:05d}.json', dict(rank=rank, exact_released_FP32_samples=True))
     torch.save(dict(expected_cpu=expected['values'], actual_fp32_masters=initial), evidence/f'initial-master-rank-{rank:05d}.pt')
     found_inf = torch.zeros((), device=device); order_hash = canonical_hash(order)
+    if p['schema'] == UNIFORM_SCHEMA:
+        # Do not include this otherwise unused fresh scalar in the first large
+        # gradient graph. Its later absence would force a second compilation.
+        sync()
     state = dict(pipeline_schema=p['schema'], spec_hash=canonical_hash(p), arm=args.arm, seed=p['seed'],
                  order_hash=order_hash, protocol_sha256=protocol_sha, data_sha256=p['data_sha256'])
     deadline = require_utc_deadline(args.deadline_utc)

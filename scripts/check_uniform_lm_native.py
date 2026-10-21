@@ -25,13 +25,15 @@ def main():
     release = json.loads(args.release.read_text())
     control = Path(release['control'])
     jobs = release['named_jobs']
-    fresh, replay = Path(jobs['qualification']['output']), Path(jobs['qualification-replay']['output'])
-    protocol = Path(jobs['qualification']['protocol'])
+    reference_job, replay_job = release.get('qualification_jobs',
+                                          ['qualification', 'qualification-replay'])
+    fresh, replay = Path(jobs[reference_job]['output']), Path(jobs[replay_job]['output'])
+    protocol = Path(jobs[reference_job]['protocol'])
     p = json.loads(protocol.read_text())
     rows = [json.loads(s) for s in Path(p['data_file']).open()]
     order = driver.order_for(p, rows)
     closures = [json.loads((control/'jobs'/name/'closure.json').read_text())
-                for name in ('qualification', 'qualification-replay')]
+                for name in (reference_job, replay_job)]
     require(all(v['exit_code'] == 0 and v['failure'] is None
                 and v['actual_eight_observed'] and v['owned_session_absent']
                 and v['assigned_devices_idle'] for v in closures), 'Native process closure failed')
