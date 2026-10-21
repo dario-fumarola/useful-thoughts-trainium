@@ -330,3 +330,26 @@ from length extrapolation. Their tested Transformer+CoT degrades sharply beyond
 trained lengths despite strong in-range tracking. This supports keeping V28's
 new-map, held-composition and longer-length panels separate. It does not predict
 our Qwen outcome or prove that architectural changes are required here.
+
+## Internalization alternatives — checked October21
+
+[Stepwise Internalization](https://arxiv.org/html/2405.14838v1) removes leading
+CoT tokens gradually, with removal smoothing and optimizer-state resets. Its
+reported data scale is808k multiplication examples or378k augmented GSM8K
+examples. These task results do not establish ordinary LM retention. Our mixed
+full/direct views did not test that curriculum.
+
+[Coconut, section4 and Table1](https://arxiv.org/html/2412.06769v2) feeds hidden
+states back as embeddings and uses a staged curriculum. Its GPT-2 ProsQA table
+has iCoT98.2 versus Coconut97.0; GSM8K favors full CoT42.9 versus Coconut34.1.
+It therefore does not justify assuming a new continuous-state runtime beats the
+simpler curriculum. Selection uses validation performance after extended training.
+
+[ICoT-KD](https://arxiv.org/html/2311.01460v1) separately learns teacher-state
+reading and emulation before coupling them. That is an explicit transfer
+objective, rather than hoping joint trace/answer supervision internalizes itself.
+
+Our inference: curriculum and distillation are plausible mechanisms worth
+understanding, not novel ideas or permission for another training campaign. First
+investigate the raw baseline; any later curriculum must retain a true raw endpoint,
+match additional exposures/resets, and preserve ordinary LM evaluation.

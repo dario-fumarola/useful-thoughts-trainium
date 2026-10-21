@@ -1,0 +1,38 @@
+{
+  "status": "EXPLORATORY_CPU_MATHEMATICAL_UPPER_BOUND_NOT_A_DEPLOYED_RESULT",
+  "proposal_sha256": "450aa26887542232b7b9a9c6d9c26c04184588438d35fc024e168a2673c3de82",
+  "fixed_maximum_gate": 0.029554466451491845,
+  "documents": 256,
+  "summary": {
+    "greedy_with_hindsight_token_gate_upper": {
+      "mean_nats_per16": 0.13062561051691482,
+      "median": 0.05635052310365454,
+      "minimum": 0.0015584215310652794,
+      "maximum": 2.5292041122331366,
+      "documents_above_point25": 23
+    },
+    "best8_with_hindsight_note_and_token_gate_upper": {
+      "mean_nats_per16": 0.13692431723754778,
+      "median": 0.058149478498107324,
+      "minimum": 0.0015584215310652794,
+      "maximum": 2.5292041122331366,
+      "documents_above_point25": 25
+    },
+    "supplied_correct_with_hindsight_token_gate_upper": {
+      "mean_nats_per16": 0.1379417132410849,
+      "median": 0.05896692932098479,
+      "minimum": 0.0015584215310652794,
+      "maximum": 2.5292041122331366,
+      "documents_above_point25": 24
+    }
+  },
+  "source_sha256": "60379758ab92a472eba153d8bc381f60dae2120a8027b0aef06ea5859c67d8ad",
+  "derivation": "For a fixed candidate and gold target, log((1-a)*p0+a*p1) is monotone in a. Maximize over[0,cap] at0 orcap, sum these tokenwise hindsight maxima, then optionally maximize over the8saved notes.",
+  "decision": "Do not launch the proposed pointwise-capped gate over these fixed candidates on this evidence.",
+  "limits": [
+    "Inspected V30 TRAIN data; post-result proposal arithmetic,not confirmation or a new V30 endpoint.",
+    "The gate sees the current gold token and best8 sees the continuation; neither is a deployed causal policy.",
+    "The pointwise bound is stricter than an average retention constraint. This does not rule out other gates, readers or candidate distributions.",
+    "Only a single cap chosen from the recorded mathematical retention bound is used. No policy sweep, new model call, training or reopening of V30."
+  ]
+}
