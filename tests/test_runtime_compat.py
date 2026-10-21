@@ -1,10 +1,11 @@
 """The compatibility change must preserve successful calls and real errors."""
 
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
-from train.runtime_compat import _supply_wrapped_output_path
+from train.runtime_compat import _supply_wrapped_output_path, _uncached_device_state_transfer
 
 
 def test_missing_compiler_artifact_path_is_supplied_without_altering_other_args(tmp_path):
@@ -52,3 +53,50 @@ def test_configure_runtime_is_idempotent_and_rejects_unqualified_source(monkeypa
     monkeypatch.setattr(compiler_wrapper, "__file__", str(unknown_source))
     with pytest.raises(RuntimeError, match="source hash"):
         configure_runtime()
+
+
+@pytest.mark.parametrize('previous', [True, False])
+def test_equal_mutable_counters_are_independent_and_cache_setting_is_restored(previous):
+    import torch
+
+    enabled = [previous]
+    cache = {}
+    events = []
+
+    def transfer(value):
+        if enabled[0]:
+            return cache.setdefault(float(value), value.clone())
+        return value.clone()
+
+    def synchronize(**kwargs):
+        assert enabled[0] is False
+        events.append(kwargs)
+
+    runtime = SimpleNamespace(_XLAC=SimpleNamespace(
+        _get_xla_enable_device_data_cache=lambda: enabled[0],
+        _set_xla_enable_device_data_cache=lambda value: enabled.__setitem__(0, value)),
+        sync=synchronize)
+    with _uncached_device_state_transfer(runtime):
+        counters = [transfer(torch.tensor(2.)) for _ in range(3)]
+    counters[0].add_(1)
+    assert [float(v) for v in counters] == [3., 2., 2.]
+    assert enabled[0] is previous
+    assert events == [{'wait': True}]
+
+
+@pytest.mark.parametrize('failure', ['transfer', 'synchronize'])
+def test_device_transfer_cache_is_restored_after_failure(failure):
+    enabled = [True]
+
+    def synchronize(**kwargs):
+        raise RuntimeError('synchronize failed')
+
+    runtime = SimpleNamespace(_XLAC=SimpleNamespace(
+        _get_xla_enable_device_data_cache=lambda: enabled[0],
+        _set_xla_enable_device_data_cache=lambda value: enabled.__setitem__(0, value)),
+        sync=synchronize)
+    with pytest.raises(RuntimeError, match=failure+' failed'):
+        with _uncached_device_state_transfer(runtime):
+            if failure == 'transfer':
+                raise RuntimeError('transfer failed')
+    assert enabled[0] is True

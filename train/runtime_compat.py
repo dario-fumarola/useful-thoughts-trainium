@@ -7,6 +7,7 @@ outputs remain intact. Unknown library versions or source contents fail closed.
 from __future__ import annotations
 
 from functools import wraps
+from contextlib import contextmanager
 import hashlib
 import inspect
 from pathlib import Path
@@ -63,6 +64,25 @@ def configure_runtime() -> dict[str, Any]:
                 installed_files_changed=False)
 
 
+@contextmanager
+def _uncached_device_state_transfer(runtime):
+    """Mutable optimizer counters must not share cached scalar buffers.
+
+    Restored equal CPU scalars otherwise become a single XLA device input,
+    unlike the independently updated counters in an uninterrupted optimizer.
+    The installed syncfree kernel mutates these inputs. Restore the previous
+    cache setting even if a transfer or materialization fails.
+    """
+    api = runtime._XLAC
+    previous = api._get_xla_enable_device_data_cache()
+    try:
+        api._set_xla_enable_device_data_cache(False)
+        yield
+        runtime.sync(wait=True)
+    finally:
+        api._set_xla_enable_device_data_cache(previous)
+
+
 def restore_syncfree_device_state(optimizer) -> None:
     """Restore all syncfree AdamW state tensors to their shard's device.
 
@@ -73,8 +93,15 @@ def restore_syncfree_device_state(optimizer) -> None:
     """
     import torch
 
+    from contextlib import nullcontext
+
     base = optimizer.base_optimizer
-    for parameter, state in base.state.items():
-        for key, value in state.items():
-            if isinstance(value, torch.Tensor):
-                state[key] = value.to(device=parameter.device)
+    context = nullcontext()
+    if any(parameter.device.type == 'xla' for parameter in base.state):
+        import torch_xla
+        context = _uncached_device_state_transfer(torch_xla)
+    with context:
+        for parameter, state in base.state.items():
+            for key, value in state.items():
+                if isinstance(value, torch.Tensor):
+                    state[key] = value.to(device=parameter.device)
