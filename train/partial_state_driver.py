@@ -656,6 +656,13 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     optimizer = ZeroRedundancyOptimizer(model.parameters(), AdamW, optimizer_dtype=torch.float32,
         grad_clipping=True, max_norm=1., save_master_weights=True, lr=p['lr'], betas=(.9, .95),
         eps=1e-8, weight_decay=.1, use_grad_acc_hook=False, higher_cc_precision=False)
+    reduction_calls = [0]
+    if p['schema'] == UNIFORM_SCHEMA:
+        original_reduce = optimizer._reduce_gradients
+        def counted_reduce(*a, **kw):
+            reduction_calls[0] += 1
+            return original_reduce(*a, **kw)
+        optimizer._reduce_gradients = counted_reduce
     initial = master_samples(optimizer, expected)
     if not torch.equal(initial.view(torch.uint8), expected['values'].contiguous().view(torch.uint8)):
         raise RuntimeError('FP32 masters differ from released CPU shard samples')
@@ -697,6 +704,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         run_updates = not stopped()
     last = begin; checkpoint_walls = []; loop_started = time.monotonic()
     for step in (range(begin, p['steps']) if run_updates else ()):
+        reductions_before = reduction_calls[0]
         rate = (uniform_lm.set_learning_rate(optimizer, p, step)
                 if p['schema'] == UNIFORM_SCHEMA else p['lr'])
         started = time.monotonic(); optimizer.zero_grad(set_to_none=True)
@@ -749,6 +757,13 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         if bool(xm.all_reduce(xm.REDUCE_MAX, (~finite).float()).cpu()):
             raise RuntimeError('Nonfinite actual gradient')
         optimizer.step(found_inf=found_inf); sync(); norm = float(optimizer.grad_norm.cpu())
+        actual_optimizer_lrs = None
+        if p['schema'] == UNIFORM_SCHEMA:
+            actual_optimizer_lrs = [float(g['lr']) for g in optimizer.base_optimizer.param_groups]
+            if (reduction_calls[0]-reductions_before != 1
+                    or not actual_optimizer_lrs
+                    or any(abs(v-rate) > 1e-15 for v in actual_optimizer_lrs)):
+                raise RuntimeError('Actual optimizer LR or single reduction differs')
         if not math.isfinite(norm) or norm <= 0:
             raise RuntimeError('Invalid global clipped norm')
         if audited:
@@ -792,6 +807,9 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                               order[step*p['global_batch']:(step+1)*p['global_batch']]])
             if components is not None:
                 metric['loss_components'] = components
+            if actual_optimizer_lrs is not None:
+                metric['actual_base_optimizer_lrs'] = actual_optimizer_lrs
+                metric['gradient_reductions'] = reduction_calls[0]-reductions_before
             with (args.output/'metrics.jsonl').open('a') as f:
                 f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
         if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA, UNIFORM_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
@@ -881,7 +899,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = ((real_cpt_scaffold.ARMS if p.get('purpose') == SCAFFOLD_STUDY_PURPOSE
+    allowed_arms = ((uniform_lm.ARM,) if p['schema'] == UNIFORM_SCHEMA else
+                   (real_cpt_scaffold.ARMS if p.get('purpose') == SCAFFOLD_STUDY_PURPOSE
                     else (SCAFFOLD_QUALIFICATION_ARM,)) if p['schema'] == SCAFFOLD_SCHEMA else
                     (permutation_program_packing.ARMS if p.get('purpose') == PROGRAM_STUDY_PURPOSE
                      else (PROGRAM_QUALIFICATION_ARM,)) if p['schema'] == PROGRAM_SCHEMA else

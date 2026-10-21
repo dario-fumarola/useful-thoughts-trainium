@@ -1,3 +1,13 @@
+# Active uniform-LM execution — October 21, 2026
+
+The owner said “go” for qualification, the four fixed training settings if qualification and measured cost pass, and the sealed confirmation sequence. The design/data remain unchanged. Current native control directory: `local/diagnostics/uniform-lm-native-v1`.
+
+- CPU B0 reference is running on 24 cores: PID 2522740, exec session 20743, log `CPU-reference.log`; no native worker yet.
+- Native supervision is `scripts/run_uniform_lm.py`; the checker reconstructs initial loss, accumulation/LR/cursors and exact uninterrupted/recovered terminal model plus all eight optimizer shards. The recovery test forks checkpoint 2 into a separate directory with the same run basename; it never removes or rewrites the uninterrupted checkpoint 4.
+- Added actual local-optimizer LR and one-reducer telemetry to the existing training engine, and corrected its schema/arm dispatch. No objective change. CPU checks pass (`local/checks/uniform-lm-native-20261021.log`).
+- Native stage releases must bind a fresh immutable execution checkout, source hashes, protocols and bounded resources. Maximum two existing physical chips (8/9), 18 total reserved chip-hours including at most 0.5 qualification, original storage/memory floors. Qualification must pass and measured full-workload cost must fit before science fitting.
+- Next: finish CPU reference, freeze native source/release, launch qualification, audit and continue the fixed study. No DEV/CONFIRM model result has been observed.
+
 # Active uniform-LM preparation — October 21, 2026
 
 Owner endorsed returning to a sound uniform next-token baseline. CPU source and objective preparation are complete; no new released-model or accelerator call. No goal or new subagents.
