@@ -1,5 +1,12 @@
 # Useful Thoughts on Trainium
 
+**Current: the new fixed source extension passes; bounded actual-model qualification is running.**
+Four additional TRAIN shards supply a combined7,722eligible unique calculations, above6,672required.
+All13,344selected native source windows and6,672calculation identities pass independent reconstruction.
+The full5,120TRAIN/4,096-per-DEV-stratum/32qualification allocation is preserved.
+No selector has been fitted or scientifically evaluated; numerical/causal and measured-cost qualification must pass first.
+The earlier db8d722 feasibility stop remains closed and unchanged. [New source report](validation/causal_reader_source_extension_complete_20261021.json).
+
 **V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN
 documents, hindsight best-of-eight calculations gain only **+0.082 nats** over the
 same reader's raw full16 prediction (interval spans zero), and remain **−1.083 nats
@@ -8,7 +15,7 @@ that is below the frozen32-document alignment requirement. Numerical gain again
 comes with a prose-prediction cost. [Complete report](validation/candidate_utility_v30_complete_20261021/REPORT.md).
 All2,304 attempts/3,840 scores and the fixed gates are preserved; independent
 context/HF checks and model-free public numerical replay pass. No further model
-run is queued. [Public evidence release](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v30-candidate-utility-20261021)
+RL run follows. [Public evidence release](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v30-candidate-utility-20261021)
 has three assets, all fully downloaded and hash-verified without authentication.
 V29's result below remains unchanged.
 
@@ -21,14 +28,14 @@ final. The [CPU-only mechanism proposal](docs/CAUSAL_READER_PROPOSAL.md) specifi
 an unchanged B0 reference and a causal learned gate, with explicit learning and
 control comparisons. Its conservative pointwise-capped variant is rejected by
 a saved-score upper bound. Without that cap, the original greedy scores admit a
-2.063-nat tokenwise hindsight bound; prospective recovery is untested. The revised
-variant remains unexecuted. Its bounded CPU [feasibility check](validation/causal_reader_feasibility_complete_20261021.json)
+2.063-nat tokenwise hindsight bound; prospective recovery is untested. The selector remains unfitted. The original bounded CPU [feasibility check](validation/causal_reader_feasibility_complete_20261021.json)
 is now **closed without model execution**: the fixed12-shard pool supplies6,095eligible
 unique calculations versus6,672required across TRAIN/DEV/qualification, short by577.
 An independent recount agrees; the sample size and exclusions remain unchanged.
-The guarded workflow passes1,964CPU tests, but no released-model feature call,
-selector fit or actual numerical/cost qualification occurred. This is a limitation
-of the fixed source pool—not a tested selector failure or a global data-impossibility result.
+The guarded workflow passes1,964CPU tests. That closed attempt made no released-model calls or fits.
+A separately frozen four-shard extension now resolves the allocation without changing exclusions or sample sizes;
+actual qualification is running under a0.5reserved-chip-hour cap, before any release of the8-chip-hour whole experiment.
+Source availability is not evidence for or against selector efficacy.
 The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
 confirms that V29's raw arm reweights continuations; the source review does not
 identify why fresh-document prediction regressed.

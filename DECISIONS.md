@@ -1714,3 +1714,8 @@ backup-only optimizer shards retire after full hash readback; source model/evide
 ## 2026-10-21: new bounded source extension after the closed quota stop
 
 The owner explicitly distinguishes db8d722's577-example source shortfall from a mechanism result and directs a new bounded source protocol. Preserve that failed feasibility record. Scan exactly four next unused TRAIN shards48..45, all rows, reusing the prior twelve-shard pool read-only. Retain original exclusions, curator, hash priorities,4096DEV per stratum, controls and gates. Fix4CPU/90minutes/5GiB new files and a2CPU/45minute independent source check. No adaptive source expansion. Complete source/native cohorts precede any actual-model qualification; the proposed0.5/8reserved-chip-hour qualification/whole-question limits still require measured qualification. No model calls or learning are authorized merely by this CPU source release.
+
+
+## 2026-10-21 13:00UTC: complete sources release only bounded actual-model qualification
+
+The fixed four-shard extension closes successfully:7722eligible calculations versus6672required. All original cohorts are built, and independent reconstruction passes13344original source windows,6672exact expressions and18243true equations. No model was called during source preparation. Release only the existing32-source actual-model qualification, <=0.5reserved physical-chip-hours and120wall minutes, under new identity causal-reader-gate-20261021-source-extension-v1. Frozen source e55c702/protocol993b17f...; actual qualification/profile must pass before a separate whole-question decision within8reserved-chip-hours. This resolves source feasibility, not efficacy. Original db8d722 and V29/V30 results remain unchanged.

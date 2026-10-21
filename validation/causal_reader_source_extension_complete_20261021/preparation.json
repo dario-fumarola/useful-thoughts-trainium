@@ -1,0 +1,44 @@
+{
+  "status": "CPU_SOURCE_FEASIBILITY_COMPLETE_NOT_MODEL_RELEASE",
+  "cohorts": {
+    "qualification": {
+      "rows": 32,
+      "sha256": "62b580cce983329fae0fc3e370d8173ea3100cc9b918d0b63281faeabe9aae4d",
+      "questions_sha256": "c474323259ac7d0093a912e4e7fc0fee91da392262d45394c54c861e868bca78"
+    },
+    "TRAIN": {
+      "rows": 5120,
+      "sha256": "dea6f0312ddd2acf8be6faeea90c8751a3c489439df6d94a6dbc3dfcf48f5dd0",
+      "questions_sha256": "12de98f3f1a520972b9c85708c6cc2a904d397bb826ecfc1f801ecfe7abdc01d"
+    },
+    "DEV_calculation": {
+      "rows": 4096,
+      "sha256": "bfc1722a49c99a4b2572f2ed1dc2eb55ba6d9e98977f9d6c452e60ae4664f901",
+      "questions_sha256": "7f401ce79b3d446911936e5a0cf0fd69df3194a01204c3b91357e785de8b76b6"
+    },
+    "DEV_ordinary": {
+      "rows": 4096,
+      "sha256": "3c11cf9ba4c995cc9683d263afbec43e256396a848e4c1afb7dd0a7c382a823d",
+      "questions_sha256": "6ad6882f3e07093b22dda75a0623e0b2ea407960cd93153990e2037c4ddaf7f7"
+    }
+  },
+  "total_unique_pages": 13344,
+  "raw_sha256": "ceebff8b2ebf9a49bc478052c9aa095b78403434468d15f6b68a600e0fbdd931",
+  "membership_sha256": "6bf66d48bf1bf616cff237184b20f34d101b2f5bfaa55b1388db0135e56a4f5a",
+  "eligible_calculation_documents": 7722,
+  "counts": {
+    "old_page": 78217,
+    "duplicate_page": 19552,
+    "parquet_rows": 418716,
+    "curation:no_valid_bounded_raw_equation": 316914,
+    "curation:accepted": 4033,
+    "combined_accepted": 17843,
+    "short_prefix": 6599,
+    "old_expression": 2780,
+    "unsupported_pack": 24,
+    "duplicate_expression": 718,
+    "ordinary_short": 2516,
+    "ordinary_native_rejection": 65
+  },
+  "limits": "No model calls/features/head fitting. Exact source/native independent cohort check remains required."
+}

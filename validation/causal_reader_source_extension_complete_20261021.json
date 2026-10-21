@@ -1,0 +1,55 @@
+{
+  "CPU_tests": {
+    "log_sha256": "8cb1ac98cdf05b13ef7ea2f2bbcb6d18abe9e3f5e9ff836eeb700ce40e013126",
+    "smoke_and_compile": "PASS",
+    "tests": 1964
+  },
+  "accelerator_execution": 0,
+  "additional_accepted_calculations": 4033,
+  "additional_raw_documents": 418716,
+  "additional_shards": [
+    48,
+    47,
+    46,
+    45
+  ],
+  "additional_source_clean_documents": 320947,
+  "closed_predecessor": "db8d722 remains CLOSED_NO_GO_FIXED_SOURCE_QUOTA; never rewritten",
+  "combined_eligible_unique_expressions": 7722,
+  "created_utc": "2026-10-21T12:59:28+00:00",
+  "evidence_files": {
+    "validation/causal_reader_source_extension_complete_20261021/arithmetic-availability.json": "63d2e2e14d0732a16671b07e6e560e36dd1583303d943abab9e91c61c5cbfe67",
+    "validation/causal_reader_source_extension_complete_20261021/extension-filter.json": "1df429685f5726496bd2ef7e0d84b52c56bfba421fe7ee19608622d2897064f6",
+    "validation/causal_reader_source_extension_complete_20261021/independent-exit.json": "4759e5d72ab34bac5bda513ab017f70fb9330fa179ceeba1304136112c80933d",
+    "validation/causal_reader_source_extension_complete_20261021/independent-source-check.json": "8c9fec73aff056b811c4236d725b0709a72b1b986c7b283f6e473d9791098918",
+    "validation/causal_reader_source_extension_complete_20261021/preparation-exit.json": "18ce3e08f3b9214cb0401abae5a788b626eb0c6b93b775a51c22f1a56074f165",
+    "validation/causal_reader_source_extension_complete_20261021/preparation.json": "1c772fa61d8b5cc19ac98a1fd0d81853a8bf7121a2e7741bc9bc982dffbbc9b1"
+  },
+  "experiment_head_fits": 0,
+  "feature_extractions": 0,
+  "identity": "causal-reader-source-extension-20261021-v1",
+  "independent_exit": {
+    "end_utc": "2026-10-21T12:58:21.055807+00:00",
+    "exit_code": 0,
+    "pid": 2230413,
+    "wall_seconds": 111.6410883909557
+  },
+  "limits": "Source feasibility success only. Independent selected-cohort reconstruction shares exact arithmetic definitions. No new model result, general FineMath availability claim, pretraining novelty or autonomous thought claim.",
+  "maximum_new_output_bytes": 5368709120,
+  "new_output_bytes": 3711837834,
+  "next": "Only bounded actual-model qualification, not scientific execution. Preserve full sizes, all original exclusions/controls/endpoints, actual.5-chip-hour qualification and8-chip-hour whole-question limits. Require actual numerical/causal/normalization and measured runtime qualification before a separate science release.",
+  "plan_file": "validation/causal_reader_source_extension_plan_20261021.json",
+  "plan_sha256": "70248c0785eabffe779b68ee9818751a8fb34056fed00b13a73d91a7d467bde6",
+  "preparation_exit": {
+    "end_utc": "2026-10-21T12:56:24.197771+00:00",
+    "exit_code": 0,
+    "pid": 2227876,
+    "wall_seconds": 1933.9582950600307
+  },
+  "released_model_calls": 0,
+  "required_calculations": 6672,
+  "source_commit": "b1475a8",
+  "status": "PASS_NEW_FIXED_SOURCE_EXTENSION_AND_COMPLETE_COHORT_AUDIT_NOT_MODEL_RESULT",
+  "surplus": 1050,
+  "unique_selected_source_pages": 13344
+}

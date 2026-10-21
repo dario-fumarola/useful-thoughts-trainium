@@ -1,5 +1,16 @@
-# Status — 2026-10-21 12:23 UTC
+# Status — 2026-10-21 12:57 UTC
 
+
+
+## Running: bounded actual-model selector qualification
+Question: do actual frozen-model features satisfy numerical/causal contracts and fit the8-chip-hour plan?
+ID:causal-reader-gate-20261021-source-extension-v1; qualification only, no science release.
+Supervisor2230576/session24180 RUNNING since13:00:11UTC; maximum0.5reserved physical-chip-hours and120wall minutes.
+ProtocolSHA993b17f16078ec771aa56bce4d8c71f9919102c6a470a6a18b13b617d21623d2; frozen model source e55c702.
+Output local/diagnostics/causal-reader-gate-source-extension-v1/qualification-v1; dedicated32sources only.
+Physical8/cores32..35; actual B0 and original first V29T remain frozen. No head fitting or DEV readout released.
+Require actual CPU/native/causality/normalization PASS and measured cost profile before one separate science decision.
+No writerRL,newCPT,scale or TEST. Preserve all states/cache and35GiBfilesystem/512GiBhost reserve.
 
 ## New preparation: fixed source extension
 Question: can four additional TRAIN shards complete the unchanged selective-reader cohorts?
@@ -10,8 +21,10 @@ Reuse the first12 pool read-only; preserve all prior exclusions, exact curator, 
 Limits:4CPU/90minutes/5GiB new data; independent source check2CPU/45minutes;35GiB filesystem and512GiB host reserve.
 Require complete6672-per-kind cohorts and independent original-Parquet/native/equation checks before actual-model qualification.
 The later qualification cap remains0.5 reserved chip-hours; whole-experiment proposal remains8, conditional on actual numerical/runtime qualification.
-Source process2227876/session13647 RUNNING from12:24:10UTC, deadline13:54:10UTC; frozen source b1475a8.
-All four LFS downloads verified; filtering underway.1964CPU tests+smoke/compile PASS. No actual model calls/features/head fits.
+Source process2227876/session13647 CLOSED0 at12:56:24UTC after1933.96seconds; frozen source b1475a8.
+Additional418716raw/320947source-clean/4033accepted; combined7722eligible unique expressions >=6672required. All complete cohorts built.
+Independent audit2230413/session13528 CLOSED0 at12:58:21UTC; all13344source windows/6672expressions/18243equations PASS.
+New data3.457GiB<5GiB cap;1964CPU tests+smoke/compile PASS. Actual model calls were0 at source closure; qualification is now running separately above. No selector fit or scientific readout.
 
 ## Closed: selector feasibility; no model release
 Question: can the fixed source pool support the powered selector design within a finite budget?

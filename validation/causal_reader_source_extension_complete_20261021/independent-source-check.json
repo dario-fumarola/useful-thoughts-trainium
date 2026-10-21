@@ -1,0 +1,18 @@
+{
+  "status": "PASS_ALL_SELECTED_SOURCE_NATIVE_EXCLUSION_AND_EXACT_EQUATION_CHECKS",
+  "documents": 13344,
+  "unique_pages": 13344,
+  "exact_expressions": 6672,
+  "independently_true_equations": 18243,
+  "counts": {
+    "TRAIN:calculation": 2560,
+    "TRAIN:ordinary": 2560,
+    "DEV_calculation:calculation": 4096,
+    "DEV_ordinary:ordinary": 4096,
+    "qualification:calculation": 16,
+    "qualification:ordinary": 16
+  },
+  "source_sha256": "603db4e59a08d28379b88a8d7a30bc12732afbca028652bea60b6514e990d413",
+  "preparation_sha256": "1c772fa61d8b5cc19ac98a1fd0d81853a8bf7121a2e7741bc9bc982dffbbc9b1",
+  "limits": "Within-repository independent reconstruction only. No model/feature/head/scientific result or pretraining novelty claim."
+}

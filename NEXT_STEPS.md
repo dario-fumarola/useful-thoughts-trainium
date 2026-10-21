@@ -1,13 +1,12 @@
 # Current queue
 
-New owner-authorized source protocol: causal-reader-source-extension-20261021-v1. The earlier db8d722 attempt remains closed.
+New source extension is COMPLETE/PASS; actual-model qualification is RUNNING. The earlier db8d722 attempt remains closed.
 
-- Finish code/CPU checks, freeze source, then scan exactly TRAIN shards48..45 under validation/causal_reader_source_extension_plan_20261021.json. Reuse old12shard inputs read-only, no recuration/copying.
-- Keep all eligibility/exclusion rules and full cohort sizes. No adaptive additional shards or silent smaller replacement.
-- Require complete cohorts and independent checks against all13344 original Parquet/native windows and6672 exact equations before qualification.
-- Only then consider one bounded actual-model qualification (<=0.5 reserved chip-hours), actual-cost projection and a separate whole-question release under the8-chip-hour ceiling. Source success alone does not release science.
-- No writer RL, new CPT, model-size jump, official TEST or cloud/stack change. Preserve all existing states, outputs and caches.
-- Resolve this finite source/runtime decision, then run one empirical selector test if qualified; do not add more saved-score oracle analyses.
+- Source report validation/causal_reader_source_extension_complete_20261021.json:7722eligible unique calculations, all original cohort sizes preserved; independent13344source/native and6672expression checks PASS. No source retry or smaller replacement.
+- Qualification supervisor2230576/session24180 runs frozen e55c702, control local/diagnostics/causal-reader-gate-source-extension-v1. Cap0.5reserved physical-chip-hours/120wall minutes;32dedicated qualification sources only.
+- After all actual workers physically close, run scripts/check_causal_reader_qualification.py and scripts/causal_reader_cost_profile.py once on their original outputs. Numerical/causal/normalization PASS and measured projection<=8whole reserved-chip-hours precede a separate whole-question science release.
+- If qualified, execute one fixed source/feature/head/readout experiment, preserve all attempts and four terminal800heads before DEV; independently reconstruct the primary readout with scripts/check_causal_reader_readout.py. No automatic campaign.
+- No writerRL,newCPT,scale,officialTEST,cloud/stack change. Keep35GiBfilesystem/512GiBhost reserve and all original states/cache.
 
 V30 remains COMPLETE and its reward branch remains CLOSED:
 
