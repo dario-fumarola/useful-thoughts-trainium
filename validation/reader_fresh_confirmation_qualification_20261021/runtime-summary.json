@@ -1,0 +1,50 @@
+{
+  "status": "ALL_QUALIFICATION_PROCESSES_CLOSED",
+  "protocol_sha256": "6e4f79175a17af1981e3ff7c98ee2a04686e7b525d403e45f5b8976c27209810",
+  "native_reservations": [
+    {
+      "elapsed_wall_seconds": 258.9909279720159,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "generate"
+    },
+    {
+      "elapsed_wall_seconds": 72.04785074398387,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "features-B0_raw"
+    },
+    {
+      "elapsed_wall_seconds": 47.62911466398509,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "features-T_raw"
+    },
+    {
+      "elapsed_wall_seconds": 45.01021271402715,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "features-T_note"
+    },
+    {
+      "elapsed_wall_seconds": 44.34584329900099,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "causality"
+    }
+  ],
+  "native_reserved_chip_hours": 0.1300066526091703,
+  "workers": 22,
+  "all_workers_closed_successfully": true,
+  "limits": "Numerical/runtime qualification, not a fresh predictive result. New prospective tolerances pass; historical strict criteria still fail on the same discrepancies."
+}

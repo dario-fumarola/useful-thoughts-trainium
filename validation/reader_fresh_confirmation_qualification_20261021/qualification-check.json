@@ -1,0 +1,73 @@
+{
+  "accepted_deviations": [],
+  "actual_native_sources_per_role": 32,
+  "approval_sha256": null,
+  "disabled_and_closed_exact_raw_identity": true,
+  "full_vector_mixture_checks": [
+    {
+      "gate_logit": -1000.0,
+      "maximum_log_mass_error": 3.7019974832297464e-06
+    },
+    {
+      "gate_logit": -3.8969348755446873,
+      "maximum_log_mass_error": 3.6767086109001923e-06
+    },
+    {
+      "gate_logit": 0.0,
+      "maximum_log_mass_error": 2.450326788583368e-06
+    },
+    {
+      "gate_logit": 1000.0,
+      "maximum_log_mass_error": 2.6371260930524443e-06
+    }
+  ],
+  "limits": "Actual-model numerical/causality mechanics only; no trained selector, scientific efficacy, broader robustness or fresh-DEV outcome.",
+  "original_requirements_pass": true,
+  "protocol_sha256": "6e4f79175a17af1981e3ff7c98ee2a04686e7b525d403e45f5b8976c27209810",
+  "roles": {
+    "B0_raw": {
+      "CPU_numerical_near_tie_actions": 0,
+      "causal_checks": 6,
+      "documents": 32,
+      "greedy_CPU_checks": 0,
+      "hidden_max_relative_L2": 8.374561333922203e-05,
+      "maximum_absolute_errors": {
+        "entropy": 0.000152587890625,
+        "first_logps": 0.000102996826171875,
+        "hidden": 0.00481414794921875,
+        "target_logps": 4.1961669921875e-05
+      },
+      "normalization_log_error": 3.7019974830954205e-06
+    },
+    "T_note": {
+      "CPU_numerical_near_tie_actions": 0,
+      "causal_checks": 6,
+      "documents": 32,
+      "greedy_CPU_checks": 32,
+      "hidden_max_relative_L2": 0.0003734333210693333,
+      "maximum_absolute_errors": {
+        "entropy": 0.0007139444351196289,
+        "first_logps": 0.002506256103515625,
+        "hidden": 0.013034820556640625,
+        "target_logps": 0.0018596649169921875
+      },
+      "normalization_log_error": 2.6371260930508853e-06
+    },
+    "T_raw": {
+      "CPU_numerical_near_tie_actions": 0,
+      "causal_checks": 6,
+      "documents": 32,
+      "greedy_CPU_checks": 0,
+      "hidden_max_relative_L2": 1.0179098161758395e-05,
+      "maximum_absolute_errors": {
+        "entropy": 0.00025272369384765625,
+        "first_logps": 0.00014019012451171875,
+        "hidden": 0.00031757354736328125,
+        "target_logps": 6.198883056640625e-05
+      },
+      "normalization_log_error": 5.216038110596265e-06
+    }
+  },
+  "source_sha256": "916376fcc9b43711acd76a0ad7c8b4893598d0098124ef7841d82cd34675c01d",
+  "status": "PASS_ACTUAL_READER_FEATURE_QUALIFICATION"
+}

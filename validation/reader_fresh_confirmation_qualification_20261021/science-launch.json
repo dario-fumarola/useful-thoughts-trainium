@@ -1,0 +1,21 @@
+{
+  "pid": 2440204,
+  "started_utc": "2026-10-21T18:34:27.896546+00:00",
+  "deadline_utc": "2026-10-21T21:34:27.896450+00:00",
+  "command": [
+    "/home/ubuntu/ema-trainium/.venv/bin/python3.12",
+    "-u",
+    "-m",
+    "train.causal_reader_supervisor",
+    "--protocol",
+    "/home/ubuntu/dario/local/diagnostics/reader-fresh-confirmation-v1/protocol.json",
+    "--phase",
+    "science",
+    "--output",
+    "/home/ubuntu/dario/local/nvme-study/runs/reader-fresh-confirmation-v1",
+    "--deadline-utc",
+    "2026-10-21T21:34:27.896450+00:00"
+  ],
+  "protocol_sha256": "6e4f79175a17af1981e3ff7c98ee2a04686e7b525d403e45f5b8976c27209810",
+  "execution_commit": "d0bd192"
+}

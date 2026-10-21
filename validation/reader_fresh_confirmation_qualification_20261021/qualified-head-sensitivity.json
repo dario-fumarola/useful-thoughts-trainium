@@ -1,0 +1,71 @@
+{
+  "status": "SUPPLEMENTAL_FROZEN_HEAD_QUALIFICATION_SENSITIVITY",
+  "heads": 12,
+  "qualification_sources": 32,
+  "rows": {
+    "T_note-hard-order2026102141": {
+      "max_absolute_full16_uplift_difference": 8.246069820394553e-05,
+      "mean_full16_uplift_difference": 6.464797228248177e-06,
+      "max_absolute_gate_difference": 1.142545168830722e-05
+    },
+    "T_note-hard-order2026102142": {
+      "max_absolute_full16_uplift_difference": 7.895149081127428e-05,
+      "mean_full16_uplift_difference": 5.605571070936414e-06,
+      "max_absolute_gate_difference": 2.1829739972778484e-05
+    },
+    "T_note-hard-order2026102143": {
+      "max_absolute_full16_uplift_difference": 8.681042044411669e-05,
+      "mean_full16_uplift_difference": 5.518931728826183e-06,
+      "max_absolute_gate_difference": 3.324923436609506e-05
+    },
+    "T_note-hard-order2026102144": {
+      "max_absolute_full16_uplift_difference": 7.840786697688173e-05,
+      "mean_full16_uplift_difference": 6.305802093321518e-06,
+      "max_absolute_gate_difference": 1.919201950806304e-05
+    },
+    "T_note-hard-order2026102145": {
+      "max_absolute_full16_uplift_difference": 8.178439263506476e-05,
+      "mean_full16_uplift_difference": 8.639965918353341e-06,
+      "max_absolute_gate_difference": 2.368413526387947e-05
+    },
+    "T_note-hard-order2026102146": {
+      "max_absolute_full16_uplift_difference": 0.00010248721423877782,
+      "mean_full16_uplift_difference": 8.103349869181017e-06,
+      "max_absolute_gate_difference": 1.4626801275618995e-05
+    },
+    "T_raw-hard-order2026102141": {
+      "max_absolute_full16_uplift_difference": 0.0,
+      "mean_full16_uplift_difference": 0.0,
+      "max_absolute_gate_difference": 0.0
+    },
+    "T_raw-hard-order2026102142": {
+      "max_absolute_full16_uplift_difference": 1.9272425388666865e-07,
+      "mean_full16_uplift_difference": 4.992386347999324e-09,
+      "max_absolute_gate_difference": 9.086087870091575e-06
+    },
+    "T_raw-hard-order2026102143": {
+      "max_absolute_full16_uplift_difference": 5.542355402399224e-06,
+      "mean_full16_uplift_difference": -2.0674124043967845e-07,
+      "max_absolute_gate_difference": 7.790932846307719e-06
+    },
+    "T_raw-hard-order2026102144": {
+      "max_absolute_full16_uplift_difference": 5.588303069398518e-07,
+      "mean_full16_uplift_difference": -1.8497942284504245e-08,
+      "max_absolute_gate_difference": 1.1375405557234597e-05
+    },
+    "T_raw-hard-order2026102145": {
+      "max_absolute_full16_uplift_difference": 2.025382450383112e-07,
+      "mean_full16_uplift_difference": 6.320406600610691e-09,
+      "max_absolute_gate_difference": 1.496156240184121e-06
+    },
+    "T_raw-hard-order2026102146": {
+      "max_absolute_full16_uplift_difference": 1.2293009091224327e-07,
+      "mean_full16_uplift_difference": 3.841565341007602e-09,
+      "max_absolute_gate_difference": 4.347057594222825e-06
+    }
+  },
+  "maximum_full16_uplift_difference": 0.00010248721423877782,
+  "maximum_gate_difference": 3.324923436609506e-05,
+  "new_model_calls": 0,
+  "limits": "Supplemental comparison on already used qualification contexts, not a new gate, acceptance exception, fresh performance result or uniform error bound. Both backbones and every head stay unchanged."
+}
