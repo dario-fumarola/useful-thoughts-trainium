@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE_VERIFIED_REWARD_BRANCH_CLOSED_NO_RL",
+  "experiment_id": "candidate-utility-v30",
+  "documents": 256,
+  "generation_attempts": 2304,
+  "likelihood_rows": 3840,
+  "execution_errors": 0,
+  "gates": {
+    "alignment": false,
+    "complete_execution": true,
+    "correct_helpful_coverage": true,
+    "opportunity": false,
+    "plumbing": true
+  },
+  "all_required_passed": false,
+  "report": "validation/candidate_utility_v30_complete_20261021/REPORT.md",
+  "science_reserved_chip_hours": 0.18826629102230072,
+  "qualification_reserved_chip_hours": 0.13858062545458474,
+  "limits": "TRAIN-only fixed-checkpoint diagnostic, not learned selection or external replication."
+}

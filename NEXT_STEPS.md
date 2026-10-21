@@ -1,14 +1,13 @@
 # Current queue
 
-Active — one bounded candidate/reward diagnostic, V30:
-- CPU preparation is COMPLETE:390 new TRAIN documents; all390 raw-Parquet/native/source-exclusion checks and1030 equation checks pass.
-- W=local/worktrees/candidate-utility-v30, public branch. Data local/data/candidate-utility-v30-curation61-v1; audit local/diagnostics/candidate-utility-v30-source61-v1/independent.
-- Source preparation and1943tests/smoke/compile pass. Numerical worker a84c77b frozen. Do not rerun/refilter/download.
-- Protocol/gates and256diagnostic+8qualification documents are frozen before model calls. CPU references and actual72-attempt stochastic/native/cache/RNG/behavior qualification close0. One frozen diagnostic ACTIVE exec57799, deadline01:44UTC; control local/diagnostics/candidate-utility-v30-v1/science-control.
-- The reward must recognize correct/helpful candidates that beat raw prediction on the FULL16continuation. A numerical-only gain or least-bad sibling is insufficient.
-- Best-of-G is future-aware oracle opportunity, not prefix-only deployed selection. If usable alignment is absent, stop this reward branch; do not launch RL.
-- A diagnostic pass also does not authorize RL, scaling or another CPT run. Inspect raw-control regression concretely before proposing new CPT.
-- Keep one question/all conditions in one finite job; qualify stochastic/cache/behavior-LP execution using the actual fixed model.
+V30 is COMPLETE and this reward branch is CLOSED:
+- Hindsight best8−raw+.082nats,interval spans0; best8−B0−1.083,interval entirelynegative. No RL/rescue sweep.
+- Reward recognizes correctness on25mixed docs (positive conditional contrast),but declared minimum32notmet. Do not call that a negative ranking result.
+- Report validation/candidate_utility_v30_complete_20261021/REPORT.md; all2304attempts/3840scores andsource/model/gates preserved.
+- Independent source/context/HF/statistical checks pass; portable50file numerical replay passes withoutTorch/models.
+- Finish public release and full-download/SHAverification of local/releases/v30-candidate-utility-20261021-v2 only. Do not rerun science/qualification/checkers.
+- No new training/modelcalls/RL/scale are queued. Before any new CPT proposal,investigate the shared raw-control regression; the existing objective/exposure audit is a concrete lead,not its cause.
+- Future preparation must identify a materially different mechanism and preserve all current negatives. No further tuning on these256 documents can count as confirmation.
 
 0. V28 is complete; finish its concrete publication without rerunning producers.
    Report validation/permutation_program_v28_complete_20261020.json and REPORT.md.

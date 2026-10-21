@@ -1,17 +1,18 @@
-# Status — 2026-10-21 00:30 UTC
+# Status — 2026-10-21 01:05 UTC
 
-## Active: bounded TRAIN candidate/reward diagnostic preparation
-Question: do prefix-only candidate calculations provide correct, useful variation recognized by full-continuation reward?
-ID:candidate-utility-v30; fresh TRAIN source only; no learning released.
-Source audit and1943CPU tests/smoke/compile pass; numerical source a84c77b frozen and public.
-390 unique source/page/content/ordered-AST-new documents retain native512prefix/16future and work fitting cap128.
-Independent actual-Parquet/native-window/exclusion audit passes all390 documents and1030 exact equations.
-Data:local/data/candidate-utility-v30-curation61-v1; audit:local/diagnostics/candidate-utility-v30-source61-v1/independent.
-All72qualification attempts/RNG/cache/native/full-span/CPUbehavior checks pass; numerical model source remains frozen.
-ACTIVE one finite diagnostic exec57799:4logical cores0–3/physical0;256docs,G8+greedy,full16 scores; deadline01:44UTC.
-Best-of-G is a hindsight opportunity, never deployed selection. No usable alignment means stop this reward branch; no RL.
-Separately inspect existing raw-control objective/order/loss records before any new CPT proposal; no new learning authorized.
-Preserve V29's negative primary and all states/outputs/cache. No size jump, long CPT, officialTEST or automatic retries.
+## Closed: candidate/reward diagnostic; publication finishing
+Question: do correct sampled calculations offer full-continuation improvements recognized by frozen reward?
+ID:candidate-utility-v30;256 new TRAIN docs; fixed first-order V29 writer/reader;G8+greedy; no learning.
+All2,304 attempts/3,840 scores and12workers physically close0; no errors/caps/empty notes.
+Best8−raw+.082[−.241,.394];best8−B0−1.083[−1.569,−.616]; opportunity gate FAILS.
+Best8−greedy+.346[.153,.568]; numeral+.596/prose−.507nats; numerical gain does not rescue full16.
+Canonical samples1807/2048;98docs have correct work beating bothraws,coverage PASS.
+Correct−error+5.112[3.189,7.215] on25mixed docs; alignment gate FAILS minimum32,not sign.
+Oracle−corrupt+2.774[2.458,3.109],plumbing PASS. Overall FAIL: close this reward branch,no RL or rescue sweep.
+Independent all3840contexts/statistics/decisions/fixed4HF checks PASS; model-free50file public replay PASS.
+Reserved chip-hours science.188266+qualification.138581; all original states/evidence retained.
+Report:validation/candidate_utility_v30_complete_20261021/REPORT.md. Package local/releases/v30-candidate-utility-20261021-v2.
+Next: finish authorized public release/full-download verification; no model job queued or new learning released.
 
 ## Closed: real continuation CPT, published
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?

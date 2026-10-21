@@ -1,0 +1,90 @@
+{
+  "HF_checks": [
+    {
+      "item_id": "ebb403d5891614de94dc1d26892e3fb27541b245785aa261b7d136715736c730:raw-equation-v3:1058",
+      "max_token_error": 2.086162567138672e-05,
+      "mode": "sample0"
+    },
+    {
+      "item_id": "8b7ef73d7ed110356292f218dbaa1651a0be70f537547f3a4e2387d641d17b1d:raw-equation-v3:1404",
+      "max_token_error": 9.655952453613281e-06,
+      "mode": "sample7"
+    },
+    {
+      "item_id": "2e78f538bfdeca56a2b72dd71ad6bb400987ea38959515ab7a3fb4039a920d8e:raw-equation-v3:638",
+      "max_token_error": 2.193450927734375e-05,
+      "mode": "raw"
+    },
+    {
+      "item_id": "ee5be40e402d7e7119364f7b2584d55ee2ddfa8c73de49331abe160661e4968b:raw-equation-v3:633",
+      "max_token_error": 6.842613220214844e-05,
+      "mode": "empty"
+    }
+  ],
+  "checker_sha256": "de3b9a409b55f4329502329bb044cbf76a927ad7e8e68eb857b8509529624e9c",
+  "conditional_mixed_documents": 25,
+  "contexts": 3840,
+  "contrasts": {
+    "best8_minus_B0_raw": {
+      "ci95": [
+        -1.5686531198188332,
+        -0.6161955492330282
+      ],
+      "mean": -1.0829295465516644
+    },
+    "best8_minus_greedy": {
+      "ci95": [
+        0.15321781837003495,
+        0.5680423330073292
+      ],
+      "mean": 0.34594976775311936
+    },
+    "best8_minus_raw": {
+      "ci95": [
+        -0.2410638879397248,
+        0.39427823546331303
+      ],
+      "mean": 0.08206852499532319
+    },
+    "greedy_minus_raw": {
+      "ci95": [
+        -0.6275034121731083,
+        0.08915163811485638
+      ],
+      "mean": -0.2638812427577962
+    },
+    "mean8_minus_raw": {
+      "ci95": [
+        -0.5698236963247721,
+        0.09610664497154796
+      ],
+      "mean": -0.2361767833426705
+    },
+    "oracle_minus_corrupt": {
+      "ci95": [
+        2.4577448412327683,
+        3.108890564785865
+      ],
+      "mean": 2.773864675544982
+    },
+    "oracle_minus_raw": {
+      "ci95": [
+        -0.05385766231833387,
+        0.49732233501360973
+      ],
+      "mean": 0.22561195967007247
+    }
+  },
+  "correct_helpful_documents": 98,
+  "gates": {
+    "alignment": false,
+    "complete_execution": true,
+    "correct_helpful_coverage": true,
+    "opportunity": false,
+    "plumbing": true
+  },
+  "limits": "Reconstruct all V30 contexts/statistics and fixed ordinary-HF score checks.\n\nIndependent context construction and bootstrap implementation; canonical trace\nclassification uses the frozen, tested arithmetic contract. This is verification\nwithin the repository, not an external replication or semantic judge.\n",
+  "notes": 2304,
+  "report_sha256": "9103f625cf9fc6d68a3b3a6785a42de675dc598e78fda810cc3ae3e4cc625204",
+  "status": "PASS_ALL_CONTEXTS_AND_PRIMARY_STATISTICS_FIXED_HF"
+}

@@ -1,0 +1,161 @@
+{
+  "clean_target_positions_per_pass": 10421563,
+  "data_sha256": "ef15ff29e4c972ed6162f05d293bdc1059967e2914a0e9973e7b0f95f71bd509",
+  "limits": [
+    "This raw control is continuation-reweighted NTP, not uniform vanilla NTP.",
+    "Coefficients are explicit loss coefficients, not measured gradient contributions.",
+    "A decreasing repeated-source loss is not evidence of fresh-source prediction improvement.",
+    "No intervention isolates weighting, corpus selection, constant learning rate, or repetition as the regression cause.",
+    "The original comparisons and failed gates remain unchanged; no new training is released."
+  ],
+  "mean_extra_auxiliary_coefficient_per_source_document": 0.125,
+  "per_document_objective": "meanCE(all original source transitions) + I_calculation * 0.5 * meanCE(original future16)",
+  "runs": [
+    {
+      "blocks": [
+        {
+          "continuation_mean_loss": 1.0265513733029366,
+          "first_step": 1,
+          "last_step": 160,
+          "mean_gradient_norm": 3.8652767896652223,
+          "source_mean_loss": 1.3990146569907664
+        },
+        {
+          "continuation_mean_loss": 1.07559321410954,
+          "first_step": 161,
+          "last_step": 320,
+          "mean_gradient_norm": 3.747700424492359,
+          "source_mean_loss": 1.4124822735786438
+        },
+        {
+          "continuation_mean_loss": 0.9897990565747022,
+          "first_step": 321,
+          "last_step": 480,
+          "mean_gradient_norm": 3.601451002061367,
+          "source_mean_loss": 1.405118278414011
+        },
+        {
+          "continuation_mean_loss": 1.052444414049387,
+          "first_step": 481,
+          "last_step": 640,
+          "mean_gradient_norm": 3.514167833328247,
+          "source_mean_loss": 1.406051340699196
+        },
+        {
+          "continuation_mean_loss": 0.5694872861728072,
+          "first_step": 641,
+          "last_step": 800,
+          "mean_gradient_norm": 3.0891925230622292,
+          "source_mean_loss": 1.3077444791793824
+        },
+        {
+          "continuation_mean_loss": 0.5530657723546029,
+          "first_step": 801,
+          "last_step": 960,
+          "mean_gradient_norm": 2.9661223009228705,
+          "source_mean_loss": 1.3048431906849145
+        },
+        {
+          "continuation_mean_loss": 0.556109726196155,
+          "first_step": 961,
+          "last_step": 1120,
+          "mean_gradient_norm": 3.030610387027264,
+          "source_mean_loss": 1.2865840651094913
+        },
+        {
+          "continuation_mean_loss": 0.5949283103458584,
+          "first_step": 1121,
+          "last_step": 1280,
+          "mean_gradient_norm": 3.104521985352039,
+          "source_mean_loss": 1.310670581459999
+        }
+      ],
+      "exposures": 40960,
+      "maximum_loss_reconstruction_error": 3.129243850708008e-07,
+      "metrics_sha256": "9438c3c8fe882bff1ef5ac3183e797c4ef2c1b221bdc97f5dee101b8f64b8463",
+      "ordered_exposure_checks_passed": true,
+      "seed": 2026102029,
+      "unique_documents": 20480
+    },
+    {
+      "blocks": [
+        {
+          "continuation_mean_loss": 1.0369922924786805,
+          "first_step": 1,
+          "last_step": 160,
+          "mean_gradient_norm": 4.0310478657484055,
+          "source_mean_loss": 1.4026798874139785
+        },
+        {
+          "continuation_mean_loss": 1.0313476683571934,
+          "first_step": 161,
+          "last_step": 320,
+          "mean_gradient_norm": 3.78382870554924,
+          "source_mean_loss": 1.4109495230019093
+        },
+        {
+          "continuation_mean_loss": 1.0101035060361028,
+          "first_step": 321,
+          "last_step": 480,
+          "mean_gradient_norm": 3.59237752109766,
+          "source_mean_loss": 1.41067151799798
+        },
+        {
+          "continuation_mean_loss": 1.056053936854005,
+          "first_step": 481,
+          "last_step": 640,
+          "mean_gradient_norm": 3.4429019197821615,
+          "source_mean_loss": 1.3977975711226462
+        },
+        {
+          "continuation_mean_loss": 0.5526844523847103,
+          "first_step": 641,
+          "last_step": 800,
+          "mean_gradient_norm": 3.069426882266998,
+          "source_mean_loss": 1.2834727808833122
+        },
+        {
+          "continuation_mean_loss": 0.583780101314187,
+          "first_step": 801,
+          "last_step": 960,
+          "mean_gradient_norm": 3.1154873788356783,
+          "source_mean_loss": 1.3093735963106155
+        },
+        {
+          "continuation_mean_loss": 0.5769234547391534,
+          "first_step": 961,
+          "last_step": 1120,
+          "mean_gradient_norm": 3.0077043533325196,
+          "source_mean_loss": 1.3101491689682008
+        },
+        {
+          "continuation_mean_loss": 0.566263799648732,
+          "first_step": 1121,
+          "last_step": 1280,
+          "mean_gradient_norm": 2.97940481454134,
+          "source_mean_loss": 1.308709455654025
+        }
+      ],
+      "exposures": 40960,
+      "maximum_loss_reconstruction_error": 3.427267074584961e-07,
+      "metrics_sha256": "58462f859557f8c592979ad73387d56f64859c64659a7af8b93385451d6b2fdc",
+      "ordered_exposure_checks_passed": true,
+      "seed": 2026102030,
+      "unique_documents": 20480
+    }
+  ],
+  "selected_fraction_of_clean_positions": 0.00786062512887942,
+  "selected_future_positions_per_pass": 81920,
+  "selected_future_to_other_clean_token_coefficient_ratio": {
+    "full512prefix": 17.46875,
+    "maximum": 17.46875,
+    "mean": 15.201922607421874,
+    "minimum": 5.46875
+  },
+  "source_kinds": {
+    "calculation": 5120,
+    "ordinary": 15360
+  },
+  "status": "READ_ONLY_CLOSED_V29_RAW_OBJECTIVE_AND_EXPOSURE_AUDIT",
+  "unique_documents": 20480
+}

@@ -1,5 +1,15 @@
 # Useful Thoughts on Trainium
 
+**V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN
+documents, hindsight best-of-eight calculations gain only **+0.082 nats** over the
+same reader's raw full16 prediction (interval spans zero), and remain **−1.083 nats
+below unchanged B0**. Correct calculations rank better on25 mixed documents, but
+that is below the frozen32-document alignment requirement. Numerical gain again
+comes with a prose-prediction cost. [Complete report](validation/candidate_utility_v30_complete_20261021/REPORT.md).
+All2,304 attempts/3,840 scores and the fixed gates are preserved; independent
+context/HF checks and model-free public numerical replay pass. No further model
+run is queued. V29's result below remains unchanged.
+
 **V29 is complete: generated computation improves numerical completions, but the
 primary direct-prediction criterion fails. Ordinary FineMath retention meets the
 declared full-window target with a measurable regression.**

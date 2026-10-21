@@ -1,0 +1,15 @@
+{
+  "status": "PASS_V30_PUBLIC_NUMERICAL_REPLAY_NO_TORCH",
+  "files": 50,
+  "attempts": 2304,
+  "scores": 3840,
+  "gates": {
+    "complete_execution": true,
+    "opportunity": false,
+    "correct_helpful_coverage": true,
+    "alignment": false,
+    "plumbing": true
+  },
+  "all_required_passed": false,
+  "limits": "Verifies projected numerical evidence, not omitted source windows or model execution."
+}

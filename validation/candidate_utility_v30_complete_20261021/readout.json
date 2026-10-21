@@ -1,0 +1,212 @@
+{
+  "alignment": {
+    "conditional_contrast": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        3.1890749309513273,
+        7.214875499119747
+      ],
+      "difference_b_minus_a": 5.112333770077517,
+      "documents": 25,
+      "items": 25,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "mixed_documents": 25
+  },
+  "all_required_passed": false,
+  "analysis_source_sha256": "a259d6f95d7d5320678bcd73f211e87dbf95b417e55a244b933fa95164dcc6e2",
+  "best8_categories": {
+    "arithmetic_error": 13,
+    "unsupported_or_alternative": 6,
+    "verified_canonical": 237
+  },
+  "best8_native_components_vs_raw": {
+    "boundary_and_whitespace": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -0.07646027606219227,
+        0.06114404091294011
+      ],
+      "difference_b_minus_a": -0.006263806362884594,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "numeral": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        0.33687628171418377,
+        0.844778197911166
+      ],
+      "difference_b_minus_a": 0.5955793241435362,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "surrounding": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -0.6968159154664496,
+        -0.3329664715420482
+      ],
+      "difference_b_minus_a": -0.5072469927853285,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    }
+  },
+  "candidate_attempts": 2304,
+  "candidate_categories": {
+    "arithmetic_error": 182,
+    "unsupported_or_alternative": 59,
+    "verified_canonical": 1807
+  },
+  "canonical_mean_gain_vs_raw_conditional": {
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 2026102130,
+    "ci95": [
+      -0.1082914122907517,
+      0.46536015832590116
+    ],
+    "difference_b_minus_a": 0.18663555911415516,
+    "documents": 242,
+    "items": 242,
+    "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+  },
+  "caps": {},
+  "contrasts": {
+    "best8_minus_B0_raw": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -1.5686531198188332,
+        -0.6161955492330282
+      ],
+      "difference_b_minus_a": -1.0829295465516644,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "best8_minus_greedy": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        0.15321781837003495,
+        0.5680423330073292
+      ],
+      "difference_b_minus_a": 0.34594976775311936,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "best8_minus_raw": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -0.2410638879397248,
+        0.39427823546331303
+      ],
+      "difference_b_minus_a": 0.08206852499532319,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "greedy_minus_raw": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -0.6275034121731083,
+        0.08915163811485638
+      ],
+      "difference_b_minus_a": -0.2638812427577962,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "mean8_minus_raw": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -0.5698236963247721,
+        0.09610664497154796
+      ],
+      "difference_b_minus_a": -0.2361767833426705,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "oracle_minus_corrupt": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        2.4577448412327683,
+        3.108890564785865
+      ],
+      "difference_b_minus_a": 2.773864675544982,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    },
+    "oracle_minus_raw": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "ci95": [
+        -0.05385766231833387,
+        0.49732233501360973
+      ],
+      "difference_b_minus_a": 0.22561195967007247,
+      "documents": 256,
+      "items": 256,
+      "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+    }
+  },
+  "correct_helpful_documents": 98,
+  "correct_helpful_fraction_interval": {
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 2026102130,
+    "ci95": [
+      0.32421875,
+      0.4453125
+    ],
+    "difference_b_minus_a": 0.3828125,
+    "documents": 256,
+    "items": 256,
+    "qualification": "Sampling uncertainty conditional on these checkpoints; not training-seed uncertainty."
+  },
+  "decision": "Close this reward branch. No RL under this reward; no temperature/prompt/checkpoint rescue sweep.",
+  "design_sha256": "fa9613ea1622a885e8b8a258e412837b2b891733a27ca90c86e129e4dff7ed57",
+  "documents": 256,
+  "empty": {},
+  "experiment_id": "candidate-utility-v30",
+  "gates": {
+    "alignment": false,
+    "complete_execution": true,
+    "correct_helpful_coverage": true,
+    "opportunity": false,
+    "plumbing": true
+  },
+  "limits": "Small diagnostic with unadjusted component intervals and conjunctive decision, not powered confirmation or autonomous learned selection. Best-of8 sees the actual future and is not a deployed selection policy.",
+  "mean_actions": 34.165364583333336,
+  "protocol_sha256": "5683da3e3885bdad275e0f624befd258f2b4400d799151a857ba0f7bf17ca912",
+  "score_rows": 3840,
+  "source_pins": {
+    "local/diagnostics/candidate-utility-v30-v1/runs/generate-0/notes.jsonl": "10a19b3b3fcad652232c90ca36b3967cc865da0d26338733d733181503625856",
+    "local/diagnostics/candidate-utility-v30-v1/runs/generate-1/notes.jsonl": "40fd511dd00ba4922af53c4d7ff4e4de3e1306e4cadd4758e09b66735c300c2b",
+    "local/diagnostics/candidate-utility-v30-v1/runs/generate-2/notes.jsonl": "82dab56d05da587479ee0680d3d3d20be3e2884cd9e2c140ca784aa425053bbc",
+    "local/diagnostics/candidate-utility-v30-v1/runs/generate-3/notes.jsonl": "a388d0b663d709e296a45b6c1428bf067f5d522ab6745f2636a52ffa42897616",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-B0-0/scores.jsonl": "dfa814347263920f2ede6e53dc9618f9d9bd2b64a5a056264e20ad68ed27a170",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-B0-1/scores.jsonl": "e616803f33336dac4176bbdfb465b685208e1247067a4947472dfb7195a61d1b",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-B0-2/scores.jsonl": "4e2dc195a67ce8aa6784cfc718d089dacc987f1d840730dd8ec39fe7147d94c3",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-B0-3/scores.jsonl": "9a64742440418c74dbeb912c5e0bd456156bf0be9dc5cc83833034eeba4277b0",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-T-0/scores.jsonl": "1f6da8ebec30305ce7bddeeaea4a68a329e43b6f585966b84c913ecaa9d9e1c3",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-T-1/scores.jsonl": "ed51169035b3b28b83ca49e4261e7cf1dbd5ce5d68a8ed05692bd18d22540bc5",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-T-2/scores.jsonl": "38a8fbe09782128174524351ba19b757ca0b9855d88a8c74050927a65d5793d8",
+    "local/diagnostics/candidate-utility-v30-v1/runs/score-T-3/scores.jsonl": "7660e92c32ccd1ad119a1c05edb489c3db98a62f99ebece685d6715eaa0b3f56"
+  },
+  "status": "COMPLETE_FIXED_TRAIN_DIAGNOSTIC",
+  "verified_canonical_documents": 242
+}
