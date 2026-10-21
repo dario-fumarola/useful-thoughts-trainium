@@ -10,7 +10,8 @@ Reuse the first12 pool read-only; preserve all prior exclusions, exact curator, 
 Limits:4CPU/90minutes/5GiB new data; independent source check2CPU/45minutes;35GiB filesystem and512GiB host reserve.
 Require complete6672-per-kind cohorts and independent original-Parquet/native/equation checks before actual-model qualification.
 The later qualification cap remains0.5 reserved chip-hours; whole-experiment proposal remains8, conditional on actual numerical/runtime qualification.
-No source job launched yet; source/plan checks in progress. No released-model calls, head fits or accelerator execution.
+Source process2227876/session13647 RUNNING from12:24:10UTC, deadline13:54:10UTC; frozen source b1475a8.
+All four LFS downloads verified; filtering underway.1964CPU tests+smoke/compile PASS. No actual model calls/features/head fits.
 
 ## Closed: selector feasibility; no model release
 Question: can the fixed source pool support the powered selector design within a finite budget?

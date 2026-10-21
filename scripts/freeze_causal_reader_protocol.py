@@ -23,6 +23,7 @@ def read(path):return json.loads(Path(path).read_text())
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('data','audit','decision','output'):parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--identity',required=True)
     a=parser.parse_args();audit=read(a.audit);decision=read(a.decision);complete=read(a.data/'complete.json')
     if (audit['status']!='PASS_ALL_SELECTED_SOURCE_NATIVE_EXCLUSION_AND_EXACT_EQUATION_CHECKS'
             or audit['documents']!=13344 or audit['exact_expressions']!=6672
@@ -34,7 +35,8 @@ def main():
             or decision['data_audit_sha256']!=sha256_file(a.audit)
             or decision['qualification_reserved_chip_hour_ceiling']!=.5
             or decision['whole_experiment_reserved_chip_hour_ceiling']!=8
-            or decision['scientific_execution_released']):
+            or decision['scientific_execution_released']
+            or decision.get('experiment_identity')!=a.identity):
         raise ValueError('Finite reviewed qualification-only decision required')
     binding_file=ROOT/'local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/bindings/computation-seed2026102029.json'
     binding=read(binding_file)
@@ -62,7 +64,7 @@ def main():
     if a.output.exists():raise FileExistsError('No overwrite of frozen protocol')
     structured=ROOT/'validation/causal_reader_gate_design_20261021.json'
     cost=ROOT/'validation/causal_reader_cost_plan_20261021.json'
-    atomic_json(a.output,dict(status='FROZEN_CAUSAL_READER_PROTOCOL',identity='causal-reader-gate-20261021-v1',
+    atomic_json(a.output,dict(status='FROZEN_CAUSAL_READER_PROTOCOL',identity=a.identity,
         created_utc=utc_now(),sources=sources(),design_file=str(structured),design_sha256=sha256_file(structured),
         cost_plan_file=str(cost),cost_plan_sha256=sha256_file(cost),data=data,
         data_audit_file=str(a.audit.resolve()),data_audit_sha256=sha256_file(a.audit),
