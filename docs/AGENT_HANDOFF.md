@@ -1,4 +1,4 @@
-<!-- Current handoff 2026-10-21 00:17 UTC. Only this first V30 block is active. -->
+<!-- Current handoff 2026-10-21 00:23 UTC. Only this first V30 block is active. -->
 R=/home/ubuntu/dario; public GitHub maintained autonomously. No active goal; do not create one. No agents beforeOct24.
 Latest user explicitly limits next work to ONE bounded TRAIN-only candidate/reward diagnostic. No new learning/RL/size jump/long CPT authorized.
 Required: candidate correctness/utility variation; full16 reward prefers correct helpful work and actually beats raw; numerical-only gains cannot rescue.
@@ -13,14 +13,19 @@ First65536rows;58404 prior-source-clean documents,764 validcompoundequations,390
 PoolSHA27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f; operationcounts2:223,3:116,4:26,5:18,6:7.
 No smaller cohort/exclusion relaxation/model-based filtering. Earlier unused pool only109fullprefix examples; fresh source was necessary.
 Independent C/independent/independent-data-check.json PASS all390 actualParquet/native512+16windows,oldexclusions,exactprefix-onlywork and1030 equations.
-CPU frozen40ab1935tests/smoke/compile PASS R/local/checks/v30-source-frozen40ab7ef-20261020.log. First model calls are CPU native references only:exec31341(T)/77622(B0),deadline00:40UTC; logs C30diag/logs/reference-{T,B0}.log. No diagnostic candidates inspected.
+CPU frozen40ab1935tests/smoke/compile PASS R/local/checks/v30-source-frozen40ab7ef-20261020.log. CPU references31341(T)/77622(B0) CLOSED0. Actual samplerqualification exec90905/timeoutPID2172828/worker2172829 ACTIVE since00:18:18UTC,deadline01:03:18UTC.
+Control C30diag/qualification-control/{launch.json,worker.log,host-samples.jsonl}; actualmodelnative/span and repeated-B8cache-prefill gates PASS (max~.00005). New greedy/sampling graphs still compiling,healthyCPUactivity. No scientific256candidate outputs inspected.
 Exact curator is copied boundedutility b863cb6 from oldv9,not mainrawhelper; never execute archived launcher.
 
 NEXT:
 Protocol/gates/cohort already frozen at C30diag=R/local/diagnostics/candidate-utility-v30-v1; do not change them.
 1.Frozen diagnostic design: fixed FIRST-order V29 computation writer/reader,greedy1+G8,temp.7,cap128,full16 vsraw/empty/greedy/oracle/corrupt/donor.
   Select256diagnostic+8disjointqualification byfixedhash. Declare usefulness/alignment gates and finite execution budget. No future in writer projection.
-2.Poll references31341/77622 and confirm full checks2119close0. Then actual-model bounded accelerator qualification and CPU selected-behavior verification; no science release yet.
+2.Poll qualification90905. Full1940worker checks2119close0 and1943main/readout checks19466close0. Root readout scripts/report_candidate_utility_v30.py and3decision tests pass; no numericalWsource changed.
+  After physicallyclosedqualification0,run CPU verify from W source a84c77b into C30diag/qualification-CPU with --qualification C30diag/qualification. Must pass savedbehaviorLP andRNG,notcapability.
+  Local C30diag/supervise-science.py is PREPARED ONLY. It requires an explicit release.json with exactsource/protocol/qualification/sourcecommit/supervisorSHA/deadline<=75minutes. No science release exists yet.
+  Review once after actual qualification/profile; scope4logicalcores0..3 onphysical0. Three finite stages generate4shards,scoreT4shards,scoreB04shards. No updates or automaticretry.
+  Then root scripts/report_candidate_utility_v30.py reads all3584T+256B0 scores/2304notes and fixedgates. No pass meansclosebranchwithoutRL. No science release yet.
 Reuse NeuronCausalBackend.sample cached deviceGumbel/storedbehaviorLPs,not newengine. Fixed512prefix/cache; full nativeAnswer firsttoken stop16141 orEOS151643; exact markers helper.
   Include sampledstop,retain caps/errors/unsupported; log decode_iterations separateactualactions. Existingstopchunk32 causes extraallocatedsteps.
   setup_modelFP32eval,undefinedrowsmasked,temp.7,nontopk/p. This does not qualifyBF16/replay/trainingthroughput.
