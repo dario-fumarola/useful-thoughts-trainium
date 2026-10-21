@@ -10,7 +10,7 @@ Updated October 21, 2026. Entries below this summary remain append-only.
 - A uniform-NTP baseline is required before another CPT claim.
 - The installed compiler defaults to no auto-casting; numerical discrepancies remain unresolved.
 - Future native protocols should state compiler precision explicitly.
-- Name the bootstrap cluster unit and pass cluster IDs explicitly in production helpers.
+- Active selector paths and the generic paired-row API now share explicit-cluster bootstrap arithmetic.
 - Keep independently implemented numerical verification.
 - Refactor current guidance for clarity while archiving full history.
 - The bounded CPU study is closed; next work is publication and focused statistical maintenance.
@@ -1786,3 +1786,10 @@ The original hard gate passes all four practical criteria in all six new orders;
 This is internal development on a source-hash split of the previously used TRAIN pool (4,096 FIT / 1,024 validation, 640 updates). It does not reclassify the parent's failed joint result, identify why its order 32 failed, or establish fresh confirmation. All 24 heads froze before validation. Independent reconstruction and source-free replay agree. Study/readout and verification used 215.82 + 13.19 seconds on four CPU cores, with zero new model or accelerator calls. [Report](validation/selector_optimization_train_v1_complete_20261021/REPORT.md).
 
 The read-only installed-parser check contradicts the reviewer's BF16-by-default explanation: compiler 2.27.5334 defaults auto-cast to none. Original numerical differences remain unresolved, with no requalification. Full historical guidance and landing-page text are archived; current docs are shortened. Production bootstrap consolidation should require explicit cluster IDs and units while keeping independent checks separate. A uniform-NTP baseline is required before another CPT claim.
+
+
+## 2026-10-21 — publish the optimization comparison and centralize active statistics
+
+Result commit 54c4272 and the source-free release are public. All three assets and the report downloaded without authentication, matched their hashes, and the downloaded archive replayed all decisions. [Receipt](validation/selector_optimization_train_v1_public_release_20261021.json).
+
+The generic paired-row API, current selector readout/interventions and internal selector study now call one production cluster-bootstrap helper. Independent cluster IDs and their unit are explicit; related items travel together and unequal cluster sizes retain item weights. Supplied RNG streams and historical seeds are preserved. All 120 completed internal-study mean/interval contrasts agree within 6.2e-16. Independent NumPy reconstruction/replay code remains separate. Frozen worktrees and published outcomes are unchanged; this is numerical maintenance, not a scientific reanalysis. [Methods](docs/STATISTICS.md) and [parity](validation/production_bootstrap_refactor_20261021.json).

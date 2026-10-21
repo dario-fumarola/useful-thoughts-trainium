@@ -1,0 +1,11 @@
+{
+  "status": "PASS_PRODUCTION_BOOTSTRAP_REFACTOR_PARITY",
+  "contrasts": 120,
+  "document_rows": 1024,
+  "maximum_absolute_mean_or_interval_difference": 6.106226635438361e-16,
+  "original_readout_sha256": "3f30536642abbece5793ca1cc78fe2919d8abad9b824dafb6117b769e83c9ca4",
+  "resampling": "512 complete source documents/stratum, 5000 paired draws, original seeds retained",
+  "limits": "Numerical comparison against source-free completed TRAIN-study evidence. No head refit, model call, original DEV access or historical score rewrite. Independent reconstruction scripts retain separate arithmetic.",
+  "CPU_checks_passed": 1992,
+  "smoke_and_compile": "PASS"
+}

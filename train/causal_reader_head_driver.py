@@ -20,6 +20,7 @@ from train.causal_reader_fit import (constant_logps,fit_constant,
 from train.causal_reader_gate import CausalFeatures,SelectiveHead,gate_inputs
 from train.causal_reader_gate_driver import sources,require_frozen,require_science_release
 from weekend_thinking.artifacts import atomic_json,canonical_hash,sha256_file,utc_now
+from weekend_thinking.stats import cluster_bootstrap
 
 ORDERS=(2026102131,2026102132)
 ROLES=('B0_raw','T_raw','T_note')
@@ -133,19 +134,18 @@ def fit(a,p):
         no_DEV_cache_opened=True,seconds=time.monotonic()-started,completed_utc=utc_now()))
 
 
-def bootstrap(values,rng):
+def bootstrap(values,rng,*,document_ids):
     """Unique-source paired percentile intervals; no token pseudo-replication."""
     values=np.asarray(values,dtype=np.float64)
-    if values.ndim!=2 or len(values)!=4096 or not np.isfinite(values).all():
+    if (values.ndim!=2 or len(values)!=4096 or len(document_ids)!=4096
+            or len(set(document_ids))!=4096 or not np.isfinite(values).all()):
         raise ValueError('Complete finite4096-source contrasts required')
-    means=[]
-    for first in range(0,5000,64):
-        indices=rng.integers(0,len(values),size=(min(64,5000-first),len(values)))
-        means.append(values[indices].mean(1))
-    draws=np.concatenate(means)
-    summary=[dict(mean=float(values[:,i].mean()),CI95=np.quantile(draws[:,i],[.025,.975]).tolist(),
+    result=cluster_bootstrap(values,document_ids,unit='source document',rng=rng,batch_size=64)
+    draws=result['draws']
+    summary=[dict(mean=float(result['mean'][i]),CI95=result['CI95'][i].tolist(),
                   document_SD=float(values[:,i].std(ddof=1)),
-                  minimum=float(values[:,i].min()),median=float(np.median(values[:,i])))
+                  minimum=float(values[:,i].min()),median=float(np.median(values[:,i])),
+                  resampling=result['metadata'])
              for i in range(values.shape[1])]
     return summary,draws
 
@@ -193,11 +193,12 @@ def secondary(a,p,fit_meta,raw,cohort_digest,primary_totals):
         reports[mode]={k:float(v.mean()) for k,v in values.items()}
         for seed in ORDERS:
             own=primary_totals[f'T_note:{seed}'][ids.numpy()]
-            difference=own-values[str(seed)];rng=np.random.default_rng(2026102134)
-            draws=np.concatenate([difference[rng.integers(0,256,size=(min(64,5000-start),256))].mean(1)
-                                  for start in range(0,5000,64)])
-            contrasts[f'{seed}:own-minus-{mode}']=dict(mean=float(difference.mean()),
-                                                       CI95=np.quantile(draws,[.025,.975]).tolist())
+            difference=own-values[str(seed)]
+            stats=cluster_bootstrap(difference[:,None],
+                [row['document_id'] for row in base['index']],
+                unit='source document',seed=2026102134,batch_size=64)
+            contrasts[f'{seed}:own-minus-{mode}']=dict(mean=float(stats['mean'][0]),
+                CI95=stats['CI95'][0].tolist(),resampling=stats['metadata'])
     atomic_json(a.output/'secondary-note-interventions.json',dict(
         status='COMPLETE_FIXED_SECONDARY_NOTE_CONTENT_DIAGNOSIS',documents=256,
         mean_full16_log_probabilities=reports,item_ids=chosen,
@@ -243,7 +244,8 @@ def evaluate(a,p):
             columns[f'{seed}:own-minus-global']=own-totals['T_note:global']
             columns[f'{seed}:own-minus-raw-ensemble']=own-totals[f'T_raw:{seed}']
             columns[f'{seed}:own-minus-position-secondary']=own-totals['T_note:position']
-        keys=list(columns);summaries,draws=bootstrap(np.column_stack(list(columns.values())),rng)
+        keys=list(columns);summaries,draws=bootstrap(np.column_stack(list(columns.values())),rng,
+            document_ids=[row['document_id'] for row in raw['index']])
         reports[cohort]=dict(zip(keys,summaries));absolute[cohort]={k:float(v.mean()) for k,v in totals.items()}
         means[cohort]=[float(columns[f'{seed}:own-minus-B0'].mean()) for seed in ORDERS]
         main_draws[cohort]=draws[:,[keys.index(f'{seed}:own-minus-B0') for seed in ORDERS]]

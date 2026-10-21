@@ -13,7 +13,7 @@ The original hard gate passes the practical criteria in **all six new orders**. 
 - Four CPU cores; 215.82 seconds for fitting/readout and 13.19 for reconstruction; 9.01 MiB output. Zero new model calls or accelerator chip-hours. All workers closed successfully.
 - Execution code: `10268da`; protocol: `435e81b1…`. No follow-on fit or accelerator job is running.
 
-[Complete report](validation/selector_optimization_train_v1_complete_20261021/REPORT.md) · [All orders](validation/selector_optimization_train_v1_complete_20261021/all-orders.csv) · [Prospective design](configs/selector_optimization_train_v1.json)
+[Complete report](validation/selector_optimization_train_v1_complete_20261021/REPORT.md) · [All orders](validation/selector_optimization_train_v1_complete_20261021/all-orders.csv) · [Prospective design](configs/selector_optimization_train_v1.json) · [Verified release](validation/selector_optimization_train_v1_public_release_20261021.json)
 
 ## Earlier fresh-panel result remains unchanged
 
@@ -24,3 +24,5 @@ One frozen selector order gains **+0.457 nats per 16 calculation tokens** versus
 V29 did not establish a better direct pretrained model; V30 closed its fixed predictive-reward branch. Improved pretraining, internalization and autonomous discovery remain open. Further CPT work needs a uniform next-token baseline and explicit compiler settings.
 
 The installed compiler defaults to `--auto-cast=none`; flag omission does not establish BF16 execution. Existing numerical differences remain unresolved. [Read-only inspection](validation/executed_precision_review_20261021.json).
+
+Production statistics now share an explicit-cluster helper in the active selector paths and generic paired-row API. All 120 study contrasts reproduce within 6.2e-16. Historical results and separate verification arithmetic remain unchanged. [Methods](docs/STATISTICS.md).

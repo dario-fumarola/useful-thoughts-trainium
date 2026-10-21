@@ -24,6 +24,7 @@ from train.causal_reader_gate import SelectiveHead
 from train.causal_reader_fit import constant_logps, fit_constant, fit_position_constants
 from train.causal_reader_head_driver import cache, inputs
 from weekend_thinking.artifacts import atomic_json, canonical_hash, sha256_file, utc_now
+from weekend_thinking.stats import cluster_bootstrap
 
 ROOT=Path(__file__).resolve().parents[1]
 IDENTITY='selector-optimization-train-20261021-v1'
@@ -113,7 +114,7 @@ def numerical_fit(head,features,raw,assisted,order,check,emit,probe):
 def source_hashes():
     names=('train/selector_optimization.py','train/causal_reader_gate.py',
            'train/causal_reader_fit.py','train/causal_reader_head_driver.py',
-           'scripts/check_selector_optimization.py')
+           'scripts/check_selector_optimization.py','weekend_thinking/stats.py')
     return {name:sha256_file(ROOT/name) for name in names}
 
 
@@ -138,16 +139,14 @@ def load_train(p):
     return parent,raw,split
 
 
-def bootstrap(values,seed):
+def bootstrap(values,seed,*,document_ids):
     values=np.asarray(values,dtype=np.float64)
-    if values.ndim!=2 or len(values)!=512 or not np.isfinite(values).all():
+    if (values.ndim!=2 or len(values)!=512 or len(document_ids)!=512
+            or len(set(document_ids))!=512 or not np.isfinite(values).all()):
         raise ValueError('512 unique internal-validation documents required per stratum')
-    rng=np.random.default_rng(seed);draws=[]
-    for start in range(0,5000,32):
-        ids=rng.integers(0,512,size=(min(32,5000-start),512))
-        draws.append(values[ids].mean(1))
-    draws=np.concatenate(draws)
-    return [dict(mean=float(values[:,i].mean()),CI95=np.quantile(draws[:,i],[.025,.975]).tolist())
+    result=cluster_bootstrap(values,document_ids,unit='source document',seed=seed)
+    return [dict(mean=float(result['mean'][i]),CI95=result['CI95'][i].tolist(),
+                 resampling=result['metadata'])
             for i in range(values.shape[1])]
 
 
@@ -241,7 +240,8 @@ def run(a,p):
         for role in ROLES:
             for seed in ORDERS:
                 columns[f'{role}-order{seed}:smooth-minus-hard']=(totals[f'{role}-smooth-order{seed}']-totals[f'{role}-hard-order{seed}'])[ix]
-        summaries=bootstrap(np.column_stack(list(columns.values())),2026102147+(kind=='ordinary'))
+        summaries=bootstrap(np.column_stack(list(columns.values())),2026102147+(kind=='ordinary'),
+            document_ids=[raw['labels'][hold[j]]['document_id'] for j in ix])
         reports[kind]=dict(zip(columns,summaries))
     for gate in GATES:
         decisions[gate]={}

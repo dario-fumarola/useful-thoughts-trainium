@@ -8,7 +8,7 @@ A CPU-only comparison fitted 24 selectors on existing TRAIN caches: hard/smooth 
 
 This source-hash split is internal development evidence: 4,096 fitting and 1,024 validation documents. It does not replace the earlier fresh-panel result or confirm improved pretraining. Ordinary prediction still has a small cost. Independent reconstruction and source-free numerical replay agree. Fitting/readout and reconstruction used about four minutes on four CPU cores, with no new model or accelerator calls.
 
-[Complete comparison](validation/selector_optimization_train_v1_complete_20261021/REPORT.md) · [All orders](validation/selector_optimization_train_v1_complete_20261021/all-orders.csv) · [Prospective design](configs/selector_optimization_train_v1.json)
+[Complete comparison](validation/selector_optimization_train_v1_complete_20261021/REPORT.md) · [All orders](validation/selector_optimization_train_v1_complete_20261021/all-orders.csv) · [Prospective design](configs/selector_optimization_train_v1.json) · [Public numerical evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/selector-optimization-train-20261021)
 
 ## What the earlier evidence establishes
 
@@ -29,6 +29,8 @@ Both predictors in the selective-reader experiments remain frozen. A better infe
 Read [STATUS.md](STATUS.md), [NEXT_STEPS.md](NEXT_STEPS.md) and [AGENTS.md](AGENTS.md). The [roadmap](docs/RESEARCH_ROADMAP.md) separates inference benefit, learning benefit and autonomous discovery. Completed reports and published outcomes stay intact while new recipes can be iterated transparently.
 
 Use the existing environment (`source scripts/env.sh`). Run `bash scripts/run_checks.sh` after relevant source changes. CPU checks establish numerical and causal invariants; native execution needs its own qualification. Large models, source data and caches stay outside Git.
+
+The active selector paths and generic paired-row API share [one cluster-bootstrap implementation](weekend_thinking/stats.py), with explicit source IDs and units. [Statistical methods](docs/STATISTICS.md). Historical independent replays retain separate arithmetic.
 
 The installed compiler's default is no auto-casting; a BF16-by-default explanation of the prior qualification differences is unsupported. [Read-only precision inspection](validation/executed_precision_review_20261021.json). Existing deviations remain unresolved. Future protocols should specify precision explicitly.
 

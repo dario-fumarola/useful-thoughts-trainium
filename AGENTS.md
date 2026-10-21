@@ -6,7 +6,7 @@ Study when self-generated intermediate computation improves prediction, and whet
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
-The current selector study uses existing TRAIN caches: four CPU cores, at most one hour and 256 MiB of output. It compares hard and smooth gates for both calculation and no-calculation ensembles, across six fixed orders. All terminal heads are retained. Internal validation is developmental; completed DEV panels are excluded.
+The cached selector study is complete: hard gates pass in six orders, calibrated smooth gates in four. All 24 terminal heads are retained. Its four-CPU, one-hour budget is closed. Internal validation is developmental; completed DEV panels are excluded from recipe selection. Publication and focused statistical maintenance are complete. Subsequent empirical work needs a concrete source, outcome and resource plan.
 
 ## Three red lines
 

@@ -1,0 +1,67 @@
+{
+  "status": "PASS_PUBLIC_RELEASE_FULL_DOWNLOAD_SHA_READBACK_AND_REPLAY",
+  "tag": "selector-optimization-train-20261021",
+  "release_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/selector-optimization-train-20261021",
+  "target_commit": "54c4272eefb9db7cbad09f567f2fcad8384f2b40",
+  "verified_utc": "2026-10-21T16:42:56.924808+00:00",
+  "all_assets_verified": true,
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/selector-optimization-train-20261021/SHA256SUMS.txt",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "bytes": 235,
+      "sha256": "ee70d25057e7ff6c415e59c02b74e79d00e2aea11ac5eddd97a98717be6c1d87",
+      "local_readback_sha256": "ee70d25057e7ff6c415e59c02b74e79d00e2aea11ac5eddd97a98717be6c1d87",
+      "fsync": true
+    },
+    {
+      "name": "selector-optimization-train-20261021-evidence.tar.gz",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/selector-optimization-train-20261021/selector-optimization-train-20261021-evidence.tar.gz",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "bytes": 3060872,
+      "sha256": "5ced130e50e5a0b3c26b302c180b9c54684e1f2b95e85424a1843d281ccbf442",
+      "local_readback_sha256": "5ced130e50e5a0b3c26b302c180b9c54684e1f2b95e85424a1843d281ccbf442",
+      "fsync": true
+    },
+    {
+      "name": "selector-optimization-train-20261021-summary.json",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/selector-optimization-train-20261021/selector-optimization-train-20261021-summary.json",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "bytes": 1831,
+      "sha256": "37c37517fb0a7cead25acad46bd8fedc4a4fb4f07a2f6275c612951822e9aa78",
+      "local_readback_sha256": "37c37517fb0a7cead25acad46bd8fedc4a4fb4f07a2f6275c612951822e9aa78",
+      "fsync": true
+    }
+  ],
+  "report": {
+    "name": "public-REPORT.md",
+    "url": "https://raw.githubusercontent.com/dario-fumarola/useful-thoughts-trainium/54c4272eefb9db7cbad09f567f2fcad8384f2b40/validation/selector_optimization_train_v1_complete_20261021/REPORT.md",
+    "HTTP_status": 200,
+    "authenticated": false,
+    "full_body": true,
+    "bytes": 7286,
+    "sha256": "6377e245cf61b241397f4396d32ca58b71e73a898cb58175ed89310e50079327",
+    "local_readback_sha256": "6377e245cf61b241397f4396d32ca58b71e73a898cb58175ed89310e50079327",
+    "fsync": true
+  },
+  "public_replay": {
+    "status": "PASS_PUBLIC_SELECTOR_OPTIMIZATION_NUMERICAL_REPLAY",
+    "verified_files": 63,
+    "document_rows": 1024,
+    "heads": 24,
+    "source_document_bootstrap_draws": 5000,
+    "all_six_primary_pass": {
+      "hard": true,
+      "smooth": false
+    },
+    "limits": "Projected numerical evidence, not model execution, optimizer replication or fresh confirmation."
+  },
+  "limits": "Publication and source-free numerical evidence; not external replication, new model execution or fresh confirmation."
+}

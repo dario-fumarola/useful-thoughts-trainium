@@ -26,7 +26,7 @@ DEPENDENCIES=tuple(dict.fromkeys((*PREVIOUS_SOURCES,'train/causal_reader_gate.py
     'train/causal_reader_fit.py','train/causal_reader_gate_driver.py',
     'train/causal_reader_head_driver.py','scripts/check_causal_reader_qualification.py',
     'scripts/causal_reader_cost_profile.py','scripts/freeze_causal_reader_protocol.py',
-    'train/causal_reader_supervisor.py')))
+    'train/causal_reader_supervisor.py','weekend_thinking/stats.py')))
 
 
 def read(path):return json.loads(Path(path).read_text())
