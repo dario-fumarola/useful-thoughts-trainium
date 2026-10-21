@@ -153,6 +153,17 @@ def dense_reference(backend,context,target):
 
 
 @torch.no_grad()
+def greedy_margin(masked_logits,actions,tolerance=.001):
+    """Independent CPU check allows only predeclared numerical near ties."""
+    chosen=torch.tensor(actions,dtype=torch.long)[:,None]
+    regret=masked_logits.max(-1).values-masked_logits.gather(-1,chosen)[:,0]
+    if not torch.isfinite(regret).all() or regret.max().item()>tolerance:
+        raise ValueError('Native greedy actions exceed frozen CPU argmax numerical tolerance')
+    return dict(maximum_argmax_logit_regret=regret.max().item(),
+                numerical_near_tie_actions=int((masked_logits.argmax(-1)!=chosen[:,0]).sum()))
+
+
+@torch.no_grad()
 def verify_greedy_CPU(backend,tok,q,note):
     prompt=writer_prompt(q,tok);actions=note['actions']
     x=torch.tensor([[*prompt,*actions]])
@@ -160,13 +171,12 @@ def verify_greedy_CPU(backend,tok,q,note):
     z=backend.model.lm_head(h).float()
     masked=z.clone()
     if backend.banned_ids:masked[:,:,list(backend.banned_ids)]=-torch.inf
-    expected=masked[0].argmax(-1).tolist()
-    if expected!=actions:raise ValueError('Native greedy actions do not match ordinary HF conditionals')
+    margin=greedy_margin(masked[0],actions)
     from weekend_thinking.core import policy_log_probs
     logp=policy_log_probs(z,.7,backend.banned_ids)[0].gather(-1,torch.tensor(actions)[:,None])[:,0]
     error=max(abs(x-y) for x,y in zip(logp.tolist(),note['behavior_logps']))
     if error>.001:raise ValueError('Native greedy behavior scores differ from CPU reference')
-    return dict(actions=len(actions),maximum_behavior_error=error)
+    return dict(actions=len(actions),maximum_behavior_error=error,**margin)
 
 
 def features(a,p,spec,selected):

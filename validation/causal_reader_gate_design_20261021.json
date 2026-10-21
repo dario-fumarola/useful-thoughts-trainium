@@ -173,16 +173,17 @@
       "The same fixed head recipe learns a simple linearly separable prospective signal.",
       "All four TRAIN-only terminal heads freeze before DEV readout; CPU preparation cannot release model/head workers; paired bootstrap requires the fixed4096 original documents."
     ],
-    "full_CPU_suite_passed": 1963,
+    "full_CPU_suite_passed": 1964,
     "no_claim": "These tests neither execute released B0/T weights nor qualify actual-model feature extraction, latency, generalization or head efficacy.",
     "fitting_module": "train/causal_reader_fit.py",
     "guarded_worker": "train/causal_reader_gate_driver.py",
     "native_checker": "scripts/check_causal_reader_qualification.py",
     "head_entrypoint": "train/causal_reader_head_driver.py",
-    "full_CPU_check_log_sha256": "8e57538ed35f0cb56ef78d70e3eb5c13c56f03e808738ed6339ae11e2c891e43",
+    "full_CPU_check_log_sha256": "480ef5bdce09f4432f6c5c4c3023fb8e127887ed8c8f6693267835022638e98f",
     "supervisor": "train/causal_reader_supervisor.py",
     "protocol_freezer": "scripts/freeze_causal_reader_protocol.py",
-    "cost_checker": "scripts/causal_reader_cost_profile.py"
+    "cost_checker": "scripts/causal_reader_cost_profile.py",
+    "native_numerical_contract": "Freeze before model calls: each original native greedy action must have independent CPU masked-logit regret<=.001 and CPU behavior-logp error<=.001. Report exact matches and numerical near ties separately; do not demand bitwise argmax equality where permitted FP32 kernels are numerically tied. Native sampler policy unchanged. No post-outcome tolerance change."
   },
   "secondary_interventions": {
     "sources": 256,

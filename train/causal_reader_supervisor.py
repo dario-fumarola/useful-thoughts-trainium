@@ -80,7 +80,8 @@ class Runner:
                 else:env.pop('NEURON_RT_VISIBLE_CORES',None)
                 remaining=max(1,int((self.deadline-datetime.now(timezone.utc)).total_seconds()))
                 if devices:
-                    remaining=min(remaining,max(1,int((self.ceiling-self.spent())*3600/len(devices)-60)))
+                    remaining=min(remaining,max(1,int((self.ceiling-self.spent())*3600/len(devices)
+                                                     -(time.monotonic()-phase_start)-60)))
                 argv=['timeout','--signal=TERM','--kill-after=30s',str(remaining)+'s',sys.executable,'-u',*command]
                 log=(control/'worker.log').open('xb');started=time.monotonic()
                 proc=subprocess.Popen(argv,cwd=W,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)

@@ -90,11 +90,13 @@ def main():
         if any(max(r['hidden_error'],r['entropy_error'])>limits['causal_perturbation_max_absolute']
                for r in cause['checks']):raise ValueError('Future/current information reaches gate inputs')
         checks=ref_meta['greedy_CPU_checks']
-        if role=='T_note' and (len(checks)!=32 or any(r['maximum_behavior_error']>.001 for r in checks)):
+        if role=='T_note' and (len(checks)!=32 or any(r['maximum_behavior_error']>.001
+                or r['maximum_argmax_logit_regret']>.001 for r in checks)):
             raise ValueError('All native greedy sequences require CPU conditional verification')
         reports[role]=dict(documents=32,maximum_absolute_errors=errors,
             hidden_max_relative_L2=float(relative.max()),normalization_log_error=float(mass.max()),
-            causal_checks=6,greedy_CPU_checks=len(checks))
+            causal_checks=6,greedy_CPU_checks=len(checks),
+            CPU_numerical_near_tie_actions=sum(r['numerical_near_tie_actions'] for r in checks))
         collected[role]=fields
     raw=torch.from_numpy(collected['B0_raw']['first_logps'])
     assisted=torch.from_numpy(collected['T_note']['first_logps'])

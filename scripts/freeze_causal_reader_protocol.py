@@ -78,6 +78,7 @@ def main():
         secondary_interventions=dict(item_ids=chosen,selection='First64 fixed SHA-priority IDs per source-index stripe, before model calls; four contexts/source; original generated length/cap metadata held.'),
         tolerances=dict(hidden_max_absolute=.001,hidden_max_relative_L2=.0001,
             entropy_max_absolute=.001,target_logps_max_absolute=.001,first_logps_max_absolute=.001,
+            greedy_CPU_max_argmax_logit_regret=.001,greedy_CPU_behavior_logp_error=.001,
             normalization_log_error=.00002,causal_perturbation_max_absolute=.000001),
         limits='Qualification only. No science/experiment-head run until actual native parity/causality/normalization, finite measured-cost profile and a separate whole-question release. No writer RL, new CPT, model-size change or official TEST.'))
     print('FROZEN_QUALIFICATION_ONLY_NO_MODEL_CALLS',sha256_file(a.output),flush=True)
