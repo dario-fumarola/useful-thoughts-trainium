@@ -2,21 +2,15 @@
 
 Updated October 21, 2026. Entries below this summary remain append-only.
 
-- Focus the immediate claim on selective inference over frozen predictors.
-- Completed: hard gates pass in 6/6 internal orders; calibrated smooth gates pass in 4/6.
-- Apply the same optimization change to note and no-note controls.
-- Keep completed DEV panels out of recipe selection; internal validation is developmental.
-- Preserve the parent experiment's positive order31 and failed joint criterion.
-- A uniform-NTP baseline is required before another CPT claim.
-- The installed compiler defaults to no auto-casting; numerical discrepancies remain unresolved.
-- Future native protocols should state compiler precision explicitly.
-- Active selector paths and the generic paired-row API now share explicit-cluster bootstrap arithmetic.
-- Keep independently implemented numerical verification.
-- Refactor current guidance for clarity while archiving full history.
-- Fresh confirmation is complete: all six calculation gains vs B0, five all-control passes, natural losses in every order; both endpoint criteria fail.
-- A simple no-calculation constant mixture improves natural prediction and remains a required comparator.
-
-- Uniform-NTP preparation is complete: 38,912 separated source windows, independently checked; one loss on all original tokens and four fixed development settings. Native accumulation/scheduler/recovery and measured-cost qualification come next.
+- Immediate question: qualify genuine uniform next-token continued training as a reference.
+- Compare four fixed LR/schedule settings on the same one-pass 17.269 million targets; all terminals freeze before DEV and the choice freezes before CONFIRM.
+- All 38,912 source windows independently match pinned records; no baseline fit or held-out model result yet.
+- Native loss/LR/reducer/master/replica checks pass. The original exact-recovery check fails and remains recorded; a scalar-cache transfer repair is being requalified without relaxing that requirement.
+- All 2,029 CPU tests pass. CPU checks remain distinct from native qualification.
+- Total reservation ceiling stays 18 chip-hours, at most two chips. Use existing RAM scratch up to 256 GiB while preserving the disk and host-memory floors and every original state.
+- Paired intervals resample unique source documents; inference, training transfer and autonomous discovery remain separate claims.
+- Completed frozen-reader confirmation retains all six targeted gains, five all-control passes, every natural loss and the positive simple no-calculation mixture.
+- Historical numerical and scientific outcomes remain unchanged.
 
 ---
 
@@ -1828,3 +1822,11 @@ Public closure: all four fresh-confirmation assets and the report pass anonymous
 Use original 528-token native windows with one CE mean on all 527 shifted labels and no auxiliary pass. Batch 256, accumulation 8, source order and 17.269 million target tokens stay matched across two LRs and two schedules. Freeze all terminals before DEV recipe selection, then freeze the selected recipe/checkpoint before CONFIRM scoring. This is a new ordinary-training reference, not a claimed explanation or rewrite of V29.
 
 Identity/length-only source rules were committed before reconstruction. Every one of 38,912 disjoint sources independently checks against pinned Parquet data, with no row replacement. All 2,023 CPU tests pass. Concrete protocols preserve equal token coefficients and real source cursors; actual native accumulation, LR propagation, recovery and finite runtime still require qualification. No released-model or accelerator call occurred in this preparation stage. [Report](validation/uniform_lm_preparation_20261021/REPORT.md).
+
+## 2026-10-21 — preserve the strict recovery failure and repair scalar transfer
+
+The uniform-LM reference completed four native updates. Full state loads back exactly, and the third loss/norm match, but the fourth loss changes by 0.00001633 nats/token. The original exact-recovery requirement fails. This is an engineering qualification outcome, with zero baseline fits or DEV/CONFIRM outcomes. [Original failure](validation/uniform_lm_native_20261021/strict-recovery-failure.json).
+
+The restored optimizer HLO has 309 fewer scalar parameter inputs and identical arithmetic counts: 310 equal step counters share one device input. The candidate guard disables the installed device-data cache only while transferring/materializing mutable optimizer state, then restores its previous setting. CPU mutation/lifecycle/error checks and the full 2,029-test suite pass. A new same-data reference/replay must pass the original bitwise gate before fitting; no tolerance is widened. Source: 4f9166b.
+
+The owner’s “go” continues to cover the four fixed fits and sealed readout if qualification and measured cost pass. The total 18 reserved chip-hours and two-chip ceiling remain unchanged. All failed costs count. To retain failed and new full states, extend checkpoint scratch on the existing RAM filesystem from the proposed 180 to 256 GiB, retaining 35 GiB free disk and 512 GiB available host memory. No additional capacity, data, model size, optimization setting or scientific endpoint is introduced.

@@ -1,0 +1,22 @@
+{
+  "actual_three_update_checks": [
+    "Loss versus original B0 CPU reference",
+    "One gradient reduction each update",
+    "Actual warmup and decay LRs",
+    "Finite FP32-master changes",
+    "Replicated BF16 model agreement"
+  ],
+  "closed_reserved_chip_hours_before_final_complete_reference": 2.763060219662762,
+  "final_native_source_commit": "eb60bb40b2ee1805b9a941ce71e53b5bbf003a48",
+  "overall_hard_cap_chip_hours": 18,
+  "pending": [
+    "Four-update completion",
+    "Bitwise full-state recovery",
+    "Full-window scoring and measured complete cost"
+  ],
+  "previous_phase_allocations_preserved": true,
+  "qualification_planning_ceiling": 4,
+  "reason": "First three updates pass. The last LR exposed one additional optimizer input-sharing variant (31084 operations versus31085), requiring eight cached kernels. Finish compiler work on CPU with no model reservation, then perform the unchanged complete4+restore check.",
+  "scientific_settings_and_endpoints_unchanged": true,
+  "utc": "2026-10-21T22:18:47+00:00"
+}

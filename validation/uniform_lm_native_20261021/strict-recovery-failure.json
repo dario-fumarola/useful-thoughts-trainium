@@ -1,0 +1,17 @@
+{
+  "DEV_or_CONFIRM_outcomes": 0,
+  "diagnostic": "Restored first optimizer HLO has309 fewer parameter inputs, with the exact same arithmetic operation counts; equal step counters are shared. Candidate fix disables device-data scalar caching only during restored-state transfer and materialization, then restores the prior setting.",
+  "gate_unchanged": true,
+  "native_processes_closed": true,
+  "original_state_load_exact": true,
+  "reserved_chip_hours": 3.7073198646533356,
+  "scientific_fits": 0,
+  "status": "FAIL_ORIGINAL_EXACT_RECOVERY_REQUIREMENT",
+  "update3_loss_and_norm_exact": true,
+  "update4_loss_absolute_error": 1.633167266845703e-05,
+  "update4_recovered_loss": 1.4664136171340942,
+  "update4_recovered_norm": 1.0559996366500854,
+  "update4_reference_loss": 1.4664299488067627,
+  "update4_reference_norm": 1.0561389923095703,
+  "utc": "2026-10-21T23:12:58+00:00"
+}
