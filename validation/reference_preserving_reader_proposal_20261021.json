@@ -1,0 +1,50 @@
+{
+  "status": "CPU_ONLY_MECHANISM_PROPOSAL_NOT_RELEASED_NOT_IMPLEMENTED",
+  "question": "Can a causal gate use a computation branch without sacrificing the unchanged raw reference, beyond ordinary ensembling?",
+  "motivation": "V30 best8 fails both raw/reference full-span opportunity despite positive arithmetic ranking. No extension of that reward branch is proposed.",
+  "mechanism": {
+    "reference": "Frozen unchanged B0 on original prefix and already-observed/generated continuation history. The degraded trained raw path cannot replace this reference.",
+    "assisted_branch": "Fixed candidate writer/reader initially; no joint policy optimization. Existing first-order V29 model is a possible engineering asset, not a chosen scientific winner.",
+    "distribution": "p_mix(y|h,z)=(1-a(h,z))*p_B0(y|h)+a(h,z)*p_assisted(y|h,z). Both branches must be normalized on the same vocabulary.",
+    "gate_inputs": "Only native prefix, generated calculation, previous observed/generated tokens, pre-target hidden states or complete predictive distributions. Current gold token, gold LP, annotated numeral masks and hindsight best-of-G are forbidden gate features.",
+    "gate_bound": {
+      "maximum_a": 0.029554466451491845,
+      "reference_NLL_regret_bound_per_token": 0.03,
+      "proof": "p_mix(y)>= (1-a)*p_B0(y); thus logp_mix(y)-logp_B0(y)>=log(1-a)>=-.03 for every target. This is a probability mixture, not interpolation of logits/log probabilities.",
+      "full16_worst_regret_nats": 0.48,
+      "limits": "A cost bound gives no positive-gain or accuracy guarantee. Causality, normalization and an unchanged reference are required."
+    },
+    "initialization": "An interior small gate can preserve this bound while giving a gate gradient; an exact zero contribution suppresses content-dependent writer reward. Freeze writer/reader first rather than promising zero-cost autonomous bootstrap."
+  },
+  "required_controls_before_any_claim": [
+    "Unchanged B0 raw, as primary practical baseline.",
+    "Fixed probability blend specified from the mathematical cap, without tuning on V30 outcomes.",
+    "Comparable gated B0 plus source-trained raw branch, to separate thought content from ordinary model ensembling.",
+    "Same gate and assisted-reader computation with empty/intact unrelated calculations.",
+    "Competitive ordinary CoT and exact-interpreter control for computable arithmetic, with actual inference/training cost accounted separately."
+  ],
+  "scope_limits": [
+    "This is an inference/read-interface mechanism, not a better direct base model or internalization result. A frozen raw path cannot improve by definition.",
+    "A gate computed after generating the note does not avoid its generation cost.",
+    "Two prediction paths incur real extra work; a separate checkpoint/reference must earn that complexity. No practical superiority is presumed.",
+    "Conditional probability mixtures are known; learned mixing is prior work. Do not claim novelty from adding a gate.",
+    "V30 gold-token LPs could produce a hindsight routing curve, but cannot train or validate a causal gate. Do not run another fixed-mixer sweep on this inspected panel as confirmation.",
+    "The V29 raw-loop audit finds the intended objective, not the cause of regression. A future CPT claim still needs a credible uniform-NTP/source control and independent endpoints."
+  ],
+  "remaining_before_model_calls": [
+    "Choose whether this bounded inference mechanism is worth its complexity relative to the training-side north star; it is not automatically the next main experiment.",
+    "Specify causal feature/cache interface, exact normalization, reference identity, comparison budgets and fresh source-separated training/development cohorts.",
+    "Predeclare one primary gain over both B0 and non-thought ensemble controls, full16 endpoint, uncertainty unit and stopping rule.",
+    "Freeze a finite numerical qualification and complete-question review. No current release permits feature-model calls, gate learning, RL or CPT."
+  ],
+  "prior_art": [
+    {
+      "url": "https://arxiv.org/html/2403.09629v2",
+      "relevance": "Learned post-thought mixing and the zero-mixing reward problem; not a proof that this proposed probability-floor mechanism learns useful routing."
+    },
+    {
+      "url": "https://arxiv.org/html/2510.01265v2",
+      "relevance": "Group-relative predictive policy objective. Common offsets cancel; fixed-reward improvement arguments do not supply positive absolute reward or guarantee shared-reader finite-step dynamics."
+    }
+  ]
+}
