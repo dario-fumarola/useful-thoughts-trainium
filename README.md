@@ -10,7 +10,7 @@ On **4,096 unenriched natural windows**, every selector loses **0.020–0.052 na
 
 Every head, control and source selection was fixed before fresh model outcomes. Both backbones remain unchanged. Independent reconstruction and public numerical replay agree. Actual cost: **1.782 reserved chip-hours including qualification**, below 4.25. All **2,004 CPU checks**, smoke and compilation pass.
 
-[Full report and all orders](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [Public evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-fresh-confirmation-20261021) · [Prospective design](configs/reader_fresh_confirmation_design.json)
+[Full report and all orders](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [Public evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-fresh-confirmation-20261021) ([download/replay verified](validation/reader_fresh_confirmation_public_release_20261021.json)) · [Prospective design](configs/reader_fresh_confirmation_design.json)
 
 The strict verified arithmetic class occupies **0.001664% of prediction positions** in the existing source-clean frame. That is not every useful reasoning event or all FineMath; the natural result above is measured directly rather than obtained by reweighting the arithmetic panel. [Census](validation/reader_population_census_20261021/REPORT.md).
 

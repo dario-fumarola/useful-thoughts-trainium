@@ -8,7 +8,7 @@ Every fixed head improves the **1,024 fresh calculation spans** over B0: **+0.42
 
 Every head loses on **4,096 unenriched natural windows**: **−0.020 to −0.052 nats per span**, all intervals negative. The natural endpoint fails in every order. The simple no-calculation constant mixture instead improves by +0.0244 [0.0155, 0.0340]. These are separate outcomes, not a single ambiguous success/failure label.
 
-[Complete report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [All orders](validation/reader_fresh_confirmation_complete_20261021/all-orders.csv) · [Design](configs/reader_fresh_confirmation_design.json).
+[Complete report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [All orders](validation/reader_fresh_confirmation_complete_20261021/all-orders.csv) · [Verified public release](validation/reader_fresh_confirmation_public_release_20261021.json) · [Design](configs/reader_fresh_confirmation_design.json).
 
 - All 12 heads and fitted controls stayed frozen; no new fitting or backbone update. All sources independently match pinned Parquet data, without replacement.
 - All 64 scientific native workers closed successfully. Actual **1.781765 reserved chip-hours including 0.130007 qualification**, below 4.25, at most two physical chips.

@@ -1,0 +1,73 @@
+{
+  "status": "PASS_PUBLIC_FRESH_READER_FULL_DOWNLOAD_HASH_READBACK_AND_REPLAY",
+  "release_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/reader-fresh-confirmation-20261021",
+  "target_commit": "72631a448218f26b2e1d54aa0ae4e1d8b9b03877",
+  "verified_utc": "2026-10-21T19:31:56.868642+00:00",
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-fresh-confirmation-20261021/SHA256SUMS.txt",
+      "bytes": 301,
+      "sha256": "06bd4d8d1594f1fedba7e1dbb04b3524b1cf134667495f47c6930320afc09a67",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "06bd4d8d1594f1fedba7e1dbb04b3524b1cf134667495f47c6930320afc09a67"
+    },
+    {
+      "name": "reader-fresh-confirmation-20261021.tar.gz",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-fresh-confirmation-20261021/reader-fresh-confirmation-20261021.tar.gz",
+      "bytes": 14288614,
+      "sha256": "22a4d0b64673fb4b2d34c87b2a10bff9d3e2e83e65e5bc63c5f5533634d5ba77",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "22a4d0b64673fb4b2d34c87b2a10bff9d3e2e83e65e5bc63c5f5533634d5ba77"
+    },
+    {
+      "name": "reader-fresh-confirmation.json",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-fresh-confirmation-20261021/reader-fresh-confirmation.json",
+      "bytes": 51878,
+      "sha256": "18a51671da1eff5b5d0373cab6ac387cd79179ddba43777b52941ed3ea7ae8d6",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "18a51671da1eff5b5d0373cab6ac387cd79179ddba43777b52941ed3ea7ae8d6"
+    },
+    {
+      "name": "replay_reader_confirmation.py",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/reader-fresh-confirmation-20261021/replay_reader_confirmation.py",
+      "bytes": 8303,
+      "sha256": "9960fd88c0fe0c89989a5d28a9e40ee4ec57f9c4acb42e40b54e93ea55f52fdc",
+      "HTTP_status": 200,
+      "authenticated": false,
+      "full_body": true,
+      "fsync": true,
+      "local_readback_sha256": "9960fd88c0fe0c89989a5d28a9e40ee4ec57f9c4acb42e40b54e93ea55f52fdc"
+    }
+  ],
+  "report": {
+    "name": "public-REPORT.md",
+    "url": "https://raw.githubusercontent.com/dario-fumarola/useful-thoughts-trainium/72631a448218f26b2e1d54aa0ae4e1d8b9b03877/validation/reader_fresh_confirmation_complete_20261021/REPORT.md",
+    "bytes": 8544,
+    "sha256": "c7b416751e970867fa7fbd7c1e173b5e3f2f9e47a8f0d51b0cb2238225dec29a",
+    "HTTP_status": 200,
+    "authenticated": false,
+    "full_body": true,
+    "fsync": true,
+    "local_readback_sha256": "c7b416751e970867fa7fbd7c1e173b5e3f2f9e47a8f0d51b0cb2238225dec29a"
+  },
+  "replay": {
+    "status": "PASS_PUBLIC_FRESH_READER_NUMERICAL_REPLAY",
+    "files": 23,
+    "documents": 5120,
+    "calculation_confirmation_all_six": false,
+    "natural_prediction_all_six": false,
+    "contrasts": 80,
+    "limits": "Projected scores, routing and statistics, not omitted source/model execution or external replication."
+  },
+  "limits": "Scores, routing, mixtures, document-paired intervals and decisions from a source-free projection. No omitted source/feature/model reconstruction or external replication."
+}
