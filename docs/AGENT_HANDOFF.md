@@ -1,54 +1,48 @@
-<!-- Current handoff 2026-10-21 00:30 UTC. Only this first V30 block is active. -->
-R=/home/ubuntu/dario; public GitHub maintained autonomously. No active goal; do not create one. No agents beforeOct24.
-Latest user explicitly limits next work to ONE bounded TRAIN-only candidate/reward diagnostic. No new learning/RL/size jump/long CPT authorized.
-Required: candidate correctness/utility variation; full16 reward prefers correct helpful work and actually beats raw; numerical-only gains cannot rescue.
-No usable alignment => stop this reward branch, no RL. Best-of-G is future-aware opportunity, not deployable prefix-only selection.
-Before any new full CPT proposal, concretely investigate why the raw control regresses. Do not attribute shared regression to thoughts.
+<!-- Current handoff 2026-10-21 00:31 UTC. Only this first block is active. -->
+R=/home/ubuntu/dario; public dario-fumarola/useful-thoughts-trainium. Main ed324a3 pushed. User autonomy/patience; no active goal, do not create one. No agent retries beforeOct24.
+User's latest scope is ONE bounded TRAIN-only reward/candidate diagnostic; no new learning/RL/scaling/CPT. Absent usable full16 correctness/utility alignment =>close this reward branch. A pass also releases no learning. Investigate raw-control regression before any new CPT proposal.
 
-CURRENT EXECUTION UPDATE: qualification90905 physically closes0 in498.89s; selectedCPU54801 and ALL72/2853token HF/FP64 check96525 close0,maxerror.0000974. RNG replay exact; cache/native/span gates pass. Full1943checks88653close0.
-One complete-question review/release exists C30diag/{review,release}.json; actual scientific diagnostic exec57799 ACTIVE since00:29UTC,deadlineapproximately01:44UTC. Supervisor C30diag/supervise-science.py; stdout logs/science-supervisor.log.
-Current stagegenerate:4logicalcores0..3 onphysical0; controls science-control/generate/{0,1,2,3}/{launch.json,worker.log}; all4live proven. Outputs runs/generate-{0,1,2,3}. Each mustfinish576notes; then samejob score-T4shards896rows each, score-B04shards64rows each. No learning.
-Do not relaunch/modify W source a84c77b/protocol/gates/models. Poll57799 and logs, retain failures. No scientificresults yet. After physicalclosure0, run root scripts/report_candidate_utility_v30.py --protocol C30diag --runs C30diag/runs --output C30diag/readout-v1.
-Gates/failurepolicy frozen; false/unidentifiable =>close this rewardbranchwithoutRL. Bestof8 future-aware only. Need independent reconstruction/fixed HF readout checks and preserve/publicreport, not another learning run.
+ACTIVE — V30 SINGLE FINITE SCIENTIFIC DIAGNOSTIC:
+C=R/local/diagnostics/candidate-utility-v30-v1; W=R/local/worktrees/candidate-utility-v30 frozen/pushed a84c77b. Do not modify numerical W files/models/protocol/gates or relaunch anything while live.
+Supervisor exec57799 ACTIVE; C/supervise-science.py,stdout C/logs/science-supervisor.log; deadline2026-10-21T01:44:35.306770+00:00.
+Concrete one-question review/release C/{review,release}.json; all inputs/source/qualification/supervisor pinned. No retries.
+Three sequential stages on4logicalcores0..3 ofphysicalchip0: generate4shards, score-T4shards, score-B04shards.
+Current stageGENERATE: C/science-control/generate/{0,1,2,3}/{launch.json,worker.log}; process IDs2178570/73/75/76 (actual identity receipts govern).
+Each generation shard must close576notes(64docs×9attempts); outputs C/runs/generate-{0,1,2,3}. Native gates pass; only progress counts inspected.
+Next Tscore896rows/shard(64×14conditions), then B0raw64rows/shard. All original actions/behaviorLP/masks,tokenLL,contexts,errors are retained. One job/all conditions,75minutes/onephysicalchip max; resource floors35GiBfilesystem/512GiBhostavailable.
+Poll57799/logs without stopping healthy runs. Failed/incomplete outputs remain; never substitute retries or fewer documents.
+After physicalclosure0,run root scripts/report_candidate_utility_v30.py --protocol C --runs C/runs --output C/readout-v1. Need separate all-context/statistical/fixed-HF reconstruction and save/publish complete results. No new training follows.
 
-V30 CPU DATA COMPLETE; ALL PREP/TEST/AUDIT SESSIONS CLOSED0:
-W=R/local/worktrees/candidate-utility-v30, public branch40ab7ef; source a84c77b pushed; numerical worker and dependencies frozen after1940tests/smoke/compile PASS.
-D=R/local/data/candidate-utility-v30-source61-v1; O=R/local/data/candidate-utility-v30-curation61-v1; C=R/local/diagnostics/candidate-utility-v30-source61-v1.
-Pinned FineMath4plus TRAIN shard61/revisione92b25a616738fe95dc186b64dfb19f9c8525594;288814138bytes/SHA c78473e2f04cefe953ebe26c8d5fdee1b1a4b70c4b95a0210314304a9ba175e7.
-First65536rows;58404 prior-source-clean documents,764 validcompoundequations,390 full512prefix/newpage/content/orderedAST examples eligible.
-PoolSHA27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f; operationcounts2:223,3:116,4:26,5:18,6:7.
-No smaller cohort/exclusion relaxation/model-based filtering. Earlier unused pool only109fullprefix examples; fresh source was necessary.
-Independent C/independent/independent-data-check.json PASS all390 actualParquet/native512+16windows,oldexclusions,exactprefix-onlywork and1030 equations.
-CPU frozen40ab1935tests/smoke/compile PASS R/local/checks/v30-source-frozen40ab7ef-20261020.log. CPU references31341(T)/77622(B0) CLOSED0. Actual samplerqualification exec90905/timeoutPID2172828/worker2172829 ACTIVE since00:18:18UTC,deadline01:03:18UTC.
-Control C30diag/qualification-control/{launch.json,worker.log,host-samples.jsonl}; actualmodelnative/span and repeated-B8cache-prefill gates PASS (max~.00005). New greedy/sampling graphs still compiling,healthyCPUactivity. No scientific256candidate outputs inspected.
-Exact curator is copied boundedutility b863cb6 from oldv9,not mainrawhelper; never execute archived launcher.
+FROZEN SCIENCE:
+256unique new TRAINdocs; fixed chronological FIRST V29computation-seed2026102029 terminal1280 aswriter/reader; unchanged B0raw additionalreference.
+Greedy1+G8,temp.7,cap128inclsampledAnswer16141/EOS151643; undefinedtokenrowsmasked only. Separate questionfile hasonly IDs/prefix512. No future in writer inputs.
+Full16true continuation is primary; raw/empty/greedy/samples0..7/oracle/corrupt/other. Forced complete nativeAnswer boundary identical for all conditioned scores.
+Bestof8−same-reader raw,B0raw,greedy each>=.25nat andpositiveCI;>=64docswithverifiedcanonicalsamplebeatingbothraw;>=32mixedcorrect/error-docs andcorrect-minus-error mean>=.25nat/positiveCI; oracle−corrupt positiveCI. Allrequired.
+Canonicalcorrectness isconservative orderedAST/rational match; validalternatives separate. Errorcategory alsoincludes parsedpartialtracesendingatwrongroot,notonly falseequations.
+Bootstrap5000unique documents,seed2026102130; bestof8isfuture-awareoracle opportunity,neverdeployedselection. Ifanygatefails/unidentifiable,close rewardbranch/noRL; no prompt/temp/checkpoint rescue sweep.
+DesignSHAfa9613ea1622a885e8b8a258e412837b2b891733a27ca90c86e129e4dff7ed57; protocolSHA5683da3e3885bdad275e0f624befd258f2b4400d799151a857ba0f7bf17ca912. Frozen00:13beforemodelcalls.
 
-NEXT:
-Protocol/gates/cohort already frozen at C30diag=R/local/diagnostics/candidate-utility-v30-v1; do not change them.
-1.Frozen diagnostic design: fixed FIRST-order V29 computation writer/reader,greedy1+G8,temp.7,cap128,full16 vsraw/empty/greedy/oracle/corrupt/donor.
-  Select256diagnostic+8disjointqualification byfixedhash. Declare usefulness/alignment gates and finite execution budget. No future in writer projection.
-2.Poll qualification90905. Full1940worker checks2119close0 and1943main/readout checks19466close0. Root readout scripts/report_candidate_utility_v30.py and3decision tests pass; no numericalWsource changed.
-  After physicallyclosedqualification0,run CPU verify from W source a84c77b into C30diag/qualification-CPU with --qualification C30diag/qualification. Must pass savedbehaviorLP andRNG,notcapability.
-  Local C30diag/supervise-science.py is PREPARED ONLY. It requires an explicit release.json with exactsource/protocol/qualification/sourcecommit/supervisorSHA/deadline<=75minutes. No science release exists yet.
-  Review once after actual qualification/profile; scope4logicalcores0..3 onphysical0. Three finite stages generate4shards,scoreT4shards,scoreB04shards. No updates or automaticretry.
-  Then root scripts/report_candidate_utility_v30.py reads all3584T+256B0 scores/2304notes and fixedgates. No pass meansclosebranchwithoutRL. No science release yet.
-Reuse NeuronCausalBackend.sample cached deviceGumbel/storedbehaviorLPs,not newengine. Fixed512prefix/cache; full nativeAnswer firsttoken stop16141 orEOS151643; exact markers helper.
-  Include sampledstop,retain caps/errors/unsupported; log decode_iterations separateactualactions. Existingstopchunk32 causes extraallocatedsteps.
-  setup_modelFP32eval,undefinedrowsmasked,temp.7,nontopk/p. This does not qualifyBF16/replay/trainingthroughput.
-  Reuse score_spansB4/width672/target16 explicittrunk/gather/head sync,not oldbackend.score lazygraph.
-3.Actual-model stochastic/cache/native/behaviorLP qualification required. CPU teacher-forced checks on ACTUAL sampledactions; RNG reproducibility,not CPU/device sampledsequenceequality.
-4.Read-only raw-control diagnosis: V29 raw objective is cleanLM + .5 calculation-continuation mean,not uniform vanillaNTP. For full512prefix selectedfuturetoken coefficient~17.47x otherpositions.
-  Quantify actual source lengths/exposure/order/metric curves and retain uncertainty: coefficient arithmetic does not establish cause/gradient magnitude. No new training.
-5.No diagnostic pass auto-releasesRL/CPT. PreservefailedV29primary and alloriginalresults.
+QUALIFICATION — ALL CLOSED0:
+CPU refs31341(T)/77622(B0); sampling90905physicallyclosed in498.89s/.13858reservedchip-hours. Cache/native/span maxerrors<.000051.
+CPUselectedbehavior54801PASS; independent ALL72actualrollouts/2853tokens HF+FP64logsumexp96525PASS,maxerror.0000974. Same-seed action/behavior replay exactly identical.
+Warm7median group8sampling2.010s,greedy1.702s,notRL-step/BF16throughput. C/{qualification-costs.json,qualification-CPU,qualification-all-CPU}.
+Frozenworker1940CPUtests pass; rootreadout+decisiontests1943pass; final checker-inclusive1943suite88653closes0,log R/local/checks/v30-full-qualification-checker-20261021.log.
+No worker numerical source changed afterqualification. Rootreadout/checker additions do not change W runtime. Public receipt validation/candidate_utility_v30_sampling_qualified_20261021.json.
 
-FIXED MODEL / STORAGE:
-E29=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; firstTbinding E29/bindings/computation-seed2026102029.json and existing references/computation-seed2026102029.
-Terminal1280modelSHAbacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4. Never selectcheckpoint by newoutcomes.
-Main35161e2/V29publicrelease fullyverified; allV29producers/checkers/publishers CLOSED0. Do not rerun them. OriginalE29/summary/readout immutable.
-All18original64/640/1280states inprivateRAM; latest6weights/onefullrawoptimizer EBSprotected. Nooffinstancebackupclaim.
-Keep35GiBfilesystem/512GiBhostavailablefloors;neverdeleteoriginalstates/cache,formatnonzeronvme4,changecloud/IAM/stack,usepaidteacherorTEST.
-Source R/scripts/env.sh THEN override PYTHONPATH=W:R/local/test-deps; USE_TORCH_XLA=0 forCPU. Useworktreecwd toavoid mainshadowing.
-Userupdates~60s;keepgoingpatiently,no finalatmilestones.
+DATA / RAW AUDIT:
+D=R/local/data/candidate-utility-v30-source61-v1; O=R/local/data/candidate-utility-v30-curation61-v1; source-control R/local/diagnostics/candidate-utility-v30-source61-v1.
+Pinned FineMath4plus TRAIN shard61/revisione92b25a616738fe95dc186b64dfb19f9c8525594; first65536rows,58404source-clean docs,764compound equations,390eligiblefull512prefix/16future/verifiedwork docs.
+All390actualParquet/native/exclusion rows and1030exactequations independentlychecked. PoolSHA27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f. No officialTEST or oldreservedpayloads opened. Curation usesexactmin2rawhelperb863cb6fromoldv9,notanarchivedlauncher.
+Cohortfirst8qualification/next256diagnostic byfixedhash; no outcome selection. Allsource/raw/auditfilesretainedprivate; no needredownload/refilter/recheckcompletedproducers.
+Read-onlyV29rawauditscript scripts/inspect_raw_cpt_v29.py closes0; report validation/real_cpt_v29_raw_objective_audit_20261021.json. Correct40960orderedexposures/run,eachdoc2×.
+RawobjectiveiscleanLM + I_calculation*.5future16mean,notuniformNTP. Selectedfuturetokenweight5.47–17.47×otherper-docpositions;~.786%positionsgetextra.125batchobjectivecoefficient. Lossesfallstronglyonsecondpass. Thisdoesnotidentifyregressioncause; no newCPTreleased.
+
+FIXED V29 / STORAGE:
+E29=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; binding E29/bindings/computation-seed2026102029.json; modelSHAbacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4.
+V29publicresult/release/replays fullyclosedverified. Preservefailedprimary andpositivescalarsecondaryseparately. Neverrerunoldproducers ormutateE29/summary/readout.json.
+All18originalstatesretainedprivateRAM;latest6weights/onefullrawoptimizerEBSprotected. Nooffinstancebackupclaim. Do notdeleteoriginalstates/cache,formatnonzeronvme4,changecloud/IAM/stack,usepaidteacherorTEST.
+ForCPUsourceR/scripts/env.sh thenUSE_TORCH_XLA=0; WworkersoverridePYTHONPATH=W:R/local/test-deps. UseWcwdtoavoidmainshadowing.
+Userupdates~60s; keepworkingpatiently,do notfinalatmilestones.
 
 <!-- Current handoff 2026-10-20 23:41 UTC. Only this first block is active. -->
 Keep working autonomously/patiently until told to stop. No active goal; do not create one. No agent retries beforeOct24.
