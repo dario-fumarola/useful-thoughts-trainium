@@ -1,4 +1,16 @@
-# Status — 2026-10-21 04:52 UTC
+# Status — 2026-10-21 12:23 UTC
+
+
+## New preparation: fixed source extension
+Question: can four additional TRAIN shards complete the unchanged selective-reader cohorts?
+ID:causal-reader-source-extension-20261021-v1; CPU preparation only, no model release.
+Owner steering permits a new finite source protocol; db8d722 stays closed and unchanged.
+Plan:validation/causal_reader_source_extension_plan_20261021.json; shards48..45 at the original pinned revision, every row.
+Reuse the first12 pool read-only; preserve all prior exclusions, exact curator, hash priority, sample sizes and controls.
+Limits:4CPU/90minutes/5GiB new data; independent source check2CPU/45minutes;35GiB filesystem and512GiB host reserve.
+Require complete6672-per-kind cohorts and independent original-Parquet/native/equation checks before actual-model qualification.
+The later qualification cap remains0.5 reserved chip-hours; whole-experiment proposal remains8, conditional on actual numerical/runtime qualification.
+No source job launched yet; source/plan checks in progress. No released-model calls, head fits or accelerator execution.
 
 ## Closed: selector feasibility; no model release
 Question: can the fixed source pool support the powered selector design within a finite budget?

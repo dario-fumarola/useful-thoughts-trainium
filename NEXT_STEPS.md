@@ -1,15 +1,13 @@
 # Current queue
 
-The bounded selector feasibility attempt is CLOSED_NO_GO_FIXED_SOURCE_QUOTA. No model job is queued.
+New owner-authorized source protocol: causal-reader-source-extension-20261021-v1. The earlier db8d722 attempt remains closed.
 
-- Report validation/causal_reader_feasibility_complete_20261021.json. Fixed12TRAIN shards60..49 yield6095eligible unique calculations versus6672required; shortfall577 after the declared512-prefix/expression/packing rules.
-- All1058401source-clean documents were curated. An independent read-only recount matches every exclusion and all curation/membership coverage. This is NOT a complete selected-cohort Parquet/native qualification.
-- Source producer session19608/PID2199441 CLOSED1 at04:46:33UTC(expected quota rejection); independent check53796/PID2204839 CLOSED0. All original partial/source records preserved. No active process or automatic retry.
-- Keep the prospective4096DEV-per-stratum size and exclusions. Do not expand this closed pool, weaken rules or silently substitute a smaller cohort. This does not establish a global FineMath data shortage; a later source design would be a new protocol.
-- Guarded feature/head/qualification/cost/supervisor code is implemented;1964CPU tests+smoke/compile pass. No released-model call, feature extraction, experiment-head fit, native qualification or science release occurred.
-- Read docs/CAUSAL_READER_PROPOSAL.md for the retained, UNEXECUTED candidate. Actual unchanged B0, a fixed V29 note/reader and a causal head remain a proposal, not improved pretrained weights or autonomous discovery.
-- The proposed8-chip-hour budget and conditional power analysis remain planning only. Actual runtime/numerical/cost qualification was not reached; no new model/scaling/RL/CPT follows.
-- The deferred raw-trajectory-v31-cpu draft remains UNEXECUTED. Do not run its preparer or score checkpoints. A new study needs a materially new question/source protocol and finite whole-question decision, rather than more saved-score arithmetic.
+- Finish code/CPU checks, freeze source, then scan exactly TRAIN shards48..45 under validation/causal_reader_source_extension_plan_20261021.json. Reuse old12shard inputs read-only, no recuration/copying.
+- Keep all eligibility/exclusion rules and full cohort sizes. No adaptive additional shards or silent smaller replacement.
+- Require complete cohorts and independent checks against all13344 original Parquet/native windows and6672 exact equations before qualification.
+- Only then consider one bounded actual-model qualification (<=0.5 reserved chip-hours), actual-cost projection and a separate whole-question release under the8-chip-hour ceiling. Source success alone does not release science.
+- No writer RL, new CPT, model-size jump, official TEST or cloud/stack change. Preserve all existing states, outputs and caches.
+- Resolve this finite source/runtime decision, then run one empirical selector test if qualified; do not add more saved-score oracle analyses.
 
 V30 remains COMPLETE and its reward branch remains CLOSED:
 

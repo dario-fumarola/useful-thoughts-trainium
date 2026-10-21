@@ -40,6 +40,23 @@ def main():
     complete=json.loads((a.data/'complete.json').read_text())
     if complete['status']!='CPU_SOURCE_FEASIBILITY_COMPLETE_NOT_MODEL_RELEASE':
         raise ValueError('Complete original preparation required')
+    reused=plan.get('reused_pool')
+    if reused:
+        for name,digest in reused['files'].items():
+            if sha256_file(Path(reused['directory'])/name)!=digest:
+                raise ValueError('Closed reused pool changed')
+    downloads=json.loads((a.data/'downloads.json').read_text())
+    expected_downloads={r['path']:r.get('sha256') for r in plan['source_plan']['source_files']}
+    if reused:
+        expected_downloads.update({r['filename']:r['sha256'] for r in
+            json.loads((Path(reused['directory'])/'downloads.json').read_text())})
+    if (len(downloads)!=len(expected_downloads)
+            or {r['filename'] for r in downloads}!=set(expected_downloads)):
+        raise ValueError('Exact frozen additional and reused source shards required')
+    for binding in downloads:
+        digest=expected_downloads[binding['filename']]
+        if digest is not None and binding['sha256']!=digest:
+            raise ValueError('Download differs from frozen public LFS SHA')
     old_pages=set();old_contents=set();old_expressions=set()
     for filename,digest in plan['exclusions'].items():
         check()
@@ -74,11 +91,19 @@ def main():
                 raise ValueError('Native nonspecial complete512+16 source required')
             if row['document_id'] in seen_docs:raise ValueError('Cross-cohort document overlap')
             seen_docs.add(row['document_id']);counts[name+':'+row['kind']]+=1
-            loc=row['source_locator'];groups[loc['filename']].append(row)
+            loc=row['source_locator']
+            if loc['revision']!=plan['source_plan']['source_revision']:
+                raise ValueError('Original source revision changed')
+            groups[loc['filename']].append(row)
     verified_equations=0;checked=0
     for filename,values in groups.items():
-        check();path=a.data/Path(filename).name
-        binding=next(r for r in json.loads((a.data/'downloads.json').read_text()) if r['filename']==filename)
+        check()
+        binding=next(r for r in downloads if r['filename']==filename)
+        path=Path(binding['path']).resolve()
+        allowed={a.data.resolve()}
+        if reused:allowed.add(Path(reused['directory']).resolve())
+        if path.parent not in allowed or path.name!=Path(filename).name:
+            raise ValueError('Parquet must belong to a pinned original or extension pool')
         if sha256_file(path)!=binding['sha256']:raise ValueError('Pinned original Parquet changed')
         parquet=pq.ParquetFile(path);ends=[];end=0
         for index in range(parquet.num_row_groups):

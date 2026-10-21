@@ -1,0 +1,367 @@
+{
+  "source_revision": "e92b25a616738fe95dc186b64dfb19f9c8525594",
+  "source_inventory_sha256": "6d3e14ffd7e47dfe168ecb2b5dfd470367832cdae9117c47464e1d24bfd29f95",
+  "prospective_cohorts": {
+    "TRAIN_calculation": 2560,
+    "TRAIN_ordinary": 2560,
+    "DEV_calculation": 4096,
+    "DEV_ordinary": 4096,
+    "qualification_calculation": 16,
+    "qualification_ordinary": 16
+  },
+  "power": {
+    "method": "Normal mean/CI planning approximation, union lower bound over8 required contrasts; no independence assumption between orders/contrasts. Bootstrap actual power and the true effect/variance remain unknown.",
+    "selection": "4096 per DEV stratum; at true base gain.5, each control gain.25, ordinary gain0 and per-contrast SD4, joint lower approximately.917. This does not promise sensitivity to control gains.1 or larger/heavy-tail variance.",
+    "grid": [
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999683287581669,
+        "marginal_control_pass": 0.3594235667820088,
+        "marginal_ordinary_pass": 0.9999999946737974,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999683287581669,
+        "marginal_control_pass": 0.9793248371339299,
+        "marginal_ordinary_pass": 0.9999999946737974,
+        "joint_union_lower_bound": 0.9172359953996483
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999683287581669,
+        "marginal_control_pass": 0.9999955020561114,
+        "marginal_ordinary_pass": 0.9999999946737974,
+        "joint_union_lower_bound": 0.9999186550883743
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9772498680518208,
+        "marginal_control_pass": 0.12302440305134343,
+        "marginal_ordinary_pass": 0.9699459610388002,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9772498680518208,
+        "marginal_control_pass": 0.5159534368528308,
+        "marginal_ordinary_pass": 0.9699459610388002,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9772498680518208,
+        "marginal_control_pass": 0.8925123029254132,
+        "marginal_ordinary_pass": 0.9699459610388002,
+        "joint_union_lower_bound": 0.46444086988289457
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.7601131755636223,
+        "marginal_control_pass": 0.07683799902706223,
+        "marginal_ordinary_pass": 0.7257468822499265,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.7601131755636223,
+        "marginal_control_pass": 0.26543887911719655,
+        "marginal_ordinary_pass": 0.7257468822499265,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 1024,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.7601131755636223,
+        "marginal_control_pass": 0.5688052879941888,
+        "marginal_ordinary_pass": 0.7257468822499265,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.999999992291371,
+        "marginal_control_pass": 0.6189566418647077,
+        "marginal_ordinary_pass": 1.0,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.999999992291371,
+        "marginal_control_pass": 0.9998908562092272,
+        "marginal_ordinary_pass": 1.0,
+        "joint_union_lower_bound": 0.999563409419651
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.999999992291371,
+        "marginal_control_pass": 0.9999999999993341,
+        "marginal_ordinary_pass": 1.0,
+        "joint_union_lower_bound": 0.9999999845800784
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9976611325094764,
+        "marginal_control_pass": 0.20365714396008727,
+        "marginal_ordinary_pass": 0.9997403322691909,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9976611325094764,
+        "marginal_control_pass": 0.8074197244805748,
+        "marginal_ordinary_pass": 0.9997403322691909,
+        "joint_union_lower_bound": 0.22448182747963363
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9976611325094764,
+        "marginal_control_pass": 0.9948483924298208,
+        "marginal_ordinary_pass": 0.9997403322691909,
+        "joint_union_lower_bound": 0.9741964992766179
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9649478489727419,
+        "marginal_control_pass": 0.11395641629050751,
+        "marginal_ordinary_pass": 0.9515816599770899,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9649478489727419,
+        "marginal_control_pass": 0.47035324860717315,
+        "marginal_ordinary_pass": 0.9515816599770899,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 2048,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9649478489727419,
+        "marginal_control_pass": 0.8547416808699433,
+        "marginal_ordinary_pass": 0.9515816599770899,
+        "joint_union_lower_bound": 0.2520257413794367
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999999999999993,
+        "marginal_control_pass": 0.8925123029254132,
+        "marginal_ordinary_pass": 1.0,
+        "joint_union_lower_bound": 0.5700492117016513
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999999999999993,
+        "marginal_control_pass": 0.9999999992294288,
+        "marginal_ordinary_pass": 1.0,
+        "joint_union_lower_bound": 0.999999996917714
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 2.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999999999999993,
+        "marginal_control_pass": 1.0,
+        "marginal_ordinary_pass": 1.0,
+        "joint_union_lower_bound": 0.9999999999999987
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999683287581669,
+        "marginal_control_pass": 0.3594235667820088,
+        "marginal_ordinary_pass": 0.9999999946737974,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999683287581669,
+        "marginal_control_pass": 0.9793248371339299,
+        "marginal_ordinary_pass": 0.9999999946737974,
+        "joint_union_lower_bound": 0.9172359953996483
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 4.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9999683287581669,
+        "marginal_control_pass": 0.9999955020561114,
+        "marginal_ordinary_pass": 0.9999999946737974,
+        "joint_union_lower_bound": 0.9999186550883743
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.1,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9961696194324103,
+        "marginal_control_pass": 0.18583934617794695,
+        "marginal_ordinary_pass": 0.9992111543056243,
+        "joint_union_lower_bound": 0.0
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.25,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9961696194324103,
+        "marginal_control_pass": 0.7601131755636223,
+        "marginal_ordinary_pass": 0.9992111543056243,
+        "joint_union_lower_bound": 0.031214249730558752
+      },
+      {
+        "documents_per_DEV_stratum": 4096,
+        "assumed_SD_nats_per16": 6.0,
+        "assumed_base_effect": 0.5,
+        "assumed_each_control_effect": 0.4,
+        "assumed_ordinary_gain": 0.0,
+        "marginal_base_pass": 0.9961696194324103,
+        "marginal_control_pass": 0.9894632950590815,
+        "marginal_ordinary_pass": 0.9992111543056243,
+        "joint_union_lower_bound": 0.9486147277123953
+      }
+    ]
+  },
+  "status": "FROZEN_NEW_CPU_SOURCE_EXTENSION_NOT_MODEL_RELEASE",
+  "identity": "causal-reader-source-extension-20261021-v1",
+  "closed_predecessor_commit": "db8d722b8986b6e55fc624c7ffcce3e49d041584",
+  "source_selection": "Exactly four next unused descending official TRAIN shards48 through45, every row; no adaptive extension after yield is observed. Reuse the closed first12 source pool read-only. Same hash priority, curator, exclusions,512-prefix and640-pack rules; all outcomes unobserved.",
+  "reused_pool": {
+    "directory": "/home/ubuntu/dario/local/data/causal-reader-feasibility-v1",
+    "files": {
+      "plan.json": "831dd84c0bf04a9fde5baaba3c36e7860697be6a613dc279f9ceea3c29c0082c",
+      "downloads.json": "7043b2b20743ad00142d7e3667a6a4d5b1db611a09771e234512e23866a95f04",
+      "filter.json": "a543fda4420cb71b4ed46dfe0526b5b1125b666556050bd597102d2bdec4633e",
+      "fresh-TRAIN-raw.jsonl": "0e79b363117e7d5540c5b7ae34f3a1560fffc692ea3f1550ef584fcfe6212d6c",
+      "fresh-TRAIN-membership.jsonl": "f30ff162b315027231ebd51aa4636aedf2fab4ac32a8c3356b124ee46f386234",
+      "accepted.jsonl": "82f339f744ca5851829a1897caeac69aec94e53a897278b841bc2be2affdb1b7",
+      "curation-audit.jsonl": "dad72c53873ed067f793517a16449d900bf738c290808d2dab9bd2490fb73563",
+      "arithmetic-availability.json": "b417cb18055dc5a260934c81bbd48272c3799dd87167ecc382c3c638e2a96fce"
+    }
+  },
+  "source_files": [
+    {
+      "path": "finemath-4plus/train-00048-of-00064.parquet",
+      "bytes": 286142969,
+      "sha256": "d30c8f3681b94bb799d4c64feea211ef2e85a398f3cd0d7ae2802468653d0231"
+    },
+    {
+      "path": "finemath-4plus/train-00047-of-00064.parquet",
+      "bytes": 286816750,
+      "sha256": "072dd4aee4e5f09e647109b0155edeed9364417f891f64b60ae9453a8f57543f"
+    },
+    {
+      "path": "finemath-4plus/train-00046-of-00064.parquet",
+      "bytes": 287466256,
+      "sha256": "2d0803166fa42fbe1237bbc36d7348c6ab210a2958684b6ad2b1a1e2fffb0960"
+    },
+    {
+      "path": "finemath-4plus/train-00045-of-00064.parquet",
+      "bytes": 285137076,
+      "sha256": "2c3e25eccc80c71af05c1c27a260fb25d5743169dbace5e3ecdd18e6b96c277e"
+    }
+  ],
+  "CPU_cores": 4,
+  "preparation_wall_minutes": 90,
+  "independent_check_CPU_cores": 2,
+  "independent_check_wall_minutes": 45,
+  "incremental_output_byte_ceiling": 5368709120,
+  "filesystem_available_byte_floor": 37580963840,
+  "host_available_byte_floor": 549755813888,
+  "qualification_reserved_chip_hour_ceiling": 0.5,
+  "whole_experiment_reserved_chip_hour_ceiling": 8,
+  "feature_output_byte_ceiling": 6442450944,
+  "model_release": "None. Complete source/native independent audit before bounded actual-model qualification. Native parity/causality and measured profile must pass before a separate whole-question science release. No writer RL/CPT/model-size change or official TEST.",
+  "stop_rule": "If complete6672-per-kind cohorts cannot be built from this fixed extension within caps, close this new attempt with all inputs/partials retained; no silent smaller cohort or additional shard. Do not reopen db8d722.",
+  "download_bytes": 1145563051
+}

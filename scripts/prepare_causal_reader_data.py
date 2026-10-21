@@ -77,8 +77,9 @@ def prepare(a):
                          if line.startswith('MemAvailable:'))
         if available < 512*2**30:
             raise RuntimeError('Preserve host-memory reserve')
-        if out.exists() and sum(p.stat().st_size for p in out.rglob('*') if p.is_file()) > 16*2**30:
-            raise RuntimeError('Finite16GiB source/output bound')
+        limit = plan.get('incremental_output_byte_ceiling', 16*2**30)
+        if out.exists() and sum(p.stat().st_size for p in out.rglob('*') if p.is_file()) > limit:
+            raise RuntimeError('Finite source/output byte bound')
     check(); out.mkdir(parents=True, exist_ok=False)
     if sha256_file(curator.__file__) != CURATOR_SHA or plan['source_revision'] != REVISION:
         raise ValueError('Exact existing curator and source revision required')
@@ -112,11 +113,29 @@ def prepare(a):
         for row in rows(path):
             if row.get('normalized_expression'):
                 old_expressions.add(expression_key(row['normalized_expression']))
+    # A later, separately frozen source protocol may reuse the closed first
+    # pool read-only. Never change its files or rerun its curator. Pin every
+    # input and reject any repeated shard before acquiring extension sources.
+    reused = plan.get('reused_pool')
+    reused_dir = None
+    if reused:
+        reused_dir = Path(reused['directory']).resolve()
+        for name, digest in reused['files'].items():
+            if sha256_file(reused_dir/name) != digest:
+                raise ValueError('Closed reusable source pool changed')
+        original = read(reused_dir/'plan.json')
+        if (original['source_plan']['source_revision'] != REVISION
+                or original['exclusions'] != pins or (reused_dir/'complete.json').exists()):
+            raise ValueError('Only the pinned, closed insufficient pool may be reused')
+        old_shards = {r['filename'] for r in read(reused_dir/'downloads.json')}
+        if old_shards & {r['path'] for r in plan['source_files']}:
+            raise ValueError('Extension must use disjoint additional shards')
     write(out/'plan.json',dict(status='FROZEN_CPU_ONLY_NO_MODEL_RELEASE',
         source_plan=plan, source_plan_sha256=sha256_file(a.plan),
         source_sha256=sha256_file(__file__), curator_sources=curator.sources(),
         exclusions=pins, old_pages=len(old_pages),old_content=len(old_content),
-        old_expressions=len(old_expressions), CPU_affinity=cores, deadline_utc=a.deadline_utc))
+        old_expressions=len(old_expressions), reused_pool=reused,
+        CPU_affinity=cores, deadline_utc=a.deadline_utc))
     url=f'https://huggingface.co/api/datasets/HuggingFaceTB/finemath/tree/{REVISION}/finemath-4plus?recursive=false&limit=1000'
     with urllib.request.urlopen(url, timeout=60) as response:
         public = {r['path']:r for r in json.load(response)}
@@ -127,6 +146,8 @@ def prepare(a):
         if entry['size'] != spec['bytes']:
             raise ValueError('Pinned source size mismatch')
         expected=entry['lfs']['oid']; destination=out/Path(spec['path']).name
+        if spec.get('sha256', expected) != expected:
+            raise ValueError('Frozen extension LFS SHA differs from public inventory')
         if not re.fullmatch('[0-9a-f]{64}',expected):
             raise ValueError('Actual public LFS SHA required')
         request=f'https://huggingface.co/datasets/HuggingFaceTB/finemath/resolve/{REVISION}/{spec["path"]}'
@@ -139,10 +160,15 @@ def prepare(a):
             raise ValueError('Download size/LFS-SHA/readback mismatch')
         partial.rename(destination);source_files.append((spec['path'],destination,expected))
         print('SOURCE_DOWNLOADED',spec['path'],flush=True)
-    write(out/'downloads.json',[dict(filename=n,path=str(p),sha256=h) for n,p,h in source_files])
+    downloads = read(reused_dir/'downloads.json') if reused_dir else []
+    downloads += [dict(filename=n,path=str(p),sha256=h) for n,p,h in source_files]
+    write(out/'downloads.json',downloads)
     import pyarrow as pa
     import pyarrow.parquet as pq
     counts=Counter();seen_pages=set();seen_content=set();kept=0
+    if reused_dir:
+        for row in rows(reused_dir/'fresh-TRAIN-membership.jsonl'):
+            seen_pages.add(page(row['url']));seen_content.add(row['document_id'])
     raw=out/'fresh-TRAIN-raw.jsonl';membership=out/'fresh-TRAIN-membership.jsonl'
     with raw.open('xb') as stream,membership.open('x') as members:
         for filename,path,_ in source_files:
@@ -194,13 +220,16 @@ def prepare(a):
     from transformers import AutoTokenizer
     tokenizer=AutoTokenizer.from_pretrained(root/'local/assets/qwen3-1.7b-base',local_files_only=True)
     pool=[];accepted_sha=sha256_file(out/'accepted.jsonl')
-    for row in accepted:
-        check()
-        if len(row['prefix_ids'])!=512:counts['short_prefix']+=1;continue
-        if expression_key(row['boundary']['normalized_expression']) in old_expressions:
-            counts['old_expression']+=1;continue
-        try:pool.append(work_row(row,tokenizer,split='train',source_sha=accepted_sha))
-        except ValueError:counts['unsupported_pack']+=1
+    source_pools = ([reused_dir] if reused_dir else []) + [out]
+    for directory in source_pools:
+        digest=sha256_file(directory/'accepted.jsonl')
+        for row in rows(directory/'accepted.jsonl'):
+            check();counts['combined_accepted']+=1
+            if len(row['prefix_ids'])!=512:counts['short_prefix']+=1;continue
+            if expression_key(row['boundary']['normalized_expression']) in old_expressions:
+                counts['old_expression']+=1;continue
+            try:pool.append(work_row(row,tokenizer,split='train',source_sha=digest))
+            except ValueError:counts['unsupported_pack']+=1
     pool.sort(key=lambda r:priority(r,'calculation'))
     selected=[];seen_expressions=set()
     for row in pool:
@@ -212,11 +241,19 @@ def prepare(a):
     if len(selected)<quota:
         raise ValueError(f'Finite source inventory insufficient: {len(selected)} < {quota}; do not weaken filters')
     selected=selected[:quota];math_ids={r['document_id'] for r in selected}
-    candidates=heapq.nsmallest(40000,(r for r in rows(membership) if r['document_id'] not in math_ids),
+    def combined_membership():
+        for directory in source_pools:
+            digest=read(directory/'filter.json')['raw_sha256']
+            for meta in rows(directory/'fresh-TRAIN-membership.jsonl'):
+                yield dict(meta,pool_directory=str(directory),pool_raw_sha256=digest)
+    candidates=heapq.nsmallest(40000,(r for r in combined_membership() if r['document_id'] not in math_ids),
                               key=lambda r:priority(r,'ordinary'))
     ordinary=[]
-    with raw.open('rb') as source:
+    from contextlib import ExitStack
+    with ExitStack() as stack:
+        streams={str(d):stack.enter_context((d/'fresh-TRAIN-raw.jsonl').open('rb')) for d in source_pools}
         for meta in candidates:
+            source=streams[meta['pool_directory']]
             check();source.seek(meta['raw_offset']);line=source.read(meta['raw_bytes'])
             text=json.loads(line)['text'][:curator.MAX_CHARACTERS]
             encoded=tokenizer(text,add_special_tokens=False,truncation=True,max_length=curator.MAX_TOKENS,
@@ -226,9 +263,11 @@ def prepare(a):
             cut=512+int(priority(meta,'ordinary-cut')[:16],16)%(min(8192,len(tokens)-16)-512+1)
             try:window=curator.source_window(tokens,offsets,text,cut,tokenizer)
             except curator.base.safe.Unsupported:counts['ordinary_native_rejection']+=1;continue
+            if set(window['ids']) & set(tokenizer.all_special_ids):
+                counts['ordinary_special_token_rejection']+=1;continue
             row=dict(item_id=meta['document_id']+':ordinary:'+str(cut),document_id=meta['document_id'],
                 kind='ordinary',split='train',prefix_ids=window['ids'][:512],continuation16_ids=window['ids'][512:],
-                stop_id=151643,source_file_sha256=raw_sha,
+                stop_id=151643,source_file_sha256=meta['pool_raw_sha256'],
                 provenance=dict(source_url=meta['url'],raw_source_line=meta['source_line'],
                                 absolute_source_cut=cut,raw_line_sha256=hashlib.sha256(line).hexdigest()))
             ordinary.append(row)
@@ -243,7 +282,7 @@ def prepare(a):
     from train.real_cpt_scaffold import validate_source
     required_ids=math_ids|{r['document_id'] for r in ordinary}
     all_ids=set();all_pages=set()
-    metadata_by_id={r['document_id']:r for r in rows(membership) if r['document_id'] in required_ids}
+    metadata_by_id={r['document_id']:r for r in combined_membership() if r['document_id'] in required_ids}
     files={}
     for name,values in cohorts.items():
         with (out/(name+'.jsonl')).open('x') as stream,(out/(name+'-questions.jsonl')).open('x') as questions:
@@ -260,6 +299,9 @@ def prepare(a):
                         questions_sha256=sha256_file(out/(name+'-questions.jsonl')))
     for path,digest in pins.items():
         if sha256_file(path)!=digest:raise ValueError('Original exclusions changed during preparation')
+    if reused:
+        for name,digest in reused['files'].items():
+            if sha256_file(reused_dir/name)!=digest:raise ValueError('Reused pool changed during preparation')
     write(out/'complete.json',dict(status='CPU_SOURCE_FEASIBILITY_COMPLETE_NOT_MODEL_RELEASE',
         cohorts=files,total_unique_pages=len(all_pages),raw_sha256=raw_sha,membership_sha256=membership_sha,
         eligible_calculation_documents=len(seen_expressions),counts=dict(counts),
