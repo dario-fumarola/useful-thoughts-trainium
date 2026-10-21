@@ -58,3 +58,23 @@ def test_bounds_exclude_foreign_splits_and_unobserved_tail():
     with pytest.raises(ValueError): position_summary(bad)
     with pytest.raises(ValueError): position_summary(record(accepted=(1010,)))
     assert position_summary(record(8208, accepted=(8192,), rejected=()))['positions'] == 7681
+
+
+def test_natural_confirmation_selection_ignores_candidate_outcomes():
+    from scripts.prepare_reader_confirmation import select_natural
+    rows = [dict(document_id=f'doc-{i}', used=False, positions=500,
+                 chosen_cut=512+i, chosen_verified=i%2) for i in range(20)]
+    a = select_natural(iter(rows), 8)
+    changed = [dict(r, chosen_verified=1-r['chosen_verified'], future_score=-999,
+                    accepted_candidate_count=100) for r in reversed(rows)]
+    assert a == select_natural(iter(changed), 8)
+    assert len({r['document_id'] for r in a}) == 8
+    rows[0]['used'] = True
+    rows[1]['positions'] = 0
+    assert not {'doc-0', 'doc-1'} & {r['document_id'] for r in select_natural(rows, 8)}
+
+
+def test_natural_confirmation_never_fills_a_shortfall_with_used_sources():
+    from scripts.prepare_reader_confirmation import select_natural
+    rows = [dict(document_id='old', used=True, positions=100, chosen_cut=512)]
+    with pytest.raises(ValueError): select_natural(rows, 1)

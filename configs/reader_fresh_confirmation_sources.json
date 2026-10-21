@@ -1,0 +1,59 @@
+{
+  "identity": "reader-fresh-confirmation-20261021",
+  "status": "PROSPECTIVE_SOURCE_PREPARATION_ONLY",
+  "created_utc": "2026-10-21T17:55:14.531488+00:00",
+  "preparer_sha256": "dbb3cbb6b2578db350ad71cb1aa321ff26ef5bbed7b9d0089a1eb48f86b48243",
+  "natural_documents": 4096,
+  "calculation_documents": 1024,
+  "census_projection": {
+    "path": "local/diagnostics/reader-population-census-v1/output/document-counts.jsonl.gz",
+    "sha256": "64652fdf77e38ed7ad7d1c0b656d48b2a14ad582d3486f1195b5fa019b065096"
+  },
+  "strict_reserve": {
+    "path": "local/diagnostics/reader-population-census-v1/source-inventory/strict-fresh-reserve.jsonl",
+    "sha256": "76f86d3ede5f9447687b3b40a5d50d9e05d56bd5b87aca218b3177bca06f11b0"
+  },
+  "source_pools": [
+    {
+      "name": "initial_12_shards",
+      "membership": {
+        "path": "local/data/causal-reader-feasibility-v1/fresh-TRAIN-membership.jsonl",
+        "sha256": "f30ff162b315027231ebd51aa4636aedf2fab4ac32a8c3356b124ee46f386234"
+      },
+      "raw": {
+        "path": "local/data/causal-reader-feasibility-v1/fresh-TRAIN-raw.jsonl",
+        "sha256": "0e79b363117e7d5540c5b7ae34f3a1560fffc692ea3f1550ef584fcfe6212d6c"
+      }
+    },
+    {
+      "name": "additional_4_shards",
+      "membership": {
+        "path": "local/data/causal-reader-source-extension-v1/fresh-TRAIN-membership.jsonl",
+        "sha256": "6bf66d48bf1bf616cff237184b20f34d101b2f5bfaa55b1388db0135e56a4f5a"
+      },
+      "raw": {
+        "path": "local/data/causal-reader-source-extension-v1/fresh-TRAIN-raw.jsonl",
+        "sha256": "ceebff8b2ebf9a49bc478052c9aa095b78403434468d15f6b68a600e0fbdd931"
+      }
+    }
+  ],
+  "tokenizer_directory": "local/assets/qwen3-1.7b-base",
+  "selection": [
+    "Natural: source-ID hash selects4096unused complete-window documents; each uses its predeclared hash cut. No candidate labels, model scores or serialization outcomes select or replace it.",
+    "Calculation: select1024strict-reserve documents by fixed source-ID hash after excluding every natural source. Existing one-equation selection, old-expression exclusions and packing preserved.",
+    "Freeze chosen source identities/cuts before reconstructing original raw native tokens. Any missing or invalid chosen source stops preparation without replacement.",
+    "Both panels source-disjoint from all earlier cohort documents and each other. The natural panel is unenriched; the calculation panel is a distinct mechanism benchmark, not a representative sample of all natural calculation positions."
+  ],
+  "resources": {
+    "CPU_cores": 4,
+    "max_wall_minutes": 15,
+    "max_output_MiB": 256,
+    "model_calls": 0,
+    "accelerator_chip_hours": 0
+  },
+  "later_experiment": "A separate fixed-backbone/head confirmation needs independent source validation, explicit compiler/numerical settings, a measured runtime profile and a finite release. This data preparation alone makes no model call.",
+  "scientific_interpretation": [
+    "Report fresh calculation mechanism replication separately from full-span prediction on the unenriched natural panel. No prevalence-transport assumption is needed for its direct predictive endpoint.",
+    "The existing predictive heads/controls will be fixed before any fresh predictor outcome. Do not refit, choose a successful order, or introduce a gate change against these panels."
+  ]
+}
