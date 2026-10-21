@@ -1,4 +1,4 @@
-# Status — 2026-10-21 14:28 UTC
+# Status — 2026-10-21 14:38 UTC
 
 ## Running: owner-approved selector experiment
 Question: can a causal selector exploit generated computation on fresh full16continuations?
@@ -10,7 +10,7 @@ Projected8.092chip-hours fits new hard8.25ceiling includingall0.118952qualificat
 Full5120TRAIN/4096DEVeach, actualB0/firstV29T frozen, head800updates/twoorders and all controls unchanged.
 1970CPU tests+smoke/compilePASS; allfourterminalTRAINheads must freeze before DEV.
 Supervisor2264960/session46723 RUNNING from frozen3482f59; deadline18:52:12UTC. Protocol89e4d335... unchanged.
-TRAIN5120greedy notes COMPLETE/all8workers closed0; TRAIN B0rawfeatures running. Accounted1.291186chip-hours includingqualification.
+AllTRAINnotes/features and4terminal800heads COMPLETE; frozen14:37:18 before firstDEVlaunch14:37:20. DEVcalculation generation running; accounted1.558387chip-hours.
 Control local/diagnostics/causal-reader-owner-approved-v1; no writerRL/newCPT/scale/TEST or automatic follow-on.
 
 ## Closed: actual-model qualification; no selector fit
