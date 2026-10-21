@@ -4,8 +4,8 @@ Updated October 21, 2026. Entries below this summary remain append-only.
 
 - Immediate question: qualify genuine uniform next-token continued training as a reference.
 - Compare four fixed LR/schedule settings on the same one-pass 17.269 million targets; all terminals freeze before DEV and the choice freezes before CONFIRM.
-- All 38,912 source windows independently match pinned records; no baseline fit or held-out model result yet.
-- Native loss/LR/reducer/master/replica checks pass. The original exact-recovery check fails and remains recorded; a scalar-cache transfer repair is being requalified without relaxing that requirement.
+- All 38,912 source windows independently match pinned records. The first fixed fit is active; no held-out result yet.
+- Native loss/LR/reducer/master/replica and exact recovery now pass after a scalar-cache transfer repair; the original strict failure remains recorded and no tolerance was widened.
 - All 2,029 CPU tests pass. CPU checks remain distinct from native qualification.
 - Total reservation ceiling stays 18 chip-hours, at most two chips. Use existing RAM scratch up to 256 GiB while preserving the disk and host-memory floors and every original state.
 - Paired intervals resample unique source documents; inference, training transfer and autonomous discovery remain separate claims.
@@ -1830,3 +1830,7 @@ The uniform-LM reference completed four native updates. Full state loads back ex
 The restored optimizer HLO has 309 fewer scalar parameter inputs and identical arithmetic counts: 310 equal step counters share one device input. The candidate guard disables the installed device-data cache only while transferring/materializing mutable optimizer state, then restores its previous setting. CPU mutation/lifecycle/error checks and the full 2,029-test suite pass. A new same-data reference/replay must pass the original bitwise gate before fitting; no tolerance is widened. Source: 4f9166b.
 
 The owner’s “go” continues to cover the four fixed fits and sealed readout if qualification and measured cost pass. The total 18 reserved chip-hours and two-chip ceiling remain unchanged. All failed costs count. To retain failed and new full states, extend checkpoint scratch on the existing RAM filesystem from the proposed 180 to 256 GiB, retaining 35 GiB free disk and 512 GiB available host memory. No additional capacity, data, model size, optimization setting or scientific endpoint is introduced.
+
+## 2026-10-21 — exact recovery passes; release the fixed four settings
+
+The cache guard restores 319 FP32 scalar optimizer inputs and exact replayed losses/norms, every final model tensor and all FP32 masters/moments. The original strict failure remains intact. All 2,029 CPU tests and the actual native scoring check pass; no tolerance was widened. Complete measured projection 17.832178 chip-hours includes 4.438494 already used, within the unchanged 18 ceiling. Release the original four settings, all-terminal freeze before DEV, selected-terminal freeze before CONFIRM. No held-out model-quality result has been inspected. [Qualification and measured release](validation/uniform_lm_native_20261021/REPORT.md).

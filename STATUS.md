@@ -8,9 +8,11 @@ The next comparison uses 32,768 unenriched training documents, one pass and **17
 
 All 38,912 source windows independently match pinned Parquet rows. All 2,025 CPU tests, smoke and compilation pass. [Preparation report](validation/uniform_lm_preparation_20261021/REPORT.md).
 
-The native reference passes initial loss, actual warmup/decay rates, one reducer, FP32-master updates and replica checks. The first exact-recovery comparison failed: restored state bytes matched, but the fourth loss differed by 0.00001633 nats/token. That strict failure remains recorded. Equal restored counters shared a device-data-cache input; a narrow transfer guard now preserves independent buffers and restores the prior cache setting. All **2,029 CPU tests**, smoke and compilation pass. A fresh native reference/recovery comparison is running; no scientific baseline has trained or scored.
+**Native qualification and exact recovery pass.** The original failed recovery remains recorded; a narrow mutable-scalar transfer guard restores independent counter buffers and exact continuation without widening tolerances. All **2,029 CPU tests**, smoke and compilation pass. The qualification-only full-window scoring check passes too. [Native report](validation/uniform_lm_native_20261021/REPORT.md).
 
-The remaining sequence is exact recovery, qualification-only full-window scoring, then a measured release of the four fixed fits if the complete workload fits **18 reserved chip-hours**, at most two chips. All failed reservations count; 3.707 chip-hours closed before the new check. Existing RAM checkpoint scratch expands to 256 GiB to retain all original and new states; the 35 GiB disk and 512 GiB host-memory floors stay fixed. Scientific settings, source allocation and selection rules remain unchanged.
+The measured complete projection is **17.832 reserved chip-hours**, including **4.438 already spent**, within the unchanged **18** ceiling on at most two chips. **The first of four fixed training runs is active.** All four terminal checkpoints freeze before DEV scoring and the selected recipe/checkpoint freezes before CONFIRM. No held-out model-quality result has been observed.
+
+Every original state remains retained. Existing RAM checkpoint scratch is bounded at 256 GiB; free-disk and available-host-memory floors remain 35 and 512 GiB. Scientific settings, source allocation and selection rule stay fixed.
 
 ## Fresh confirmation complete
 
