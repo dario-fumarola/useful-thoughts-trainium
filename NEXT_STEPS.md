@@ -1,6 +1,7 @@
 # Current queue
 
 The owner-approved bounded selector experiment is COMPLETE. No further model job is queued.
+Result f6e0b65 and release causal-reader-owner-approved-20261021 are public; all three assets pass full anonymous download/hash/readback checks. Extracted-archive replay passes. Publication is complete; do not rerun it.
 
 - Preserve the positive order31 result and the failed two-order gate together. Order31 gains+.457nats/full16 versus B0 and beats all predeclared controls; order32 mostly closes and gains nothing. Both have small ordinary-text costs within tolerance.
 - Report validation/causal_reader_owner_complete_20261021/REPORT.md; independent primary reconstruction passes. All100native+1CPUworkers closed0, actual3.892reservedchip-hours includingallqualification below8.25.

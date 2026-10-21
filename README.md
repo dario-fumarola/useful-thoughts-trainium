@@ -23,6 +23,7 @@ remains failed; the owner accepted its declared exceptions before any fit or sci
 [original readout](validation/causal_reader_owner_complete_20261021/readout.json),
 [independent reconstruction](validation/causal_reader_owner_complete_20261021/independent-readout.json),
 [source-free replay package](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/causal-reader-owner-approved-20261021),
+[public download/hash checks](validation/causal_reader_owner_public_release_20261021.json),
 [owner approval](validation/causal_reader_owner_approval_20261021.json).
 
 **V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN

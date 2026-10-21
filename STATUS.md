@@ -12,7 +12,7 @@ Fixed256secondary order31 own−empty/other/corrupt=+.602/+1.640/+1.374,positive
 Independent native-cache NumPyhead/mixture/absolute/bootstrap/all8decision reconstructionPASS;1970prelaunchCPUtestsPASS.
 Actual3.892004reservedchip-hours includingall.118952qualification versus8.25ownerceiling; max2existingchips. Supervisorclosed15:48:07UTC.
 Exact5qualification deviations were owner-approved beforefit/DEV; originalstrictFAIL and scientificgates remain unchanged.
-Report validation/causal_reader_owner_complete_20261021/REPORT.md. No modeljob,retry,RL,CPT,scale,TEST or automaticfollow-on queued.
+Report validation/causal_reader_owner_complete_20261021/REPORT.md; publicrelease3assets/5810149bytes fullanonymousdownload/SHA/readbackPASS. Nojob/retry/follow-on queued.
 
 ## Closed: actual-model qualification; no selector fit
 Question: do actual frozen features qualify numerically/causally and fit the8-chip-hour plan?

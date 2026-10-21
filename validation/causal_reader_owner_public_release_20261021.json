@@ -1,0 +1,58 @@
+{
+  "all_assets_verified": true,
+  "assets": [
+    {
+      "HTTP_status": 200,
+      "authenticated": false,
+      "bytes": 5807387,
+      "fsync": true,
+      "full_body": true,
+      "local_readback_sha256": "a02bfc85dd03836aa8dd1bdbbc3035ad5e818939eabd3a82fb18aa9fc747f323",
+      "name": "causal-reader-owner-approved-20261021-evidence.tar.gz",
+      "sha256": "a02bfc85dd03836aa8dd1bdbbc3035ad5e818939eabd3a82fb18aa9fc747f323",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/causal-reader-owner-approved-20261021/causal-reader-owner-approved-20261021-evidence.tar.gz"
+    },
+    {
+      "HTTP_status": 200,
+      "authenticated": false,
+      "bytes": 120,
+      "fsync": true,
+      "full_body": true,
+      "local_readback_sha256": "6e6f06c8e4f191630116c5e0e847a82487148cd85846b9026e4a74bc50f4b7f3",
+      "name": "SHA256SUMS.txt",
+      "sha256": "6e6f06c8e4f191630116c5e0e847a82487148cd85846b9026e4a74bc50f4b7f3",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/causal-reader-owner-approved-20261021/SHA256SUMS.txt"
+    },
+    {
+      "HTTP_status": 200,
+      "authenticated": false,
+      "bytes": 2642,
+      "fsync": true,
+      "full_body": true,
+      "local_readback_sha256": "b4e1b2ec55e0007149513e870ad0f3afa7e783f58a132f009c2f1b399179cde8",
+      "name": "causal-reader-owner-approved-20261021-summary.json",
+      "sha256": "b4e1b2ec55e0007149513e870ad0f3afa7e783f58a132f009c2f1b399179cde8",
+      "url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/causal-reader-owner-approved-20261021/causal-reader-owner-approved-20261021-summary.json"
+    }
+  ],
+  "model_free_extracted_archive_replay": "validation/causal_reader_owner_complete_20261021/public-replay.json",
+  "published_utc": "2026-10-21T16:00:36Z",
+  "release_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/causal-reader-owner-approved-20261021",
+  "report": {
+    "HTTP_status": 200,
+    "authenticated": false,
+    "bytes": 9958,
+    "fsync": true,
+    "full_body": true,
+    "local_readback_sha256": "cc8d1ec34ff4428be49107c1d62a58e65a1d4dc54487d1d2a13fecb7855571a9",
+    "name": "public-REPORT.md",
+    "sha256": "cc8d1ec34ff4428be49107c1d62a58e65a1d4dc54487d1d2a13fecb7855571a9",
+    "url": "https://raw.githubusercontent.com/dario-fumarola/useful-thoughts-trainium/f6e0b653ac27206eb7d3692581e74b77c0e8ba31/validation/causal_reader_owner_complete_20261021/REPORT.md"
+  },
+  "scientific_overall_pass": false,
+  "scope": "Publication and numerical-evidence availability; not a model rerun or external scientific replication.",
+  "status": "PASS_PUBLIC_RELEASE_FULL_DOWNLOAD_SHA_AND_READBACK",
+  "tag": "causal-reader-owner-approved-20261021",
+  "target_commit": "f6e0b653ac27206eb7d3692581e74b77c0e8ba31",
+  "verified_utc": "2026-10-21T16:01:40.373744+00:00"
+}
