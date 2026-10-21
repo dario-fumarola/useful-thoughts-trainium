@@ -1,5 +1,16 @@
 # Status — 2026-10-21 15:49 UTC
 
+## Preparing: TRAIN-only selector optimization
+Question: does removing the hard-zero gate improve reproducibility, with an equally repaired no-calculation control?
+ID:selector-optimization-train-20261021-v1; latest owner steering permits one bounded CPU-only study.
+Use originalTRAIN caches only; source-hash4096FIT/1024internal-validation split, balanced by kind; completedDEV paths blocked.
+Six fixed orders2141..2146; hard/smooth × note/raw=24terminal640heads,10passes; all heads freeze before internal validation.
+Smooth sigmoid analytically matches initialg=.01 anddg/du=.019701; source/features/optimizer/batches unchanged within ablation.
+Global/position controls fit only internalFIT. Report all orders, both controls, near-zero use and gradients; no seed/schedule sweep.
+Bounds:4CPU/60minutes/256MiB output,0accelerator calls;35GiBdisk/512GiBhost reserves. No model extraction/RL/CPT/TEST.
+Design configs/selector_optimization_train_v1.json frozen before study fits; targeted mechanics pass; fullCPU checks running.
+No study head fitted yet. Previous published jointFAIL and qualification exceptions remain unchanged. This is development,not fresh confirmation.
+
 ## Complete: owner-approved selector experiment
 Question: can a causal selector exploit generated computation on fresh full16continuations?
 ID:causal-reader-owner-approved-20261021-v1; COMPLETE/overall two-order gate FAIL.

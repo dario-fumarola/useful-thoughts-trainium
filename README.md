@@ -1,5 +1,9 @@
 # Useful Thoughts on Trainium
 
+**Current work:** one CPU-only hard/smooth selector-optimization study on the existing TRAIN caches,
+with six fixed orders and matched no-calculation controls. The source-hash internal split is developmental;
+completed DEV panels stay out of recipe selection. [Prospective design](configs/selector_optimization_train_v1.json).
+
 **Latest completed experiment: a causal selector improves fresh calculation-span prediction in one head-training order; the other mostly closes its gate. The declared two-order criterion fails.**
 Both backbones and all four terminal selectors were frozen before held-out processing. Each fresh panel has 4,096 source-separated documents.
 

@@ -1,5 +1,14 @@
 # Current queue
 
+Latest owner steering continues with one bounded TRAIN-only selector-optimization study.
+
+- Freeze selector-optimization-train-20261021-v1 after CPU checks, then run once on existing TRAIN caches. No completedDEV read, new model call or accelerator work.
+- Compare hard and calibrated smooth gates across six fixed orders for both note-assisted and unassisted ensembles. Same4096FIT/1024internal-validation source split;24terminal640heads, no best-order selection.
+- Refit scalar and position controls only on FIT; report every order, common near-zero-use/stall metrics, gradients, paired source intervals and all original practical criteria. Internal validation is developmental and does not confirm a new recipe on fresh sources.
+- Independently reconstruct all24head predictions and statistics, then close/report.4CPU/60minutes/256MiB,35GiBdisk/512GiBhost reserves; no retry, optimizer grid, writerRL/CPT/scale/TEST or automatic follow-on.
+
+The completed evidence below stays closed and unchanged.
+
 The owner-approved bounded selector experiment is COMPLETE. No further model job is queued.
 Result f6e0b65 and release causal-reader-owner-approved-20261021 are public; all three assets pass full anonymous download/hash/readback checks. Extracted-archive replay passes. Publication is complete; do not rerun it.
 

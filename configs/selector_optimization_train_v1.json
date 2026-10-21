@@ -1,0 +1,90 @@
+{
+  "authorization": "Latest owner steering requests a bounded selector-optimization study on existing TRAIN caches. Previous completed scientific results stay closed.",
+  "boundaries": [
+    "OriginaljointFAIL and numerical exceptions unchanged",
+    "InternalTRAIN split is not fresh confirmation; originalTRAIN labels and oldprobe were previously used",
+    "No originalDEV/ordinaryDEV evaluation, backbone training, writerRL, scale, TEST, new data or automatic campaign",
+    "No inference-efficiency, improved pretrained weights, internalization or autonomous discovery claim"
+  ],
+  "controls": "Both gate parameterizations trained on identical FIT orders for note and no-note predictors. Global and16-position mixtures fitted only on FIT split.",
+  "created_utc": "2026-10-21T16:19:30.471654+00:00",
+  "evaluation": {
+    "bootstrap_seeds": [
+      2026102147,
+      2026102148
+    ],
+    "criteria_per_order": [
+      "Calculation own-minus-B0 mean>=.25nats/span and lower95CI>0",
+      "Calculation own-minus-FITglobal lower95CI>0",
+      "Calculation own-minus-matched-gate rawensemble lower95CI>0",
+      "Ordinary NLL cost upper95CI<=.03nats/token"
+    ],
+    "go_signal": "All four criteria in all six smooth orders; this is internal development evidence requiring later fresh confirmation.",
+    "interpretation": "Compare all six paired order outcomes and common effective-stall counts. Smooth success alone does not identify the dead region as the unique cause; if hard is equally reliable, no reliability advantage is established. Internal validation is not fresh confirmation.",
+    "paired_document_bootstrap": 5000,
+    "secondary": "Report position-control contrasts, smooth-minus-hard contrasts for both roles, every order and all absolute arms.",
+    "stall_diagnostic": "Common to both gates: >=99%calculation tokens at g<=.001 AND calculation span gain<=.01. Report exact-zero/near-zero fractions, mean weights, data gradient and update norms.",
+    "unit": "Original full16token log probability; complete sources, no filtering"
+  },
+  "gates": {
+    "disabled": "External disabled branch returns unchanged B0 exactly without requiring assisted predictions.",
+    "hard": "Original max(0,(sigmoid(u)-.01)/.99)",
+    "initial_derivative": 0.019701,
+    "initial_u": "log(.0199/.9801)",
+    "initial_weight": 0.01,
+    "qualification": "Value and first derivative matched analytically at initialization. Other gate geometry differs; this does not identify a unique cause or guarantee avoidance of saturation.",
+    "smooth": "sigmoid(1.99*(u-u_initial)+log(.01/.99))"
+  },
+  "heads": 24,
+  "identity": "selector-optimization-train-20261021-v1",
+  "inputs": "Only original5120TRAIN cached causal features and target scores for B0_raw,T_note,T_raw; no new generation, model or DEV calls.",
+  "limits": {
+    "accelerator_chip_hours": 0,
+    "automatic_retries": 0,
+    "max_CPU_cores": 4,
+    "max_output_MiB": 256,
+    "max_wall_minutes": 60,
+    "min_available_host_GiB": 512,
+    "min_free_disk_GiB": 35
+  },
+  "optimization": {
+    "batch_documents": 64,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "dtype": "float64CPU",
+    "epsilon": 1e-08,
+    "gradient_clip": 1.0,
+    "learning_rate": 0.01,
+    "optimizer": "AdamW",
+    "passes": 10,
+    "selection": "All terminal640heads; no seed/checkpoint/hyperparameter selection",
+    "updates": 640,
+    "weight_decay_bias": 0,
+    "weight_decay_weight": 0.0001
+  },
+  "orders": [
+    2026102141,
+    2026102142,
+    2026102143,
+    2026102144,
+    2026102145,
+    2026102146
+  ],
+  "parent_protocol_sha256": "89e4d3350c2fa6863f4186512a74310cff8b8f7a2b916930142b6abf491268d1",
+  "question": "Does removal of the trainable hard-zero region improve reproducibility of useful selection, with the same repair applied to the no-calculation ensemble?",
+  "roles": [
+    "T_note",
+    "T_raw"
+  ],
+  "split": {
+    "FIT": 4096,
+    "internal_validation": 1024,
+    "method": "Stratified source-document SHA256 ordering; first512perkind internal validation,remaining2048perkind FIT",
+    "probe": "128hash-selected FIT documents perkind; no internal-validation training probe",
+    "salt": "selector-optimization-train-20261021-v1:internal-split:"
+  },
+  "status": "PROSPECTIVE_TRAIN_ONLY_CPU_OPTIMIZATION_STUDY",
+  "timing": "Freeze all24heads before internal-validation scoring; all outcomes reported."
+}
