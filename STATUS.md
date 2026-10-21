@@ -1,4 +1,4 @@
-# Status — 2026-10-21 00:23 UTC
+# Status — 2026-10-21 00:30 UTC
 
 ## Active: bounded TRAIN candidate/reward diagnostic preparation
 Question: do prefix-only candidate calculations provide correct, useful variation recognized by full-continuation reward?
@@ -7,8 +7,8 @@ Source audit and1943CPU tests/smoke/compile pass; numerical source a84c77b froze
 390 unique source/page/content/ordered-AST-new documents retain native512prefix/16future and work fitting cap128.
 Independent actual-Parquet/native-window/exclusion audit passes all390 documents and1030 exact equations.
 Data:local/data/candidate-utility-v30-curation61-v1; audit:local/diagnostics/candidate-utility-v30-source61-v1/independent.
-256diagnostic+8qualification documents/policy/gates frozen; CPU references close0. Sampling qualification ACTIVE exec90905/PID2172828.
-Require correct/helpful candidates to beat raw over full16 and reward to distinguish them; numbers-only gains cannot rescue it.
+All72qualification attempts/RNG/cache/native/full-span/CPUbehavior checks pass; numerical model source remains frozen.
+ACTIVE one finite diagnostic exec57799:4logical cores0–3/physical0;256docs,G8+greedy,full16 scores; deadline01:44UTC.
 Best-of-G is a hindsight opportunity, never deployed selection. No usable alignment means stop this reward branch; no RL.
 Separately inspect existing raw-control objective/order/loss records before any new CPT proposal; no new learning authorized.
 Preserve V29's negative primary and all states/outputs/cache. No size jump, long CPT, officialTEST or automatic retries.

@@ -1,9 +1,15 @@
-<!-- Current handoff 2026-10-21 00:23 UTC. Only this first V30 block is active. -->
+<!-- Current handoff 2026-10-21 00:30 UTC. Only this first V30 block is active. -->
 R=/home/ubuntu/dario; public GitHub maintained autonomously. No active goal; do not create one. No agents beforeOct24.
 Latest user explicitly limits next work to ONE bounded TRAIN-only candidate/reward diagnostic. No new learning/RL/size jump/long CPT authorized.
 Required: candidate correctness/utility variation; full16 reward prefers correct helpful work and actually beats raw; numerical-only gains cannot rescue.
 No usable alignment => stop this reward branch, no RL. Best-of-G is future-aware opportunity, not deployable prefix-only selection.
 Before any new full CPT proposal, concretely investigate why the raw control regresses. Do not attribute shared regression to thoughts.
+
+CURRENT EXECUTION UPDATE: qualification90905 physically closes0 in498.89s; selectedCPU54801 and ALL72/2853token HF/FP64 check96525 close0,maxerror.0000974. RNG replay exact; cache/native/span gates pass. Full1943checks88653close0.
+One complete-question review/release exists C30diag/{review,release}.json; actual scientific diagnostic exec57799 ACTIVE since00:29UTC,deadlineapproximately01:44UTC. Supervisor C30diag/supervise-science.py; stdout logs/science-supervisor.log.
+Current stagegenerate:4logicalcores0..3 onphysical0; controls science-control/generate/{0,1,2,3}/{launch.json,worker.log}; all4live proven. Outputs runs/generate-{0,1,2,3}. Each mustfinish576notes; then samejob score-T4shards896rows each, score-B04shards64rows each. No learning.
+Do not relaunch/modify W source a84c77b/protocol/gates/models. Poll57799 and logs, retain failures. No scientificresults yet. After physicalclosure0, run root scripts/report_candidate_utility_v30.py --protocol C30diag --runs C30diag/runs --output C30diag/readout-v1.
+Gates/failurepolicy frozen; false/unidentifiable =>close this rewardbranchwithoutRL. Bestof8 future-aware only. Need independent reconstruction/fixed HF readout checks and preserve/publicreport, not another learning run.
 
 V30 CPU DATA COMPLETE; ALL PREP/TEST/AUDIT SESSIONS CLOSED0:
 W=R/local/worktrees/candidate-utility-v30, public branch40ab7ef; source a84c77b pushed; numerical worker and dependencies frozen after1940tests/smoke/compile PASS.

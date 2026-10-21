@@ -4,7 +4,7 @@ Active — one bounded candidate/reward diagnostic, V30:
 - CPU preparation is COMPLETE:390 new TRAIN documents; all390 raw-Parquet/native/source-exclusion checks and1030 equation checks pass.
 - W=local/worktrees/candidate-utility-v30, public branch. Data local/data/candidate-utility-v30-curation61-v1; audit local/diagnostics/candidate-utility-v30-source61-v1/independent.
 - Source preparation and1943tests/smoke/compile pass. Numerical worker a84c77b frozen. Do not rerun/refilter/download.
-- Protocol/gates and256diagnostic+8qualification documents are frozen before model calls. CPU references31341/77622 close0. Actual sampling qualification90905/PID2172828 active until01:03UTC at most; control local/diagnostics/candidate-utility-v30-v1/qualification-control.
+- Protocol/gates and256diagnostic+8qualification documents are frozen before model calls. CPU references and actual72-attempt stochastic/native/cache/RNG/behavior qualification close0. One frozen diagnostic ACTIVE exec57799, deadline01:44UTC; control local/diagnostics/candidate-utility-v30-v1/science-control.
 - The reward must recognize correct/helpful candidates that beat raw prediction on the FULL16continuation. A numerical-only gain or least-bad sibling is insufficient.
 - Best-of-G is future-aware oracle opportunity, not prefix-only deployed selection. If usable alignment is absent, stop this reward branch; do not launch RL.
 - A diagnostic pass also does not authorize RL, scaling or another CPT run. Inspect raw-control regression concretely before proposing new CPT.
