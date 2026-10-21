@@ -1793,3 +1793,10 @@ The read-only installed-parser check contradicts the reviewer's BF16-by-default 
 Result commit 54c4272 and the source-free release are public. All three assets and the report downloaded without authentication, matched their hashes, and the downloaded archive replayed all decisions. [Receipt](validation/selector_optimization_train_v1_public_release_20261021.json).
 
 The generic paired-row API, current selector readout/interventions and internal selector study now call one production cluster-bootstrap helper. Independent cluster IDs and their unit are explicit; related items travel together and unequal cluster sizes retain item weights. Supplied RNG streams and historical seeds are preserved. All 120 completed internal-study mean/interval contrasts agree within 6.2e-16. Independent NumPy reconstruction/replay code remains separate. Frozen worktrees and published outcomes are unchanged; this is numerical maintenance, not a scientific reanalysis. [Methods](docs/STATISTICS.md) and [parity](validation/production_bootstrap_refactor_20261021.json).
+
+
+## 2026-10-21 — count prediction-position prevalence before confirmation
+
+Freeze a read-only census of the two existing source-clean TRAIN frames before computing prevalence. Count every bounded cut with 512 past and 16 future tokens; do not condition the denominator on a calculation being present or verified. Report position-weighted incidence, document-balanced expected incidence, document presence and an identity-hash-selected position. Also separate original used-source identities from untouched sources. Existing audited candidate labels define the verified class before packing/novelty restrictions; this is not every type of useful computation. Pre-label-stage incidence includes native-window checks and is not a causal trigger.
+
+The existing source-level counts and a few audit records were inspected, but no predictive outcomes or new prevalence totals determine the design. Four CPU cores, 15 minutes, 256 MiB, no model calls, data acquisition or backbone work. [Plan](configs/reader_population_census.json).

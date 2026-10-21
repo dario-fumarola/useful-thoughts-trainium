@@ -2,6 +2,10 @@
 
 Updated October 21, 2026. [Full status history](docs/archive/STATUS_through_20261021.md).
 
+## Running next: prediction-position population census
+
+The owner requested a concrete fresh-distribution test. A read-only census will count the frozen arithmetic class at all bounded prediction positions, alongside document-level incidence and one hash-selected cut per source. It reads existing curator logs and identity-only cohort projections, with no model outcomes or new source acquisition. [Prospective plan](configs/reader_population_census.json). Bound: four CPU cores, 15 minutes, 256 MiB, zero model calls.
+
 ## Complete: selector optimization on cached TRAIN data
 
 The original hard gate passes the practical criteria in **all six new orders**. The calibrated smooth gate passes in **four**, with two nearly inactive runs. Its prospective all-six criterion fails. Removing the cutoff did not stabilize learning here.

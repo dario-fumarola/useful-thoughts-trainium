@@ -1,0 +1,66 @@
+{
+  "identity": "reader-population-census-20261021",
+  "status": "PROSPECTIVE_READ_ONLY_CENSUS",
+  "created_utc": "2026-10-21T17:32:59.205102+00:00",
+  "question": "How frequent is the existing verified arithmetic-boundary class at naturally selected bounded prediction positions, rather than in documents selected to contain calculations?",
+  "script_sha256": "7e6963dbd0ba5aa7a15fa0203b433ee049194d708a9282df71f701a9aae14459",
+  "audit_sources": [
+    {
+      "name": "initial_12_shards",
+      "path": "local/data/causal-reader-feasibility-v1/curation-audit.jsonl",
+      "sha256": "dad72c53873ed067f793517a16449d900bf738c290808d2dab9bd2490fb73563",
+      "documents": 1058401
+    },
+    {
+      "name": "additional_4_shards",
+      "path": "local/data/causal-reader-source-extension-v1/curation-audit.jsonl",
+      "sha256": "41895023ece455469546b1cf488a49da280dab7f43b9c05b8aa6d13481cbefaf",
+      "documents": 320947
+    }
+  ],
+  "used_source_projections": [
+    {
+      "path": "local/data/causal-reader-source-extension-v1/qualification-questions.jsonl",
+      "sha256": "c474323259ac7d0093a912e4e7fc0fee91da392262d45394c54c861e868bca78",
+      "documents": 32
+    },
+    {
+      "path": "local/data/causal-reader-source-extension-v1/TRAIN-questions.jsonl",
+      "sha256": "12de98f3f1a520972b9c85708c6cc2a904d397bb826ecfc1f801ecfe7abdc01d",
+      "documents": 5120
+    },
+    {
+      "path": "local/data/causal-reader-source-extension-v1/DEV_calculation-questions.jsonl",
+      "sha256": "7f401ce79b3d446911936e5a0cf0fd69df3194a01204c3b91357e785de8b76b6",
+      "documents": 4096
+    },
+    {
+      "path": "local/data/causal-reader-source-extension-v1/DEV_ordinary-questions.jsonl",
+      "sha256": "6ad6882f3e07093b22dda75a0623e0b2ea407960cd93153990e2037c4ddaf7f7",
+      "documents": 4096
+    }
+  ],
+  "positions": "Every bounded native-token cut 512..min(8192,L-16), regardless of equals signs, label, serialization rejection, or expression novelty; past512/future16.",
+  "estimands": [
+    "Exact finite-frame position-weighted verified incidence, sum(k)/sum(n)",
+    "Exact document-balanced expected random-cut incidence, mean(k/n) among complete-window documents",
+    "Document contains at least one verified full-prefix boundary; distinct denominator",
+    "One identity/length-hash-selected cut per eligible document, fixed independently of candidate validity",
+    "The same counts after removing all original cohort source identities"
+  ],
+  "resources": {
+    "max_CPU_cores": 4,
+    "max_wall_minutes": 15,
+    "max_output_MiB": 256,
+    "accelerator_chip_hours": 0,
+    "model_calls": 0,
+    "source_acquisition": false
+  },
+  "limits": [
+    "Only the pinned source-clean16-shard TRAIN frame and original bounded curator definition; not all FineMath, general language, or every kind of useful computation.",
+    "Verified class uses source RHS to label correctness, never to choose a prospective random position. Auxiliary packing and expression-novelty checks are not applied, so incidence precedes those further restrictions.",
+    "Pre-label-stage incidence includes native whole-window serialization checks that can depend on future text. It is not a qualified causal invocation policy.",
+    "No confidence interval is needed for exact incidence in this finite frame. These counts alone do not establish natural-corpus predictive gains or transport the selected ordinary-panel costs.",
+    "Prior source-level curation counts and a few audit rows were inspected; no predictive scores or new population prevalence counts were consulted to set this design."
+  ]
+}
