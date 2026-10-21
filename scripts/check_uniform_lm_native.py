@@ -73,6 +73,7 @@ def main():
     require(states[0].keys() == states[1].keys(), 'Model tensor inventories differ')
     model_digests = {}
     for name, value in states[0].items():
+        require(torch.isfinite(value).all().item(), 'Nonfinite terminal model: '+name)
         require(torch.equal(value.view(torch.uint8), states[1][name].view(torch.uint8)),
                 'Recovered terminal model tensor differs: '+name)
         model_digests[name] = tensor_digest(value)
@@ -84,6 +85,13 @@ def main():
                            map_location='cpu', mmap=True) for out in (fresh, replay)]
         digests = [optimizer_digest(s['optimizer']) for s in pair]
         require(digests[0] == digests[1], 'Recovered full optimizer state differs')
+        for value in pair[0]['optimizer']['sharded_master_weights'].values():
+            require(value.dtype == torch.float32 and torch.isfinite(value).all().item(),
+                    'Every master shard must be finite FP32')
+        for state in pair[0]['optimizer']['base_state'].values():
+            require(all(v.dtype == torch.float32 and torch.isfinite(v).all().item()
+                        for v in state.values()) and float(state['step']) == 4,
+                    'Every Adam moment/counter must be finite FP32 at update 4')
         restored = json.loads((replay/'recoveries/reproduce-3-4'/f'restored-rank-{rank:05d}.json').read_text())
         require(restored['full_active_model_bytes_equal'] and restored['full_optimizer_bytes_equal']
                 and restored['tied_parameter_objects_preserved'], 'Actual device restore failed')
@@ -101,6 +109,8 @@ def main():
                       'fp32_master_update', 'actual_optimizer_lr', 'replica_agreement',
                       'full_state_recovery', 'explicit_precision')},
                   full_terminal_model_digest=canonical_hash(model_digests),
+                  all_model_master_and_moment_values_finite=True,
+                  checker_source_sha256=sha256_file(__file__),
                   all_optimizer_shards=shards, complete_manifests=manifests,
                   reserved_chip_hours=cost, all_attempt_costs=attempt_costs, closures=closures,
                   scope='Hardware mechanics and exact deterministic recovery, not predictive improvement')
