@@ -2,6 +2,12 @@
 
 Updated October 21, 2026. [History](docs/archive/STATUS_through_20261021.md).
 
+## Uniform next-token baseline preparation
+
+The next comparison uses 32,768 unenriched training documents, one pass and **17,268,736 predicted tokens per recipe**. Batch 256 (134,912 targets/update), eight accumulated microsteps and 128 optimizer updates stay fixed. Four declared settings compare peak LR 3e-6/1e-5 and warmup-constant/warmup-cosine schedules. Separate DEV 1,024, CONFIRM 4,096 and qualification 1,024 sources are chosen by identity/length only. [Design](configs/uniform_lm_baseline.json) · [Source rules](configs/uniform_lm_sources.json).
+
+CPU packing, accumulation and schedule checks pass. Source reconstruction and independent pinned-Parquet validation come next. Actual native accumulation, scheduler propagation, recovery and cost qualification remain necessary before fitting; the design's 18-chip-hour ceiling is a proposal rather than measured cost.
+
 ## Fresh confirmation complete
 
 Every fixed head improves the **1,024 fresh calculation spans** over B0: **+0.421 to +0.506 nats per original 16 tokens**. Five of six beat all additional controls. Order 45 versus the calculation position schedule is +0.075 [−0.042, +0.188]; the all-six calculation criterion fails.

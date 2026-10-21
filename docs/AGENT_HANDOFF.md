@@ -1,4 +1,17 @@
-# Active handoff — October 21, 2026
+# Active uniform-LM preparation — October 21, 2026
+
+Owner endorsed returning to a sound uniform next-token baseline. R=/home/ubuntu/dario. Current work is CPU source preparation and a generic plain-LM branch in the existing engine, not a continuation of selector fitting. No new subagents.
+
+- Source plan `configs/uniform_lm_sources.json`: TRAIN 32,768 / DEV 1,024 / CONFIRM 4,096 / QUALIFICATION 1,024. Identity/length-only split/cut, source-clean existing 16-shard frame, all prior reader/fresh sources excluded. No new source download.
+- `train/uniform_lm.py`: native all-position packing, global accumulation indexing, explicit optimizer-step warmup/constant/cosine schedules. Existing `partial_state_driver.py` dispatches it, sets LR before each optimizer update and uses actual global batch for metric/resume cursors. Original frozen experiment worktrees remain unchanged.
+- Targeted CPU checks pass (48): uniform dense CE/all gradients, distributed accumulation, all-source coverage, schedule/resume and source sealing, plus original V29 tests. Full suite next.
+- Design has four development settings (two peak LRs x two schedules), same seed/order/exposure and terminal128. Choose by DEV full527 NLL only after all terminals freeze, then pin checkpoint/recipe before CONFIRM. One model/order; no broad robustness claim.
+- Native fitting still needs actual same-shape accumulation/scheduler/recovery qualification and a measured finite projection. Proposed 18 total chip-hours (qualification <=0.5), two existing chips maximum, are not an execution release. Full checkpoints fit in existing /dev/shm under a 180-GiB bound; four BF16 terminal copies fit existing nvme-cpt under16 GiB while preserving35 GiB free and512 GiB host memory. No protected-state deletion.
+- Next: commit source rules/code before reconstructing data; start `scripts/prepare_uniform_lm.py` with a 30-minute CPU deadline into `local/data/uniform-lm-baseline-v1`. Then run `scripts/check_uniform_lm_sources.py` and full CPU checks. Record exact processes and outputs before compaction.
+
+The preceding confirmation/publication is complete; its full handoff follows as history.
+
+# Completed selector handoff — October 21, 2026
 
 The fresh frozen-head confirmation is complete. No goal or new subagents. All native work and the coordinator closed successfully; physical devices 8 and 9 have no active Neuron process.
 

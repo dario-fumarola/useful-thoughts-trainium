@@ -1,0 +1,107 @@
+{
+  "identity": "uniform-next-token-baseline-v1",
+  "status": "CPU_PREPARATION_BEFORE_NATIVE_QUALIFICATION",
+  "created_utc": "2026-10-21T19:58:23.255870+00:00",
+  "question": "Can genuine uniform next-token continued training improve held-out natural loss over unchanged B0 under a small, fixed development search?",
+  "model": "Original Qwen3-1.7B-Base, fresh B0 initialization for every recipe.",
+  "objective": "One clean original 528-token window; ordinary cross-entropy on all 527 shifted positions, each coefficient 1/(256*527). No auxiliary branch, synthetic text or continuation weighting.",
+  "source_plan_sha256": "95a5c042799a753ea3dc051fe7c8a0e11a3059e98c926be1ee880e6ee623e2d0",
+  "training": {
+    "documents": 32768,
+    "passes": 1,
+    "predicted_tokens": 17268736,
+    "global_batch": 256,
+    "tokens_per_update": 134912,
+    "world_size": 8,
+    "micro_batch": 4,
+    "accumulation": 8,
+    "optimizer_updates": 128,
+    "seed": 11,
+    "warmup_steps": 13,
+    "optimizer": "AdamW with existing ZeRO reduction once after accumulation",
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "weight_decay": 0.1,
+    "gradient_clip_norm": 1.0,
+    "parameter_dtype": "bf16",
+    "gradient_storage_dtype": "bf16",
+    "optimizer_master_and_moments_dtype": "fp32",
+    "floating_rotary_buffers": "fp32",
+    "head_cross_entropy": "fp32 logits and reduction after native head matmul",
+    "compiler_flags": [
+      "--model-type=transformer",
+      "--auto-cast=none"
+    ],
+    "epsilon": 1e-08
+  },
+  "recipes": [
+    {
+      "name": "warmup_constant-lr3e-06",
+      "lr": 3e-06,
+      "schedule": "warmup_constant",
+      "minimum_lr_ratio": 0.1
+    },
+    {
+      "name": "warmup_cosine-lr3e-06",
+      "lr": 3e-06,
+      "schedule": "warmup_cosine",
+      "minimum_lr_ratio": 0.1
+    },
+    {
+      "name": "warmup_constant-lr1e-05",
+      "lr": 1e-05,
+      "schedule": "warmup_constant",
+      "minimum_lr_ratio": 0.1
+    },
+    {
+      "name": "warmup_cosine-lr1e-05",
+      "lr": 1e-05,
+      "schedule": "warmup_cosine",
+      "minimum_lr_ratio": 0.1
+    }
+  ],
+  "selection": {
+    "criterion": "Lowest DEV mean per-document full527 NLL after all four terminal checkpoints are fixed. Exact ties prefer lower peak LR, then lexical recipe name.",
+    "checkpoints": "Terminal128 only; no DEV checkpoint or prompt selection.",
+    "confirmation": "Freeze the chosen recipe and already-trained terminal checkpoint identity before any CONFIRM model outcome. Evaluate only it and B0 on CONFIRM.",
+    "limits": "Four settings, one common training order. Confirmation is conditional on the selected checkpoint, not independent training/model replication."
+  },
+  "endpoints": {
+    "primary": "Chosen checkpoint minus unchanged B0 in mean full527-token NLL on 4096 untouched CONFIRM source documents; a positive lower95 bound on B0-minus-trained establishes baseline improvement.",
+    "secondary": [
+      "Original final16-token likelihood on the same natural windows.",
+      "Full16 likelihood on the existing 1024 calculation sources, excluded from all new fitting; previously inspected diagnostic, not fresh confirmation."
+    ],
+    "statistics": {
+      "unit": "unique source document",
+      "bootstrap_draws": 5000,
+      "seed": 17,
+      "interval": "paired percentile95, confirmation only after recipe freeze; development rows disclosed for all four settings"
+    }
+  },
+  "qualification": {
+    "documents": 1024,
+    "global_batch": 256,
+    "accumulation": 8,
+    "updates": 4,
+    "save_every": 2,
+    "requirements": [
+      "Actual native initial uniform loss versus CPU reference.",
+      "One reducer, finite accumulated gradients, FP32 master updates, model replicas.",
+      "Actual base-optimizer LR matches planned optimizer-step LR across warmup and decay.",
+      "Full-state restore at update2 reproduces updates3/4 and terminal weights.",
+      "Measured workload and storage fit the declared scientific ceiling before fitting."
+    ]
+  },
+  "resources": {
+    "preparation": "4 CPU cores, 30 minutes per source stage, 256 MiB data, zero model calls.",
+    "proposed_maximum_reserved_chip_hours_including_qualification": 18,
+    "proposed_qualification_chip_hours": 0.5,
+    "maximum_physical_chips": 2,
+    "status": "Proposed ceilings, not measured runtime or a scientific execution release.",
+    "storage": "Existing /dev/shm full checkpoints, bounded180 GiB. Copy all four BF16 terminal models to existing nvme-cpt, bounded16 GiB, while preserving35 GiB disk and512 GiB host-available floors. No protected-state deletion."
+  },
+  "interpretation": "A competent uniform-NTP reference is required before another thought-augmented pretraining claim. A negative run does not uniquely identify LR, batch size or corpus causes; all completed trials remain reportable."
+}

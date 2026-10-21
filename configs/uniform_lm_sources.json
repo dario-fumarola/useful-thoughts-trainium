@@ -1,0 +1,86 @@
+{
+  "identity": "uniform-next-token-v1",
+  "status": "CPU_SOURCE_PREPARATION",
+  "created_utc": "2026-10-21T19:58:23.255600+00:00",
+  "salt": "uniform-next-token-baseline-v1",
+  "cohorts": {
+    "TRAIN": 32768,
+    "DEV": 1024,
+    "CONFIRM": 4096,
+    "QUALIFICATION": 1024
+  },
+  "population": {
+    "path": "local/diagnostics/reader-population-census-v1/output/document-counts.jsonl.gz",
+    "sha256": "64652fdf77e38ed7ad7d1c0b656d48b2a14ad582d3486f1195b5fa019b065096"
+  },
+  "additional_used_sources": [
+    {
+      "path": "local/data/causal-reader-source-extension-v1/qualification-questions.jsonl",
+      "sha256": "c474323259ac7d0093a912e4e7fc0fee91da392262d45394c54c861e868bca78",
+      "documents": 32
+    },
+    {
+      "path": "local/data/causal-reader-source-extension-v1/TRAIN-questions.jsonl",
+      "sha256": "12de98f3f1a520972b9c85708c6cc2a904d397bb826ecfc1f801ecfe7abdc01d",
+      "documents": 5120
+    },
+    {
+      "path": "local/data/causal-reader-source-extension-v1/DEV_calculation-questions.jsonl",
+      "sha256": "7f401ce79b3d446911936e5a0cf0fd69df3194a01204c3b91357e785de8b76b6",
+      "documents": 4096
+    },
+    {
+      "path": "local/data/causal-reader-source-extension-v1/DEV_ordinary-questions.jsonl",
+      "sha256": "6ad6882f3e07093b22dda75a0623e0b2ea407960cd93153990e2037c4ddaf7f7",
+      "documents": 4096
+    },
+    {
+      "path": "local/diagnostics/reader-fresh-confirmation-v1/data/CONFIRM_natural-questions.jsonl",
+      "sha256": "1f4ec4026895bbd0d3031d95b354dab039a03ffdce813bd3a2a237169b57baf4"
+    },
+    {
+      "path": "local/diagnostics/reader-fresh-confirmation-v1/data/CONFIRM_calculation-questions.jsonl",
+      "sha256": "00f33f8bb70aa70b0ca8af3b5c82d82091b202dcfea546111cf4f9df26948e60"
+    }
+  ],
+  "source_pools": [
+    {
+      "name": "initial_12_shards",
+      "membership": {
+        "path": "local/data/causal-reader-feasibility-v1/fresh-TRAIN-membership.jsonl",
+        "sha256": "f30ff162b315027231ebd51aa4636aedf2fab4ac32a8c3356b124ee46f386234"
+      },
+      "raw": {
+        "path": "local/data/causal-reader-feasibility-v1/fresh-TRAIN-raw.jsonl",
+        "sha256": "0e79b363117e7d5540c5b7ae34f3a1560fffc692ea3f1550ef584fcfe6212d6c"
+      }
+    },
+    {
+      "name": "additional_4_shards",
+      "membership": {
+        "path": "local/data/causal-reader-source-extension-v1/fresh-TRAIN-membership.jsonl",
+        "sha256": "6bf66d48bf1bf616cff237184b20f34d101b2f5bfaa55b1388db0135e56a4f5a"
+      },
+      "raw": {
+        "path": "local/data/causal-reader-source-extension-v1/fresh-TRAIN-raw.jsonl",
+        "sha256": "ceebff8b2ebf9a49bc478052c9aa095b78403434468d15f6b68a600e0fbdd931"
+      }
+    }
+  ],
+  "parquet_downloads": {
+    "path": "local/data/causal-reader-source-extension-v1/downloads.json",
+    "sha256": "a6fc1a002d6b79b061548a626e10b8054ce4515831997a88301a377b29f14217"
+  },
+  "tokenizer_directory": "local/assets/qwen3-1.7b-base",
+  "preparer_sha256": "c93601f01f9f658823869c1942b8ed4d2af7150380aaa7981ad376cb11564974",
+  "checker_sha256": "7e1ff10c0e409750ebaed44853af81971c49aeac60957af56dcaebd0a8b5887e",
+  "maximum_output_MiB": 256,
+  "selection": "One fixed hash orders eligible unused source identities, then contiguous disjoint split allocations. Independent identity/length hash chooses one native 528-token window. Arithmetic flags, text serialization success and model outcomes do not select or replace a source.",
+  "resources": {
+    "CPU_cores": 4,
+    "maximum_wall_minutes": 30,
+    "model_calls": 0,
+    "accelerator_chip_hours": 0
+  },
+  "limits": "Source-clean bounded FineMath TRAIN frame, eligible-document weighting; not all-corpus token sampling or pretraining-data novelty."
+}
