@@ -12,6 +12,8 @@ from train import uniform_lm as lm
 from train import partial_state_driver as driver
 from train.masked_causal_ce import masked_causal_ce
 from train.neuron_backend import NeuronCausalBackend
+from train import uniform_lm_evaluate as scoring
+from train.uniform_lm_evaluate import token_logps
 from scripts.prepare_uniform_lm import select_sources
 from weekend_thinking.artifacts import sha256_file
 
@@ -19,6 +21,52 @@ from weekend_thinking.artifacts import sha256_file
 class Tokenizer:
     def __init__(self, size=31): self.size=size
     def __len__(self): return self.size
+
+
+def test_full_window_evaluation_matches_dense_loss_and_keeps_real_special_targets():
+    torch.manual_seed(48)
+    model = Qwen3ForCausalLM(Qwen3Config(vocab_size=31, hidden_size=16,
+        intermediate_size=24, num_hidden_layers=2, num_attention_heads=2,
+        num_key_value_heads=1, head_dim=8, attention_dropout=0.,
+        tie_word_embeddings=True, eos_token_id=30))
+    model.eval()
+    ids = torch.randint(0, 31, (3, 24))
+    ids[0, 8] = 30
+    backend = NeuronCausalBackend(model, checkpoint_trunk=False, head_chunk=7)
+    with torch.no_grad():
+        actual = token_logps(backend, ids)
+        logits = model(input_ids=ids).logits[:, :-1].float()
+        expected = logits.log_softmax(-1).gather(-1, ids[:, 1:, None]).squeeze(-1)
+    torch.testing.assert_close(actual, expected, rtol=1e-6, atol=1e-6)
+    assert actual.shape == (3, 23)
+    torch.testing.assert_close(actual[:, -16:].sum(1), expected[:, -16:].sum(1))
+
+
+def test_scoring_requires_all_terminals_and_a_frozen_confirmation_choice(tmp_path):
+    data = tmp_path/'data.jsonl'; data.write_text('{}\n')
+    manifest = tmp_path/'manifest.json'; manifest.write_text(json.dumps(dict(files={
+        k: dict(sha256=sha256_file(data), rows=32) for k in ('DEV', 'CONFIRM')})))
+    output = tmp_path/'scores'
+    p = dict(schema='uniform-lm-likelihood-v1', world_size=8, micro_batch=4,
+        visible_cores='32-39', source_files=driver.source_files(),
+        evaluator_sha256=sha256_file(scoring.__file__), data_file=str(data),
+        data_sha256=sha256_file(data), data_manifest_file=str(manifest),
+        data_manifest_sha256=sha256_file(manifest), cohort='DEV', items=32,
+        model_name='recipe-a', checkpoint=None)
+    release = dict(jobs={str(output): {}}, all_terminal_models={})
+    with pytest.raises(ValueError, match='all four terminal'):
+        scoring.validate(p, release, output)
+    release['all_terminal_models']={str(i): dict(step=128) for i in range(4)}
+    scoring.validate(p, release, output)
+    choice = tmp_path/'choice.json';choice.write_text(json.dumps(dict(recipe='recipe-b')))
+    release['selection']=dict(file=str(choice), sha256=sha256_file(choice))
+    p['cohort']='CONFIRM'
+    with pytest.raises(ValueError, match='Only B0 and the frozen choice'):
+        scoring.validate(p, release, output)
+    p['model_name']='B0';scoring.validate(p, release, output)
+    choice.write_text(json.dumps(dict(recipe='recipe-a')))
+    with pytest.raises(ValueError, match='Freeze development choice'):
+        scoring.validate(p, release, output)
 
 
 def row(i, width=8):

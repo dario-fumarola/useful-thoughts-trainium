@@ -3,6 +3,7 @@ import argparse
 import json
 import math
 from pathlib import Path
+import shlex
 
 import torch
 
@@ -86,8 +87,10 @@ def main():
                 and restored['tied_parameter_objects_preserved'], 'Actual device restore failed')
         shards.append(dict(rank=rank, terminal_optimizer_digest=canonical_hash(digests[0])))
         del pair, digests
-    require(p['runtime_policy']['environment']['NEURON_CC_FLAGS'] ==
-            '--model-type=transformer --auto-cast=none', 'Explicit precision contract differs')
+    flags = shlex.split(p['runtime_policy']['environment']['NEURON_CC_FLAGS'])
+    require(flags[:2] == ['--model-type=transformer', '--auto-cast=none']
+            and all(v.startswith('--compile_workdir=') for v in flags[2:]),
+            'Explicit precision contract differs')
     result = dict(status='PASS_UNIFORM_LM_NATIVE_QUALIFICATION', utc=utc_now(),
                   source_files=p['source_files'], protocol_sha256=sha256_file(protocol),
                   accumulation=8, world_size=8, width=528, actual_optimizer_updates=4,

@@ -30,8 +30,13 @@ def main():
     p = json.loads(protocol.read_text())
     validation = argparse.Namespace(arm=uniform_lm.ARM, execution_release=args.release,
                                    output=output, protocol=protocol)
-    driver.validate(p)
-    uniform_lm.validate_execution(p, validation, driver.source_files())
+    evaluation = job.get('kind') == 'evaluation'
+    if evaluation:
+        from train.uniform_lm_evaluate import validate
+        validate(p, release, output)
+    else:
+        driver.validate(p)
+        uniform_lm.validate_execution(p, validation, driver.source_files())
     helper = release['process_helper']
     if sha256_file(helper['path']) != helper['sha256']:
         raise ValueError('Process helper differs')
@@ -81,10 +86,13 @@ def main():
                MASTER_PORT=str(port), NEURON_RT_ROOT_COMM_ID=f'127.0.0.1:{port+1}',
                TMPDIR=str(tmp))
     command = ['timeout', '--signal=TERM', '--kill-after=5s', str(seconds-5)+'s',
-               sys.executable, '-u', '-m', 'train.partial_state_driver',
-               '--protocol', str(protocol), '--output', str(output), '--arm', uniform_lm.ARM,
+               sys.executable, '-u', '-m',
+               'train.uniform_lm_evaluate' if evaluation else 'train.partial_state_driver',
+               '--protocol', str(protocol), '--output', str(output),
                '--stop-file', str(stage/'STOP'), '--deadline-utc', deadline,
-               '--execution-release', str(args.release)]
+               '--execution-release', str(args.release.resolve())]
+    if not evaluation:
+        command += ['--arm', uniform_lm.ARM]
     if job.get('resume'):
         command += ['--resume', job['resume'], '--attempt-id', 'reproduce-3-4']
     started = time.monotonic()
