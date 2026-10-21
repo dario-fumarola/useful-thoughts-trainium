@@ -5,7 +5,7 @@ Four additional TRAIN shards supply a combined7,722eligible unique calculations,
 All13,344selected native source windows and6,672calculation identities pass independent reconstruction.
 The full5,120TRAIN/4,096-per-DEV-stratum/32qualification allocation is preserved.
 No selector has been fitted or scientifically evaluated. A dedicated-port launcher correction passed1,966CPU tests;
-one corrective qualification is prepared, charging the failed0.045chip-hours to the same0.5/8ceilings.
+one corrective qualification is running, charging the failed0.045chip-hours to the same0.5/8ceilings.
 Numerical/causal and measured-cost qualification must pass before science. [Startup record](validation/causal_reader_qualification_startup_failure_20261021.json).
 The earlier db8d722 feasibility stop remains closed and unchanged. [New source report](validation/causal_reader_source_extension_complete_20261021.json).
 
