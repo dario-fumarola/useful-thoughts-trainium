@@ -65,6 +65,11 @@ def validate(p, release, output):
         selected = json.loads(Path(selection['file']).read_text())
         if p['model_name'] not in ('B0', selected['recipe']):
             raise ValueError('Only B0 and the frozen choice may score confirmation')
+    if (p['checkpoint'] is None) != (p['model_name'] == 'B0'):
+        raise ValueError('B0 and trained model identities must match their actual paths')
+    if p['model_name'] != 'B0' and p['checkpoint_sha256'] != release[
+            'all_terminal_models'][p['model_name']]['checkpoint_sha256']:
+        raise ValueError('Named trained model differs from the frozen terminal inventory')
     if p['checkpoint'] is not None and sha256_file(p['checkpoint']) != p['checkpoint_sha256']:
         raise ValueError('Exact frozen model checkpoint required')
     if str(output) not in release['jobs']:
@@ -94,16 +99,21 @@ def worker(_index, args, p, rows):
         model.load_state_dict(state['model'], strict=True)
         del state
     cast_parameters(model)
+    expected_signature = sampled_fingerprint(model)
     model.to(device)
     model.tie_weights()
+    if sampled_fingerprint(model) != expected_signature:
+        raise RuntimeError('Actual device weights differ from the loaded model')
     backend = NeuronCausalBackend(model, head_chunk=32, checkpoint_trunk=False,
                                  sync=lambda: torch_xla.sync(wait=True))
     args.output.mkdir(parents=True, exist_ok=True)
     completed = 0
+    batch_seconds = []
     started = time.monotonic()
     deadline = datetime.fromisoformat(args.deadline_utc)
     with (args.output/f'rank-{rank:05d}.jsonl').open('x') as out, torch.no_grad():
         for first in range(rank*4, len(rows), world*4):
+            batch_started = time.monotonic()
             if args.stop_file.exists() or datetime.now(timezone.utc) >= deadline:
                 raise RuntimeError('Finite evaluation resource boundary reached')
             batch = rows[first:first+4]
@@ -120,8 +130,11 @@ def worker(_index, args, p, rows):
                 out.write(json.dumps(record, allow_nan=False)+'\n')
                 completed += 1
             out.flush()
+            batch_seconds.append(time.monotonic()-batch_started)
     atomic_json(args.output/f'complete-rank-{rank:05d}.json',
                 dict(rank=rank, rows=completed, wall_seconds=time.monotonic()-started,
+                     batch_seconds=batch_seconds, actual_model_signature=expected_signature,
+                     protocol_sha256=sha256_file(args.protocol),
                      sha256=sha256_file(args.output/f'rank-{rank:05d}.jsonl'), utc=utc_now()))
 
 

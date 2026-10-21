@@ -52,7 +52,7 @@ def test_scoring_requires_all_terminals_and_a_frozen_confirmation_choice(tmp_pat
         evaluator_sha256=sha256_file(scoring.__file__), data_file=str(data),
         data_sha256=sha256_file(data), data_manifest_file=str(manifest),
         data_manifest_sha256=sha256_file(manifest), cohort='DEV', items=32,
-        model_name='recipe-a', checkpoint=None)
+        model_name='B0', checkpoint=None)
     release = dict(jobs={str(output): {}}, all_terminal_models={})
     with pytest.raises(ValueError, match='all four terminal'):
         scoring.validate(p, release, output)
@@ -61,6 +61,7 @@ def test_scoring_requires_all_terminals_and_a_frozen_confirmation_choice(tmp_pat
     choice = tmp_path/'choice.json';choice.write_text(json.dumps(dict(recipe='recipe-b')))
     release['selection']=dict(file=str(choice), sha256=sha256_file(choice))
     p['cohort']='CONFIRM'
+    p['model_name']='recipe-a'
     with pytest.raises(ValueError, match='Only B0 and the frozen choice'):
         scoring.validate(p, release, output)
     p['model_name']='B0';scoring.validate(p, release, output)
