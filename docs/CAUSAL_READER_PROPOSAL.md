@@ -4,7 +4,8 @@ The next question is whether a causal predictor can use a calculation where it
 helps while retaining an actual unchanged B0 prediction where it does not.
 This is a bounded inference mechanism proposal. It does not train better base
 weights, demonstrate internalization, or reopen V30's closed reward branch.
-No new model, feature extraction, or head training has run.
+No released-model feature extraction or experiment-head training has run.
+CPU-only source feasibility is active under a separate fixed preparation plan.
 
 The [specified draft](../validation/causal_reader_gate_design_20261021.json)
 contains the prediction contract, proposed head settings, controls and release
@@ -82,10 +83,13 @@ The proposed fresh calculation endpoint is a full-span gain of at least 0.25 nat
 over B0 with a positive paired 95% lower bound, plus positive lower bounds over
 the constant blend and raw ensemble. The active ordinary suffix must have an NLL
 regression upper bound at most 0.03 nats/token. Each of two head-optimization
-orders must pass; neither is an independent backbone replication. The provisional
-1,024 documents per evaluation panel is a minimum, **not a power certification**.
-Freeze a finite sample size and joint-power assumptions before fresh outcomes;
-do not expand a study after inspecting its confidence intervals.
+orders must pass; neither is an independent backbone replication. The initial
+1,024-per-panel placeholder is superseded by a [prospective feasibility plan](../validation/causal_reader_feasibility_plan_20261021.json)
+with 4,096 per panel, fixed before new source outcomes. Its normal approximation
+gives a joint passage lower bound of 0.917 only under the stated alternative:
+base gain 0.5, each control gain 0.25, ordinary gain zero and per-contrast SD 4
+nats/span. Smaller effects or larger/heavy-tailed variability are not covered
+by that assurance. Do not expand the study after inspecting model outcomes.
 
 These criteria do not establish a net corpus gain. If calculation spans gained
 exactly 0.25 nats and ordinary spans lost 0.03 per token, the ordinary-span cost
@@ -136,9 +140,15 @@ describes logit interpolation; this proposal specifies an arithmetic probability
 mixture and frozen models. Adding a gate is neither a novelty claim nor a
 reproduction of its results.
 
-The proposal is complete for review; execution remains held. Fresh-source
-availability, prospective power, actual feature-causality/normalization checks
-and a finite resource budget remain unqualified. Even a successful gate would
+CPU mechanics now pass independent tiny-HF, causality, normalization, exact raw
+bypass, detached-gradient and optimization fixtures. The unpredictable-coin
+control correctly recovers no causal gain from a positive hindsight bound. These
+are implementation checks, not released-model results. Fresh-source preparation
+and an explicit power/resource plan are active; actual-model qualification and
+scientific execution remain held. The [cost projection](../validation/causal_reader_cost_plan_20261021.json)
+proposes an eight reserved-chip-hour hard total, including qualification. It uses
+old timings and must survive profiling of actual ordinary notes and feature
+export before any science release. Even a successful gate would
 establish selective inference only. A return to pretraining needs a separate
 learning intervention and a genuinely uniform-NTP control; internalization needs
 an explicit transfer objective or curriculum rather than an assumed side effect.

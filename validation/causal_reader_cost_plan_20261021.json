@@ -1,0 +1,30 @@
+{
+  "status": "PROSPECTIVE_COST_PROJECTION_NOT_ACTUAL_NEW_WORKLOAD_QUALIFICATION",
+  "prospective_documents": 13312,
+  "reader_contexts": 35840,
+  "writer_cap": 128,
+  "existing_writer128_seconds": 6.507214502023999,
+  "reader_seconds_per_context": 0.1783539480620675,
+  "writer_all_cap_projection_chip_hours": 6.015558295204408,
+  "reader_2x_scoring_proxy_chip_hours": 0.8878063192422916,
+  "startup_and_qualification_allowance_chip_hours": 0.75,
+  "conservative_projected_total_chip_hours": 7.6533646144467,
+  "proposed_hard_total_reserved_chip_hour_ceiling": 8.0,
+  "proposed_maximum_physical_chips": 2,
+  "proposed_qualification_reserved_chip_hour_ceiling": 0.5,
+  "raw_hidden_cache_bytes": 4697620480,
+  "space_reserves": {
+    "feature_cache_bytes_upper": 6442450944,
+    "source_bytes_upper": 17179869184,
+    "filesystem_floor": 37580963840
+  },
+  "CPU_head_fit_ceiling_minutes": 20,
+  "release_condition": "Actual source availability and native feature/entropy/causality/off-path qualification required. Profiling actual calculation AND ordinary notes must project completion within the fixed cap. If not, no science launch or batch/policy sweep.",
+  "limits": [
+    "Old latency proxy, not measured feature-export/ordinary-note/concurrency performance.",
+    "All-cap writer projection uses one existing128-action example. It is a planning scenario, not a runtime guarantee.",
+    "No pretrained-model or experiment-head call performed. Bound includes future qualification and scientific work; no new instance/capacity/stack.",
+    "Existing four-workers-per-reserved-chip accounting must be rechecked on actual proposed core mapping before release.",
+    "Assigned physical-chip-equivalent hours, not billed instance hours/dollars. CPU source preparation and head fitting are accounted separately."
+  ]
+}

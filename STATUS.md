@@ -1,4 +1,17 @@
-# Status — 2026-10-21 02:12 UTC
+# Status — 2026-10-21 03:00 UTC
+
+## Active: bounded selector feasibility
+Question: can a powered, source-separated selector experiment fit a finite local budget?
+ID:causal-reader-feasibility-20261021; CPU-only source preparation/power/static runtime review.
+Fixed before source outcomes: TRAIN5120, DEV4096calculation+4096ordinary, separate qualification32.
+Normal planning joint lower0.917 assumes SD4, base gain0.5, both control gains0.25 and ordinary gain0; not unknown-effect power.
+Data: fixed12 public TRAIN shards60..49, original exclusions/curator; four cores/three hours/16GiB cap; no automatic retry.
+Source cb3a47b; PID2199441/session19608; deadline05:59:03UTC; log local/diagnostics/causal-reader-feasibility-v1/prepare.log.
+No pretrained model/feature/head call. Source quotas and actual runtime checks remain unresolved.
+Source preparer CLI/1945checks pass; runtime/source checker CLI and1952CPU tests+smoke/compile also pass. No actual-model qualification.
+Endpoint: complete exact source/native cohorts, explicit prospective power and bounded cost, then finite go/no-go.
+Cost plan:8reservedchip-hour proposed total including qualification; old-timing proxy7.653, actual new workload unmeasured.
+Next: monitor CPU source preparation, then independently check all selected Parquet/native rows; no model calls yet.
 
 ## Complete preparation: causal reader proposal; execution held
 Question: can selective calculation use improve full continuations while preserving an unchanged raw reference?

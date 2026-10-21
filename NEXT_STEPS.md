@@ -1,6 +1,11 @@
 # Current queue
 
-The CPU-only selective-reader proposal is complete for review; execution is held.
+CPU source/power/runtime feasibility is active; pretrained-model and head execution remain held.
+
+- Source preparation uses frozen cb3a47b, PID2199441/session19608; log local/diagnostics/causal-reader-feasibility-v1/prepare.log; deadline2026-10-21T05:59:03.478945+00:00.
+- Fixed12 unused TRAIN shards60..49, four CPU cores,16GiB output cap, no automatic retry/filter weakening. Cohort quotas: TRAIN5120,DEV4096calculation+4096ordinary,qualification32.
+- N4096 is fixed from the explicit planning alternative before new source outcomes. Normal-approximation joint passage lower bound.917 assumes SD4, B0 gain.5, both control gains.25, ordinary gain0. See validation/causal_reader_feasibility_plan_20261021.json.
+- Resolve static causal-feature/selector implementation and finite measured-cost projection while CPU data preparation runs. No actual model call before this assessment.
 
 - Read docs/CAUSAL_READER_PROPOSAL.md and validation/causal_reader_gate_design_20261021.json.
 - Actual unchanged B0 is the reference; one frozen V29 note/reader and a causal supervised head form the proposed assisted path. An off switch is exact; active retention is empirical.
@@ -9,7 +14,7 @@ The CPU-only selective-reader proposal is complete for review; execution is held
 - The unrestricted draft must beat B0, a TRAIN-fitted constant blend and a raw-model ensemble on fresh full16 likelihood, with an active ordinary-suffix guard. It cannot show improved base weights or internalization.
 - Record gate-closure/gradient trajectories and prevalence-weighted outcomes. A permitted ordinary cost can exceed calculation gains under a natural text mixture.
 - Fresh-source availability, prospective joint power, actual feature causality/normalization and a finite resource budget remain unqualified. No feature extraction, model call, head fitting, training, RL or scale run is queued.
-- Latest owner scope is the bounded mechanism proposal only. The local raw-trajectory-v31-cpu worktree contains an UNEXECUTED draft; do not run its preparer or score checkpoints. No new trajectory cohort/protocol exists.
+- Latest owner scope now includes resolving bounded CPU feasibility before any model release. The local raw-trajectory-v31-cpu worktree contains an UNEXECUTED draft; do not run its preparer or score checkpoints. No new trajectory cohort/protocol exists.
 
 V30 remains COMPLETE and its reward branch remains CLOSED:
 
