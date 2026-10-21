@@ -21,6 +21,7 @@ def token_logps(backend, ids):
         raise ValueError('Original complete native windows required')
     x = ids.to(backend.device)
     hidden = backend.hidden(x[:, :-1])
+    backend.sync()
     result = []
     for first in range(0, hidden.shape[1], backend.head_chunk):
         h = hidden[:, first:first+backend.head_chunk]
@@ -28,6 +29,10 @@ def token_logps(backend, ids):
         logits = backend.model.lm_head(h).float()
         result.append(-F.cross_entropy(logits.reshape(-1, logits.shape[-1]),
             y.reshape(-1), reduction='none').reshape(y.shape))
+        del logits
+        # Reuse two small head graphs (full chunk and remainder), rather than
+        # compiling every vocabulary projection into one large fused graph.
+        backend.sync()
     return torch.cat(result, 1)
 
 
@@ -91,7 +96,8 @@ def worker(_index, args, p, rows):
     cast_parameters(model)
     model.to(device)
     model.tie_weights()
-    backend = NeuronCausalBackend(model, head_chunk=32, checkpoint_trunk=False)
+    backend = NeuronCausalBackend(model, head_chunk=32, checkpoint_trunk=False,
+                                 sync=lambda: torch_xla.sync(wait=True))
     args.output.mkdir(parents=True, exist_ok=True)
     completed = 0
     started = time.monotonic()

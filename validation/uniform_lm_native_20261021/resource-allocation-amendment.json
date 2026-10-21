@@ -1,0 +1,20 @@
+{
+  "maximum_physical_chips": 2,
+  "original_qualification_allocation": 0.5,
+  "qualification_maximum_chip_hours": 2,
+  "reason": "Cold compilation plus two recorded disk-protection stops; no optimizer update or held-out model result observed. Reallocate the phase allowance within the authorized study rather than change recipes or statistical gates.",
+  "remaining_minimum_fitting_and_evaluation_allocation": 16,
+  "scope": "One complete native mechanics/recovery qualification; all failed costs included. Fit only if the measured full workload fits the remaining total.",
+  "status": "PROSPECTIVE_RESOURCE_REALLOCATION_WITHIN_APPROVED_TOTAL",
+  "unchanged": [
+    "source cohorts",
+    "all four training recipes",
+    "loss coefficients",
+    "BF16/FP32 contract",
+    "numerical tolerances",
+    "all-terminal development selection",
+    "sealed confirmation"
+  ],
+  "unchanged_total_chip_hours": 18,
+  "utc": "2026-10-21T20:44:22+00:00"
+}

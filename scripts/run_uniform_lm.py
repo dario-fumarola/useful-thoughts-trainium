@@ -132,6 +132,10 @@ def main():
         code = process.wait()
     if h.members(owned['session']):
         h.kill_remaining(owned)
+    for _ in range(20):
+        if not h.members(owned['session']):
+            break
+        time.sleep(1)
     absent = not h.members(owned['session'])
     idle = all(not r['neuron_processes'] for r in h.topology() if r['neuron_device'] in (8, 9))
     closure = dict(utc=utc_now(), exit_code=code, failure=failure, actual_eight_observed=observed,

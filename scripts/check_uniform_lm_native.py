@@ -35,7 +35,9 @@ def main():
     require(all(v['exit_code'] == 0 and v['failure'] is None
                 and v['actual_eight_observed'] and v['owned_session_absent']
                 and v['assigned_devices_idle'] for v in closures), 'Native process closure failed')
-    cost = math.fsum(v['reserved_chip_hours'] for v in closures)
+    attempt_costs = {q.parent.name: json.loads(q.read_text())['reserved_chip_hours']
+                     for q in (control/'jobs').glob('*/closure.json')}
+    cost = math.fsum(attempt_costs.values())
     require(cost <= release['maximum_reserved_chip_hours'], 'Qualification resource ceiling exceeded')
     metrics = [[json.loads(s) for s in (out/'metrics.jsonl').open()] for out in (fresh, replay)]
     for history in metrics:
@@ -100,7 +102,7 @@ def main():
                       'full_state_recovery', 'explicit_precision')},
                   full_terminal_model_digest=canonical_hash(model_digests),
                   all_optimizer_shards=shards, complete_manifests=manifests,
-                  reserved_chip_hours=cost, closures=closures,
+                  reserved_chip_hours=cost, all_attempt_costs=attempt_costs, closures=closures,
                   scope='Hardware mechanics and exact deterministic recovery, not predictive improvement')
     atomic_json(control/'native-qualification.json', result)
     print(json.dumps({k: v for k, v in result.items() if k not in ('source_files', 'complete_manifests')}))
