@@ -19,7 +19,7 @@ import subprocess
 import sys
 import time
 
-from train.causal_reader_gate_driver import read,require_frozen,require_science_release
+from train.causal_reader_gate_driver import read,require_frozen,require_science_release,science_budget
 from weekend_thinking.artifacts import atomic_json,sha256_file,utc_now
 
 R=Path('/home/ubuntu/dario')
@@ -57,7 +57,7 @@ class Runner:
         self.a=a;self.p=p;self.deadline=datetime.fromisoformat(a.deadline_utc)
         self.workers=[];self.reservations=[];self.live=[]
         self.initial_spent=p.get('prior_qualification_reserved_chip_hours',0.)
-        self.ceiling=.5 if a.phase=='qualification' else 8.
+        self.ceiling=.5 if a.phase=='qualification' else science_budget(p)
         if a.phase=='science':
             release=require_science_release(p,a.protocol)
             self.initial_spent=read(release['profile_file'])['actual_qualification_reserved_chip_hours']

@@ -1,0 +1,22 @@
+{
+  "actual_qualification_reserved_chip_hours": 0.11895161972916363,
+  "counts": {
+    "greedy_notes": 13312,
+    "reader_contexts": 40960
+  },
+  "fixed_startup_and_qualification_allowance_reserved_chip_hours": 0.75,
+  "hard_ceiling_reserved_chip_hours": 8.25,
+  "limits": "Projection, not a runtime guarantee. Whole-question release and actual supervisor hard cap still required. CPU reference/source/head time is separate; not billed instance hours or dollars.",
+  "prior_qualification_reserved_chip_hours": 0.04502717259055418,
+  "projected_2x_reader_reserved_chip_hours": 1.03802003338933,
+  "projected_writer_reserved_chip_hours": 6.304394910451439,
+  "protocol_sha256": "89e4d3350c2fa6863f4186512a74310cff8b8f7a2b916930142b6abf491268d1",
+  "qualification_protocol_sha256": "9397e4e1497177ad4080fa7f2ba5a4481a3578409776cad1e435e88b4f887c3e",
+  "qualification_sha256": "61d53a31d2d214788c11a8e40fb8acc46b3a5dfd384c68faf29bdb807923638d",
+  "reader_max_warm_seconds_per_context": 0.18246445899421815,
+  "rule": "Original timing formula unchanged: skip first two notes/worker and first feature batch/worker; worst warm128-action scaled writer,2x worst warm reader, fixed.75 overhead. Any owner-approved engineering exception is explicit in the protocol; no scientific outcome observed before approval.",
+  "runtime_sha256": "f5470f32029ba2d5fe9d5c5911a8ff614e81a3b176838681192c2f04b58d6ba1",
+  "status": "PASS_FINITE_ACTUAL_PROFILE",
+  "total_projected_reserved_chip_hours": 8.092414943840769,
+  "writer128_max_warm_seconds": 6.819657956017181
+}

@@ -1,0 +1,23 @@
+{
+  "approval_file": "validation/causal_reader_owner_approval_20261021.json",
+  "approval_sha256": "2a00134c4ff2922ffe340658292c9d7d275a959e7af2ea50f621e4602f52840f",
+  "cohorts": {
+    "DEV_calculation": 4096,
+    "DEV_ordinary": 4096,
+    "TRAIN": 5120
+  },
+  "created_utc": "2026-10-21T13:50:28+00:00",
+  "end": "Finish and independently verify one readout, retain all outcomes, no automatic campaign/RL/CPT/scale/TEST.",
+  "heads": "Four terminal800 CPUheads, twoorders per assisted/raw role, all frozen before any DEV feature extraction.",
+  "identity": "causal-reader-owner-approved-20261021-v1",
+  "maximum_existing_physical_chips": 2,
+  "maximum_reserved_chip_hours_including_all_qualification": 8.25,
+  "original_failed_qualification_preserved": true,
+  "original_timing_plan_sha256": "6e04eaf955a3127a8fcf8e81e5397fed3b88ec0fde1bc31e232db8c05f4a5770",
+  "parent_protocol_sha256": "9397e4e1497177ad4080fa7f2ba5a4481a3578409776cad1e435e88b4f887c3e",
+  "qualification_reused_without_new_model_calls": true,
+  "rule": "Same predeclared warm128writer+2xwarmreader+.75 projection; owner-approved8.25ceiling and explicit numerical exceptions only.",
+  "scientific_changes": [],
+  "scientific_criteria": "Original full16 likelihood/base/globalblend/rawensemble and ordinary-retention gates unchanged, position schedule and note-content controls unchanged.",
+  "status": "OWNER_AUTHORIZED_ONE_BOUNDED_SELECTOR_EXPERIMENT"
+}

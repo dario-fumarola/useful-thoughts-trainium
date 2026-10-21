@@ -34,6 +34,47 @@ def rows(path):return [json.loads(line) for line in Path(path).open()]
 def sources():return {name:sha256_file(ROOT/name) for name in DEPENDENCIES}
 
 
+def owner_approval(p):
+    if 'owner_approval_file' not in p:return None
+    if sha256_file(p['owner_approval_file'])!=p['owner_approval_sha256']:
+        raise ValueError('Owner-approved exception record changed')
+    approval=read(p['owner_approval_file'])
+    if (approval['status']!='OWNER_APPROVED_QUALIFICATION_AND_COST_DEVIATIONS'
+            or approval['maximum_total_reserved_chip_hours']!=8.25
+            or not approval['before_any_selector_fit_or_scientific_DEV_outcome']):
+        raise ValueError('Explicit bounded prospective owner approval required')
+    parent_file=p['qualification_parent_protocol_file']
+    if sha256_file(parent_file)!=approval['qualification_protocol_sha256']:
+        raise ValueError('Original qualification provenance changed')
+    parent=read(parent_file)
+    for key in ('data','models','assets','hidden_size','vocabulary_size','tolerances',
+                'partitions','secondary_interventions','design_sha256','data_audit_sha256'):
+        if p[key]!=parent[key]:raise ValueError('Scientific settings changed under engineering exception')
+    return approval
+
+
+def science_budget(p):
+    approval=owner_approval(p)
+    return approval['maximum_total_reserved_chip_hours'] if approval else 8.
+
+
+def qualification_identity(p,path,qualification):
+    approval=owner_approval(p)
+    if approval:
+        if (qualification['status']!='OWNER_ACCEPTED_QUALIFICATION_WITH_DECLARED_DEVIATIONS'
+                or qualification['approval_sha256']!=p['owner_approval_sha256']
+                or qualification['original_requirements_pass']):
+            raise ValueError('Original failed requirements must remain explicit')
+        expected=approval['qualification_protocol_sha256']
+    else:
+        if qualification['status']!='PASS_ACTUAL_READER_FEATURE_QUALIFICATION':
+            raise ValueError('Actual numerical qualification required')
+        expected=sha256_file(path)
+    if qualification['protocol_sha256']!=expected:
+        raise ValueError('Qualification belongs to another execution contract')
+    return expected
+
+
 def require_frozen(p):
     if p['status']!='FROZEN_CAUSAL_READER_PROTOCOL' or p['sources']!=sources():
         raise ValueError('Exact frozen reader protocol/sources required')
@@ -44,6 +85,7 @@ def require_frozen(p):
     if (sha256_file(p['data_audit_file'])!=p['data_audit_sha256']
             or read(p['data_audit_file'])['status']!='PASS_ALL_SELECTED_SOURCE_NATIVE_EXCLUSION_AND_EXACT_EQUATION_CHECKS'):
         raise ValueError('Independent complete source/native cohort audit required')
+    owner_approval(p)
 
 
 def protocol(a):
@@ -71,14 +113,15 @@ def protocol(a):
 
 def require_science_release(p,path):
     release=read(p['science_release_file'])
+    qualification=read(release['qualification_file'])
+    qualification_identity(p,path,qualification)
     if (release['status']!='RELEASED_ONE_BOUNDED_FROZEN_READER_HEAD_EXPERIMENT'
             or release['protocol_sha256']!=sha256_file(path)
             or sha256_file(release['qualification_file'])!=release['qualification_sha256']
-            or read(release['qualification_file'])['status']!='PASS_ACTUAL_READER_FEATURE_QUALIFICATION'
             or sha256_file(release['profile_file'])!=release['profile_sha256']
             or read(release['profile_file'])['status']!='PASS_FINITE_ACTUAL_PROFILE'
             or read(release['profile_file'])['protocol_sha256']!=sha256_file(path)
-            or release['maximum_total_reserved_chip_hours']!=8):
+            or release['maximum_total_reserved_chip_hours']!=science_budget(p)):
         raise ValueError('Actual numerical/cost qualification and finite science release required')
     return release
 

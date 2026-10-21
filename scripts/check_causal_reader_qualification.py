@@ -46,9 +46,24 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('protocol','references','native','causality','output'):
         p.add_argument('--'+name,type=Path,required=True)
+    p.add_argument('--approved-exceptions',type=Path)
     a=p.parse_args();protocol=read(a.protocol);digest=sha256_file(a.protocol)
     if protocol['status']!='FROZEN_CAUSAL_READER_PROTOCOL':raise ValueError('Exact protocol required')
-    limits=protocol['tolerances'];reports={};collected={}
+    limits=protocol['tolerances'];reports={};collected={};deviations=[];approved={}
+    if a.approved_exceptions:
+        approval=read(a.approved_exceptions)
+        if (approval['status']!='OWNER_APPROVED_QUALIFICATION_AND_COST_DEVIATIONS'
+                or approval['qualification_protocol_sha256']!=digest
+                or not approval['before_any_selector_fit_or_scientific_DEV_outcome']):
+            raise ValueError('Explicit owner approval of original qualification required')
+        approved={(v['role'],v['field']):v for v in approval['accepted_numerical_deviations']}
+    def compare(role,field,error,limit):
+        if error<=limit:return
+        exception=approved.get((role,field))
+        if (exception is None or exception['limit']!=limit
+                or abs(exception['observed']-error)>1e-10):
+            raise ValueError(f'Native {role} {field} error exceeds frozen tolerance: {error}')
+        deviations.append(dict(role=role,field=field,observed=error,limit=limit))
     for role in ('B0_raw','T_raw','T_note'):
         identity=dict(protocol_sha=digest,role=role,hidden_size=protocol['hidden_size'],
                       vocabulary_size=protocol['vocabulary_size'])
@@ -72,12 +87,10 @@ def main():
                                                              -expected[name][target]).max()))
         if len(seen)!=32:raise ValueError('Missing native qualification source')
         for name,error in errors.items():
-            if error>limits[name+'_max_absolute']:
-                raise ValueError(f'Native {role} {name} error exceeds frozen tolerance: {error}')
+            compare(role,name,error,limits[name+'_max_absolute'])
         relative=np.linalg.norm(fields['hidden'].astype(np.float64)-expected['hidden'],axis=-1)/np.maximum(
             np.linalg.norm(expected['hidden'].astype(np.float64),axis=-1),1e-12)
-        if relative.max()>limits['hidden_max_relative_L2']:
-            raise ValueError('Native hidden representation mismatch')
+        compare(role,'hidden_relative_L2',float(relative.max()),limits['hidden_max_relative_L2'])
         mass=np.abs(np.log(np.exp(fields['first_logps'].astype(np.float64)).sum(-1)))
         if mass.max()>limits['normalization_log_error']:
             raise ValueError('Native full-vocabulary distribution is not normalized')
@@ -111,11 +124,16 @@ def main():
         error=torch.logsumexp(mixed.double(),-1).abs().max().item()
         if error>limits['normalization_log_error']:raise ValueError('Actual-vector mixture is not normalized')
         normalization.append(dict(gate_logit=u,maximum_log_mass_error=error))
-    atomic_json(a.output,dict(status='PASS_ACTUAL_READER_FEATURE_QUALIFICATION',
+    if approved and {(v['role'],v['field']) for v in deviations}!=set(approved):
+        raise ValueError('Owner exception does not exactly match original saved deviations')
+    status='OWNER_ACCEPTED_QUALIFICATION_WITH_DECLARED_DEVIATIONS' if approved else 'PASS_ACTUAL_READER_FEATURE_QUALIFICATION'
+    atomic_json(a.output,dict(status=status,
+        original_requirements_pass=not bool(deviations),accepted_deviations=deviations,
+        approval_sha256=sha256_file(a.approved_exceptions) if a.approved_exceptions else None,
         protocol_sha256=digest,roles=reports,actual_native_sources_per_role=32,
         full_vector_mixture_checks=normalization,disabled_and_closed_exact_raw_identity=True,
         source_sha256=sha256_file(__file__),limits='Actual-model numerical/causality mechanics only; no trained selector, scientific efficacy, broader robustness or fresh-DEV outcome.'))
-    print('PASS_ACTUAL_READER_FEATURE_QUALIFICATION',json.dumps(reports),flush=True)
+    print(status,json.dumps(reports),flush=True)
 
 
 if __name__=='__main__':main()

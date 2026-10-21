@@ -1,0 +1,47 @@
+{
+  "accepted_numerical_deviations": [
+    {
+      "field": "hidden",
+      "limit": 0.001,
+      "observed": 0.00481414794921875,
+      "role": "B0_raw"
+    },
+    {
+      "field": "first_logps",
+      "limit": 0.001,
+      "observed": 0.002506256103515625,
+      "role": "T_note"
+    },
+    {
+      "field": "hidden",
+      "limit": 0.001,
+      "observed": 0.013034820556640625,
+      "role": "T_note"
+    },
+    {
+      "field": "target_logps",
+      "limit": 0.001,
+      "observed": 0.0018596649169921875,
+      "role": "T_note"
+    },
+    {
+      "field": "hidden_relative_L2",
+      "limit": 0.0001,
+      "observed": 0.0003734333210693333,
+      "role": "T_note"
+    }
+  ],
+  "approved_projected_reserved_chip_hours": 8.092414943840769,
+  "before_any_selector_fit_or_scientific_DEV_outcome": true,
+  "created_utc": "2026-10-21T13:48:16+00:00",
+  "interpretation": "Explicit approval to proceed with one bounded selector experiment despite the reported numerical discrepancies and8.092timing estimate. This does not relabel the original qualification or authorize scientific threshold changes.",
+  "maximum_total_reserved_chip_hours": 8.25,
+  "original_failed_qualification_report_sha256": "1eeb73c382bad38a661addbfbb165fa71503d5264f16bbcad34fb6e571724be5",
+  "original_maximum_total_reserved_chip_hours": 8.0,
+  "prior_actual_qualification_reserved_chip_hours": 0.11895161972916363,
+  "qualification_protocol_sha256": "9397e4e1497177ad4080fa7f2ba5a4481a3578409776cad1e435e88b4f887c3e",
+  "scientific_design": "Unchanged actual B0/firstV29T, source cohorts, head recipe, twoorders, controls, full16targets, all scientific success/retention gates, paired uncertainty, terminal-only readout.",
+  "scope": "One bounded existing-node frozen-backbone selector experiment only. All prior qualification spend included. No new qualification model calls, newwriterRL/CPT/scale/officialTEST or automatic follow-on campaign.",
+  "status": "OWNER_APPROVED_QUALIFICATION_AND_COST_DEVIATIONS",
+  "user_instruction": "its gine. thats a tiny deviation. go ahead i approve"
+}

@@ -5,6 +5,7 @@ import argparse
 import json
 from pathlib import Path
 
+from train.causal_reader_gate_driver import qualification_identity,science_budget
 from weekend_thinking.artifacts import atomic_json,sha256_file
 
 
@@ -17,9 +18,9 @@ def main():
         parser.add_argument('--'+name,type=Path,required=True)
     a=parser.parse_args();p=read(a.protocol);digest=sha256_file(a.protocol)
     qual=read(a.qualification);runtime=read(a.runtime)
-    if (qual['status']!='PASS_ACTUAL_READER_FEATURE_QUALIFICATION' or qual['protocol_sha256']!=digest
-            or runtime['status']!='ALL_QUALIFICATION_PROCESSES_CLOSED'
-            or runtime['protocol_sha256']!=digest):
+    qualification_digest=qualification_identity(p,a.protocol,qual)
+    if (runtime['status']!='ALL_QUALIFICATION_PROCESSES_CLOSED'
+            or runtime['protocol_sha256']!=qualification_digest):
         raise ValueError('Completed actual qualification and process closure required')
     native_workers=[w for w in runtime['workers'] if w['execution_device']=='xla']
     if (len(native_workers)!=19 or any(w['returncode']!=0 or w['reserved_logical_cores']!=1
@@ -39,7 +40,7 @@ def main():
     for part in range(4):
         directory=a.notes/f'part-{part}';meta=read(directory/'complete.json')
         path=directory/'notes.jsonl'
-        if (meta['status']!='COMPLETE_FROZEN_GREEDY_NOTES' or meta['protocol_sha256']!=digest
+        if (meta['status']!='COMPLETE_FROZEN_GREEDY_NOTES' or meta['protocol_sha256']!=qualification_digest
                 or sha256_file(path)!=meta['notes_sha256']):
             raise ValueError('Original complete qualification greedy attempts required')
         notes=[json.loads(line) for line in path.open()]
@@ -54,7 +55,7 @@ def main():
     for role in ('B0_raw','T_raw','T_note'):
         for part in range(4):
             meta=read(a.native/role/f'part-{part}'/'complete.json')
-            if (meta['status']!='COMPLETE_FROZEN_READER_FEATURES' or meta['protocol_sha256']!=digest
+            if (meta['status']!='COMPLETE_FROZEN_READER_FEATURES' or meta['protocol_sha256']!=qualification_digest
                     or not meta['execution_device'].startswith('xla') or meta['rows']!=8):
                 raise ValueError('Actual complete native feature timings required')
             timings=meta['batch_timings']
@@ -66,7 +67,8 @@ def main():
     writer_hours=max(writer)*notes_count/4/3600
     reader_hours=2*max(reader)*contexts/4/3600
     projected=writer_hours+reader_hours+.75
-    decision=spent<=.5 and projected<=8.
+    ceiling=science_budget(p)
+    decision=spent<=.5 and projected<=ceiling
     atomic_json(a.output,dict(status='PASS_FINITE_ACTUAL_PROFILE' if decision else 'FAIL_FINITE_ACTUAL_PROFILE',
         protocol_sha256=digest,qualification_sha256=sha256_file(a.qualification),
         runtime_sha256=sha256_file(a.runtime),actual_qualification_reserved_chip_hours=spent,
@@ -74,9 +76,10 @@ def main():
         writer128_max_warm_seconds=max(writer),reader_max_warm_seconds_per_context=max(reader),
         projected_writer_reserved_chip_hours=writer_hours,projected_2x_reader_reserved_chip_hours=reader_hours,
         fixed_startup_and_qualification_allowance_reserved_chip_hours=.75,
-        total_projected_reserved_chip_hours=projected,hard_ceiling_reserved_chip_hours=8.,
+        total_projected_reserved_chip_hours=projected,hard_ceiling_reserved_chip_hours=ceiling,
+        qualification_protocol_sha256=qualification_digest,
         counts=dict(greedy_notes=notes_count,reader_contexts=contexts),
-        rule='Frozen before actual calls: skip first two notes/worker and first feature batch/worker; worst warm128-action scaled writer,2x worst warm reader, fixed.75 overhead. No profiling/policy sweep or outcome-driven budget increase.',
+        rule='Original timing formula unchanged: skip first two notes/worker and first feature batch/worker; worst warm128-action scaled writer,2x worst warm reader, fixed.75 overhead. Any owner-approved engineering exception is explicit in the protocol; no scientific outcome observed before approval.',
         limits='Projection, not a runtime guarantee. Whole-question release and actual supervisor hard cap still required. CPU reference/source/head time is separate; not billed instance hours or dollars.'))
     print('PROFILE_GO' if decision else 'PROFILE_NO_GO',projected,'qualification',spent,flush=True)
 

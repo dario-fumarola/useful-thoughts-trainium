@@ -1,12 +1,11 @@
 # Useful Thoughts on Trainium
 
-**Current: the source extension passes; the selector protocol closes before fitting because numerical and cost requirements do not pass.**
-The full5,120TRAIN/4,096-per-DEV-stratum/32qualification allocation is preserved:7,722eligible calculations, with all13,344selected source windows independently verified.
-The corrected launcher completed all qualification workers, but CPU/native hidden and calculation-conditioned probability differences exceed the frozen tolerances.
-The timing diagnostic projects8.092reserved-chip-hours against8; it is not a qualified profile.
-Actual spend across both qualification attempts is0.119chip-hours. No selector was fitted and no scientific DEV outcome was observed.
-All processes are closed; no model job or automatic retry is queued. [Qualification closure](validation/causal_reader_qualification_complete_20261021.json), [source report](validation/causal_reader_source_extension_complete_20261021.json).
-The earlier db8d722 source-feasibility stop remains unchanged; this is not evidence against selector efficacy.
+**Current: the owner approved one bounded selector experiment despite the small numerical and timing deviations.**
+The original failed qualification remains recorded. Its32-source results are reused under an explicit exception;
+all other source, causality, normalization and exact-fallback checks pass. Scientific controls and success criteria are unchanged.
+The8.092chip-hour projection fits an8.25hardceiling includingall0.119qualification spend. No selector or scientific DEV outcome has been inspected before release.
+Full5,120TRAIN/4,096-per-DEV-stratum/32qualification source allocation remains independently verified.
+[Owner approval](validation/causal_reader_owner_approval_20261021.json), [execution plan](validation/causal_reader_owner_execution_plan_20261021.json).
 
 **V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN
 documents, hindsight best-of-eight calculations gain only **+0.082 nats** over the

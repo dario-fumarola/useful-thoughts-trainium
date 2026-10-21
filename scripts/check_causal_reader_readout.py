@@ -16,6 +16,7 @@ import numpy as np
 import torch
 
 from weekend_thinking.artifacts import atomic_json, sha256_file
+from train.causal_reader_gate_driver import science_budget
 
 ORDERS = (2026102131, 2026102132)
 
@@ -52,7 +53,7 @@ def main():
             or runtime['status'] != 'ALL_SCIENCE_FEATURE_AND_TRAIN_HEAD_PROCESSES_CLOSED'
             or any(x['protocol_sha256'] != digest for x in (fitted, report, runtime))
             or report['fit_complete_sha256'] != sha256_file(a.fitted/'complete.json')
-            or runtime['total_reserved_chip_hours_including_prior_qualification'] > 8):
+            or runtime['total_reserved_chip_hours_including_prior_qualification'] > science_budget(p)):
         raise ValueError('Complete original frozen execution required')
     states = {}
     for role in ('T_note', 'T_raw'):

@@ -1,4 +1,16 @@
-# Status — 2026-10-21 13:34 UTC
+# Status — 2026-10-21 13:52 UTC
+
+## Released: owner-approved selector experiment
+Question: can a causal selector exploit generated computation on fresh full16continuations?
+ID:causal-reader-owner-approved-20261021-v1; one bounded experiment explicitly approved by the owner.
+Owner approves reported numerical/cost deviations before any selector fit or scientific DEV outcome. Original failed receipts remain unchanged.
+Reuse original actual32-source qualification; all remaining source/identity/causality/normalization/exact-fallback checks pass.
+Approved numerical exceptions are the exact5previously observed failures; original tolerance values and scientific gates remain unchanged.
+Projected8.092chip-hours fits new hard8.25ceiling includingall0.118952qualification spend; max2existing chips8/9.
+Full5120TRAIN/4096DEVeach, actualB0/firstV29T frozen, head800updates/twoorders and all controls unchanged.
+1970CPU tests+smoke/compilePASS; allfourterminalTRAINheads must freeze before DEV.
+Protocol89e4d3350c2fa6863f4186512a74310cff8b8f7a2b916930142b6abf491268d1; execution launch follows frozen source commit.
+Control local/diagnostics/causal-reader-owner-approved-v1; no writerRL/newCPT/scale/TEST or automatic follow-on.
 
 ## Closed: actual-model qualification; no selector fit
 Question: do actual frozen features qualify numerically/causally and fit the8-chip-hour plan?
