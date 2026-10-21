@@ -17,7 +17,8 @@ from weekend_thinking.artifacts import sha256_file
 
 
 class Tokenizer:
-    def __len__(self): return 31
+    def __init__(self, size=31): self.size=size
+    def __len__(self): return self.size
 
 
 def row(i, width=8):
@@ -50,9 +51,10 @@ def test_every_original_shifted_token_has_one_label_without_inserted_text():
     assert pack['target_positions'].tolist()==[list(range(1,8))]
     assert pack['labels'].tolist()==[source['ids'][1:]]
     assert pack['future_mask'].all() and not pack['note_close_mask'].any()
-    # Token zero is source content, never silently masked as padding.
-    source['ids'][3]=0
-    assert lm.training_pack(source,Tokenizer(),width=8,target_slots=7)['labels'][0,2]==0
+    # Even the actual native EOS/padding ID remains a real source target.
+    source['ids'][3]=151643
+    special=lm.training_pack(source,Tokenizer(151936),width=8,target_slots=7)
+    assert special['labels'][0,2]==151643 and special['future_mask'][0,2]
 
 
 def test_accumulated_rank_gradients_match_one_dense_uniform_token_mean():
@@ -141,3 +143,19 @@ def test_cpu_protocol_is_not_a_native_execution_release(tmp_path):
     args=SimpleNamespace(arm=lm.ARM,execution_release=None,output=tmp_path/'run',protocol=tmp_path/'p.json')
     with pytest.raises(ValueError,match='native stage release'):
         lm.validate_execution(protocol(),args,driver.source_files())
+
+
+def test_a_pass_label_without_native_lr_and_recovery_checks_does_not_release_fitting(tmp_path):
+    p={**protocol(),'purpose':'uniform_lm_development'};source=driver.source_files()
+    proto=tmp_path/'p.json';proto.write_text(json.dumps(p))
+    receipt=tmp_path/'qualification.json';receipt.write_text(json.dumps(dict(
+        status='PASS_UNIFORM_LM_NATIVE_QUALIFICATION',source_files=source,
+        accumulation=8,world_size=8,width=528)))
+    args=SimpleNamespace(arm=lm.ARM,execution_release=tmp_path/'release.json',
+                         output=tmp_path/'run',protocol=proto)
+    args.execution_release.write_text(json.dumps(dict(status='RELEASED_UNIFORM_LM_NATIVE_STAGE',
+        source_files=source,maximum_reserved_chip_hours=18,
+        jobs={str(args.output):dict(protocol_sha256=sha256_file(proto))},
+        native_qualification=dict(file=str(receipt),sha256=sha256_file(receipt)))))
+    with pytest.raises(ValueError,match='qualification must cover'):
+        lm.validate_execution(p,args,source)

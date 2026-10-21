@@ -2,11 +2,11 @@
 
 ## Question and current work
 
-Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. The current empirical focus is selective inference over frozen predictors.
+Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. The immediate task is to qualify ordinary continued pretraining as a reference for later computation-augmented learning.
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
-The fixed-head fresh-source confirmation is complete: six targeted calculation gains, five all-control passes, and natural-text losses in every order. Preserve both failed endpoint decisions and all controls. Actual cost was 1.781765 reserved chip-hours of the finite 4.25 cap; all scientific processes closed. Current publication and replay records are linked from STATUS.md. Next research preparation concerns a genuine uniform next-token baseline, distinct from this frozen-inference result.
+The frozen-selector study is complete: targeted gains repeat, every natural endpoint loses, and a simple no-calculation ensemble improves natural prediction. Its original decisions remain intact. Uniform-LM preparation now supplies 38,912 independently checked source windows and a plain one-loss training path. See STATUS.md and the fixed design for the four development settings, separate confirmation, actual native qualification requirements and proposed finite resources. CPU preparation is distinct from a measured native run.
 
 ## Three red lines
 

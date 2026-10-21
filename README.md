@@ -2,6 +2,10 @@
 
 We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Current empirical work focuses on selective inference over frozen models. Improved pretrained weights and autonomous discovery remain open.
 
+## Current work: genuine uniform next-token baseline
+
+The plain-text path and **38,912 separated source windows** are prepared and independently verified. Every original shifted token has the same coefficient; there is no duplicated continuation branch. Four fixed development settings share **17.269 million training tokens** each; separate confirmation follows recipe selection. All **2,023 CPU tests**, smoke and compilation pass. Actual native accumulation, scheduler/recovery and cost qualification precede fitting. [Preparation report](validation/uniform_lm_preparation_20261021/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json).
+
 ## Fresh confirmation: calculation gains, natural-text losses
 
 All six frozen selectors improve **1,024 fresh calculation continuations by 0.421–0.506 nats per 16 tokens** over B0. Five also beat every additional control; order 45's comparison with the calculation position schedule spans zero, so the all-six calculation criterion fails.

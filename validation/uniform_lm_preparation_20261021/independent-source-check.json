@@ -1,0 +1,18 @@
+{
+  "accelerator_chip_hours": 0,
+  "checker_sha256": "7e1ff10c0e409750ebaed44853af81971c49aeac60957af56dcaebd0a8b5887e",
+  "cohorts": {
+    "CONFIRM": 4096,
+    "DEV": 1024,
+    "QUALIFICATION": 1024,
+    "TRAIN": 32768
+  },
+  "documents": 38912,
+  "limits": "Independent identity/cut reconstruction and every original Parquet window; shared tokenizer, no model execution or pretraining-novelty guarantee.",
+  "model_calls": 0,
+  "plan_sha256": "95a5c042799a753ea3dc051fe7c8a0e11a3059e98c926be1ee880e6ee623e2d0",
+  "preparation_sha256": "33d54c3f0d91bbef08acd95f69364c48c405aa10988b0225e0e58177661c05df",
+  "prior_source_exclusions": 18464,
+  "status": "PASS_UNIFORM_LM_PINNED_SOURCE_AND_SPLIT_CHECK",
+  "wall_seconds": 125.00494272896321
+}

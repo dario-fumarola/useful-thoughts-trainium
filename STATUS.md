@@ -6,7 +6,7 @@ Updated October 21, 2026. [History](docs/archive/STATUS_through_20261021.md).
 
 The next comparison uses 32,768 unenriched training documents, one pass and **17,268,736 predicted tokens per recipe**. Batch 256 (134,912 targets/update), eight accumulated microsteps and 128 optimizer updates stay fixed. Four declared settings compare peak LR 3e-6/1e-5 and warmup-constant/warmup-cosine schedules. Separate DEV 1,024, CONFIRM 4,096 and qualification 1,024 sources are chosen by identity/length only. [Design](configs/uniform_lm_baseline.json) · [Source rules](configs/uniform_lm_sources.json).
 
-CPU packing, accumulation and schedule checks pass. Source reconstruction and independent pinned-Parquet validation come next. Actual native accumulation, scheduler propagation, recovery and cost qualification remain necessary before fitting; the design's 18-chip-hour ceiling is a proposal rather than measured cost.
+All 38,912 source windows independently match pinned Parquet rows and their identity-only split/cut rule; source preparation is complete. All 2,023 CPU tests, smoke and compilation pass. Five concrete protocols also pass real-data packing, order and schedule checks. [Preparation report](validation/uniform_lm_preparation_20261021/REPORT.md). Actual native accumulation, scheduler propagation, recovery and cost qualification remain necessary before fitting; the design's 18-chip-hour ceiling is a proposal rather than measured cost.
 
 ## Fresh confirmation complete
 

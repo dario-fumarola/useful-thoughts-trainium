@@ -1,0 +1,66 @@
+{
+  "status": "PASS_UNIFORM_LM_CPU_PROTOCOL_PACKING_AND_SOURCE_CURSORS",
+  "protocols": {
+    "qualification": {
+      "path": "/home/ubuntu/dario/local/diagnostics/uniform-lm-baseline-v1/protocols/qualification.json",
+      "sha256": "176b3418dd0e14ae0fece9cbd65fcf8fbddf17ae53fb635ecb5976bd557c1d0e",
+      "documents": 1024,
+      "predicted_tokens": 539648,
+      "optimizer_updates": 4,
+      "first_lr": 5e-06,
+      "last_lr": 1.0000000000000002e-06,
+      "per_token_loss_coefficient": 7.412239089184061e-06,
+      "order_sha256": "a3a156f49218a2a6a8e1dc8964223166cbcdd7407bedb47a2efd0f829c087d3a"
+    },
+    "warmup_constant-lr3e-06": {
+      "path": "/home/ubuntu/dario/local/diagnostics/uniform-lm-baseline-v1/protocols/warmup_constant-lr3e-06.json",
+      "sha256": "c1d8e0f04b88fa0497fc01ee23240981eb389db2af5a50f8fb3265a0c3121a18",
+      "documents": 32768,
+      "predicted_tokens": 17268736,
+      "optimizer_updates": 128,
+      "first_lr": 2.3076923076923078e-07,
+      "last_lr": 3e-06,
+      "per_token_loss_coefficient": 7.412239089184061e-06,
+      "order_sha256": "125aa9a7f075312a30d398fc1a94950ef089fed4085b2cb367aa465ed1a56ead"
+    },
+    "warmup_cosine-lr3e-06": {
+      "path": "/home/ubuntu/dario/local/diagnostics/uniform-lm-baseline-v1/protocols/warmup_cosine-lr3e-06.json",
+      "sha256": "9816263e543db05b8982f7caeecd4351e96df6d6b430b7b3889f4b48245e5d40",
+      "documents": 32768,
+      "predicted_tokens": 17268736,
+      "optimizer_updates": 128,
+      "first_lr": 2.3076923076923078e-07,
+      "last_lr": 3.0000000000000004e-07,
+      "per_token_loss_coefficient": 7.412239089184061e-06,
+      "order_sha256": "125aa9a7f075312a30d398fc1a94950ef089fed4085b2cb367aa465ed1a56ead"
+    },
+    "warmup_constant-lr1e-05": {
+      "path": "/home/ubuntu/dario/local/diagnostics/uniform-lm-baseline-v1/protocols/warmup_constant-lr1e-05.json",
+      "sha256": "da42e9d6eb028459ecb2ea37e72aaf9c30b5a6c31788a3f88a2b4deb3b92dcd0",
+      "documents": 32768,
+      "predicted_tokens": 17268736,
+      "optimizer_updates": 128,
+      "first_lr": 7.692307692307693e-07,
+      "last_lr": 1e-05,
+      "per_token_loss_coefficient": 7.412239089184061e-06,
+      "order_sha256": "125aa9a7f075312a30d398fc1a94950ef089fed4085b2cb367aa465ed1a56ead"
+    },
+    "warmup_cosine-lr1e-05": {
+      "path": "/home/ubuntu/dario/local/diagnostics/uniform-lm-baseline-v1/protocols/warmup_cosine-lr1e-05.json",
+      "sha256": "0e6a7a3b94d888cf3f34c733cc80956988fb04154bbcb12df9ac0b8810a3f09e",
+      "documents": 32768,
+      "predicted_tokens": 17268736,
+      "optimizer_updates": 128,
+      "first_lr": 7.692307692307693e-07,
+      "last_lr": 1.0000000000000002e-06,
+      "per_token_loss_coefficient": 7.412239089184061e-06,
+      "order_sha256": "125aa9a7f075312a30d398fc1a94950ef089fed4085b2cb367aa465ed1a56ead"
+    }
+  },
+  "exact_source_target_coefficient_ratio": 1.0,
+  "loss": "all original shifted source tokens, one branch",
+  "native_execution_release_created": false,
+  "model_calls": 0,
+  "accelerator_chip_hours": 0,
+  "limits": "Real tokenizer/data and source cursor validation plus separate dense synthetic gradient tests; no mature-model gradient, native scheduler, numerical or recovery qualification."
+}

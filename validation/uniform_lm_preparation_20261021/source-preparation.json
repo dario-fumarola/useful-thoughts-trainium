@@ -1,0 +1,34 @@
+{
+  "accelerator_chip_hours": 0,
+  "files": {
+    "CONFIRM": {
+      "predicted_tokens": 2158592,
+      "rows": 4096,
+      "sha256": "5697d1999b9834315f424d7bdf3d52b09daee1b23ff4e02bb91f1d431752f522"
+    },
+    "DEV": {
+      "predicted_tokens": 539648,
+      "rows": 1024,
+      "sha256": "2fe003a67accf861a1760aa4a224bb5fb0bc9fb8b79584096315f0495f2fbe5f"
+    },
+    "QUALIFICATION": {
+      "predicted_tokens": 539648,
+      "rows": 1024,
+      "sha256": "9ef2e07a9390227d5fc5675cd95382e568b6924b15cd49ea27d64042245998a5"
+    },
+    "TRAIN": {
+      "predicted_tokens": 17268736,
+      "rows": 32768,
+      "sha256": "10506587524242c3b7176d76ec5afa1ad6969bb7026c0ccd0af5b89366af0291"
+    }
+  },
+  "limits": "Unenriched eligible-document sample in a source-clean finite frame, not all-corpus token weighting or proven novelty relative to base pretraining. CPU preparation alone does not qualify native training.",
+  "model_calls": 0,
+  "original_tokens_per_window": 528,
+  "plan_sha256": "95a5c042799a753ea3dc051fe7c8a0e11a3059e98c926be1ee880e6ee623e2d0",
+  "predicted_tokens_per_window": 527,
+  "schema": "uniform-next-token-v1",
+  "selection_sha256": "02ffd58cfd9261c85928cd5c68a931786d6f94cc72281997ff4b9ae2f612c013",
+  "status": "COMPLETE_UNIFORM_LM_SOURCE_PREPARATION",
+  "wall_seconds": 121.43423992901808
+}

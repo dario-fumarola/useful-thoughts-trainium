@@ -126,9 +126,14 @@ def validate_execution(p, args, source_files):
         if not path.is_file() or sha256_file(path) != receipt.get('sha256'):
             raise ValueError('Actual uniform-objective accumulation/recovery qualification required')
         qualified = json.loads(path.read_text())
+        required = ('initial_loss_reference', 'single_gradient_reducer',
+                    'fp32_master_update', 'actual_optimizer_lr', 'replica_agreement',
+                    'full_state_recovery', 'explicit_precision')
         if (qualified.get('status') != 'PASS_UNIFORM_LM_NATIVE_QUALIFICATION'
                 or qualified.get('source_files') != source_files
                 or qualified.get('accumulation') != p['accumulation']
                 or qualified.get('world_size') != p['world_size']
-                or qualified.get('width') != p['width']):
+                or qualified.get('width') != p['width']
+                or qualified.get('actual_optimizer_updates', 0) < 4
+                or any(qualified.get('checks', {}).get(k) is not True for k in required)):
             raise ValueError('Numerical qualification must cover this accumulation and shape')

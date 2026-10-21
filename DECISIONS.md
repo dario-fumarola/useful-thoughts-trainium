@@ -16,6 +16,8 @@ Updated October 21, 2026. Entries below this summary remain append-only.
 - Fresh confirmation is complete: all six calculation gains vs B0, five all-control passes, natural losses in every order; both endpoint criteria fail.
 - A simple no-calculation constant mixture improves natural prediction and remains a required comparator.
 
+- Uniform-NTP preparation is complete: 38,912 separated source windows, independently checked; one loss on all original tokens and four fixed development settings. Native accumulation/scheduler/recovery and measured-cost qualification come next.
+
 ---
 
 # Decision log
@@ -1820,3 +1822,9 @@ All six targeted base-model gains are positive with positive intervals; five bea
 Independent NumPy reconstruction and source-free replay preserve all 80 contrasts and both decisions. Stable pre-gate logits are exported because rounded mixture weights near one lose a small base contribution; original scientific scores and tolerances are unchanged. The next pretraining baseline requires uniform source-token loss with no duplicated continuation branch. [Complete report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md).
 
 Public closure: all four fresh-confirmation assets and the report pass anonymous full-download, SHA readback and downloaded-copy replay. [Receipt](validation/reader_fresh_confirmation_public_release_20261021.json).
+
+## 2026-10-21 — prepare a genuine uniform next-token reference
+
+Use original 528-token native windows with one CE mean on all 527 shifted labels and no auxiliary pass. Batch 256, accumulation 8, source order and 17.269 million target tokens stay matched across two LRs and two schedules. Freeze all terminals before DEV recipe selection, then freeze the selected recipe/checkpoint before CONFIRM scoring. This is a new ordinary-training reference, not a claimed explanation or rewrite of V29.
+
+Identity/length-only source rules were committed before reconstruction. Every one of 38,912 disjoint sources independently checks against pinned Parquet data, with no row replacement. All 2,023 CPU tests pass. Concrete protocols preserve equal token coefficients and real source cursors; actual native accumulation, LR propagation, recovery and finite runtime still require qualification. No released-model or accelerator call occurred in this preparation stage. [Report](validation/uniform_lm_preparation_20261021/REPORT.md).

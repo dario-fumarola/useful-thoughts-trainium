@@ -1,9 +1,9 @@
 # Next research work
 
-The fixed-head fresh confirmation is complete. Preserve the repeated calculation gain, order 45's unresolved position-control comparison, every natural-text loss, and the positive simple no-calculation ensemble. [Report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md).
+Uniform-LM source and CPU preparation are complete: all 38,912 windows independently check, the one-loss path passes dense-gradient/accumulation tests, and concrete qualification/four-setting protocols pass real-data cursor checks. [Report](validation/uniform_lm_preparation_20261021/REPORT.md) · [Design](configs/uniform_lm_baseline.json).
 
-Before another continued-pretraining study, prepare a genuine **uniform next-token baseline**: original text only, equal coefficients on eligible token losses, no second continuation branch. Pin an unenriched source distribution, separate training/development/confirmation sources, token exposure, batch accumulation, optimizer schedule, numerical checks and finite resource cost before fitting. Development may compare a small declared set of schedules; confirmation uses a fixed recipe.
+1. Qualify actual native training at batch 256 / accumulation 8: initial loss, one reducer, FP32 master update, actual optimizer LR after warmup/decay, replica agreement and full-state restore. Measure the complete workload against the proposed finite budget before fitting.
+2. Compare the four declared ordinary-training settings on the same 32,768 sources, source order and 17.269 million tokens. Freeze all terminal checkpoints before DEV scoring; report every result.
+3. Freeze the selected recipe/checkpoint before scoring the untouched 4,096-source CONFIRM cohort. Compare full-window NLL with B0 and report suffix/calculation diagnostics separately.
 
-This addresses a different question from frozen selective inference. The next pretraining comparison needs a competent direct-training reference; the present result supplies a useful targeted inference mechanism and a measured natural-distribution limitation.
-
-[Status](STATUS.md) · [Roadmap](docs/RESEARCH_ROADMAP.md) · [Historical queue](docs/archive/NEXT_STEPS_through_20261021.md).
+The completed selector study retains six targeted gains, one unresolved position-control comparison, every natural loss and the positive no-calculation ensemble. A competent uniform-NTP reference addresses the next pretraining question; it does not retroactively repair those results. [Selector report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md).
