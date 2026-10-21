@@ -1,9 +1,10 @@
 # Current queue
 
-New source extension is COMPLETE/PASS; actual-model qualification is RUNNING. The earlier db8d722 attempt remains closed.
+New source extension is COMPLETE/PASS; actual-model qualification stopped on communicator startup; one corrective attempt is prepared. The earlier db8d722 attempt remains closed.
 
 - Source report validation/causal_reader_source_extension_complete_20261021.json:7722eligible unique calculations, all original cohort sizes preserved; independent13344source/native and6672expression checks PASS. No source retry or smaller replacement.
-- Qualification supervisor2230576/session24180 runs frozen e55c702, control local/diagnostics/causal-reader-gate-source-extension-v1. Cap0.5reserved physical-chip-hours/120wall minutes;32dedicated qualification sources only.
+- First qualification2230576/session24180 CLOSED1 at13:10:38UTC; failed Traw shard0 runtime bootstrap before its features. All native processes closed. Original outputs preserved; no head/DEV result.
+- Freeze dedicated-port launcher correction after1966CPU checks. New control local/diagnostics/causal-reader-gate-source-extension-launcher-v2; prior0.045027reserved-chip-hours remain charged to the same0.5/8ceilings. Same models/cohorts/head/tolerances/gates; one explicit corrective qualification, no automatic retry.
 - After all actual workers physically close, run scripts/check_causal_reader_qualification.py and scripts/causal_reader_cost_profile.py once on their original outputs. Numerical/causal/normalization PASS and measured projection<=8whole reserved-chip-hours precede a separate whole-question science release.
 - If qualified, execute one fixed source/feature/head/readout experiment, preserve all attempts and four terminal800heads before DEV; independently reconstruct the primary readout with scripts/check_causal_reader_readout.py. No automatic campaign.
 - No writerRL,newCPT,scale,officialTEST,cloud/stack change. Keep35GiBfilesystem/512GiBhost reserve and all original states/cache.

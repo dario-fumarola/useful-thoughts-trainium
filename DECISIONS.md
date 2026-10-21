@@ -1719,3 +1719,10 @@ The owner explicitly distinguishes db8d722's577-example source shortfall from a 
 ## 2026-10-21 13:00UTC: complete sources release only bounded actual-model qualification
 
 The fixed four-shard extension closes successfully:7722eligible calculations versus6672required. All original cohorts are built, and independent reconstruction passes13344original source windows,6672exact expressions and18243true equations. No model was called during source preparation. Release only the existing32-source actual-model qualification, <=0.5reserved physical-chip-hours and120wall minutes, under new identity causal-reader-gate-20261021-source-extension-v1. Frozen source e55c702/protocol993b17f...; actual qualification/profile must pass before a separate whole-question decision within8reserved-chip-hours. This resolves source feasibility, not efficacy. Original db8d722 and V29/V30 results remain unchanged.
+
+
+## 2026-10-21 13:15UTC: bounded launcher-only qualification correction
+
+The first actual qualification stopped at Traw shard0 Neuron communicator initialization, after generation, allCPU references and B0native features completed. Supervisor stopped peers; all chips are idle. No complete numerical verdict/head/DEV result exists. The launcher omitted distinct communication ports required by the existing runbook. Assign/preflight/record unique loopback runtime and torch ports per native worker. This is consistent with the failure; actual corrective qualification must demonstrate recovery. [Official runtime environment reference](https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-runtime/api/nrt-env-var-reference.html).
+
+Preserve the failed attempt and its0.04502717259055418reserved-chip-hours. Permit exactly one newly frozen corrective qualification, identity causal-reader-gate-20261021-source-extension-launcher-v2, after1966CPU tests/smoke/compile pass. Unchanged models, source cohorts, writer/reader/head, numerical tolerances and gates. Charge all prior cost to the same0.5qualification/8whole-question limits. No automatic retry, budget increase, science release or result reinterpretation.

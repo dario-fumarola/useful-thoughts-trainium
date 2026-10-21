@@ -2,15 +2,15 @@
 
 
 
-## Running: bounded actual-model selector qualification
-Question: do actual frozen-model features satisfy numerical/causal contracts and fit the8-chip-hour plan?
-ID:causal-reader-gate-20261021-source-extension-v1; qualification only, no science release.
-Supervisor2230576/session24180 RUNNING since13:00:11UTC; maximum0.5reserved physical-chip-hours and120wall minutes.
-ProtocolSHA993b17f16078ec771aa56bce4d8c71f9919102c6a470a6a18b13b617d21623d2; frozen model source e55c702.
-Output local/diagnostics/causal-reader-gate-source-extension-v1/qualification-v1; dedicated32sources only.
-Physical8/cores32..35; actual B0 and original first V29T remain frozen. No head fitting or DEV readout released.
-Require actual CPU/native/causality/normalization PASS and measured cost profile before one separate science decision.
-No writerRL,newCPT,scale or TEST. Preserve all states/cache and35GiBfilesystem/512GiBhost reserve.
+## Incomplete: actual-model qualification; launcher correction prepared
+Question: do actual features qualify numerically/causally and fit the8-chip-hour plan?
+First identity causal-reader-gate-20261021-source-extension-v1; supervisor2230576/session24180 CLOSED1 at13:10:38UTC.
+Generate, all3CPU references and B0native stages closed; Traw shard0 failed in torch_xla.device communicator startup.
+No numerical verdict, head fit or DEV readout. All peers stopped; topology confirms0remaining native processes.
+Failed attempt costs0.045027reserved-chip-hours; charge it to the original cumulative0.5qualification/8whole-question ceilings.
+Correction assigns/preflights distinct runtime and torch ports per worker; no model/scientific/numerical settings change.
+1966CPU tests+smoke/compilePASS. One explicitly frozen corrective attempt is prepared; no automatic retry.
+Record validation/causal_reader_qualification_startup_failure_20261021.json. Source cohorts remain COMPLETE/PASS.
 
 ## New preparation: fixed source extension
 Question: can four additional TRAIN shards complete the unchanged selective-reader cohorts?

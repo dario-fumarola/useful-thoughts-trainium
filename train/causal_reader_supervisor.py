@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 import shutil
 import signal
+import socket
 import subprocess
 import sys
 import time
@@ -25,6 +26,27 @@ R=Path('/home/ubuntu/dario')
 W=Path(__file__).resolve().parents[1]
 
 
+def worker_ports(cursor):
+    """Two distinct loopback ports, probed before launch and never reused.
+
+    Independent one-core runtimes still bootstrap a communicator. Letting
+    simultaneous workers share implicit bootstrap defaults can cross-connect
+    them. Keep allocations above this host's ephemeral range and record them.
+    """
+    held=[];ports=[]
+    try:
+        while len(ports)<2 and cursor<65535:
+            candidate=cursor;cursor+=1
+            probe=socket.socket()
+            try:probe.bind(('127.0.0.1',candidate))
+            except OSError:probe.close();continue
+            held.append(probe);ports.append(candidate)
+        if len(ports)!=2:raise RuntimeError('No unused fixed-range worker communication ports')
+        return ports,cursor
+    finally:
+        for probe in held:probe.close()
+
+
 class Runner:
     def __init__(self,a,p):
         helper=R/'local/diagnostics/real-source-balanced-v17-world8-target640-qualification-v2/qualify.py'
@@ -34,7 +56,8 @@ class Runner:
         self.h=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.h)
         self.a=a;self.p=p;self.deadline=datetime.fromisoformat(a.deadline_utc)
         self.workers=[];self.reservations=[];self.live=[]
-        self.initial_spent=0.;self.ceiling=.5 if a.phase=='qualification' else 8.
+        self.initial_spent=p.get('prior_qualification_reserved_chip_hours',0.)
+        self.ceiling=.5 if a.phase=='qualification' else 8.
         if a.phase=='science':
             release=require_science_release(p,a.protocol)
             self.initial_spent=read(release['profile_file'])['actual_qualification_reserved_chip_hours']
@@ -42,6 +65,7 @@ class Runner:
                 raise ValueError('Worker deadline exceeds whole-question release')
         self.template=read(R/'local/science/control/W-seed20261018-development64-evaluation-v1/environment.template.json')
         self.namespace=hashlib.sha256(str(a.output.resolve()).encode()).hexdigest()[:10]
+        self.port_cursor=61000+(int(self.namespace,16)%100)*32
         a.output.mkdir(parents=True,exist_ok=False)
 
     def spent(self):return self.initial_spent+sum(v['elapsed_wall_seconds']*v['reserved_physical_chips']/3600
@@ -74,9 +98,15 @@ class Runner:
                 tmp=Path('/dev/shm')/f'crg-{self.namespace}-{name}-{number}';tmp.mkdir(mode=0o700)
                 env.update(PYTHONPATH=str(W)+':'+str(R/'local/test-deps'),USE_TORCH_XLA='0',
                     OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',TMPDIR=str(tmp),XLA_COMPILATION_CACHE_SIZE='256')
+                communication=None
                 if core is not None:
                     if core//4 not in devices:raise ValueError('Worker outside fixed reserved physical chips')
                     env.update(NEURON_RT_VISIBLE_CORES=str(core),NEURONCORE_NUM_DEVICES='1')
+                    ports,self.port_cursor=worker_ports(self.port_cursor)
+                    env.update(NEURON_RT_ROOT_COMM_ID=f'127.0.0.1:{ports[0]}',
+                               MASTER_ADDR='127.0.0.1',MASTER_PORT=str(ports[1]))
+                    communication=dict(runtime_root=env['NEURON_RT_ROOT_COMM_ID'],
+                                       torch_master=env['MASTER_ADDR']+':'+env['MASTER_PORT'])
                 else:env.pop('NEURON_RT_VISIBLE_CORES',None)
                 remaining=max(1,int((self.deadline-datetime.now(timezone.utc)).total_seconds()))
                 if devices:
@@ -93,7 +123,7 @@ class Runner:
                 launched.append(record);self.live.append(record)
                 atomic_json(control/'launch.json',dict(command=argv,identity=owned,core=core,
                     protocol_sha256=sha256_file(self.a.protocol),supervisor_sha256=sha256_file(__file__),
-                    source_directory=str(W),created_utc=utc_now()))
+                    source_directory=str(W),communication=communication,created_utc=utc_now()))
             with (directory/'host-samples.jsonl').open('x') as samples:
                 while any(j['proc'].poll() is None for j in launched):
                     self.check(time.monotonic()-phase_start,devices)
@@ -209,6 +239,7 @@ def main():
         status='ALL_SCIENCE_FEATURE_AND_TRAIN_HEAD_PROCESSES_CLOSED'
     atomic_json(a.output/'runtime.json',dict(status=status,protocol_sha256=sha256_file(a.protocol),
         workers=runner.workers,native_reservations=runner.reservations,
+        prior_reserved_chip_hours=runner.initial_spent,
         total_reserved_chip_hours_including_prior_qualification=runner.spent(),
         supervisor_sha256=sha256_file(__file__),completed_utc=utc_now()))
 

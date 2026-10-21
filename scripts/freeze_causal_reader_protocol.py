@@ -38,6 +38,17 @@ def main():
             or decision['scientific_execution_released']
             or decision.get('experiment_identity')!=a.identity):
         raise ValueError('Finite reviewed qualification-only decision required')
+    prior=decision.get('prior_qualification_reserved_chip_hours',0.)
+    if not 0<=prior<.5:raise ValueError('Finite cumulative qualification budget required')
+    if prior:
+        receipt=decision['prior_qualification_failure']
+        if (sha256_file(receipt['file'])!=receipt['sha256']
+                or read(receipt['file'])['reserved_chip_hours_including_prior_qualification']!=prior):
+            raise ValueError('Original failed-attempt cost receipt required')
+        topology=decision['prior_physical_closure']
+        if (sha256_file(topology['file'])!=topology['sha256']
+                or any(v['neuron_processes'] for v in read(topology['file']))):
+            raise ValueError('Previous attempt must physically close before a corrective qualification')
     binding_file=ROOT/'local/diagnostics/real-cpt-scaffold-v29-evaluation-v1/bindings/computation-seed2026102029.json'
     binding=read(binding_file)
     if (binding['status']!='AUDITED_V29_TERMINAL1280' or binding['step']!=1280
@@ -65,6 +76,7 @@ def main():
     structured=ROOT/'validation/causal_reader_gate_design_20261021.json'
     cost=ROOT/'validation/causal_reader_cost_plan_20261021.json'
     atomic_json(a.output,dict(status='FROZEN_CAUSAL_READER_PROTOCOL',identity=a.identity,
+        prior_qualification_reserved_chip_hours=prior,
         created_utc=utc_now(),sources=sources(),design_file=str(structured),design_sha256=sha256_file(structured),
         cost_plan_file=str(cost),cost_plan_sha256=sha256_file(cost),data=data,
         data_audit_file=str(a.audit.resolve()),data_audit_sha256=sha256_file(a.audit),

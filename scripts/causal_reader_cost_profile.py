@@ -31,7 +31,10 @@ def main():
         raise ValueError('Whole physical-chip allocation for all five native stages required')
     # Include unused cores during each reserved-chip phase. Summing per-core
     # worker time would undercount stragglers and partial-chip causality work.
-    spent=sum(r['elapsed_wall_seconds']/3600 for r in reservations)
+    prior=p.get('prior_qualification_reserved_chip_hours',0.)
+    if runtime.get('prior_reserved_chip_hours',0.)!=prior:
+        raise ValueError('All prior corrective qualification costs must remain charged')
+    spent=prior+sum(r['elapsed_wall_seconds']/3600 for r in reservations)
     writer=[];strata=set()
     for part in range(4):
         directory=a.notes/f'part-{part}';meta=read(directory/'complete.json')
@@ -67,6 +70,7 @@ def main():
     atomic_json(a.output,dict(status='PASS_FINITE_ACTUAL_PROFILE' if decision else 'FAIL_FINITE_ACTUAL_PROFILE',
         protocol_sha256=digest,qualification_sha256=sha256_file(a.qualification),
         runtime_sha256=sha256_file(a.runtime),actual_qualification_reserved_chip_hours=spent,
+        prior_qualification_reserved_chip_hours=prior,
         writer128_max_warm_seconds=max(writer),reader_max_warm_seconds_per_context=max(reader),
         projected_writer_reserved_chip_hours=writer_hours,projected_2x_reader_reserved_chip_hours=reader_hours,
         fixed_startup_and_qualification_allowance_reserved_chip_hours=.75,

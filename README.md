@@ -1,10 +1,12 @@
 # Useful Thoughts on Trainium
 
-**Current: the new fixed source extension passes; bounded actual-model qualification is running.**
+**Current: the new fixed source extension passes; the first actual-model qualification stopped on communicator startup.**
 Four additional TRAIN shards supply a combined7,722eligible unique calculations, above6,672required.
 All13,344selected native source windows and6,672calculation identities pass independent reconstruction.
 The full5,120TRAIN/4,096-per-DEV-stratum/32qualification allocation is preserved.
-No selector has been fitted or scientifically evaluated; numerical/causal and measured-cost qualification must pass first.
+No selector has been fitted or scientifically evaluated. A dedicated-port launcher correction passed1,966CPU tests;
+one corrective qualification is prepared, charging the failed0.045chip-hours to the same0.5/8ceilings.
+Numerical/causal and measured-cost qualification must pass before science. [Startup record](validation/causal_reader_qualification_startup_failure_20261021.json).
 The earlier db8d722 feasibility stop remains closed and unchanged. [New source report](validation/causal_reader_source_extension_complete_20261021.json).
 
 **V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN
@@ -34,7 +36,7 @@ unique calculations versus6,672required across TRAIN/DEV/qualification, short by
 An independent recount agrees; the sample size and exclusions remain unchanged.
 The guarded workflow passes1,964CPU tests. That closed attempt made no released-model calls or fits.
 A separately frozen four-shard extension now resolves the allocation without changing exclusions or sample sizes;
-actual qualification is running under a0.5reserved-chip-hour cap, before any release of the8-chip-hour whole experiment.
+actual qualification remains incomplete under a0.5reserved-chip-hour cumulative cap, before any release of the8-chip-hour whole experiment.
 Source availability is not evidence for or against selector efficacy.
 The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
 confirms that V29's raw arm reweights continuations; the source review does not

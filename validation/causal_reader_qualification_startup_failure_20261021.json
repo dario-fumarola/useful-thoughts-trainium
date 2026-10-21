@@ -1,0 +1,62 @@
+{
+  "budget": "Charge all failed-attempt reserved-chip time to the same0.5qualification/8whole-question ceilings; no increase.",
+  "closed_complete_stages": [
+    "32greedy notes",
+    "32B0 CPU references",
+    "32Traw CPU references",
+    "32Tnote CPU references and greedy behavior checks",
+    "32B0 native feature rows"
+  ],
+  "created_utc": "2026-10-21T13:14:52+00:00",
+  "diagnosis": "Launcher omitted dedicated runtime/bootstrap and torch communication ports. This is consistent with the startup failure; unique-port corrective qualification is required before claiming the cause resolved.",
+  "error": "NRT BuildGlobalComm: Failed to RX / failed to init NCCL comm, during torch_xla.device() before T_raw shard0 feature extraction.",
+  "experiment_head_fits": 0,
+  "experiment_identity": "causal-reader-gate-20261021-source-extension-v1",
+  "failed_native_stage": "features-T_raw",
+  "failure_receipt_sha256": "36f9af8255ccec234f59e2baf1fc933744708dc540e9c132597b2f45951534fb",
+  "native_failure": {
+    "native_reservations": [
+      {
+        "elapsed_wall_seconds": 89.84280047897482,
+        "physical_devices": [
+          8
+        ],
+        "reserved_physical_chips": 1,
+        "stage": "generate"
+      },
+      {
+        "elapsed_wall_seconds": 39.8758229240193,
+        "physical_devices": [
+          8
+        ],
+        "reserved_physical_chips": 1,
+        "stage": "features-B0_raw"
+      },
+      {
+        "elapsed_wall_seconds": 32.3791979230009,
+        "physical_devices": [
+          8
+        ],
+        "reserved_physical_chips": 1,
+        "stage": "features-T_raw"
+      }
+    ],
+    "reserved_chip_hours_including_prior_qualification": 0.04502717259055418,
+    "status": "INCOMPLETE_NO_RETRY",
+    "utc": "2026-10-21T13:10:38+00:00",
+    "worker_exit_codes": [
+      1,
+      -15,
+      -15,
+      -15
+    ]
+  },
+  "numerical_verdict": "NOT_COMPLETE",
+  "official_runtime_environment_reference": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/neuron-runtime/api/nrt-env-var-reference.html",
+  "physical_native_processes_after_cleanup": 0,
+  "protocol_sha256": "993b17f16078ec771aa56bce4d8c71f9919102c6a470a6a18b13b617d21623d2",
+  "repair": "Assign and preflight distinct loopback runtime/torch ports for every native worker; record all allocations. Preserve every original output and numerical/scientific setting. One explicitly frozen corrective qualification, not automatic retries.",
+  "scientific_DEV_rows": 0,
+  "source_commit": "e55c702",
+  "status": "INCOMPLETE_COMMUNICATOR_STARTUP_NOT_SELECTOR_RESULT"
+}
