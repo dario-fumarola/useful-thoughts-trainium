@@ -6,7 +6,8 @@ V30 is COMPLETE and this reward branch is CLOSED:
 - Report validation/candidate_utility_v30_complete_20261021/REPORT.md; all2304attempts/3840scores andsource/model/gates preserved.
 - Independent source/context/HF/statistical checks pass; portable50file numerical replay passes withoutTorch/models.
 - Public release v30-candidate-utility-20261021 is COMPLETE:3assets/747760bytes all unauthenticated full-download/SHA/readback/fsync verified. Do not rerun science/qualification/checkers/publishers.
-- Next CPU/read-only task: audit frozen raw-loop loss normalization, two-backward accumulation, reduction/optimizer ownership and masks against the actual protocol. No new model calls. Existing objective/exposure audit is a lead,not a cause.
+- Read-only raw-loop audit is COMPLETE: intended normalization, accumulated backward passes, one optimizer/gradient-reduction owner; all actual protocol/source bindings match. Report validation/real_cpt_v29_raw_loop_review_20261021.json. No regression cause identified.
+- Next preparation is CPU-only: make a concrete causal reader/reference-preservation proposal, with a true raw fallback and an account of the zero-mixing learning-signal problem. Existing fixed-mixer sweeps do not qualify as a new mechanism; no model calls or learning are released.
 - No training/RL/scale is queued. Before any new CPT proposal,investigate the shared raw-control regression; preserve uncertainty if the code implements the intended objective.
 - Future preparation must identify a materially different mechanism and preserve all current negatives. No further tuning on these256 documents can count as confirmation.
 

@@ -13,7 +13,8 @@ Independent all3840contexts/statistics/decisions/fixed4HF checks PASS; model-fre
 Reserved chip-hours science.188266+qualification.138581; all original states/evidence retained.
 Report:validation/candidate_utility_v30_complete_20261021/REPORT.md. Package local/releases/v30-candidate-utility-20261021-v2.
 Public release v30-candidate-utility-20261021 targets5d686f0;3assets/747760bytes fullunauthenticated download/SHA/readback/fsync PASS.
-Next: read-only frozen raw-loop implementation audit; no model job queued or new learning released.
+Read-only raw-loop audit confirms intended normalization/accumulation/reducer ownership; cause of regression remains unidentified.
+Next CPU-only reader/reference-preservation proposal; no model calls or learning released.
 
 ## Closed: real continuation CPT, published
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?

@@ -1,5 +1,40 @@
 # Long-term proof ladder
 
+## V30 boundary — October 21
+
+The [completed candidate/reward diagnostic](../validation/candidate_utility_v30_complete_20261021/REPORT.md)
+closes this reward branch without RL. Hindsight best-of-eight gains only
++0.082 nats over the same reader's raw full16 prediction, with an interval
+spanning zero, and trails unchanged B0 by1.083 nats. Numeral gains coexist with
+prose losses. Correctness ranking is positive on25 mixed documents; its gate
+fails the declared minimum32, not its direction. Do not describe this as proof
+that predictive reward cannot recognize correct computation.
+
+The [raw-loop review](../validation/real_cpt_v29_raw_loop_review_20261021.json)
+finds the intended per-example means, accumulated clean/auxiliary backward passes,
+one optimizer step and one ZeRO parameter-gradient reduction. Both actual raw
+protocols match all frozen sources. Together with the exposure/loss audit, this
+removes specific implementation suspicions; it does not identify the cause of
+fresh-document regression or prove every numerical detail correct.
+
+No further model call or training run is queued. CPU-only preparation may now
+consider a materially different prediction interface that preserves an unchanged
+raw reference and can decline a calculation's contribution. This is a hypothesis,
+not a released experiment or a novelty claim. A real raw fallback differs from
+an empty calculation wrapper. [Quiet-STaR's mixing mechanism and instability discussion](https://arxiv.org/html/2403.09629v2)
+are relevant prior work; exact-zero mixing can also remove writer reward variation.
+Any proposal must specify how its reader learns without erasing that signal,
+how all inputs remain causal, and how it beats the unchanged raw reference on
+fresh full continuations. Hindsight routing cannot count as a deployed result.
+
+Keep training benefit, retained inference computation, and internalization
+separate. Removing thoughts is an additional goal, not a requirement for every
+useful computation method. It also cannot rescue V29/V30's failed full-prediction
+criteria. Neither another scalar reward offset nor more candidate draws is a
+new mechanism by itself; the existing [objective notes](REFERENCE_NOTES.md)
+explain baseline cancellation and the limits of the fixed-reward policy-gradient
+argument. No CPU proposal automatically releases RL or another CPT run.
+
 ## V29 boundary — October20
 
 The [completed real-continuation study](../validation/real_cpt_scaffold_v29_complete_20261020/REPORT.md)

@@ -1,0 +1,117 @@
+{
+  "status": "READ_ONLY_FROZEN_RAW_LOOP_REVIEW_NO_NEW_MODEL_EXECUTION",
+  "source_files": {
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/train/partial_state_driver.py": "d10f3fb4a911d6c22060b2c63dfd1bc8abed72972bc00229cc7b5017c1bf59ea",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/tests/test_real_cpt_scaffold.py": "5a608c7c649045f25be03729fc62359859058b93d31675edcf4c8ca4e6aa63a7",
+    "/home/ubuntu/dario/local/worktrees/real-cpt-scaffold-v29/tests/test_masked_causal_ce.py": "bc30a3182f55d6262731a0a6c7d9b406c722b43cf82164ec9c4f03c47be0f2ef"
+  },
+  "installed_sources": {
+    "/home/ubuntu/ema-trainium/.venv/lib/python3.12/site-packages/torch_xla/distributed/zero_redundancy_optimizer.py": "c2839abd822d04603ab4f490b7eadf103584819e7962684b5c9bceed8c6c2920",
+    "/home/ubuntu/ema-trainium/.venv/lib/python3.12/site-packages/torch_xla/amp/syncfree/adamw.py": "87daaf2cc30f63ea58e24e6c17f24beeaa013759d6ed5e850590c2d430facef1"
+  },
+  "protocol_bindings": [
+    {
+      "seed": 2026102029,
+      "protocol_sha256": "c29fb81107ecaae8df3acd5edee720c9f2d15ac1f45d05a2986b854a5073239a",
+      "matches_actual_run": true,
+      "all_frozen_source_hashes_match": true,
+      "world": 8,
+      "accumulation": 1,
+      "clean_microbatch": 4,
+      "auxiliary_microbatch": 1,
+      "lr": 1e-05,
+      "schedule": "constant"
+    },
+    {
+      "seed": 2026102030,
+      "protocol_sha256": "966917d9cda7a9cccf090185dd1de86c557e7bdc4d10742455864167f1a7d29c",
+      "matches_actual_run": true,
+      "all_frozen_source_hashes_match": true,
+      "world": 8,
+      "accumulation": 1,
+      "clean_microbatch": 4,
+      "auxiliary_microbatch": 1,
+      "lr": 1e-05,
+      "schedule": "constant"
+    }
+  ],
+  "findings": [
+    {
+      "claim": "Clean and auxiliary gradients accumulate before one optimizer step; no intervening zero_grad.",
+      "source": "train/partial_state_driver.py",
+      "lines": [
+        681,
+        695,
+        709,
+        730
+      ],
+      "classification": "Static control-flow observation; not proof of arbitrary device execution."
+    },
+    {
+      "claim": "Exact active target positions are shifted by one; each component is averaged per example, then per batch.",
+      "source": "train/masked_causal_ce.py",
+      "lines": [
+        80,
+        83,
+        106,
+        107,
+        108,
+        109
+      ],
+      "classification": "Static observation plus existing dense causal loss/gradient tests."
+    },
+    {
+      "claim": "Auxiliary-only batch mean is multiplied by .25, then continuation coefficient .5: effective local-batch coefficient .125.",
+      "source": "train/real_cpt_scaffold.py",
+      "lines": [
+        152,
+        162,
+        163,
+        164,
+        198,
+        199,
+        200
+      ],
+      "classification": "Matches both complete recorded loss trajectories within3.5e-7; prior objective audit."
+    },
+    {
+      "claim": "ZeRO reduces/scatters once using scale1/group_size, then clips and steps; the driver does not separately reduce parameter gradients.",
+      "source": "installed torch_xla/distributed/zero_redundancy_optimizer.py and frozen driver",
+      "lines": [
+        339,
+        367,
+        419,
+        430,
+        436
+      ],
+      "classification": "Static source/API observation. Scalar finite/metric reductions are not a second parameter-gradient reduction."
+    },
+    {
+      "claim": "Constant LR1e-5, AdamW(.9,.95),eps1e-8,weight decay.1,global clipping1 match the declared run.",
+      "source": "train/partial_state_driver.py",
+      "lines": [
+        637,
+        638,
+        639
+      ],
+      "classification": "Configuration/source match; no attribution of degradation to these choices."
+    },
+    {
+      "claim": "Existing parametrized two-forward tests accumulate both backward passes and match all tied gradients to dense CPU reference.",
+      "source": "tests/test_real_cpt_scaffold.py",
+      "lines": [
+        118,
+        162
+      ],
+      "classification": "CPU correctness evidence, not fresh scientific training or a mature-model gradient replication."
+    }
+  ],
+  "limits": [
+    "No hidden-state, gradient or model forward was run for this audit.",
+    "No unintended denominator, branch-gradient reset or explicit double-reduction was found in this inspected path. This does not rule out all numerical or software errors.",
+    "The regressing raw control is intentionally reweighted and repeatedly exposed to a small selected corpus. Existing evidence does not isolate weighting, repetition, LR or data selection as the cause.",
+    "The raw implementation and failed V29/V30 scientific decisions remain unchanged. No new training or model call is released."
+  ]
+}
