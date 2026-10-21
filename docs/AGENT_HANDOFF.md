@@ -2,7 +2,7 @@
 R=/home/ubuntu/dario; public useful-thoughts-trainium. User autonomy/patience; no activegoal. No agent retries beforeOct24.
 LATEST SCOPE: one bounded TRAIN-only candidate/reward diagnostic. V30 has now CLOSED/FAILED. Do not launch RL,more modelcalls,new CPT,scale or a rescue sweep. Existing read-only raw-control investigation identifies reweighting/repetition hypotheses,not cause. Future CPU preparation must identify a materially different mechanism,not keep optimizing this failed branch.
 
-V30 ALL EXECUTION AND CHECKERS CLOSED0; PUBLICATION FINISHING:
+V30 ALL EXECUTION/CHECKERS/PUBLICATION CLOSED0; NO MODEL JOB QUEUED:
 C=R/local/diagnostics/candidate-utility-v30-v1. Science57799 closes0 at00:40:53UTC; all12workers andphysical0close. All2304notes/3840scores retained. No caps/empty/errors.
 W=R/local/worktrees/candidate-utility-v30 frozena84c77b. Models/protocol/gates remainimmutable. Do not rerun any producer,qualification,checker or oldlauncher.
 FirstTterminal1280 modelSHAbacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4; data390eligibleallindependentraw/native/exclusionverified,first8qual+next256diagnosticfixedhash.
@@ -12,7 +12,11 @@ VERDICT: best8−raw+.082[-.241,.394];best8−B0−1.083[-1.569,-.616];opportuni
 AlignmentdirectionPOSITIVE+5.112[3.189,7.215]on25mixed documents; gateFAILSminimum32,NOTsign. Correctcanonical1807/2048,helpfulcoverage98passes. Oracle−corrupt+2.774passes. AllrequiredFAIL=>closerewardbranch/noRL.
 Costs science.188266+qualification.138581reservedchip-hours,CPUchecksseparate. Withinrepoverification,notexternalreplication. TRAIN-onlyfixedcheckpoint,nopretrainingnovelty/internalization/autonomouslearningclaim.
 
-PUBLICATION NEXT EXACT:
+PUBLICATION IS NOW COMPLETE (newer than instructions below):
+Result5d686f00b7441369692631729865337bcfcd0527 pushed; publictag v30-candidate-utility-20261021 targetsit. All3assets/747760bytes unauthenticatedfullGET/SHA/readback/fsyncPASS,receipt validation/candidate_utility_v30_public_release_20261021.json. Verifier50134closes0. Do not rerunpublishing/bundling/checkers. Sourcepackagingnamespacefixandshort-SHA422receiptsremainlocal; no scientificchanges.
+NEXT: CPU/read-only audit of frozenV29raw loop: lossnormalization,multiplebackward/reduction/optimizerownership/masks versusactualprotocol. No modelcalls/training. Ifintendedobjectiveimplemented,retainuncertaintyaboutwhyitregresses; no additionalexperimentautomaticallyreleased.
+
+PREVIOUS PUBLICATION DETAILS (closed):
 Root report validation/candidate_utility_v30_complete_20261021/REPORT.md,wrapper .json,allCSV/gates/aggregates/fixed8examples/independent/publicreplayproof prepared. README/STATUS/NEXT_STEPS/DECISIONSupdated,butuncommittedpublicationchangesareintentional.Preserve.
 S=R/local/releases/v30-candidate-utility-20261021-v2. Archive v30-candidate-evidence.tar.gz741350bytes plusrelease-manifest.json. All50membersfullreadback/SHA/fsyncPASS.
 Firstbundlefailedonlybecauseitassumedtrain/__init__.pyexists(namespacepackage). OriginalpartialS-v1/log retained; correctedbundlercreatedfreshv2,NOTresampledanything.

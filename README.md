@@ -8,7 +8,9 @@ that is below the frozen32-document alignment requirement. Numerical gain again
 comes with a prose-prediction cost. [Complete report](validation/candidate_utility_v30_complete_20261021/REPORT.md).
 All2,304 attempts/3,840 scores and the fixed gates are preserved; independent
 context/HF checks and model-free public numerical replay pass. No further model
-run is queued. V29's result below remains unchanged.
+run is queued. [Public evidence release](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v30-candidate-utility-20261021)
+has three assets, all fully downloaded and hash-verified without authentication.
+V29's result below remains unchanged.
 
 **V29 is complete: generated computation improves numerical completions, but the
 primary direct-prediction criterion fails. Ordinary FineMath retention meets the

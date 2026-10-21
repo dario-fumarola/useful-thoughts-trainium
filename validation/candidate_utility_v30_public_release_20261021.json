@@ -1,0 +1,36 @@
+{
+  "assets": [
+    {
+      "bytes": 405,
+      "fsync": true,
+      "local_readback": true,
+      "name": "public-replay.json",
+      "sha256": "ed82b57a9a1586f6f5acce289bcaf9e9c29ff4ce052652f847ef81c960771022",
+      "unauthenticated_full_download": true
+    },
+    {
+      "bytes": 6005,
+      "fsync": true,
+      "local_readback": true,
+      "name": "release-manifest.json",
+      "sha256": "67eee9a1c3e30a91a8b035323a6c98ebc25d03a4e808bb0a795741c1082a3eed",
+      "unauthenticated_full_download": true
+    },
+    {
+      "bytes": 741350,
+      "fsync": true,
+      "local_readback": true,
+      "name": "v30-candidate-evidence.tar.gz",
+      "sha256": "434cb40a1a8e505fd0015c2009cde7ed6e552c72044289ee8b63c5f22bcd3365",
+      "unauthenticated_full_download": true
+    }
+  ],
+  "limits": "Verifies publication delivery and exact bytes, not external scientific replication.",
+  "release_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v30-candidate-utility-20261021",
+  "status": "PASS_V30_PUBLIC_RELEASE_ALL_FULL_UNAUTHENTICATED_DOWNLOADS_SHA_READBACK_FSYNC",
+  "tag": "v30-candidate-utility-20261021",
+  "target_commit": "5d686f00b7441369692631729865337bcfcd0527",
+  "total_bytes": 747760,
+  "verified_utc": "2026-10-21T01:06:55.865127+00:00",
+  "verifier_source_sha256": "f33c52196a28b3d3115c6558c5b6d816e093bae29675521c8bfd9f6c8e0548ef"
+}

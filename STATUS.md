@@ -1,6 +1,6 @@
-# Status — 2026-10-21 01:05 UTC
+# Status — 2026-10-21 01:08 UTC
 
-## Closed: candidate/reward diagnostic; publication finishing
+## Closed: candidate/reward diagnostic, public
 Question: do correct sampled calculations offer full-continuation improvements recognized by frozen reward?
 ID:candidate-utility-v30;256 new TRAIN docs; fixed first-order V29 writer/reader;G8+greedy; no learning.
 All2,304 attempts/3,840 scores and12workers physically close0; no errors/caps/empty notes.
@@ -12,7 +12,8 @@ Oracle−corrupt+2.774[2.458,3.109],plumbing PASS. Overall FAIL: close this rewa
 Independent all3840contexts/statistics/decisions/fixed4HF checks PASS; model-free50file public replay PASS.
 Reserved chip-hours science.188266+qualification.138581; all original states/evidence retained.
 Report:validation/candidate_utility_v30_complete_20261021/REPORT.md. Package local/releases/v30-candidate-utility-20261021-v2.
-Next: finish authorized public release/full-download verification; no model job queued or new learning released.
+Public release v30-candidate-utility-20261021 targets5d686f0;3assets/747760bytes fullunauthenticated download/SHA/readback/fsync PASS.
+Next: read-only frozen raw-loop implementation audit; no model job queued or new learning released.
 
 ## Closed: real continuation CPT, published
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?

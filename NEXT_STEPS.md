@@ -5,8 +5,9 @@ V30 is COMPLETE and this reward branch is CLOSED:
 - Reward recognizes correctness on25mixed docs (positive conditional contrast),but declared minimum32notmet. Do not call that a negative ranking result.
 - Report validation/candidate_utility_v30_complete_20261021/REPORT.md; all2304attempts/3840scores andsource/model/gates preserved.
 - Independent source/context/HF/statistical checks pass; portable50file numerical replay passes withoutTorch/models.
-- Finish public release and full-download/SHAverification of local/releases/v30-candidate-utility-20261021-v2 only. Do not rerun science/qualification/checkers.
-- No new training/modelcalls/RL/scale are queued. Before any new CPT proposal,investigate the shared raw-control regression; the existing objective/exposure audit is a concrete lead,not its cause.
+- Public release v30-candidate-utility-20261021 is COMPLETE:3assets/747760bytes all unauthenticated full-download/SHA/readback/fsync verified. Do not rerun science/qualification/checkers/publishers.
+- Next CPU/read-only task: audit frozen raw-loop loss normalization, two-backward accumulation, reduction/optimizer ownership and masks against the actual protocol. No new model calls. Existing objective/exposure audit is a lead,not a cause.
+- No training/RL/scale is queued. Before any new CPT proposal,investigate the shared raw-control regression; preserve uncertainty if the code implements the intended objective.
 - Future preparation must identify a materially different mechanism and preserve all current negatives. No further tuning on these256 documents can count as confirmation.
 
 0. V28 is complete; finish its concrete publication without rerunning producers.
