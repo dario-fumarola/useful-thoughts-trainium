@@ -1,0 +1,127 @@
+{
+  "cohort_file_sha256s": {
+    "diagnostic-labels.jsonl": "f567881d65b02a18fbb3663d16a066c72ab7c4950bfd030efcd64d98ecdbc6b1",
+    "diagnostic-questions.jsonl": "5a119e13c094e9a1cb8c68878ba146a3fb98fbcdce2e3b8b3d7446c1d9603071",
+    "qualification-labels.jsonl": "dcdf43a45eb0b5caefc899ef8a8d860fd84f31cc67ab443b307d6a1c88c61b0c",
+    "qualification-questions.jsonl": "7be0e329332d49a56f2bf3726ae0b6b84ccdb962fd3cbe406846ccf5a1671f14"
+  },
+  "data_audit": {
+    "actual_parquet_rows_checked": 390,
+    "complete_sha256": "0b7e65a8ec562070891b95697a4040e79201f9d6e9e5c33becae61b61f06aa5a",
+    "documents": 390,
+    "independently_true_equations": 1030,
+    "limits": "Within-repository independent source/value reconstruction,not model execution,external replication,pretraining novelty or a diagnostic-model release.",
+    "pool_sha256": "27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f",
+    "source_sha256": "7cf0b8060ef235a5d5578e4196d9faddde13731a1f9fcfb26faf96c4ccc1f9d2",
+    "status": "PASS_ALL_FRESH_POOL_RAW_PARQUET_NATIVE_PREFIX_LABEL_VALUE_AND_EXCLUSION_CHECKS"
+  },
+  "experiment_id": "candidate-utility-v30",
+  "frozen_design": {
+    "correctness": {
+      "arithmetic_error": "An executable generated equation is false, or a fully parsed trace ends with a numeric value different from the prefix-derived root.",
+      "limits": "Canonical execution is a conservative verified subset, not a universal correctness judge. Exact root equality alone does not establish faithful computation.",
+      "other": "All remaining outputs, including valid alternative procedures, are reported separately and are not silently called incorrect.",
+      "verified_canonical": "Every nonempty generated line is exactly one bounded numeric equation; ordered left-expression ASTs match the prefix-derived postorder trace, right values are exact and all equations are true. Whitespace, redundant parentheses and equivalent rational literal spellings are ignored."
+    },
+    "data": {
+      "limits": "Supervised future-RHS curation, not pretraining novelty or independent held-out confirmation. No model outcome enters selection.",
+      "pool": "eligible-new-TRAIN.jsonl",
+      "pool_documents": 390,
+      "pool_sha256": "27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f",
+      "selection": "Sort by SHA256('v30-fixed-cohort:' + item_id); first8 engineering qualification, next256 diagnostic; remaining126 unused.",
+      "source": "Pinned FineMath TRAIN shard61, source/page/content/ordered-AST disjoint from retained prior training and development sources."
+    },
+    "decision": {
+      "alignment": "At least32 documents contain both a verified-canonical sample and an arithmetic-error sample. Within each such document compare mean full16 reward of those two classes; overall mean difference at least0.25nats and positive paired95 lower bound. Report this conditional population explicitly.",
+      "all_required": true,
+      "complete_execution": "All256 documents,9 candidate attempts per document,14 frozen-reader scores per document and B0 raw score required. Errors/unsupported/caps retained; no pass from incomplete outputs.",
+      "correct_helpful_coverage": "At least64 documents contain a verified-canonical sample that beats BOTH raw baselines on full16. Report exact count and document-bootstrap interval.",
+      "negative": "If any requirement fails or alignment is unidentifiable at these fixed settings, do not launch RL under this reward. Close this reward branch until a materially different mechanism is proposed. Do not temperature/prompt/checkpoint sweep to repair this result.",
+      "numerical_only": "A numeral gain that loses on the full continuation cannot pass.",
+      "opportunity": "Best-of8 full16 gain versus same-reader raw, B0 raw, and greedy must each have mean at least0.25nats and positive paired95 lower bound.",
+      "plumbing": "Oracle minus corrupted full16 score has positive paired95 lower bound.",
+      "positive": "Only an oracle opportunity and reward-alignment result. Best-of8 uses future scoring and is not deployable prefix-only selection. No RL or additional training is automatically released."
+    },
+    "execution": {
+      "maximum_logical_cores": 4,
+      "maximum_physical_chips": 1,
+      "qualification": "8 separate source documents; actual fixed-model native/cache/full-span and saved stochastic behavior-LP checks against independent HF, RNG reproducibility. No scientific result inspected before qualification.",
+      "qualification_ceiling_minutes": 45,
+      "release": "Freeze source and concrete one-question review after qualification/profiling. No automatic retry; retain incomplete outputs if a bound is reached.",
+      "resources": "Existing instance only; preserve35GiB filesystem/512GiB host-available floors, all original states and cache.",
+      "science_ceiling_minutes": 75,
+      "total_reserved_chip_hour_ceiling": 2.0
+    },
+    "experiment_id": "candidate-utility-v30",
+    "models": {
+      "absolute_reference": "Unchanged Qwen3-1.7B-Base, raw prediction only",
+      "precision": "FP32 parameters and compute, full-support FP32 likelihood. This is not BF16 rollout/training qualification.",
+      "writer_and_reader": "Original V29 computation-seed2026102029 terminal1280, chronologically first order, checkpoint SHA bacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4"
+    },
+    "policy": {
+      "cap_including_sampled_stop": 128,
+      "generation_inputs": "Separate question-projection file containing only IDs and prefix tokens; no continuation/answer/trace labels.",
+      "greedy_draws": 1,
+      "interface": "Exact V29 native Calculation opening and full Answer closing; no header or re-anchor change.",
+      "prefix_tokens": 512,
+      "save": "Every action, behavior log-probability, action mask, decoded text, sampled stop/cap, RNG seed, prompt hash, latency and actual decode iterations. No resampling or replacement.",
+      "seed": "Positive31-bit integer from first8bytes SHA256('v30-sampling:' + item_id), modulo2147483646 plus1; fixed before candidates.",
+      "stochastic_draws": 8,
+      "stopping": "First native Answer-boundary token or base EOS; include sampled stop, strip it only from reader content; force the complete same Answer boundary for all conditioned scores.",
+      "support": "All defined tokenizer IDs, no top-k/top-p or undocumented penalties; mask undefined head rows only.",
+      "temperature": 0.7
+    },
+    "question": "Do prefix-only candidate calculations contain correct full-continuation improvements that a frozen predictive reward can recognize?",
+    "scope": "One bounded TRAIN-only diagnostic. No updates, RL, new CPT, model-size change, held-panel retuning, or official TEST.",
+    "scoring": {
+      "absolute_baselines": [
+        "same frozen reader raw",
+        "untouched B0 raw"
+      ],
+      "boundary": "Same complete forced Answer boundary for all conditioned contexts, including capped/EOS attempts; never truncate a context or target.",
+      "conditions": [
+        "raw",
+        "empty",
+        "greedy",
+        "sample0",
+        "sample1",
+        "sample2",
+        "sample3",
+        "sample4",
+        "sample5",
+        "sample6",
+        "sample7",
+        "oracle",
+        "corrupt",
+        "other"
+      ],
+      "corrupt": "Same oracle with final root value plus1; prefix-only deterministic control.",
+      "oracle": "Exact prefix-derived full calculation, including root answer; privileged plumbing control.",
+      "other": "Intact greedy note from next item in fixed cohort order, wraparound; never repaired or length matched.",
+      "primary": "Sum log probability of all16 original continuation tokens under the same frozen reader; reward is candidate minus genuine empty-format score.",
+      "secondary": [
+        "K1",
+        "native numeral",
+        "boundary and whitespace",
+        "surrounding prose",
+        "length/cap/empty/unsupported rates",
+        "duplicate candidate content"
+      ]
+    },
+    "separate_prerequisite": "Concretely investigate the regressing V29 raw-control objective, exposures and loss records before any new full CPT proposal. No new CPT currently authorized.",
+    "statistics": {
+      "bootstrap_draws": 5000,
+      "bootstrap_seed": 2026102130,
+      "interval": "Paired document percentile95, conditional on fixed checkpoint, cohort and sampling policy; not training-seed or model-family robustness.",
+      "limits": "Small diagnostic with unadjusted component intervals and conjunctive decision, not powered confirmation or autonomous learned selection.",
+      "unit": "256 unique source documents, not2048 candidate draws"
+    }
+  },
+  "frozen_utc": "2026-10-21T00:13:09+00:00",
+  "limits": [
+    "Data and CPU checks are not a capability result.",
+    "One bounded TRAIN-only diagnostic; no new learning, RL or scale release.",
+    "No usable full-continuation correctness/reward relationship means close this reward branch."
+  ],
+  "status": "CPU_DATA_READY_DESIGN_FROZEN_NO_MODEL_CALLS_OR_LEARNING_RELEASE"
+}

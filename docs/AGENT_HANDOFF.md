@@ -1,3 +1,44 @@
+<!-- Current handoff 2026-10-21 00:17 UTC. Only this first V30 block is active. -->
+R=/home/ubuntu/dario; public GitHub maintained autonomously. No active goal; do not create one. No agents beforeOct24.
+Latest user explicitly limits next work to ONE bounded TRAIN-only candidate/reward diagnostic. No new learning/RL/size jump/long CPT authorized.
+Required: candidate correctness/utility variation; full16 reward prefers correct helpful work and actually beats raw; numerical-only gains cannot rescue.
+No usable alignment => stop this reward branch, no RL. Best-of-G is future-aware opportunity, not deployable prefix-only selection.
+Before any new full CPT proposal, concretely investigate why the raw control regresses. Do not attribute shared regression to thoughts.
+
+V30 CPU DATA COMPLETE; ALL PREP/TEST/AUDIT SESSIONS CLOSED0:
+W=R/local/worktrees/candidate-utility-v30, public branch40ab7ef; source a84c77b pushed; numerical worker and dependencies frozen after1940tests/smoke/compile PASS.
+D=R/local/data/candidate-utility-v30-source61-v1; O=R/local/data/candidate-utility-v30-curation61-v1; C=R/local/diagnostics/candidate-utility-v30-source61-v1.
+Pinned FineMath4plus TRAIN shard61/revisione92b25a616738fe95dc186b64dfb19f9c8525594;288814138bytes/SHA c78473e2f04cefe953ebe26c8d5fdee1b1a4b70c4b95a0210314304a9ba175e7.
+First65536rows;58404 prior-source-clean documents,764 validcompoundequations,390 full512prefix/newpage/content/orderedAST examples eligible.
+PoolSHA27c2fae9964a1b2b5a145d73547c8be6beb1cafd105b7215cb8c041d98d8d23f; operationcounts2:223,3:116,4:26,5:18,6:7.
+No smaller cohort/exclusion relaxation/model-based filtering. Earlier unused pool only109fullprefix examples; fresh source was necessary.
+Independent C/independent/independent-data-check.json PASS all390 actualParquet/native512+16windows,oldexclusions,exactprefix-onlywork and1030 equations.
+CPU frozen40ab1935tests/smoke/compile PASS R/local/checks/v30-source-frozen40ab7ef-20261020.log. First model calls are CPU native references only:exec31341(T)/77622(B0),deadline00:40UTC; logs C30diag/logs/reference-{T,B0}.log. No diagnostic candidates inspected.
+Exact curator is copied boundedutility b863cb6 from oldv9,not mainrawhelper; never execute archived launcher.
+
+NEXT:
+Protocol/gates/cohort already frozen at C30diag=R/local/diagnostics/candidate-utility-v30-v1; do not change them.
+1.Frozen diagnostic design: fixed FIRST-order V29 computation writer/reader,greedy1+G8,temp.7,cap128,full16 vsraw/empty/greedy/oracle/corrupt/donor.
+  Select256diagnostic+8disjointqualification byfixedhash. Declare usefulness/alignment gates and finite execution budget. No future in writer projection.
+2.Poll references31341/77622 and confirm full checks2119close0. Then actual-model bounded accelerator qualification and CPU selected-behavior verification; no science release yet.
+Reuse NeuronCausalBackend.sample cached deviceGumbel/storedbehaviorLPs,not newengine. Fixed512prefix/cache; full nativeAnswer firsttoken stop16141 orEOS151643; exact markers helper.
+  Include sampledstop,retain caps/errors/unsupported; log decode_iterations separateactualactions. Existingstopchunk32 causes extraallocatedsteps.
+  setup_modelFP32eval,undefinedrowsmasked,temp.7,nontopk/p. This does not qualifyBF16/replay/trainingthroughput.
+  Reuse score_spansB4/width672/target16 explicittrunk/gather/head sync,not oldbackend.score lazygraph.
+3.Actual-model stochastic/cache/native/behaviorLP qualification required. CPU teacher-forced checks on ACTUAL sampledactions; RNG reproducibility,not CPU/device sampledsequenceequality.
+4.Read-only raw-control diagnosis: V29 raw objective is cleanLM + .5 calculation-continuation mean,not uniform vanillaNTP. For full512prefix selectedfuturetoken coefficient~17.47x otherpositions.
+  Quantify actual source lengths/exposure/order/metric curves and retain uncertainty: coefficient arithmetic does not establish cause/gradient magnitude. No new training.
+5.No diagnostic pass auto-releasesRL/CPT. PreservefailedV29primary and alloriginalresults.
+
+FIXED MODEL / STORAGE:
+E29=R/local/diagnostics/real-cpt-scaffold-v29-evaluation-v1; firstTbinding E29/bindings/computation-seed2026102029.json and existing references/computation-seed2026102029.
+Terminal1280modelSHAbacd0f2522d5998c4b355c0f15209fcb36b5b0ddd361606e8fef89cefea714d4. Never selectcheckpoint by newoutcomes.
+Main35161e2/V29publicrelease fullyverified; allV29producers/checkers/publishers CLOSED0. Do not rerun them. OriginalE29/summary/readout immutable.
+All18original64/640/1280states inprivateRAM; latest6weights/onefullrawoptimizer EBSprotected. Nooffinstancebackupclaim.
+Keep35GiBfilesystem/512GiBhostavailablefloors;neverdeleteoriginalstates/cache,formatnonzeronvme4,changecloud/IAM/stack,usepaidteacherorTEST.
+Source R/scripts/env.sh THEN override PYTHONPATH=W:R/local/test-deps; USE_TORCH_XLA=0 forCPU. Useworktreecwd toavoid mainshadowing.
+Userupdates~60s;keepgoingpatiently,no finalatmilestones.
+
 <!-- Current handoff 2026-10-20 23:41 UTC. Only this first block is active. -->
 Keep working autonomously/patiently until told to stop. No active goal; do not create one. No agent retries beforeOct24.
 R=/home/ubuntu/dario public dario-fumarola/useful-thoughts-trainium; pushes/releases authorized. Mainf3465e0 result; publication receipt commit follows.

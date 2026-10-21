@@ -23,6 +23,13 @@ does not authorize another large split rescue or gate the mainline. Follow the
 prospective v10/v11designs and actual hardware/recovery evidence in NEXT_STEPS.
 No8B/broadRL/officialTEST release follows from these preparations.
 
+
+October21 owner steering: only one bounded TRAIN-only candidate/reward diagnostic
+is current. Require correct/helpful full-continuation gains over raw prediction
+and identifiable reward alignment. If absent, close that reward branch without
+RL. No new learning or scaling follows automatically from a diagnostic pass.
+Investigate shared raw-control regression before another full CPT proposal.
+
 ## Source precedence
 Current user instructions and this active plan govern the new work. The files in
 `legacy/`, historical manuscripts, and the Italian transcript are reference
