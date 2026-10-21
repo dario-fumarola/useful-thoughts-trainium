@@ -1,17 +1,18 @@
-# Status — 2026-10-21 01:47 UTC
+# Status — 2026-10-21 02:12 UTC
 
 ## Complete preparation: causal reader proposal; execution held
 Question: can selective calculation use improve full continuations while preserving an unchanged raw reference?
-ID:causal-reader-gate-draft; CPU-only specification and saved-score algebra, no model calls or learning.
-Design: frozen B0 plus fixed assisted predictor; a causal logistic head; exact disabled path, empirical active retention.
-Fresh endpoint proposed before any run: full16 gain>=0.25nats/positive lower CI versus B0; beat constant blend/raw ensemble.
-Active ordinary suffix NLL upper regression<=0.03nats/token; fresh-source/power/runtime/budget qualification unresolved.
-Conservative pointwise-cap variant rejected: hindsight best8/token upper mean0.137<earlier0.25 target on saved candidates.
-Revised unrestricted gate is specified, unexecuted and carries no universal active no-regression guarantee.
-Report:docs/CAUSAL_READER_PROPOSAL.md; structured design:validation/causal_reader_gate_design_20261021.json.
-Decision: V30 stays failed/closed; no writer RL, scaling, model/feature/head run or automatic new CPT study.
-Deferred raw-trajectory CPU draft is unexecuted; do not prepare its cohort or score checkpoints.
-All original checkpoints/evidence retained. No active model/accelerator job; no run command is queued.
+ID:causal-reader-gate-draft; CPU-only specification and saved-score algebra; no model calls or learning.
+Design: frozen B0/assisted predictors; causal head with exact zero region.
+Fresh proposed gate: full16 gain>=0.25nats/positive lower CI versus B0 and beat blend/ensemble; ordinary NLL upper cost<=0.03/token.
+Unrestricted greedy tokenwise hindsight upper=2.063nats/16; actual greedy-minus-B0=-1.429 on256 inspected TRAIN docs.
+This shows complementary probabilities, not causal recovery or confirmation; capped variant remains rejected at0.137.
+Original native targets/all token differences agree;1945CPU tests plus smoke/compile pass; no hardware qualification implied.
+Proposal now records closure/gradient diagnostics and prevalence-weighted costs; passing local gates need not improve corpus loss.
+Report:docs/CAUSAL_READER_PROPOSAL.md; bound:validation/greedy_token_opportunity_20261021.json.
+Fresh-source availability, joint power, actual feature causality/normalization and a finite budget remain unqualified.
+Decision: retain candidate, hold execution. V30 stays failed/closed; no feature/head/model run, RL or scaling.
+Deferred raw-trajectory draft is unexecuted. Original checkpoints/evidence retained; no active model job or run command.
 
 ## Closed: candidate/reward diagnostic, public
 Question: do correct sampled calculations offer full-continuation improvements recognized by frozen reward?

@@ -52,7 +52,13 @@
       "checkpoint": "Terminal800 heads are primary. Save training losses/head states; no DEV-based early stopping, coefficient search or alternate head architecture.",
       "frozen_cost": "Repeated head passes reuse frozen feature caches, not new backbone/writer passes. Report their extra supervision and work separately."
     },
-    "zero_region_risk": "The head receives no local gradient on a closed token and may stall at raw prediction. Positive interior initialization starts learning; it does not guarantee continued learning. Do not silently change the threshold or add exploration to rescue a failed run."
+    "zero_region_risk": "The head receives no local gradient on a closed token and may stall at raw prediction. Positive interior initialization starts learning; it does not guarantee continued learning. Do not silently change the threshold or add exploration to rescue a failed run.",
+    "instrumentation": {
+      "each_training_update": "Log document CE, fraction with exactly zero gate, positive-gate quantiles, preclip CE-gradient norm, optimizer-step norm and nonfinite counts. Keep data-gradient effects distinguishable from weight decay and optimizer momentum.",
+      "fixed_TRAIN_probe": "Every80 updates and at terminal, evaluate the same first256 TRAIN documents in a prespecified hash order from cached features only. Report closures by source stratum and continuation position; strata are reporting labels, never gate inputs.",
+      "opportunity_diagnostic": "On that fixed probe, report closed gates where the assisted gold-token probability exceeds B0 and where it does not. These target-dependent labels diagnose training only and never enter gate.forward.",
+      "interpretation": "Many closed gates plus negligible data gradients may expose parameterization/optimization stalling. Do not infer that the frozen predictors lack complementary information, or change threshold/initialization/schedule within the run. A failed run remains failed."
+    }
   },
   "controls": [
     "Unchanged B0 raw; primary absolute predictive reference.",
@@ -86,7 +92,15 @@
     "pass": "A supervised selective-reading mechanism only. It releases neither RL nor CPT. Any subsequent writer optimization needs a separate fixed-reader reward/variation study under the NEW interface.",
     "uncertainty": "Paired bootstrap over unique source documents, resampling related variants as one family if introduced. Proposed5000 draws, seed2026102133; report each optimization order separately. All primary/guard contrasts are conjunctive; no selective use of whichever order passes.",
     "retention_scope": "This is the final16-token FineMath prediction window, not full-window or broad-language retention. Report token/component and tail costs without replacing the declared full16 primary.",
-    "content_claim": "Superiority over the raw ensemble and constant blend alone is not proof of faithful semantic reasoning. Empty/donor/corrupt interventions are supporting diagnostics, and all altered-context distributions must be reported."
+    "content_claim": "Superiority over the raw ensemble and constant blend alone is not proof of faithful semantic reasoning. Empty/donor/corrupt interventions are supporting diagnostics, and all altered-context distributions must be reported.",
+    "corpus_reporting": {
+      "units": "Report both stratum gains as nats per16. Ordinary NLL cost c per token corresponds to continuation gain -16*c.",
+      "formula": "Delta(q)=q*Delta_calculation+(1-q)*Delta_ordinary, for a fixed prevalence q of calculation-boundary windows under a specified source-window sampling policy.",
+      "threshold_counterexample": "Hypothetical gains +.25 calculation and -.48 ordinary satisfy the numerical point/tolerance boundary yet break even only at q=.48/(.25+.48)=.657534. This is algebra, not a measured corpus result or a statistical guarantee from a point threshold.",
+      "required_report": "Report the full prevalence tradeoff and break-even prevalence when defined. At prespecified q values, obtain intervals by independent document/family resampling within each stratum. Never choose q to claim a success.",
+      "prevalence_status": "No representative natural-source q has been measured. A fraction of documents mentioning arithmetic is not the prevalence of the exact calculation-boundary windows. Without representative sampling, report hypothetical mixtures only.",
+      "claim_boundary": "Passing the mechanism/retention criteria cannot be called an overall natural-corpus LM gain; keep those criteria and that broader claim separate."
+    }
   },
   "prior_proposal_resolution": {
     "pointwise_cap_variant": "The earlier universal per-token .03-regret cap remains rejected for the fixed saved candidates: its hindsight upper bound averages .137nats per16 on the inspected V30 panel.",
@@ -119,6 +133,15 @@
     "recommendation": "Preserve as a bounded selective-reading hypothesis. Do not promote it to another training campaign or a pretraining result. No features or head have been computed; no run is released.",
     "why_it_is_different": "The previous writer is not being asked to overcome an already degraded raw model. The actual unchanged B0 remains a separate predictor, and a supervised causal head rather than a sibling-centered reward learns when to use the fixed assisted path.",
     "why_it_might_fail": "The gate may not distinguish useful from harmful predictions prospectively, the assisted reader may contain little complementary full-span information, or apparent gain may be ordinary ensembling. The new active path can still regress.",
-    "north_star_boundary": "Even a pass would be a fixed-backbone selective-inference result. Improving pretrained weights needs a separate intervention and a truly uniform-NTP control; internalization needs an explicit transfer study."
+    "north_star_boundary": "Even a pass would be a fixed-backbone selective-inference result. Improving pretrained weights needs a separate intervention and a truly uniform-NTP control; internalization needs an explicit transfer study.",
+    "saved_score_decision": "Retain the fixed-pair mechanism candidate because the unrestricted greedy tokenwise upper bound is2.063nats/16. This is an exploratory opportunity check only. Execution remains NO-GO pending fresh-source/power/runtime/resource feasibility; it does not release data acquisition, feature calls or head fitting."
+  },
+  "saved_greedy_opportunity": {
+    "report": "validation/greedy_token_opportunity_20261021.json",
+    "status": "EXPLORATORY_EXISTING_SCORES_NO_CAUSAL_POLICY_OR_CONFIRMATION",
+    "documents": 256,
+    "mean_upper_nats_per16": 2.0633008101119144,
+    "mean_actual_greedy_minus_B0_nats_per16": -1.4288793143047838,
+    "decision": "The unrestricted fixed pair has complementary token probabilities; absence of oracle opportunity is not a reason to reject it. This does not release feature/model calls or head fitting, establish causal recoverability, measure ordinary retention or justify a training campaign."
   }
 }

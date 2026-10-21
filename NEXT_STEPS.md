@@ -5,7 +5,9 @@ The CPU-only selective-reader proposal is complete for review; execution is held
 - Read docs/CAUSAL_READER_PROPOSAL.md and validation/causal_reader_gate_design_20261021.json.
 - Actual unchanged B0 is the reference; one frozen V29 note/reader and a causal supervised head form the proposed assisted path. An off switch is exact; active retention is empirical.
 - The pointwise-capped variant is rejected: hindsight best8/token routing averages only0.137nats per16 on saved V30 candidates, below the earlier0.25 target. No model call or policy sweep produced that bound.
+- The fixed greedy-note unrestricted tokenwise hindsight bound is2.063nats/16; actual greedy use loses1.429 versus B0. This is exploratory complementary-information evidence, not a causal gate or a release. See validation/greedy_token_opportunity_20261021.json.
 - The unrestricted draft must beat B0, a TRAIN-fitted constant blend and a raw-model ensemble on fresh full16 likelihood, with an active ordinary-suffix guard. It cannot show improved base weights or internalization.
+- Record gate-closure/gradient trajectories and prevalence-weighted outcomes. A permitted ordinary cost can exceed calculation gains under a natural text mixture.
 - Fresh-source availability, prospective joint power, actual feature causality/normalization and a finite resource budget remain unqualified. No feature extraction, model call, head fitting, training, RL or scale run is queued.
 - Latest owner scope is the bounded mechanism proposal only. The local raw-trajectory-v31-cpu worktree contains an UNEXECUTED draft; do not run its preparer or score checkpoints. No new trajectory cohort/protocol exists.
 

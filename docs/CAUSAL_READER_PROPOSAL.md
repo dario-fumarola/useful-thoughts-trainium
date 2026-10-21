@@ -48,6 +48,13 @@ gate has zero local gradient and may stall; this is a failure risk, not permissi
 to change thresholds after outcomes. Exact zero contribution also gives no writer
 reward variation. This proposal does not solve autonomous writer bootstrapping.
 
+Log the fraction of exactly closed gates, positive-gate quantiles, CE-gradient
+norms and optimizer-step norms throughout training. A fixed TRAIN probe should
+also show where gates close despite an available assisted-token advantage. Those
+target-dependent diagnostics stay outside the head's inputs. A stall would be
+evidence about this parameterization/optimization, not proof that the predictors
+contain no complementary information. Do not change thresholds to rescue it.
+
 Use the same generation protocol on calculation and ordinary prefixes. The gate
 must not receive a curator's indication that the document contains arithmetic.
 Forced closure after an incomplete note remains an explicit intervention and
@@ -80,6 +87,16 @@ orders must pass; neither is an independent backbone replication. The provisiona
 Freeze a finite sample size and joint-power assumptions before fresh outcomes;
 do not expand a study after inspecting its confidence intervals.
 
+These criteria do not establish a net corpus gain. If calculation spans gained
+exactly 0.25 nats and ordinary spans lost 0.03 per token, the ordinary-span cost
+would be 0.48 nats. At calculation-window prevalence $q$, the hypothetical gain is
+$0.25q-0.48(1-q)$, breaking even only at $q\approx0.658$. This is a threshold
+counterexample, not a measured result. Report the actual prevalence tradeoff
+$q\Delta_{calc}+(1-q)\Delta_{ordinary}$ and its uncertainty. Natural prevalence
+has not been measured; a calculation-enriched panel cannot supply it. Define
+prevalence under the actual source-window selection policy, rather than counting
+documents that happen to mention arithmetic.
+
 ## What the CPU review already rules out
 
 The earlier pointwise-capped variant guaranteed at most 0.03 nats of regret per
@@ -90,6 +107,23 @@ best-of-eight averages only **0.137 nats per 16-token span** on the inspected V3
 documents. That variant cannot meet the earlier 0.25 point target for those fixed
 candidates and should not be trained. This is proposal arithmetic, not a new V30
 endpoint or a bound on every possible calculation/reader.
+
+The requested [unrestricted greedy-note bound](../validation/greedy_token_opportunity_20261021.json)
+uses only the original greedy calculation and B0 scores, with no best-of-eight.
+It sums $\max(0,\ell_{greedy,t}-\ell_{B0,t})$ over each span. Across the same 256
+inspected documents, this gives **2.063 nats per 16 tokens** on average, with a
+median of 1.561. In contrast, using the calculation throughout loses **1.429 nats**
+versus B0; the tokenwise oracle avoids 3.492 nats of harmful contribution. These
+are saved-score statistics, not a learned policy result. Original native target
+arrays and all public token differences agree on reconstruction. The
+[standalone script](../scripts/greedy_token_opportunity.py) checks released file
+hashes and paired target identities before computing the bound.
+
+This establishes complementary token probabilities in the fixed pair. It does
+not show that a causal gate can identify them, that the benefit comes from
+calculation rather than ordinary ensembling, or that active ordinary prediction
+is preserved. It therefore supports retaining the mechanism as a candidate,
+without releasing feature extraction, learning or another model evaluation.
 
 The revised unrestricted gate gives up that pointwise guarantee. It therefore
 requires a fresh empirical retention test; it is not automatically safer merely

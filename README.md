@@ -20,9 +20,10 @@ V30 has completed that candidate/reward diagnostic; its failed result above is
 final. The [CPU-only mechanism proposal](docs/CAUSAL_READER_PROPOSAL.md) specifies
 an unchanged B0 reference and a causal learned gate, with explicit learning and
 control comparisons. Its conservative pointwise-capped variant is rejected by
-a saved-score upper bound; the revised variant remains unexecuted. No further
-model calls, head learning, training or RL are released. The
-[raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
+a saved-score upper bound. Without that cap, the original greedy scores admit a
+2.063-nat tokenwise hindsight bound; prospective recovery is untested. The revised
+variant remains unexecuted. No further model calls, head learning, training or RL
+are released. The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
 confirms that V29's raw arm reweights continuations; the source review does not
 identify why fresh-document prediction regressed.
 
