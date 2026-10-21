@@ -1,22 +1,30 @@
 # Current queue
 
-V30 is COMPLETE and this reward branch is CLOSED:
-- Hindsight best8−raw+.082nats,interval spans0; best8−B0−1.083,interval entirelynegative. No RL/rescue sweep.
-- Reward recognizes correctness on25mixed docs (positive conditional contrast),but declared minimum32notmet. Do not call that a negative ranking result.
-- Report validation/candidate_utility_v30_complete_20261021/REPORT.md; all2304attempts/3840scores andsource/model/gates preserved.
-- Independent source/context/HF/statistical checks pass; portable50file numerical replay passes withoutTorch/models.
-- Public release v30-candidate-utility-20261021 is COMPLETE:3assets/747760bytes all unauthenticated full-download/SHA/readback/fsync verified. Do not rerun science/qualification/checkers/publishers.
-- Read-only raw-loop audit is COMPLETE: intended normalization, accumulated backward passes, one optimizer/gradient-reduction owner; all actual protocol/source bindings match. Report validation/real_cpt_v29_raw_loop_review_20261021.json. No regression cause identified.
-- Next preparation is CPU-only: make a concrete causal reader/reference-preservation proposal, with a true raw fallback and an account of the zero-mixing learning-signal problem. Existing fixed-mixer sweeps do not qualify as a new mechanism; no model calls or learning are released.
-- No training/RL/scale is queued. Before any new CPT proposal,investigate the shared raw-control regression; preserve uncertainty if the code implements the intended objective.
-- Future preparation must identify a materially different mechanism and preserve all current negatives. No further tuning on these256 documents can count as confirmation.
+The CPU-only selective-reader proposal is complete for review; execution is held.
 
-0. V28 is complete; finish its concrete publication without rerunning producers.
+- Read docs/CAUSAL_READER_PROPOSAL.md and validation/causal_reader_gate_design_20261021.json.
+- Actual unchanged B0 is the reference; one frozen V29 note/reader and a causal supervised head form the proposed assisted path. An off switch is exact; active retention is empirical.
+- The pointwise-capped variant is rejected: hindsight best8/token routing averages only0.137nats per16 on saved V30 candidates, below the earlier0.25 target. No model call or policy sweep produced that bound.
+- The unrestricted draft must beat B0, a TRAIN-fitted constant blend and a raw-model ensemble on fresh full16 likelihood, with an active ordinary-suffix guard. It cannot show improved base weights or internalization.
+- Fresh-source availability, prospective joint power, actual feature causality/normalization and a finite resource budget remain unqualified. No feature extraction, model call, head fitting, training, RL or scale run is queued.
+- Latest owner scope is the bounded mechanism proposal only. The local raw-trajectory-v31-cpu worktree contains an UNEXECUTED draft; do not run its preparer or score checkpoints. No new trajectory cohort/protocol exists.
+
+V30 remains COMPLETE and its reward branch remains CLOSED:
+
+- Hindsight best8-minus-raw+0.082nats, interval spans zero; best8-minus-B0-1.083, interval entirely negative. No RL/rescue sweep.
+- Correctness ranking is positive on25 mixed documents; its gate fails minimum32, not direction. Numerical gains do not rescue the full-continuation endpoint.
+- Report validation/candidate_utility_v30_complete_20261021/REPORT.md. Every attempt/score and original model/protocol remains preserved.
+- Public release v30-candidate-utility-20261021 is complete: all3 assets verified by unauthenticated full download/SHA/readback/fsync. Do not rerun producers, checkers or publication.
+- Raw-loop review found the intended normalization, accumulated backwards and one gradient-reduction owner. It identified no regression cause. The raw objective is continuation-reweighted, not uniform NTP.
+
+The completed references below are historical evidence, not launch instructions.
+
+0. V28 is complete and published; do not rerun its producers or publication.
    Report validation/permutation_program_v28_complete_20261020.json and REPORT.md.
    Inference gate PASS at covered lengths: T18432/18430 versus D11914/1872 of18432.
    Training gate FAIL; longer T228/1 of2048; ordinary NLL severely regresses.
    All23 V28jobs/378880attempts close; primary independent readout and ordinary28-forward
-   verification PASS. All V28 models and original outputs remain; V29 is active below.
+   verification PASS. All V28 models and original outputs remain; V29 is complete below.
    Portable archive replay reproduces exact readout SHAe995f037cce0e866279c46cb96b3376512e311f5950952eeab3d2f3da9ec4f4f.
    Complete result is published as c47a823; public release v28-controlled-computation-20261020
    has8assets/253995793bytes,all full-download size/SHA verified; unauthenticated HTTP200.
@@ -28,9 +36,8 @@ V30 is COMPLETE and this reward branch is CLOSED:
    Receipt validation/real_cpt_scaffold_v29_public_release_20261020.json; standalone423file/54LL/16scalar replay and suffix byte replay PASS.
    Primary CPT criterion fails; declared scalar assistance is strong; full527 retention meets its target while suffix16 regresses more.
    Every original state/score/output remains; same-instance latestweights/onefulloptimizer protection is not off-instance model backup.
-   Next CPU investigation: freeze one TRAIN-only question about candidate/reward alignment under the fixed trained reader.
-   Inspect existing sampling/cache/scoring interfaces before designing any extension; no sampling qualification can be inferred from greedy batching.
-   Require actual candidate correctness/utility variation and bounded profiling before considering policy optimization.
+   The bounded candidate/reward follow-up is now complete as V30 above; its failed gate closes that reward branch.
+   Do not relaunch its sampling qualification or diagnostic, and do not infer a policy-optimization release.
    Do not tune V29held prompts/checkpoints/windows/thresholds. No long training,model-size jump,RL,V28 extension or officialTEST is released.
 
 2. Keep V26 training-side improvement unconfirmed, without silently changing gates.

@@ -27,6 +27,13 @@ Any proposal must specify how its reader learns without erasing that signal,
 how all inputs remain causal, and how it beats the unchanged raw reference on
 fresh full continuations. Hindsight routing cannot count as a deployed result.
 
+The [CPU-only proposal](CAUSAL_READER_PROPOSAL.md) now specifies frozen B0 and
+assisted paths, a causal supervised head, a TRAIN-fitted constant blend and a raw
+ensemble control. Its pointwise-capped variant is rejected by a saved-score
+hindsight upper bound; the unrestricted variant requires empirical retention and
+remains unexecuted. A frozen-backbone gate cannot establish better pretrained
+weights. It is a bounded mechanism candidate, not the new main training program.
+
 Keep training benefit, retained inference computation, and internalization
 separate. Removing thoughts is an additional goal, not a requirement for every
 useful computation method. It also cannot rescue V29/V30's failed full-prediction

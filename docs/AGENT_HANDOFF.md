@@ -1,3 +1,16 @@
+<!-- Current handoff 2026-10-21: mechanism proposal complete; execution held. Only this first block is active. -->
+R=/home/ubuntu/dario. Latest owner scope is the bounded CPU-only mechanism proposal. No active goal; no agent retries before Oct24.
+Read docs/CAUSAL_READER_PROPOSAL.md and validation/causal_reader_gate_design_20261021.json. Proposal complete for review, NOT a released experiment. No new source cohort, model/feature call or head learning has run.
+Keep B0 unchanged with an explicit off path; unrestricted active probability mixing can regress. Gate inputs are causal detached pre-target hidden states/entropies/note metadata, never current/future labels. Freeze writer/reader; positive0.01 gate initialization permits supervised head gradients without writer RL.
+Old pointwise-cap proposal is REJECTED from saved-score arithmetic: hindsight best8/token upper mean0.136924nats/16 <earlier0.25 target. Public report validation/reference_preserving_reader_review_20261021.json; source scripts/reference_floor_upper_bound.py. Full public/private replay rows agree. No policy sweep/new model run.
+Revised draft needs genuinely fresh sources, prospective power, actual feature-causality/normalization/off-mode qualification and finite budget before any model or head run. Must beat B0, TRAIN-fitted constant mixture and raw ensemble; test active ordinary suffix retention. No implicit release of RL, CPT, model size change, or internalization claims.
+Local worktree local/worktrees/raw-trajectory-v31-cpu has two UNTRACKED, UNEXECUTED draft files. Deferred by latest scope. Do not run its preparer, create its data/protocol or evaluate checkpoints.
+V30 is complete/negative/public, not reopened. All2304attempts/3840scores preserved; best8-minus-raw+0.082CIspans0; best8-minus-B0-1.083negativeCI; correct-v-error+5.112positive on25docs fails coverage32,not sign. Release all3assets747760bytes verified. Do not rerun producer/checker/publication.
+Raw frozen-source review found intended clean+aux gradient accumulation, normalization and one reduction owner; no regression cause. Raw reweights selected tokens5.47–17.47x, so not uniform NTP. Preserve all original V29/V30 model/optimizer/output bytes.
+Latest completed code checks before documentation:1943tests+smoke/compile PASS (local/checks/reference-bound-20261021.log). Current changes are proposal/docs only; no runtime was modified or qualified by them.
+Keep35GiB filesystem and512GiBhost available, preserve cache/original states; never format nonzero nvme4 or change cloud/IAM/stack. No official TEST or paid teachers.
+No model/accelerator job or executable next command is queued. Older handoff blocks below are historical and must not relaunch closed work.
+
 <!-- Current handoff 2026-10-21 01:06 UTC. Only this first block is active. -->
 R=/home/ubuntu/dario; public useful-thoughts-trainium. User autonomy/patience; no activegoal. No agent retries beforeOct24.
 LATEST SCOPE: one bounded TRAIN-only candidate/reward diagnostic. V30 has now CLOSED/FAILED. Do not launch RL,more modelcalls,new CPT,scale or a rescue sweep. Existing read-only raw-control investigation identifies reweighting/repetition hypotheses,not cause. Future CPU preparation must identify a materially different mechanism,not keep optimizing this failed branch.

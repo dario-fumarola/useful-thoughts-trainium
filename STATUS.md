@@ -1,4 +1,17 @@
-# Status — 2026-10-21 01:08 UTC
+# Status — 2026-10-21 01:47 UTC
+
+## Complete preparation: causal reader proposal; execution held
+Question: can selective calculation use improve full continuations while preserving an unchanged raw reference?
+ID:causal-reader-gate-draft; CPU-only specification and saved-score algebra, no model calls or learning.
+Design: frozen B0 plus fixed assisted predictor; a causal logistic head; exact disabled path, empirical active retention.
+Fresh endpoint proposed before any run: full16 gain>=0.25nats/positive lower CI versus B0; beat constant blend/raw ensemble.
+Active ordinary suffix NLL upper regression<=0.03nats/token; fresh-source/power/runtime/budget qualification unresolved.
+Conservative pointwise-cap variant rejected: hindsight best8/token upper mean0.137<earlier0.25 target on saved candidates.
+Revised unrestricted gate is specified, unexecuted and carries no universal active no-regression guarantee.
+Report:docs/CAUSAL_READER_PROPOSAL.md; structured design:validation/causal_reader_gate_design_20261021.json.
+Decision: V30 stays failed/closed; no writer RL, scaling, model/feature/head run or automatic new CPT study.
+Deferred raw-trajectory CPU draft is unexecuted; do not prepare its cohort or score checkpoints.
+All original checkpoints/evidence retained. No active model/accelerator job; no run command is queued.
 
 ## Closed: candidate/reward diagnostic, public
 Question: do correct sampled calculations offer full-continuation improvements recognized by frozen reward?
@@ -14,7 +27,7 @@ Reserved chip-hours science.188266+qualification.138581; all original states/evi
 Report:validation/candidate_utility_v30_complete_20261021/REPORT.md. Package local/releases/v30-candidate-utility-20261021-v2.
 Public release v30-candidate-utility-20261021 targets5d686f0;3assets/747760bytes fullunauthenticated download/SHA/readback/fsync PASS.
 Read-only raw-loop audit confirms intended normalization/accumulation/reducer ownership; cause of regression remains unidentified.
-Next CPU-only reader/reference-preservation proposal; no model calls or learning released.
+CPU-only reader/reference-preservation proposal now specified above; no model calls or learning released.
 
 ## Closed: real continuation CPT, published
 Question: does verified computation improve direct real prediction while retaining ordinary FineMath LM?
