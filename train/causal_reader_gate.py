@@ -23,10 +23,11 @@ class CausalFeatures:
 class ReaderScores:
     features: CausalFeatures
     target_logps: torch.Tensor
+    first_logps: torch.Tensor | None = None
 
 
 @torch.no_grad()
-def extract(backend, contexts, targets, *, width=672, pad_id=151643):
+def extract(backend, contexts, targets, *, width=672, pad_id=151643,capture_first=False):
     """Rows immediately before targets; no target-specific gate features.
 
     Right padding and future targets cannot attend backward through the causal
@@ -50,7 +51,7 @@ def extract(backend, contexts, targets, *, width=672, pad_id=151643):
     backend.sync()
     # Export just the selected hidden rows, not full-vocabulary logits.
     causal_hidden=chosen.float().cpu().detach()
-    entropies=[];target_logps=[]
+    entropies=[];target_logps=[];first=None
     for start in range(0,16,backend.head_chunk):
         sl=slice(start,start+backend.head_chunk)
         with backend.head_amp():
@@ -60,10 +61,12 @@ def extract(backend, contexts, targets, *, width=672, pad_id=151643):
         target=logp.gather(-1,labels[:,sl,None].to(backend.device))[:,:,0]
         backend.sync()
         entropies.append(entropy.cpu());target_logps.append(target.cpu())
+        if capture_first and start==0:
+            native=logp[:,0];backend.sync();first=native.cpu().detach()
     entropy=torch.cat(entropies,1);logps=torch.cat(target_logps,1)
     if not all(torch.isfinite(v).all() for v in (causal_hidden,entropy,logps)):
         raise RuntimeError('Nonfinite reader feature or target score')
-    return ReaderScores(CausalFeatures(causal_hidden,entropy),logps)
+    return ReaderScores(CausalFeatures(causal_hidden,entropy),logps,first)
 
 
 def gate_inputs(raw: CausalFeatures, assisted: CausalFeatures, *,

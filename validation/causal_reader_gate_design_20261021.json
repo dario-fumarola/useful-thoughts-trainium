@@ -66,7 +66,8 @@
     "A matched causal head combining B0 with the SAME T checkpoint in raw mode, with no Calculation wrapper or generated note. Same head size, optimizer, source documents, order and exposures; replace note count/cap metadata with zero. This tests ordinary ensembling.",
     "On a fresh, preselected subset, empty, intact unrelated and deterministic corrupted-note interventions. Recompute causal assisted features for the deployed intervention. Optionally holding original gate weights per position fixed is a separately labelled mediation diagnostic, never a new deployed gate.",
     "These controls do not match all extra autoregressive processing. Beating them supports this predictive recipe, not a universal advantage of semantic traces over every extra-compute alternative.",
-    "Competitive conventional CoT and exact arithmetic interpreter remain necessary before a practical efficiency claim. Such a claim is outside this gate-only proposal."
+    "Competitive conventional CoT and exact arithmetic interpreter remain necessary before a practical efficiency claim. Such a claim is outside this gate-only proposal.",
+    "Secondary: sixteen TRAIN-optimal probability-mixture weights, one per known continuation position, without hidden/context inputs. This controls a simple number-first/prose-later schedule. Primary eight conjunctive requirements/power remain unchanged; a context-adaptation interpretation also needs an advantage over this control."
   ],
   "fresh_data_before_learning": {
     "minimum_TRAIN_documents": 5120,
@@ -114,7 +115,7 @@
       "prevalence_status": "No representative natural-source q has been measured. A fraction of documents mentioning arithmetic is not the prevalence of the exact calculation-boundary windows. Without representative sampling, report hypothetical mixtures only.",
       "claim_boundary": "Passing the mechanism/retention criteria cannot be called an overall natural-corpus LM gain; keep those criteria and that broader claim separate."
     },
-    "cost_plan": "validation/causal_reader_cost_plan_20261021.json;8reservedchip-hour proposed hard total includingqualification, only after actual source/runtime feasibility and whole-question review. Not released by this CPU projection."
+    "cost_plan": "validation/causal_reader_cost_plan_20261021.json;8reservedchip-hour proposed hard total includingqualification,3roles on all13312science documents plus1024fixed secondary contexts; old proxy7.780. Actual source/runtime feasibility and whole-question review remain required. No model execution released."
   },
   "prior_proposal_resolution": {
     "pointwise_cap_variant": "The earlier universal per-token .03-regret cap remains rejected for the fixed saved candidates: its hindsight upper bound averages .137nats per16 on the inspected V30 panel.",
@@ -125,7 +126,7 @@
     "Decide whether the two-reader selective-use mechanism warrants a bounded science budget relative to the training-side north star. It is not automatically the next main study.",
     "Verify genuinely fresh source availability, freeze source/protocol identities and all numerical settings, and support the proposed sample size with an explicit power calculation. No outcome-dependent expansion.",
     "Qualify exact native source/stop/forced-closure handling on ordinary as well as calculation prefixes, feature causality, distribution normalization and the actual disabled path. CPU fixture mathematics cannot certify actual models.",
-    "Resolve a finite CPU/accelerator/storage budget and review the whole question before any model, feature-extraction or learning run. Current scope is documentation/CPU algebra only."
+    "Resolve a finite CPU/accelerator/storage budget and review the whole question before any actual model, feature-extraction or experiment-head run. CPU source preparation and guarded implementation are active; actual execution is held."
   ],
   "scope_limits": [
     "B0 remains frozen, so this cannot demonstrate improved direct B0 weights, internalization or general pretraining.",
@@ -159,7 +160,7 @@
     "decision": "The unrestricted fixed pair has complementary token probabilities; absence of oracle opportunity is not a reason to reject it. This does not release feature/model calls or head fitting, establish causal recoverability, measure ordinary retention or justify a training campaign."
   },
   "implementation_status": {
-    "status": "CPU_FIXTURE_CHECKS_ONLY_ACTUAL_MODELS_UNQUALIFIED",
+    "status": "CPU_FIXTURE_AND_RELEASE_GUARD_CHECKS_ONLY_ACTUAL_MODELS_UNQUALIFIED",
     "feature_and_head_module": "train/causal_reader_gate.py",
     "tests": "tests/test_causal_reader_gate.py",
     "checks": [
@@ -169,9 +170,30 @@
       "Closed/near-boundary/saturated gates have consistent stable values and finite gradients.",
       "Full-vocabulary normalization and exact disabled/closed raw object bypass.",
       "Balanced unpredictable-coin fixture gives no causal improvement despite positive hindsight bound.",
-      "The same fixed head recipe learns a simple linearly separable prospective signal."
+      "The same fixed head recipe learns a simple linearly separable prospective signal.",
+      "All four TRAIN-only terminal heads freeze before DEV readout; CPU preparation cannot release model/head workers; paired bootstrap requires the fixed4096 original documents."
     ],
-    "full_CPU_suite_passed": 1952,
-    "no_claim": "These tests neither execute released B0/T weights nor qualify actual-model feature extraction, latency, generalization or head efficacy."
+    "full_CPU_suite_passed": 1963,
+    "no_claim": "These tests neither execute released B0/T weights nor qualify actual-model feature extraction, latency, generalization or head efficacy.",
+    "fitting_module": "train/causal_reader_fit.py",
+    "guarded_worker": "train/causal_reader_gate_driver.py",
+    "native_checker": "scripts/check_causal_reader_qualification.py",
+    "head_entrypoint": "train/causal_reader_head_driver.py",
+    "full_CPU_check_log_sha256": "8e57538ed35f0cb56ef78d70e3eb5c13c56f03e808738ed6339ae11e2c891e43",
+    "supervisor": "train/causal_reader_supervisor.py",
+    "protocol_freezer": "scripts/freeze_causal_reader_protocol.py",
+    "cost_checker": "scripts/causal_reader_cost_profile.py"
+  },
+  "secondary_interventions": {
+    "sources": 256,
+    "selection": "Before model calls, choose first64 item IDs under SHA256(causal-reader-secondary:+item_id) in each of four fixed source-index stripes. Sources all from calculation DEV; do not select examples by notes or outcomes.",
+    "conditions": [
+      "closed empty note",
+      "fixed whole greedy donor derangement",
+      "supplied prefix-interpreter correct calculation",
+      "supplied prefix-interpreter corrupt calculation"
+    ],
+    "metadata": "Hold each source original generated action-count/cap metadata across content interventions. Hidden states/entropies/predictive scores use the actually altered context. Explicit counterfactual diagnostic, not deployed-note generation.",
+    "primary_effect": "Supporting only; no change to8 primary/guard requirements or power plan. Include1024 reader contexts in the same hard8-chip-hour budget."
   }
 }

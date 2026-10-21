@@ -18,7 +18,7 @@ def fixture_backend():
 
 def test_features_and_scores_match_independent_hf_without_vocabulary_mask():
     b=fixture_backend();contexts=[[1,2,3],[3,4,5,6,7]];targets=[list(range(1,17)),list(range(2,18))]
-    actual=extract(b,contexts,targets,width=40,pad_id=0)
+    actual=extract(b,contexts,targets,width=40,pad_id=0,capture_first=True)
     for index,(past,future) in enumerate(zip(contexts,targets)):
         with torch.no_grad():
             x=torch.tensor([[*past,*future]])
@@ -29,6 +29,7 @@ def test_features_and_scores_match_independent_hf_without_vocabulary_mask():
         assert torch.allclose(actual.features.hidden[index],hidden,atol=1e-6)
         assert torch.allclose(actual.features.entropy[index],entropy,atol=1e-6)
         assert torch.allclose(actual.target_logps[index],gold,atol=1e-6)
+        assert torch.allclose(actual.first_logps[index],lp[0],atol=1e-6)
 
 
 def test_current_future_perturbation_cannot_change_gate_features():

@@ -1,17 +1,19 @@
-# Status — 2026-10-21 03:00 UTC
+# Status — 2026-10-21 04:27 UTC
 
 ## Active: bounded selector feasibility
 Question: can a powered, source-separated selector experiment fit a finite local budget?
-ID:causal-reader-feasibility-20261021; CPU-only source preparation/power/static runtime review.
-Fixed before source outcomes: TRAIN5120, DEV4096calculation+4096ordinary, separate qualification32.
-Normal planning joint lower0.917 assumes SD4, base gain0.5, both control gains0.25 and ordinary gain0; not unknown-effect power.
-Data: fixed12 public TRAIN shards60..49, original exclusions/curator; four cores/three hours/16GiB cap; no automatic retry.
-Source cb3a47b; PID2199441/session19608; deadline05:59:03UTC; log local/diagnostics/causal-reader-feasibility-v1/prepare.log.
-No pretrained model/feature/head call. Source quotas and actual runtime checks remain unresolved.
-Source preparer CLI/1945checks pass; runtime/source checker CLI and1952CPU tests+smoke/compile also pass. No actual-model qualification.
-Endpoint: complete exact source/native cohorts, explicit prospective power and bounded cost, then finite go/no-go.
-Cost plan:8reservedchip-hour proposed total including qualification; old-timing proxy7.653, actual new workload unmeasured.
-Next: monitor CPU source preparation, then independently check all selected Parquet/native rows; no model calls yet.
+ID:causal-reader-feasibility-20261021; CPU source preparation, power and guarded implementation.
+Fixed before source outcomes: TRAIN5120, DEV4096calculation+4096ordinary, qualification32; no weaker exclusions/smaller replacement cohort.
+Normal planning joint lower0.917 assumes SD4, B0gain0.5, control gains0.25 and ordinary gain0; not unknown-effect power.
+Fixed12TRAIN shards60..49; sourcecb3a47b, PID2199441/session19608; deadline05:59:03UTC; log local/diagnostics/causal-reader-feasibility-v1/prepare.log.
+Latest856064/1058401source-clean documents curated,11157candidate equations; final native/unique-expression quotas unresolved.
+CPU source/native checker, guarded model/head workers and finite supervisor are implemented; NO actual B0/T feature/head call.
+1963CPU tests+smoke/compile PASS; final log local/checks/causal-reader-qualification-workflow-final-20261021.log. Fixtures are not hardware evidence.
+All four TRAIN-only terminal800heads must freeze before DEV readout; global/raw-ensemble primary controls and position-only secondary are fixed.
+Fixed256-source note interventions are secondary; total40960reader contexts/5GiBhidden cache within proposed6GiBoutput ceiling.
+Budget remains8reservedphysical-chip-hours includingqualification<=0.5, max2existingchips; old-timing proxy7.780 is not an actual-workload measurement.
+Next: finish source job, independently reconstruct ALL13344selected Parquet/native rows under a fresh30-minute deadline; then finite whole-question review.
+No frozen model protocol or actual-model release exists. Source/power/static feasibility must resolve before bounded native qualification; no science/RL/scaling release.
 
 ## Complete preparation: causal reader proposal; execution held
 Question: can selective calculation use improve full continuations while preserving an unchanged raw reference?

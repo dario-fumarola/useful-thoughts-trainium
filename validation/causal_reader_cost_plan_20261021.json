@@ -1,18 +1,18 @@
 {
   "status": "PROSPECTIVE_COST_PROJECTION_NOT_ACTUAL_NEW_WORKLOAD_QUALIFICATION",
   "prospective_documents": 13312,
-  "reader_contexts": 35840,
+  "reader_contexts": 40960,
   "writer_cap": 128,
   "existing_writer128_seconds": 6.507214502023999,
   "reader_seconds_per_context": 0.1783539480620675,
   "writer_all_cap_projection_chip_hours": 6.015558295204408,
-  "reader_2x_scoring_proxy_chip_hours": 0.8878063192422916,
+  "reader_2x_scoring_proxy_chip_hours": 1.0146357934197618,
   "startup_and_qualification_allowance_chip_hours": 0.75,
-  "conservative_projected_total_chip_hours": 7.6533646144467,
+  "conservative_projected_total_chip_hours": 7.78019408862417,
   "proposed_hard_total_reserved_chip_hour_ceiling": 8.0,
   "proposed_maximum_physical_chips": 2,
   "proposed_qualification_reserved_chip_hour_ceiling": 0.5,
-  "raw_hidden_cache_bytes": 4697620480,
+  "raw_hidden_cache_bytes": 5368709120,
   "space_reserves": {
     "feature_cache_bytes_upper": 6442450944,
     "source_bytes_upper": 17179869184,
@@ -26,5 +26,15 @@
     "No pretrained-model or experiment-head call performed. Bound includes future qualification and scientific work; no new instance/capacity/stack.",
     "Existing four-workers-per-reserved-chip accounting must be rechecked on actual proposed core mapping before release.",
     "Assigned physical-chip-equivalent hours, not billed instance hours/dollars. CPU source preparation and head fitting are accounted separately."
-  ]
+  ],
+  "context_allocation": "All three frozen prediction roles on all TRAIN and both DEV strata. The ordinary raw-ensemble table is available without a second selective extraction.",
+  "actual_profile_rule": {
+    "qualification": "32 separate sources,16 calculation and16 ordinary; four native workers on one existing chip, all three prediction roles; no scientific DEV outcomes.",
+    "writer_cap128_seconds": "Maximum group_seconds*128/decode_iterations among original qualification greedy attempts after the first two per worker, including both source strata. Project every science note at that maximum128-action rate. No policy/cap/timing sweep.",
+    "reader_seconds_per_context": "Maximum science_path_seconds/documents over second and subsequent qualification native batches across all roles/workers. Full-vocabulary witness forwards are excluded from this measurement but actual qualification allocation is counted.",
+    "projection": "writer_cap128_seconds*13312/(4*3600) + 2*reader_seconds_per_context*40960/(4*3600) + .75 reserved physical-chip-equivalent hours for qualification/startup. Require <=8 total; qualification itself<=.5. Actual supervisor also enforces the hard ceiling. No runtime guarantee from projection.",
+    "geometry": "Read-only neuron-ls reports four logical cores per existing physical device under LNC2. Recheck unoccupied cores32..35 for qualification; cores32..39 maximum for science. No new capacity.",
+    "qualification_accounting": "Whole one-physical-chip wall time for each of five native stages: G1generation, B0features,Trawfeatures,Tnotefeatures,causality. Count idle assigned cores and stragglers. CPU reference intervals without an active reservation are separate. Science counts whole two-chip phase wall time (one chip for secondary controls), including startup and physical closure."
+  },
+  "secondary_intervention_contexts": 1024
 }

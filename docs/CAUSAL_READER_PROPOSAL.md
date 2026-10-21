@@ -74,6 +74,11 @@ feasibility must be established before any new model calls.
 
 This is not an autoregressive-compute-matched comparison. Conventional CoT and
 an exact interpreter remain competitors before any practical efficiency claim.
+Also fit a secondary sixteen-weight schedule on TRAIN, using only continuation
+position. It can exploit a generic number-first/prose-later pattern without
+recognizing helpful context. This needs no extra backbone calls. Preserve the
+eight original conjunctive requirements; any stronger context-adaptation claim
+also needs an advantage over that simpler schedule.
 The note interventions alone also cannot establish a faithful internal algorithm.
 Teacher-forced likelihood does not establish complete-answer accuracy, and its
 scoring latency is not an autoregressive serving benchmark. The calculation-enriched
