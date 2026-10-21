@@ -1,0 +1,19 @@
+{
+  "compiler_version": "2.27.5334.0+f702b353",
+  "conclusion": "The installed compiler defaults auto-cast to none. Missing --auto-cast=none does not establish BF16 execution. Existing numerical discrepancies remain real and their cause remains unisolated. Future native plans should specify precision flags explicitly rather than relying on defaults.",
+  "created_utc": "2026-10-21T16:27:24.329471+00:00",
+  "installed_argument_defaults": {
+    "--auto-cast": "none",
+    "--auto-cast-type": "bf16"
+  },
+  "limits": "Read-only flags/parser inspection. No new model parity run or inspection of every lowered hardware instruction; no original qualification result changed.",
+  "model_calls": 0,
+  "official_reference": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/compiler/neuronx-cc/api-reference-guide/index.html",
+  "saved_actual_graph_flags": [
+    "--target=trn2",
+    "--model-type=transformer"
+  ],
+  "saved_flags_sha256": "ba96a7499dc29806c90566a05f2a0ce425a2ba254a2ab4a6086ac9ea00cea4a7",
+  "status": "READ_ONLY_EXECUTED_PRECISION_REVIEW",
+  "compiler_version_query_output": "NeuronX Compiler version 2.27.5334.0+f702b353\n\nPython version 3.12.3\nHWM version 2.27.5334.0+f702b353\nNumPy version 2.5.2"
+}

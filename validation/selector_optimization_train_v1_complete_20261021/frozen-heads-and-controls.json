@@ -1,0 +1,91 @@
+{
+  "controls": {
+    "T_note": {
+      "global_mixture": {
+        "TRAIN_token_NLL": 1.1612916455622417,
+        "method": "convex derivative bisection plus endpoints",
+        "weight": 0.07973589150792557
+      },
+      "position_schedule": {
+        "TRAIN_token_NLL": 1.1588919182576742,
+        "method": "independent convex TRAIN fit per fixed position; secondary control",
+        "weights": [
+          0.000789928200727482,
+          0.1413441751889058,
+          0.20595399773083017,
+          0.19339626755692269,
+          0.1529821368012037,
+          0.10213819397915663,
+          0.10000716190474529,
+          0.04763072296356563,
+          0.061412243108983494,
+          0.055295117369355426,
+          0.058092747523446814,
+          0.05902058779014585,
+          0.051862232770336525,
+          0.09416676023909562,
+          0.025910568699758163,
+          0.0960373932201517
+        ]
+      }
+    },
+    "T_raw": {
+      "global_mixture": {
+        "TRAIN_token_NLL": 1.1630123029864823,
+        "method": "convex derivative bisection plus endpoints",
+        "weight": 0.17773477814144206
+      },
+      "position_schedule": {
+        "TRAIN_token_NLL": 1.162731330662914,
+        "method": "independent convex TRAIN fit per fixed position; secondary control",
+        "weights": [
+          0.23744722350406205,
+          0.28489036000582635,
+          0.28974096215451406,
+          0.26157763153074776,
+          0.21506035257529182,
+          0.22440581079548882,
+          0.16655986810031936,
+          0.14772132411598982,
+          0.1691231117139786,
+          0.07675597670861856,
+          0.10792935643879664,
+          0.07931942463221284,
+          0.15966975960388713,
+          0.19845424590553384,
+          0.10491589229502668,
+          0.1550372938494789
+        ]
+      }
+    }
+  },
+  "head_sha256": {
+    "T_note-hard-order2026102141": "15d3d839eea26736161e2276e9a4783191d206174ba44d80fed2fa283f6f4107",
+    "T_note-hard-order2026102142": "29a11527a355863b88cf44c8c90a48e480d9f06be11cb59c72ee8acb5b2cd1e5",
+    "T_note-hard-order2026102143": "6ffc121056d3b12bf90ccbf79c8963cb89d5162b91fe384ea9b16c8d033f47ab",
+    "T_note-hard-order2026102144": "c6acbfe6fa69d169f6aa6e82c3e80cb8bed8c25c5edc5a88ca5eba5688306cf8",
+    "T_note-hard-order2026102145": "dff9dbdb457ea39bbc232b26713561f5d88f35a0d196c8b3bb73089ea4c980b9",
+    "T_note-hard-order2026102146": "f43a0591affe228f3a1bc8d0fe8847614136bc78a3d5ee7ad70b92751bf2963b",
+    "T_note-smooth-order2026102141": "46e44a421d78d353ebd8e105597d9ed07a2b95eef4122ca4e08c9650865ae6f9",
+    "T_note-smooth-order2026102142": "2d97712a445321da4fa4de235f599b001564acbf46ed92530ebc3eae81f0747d",
+    "T_note-smooth-order2026102143": "ef0cdccc6e6b8ddbb8ff9bf2b491490a37aca7677aceeb98b06c3e99249f0357",
+    "T_note-smooth-order2026102144": "b8fb0ede0ebbbb9052ac688ea0739d047f644181f517b17b503ce502da9c3d41",
+    "T_note-smooth-order2026102145": "f2b08635f0c248d498d9239aa06518df19d93a81400a1987f5b13bf67f073aa3",
+    "T_note-smooth-order2026102146": "018cccffffb6b7cce0b17f1b15e079f07786c52b5373055c9fec3f64a9a4d3e7",
+    "T_raw-hard-order2026102141": "76ffbcab2900a60c92000878d5a34346bb3b82883bf511658207fa53bf166f74",
+    "T_raw-hard-order2026102142": "1d9fee01d21696bfd878bc8b2d03aaa85c3dc42aa73e28a205457c46f956198e",
+    "T_raw-hard-order2026102143": "587cb8e235843dcb935d27abc7478cf34f3acd8a3487a3090de6dbdca798eb49",
+    "T_raw-hard-order2026102144": "36376ff8212f96b9061b5ed6949ee94567043890b29446c884a791da9388b1eb",
+    "T_raw-hard-order2026102145": "c0faf4b2215db38ccb69d5a6718b46a8c07916f5d0563f4e83addfea78909be6",
+    "T_raw-hard-order2026102146": "6d624f481a972fa721e3519e20fe69549af873bc874c68d74f6e52153d6cfec7",
+    "T_raw-smooth-order2026102141": "ddb98076c36a7ac7c4b78343b34a0d7930092451e872e31c46bf8c6cd7aac552",
+    "T_raw-smooth-order2026102142": "ff7093df7858970206037a351175f260f3f1893cca6e75474ae21ffaad47d496",
+    "T_raw-smooth-order2026102143": "01665b8a2680f7aac937ca6e800b0b118605b08099256bbd5f434484e0417bad",
+    "T_raw-smooth-order2026102144": "c999e9266af51c078a9606259ef6b715fa2b67c4c5b92bd75e0517865d44a6bd",
+    "T_raw-smooth-order2026102145": "f36192b1799ab161bdf94c827c96f08ba17cea8602a7414bde7f6abb6c4445cc",
+    "T_raw-smooth-order2026102146": "1318274c99346c17ebdf7769a6720b2ccd0aa63d678058518cd82c24744acc7d"
+  },
+  "all_frozen_before_internal_validation": true,
+  "completed_utc": "2026-10-21T16:27:47+00:00",
+  "internal_validation_started_utc": "2026-10-21T16:27:47+00:00"
+}

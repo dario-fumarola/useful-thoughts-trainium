@@ -1,5 +1,11 @@
 # Long-term proof ladder
 
+## Internal selector-optimization result — October 21
+
+The [paired TRAIN-cache study](../validation/selector_optimization_train_v1_complete_20261021/REPORT.md) finds useful selection with the hard gate in all six new orders, versus four with the calibrated smooth gate. The two smooth failures show that removing the intentional zero-gradient region is not a sufficient repair. Initial values and slopes were matched, but off-initialization geometry still differs.
+
+This strengthens repeated internal selective-inference evidence, not fresh confirmation. The FIT subset and update count changed from the parent, so its original failed joint result remains unchanged and unexplained. Both backbones stay frozen; ordinary costs remain positive. Fix the recipe and realistic mixture target before fresh confirmation. Separately establish a uniform-NTP baseline before another pretraining claim.
+
 ## Completed selective-reader boundary — October 21
 
 The [owner-approved frozen-selector experiment](../validation/causal_reader_owner_complete_20261021/REPORT.md)

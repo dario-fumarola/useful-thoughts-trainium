@@ -1,0 +1,31 @@
+{
+  "CPU_checks_passed": 1979,
+  "FIT": 4096,
+  "accelerator_chip_hours": 0,
+  "created_utc": "2026-10-21T16:24:13+00:00",
+  "design_sha256": "7d9a1349c0299b0dae8a36ef6ec8c34480408a09b413b19df1f3eff1a1b30ee5",
+  "execution_commit": "10268da",
+  "heads": 24,
+  "identity": "selector-optimization-train-20261021-v1",
+  "internal_validation": 1024,
+  "limits": "4CPU,60minutes,256MiB; originalTRAIN only. Internal development,not fresh confirmation.",
+  "orders": [
+    2026102141,
+    2026102142,
+    2026102143,
+    2026102144,
+    2026102145,
+    2026102146
+  ],
+  "parent_protocol_sha256": "89e4d3350c2fa6863f4186512a74310cff8b8f7a2b916930142b6abf491268d1",
+  "protocol_sha256": "435e81b1f88c31ea0da8844cf9962eb86ff944e8124cb989d89e9e1108d430ac",
+  "sources": {
+    "scripts/check_selector_optimization.py": "4efc7ca4ae5c7f5cf9b1e52a06daeff4ac8d90a1e20f4a8deb3b6fe34b254ceb",
+    "train/causal_reader_fit.py": "a9eda9280f6a9d448360c91a8b77518404ecd64bfe4da4eeb8f846feedd072c6",
+    "train/causal_reader_gate.py": "5ce1aa52bd24332d714684bba74a1c950982512a32d3c2ab85b25bda7b11f4e9",
+    "train/causal_reader_head_driver.py": "5e1f8f854341c083eee9b8438322e49b85ae1d724567a8e09ab5908cdfa97750",
+    "train/selector_optimization.py": "caf6b0ed38832ccfab4ab26f95254b914450c68a9c6081d070e27fabb767ae32"
+  },
+  "split_sha256": "d388a6771e2a1ede8040198c1579b2d61b107d64447809aeac9e11250c242611",
+  "status": "FROZEN_TRAIN_ONLY_OPTIMIZATION_PROTOCOL"
+}

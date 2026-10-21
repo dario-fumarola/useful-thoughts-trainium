@@ -1,0 +1,15 @@
+{
+  "all_six_primary_pass": {
+    "hard": true,
+    "smooth": false
+  },
+  "completed_utc": "2026-10-21T16:28:24+00:00",
+  "heads": 24,
+  "internal_validation_documents": 1024,
+  "limits": "Shared original TRAIN cache loader/source-split definition; independent NumPy causal-feature, gate, mixture and statistical reconstruction. Does not externally replicate or verify every optimizer trajectory.",
+  "no_model_or_DEV_calls": true,
+  "paired_draws": 5000,
+  "protocol_sha256": "435e81b1f88c31ea0da8844cf9962eb86ff944e8124cb989d89e9e1108d430ac",
+  "readout_sha256": "3f30536642abbece5793ca1cc78fe2919d8abad9b824dafb6117b769e83c9ca4",
+  "status": "PASS_INDEPENDENT_TRAIN_ONLY_OPTIMIZATION_RECONSTRUCTION"
+}

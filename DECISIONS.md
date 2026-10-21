@@ -1,3 +1,22 @@
+# Current decision summary
+
+Updated October 21, 2026. Entries below this summary remain append-only.
+
+- Focus the immediate claim on selective inference over frozen predictors.
+- Completed: hard gates pass in 6/6 internal orders; calibrated smooth gates pass in 4/6.
+- Apply the same optimization change to note and no-note controls.
+- Keep completed DEV panels out of recipe selection; internal validation is developmental.
+- Preserve the parent experiment's positive order31 and failed joint criterion.
+- A uniform-NTP baseline is required before another CPT claim.
+- The installed compiler defaults to no auto-casting; numerical discrepancies remain unresolved.
+- Future native protocols should state compiler precision explicitly.
+- Name the bootstrap cluster unit and pass cluster IDs explicitly in production helpers.
+- Keep independently implemented numerical verification.
+- Refactor current guidance for clarity while archiving full history.
+- The bounded CPU study is closed; next work is publication and focused statistical maintenance.
+
+---
+
 # Decision log
 
 ## 2026-10-16 — handoff baseline
@@ -1758,3 +1777,12 @@ Owner steering requests a narrow CPU study of selector optimization on existing 
 One source-ID-hash split:4096FIT/1024internal validation, balanced by kind; all24terminal heads freeze before internal scoring. Six fixed paired orders2141..2146, hard/smooth × note/raw. Keep10passes/batch64/optimizer/lr/initialweights and all features fixed; internalFIT size entails640updates for both gates. Calibrated smooth logistic matches original initial contribution.01 and derivative.019701 analytically, with no finite-logit dead region. Other gate geometry and saturation remain possible confounds. Exact external disabled-system B0 bypass remains. No hyperparameter or lucky-order search.
 
 Report all conditional source-paired intervals, original4practical criteria, position controls, common near-zero-use and gradient diagnostics. Allsix smooth practical passes are a development go-signal only; if hard is equally reliable this does not identify a gate-change advantage. Independent NumPy reconstruction required. Bounds4CPU/60minutes/256MiB/0acceleratorcalls with existingresourcefloors. No completedDEV reads/newmodel extraction/writerRL/CPT/scale/TEST or automatic follow-on. Later confirmation requires fresh sources and a separate protocol.
+
+
+## 2026-10-21 — paired TRAIN-only hard/smooth comparison complete
+
+The original hard gate passes all four practical criteria in all six new orders; calibrated smooth gates pass in four and effectively stall in two. The prospective smooth-repair go-signal fails. All terminal heads, orders and absolute controls remain in the report. Hard-gate gains over B0 range from 0.420 to 0.463 nats per 16-token calculation span; all six beat the position-only schedule too.
+
+This is internal development on a source-hash split of the previously used TRAIN pool (4,096 FIT / 1,024 validation, 640 updates). It does not reclassify the parent's failed joint result, identify why its order 32 failed, or establish fresh confirmation. All 24 heads froze before validation. Independent reconstruction and source-free replay agree. Study/readout and verification used 215.82 + 13.19 seconds on four CPU cores, with zero new model or accelerator calls. [Report](validation/selector_optimization_train_v1_complete_20261021/REPORT.md).
+
+The read-only installed-parser check contradicts the reviewer's BF16-by-default explanation: compiler 2.27.5334 defaults auto-cast to none. Original numerical differences remain unresolved, with no requalification. Full historical guidance and landing-page text are archived; current docs are shortened. Production bootstrap consolidation should require explicit cluster IDs and units while keeping independent checks separate. A uniform-NTP baseline is required before another CPT claim.

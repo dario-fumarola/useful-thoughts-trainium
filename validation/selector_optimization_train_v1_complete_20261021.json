@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETE_TRAIN_ONLY_SELECTOR_OPTIMIZATION_STUDY",
+  "identity": "selector-optimization-train-20261021-v1",
+  "execution_commit": "10268da",
+  "heads": 24,
+  "fit_documents": 4096,
+  "internal_validation_documents": 1024,
+  "primary_pass_counts": {
+    "hard": 6,
+    "smooth": 4
+  },
+  "effective_stall_counts": {
+    "hard": 0,
+    "smooth": 2
+  },
+  "all_six_primary_pass": {
+    "hard": true,
+    "smooth": false
+  },
+  "hard_calculation_gain_range": [
+    0.42040692211569175,
+    0.4625460934690735
+  ],
+  "prospective_smooth_go_signal": false,
+  "protocol_sha256": "435e81b1f88c31ea0da8844cf9962eb86ff944e8124cb989d89e9e1108d430ac",
+  "readout_sha256": "3f30536642abbece5793ca1cc78fe2919d8abad9b824dafb6117b769e83c9ca4",
+  "independent_reconstruction": "PASS",
+  "resampling": {
+    "unit": "source document",
+    "documents_per_stratum": 512,
+    "draws": 5000,
+    "seeds": [
+      2026102147,
+      2026102148
+    ],
+    "scope": "Conditional on fixed heads; not training-run uncertainty"
+  },
+  "resource": {
+    "CPU_fit_and_readout_wall_seconds": 215.81965522299288,
+    "CPU_independent_wall_seconds": 13.194164059998002,
+    "CPU_cores": 4,
+    "accelerator_chip_hours": 0,
+    "model_calls": 0,
+    "study_output_bytes": 9445807,
+    "limits": "Four CPU cores, one hour, 256 MiB; study and independent reconstruction completed within this budget. Packaging and tests are reported separately."
+  },
+  "limits": "Internal TRAIN-only development split, not fresh confirmation. Six paired head orders over one frozen predictor pair. No order/checkpoint/recipe selection. Smoothness does not rule out saturation or identify a unique failure cause.",
+  "next_decision": "Preserve the positive repeated internal result and the failed smooth-gate repair. No automatic recipe selection or new backbone run."
+}
