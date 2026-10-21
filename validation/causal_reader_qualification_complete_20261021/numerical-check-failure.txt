@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/dario/local/worktrees/causal-reader-gate-source-extension-launcher-v2/scripts/check_causal_reader_qualification.py", line 121, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/ubuntu/dario/local/worktrees/causal-reader-gate-source-extension-launcher-v2/scripts/check_causal_reader_qualification.py", line 76, in main
+    raise ValueError(f'Native {role} {name} error exceeds frozen tolerance: {error}')
+ValueError: Native B0_raw hidden error exceeds frozen tolerance: 0.00481414794921875

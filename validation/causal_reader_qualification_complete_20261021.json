@@ -1,0 +1,83 @@
+{
+  "CPU_tests": {
+    "log_sha256": "9abbd24eb874f703f5b479ac6fddff15340a3d25c81730c414582b5092a09731",
+    "passed": 1966,
+    "smoke_compile": "PASS"
+  },
+  "actual_active_qualification_wall_seconds": 1359.5239729539608,
+  "actual_reserved_chip_hours_all_qualification_attempts": 0.11895161972916363,
+  "additional_CPU_diagnosis": "All3roles/same32sources, no new forwards: RMS-normalized hidden errors also measured; these do not replace or relax the original failed contract.",
+  "all_native_processes_after_closure": 0,
+  "causality": "All18current/future perturbation checks show0pre-target hidden/entropy change",
+  "correction": "Unique preflighted per-worker runtime/torch ports; previous failing stage completed. Models/source/head/features/tolerances/gates remained fixed.",
+  "corrective_workers": "All19native plus3CPU workers closed0; all5native phases physically closed",
+  "created_utc": "2026-10-21T13:35:18+00:00",
+  "evidence_files": {
+    "validation/causal_reader_qualification_complete_20261021/corrective-exit.json": "784909941c23ff925bd0bc5896492963d524674419184d951e522cda648c4782",
+    "validation/causal_reader_qualification_complete_20261021/corrective-launch.json": "c0a3c37ec8d7efb556e105e8f226600f85c4e3a67e2c4223bd3ff2fc59042f2a",
+    "validation/causal_reader_qualification_complete_20261021/numerical-check-failure.txt": "7bde6a6c817a464900bfc3e5600f0f7172d35f98f28afc260086458358377de5",
+    "validation/causal_reader_qualification_complete_20261021/runtime.json": "f5470f32029ba2d5fe9d5c5911a8ff614e81a3b176838681192c2f04b58d6ba1",
+    "validation/causal_reader_qualification_complete_20261021/saved-error-diagnosis.json": "55867c7439278f666e4f5cf310098d5a20a8322b68e36448ae2466cb25abc0c3"
+  },
+  "experiment_head_fits": 0,
+  "failed_saved_array_requirements": [
+    {
+      "field": "hidden",
+      "limit": 0.001,
+      "observed": 0.00481414794921875,
+      "role": "B0_raw"
+    },
+    {
+      "field": "first_logps",
+      "limit": 0.001,
+      "observed": 0.002506256103515625,
+      "role": "T_note"
+    },
+    {
+      "field": "hidden",
+      "limit": 0.001,
+      "observed": 0.013034820556640625,
+      "role": "T_note"
+    },
+    {
+      "field": "target_logps",
+      "limit": 0.001,
+      "observed": 0.0018596649169921875,
+      "role": "T_note"
+    },
+    {
+      "field": "hidden_relative_L2",
+      "limit": 0.0001,
+      "observed": 0.0003734333210693333,
+      "role": "T_note"
+    }
+  ],
+  "first_attempt": "INCOMPLETE_COMMUNICATOR_STARTUP; all original artifacts preserved",
+  "first_attempt_report": "validation/causal_reader_qualification_startup_failure_20261021.json",
+  "first_attempt_reserved_chip_hours": 0.04502717259055418,
+  "greedy_behavior": "All32CPU conditional checks within original.001; maxbehavior error0.00003999471664428711, argmaxregret0",
+  "identity": "causal-reader-gate-20261021-source-extension-launcher-v2",
+  "limits": "Engineering/feasibility closure, not another failed model experiment. Timing projection is conditional on qualification timings and the predeclared conservative formula; actual spend is0.119, not8.09chip-hours. Post-failure normalized diagnostics are exploratory, not a replacement pass. No external replication or broad pretraining claim.",
+  "next": "No model job queued and no automatic retry/tolerance/budget/sampling change. Any later numerical or cost redesign needs a separate prospective protocol. Source allocation is now usable; V29/V30 scientific conclusions are unchanged.",
+  "numerical_status": "FAIL_DECLARED_TOLERANCES; original checker stopped at B0 absolute hidden error",
+  "preserved": "Original and corrective protocols, all notes, paired CPU/native arrays, logs, source cohorts, checkpoints/optimizer states and compiler cache. No TEST/cloud/stack/paid-teacher change.",
+  "protocol_sha256": "9397e4e1497177ad4080fa7f2ba5a4481a3578409776cad1e435e88b4f887c3e",
+  "qualification_reserved_chip_hour_ceiling": 0.5,
+  "scientific_DEV_feature_rows": 0,
+  "scientific_execution_released": false,
+  "scientific_model_comparison": "NOT_EXECUTED; no evidence for or against selector utility",
+  "source_commit": "5f1f5bb",
+  "source_extension": "COMPLETE_PASS_UNCHANGED_FULL_COHORTS",
+  "source_report": "validation/causal_reader_source_extension_complete_20261021.json",
+  "status": "CLOSED_NO_GO_ACTUAL_NUMERICAL_QUALIFICATION_AND_TIMING_PROJECTION",
+  "timing": {
+    "fixed_allowance": 0.75,
+    "hard_ceiling": 8,
+    "maximum_warm_reader_seconds_per_context": 0.18246445899421815,
+    "maximum_warm_writer128_seconds": 6.819657956017181,
+    "projection": 8.092414943840769,
+    "twice_reader_reserved_chip_hours": 1.03802003338933,
+    "writer_reserved_chip_hours": 6.304394910451439
+  },
+  "timing_status": "UNQUALIFIED_DIAGNOSTIC_ABOVE_FIXED8_CEILING; official profile not executed because numerical qualification failed"
+}

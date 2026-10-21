@@ -1,18 +1,20 @@
-# Status — 2026-10-21 12:57 UTC
+# Status — 2026-10-21 13:34 UTC
 
+## Closed: actual-model qualification; no selector fit
+Question: do actual frozen features qualify numerically/causally and fit the8-chip-hour plan?
+ID:causal-reader-gate-20261021-source-extension-launcher-v2; CLOSED_NO_GO.
+Corrective2244000/session50008 CLOSED0 at13:29:22UTC; all19native+3CPUworkers and5native phases physically closed.
+Original startup-failed attempt remains preserved; dedicated ports cleared the previous failing stage.
+Numerical checker1449 CLOSED1: B0raw hidden error0.004814>0.001; saved-array diagnosis finds5failed requirements overall.
+Tnote hidden0.013035/relativeL2.000373>limits.001/.0001; targetLP.001860 andfullfirstLP.002506>limit.001.
+All18native causal perturbations show0feature change;32greedy CPU behavior checks pass. Those do not override failed numerical requirements.
+Timing-only unqualified fixed-rule projection8.092>8reservedchip-hours; official profile remains blocked by numerical failure.
+Actual total acrossbothqualificationattempts0.118952reserved-chip-hours<0.5; no budget increase or tolerance change.
+No selector fit/scientific DEV feature or outcome/science release. All models, source cohorts, arrays and caches remain.
+1966CPU tests+smoke/compilePASS; no active process or automatic retry.
+Report:validation/causal_reader_qualification_complete_20261021.json. This is feasibility closure, not selector/pretraining efficacy evidence.
 
-
-## Incomplete: actual-model qualification; corrective qualification running
-Question: do actual features qualify numerically/causally and fit the8-chip-hour plan?
-First identity causal-reader-gate-20261021-source-extension-v1; supervisor2230576/session24180 CLOSED1 at13:10:38UTC.
-Generate, all3CPU references and B0native stages closed; Traw shard0 failed in torch_xla.device communicator startup.
-No numerical verdict, head fit or DEV readout. All peers stopped; topology confirms0remaining native processes.
-Failed attempt costs0.045027reserved-chip-hours; charge it to the original cumulative0.5qualification/8whole-question ceilings.
-Correction assigns/preflights distinct runtime and torch ports per worker; no model/scientific/numerical settings change.
-1966CPU tests+smoke/compilePASS. Corrective supervisor2244000/session50008 RUNNING since13:17:10UTC, frozen5f1f5bb; priorcost included, no automatic retry.
-Record validation/causal_reader_qualification_startup_failure_20261021.json. Source cohorts remain COMPLETE/PASS.
-
-## New preparation: fixed source extension
+## Complete: fixed source extension
 Question: can four additional TRAIN shards complete the unchanged selective-reader cohorts?
 ID:causal-reader-source-extension-20261021-v1; CPU preparation only, no model release.
 Owner steering permits a new finite source protocol; db8d722 stays closed and unchanged.
@@ -24,7 +26,7 @@ The later qualification cap remains0.5 reserved chip-hours; whole-experiment pro
 Source process2227876/session13647 CLOSED0 at12:56:24UTC after1933.96seconds; frozen source b1475a8.
 Additional418716raw/320947source-clean/4033accepted; combined7722eligible unique expressions >=6672required. All complete cohorts built.
 Independent audit2230413/session13528 CLOSED0 at12:58:21UTC; all13344source windows/6672expressions/18243equations PASS.
-New data3.457GiB<5GiB cap;1964CPU tests+smoke/compile PASS. Actual model calls were0 at source closure; qualification is now running separately above. No selector fit or scientific readout.
+New data3.457GiB<5GiB cap;1964CPU tests+smoke/compile PASS. Actual model calls were0 at source closure; qualification is now closed separately above. No selector fit or scientific readout.
 
 ## Closed: selector feasibility; no model release
 Question: can the fixed source pool support the powered selector design within a finite budget?

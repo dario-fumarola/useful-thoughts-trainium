@@ -1,13 +1,14 @@
 # Current queue
 
-New source extension is COMPLETE/PASS; actual-model qualification stopped on communicator startup; one corrective attempt is running. The earlier db8d722 attempt remains closed.
+The new source extension is COMPLETE/PASS. Actual-model qualification is CLOSED_NO_GO; no model job or run command is queued.
 
-- Source report validation/causal_reader_source_extension_complete_20261021.json:7722eligible unique calculations, all original cohort sizes preserved; independent13344source/native and6672expression checks PASS. No source retry or smaller replacement.
-- First qualification2230576/session24180 CLOSED1 at13:10:38UTC; failed Traw shard0 runtime bootstrap before its features. All native processes closed. Original outputs preserved; no head/DEV result.
-- Corrective supervisor2244000/session50008 RUNNING since13:17:10UTC from frozen5f1f5bb after1966CPU checks. New control local/diagnostics/causal-reader-gate-source-extension-launcher-v2; prior0.045027reserved-chip-hours remain charged to the same0.5/8ceilings. Same models/cohorts/head/tolerances/gates; one explicit corrective qualification, no automatic retry.
-- After all actual workers physically close, run scripts/check_causal_reader_qualification.py and scripts/causal_reader_cost_profile.py once on their original outputs. Numerical/causal/normalization PASS and measured projection<=8whole reserved-chip-hours precede a separate whole-question science release.
-- If qualified, execute one fixed source/feature/head/readout experiment, preserve all attempts and four terminal800heads before DEV; independently reconstruct the primary readout with scripts/check_causal_reader_readout.py. No automatic campaign.
-- No writerRL,newCPT,scale,officialTEST,cloud/stack change. Keep35GiBfilesystem/512GiBhost reserve and all original states/cache.
+- Source report validation/causal_reader_source_extension_complete_20261021.json:7722eligible calculations, unchanged full cohorts; independent13344source/native and6672expression checks PASS. All source records remain usable. Original db8d722 stays closed.
+- Qualification report validation/causal_reader_qualification_complete_20261021.json. Corrective supervisor2244000/session50008 CLOSED0 13:29:22UTC, allworkers physically closed. Original startup failure and correction are preserved.
+- Numerical checker1449 CLOSED1 under the original thresholds. Saved-array CPU diagnosis finds B0absolutehidden and Tnote hidden/relative/probability errors above limits. It does not replace the failed gate.
+- Timing-only projection8.092>8; not a qualified profile, no official PASS or science release. Actual cumulativequalcost0.118952<0.5chip-hours.
+- No selector fitted, no scientific DEV features/outcomes. Do not rerun producers, qualification or checker; do not loosen tolerances/budget or fit on partial evidence.
+- Any later numerical/interface or cost redesign needs a new prospective question and finite protocol. Fresh DEV outcomes remain unobserved. This feasibility result does not test selector utility or change V29/V30 science.
+- Preserve all source/model/optimizer/array/cache records;35GiBfilesystem/512GiBhost reserve. No writerRL,newCPT,scale,officialTEST,paidteacher,cloud/stack change or automatic campaign.
 
 V30 remains COMPLETE and its reward branch remains CLOSED:
 

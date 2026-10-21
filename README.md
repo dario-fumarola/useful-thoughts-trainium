@@ -1,13 +1,12 @@
 # Useful Thoughts on Trainium
 
-**Current: the new fixed source extension passes; the first actual-model qualification stopped on communicator startup.**
-Four additional TRAIN shards supply a combined7,722eligible unique calculations, above6,672required.
-All13,344selected native source windows and6,672calculation identities pass independent reconstruction.
-The full5,120TRAIN/4,096-per-DEV-stratum/32qualification allocation is preserved.
-No selector has been fitted or scientifically evaluated. A dedicated-port launcher correction passed1,966CPU tests;
-one corrective qualification is running, charging the failed0.045chip-hours to the same0.5/8ceilings.
-Numerical/causal and measured-cost qualification must pass before science. [Startup record](validation/causal_reader_qualification_startup_failure_20261021.json).
-The earlier db8d722 feasibility stop remains closed and unchanged. [New source report](validation/causal_reader_source_extension_complete_20261021.json).
+**Current: the source extension passes; the selector protocol closes before fitting because numerical and cost requirements do not pass.**
+The full5,120TRAIN/4,096-per-DEV-stratum/32qualification allocation is preserved:7,722eligible calculations, with all13,344selected source windows independently verified.
+The corrected launcher completed all qualification workers, but CPU/native hidden and calculation-conditioned probability differences exceed the frozen tolerances.
+The timing diagnostic projects8.092reserved-chip-hours against8; it is not a qualified profile.
+Actual spend across both qualification attempts is0.119chip-hours. No selector was fitted and no scientific DEV outcome was observed.
+All processes are closed; no model job or automatic retry is queued. [Qualification closure](validation/causal_reader_qualification_complete_20261021.json), [source report](validation/causal_reader_source_extension_complete_20261021.json).
+The earlier db8d722 source-feasibility stop remains unchanged; this is not evidence against selector efficacy.
 
 **V30 closes the current predictive-reward branch without RL.** On256 fresh TRAIN
 documents, hindsight best-of-eight calculations gain only **+0.082 nats** over the
@@ -16,8 +15,7 @@ below unchanged B0**. Correct calculations rank better on25 mixed documents, but
 that is below the frozen32-document alignment requirement. Numerical gain again
 comes with a prose-prediction cost. [Complete report](validation/candidate_utility_v30_complete_20261021/REPORT.md).
 All2,304 attempts/3,840 scores and the fixed gates are preserved; independent
-context/HF checks and model-free public numerical replay pass. No further model
-RL run follows. [Public evidence release](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v30-candidate-utility-20261021)
+context/HF checks and model-free public numerical replay pass. No RL follows from this result. [Public evidence release](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/v30-candidate-utility-20261021)
 has three assets, all fully downloaded and hash-verified without authentication.
 V29's result below remains unchanged.
 
@@ -36,7 +34,7 @@ unique calculations versus6,672required across TRAIN/DEV/qualification, short by
 An independent recount agrees; the sample size and exclusions remain unchanged.
 The guarded workflow passes1,964CPU tests. That closed attempt made no released-model calls or fits.
 A separately frozen four-shard extension now resolves the allocation without changing exclusions or sample sizes;
-actual qualification remains incomplete under a0.5reserved-chip-hour cumulative cap, before any release of the8-chip-hour whole experiment.
+actual qualification now closes without science under the unchanged0.5/8chip-hour limits. The numerical contract fails and the timing projection exceeds its bound.
 Source availability is not evidence for or against selector efficacy.
 The [raw-control audit](validation/real_cpt_v29_raw_objective_audit_20261021.json)
 confirms that V29's raw arm reweights continuations; the source review does not

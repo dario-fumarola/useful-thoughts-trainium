@@ -1,0 +1,103 @@
+{
+  "created_utc": "2026-10-21T13:32:17+00:00",
+  "frozen_tolerances": {
+    "causal_perturbation_max_absolute": 1e-06,
+    "entropy_max_absolute": 0.001,
+    "first_logps_max_absolute": 0.001,
+    "greedy_CPU_behavior_logp_error": 0.001,
+    "greedy_CPU_max_argmax_logit_regret": 0.001,
+    "hidden_max_absolute": 0.001,
+    "hidden_max_relative_L2": 0.0001,
+    "normalization_log_error": 2e-05,
+    "target_logps_max_absolute": 0.001
+  },
+  "limits": "Post-failure mechanics diagnosis on32qualification sources only. No new model call, fitting or DEV outcomes. The original absolute-hidden qualification remains failed; normalized errors do not replace that declared gate. Timing is not a qualified profile or release.",
+  "protocol_sha256": "9397e4e1497177ad4080fa7f2ba5a4481a3578409776cad1e435e88b4f887c3e",
+  "roles": {
+    "B0_raw": {
+      "CPU_hidden_at_worst": -60.0722770690918,
+      "actual_gate_RMS_normalized_hidden_max_L2": 0.0032867464584673367,
+      "actual_gate_RMS_normalized_hidden_max_absolute": 0.0006872408975056032,
+      "greedy_CPU_checks": 0,
+      "hidden_max_relative_L2": 8.374561333922203e-05,
+      "hidden_maximum_magnitude": 116.74342346191406,
+      "maximum_absolute_errors": {
+        "entropy": 0.000152587890625,
+        "first_logps": 0.000102996826171875,
+        "hidden": 0.00481414794921875,
+        "target_logps": 4.1961669921875e-05
+      },
+      "maximum_current_future_causality_error": 0.0,
+      "maximum_greedy_argmax_regret": 0,
+      "maximum_greedy_behavior_error": 0,
+      "native_causality_checks": 6,
+      "native_distribution_log_mass_error": 3.7019974830954205e-06,
+      "native_hidden_at_worst": -60.077091217041016,
+      "worst_hidden_index": [
+        20,
+        3,
+        425
+      ]
+    },
+    "T_note": {
+      "CPU_hidden_at_worst": 17.902271270751953,
+      "actual_gate_RMS_normalized_hidden_max_L2": 0.016806909323649987,
+      "actual_gate_RMS_normalized_hidden_max_absolute": 0.0070949737351480024,
+      "greedy_CPU_checks": 32,
+      "hidden_max_relative_L2": 0.0003734333210693333,
+      "hidden_maximum_magnitude": 87.07681274414062,
+      "maximum_absolute_errors": {
+        "entropy": 0.0007139444351196289,
+        "first_logps": 0.002506256103515625,
+        "hidden": 0.013034820556640625,
+        "target_logps": 0.0018596649169921875
+      },
+      "maximum_current_future_causality_error": 0.0,
+      "maximum_greedy_argmax_regret": 0.0,
+      "maximum_greedy_behavior_error": 3.999471664428711e-05,
+      "native_causality_checks": 6,
+      "native_distribution_log_mass_error": 2.6371260930508853e-06,
+      "native_hidden_at_worst": 17.915306091308594,
+      "worst_hidden_index": [
+        28,
+        1,
+        1960
+      ]
+    },
+    "T_raw": {
+      "CPU_hidden_at_worst": 5.905304908752441,
+      "actual_gate_RMS_normalized_hidden_max_L2": 0.000460047476900933,
+      "actual_gate_RMS_normalized_hidden_max_absolute": 0.00013628141646648828,
+      "greedy_CPU_checks": 0,
+      "hidden_max_relative_L2": 1.0179098161758395e-05,
+      "hidden_maximum_magnitude": 85.14324188232422,
+      "maximum_absolute_errors": {
+        "entropy": 0.00025272369384765625,
+        "first_logps": 0.00014019012451171875,
+        "hidden": 0.00031757354736328125,
+        "target_logps": 6.198883056640625e-05
+      },
+      "maximum_current_future_causality_error": 0.0,
+      "maximum_greedy_argmax_regret": 0,
+      "maximum_greedy_behavior_error": 0,
+      "native_causality_checks": 6,
+      "native_distribution_log_mass_error": 5.216038110596265e-06,
+      "native_hidden_at_worst": 5.905622482299805,
+      "worst_hidden_index": [
+        21,
+        14,
+        559
+      ]
+    }
+  },
+  "status": "CPU_ONLY_SAVED_QUALIFICATION_ERROR_DIAGNOSIS_NOT_A_PASS_OR_SCIENCE_RELEASE",
+  "unqualified_timing_diagnostic": {
+    "fixed_allowance": 0.75,
+    "hard_ceiling": 8,
+    "maximum_warm_reader_seconds_per_context": 0.18246445899421815,
+    "maximum_warm_writer128_seconds": 6.819657956017181,
+    "projection": 8.092414943840769,
+    "twice_reader_reserved_chip_hours": 1.03802003338933,
+    "writer_reserved_chip_hours": 6.304394910451439
+  }
+}

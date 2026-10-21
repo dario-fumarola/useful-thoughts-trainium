@@ -1,0 +1,23 @@
+{
+  "pid": 2244000,
+  "start_utc": "2026-10-21T13:17:10.604492+00:00",
+  "command": [
+    "/home/ubuntu/ema-trainium/.venv/bin/python3.12",
+    "-u",
+    "-m",
+    "train.causal_reader_supervisor",
+    "--protocol",
+    "/home/ubuntu/dario/local/diagnostics/causal-reader-gate-source-extension-launcher-v2/protocol.json",
+    "--phase",
+    "qualification",
+    "--output",
+    "/home/ubuntu/dario/local/diagnostics/causal-reader-gate-source-extension-launcher-v2/qualification-v1",
+    "--deadline-utc",
+    "2026-10-21T15:06:43.041009+00:00"
+  ],
+  "source_commit": "5f1f5bb",
+  "qualification_chip_hour_cap": 0.5,
+  "prior_qualification_reserved_chip_hours": 0.04502717259055418,
+  "prior_qualification_wall_seconds": 627.5634834999801,
+  "scientific_execution_released": false
+}

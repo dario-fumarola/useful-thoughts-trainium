@@ -1,0 +1,250 @@
+{
+  "completed_utc": "2026-10-21T13:29:22+00:00",
+  "native_reservations": [
+    {
+      "elapsed_wall_seconds": 91.1267964480212,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "generate"
+    },
+    {
+      "elapsed_wall_seconds": 42.390686094993725,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "features-B0_raw"
+    },
+    {
+      "elapsed_wall_seconds": 47.28142530901823,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "features-T_raw"
+    },
+    {
+      "elapsed_wall_seconds": 46.37686319794739,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "features-T_note"
+    },
+    {
+      "elapsed_wall_seconds": 38.95223864901345,
+      "physical_devices": [
+        8
+      ],
+      "reserved_physical_chips": 1,
+      "stage": "causality"
+    }
+  ],
+  "prior_reserved_chip_hours": 0.04502717259055418,
+  "protocol_sha256": "9397e4e1497177ad4080fa7f2ba5a4481a3578409776cad1e435e88b4f887c3e",
+  "status": "ALL_QUALIFICATION_PROCESSES_CLOSED",
+  "supervisor_sha256": "8c99a29f2213e2f1bf7786b28afa78237e1d0b7c06040e8520cd6a9cb7178a64",
+  "total_reserved_chip_hours_including_prior_qualification": 0.11895161972916363,
+  "workers": [
+    {
+      "core": 32,
+      "elapsed_wall_seconds": 90.74671099201078,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "generate"
+    },
+    {
+      "core": 33,
+      "elapsed_wall_seconds": 90.745869159,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "generate"
+    },
+    {
+      "core": 34,
+      "elapsed_wall_seconds": 90.74455811304506,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "generate"
+    },
+    {
+      "core": 35,
+      "elapsed_wall_seconds": 90.74431081005605,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "generate"
+    },
+    {
+      "core": null,
+      "elapsed_wall_seconds": 111.65096415794687,
+      "execution_device": "cpu",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 0,
+      "returncode": 0,
+      "stage": "reference-B0_raw"
+    },
+    {
+      "core": null,
+      "elapsed_wall_seconds": 111.84153265197529,
+      "execution_device": "cpu",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 0,
+      "returncode": 0,
+      "stage": "reference-T_raw"
+    },
+    {
+      "core": null,
+      "elapsed_wall_seconds": 239.20197206601733,
+      "execution_device": "cpu",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 0,
+      "returncode": 0,
+      "stage": "reference-T_note"
+    },
+    {
+      "core": 32,
+      "elapsed_wall_seconds": 42.00930803100346,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-B0_raw"
+    },
+    {
+      "core": 33,
+      "elapsed_wall_seconds": 42.0087054510368,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-B0_raw"
+    },
+    {
+      "core": 34,
+      "elapsed_wall_seconds": 42.007933258020785,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-B0_raw"
+    },
+    {
+      "core": 35,
+      "elapsed_wall_seconds": 42.007037838047836,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-B0_raw"
+    },
+    {
+      "core": 32,
+      "elapsed_wall_seconds": 46.89706547104288,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_raw"
+    },
+    {
+      "core": 33,
+      "elapsed_wall_seconds": 46.89646559202811,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_raw"
+    },
+    {
+      "core": 34,
+      "elapsed_wall_seconds": 46.89580230001593,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_raw"
+    },
+    {
+      "core": 35,
+      "elapsed_wall_seconds": 46.89525559404865,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_raw"
+    },
+    {
+      "core": 32,
+      "elapsed_wall_seconds": 45.998978322022595,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_note"
+    },
+    {
+      "core": 33,
+      "elapsed_wall_seconds": 45.99795844400069,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_note"
+    },
+    {
+      "core": 34,
+      "elapsed_wall_seconds": 45.997003067983314,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_note"
+    },
+    {
+      "core": 35,
+      "elapsed_wall_seconds": 45.99610775097972,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "features-T_note"
+    },
+    {
+      "core": 32,
+      "elapsed_wall_seconds": 38.646831657970324,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "causality"
+    },
+    {
+      "core": 33,
+      "elapsed_wall_seconds": 38.64581794699188,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "causality"
+    },
+    {
+      "core": 34,
+      "elapsed_wall_seconds": 38.64518135198159,
+      "execution_device": "xla",
+      "logical_cores_per_physical_chip": 4,
+      "reserved_logical_cores": 1,
+      "returncode": 0,
+      "stage": "causality"
+    }
+  ]
+}
