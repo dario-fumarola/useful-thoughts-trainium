@@ -5,10 +5,10 @@ Updated October 22, 2026. Entries below this summary remain append-only.
 - Genuine uniform next-token CPT passes fresh FineMath confirmation: +0.014481 [0.013903, 0.015058] nats/token versus B0; suffix16 improves separately.
 - All four fixed settings finish before DEV; DEV selects cosine / peak LR 1e-5 before confirmation. Four settings are not four replications.
 - Exact native recovery passes without widening tolerances. Historical failures and their costs remain recorded.
-- Every ordinary setting loses on the fixed educational-English diagnostic. The original FineMath pass stays a domain result.
-- A fixed two-order 50/50 source-mixture test is prepared before scaffold outcomes, conditional on measured time, state storage and a separate 7.5 assigned-chip-hour limit.
+- Every ordinary setting and all six matched scaffold models lose on the fixed educational-English diagnostic. The original FineMath pass stays a domain result.
+- The fixed two-order 50/50 source-mixture test is running after measured time/storage checks pass, within a separate 7.5 assigned-chip-hour limit. Its protocols froze before scaffold outcomes.
 - Baseline actual 16.607 assigned chip-hours within 18. Owner-approved independent fits used up to six physical chips; assigned costs are not the whole-node invoice.
-- Six matched raw/format/computation models now run from B0, in two source orders, using the qualified schedule. Native qualification passes. Measured total projection 39.449, prospective ceiling 40 assigned chip-hours.
+- All six matched raw/format/computation models finish. Trace loses to matched raw training in both source orders; the original supervised-learning criterion fails. Actual cost 32.537 assigned chip-hours within 40.
 - Original source tokens precede optional work and keep equal coefficients. This tests post-hoc supervised learning, not autonomous discovery.
 - Unique source documents are the bootstrap unit. All absolute controls and every order remain in the result.
 - Preserve all original sources, states and historical outcomes; existing node only, 35 GiB disk / 512 GiB available-memory floors.

@@ -1,0 +1,19 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_DOWNLOAD_HASH_AND_REPLAY",
+  "utc": "2026-10-22T09:08:44.361820+00:00",
+  "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/general-web-retention-20261022",
+  "target_commit": "1539e4fe40ae1c33721b684d8b70770f2d9874bd",
+  "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/general-web-retention-20261022/general-web-retention-20261022.tar.gz",
+  "authorization_header_sent": false,
+  "archive_sha256": "b6f35905157f857dc8ec281badfbf536939085a18a0859e4fbe0bfce69573dac",
+  "archive_bytes": 21939584,
+  "all_member_hashes_match": true,
+  "manifest_members_verified": 4,
+  "replay": {
+    "status": "PASS_SOURCE_FREE_NUMPY_REPLAY",
+    "contrasts_reproduced": 16,
+    "documents": 1024,
+    "scope": "Numerical reconstruction of all fixed cross-domain diagnostics; no new model calls or external replication."
+  },
+  "scope": "Original-score numerical publication verification, not model replication or verification of omitted source text."
+}

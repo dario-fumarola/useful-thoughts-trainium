@@ -1,0 +1,118 @@
+{
+  "status": "COMPLETE_SAVED_TRAIN_ONLY_FIXED_READER_OPPORTUNITY",
+  "source_documents": 256,
+  "sampled_candidates": 2048,
+  "new_model_calls": 0,
+  "parameter_updates": 0,
+  "reader": "Historical TRAIN-fitted per-position probability mixture, frozen before this diagnostic",
+  "note_weights": [
+    0.000789928200727482,
+    0.1413441751889058,
+    0.20595399773083017,
+    0.19339626755692269,
+    0.1529821368012037,
+    0.10213819397915663,
+    0.10000716190474529,
+    0.04763072296356563,
+    0.061412243108983494,
+    0.055295117369355426,
+    0.058092747523446814,
+    0.05902058779014585,
+    0.051862232770336525,
+    0.09416676023909562,
+    0.025910568699758163,
+    0.0960373932201517
+  ],
+  "no_note_weights": [
+    0.23744722350406205,
+    0.28489036000582635,
+    0.28974096215451406,
+    0.26157763153074776,
+    0.21506035257529182,
+    0.22440581079548882,
+    0.16655986810031936,
+    0.14772132411598982,
+    0.1691231117139786,
+    0.07675597670861856,
+    0.10792935643879664,
+    0.07931942463221284,
+    0.15966975960388713,
+    0.19845424590553384,
+    0.10491589229502668,
+    0.1550372938494789
+  ],
+  "contrasts": {
+    "greedy_mixture_minus_B0": {
+      "mean_nats_per_16_tokens": 0.22816565741124298,
+      "CI95": [
+        0.15908409347950483,
+        0.3031343129255096
+      ]
+    },
+    "mean_sampled_mixture_minus_B0": {
+      "mean_nats_per_16_tokens": 0.2292371528106511,
+      "CI95": [
+        0.16289397491027344,
+        0.3019300430862333
+      ]
+    },
+    "hindsight_best8_mixture_minus_B0": {
+      "mean_nats_per_16_tokens": 0.2547827325732726,
+      "CI95": [
+        0.18481831633720802,
+        0.3309266260097304
+      ]
+    },
+    "hindsight_best8_minus_greedy": {
+      "mean_nats_per_16_tokens": 0.026617075162029456,
+      "CI95": [
+        0.008632121507004395,
+        0.054786931880518905
+      ]
+    },
+    "hindsight_best8_or_actual_B0_minus_greedy": {
+      "mean_nats_per_16_tokens": 0.0697459868718836,
+      "CI95": [
+        0.04750221846057713,
+        0.09983170325443123
+      ]
+    },
+    "greedy_mixture_minus_fixed_no_note_position_control": {
+      "mean_nats_per_16_tokens": 0.19241951967398374,
+      "CI95": [
+        0.12965029323159588,
+        0.2586218356938544
+      ]
+    },
+    "hindsight_best8_or_actual_B0_minus_B0": {
+      "mean_nats_per_16_tokens": 0.29791164428312666,
+      "CI95": [
+        0.2309103092775737,
+        0.3721139672923775
+      ]
+    }
+  },
+  "candidate_score_std_mean": 0.027190041560810306,
+  "candidate_score_range_mean": 0.06753120185651426,
+  "actual_B0_null_wins_fraction": 0.3515625,
+  "statistics": {
+    "resampling_unit": "unique source document",
+    "independent_clusters": 256,
+    "items": 256,
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 17,
+    "random_source": "seeded Generator",
+    "estimand": "item-weighted mean; all items in a sampled cluster travel together"
+  },
+  "saved_score_sha256": {
+    "outputs/score-B0-0.jsonl": "e522afbfe3cc6ff10fdd7e054656e5f62d76d33e16cdac2af54ffa626e3681b1",
+    "outputs/score-B0-1.jsonl": "4189c7abc6da15bdb8800665379857674c67979e020c5bf199e83f228745bff2",
+    "outputs/score-B0-2.jsonl": "982b0b601a169aa11cb9b94141162650a0ae4dc51a6d7874b3ea9fd8f221e125",
+    "outputs/score-B0-3.jsonl": "5420e16236934da2da7bff4f95f3db2e941c199cf0dcb59c4d41a9f2278fcca4",
+    "outputs/score-T-0.jsonl": "ba17a1047e7413353c2e8fea3f36b5151e541aff74afede24ca247e0fc9b7cc5",
+    "outputs/score-T-1.jsonl": "0a42f9665b6c4c09d79611b4f653aea0805a10d2af9142b64e0155e66968b3a3",
+    "outputs/score-T-2.jsonl": "53dd580573b72c731cb653fb2cb84233c336c21604e4dd397d03f0141870ca8e",
+    "outputs/score-T-3.jsonl": "f5bc3d2da5b12752bb2bae58290b8ade95c9acc11a74065a3b6f9caa2e03e38f"
+  },
+  "scope": "Exploratory TRAIN-only hindsight opportunity under a different fixed reader. Not a deployed selector, writer learning or reopening of V30. Null is an actual alternate predictor, not a candidate-independent reward subtraction."
+}
