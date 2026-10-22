@@ -8,7 +8,7 @@ The selected ordinary-training model improves full-window FineMath NLL from **1.
 
 All four fixed LR/schedule settings improve DEV. The lowest full-window DEV loss selects **warmup-cosine, peak LR 1e-5**, after all four terminal checkpoints freeze and before confirmation. Each recipe trains once on the same 32,768 original windows, **17,268,736 equally weighted targets**, with 128 updates. Native accumulation and exact full-state recovery pass. Actual assigned cost, including all unsuccessful reservations, is **16.607 chip-hours** within 18; this is not the whole-node invoice. Four settings are not four training replications.
 
-[Complete report and every setting](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json) · [Public numerical evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022)
+[Complete report and every setting](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json) · [Public numerical evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022) ([download/replay verified](validation/uniform_lm_baseline_public_release_20261022.json))
 
 The overnight follow-on compares matched raw, format-only and verified-computation supervision in **two source orders**, starting afresh from B0. Original source text precedes optional work, preserving its target coefficients and context. The six models use the qualified baseline schedule; fresh natural confirmation follows freezing all terminals. This tests a supervised learning scaffold, not autonomous thought discovery. [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
 

@@ -1,0 +1,26 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_DOWNLOAD_HASH_AND_REPLAY",
+  "utc": "2026-10-22T03:55:13.694147+00:00",
+  "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022",
+  "target_commit": "bba4837b9190a91f4e801e8fef3cfdb57f5a9fc8",
+  "scientific_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef",
+  "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/uniform-lm-baseline-20261022/uniform-lm-baseline-20261022.tar.gz",
+  "authorization_header_sent": false,
+  "archive_sha256": "8f41b224582b3450ef0faf1ab9ffe57275167808d0ec1371eca381e2e9b8d927",
+  "archive_bytes": 35925491,
+  "all_member_hashes_match": true,
+  "replay": {
+    "status": "PASS_SOURCE_FREE_NUMPY_REPLAY",
+    "documents_per_cohort": [
+      1024,
+      4096,
+      1024
+    ],
+    "full_token_scores_preserved": true,
+    "contrasts_reproduced": 6,
+    "selected_recipe": "warmup_cosine-lr1e-05",
+    "confirmation_verdict": "PASS",
+    "scope": "Numerical reconstruction from released scores; no backbone rerun, original source verification or external replication"
+  },
+  "scope": "Source-free numerical publication verification, not backbone rerun or external replication"
+}
