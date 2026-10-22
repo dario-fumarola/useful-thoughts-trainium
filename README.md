@@ -1,6 +1,6 @@
 # Useful Thoughts on Trainium
 
-We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Ordinary continued pretraining now supplies a qualified reference; a matched computation-supervision comparison is running.
+We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Ordinary continued pretraining now supplies a qualified reference; the completed matched computation-supervision comparison does not beat ordinary training.
 
 ## Uniform next-token baseline: fresh confirmation passes
 
@@ -12,7 +12,13 @@ A separate fixed educational-English diagnostic finds regression in all four set
 
 [Complete report and every setting](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json) · [Public numerical evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022) ([download/replay verified](validation/uniform_lm_baseline_public_release_20261022.json))
 
-The overnight follow-on compares matched raw, format-only and verified-computation supervision in **two source orders**, starting afresh from B0. Original source text precedes optional work, preserving its target coefficients and context. The six models use the qualified baseline schedule; fresh natural confirmation follows freezing all terminals. This tests a supervised learning scaffold, not autonomous thought discovery. [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
+## Matched computation supervision: ordinary training wins
+
+All six models completed 128 updates and froze before prediction on **4,096 fresh FineMath documents**. Verified-computation supervision loses to the same-data ordinary-training arm by **0.000944 [0.000845, 0.001048]** and **0.000908 [0.000813, 0.001004] nats/token** in the two source orders. It beats the format-only arms, but also loses to the independently qualified ordinary-training reference. Every arm improves over untouched B0. The declared supervised-learning criterion **fails**.
+
+This isolates a post-document auxiliary training objective: original source targets precede optional work and retain equal coefficients. It does not test autonomous thought discovery. The full-window loss and the final-continuation loss against matched raw training are negative in both orders. All original scores, all six histories and the 26-contrast NumPy reconstruction are retained. Actual assigned cost is **32.537 chip-hours** within 40, including qualification and every attempt.
+
+[Complete matched report](validation/scaffold_learning_complete_20261022/REPORT.md) · [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
 
 ## Fresh confirmation: calculation gains, natural-text losses
 
@@ -40,7 +46,7 @@ This source-hash split is internal development evidence: 4,096 fitting and 1,024
 |---|---|
 | Can explicit computation help? | Strong arithmetic and in-range permutation-program results. Length extrapolation and direct transfer remain limited. |
 | Can a causal selector use calculations on fresh real text? | All six fixed heads improve on B0 in the fresh calculation confirmation; five beat all controls. Every head loses on the fresh natural panel. The earlier parent joint failure remains unchanged. |
-| Does intermediate supervision improve learning? | One developmental document-QA signal survives a coefficient-matched control. Fresh confirmation remains absent. |
+| Does intermediate supervision improve learning? | Earlier document-QA evidence remains developmental. The fresh, two-order post-document computation study loses to matched ordinary training in both orders. |
 | Does it improve continued pretraining? | V29 fails its primary direct-prediction criterion. Its “raw” control reweights selected continuations, so it is not a uniform next-token baseline. |
 | Can useful computation be discovered autonomously? | Unanswered here. V30's fixed predictive-reward branch closed without RL after failing its prerequisite. |
 

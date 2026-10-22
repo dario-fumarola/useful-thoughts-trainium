@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 22, 2026, 07:35 UTC. [History](docs/archive/STATUS_through_20261021.md).
+Updated October 22, 2026, 09:06 UTC. [History](docs/archive/STATUS_through_20261021.md).
 
 ## Ordinary pretraining reference passes
 
@@ -16,11 +16,13 @@ All four ordinary baselines regress on the fixed educational-English panel. The 
 
 A fixed 50/50 FineMath/FineWeb-Edu training comparison is prepared in two source orders, with 2,048 fresh mathematical and 1,024 fresh English confirmation windows. The exact qualified numerical recipe stays fixed; source replay is the intervention. Both protocols freeze before scaffold outcomes. Execution follows the main study only if measured timing, all full-state storage and the additional **7.5 assigned-chip-hour** ceiling permit. [Preparation](validation/uniform_mixture_preparation_20261022/REPORT.md).
 
-## Matched supervised-learning study is running
+## Matched supervised-learning study is complete: primary criterion fails
 
-Three fresh training arms—raw, format-only and verified computation—across two source orders. All share 34,816 original windows, equal source coefficients, the selected cosine schedule and 128 updates. Optional work follows original text; labels are derived from the preceding prefix. This isolates a post-hoc learning scaffold, not an autonomous writer. All six terminals freeze before fresh natural confirmation; B0 and the qualified ordinary model remain absolute references.
+All six raw, format-only and verified-computation models finished 128 updates and froze before fresh confirmation. Computation supervision loses to matched ordinary training by **0.000944 [0.000845, 0.001048] / 0.000908 [0.000813, 0.001004] nats/token**. It beats format-only training but also loses to the qualified ordinary reference; all trained arms improve over B0. The two-order supervised-learning criterion **fails**. Final-continuation comparisons with raw training also lose. This is supervised post-document learning, not autonomous discovery.
 
-Native loss, accumulation, LR, reducer, masters, replica and exact recovery pass; qualification cost **1.530 assigned chip-hours**. All three first-order fits and full-state exports are complete; all three second-order fits have launched on independent two-chip groups. Existing hardware only, up to three full trainers concurrently to preserve host-memory and checkpoint-export headroom. Measured complete projection 39.449, prospective total ceiling **40 assigned chip-hours**. Every phase and failed reservation counts. [Overnight plan](docs/OVERNIGHT_PLAN_20261022.md).
+All 26 original-score comparisons replay exactly; all six histories and models are retained. Actual **32.537 assigned chip-hours**, within 40, including qualification and scoring. [Full matched report](validation/scaffold_learning_complete_20261022/REPORT.md).
+
+Both fixed source-mixture fits are now running after measured storage/time/budget checks passed, using the unchanged qualified numerical recipe. The complete English readout and additional CPU numerical checks are in progress. No result from these pending checks is implied.
 
 All **2,074 CPU tests**, smoke and compilation pass. CPU checks are separate from native qualification. All original sources, models and optimizer states remain retained; disk and host-memory floors stay 35 and 512 GiB.
 
