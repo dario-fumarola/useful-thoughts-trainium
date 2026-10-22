@@ -1,5 +1,26 @@
 # Long-term proof ladder
 
+## Current assessment — October 22
+
+**Ordinary training now supplies a qualified positive reference; the new computation-supervision recipe does not improve it.** The [uniform next-token baseline](../validation/uniform_lm_baseline_complete_20261022/REPORT.md) improves fresh FineMath prediction by 0.014481 nats/token. A [same-data, two-order comparison](../validation/scaffold_learning_complete_20261022/REPORT.md) then finds that adding verified post-document computation makes direct prediction worse than ordinary training by 0.000944 / 0.000908 nats/token. Both intervals are negative. Beating format-only supervision does not overturn the stronger raw-control comparison.
+
+All ten mathematical-training models lose on the separate [educational-English panel](../validation/general_web_retention_complete_20261022/REPORT.md). The fixed two-order source-mixture test is running, with its recipes frozen before the computation results. That tests ordinary source composition, not a thought-training benefit. Independent standard CPU verification and retained model artifacts remain part of the overnight handoff.
+
+The evidence now separates four questions:
+
+| Question | Current evidence |
+|---|---|
+| Can explicit computation help a fixed system? | Yes on controlled tasks and targeted real-text calculation spans. Frozen selective inference still loses on the declared unenriched natural panel. |
+| Can ordinary continued pretraining improve this model? | Yes on the declared fresh mathematical source frame, with an educational-English retention cost. |
+| Does this auxiliary computation supervision improve the learned direct predictor? | No in the new matched recipe: both source orders lose to ordinary training. Earlier developmental document-QA signals remain unconfirmed. |
+| Can useful computation be learned autonomously, or internalized efficiently? | Still unresolved. Neither the frozen selector nor supplied interpreter targets establishes either claim. |
+
+Keep the original goal: learn computation that improves fresh prediction at a worthwhile cost. A future learning intervention must beat **both B0 and a qualified same-source ordinary-training control**, and report retention on its intended source mixture. Source coefficients being equal does not equalize gradient directions or clipping; an auxiliary-objective result is a result about the complete recipe. The present negative comparison is evidence against this recipe, not a diagnosis of one unique mechanism or proof that all intermediate supervision is futile.
+
+Any return to autonomous learning needs a concrete source of prospective utility beyond the supervised warm start. The [saved fixed-reader diagnostic](../validation/writer_feedback_opportunity_20261022/REPORT.md) offers only 0.0266 nats/span of hindsight best-of-eight improvement over greedy on inspected training documents. It supplies no learned writer or fresh confirmation. Retain that limitation rather than launching an actor merely because training infrastructure exists.
+
+The dated sections below preserve the earlier reasoning and its historical boundaries. They are not the current execution queue; use [STATUS](../STATUS.md) and the [handoff](AGENT_HANDOFF.md) for actual live work.
+
 ## Fresh frozen-selector confirmation — October 21
 
 [The completed fresh test](../validation/reader_fresh_confirmation_complete_20261021/REPORT.md) improves targeted calculation prediction over B0 with all six fixed heads (+0.421–0.506 nats per 16 tokens). Five also beat all controls; order 45's position-control interval spans zero, so that conjunctive criterion fails. Every head worsens the unenriched natural panel, while a simple no-calculation constant mixture improves it. The separate natural endpoint fails in every order.
