@@ -1,0 +1,21 @@
+{
+  "status": "READY_FIXED_PROGRAM_PUBLIC_MODELS_AND_STATES_VERIFIED",
+  "utc": "2026-10-22T11:56:54.076994+00:00",
+  "accelerator_devices": 16,
+  "devices_with_processes": [],
+  "available_host_GiB": 964.7053527832031,
+  "free_storage_GiB": {
+    "/": 36.56370162963867,
+    "/dev/shm": 62.57273864746094,
+    "/run/user/1000": 132.1141128540039,
+    "local/nvme": 41.094730377197266,
+    "local/nvme-study": 39.14518356323242,
+    "local/nvme-cpt": 38.588191986083984
+  },
+  "model_count": 12,
+  "native_model_and_optimizer_hash_matches": 108,
+  "CPU_tests_passed": 2074,
+  "observer_closed": true,
+  "state_integrity_receipt": "validation/trained_model_native_state_integrity_20261022.json",
+  "scope": "Current inventory and resource floors, together with the completed published scientific and integrity receipts. This does not power off the node or turn local optimizer snapshots into a remote backup."
+}

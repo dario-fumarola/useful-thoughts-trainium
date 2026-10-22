@@ -1,6 +1,6 @@
 # Overnight results — October 22, 2026
 
-Updated 11:38 UTC. The main program is complete before the owner's 12:00 UTC / 08:00 Eastern deadline. The bounded TRAIN-only derivative diagnosis is also complete; final usage accounting remains in progress.
+Completed 11:56 UTC, before the owner's 12:00 UTC / 08:00 Eastern deadline. All fixed training, confirmation, CPU checks, artifact publication and final accounting are complete.
 
 **Ordinary continued pretraining now has a healthy reference. Mixing ordinary mathematical and educational-English sources improves prediction in both tested domains. Adding verified computation supervision does not improve direct learning against the matched ordinary-training control.**
 
@@ -59,8 +59,10 @@ All six numerical archives and the mixture CPU supplement pass anonymous downloa
 
 These per-study totals include earlier qualification and all eight nonzero-exit native attempts. They are not the whole-node invoice or a claim that every reservation began after 22:00 Eastern. All 85 native attempts have closure records; historical incomplete process-absence flags remain unchanged. Current inventory shows no processes on any of the sixteen accelerator devices. [Exact closure/counter reconciliation](../validation/overnight_resource_summary_20261022.json).
 
-The node was **not fully saturated**: peak observed use was eight of sixteen chips. Concurrency preserved host-memory and complete-state export headroom. Read-only usage accounting reports observation coverage and leaves missing intervals unknown; assigned reservations, process occupancy, core busy time and FLOP efficiency are different measurements. The 35 GiB free-storage and 512 GiB available-host-memory floors remain unchanged.
+The node was **not fully saturated**: peak observed use was **8 of 16 chips**. In the explicit **02:53–11:55 UTC** observation window, this program schedules **41.74 chip-hours**, or **28.90%** of the node's available chip time. Valid counters cover **84.90%** of that window; their conditional whole-node busy average is **26.96%**. Missing periods remain unknown. Concurrency preserved host-memory and complete-state export headroom; minimum observed available host memory is **598.40 GiB**, above the unchanged 512 GiB floor. The 35 GiB free-storage floor remains satisfied. These are separate scheduling and observation measures, not a whole-node invoice or FLOP efficiency. [Complete usage plot, raw telemetry and coverage](../validation/overnight_node_usage_20261022/REPORT.md).
 
 All **2,074 CPU tests**, smoke and compilation pass. Original sources, complete native checkpoints and historical results remain retained. The existing Trainium environment was not modified by the isolated CPU portability test.
 
 A final read-only integrity check also rehashes every original terminal model file and all 96 optimizer shards: **108 of 108 match their original complete-state manifests**. This verifies local state integrity; it does not create a remote optimizer backup or repeat native recovery. [State-integrity receipt](../validation/trained_model_native_state_integrity_20261022.json).
+
+[Final readiness snapshot](../validation/overnight_deadline_readiness_20261022.json). All scientific workers and the read-only observer are closed. The machine remains on to preserve native optimizer snapshots.

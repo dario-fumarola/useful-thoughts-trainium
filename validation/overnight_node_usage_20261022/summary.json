@@ -1,0 +1,28 @@
+{
+  "window_seconds": 32502.012567043304,
+  "observed_seconds": 27593.801872968674,
+  "unobserved_seconds": 4908.210694074631,
+  "observation_coverage": 0.8489874839611777,
+  "observed_time_weighted_node_busy_percent": 26.96340157277749,
+  "observed_time_weighted_occupied_chips": 5.382906263217095,
+  "observed_process_occupied_chip_hours": 41.25968025777075,
+  "maximum_observed_process_occupied_chips": 8,
+  "minimum_observed_available_host_GiB": 598.3954544067383,
+  "maximum_sample_carry_seconds": 10.0,
+  "scope": "Read-only hardware telemetry over covered intervals only. Missing intervals remain unknown. Process inventory refreshes at most once per minute and can lag launches/exits. Busy percentage uses all 64 logical cores, including idle cores; it is not FLOP efficiency. Observed process occupancy is distinct from assigned experiment chip-hours and the whole-node invoice. The source file stops emitting counters when no NRT process reports a valid period. Counter absence is not filled with zero.",
+  "status": "OBSERVED_NODE_UTILIZATION_SUMMARY",
+  "telemetry_sha256": "bdc1648e144a1d26c9ae8731634ae00d7a1e78ca0ed4e2afb5c9754eee492f72",
+  "from_utc": "2026-10-22T02:53:54.745063+00:00",
+  "to_utc": "2026-10-22T11:55:36.757630+00:00",
+  "generated_utc": "2026-10-22T11:55:36.838071+00:00",
+  "raw_compressed_sha256": "4db321b5c4c265418c497c697c89871f461c6be032b3e6bfde6ffef7d36c0e2d",
+  "owned_native_reservations_in_same_window": {
+    "scheduled_chip_hours": 41.740397802193975,
+    "whole_node_capacity_chip_hours": 144.45338918685914,
+    "fraction_of_available_chip_time_scheduled_to_this_program": 0.2889540912619244,
+    "maximum_simultaneously_scheduled_chips": 8.0,
+    "records_with_clock_fields": 84,
+    "zero_cost_records_without_clock_fields": 1,
+    "scope": "Only the recorded owned native stages, clipped to the same clock window. Starts are derived from recorded end UTC and monotonic wall seconds; end UTC is rounded to seconds. This is reservation scheduling, not hardware busy percentage, a monetary invoice, or an assumption about unobserved hardware intervals."
+  }
+}
