@@ -1,0 +1,21 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_DOWNLOAD_HASH_AND_REPLAY",
+  "utc": "2026-10-22T10:35:27.663122+00:00",
+  "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-mixture-20261022",
+  "target_commit": "9ba9368044283317eff2d6611fc48bba9d6426d5",
+  "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/uniform-mixture-20261022/uniform-mixture-20261022.tar.gz",
+  "authorization_header_sent": false,
+  "archive_sha256": "7dfa593e60fd4bb8d290d800b3f0d0942346b3628aa7b7ad7bcd91908342b7e0",
+  "archive_bytes": 26921940,
+  "all_member_hashes_match": true,
+  "manifest_members_verified": 7,
+  "replay": {
+    "status": "PASS_SOURCE_FREE_NUMPY_REPLAY",
+    "contrasts_reproduced": 15,
+    "both_domains_both_orders": true,
+    "beats_qualified_reference_on_declared_mixture_both_orders": true,
+    "primary_pass": true,
+    "scope": "Original-score numerical reconstruction, not a backbone rerun, source-text verification or external replication."
+  },
+  "scope": "Original-score numerical publication verification, not model replication or verification of omitted source text."
+}
