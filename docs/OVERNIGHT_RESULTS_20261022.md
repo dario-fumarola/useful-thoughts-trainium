@@ -62,3 +62,5 @@ These per-study totals include earlier qualification and all eight nonzero-exit 
 The node was **not fully saturated**: peak observed use was eight of sixteen chips. Concurrency preserved host-memory and complete-state export headroom. Read-only usage accounting reports observation coverage and leaves missing intervals unknown; assigned reservations, process occupancy, core busy time and FLOP efficiency are different measurements. The 35 GiB free-storage and 512 GiB available-host-memory floors remain unchanged.
 
 All **2,074 CPU tests**, smoke and compilation pass. Original sources, complete native checkpoints and historical results remain retained. The existing Trainium environment was not modified by the isolated CPU portability test.
+
+A final read-only integrity check also rehashes every original terminal model file and all 96 optimizer shards: **108 of 108 match their original complete-state manifests**. This verifies local state integrity; it does not create a remote optimizer backup or repeat native recovery. [State-integrity receipt](../validation/trained_model_native_state_integrity_20261022.json).
