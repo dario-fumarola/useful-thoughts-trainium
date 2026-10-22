@@ -1,0 +1,62 @@
+{
+  "CPU_affinities": [
+    "48-71",
+    "72-95"
+  ],
+  "CPU_stop_UTC": "2026-10-22T11:35:00+00:00",
+  "CPU_threads_per_worker": 24,
+  "actual_CPU_model_forwards_if_complete": 8192,
+  "base_directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+  "candidate_document_counts": [
+    1024,
+    768,
+    512
+  ],
+  "coordinator_sha256": "57658434339767138e1b3543e10fcbe970b9cd52d1d05f905930556dab1e3188",
+  "excluded_small_check_plan_sha256": "c7cc1e3f7a95b934a5b00f7bf5d832f86c5fd66efb7da74b7b1a3fc36dac2cf2",
+  "execution_condition": "Wait for completed small32 CPU timing and cross-domain native diagnostic. Before any larger CPU forward, choose the largest fixed prefix of1024/768/512 identities for which 1.20-times measured runtime plus180seconds fits11:35UTC. This depends only on time, never on prediction scores or scientific verdicts. Keep all8models and all527targets per chosen document, the512GiB host and35GiB filesystem floors, and two24-thread workers on NUMA1 while native mixture fits remain on NUMA0.",
+  "item_ids_canonical_sha256": "c7e51810b8cffb48d2acf866caefd1bc20b7908062285219d91a94458942c97e",
+  "maximum_documents": 1024,
+  "maximum_parallel_workers": 2,
+  "models": [
+    "B0",
+    "uniform_reference",
+    "scaffold_raw-seed11",
+    "scaffold_format-seed11",
+    "scaffold_trace-seed11",
+    "scaffold_raw-seed12",
+    "scaffold_format-seed12",
+    "scaffold_trace-seed12"
+  ],
+  "native_readout": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/complete-readout.json",
+  "native_scores": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/public-evidence/original-token-scores.npz",
+  "new_accelerator_calls": 0,
+  "output_directory": "/run/user/1000/scaffold-standard-CPU-verification-20261022",
+  "pre_execution_repair": "Corrected a final progress-logging syntax expression before worker launch or any CPU model calls. The fixed subset, models, forward calculation, source identity and resource bounds remain unchanged.",
+  "scope": "Standard FP32 Hugging Face numerical cross-check on a preselected inspected subset. Runtime-only source allocation is fixed before any large CPU predictions. No fitting, new primary gate or external training replication.",
+  "selection": "Exclude the original fixed32 CPU item IDs, then sort remaining original confirmation item IDs by SHA256(large-CPU-forward-verification-20261022: + item_id), keeping the first1024. No model score enters selection.",
+  "source_file": "/dev/shm/scaffold-learning-overnight-v1-data/CONFIRM.jsonl",
+  "source_sha256": "233744ab6034b8d5c958ed29ddbeb8d4dbd9a67c534ef7a31222dbbf1f74c3ff",
+  "statistics": {
+    "draws": 5000,
+    "resampling_unit": "unique source document",
+    "seed": 17
+  },
+  "status": "FROZEN_BEFORE_STANDARD_CPU_SUBSET_RESULTS",
+  "utc": "2026-10-22T08:19:31+00:00",
+  "worker_models": [
+    [
+      "B0",
+      "scaffold_raw-seed11",
+      "scaffold_format-seed11",
+      "scaffold_trace-seed11"
+    ],
+    [
+      "uniform_reference",
+      "scaffold_raw-seed12",
+      "scaffold_format-seed12",
+      "scaffold_trace-seed12"
+    ]
+  ],
+  "worker_sha256": "6d3e2409da1c1931a64a8bea98b6f5cf0ab3ad2ffc266b742eb3e44d7d53ac6b"
+}

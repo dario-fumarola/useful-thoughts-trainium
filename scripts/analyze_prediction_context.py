@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--evidence', type=Path, required=True)
     parser.add_argument('--cohort', required=True)
     parser.add_argument('--model', required=True)
+    parser.add_argument('--control', default='B0')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--plot', action='store_true')
     args = parser.parse_args()
@@ -30,7 +31,7 @@ def main():
     with np.load(score_file, allow_pickle=False) as archive:
         prefix = args.cohort+'__' if args.cohort+'__B0' in archive else ''
         delta = (archive[prefix+args.model].astype(np.float64)
-                 - archive[prefix+'B0'].astype(np.float64))
+                 - archive[prefix+args.control].astype(np.float64))
         docs = archive[prefix+'document_ids'].tolist()
     if (delta.shape != (len(docs), 527) or len(set(docs)) != len(docs)
             or not np.isfinite(delta).all()):
@@ -44,6 +45,7 @@ def main():
         raise ValueError('The context decomposition must preserve the original aggregate')
     data = dict(status='EXPLORATORY_CONTEXT_POSITION_DECOMPOSITION',
         source_scores_sha256=digest, cohort=args.cohort, model=args.model,
+        control=args.control,
         documents=len(docs), full_window_gain_nats_per_token=float(delta.mean()),
         bins=[dict(context_tokens_first=first, context_tokens_last=last,
             target_positions=last-first+1, gain_nats_per_token=float(result['mean'][i]),
@@ -66,12 +68,13 @@ def main():
                 yerr=np.array([means-ci[:, 0], ci[:, 1]-means])[:, subset],
                 fmt='o', color='#236a8f', capsize=3)
             ax.set(xlabel='Available in-window context tokens',
-                   ylabel='Gain over B0 (nats / target token)')
+                   ylabel='Gain (nats / target token)')
             ax.grid(axis='y', alpha=.2)
         axes[0].set_xscale('log', base=2)
         axes[0].set_title('All context bins')
         axes[1].set_title('Longer-context detail')
-        fig.suptitle(f'{args.model}: {args.cohort}, {len(docs):,} source documents')
+        fig.suptitle(f'{args.model} versus {args.control}\n'
+                     f'{args.cohort}, {len(docs):,} source documents')
         fig.savefig(args.output.with_suffix('.png'), dpi=180)
         fig.savefig(args.output.with_suffix('.pdf'), metadata={'CreationDate': None})
         plt.close(fig)
