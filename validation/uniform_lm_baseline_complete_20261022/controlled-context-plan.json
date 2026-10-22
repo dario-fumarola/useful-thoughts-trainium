@@ -1,0 +1,59 @@
+{
+  "status": "FROZEN_BEFORE_CONTROLLED_CONTEXT_RESULTS",
+  "item_ids": [
+    "fd18643cfb62e50599e1bd71be6ee36022093a7a2d8b20b11809f451d03a3096:uniform:532",
+    "a870766d248560d5ba9f7e8b9c64a0df9352791b152f5273424269d03dd14334:uniform:1069",
+    "b01407c6c086575a78b217f54c28e4988358a556642f955eb6e85fba54f15fcd:uniform:517",
+    "9a6a180f3a71eb5282ddb57fb751a5b4c48fd3aed9903a6315a6b74cbe103269:uniform:680",
+    "f315d5485af279d1eb5c397c4fb5ea329ca70c2e0dab00c178146a9a767eb70c:uniform:821",
+    "46fca1b968e3a45e25ddb583cbbcca09324f2a1738186b7a63d598622961f252:uniform:545",
+    "c48a5aaaa707a0306b8e30f408673f4e32ea70ba36437b3753365f88e55fda6d:uniform:580",
+    "ae4ab8c4536b61d18874fe188f3adf9355212a22d15e648ea6b6dad49126308b:uniform:525",
+    "fd5afdecb25c5778370660714262dbc8985e0e2bad79b096045e4be5a9ed5cc6:uniform:801",
+    "7fccf1708a02c07587d2a0ac3700f2ee6d0f865c277c499db1599d9c741d05fa:uniform:1514",
+    "f0c34a37f4e6dc564242f5341affb7010b986e1f2682645f77d708e83386c582:uniform:615",
+    "fd307164196a74414e345e3a64eea9cc2610b6546c091de489145310518b1a89:uniform:808",
+    "d7a48a4661ad309d5a3ee9eee3bd3f3f0341c78063e9f8baa74e0114b02e21a4:uniform:4479",
+    "69fb8137c35a6c7d6c665b96f2db1918cc0f5297d08f6ba4279402e33541e205:uniform:654",
+    "1f6c120d8ee34ea6c08b0c458b5a73ebc60b60a602bd02113d14f6228fea044a:uniform:519",
+    "2cf149cef9613c9ee346ad9de0bcabe9f89ad5ccaaa5d067f08af76e9b5bf75e:uniform:1578",
+    "6aca1e75ca06ab1c1c9af2dd52a1e96e807a84c6c689dd9ea10f10b30be32be4:uniform:1829",
+    "f86032d138581ec95cae2aaff515d92f41b95875de0ba9a8d125c78f6a75cdc2:uniform:1026",
+    "9007e8ff819e304528d4ba20b3b4791623bbdad1c7b20930801d257d6f14e12e:uniform:567",
+    "b881a6a20a530006b49c2a3c133a87360ab99f31ccc63c0be99247c3d2a80d12:uniform:519",
+    "a21152ab09c29aa4730389f446c8367acbe0c4892412c8ecbca1c271d51081ff:uniform:800",
+    "086c8f7461723cec27d61775c302ab98539730f8943c6efdf81b392cfc95fd99:uniform:1614",
+    "2a5f656b093304958d6da27c9fde3fc5c892420430f9b867bca05ca4399c639e:uniform:600",
+    "d7830776396c81db32a786360bd04634f0f897ac654e5435e8de8165528ba6e7:uniform:1067",
+    "63aec3c3dcbf2f8bcdee71b03ba8d16001aca45404594291bd95c2d57d756e6a:uniform:584",
+    "9b1c9d100d656a6410e405fcd5866a37adb3f236ea6c4b15ed1fdba12cc346e3:uniform:669",
+    "12c0a279012056e0018495068c6856750b66cf3f1d939d8f137aff8f4408903b:uniform:553",
+    "d9b00b2f3c7aeec55a95014123b72410c5380b6b6c4d3640653e2ddf50ba7a6b:uniform:965",
+    "42dbf50a6f185063b6552fa55f3014e6688a739718213a95ee39eecec48a331e:uniform:543",
+    "423c32a867f29ae0957c69ab757d19b69dc9fae54c3f8e8f4a068b4008abac5f:uniform:530",
+    "6fadd8dd34647ec9f89e3829b66dc1d98971954f24d548626e4d0b3d1beb07f7:uniform:621",
+    "d78906edfd49402dfd00847bcf9c7f8522642cd2ce84eb53b8ff66c2e28efe4c:uniform:739"
+  ],
+  "documents": 32,
+  "models": [
+    "B0",
+    "warmup_cosine-lr1e-05"
+  ],
+  "context_lengths": [
+    1,
+    16,
+    64,
+    128,
+    512
+  ],
+  "targets": "The same original final16tokens for every context condition, with normal position reset after truncation.",
+  "score": "Paired trained-minus-B0 log probability per16-token span; report interactions against512context as exploratory.",
+  "CPU_threads": 24,
+  "maximum_wall_seconds": 1800,
+  "statistics": {
+    "unit": "unique source document",
+    "draws": 5000,
+    "seed": 17
+  },
+  "scope": "Post-result controlled truncation on a fixed inspected subset, not a new confirmation, gate or internal-computation intervention"
+}

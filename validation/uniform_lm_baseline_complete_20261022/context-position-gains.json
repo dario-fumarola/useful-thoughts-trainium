@@ -1,0 +1,101 @@
+{
+  "status": "EXPLORATORY_CONTEXT_POSITION_DECOMPOSITION",
+  "source_scores_sha256": "396baf86fa81934f697516ae875f92d9dd5a93f57fca3935df92e6cc4b1b4287",
+  "cohort": "CONFIRM",
+  "model": "warmup_cosine-lr1e-05",
+  "documents": 4096,
+  "full_window_gain_nats_per_token": 0.014481206232314248,
+  "bins": [
+    {
+      "context_tokens_first": 1,
+      "context_tokens_last": 16,
+      "target_positions": 16,
+      "gain_nats_per_token": 0.19339298590700038,
+      "CI95": [
+        0.18768730784210547,
+        0.19885598323659703
+      ]
+    },
+    {
+      "context_tokens_first": 17,
+      "context_tokens_last": 32,
+      "target_positions": 16,
+      "gain_nats_per_token": 0.06805084292606191,
+      "CI95": [
+        0.06366789531459532,
+        0.07242044146869714
+      ]
+    },
+    {
+      "context_tokens_first": 33,
+      "context_tokens_last": 64,
+      "target_positions": 32,
+      "gain_nats_per_token": 0.03508855145074482,
+      "CI95": [
+        0.03257228917865548,
+        0.03756431959648037
+      ]
+    },
+    {
+      "context_tokens_first": 65,
+      "context_tokens_last": 128,
+      "target_positions": 64,
+      "gain_nats_per_token": 0.014516979383208962,
+      "CI95": [
+        0.013137649151197233,
+        0.015866929481254517
+      ]
+    },
+    {
+      "context_tokens_first": 129,
+      "context_tokens_last": 256,
+      "target_positions": 128,
+      "gain_nats_per_token": 0.00596289249727425,
+      "CI95": [
+        0.005220339279592016,
+        0.006744399313497251
+      ]
+    },
+    {
+      "context_tokens_first": 257,
+      "context_tokens_last": 384,
+      "target_positions": 128,
+      "gain_nats_per_token": 0.002848765441319545,
+      "CI95": [
+        0.0022162690915522036,
+        0.0035519760098528747
+      ]
+    },
+    {
+      "context_tokens_first": 385,
+      "context_tokens_last": 511,
+      "target_positions": 127,
+      "gain_nats_per_token": 0.0018579939673337412,
+      "CI95": [
+        0.001385291505962983,
+        0.0023440410680549825
+      ]
+    },
+    {
+      "context_tokens_first": 512,
+      "context_tokens_last": 527,
+      "target_positions": 16,
+      "gain_nats_per_token": 0.0020447903850008653,
+      "CI95": [
+        0.0008466301471543953,
+        0.003267156596144491
+      ]
+    }
+  ],
+  "statistics": {
+    "resampling_unit": "unique source document",
+    "independent_clusters": 4096,
+    "items": 4096,
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 17,
+    "random_source": "seeded Generator",
+    "estimand": "item-weighted mean; all items in a sampled cluster travel together"
+  },
+  "new_model_calls": 0,
+  "scope": "Exploratory decomposition of completed results, not a new gate or causal explanation. Context counts reset at each sampled original window; original absolute positions vary. Bin intervals are not simultaneous intervals."
+}

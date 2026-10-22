@@ -1,0 +1,93 @@
+{
+  "status": "COMPLETE_CONTROLLED_CONTEXT_CPU_DIAGNOSTIC",
+  "documents": 32,
+  "CPU_model_forwards": 320,
+  "new_accelerator_calls": 0,
+  "context_conditions": [
+    {
+      "available_prefix_tokens": 1,
+      "gain_nats_per_same16_token_target": 2.458518822822133,
+      "CI95": [
+        1.6152616642413316,
+        3.443985996454126
+      ]
+    },
+    {
+      "available_prefix_tokens": 16,
+      "gain_nats_per_same16_token_target": 0.9820650538148478,
+      "CI95": [
+        0.5120029227978667,
+        1.4534886753714018
+      ]
+    },
+    {
+      "available_prefix_tokens": 64,
+      "gain_nats_per_same16_token_target": 0.09121406583182745,
+      "CI95": [
+        -0.2014680331706928,
+        0.47734122897291564
+      ]
+    },
+    {
+      "available_prefix_tokens": 128,
+      "gain_nats_per_same16_token_target": -0.0980997659717634,
+      "CI95": [
+        -0.37626854138719595,
+        0.17602728660832226
+      ]
+    },
+    {
+      "available_prefix_tokens": 512,
+      "gain_nats_per_same16_token_target": -0.06027976574952665,
+      "CI95": [
+        -0.22080463392312374,
+        0.09456582395751507
+      ]
+    }
+  ],
+  "interactions_shorter_gain_minus_512_gain": [
+    {
+      "available_prefix_tokens": 1,
+      "difference_nats_per_same16_targets": 2.5187985885716593,
+      "CI95": [
+        1.7395585467518464,
+        3.4097751111308696
+      ]
+    },
+    {
+      "available_prefix_tokens": 16,
+      "difference_nats_per_same16_targets": 1.0423448195643745,
+      "CI95": [
+        0.5713592334322853,
+        1.5038368057874363
+      ]
+    },
+    {
+      "available_prefix_tokens": 64,
+      "difference_nats_per_same16_targets": 0.1514938315813541,
+      "CI95": [
+        -0.10788965043455517,
+        0.4557321111066992
+      ]
+    },
+    {
+      "available_prefix_tokens": 128,
+      "difference_nats_per_same16_targets": -0.03782000022223675,
+      "CI95": [
+        -0.21345762804059296,
+        0.1347908751746123
+      ]
+    }
+  ],
+  "statistics": {
+    "resampling_unit": "unique source document",
+    "independent_clusters": 32,
+    "items": 32,
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 17,
+    "random_source": "seeded Generator",
+    "estimand": "item-weighted mean; all items in a sampled cluster travel together"
+  },
+  "wall_seconds": 127.39204411901301,
+  "scope": "Post-result controlled truncation on a fixed inspected subset, not a new confirmation, gate or internal-computation intervention"
+}
