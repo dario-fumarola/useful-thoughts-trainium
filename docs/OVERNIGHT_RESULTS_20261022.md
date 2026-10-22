@@ -1,6 +1,6 @@
 # Overnight results — October 22, 2026
 
-Updated 11:15 UTC. The main program is complete before the owner's 12:00 UTC / 08:00 Eastern deadline. Final usage accounting and one bounded TRAIN-only derivative diagnosis remain in progress.
+Updated 11:15 UTC. The main program is complete before the owner's 12:00 UTC / 08:00 Eastern deadline. The bounded TRAIN-only derivative diagnosis is also complete; final usage accounting remains in progress.
 
 **Ordinary continued pretraining now has a healthy reference. Mixing ordinary mathematical and educational-English sources improves prediction in both tested domains. Adding verified computation supervision does not improve direct learning against the matched ordinary-training control.**
 
@@ -33,6 +33,10 @@ It does not show that intermediate computation is useless. Earlier generated-cal
 The post-document writer sees all 528 original tokens before predicting work. Its verified labels are prefix-derived, but this does not make the writer prospective. Autonomous thought discovery, onset across pretraining ages and efficient internalization remain unresolved. The saved TRAIN-only fixed-reader diagnostic offers only **+0.0266 nats/span** of hindsight best-of-eight gain over greedy; no writer update follows from it. [That bounded diagnostic](../validation/writer_feedback_opportunity_20261022/REPORT.md).
 
 These are short continued-training studies from one mature starting model, on bounded FineMath and educational-English frames. Source freshness is relative to this project, not proven absence from base pretraining. Full-window likelihood includes short contexts; final 16-token spans are reported separately. For example, the mixed order 11 English suffix interval spans zero even though its full-window gain is positive. These results do not establish free-running answer accuracy, a general-language gain or an autonomous reasoning capability.
+
+## A limited optimization diagnosis
+
+The exact first training batch provides a concrete illustration of source/auxiliary coupling. At unchanged B0, the format-only auxiliary has gradient norm 36.76 versus source norm 1.41; the trace auxiliary has norm 2.27 and a slightly positive, nearly orthogonal dot product with the source. Both alter source alignment of an initial adaptive gradient-direction surrogate. This weakens a simple negative-dot-product explanation for trace training, while illustrating why format-only supervision can be a weak comparator. It is one inspected TRAIN batch, with no parameter update, and cannot identify the unique cause of 128-update generalization. [All values, source and limits](../validation/source_auxiliary_gradient_20261022/REPORT.md).
 
 ## Models and numerical evidence are ready
 
