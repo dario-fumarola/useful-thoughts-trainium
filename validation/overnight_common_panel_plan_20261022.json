@@ -1,0 +1,79 @@
+{
+  "cached_original_scores": "Eight mathematical predictors from the completed scaffold study, four English predictors from the completed mixture study; original exact FP32 scores and paired identities are reused. The uniform_reference alias is only renamed after its checkpoint SHA matches the qualified selected model.",
+  "cohorts": {
+    "ENGLISH": 1024,
+    "MATH": 4096
+  },
+  "execution_conditions": "Wait for all twelve terminals and the scaffold and source-mixture primary readouts to close, independent of their scientific verdicts. Run only if measured timing, complete source/model identity, storage, host-memory and the finite inference budget fit. No source acquisition or official TEST.",
+  "frozen_numerical_workers": {
+    "English_wrapper_source": "/home/ubuntu/dario/local/worktrees/mixture-scoring-20261022",
+    "identical_likelihood_worker_sha256": "b850bce9bfef3d0dfacaceb5eedfc265bd8c0f33d74ca55d53741174f9b6889c",
+    "mathematical_wrapper_source": "/home/ubuntu/dario/local/worktrees/scaffold-learning-scoring-v1"
+  },
+  "identity": "overnight-common-panel-diagnostic-20261022",
+  "maximum_additional_assigned_chip_hours": 1.25,
+  "maximum_simultaneous_native_pairs": 3,
+  "minimum_free_GiB": 35,
+  "minimum_host_available_GiB": 512,
+  "models": [
+    "B0",
+    "warmup_constant-lr3e-06",
+    "warmup_constant-lr1e-05",
+    "warmup_cosine-lr3e-06",
+    "warmup_cosine-lr1e-05",
+    "scaffold_raw-seed11",
+    "scaffold_format-seed11",
+    "scaffold_trace-seed11",
+    "scaffold_raw-seed12",
+    "scaffold_format-seed12",
+    "scaffold_trace-seed12",
+    "mixed-seed11",
+    "mixed-seed12"
+  ],
+  "native_stop_UTC": "2026-10-22T11:10:00+00:00",
+  "new_native_jobs": {
+    "ENGLISH": 9,
+    "MATH": 5
+  },
+  "new_training": false,
+  "primary_gate_change": false,
+  "scientific_status": "Supplemental descriptive comparison. Every prior scientific decision remains unchanged; no model or checkpoint is selected on this readout. The 50/50 target is declared, not natural corpus prevalence.",
+  "sources": {
+    "English_data": {
+      "path": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022/ENGLISH_CONFIRM.jsonl",
+      "sha256": "546893a28c56546913c70e1df994af589b8a124abdc27f5132863c1c6d36d8d6"
+    },
+    "English_independent_source_receipt": {
+      "path": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022/independent-source-check.json",
+      "sha256": "f0280d4fbf591c607c5ebd4f4c50aa885a33e59117d999114f3e2f9183ac7b92"
+    },
+    "English_manifest": {
+      "path": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022/complete.json",
+      "sha256": "c3325777fb9c8f46611bd20a9eb96c8b0ad0cfb91d41a42f1435617a2bab34dd"
+    },
+    "math_data": {
+      "path": "/dev/shm/scaffold-learning-overnight-v1-data/CONFIRM.jsonl",
+      "sha256": "233744ab6034b8d5c958ed29ddbeb8d4dbd9a67c534ef7a31222dbbf1f74c3ff"
+    },
+    "math_independent_source_receipt": {
+      "path": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/independent-source-check.json",
+      "sha256": "48554ca8f051ba4b89d5d9615735e9aa1ec8d21fd7079689258d78c1362a5bc4"
+    },
+    "math_manifest": {
+      "path": "/dev/shm/scaffold-learning-overnight-v1-data/complete.json",
+      "sha256": "a2b00ae2a9075da9de079ee195a8eac111c1a594d8653d262d299c53906f3e26"
+    }
+  },
+  "statistics": {
+    "English_seed": 19,
+    "diagnostic_target_weights": [
+      0.5,
+      0.5
+    ],
+    "draws": 5000,
+    "math_seed": 17,
+    "unit": "unique source document within each domain"
+  },
+  "status": "FROZEN_BEFORE_SCAFFOLD_CONFIRMATION_RESULTS",
+  "utc": "2026-10-22T07:24:05+00:00"
+}
