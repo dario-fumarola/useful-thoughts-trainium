@@ -1,0 +1,33 @@
+{
+  "CPU_reference_loss": 1.4715742226690054,
+  "absolute_error": 0.0006747471924437587,
+  "all_attempt_costs": {
+    "likelihood-qualification": 0.10602007119334303,
+    "qualification": 0.8302097776777615,
+    "qualification-cold-wall-stop": 1.1623237905072166,
+    "qualification-counter-reference": 0.1855262494211072,
+    "qualification-counter-replay": 0.43962808164056494,
+    "qualification-disk-stop": 0.0834072885627716,
+    "qualification-final": 0.39543475786557086,
+    "qualification-prelaunch-environment-error": 0.0,
+    "qualification-prelaunch-relative-path-error": 0.0012632839310875474,
+    "qualification-reference-warm": 0.18329724779223194,
+    "qualification-replay": 0.3297679145499973,
+    "qualification-replay-warm": 0.4311944826483442,
+    "qualification-second-disk-stop": 0.29042132111835395
+  },
+  "all_eight_original_B0_signatures_agree": true,
+  "complete_wall_seconds": 190.83612675702898,
+  "data_sha256": "9ef2e07a9390227d5fc5675cd95382e568b6924b15cd49ea27d64042245998a5",
+  "documents": 1024,
+  "first_batch_seconds": 117.84585175401298,
+  "maximum_abs_error": 0.02,
+  "maximum_warm_batch_seconds": 1.1105537089752033,
+  "native_first_training_batch_loss": 1.4708994754765616,
+  "protocol_sha256": "ade2dfc00788bb5454eacd9b3eeb8650b74abf710a0a6e4a93b9d046bf0fd65c",
+  "reserved_chip_hours": 0.10602007119334303,
+  "scope": "Qualification sources only; readout correctness and complete cost profile, not held-out model quality",
+  "status": "PASS_UNIFORM_LM_LIKELIHOOD_AND_COST_PROFILE",
+  "total_reserved_chip_hours_so_far": 4.438494266908351,
+  "utc": "2026-10-21T23:39:20+00:00"
+}

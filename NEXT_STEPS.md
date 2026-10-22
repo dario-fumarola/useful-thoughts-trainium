@@ -1,9 +1,9 @@
-# Next research work
+# Active overnight work
 
-Uniform-LM source and CPU preparation are complete: all 38,912 windows independently check, the one-loss path passes dense-gradient/accumulation tests, and concrete qualification/four-setting protocols pass real-data cursor checks. [Report](validation/uniform_lm_preparation_20261021/REPORT.md) · [Design](configs/uniform_lm_baseline.json).
+1. Publish the completed ordinary baseline with original source-free token scores, all four histories and anonymous download/hash/replay verification. Fresh confirmation passes; preserve every earlier failed qualification and its cost.
+2. Finish the six fixed matched raw/format/computation fits. Freeze every terminal before fresh confirmation. Compare all orders against both matched controls, B0 and the qualified ordinary reference; report full-window and suffix outcomes separately.
+3. Reconstruct and publish the complete supervised-learning result by 08:00 Eastern / 12:00 UTC, either direction. Keep actual resource and utilization accounting separate from whole-node billing.
 
-1. Qualify actual native training at batch 256 / accumulation 8: initial loss, one reducer, FP32 master update, actual optimizer LR after warmup/decay, replica agreement and full-state restore. Measure the complete workload against the proposed finite budget before fitting.
-2. Compare the four declared ordinary-training settings on the same 32,768 sources, source order and 17.269 million tokens. Freeze all terminal checkpoints before DEV scoring; report every result.
-3. Freeze the selected recipe/checkpoint before scoring the untouched 4,096-source CONFIRM cohort. Compare full-window NLL with B0 and report suffix/calculation diagnostics separately.
+[Baseline result](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Overnight prospective design](docs/OVERNIGHT_PLAN_20261022.md).
 
-The completed selector study retains six targeted gains, one unresolved position-control comparison, every natural loss and the positive no-calculation ensemble. A competent uniform-NTP reference addresses the next pretraining question; it does not retroactively repair those results. [Selector report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md).
+The previous frozen-selector experiment stays closed with targeted gains and consistent natural-text losses. The new baseline does not repair those findings. A successful supervised scaffold would still not establish autonomous discovery or internalization.

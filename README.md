@@ -1,10 +1,16 @@
 # Useful Thoughts on Trainium
 
-We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Current empirical work focuses on selective inference over frozen models. Improved pretrained weights and autonomous discovery remain open.
+We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Ordinary continued pretraining now supplies a qualified reference; a matched computation-supervision comparison is running.
 
-## Current work: genuine uniform next-token baseline
+## Uniform next-token baseline: fresh confirmation passes
 
-The plain-text path and **38,912 separated source windows** are prepared and independently verified. Every original shifted token has the same coefficient; there is no duplicated continuation branch. Four fixed development settings share **17.269 million training tokens** each; separate confirmation follows recipe selection. All **2,023 CPU tests**, smoke and compilation pass. Actual native accumulation, scheduler/recovery and cost qualification precede fitting. [Preparation report](validation/uniform_lm_preparation_20261021/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json).
+The selected ordinary-training model improves full-window FineMath NLL from **1.443585 to 1.429104**, a gain of **0.014481 nats/token [0.013903, 0.015058]** on 4,096 untouched confirmation documents. This is about **1.44% lower perplexity** on the declared source population. Its final 16-token spans improve by **0.032717 nats [0.013546, 0.052275]**. This is a domain-adaptation reference, not an effect of thought supervision.
+
+All four fixed LR/schedule settings improve DEV. The lowest full-window DEV loss selects **warmup-cosine, peak LR 1e-5**, after all four terminal checkpoints freeze and before confirmation. Each recipe trains once on the same 32,768 original windows, **17,268,736 equally weighted targets**, with 128 updates. Native accumulation and exact full-state recovery pass. Actual assigned cost, including all unsuccessful reservations, is **16.607 chip-hours** within 18; this is not the whole-node invoice. Four settings are not four training replications.
+
+[Complete report and every setting](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json) · [Public numerical evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022)
+
+The overnight follow-on compares matched raw, format-only and verified-computation supervision in **two source orders**, starting afresh from B0. Original source text precedes optional work, preserving its target coefficients and context. The six models use the qualified baseline schedule; fresh natural confirmation follows freezing all terminals. This tests a supervised learning scaffold, not autonomous thought discovery. [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
 
 ## Fresh confirmation: calculation gains, natural-text losses
 

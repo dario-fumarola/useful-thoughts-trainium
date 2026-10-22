@@ -1,16 +1,15 @@
 # Current decision summary
 
-Updated October 21, 2026. Entries below this summary remain append-only.
+Updated October 22, 2026. Entries below this summary remain append-only.
 
-- Immediate question: qualify genuine uniform next-token continued training as a reference.
-- Compare four fixed LR/schedule settings on the same one-pass 17.269 million targets; all terminals freeze before DEV and the choice freezes before CONFIRM.
-- All 38,912 source windows independently match pinned records. Fixed fitting is underway; no held-out result yet.
-- Native loss/LR/reducer/master/replica and exact recovery now pass after a scalar-cache transfer repair; the original strict failure remains recorded and no tolerance was widened.
-- All 2,029 CPU tests pass. CPU checks remain distinct from native qualification.
-- Total reservation ceiling stays 18 chip-hours, at most two chips. Use existing RAM scratch up to 256 GiB while preserving the disk and host-memory floors and every original state.
-- Paired intervals resample unique source documents; inference, training transfer and autonomous discovery remain separate claims.
-- Completed frozen-reader confirmation retains all six targeted gains, five all-control passes, every natural loss and the positive simple no-calculation mixture.
-- Historical numerical and scientific outcomes remain unchanged.
+- Genuine uniform next-token CPT passes fresh FineMath confirmation: +0.014481 [0.013903, 0.015058] nats/token versus B0; suffix16 improves separately.
+- All four fixed settings finish before DEV; DEV selects cosine / peak LR 1e-5 before confirmation. Four settings are not four replications.
+- Exact native recovery passes without widening tolerances. Historical failures and their costs remain recorded.
+- Baseline actual 16.607 assigned chip-hours within 18. Owner-approved independent fits used up to six physical chips; assigned costs are not the whole-node invoice.
+- Six matched raw/format/computation models now run from B0, in two source orders, using the qualified schedule. Native qualification passes. Measured total projection 39.449, prospective ceiling 40 assigned chip-hours.
+- Original source tokens precede optional work and keep equal coefficients. This tests post-hoc supervised learning, not autonomous discovery.
+- Unique source documents are the bootstrap unit. All absolute controls and every order remain in the result.
+- Preserve all original sources, states and historical outcomes; existing node only, 35 GiB disk / 512 GiB available-memory floors.
 
 ---
 
@@ -1839,3 +1838,9 @@ The cache guard restores 319 FP32 scalar optimizer inputs and exact replayed los
 ## October22 owner overnight steering
 
 The owner asks to use the existing machine beyond the baseline and finish by08:00Eastern/12:00UTC. Independent remaining baseline recipes now run on isolated pairs with unchanged numerical settings and total18 active chip-hours. A prospective six-fit raw/format/computation scaffold study follows the same scientific question: original text precedes work, so the source prediction context and token coefficients stay identical. Fresh source checks and native recovery/runtime precede long fitting. Its separate bounded32 active-chip-hour envelope and hard morning deadline are recorded in the overnight plan; no new cloud capacity is acquired.
+
+## 2026-10-22 — ordinary baseline confirms; release matched learning study
+
+The four fixed uniform-NTP settings completed and froze before DEV. Cosine / peak LR 1e-5 had lowest DEV full-window NLL; its checkpoint hash froze before fresh confirmation. Confirmation improves by 0.0144812062 [0.0139032777, 0.0150581179] nats/token against B0. The suffix16 gain is 0.0327166462 [0.0135460824, 0.0522745055] nats/span. This qualifies the bounded domain-adaptation reference and makes no thought-training claim. Actual reservations, including original failed qualification attempts, total 16.6072758632 assigned chip-hours. Source commit 4f9166b. See validation/uniform_lm_baseline_complete_20261022/REPORT.md.
+
+Under the owner's explicit full autonomy through 08:00 Eastern, the matched three-arm / two-order supervised scaffold retains every planned model and control. Actual same-shape qualification passes exact recovery and projects 39.4486079363 assigned chip-hours; before any long fit, amend the initial 32 planning ceiling to a hard 40, using existing hardware only. Every phase shares that global ceiling, with a science stop at 11:00 UTC. The baseline-selected schedule is frozen before those fits. Neither DEV nor confirmation outcomes from the new treatment were observed. Source/label/order/endpoint definitions remain unchanged; at most three full trainers run concurrently because retained state and checkpoint exports require memory headroom. See the prospective resource amendment in the final study readout.

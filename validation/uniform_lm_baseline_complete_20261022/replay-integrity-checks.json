@@ -1,0 +1,37 @@
+{
+  "checker_sha256": "76c814b1205bc7c0f89d83d9bf4bdba0e73ba5f1355605c1dfb6d7eb8a236850",
+  "results": {
+    "valid": {
+      "behaved_as_expected": true,
+      "expected_pass": true,
+      "returncode": 0
+    },
+    "wrong_CI": {
+      "behaved_as_expected": true,
+      "expected_pass": false,
+      "returncode": 1
+    },
+    "wrong_archive_hash": {
+      "behaved_as_expected": true,
+      "expected_pass": false,
+      "returncode": 1
+    },
+    "wrong_selection": {
+      "behaved_as_expected": true,
+      "expected_pass": false,
+      "returncode": 1
+    },
+    "wrong_unit": {
+      "behaved_as_expected": true,
+      "expected_pass": false,
+      "returncode": 1
+    },
+    "wrong_verdict": {
+      "behaved_as_expected": true,
+      "expected_pass": false,
+      "returncode": 1
+    }
+  },
+  "scope": "Synthetic checker fixtures only; no released-model or scientific prediction call",
+  "status": "PASS_SYNTHETIC_NUMERICAL_REPLAY_AND_FIVE_TAMPER_REJECTIONS"
+}
