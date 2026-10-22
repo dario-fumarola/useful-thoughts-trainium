@@ -1,6 +1,6 @@
 # Overnight results — October 22, 2026
 
-Updated 11:15 UTC. The main program is complete before the owner's 12:00 UTC / 08:00 Eastern deadline. The bounded TRAIN-only derivative diagnosis is also complete; final usage accounting remains in progress.
+Updated 11:38 UTC. The main program is complete before the owner's 12:00 UTC / 08:00 Eastern deadline. The bounded TRAIN-only derivative diagnosis is also complete; final usage accounting remains in progress.
 
 **Ordinary continued pretraining now has a healthy reference. Mixing ordinary mathematical and educational-English sources improves prediction in both tested domains. Adding verified computation supervision does not improve direct learning against the matched ordinary-training control.**
 

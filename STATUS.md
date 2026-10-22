@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 22, 2026, 11:15 UTC. [Overnight findings](docs/OVERNIGHT_RESULTS_20261022.md) · [Models](docs/MODELS_20261022.md) · [History](docs/archive/STATUS_through_20261021.md).
+Updated October 22, 2026, 11:38 UTC. [Overnight findings](docs/OVERNIGHT_RESULTS_20261022.md) · [Models](docs/MODELS_20261022.md) · [History](docs/archive/STATUS_through_20261021.md).
 
 ## Ordinary training works; the computation auxiliary does not improve it
 

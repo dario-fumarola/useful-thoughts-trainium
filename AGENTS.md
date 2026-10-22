@@ -2,7 +2,7 @@
 
 ## Question and current work
 
-Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. Ordinary continued pretraining now passes fresh FineMath confirmation, and source mixing improves both declared fresh domains. The matched computation auxiliary loses to ordinary training in both source orders. Finish the bounded CPU diagnosis and the owner's deadline handoff; all planned native work and model releases are complete.
+Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. Ordinary continued pretraining now passes fresh FineMath confirmation, and source mixing improves both declared fresh domains. The matched computation auxiliary loses to ordinary training in both source orders. The bounded CPU diagnosis is complete without parameter updates. Finish the owner's deadline handoff; all planned native work and model releases are complete.
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
