@@ -59,3 +59,7 @@ Publication helper `local/diagnostics/publish_overnight_evidence.py` requires re
 Plot helper `local/diagnostics/plot_overnight_results.py` renders only sealed readouts; C2 figures already reviewed/committed. Run again after C5 report exists; review images. Produce common-panel tradeoff figure only after its actual sealed result.
 
 **Exact next work:** monitor C5/C7 without printing huge metrics; finish/review/publish C5, C6 and C7 actual outcomes; review/publish/verify all model artifacts and HF smoke; update README/STATUS/NEXT_STEPS/roadmap/overnight synthesis using actual final results. Commit receipts and preserved-model registry, run link/integrity checks, finalize utilization with coverage, leave no active model jobs by handoff. Continue useful work through12UTC, then give a concise self-contained outcome with report/model links. Do not start a new campaign near the deadline.
+
+## Artifact preflight completed at 09:47 UTC
+
+The isolated standalone decoder restores the actual selected baseline in 37.43 seconds, all 311 tensor bits checked, without importing the repository package. Receipt `validation/model_restore_standalone_qualification_20261022.json`. A first local test command used a relative delta path after changing working directory and stopped before output; the absolute-path rerun used unchanged asset/codec bytes. The publisher now additionally records tested package versions in its manifest/README; the frozen codec source remains untouched. Session 15211 still waits actual anonymous restoration of all twelve before HF load/forward smoke.

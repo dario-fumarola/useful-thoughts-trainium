@@ -1,0 +1,24 @@
+{
+  "status": "PASS_ISOLATED_STANDALONE_REAL_MODEL_RESTORATION",
+  "utc": "2026-10-22T09:46:29.882873+00:00",
+  "frozen_source_commit": "be71b40774c9d96d7496fb30011c9beed1ea2d4a",
+  "source_files_sha256": {
+    "weekend_thinking/model_delta.py": "3af2766b7e5da936afc7dd31441123e36c06bfe080eb578481e3c5e78c7385f5",
+    "scripts/package_model_delta.py": "ac8054de5d24cc8a5332cba8e16291212ae75e3d1402780a1985d187cc3da0c2",
+    "scripts/restore_model_delta.py": "b053f993a2b1a2451ad5fcded4a6f0d98d1621dd824cd41d02af0ee77fdebf36"
+  },
+  "delta_sha256": "474bd555b874fb55c4bbfe9ad90bbc1163341378001a9613f5bc1438fe7a3f3b",
+  "actual_standalone_result": {
+    "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+    "model": "warmup_cosine-lr1e-05",
+    "directory": "/run/user/1000/standalone-delta-qualification-20261022-v2/restored-selected-baseline",
+    "tensors": 311,
+    "optimizer_state_included": false,
+    "new_accelerator_calls": 0
+  },
+  "isolated_package_import_verified": true,
+  "actual_wall_seconds": 37.42954667896265,
+  "new_accelerator_calls": 0,
+  "local_IO_attempt": "The first local check passed a relative asset path after changing working directory. It stopped before output. The rerun uses the identical absolute input asset and identical frozen codec. Original failure log retained.",
+  "scope": "Portable artifact qualification on the actual selected trained model, before public archive preparation. No new model-quality score, training or external replication."
+}
