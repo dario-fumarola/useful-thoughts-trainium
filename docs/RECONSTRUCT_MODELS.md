@@ -11,6 +11,8 @@ USE_TORCH_XLA=0 python scripts/restore_model_delta.py \
   --out /path/to/new-model-directory
 ```
 
+Tested artifact environment: PyTorch **2.9.1**, NumPy **2.5.2**, safetensors **0.8.0**, Transformers **5.15.1** and huggingface-hub **1.29.0**. The standalone restore tools need only PyTorch, NumPy and safetensors; ordinary model use additionally needs Transformers. The tools do not require a Trainium installation. These are observed test versions, not a claim about every other environment.
+
 The output is a standard Hugging Face model directory containing reconstructed BF16 weights, the original configuration and tokenizer, the upstream Apache 2.0 license, and provenance. Use the base model's completion interface. These are continued-pretraining checkpoints rather than instruction-tuned chat models.
 
 The tool verifies the base weights, configuration, tokenizer and license against their recorded SHA-256 values, validates every reconstructed tensor, saves the model and checks every saved tensor again. The pinned model uses a tied output embedding; equal-valued payload compression does not introduce new architectural parameter sharing. The output directory must be new.
