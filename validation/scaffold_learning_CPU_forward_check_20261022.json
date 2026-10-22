@@ -1,0 +1,190 @@
+{
+  "status": "PASS_STANDARD_CPU_PAIRED_GAIN_CHECK",
+  "documents": 32,
+  "models": [
+    "B0",
+    "uniform_reference",
+    "scaffold_raw-seed11",
+    "scaffold_format-seed11",
+    "scaffold_trace-seed11",
+    "scaffold_raw-seed12",
+    "scaffold_format-seed12",
+    "scaffold_trace-seed12"
+  ],
+  "actual_CPU_model_forwards": 256,
+  "new_accelerator_calls": 0,
+  "maximum_absolute_mean_paired_gain_error_nats_per_token": 0.00045742820275284334,
+  "maximum_document_paired_gain_error_nats_per_token": 0.003657558107607097,
+  "maximum_individual_token_log_probability_error": 1.267058294217371,
+  "contrasts": {
+    "scaffold_format-seed11__minus__B0": {
+      "treatment": "scaffold_format-seed11",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.012833763832030776,
+      "native_mean_gain_same_documents": 0.013213910177093063,
+      "absolute_mean_paired_gain_error": 0.0003801463450622874,
+      "maximum_document_paired_gain_error": 0.003398326980375635
+    },
+    "scaffold_format-seed12__minus__B0": {
+      "treatment": "scaffold_format-seed12",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.013980907450357159,
+      "native_mean_gain_same_documents": 0.014374282395161912,
+      "absolute_mean_paired_gain_error": 0.0003933749448047537,
+      "maximum_document_paired_gain_error": 0.0026391064380597105
+    },
+    "scaffold_raw-seed11__minus__B0": {
+      "treatment": "scaffold_raw-seed11",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.014601143185141911,
+      "native_mean_gain_same_documents": 0.01494524842358901,
+      "absolute_mean_paired_gain_error": 0.00034410523844709967,
+      "maximum_document_paired_gain_error": 0.003657558107607097
+    },
+    "scaffold_raw-seed12__minus__B0": {
+      "treatment": "scaffold_raw-seed12",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.01549709803295653,
+      "native_mean_gain_same_documents": 0.015791928067429885,
+      "absolute_mean_paired_gain_error": 0.0002948300344733541,
+      "maximum_document_paired_gain_error": 0.0029444893635514726
+    },
+    "scaffold_trace-seed11__minus__B0": {
+      "treatment": "scaffold_trace-seed11",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.014150538967880042,
+      "native_mean_gain_same_documents": 0.014545396612666024,
+      "absolute_mean_paired_gain_error": 0.00039485764478598175,
+      "maximum_document_paired_gain_error": 0.00241999077314237
+    },
+    "scaffold_trace-seed11__minus__scaffold_format-seed11": {
+      "treatment": "scaffold_trace-seed11",
+      "control": "scaffold_format-seed11",
+      "CPU_mean_gain_nats_per_token": 0.0013167751358492685,
+      "native_mean_gain_same_documents": 0.0013314864355729583,
+      "absolute_mean_paired_gain_error": 1.4711299723689812e-05,
+      "maximum_document_paired_gain_error": 0.0026550025480873546
+    },
+    "scaffold_trace-seed11__minus__scaffold_raw-seed11": {
+      "treatment": "scaffold_trace-seed11",
+      "control": "scaffold_raw-seed11",
+      "CPU_mean_gain_nats_per_token": -0.00045060421726186666,
+      "native_mean_gain_same_documents": -0.00039985181092298865,
+      "absolute_mean_paired_gain_error": 5.075240633887801e-05,
+      "maximum_document_paired_gain_error": 0.002051721601303464
+    },
+    "scaffold_trace-seed11__minus__uniform_reference": {
+      "treatment": "scaffold_trace-seed11",
+      "control": "uniform_reference",
+      "CPU_mean_gain_nats_per_token": -0.0003140645153186595,
+      "native_mean_gain_same_documents": -0.00032063793348345826,
+      "absolute_mean_paired_gain_error": 6.573418164798747e-06,
+      "maximum_document_paired_gain_error": 0.0019146275720265647
+    },
+    "scaffold_trace-seed12__minus__B0": {
+      "treatment": "scaffold_trace-seed12",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.014882516670867884,
+      "native_mean_gain_same_documents": 0.015339944873620727,
+      "absolute_mean_paired_gain_error": 0.00045742820275284334,
+      "maximum_document_paired_gain_error": 0.002497739706938702
+    },
+    "scaffold_trace-seed12__minus__scaffold_format-seed12": {
+      "treatment": "scaffold_trace-seed12",
+      "control": "scaffold_format-seed12",
+      "CPU_mean_gain_nats_per_token": 0.0009016092205107282,
+      "native_mean_gain_same_documents": 0.0009656624784588144,
+      "absolute_mean_paired_gain_error": 6.405325794808618e-05,
+      "maximum_document_paired_gain_error": 0.002940003060804457
+    },
+    "scaffold_trace-seed12__minus__scaffold_raw-seed12": {
+      "treatment": "scaffold_trace-seed12",
+      "control": "scaffold_raw-seed12",
+      "CPU_mean_gain_nats_per_token": -0.0006145813620886441,
+      "native_mean_gain_same_documents": -0.0004519831938091583,
+      "absolute_mean_paired_gain_error": 0.0001625981682794858,
+      "maximum_document_paired_gain_error": 0.0016282469153552819
+    },
+    "scaffold_trace-seed12__minus__uniform_reference": {
+      "treatment": "scaffold_trace-seed12",
+      "control": "uniform_reference",
+      "CPU_mean_gain_nats_per_token": 0.0004179131876691823,
+      "native_mean_gain_same_documents": 0.00047391032747124806,
+      "absolute_mean_paired_gain_error": 5.599713980206577e-05,
+      "maximum_document_paired_gain_error": 0.0018739408277244603
+    },
+    "uniform_reference__minus__B0": {
+      "treatment": "uniform_reference",
+      "control": "B0",
+      "CPU_mean_gain_nats_per_token": 0.014464603483198703,
+      "native_mean_gain_same_documents": 0.01486603454614948,
+      "absolute_mean_paired_gain_error": 0.00040143106295077724,
+      "maximum_document_paired_gain_error": 0.00243649650656216
+    }
+  },
+  "actual_wall_seconds": 436.8559836859931,
+  "CPU_original_scores_sha256": "106173e8ea9f4aeb093ee969ab9340c055b3f54df0fcd33db13921655d900c26",
+  "sealed_native_readout_sha256": "4f04361164c9abab6358210c5e7de019bbdaa1d0f84d1f440088024fd3e2890b",
+  "plan": {
+    "CPU_threads": 24,
+    "base_model_directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "cohort": "CONFIRM",
+    "condition": "Only after all six terminals and the original native scientific readout have closed; inspect every prespecified comparison, without changing any scientific gate.",
+    "item_ids": [
+      "ea40f0c7ec0fd147db32cd1cfa31a8cdba47ee94bb80af5cb747aa8342f36a8a:uniform:560",
+      "f012e51766a7b6d68b0a1e2c4976dc7162d6c55b30554b36b51a63f3e793aa78:uniform:729",
+      "e0b1aef71b226a7d6afd2206e9231e5618dac3e0cad85989982e31faa405be0b:uniform:1077",
+      "207961d4f9e66ae517032276597522806c3c1706fac66041be9b74a9cdbc7d85:uniform:533",
+      "50233db0ca309c775a6d11b77764382a6625c3180d633387e4727bfff2c3e1b8:uniform:556",
+      "3a4a1f759f9857a7540639a9ecf9ad0da1c6f3511e64f3866a1616b8e24540f3:uniform:804",
+      "7b6eafe35482e0200a270b6d58f472f416ab479457e3a8e58e6a1da385aa87de:uniform:825",
+      "48d87ed1ad7bb1af35a35c57a6fde77655d25cb5b4452a28d5737e3e2eebf98f:uniform:589",
+      "caa21fbeed3e69daad8feda22a2ec939fc27cd0fcb01c9bdb7284205f43813b7:uniform:567",
+      "b198e1b83efffdd12be94d31808a8828bd600a4f0638ca45c1742df96d59ed5a:uniform:515",
+      "deb921f4c3ac36dca1b299dbcb5071346ba6282e3a4cd7c6dd8bfa238026b32f:uniform:532",
+      "cb09002f691630943eae95831109a8b7fee175eee35205878b5358bb2d26b314:uniform:833",
+      "2bc234ab28ec8bcde359a7821081316f437cb1410d617038027a0e06b544b018:uniform:514",
+      "3360fa4218a104669a248783ef5fb2bd26f956dcdf5908f1ede501a7e941c038:uniform:1001",
+      "b4d48a3e56c4293990db6c94f1da6405af8758863e8c1108cd170dfd03656f21:uniform:1232",
+      "cb385cc6618d5ba126d54dce8982e0d064d6253304a0c13dfe185426e5a2839e:uniform:572",
+      "c47b6e5c48b9ab11b13cb7ac1a350737bd25d1b2dd1386f8a28d13fd2d49c670:uniform:4505",
+      "2e0f2dc8a5c00c6c7c3322981b198cdf681ae3abf73803e515b0b77c52a12ef7:uniform:1089",
+      "70b6f280be11c16d7ab7e2a2da28001bda51ce145bbee4a79c104488b7931c7c:uniform:1273",
+      "566c9c5cb72437b806eec28cb20738d64bf6cc6f8d42def00c4c7453218f6c8c:uniform:655",
+      "f7740641ba740a3debcde6cb9f1131eb9394863f5566029446608d9f73b5ea3d:uniform:543",
+      "5c80300f5cc3eaf0553768e68e9cda713e5ba929fe9d2309c360852b9aea1e5c:uniform:760",
+      "ec6eeec004e352dc8e9e152019798b07d8a5732d6440fdaa99fb259647faf5b5:uniform:644",
+      "6c820c10673d5f5610d20d95ddebde9852262dbc78a9e2793355c6d5dee77e82:uniform:1225",
+      "f328294fc83f4029045a010eba2367f3e608d7e238dcd671ec2dd67171f0f1ce:uniform:5300",
+      "47a77c8d7e8f5de3164ee61fbd8bc16d15127584e653d3683e1db5c1778f5bc8:uniform:922",
+      "3cd0137cd72dcd1804aca77c9779af77993cf40a5e5a95d8412c5962aca0333f:uniform:527",
+      "e314a5cb003c33fe9d37a516c80c1972049c0ba06e7f9d55ef09b778b72df5da:uniform:542",
+      "9cc1d5e47d32b92a5d29aa9d6fa4b02af7dffb7d304ff174ffb5a3d00c444ba3:uniform:529",
+      "d42153e58d2719b9d99604b8c90eff8d97f5bd41b4d1763ee12f10f98c910d1e:uniform:2361",
+      "79b12831feea63d176edf179807d0794026deb81a64242a8f28f6b3bad1674c7:uniform:554",
+      "e17b7066a7321168154af58f082310528ca31f38f46c9a9037b542e5ff2f7a9f:uniform:531"
+    ],
+    "maximum_document_paired_gain_error": 0.02,
+    "maximum_mean_paired_gain_error": 0.002,
+    "maximum_wall_seconds": 1800,
+    "minimum_host_available_GiB": 512,
+    "models": [
+      "B0",
+      "uniform_reference",
+      "scaffold_raw-seed11",
+      "scaffold_format-seed11",
+      "scaffold_trace-seed11",
+      "scaffold_raw-seed12",
+      "scaffold_format-seed12",
+      "scaffold_trace-seed12"
+    ],
+    "original_scores": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/public-evidence/original-token-scores.npz",
+    "sealed_readout": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/complete-readout.json",
+    "source_file": "/dev/shm/scaffold-learning-overnight-v1-data/CONFIRM.jsonl",
+    "source_sha256": "233744ab6034b8d5c958ed29ddbeb8d4dbd9a67c534ef7a31222dbbf1f74c3ff",
+    "status": "FROZEN_BEFORE_CPU_RESULTS",
+    "utc": "2026-10-22T06:12:16+00:00",
+    "CPU_script_sha256": "fb1f3dee6334f7169f73f1926fb9c3679e0efebbfb36e38d5921377275681553"
+  },
+  "scope": "Numerical diagnostic on a fixed inspected subset, not a fresh scientific confirmation, altered primary decision, tokenwise-equality claim or external replication."
+}

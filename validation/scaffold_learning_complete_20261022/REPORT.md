@@ -57,6 +57,12 @@ Fresh natural source inventory supplies 1,024 qualification and 4,096 confirmati
 
 Native qualification passes unchanged initial-loss, actual-LR, single-reducer, finite FP32-master, replica and full-state checks. Its CPU/native initial-loss error is 0.000425795nats/token. Restoring the complete state after update 2 reproduces updates 3/4, every terminal model tensor and all optimizer shards exactly. Qualification and replay consume 1.529985 assigned chip-hours. These establish the measured execution contract, not scientific success.
 
+## Standard CPU forward diagnostic
+
+A separately executed standard Hugging Face FP32 check scores all eight frozen models on 32 identity-fixed confirmation documents, using 256 CPU forward passes. The largest difference in mean paired gains from native execution is **0.000457 nats/token**; for the two trace-versus-raw contrasts it is **0.000051 / 0.000163**. Both CPU trace-versus-raw point estimates remain negative on this subset. Maximum single-document paired-gain disagreement is 0.003658 nats/token, while the largest individual token log-probability difference is **1.2671 nats**. Aggregate agreement therefore does not establish tokenwise equality. This is a numerical diagnostic on inspected documents, not a new independent confirmation or external training replication. [All paired checks and the frozen plan](../scaffold_learning_CPU_forward_check_20261022.json).
+
+A larger fixed-subset CPU comparison was specified before this check completed. Its document count is selected only from measured runtime and the remaining deadline, before its prediction results; its outcome will be reported separately.
+
 ## Training behavior and resources
 
 The following are descriptive training diagnostics. Clipping counts compare the recorded pre-clipping norm with 1; source/work losses are from the terminal training batch, not held-out quality.
