@@ -1,0 +1,44 @@
+{
+  "status": "PASS_SYNTHETIC_COMMON_PANEL_REPLAY_INTEGRITY_FIXTURES",
+  "checks": [
+    {
+      "fixture": "valid_complete_original_score_fixture",
+      "expected_pass": true,
+      "observed_pass": true
+    },
+    {
+      "fixture": "altered_paired_interval",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "tokens_claimed_independent",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "changed_target_weights",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "missing_prespecified_model",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "changed_original_score_hash",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "missing_native_closure",
+      "expected_pass": false,
+      "observed_pass": false
+    }
+  ],
+  "seconds": 6.204908125044312,
+  "new_model_calls": 0,
+  "new_accelerator_calls": 0,
+  "scope": "Synthetic numerical fixtures only; no scientific result, native qualification or new primary test."
+}

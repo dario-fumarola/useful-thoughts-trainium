@@ -1,0 +1,936 @@
+{
+  "absolute": {
+    "CPU": {
+      "B0": {
+        "full_window_NLL": 1.4364241267899711,
+        "suffix16_log_probability": -20.66078053561241
+      },
+      "scaffold_format-seed11": {
+        "full_window_NLL": 1.4230543978810881,
+        "suffix16_log_probability": -20.665392282722493
+      },
+      "scaffold_format-seed12": {
+        "full_window_NLL": 1.4226987972683962,
+        "suffix16_log_probability": -20.659920956134133
+      },
+      "scaffold_raw-seed11": {
+        "full_window_NLL": 1.4212930576357214,
+        "suffix16_log_probability": -20.656998708683922
+      },
+      "scaffold_raw-seed12": {
+        "full_window_NLL": 1.421184207741579,
+        "suffix16_log_probability": -20.65293205194829
+      },
+      "scaffold_trace-seed11": {
+        "full_window_NLL": 1.4222208352852042,
+        "suffix16_log_probability": -20.67104537379588
+      },
+      "scaffold_trace-seed12": {
+        "full_window_NLL": 1.4220739592774847,
+        "suffix16_log_probability": -20.66898796349401
+      },
+      "uniform_reference": {
+        "full_window_NLL": 1.4212856628090358,
+        "suffix16_log_probability": -20.65898157008808
+      }
+    },
+    "NATIVE": {
+      "B0": {
+        "full_window_NLL": 1.4364010229147854,
+        "suffix16_log_probability": -20.669757539674606
+      },
+      "scaffold_format-seed11": {
+        "full_window_NLL": 1.422883944511129,
+        "suffix16_log_probability": -20.674661641627345
+      },
+      "scaffold_format-seed12": {
+        "full_window_NLL": 1.422533738693172,
+        "suffix16_log_probability": -20.66871887638164
+      },
+      "scaffold_raw-seed11": {
+        "full_window_NLL": 1.4211016903118188,
+        "suffix16_log_probability": -20.66439954572834
+      },
+      "scaffold_raw-seed12": {
+        "full_window_NLL": 1.4209790879026556,
+        "suffix16_log_probability": -20.66520859336536
+      },
+      "scaffold_trace-seed11": {
+        "full_window_NLL": 1.4220562215171273,
+        "suffix16_log_probability": -20.68067742795929
+      },
+      "scaffold_trace-seed12": {
+        "full_window_NLL": 1.4218653034528868,
+        "suffix16_log_probability": -20.679861255992876
+      },
+      "uniform_reference": {
+        "full_window_NLL": 1.421092937470683,
+        "suffix16_log_probability": -20.669164222866776
+      }
+    }
+  },
+  "actual_CPU_model_forwards": 8192,
+  "actual_wall_seconds": 5966.718019580003,
+  "contrasts": {
+    "scaffold_format-seed11__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_format-seed11",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.012334233756287116,
+            0.014395186711919021
+          ],
+          "mean": 0.013369728908882836
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.0002388182407134609,
+            -6.098138596289815e-05
+          ],
+          "mean": -0.0001473494947737861
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.013579173118855582,
+            0.013373937299225066
+          ],
+          "mean": 0.00029235484265205565
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.03838846238659169,
+            0.029762462980086172
+          ],
+          "mean": -0.004611747110082316
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.012470260692086836,
+            0.014555094532338626
+          ],
+          "mean": 0.013517078403656659
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.04072023563830011,
+            0.03242971015037904
+          ],
+          "mean": -0.0049041019527343716
+        }
+      }
+    },
+    "scaffold_format-seed12__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_format-seed12",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.012697422987287597,
+            0.01478725363465392
+          ],
+          "mean": 0.013725329521575015
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.00022287232273227517,
+            -6.424784624333072e-05
+          ],
+          "mean": -0.00014195470003848442
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.013326638443025642,
+            0.012845497571567567
+          ],
+          "mean": -0.00017908381469254608
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.0317915216630547,
+            0.03440634770213502
+          ],
+          "mean": 0.0008595794782750021
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.012826382527192816,
+            0.01493192524074435
+          ],
+          "mean": 0.0138672842216135
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.03433710202672008,
+            0.03735200297225679
+          ],
+          "mean": 0.0010386632929675482
+        }
+      }
+    },
+    "scaffold_raw-seed11__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_raw-seed11",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.014059158343995733,
+            0.016257826207057232
+          ],
+          "mean": 0.015131069154249619
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.00025075318530252277,
+            -8.825041081860235e-05
+          ],
+          "mean": -0.00016826344871694686
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.014636602821973583,
+            0.011693356041879108
+          ],
+          "mean": -0.001576167017775602
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.02937682353499454,
+            0.03867952309281151
+          ],
+          "mean": 0.0037818269284908574
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.014219073205551044,
+            0.016416806108018066
+          ],
+          "mean": 0.015299332602966577
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.03050955383283229,
+            0.042931235537671024
+          ],
+          "mean": 0.005357993946266459
+        }
+      }
+    },
+    "scaffold_raw-seed12__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_raw-seed12",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.014223149180552935,
+            0.016299921127840258
+          ],
+          "mean": 0.01523991904839192
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.00025999274982902636,
+            -9.805148810742236e-05
+          ],
+          "mean": -0.0001820159637377268
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.010235936988847082,
+            0.016474749923999294
+          ],
+          "mean": 0.0032995373548725775
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.024380328190231768,
+            0.04133093769391771
+          ],
+          "mean": 0.007848483664121508
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.014386937965975075,
+            0.016485311865143577
+          ],
+          "mean": 0.015421935012129639
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.030278730641864576,
+            0.041017051211972785
+          ],
+          "mean": 0.00454894630924893
+        }
+      }
+    },
+    "scaffold_trace-seed11__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed11",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.01312996282779122,
+            0.015319420654034532
+          ],
+          "mean": 0.014203291504767058
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.00022963712392968098,
+            -5.491968619720688e-05
+          ],
+          "mean": -0.00014150989289124196
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.01287178229900422,
+            0.013875834717226851
+          ],
+          "mean": 0.0006550501012079421
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.045410582135455346,
+            0.026695395928015165
+          ],
+          "mean": -0.010264838183472035
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.013270441139952559,
+            0.015460000324913925
+          ],
+          "mean": 0.014344801397658312
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.04728278447502083,
+            0.028202885807550104
+          ],
+          "mean": -0.010919888284679977
+        }
+      }
+    },
+    "scaffold_trace-seed11__minus__scaffold_format-seed11": {
+      "control": "scaffold_format-seed11",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed11",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.0005589483646284808,
+            0.0011017847859800802
+          ],
+          "mean": 0.0008335625958842044
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -6.028274879189753e-05,
+            7.516441741533607e-05
+          ],
+          "mean": 5.839601882544311e-06
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.01233838998955467,
+            0.01265691781832256
+          ],
+          "mean": 0.00036269525855588645
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.023563134685740835,
+            0.013016331748035443
+          ],
+          "mean": -0.005653091073389719
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.0005496824353484499,
+            0.0010995109358678317
+          ],
+          "mean": 0.0008277229940016592
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.02800555454279979,
+            0.016662982516163855
+          ],
+          "mean": -0.006015786331945605
+        }
+      }
+    },
+    "scaffold_trace-seed11__minus__scaffold_raw-seed11": {
+      "control": "scaffold_raw-seed11",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed11",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            -0.0011366873161418275,
+            -0.0007357462539221327
+          ],
+          "mean": -0.0009277776494825722
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -4.7931398726876825e-05,
+            0.00010047939098663114
+          ],
+          "mean": 2.6753555825704733e-05
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.011015837491528364,
+            0.01544293944165372
+          ],
+          "mean": 0.002231217118983544
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.028473929634872993,
+            -5.8258092183415724e-05
+          ],
+          "mean": -0.014046665111962892
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            -0.001165915825037284,
+            -0.0007586593732992278
+          ],
+          "mean": -0.0009545312053082781
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.036240296433412526,
+            0.0030847419852436274
+          ],
+          "mean": -0.016277882230946436
+        }
+      }
+    },
+    "scaffold_trace-seed11__minus__uniform_reference": {
+      "control": "uniform_reference",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed11",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            -0.0012583436641667653,
+            -0.0006347992956747345
+          ],
+          "mean": -0.0009351724761683679
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -4.475054988069501e-05,
+            0.00010021956019231591
+          ],
+          "mean": 2.8111570275739482e-05
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.013544410263938093,
+            0.012165420768959155
+          ],
+          "mean": -0.0005505986152879658
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.030400901313066123,
+            0.006490012465065347
+          ],
+          "mean": -0.012063803707799615
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            -0.001287267290492283,
+            -0.000665485042363905
+          ],
+          "mean": -0.0009632840464441054
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.03385497878790926,
+            0.011171608608032858
+          ],
+          "mean": -0.01151320509251165
+        }
+      }
+    },
+    "scaffold_trace-seed12__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed12",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.013296877689926111,
+            0.015442530890154911
+          ],
+          "mean": 0.014350167512486417
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.0002677624919779807,
+            -0.00010148275549313654
+          ],
+          "mean": -0.00018555194941219277
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.011884716097862983,
+            0.015261421865525288
+          ],
+          "mean": 0.0018962884366691864
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.041643598837827485,
+            0.027573907601668564
+          ],
+          "mean": -0.008207427881601417
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.013484350170908994,
+            0.015621353406984584
+          ],
+          "mean": 0.014535719461898581
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.04565437068801806,
+            0.028156055453012755
+          ],
+          "mean": -0.010103716318270603
+        }
+      }
+    },
+    "scaffold_trace-seed12__minus__scaffold_format-seed12": {
+      "control": "scaffold_format-seed12",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed12",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.0003799343357687353,
+            0.000870790334910132
+          ],
+          "mean": 0.000624837990911384
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.00011504024094611184,
+            2.4698679422783777e-05
+          ],
+          "mean": -4.3597249373708094e-05
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.010022044299463429,
+            0.014471872000688318
+          ],
+          "mean": 0.0020753722513617325
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.027560296168426278,
+            0.010381625087108623
+          ],
+          "mean": -0.009067007359876419
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.00041090472750483726,
+            0.0009183591151588191
+          ],
+          "mean": 0.0006684352402850913
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.03296969142737755,
+            0.011026037668389272
+          ],
+          "mean": -0.011142379611238151
+        }
+      }
+    },
+    "scaffold_trace-seed12__minus__scaffold_raw-seed12": {
+      "control": "scaffold_raw-seed12",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed12",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            -0.0010862036325407277,
+            -0.0007106727974796769
+          ],
+          "mean": -0.0008897515359055121
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -7.393931954869273e-05,
+            6.898074731664603e-05
+          ],
+          "mean": -3.53598567446582e-06
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.014487218111261487,
+            0.011466425755014074
+          ],
+          "mean": -0.001403248918203391
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.029224118823638012,
+            -0.0025357185352245727
+          ],
+          "mean": -0.016055911545722924
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            -0.0010877403062064946,
+            -0.0006909027222629271
+          ],
+          "mean": -0.000886215550231046
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.03262781563633664,
+            0.004350770445174547
+          ],
+          "mean": -0.014652662627519533
+        }
+      }
+    },
+    "scaffold_trace-seed12__minus__uniform_reference": {
+      "control": "uniform_reference",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "scaffold_trace-seed12",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            -0.0011743998343754474,
+            -0.00041638607655263726
+          ],
+          "mean": -0.0007882964684490136
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -8.894678087789308e-05,
+            5.5212389576678045e-05
+          ],
+          "mean": -1.593048624521109e-05
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.012533016920621158,
+            0.013297083289623049
+          ],
+          "mean": 0.0006906397201732785
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.031288006620547516,
+            0.01119783240492739
+          ],
+          "mean": -0.010006393405928998
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            -0.0011675793882484741,
+            -0.0003986667638369166
+          ],
+          "mean": -0.0007723659822038034
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.035811958469520525,
+            0.015408714740030692
+          ],
+          "mean": -0.010697033126102276
+        }
+      }
+    },
+    "uniform_reference__minus__B0": {
+      "control": "B0",
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "treatment": "uniform_reference",
+      "values": {
+        "CPU_full_gain": {
+          "CI95": [
+            0.014018539371708705,
+            0.016296470912999902
+          ],
+          "mean": 0.015138463980935444
+        },
+        "CPU_minus_native_paired_full_gain": {
+          "CI95": [
+            -0.00025216417715533856,
+            -8.886825607397877e-05
+          ],
+          "mean": -0.00016962146316698134
+        },
+        "CPU_minus_native_paired_suffix16_gain": {
+          "CI95": [
+            -0.011784753468969698,
+            0.01439078935639962
+          ],
+          "mean": 0.0012056487164959079
+        },
+        "CPU_suffix16_gain": {
+          "CI95": [
+            -0.03172590982286363,
+            0.03586671637780268
+          ],
+          "mean": 0.001798965524327581
+        },
+        "native_subset_full_gain": {
+          "CI95": [
+            0.014192941370767646,
+            0.016465110380955647
+          ],
+          "mean": 0.015308085444102412
+        },
+        "native_subset_suffix16_gain": {
+          "CI95": [
+            -0.03492883305289839,
+            0.03734854277496406
+          ],
+          "mean": 0.0005933168078316731
+        }
+      }
+    }
+  },
+  "documents": 1024,
+  "maximum_absolute_mean_paired_gain_backend_difference": 0.00018555194941219277,
+  "maximum_individual_token_log_probability_backend_difference": 4.747784592936725,
+  "models": [
+    "B0",
+    "uniform_reference",
+    "scaffold_raw-seed11",
+    "scaffold_format-seed11",
+    "scaffold_trace-seed11",
+    "scaffold_raw-seed12",
+    "scaffold_format-seed12",
+    "scaffold_trace-seed12"
+  ],
+  "native_full_confirmation_readout_sha256": "4f04361164c9abab6358210c5e7de019bbdaa1d0f84d1f440088024fd3e2890b",
+  "new_accelerator_calls": 0,
+  "public_plan": {
+    "CPU_affinities": [
+      "48-71",
+      "72-95"
+    ],
+    "CPU_stop_UTC": "2026-10-22T11:35:00+00:00",
+    "CPU_threads_per_worker": 24,
+    "actual_CPU_model_forwards_if_complete": 8192,
+    "base_directory": "/home/ubuntu/dario/local/assets/qwen3-1.7b-base",
+    "candidate_document_counts": [
+      1024,
+      768,
+      512
+    ],
+    "coordinator_sha256": "57658434339767138e1b3543e10fcbe970b9cd52d1d05f905930556dab1e3188",
+    "excluded_small_check_plan_sha256": "c7cc1e3f7a95b934a5b00f7bf5d832f86c5fd66efb7da74b7b1a3fc36dac2cf2",
+    "execution_condition": "Wait for completed small32 CPU timing and cross-domain native diagnostic. Before any larger CPU forward, choose the largest fixed prefix of1024/768/512 identities for which 1.20-times measured runtime plus180seconds fits11:35UTC. This depends only on time, never on prediction scores or scientific verdicts. Keep all8models and all527targets per chosen document, the512GiB host and35GiB filesystem floors, and two24-thread workers on NUMA1 while native mixture fits remain on NUMA0.",
+    "item_ids_canonical_sha256": "c7e51810b8cffb48d2acf866caefd1bc20b7908062285219d91a94458942c97e",
+    "maximum_documents": 1024,
+    "maximum_parallel_workers": 2,
+    "models": [
+      "B0",
+      "uniform_reference",
+      "scaffold_raw-seed11",
+      "scaffold_format-seed11",
+      "scaffold_trace-seed11",
+      "scaffold_raw-seed12",
+      "scaffold_format-seed12",
+      "scaffold_trace-seed12"
+    ],
+    "native_readout": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/complete-readout.json",
+    "native_scores": "/home/ubuntu/dario/local/diagnostics/scaffold-learning-overnight-v1/public-evidence/original-token-scores.npz",
+    "new_accelerator_calls": 0,
+    "output_directory": "/run/user/1000/scaffold-standard-CPU-verification-20261022",
+    "pre_execution_repair": "Corrected a final progress-logging syntax expression before worker launch or any CPU model calls. The fixed subset, models, forward calculation, source identity and resource bounds remain unchanged.",
+    "scope": "Standard FP32 Hugging Face numerical cross-check on a preselected inspected subset. Runtime-only source allocation is fixed before any large CPU predictions. No fitting, new primary gate or external training replication.",
+    "selection": "Exclude the original fixed32 CPU item IDs, then sort remaining original confirmation item IDs by SHA256(large-CPU-forward-verification-20261022: + item_id), keeping the first1024. No model score enters selection.",
+    "source_file": "/dev/shm/scaffold-learning-overnight-v1-data/CONFIRM.jsonl",
+    "source_sha256": "233744ab6034b8d5c958ed29ddbeb8d4dbd9a67c534ef7a31222dbbf1f74c3ff",
+    "statistics": {
+      "draws": 5000,
+      "resampling_unit": "unique source document",
+      "seed": 17
+    },
+    "status": "FROZEN_BEFORE_STANDARD_CPU_SUBSET_RESULTS",
+    "utc": "2026-10-22T08:19:31+00:00",
+    "worker_models": [
+      [
+        "B0",
+        "scaffold_raw-seed11",
+        "scaffold_format-seed11",
+        "scaffold_trace-seed11"
+      ],
+      [
+        "uniform_reference",
+        "scaffold_raw-seed12",
+        "scaffold_format-seed12",
+        "scaffold_trace-seed12"
+      ]
+    ],
+    "worker_sha256": "6d3e2409da1c1931a64a8bea98b6f5cf0ab3ad2ffc266b742eb3e44d7d53ac6b"
+  },
+  "public_scores_sha256": "3547142f41d3323d0644e32ff0a262b5306229b426f908e23168ebf06caae446",
+  "runtime_source_allocation": {
+    "CPU_affinities": [
+      "48-71",
+      "72-95"
+    ],
+    "available_host_GiB": 797.1448249816895,
+    "measured_small_check_seconds_per_forward_including_model_loads": 1.7064686862734106,
+    "projected_two_worker_wall_seconds": 8567.634886771068,
+    "seconds_until_stop": 8938.758993,
+    "selected_documents": 1024,
+    "selection_uses_only_runtime_and_deadline": true,
+    "utc": "2026-10-22T09:06:01+00:00"
+  },
+  "scope": "Independent standard Hugging Face FP32 forward implementation on an identity-fixed inspected subset. Native primary outcomes remain unchanged; this is neither a new independent dataset nor an external training replication.",
+  "selected_item_ids_sha256": "c7e51810b8cffb48d2acf866caefd1bc20b7908062285219d91a94458942c97e",
+  "status": "COMPLETE_STANDARD_CPU_FIXED_SUBSET_COMPARISON",
+  "utc": "2026-10-22T10:45:27+00:00",
+  "worker_completions": [
+    {
+      "model_forwards": 4096,
+      "models": [
+        "B0",
+        "scaffold_raw-seed11",
+        "scaffold_format-seed11",
+        "scaffold_trace-seed11"
+      ],
+      "slot": 0,
+      "wall_seconds": 5897.093603465008
+    },
+    {
+      "model_forwards": 4096,
+      "models": [
+        "uniform_reference",
+        "scaffold_raw-seed12",
+        "scaffold_format-seed12",
+        "scaffold_trace-seed12"
+      ],
+      "slot": 1,
+      "wall_seconds": 5957.158500104968
+    }
+  ]
+}

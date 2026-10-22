@@ -1,0 +1,139 @@
+{
+  "status": "ALL_TWELVE_ORIGINAL_MODELS_RETAINED_AND_PUBLIC_ARTIFACTS_VERIFIED",
+  "utc": "2026-10-22T10:57:40.980967+00:00",
+  "models": {
+    "warmup_constant-lr1e-05": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme-cpt/uniform-lm-baseline-v1/warmup_constant-lr1e-05.pt",
+      "native_checkpoint_sha256": "5294d1b8e91454c721fd383cda83b6d377ec406bc93eba9bdd8c578fb187a6f2",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_constant-lr1e-05/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_constant-lr1e-05/step-0000128",
+      "full_manifest_sha256": "736026fab5a6292e9000a4b0aefee477aac6d88b058500b53d2e7af13e3be8ce",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_constant-lr1e-05.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_constant-lr1e-05",
+      "public_HF_weights_sha256": "7e53bd50bc4004f5f7aa15341397e97b55dd45a91ec1f6058704cd5a1ac2404b"
+    },
+    "warmup_constant-lr3e-06": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme-cpt/uniform-lm-baseline-v1/warmup_constant-lr3e-06.pt",
+      "native_checkpoint_sha256": "c55734cfe36a8cd94a69aa3b8a4c7cbb0c35f161cb4d7d930f6184713c95d623",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_constant-lr3e-06/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_constant-lr3e-06/step-0000128",
+      "full_manifest_sha256": "aaf6e2c0edd457b13668c423ec8948d7742b14d99bd336fc4e98eb0046e5313a",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_constant-lr3e-06.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_constant-lr3e-06",
+      "public_HF_weights_sha256": "edef17941d36be0de59ccb7e720abc6f23a325d6e2ee322be3929065a7b46860"
+    },
+    "warmup_cosine-lr1e-05": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme-cpt/uniform-lm-baseline-v1/warmup_cosine-lr1e-05.pt",
+      "native_checkpoint_sha256": "e2d9afb7dc32142b6edd5950c0ecbc6bc906a2fc178ccb788e4ac6b0d2a13b75",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_cosine-lr1e-05/step-0000128",
+      "resolved_full_state_directory": "/home/ubuntu/dario/local/nvme-study/retained-overnight-checkpoints/uniform-reference-step128",
+      "full_manifest_sha256": "edc996a21080ac0c0775597236992330962e0b5641db756172d5953e3d0edefd",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_cosine-lr1e-05.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_cosine-lr1e-05",
+      "public_HF_weights_sha256": "cc8d530dd5e4fb57ccb206bac106f9af5e9c125fb39c2cb22fbc4e61cc1ebc62"
+    },
+    "warmup_cosine-lr3e-06": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme-cpt/uniform-lm-baseline-v1/warmup_cosine-lr3e-06.pt",
+      "native_checkpoint_sha256": "6053c71b5cfd6b265b872a4f10a4413d5d1df8911cf69d720e40a4a262ca6c87",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_cosine-lr3e-06/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/uniform-lm-v1/science/warmup_cosine-lr3e-06/step-0000128",
+      "full_manifest_sha256": "63075a7480d59ef205dbe4416dc0e74a8a69ab984fc0611fabee1a838659fcf4",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_cosine-lr3e-06.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_cosine-lr3e-06",
+      "public_HF_weights_sha256": "8f16a04239fa0d86873d38c934d5899ac3b01d961e4622a399a6fe866d4274f9"
+    },
+    "scaffold_format-seed11": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_format-seed11.pt",
+      "native_checkpoint_sha256": "f5d8fabbc6fbe6bf60997f02c764bef9fdf2698cc40033518629d970f767132a",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed11/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed11/step-0000128",
+      "full_manifest_sha256": "caac2b04900c9b73ea23265bbac9d58e7263dda2a4d7482a1d0b2fb0acbbc298",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_format-seed11.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_format-seed11",
+      "public_HF_weights_sha256": "9fd206bacbe530a3a41d29cac1c6033653149fc2a48c4d8aec18ed233941fb8a"
+    },
+    "scaffold_format-seed12": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_format-seed12.pt",
+      "native_checkpoint_sha256": "5e06647199b446de7d759aeb65d9c385f55f9fc7399536527203e95d92b0bb9c",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed12/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed12/step-0000128",
+      "full_manifest_sha256": "03ed8e85edd55d21ceaf68fefed8569a49ae0c91bf6e2b1e12188fb0204d3b47",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_format-seed12.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_format-seed12",
+      "public_HF_weights_sha256": "d812b0dfd1ada6f527465b10bd0c6aad8608307bd7de0bb0ccaeb00878091fa3"
+    },
+    "scaffold_raw-seed11": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_raw-seed11.pt",
+      "native_checkpoint_sha256": "7fec4bd800b51dc536a8ddeefeef6c063bad7444df085c86c1291192cc2dc4f2",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed11/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed11/step-0000128",
+      "full_manifest_sha256": "ab345e29406e8350b757b8c6469e9c448b4b75c45ed8ef8f0ded89c99c3f5356",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_raw-seed11.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_raw-seed11",
+      "public_HF_weights_sha256": "f10bf0e5d19d214df90fa3601b5382ad85ff66d2e04518af6cf4a9077852b01e"
+    },
+    "scaffold_raw-seed12": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_raw-seed12.pt",
+      "native_checkpoint_sha256": "f5581dc23ccbc557e8293a5e621faf63cac2d8131cdd1471bde23f5d198b2840",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed12/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed12/step-0000128",
+      "full_manifest_sha256": "c7e9da777da14d3253cb84134acd85f7f72534d0efa12e6c792d3be935a04f8e",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_raw-seed12.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_raw-seed12",
+      "public_HF_weights_sha256": "8c4499c3f31f19b5c6b2b491bd0d122a370cd570219b7bc9aec4648bc70304a2"
+    },
+    "scaffold_trace-seed11": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_trace-seed11.pt",
+      "native_checkpoint_sha256": "09bbb0c22394d839cf453f14966c26a508be11c5dfc76f7b30b7943a594690df",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed11/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed11/step-0000128",
+      "full_manifest_sha256": "a99fde4ef7e9020bb0dd834cae3e93654276f14c55111aae0d09a7f97b9a6e17",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_trace-seed11.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_trace-seed11",
+      "public_HF_weights_sha256": "11df653561ffe06beb3d0367742aa9825e5fe0e9ef9b5c5c8bc292cb2bd88fe0"
+    },
+    "scaffold_trace-seed12": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_trace-seed12.pt",
+      "native_checkpoint_sha256": "d59b6c2eb05f23dc629dea197ec2bc2e16b61a25aa050c592b122550bc5eaedc",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed12/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed12/step-0000128",
+      "full_manifest_sha256": "e65d97af80728aae6ef4a22cda4acffb17d48bf927c0be6dd0673318db0d5820",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_trace-seed12.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_trace-seed12",
+      "public_HF_weights_sha256": "466ba14b8df71dd7c0154a06c1d43067f748fb83438b2577a2d2f11ada015b3d"
+    },
+    "mixed-seed11": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/mixed-seed11.pt",
+      "native_checkpoint_sha256": "38cbc5fa871e254bbe4e81759d0980eb1e63522eb78d0931387dbc8e3a73c2f4",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-mixture-20261022/science/mixed-seed11/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/uniform-mixture-20261022/science/mixed-seed11/step-0000128",
+      "full_manifest_sha256": "25aebadf2733902dc55d205070f67ae7fd6ea1027b5bd53e4f56f5aac18416c2",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/mixed-seed11.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/mixed-seed11",
+      "public_HF_weights_sha256": "62bbd18329c34b2497426dcfbfd436dd1c1062d7484004738711ccb04da4cde1"
+    },
+    "mixed-seed12": {
+      "native_model_file_on_existing_local_NVMe": "/home/ubuntu/dario/local/nvme/retained-overnight-models/mixed-seed12.pt",
+      "native_checkpoint_sha256": "999bfe9da27a797fe5fb3ca492c4b3610d1a2752a14d85f201598d61e44be7fb",
+      "native_model_bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-mixture-20261022/science/mixed-seed12/step-0000128",
+      "resolved_full_state_directory": "/dev/shm/uniform-mixture-20261022/science/mixed-seed12/step-0000128",
+      "full_manifest_sha256": "9e0579e7fc1ad7ddbaeecb11a181bf09e218663090928b0aba6b3bb89a207bf5",
+      "verified_public_asset": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/mixed-seed12.npz",
+      "anonymously_restored_HF_directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/mixed-seed12",
+      "public_HF_weights_sha256": "914b5f0dd68f9281dfcf516b52ad180acdb8e64a1497e21519007cfc2b871d77"
+    }
+  },
+  "scope": "Original model bytes retained on existing local instance NVMe; all native optimizer snapshots and logical paths remain. Manifest identities are checked here; actual model-copy and public exact-tensor checks are in the linked receipts. Local RAM/NVMe storage is not a remote optimizer-state backup."
+}

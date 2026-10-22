@@ -1,0 +1,189 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_MODEL_DOWNLOAD_AND_EXACT_TENSOR_RESTORATION",
+  "utc": "2026-10-22T10:46:58.986034+00:00",
+  "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/trained-model-deltas-20261022",
+  "target_commit": "be71b40774c9d96d7496fb30011c9beed1ea2d4a",
+  "model_count": 12,
+  "model_manifest_sha256": "9747b7e10f6215729a9831f680a580361f5868039e1c2b7a3fbeb39949ec75e4",
+  "checksums_sha256": "c8dbfe6ceed830568e29262e624660148f45bb5dfc9874ded95e6655a165a0a4",
+  "authorization_header_sent": false,
+  "all_model_asset_hashes_match": true,
+  "all_exact_tensor_reconstructions_and_HF_exports_pass": true,
+  "models": {
+    "mixed-seed11": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/mixed-seed11.npz",
+      "asset_sha256": "447ce5c1cc68fdbd3df181a63f650f58a780a26ff1cbe8f4a5cae8ffbcc9abb4",
+      "asset_bytes": 887469437,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "mixed-seed11",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/mixed-seed11",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "62bbd18329c34b2497426dcfbfd436dd1c1062d7484004738711ccb04da4cde1"
+    },
+    "mixed-seed12": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/mixed-seed12.npz",
+      "asset_sha256": "e4b12dfcce5c9fe4c439429db66ccc887725553716e8e775aba3d3e47c84b348",
+      "asset_bytes": 887618146,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "mixed-seed12",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/mixed-seed12",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "914b5f0dd68f9281dfcf516b52ad180acdb8e64a1497e21519007cfc2b871d77"
+    },
+    "scaffold_format-seed11": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_format-seed11.npz",
+      "asset_sha256": "32e68fe51522699954b0446f3a3b8264661e3f9a2d590c457e429bf017bb64af",
+      "asset_bytes": 949772132,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "scaffold_format-seed11",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_format-seed11",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "9fd206bacbe530a3a41d29cac1c6033653149fc2a48c4d8aec18ed233941fb8a"
+    },
+    "scaffold_format-seed12": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_format-seed12.npz",
+      "asset_sha256": "b0877fe12482c57b2b99eb77d4ee4ced5bff3996a774c5821de0eaedd12b4d4c",
+      "asset_bytes": 951052068,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "scaffold_format-seed12",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_format-seed12",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "d812b0dfd1ada6f527465b10bd0c6aad8608307bd7de0bb0ccaeb00878091fa3"
+    },
+    "scaffold_raw-seed11": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_raw-seed11.npz",
+      "asset_sha256": "9b082b86292ef9932f2a7ff2a7714741fc217f9e8b7d56119ab1d3bc08a46eac",
+      "asset_bytes": 898809307,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "scaffold_raw-seed11",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_raw-seed11",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "f10bf0e5d19d214df90fa3601b5382ad85ff66d2e04518af6cf4a9077852b01e"
+    },
+    "scaffold_raw-seed12": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_raw-seed12.npz",
+      "asset_sha256": "fa6240ae0776f9568a3c47dfd372613e7c15087e33c710075d0d5dd41584cdb4",
+      "asset_bytes": 898851059,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "scaffold_raw-seed12",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_raw-seed12",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "8c4499c3f31f19b5c6b2b491bd0d122a370cd570219b7bc9aec4648bc70304a2"
+    },
+    "scaffold_trace-seed11": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_trace-seed11.npz",
+      "asset_sha256": "1527cad4410cd9919e6916839a0d07b0b1f4c0521ffb3ae97194524dc58131d8",
+      "asset_bytes": 926355452,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "scaffold_trace-seed11",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_trace-seed11",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "11df653561ffe06beb3d0367742aa9825e5fe0e9ef9b5c5c8bc292cb2bd88fe0"
+    },
+    "scaffold_trace-seed12": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/scaffold_trace-seed12.npz",
+      "asset_sha256": "a06e2591f8ac280916b2efa63fcbb412aae7f1bf879bc3fdd87ffa43289ca2b3",
+      "asset_bytes": 925994165,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "scaffold_trace-seed12",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/scaffold_trace-seed12",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "466ba14b8df71dd7c0154a06c1d43067f748fb83438b2577a2d2f11ada015b3d"
+    },
+    "warmup_constant-lr1e-05": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_constant-lr1e-05.npz",
+      "asset_sha256": "65c35a82a2402eb4a53608c62b30c8454c60987bb6b3ea0c359023dc5afdef69",
+      "asset_bytes": 1047492379,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "warmup_constant-lr1e-05",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_constant-lr1e-05",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "7e53bd50bc4004f5f7aa15341397e97b55dd45a91ec1f6058704cd5a1ac2404b"
+    },
+    "warmup_constant-lr3e-06": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_constant-lr3e-06.npz",
+      "asset_sha256": "ffe4708d2ad4948aca906301c6b557ab2f0bc77a3897c2f1894a7edf9f0c5766",
+      "asset_bytes": 617153287,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "warmup_constant-lr3e-06",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_constant-lr3e-06",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "edef17941d36be0de59ccb7e720abc6f23a325d6e2ee322be3929065a7b46860"
+    },
+    "warmup_cosine-lr1e-05": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_cosine-lr1e-05.npz",
+      "asset_sha256": "474bd555b874fb55c4bbfe9ad90bbc1163341378001a9613f5bc1438fe7a3f3b",
+      "asset_bytes": 898454892,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "warmup_cosine-lr1e-05",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_cosine-lr1e-05",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "cc8d530dd5e4fb57ccb206bac106f9af5e9c125fb39c2cb22fbc4e61cc1ebc62"
+    },
+    "warmup_cosine-lr3e-06": {
+      "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/trained-model-deltas-20261022/warmup_cosine-lr3e-06.npz",
+      "asset_sha256": "105b12e5a8212e434624549acb42b3190de737dca3555586145aa003162f397a",
+      "asset_bytes": 493140192,
+      "restoration": {
+        "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+        "model": "warmup_cosine-lr3e-06",
+        "directory": "/run/user/1000/model-delta-anonymous-verification-20261022/models/warmup_cosine-lr3e-06",
+        "tensors": 311,
+        "optimizer_state_included": false,
+        "new_accelerator_calls": 0
+      },
+      "restored_HF_weights_sha256": "8f16a04239fa0d86873d38c934d5899ac3b01d961e4622a399a6fe866d4274f9"
+    }
+  },
+  "scientific_verdicts_unchanged": {
+    "ordinary_baseline_confirmation": "PASS",
+    "matched_scaffold_primary": "FAIL",
+    "source_mixture_primary": "PASS"
+  },
+  "new_accelerator_calls": 0,
+  "scope": "Artifact publication and exact original BF16 model-tensor verification. No new training, prediction-quality result, optimizer-state archive or external replication."
+}

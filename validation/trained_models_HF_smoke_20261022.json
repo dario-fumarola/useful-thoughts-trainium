@@ -1,0 +1,156 @@
+{
+  "status": "PASS_ALL_PUBLIC_RESTORED_HF_MODEL_LOADS_AND_CPU_FORWARDS",
+  "utc": "2026-10-22T10:47:46.788535+00:00",
+  "models": {
+    "mixed-seed11": {
+      "weights_sha256": "62bbd18329c34b2497426dcfbfd436dd1c1062d7484004738711ccb04da4cde1",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.590864181518555
+    },
+    "mixed-seed12": {
+      "weights_sha256": "914b5f0dd68f9281dfcf516b52ad180acdb8e64a1497e21519007cfc2b871d77",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.66066551208496
+    },
+    "scaffold_format-seed11": {
+      "weights_sha256": "9fd206bacbe530a3a41d29cac1c6033653149fc2a48c4d8aec18ed233941fb8a",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.641460418701172
+    },
+    "scaffold_format-seed12": {
+      "weights_sha256": "d812b0dfd1ada6f527465b10bd0c6aad8608307bd7de0bb0ccaeb00878091fa3",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.58130645751953
+    },
+    "scaffold_raw-seed11": {
+      "weights_sha256": "f10bf0e5d19d214df90fa3601b5382ad85ff66d2e04518af6cf4a9077852b01e",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.74762535095215
+    },
+    "scaffold_raw-seed12": {
+      "weights_sha256": "8c4499c3f31f19b5c6b2b491bd0d122a370cd570219b7bc9aec4648bc70304a2",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.732471466064453
+    },
+    "scaffold_trace-seed11": {
+      "weights_sha256": "11df653561ffe06beb3d0367742aa9825e5fe0e9ef9b5c5c8bc292cb2bd88fe0",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.727161407470703
+    },
+    "scaffold_trace-seed12": {
+      "weights_sha256": "466ba14b8df71dd7c0154a06c1d43067f748fb83438b2577a2d2f11ada015b3d",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.71673583984375
+    },
+    "warmup_constant-lr1e-05": {
+      "weights_sha256": "7e53bd50bc4004f5f7aa15341397e97b55dd45a91ec1f6058704cd5a1ac2404b",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.540016174316406
+    },
+    "warmup_constant-lr3e-06": {
+      "weights_sha256": "edef17941d36be0de59ccb7e720abc6f23a325d6e2ee322be3929065a7b46860",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.816970825195312
+    },
+    "warmup_cosine-lr1e-05": {
+      "weights_sha256": "cc8d530dd5e4fb57ccb206bac106f9af5e9c125fb39c2cb22fbc4e61cc1ebc62",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.70189094543457
+    },
+    "warmup_cosine-lr3e-06": {
+      "weights_sha256": "8f16a04239fa0d86873d38c934d5899ac3b01d961e4622a399a6fe866d4274f9",
+      "strict_HF_loading_info_empty": true,
+      "logits_shape": [
+        1,
+        4,
+        151936
+      ],
+      "all_logits_finite": true,
+      "original_embedding_tie_preserved": true,
+      "maximum_absolute_logit": 29.70252799987793
+    }
+  },
+  "model_count": 12,
+  "CPU_forwards": 12,
+  "new_accelerator_calls": 0,
+  "actual_wall_seconds": 43.713961752015166,
+  "input_contract": "The same four arbitrary valid token IDs [1,2,3,4] and full attention mask for every model. No sampling or task scoring.",
+  "scope": "Artifact usability only: every anonymously downloaded exact-weight model loads through standard Hugging Face and returns finite logits. This is not a model-quality result, training repetition or external replication."
+}

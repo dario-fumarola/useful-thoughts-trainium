@@ -1,0 +1,406 @@
+{
+  "base_license_asset": "BASE_MODEL_LICENSE.txt",
+  "base_model_id": "Qwen/Qwen3-1.7B-Base",
+  "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+  "codec_files_sha256": {
+    "scripts/package_model_delta.py": "ac8054de5d24cc8a5332cba8e16291212ae75e3d1402780a1985d187cc3da0c2",
+    "scripts/restore_model_delta.py": "b053f993a2b1a2451ad5fcded4a6f0d98d1621dd824cd41d02af0ee77fdebf36",
+    "weekend_thinking/model_delta.py": "3af2766b7e5da936afc7dd31441123e36c06bfe080eb578481e3c5e78c7385f5"
+  },
+  "model_count": 12,
+  "models": {
+    "mixed-seed11": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "mixed-seed11.npz",
+      "bytes": 887469437,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "mixed-seed11",
+        "native_checkpoint_sha256": "38cbc5fa871e254bbe4e81759d0980eb1e63522eb78d0931387dbc8e3a73c2f4",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "3eda213eb6d929ba5fe7961ff30d6da3f9b85914927e47c1c9b478eb8c504402",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-mixture-20261022",
+        "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "447ce5c1cc68fdbd3df181a63f650f58a780a26ff1cbe8f4a5cae8ffbcc9abb4"
+    },
+    "mixed-seed12": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "mixed-seed12.npz",
+      "bytes": 887618146,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "mixed-seed12",
+        "native_checkpoint_sha256": "999bfe9da27a797fe5fb3ca492c4b3610d1a2752a14d85f201598d61e44be7fb",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "87d459358038541bb9f3f57c467ca0d0845de3837df566834c0bf746da0ea2c5",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-mixture-20261022",
+        "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "e4b12dfcce5c9fe4c439429db66ccc887725553716e8e775aba3d3e47c84b348"
+    },
+    "scaffold_format-seed11": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "scaffold_format-seed11.npz",
+      "bytes": 949772132,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "scaffold_format-seed11",
+        "native_checkpoint_sha256": "f5d8fabbc6fbe6bf60997f02c764bef9fdf2698cc40033518629d970f767132a",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "5f29356a555cfeb1753d8791b520cdee72e69a23590a991f5aad17bbeb5af836",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+        "training_source_commit": "53adb6eb0942e527448118ac7361a766f0f242f0"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "32e68fe51522699954b0446f3a3b8264661e3f9a2d590c457e429bf017bb64af"
+    },
+    "scaffold_format-seed12": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "scaffold_format-seed12.npz",
+      "bytes": 951052068,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "scaffold_format-seed12",
+        "native_checkpoint_sha256": "5e06647199b446de7d759aeb65d9c385f55f9fc7399536527203e95d92b0bb9c",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "cb8c0094d8cf6f996a75a473ad24cfe0ee88533d1394e4f919db0e42a40943fd",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+        "training_source_commit": "53adb6eb0942e527448118ac7361a766f0f242f0"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "b0877fe12482c57b2b99eb77d4ee4ced5bff3996a774c5821de0eaedd12b4d4c"
+    },
+    "scaffold_raw-seed11": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "scaffold_raw-seed11.npz",
+      "bytes": 898809307,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "scaffold_raw-seed11",
+        "native_checkpoint_sha256": "7fec4bd800b51dc536a8ddeefeef6c063bad7444df085c86c1291192cc2dc4f2",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "7686d230d9d1fc3813b49ab4bf3970b0c1fb24db4f2d5f94d1ca12980fec1135",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+        "training_source_commit": "53adb6eb0942e527448118ac7361a766f0f242f0"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "9b082b86292ef9932f2a7ff2a7714741fc217f9e8b7d56119ab1d3bc08a46eac"
+    },
+    "scaffold_raw-seed12": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "scaffold_raw-seed12.npz",
+      "bytes": 898851059,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "scaffold_raw-seed12",
+        "native_checkpoint_sha256": "f5581dc23ccbc557e8293a5e621faf63cac2d8131cdd1471bde23f5d198b2840",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "83a325684d94518debf9b0df93314d413e40940b8fdcac515d3bc9495f7f3604",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+        "training_source_commit": "53adb6eb0942e527448118ac7361a766f0f242f0"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "fa6240ae0776f9568a3c47dfd372613e7c15087e33c710075d0d5dd41584cdb4"
+    },
+    "scaffold_trace-seed11": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "scaffold_trace-seed11.npz",
+      "bytes": 926355452,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "scaffold_trace-seed11",
+        "native_checkpoint_sha256": "09bbb0c22394d839cf453f14966c26a508be11c5dfc76f7b30b7943a594690df",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "d0774f21f48e2f5fb88ddb5a54f47adea4bd36a17fcc5bbebd685017e8481ac8",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+        "training_source_commit": "53adb6eb0942e527448118ac7361a766f0f242f0"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "1527cad4410cd9919e6916839a0d07b0b1f4c0521ffb3ae97194524dc58131d8"
+    },
+    "scaffold_trace-seed12": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "scaffold_trace-seed12.npz",
+      "bytes": 925994165,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "scaffold_trace-seed12",
+        "native_checkpoint_sha256": "d59b6c2eb05f23dc629dea197ec2bc2e16b61a25aa050c592b122550bc5eaedc",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "da868f2f87a3f507801161149376fbb44287f7ed17574fd08c6dc0de6539a6b1",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+        "training_source_commit": "53adb6eb0942e527448118ac7361a766f0f242f0"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "a06e2591f8ac280916b2efa63fcbb412aae7f1bf879bc3fdd87ffa43289ca2b3"
+    },
+    "warmup_constant-lr1e-05": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "warmup_constant-lr1e-05.npz",
+      "bytes": 1047492379,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "warmup_constant-lr1e-05",
+        "native_checkpoint_sha256": "5294d1b8e91454c721fd383cda83b6d377ec406bc93eba9bdd8c578fb187a6f2",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "d3fdd10556f4c47a536afd294ab598b485e51e5d1e4ddd64d022e329f8aa5d25",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022",
+        "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "65c35a82a2402eb4a53608c62b30c8454c60987bb6b3ea0c359023dc5afdef69"
+    },
+    "warmup_constant-lr3e-06": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "warmup_constant-lr3e-06.npz",
+      "bytes": 617153287,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "warmup_constant-lr3e-06",
+        "native_checkpoint_sha256": "c55734cfe36a8cd94a69aa3b8a4c7cbb0c35f161cb4d7d930f6184713c95d623",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "aac122335fd1aa23205b4a346a2a3eb7d0f1efcfb13e59ada3f9a8ac4e07d9f1",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022",
+        "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "ffe4708d2ad4948aca906301c6b557ab2f0bc77a3897c2f1894a7edf9f0c5766"
+    },
+    "warmup_cosine-lr1e-05": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "warmup_cosine-lr1e-05.npz",
+      "bytes": 898454892,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "warmup_cosine-lr1e-05",
+        "native_checkpoint_sha256": "e2d9afb7dc32142b6edd5950c0ecbc6bc906a2fc178ccb788e4ac6b0d2a13b75",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "64ec7c139d7f36cb1ad40731031c938983f934f08114cf0d9dfd772bcc9afae3",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/blob/bba4837b9190a91f4e801e8fef3cfdb57f5a9fc8/validation/uniform_lm_baseline_complete_20261022/REPORT.md",
+        "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "474bd555b874fb55c4bbfe9ad90bbc1163341378001a9613f5bc1438fe7a3f3b"
+    },
+    "warmup_cosine-lr3e-06": {
+      "actual_complete_native_tensor_roundtrip_passed": true,
+      "asset": "warmup_cosine-lr3e-06.npz",
+      "bytes": 493140192,
+      "named_state_tensors": 311,
+      "provenance": {
+        "base_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+          "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+          "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+          "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        },
+        "base_model_id": "Qwen/Qwen3-1.7B-Base",
+        "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+        "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "license": "Apache-2.0; upstream license retained in restored model",
+        "model_name": "warmup_cosine-lr3e-06",
+        "native_checkpoint_sha256": "6053c71b5cfd6b265b872a4f10a4413d5d1df8911cf69d720e40a4a262ca6c87",
+        "native_optimizer_update": 128,
+        "native_spec_hash": "56d5c6684f6344e19fac478c72a8262271b94b42d2ba1ab913809c0643cc2cc0",
+        "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022",
+        "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef"
+      },
+      "qualified_embedding_tie_preserved": true,
+      "sha256": "105b12e5a8212e434624549acb42b3190de737dca3555586145aa003162f397a"
+    }
+  },
+  "restore_tools_zip_sha256": "b27db4bf0b08f72f3fcbdf2dc29e72139a16327dd992e27aeb0ae628baf92fde",
+  "schema": "exact-trained-model-release-v1",
+  "scientific_publication_receipts": {
+    "general_web_retention_public_release_20261022.json": {
+      "archive_sha256": "b6f35905157f857dc8ec281badfbf536939085a18a0859e4fbe0bfce69573dac",
+      "receipt_sha256": "6e68dd7a3b996205d387de6f8987b60d85e7492da2b4b750c2188684bad9be35",
+      "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/general-web-retention-20261022"
+    },
+    "scaffold_learning_public_release_20261022.json": {
+      "archive_sha256": "452bab18ebf0fd194cd815391973a15d4ac50111303eeea2a5ed4533756a6d27",
+      "receipt_sha256": "d06331ad4fb010bc010ba897a992149b1c72230a7749393a1e79e1edd01e1885",
+      "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022"
+    },
+    "uniform_lm_baseline_public_release_20261022.json": {
+      "archive_sha256": "8f41b224582b3450ef0faf1ab9ffe57275167808d0ec1371eca381e2e9b8d927",
+      "receipt_sha256": "16580ecb5d6d1f242909c3dc8713e8ffc9f6bf0d17c371e73eff4b5222e1ceb2",
+      "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022"
+    },
+    "uniform_mixture_public_release_20261022.json": {
+      "archive_sha256": "7dfa593e60fd4bb8d290d800b3f0d0942346b3628aa7b7ad7bcd91908342b7e0",
+      "receipt_sha256": "72e9c44646908b95f6b1ed9c304d2a0ef33182d43a05619268b811c5b1d0ad6f",
+      "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-mixture-20261022"
+    }
+  },
+  "scope": "Exact original BF16 model tensors, including controls and unsuccessful conditions. Model weights only; no optimizer archive, new model-quality result, altered scientific gate or external replication.",
+  "source_code_commit": "be71b40774c9d96d7496fb30011c9beed1ea2d4a",
+  "tested_artifact_environment": {
+    "huggingface-hub": "1.29.0",
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0",
+    "torch": "2.9.1",
+    "transformers": "5.15.1"
+  }
+}

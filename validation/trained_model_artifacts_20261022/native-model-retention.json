@@ -1,0 +1,87 @@
+{
+  "status": "PASS_COMPLETED_MODEL_BYTES_RETAINED_ON_EXISTING_NVME",
+  "models": {
+    "scaffold_raw-seed11": {
+      "study": "matched_post_document_scaffold",
+      "source_model_file": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed11/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_raw-seed11.pt",
+      "sha256": "7fec4bd800b51dc536a8ddeefeef6c063bad7444df085c86c1291192cc2dc4f2",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed11/step-0000128",
+      "original_full_manifest_sha256": "ab345e29406e8350b757b8c6469e9c448b4b75c45ed8ef8f0ded89c99c3f5356",
+      "optimizer_update": 128
+    },
+    "scaffold_format-seed11": {
+      "study": "matched_post_document_scaffold",
+      "source_model_file": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed11/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_format-seed11.pt",
+      "sha256": "f5d8fabbc6fbe6bf60997f02c764bef9fdf2698cc40033518629d970f767132a",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed11/step-0000128",
+      "original_full_manifest_sha256": "caac2b04900c9b73ea23265bbac9d58e7263dda2a4d7482a1d0b2fb0acbbc298",
+      "optimizer_update": 128
+    },
+    "scaffold_trace-seed11": {
+      "study": "matched_post_document_scaffold",
+      "source_model_file": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed11/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_trace-seed11.pt",
+      "sha256": "09bbb0c22394d839cf453f14966c26a508be11c5dfc76f7b30b7943a594690df",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed11/step-0000128",
+      "original_full_manifest_sha256": "a99fde4ef7e9020bb0dd834cae3e93654276f14c55111aae0d09a7f97b9a6e17",
+      "optimizer_update": 128
+    },
+    "scaffold_raw-seed12": {
+      "study": "matched_post_document_scaffold",
+      "source_model_file": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed12/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_raw-seed12.pt",
+      "sha256": "f5581dc23ccbc557e8293a5e621faf63cac2d8131cdd1471bde23f5d198b2840",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_raw-seed12/step-0000128",
+      "original_full_manifest_sha256": "c7e9da777da14d3253cb84134acd85f7f72534d0efa12e6c792d3be935a04f8e",
+      "optimizer_update": 128
+    },
+    "scaffold_format-seed12": {
+      "study": "matched_post_document_scaffold",
+      "source_model_file": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed12/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_format-seed12.pt",
+      "sha256": "5e06647199b446de7d759aeb65d9c385f55f9fc7399536527203e95d92b0bb9c",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_format-seed12/step-0000128",
+      "original_full_manifest_sha256": "03ed8e85edd55d21ceaf68fefed8569a49ae0c91bf6e2b1e12188fb0204d3b47",
+      "optimizer_update": 128
+    },
+    "scaffold_trace-seed12": {
+      "study": "matched_post_document_scaffold",
+      "source_model_file": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed12/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/scaffold_trace-seed12.pt",
+      "sha256": "d59b6c2eb05f23dc629dea197ec2bc2e16b61a25aa050c592b122550bc5eaedc",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/scaffold-learning-overnight-v1/science/scaffold_trace-seed12/step-0000128",
+      "original_full_manifest_sha256": "e65d97af80728aae6ef4a22cda4acffb17d48bf927c0be6dd0673318db0d5820",
+      "optimizer_update": 128
+    },
+    "mixed-seed11": {
+      "study": "uniform_source_mixture",
+      "source_model_file": "/dev/shm/uniform-mixture-20261022/science/mixed-seed11/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/mixed-seed11.pt",
+      "sha256": "38cbc5fa871e254bbe4e81759d0980eb1e63522eb78d0931387dbc8e3a73c2f4",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-mixture-20261022/science/mixed-seed11/step-0000128",
+      "original_full_manifest_sha256": "25aebadf2733902dc55d205070f67ae7fd6ea1027b5bd53e4f56f5aac18416c2",
+      "optimizer_update": 128
+    },
+    "mixed-seed12": {
+      "study": "uniform_source_mixture",
+      "source_model_file": "/dev/shm/uniform-mixture-20261022/science/mixed-seed12/step-0000128/model.pt",
+      "retained_existing_NVMe_model_file": "/home/ubuntu/dario/local/nvme/retained-overnight-models/mixed-seed12.pt",
+      "sha256": "999bfe9da27a797fe5fb3ca492c4b3610d1a2752a14d85f201598d61e44be7fb",
+      "bytes": 3441248275,
+      "original_full_state_directory": "/dev/shm/uniform-mixture-20261022/science/mixed-seed12/step-0000128",
+      "original_full_manifest_sha256": "9e0579e7fc1ad7ddbaeecb11a181bf09e218663090928b0aba6b3bb89a207bf5",
+      "optimizer_update": 128
+    }
+  },
+  "scope": "Preserve every completed fixed model without selecting by scientific outcome; original full native model/optimizer states and original logical paths remain. Existing local instance storage, not a claim of remote backup or external replication.",
+  "utc": "2026-10-22T10:26:15.916568+00:00"
+}
