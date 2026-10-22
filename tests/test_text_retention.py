@@ -114,7 +114,7 @@ def test_independent_source_failure_cannot_be_ignored(frozen):
 
 
 def test_sources_keep_native_eos_and_reject_duplicate_pages(tmp_path):
-    rows = [dict(document_id=str(i), canonical_page='page'+str(i),
+    rows = [dict(item_id='item'+str(i), document_id=str(i), canonical_page='page'+str(i),
                  ids=[151643]+[3]*526+[151643]) for i in range(1024)]
     path = tmp_path/'sources.jsonl'
     def write():
@@ -125,3 +125,62 @@ def test_sources_keep_native_eos_and_reject_duplicate_pages(tmp_path):
     write()
     with pytest.raises(ValueError):
         retention.read_sources(path)
+
+
+def named_cohort(frozen):
+    from pathlib import Path
+    p, release, output = frozen
+    p.update(schema='frozen-original-text-cohorts-v1', cohort='MATH_CONFIRM', items=2048)
+    manifest = dict(status='COMPLETE_UNIFORM_LM_SOURCE_PREPARATION', identity='fixed-source-mixture',
+        files={'MATH_CONFIRM': dict(rows=2048, sha256=p['data_sha256'], role='confirmation')})
+    check = dict(status='PASS_INDEPENDENT_UNIFORM_MIXTURE_SOURCES',
+                 files={'MATH_CONFIRM': dict(rows=2048, sha256=p['data_sha256'])})
+    for name, value in [('data_manifest', manifest), ('independent_source_check', check)]:
+        path = Path(p[name+'_file'])
+        path.write_text(json.dumps(value))
+        p[name+'_sha256'] = sha256_file(path)
+    release.update(source_identity='fixed-source-mixture',
+                   required_terminal_models=['mixed-seed11', 'mixed-seed12', 'uniform_reference'],
+                   all_terminal_models={n: dict(step=128) for n in
+                       ['mixed-seed11', 'mixed-seed12', 'uniform_reference']})
+    return p, release, output
+
+
+def test_named_fresh_cohorts_reuse_the_identical_worker(frozen):
+    retention.validate(*named_cohort(frozen))
+
+
+def test_training_role_cannot_be_used_as_confirmation(frozen):
+    from pathlib import Path
+    p, release, output = named_cohort(frozen)
+    path = Path(p['data_manifest_file'])
+    manifest = json.loads(path.read_text())
+    manifest['files']['MATH_CONFIRM']['role'] = 'training'
+    path.write_text(json.dumps(manifest))
+    p['data_manifest_sha256'] = sha256_file(path)
+    with pytest.raises(ValueError):
+        retention.validate(p, release, output)
+
+
+def test_named_study_freezes_both_orders_even_before_B0_scoring(frozen):
+    p, release, output = named_cohort(frozen)
+    release['all_terminal_models'].pop('mixed-seed12')
+    with pytest.raises(ValueError):
+        retention.validate(p, release, output)
+
+
+@pytest.mark.parametrize('field,value', [('items', 2049), ('cohort', 'TRAIN'),
+    ('worker_evaluator_sha256', 'different-worker')])
+def test_named_cohort_rejects_changed_boundary(frozen, field, value):
+    p, release, output = named_cohort(frozen)
+    p[field] = value
+    with pytest.raises(ValueError):
+        retention.validate(p, release, output)
+
+
+@pytest.mark.parametrize('budget', [True, 0, float('inf'), float('nan'), 2])
+def test_score_budget_is_finite_and_bounded(frozen, budget):
+    p, release, output = named_cohort(frozen)
+    release['maximum_reserved_chip_hours'] = budget
+    with pytest.raises(ValueError):
+        retention.validate(p, release, output)

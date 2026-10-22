@@ -1,0 +1,120 @@
+{
+  "absolute": {
+    "B0": {
+      "full_window_NLL": 2.495754041364556,
+      "suffix16_log_probability": -37.87843857162672
+    },
+    "warmup_constant-lr1e-05": {
+      "full_window_NLL": 2.5095630044333026,
+      "suffix16_log_probability": -38.00483080143362
+    },
+    "warmup_constant-lr3e-06": {
+      "full_window_NLL": 2.499366129549614,
+      "suffix16_log_probability": -37.90789421428787
+    },
+    "warmup_cosine-lr1e-05": {
+      "full_window_NLL": 2.504589442337176,
+      "suffix16_log_probability": -37.95225064442124
+    },
+    "warmup_cosine-lr3e-06": {
+      "full_window_NLL": 2.4973264833050037,
+      "suffix16_log_probability": -37.89268919819395
+    }
+  },
+  "contrasts": {
+    "warmup_constant-lr1e-05__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        -0.014497692019560056,
+        -0.013129768198184478
+      ],
+      "full_window_gain_nats_per_token": -0.013808963068746918,
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "suffix16_CI95": [
+        -0.16988491654950685,
+        -0.08381217882972705
+      ],
+      "suffix16_gain_nats": -0.12639222980690046,
+      "treatment": "warmup_constant-lr1e-05"
+    },
+    "warmup_constant-lr3e-06__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        -0.004028960556541175,
+        -0.0032000160924267633
+      ],
+      "full_window_gain_nats_per_token": -0.0036120881850581358,
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "suffix16_CI95": [
+        -0.05604709060022159,
+        -0.0033132418191763706
+      ],
+      "suffix16_gain_nats": -0.029455642661154913,
+      "treatment": "warmup_constant-lr3e-06"
+    },
+    "warmup_cosine-lr1e-05__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        -0.009387960849946945,
+        -0.008259195516164643
+      ],
+      "full_window_gain_nats_per_token": -0.008835400972620285,
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "suffix16_CI95": [
+        -0.10739727369386258,
+        -0.04078577930305383
+      ],
+      "suffix16_gain_nats": -0.07381207279452182,
+      "treatment": "warmup_cosine-lr1e-05"
+    },
+    "warmup_cosine-lr3e-06__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        -0.001914374622299991,
+        -0.001234819436160279
+      ],
+      "full_window_gain_nats_per_token": -0.0015724419404481512,
+      "statistics": {
+        "bootstrap_draws": 5000,
+        "bootstrap_seed": 17,
+        "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+        "independent_clusters": 1024,
+        "items": 1024,
+        "random_source": "seeded Generator",
+        "resampling_unit": "unique source document"
+      },
+      "suffix16_CI95": [
+        -0.03754119914845652,
+        0.008461354282966837
+      ],
+      "suffix16_gain_nats": -0.014250626567235247,
+      "treatment": "warmup_cosine-lr3e-06"
+    }
+  },
+  "scope": "Fixed English retention diagnostic, no selection of models or changes to the completed FineMath criterion",
+  "utc": "2026-10-22T04:31:21+00:00"
+}

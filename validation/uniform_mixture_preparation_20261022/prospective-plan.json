@@ -1,0 +1,127 @@
+{
+  "identity": "uniform-source-mixture-20261022",
+  "created_utc": "2026-10-22T04:50:32.084180+00:00",
+  "reason": "All four fixed ordinary FineMath recipes improve their domain but regress on the fixed general-web diagnostic. Test source replay, holding the qualified numerical objective and schedule fixed.",
+  "parent_uniform_source_plan": {
+    "path": "/home/ubuntu/dario/configs/uniform_lm_sources.json",
+    "sha256": "95a5c042799a753ea3dc051fe7c8a0e11a3059e98c926be1ee880e6ee623e2d0"
+  },
+  "parent_uniform_TRAIN": {
+    "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/TRAIN.jsonl",
+    "sha256": "10506587524242c3b7176d76ec5afa1ad6969bb7026c0ccd0af5b89366af0291"
+  },
+  "parent_independent_source_receipt": {
+    "path": "/home/ubuntu/dario/validation/uniform_lm_preparation_20261021/independent-source-check.json",
+    "sha256": "dc52a79b4d840459f2b7e78684f34da0dbd950461c566efe25a9858a58f87099"
+  },
+  "fresh_math_exclusions": [
+    {
+      "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/DEV.jsonl",
+      "sha256": "2fe003a67accf861a1760aa4a224bb5fb0bc9fb8b79584096315f0495f2fbe5f"
+    },
+    {
+      "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/CONFIRM.jsonl",
+      "sha256": "5697d1999b9834315f424d7bdf3d52b09daee1b23ff4e02bb91f1d431752f522"
+    },
+    {
+      "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/TRAIN.jsonl",
+      "sha256": "10506587524242c3b7176d76ec5afa1ad6969bb7026c0ccd0af5b89366af0291"
+    },
+    {
+      "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/QUALIFICATION.jsonl",
+      "sha256": "9ef2e07a9390227d5fc5675cd95382e568b6924b15cd49ea27d64042245998a5"
+    },
+    {
+      "path": "/dev/shm/scaffold-learning-overnight-v1-data/SCAFFOLD_TRAIN.jsonl",
+      "sha256": "40bb6ff7f31d747ff58dfc284f615357c3ac941677a3eb43e804428cb679b7bd"
+    },
+    {
+      "path": "/dev/shm/scaffold-learning-overnight-v1-data/SCAFFOLD_QUALIFICATION.jsonl",
+      "sha256": "14a09207c1076eab82b51fc02f068a527374013f5eceb008cf3a6cf4de993d87"
+    },
+    {
+      "path": "/dev/shm/scaffold-learning-overnight-v1-data/CONFIRM.jsonl",
+      "sha256": "233744ab6034b8d5c958ed29ddbeb8d4dbd9a67c534ef7a31222dbbf1f74c3ff"
+    },
+    {
+      "path": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/ENGLISH_RETENTION.jsonl",
+      "sha256": "6ad5671e62b14d86be5c1e16d2294713a65b7ac223c7c56ebfb3843405b2f42e"
+    }
+  ],
+  "source_math_TRAIN_documents": 16384,
+  "source_English_TRAIN_documents": 16384,
+  "fresh_math_confirmation_documents": 2048,
+  "fresh_English_confirmation_documents": 1024,
+  "English_source_plan": {
+    "path": "/home/ubuntu/dario/local/diagnostics/general-web-retention-20261022/prospective-plan.json",
+    "sha256": "c69b14c417c26d86aff003add7c84d0bad4eb16d3915a0d1285a045ae7649c8c"
+  },
+  "English_source_file": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/source.parquet",
+  "English_source_sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871",
+  "English_maximum_source_rows": 36864,
+  "English_exclude_original_diagnostic": {
+    "path": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/ENGLISH_RETENTION.jsonl",
+    "sha256": "6ad5671e62b14d86be5c1e16d2294713a65b7ac223c7c56ebfb3843405b2f42e"
+  },
+  "salt": "uniform-source-mixture-20261022-v1",
+  "data_directory": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022",
+  "model": "Qwen/Qwen3-1.7B-Base",
+  "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef",
+  "training_source_root": "/home/ubuntu/dario/local/worktrees/uniform-lm-counter-cache-v1",
+  "qualified_reference": "warmup_cosine-lr1e-05",
+  "recipe": {
+    "source_orders": [
+      11,
+      12
+    ],
+    "TRAIN_windows": 32768,
+    "predicted_tokens": 17268736,
+    "global_batch": 256,
+    "world_size": 8,
+    "micro_batch": 4,
+    "accumulation": 8,
+    "updates": 128,
+    "warmup_updates": 13,
+    "peak_lr": 1e-05,
+    "schedule": "warmup_cosine",
+    "minimum_lr_ratio": 0.1,
+    "original_tokens": 528,
+    "targets": 527,
+    "loss": "Uniform original next-token CE; no trace, suffix duplication or auxiliary objective"
+  },
+  "primary": "Both mixed orders have positive95% lower bounds versusB0 on both fresh domains, and versus the fixed qualified all-FineMath reference on the declared equal-domain mixture. No model/order selection.",
+  "target_mixture": {
+    "math": 0.5,
+    "English": 0.5,
+    "scope": "Declared research target, not estimated natural corpus prevalence"
+  },
+  "statistics": {
+    "unit": "unique source document",
+    "bootstrap_draws": 5000,
+    "math_seed": 17,
+    "English_seed": 19,
+    "mixture": "Equal-weight sum of independent stratum bootstrap draws, preserving all model contrasts"
+  },
+  "maximum_assigned_chip_hours": 7.5,
+  "phase_ceilings": {
+    "fitting": 7,
+    "scoring": 1.5,
+    "global_note": "Both phases sum into global7.5; maxima cannot both be spent"
+  },
+  "minimum_forecast_RAM_free_after_all_checkpoints_GiB": 39,
+  "minimum_free_filesystem_GiB": 35,
+  "minimum_host_available_GiB": 512,
+  "maximum_concurrent_trainers": 2,
+  "training_not_before": "Primary scaffold study complete and native workers closed",
+  "science_deadline_utc": "2026-10-22T11:20:00+00:00",
+  "publication_deadline_utc": "2026-10-22T12:00:00+00:00",
+  "source_preparation_CPU_threads": 4,
+  "source_preparation_wall_seconds": 1800,
+  "additional_storage_cap_GiB": 2,
+  "outcomes_already_seen": "Original FineMath baseline and original1024English diagnostic; neither fresh cohort has model outcomes.",
+  "limits": [
+    "Ordinary source-mixture adaptation only; no thought-training or autonomous-learning claim.",
+    "Two source orders share one base checkpoint and one fixed corpus.",
+    "Original all-FineMath and scaffold studies keep their protocols and decisions."
+  ]
+}

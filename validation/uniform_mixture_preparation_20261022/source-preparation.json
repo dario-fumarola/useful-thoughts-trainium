@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE_UNIFORM_LM_SOURCE_PREPARATION",
+  "identity": "uniform-source-mixture-20261022",
+  "utc": "2026-10-22T04:53:43.515673+00:00",
+  "plan_sha256": "0a0cf33a2e857a3f58bbf537c9282e27e91e1942d01c559c16108f918ffe657e",
+  "files": {
+    "TRAIN": {
+      "path": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022/TRAIN.jsonl",
+      "rows": 32768,
+      "sha256": "70db7597887b559bcd2e8031547145f6808d04020467b6fc8997eeab32fe9f91",
+      "role": "training"
+    },
+    "MATH_CONFIRM": {
+      "path": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022/MATH_CONFIRM.jsonl",
+      "rows": 2048,
+      "sha256": "a01ec8c95ffffbab3e8411cc0bc33ecb89c75b47e537a8ae4cd1a67a947eea35",
+      "role": "confirmation"
+    },
+    "ENGLISH_CONFIRM": {
+      "path": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022/ENGLISH_CONFIRM.jsonl",
+      "rows": 1024,
+      "sha256": "546893a28c56546913c70e1df994af589b8a124abdc27f5132863c1c6d36d8d6",
+      "role": "confirmation"
+    }
+  },
+  "TRAIN_domain_counts": {
+    "math": 16384,
+    "English": 16384
+  },
+  "English_frame_rows_scanned": 36864,
+  "eligible_unused_English_documents": 19449,
+  "source_models_queried": 0,
+  "parent_TRAIN_source_proof": {
+    "path": "/home/ubuntu/dario/validation/uniform_lm_preparation_20261021/independent-source-check.json",
+    "sha256": "dc52a79b4d840459f2b7e78684f34da0dbd950461c566efe25a9858a58f87099"
+  },
+  "wall_seconds": 112.31281483802013,
+  "target_weight": "Every original shifted token equal; equal domain counts and window lengths make the fitting objective50/50"
+}

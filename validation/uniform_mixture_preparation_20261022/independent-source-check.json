@@ -1,0 +1,26 @@
+{
+  "status": "PASS_INDEPENDENT_UNIFORM_MIXTURE_SOURCES",
+  "utc": "2026-10-22T04:57:21.140337+00:00",
+  "files": {
+    "TRAIN": {
+      "rows": 32768,
+      "sha256": "70db7597887b559bcd2e8031547145f6808d04020467b6fc8997eeab32fe9f91"
+    },
+    "MATH_CONFIRM": {
+      "rows": 2048,
+      "sha256": "a01ec8c95ffffbab3e8411cc0bc33ecb89c75b47e537a8ae4cd1a67a947eea35"
+    },
+    "ENGLISH_CONFIRM": {
+      "rows": 1024,
+      "sha256": "546893a28c56546913c70e1df994af589b8a124abdc27f5132863c1c6d36d8d6"
+    }
+  },
+  "original_English_windows_reconstructed": 17408,
+  "original_fresh_math_windows_reconstructed": 2048,
+  "math_fitting_windows_exact_subset_of_previously_verified_sources": 16384,
+  "all_sources_separated": true,
+  "identity_and_cut_selection_recomputed": true,
+  "model_calls": 0,
+  "wall_seconds": 115.0958115310059,
+  "scope": "Independent original-record/window reconstruction for all new sources, exact inherited mathematical fitting subset, shared tokenizer and canonical-page definition."
+}

@@ -20,32 +20,29 @@ SCAFFOLD_MODELS = {
 }
 
 
-def validate(p, release, output):
-    if (p.get('schema') != 'frozen-text-retention-v1'
-            or p.get('cohort') != 'ENGLISH_RETENTION'
-            or p.get('world_size') != 8 or p.get('micro_batch') != 4
-            or p.get('items') != 1024
+def _common_contract(p, release):
+    budget = release.get('maximum_reserved_chip_hours', 0)
+    if (p.get('world_size') != 8 or p.get('micro_batch') != 4
             or p.get('source_files') != driver.source_files()
             or p.get('evaluator_sha256') != sha256_file(__file__)
             or p.get('worker_evaluator_sha256') != sha256_file(original_evaluator.__file__)
-            or not 0 < release.get('maximum_reserved_chip_hours', 0) <= 1.5):
-        raise ValueError('The fixed cohort, original worker and finite budget are required')
+            or type(budget) not in (int, float) or not 0 < budget <= 1.5):
+        raise ValueError('The qualified original worker and finite score budget are required')
+
+
+def _receipts(p):
     for name in ('data', 'data_manifest', 'independent_source_check'):
         if sha256_file(p[name+'_file']) != p[name+'_sha256']:
             raise ValueError('Frozen source or independent check differs')
-    manifest = json.loads(Path(p['data_manifest_file']).read_text())
-    check = json.loads(Path(p['independent_source_check_file']).read_text())
-    if (manifest.get('status') != 'COMPLETE_GENERAL_WEB_SOURCE_PREPARATION'
-            or manifest.get('data_sha256') != p['data_sha256']
-            or manifest.get('documents') != 1024
-            or check.get('status') != 'PASS_INDEPENDENT_GENERAL_WEB_SOURCES'
-            or check.get('data_sha256') != p['data_sha256']):
-        raise ValueError('Complete independently checked original sources are required')
+    return (json.loads(Path(p['data_manifest_file']).read_text()),
+            json.loads(Path(p['independent_source_check_file']).read_text()))
+
+
+def _terminal_identity(p, release, output, required):
     job = release.get('jobs', {}).get(str(output))
     if not job or not job.get('protocol_sha256'):
         raise ValueError('An explicit named evaluation job is required')
     terminals = release['all_terminal_models']
-    required = BASELINE_MODELS | (SCAFFOLD_MODELS if p['model_name'] in SCAFFOLD_MODELS else set())
     if not required <= terminals.keys() or any(terminals[k]['step'] != 128 for k in required):
         raise ValueError('All prespecified terminal models must freeze before evaluation')
     name = p['model_name']
@@ -58,11 +55,58 @@ def validate(p, release, output):
         raise ValueError('The exact frozen terminal checkpoint is required')
 
 
-def read_sources(path):
+def _named_cohort(p, release, output):
+    """Bind reusable original-text cohorts to a prespecified source manifest."""
+    count = p.get('items')
+    if type(count) is not int or count < 32 or count % 32:
+        raise ValueError('Complete fixed native batches are required')
+    _common_contract(p, release)
+    manifest, check = _receipts(p)
+    cohort = p.get('cohort')
+    source = manifest.get('files', {}).get(cohort, {})
+    checked = check.get('files', {}).get(cohort, {})
+    if (manifest.get('status') != 'COMPLETE_UNIFORM_LM_SOURCE_PREPARATION'
+            or not isinstance(manifest.get('identity'), str) or not manifest['identity']
+            or manifest.get('identity') != release.get('source_identity')
+            or source.get('role') != 'confirmation' or source.get('rows') != count
+            or source.get('sha256') != p['data_sha256']
+            or check.get('status') != 'PASS_INDEPENDENT_UNIFORM_MIXTURE_SOURCES'
+            or checked.get('sha256') != p['data_sha256'] or checked.get('rows') != count):
+        raise ValueError('An independently reconstructed confirmation cohort is required')
+    names = release.get('required_terminal_models')
+    if (not isinstance(names, list) or not names
+            or any(not isinstance(name, str) or not name for name in names)
+            or len(set(names)) != len(names)):
+        raise ValueError('Declare every required terminal model before scoring')
+    _terminal_identity(p, release, output, set(names))
+
+
+def validate(p, release, output):
+    if p.get('schema') == 'frozen-original-text-cohorts-v1':
+        _named_cohort(p, release, output)
+        return
+    if (p.get('schema') != 'frozen-text-retention-v1'
+            or p.get('cohort') != 'ENGLISH_RETENTION'
+            or p.get('items') != 1024):
+        raise ValueError('The fixed cohort, original worker and finite budget are required')
+    _common_contract(p, release)
+    manifest, check = _receipts(p)
+    if (manifest.get('status') != 'COMPLETE_GENERAL_WEB_SOURCE_PREPARATION'
+            or manifest.get('data_sha256') != p['data_sha256']
+            or manifest.get('documents') != 1024
+            or check.get('status') != 'PASS_INDEPENDENT_GENERAL_WEB_SOURCES'
+            or check.get('data_sha256') != p['data_sha256']):
+        raise ValueError('Complete independently checked original sources are required')
+    required = BASELINE_MODELS | (SCAFFOLD_MODELS if p['model_name'] in SCAFFOLD_MODELS else set())
+    _terminal_identity(p, release, output, required)
+
+
+def read_sources(path, items=1024):
     rows = [json.loads(line) for line in Path(path).open()]
-    if (len(rows) != 1024
-            or len({row['document_id'] for row in rows}) != 1024
-            or len({row['canonical_page'] for row in rows}) != 1024
+    if (len(rows) != items
+            or len({row['item_id'] for row in rows}) != items
+            or len({row['document_id'] for row in rows}) != items
+            or len({row['canonical_page'] for row in rows}) != items
             or any(len(row['ids']) != 528 for row in rows)):
         raise ValueError('Complete unique original windows are required')
     return rows
@@ -82,7 +126,7 @@ def main():
     validate(p, release, args.output)
     if args.output.exists():
         raise ValueError('A fresh output is required')
-    rows = read_sources(p['data_file'])
+    rows = read_sources(p['data_file'], p['items'])
     import torch_xla.distributed.xla_multiprocessing as xmp
     xmp.spawn(worker, args=(args, p, rows), nprocs=None)
 
