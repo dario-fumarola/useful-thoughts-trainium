@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 22, 2026, 05:25 UTC. [History](docs/archive/STATUS_through_20261021.md).
+Updated October 22, 2026, 06:16 UTC. [History](docs/archive/STATUS_through_20261021.md).
 
 ## Ordinary pretraining reference passes
 
@@ -20,7 +20,7 @@ A fixed 50/50 FineMath/FineWeb-Edu training comparison is prepared in two source
 
 Three fresh training arms—raw, format-only and verified computation—across two source orders. All share 34,816 original windows, equal source coefficients, the selected cosine schedule and 128 updates. Optional work follows original text; labels are derived from the preceding prefix. This isolates a post-hoc learning scaffold, not an autonomous writer. All six terminals freeze before fresh natural confirmation; B0 and the qualified ordinary model remain absolute references.
 
-Native loss, accumulation, LR, reducer, masters, replica and exact recovery pass; qualification cost **1.530 assigned chip-hours**. First three fits are active on independent two-chip groups; remaining orders follow. Existing hardware only, up to three full trainers concurrently to preserve host-memory and checkpoint-export headroom. Measured complete projection 39.449, prospective total ceiling **40 assigned chip-hours**. Every phase and failed reservation counts. [Overnight plan](docs/OVERNIGHT_PLAN_20261022.md).
+Native loss, accumulation, LR, reducer, masters, replica and exact recovery pass; qualification cost **1.530 assigned chip-hours**. All three first-order fits and full-state exports are complete; all three second-order fits have launched on independent two-chip groups. Existing hardware only, up to three full trainers concurrently to preserve host-memory and checkpoint-export headroom. Measured complete projection 39.449, prospective total ceiling **40 assigned chip-hours**. Every phase and failed reservation counts. [Overnight plan](docs/OVERNIGHT_PLAN_20261022.md).
 
 All **2,069 CPU tests**, smoke and compilation pass. CPU checks are separate from native qualification. All original sources, models and optimizer states remain retained; disk and host-memory floors stay 35 and 512 GiB.
 

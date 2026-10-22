@@ -2,11 +2,11 @@
 
 ## Question and current work
 
-Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. The immediate task is to qualify ordinary continued pretraining as a reference for later computation-augmented learning.
+Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. Ordinary continued pretraining now passes fresh FineMath confirmation; the immediate task is to finish the matched supervised-learning comparison and its cross-domain checks by the owner's overnight deadline.
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
-The frozen-selector study is complete: targeted gains repeat, every natural endpoint loses, and a simple no-calculation ensemble improves natural prediction. Its original decisions remain intact. Uniform-LM preparation now supplies 38,912 independently checked source windows and a plain one-loss training path. See STATUS.md and the fixed design for the four development settings, separate confirmation, actual native qualification requirements and proposed finite resources. CPU preparation is distinct from a measured native run.
+The frozen-selector study is complete: targeted gains repeat, every natural endpoint loses, and a simple no-calculation ensemble improves natural prediction. Its original decisions remain intact. All four ordinary-training settings finish; the development-selected model improves fresh mathematical prediction and loses on a separate educational-English panel. The six matched raw/format/computation fits and fixed two-order source-mixture study must retain every model and outcome. See STATUS.md and the active handoff for actual qualification, deadlines and resource ceilings. CPU checks remain distinct from native execution.
 
 ## Three red lines
 
