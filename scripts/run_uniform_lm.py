@@ -1,4 +1,4 @@
-"""Run one frozen uniform-LM job with owned-process and resource accounting."""
+"""Run one frozen language-model job with owned-process resource accounting."""
 import argparse
 from datetime import datetime, timezone
 import importlib.util
@@ -14,6 +14,21 @@ import time
 from train import partial_state_driver as driver
 from train import uniform_lm
 from weekend_thinking.artifacts import atomic_json, sha256_file, utc_now
+
+
+def evaluation_entrypoint(release):
+    """Explicitly allow reviewed evaluators; preserve the original default."""
+    module = release.get('evaluation_module', 'train.uniform_lm_evaluate')
+    if module not in ('train.uniform_lm_evaluate', 'train.text_retention_evaluate'):
+        raise ValueError('A reviewed frozen evaluation entrypoint is required')
+    return module
+
+
+def prelaunch_memory_floor(release):
+    value = release.get('minimum_prelaunch_host_available_GiB', 768)
+    if type(value) is not int or value not in (672, 768):
+        raise ValueError('An explicit qualified staging reserve is required')
+    return value * 2**30
 
 
 def main():
@@ -32,8 +47,8 @@ def main():
                                    output=output, protocol=protocol)
     evaluation = job.get('kind') == 'evaluation'
     if evaluation:
-        from train.uniform_lm_evaluate import validate
-        validate(p, release, output)
+        evaluator = evaluation_entrypoint(release)
+        importlib.import_module(evaluator).validate(p, release, output)
     else:
         driver.validate(p)
         uniform_lm.validate_execution(p, validation, driver.source_files())
@@ -57,7 +72,8 @@ def main():
             or any(r['neuron_processes'] or r['logical_neuroncore_config'] != 2 for r in topology)):
         raise RuntimeError('Assigned existing chips must be idle')
     roots = [Path(release['repository_root']), Path(release['cache_filesystem']), output.parent]
-    if min(shutil.disk_usage(q).free for q in roots) < 35*2**30 or h.available() < 768*2**30:
+    if (min(shutil.disk_usage(q).free for q in roots) < 35*2**30
+            or h.available() < prelaunch_memory_floor(release)):
         raise RuntimeError('Insufficient prelaunch disk or memory')
     ledgers = list((control/'jobs').glob('*/closure.json'))
     used = sum(json.loads(q.read_text())['reserved_chip_hours'] for q in ledgers)
@@ -92,7 +108,7 @@ def main():
                TMPDIR=str(tmp))
     command = ['timeout', '--signal=TERM', '--kill-after=5s', str(seconds-5)+'s',
                sys.executable, '-u', '-m',
-               'train.uniform_lm_evaluate' if evaluation else 'train.partial_state_driver',
+               evaluator if evaluation else 'train.partial_state_driver',
                '--protocol', str(protocol), '--output', str(output),
                '--stop-file', str(stage/'STOP'), '--deadline-utc', deadline,
                '--execution-release', str(args.release.resolve())]

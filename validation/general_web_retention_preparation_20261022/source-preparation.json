@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE_GENERAL_WEB_SOURCE_PREPARATION",
+  "utc": "2026-10-22T04:16:34.805474+00:00",
+  "plan_sha256": "c69b14c417c26d86aff003add7c84d0bad4eb16d3915a0d1285a045ae7649c8c",
+  "source_sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871",
+  "counts": {
+    "rows_examined": 32768,
+    "eligible_unique_documents": 18239,
+    "short_source": 13775,
+    "excluded_prior_math_source": 377,
+    "duplicate_page_or_content": 377
+  },
+  "blocked_pages": 1928315,
+  "blocked_content": 2347742,
+  "file": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/ENGLISH_RETENTION.jsonl",
+  "data_sha256": "6ad5671e62b14d86be5c1e16d2294713a65b7ac223c7c56ebfb3843405b2f42e",
+  "documents": 1024,
+  "source_tokens_per_document": 528,
+  "predicted_tokens_per_document": 527,
+  "wall_seconds": 85.56144423602382,
+  "model_calls": 0,
+  "source_dataset": "HuggingFaceFW/fineweb-edu",
+  "source_revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "scope": "Educational English-web frame, not all language; original model pretraining contamination untested. Report every model, full-window and final16 separately."
+}
