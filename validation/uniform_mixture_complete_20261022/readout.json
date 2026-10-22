@@ -1,0 +1,807 @@
+{
+  "all_attempt_closures": {
+    "fit-control/jobs/mixed-seed11": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        8,
+        9
+      ],
+      "reserved_chip_hours": 2.9267411725083368,
+      "utc": "2026-10-22T10:24:49+00:00",
+      "visible_cores": "32-39",
+      "wall_seconds": 5268.134109302016
+    },
+    "fit-control/jobs/mixed-seed12": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 2.92820754101833,
+      "utc": "2026-10-22T10:25:12+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 5270.773572203994
+    },
+    "score-control/jobs/ENGLISH_CONFIRM-B0": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        8,
+        9
+      ],
+      "reserved_chip_hours": 0.04355062929108196,
+      "utc": "2026-10-22T10:31:21+00:00",
+      "visible_cores": "32-39",
+      "wall_seconds": 78.39113152900245
+    },
+    "score-control/jobs/ENGLISH_CONFIRM-mixed-seed11": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 0.045808387692797825,
+      "utc": "2026-10-22T10:31:28+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 82.4550970630371
+    },
+    "score-control/jobs/ENGLISH_CONFIRM-mixed-seed12": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        8,
+        9
+      ],
+      "reserved_chip_hours": 0.043930775628347574,
+      "utc": "2026-10-22T10:32:45+00:00",
+      "visible_cores": "32-39",
+      "wall_seconds": 79.07539525500033
+    },
+    "score-control/jobs/ENGLISH_CONFIRM-uniform_reference": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 0.043604609423912026,
+      "utc": "2026-10-22T10:32:51+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 78.48829608398955
+    },
+    "score-control/jobs/MATH_CONFIRM-B0": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        8,
+        9
+      ],
+      "reserved_chip_hours": 0.06422758356946158,
+      "utc": "2026-10-22T10:27:54+00:00",
+      "visible_cores": "32-39",
+      "wall_seconds": 115.60964901500847
+    },
+    "score-control/jobs/MATH_CONFIRM-mixed-seed11": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 0.06417041630668488,
+      "utc": "2026-10-22T10:27:57+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 115.50674819899723
+    },
+    "score-control/jobs/MATH_CONFIRM-mixed-seed12": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        8,
+        9
+      ],
+      "reserved_chip_hours": 0.06531484058278794,
+      "utc": "2026-10-22T10:29:56+00:00",
+      "visible_cores": "32-39",
+      "wall_seconds": 117.56671187700704
+    },
+    "score-control/jobs/MATH_CONFIRM-uniform_reference": {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 0.0652800930066668,
+      "utc": "2026-10-22T10:29:59+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 117.504166505998
+    }
+  },
+  "all_terminal_models": {
+    "mixed-seed11": {
+      "checkpoint": "/dev/shm/uniform-mixture-20261022/science/mixed-seed11/step-0000128/model.pt",
+      "checkpoint_sha256": "38cbc5fa871e254bbe4e81759d0980eb1e63522eb78d0931387dbc8e3a73c2f4",
+      "full_checkpoint": "/dev/shm/uniform-mixture-20261022/science/mixed-seed11/step-0000128",
+      "full_manifest_sha256": "25aebadf2733902dc55d205070f67ae7fd6ea1027b5bd53e4f56f5aac18416c2",
+      "protocol_sha256": "ab67fe19723a6130c4300eb3c07d875889dd3312a1ba953f95cdc88ecc24b3e5",
+      "source_order": 11,
+      "step": 128
+    },
+    "mixed-seed12": {
+      "checkpoint": "/dev/shm/uniform-mixture-20261022/science/mixed-seed12/step-0000128/model.pt",
+      "checkpoint_sha256": "999bfe9da27a797fe5fb3ca492c4b3610d1a2752a14d85f201598d61e44be7fb",
+      "full_checkpoint": "/dev/shm/uniform-mixture-20261022/science/mixed-seed12/step-0000128",
+      "full_manifest_sha256": "9e0579e7fc1ad7ddbaeecb11a181bf09e218663090928b0aba6b3bb89a207bf5",
+      "protocol_sha256": "f9cdc95d432de864028183bac091ba2c9eccb545393aef5f58ffb0188ffc253b",
+      "source_order": 12,
+      "step": 128
+    },
+    "uniform_reference": {
+      "checkpoint": "/home/ubuntu/dario/local/nvme-cpt/uniform-lm-baseline-v1/warmup_cosine-lr1e-05.pt",
+      "checkpoint_sha256": "e2d9afb7dc32142b6edd5950c0ecbc6bc906a2fc178ccb788e4ac6b0d2a13b75",
+      "full_checkpoint": "/dev/shm/uniform-lm-v1/science/warmup_cosine-lr1e-05/step-0000128",
+      "full_manifest_sha256": "edc996a21080ac0c0775597236992330962e0b5641db756172d5953e3d0edefd",
+      "lr": 1e-05,
+      "protocol_sha256": "22965f73033a11412a7274c711d830b50a4b4e9c57cc8da17e5d1b61bb273d16",
+      "schedule": "warmup_cosine",
+      "step": 128
+    }
+  },
+  "arrays": {
+    "ENGLISH_CONFIRM__B0": {
+      "cohort": "ENGLISH_CONFIRM",
+      "documents": 1024,
+      "model": "B0"
+    },
+    "ENGLISH_CONFIRM__mixed-seed11": {
+      "cohort": "ENGLISH_CONFIRM",
+      "documents": 1024,
+      "model": "mixed-seed11"
+    },
+    "ENGLISH_CONFIRM__mixed-seed12": {
+      "cohort": "ENGLISH_CONFIRM",
+      "documents": 1024,
+      "model": "mixed-seed12"
+    },
+    "ENGLISH_CONFIRM__uniform_reference": {
+      "cohort": "ENGLISH_CONFIRM",
+      "documents": 1024,
+      "model": "uniform_reference"
+    },
+    "MATH_CONFIRM__B0": {
+      "cohort": "MATH_CONFIRM",
+      "documents": 2048,
+      "model": "B0"
+    },
+    "MATH_CONFIRM__mixed-seed11": {
+      "cohort": "MATH_CONFIRM",
+      "documents": 2048,
+      "model": "mixed-seed11"
+    },
+    "MATH_CONFIRM__mixed-seed12": {
+      "cohort": "MATH_CONFIRM",
+      "documents": 2048,
+      "model": "mixed-seed12"
+    },
+    "MATH_CONFIRM__uniform_reference": {
+      "cohort": "MATH_CONFIRM",
+      "documents": 2048,
+      "model": "uniform_reference"
+    }
+  },
+  "both_models_fixed_before_fresh_confirmation": true,
+  "both_orders_improve_both_domains_vs_B0": true,
+  "both_orders_improve_declared_mixture_vs_qualified_reference": true,
+  "equal_domain_mixture": {
+    "mixed-seed11__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        0.009508712012516476,
+        0.01041349384355291
+      ],
+      "full_window_gain_nats_per_token": 0.009947736037833676,
+      "statistics": {
+        "English_seed": 19,
+        "bootstrap_draws": 5000,
+        "domain_weights": [
+          0.5,
+          0.5
+        ],
+        "math_seed": 17,
+        "resampling_unit": "independent unique source documents within each fixed domain stratum"
+      },
+      "suffix16_CI95": [
+        0.005204904691291355,
+        0.04583550126689958
+      ],
+      "suffix16_gain_nats": 0.025825960522694806,
+      "treatment": "mixed-seed11"
+    },
+    "mixed-seed11__minus__uniform_reference": {
+      "control": "uniform_reference",
+      "full_window_CI95": [
+        0.006240984621766735,
+        0.006926197985087144
+      ],
+      "full_window_gain_nats_per_token": 0.0065779673305893065,
+      "statistics": {
+        "English_seed": 19,
+        "bootstrap_draws": 5000,
+        "domain_weights": [
+          0.5,
+          0.5
+        ],
+        "math_seed": 17,
+        "resampling_unit": "independent unique source documents within each fixed domain stratum"
+      },
+      "suffix16_CI95": [
+        0.013677498497894095,
+        0.057684538876368124
+      ],
+      "suffix16_gain_nats": 0.03578278879108607,
+      "treatment": "mixed-seed11"
+    },
+    "mixed-seed12__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        0.00953249948636457,
+        0.010456347136160187
+      ],
+      "full_window_gain_nats_per_token": 0.009980112802389508,
+      "statistics": {
+        "English_seed": 19,
+        "bootstrap_draws": 5000,
+        "domain_weights": [
+          0.5,
+          0.5
+        ],
+        "math_seed": 17,
+        "resampling_unit": "independent unique source documents within each fixed domain stratum"
+      },
+      "suffix16_CI95": [
+        0.012753368848610006,
+        0.05501966241295937
+      ],
+      "suffix16_gain_nats": 0.03398897183386273,
+      "treatment": "mixed-seed12"
+    },
+    "mixed-seed12__minus__uniform_reference": {
+      "control": "uniform_reference",
+      "full_window_CI95": [
+        0.006239634664422982,
+        0.006988931535592121
+      ],
+      "full_window_gain_nats_per_token": 0.006610344095145154,
+      "statistics": {
+        "English_seed": 19,
+        "bootstrap_draws": 5000,
+        "domain_weights": [
+          0.5,
+          0.5
+        ],
+        "math_seed": 17,
+        "resampling_unit": "independent unique source documents within each fixed domain stratum"
+      },
+      "suffix16_CI95": [
+        0.02063419781451777,
+        0.06723663438477685
+      ],
+      "suffix16_gain_nats": 0.04394580010225399,
+      "treatment": "mixed-seed12"
+    },
+    "uniform_reference__minus__B0": {
+      "control": "B0",
+      "full_window_CI95": [
+        0.0028802151727394237,
+        0.0038694663690779616
+      ],
+      "full_window_gain_nats_per_token": 0.003369768707244359,
+      "statistics": {
+        "English_seed": 19,
+        "bootstrap_draws": 5000,
+        "domain_weights": [
+          0.5,
+          0.5
+        ],
+        "math_seed": 17,
+        "resampling_unit": "independent unique source documents within each fixed domain stratum"
+      },
+      "suffix16_CI95": [
+        -0.03213546769571917,
+        0.011713693238549084
+      ],
+      "suffix16_gain_nats": -0.009956828268391265,
+      "treatment": "uniform_reference"
+    }
+  },
+  "evaluation_source_commit": "112f1e77c543ad89db9abe8f1aa7dc88c4d4e40e",
+  "maximum_reserved_chip_hours": 7.5,
+  "measured_go_no_go": {
+    "RAM_free_GiB": 107.46305084228516,
+    "actual_reference_fit_seconds": 5317.3474672579905,
+    "all_scientific_protocols_frozen_before_primary_outcomes": true,
+    "conservative_parallel_fit_seconds": 5849.08221398379,
+    "maximum_assigned_chip_hours": 7.5,
+    "projected_assigned_chip_hours": 7.2489802398118774,
+    "projected_free_after_both_full_checkpoints_GiB": 62.463050842285156,
+    "required_final_free_GiB": 39,
+    "scoring_and_readout_buffer_seconds": 1200,
+    "utc": "2026-10-22T08:56:59+00:00"
+  },
+  "metrics": {
+    "ENGLISH_CONFIRM": {
+      "absolute": {
+        "B0": {
+          "full_window_NLL": 2.489418623688148,
+          "suffix16_log_probability": -37.635150482329934
+        },
+        "mixed-seed11": {
+          "full_window_NLL": 2.4808691048902523,
+          "suffix16_log_probability": -37.60806577002755
+        },
+        "mixed-seed12": {
+          "full_window_NLL": 2.4806625395289186,
+          "suffix16_log_probability": -37.59278951825664
+        },
+        "uniform_reference": {
+          "full_window_NLL": 2.4973780878517666,
+          "suffix16_log_probability": -37.6950108711441
+        }
+      },
+      "contrasts": {
+        "mixed-seed11__minus__B0": {
+          "control": "B0",
+          "full_window_CI95": [
+            0.008015040391017123,
+            0.009106475616516414
+          ],
+          "full_window_gain_nats_per_token": 0.00854951879789586,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 19,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 1024,
+            "items": 1024,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            -0.005153962808052674,
+            0.06056674684327529
+          ],
+          "suffix16_gain_nats": 0.027084712302392802,
+          "treatment": "mixed-seed11"
+        },
+        "mixed-seed11__minus__uniform_reference": {
+          "control": "uniform_reference",
+          "full_window_CI95": [
+            0.015957154243811018,
+            0.017079589961183
+          ],
+          "full_window_gain_nats_per_token": 0.01650898296151462,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 19,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 1024,
+            "items": 1024,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            0.046445127229902725,
+            0.12675304799141443
+          ],
+          "suffix16_gain_nats": 0.08694510111655192,
+          "treatment": "mixed-seed11"
+        },
+        "mixed-seed12__minus__B0": {
+          "control": "B0",
+          "full_window_CI95": [
+            0.008191096961700891,
+            0.009363264374538334
+          ],
+          "full_window_gain_nats_per_token": 0.008756084159229266,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 19,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 1024,
+            "items": 1024,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            0.008169661201977844,
+            0.07701841909385267
+          ],
+          "suffix16_gain_nats": 0.04236096407330214,
+          "treatment": "mixed-seed12"
+        },
+        "mixed-seed12__minus__uniform_reference": {
+          "control": "uniform_reference",
+          "full_window_CI95": [
+            0.016091915135375143,
+            0.01734750910461605
+          ],
+          "full_window_gain_nats_per_token": 0.016715548322848044,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 19,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 1024,
+            "items": 1024,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            0.0614341001551908,
+            0.1436593963172021
+          ],
+          "suffix16_gain_nats": 0.10222135288746126,
+          "treatment": "mixed-seed12"
+        },
+        "uniform_reference__minus__B0": {
+          "control": "B0",
+          "full_window_CI95": [
+            -0.008494774707501929,
+            -0.007412265765566896
+          ],
+          "full_window_gain_nats_per_token": -0.00795946416361877,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 19,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 1024,
+            "items": 1024,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            -0.09497351033385101,
+            -0.02440675987866893
+          ],
+          "suffix16_gain_nats": -0.059860388814159116,
+          "treatment": "uniform_reference"
+        }
+      },
+      "documents": 1024
+    },
+    "MATH_CONFIRM": {
+      "absolute": {
+        "B0": {
+          "full_window_NLL": 1.4337100528009536,
+          "suffix16_log_probability": -19.834011333727986
+        },
+        "mixed-seed11": {
+          "full_window_NLL": 1.4223640995231823,
+          "suffix16_log_probability": -19.809444124984992
+        },
+        "mixed-seed12": {
+          "full_window_NLL": 1.422505911355404,
+          "suffix16_log_probability": -19.80839435413356
+        },
+        "uniform_reference": {
+          "full_window_NLL": 1.419011051222846,
+          "suffix16_log_probability": -19.794064601450607
+        }
+      },
+      "contrasts": {
+        "mixed-seed11__minus__B0": {
+          "control": "B0",
+          "full_window_CI95": [
+            0.010659230681646063,
+            0.012064085528306547
+          ],
+          "full_window_gain_nats_per_token": 0.011345953277771492,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 2048,
+            "items": 2048,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            0.0013800338947805853,
+            0.04788558071371178
+          ],
+          "suffix16_gain_nats": 0.02456720874299681,
+          "treatment": "mixed-seed11"
+        },
+        "mixed-seed11__minus__uniform_reference": {
+          "control": "uniform_reference",
+          "full_window_CI95": [
+            -0.0037486557966260907,
+            -0.002967942419879604
+          ],
+          "full_window_gain_nats_per_token": -0.003353048300336007,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 2048,
+            "items": 2048,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            -0.03356831705395815,
+            0.003801422628477668
+          ],
+          "suffix16_gain_nats": -0.015379523534379776,
+          "treatment": "mixed-seed11"
+        },
+        "mixed-seed12__minus__B0": {
+          "control": "B0",
+          "full_window_CI95": [
+            0.01053252468282182,
+            0.0119171151184049
+          ],
+          "full_window_gain_nats_per_token": 0.01120414144554975,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 2048,
+            "items": 2048,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            0.00023902156277956109,
+            0.051030186596959695
+          ],
+          "suffix16_gain_nats": 0.025616979594423314,
+          "treatment": "mixed-seed12"
+        },
+        "mixed-seed12__minus__uniform_reference": {
+          "control": "uniform_reference",
+          "full_window_CI95": [
+            -0.003912416532735788,
+            -0.003065681265147774
+          ],
+          "full_window_gain_nats_per_token": -0.0034948601325577363,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 2048,
+            "items": 2048,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            -0.03489839201171661,
+            0.006551905916157325
+          ],
+          "suffix16_gain_nats": -0.014329752682953271,
+          "treatment": "mixed-seed12"
+        },
+        "uniform_reference__minus__B0": {
+          "control": "B0",
+          "full_window_CI95": [
+            0.013889161488026559,
+            0.01553122964707605
+          ],
+          "full_window_gain_nats_per_token": 0.014699001578107489,
+          "statistics": {
+            "bootstrap_draws": 5000,
+            "bootstrap_seed": 17,
+            "estimand": "item-weighted mean; all items in a sampled cluster travel together",
+            "independent_clusters": 2048,
+            "items": 2048,
+            "random_source": "seeded Generator",
+            "resampling_unit": "unique source document"
+          },
+          "suffix16_CI95": [
+            0.015181095470591429,
+            0.0645671300014452
+          ],
+          "suffix16_gain_nats": 0.039946732277376586,
+          "treatment": "uniform_reference"
+        }
+      },
+      "documents": 2048
+    }
+  },
+  "original_training_history_sha256": {
+    "mixed-seed11": "3d98b4d3e382bfe0183f0fb72febc12062f37cf59201581bc608ce6e6d527503",
+    "mixed-seed12": "073c335ec7084942e594c63405900a61f4d636b6d552403e01f4c22ab7abdf7f"
+  },
+  "plan": {
+    "English_exclude_original_diagnostic": {
+      "path": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/ENGLISH_RETENTION.jsonl",
+      "sha256": "6ad5671e62b14d86be5c1e16d2294713a65b7ac223c7c56ebfb3843405b2f42e"
+    },
+    "English_maximum_source_rows": 36864,
+    "English_source_file": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/source.parquet",
+    "English_source_plan": {
+      "path": "/home/ubuntu/dario/local/diagnostics/general-web-retention-20261022/prospective-plan.json",
+      "sha256": "c69b14c417c26d86aff003add7c84d0bad4eb16d3915a0d1285a045ae7649c8c"
+    },
+    "English_source_sha256": "b1ba7b2ce4cb5ea6ef42dca40263eabb85f37700d01693a68e9b30a31d78e871",
+    "additional_storage_cap_GiB": 2,
+    "created_utc": "2026-10-22T04:50:32.084180+00:00",
+    "data_directory": "/home/ubuntu/dario/local/nvme/data/uniform-mixture-20261022",
+    "fresh_English_confirmation_documents": 1024,
+    "fresh_math_confirmation_documents": 2048,
+    "fresh_math_exclusions": [
+      {
+        "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/DEV.jsonl",
+        "sha256": "2fe003a67accf861a1760aa4a224bb5fb0bc9fb8b79584096315f0495f2fbe5f"
+      },
+      {
+        "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/CONFIRM.jsonl",
+        "sha256": "5697d1999b9834315f424d7bdf3d52b09daee1b23ff4e02bb91f1d431752f522"
+      },
+      {
+        "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/TRAIN.jsonl",
+        "sha256": "10506587524242c3b7176d76ec5afa1ad6969bb7026c0ccd0af5b89366af0291"
+      },
+      {
+        "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/QUALIFICATION.jsonl",
+        "sha256": "9ef2e07a9390227d5fc5675cd95382e568b6924b15cd49ea27d64042245998a5"
+      },
+      {
+        "path": "/dev/shm/scaffold-learning-overnight-v1-data/SCAFFOLD_TRAIN.jsonl",
+        "sha256": "40bb6ff7f31d747ff58dfc284f615357c3ac941677a3eb43e804428cb679b7bd"
+      },
+      {
+        "path": "/dev/shm/scaffold-learning-overnight-v1-data/SCAFFOLD_QUALIFICATION.jsonl",
+        "sha256": "14a09207c1076eab82b51fc02f068a527374013f5eceb008cf3a6cf4de993d87"
+      },
+      {
+        "path": "/dev/shm/scaffold-learning-overnight-v1-data/CONFIRM.jsonl",
+        "sha256": "233744ab6034b8d5c958ed29ddbeb8d4dbd9a67c534ef7a31222dbbf1f74c3ff"
+      },
+      {
+        "path": "/home/ubuntu/dario/local/nvme-study/data/general-web-retention-20261022/ENGLISH_RETENTION.jsonl",
+        "sha256": "6ad5671e62b14d86be5c1e16d2294713a65b7ac223c7c56ebfb3843405b2f42e"
+      }
+    ],
+    "identity": "uniform-source-mixture-20261022",
+    "limits": [
+      "Ordinary source-mixture adaptation only; no thought-training or autonomous-learning claim.",
+      "Two source orders share one base checkpoint and one fixed corpus.",
+      "Original all-FineMath and scaffold studies keep their protocols and decisions."
+    ],
+    "maximum_assigned_chip_hours": 7.5,
+    "maximum_concurrent_trainers": 2,
+    "minimum_forecast_RAM_free_after_all_checkpoints_GiB": 39,
+    "minimum_free_filesystem_GiB": 35,
+    "minimum_host_available_GiB": 512,
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "outcomes_already_seen": "Original FineMath baseline and original1024English diagnostic; neither fresh cohort has model outcomes.",
+    "parent_independent_source_receipt": {
+      "path": "/home/ubuntu/dario/validation/uniform_lm_preparation_20261021/independent-source-check.json",
+      "sha256": "dc52a79b4d840459f2b7e78684f34da0dbd950461c566efe25a9858a58f87099"
+    },
+    "parent_uniform_TRAIN": {
+      "path": "/home/ubuntu/dario/local/data/uniform-lm-baseline-v1/TRAIN.jsonl",
+      "sha256": "10506587524242c3b7176d76ec5afa1ad6969bb7026c0ccd0af5b89366af0291"
+    },
+    "parent_uniform_source_plan": {
+      "path": "/home/ubuntu/dario/configs/uniform_lm_sources.json",
+      "sha256": "95a5c042799a753ea3dc051fe7c8a0e11a3059e98c926be1ee880e6ee623e2d0"
+    },
+    "phase_ceilings": {
+      "fitting": 7,
+      "global_note": "Both phases sum into global7.5; maxima cannot both be spent",
+      "scoring": 1.5
+    },
+    "primary": "Both mixed orders have positive95% lower bounds versusB0 on both fresh domains, and versus the fixed qualified all-FineMath reference on the declared equal-domain mixture. No model/order selection.",
+    "publication_deadline_utc": "2026-10-22T12:00:00+00:00",
+    "qualified_reference": "warmup_cosine-lr1e-05",
+    "reason": "All four fixed ordinary FineMath recipes improve their domain but regress on the fixed general-web diagnostic. Test source replay, holding the qualified numerical objective and schedule fixed.",
+    "recipe": {
+      "TRAIN_windows": 32768,
+      "accumulation": 8,
+      "global_batch": 256,
+      "loss": "Uniform original next-token CE; no trace, suffix duplication or auxiliary objective",
+      "micro_batch": 4,
+      "minimum_lr_ratio": 0.1,
+      "original_tokens": 528,
+      "peak_lr": 1e-05,
+      "predicted_tokens": 17268736,
+      "schedule": "warmup_cosine",
+      "source_orders": [
+        11,
+        12
+      ],
+      "targets": 527,
+      "updates": 128,
+      "warmup_updates": 13,
+      "world_size": 8
+    },
+    "salt": "uniform-source-mixture-20261022-v1",
+    "science_deadline_utc": "2026-10-22T11:20:00+00:00",
+    "source_English_TRAIN_documents": 16384,
+    "source_math_TRAIN_documents": 16384,
+    "source_preparation_CPU_threads": 4,
+    "source_preparation_wall_seconds": 1800,
+    "statistics": {
+      "English_seed": 19,
+      "bootstrap_draws": 5000,
+      "math_seed": 17,
+      "mixture": "Equal-weight sum of independent stratum bootstrap draws, preserving all model contrasts",
+      "unit": "unique source document"
+    },
+    "target_mixture": {
+      "English": 0.5,
+      "math": 0.5,
+      "scope": "Declared research target, not estimated natural corpus prevalence"
+    },
+    "training_not_before": "Primary scaffold study complete and native workers closed",
+    "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef",
+    "training_source_root": "/home/ubuntu/dario/local/worktrees/uniform-lm-counter-cache-v1"
+  },
+  "primary_pass": true,
+  "public_scores_sha256": "d8e7492509f79389898a585a894f5bc4e880b75520a05258d68b40407263c23d",
+  "scope": "Fixed50/50FineMath and educational-English target, not natural prevalence or all language. Ordinary continued pretraining only, no thoughts, policy learning or internalization claim.",
+  "source_check": {
+    "all_sources_separated": true,
+    "files": {
+      "ENGLISH_CONFIRM": {
+        "rows": 1024,
+        "sha256": "546893a28c56546913c70e1df994af589b8a124abdc27f5132863c1c6d36d8d6"
+      },
+      "MATH_CONFIRM": {
+        "rows": 2048,
+        "sha256": "a01ec8c95ffffbab3e8411cc0bc33ecb89c75b47e537a8ae4cd1a67a947eea35"
+      },
+      "TRAIN": {
+        "rows": 32768,
+        "sha256": "70db7597887b559bcd2e8031547145f6808d04020467b6fc8997eeab32fe9f91"
+      }
+    },
+    "identity_and_cut_selection_recomputed": true,
+    "math_fitting_windows_exact_subset_of_previously_verified_sources": 16384,
+    "model_calls": 0,
+    "original_English_windows_reconstructed": 17408,
+    "original_fresh_math_windows_reconstructed": 2048,
+    "scope": "Independent original-record/window reconstruction for all new sources, exact inherited mathematical fitting subset, shared tokenizer and canonical-page definition.",
+    "status": "PASS_INDEPENDENT_UNIFORM_MIXTURE_SOURCES",
+    "utc": "2026-10-22T04:57:21.140337+00:00",
+    "wall_seconds": 115.0958115310059
+  },
+  "status": "COMPLETE_UNIFORM_SOURCE_MIXTURE_COMPARISON",
+  "total_reserved_chip_hours": 6.290836049028408,
+  "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef",
+  "utc": "2026-10-22T10:32:52+00:00"
+}
