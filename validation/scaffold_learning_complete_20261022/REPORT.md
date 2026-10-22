@@ -51,6 +51,12 @@ The work labels are derived from the first 512 source tokens only. Because this 
 
 The additional calculation sources are matched across all three arms. The qualified uniform reference uses only its original 32,768 ordinary windows and a different global batch 256; the matched raw arm is the source/exposure control. The independent ordinary reference remains useful for judging practical predictive value, while its different corpus means it cannot alone identify the auxiliary objective's effect.
 
+## Separate cross-domain result
+
+Every one of the six matched models also loses to B0 on the fixed educational-English diagnostic. Trace-versus-raw retention differences span zero in both orders, while trace loses to format-only training there. This does not change the primary mathematical confirmation; it supplies the additional retention boundary. [All ten trained models and the independent English check](../general_web_retention_complete_20261022/REPORT.md).
+
+![All six models on both domains](domain-gains.png)
+
 ## Source and numerical qualification
 
 Fresh natural source inventory supplies 1,024 qualification and 4,096 confirmation windows. Every window matches the pinned original Parquet record. All 2,112 additional calculation rows (2,048 fitting,64 qualification) were independently checked against original records, including 5,722 exact rational arithmetic steps. Fitting, qualification and fresh confirmation are source-separated under the declared rules. Sources are not proven absent from B0's original pretraining, and the eligible-document-weighted FineMath frame is not all language.
@@ -75,6 +81,8 @@ The following are descriptive training diagnostics. Clipping counts compare the 
 | scaffold_raw-seed12 | 68.38 | 11/128 | 1.418348 | 0.000000 |
 | scaffold_trace-seed11 | 68.34 | 26/128 | 1.348018 | 0.000305 |
 | scaffold_trace-seed12 | 68.40 | 25/128 | 1.419441 | 0.001968 |
+
+![Original-source losses and pre-clipping gradient norms](training-behavior.png)
 
 Actual assigned reservations total **32.536880 chip-hours**: training 29.815051, scoring 1.191845, qualification and all other attempts 1.529985. Before long fitting, the initial 32-chip-hour planning value was amended to a hard 40 after actual same-shape timing projected 39.448608. No outcomes were used to revise the source, labels, models or endpoints. Every phase shares that global ceiling. At most three full trainers run concurrently on independent two-chip groups, leaving memory for checkpoint exports. Existing hardware only; free-disk 35GiB and host-available 512GiB floors remain enforced. Assigned costs are not the whole 16-chip-node invoice, utilization percentage or FLOP efficiency.
 

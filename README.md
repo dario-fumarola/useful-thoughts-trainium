@@ -8,7 +8,7 @@ The selected ordinary-training model improves full-window FineMath NLL from **1.
 
 All four fixed LR/schedule settings improve DEV. The lowest full-window DEV loss selects **warmup-cosine, peak LR 1e-5**, after all four terminal checkpoints freeze and before confirmation. Each recipe trains once on the same 32,768 original windows, **17,268,736 equally weighted targets**, with 128 updates. Native accumulation and exact full-state recovery pass. Actual assigned cost, including all unsuccessful reservations, is **16.607 chip-hours** within 18; this is not the whole-node invoice. Four settings are not four training replications.
 
-A separate fixed educational-English diagnostic finds regression in all four settings. The FineMath-selected model loses **0.008835 nats/token [0.008259, 0.009388]** there. The domain confirmation pass stands; it does not establish a general predictive improvement. [Cross-domain diagnostic](validation/general_web_retention_baseline_20261022.json). A bounded two-order source-mixture comparison is prepared with fresh confirmation in each domain and the same qualified objective and schedule. [Preparation](validation/uniform_mixture_preparation_20261022/REPORT.md).
+A separate fixed educational-English diagnostic finds regression in all four settings. The FineMath-selected model loses **0.008835 nats/token [0.008259, 0.009388]** there. The domain confirmation pass stands; it does not establish a general predictive improvement. The completed panel also finds negative intervals for every matched raw/format/computation model; all ten trained models lose to B0. [Complete cross-domain diagnostic](validation/general_web_retention_complete_20261022/REPORT.md). A bounded two-order source-mixture comparison is prepared with fresh confirmation in each domain and the same qualified objective and schedule. [Preparation](validation/uniform_mixture_preparation_20261022/REPORT.md).
 
 [Complete report and every setting](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Fixed design](configs/uniform_lm_baseline.json) · [Public numerical evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/uniform-lm-baseline-20261022) ([download/replay verified](validation/uniform_lm_baseline_public_release_20261022.json))
 
@@ -18,7 +18,7 @@ All six models completed 128 updates and froze before prediction on **4,096 fres
 
 This isolates a post-document auxiliary training objective: original source targets precede optional work and retain equal coefficients. It does not test autonomous thought discovery. The full-window loss and the final-continuation loss against matched raw training are negative in both orders. All original scores, all six histories and the 26-contrast NumPy reconstruction are retained. Actual assigned cost is **32.537 chip-hours** within 40, including qualification and every attempt.
 
-[Complete matched report](validation/scaffold_learning_complete_20261022/REPORT.md) · [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
+[Complete matched report](validation/scaffold_learning_complete_20261022/REPORT.md) · [Verified original-score evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022) · [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
 
 ## Fresh confirmation: calculation gains, natural-text losses
 

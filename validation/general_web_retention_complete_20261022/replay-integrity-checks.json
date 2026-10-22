@@ -1,0 +1,32 @@
+{
+  "status": "PASS_SOURCE_FREE_REPLAY_INTEGRITY_FIXTURES",
+  "checks": [
+    {
+      "fixture": "valid_complete_sorted_JSON_fixture",
+      "expected_pass": true,
+      "observed_pass": true
+    },
+    {
+      "fixture": "changed_original_scores",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "tokens_claimed_independent",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "changed_confidence_interval",
+      "expected_pass": false,
+      "observed_pass": false
+    },
+    {
+      "fixture": "missing_prespecified_model",
+      "expected_pass": false,
+      "observed_pass": false
+    }
+  ],
+  "new_model_calls": 0,
+  "scope": "Synthetic publication fixtures only; not scientific evidence or native qualification"
+}

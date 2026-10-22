@@ -1,0 +1,23 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_DOWNLOAD_HASH_AND_REPLAY",
+  "utc": "2026-10-22T09:06:34.278593+00:00",
+  "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022",
+  "target_commit": "d8db165fef202c846631e43a5518d5c0334dce07",
+  "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/scaffold-learning-20261022/scaffold-learning-20261022.tar.gz",
+  "authorization_header_sent": false,
+  "archive_sha256": "452bab18ebf0fd194cd815391973a15d4ac50111303eeea2a5ed4533756a6d27",
+  "archive_bytes": 88953739,
+  "all_member_hashes_match": true,
+  "manifest_members_verified": 12,
+  "replay": {
+    "status": "PASS_SOURCE_FREE_NUMPY_REPLAY",
+    "contrasts_reproduced": 26,
+    "primary_pass": false,
+    "content_both_orders": false,
+    "beats_B0_both_orders": true,
+    "beats_qualified_uniform_both_orders": false,
+    "source_scores_exact": true,
+    "scope": "Within-repository numerical reconstruction, not backbone execution, source verification or external replication."
+  },
+  "scope": "Original-score numerical publication verification, not model replication or verification of omitted source text."
+}
