@@ -33,3 +33,7 @@ The node has16physicalTrainium2chips,64logicalcoresunderLNC2. Assigned-chip-hour
 ## Saved writer diagnostic decision, 03:56 UTC
 
 C3/saved-candidate-diagnostic.json now completes the TRAIN-only analysis with no model calls. Historical fixed position mixture gains0.228166nats/span versusB0; hindsightbest8adds0.026617[0.008632,0.054787] versusgreedy. ActualB0null+hindsight adds0.069746[0.047502,0.099832]. Most marginal opportunity comes from abstention rather than improved note selection. Do not spend on a new writer run solely from this small diagnostic. Main priority remains the six matched learning models and full publication. Script C3/saved_candidate_diagnostic.py. No actor code or job released.
+
+## CPU diagnostic complete, 04:08 UTC
+
+Standard HF FP32 CPU forwards on32 fixed completed-confirmation documents confirm a positive paired gain:0.0126993146nats/token versusnative0.0127837196, meanerror0.0000844049. Maximumdocumentpairedgainerror0.0020593; maxindividualtokenLPerror1.422697nats. This supports aggregate fidelity, not identical token predictions. All64forwards finish in111seconds,0acceleratorcalls. Receipt validation/uniform_lm_cpu_forward_check_20261022.json; originalstudydecisionunchanged. C2 public replay has7integrityfixturesPASS; make_report.py and postprocess_when_complete.py ready. Postprocessor session4644 waitssealedstudy-complete marker then independentreplayandhumanreport.
