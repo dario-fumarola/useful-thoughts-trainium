@@ -2,6 +2,8 @@
 
 We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Ordinary continued pretraining now supplies a qualified reference; the completed matched computation-supervision comparison does not beat ordinary training.
 
+[Overnight findings](docs/OVERNIGHT_RESULTS_20261022.md) · [All twelve trained models and restore tools](docs/MODELS_20261022.md) · [All models on common panels](validation/overnight_common_panel_complete_20261022/REPORT.md)
+
 ## Ordinary source mixing improves both fresh domains
 
 Both fixed 50/50 FineMath/educational-English training orders pass fresh confirmation. Direct-prediction gains over B0 are **0.011346 / 0.011204 nats/token on mathematics**, and **0.008550 / 0.008756 on English**, with positive paired document intervals in every case. The declared equal-domain target improves over the qualified all-math reference by **0.006578 / 0.006610 nats/token**, also with positive intervals. Each model trains once on 17.3 million original targets, with the same qualified optimizer schedule and no thoughts.
@@ -22,7 +24,7 @@ A separate fixed educational-English diagnostic finds regression in all four set
 
 All six models completed 128 updates and froze before prediction on **4,096 fresh FineMath documents**. Verified-computation supervision loses to the same-data ordinary-training arm by **0.000944 [0.000845, 0.001048]** and **0.000908 [0.000813, 0.001004] nats/token** in the two source orders. It beats the format-only arms, but also loses to the independently qualified ordinary-training reference. Every arm improves over untouched B0. The declared supervised-learning criterion **fails**.
 
-This isolates a post-document auxiliary training objective: original source targets precede optional work and retain equal coefficients. It does not test autonomous thought discovery. The full-window loss and the final-continuation loss against matched raw training are negative in both orders. All original scores, all six histories and the 26-contrast NumPy reconstruction are retained. Actual assigned cost is **32.537 chip-hours** within 40, including qualification and every attempt.
+This isolates a post-document auxiliary training objective: original source targets precede optional work and retain equal coefficients. It does not test autonomous thought discovery. The full-window loss and the final-continuation loss against matched raw training are negative in both orders. All original scores, all six histories and the 26-contrast NumPy reconstruction are retained. Standard HF FP32 forwards on 1,024 fixed documents also find negative trace-minus-raw gains in both orders. [Independent CPU check](validation/scaffold_standard_CPU_verification_20261022/REPORT.md). Actual assigned cost is **32.537 chip-hours** within 40, including qualification and every attempt.
 
 [Complete matched report](validation/scaffold_learning_complete_20261022/REPORT.md) · [Verified original-score evidence](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-learning-20261022) · [Prospective overnight design](docs/OVERNIGHT_PLAN_20261022.md).
 
@@ -71,3 +73,5 @@ The active selector paths and generic paired-row API share [one cluster-bootstra
 The installed compiler's default is no auto-casting; a BF16-by-default explanation of the prior qualification differences is unsupported. [Read-only precision inspection](validation/executed_precision_review_20261021.json). Existing deviations remain unresolved. Future protocols should specify precision explicitly.
 
 [Full previous landing page and experiment history](docs/archive/README_through_20261021.md).
+
+All twelve model downloads were anonymously hash-checked and restored exactly, and every restored model passes standard HF load/forward checks. The standalone tools also pass in a fresh CPU-only environment without Neuron or XLA. [Model catalog](docs/MODELS_20261022.md) · [Clean CPU receipt](validation/trained_model_clean_CPU_environment_20261022.json).

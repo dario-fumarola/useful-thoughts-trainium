@@ -1,0 +1,42 @@
+{
+  "status": "PASS_PUBLIC_MODEL_RESTORATION_IN_CLEAN_CPU_ONLY_ENVIRONMENT",
+  "utc": "2026-10-22T11:02:59.685954+00:00",
+  "actual_wall_seconds": 67.23627370398026,
+  "environment_bytes": 1089357008,
+  "environment_directory": "/run/user/1000/model-clean-CPU-20261022/venv",
+  "existing_Trainium_environment_modified": false,
+  "model": "warmup_cosine-lr1e-05",
+  "original_public_model_receipt": "validation/trained_models_public_release_20261022.json",
+  "actual_restore": {
+    "status": "PASS_ALL_RESTORED_TENSOR_BITS_AND_HF_EXPORT",
+    "model": "warmup_cosine-lr1e-05",
+    "directory": "/run/user/1000/model-clean-CPU-20261022/restored-model",
+    "tensors": 311,
+    "optimizer_state_included": false,
+    "new_accelerator_calls": 0
+  },
+  "actual_standard_HF_check": {
+    "status": "PASS_CLEAN_CPU_HF_LOAD_AND_FINITE_FORWARD",
+    "versions": {
+      "torch": "2.9.1+cpu",
+      "numpy": "2.5.2",
+      "safetensors": "0.8.0",
+      "transformers": "5.15.1",
+      "huggingface-hub": "1.29.0"
+    },
+    "python_version": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "torch_xla_installed": false,
+    "torch_neuronx_installed": false,
+    "CUDA_runtime": null,
+    "logits_shape": [
+      1,
+      4,
+      151936
+    ],
+    "all_logits_finite": true,
+    "original_embedding_tie_preserved": true
+  },
+  "new_accelerator_calls": 0,
+  "CPU_forward_calls": 1,
+  "scope": "One exact public model and its downloaded standalone tools tested in a new CPU-only venv with no Neuron or XLA packages. No new task score, training, accelerator-stack change or claim of compatibility with every environment."
+}

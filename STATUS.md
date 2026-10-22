@@ -1,35 +1,25 @@
 # Current status
 
-Updated October 22, 2026, 10:35 UTC. [History](docs/archive/STATUS_through_20261021.md).
+Updated October 22, 2026, 11:15 UTC. [Overnight findings](docs/OVERNIGHT_RESULTS_20261022.md) · [Models](docs/MODELS_20261022.md) · [History](docs/archive/STATUS_through_20261021.md).
 
-## Ordinary pretraining reference passes
+## Ordinary training works; the computation auxiliary does not improve it
 
-Fresh confirmation on 4,096 FineMath windows: B0 full-window NLL **1.443585**, selected uniform-LM model **1.429104**. Gain **0.014481 nats/token [0.013903, 0.015058]**, approximately **1.44% lower perplexity**. Final 16-token gain is separately **0.032717 nats [0.013546, 0.052275]**. The older calculation diagnostic is +0.021967 [−0.010545, +0.054757] nats/span, not fresh confirmation.
+The development-selected ordinary model improves fresh FineMath prediction by **0.014481 [0.013903, 0.015058] nats/token** on 4,096 documents. Its separate final 16-token gain is **0.032717 nats/span**. All four prescribed settings finish before development selection; confirmation follows freezing the choice. The selected model loses **0.008835 nats/token** on a separate educational-English panel. [Baseline](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Retention](validation/general_web_retention_complete_20261022/REPORT.md).
 
-All four fixed settings finish 128 updates; all improve DEV. DEV selects warmup-cosine / peak LR 1e-5 after all terminals freeze, before confirmation. Each sees the same 32,768 source windows once, with equal coefficients on all 17,268,736 targets. Exact native recovery and original-score NumPy replay pass. Actual **16.607 assigned chip-hours**, including failed reservations, within 18. This is a FineMath adaptation result, not thought-training evidence or four training replications.
+All six matched raw/format/computation models finish. Computation loses to same-data ordinary training by **0.000944 / 0.000908 nats/token**, negative intervals in both source orders. It beats format-only supervision but also loses to the qualified ordinary reference. All arms improve over B0. The declared auxiliary-learning criterion **fails**. Independent standard CPU forwards preserve the negative trace-versus-raw result. [Matched study](validation/scaffold_learning_complete_20261022/REPORT.md) · [1,024-document CPU check](validation/scaffold_standard_CPU_verification_20261022/REPORT.md).
 
-[Report and all settings](validation/uniform_lm_baseline_complete_20261022/REPORT.md) · [Design](configs/uniform_lm_baseline.json).
+## Source mixing improves both declared fresh domains
 
-## Cross-domain diagnostic and bounded replay test
+Both fixed ordinary-training orders pass: Math gains **0.011346 / 0.011204**, English gains **0.008550 / 0.008756 nats/token**, all positive intervals. Their declared 50/50 target beats the qualified all-math reference by **0.006578 / 0.006610**. The reference remains stronger on Math alone. Each mixed-source system uses one model at inference. [Source-mixture confirmation](validation/uniform_mixture_complete_20261022/REPORT.md).
 
-All four ordinary baselines and all six matched scaffold models regress on the fixed educational-English panel. The selected cosine model loses **0.008835 nats/token [0.008259, 0.009388]**; FineMath success is a domain result. [Complete diagnostic](validation/general_web_retention_complete_20261022/REPORT.md).
+The common-panel comparison retains all twelve models. Every mathematical-only model loses on English; both mixed models improve on B0 in both domains. It is supplemental, without new fitting or model selection. [Every model on common panels](validation/overnight_common_panel_complete_20261022/REPORT.md).
 
-The fixed 50/50 source-mixture study **passes in both orders**: fresh Math gains **0.011346 / 0.011204**, English gains **0.008550 / 0.008756 nats/token**, all positive intervals. It beats the qualified all-math reference on the declared equal-domain target by **0.006578 / 0.006610**. The reference remains better on Math alone. Same qualified schedule, no thoughts; both protocols froze before scaffold outcomes. Actual **6.291 assigned chip-hours** within 7.5. [Complete result](validation/uniform_mixture_complete_20261022/REPORT.md).
+## Evidence and artifacts are published
 
-## Matched supervised-learning study is complete: primary criterion fails
+All twelve public model artifacts restore exact BF16 values. Anonymous download, checksums, standard HF loading and finite CPU forwards pass for every model; a clean CPU-only environment additionally restores and loads the selected ordinary model without Neuron or XLA. All six numerical archives and the mixture CPU supplement download and replay successfully. Original failures, sources, weights and optimizer snapshots remain retained.
 
-All six raw, format-only and verified-computation models finished 128 updates and froze before fresh confirmation. Computation supervision loses to matched ordinary training by **0.000944 [0.000845, 0.001048] / 0.000908 [0.000813, 0.001004] nats/token**. It beats format-only training but also loses to the qualified ordinary reference; all trained arms improve over B0. The two-order supervised-learning criterion **fails**. Final-continuation comparisons with raw training also lose. This is supervised post-document learning, not autonomous discovery.
+Actual per-study assigned reservations total **56.899836 chip-hours**, including all original failed qualification attempts, within every separate ceiling. This is not the whole-node invoice. All **85 native attempts are closed**, and current hardware inventory shows **0 of 16 devices occupied**. All **2,074 CPU tests**, smoke and compilation pass. [Resource reconciliation](validation/overnight_resource_summary_20261022.json) · [Exact model artifacts](docs/MODELS_20261022.md).
 
-All 26 original-score comparisons replay exactly; all six histories and models are retained. Actual **32.537 assigned chip-hours**, within 40, including qualification and scoring. [Full matched report](validation/scaffold_learning_complete_20261022/REPORT.md).
+The main overnight program is complete. A bounded TRAIN-only initial-gradient diagnosis is running on CPU, with no parameter updates, to inspect source/auxiliary interaction; it cannot change any scientific decision. It stops by 11:42 UTC. Final synthesis and usage accounting continue through the owner's 08:00 Eastern / 12:00 UTC deadline. Storage and available-host-memory floors remain 35 and 512 GiB.
 
-All twelve fixed models are now trained and retained. The source-mixture study passes as above. The complete English readout also loses in all six arms. The 1,024-document standard CPU comparison, common-panel readout, mixture CPU check and exact-model publication are in progress.
-
-All **2,074 CPU tests**, smoke and compilation pass. CPU checks are separate from native qualification. All original sources, models and optimizer states remain retained; disk and host-memory floors stay 35 and 512 GiB.
-
-## Earlier findings remain intact
-
-Frozen selective inference improves all six fresh calculation panels; five beat every additional control. Every natural-text endpoint loses. A simple no-calculation constant ensemble improves natural spans by +0.0244 [0.0155, 0.0340]. These findings are unchanged by the new baseline.
-
-[Reader report](validation/reader_fresh_confirmation_complete_20261021/REPORT.md) · [Verified release](validation/reader_fresh_confirmation_public_release_20261021.json).
-
-The owner authorized continuous work on the existing node until 08:00 Eastern / 12:00 UTC. Current objectives are complete scientific readout, numerical replay and publication, including unfavorable results. No capacity purchase or stack change.
+The earlier selective-reader result remains: targeted calculation gains repeat, every declared natural endpoint loses. Neither the new ordinary-training gains nor the failed auxiliary recipe establishes autonomous thought discovery or internalized computation.

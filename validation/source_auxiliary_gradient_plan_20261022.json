@@ -1,0 +1,28 @@
+{
+  "status": "FROZEN_BEFORE_DERIVATIVE_RESULTS",
+  "utc": "2026-10-22T11:09:56.003151+00:00",
+  "source_file_sha256": "40bb6ff7f31d747ff58dfc284f615357c3ac941677a3eb43e804428cb679b7bd",
+  "native_protocol_sha256": "db95de78f6a76c27205932b0b07d69e149f20309c2f9ae0ad493568db3c40c07",
+  "native_order": 11,
+  "source_windows": 272,
+  "calculation_windows": 29,
+  "base_model_id": "Qwen/Qwen3-1.7B-Base",
+  "CPU_precision": "FP32 model/gradients, FP64 streamed geometry",
+  "source_loss_coefficient": "1/(272*527) per original target",
+  "auxiliary_loss_coefficient": "1/272 times each calculation-row mean; zero for ordinary rows",
+  "optimizer_direction_constants": {
+    "epsilon": 1e-08,
+    "clip_norm": 1.0,
+    "source": "qualified native partial_state_driver.py optimizer constructor"
+  },
+  "worker_source_sha256": "f9fdc44ecd92b3a645a79c541943bfa993cee1d0e4b85ec4e68c7f40f1ef04f6",
+  "native_initial_preclip_norms": {
+    "raw": 1.2960532903671265,
+    "format": 36.788700103759766,
+    "trace": 2.590437173843384
+  },
+  "model_updates": 0,
+  "new_accelerator_calls": 0,
+  "scope": "One inspected TRAIN batch at B0. This cannot identify the unique cause of the 128-update held-out result. Initial-gradient geometry and zero-moment AdamW directional calculations are not a training ablation or proof of future improvement.",
+  "batch_item_ids_sha256": "853dc5f99e523638b838dbbd31de70bd06bbb97581f9654d88f0f7edf1a60915"
+}

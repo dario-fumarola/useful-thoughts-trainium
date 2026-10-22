@@ -11,6 +11,7 @@ Updated October 22, 2026. Entries below this summary remain append-only.
 - All six matched raw/format/computation models finish. Trace loses to matched raw training in both source orders; the original supervised-learning criterion fails. Actual cost 32.537 assigned chip-hours within 40.
 - Original source tokens precede optional work and keep equal coefficients. This tests post-hoc supervised learning, not autonomous discovery.
 - Unique source documents are the bootstrap unit. All absolute controls and every order remain in the result.
+- All twelve exact model artifacts are public, anonymously restored and HF-checked. Native reservations total 56.899836 assigned chip-hours across the five completed scopes.
 - Preserve all original sources, states and historical outcomes; existing node only, 35 GiB disk / 512 GiB available-memory floors.
 
 ---

@@ -1,36 +1,60 @@
 # Overnight results — October 22, 2026
 
-Updated 10:38 UTC; the owner deadline is 12:00 UTC / 08:00 Eastern. This interim synthesis names unfinished work explicitly.
+Updated 11:15 UTC. The main program is complete before the owner's 12:00 UTC / 08:00 Eastern deadline. Final usage accounting and one bounded TRAIN-only derivative diagnosis remain in progress.
 
-**Ordinary continued pretraining works on the intended mathematical text. The added computation-supervision objective does not improve that learning, and mathematical specialization costs English prediction.** Ordinary source mixing now improves fresh prediction in both tested domains. Larger CPU verification and the final artifact checks remain in progress.
+**Ordinary continued pretraining now has a healthy reference. Mixing ordinary mathematical and educational-English sources improves prediction in both tested domains. Adding verified computation supervision does not improve direct learning against the matched ordinary-training control.**
 
-| Completed question | Result | Evidence |
+Twelve fixed 1.7B models finish 128 updates each. Each receives 17.3–18.3 million original target positions; **213.7 million across the twelve fits**, drawing from **51,200 unique training documents** shared across arms. The count across fits is not a claim of that many distinct source tokens or a long pretraining trajectory.
+
+| Question | Completed result | Evidence |
 |---|---|---|
-| Can uniform next-token training beat B0? | Yes: +0.014481 [0.013903, 0.015058] nats/token on 4,096 fresh FineMath windows. DEV chooses among all four fixed completed settings before confirmation. | [Baseline report](../validation/uniform_lm_baseline_complete_20261022/REPORT.md) |
-| Does verified post-document computation improve direct learning? | No under this recipe: −0.000944 / −0.000908 nats/token against same-data ordinary training, negative intervals in both orders. Trace beats format-only supervision but loses to the qualified ordinary reference. | [All six models and 26 comparisons](../validation/scaffold_learning_complete_20261022/REPORT.md) |
-| Does the mathematical training preserve English prediction? | All ten models lose to B0 on the separate 1,024-document educational-English panel. The selected ordinary reference loses 0.008835 nats/token. | [Full retention diagnostic](../validation/general_web_retention_complete_20261022/REPORT.md) |
-| Can ordinary source mixing address the English cost? | Yes: both fixed orders improve fresh Math by +0.011346 / +0.011204 and fresh English by +0.008550 / +0.008756 nats/token, with positive intervals. The 50/50 target beats the qualified all-math reference by +0.006578 / +0.006610. | [Two-order source-mixture confirmation](../validation/uniform_mixture_complete_20261022/REPORT.md) |
-| Does searching existing calculations justify a writer update? | The inspected TRAIN-only fixed-reader check finds only +0.0266 nats/span hindsight best-of-eight gain over greedy; no actor is trained. | [Bounded saved-score diagnostic](../validation/writer_feedback_opportunity_20261022/REPORT.md) |
+| Can ordinary uniform next-token training beat B0? | Yes: +0.014481 [0.013903, 0.015058] nats/token on 4,096 fresh FineMath windows. DEV chooses among all four completed fixed settings before confirmation. | [Baseline report](../validation/uniform_lm_baseline_complete_20261022/REPORT.md) |
+| Does post-document computation supervision improve direct learning? | No under this recipe: −0.000944 / −0.000908 nats/token against same-data ordinary training, negative intervals in both orders. Trace beats format-only supervision but loses to the qualified ordinary reference. | [All six models and 26 comparisons](../validation/scaffold_learning_complete_20261022/REPORT.md) |
+| Does mathematical-only training preserve English prediction? | All ten mathematical-only models lose to B0 on the separate 1,024-document educational-English panel. The selected ordinary reference loses 0.008835 nats/token. | [Full retention diagnostic](../validation/general_web_retention_complete_20261022/REPORT.md) |
+| Can ordinary source mixing address that cost? | Yes: both orders improve fresh Math by +0.011346 / +0.011204 and fresh English by +0.008550 / +0.008756 nats/token, all positive intervals. The 50/50 target beats the qualified all-math reference by +0.006578 / +0.006610. | [Two-order confirmation](../validation/uniform_mixture_complete_20261022/REPORT.md) |
+| Do the findings survive standard CPU forwards? | On 1,024 fixed documents, CPU trace-minus-raw gains remain negative in both orders: −0.000928 / −0.000890, with negative intervals. The separate two-domain mixture CPU check also passes its fixed numerical thresholds. | [8,192-forward check](../validation/scaffold_standard_CPU_verification_20261022/REPORT.md), [mixture check](../validation/uniform_mixture_CPU_forward_check_20261022.json) |
 
-## What remains in progress
+## The useful tradeoff
 
-- The source-mixture study is complete and publicly verified. Its protocols froze before the computation-supervision outcomes. The all-math reference remains stronger on Math alone; mixing sources reverses its English loss.
-- A 1,024-document standard Hugging Face FP32 numerical cross-check of all eight matched-study predictors, using 8,192 CPU forwards and no accelerator reservations. The sample size was chosen only from measured runtime and deadline, before those scores.
-- A supplemental common-panel comparison of all twelve fixed trained models, preserving every parent outcome and using a declared equal-domain diagnostic target.
-- Exact, losslessly compressed model artifacts for every trained arm, including controls and unsuccessful conditions. All twelve pass actual tensor-bit round trips and have been published. Anonymous download/restoration and standard HF loading checks are still in progress.
+The all-mathematical reference remains stronger on mathematics alone. Source mixing sacrifices approximately 0.0034 nats/token of that gain while reversing the English regression. Each mixed-source system uses **one model** at inference; the mixture describes its training documents and the declared evaluation target.
 
-## Interpretation
+On common windows for every fixed model, both mixed models improve on B0 in both domains. All ten mathematical-only models lose on English. The two mixed models have the largest descriptive gains on the declared equal-domain target; this comparison does not select a new checkpoint or replace any parent's confirmation criterion.
 
-The baseline changes the interpretation of another failed auxiliary objective. This time the direct comparator learns successfully, and the computation treatment is a small relative loss against it. The source-matched raw arm is the causal recipe control; the independently qualified baseline is an additional practical reference with a different source mix and batch size.
+![Every trained model on common panels](../validation/overnight_common_panel_complete_20261022/all-model-domain-gains.png)
 
-All models use a mature 1.7B starting checkpoint and short continued training. These are not onset experiments, autonomous discovery or a broad evaluation of language ability. Teacher-forced token likelihood is distinct from free-running arithmetic accuracy. The post-document writer sees the original text before predicting work, so supplied prefix-derived labels do not make its training behavior prospective.
+[All common-panel scores, conditional document intervals and controls](../validation/overnight_common_panel_complete_20261022/REPORT.md).
 
-The earlier frozen-selector finding remains intact: generated calculation can help targeted real-text continuations, but the tested interface loses on its unenriched natural endpoint. A useful inference ensemble is separate from improved pretrained weights.
+## What this means for the research question
 
-## Evidence and accounting
+The new negative auxiliary result has a competent direct control. Source coefficients and context are matched, every arm learns relative to B0, and the auxiliary loses to ordinary training in two source orders. This is stronger evidence against this particular supervised recipe than a failure shared with a regressing control.
 
-The [baseline](../validation/uniform_lm_baseline_public_release_20261022.json), [matched computation study](../validation/scaffold_learning_public_release_20261022.json), [English diagnostic](../validation/general_web_retention_public_release_20261022.json) and [source-mixture study](../validation/uniform_mixture_public_release_20261022.json) have public original-score archives, anonymous hash checks and standalone NumPy replay. Those verify numerical consistency rather than repeat training or establish an external replication. Original source text stays outside the source-free numerical archives.
+It does not show that intermediate computation is useless. Earlier generated-calculation gains and targeted selective-inference gains remain real within their declared scope. The previous frozen selector still loses on its unenriched natural endpoint. That inference interface and the new ordinary-training models test different mechanisms.
 
-The native work retains full original model and optimizer states. Standard CPU checks are separate: aggregate paired gains agree on the initial fixed subsets, while individual token log probabilities can differ by more than one nat. The larger check measures that uncertainty directly rather than assuming tokenwise equality.
+The post-document writer sees all 528 original tokens before predicting work. Its verified labels are prefix-derived, but this does not make the writer prospective. Autonomous thought discovery, onset across pretraining ages and efficient internalization remain unresolved. The saved TRAIN-only fixed-reader diagnostic offers only **+0.0266 nats/span** of hindsight best-of-eight gain over greedy; no writer update follows from it. [That bounded diagnostic](../validation/writer_feedback_opportunity_20261022/REPORT.md).
 
-Actual assigned costs so far: ordinary baseline **16.607**, matched computation study **32.537**, separate English diagnostic **0.502**, source-mixture study **6.291 chip-hours**. Remaining studies have their own fixed ceilings. These costs include their actual attempts and are not whole-node billing or a claim of full 16-chip occupancy. The node has 16 physical chips; training uses independent two-chip groups, with memory and retained full-state exports limiting safe concurrency. The 35 GiB free-storage and 512 GiB available-host-memory floors remain unchanged.
+These are short continued-training studies from one mature starting model, on bounded FineMath and educational-English frames. Source freshness is relative to this project, not proven absence from base pretraining. Full-window likelihood includes short contexts; final 16-token spans are reported separately. For example, the mixed order 11 English suffix interval spans zero even though its full-window gain is positive. These results do not establish free-running answer accuracy, a general-language gain or an autonomous reasoning capability.
+
+## Models and numerical evidence are ready
+
+Every one of the **twelve public model assets** was anonymously downloaded, hash-checked and reconstructed with the downloaded standalone tools. All original BF16 tensor values match exactly. Every restored model loads through standard Hugging Face and returns finite logits. A separate new CPU-only environment also restores the selected ordinary model and runs HF inference with **no Neuron or XLA installed**. This verifies artifact usability, not additional model quality.
+
+[Model catalog and direct downloads](MODELS_20261022.md) · [Restore instructions](RECONSTRUCT_MODELS.md) · [Exact reconstruction receipt](../validation/trained_models_public_release_20261022.json) · [All HF checks](../validation/trained_models_HF_smoke_20261022.json) · [Clean CPU proof](../validation/trained_model_clean_CPU_environment_20261022.json).
+
+All six numerical archives and the mixture CPU supplement pass anonymous download, member hashes and standalone NumPy replay. They preserve the original per-token scores and every outcome, including failed criteria. This is within-repository numerical verification, not an external training replication. Raw source text and source token IDs are omitted from numerical archives. Native optimizer snapshots remain retained separately; public model downloads contain weights and tokenizer.
+
+## Costs and machine use
+
+| Completed native study | Actual assigned chip-hours | Separate ceiling |
+|---|---:|---:|
+| Ordinary baseline, including earlier qualification failures | 16.607276 | 18 |
+| Matched raw/format/computation study | 32.536880 | 40 |
+| Separate English retention diagnostic | 0.502299 | 1.5 |
+| Two-order source-mixture study | 6.290836 | 7.5 |
+| Common-panel supplement | 0.962545 | 1.25 |
+| **Total** | **56.899836** | **68.25** |
+
+These per-study totals include earlier qualification and all eight nonzero-exit native attempts. They are not the whole-node invoice or a claim that every reservation began after 22:00 Eastern. All 85 native attempts have closure records; historical incomplete process-absence flags remain unchanged. Current inventory shows no processes on any of the sixteen accelerator devices. [Exact closure/counter reconciliation](../validation/overnight_resource_summary_20261022.json).
+
+The node was **not fully saturated**: peak observed use was eight of sixteen chips. Concurrency preserved host-memory and complete-state export headroom. Read-only usage accounting reports observation coverage and leaves missing intervals unknown; assigned reservations, process occupancy, core busy time and FLOP efficiency are different measurements. The 35 GiB free-storage and 512 GiB available-host-memory floors remain unchanged.
+
+All **2,074 CPU tests**, smoke and compilation pass. Original sources, complete native checkpoints and historical results remain retained. The existing Trainium environment was not modified by the isolated CPU portability test.

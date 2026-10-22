@@ -1,0 +1,22 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_DOWNLOAD_HASH_AND_REPLAY",
+  "utc": "2026-10-22T10:58:15.599224+00:00",
+  "release": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/scaffold-standard-cpu-verification-20261022",
+  "target_commit": "b79cc3608c5649647a858cb18f27d96120f60800",
+  "download_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/releases/download/scaffold-standard-cpu-verification-20261022/scaffold-standard-cpu-verification-20261022.tar.gz",
+  "authorization_header_sent": false,
+  "archive_sha256": "76086c21e0a1d2fbb9cf03d21762a69a53130af1aa1a1d9bc586d93c3bfeea24",
+  "archive_bytes": 50192667,
+  "all_member_hashes_match": true,
+  "manifest_members_verified": 5,
+  "replay": {
+    "status": "PASS_SOURCE_FREE_NUMPY_REPLAY",
+    "documents": 1024,
+    "models": 8,
+    "actual_CPU_model_forwards": 8192,
+    "comparisons_reproduced": 13,
+    "original_native_scientific_decisions_changed": false,
+    "scope": "Standard-CPU-subset numerical reconstruction; no new forward calls or external training replication."
+  },
+  "scope": "Original-score numerical publication verification, not model replication or verification of omitted source text."
+}

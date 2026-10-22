@@ -2,11 +2,11 @@
 
 ## Question and current work
 
-Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. Ordinary continued pretraining now passes fresh FineMath confirmation; the immediate task is to finish the matched supervised-learning comparison and its cross-domain checks by the owner's overnight deadline.
+Study when self-generated intermediate computation improves prediction, and whether it can eventually improve learning or be discovered autonomously. Keep those claims separate. Ordinary continued pretraining now passes fresh FineMath confirmation, and source mixing improves both declared fresh domains. The matched computation auxiliary loses to ordinary training in both source orders. Finish the bounded CPU diagnosis and the owner's deadline handoff; all planned native work and model releases are complete.
 
 Read `STATUS.md`, then `NEXT_STEPS.md` and the first active block of `docs/AGENT_HANDOFF.md`. Use the latest owner steering. Historical plans are evidence, not launch commands.
 
-The frozen-selector study is complete: targeted gains repeat, every natural endpoint loses, and a simple no-calculation ensemble improves natural prediction. Its original decisions remain intact. All four ordinary-training settings finish; the development-selected model improves fresh mathematical prediction and loses on a separate educational-English panel. The six matched raw/format/computation fits and fixed two-order source-mixture study must retain every model and outcome. See STATUS.md and the active handoff for actual qualification, deadlines and resource ceilings. CPU checks remain distinct from native execution.
+The frozen-selector study is complete: targeted gains repeat, every natural endpoint loses, and a simple no-calculation ensemble improves natural prediction. Its original decisions remain intact. All four ordinary-training settings finish; the development-selected model improves fresh mathematical prediction and loses on a separate educational-English panel. All six matched raw/format/computation fits and the fixed two-order source-mixture study are complete. Every model and outcome is retained and published. See STATUS.md and the active handoff for actual qualification, deadlines and resource ceilings. CPU checks remain distinct from native execution.
 
 ## Three red lines
 
