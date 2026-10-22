@@ -1,0 +1,42 @@
+{
+  "status": "PASS_VERIFIED_LOSSLESS_STORAGE_MAINTENANCE",
+  "closed_checkpoint_duplicate_storage_reclaimed_GiB": 48.074378967285156,
+  "actual_complete_byte_checks_before_every_replacement": true,
+  "original_logical_paths_bytes_and_manifests_preserved": true,
+  "initial_attempt_stopped_before_changing_an_uninventoried_multilink_file": true,
+  "later_attempt_uses_existing_multilink_file_as_canonical_and_changes_only_single_link_identical_copies": true,
+  "qualified_uniform_full_state": {
+    "status": "PASS_LOSSLESS_CLOSED_FULL_STATE_RELOCATION",
+    "utc": "2026-10-22T06:30:34.977049+00:00",
+    "original_logical_path": "/dev/shm/uniform-lm-v1/science/warmup_cosine-lr1e-05/step-0000128",
+    "retained_existing_NVMe_directory": "/home/ubuntu/dario/local/nvme-study/retained-overnight-checkpoints/uniform-reference-step128",
+    "bytes": 24091479010,
+    "reclaimed_RAM_filesystem_GiB": 22.43693825788796,
+    "original_complete_manifest_sha256": "edc996a21080ac0c0775597236992330962e0b5641db756172d5953e3d0edefd",
+    "all_original_file_sha256": {
+      "cpu-export-release-rank-00000.json": "0040a6654e9b7eb1cab295e1fcb82a96a392f52e8b1dc8852fdf43b873a0db6b",
+      "cpu-export-release-rank-00001.json": "6f21c6b3820dd77d060f0fe2cebd4e44d74267b73453bbd3391d1e6e889750dd",
+      "cpu-export-release-rank-00006.json": "5de244a11a55839d1bd9acf4eb1b7f3e86ce4e46539645704cc2332cc8cba639",
+      "cpu-export-release-rank-00002.json": "562af9ed6b04a00c25cc9d80106538624fb914244242d57c8e501030d131192e",
+      "cpu-export-release-rank-00004.json": "b7c37dfdf005095dd0accb47bdfc0ebef0f2f146102cab16754b0ea818a21229",
+      "cpu-export-release-rank-00003.json": "4ece550fd81a5e82dd1ccff2e6d938cbc61d7d648af3f821d9f91913b74df660",
+      "cpu-export-release-rank-00005.json": "4e605e9a58bd54e9d943e6f81f99691ed1a9511b2ff2c97fc746c4325a097cf7",
+      "cpu-export-release-rank-00007.json": "f0f5e915edc0b1d6f14903d28e22dc21c35daed4ff6370ccc61446bc342bb0d2",
+      "COMPLETE.json": "edc996a21080ac0c0775597236992330962e0b5641db756172d5953e3d0edefd",
+      "rank-00000.pt": "48b413fbed8306c1156fb1687b9ebd092e13850ea16290c9c81c21dff05e0501",
+      "model.pt": "e2d9afb7dc32142b6edd5950c0ecbc6bc906a2fc178ccb788e4ac6b0d2a13b75",
+      "rank-00005.pt": "f7dba208931abcce6ff415f0fec472a24d2270cddf6e68f39760d8da6f92094b",
+      "rank-00004.pt": "b4c470a92a82e6b8439af5656c594e7bf32824b555e588624d2c83c1c901b997",
+      "rank-00006.pt": "7e52bbb8aac0914f6527ef84bb9041a0dc1d66d557f9ac36ec692aff1773af86",
+      "rank-00001.pt": "8853d45e603a1ca87841af9d60cd9b5d5a8661a2b00b0ac69769854b22a75b04",
+      "rank-00002.pt": "50f57f59a9c2bab04e5bc24e92b379143ccc3f35d81d362e81eb92cbae4a3ff4",
+      "rank-00007.pt": "b4bbbeb4a05abfc5f6b57632f501f1d9fa9ae431573be479968d216498193070",
+      "rank-00003.pt": "a19a7cca840fd641dd0af9876b2a55d0d519a3ea3c0944524aca2f24be819444"
+    },
+    "wall_seconds": 68.18803528801072,
+    "all_original_model_optimizer_counters_and_manifests_retained": true,
+    "scope": "Same original closed full state, now on existing local NVMe with the original path preserved. No numerical changes, new accelerator call, new capacity or off-node backup claim."
+  },
+  "new_accelerator_calls": 0,
+  "scope": "Engineering retention and storage efficiency only. No scientific result, numerical protocol, resource floor or original outcome changed."
+}
