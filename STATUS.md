@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 22, 2026, 06:16 UTC. [History](docs/archive/STATUS_through_20261021.md).
+Updated October 22, 2026, 07:35 UTC. [History](docs/archive/STATUS_through_20261021.md).
 
 ## Ordinary pretraining reference passes
 
@@ -22,7 +22,7 @@ Three fresh training arms—raw, format-only and verified computation—across t
 
 Native loss, accumulation, LR, reducer, masters, replica and exact recovery pass; qualification cost **1.530 assigned chip-hours**. All three first-order fits and full-state exports are complete; all three second-order fits have launched on independent two-chip groups. Existing hardware only, up to three full trainers concurrently to preserve host-memory and checkpoint-export headroom. Measured complete projection 39.449, prospective total ceiling **40 assigned chip-hours**. Every phase and failed reservation counts. [Overnight plan](docs/OVERNIGHT_PLAN_20261022.md).
 
-All **2,069 CPU tests**, smoke and compilation pass. CPU checks are separate from native qualification. All original sources, models and optimizer states remain retained; disk and host-memory floors stay 35 and 512 GiB.
+All **2,074 CPU tests**, smoke and compilation pass. CPU checks are separate from native qualification. All original sources, models and optimizer states remain retained; disk and host-memory floors stay 35 and 512 GiB.
 
 ## Earlier findings remain intact
 
