@@ -2,7 +2,7 @@
 
 We study when intermediate computation improves prediction, whether it can improve learning, and how useful computation could eventually be discovered autonomously. Ordinary continued pretraining now supplies a qualified reference; the completed matched computation-supervision comparison does not beat ordinary training.
 
-[Overnight findings](docs/OVERNIGHT_RESULTS_20261022.md) · [All twelve trained models and restore tools](docs/MODELS_20261022.md) · [All models on common panels](validation/overnight_common_panel_complete_20261022/REPORT.md)
+[Complete overnight release](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/overnight-results-20261022) · [Overnight findings](docs/OVERNIGHT_RESULTS_20261022.md) · [All twelve trained models and restore tools](docs/MODELS_20261022.md) · [All models on common panels](validation/overnight_common_panel_complete_20261022/REPORT.md)
 
 ## Ordinary source mixing improves both fresh domains
 

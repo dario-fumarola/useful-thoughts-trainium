@@ -66,3 +66,5 @@ All **2,074 CPU tests**, smoke and compilation pass. Original sources, complete 
 A final read-only integrity check also rehashes every original terminal model file and all 96 optimizer shards: **108 of 108 match their original complete-state manifests**. This verifies local state integrity; it does not create a remote optimizer backup or repeat native recovery. [State-integrity receipt](../validation/trained_model_native_state_integrity_20261022.json).
 
 [Final readiness snapshot](../validation/overnight_deadline_readiness_20261022.json). All scientific workers and the read-only observer are closed. The machine remains on to preserve native optimizer snapshots.
+
+[Published overnight index](https://github.com/dario-fumarola/useful-thoughts-trainium/releases/tag/overnight-results-20261022) · [Anonymous index and immutable-report verification](../validation/overnight_index_public_release_20261022.json).
