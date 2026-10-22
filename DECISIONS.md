@@ -4,7 +4,7 @@ Updated October 21, 2026. Entries below this summary remain append-only.
 
 - Immediate question: qualify genuine uniform next-token continued training as a reference.
 - Compare four fixed LR/schedule settings on the same one-pass 17.269 million targets; all terminals freeze before DEV and the choice freezes before CONFIRM.
-- All 38,912 source windows independently match pinned records. The first fixed fit is active; no held-out result yet.
+- All 38,912 source windows independently match pinned records. Fixed fitting is underway; no held-out result yet.
 - Native loss/LR/reducer/master/replica and exact recovery now pass after a scalar-cache transfer repair; the original strict failure remains recorded and no tolerance was widened.
 - All 2,029 CPU tests pass. CPU checks remain distinct from native qualification.
 - Total reservation ceiling stays 18 chip-hours, at most two chips. Use existing RAM scratch up to 256 GiB while preserving the disk and host-memory floors and every original state.
@@ -1834,3 +1834,8 @@ The owner’s “go” continues to cover the four fixed fits and sealed readout
 ## 2026-10-21 — exact recovery passes; release the fixed four settings
 
 The cache guard restores 319 FP32 scalar optimizer inputs and exact replayed losses/norms, every final model tensor and all FP32 masters/moments. The original strict failure remains intact. All 2,029 CPU tests and the actual native scoring check pass; no tolerance was widened. Complete measured projection 17.832178 chip-hours includes 4.438494 already used, within the unchanged 18 ceiling. Release the original four settings, all-terminal freeze before DEV, selected-terminal freeze before CONFIRM. No held-out model-quality result has been inspected. [Qualification and measured release](validation/uniform_lm_native_20261021/REPORT.md).
+
+
+## October22 owner overnight steering
+
+The owner asks to use the existing machine beyond the baseline and finish by08:00Eastern/12:00UTC. Independent remaining baseline recipes now run on isolated pairs with unchanged numerical settings and total18 active chip-hours. A prospective six-fit raw/format/computation scaffold study follows the same scientific question: original text precedes work, so the source prediction context and token coefficients stay identical. Fresh source checks and native recovery/runtime precede long fitting. Its separate bounded32 active-chip-hour envelope and hard morning deadline are recorded in the overnight plan; no new cloud capacity is acquired.

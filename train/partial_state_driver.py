@@ -20,7 +20,7 @@ from train.partial_state_packing import batch_packs, training_pack
 from train import real_trace_packing, real_target_packing, real_source_balanced_packing, document_qa_packing, document_evidence_plan_packing
 from train import permutation_program_packing
 from train import real_cpt_scaffold
-from train import uniform_lm
+from train import uniform_lm, scaffold_learning
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = 'partial-state-sft-v7'
@@ -67,7 +67,7 @@ def source_files():
              'train/document_evidence_plan_data.py', 'train/document_evidence_plan_packing.py',
              'train/permutation_program_data.py', 'train/permutation_program_packing.py',
              'train/permutation_program_retention.py', 'train/real_cpt_scaffold.py',
-             'configs/real_cpt_scaffold_v29_design.json', 'train/uniform_lm.py')
+             'configs/real_cpt_scaffold_v29_design.json', 'train/uniform_lm.py', 'train/scaffold_learning.py')
     return {name: sha256_file(ROOT / name) for name in names}
 
 
@@ -80,7 +80,8 @@ def validate(p):
     evidence = p.get('schema') == EVIDENCE_SCHEMA
     program = p.get('schema') == PROGRAM_SCHEMA
     scaffold = p.get('schema') == SCAFFOLD_SCHEMA
-    uniform = p.get('schema') == UNIFORM_SCHEMA
+    post_scaffold = p.get('schema') == scaffold_learning.SCHEMA
+    uniform = p.get('schema') == UNIFORM_SCHEMA or post_scaffold
     program_science = program and p.get('purpose') == PROGRAM_STUDY_PURPOSE
     scaffold_science = scaffold and p.get('purpose') == SCAFFOLD_STUDY_PURPOSE
     fixed = dict(schema=SCHEMA, model_id='Qwen/Qwen3-1.7B-Base',
@@ -104,8 +105,9 @@ def validate(p):
         fixed.update(schema=SCAFFOLD_SCHEMA, world_size=8, micro_batch=4,
                      width=640, target_slots=640)
     if uniform:
-        fixed.update(schema=UNIFORM_SCHEMA, world_size=8, micro_batch=4,
-                     width=528, target_slots=527, accumulation=p.get('accumulation'),
+        fixed.update(schema=scaffold_learning.SCHEMA if post_scaffold else UNIFORM_SCHEMA,
+                     world_size=8, micro_batch=2 if post_scaffold else 4,
+                     width=704 if post_scaffold else 528, target_slots=656 if post_scaffold else 527, accumulation=p.get('accumulation'),
                      global_batch=p.get('global_batch'), schedule=p.get('schedule'))
     if document or evidence:
         fixed.update(schema=EVIDENCE_SCHEMA if evidence else DOCUMENT_SCHEMA, world_size=8, micro_batch=1,
@@ -125,9 +127,13 @@ def validate(p):
         'document_evidence_plan_pilot', 'document_evidence_weight_ablation',
         'document_evidence_format_weight_control')
     if uniform:
-        uniform_lm.validate_recipe(p)
-        if (p.get('purpose') not in ('uniform_lm_qualification', 'uniform_lm_development',
-                                    'uniform_lm_confirmation')
+        if post_scaffold:
+            scaffold_learning.validate_recipe(p)
+        else:
+            uniform_lm.validate_recipe(p)
+        if (p.get('purpose') not in (('scaffold_learning_qualification', 'scaffold_learning_study')
+                if post_scaffold else ('uniform_lm_qualification', 'uniform_lm_development',
+                                       'uniform_lm_confirmation'))
                 or not isinstance(p.get('data_manifest_file'), str)
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_manifest_sha256', ''))
                 or not re.fullmatch('[a-f0-9]{64}', p.get('data_sha256', ''))):
@@ -466,6 +472,8 @@ def batch_at(rows, tokenizer, p, order, arm, step, rank, micro=0):
     if (not 0 <= step < p['steps'] or not 0 <= rank < p['world_size']
             or not 0 <= micro < p['accumulation']):
         raise ValueError('Actual bounded step/rank required')
+    if p['schema'] == scaffold_learning.SCHEMA:
+        return scaffold_learning.batch_at(rows, tokenizer, p, order, arm, step, rank, micro)
     if p['schema'] == UNIFORM_SCHEMA:
         if arm != uniform_lm.ARM:
             raise ValueError('Uniform training has exactly one unaugmented arm')
@@ -657,7 +665,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         grad_clipping=True, max_norm=1., save_master_weights=True, lr=p['lr'], betas=(.9, .95),
         eps=1e-8, weight_decay=.1, use_grad_acc_hook=False, higher_cc_precision=False)
     reduction_calls = [0]
-    if p['schema'] == UNIFORM_SCHEMA:
+    if p['schema'] in (UNIFORM_SCHEMA, scaffold_learning.SCHEMA):
         original_reduce = optimizer._reduce_gradients
         def counted_reduce(*a, **kw):
             reduction_calls[0] += 1
@@ -669,7 +677,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     atomic_json(evidence/f'initial-master-rank-{rank:05d}.json', dict(rank=rank, exact_released_FP32_samples=True))
     torch.save(dict(expected_cpu=expected['values'], actual_fp32_masters=initial), evidence/f'initial-master-rank-{rank:05d}.pt')
     found_inf = torch.zeros((), device=device); order_hash = canonical_hash(order)
-    if p['schema'] == UNIFORM_SCHEMA:
+    if p['schema'] in (UNIFORM_SCHEMA, scaffold_learning.SCHEMA):
         # Do not include this otherwise unused fresh scalar in the first large
         # gradient graph. Its later absence would force a second compilation.
         sync()
@@ -709,7 +717,9 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
     last = begin; checkpoint_walls = []; loop_started = time.monotonic()
     for step in (range(begin, p['steps']) if run_updates else ()):
         reductions_before = reduction_calls[0]
-        rate = (uniform_lm.set_learning_rate(optimizer, p, step)
+        rate = (scaffold_learning.set_learning_rate(optimizer, p, step)
+                if p['schema'] == scaffold_learning.SCHEMA else
+                uniform_lm.set_learning_rate(optimizer, p, step)
                 if p['schema'] == UNIFORM_SCHEMA else p['lr'])
         started = time.monotonic(); optimizer.zero_grad(set_to_none=True)
         audited = (step < 3 or (step+1) % p['save_every'] == 0 or step+1 == p['steps']
@@ -718,8 +728,9 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
         before = master_samples(optimizer, expected) if audited else None
         component_objective = p['schema'] in (BALANCED_SCHEMA, DOCUMENT_SCHEMA)
         scaffold_objective = p['schema'] == SCAFFOLD_SCHEMA
-        pointer_objective = p['schema'] in (EVIDENCE_SCHEMA, PROGRAM_SCHEMA) or scaffold_objective
-        field_names = (('source', 'work', 'continuation') if scaffold_objective else
+        pointer_objective = p['schema'] in (EVIDENCE_SCHEMA, PROGRAM_SCHEMA, scaffold_learning.SCHEMA) or scaffold_objective
+        field_names = (('source', 'work') if p['schema'] == scaffold_learning.SCHEMA else
+                       ('source', 'work', 'continuation') if scaffold_objective else
                        ('answer', 'work') if p['schema'] == PROGRAM_SCHEMA
                        else document_evidence_plan_packing.COMPONENTS)
         weights = (dict(note_weight=p['source_loss_weight'], future_weight=p['task_loss_weight'])
@@ -762,7 +773,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
             raise RuntimeError('Nonfinite actual gradient')
         optimizer.step(found_inf=found_inf); sync(); norm = float(optimizer.grad_norm.cpu())
         actual_optimizer_lrs = None
-        if p['schema'] == UNIFORM_SCHEMA:
+        if p['schema'] in (UNIFORM_SCHEMA, scaffold_learning.SCHEMA):
             actual_optimizer_lrs = [float(g['lr']) for g in optimizer.base_optimizer.param_groups]
             if (reduction_calls[0]-reductions_before != 1
                     or not actual_optimizer_lrs
@@ -816,7 +827,7 @@ def worker(_index, args, p, rows, tok, assets, refs, native, order, protocol_sha
                 metric['gradient_reductions'] = reduction_calls[0]-reductions_before
             with (args.output/'metrics.jsonl').open('a') as f:
                 f.write(json.dumps(metric, allow_nan=False)+'\n'); f.flush(); os.fsync(f.fileno())
-        if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA, UNIFORM_SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
+        if (last==64 and p['schema'] not in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA, UNIFORM_SCHEMA, scaffold_learning.SCHEMA)) or last % p['save_every'] == 0 or last == p['steps'] or stop or halt:
             program_study = p.get('purpose') == PROGRAM_STUDY_PURPOSE
             lease = None
             if program_study:
@@ -858,10 +869,12 @@ def main():
     a = argparse.ArgumentParser(description=__doc__)
     for name in ('protocol', 'output', 'stop-file'):
         a.add_argument('--'+name, type=Path, required=True)
-    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + real_cpt_scaffold.ARMS + (PROGRAM_QUALIFICATION_ARM, SCAFFOLD_QUALIFICATION_ARM, uniform_lm.ARM), required=True); a.add_argument('--deadline-utc', required=True)
+    a.add_argument('--arm', choices=ARMS + real_trace_packing.ARMS + real_target_packing.ARMS + real_source_balanced_packing.ARMS + document_qa_packing.ARMS + document_evidence_plan_packing.ARMS + permutation_program_packing.ARMS + real_cpt_scaffold.ARMS + (PROGRAM_QUALIFICATION_ARM, SCAFFOLD_QUALIFICATION_ARM, uniform_lm.ARM) + scaffold_learning.ARMS, required=True); a.add_argument('--deadline-utc', required=True)
     a.add_argument('--execution-release', type=Path)
     a.add_argument('--resume', type=Path); a.add_argument('--attempt-id'); a.add_argument('--halt-after', type=int)
     args = a.parse_args(); p = json.loads(args.protocol.read_text()); validate(p)
+    if p['schema'] == scaffold_learning.SCHEMA:
+        scaffold_learning.validate_execution(p, args, source_files())
     if p['schema'] == UNIFORM_SCHEMA:
         uniform_lm.validate_execution(p, args, source_files())
     if p.get('purpose') == SCAFFOLD_STUDY_PURPOSE:
@@ -903,7 +916,8 @@ def main():
                 or qualification.get('source_files') != p['source_files']
                 or qualification.get('qualified_training_shape') != shape):
             raise ValueError('Actual same-source and same-shape real-data recovery qualification required')
-    allowed_arms = ((uniform_lm.ARM,) if p['schema'] == UNIFORM_SCHEMA else
+    allowed_arms = (scaffold_learning.ARMS if p['schema'] == scaffold_learning.SCHEMA else
+                    (uniform_lm.ARM,) if p['schema'] == UNIFORM_SCHEMA else
                    (real_cpt_scaffold.ARMS if p.get('purpose') == SCAFFOLD_STUDY_PURPOSE
                     else (SCAFFOLD_QUALIFICATION_ARM,)) if p['schema'] == SCAFFOLD_SCHEMA else
                     (permutation_program_packing.ARMS if p.get('purpose') == PROGRAM_STUDY_PURPOSE
@@ -982,11 +996,13 @@ def main():
                     or any(sha256_file(ROOT/name) != value for name, value in manifest['source_files'].items())
                     or any(set(row) != {'item_id', 'split', 'question', 'answer', 'support_indices'} for row in rows)):
                 raise ValueError('Pinned pointer-only labels and fresh evidence-clean panel required')
+        if p['schema'] == scaffold_learning.SCHEMA:
+            scaffold_learning.validate_sources(p, rows)
         if p['schema'] == UNIFORM_SCHEMA:
             uniform_lm.validate_sources(p, rows)
         if (len(rows) != p['items'] or len({r['item_id'] for r in rows}) != p['items']
                 or any((r.get('split') != 'TRAIN' if p['schema'] == PROGRAM_SCHEMA else
-                        r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA, SCAFFOLD_SCHEMA, UNIFORM_SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
+                        r.get('split') != 'train' if p['schema'] in (REAL_SCHEMA, TARGET_SCHEMA, BALANCED_SCHEMA, DOCUMENT_SCHEMA, EVIDENCE_SCHEMA, SCAFFOLD_SCHEMA, UNIFORM_SCHEMA, scaffold_learning.SCHEMA) else r.get('panel') != 'TRAIN') for r in rows)):
             raise ValueError('Complete declared distinct TRAIN expressions required')
         assets = asset_provenance(Path(p['model_dir'])); base = json.loads(Path(p['base_protocol']).read_text())
         if (assets['model_id'] != p['model_id'] or assets['manifest_sha256'] != base['model_manifest_sha256']

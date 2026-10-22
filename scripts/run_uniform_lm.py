@@ -47,8 +47,13 @@ def main():
     stage = control/'jobs'/args.job
     stage.mkdir(parents=True, exist_ok=False)
     output.parent.mkdir(parents=True, exist_ok=True)
-    topology = [r for r in h.topology() if r['neuron_device'] in (8, 9)]
-    if (len(topology) != 2 or p['visible_cores'] != '32-39'
+    assigned = tuple(job.get('physical_chips', (8, 9)))
+    if len(assigned) != 2 or assigned[1] != assigned[0]+1 or assigned[0] % 2:
+        raise ValueError('One isolated contiguous two-chip group required')
+    first = 4*assigned[0]
+    visible = f'{first}-{first+7}'
+    topology = [r for r in h.topology() if r['neuron_device'] in assigned]
+    if (len(topology) != 2 or p['visible_cores'] != visible
             or any(r['neuron_processes'] or r['logical_neuroncore_config'] != 2 for r in topology)):
         raise RuntimeError('Assigned existing chips must be idle')
     roots = [Path(release['repository_root']), Path(release['cache_filesystem']), output.parent]
@@ -82,7 +87,7 @@ def main():
             env[key] = value
     env.update(PATH=str(Path(sys.executable).parent)+os.pathsep+os.environ['PATH'],
                PYTHONPATH=release['source_root']+':'+str(roots[0]/'local/test-deps'),
-               NEURON_RT_VISIBLE_CORES='32-39', NEURONCORE_NUM_DEVICES='8',
+               NEURON_RT_VISIBLE_CORES=visible, NEURONCORE_NUM_DEVICES='8',
                MASTER_PORT=str(port), NEURON_RT_ROOT_COMM_ID=f'127.0.0.1:{port+1}',
                TMPDIR=str(tmp))
     command = ['timeout', '--signal=TERM', '--kill-after=5s', str(seconds-5)+'s',
@@ -115,7 +120,7 @@ def main():
                 samples.write(json.dumps(sample)+'\n')
                 samples.flush()
                 if not observed:
-                    actual = [v for r in h.topology() if r['neuron_device'] in (8, 9)
+                    actual = [v for r in h.topology() if r['neuron_device'] in assigned
                               for v in r['neuron_processes']]
                     if len(actual) == 8:
                         if not {v['pid'] for v in actual} <= {v['pid'] for v in members}:
@@ -137,11 +142,12 @@ def main():
             break
         time.sleep(1)
     absent = not h.members(owned['session'])
-    idle = all(not r['neuron_processes'] for r in h.topology() if r['neuron_device'] in (8, 9))
+    idle = all(not r['neuron_processes'] for r in h.topology() if r['neuron_device'] in assigned)
     closure = dict(utc=utc_now(), exit_code=code, failure=failure, actual_eight_observed=observed,
                    owned_session_absent=absent, assigned_devices_idle=idle,
                    wall_seconds=time.monotonic()-started,
-                   reserved_chip_hours=2*(time.monotonic()-started)/3600)
+                   reserved_chip_hours=2*(time.monotonic()-started)/3600,
+                   physical_chips=list(assigned), visible_cores=visible)
     atomic_json(stage/'closure.json', closure)
     print(json.dumps(closure), flush=True)
     if code or failure or not observed or not absent or not idle:

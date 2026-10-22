@@ -1,6 +1,6 @@
 # Current status
 
-Updated October 21, 2026. [History](docs/archive/STATUS_through_20261021.md).
+Updated October 22, 2026. [History](docs/archive/STATUS_through_20261021.md).
 
 ## Uniform next-token baseline preparation
 
@@ -10,9 +10,13 @@ All 38,912 source windows independently match pinned Parquet rows. All 2,025 CPU
 
 **Native qualification and exact recovery pass.** The original failed recovery remains recorded; a narrow mutable-scalar transfer guard restores independent counter buffers and exact continuation without widening tolerances. All **2,029 CPU tests**, smoke and compilation pass. The qualification-only full-window scoring check passes too. [Native report](validation/uniform_lm_native_20261021/REPORT.md).
 
-The measured complete projection is **17.832 reserved chip-hours**, including **4.438 already spent**, within the unchanged **18** ceiling on at most two chips. **The first of four fixed training runs is active.** All four terminal checkpoints freeze before DEV scoring and the selected recipe/checkpoint freezes before CONFIRM. No held-out model-quality result has been observed.
+The measured complete projection is **17.832 reserved chip-hours**, including **4.438 for qualification and prior attempts**, within the unchanged **18 active chip-hour** ceiling. The owner authorized parallel use overnight: the remaining recipes now run on separate two-chip groups, up to six chips simultaneously. **The four fixed training runs are underway.** All four terminal checkpoints freeze before DEV scoring and the selected recipe/checkpoint freezes before CONFIRM. No held-out model-quality result has been observed.
 
 Every original state remains retained. Existing RAM checkpoint scratch is bounded at 256 GiB; free-disk and available-host-memory floors remain 35 and 512 GiB. Scientific settings, source allocation and selection rule stay fixed.
+
+## Overnight follow-on preparation
+
+A matched raw/format/verified-computation study is preparing two source orders. Original text precedes any optional work; every source target retains its coefficient. Fresh natural confirmation is separate from the baseline. CPU source/gradient checks pass; actual native recovery and runtime qualification must precede long fitting. [Overnight plan](docs/OVERNIGHT_PLAN_20261022.md).
 
 ## Fresh confirmation complete
 
