@@ -1,0 +1,142 @@
+{
+  "accumulation": 17,
+  "actual_optimizer_updates": 4,
+  "all_attempt_costs": {
+    "qualification-reference": 1.347218629998905,
+    "qualification-replay": 0.18276601809387405
+  },
+  "all_model_master_and_moment_values_finite": true,
+  "all_optimizer_shards": [
+    {
+      "rank": 0,
+      "terminal_optimizer_digest": "ec190b683be4192242388817ec5cc0e6dd90957aef8659596982316270f82b3f"
+    },
+    {
+      "rank": 1,
+      "terminal_optimizer_digest": "ef01ef70cfcf1d3188cb00f03f6b5a564a7f5f2cdab6a1894fb2d12af48eed1f"
+    },
+    {
+      "rank": 2,
+      "terminal_optimizer_digest": "27789d2a0431ef3ed90373a84e754f231159a2a7544c684c6c8d317942623f6d"
+    },
+    {
+      "rank": 3,
+      "terminal_optimizer_digest": "85b76b19e3f209755f671b36ca3358b8585f71797767a7420b75f619c74dfa94"
+    },
+    {
+      "rank": 4,
+      "terminal_optimizer_digest": "e5ffc209ddb661e3e40a245e8ca18e300c4ba6d50685c82c39a831f7f4df2d04"
+    },
+    {
+      "rank": 5,
+      "terminal_optimizer_digest": "a51ee239821264df10bd4f53cc6e9c8a5688a0ea106c0e12fb15b1c7fdb5c095"
+    },
+    {
+      "rank": 6,
+      "terminal_optimizer_digest": "4c48af55893f5b7c759269a97e6a04e0f345c41f607707e08d109ed241ef92ca"
+    },
+    {
+      "rank": 7,
+      "terminal_optimizer_digest": "6484e831b301560a9cfb1195281fff4016a2c265357c68ea59761293c9fa56b1"
+    }
+  ],
+  "checker_source_sha256": "067fd0fd9729954201bb7971a57fdc9681513fbbe44d773e613490c367f9a1d3",
+  "checks": {
+    "actual_optimizer_lr": true,
+    "explicit_precision": true,
+    "fp32_master_update": true,
+    "full_state_recovery": true,
+    "initial_loss_reference": true,
+    "replica_agreement": true,
+    "single_gradient_reducer": true
+  },
+  "closures": [
+    {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 1.347218629998905,
+      "utc": "2026-10-22T02:55:54+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 2424.9935328459833
+    },
+    {
+      "actual_eight_observed": true,
+      "assigned_devices_idle": true,
+      "exit_code": 0,
+      "failure": null,
+      "owned_session_absent": true,
+      "physical_chips": [
+        4,
+        5
+      ],
+      "reserved_chip_hours": 0.18276601809387405,
+      "utc": "2026-10-22T03:01:45+00:00",
+      "visible_cores": "16-23",
+      "wall_seconds": 328.97883144096704
+    }
+  ],
+  "complete_manifests": {
+    "/dev/shm/scaffold-learning-overnight-v1/recovery/run/step-0000002": "9a05a4ada01c61eedc0f79d5930c5db8db4fbcaa37ab5829cbc27077fb1a0820",
+    "/dev/shm/scaffold-learning-overnight-v1/recovery/run/step-0000004": "c744f8c7a02577984c8d3fb327d175ab00f51ee6533644f002cf26feedc571e0",
+    "/dev/shm/scaffold-learning-overnight-v1/reference/run/step-0000002": "9a05a4ada01c61eedc0f79d5930c5db8db4fbcaa37ab5829cbc27077fb1a0820",
+    "/dev/shm/scaffold-learning-overnight-v1/reference/run/step-0000004": "410061d07cab613418c22c09d24bc3a3a332ecdd3d051ab0362bc541dcd3244c"
+  },
+  "exact_full_state_recovery": true,
+  "full_terminal_model_digest": "c420b19e35cb8575c09a17b7805c1246d7b912ba2d24eac75caaf4d093cfa2a6",
+  "initial_loss_absolute_error": 0.0004257947644765725,
+  "micro_batch": 2,
+  "protocol_sha256": "87effae8364b12a9c244f73900ac92b8d08565bebe1ce7ec5b108c96ff8a29ee",
+  "replayed_optimizer_updates": 2,
+  "reserved_chip_hours": 1.5299846480927792,
+  "scope": "Hardware mechanics and exact deterministic recovery, not predictive improvement",
+  "source_files": {
+    "configs/real_cpt_scaffold_v29_design.json": "5269f62a1a774bd112097be5309eaf53d9dedbe08a0d64153731d3cbbbaf2b8b",
+    "train/calculation_boundaries.py": "0d32b6eb34ba24b1ff94814a66fce02b8251639e29652b8fe0bea6889c1f4a55",
+    "train/document_evidence_data.py": "476fdfda957bb1518f5f83b0e7453553be18adb8764d66c096fd917530ef673a",
+    "train/document_evidence_plan_data.py": "b82fee2df167511b5fa07e70a85162d04fcdc7111230041a3df5009b799af0b0",
+    "train/document_evidence_plan_packing.py": "8add21c10c017bd39be0371cbb3b34808cab08c85cd6b8b5c0805d78cc778a4e",
+    "train/document_qa_data.py": "26027c024249880066b298b2907d3f6a32672e9ec0b548f97c6a66b23ee24674",
+    "train/document_qa_packing.py": "ac5407708777486a99d5d98aca35224e54ded9a3a4ae914d21e1d09f71ddf56a",
+    "train/evaluate.py": "f76de1bc3b6837e1d15d988fae3ca4503346171dd4214569f6bd47ff29806031",
+    "train/masked_causal_ce.py": "bb014172b5e6f496a6adc57a8ac36ca2ad19ddee1f6a37cc03f578cb4289aafd",
+    "train/neuron_backend.py": "e3cf98edcfc124c0137f3de3f01f18a6688060fa2b4acb3db3ae8bb3fbbc8d2b",
+    "train/neuron_driver.py": "b81dc5fbb534aa0a7ca99b2b847f4d0dbe7e956d78a0b3172646685499dd4e0d",
+    "train/partial_state_data.py": "5c6aaefa6c2923cd0978ccaa83eedd6437379fecaeeb30190cb0a1b527c27c82",
+    "train/partial_state_driver.py": "b65a9c73bb5f6c1dc6f9cdcf558c6902a5c397e66a4af693d644a793d33f9247",
+    "train/partial_state_packing.py": "553b86206373853f93285c36906284e3aa1359fa0a1fe18db597678278925051",
+    "train/permutation_program_data.py": "99862337f45c92f228ccbdd14bf990eec0382ccc17d9a0e3682b8123b8483e36",
+    "train/permutation_program_packing.py": "b887b1f57045e471f082745f9a0b97a609ac2fa5b6568a14282220df5125e473",
+    "train/permutation_program_retention.py": "b511c2c49698cf75eb900ea60f7ed84ddacd09eec8fce8b79c5cbf140f42b06b",
+    "train/real_cpt_scaffold.py": "fdea11848c819760aeb87eb11353837298540ea5a6fbdabf57f5908c2197bad9",
+    "train/real_source_balanced_packing.py": "47373655a94898a44da84ba9da70a1489a5c4ac1ca71c8afdb6063148d96a34d",
+    "train/real_target_packing.py": "5c9e6067c1978d5116a47d3894af842b288c0e0f16b3e96750930c6f4e91418c",
+    "train/real_trace_packing.py": "02c7c77344747ee038bef876d0708dd003bc799dc2e67ab6b83b9e69658bafed",
+    "train/runtime_compat.py": "88bc8e0ed0a2459a8b95267501b65ff3dc88b3969d188e17d585ef6ff63983de",
+    "train/scaffold_learning.py": "f265a85eb3a941592fda88a582307713c701d5a9a86a98055f5c514674d7b722",
+    "train/scalar_completion.py": "fc57e0db7cfdd0357fe3f6ba252d26d1519aa3389a9e953ee5a48a76e8405b31",
+    "train/symbolic_note_labels.py": "d5fd0faa3fb8ccf697ca0189b1ab3c324dc4e9e41260a198ab01de1067932122",
+    "train/uniform_lm.py": "0d2b958be60e4bc96f51119277fe07dfed994883394c3e4d3690c718a834f4e5",
+    "train/useful_note_precision.py": "b17c8d6914f4131eb25d6b280a1fbd56d9a0c3ae3d71317e8bc3770a7d5497f4",
+    "train/useful_note_recovery.py": "6eb3ae1ea147679bdc80acfdff56634f604cd87d3c063669823d8e207e3490eb",
+    "train/useful_note_sft_data.py": "786f8784af25ca085edc37018a8905b01f1cd88ae016681f3dc7f6e4fed41bcb",
+    "train/useful_note_sft_driver.py": "991fea2cc0ead8b5cc52f34f503f6f48f9ad441a77f68d1bcf32da8f1172b5d4",
+    "train/variable_depth_data.py": "4873d7162fd05b323fe9dc27aaa04d7c3959bba7ef2c5b594586df3759147cf2",
+    "weekend_thinking/artifacts.py": "27d2a39c6aa63f5d831ff8c3421a5d2f6ce34a954bf97f1636980c539fb5357d",
+    "weekend_thinking/checkpoints.py": "44b2dd2d83903f31e6af41d948633818bd9e0251c4e48613b43073e70a144bb6",
+    "weekend_thinking/core.py": "9e37063ba1e8b904ee121022dd97380abb4735416232ff9a7433b733a1e68d87",
+    "weekend_thinking/pretrained.py": "d73b10170b27df0e3033e94c02dc088898654a959245c1e59f702af7ca117365",
+    "weekend_thinking/runtime_policy.py": "21458a9a8d2f41193fa4c6cbce870cb9f147103f1514d393da797b59ee7a739d"
+  },
+  "status": "PASS_SCAFFOLD_LEARNING_NATIVE_QUALIFICATION",
+  "target_slots": 656,
+  "utc": "2026-10-22T03:03:58+00:00",
+  "width": 704,
+  "world_size": 8
+}

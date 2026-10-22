@@ -1,0 +1,13 @@
+{
+  "accelerator_chip_hours": 0,
+  "checker_sha256": "ce3f7dd00be2bdf9927fb9a1b22ab007974668a3ee63873817ed765693aaf3c2",
+  "documents": 2112,
+  "intermediate_steps": 5722,
+  "limitations": "Shares original tokenizer and fixed source selection; not proof of absence from original base pretraining.",
+  "model_calls": 0,
+  "seconds": 24.78030800295528,
+  "source_check": "Every token against pinned original Parquet; independent AST/Fraction execution of every step and root value.",
+  "source_manifest_sha256": "5661d393c07c9b8d90d757bfdffa7ac13522e62d0e19eb309d5c97dcc95fb6e7",
+  "status": "PASS_ALL2112_ORIGINAL_AUXILIARY_SOURCES_AND_EXACT_CALCULATIONS",
+  "utc": "2026-10-22T03:18:25+00:00"
+}

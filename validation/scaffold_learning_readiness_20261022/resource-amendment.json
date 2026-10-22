@@ -1,0 +1,24 @@
+{
+  "amended_total_assigned_chip_hours": 40,
+  "global_hard_ceiling": 40,
+  "measured_common_update_seconds": 74.40546244900906,
+  "minimum_free_disk_GiB": 35,
+  "minimum_host_available_GiB": 512,
+  "no_new_capacity": true,
+  "original_design_sha256": "500ade48d325cc74f82f2e5f2f120f221733d2bd781744fa0155a5583d33285b",
+  "original_planning_ceiling": 32,
+  "owner_instruction": "Full autonomy until08:00Eastern; go beyond baselines and use existing hardware.",
+  "phase_ceilings": {
+    "qualification": 4,
+    "scoring": 4,
+    "seed11": 18,
+    "seed12": 18
+  },
+  "phase_note": "All phases including failed reservations sum into one40 ceiling; phase maxima cannot all be spent.",
+  "projected_complete_assigned_chip_hours": 39.44860793628597,
+  "publication_deadline_utc": "2026-10-22T12:00:00+00:00",
+  "reason": "Actual same-shape training is slower than the initial estimate; retain all six matched fits and controls rather than shrink the scientific comparison.",
+  "science_deadline_utc": "2026-10-22T11:00:00+00:00",
+  "source_loss_labels_order_and_endpoint_changes": false,
+  "utc": "2026-10-22T03:10:18+00:00"
+}

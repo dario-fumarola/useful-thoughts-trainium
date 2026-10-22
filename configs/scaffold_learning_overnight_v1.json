@@ -1,0 +1,64 @@
+{
+  "arms": [
+    "raw",
+    "format",
+    "trace"
+  ],
+  "identity": "scaffold-learning-overnight-v1",
+  "interpretation": "Supervised post-document learning scaffold. Does not establish autonomous thought discovery; direct-prediction value is tested separately from generated-computation value.",
+  "mechanism": "Append a given work header and optionally supervise a prefix-computable trace after the complete original document; no trace precedes or conditions an original-source target.",
+  "model": "Fresh original Qwen3-1.7B-Base each run",
+  "owner_authorization": "Use existing node overnight beyond baselines; finish by08:00Eastern/12:00UTC.",
+  "primary": "Trace versus matched raw and format direct full527 NLL; positive lower95 interval in both source orders, and trace versus untouched B0, each separately reported. No secondary may rescue a failed primary.",
+  "question": "Does verified intermediate-computation supervision improve direct natural-text prediction when the original text and every source-token coefficient are preserved?",
+  "release_conditions": [
+    "Complete source/token and CPU loss/gradient causality checks.",
+    "Actual native same-shape accumulation/master/reduction/LR and exact recovery qualification.",
+    "Measured runtime, RAM snapshot space and available host memory fit remaining overnight envelope.",
+    "Freeze the ordinary baseline DEV choice; preserve its independent confirmation."
+  ],
+  "resources": {
+    "deadline_utc": "2026-10-22T11:00:00+00:00",
+    "existing_node_only": true,
+    "maximum_concurrent_training_pairs": 5,
+    "maximum_reserved_chip_hours_including_qualification": 32,
+    "minimum_available_host_GiB": 512,
+    "minimum_free_disk_GiB": 35,
+    "publication_deadline_utc": "2026-10-22T12:00:00+00:00"
+  },
+  "selection": "No treatment checkpoint, seed or arm selection. Report all six terminal models. All freeze before any new confirmation score.",
+  "sources": {
+    "calculation_diagnostic": "Existing previously inspected sources, explicitly developmental.",
+    "calculation_qualification": 64,
+    "calculation_train": 2048,
+    "fresh_natural_confirmation": 4096,
+    "natural_qualification": 1024,
+    "natural_train": 32768
+  },
+  "statistics": {
+    "draws": 5000,
+    "seed": 17,
+    "unit": "unique source document"
+  },
+  "training": {
+    "accumulation": 17,
+    "global_batch": 272,
+    "micro_batch": 2,
+    "objective": "Mean per-document original527-token CE plus separately normalized work CE (zero on ordinary examples); source coefficient exactly1/(272*527).",
+    "optimizer": "Same BF16/FP32 AdamW, one reducer, warmup13 and terminal128 checkpoint as baseline.",
+    "order_seeds": [
+      11,
+      12
+    ],
+    "passes": 1,
+    "schedule": "Freeze the qualified uniform-baseline DEV choice before starting; same LR/schedule in every arm and order.",
+    "source_loss_weight": 1.0,
+    "source_target_count": 527,
+    "steps": 128,
+    "target_slots": 656,
+    "width": 704,
+    "work_loss_weight": 1.0,
+    "world_size": 8
+  },
+  "utc": "2026-10-22T02:06:26+00:00"
+}

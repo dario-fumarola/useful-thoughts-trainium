@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from train import partial_state_driver as driver
+from train import uniform_lm_evaluate as original_evaluator
 from train.uniform_lm_evaluate import worker
 from weekend_thinking.artifacts import sha256_file
 
@@ -12,6 +13,7 @@ def validate(p, release, output):
     if (p['schema'] != 'scaffold-learning-likelihood-v1' or p['world_size'] != 8
             or p['micro_batch'] != 4 or p['source_files'] != driver.source_files()
             or p['evaluator_sha256'] != sha256_file(__file__)
+            or p['worker_evaluator_sha256'] != sha256_file(original_evaluator.__file__)
             or sha256_file(p['data_file']) != p['data_sha256']
             or sha256_file(p['data_manifest_file']) != p['data_manifest_sha256']
             or str(output) not in release['jobs']):

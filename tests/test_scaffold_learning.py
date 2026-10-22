@@ -90,3 +90,40 @@ def test_refuse_truncation_and_held_sources(monkeypatch):
     for row in [{**source(),'split':'confirm'},{**source(),'ids':[1]*527},
                 {**source(),'verified_work_ids':[7]*128}]:
         with pytest.raises(ValueError):s.training_pack(row,Tokenizer(),'scaffold_trace')
+
+
+def test_combined_source_and_work_gradients_match_independent_dense_targets(monkeypatch):
+    monkeypatch.setattr(useful_note_sft_data,'EOS',30)
+    row=source();m=model();reference=copy.deepcopy(m)
+    pack=s.training_pack(row,Tokenizer(),'scaffold_trace');actual=loss(m,pack)
+    logits=reference(pack['input_ids'][:,:-1]).logits.float()
+    token_losses=F.cross_entropy(logits.transpose(1,2),pack['input_ids'][:,1:],reduction='none')
+    expected=token_losses[:,:527].mean()+token_losses[:,529:533].mean()
+    torch.testing.assert_close(actual.loss,expected,rtol=1e-6,atol=1e-6)
+    actual.loss.backward();expected.backward()
+    for (name,a),(other,b) in zip(m.named_parameters(),reference.named_parameters()):
+        assert name==other
+        torch.testing.assert_close(a.grad,b.grad,rtol=1e-5,atol=1e-6)
+
+
+def test_direct_evaluation_binds_worker_and_requires_all_six_terminals(tmp_path):
+    import json
+    from train import scaffold_learning_evaluate as scoring,uniform_lm_evaluate as worker
+    from train import partial_state_driver as driver
+    from weekend_thinking.artifacts import sha256_file
+    data=tmp_path/'data';data.write_text('{}\n');manifest=tmp_path/'manifest'
+    manifest.write_text(json.dumps({'files':{'CONFIRM':{'sha256':sha256_file(data)}}}))
+    output=tmp_path/'score'
+    p=dict(schema='scaffold-learning-likelihood-v1',world_size=8,micro_batch=4,
+        source_files=driver.source_files(),evaluator_sha256=sha256_file(scoring.__file__),
+        worker_evaluator_sha256=sha256_file(worker.__file__),data_file=str(data),
+        data_sha256=sha256_file(data),data_manifest_file=str(manifest),
+        data_manifest_sha256=sha256_file(manifest),model_name='B0',checkpoint=None,
+        cohort='CONFIRM',items=4096)
+    release=dict(jobs={str(output):{}},all_terminal_models={})
+    with pytest.raises(ValueError,match='All six'):scoring.validate(p,release,output)
+    release['all_terminal_models']={f'scaffold_{a}-seed{n}':{'step':128}
+        for a in ('raw','format','trace') for n in (11,12)}
+    scoring.validate(p,release,output)
+    p['worker_evaluator_sha256']='f'*64
+    with pytest.raises(ValueError,match='evaluator'):scoring.validate(p,release,output)

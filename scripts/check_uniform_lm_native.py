@@ -7,7 +7,7 @@ import shlex
 
 import torch
 
-from train import partial_state_driver as driver, uniform_lm
+from train import partial_state_driver as driver, uniform_lm, scaffold_learning
 from train.neuron_driver import verify_checkpoint
 from train.useful_note_recovery import optimizer_digest, tensor_digest
 from weekend_thinking.artifacts import atomic_json, canonical_hash, sha256_file, utc_now
@@ -32,6 +32,22 @@ def main():
     p = json.loads(protocol.read_text())
     rows = [json.loads(s) for s in Path(p['data_file']).open()]
     order = driver.order_for(p, rows)
+    scaffold = p['schema'] == scaffold_learning.SCHEMA
+    batch_size = p['global_batch']
+    expected_counters = []
+    labels = 0
+    if scaffold:
+        from transformers import AutoTokenizer
+        tok = AutoTokenizer.from_pretrained(p['model_dir'], local_files_only=True)
+    for step in range(4):
+        if scaffold:
+            for rank in range(p['world_size']):
+                for micro in range(p['accumulation']):
+                    batch = driver.batch_at(rows, tok, p, order, p['scaffold_arm'], step, rank, micro)
+                    labels += int((batch['source_mask'] | batch['work_mask']).sum())
+        else:
+            labels += batch_size * (p['width']-1)
+        expected_counters.append(dict(expressions=(step+1)*batch_size, supervised_tokens=labels))
     closures = [json.loads((control/'jobs'/name/'closure.json').read_text())
                 for name in (reference_job, replay_job)]
     require(all(v['exit_code'] == 0 and v['failure'] is None
@@ -45,14 +61,13 @@ def main():
     for history in metrics:
         require([m['step'] for m in history] == [1, 2, 3, 4], 'Four completed updates required')
         for step, m in enumerate(history):
-            rate = uniform_lm.learning_rate(p, step)
+            rate = uniform_lm.learning_rate(scaffold_learning._schedule(p) if scaffold else p, step)
             require(m['learning_rate'] == rate
                     and all(v == rate for v in m['actual_base_optimizer_lrs'])
                     and m['gradient_reductions'] == 1, 'Actual LR/reducer mismatch')
             require(m['ordered_item_ids'] == [rows[k]['item_id'] for k in
-                    order[step*256:(step+1)*256]], 'Data order changed')
-            require(m['counters'] == dict(expressions=(step+1)*256,
-                    supervised_tokens=(step+1)*134912), 'Accumulated target counts changed')
+                    order[step*batch_size:(step+1)*batch_size]], 'Data order changed')
+            require(m['counters'] == expected_counters[step], 'Accumulated target counts changed')
             require(math.isfinite(m['loss']) and math.isfinite(m['gradient_norm'])
                     and m['gradient_norm'] > 0 and m['actual_master_and_replica_audit'],
                     'Native update/master/replica audit failed')
@@ -103,9 +118,9 @@ def main():
     require(flags[:2] == ['--model-type=transformer', '--auto-cast=none']
             and all(v.startswith('--compile_workdir=') for v in flags[2:]),
             'Explicit precision contract differs')
-    result = dict(status='PASS_UNIFORM_LM_NATIVE_QUALIFICATION', utc=utc_now(),
+    result = dict(status='PASS_SCAFFOLD_LEARNING_NATIVE_QUALIFICATION' if scaffold else 'PASS_UNIFORM_LM_NATIVE_QUALIFICATION', utc=utc_now(),
                   source_files=p['source_files'], protocol_sha256=sha256_file(protocol),
-                  accumulation=8, world_size=8, width=528, actual_optimizer_updates=4,
+                  accumulation=p['accumulation'], world_size=8, micro_batch=p['micro_batch'], width=p['width'], target_slots=p['target_slots'], exact_full_state_recovery=True, actual_optimizer_updates=4,
                   replayed_optimizer_updates=2, initial_loss_absolute_error=error,
                   checks={k: True for k in ('initial_loss_reference', 'single_gradient_reducer',
                       'fp32_master_update', 'actual_optimizer_lr', 'replica_agreement',
