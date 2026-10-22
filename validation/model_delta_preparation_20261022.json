@@ -1,0 +1,58 @@
+{
+  "status": "PASS_MODEL_DELTA_CODE_AND_ACTUAL_BASELINE_QUALIFICATION",
+  "utc": "2026-10-22T07:12:26+00:00",
+  "source_files_sha256": {
+    "weekend_thinking/model_delta.py": "3af2766b7e5da936afc7dd31441123e36c06bfe080eb578481e3c5e78c7385f5",
+    "scripts/package_model_delta.py": "ac8054de5d24cc8a5332cba8e16291212ae75e3d1402780a1985d187cc3da0c2",
+    "scripts/restore_model_delta.py": "b053f993a2b1a2451ad5fcded4a6f0d98d1621dd824cd41d02af0ee77fdebf36"
+  },
+  "CPU_suite": {
+    "tests": 2074,
+    "smoke": "PASS",
+    "compile": "PASS"
+  },
+  "actual_native_model_roundtrip": {
+    "status": "PASS_LOSSLESS_ACTUAL_MODEL_TENSOR_ROUNDTRIP",
+    "model": "warmup_cosine-lr1e-05",
+    "delta": "local/nvme-cpt/model-deltas-20261022/warmup_cosine-lr1e-05.npz",
+    "delta_sha256": "474bd555b874fb55c4bbfe9ad90bbc1163341378001a9613f5bc1438fe7a3f3b",
+    "delta_bytes": 898454892,
+    "native_model_bytes": 3441248275,
+    "all_native_tensor_bits_match": true,
+    "native_model_tensor_names": 311,
+    "wall_seconds": 263.61519635503646,
+    "new_accelerator_calls": 0,
+    "provenance": {
+      "model_name": "warmup_cosine-lr1e-05",
+      "base_model_id": "Qwen/Qwen3-1.7B-Base",
+      "base_revision": "ea980cb0a6c2ae4b936e82123acc929f1cec04c1",
+      "base_files_sha256": {
+        "model.safetensors": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+        "config.json": "1bb33a92c3548fbc68b889b490e810440435253598835bd71dff0396060c12db",
+        "generation_config.json": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "3c04ed3ca964ea2f6b2b5faf0dc4d31aec1cb1e8b4bcf63f402d295046b422b5",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+      },
+      "base_safetensors_sha256": "6df85b39330e5a425ee36253d0f894e4387e4f0a15b9c53cb467d668e6b3a841",
+      "native_checkpoint_sha256": "e2d9afb7dc32142b6edd5950c0ecbc6bc906a2fc178ccb788e4ac6b0d2a13b75",
+      "native_optimizer_update": 128,
+      "native_spec_hash": "64ec7c139d7f36cb1ad40731031c938983f934f08114cf0d9dfd772bcc9afae3",
+      "training_source_commit": "4f9166b944fcc3a7e38df6f32bd45b396d5047ef",
+      "report_url": "https://github.com/dario-fumarola/useful-thoughts-trainium/blob/bba4837b9190a91f4e801e8fef3cfdb57f5a9fc8/validation/uniform_lm_baseline_complete_20261022/REPORT.md",
+      "license": "Apache-2.0; upstream license retained in restored model"
+    }
+  },
+  "actual_strict_HF_load": {
+    "status": "PASS_REAL_BASELINE_STRICT_HF_LOAD_AND_EVERY_TRAINED_TENSOR_BIT",
+    "model": "warmup_cosine-lr1e-05",
+    "native_checkpoint_sha256": "e2d9afb7dc32142b6edd5950c0ecbc6bc906a2fc178ccb788e4ac6b0d2a13b75",
+    "HF_directory": "/run/user/1000/overnight-hf-models-20261022/warmup_cosine-lr1e-05",
+    "named_state_tensors": 311,
+    "new_accelerator_calls": 0,
+    "scope": "Model-artifact reconstruction, not new training, prediction results, source verification or scientific confirmation."
+  },
+  "scope": "Model-artifact integrity only, with no new training, numerical exception, model-quality decision or accelerator call."
+}
